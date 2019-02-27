@@ -4,11 +4,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { HomeView, InvestigatorListView, FileUploadView, FileListView } from './views';
 
 
-const Home = () => <HomeView />;
-const InvestigatorList = () => <InvestigatorListView />;
-const FileUpload = () => <FileUploadView />;
-const FileList = () => <FileListView />;
-
 class App extends Component {
   render() {
     return (
@@ -20,10 +15,10 @@ class App extends Component {
 
           <main className="App">
             <Switch>
-              <Route exact path="/" component="{Home}"></Route>
-              <Route path="/investigator-list" component="{InvestigatorList}"></Route>
-              <Route path="/file-upload" component="{FileUpload}"></Route>
-              <Route path="/file-list" component="{FileList}"></Route>
+              <Route exact path="/" component={HomeView}></Route>
+              <Route path="/investigator-list" component={InvestigatorListView}></Route>
+              <Route path="/file-upload" component={FileUploadView}></Route>
+              <Route path="/file-list" component={FileListView}></Route>
             </Switch>
           </main>
         </div>
