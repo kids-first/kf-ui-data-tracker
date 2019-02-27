@@ -1,14 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 
-class FileListView extends Component {
-  render() {
-    return (
-      <div>
-        
-      </div>
-    );
-  }
-}
+const FileListView = () => {
+  return (
+    <div>
+      {/* placeholder for FileList */}
+    </div>
+  );
+};
 
 export default FileListView;

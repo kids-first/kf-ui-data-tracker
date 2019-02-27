@@ -1,14 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 
-class FileUploadView extends Component {
-  render() {
-    return (
-      <div>
-        
-      </div>
-    );
-  }
-}
+const FileUploadView = () => {
+  return (
+    <div>
+      {/* placeholder for FileUpload */}
+    </div>
+  );
+};
 
 export default FileUploadView;

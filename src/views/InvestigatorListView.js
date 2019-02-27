@@ -1,14 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 
-class InvestigatorListView extends Component {
-  render() {
-    return (
-      <div>
-        
-      </div>
-    );
-  }
-}
+const InvestigatorListView = () => {
+  return (
+    <div>
+      {/* placeholder for InvestigatorList */}
+    </div>
+  );
+};
 
 export default InvestigatorListView;
