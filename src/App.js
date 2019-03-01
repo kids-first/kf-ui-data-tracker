@@ -1,30 +1,32 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import jwtDecode from "jwt-decode";
+import React from 'react';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {ApolloProvider} from 'react-apollo';
+import jwtDecode from 'jwt-decode';
+import {client} from './apollo';
 
 import {
   HomeView,
   InvestigatorListView,
   FileUploadView,
   FileListView,
-  LoginView
-} from "./views";
+  LoginView,
+} from './views';
 
 const App = () => {
   const hasToken = () => {
-    const token = localStorage.getItem("egoToken");
+    const token = localStorage.getItem('egoToken');
     if (token == null) {
       return false;
     }
     const user = jwtDecode(token).context.user;
     return (
-      user.status === "Approved" &&
+      user.status === 'Approved' &&
       jwtDecode(token).exp > Math.floor(new Date().getTime() / 1000)
     );
   };
 
-  if (hasToken()) {
-    return (
+  return hasToken() ? (
+    <ApolloProvider client={client}>
       <Router>
         <main className="App">
           <Switch>
@@ -35,10 +37,10 @@ const App = () => {
           </Switch>
         </main>
       </Router>
-    );
-  } else {
-    return <LoginView />;
-  }
+    </ApolloProvider>
+  ) : (
+    <LoginView />
+  );
 };
 
 export default App;

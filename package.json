@@ -3,8 +3,13 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
+    "apollo-cache-inmemory": "^1.5.1",
+    "apollo-client": "^2.5.1",
+    "apollo-link-context": "^1.0.14",
+    "apollo-link-http": "^1.5.11",
     "jwt-decode": "^2.2.0",
     "react": "^16.8.3",
+    "react-apollo": "^2.5.1",
     "react-dom": "^16.8.3",
     "react-google-login": "^5.0.2",
     "react-router-dom": "^4.3.1",
