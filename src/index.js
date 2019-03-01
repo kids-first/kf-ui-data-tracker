@@ -1,6 +1,14 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
+import './index.css';
+import React from 'react';
+import App from './App';
+import { render } from "react-dom";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+const RootHtml = () => (<App />);
+
+render(<RootHtml />, document.getElementById("root"));
+
+if (module.hot) {
+  module.hot.accept("./App", () => {
+    render(<RootHtml />, document.getElementById("root"));
+  });
+}
