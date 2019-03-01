@@ -1,12 +1,7 @@
-import React from 'react';
-
+import React from "react";
 
 const FileListView = () => {
-  return (
-    <div>
-      {/* placeholder for FileList */}
-    </div>
-  );
+  return <div>{/* placeholder for FileList */}</div>;
 };
 
 export default FileListView;
