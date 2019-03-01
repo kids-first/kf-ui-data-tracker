@@ -9,6 +9,7 @@
     "apollo-link-http": "^1.5.11",
     "graphql-tag": "^2.10.1",
     "jwt-decode": "^2.2.0",
+    "kf-uikit": "https://kf-uikit.kids-first.io/kf-uikit/kf-uikit.tar.gz",
     "react": "^16.8.3",
     "react-apollo": "^2.5.1",
     "react-dom": "^16.8.3",
