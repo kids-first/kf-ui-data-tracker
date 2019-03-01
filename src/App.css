@@ -1,11 +1,56 @@
 :root {
-  max-width: 960px;
+  /* define global css vars here  */
+  --site-max-width: 1024px;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  background: #fff;
+}
+
+/* grid layout */
+
+.grid-container {
+  /* compose and compile our properties from tailwind styles */
+  @inherit: .container, .mx-auto;
+  /* use our vars */
+  max-width: var(--site-max-width);
+}
+
+.column-grid {
+  display: grid;
+  align-items: center;
+  /* use auto-fit wrap columns to rows when they cannot fit,
+  *  12 columns max per row
+  * */
+  /* use minmax to set a min of 60px wide column and a max of 1fr(fraction) */
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  grid-gap: 1rem;
+  padding: 0 2.5em;
+
+  /* collapse our gutters */
+  &--collapsed {
+    grid-gap: 0rem;
+    padding: 0;
+  }
+}
+
+.col {
+  @inherit: .w-full, .mx-auto, .border, .border-solid, .border-grey,;
 }
 
 /* Header */
 
 .Header--wrapper {
-  padding-bottom: -2px;
+  /*use @inherit to compose css properties from tailwind util classes  */
+  @inherit: .container, .block, .border-b-2, .border-solid, .border-grey;
+  /* if we order the classes correctly we can use nesting and inheritance  */
+  .Header {
+    max-width: var(--site-max-width);
+    padding: 0 1.5em;
+  }
 }
 
 .Header {
@@ -13,49 +58,4 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: -2px;
-}
-
-/* grid layout */
-
-.grid-container {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.column-grid {
-  display: grid;
-  grid-template-columns: repeat(12, [column] 60px);
-  grid-column-gap: 20px;
-  grid-template-areas: "main main main main main main main main main main main main";
-  margin-left: 5%;
-  margin-right: 5%;
-}
-
-.sm\:column-grid {
-  grid-column-gap: 10px;
-  margin-left: 3%;
-  margin-right: 3%;
-}
-
-.md\:column-grid {
-  grid-column-gap: 20px;
-  margin-left: 5%;
-  margin-right: 5%;
-}
-
-.lg\:column-grid {
-  grid-column-gap: 20px;
-  margin-left: 5%;
-  margin-right: 5%;
-}
-
-.xl\:column-grid {
-  grid-column-gap: 20px;
-  margin-left: 5%;
-  margin-right: 5%;
-}
-
-.grid-12 {
-  grid-column: 1 / span 12;
 }
