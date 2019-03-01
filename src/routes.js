@@ -1,7 +1,9 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import PrivateRoute from './authentication';
 
 import {
+  LoginView,
   HomeView,
   InvestigatorListView,
   FileUploadView,
@@ -11,10 +13,14 @@ import {
 const Routes = () => (
   <Router>
     <Switch>
-      <Route exact path="/" component={HomeView} />
-      <Route path="/investigator-list" component={InvestigatorListView} />
-      <Route path="/file-upload" component={FileUploadView} />
-      <Route path="/file-list" component={FileListView} />
+      <Route path="/login" component={LoginView} />
+      <PrivateRoute exact path="/" component={HomeView} />
+      <PrivateRoute
+        path="/investigator-list"
+        component={InvestigatorListView}
+      />
+      <PrivateRoute path="/file-upload" component={FileUploadView} />
+      <PrivateRoute path="/file-list" component={FileListView} />
     </Switch>
   </Router>
 );
