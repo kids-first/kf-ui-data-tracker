@@ -7,6 +7,7 @@
     "apollo-client": "^2.5.1",
     "apollo-link-context": "^1.0.14",
     "apollo-link-http": "^1.5.11",
+    "graphql": "^14.1.1",
     "graphql-tag": "^2.10.1",
     "jwt-decode": "^2.2.0",
     "kf-uikit": "https://kf-uikit.kids-first.io/kf-uikit/kf-uikit.tar.gz",
@@ -14,14 +15,16 @@
     "react-apollo": "^2.5.1",
     "react-dom": "^16.8.3",
     "react-google-login": "^5.0.2",
+    "react-app-rewire-postcss": "^3.0.2",
+    "react-dom": "^16.8.3",
+    "react-hot-loader": "^4.3.12",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.5"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -34,6 +37,6 @@
   ],
   "devDependencies": {
     "@babel/plugin-proposal-export-default-from": "^7.2.0",
-    "graphql": "^14.1.1"
+    "react-app-rewired": "^2.1.0"
   }
 }
