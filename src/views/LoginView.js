@@ -1,8 +1,9 @@
 import React from 'react';
 import GoogleLogin from 'react-google-login';
 import {googleAppId, egoApi} from '../config';
+import {withRouter} from 'react-router';
 
-const onSuccess = repsonse => {
+const onSuccess = (repsonse, history) => {
   fetch(egoApi + '/oauth/google/token', {
     method: 'GET',
     mode: 'cors',
@@ -16,6 +17,7 @@ const onSuccess = repsonse => {
     })
     .then(text => {
       localStorage.setItem('egoToken', text);
+      history.push('/');
       return text;
     })
     .catch(err => {
@@ -28,13 +30,13 @@ const onFailure = repsonse => {
   console.log('Problem sign in');
 };
 
-const LoginView = () => (
+const LoginView = ({history}) => (
   <GoogleLogin
     clientId={googleAppId}
     buttonText="Login"
-    onSuccess={onSuccess}
+    onSuccess={response => onSuccess(response, history)}
     onFailure={onFailure}
   />
 );
 
-export default LoginView;
+export default withRouter(LoginView);
