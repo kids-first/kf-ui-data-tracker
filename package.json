@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
+    "kf-uikit": "https://kf-uikit.kids-first.io/kf-uikit/kf-uikit.tar.gz",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-router-dom": "^4.3.1",
