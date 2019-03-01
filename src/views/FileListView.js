@@ -1,9 +1,9 @@
 import React from 'react';
 
 
-const FileListView = () => {
+const FileListView = ({ className }) => {
   return (
-    <div>
+    <div className={className}>
       {/* placeholder for FileList */}
     </div>
   );

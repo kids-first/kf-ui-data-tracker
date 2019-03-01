@@ -1,9 +1,9 @@
 import React from 'react';
 
 
-const HomeView = () => {
+const HomeView = ({ className }) => {
   return (
-    <div>
+    <div className={className}>
       {/* placeholder for Home */}
     </div>
   );

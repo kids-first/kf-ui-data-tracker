@@ -1,9 +1,9 @@
 import React from 'react';
 
 
-const InvestigatorListView = () => {
+const InvestigatorListView = ({ className }) => {
   return (
-    <div>
+    <div className={className}>
       {/* placeholder for InvestigatorList */}
     </div>
   );
