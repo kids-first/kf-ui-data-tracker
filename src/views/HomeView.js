@@ -1,12 +1,7 @@
-import React from 'react';
-
+import React from "react";
 
 const HomeView = () => {
-  return (
-    <div>
-      {/* placeholder for Home */}
-    </div>
-  );
+  return <div>{/* placeholder for Home */}</div>;
 };
 
 export default HomeView;
