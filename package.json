@@ -7,6 +7,7 @@
     "apollo-client": "^2.5.1",
     "apollo-link-context": "^1.0.14",
     "apollo-link-http": "^1.5.11",
+    "graphql-tag": "^2.10.1",
     "jwt-decode": "^2.2.0",
     "react": "^16.8.3",
     "react-apollo": "^2.5.1",
@@ -31,6 +32,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@babel/plugin-proposal-export-default-from": "^7.2.0"
+    "@babel/plugin-proposal-export-default-from": "^7.2.0",
+    "graphql": "^14.1.1"
   }
 }
