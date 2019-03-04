@@ -7,7 +7,7 @@ import {
   InvestigatorListView,
   FileUploadView,
   FileListView,
-} from '../../views';
+} from '../views';
 
 const Routes = () => (
   <Router>

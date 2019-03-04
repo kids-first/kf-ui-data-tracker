@@ -1,5 +1,5 @@
 import React from 'react';
-import Routes from './components/Routes';
+import Routes from './Routes';
 import {ApolloProvider} from 'react-apollo';
 import {client} from './state/client';
 
