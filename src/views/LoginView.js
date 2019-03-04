@@ -1,10 +1,10 @@
 import React from 'react';
 import GoogleLogin from 'react-google-login';
-import {googleAppId, egoApi} from '../config';
+import {GOOGLE_APP_ID, EGO_API} from '../common/globals';
 import {withRouter} from 'react-router';
 
 const onSuccess = (repsonse, history) => {
-  fetch(egoApi + '/oauth/google/token', {
+  fetch(EGO_API + '/oauth/google/token', {
     method: 'GET',
     mode: 'cors',
     headers: {
@@ -32,7 +32,7 @@ const onFailure = repsonse => {
 
 const LoginView = ({history}) => (
   <GoogleLogin
-    clientId={googleAppId}
+    clientId={GOOGLE_APP_ID}
     buttonText="Login"
     onSuccess={response => onSuccess(response, history)}
     onFailure={onFailure}

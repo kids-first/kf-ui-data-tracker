@@ -1,7 +1,7 @@
 import React from 'react';
-import Routes from './routes';
+import Routes from './Routes';
 import {ApolloProvider} from 'react-apollo';
-import {client} from './apollo';
+import {client} from './state/client';
 
 const App = () => (
   <ApolloProvider client={client}>
