@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'react-apollo';
 import { Link } from 'react-router-dom';
 import { compose } from 'recompose';
-import { STUDY_QUERY } from '../state/nodes';
+import { ALL_STUDIES_QUERY } from '../state/nodes';
 import StudyCard from '../components/StudyCard';
 import { renderWhileLoading, LoadingPlaceholder } from '../components/Loading';
 
@@ -26,6 +26,6 @@ const StudyListView = ({
 };
 
 export default compose(
-  graphql(STUDY_QUERY, { name: 'studies' }),
+  graphql(ALL_STUDIES_QUERY, { name: 'studies' }),
   renderWhileLoading(LoadingPlaceholder, 'studies'),
 )(StudyListView);

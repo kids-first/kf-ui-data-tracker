@@ -1,7 +1,55 @@
 import React from 'react';
+import { graphql } from 'react-apollo';
+import { compose } from 'recompose';
+import TimeAgo from 'react-timeago';
+import { GET_STUDY_BY_ID } from '../state/nodes';
+import { renderWhileLoading, LoadingPlaceholder } from '../components/Loading';
+import { GridContainer } from '../components/Grid';
 
-const FileUploadView = () => {
-  return <div>{/* placeholder for FileUpload */}</div>;
+const FileUploadView = ({
+  studyData: {
+    study: {
+      name,
+      shortName,
+      kfId,
+      modifiedAt,
+      files: { edges: fileNodes },
+    },
+  },
+  loading,
+  error,
+}) => {
+  return (
+    <div id="study" className="bg-lightGrey">
+      <header className="py-4 bg-lightGrey">
+        <GridContainer>
+          <div className="row-1 col-3">
+            <div className="study-id-tag w-full">{kfId}</div>
+            <span className="study-modified-date w-full mt-0">
+              <small>
+                last updated: <TimeAgo date={modifiedAt} />
+              </small>
+            </span>
+          </div>
+          <h2 className="mt-1 row-2 col-12">{shortName || name}</h2>
+          <div className="study-contacts row-1 self-start">
+            <h4 className="mt-0 font-bold">Contacts:</h4>
+          </div>
+        </GridContainer>
+      </header>
+    </div>
+  );
 };
 
-export default FileUploadView;
+export default compose(
+  graphql(GET_STUDY_BY_ID, {
+    options: props => ({
+      variables: {
+        id: props.match.params.nodeId,
+      },
+      fetchPolicy: 'network-only',
+    }),
+    name: 'studyData',
+  }),
+  renderWhileLoading(LoadingPlaceholder, 'studyData'),
+)(FileUploadView);

@@ -9,7 +9,7 @@ const Routes = () => (
     <Switch>
       <Route path="/login" component={LoginView} />
       <PrivateRoute exact path="/" component={StudyListView} />
-      <PrivateRoute path="/file - upload;" component={FileUploadView} />
+      <PrivateRoute path="/study/:nodeId/files" component={FileUploadView} />
       <PrivateRoute path="/file-list" component={FileListView} />
     </Switch>
   </Router>
