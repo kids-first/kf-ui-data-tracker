@@ -21,7 +21,7 @@ const STUDY_QUERY = gql`
 
 const CardClass = classes('study-card');
 
-const InvestigatorListView = () => (
+const InvestigatorsView = () => (
   <Query query={STUDY_QUERY}>
     {({client, loading, data}) => {
       if (loading) {
@@ -42,4 +42,4 @@ const InvestigatorListView = () => (
   </Query>
 );
 
-export default InvestigatorListView;
+export default InvestigatorsView;
