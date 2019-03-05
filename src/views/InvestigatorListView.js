@@ -1,6 +1,8 @@
 import React from 'react';
 import {Query} from 'react-apollo';
 import gql from 'graphql-tag';
+import {Card} from 'kf-uikit';
+import classes from 'classnames';
 
 // Example query to get studies
 const STUDY_QUERY = gql`
@@ -17,6 +19,8 @@ const STUDY_QUERY = gql`
   }
 `;
 
+const CardClass = classes('study-card');
+
 const InvestigatorListView = () => (
   <Query query={STUDY_QUERY}>
     {({client, loading, data}) => {
@@ -24,10 +28,12 @@ const InvestigatorListView = () => (
         return <p>Loading...</p>;
       }
       return (
-        <ul>
+        <ul className="grid-container  list-reset study-list">
           {data.allStudies.edges.map(node => (
-            <li key={node.node.id}>
-              {node.node.kfId}: {node.node.name}
+            <li className=" col-3 study-list--item" key={node.node.id}>
+              <Card className={CardClass} title={node.node.name}>
+                {node.node.kfId}
+              </Card>
             </li>
           ))}
         </ul>
