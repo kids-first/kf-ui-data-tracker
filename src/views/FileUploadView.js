@@ -3,7 +3,7 @@ import gql from 'graphql-tag';
 import { graphql, Mutation } from 'react-apollo';
 import { compose } from 'recompose';
 import TimeAgo from 'react-timeago';
-import { GET_STUDY_BY_ID } from '../state/nodes';
+import { GET_STUDY_BY_ID, CREATE_FILE } from '../state/nodes';
 import { renderWhileLoading, LoadingPlaceholder } from '../components/Loading';
 import { GridContainer } from '../components/Grid';
 
@@ -19,6 +19,8 @@ const FileUploadView = ({
   },
   loading,
   error,
+  uploadFile,
+  match: { params: nodeId },
 }) => {
   return (
     <div id="study" className="bg-lightGrey">
@@ -52,40 +54,45 @@ const FileUploadView = ({
                   ))
                 : null}
             </ul>
-            <Mutation
-              mutation={gql`
-                mutation($file: Upload!, $studyId: String!) {
-                  createFile(file: $file, studyId: $studyId) {
-                    success
-                    file {
-                      id
-                      name
-                    }
-                  }
-                }
-              `}
-            >
-              {mutate => (
-                <input
-                  type="file"
-                  required
-                  onChange={({
-                    target: {
-                      validity,
-                      files: [file],
+
+            <input
+              type="file"
+              required
+              onChange={({
+                target: {
+                  validity,
+                  files: [file],
+                },
+              }) => {
+                validity.valid &&
+                  uploadFile({
+                    variables: {
+                      file,
+                      studyId: kfId,
                     },
-                  }) => {
-                    validity.valid &&
-                      mutate({
-                        variables: {
-                          file,
-                          studyId: kfId,
+                    update(
+                      cache,
+                      {
+                        data: {
+                          createFile: { file },
                         },
+                      },
+                    ) {
+                      const id = nodeId.nodeId;
+                      let data = cache.readQuery({
+                        query: GET_STUDY_BY_ID,
+                        variables: { id },
                       });
-                  }}
-                />
-              )}
-            </Mutation>
+                      data.study.files.edges.push({ __typename: 'FileNodeEdge', node: file });
+                      cache.writeQuery({
+                        query: GET_STUDY_BY_ID,
+                        variables: { id },
+                        data,
+                      });
+                    },
+                  });
+              }}
+            />
           </section>
         </GridContainer>
       </div>
@@ -99,9 +106,11 @@ export default compose(
       variables: {
         id: props.match.params.nodeId,
       },
-      fetchPolicy: 'network-only',
     }),
     name: 'studyData',
+  }),
+  graphql(CREATE_FILE, {
+    name: 'uploadFile',
   }),
   renderWhileLoading(LoadingPlaceholder, 'studyData'),
 )(FileUploadView);
