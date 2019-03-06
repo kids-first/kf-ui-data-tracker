@@ -12,7 +12,7 @@
   *  12 columns max per row
   * */
   /* use minmax to set a min of 60px wide column and a max of 1fr(fraction) */
-  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  grid-template-columns: repeat(12, minmax(60px, 1fr));
   grid-gap: 1rem;
   padding: 0 2.5em;
 
