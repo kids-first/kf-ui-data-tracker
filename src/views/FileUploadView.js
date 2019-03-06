@@ -21,7 +21,7 @@ const FileUploadView = ({
 }) => {
   return (
     <div id="study" className="bg-lightGrey">
-      <header className="py-4 bg-lightGrey">
+      <header className="study-header py-4 bg-lightGrey">
         <GridContainer>
           <div className="row-1 col-3">
             <div className="study-id-tag w-full">{kfId}</div>
@@ -37,6 +37,23 @@ const FileUploadView = ({
           </div>
         </GridContainer>
       </header>
+      <div className="study-content bg-white">
+        <GridContainer>
+          <section className="study-file-list col-12">
+            <ul className="w-full list-reset">
+              {fileNodes.length
+                ? fileNodes.map(({ node: { id, name, downloadUrl } }) => (
+                    <li key={id}>
+                      <a href={downloadUrl} target="_blank">
+                        {name}
+                      </a>
+                    </li>
+                  ))
+                : null}
+            </ul>
+          </section>
+        </GridContainer>
+      </div>
     </div>
   );
 };
