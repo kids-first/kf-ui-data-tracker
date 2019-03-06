@@ -10,7 +10,7 @@ import { GridContainer } from '../components/Grid';
 
 const UploadFile = (props, file) => {
   const { uploadFile, nodeId, kfId } = props;
-  debugger;
+
   uploadFile({
     variables: {
       file,
@@ -24,12 +24,12 @@ const UploadFile = (props, file) => {
         },
       },
     ) {
-      const id = nodeId.nodeId;
+      const id = nodeId;
       let data = cache.readQuery({
         query: GET_STUDY_BY_ID,
         variables: { id },
       });
-      debugger;
+
       data.study.files.edges.push({ __typename: 'FileNodeEdge', node: file });
       cache.writeQuery({
         query: GET_STUDY_BY_ID,
@@ -92,39 +92,20 @@ const FileUploadView = ({
             <FileUploadTarget
               className="my-4"
               instructions="To upload files, drag and drop them here"
+              handleSelectedFile={({
+                target: {
+                  validity,
+                  files: [file],
+                },
+              }) => validity.valid && UploadFile({ kfId, nodeId: nodeId.nodeId, uploadFile }, file)}
               onDrop={fileList => {
                 if (!fileList.length) {
                   alert('Please Upload Study Files Only');
                   return;
                 }
                 let file = fileList[0];
-                uploadFile({
-                  variables: {
-                    file,
-                    studyId: kfId,
-                  },
-                  update(
-                    cache,
-                    {
-                      data: {
-                        createFile: { file },
-                      },
-                    },
-                  ) {
-                    const id = nodeId.nodeId;
-                    let data = cache.readQuery({
-                      query: GET_STUDY_BY_ID,
-                      variables: { id },
-                    });
-                    debugger;
-                    data.study.files.edges.push({ __typename: 'FileNodeEdge', node: file });
-                    cache.writeQuery({
-                      query: GET_STUDY_BY_ID,
-                      variables: { id },
-                      data,
-                    });
-                  },
-                });
+
+                UploadFile({ kfId, nodeId: nodeId.nodeId, uploadFile }, file);
               }}
             />
           </section>
