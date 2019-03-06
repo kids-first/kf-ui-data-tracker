@@ -75,7 +75,13 @@ const FileUploadView = ({
                       files: [file],
                     },
                   }) => {
-                    validity.valid && mutate({ variables: { file, studyId: kfId } });
+                    validity.valid &&
+                      mutate({
+                        variables: {
+                          file,
+                          studyId: kfId,
+                        },
+                      });
                   }}
                 />
               )}
