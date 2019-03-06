@@ -1,5 +1,6 @@
 import React from 'react';
-import { graphql } from 'react-apollo';
+import gql from 'graphql-tag';
+import { graphql, Mutation } from 'react-apollo';
 import { compose } from 'recompose';
 import TimeAgo from 'react-timeago';
 import { GET_STUDY_BY_ID } from '../state/nodes';
@@ -51,6 +52,34 @@ const FileUploadView = ({
                   ))
                 : null}
             </ul>
+            <Mutation
+              mutation={gql`
+                mutation($file: Upload!, $studyId: String!) {
+                  createFile(file: $file, studyId: $studyId) {
+                    success
+                    file {
+                      id
+                      name
+                    }
+                  }
+                }
+              `}
+            >
+              {mutate => (
+                <input
+                  type="file"
+                  required
+                  onChange={({
+                    target: {
+                      validity,
+                      files: [file],
+                    },
+                  }) => {
+                    validity.valid && mutate({ variables: { file, studyId: kfId } });
+                  }}
+                />
+              )}
+            </Mutation>
           </section>
         </GridContainer>
       </div>

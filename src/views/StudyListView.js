@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'react-apollo';
+import { graphql, Mutation } from 'react-apollo';
 import { Link } from 'react-router-dom';
 import { compose } from 'recompose';
 import { ALL_STUDIES_QUERY } from '../state/nodes';
