@@ -2,11 +2,12 @@ import React from 'react';
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 import { compose } from 'recompose';
-import TimeAgo from 'react-timeago';
+
 import { GET_STUDY_BY_ID, CREATE_FILE } from '../state/nodes';
 import { FileUploadTarget } from '../components/FileUpload';
 import { renderWhileLoading, LoadingPlaceholder } from '../components/Loading';
 import { GridContainer } from '../components/Grid';
+import StudyHeader from '../components/StudyHeader/StudyHeader';
 
 const UploadFile = (props, file) => {
   const { uploadFile, nodeId, kfId } = props;
@@ -57,22 +58,7 @@ const FileUploadView = ({
 }) => {
   return (
     <div id="study" className="bg-lightGrey">
-      <header className="study-header py-4 bg-lightGrey">
-        <GridContainer>
-          <div className="row-1 col-3">
-            <div className="study-id-tag w-full">{kfId}</div>
-            <span className="study-modified-date w-full mt-0">
-              <small>
-                last updated: <TimeAgo date={modifiedAt} />
-              </small>
-            </span>
-          </div>
-          <h2 className="mt-1 row-2 col-12">{shortName || name}</h2>
-          <div className="study-contacts row-1 self-start">
-            <h4 className="mt-0 font-bold">Contacts:</h4>
-          </div>
-        </GridContainer>
-      </header>
+      <StudyHeader {...{ kfId, modifiedAt, shortName }} />
       <div className="study-content bg-white">
         <GridContainer>
           <h3 className="col-12">Upload Study Files & Manifests for DRC Approval</h3>
