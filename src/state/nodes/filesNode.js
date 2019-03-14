@@ -8,7 +8,6 @@ export const CREATE_FILE = gql`
         id
         name
         downloadUrl
-        __typename
       }
     }
   }
