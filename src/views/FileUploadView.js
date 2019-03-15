@@ -1,11 +1,44 @@
 import React from 'react';
 import gql from 'graphql-tag';
-import { graphql, Mutation } from 'react-apollo';
+import { graphql } from 'react-apollo';
 import { compose } from 'recompose';
 import TimeAgo from 'react-timeago';
 import { GET_STUDY_BY_ID, CREATE_FILE } from '../state/nodes';
+import { FileUploadTarget } from '../components/FileUpload';
 import { renderWhileLoading, LoadingPlaceholder } from '../components/Loading';
 import { GridContainer } from '../components/Grid';
+
+const UploadFile = (props, file) => {
+  const { uploadFile, nodeId, kfId } = props;
+  debugger;
+  uploadFile({
+    variables: {
+      file,
+      studyId: kfId,
+    },
+    update(
+      cache,
+      {
+        data: {
+          createFile: { file },
+        },
+      },
+    ) {
+      const id = nodeId.nodeId;
+      let data = cache.readQuery({
+        query: GET_STUDY_BY_ID,
+        variables: { id },
+      });
+      debugger;
+      data.study.files.edges.push({ __typename: 'FileNodeEdge', node: file });
+      cache.writeQuery({
+        query: GET_STUDY_BY_ID,
+        variables: { id },
+        data,
+      });
+    },
+  });
+};
 
 const FileUploadView = ({
   studyData: {
@@ -42,6 +75,7 @@ const FileUploadView = ({
       </header>
       <div className="study-content bg-white">
         <GridContainer>
+          <h3 className="col-12">Upload Study Files & Manifests for DRC Approval</h3>
           <section className="study-file-list col-12">
             <ul className="w-full list-reset">
               {fileNodes.length
@@ -55,42 +89,42 @@ const FileUploadView = ({
                 : null}
             </ul>
 
-            <input
-              type="file"
-              required
-              onChange={({
-                target: {
-                  validity,
-                  files: [file],
-                },
-              }) => {
-                validity.valid &&
-                  uploadFile({
-                    variables: {
-                      file,
-                      studyId: kfId,
-                    },
-                    update(
-                      cache,
-                      {
-                        data: {
-                          createFile: { file },
-                        },
+            <FileUploadTarget
+              className="my-4"
+              instructions="To upload files, drag and drop them here"
+              onDrop={fileList => {
+                if (!fileList.length) {
+                  alert('Please Upload Study Files Only');
+                  return;
+                }
+                let file = fileList[0];
+                uploadFile({
+                  variables: {
+                    file,
+                    studyId: kfId,
+                  },
+                  update(
+                    cache,
+                    {
+                      data: {
+                        createFile: { file },
                       },
-                    ) {
-                      const id = nodeId.nodeId;
-                      let data = cache.readQuery({
-                        query: GET_STUDY_BY_ID,
-                        variables: { id },
-                      });
-                      data.study.files.edges.push({ __typename: 'FileNodeEdge', node: file });
-                      cache.writeQuery({
-                        query: GET_STUDY_BY_ID,
-                        variables: { id },
-                        data,
-                      });
                     },
-                  });
+                  ) {
+                    const id = nodeId.nodeId;
+                    let data = cache.readQuery({
+                      query: GET_STUDY_BY_ID,
+                      variables: { id },
+                    });
+                    debugger;
+                    data.study.files.edges.push({ __typename: 'FileNodeEdge', node: file });
+                    cache.writeQuery({
+                      query: GET_STUDY_BY_ID,
+                      variables: { id },
+                      data,
+                    });
+                  },
+                });
               }}
             />
           </section>
