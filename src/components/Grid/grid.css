@@ -28,3 +28,9 @@
     grid-column: span $(i);
   }
 }
+
+@for $i from 1 to 12 {
+  .row-$i {
+    grid-row: $(i);
+  }
+}

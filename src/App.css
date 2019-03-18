@@ -33,3 +33,7 @@ body {
 .study-card {
   height: 200px;
 }
+
+.study-contacts {
+  grid-column: 10 / span 3;
+}

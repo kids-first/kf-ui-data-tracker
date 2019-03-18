@@ -1,81 +1,117 @@
-import React, { Component } from "react";
-import PropTypes from 'prop-types';
+import React from 'react';
+import gql from 'graphql-tag';
+import { graphql } from 'react-apollo';
+import { compose } from 'recompose';
 
-import { GridContainer } from '../components/Grid';
+import { GET_STUDY_BY_ID, CREATE_FILE } from '../state/nodes';
 import { FileUploadTarget } from '../components/FileUpload';
+import { renderWhileLoading, LoadingPlaceholder } from '../components/Loading';
+import { GridContainer } from '../components/Grid';
+import StudyHeader from '../components/StudyHeader/StudyHeader';
 
-class FileUploadView extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { files: [] };
-  }
+const UploadFile = (props, file) => {
+  const { uploadFile, nodeId, kfId } = props;
 
-  handleDrop = (fileList) => {
-    const { files } = this.state;
+  uploadFile({
+    variables: {
+      file,
+      studyId: kfId,
+    },
+    update(
+      cache,
+      {
+        data: {
+          createFile: { file },
+        },
+      },
+    ) {
+      const id = nodeId;
+      let data = cache.readQuery({
+        query: GET_STUDY_BY_ID,
+        variables: { id },
+      });
 
-    for (let i = 0; i < fileList.length; i++) {
-      if (fileList[i].name) {
-        files.push(fileList[i]);
-      }
-    }
-
-    this.setState({ files });
-  }
-
-  handleSelectedFile = (e) => {
-    const { files } = this.state;
-    files.push(e.target.files[0]);
-
-    this.setState({ files });
-  }
-
-  render() {
-    const { files } = this.state;
-
-    return (
-      <GridContainer>
-        <h3 className="col-12">Upload Study Files & Manifests for DRC Approval</h3>
-          {
-            files.length 
-            ? (
-              <ul className="list-reset col-12 border border-grey">
-                {files.map(file => (
-                  <li className="w-full" key={file.name}>File Name: {file.name} Size: {file.size}</li>
-                ))}
-              </ul>  
-            )
-            : null
-          }        
-        <FileUploadTarget 
-          className="my-4"
-          instructions="To upload files, drag and drop them here"
-          handleSelectedFile={this.handleSelectedFile}
-          onDrop={this.handleDrop}
-        />
-      </GridContainer>
-    );
-  }
-}
-
-FileUploadView.propTypes = {
-  /** any additional classes that should be added to the container */
-  className: PropTypes.string,
-  /** add helpful instruction about how to drag and drop files */
-  instructions: PropTypes.string,
-  /** operations for selected files */
-  handleSelectedFile: PropTypes.func,
-  /** operations for dropped files */
-  onDrop: PropTypes.func,
+      data.study.files.edges.push({ __typename: 'FileNodeEdge', node: file });
+      cache.writeQuery({
+        query: GET_STUDY_BY_ID,
+        variables: { id },
+        data,
+      });
+    },
+  });
 };
 
-FileUploadView.defaultProps = {
-  className: null,
-  instructions: "Drag and drop files here",
-  handleSelectedFile: () => {},
-  onDrop: () => {},
+const FileUploadView = ({
+  studyData: {
+    study: {
+      name,
+      shortName,
+      kfId,
+      modifiedAt,
+      files: { edges: fileNodes },
+    },
+  },
+  loading,
+  error,
+  uploadFile,
+  match: { params: nodeId },
+}) => {
+  return (
+    <div id="study" className="bg-lightGrey">
+      <StudyHeader {...{ kfId, modifiedAt, shortName }} />
+      <div className="study-content bg-white">
+        <GridContainer>
+          <h3 className="col-12">Upload Study Files & Manifests for DRC Approval</h3>
+          <section className="study-file-list col-12">
+            <ul className="w-full list-reset">
+              {fileNodes.length
+                ? fileNodes.map(({ node: { id, name, downloadUrl } }) => (
+                    <li key={id}>
+                      <a href={downloadUrl} target="_blank">
+                        {name}
+                      </a>
+                    </li>
+                  ))
+                : null}
+            </ul>
+
+            <FileUploadTarget
+              className="my-4"
+              instructions="To upload files, drag and drop them here"
+              handleSelectedFile={({
+                target: {
+                  validity,
+                  files: [file],
+                },
+              }) => validity.valid && UploadFile({ kfId, nodeId: nodeId.nodeId, uploadFile }, file)}
+              onDrop={fileList => {
+                if (!fileList.length) {
+                  alert('Please Upload Study Files Only');
+                  return;
+                }
+                let file = fileList[0];
+
+                UploadFile({ kfId, nodeId: nodeId.nodeId, uploadFile }, file);
+              }}
+            />
+          </section>
+        </GridContainer>
+      </div>
+    </div>
+  );
 };
 
-/**
- * @component
- */
-export default FileUploadView;
+export default compose(
+  graphql(GET_STUDY_BY_ID, {
+    options: props => ({
+      variables: {
+        id: props.match.params.nodeId,
+      },
+    }),
+    name: 'studyData',
+  }),
+  graphql(CREATE_FILE, {
+    name: 'uploadFile',
+  }),
+  renderWhileLoading(LoadingPlaceholder, 'studyData'),
+)(FileUploadView);
