@@ -3,11 +3,13 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
+    "apollo": "^2.6.2",
     "apollo-cache-inmemory": "^1.5.1",
     "apollo-client": "^2.5.1",
     "apollo-link-context": "^1.0.14",
     "apollo-link-http": "^1.5.11",
     "apollo-upload-client": "^10.0.0",
+    "flow-bin": "^0.95.1",
     "graphql": "^14.1.1",
     "graphql-tag": "^2.10.1",
     "jwt-decode": "^2.2.0",
@@ -26,7 +28,9 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "test": "react-app-rewired test --env=jsdom"
+    "test": "react-app-rewired test --env=jsdom",
+    "flow": "flow",
+    "flow:watch": "flow-watch"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -39,6 +43,8 @@
   ],
   "devDependencies": {
     "@babel/plugin-proposal-export-default-from": "^7.2.0",
+    "eslint-plugin-flowtype": "^3.4.2",
+    "flow-watch": "^1.1.4",
     "postcss-apply": "^0.12.0",
     "postcss-extends": "^1.0.0",
     "postcss-for": "^2.1.1",
