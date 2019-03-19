@@ -4,10 +4,10 @@ import PropTypes from "prop-types";
 import classes from "classnames";
 import { Card } from "kf-uikit";
 
-type StudyCardProps = {
-  children?: React.Node,
-  className?: String,
-  title?: String
+export type StudyCardProps = {
+  children: ?React.Node,
+  className: ?String,
+  title: ?String
 };
 
 /**

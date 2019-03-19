@@ -1,16 +1,18 @@
-import React from 'react';
-import { graphql, Mutation } from 'react-apollo';
-import { Link } from 'react-router-dom';
-import { compose } from 'recompose';
-import { ALL_STUDIES_QUERY } from '../state/nodes';
-import StudyCard from '../components/StudyCard';
-import { renderWhileLoading, LoadingPlaceholder } from '../components/Loading';
+// @flow
+import React from "react";
+import { graphql, OperationComponent } from "react-apollo";
+import { Link } from "react-router-dom";
+import { compose } from "recompose";
+import { ALL_STUDIES_QUERY } from "../state/nodes";
+import type { AllStudies as AllStudiesType } from "../state/nodes";
+import StudyCard from "../components/StudyCard";
+import { renderWhileLoading, LoadingPlaceholder } from "../components/Loading";
 
 const StudyListView = ({
   studies: {
     loading,
-    allStudies: { edges },
-  },
+    allStudies: { edges }
+  }
 }) => {
   return (
     <ul className="study-list grid-container list-reset">
@@ -25,7 +27,12 @@ const StudyListView = ({
   );
 };
 
+export const withAllStudiesData: OperationComponent<AllStudiesType> = graphql(
+  ALL_STUDIES_QUERY,
+  { name: "studies" }
+);
+
 export default compose(
-  graphql(ALL_STUDIES_QUERY, { name: 'studies' }),
-  renderWhileLoading(LoadingPlaceholder, 'studies'),
+  withAllStudiesData,
+  renderWhileLoading(LoadingPlaceholder, "studies")
 )(StudyListView);
