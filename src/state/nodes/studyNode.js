@@ -22,22 +22,3 @@ export const GET_STUDY_BY_ID = gql`
     }
   }
 `;
-
-export type StudyFilesType = {
-  edges: {
-    node: {
-      id: String,
-      name?: String,
-      downloadUrl?: URL
-    }
-  }
-};
-
-export type StudyDataType = {
-  name: String,
-  shortName?: String,
-  bucket?: String,
-  kfId: String,
-  modifiedAt: String,
-  files: StudyFilesType
-};
