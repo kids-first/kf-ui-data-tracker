@@ -1,14 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classes from 'classnames';
-import { Card } from 'kf-uikit';
+//@flow
+import * as React from "react";
+import PropTypes from "prop-types";
+import classes from "classnames";
+import { Card } from "kf-uikit";
+
+type StudyCardProps = {
+  children?: React.Node,
+  className?: String,
+  title?: String
+};
 
 /**
  * Displays all studies for each Investigator
  */
 
-const StudyCard = ({ children, className, title }) => {
-  let studyCardClass = classes('study-card', className);
+const StudyCard = ({ children, className, title }: StudyCardProps) => {
+  let studyCardClass = classes("study-card", className);
 
   return (
     <Card {...{ title }} className={studyCardClass}>
@@ -23,13 +30,13 @@ StudyCard.propTypes = {
   /** Children elements. */
   children: PropTypes.string,
   /** NAme to display as the card header */
-  title: PropTypes.string,
+  title: PropTypes.string
 };
 
 StudyCard.defaultProps = {
   className: null,
   children: null,
-  title: null,
+  title: null
 };
 
 export default StudyCard;

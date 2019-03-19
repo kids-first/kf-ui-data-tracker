@@ -1,23 +1,49 @@
-import React, { Component } from 'react';
-import classes from 'classnames';
-import PropTypes from 'prop-types';
+// @flow
+import * as React from "react";
+import classes from "classnames";
+import PropTypes from "prop-types";
 
-class FileUploadTarget extends Component {
-  constructor(props) {
+type FileUploadTargetProps = {
+  className?: String,
+  instructions?: String,
+  handleSelectedFile?: Function,
+  onDrop: Function
+};
+
+type FileUploadTargetState = {
+  dragging: boolean,
+  count: number
+};
+
+class FileUploadTarget extends React.Component<
+  FileUploadTargetProps,
+  FileUploadTargetState
+> {
+  state = {
+    dragging: false,
+    count: 0
+  };
+
+  static defaultProps = {
+    className: null,
+    instructions: "Drag and drop Files here",
+    handleSelectedFile: () => {}
+  };
+
+  constructor(props: FileUploadTargetProps) {
     super(props);
-    this.state = { dragging: false, count: 0 };
   }
 
-  preventDefaults = e => {
+  preventDefaults = (e: SyntheticDragEvent<EventTarget>): void => {
     e.preventDefault();
     e.stopPropagation();
   };
 
-  handleDragOver = e => {
+  handleDragOver = (e: SyntheticDragEvent<EventTarget>) => {
     this.preventDefaults(e);
   };
 
-  handleDragEnter = e => {
+  handleDragEnter = (e: SyntheticDragEvent<EventTarget>): void => {
     this.preventDefaults(e);
     let { count } = this.state;
     this.setState({ count: ++count });
@@ -27,7 +53,7 @@ class FileUploadTarget extends Component {
     }
   };
 
-  handleDragLeave = e => {
+  handleDragLeave = (e: SyntheticDragEvent<EventTarget>): void => {
     this.preventDefaults(e);
     let { count } = this.state;
     this.setState({ count: --count });
@@ -37,7 +63,7 @@ class FileUploadTarget extends Component {
     }
   };
 
-  handleDrop = e => {
+  handleDrop = (e: SyntheticDragEvent<EventTarget>): void => {
     this.preventDefaults(e);
     this.setState({ dragging: false });
 
@@ -50,17 +76,22 @@ class FileUploadTarget extends Component {
 
   render() {
     const { className, instructions, handleSelectedFile } = this.props;
-    const { handleDragOver, handleDragEnter, handleDragLeave, handleDrop } = this;
+    const {
+      handleDragOver,
+      handleDragEnter,
+      handleDragLeave,
+      handleDrop
+    } = this;
     const fileUploadFormClass = classes(
-      'upload-target',
-      'w-full',
-      'p-12',
-      'bg-lightGrey',
-      'border-grey',
-      'border-2',
-      'border-dashed',
-      'text-center',
-      className,
+      "upload-target",
+      "w-full",
+      "p-12",
+      "bg-lightGrey",
+      "border-grey",
+      "border-2",
+      "border-dashed",
+      "text-center",
+      className
     );
 
     return (
@@ -80,7 +111,11 @@ class FileUploadTarget extends Component {
             </small>
           </p>
         ) : null}
-        <input type="file" className="Button Button--default" onChange={handleSelectedFile} />
+        <input
+          type="file"
+          className="Button Button--default"
+          onChange={handleSelectedFile}
+        />
       </form>
     );
   }
@@ -92,13 +127,7 @@ FileUploadTarget.propTypes = {
   /** add helpful instruction about how to drag and drop files */
   instructions: PropTypes.string,
   /** operations for selected files */
-  handleSelectedFile: PropTypes.func,
-};
-
-FileUploadTarget.defaultProps = {
-  className: null,
-  instructions: 'Drag and drop Files here',
-  handleSelectedFile: () => {},
+  handleSelectedFile: PropTypes.func
 };
 
 /**

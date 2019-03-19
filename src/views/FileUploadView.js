@@ -1,43 +1,60 @@
-import React from 'react';
-import gql from 'graphql-tag';
-import { graphql } from 'react-apollo';
-import { compose } from 'recompose';
+//@flow
+import * as React from "react";
+import gql from "graphql-tag";
+import { graphql } from "react-apollo";
+import { compose } from "recompose";
 
-import { GET_STUDY_BY_ID, CREATE_FILE } from '../state/nodes';
-import { FileUploadTarget } from '../components/FileUpload';
-import { renderWhileLoading, LoadingPlaceholder } from '../components/Loading';
-import { GridContainer } from '../components/Grid';
-import StudyHeader from '../components/StudyHeader/StudyHeader';
+import { GET_STUDY_BY_ID, CREATE_FILE } from "../state/nodes";
+import { FileUploadTarget } from "../components/FileUpload";
+import { renderWhileLoading, LoadingPlaceholder } from "../components/Loading";
+import { GridContainer } from "../components/Grid";
+import StudyHeader from "../components/StudyHeader/StudyHeader";
 
-const UploadFile = (props, file) => {
+type UploadFileProps = {
+  uploadFile: Function,
+  nodeId: String,
+  kfId: String
+};
+
+// File is a core flow type, adding here just for visibility
+// type File = {
+//   lastModified: number,
+//   lastModifiedDate: Date,
+//   name: String,
+//   size: number,
+//   type: String,
+//   webkitRelativePath: String
+// };
+
+const UploadFile = (props: UploadFileProps, file: File): void => {
   const { uploadFile, nodeId, kfId } = props;
 
   uploadFile({
     variables: {
       file,
-      studyId: kfId,
+      studyId: kfId
     },
     update(
       cache,
       {
         data: {
-          createFile: { file },
-        },
-      },
+          createFile: { file }
+        }
+      }
     ) {
-      const id = nodeId;
+      const id: String = nodeId;
       let data = cache.readQuery({
         query: GET_STUDY_BY_ID,
-        variables: { id },
+        variables: { id: String }
       });
 
-      data.study.files.edges.push({ __typename: 'FileNodeEdge', node: file });
+      data.study.files.edges.push({ __typename: "FileNodeEdge", node: file });
       cache.writeQuery({
         query: GET_STUDY_BY_ID,
         variables: { id },
-        data,
+        data
       });
-    },
+    }
   });
 };
 
@@ -48,20 +65,22 @@ const FileUploadView = ({
       shortName,
       kfId,
       modifiedAt,
-      files: { edges: fileNodes },
-    },
+      files: { edges: fileNodes }
+    }
   },
   loading,
   error,
   uploadFile,
-  match: { params: nodeId },
+  match: { params: nodeId }
 }) => {
   return (
     <div id="study" className="bg-lightGrey">
       <StudyHeader {...{ kfId, modifiedAt, shortName }} />
       <div className="study-content bg-white">
         <GridContainer>
-          <h3 className="col-12">Upload Study Files & Manifests for DRC Approval</h3>
+          <h3 className="col-12">
+            Upload Study Files & Manifests for DRC Approval
+          </h3>
           <section className="study-file-list col-12">
             <ul className="w-full list-reset">
               {fileNodes.length
@@ -81,12 +100,15 @@ const FileUploadView = ({
               handleSelectedFile={({
                 target: {
                   validity,
-                  files: [file],
-                },
-              }) => validity.valid && UploadFile({ kfId, nodeId: nodeId.nodeId, uploadFile }, file)}
+                  files: [file]
+                }
+              }) =>
+                validity.valid &&
+                UploadFile({ kfId, nodeId: nodeId.nodeId, uploadFile }, file)
+              }
               onDrop={fileList => {
                 if (!fileList.length) {
-                  alert('Please Upload Study Files Only');
+                  alert("Please Upload Study Files Only");
                   return;
                 }
                 let file = fileList[0];
@@ -105,13 +127,13 @@ export default compose(
   graphql(GET_STUDY_BY_ID, {
     options: props => ({
       variables: {
-        id: props.match.params.nodeId,
-      },
+        id: props.match.params.nodeId
+      }
     }),
-    name: 'studyData',
+    name: "studyData"
   }),
   graphql(CREATE_FILE, {
-    name: 'uploadFile',
+    name: "uploadFile"
   }),
-  renderWhileLoading(LoadingPlaceholder, 'studyData'),
+  renderWhileLoading(LoadingPlaceholder, "studyData")
 )(FileUploadView);
