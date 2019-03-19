@@ -1,10 +1,11 @@
 //@flow
 import * as React from "react";
 import gql from "graphql-tag";
-import { graphql } from "react-apollo";
+import { graphql, OperationComponent } from "react-apollo";
 import { compose } from "recompose";
 
 import { GET_STUDY_BY_ID, CREATE_FILE } from "../state/nodes";
+import type { StudyDataType, FileMutationType } from "../state/nodes";
 import { FileUploadTarget } from "../components/FileUpload";
 import { renderWhileLoading, LoadingPlaceholder } from "../components/Loading";
 import { GridContainer } from "../components/Grid";
@@ -16,15 +17,9 @@ type UploadFileProps = {
   kfId: String
 };
 
-// File is a core flow type, adding here just for visibility
-// type File = {
-//   lastModified: number,
-//   lastModifiedDate: Date,
-//   name: String,
-//   size: number,
-//   type: String,
-//   webkitRelativePath: String
-// };
+type StudyDataResponse = {
+  data: StudyDataType
+};
 
 const UploadFile = (props: UploadFileProps, file: File): void => {
   const { uploadFile, nodeId, kfId } = props;
@@ -123,17 +118,27 @@ const FileUploadView = ({
   );
 };
 
-export default compose(
-  graphql(GET_STUDY_BY_ID, {
+export const withStudyData: OperationComponent<StudyDataResponse> = graphql(
+  GET_STUDY_BY_ID,
+  {
     options: props => ({
       variables: {
         id: props.match.params.nodeId
       }
     }),
     name: "studyData"
-  }),
-  graphql(CREATE_FILE, {
+  }
+);
+
+export const withFileMutation: OperationComponent<FileMutationType> = graphql(
+  CREATE_FILE,
+  {
     name: "uploadFile"
-  }),
+  }
+);
+
+export default compose(
+  withStudyData,
+  withFileMutation,
   renderWhileLoading(LoadingPlaceholder, "studyData")
 )(FileUploadView);
