@@ -1,7 +1,7 @@
 import gql from 'graphql-tag';
 
-// Example query to get studies
-export const ALL_STUDIES_QUERY = gql`
+// Query to get all studies in the study-creator
+export const ALL_STUDIES = gql`
   {
     allStudies {
       edges {
@@ -14,3 +14,4 @@ export const ALL_STUDIES_QUERY = gql`
     }
   }
 `;
+
