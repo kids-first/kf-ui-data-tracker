@@ -1,8 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
 
-import { LoginView, StudyListView, FileUploadView } from '../views';
+import {LoginView, StudyListView, FileUploadView} from '../views';
 
 const Routes = () => (
   <Router>

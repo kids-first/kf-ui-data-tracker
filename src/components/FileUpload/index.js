@@ -1,1 +1,1 @@
-export { default as FileUploadTarget } from "./FileUploadTarget";
+export {default as FileUploadTarget} from './FileUploadTarget';

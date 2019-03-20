@@ -1,15 +1,15 @@
 import React from 'react';
-import { graphql, Mutation } from 'react-apollo';
-import { Link } from 'react-router-dom';
-import { compose } from 'recompose';
-import { ALL_STUDIES_QUERY } from '../state/nodes';
+import {graphql, Mutation} from 'react-apollo';
+import {Link} from 'react-router-dom';
+import {compose} from 'recompose';
+import {ALL_STUDIES_QUERY} from '../state/nodes';
 import StudyCard from '../components/StudyCard';
-import { renderWhileLoading, LoadingPlaceholder } from '../components/Loading';
+import {renderWhileLoading, LoadingPlaceholder} from '../components/Loading';
 
 const StudyListView = ({
   studies: {
     loading,
-    allStudies: { edges },
+    allStudies: {edges},
   },
 }) => {
   return (
@@ -26,6 +26,6 @@ const StudyListView = ({
 };
 
 export default compose(
-  graphql(ALL_STUDIES_QUERY, { name: 'studies' }),
+  graphql(ALL_STUDIES_QUERY, {name: 'studies'}),
   renderWhileLoading(LoadingPlaceholder, 'studies'),
 )(StudyListView);

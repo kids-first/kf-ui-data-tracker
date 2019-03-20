@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import classes from 'classnames';
 import PropTypes from 'prop-types';
 
 class FileUploadTarget extends Component {
   constructor(props) {
     super(props);
-    this.state = { dragging: false, count: 0 };
+    this.state = {dragging: false, count: 0};
   }
 
   preventDefaults = e => {
@@ -19,38 +19,38 @@ class FileUploadTarget extends Component {
 
   handleDragEnter = e => {
     this.preventDefaults(e);
-    let { count } = this.state;
-    this.setState({ count: ++count });
+    let {count} = this.state;
+    this.setState({count: ++count});
 
     if (e.dataTransfer.items && e.dataTransfer.items.length > 0) {
-      this.setState({ dragging: true });
+      this.setState({dragging: true});
     }
   };
 
   handleDragLeave = e => {
     this.preventDefaults(e);
-    let { count } = this.state;
-    this.setState({ count: --count });
+    let {count} = this.state;
+    this.setState({count: --count});
 
     if (this.state.count === 0) {
-      this.setState({ dragging: false });
+      this.setState({dragging: false});
     }
   };
 
   handleDrop = e => {
     this.preventDefaults(e);
-    this.setState({ dragging: false });
+    this.setState({dragging: false});
 
     if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
       this.props.onDrop(e.dataTransfer.files);
       e.dataTransfer.clearData();
-      this.setState({ count: 0 });
+      this.setState({count: 0});
     }
   };
 
   render() {
-    const { className, instructions, handleSelectedFile } = this.props;
-    const { handleDragOver, handleDragEnter, handleDragLeave, handleDrop } = this;
+    const {className, instructions, handleSelectedFile} = this.props;
+    const {handleDragOver, handleDragEnter, handleDragLeave, handleDrop} = this;
     const fileUploadFormClass = classes(
       'upload-target',
       'w-full',
@@ -80,7 +80,11 @@ class FileUploadTarget extends Component {
             </small>
           </p>
         ) : null}
-        <input type="file" className="Button Button--default" onChange={handleSelectedFile} />
+        <input
+          type="file"
+          className="Button Button--default"
+          onChange={handleSelectedFile}
+        />
       </form>
     );
   }

@@ -1,42 +1,55 @@
 import React from 'react';
-import GoogleLogin from 'react-google-login';
-import {GOOGLE_APP_ID, EGO_API} from '../common/globals';
-import {withRouter} from 'react-router';
+import classNames from 'classnames';
+import {Login} from '../components/Login';
 
-const onSuccess = (repsonse, history) => {
-  fetch(EGO_API + '/oauth/google/token', {
-    method: 'GET',
-    mode: 'cors',
-    headers: {
-      token: repsonse.tokenId,
-      'content-type': 'application/json',
-    },
-  })
-    .then(resp => {
-      return resp.text();
-    })
-    .then(text => {
-      localStorage.setItem('egoToken', text);
-      history.push('/');
-      return text;
-    })
-    .catch(err => {
-      console.log('Problem getting Ego token');
-      console.log(err);
-    });
+const LoginView = () => {
+  const loginContainer = classNames(
+    'View--Login',
+    'flex',
+    'justify-center',
+    'items-center',
+    'min-h-screen',
+    'text-center,',
+  );
+
+  return (
+    <div className={loginContainer}>
+      <div className="text-center">
+        <h1 className="mt-0">
+          <svg className="w-full h-6">
+            <defs>
+              <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor={'rgb(64, 76, 154)'} />
+                <stop offset="100%" stopColor={'rgb(2, 176, 237)'} />
+              </linearGradient>
+            </defs>
+            <text
+              fill="url(#gradient)"
+              x="50%"
+              y="50%"
+              dominantBaseline="central"
+              textAnchor="middle"
+              children={'Kid First Data Resource Portal'}
+            />
+          </svg>
+        </h1>
+        <div className="Card--Login">
+          <h2 className="Card--title pb-4">Log in</h2>
+          <div className="pb-2">
+            <Login />
+          </div>
+          <hr />
+          <p className="max-w-full">
+            <span>New to Kids First Data Resource Portal?</span>
+            <a className="no-underline" href="#">
+              {' '}
+              Join now >
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  );
 };
 
-const onFailure = repsonse => {
-  console.log('Problem sign in');
-};
-
-const LoginView = ({history}) => (
-  <GoogleLogin
-    clientId={GOOGLE_APP_ID}
-    buttonText="Login"
-    onSuccess={response => onSuccess(response, history)}
-    onFailure={onFailure}
-  />
-);
-
-export default withRouter(LoginView);
+export default LoginView;
