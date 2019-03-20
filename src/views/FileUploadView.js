@@ -3,7 +3,7 @@ import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 import { compose } from 'recompose';
 
-import { GET_STUDY_BY_ID } from '../state/nodes';
+import { GET_STUDY_BY_ID } from '../state/queries';
 import { CREATE_FILE } from '../state/mutations';
 import { FileUploadTarget } from '../components/FileUpload';
 import { renderWhileLoading, LoadingPlaceholder } from '../components/Loading';
