@@ -10,7 +10,7 @@ import { GridContainer } from '../components/Grid';
 import StudyHeader from '../components/StudyHeader/StudyHeader';
 
 const UploadFile = (props, file) => {
-  const { uploadFile, nodeId, kfId } = props;
+  const {uploadFile, nodeId, kfId} = props;
 
   uploadFile({
     variables: {
@@ -21,20 +21,20 @@ const UploadFile = (props, file) => {
       cache,
       {
         data: {
-          createFile: { file },
+          createFile: {file},
         },
       },
     ) {
       const id = nodeId;
       let data = cache.readQuery({
         query: GET_STUDY_BY_ID,
-        variables: { id },
+        variables: {id},
       });
 
-      data.study.files.edges.push({ __typename: 'FileNodeEdge', node: file });
+      data.study.files.edges.push({__typename: 'FileNodeEdge', node: file});
       cache.writeQuery({
         query: GET_STUDY_BY_ID,
-        variables: { id },
+        variables: {id},
         data,
       });
     },
@@ -48,24 +48,26 @@ const FileUploadView = ({
       shortName,
       kfId,
       modifiedAt,
-      files: { edges: fileNodes },
+      files: {edges: fileNodes},
     },
   },
   loading,
   error,
   uploadFile,
-  match: { params: nodeId },
+  match: {params: nodeId},
 }) => {
   return (
     <div id="study" className="bg-lightGrey">
       <StudyHeader {...{ kfId, modifiedAt, shortName }} />
       <div className="study-content bg-white">
         <GridContainer>
-          <h3 className="col-12">Upload Study Files & Manifests for DRC Approval</h3>
+          <h3 className="col-12">
+            Upload Study Files & Manifests for DRC Approval
+          </h3>
           <section className="study-file-list col-12">
             <ul className="w-full list-reset">
               {fileNodes.length
-                ? fileNodes.map(({ node: { id, name, downloadUrl } }) => (
+                ? fileNodes.map(({node: {id, name, downloadUrl}}) => (
                     <li key={id}>
                       <a href={downloadUrl} target="_blank">
                         {name}
@@ -83,7 +85,10 @@ const FileUploadView = ({
                   validity,
                   files: [file],
                 },
-              }) => validity.valid && UploadFile({ kfId, nodeId: nodeId.nodeId, uploadFile }, file)}
+              }) =>
+                validity.valid &&
+                UploadFile({kfId, nodeId: nodeId.nodeId, uploadFile}, file)
+              }
               onDrop={fileList => {
                 if (!fileList.length) {
                   alert('Please Upload Study Files Only');
@@ -91,7 +96,7 @@ const FileUploadView = ({
                 }
                 let file = fileList[0];
 
-                UploadFile({ kfId, nodeId: nodeId.nodeId, uploadFile }, file);
+                UploadFile({kfId, nodeId: nodeId.nodeId, uploadFile}, file);
               }}
             />
           </section>

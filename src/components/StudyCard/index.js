@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classes from 'classnames';
-import { Card } from 'kf-uikit';
+import {Card} from 'kf-uikit';
 
 /**
  * Displays all studies for each Investigator
  */
 
-const StudyCard = ({ children, className, title }) => {
+const StudyCard = ({children, className, title}) => {
   let studyCardClass = classes('study-card', className);
 
   return (
-    <Card {...{ title }} className={studyCardClass}>
+    <Card {...{title}} className={studyCardClass}>
       {children}
     </Card>
   );

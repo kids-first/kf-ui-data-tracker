@@ -5,8 +5,10 @@ import classes from 'classnames';
 /**
  * Container for a 12 column css grid
  */
-const GridContainer = ({ className, children, collapsed }) => {
-  const GridContainerClass = classes(className, { 'grid-container--collapsed': collapsed });
+const GridContainer = ({className, children, collapsed}) => {
+  const GridContainerClass = classes(className, {
+    'grid-container--collapsed': collapsed,
+  });
 
   return <section className={GridContainerClass}>{children}</section>;
 };

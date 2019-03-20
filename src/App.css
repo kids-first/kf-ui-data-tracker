@@ -37,3 +37,12 @@ body {
 .study-contacts {
   grid-column: 10 / span 3;
 }
+
+.View--Login {
+  background-image: url(https://portal.kidsfirstdrc.org/static/media/background-science.68317e4e.jpg);
+}
+
+.Card--Login {
+  @inherit: .Card;
+  width: 620px;
+}
