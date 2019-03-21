@@ -6898,9 +6898,9 @@ jwt-decode@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/jwt-decode/-/jwt-decode-2.2.0.tgz#7d86bd56679f58ce6a84704a657dd392bba81a79"
 
-"kf-uikit@https://kf-uikit.kids-first.io/kf-uikit/kf-uikit.tar.gz":
+"kf-uikit@https://s3.amazonaws.com/kf-uikit-prd-bucket/0.3.1/kf-uikit/kf-uikit.tar.gz":
   version "0.3.0"
-  resolved "https://kf-uikit.kids-first.io/kf-uikit/kf-uikit.tar.gz#92db7af10e36e418f20189f3127e01a9f75cf485"
+  resolved "https://s3.amazonaws.com/kf-uikit-prd-bucket/0.3.1/kf-uikit/kf-uikit.tar.gz#92db7af10e36e418f20189f3127e01a9f75cf485"
   dependencies:
     chroma-js "^1.3.7"
     classnames "^2.2.6"
