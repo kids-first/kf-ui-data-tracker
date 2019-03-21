@@ -16,9 +16,9 @@ const authLink = setContext((_, { headers }) => {
 });
 
 export const client = new ApolloClient({
-  link: ApolloLink.from([
-    authLink,
-    createUploadLink({uri: `${KF_STUDY_API}/graphql`}),
-  ]),
   cache: new InMemoryCache(),
+  link: ApolloLink.from([
+    authLink, 
+    createUploadLink({ uri: `${KF_STUDY_API}/graphql` })
+  ]),
 });
