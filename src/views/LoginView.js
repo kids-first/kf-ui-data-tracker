@@ -41,7 +41,7 @@ const LoginView = () => {
           <hr />
           <p className="max-w-full">
             <span>New to Kids First Data Resource Portal?</span>
-            <a className="no-underline" href="#">
+            <a className="no-underline" href="/">
               {' '}
               Join now >
             </a>

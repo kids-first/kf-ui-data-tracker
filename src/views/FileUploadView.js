@@ -1,11 +1,10 @@
 import React from 'react';
-import gql from 'graphql-tag';
 import {Query, Mutation} from 'react-apollo';
 
 import { GET_STUDY_BY_ID } from '../state/queries';
 import { CREATE_FILE } from '../state/mutations';
 import { FileUploadTarget } from '../components/FileUpload';
-import { renderWhileLoading, LoadingPlaceholder } from '../components/Loading';
+import { LoadingPlaceholder } from '../components/Loading';
 import { GridContainer } from '../components/Grid';
 import StudyHeader from '../components/StudyHeader/StudyHeader';
 
@@ -30,7 +29,11 @@ const FileUploadView = props => (
                   {files.length
                     ? files.map(({node: {id, name, downloadUrl}}) => (
                         <li key={id}>
-                          <a href={downloadUrl} target="_blank">
+                          <a
+                            href={downloadUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
                             {name}
                           </a>
                         </li>
@@ -65,7 +68,6 @@ const FileUploadView = props => (
                           alert('Please Upload Study Files Only');
                           return;
                         }
-                        let file = fileList[0];
                       }}
                     />
                   )}
