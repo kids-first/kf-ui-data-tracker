@@ -1,11 +1,10 @@
 import React from 'react';
-import {Query, Mutation} from 'react-apollo';
+import {Query} from 'react-apollo';
 
-import { GET_STUDY_BY_ID } from '../state/queries';
-import { CREATE_FILE } from '../state/mutations';
-import { FileUploadTarget } from '../components/FileUpload';
-import { LoadingPlaceholder } from '../components/Loading';
-import { GridContainer } from '../components/Grid';
+import {GET_STUDY_BY_ID} from '../state/queries';
+import {LoadingPlaceholder} from '../components/Loading';
+import {GridContainer} from '../components/Grid';
+import {UploadContainer} from '../containers';
 import StudyHeader from '../components/StudyHeader/StudyHeader';
 
 const FileUploadView = props => (
@@ -41,37 +40,7 @@ const FileUploadView = props => (
                     : null}
                 </ul>
 
-                <Mutation
-                  mutation={CREATE_FILE}
-                  refetchQueries={res => [
-                    {
-                      query: GET_STUDY_BY_ID,
-                      variables: {kfId: props.match.params.kfId},
-                    },
-                  ]}
-                >
-                  {(createFile, {data}) => (
-                    <FileUploadTarget
-                      className="my-4"
-                      instructions="To upload files, drag and drop them here"
-                      handleSelectedFile={({
-                        target: {
-                          validity,
-                          files: [file],
-                        },
-                      }) =>
-                        validity.valid &&
-                        createFile({variables: {file, studyId: study.kfId}})
-                      }
-                      onDrop={fileList => {
-                        if (!fileList.length) {
-                          alert('Please Upload Study Files Only');
-                          return;
-                        }
-                      }}
-                    />
-                  )}
-                </Mutation>
+                <UploadContainer />
               </section>
             </GridContainer>
           </div>
