@@ -12,7 +12,7 @@ import StudyHeader from '../components/StudyHeader/StudyHeader';
 const FileUploadView = props => (
   <Query query={GET_STUDY_BY_ID} variables={{id: props.match.params.nodeId}}>
     {({loading, error, data}) => {
-      if (loading) return null;
+      if (loading) return <LoadingPlaceholder />;
       if (error) return `Error!: ${error}`;
 
       const study = data.study;
