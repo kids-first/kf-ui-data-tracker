@@ -58,8 +58,16 @@ FileUploadTarget.propTypes = {
   dragging: PropTypes.boolean,
   /** add helpful instruction about how to drag and drop files */
   instructions: PropTypes.string,
+  /** operation when component is dragged over */
+  handleDragOver: PropTypes.func.isRequired,
+  /** operation when the cursor enters the componen in drag state */
+  onDragEnter: PropTypes.func.isRequired,
+  /** operation when cursor leaves component in drag state */
+  onDragLeave: PropTypes.func.isRequired,
+  /** operation when a drag is released on the component */
+  handleDrop: PropTypes.func.isRequired,
   /** operations for selected files */
-  handleSelectedFile: PropTypes.func,
+  handleSelectedFile: PropTypes.func.isRequired,
 };
 
 FileUploadTarget.defaultProps = {
