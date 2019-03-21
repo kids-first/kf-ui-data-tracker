@@ -17,7 +17,7 @@ GridContainer.propTypes = {
   /** Any additional classes to be applied to the button */
   className: PropTypes.string,
   /** Children elements. */
-  children: PropTypes.string,
+  children: PropTypes.node.isRequired,
   /** Collapse margins and gutters. */
   collapsed: PropTypes.bool,
 };
