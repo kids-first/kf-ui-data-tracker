@@ -9,13 +9,13 @@ import { GridContainer } from '../components/Grid';
 import StudyHeader from '../components/StudyHeader/StudyHeader';
 
 const FileUploadView = props => (
-  <Query query={GET_STUDY_BY_ID} variables={{id: props.match.params.nodeId}}>
+  <Query query={GET_STUDY_BY_ID} variables={{kfId: props.match.params.kfId}}>
     {({loading, error, data}) => {
       if (loading) return <LoadingPlaceholder />;
       if (error) return `Error!: ${error}`;
 
-      const study = data.study;
-      const files = data.study.files.edges;
+      const study = data.studyByKfId;
+      const files = data.studyByKfId.files.edges;
       return (
         <div id="study" className="bg-lightGrey">
           <StudyHeader {...study} />
@@ -46,7 +46,7 @@ const FileUploadView = props => (
                   refetchQueries={res => [
                     {
                       query: GET_STUDY_BY_ID,
-                      variables: {id: props.match.params.nodeId},
+                      variables: {kfId: props.match.params.kfId},
                     },
                   ]}
                 >

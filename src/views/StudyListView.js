@@ -14,8 +14,8 @@ const StudyListView = () => (
         <ul className="study-list grid-container list-reset">
           {data.allStudies.edges.map(node => (
             <li className="col-3 study-list--item" key={node.node.id}>
-              <Link to={`/study/${node.node.id}/files`}>
-                <StudyCard title={node.node.name}>{node.node.id}</StudyCard>
+              <Link to={`/study/${node.node.kfId}/files`}>
+                <StudyCard title={node.node.name}>{node.node.kfId}</StudyCard>
               </Link>
             </li>
           ))}
