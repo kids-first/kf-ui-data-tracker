@@ -11,15 +11,23 @@ const StudyListView = () => (
       if (loading) return <LoadingPlaceholder />;
       if (error) return `Error! ${error.message}`;
       return (
-        <ul className="study-list grid-container list-reset">
-          {data.allStudies.edges.map(node => (
-            <li className="col-3 study-list--item" key={node.node.id}>
-              <Link to={`/study/${node.node.kfId}/files`}>
-                <StudyCard title={node.node.name}>{node.node.kfId}</StudyCard>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div>
+          {data.allStudies.edges ? (
+            <ul className="study-list grid-container list-reset">
+              {data.allStudies.edges.map(node => (
+                <li className="col-3 study-list--item" key={node.node.id}>
+                  <Link to={`/study/${node.node.kfId}/files`}>
+                    <StudyCard title={node.node.name}>
+                      {node.node.kfId}
+                    </StudyCard>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <h3 className="pl-12 text-blue">You don't have any studies yet.</h3>
+          )}
+        </div>
       );
     }}
   </Query>
