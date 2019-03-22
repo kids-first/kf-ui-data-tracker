@@ -1,5 +1,11 @@
+[context.deploy-preview]
+  publish = "build/"
+  command = "REACT_APP_AUTH0_REDIRECT_URI=$DEPLOY_PRIME_URL/callback yarn build"
+
+[context.master]
+  command = "REACT_APP_AUTH0_REDIRECT_URI=$URL/callback yarn build"
+
 [context.master.environment]
-  REACT_APP_AUTH0_REDIRECT_URI = "kf-data-tracker-netlify.kidsfirstdrc.org/callback"
   REACT_APP_STUDY_API = "https://kf-study-creator-qa.kids-first.io"
   REACT_APP_EGO_API = "https://ego-dev.kids-first.io"
 
