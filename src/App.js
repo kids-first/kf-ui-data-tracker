@@ -7,7 +7,7 @@ import {Header} from 'kf-uikit';
 const App = () => (
   <ApolloProvider client={client}>
     <main className="App">
-      <Header />
+      <Header logo={{logoHref: '/'}} />
       <Routes />
     </main>
   </ApolloProvider>
