@@ -31,11 +31,23 @@ export const GET_STUDY_BY_ID = gql`
         edges {
           node {
             id
+            kfId
             name
             downloadUrl
           }
         }
       }
+    }
+  }
+`;
+
+// Query to get a file by its kf id
+export const GET_FILE_BY_ID = gql`
+  query File($kfId: String!) {
+    fileByKfId(kfId: $kfId) {
+      kfId
+      name
+      description
     }
   }
 `;

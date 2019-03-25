@@ -31,12 +31,27 @@ const UploadContainer = props => {
     }
   };
 
+  // General handler for uploading files
+  // Will forward user to annotation page when a file has been uploaded
+  const uploadAndAnnotate = (createFile, file) => {
+    const studyId = props.match.params.kfId;
+    createFile({
+      variables: {file, studyId},
+    })
+      .then(resp => {
+        if (resp.data.createFile.success) {
+          props.history.push(`files/${resp.data.createFile.file.kfId}`);
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+
   // Upload a file when a document is selected from the browser window
   const handleSelectedFile = (e, createFile) => {
     e.preventDefault();
-    createFile({
-      variables: {file: e.target.files[0], studyId: props.match.params.kfId},
-    });
+    uploadAndAnnotate(createFile, e.target.files[0]);
   };
 
   // Upload a file when it is dropped on the container
@@ -45,13 +60,7 @@ const UploadContainer = props => {
     setDragging(false);
 
     if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
-      //handleSelectedFile(e.dataTransfer.files);
-      createFile({
-        variables: {
-          file: e.dataTransfer.files[0],
-          studyId: props.match.params.kfId,
-        },
-      });
+      uploadAndAnnotate(createFile, e.dataTransfer.files[0]);
     }
   };
 
