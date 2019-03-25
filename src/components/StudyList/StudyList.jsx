@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classes from 'classnames';
-import {Link} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 import {GridContainer} from '../Grid';
 import StudyCard from './StudyCard';
 
@@ -9,7 +9,7 @@ import StudyCard from './StudyCard';
  * Displays unordered studies in grid view (include empty stage message)
  */
 
-const StudyList = ({className, studyList}) => {
+const StudyList = ({className, studyList, history}) => {
   let studyListClass = classes(
     'study-list',
     'grid-container',
@@ -27,15 +27,19 @@ const StudyList = ({className, studyList}) => {
           <section className="col-12">
             <ul className={studyListClass}>
               {studyList.map(node => (
-                <li className="col-4 study-list--item" key={node.node.id}>
-                  <Link to={`/study/${node.node.kfId}/files`}>
-                    <StudyCard
-                      className="p-3 shadow-md border-transparent hover:shadow-lg"
-                      title={node.node.kfId}
-                      body={node.node.name || node.node.shortName}
-                      lastUpdate={node.node.modifiedAt}
-                    />
-                  </Link>
+                <li
+                  className="col-4 study-list--item cursor-pointer"
+                  key={node.node.id}
+                  onClick={() => {
+                    history.push(`/study/${node.node.kfId}/files`);
+                  }}
+                >
+                  <StudyCard
+                    className="p-3 shadow-md border-transparent hover:shadow-lg "
+                    title={node.node.kfId}
+                    body={node.node.name || node.node.shortName}
+                    lastUpdate={new Date(node.node.modifiedAt)}
+                  />
                 </li>
               ))}
             </ul>
@@ -60,4 +64,4 @@ StudyList.defaultProps = {
   studyList: [],
 };
 
-export default StudyList;
+export default withRouter(StudyList);
