@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import {Query} from 'react-apollo';
 
 import {GET_STUDY_BY_ID} from '../state/queries';
@@ -26,17 +27,28 @@ const FileUploadView = props => (
               <section className="study-file-list col-12">
                 <ul className="w-full list-reset">
                   {files.length
-                    ? files.map(({node: {id, name, downloadUrl}}) => (
-                        <li key={id}>
-                          <a
-                            href={downloadUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
+                    ? files.map(
+                        ({node: {kfId, name, description, downloadUrl}}) => (
+                          <li key={kfId}>
+                            <Link
+                              to={`/study/${
+                                props.match.params.kfId
+                              }/files/${kfId}`}
+                            >
+                              Edit
+                            </Link>
+                            <a
+                              href={downloadUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              {name}
+                            </a>
                             {name}
-                          </a>
-                        </li>
-                      ))
+                            {description}
+                          </li>
+                        ),
+                      )
                     : null}
                 </ul>
 

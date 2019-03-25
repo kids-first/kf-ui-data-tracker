@@ -3,7 +3,13 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
 
 import {Header} from 'kf-uikit';
-import {LoginView, StudyListView, FilesView, CallbackView} from '../views';
+import {
+  AnnotationView,
+  LoginView,
+  StudyListView,
+  FilesView,
+  CallbackView,
+} from '../views';
 
 const Routes = () => (
   <Router>
@@ -23,7 +29,11 @@ const Routes = () => (
       <Route path="/login" component={LoginView} />
       <Route path="/callback" component={CallbackView} />
       <PrivateRoute exact path="/" component={StudyListView} />
-      <PrivateRoute path="/study/:kfId/files" component={FilesView} />
+      <PrivateRoute exact path="/study/:kfId/files" component={FilesView} />
+      <PrivateRoute
+        path="/study/:kfId/files/:fileId"
+        component={AnnotationView}
+      />
     </div>
   </Router>
 );
