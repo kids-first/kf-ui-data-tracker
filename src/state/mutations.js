@@ -7,8 +7,23 @@ export const CREATE_FILE = gql`
       success
       file {
         id
+        kfId
         name
         downloadUrl
+      }
+    }
+  }
+`;
+
+// Mutation to update file metadata
+export const UPDATE_FILE = gql`
+  mutation($kfId: String!, $name: String, $description: String) {
+    updateFile(kfId: $kfId, name: $name, description: $description) {
+      file {
+        id
+        kfId
+        name
+        description
       }
     }
   }
