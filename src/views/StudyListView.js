@@ -1,8 +1,7 @@
 import React from 'react';
 import {Query} from 'react-apollo';
-import {Link} from 'react-router-dom';
 import {ALL_STUDIES} from '../state/queries';
-import StudyCard from '../components/StudyCard';
+import StudyList from '../components/StudyList/StudyList';
 import {LoadingPlaceholder} from '../components/Loading';
 
 const StudyListView = () => (
@@ -10,25 +9,7 @@ const StudyListView = () => (
     {({loading, error, data}) => {
       if (loading) return <LoadingPlaceholder />;
       if (error) return `Error! ${error.message}`;
-      return (
-        <div>
-          {data.allStudies.edges ? (
-            <ul className="study-list grid-container list-reset">
-              {data.allStudies.edges.map(node => (
-                <li className="col-3 study-list--item" key={node.node.id}>
-                  <Link to={`/study/${node.node.kfId}/files`}>
-                    <StudyCard title={node.node.name}>
-                      {node.node.kfId}
-                    </StudyCard>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <h3 className="pl-12 text-blue">You don't have any studies yet.</h3>
-          )}
-        </div>
-      );
+      return <StudyList studyList={data.allStudies.edges} />;
     }}
   </Query>
 );
