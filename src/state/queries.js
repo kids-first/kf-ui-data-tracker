@@ -9,6 +9,9 @@ export const ALL_STUDIES = gql`
           id
           kfId
           name
+          shortName
+          createdAt
+          modifiedAt
         }
       }
     }
