@@ -34,6 +34,14 @@ export const GET_STUDY_BY_ID = gql`
             kfId
             name
             downloadUrl
+            versions {
+              edges {
+                node {
+                  size
+                  createdAt
+                }
+              }
+            }
           }
         }
       }
