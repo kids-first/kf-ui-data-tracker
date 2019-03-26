@@ -1,0 +1,13 @@
+/* NavBar and NavBarButton CSS */
+.SecondaryNav--Button-active {
+  @inherit: .border-t-0, .border-l-0, .border-r-0, .border-b-4, .border-pink;
+}
+
+.SecondaryNav--Button {
+  @inherit: .col-3, .h-full, .cursor-pointer, .border, .border-lightGrey,
+    .text-center, .text-purple, .no-underline, .pt-4;
+}
+
+.SecondaryNav {
+  @inherit: .col-12, .h-16, .shadow, .grid-container;
+}
