@@ -8,34 +8,7 @@
 }
 
 body {
-  background: #fff;
-}
-
-/* Header */
-
-.Header--wrapper {
-  /*use @inherit to compose css properties from tailwind util classes  */
-  @inherit: .container, .block, .border-b-2, .border-solid, .border-grey;
-  /* if we order the classes correctly we can use nesting and inheritance  */
-  .Header {
-    max-width: var(--site-max-width);
-    padding: 0 1.5em;
-  }
-}
-
-.Header {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: -2px;
-}
-
-.study-card {
-  height: 200px;
-}
-
-.study-contacts {
-  grid-column: 10 / span 3;
+  @inherit: .bg-lightGrey;
 }
 
 .View--Login {
@@ -45,4 +18,10 @@ body {
 .Card--Login {
   @inherit: .Card;
   width: 620px;
+}
+
+.BodyContent {
+  max-width: var(--site-max-width);
+  margin: auto;
+  @inherit: .min-h-screen, .bg-white;
 }
