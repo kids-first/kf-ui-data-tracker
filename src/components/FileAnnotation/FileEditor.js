@@ -1,36 +1,61 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Button} from 'kf-uikit';
-
+import SelectElement from './SelectElement';
 const FileEditor = ({kfId, name, description, fileType, onSubmit}) => (
-  <form onSubmit={e => onSubmit(e)}>
-    <h1>Please enter info about your file</h1>
-    {kfId}
-    <br />
-    <label>
-      File Name
-      <input className="border" type="text" name="name" defaultValue={name} />
-    </label>
-    <label>
-      Description
-      <input
-        className="border"
-        type="text"
-        name="description"
-        defaultValue={description}
-      />
-    </label>
-    <label>
-      File Type
-      <input className="border" type="checkbox" name="shipping" /> Shipping
-      Manifest
-      <input className="border" type="checkbox" name="clin" />{' '}
-      Clinical/Phenotype Data
-      <input className="border" type="checkbox" name="sequening" /> Sequencing
-      Manifest
-      <input className="border" type="checkbox" name="other" /> Other
-    </label>
-    <Button type="submit">Save</Button>
+  <form onSubmit={e => onSubmit(e)} className="FileEditor">
+    <div className="w-full mr-6">
+      <label>
+        File name:
+        <input
+          className="FileEditor--Input mb-6"
+          type="text"
+          name="name"
+          defaultValue={name}
+        />
+      </label>
+      <label>
+        File description (required):
+        <textarea
+          className="FileEditor--Input h-64"
+          type="text"
+          name="description"
+          defaultValue={description}
+        />
+      </label>
+    </div>
+    <fieldset className="w-full">
+      <label>
+        Select a file type (required):
+        <SelectElement
+          name="shipping"
+          icon="release"
+          title="Shipping Manifest"
+          body="Some helpful description."
+        />
+        <SelectElement
+          name="clin"
+          icon="biospecimen"
+          title="Clinical/Phenotype Data"
+          body="Some helpful description."
+        />
+        <SelectElement
+          name="sequening"
+          icon="customize"
+          title="Sequencing Manifest"
+          body="Some helpful description."
+        />
+        <SelectElement
+          name="other"
+          icon="info"
+          title="Other"
+          body="Some helpful description."
+        />
+      </label>
+      <div className="flex flex-row-reverse w-full">
+        <Button type="submit">Save</Button>
+      </div>
+    </fieldset>
   </form>
 );
 

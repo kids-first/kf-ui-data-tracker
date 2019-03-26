@@ -1,6 +1,6 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
-import FileEditor from '../components/FileEditor';
+import FileEditor from '../components/FileAnnotation/FileEditor';
 import {LoadingPlaceholder} from '../components/Loading';
 import {Query, Mutation} from 'react-apollo';
 import {UPDATE_FILE} from '../state/mutations';
