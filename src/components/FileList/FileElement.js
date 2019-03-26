@@ -4,6 +4,7 @@ import classes from 'classnames';
 import {withRouter, Link} from 'react-router-dom';
 import TimeAgo from 'react-timeago';
 import {Icon} from 'kf-uikit';
+import Badge from '../Badge/Badge';
 /**
  * Displays unordered studies in grid view (include empty stage message)
  */
@@ -39,6 +40,7 @@ const FileElement = ({
 }) => {
   const fileElementClass = classes(
     'FileList--Element',
+    'sm:flex-no-wrap',
     {'cursor-not-allowed': loading, 'bg-lightGrey': loading},
     className,
   );
@@ -57,34 +59,40 @@ const FileElement = ({
       {loading && (
         <Icon kind="reset" width={24} className="float-right mt-5 mr-5 spin" />
       )}
-      <h4 className="mt-0 pt-2 font-normal" title={fileNode.description}>
-        {fileNode.name}
-        <Link to={`/study/${match.params.kfId}/files/${fileNode.kfId}`}>
-          <Icon className="pt-4 ml-2" kind="edit" />
-        </Link>
-        <button onClick={e => downloadFile(e)}>
-          <Icon className="pt-4" kind="download" />
-        </button>
-        <button onClick={e => deleteFile()}>
-          <Icon className="pt-4" kind="delete" />
-        </button>
-        {error &&
-          error.graphQLErrors &&
-          error.graphQLErrors.map(err => (
-            <span className="text-red">{err.message}</span>
-          ))}
-      </h4>
-      <span className="mt-0 font-normal text-grey ">
-        <small>
-          Created:
-          {latestDate ? (
-            <TimeAgo className="mr-4 pl-1" date={latestDate} />
-          ) : (
-            <span className="mr-4 pl-1">unknown</span>
-          )}
-          Size: {fileSize}
-        </small>
-      </span>
+      <div className="FileList--ElementBadge sm:w-48">
+        <Badge state="new" />
+        <Badge state="pendingApproval" />
+      </div>
+      <div className="flex-initial">
+        <h4 className="mt-0 pt-2 font-normal" title={fileNode.description}>
+          {fileNode.name}
+          <Link to={`/study/${match.params.kfId}/files/${fileNode.kfId}`}>
+            <Icon className="pt-4 ml-2" kind="edit" />
+          </Link>
+          <button onClick={e => downloadFile(e)}>
+            <Icon className="pt-4" kind="download" />
+          </button>
+          <button onClick={e => deleteFile()}>
+            <Icon className="pt-4" kind="delete" />
+          </button>
+          {error &&
+            error.graphQLErrors &&
+            error.graphQLErrors.map(err => (
+              <span className="text-red">{err.message}</span>
+            ))}
+        </h4>
+        <span className="mt-0 font-normal text-grey ">
+          <small>
+            Created:
+            {latestDate ? (
+              <TimeAgo className="mr-4 pl-1" date={latestDate} />
+            ) : (
+              <span className="mr-4 pl-1">unknown</span>
+            )}
+            Size: {fileSize}
+          </small>
+        </span>
+      </div>
     </li>
   );
 };

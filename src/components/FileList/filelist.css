@@ -6,12 +6,17 @@
 
 .FileList--Element {
   @inherit: .list-reset, .w-full, .border, .border-l-0, .border-r-0, .border-t-0,
-    .border-grey, .pb-2, .pl-6;
+    .border-grey, .pb-2, .pl-6, .flex, .flex-row, .flex-wrap-reverse;
 }
 
 .FileList--Empty {
   @inherit: .text-grey, .border, .border-l-0, .border-r-0, .border-t-0,
     .border-grey, .p-6, .m-0;
+}
+
+.FileList--ElementBadge {
+  @inherit: .flex-initial, .mt-2, .mr-6, .flex, .flex-row, .flex-wrap,
+    .content-center, .justify-around;
 }
 
 @keyframes spin {
