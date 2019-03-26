@@ -9,7 +9,7 @@ import {Card} from 'kf-uikit';
  */
 
 const StudyCard = ({className, title, body, lastUpdate}) => {
-  let studyCardClass = classes('study-card', className);
+  let studyCardClass = classes('StudyCard', 'w-full', className);
 
   return (
     <Card {...{title}} className={studyCardClass}>
