@@ -10,7 +10,7 @@ import {UploadContainer} from '../containers';
 const FileUploadView = props => (
   <Query query={GET_STUDY_BY_ID} variables={{kfId: props.match.params.kfId}}>
     {({loading, error, data}) => {
-      if (loading) return <LoadingPlaceholder />;
+      if (loading) return <LoadingPlaceholder componentName="File List" />;
       if (error) return `Error!: ${error}`;
 
       const files = data.studyByKfId.files.edges;
