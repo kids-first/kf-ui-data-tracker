@@ -4,10 +4,10 @@
 }
 
 .SecondaryNav--Button {
-  @inherit: .col-3, .h-full, .cursor-pointer, .border, .border-lightGrey,
+  @inherit: .w-full, .h-full, .cursor-pointer, .border, .border-lightGrey,
     .text-center, .text-purple, .no-underline, .pt-4;
 }
 
 .SecondaryNav {
-  @inherit: .col-12, .h-16, .shadow, .grid-container;
+  @inherit: .bg-white, .w-full, .h-16, .shadow, .flex, .flex-row;
 }

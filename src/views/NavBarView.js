@@ -12,12 +12,10 @@ const NavBarView = props => (
       if (error) return `Error!: ${error}`;
       const study = data.studyByKfId;
       return (
-        <div id="study" className="bg-lightGrey">
+        <section id="study">
           <StudyHeader {...study} />
-          <div className="study-content bg-white">
-            <NavBar />
-          </div>
-        </div>
+          <NavBar />
+        </section>
       );
     }}
   </Query>
