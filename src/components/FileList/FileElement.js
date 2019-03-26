@@ -28,6 +28,13 @@ const formatFileSize = (bytes, si) => {
   return bytes.toFixed(1) + ' ' + units[u];
 };
 
+const fileTypeDefault = {
+  SHM: 'Shipping Manifest',
+  CLN: 'Clinical/Phenotype Data',
+  SEQ: 'Sequencing Manifest',
+  OTH: 'Other',
+};
+
 const FileElement = ({
   className,
   fileNode,
@@ -54,6 +61,10 @@ const FileElement = ({
       : 'unknown';
   const latestDate =
     sortedVersions.length > 0 ? sortedVersions[0].node.createdAt : null;
+  const fileType = fileTypeDefault[fileNode.fileType]
+    ? fileTypeDefault[fileNode.fileType]
+    : 'unknown';
+
   return (
     <li className={fileElementClass}>
       {loading && (
@@ -81,16 +92,15 @@ const FileElement = ({
               <span className="text-red">{err.message}</span>
             ))}
         </h4>
-        <span className="mt-0 font-normal text-grey ">
-          <small>
-            Created:
-            {latestDate ? (
-              <TimeAgo className="mr-4 pl-1" date={latestDate} />
-            ) : (
-              <span className="mr-4 pl-1">unknown</span>
-            )}
-            Size: {fileSize}
-          </small>
+        <span className="mt-0 font-normal text-grey text-xs">
+          Created:
+          {latestDate ? (
+            <TimeAgo className="mr-4 pl-1" date={latestDate} />
+          ) : (
+            <span className="mr-4 pl-1">unknown</span>
+          )}
+          Size: {fileSize}
+          <span className="ml-4">{fileType}</span>
         </span>
       </div>
     </li>

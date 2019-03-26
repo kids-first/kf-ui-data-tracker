@@ -36,6 +36,7 @@ export const GET_STUDY_BY_ID = gql`
             name
             fileType
             description
+            fileType
             downloadUrl
             versions {
               edges {
