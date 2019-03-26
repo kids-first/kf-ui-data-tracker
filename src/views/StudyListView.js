@@ -7,7 +7,7 @@ import {LoadingPlaceholder} from '../components/Loading';
 const StudyListView = () => (
   <Query query={ALL_STUDIES}>
     {({loading, error, data}) => {
-      if (loading) return <LoadingPlaceholder />;
+      if (loading) return <LoadingPlaceholder componentName="Study List" />;
       if (error) return `Error! ${error.message}`;
       return <StudyList studyList={data.allStudies.edges} />;
     }}

@@ -8,7 +8,7 @@ import NavBar from '../components/NavBar/NavBar';
 const NavBarView = props => (
   <Query query={GET_STUDY_BY_ID} variables={{kfId: props.match.params.kfId}}>
     {({loading, error, data}) => {
-      if (loading) return <LoadingPlaceholder />;
+      if (loading) return <LoadingPlaceholder componentName="Study Page" />;
       if (error) return `Error!: ${error}`;
       const study = data.studyByKfId;
       return (

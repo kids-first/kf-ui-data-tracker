@@ -1,6 +1,7 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
 import FileEditor from '../components/FileEditor';
+import {LoadingPlaceholder} from '../components/Loading';
 import {Query, Mutation} from 'react-apollo';
 import {UPDATE_FILE} from '../state/mutations';
 import {GET_FILE_BY_ID} from '../state/queries';
@@ -22,7 +23,7 @@ const FileEditorContainer = ({kfId, history, match}) => {
   return (
     <Query query={GET_FILE_BY_ID} variables={{kfId}}>
       {({loading, error, data}) => {
-        if (loading) return 'loading';
+        if (loading) return <LoadingPlaceholder componentName="File Editor" />;
         if (error) return `Error!: ${error}`;
         return (
           <Mutation
