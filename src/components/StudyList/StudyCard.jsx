@@ -14,7 +14,7 @@ const StudyCard = ({className, title, body, lastUpdate}) => {
   return (
     <Card {...{title}} className={studyCardClass}>
       <div className="overflow-scroll h-full">
-        <p className="pl-1 text-darkGZZrey font-title">{body}</p>
+        <p className="pl-1 text-darkGrey font-title">{body}</p>
         <p className="text-grey float-right font-title">
           <small>
             Last Updated: <TimeAgo date={lastUpdate} />
