@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import {Button} from 'kf-uikit';
 import SelectElement from './SelectElement';
 const FileEditor = ({kfId, name, description, fileType, onSubmit}) => (
-  <form onSubmit={e => onSubmit(e)} className="FileEditor">
-    <div className="w-full mr-6">
+  <form onSubmit={e => onSubmit(e)} className="FileEditor sm:flex-no-wrap">
+    <div className="w-full sm:mr-6">
       <label>
         File name:
         <input
-          className="FileEditor--Input mb-6"
+          className="FileEditor--Input "
           type="text"
           name="name"
           defaultValue={name}
@@ -17,7 +17,7 @@ const FileEditor = ({kfId, name, description, fileType, onSubmit}) => (
       <label>
         File description (required):
         <textarea
-          className="FileEditor--Input h-64"
+          className="FileEditor--Input h-64 sm:mb-0"
           type="text"
           name="description"
           defaultValue={description}
@@ -25,33 +25,31 @@ const FileEditor = ({kfId, name, description, fileType, onSubmit}) => (
       </label>
     </div>
     <fieldset className="w-full">
-      <label>
-        Select a file type (required):
-        <SelectElement
-          name="shipping"
-          icon="release"
-          title="Shipping Manifest"
-          body="Some helpful description."
-        />
-        <SelectElement
-          name="clin"
-          icon="biospecimen"
-          title="Clinical/Phenotype Data"
-          body="Some helpful description."
-        />
-        <SelectElement
-          name="sequening"
-          icon="customize"
-          title="Sequencing Manifest"
-          body="Some helpful description."
-        />
-        <SelectElement
-          name="other"
-          icon="info"
-          title="Other"
-          body="Some helpful description."
-        />
-      </label>
+      Select a file type (required):
+      <SelectElement
+        name="shipping"
+        icon="release"
+        title="Shipping Manifest"
+        body="Some helpful description."
+      />
+      <SelectElement
+        name="clin"
+        icon="biospecimen"
+        title="Clinical/Phenotype Data"
+        body="Some helpful description."
+      />
+      <SelectElement
+        name="sequening"
+        icon="customize"
+        title="Sequencing Manifest"
+        body="Some helpful description."
+      />
+      <SelectElement
+        name="other"
+        icon="info"
+        title="Other"
+        body="Some helpful description."
+      />
       <div className="flex flex-row-reverse w-full">
         <Button type="submit">Save</Button>
       </div>
