@@ -2,11 +2,22 @@ import React from 'react';
 import propTypes from 'prop-types';
 import classes from 'classnames';
 import TimeAgo from 'react-timeago';
-import { GridContainer } from '../../components/Grid';
+import {GridContainer} from '../../components/Grid';
 import {Icon} from 'kf-uikit';
 
-const StudyHeader = ({ kfId, modifiedAt, shortName, name: studyName, className }) => {
-  const studyHeaderClasses = classes('StudyHeader', 'py-4', 'bg-lightGrey', className);
+const StudyHeader = ({
+  kfId,
+  modifiedAt,
+  shortName,
+  name: studyName,
+  className,
+}) => {
+  const studyHeaderClasses = classes(
+    'StudyHeader',
+    'py-4',
+    'bg-lightGrey',
+    className,
+  );
   return (
     <header className={studyHeaderClasses}>
       <GridContainer>
