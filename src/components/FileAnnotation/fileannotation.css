@@ -1,0 +1,17 @@
+.SelectElement {
+  @inherit: .w-full, .shadow, .rounded-sm, .bg-white, .mt-2, .mb-2, .p-2, .pt-3,
+    .align-middle, .flex, .flex-row;
+}
+
+.SelectElement--Icon {
+  @inherit: .bg-lightGrey, .rounded-full, .p-2, .w-12, .h-12, .pt-3, .mr-2,
+    .text-center;
+}
+
+.FileEditor {
+  @inherit: .w-full, .bg-lightGrey, .p-4, .flex, .flex-row;
+}
+
+.FileEditor--Input {
+  @inherit: .w-full, .p-2, .border-transparent, .rounded-sm, .mt-2;
+}
