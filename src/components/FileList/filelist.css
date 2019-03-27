@@ -1,0 +1,15 @@
+/* FileList and FileListElement CSS */
+.FileList {
+  @inherit: .list-reset, .min-w-full, .mt-2, .mb-8, .border, .border-l-0,
+    .border-r-0, .border-b-0, .border-grey;
+}
+
+.FileList--Element {
+  @inherit: .list-reset, .w-full, .border, .border-l-0, .border-r-0, .border-t-0,
+    .border-grey, .pb-2, .pl-6;
+}
+
+.FileList--Empty {
+  @inherit: .text-grey, .border, .border-l-0, .border-r-0, .border-t-0,
+    .border-grey, .p-6, .m-0;
+}
