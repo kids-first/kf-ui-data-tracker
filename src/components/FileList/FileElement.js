@@ -27,8 +27,20 @@ const formatFileSize = (bytes, si) => {
   return bytes.toFixed(1) + ' ' + units[u];
 };
 
-const FileElement = ({className, fileNode, history, match}) => {
-  const fileElementClass = classes('FileList--Element', className);
+const FileElement = ({
+  className,
+  fileNode,
+  deleteFile,
+  loading,
+  error,
+  history,
+  match,
+}) => {
+  const fileElementClass = classes(
+    'FileList--Element',
+    {'cursor-not-allowed': loading, 'bg-lightGrey': loading},
+    className,
+  );
   const sortedVersions =
     fileNode.versions.edges.length > 0
       ? fileNode.versions.edges.sort(dateCompare)
@@ -41,6 +53,9 @@ const FileElement = ({className, fileNode, history, match}) => {
     sortedVersions.length > 0 ? sortedVersions[0].node.createdAt : null;
   return (
     <li className={fileElementClass}>
+      {loading && (
+        <Icon kind="reset" width={24} className="float-right mt-5 mr-5 spin" />
+      )}
       <h4 className="mt-0 font-normal" title={fileNode.description}>
         {fileNode.name}
         <Link to={`/study/${match.params.kfId}/files/${fileNode.kfId}`}>
@@ -53,6 +68,14 @@ const FileElement = ({className, fileNode, history, match}) => {
         >
           <Icon className="pt-4" kind="download" />
         </a>
+        <button onClick={e => deleteFile()}>
+          <Icon className="pt-4" kind="delete" />
+        </button>
+        {error &&
+          error.graphQLErrors &&
+          error.graphQLErrors.map(err => (
+            <span className="text-red">{err.message}</span>
+          ))}
       </h4>
       <span className="mt-0 font-normal text-grey ">
         <small>
@@ -74,6 +97,10 @@ FileList.propTypes = {
   className: PropTypes.string,
   /** Array of study object*/
   fileNode: PropTypes.object,
+  /** Loading state of the file*/
+  loading: PropTypes.bool,
+  /** Errors from graphQL */
+  errors: PropTypes.object,
 };
 
 FileList.defaultProps = {

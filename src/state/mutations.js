@@ -28,3 +28,12 @@ export const UPDATE_FILE = gql`
     }
   }
 `;
+
+// Mutation to delete a file
+export const DELETE_FILE = gql`
+  mutation($kfId: String!) {
+    deleteFile(kfId: $kfId) {
+      success
+    }
+  }
+`;

@@ -7,7 +7,7 @@ import {
   AnnotationView,
   LoginView,
   StudyListView,
-  FilesView,
+  StudyFilesListView,
   CallbackView,
   NavBarView,
 } from '../views';
@@ -31,17 +31,29 @@ const Routes = () => (
       <Route path="/callback" component={CallbackView} />
       <PrivateRoute exact path="/" component={StudyListView} />
       <PrivateRoute path="/study/:kfId/" component={NavBarView} />
-      <PrivateRoute exact path="/study/:kfId/files" component={FilesView} />
+      <PrivateRoute
+        exact
+        path="/study/:kfId/files"
+        component={StudyFilesListView}
+      />
       <PrivateRoute
         path="/study/:kfId/files/:fileId"
         component={AnnotationView}
       />
-      <PrivateRoute exact path="/study/:kfId/basicInfo" component={FilesView} />
-      <PrivateRoute exact path="/study/:kfId/dashboard" component={FilesView} />
+      <PrivateRoute
+        exact
+        path="/study/:kfId/basicInfo"
+        component={StudyFilesListView}
+      />
+      <PrivateRoute
+        exact
+        path="/study/:kfId/dashboard"
+        component={StudyFilesListView}
+      />
       <PrivateRoute
         exact
         path="/study/:kfId/collaborators"
-        component={FilesView}
+        component={StudyFilesListView}
       />
     </div>
   </Router>
