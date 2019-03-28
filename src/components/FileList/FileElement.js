@@ -31,6 +31,7 @@ const FileElement = ({
   className,
   fileNode,
   deleteFile,
+  downloadFile,
   loading,
   error,
   history,
@@ -61,13 +62,9 @@ const FileElement = ({
         <Link to={`/study/${match.params.kfId}/files/${fileNode.kfId}`}>
           <Icon className="pt-4 ml-2" kind="edit" />
         </Link>
-        <a
-          href={fileNode.downloadUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <button onClick={e => downloadFile(e)}>
           <Icon className="pt-4" kind="download" />
-        </a>
+        </button>
         <button onClick={e => deleteFile()}>
           <Icon className="pt-4" kind="delete" />
         </button>
@@ -101,6 +98,10 @@ FileList.propTypes = {
   loading: PropTypes.bool,
   /** Errors from graphQL */
   errors: PropTypes.object,
+  /** Action to delete a file */
+  deleteFile: PropTypes.func,
+  /** Action to download a file */
+  downloadFile: PropTypes.func,
 };
 
 FileList.defaultProps = {
