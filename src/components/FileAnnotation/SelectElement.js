@@ -7,7 +7,7 @@ const SelectElement = ({className, name, title, body, icon}) => {
   let selectElementClass = classes('SelectElement', className);
   return (
     <label className={selectElementClass}>
-      <input className="border m-2 mt-5" type="checkbox" name={name} />
+      <input className="border m-2 mt-5" type="radio" name={name} />
       <div className="SelectElement--Icon">
         <Icon kind={icon} />
       </div>
