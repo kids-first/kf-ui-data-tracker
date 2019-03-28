@@ -24,7 +24,7 @@ const StudyFilesListView = props => (
             Upload Study Files & Manifests for DRC Approval
           </h3>
           <section className="study-file-list col-12">
-            <FileList fileList={files} />
+            <FileList fileList={files} studyId={props.match.params.kfId} />
             <UploadContainer />
           </section>
         </GridContainer>

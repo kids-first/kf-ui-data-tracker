@@ -27,7 +27,15 @@ const formatFileSize = (bytes, si) => {
   return bytes.toFixed(1) + ' ' + units[u];
 };
 
-const FileElement = ({className, fileNode, history, match}) => {
+const FileElement = ({
+  className,
+  fileNode,
+  deleteFile,
+  loading,
+  error,
+  history,
+  match,
+}) => {
   const fileElementClass = classes('FileList--Element', className);
   const sortedVersions =
     fileNode.versions.edges.length > 0
@@ -53,6 +61,9 @@ const FileElement = ({className, fileNode, history, match}) => {
         >
           <Icon className="pt-4" kind="download" />
         </a>
+        <button onClick={e => deleteFile()}>
+          <Icon className="pt-4" kind="delete" />
+        </button>
       </h4>
       <span className="mt-0 font-normal text-grey ">
         <small>
