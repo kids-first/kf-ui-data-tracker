@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
 
@@ -14,7 +14,7 @@ import {
 
 const Routes = () => (
   <Router>
-    <div>
+    <Fragment>
       <Route
         path="/"
         render={({history}) => (
@@ -29,33 +29,35 @@ const Routes = () => (
       />
       <Route path="/login" component={LoginView} />
       <Route path="/callback" component={CallbackView} />
-      <PrivateRoute exact path="/" component={StudyListView} />
-      <PrivateRoute path="/study/:kfId/" component={NavBarView} />
-      <PrivateRoute
-        exact
-        path="/study/:kfId/files"
-        component={StudyFilesListView}
-      />
-      <PrivateRoute
-        path="/study/:kfId/files/:fileId"
-        component={AnnotationView}
-      />
-      <PrivateRoute
-        exact
-        path="/study/:kfId/basicInfo"
-        component={StudyFilesListView}
-      />
-      <PrivateRoute
-        exact
-        path="/study/:kfId/dashboard"
-        component={StudyFilesListView}
-      />
-      <PrivateRoute
-        exact
-        path="/study/:kfId/collaborators"
-        component={StudyFilesListView}
-      />
-    </div>
+      <div className="BodyContent">
+        <PrivateRoute exact path="/" component={StudyListView} />
+        <PrivateRoute path="/study/:kfId/" component={NavBarView} />
+        <PrivateRoute
+          exact
+          path="/study/:kfId/files"
+          component={StudyFilesListView}
+        />
+        <PrivateRoute
+          path="/study/:kfId/files/:fileId"
+          component={AnnotationView}
+        />
+        <PrivateRoute
+          exact
+          path="/study/:kfId/basicInfo"
+          component={StudyFilesListView}
+        />
+        <PrivateRoute
+          exact
+          path="/study/:kfId/dashboard"
+          component={StudyFilesListView}
+        />
+        <PrivateRoute
+          exact
+          path="/study/:kfId/collaborators"
+          component={StudyFilesListView}
+        />
+      </div>
+    </Fragment>
   </Router>
 );
 

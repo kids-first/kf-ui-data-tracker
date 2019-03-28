@@ -1,12 +1,11 @@
 import React from 'react';
 import FileEditorContainer from '../containers/FileEditorContainer';
-import {GridContainer} from '../components/Grid';
 
 const AnnotationView = ({match}) => {
   // The kf_id of the file
   const fileId = match.params.fileId;
   return (
-    <GridContainer>
+    <div className="mx-12">
       <h3 className="col-12 text-blue font-normal">Tell us about your files</h3>
       <h4 className="col-12 font-normal mt-0 text-darkGrey">
         Help ensure the fastest processing and harmonization of your study by
@@ -16,7 +15,7 @@ const AnnotationView = ({match}) => {
       <section className="study-file-list col-12">
         <FileEditorContainer kfId={fileId} />
       </section>
-    </GridContainer>
+    </div>
   );
 };
 

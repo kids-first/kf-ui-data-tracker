@@ -1,0 +1,8 @@
+.StudyCard {
+  @inherit: .h-64, .shadow-md, .border-transparent;
+}
+
+.StudyList {
+  @inherit: .m-4, .mr-8, .max-w-full, .min-h-screen, .list-reset, .flex,
+    .flex-row, .flex-wrap, .content-start;
+}

@@ -2,21 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classes from 'classnames';
 import {withRouter} from 'react-router-dom';
-import {GridContainer} from '../Grid';
 import NavBarButton from './NavBarButton';
 /**
  * Displays nav bar
  */
 
 const NavBar = ({className, match}) => {
-  let navBarClass = classes(
-    'SecondaryNav',
-    'grid-container--collapsed',
-    className,
-  );
+  let navBarClass = classes('SecondaryNav', className);
 
   return (
-    <GridContainer className={navBarClass}>
+    <div className={navBarClass}>
       <NavBarButton to={`/study/${match.params.kfId}/basicInfo`}>
         Basic Info
       </NavBarButton>
@@ -29,7 +24,7 @@ const NavBar = ({className, match}) => {
       <NavBarButton to={`/study/${match.params.kfId}/collaborators`}>
         Collaborators
       </NavBarButton>
-    </GridContainer>
+    </div>
   );
 };
 

@@ -57,7 +57,7 @@ const FileElement = ({
       {loading && (
         <Icon kind="reset" width={24} className="float-right mt-5 mr-5 spin" />
       )}
-      <h4 className="mt-0 font-normal" title={fileNode.description}>
+      <h4 className="mt-0 pt-2 font-normal" title={fileNode.description}>
         {fileNode.name}
         <Link to={`/study/${match.params.kfId}/files/${fileNode.kfId}`}>
           <Icon className="pt-4 ml-2" kind="edit" />

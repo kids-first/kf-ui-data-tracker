@@ -3,7 +3,6 @@ import {Query} from 'react-apollo';
 
 import {GET_STUDY_BY_ID} from '../state/queries';
 import {LoadingPlaceholder} from '../components/Loading';
-import {GridContainer} from '../components/Grid';
 import {UploadContainer} from '../containers';
 import FileList from '../components/FileList/FileList';
 
@@ -19,15 +18,15 @@ const StudyFilesListView = props => (
       const files = data.studyByKfId.files.edges;
 
       return (
-        <GridContainer>
-          <h3 className="col-12 text-blue font-normal">
+        <div className="mx-12">
+          <h3 className="text-blue font-normal">
             Upload Study Files & Manifests for DRC Approval
           </h3>
-          <section className="study-file-list col-12">
+          <section className="study-file-list">
             <FileList fileList={files} studyId={props.match.params.kfId} />
             <UploadContainer />
           </section>
-        </GridContainer>
+        </div>
       );
     }}
   </Query>

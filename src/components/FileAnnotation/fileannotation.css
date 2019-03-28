@@ -9,9 +9,9 @@
 }
 
 .FileEditor {
-  @inherit: .w-full, .bg-lightGrey, .p-4, .flex, .flex-row;
+  @inherit: .w-full, .bg-lightGrey, .p-4, .flex, .flex-row, .flex-wrap;
 }
 
 .FileEditor--Input {
-  @inherit: .w-full, .p-2, .border-transparent, .rounded-sm, .mt-2;
+  @inherit: .w-full, .p-2, .border-transparent, .rounded-sm, .mt-2, .mb-6;
 }
