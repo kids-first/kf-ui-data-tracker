@@ -9,6 +9,8 @@ export const CREATE_FILE = gql`
         id
         kfId
         name
+        description
+        fileType
         downloadUrl
       }
     }
@@ -17,13 +19,24 @@ export const CREATE_FILE = gql`
 
 // Mutation to update file metadata
 export const UPDATE_FILE = gql`
-  mutation($kfId: String!, $name: String, $description: String) {
-    updateFile(kfId: $kfId, name: $name, description: $description) {
+  mutation(
+    $kfId: String!
+    $name: String
+    $description: String
+    $fileType: FileFileType!
+  ) {
+    updateFile(
+      kfId: $kfId
+      name: $name
+      description: $description
+      fileType: $fileType
+    ) {
       file {
         id
         kfId
         name
         description
+        fileType
       }
     }
   }
