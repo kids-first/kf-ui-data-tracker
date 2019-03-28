@@ -3,11 +3,16 @@ import PropTypes from 'prop-types';
 import classes from 'classnames';
 import {Icon} from 'kf-uikit';
 
-const SelectElement = ({className, name, title, body, icon}) => {
+const SelectElement = ({className, name, value, title, body, icon}) => {
   let selectElementClass = classes('SelectElement', className);
   return (
     <label className={selectElementClass}>
-      <input className="border m-2 mt-5" type="radio" name={name} />
+      <input
+        className="border m-2 mt-5"
+        type="radio"
+        name={name}
+        value={value}
+      />
       <div className="SelectElement--Icon">
         <Icon kind={icon} />
       </div>
@@ -22,6 +27,8 @@ const SelectElement = ({className, name, title, body, icon}) => {
 SelectElement.propTypes = {
   /** The key value signed to the selection */
   name: PropTypes.string.isRequired,
+  /** The value of the fileType enum */
+  value: PropTypes.string.isRequired,
   /** The title displayed on the selection card */
   title: PropTypes.string.isRequired,
   /** The body displayed on the selection card */

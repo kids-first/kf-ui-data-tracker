@@ -28,24 +28,28 @@ const FileEditor = ({kfId, name, description, fileType, onSubmit}) => (
       Select a file type (required):
       <SelectElement
         name="shipping"
+        value="SHP"
         icon="release"
         title="Shipping Manifest"
         body="Some helpful description."
       />
       <SelectElement
         name="clin"
+        value="CLN"
         icon="biospecimen"
         title="Clinical/Phenotype Data"
         body="Some helpful description."
       />
       <SelectElement
         name="sequening"
+        value="SEQ"
         icon="customize"
         title="Sequencing Manifest"
         body="Some helpful description."
       />
       <SelectElement
         name="other"
+        value="OTH"
         icon="info"
         title="Other"
         body="Some helpful description."
