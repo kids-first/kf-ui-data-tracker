@@ -2,6 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Button} from 'kf-uikit';
 import SelectElement from './SelectElement';
+
+/**
+ * Form to add fields to a newly uploaded file
+ */
 const FileEditor = ({kfId, name, description, fileType, onSubmit}) => (
   <form onSubmit={e => onSubmit(e)} className="FileEditor sm:flex-no-wrap">
     <div className="w-full sm:mr-6">

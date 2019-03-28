@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 import classes from 'classnames';
 import {Icon} from 'kf-uikit';
 
+/**
+ * A radio button that displays information about a file type with a title,
+ * description, and icon.
+ */
 const SelectElement = ({className, name, value, title, body, icon}) => {
   let selectElementClass = classes('SelectElement', className);
   return (
