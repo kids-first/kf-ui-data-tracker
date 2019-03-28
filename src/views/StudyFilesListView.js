@@ -7,7 +7,10 @@ import {GridContainer} from '../components/Grid';
 import {UploadContainer} from '../containers';
 import FileList from '../components/FileList/FileList';
 
-const FileUploadView = props => (
+/**
+ * List and manage files in a study and allow a user to upload more
+ */
+const StudyFilesListView = props => (
   <Query query={GET_STUDY_BY_ID} variables={{kfId: props.match.params.kfId}}>
     {({loading, error, data}) => {
       if (loading) return <LoadingPlaceholder componentName="File List" />;
@@ -30,4 +33,4 @@ const FileUploadView = props => (
   </Query>
 );
 
-export default FileUploadView;
+export default StudyFilesListView;

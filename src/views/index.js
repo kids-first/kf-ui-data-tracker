@@ -1,5 +1,5 @@
 export {default as StudyListView} from './StudyListView';
-export {default as FilesView} from './FilesView';
+export {default as StudyFilesListView} from './StudyFilesListView';
 export {default as LoginView} from './LoginView';
 export {default as CallbackView} from './CallbackView';
 export {default as AnnotationView} from './AnnotationView';
