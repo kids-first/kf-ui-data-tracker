@@ -70,6 +70,10 @@ FileEditor.propTypes = {
   kfId: PropTypes.string.isRequired,
   /** The name of the file */
   name: PropTypes.string.isRequired,
+  /** The description for the file */
+  description: PropTypes.string.isRequired,
+  /** The value of the currently selected fileType's enum*/
+  fileType: PropTypes.string.isRequired,
   /** Action to perform when form is submitted */
   onSubmit: PropTypes.func.isRequired,
 };
