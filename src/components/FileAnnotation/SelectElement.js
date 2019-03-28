@@ -7,7 +7,16 @@ import {Icon} from 'kf-uikit';
  * A radio button that displays information about a file type with a title,
  * description, and icon.
  */
-const SelectElement = ({className, name, value, title, body, icon}) => {
+const SelectElement = ({
+  className,
+  name,
+  value,
+  title,
+  body,
+  select,
+  selected,
+  icon,
+}) => {
   let selectElementClass = classes('SelectElement', className);
   return (
     <label className={selectElementClass}>
@@ -16,6 +25,8 @@ const SelectElement = ({className, name, value, title, body, icon}) => {
         type="radio"
         name={name}
         value={value}
+        checked={selected}
+        onChange={(e) => select(e)}
       />
       <div className="SelectElement--Icon">
         <Icon kind={icon} />
@@ -39,6 +50,10 @@ SelectElement.propTypes = {
   body: PropTypes.string,
   /** The icon for this selection */
   icon: PropTypes.string,
+  /** onChange event for the radio button */
+  select: PropTypes.func.isRequired,
+  /** whether the radio button is selected or not */
+  selected: PropTypes.bool.isRequired,
 };
 
 SelectElement.defaultProps = {

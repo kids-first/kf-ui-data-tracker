@@ -22,6 +22,7 @@ export const ALL_STUDIES = gql`
 export const GET_STUDY_BY_ID = gql`
   query Study($kfId: String!) {
     studyByKfId(kfId: $kfId) {
+      id
       name
       shortName
       bucket
@@ -33,10 +34,13 @@ export const GET_STUDY_BY_ID = gql`
             id
             kfId
             name
+            fileType
+            description
             downloadUrl
             versions {
               edges {
                 node {
+                  id
                   size
                   createdAt
                 }
@@ -56,6 +60,7 @@ export const GET_FILE_BY_ID = gql`
       kfId
       name
       description
+      fileType
     }
   }
 `;

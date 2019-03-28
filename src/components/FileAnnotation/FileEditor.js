@@ -6,7 +6,14 @@ import SelectElement from './SelectElement';
 /**
  * Form to add fields to a newly uploaded file
  */
-const FileEditor = ({kfId, name, description, fileType, onSubmit}) => (
+const FileEditor = ({
+  kfId,
+  name,
+  description,
+  fileType,
+  selectFileType,
+  onSubmit,
+}) => (
   <form onSubmit={e => onSubmit(e)} className="FileEditor sm:flex-no-wrap">
     <div className="w-full sm:mr-6">
       <label>
@@ -32,10 +39,12 @@ const FileEditor = ({kfId, name, description, fileType, onSubmit}) => (
       Select a file type (required):
       <SelectElement
         name="shipping"
-        value="SHP"
+        value="SHM"
         icon="release"
         title="Shipping Manifest"
         body="Some helpful description."
+        select={e => selectFileType(e)}
+        selected={fileType === 'SHM'}
       />
       <SelectElement
         name="clin"
@@ -43,6 +52,8 @@ const FileEditor = ({kfId, name, description, fileType, onSubmit}) => (
         icon="biospecimen"
         title="Clinical/Phenotype Data"
         body="Some helpful description."
+        select={selectFileType}
+        selected={fileType === 'CLN'}
       />
       <SelectElement
         name="sequening"
@@ -50,6 +61,8 @@ const FileEditor = ({kfId, name, description, fileType, onSubmit}) => (
         icon="customize"
         title="Sequencing Manifest"
         body="Some helpful description."
+        select={selectFileType}
+        selected={fileType === 'SEQ'}
       />
       <SelectElement
         name="other"
@@ -57,6 +70,8 @@ const FileEditor = ({kfId, name, description, fileType, onSubmit}) => (
         icon="info"
         title="Other"
         body="Some helpful description."
+        select={selectFileType}
+        selected={fileType === 'OTH'}
       />
       <div className="flex flex-row-reverse w-full">
         <Button type="submit">Save</Button>
@@ -76,6 +91,8 @@ FileEditor.propTypes = {
   fileType: PropTypes.string.isRequired,
   /** Action to perform when form is submitted */
   onSubmit: PropTypes.func.isRequired,
+  /** Function for onChange event on file type selection */
+  selectFileType: PropTypes.func.isRequired,
 };
 
 export default FileEditor;
