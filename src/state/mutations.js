@@ -37,3 +37,12 @@ export const DELETE_FILE = gql`
     }
   }
 `;
+
+// Mutation to get a signed url for a file
+export const FILE_DOWNLOAD_URL = gql`
+  mutation($studyId: String!, $fileId: String!) {
+    signedUrl(studyId: $studyId, fileId: $fileId) {
+      url
+    }
+  }
+`;
