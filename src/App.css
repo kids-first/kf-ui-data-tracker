@@ -8,7 +8,6 @@
 }
 
 body {
-  @inherit: .bg-lightGrey;
 }
 
 .View--Login {
@@ -24,5 +23,4 @@ body {
 .BodyContent {
   max-width: var(--site-max-width);
   margin: auto;
-  @inherit: .bg-white;
 }

@@ -12,13 +12,13 @@ const StudyList = ({className, studyList, history}) => {
   if (studyList) {
     return (
       <div className="bg-lightGrey">
-        <h1 className="m-0 pt-12 pl-12 text-blue font-title pl-4">
+        <h1 className="m-0 pt-12 text-blue font-title pl-8 BodyContent">
           Browse Studies
         </h1>
         <ul className={studyListClass}>
           {studyList.map(node => (
             <li
-              className="cursor-pointer w-full sm:w-1/2 md:w-1/3"
+              className="cursor-pointer w-full sm:w-1/2 md:w-1/3 lg:w-1/4"
               key={node.node.id}
               onClick={() => {
                 history.push(`/study/${node.node.kfId}/files`);

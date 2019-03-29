@@ -3,6 +3,6 @@
 }
 
 .StudyList {
-  @inherit: .m-4, .mr-8, .max-w-full, .min-h-screen, .list-reset, .flex,
+  @inherit: .p-4, .m-4, .max-w-full, .min-h-screen, .list-reset, .flex,
     .flex-row, .flex-wrap, .content-start;
 }

@@ -1,3 +1,3 @@
 .StudyHeader {
-  @inherit: .py-4, .bg-blue, .flex, .flex-row, .justify-between, .text-white;
+  @inherit: .bg-lightGrey, .flex, .flex-row, .justify-between;
 }
