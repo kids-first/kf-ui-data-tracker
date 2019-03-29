@@ -29,7 +29,7 @@ const LoginView = () => {
               y="50%"
               dominantBaseline="central"
               textAnchor="middle"
-              children={'Kid First Data Resource Portal'}
+              children={'Kids First Data Tracker'}
             />
           </svg>
         </h1>
@@ -40,7 +40,7 @@ const LoginView = () => {
           </div>
           <hr />
           <p className="max-w-full">
-            <span>New to Kids First Data Resource Portal?</span>
+            <span>New to Kids First Data Tracker?</span>
             <a className="no-underline" href="/">
               {' '}
               Join now >
