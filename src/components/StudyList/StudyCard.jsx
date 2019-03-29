@@ -9,17 +9,22 @@ import {Card} from 'kf-uikit';
  */
 
 const StudyCard = ({className, title, body, lastUpdate}) => {
-  let studyCardClass = classes('StudyCard', 'w-full', className);
+  let studyCardClass = classes(
+    'StudyCard',
+    'w-full',
+    'hover:shadow-lg',
+    className,
+  );
 
   return (
     <Card {...{title}} className={studyCardClass}>
-      <div className="overflow-scroll h-full">
-        <p className="pl-1 text-darkGrey font-title">{body}</p>
-        <p className="text-grey float-right font-title">
-          <small>
-            Last Updated: <TimeAgo date={lastUpdate} />
-          </small>
-        </p>
+      <div className="flex flex-col justify-between h-48">
+        <div className="pl-1 overflow-hidden">
+          <p className="m-0 font-title text-darkGrey">{body}</p>
+        </div>
+        <small className="self-end w-full text-grey font-title mb-3 h-8">
+          Last Updated: <TimeAgo date={lastUpdate} />
+        </small>
       </div>
     </Card>
   );
