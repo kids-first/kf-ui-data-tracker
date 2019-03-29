@@ -1,0 +1,5 @@
+.Badge {
+  @inherit: .bg-teal, .max-w-full, .self-center, .m-1, .px-4, .py-1,
+    .rounded-full, .text-center, .text-xs, .text-white, .leading-tight,
+    .whitespace-no-wrap;
+}
