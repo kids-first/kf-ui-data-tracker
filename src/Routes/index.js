@@ -10,6 +10,7 @@ import {
   StudyFilesListView,
   CallbackView,
   NavBarView,
+  EmptyView,
 } from '../views';
 
 const Routes = () => (
@@ -40,20 +41,12 @@ const Routes = () => (
         path="/study/:kfId/files/:fileId"
         component={AnnotationView}
       />
-      <PrivateRoute
-        exact
-        path="/study/:kfId/basicInfo"
-        component={StudyFilesListView}
-      />
-      <PrivateRoute
-        exact
-        path="/study/:kfId/dashboard"
-        component={StudyFilesListView}
-      />
+      <PrivateRoute exact path="/study/:kfId/basicInfo" component={EmptyView} />
+      <PrivateRoute exact path="/study/:kfId/dashboard" component={EmptyView} />
       <PrivateRoute
         exact
         path="/study/:kfId/collaborators"
-        component={StudyFilesListView}
+        component={EmptyView}
       />
     </Fragment>
   </Router>
