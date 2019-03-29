@@ -18,7 +18,7 @@ const StudyFilesListView = props => (
       const files = data.studyByKfId.files.edges;
 
       return (
-        <div className="mx-12">
+        <div className="mx-12 pb-16">
           <h3 className="text-blue font-normal">
             Upload Study Files & Manifests for DRC Approval
           </h3>

@@ -24,5 +24,5 @@ body {
 .BodyContent {
   max-width: var(--site-max-width);
   margin: auto;
-  @inherit: .min-h-screen, .bg-white;
+  @inherit: .bg-white;
 }
