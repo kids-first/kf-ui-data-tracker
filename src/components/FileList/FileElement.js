@@ -95,7 +95,7 @@ const FileElement = ({
         <span className="mt-0 font-normal text-grey text-xs">
           Created:
           {latestDate ? (
-            <TimeAgo className="mr-4 pl-1" date={latestDate} />
+            <TimeAgo className="mr-4 pl-1" date={latestDate} live={false} />
           ) : (
             <span className="mr-4 pl-1">unknown</span>
           )}
