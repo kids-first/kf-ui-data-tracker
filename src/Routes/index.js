@@ -1,6 +1,7 @@
 import React, {Fragment} from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
+import AdminRoute from './AdminRoute';
 
 import {Header} from 'kf-uikit';
 import {
@@ -11,6 +12,7 @@ import {
   CallbackView,
   NavBarView,
   EmptyView,
+  TokensListView,
 } from '../views';
 
 const Routes = () => (
@@ -48,6 +50,7 @@ const Routes = () => (
         path="/study/:kfId/collaborators"
         component={EmptyView}
       />
+      <AdminRoute exact path="/tokens" component={TokensListView} />
     </Fragment>
   </Router>
 );
