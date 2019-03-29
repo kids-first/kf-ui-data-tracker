@@ -9,7 +9,9 @@ const StudyListView = () => (
     {({loading, error, data}) => {
       if (loading) return <LoadingPlaceholder componentName="Study List" />;
       if (error) return `Error! ${error.message}`;
-      return <StudyList studyList={data.allStudies.edges} />;
+      return (
+        <StudyList studyList={data.allStudies.edges} className="BodyContent" />
+      );
     }}
   </Query>
 );

@@ -29,34 +29,32 @@ const Routes = () => (
       />
       <Route path="/login" component={LoginView} />
       <Route path="/callback" component={CallbackView} />
-      <div className="BodyContent">
-        <PrivateRoute exact path="/" component={StudyListView} />
-        <PrivateRoute path="/study/:kfId/" component={NavBarView} />
-        <PrivateRoute
-          exact
-          path="/study/:kfId/files"
-          component={StudyFilesListView}
-        />
-        <PrivateRoute
-          path="/study/:kfId/files/:fileId"
-          component={AnnotationView}
-        />
-        <PrivateRoute
-          exact
-          path="/study/:kfId/basicInfo"
-          component={StudyFilesListView}
-        />
-        <PrivateRoute
-          exact
-          path="/study/:kfId/dashboard"
-          component={StudyFilesListView}
-        />
-        <PrivateRoute
-          exact
-          path="/study/:kfId/collaborators"
-          component={StudyFilesListView}
-        />
-      </div>
+      <PrivateRoute path="/study/:kfId/" component={NavBarView} />
+      <PrivateRoute exact path="/" component={StudyListView} />
+      <PrivateRoute
+        exact
+        path="/study/:kfId/files"
+        component={StudyFilesListView}
+      />
+      <PrivateRoute
+        path="/study/:kfId/files/:fileId"
+        component={AnnotationView}
+      />
+      <PrivateRoute
+        exact
+        path="/study/:kfId/basicInfo"
+        component={StudyFilesListView}
+      />
+      <PrivateRoute
+        exact
+        path="/study/:kfId/dashboard"
+        component={StudyFilesListView}
+      />
+      <PrivateRoute
+        exact
+        path="/study/:kfId/collaborators"
+        component={StudyFilesListView}
+      />
     </Fragment>
   </Router>
 );
