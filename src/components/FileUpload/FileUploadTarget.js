@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 const FileUploadTarget = props => {
   const {
     className,
+    error,
     instructions,
     handleSelectedFile,
     handleDragOver,
@@ -47,6 +48,11 @@ const FileUploadTarget = props => {
         className="Button Button--default"
         onChange={handleSelectedFile}
       />
+      {error && error.graphQLErrors && (
+        <h4 className="text-red px-2">
+          Failed to upload: {error.graphQLErrors.map(err => err.message)}
+        </h4>
+      )}
     </form>
   );
 };
@@ -54,8 +60,10 @@ const FileUploadTarget = props => {
 FileUploadTarget.propTypes = {
   /** any additional classes that should be added to the container */
   className: PropTypes.string,
-  /** if cursor is currently dragging over the component
-  dragging: PropTypes.boolean,
+  /** if cursor is currently dragging over the component */
+  dragging: PropTypes.bool,
+  /** Errors from graphQL */
+  errors: PropTypes.object,
   /** add helpful instruction about how to drag and drop files */
   instructions: PropTypes.string,
   /** operation when component is dragged over */
