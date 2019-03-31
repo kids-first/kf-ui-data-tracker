@@ -72,8 +72,12 @@ const FileElement = ({
         <Icon kind="reset" width={24} className="float-right mt-5 mr-5 spin" />
       )}
       <div className="FileList--ElementBadge sm:w-48">
-        <Badge state="new" className="sm:min-w-full" />
-        <Badge state="pendingApproval" className="sm:min-w-full" />
+        <Badge state="new" loading={loading} className="sm:min-w-full" />
+        <Badge
+          state="pendingApproval"
+          loading={loading}
+          className="sm:min-w-full"
+        />
       </div>
       <div className="flex-initial">
         <p className="mt-1 font-bold text-sm" title={fileNode.description}>

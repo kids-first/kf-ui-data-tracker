@@ -11,22 +11,26 @@ const badgeState = {
   changesRequired: {name: 'Changes Required', color: 'bg-red'},
 };
 
-const Badge = ({className, state}) => {
-  if (badgeState[state]) {
-    const color = badgeState[state].color;
-    const name = badgeState[state].name;
-    const validBadgeClass = classes('Badge', className, color);
-    return <div className={validBadgeClass}>{name}</div>;
-  } else {
-    return <div className="Badge sm:min-w-full bg-darkGrey">Invalid State</div>;
-  }
+const Badge = ({className, state, loading}) => {
+  const color = state in badgeState ? badgeState[state].color : null;
+  const name = state in badgeState ? badgeState[state].name : 'invalid';
+  const badgeClass = classes(className, 'Badge', {
+    [color]: !loading,
+    'Badge--loading': loading,
+    'Badge--invalid': !(state in badgeState),
+  });
+  return (
+    <div className={badgeClass}>
+      <span className={loading && 'invisible'}>{name}</span>
+    </div>
+  );
 };
 
 Badge.propTypes = {
   /** Any additional classes to be applied to the nav bar button*/
   className: PropTypes.string,
   /** Badge state. */
-  state: PropTypes.string.isRequired,
+  state: PropTypes.string,
 };
 
 Badge.defaultProps = {
