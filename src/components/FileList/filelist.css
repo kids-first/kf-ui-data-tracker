@@ -19,6 +19,14 @@
     .content-center, .justify-around;
 }
 
+.FileStatus {
+  @inherit: .mt-0, .mr-4, .font-normal, .text-xs;
+}
+
+.FileStatus--loading {
+  @inherit: .mt-0, .mr-6, .px-4, .bg-lightGrey, .text-lightGrey;
+}
+
 @keyframes spin {
   from {
     transform: rotate(360deg);

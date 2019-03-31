@@ -49,11 +49,30 @@ const FileElement = ({
   const fileElementClass = classes(
     'FileList--Element',
     'sm:flex-no-wrap',
-    {'cursor-not-allowed': loading, 'bg-lightGrey': loading},
+    {'cursor-not-allowed': loading},
     className,
   );
+  const fileStatusClass = classes(
+    {
+      'FileStatus--loading': loading,
+      FileStatus: !loading,
+    },
+    'text-grey',
+  );
+  const fileNameClass = classes(
+    {
+      'FileStatus--loading': loading,
+      FileStatus: !loading,
+      'text-sm': !loading,
+    },
+    'font-bold',
+  );
+  const buttonClass = classes({invisible: loading});
+  const fileKfID = fileNode ? fileNode.kfId : 'unknown ID';
+  const fileName = fileNode ? fileNode.name : 'unknown file name';
+  const fileDescription = fileNode ? fileNode.description : 'unknown';
   const sortedVersions =
-    fileNode.versions.edges.length > 0
+    fileNode && fileNode.versions.edges.length > 0
       ? fileNode.versions.edges.sort(dateCompare)
       : [];
   const fileSize =
@@ -62,15 +81,12 @@ const FileElement = ({
       : 'unknown';
   const latestDate =
     sortedVersions.length > 0 ? sortedVersions[0].node.createdAt : null;
-  const fileType = fileTypeDefault[fileNode.fileType]
-    ? fileTypeDefault[fileNode.fileType]
-    : 'unknown';
-
+  const fileType =
+    fileNode && fileTypeDefault[fileNode.fileType]
+      ? fileTypeDefault[fileNode.fileType]
+      : 'unknown';
   return (
     <li className={fileElementClass}>
-      {loading && (
-        <Icon kind="reset" width={24} className="float-right mt-5 mr-5 spin" />
-      )}
       <div className="FileList--ElementBadge sm:w-48">
         <Badge state="new" loading={loading} className="sm:min-w-full" />
         <Badge
@@ -80,40 +96,46 @@ const FileElement = ({
         />
       </div>
       <div className="flex-initial">
-        <p className="mt-1 font-bold text-sm" title={fileNode.description}>
-          {fileNode.name}
+        <p className="mt-2">
+          <span className={fileNameClass} title={fileDescription}>
+            {fileName}
+          </span>
           <span
-            className="pl-6 font-light text-grey pr-2"
+            className={fileStatusClass}
             title={`Study ID: ${match.params.kfId}`}
           >
-            {fileNode.kfId}
+            {fileKfID} <CopyButton text={fileKfID} className={buttonClass} />
           </span>
-          <CopyButton text={fileNode.kfId} />
-          <Link to={`/study/${match.params.kfId}/files/${fileNode.kfId}`}>
-            <Icon className="pt-4 ml-8" kind="edit" />
-          </Link>
-          <button onClick={e => downloadFile(e)}>
-            <Icon className="pt-4" kind="download" />
-          </button>
-          <button onClick={e => deleteFile()}>
-            <Icon className="pt-4" kind="delete" />
-          </button>
+          <span className={fileStatusClass}>
+            <Link
+              to={`/study/${match.params.kfId}/files/${fileKfID}`}
+              className={buttonClass}
+            >
+              <Icon className="mr-4" width={10} height={10} kind="edit" />
+            </Link>
+            <button onClick={e => downloadFile(e)} className={buttonClass}>
+              <Icon className="mr-4" width={10} height={10} kind="download" />
+            </button>
+            <button onClick={e => deleteFile()} className={buttonClass}>
+              <Icon className="mr-4" width={10} height={10} kind="delete" />
+            </button>
+          </span>
           {error &&
             error.graphQLErrors &&
             error.graphQLErrors.map(err => (
               <span className="text-red">{err.message}</span>
             ))}
         </p>
-        <span className="mt-0 font-normal text-grey text-xs">
-          Created:
+        <span className={fileStatusClass}>
+          Created:{' '}
           {latestDate ? (
-            <TimeAgo className="mr-4 pl-1" date={latestDate} live={false} />
+            <TimeAgo date={latestDate} live={false} />
           ) : (
-            <span className="mr-4 pl-1">unknown</span>
+            <span>unknown</span>
           )}
-          Size: {fileSize}
-          <span className="ml-4">{fileType}</span>
         </span>
+        <span className={fileStatusClass}>Size: {fileSize}</span>
+        <span className={fileStatusClass}>{fileType}</span>
       </div>
     </li>
   );
