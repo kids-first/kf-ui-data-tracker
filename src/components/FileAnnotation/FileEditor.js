@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
+import {withRouter} from 'react-router-dom';
 import {Button, Icon} from 'kf-uikit';
 import SelectElement from './SelectElement';
 import Badge from '../Badge/Badge';
@@ -14,6 +15,7 @@ const FileEditor = ({
   selectFileType,
   onSubmit,
   onNameChange,
+  history,
 }) => {
   const [editing, setEditing] = useState(false);
 
@@ -111,8 +113,15 @@ const FileEditor = ({
             selected={fileType === 'OTH'}
           />
           <div className="flex flex-row-reverse w-full mt-4">
-            <Button type="submit" color="primary">
+            <Button type="submit" color="primary" className="ml-4">
               Annotate File
+            </Button>
+            <Button
+              onClick={() => {
+                history.goBack();
+              }}
+            >
+              Cancel
             </Button>
           </div>
         </fieldset>
@@ -138,4 +147,4 @@ FileEditor.propTypes = {
   selectFileType: PropTypes.func.isRequired,
 };
 
-export default FileEditor;
+export default withRouter(FileEditor);
