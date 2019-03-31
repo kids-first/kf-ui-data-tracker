@@ -5,6 +5,7 @@ import {withRouter, Link} from 'react-router-dom';
 import TimeAgo from 'react-timeago';
 import {Icon} from 'kf-uikit';
 import Badge from '../Badge/Badge';
+import CopyButton from '../CopyButton/CopyButton';
 /**
  * Displays unordered studies in grid view (include empty stage message)
  */
@@ -77,6 +78,13 @@ const FileElement = ({
       <div className="flex-initial">
         <h4 className="mt-0 pt-2 font-normal" title={fileNode.description}>
           {fileNode.name}
+          <span
+            className="pl-6 font-light text-grey pr-2"
+            title={`Study ID: ${match.params.kfId}`}
+          >
+            {fileNode.kfId}
+          </span>
+          <CopyButton text={fileNode.kfId} />
           <Link to={`/study/${match.params.kfId}/files/${fileNode.kfId}`}>
             <Icon className="pt-4 ml-2" kind="edit" />
           </Link>
