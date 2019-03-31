@@ -5,6 +5,7 @@ import {Mutation} from 'react-apollo';
 import {GET_STUDY_BY_ID} from '../../state/queries';
 import {DELETE_FILE, FILE_DOWNLOAD_URL} from '../../state/mutations';
 import FileElement from './FileElement';
+import FileElementEmpty from './FileElementEmpty';
 import {KF_STUDY_API} from '../../common/globals';
 /**
  * Displays unordered studies in grid view (include empty stage message)
@@ -52,7 +53,7 @@ const FileList = ({className, fileList, studyId}) => {
           </Mutation>
         ))
       ) : (
-        <h3 className="FileList--Empty">You don't have any files yet.</h3>
+        <FileElementEmpty />
       )}
     </ul>
   );

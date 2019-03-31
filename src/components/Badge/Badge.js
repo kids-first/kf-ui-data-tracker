@@ -17,6 +17,12 @@ const Badge = ({className, state}) => {
     const name = badgeState[state].name;
     const validBadgeClass = classes('Badge', 'sm:min-w-full', className, color);
     return <div className={validBadgeClass}>{name}</div>;
+  } else if (state === 'empty') {
+    return (
+      <div className="Badge sm:min-w-full bg-lightGrey text-lightGrey">
+        empty
+      </div>
+    );
   } else {
     return <div className="Badge sm:min-w-full bg-darkGrey">Invalid State</div>;
   }

@@ -75,10 +75,10 @@ const FileElement = ({
         <Badge state="pendingApproval" />
       </div>
       <div className="flex-initial">
-        <h4 className="mt-0 pt-2 font-normal" title={fileNode.description}>
+        <p className="mt-0 pt-2 font-bold text-sm" title={fileNode.description}>
           {fileNode.name}
           <Link to={`/study/${match.params.kfId}/files/${fileNode.kfId}`}>
-            <Icon className="pt-4 ml-2" kind="edit" />
+            <Icon className="pt-4 ml-8" kind="edit" />
           </Link>
           <button onClick={e => downloadFile(e)}>
             <Icon className="pt-4" kind="download" />
@@ -91,7 +91,7 @@ const FileElement = ({
             error.graphQLErrors.map(err => (
               <span className="text-red">{err.message}</span>
             ))}
-        </h4>
+        </p>
         <span className="mt-0 font-normal text-grey text-xs">
           Created:
           {latestDate ? (
@@ -107,7 +107,7 @@ const FileElement = ({
   );
 };
 
-FileList.propTypes = {
+FileElement.propTypes = {
   /** Any additional classes to be applied to the study list*/
   className: PropTypes.string,
   /** Array of study object*/
@@ -122,7 +122,7 @@ FileList.propTypes = {
   downloadFile: PropTypes.func,
 };
 
-FileList.defaultProps = {
+FileElement.defaultProps = {
   className: null,
   fileNode: null,
 };
