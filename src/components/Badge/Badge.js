@@ -21,7 +21,7 @@ const Badge = ({className, state, loading}) => {
   });
   return (
     <div className={badgeClass}>
-      <span className={loading && 'invisible'}>{name}</span>
+      <span className={loading ? 'invisible' : undefined}>{name}</span>
     </div>
   );
 };
