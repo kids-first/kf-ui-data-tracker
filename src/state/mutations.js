@@ -59,3 +59,26 @@ export const FILE_DOWNLOAD_URL = gql`
     }
   }
 `;
+
+// Mutation to create a new dev token
+export const CREATE_DEV_TOKEN = gql`
+  mutation($name: String!) {
+    createDevToken(name: $name) {
+      token {
+        id
+        name
+        token
+        createdAt
+      }
+    }
+  }
+`;
+
+// Mutation to delete a token
+export const DELETE_DEV_TOKEN = gql`
+  mutation($token: String!) {
+    deleteDevToken(token: $token) {
+      success
+    }
+  }
+`;

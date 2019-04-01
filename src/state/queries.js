@@ -65,3 +65,19 @@ export const GET_FILE_BY_ID = gql`
     }
   }
 `;
+
+// Query to get developer tokens
+export const GET_DEV_TOKENS = gql`
+  {
+    allDevTokens{
+      edges {
+        node {
+          id
+          name
+          token
+          createdAt
+        }
+      }
+    }
+  }
+`;
