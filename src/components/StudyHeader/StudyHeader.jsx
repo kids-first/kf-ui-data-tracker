@@ -2,7 +2,7 @@ import React from 'react';
 import propTypes from 'prop-types';
 import classes from 'classnames';
 import TimeAgo from 'react-timeago';
-import {Icon} from 'kf-uikit';
+import CopyButton from '../CopyButton/CopyButton';
 
 const StudyHeader = ({
   kfId,
@@ -17,10 +17,10 @@ const StudyHeader = ({
       <header className={studyHeaderClasses}>
         <div className="flex-initial py-3 ml-2 sm:ml-12">
           <h3 className="mt-1 text-base">
-            <span className="font-body font-bold" id="kfId">
+            <span className="font-body font-bold pr-4" id="kfId">
               {kfId}
             </span>
-            <Icon className="pt-3 ml-4" kind="copy" />
+            <CopyButton text={kfId} />
             <span className="study-modified-date pl-4 font-light">
               <small>
                 last updated: <TimeAgo date={modifiedAt} />
