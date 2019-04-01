@@ -15,9 +15,11 @@ const StudyHeader = ({
   return (
     <div className="bg-lightGrey">
       <header className={studyHeaderClasses}>
-        <div className="flex-initial p-3 sm:ml-12">
-          <h3 className="study-id-tag mt-1 text-base">
-            {kfId}
+        <div className="flex-initial py-3 ml-2 sm:ml-12">
+          <h3 className="mt-1 text-base">
+            <span className="font-body font-bold" id="kfId">
+              {kfId}
+            </span>
             <Icon className="pt-3 ml-4" kind="copy" />
             <span className="study-modified-date pl-4 font-light">
               <small>
@@ -25,20 +27,13 @@ const StudyHeader = ({
               </small>
             </span>
           </h3>
-          <h1 className="mt-4 font-light text-4xl">
+          <h2 className="mt-4 font-light text-blue text-4xl">
             {shortName || studyName}
-            <Icon className="pb-1 ml-6" kind="edit" />
-          </h1>
+          </h2>
         </div>
-        <div className="flex-initial p-3 sm:mr-12">
-          <h4 className="mt-2 font-bold">Contacts:</h4>
-          <p className="mt-1 font-title font-light">
-            Mary Marazita
-            <Icon className="pt-2 ml-4" kind="email" />
-          </p>
-          <button className="mt-0 font-title font-thin text-sm underline">
-            ADD CONTACT
-          </button>
+        <div className="flex-initial py-3 ml-2 sm:mr-12">
+          <h4 className="mt-2 text-sm font-bold">Contacts:</h4>
+          <p className="mt-1 font-light">Mary Marazita</p>
         </div>
       </header>
     </div>
