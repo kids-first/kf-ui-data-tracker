@@ -23,7 +23,7 @@ const CopyButton = ({className, text}) => {
           {copied ? (
             <span>&#10004;</span>
           ) : (
-            <Icon width={12} height={12} kind="copy" />
+            <Icon width={10} height={10} kind="copy" />
           )}
         </button>
       </CopyToClipboard>
