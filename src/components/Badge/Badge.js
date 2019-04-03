@@ -15,7 +15,7 @@ const Badge = ({className, state}) => {
   if (badgeState[state]) {
     const color = badgeState[state].color;
     const name = badgeState[state].name;
-    const validBadgeClass = classes('Badge', 'sm:min-w-full', className, color);
+    const validBadgeClass = classes('Badge', className, color);
     return <div className={validBadgeClass}>{name}</div>;
   } else {
     return <div className="Badge sm:min-w-full bg-darkGrey">Invalid State</div>;

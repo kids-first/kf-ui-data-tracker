@@ -4,14 +4,23 @@
 }
 
 .SelectElement--Icon {
-  @inherit: .bg-lightGrey, .rounded-full, .p-2, .w-12, .h-12, .pt-3, .mr-2,
-    .text-center;
+  @inherit: .rounded-full, .p-2, .w-12, .h-12, .pt-3, .mr-2, .text-center;
 }
 
 .FileEditor {
-  @inherit: .w-full, .bg-lightGrey, .p-4, .flex, .flex-row, .flex-wrap;
+  @inherit: .w-full, .bg-lightGrey, .p-4;
 }
 
 .FileEditor--Input {
-  @inherit: .w-full, .p-2, .border-transparent, .rounded-sm, .mt-2, .mb-6;
+  @inherit: .flex-auto, .p-2, .border-transparent, .rounded-sm, .my-2;
+  width: auto;
+}
+
+.FileEditor--TextArea {
+  @inherit: .w-full, .p-2, .border-transparent, .rounded-sm, .mt-2;
+  height: 265px;
+}
+
+.FileEditor--Badge {
+  @inherit: .my-2, .flex, .flex-row, .flex-wrap, .content-center;
 }
