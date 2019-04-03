@@ -45,6 +45,7 @@ const UploadContainer = props => {
       })
       .catch(err => {
         console.log(err);
+        alert('Failed to upload file.');
       });
   };
 
@@ -74,8 +75,9 @@ const UploadContainer = props => {
         },
       ]}
     >
-      {(createFile, {data}) => (
+      {(createFile, {data, error}) => (
         <FileUploadTarget
+          error={error}
           dragging={dragging}
           handleDragOver={handleDragOver}
           onDragEnter={handleDragEnter}
