@@ -42,7 +42,7 @@ const TokensListView = () => {
             >
               {deleteToken => {
                 if (loading)
-                  return <LoadingPlaceholder componentName="File List" />;
+                  return <LoadingPlaceholder componentName="Tokens" />;
                 if (error) return `Error!: ${error}`;
 
                 return (

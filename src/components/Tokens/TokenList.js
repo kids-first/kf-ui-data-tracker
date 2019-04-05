@@ -1,5 +1,6 @@
 import React from 'react';
 import {Icon} from 'kf-uikit';
+import CopyButton from '../CopyButton/CopyButton';
 
 const TokenList = ({tokens, deleteToken}) => (
   <ul className="min-w-full list-reset">
@@ -13,10 +14,12 @@ const TokenList = ({tokens, deleteToken}) => (
             height={18}
           />
         </button>
-        <span>{node.node.name}</span>
+        <span>
+          {node.node.name}
+        </span>
         <div className="float-right">
           <span className="font-mono bg-lightGrey py-2 px-4">
-            {node.node.token}
+            {node.node.token} <CopyButton text={node.node.token} />
           </span>
         </div>
       </li>
