@@ -37,7 +37,7 @@ const onSuccess = (repsonse, client, history) => {
 };
 
 const onFailure = repsonse => {
-  console.log('Problem sign in');
+  console.log('Problem sign in, with error: ' + repsonse.error);
 };
 
 const LoginContainer = ({history}) => (
@@ -48,7 +48,7 @@ const LoginContainer = ({history}) => (
           clientId={GOOGLE_APP_ID}
           buttonText="Sign in with Google"
           onSuccess={response => onSuccess(response, client, history)}
-          onFailure={onFailure}
+          onFailure={response => onFailure(response, client, history)}
           render={renderProps => (
             <Button size="large" className="mx-8" onClick={renderProps.onClick}>
               Login with Ego
