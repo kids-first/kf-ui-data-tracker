@@ -124,8 +124,10 @@ const FileElement = ({
             </span>
             {error &&
               error.graphQLErrors &&
-              error.graphQLErrors.map(err => (
-                <span className="FileStatus text-red">{err.message}</span>
+              error.graphQLErrors.map((err,i) => (
+                <span key={i} className="FileStatus text-red">
+                  {err.message}
+                </span>
               ))}
           </p>
           <p className="m-0">
