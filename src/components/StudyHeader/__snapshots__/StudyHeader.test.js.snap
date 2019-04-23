@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <section
+    class="grid-container mx-auto grid-container--collapsed-rows py-8 px-12"
+  >
+    <p
+      class="StudyHeader--TopText"
+    >
+      <b>
+        SD_00000000
+      </b>
+      <span
+        class="pl-4 pr-20"
+      >
+        <button>
+          <svg
+            height="10"
+            id="mock-icon"
+            kind="copy"
+            width="10"
+          >
+            <title>
+              icon-
+              copy
+            </title>
+          </svg>
+        </button>
+      </span>
+      <small
+        class="font-light"
+      >
+        last updated: 
+        <time
+          datetime="2019-01-01T00:00:00.000Z"
+          title="2019-01-01"
+        >
+          4 months ago
+        </time>
+      </small>
+    </p>
+    <p
+      class="StudyHeader--TitleText sm:row-2 sm:cell-10"
+    >
+      Test Study
+    </p>
+    <div
+      class="row-2 cell-12 sm:flex-row sm:flex-col sm:cell-2"
+    >
+      <p
+        class="m-0 text-sm font-bold inline-block pr-8"
+      >
+        Contacts:
+      </p>
+      <p
+        class="m-0 font-light inline-block"
+      >
+        Mary Marazita
+      </p>
+    </div>
+  </section>
+</div>
+`;
