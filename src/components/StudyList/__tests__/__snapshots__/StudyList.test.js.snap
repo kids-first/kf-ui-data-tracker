@@ -1,0 +1,233 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <div
+    class="bg-lightGrey min-h-screen py-32"
+  >
+    <section
+      class="grid-container mx-auto StudyList"
+    >
+      <h1
+        class="text-blue font-title row-1 cell-12"
+      >
+        Browse Studies
+      </h1>
+      <div
+        class="cursor-pointer cell-12 sm:cell-6 md:cell-4 lg:cell-3"
+      >
+        <div
+          class="Card StudyCard hover:shadow-lg"
+        >
+          <h2
+            class="Card--title text-truncate"
+            title="SD_X6E5KWM4"
+          >
+            SD_X6E5KWM4
+          </h2>
+          <hr />
+          <div
+            class="flex flex-col justify-between"
+          >
+            <div
+              class="overflow-hidden h-32"
+            >
+              <p
+                class="m-0 font-title text-darkGrey"
+              >
+                deploy bleeding-edge action-items
+              </p>
+            </div>
+            <small
+              class="w-full text-grey font-title text-right whitespace-no-wrap"
+            >
+              Updated: 
+              <time
+                class="whitespace-no-wrap"
+                datetime="2019-03-29T18:45:01.230Z"
+                title="2019-03-29 18:45"
+              >
+                1 month ago
+              </time>
+            </small>
+          </div>
+        </div>
+      </div>
+      <div
+        class="cursor-pointer cell-12 sm:cell-6 md:cell-4 lg:cell-3"
+      >
+        <div
+          class="Card StudyCard hover:shadow-lg"
+        >
+          <h2
+            class="Card--title text-truncate"
+            title="SD_203C26IZ"
+          >
+            SD_203C26IZ
+          </h2>
+          <hr />
+          <div
+            class="flex flex-col justify-between"
+          >
+            <div
+              class="overflow-hidden h-32"
+            >
+              <p
+                class="m-0 font-title text-darkGrey"
+              >
+                syndicate extensible metrics
+              </p>
+            </div>
+            <small
+              class="w-full text-grey font-title text-right whitespace-no-wrap"
+            >
+              Updated: 
+              <time
+                class="whitespace-no-wrap"
+                datetime="2019-03-29T18:45:01.236Z"
+                title="2019-03-29 18:45"
+              >
+                1 month ago
+              </time>
+            </small>
+          </div>
+        </div>
+      </div>
+      <div
+        class="cursor-pointer cell-12 sm:cell-6 md:cell-4 lg:cell-3"
+      >
+        <div
+          class="Card StudyCard hover:shadow-lg"
+        >
+          <h2
+            class="Card--title text-truncate"
+            title="SD_KOECR7Q1"
+          >
+            SD_KOECR7Q1
+          </h2>
+          <hr />
+          <div
+            class="flex flex-col justify-between"
+          >
+            <div
+              class="overflow-hidden h-32"
+            >
+              <p
+                class="m-0 font-title text-darkGrey"
+              >
+                aggregate real-time convergence
+              </p>
+            </div>
+            <small
+              class="w-full text-grey font-title text-right whitespace-no-wrap"
+            >
+              Updated: 
+              <time
+                class="whitespace-no-wrap"
+                datetime="2019-03-29T18:45:01.239Z"
+                title="2019-03-29 18:45"
+              >
+                1 month ago
+              </time>
+            </small>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+`;
+
+exports[`renders loading state 1`] = `
+<div>
+  <div
+    class="bg-lightGrey min-h-screen py-32"
+  >
+    <section
+      class="grid-container mx-auto StudyList"
+    >
+      <h1
+        class="text-blue font-title row-1 cell-12"
+      >
+        Loading studies ...
+      </h1>
+      <div
+        class="cursor-not-allowed cell-12 sm:cell-6 md:cell-4 lg:cell-3"
+      >
+        <div
+          class="StudyCard--loading"
+        >
+          <svg
+            height="28"
+            id="mock-icon"
+            kind="study"
+            width="28"
+          >
+            <title>
+              icon-
+              study
+            </title>
+          </svg>
+        </div>
+      </div>
+      <div
+        class="cursor-not-allowed cell-12 sm:cell-6 md:cell-4 lg:cell-3"
+      >
+        <div
+          class="StudyCard--loading"
+        >
+          <svg
+            height="28"
+            id="mock-icon"
+            kind="study"
+            width="28"
+          >
+            <title>
+              icon-
+              study
+            </title>
+          </svg>
+        </div>
+      </div>
+      <div
+        class="cursor-not-allowed cell-12 sm:cell-6 md:cell-4 lg:cell-3"
+      >
+        <div
+          class="StudyCard--loading"
+        >
+          <svg
+            height="28"
+            id="mock-icon"
+            kind="study"
+            width="28"
+          >
+            <title>
+              icon-
+              study
+            </title>
+          </svg>
+        </div>
+      </div>
+      <div
+        class="cursor-not-allowed cell-12 sm:cell-6 md:cell-4 lg:cell-3"
+      >
+        <div
+          class="StudyCard--loading"
+        >
+          <svg
+            height="28"
+            id="mock-icon"
+            kind="study"
+            width="28"
+          >
+            <title>
+              icon-
+              study
+            </title>
+          </svg>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+`;
