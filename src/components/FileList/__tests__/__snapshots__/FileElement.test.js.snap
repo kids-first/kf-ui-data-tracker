@@ -1,0 +1,442 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <li
+    class="FileList--Element"
+  >
+    <section
+      class="grid-container mx-auto grid-container--collapsed-rows"
+    >
+      <div
+        class="lg:cell-2 lg:row-1 FileList--ElementBadge"
+      >
+        <div
+          class="lg:min-w-full m-0 Badge bg-teal"
+        >
+          <span>
+            New
+          </span>
+        </div>
+        <div
+          class="lg:min-w-full m-0 Badge bg-orange"
+        >
+          <span>
+            Pending Approval
+          </span>
+        </div>
+      </div>
+      <div
+        class="lg:cell-10 row-1 cell-12"
+      >
+        <p
+          class="m-0"
+        >
+          <span
+            class="FileStatus text-sm font-bold"
+            title="Safe always adult sometimes. Enter full agree still son expect write. According small hold someone."
+          >
+            force.webm
+          </span>
+          <span
+            class="FileStatus text-grey"
+            title="Study ID: undefined"
+          >
+            SF_FPVBM0JF
+             
+            <span
+              class="FileList--ElementButton"
+            >
+              <button>
+                <svg
+                  height="10"
+                  id="mock-icon"
+                  kind="copy"
+                  width="10"
+                >
+                  <title>
+                    icon-
+                    copy
+                  </title>
+                </svg>
+              </button>
+            </span>
+          </span>
+          <span
+            class="FileStatus text-grey"
+          >
+            <a
+              class="FileList--ElementButton"
+              href="/study/undefined/files/SF_FPVBM0JF"
+            >
+              <svg
+                height="10"
+                id="mock-icon"
+                kind="edit"
+                width="10"
+              >
+                <title>
+                  icon-
+                  edit
+                </title>
+              </svg>
+            </a>
+            <button
+              class="FileList--ElementButton"
+            >
+              <svg
+                height="10"
+                id="mock-icon"
+                kind="download"
+                width="10"
+              >
+                <title>
+                  icon-
+                  download
+                </title>
+              </svg>
+            </button>
+            <button
+              class="FileList--ElementButton"
+            >
+              <svg
+                height="10"
+                id="mock-icon"
+                kind="delete"
+                width="10"
+              >
+                <title>
+                  icon-
+                  delete
+                </title>
+              </svg>
+            </button>
+          </span>
+        </p>
+        <p
+          class="m-0"
+        >
+          <span
+            class="FileStatus text-grey"
+          >
+            Created:
+             
+            <time
+              datetime="2018-09-19T08:33:31.000Z"
+              title="2018-09-19T08:33:31+00:00"
+            >
+              7 months ago
+            </time>
+          </span>
+          <span
+            class="FileStatus text-grey"
+          >
+            Size: 
+            440 B
+          </span>
+          <span
+            class="FileStatus text-grey"
+          >
+            Clinical/Phenotype Data
+          </span>
+        </p>
+      </div>
+    </section>
+  </li>
+</div>
+`;
+
+exports[`renders error state 1`] = `
+<div>
+  <li
+    class="FileList--Element"
+  >
+    <section
+      class="grid-container mx-auto grid-container--collapsed-rows"
+    >
+      <div
+        class="lg:cell-2 lg:row-1 FileList--ElementBadge"
+      >
+        <div
+          class="lg:min-w-full m-0 Badge bg-teal"
+        >
+          <span>
+            New
+          </span>
+        </div>
+        <div
+          class="lg:min-w-full m-0 Badge bg-orange"
+        >
+          <span>
+            Pending Approval
+          </span>
+        </div>
+      </div>
+      <div
+        class="lg:cell-10 row-1 cell-12"
+      >
+        <p
+          class="m-0"
+        >
+          <span
+            class="FileStatus text-sm font-bold"
+            title="unknown"
+          >
+            unknown file name
+          </span>
+          <span
+            class="FileStatus text-grey"
+            title="Study ID: undefined"
+          >
+            unknown ID
+             
+            <span
+              class="FileList--ElementButton"
+            >
+              <button>
+                <svg
+                  height="10"
+                  id="mock-icon"
+                  kind="copy"
+                  width="10"
+                >
+                  <title>
+                    icon-
+                    copy
+                  </title>
+                </svg>
+              </button>
+            </span>
+          </span>
+          <span
+            class="FileStatus text-grey"
+          >
+            <a
+              class="FileList--ElementButton"
+              href="/study/undefined/files/unknown ID"
+            >
+              <svg
+                height="10"
+                id="mock-icon"
+                kind="edit"
+                width="10"
+              >
+                <title>
+                  icon-
+                  edit
+                </title>
+              </svg>
+            </a>
+            <button
+              class="FileList--ElementButton"
+            >
+              <svg
+                height="10"
+                id="mock-icon"
+                kind="download"
+                width="10"
+              >
+                <title>
+                  icon-
+                  download
+                </title>
+              </svg>
+            </button>
+            <button
+              class="FileList--ElementButton"
+            >
+              <svg
+                height="10"
+                id="mock-icon"
+                kind="delete"
+                width="10"
+              >
+                <title>
+                  icon-
+                  delete
+                </title>
+              </svg>
+            </button>
+          </span>
+          <span
+            class="FileStatus text-red"
+          >
+            something went wrong
+          </span>
+        </p>
+        <p
+          class="m-0"
+        >
+          <span
+            class="FileStatus text-grey"
+          >
+            Created:
+             
+            <span>
+              unknown
+            </span>
+          </span>
+          <span
+            class="FileStatus text-grey"
+          >
+            Size: 
+            unknown
+          </span>
+          <span
+            class="FileStatus text-grey"
+          >
+            unknown
+          </span>
+        </p>
+      </div>
+    </section>
+  </li>
+</div>
+`;
+
+exports[`renders loading state 1`] = `
+<div>
+  <li
+    class="FileList--Element cursor-not-allowed"
+  >
+    <section
+      class="grid-container mx-auto grid-container--collapsed-rows"
+    >
+      <div
+        class="lg:cell-2 lg:row-1 FileList--ElementBadge"
+      >
+        <div
+          class="lg:min-w-full m-0 Badge Badge--loading"
+        >
+          <span
+            class="invisible"
+          >
+            New
+          </span>
+        </div>
+        <div
+          class="lg:min-w-full m-0 Badge Badge--loading"
+        >
+          <span
+            class="invisible"
+          >
+            Pending Approval
+          </span>
+        </div>
+      </div>
+      <div
+        class="lg:cell-10 row-1 cell-12"
+      >
+        <p
+          class="m-0"
+        >
+          <span
+            class="FileStatus--loading font-bold"
+            title="unknown"
+          >
+            unknown file name
+          </span>
+          <span
+            class="FileStatus--loading text-grey"
+            title="Study ID: undefined"
+          >
+            unknown ID
+             
+            <span
+              class="FileList--ElementButton invisible"
+            >
+              <button>
+                <svg
+                  height="10"
+                  id="mock-icon"
+                  kind="copy"
+                  width="10"
+                >
+                  <title>
+                    icon-
+                    copy
+                  </title>
+                </svg>
+              </button>
+            </span>
+          </span>
+          <span
+            class="FileStatus--loading text-grey"
+          >
+            <a
+              class="FileList--ElementButton invisible"
+              href="/study/undefined/files/unknown ID"
+            >
+              <svg
+                height="10"
+                id="mock-icon"
+                kind="edit"
+                width="10"
+              >
+                <title>
+                  icon-
+                  edit
+                </title>
+              </svg>
+            </a>
+            <button
+              class="FileList--ElementButton invisible"
+            >
+              <svg
+                height="10"
+                id="mock-icon"
+                kind="download"
+                width="10"
+              >
+                <title>
+                  icon-
+                  download
+                </title>
+              </svg>
+            </button>
+            <button
+              class="FileList--ElementButton invisible"
+            >
+              <svg
+                height="10"
+                id="mock-icon"
+                kind="delete"
+                width="10"
+              >
+                <title>
+                  icon-
+                  delete
+                </title>
+              </svg>
+            </button>
+          </span>
+        </p>
+        <p
+          class="m-0"
+        >
+          <span
+            class="FileStatus--loading text-grey"
+          >
+            Created:
+             
+            <span>
+              unknown
+            </span>
+          </span>
+          <span
+            class="FileStatus--loading text-grey"
+          >
+            Size: 
+            unknown
+          </span>
+          <span
+            class="FileStatus--loading text-grey"
+          >
+            unknown
+          </span>
+        </p>
+      </div>
+    </section>
+  </li>
+</div>
+`;
