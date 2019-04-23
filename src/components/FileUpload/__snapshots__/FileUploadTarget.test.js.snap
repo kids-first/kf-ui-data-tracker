@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <form
+    class="upload-target"
+  >
+    <p
+      class="max-w-full pt-0 pb-4 mt-0"
+    >
+      Drag and drop Files here
+      <br />
+      <small
+        class="m-0 p-0"
+      >
+        <i>
+          or
+        </i>
+      </small>
+    </p>
+    <input
+      class="Button Button--default max-w-full"
+      type="file"
+    />
+  </form>
+</div>
+`;
+
+exports[`renders errors 1`] = `
+<div>
+  <form
+    class="upload-target"
+  >
+    <p
+      class="max-w-full pt-0 pb-4 mt-0"
+    >
+      Drag and drop Files here
+      <br />
+      <small
+        class="m-0 p-0"
+      >
+        <i>
+          or
+        </i>
+      </small>
+    </p>
+    <input
+      class="Button Button--default max-w-full"
+      type="file"
+    />
+    <h4
+      class="text-red px-2"
+    >
+      Failed to upload: 
+      something went wrong
+    </h4>
+  </form>
+</div>
+`;
+
+exports[`renders instructions 1`] = `
+<div>
+  <form
+    class="upload-target"
+  >
+    <p
+      class="max-w-full pt-0 pb-4 mt-0"
+    >
+      Drag files here
+      <br />
+      <small
+        class="m-0 p-0"
+      >
+        <i>
+          or
+        </i>
+      </small>
+    </p>
+    <input
+      class="Button Button--default max-w-full"
+      type="file"
+    />
+  </form>
+</div>
+`;
