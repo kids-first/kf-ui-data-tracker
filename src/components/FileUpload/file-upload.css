@@ -1,3 +1,4 @@
 .upload-target {
   grid-column: 4 / span 6;
+  @inherit: .mb-32;
 }

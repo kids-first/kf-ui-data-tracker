@@ -20,22 +20,17 @@ const StudyList = ({className, studyList, loading, history}) => {
         {loading
           ? loadingCount.map(n => (
               <li
-                className="cursor-not-allowed w-full sm:w-1/2 md:w-1/3 lg:w-1/4"
+                className="p-8 cursor-not-allowed w-full sm:w-1/2 md:w-1/3 lg:w-1/4"
                 key={n}
               >
-                <div className="StudyCard rounded-lg flex justify-center items-center">
-                  <Icon
-                    className="text-mediumGrey"
-                    width={28}
-                    height={28}
-                    kind="study"
-                  />
+                <div className="StudyCard--loading">
+                  <Icon width={28} height={28} kind="study" />
                 </div>
               </li>
             ))
           : studyList.map(node => (
               <li
-                className="cursor-pointer w-full sm:w-1/2 md:w-1/3 lg:w-1/4"
+                className="p-8 cursor-pointer w-full sm:w-1/2 md:w-1/3 lg:w-1/4"
                 key={node.node.id}
                 onClick={() => {
                   history.push(`/study/${node.node.kfId}/files`);

@@ -50,16 +50,12 @@ const LoginContainer = ({history}) => (
           onSuccess={response => onSuccess(response, client, history)}
           onFailure={onFailure}
           render={renderProps => (
-            <Button size="large" className="mx-2" onClick={renderProps.onClick}>
+            <Button size="large" className="mx-8" onClick={renderProps.onClick}>
               Login with Ego
             </Button>
           )}
         />
-        <Button
-          size="large"
-          className="mx-2"
-          onClick={() => auth.login()}
-        >
+        <Button size="large" className="mx-8" onClick={() => auth.login()}>
           Login with Auth0
         </Button>
       </Fragment>

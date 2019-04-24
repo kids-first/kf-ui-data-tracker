@@ -96,7 +96,7 @@ const FileElement = ({
         />
       </div>
       <div className="flex-initial">
-        <p className="mt-2">
+        <p className="m-0">
           <span className={fileNameClass} title={fileDescription}>
             {fileName}
           </span>
@@ -111,13 +111,13 @@ const FileElement = ({
               to={`/study/${match.params.kfId}/files/${fileKfID}`}
               className={buttonClass}
             >
-              <Icon className="mr-4" width={10} height={10} kind="edit" />
+              <Icon className="mr-8" width={10} height={10} kind="edit" />
             </Link>
             <button onClick={e => downloadFile(e)} className={buttonClass}>
-              <Icon className="mr-4" width={10} height={10} kind="download" />
+              <Icon className="mr-8" width={10} height={10} kind="download" />
             </button>
             <button onClick={e => deleteFile()} className={buttonClass}>
-              <Icon className="mr-4" width={10} height={10} kind="delete" />
+              <Icon className="mr-8" width={10} height={10} kind="delete" />
             </button>
           </span>
           {error &&

@@ -8,7 +8,7 @@ import {NavLink} from 'react-router-dom';
 const NavBarButton = ({to, children}) => {
   return (
     <NavLink
-      className="SecondaryNav--Button sm:px-6"
+      className="SecondaryNav--Button"
       activeClassName="SecondaryNav--Button-active"
       to={to}
     >

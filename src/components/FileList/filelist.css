@@ -1,30 +1,27 @@
 /* FileList and FileListElement CSS */
 .FileList {
-  @inherit: .list-reset, .min-w-full, .mt-2, .mb-8, .border, .border-l-0,
-    .border-r-0, .border-b-0, .border-grey;
+  @inherit: .list-reset, .min-w-full, .my-20, .border-t, .border-grey;
 }
 
 .FileList--Element {
-  @inherit: .list-reset, .w-full, .border, .border-l-0, .border-r-0, .border-t-0,
-    .border-grey, .pb-2, .pl-6, .flex, .flex-row, .flex-wrap-reverse;
+  @inherit: .list-reset, .w-full, .border-b, .border-grey, .py-8, .px-32, .flex,
+    .flex-row, .flex-wrap-reverse;
 }
 
 .FileList--Empty {
-  @inherit: .text-grey, .border, .border-l-0, .border-r-0, .border-t-0,
-    .border-grey, .p-6, .m-0;
+  @inherit: .text-grey, .border-b, .border-grey, .py-16, .px-32;
 }
 
 .FileList--ElementBadge {
-  @inherit: .flex-initial, .mt-2, .mr-6, .flex, .flex-row, .flex-wrap,
-    .content-center, .justify-around;
+  @inherit: .flex-initial, .mr-12, .flex, .flex-row, .flex-wrap;
 }
 
 .FileStatus {
-  @inherit: .mt-0, .mr-4, .font-normal, .text-xs;
+  @inherit: .mt-0, .mr-16, .font-normal, .text-xs;
 }
 
 .FileStatus--loading {
-  @inherit: .mt-0, .mr-6, .px-4, .bg-lightGrey, .text-lightGrey;
+  @inherit: .mt-0, .mr-4, .px-4, .bg-lightGrey, .text-lightGrey;
 }
 
 @keyframes spin {
