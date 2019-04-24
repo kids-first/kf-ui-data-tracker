@@ -17,7 +17,7 @@ const FileUploadTarget = props => {
   const fileUploadFormClass = classes(
     'upload-target',
     'w-full',
-    'p-12',
+    'p-32',
     'bg-lightGrey',
     'border-grey',
     'border-2',
