@@ -1,15 +1,14 @@
 /* NavBar and NavBarButton CSS */
 .SecondaryNav--Button-active,
 .SecondaryNav--Button:hover {
-  border-bottom-width: 4px;
   /* #e53a95 refers to the pink color from uikit */
   border-bottom-color: #e53a95;
-  @inherit: .text-pink;
+  @inherit: .text-pink, .border-b-4;
 }
 
 .SecondaryNav--Button {
-  @inherit: .font-title, .h-16, .cursor-pointer, .border, .border-lightGrey,
-    .text-center, .text-purple, .font-semibold, .no-underline, .pt-4, .px-2;
+  @inherit: .font-title, .h-full, .cursor-pointer, .border, .border-lightGrey,
+    .text-purple, .font-semibold, .no-underline, .pt-16, .px-12;
 }
 
 .SecondaryNav {
@@ -17,6 +16,5 @@
 }
 
 .SecondaryNav--Container {
-  @inherit: .bg-white, .border, .border-mediumGrey, .border-t-0, .border-l-0,
-    .border-r-0, .border-b-2;
+  @inherit: .bg-white, .border-mediumGrey, .border-b-2;
 }
