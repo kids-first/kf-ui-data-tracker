@@ -1,26 +1,27 @@
 .SelectElement {
-  @inherit: .w-full, .shadow, .rounded-sm, .bg-white, .mt-2, .mb-2, .p-2, .pt-3,
-    .align-middle, .flex, .flex-row;
+  border-radius: 5px;
+  @inherit: .w-full, .shadow, .bg-white, .my-8, .p-8, .align-middle, .flex,
+    .flex-row;
 }
 
 .SelectElement--Icon {
-  @inherit: .rounded-full, .p-2, .w-12, .h-12, .pt-3, .mr-2, .text-center;
+  @inherit: .rounded-full, .mr-16, .w-12, .h-12, .pt-12, .text-center;
 }
 
 .FileEditor {
-  @inherit: .w-full, .bg-lightGrey, .p-4;
+  @inherit: .w-full, .bg-lightGrey, .p-20, .mb-32;
 }
 
 .FileEditor--Input {
-  @inherit: .flex-auto, .p-2, .border-transparent, .rounded-sm, .my-2;
+  @inherit: .flex-auto, .p-4, .border-transparent, .rounded-sm, .my-12;
   width: auto;
 }
 
 .FileEditor--TextArea {
-  @inherit: .w-full, .p-2, .border-transparent, .rounded-sm, .mt-2;
-  height: 265px;
+  @inherit: .w-full, .p-4, .border-transparent, .rounded-sm, .mt-8;
+  height: 280px;
 }
 
 .FileEditor--Badge {
-  @inherit: .my-2, .flex, .flex-row, .flex-wrap, .content-center;
+  @inherit: .my-12, .flex, .flex-row, .flex-wrap, .content-center;
 }

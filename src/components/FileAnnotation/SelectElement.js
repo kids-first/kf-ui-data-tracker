@@ -29,7 +29,7 @@ const SelectElement = ({
   return (
     <label className={selectElementClass}>
       <input
-        className="border m-2 mt-4"
+        className="border m-16"
         type="radio"
         name={name}
         value={value}
@@ -40,8 +40,8 @@ const SelectElement = ({
         <Icon kind={icon} className={selected ? 'text-white' : 'none'} />
       </div>
       <div>
-        <p className="m-0 pt-1 font-bold font-sm leading-none">{title}</p>
-        <span className="m-0 font-normal text-grey text-xs">{body}</span>
+        <p className="mt-8 font-bold font-sm leading-none">{title}</p>
+        <span className="font-normal text-grey text-xs">{body}</span>
       </div>
     </label>
   );

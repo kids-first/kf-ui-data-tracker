@@ -33,7 +33,7 @@ const FileEditor = ({
               onChange={e => onNameChange(e)}
             />
             <button
-              className="p-4"
+              className="pl-20"
               onClick={() => {
                 setEditing(false);
               }}
@@ -43,10 +43,10 @@ const FileEditor = ({
             </button>
           </label>
         ) : (
-          <h3 className="font-normal mt-0 mb-4 pl-2 text-blue">
+          <h3 className="font-normal my-12 pl-4 text-blue">
             {name}
             <button
-              className="pl-6 pt-4"
+              className="pl-20 pt-4"
               onClick={() => {
                 setEditing(true);
               }}
@@ -63,7 +63,7 @@ const FileEditor = ({
         </div>
       </div>
       <div className="flex flex-row flex-wrap sm:flex-no-wrap">
-        <div className="w-full sm:mr-6">
+        <div className="w-full sm:mr-20">
           <label>
             File description (required):
             <textarea
@@ -113,7 +113,7 @@ const FileEditor = ({
             selected={fileType === 'OTH'}
           />
           <div className="flex flex-row-reverse w-full mt-4">
-            <Button type="submit" color="primary" className="ml-4">
+            <Button type="submit" color="primary" className="ml-12">
               Annotate File
             </Button>
             <Button
