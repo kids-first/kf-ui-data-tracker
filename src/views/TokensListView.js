@@ -9,13 +9,13 @@ import NewTokenFormContainer from '../containers/NewTokenFormContainer';
 
 const TokensListView = () => {
   // onClick event for the delete button next to a token item
-  const onDelete = (callback, token) => {
+  const onDelete = (callback, name) => {
     if (
       window.confirm(
         'This will break any applications using this token. Are you sure?',
       )
     ) {
-      callback({variables: {token}});
+      callback({variables: {name}});
     }
   };
 
@@ -52,7 +52,7 @@ const TokensListView = () => {
                 return (
                   <TokenList
                     tokens={data.allDevTokens.edges}
-                    deleteToken={token => onDelete(deleteToken, token)}
+                    deleteToken={name => onDelete(deleteToken, name)}
                   />
                 );
               }}

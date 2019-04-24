@@ -6,7 +6,7 @@ const TokenList = ({tokens, deleteToken}) => (
   <ul className="min-w-full list-reset">
     {tokens.map(node => (
       <li className="w-full" key={node.node.id}>
-        <button onClick={() => deleteToken(node.node.token)}>
+        <button onClick={() => deleteToken(node.node.name)}>
           <Icon
             kind="delete"
             className="w-8 cursor-pointer"
