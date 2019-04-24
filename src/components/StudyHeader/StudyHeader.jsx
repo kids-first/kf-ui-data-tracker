@@ -15,13 +15,13 @@ const StudyHeader = ({
   return (
     <div className="bg-lightGrey">
       <header className={studyHeaderClasses}>
-        <div className="flex-initial py-3 ml-2 sm:ml-12">
+        <div>
           <h3 className="mt-1 text-base">
-            <span className="font-body font-bold pr-4" id="kfId">
+            <span className="font-body font-bold pr-4 text-darkGrey" id="kfId">
               {kfId}
             </span>
             <CopyButton text={kfId} />
-            <span className="study-modified-date pl-4 font-light">
+            <span className="study-modified-date pl-20 font-light">
               <small>
                 last updated: <TimeAgo date={modifiedAt} />
               </small>
@@ -31,7 +31,7 @@ const StudyHeader = ({
             {shortName || studyName}
           </h2>
         </div>
-        <div className="flex-initial py-3 ml-2 sm:mr-12">
+        <div>
           <h4 className="mt-2 text-sm font-bold">Contacts:</h4>
           <p className="mt-1 font-light">Mary Marazita</p>
         </div>
