@@ -38,11 +38,27 @@ const TokensListView = () => {
           {({loading, error, data}) => (
             <Mutation
               mutation={DELETE_DEV_TOKEN}
-              refetchQueries={res => [
-                {
+              update={(cache, {data: {deleteDevToken}}) => {
+                // Removes the token from the allDevTokens query in the cache
+                const {allDevTokens} = cache.readQuery({query: GET_DEV_TOKENS});
+                const deleteIndex = allDevTokens.edges.findIndex(
+                  edge => edge.node.name === deleteDevToken.name,
+                );
+                if (deleteIndex < 0) {
+                  return allDevTokens;
+                }
+                allDevTokens.edges.splice(deleteIndex, 1);
+                const data = {
+                  allDevTokens: {
+                    ...allDevTokens,
+                    edges: allDevTokens.edges,
+                  },
+                };
+                cache.writeQuery({
                   query: GET_DEV_TOKENS,
-                },
-              ]}
+                  data,
+                });
+              }}
             >
               {deleteToken => {
                 if (loading)
