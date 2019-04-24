@@ -25,10 +25,14 @@ const TokensListView = () => {
         Manage Developer Download Tokens
       </h3>
       <p>
-        Developer download tokens allow download of any file using the ?token=
-        query parameter.
+        Developer download tokens allow download of any file using the{' '}
+        <code>?token=</code> query parameter or passed in the Authorization
+        header with a <code>Token</code> prefix.
       </p>
-      <p>Keep these tokens private!</p>
+      <p>
+        Keep these tokens private! They will not be displayed again after being
+        created.
+      </p>
       <section className="study-file-list">
         <Query query={GET_DEV_TOKENS}>
           {({loading, error, data}) => (
