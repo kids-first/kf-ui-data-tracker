@@ -1,6 +1,52 @@
 .StudyCard {
   @inherit: .h-full, .shadow-md, .border-transparent, .m-0, .p-16, .w-full,
     .flex, .flex-col;
+  .Card--title {
+    @inherit: .text-blue;
+  }
+}
+
+.StudyList {
+  @inherit: .ml-0, .max-w-full, .min-h-screen, .list-reset, .flex,
+    .flex-row, .flex-wrap, .content-start, .pb-20;
+}
+
+.StudyTable {
+  @inherit: .table-fixed, .border-collapse, .w-full,  .max-w-full, .mt-20, .border, .border-grey-lightest;
+  border-radius: 2px;
+  vertical-align: top;
+  overflow-x: auto;
+  /* white-space: nowrap; */
+  border-spacing: 0;
+
+  th {
+    @inherit: .py-12, .font-body, .font-semibold, .text-sm, .tracking-wide, .text-blue,  .border-grey, .border-l, .border-b, .bg-lightGrey;
+
+    &:first-child {
+      border-left: none;
+    }
+  }
+
+  tbody {
+    tr:nth-child(even) {
+      @inherit: .bg-lightGrey;
+    }
+    tr:hover {
+      @inherit: .shadow-lg, .rounded, .border, .border-mediumGrey, .cursor-pointer;
+    }
+    tr {
+      @inherit: .bg-white;
+      transition: all 0.125s ease;
+
+      td {
+        @inherit: .p-20, .font-body, .text-sm;
+      }
+    }
+  }
+}
+
+.StudyTable td.shortName {
+  @inherit: .text-blue, .font-medium;
 }
 
 .StudyCard--loading {
