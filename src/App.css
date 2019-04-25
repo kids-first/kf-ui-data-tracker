@@ -10,6 +10,14 @@
 body {
 }
 
+.View {
+  @inherit: .bg-lightGrey;
+  & > * {
+    max-width: var(--site-max-width);
+    margin: auto;
+  }
+}
+
 .View--Login {
   background-image: linear-gradient(to bottom, #fff 400px, transparent 100%),
     url(https://portal.kidsfirstdrc.org/static/media/background-science.68317e4e.jpg);
