@@ -9,13 +9,13 @@ import NewTokenFormContainer from '../containers/NewTokenFormContainer';
 
 const TokensListView = () => {
   // onClick event for the delete button next to a token item
-  const onDelete = (callback, token) => {
+  const onDelete = (callback, name) => {
     if (
       window.confirm(
         'This will break any applications using this token. Are you sure?',
       )
     ) {
-      callback({variables: {token}});
+      callback({variables: {name}});
     }
   };
 
@@ -38,11 +38,27 @@ const TokensListView = () => {
           {({loading, error, data}) => (
             <Mutation
               mutation={DELETE_DEV_TOKEN}
-              refetchQueries={res => [
-                {
+              update={(cache, {data: {deleteDevToken}}) => {
+                // Removes the token from the allDevTokens query in the cache
+                const {allDevTokens} = cache.readQuery({query: GET_DEV_TOKENS});
+                const deleteIndex = allDevTokens.edges.findIndex(
+                  edge => edge.node.name === deleteDevToken.name,
+                );
+                if (deleteIndex < 0) {
+                  return allDevTokens;
+                }
+                allDevTokens.edges.splice(deleteIndex, 1);
+                const data = {
+                  allDevTokens: {
+                    ...allDevTokens,
+                    edges: allDevTokens.edges,
+                  },
+                };
+                cache.writeQuery({
                   query: GET_DEV_TOKENS,
-                },
-              ]}
+                  data,
+                });
+              }}
             >
               {deleteToken => {
                 if (loading)
@@ -52,7 +68,7 @@ const TokensListView = () => {
                 return (
                   <TokenList
                     tokens={data.allDevTokens.edges}
-                    deleteToken={token => onDelete(deleteToken, token)}
+                    deleteToken={name => onDelete(deleteToken, name)}
                   />
                 );
               }}

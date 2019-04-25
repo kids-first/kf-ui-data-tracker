@@ -76,8 +76,9 @@ export const CREATE_DEV_TOKEN = gql`
 
 // Mutation to delete a token
 export const DELETE_DEV_TOKEN = gql`
-  mutation($token: String!) {
-    deleteDevToken(token: $token) {
+  mutation($name: String!) {
+    deleteDevToken(name: $name) {
+      name
       success
     }
   }
