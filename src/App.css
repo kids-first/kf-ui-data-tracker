@@ -10,12 +10,9 @@
 body {
 }
 
-.View {
-  @inherit: .bg-lightGrey;
-  & > * {
-    max-width: var(--site-max-width);
-    margin: auto;
-  }
+.BodyContent {
+  max-width: var(--site-max-width);
+  margin: auto;
 }
 
 .View--Login {

@@ -5,14 +5,15 @@ import {withRouter} from 'react-router-dom';
 import StudyCard from './StudyCard';
 import {Icon, GridContainer} from 'kf-uikit';
 import StudyGrid from './StudyGrid';
+import StudyTable from './StudyTable';
 import ToggleButtons from '../ToggleButtons/ToggleButtons';
 
 /**
  * Displays unordered studies in grid view (include empty stage message)
  */
 const StudyList = ({className, studyList, loading}) => {
-  const [view, setView] = useState('grid');
-  const title = loading ? 'Loading studies ...' : 'Browse Studies';
+  const defaultView = 'grid';
+  const [view, setView] = useState(defaultView);
 
   return (
     <div className="bg-lightGrey min-h-screen py-32">
@@ -34,7 +35,7 @@ const StudyList = ({className, studyList, loading}) => {
         {view === 'grid' ? (
           <StudyGrid {...{loading, studyList}} />
         ) : (
-          <h2>list</h2>
+          <StudyTable {...{loading, studyList}} />
         )}
       </GridContainer>
     </div>
