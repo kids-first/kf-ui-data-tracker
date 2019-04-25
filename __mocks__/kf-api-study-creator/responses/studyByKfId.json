@@ -1,0 +1,124 @@
+{
+  "data": {
+    "studyByKfId": {
+      "id": "U3R1ZHlOb2RlOlNEXzhXWDhRUTA2",
+      "name": "benchmark extensible e-business",
+      "shortName": null,
+      "bucket": "stay-wrong-ready",
+      "kfId": "SD_8WX8QQ06",
+      "modifiedAt": "2019-04-25T15:22:18.780221+00:00",
+      "files": {
+        "edges": [
+          {
+            "node": {
+              "id": "RmlsZU5vZGU6U0ZfNVpQRU0xNjc=",
+              "kfId": "SF_5ZPEM167",
+              "name": "organization.jpeg",
+              "fileType": "CLN",
+              "description": "Month necessary animal end standard case. View system operation message decade. Actually sing because deal everything woman subject.",
+              "downloadUrl": "http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167",
+              "versions": {
+                "edges": [
+                  {
+                    "node": {
+                      "id": "T2JqZWN0Tm9kZTpGVl80TlpOQkVPRg==",
+                      "size": 9893,
+                      "createdAt": "2018-08-21T03:16:11+00:00",
+                      "__typename": "ObjectNode"
+                    },
+                    "__typename": "ObjectNodeEdge"
+                  },
+                  {
+                    "node": {
+                      "id": "T2JqZWN0Tm9kZTpGVl83NkhONTdaNw==",
+                      "size": 5460,
+                      "createdAt": "2018-09-27T05:32:26+00:00",
+                      "__typename": "ObjectNode"
+                    },
+                    "__typename": "ObjectNodeEdge"
+                  },
+                  {
+                    "node": {
+                      "id": "T2JqZWN0Tm9kZTpGVl9IUkFHWE5XMQ==",
+                      "size": 5419,
+                      "createdAt": "2017-08-25T00:05:30+00:00",
+                      "__typename": "ObjectNode"
+                    },
+                    "__typename": "ObjectNodeEdge"
+                  }
+                ],
+                "__typename": "ObjectNodeConnection"
+              },
+              "__typename": "FileNode"
+            },
+            "__typename": "FileNodeEdge"
+          },
+          {
+            "node": {
+              "id": "RmlsZU5vZGU6U0ZfWTA3SU4xSE8=",
+              "kfId": "SF_Y07IN1HO",
+              "name": "its.mp3",
+              "fileType": "SHM",
+              "description": "Question meeting move recognize.",
+              "downloadUrl": "http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_Y07IN1HO",
+              "versions": {
+                "edges": [
+                  {
+                    "node": {
+                      "id": "T2JqZWN0Tm9kZTpGVl9UWjVROEhYWA==",
+                      "size": 7394,
+                      "createdAt": "2017-08-22T08:32:38+00:00",
+                      "__typename": "ObjectNode"
+                    },
+                    "__typename": "ObjectNodeEdge"
+                  },
+                  {
+                    "node": {
+                      "id": "T2JqZWN0Tm9kZTpGVl9aOUM1SUUwRg==",
+                      "size": 5883,
+                      "createdAt": "2017-09-02T21:02:35+00:00",
+                      "__typename": "ObjectNode"
+                    },
+                    "__typename": "ObjectNodeEdge"
+                  },
+                  {
+                    "node": {
+                      "id": "T2JqZWN0Tm9kZTpGVl9ITDg0SDhHTw==",
+                      "size": 1899,
+                      "createdAt": "2019-03-14T05:46:35+00:00",
+                      "__typename": "ObjectNode"
+                    },
+                    "__typename": "ObjectNodeEdge"
+                  },
+                  {
+                    "node": {
+                      "id": "T2JqZWN0Tm9kZTpGVl9YRVg4TERHMw==",
+                      "size": 7631,
+                      "createdAt": "2018-03-13T23:52:08+00:00",
+                      "__typename": "ObjectNode"
+                    },
+                    "__typename": "ObjectNodeEdge"
+                  },
+                  {
+                    "node": {
+                      "id": "T2JqZWN0Tm9kZTpGVl9HV1JLUUVDQQ==",
+                      "size": 6834,
+                      "createdAt": "2019-04-06T07:51:17+00:00",
+                      "__typename": "ObjectNode"
+                    },
+                    "__typename": "ObjectNodeEdge"
+                  }
+                ],
+                "__typename": "ObjectNodeConnection"
+              },
+              "__typename": "FileNode"
+            },
+            "__typename": "FileNodeEdge"
+          }
+        ],
+        "__typename": "FileNodeConnection"
+      },
+      "__typename": "StudyNode"
+    }
+  }
+}

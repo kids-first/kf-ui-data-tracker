@@ -1,0 +1,9 @@
+{
+  "data": {
+    "deleteFile": {
+      "kfId": "SF_Y07IN1HO",
+      "success": true,
+      "__typename": "DeleteFileMutation"
+    }
+  }
+}

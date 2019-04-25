@@ -1,0 +1,57 @@
+{
+  "data": {
+    "allStudies": {
+      "edges": [
+        {
+          "node": {
+            "id": "U3R1ZHlOb2RlOlNEXzhXWDhRUTA2",
+            "kfId": "SD_8WX8QQ06",
+            "name": "benchmark extensible e-business",
+            "shortName": null,
+            "createdAt": "2018-06-17T23:32:00+00:00",
+            "modifiedAt": "2019-04-25T15:22:18.780221+00:00",
+            "__typename": "StudyNode"
+          },
+          "__typename": "StudyNodeEdge"
+        },
+        {
+          "node": {
+            "id": "U3R1ZHlOb2RlOlNEX0kxTDkyVzU3",
+            "kfId": "SD_I1L92W57",
+            "name": "visualize dynamic users",
+            "shortName": null,
+            "createdAt": "2018-03-25T10:47:50+00:00",
+            "modifiedAt": "2019-04-25T15:22:18.786031+00:00",
+            "__typename": "StudyNode"
+          },
+          "__typename": "StudyNodeEdge"
+        },
+        {
+          "node": {
+            "id": "U3R1ZHlOb2RlOlNEX1NHNU40MUs4",
+            "kfId": "SD_SG5N41K8",
+            "name": "strategize cross-media markets",
+            "shortName": null,
+            "createdAt": "2017-07-07T09:23:24+00:00",
+            "modifiedAt": "2019-04-25T15:22:18.789881+00:00",
+            "__typename": "StudyNode"
+          },
+          "__typename": "StudyNodeEdge"
+        },
+        {
+          "node": {
+            "id": "U3R1ZHlOb2RlOlNEXzBZWVA1WkVO",
+            "kfId": "SD_0YYP5ZEN",
+            "name": "drive distributed architectures",
+            "shortName": null,
+            "createdAt": "2017-05-23T06:26:36+00:00",
+            "modifiedAt": "2019-04-25T15:22:18.793566+00:00",
+            "__typename": "StudyNode"
+          },
+          "__typename": "StudyNodeEdge"
+        }
+      ],
+      "__typename": "StudyNodeConnection"
+    }
+  }
+}
