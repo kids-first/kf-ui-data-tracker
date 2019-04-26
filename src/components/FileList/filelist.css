@@ -1,41 +1,28 @@
 /* FileList and FileListElement CSS */
 .FileList {
-  @inherit: .list-reset, .min-w-full, .my-20, .border-t, .border-grey;
+  @inherit: .list-reset, .min-w-full, .m-0, .border-t, .border-grey;
 }
 
 .FileList--Element {
-  @inherit: .list-reset, .w-full, .border-b, .border-grey, .py-8, .px-32, .flex,
-    .flex-row, .flex-wrap-reverse;
+  @inherit: .list-reset, .w-full, .border-b, .border-grey, .p-8;
 }
 
 .FileList--Empty {
-  @inherit: .text-grey, .border-b, .border-grey, .py-16, .px-32;
+  @inherit: .text-grey, .border-b, .border-grey, .m-0, .py-16, .px-32;
 }
 
 .FileList--ElementBadge {
-  @inherit: .flex-initial, .mr-12, .flex, .flex-row, .flex-wrap;
+  @inherit: .row-2, .cell-12, .flex-initial, .flex, .flex-row, .flex-wrap;
+}
+
+.FileList--ElementButton {
+  @inherit: .inline-block, .mr-8, .p-0;
 }
 
 .FileStatus {
-  @inherit: .mt-0, .mr-16, .font-normal, .text-xs;
+  @inherit: .mr-16, .font-normal, .text-xs;
 }
 
 .FileStatus--loading {
-  @inherit: .mt-0, .mr-4, .px-4, .bg-lightGrey, .text-lightGrey;
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
-}
-
-.spin {
-  animation-name: spin;
-  animation-duration: 1000ms;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  @inherit: .mr-16, .px-16, .bg-lightGrey, .text-lightGrey;
 }
