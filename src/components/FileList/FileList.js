@@ -20,12 +20,34 @@ const FileList = ({className, fileList, studyId}) => {
             {downloadFile => (
               <Mutation
                 mutation={DELETE_FILE}
-                refetchQueries={res => [
-                  {
+                update={(cache, {data: {deleteFile}}) => {
+                  // Re-writes the study in the cache with the deleted file
+                  // removed.
+                  const {studyByKfId} = cache.readQuery({
                     query: GET_STUDY_BY_ID,
                     variables: {kfId: studyId},
-                  },
-                ]}
+                  });
+                  const deleteIndex = studyByKfId.files.edges.findIndex(
+                    edge => edge.node.kfId === deleteFile.kfId,
+                  );
+                  if (deleteIndex < 0) {
+                    return studyByKfId;
+                  }
+                  studyByKfId.files.edges.splice(deleteIndex, 1);
+                  const data = {
+                    studyByKfId: {
+                      ...studyByKfId,
+                      files: {
+                        __typename: 'FileNodeConnection',
+                        edges: studyByKfId.files.edges,
+                      },
+                    },
+                  };
+                  cache.writeQuery({
+                    query: GET_STUDY_BY_ID,
+                    data,
+                  });
+                }}
                 key={node.kfId}
               >
                 {(deleteFile, {loading, error}) => (

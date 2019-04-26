@@ -46,6 +46,7 @@ export const UPDATE_FILE = gql`
 export const DELETE_FILE = gql`
   mutation($kfId: String!) {
     deleteFile(kfId: $kfId) {
+      kfId
       success
     }
   }
