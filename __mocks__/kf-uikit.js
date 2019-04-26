@@ -6,9 +6,9 @@ const UIKit = require.requireActual('kf-uikit');
 const mockedUIKit = {
   ...UIKit,
   Icon: jest.fn(props => (
-    <div id='mock-icon' {...props}>
+    <svg id='mock-icon' {...props}>
       <title>icon-{props.kind}</title>
-    </div>
+    </svg>
   )),
 };
 module.exports = mockedUIKit;
