@@ -27,7 +27,10 @@ const StudyFilesListView = props => (
             )}
             <UploadContainer />
           </section>
-        </div>
+          <div className="row-3 cell-3-8">
+            <UploadContainer />
+          </div>
+        </GridContainer>
       );
     }}
   </Query>
