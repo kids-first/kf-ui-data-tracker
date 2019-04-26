@@ -5,7 +5,7 @@ exports[`displays ✔ on click 1`] = `
   class=""
 >
   <button>
-    <div
+    <svg
       height="10"
       id="mock-icon"
       kind="copy"
@@ -15,7 +15,7 @@ exports[`displays ✔ on click 1`] = `
         icon-
         copy
       </title>
-    </div>
+    </svg>
   </button>
 </span>
 `;
@@ -37,7 +37,7 @@ exports[`displays ✔ on click 3`] = `
   class=""
 >
   <button>
-    <div
+    <svg
       height="10"
       id="mock-icon"
       kind="copy"
@@ -47,7 +47,7 @@ exports[`displays ✔ on click 3`] = `
         icon-
         copy
       </title>
-    </div>
+    </svg>
   </button>
 </span>
 `;
@@ -61,7 +61,7 @@ Object {
         class=""
       >
         <button>
-          <div
+          <svg
             height="10"
             id="mock-icon"
             kind="copy"
@@ -71,7 +71,7 @@ Object {
               icon-
               copy
             </title>
-          </div>
+          </svg>
         </button>
       </span>
     </div>
@@ -81,7 +81,7 @@ Object {
       class=""
     >
       <button>
-        <div
+        <svg
           height="10"
           id="mock-icon"
           kind="copy"
@@ -91,7 +91,7 @@ Object {
             icon-
             copy
           </title>
-        </div>
+        </svg>
       </button>
     </span>
   </div>,
