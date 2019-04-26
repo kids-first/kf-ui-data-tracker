@@ -788,7 +788,6 @@
 "@babel/runtime@^7.1.2", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.2":
   version "7.4.3"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.4.3.tgz#79888e452034223ad9609187a0ad1fe0d2ad4bdc"
-  integrity sha512-9lsJwJLxDh/T3Q3SZszfWOTkk3pHbkmH+3KY+zwIDmsNlxsumuhS2TH3NIpktU4kNvfzy+k3eLT7aTJSPTo0OA==
   dependencies:
     regenerator-runtime "^0.13.2"
 
@@ -847,7 +846,6 @@
 "@sheerun/mutationobserver-shim@^0.3.2":
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/@sheerun/mutationobserver-shim/-/mutationobserver-shim-0.3.2.tgz#8013f2af54a2b7d735f71560ff360d3a8176a87b"
-  integrity sha512-vTCdPp/T/Q3oSqwHmZ5Kpa9oI7iLtGl3RQaA/NyLHikvcrPxACkkKVr/XzkSPJWXHRhKGzVvb0urJsbMlRxi1Q==
 
 "@svgr/babel-plugin-add-jsx-attribute@^4.2.0":
   version "4.2.0"
@@ -2101,7 +2099,6 @@ chownr@^1.1.1:
 chroma-js@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/chroma-js/-/chroma-js-2.0.3.tgz#2521d4f80c4e786e00064c4a62824e38ff6557c4"
-  integrity sha512-2kTvZZOFSV1O81/rm99t9vmkh9jQxsHqsRRoZevDVz/VCC3yKMyPuMK8M5yHG+UMg2tV6cRoqtZtgcD92udcBw==
 
 chrome-trace-event@^1.0.0:
   version "1.0.0"
@@ -7451,7 +7448,6 @@ react-dev-utils@^8.0.0:
 react-dom@^16.8.3, react-dom@^16.8.6:
   version "16.8.6"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.8.6.tgz#71d6303f631e8b0097f56165ef608f051ff6e10f"
-  integrity sha512-1nL7PIq9LTL3fthPqwkvr2zY7phIPjYrT0jp4HjyEQrEROnw4dG41VVwi/wfoCneoleqrNX7iAD+pXebJZwrwA==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
@@ -7517,7 +7513,6 @@ react-router@^4.3.1:
 react-scripts@2.1.8, react-scripts@^2.1.8:
   version "2.1.8"
   resolved "https://registry.yarnpkg.com/react-scripts/-/react-scripts-2.1.8.tgz#21195bb928b2c0462aa98b2d32edf7d034cff2a9"
-  integrity sha512-mDC8fYWCyuB9VROti8OCPdHE79UEchVVZmuS/yaIs47VkvZpgZqUvzghYBswZRchqnW0aARNY8xXrzoFRhhK7A==
   dependencies:
     "@babel/core" "7.2.2"
     "@svgr/webpack" "4.1.0"
@@ -7582,7 +7577,6 @@ react-timeago@^4.4.0:
 react@^16.8.3, react@^16.8.6:
   version "16.8.6"
   resolved "https://registry.yarnpkg.com/react/-/react-16.8.6.tgz#ad6c3a9614fd3a4e9ef51117f54d888da01f2bbe"
-  integrity sha512-pC0uMkhLaHm11ZSJULfOBqV4tIZkx87ZLvbbQYunNixAAvjnC+snJCg0XQXn9VIsttVsbZP/H/ewzgsd5fxKXw==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
@@ -9110,6 +9104,10 @@ w3c-hr-time@^1.0.1:
   resolved "https://registry.yarnpkg.com/w3c-hr-time/-/w3c-hr-time-1.0.1.tgz#82ac2bff63d950ea9e3189a58a65625fedf19045"
   dependencies:
     browser-process-hrtime "^0.1.2"
+
+waait@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/waait/-/waait-1.0.4.tgz#1d177bab3175bfb56f0f832526582e0ca0b2650d"
 
 wait-for-expect@^1.1.0:
   version "1.1.1"
