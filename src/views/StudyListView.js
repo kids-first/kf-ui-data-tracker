@@ -15,13 +15,7 @@ const StudyListView = () => (
             <h3>Your account is being reviewed for the proper permissions.</h3>
           </div>
         );
-      return (
-        <StudyList
-          studyList={studyList}
-          loading={loading}
-          className="BodyContent"
-        />
-      );
+      return <StudyList studyList={studyList} loading={loading} />;
     }}
   </Query>
 );
