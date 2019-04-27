@@ -35,4 +35,8 @@ jobs:
 
       # run tests!
       - run: ./node_modules/.bin/eslint src/ --max-warnings=0
+      - run: yarn build
+      - run: |
+          yarn add -D bundlesize
+          yarn run bundlesize
       - run: yarn test
