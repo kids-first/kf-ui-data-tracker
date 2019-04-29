@@ -1,4 +1,0 @@
-.StudyHeader {
-  @inherit: .p-12, .bg-lightGrey, .flex, .flex-row, .justify-between,
-    .items-center;
-}

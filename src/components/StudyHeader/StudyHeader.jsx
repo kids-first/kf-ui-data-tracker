@@ -3,6 +3,7 @@ import propTypes from 'prop-types';
 import classes from 'classnames';
 import TimeAgo from 'react-timeago';
 import CopyButton from '../CopyButton/CopyButton';
+import {GridContainer} from 'kf-uikit';
 
 const StudyHeader = ({
   kfId,
@@ -11,32 +12,29 @@ const StudyHeader = ({
   name: studyName,
   className,
 }) => {
-  const studyHeaderClasses = classes('StudyHeader', 'BodyContent', className);
+  const studyHeaderClass = classes('StudyHeader', className);
+  const topTextClass = classes('StudyHeader--TopText');
   return (
-    <div className="bg-lightGrey">
-      <header className={studyHeaderClasses}>
-        <div>
-          <h3 className="mt-1 text-base">
-            <span className="font-body font-bold pr-4 text-darkGrey" id="kfId">
-              {kfId}
-            </span>
-            <CopyButton text={kfId} />
-            <span className="study-modified-date pl-20 font-light">
-              <small>
-                last updated: <TimeAgo date={modifiedAt} />
-              </small>
-            </span>
-          </h3>
-          <h2 className="mt-4 font-light text-blue text-4xl">
-            {shortName || studyName}
-          </h2>
-        </div>
-        <div>
-          <h4 className="mt-2 text-sm font-bold">Contacts:</h4>
-          <p className="mt-1 font-light">Mary Marazita</p>
-        </div>
-      </header>
-    </div>
+    <GridContainer
+      className={studyHeaderClass}
+      collapsed="rows"
+      className="py-8 px-12"
+    >
+      <p className={topTextClass}>
+        <b>{kfId}</b>
+        {kfId && <CopyButton text={kfId} className="pl-4 pr-20" />}
+        <small className="font-light">
+          last updated: {modifiedAt && <TimeAgo date={modifiedAt} />}
+        </small>
+      </p>
+      <p className="StudyHeader--TitleText sm:row-2 sm:cell-10">
+        {shortName || studyName}
+      </p>
+      <div className="row-2 cell-12 sm:flex-row sm:flex-col sm:cell-2">
+        <p className="m-0 text-sm font-bold inline-block pr-8">Contacts:</p>
+        <p className="m-0 font-light inline-block">Mary Marazita</p>
+      </div>
+    </GridContainer>
   );
 };
 
