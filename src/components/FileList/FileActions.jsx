@@ -4,10 +4,13 @@ import classes from 'classnames';
 import {Mutation} from 'react-apollo';
 import {GET_STUDY_BY_ID} from '../../state/queries';
 import {DELETE_FILE, FILE_DOWNLOAD_URL} from '../../state/mutations';
-import FileElement from './FileElement';
 import {KF_STUDY_API} from '../../common/globals';
+import {Icon} from 'kf-uikit';
 
-const FileActionsContainer = ({node, studyId, className}) => {
+const FileActions = ({node, studyId, className}) => {
+  const FileActionsClass = classes('FileActions', className);
+
+  const FileActionButton = classes('FileActionButton');
   if (node) {
     return (
       <Mutation mutation={FILE_DOWNLOAD_URL} key={node.kfId}>
@@ -62,7 +65,7 @@ const FileActionsContainer = ({node, studyId, className}) => {
       </Mutation>
     );
   }
-  return <h2>loading</h2>;
+  return null;
 };
 
 export default FileActions;
