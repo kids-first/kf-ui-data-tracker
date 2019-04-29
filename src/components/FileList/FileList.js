@@ -16,62 +16,7 @@ const FileList = ({className, fileList, studyId}) => {
     <ul className={fileListClass}>
       {fileList.length ? (
         fileList.map(({node}) => (
-          <Mutation mutation={FILE_DOWNLOAD_URL} key={node.kfId}>
-            {downloadFile => (
-              <Mutation
-                mutation={DELETE_FILE}
-                update={(cache, {data: {deleteFile}}) => {
-                  // Re-writes the study in the cache with the deleted file
-                  // removed.
-                  const {studyByKfId} = cache.readQuery({
-                    query: GET_STUDY_BY_ID,
-                    variables: {kfId: studyId},
-                  });
-                  const deleteIndex = studyByKfId.files.edges.findIndex(
-                    edge => edge.node.kfId === deleteFile.kfId,
-                  );
-                  if (deleteIndex < 0) {
-                    return studyByKfId;
-                  }
-                  studyByKfId.files.edges.splice(deleteIndex, 1);
-                  const data = {
-                    studyByKfId: {
-                      ...studyByKfId,
-                      files: {
-                        __typename: 'FileNodeConnection',
-                        edges: studyByKfId.files.edges,
-                      },
-                    },
-                  };
-                  cache.writeQuery({
-                    query: GET_STUDY_BY_ID,
-                    data,
-                  });
-                }}
-                key={node.kfId}
-              >
-                {(deleteFile, {loading, error}) => (
-                  <FileElement
-                    key={node.kfId}
-                    fileNode={node}
-                    loading={loading}
-                    error={error}
-                    deleteFile={() =>
-                      deleteFile({variables: {kfId: node.kfId}})
-                    }
-                    downloadFile={e => {
-                      downloadFile({
-                        variables: {studyId, fileId: node.kfId},
-                      }).then(resp => {
-                        const url = `${KF_STUDY_API}${resp.data.signedUrl.url}`;
-                        window.location.href = url;
-                      });
-                    }}
-                  />
-                )}
-              </Mutation>
-            )}
-          </Mutation>
+          <FileElement key={node.kfId} fileListId={studyId} fileNode={node} />
         ))
       ) : (
         <h3 className="FileList--Empty">You don't have any files yet.</h3>
