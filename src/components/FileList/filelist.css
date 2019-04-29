@@ -4,7 +4,11 @@
 }
 
 .FileList--Element {
-  @inherit: .list-reset, .w-full, .border-b, .border-grey, .p-8;
+  @inherit: .list-reset, .w-full, .py-8, .border-b, .border-grey;
+  .grid-container {
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .FileList--Empty {

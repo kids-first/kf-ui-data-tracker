@@ -11,6 +11,7 @@ import {GridContainer} from 'kf-uikit';
 const StudyFilesListView = props => (
   <Query query={GET_STUDY_BY_ID} variables={{kfId: props.match.params.kfId}}>
     {({loading, error, data}) => {
+      // TODO: add styled error state
       if (error) return `Error!: ${error}`;
       const files = !loading ? data.studyByKfId.files.edges : [];
       return (

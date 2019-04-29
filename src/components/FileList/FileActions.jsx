@@ -7,7 +7,7 @@ import {DELETE_FILE, FILE_DOWNLOAD_URL} from '../../state/mutations';
 import FileElement from './FileElement';
 import {KF_STUDY_API} from '../../common/globals';
 
-const FileActions = ({component: Component, node, studyId}) => {
+const FileActionsContainer = ({node, studyId, className}) => {
   if (node) {
     return (
       <Mutation mutation={FILE_DOWNLOAD_URL} key={node.kfId}>
@@ -45,7 +45,17 @@ const FileActions = ({component: Component, node, studyId}) => {
             key={node.kfId}
           >
             {(deleteFile, {loading, error}) => (
-              <Component {...{loading, error}} />
+              <FileActionButtons
+                {...{
+                  node,
+                  studyId,
+                  deleteFile,
+                  downloadFile,
+                  loading,
+                  className,
+                  error,
+                }}
+              />
             )}
           </Mutation>
         )}
