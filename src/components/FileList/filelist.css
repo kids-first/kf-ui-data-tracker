@@ -1,14 +1,34 @@
 /* FileList and FileListElement CSS */
 .FileList {
-  @inherit: .list-reset, .min-w-full, .m-0, .border-t, .border-grey;
+  @inherit: .list-reset, .min-w-full, .my-20, .p-0, .ml-0, .border-t,
+    .border-grey;
 }
 
 .FileList--Element {
-  @inherit: .list-reset, .w-full, .py-8, .border-b, .border-grey;
-  .grid-container {
-    margin: 0;
-    padding: 0;
+  @inherit: .list-reset, .w-full, .py-8, .border-b, .border-grey, .text-black;
+  transition: all 0.25s ease-in;
+}
+.FileList--Element-title {
+  transition: all 0.25s ease-in;
+  color: black;
+}
+
+.FileList--Element:hover,
+.FileList--Element:focus {
+  @inherit: .bg-lightGrey, .shadow, .border-grey-lightest;
+  .FileList--Element-desc {
+    height: 30px;
   }
+}
+
+.FileList--Element:hover .FileList--Element-title,
+.FileList--Element:focus .FileList--Element-title {
+  color: #2b388f;
+  transition: all 0.25s ease-in;
+}
+
+.FileList--Element-desc {
+  height: 0;
 }
 
 .FileList--Empty {
