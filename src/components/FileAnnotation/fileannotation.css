@@ -13,15 +13,12 @@
 }
 
 .FileEditor--Input {
-  @inherit: .flex-auto, .p-4, .border-transparent, .rounded-sm, .my-12;
+  @inherit: .flex-auto, .text-xl, .mt-4, .font-light, .font-title,
+    .border-transparent, .rounded-sm;
   width: auto;
 }
 
 .FileEditor--TextArea {
-  @inherit: .w-full, .p-4, .border-transparent, .rounded-sm, .mt-8;
-  height: 280px;
-}
-
-.FileEditor--Badge {
-  @inherit: .my-12, .flex, .flex-row, .flex-wrap, .content-center;
+  @inherit: .w-full, .border-transparent, .rounded-sm, .mt-8;
+  height: 312px;
 }

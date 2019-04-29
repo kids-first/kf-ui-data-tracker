@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import {withRouter} from 'react-router-dom';
-import {Button, Icon} from 'kf-uikit';
+import {Button, Icon, GridContainer} from 'kf-uikit';
 import SelectElement from './SelectElement';
 import Badge from '../Badge/Badge';
 /**
@@ -21,9 +21,9 @@ const FileEditor = ({
 
   return (
     <form onSubmit={e => onSubmit(e)} className="FileEditor">
-      <div>
+      <GridContainer collapsed="rows">
         {editing ? (
-          <label className="max-w-full flex flex-row justify-between">
+          <label className="row-1 cell-12 flex justify-between">
             <input
               className="FileEditor--Input"
               type="text"
@@ -43,7 +43,7 @@ const FileEditor = ({
             </button>
           </label>
         ) : (
-          <h3 className="font-normal my-12 pl-4 text-blue">
+          <h3 className="row-1 cell-12 font-normal my-0 text-blue">
             {name}
             <button
               className="pl-20 pt-4"
@@ -56,25 +56,20 @@ const FileEditor = ({
             </button>
           </h3>
         )}
-
-        <div className="FileEditor--Badge">
+        <div className="flex row-2 cell-12">
           <Badge state="new" />
           <Badge state="pendingApproval" />
         </div>
-      </div>
-      <div className="flex flex-row flex-wrap sm:flex-no-wrap">
-        <div className="w-full sm:mr-20">
-          <label>
-            File description (required):
-            <textarea
-              className="FileEditor--TextArea sm:mb-0"
-              type="text"
-              name="description"
-              defaultValue={description}
-            />
-          </label>
-        </div>
-        <fieldset className="w-full">
+        <label className="mt-8 cell-12 md:cell-6">
+          File description (required):
+          <textarea
+            className="FileEditor--TextArea sm:mb-0 h-full"
+            type="text"
+            name="description"
+            defaultValue={description}
+          />
+        </label>
+        <fieldset className="mt-8 cell-12 md:cell-6">
           Select a file type (required):
           <SelectElement
             name="shipping"
@@ -112,20 +107,20 @@ const FileEditor = ({
             select={selectFileType}
             selected={fileType === 'OTH'}
           />
-          <div className="flex flex-row-reverse w-full mt-4">
-            <Button type="submit" color="primary" className="ml-12">
-              Annotate File
-            </Button>
-            <Button
-              onClick={() => {
-                history.goBack();
-              }}
-            >
-              Cancel
-            </Button>
-          </div>
         </fieldset>
-      </div>
+        <div className="cell-12 flex justify-end mt-4">
+          <Button
+            onClick={() => {
+              history.goBack();
+            }}
+          >
+            Cancel
+          </Button>
+          <Button type="submit" color="primary" className="ml-12">
+            Annotate File
+          </Button>
+        </div>
+      </GridContainer>
     </form>
   );
 };
