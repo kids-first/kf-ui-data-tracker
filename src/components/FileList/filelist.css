@@ -17,18 +17,23 @@
 .FileList--Element:focus {
   @inherit: .bg-lightGrey, .shadow, .border-grey-lightest;
   .FileList--Element-desc {
-    height: 30px;
+    height: 25px;
+  }
+  .FileActions {
+    opacity: 1;
   }
 }
 
-.FileList--Element:hover .FileList--Element-title,
-.FileList--Element:focus .FileList--Element-title {
+.FileList--Element:hover .FileList--Element-name,
+.FileList--Element:focus .FileList--Element-name {
   color: #2b388f;
-  transition: all 0.25s ease-in;
+  transition: all 0.5s ease;
 }
 
 .FileList--Element-desc {
   height: 0;
+  transition: height 0.5s ease;
+  overflow: hidden;
 }
 
 .FileList--Empty {

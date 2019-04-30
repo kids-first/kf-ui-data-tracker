@@ -1,16 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classes from 'classnames';
 import {Mutation} from 'react-apollo';
-import {GET_STUDY_BY_ID} from '../../state/queries';
-import {DELETE_FILE, FILE_DOWNLOAD_URL} from '../../state/mutations';
-import {KF_STUDY_API} from '../../common/globals';
-import {Icon} from 'kf-uikit';
+import {GET_STUDY_BY_ID} from '../state/queries';
+import {DELETE_FILE, FILE_DOWNLOAD_URL} from '../state/mutations';
+import FileActionButtons from '../components/FileActionButtons/FileActionButtons';
 
-const FileActions = ({node, studyId, className}) => {
-  const FileActionsClass = classes('FileActions', className);
-
-  const FileActionButton = classes('FileActionButton');
+const FileActionsContainer = ({node, studyId, className}) => {
   if (node) {
     return (
       <Mutation mutation={FILE_DOWNLOAD_URL} key={node.kfId}>
@@ -68,4 +63,18 @@ const FileActions = ({node, studyId, className}) => {
   return null;
 };
 
-export default FileActions;
+FileActionsContainer.propTypes = {
+  /** study file object */
+  node: PropTypes.object.isRequired,
+  /** Kids First unique study identifier (SD_XXXXXXXX) */
+  studyId: PropTypes.string.isRequired,
+};
+
+FileActionsContainer.defaultProps = {
+  /** study file object */
+  node: null,
+  /** Kids First unique study identifier (SD_XXXXXXXX) */
+  studyId: null,
+};
+
+export default FileActionsContainer;

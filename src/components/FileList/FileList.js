@@ -1,13 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classes from 'classnames';
-import {Mutation} from 'react-apollo';
-import {GET_STUDY_BY_ID} from '../../state/queries';
-import {DELETE_FILE, FILE_DOWNLOAD_URL} from '../../state/mutations';
 import FileElement from './FileElement';
-import {KF_STUDY_API} from '../../common/globals';
+
 /**
- * Displays unordered studies in grid view (include empty stage message)
+ * Displays list of study files
  */
 const FileList = ({className, fileList, studyId}) => {
   let fileListClass = classes('FileList', className);
@@ -30,11 +27,14 @@ FileList.propTypes = {
   className: PropTypes.string,
   /** Array of study object*/
   fileList: PropTypes.array,
+  /** Kids First unique study identifier (SD_XXXXXXXX) */
+  studyId: PropTypes.string.isRequired,
 };
 
 FileList.defaultProps = {
   className: null,
   fileList: [],
+  studyId: null,
 };
 
 export default FileList;
