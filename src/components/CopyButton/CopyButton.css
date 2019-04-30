@@ -1,0 +1,21 @@
+.CopyButton {
+  @inherit: .inline-block, .relative, .text-xs;
+}
+
+.CopyTooltip {
+  top: 150%;
+  left: 50%;
+  border-radius: 4px;
+  @inherit: .absolute, .w-16, .z-10, .-ml-8, .bg-black, .text-white, .text-xs,
+    .text-center, .rounded-sm, .py-8;
+}
+
+.CopyTooltip:after {
+  content: '';
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-color: transparent transparent black transparent;
+  @inherit: .absolute, .border-solid;
+}
