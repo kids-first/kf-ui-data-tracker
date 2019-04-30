@@ -16,7 +16,6 @@
   border-radius: 2px;
   vertical-align: top;
   overflow-x: auto;
-  /* white-space: nowrap; */
   border-spacing: 0;
 
   th {
@@ -31,8 +30,11 @@
     tr:nth-child(even) {
       @inherit: .bg-lightGrey;
     }
-    tr:hover {
-      @inherit: .shadow-lg, .rounded, .border, .border-mediumGrey, .cursor-pointer;
+    tr:hover,
+    tr:focus,
+    tr:nth-child(even):hover,
+    tr:nth-child(even):focus {
+      @inherit: .shadow-lg, .bg-grey-lightest, .cursor-pointer;
     }
     tr {
       @inherit: .bg-white;
