@@ -1,0 +1,185 @@
+{
+  "data": {
+    "studyByKfId": {
+      "id": "U3R1ZHlOb2RlOlNEX1g2RTVLV000",
+      "name": "deploy bleeding-edge action-items",
+      "shortName": null,
+      "bucket": "media-simply-like",
+      "kfId": "SD_X6E5KWM4",
+      "modifiedAt": "2019-03-29T18:45:01.230776+00:00",
+      "files": {
+        "edges": [
+          {
+            "node": {
+              "id": "RmlsZU5vZGU6U0ZfRlBWQk0wSkY=",
+              "kfId": "SF_FPVBM0JF",
+              "name": "force.webm",
+              "fileType": "CLN",
+              "description": "Safe always adult sometimes. Enter full agree still son expect write. According small hold someone.",
+              "downloadUrl": "http://localhost:8080/download/study/SD_X6E5KWM4/file/SF_FPVBM0JF",
+              "versions": {
+                "edges": [
+                  {
+                    "node": {
+                      "id": "T2JqZWN0Tm9kZTpGVl9TSUI1RlE2TA==",
+                      "size": 9037,
+                      "createdAt": "2017-11-29T04:15:57+00:00",
+                      "__typename": "ObjectNode"
+                    },
+                    "__typename": "ObjectNodeEdge"
+                  },
+                  {
+                    "node": {
+                      "id": "T2JqZWN0Tm9kZTpGVl8zT1RURFM3SA==",
+                      "size": 440,
+                      "createdAt": "2018-09-19T08:33:31+00:00",
+                      "__typename": "ObjectNode"
+                    },
+                    "__typename": "ObjectNodeEdge"
+                  }
+                ],
+                "__typename": "ObjectNodeConnection"
+              },
+              "__typename": "FileNode"
+            },
+            "__typename": "FileNodeEdge"
+          },
+          {
+            "node": {
+              "id": "RmlsZU5vZGU6U0ZfRExYRVFaVjE=",
+              "kfId": "SF_DLXEQZV1",
+              "name": "those.wav",
+              "fileType": "FAM",
+              "description": "Feel industry quality direction resource truth. Affect green yard various play character simply remain.",
+              "downloadUrl": "http://localhost:8080/download/study/SD_X6E5KWM4/file/SF_DLXEQZV1",
+              "versions": {
+                "edges": [
+                  {
+                    "node": {
+                      "id": "T2JqZWN0Tm9kZTpGVl9WMU0zRUpZRA==",
+                      "size": 5267,
+                      "createdAt": "2017-11-17T13:39:26+00:00",
+                      "__typename": "ObjectNode"
+                    },
+                    "__typename": "ObjectNodeEdge"
+                  },
+                  {
+                    "node": {
+                      "id": "T2JqZWN0Tm9kZTpGVl9YM0RPMFc0TQ==",
+                      "size": 7032,
+                      "createdAt": "2018-07-09T05:01:45+00:00",
+                      "__typename": "ObjectNode"
+                    },
+                    "__typename": "ObjectNodeEdge"
+                  }
+                ],
+                "__typename": "ObjectNodeConnection"
+              },
+              "__typename": "FileNode"
+            },
+            "__typename": "FileNodeEdge"
+          },
+          {
+            "node": {
+              "id": "RmlsZU5vZGU6U0ZfNkpCU0dWV0U=",
+              "kfId": "SF_6JBSGVWE",
+              "name": "hand.css",
+              "fileType": "FAM",
+              "description": "This democratic analysis car here likely. Protect speech exactly three order different wife.",
+              "downloadUrl": "http://localhost:8080/download/study/SD_X6E5KWM4/file/SF_6JBSGVWE",
+              "versions": {
+                "edges": [
+                  {
+                    "node": {
+                      "id": "T2JqZWN0Tm9kZTpGVl80T1ZMVFc5TQ==",
+                      "size": 9605,
+                      "createdAt": "2018-10-31T05:37:11+00:00",
+                      "__typename": "ObjectNode"
+                    },
+                    "__typename": "ObjectNodeEdge"
+                  },
+                  {
+                    "node": {
+                      "id": "T2JqZWN0Tm9kZTpGVl9FMDRIQjQzSw==",
+                      "size": 8631,
+                      "createdAt": "2017-05-09T23:36:39+00:00",
+                      "__typename": "ObjectNode"
+                    },
+                    "__typename": "ObjectNodeEdge"
+                  },
+                  {
+                    "node": {
+                      "id": "T2JqZWN0Tm9kZTpGVl83RkE3WFA4Tg==",
+                      "size": 3186,
+                      "createdAt": "2017-08-20T09:28:39+00:00",
+                      "__typename": "ObjectNode"
+                    },
+                    "__typename": "ObjectNodeEdge"
+                  },
+                  {
+                    "node": {
+                      "id": "T2JqZWN0Tm9kZTpGVl9HSExZOVlZWA==",
+                      "size": 6863,
+                      "createdAt": "2017-04-05T14:44:06+00:00",
+                      "__typename": "ObjectNode"
+                    },
+                    "__typename": "ObjectNodeEdge"
+                  },
+                  {
+                    "node": {
+                      "id": "T2JqZWN0Tm9kZTpGVl9ZQUxDVzI2NA==",
+                      "size": 3247,
+                      "createdAt": "2018-09-09T06:30:35+00:00",
+                      "__typename": "ObjectNode"
+                    },
+                    "__typename": "ObjectNodeEdge"
+                  }
+                ],
+                "__typename": "ObjectNodeConnection"
+              },
+              "__typename": "FileNode"
+            },
+            "__typename": "FileNodeEdge"
+          },
+          {
+            "node": {
+              "id": "RmlsZU5vZGU6U0ZfSlQwR1JaUDc=",
+              "kfId": "SF_JT0GRZP7",
+              "name": "pattern.flac",
+              "fileType": "CLN",
+              "description": "Shoulder body answer especially large big risk its. Sort fly note field fish. Network him identify rich.",
+              "downloadUrl": "http://localhost:8080/download/study/SD_X6E5KWM4/file/SF_JT0GRZP7",
+              "versions": {
+                "edges": [
+                  {
+                    "node": {
+                      "id": "T2JqZWN0Tm9kZTpGVl9CVEs3RVlIWA==",
+                      "size": 6563,
+                      "createdAt": "2017-11-06T13:13:56+00:00",
+                      "__typename": "ObjectNode"
+                    },
+                    "__typename": "ObjectNodeEdge"
+                  },
+                  {
+                    "node": {
+                      "id": "T2JqZWN0Tm9kZTpGVl9QTkExNjdOSA==",
+                      "size": 7957,
+                      "createdAt": "2017-09-24T04:10:21+00:00",
+                      "__typename": "ObjectNode"
+                    },
+                    "__typename": "ObjectNodeEdge"
+                  }
+                ],
+                "__typename": "ObjectNodeConnection"
+              },
+              "__typename": "FileNode"
+            },
+            "__typename": "FileNodeEdge"
+          }
+        ],
+        "__typename": "FileNodeConnection"
+      },
+      "__typename": "StudyNode"
+    }
+  }
+}

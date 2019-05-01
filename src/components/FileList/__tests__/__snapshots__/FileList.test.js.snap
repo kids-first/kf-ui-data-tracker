@@ -1,0 +1,588 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders with files 1`] = `
+<div>
+  <ul
+    class="FileList"
+  >
+    <li
+      class="FileList--Element"
+    >
+      <section
+        class="grid-container mx-auto grid-container--collapsed-rows"
+      >
+        <div
+          class="lg:cell-2 lg:row-1 FileList--ElementBadge"
+        >
+          <div
+            class="lg:min-w-full m-0 Badge bg-teal"
+          >
+            <span>
+              New
+            </span>
+          </div>
+          <div
+            class="lg:min-w-full m-0 Badge bg-orange"
+          >
+            <span>
+              Pending Approval
+            </span>
+          </div>
+        </div>
+        <div
+          class="lg:cell-10 row-1 cell-12"
+        >
+          <p
+            class="m-0"
+          >
+            <span
+              class="FileStatus text-sm font-bold"
+              title="Safe always adult sometimes. Enter full agree still son expect write. According small hold someone."
+            >
+              force.webm
+            </span>
+            <span
+              class="FileStatus text-grey"
+              title="Study ID: undefined"
+            >
+              SF_FPVBM0JF
+               
+              <span
+                class="FileList--ElementButton"
+              >
+                <button>
+                  <svg
+                    height="10"
+                    id="mock-icon"
+                    kind="copy"
+                    width="10"
+                  >
+                    <title>
+                      icon-
+                      copy
+                    </title>
+                  </svg>
+                </button>
+              </span>
+            </span>
+            <span
+              class="FileStatus text-grey"
+            >
+              <a
+                class="FileList--ElementButton"
+                href="/study/undefined/files/SF_FPVBM0JF"
+              >
+                <svg
+                  height="10"
+                  id="mock-icon"
+                  kind="edit"
+                  width="10"
+                >
+                  <title>
+                    icon-
+                    edit
+                  </title>
+                </svg>
+              </a>
+              <button
+                class="FileList--ElementButton"
+              >
+                <svg
+                  height="10"
+                  id="mock-icon"
+                  kind="download"
+                  width="10"
+                >
+                  <title>
+                    icon-
+                    download
+                  </title>
+                </svg>
+              </button>
+              <button
+                class="FileList--ElementButton"
+              >
+                <svg
+                  height="10"
+                  id="mock-icon"
+                  kind="delete"
+                  width="10"
+                >
+                  <title>
+                    icon-
+                    delete
+                  </title>
+                </svg>
+              </button>
+            </span>
+          </p>
+          <p
+            class="m-0"
+          >
+            <span
+              class="FileStatus text-grey"
+            >
+              Created:
+               
+              <time
+                datetime="2018-09-19T08:33:31.000Z"
+                title="2018-09-19T08:33:31+00:00"
+              >
+                7 months ago
+              </time>
+            </span>
+            <span
+              class="FileStatus text-grey"
+            >
+              Size: 
+              440 B
+            </span>
+            <span
+              class="FileStatus text-grey"
+            >
+              Clinical/Phenotype Data
+            </span>
+          </p>
+        </div>
+      </section>
+    </li>
+    <li
+      class="FileList--Element"
+    >
+      <section
+        class="grid-container mx-auto grid-container--collapsed-rows"
+      >
+        <div
+          class="lg:cell-2 lg:row-1 FileList--ElementBadge"
+        >
+          <div
+            class="lg:min-w-full m-0 Badge bg-teal"
+          >
+            <span>
+              New
+            </span>
+          </div>
+          <div
+            class="lg:min-w-full m-0 Badge bg-orange"
+          >
+            <span>
+              Pending Approval
+            </span>
+          </div>
+        </div>
+        <div
+          class="lg:cell-10 row-1 cell-12"
+        >
+          <p
+            class="m-0"
+          >
+            <span
+              class="FileStatus text-sm font-bold"
+              title="Feel industry quality direction resource truth. Affect green yard various play character simply remain."
+            >
+              those.wav
+            </span>
+            <span
+              class="FileStatus text-grey"
+              title="Study ID: undefined"
+            >
+              SF_DLXEQZV1
+               
+              <span
+                class="FileList--ElementButton"
+              >
+                <button>
+                  <svg
+                    height="10"
+                    id="mock-icon"
+                    kind="copy"
+                    width="10"
+                  >
+                    <title>
+                      icon-
+                      copy
+                    </title>
+                  </svg>
+                </button>
+              </span>
+            </span>
+            <span
+              class="FileStatus text-grey"
+            >
+              <a
+                class="FileList--ElementButton"
+                href="/study/undefined/files/SF_DLXEQZV1"
+              >
+                <svg
+                  height="10"
+                  id="mock-icon"
+                  kind="edit"
+                  width="10"
+                >
+                  <title>
+                    icon-
+                    edit
+                  </title>
+                </svg>
+              </a>
+              <button
+                class="FileList--ElementButton"
+              >
+                <svg
+                  height="10"
+                  id="mock-icon"
+                  kind="download"
+                  width="10"
+                >
+                  <title>
+                    icon-
+                    download
+                  </title>
+                </svg>
+              </button>
+              <button
+                class="FileList--ElementButton"
+              >
+                <svg
+                  height="10"
+                  id="mock-icon"
+                  kind="delete"
+                  width="10"
+                >
+                  <title>
+                    icon-
+                    delete
+                  </title>
+                </svg>
+              </button>
+            </span>
+          </p>
+          <p
+            class="m-0"
+          >
+            <span
+              class="FileStatus text-grey"
+            >
+              Created:
+               
+              <time
+                datetime="2018-07-09T05:01:45.000Z"
+                title="2018-07-09T05:01:45+00:00"
+              >
+                10 months ago
+              </time>
+            </span>
+            <span
+              class="FileStatus text-grey"
+            >
+              Size: 
+              7.0 kB
+            </span>
+            <span
+              class="FileStatus text-grey"
+            >
+              unknown
+            </span>
+          </p>
+        </div>
+      </section>
+    </li>
+    <li
+      class="FileList--Element"
+    >
+      <section
+        class="grid-container mx-auto grid-container--collapsed-rows"
+      >
+        <div
+          class="lg:cell-2 lg:row-1 FileList--ElementBadge"
+        >
+          <div
+            class="lg:min-w-full m-0 Badge bg-teal"
+          >
+            <span>
+              New
+            </span>
+          </div>
+          <div
+            class="lg:min-w-full m-0 Badge bg-orange"
+          >
+            <span>
+              Pending Approval
+            </span>
+          </div>
+        </div>
+        <div
+          class="lg:cell-10 row-1 cell-12"
+        >
+          <p
+            class="m-0"
+          >
+            <span
+              class="FileStatus text-sm font-bold"
+              title="This democratic analysis car here likely. Protect speech exactly three order different wife."
+            >
+              hand.css
+            </span>
+            <span
+              class="FileStatus text-grey"
+              title="Study ID: undefined"
+            >
+              SF_6JBSGVWE
+               
+              <span
+                class="FileList--ElementButton"
+              >
+                <button>
+                  <svg
+                    height="10"
+                    id="mock-icon"
+                    kind="copy"
+                    width="10"
+                  >
+                    <title>
+                      icon-
+                      copy
+                    </title>
+                  </svg>
+                </button>
+              </span>
+            </span>
+            <span
+              class="FileStatus text-grey"
+            >
+              <a
+                class="FileList--ElementButton"
+                href="/study/undefined/files/SF_6JBSGVWE"
+              >
+                <svg
+                  height="10"
+                  id="mock-icon"
+                  kind="edit"
+                  width="10"
+                >
+                  <title>
+                    icon-
+                    edit
+                  </title>
+                </svg>
+              </a>
+              <button
+                class="FileList--ElementButton"
+              >
+                <svg
+                  height="10"
+                  id="mock-icon"
+                  kind="download"
+                  width="10"
+                >
+                  <title>
+                    icon-
+                    download
+                  </title>
+                </svg>
+              </button>
+              <button
+                class="FileList--ElementButton"
+              >
+                <svg
+                  height="10"
+                  id="mock-icon"
+                  kind="delete"
+                  width="10"
+                >
+                  <title>
+                    icon-
+                    delete
+                  </title>
+                </svg>
+              </button>
+            </span>
+          </p>
+          <p
+            class="m-0"
+          >
+            <span
+              class="FileStatus text-grey"
+            >
+              Created:
+               
+              <time
+                datetime="2018-10-31T05:37:11.000Z"
+                title="2018-10-31T05:37:11+00:00"
+              >
+                6 months ago
+              </time>
+            </span>
+            <span
+              class="FileStatus text-grey"
+            >
+              Size: 
+              9.6 kB
+            </span>
+            <span
+              class="FileStatus text-grey"
+            >
+              unknown
+            </span>
+          </p>
+        </div>
+      </section>
+    </li>
+    <li
+      class="FileList--Element"
+    >
+      <section
+        class="grid-container mx-auto grid-container--collapsed-rows"
+      >
+        <div
+          class="lg:cell-2 lg:row-1 FileList--ElementBadge"
+        >
+          <div
+            class="lg:min-w-full m-0 Badge bg-teal"
+          >
+            <span>
+              New
+            </span>
+          </div>
+          <div
+            class="lg:min-w-full m-0 Badge bg-orange"
+          >
+            <span>
+              Pending Approval
+            </span>
+          </div>
+        </div>
+        <div
+          class="lg:cell-10 row-1 cell-12"
+        >
+          <p
+            class="m-0"
+          >
+            <span
+              class="FileStatus text-sm font-bold"
+              title="Shoulder body answer especially large big risk its. Sort fly note field fish. Network him identify rich."
+            >
+              pattern.flac
+            </span>
+            <span
+              class="FileStatus text-grey"
+              title="Study ID: undefined"
+            >
+              SF_JT0GRZP7
+               
+              <span
+                class="FileList--ElementButton"
+              >
+                <button>
+                  <svg
+                    height="10"
+                    id="mock-icon"
+                    kind="copy"
+                    width="10"
+                  >
+                    <title>
+                      icon-
+                      copy
+                    </title>
+                  </svg>
+                </button>
+              </span>
+            </span>
+            <span
+              class="FileStatus text-grey"
+            >
+              <a
+                class="FileList--ElementButton"
+                href="/study/undefined/files/SF_JT0GRZP7"
+              >
+                <svg
+                  height="10"
+                  id="mock-icon"
+                  kind="edit"
+                  width="10"
+                >
+                  <title>
+                    icon-
+                    edit
+                  </title>
+                </svg>
+              </a>
+              <button
+                class="FileList--ElementButton"
+              >
+                <svg
+                  height="10"
+                  id="mock-icon"
+                  kind="download"
+                  width="10"
+                >
+                  <title>
+                    icon-
+                    download
+                  </title>
+                </svg>
+              </button>
+              <button
+                class="FileList--ElementButton"
+              >
+                <svg
+                  height="10"
+                  id="mock-icon"
+                  kind="delete"
+                  width="10"
+                >
+                  <title>
+                    icon-
+                    delete
+                  </title>
+                </svg>
+              </button>
+            </span>
+          </p>
+          <p
+            class="m-0"
+          >
+            <span
+              class="FileStatus text-grey"
+            >
+              Created:
+               
+              <time
+                datetime="2017-11-06T13:13:56.000Z"
+                title="2017-11-06T13:13:56+00:00"
+              >
+                1 year ago
+              </time>
+            </span>
+            <span
+              class="FileStatus text-grey"
+            >
+              Size: 
+              6.6 kB
+            </span>
+            <span
+              class="FileStatus text-grey"
+            >
+              Clinical/Phenotype Data
+            </span>
+          </p>
+        </div>
+      </section>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`renders without files 1`] = `
+<div>
+  <ul
+    class="FileList"
+  >
+    <h3
+      class="FileList--Empty"
+    >
+      You don't have any files yet.
+    </h3>
+  </ul>
+</div>
+`;
