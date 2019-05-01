@@ -1,0 +1,265 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <table
+    class="StudyTable"
+  >
+    <thead>
+      <tr>
+        <th>
+          kfId
+        </th>
+        <th>
+          name
+        </th>
+        <th>
+          shortName
+        </th>
+        <th>
+          createdAt
+        </th>
+        <th>
+          modifiedAt
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        tabindex="0"
+      >
+        <td
+          class="kfId"
+        >
+          SD_X6E5KWM4
+        </td>
+        <td
+          class="name"
+        >
+          deploy bleeding-edge action-items
+        </td>
+        <td
+          class="shortName"
+        />
+        <td
+          class="createdAt"
+        >
+          <time
+            datetime="2019-01-30T03:41:39.000Z"
+            title="2019-01-30 03:41"
+          >
+            3 months ago
+          </time>
+        </td>
+        <td
+          class="modifiedAt"
+        >
+          <time
+            datetime="2019-03-29T18:45:01.230Z"
+            title="2019-03-29 18:45"
+          >
+            1 month ago
+          </time>
+        </td>
+      </tr>
+      <tr
+        tabindex="0"
+      >
+        <td
+          class="kfId"
+        >
+          SD_203C26IZ
+        </td>
+        <td
+          class="name"
+        >
+          syndicate extensible metrics
+        </td>
+        <td
+          class="shortName"
+        />
+        <td
+          class="createdAt"
+        >
+          <time
+            datetime="2017-07-11T21:02:37.000Z"
+            title="2017-07-11 21:02"
+          >
+            2 years ago
+          </time>
+        </td>
+        <td
+          class="modifiedAt"
+        >
+          <time
+            datetime="2019-03-29T18:45:01.236Z"
+            title="2019-03-29 18:45"
+          >
+            1 month ago
+          </time>
+        </td>
+      </tr>
+      <tr
+        tabindex="0"
+      >
+        <td
+          class="kfId"
+        >
+          SD_KOECR7Q1
+        </td>
+        <td
+          class="name"
+        >
+          aggregate real-time convergence
+        </td>
+        <td
+          class="shortName"
+        />
+        <td
+          class="createdAt"
+        >
+          <time
+            datetime="2017-05-05T03:05:57.000Z"
+            title="2017-05-05 03:05"
+          >
+            2 years ago
+          </time>
+        </td>
+        <td
+          class="modifiedAt"
+        >
+          <time
+            datetime="2019-03-29T18:45:01.239Z"
+            title="2019-03-29 18:45"
+          >
+            1 month ago
+          </time>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`renders without excluded columns passed to props 1`] = `
+<div>
+  <table
+    class="StudyTable"
+  >
+    <thead>
+      <tr>
+        <th>
+          name
+        </th>
+        <th>
+          shortName
+        </th>
+        <th>
+          createdAt
+        </th>
+        <th>
+          modifiedAt
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        tabindex="0"
+      >
+        <td
+          class="name"
+        >
+          deploy bleeding-edge action-items
+        </td>
+        <td
+          class="shortName"
+        />
+        <td
+          class="createdAt"
+        >
+          <time
+            datetime="2019-01-30T03:41:39.000Z"
+            title="2019-01-30 03:41"
+          >
+            3 months ago
+          </time>
+        </td>
+        <td
+          class="modifiedAt"
+        >
+          <time
+            datetime="2019-03-29T18:45:01.230Z"
+            title="2019-03-29 18:45"
+          >
+            1 month ago
+          </time>
+        </td>
+      </tr>
+      <tr
+        tabindex="0"
+      >
+        <td
+          class="name"
+        >
+          syndicate extensible metrics
+        </td>
+        <td
+          class="shortName"
+        />
+        <td
+          class="createdAt"
+        >
+          <time
+            datetime="2017-07-11T21:02:37.000Z"
+            title="2017-07-11 21:02"
+          >
+            2 years ago
+          </time>
+        </td>
+        <td
+          class="modifiedAt"
+        >
+          <time
+            datetime="2019-03-29T18:45:01.236Z"
+            title="2019-03-29 18:45"
+          >
+            1 month ago
+          </time>
+        </td>
+      </tr>
+      <tr
+        tabindex="0"
+      >
+        <td
+          class="name"
+        >
+          aggregate real-time convergence
+        </td>
+        <td
+          class="shortName"
+        />
+        <td
+          class="createdAt"
+        >
+          <time
+            datetime="2017-05-05T03:05:57.000Z"
+            title="2017-05-05 03:05"
+          >
+            2 years ago
+          </time>
+        </td>
+        <td
+          class="modifiedAt"
+        >
+          <time
+            datetime="2019-03-29T18:45:01.239Z"
+            title="2019-03-29 18:45"
+          >
+            1 month ago
+          </time>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

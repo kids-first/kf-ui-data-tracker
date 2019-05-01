@@ -1,9 +1,5 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import classes from 'classnames';
-import {withRouter} from 'react-router-dom';
-import StudyCard from './StudyCard';
-import {Icon, GridContainer} from 'kf-uikit';
 import StudyGrid from './StudyGrid';
 import StudyTable from './StudyTable';
 import ToggleButtons from '../ToggleButtons/ToggleButtons';
@@ -15,12 +11,15 @@ const StudyList = ({className, studyList, loading, activeView = 'grid'}) => {
   const [view, setView] = useState(activeView);
 
   return (
-    <div className="bg-lightGrey min-h-screen py-32">
-      <GridContainer className={studyListClass}>
-        <h1 className="text-blue font-title row-1 cell-12">
-          {title}
+    <div className="bg-lightGrey View--StudyList">
+      <div className="BodyContent">
+        <header>
+          <h1 className="m-0 pt-12 text-blue font-title">
+            {loading ? 'Loading studies ...' : 'Browse Studies'}
+          </h1>
           {!loading && (
             <ToggleButtons
+              className="my-12"
               onToggle={({text}) => {
                 setView(text.toLowerCase());
               }}
@@ -36,8 +35,6 @@ const StudyList = ({className, studyList, loading, activeView = 'grid'}) => {
             <StudyGrid loading={loading} studyList={studyList} />
           ) : (
             <StudyTable loading={loading} studyList={studyList} />
-          ) : (
-            <StudyGrid loading={loading} studyList={studyList} />
           )}
         </main>
       </div>

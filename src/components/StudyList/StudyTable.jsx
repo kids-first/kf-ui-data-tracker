@@ -7,7 +7,7 @@ const StudyTable = ({
   studyList,
   loading,
   columns,
-  exclude,
+  exclude = [],
   history,
   className,
 }) => {
@@ -21,7 +21,7 @@ const StudyTable = ({
   if (loading) {
     return <h2>loading studies</h2>;
   }
-  const hidden = exclude || ['id', '__typename'];
+  const hidden = ['id', '__typename', ...exclude];
   const cols = Object.keys(studyList[0].node).filter(
     v => hidden.indexOf(v) < 0,
   );
