@@ -10,7 +10,7 @@ import CopyButton from '../CopyButton/CopyButton';
  * Displays unordered studies in grid view (include empty stage message)
  */
 const dateCompare = (version1, version2) => {
-  return version1.node.createdAt < version2.node.createdAt;
+  return new Date(version2.node.createdAt) - new Date(version1.node.createdAt);
 };
 
 const formatFileSize = (bytes, si) => {
@@ -124,7 +124,7 @@ const FileElement = ({
             </span>
             {error &&
               error.graphQLErrors &&
-              error.graphQLErrors.map((err,i) => (
+              error.graphQLErrors.map((err, i) => (
                 <span key={i} className="FileStatus text-red">
                   {err.message}
                 </span>
