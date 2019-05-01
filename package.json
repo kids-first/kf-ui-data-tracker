@@ -32,7 +32,7 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "test": "react-app-rewired test --env=jsdom",
+    "test": "yarn run jest",
     "prettify": "prettier --write \"**/*.{js,json,css,md}\" \"!package.json\""
   },
   "eslintConfig": {
