@@ -11,7 +11,8 @@ const ToggleButtons = ({buttons, className, onToggle}) => {
     <div className={ToggleButtonsClass}>
       {buttons.map(({text, icon}, idx) => (
         <Button
-          {...{icon}}
+          key={text + icon}
+          icon={icon}
           color={active === idx ? 'primary' : null}
           onClick={() => {
             setActive(idx);
@@ -27,17 +28,18 @@ const ToggleButtons = ({buttons, className, onToggle}) => {
 };
 
 ToggleButtons.propTypes = {
-  buttons: propTypes.arrayOf(propTypes.shape({
-    /** Button text (optional) */
-    text: propTypes.string, 
-    /** kf-uikit icon name (optional) */
-    icon: propTypes.string,
-  })),
+  buttons: propTypes.arrayOf(
+    propTypes.shape({
+      /** Button text (optional) */
+      text: propTypes.string,
+      /** kf-uikit icon name (optional) */
+      icon: propTypes.string,
+    }),
+  ),
   /** additional classes to add the wrapping div */
-  className: propTypes.string, 
+  className: propTypes.string,
   /** onClick callback that rececives the button object as args */
-  onToggle: propTypes.func, 
-
-}
+  onToggle: propTypes.func,
+};
 
 export default ToggleButtons;

@@ -1,8 +1,10 @@
 import React from 'react';
 import {MemoryRouter} from 'react-router-dom';
-import {render} from 'react-testing-library';
+import {render, cleanup} from 'react-testing-library';
 import allStudies from './allStudies.json';
 import StudyTable from '../StudyTable';
+
+afterEach(cleanup);
 
 it('renders correctly', () => {
   const studies = allStudies.data.allStudies.edges;
