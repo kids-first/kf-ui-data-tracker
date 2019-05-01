@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classes from 'classnames';
 import {withRouter, Link} from 'react-router-dom';
 import TimeAgo from 'react-timeago';
-import {Icon} from 'kf-uikit';
+import {Icon, GridContainer} from 'kf-uikit';
 import Badge from '../Badge/Badge';
 import CopyButton from '../CopyButton/CopyButton';
 /**
@@ -48,7 +48,6 @@ const FileElement = ({
 }) => {
   const fileElementClass = classes(
     'FileList--Element',
-    'sm:flex-no-wrap',
     {'cursor-not-allowed': loading},
     className,
   );
@@ -67,7 +66,9 @@ const FileElement = ({
     },
     'font-bold',
   );
-  const buttonClass = classes({invisible: loading});
+  const buttonClass = classes('FileList--ElementButton', {
+    invisible: loading,
+  });
   const fileKfID = fileNode ? fileNode.kfId : 'unknown ID';
   const fileName = fileNode ? fileNode.name : 'unknown file name';
   const fileDescription = fileNode ? fileNode.description : 'unknown';
@@ -87,56 +88,60 @@ const FileElement = ({
       : 'unknown';
   return (
     <li className={fileElementClass}>
-      <div className="FileList--ElementBadge sm:w-48">
-        <Badge state="new" loading={loading} className="sm:min-w-full" />
-        <Badge
-          state="pendingApproval"
-          loading={loading}
-          className="sm:min-w-full"
-        />
-      </div>
-      <div className="flex-initial">
-        <p className="m-0">
-          <span className={fileNameClass} title={fileDescription}>
-            {fileName}
-          </span>
-          <span
-            className={fileStatusClass}
-            title={`Study ID: ${match.params.kfId}`}
-          >
-            {fileKfID} <CopyButton text={fileKfID} className={buttonClass} />
-          </span>
-          <span className={fileStatusClass}>
-            <Link
-              to={`/study/${match.params.kfId}/files/${fileKfID}`}
-              className={buttonClass}
+      <GridContainer collapsed="rows">
+        <div className="lg:cell-2 lg:row-1 FileList--ElementBadge">
+          <Badge state="new" loading={loading} className="lg:min-w-full m-0" />
+          <Badge
+            state="pendingApproval"
+            loading={loading}
+            className="lg:min-w-full m-0"
+          />
+        </div>
+        <div className="lg:cell-10 row-1 cell-12">
+          <p className="m-0">
+            <span className={fileNameClass} title={fileDescription}>
+              {fileName}
+            </span>
+            <span
+              className={fileStatusClass}
+              title={`Study ID: ${match.params.kfId}`}
             >
-              <Icon className="mr-8" width={10} height={10} kind="edit" />
-            </Link>
-            <button onClick={e => downloadFile(e)} className={buttonClass}>
-              <Icon className="mr-8" width={10} height={10} kind="download" />
-            </button>
-            <button onClick={e => deleteFile()} className={buttonClass}>
-              <Icon className="mr-8" width={10} height={10} kind="delete" />
-            </button>
-          </span>
-          {error &&
-            error.graphQLErrors &&
-            error.graphQLErrors.map(err => (
-              <span className="text-red">{err.message}</span>
-            ))}
-        </p>
-        <span className={fileStatusClass}>
-          Created:{' '}
-          {latestDate ? (
-            <TimeAgo date={latestDate} live={false} />
-          ) : (
-            <span>unknown</span>
-          )}
-        </span>
-        <span className={fileStatusClass}>Size: {fileSize}</span>
-        <span className={fileStatusClass}>{fileType}</span>
-      </div>
+              {fileKfID} <CopyButton text={fileKfID} className={buttonClass} />
+            </span>
+            <span className={fileStatusClass}>
+              <Link
+                to={`/study/${match.params.kfId}/files/${fileKfID}`}
+                className={buttonClass}
+              >
+                <Icon width={10} height={10} kind="edit" />
+              </Link>
+              <button onClick={e => downloadFile(e)} className={buttonClass}>
+                <Icon width={10} height={10} kind="download" />
+              </button>
+              <button onClick={e => deleteFile()} className={buttonClass}>
+                <Icon width={10} height={10} kind="delete" />
+              </button>
+            </span>
+            {error &&
+              error.graphQLErrors &&
+              error.graphQLErrors.map(err => (
+                <span className="FileStatus text-red">{err.message}</span>
+              ))}
+          </p>
+          <p className="m-0">
+            <span className={fileStatusClass}>
+              Created:{' '}
+              {latestDate ? (
+                <TimeAgo date={latestDate} live={false} />
+              ) : (
+                <span>unknown</span>
+              )}
+            </span>
+            <span className={fileStatusClass}>Size: {fileSize}</span>
+            <span className={fileStatusClass}>{fileType}</span>
+          </p>
+        </div>
+      </GridContainer>
     </li>
   );
 };

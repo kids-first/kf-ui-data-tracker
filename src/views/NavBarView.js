@@ -13,7 +13,9 @@ const NavBarView = props => (
       const study = data.studyByKfId;
       return (
         <section id="study">
-          <StudyHeader {...study} />
+          <div className="bg-lightGrey">
+            <StudyHeader {...study} />
+          </div>
           <NavBar />
         </section>
       );

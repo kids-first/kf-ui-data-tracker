@@ -17,8 +17,8 @@ const StudyCard = ({className, title, body, lastUpdate}) => {
         <div className="overflow-hidden h-32">
           <p className="m-0 font-title text-darkGrey">{body}</p>
         </div>
-        <small className="w-full text-grey font-title text-right">
-          Last Updated: <TimeAgo date={lastUpdate} />
+        <small className="w-full text-grey font-title text-right whitespace-no-wrap">
+          Updated: <TimeAgo className="whitespace-no-wrap" date={lastUpdate} />
         </small>
       </div>
     </Card>

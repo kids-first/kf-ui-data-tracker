@@ -1,0 +1,7 @@
+.StudyHeader--TopText {
+  @inherit: .row-1, .cell-12, .font-body;
+}
+
+.StudyHeader--TitleText {
+  @inherit: .text-blue, .m-0, .row-3, .cell-12, .font-light, .text-4xl;
+}

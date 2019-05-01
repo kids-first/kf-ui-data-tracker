@@ -24,3 +24,11 @@ body {
   max-width: var(--site-max-width);
   margin: auto;
 }
+
+.Header {
+  @inherit: .border-b-2;
+}
+
+.Header--navigation {
+  @inherit: .grid-container, .mx-auto, .border-none, .px-0;
+}

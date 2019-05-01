@@ -14,17 +14,7 @@ const FileUploadTarget = props => {
     handleDrop,
   } = props;
 
-  const fileUploadFormClass = classes(
-    'upload-target',
-    'w-full',
-    'p-32',
-    'bg-lightGrey',
-    'border-grey',
-    'border-2',
-    'border-dashed',
-    'text-center',
-    className,
-  );
+  const fileUploadFormClass = classes('upload-target', className);
 
   return (
     <form
@@ -45,7 +35,7 @@ const FileUploadTarget = props => {
       ) : null}
       <input
         type="file"
-        className="Button Button--default"
+        className="Button Button--default max-w-full"
         onChange={handleSelectedFile}
       />
       {error && error.graphQLErrors && (

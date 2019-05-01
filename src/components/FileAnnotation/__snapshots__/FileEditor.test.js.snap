@@ -8,9 +8,11 @@ Object {
       <form
         class="FileEditor"
       >
-        <div>
+        <section
+          class="grid-container mx-auto grid-container--collapsed-rows"
+        >
           <h3
-            class="font-normal my-12 pl-4 text-blue"
+            class="row-1 cell-12 font-normal my-0 text-blue"
           >
             <button
               class="pl-20 pt-4"
@@ -34,7 +36,7 @@ Object {
             </button>
           </h3>
           <div
-            class="FileEditor--Badge"
+            class="flex row-2 cell-12"
           >
             <div
               class="Badge bg-teal"
@@ -51,26 +53,20 @@ Object {
               </span>
             </div>
           </div>
-        </div>
-        <div
-          class="flex flex-row flex-wrap sm:flex-no-wrap"
-        >
-          <div
-            class="w-full sm:mr-20"
+          <label
+            class="mt-8 cell-12 md:cell-6"
           >
-            <label>
-              File description (required):
-              <textarea
-                class="FileEditor--TextArea sm:mb-0"
-                name="description"
-                type="text"
-              >
-                lorem ipsum
-              </textarea>
-            </label>
-          </div>
+            File description (required):
+            <textarea
+              class="FileEditor--TextArea sm:mb-0 h-full"
+              name="description"
+              type="text"
+            >
+              lorem ipsum
+            </textarea>
+          </label>
           <fieldset
-            class="w-full"
+            class="mt-8 cell-12 md:cell-6"
           >
             Select a file type (required):
             <label
@@ -217,24 +213,24 @@ Object {
                 </span>
               </div>
             </label>
-            <div
-              class="flex flex-row-reverse w-full mt-4"
-            >
-              <button
-                class="Button Button--default Button--primary ml-12"
-                type="submit"
-              >
-                Annotate File
-              </button>
-              <button
-                class="Button Button--default"
-                type="button"
-              >
-                Cancel
-              </button>
-            </div>
           </fieldset>
-        </div>
+          <div
+            class="cell-12 flex justify-end mt-4"
+          >
+            <button
+              class="Button Button--default"
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              class="Button Button--default Button--primary ml-12"
+              type="submit"
+            >
+              Annotate File
+            </button>
+          </div>
+        </section>
       </form>
     </div>
   </body>,
@@ -242,9 +238,11 @@ Object {
     <form
       class="FileEditor"
     >
-      <div>
+      <section
+        class="grid-container mx-auto grid-container--collapsed-rows"
+      >
         <h3
-          class="font-normal my-12 pl-4 text-blue"
+          class="row-1 cell-12 font-normal my-0 text-blue"
         >
           <button
             class="pl-20 pt-4"
@@ -268,7 +266,7 @@ Object {
           </button>
         </h3>
         <div
-          class="FileEditor--Badge"
+          class="flex row-2 cell-12"
         >
           <div
             class="Badge bg-teal"
@@ -285,26 +283,20 @@ Object {
             </span>
           </div>
         </div>
-      </div>
-      <div
-        class="flex flex-row flex-wrap sm:flex-no-wrap"
-      >
-        <div
-          class="w-full sm:mr-20"
+        <label
+          class="mt-8 cell-12 md:cell-6"
         >
-          <label>
-            File description (required):
-            <textarea
-              class="FileEditor--TextArea sm:mb-0"
-              name="description"
-              type="text"
-            >
-              lorem ipsum
-            </textarea>
-          </label>
-        </div>
+          File description (required):
+          <textarea
+            class="FileEditor--TextArea sm:mb-0 h-full"
+            name="description"
+            type="text"
+          >
+            lorem ipsum
+          </textarea>
+        </label>
         <fieldset
-          class="w-full"
+          class="mt-8 cell-12 md:cell-6"
         >
           Select a file type (required):
           <label
@@ -451,24 +443,24 @@ Object {
               </span>
             </div>
           </label>
-          <div
-            class="flex flex-row-reverse w-full mt-4"
-          >
-            <button
-              class="Button Button--default Button--primary ml-12"
-              type="submit"
-            >
-              Annotate File
-            </button>
-            <button
-              class="Button Button--default"
-              type="button"
-            >
-              Cancel
-            </button>
-          </div>
         </fieldset>
-      </div>
+        <div
+          class="cell-12 flex justify-end mt-4"
+        >
+          <button
+            class="Button Button--default"
+            type="button"
+          >
+            Cancel
+          </button>
+          <button
+            class="Button Button--default Button--primary ml-12"
+            type="submit"
+          >
+            Annotate File
+          </button>
+        </div>
+      </section>
     </form>
   </div>,
   "debug": [Function],
@@ -541,9 +533,11 @@ Object {
       <form
         class="FileEditor"
       >
-        <div>
+        <section
+          class="grid-container mx-auto grid-container--collapsed-rows"
+        >
           <h3
-            class="font-normal my-12 pl-4 text-blue"
+            class="row-1 cell-12 font-normal my-0 text-blue"
           >
             <button
               class="pl-20 pt-4"
@@ -567,7 +561,7 @@ Object {
             </button>
           </h3>
           <div
-            class="FileEditor--Badge"
+            class="flex row-2 cell-12"
           >
             <div
               class="Badge bg-teal"
@@ -584,26 +578,20 @@ Object {
               </span>
             </div>
           </div>
-        </div>
-        <div
-          class="flex flex-row flex-wrap sm:flex-no-wrap"
-        >
-          <div
-            class="w-full sm:mr-20"
+          <label
+            class="mt-8 cell-12 md:cell-6"
           >
-            <label>
-              File description (required):
-              <textarea
-                class="FileEditor--TextArea sm:mb-0"
-                name="description"
-                type="text"
-              >
-                lorem ipsum
-              </textarea>
-            </label>
-          </div>
+            File description (required):
+            <textarea
+              class="FileEditor--TextArea sm:mb-0 h-full"
+              name="description"
+              type="text"
+            >
+              lorem ipsum
+            </textarea>
+          </label>
           <fieldset
-            class="w-full"
+            class="mt-8 cell-12 md:cell-6"
           >
             Select a file type (required):
             <label
@@ -750,33 +738,35 @@ Object {
                 </span>
               </div>
             </label>
-            <div
-              class="flex flex-row-reverse w-full mt-4"
-            >
-              <button
-                class="Button Button--default Button--primary ml-12"
-                type="submit"
-              >
-                Annotate File
-              </button>
-              <button
-                class="Button Button--default"
-                type="button"
-              >
-                Cancel
-              </button>
-            </div>
           </fieldset>
-        </div>
+          <div
+            class="cell-12 flex justify-end mt-4"
+          >
+            <button
+              class="Button Button--default"
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              class="Button Button--default Button--primary ml-12"
+              type="submit"
+            >
+              Annotate File
+            </button>
+          </div>
+        </section>
       </form>
     </div>
     <div>
       <form
         class="FileEditor"
       >
-        <div>
+        <section
+          class="grid-container mx-auto grid-container--collapsed-rows"
+        >
           <h3
-            class="font-normal my-12 pl-4 text-blue"
+            class="row-1 cell-12 font-normal my-0 text-blue"
           >
             test
             <button
@@ -801,7 +791,7 @@ Object {
             </button>
           </h3>
           <div
-            class="FileEditor--Badge"
+            class="flex row-2 cell-12"
           >
             <div
               class="Badge bg-teal"
@@ -818,26 +808,20 @@ Object {
               </span>
             </div>
           </div>
-        </div>
-        <div
-          class="flex flex-row flex-wrap sm:flex-no-wrap"
-        >
-          <div
-            class="w-full sm:mr-20"
+          <label
+            class="mt-8 cell-12 md:cell-6"
           >
-            <label>
-              File description (required):
-              <textarea
-                class="FileEditor--TextArea sm:mb-0"
-                name="description"
-                type="text"
-              >
-                lorem ipsum
-              </textarea>
-            </label>
-          </div>
+            File description (required):
+            <textarea
+              class="FileEditor--TextArea sm:mb-0 h-full"
+              name="description"
+              type="text"
+            >
+              lorem ipsum
+            </textarea>
+          </label>
           <fieldset
-            class="w-full"
+            class="mt-8 cell-12 md:cell-6"
           >
             Select a file type (required):
             <label
@@ -984,33 +968,35 @@ Object {
                 </span>
               </div>
             </label>
-            <div
-              class="flex flex-row-reverse w-full mt-4"
-            >
-              <button
-                class="Button Button--default Button--primary ml-12"
-                type="submit"
-              >
-                Annotate File
-              </button>
-              <button
-                class="Button Button--default"
-                type="button"
-              >
-                Cancel
-              </button>
-            </div>
           </fieldset>
-        </div>
+          <div
+            class="cell-12 flex justify-end mt-4"
+          >
+            <button
+              class="Button Button--default"
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              class="Button Button--default Button--primary ml-12"
+              type="submit"
+            >
+              Annotate File
+            </button>
+          </div>
+        </section>
       </form>
     </div>
     <div>
       <form
         class="FileEditor"
       >
-        <div>
+        <section
+          class="grid-container mx-auto grid-container--collapsed-rows"
+        >
           <h3
-            class="font-normal my-12 pl-4 text-blue"
+            class="row-1 cell-12 font-normal my-0 text-blue"
           >
             <button
               class="pl-20 pt-4"
@@ -1034,7 +1020,7 @@ Object {
             </button>
           </h3>
           <div
-            class="FileEditor--Badge"
+            class="flex row-2 cell-12"
           >
             <div
               class="Badge bg-teal"
@@ -1051,26 +1037,20 @@ Object {
               </span>
             </div>
           </div>
-        </div>
-        <div
-          class="flex flex-row flex-wrap sm:flex-no-wrap"
-        >
-          <div
-            class="w-full sm:mr-20"
+          <label
+            class="mt-8 cell-12 md:cell-6"
           >
-            <label>
-              File description (required):
-              <textarea
-                class="FileEditor--TextArea sm:mb-0"
-                name="description"
-                type="text"
-              >
-                lorem ipsum
-              </textarea>
-            </label>
-          </div>
+            File description (required):
+            <textarea
+              class="FileEditor--TextArea sm:mb-0 h-full"
+              name="description"
+              type="text"
+            >
+              lorem ipsum
+            </textarea>
+          </label>
           <fieldset
-            class="w-full"
+            class="mt-8 cell-12 md:cell-6"
           >
             Select a file type (required):
             <label
@@ -1218,24 +1198,24 @@ Object {
                 </span>
               </div>
             </label>
-            <div
-              class="flex flex-row-reverse w-full mt-4"
-            >
-              <button
-                class="Button Button--default Button--primary ml-12"
-                type="submit"
-              >
-                Annotate File
-              </button>
-              <button
-                class="Button Button--default"
-                type="button"
-              >
-                Cancel
-              </button>
-            </div>
           </fieldset>
-        </div>
+          <div
+            class="cell-12 flex justify-end mt-4"
+          >
+            <button
+              class="Button Button--default"
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              class="Button Button--default Button--primary ml-12"
+              type="submit"
+            >
+              Annotate File
+            </button>
+          </div>
+        </section>
       </form>
     </div>
   </body>,
@@ -1243,9 +1223,11 @@ Object {
     <form
       class="FileEditor"
     >
-      <div>
+      <section
+        class="grid-container mx-auto grid-container--collapsed-rows"
+      >
         <h3
-          class="font-normal my-12 pl-4 text-blue"
+          class="row-1 cell-12 font-normal my-0 text-blue"
         >
           <button
             class="pl-20 pt-4"
@@ -1269,7 +1251,7 @@ Object {
           </button>
         </h3>
         <div
-          class="FileEditor--Badge"
+          class="flex row-2 cell-12"
         >
           <div
             class="Badge bg-teal"
@@ -1286,26 +1268,20 @@ Object {
             </span>
           </div>
         </div>
-      </div>
-      <div
-        class="flex flex-row flex-wrap sm:flex-no-wrap"
-      >
-        <div
-          class="w-full sm:mr-20"
+        <label
+          class="mt-8 cell-12 md:cell-6"
         >
-          <label>
-            File description (required):
-            <textarea
-              class="FileEditor--TextArea sm:mb-0"
-              name="description"
-              type="text"
-            >
-              lorem ipsum
-            </textarea>
-          </label>
-        </div>
+          File description (required):
+          <textarea
+            class="FileEditor--TextArea sm:mb-0 h-full"
+            name="description"
+            type="text"
+          >
+            lorem ipsum
+          </textarea>
+        </label>
         <fieldset
-          class="w-full"
+          class="mt-8 cell-12 md:cell-6"
         >
           Select a file type (required):
           <label
@@ -1453,24 +1429,24 @@ Object {
               </span>
             </div>
           </label>
-          <div
-            class="flex flex-row-reverse w-full mt-4"
-          >
-            <button
-              class="Button Button--default Button--primary ml-12"
-              type="submit"
-            >
-              Annotate File
-            </button>
-            <button
-              class="Button Button--default"
-              type="button"
-            >
-              Cancel
-            </button>
-          </div>
         </fieldset>
-      </div>
+        <div
+          class="cell-12 flex justify-end mt-4"
+        >
+          <button
+            class="Button Button--default"
+            type="button"
+          >
+            Cancel
+          </button>
+          <button
+            class="Button Button--default Button--primary ml-12"
+            type="submit"
+          >
+            Annotate File
+          </button>
+        </div>
+      </section>
     </form>
   </div>,
   "debug": [Function],
@@ -1543,9 +1519,11 @@ Object {
       <form
         class="FileEditor"
       >
-        <div>
+        <section
+          class="grid-container mx-auto grid-container--collapsed-rows"
+        >
           <h3
-            class="font-normal my-12 pl-4 text-blue"
+            class="row-1 cell-12 font-normal my-0 text-blue"
           >
             <button
               class="pl-20 pt-4"
@@ -1569,7 +1547,7 @@ Object {
             </button>
           </h3>
           <div
-            class="FileEditor--Badge"
+            class="flex row-2 cell-12"
           >
             <div
               class="Badge bg-teal"
@@ -1586,26 +1564,20 @@ Object {
               </span>
             </div>
           </div>
-        </div>
-        <div
-          class="flex flex-row flex-wrap sm:flex-no-wrap"
-        >
-          <div
-            class="w-full sm:mr-20"
+          <label
+            class="mt-8 cell-12 md:cell-6"
           >
-            <label>
-              File description (required):
-              <textarea
-                class="FileEditor--TextArea sm:mb-0"
-                name="description"
-                type="text"
-              >
-                lorem ipsum
-              </textarea>
-            </label>
-          </div>
+            File description (required):
+            <textarea
+              class="FileEditor--TextArea sm:mb-0 h-full"
+              name="description"
+              type="text"
+            >
+              lorem ipsum
+            </textarea>
+          </label>
           <fieldset
-            class="w-full"
+            class="mt-8 cell-12 md:cell-6"
           >
             Select a file type (required):
             <label
@@ -1752,33 +1724,35 @@ Object {
                 </span>
               </div>
             </label>
-            <div
-              class="flex flex-row-reverse w-full mt-4"
-            >
-              <button
-                class="Button Button--default Button--primary ml-12"
-                type="submit"
-              >
-                Annotate File
-              </button>
-              <button
-                class="Button Button--default"
-                type="button"
-              >
-                Cancel
-              </button>
-            </div>
           </fieldset>
-        </div>
+          <div
+            class="cell-12 flex justify-end mt-4"
+          >
+            <button
+              class="Button Button--default"
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              class="Button Button--default Button--primary ml-12"
+              type="submit"
+            >
+              Annotate File
+            </button>
+          </div>
+        </section>
       </form>
     </div>
     <div>
       <form
         class="FileEditor"
       >
-        <div>
+        <section
+          class="grid-container mx-auto grid-container--collapsed-rows"
+        >
           <h3
-            class="font-normal my-12 pl-4 text-blue"
+            class="row-1 cell-12 font-normal my-0 text-blue"
           >
             test
             <button
@@ -1803,7 +1777,7 @@ Object {
             </button>
           </h3>
           <div
-            class="FileEditor--Badge"
+            class="flex row-2 cell-12"
           >
             <div
               class="Badge bg-teal"
@@ -1820,26 +1794,20 @@ Object {
               </span>
             </div>
           </div>
-        </div>
-        <div
-          class="flex flex-row flex-wrap sm:flex-no-wrap"
-        >
-          <div
-            class="w-full sm:mr-20"
+          <label
+            class="mt-8 cell-12 md:cell-6"
           >
-            <label>
-              File description (required):
-              <textarea
-                class="FileEditor--TextArea sm:mb-0"
-                name="description"
-                type="text"
-              >
-                lorem ipsum
-              </textarea>
-            </label>
-          </div>
+            File description (required):
+            <textarea
+              class="FileEditor--TextArea sm:mb-0 h-full"
+              name="description"
+              type="text"
+            >
+              lorem ipsum
+            </textarea>
+          </label>
           <fieldset
-            class="w-full"
+            class="mt-8 cell-12 md:cell-6"
           >
             Select a file type (required):
             <label
@@ -1986,24 +1954,24 @@ Object {
                 </span>
               </div>
             </label>
-            <div
-              class="flex flex-row-reverse w-full mt-4"
-            >
-              <button
-                class="Button Button--default Button--primary ml-12"
-                type="submit"
-              >
-                Annotate File
-              </button>
-              <button
-                class="Button Button--default"
-                type="button"
-              >
-                Cancel
-              </button>
-            </div>
           </fieldset>
-        </div>
+          <div
+            class="cell-12 flex justify-end mt-4"
+          >
+            <button
+              class="Button Button--default"
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              class="Button Button--default Button--primary ml-12"
+              type="submit"
+            >
+              Annotate File
+            </button>
+          </div>
+        </section>
       </form>
     </div>
   </body>,
@@ -2011,9 +1979,11 @@ Object {
     <form
       class="FileEditor"
     >
-      <div>
+      <section
+        class="grid-container mx-auto grid-container--collapsed-rows"
+      >
         <h3
-          class="font-normal my-12 pl-4 text-blue"
+          class="row-1 cell-12 font-normal my-0 text-blue"
         >
           test
           <button
@@ -2038,7 +2008,7 @@ Object {
           </button>
         </h3>
         <div
-          class="FileEditor--Badge"
+          class="flex row-2 cell-12"
         >
           <div
             class="Badge bg-teal"
@@ -2055,26 +2025,20 @@ Object {
             </span>
           </div>
         </div>
-      </div>
-      <div
-        class="flex flex-row flex-wrap sm:flex-no-wrap"
-      >
-        <div
-          class="w-full sm:mr-20"
+        <label
+          class="mt-8 cell-12 md:cell-6"
         >
-          <label>
-            File description (required):
-            <textarea
-              class="FileEditor--TextArea sm:mb-0"
-              name="description"
-              type="text"
-            >
-              lorem ipsum
-            </textarea>
-          </label>
-        </div>
+          File description (required):
+          <textarea
+            class="FileEditor--TextArea sm:mb-0 h-full"
+            name="description"
+            type="text"
+          >
+            lorem ipsum
+          </textarea>
+        </label>
         <fieldset
-          class="w-full"
+          class="mt-8 cell-12 md:cell-6"
         >
           Select a file type (required):
           <label
@@ -2221,24 +2185,24 @@ Object {
               </span>
             </div>
           </label>
-          <div
-            class="flex flex-row-reverse w-full mt-4"
-          >
-            <button
-              class="Button Button--default Button--primary ml-12"
-              type="submit"
-            >
-              Annotate File
-            </button>
-            <button
-              class="Button Button--default"
-              type="button"
-            >
-              Cancel
-            </button>
-          </div>
         </fieldset>
-      </div>
+        <div
+          class="cell-12 flex justify-end mt-4"
+        >
+          <button
+            class="Button Button--default"
+            type="button"
+          >
+            Cancel
+          </button>
+          <button
+            class="Button Button--default Button--primary ml-12"
+            type="submit"
+          >
+            Annotate File
+          </button>
+        </div>
+      </section>
     </form>
   </div>,
   "debug": [Function],
@@ -2311,9 +2275,11 @@ Object {
       <form
         class="FileEditor"
       >
-        <div>
+        <section
+          class="grid-container mx-auto grid-container--collapsed-rows"
+        >
           <label
-            class="max-w-full flex flex-row justify-between"
+            class="row-1 cell-12 flex justify-between"
           >
             <input
               class="FileEditor--Input"
@@ -2344,7 +2310,7 @@ Object {
             </button>
           </label>
           <div
-            class="FileEditor--Badge"
+            class="flex row-2 cell-12"
           >
             <div
               class="Badge bg-teal"
@@ -2361,26 +2327,20 @@ Object {
               </span>
             </div>
           </div>
-        </div>
-        <div
-          class="flex flex-row flex-wrap sm:flex-no-wrap"
-        >
-          <div
-            class="w-full sm:mr-20"
+          <label
+            class="mt-8 cell-12 md:cell-6"
           >
-            <label>
-              File description (required):
-              <textarea
-                class="FileEditor--TextArea sm:mb-0"
-                name="description"
-                type="text"
-              >
-                lorem ipsum
-              </textarea>
-            </label>
-          </div>
+            File description (required):
+            <textarea
+              class="FileEditor--TextArea sm:mb-0 h-full"
+              name="description"
+              type="text"
+            >
+              lorem ipsum
+            </textarea>
+          </label>
           <fieldset
-            class="w-full"
+            class="mt-8 cell-12 md:cell-6"
           >
             Select a file type (required):
             <label
@@ -2527,33 +2487,35 @@ Object {
                 </span>
               </div>
             </label>
-            <div
-              class="flex flex-row-reverse w-full mt-4"
-            >
-              <button
-                class="Button Button--default Button--primary ml-12"
-                type="submit"
-              >
-                Annotate File
-              </button>
-              <button
-                class="Button Button--default"
-                type="button"
-              >
-                Cancel
-              </button>
-            </div>
           </fieldset>
-        </div>
+          <div
+            class="cell-12 flex justify-end mt-4"
+          >
+            <button
+              class="Button Button--default"
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              class="Button Button--default Button--primary ml-12"
+              type="submit"
+            >
+              Annotate File
+            </button>
+          </div>
+        </section>
       </form>
     </div>
     <div>
       <form
         class="FileEditor"
       >
-        <div>
+        <section
+          class="grid-container mx-auto grid-container--collapsed-rows"
+        >
           <h3
-            class="font-normal my-12 pl-4 text-blue"
+            class="row-1 cell-12 font-normal my-0 text-blue"
           >
             test
             <button
@@ -2578,7 +2540,7 @@ Object {
             </button>
           </h3>
           <div
-            class="FileEditor--Badge"
+            class="flex row-2 cell-12"
           >
             <div
               class="Badge bg-teal"
@@ -2595,26 +2557,20 @@ Object {
               </span>
             </div>
           </div>
-        </div>
-        <div
-          class="flex flex-row flex-wrap sm:flex-no-wrap"
-        >
-          <div
-            class="w-full sm:mr-20"
+          <label
+            class="mt-8 cell-12 md:cell-6"
           >
-            <label>
-              File description (required):
-              <textarea
-                class="FileEditor--TextArea sm:mb-0"
-                name="description"
-                type="text"
-              >
-                lorem ipsum
-              </textarea>
-            </label>
-          </div>
+            File description (required):
+            <textarea
+              class="FileEditor--TextArea sm:mb-0 h-full"
+              name="description"
+              type="text"
+            >
+              lorem ipsum
+            </textarea>
+          </label>
           <fieldset
-            class="w-full"
+            class="mt-8 cell-12 md:cell-6"
           >
             Select a file type (required):
             <label
@@ -2761,24 +2717,24 @@ Object {
                 </span>
               </div>
             </label>
-            <div
-              class="flex flex-row-reverse w-full mt-4"
-            >
-              <button
-                class="Button Button--default Button--primary ml-12"
-                type="submit"
-              >
-                Annotate File
-              </button>
-              <button
-                class="Button Button--default"
-                type="button"
-              >
-                Cancel
-              </button>
-            </div>
           </fieldset>
-        </div>
+          <div
+            class="cell-12 flex justify-end mt-4"
+          >
+            <button
+              class="Button Button--default"
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              class="Button Button--default Button--primary ml-12"
+              type="submit"
+            >
+              Annotate File
+            </button>
+          </div>
+        </section>
       </form>
     </div>
   </body>,
@@ -2786,9 +2742,11 @@ Object {
     <form
       class="FileEditor"
     >
-      <div>
+      <section
+        class="grid-container mx-auto grid-container--collapsed-rows"
+      >
         <h3
-          class="font-normal my-12 pl-4 text-blue"
+          class="row-1 cell-12 font-normal my-0 text-blue"
         >
           test
           <button
@@ -2813,7 +2771,7 @@ Object {
           </button>
         </h3>
         <div
-          class="FileEditor--Badge"
+          class="flex row-2 cell-12"
         >
           <div
             class="Badge bg-teal"
@@ -2830,26 +2788,20 @@ Object {
             </span>
           </div>
         </div>
-      </div>
-      <div
-        class="flex flex-row flex-wrap sm:flex-no-wrap"
-      >
-        <div
-          class="w-full sm:mr-20"
+        <label
+          class="mt-8 cell-12 md:cell-6"
         >
-          <label>
-            File description (required):
-            <textarea
-              class="FileEditor--TextArea sm:mb-0"
-              name="description"
-              type="text"
-            >
-              lorem ipsum
-            </textarea>
-          </label>
-        </div>
+          File description (required):
+          <textarea
+            class="FileEditor--TextArea sm:mb-0 h-full"
+            name="description"
+            type="text"
+          >
+            lorem ipsum
+          </textarea>
+        </label>
         <fieldset
-          class="w-full"
+          class="mt-8 cell-12 md:cell-6"
         >
           Select a file type (required):
           <label
@@ -2996,24 +2948,24 @@ Object {
               </span>
             </div>
           </label>
-          <div
-            class="flex flex-row-reverse w-full mt-4"
-          >
-            <button
-              class="Button Button--default Button--primary ml-12"
-              type="submit"
-            >
-              Annotate File
-            </button>
-            <button
-              class="Button Button--default"
-              type="button"
-            >
-              Cancel
-            </button>
-          </div>
         </fieldset>
-      </div>
+        <div
+          class="cell-12 flex justify-end mt-4"
+        >
+          <button
+            class="Button Button--default"
+            type="button"
+          >
+            Cancel
+          </button>
+          <button
+            class="Button Button--default Button--primary ml-12"
+            type="submit"
+          >
+            Annotate File
+          </button>
+        </div>
+      </section>
     </form>
   </div>,
   "debug": [Function],
@@ -3086,9 +3038,11 @@ Object {
       <form
         class="FileEditor"
       >
-        <div>
+        <section
+          class="grid-container mx-auto grid-container--collapsed-rows"
+        >
           <h3
-            class="font-normal my-12 pl-4 text-blue"
+            class="row-1 cell-12 font-normal my-0 text-blue"
           >
             <button
               class="pl-20 pt-4"
@@ -3112,7 +3066,7 @@ Object {
             </button>
           </h3>
           <div
-            class="FileEditor--Badge"
+            class="flex row-2 cell-12"
           >
             <div
               class="Badge bg-teal"
@@ -3129,26 +3083,20 @@ Object {
               </span>
             </div>
           </div>
-        </div>
-        <div
-          class="flex flex-row flex-wrap sm:flex-no-wrap"
-        >
-          <div
-            class="w-full sm:mr-20"
+          <label
+            class="mt-8 cell-12 md:cell-6"
           >
-            <label>
-              File description (required):
-              <textarea
-                class="FileEditor--TextArea sm:mb-0"
-                name="description"
-                type="text"
-              >
-                lorem ipsum
-              </textarea>
-            </label>
-          </div>
+            File description (required):
+            <textarea
+              class="FileEditor--TextArea sm:mb-0 h-full"
+              name="description"
+              type="text"
+            >
+              lorem ipsum
+            </textarea>
+          </label>
           <fieldset
-            class="w-full"
+            class="mt-8 cell-12 md:cell-6"
           >
             Select a file type (required):
             <label
@@ -3295,33 +3243,35 @@ Object {
                 </span>
               </div>
             </label>
-            <div
-              class="flex flex-row-reverse w-full mt-4"
-            >
-              <button
-                class="Button Button--default Button--primary ml-12"
-                type="submit"
-              >
-                Annotate File
-              </button>
-              <button
-                class="Button Button--default"
-                type="button"
-              >
-                Cancel
-              </button>
-            </div>
           </fieldset>
-        </div>
+          <div
+            class="cell-12 flex justify-end mt-4"
+          >
+            <button
+              class="Button Button--default"
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              class="Button Button--default Button--primary ml-12"
+              type="submit"
+            >
+              Annotate File
+            </button>
+          </div>
+        </section>
       </form>
     </div>
     <div>
       <form
         class="FileEditor"
       >
-        <div>
+        <section
+          class="grid-container mx-auto grid-container--collapsed-rows"
+        >
           <h3
-            class="font-normal my-12 pl-4 text-blue"
+            class="row-1 cell-12 font-normal my-0 text-blue"
           >
             test
             <button
@@ -3346,7 +3296,7 @@ Object {
             </button>
           </h3>
           <div
-            class="FileEditor--Badge"
+            class="flex row-2 cell-12"
           >
             <div
               class="Badge bg-teal"
@@ -3363,26 +3313,20 @@ Object {
               </span>
             </div>
           </div>
-        </div>
-        <div
-          class="flex flex-row flex-wrap sm:flex-no-wrap"
-        >
-          <div
-            class="w-full sm:mr-20"
+          <label
+            class="mt-8 cell-12 md:cell-6"
           >
-            <label>
-              File description (required):
-              <textarea
-                class="FileEditor--TextArea sm:mb-0"
-                name="description"
-                type="text"
-              >
-                lorem ipsum
-              </textarea>
-            </label>
-          </div>
+            File description (required):
+            <textarea
+              class="FileEditor--TextArea sm:mb-0 h-full"
+              name="description"
+              type="text"
+            >
+              lorem ipsum
+            </textarea>
+          </label>
           <fieldset
-            class="w-full"
+            class="mt-8 cell-12 md:cell-6"
           >
             Select a file type (required):
             <label
@@ -3529,24 +3473,24 @@ Object {
                 </span>
               </div>
             </label>
-            <div
-              class="flex flex-row-reverse w-full mt-4"
-            >
-              <button
-                class="Button Button--default Button--primary ml-12"
-                type="submit"
-              >
-                Annotate File
-              </button>
-              <button
-                class="Button Button--default"
-                type="button"
-              >
-                Cancel
-              </button>
-            </div>
           </fieldset>
-        </div>
+          <div
+            class="cell-12 flex justify-end mt-4"
+          >
+            <button
+              class="Button Button--default"
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              class="Button Button--default Button--primary ml-12"
+              type="submit"
+            >
+              Annotate File
+            </button>
+          </div>
+        </section>
       </form>
     </div>
   </body>,
@@ -3554,9 +3498,11 @@ Object {
     <form
       class="FileEditor"
     >
-      <div>
+      <section
+        class="grid-container mx-auto grid-container--collapsed-rows"
+      >
         <h3
-          class="font-normal my-12 pl-4 text-blue"
+          class="row-1 cell-12 font-normal my-0 text-blue"
         >
           test
           <button
@@ -3581,7 +3527,7 @@ Object {
           </button>
         </h3>
         <div
-          class="FileEditor--Badge"
+          class="flex row-2 cell-12"
         >
           <div
             class="Badge bg-teal"
@@ -3598,26 +3544,20 @@ Object {
             </span>
           </div>
         </div>
-      </div>
-      <div
-        class="flex flex-row flex-wrap sm:flex-no-wrap"
-      >
-        <div
-          class="w-full sm:mr-20"
+        <label
+          class="mt-8 cell-12 md:cell-6"
         >
-          <label>
-            File description (required):
-            <textarea
-              class="FileEditor--TextArea sm:mb-0"
-              name="description"
-              type="text"
-            >
-              lorem ipsum
-            </textarea>
-          </label>
-        </div>
+          File description (required):
+          <textarea
+            class="FileEditor--TextArea sm:mb-0 h-full"
+            name="description"
+            type="text"
+          >
+            lorem ipsum
+          </textarea>
+        </label>
         <fieldset
-          class="w-full"
+          class="mt-8 cell-12 md:cell-6"
         >
           Select a file type (required):
           <label
@@ -3764,24 +3704,24 @@ Object {
               </span>
             </div>
           </label>
-          <div
-            class="flex flex-row-reverse w-full mt-4"
-          >
-            <button
-              class="Button Button--default Button--primary ml-12"
-              type="submit"
-            >
-              Annotate File
-            </button>
-            <button
-              class="Button Button--default"
-              type="button"
-            >
-              Cancel
-            </button>
-          </div>
         </fieldset>
-      </div>
+        <div
+          class="cell-12 flex justify-end mt-4"
+        >
+          <button
+            class="Button Button--default"
+            type="button"
+          >
+            Cancel
+          </button>
+          <button
+            class="Button Button--default Button--primary ml-12"
+            type="submit"
+          >
+            Annotate File
+          </button>
+        </div>
+      </section>
     </form>
   </div>,
   "debug": [Function],
