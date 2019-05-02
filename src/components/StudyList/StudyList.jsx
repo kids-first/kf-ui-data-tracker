@@ -12,8 +12,6 @@ import ToggleButtons from '../ToggleButtons/ToggleButtons';
  * Displays unordered studies in grid view (include empty stage message)
  */
 const StudyList = ({className, studyList, loading, activeView = 'grid'}) => {
-  let studyListClass = classes('StudyList', className);
-  const title = loading ? 'Loading studies ...' : 'Browse Studies';
   const [view, setView] = useState(activeView);
 
   return (
@@ -38,6 +36,8 @@ const StudyList = ({className, studyList, loading, activeView = 'grid'}) => {
             <StudyGrid loading={loading} studyList={studyList} />
           ) : (
             <StudyTable loading={loading} studyList={studyList} />
+          ) : (
+            <StudyGrid loading={loading} studyList={studyList} />
           )}
         </main>
       </div>

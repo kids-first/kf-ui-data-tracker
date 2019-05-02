@@ -17,7 +17,9 @@
   vertical-align: top;
   overflow-x: auto;
   border-spacing: 0;
-
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)) !important;
+  }
   th {
     @inherit: .py-12, .font-body, .font-semibold, .text-sm, .tracking-wide, .text-blue,  .border-grey, .border-l, .border-b, .bg-lightGrey;
 
@@ -39,16 +41,8 @@
     tr {
       @inherit: .bg-white;
       transition: all 0.125s ease;
-
-      td {
-        @inherit: .p-20, .font-body, .text-sm;
-      }
     }
   }
-}
-
-.StudyTable td.shortName {
-  @inherit: .text-blue, .font-medium;
 }
 
 .StudyCard--loading {

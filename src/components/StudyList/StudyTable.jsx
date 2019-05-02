@@ -11,7 +11,13 @@ const StudyTable = ({
   history,
   className,
 }) => {
-  const StudyTableClass = classes('StudyTable', className);
+  const StudyTableClass = classes(
+    'StudyTable',
+    'grid-container',
+    'grid-container--collapsed-rows',
+    'px-0',
+    className,
+  );
   if (loading) {
     return <h2>loading studies</h2>;
   }
@@ -22,30 +28,65 @@ const StudyTable = ({
 
   return (
     <table className={StudyTableClass}>
-      <thead>
-        <tr>
+      <thead className="hidden sm:block cell-12 ">
+        <tr className="grid-container grid-container--fullWidth grid-container--collapsed ">
           {cols.map(v => (
-            <th>{v}</th>
+            <th className="row-1 cell-2" key={v}>
+              {v}
+            </th>
           ))}
         </tr>
       </thead>
-      <tbody>
+      <tbody className="cell-1-12">
         {studyList.map((node, idx) => (
           <tr
-            tabindex="0"
+            tabIndex="0"
+            className="grid-container grid-container--collapsed grid-container--fullWidth"
+            key={node.node.kfId}
             onClick={() => {
               history.push(`/study/${node.node.kfId}/files`);
             }}
           >
-            {cols.map(col => (
-              <td className={col}>
-                {Date.parse(node.node[col]) ? (
-                  <TimeAgo date={new Date(node.node[col])} />
-                ) : (
-                  node.node[col]
-                )}
-              </td>
-            ))}
+            {cols.map((col, idx) => {
+              // TODO: abstract this datum specific styling out of the component
+              const datumClass = classes(
+                col,
+                'px-20',
+                'py-0',
+                {
+                  hidden: col === 'name',
+                  'sm:block': col === 'name',
+                  'row-1 cell-12 pt-20': col === 'shortName',
+                  'font-title font-black sm:font-medium': col === 'shortName',
+                  'text-xl text-blue': col === 'shortName',
+                  'row-2 pt-0 pb-12': col === 'kfId',
+                  'row-3 cell-2 pb-20 text-grey sm:text-black': [
+                    'modifiedAt',
+                    'createdAt',
+                  ].includes(col),
+                },
+
+                'sm:p-20',
+                'sm:font-body sm:text-sm',
+                'sm:row-1',
+                'sm:cell-2',
+              );
+              return (
+                <td className={datumClass} key={col}>
+                  {Date.parse(node.node[col]) ? (
+                    <span>
+                      <small className="sm:hidden text-grey lowercase">
+                        {col.split('A')[0]}
+                      </small>
+                      <br />
+                      <TimeAgo date={new Date(node.node[col])} />
+                    </span>
+                  ) : (
+                    node.node[col]
+                  )}
+                </td>
+              );
+            })}
           </tr>
         ))}
       </tbody>
