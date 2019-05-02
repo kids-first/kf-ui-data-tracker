@@ -47,7 +47,7 @@ exports[`renders correctly 1`] = `
                 />
               </g>
             </svg>
-            Grid
+            grid
           </button>
           <button
             class="Button Button--default"
@@ -117,10 +117,11 @@ exports[`renders correctly 1`] = `
                     </p>
                   </div>
                   <small
-                    class="w-full text-grey font-title text-right"
+                    class="w-full text-grey font-title text-right whitespace-no-wrap"
                   >
-                    Last Updated: 
+                    Updated: 
                     <time
+                      class="whitespace-no-wrap"
                       datetime="2019-03-29T18:45:01.230Z"
                       title="2019-03-29 18:45"
                     >
@@ -161,10 +162,11 @@ exports[`renders correctly 1`] = `
                     </p>
                   </div>
                   <small
-                    class="w-full text-grey font-title text-right"
+                    class="w-full text-grey font-title text-right whitespace-no-wrap"
                   >
-                    Last Updated: 
+                    Updated: 
                     <time
+                      class="whitespace-no-wrap"
                       datetime="2019-03-29T18:45:01.236Z"
                       title="2019-03-29 18:45"
                     >
@@ -205,10 +207,11 @@ exports[`renders correctly 1`] = `
                     </p>
                   </div>
                   <small
-                    class="w-full text-grey font-title text-right"
+                    class="w-full text-grey font-title text-right whitespace-no-wrap"
                   >
-                    Last Updated: 
+                    Updated: 
                     <time
+                      class="whitespace-no-wrap"
                       datetime="2019-03-29T18:45:01.239Z"
                       title="2019-03-29 18:45"
                     >

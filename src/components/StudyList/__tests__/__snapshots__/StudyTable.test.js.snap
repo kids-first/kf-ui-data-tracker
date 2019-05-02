@@ -3,137 +3,204 @@
 exports[`renders correctly 1`] = `
 <div>
   <table
-    class="StudyTable"
+    class="StudyTable grid-container grid-container--collapsed-rows px-0"
   >
-    <thead>
-      <tr>
-        <th>
+    <thead
+      class="hidden sm:block cell-12 "
+    >
+      <tr
+        class="grid-container grid-container--fullWidth grid-container--collapsed "
+      >
+        <th
+          class="row-1 cell-2"
+        >
           kfId
         </th>
-        <th>
+        <th
+          class="row-1 cell-2"
+        >
           name
         </th>
-        <th>
+        <th
+          class="row-1 cell-2"
+        >
           shortName
         </th>
-        <th>
+        <th
+          class="row-1 cell-2"
+        >
           createdAt
         </th>
-        <th>
+        <th
+          class="row-1 cell-2"
+        >
           modifiedAt
         </th>
       </tr>
     </thead>
-    <tbody>
+    <tbody
+      class="cell-1-12"
+    >
       <tr
+        class="grid-container grid-container--collapsed grid-container--fullWidth"
         tabindex="0"
       >
         <td
-          class="kfId"
+          class="kfId px-20 py-0 row-2 pt-0 pb-12 sm:p-20 sm:font-body sm:text-sm sm:row-1 sm:cell-2"
         >
           SD_X6E5KWM4
         </td>
         <td
-          class="name"
+          class="name px-20 py-0 hidden sm:block sm:p-20 sm:font-body sm:text-sm sm:row-1 sm:cell-2"
         >
           deploy bleeding-edge action-items
         </td>
         <td
-          class="shortName"
+          class="shortName px-20 py-0 row-1 cell-12 pt-20 font-title font-black sm:font-medium text-xl text-blue sm:p-20 sm:font-body sm:text-sm sm:row-1 sm:cell-2"
         />
         <td
-          class="createdAt"
+          class="createdAt px-20 py-0 row-3 cell-2 pb-20 text-grey sm:text-black sm:p-20 sm:font-body sm:text-sm sm:row-1 sm:cell-2"
         >
-          <time
-            datetime="2019-01-30T03:41:39.000Z"
-            title="2019-01-30 03:41"
-          >
-            3 months ago
-          </time>
+          <span>
+            <small
+              class="sm:hidden text-grey lowercase"
+            >
+              created
+            </small>
+            <br />
+            <time
+              datetime="2019-01-30T03:41:39.000Z"
+              title="2019-01-30 03:41"
+            >
+              3 months ago
+            </time>
+          </span>
         </td>
         <td
-          class="modifiedAt"
+          class="modifiedAt px-20 py-0 row-3 cell-2 pb-20 text-grey sm:text-black sm:p-20 sm:font-body sm:text-sm sm:row-1 sm:cell-2"
         >
-          <time
-            datetime="2019-03-29T18:45:01.230Z"
-            title="2019-03-29 18:45"
-          >
-            1 month ago
-          </time>
+          <span>
+            <small
+              class="sm:hidden text-grey lowercase"
+            >
+              modified
+            </small>
+            <br />
+            <time
+              datetime="2019-03-29T18:45:01.230Z"
+              title="2019-03-29 18:45"
+            >
+              1 month ago
+            </time>
+          </span>
         </td>
       </tr>
       <tr
+        class="grid-container grid-container--collapsed grid-container--fullWidth"
         tabindex="0"
       >
         <td
-          class="kfId"
+          class="kfId px-20 py-0 row-2 pt-0 pb-12 sm:p-20 sm:font-body sm:text-sm sm:row-1 sm:cell-2"
         >
           SD_203C26IZ
         </td>
         <td
-          class="name"
+          class="name px-20 py-0 hidden sm:block sm:p-20 sm:font-body sm:text-sm sm:row-1 sm:cell-2"
         >
           syndicate extensible metrics
         </td>
         <td
-          class="shortName"
+          class="shortName px-20 py-0 row-1 cell-12 pt-20 font-title font-black sm:font-medium text-xl text-blue sm:p-20 sm:font-body sm:text-sm sm:row-1 sm:cell-2"
         />
         <td
-          class="createdAt"
+          class="createdAt px-20 py-0 row-3 cell-2 pb-20 text-grey sm:text-black sm:p-20 sm:font-body sm:text-sm sm:row-1 sm:cell-2"
         >
-          <time
-            datetime="2017-07-11T21:02:37.000Z"
-            title="2017-07-11 21:02"
-          >
-            2 years ago
-          </time>
+          <span>
+            <small
+              class="sm:hidden text-grey lowercase"
+            >
+              created
+            </small>
+            <br />
+            <time
+              datetime="2017-07-11T21:02:37.000Z"
+              title="2017-07-11 21:02"
+            >
+              2 years ago
+            </time>
+          </span>
         </td>
         <td
-          class="modifiedAt"
+          class="modifiedAt px-20 py-0 row-3 cell-2 pb-20 text-grey sm:text-black sm:p-20 sm:font-body sm:text-sm sm:row-1 sm:cell-2"
         >
-          <time
-            datetime="2019-03-29T18:45:01.236Z"
-            title="2019-03-29 18:45"
-          >
-            1 month ago
-          </time>
+          <span>
+            <small
+              class="sm:hidden text-grey lowercase"
+            >
+              modified
+            </small>
+            <br />
+            <time
+              datetime="2019-03-29T18:45:01.236Z"
+              title="2019-03-29 18:45"
+            >
+              1 month ago
+            </time>
+          </span>
         </td>
       </tr>
       <tr
+        class="grid-container grid-container--collapsed grid-container--fullWidth"
         tabindex="0"
       >
         <td
-          class="kfId"
+          class="kfId px-20 py-0 row-2 pt-0 pb-12 sm:p-20 sm:font-body sm:text-sm sm:row-1 sm:cell-2"
         >
           SD_KOECR7Q1
         </td>
         <td
-          class="name"
+          class="name px-20 py-0 hidden sm:block sm:p-20 sm:font-body sm:text-sm sm:row-1 sm:cell-2"
         >
           aggregate real-time convergence
         </td>
         <td
-          class="shortName"
+          class="shortName px-20 py-0 row-1 cell-12 pt-20 font-title font-black sm:font-medium text-xl text-blue sm:p-20 sm:font-body sm:text-sm sm:row-1 sm:cell-2"
         />
         <td
-          class="createdAt"
+          class="createdAt px-20 py-0 row-3 cell-2 pb-20 text-grey sm:text-black sm:p-20 sm:font-body sm:text-sm sm:row-1 sm:cell-2"
         >
-          <time
-            datetime="2017-05-05T03:05:57.000Z"
-            title="2017-05-05 03:05"
-          >
-            2 years ago
-          </time>
+          <span>
+            <small
+              class="sm:hidden text-grey lowercase"
+            >
+              created
+            </small>
+            <br />
+            <time
+              datetime="2017-05-05T03:05:57.000Z"
+              title="2017-05-05 03:05"
+            >
+              2 years ago
+            </time>
+          </span>
         </td>
         <td
-          class="modifiedAt"
+          class="modifiedAt px-20 py-0 row-3 cell-2 pb-20 text-grey sm:text-black sm:p-20 sm:font-body sm:text-sm sm:row-1 sm:cell-2"
         >
-          <time
-            datetime="2019-03-29T18:45:01.239Z"
-            title="2019-03-29 18:45"
-          >
-            1 month ago
-          </time>
+          <span>
+            <small
+              class="sm:hidden text-grey lowercase"
+            >
+              modified
+            </small>
+            <br />
+            <time
+              datetime="2019-03-29T18:45:01.239Z"
+              title="2019-03-29 18:45"
+            >
+              1 month ago
+            </time>
+          </span>
         </td>
       </tr>
     </tbody>
@@ -144,119 +211,184 @@ exports[`renders correctly 1`] = `
 exports[`renders without excluded columns passed to props 1`] = `
 <div>
   <table
-    class="StudyTable"
+    class="StudyTable grid-container grid-container--collapsed-rows px-0"
   >
-    <thead>
-      <tr>
-        <th>
+    <thead
+      class="hidden sm:block cell-12 "
+    >
+      <tr
+        class="grid-container grid-container--fullWidth grid-container--collapsed "
+      >
+        <th
+          class="row-1 cell-2"
+        >
           name
         </th>
-        <th>
+        <th
+          class="row-1 cell-2"
+        >
           shortName
         </th>
-        <th>
+        <th
+          class="row-1 cell-2"
+        >
           createdAt
         </th>
-        <th>
+        <th
+          class="row-1 cell-2"
+        >
           modifiedAt
         </th>
       </tr>
     </thead>
-    <tbody>
+    <tbody
+      class="cell-1-12"
+    >
       <tr
+        class="grid-container grid-container--collapsed grid-container--fullWidth"
         tabindex="0"
       >
         <td
-          class="name"
+          class="name px-20 py-0 hidden sm:block sm:p-20 sm:font-body sm:text-sm sm:row-1 sm:cell-2"
         >
           deploy bleeding-edge action-items
         </td>
         <td
-          class="shortName"
+          class="shortName px-20 py-0 row-1 cell-12 pt-20 font-title font-black sm:font-medium text-xl text-blue sm:p-20 sm:font-body sm:text-sm sm:row-1 sm:cell-2"
         />
         <td
-          class="createdAt"
+          class="createdAt px-20 py-0 row-3 cell-2 pb-20 text-grey sm:text-black sm:p-20 sm:font-body sm:text-sm sm:row-1 sm:cell-2"
         >
-          <time
-            datetime="2019-01-30T03:41:39.000Z"
-            title="2019-01-30 03:41"
-          >
-            3 months ago
-          </time>
+          <span>
+            <small
+              class="sm:hidden text-grey lowercase"
+            >
+              created
+            </small>
+            <br />
+            <time
+              datetime="2019-01-30T03:41:39.000Z"
+              title="2019-01-30 03:41"
+            >
+              3 months ago
+            </time>
+          </span>
         </td>
         <td
-          class="modifiedAt"
+          class="modifiedAt px-20 py-0 row-3 cell-2 pb-20 text-grey sm:text-black sm:p-20 sm:font-body sm:text-sm sm:row-1 sm:cell-2"
         >
-          <time
-            datetime="2019-03-29T18:45:01.230Z"
-            title="2019-03-29 18:45"
-          >
-            1 month ago
-          </time>
+          <span>
+            <small
+              class="sm:hidden text-grey lowercase"
+            >
+              modified
+            </small>
+            <br />
+            <time
+              datetime="2019-03-29T18:45:01.230Z"
+              title="2019-03-29 18:45"
+            >
+              1 month ago
+            </time>
+          </span>
         </td>
       </tr>
       <tr
+        class="grid-container grid-container--collapsed grid-container--fullWidth"
         tabindex="0"
       >
         <td
-          class="name"
+          class="name px-20 py-0 hidden sm:block sm:p-20 sm:font-body sm:text-sm sm:row-1 sm:cell-2"
         >
           syndicate extensible metrics
         </td>
         <td
-          class="shortName"
+          class="shortName px-20 py-0 row-1 cell-12 pt-20 font-title font-black sm:font-medium text-xl text-blue sm:p-20 sm:font-body sm:text-sm sm:row-1 sm:cell-2"
         />
         <td
-          class="createdAt"
+          class="createdAt px-20 py-0 row-3 cell-2 pb-20 text-grey sm:text-black sm:p-20 sm:font-body sm:text-sm sm:row-1 sm:cell-2"
         >
-          <time
-            datetime="2017-07-11T21:02:37.000Z"
-            title="2017-07-11 21:02"
-          >
-            2 years ago
-          </time>
+          <span>
+            <small
+              class="sm:hidden text-grey lowercase"
+            >
+              created
+            </small>
+            <br />
+            <time
+              datetime="2017-07-11T21:02:37.000Z"
+              title="2017-07-11 21:02"
+            >
+              2 years ago
+            </time>
+          </span>
         </td>
         <td
-          class="modifiedAt"
+          class="modifiedAt px-20 py-0 row-3 cell-2 pb-20 text-grey sm:text-black sm:p-20 sm:font-body sm:text-sm sm:row-1 sm:cell-2"
         >
-          <time
-            datetime="2019-03-29T18:45:01.236Z"
-            title="2019-03-29 18:45"
-          >
-            1 month ago
-          </time>
+          <span>
+            <small
+              class="sm:hidden text-grey lowercase"
+            >
+              modified
+            </small>
+            <br />
+            <time
+              datetime="2019-03-29T18:45:01.236Z"
+              title="2019-03-29 18:45"
+            >
+              1 month ago
+            </time>
+          </span>
         </td>
       </tr>
       <tr
+        class="grid-container grid-container--collapsed grid-container--fullWidth"
         tabindex="0"
       >
         <td
-          class="name"
+          class="name px-20 py-0 hidden sm:block sm:p-20 sm:font-body sm:text-sm sm:row-1 sm:cell-2"
         >
           aggregate real-time convergence
         </td>
         <td
-          class="shortName"
+          class="shortName px-20 py-0 row-1 cell-12 pt-20 font-title font-black sm:font-medium text-xl text-blue sm:p-20 sm:font-body sm:text-sm sm:row-1 sm:cell-2"
         />
         <td
-          class="createdAt"
+          class="createdAt px-20 py-0 row-3 cell-2 pb-20 text-grey sm:text-black sm:p-20 sm:font-body sm:text-sm sm:row-1 sm:cell-2"
         >
-          <time
-            datetime="2017-05-05T03:05:57.000Z"
-            title="2017-05-05 03:05"
-          >
-            2 years ago
-          </time>
+          <span>
+            <small
+              class="sm:hidden text-grey lowercase"
+            >
+              created
+            </small>
+            <br />
+            <time
+              datetime="2017-05-05T03:05:57.000Z"
+              title="2017-05-05 03:05"
+            >
+              2 years ago
+            </time>
+          </span>
         </td>
         <td
-          class="modifiedAt"
+          class="modifiedAt px-20 py-0 row-3 cell-2 pb-20 text-grey sm:text-black sm:p-20 sm:font-body sm:text-sm sm:row-1 sm:cell-2"
         >
-          <time
-            datetime="2019-03-29T18:45:01.239Z"
-            title="2019-03-29 18:45"
-          >
-            1 month ago
-          </time>
+          <span>
+            <small
+              class="sm:hidden text-grey lowercase"
+            >
+              modified
+            </small>
+            <br />
+            <time
+              datetime="2019-03-29T18:45:01.239Z"
+              title="2019-03-29 18:45"
+            >
+              1 month ago
+            </time>
+          </span>
         </td>
       </tr>
     </tbody>
