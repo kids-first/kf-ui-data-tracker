@@ -1,37 +1,47 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classes from 'classnames';
-import {withRouter} from 'react-router-dom';
-import NavBarButton from './NavBarButton';
+import {withRouter, NavLink} from 'react-router-dom';
+import {SecondaryNav} from 'kf-uikit';
 /**
  * Displays nav bar
  */
-
-const NavBar = ({className, match}) => {
-  let navBarClass = classes(
-    'SecondaryNav',
-    'sm:px-12',
-    'BodyContent',
-    className,
-  );
-
+const NavBar = ({className, match, history}) => {
+  const baseHref = `/study/${match.params.kfId}/`;
+  const navList = [
+    {
+      tab: 'Basic Info',
+      endString: 'basicInfo',
+    },
+    {
+      tab: 'Dashboard',
+      endString: 'dashboard',
+    },
+    {
+      tab: 'Files',
+      endString: 'files',
+    },
+    {
+      tab: 'Collaborators',
+      endString: 'collaborators',
+    },
+  ];
   return (
-    <div className="SecondaryNav--Container">
-      <div className={navBarClass}>
-        <NavBarButton to={`/study/${match.params.kfId}/basicInfo`}>
-          Basic Info
-        </NavBarButton>
-        <NavBarButton to={`/study/${match.params.kfId}/dashboard`}>
-          Dashboard
-        </NavBarButton>
-        <NavBarButton to={`/study/${match.params.kfId}/files`}>
-          Files
-        </NavBarButton>
-        <NavBarButton to={`/study/${match.params.kfId}/collaborators`}>
-          Collaborators
-        </NavBarButton>
-      </div>
-    </div>
+    <SecondaryNav
+      className="border-none cell-12"
+      buttons={navList.map((i, index) => (
+        <li
+          className={classes('SecondaryNav--link', {
+            'SecondaryNav--link-active': history.location.pathname.endsWith(
+              i.endString,
+            ),
+          })}
+          key={i.endString}
+        >
+          <NavLink to={baseHref + i.endString}>{i.tab}</NavLink>
+        </li>
+      ))}
+    />
   );
 };
 
