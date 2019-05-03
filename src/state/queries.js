@@ -62,6 +62,17 @@ export const GET_FILE_BY_ID = gql`
       name
       description
       fileType
+      downloadUrl
+      versions {
+        edges {
+          node {
+            kfId
+            createdAt
+            size
+            downloadUrl
+          }
+        }
+      }
     }
   }
 `;
