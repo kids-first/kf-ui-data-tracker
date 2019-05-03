@@ -5,6 +5,7 @@ import FileElement from '../FileElement';
 import studyByKfId from './studyByKfId';
 
 it('renders correctly', () => {
+  jest.spyOn(Date, 'now').mockImplementation(() => 1556044228000);
   const file = studyByKfId.data.studyByKfId.files.edges[0].node;
   const tree = render(
     <MemoryRouter>
@@ -15,6 +16,7 @@ it('renders correctly', () => {
 });
 
 it('renders loading state', () => {
+  jest.spyOn(Date, 'now').mockImplementation(() => 1556044228000);
   const tree = render(
     <MemoryRouter>
       <FileElement loading={true} />
@@ -24,6 +26,7 @@ it('renders loading state', () => {
 });
 
 it('renders error state', () => {
+  jest.spyOn(Date, 'now').mockImplementation(() => 1556044228000);
   const tree = render(
     <MemoryRouter>
       <FileElement
