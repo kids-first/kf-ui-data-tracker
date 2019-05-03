@@ -29,19 +29,19 @@ it('renders correctly', () => {
   expect(tree).toMatchSnapshot();
 });
 
-it('displays ✔ on click', () => {
+it('displays checkmark svg on click', () => {
   jest.useFakeTimers();
   const tree = render(<CopyButton text="testing" />);
 
   // There should be no ✔ yet, only an Icon
-  expect(tree.queryByText('✔')).toBeNull();
+  expect(tree.container.querySelector('span.CopyButton')).toBeNull();
   expect(tree.container.firstChild).toMatchSnapshot();
 
   let button = tree.container.querySelector('button');
   button.click();
 
   // Icon should be replaced with ✔
-  expect(tree.queryByText('✔')).not.toBeNull();
+  expect(tree.container.querySelector('span.CopyButton')).not.toBeNull();
   expect(tree.container.firstChild).toMatchSnapshot();
 
   act(() => {
@@ -49,6 +49,6 @@ it('displays ✔ on click', () => {
   });
 
   // ✔ should have change back to an Icon
-  expect(tree.queryByText('✔')).toBeNull();
+  expect(tree.container.querySelector('span.CopyButton')).toBeNull();
   expect(tree.container.firstChild).toMatchSnapshot();
 });
