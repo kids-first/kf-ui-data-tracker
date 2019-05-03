@@ -4,6 +4,7 @@ import {GET_STUDY_BY_ID} from '../state/queries';
 import {LoadingPlaceholder} from '../components/Loading';
 import StudyHeader from '../components/StudyHeader/StudyHeader';
 import NavBar from '../components/NavBar/NavBar';
+import {GridContainer} from 'kf-uikit';
 
 const NavBarView = props => (
   <Query query={GET_STUDY_BY_ID} variables={{kfId: props.match.params.kfId}}>
@@ -16,7 +17,11 @@ const NavBarView = props => (
           <div className="bg-lightGrey">
             <StudyHeader {...study} />
           </div>
-          <NavBar />
+          <div className="border-b-2 .border-mediumGrey">
+            <GridContainer className="px-12">
+              <NavBar />
+            </GridContainer>
+          </div>
         </section>
       );
     }}
