@@ -1,10 +1,47 @@
+# Kids First Data Tracker Release 0.2.0
+
+## Features
+
+### Summary
+
+Feature Emojis: ♻️x11 📷x6 ⬆️x2 🐛x1 ✅x1 🤡x1 📦x1 🔧x1 📄x1
+Feature Labels: [refactor](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/refactor) x22 [design](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/design) x4 [bug](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/bug) x4 [devops](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/devops) x1 [feature](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/feature) x1 [documentation](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/documentation) x1
+
+### New features and changes
+
+- (#215) ♻️ Refactor studies list - @bdolly
+- (#225) ♻️ Implement SecondaryNav component to navbar - @XuTheBunny
+- (#221) ♻️ Refactor copy button - @XuTheBunny
+- (#223) ♻️ Refactor snapshot test data mock - @XuTheBunny
+- (#194) 📷 Add snapshot tests for FileList components - @dankolbman
+- (#195) 📷 Add snapshot tests for FileUploadTarget - @dankolbman
+- (#196) 📷 Add snapshot tests for StudyHeader - @dankolbman
+- (#197) 📷 Add snapshot tests for StudyList - @dankolbman
+- (#213) ♻️ Refactor/use grid - @XuTheBunny
+- (#216) ⬆️ Upgrade uikit - @dankolbman
+- (#212) 🐛 Fix icon mocks - @dankolbman
+- (#211) ✅ Test file deletion from FileList - @dankolbman
+- (#210) ♻️ Delete file from query cache - @dankolbman
+- (#206) ♻️ Delete token by name - @dankolbman
+- (#205) ♻️ Update dev token list from cache - @dankolbman
+- (#203) 🤡 Mock UI Kit Icon component - @dankolbman
+- (#201) ⬆️ Bump uikit version from 0.3.1 to 0.5.0 with related style adjustment - @XuTheBunny
+- (#192) 📷 Add snapshot tests for FileAnnotation - @dankolbman
+- (#188) 📷 Snapshot tests CopyButton component - @dankolbman
+- (#187) 📦 Add react-testing-library for testing - @dankolbman
+- (#185) 🔧 Ensure dependencies use babel 7 - @dankolbman
+- (#146) ♻️ Refactor loading state for study list and file list - @XuTheBunny
+- (#148) ♻️ Refactor token view adding copy button - @XuTheBunny
+- (#145) 📄 Add LICENSE file - @dankolbman
+- (#144) ♻️ Refactor file element by adding loading css - @XuTheBunny
+
 # Kids First Data Tracker Release 0.1.0
 
 ## Features
 
 First release of the data tracker with study file uploader capabilities.
 
- Data Tracker Release 0.1.0
+Data Tracker Release 0.1.0
 
 ## Features
 
@@ -39,7 +76,7 @@ Feature Labels: [feature](https://api.github.com/repos/kids-first/kf-ui-data-tra
 - (#91) 💄 Add sub nav bar to file view - @XuTheBunny
 - (#93) ✨ Annotation Flow - @dankolbman
 - (#90) ♻️ Refactor Header component routing - @XuTheBunny
-- (#89) 💄 Update study list routing and StudyCard component  - @XuTheBunny
+- (#89) 💄 Update study list routing and StudyCard component - @XuTheBunny
 - (#86) 💄 Update study list view with new style - @XuTheBunny
 - (#88) 💄 Redirect user to home page "/" when click on header logo - @XuTheBunny
 - (#82) ✨ Add Auth0 login - @dankolbman
@@ -53,7 +90,7 @@ Feature Labels: [feature](https://api.github.com/repos/kids-first/kf-ui-data-tra
 - (#72) 🚚 Rename FileUploadView to FilesView - @dankolbman
 - (#70) ♻️ Switch to routing based on kf_id - @dankolbman
 - (#69) 🚨 Make circle fail on eslint warnings - @dankolbman
-- (#63)  Add netlify redirects for SPA - @dankolbman
+- (#63) Add netlify redirects for SPA - @dankolbman
 - (#67) 📦 Use pinned UIKit package - @dankolbman
 - (#65) 🔧 Add netlify master branch config - @dankolbman
 - (#57) ♻️ Use apollo components - @dankolbman
