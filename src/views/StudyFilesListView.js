@@ -12,7 +12,13 @@ const StudyFilesListView = props => (
   <Query query={GET_STUDY_BY_ID} variables={{kfId: props.match.params.kfId}}>
     {({loading, error, data}) => {
       // TODO: add styled error state
-      if (error) return `Error!: ${error}`;
+      if (error)
+        return (
+          <div>
+            <h3 className="text-red text-center">Error! </h3>
+            <p className="text-center">{error.message}</p>
+          </div>
+        );
       const files = !loading ? data.studyByKfId.files.edges : [];
       return (
         <GridContainer collapsed="cells" className="my-20 px-12">
