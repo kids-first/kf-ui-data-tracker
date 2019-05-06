@@ -6,10 +6,10 @@ export const ALL_STUDIES = gql`
     allStudies {
       edges {
         node {
-          id
-          kfId
-          name
           shortName
+          name
+          kfId
+          id
           createdAt
           modifiedAt
         }
@@ -69,7 +69,7 @@ export const GET_FILE_BY_ID = gql`
 // Query to get developer tokens
 export const GET_DEV_TOKENS = gql`
   {
-    allDevTokens{
+    allDevTokens {
       edges {
         node {
           id

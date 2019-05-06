@@ -1,47 +1,43 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import classes from 'classnames';
-import {withRouter} from 'react-router-dom';
-import StudyCard from './StudyCard';
-import {Icon, GridContainer} from 'kf-uikit';
+import StudyGrid from './StudyGrid';
+import StudyTable from './StudyTable';
+import ToggleButtons from '../ToggleButtons/ToggleButtons';
+
 /**
  * Displays unordered studies in grid view (include empty stage message)
  */
-const StudyList = ({className, studyList, loading, history}) => {
-  let studyListClass = classes('StudyList', className);
-  const title = loading ? 'Loading studies ...' : 'Browse Studies';
-  const loadingCount = [1, 2, 3, 4];
+const StudyList = ({className, studyList, loading, activeView = 'grid'}) => {
+  const [view, setView] = useState(activeView);
+
   return (
-    <div className="bg-lightGrey min-h-screen py-32">
-      <GridContainer className={studyListClass}>
-        <h1 className="text-blue font-title row-1 cell-12">{title}</h1>
-        {loading
-          ? loadingCount.map(n => (
-              <div
-                className="cursor-not-allowed cell-12 sm:cell-6 md:cell-4 lg:cell-3"
-                key={n}
-              >
-                <div className="StudyCard--loading">
-                  <Icon width={28} height={28} kind="study" />
-                </div>
-              </div>
-            ))
-          : studyList.map(node => (
-              <div
-                className="cursor-pointer cell-12 sm:cell-6 md:cell-4 lg:cell-3"
-                key={node.node.id}
-                onClick={() => {
-                  history.push(`/study/${node.node.kfId}/files`);
-                }}
-              >
-                <StudyCard
-                  title={node.node.kfId}
-                  body={node.node.name || node.node.shortName}
-                  lastUpdate={new Date(node.node.modifiedAt)}
-                />
-              </div>
-            ))}
-      </GridContainer>
+    <div className="bg-lightGrey View--StudyList">
+      <div className="BodyContent">
+        <header>
+          <h1 className="m-0 pt-12 text-blue font-title">
+            {loading ? 'Loading studies ...' : 'Browse Studies'}
+          </h1>
+          {!loading && (
+            <ToggleButtons
+              className="my-12"
+              onToggle={({text}) => {
+                setView(text.toLowerCase());
+              }}
+              buttons={[
+                {text: 'grid', icon: 'resources'},
+                {text: 'list', icon: 'study'},
+              ]}
+            />
+          )}
+        </header>
+        <main>
+          {view === 'grid' ? (
+            <StudyGrid loading={loading} studyList={studyList} />
+          ) : (
+            <StudyTable loading={loading} studyList={studyList} />
+          )}
+        </main>
+      </div>
     </div>
   );
 };
@@ -53,11 +49,14 @@ StudyList.propTypes = {
   studyList: PropTypes.array,
   /** Loading state of the studyList*/
   loading: PropTypes.bool,
+  /** view to show (grid | list) */
+  activeView: PropTypes.oneOf(['grid', 'list']),
 };
 
 StudyList.defaultProps = {
   className: null,
   studyList: [],
+  activeView: 'grid',
 };
 
-export default withRouter(StudyList);
+export default StudyList;

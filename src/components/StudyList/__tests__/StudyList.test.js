@@ -14,7 +14,7 @@ it('renders correctly', () => {
   );
   expect(tree.container).toMatchSnapshot();
 
-  const cards = tree.container.querySelectorAll('.StudyList div.StudyCard');
+  const cards = tree.container.querySelectorAll('.StudyList li');
   expect(cards.length).toBe(3);
 });
 
@@ -26,9 +26,7 @@ it('renders loading state', () => {
   );
   expect(tree.container).toMatchSnapshot();
 
-  const cards = tree.container.querySelectorAll(
-    '.StudyList div.StudyCard--loading',
-  );
+  const cards = tree.container.querySelectorAll('.StudyList li');
   // Should contain 4 cards in loading state
   expect(cards.length).toBe(4);
 });
