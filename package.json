@@ -53,6 +53,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-jest": "^24.7.1",
     "husky": "^1.3.1",
+    "jest-localstorage-mock": "^2.4.0",
     "postcss-apply": "^0.12.0",
     "postcss-extends": "^1.0.0",
     "postcss-for": "^2.1.1",
