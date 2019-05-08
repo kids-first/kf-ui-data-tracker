@@ -16,6 +16,8 @@ Object {
           >
             <button
               class="pl-20 pt-4"
+              data-testid="edit-name-button"
+              type="button"
             >
               <span
                 class="hidden"
@@ -59,6 +61,7 @@ Object {
             File description (required):
             <textarea
               class="FileEditor--TextArea sm:mb-0 h-full"
+              data-testid="description-input"
               name="description"
               type="text"
             >
@@ -246,6 +249,8 @@ Object {
         >
           <button
             class="pl-20 pt-4"
+            data-testid="edit-name-button"
+            type="button"
           >
             <span
               class="hidden"
@@ -289,6 +294,7 @@ Object {
           File description (required):
           <textarea
             class="FileEditor--TextArea sm:mb-0 h-full"
+            data-testid="description-input"
             name="description"
             type="text"
           >
@@ -541,6 +547,8 @@ Object {
           >
             <button
               class="pl-20 pt-4"
+              data-testid="edit-name-button"
+              type="button"
             >
               <span
                 class="hidden"
@@ -584,6 +592,7 @@ Object {
             File description (required):
             <textarea
               class="FileEditor--TextArea sm:mb-0 h-full"
+              data-testid="description-input"
               name="description"
               type="text"
             >
@@ -771,6 +780,8 @@ Object {
             test
             <button
               class="pl-20 pt-4"
+              data-testid="edit-name-button"
+              type="button"
             >
               <span
                 class="hidden"
@@ -814,6 +825,7 @@ Object {
             File description (required):
             <textarea
               class="FileEditor--TextArea sm:mb-0 h-full"
+              data-testid="description-input"
               name="description"
               type="text"
             >
@@ -1000,6 +1012,8 @@ Object {
           >
             <button
               class="pl-20 pt-4"
+              data-testid="edit-name-button"
+              type="button"
             >
               <span
                 class="hidden"
@@ -1043,6 +1057,7 @@ Object {
             File description (required):
             <textarea
               class="FileEditor--TextArea sm:mb-0 h-full"
+              data-testid="description-input"
               name="description"
               type="text"
             >
@@ -1231,6 +1246,8 @@ Object {
         >
           <button
             class="pl-20 pt-4"
+            data-testid="edit-name-button"
+            type="button"
           >
             <span
               class="hidden"
@@ -1274,6 +1291,7 @@ Object {
           File description (required):
           <textarea
             class="FileEditor--TextArea sm:mb-0 h-full"
+            data-testid="description-input"
             name="description"
             type="text"
           >
@@ -1527,6 +1545,8 @@ Object {
           >
             <button
               class="pl-20 pt-4"
+              data-testid="edit-name-button"
+              type="button"
             >
               <span
                 class="hidden"
@@ -1570,6 +1590,7 @@ Object {
             File description (required):
             <textarea
               class="FileEditor--TextArea sm:mb-0 h-full"
+              data-testid="description-input"
               name="description"
               type="text"
             >
@@ -1757,6 +1778,8 @@ Object {
             test
             <button
               class="pl-20 pt-4"
+              data-testid="edit-name-button"
+              type="button"
             >
               <span
                 class="hidden"
@@ -1800,6 +1823,7 @@ Object {
             File description (required):
             <textarea
               class="FileEditor--TextArea sm:mb-0 h-full"
+              data-testid="description-input"
               name="description"
               type="text"
             >
@@ -1988,6 +2012,8 @@ Object {
           test
           <button
             class="pl-20 pt-4"
+            data-testid="edit-name-button"
+            type="button"
           >
             <span
               class="hidden"
@@ -2031,6 +2057,7 @@ Object {
           File description (required):
           <textarea
             class="FileEditor--TextArea sm:mb-0 h-full"
+            data-testid="description-input"
             name="description"
             type="text"
           >
@@ -2283,6 +2310,7 @@ Object {
           >
             <input
               class="FileEditor--Input"
+              data-testid="name-input"
               name="name"
               placeholder="Add your file name here..."
               type="text"
@@ -2290,6 +2318,8 @@ Object {
             />
             <button
               class="pl-20"
+              data-testid="save-name-button"
+              type="button"
             >
               <span
                 class="hidden"
@@ -2333,6 +2363,7 @@ Object {
             File description (required):
             <textarea
               class="FileEditor--TextArea sm:mb-0 h-full"
+              data-testid="description-input"
               name="description"
               type="text"
             >
@@ -2520,6 +2551,8 @@ Object {
             test
             <button
               class="pl-20 pt-4"
+              data-testid="edit-name-button"
+              type="button"
             >
               <span
                 class="hidden"
@@ -2563,6 +2596,7 @@ Object {
             File description (required):
             <textarea
               class="FileEditor--TextArea sm:mb-0 h-full"
+              data-testid="description-input"
               name="description"
               type="text"
             >
@@ -2751,6 +2785,8 @@ Object {
           test
           <button
             class="pl-20 pt-4"
+            data-testid="edit-name-button"
+            type="button"
           >
             <span
               class="hidden"
@@ -2794,6 +2830,7 @@ Object {
           File description (required):
           <textarea
             class="FileEditor--TextArea sm:mb-0 h-full"
+            data-testid="description-input"
             name="description"
             type="text"
           >
@@ -3046,6 +3083,8 @@ Object {
           >
             <button
               class="pl-20 pt-4"
+              data-testid="edit-name-button"
+              type="button"
             >
               <span
                 class="hidden"
@@ -3089,6 +3128,7 @@ Object {
             File description (required):
             <textarea
               class="FileEditor--TextArea sm:mb-0 h-full"
+              data-testid="description-input"
               name="description"
               type="text"
             >
@@ -3276,6 +3316,8 @@ Object {
             test
             <button
               class="pl-20 pt-4"
+              data-testid="edit-name-button"
+              type="button"
             >
               <span
                 class="hidden"
@@ -3319,6 +3361,7 @@ Object {
             File description (required):
             <textarea
               class="FileEditor--TextArea sm:mb-0 h-full"
+              data-testid="description-input"
               name="description"
               type="text"
             >
@@ -3507,6 +3550,8 @@ Object {
           test
           <button
             class="pl-20 pt-4"
+            data-testid="edit-name-button"
+            type="button"
           >
             <span
               class="hidden"
@@ -3550,6 +3595,7 @@ Object {
           File description (required):
           <textarea
             class="FileEditor--TextArea sm:mb-0 h-full"
+            data-testid="description-input"
             name="description"
             type="text"
           >

@@ -67,6 +67,7 @@ exports[`renders correctly 1`] = `
           >
             <a
               class="FileList--ElementButton"
+              data-testid="edit-file"
               href="/study/undefined/files/SF_FPVBM0JF"
             >
               <svg
@@ -213,6 +214,7 @@ exports[`renders error state 1`] = `
           >
             <a
               class="FileList--ElementButton"
+              data-testid="edit-file"
               href="/study/undefined/files/unknown ID"
             >
               <svg
@@ -365,6 +367,7 @@ exports[`renders loading state 1`] = `
           >
             <a
               class="FileList--ElementButton invisible"
+              data-testid="edit-file"
               href="/study/undefined/files/unknown ID"
             >
               <svg
