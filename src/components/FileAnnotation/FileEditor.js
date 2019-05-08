@@ -34,6 +34,7 @@ const FileEditor = ({
             />
             <button
               className="pl-20"
+              type="button"
               onClick={() => {
                 setEditing(false);
               }}
@@ -47,6 +48,7 @@ const FileEditor = ({
             {name}
             <button
               className="pl-20 pt-4"
+              type="button"
               onClick={() => {
                 setEditing(true);
               }}
