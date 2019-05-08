@@ -36,7 +36,7 @@ export const GET_STUDY_BY_ID = gql`
             name
             fileType
             description
-            fileType
+            status @client
             downloadUrl
             versions {
               edges {
@@ -62,6 +62,7 @@ export const GET_FILE_BY_ID = gql`
       name
       description
       fileType
+      status @client
     }
   }
 `;
