@@ -15,6 +15,7 @@ const FileEditor = ({
   selectFileType,
   onSubmit,
   onNameChange,
+  onDescriptionChange,
   history,
 }) => {
   const [editing, setEditing] = useState(false);
@@ -69,6 +70,7 @@ const FileEditor = ({
             type="text"
             name="description"
             defaultValue={description}
+            onChange={e => onDescriptionChange(e)}
           />
         </label>
         <fieldset className="mt-8 cell-12 md:cell-6">
