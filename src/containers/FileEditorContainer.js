@@ -10,11 +10,12 @@ import PropTypes from 'prop-types';
 const FileEditorContainer = ({kfId, history, match}) => {
   const [fileType, setFileType] = useState();
   const [fileNameInput, setFileName] = useState();
+  const [fileDescriptionInput, setFileDescription] = useState();
   // Updates the file then routes to the study's files listing
   const onSubmit = (e, updateFile) => {
     e.preventDefault();
     const name = fileNameInput;
-    const description = e.target.description.value;
+    const description = fileDescriptionInput;
     updateFile({variables: {kfId, name, description, fileType}})
       .then(() => {
         history.push(`/study/${match.params.kfId}/files`);
@@ -58,6 +59,7 @@ const FileEditorContainer = ({kfId, history, match}) => {
                   selectFileType={selectFileType}
                   onSubmit={e => onSubmit(e, updateFile)}
                   onNameChange={e => setFileName(e.target.value)}
+                  onDescriptionChange={e => setFileDescription(e.target.value)}
                 />
               );
             }}

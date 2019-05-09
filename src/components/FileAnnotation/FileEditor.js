@@ -15,6 +15,7 @@ const FileEditor = ({
   selectFileType,
   onSubmit,
   onNameChange,
+  onDescriptionChange,
   history,
 }) => {
   const [editing, setEditing] = useState(false);
@@ -25,6 +26,7 @@ const FileEditor = ({
         {editing ? (
           <label className="row-1 cell-12 flex justify-between">
             <input
+              data-testid="name-input"
               className="FileEditor--Input"
               type="text"
               name="name"
@@ -33,7 +35,9 @@ const FileEditor = ({
               onChange={e => onNameChange(e)}
             />
             <button
+              data-testid="save-name-button"
               className="pl-20"
+              type="button"
               onClick={() => {
                 setEditing(false);
               }}
@@ -46,7 +50,9 @@ const FileEditor = ({
           <h3 className="row-1 cell-12 font-normal my-0 text-blue">
             {name}
             <button
+              data-testid="edit-name-button"
               className="pl-20 pt-4"
+              type="button"
               onClick={() => {
                 setEditing(true);
               }}
@@ -63,10 +69,12 @@ const FileEditor = ({
         <label className="mt-8 cell-12 md:cell-6">
           File description (required):
           <textarea
+            data-testid="description-input"
             className="FileEditor--TextArea sm:mb-0 h-full"
             type="text"
             name="description"
             defaultValue={description}
+            onChange={e => onDescriptionChange(e)}
           />
         </label>
         <fieldset className="mt-8 cell-12 md:cell-6">

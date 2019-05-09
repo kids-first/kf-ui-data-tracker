@@ -110,6 +110,7 @@ const FileElement = ({
             </span>
             <span className={fileStatusClass}>
               <Link
+                data-testid='edit-file'
                 to={`/study/${match.params.kfId}/files/${fileKfID}`}
                 className={buttonClass}
               >

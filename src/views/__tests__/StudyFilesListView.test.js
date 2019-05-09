@@ -3,8 +3,8 @@ import wait from 'waait';
 import {MockedProvider} from 'react-apollo/test-utils';
 import {MemoryRouter} from 'react-router-dom';
 import {render, fireEvent} from 'react-testing-library';
-import StudyFilesListView from './StudyFilesListView';
-import {mocks} from '../../__mocks__/kf-api-study-creator/mocks';
+import StudyFilesListView from '../StudyFilesListView';
+import {mocks} from '../../../__mocks__/kf-api-study-creator/mocks';
 
 it('deletes a file correctly', async () => {
   const tree = render(
