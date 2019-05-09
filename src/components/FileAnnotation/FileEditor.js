@@ -15,6 +15,7 @@ const FileEditor = ({
   selectFileType,
   onSubmit,
   onNameChange,
+  onCancel,
   history,
 }) => {
   const [editing, setEditing] = useState(false);
@@ -111,7 +112,7 @@ const FileEditor = ({
         <div className="cell-12 flex justify-end mt-4">
           <Button
             onClick={() => {
-              history.goBack();
+              onCancel();
             }}
           >
             Cancel
@@ -136,6 +137,8 @@ FileEditor.propTypes = {
   fileType: PropTypes.string,
   /** Action to perform when form is submitted */
   onSubmit: PropTypes.func.isRequired,
+  /** Action to perform when form submission is cacnceled */
+  onCancel: PropTypes.func.isRequired,
   /** Action to perform when name input is updated */
   onNameChange: PropTypes.func.isRequired,
   /** Function for onChange event on file type selection */
