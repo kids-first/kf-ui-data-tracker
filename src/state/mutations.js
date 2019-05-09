@@ -10,10 +10,16 @@ export const CREATE_FILE = gql`
         kfId
         name
         description
+        status @client
         fileType
         downloadUrl
       }
     }
+  }
+`;
+export const UPDATE_FILE_STATUS = gql`
+  mutation($id: ID!, $status: String!) {
+    updateFileStatus(id: $id, status: $status) @client
   }
 `;
 
