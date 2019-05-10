@@ -28,7 +28,11 @@ const StudyFilesListView = props => (
           <section className="study-file-list cell-12 row-2">
             {loading ? (
               <ul className="FileList">
-                <FileElement loading={loading} />
+                <FileElement
+                  loading={loading}
+                  fileNode={{}}
+                  fileListId={props.match.params.kfId}
+                />
               </ul>
             ) : (
               <FileList fileList={files} studyId={props.match.params.kfId} />

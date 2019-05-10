@@ -48,12 +48,12 @@ const FileElement = ({className, fileNode, loading, match, fileListId}) => {
     'group-hover:text-blue',
   );
   const buttonClass = classes({invisible: loading});
-  const fileKfID = fileNode ? fileNode.kfId : 'unknown ID';
-  const fileName = fileNode ? fileNode.name : 'unknown file name';
-  const fileDescription = fileNode ? fileNode.description : null;
+  const fileKfID = fileNode.kfId || 'unknown ID';
+  const fileName = fileNode.name || 'unknown file name';
+  const fileDescription = fileNode.description || null;
   // TODO: move these to fileUtils??
   const sortedVersions =
-    fileNode && fileNode.versions.edges.length > 0
+    fileNode && fileNode.versions && fileNode.versions.edges.length > 0
       ? fileNode.versions.edges.sort(dateCompare)
       : [];
   const fileSize =
@@ -63,7 +63,7 @@ const FileElement = ({className, fileNode, loading, match, fileListId}) => {
   const latestDate =
     sortedVersions.length > 0 ? sortedVersions[0].node.createdAt : null;
   const fileType =
-    fileNode && fileTypeDefault[fileNode.fileType]
+    fileNode && fileNode.fileType && fileTypeDefault[fileNode.fileType]
       ? fileTypeDefault[fileNode.fileType]
       : 'unknown';
   return (
@@ -81,6 +81,7 @@ const FileElement = ({className, fileNode, loading, match, fileListId}) => {
           <Link
             to={`/study/${match.params.kfId}/files/${fileKfID}`}
             className="w-full no-underline text-black inline-block"
+            data-testid="edit-file"
           >
             <p className={fileNameClass}>{fileName}</p>
             {fileDescription ? (
