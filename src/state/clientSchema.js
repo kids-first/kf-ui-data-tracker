@@ -1,5 +1,4 @@
 import gql from 'graphql-tag';
-import {GET_FILE_BY_ID} from './queries';
 
 export const clientTypeDefs = gql`
   extend type FileNode {
@@ -36,7 +35,7 @@ export const resolvers = {
       `;
       const cachedFile = await cache.readFragment({fragment, id: cacheId});
       const updatedFileNode = {...cachedFile, status};
-      const node = await cache.writeData({id: cacheId, data: updatedFileNode});
+      await cache.writeData({id: cacheId, data: updatedFileNode});
       return updatedFileNode;
     },
   },
