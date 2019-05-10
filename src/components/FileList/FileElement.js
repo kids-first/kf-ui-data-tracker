@@ -67,7 +67,7 @@ const FileElement = ({className, fileNode, loading, match, fileListId}) => {
       ? fileTypeDefault[fileNode.fileType]
       : 'unknown';
   return (
-    <li className={fileElementClass} tabindex="0">
+    <li className={fileElementClass} tabIndex="0">
       <GridContainer
         fullWidth
         collapsed="rows"

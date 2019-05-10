@@ -3,23 +3,17 @@
 exports[`renders correctly 1`] = `
 <div>
   <li
-    class="FileList--Element"
+    class="FileList--Element group"
+    tabindex="0"
   >
     <section
-      class="grid-container mx-auto grid-container--collapsed-rows"
+      class="grid-container mx-auto grid-container--collapsed-rows grid-container--fullWidth ml-0 mr-0 px-16 sm:p-0"
     >
       <div
-        class="lg:cell-2 lg:row-1 FileList--ElementBadge"
+        class=" cell-12 row-1 sm:row-1 sm:cell-2  sm:h-full sm:text-center  sm:border-r border-grey-lightest"
       >
         <div
-          class="lg:min-w-full m-0 Badge bg-teal"
-        >
-          <span>
-            New
-          </span>
-        </div>
-        <div
-          class="lg:min-w-full m-0 Badge bg-orange"
+          class="Badge bg-orange ml-0"
         >
           <span>
             Pending Approval
@@ -27,269 +21,108 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="lg:cell-10 row-1 cell-12"
+        class="row-2 sm:row-1 cell-12 sm:cell-9   h-full"
       >
-        <p
-          class="m-0"
+        <a
+          class="w-full no-underline text-black inline-block"
+          data-testid="edit-file"
+          href="/study/undefined/files/SF_5ZPEM167"
         >
-          <span
-            class="FileStatus text-sm font-bold"
-            title="Safe always adult sometimes. Enter full agree still son expect write. According small hold someone."
+          <p
+            class="FileList--Element-name text-sm font-bold mb-0 mt-4 group-hover:text-blue"
           >
-            force.webm
-          </span>
-          <span
-            class="FileStatus text-grey"
-            title="Study ID: undefined"
+            organization.jpeg
+          </p>
+          <p
+            class="FileList--Element-desc w-3/4 h-8 m-0 p-0 text-truncate text-black"
           >
-            SF_FPVBM0JF
-             
-            <span
-              class="FileList--ElementButton"
-            >
-              <button>
-                <svg
-                  height="10"
-                  id="mock-icon"
-                  kind="copy"
-                  width="10"
-                >
-                  <title>
-                    icon-
-                    copy
-                  </title>
-                </svg>
-              </button>
-            </span>
-          </span>
+            <small>
+              Month necessary animal end standard case. View system operation message decade. Actually sing because deal everything woman subject.
+            </small>
+          </p>
+        </a>
+        <span
+          class="FileStatus w-full inline-block sm:inline text-grey"
+          title="Study ID: undefined"
+        >
+          SF_5ZPEM167
+           
           <span
-            class="FileStatus text-grey"
+            class=""
           >
-            <a
-              class="FileList--ElementButton"
-              data-testid="edit-file"
-              href="/study/undefined/files/SF_FPVBM0JF"
-            >
+            <button>
               <svg
                 height="10"
                 id="mock-icon"
-                kind="edit"
+                kind="copy"
                 width="10"
               >
                 <title>
                   icon-
-                  edit
-                </title>
-              </svg>
-            </a>
-            <button
-              class="FileList--ElementButton"
-            >
-              <svg
-                height="10"
-                id="mock-icon"
-                kind="download"
-                width="10"
-              >
-                <title>
-                  icon-
-                  download
-                </title>
-              </svg>
-            </button>
-            <button
-              class="FileList--ElementButton"
-            >
-              <svg
-                height="10"
-                id="mock-icon"
-                kind="delete"
-                width="10"
-              >
-                <title>
-                  icon-
-                  delete
+                  copy
                 </title>
               </svg>
             </button>
           </span>
-        </p>
-        <p
-          class="m-0"
+        </span>
+        <span
+          class="FileStatus w-full inline-block sm:inline text-grey"
         >
-          <span
-            class="FileStatus text-grey"
+          Created:
+           
+          <time
+            datetime="2018-08-21T03:16:11.000Z"
+            title="2018-08-21T03:16:11+00:00"
           >
-            Created:
-             
-            <time
-              datetime="2018-09-19T08:33:31.000Z"
-              title="2018-09-19T08:33:31+00:00"
-            >
-              7 months ago
-            </time>
-          </span>
-          <span
-            class="FileStatus text-grey"
-          >
-            Size: 
-            440 B
-          </span>
-          <span
-            class="FileStatus text-grey"
-          >
-            Clinical/Phenotype Data
-          </span>
-        </p>
-      </div>
-    </section>
-  </li>
-</div>
-`;
-
-exports[`renders error state 1`] = `
-<div>
-  <li
-    class="FileList--Element"
-  >
-    <section
-      class="grid-container mx-auto grid-container--collapsed-rows"
-    >
-      <div
-        class="lg:cell-2 lg:row-1 FileList--ElementBadge"
-      >
-        <div
-          class="lg:min-w-full m-0 Badge bg-teal"
+            8 months ago
+          </time>
+        </span>
+        <span
+          class="FileStatus w-full inline-block sm:inline text-grey"
         >
-          <span>
-            New
-          </span>
-        </div>
-        <div
-          class="lg:min-w-full m-0 Badge bg-orange"
+          Size: 
+          9.9 kB
+        </span>
+        <span
+          class="FileStatus w-full inline-block sm:inline text-grey"
         >
-          <span>
-            Pending Approval
-          </span>
-        </div>
+          Clinical/Phenotype Data
+        </span>
       </div>
       <div
-        class="lg:cell-10 row-1 cell-12"
+        class="FileActions opacity-25 hidden sm:block"
       >
-        <p
-          class="m-0"
+        <button
+          class="FileActions-Button"
         >
-          <span
-            class="FileStatus text-sm font-bold"
-            title="unknown"
+          <svg
+            color="black"
+            height="16"
+            id="mock-icon"
+            kind="download"
+            width="16"
           >
-            unknown file name
-          </span>
-          <span
-            class="FileStatus text-grey"
-            title="Study ID: undefined"
-          >
-            unknown ID
-             
-            <span
-              class="FileList--ElementButton"
-            >
-              <button>
-                <svg
-                  height="10"
-                  id="mock-icon"
-                  kind="copy"
-                  width="10"
-                >
-                  <title>
-                    icon-
-                    copy
-                  </title>
-                </svg>
-              </button>
-            </span>
-          </span>
-          <span
-            class="FileStatus text-grey"
-          >
-            <a
-              class="FileList--ElementButton"
-              data-testid="edit-file"
-              href="/study/undefined/files/unknown ID"
-            >
-              <svg
-                height="10"
-                id="mock-icon"
-                kind="edit"
-                width="10"
-              >
-                <title>
-                  icon-
-                  edit
-                </title>
-              </svg>
-            </a>
-            <button
-              class="FileList--ElementButton"
-            >
-              <svg
-                height="10"
-                id="mock-icon"
-                kind="download"
-                width="10"
-              >
-                <title>
-                  icon-
-                  download
-                </title>
-              </svg>
-            </button>
-            <button
-              class="FileList--ElementButton"
-            >
-              <svg
-                height="10"
-                id="mock-icon"
-                kind="delete"
-                width="10"
-              >
-                <title>
-                  icon-
-                  delete
-                </title>
-              </svg>
-            </button>
-          </span>
-          <span
-            class="FileStatus text-red"
-          >
-            something went wrong
-          </span>
-        </p>
-        <p
-          class="m-0"
+            <title>
+              icon-
+              download
+            </title>
+          </svg>
+        </button>
+        <button
+          class="FileActions-Button"
         >
-          <span
-            class="FileStatus text-grey"
+          <svg
+            height="16"
+            id="mock-icon"
+            kind="delete"
+            width="16"
           >
-            Created:
-             
-            <span>
-              unknown
-            </span>
-          </span>
-          <span
-            class="FileStatus text-grey"
-          >
-            Size: 
-            unknown
-          </span>
-          <span
-            class="FileStatus text-grey"
-          >
-            unknown
-          </span>
-        </p>
+            <title>
+              icon-
+              delete
+            </title>
+          </svg>
+        </button>
       </div>
     </section>
   </li>
@@ -299,25 +132,17 @@ exports[`renders error state 1`] = `
 exports[`renders loading state 1`] = `
 <div>
   <li
-    class="FileList--Element cursor-not-allowed"
+    class="FileList--Element cursor-not-allowed group"
+    tabindex="0"
   >
     <section
-      class="grid-container mx-auto grid-container--collapsed-rows"
+      class="grid-container mx-auto grid-container--collapsed-rows grid-container--fullWidth ml-0 mr-0 px-16 sm:p-0"
     >
       <div
-        class="lg:cell-2 lg:row-1 FileList--ElementBadge"
+        class=" cell-12 row-1 sm:row-1 sm:cell-2  sm:h-full sm:text-center  sm:border-r border-grey-lightest"
       >
         <div
-          class="lg:min-w-full m-0 Badge Badge--loading"
-        >
-          <span
-            class="invisible"
-          >
-            New
-          </span>
-        </div>
-        <div
-          class="lg:min-w-full m-0 Badge Badge--loading"
+          class="Badge Badge--loading ml-0"
         >
           <span
             class="invisible"
@@ -327,117 +152,108 @@ exports[`renders loading state 1`] = `
         </div>
       </div>
       <div
-        class="lg:cell-10 row-1 cell-12"
+        class="row-2 sm:row-1 cell-12 sm:cell-9   h-full"
       >
-        <p
-          class="m-0"
+        <a
+          class="w-full no-underline text-black inline-block"
+          data-testid="edit-file"
+          href="/study/undefined/files/SF_5ZPEM167"
         >
-          <span
-            class="FileStatus--loading font-bold"
-            title="unknown"
+          <p
+            class="FileStatus--loading font-bold mb-0 mt-4 group-hover:text-blue"
           >
-            unknown file name
-          </span>
-          <span
-            class="FileStatus--loading text-grey"
-            title="Study ID: undefined"
+            organization.jpeg
+          </p>
+          <p
+            class="FileList--Element-desc w-3/4 h-8 m-0 p-0 text-truncate text-black"
           >
-            unknown ID
-             
-            <span
-              class="FileList--ElementButton invisible"
-            >
-              <button>
-                <svg
-                  height="10"
-                  id="mock-icon"
-                  kind="copy"
-                  width="10"
-                >
-                  <title>
-                    icon-
-                    copy
-                  </title>
-                </svg>
-              </button>
-            </span>
-          </span>
+            <small>
+              Month necessary animal end standard case. View system operation message decade. Actually sing because deal everything woman subject.
+            </small>
+          </p>
+        </a>
+        <span
+          class="FileStatus--loading w-full inline-block sm:inline text-grey"
+          title="Study ID: undefined"
+        >
+          SF_5ZPEM167
+           
           <span
-            class="FileStatus--loading text-grey"
+            class="invisible"
           >
-            <a
-              class="FileList--ElementButton invisible"
-              data-testid="edit-file"
-              href="/study/undefined/files/unknown ID"
-            >
+            <button>
               <svg
                 height="10"
                 id="mock-icon"
-                kind="edit"
+                kind="copy"
                 width="10"
               >
                 <title>
                   icon-
-                  edit
-                </title>
-              </svg>
-            </a>
-            <button
-              class="FileList--ElementButton invisible"
-            >
-              <svg
-                height="10"
-                id="mock-icon"
-                kind="download"
-                width="10"
-              >
-                <title>
-                  icon-
-                  download
-                </title>
-              </svg>
-            </button>
-            <button
-              class="FileList--ElementButton invisible"
-            >
-              <svg
-                height="10"
-                id="mock-icon"
-                kind="delete"
-                width="10"
-              >
-                <title>
-                  icon-
-                  delete
+                  copy
                 </title>
               </svg>
             </button>
           </span>
-        </p>
-        <p
-          class="m-0"
+        </span>
+        <span
+          class="FileStatus--loading w-full inline-block sm:inline text-grey"
         >
-          <span
-            class="FileStatus--loading text-grey"
+          Created:
+           
+          <time
+            datetime="2018-08-21T03:16:11.000Z"
+            title="2018-08-21T03:16:11+00:00"
           >
-            Created:
-             
-            <span>
-              unknown
-            </span>
-          </span>
-          <span
-            class="FileStatus--loading text-grey"
+            8 months ago
+          </time>
+        </span>
+        <span
+          class="FileStatus--loading w-full inline-block sm:inline text-grey"
+        >
+          Size: 
+          9.9 kB
+        </span>
+        <span
+          class="FileStatus--loading w-full inline-block sm:inline text-grey"
+        >
+          Clinical/Phenotype Data
+        </span>
+      </div>
+      <div
+        class="FileActions opacity-25 hidden sm:block"
+      >
+        <button
+          class="FileActions-Button"
+        >
+          <svg
+            color="black"
+            height="16"
+            id="mock-icon"
+            kind="download"
+            width="16"
           >
-            Size: 
-            unknown
-          </span>
-          <span
-            class="FileStatus--loading text-grey"
+            <title>
+              icon-
+              download
+            </title>
+          </svg>
+        </button>
+        <button
+          class="FileActions-Button"
+        >
+          <svg
+            height="16"
+            id="mock-icon"
+            kind="delete"
+            width="16"
           >
-            unknown
-          </span>
-        </p>
+            <title>
+              icon-
+              delete
+            </title>
+          </svg>
+        </button>
       </div>
     </section>
   </li>
