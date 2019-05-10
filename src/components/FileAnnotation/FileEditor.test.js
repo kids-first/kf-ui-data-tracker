@@ -10,6 +10,7 @@ it('renders correctly', () => {
         kfId="SF_00000000"
         description="lorem ipsum"
         onSubmit={jest.fn()}
+        onCancel={jest.fn()}
         onNameChange={jest.fn()}
         selectFileType={jest.fn()}
       />
@@ -26,6 +27,7 @@ it('shows editor for name and hides when saved', () => {
         name="test"
         description="lorem ipsum"
         onSubmit={jest.fn()}
+        onCancel={jest.fn()}
         onNameChange={jest.fn()}
         selectFileType={jest.fn()}
       />
@@ -53,6 +55,7 @@ it('renders selected file type correctly', () => {
         description="lorem ipsum"
         fileType={'CLN'}
         onSubmit={jest.fn()}
+        onCancel={jest.fn()}
         onNameChange={jest.fn()}
         selectFileType={jest.fn()}
       />

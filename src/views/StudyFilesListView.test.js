@@ -8,7 +8,7 @@ import {mocks} from '../../__mocks__/kf-api-study-creator/mocks';
 
 it('deletes a file correctly', async () => {
   const tree = render(
-    <MockedProvider mocks={mocks}>
+    <MockedProvider mocks={mocks} resolvers={{FileNode: {status: () => 'New'}}}>
       <MemoryRouter initialEntries={['/study/SD_8WX8QQ06']}>
         <StudyFilesListView match={{params: {kfId: 'SD_8WX8QQ06'}}} />
       </MemoryRouter>
@@ -17,6 +17,7 @@ it('deletes a file correctly', async () => {
   await wait(0);
 
   const fileIds = tree.queryAllByText(/SF_/i).map(f => f.textContent);
+
   expect(fileIds.length).toBe(2);
 
   // Delete the second file
