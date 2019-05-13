@@ -7,17 +7,14 @@ import TimeAgo from 'react-timeago';
 import Badge from '../Badge/Badge';
 import {GridContainer} from 'kf-uikit';
 import FileActionsContainer from '../../containers/FileActionsContainer';
-import {dateCompare, formatFileSize} from '../../common/fileUtils';
+import {
+  dateCompare,
+  formatFileSize,
+  fileTypeDetail,
+} from '../../common/fileUtils';
 /**
  * Displays unordered study files in list view
  */
-
-const fileTypeDefault = {
-  SHM: 'Shipping Manifest',
-  CLN: 'Clinical/Phenotype Data',
-  SEQ: 'Sequencing Manifest',
-  OTH: 'Other',
-};
 
 const FileElement = ({className, fileNode, loading, match, fileListId}) => {
   const fileElementClass = classes(
@@ -63,8 +60,8 @@ const FileElement = ({className, fileNode, loading, match, fileListId}) => {
   const latestDate =
     sortedVersions.length > 0 ? sortedVersions[0].node.createdAt : null;
   const fileType =
-    fileNode && fileNode.fileType && fileTypeDefault[fileNode.fileType]
-      ? fileTypeDefault[fileNode.fileType]
+    fileNode && fileTypeDetail[fileNode.fileType]
+      ? fileTypeDetail[fileNode.fileType].title
       : 'unknown';
   return (
     <li className={fileElementClass} tabIndex="0">

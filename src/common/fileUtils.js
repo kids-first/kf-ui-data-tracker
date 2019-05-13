@@ -19,3 +19,10 @@ export const formatFileSize = (bytes, si) => {
   } while (Math.abs(bytes) >= thresh && u < units.length - 1);
   return bytes.toFixed(1) + ' ' + units[u];
 };
+
+export const fileTypeDetail = {
+  SHM: {icon: 'release', title: 'Shipping Manifest'},
+  CLN: {icon: 'biospecimen', title: 'Clinical/Phenotype Data'},
+  SEQ: {icon: 'customize', title: 'Sequencing Manifest'},
+  OTH: {icon: 'settings', title: 'Other'},
+};
