@@ -6,23 +6,17 @@ exports[`renders with files 1`] = `
     class="FileList"
   >
     <li
-      class="FileList--Element"
+      class="FileList--Element group"
+      tabindex="0"
     >
       <section
-        class="grid-container mx-auto grid-container--collapsed-rows"
+        class="grid-container mx-auto grid-container--collapsed-rows grid-container--fullWidth ml-0 mr-0 px-16 sm:p-0"
       >
         <div
-          class="lg:cell-2 lg:row-1 FileList--ElementBadge"
+          class=" cell-12 row-1 sm:row-1 sm:cell-2  sm:h-full sm:text-center  sm:border-r border-grey-lightest"
         >
           <div
-            class="lg:min-w-full m-0 Badge bg-teal"
-          >
-            <span>
-              New
-            </span>
-          </div>
-          <div
-            class="lg:min-w-full m-0 Badge bg-orange"
+            class="Badge bg-orange ml-0"
           >
             <span>
               Pending Approval
@@ -30,141 +24,123 @@ exports[`renders with files 1`] = `
           </div>
         </div>
         <div
-          class="lg:cell-10 row-1 cell-12"
+          class="row-2 sm:row-1 cell-12 sm:cell-9   h-full"
         >
-          <p
-            class="m-0"
+          <a
+            class="w-full no-underline text-black inline-block"
+            data-testid="edit-file"
+            href="/study/undefined/files/SF_FPVBM0JF"
           >
-            <span
-              class="FileStatus text-sm font-bold"
-              title="Safe always adult sometimes. Enter full agree still son expect write. According small hold someone."
+            <p
+              class="FileList--Element-name text-sm font-bold mb-0 mt-4 group-hover:text-blue"
             >
               force.webm
-            </span>
-            <span
-              class="FileStatus text-grey"
-              title="Study ID: undefined"
+            </p>
+            <p
+              class="FileList--Element-desc w-3/4 h-8 m-0 p-0 text-truncate text-black"
             >
-              SF_FPVBM0JF
-               
-              <span
-                class="FileList--ElementButton"
-              >
-                <button>
-                  <svg
-                    height="10"
-                    id="mock-icon"
-                    kind="copy"
-                    width="10"
-                  >
-                    <title>
-                      icon-
-                      copy
-                    </title>
-                  </svg>
-                </button>
-              </span>
-            </span>
-            <span
-              class="FileStatus text-grey"
-            >
-              <a
-                class="FileList--ElementButton"
-                data-testid="edit-file"
-                href="/study/undefined/files/SF_FPVBM0JF"
-              >
-                <svg
-                  height="10"
-                  id="mock-icon"
-                  kind="edit"
-                  width="10"
-                >
-                  <title>
-                    icon-
-                    edit
-                  </title>
-                </svg>
-              </a>
-              <button
-                class="FileList--ElementButton"
-              >
-                <svg
-                  height="10"
-                  id="mock-icon"
-                  kind="download"
-                  width="10"
-                >
-                  <title>
-                    icon-
-                    download
-                  </title>
-                </svg>
-              </button>
-              <button
-                class="FileList--ElementButton"
-              >
-                <svg
-                  height="10"
-                  id="mock-icon"
-                  kind="delete"
-                  width="10"
-                >
-                  <title>
-                    icon-
-                    delete
-                  </title>
-                </svg>
-              </button>
-            </span>
-          </p>
-          <p
-            class="m-0"
+              <small>
+                Safe always adult sometimes. Enter full agree still son expect write. According small hold someone.
+              </small>
+            </p>
+          </a>
+          <span
+            class="FileStatus w-full inline-block sm:inline text-grey"
+            title="Study ID: undefined"
           >
+            SF_FPVBM0JF
+             
             <span
-              class="FileStatus text-grey"
+              class=""
             >
-              Created:
-               
-              <time
-                datetime="2018-09-19T08:33:31.000Z"
-                title="2018-09-19T08:33:31+00:00"
-              >
-                7 months ago
-              </time>
+              <button>
+                <svg
+                  height="10"
+                  id="mock-icon"
+                  kind="copy"
+                  width="10"
+                >
+                  <title>
+                    icon-
+                    copy
+                  </title>
+                </svg>
+              </button>
             </span>
-            <span
-              class="FileStatus text-grey"
+          </span>
+          <span
+            class="FileStatus w-full inline-block sm:inline text-grey"
+          >
+            Created:
+             
+            <time
+              datetime="2017-11-29T04:15:57.000Z"
+              title="2017-11-29T04:15:57+00:00"
             >
-              Size: 
-              440 B
-            </span>
-            <span
-              class="FileStatus text-grey"
+              1 year ago
+            </time>
+          </span>
+          <span
+            class="FileStatus w-full inline-block sm:inline text-grey"
+          >
+            Size: 
+            9.0 kB
+          </span>
+          <span
+            class="FileStatus w-full inline-block sm:inline text-grey"
+          >
+            Clinical/Phenotype Data
+          </span>
+        </div>
+        <div
+          class="FileActions opacity-25 hidden sm:block"
+        >
+          <button
+            class="FileActions-Button"
+          >
+            <svg
+              color="black"
+              height="16"
+              id="mock-icon"
+              kind="download"
+              width="16"
             >
-              Clinical/Phenotype Data
-            </span>
-          </p>
+              <title>
+                icon-
+                download
+              </title>
+            </svg>
+          </button>
+          <button
+            class="FileActions-Button"
+          >
+            <svg
+              height="16"
+              id="mock-icon"
+              kind="delete"
+              width="16"
+            >
+              <title>
+                icon-
+                delete
+              </title>
+            </svg>
+          </button>
         </div>
       </section>
     </li>
     <li
-      class="FileList--Element"
+      class="FileList--Element group"
+      tabindex="0"
     >
       <section
-        class="grid-container mx-auto grid-container--collapsed-rows"
+        class="grid-container mx-auto grid-container--collapsed-rows grid-container--fullWidth ml-0 mr-0 px-16 sm:p-0"
       >
         <div
-          class="lg:cell-2 lg:row-1 FileList--ElementBadge"
+          class=" cell-12 row-1 sm:row-1 sm:cell-2  sm:h-full sm:text-center  sm:border-r border-grey-lightest"
         >
           <div
-            class="lg:min-w-full m-0 Badge bg-teal"
-          >
-            <span>
-              New
-            </span>
-          </div>
-          <div
-            class="lg:min-w-full m-0 Badge bg-orange"
+            class="Badge bg-orange ml-0"
           >
             <span>
               Pending Approval
@@ -172,141 +148,123 @@ exports[`renders with files 1`] = `
           </div>
         </div>
         <div
-          class="lg:cell-10 row-1 cell-12"
+          class="row-2 sm:row-1 cell-12 sm:cell-9   h-full"
         >
-          <p
-            class="m-0"
+          <a
+            class="w-full no-underline text-black inline-block"
+            data-testid="edit-file"
+            href="/study/undefined/files/SF_DLXEQZV1"
           >
-            <span
-              class="FileStatus text-sm font-bold"
-              title="Feel industry quality direction resource truth. Affect green yard various play character simply remain."
+            <p
+              class="FileList--Element-name text-sm font-bold mb-0 mt-4 group-hover:text-blue"
             >
               those.wav
-            </span>
-            <span
-              class="FileStatus text-grey"
-              title="Study ID: undefined"
+            </p>
+            <p
+              class="FileList--Element-desc w-3/4 h-8 m-0 p-0 text-truncate text-black"
             >
-              SF_DLXEQZV1
-               
-              <span
-                class="FileList--ElementButton"
-              >
-                <button>
-                  <svg
-                    height="10"
-                    id="mock-icon"
-                    kind="copy"
-                    width="10"
-                  >
-                    <title>
-                      icon-
-                      copy
-                    </title>
-                  </svg>
-                </button>
-              </span>
-            </span>
-            <span
-              class="FileStatus text-grey"
-            >
-              <a
-                class="FileList--ElementButton"
-                data-testid="edit-file"
-                href="/study/undefined/files/SF_DLXEQZV1"
-              >
-                <svg
-                  height="10"
-                  id="mock-icon"
-                  kind="edit"
-                  width="10"
-                >
-                  <title>
-                    icon-
-                    edit
-                  </title>
-                </svg>
-              </a>
-              <button
-                class="FileList--ElementButton"
-              >
-                <svg
-                  height="10"
-                  id="mock-icon"
-                  kind="download"
-                  width="10"
-                >
-                  <title>
-                    icon-
-                    download
-                  </title>
-                </svg>
-              </button>
-              <button
-                class="FileList--ElementButton"
-              >
-                <svg
-                  height="10"
-                  id="mock-icon"
-                  kind="delete"
-                  width="10"
-                >
-                  <title>
-                    icon-
-                    delete
-                  </title>
-                </svg>
-              </button>
-            </span>
-          </p>
-          <p
-            class="m-0"
+              <small>
+                Feel industry quality direction resource truth. Affect green yard various play character simply remain.
+              </small>
+            </p>
+          </a>
+          <span
+            class="FileStatus w-full inline-block sm:inline text-grey"
+            title="Study ID: undefined"
           >
+            SF_DLXEQZV1
+             
             <span
-              class="FileStatus text-grey"
+              class=""
             >
-              Created:
-               
-              <time
-                datetime="2018-07-09T05:01:45.000Z"
-                title="2018-07-09T05:01:45+00:00"
-              >
-                10 months ago
-              </time>
+              <button>
+                <svg
+                  height="10"
+                  id="mock-icon"
+                  kind="copy"
+                  width="10"
+                >
+                  <title>
+                    icon-
+                    copy
+                  </title>
+                </svg>
+              </button>
             </span>
-            <span
-              class="FileStatus text-grey"
+          </span>
+          <span
+            class="FileStatus w-full inline-block sm:inline text-grey"
+          >
+            Created:
+             
+            <time
+              datetime="2017-11-17T13:39:26.000Z"
+              title="2017-11-17T13:39:26+00:00"
             >
-              Size: 
-              7.0 kB
-            </span>
-            <span
-              class="FileStatus text-grey"
+              1 year ago
+            </time>
+          </span>
+          <span
+            class="FileStatus w-full inline-block sm:inline text-grey"
+          >
+            Size: 
+            5.3 kB
+          </span>
+          <span
+            class="FileStatus w-full inline-block sm:inline text-grey"
+          >
+            unknown
+          </span>
+        </div>
+        <div
+          class="FileActions opacity-25 hidden sm:block"
+        >
+          <button
+            class="FileActions-Button"
+          >
+            <svg
+              color="black"
+              height="16"
+              id="mock-icon"
+              kind="download"
+              width="16"
             >
-              unknown
-            </span>
-          </p>
+              <title>
+                icon-
+                download
+              </title>
+            </svg>
+          </button>
+          <button
+            class="FileActions-Button"
+          >
+            <svg
+              height="16"
+              id="mock-icon"
+              kind="delete"
+              width="16"
+            >
+              <title>
+                icon-
+                delete
+              </title>
+            </svg>
+          </button>
         </div>
       </section>
     </li>
     <li
-      class="FileList--Element"
+      class="FileList--Element group"
+      tabindex="0"
     >
       <section
-        class="grid-container mx-auto grid-container--collapsed-rows"
+        class="grid-container mx-auto grid-container--collapsed-rows grid-container--fullWidth ml-0 mr-0 px-16 sm:p-0"
       >
         <div
-          class="lg:cell-2 lg:row-1 FileList--ElementBadge"
+          class=" cell-12 row-1 sm:row-1 sm:cell-2  sm:h-full sm:text-center  sm:border-r border-grey-lightest"
         >
           <div
-            class="lg:min-w-full m-0 Badge bg-teal"
-          >
-            <span>
-              New
-            </span>
-          </div>
-          <div
-            class="lg:min-w-full m-0 Badge bg-orange"
+            class="Badge bg-orange ml-0"
           >
             <span>
               Pending Approval
@@ -314,141 +272,123 @@ exports[`renders with files 1`] = `
           </div>
         </div>
         <div
-          class="lg:cell-10 row-1 cell-12"
+          class="row-2 sm:row-1 cell-12 sm:cell-9   h-full"
         >
-          <p
-            class="m-0"
+          <a
+            class="w-full no-underline text-black inline-block"
+            data-testid="edit-file"
+            href="/study/undefined/files/SF_6JBSGVWE"
           >
-            <span
-              class="FileStatus text-sm font-bold"
-              title="This democratic analysis car here likely. Protect speech exactly three order different wife."
+            <p
+              class="FileList--Element-name text-sm font-bold mb-0 mt-4 group-hover:text-blue"
             >
               hand.css
-            </span>
-            <span
-              class="FileStatus text-grey"
-              title="Study ID: undefined"
+            </p>
+            <p
+              class="FileList--Element-desc w-3/4 h-8 m-0 p-0 text-truncate text-black"
             >
-              SF_6JBSGVWE
-               
-              <span
-                class="FileList--ElementButton"
-              >
-                <button>
-                  <svg
-                    height="10"
-                    id="mock-icon"
-                    kind="copy"
-                    width="10"
-                  >
-                    <title>
-                      icon-
-                      copy
-                    </title>
-                  </svg>
-                </button>
-              </span>
-            </span>
-            <span
-              class="FileStatus text-grey"
-            >
-              <a
-                class="FileList--ElementButton"
-                data-testid="edit-file"
-                href="/study/undefined/files/SF_6JBSGVWE"
-              >
-                <svg
-                  height="10"
-                  id="mock-icon"
-                  kind="edit"
-                  width="10"
-                >
-                  <title>
-                    icon-
-                    edit
-                  </title>
-                </svg>
-              </a>
-              <button
-                class="FileList--ElementButton"
-              >
-                <svg
-                  height="10"
-                  id="mock-icon"
-                  kind="download"
-                  width="10"
-                >
-                  <title>
-                    icon-
-                    download
-                  </title>
-                </svg>
-              </button>
-              <button
-                class="FileList--ElementButton"
-              >
-                <svg
-                  height="10"
-                  id="mock-icon"
-                  kind="delete"
-                  width="10"
-                >
-                  <title>
-                    icon-
-                    delete
-                  </title>
-                </svg>
-              </button>
-            </span>
-          </p>
-          <p
-            class="m-0"
+              <small>
+                This democratic analysis car here likely. Protect speech exactly three order different wife.
+              </small>
+            </p>
+          </a>
+          <span
+            class="FileStatus w-full inline-block sm:inline text-grey"
+            title="Study ID: undefined"
           >
+            SF_6JBSGVWE
+             
             <span
-              class="FileStatus text-grey"
+              class=""
             >
-              Created:
-               
-              <time
-                datetime="2018-10-31T05:37:11.000Z"
-                title="2018-10-31T05:37:11+00:00"
-              >
-                6 months ago
-              </time>
+              <button>
+                <svg
+                  height="10"
+                  id="mock-icon"
+                  kind="copy"
+                  width="10"
+                >
+                  <title>
+                    icon-
+                    copy
+                  </title>
+                </svg>
+              </button>
             </span>
-            <span
-              class="FileStatus text-grey"
+          </span>
+          <span
+            class="FileStatus w-full inline-block sm:inline text-grey"
+          >
+            Created:
+             
+            <time
+              datetime="2018-10-31T05:37:11.000Z"
+              title="2018-10-31T05:37:11+00:00"
             >
-              Size: 
-              9.6 kB
-            </span>
-            <span
-              class="FileStatus text-grey"
+              6 months ago
+            </time>
+          </span>
+          <span
+            class="FileStatus w-full inline-block sm:inline text-grey"
+          >
+            Size: 
+            9.6 kB
+          </span>
+          <span
+            class="FileStatus w-full inline-block sm:inline text-grey"
+          >
+            unknown
+          </span>
+        </div>
+        <div
+          class="FileActions opacity-25 hidden sm:block"
+        >
+          <button
+            class="FileActions-Button"
+          >
+            <svg
+              color="black"
+              height="16"
+              id="mock-icon"
+              kind="download"
+              width="16"
             >
-              unknown
-            </span>
-          </p>
+              <title>
+                icon-
+                download
+              </title>
+            </svg>
+          </button>
+          <button
+            class="FileActions-Button"
+          >
+            <svg
+              height="16"
+              id="mock-icon"
+              kind="delete"
+              width="16"
+            >
+              <title>
+                icon-
+                delete
+              </title>
+            </svg>
+          </button>
         </div>
       </section>
     </li>
     <li
-      class="FileList--Element"
+      class="FileList--Element group"
+      tabindex="0"
     >
       <section
-        class="grid-container mx-auto grid-container--collapsed-rows"
+        class="grid-container mx-auto grid-container--collapsed-rows grid-container--fullWidth ml-0 mr-0 px-16 sm:p-0"
       >
         <div
-          class="lg:cell-2 lg:row-1 FileList--ElementBadge"
+          class=" cell-12 row-1 sm:row-1 sm:cell-2  sm:h-full sm:text-center  sm:border-r border-grey-lightest"
         >
           <div
-            class="lg:min-w-full m-0 Badge bg-teal"
-          >
-            <span>
-              New
-            </span>
-          </div>
-          <div
-            class="lg:min-w-full m-0 Badge bg-orange"
+            class="Badge bg-orange ml-0"
           >
             <span>
               Pending Approval
@@ -456,120 +396,108 @@ exports[`renders with files 1`] = `
           </div>
         </div>
         <div
-          class="lg:cell-10 row-1 cell-12"
+          class="row-2 sm:row-1 cell-12 sm:cell-9   h-full"
         >
-          <p
-            class="m-0"
+          <a
+            class="w-full no-underline text-black inline-block"
+            data-testid="edit-file"
+            href="/study/undefined/files/SF_JT0GRZP7"
           >
-            <span
-              class="FileStatus text-sm font-bold"
-              title="Shoulder body answer especially large big risk its. Sort fly note field fish. Network him identify rich."
+            <p
+              class="FileList--Element-name text-sm font-bold mb-0 mt-4 group-hover:text-blue"
             >
               pattern.flac
-            </span>
-            <span
-              class="FileStatus text-grey"
-              title="Study ID: undefined"
+            </p>
+            <p
+              class="FileList--Element-desc w-3/4 h-8 m-0 p-0 text-truncate text-black"
             >
-              SF_JT0GRZP7
-               
-              <span
-                class="FileList--ElementButton"
-              >
-                <button>
-                  <svg
-                    height="10"
-                    id="mock-icon"
-                    kind="copy"
-                    width="10"
-                  >
-                    <title>
-                      icon-
-                      copy
-                    </title>
-                  </svg>
-                </button>
-              </span>
-            </span>
-            <span
-              class="FileStatus text-grey"
-            >
-              <a
-                class="FileList--ElementButton"
-                data-testid="edit-file"
-                href="/study/undefined/files/SF_JT0GRZP7"
-              >
-                <svg
-                  height="10"
-                  id="mock-icon"
-                  kind="edit"
-                  width="10"
-                >
-                  <title>
-                    icon-
-                    edit
-                  </title>
-                </svg>
-              </a>
-              <button
-                class="FileList--ElementButton"
-              >
-                <svg
-                  height="10"
-                  id="mock-icon"
-                  kind="download"
-                  width="10"
-                >
-                  <title>
-                    icon-
-                    download
-                  </title>
-                </svg>
-              </button>
-              <button
-                class="FileList--ElementButton"
-              >
-                <svg
-                  height="10"
-                  id="mock-icon"
-                  kind="delete"
-                  width="10"
-                >
-                  <title>
-                    icon-
-                    delete
-                  </title>
-                </svg>
-              </button>
-            </span>
-          </p>
-          <p
-            class="m-0"
+              <small>
+                Shoulder body answer especially large big risk its. Sort fly note field fish. Network him identify rich.
+              </small>
+            </p>
+          </a>
+          <span
+            class="FileStatus w-full inline-block sm:inline text-grey"
+            title="Study ID: undefined"
           >
+            SF_JT0GRZP7
+             
             <span
-              class="FileStatus text-grey"
+              class=""
             >
-              Created:
-               
-              <time
-                datetime="2017-11-06T13:13:56.000Z"
-                title="2017-11-06T13:13:56+00:00"
-              >
-                1 year ago
-              </time>
+              <button>
+                <svg
+                  height="10"
+                  id="mock-icon"
+                  kind="copy"
+                  width="10"
+                >
+                  <title>
+                    icon-
+                    copy
+                  </title>
+                </svg>
+              </button>
             </span>
-            <span
-              class="FileStatus text-grey"
+          </span>
+          <span
+            class="FileStatus w-full inline-block sm:inline text-grey"
+          >
+            Created:
+             
+            <time
+              datetime="2017-11-06T13:13:56.000Z"
+              title="2017-11-06T13:13:56+00:00"
             >
-              Size: 
-              6.6 kB
-            </span>
-            <span
-              class="FileStatus text-grey"
+              1 year ago
+            </time>
+          </span>
+          <span
+            class="FileStatus w-full inline-block sm:inline text-grey"
+          >
+            Size: 
+            6.6 kB
+          </span>
+          <span
+            class="FileStatus w-full inline-block sm:inline text-grey"
+          >
+            Clinical/Phenotype Data
+          </span>
+        </div>
+        <div
+          class="FileActions opacity-25 hidden sm:block"
+        >
+          <button
+            class="FileActions-Button"
+          >
+            <svg
+              color="black"
+              height="16"
+              id="mock-icon"
+              kind="download"
+              width="16"
             >
-              Clinical/Phenotype Data
-            </span>
-          </p>
+              <title>
+                icon-
+                download
+              </title>
+            </svg>
+          </button>
+          <button
+            class="FileActions-Button"
+          >
+            <svg
+              height="16"
+              id="mock-icon"
+              kind="delete"
+              width="16"
+            >
+              <title>
+                icon-
+                delete
+              </title>
+            </svg>
+          </button>
         </div>
       </section>
     </li>

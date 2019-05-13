@@ -1,39 +1,41 @@
 import React from 'react';
 import {MemoryRouter} from 'react-router-dom';
-import {render} from 'react-testing-library';
+import {render, cleanup} from 'react-testing-library';
 import FileElement from '../FileElement';
-import studyByKfId from './studyByKfId';
+import {mocks} from '../../../../__mocks__/kf-api-study-creator/mocks';
+import studyByKfId from '../../../../__mocks__/kf-api-study-creator/responses/studyByKfId';
+import {MockedProvider} from 'react-apollo/test-utils';
 
+afterEach(cleanup);
 it('renders correctly', () => {
   jest.spyOn(Date, 'now').mockImplementation(() => 1556044228000);
   const file = studyByKfId.data.studyByKfId.files.edges[0].node;
   const tree = render(
-    <MemoryRouter>
-      <FileElement fileNode={file} />
-    </MemoryRouter>,
+    <MockedProvider mocks={mocks}>
+      <MemoryRouter>
+        <FileElement
+          fileListId={studyByKfId.data.studyByKfId.kfId}
+          fileNode={file}
+        />
+      </MemoryRouter>
+    </MockedProvider>,
   );
   expect(tree.container).toMatchSnapshot();
 });
 
 it('renders loading state', () => {
   jest.spyOn(Date, 'now').mockImplementation(() => 1556044228000);
+  const file = studyByKfId.data.studyByKfId.files.edges[0].node;
   const tree = render(
-    <MemoryRouter>
-      <FileElement loading={true} />
-    </MemoryRouter>,
+    <MockedProvider mocks={mocks}>
+      <MemoryRouter>
+        <FileElement
+          loading={true}
+          fileNode={file}
+          fileListId={studyByKfId.data.studyByKfId.kfId}
+        />
+      </MemoryRouter>
+    </MockedProvider>,
   );
   expect(tree.container).toMatchSnapshot();
-});
-
-it('renders error state', () => {
-  jest.spyOn(Date, 'now').mockImplementation(() => 1556044228000);
-  const tree = render(
-    <MemoryRouter>
-      <FileElement
-        error={{graphQLErrors: [{message: 'something went wrong'}]}}
-      />
-    </MemoryRouter>,
-  );
-  expect(tree.container).toMatchSnapshot();
-  expect(tree.queryByText('something went wrong')).not.toBeNull();
 });

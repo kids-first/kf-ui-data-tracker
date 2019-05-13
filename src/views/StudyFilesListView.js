@@ -11,7 +11,14 @@ import {GridContainer} from 'kf-uikit';
 const StudyFilesListView = props => (
   <Query query={GET_STUDY_BY_ID} variables={{kfId: props.match.params.kfId}}>
     {({loading, error, data}) => {
-      if (error) return `Error!: ${error}`;
+      // TODO: add styled error state
+      if (error)
+        return (
+          <div>
+            <h3 className="text-red text-center">Error! </h3>
+            <p className="text-center">{error.message}</p>
+          </div>
+        );
       const files = !loading ? data.studyByKfId.files.edges : [];
       return (
         <GridContainer collapsed="cells" className="my-20 px-12">
@@ -21,7 +28,11 @@ const StudyFilesListView = props => (
           <section className="study-file-list cell-12 row-2">
             {loading ? (
               <ul className="FileList">
-                <FileElement loading={loading} />
+                <FileElement
+                  loading={loading}
+                  fileNode={{}}
+                  fileListId={props.match.params.kfId}
+                />
               </ul>
             ) : (
               <FileList fileList={files} studyId={props.match.params.kfId} />

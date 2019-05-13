@@ -28,6 +28,15 @@ export const mocks = [
   },
   {
     request: {
+      query: GET_STUDY_BY_ID,
+      variables: {
+        kfId: 'SD_8WX8QQ06',
+      },
+    },
+    error: new Error('something went wrong'),
+  },
+  {
+    request: {
       query: DELETE_FILE,
       variables: {
         kfId: 'SF_Y07IN1HO',

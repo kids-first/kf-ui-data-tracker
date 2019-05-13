@@ -14,11 +14,15 @@ const badgeState = {
 const Badge = ({className, state, loading}) => {
   const color = state in badgeState ? badgeState[state].color : null;
   const name = state in badgeState ? badgeState[state].name : 'invalid';
-  const badgeClass = classes(className, 'Badge', {
-    [color]: !loading,
-    'Badge--loading': loading,
-    'Badge--invalid': !(state in badgeState),
-  });
+  const badgeClass = classes(
+    'Badge',
+    {
+      [color]: !loading,
+      'Badge--loading': loading,
+      'Badge--invalid': !(state in badgeState),
+    },
+    className,
+  );
   return (
     <div className={badgeClass}>
       <span className={loading ? 'invisible' : undefined}>{name}</span>
