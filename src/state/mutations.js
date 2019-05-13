@@ -1,9 +1,9 @@
 import gql from 'graphql-tag';
 
-// Mutation to upload a file to the study-creator
+// Mutation to upload a file or a version of the file to the study-creator
 export const CREATE_FILE = gql`
-  mutation($file: Upload!, $studyId: String!) {
-    createFile(file: $file, studyId: $studyId) {
+  mutation($file: Upload!, $studyId: String!, $fileId: String) {
+    createFile(file: $file, studyId: $studyId, fileId: $fileId) {
       success
       file {
         id
@@ -52,10 +52,10 @@ export const DELETE_FILE = gql`
   }
 `;
 
-// Mutation to get a signed url for a file
+// Mutation to get a signed url for a file or a version of the file
 export const FILE_DOWNLOAD_URL = gql`
-  mutation($studyId: String!, $fileId: String!) {
-    signedUrl(studyId: $studyId, fileId: $fileId) {
+  mutation($studyId: String!, $fileId: String!, $versionId: String) {
+    signedUrl(studyId: $studyId, fileId: $fileId, versionId: $versionId) {
       url
     }
   }
