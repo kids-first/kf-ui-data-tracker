@@ -5,6 +5,42 @@
       "name": "organization.jpeg",
       "description": "Month necessary animal end standard case. View system operation message decade. Actually sing because deal everything woman subject.",
       "fileType": "CLN",
+      "downloadUrl": "http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167",
+      "versions": {
+        "edges": [
+          {
+            "node": {
+              "kfId": "FV_TT8NF09R",
+              "downloadUrl": "http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167/version/FV_TT8NF09R",
+              "size": 9893,
+              "createdAt": "2018-08-21T03:16:11+00:00",
+              "__typename": "ObjectNode"
+            },
+            "__typename": "ObjectNodeEdge"
+          },
+          {
+            "node": {
+              "kfId": "FV_DMTKEFQW",
+              "downloadUrl": "http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167/version/FV_DMTKEFQW",
+              "size": 5460,
+              "createdAt": "2018-09-27T05:32:26+00:00",
+              "__typename": "ObjectNode"
+            },
+            "__typename": "ObjectNodeEdge"
+          },
+          {
+            "node": {
+              "kfId": "FV_2WV3VNJN",
+              "downloadUrl": "http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167/version/FV_2WV3VNJN",
+              "size": 5419,
+              "createdAt": "2017-08-25T00:05:30+00:00",
+              "__typename": "ObjectNode"
+            },
+            "__typename": "ObjectNodeEdge"
+          }
+        ],
+        "__typename": "ObjectNodeConnection"
+      },
       "__typename": "FileNode"
     }
   }
