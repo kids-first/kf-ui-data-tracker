@@ -123,7 +123,7 @@ const FileDetail = ({fileNode, history, match}) => {
                       downloadFileMutation,
                     )
                   }
-                  className="mx-12 md:mt-12 lg:m-0 lg:w-full"
+                  className="mx-12 md:mt-12 lg:mx-0 lg:w-full"
                 >
                   DOWNLOAD
                 </Button>
