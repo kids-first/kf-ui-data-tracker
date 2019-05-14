@@ -4,12 +4,14 @@ import {withRouter} from 'react-router-dom';
 import {Button, Icon, GridContainer} from 'kf-uikit';
 import SelectElement from './SelectElement';
 import Badge from '../Badge/Badge';
+
 /**
  * Form to add fields to a newly uploaded file
  */
 const FileEditor = ({
   kfId,
   name,
+
   description,
   fileType,
   selectFileType,
@@ -18,6 +20,8 @@ const FileEditor = ({
   history,
 }) => {
   const [editing, setEditing] = useState(false);
+  const [desc, setDesc] = useState(description);
+  const [fileName, setFileName] = useState(name);
 
   return (
     <form onSubmit={e => onSubmit(e)} className="FileEditor">
@@ -30,7 +34,10 @@ const FileEditor = ({
               name="name"
               placeholder="Add your file name here..."
               defaultValue={name}
-              onChange={e => onNameChange(e)}
+              onChange={e => {
+                setFileName(e.target.value);
+                onNameChange(e);
+              }}
             />
             <button
               className="pl-20"
@@ -66,6 +73,9 @@ const FileEditor = ({
             className="FileEditor--TextArea sm:mb-0 h-full"
             type="text"
             name="description"
+            onChange={e => {
+              setDesc(e.target.value);
+            }}
             defaultValue={description}
           />
         </label>
@@ -116,7 +126,14 @@ const FileEditor = ({
           >
             Cancel
           </Button>
-          <Button type="submit" color="primary" className="ml-12">
+          <Button
+            type="submit"
+            color="primary"
+            className="ml-12"
+            disabled={
+              fileType === undefined || desc.length < 1 || fileName.length <= 4
+            }
+          >
             Annotate File
           </Button>
         </div>
