@@ -6,7 +6,6 @@ import FileList from '../FileList';
 import studyByKfId from './studyByKfId';
 
 it('renders with files', () => {
-  jest.spyOn(Date, 'now').mockImplementation(() => 1556044228000);
   const files = studyByKfId.data.studyByKfId.files.edges;
 
   const tree = render(
@@ -23,7 +22,6 @@ it('renders with files', () => {
 });
 
 it('renders without files', () => {
-  jest.spyOn(Date, 'now').mockImplementation(() => 1556044228000);
   const tree = render(
     <MemoryRouter>
       <MockedProvider>
