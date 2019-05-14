@@ -141,6 +141,52 @@ exports[`deletes a file correctly 1`] = `
           </section>
         </li>
       </ul>
+      <p
+        class="m-0 text-sm text-mediumGrey text-right"
+      >
+        1
+         of 
+        1
+         files
+      </p>
+      <ul
+        class="Pagination"
+      >
+        <li
+          class="previous disabled"
+        >
+          <a
+            aria-disabled="true"
+            role="button"
+            tabindex="0"
+          >
+            &lt;
+          </a>
+        </li>
+        <li
+          class="Pagination--active"
+        >
+          <a
+            aria-current="page"
+            aria-label="Page 1 is your current page"
+            role="button"
+            tabindex="0"
+          >
+            1
+          </a>
+        </li>
+        <li
+          class="next disabled"
+        >
+          <a
+            aria-disabled="true"
+            role="button"
+            tabindex="0"
+          >
+            &gt;
+          </a>
+        </li>
+      </ul>
     </section>
     <div
       class="row-3 cell-3-8"
@@ -434,6 +480,52 @@ exports[`renders correctly 1`] = `
               </button>
             </div>
           </section>
+        </li>
+      </ul>
+      <p
+        class="m-0 text-sm text-mediumGrey text-right"
+      >
+        2
+         of 
+        2
+         files
+      </p>
+      <ul
+        class="Pagination"
+      >
+        <li
+          class="previous disabled"
+        >
+          <a
+            aria-disabled="true"
+            role="button"
+            tabindex="0"
+          >
+            &lt;
+          </a>
+        </li>
+        <li
+          class="Pagination--active"
+        >
+          <a
+            aria-current="page"
+            aria-label="Page 1 is your current page"
+            role="button"
+            tabindex="0"
+          >
+            1
+          </a>
+        </li>
+        <li
+          class="next disabled"
+        >
+          <a
+            aria-disabled="true"
+            role="button"
+            tabindex="0"
+          >
+            &gt;
+          </a>
         </li>
       </ul>
     </section>
