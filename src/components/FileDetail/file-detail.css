@@ -1,0 +1,193 @@
+.BackButton {
+  @extend .row-1,
+    .cell-12,
+    .font-title,
+    .font-normal,
+    .text-xs,
+    .text-grey,
+    .font-light,
+    .no-underline,
+    .tracking-wide;
+}
+
+.FileTitle {
+  @extend .my-8, .font-bold, .text-lg, .text-blue, .whitespace-normal;
+}
+
+.FileInfo--Title {
+  @extend .font-bold, .text-sm, .m-0;
+}
+
+.FileInfo--Text {
+  @extend .text-xs, .m-0, .h-6, .mt-4;
+}
+
+.FileInfo--Icon {
+  background: #b3b4b6;
+  @extend .mr-8,
+    .rounded-full,
+    .w-6,
+    .h-6,
+    .flex,
+    .justify-center,
+    .items-center;
+  .Icon {
+    fill: #22292f;
+  }
+}
+
+.FileInfo--container {
+  @extend .cell-12, .p-12, .bg-lightGrey;
+}
+
+.FileInfo--Header {
+  @extend .font-bold, .mx-12, .text-sm;
+}
+
+.FileInfo--Meta {
+  @extend .m-0, .pl-4, .font-title, .font-light, .text-sm;
+}
+
+.FileProcess {
+  border-color: #f1f5f8;
+  @extend .list-reset, .py-12, .px-32, .border-l-8, .border-lightGrey;
+}
+
+.FileProcess:nth-child(even) {
+  background: #f8fafc;
+  border-color: #dae1e7;
+}
+
+.FileProcess--error {
+  background-color: #fcebea;
+  @extend .list-reset, .py-12, .px-32, .border-l-8, .border-red;
+}
+
+.FileVersionList {
+  @extend .list-reset, .min-w-full, .m-0, .bg-lightGrey;
+}
+
+.FileVersionList--Button {
+  @extend .inline-block,
+    .bg-white,
+    .p-4,
+    .px-12,
+    .border,
+    .border-greyBorder,
+    .rounded-lg,
+    .font-bold,
+    .font-title,
+    .text-xs,
+    .text-tealA11y,
+    .uppercase,
+    .flex,
+    .leading-tight,
+    .align-middle;
+}
+.FileVersionList--Button:hover {
+  @extend .bg-lightGrey, .text-tealHover;
+}
+
+.FileVersionList--Element {
+  @extend .list-reset, .min-w-full, .py-8, .flex, .items-center;
+}
+
+.FileVersionList--Element:hover {
+  background: #dadbde;
+}
+
+.FileVersionList--hidden {
+  @extend .invisible;
+}
+.FileVersionList--Element:hover .FileVersionList--hidden {
+  @extend .visible, .text-xs, .font-title, .text-grey;
+}
+
+.FileVersionList--icon {
+  background: #b3b4b6;
+  @extend .mr-4, .rounded-full, .p-4, .flex, .justify-center, .items-center;
+  .Icon {
+    fill: #22292f;
+  }
+}
+
+.FileVersionList--text {
+  @extend .text-xs, .font-title, .text-grey;
+}
+
+.FileVersionElement--button {
+  @extend .text-xs, .my-4, .font-title, .text-left, .text-blue;
+}
+
+.FileDialog--container {
+  height: 700px;
+  width: 780px;
+  border-radius: 5px;
+  transform: translate(-390px, -350px);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 101;
+  @extend .bg-white, .flex-col;
+}
+
+.FileDialog--overlay {
+  background: #000;
+  opacity: 0.4;
+  filter: Alpha(Opacity=30);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+.FileDialog--body {
+  height: 575px;
+}
+
+.FileDialog--Title {
+  @extend .text-lg,
+    .text-blue,
+    .font-title,
+    .font-light,
+    .border-b,
+    .border-mediumGrey,
+    .my-0,
+    .mx-20,
+    .py-12;
+}
+
+.FileDialog--Upload {
+  width: 70%;
+  height: 260px;
+  @extend .mx-auto, .my-32;
+  .upload-target {
+    padding-top: 80px;
+    @extend .h-full;
+  }
+}
+
+.FileDialog--Edit {
+  @extend .mx-20, .shadow;
+}
+.FileDialog--Edit form {
+  @extend .mb-16;
+}
+
+.FileDialog--SwitchBar {
+  background-color: #00aceb24;
+  @extend .border-lightBlue,
+    .border-l-8,
+    .flex,
+    .justify-between,
+    .mx-20,
+    .p-12,
+    .mb-20;
+}
+
+.FileDialog--ButtonBar {
+  border-radius: 0 0 5px 5px;
+  @extend .bg-lightGrey, .p-20, .flex, .justify-between, .items-center;
+}
