@@ -11,7 +11,6 @@ import Badge from '../Badge/Badge';
 const FileEditor = ({
   kfId,
   name,
-
   description,
   fileType,
   selectFileType,
@@ -21,7 +20,7 @@ const FileEditor = ({
 }) => {
   const [editing, setEditing] = useState(false);
   const [desc, setDesc] = useState(description);
-  const [fileName, setFileName] = useState(name);
+  const [fileName, setFileName] = useState(name || '');
 
   return (
     <form onSubmit={e => onSubmit(e)} className="FileEditor">

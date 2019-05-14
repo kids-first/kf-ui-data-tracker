@@ -225,6 +225,7 @@ Object {
             </button>
             <button
               class="Button Button--default Button--primary ml-12"
+              disabled=""
               type="submit"
             >
               Annotate File
@@ -455,6 +456,7 @@ Object {
           </button>
           <button
             class="Button Button--default Button--primary ml-12"
+            disabled=""
             type="submit"
           >
             Annotate File
@@ -750,6 +752,7 @@ Object {
             </button>
             <button
               class="Button Button--default Button--primary ml-12"
+              disabled=""
               type="submit"
             >
               Annotate File
@@ -980,6 +983,7 @@ Object {
             </button>
             <button
               class="Button Button--default Button--primary ml-12"
+              disabled=""
               type="submit"
             >
               Annotate File
@@ -1210,6 +1214,7 @@ Object {
             </button>
             <button
               class="Button Button--default Button--primary ml-12"
+              disabled=""
               type="submit"
             >
               Annotate File
@@ -1441,6 +1446,7 @@ Object {
           </button>
           <button
             class="Button Button--default Button--primary ml-12"
+            disabled=""
             type="submit"
           >
             Annotate File
@@ -1736,6 +1742,7 @@ Object {
             </button>
             <button
               class="Button Button--default Button--primary ml-12"
+              disabled=""
               type="submit"
             >
               Annotate File
@@ -1966,6 +1973,7 @@ Object {
             </button>
             <button
               class="Button Button--default Button--primary ml-12"
+              disabled=""
               type="submit"
             >
               Annotate File
@@ -2197,6 +2205,7 @@ Object {
           </button>
           <button
             class="Button Button--default Button--primary ml-12"
+            disabled=""
             type="submit"
           >
             Annotate File
@@ -2499,6 +2508,7 @@ Object {
             </button>
             <button
               class="Button Button--default Button--primary ml-12"
+              disabled=""
               type="submit"
             >
               Annotate File
@@ -2729,6 +2739,7 @@ Object {
             </button>
             <button
               class="Button Button--default Button--primary ml-12"
+              disabled=""
               type="submit"
             >
               Annotate File
@@ -2960,6 +2971,7 @@ Object {
           </button>
           <button
             class="Button Button--default Button--primary ml-12"
+            disabled=""
             type="submit"
           >
             Annotate File
@@ -3255,6 +3267,7 @@ Object {
             </button>
             <button
               class="Button Button--default Button--primary ml-12"
+              disabled=""
               type="submit"
             >
               Annotate File
@@ -3485,6 +3498,7 @@ Object {
             </button>
             <button
               class="Button Button--default Button--primary ml-12"
+              disabled=""
               type="submit"
             >
               Annotate File
@@ -3716,6 +3730,7 @@ Object {
           </button>
           <button
             class="Button Button--default Button--primary ml-12"
+            disabled=""
             type="submit"
           >
             Annotate File

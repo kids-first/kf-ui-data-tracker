@@ -125,7 +125,7 @@ exports[`renders correctly 1`] = `
                       datetime="2019-03-29T18:45:01.230Z"
                       title="2019-03-29 18:45"
                     >
-                      1 month ago
+                      2 months ago
                     </time>
                   </small>
                 </div>
@@ -170,7 +170,7 @@ exports[`renders correctly 1`] = `
                       datetime="2019-03-29T18:45:01.236Z"
                       title="2019-03-29 18:45"
                     >
-                      1 month ago
+                      2 months ago
                     </time>
                   </small>
                 </div>
@@ -215,7 +215,7 @@ exports[`renders correctly 1`] = `
                       datetime="2019-03-29T18:45:01.239Z"
                       title="2019-03-29 18:45"
                     >
-                      1 month ago
+                      2 months ago
                     </time>
                   </small>
                 </div>
