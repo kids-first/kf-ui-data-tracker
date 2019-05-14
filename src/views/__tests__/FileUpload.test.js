@@ -19,9 +19,15 @@ it('edits a file correctly', async () => {
   await wait();
 
   expect(tree.queryAllByText(/organization.jpeg/i).length).toBe(1);
-  // Click on the first file's edit icon
-  const editButton = tree.queryByTestId('edit-file');
-  fireEvent.click(editButton);
+
+  // Click on the first file's name to go to file detail page
+  const fileName = tree.queryByTestId('edit-file');
+  fireEvent.click(fileName);
+
+  await wait();
+
+  // Click on the file's edit button
+  fireEvent.click(tree.getByText(/EDIT/));
 
   await wait();
 
