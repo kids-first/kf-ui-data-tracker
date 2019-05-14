@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classes from 'classnames';
-import {KF_STUDY_API} from '../../common/globals';
 import {Icon} from 'kf-uikit';
 import {downloadFile} from '../../common/fileUtils';
 /**
