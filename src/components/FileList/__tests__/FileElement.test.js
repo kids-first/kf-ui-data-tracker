@@ -8,7 +8,6 @@ import {MockedProvider} from 'react-apollo/test-utils';
 
 afterEach(cleanup);
 it('renders correctly', () => {
-  jest.spyOn(Date, 'now').mockImplementation(() => 1556044228000);
   const file = studyByKfId.data.studyByKfId.files.edges[0].node;
   const tree = render(
     <MockedProvider mocks={mocks}>
@@ -24,7 +23,6 @@ it('renders correctly', () => {
 });
 
 it('renders loading state', () => {
-  jest.spyOn(Date, 'now').mockImplementation(() => 1556044228000);
   const file = studyByKfId.data.studyByKfId.files.edges[0].node;
   const tree = render(
     <MockedProvider mocks={mocks}>

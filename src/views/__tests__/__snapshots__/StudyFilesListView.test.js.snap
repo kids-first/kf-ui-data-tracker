@@ -88,7 +88,7 @@ exports[`deletes a file correctly 1`] = `
                   datetime="2018-08-21T03:16:11.000Z"
                   title="2018-08-21T03:16:11+00:00"
                 >
-                  9 months ago
+                  8 months ago
                 </time>
               </span>
               <span
@@ -259,7 +259,7 @@ exports[`renders correctly 1`] = `
                   datetime="2018-08-21T03:16:11.000Z"
                   title="2018-08-21T03:16:11+00:00"
                 >
-                  9 months ago
+                  8 months ago
                 </time>
               </span>
               <span
