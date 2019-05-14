@@ -71,17 +71,17 @@ exports[`renders correctly 1`] = `
           Created:
            
           <time
-            datetime="2018-08-21T03:16:11.000Z"
-            title="2018-08-21T03:16:11+00:00"
+            datetime="2018-09-27T05:32:26.000Z"
+            title="2018-09-27T05:32:26+00:00"
           >
-            8 months ago
+            7 months ago
           </time>
         </span>
         <span
           class="FileStatus w-full inline-block sm:inline text-grey"
         >
           Size: 
-          9.9 kB
+          5.5 kB
         </span>
         <span
           class="FileStatus w-full inline-block sm:inline text-grey"
@@ -202,17 +202,17 @@ exports[`renders loading state 1`] = `
           Created:
            
           <time
-            datetime="2018-08-21T03:16:11.000Z"
-            title="2018-08-21T03:16:11+00:00"
+            datetime="2018-09-27T05:32:26.000Z"
+            title="2018-09-27T05:32:26+00:00"
           >
-            8 months ago
+            7 months ago
           </time>
         </span>
         <span
           class="FileStatus--loading w-full inline-block sm:inline text-grey"
         >
           Size: 
-          9.9 kB
+          5.5 kB
         </span>
         <span
           class="FileStatus--loading w-full inline-block sm:inline text-grey"

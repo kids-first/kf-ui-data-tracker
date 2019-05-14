@@ -1,7 +1,7 @@
 // TODO: add doc blocks
 
 export const dateCompare = (version1, version2) => {
-  return version1.node.createdAt < version2.node.createdAt;
+  return new Date(version2.node.createdAt) - new Date(version1.node.createdAt);
 };
 
 export const formatFileSize = (bytes, si) => {
