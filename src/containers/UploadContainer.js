@@ -40,7 +40,9 @@ const UploadContainer = props => {
     })
       .then(resp => {
         if (resp.data.createFile.success) {
-          props.history.push(`files/${resp.data.createFile.file.kfId}`);
+          props.history.push(
+            `files/${resp.data.createFile.file.kfId}/annotation/`,
+          );
         }
       })
       .catch(err => {
