@@ -85,17 +85,17 @@ exports[`deletes a file correctly 1`] = `
                 Created:
                  
                 <time
-                  datetime="2018-08-21T03:16:11.000Z"
-                  title="2018-08-21T03:16:11+00:00"
+                  datetime="2018-09-27T05:32:26.000Z"
+                  title="2018-09-27T05:32:26+00:00"
                 >
-                  8 months ago
+                  7 months ago
                 </time>
               </span>
               <span
                 class="FileStatus w-full inline-block sm:inline text-grey"
               >
                 Size: 
-                9.9 kB
+                5.5 kB
               </span>
               <span
                 class="FileStatus w-full inline-block sm:inline text-grey"
@@ -256,17 +256,17 @@ exports[`renders correctly 1`] = `
                 Created:
                  
                 <time
-                  datetime="2018-08-21T03:16:11.000Z"
-                  title="2018-08-21T03:16:11+00:00"
+                  datetime="2018-09-27T05:32:26.000Z"
+                  title="2018-09-27T05:32:26+00:00"
                 >
-                  8 months ago
+                  7 months ago
                 </time>
               </span>
               <span
                 class="FileStatus w-full inline-block sm:inline text-grey"
               >
                 Size: 
-                9.9 kB
+                5.5 kB
               </span>
               <span
                 class="FileStatus w-full inline-block sm:inline text-grey"
@@ -380,17 +380,17 @@ exports[`renders correctly 1`] = `
                 Created:
                  
                 <time
-                  datetime="2017-08-22T08:32:38.000Z"
-                  title="2017-08-22T08:32:38+00:00"
+                  datetime="2019-04-06T07:51:17.000Z"
+                  title="2019-04-06T07:51:17+00:00"
                 >
-                  2 years ago
+                  2 weeks ago
                 </time>
               </span>
               <span
                 class="FileStatus w-full inline-block sm:inline text-grey"
               >
                 Size: 
-                7.4 kB
+                6.8 kB
               </span>
               <span
                 class="FileStatus w-full inline-block sm:inline text-grey"

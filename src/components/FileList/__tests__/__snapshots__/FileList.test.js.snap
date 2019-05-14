@@ -74,17 +74,17 @@ exports[`renders with files 1`] = `
             Created:
              
             <time
-              datetime="2017-11-29T04:15:57.000Z"
-              title="2017-11-29T04:15:57+00:00"
+              datetime="2018-09-19T08:33:31.000Z"
+              title="2018-09-19T08:33:31+00:00"
             >
-              1 year ago
+              7 months ago
             </time>
           </span>
           <span
             class="FileStatus w-full inline-block sm:inline text-grey"
           >
             Size: 
-            9.0 kB
+            440 B
           </span>
           <span
             class="FileStatus w-full inline-block sm:inline text-grey"
@@ -198,17 +198,17 @@ exports[`renders with files 1`] = `
             Created:
              
             <time
-              datetime="2017-11-17T13:39:26.000Z"
-              title="2017-11-17T13:39:26+00:00"
+              datetime="2018-07-09T05:01:45.000Z"
+              title="2018-07-09T05:01:45+00:00"
             >
-              1 year ago
+              10 months ago
             </time>
           </span>
           <span
             class="FileStatus w-full inline-block sm:inline text-grey"
           >
             Size: 
-            5.3 kB
+            7.0 kB
           </span>
           <span
             class="FileStatus w-full inline-block sm:inline text-grey"
