@@ -1,0 +1,259 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with 0 as index -- show latest 1`] = `
+<div>
+  <li
+    class="FileVersionList--Element"
+  >
+    <svg
+      class="mx-16"
+      height="12"
+      viewBox="0 0 94 94"
+      width="12"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs />
+      <title>
+        icon-error
+      </title>
+      <g
+        data-name="Layer 1"
+        id="Layer_1"
+      >
+        <circle
+          cx="47"
+          cy="47"
+          fill="#fff"
+          r="43"
+        />
+        <path
+          d="M47,94A47,47,0,1,1,94,47,47,47,0,0,1,47,94ZM47,8A39,39,0,1,0,86,47,39,39,0,0,0,47,8Z"
+          fill="#e45562"
+          transform="translate(0 0)"
+        />
+        <path
+          d="M59.83,64.07a4.25,4.25,0,0,1-3-1.26L47,53.05,37.2,62.83a4.32,4.32,0,0,1-6.05,0,4.26,4.26,0,0,1,0-6L41,47l-9.79-9.8a4.3,4.3,0,0,1,0-6.05,4.38,4.38,0,0,1,6.07,0L47.06,41l9.7-9.65a4.3,4.3,0,0,1,6,0,4.24,4.24,0,0,1,0,6.05L53.11,47l9.74,9.74a4.3,4.3,0,0,1,0,6.06,4.25,4.25,0,0,1-3,1.26Zm-1-30.75h0Z"
+          fill="#e45562"
+          transform="translate(0 0)"
+        />
+      </g>
+    </svg>
+    <button
+      class="FileVersionElement--button w-24"
+    >
+      Latest
+    </button>
+    <span
+      class="FileVersionElement--button FileVersionList--hidden w-12"
+    >
+      <button>
+        <svg
+          height="10"
+          id="mock-icon"
+          kind="copy"
+          width="10"
+        >
+          <title>
+            icon-
+            copy
+          </title>
+        </svg>
+      </button>
+    </span>
+    <div
+      class="Avatar inline-block mr-8 hidden"
+      style="height: 20px; width: 20px;"
+    >
+      <img
+        alt="null avatar"
+        class="Avatar-img"
+        src="https://www.w3schools.com/css/img_avatar.png"
+      />
+    </div>
+    <time
+      class="FileVersionList--text w-32"
+      datetime="2019-05-16T15:13:02.090Z"
+      title="2019-05-16T15:13:02.090275+00:00"
+    >
+      3 weeks from now
+    </time>
+    <p
+      class="FileVersionList--text w-16 hidden"
+    >
+      .jpg
+    </p>
+    <p
+      class="FileVersionList--text w-24"
+    >
+      61.0 kB
+    </p>
+    <div
+      class="flex"
+    >
+      <div
+        class="FileVersionList--icon"
+      >
+        <svg
+          height="12"
+          id="mock-icon"
+          kind="settings"
+          width="12"
+        >
+          <title>
+            icon-
+            settings
+          </title>
+        </svg>
+      </div>
+      <p
+        class="FileVersionList--text my-0 w-48"
+      >
+        Other
+      </p>
+    </div>
+    <button>
+      <svg
+        class="FileVersionList--hidden w-12"
+        height="12"
+        id="mock-icon"
+        kind="download"
+        width="12"
+      >
+        <title>
+          icon-
+          download
+        </title>
+      </svg>
+    </button>
+  </li>
+</div>
+`;
+
+exports[`renders correctly with 1 as index -- show version kfId 1`] = `
+<div>
+  <li
+    class="FileVersionList--Element"
+  >
+    <svg
+      class="mx-16"
+      height="12"
+      viewBox="0 0 94 94"
+      width="12"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs />
+      <title>
+        icon-error
+      </title>
+      <g
+        data-name="Layer 1"
+        id="Layer_1"
+      >
+        <circle
+          cx="47"
+          cy="47"
+          fill="#fff"
+          r="43"
+        />
+        <path
+          d="M47,94A47,47,0,1,1,94,47,47,47,0,0,1,47,94ZM47,8A39,39,0,1,0,86,47,39,39,0,0,0,47,8Z"
+          fill="#e45562"
+          transform="translate(0 0)"
+        />
+        <path
+          d="M59.83,64.07a4.25,4.25,0,0,1-3-1.26L47,53.05,37.2,62.83a4.32,4.32,0,0,1-6.05,0,4.26,4.26,0,0,1,0-6L41,47l-9.79-9.8a4.3,4.3,0,0,1,0-6.05,4.38,4.38,0,0,1,6.07,0L47.06,41l9.7-9.65a4.3,4.3,0,0,1,6,0,4.24,4.24,0,0,1,0,6.05L53.11,47l9.74,9.74a4.3,4.3,0,0,1,0,6.06,4.25,4.25,0,0,1-3,1.26Zm-1-30.75h0Z"
+          fill="#e45562"
+          transform="translate(0 0)"
+        />
+      </g>
+    </svg>
+    <button
+      class="FileVersionElement--button w-24"
+    >
+      FV_BC7BWZ2W
+    </button>
+    <span
+      class="FileVersionElement--button FileVersionList--hidden w-12"
+    >
+      <button>
+        <svg
+          height="10"
+          id="mock-icon"
+          kind="copy"
+          width="10"
+        >
+          <title>
+            icon-
+            copy
+          </title>
+        </svg>
+      </button>
+    </span>
+    <div
+      class="Avatar inline-block mr-8 hidden"
+      style="height: 20px; width: 20px;"
+    >
+      <img
+        alt="null avatar"
+        class="Avatar-img"
+        src="https://www.w3schools.com/css/img_avatar.png"
+      />
+    </div>
+    <time
+      class="FileVersionList--text w-32"
+      datetime="2019-05-16T15:13:02.090Z"
+      title="2019-05-16T15:13:02.090275+00:00"
+    >
+      3 weeks from now
+    </time>
+    <p
+      class="FileVersionList--text w-16 hidden"
+    >
+      .jpg
+    </p>
+    <p
+      class="FileVersionList--text w-24"
+    >
+      61.0 kB
+    </p>
+    <div
+      class="flex"
+    >
+      <div
+        class="FileVersionList--icon"
+      >
+        <svg
+          height="12"
+          id="mock-icon"
+          kind="settings"
+          width="12"
+        >
+          <title>
+            icon-
+            settings
+          </title>
+        </svg>
+      </div>
+      <p
+        class="FileVersionList--text my-0 w-48"
+      >
+        Other
+      </p>
+    </div>
+    <button>
+      <svg
+        class="FileVersionList--hidden w-12"
+        height="12"
+        id="mock-icon"
+        kind="download"
+        width="12"
+      >
+        <title>
+          icon-
+          download
+        </title>
+      </svg>
+    </button>
+  </li>
+</div>
+`;
