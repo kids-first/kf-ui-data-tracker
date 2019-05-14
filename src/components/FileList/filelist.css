@@ -1,6 +1,11 @@
 /* FileList and FileListElement CSS */
 .FileList {
-  @extend .list-reset, .min-w-full, .my-20, .p-0, .ml-0, .border-t,
+  @extend .list-reset,
+    .min-w-full,
+    .my-20,
+    .p-0,
+    .ml-0,
+    .border-t,
     .border-grey;
 }
 
@@ -54,4 +59,24 @@
 
 .FileStatus--loading {
   @extend .mr-16, .px-16, .bg-lightGrey, .text-lightGrey;
+}
+
+.Pagination {
+  @extend .min-w-full, .flex, .list-reset, .justify-center;
+}
+
+.Pagination li {
+  @extend .border, .border-lightGrey, .text-lightBlue;
+}
+
+.Pagination li a {
+  @extend .block, .py-8, .px-16;
+}
+
+.Pagination--active {
+  @extend .bg-lightBlue;
+}
+
+.Pagination--active a {
+  @extend .text-white;
 }
