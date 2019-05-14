@@ -8,14 +8,14 @@ import Badge from '../Badge/Badge';
 import {GridContainer} from 'kf-uikit';
 import FileActionsContainer from '../../containers/FileActionsContainer';
 import {
-  dateCompare,
-  formatFileSize,
   fileTypeDetail,
+  fileSortedVersions,
+  fileLatestDate,
+  fileLatestSize,
 } from '../../common/fileUtils';
 /**
  * Displays unordered study files in list view
  */
-
 const FileElement = ({className, fileNode, loading, match, fileListId}) => {
   const fileElementClass = classes(
     'FileList--Element',
@@ -48,17 +48,9 @@ const FileElement = ({className, fileNode, loading, match, fileListId}) => {
   const fileKfID = fileNode.kfId || 'unknown ID';
   const fileName = fileNode.name || 'unknown file name';
   const fileDescription = fileNode.description || null;
-  // TODO: move these to fileUtils??
-  const sortedVersions =
-    fileNode && fileNode.versions && fileNode.versions.edges.length > 0
-      ? fileNode.versions.edges.sort(dateCompare)
-      : [];
-  const fileSize =
-    sortedVersions.length > 0
-      ? formatFileSize(sortedVersions[0].node.size, true)
-      : 'unknown';
-  const latestDate =
-    sortedVersions.length > 0 ? sortedVersions[0].node.createdAt : null;
+  const sortedVersions = fileSortedVersions(fileNode);
+  const latestDate = fileLatestDate(sortedVersions);
+  const fileSize = fileLatestSize(sortedVersions);
   const fileType =
     fileNode && fileTypeDetail[fileNode.fileType]
       ? fileTypeDetail[fileNode.fileType].title

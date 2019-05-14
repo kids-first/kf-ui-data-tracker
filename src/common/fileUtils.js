@@ -45,3 +45,25 @@ export const fileTypeDetail = {
   SEQ: {icon: 'customize', title: 'Sequencing Manifest'},
   OTH: {icon: 'settings', title: 'Other'},
 };
+
+export const fileSortedVersions = fileNode => {
+  if (fileNode && fileNode.versions && fileNode.versions.edges.length > 0) {
+    return fileNode.versions.edges.sort(dateCompare);
+  } else return [];
+};
+
+export const fileLatestDate = sortedVersions => {
+  if (sortedVersions.length > 0) {
+    return sortedVersions[0].node.createdAt;
+  } else {
+    return null;
+  }
+};
+
+export const fileLatestSize = sortedVersions => {
+  if (sortedVersions.length > 0) {
+    return formatFileSize(sortedVersions[0].node.size, true);
+  } else {
+    return 'unknown';
+  }
+};
