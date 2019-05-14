@@ -6,7 +6,11 @@ import {FILE_DOWNLOAD_URL} from '../../state/mutations';
 import {Avatar, Icon} from 'kf-uikit';
 import TimeAgo from 'react-timeago';
 import CopyButton from '../CopyButton/CopyButton';
-import {fileTypeDetail, formatFileSize} from '../../common/fileUtils';
+import {
+  fileTypeDetail,
+  formatFileSize,
+  downloadFile,
+} from '../../common/fileUtils';
 /**
  * Displays single version item from the list
  */
@@ -23,7 +27,7 @@ const VersionItem = ({
   let versionItemClass = classes('FileVersionList--Element', className);
   return (
     <Mutation mutation={FILE_DOWNLOAD_URL}>
-      {downloadFile => (
+      {downloadFileMutation => (
         <li key={versionNode.kfId} className={versionItemClass}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -92,18 +96,14 @@ const VersionItem = ({
             </p>
           </div>
           <button
-            onClick={e => {
-              downloadFile({
-                variables: {
-                  studyId,
-                  fileId: fileId,
-                  versionId: versionNode.kfId,
-                },
-              }).then(resp => {
-                const url = `${KF_STUDY_API}${resp.data.signedUrl.url}`;
-                window.location.href = url;
-              });
-            }}
+            onClick={e =>
+              downloadFile(
+                studyId,
+                fileId,
+                versionNode.kfId,
+                downloadFileMutation,
+              )
+            }
           >
             <Icon
               kind="download"

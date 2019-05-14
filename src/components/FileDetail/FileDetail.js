@@ -9,10 +9,16 @@ import Badge from '../Badge/Badge';
 import VersionList from './VersionList';
 import {
   fileTypeDetail,
+<<<<<<< HEAD
   downloadFile,
   fileSortedVersions,
   fileLatestDate,
   fileLatestSize,
+=======
+  formatFileSize,
+  dateCompare,
+  downloadFile,
+>>>>>>> a2c3def... ✨ Add common function for downloading file (version)
 } from '../../common/fileUtils';
 import DeleteFileMutation from '../../containers/DeleteFileMutation';
 /**
@@ -26,7 +32,41 @@ const FileDetail = ({fileNode, history, match}) => {
   return (
     <Mutation mutation={FILE_DOWNLOAD_URL}>
       {downloadFileMutation => (
+<<<<<<< HEAD
         <DeleteFileMutation studyId={studyId}>
+=======
+        <Mutation
+          mutation={DELETE_FILE}
+          update={(cache, {data: {deleteFile}}) => {
+            // Re-writes the study in the cache with the deleted file
+            // removed.
+            const {studyByKfId} = cache.readQuery({
+              query: GET_STUDY_BY_ID,
+              variables: {kfId: studyId},
+            });
+            const deleteIndex = studyByKfId.files.edges.findIndex(
+              edge => edge.node.kfId === deleteFile.kfId,
+            );
+            if (deleteIndex < 0) {
+              return studyByKfId;
+            }
+            studyByKfId.files.edges.splice(deleteIndex, 1);
+            const data = {
+              studyByKfId: {
+                ...studyByKfId,
+                files: {
+                  __typename: 'FileNodeConnection',
+                  edges: studyByKfId.files.edges,
+                },
+              },
+            };
+            cache.writeQuery({
+              query: GET_STUDY_BY_ID,
+              data,
+            });
+          }}
+        >
+>>>>>>> a2c3def... ✨ Add common function for downloading file (version)
           {(deleteFile, {loading, error}) => (
             <GridContainer>
               <Link

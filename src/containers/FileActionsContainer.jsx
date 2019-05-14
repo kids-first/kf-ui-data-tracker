@@ -48,7 +48,7 @@ const FileActionsContainer = ({node, studyId, className}) => {
                   node,
                   studyId,
                   deleteFile,
-                  downloadFile,
+                  downloadFileMutation: downloadFile,
                   loading,
                   className,
                   error,
