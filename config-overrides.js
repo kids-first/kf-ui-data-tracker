@@ -4,7 +4,7 @@ module.exports = config => {
       require('postcss-import-ext-glob'),
       require('postcss-import'),
       require('postcss-for'),
-      require('postcss-inherit'),
+      require('postcss-extend-rule'),
       require('postcss-nested'),
     ],
   });
