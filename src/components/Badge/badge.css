@@ -1,16 +1,16 @@
 .Badge {
-  @inherit: .inline-block, .m-4, .py-4, .px-8, .rounded-full, .text-center,
+  @extend .inline-block, .m-4, .py-4, .px-8, .rounded-full, .text-center,
     .text-xs, .text-white, .leading-tight, .tracking-wide, .whitespace-no-wrap;
 }
 
 .Badge--loading {
-  @inherit: .bg-lightGrey, .max-w-full, .self-center, .m-4, .px-16, .py-0,
+  @extend .bg-lightGrey, .max-w-full, .self-center, .m-4, .px-16, .py-0,
     .rounded-full, .text-center, .text-xs, .text-white, .leading-tight,
     .whitespace-no-wrap;
 }
 
 .Badge--invalid {
-  @inherit: .bg-darkGrey, .max-w-full, .self-center, .m-4, .px-16, .py-0,
+  @extend .bg-darkGrey, .max-w-full, .self-center, .m-4, .px-16, .py-0,
     .rounded-full, .text-center, .text-xs, .text-white, .leading-tight,
     .whitespace-no-wrap;
 }

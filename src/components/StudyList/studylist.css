@@ -1,18 +1,18 @@
 .StudyCard {
-  @inherit: .h-full, .shadow-md, .border-transparent, .m-0, .p-16, .w-full,
+  @extend .h-full, .shadow-md, .border-transparent, .m-0, .p-16, .w-full,
     .flex, .flex-col;
   .Card--title {
-    @inherit: .text-blue;
+    @extend .text-blue;
   }
 }
 
 .StudyList {
-  @inherit: .ml-0, .max-w-full, .min-h-screen, .list-reset, .flex,
+  @extend .ml-0, .max-w-full, .min-h-screen, .list-reset, .flex,
     .flex-row, .flex-wrap, .content-start, .pb-20;
 }
 
 .StudyTable {
-  @inherit: .table-fixed, .border-collapse, .w-full,  .max-w-full, .mt-20, .border, .border-grey-lightest;
+  @extend .table-fixed, .border-collapse, .w-full,  .max-w-full, .mt-20, .border, .border-grey-lightest;
   border-radius: 2px;
   vertical-align: top;
   overflow-x: auto;
@@ -21,7 +21,7 @@
     grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)) !important;
   }
   th {
-    @inherit: .py-12, .font-body, .font-semibold, .text-sm, .tracking-wide, .text-blue,  .border-grey, .border-l, .border-b, .bg-lightGrey;
+    @extend .py-12, .font-body, .font-semibold, .text-sm, .tracking-wide, .text-blue,  .border-grey, .border-l, .border-b, .bg-lightGrey;
 
     &:first-child {
       border-left: none;
@@ -30,16 +30,16 @@
 
   tbody {
     tr:nth-child(even) {
-      @inherit: .bg-lightGrey;
+      @extend .bg-lightGrey;
     }
     tr:hover,
     tr:focus,
     tr:nth-child(even):hover,
     tr:nth-child(even):focus {
-      @inherit: .shadow-lg, .bg-grey-lightest, .cursor-pointer;
+      @extend .shadow-lg, .bg-grey-lightest, .cursor-pointer;
     }
     tr {
-      @inherit: .bg-white;
+      @extend .bg-white;
       transition: all 0.125s ease;
     }
   }
@@ -47,10 +47,10 @@
 
 .StudyCard--loading {
   height: 238px;
-  @inherit: .shadow-md, .border-transparent, .m-0, .p-16, .w-full, .flex,
+  @extend .shadow-md, .border-transparent, .m-0, .p-16, .w-full, .flex,
     .flex-col, .rounded-lg, .justify-center, .items-center;
 
   .Icon {
-    @inherit: .text-mediumGrey;
+    @extend .text-mediumGrey;
   }
 }
