@@ -1,4 +1,4 @@
 .upload-target {
-  @inherit: .w-full, .p-32, .bg-lightGrey, .border-grey, .border-2,
+  @extend .w-full, .p-32, .bg-lightGrey, .border-grey, .border-2,
     .border-dashed, .text-center;
 }

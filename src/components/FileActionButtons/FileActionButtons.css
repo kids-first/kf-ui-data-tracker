@@ -1,10 +1,10 @@
 .FileActions {
-  @inherit: .w-1\/2, .block, .text-center, .bg-white, .py-8;
+  @extend .w-1\/2, .block, .text-center, .bg-white, .py-8;
   justify-self: end;
 }
 
 .FileActions-Button {
-  @inherit: .w-auto, .mx-auto, .py-4, .block, .text-center;
+  @extend .w-auto, .mx-auto, .py-4, .block, .text-center;
 }
 
 .FileActions-Button:focus {

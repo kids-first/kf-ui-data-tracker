@@ -1,11 +1,11 @@
 /* FileList and FileListElement CSS */
 .FileList {
-  @inherit: .list-reset, .min-w-full, .my-20, .p-0, .ml-0, .border-t,
+  @extend .list-reset, .min-w-full, .my-20, .p-0, .ml-0, .border-t,
     .border-grey;
 }
 
 .FileList--Element {
-  @inherit: .list-reset, .w-full, .py-8, .border-b, .border-grey, .text-black;
+  @extend .list-reset, .w-full, .py-8, .border-b, .border-grey, .text-black;
   transition: all 0.25s ease-in;
 }
 .FileList--Element-title {
@@ -15,7 +15,7 @@
 
 .FileList--Element:hover,
 .FileList--Element:focus {
-  @inherit: .bg-lightGrey, .shadow, .border-grey-lightest;
+  @extend .bg-lightGrey, .shadow, .border-grey-lightest;
   .FileList--Element-desc {
     height: 25px;
   }
@@ -37,21 +37,21 @@
 }
 
 .FileList--Empty {
-  @inherit: .text-grey, .border-b, .border-grey, .m-0, .py-16, .px-32;
+  @extend .text-grey, .border-b, .border-grey, .m-0, .py-16, .px-32;
 }
 
 .FileList--ElementBadge {
-  @inherit: .row-2, .cell-12, .flex-initial, .flex, .flex-row, .flex-wrap;
+  @extend .row-2, .cell-12, .flex-initial, .flex, .flex-row, .flex-wrap;
 }
 
 .FileList--ElementButton {
-  @inherit: .inline-block, .mr-8, .p-0;
+  @extend .inline-block, .mr-8, .p-0;
 }
 
 .FileStatus {
-  @inherit: .mr-16, .font-normal, .text-xs;
+  @extend .mr-16, .font-normal, .text-xs;
 }
 
 .FileStatus--loading {
-  @inherit: .mr-16, .px-16, .bg-lightGrey, .text-lightGrey;
+  @extend .mr-16, .px-16, .bg-lightGrey, .text-lightGrey;
 }

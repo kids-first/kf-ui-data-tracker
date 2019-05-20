@@ -1,24 +1,24 @@
 .SelectElement {
   border-radius: 5px;
-  @inherit: .w-full, .shadow, .bg-white, .my-8, .p-8, .align-middle, .flex,
+  @extend .w-full, .shadow, .bg-white, .my-8, .p-8, .align-middle, .flex,
     .flex-row;
 }
 
 .SelectElement--Icon {
-  @inherit: .rounded-full, .mr-16, .w-12, .h-12, .pt-12, .text-center;
+  @extend .rounded-full, .mr-16, .w-12, .h-12, .pt-12, .text-center;
 }
 
 .FileEditor {
-  @inherit: .w-full, .bg-lightGrey, .p-20, .mb-32;
+  @extend .w-full, .bg-lightGrey, .p-20, .mb-32;
 }
 
 .FileEditor--Input {
-  @inherit: .flex-auto, .text-xl, .mt-4, .font-light, .font-title,
+  @extend .flex-auto, .text-xl, .mt-4, .font-light, .font-title,
     .border-transparent, .rounded-sm;
   width: auto;
 }
 
 .FileEditor--TextArea {
-  @inherit: .w-full, .border-transparent, .rounded-sm, .mt-8;
+  @extend .w-full, .border-transparent, .rounded-sm, .mt-8;
   height: 312px;
 }

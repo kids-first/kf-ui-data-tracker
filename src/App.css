@@ -21,7 +21,7 @@ body {
 }
 
 .Card--Login {
-  @inherit: .Card;
+  @extend .Card;
   width: 620px;
 }
 
@@ -31,9 +31,9 @@ body {
 }
 
 .Header {
-  @inherit: .border-b-2;
+  @extend .border-b-2;
 }
 
 .Header--navigation {
-  @inherit: .grid-container, .mx-auto, .border-none, .px-0;
+  @extend .grid-container, .mx-auto, .border-none, .px-0;
 }
