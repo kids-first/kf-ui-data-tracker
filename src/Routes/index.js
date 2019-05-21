@@ -13,6 +13,7 @@ import {
   NavBarView,
   EmptyView,
   TokensListView,
+  FileDetailView,
 } from '../views';
 
 const Routes = () => (
@@ -39,7 +40,12 @@ const Routes = () => (
       component={StudyFilesListView}
     />
     <PrivateRoute
+      exact
       path="/study/:kfId/files/:fileId"
+      component={FileDetailView}
+    />
+    <PrivateRoute
+      path="/study/:kfId/files/:fileId/annotation"
       component={AnnotationView}
     />
     <PrivateRoute exact path="/study/:kfId/basicInfo" component={EmptyView} />

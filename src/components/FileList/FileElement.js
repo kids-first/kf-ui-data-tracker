@@ -7,18 +7,15 @@ import TimeAgo from 'react-timeago';
 import Badge from '../Badge/Badge';
 import {GridContainer} from 'kf-uikit';
 import FileActionsContainer from '../../containers/FileActionsContainer';
-import {dateCompare, formatFileSize} from '../../common/fileUtils';
+import {
+  fileTypeDetail,
+  fileSortedVersions,
+  fileLatestDate,
+  fileLatestSize,
+} from '../../common/fileUtils';
 /**
  * Displays unordered study files in list view
  */
-
-const fileTypeDefault = {
-  SHM: 'Shipping Manifest',
-  CLN: 'Clinical/Phenotype Data',
-  SEQ: 'Sequencing Manifest',
-  OTH: 'Other',
-};
-
 const FileElement = ({className, fileNode, loading, match, fileListId}) => {
   const fileElementClass = classes(
     'FileList--Element',
@@ -51,20 +48,12 @@ const FileElement = ({className, fileNode, loading, match, fileListId}) => {
   const fileKfID = fileNode.kfId || 'unknown ID';
   const fileName = fileNode.name || 'unknown file name';
   const fileDescription = fileNode.description || null;
-  // TODO: move these to fileUtils??
-  const sortedVersions =
-    fileNode && fileNode.versions && fileNode.versions.edges.length > 0
-      ? fileNode.versions.edges.sort(dateCompare)
-      : [];
-  const fileSize =
-    sortedVersions.length > 0
-      ? formatFileSize(sortedVersions[0].node.size, true)
-      : 'unknown';
-  const latestDate =
-    sortedVersions.length > 0 ? sortedVersions[0].node.createdAt : null;
+  const sortedVersions = fileSortedVersions(fileNode);
+  const latestDate = fileLatestDate(sortedVersions);
+  const fileSize = fileLatestSize(sortedVersions);
   const fileType =
-    fileNode && fileNode.fileType && fileTypeDefault[fileNode.fileType]
-      ? fileTypeDefault[fileNode.fileType]
+    fileNode && fileTypeDetail[fileNode.fileType]
+      ? fileTypeDetail[fileNode.fileType].title
       : 'unknown';
   return (
     <li className={fileElementClass} tabIndex="0">

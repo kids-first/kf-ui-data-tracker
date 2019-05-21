@@ -18,7 +18,7 @@ const FileEditorContainer = ({kfId, history, match}) => {
     const description = fileDescriptionInput;
     updateFile({variables: {kfId, name, description, fileType}})
       .then(() => {
-        history.push(`/study/${match.params.kfId}/files`);
+        history.goBack();
       })
       .catch(err => console.log(err));
   };

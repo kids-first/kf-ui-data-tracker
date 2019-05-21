@@ -32,7 +32,7 @@ const NavBar = ({className, match, history}) => {
       buttons={navList.map((i, index) => (
         <li
           className={classes('SecondaryNav--link', {
-            'SecondaryNav--link-active': history.location.pathname.endsWith(
+            'SecondaryNav--link-active': history.location.pathname.includes(
               i.endString,
             ),
           })}

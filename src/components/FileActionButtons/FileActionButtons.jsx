@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classes from 'classnames';
-import {KF_STUDY_API} from '../../common/globals';
 import {Icon} from 'kf-uikit';
-
+import {downloadFile} from '../../common/fileUtils';
 /**
  * Simple Icon Buttons to download and delete a file passed in as the node prop
  */
@@ -12,7 +11,7 @@ const FileActionButtons = ({
   loading,
   error,
   studyId,
-  downloadFile,
+  downloadFileMutation,
   deleteFile,
   className,
   buttonClass,
@@ -28,14 +27,9 @@ const FileActionButtons = ({
     <div className={FileActionsClass}>
       <button
         className={FileActionButton}
-        onClick={e => {
-          downloadFile({
-            variables: {studyId, fileId: node.kfId},
-          }).then(resp => {
-            const url = `${KF_STUDY_API}${resp.data.signedUrl.url}`;
-            window.location.href = url;
-          });
-        }}
+        onClick={e =>
+          downloadFile(studyId, node.kfId, null, downloadFileMutation)
+        }
       >
         <Icon color="black" width={16} height={16} kind="download" />
       </button>
