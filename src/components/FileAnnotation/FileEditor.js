@@ -4,6 +4,13 @@ import {withRouter} from 'react-router-dom';
 import {Button, Icon, GridContainer} from 'kf-uikit';
 import SelectElement from './SelectElement';
 import Badge from '../Badge/Badge';
+import {
+  Form,
+  FormField,
+  RadioButtonGroup,
+  TextArea,
+} from 'grommet';
+
 /**
  * Form to add fields to a newly uploaded file
  */
@@ -21,62 +28,25 @@ const FileEditor = ({
   const [editing, setEditing] = useState(false);
 
   return (
-    <form onSubmit={e => onSubmit(e)} className="FileEditor">
-      <GridContainer collapsed="rows">
-        {editing ? (
-          <label className="row-1 cell-12 flex justify-between">
-            <input
-              data-testid="name-input"
-              className="FileEditor--Input"
-              type="text"
-              name="name"
-              placeholder="Add your file name here..."
-              defaultValue={name}
-              onChange={e => onNameChange(e)}
-            />
-            <button
-              data-testid="save-name-button"
-              className="pl-20"
-              type="button"
-              onClick={() => {
-                setEditing(false);
-              }}
-            >
-              <span className="hidden">save file name</span>
-              <Icon width={12} height={12} kind="save" />
-            </button>
-          </label>
-        ) : (
-          <h3 className="row-1 cell-12 font-normal my-0 text-blue">
-            {name}
-            <button
-              data-testid="edit-name-button"
-              className="pl-20 pt-4"
-              type="button"
-              onClick={() => {
-                setEditing(true);
-              }}
-            >
-              <span className="hidden">edit file name</span>
-              <Icon width={12} height={12} kind="edit" />
-            </button>
-          </h3>
-        )}
-        <div className="flex row-2 cell-12">
-          <Badge state="new" />
-          <Badge state="pendingApproval" />
-        </div>
-        <label className="mt-8 cell-12 md:cell-6">
-          File description (required):
-          <textarea
-            data-testid="description-input"
-            className="FileEditor--TextArea sm:mb-0 h-full"
-            type="text"
-            name="description"
-            defaultValue={description}
-            onChange={e => onDescriptionChange(e)}
-          />
-        </label>
+    <Box fill>
+      <Form onSubmit={e => onSubmit(e)} className="FileEditor">
+        <FormField
+          label="Name"
+          name="name"
+          help="Enter a name for this file"
+          value={name}
+          onChange={ev => onNameChange(ev)}
+          required
+        />
+        <FormField
+          component={TextArea}
+          label="Description"
+          name="description"
+          help="Describe the purpose and contents of this file"
+          value={description}
+          onChange={ev => onDescriptionChange(ev)}
+          required
+        />
         <fieldset className="mt-8 cell-12 md:cell-6">
           Select a file type (required):
           <SelectElement
@@ -128,8 +98,8 @@ const FileEditor = ({
             Annotate File
           </Button>
         </div>
-      </GridContainer>
-    </form>
+      </Form>
+    </Box>
   );
 };
 
