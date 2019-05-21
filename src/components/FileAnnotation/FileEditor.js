@@ -44,7 +44,13 @@ const FileEditor = ({
           help="Enter a name for this file"
           value={name}
           onChange={ev => onNameChange(ev)}
-          required
+          validate={v => {
+            if (v !== undefined && v.length == 0) {
+              return 'Please enter a name';
+            } else {
+              return null;
+            }
+          }}
         />
         <FormField
           component={TextArea}
@@ -53,7 +59,13 @@ const FileEditor = ({
           help="Describe the purpose and contents of this file"
           value={description}
           onChange={ev => onDescriptionChange(ev)}
-          required
+          validate={v => {
+            if (v !== undefined && v.length == 0) {
+              return 'Please enter a description';
+            } else {
+              return null;
+            }
+          }}
         />
         <FormField label="File Type" name="fileType">
           <RadioButtonGroup
