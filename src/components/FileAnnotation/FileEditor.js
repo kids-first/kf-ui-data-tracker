@@ -1,13 +1,19 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import {withRouter} from 'react-router-dom';
-import {Button, Icon, GridContainer} from 'kf-uikit';
+import {Icon, GridContainer} from 'kf-uikit';
 import SelectElement from './SelectElement';
 import Badge from '../Badge/Badge';
 import {
   Form,
+  Box,
+  Button,
+  CheckBox,
+  Grommet,
   FormField,
   RadioButtonGroup,
+  RangeInput,
+  Select,
   TextArea,
 } from 'grommet';
 
@@ -26,6 +32,8 @@ const FileEditor = ({
   history,
 }) => {
   const [editing, setEditing] = useState(false);
+
+  const Sel = ({title, value}) => <div className="SelectElement">{title}</div>;
 
   return (
     <Box fill>
@@ -47,57 +55,69 @@ const FileEditor = ({
           onChange={ev => onDescriptionChange(ev)}
           required
         />
-        <fieldset className="mt-8 cell-12 md:cell-6">
-          Select a file type (required):
-          <SelectElement
-            name="shipping"
-            value="SHM"
-            icon="release"
-            title="Shipping Manifest"
-            body="Some helpful description."
-            select={e => selectFileType(e)}
-            selected={fileType === 'SHM'}
+        <FormField label="File Type" name="fileType">
+          <RadioButtonGroup
+            name="ft"
+            value={fileType}
+            onChange={ev => selectFileType(ev)}
+            options={[
+              {
+                id: 'SHP',
+                value: 'SHP',
+                label: (
+                  <SelectElement
+                    title="Shipping Manifest"
+                    body="Some helpful description."
+                    icon="release"
+                  />
+                ),
+              },
+              {
+                id: 'CLN',
+                value: 'CLN',
+                label: (
+                  <SelectElement
+                    title="Clinical/Phenotype Data"
+                    body="Some helpful description."
+                    icon="biospecimen"
+                  />
+                ),
+              },
+              {
+                id: 'SEQ',
+                value: 'SEQ',
+                label: (
+                  <SelectElement
+                    title="Sequencing Manifest"
+                    body="Some helpful description."
+                    icon="customize"
+                  />
+                ),
+              },
+              {
+                id: 'OTH',
+                value: 'OTH',
+                label: (
+                  <SelectElement
+                    title="Other"
+                    body="Some helpful description."
+                    icon="settings"
+                  />
+                ),
+              },
+            ]}
           />
-          <SelectElement
-            name="clin"
-            value="CLN"
-            icon="biospecimen"
-            title="Clinical/Phenotype Data"
-            body="Some helpful description."
-            select={selectFileType}
-            selected={fileType === 'CLN'}
-          />
-          <SelectElement
-            name="sequening"
-            value="SEQ"
-            icon="customize"
-            title="Sequencing Manifest"
-            body="Some helpful description."
-            select={selectFileType}
-            selected={fileType === 'SEQ'}
-          />
-          <SelectElement
-            name="other"
-            value="OTH"
-            icon="settings"
-            title="Other"
-            body="Some helpful description."
-            select={selectFileType}
-            selected={fileType === 'OTH'}
-          />
-        </fieldset>
-        <div className="cell-12 flex justify-end mt-4">
+        </FormField>
+
+        <Box gap="small" direction="row" justify="end">
           <Button
+            label="Cancel"
             onClick={() => {
               history.goBack();
             }}
-          >
-            Cancel
-          </Button>
-          <Button type="submit" color="primary" className="ml-12">
-            Annotate File
-          </Button>
-        </div>
+          />
+          <Button label="Annotate File" type="submit" primary />
+        </Box>
       </Form>
     </Box>
   );
