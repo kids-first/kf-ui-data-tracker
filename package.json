@@ -12,6 +12,7 @@
     "classnames": "^2.2.6",
     "graphql": "^14.1.1",
     "graphql-tag": "^2.10.1",
+    "grommet": "^2.7.0",
     "jwt-decode": "^2.2.0",
     "kf-uikit": "https://s3.amazonaws.com/kf-uikit-prd-bucket/0.6.1/kf-uikit/kf-uikit.tar.gz",
     "react": "^16.8.3",
@@ -24,7 +25,8 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "3.0.0",
     "react-testing-library": "^6.1.2",
-    "react-timeago": "^4.4.0"
+    "react-timeago": "^4.4.0",
+    "styled-components": "^4.2.0"
   },
   "resolutions": {
     "babel-core": "7.0.0-bridge.0"
