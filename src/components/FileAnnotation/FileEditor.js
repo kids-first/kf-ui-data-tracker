@@ -33,8 +33,6 @@ const FileEditor = ({
 }) => {
   const [editing, setEditing] = useState(false);
 
-  const Sel = ({title, value}) => <div className="SelectElement">{title}</div>;
-
   return (
     <Box fill>
       <Form onSubmit={e => onSubmit(e)} className="FileEditor">
