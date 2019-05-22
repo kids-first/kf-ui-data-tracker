@@ -3,7 +3,7 @@
 exports[`renders correctly 1`] = `
 <div>
   <section
-    class="grid-container mx-auto grid-container--collapsed-rows py-8 px-12"
+    class="grid-container mx-auto grid-container--collapsed-rows StudyHeader py-8 px-12"
   >
     <p
       class="StudyHeader--TopText"
