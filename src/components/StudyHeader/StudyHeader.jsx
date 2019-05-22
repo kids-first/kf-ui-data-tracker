@@ -12,14 +12,10 @@ const StudyHeader = ({
   name: studyName,
   className,
 }) => {
-  const studyHeaderClass = classes('StudyHeader', className);
+  const studyHeaderClass = classes('StudyHeader', 'py-8', 'px-12', className);
   const topTextClass = classes('StudyHeader--TopText');
   return (
-    <GridContainer
-      className={studyHeaderClass}
-      collapsed="rows"
-      className="py-8 px-12"
-    >
+    <GridContainer className={studyHeaderClass} collapsed="rows">
       <p className={topTextClass}>
         <b>{kfId}</b>
         {kfId && <CopyButton text={kfId} className="pl-4 pr-20" />}
