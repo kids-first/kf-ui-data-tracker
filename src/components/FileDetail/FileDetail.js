@@ -15,6 +15,10 @@ import {
   fileLatestSize,
 } from '../../common/fileUtils';
 import DeleteFileMutation from '../../containers/DeleteFileMutation';
+import Box from '../../assets/icons/box';
+import Clinical from '../../assets/icons/clinical';
+import Misc from '../../assets/icons/misc';
+import Sequencing from '../../assets/icons/sequencing';
 /**
  * Form to display file details and file versions
  */
@@ -48,11 +52,10 @@ const FileDetail = ({fileNode, history, match}) => {
                     <p className="FileInfo--Title">File Type:</p>
                     <div className="flex">
                       <div className="FileInfo--Icon">
-                        <Icon
-                          width={14}
-                          height={14}
-                          kind={fileTypeDetail[fileNode.fileType].icon}
-                        />
+                        {fileNode.fileType === 'SHM' && <Box />}
+                        {fileNode.fileType === 'CLN' && <Clinical />}
+                        {fileNode.fileType === 'SEQ' && <Sequencing />}
+                        {fileNode.fileType === 'OTH' && <Misc />}
                       </div>
                       <p className="FileInfo--Text">
                         {fileTypeDetail[fileNode.fileType].title}
