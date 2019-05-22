@@ -2,6 +2,16 @@
   "name": "kf-ui-data-tracker",
   "version": "0.2.0",
   "private": true,
+  "bundlesize": [
+    {
+      "path": "./build/static/js/*.js",
+      "maxSize": "3 MB"
+    },
+    {
+      "path": "./build/static/css/*.css",
+      "maxSize": "1 MB"
+    }
+  ],
   "dependencies": {
     "apollo-cache-inmemory": "^1.5.1",
     "apollo-client": "^2.5.1",
