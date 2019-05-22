@@ -4,5 +4,9 @@ module.exports = {
   },
   testEnvironment: 'jsdom',
   transformIgnorePatterns: ['node_modules/(?!(kf-uikit)/)'],
-  setupFiles: ['./__setups__/localStorage.js', './__setups__/date.js'],
+  setupFiles: [
+    './__setups__/localStorage.js',
+    './__setups__/date.js',
+    './__setups__/icons.js',
+  ],
 };
