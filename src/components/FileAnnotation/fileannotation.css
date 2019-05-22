@@ -1,11 +1,34 @@
 .SelectElement {
   border-radius: 5px;
-  @extend .w-full, .shadow, .bg-white, .my-8, .p-8, .align-middle, .flex,
-    .flex-row;
+  @extend .w-full,
+    .shadow,
+    .bg-white,
+    .my-8,
+    .p-8,
+    .align-middle,
+    .flex,
+    .flex-row,
+    .border,
+    .border-white;
 }
 
 .SelectElement--Icon {
-  @extend .rounded-full, .mr-16, .w-12, .h-12, .pt-12, .text-center;
+  @extend .rounded-full,
+    .mr-16,
+    .w-12,
+    .h-12,
+    .flex,
+    .justify-center,
+    .items-center,
+    .bg-lightGrey;
+}
+
+.SelectElement--Icon-fill {
+  background-color: #3b88fd;
+}
+
+.SelectElement-fill {
+  border-color: #3b88fd;
 }
 
 .FileEditor {
@@ -13,12 +36,17 @@
 }
 
 .FileEditor--Input {
-  @extend .flex-auto, .text-xl, .mt-4, .font-light, .font-title,
-    .border-transparent, .rounded-sm;
+  @extend .flex-auto,
+    .text-xl,
+    .mt-4,
+    .font-light,
+    .font-title,
+    .border-transparent,
+    .rounded-sm;
   width: auto;
 }
 
 .FileEditor--TextArea {
   @extend .w-full, .border-transparent, .rounded-sm, .mt-8;
-  height: 312px;
+  height: 290px;
 }
