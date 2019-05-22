@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classes from 'classnames';
 import {Icon} from 'kf-uikit';
+import {Radio} from 'semantic-ui-react';
 
 /**
  * A radio button that displays information about a file type with a title,
@@ -12,7 +13,8 @@ const SelectElement = ({
   name,
   value,
   title,
-  body,
+  desc,
+  group,
   select,
   selected,
   icon,
@@ -27,13 +29,20 @@ const SelectElement = ({
     selected ? 'bg-lightBlue' : 'bg-lightGrey',
   );
   return (
-    <label className={selectElementClass}>
-      <input
+    <div className={selectElementClass}>
+      {/* <input
         className="border m-16"
         type="radio"
         name={name}
         value={value}
         checked={selected}
+        onChange={e => select(e)}
+      /> */}
+      <Radio
+        className="border m-16"
+        name={group}
+        value={value}
+        // checked={selected}
         onChange={e => select(e)}
       />
       <div className={selectIconClass}>
@@ -41,9 +50,9 @@ const SelectElement = ({
       </div>
       <div>
         <p className="mt-8 font-bold font-sm leading-none">{title}</p>
-        <span className="font-normal text-grey text-xs">{body}</span>
+        <span className="font-normal text-grey text-xs">{desc}</span>
       </div>
-    </label>
+    </div>
   );
 };
 
