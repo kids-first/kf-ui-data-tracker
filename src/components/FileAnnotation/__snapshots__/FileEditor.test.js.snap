@@ -73,146 +73,126 @@ Object {
           >
             Select a file type (required):
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="shipping"
+                name="SHM"
                 type="radio"
                 value="SHM"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="release"
-                >
+                <svg>
                   <title>
-                    icon-
-                    release
+                    icon-box
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Shipping Manifest
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="clin"
+                name="CLN"
                 type="radio"
                 value="CLN"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="biospecimen"
-                >
+                <svg>
                   <title>
-                    icon-
-                    biospecimen
+                    icon-clinical
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Clinical/Phenotype Data
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="sequening"
+                name="SEQ"
                 type="radio"
                 value="SEQ"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="customize"
-                >
+                <svg>
                   <title>
-                    icon-
-                    customize
+                    icon-sequencing
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Sequencing Manifest
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="other"
+                name="OTH"
                 type="radio"
                 value="OTH"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="settings"
-                >
+                <svg>
                   <title>
-                    icon-
-                    settings
+                    icon-misc
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Other
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
@@ -306,146 +286,126 @@ Object {
         >
           Select a file type (required):
           <label
-            class="SelectElement none"
+            class="SelectElement"
           >
             <input
               class="border m-16"
-              name="shipping"
+              name="SHM"
               type="radio"
               value="SHM"
             />
             <div
-              class="SelectElement--Icon bg-lightGrey"
+              class="SelectElement--Icon"
             >
-              <svg
-                class="none"
-                id="mock-icon"
-                kind="release"
-              >
+              <svg>
                 <title>
-                  icon-
-                  release
+                  icon-box
                 </title>
               </svg>
             </div>
             <div>
               <p
-                class="mt-8 font-bold font-sm leading-none"
+                class="m-0 font-bold font-sm"
               >
                 Shipping Manifest
               </p>
               <span
                 class="font-normal text-grey text-xs"
               >
-                Some helpful description.
+                File type description gose here...
               </span>
             </div>
           </label>
           <label
-            class="SelectElement none"
+            class="SelectElement"
           >
             <input
               class="border m-16"
-              name="clin"
+              name="CLN"
               type="radio"
               value="CLN"
             />
             <div
-              class="SelectElement--Icon bg-lightGrey"
+              class="SelectElement--Icon"
             >
-              <svg
-                class="none"
-                id="mock-icon"
-                kind="biospecimen"
-              >
+              <svg>
                 <title>
-                  icon-
-                  biospecimen
+                  icon-clinical
                 </title>
               </svg>
             </div>
             <div>
               <p
-                class="mt-8 font-bold font-sm leading-none"
+                class="m-0 font-bold font-sm"
               >
                 Clinical/Phenotype Data
               </p>
               <span
                 class="font-normal text-grey text-xs"
               >
-                Some helpful description.
+                File type description gose here...
               </span>
             </div>
           </label>
           <label
-            class="SelectElement none"
+            class="SelectElement"
           >
             <input
               class="border m-16"
-              name="sequening"
+              name="SEQ"
               type="radio"
               value="SEQ"
             />
             <div
-              class="SelectElement--Icon bg-lightGrey"
+              class="SelectElement--Icon"
             >
-              <svg
-                class="none"
-                id="mock-icon"
-                kind="customize"
-              >
+              <svg>
                 <title>
-                  icon-
-                  customize
+                  icon-sequencing
                 </title>
               </svg>
             </div>
             <div>
               <p
-                class="mt-8 font-bold font-sm leading-none"
+                class="m-0 font-bold font-sm"
               >
                 Sequencing Manifest
               </p>
               <span
                 class="font-normal text-grey text-xs"
               >
-                Some helpful description.
+                File type description gose here...
               </span>
             </div>
           </label>
           <label
-            class="SelectElement none"
+            class="SelectElement"
           >
             <input
               class="border m-16"
-              name="other"
+              name="OTH"
               type="radio"
               value="OTH"
             />
             <div
-              class="SelectElement--Icon bg-lightGrey"
+              class="SelectElement--Icon"
             >
-              <svg
-                class="none"
-                id="mock-icon"
-                kind="settings"
-              >
+              <svg>
                 <title>
-                  icon-
-                  settings
+                  icon-misc
                 </title>
               </svg>
             </div>
             <div>
               <p
-                class="mt-8 font-bold font-sm leading-none"
+                class="m-0 font-bold font-sm"
               >
                 Other
               </p>
               <span
                 class="font-normal text-grey text-xs"
               >
-                Some helpful description.
+                File type description gose here...
               </span>
             </div>
           </label>
@@ -604,146 +564,126 @@ Object {
           >
             Select a file type (required):
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="shipping"
+                name="SHM"
                 type="radio"
                 value="SHM"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="release"
-                >
+                <svg>
                   <title>
-                    icon-
-                    release
+                    icon-box
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Shipping Manifest
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="clin"
+                name="CLN"
                 type="radio"
                 value="CLN"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="biospecimen"
-                >
+                <svg>
                   <title>
-                    icon-
-                    biospecimen
+                    icon-clinical
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Clinical/Phenotype Data
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="sequening"
+                name="SEQ"
                 type="radio"
                 value="SEQ"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="customize"
-                >
+                <svg>
                   <title>
-                    icon-
-                    customize
+                    icon-sequencing
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Sequencing Manifest
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="other"
+                name="OTH"
                 type="radio"
                 value="OTH"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="settings"
-                >
+                <svg>
                   <title>
-                    icon-
-                    settings
+                    icon-misc
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Other
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
@@ -837,146 +777,126 @@ Object {
           >
             Select a file type (required):
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="shipping"
+                name="SHM"
                 type="radio"
                 value="SHM"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="release"
-                >
+                <svg>
                   <title>
-                    icon-
-                    release
+                    icon-box
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Shipping Manifest
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="clin"
+                name="CLN"
                 type="radio"
                 value="CLN"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="biospecimen"
-                >
+                <svg>
                   <title>
-                    icon-
-                    biospecimen
+                    icon-clinical
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Clinical/Phenotype Data
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="sequening"
+                name="SEQ"
                 type="radio"
                 value="SEQ"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="customize"
-                >
+                <svg>
                   <title>
-                    icon-
-                    customize
+                    icon-sequencing
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Sequencing Manifest
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="other"
+                name="OTH"
                 type="radio"
                 value="OTH"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="settings"
-                >
+                <svg>
                   <title>
-                    icon-
-                    settings
+                    icon-misc
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Other
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
@@ -1069,147 +989,127 @@ Object {
           >
             Select a file type (required):
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="shipping"
+                name="SHM"
                 type="radio"
                 value="SHM"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="release"
-                >
+                <svg>
                   <title>
-                    icon-
-                    release
+                    icon-box
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Shipping Manifest
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
             <label
-              class="SelectElement border border-lightBlue"
+              class="SelectElement SelectElement-fill"
             >
               <input
                 checked=""
                 class="border m-16"
-                name="clin"
+                name="CLN"
                 type="radio"
                 value="CLN"
               />
               <div
-                class="SelectElement--Icon bg-lightBlue"
+                class="SelectElement--Icon SelectElement--Icon-fill"
               >
-                <svg
-                  class="text-white"
-                  id="mock-icon"
-                  kind="biospecimen"
-                >
+                <svg>
                   <title>
-                    icon-
-                    biospecimen
+                    icon-clinical
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Clinical/Phenotype Data
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="sequening"
+                name="SEQ"
                 type="radio"
                 value="SEQ"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="customize"
-                >
+                <svg>
                   <title>
-                    icon-
-                    customize
+                    icon-sequencing
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Sequencing Manifest
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="other"
+                name="OTH"
                 type="radio"
                 value="OTH"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="settings"
-                >
+                <svg>
                   <title>
-                    icon-
-                    settings
+                    icon-misc
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Other
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
@@ -1303,147 +1203,127 @@ Object {
         >
           Select a file type (required):
           <label
-            class="SelectElement none"
+            class="SelectElement"
           >
             <input
               class="border m-16"
-              name="shipping"
+              name="SHM"
               type="radio"
               value="SHM"
             />
             <div
-              class="SelectElement--Icon bg-lightGrey"
+              class="SelectElement--Icon"
             >
-              <svg
-                class="none"
-                id="mock-icon"
-                kind="release"
-              >
+              <svg>
                 <title>
-                  icon-
-                  release
+                  icon-box
                 </title>
               </svg>
             </div>
             <div>
               <p
-                class="mt-8 font-bold font-sm leading-none"
+                class="m-0 font-bold font-sm"
               >
                 Shipping Manifest
               </p>
               <span
                 class="font-normal text-grey text-xs"
               >
-                Some helpful description.
+                File type description gose here...
               </span>
             </div>
           </label>
           <label
-            class="SelectElement border border-lightBlue"
+            class="SelectElement SelectElement-fill"
           >
             <input
               checked=""
               class="border m-16"
-              name="clin"
+              name="CLN"
               type="radio"
               value="CLN"
             />
             <div
-              class="SelectElement--Icon bg-lightBlue"
+              class="SelectElement--Icon SelectElement--Icon-fill"
             >
-              <svg
-                class="text-white"
-                id="mock-icon"
-                kind="biospecimen"
-              >
+              <svg>
                 <title>
-                  icon-
-                  biospecimen
+                  icon-clinical
                 </title>
               </svg>
             </div>
             <div>
               <p
-                class="mt-8 font-bold font-sm leading-none"
+                class="m-0 font-bold font-sm"
               >
                 Clinical/Phenotype Data
               </p>
               <span
                 class="font-normal text-grey text-xs"
               >
-                Some helpful description.
+                File type description gose here...
               </span>
             </div>
           </label>
           <label
-            class="SelectElement none"
+            class="SelectElement"
           >
             <input
               class="border m-16"
-              name="sequening"
+              name="SEQ"
               type="radio"
               value="SEQ"
             />
             <div
-              class="SelectElement--Icon bg-lightGrey"
+              class="SelectElement--Icon"
             >
-              <svg
-                class="none"
-                id="mock-icon"
-                kind="customize"
-              >
+              <svg>
                 <title>
-                  icon-
-                  customize
+                  icon-sequencing
                 </title>
               </svg>
             </div>
             <div>
               <p
-                class="mt-8 font-bold font-sm leading-none"
+                class="m-0 font-bold font-sm"
               >
                 Sequencing Manifest
               </p>
               <span
                 class="font-normal text-grey text-xs"
               >
-                Some helpful description.
+                File type description gose here...
               </span>
             </div>
           </label>
           <label
-            class="SelectElement none"
+            class="SelectElement"
           >
             <input
               class="border m-16"
-              name="other"
+              name="OTH"
               type="radio"
               value="OTH"
             />
             <div
-              class="SelectElement--Icon bg-lightGrey"
+              class="SelectElement--Icon"
             >
-              <svg
-                class="none"
-                id="mock-icon"
-                kind="settings"
-              >
+              <svg>
                 <title>
-                  icon-
-                  settings
+                  icon-misc
                 </title>
               </svg>
             </div>
             <div>
               <p
-                class="mt-8 font-bold font-sm leading-none"
+                class="m-0 font-bold font-sm"
               >
                 Other
               </p>
               <span
                 class="font-normal text-grey text-xs"
               >
-                Some helpful description.
+                File type description gose here...
               </span>
             </div>
           </label>
@@ -1602,146 +1482,126 @@ Object {
           >
             Select a file type (required):
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="shipping"
+                name="SHM"
                 type="radio"
                 value="SHM"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="release"
-                >
+                <svg>
                   <title>
-                    icon-
-                    release
+                    icon-box
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Shipping Manifest
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="clin"
+                name="CLN"
                 type="radio"
                 value="CLN"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="biospecimen"
-                >
+                <svg>
                   <title>
-                    icon-
-                    biospecimen
+                    icon-clinical
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Clinical/Phenotype Data
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="sequening"
+                name="SEQ"
                 type="radio"
                 value="SEQ"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="customize"
-                >
+                <svg>
                   <title>
-                    icon-
-                    customize
+                    icon-sequencing
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Sequencing Manifest
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="other"
+                name="OTH"
                 type="radio"
                 value="OTH"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="settings"
-                >
+                <svg>
                   <title>
-                    icon-
-                    settings
+                    icon-misc
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Other
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
@@ -1835,146 +1695,126 @@ Object {
           >
             Select a file type (required):
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="shipping"
+                name="SHM"
                 type="radio"
                 value="SHM"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="release"
-                >
+                <svg>
                   <title>
-                    icon-
-                    release
+                    icon-box
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Shipping Manifest
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="clin"
+                name="CLN"
                 type="radio"
                 value="CLN"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="biospecimen"
-                >
+                <svg>
                   <title>
-                    icon-
-                    biospecimen
+                    icon-clinical
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Clinical/Phenotype Data
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="sequening"
+                name="SEQ"
                 type="radio"
                 value="SEQ"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="customize"
-                >
+                <svg>
                   <title>
-                    icon-
-                    customize
+                    icon-sequencing
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Sequencing Manifest
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="other"
+                name="OTH"
                 type="radio"
                 value="OTH"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="settings"
-                >
+                <svg>
                   <title>
-                    icon-
-                    settings
+                    icon-misc
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Other
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
@@ -2069,146 +1909,126 @@ Object {
         >
           Select a file type (required):
           <label
-            class="SelectElement none"
+            class="SelectElement"
           >
             <input
               class="border m-16"
-              name="shipping"
+              name="SHM"
               type="radio"
               value="SHM"
             />
             <div
-              class="SelectElement--Icon bg-lightGrey"
+              class="SelectElement--Icon"
             >
-              <svg
-                class="none"
-                id="mock-icon"
-                kind="release"
-              >
+              <svg>
                 <title>
-                  icon-
-                  release
+                  icon-box
                 </title>
               </svg>
             </div>
             <div>
               <p
-                class="mt-8 font-bold font-sm leading-none"
+                class="m-0 font-bold font-sm"
               >
                 Shipping Manifest
               </p>
               <span
                 class="font-normal text-grey text-xs"
               >
-                Some helpful description.
+                File type description gose here...
               </span>
             </div>
           </label>
           <label
-            class="SelectElement none"
+            class="SelectElement"
           >
             <input
               class="border m-16"
-              name="clin"
+              name="CLN"
               type="radio"
               value="CLN"
             />
             <div
-              class="SelectElement--Icon bg-lightGrey"
+              class="SelectElement--Icon"
             >
-              <svg
-                class="none"
-                id="mock-icon"
-                kind="biospecimen"
-              >
+              <svg>
                 <title>
-                  icon-
-                  biospecimen
+                  icon-clinical
                 </title>
               </svg>
             </div>
             <div>
               <p
-                class="mt-8 font-bold font-sm leading-none"
+                class="m-0 font-bold font-sm"
               >
                 Clinical/Phenotype Data
               </p>
               <span
                 class="font-normal text-grey text-xs"
               >
-                Some helpful description.
+                File type description gose here...
               </span>
             </div>
           </label>
           <label
-            class="SelectElement none"
+            class="SelectElement"
           >
             <input
               class="border m-16"
-              name="sequening"
+              name="SEQ"
               type="radio"
               value="SEQ"
             />
             <div
-              class="SelectElement--Icon bg-lightGrey"
+              class="SelectElement--Icon"
             >
-              <svg
-                class="none"
-                id="mock-icon"
-                kind="customize"
-              >
+              <svg>
                 <title>
-                  icon-
-                  customize
+                  icon-sequencing
                 </title>
               </svg>
             </div>
             <div>
               <p
-                class="mt-8 font-bold font-sm leading-none"
+                class="m-0 font-bold font-sm"
               >
                 Sequencing Manifest
               </p>
               <span
                 class="font-normal text-grey text-xs"
               >
-                Some helpful description.
+                File type description gose here...
               </span>
             </div>
           </label>
           <label
-            class="SelectElement none"
+            class="SelectElement"
           >
             <input
               class="border m-16"
-              name="other"
+              name="OTH"
               type="radio"
               value="OTH"
             />
             <div
-              class="SelectElement--Icon bg-lightGrey"
+              class="SelectElement--Icon"
             >
-              <svg
-                class="none"
-                id="mock-icon"
-                kind="settings"
-              >
+              <svg>
                 <title>
-                  icon-
-                  settings
+                  icon-misc
                 </title>
               </svg>
             </div>
             <div>
               <p
-                class="mt-8 font-bold font-sm leading-none"
+                class="m-0 font-bold font-sm"
               >
                 Other
               </p>
               <span
                 class="font-normal text-grey text-xs"
               >
-                Some helpful description.
+                File type description gose here...
               </span>
             </div>
           </label>
@@ -2375,146 +2195,126 @@ Object {
           >
             Select a file type (required):
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="shipping"
+                name="SHM"
                 type="radio"
                 value="SHM"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="release"
-                >
+                <svg>
                   <title>
-                    icon-
-                    release
+                    icon-box
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Shipping Manifest
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="clin"
+                name="CLN"
                 type="radio"
                 value="CLN"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="biospecimen"
-                >
+                <svg>
                   <title>
-                    icon-
-                    biospecimen
+                    icon-clinical
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Clinical/Phenotype Data
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="sequening"
+                name="SEQ"
                 type="radio"
                 value="SEQ"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="customize"
-                >
+                <svg>
                   <title>
-                    icon-
-                    customize
+                    icon-sequencing
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Sequencing Manifest
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="other"
+                name="OTH"
                 type="radio"
                 value="OTH"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="settings"
-                >
+                <svg>
                   <title>
-                    icon-
-                    settings
+                    icon-misc
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Other
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
@@ -2608,146 +2408,126 @@ Object {
           >
             Select a file type (required):
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="shipping"
+                name="SHM"
                 type="radio"
                 value="SHM"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="release"
-                >
+                <svg>
                   <title>
-                    icon-
-                    release
+                    icon-box
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Shipping Manifest
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="clin"
+                name="CLN"
                 type="radio"
                 value="CLN"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="biospecimen"
-                >
+                <svg>
                   <title>
-                    icon-
-                    biospecimen
+                    icon-clinical
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Clinical/Phenotype Data
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="sequening"
+                name="SEQ"
                 type="radio"
                 value="SEQ"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="customize"
-                >
+                <svg>
                   <title>
-                    icon-
-                    customize
+                    icon-sequencing
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Sequencing Manifest
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="other"
+                name="OTH"
                 type="radio"
                 value="OTH"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="settings"
-                >
+                <svg>
                   <title>
-                    icon-
-                    settings
+                    icon-misc
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Other
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
@@ -2842,146 +2622,126 @@ Object {
         >
           Select a file type (required):
           <label
-            class="SelectElement none"
+            class="SelectElement"
           >
             <input
               class="border m-16"
-              name="shipping"
+              name="SHM"
               type="radio"
               value="SHM"
             />
             <div
-              class="SelectElement--Icon bg-lightGrey"
+              class="SelectElement--Icon"
             >
-              <svg
-                class="none"
-                id="mock-icon"
-                kind="release"
-              >
+              <svg>
                 <title>
-                  icon-
-                  release
+                  icon-box
                 </title>
               </svg>
             </div>
             <div>
               <p
-                class="mt-8 font-bold font-sm leading-none"
+                class="m-0 font-bold font-sm"
               >
                 Shipping Manifest
               </p>
               <span
                 class="font-normal text-grey text-xs"
               >
-                Some helpful description.
+                File type description gose here...
               </span>
             </div>
           </label>
           <label
-            class="SelectElement none"
+            class="SelectElement"
           >
             <input
               class="border m-16"
-              name="clin"
+              name="CLN"
               type="radio"
               value="CLN"
             />
             <div
-              class="SelectElement--Icon bg-lightGrey"
+              class="SelectElement--Icon"
             >
-              <svg
-                class="none"
-                id="mock-icon"
-                kind="biospecimen"
-              >
+              <svg>
                 <title>
-                  icon-
-                  biospecimen
+                  icon-clinical
                 </title>
               </svg>
             </div>
             <div>
               <p
-                class="mt-8 font-bold font-sm leading-none"
+                class="m-0 font-bold font-sm"
               >
                 Clinical/Phenotype Data
               </p>
               <span
                 class="font-normal text-grey text-xs"
               >
-                Some helpful description.
+                File type description gose here...
               </span>
             </div>
           </label>
           <label
-            class="SelectElement none"
+            class="SelectElement"
           >
             <input
               class="border m-16"
-              name="sequening"
+              name="SEQ"
               type="radio"
               value="SEQ"
             />
             <div
-              class="SelectElement--Icon bg-lightGrey"
+              class="SelectElement--Icon"
             >
-              <svg
-                class="none"
-                id="mock-icon"
-                kind="customize"
-              >
+              <svg>
                 <title>
-                  icon-
-                  customize
+                  icon-sequencing
                 </title>
               </svg>
             </div>
             <div>
               <p
-                class="mt-8 font-bold font-sm leading-none"
+                class="m-0 font-bold font-sm"
               >
                 Sequencing Manifest
               </p>
               <span
                 class="font-normal text-grey text-xs"
               >
-                Some helpful description.
+                File type description gose here...
               </span>
             </div>
           </label>
           <label
-            class="SelectElement none"
+            class="SelectElement"
           >
             <input
               class="border m-16"
-              name="other"
+              name="OTH"
               type="radio"
               value="OTH"
             />
             <div
-              class="SelectElement--Icon bg-lightGrey"
+              class="SelectElement--Icon"
             >
-              <svg
-                class="none"
-                id="mock-icon"
-                kind="settings"
-              >
+              <svg>
                 <title>
-                  icon-
-                  settings
+                  icon-misc
                 </title>
               </svg>
             </div>
             <div>
               <p
-                class="mt-8 font-bold font-sm leading-none"
+                class="m-0 font-bold font-sm"
               >
                 Other
               </p>
               <span
                 class="font-normal text-grey text-xs"
               >
-                Some helpful description.
+                File type description gose here...
               </span>
             </div>
           </label>
@@ -3140,146 +2900,126 @@ Object {
           >
             Select a file type (required):
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="shipping"
+                name="SHM"
                 type="radio"
                 value="SHM"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="release"
-                >
+                <svg>
                   <title>
-                    icon-
-                    release
+                    icon-box
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Shipping Manifest
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="clin"
+                name="CLN"
                 type="radio"
                 value="CLN"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="biospecimen"
-                >
+                <svg>
                   <title>
-                    icon-
-                    biospecimen
+                    icon-clinical
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Clinical/Phenotype Data
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="sequening"
+                name="SEQ"
                 type="radio"
                 value="SEQ"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="customize"
-                >
+                <svg>
                   <title>
-                    icon-
-                    customize
+                    icon-sequencing
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Sequencing Manifest
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="other"
+                name="OTH"
                 type="radio"
                 value="OTH"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="settings"
-                >
+                <svg>
                   <title>
-                    icon-
-                    settings
+                    icon-misc
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Other
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
@@ -3373,146 +3113,126 @@ Object {
           >
             Select a file type (required):
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="shipping"
+                name="SHM"
                 type="radio"
                 value="SHM"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="release"
-                >
+                <svg>
                   <title>
-                    icon-
-                    release
+                    icon-box
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Shipping Manifest
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="clin"
+                name="CLN"
                 type="radio"
                 value="CLN"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="biospecimen"
-                >
+                <svg>
                   <title>
-                    icon-
-                    biospecimen
+                    icon-clinical
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Clinical/Phenotype Data
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="sequening"
+                name="SEQ"
                 type="radio"
                 value="SEQ"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="customize"
-                >
+                <svg>
                   <title>
-                    icon-
-                    customize
+                    icon-sequencing
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Sequencing Manifest
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
             <label
-              class="SelectElement none"
+              class="SelectElement"
             >
               <input
                 class="border m-16"
-                name="other"
+                name="OTH"
                 type="radio"
                 value="OTH"
               />
               <div
-                class="SelectElement--Icon bg-lightGrey"
+                class="SelectElement--Icon"
               >
-                <svg
-                  class="none"
-                  id="mock-icon"
-                  kind="settings"
-                >
+                <svg>
                   <title>
-                    icon-
-                    settings
+                    icon-misc
                   </title>
                 </svg>
               </div>
               <div>
                 <p
-                  class="mt-8 font-bold font-sm leading-none"
+                  class="m-0 font-bold font-sm"
                 >
                   Other
                 </p>
                 <span
                   class="font-normal text-grey text-xs"
                 >
-                  Some helpful description.
+                  File type description gose here...
                 </span>
               </div>
             </label>
@@ -3607,146 +3327,126 @@ Object {
         >
           Select a file type (required):
           <label
-            class="SelectElement none"
+            class="SelectElement"
           >
             <input
               class="border m-16"
-              name="shipping"
+              name="SHM"
               type="radio"
               value="SHM"
             />
             <div
-              class="SelectElement--Icon bg-lightGrey"
+              class="SelectElement--Icon"
             >
-              <svg
-                class="none"
-                id="mock-icon"
-                kind="release"
-              >
+              <svg>
                 <title>
-                  icon-
-                  release
+                  icon-box
                 </title>
               </svg>
             </div>
             <div>
               <p
-                class="mt-8 font-bold font-sm leading-none"
+                class="m-0 font-bold font-sm"
               >
                 Shipping Manifest
               </p>
               <span
                 class="font-normal text-grey text-xs"
               >
-                Some helpful description.
+                File type description gose here...
               </span>
             </div>
           </label>
           <label
-            class="SelectElement none"
+            class="SelectElement"
           >
             <input
               class="border m-16"
-              name="clin"
+              name="CLN"
               type="radio"
               value="CLN"
             />
             <div
-              class="SelectElement--Icon bg-lightGrey"
+              class="SelectElement--Icon"
             >
-              <svg
-                class="none"
-                id="mock-icon"
-                kind="biospecimen"
-              >
+              <svg>
                 <title>
-                  icon-
-                  biospecimen
+                  icon-clinical
                 </title>
               </svg>
             </div>
             <div>
               <p
-                class="mt-8 font-bold font-sm leading-none"
+                class="m-0 font-bold font-sm"
               >
                 Clinical/Phenotype Data
               </p>
               <span
                 class="font-normal text-grey text-xs"
               >
-                Some helpful description.
+                File type description gose here...
               </span>
             </div>
           </label>
           <label
-            class="SelectElement none"
+            class="SelectElement"
           >
             <input
               class="border m-16"
-              name="sequening"
+              name="SEQ"
               type="radio"
               value="SEQ"
             />
             <div
-              class="SelectElement--Icon bg-lightGrey"
+              class="SelectElement--Icon"
             >
-              <svg
-                class="none"
-                id="mock-icon"
-                kind="customize"
-              >
+              <svg>
                 <title>
-                  icon-
-                  customize
+                  icon-sequencing
                 </title>
               </svg>
             </div>
             <div>
               <p
-                class="mt-8 font-bold font-sm leading-none"
+                class="m-0 font-bold font-sm"
               >
                 Sequencing Manifest
               </p>
               <span
                 class="font-normal text-grey text-xs"
               >
-                Some helpful description.
+                File type description gose here...
               </span>
             </div>
           </label>
           <label
-            class="SelectElement none"
+            class="SelectElement"
           >
             <input
               class="border m-16"
-              name="other"
+              name="OTH"
               type="radio"
               value="OTH"
             />
             <div
-              class="SelectElement--Icon bg-lightGrey"
+              class="SelectElement--Icon"
             >
-              <svg
-                class="none"
-                id="mock-icon"
-                kind="settings"
-              >
+              <svg>
                 <title>
-                  icon-
-                  settings
+                  icon-misc
                 </title>
               </svg>
             </div>
             <div>
               <p
-                class="mt-8 font-bold font-sm leading-none"
+                class="m-0 font-bold font-sm"
               >
                 Other
               </p>
               <span
                 class="font-normal text-grey text-xs"
               >
-                Some helpful description.
+                File type description gose here...
               </span>
             </div>
           </label>
