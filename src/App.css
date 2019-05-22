@@ -35,5 +35,5 @@ body {
 }
 
 .Header--navigation {
-  @extend .grid-container, .mx-auto, .border-none, .px-0;
+  @extend .grid-container, .mx-auto, .border-none, .p-12;
 }
