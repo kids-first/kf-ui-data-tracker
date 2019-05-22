@@ -1,6 +1,12 @@
 .SelectElement {
   border-radius: 5px;
-  @extend .w-full, .shadow, .bg-white, .my-8, .p-8, .align-middle, .flex,
+  @extend .w-1\/2,
+    .shadow,
+    .bg-white,
+    .my-8,
+    .p-8,
+    .align-middle,
+    .flex,
     .flex-row;
 }
 
@@ -13,8 +19,13 @@
 }
 
 .FileEditor--Input {
-  @extend .flex-auto, .text-xl, .mt-4, .font-light, .font-title,
-    .border-transparent, .rounded-sm;
+  @extend .flex-auto,
+    .text-xl,
+    .mt-4,
+    .font-light,
+    .font-title,
+    .border-transparent,
+    .rounded-sm;
   width: auto;
 }
 

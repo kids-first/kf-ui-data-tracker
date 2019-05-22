@@ -26,9 +26,9 @@ const FileEditorContainer = ({kfId, history, match}) => {
   /**
    * Called from the onChange event on the file type radio buttons
    */
-  const selectFileType = e => {
-    setFileType(e.target.value);
-  };
+  // const selectFileType = val => {
+  //   setFileType(val);
+  // };
 
   return (
     <Query query={GET_FILE_BY_ID} variables={{kfId}}>
@@ -56,7 +56,7 @@ const FileEditorContainer = ({kfId, history, match}) => {
                   name={fileNameInput}
                   description={data.fileByKfId.description}
                   fileType={fileType}
-                  selectFileType={selectFileType}
+                  selectFileType={setFileType}
                   onSubmit={e => onSubmit(e, updateFile)}
                   onNameChange={e => setFileName(e.target.value)}
                   onDescriptionChange={e => setFileDescription(e.target.value)}

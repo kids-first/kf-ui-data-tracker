@@ -23,10 +23,15 @@ const FileEditor = ({
   const [editing, setEditing] = useState(false);
 
   return (
-    <Form className="FileEditor ">
+    <Form onSubmit={e => onSubmit(e)} className="FileEditor ">
       <Form.Field>
         <label>Resource Name:</label>
-        <input placeholder="Add your file name here..." />
+        <input
+          required
+          placeholder="Add your file name here..."
+          defaultValue={name}
+          onChange={e => onNameChange(e)}
+        />
       </Form.Field>
       <Form.Field>
         <label>What kind of resource is this?</label>
@@ -77,10 +82,21 @@ const FileEditor = ({
 
       <Form.Field>
         <label>Describe your resource: </label>
-        <TextArea placeholder="Last Name" />
+        <TextArea
+          required
+          placeholder="This file links participans to biospecimens..."
+          defaultValue={description}
+          onChange={e => onDescriptionChange(e)}
+        />
       </Form.Field>
       <div className="text-right">
-        <Button circular basic>
+        <Button
+          circular
+          basic
+          onClick={() => {
+            history.goBack();
+          }}
+        >
           Cancel
         </Button>
         <Button circular type="submit" color="teal">

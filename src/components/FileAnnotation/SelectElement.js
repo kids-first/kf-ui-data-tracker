@@ -21,6 +21,7 @@ const SelectElement = ({
 }) => {
   let selectElementClass = classes(
     'SelectElement',
+
     selected ? 'border border-lightBlue' : 'none',
     className,
   );
@@ -29,7 +30,7 @@ const SelectElement = ({
     selected ? 'bg-lightBlue' : 'bg-lightGrey',
   );
   return (
-    <div className={selectElementClass}>
+    <div className={selectElementClass} onClick={() => select(value)}>
       {/* <input
         className="border m-16"
         type="radio"
@@ -42,8 +43,8 @@ const SelectElement = ({
         className="border m-16"
         name={group}
         value={value}
-        // checked={selected}
-        onChange={e => select(e)}
+        checked={selected}
+        onChange={e => select(value)}
       />
       <div className={selectIconClass}>
         <Icon kind={icon} className={selected ? 'text-white' : 'none'} />
