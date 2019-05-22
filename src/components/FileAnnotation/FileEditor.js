@@ -51,6 +51,15 @@ const FileEditor = ({
           }}
         />
         <FormField
+          component={Select}
+          multiple={true}
+          label="State"
+          name="state"
+          help="Change the state of the file"
+          value="reviewing"
+          options={['rejected', 'reviewing', 'approved']}
+        />
+        <FormField
           component={TextArea}
           label="Description"
           name="description"
@@ -67,6 +76,7 @@ const FileEditor = ({
         />
         <FormField label="File Type" name="fileType">
           <RadioButtonGroup
+            margin={{vertical: 'small'}}
             name="ft"
             value={fileType}
             onChange={ev => selectFileType(ev)}
