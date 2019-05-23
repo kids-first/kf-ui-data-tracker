@@ -39,3 +39,19 @@ jest.mock(`../src/assets/icons/checkmark`, () => {
     </svg>
   ));
 });
+
+jest.mock(`../src/assets/icons/notification`, () => {
+  return jest.fn(() => (
+    <svg>
+      <title>icon-notification</title>
+    </svg>
+  ));
+});
+
+jest.mock(`../src/assets/icons/edit`, () => {
+  return jest.fn(() => (
+    <svg>
+      <title>icon-edit</title>
+    </svg>
+  ));
+});
