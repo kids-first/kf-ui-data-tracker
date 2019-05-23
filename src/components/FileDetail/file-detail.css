@@ -166,18 +166,12 @@
   @extend .mb-16;
 }
 
-.FileDialog--SwitchBar {
-  background-color: #00aceb24;
-  @extend .border-lightBlue,
-    .border-l-8,
-    .flex,
-    .justify-between,
-    .mx-20,
-    .p-12,
-    .mb-20;
-}
-
 .FileDialog--ButtonBar {
   border-radius: 0 0 5px 5px;
   @extend .bg-lightGrey, .p-20, .flex, .justify-between, .items-center;
+}
+
+.NotificationBar {
+  background-color: #00aceb24;
+  @extend .border-lightBlue, .border-l-8, .flex, .justify-between, .p-12;
 }
