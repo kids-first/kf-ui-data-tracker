@@ -6,8 +6,15 @@
   top: 150%;
   left: 50%;
   border-radius: 4px;
-  @extend .absolute, .w-16, .z-10, .-ml-8, .bg-black, .text-white, .text-xs,
-    .text-center, .rounded-sm, .py-8;
+  @extend .absolute,
+    .w-16,
+    .z-10,
+    .-ml-8,
+    .bg-black,
+    .text-white,
+    .text-xs,
+    .text-center,
+    .py-8;
 }
 
 .CopyTooltip:after {

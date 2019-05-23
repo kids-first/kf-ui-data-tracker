@@ -31,3 +31,11 @@ jest.mock(`../src/assets/icons/sequencing`, () => {
     </svg>
   ));
 });
+
+jest.mock(`../src/assets/icons/checkmark`, () => {
+  return jest.fn(() => (
+    <svg>
+      <title>icon-checkmark</title>
+    </svg>
+  ));
+});
