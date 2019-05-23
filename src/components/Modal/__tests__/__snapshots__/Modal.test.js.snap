@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders modal with no content, submit is disabled 1`] = `
+<body
+  class="ReactModal__Body--open"
+>
+  <div
+    class="ReactModalPortal"
+  >
+    <div
+      class="ReactModal__Overlay ReactModal__Overlay--after-open Modal--overlay"
+    >
+      <div
+        aria-label="File Version Uploda/Annotation Modal"
+        class="ReactModal__Content ReactModal__Content--after-open Modal--container"
+        role="dialog"
+        tabindex="-1"
+      >
+        <header
+          class="Modal--Header"
+        >
+          <h2
+            class="Modal--Title"
+          >
+            MODAL TITLE
+          </h2>
+          <button
+            class="mt-4"
+            data-testid="close-modal-button"
+          >
+            <svg
+              id="mock-icon"
+              kind="close"
+            >
+              <title>
+                icon-
+                close
+              </title>
+            </svg>
+          </button>
+        </header>
+        <section
+          class="Modal--content"
+        />
+        <footer
+          class="Modal--Footer"
+        >
+          <button
+            class="Button Button--default w-32 justify-center"
+            type="button"
+          >
+            CANCEL
+          </button>
+          <button
+            class="Button Button--default Button--primary w-32 justify-center"
+            disabled=""
+            type="button"
+          >
+            SUBMIT
+          </button>
+        </footer>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`renders modal with no content, submit is enabled 1`] = `
+<body
+  class="ReactModal__Body--open"
+>
+  <div
+    class="ReactModalPortal"
+  >
+    <div
+      class="ReactModal__Overlay ReactModal__Overlay--after-open Modal--overlay"
+    >
+      <div
+        aria-label="File Version Uploda/Annotation Modal"
+        class="ReactModal__Content ReactModal__Content--after-open Modal--container"
+        role="dialog"
+        tabindex="-1"
+      >
+        <header
+          class="Modal--Header"
+        >
+          <h2
+            class="Modal--Title"
+          >
+            MODAL TITLE
+          </h2>
+          <button
+            class="mt-4"
+            data-testid="close-modal-button"
+          >
+            <svg
+              id="mock-icon"
+              kind="close"
+            >
+              <title>
+                icon-
+                close
+              </title>
+            </svg>
+          </button>
+        </header>
+        <section
+          class="Modal--content"
+        />
+        <footer
+          class="Modal--Footer"
+        >
+          <button
+            class="Button Button--default w-32 justify-center"
+            type="button"
+          >
+            CANCEL
+          </button>
+          <button
+            class="Button Button--default Button--primary w-32 justify-center"
+            type="button"
+          >
+            SUBMIT
+          </button>
+        </footer>
+      </div>
+    </div>
+  </div>
+</body>
+`;
