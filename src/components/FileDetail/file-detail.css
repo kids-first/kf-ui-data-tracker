@@ -23,17 +23,15 @@
 }
 
 .FileInfo--Icon {
-  background: #b3b4b6;
   @extend .mr-8,
     .rounded-full,
     .w-6,
     .h-6,
     .flex,
     .justify-center,
-    .items-center;
-  .Icon {
-    fill: #22292f;
-  }
+    .items-center,
+    .bg-lightGrey,
+    .p-4;
 }
 
 .FileInfo--container {
@@ -101,14 +99,6 @@
 }
 .FileVersionList--Element:hover .FileVersionList--hidden {
   @extend .visible, .text-xs, .font-title, .text-grey;
-}
-
-.FileVersionList--icon {
-  background: #b3b4b6;
-  @extend .mr-4, .rounded-full, .p-4, .flex, .justify-center, .items-center;
-  .Icon {
-    fill: #22292f;
-  }
 }
 
 .FileVersionList--text {

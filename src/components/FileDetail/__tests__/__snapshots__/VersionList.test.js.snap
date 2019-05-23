@@ -130,29 +130,19 @@ exports[`renders with more than one versions 1`] = `
           61.0 kB
         </p>
         <div
-          class="flex"
+          class="FileInfo--Icon"
         >
-          <div
-            class="FileVersionList--icon"
-          >
-            <svg
-              height="12"
-              id="mock-icon"
-              kind="settings"
-              width="12"
-            >
-              <title>
-                icon-
-                settings
-              </title>
-            </svg>
-          </div>
-          <p
-            class="FileVersionList--text my-0 w-48"
-          >
-            Other
-          </p>
+          <svg>
+            <title>
+              icon-misc
+            </title>
+          </svg>
         </div>
+        <p
+          class="FileVersionList--text my-0 w-48"
+        >
+          Other
+        </p>
         <button>
           <svg
             class="FileVersionList--hidden w-12"
@@ -254,29 +244,19 @@ exports[`renders with more than one versions 1`] = `
           75.5 kB
         </p>
         <div
-          class="flex"
+          class="FileInfo--Icon"
         >
-          <div
-            class="FileVersionList--icon"
-          >
-            <svg
-              height="12"
-              id="mock-icon"
-              kind="settings"
-              width="12"
-            >
-              <title>
-                icon-
-                settings
-              </title>
-            </svg>
-          </div>
-          <p
-            class="FileVersionList--text my-0 w-48"
-          >
-            Other
-          </p>
+          <svg>
+            <title>
+              icon-misc
+            </title>
+          </svg>
         </div>
+        <p
+          class="FileVersionList--text my-0 w-48"
+        >
+          Other
+        </p>
         <button>
           <svg
             class="FileVersionList--hidden w-12"
@@ -378,29 +358,19 @@ exports[`renders with more than one versions 1`] = `
           63.0 kB
         </p>
         <div
-          class="flex"
+          class="FileInfo--Icon"
         >
-          <div
-            class="FileVersionList--icon"
-          >
-            <svg
-              height="12"
-              id="mock-icon"
-              kind="settings"
-              width="12"
-            >
-              <title>
-                icon-
-                settings
-              </title>
-            </svg>
-          </div>
-          <p
-            class="FileVersionList--text my-0 w-48"
-          >
-            Other
-          </p>
+          <svg>
+            <title>
+              icon-misc
+            </title>
+          </svg>
         </div>
+        <p
+          class="FileVersionList--text my-0 w-48"
+        >
+          Other
+        </p>
         <button>
           <svg
             class="FileVersionList--hidden w-12"
@@ -502,29 +472,19 @@ exports[`renders with more than one versions 1`] = `
           35.6 kB
         </p>
         <div
-          class="flex"
+          class="FileInfo--Icon"
         >
-          <div
-            class="FileVersionList--icon"
-          >
-            <svg
-              height="12"
-              id="mock-icon"
-              kind="settings"
-              width="12"
-            >
-              <title>
-                icon-
-                settings
-              </title>
-            </svg>
-          </div>
-          <p
-            class="FileVersionList--text my-0 w-48"
-          >
-            Other
-          </p>
+          <svg>
+            <title>
+              icon-misc
+            </title>
+          </svg>
         </div>
+        <p
+          class="FileVersionList--text my-0 w-48"
+        >
+          Other
+        </p>
         <button>
           <svg
             class="FileVersionList--hidden w-12"
@@ -675,29 +635,19 @@ exports[`renders with only one version 1`] = `
           63.0 kB
         </p>
         <div
-          class="flex"
+          class="FileInfo--Icon"
         >
-          <div
-            class="FileVersionList--icon"
-          >
-            <svg
-              height="12"
-              id="mock-icon"
-              kind="settings"
-              width="12"
-            >
-              <title>
-                icon-
-                settings
-              </title>
-            </svg>
-          </div>
-          <p
-            class="FileVersionList--text my-0 w-48"
-          >
-            Other
-          </p>
+          <svg>
+            <title>
+              icon-misc
+            </title>
+          </svg>
         </div>
+        <p
+          class="FileVersionList--text my-0 w-48"
+        >
+          Other
+        </p>
         <button>
           <svg
             class="FileVersionList--hidden w-12"

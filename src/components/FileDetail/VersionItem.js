@@ -11,6 +11,10 @@ import {
   formatFileSize,
   downloadFile,
 } from '../../common/fileUtils';
+import Box from '../../assets/icons/box';
+import Clinical from '../../assets/icons/clinical';
+import Misc from '../../assets/icons/misc';
+import Sequencing from '../../assets/icons/sequencing';
 /**
  * Displays single version item from the list
  */
@@ -83,18 +87,15 @@ const VersionItem = ({
           <p className="FileVersionList--text w-24">
             {formatFileSize(versionNode.size, true) || 'Size Unknown'}
           </p>
-          <div className="flex">
-            <div className="FileVersionList--icon">
-              <Icon
-                width={12}
-                height={12}
-                kind={fileTypeDetail[fileType].icon}
-              />
-            </div>
-            <p className="FileVersionList--text my-0 w-48">
-              {fileTypeDetail[fileType].title}
-            </p>
+          <div className="FileInfo--Icon">
+            {fileType === 'SHM' && <Box />}
+            {fileType === 'CLN' && <Clinical />}
+            {fileType === 'SEQ' && <Sequencing />}
+            {fileType === 'OTH' && <Misc />}
           </div>
+          <p className="FileVersionList--text my-0 w-48">
+            {fileTypeDetail[fileType].title}
+          </p>
           <button
             onClick={e =>
               downloadFile(

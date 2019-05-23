@@ -1,74 +1,58 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classes from 'classnames';
-import {Icon} from 'kf-uikit';
-
+import {fileTypeDetail} from '../../common/fileUtils';
+import Box from '../../assets/icons/box';
+import Clinical from '../../assets/icons/clinical';
+import Misc from '../../assets/icons/misc';
+import Sequencing from '../../assets/icons/sequencing';
 /**
  * A radio button that displays information about a file type with a title,
  * description, and icon.
  */
-const SelectElement = ({
-  className,
-  name,
-  value,
-  title,
-  body,
-  select,
-  selected,
-  icon,
-}) => {
+const SelectElement = ({className, value, select, selected}) => {
   let selectElementClass = classes(
     'SelectElement',
-    selected ? 'border border-lightBlue' : 'none',
+    selected && 'SelectElement-fill',
     className,
   );
   let selectIconClass = classes(
     'SelectElement--Icon',
-    selected ? 'bg-lightBlue' : 'bg-lightGrey',
+    selected && 'SelectElement--Icon-fill',
   );
   return (
     <label className={selectElementClass}>
       <input
         className="border m-16"
         type="radio"
-        name={name}
+        name={value}
         value={value}
         checked={selected}
         onChange={e => select(e)}
       />
       <div className={selectIconClass}>
-        <Icon kind={icon} className={selected ? 'text-white' : 'none'} />
+        {value === 'SHM' && <Box />}
+        {value === 'CLN' && <Clinical />}
+        {value === 'SEQ' && <Sequencing />}
+        {value === 'OTH' && <Misc />}
       </div>
       <div>
-        <p className="mt-8 font-bold font-sm leading-none">{title}</p>
-        <span className="font-normal text-grey text-xs">{body}</span>
+        <p className="m-0 font-bold font-sm">{fileTypeDetail[value].title}</p>
+        <span className="font-normal text-grey text-xs">
+          {fileTypeDetail[value].description}
+        </span>
       </div>
     </label>
   );
 };
 
 SelectElement.propTypes = {
-  /** The key value signed to the selection */
-  name: PropTypes.string.isRequired,
   /** The value of the fileType enum */
   value: PropTypes.string.isRequired,
-  /** The title displayed on the selection card */
-  title: PropTypes.string.isRequired,
-  /** The body displayed on the selection card */
-  body: PropTypes.string,
-  /** The icon for this selection */
-  icon: PropTypes.string,
   /** onChange event for the radio button */
   select: PropTypes.func.isRequired,
   /** whether the radio button is selected or not */
   selected: PropTypes.bool.isRequired,
-};
-
-SelectElement.defaultProps = {
-  name: null,
-  title: null,
-  body: null,
-  icon: null,
 };
 
 export default SelectElement;

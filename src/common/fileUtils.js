@@ -43,10 +43,26 @@ export const downloadFile = (
 
 // Store file type title, description and icon
 export const fileTypeDetail = {
-  SHM: {icon: 'release', title: 'Shipping Manifest'},
-  CLN: {icon: 'biospecimen', title: 'Clinical/Phenotype Data'},
-  SEQ: {icon: 'customize', title: 'Sequencing Manifest'},
-  OTH: {icon: 'settings', title: 'Other'},
+  SHM: {
+    icon: 'box',
+    title: 'Shipping Manifest',
+    description: 'File type description gose here...',
+  },
+  CLN: {
+    icon: 'clinical',
+    title: 'Clinical/Phenotype Data',
+    description: 'File type description gose here...',
+  },
+  SEQ: {
+    icon: 'misc',
+    title: 'Sequencing Manifest',
+    description: 'File type description gose here...',
+  },
+  OTH: {
+    icon: 'sequencing',
+    title: 'Other',
+    description: 'File type description gose here...',
+  },
 };
 
 // Sort file versions based on the version createdAt date (Latest first)

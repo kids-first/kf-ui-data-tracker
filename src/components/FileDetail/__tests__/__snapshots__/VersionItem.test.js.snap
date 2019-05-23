@@ -88,29 +88,19 @@ exports[`renders correctly with 0 as index -- show latest 1`] = `
       61.0 kB
     </p>
     <div
-      class="flex"
+      class="FileInfo--Icon"
     >
-      <div
-        class="FileVersionList--icon"
-      >
-        <svg
-          height="12"
-          id="mock-icon"
-          kind="settings"
-          width="12"
-        >
-          <title>
-            icon-
-            settings
-          </title>
-        </svg>
-      </div>
-      <p
-        class="FileVersionList--text my-0 w-48"
-      >
-        Other
-      </p>
+      <svg>
+        <title>
+          icon-misc
+        </title>
+      </svg>
     </div>
+    <p
+      class="FileVersionList--text my-0 w-48"
+    >
+      Other
+    </p>
     <button>
       <svg
         class="FileVersionList--hidden w-12"
@@ -217,29 +207,19 @@ exports[`renders correctly with 1 as index -- show version kfId 1`] = `
       61.0 kB
     </p>
     <div
-      class="flex"
+      class="FileInfo--Icon"
     >
-      <div
-        class="FileVersionList--icon"
-      >
-        <svg
-          height="12"
-          id="mock-icon"
-          kind="settings"
-          width="12"
-        >
-          <title>
-            icon-
-            settings
-          </title>
-        </svg>
-      </div>
-      <p
-        class="FileVersionList--text my-0 w-48"
-      >
-        Other
-      </p>
+      <svg>
+        <title>
+          icon-misc
+        </title>
+      </svg>
     </div>
+    <p
+      class="FileVersionList--text my-0 w-48"
+    >
+      Other
+    </p>
     <button>
       <svg
         class="FileVersionList--hidden w-12"

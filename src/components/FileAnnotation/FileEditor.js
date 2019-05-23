@@ -4,6 +4,7 @@ import {withRouter} from 'react-router-dom';
 import {Button, Icon, GridContainer} from 'kf-uikit';
 import SelectElement from './SelectElement';
 import Badge from '../Badge/Badge';
+import {fileTypeDetail} from '../../common/fileUtils';
 /**
  * Form to add fields to a newly uploaded file
  */
@@ -79,42 +80,14 @@ const FileEditor = ({
         </label>
         <fieldset className="mt-8 cell-12 md:cell-6">
           Select a file type (required):
-          <SelectElement
-            name="shipping"
-            value="SHM"
-            icon="release"
-            title="Shipping Manifest"
-            body="Some helpful description."
-            select={e => selectFileType(e)}
-            selected={fileType === 'SHM'}
-          />
-          <SelectElement
-            name="clin"
-            value="CLN"
-            icon="biospecimen"
-            title="Clinical/Phenotype Data"
-            body="Some helpful description."
-            select={selectFileType}
-            selected={fileType === 'CLN'}
-          />
-          <SelectElement
-            name="sequening"
-            value="SEQ"
-            icon="customize"
-            title="Sequencing Manifest"
-            body="Some helpful description."
-            select={selectFileType}
-            selected={fileType === 'SEQ'}
-          />
-          <SelectElement
-            name="other"
-            value="OTH"
-            icon="settings"
-            title="Other"
-            body="Some helpful description."
-            select={selectFileType}
-            selected={fileType === 'OTH'}
-          />
+          {Object.keys(fileTypeDetail).map(item => (
+            <SelectElement
+              key={item}
+              value={item}
+              select={e => selectFileType(e)}
+              selected={fileType === item}
+            />
+          ))}
         </fieldset>
         <div className="cell-12 flex justify-end mt-4">
           <Button
