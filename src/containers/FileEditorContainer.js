@@ -45,12 +45,23 @@ const FileEditorContainer = ({kfId, history, match, children}) => {
         return (
           <Mutation
             mutation={UPDATE_FILE}
-            refetchQueries={res => [
-              {
+            update={(cache, {data: {updateFile}}) => {
+              // Re-writes the study in the cache with the deleted file
+              // removed.
+              const {fileByKfId} = cache.readQuery({
                 query: GET_FILE_BY_ID,
                 variables: {kfId},
-              },
-            ]}
+              });
+              const data = {
+                fileByKfId: {
+                  ...fileByKfId,
+                  ...updateFile.file,
+                },
+              };
+              cache.writeQuery({
+                query: GET_FILE_BY_ID,
+                data,
+              });
             }}
           >
             {(updateFile, {_}) =>
