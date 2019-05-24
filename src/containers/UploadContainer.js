@@ -40,7 +40,7 @@ const UploadContainer = ({
   // Will forward user to annotation page when a file has been uploaded
   const uploadFile = (file, createFile, onUploadCallBack) => {
     createFile({
-      variables: {file, studyId},
+      variables: {file, studyId, fileId},
     })
       .then(resp => {
         if (resp.data.createFile.success) {
