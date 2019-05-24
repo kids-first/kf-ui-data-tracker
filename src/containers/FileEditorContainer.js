@@ -1,24 +1,27 @@
 import React, {useState} from 'react';
 import {withRouter} from 'react-router-dom';
-import FileEditor from '../components/FileAnnotation/FileEditor';
 import {LoadingPlaceholder} from '../components/Loading';
 import {Query, Mutation} from 'react-apollo';
 import {UPDATE_FILE} from '../state/mutations';
 import {GET_FILE_BY_ID} from '../state/queries';
 import PropTypes from 'prop-types';
 
-const FileEditorContainer = ({kfId, history, match}) => {
+const FileEditorContainer = ({kfId, history, match, children}) => {
   const [fileType, setFileType] = useState();
   const [fileNameInput, setFileName] = useState();
   const [fileDescriptionInput, setFileDescription] = useState();
   // Updates the file then routes to the study's files listing
-  const onSubmit = (e, updateFile) => {
+  const onSubmit = (e, updateFile, onSubmitCallBack) => {
     e.preventDefault();
     const name = fileNameInput;
     const description = fileDescriptionInput;
     updateFile({variables: {kfId, name, description, fileType}})
       .then(() => {
-        history.goBack();
+        if (onSubmitCallBack) {
+          onSubmitCallBack();
+        } else {
+          history.goBack();
+        }
       })
       .catch(err => console.log(err));
   };
@@ -48,21 +51,21 @@ const FileEditorContainer = ({kfId, history, match}) => {
                 variables: {kfId},
               },
             ]}
-          >
-            {(updateFile, {_}) => {
-              return (
-                <FileEditor
-                  kfId={data.fileByKfId.kfId}
-                  name={fileNameInput}
-                  description={data.fileByKfId.description}
-                  fileType={fileType}
-                  selectFileType={selectFileType}
-                  onSubmit={e => onSubmit(e, updateFile)}
-                  onNameChange={e => setFileName(e.target.value)}
-                  onDescriptionChange={e => setFileDescription(e.target.value)}
-                />
-              );
             }}
+          >
+            {(updateFile, {_}) =>
+              children &&
+              children({
+                updateFile,
+                fileByKfId: data.fileByKfId,
+                fileNameInput,
+                fileType,
+                selectFileType,
+                onSubmit,
+                setFileName,
+                setFileDescription,
+              })
+            }
           </Mutation>
         );
       }}
@@ -70,7 +73,7 @@ const FileEditorContainer = ({kfId, history, match}) => {
   );
 };
 
-FileEditor.propTypes = {
+FileEditorContainer.propTypes = {
   kfId: PropTypes.string.isRequired,
 };
 
