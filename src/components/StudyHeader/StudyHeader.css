@@ -1,7 +1,7 @@
 .StudyHeader--TopText {
-  @extend .row-1, .cell-12, .font-body;
+  @extend .row-1, .cell-12, .font-body, .text-darkGrey;
 }
 
 .StudyHeader--TitleText {
-  @extend .text-blue, .m-0, .row-3, .cell-12, .font-light, .text-4xl;
+  @extend .block, .text-blue, .leading-none, .font-light, .text-4xl;
 }
