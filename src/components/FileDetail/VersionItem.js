@@ -11,10 +11,7 @@ import {
   formatFileSize,
   downloadFile,
 } from '../../common/fileUtils';
-import Box from '../../assets/icons/box';
-import Clinical from '../../assets/icons/clinical';
-import Misc from '../../assets/icons/misc';
-import Sequencing from '../../assets/icons/sequencing';
+import SvgIcon from '../Icon/Icon';
 /**
  * Displays single version item from the list
  */
@@ -33,29 +30,7 @@ const VersionItem = ({
     <Mutation mutation={FILE_DOWNLOAD_URL}>
       {downloadFileMutation => (
         <li key={versionNode.kfId} className={versionItemClass}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 94 94"
-            height="12"
-            width="12"
-            className="mx-16"
-          >
-            <defs />
-            <title>icon-error</title>
-            <g id="Layer_1" data-name="Layer 1">
-              <circle fill="#fff" cx="47" cy="47" r="43" />
-              <path
-                fill="#e45562"
-                d="M47,94A47,47,0,1,1,94,47,47,47,0,0,1,47,94ZM47,8A39,39,0,1,0,86,47,39,39,0,0,0,47,8Z"
-                transform="translate(0 0)"
-              />
-              <path
-                fill="#e45562"
-                d="M59.83,64.07a4.25,4.25,0,0,1-3-1.26L47,53.05,37.2,62.83a4.32,4.32,0,0,1-6.05,0,4.26,4.26,0,0,1,0-6L41,47l-9.79-9.8a4.3,4.3,0,0,1,0-6.05,4.38,4.38,0,0,1,6.07,0L47.06,41l9.7-9.65a4.3,4.3,0,0,1,6,0,4.24,4.24,0,0,1,0,6.05L53.11,47l9.74,9.74a4.3,4.3,0,0,1,0,6.06,4.25,4.25,0,0,1-3,1.26Zm-1-30.75h0Z"
-                transform="translate(0 0)"
-              />
-            </g>
-          </svg>
+          <SvgIcon kind="Error" width="12" height="12" className="mx-16 mb-4" />
           <button
             className="FileVersionElement--button w-24"
             onClick={e =>
@@ -88,12 +63,13 @@ const VersionItem = ({
             {formatFileSize(versionNode.size, true) || 'Size Unknown'}
           </p>
           <div className="FileInfo--Icon">
-            {fileType === 'SHM' && <Box />}
-            {fileType === 'CLN' && <Clinical />}
-            {fileType === 'SEQ' && <Sequencing />}
-            {fileType === 'OTH' && <Misc />}
+            <SvgIcon
+              kind={fileTypeDetail[fileType].icon}
+              width="24"
+              height="24"
+            />
           </div>
-          <p className="FileVersionList--text my-0 w-48">
+          <p className="FileVersionList--text w-48">
             {fileTypeDetail[fileType].title}
           </p>
           <button
