@@ -11,7 +11,11 @@ module.exports = {
         ['@babel/preset-env', {targets: {node: 'current'}}],
         '@babel/preset-react',
       ],
-      plugins: ['@babel/transform-runtime'],
+      plugins: [
+        '@babel/transform-runtime',
+        '@babel/plugin-proposal-export-default-from',
+        '@babel/plugin-transform-modules-commonjs',
+      ],
     },
   },
 };
