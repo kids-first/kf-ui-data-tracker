@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classes from 'classnames';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import {Icon} from 'kf-uikit';
-import Checkmark from '../../assets/icons/checkmark';
+import SvgIcon from '../Icon/Icon';
 
 const CopyButton = ({className, text}) => {
   const copyButtonClass = classes(className);
@@ -22,7 +22,7 @@ const CopyButton = ({className, text}) => {
         <button>
           {copied ? (
             <span className="CopyButton">
-              <Checkmark />
+              <SvgIcon kind="Checkmark" width="10" height="10" />
               <span className="CopyTooltip">Copied!</span>
             </span>
           ) : (
