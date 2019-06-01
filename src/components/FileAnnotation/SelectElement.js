@@ -2,10 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classes from 'classnames';
 import {fileTypeDetail} from '../../common/fileUtils';
-import Box from '../../assets/icons/box';
-import Clinical from '../../assets/icons/clinical';
-import Misc from '../../assets/icons/misc';
-import Sequencing from '../../assets/icons/sequencing';
+import SvgIcon from '../Icon/Icon';
 /**
  * A radio button that displays information about a file type with a title,
  * description, and icon.
@@ -31,10 +28,7 @@ const SelectElement = ({className, value, select, selected}) => {
         onChange={e => select(e)}
       />
       <div className={selectIconClass}>
-        {value === 'SHM' && <Box />}
-        {value === 'CLN' && <Clinical />}
-        {value === 'SEQ' && <Sequencing />}
-        {value === 'OTH' && <Misc />}
+        <SvgIcon kind={fileTypeDetail[value].icon} width="30" height="30" />
       </div>
       <div>
         <p className="m-0 font-bold font-sm">{fileTypeDetail[value].title}</p>

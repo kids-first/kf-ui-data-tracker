@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classes from 'classnames';
-import Notification from '../../assets/icons/notification';
+import SvgIcon from '../Icon/Icon';
 /**
  * Displays notification bar with one main button (current)
  */
@@ -10,7 +10,14 @@ const NotificationBar = ({className, mainButton, icon, message, note}) => {
   return (
     <div className={notificationBarClass}>
       <div className="flex">
-        {icon && <Notification className="mr-4" />}
+        {icon && (
+          <SvgIcon
+            kind="Notification"
+            width="24"
+            height="24"
+            className="mr-4"
+          />
+        )}
         <p className="m-0 text-sm self-stretch">
           <span className="font-bold text-base pr-4">{message}</span>
           {note}

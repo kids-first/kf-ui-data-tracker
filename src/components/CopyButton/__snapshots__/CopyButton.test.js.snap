@@ -28,11 +28,6 @@ exports[`displays checkmark svg on click 2`] = `
     <span
       class="CopyButton"
     >
-      <svg>
-        <title>
-          icon-checkmark
-        </title>
-      </svg>
       <span
         class="CopyTooltip"
       >

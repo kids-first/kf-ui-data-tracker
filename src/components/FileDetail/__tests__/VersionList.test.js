@@ -2,15 +2,16 @@ import React from 'react';
 import {MemoryRouter} from 'react-router-dom';
 import {MockedProvider} from 'react-apollo/test-utils';
 import {render} from 'react-testing-library';
+import {mocks} from '../../../../__mocks__/kf-api-study-creator/mocks';
+import fileByKfId from '../../../../__mocks__/kf-api-study-creator/responses/fileByKfId';
 import VersionList from '../VersionList';
-import fileByKfId from './fileByKfId';
 
 it('renders with more than one versions', () => {
-  const fileNodeMultipleVersion = fileByKfId[0].data.fileByKfId;
+  const fileNodeMultipleVersion = fileByKfId.data.fileByKfId;
 
   const tree = render(
     <MemoryRouter>
-      <MockedProvider>
+      <MockedProvider mocks={mocks}>
         <VersionList
           fileNode={fileNodeMultipleVersion}
           studyId={'SD_00000000'}
@@ -21,21 +22,5 @@ it('renders with more than one versions', () => {
   expect(tree.container).toMatchSnapshot();
 
   const lis = tree.container.querySelectorAll('.FileVersionList--Element');
-  expect(lis.length).toBe(4);
-});
-
-it('renders with only one version', () => {
-  const fileNodeOneVersion = fileByKfId[1].data.fileByKfId;
-
-  const tree = render(
-    <MemoryRouter>
-      <MockedProvider>
-        <VersionList fileNode={fileNodeOneVersion} studyId={'SD_00000000'} />
-      </MockedProvider>
-    </MemoryRouter>,
-  );
-  expect(tree.container).toMatchSnapshot();
-
-  const lis = tree.container.querySelectorAll('.FileVersionList--Element');
-  expect(lis.length).toBe(1);
+  expect(lis.length).toBe(3);
 });

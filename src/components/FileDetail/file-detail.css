@@ -80,8 +80,11 @@
     .uppercase,
     .flex,
     .leading-tight,
-    .align-middle;
+    .align-middle,
+    .whitespace-no-wrap,
+    .h-full;
 }
+
 .FileVersionList--Button:hover {
   @extend .bg-lightGrey, .text-tealHover;
 }
@@ -102,7 +105,7 @@
 }
 
 .FileVersionList--text {
-  @extend .text-xs, .font-title, .text-grey;
+  @extend .my-4, .text-xs, .font-title, .text-grey;
 }
 
 .FileVersionElement--button {
