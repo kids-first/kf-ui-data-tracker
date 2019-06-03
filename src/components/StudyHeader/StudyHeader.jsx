@@ -11,6 +11,7 @@ const StudyHeader = ({
   shortName,
   name: studyName,
   className,
+  loading,
 }) => {
   const studyHeaderClass = classes('StudyHeader', 'py-8', 'px-12', className);
   const topTextClass = classes('StudyHeader--TopText');
@@ -36,15 +37,17 @@ const StudyHeader = ({
 
 StudyHeader.propTypes = {
   /** the kf_id (SD_XXXXXXX) for the study  */
-  kfId: propTypes.string.isRequired,
+  kfId: propTypes.string,
   /** datetime of when the study was last updated */
-  modifiedAt: propTypes.string.isRequired,
+  modifiedAt: propTypes.string,
   /** user friendly name for the study  */
   shortName: propTypes.string,
   /** long programatic name for the study  */
   name: propTypes.string,
   /** Any additional classes to be applied to the button */
   className: propTypes.string,
+  /** Loading state of the study header*/
+  loading: propTypes.bool,
 };
 
 export default StudyHeader;
