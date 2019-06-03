@@ -5,3 +5,15 @@
 .StudyHeader--TitleText {
   @extend .block, .text-blue, .leading-none, .font-light, .text-4xl;
 }
+
+.StudyHeader--TopText-loading {
+  @extend .row-1, .cell-4, .text-white, .bg-white;
+}
+
+.StudyHeader--TitleText-loading {
+  @extend .pt-16, .pb-20, .mr-16, .bg-white;
+}
+
+.StudyHeader--InfoText-loading {
+  @extend .invisible, .text-white, .bg-white;
+}
