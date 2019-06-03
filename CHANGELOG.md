@@ -1,3 +1,39 @@
+# Kids First Data Tracker Release 0.3.0
+
+## Features
+
+Introduce new version uploading functionality.
+
+### Summary
+
+Feature Emojis: ✨x7 ♻️x3 💄Refactorx2 💄x2 🐛x2 ✅x2 👷x1 🚑x1 🔥 x1
+Feature Labels: [refactor](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/refactor) x9 [design](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/design) x6 [feature](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/feature) x4 [component](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/component) x4 [bug](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/bug) x4 [devops](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/devops) x1 [ready-for-review](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/ready-for-review) x1
+
+### New features and changes
+
+- (#262) ✨ Add logout button - @dankolbman
+- (#222) ♻️  Refactor study header - @XuTheBunny
+- (#231) ✨ Add pagination on file list  - @XuTheBunny
+- (#237) ✨ Add modal view for version upload and annotation - @XuTheBunny
+- (#260) ♻️  Refactor editor and upload container - @XuTheBunny
+- (#258) ✨ Add general svg icon rendering component - @XuTheBunny
+- (#261) 💄Refactor study header style in grid layout - @XuTheBunny
+- (#255) ✨ Add modal component - @XuTheBunny
+- (#254) ✨ Add notification bar component - @XuTheBunny
+- (#253) 💄Refactor copy button using svg icon as component - @XuTheBunny
+- (#251) 💄 Update file type images to match the design - @XuTheBunny
+- (#214) 👷 Add bundlesize status check - @dankolbman
+- (#249) 💄 Align header to page content - @XuTheBunny
+- (#248) 🐛 Remove duplicate props - @dankolbman
+- (#226) ✨ Add file detail view - @XuTheBunny
+- (#245) 🚑 Fix postcss inheritance - @bdolly
+- (#233) 🔥 Remove unused file - @dankolbman
+- (#235) 🐛 Update date compare function - @XuTheBunny
+- (#234) ✅ Global Date.now() mocking - @dankolbman
+- (#218) ♻️  Study File List improvements - @bdolly
+- (#230) ✅ Functional testing for annotating - @dankolbman
+
+
 # Kids First Data Tracker Release 0.2.0
 
 ## Features
