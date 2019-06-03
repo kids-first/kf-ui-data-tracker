@@ -3,7 +3,7 @@ import {Route} from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
 import AdminRoute from './AdminRoute';
 
-import {Header} from 'kf-uikit';
+import {Header, Button} from 'kf-uikit';
 import {
   AnnotationView,
   LoginView,
@@ -27,6 +27,22 @@ const Routes = () => (
               history.push(`/`);
             },
           }}
+          buttons={[
+            (localStorage.getItem('accessToken') !== null ||
+              localStorage.getItem('egoToken') !== null) && (
+              <Button
+                key={1}
+                onClick={() => {
+                  localStorage.removeItem('accessToken');
+                  localStorage.removeItem('idToken');
+                  localStorage.removeItem('egoToken');
+                  history.go();
+                }}
+              >
+                Logout
+              </Button>
+            ),
+          ]}
         />
       )}
     />
