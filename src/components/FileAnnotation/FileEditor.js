@@ -37,7 +37,7 @@ const FileEditor = ({
         {editingName ? (
           <label
             className="row-1 cell-12 flex justify-between"
-            for="file_name_input"
+            htmlFor="file_name_input"
           >
             <input
               data-testid="name-input"
