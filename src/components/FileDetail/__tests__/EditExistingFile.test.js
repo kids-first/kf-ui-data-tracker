@@ -3,8 +3,8 @@ import wait from 'waait';
 import {MockedProvider} from 'react-apollo/test-utils';
 import {MemoryRouter} from 'react-router-dom';
 import {render, fireEvent} from 'react-testing-library';
-import Routes from '../../Routes';
-import {mocks} from '../../../__mocks__/kf-api-study-creator/mocks';
+import Routes from '../../../Routes';
+import {mocks} from '../../../../__mocks__/kf-api-study-creator/mocks';
 
 jest.mock('auth0-js');
 
@@ -26,10 +26,10 @@ beforeAll(() => {
   document.getSelection = getSelection;
 });
 
-it('edits a file correctly', async () => {
+it('edits an existing file correctly', async () => {
   const tree = render(
     <MockedProvider mocks={mocks}>
-      <MemoryRouter initialEntries={['/study/SD_8WX8QQ06/files']}>
+      <MemoryRouter initialEntries={['/study/SD_8WX8QQ06/files/']}>
         <Routes />
       </MemoryRouter>
     </MockedProvider>,
@@ -39,34 +39,43 @@ it('edits a file correctly', async () => {
   expect(tree.queryAllByText(/organization.jpeg/i).length).toBe(1);
 
   // Click on the first file's name to go to file detail page
-  const fileName = tree.queryByTestId('edit-file');
+  const fileName = tree.getByText(/organization.jpeg/i);
   fireEvent.click(fileName);
   await wait();
 
-  // Click on the file's edit button
+  // Click on the file's edit button to open annotation modal
   fireEvent.click(tree.getByText(/EDIT/));
   await wait();
 
-  // Click edit button to edit the file name
-  fireEvent.click(tree.queryByTestId('edit-name-button'));
+  expect(tree.container).toMatchSnapshot();
+
+  // Click on the notification bar button to go to upload modal
+  fireEvent.click(tree.getByTestId('notificationBar-button'));
+  await wait();
+  expect(tree.container).toMatchSnapshot();
+
+  // Click on the notification bar button again to go back to annotation modal
+  fireEvent.click(tree.getByTestId('notificationBar-button'));
   await wait();
 
+  // Update file name
   const nameInput = tree.getByTestId('name-input');
   fireEvent.change(nameInput, {target: {value: 'mynewfile.txt'}});
-
-  // Click save icon
-  fireEvent.click(tree.getByTestId('save-name-button'));
   await wait();
 
-  // Update the description
+  // Update file description
   const descInput = tree.getByTestId('description-input');
   fireEvent.change(descInput, {target: {value: 'Some description here'}});
   await wait();
 
-  // Click 'Annotate File' button to return to file listing
-  fireEvent.click(tree.getByText(/annotate file/i));
+  // Click 'Submit' button to return to file detail view
+  fireEvent.click(tree.getByText(/SUBMIT/));
+  await wait();
 
-  // Old name should have been updated
+  // Expect to see the file name and description updated on detail view
   expect(tree.queryAllByText(/organizaton.jpeg/i).length).toBe(0);
+  expect(tree.queryAllByText(/Some description here/i).length).toBe(1);
   expect(tree.queryAllByText(/mynewfile.txt/i).length).toBe(1);
+
+  expect(tree.container).toMatchSnapshot();
 });
