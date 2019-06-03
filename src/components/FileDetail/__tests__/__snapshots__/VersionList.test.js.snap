@@ -20,15 +20,11 @@ exports[`renders with more than one versions 1`] = `
           )
         </span>
       </p>
-      <label
+      <button
         class="FileVersionList--Button"
       >
         UPLOAD VERSION
-        <input
-          class="hidden"
-          type="file"
-        />
-      </label>
+      </button>
     </div>
     <ul
       class="FileVersionList"
