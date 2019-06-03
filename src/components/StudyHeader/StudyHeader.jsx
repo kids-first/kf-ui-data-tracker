@@ -11,9 +11,28 @@ const StudyHeader = ({
   shortName,
   name: studyName,
   className,
+  loading,
 }) => {
   const studyHeaderClass = classes('StudyHeader', 'py-8', 'px-12', className);
-  const topTextClass = classes('StudyHeader--TopText');
+  const topTextClass = classes(
+    loading ? 'StudyHeader--TopText-loading' : 'StudyHeader--TopText',
+  );
+  const titleTextClass = classes(
+    loading ? 'StudyHeader--TitleText-loading' : 'StudyHeader--TitleText',
+    'row-3',
+    'cell-12',
+    'md:row-2',
+    'md:cell-10',
+  );
+  const infoTextClass = classes(
+    'hidden',
+    'row-2',
+    'cell-12',
+    'md:cell-2',
+    'md:flex-row',
+    'md:flex-col',
+    loading ? 'StudyHeader--InfoText-loading' : null,
+  );
   return (
     <GridContainer className={studyHeaderClass} collapsed="rows">
       <p className={topTextClass}>
@@ -23,10 +42,8 @@ const StudyHeader = ({
           last updated: {modifiedAt && <TimeAgo date={modifiedAt} />}
         </small>
       </p>
-      <p className="StudyHeader--TitleText row-3 cell-12 md:row-2 md:cell-10">
-        {shortName || studyName}
-      </p>
-      <div className="hidden row-2 cell-12 md:cell-2 md:flex-row md:flex-col">
+      <p className={titleTextClass}>{shortName || studyName}</p>
+      <div className={infoTextClass}>
         <p className="m-0 text-sm font-bold inline-block pr-8">Contacts:</p>
         <p className="m-0 font-light inline-block">Mary Marazita</p>
       </div>
@@ -36,15 +53,17 @@ const StudyHeader = ({
 
 StudyHeader.propTypes = {
   /** the kf_id (SD_XXXXXXX) for the study  */
-  kfId: propTypes.string.isRequired,
+  kfId: propTypes.string,
   /** datetime of when the study was last updated */
-  modifiedAt: propTypes.string.isRequired,
+  modifiedAt: propTypes.string,
   /** user friendly name for the study  */
   shortName: propTypes.string,
   /** long programatic name for the study  */
   name: propTypes.string,
   /** Any additional classes to be applied to the button */
   className: propTypes.string,
+  /** Loading state of the study header*/
+  loading: propTypes.bool,
 };
 
 export default StudyHeader;
