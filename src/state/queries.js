@@ -57,6 +57,7 @@ export const GET_STUDY_BY_ID = gql`
 export const GET_FILE_BY_ID = gql`
   query File($kfId: String!) {
     fileByKfId(kfId: $kfId) {
+      id
       kfId
       name
       description
@@ -65,6 +66,7 @@ export const GET_FILE_BY_ID = gql`
       versions {
         edges {
           node {
+            id
             kfId
             createdAt
             size

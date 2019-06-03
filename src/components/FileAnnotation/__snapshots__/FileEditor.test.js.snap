@@ -1911,11 +1911,12 @@ Object {
         >
           <label
             class="row-1 cell-12 flex justify-between"
+            for="file_name_input"
           >
             <input
               class="FileEditor--Input"
               data-testid="name-input"
-              name="name"
+              name="file_name_input"
               placeholder="Add your file name here..."
               type="text"
               value=""

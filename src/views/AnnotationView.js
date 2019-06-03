@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import FileEditorContainer from '../containers/FileEditorContainer';
 import {GridContainer} from 'kf-uikit';
+import FileEditor from '../components/FileAnnotation/FileEditor';
+import {Button} from 'kf-uikit';
 
 const AnnotationView = ({match}) => {
   // The kf_id of the file
@@ -16,7 +18,44 @@ const AnnotationView = ({match}) => {
         engineers accurately interpret your data.
       </p>
       <section className="study-file-list cell-12 row-3">
-        <FileEditorContainer kfId={fileId} />
+        <FileEditorContainer kfId={fileId}>
+          {({
+            updateFile,
+            fileByKfId,
+            fileNameInput,
+            fileType,
+            selectFileType,
+            onSubmit,
+            setFileName,
+            setFileDescription,
+          }) => (
+            <FileEditor
+              showStatus
+              kfId={fileByKfId.kfId}
+              name={fileNameInput}
+              description={fileByKfId.description}
+              fileType={fileType}
+              selectFileType={selectFileType}
+              onSubmit={e => onSubmit(e, updateFile)}
+              onNameChange={e => setFileName(e.target.value)}
+              onDescriptionChange={e => setFileDescription(e.target.value)}
+              renderButtons={history => (
+                <Fragment>
+                  <Button
+                    onClick={() => {
+                      history.goBack();
+                    }}
+                  >
+                    Cancel
+                  </Button>
+                  <Button type="submit" color="primary" className="ml-12">
+                    Annotate File
+                  </Button>
+                </Fragment>
+              )}
+            />
+          )}
+        </FileEditorContainer>
       </section>
     </GridContainer>
   );

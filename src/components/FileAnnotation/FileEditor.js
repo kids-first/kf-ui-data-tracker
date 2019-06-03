@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
+import classes from 'classnames';
 import {withRouter} from 'react-router-dom';
-import {Button, Icon, GridContainer} from 'kf-uikit';
+import {Icon, GridContainer} from 'kf-uikit';
 import SelectElement from './SelectElement';
 import Badge from '../Badge/Badge';
 import {fileTypeDetail} from '../../common/fileUtils';
@@ -18,29 +19,41 @@ const FileEditor = ({
   onNameChange,
   onDescriptionChange,
   history,
+  showStatus,
+  renderButtons,
 }) => {
-  const [editing, setEditing] = useState(false);
-
+  const [editingName, setEditingName] = useState(!showStatus);
+  let editButtonClass = classes('pl-20', {hidden: !showStatus});
+  let badgeClass = classes(showStatus ? 'flex' : 'hidden', 'row-2', 'cell-12');
   return (
-    <form onSubmit={e => onSubmit(e)} className="FileEditor">
+    <form
+      onSubmit={e => {
+        e.preventDefault();
+        onSubmit(e);
+      }}
+      className="FileEditor"
+    >
       <GridContainer collapsed="rows">
-        {editing ? (
-          <label className="row-1 cell-12 flex justify-between">
+        {editingName ? (
+          <label
+            className="row-1 cell-12 flex justify-between"
+            for="file_name_input"
+          >
             <input
               data-testid="name-input"
               className="FileEditor--Input"
               type="text"
-              name="name"
+              name="file_name_input"
               placeholder="Add your file name here..."
               defaultValue={name}
               onChange={e => onNameChange(e)}
             />
             <button
               data-testid="save-name-button"
-              className="pl-20"
+              className={editButtonClass}
               type="button"
               onClick={() => {
-                setEditing(false);
+                setEditingName(false);
               }}
             >
               <span className="hidden">save file name</span>
@@ -55,7 +68,7 @@ const FileEditor = ({
               className="pl-20 pt-4"
               type="button"
               onClick={() => {
-                setEditing(true);
+                setEditingName(true);
               }}
             >
               <span className="hidden">edit file name</span>
@@ -63,7 +76,7 @@ const FileEditor = ({
             </button>
           </h3>
         )}
-        <div className="flex row-2 cell-12">
+        <div className={badgeClass}>
           <Badge state="new" />
           <Badge state="pendingApproval" />
         </div>
@@ -89,18 +102,11 @@ const FileEditor = ({
             />
           ))}
         </fieldset>
-        <div className="cell-12 flex justify-end mt-4">
-          <Button
-            onClick={() => {
-              history.goBack();
-            }}
-          >
-            Cancel
-          </Button>
-          <Button type="submit" color="primary" className="ml-12">
-            Annotate File
-          </Button>
-        </div>
+        {renderButtons && (
+          <div className="cell-12 flex justify-end mt-4">
+            {renderButtons(history)}
+          </div>
+        )}
       </GridContainer>
     </form>
   );
@@ -116,11 +122,13 @@ FileEditor.propTypes = {
   /** The value of the currently selected fileType's enum*/
   fileType: PropTypes.string,
   /** Action to perform when form is submitted */
-  onSubmit: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func,
   /** Action to perform when name input is updated */
   onNameChange: PropTypes.func.isRequired,
   /** Function for onChange event on file type selection */
   selectFileType: PropTypes.func.isRequired,
+  /** If to hide the save/cancel buttons and badge */
+  showStatus: PropTypes.bool,
 };
 
 export default withRouter(FileEditor);

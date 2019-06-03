@@ -1,6 +1,7 @@
 {
   "data": {
     "fileByKfId": {
+      "id": "f1",
       "kfId": "SF_5ZPEM167",
       "name": "organization.jpeg",
       "description": "Month necessary animal end standard case. View system operation message decade. Actually sing because deal everything woman subject.",
@@ -10,6 +11,7 @@
         "edges": [
           {
             "node": {
+              "id": "v1",
               "kfId": "FV_TT8NF09R",
               "downloadUrl": "http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167/version/FV_TT8NF09R",
               "size": 9893,
@@ -20,6 +22,7 @@
           },
           {
             "node": {
+              "id": "v2",
               "kfId": "FV_DMTKEFQW",
               "downloadUrl": "http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167/version/FV_DMTKEFQW",
               "size": 5460,
@@ -30,6 +33,7 @@
           },
           {
             "node": {
+              "id": "v3",
               "kfId": "FV_2WV3VNJN",
               "downloadUrl": "http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167/version/FV_2WV3VNJN",
               "size": 5419,
