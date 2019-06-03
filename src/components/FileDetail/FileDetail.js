@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import {withRouter, Link} from 'react-router-dom';
 import {Mutation} from 'react-apollo';
@@ -15,11 +15,13 @@ import {
   fileLatestSize,
 } from '../../common/fileUtils';
 import DeleteFileMutation from '../../containers/DeleteFileMutation';
+import FileDetailModal from './FileDetailModal';
 import SvgIcon from '../Icon/Icon';
 /**
  * Form to display file details and file versions
  */
 const FileDetail = ({fileNode, history, match}) => {
+  const [dialog, setDialog] = useState(false);
   const sortedVersions = fileSortedVersions(fileNode);
   const latestDate = fileLatestDate(sortedVersions);
   const latestSize = fileLatestSize(sortedVersions);
@@ -33,6 +35,7 @@ const FileDetail = ({fileNode, history, match}) => {
               <Link
                 to={`/study/${match.params.kfId}/files`}
                 className="BackButton"
+                data-testid="back-to-filelist"
               >
                 Back to All Files
               </Link>
@@ -92,13 +95,8 @@ const FileDetail = ({fileNode, history, match}) => {
                 <Button
                   type="button"
                   icon="edit"
-                  onClick={() => {
-                    history.push(
-                      `/study/${match.params.kfId}/files/${
-                        fileNode.kfId
-                      }/annotation`,
-                    );
-                  }}
+                  onClick={() => setDialog('annotation')}
+                  data-testid="edit-button"
                 >
                   EDIT
                 </Button>
@@ -141,7 +139,22 @@ const FileDetail = ({fileNode, history, match}) => {
                   </p>
                 )}
               </div>
-              <VersionList studyId={studyId} fileNode={fileNode} />
+              <VersionList
+                studyId={studyId}
+                fileNode={fileNode}
+                onUploadClick={() => setDialog('upload')}
+              />
+              {dialog !== false && (
+                <FileDetailModal
+                  studyId={studyId}
+                  fileNode={fileNode}
+                  onCloseModal={() => setDialog(false)}
+                  dialog={dialog}
+                  onNotificationClick={() =>
+                    setDialog(dialog === 'annotation' ? 'upload' : 'annotation')
+                  }
+                />
+              )}
             </GridContainer>
           )}
         </DeleteFileMutation>
