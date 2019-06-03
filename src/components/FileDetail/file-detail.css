@@ -112,66 +112,21 @@
   @extend .text-xs, .my-4, .font-title, .text-left, .text-blue;
 }
 
-.FileDialog--container {
-  height: 700px;
-  width: 780px;
-  border-radius: 5px;
-  transform: translate(-390px, -350px);
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  z-index: 101;
-  @extend .bg-white, .flex-col;
-}
-
-.FileDialog--overlay {
-  background: #000;
-  opacity: 0.4;
-  filter: Alpha(Opacity=30);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 100;
-}
-
-.FileDialog--body {
-  height: 575px;
-}
-
-.FileDialog--Title {
-  @extend .text-lg,
-    .text-blue,
-    .font-title,
-    .font-light,
-    .border-b,
-    .border-mediumGrey,
-    .my-0,
-    .mx-20,
-    .py-12;
-}
-
 .FileDialog--Upload {
   width: 70%;
-  height: 260px;
-  @extend .mx-auto, .my-32;
+  height: 298px;
+  @extend .mx-auto, .my-12, .pb-4;
   .upload-target {
-    padding-top: 80px;
+    padding-top: 100px;
     @extend .h-full;
   }
 }
 
 .FileDialog--Edit {
-  @extend .mx-20, .shadow;
+  @extend .shadow;
 }
 .FileDialog--Edit form {
-  @extend .mb-16;
-}
-
-.FileDialog--ButtonBar {
-  border-radius: 0 0 5px 5px;
-  @extend .bg-lightGrey, .p-20, .flex, .justify-between, .items-center;
+  @extend .mb-20, .px-0;
 }
 
 .NotificationBar {

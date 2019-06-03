@@ -1,0 +1,1804 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`edits an existing file correctly 1`] = `
+<div>
+  <nav
+    data-testid="uikit-header"
+  />
+  <section
+    id="study"
+  >
+    <div
+      class="bg-lightGrey"
+    >
+      <section
+        class="grid-container mx-auto grid-container--collapsed-rows StudyHeader py-8 px-12"
+      >
+        <p
+          class="StudyHeader--TopText"
+        >
+          <b>
+            SD_8WX8QQ06
+          </b>
+          <span
+            class="pl-4 pr-20"
+          >
+            <button>
+              <svg
+                height="10"
+                id="mock-icon"
+                kind="copy"
+                width="10"
+              >
+                <title>
+                  icon-
+                  copy
+                </title>
+              </svg>
+            </button>
+          </span>
+          <small
+            class="font-light"
+          >
+            last updated: 
+            <time
+              datetime="2019-04-25T15:22:18.780Z"
+              title="2019-04-25T15:22:18.780221+00:00"
+            >
+              2 days from now
+            </time>
+          </small>
+        </p>
+        <p
+          class="StudyHeader--TitleText row-3 cell-12 md:row-2 md:cell-10"
+        >
+          benchmark extensible e-business
+        </p>
+        <div
+          class="hidden row-2 cell-12 md:cell-2 md:flex-row md:flex-col"
+        >
+          <p
+            class="m-0 text-sm font-bold inline-block pr-8"
+          >
+            Contacts:
+          </p>
+          <p
+            class="m-0 font-light inline-block"
+          >
+            Mary Marazita
+          </p>
+        </div>
+      </section>
+    </div>
+    <div
+      class="border-b-2 .border-mediumGrey"
+    >
+      <section
+        class="grid-container mx-auto px-12"
+      >
+        <nav
+          class="SecondaryNav border-none cell-12"
+        >
+          <ul
+            class="SecondaryNav--list"
+          >
+            <li
+              class="SecondaryNav--link"
+            >
+              <a
+                href="/study/SD_8WX8QQ06/basicInfo"
+              >
+                Basic Info
+              </a>
+            </li>
+            <li
+              class="SecondaryNav--link"
+            >
+              <a
+                href="/study/SD_8WX8QQ06/dashboard"
+              >
+                Dashboard
+              </a>
+            </li>
+            <li
+              class="SecondaryNav--link SecondaryNav--link-active"
+            >
+              <a
+                aria-current="page"
+                class="active"
+                href="/study/SD_8WX8QQ06/files"
+              >
+                Files
+              </a>
+            </li>
+            <li
+              class="SecondaryNav--link"
+            >
+              <a
+                href="/study/SD_8WX8QQ06/collaborators"
+              >
+                Collaborators
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+    </div>
+  </section>
+  <section
+    class="grid-container mx-auto grid-container--collapsed-cells my-20 px-12"
+  >
+    <section
+      class="study-file-detail cell-12"
+    >
+      <section
+        class="grid-container mx-auto"
+      >
+        <a
+          class="BackButton"
+          data-testid="back-to-filelist"
+          href="/study/SD_8WX8QQ06/files"
+        >
+          Back to All Files
+        </a>
+        <h3
+          class="FileTitle row-2 cell-12 lg:cell-10 md:cell-9 "
+        >
+          organization.jpeg
+        </h3>
+        <div
+          class="md:row-3 lg:cell-10 md:cell-9 cell-12"
+        >
+          <section
+            class="grid-container mx-auto"
+          >
+            <div
+              class="cell-6 sm:cell-3"
+            >
+              <p
+                class="FileInfo--Title"
+              >
+                Status:
+              </p>
+              <div
+                class="Badge bg-red"
+              >
+                <span>
+                  Changes Required
+                </span>
+              </div>
+            </div>
+            <div
+              class="cell-6 sm:cell-3"
+            >
+              <p
+                class="FileInfo--Title"
+              >
+                File Type:
+              </p>
+              <div
+                class="flex"
+              >
+                <div
+                  class="FileInfo--Icon"
+                />
+                <p
+                  class="FileInfo--Text"
+                >
+                  Clinical/Phenotype Data
+                </p>
+              </div>
+            </div>
+            <div
+              class="cell-6 sm:cell-3"
+            >
+              <p
+                class="FileInfo--Title"
+              >
+                Updated:
+              </p>
+              <div
+                class="flex"
+              >
+                <p
+                  class="FileInfo--Text"
+                >
+                  <time
+                    class="mr-4"
+                    datetime="2018-09-27T05:32:26.000Z"
+                    title="2018-09-27T05:32:26+00:00"
+                  >
+                    7 months ago
+                  </time>
+                  by
+                </p>
+                <div
+                  class="Avatar inline-block ml-4 mt-4"
+                  style="height: 20px; width: 20px;"
+                >
+                  <img
+                    alt="null avatar"
+                    class="Avatar-img"
+                    src="https://www.w3schools.com/css/img_avatar.png"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="cell-6 sm:cell-3"
+            >
+              <p
+                class="FileInfo--Title"
+              >
+                Size:
+              </p>
+              <p
+                class="FileInfo--Text"
+              >
+                5.5 kB
+              </p>
+            </div>
+          </section>
+        </div>
+        <div
+          class="row-3 lg:cell-2 md:cell-3 cell-12 flex flex-row items-start h-full w-full justify-start flex-wrap"
+        >
+          <button
+            class="Button Button--default"
+            type="button"
+          >
+            <svg
+              class="Icon text-grey-dark"
+              height="24"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs />
+              <title>
+                icon-
+                edit
+              </title>
+              <g
+                data-name="edit icon"
+                id="edit-icon"
+              >
+                <path
+                  d="M13.9643165,4.78273381 L19.1556835,9.97410072 C19.3743137,10.1937124 19.3743137,10.5487336 19.1556835,10.7683453 L6.58589928,23.3381295 L1.24489209,23.9309353 C0.906476758,23.9689574 0.569156015,23.850864 0.328354627,23.6100626 C0.0875532393,23.3692613 -0.0305401208,23.0319405 0.00748201439,22.6935252 L0.60028777,17.352518 L13.1700719,4.78273381 C13.3896837,4.56410352 13.7447048,4.56410352 13.9643165,4.78273381 Z M23.2880576,3.4647482 C24.1628943,4.34306477 24.1628943,5.76341005 23.2880576,6.64172662 L21.2506475,8.67913669 C21.0310358,8.89776699 20.6760146,8.89776699 20.4564029,8.67913669 L15.265036,3.48776978 C15.0464057,3.26815806 15.0464057,2.9131369 15.265036,2.69352518 L17.302446,0.656115108 C18.1807626,-0.218721652 19.6011079,-0.218721652 20.4794245,0.656115108 L23.2880576,3.4647482 Z"
+                  height="100%"
+                  id="path"
+                  transform="translate(0 0)"
+                  width="100%"
+                />
+              </g>
+            </svg>
+            EDIT
+          </button>
+          <button
+            class="hidden sm:inline-block text-grey test-xs font-light underline ml-12 my-4"
+          >
+            <svg
+              class="mr-4"
+              height="10"
+              id="mock-icon"
+              kind="delete"
+              width="10"
+            >
+              <title>
+                icon-
+                delete
+              </title>
+            </svg>
+            <span>
+              Delete
+            </span>
+          </button>
+          <button
+            class="Button Button--default Button--primary mx-12 md:mt-12 lg:mx-0 lg:w-full"
+            type="button"
+          >
+            <svg
+              class="Icon text-grey-dark"
+              height="24"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs />
+              <title>
+                icon-
+                download
+              </title>
+              <g
+                data-name="download icon"
+                id="download-icon"
+              >
+                <path
+                  d="M9.12,13.6128 L4.32,8.6976 C2.9664,7.3392 4.9968,5.304 6.3504,6.6624 L7.9968,8.3232 C8.3712,8.7024 8.6784,8.5776 8.6784,8.0448 L8.6784,1.44 C8.6784,0.64470996 9.32310996,1.4609241e-16 10.1184,0 C10.91369,-1.4609241e-16 11.5584,0.64470996 11.5584,1.44 L11.5584,8.04 C11.5584,8.568 11.8608,8.6976 12.24,8.3184 L13.8864,6.6576 C15.24,5.2992 17.2704,7.3392 15.9168,8.6928 L11.112,13.6032 C10.8506924,13.8715438 10.4925609,14.0236989 10.1180121,14.025504 C9.74346328,14.027309 9.38388186,13.8786128 9.12,13.6128 Z M17.28,19.7952 L17.28,16.9152 C17.28,16.11991 17.92471,15.4752 18.72,15.4752 C19.51529,15.4752 20.16,16.11991 20.16,16.9152 L20.16,21.2352 C20.16,22.2955867 19.3003867,23.1552 18.24,23.1552 L1.92,23.1552 C0.85961328,23.1552 1.2985992e-16,22.2955867 0,21.2352 L0,16.9152 C-9.73949402e-17,16.11991 0.64470996,15.4752 1.44,15.4752 C2.23529004,15.4752 2.88,16.11991 2.88,16.9152 L2.88,19.7952 C2.88,20.0602967 3.09490332,20.2752 3.36,20.2752 L16.8,20.2752 C17.0650967,20.2752 17.28,20.0602967 17.28,19.7952 Z"
+                  height="100%"
+                  id="path"
+                  transform="translate(0 0)"
+                  width="100%"
+                />
+              </g>
+            </svg>
+            DOWNLOAD
+          </button>
+        </div>
+        <div
+          class="cell-12 lg:cell-10 md:cell-9 md:h-full"
+        >
+          <p
+            class="FileInfo--Title"
+          >
+            Description:
+          </p>
+          <p
+            class="FileInfo--Text md:mr-0 h-full"
+          >
+            Month necessary animal end standard case. View system operation message decade. Actually sing because deal everything woman subject.
+          </p>
+        </div>
+        <div
+          class="lg:cell-10 md:cell-9 cell-12"
+        >
+          <div
+            class="bg-lightGrey p-8 flex justify-between"
+          >
+            <p
+              class="FileInfo--Title"
+            >
+              Versions
+              <span
+                class="font-light ml-4"
+              >
+                (
+                3
+                )
+              </span>
+            </p>
+            <button
+              class="FileVersionList--Button"
+            >
+              UPLOAD VERSION
+            </button>
+          </div>
+          <ul
+            class="FileVersionList"
+          >
+            <li
+              class="FileVersionList--Element"
+            >
+              <button
+                class="FileVersionElement--button w-24"
+              >
+                Latest
+              </button>
+              <span
+                class="FileVersionElement--button FileVersionList--hidden w-12"
+              >
+                <button>
+                  <svg
+                    height="10"
+                    id="mock-icon"
+                    kind="copy"
+                    width="10"
+                  >
+                    <title>
+                      icon-
+                      copy
+                    </title>
+                  </svg>
+                </button>
+              </span>
+              <div
+                class="Avatar inline-block mr-8 hidden"
+                style="height: 20px; width: 20px;"
+              >
+                <img
+                  alt="null avatar"
+                  class="Avatar-img"
+                  src="https://www.w3schools.com/css/img_avatar.png"
+                />
+              </div>
+              <time
+                class="FileVersionList--text w-32"
+                datetime="2018-09-27T05:32:26.000Z"
+                title="2018-09-27T05:32:26+00:00"
+              >
+                7 months ago
+              </time>
+              <p
+                class="FileVersionList--text w-16 hidden"
+              >
+                .jpeg
+              </p>
+              <p
+                class="FileVersionList--text w-24"
+              >
+                5.5 kB
+              </p>
+              <div
+                class="FileInfo--Icon"
+              />
+              <p
+                class="FileVersionList--text w-48"
+              >
+                Clinical/Phenotype Data
+              </p>
+              <button>
+                <svg
+                  class="FileVersionList--hidden w-12"
+                  height="12"
+                  id="mock-icon"
+                  kind="download"
+                  width="12"
+                >
+                  <title>
+                    icon-
+                    download
+                  </title>
+                </svg>
+              </button>
+            </li>
+            <li
+              class="FileVersionList--Element"
+            >
+              <button
+                class="FileVersionElement--button w-24"
+              >
+                FV_TT8NF09R
+              </button>
+              <span
+                class="FileVersionElement--button FileVersionList--hidden w-12"
+              >
+                <button>
+                  <svg
+                    height="10"
+                    id="mock-icon"
+                    kind="copy"
+                    width="10"
+                  >
+                    <title>
+                      icon-
+                      copy
+                    </title>
+                  </svg>
+                </button>
+              </span>
+              <div
+                class="Avatar inline-block mr-8 hidden"
+                style="height: 20px; width: 20px;"
+              >
+                <img
+                  alt="null avatar"
+                  class="Avatar-img"
+                  src="https://www.w3schools.com/css/img_avatar.png"
+                />
+              </div>
+              <time
+                class="FileVersionList--text w-32"
+                datetime="2018-08-21T03:16:11.000Z"
+                title="2018-08-21T03:16:11+00:00"
+              >
+                8 months ago
+              </time>
+              <p
+                class="FileVersionList--text w-16 hidden"
+              >
+                .jpeg
+              </p>
+              <p
+                class="FileVersionList--text w-24"
+              >
+                9.9 kB
+              </p>
+              <div
+                class="FileInfo--Icon"
+              />
+              <p
+                class="FileVersionList--text w-48"
+              >
+                Clinical/Phenotype Data
+              </p>
+              <button>
+                <svg
+                  class="FileVersionList--hidden w-12"
+                  height="12"
+                  id="mock-icon"
+                  kind="download"
+                  width="12"
+                >
+                  <title>
+                    icon-
+                    download
+                  </title>
+                </svg>
+              </button>
+            </li>
+            <li
+              class="FileVersionList--Element"
+            >
+              <button
+                class="FileVersionElement--button w-24"
+              >
+                FV_2WV3VNJN
+              </button>
+              <span
+                class="FileVersionElement--button FileVersionList--hidden w-12"
+              >
+                <button>
+                  <svg
+                    height="10"
+                    id="mock-icon"
+                    kind="copy"
+                    width="10"
+                  >
+                    <title>
+                      icon-
+                      copy
+                    </title>
+                  </svg>
+                </button>
+              </span>
+              <div
+                class="Avatar inline-block mr-8 hidden"
+                style="height: 20px; width: 20px;"
+              >
+                <img
+                  alt="null avatar"
+                  class="Avatar-img"
+                  src="https://www.w3schools.com/css/img_avatar.png"
+                />
+              </div>
+              <time
+                class="FileVersionList--text w-32"
+                datetime="2017-08-25T00:05:30.000Z"
+                title="2017-08-25T00:05:30+00:00"
+              >
+                2 years ago
+              </time>
+              <p
+                class="FileVersionList--text w-16 hidden"
+              >
+                .jpeg
+              </p>
+              <p
+                class="FileVersionList--text w-24"
+              >
+                5.4 kB
+              </p>
+              <div
+                class="FileInfo--Icon"
+              />
+              <p
+                class="FileVersionList--text w-48"
+              >
+                Clinical/Phenotype Data
+              </p>
+              <button>
+                <svg
+                  class="FileVersionList--hidden w-12"
+                  height="12"
+                  id="mock-icon"
+                  kind="download"
+                  width="12"
+                >
+                  <title>
+                    icon-
+                    download
+                  </title>
+                </svg>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </section>
+  </section>
+</div>
+`;
+
+exports[`edits an existing file correctly 2`] = `
+<div>
+  <nav
+    data-testid="uikit-header"
+  />
+  <section
+    id="study"
+  >
+    <div
+      class="bg-lightGrey"
+    >
+      <section
+        class="grid-container mx-auto grid-container--collapsed-rows StudyHeader py-8 px-12"
+      >
+        <p
+          class="StudyHeader--TopText"
+        >
+          <b>
+            SD_8WX8QQ06
+          </b>
+          <span
+            class="pl-4 pr-20"
+          >
+            <button>
+              <svg
+                height="10"
+                id="mock-icon"
+                kind="copy"
+                width="10"
+              >
+                <title>
+                  icon-
+                  copy
+                </title>
+              </svg>
+            </button>
+          </span>
+          <small
+            class="font-light"
+          >
+            last updated: 
+            <time
+              datetime="2019-04-25T15:22:18.780Z"
+              title="2019-04-25T15:22:18.780221+00:00"
+            >
+              2 days from now
+            </time>
+          </small>
+        </p>
+        <p
+          class="StudyHeader--TitleText row-3 cell-12 md:row-2 md:cell-10"
+        >
+          benchmark extensible e-business
+        </p>
+        <div
+          class="hidden row-2 cell-12 md:cell-2 md:flex-row md:flex-col"
+        >
+          <p
+            class="m-0 text-sm font-bold inline-block pr-8"
+          >
+            Contacts:
+          </p>
+          <p
+            class="m-0 font-light inline-block"
+          >
+            Mary Marazita
+          </p>
+        </div>
+      </section>
+    </div>
+    <div
+      class="border-b-2 .border-mediumGrey"
+    >
+      <section
+        class="grid-container mx-auto px-12"
+      >
+        <nav
+          class="SecondaryNav border-none cell-12"
+        >
+          <ul
+            class="SecondaryNav--list"
+          >
+            <li
+              class="SecondaryNav--link"
+            >
+              <a
+                href="/study/SD_8WX8QQ06/basicInfo"
+              >
+                Basic Info
+              </a>
+            </li>
+            <li
+              class="SecondaryNav--link"
+            >
+              <a
+                href="/study/SD_8WX8QQ06/dashboard"
+              >
+                Dashboard
+              </a>
+            </li>
+            <li
+              class="SecondaryNav--link SecondaryNav--link-active"
+            >
+              <a
+                aria-current="page"
+                class="active"
+                href="/study/SD_8WX8QQ06/files"
+              >
+                Files
+              </a>
+            </li>
+            <li
+              class="SecondaryNav--link"
+            >
+              <a
+                href="/study/SD_8WX8QQ06/collaborators"
+              >
+                Collaborators
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+    </div>
+  </section>
+  <section
+    class="grid-container mx-auto grid-container--collapsed-cells my-20 px-12"
+  >
+    <section
+      class="study-file-detail cell-12"
+    >
+      <section
+        class="grid-container mx-auto"
+      >
+        <a
+          class="BackButton"
+          data-testid="back-to-filelist"
+          href="/study/SD_8WX8QQ06/files"
+        >
+          Back to All Files
+        </a>
+        <h3
+          class="FileTitle row-2 cell-12 lg:cell-10 md:cell-9 "
+        >
+          organization.jpeg
+        </h3>
+        <div
+          class="md:row-3 lg:cell-10 md:cell-9 cell-12"
+        >
+          <section
+            class="grid-container mx-auto"
+          >
+            <div
+              class="cell-6 sm:cell-3"
+            >
+              <p
+                class="FileInfo--Title"
+              >
+                Status:
+              </p>
+              <div
+                class="Badge bg-red"
+              >
+                <span>
+                  Changes Required
+                </span>
+              </div>
+            </div>
+            <div
+              class="cell-6 sm:cell-3"
+            >
+              <p
+                class="FileInfo--Title"
+              >
+                File Type:
+              </p>
+              <div
+                class="flex"
+              >
+                <div
+                  class="FileInfo--Icon"
+                />
+                <p
+                  class="FileInfo--Text"
+                >
+                  Clinical/Phenotype Data
+                </p>
+              </div>
+            </div>
+            <div
+              class="cell-6 sm:cell-3"
+            >
+              <p
+                class="FileInfo--Title"
+              >
+                Updated:
+              </p>
+              <div
+                class="flex"
+              >
+                <p
+                  class="FileInfo--Text"
+                >
+                  <time
+                    class="mr-4"
+                    datetime="2018-09-27T05:32:26.000Z"
+                    title="2018-09-27T05:32:26+00:00"
+                  >
+                    7 months ago
+                  </time>
+                  by
+                </p>
+                <div
+                  class="Avatar inline-block ml-4 mt-4"
+                  style="height: 20px; width: 20px;"
+                >
+                  <img
+                    alt="null avatar"
+                    class="Avatar-img"
+                    src="https://www.w3schools.com/css/img_avatar.png"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="cell-6 sm:cell-3"
+            >
+              <p
+                class="FileInfo--Title"
+              >
+                Size:
+              </p>
+              <p
+                class="FileInfo--Text"
+              >
+                5.5 kB
+              </p>
+            </div>
+          </section>
+        </div>
+        <div
+          class="row-3 lg:cell-2 md:cell-3 cell-12 flex flex-row items-start h-full w-full justify-start flex-wrap"
+        >
+          <button
+            class="Button Button--default"
+            type="button"
+          >
+            <svg
+              class="Icon text-grey-dark"
+              height="24"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs />
+              <title>
+                icon-
+                edit
+              </title>
+              <g
+                data-name="edit icon"
+                id="edit-icon"
+              >
+                <path
+                  d="M13.9643165,4.78273381 L19.1556835,9.97410072 C19.3743137,10.1937124 19.3743137,10.5487336 19.1556835,10.7683453 L6.58589928,23.3381295 L1.24489209,23.9309353 C0.906476758,23.9689574 0.569156015,23.850864 0.328354627,23.6100626 C0.0875532393,23.3692613 -0.0305401208,23.0319405 0.00748201439,22.6935252 L0.60028777,17.352518 L13.1700719,4.78273381 C13.3896837,4.56410352 13.7447048,4.56410352 13.9643165,4.78273381 Z M23.2880576,3.4647482 C24.1628943,4.34306477 24.1628943,5.76341005 23.2880576,6.64172662 L21.2506475,8.67913669 C21.0310358,8.89776699 20.6760146,8.89776699 20.4564029,8.67913669 L15.265036,3.48776978 C15.0464057,3.26815806 15.0464057,2.9131369 15.265036,2.69352518 L17.302446,0.656115108 C18.1807626,-0.218721652 19.6011079,-0.218721652 20.4794245,0.656115108 L23.2880576,3.4647482 Z"
+                  height="100%"
+                  id="path"
+                  transform="translate(0 0)"
+                  width="100%"
+                />
+              </g>
+            </svg>
+            EDIT
+          </button>
+          <button
+            class="hidden sm:inline-block text-grey test-xs font-light underline ml-12 my-4"
+          >
+            <svg
+              class="mr-4"
+              height="10"
+              id="mock-icon"
+              kind="delete"
+              width="10"
+            >
+              <title>
+                icon-
+                delete
+              </title>
+            </svg>
+            <span>
+              Delete
+            </span>
+          </button>
+          <button
+            class="Button Button--default Button--primary mx-12 md:mt-12 lg:mx-0 lg:w-full"
+            type="button"
+          >
+            <svg
+              class="Icon text-grey-dark"
+              height="24"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs />
+              <title>
+                icon-
+                download
+              </title>
+              <g
+                data-name="download icon"
+                id="download-icon"
+              >
+                <path
+                  d="M9.12,13.6128 L4.32,8.6976 C2.9664,7.3392 4.9968,5.304 6.3504,6.6624 L7.9968,8.3232 C8.3712,8.7024 8.6784,8.5776 8.6784,8.0448 L8.6784,1.44 C8.6784,0.64470996 9.32310996,1.4609241e-16 10.1184,0 C10.91369,-1.4609241e-16 11.5584,0.64470996 11.5584,1.44 L11.5584,8.04 C11.5584,8.568 11.8608,8.6976 12.24,8.3184 L13.8864,6.6576 C15.24,5.2992 17.2704,7.3392 15.9168,8.6928 L11.112,13.6032 C10.8506924,13.8715438 10.4925609,14.0236989 10.1180121,14.025504 C9.74346328,14.027309 9.38388186,13.8786128 9.12,13.6128 Z M17.28,19.7952 L17.28,16.9152 C17.28,16.11991 17.92471,15.4752 18.72,15.4752 C19.51529,15.4752 20.16,16.11991 20.16,16.9152 L20.16,21.2352 C20.16,22.2955867 19.3003867,23.1552 18.24,23.1552 L1.92,23.1552 C0.85961328,23.1552 1.2985992e-16,22.2955867 0,21.2352 L0,16.9152 C-9.73949402e-17,16.11991 0.64470996,15.4752 1.44,15.4752 C2.23529004,15.4752 2.88,16.11991 2.88,16.9152 L2.88,19.7952 C2.88,20.0602967 3.09490332,20.2752 3.36,20.2752 L16.8,20.2752 C17.0650967,20.2752 17.28,20.0602967 17.28,19.7952 Z"
+                  height="100%"
+                  id="path"
+                  transform="translate(0 0)"
+                  width="100%"
+                />
+              </g>
+            </svg>
+            DOWNLOAD
+          </button>
+        </div>
+        <div
+          class="cell-12 lg:cell-10 md:cell-9 md:h-full"
+        >
+          <p
+            class="FileInfo--Title"
+          >
+            Description:
+          </p>
+          <p
+            class="FileInfo--Text md:mr-0 h-full"
+          >
+            Month necessary animal end standard case. View system operation message decade. Actually sing because deal everything woman subject.
+          </p>
+        </div>
+        <div
+          class="lg:cell-10 md:cell-9 cell-12"
+        >
+          <div
+            class="bg-lightGrey p-8 flex justify-between"
+          >
+            <p
+              class="FileInfo--Title"
+            >
+              Versions
+              <span
+                class="font-light ml-4"
+              >
+                (
+                3
+                )
+              </span>
+            </p>
+            <button
+              class="FileVersionList--Button"
+            >
+              UPLOAD VERSION
+            </button>
+          </div>
+          <ul
+            class="FileVersionList"
+          >
+            <li
+              class="FileVersionList--Element"
+            >
+              <button
+                class="FileVersionElement--button w-24"
+              >
+                Latest
+              </button>
+              <span
+                class="FileVersionElement--button FileVersionList--hidden w-12"
+              >
+                <button>
+                  <svg
+                    height="10"
+                    id="mock-icon"
+                    kind="copy"
+                    width="10"
+                  >
+                    <title>
+                      icon-
+                      copy
+                    </title>
+                  </svg>
+                </button>
+              </span>
+              <div
+                class="Avatar inline-block mr-8 hidden"
+                style="height: 20px; width: 20px;"
+              >
+                <img
+                  alt="null avatar"
+                  class="Avatar-img"
+                  src="https://www.w3schools.com/css/img_avatar.png"
+                />
+              </div>
+              <time
+                class="FileVersionList--text w-32"
+                datetime="2018-09-27T05:32:26.000Z"
+                title="2018-09-27T05:32:26+00:00"
+              >
+                7 months ago
+              </time>
+              <p
+                class="FileVersionList--text w-16 hidden"
+              >
+                .jpeg
+              </p>
+              <p
+                class="FileVersionList--text w-24"
+              >
+                5.5 kB
+              </p>
+              <div
+                class="FileInfo--Icon"
+              />
+              <p
+                class="FileVersionList--text w-48"
+              >
+                Clinical/Phenotype Data
+              </p>
+              <button>
+                <svg
+                  class="FileVersionList--hidden w-12"
+                  height="12"
+                  id="mock-icon"
+                  kind="download"
+                  width="12"
+                >
+                  <title>
+                    icon-
+                    download
+                  </title>
+                </svg>
+              </button>
+            </li>
+            <li
+              class="FileVersionList--Element"
+            >
+              <button
+                class="FileVersionElement--button w-24"
+              >
+                FV_TT8NF09R
+              </button>
+              <span
+                class="FileVersionElement--button FileVersionList--hidden w-12"
+              >
+                <button>
+                  <svg
+                    height="10"
+                    id="mock-icon"
+                    kind="copy"
+                    width="10"
+                  >
+                    <title>
+                      icon-
+                      copy
+                    </title>
+                  </svg>
+                </button>
+              </span>
+              <div
+                class="Avatar inline-block mr-8 hidden"
+                style="height: 20px; width: 20px;"
+              >
+                <img
+                  alt="null avatar"
+                  class="Avatar-img"
+                  src="https://www.w3schools.com/css/img_avatar.png"
+                />
+              </div>
+              <time
+                class="FileVersionList--text w-32"
+                datetime="2018-08-21T03:16:11.000Z"
+                title="2018-08-21T03:16:11+00:00"
+              >
+                8 months ago
+              </time>
+              <p
+                class="FileVersionList--text w-16 hidden"
+              >
+                .jpeg
+              </p>
+              <p
+                class="FileVersionList--text w-24"
+              >
+                9.9 kB
+              </p>
+              <div
+                class="FileInfo--Icon"
+              />
+              <p
+                class="FileVersionList--text w-48"
+              >
+                Clinical/Phenotype Data
+              </p>
+              <button>
+                <svg
+                  class="FileVersionList--hidden w-12"
+                  height="12"
+                  id="mock-icon"
+                  kind="download"
+                  width="12"
+                >
+                  <title>
+                    icon-
+                    download
+                  </title>
+                </svg>
+              </button>
+            </li>
+            <li
+              class="FileVersionList--Element"
+            >
+              <button
+                class="FileVersionElement--button w-24"
+              >
+                FV_2WV3VNJN
+              </button>
+              <span
+                class="FileVersionElement--button FileVersionList--hidden w-12"
+              >
+                <button>
+                  <svg
+                    height="10"
+                    id="mock-icon"
+                    kind="copy"
+                    width="10"
+                  >
+                    <title>
+                      icon-
+                      copy
+                    </title>
+                  </svg>
+                </button>
+              </span>
+              <div
+                class="Avatar inline-block mr-8 hidden"
+                style="height: 20px; width: 20px;"
+              >
+                <img
+                  alt="null avatar"
+                  class="Avatar-img"
+                  src="https://www.w3schools.com/css/img_avatar.png"
+                />
+              </div>
+              <time
+                class="FileVersionList--text w-32"
+                datetime="2017-08-25T00:05:30.000Z"
+                title="2017-08-25T00:05:30+00:00"
+              >
+                2 years ago
+              </time>
+              <p
+                class="FileVersionList--text w-16 hidden"
+              >
+                .jpeg
+              </p>
+              <p
+                class="FileVersionList--text w-24"
+              >
+                5.4 kB
+              </p>
+              <div
+                class="FileInfo--Icon"
+              />
+              <p
+                class="FileVersionList--text w-48"
+              >
+                Clinical/Phenotype Data
+              </p>
+              <button>
+                <svg
+                  class="FileVersionList--hidden w-12"
+                  height="12"
+                  id="mock-icon"
+                  kind="download"
+                  width="12"
+                >
+                  <title>
+                    icon-
+                    download
+                  </title>
+                </svg>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </section>
+  </section>
+</div>
+`;
+
+exports[`edits an existing file correctly 3`] = `
+<div>
+  <nav
+    data-testid="uikit-header"
+  />
+  <section
+    id="study"
+  >
+    <div
+      class="bg-lightGrey"
+    >
+      <section
+        class="grid-container mx-auto grid-container--collapsed-rows StudyHeader py-8 px-12"
+      >
+        <p
+          class="StudyHeader--TopText"
+        >
+          <b>
+            SD_8WX8QQ06
+          </b>
+          <span
+            class="pl-4 pr-20"
+          >
+            <button>
+              <svg
+                height="10"
+                id="mock-icon"
+                kind="copy"
+                width="10"
+              >
+                <title>
+                  icon-
+                  copy
+                </title>
+              </svg>
+            </button>
+          </span>
+          <small
+            class="font-light"
+          >
+            last updated: 
+            <time
+              datetime="2019-04-25T15:22:18.780Z"
+              title="2019-04-25T15:22:18.780221+00:00"
+            >
+              2 days from now
+            </time>
+          </small>
+        </p>
+        <p
+          class="StudyHeader--TitleText row-3 cell-12 md:row-2 md:cell-10"
+        >
+          benchmark extensible e-business
+        </p>
+        <div
+          class="hidden row-2 cell-12 md:cell-2 md:flex-row md:flex-col"
+        >
+          <p
+            class="m-0 text-sm font-bold inline-block pr-8"
+          >
+            Contacts:
+          </p>
+          <p
+            class="m-0 font-light inline-block"
+          >
+            Mary Marazita
+          </p>
+        </div>
+      </section>
+    </div>
+    <div
+      class="border-b-2 .border-mediumGrey"
+    >
+      <section
+        class="grid-container mx-auto px-12"
+      >
+        <nav
+          class="SecondaryNav border-none cell-12"
+        >
+          <ul
+            class="SecondaryNav--list"
+          >
+            <li
+              class="SecondaryNav--link"
+            >
+              <a
+                href="/study/SD_8WX8QQ06/basicInfo"
+              >
+                Basic Info
+              </a>
+            </li>
+            <li
+              class="SecondaryNav--link"
+            >
+              <a
+                href="/study/SD_8WX8QQ06/dashboard"
+              >
+                Dashboard
+              </a>
+            </li>
+            <li
+              class="SecondaryNav--link SecondaryNav--link-active"
+            >
+              <a
+                aria-current="page"
+                class="active"
+                href="/study/SD_8WX8QQ06/files"
+              >
+                Files
+              </a>
+            </li>
+            <li
+              class="SecondaryNav--link"
+            >
+              <a
+                href="/study/SD_8WX8QQ06/collaborators"
+              >
+                Collaborators
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+    </div>
+  </section>
+  <section
+    class="grid-container mx-auto grid-container--collapsed-cells my-20 px-12"
+  >
+    <section
+      class="study-file-detail cell-12"
+    >
+      <section
+        class="grid-container mx-auto"
+      >
+        <a
+          class="BackButton"
+          data-testid="back-to-filelist"
+          href="/study/SD_8WX8QQ06/files"
+        >
+          Back to All Files
+        </a>
+        <h3
+          class="FileTitle row-2 cell-12 lg:cell-10 md:cell-9 "
+        >
+          mynewfile.txt
+        </h3>
+        <div
+          class="md:row-3 lg:cell-10 md:cell-9 cell-12"
+        >
+          <section
+            class="grid-container mx-auto"
+          >
+            <div
+              class="cell-6 sm:cell-3"
+            >
+              <p
+                class="FileInfo--Title"
+              >
+                Status:
+              </p>
+              <div
+                class="Badge bg-red"
+              >
+                <span>
+                  Changes Required
+                </span>
+              </div>
+            </div>
+            <div
+              class="cell-6 sm:cell-3"
+            >
+              <p
+                class="FileInfo--Title"
+              >
+                File Type:
+              </p>
+              <div
+                class="flex"
+              >
+                <div
+                  class="FileInfo--Icon"
+                />
+                <p
+                  class="FileInfo--Text"
+                >
+                  Clinical/Phenotype Data
+                </p>
+              </div>
+            </div>
+            <div
+              class="cell-6 sm:cell-3"
+            >
+              <p
+                class="FileInfo--Title"
+              >
+                Updated:
+              </p>
+              <div
+                class="flex"
+              >
+                <p
+                  class="FileInfo--Text"
+                >
+                  <time
+                    class="mr-4"
+                    datetime="2018-09-27T05:32:26.000Z"
+                    title="2018-09-27T05:32:26+00:00"
+                  >
+                    7 months ago
+                  </time>
+                  by
+                </p>
+                <div
+                  class="Avatar inline-block ml-4 mt-4"
+                  style="height: 20px; width: 20px;"
+                >
+                  <img
+                    alt="null avatar"
+                    class="Avatar-img"
+                    src="https://www.w3schools.com/css/img_avatar.png"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="cell-6 sm:cell-3"
+            >
+              <p
+                class="FileInfo--Title"
+              >
+                Size:
+              </p>
+              <p
+                class="FileInfo--Text"
+              >
+                5.5 kB
+              </p>
+            </div>
+          </section>
+        </div>
+        <div
+          class="row-3 lg:cell-2 md:cell-3 cell-12 flex flex-row items-start h-full w-full justify-start flex-wrap"
+        >
+          <button
+            class="Button Button--default"
+            type="button"
+          >
+            <svg
+              class="Icon text-grey-dark"
+              height="24"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs />
+              <title>
+                icon-
+                edit
+              </title>
+              <g
+                data-name="edit icon"
+                id="edit-icon"
+              >
+                <path
+                  d="M13.9643165,4.78273381 L19.1556835,9.97410072 C19.3743137,10.1937124 19.3743137,10.5487336 19.1556835,10.7683453 L6.58589928,23.3381295 L1.24489209,23.9309353 C0.906476758,23.9689574 0.569156015,23.850864 0.328354627,23.6100626 C0.0875532393,23.3692613 -0.0305401208,23.0319405 0.00748201439,22.6935252 L0.60028777,17.352518 L13.1700719,4.78273381 C13.3896837,4.56410352 13.7447048,4.56410352 13.9643165,4.78273381 Z M23.2880576,3.4647482 C24.1628943,4.34306477 24.1628943,5.76341005 23.2880576,6.64172662 L21.2506475,8.67913669 C21.0310358,8.89776699 20.6760146,8.89776699 20.4564029,8.67913669 L15.265036,3.48776978 C15.0464057,3.26815806 15.0464057,2.9131369 15.265036,2.69352518 L17.302446,0.656115108 C18.1807626,-0.218721652 19.6011079,-0.218721652 20.4794245,0.656115108 L23.2880576,3.4647482 Z"
+                  height="100%"
+                  id="path"
+                  transform="translate(0 0)"
+                  width="100%"
+                />
+              </g>
+            </svg>
+            EDIT
+          </button>
+          <button
+            class="hidden sm:inline-block text-grey test-xs font-light underline ml-12 my-4"
+          >
+            <svg
+              class="mr-4"
+              height="10"
+              id="mock-icon"
+              kind="delete"
+              width="10"
+            >
+              <title>
+                icon-
+                delete
+              </title>
+            </svg>
+            <span>
+              Delete
+            </span>
+          </button>
+          <button
+            class="Button Button--default Button--primary mx-12 md:mt-12 lg:mx-0 lg:w-full"
+            type="button"
+          >
+            <svg
+              class="Icon text-grey-dark"
+              height="24"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs />
+              <title>
+                icon-
+                download
+              </title>
+              <g
+                data-name="download icon"
+                id="download-icon"
+              >
+                <path
+                  d="M9.12,13.6128 L4.32,8.6976 C2.9664,7.3392 4.9968,5.304 6.3504,6.6624 L7.9968,8.3232 C8.3712,8.7024 8.6784,8.5776 8.6784,8.0448 L8.6784,1.44 C8.6784,0.64470996 9.32310996,1.4609241e-16 10.1184,0 C10.91369,-1.4609241e-16 11.5584,0.64470996 11.5584,1.44 L11.5584,8.04 C11.5584,8.568 11.8608,8.6976 12.24,8.3184 L13.8864,6.6576 C15.24,5.2992 17.2704,7.3392 15.9168,8.6928 L11.112,13.6032 C10.8506924,13.8715438 10.4925609,14.0236989 10.1180121,14.025504 C9.74346328,14.027309 9.38388186,13.8786128 9.12,13.6128 Z M17.28,19.7952 L17.28,16.9152 C17.28,16.11991 17.92471,15.4752 18.72,15.4752 C19.51529,15.4752 20.16,16.11991 20.16,16.9152 L20.16,21.2352 C20.16,22.2955867 19.3003867,23.1552 18.24,23.1552 L1.92,23.1552 C0.85961328,23.1552 1.2985992e-16,22.2955867 0,21.2352 L0,16.9152 C-9.73949402e-17,16.11991 0.64470996,15.4752 1.44,15.4752 C2.23529004,15.4752 2.88,16.11991 2.88,16.9152 L2.88,19.7952 C2.88,20.0602967 3.09490332,20.2752 3.36,20.2752 L16.8,20.2752 C17.0650967,20.2752 17.28,20.0602967 17.28,19.7952 Z"
+                  height="100%"
+                  id="path"
+                  transform="translate(0 0)"
+                  width="100%"
+                />
+              </g>
+            </svg>
+            DOWNLOAD
+          </button>
+        </div>
+        <div
+          class="cell-12 lg:cell-10 md:cell-9 md:h-full"
+        >
+          <p
+            class="FileInfo--Title"
+          >
+            Description:
+          </p>
+          <p
+            class="FileInfo--Text md:mr-0 h-full"
+          >
+            Some description here
+          </p>
+        </div>
+        <div
+          class="lg:cell-10 md:cell-9 cell-12"
+        >
+          <div
+            class="bg-lightGrey p-8 flex justify-between"
+          >
+            <p
+              class="FileInfo--Title"
+            >
+              Versions
+              <span
+                class="font-light ml-4"
+              >
+                (
+                3
+                )
+              </span>
+            </p>
+            <button
+              class="FileVersionList--Button"
+            >
+              UPLOAD VERSION
+            </button>
+          </div>
+          <ul
+            class="FileVersionList"
+          >
+            <li
+              class="FileVersionList--Element"
+            >
+              <button
+                class="FileVersionElement--button w-24"
+              >
+                Latest
+              </button>
+              <span
+                class="FileVersionElement--button FileVersionList--hidden w-12"
+              >
+                <button>
+                  <svg
+                    height="10"
+                    id="mock-icon"
+                    kind="copy"
+                    width="10"
+                  >
+                    <title>
+                      icon-
+                      copy
+                    </title>
+                  </svg>
+                </button>
+              </span>
+              <div
+                class="Avatar inline-block mr-8 hidden"
+                style="height: 20px; width: 20px;"
+              >
+                <img
+                  alt="null avatar"
+                  class="Avatar-img"
+                  src="https://www.w3schools.com/css/img_avatar.png"
+                />
+              </div>
+              <time
+                class="FileVersionList--text w-32"
+                datetime="2018-09-27T05:32:26.000Z"
+                title="2018-09-27T05:32:26+00:00"
+              >
+                7 months ago
+              </time>
+              <p
+                class="FileVersionList--text w-16 hidden"
+              >
+                .txt
+              </p>
+              <p
+                class="FileVersionList--text w-24"
+              >
+                5.5 kB
+              </p>
+              <div
+                class="FileInfo--Icon"
+              />
+              <p
+                class="FileVersionList--text w-48"
+              >
+                Clinical/Phenotype Data
+              </p>
+              <button>
+                <svg
+                  class="FileVersionList--hidden w-12"
+                  height="12"
+                  id="mock-icon"
+                  kind="download"
+                  width="12"
+                >
+                  <title>
+                    icon-
+                    download
+                  </title>
+                </svg>
+              </button>
+            </li>
+            <li
+              class="FileVersionList--Element"
+            >
+              <button
+                class="FileVersionElement--button w-24"
+              >
+                FV_TT8NF09R
+              </button>
+              <span
+                class="FileVersionElement--button FileVersionList--hidden w-12"
+              >
+                <button>
+                  <svg
+                    height="10"
+                    id="mock-icon"
+                    kind="copy"
+                    width="10"
+                  >
+                    <title>
+                      icon-
+                      copy
+                    </title>
+                  </svg>
+                </button>
+              </span>
+              <div
+                class="Avatar inline-block mr-8 hidden"
+                style="height: 20px; width: 20px;"
+              >
+                <img
+                  alt="null avatar"
+                  class="Avatar-img"
+                  src="https://www.w3schools.com/css/img_avatar.png"
+                />
+              </div>
+              <time
+                class="FileVersionList--text w-32"
+                datetime="2018-08-21T03:16:11.000Z"
+                title="2018-08-21T03:16:11+00:00"
+              >
+                8 months ago
+              </time>
+              <p
+                class="FileVersionList--text w-16 hidden"
+              >
+                .txt
+              </p>
+              <p
+                class="FileVersionList--text w-24"
+              >
+                9.9 kB
+              </p>
+              <div
+                class="FileInfo--Icon"
+              />
+              <p
+                class="FileVersionList--text w-48"
+              >
+                Clinical/Phenotype Data
+              </p>
+              <button>
+                <svg
+                  class="FileVersionList--hidden w-12"
+                  height="12"
+                  id="mock-icon"
+                  kind="download"
+                  width="12"
+                >
+                  <title>
+                    icon-
+                    download
+                  </title>
+                </svg>
+              </button>
+            </li>
+            <li
+              class="FileVersionList--Element"
+            >
+              <button
+                class="FileVersionElement--button w-24"
+              >
+                FV_2WV3VNJN
+              </button>
+              <span
+                class="FileVersionElement--button FileVersionList--hidden w-12"
+              >
+                <button>
+                  <svg
+                    height="10"
+                    id="mock-icon"
+                    kind="copy"
+                    width="10"
+                  >
+                    <title>
+                      icon-
+                      copy
+                    </title>
+                  </svg>
+                </button>
+              </span>
+              <div
+                class="Avatar inline-block mr-8 hidden"
+                style="height: 20px; width: 20px;"
+              >
+                <img
+                  alt="null avatar"
+                  class="Avatar-img"
+                  src="https://www.w3schools.com/css/img_avatar.png"
+                />
+              </div>
+              <time
+                class="FileVersionList--text w-32"
+                datetime="2017-08-25T00:05:30.000Z"
+                title="2017-08-25T00:05:30+00:00"
+              >
+                2 years ago
+              </time>
+              <p
+                class="FileVersionList--text w-16 hidden"
+              >
+                .txt
+              </p>
+              <p
+                class="FileVersionList--text w-24"
+              >
+                5.4 kB
+              </p>
+              <div
+                class="FileInfo--Icon"
+              />
+              <p
+                class="FileVersionList--text w-48"
+              >
+                Clinical/Phenotype Data
+              </p>
+              <button>
+                <svg
+                  class="FileVersionList--hidden w-12"
+                  height="12"
+                  id="mock-icon"
+                  kind="download"
+                  width="12"
+                >
+                  <title>
+                    icon-
+                    download
+                  </title>
+                </svg>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </section>
+  </section>
+</div>
+`;
