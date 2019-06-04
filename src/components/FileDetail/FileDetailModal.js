@@ -20,6 +20,7 @@ const NotificationAction = ({onClick, buttonText}) => (
 );
 
 const FileDetailModal = ({
+  match,
   className,
   onSubmit,
   children,
@@ -33,6 +34,7 @@ const FileDetailModal = ({
     <Fragment>
       {dialog === 'upload' && (
         <NewVersionModal
+          match={match}
           fileNode={fileNode}
           handleClose={onCloseModal}
           additionalContent={() => (

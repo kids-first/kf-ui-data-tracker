@@ -146,6 +146,7 @@ const FileDetail = ({fileNode, history, match}) => {
               />
               {dialog !== false && (
                 <FileDetailModal
+                  match={match}
                   studyId={studyId}
                   fileNode={fileNode}
                   onCloseModal={() => setDialog(false)}
