@@ -1,1 +1,1 @@
-export {default as NewVersionModal} from './NewVersionModal';
+export {default as NewVersionModal} from './NewVersionModal/NewVersionFlow';

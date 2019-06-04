@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import UploadContainer from '../containers/UploadContainer';
-import Modal from '../components/Modal/Modal';
+import UploadContainer from '../../containers/UploadContainer';
+import Modal from '../../components/Modal/Modal';
 
 /**
- * The NewVersionModal handles flow for uploading a new version of a file
+ * The NewVersionFlow handles flow for uploading a new version of a file
  */
-const NewVersionModal = ({fileNode, additionalContent, handleClose}) => {
+const NewVersionFlow = ({fileNode, additionalContent, handleClose}) => {
   return (
     <Modal title="UPLOAD NEW VERSION" onCloseModal={handleClose}>
       <p className="font-title mt-0">
@@ -25,7 +25,7 @@ const NewVersionModal = ({fileNode, additionalContent, handleClose}) => {
   );
 };
 
-NewVersionModal.propTypes = {
+NewVersionFlow.propTypes = {
   /** The file that the new version is being created for */
   fileNode: PropTypes.func.isRequired,
   /** Any additional content to display at the footer */
@@ -34,4 +34,4 @@ NewVersionModal.propTypes = {
   handleClose: PropTypes.func.isRequired,
 };
 
-export default NewVersionModal;
+export default NewVersionFlow;
