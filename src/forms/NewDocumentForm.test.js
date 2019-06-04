@@ -1,5 +1,4 @@
 import React from 'react';
-import {act} from 'react-dom/test-utils';
 import {render} from 'react-testing-library';
 import NewDocumentForm from './NewDocumentForm';
 

@@ -38,6 +38,11 @@ body {
   @extend .grid-container, .mx-auto, .border-none, .p-12;
 }
 
+.Form--Header {
+  background-color: #d3d2d3;
+  @extend .py-12;
+}
+
 .Form {
   @extend .w-full, .bg-lightGrey, .p-20;
 

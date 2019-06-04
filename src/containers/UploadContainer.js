@@ -39,22 +39,7 @@ const UploadContainer = ({
   // General handler for uploading files
   // Will forward user to annotation page when a file has been uploaded
   const uploadFile = (file, createFile, onUploadCallBack) => {
-    createFile({
-      variables: {file, studyId, fileId},
-    })
-      .then(resp => {
-        if (resp.data.createFile.success) {
-          if (onUploadCallBack) {
-            onUploadCallBack();
-          } else {
-            history.push(`files/${resp.data.createFile.file.kfId}/annotation/`);
-          }
-        }
-      })
-      .catch(err => {
-        console.log(err);
-        alert('Failed to upload file.');
-      });
+    history.push(`files/new-document`, {file});
   };
 
   return (
