@@ -6,7 +6,7 @@ import {FILE_DOWNLOAD_URL} from '../../state/mutations';
 import TimeAgo from 'react-timeago';
 import {Button, Icon, GridContainer, Avatar} from 'kf-uikit';
 import Badge from '../Badge/Badge';
-import VersionList from './VersionList';
+import VersionList from '../VersionList/VersionList';
 import {
   fileTypeDetail,
   downloadFile,
