@@ -5,7 +5,6 @@ import AdminRoute from './AdminRoute';
 
 import {Header, Button} from 'kf-uikit';
 import {
-  AnnotationView,
   NewDocumentView,
   LoginView,
   StudyListView,
