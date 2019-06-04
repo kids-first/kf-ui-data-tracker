@@ -1,16 +1,11 @@
 import React, {useState} from 'react';
-import {withRouter} from 'react-router-dom';
-import {Mutation} from 'react-apollo';
-import {CREATE_FILE} from '../state/mutations';
+import PropTypes from 'prop-types';
+import FileUploadTarget from '../components/FileUpload/FileUploadTarget';
 
-const UploadContainer = ({
-  studyId,
-  fileId,
-  refetchAfterUpload = [],
-  history,
-  match,
-  children,
-}) => {
+/**
+ * The UploadContainer tracks file dialog and dragging state for uploads.
+ */
+const UploadContainer = ({handleUpload}) => {
   const [dragging, setDragging] = useState(false);
   const [count, setCount] = useState(0);
 
@@ -36,28 +31,22 @@ const UploadContainer = ({
     }
   };
 
-  // General handler for uploading files
-  // Will forward user to annotation page when a file has been uploaded
-  const uploadFile = (file, createFile, onUploadCallBack) => {
-    history.push(`files/new-document`, {file});
-  };
-
   return (
-    <Mutation mutation={CREATE_FILE} refetchQueries={res => refetchAfterUpload}>
-      {(createFile, {data, error}) =>
-        children &&
-        children({
-          createFile,
-          error,
-          dragging,
-          handleDragOver,
-          handleDragEnter,
-          handleDragLeave,
-          uploadFile,
-        })
-      }
-    </Mutation>
+    <FileUploadTarget
+      dragging={dragging}
+      handleDragOver={handleDragOver}
+      onDragEnter={handleDragEnter}
+      onDragLeave={handleDragLeave}
+      handleDrop={e => handleUpload(e.target.files[0])}
+      handleSelectedFile={e => handleUpload(e.target.files[0])}
+      instructions="To upload files, drag and drop them here"
+    />
   );
 };
 
-export default withRouter(UploadContainer);
+UploadContainer.propTypes = {
+  /** Function to call after upload, passed the file to be uploaded */
+  handleUpload: PropTypes.func.isRequired,
+};
+
+export default UploadContainer;

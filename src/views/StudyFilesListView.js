@@ -5,7 +5,6 @@ import {UploadContainer} from '../containers';
 import FileList from '../components/FileList/FileList';
 import FileElement from '../components/FileList/FileElement';
 import {GridContainer} from 'kf-uikit';
-import FileUploadTarget from '../components/FileUpload/FileUploadTarget';
 /**
  * List and manage files in a study and allow a user to upload more
  */
@@ -41,37 +40,10 @@ const StudyFilesListView = props => (
           </section>
           <div className="row-3 cell-3-8">
             <UploadContainer
-              studyId={props.match.params.kfId}
-              refetchAfterUpload={[
-                {
-                  query: GET_STUDY_BY_ID,
-                  variables: {kfId: props.match.params.kfId},
-                },
-              ]}
-            >
-              {({
-                createFile,
-                error,
-                dragging,
-                handleDragOver,
-                handleDragEnter,
-                handleDragLeave,
-                uploadFile,
-              }) => (
-                <FileUploadTarget
-                  error={error}
-                  dragging={dragging}
-                  handleDragOver={handleDragOver}
-                  onDragEnter={handleDragEnter}
-                  onDragLeave={handleDragLeave}
-                  handleDrop={e => uploadFile(e.target.files[0], createFile)}
-                  handleSelectedFile={e =>
-                    uploadFile(e.target.files[0], createFile)
-                  }
-                  instructions="To upload files, drag and drop them here"
-                />
-              )}
-            </UploadContainer>
+              handleUpload={file =>
+                props.history.push('files/new-document', {file})
+              }
+            />
           </div>
         </GridContainer>
       );
