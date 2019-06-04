@@ -1,23 +1,14 @@
-import React, {useState} from 'react';
-import {Query} from 'react-apollo';
-import {GET_FILE_BY_ID} from '../../state/queries';
-import {LoadingPlaceholder} from '../Loading';
-import UploadContainer from '../../containers/UploadContainer';
-import Modal from '../Modal/Modal';
+import React from 'react';
+import PropTypes from 'prop-types';
+import UploadContainer from '../containers/UploadContainer';
+import Modal from '../components/Modal/Modal';
 
-const UploadVersionModalContainer = ({
-  studyId,
-  fileNode,
-  additionalContent,
-  onCloseDialog,
-}) => {
-  const [file, setFile] = useState();
+/**
+ * The NewVersionModal handles flow for uploading a new version of a file
+ */
+const NewVersionModal = ({fileNode, additionalContent, handleClose}) => {
   return (
-    <Modal
-      title="UPLOAD NEW VERSION"
-      onCloseModal={onCloseDialog}
-      disableSubmit={!file}
-    >
+    <Modal title="UPLOAD NEW VERSION" onCloseModal={handleClose}>
       <p className="font-title mt-0">
         Adding new data or changes to files in your study? You can upload all
         new information here! And you can rest easy knowing that any previous
@@ -34,4 +25,13 @@ const UploadVersionModalContainer = ({
   );
 };
 
-export default UploadVersionModalContainer;
+NewVersionModal.propTypes = {
+  /** The file that the new version is being created for */
+  fileNode: PropTypes.func.isRequired,
+  /** Any additional content to display at the footer */
+  additionalContent: PropTypes.func,
+  /** Function to be called when the modal should be closed */
+  handleClose: PropTypes.func.isRequired,
+};
+
+export default NewVersionModal;

@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import UploadVersionModalContainer from './UploadVersionModalContainer';
+import {NewVersionModal} from '../../modals';
 import AnnotateVersionModalContainer from './AnnotateVersionModalContainer';
 import NotificationBar from './NotificationBar';
 import SvgIcon from '../Icon/Icon';
@@ -32,10 +32,9 @@ const FileDetailModal = ({
   return (
     <Fragment>
       {dialog === 'upload' && (
-        <UploadVersionModalContainer
-          studyId={studyId}
+        <NewVersionModal
           fileNode={fileNode}
-          onCloseDialog={onCloseModal}
+          handleClose={onCloseModal}
           additionalContent={() => (
             <NotificationBar
               mainButton={() => (
