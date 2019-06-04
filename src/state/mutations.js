@@ -2,8 +2,20 @@ import gql from 'graphql-tag';
 
 // Mutation to upload a file or a version of the file to the study-creator
 export const CREATE_FILE = gql`
-  mutation($file: Upload!, $studyId: String!, $fileId: String) {
-    createFile(file: $file, studyId: $studyId, fileId: $fileId) {
+  mutation(
+    $file: Upload!
+    $studyId: String!
+    $name: String!
+    $fileType: FileFileType!
+    $description: String!
+  ) {
+    createFile(
+      file: $file
+      studyId: $studyId
+      name: $name
+      fileType: $fileType
+      description: $description
+    ) {
       success
       file {
         id
