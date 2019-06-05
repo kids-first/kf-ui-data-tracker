@@ -1,8 +1,11 @@
 import React, {Fragment} from 'react';
-import {NewVersionModal, VersionInfoModal} from '../../modals';
-import AnnotateVersionModalContainer from './AnnotateVersionModalContainer';
+import {
+  NewVersionModal,
+  VersionInfoModal,
+  EditDocumentModal,
+} from '../../modals';
 /**
- * Render either UploadVersionModal or AnnotateVersionModal
+ * Render NewVersionModal, EditDocumentModal or VersionInfoModal
  * Handling conditional rendering in a separate file to keep FileDetail clean
  */
 const FileDetailModal = ({
@@ -28,10 +31,7 @@ const FileDetailModal = ({
         />
       )}
       {dialog === 'annotation' && (
-        <AnnotateVersionModalContainer
-          kfId={fileNode.kfId}
-          onCloseDialog={onCloseModal}
-        />
+        <EditDocumentModal fileNode={fileNode} onCloseDialog={onCloseModal} />
       )}
       {dialog === 'versionInfo' && (
         <VersionInfoModal
