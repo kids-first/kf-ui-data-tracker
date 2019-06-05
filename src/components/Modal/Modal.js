@@ -17,6 +17,7 @@ const Modal = ({
   disableSubmit,
   cancelText,
   submitText,
+  footerButton,
 }) => {
   let modalClass = classes('Modal--container', className);
   return (
@@ -39,6 +40,7 @@ const Modal = ({
         disableSubmit={disableSubmit}
         cancelText={cancelText}
         submitText={submitText}
+        footerButton={footerButton}
       />
     </ReactModal>
   );
