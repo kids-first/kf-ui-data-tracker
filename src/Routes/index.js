@@ -1,11 +1,11 @@
 import React, {Fragment} from 'react';
-import {Route} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
 import AdminRoute from './AdminRoute';
 
 import {Header, Button} from 'kf-uikit';
 import {
-  AnnotationView,
+  NewDocumentView,
   LoginView,
   StudyListView,
   StudyFilesListView,
@@ -49,29 +49,31 @@ const Routes = () => (
     <Route path="/login" component={LoginView} />
     <Route path="/callback" component={CallbackView} />
     <PrivateRoute path="/study/:kfId/" component={NavBarView} />
-    <PrivateRoute exact path="/" component={StudyListView} />
-    <PrivateRoute
-      exact
-      path="/study/:kfId/files"
-      component={StudyFilesListView}
-    />
-    <PrivateRoute
-      exact
-      path="/study/:kfId/files/:fileId"
-      component={FileDetailView}
-    />
-    <PrivateRoute
-      path="/study/:kfId/files/:fileId/annotation"
-      component={AnnotationView}
-    />
-    <PrivateRoute exact path="/study/:kfId/basicInfo" component={EmptyView} />
-    <PrivateRoute exact path="/study/:kfId/dashboard" component={EmptyView} />
-    <PrivateRoute
-      exact
-      path="/study/:kfId/collaborators"
-      component={EmptyView}
-    />
-    <AdminRoute exact path="/tokens" component={TokensListView} />
+    <Switch>
+      <PrivateRoute exact path="/" component={StudyListView} />
+      <PrivateRoute
+        exact
+        path="/study/:kfId/files"
+        component={StudyFilesListView}
+      />
+      <PrivateRoute
+        path="/study/:kfId/files/new-document"
+        component={NewDocumentView}
+      />
+      <PrivateRoute
+        exact
+        path="/study/:kfId/files/:fileId"
+        component={FileDetailView}
+      />
+      <PrivateRoute exact path="/study/:kfId/basicInfo" component={EmptyView} />
+      <PrivateRoute exact path="/study/:kfId/dashboard" component={EmptyView} />
+      <PrivateRoute
+        exact
+        path="/study/:kfId/collaborators"
+        component={EmptyView}
+      />
+      <AdminRoute exact path="/tokens" component={TokensListView} />
+    </Switch>
   </Fragment>
 );
 
