@@ -3,15 +3,15 @@
 exports[`renders with more than one versions 1`] = `
 <div>
   <div
-    class="lg:cell-10 md:cell-9 cell-12"
+    class="FileVersionContainer lg:cell-10 md:cell-9 cell-12"
   >
     <div
-      class="bg-lightGrey p-8 flex justify-between"
+      class="p-8 flex justify-between"
     >
       <p
         class="FileInfo--Title"
       >
-        Versions
+        Document Versions
         <span
           class="font-light ml-4"
         >
@@ -32,227 +32,271 @@ exports[`renders with more than one versions 1`] = `
       <li
         class="FileVersionList--Element"
       >
-        <button
-          class="FileVersionElement--button w-24"
+        <section
+          class="grid-container mx-auto grid-container--collapsed-rows p-4"
         >
-          Latest
-        </button>
-        <span
-          class="FileVersionElement--button FileVersionList--hidden w-12"
-        >
-          <button>
-            <svg
-              height="10"
-              id="mock-icon"
-              kind="copy"
-              width="10"
-            >
-              <title>
-                icon-
-                copy
-              </title>
-            </svg>
-          </button>
-        </span>
-        <div
-          class="Avatar inline-block mr-8"
-          style="height: 20px; width: 20px;"
-        >
-          <img
-            alt="xuzhu avatar"
-            class="Avatar-img"
-            src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
+          <div
+            class="FileVersionElement--Icon row-3 cell-1 lg:row-1 lg:cell-1 bg-orange"
           />
-        </div>
-        <time
-          class="FileVersionList--text w-32"
-          datetime="2018-09-27T05:32:26.000Z"
-          title="2018-09-27T05:32:26+00:00"
-        >
-          7 months ago
-        </time>
-        <p
-          class="FileVersionList--text w-16 hidden"
-        >
-          .jpeg
-        </p>
-        <p
-          class="FileVersionList--text w-24"
-        >
-          5.5 kB
-        </p>
-        <div
-          class="FileInfo--Icon"
-        />
-        <p
-          class="FileVersionList--text w-48"
-        >
-          Clinical/Phenotype Data
-        </p>
-        <button>
-          <svg
-            class="FileVersionList--hidden w-12"
-            height="12"
-            id="mock-icon"
-            kind="download"
-            width="12"
+          <div
+            class="FileVersionElement--Tag row-3 cell-2 lg:row-2 lg:cell-1"
           >
-            <title>
-              icon-
-              download
-            </title>
-          </svg>
-        </button>
+            Latest
+          </div>
+          <div
+            class="flex row-1 cell-12 lg:cell-7"
+          >
+            <button
+              class="FileVersionElement--button"
+            >
+              VersionFileName.js
+            </button>
+            <p
+              class="FileVersionList--text italic FileVersionList--hidden pt-4 ml-16"
+            >
+              FV_DMTKEFQW
+            </p>
+            <span
+              class="FileVersionElement--button FileVersionList--hidden ml-4"
+            >
+              <button>
+                <svg
+                  height="10"
+                  id="mock-icon"
+                  kind="copy"
+                  width="10"
+                >
+                  <title>
+                    icon-
+                    copy
+                  </title>
+                </svg>
+              </button>
+            </span>
+          </div>
+          <div
+            class="flex row-3 cell-9 lg:row-1 lg:cell-4 lg:justify-end"
+          >
+            <div
+              class="Avatar inline-block mr-8"
+              style="height: 20px; width: 20px;"
+            >
+              <img
+                alt="xuzhu avatar"
+                class="Avatar-img"
+                src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
+              />
+            </div>
+            <time
+              class="FileVersionList--text"
+              datetime="2018-09-27T05:32:26.000Z"
+              title="2018-09-27T05:32:26+00:00"
+            >
+              7 months ago
+            </time>
+            <p
+              class="FileVersionList--text row-1 cell-2"
+            >
+              5.5 kB
+            </p>
+            <button
+              class="FileVersionList--text row-1 cell-1"
+            >
+              <svg
+                height="12"
+                id="mock-icon"
+                kind="download"
+                width="12"
+              >
+                <title>
+                  icon-
+                  download
+                </title>
+              </svg>
+            </button>
+          </div>
+          <p
+            class="FileVersionList--text row-2 cell-12 lg:cell-2-11"
+          >
+            version description
+          </p>
+        </section>
       </li>
       <li
         class="FileVersionList--Element"
       >
-        <button
-          class="FileVersionElement--button w-24"
+        <section
+          class="grid-container mx-auto grid-container--collapsed-rows p-4"
         >
-          FV_TT8NF09R
-        </button>
-        <span
-          class="FileVersionElement--button FileVersionList--hidden w-12"
-        >
-          <button>
-            <svg
-              height="10"
-              id="mock-icon"
-              kind="copy"
-              width="10"
-            >
-              <title>
-                icon-
-                copy
-              </title>
-            </svg>
-          </button>
-        </span>
-        <div
-          class="Avatar inline-block mr-8"
-          style="height: 20px; width: 20px;"
-        >
-          <img
-            alt="xuzhu avatar"
-            class="Avatar-img"
-            src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
+          <div
+            class="FileVersionElement--Icon row-3 cell-1 lg:row-1 lg:cell-1 bg-orange"
           />
-        </div>
-        <time
-          class="FileVersionList--text w-32"
-          datetime="2018-08-21T03:16:11.000Z"
-          title="2018-08-21T03:16:11+00:00"
-        >
-          8 months ago
-        </time>
-        <p
-          class="FileVersionList--text w-16 hidden"
-        >
-          .jpeg
-        </p>
-        <p
-          class="FileVersionList--text w-24"
-        >
-          9.9 kB
-        </p>
-        <div
-          class="FileInfo--Icon"
-        />
-        <p
-          class="FileVersionList--text w-48"
-        >
-          Clinical/Phenotype Data
-        </p>
-        <button>
-          <svg
-            class="FileVersionList--hidden w-12"
-            height="12"
-            id="mock-icon"
-            kind="download"
-            width="12"
+          <div
+            class="flex row-1 cell-12 lg:cell-7"
           >
-            <title>
-              icon-
-              download
-            </title>
-          </svg>
-        </button>
+            <button
+              class="FileVersionElement--button"
+            >
+              VersionFileName.js
+            </button>
+            <p
+              class="FileVersionList--text italic FileVersionList--hidden pt-4 ml-16"
+            >
+              FV_TT8NF09R
+            </p>
+            <span
+              class="FileVersionElement--button FileVersionList--hidden ml-4"
+            >
+              <button>
+                <svg
+                  height="10"
+                  id="mock-icon"
+                  kind="copy"
+                  width="10"
+                >
+                  <title>
+                    icon-
+                    copy
+                  </title>
+                </svg>
+              </button>
+            </span>
+          </div>
+          <div
+            class="flex row-3 cell-9 lg:row-1 lg:cell-4 lg:justify-end"
+          >
+            <div
+              class="Avatar inline-block mr-8"
+              style="height: 20px; width: 20px;"
+            >
+              <img
+                alt="xuzhu avatar"
+                class="Avatar-img"
+                src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
+              />
+            </div>
+            <time
+              class="FileVersionList--text"
+              datetime="2018-08-21T03:16:11.000Z"
+              title="2018-08-21T03:16:11+00:00"
+            >
+              8 months ago
+            </time>
+            <p
+              class="FileVersionList--text row-1 cell-2"
+            >
+              9.9 kB
+            </p>
+            <button
+              class="FileVersionList--text row-1 cell-1"
+            >
+              <svg
+                height="12"
+                id="mock-icon"
+                kind="download"
+                width="12"
+              >
+                <title>
+                  icon-
+                  download
+                </title>
+              </svg>
+            </button>
+          </div>
+          <p
+            class="FileVersionList--text row-2 cell-12 lg:cell-2-11"
+          >
+            version description
+          </p>
+        </section>
       </li>
       <li
         class="FileVersionList--Element"
       >
-        <button
-          class="FileVersionElement--button w-24"
+        <section
+          class="grid-container mx-auto grid-container--collapsed-rows p-4"
         >
-          FV_2WV3VNJN
-        </button>
-        <span
-          class="FileVersionElement--button FileVersionList--hidden w-12"
-        >
-          <button>
-            <svg
-              height="10"
-              id="mock-icon"
-              kind="copy"
-              width="10"
-            >
-              <title>
-                icon-
-                copy
-              </title>
-            </svg>
-          </button>
-        </span>
-        <div
-          class="Avatar inline-block mr-8"
-          style="height: 20px; width: 20px;"
-        >
-          <img
-            alt="xuzhu avatar"
-            class="Avatar-img"
-            src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
+          <div
+            class="FileVersionElement--Icon row-3 cell-1 lg:row-1 lg:cell-1 bg-orange"
           />
-        </div>
-        <time
-          class="FileVersionList--text w-32"
-          datetime="2017-08-25T00:05:30.000Z"
-          title="2017-08-25T00:05:30+00:00"
-        >
-          2 years ago
-        </time>
-        <p
-          class="FileVersionList--text w-16 hidden"
-        >
-          .jpeg
-        </p>
-        <p
-          class="FileVersionList--text w-24"
-        >
-          5.4 kB
-        </p>
-        <div
-          class="FileInfo--Icon"
-        />
-        <p
-          class="FileVersionList--text w-48"
-        >
-          Clinical/Phenotype Data
-        </p>
-        <button>
-          <svg
-            class="FileVersionList--hidden w-12"
-            height="12"
-            id="mock-icon"
-            kind="download"
-            width="12"
+          <div
+            class="flex row-1 cell-12 lg:cell-7"
           >
-            <title>
-              icon-
-              download
-            </title>
-          </svg>
-        </button>
+            <button
+              class="FileVersionElement--button"
+            >
+              VersionFileName.js
+            </button>
+            <p
+              class="FileVersionList--text italic FileVersionList--hidden pt-4 ml-16"
+            >
+              FV_2WV3VNJN
+            </p>
+            <span
+              class="FileVersionElement--button FileVersionList--hidden ml-4"
+            >
+              <button>
+                <svg
+                  height="10"
+                  id="mock-icon"
+                  kind="copy"
+                  width="10"
+                >
+                  <title>
+                    icon-
+                    copy
+                  </title>
+                </svg>
+              </button>
+            </span>
+          </div>
+          <div
+            class="flex row-3 cell-9 lg:row-1 lg:cell-4 lg:justify-end"
+          >
+            <div
+              class="Avatar inline-block mr-8"
+              style="height: 20px; width: 20px;"
+            >
+              <img
+                alt="xuzhu avatar"
+                class="Avatar-img"
+                src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
+              />
+            </div>
+            <time
+              class="FileVersionList--text"
+              datetime="2017-08-25T00:05:30.000Z"
+              title="2017-08-25T00:05:30+00:00"
+            >
+              2 years ago
+            </time>
+            <p
+              class="FileVersionList--text row-1 cell-2"
+            >
+              5.4 kB
+            </p>
+            <button
+              class="FileVersionList--text row-1 cell-1"
+            >
+              <svg
+                height="12"
+                id="mock-icon"
+                kind="download"
+                width="12"
+              >
+                <title>
+                  icon-
+                  download
+                </title>
+              </svg>
+            </button>
+          </div>
+          <p
+            class="FileVersionList--text row-2 cell-12 lg:cell-2-11"
+          >
+            version description
+          </p>
+        </section>
       </li>
     </ul>
   </div>

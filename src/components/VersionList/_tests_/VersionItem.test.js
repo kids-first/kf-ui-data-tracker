@@ -7,7 +7,7 @@ import fileByKfId from '../../../../__mocks__/kf-api-study-creator/responses/fil
 import VersionItem from '../VersionItem';
 
 afterEach(cleanup);
-it('renders correctly with 0 as index -- show latest', () => {
+it('renders correctly with 0 as index -- show latest tag', () => {
   const fileNode = fileByKfId.data.fileByKfId;
   const versionNode = fileNode.versions.edges[0].node;
   const tree = render(
@@ -18,7 +18,6 @@ it('renders correctly with 0 as index -- show latest', () => {
           studyId={'SD_00000000'}
           fileId={fileNode.kfId}
           fileType={fileNode.fileType}
-          fileName={fileNode.name}
           versionNode={versionNode}
           index={0}
         />
@@ -26,8 +25,8 @@ it('renders correctly with 0 as index -- show latest', () => {
     </MockedProvider>,
   );
   expect(tree.container).toMatchSnapshot();
-  const button = tree.getByText(/Latest/);
-  expect(button.innerHTML).toBe('Latest');
+  const tagLatest = tree.getByText(/Latest/);
+  expect(tagLatest.innerHTML).toBe('Latest');
 });
 
 it('renders correctly with 1 as index -- show version kfId', () => {
@@ -41,7 +40,6 @@ it('renders correctly with 1 as index -- show version kfId', () => {
           studyId={'SD_00000000'}
           fileId={fileNode.kfId}
           fileType={fileNode.fileType}
-          fileName={fileNode.name}
           versionNode={versionNode}
           index={1}
         />
@@ -49,6 +47,4 @@ it('renders correctly with 1 as index -- show version kfId', () => {
     </MockedProvider>,
   );
   expect(tree.container).toMatchSnapshot();
-  const button = tree.getByText(/FV_TT8NF09R/);
-  expect(button.innerHTML).toBe('FV_TT8NF09R');
 });
