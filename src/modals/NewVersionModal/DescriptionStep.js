@@ -8,26 +8,27 @@ import {formatFileSize} from '../../common/fileUtils';
 const DescriptionStep = ({file, handleDescription}) => {
   return (
     <>
-      <h3>Summarize your changes</h3>
-      <p>
+      <h3 className="text-blue font-bold font-body">Summarize your changes</h3>
+      <p className="mb-32 font-title ml-8">
         Help keep track of your document history by telling us what may have
         changed in this version
       </p>
-      <b>File to be Uploaded:</b>
-      <br />
-      {file.name}{' '}
-      <span className="text-darkGrey pl-16">{formatFileSize(file.size)}</span>
-      <br />
-      <div className="Form">
-        <label className="font-bold required" htmlFor="description">
-          Summarize document changes:
+      <b>Uploaded File:</b>
+      <p className="mb-32 font-title ml-8">
+        {file.name}
+        <span className="text-mediumGrey text-xs pl-16">
+          {formatFileSize(file.size)}
+        </span>
+      </p>
+      <div>
+        <label className="font-bold Form--label-required" htmlFor="description">
+          Summarize document changes (required):
         </label>
-        <br />
         <textarea
           data-testid="description-input"
           name="description"
           type="text"
-          className="Form--TextArea"
+          className="Form--TextArea--dialog"
           onChange={ev => handleDescription(ev.target.value)}
         />
       </div>

@@ -61,7 +61,7 @@ it('creates a new version', async () => {
     fireEvent.change(description, {target: {value: 'my changes'}});
   });
 
-  const uploadButton = tree.queryAllByText(/Upload/)[2];
+  const uploadButton = tree.getByText(/UPLOAD/);
   act(() => {
     fireEvent.click(uploadButton);
   });
