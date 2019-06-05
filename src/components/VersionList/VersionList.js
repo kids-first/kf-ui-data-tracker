@@ -7,7 +7,13 @@ import SvgIcon from '../Icon/Icon';
 /**
  * Displays ordered versions of one file. (Latest first)
  */
-const VersionList = ({className, studyId, fileNode, onUploadClick}) => {
+const VersionList = ({
+  className,
+  studyId,
+  fileNode,
+  onUploadClick,
+  onNameClick,
+}) => {
   let versionListClass = classes('FileVersionList', className);
 
   return (
@@ -36,6 +42,7 @@ const VersionList = ({className, studyId, fileNode, onUploadClick}) => {
                 fileType={fileNode.fileType}
                 versionNode={node}
                 index={index}
+                onNameClick={onNameClick}
               />
             ))
         ) : (
