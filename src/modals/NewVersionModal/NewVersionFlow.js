@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import {graphql} from 'react-apollo';
-import {Button} from 'kf-uikit';
 import Modal from '../../components/Modal/Modal';
 import UploadStep from './UploadStep';
 import DescriptionStep from './DescriptionStep';
@@ -52,14 +51,22 @@ export const NewVersionFlow = ({
     <Modal
       title={`Upload Document Version: ${fileNode.name}`}
       onCloseModal={handleClose}
+      disableSubmit={step === 0 || !description || !file}
+      onSubmit={handleSave}
+      submitText="UPLOAD"
     >
+      {step === 1 && (
+        <button
+          onClick={() => {
+            setStep(0);
+          }}
+          className="BackButton"
+        >
+          Back to Upload
+        </button>
+      )}
       {steps[step]}
       {additionalContent && additionalContent()}
-      {step === 1 && (
-        <Button onClick={handleSave} disabled={!description || !file}>
-          Upload
-        </Button>
-      )}
       {errors && <span className="text-red">{errors.message}</span>}
     </Modal>
   );
