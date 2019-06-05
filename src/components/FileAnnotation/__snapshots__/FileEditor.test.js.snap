@@ -41,17 +41,17 @@ Object {
             class="flex row-2 cell-12"
           >
             <div
-              class="Badge bg-teal"
+              class="Badge bg-lightGrey Badge--invalid"
             >
               <span>
-                New
+                Invalid
               </span>
             </div>
             <div
-              class="Badge bg-orange"
+              class="Badge bg-lightGrey Badge--invalid"
             >
               <span>
-                Pending Approval
+                Invalid
               </span>
             </div>
           </div>
@@ -230,17 +230,17 @@ Object {
           class="flex row-2 cell-12"
         >
           <div
-            class="Badge bg-teal"
+            class="Badge bg-lightGrey Badge--invalid"
           >
             <span>
-              New
+              Invalid
             </span>
           </div>
           <div
-            class="Badge bg-orange"
+            class="Badge bg-lightGrey Badge--invalid"
           >
             <span>
-              Pending Approval
+              Invalid
             </span>
           </div>
         </div>
@@ -484,17 +484,17 @@ Object {
             class="flex row-2 cell-12"
           >
             <div
-              class="Badge bg-teal"
+              class="Badge bg-lightGrey Badge--invalid"
             >
               <span>
-                New
+                Invalid
               </span>
             </div>
             <div
-              class="Badge bg-orange"
+              class="Badge bg-lightGrey Badge--invalid"
             >
               <span>
-                Pending Approval
+                Invalid
               </span>
             </div>
           </div>
@@ -673,17 +673,17 @@ Object {
             class="flex row-2 cell-12"
           >
             <div
-              class="Badge bg-teal"
+              class="Badge bg-lightGrey Badge--invalid"
             >
               <span>
-                New
+                Invalid
               </span>
             </div>
             <div
-              class="Badge bg-orange"
+              class="Badge bg-lightGrey Badge--invalid"
             >
               <span>
-                Pending Approval
+                Invalid
               </span>
             </div>
           </div>
@@ -861,17 +861,17 @@ Object {
             class="flex row-2 cell-12"
           >
             <div
-              class="Badge bg-teal"
+              class="Badge bg-lightGrey Badge--invalid"
             >
               <span>
-                New
+                Invalid
               </span>
             </div>
             <div
-              class="Badge bg-orange"
+              class="Badge bg-lightGrey Badge--invalid"
             >
               <span>
-                Pending Approval
+                Invalid
               </span>
             </div>
           </div>
@@ -1051,17 +1051,17 @@ Object {
           class="flex row-2 cell-12"
         >
           <div
-            class="Badge bg-teal"
+            class="Badge bg-lightGrey Badge--invalid"
           >
             <span>
-              New
+              Invalid
             </span>
           </div>
           <div
-            class="Badge bg-orange"
+            class="Badge bg-lightGrey Badge--invalid"
           >
             <span>
-              Pending Approval
+              Invalid
             </span>
           </div>
         </div>
@@ -1306,17 +1306,17 @@ Object {
             class="flex row-2 cell-12"
           >
             <div
-              class="Badge bg-teal"
+              class="Badge bg-lightGrey Badge--invalid"
             >
               <span>
-                New
+                Invalid
               </span>
             </div>
             <div
-              class="Badge bg-orange"
+              class="Badge bg-lightGrey Badge--invalid"
             >
               <span>
-                Pending Approval
+                Invalid
               </span>
             </div>
           </div>
@@ -1495,17 +1495,17 @@ Object {
             class="flex row-2 cell-12"
           >
             <div
-              class="Badge bg-teal"
+              class="Badge bg-lightGrey Badge--invalid"
             >
               <span>
-                New
+                Invalid
               </span>
             </div>
             <div
-              class="Badge bg-orange"
+              class="Badge bg-lightGrey Badge--invalid"
             >
               <span>
-                Pending Approval
+                Invalid
               </span>
             </div>
           </div>
@@ -1685,17 +1685,17 @@ Object {
           class="flex row-2 cell-12"
         >
           <div
-            class="Badge bg-teal"
+            class="Badge bg-lightGrey Badge--invalid"
           >
             <span>
-              New
+              Invalid
             </span>
           </div>
           <div
-            class="Badge bg-orange"
+            class="Badge bg-lightGrey Badge--invalid"
           >
             <span>
-              Pending Approval
+              Invalid
             </span>
           </div>
         </div>
@@ -1948,17 +1948,17 @@ Object {
             class="flex row-2 cell-12"
           >
             <div
-              class="Badge bg-teal"
+              class="Badge bg-lightGrey Badge--invalid"
             >
               <span>
-                New
+                Invalid
               </span>
             </div>
             <div
-              class="Badge bg-orange"
+              class="Badge bg-lightGrey Badge--invalid"
             >
               <span>
-                Pending Approval
+                Invalid
               </span>
             </div>
           </div>
@@ -2137,17 +2137,17 @@ Object {
             class="flex row-2 cell-12"
           >
             <div
-              class="Badge bg-teal"
+              class="Badge bg-lightGrey Badge--invalid"
             >
               <span>
-                New
+                Invalid
               </span>
             </div>
             <div
-              class="Badge bg-orange"
+              class="Badge bg-lightGrey Badge--invalid"
             >
               <span>
-                Pending Approval
+                Invalid
               </span>
             </div>
           </div>
@@ -2327,17 +2327,17 @@ Object {
           class="flex row-2 cell-12"
         >
           <div
-            class="Badge bg-teal"
+            class="Badge bg-lightGrey Badge--invalid"
           >
             <span>
-              New
+              Invalid
             </span>
           </div>
           <div
-            class="Badge bg-orange"
+            class="Badge bg-lightGrey Badge--invalid"
           >
             <span>
-              Pending Approval
+              Invalid
             </span>
           </div>
         </div>
@@ -2581,17 +2581,17 @@ Object {
             class="flex row-2 cell-12"
           >
             <div
-              class="Badge bg-teal"
+              class="Badge bg-lightGrey Badge--invalid"
             >
               <span>
-                New
+                Invalid
               </span>
             </div>
             <div
-              class="Badge bg-orange"
+              class="Badge bg-lightGrey Badge--invalid"
             >
               <span>
-                Pending Approval
+                Invalid
               </span>
             </div>
           </div>
@@ -2770,17 +2770,17 @@ Object {
             class="flex row-2 cell-12"
           >
             <div
-              class="Badge bg-teal"
+              class="Badge bg-lightGrey Badge--invalid"
             >
               <span>
-                New
+                Invalid
               </span>
             </div>
             <div
-              class="Badge bg-orange"
+              class="Badge bg-lightGrey Badge--invalid"
             >
               <span>
-                Pending Approval
+                Invalid
               </span>
             </div>
           </div>
@@ -2960,17 +2960,17 @@ Object {
           class="flex row-2 cell-12"
         >
           <div
-            class="Badge bg-teal"
+            class="Badge bg-lightGrey Badge--invalid"
           >
             <span>
-              New
+              Invalid
             </span>
           </div>
           <div
-            class="Badge bg-orange"
+            class="Badge bg-lightGrey Badge--invalid"
           >
             <span>
-              Pending Approval
+              Invalid
             </span>
           </div>
         </div>

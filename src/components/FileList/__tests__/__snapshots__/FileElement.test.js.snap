@@ -16,7 +16,7 @@ exports[`renders correctly 1`] = `
           class="Badge bg-orange ml-0"
         >
           <span>
-            Pending Approval
+            Pending Review
           </span>
         </div>
       </div>
@@ -147,7 +147,7 @@ exports[`renders loading state 1`] = `
           <span
             class="invisible"
           >
-            Pending Approval
+            Pending Review
           </span>
         </div>
       </div>

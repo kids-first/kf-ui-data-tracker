@@ -30,7 +30,7 @@ exports[`deletes a file correctly 1`] = `
                 class="Badge bg-orange ml-0"
               >
                 <span>
-                  Pending Approval
+                  Pending Review
                 </span>
               </div>
             </div>
@@ -247,7 +247,7 @@ exports[`renders correctly 1`] = `
                 class="Badge bg-orange ml-0"
               >
                 <span>
-                  Pending Approval
+                  Pending Review
                 </span>
               </div>
             </div>
@@ -371,7 +371,7 @@ exports[`renders correctly 1`] = `
                 class="Badge bg-orange ml-0"
               >
                 <span>
-                  Pending Approval
+                  Pending Review
                 </span>
               </div>
             </div>
