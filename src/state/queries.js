@@ -64,6 +64,12 @@ export const GET_FILE_BY_ID = gql`
       description
       fileType
       downloadUrl
+      creator {
+        id
+        username
+        email
+        picture
+      }
       versions {
         edges {
           node {
@@ -73,6 +79,12 @@ export const GET_FILE_BY_ID = gql`
             size
             downloadUrl
             state
+            creator {
+              id
+              username
+              email
+              picture
+            }
           }
         }
       }
