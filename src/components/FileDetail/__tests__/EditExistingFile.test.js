@@ -49,15 +49,6 @@ it('edits an existing file correctly', async () => {
 
   expect(tree.container).toMatchSnapshot();
 
-  // Click on the notification bar button to go to upload modal
-  fireEvent.click(tree.getByTestId('notificationBar-button'));
-  await wait();
-  expect(tree.container).toMatchSnapshot();
-
-  // Click on the notification bar button again to go back to annotation modal
-  fireEvent.click(tree.getByTestId('notificationBar-button'));
-  await wait();
-
   // Update file name
   const nameInput = tree.getByTestId('name-input');
   fireEvent.change(nameInput, {target: {value: 'mynewfile.txt'}});
