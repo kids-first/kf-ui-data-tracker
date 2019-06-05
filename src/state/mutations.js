@@ -122,3 +122,16 @@ export const DELETE_DEV_TOKEN = gql`
     }
   }
 `;
+
+// Mutation to update current user's profile
+export const UPDATE_PROFILE = gql`
+  mutation($slackNotify: Boolean, $slackMemberId: String) {
+    updateMyProfile(slackNotify: $slackNotify, slackMemberId: $slackMemberId) {
+      user {
+        id
+        slackNotify
+        slackMemberId
+      }
+    }
+  }
+`;

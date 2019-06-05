@@ -106,6 +106,8 @@ export const MY_PROFILE = gql`
       lastName
       picture
       email
+      slackNotify
+      slackMemberId
     }
   }
 `;
