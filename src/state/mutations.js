@@ -64,6 +64,32 @@ export const DELETE_FILE = gql`
   }
 `;
 
+// Mutation to upload a version of a file
+export const CREATE_VERSION = gql`
+  mutation(
+    $file: Upload!
+    $fileId: String!
+    $description: String!
+  ) {
+    createVersion(
+      file: $file
+      fileId: $fileId
+      description: $description
+    ) {
+      success
+      version {
+        id
+        kfId
+        fileName
+        description
+        state
+        createdAt
+        size
+      }
+    }
+  }
+`;
+
 // Mutation to get a signed url for a file or a version of the file
 export const FILE_DOWNLOAD_URL = gql`
   mutation($studyId: String!, $fileId: String!, $versionId: String) {
