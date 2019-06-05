@@ -1,14 +1,14 @@
 import React from 'react';
 import TimeAgo from 'react-timeago';
-import Modal from '../../components/Modal/Modal';
-import SvgIcon from '../../components/Icon/Icon';
-import Badge from '../../components/Badge/Badge';
+import Modal from '../components/Modal/Modal';
+import SvgIcon from '../components/Icon/Icon';
+import Badge from '../components/Badge/Badge';
 import {GridContainer, Avatar} from 'kf-uikit';
 import {
   downloadFile,
   fileTypeDetail,
   formatFileSize,
-} from '../../common/fileUtils';
+} from '../common/fileUtils';
 
 const VersionInfoModal = ({
   studyId,
