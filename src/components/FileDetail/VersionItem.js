@@ -49,9 +49,15 @@ const VersionItem = ({
             className="FileVersionElement--button FileVersionList--hidden w-12"
           />
           <Avatar
-            className="inline-block mr-8 hidden"
+            className="inline-block mr-8"
             size={20}
-            imgUrl="https://www.w3schools.com/css/img_avatar.png"
+            imgUrl={
+              versionNode.creator
+                ? versionNode.creator.picture
+                : 'https://www.w3schools.com/css/img_avatar.png'
+            }
+            userName={versionNode.creator && versionNode.creator.username}
+            userEmail={versionNode.creator && versionNode.creator.email}
           />
           <TimeAgo
             date={versionNode.createdAt}

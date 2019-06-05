@@ -28,13 +28,13 @@ exports[`renders correctly with 0 as index -- show latest 1`] = `
       </button>
     </span>
     <div
-      class="Avatar inline-block mr-8 hidden"
+      class="Avatar inline-block mr-8"
       style="height: 20px; width: 20px;"
     >
       <img
-        alt="null avatar"
+        alt="xuzhu avatar"
         class="Avatar-img"
-        src="https://www.w3schools.com/css/img_avatar.png"
+        src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
       />
     </div>
     <time
@@ -108,13 +108,13 @@ exports[`renders correctly with 1 as index -- show version kfId 1`] = `
       </button>
     </span>
     <div
-      class="Avatar inline-block mr-8 hidden"
+      class="Avatar inline-block mr-8"
       style="height: 20px; width: 20px;"
     >
       <img
-        alt="null avatar"
+        alt="xuzhu avatar"
         class="Avatar-img"
-        src="https://www.w3schools.com/css/img_avatar.png"
+        src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
       />
     </div>
     <time

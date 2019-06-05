@@ -7,6 +7,13 @@
       "description": "Month necessary animal end standard case. View system operation message decade. Actually sing because deal everything woman subject.",
       "fileType": "CLN",
       "downloadUrl": "http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167",
+      "creator": {
+        "email": "xuzhu@d3b.center",
+        "id": "VXNlck5vZGU6Mg==",
+        "picture": "https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg",
+        "username": "xuzhu",
+        "__typename": "UserNode"
+      },
       "versions": {
         "edges": [
           {
@@ -17,9 +24,16 @@
               "size": 9893,
               "state": "PEN",
               "createdAt": "2018-08-21T03:16:11+00:00",
-              "__typename": "ObjectNode"
+              "creator": {
+                "email": "xuzhu@d3b.center",
+                "id": "VXNlck5vZGU6Mg==",
+                "picture": "https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg",
+                "username": "xuzhu",
+                "__typename": "UserNode"
+              },
+              "__typename": "VersionNode"
             },
-            "__typename": "ObjectNodeEdge"
+            "__typename": "VersionNodeEdge"
           },
           {
             "node": {
@@ -29,9 +43,16 @@
               "size": 5460,
               "state": "PEN",
               "createdAt": "2018-09-27T05:32:26+00:00",
-              "__typename": "ObjectNode"
+              "creator": {
+                "email": "xuzhu@d3b.center",
+                "id": "VXNlck5vZGU6Mg==",
+                "picture": "https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg",
+                "username": "xuzhu",
+                "__typename": "UserNode"
+              },
+              "__typename": "VersionNode"
             },
-            "__typename": "ObjectNodeEdge"
+            "__typename": "VersionNodeEdge"
           },
           {
             "node": {
@@ -41,12 +62,19 @@
               "size": 5419,
               "state": "PEN",
               "createdAt": "2017-08-25T00:05:30+00:00",
-              "__typename": "ObjectNode"
+              "creator": {
+                "email": "xuzhu@d3b.center",
+                "id": "VXNlck5vZGU6Mg==",
+                "picture": "https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg",
+                "username": "xuzhu",
+                "__typename": "UserNode"
+              },
+              "__typename": "VersionNode"
             },
-            "__typename": "ObjectNodeEdge"
+            "__typename": "VersionNodeEdge"
           }
         ],
-        "__typename": "ObjectNodeConnection"
+        "__typename": "VersionNodeConnection"
       },
       "__typename": "FileNode"
     }

@@ -55,13 +55,13 @@ exports[`renders with more than one versions 1`] = `
           </button>
         </span>
         <div
-          class="Avatar inline-block mr-8 hidden"
+          class="Avatar inline-block mr-8"
           style="height: 20px; width: 20px;"
         >
           <img
-            alt="null avatar"
+            alt="xuzhu avatar"
             class="Avatar-img"
-            src="https://www.w3schools.com/css/img_avatar.png"
+            src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
           />
         </div>
         <time
@@ -130,13 +130,13 @@ exports[`renders with more than one versions 1`] = `
           </button>
         </span>
         <div
-          class="Avatar inline-block mr-8 hidden"
+          class="Avatar inline-block mr-8"
           style="height: 20px; width: 20px;"
         >
           <img
-            alt="null avatar"
+            alt="xuzhu avatar"
             class="Avatar-img"
-            src="https://www.w3schools.com/css/img_avatar.png"
+            src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
           />
         </div>
         <time
@@ -205,13 +205,13 @@ exports[`renders with more than one versions 1`] = `
           </button>
         </span>
         <div
-          class="Avatar inline-block mr-8 hidden"
+          class="Avatar inline-block mr-8"
           style="height: 20px; width: 20px;"
         >
           <img
-            alt="null avatar"
+            alt="xuzhu avatar"
             class="Avatar-img"
-            src="https://www.w3schools.com/css/img_avatar.png"
+            src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
           />
         </div>
         <time

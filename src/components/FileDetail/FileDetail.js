@@ -78,7 +78,15 @@ const FileDetail = ({fileNode, history, match}) => {
                         <Avatar
                           className="inline-block ml-4 mt-4"
                           size={20}
-                          imgUrl="https://www.w3schools.com/css/img_avatar.png"
+                          imgUrl={
+                            fileNode.creator
+                              ? fileNode.creator.picture
+                              : 'https://www.w3schools.com/css/img_avatar.png'
+                          }
+                          userName={
+                            fileNode.creator && fileNode.creator.username
+                          }
+                          userEmail={fileNode.creator && fileNode.creator.email}
                         />
                       </div>
                     ) : (
