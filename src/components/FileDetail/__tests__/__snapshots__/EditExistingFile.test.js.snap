@@ -161,10 +161,10 @@ exports[`edits an existing file correctly 1`] = `
                 Status:
               </p>
               <div
-                class="Badge bg-red"
+                class="Badge bg-orange"
               >
                 <span>
-                  Changes Required
+                  Pending Review
                 </span>
               </div>
             </div>
@@ -762,10 +762,10 @@ exports[`edits an existing file correctly 2`] = `
                 Status:
               </p>
               <div
-                class="Badge bg-red"
+                class="Badge bg-orange"
               >
                 <span>
-                  Changes Required
+                  Pending Review
                 </span>
               </div>
             </div>
@@ -1363,10 +1363,10 @@ exports[`edits an existing file correctly 3`] = `
                 Status:
               </p>
               <div
-                class="Badge bg-red"
+                class="Badge bg-orange"
               >
                 <span>
-                  Changes Required
+                  Pending Review
                 </span>
               </div>
             </div>

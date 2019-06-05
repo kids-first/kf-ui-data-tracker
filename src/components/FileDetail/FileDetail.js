@@ -46,7 +46,7 @@ const FileDetail = ({fileNode, history, match}) => {
                 <GridContainer>
                   <div className="cell-6 sm:cell-3">
                     <p className="FileInfo--Title">Status:</p>
-                    <Badge state="changesRequired" />
+                    <Badge state={sortedVersions[0].node.state} />
                   </div>
                   <div className="cell-6 sm:cell-3">
                     <p className="FileInfo--Title">File Type:</p>

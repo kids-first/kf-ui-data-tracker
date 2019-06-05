@@ -63,7 +63,13 @@ const FileElement = ({className, fileNode, loading, match, fileListId}) => {
         className="ml-0 mr-0 px-16 sm:p-0"
       >
         <div className=" cell-12 row-1 sm:row-1 sm:cell-2  sm:h-full sm:text-center  sm:border-r border-grey-lightest">
-          <Badge className="ml-0" state="pendingApproval" loading={loading} />
+          <Badge
+            className="ml-0"
+            state={
+              sortedVersions.length > 0 ? sortedVersions[0].node.state : null
+            }
+            loading={loading}
+          />
         </div>
 
         <div className="row-2 sm:row-1 cell-12 sm:cell-9   h-full">

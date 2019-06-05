@@ -65,6 +65,14 @@ export const fileTypeDetail = {
   },
 };
 
+// Store version state title and color
+export const versionState = {
+  PEN: {color: 'bg-orange', title: 'Pending Review'},
+  APP: {color: 'bg-lightBlue', title: 'Approved'},
+  CHN: {color: 'bg-red', title: 'Changes Needed'},
+  PRC: {color: 'bg-teal', title: 'Processed'},
+};
+
 // Sort file versions based on the version createdAt date (Latest first)
 export const fileSortedVersions = fileNode => {
   if (fileNode && fileNode.versions && fileNode.versions.edges.length > 0) {
