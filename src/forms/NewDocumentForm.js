@@ -23,7 +23,10 @@ const NewFileForm = ({handleSubmit, handleCancel, errors}) => {
       className="Form"
     >
       <GridContainer collapsed="rows">
-        <label className="row-1 cell-3 text-right required" htmlFor="file_name">
+        <label
+          className="row-1 cell-3 text-right Form--label-required"
+          htmlFor="file_name"
+        >
           Document Title:
         </label>
         <input
@@ -35,7 +38,10 @@ const NewFileForm = ({handleSubmit, handleCancel, errors}) => {
           defaultValue={fileName}
           onChange={e => setFileName(e.target.value)}
         />
-        <label className="row-2 cell-3 text-right required" htmlFor="file_type">
+        <label
+          className="row-2 cell-3 text-right Form--label-required"
+          htmlFor="file_type"
+        >
           Document Type:
         </label>
         <fieldset name="file_type" className="row-2 cell-7 md:cell-7">
@@ -49,7 +55,7 @@ const NewFileForm = ({handleSubmit, handleCancel, errors}) => {
           ))}
         </fieldset>
         <label
-          className="row-3 cell-3 text-right required"
+          className="row-3 cell-3 text-right Form--label-required"
           htmlFor="description"
         >
           Describe document contents:
@@ -70,7 +76,7 @@ const NewFileForm = ({handleSubmit, handleCancel, errors}) => {
             color="primary"
             disabled={!fileName || !fileType || !fileDescription}
           >
-            Save Document
+            UPLOAD
           </Button>
         </div>
       </GridContainer>
