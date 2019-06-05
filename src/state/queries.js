@@ -95,3 +95,17 @@ export const GET_DEV_TOKENS = gql`
     }
   }
 `;
+
+// Query to get the current user's profile
+export const MY_PROFILE = gql`
+  {
+    myProfile {
+      id
+      username
+      firstName
+      lastName
+      picture
+      email
+    }
+  }
+`;

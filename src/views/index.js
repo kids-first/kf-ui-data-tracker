@@ -7,3 +7,4 @@ export {default as NavBarView} from './NavBarView';
 export {default as EmptyView} from './EmptyView';
 export {default as TokensListView} from './TokensListView';
 export {default as NewDocumentView} from './NewDocumentView';
+export {default as ProfileView} from './ProfileView';
