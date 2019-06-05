@@ -43,6 +43,7 @@ export const GET_STUDY_BY_ID = gql`
                   id
                   size
                   createdAt
+                  state
                 }
               }
             }
@@ -71,6 +72,7 @@ export const GET_FILE_BY_ID = gql`
             createdAt
             size
             downloadUrl
+            state
           }
         }
       }
