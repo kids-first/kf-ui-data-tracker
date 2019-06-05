@@ -1,16 +1,21 @@
 .Badge {
-  @extend .inline-block, .m-4, .py-4, .px-8, .rounded-full, .text-center,
-    .text-xs, .text-white, .leading-tight, .tracking-wide, .whitespace-no-wrap;
+  @extend .inline-block,
+    .m-4,
+    .py-4,
+    .px-8,
+    .rounded-full,
+    .text-center,
+    .text-xs,
+    .text-white,
+    .leading-tight,
+    .tracking-wide,
+    .whitespace-no-wrap;
 }
 
 .Badge--loading {
-  @extend .bg-lightGrey, .max-w-full, .self-center, .m-4, .px-16, .py-0,
-    .rounded-full, .text-center, .text-xs, .text-white, .leading-tight,
-    .whitespace-no-wrap;
+  @extend .bg-lightGrey, .px-32;
 }
 
 .Badge--invalid {
-  @extend .bg-darkGrey, .max-w-full, .self-center, .m-4, .px-16, .py-0,
-    .rounded-full, .text-center, .text-xs, .text-white, .leading-tight,
-    .whitespace-no-wrap;
+  @extend .bg-darkGrey, .px-32;
 }
