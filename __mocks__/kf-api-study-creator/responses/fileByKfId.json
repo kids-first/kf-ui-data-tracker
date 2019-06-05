@@ -15,6 +15,7 @@
               "kfId": "FV_TT8NF09R",
               "downloadUrl": "http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167/version/FV_TT8NF09R",
               "size": 9893,
+              "state": "PEN",
               "createdAt": "2018-08-21T03:16:11+00:00",
               "__typename": "ObjectNode"
             },
@@ -26,6 +27,7 @@
               "kfId": "FV_DMTKEFQW",
               "downloadUrl": "http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167/version/FV_DMTKEFQW",
               "size": 5460,
+              "state": "PEN",
               "createdAt": "2018-09-27T05:32:26+00:00",
               "__typename": "ObjectNode"
             },
@@ -37,6 +39,7 @@
               "kfId": "FV_2WV3VNJN",
               "downloadUrl": "http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167/version/FV_2WV3VNJN",
               "size": 5419,
+              "state": "PEN",
               "createdAt": "2017-08-25T00:05:30+00:00",
               "__typename": "ObjectNode"
             },
