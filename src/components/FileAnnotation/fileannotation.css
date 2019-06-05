@@ -30,23 +30,3 @@
 .SelectElement-fill {
   border-color: #3b88fd;
 }
-
-.FileEditor {
-  @extend .w-full, .bg-lightGrey, .p-20, .mb-32;
-}
-
-.FileEditor--Input {
-  @extend .flex-auto,
-    .text-xl,
-    .mt-4,
-    .font-light,
-    .font-title,
-    .border-transparent,
-    .rounded-sm;
-  width: auto;
-}
-
-.FileEditor--TextArea {
-  @extend .w-full, .border-transparent, .rounded-sm, .mt-8;
-  height: 290px;
-}
