@@ -25,9 +25,9 @@
                       "state": "PEN",
                       "size": 9893,
                       "createdAt": "2018-08-21T03:16:11+00:00",
-                      "__typename": "ObjectNode"
+                      "__typename": "VersionNode"
                     },
-                    "__typename": "ObjectNodeEdge"
+                    "__typename": "VersionNodeEdge"
                   },
                   {
                     "node": {
@@ -35,9 +35,9 @@
                       "state": "PEN",
                       "size": 5460,
                       "createdAt": "2018-09-27T05:32:26+00:00",
-                      "__typename": "ObjectNode"
+                      "__typename": "VersionNode"
                     },
-                    "__typename": "ObjectNodeEdge"
+                    "__typename": "VersionNodeEdge"
                   },
                   {
                     "node": {
@@ -45,12 +45,12 @@
                       "state": "PEN",
                       "size": 5419,
                       "createdAt": "2017-08-25T00:05:30+00:00",
-                      "__typename": "ObjectNode"
+                      "__typename": "VersionNode"
                     },
-                    "__typename": "ObjectNodeEdge"
+                    "__typename": "VersionNodeEdge"
                   }
                 ],
-                "__typename": "ObjectNodeConnection"
+                "__typename": "VersionNodeConnection"
               },
               "__typename": "FileNode"
             },
@@ -72,9 +72,9 @@
                       "state": "PEN",
                       "size": 7394,
                       "createdAt": "2017-08-22T08:32:38+00:00",
-                      "__typename": "ObjectNode"
+                      "__typename": "VersionNode"
                     },
-                    "__typename": "ObjectNodeEdge"
+                    "__typename": "VersionNodeEdge"
                   },
                   {
                     "node": {
@@ -82,9 +82,9 @@
                       "state": "PEN",
                       "size": 5883,
                       "createdAt": "2017-09-02T21:02:35+00:00",
-                      "__typename": "ObjectNode"
+                      "__typename": "VersionNode"
                     },
-                    "__typename": "ObjectNodeEdge"
+                    "__typename": "VersionNodeEdge"
                   },
                   {
                     "node": {
@@ -92,9 +92,9 @@
                       "state": "PEN",
                       "size": 1899,
                       "createdAt": "2019-03-14T05:46:35+00:00",
-                      "__typename": "ObjectNode"
+                      "__typename": "VersionNode"
                     },
-                    "__typename": "ObjectNodeEdge"
+                    "__typename": "VersionNodeEdge"
                   },
                   {
                     "node": {
@@ -102,9 +102,9 @@
                       "state": "PEN",
                       "size": 7631,
                       "createdAt": "2018-03-13T23:52:08+00:00",
-                      "__typename": "ObjectNode"
+                      "__typename": "VersionNode"
                     },
-                    "__typename": "ObjectNodeEdge"
+                    "__typename": "VersionNodeEdge"
                   },
                   {
                     "node": {
@@ -112,12 +112,12 @@
                       "state": "PEN",
                       "size": 6834,
                       "createdAt": "2019-04-06T07:51:17+00:00",
-                      "__typename": "ObjectNode"
+                      "__typename": "VersionNode"
                     },
-                    "__typename": "ObjectNodeEdge"
+                    "__typename": "VersionNodeEdge"
                   }
                 ],
-                "__typename": "ObjectNodeConnection"
+                "__typename": "VersionNodeConnection"
               },
               "__typename": "FileNode"
             },
