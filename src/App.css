@@ -50,29 +50,30 @@ body {
 .Form {
   @extend .w-full, .bg-lightGrey, .p-20;
 
-  label {
-    @extend .h-full, .pt-8, .text-title, .text-sm;
-  }
-
   .Form--Actions {
     @extend .flex, .justify-end, .mt-16;
     .Button {
       @extend .mx-4;
     }
   }
-  .Form--Input {
-    border-radius: 5px;
-    @extend .w-full, .bg-white, .h-8, .px-16;
-  }
-
-  .Form--TextArea {
-    border-radius: 5px;
-    min-height: 200px;
-    @extend .w-full, .border-transparent, .mt-8, .p-8;
-  }
 }
 
-.Form--label-required:after {
+.Form--Label {
+  @extend .h-full, .pt-8, .text-title, .text-sm;
+}
+
+.Form--TextArea {
+  border-radius: 5px;
+  min-height: 200px;
+  @extend .w-full, .text-grey, .mt-8, .p-8;
+}
+
+.Form--Input {
+  border-radius: 5px;
+  @extend .w-full, .bg-white, .text-grey, .h-8, .px-16;
+}
+
+.Form--Label-required:after {
   color: red;
   content: ' *';
 }

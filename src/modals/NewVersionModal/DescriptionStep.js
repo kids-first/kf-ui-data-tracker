@@ -21,7 +21,7 @@ const DescriptionStep = ({file, handleDescription}) => {
         </span>
       </p>
       <div>
-        <label className="font-bold Form--label-required" htmlFor="description">
+        <label className="font-bold Form--Label-required" htmlFor="description">
           Summarize document changes (required):
         </label>
         <textarea
