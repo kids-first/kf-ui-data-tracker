@@ -8,6 +8,7 @@ const StudyTable = ({
   loading,
   columns,
   exclude = [],
+  clickable = true,
   history,
   className,
 }) => {
@@ -44,7 +45,7 @@ const StudyTable = ({
             className="grid-container grid-container--collapsed grid-container--fullWidth"
             key={node.node.kfId}
             onClick={() => {
-              history.push(`/study/${node.node.kfId}/files`);
+              if (clickable) history.push(`/study/${node.node.kfId}/files`);
             }}
           >
             {cols.map((col, idx) => {

@@ -135,3 +135,43 @@ export const UPDATE_PROFILE = gql`
     }
   }
 `;
+
+// Mutation to subscribe to a study
+export const SUBSCRIBE_TO = gql`
+  mutation($studyId: String!) {
+    subscribeTo(studyId: $studyId) {
+      user {
+        id
+        studySubscriptions {
+          edges {
+            node {
+              id
+              kfId
+              name
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+// Mutation to unsubscribe from a study
+export const UNSUBSCRIBE_FROM = gql`
+  mutation($studyId: String!) {
+    unsubscribeFrom(studyId: $studyId) {
+      user {
+        id
+        studySubscriptions {
+          edges {
+            node {
+              id
+              kfId
+              name
+            }
+          }
+        }
+      }
+    }
+  }
+`;

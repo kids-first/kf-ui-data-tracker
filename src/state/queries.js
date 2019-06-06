@@ -122,6 +122,15 @@ export const MY_PROFILE = gql`
       email
       slackNotify
       slackMemberId
+      studySubscriptions {
+        edges {
+          node {
+            id
+            kfId
+            name
+          }
+        }
+      }
     }
   }
 `;
