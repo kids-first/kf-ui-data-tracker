@@ -15,6 +15,8 @@ const Modal = ({
   onCloseModal,
   onBeforeClose,
   disableSubmit,
+  cancelText,
+  submitText,
 }) => {
   let modalClass = classes('Modal--container', className);
   return (
@@ -35,6 +37,8 @@ const Modal = ({
         onCloseModal={onCloseModal}
         onSubmit={onSubmit}
         disableSubmit={disableSubmit}
+        cancelText={cancelText}
+        submitText={submitText}
       />
     </ReactModal>
   );

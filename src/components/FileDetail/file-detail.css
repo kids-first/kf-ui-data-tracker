@@ -63,11 +63,11 @@
 
 .FileDialog--Upload {
   width: 70%;
-  height: 298px;
-  @extend .mx-auto, .my-12, .pb-4;
+  height: 80%;
+  @extend .mx-auto, .flex, .justify-center, .items-center;
   .upload-target {
     padding-top: 100px;
-    @extend .h-full;
+    height: 70%;
   }
 }
 

@@ -42,7 +42,6 @@ body {
   }
 }
 
-
 .Form--Header {
   background-color: #d3d2d3;
   @extend .py-12;
@@ -52,11 +51,7 @@ body {
   @extend .w-full, .bg-lightGrey, .p-20;
 
   label {
-    @extend .h-full, .pt-8;
-  }
-  .required:after {
-    color: red;
-    content: ' *';
+    @extend .h-full, .pt-8, .text-title, .text-sm;
   }
 
   .Form--Actions {
@@ -75,4 +70,16 @@ body {
     min-height: 200px;
     @extend .w-full, .border-transparent, .mt-8, .p-8;
   }
+}
+
+.Form--label-required:after {
+  color: red;
+  content: ' *';
+}
+
+.Form--TextArea--dialog {
+  border-radius: 5px;
+  min-height: 200px;
+  width: 95%;
+  @extend .border, .border-grey, .text-grey, .ml-8, .mt-12, .p-12;
 }

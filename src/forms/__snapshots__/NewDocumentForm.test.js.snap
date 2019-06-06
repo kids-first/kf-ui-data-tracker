@@ -12,7 +12,7 @@ Object {
           class="grid-container mx-auto grid-container--collapsed-rows"
         >
           <label
-            class="row-1 cell-3 text-right required"
+            class="row-1 cell-3 text-right Form--label-required"
             for="file_name"
           >
             Document Title:
@@ -26,7 +26,7 @@ Object {
             value=""
           />
           <label
-            class="row-2 cell-3 text-right required"
+            class="row-2 cell-3 text-right Form--label-required"
             for="file_type"
           >
             Document Type:
@@ -137,7 +137,7 @@ Object {
             </label>
           </fieldset>
           <label
-            class="row-3 cell-3 text-right required"
+            class="row-3 cell-3 text-right Form--label-required"
             for="description"
           >
             Describe document contents:
@@ -162,7 +162,7 @@ Object {
               disabled=""
               type="submit"
             >
-              Save Document
+              UPLOAD
             </button>
           </div>
         </section>
@@ -177,7 +177,7 @@ Object {
         class="grid-container mx-auto grid-container--collapsed-rows"
       >
         <label
-          class="row-1 cell-3 text-right required"
+          class="row-1 cell-3 text-right Form--label-required"
           for="file_name"
         >
           Document Title:
@@ -191,7 +191,7 @@ Object {
           value=""
         />
         <label
-          class="row-2 cell-3 text-right required"
+          class="row-2 cell-3 text-right Form--label-required"
           for="file_type"
         >
           Document Type:
@@ -302,7 +302,7 @@ Object {
           </label>
         </fieldset>
         <label
-          class="row-3 cell-3 text-right required"
+          class="row-3 cell-3 text-right Form--label-required"
           for="description"
         >
           Describe document contents:
@@ -327,7 +327,7 @@ Object {
             disabled=""
             type="submit"
           >
-            Save Document
+            UPLOAD
           </button>
         </div>
       </section>
