@@ -1,0 +1,81 @@
+.FileVersionContainer {
+  border-radius: 5px;
+  border-color: #cccccc;
+  @extend .border;
+}
+
+.FileVersionList {
+  @extend .list-reset, .min-w-full, .m-0;
+}
+
+.FileVersionList--Button {
+  @extend .inline-block,
+    .bg-white,
+    .p-4,
+    .px-12,
+    .border,
+    .border-greyBorder,
+    .rounded-lg,
+    .font-bold,
+    .font-title,
+    .text-xs,
+    .text-tealA11y,
+    .uppercase,
+    .flex,
+    .leading-tight,
+    .align-middle,
+    .whitespace-no-wrap,
+    .h-full;
+}
+
+.FileVersionList--Button:hover {
+  @extend .bg-lightGrey, .text-tealHover;
+}
+
+.FileVersionList--Element {
+  @extend .border-t, .border-mediumGrey. .list-reset, .min-w-full;
+}
+
+.FileVersionList--hidden {
+  @extend .invisible;
+}
+
+.FileVersionList--Element:hover .FileVersionList--hidden {
+  @extend .visible;
+}
+
+.FileVersionList--Element:hover {
+  @extend .bg-lightGrey;
+}
+
+.FileVersionList--text {
+  @extend .my-0,
+    .mr-8,
+    .text-xs,
+    .font-title,
+    .text-grey,
+    .whitespace-no-wrap,
+    .overflow-hidden;
+}
+
+.FileVersionElement--button {
+  @extend .text-sm, .font-black, .text-left, .text-blue;
+}
+
+.FileVersionElement--Icon {
+  margin-left: auto;
+  margin-right: auto;
+  @extend .rounded-full, .w-6, .h-6, .flex, .justify-center, .items-center;
+}
+
+.FileVersionElement--Tag {
+  border-radius: 3px;
+  background-color: #d9f5ff;
+  @extend .w-12,
+    .mt-4,
+    .text-xs,
+    .text-center,
+    .border,
+    .border-teal,
+    .text-teal;
+}

@@ -11,7 +11,7 @@
 }
 
 .FileTitle {
-  @extend .my-8, .font-bold, .text-lg, .text-blue, .whitespace-normal;
+  @extend .my-0, .font-bold, .text-lg, .text-blue, .whitespace-normal;
 }
 
 .FileInfo--Title {
@@ -59,57 +59,6 @@
 .FileProcess--error {
   background-color: #fcebea;
   @extend .list-reset, .py-12, .px-32, .border-l-8, .border-red;
-}
-
-.FileVersionList {
-  @extend .list-reset, .min-w-full, .m-0, .bg-lightGrey;
-}
-
-.FileVersionList--Button {
-  @extend .inline-block,
-    .bg-white,
-    .p-4,
-    .px-12,
-    .border,
-    .border-greyBorder,
-    .rounded-lg,
-    .font-bold,
-    .font-title,
-    .text-xs,
-    .text-tealA11y,
-    .uppercase,
-    .flex,
-    .leading-tight,
-    .align-middle,
-    .whitespace-no-wrap,
-    .h-full;
-}
-
-.FileVersionList--Button:hover {
-  @extend .bg-lightGrey, .text-tealHover;
-}
-
-.FileVersionList--Element {
-  @extend .list-reset, .min-w-full, .py-8, .flex, .items-center;
-}
-
-.FileVersionList--Element:hover {
-  background: #dadbde;
-}
-
-.FileVersionList--hidden {
-  @extend .invisible;
-}
-.FileVersionList--Element:hover .FileVersionList--hidden {
-  @extend .visible, .text-xs, .font-title, .text-grey;
-}
-
-.FileVersionList--text {
-  @extend .my-4, .text-xs, .font-title, .text-grey;
-}
-
-.FileVersionElement--button {
-  @extend .text-xs, .my-4, .font-title, .text-left, .text-blue;
 }
 
 .FileDialog--Upload {

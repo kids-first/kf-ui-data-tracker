@@ -6,7 +6,7 @@ import {FILE_DOWNLOAD_URL} from '../../state/mutations';
 import TimeAgo from 'react-timeago';
 import {Button, Icon, GridContainer, Avatar} from 'kf-uikit';
 import Badge from '../Badge/Badge';
-import VersionList from './VersionList';
+import VersionList from '../VersionList/VersionList';
 import {
   fileTypeDetail,
   downloadFile,
@@ -39,7 +39,7 @@ const FileDetail = ({fileNode, history, match}) => {
               >
                 Back to All Files
               </Link>
-              <h3 className="FileTitle row-2 cell-12 lg:cell-10 md:cell-9 ">
+              <h3 className="FileTitle font-body font-black row-2 cell-12 lg:cell-10 md:cell-9 ">
                 {fileNode.name}
               </h3>
               <div className="md:row-3 lg:cell-10 md:cell-9 cell-12">
@@ -49,7 +49,7 @@ const FileDetail = ({fileNode, history, match}) => {
                     <Badge state={sortedVersions[0].node.state} />
                   </div>
                   <div className="cell-6 sm:cell-3">
-                    <p className="FileInfo--Title">File Type:</p>
+                    <p className="FileInfo--Title">Document Type:</p>
                     <div className="flex">
                       <div className="FileInfo--Icon">
                         <SvgIcon
@@ -64,7 +64,7 @@ const FileDetail = ({fileNode, history, match}) => {
                     </div>
                   </div>
                   <div className="cell-6 sm:cell-3">
-                    <p className="FileInfo--Title">Updated:</p>
+                    <p className="FileInfo--Title">Last Updated:</p>
                     {latestDate ? (
                       <div className="flex">
                         <p className="FileInfo--Text">

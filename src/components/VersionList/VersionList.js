@@ -11,10 +11,10 @@ const VersionList = ({className, studyId, fileNode, onUploadClick}) => {
   let versionListClass = classes('FileVersionList', className);
 
   return (
-    <div className="lg:cell-10 md:cell-9 cell-12">
-      <div className="bg-lightGrey p-8 flex justify-between">
+    <div className="FileVersionContainer lg:cell-10 md:cell-9 cell-12">
+      <div className="p-8 flex justify-between">
         <p className="FileInfo--Title">
-          Versions
+          Document Versions
           <span className="font-light ml-4">
             ({fileNode.versions.edges.length})
           </span>
@@ -34,7 +34,6 @@ const VersionList = ({className, studyId, fileNode, onUploadClick}) => {
                 studyId={studyId}
                 fileId={fileNode.kfId}
                 fileType={fileNode.fileType}
-                fileName={fileNode.name}
                 versionNode={node}
                 index={index}
               />

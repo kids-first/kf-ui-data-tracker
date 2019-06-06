@@ -79,6 +79,8 @@ export const GET_FILE_BY_ID = gql`
             size
             downloadUrl
             state
+            description
+            fileName
             creator {
               id
               username

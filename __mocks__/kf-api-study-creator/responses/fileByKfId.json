@@ -24,6 +24,8 @@
               "size": 9893,
               "state": "PEN",
               "createdAt": "2018-08-21T03:16:11+00:00",
+              "description": "version description",
+              "fileName": "VersionFileName.js",
               "creator": {
                 "email": "xuzhu@d3b.center",
                 "id": "VXNlck5vZGU6Mg==",
@@ -43,6 +45,8 @@
               "size": 5460,
               "state": "PEN",
               "createdAt": "2018-09-27T05:32:26+00:00",
+              "description": "version description",
+              "fileName": "VersionFileName.js",
               "creator": {
                 "email": "xuzhu@d3b.center",
                 "id": "VXNlck5vZGU6Mg==",
@@ -62,6 +66,8 @@
               "size": 5419,
               "state": "PEN",
               "createdAt": "2017-08-25T00:05:30+00:00",
+              "description": "version description",
+              "fileName": "VersionFileName.js",
               "creator": {
                 "email": "xuzhu@d3b.center",
                 "id": "VXNlck5vZGU6Mg==",
