@@ -5,6 +5,7 @@ import {MY_PROFILE} from '../state/queries';
 import {UPDATE_PROFILE} from '../state/mutations';
 import {Avatar, GridContainer} from 'kf-uikit';
 import UpdateProfileForm from '../forms/UpdateProfileForm';
+import StudySubscriptionContanier from '../containers/StudySubscriptionContainer';
 
 /**
  * A user's profile view
@@ -93,6 +94,15 @@ const ProfileView = ({
         loading={submitting}
         message={message}
       />
+      <h3 className="row-5 cell-12 text-blue font-normal">
+        Your Subscriptions
+      </h3>
+      <p className="row-6 cell-12 font-title">
+        We'll notify you of daily activity when you subscribe to studies below
+      </p>
+      <div className="row-7 cell-12">
+        <StudySubscriptionContanier />
+      </div>
     </GridContainer>
   );
 };
