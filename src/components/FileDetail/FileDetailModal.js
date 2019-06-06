@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import {NewVersionModal} from '../../modals';
+import {NewVersionModal, VersionInfoModal} from '../../modals';
 import AnnotateVersionModalContainer from './AnnotateVersionModalContainer';
 /**
  * Render either UploadVersionModal or AnnotateVersionModal
@@ -12,9 +12,11 @@ const FileDetailModal = ({
   children,
   studyId,
   fileNode,
+  openedVersion,
   dialog,
   onCloseModal,
-  onNotificationClick,
+  onUploadClick,
+  downloadFileMutation,
 }) => {
   return (
     <Fragment>
@@ -29,6 +31,16 @@ const FileDetailModal = ({
         <AnnotateVersionModalContainer
           kfId={fileNode.kfId}
           onCloseDialog={onCloseModal}
+        />
+      )}
+      {dialog === 'versionInfo' && (
+        <VersionInfoModal
+          studyId={studyId}
+          fileNode={fileNode}
+          openedVersion={openedVersion}
+          onCloseDialog={onCloseModal}
+          onUploadClick={onUploadClick}
+          downloadFileMutation={downloadFileMutation}
         />
       )}
     </Fragment>

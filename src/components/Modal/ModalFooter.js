@@ -12,6 +12,7 @@ const ModalFooter = ({
   cancelText,
   submitText,
   disableSubmit,
+  footerButton,
 }) => {
   let modalFooterClass = classes('Modal--Footer', className);
   return (
@@ -19,6 +20,7 @@ const ModalFooter = ({
       <Button className="w-32 justify-center" onClick={onCloseModal}>
         {cancelText}
       </Button>
+      {footerButton}
       <Button
         onClick={onSubmit}
         className="w-32 justify-center"

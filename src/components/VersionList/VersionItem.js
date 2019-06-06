@@ -23,6 +23,7 @@ const VersionItem = ({
   fileType,
   versionNode,
   index,
+  onNameClick,
 }) => {
   let versionItemClass = classes('FileVersionList--Element', className);
   const stateColor = versionNode.state
@@ -56,14 +57,7 @@ const VersionItem = ({
             <div className="flex row-1 cell-12 lg:cell-7">
               <button
                 className="FileVersionElement--button"
-                onClick={e =>
-                  downloadFile(
-                    studyId,
-                    fileId,
-                    versionNode.kfId,
-                    downloadFileMutation,
-                  )
-                }
+                onClick={e => onNameClick(versionNode, index)}
               >
                 {versionNode.fileName}
               </button>

@@ -22,6 +22,7 @@ import SvgIcon from '../Icon/Icon';
  */
 const FileDetail = ({fileNode, history, match}) => {
   const [dialog, setDialog] = useState(false);
+  const [versionOpened, setOpenVersion] = useState({version: {}, index: null});
   const sortedVersions = fileSortedVersions(fileNode);
   const latestDate = fileLatestDate(sortedVersions);
   const latestSize = fileLatestSize(sortedVersions);
@@ -151,6 +152,10 @@ const FileDetail = ({fileNode, history, match}) => {
                 studyId={studyId}
                 fileNode={fileNode}
                 onUploadClick={() => setDialog('upload')}
+                onNameClick={(versionNode, index) => {
+                  setDialog('versionInfo');
+                  setOpenVersion({version: versionNode, index: index});
+                }}
               />
               {dialog !== false && (
                 <FileDetailModal
@@ -159,9 +164,9 @@ const FileDetail = ({fileNode, history, match}) => {
                   fileNode={fileNode}
                   onCloseModal={() => setDialog(false)}
                   dialog={dialog}
-                  onNotificationClick={() =>
-                    setDialog(dialog === 'annotation' ? 'upload' : 'annotation')
-                  }
+                  onUploadClick={() => setDialog('upload')}
+                  openedVersion={versionOpened}
+                  downloadFileMutation={downloadFileMutation}
                 />
               )}
             </GridContainer>
