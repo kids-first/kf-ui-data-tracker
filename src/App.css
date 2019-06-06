@@ -36,7 +36,12 @@ body {
 
 .Header--navigation {
   @extend .grid-container, .mx-auto, .border-none, .p-12;
+
+  .Navigation--buttons {
+    @extend .Navigation--buttons, .cell-11-2;
+  }
 }
+
 
 .Form--Header {
   background-color: #d3d2d3;

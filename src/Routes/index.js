@@ -14,6 +14,7 @@ import {
   EmptyView,
   TokensListView,
   FileDetailView,
+  ProfileView,
 } from '../views';
 
 const Routes = () => (
@@ -29,9 +30,12 @@ const Routes = () => (
           }}
           buttons={[
             (localStorage.getItem('accessToken') !== null ||
-              localStorage.getItem('egoToken') !== null) && (
+              localStorage.getItem('egoToken') !== null) && [
+              <Button key={1} onClick={() => history.push('/profile')}>
+                Profile
+              </Button>,
               <Button
-                key={1}
+                key={2}
                 onClick={() => {
                   localStorage.removeItem('accessToken');
                   localStorage.removeItem('idToken');
@@ -40,14 +44,15 @@ const Routes = () => (
                 }}
               >
                 Logout
-              </Button>
-            ),
+              </Button>,
+            ],
           ]}
         />
       )}
     />
     <Route path="/login" component={LoginView} />
     <Route path="/callback" component={CallbackView} />
+    <Route path="/profile" component={ProfileView} />
     <PrivateRoute path="/study/:kfId/" component={NavBarView} />
     <Switch>
       <PrivateRoute exact path="/" component={StudyListView} />
