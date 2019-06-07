@@ -1,3 +1,29 @@
+# Kids First Data Tracker Release 0.4.0
+
+## Features
+
+Flow refactoring and notification settings.
+
+### Summary
+
+Feature Emojis: ♻️x5 ✨x4 🐛x1 🚚 x1
+Feature Labels: [refactor](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/refactor) x8 [feature](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/feature) x5 [design](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/design) x4 [bug](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/bug) x1
+
+### New features and changes
+
+- (#285) ♻️  Refactor document edit modal - @XuTheBunny
+- (#284) ✨ Add version detail modal - @XuTheBunny
+- (#283) ✨ Study subscriptions manager - @dankolbman
+- (#282) ♻️  Refactor version upload and annotation modal style - @XuTheBunny
+- (#281) ♻️  Refactor version list component - @XuTheBunny
+- (#274) ✨ Add user profile page - @dankolbman
+- (#280) ♻️ Refactor a vatar component taking creator data - @XuTheBunny
+- (#279) ♻️  Refactor badge component taking version state data - @XuTheBunny
+- (#273) ✨ Add new version flow - @dankolbman
+- (#272) 🐛 Multistep upload - @dankolbman
+- (#265) 🚚 Rename .jsx files to .js - @dankolbman
+
+
 # Kids First Data Tracker Release 0.3.0
 
 ## Features
