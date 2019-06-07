@@ -24,7 +24,7 @@ const NewFileForm = ({handleSubmit, handleCancel, errors}) => {
     >
       <GridContainer collapsed="rows">
         <label
-          className="row-1 cell-3 text-right Form--label-required"
+          className="row-1 cell-3 text-right Form--Label Form--Label-required"
           htmlFor="file_name"
         >
           Document Title:
@@ -39,7 +39,7 @@ const NewFileForm = ({handleSubmit, handleCancel, errors}) => {
           onChange={e => setFileName(e.target.value)}
         />
         <label
-          className="row-2 cell-3 text-right Form--label-required"
+          className="row-2 cell-3 text-right Form--Label Form--Label-required"
           htmlFor="file_type"
         >
           Document Type:
@@ -55,7 +55,7 @@ const NewFileForm = ({handleSubmit, handleCancel, errors}) => {
           ))}
         </fieldset>
         <label
-          className="row-3 cell-3 text-right Form--label-required"
+          className="row-3 cell-3 text-right Form--Label Form--Label-required"
           htmlFor="description"
         >
           Describe document contents:

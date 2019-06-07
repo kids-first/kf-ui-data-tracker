@@ -59,8 +59,8 @@ it('edits an existing file correctly', async () => {
   fireEvent.change(descInput, {target: {value: 'Some description here'}});
   await wait();
 
-  // Click 'Submit' button to return to file detail view
-  fireEvent.click(tree.getByText(/SUBMIT/));
+  // Click 'Save' button to return to file detail view
+  fireEvent.click(tree.getByText(/SAVE/));
   await wait();
 
   // Expect to see the file name and description updated on detail view
