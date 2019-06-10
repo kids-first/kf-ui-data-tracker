@@ -38,7 +38,7 @@ const FileDetail = ({fileNode, history, match}) => {
                 className="BackButton"
                 data-testid="back-to-filelist"
               >
-                Back to All Files
+                Back to All Documents
               </Link>
               <h3 className="FileTitle font-body font-black row-2 cell-12 lg:cell-10 md:cell-9 ">
                 {fileNode.name}

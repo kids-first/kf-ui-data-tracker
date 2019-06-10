@@ -39,7 +39,7 @@ const UploadContainer = ({handleUpload}) => {
       onDragLeave={handleDragLeave}
       handleDrop={e => handleUpload(e.target.files[0])}
       handleSelectedFile={e => handleUpload(e.target.files[0])}
-      instructions="To upload files, drag and drop them here"
+      instructions="To upload Study Documents drag and drop a file here"
     />
   );
 };

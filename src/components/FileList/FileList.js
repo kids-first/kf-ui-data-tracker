@@ -28,7 +28,7 @@ const FileList = ({className, fileList, studyId}) => {
             <FileElement key={node.kfId} fileListId={studyId} fileNode={node} />
           ))
         ) : (
-          <h3 className="FileList--Empty">You don't have any files yet.</h3>
+          <h3 className="FileList--Empty">You don't have any documents yet.</h3>
         )}
       </ul>
       {pageCount() > 0 && (
