@@ -37,6 +37,7 @@ it('edits an existing file correctly', async () => {
   await wait();
 
   expect(tree.queryAllByText(/organization.jpeg/i).length).toBe(1);
+  expect(tree.queryAllByText(/Approved/).length).toBe(0);
 
   // Click on the first file's name to go to file detail page
   const fileName = tree.getByText(/organization.jpeg/i);
@@ -59,6 +60,12 @@ it('edits an existing file correctly', async () => {
   fireEvent.change(descInput, {target: {value: 'Some description here'}});
   await wait();
 
+  // Update approval status from 'Pending Review' to 'Approved'
+  fireEvent.click(tree.getByTestId('status-dropdown'));
+  await wait();
+  fireEvent.click(tree.getByText(/Approved/));
+  await wait();
+
   // Click 'Save' button to return to file detail view
   fireEvent.click(tree.getByText(/SAVE/));
   await wait();
@@ -67,6 +74,9 @@ it('edits an existing file correctly', async () => {
   expect(tree.queryAllByText(/organizaton.jpeg/i).length).toBe(0);
   expect(tree.queryAllByText(/Some description here/i).length).toBe(1);
   expect(tree.queryAllByText(/mynewfile.txt/i).length).toBe(1);
+
+  // Expect to see the file status updated on detail view
+  expect(tree.queryAllByText(/Approved/).length).toBe(1);
 
   expect(tree.container).toMatchSnapshot();
 });
