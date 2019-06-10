@@ -41,7 +41,7 @@ const StudyFilesListView = props => (
           <div className="row-3 cell-3-8">
             <UploadContainer
               handleUpload={file =>
-                props.history.push('files/new-document', {file})
+                props.history.push('documents/new-document', {file})
               }
             />
           </div>

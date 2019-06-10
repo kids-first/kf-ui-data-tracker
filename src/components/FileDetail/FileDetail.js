@@ -34,7 +34,7 @@ const FileDetail = ({fileNode, history, match}) => {
           {(deleteFile, {loading, error}) => (
             <GridContainer>
               <Link
-                to={`/study/${match.params.kfId}/files`}
+                to={`/study/${match.params.kfId}/documents`}
                 className="BackButton"
                 data-testid="back-to-filelist"
               >

@@ -19,7 +19,7 @@ const NewDocumentView = ({match, history, location, createDocument}) => {
   // If the user landed here without a file, they probably got here from
   // some external page. We'll send them back to the study's file list view.
   if (!location.state || !location.state.file) {
-    history.push(`/study/${match.params.kfId}/files`);
+    history.push(`/study/${match.params.kfId}/documents`);
   }
   const handleSubmit = (fileName, fileType, fileDescription) => {
     const studyId = match.params.kfId;
@@ -34,7 +34,7 @@ const NewDocumentView = ({match, history, location, createDocument}) => {
       },
     })
       .then(resp => {
-        history.push(`/study/${studyId}/files`);
+        history.push(`/study/${studyId}/documents`);
       })
       .catch(err => {
         setErrors(err.message);
@@ -51,14 +51,18 @@ const NewDocumentView = ({match, history, location, createDocument}) => {
         telling us about the contents of your uploaded files. This helps our
         engineers accurately interpret your data.
       </p>
-      <div className="row-3 cell-3 py-12 Form--Header text-right">Uploaded File:</div>
+      <div className="row-3 cell-3 py-12 Form--Header text-right">
+        Uploaded File:
+      </div>
       <div className="row-3 cell-9 py-12 Form--Header pl-32">
         {location.state.file.name}
       </div>
       <section className="study-file-list cell-12 row-4">
         <NewDocumentForm
           handleSubmit={handleSubmit}
-          handleCancel={() => history.push(`/study/${match.params.kfId}/files`)}
+          handleCancel={() =>
+            history.push(`/study/${match.params.kfId}/documents`)
+          }
           errors={errors}
         />
       </section>
