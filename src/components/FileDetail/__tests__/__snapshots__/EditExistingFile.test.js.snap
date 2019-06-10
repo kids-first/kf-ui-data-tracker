@@ -806,7 +806,7 @@ exports[`edits an existing file correctly 2`] = `
                 Status:
               </p>
               <div
-                class="Badge bg-lightBlue"
+                class="Badge bg-teal"
               >
                 <span>
                   Approved
@@ -1020,7 +1020,7 @@ exports[`edits an existing file correctly 2`] = `
                 class="grid-container mx-auto grid-container--collapsed-rows p-4"
               >
                 <div
-                  class="FileVersionElement--Icon row-3 cell-1 lg:row-1 lg:cell-1 bg-lightBlue"
+                  class="FileVersionElement--Icon row-3 cell-1 lg:row-1 lg:cell-1 bg-teal"
                 />
                 <div
                   class="FileVersionElement--Tag row-3 cell-2 lg:row-2 lg:cell-1"

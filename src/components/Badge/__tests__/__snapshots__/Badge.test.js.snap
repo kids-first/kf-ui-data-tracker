@@ -29,7 +29,7 @@ exports[`renders badges with all available state 1`] = `
 exports[`renders badges with all available state 2`] = `
 <body>
   <div
-    class="Badge bg-lightBlue"
+    class="Badge bg-teal"
   >
     <span>
       Approved
@@ -53,7 +53,7 @@ exports[`renders badges with all available state 3`] = `
 exports[`renders badges with all available state 4`] = `
 <body>
   <div
-    class="Badge bg-teal"
+    class="Badge bg-blue"
   >
     <span>
       Processed
