@@ -27,8 +27,7 @@ const StudySubscriptionContainer = ({
   const handleToggle = study => {
     const isSubscribed = subscriptions.includes(study.kfId);
     const action = isSubscribed ? unsubscribeFrom : subscribeTo;
-    action({variables: {studyId: study.kfId}})
-      .catch(err => console.log(err));
+    action({variables: {studyId: study.kfId}}).catch(err => console.log(err));
   };
 
   // Renders either a subscribe/unsubscribe button

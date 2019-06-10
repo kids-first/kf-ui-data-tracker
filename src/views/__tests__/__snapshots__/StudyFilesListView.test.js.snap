@@ -8,7 +8,7 @@ exports[`deletes a file correctly 1`] = `
     <h3
       class="text-blue font-normal m-0 cell-12 row-1"
     >
-      Upload Study Files & Manifests for DRC Approval
+      Upload Study Documents for DRC Approval
     </h3>
     <section
       class="study-file-list cell-12 row-2"
@@ -40,7 +40,7 @@ exports[`deletes a file correctly 1`] = `
               <a
                 class="w-full no-underline text-black inline-block"
                 data-testid="edit-file"
-                href="/study/undefined/files/SF_5ZPEM167"
+                href="/study/undefined/documents/SF_5ZPEM167"
               >
                 <p
                   class="FileList--Element-name text-sm font-bold mb-0 mt-4 group-hover:text-blue"
@@ -197,7 +197,7 @@ exports[`deletes a file correctly 1`] = `
         <p
           class="max-w-full pt-0 pb-4 mt-0"
         >
-          To upload files, drag and drop them here
+          To upload Study Documents drag and drop a file here
           <br />
           <small
             class="m-0 p-0"
@@ -225,7 +225,7 @@ exports[`renders correctly 1`] = `
     <h3
       class="text-blue font-normal m-0 cell-12 row-1"
     >
-      Upload Study Files & Manifests for DRC Approval
+      Upload Study Documents for DRC Approval
     </h3>
     <section
       class="study-file-list cell-12 row-2"
@@ -257,7 +257,7 @@ exports[`renders correctly 1`] = `
               <a
                 class="w-full no-underline text-black inline-block"
                 data-testid="edit-file"
-                href="/study/undefined/files/SF_5ZPEM167"
+                href="/study/undefined/documents/SF_5ZPEM167"
               >
                 <p
                   class="FileList--Element-name text-sm font-bold mb-0 mt-4 group-hover:text-blue"
@@ -381,7 +381,7 @@ exports[`renders correctly 1`] = `
               <a
                 class="w-full no-underline text-black inline-block"
                 data-testid="edit-file"
-                href="/study/undefined/files/SF_Y07IN1HO"
+                href="/study/undefined/documents/SF_Y07IN1HO"
               >
                 <p
                   class="FileList--Element-name text-sm font-bold mb-0 mt-4 group-hover:text-blue"
@@ -538,7 +538,7 @@ exports[`renders correctly 1`] = `
         <p
           class="max-w-full pt-0 pb-4 mt-0"
         >
-          To upload files, drag and drop them here
+          To upload Study Documents drag and drop a file here
           <br />
           <small
             class="m-0 p-0"

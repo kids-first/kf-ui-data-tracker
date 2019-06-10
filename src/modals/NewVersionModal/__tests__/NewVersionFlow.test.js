@@ -20,7 +20,9 @@ it('creates a new version', async () => {
   );
   const tree = render(
     <MockedProvider mocks={mocks}>
-      <MemoryRouter initialEntries={['/study/SD_8WX8QQ06/files/SF_5ZPEM167']}>
+      <MemoryRouter
+        initialEntries={['/study/SD_8WX8QQ06/documents/SF_5ZPEM167']}
+      >
         <NewVersionFlow
           match={{
             params: {
@@ -38,13 +40,13 @@ it('creates a new version', async () => {
   await wait(0);
 
   const uploadBox = tree
-    .queryAllByText(/drag and drop them here/i)
+    .queryAllByText(/drag and drop/i)
     .map(f => f.textContent);
   expect(uploadBox.length).toBe(1);
 
   // Create and upload file
   const file = new File(['content'], 'my.txt');
-  const formElement = tree.getByText(/drop them here/i);
+  const formElement = tree.getByText(/drag and drop a file here/i);
   Object.defineProperty(formElement, 'files', {value: [file]});
 
   act(() => {

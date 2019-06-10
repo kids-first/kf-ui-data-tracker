@@ -29,7 +29,7 @@ beforeAll(() => {
 it('edits an existing file correctly', async () => {
   const tree = render(
     <MockedProvider mocks={mocks}>
-      <MemoryRouter initialEntries={['/study/SD_8WX8QQ06/files/']}>
+      <MemoryRouter initialEntries={['/study/SD_8WX8QQ06/documents/']}>
         <Routes />
       </MemoryRouter>
     </MockedProvider>,

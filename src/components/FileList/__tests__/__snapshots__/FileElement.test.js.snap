@@ -26,7 +26,7 @@ exports[`renders correctly 1`] = `
         <a
           class="w-full no-underline text-black inline-block"
           data-testid="edit-file"
-          href="/study/undefined/files/SF_5ZPEM167"
+          href="/study/undefined/documents/SF_5ZPEM167"
         >
           <p
             class="FileList--Element-name text-sm font-bold mb-0 mt-4 group-hover:text-blue"
@@ -157,7 +157,7 @@ exports[`renders loading state 1`] = `
         <a
           class="w-full no-underline text-black inline-block"
           data-testid="edit-file"
-          href="/study/undefined/files/SF_5ZPEM167"
+          href="/study/undefined/documents/SF_5ZPEM167"
         >
           <p
             class="FileStatus--loading font-bold mb-0 mt-4 group-hover:text-blue"

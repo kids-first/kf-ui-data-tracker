@@ -106,9 +106,9 @@ exports[`edits an existing file correctly 1`] = `
               <a
                 aria-current="page"
                 class="active"
-                href="/study/SD_8WX8QQ06/files"
+                href="/study/SD_8WX8QQ06/documents"
               >
-                Files
+                Documents
               </a>
             </li>
             <li
@@ -137,9 +137,9 @@ exports[`edits an existing file correctly 1`] = `
         <a
           class="BackButton"
           data-testid="back-to-filelist"
-          href="/study/SD_8WX8QQ06/files"
+          href="/study/SD_8WX8QQ06/documents"
         >
-          Back to All Files
+          Back to All Documents
         </a>
         <h3
           class="FileTitle font-body font-black row-2 cell-12 lg:cell-10 md:cell-9 "
@@ -751,9 +751,9 @@ exports[`edits an existing file correctly 2`] = `
               <a
                 aria-current="page"
                 class="active"
-                href="/study/SD_8WX8QQ06/files"
+                href="/study/SD_8WX8QQ06/documents"
               >
-                Files
+                Documents
               </a>
             </li>
             <li
@@ -782,9 +782,9 @@ exports[`edits an existing file correctly 2`] = `
         <a
           class="BackButton"
           data-testid="back-to-filelist"
-          href="/study/SD_8WX8QQ06/files"
+          href="/study/SD_8WX8QQ06/documents"
         >
-          Back to All Files
+          Back to All Documents
         </a>
         <h3
           class="FileTitle font-body font-black row-2 cell-12 lg:cell-10 md:cell-9 "
