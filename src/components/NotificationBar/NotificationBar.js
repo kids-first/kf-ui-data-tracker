@@ -5,18 +5,24 @@ import SvgIcon from '../Icon/Icon';
 /**
  * Displays notification bar with one main button (current)
  */
-const NotificationBar = ({className, mainButton, icon, message, note}) => {
+const NotificationBar = ({
+  className,
+  mainButton,
+  icon,
+  message,
+  note,
+  borderColor,
+  backgroundColor,
+}) => {
   let notificationBarClass = classes('NotificationBar', className);
   return (
-    <div className={notificationBarClass}>
+    <div
+      className={notificationBarClass}
+      style={{borderColor: borderColor, backgroundColor: backgroundColor}}
+    >
       <div className="flex">
         {icon && (
-          <SvgIcon
-            kind="Notification"
-            width="24"
-            height="24"
-            className="mr-4"
-          />
+          <SvgIcon kind={icon} width="24" height="24" className="mr-8" />
         )}
         <p className="m-0 text-sm self-stretch">
           <span className="font-bold text-base pr-4">{message}</span>
