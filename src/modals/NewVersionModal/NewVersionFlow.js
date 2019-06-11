@@ -25,6 +25,8 @@ export const NewVersionFlow = ({
   const [description, setDescription] = useState();
   // For any errors that occur during upload
   const [errors, setErrors] = useState();
+  // For the uploading stage
+  const [onUploading, setUploading] = useState(false);
 
   // Handle first step by saving file and progressing the step counter
   const handleFile = file => {
@@ -34,10 +36,14 @@ export const NewVersionFlow = ({
 
   // Handle the version upload mutation
   const handleSave = props => {
+    setUploading(true);
     createVersion({
       variables: {file, fileId: match.params.fileId, description},
     })
-      .then(resp => handleClose())
+      .then(resp => {
+        handleClose();
+        setUploading(false);
+      })
       .catch(err => setErrors(err));
   };
 
@@ -51,9 +57,9 @@ export const NewVersionFlow = ({
     <Modal
       title={`Upload Document Version: ${fileNode.name}`}
       onCloseModal={handleClose}
-      disableSubmit={step === 0 || !description || !file}
+      disableSubmit={step === 0 || !description || !file || onUploading}
       onSubmit={handleSave}
-      submitText="UPLOAD"
+      submitText={onUploading ? 'UPLOADING ...' : 'UPLOAD'}
       className="Modal--medium"
     >
       {step === 1 && (
