@@ -13,10 +13,13 @@ const NewFileForm = ({handleSubmit, handleCancel, errors}) => {
   const [fileType, setFileType] = useState();
   const [fileName, setFileName] = useState();
   const [fileDescription, setFileDescription] = useState();
-
+  // For the uploading stage
+  const [onUploading, setUploading] = useState(false);
+  console.log(onUploading);
   return (
     <form
       onSubmit={ev => {
+        setUploading(true);
         ev.preventDefault();
         handleSubmit(fileName, fileType, fileDescription);
       }}
@@ -74,9 +77,9 @@ const NewFileForm = ({handleSubmit, handleCancel, errors}) => {
           <Button
             type="submit"
             color="primary"
-            disabled={!fileName || !fileType || !fileDescription}
+            disabled={!fileName || !fileType || !fileDescription || onUploading}
           >
-            UPLOAD
+            {onUploading ? 'UPLOADING ...' : 'UPLOAD'}
           </Button>
         </div>
       </GridContainer>
