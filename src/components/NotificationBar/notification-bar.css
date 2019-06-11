@@ -1,0 +1,4 @@
+.NotificationBar {
+  background-color: #00aceb24;
+  @extend .border-lightBlue, .border-l-8, .flex, .justify-between, .p-12;
+}

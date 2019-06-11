@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import classes from 'classnames';
 import FileElement from './FileElement';
 import ReactPaginate from 'react-paginate';
+import NotificationBar from '../NotificationBar/NotificationBar';
+import {fileSortedVersions} from '../../common/fileUtils';
 /**
  * Displays list of study files
  */
@@ -20,8 +22,34 @@ const FileList = ({className, fileList, studyId}) => {
     return Math.ceil(fileList.length / perPage);
   };
   const offset = fileList.slice(perPage * page, perPage * page + perPage);
+
+  const showNotification = () => {
+    var statusList = [];
+    var i;
+    for (i in fileList) {
+      const sortedVersions = fileSortedVersions(fileList[i].node);
+      const versionStatus =
+        sortedVersions.length > 0 ? sortedVersions[0].node.state : null;
+      statusList.push(versionStatus);
+    }
+    if (statusList.includes('CHN')) {
+      return (
+        <NotificationBar
+          borderColor="rgba(221,31,42,1)"
+          backgroundColor="rgba(221,31,42,0.1)"
+          icon="error"
+          message="Changes Needed"
+          note="The DRC has requested that you make changes to some of your documents."
+        />
+      );
+    } else {
+      return null;
+    }
+  };
+
   return (
     <Fragment>
+      {showNotification()}
       <ul className={fileListClass}>
         {fileList.length ? (
           offset.map(({node}) => (
