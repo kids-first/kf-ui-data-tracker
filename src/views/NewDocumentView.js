@@ -12,7 +12,6 @@ import {GET_STUDY_BY_ID} from '../state/queries';
  * populated by the router (eg: history.push('/new', {state: <File>}) )
  */
 const NewDocumentView = ({match, history, location, createDocument}) => {
-  console.log(location.state.file);
   // Tracks any error state reported from the server
   const [errors, setErrors] = useState();
 
