@@ -8,7 +8,12 @@ import {
   GET_FILE_BY_ID,
 } from '../../src/state/queries';
 import updateFile from './responses/updateFile.json';
-import {DELETE_FILE, UPDATE_FILE} from '../../src/state/mutations';
+import updateVersion from './responses/updateVersion.json';
+import {
+  DELETE_FILE,
+  UPDATE_FILE,
+  UPDATE_VERSION,
+} from '../../src/state/mutations';
 
 export const mocks = [
   {
@@ -64,5 +69,16 @@ export const mocks = [
       },
     },
     result: updateFile,
+  },
+  {
+    request: {
+      query: UPDATE_VERSION,
+      variables: {
+        versionId: 'FV_DMTKEFQW',
+        description: 'version description',
+        state: 'APP',
+      },
+    },
+    result: updateVersion,
   },
 ];
