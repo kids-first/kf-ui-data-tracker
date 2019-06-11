@@ -619,61 +619,84 @@ exports[`renders with files 1`] = `
       </section>
     </li>
   </ul>
-  <p
-    class="m-0 text-sm text-mediumGrey text-right"
-  >
-    5
-     of 
-    8
-     files
-  </p>
-  <ul
+  <div
     class="Pagination"
   >
-    <li
-      class="previous disabled"
+    <p
+      class="inline-block m-0 pt-12 text-sm text-mediumGrey  text-left"
     >
-      <a
-        aria-disabled="true"
-        role="button"
-        tabindex="0"
-      >
-        &lt;
-      </a>
-    </li>
-    <li
-      class="Pagination--active"
+      Showing 
+      5
+       of 
+      8
+       files
+    </p>
+    <ul
+      class="Pagination--PageList"
     >
-      <a
-        aria-current="page"
-        aria-label="Page 1 is your current page"
-        role="button"
-        tabindex="0"
+      <li
+        class="previous disabled"
       >
-        1
-      </a>
-    </li>
-    <li>
-      <a
-        aria-label="Page 2"
-        role="button"
-        tabindex="0"
+        <a
+          aria-disabled="true"
+          role="button"
+          tabindex="0"
+        >
+          <svg
+            id="mock-icon"
+            kind="previous"
+            size="4"
+          >
+            <title>
+              icon-
+              previous
+            </title>
+          </svg>
+        </a>
+      </li>
+      <li
+        class="Pagination--active"
       >
-        2
-      </a>
-    </li>
-    <li
-      class="next"
-    >
-      <a
-        aria-disabled="false"
-        role="button"
-        tabindex="0"
+        <a
+          aria-current="page"
+          aria-label="Page 1 is your current page"
+          role="button"
+          tabindex="0"
+        >
+          1
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 2"
+          role="button"
+          tabindex="0"
+        >
+          2
+        </a>
+      </li>
+      <li
+        class="next"
       >
-        &gt;
-      </a>
-    </li>
-  </ul>
+        <a
+          aria-disabled="false"
+          role="button"
+          tabindex="0"
+        >
+          <svg
+            id="mock-icon"
+            kind="next"
+            size="4"
+          >
+            <title>
+              icon-
+              next
+            </title>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </div>
 </div>
 `;
 
