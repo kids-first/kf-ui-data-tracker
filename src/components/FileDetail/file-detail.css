@@ -77,8 +77,3 @@
 .FileDialog--Edit form {
   @extend .mb-20, .px-0;
 }
-
-.NotificationBar {
-  background-color: #00aceb24;
-  @extend .border-lightBlue, .border-l-8, .flex, .justify-between, .p-12;
-}
