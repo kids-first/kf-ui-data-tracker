@@ -1,9 +1,9 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import GoogleLogin from 'react-google-login';
 import {GOOGLE_APP_ID, EGO_API} from '../../common/globals';
 import jwtDecode from 'jwt-decode';
 import {ApolloConsumer} from 'react-apollo';
-import {Button} from 'kf-uikit';
+import {Button, Icon} from 'semantic-ui-react';
 import {withRouter} from 'react-router';
 import {auth} from '../../state/auth';
 
@@ -52,17 +52,26 @@ const LoginContainer = ({originalUrl, history}) => (
           }
           onFailure={onFailure}
           render={renderProps => (
-            <Button size="large" className="mx-8" onClick={renderProps.onClick}>
+            <Button
+              onClick={() => renderProps.onClick}
+              size="large"
+              icon
+              labelPosition="right"
+            >
               Login with Ego
+              <Icon name="chevron right" />
             </Button>
           )}
         />
         <Button
-          size="large"
-          className="mx-8"
           onClick={() => auth.login(originalUrl, false)}
+          size="large"
+          positive
+          icon
+          labelPosition="right"
         >
           Login with Auth0
+          <Icon name="chevron right" />
         </Button>
       </Fragment>
     )}

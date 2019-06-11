@@ -1,54 +1,28 @@
 import React from 'react';
-import classNames from 'classnames';
+import {Header, Icon, Grid, Message, Segment} from 'semantic-ui-react';
 import {Login} from '../components/Login';
 
 const LoginView = ({location}) => {
-  const loginContainer = classNames(
-    'View--Login',
-    'flex',
-    'justify-center',
-    'items-center',
-    'min-h-screen',
-    'text-center,',
-  );
-
   return (
-    <div className={loginContainer}>
-      <div className="text-center">
-        <h1 className="mt-0">
-          <svg className="w-full h-6">
-            <defs>
-              <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor={'rgb(64, 76, 154)'} />
-                <stop offset="100%" stopColor={'rgb(2, 176, 237)'} />
-              </linearGradient>
-            </defs>
-            <text
-              fill="url(#gradient)"
-              x="50%"
-              y="50%"
-              dominantBaseline="central"
-              textAnchor="middle"
-              children={'Kids First Data Tracker'}
-            />
-          </svg>
-        </h1>
-        <div className="Card--Login">
-          <h2 className="Card--title pb-4">Log in</h2>
-          <div className="pb-2">
-            <Login originalUrl={location.state ? location.state.from : '/'} />
-          </div>
-          <hr />
-          <p className="max-w-full">
-            <span>New to Kids First Data Tracker?</span>
+    <Grid
+      className="View--Login"
+      textAlign="center"
+      style={{height: '90vh'}}
+      verticalAlign="middle"
+    >
+      <Grid.Column width="7">
+        <Segment>
+          <Header as="h1">Kids First Data Tracker</Header>
+          <Login originalUrl={location.state ? location.state.from : '/'} />
+          <Message>
+            New to Kids First Data Tracker?
             <a className="no-underline" href="/">
-              {' '}
-              Join now >
+              Join now <Icon name="chevron right" />
             </a>
-          </p>
-        </div>
-      </div>
-    </div>
+          </Message>
+        </Segment>
+      </Grid.Column>
+    </Grid>
   );
 };
 
