@@ -38,7 +38,7 @@ const Routes = () => (
     />
     <Route path="/login" component={LoginView} />
     <Route path="/callback" component={CallbackView} />
-    <Route path="/profile" component={ProfileView} />
+    <PrivateRoute path="/profile" component={ProfileView} />
     <PrivateRoute path="/study/:kfId/" component={NavBarView} />
     <Switch>
       <PrivateRoute exact path="/" component={StudyListView} />
