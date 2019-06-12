@@ -25,7 +25,7 @@ it('renders with files', async () => {
   // Click on the next button to go to next page
 
   let button = tree.container.querySelector('.next > a');
-  console.log(button);
+
   button.click();
 
   await wait();

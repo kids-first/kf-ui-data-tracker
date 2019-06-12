@@ -61,16 +61,6 @@
   @extend .list-reset, .py-12, .px-32, .border-l-8, .border-red;
 }
 
-.FileDialog--Upload {
-  width: 70%;
-  height: 80%;
-  @extend .mx-auto, .flex, .justify-center, .items-center;
-  .upload-target {
-    padding-top: 100px;
-    height: 70%;
-  }
-}
-
 .FileDialog--Edit {
   @extend .shadow;
 }

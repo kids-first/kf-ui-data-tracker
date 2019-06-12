@@ -60,7 +60,6 @@ export const NewVersionFlow = ({
       disableSubmit={step === 0 || !description || !file || onUploading}
       onSubmit={handleSave}
       submitText={onUploading ? 'UPLOADING ...' : 'UPLOAD'}
-      className="Modal--medium"
     >
       {step === 1 && (
         <button
