@@ -20,8 +20,10 @@ class Auth {
     scope: 'openid profile email',
   });
 
-  login() {
-    this.auth0.authorize();
+  login(originalUrl) {
+    this.auth0.authorize({
+      redirectUri: auth0RedirectUri + '?from=' + originalUrl,
+    });
   }
 
   handleAuthentication(history) {

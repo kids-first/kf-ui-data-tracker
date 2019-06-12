@@ -57,7 +57,11 @@ const LoginContainer = ({originalUrl, history}) => (
             </Button>
           )}
         />
-        <Button size="large" className="mx-8" onClick={() => auth.login()}>
+        <Button
+          size="large"
+          className="mx-8"
+          onClick={() => auth.login(originalUrl, false)}
+        >
           Login with Auth0
         </Button>
       </Fragment>
