@@ -92,7 +92,7 @@ exports[`renders correctly 1`] = `
           >
             <a
               class="no-underline"
-              href="/study/SD_X6E5KWM4/files"
+              href="/study/SD_X6E5KWM4/documents"
             >
               <div
                 class="Card StudyCard hover:shadow-lg"
@@ -137,7 +137,7 @@ exports[`renders correctly 1`] = `
           >
             <a
               class="no-underline"
-              href="/study/SD_203C26IZ/files"
+              href="/study/SD_203C26IZ/documents"
             >
               <div
                 class="Card StudyCard hover:shadow-lg"
@@ -182,7 +182,7 @@ exports[`renders correctly 1`] = `
           >
             <a
               class="no-underline"
-              href="/study/SD_KOECR7Q1/files"
+              href="/study/SD_KOECR7Q1/documents"
             >
               <div
                 class="Card StudyCard hover:shadow-lg"

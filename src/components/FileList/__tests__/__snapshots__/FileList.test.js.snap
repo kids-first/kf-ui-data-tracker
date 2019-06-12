@@ -29,7 +29,7 @@ exports[`renders with files 1`] = `
           <a
             class="w-full no-underline text-black inline-block"
             data-testid="edit-file"
-            href="/study/undefined/files/SF_FPVBM0JF"
+            href="/study/undefined/documents/SF_FPVBM0JF"
           >
             <p
               class="FileList--Element-name text-sm font-bold mb-0 mt-4 group-hover:text-blue"
@@ -153,7 +153,7 @@ exports[`renders with files 1`] = `
           <a
             class="w-full no-underline text-black inline-block"
             data-testid="edit-file"
-            href="/study/undefined/files/SF_DLXEQZV1"
+            href="/study/undefined/documents/SF_DLXEQZV1"
           >
             <p
               class="FileList--Element-name text-sm font-bold mb-0 mt-4 group-hover:text-blue"
@@ -277,7 +277,7 @@ exports[`renders with files 1`] = `
           <a
             class="w-full no-underline text-black inline-block"
             data-testid="edit-file"
-            href="/study/undefined/files/SF_6JBSGVWE"
+            href="/study/undefined/documents/SF_6JBSGVWE"
           >
             <p
               class="FileList--Element-name text-sm font-bold mb-0 mt-4 group-hover:text-blue"
@@ -401,7 +401,7 @@ exports[`renders with files 1`] = `
           <a
             class="w-full no-underline text-black inline-block"
             data-testid="edit-file"
-            href="/study/undefined/files/SF_JT0GRZP7"
+            href="/study/undefined/documents/SF_JT0GRZP7"
           >
             <p
               class="FileList--Element-name text-sm font-bold mb-0 mt-4 group-hover:text-blue"
@@ -525,7 +525,7 @@ exports[`renders with files 1`] = `
           <a
             class="w-full no-underline text-black inline-block"
             data-testid="edit-file"
-            href="/study/undefined/files/SF_16QY2ZXM"
+            href="/study/undefined/documents/SF_16QY2ZXM"
           >
             <p
               class="FileList--Element-name text-sm font-bold mb-0 mt-4 group-hover:text-blue"
@@ -685,7 +685,7 @@ exports[`renders without files 1`] = `
     <h3
       class="FileList--Empty"
     >
-      You don't have any files yet.
+      You don't have any documents yet.
     </h3>
   </ul>
 </div>

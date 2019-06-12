@@ -23,7 +23,7 @@ const StudyFilesListView = props => (
       return (
         <GridContainer collapsed="cells" className="my-20 px-12">
           <h3 className="text-blue font-normal m-0 cell-12 row-1">
-            Upload Study Files & Manifests for DRC Approval
+            Upload Study Documents for DRC Approval
           </h3>
           <section className="study-file-list cell-12 row-2">
             {loading ? (
@@ -41,7 +41,7 @@ const StudyFilesListView = props => (
           <div className="row-3 cell-3-8">
             <UploadContainer
               handleUpload={file =>
-                props.history.push('files/new-document', {file})
+                props.history.push('documents/new-document', {file})
               }
             />
           </div>

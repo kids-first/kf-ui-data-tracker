@@ -18,8 +18,8 @@ const NavBar = ({className, match, history}) => {
       endString: 'dashboard',
     },
     {
-      tab: 'Files',
-      endString: 'files',
+      tab: 'Documents',
+      endString: 'documents',
     },
     {
       tab: 'Collaborators',

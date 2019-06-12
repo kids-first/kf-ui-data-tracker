@@ -26,7 +26,7 @@ const StudyGrid = ({studyList, loading, className}) => {
             >
               <Link
                 className="no-underline"
-                to={`/study/${node.node.kfId}/files`}
+                to={`/study/${node.node.kfId}/documents`}
               >
                 <StudyCard
                   title={node.node.kfId}

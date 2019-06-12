@@ -44,16 +44,16 @@ const Routes = () => (
       <PrivateRoute exact path="/" component={StudyListView} />
       <PrivateRoute
         exact
-        path="/study/:kfId/files"
+        path="/study/:kfId/documents"
         component={StudyFilesListView}
       />
       <PrivateRoute
-        path="/study/:kfId/files/new-document"
+        path="/study/:kfId/documents/new-document"
         component={NewDocumentView}
       />
       <PrivateRoute
         exact
-        path="/study/:kfId/files/:fileId"
+        path="/study/:kfId/documents/:fileId"
         component={FileDetailView}
       />
       <PrivateRoute exact path="/study/:kfId/basicInfo" component={EmptyView} />

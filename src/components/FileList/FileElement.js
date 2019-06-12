@@ -74,7 +74,7 @@ const FileElement = ({className, fileNode, loading, match, fileListId}) => {
 
         <div className="row-2 sm:row-1 cell-12 sm:cell-9   h-full">
           <Link
-            to={`/study/${match.params.kfId}/files/${fileKfID}`}
+            to={`/study/${match.params.kfId}/documents/${fileKfID}`}
             className="w-full no-underline text-black inline-block"
             data-testid="edit-file"
           >
