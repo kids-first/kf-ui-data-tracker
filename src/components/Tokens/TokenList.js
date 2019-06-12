@@ -1,30 +1,31 @@
 import React from 'react';
-import {Icon} from 'kf-uikit';
+import {Button, Container, Header, Image, List, Icon} from 'semantic-ui-react';
+import TimeAgo from 'react-timeago';
 import CopyButton from '../CopyButton/CopyButton';
 
 const TokenList = ({tokens, deleteToken}) => (
-  <ul className="min-w-full list-reset">
+  <List relaxed>
     {tokens.map(node => (
-      <li className="w-full" key={node.node.id}>
-        <button onClick={() => deleteToken(node.node.name)}>
-          <Icon
-            kind="delete"
-            className="w-8 cursor-pointer"
-            width={18}
-            height={18}
-          />
-        </button>
-        <span>
-          {node.node.name}
-        </span>
-        <div className="float-right">
-          <span className="font-mono bg-lightGrey py-2 px-4">
+      <List.Item key={node.node.id}>
+        <List.Content floated="right">
+          <Button icon negative onClick={() => deleteToken(node.node.name)}>
+            <Icon name="trash" />
+          </Button>
+        </List.Content>
+        <List.Content floated="right">
+          <Header size="tiny" block>
             {node.node.token} <CopyButton text={node.node.token} />
-          </span>
-        </div>
-      </li>
+          </Header>
+        </List.Content>
+        {node.node.creator && <Image avatar src={node.node.creator.picture} />}
+        <List.Content>
+          <List.Header>{node.node.name}</List.Header>
+          {node.node.creator && <>Created by {node.node.creator.username} </>}
+          <TimeAgo live={false} date={node.node.createdAt} />
+        </List.Content>
+      </List.Item>
     ))}
-  </ul>
+  </List>
 );
 
 export default TokenList;

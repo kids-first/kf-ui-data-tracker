@@ -1,5 +1,14 @@
 import React from 'react';
 import {Query, Mutation} from 'react-apollo';
+import {
+  Button,
+  Container,
+  Dimmer,
+  Header,
+  Loader,
+  Message,
+  Segment,
+} from 'semantic-ui-react';
 
 import {GET_DEV_TOKENS} from '../state/queries';
 import {DELETE_DEV_TOKEN} from '../state/mutations';
@@ -20,20 +29,19 @@ const TokensListView = () => {
   };
 
   return (
-    <div className="mx-12 pb-16 BodyContent">
-      <h3 className="mt-0 pt-8 text-blue font-normal">
-        Manage Developer Download Tokens
-      </h3>
-      <p>
+    <Container>
+      <Header as="h3">Manage Developer Download Tokens</Header>
+      <Segment basic>
         Developer download tokens allow download of any file using the{' '}
         <code>?token=</code> query parameter or passed in the Authorization
         header with a <code>Token</code> prefix.
-      </p>
-      <p>
-        Keep these tokens private! They will not be displayed again after being
-        created.
-      </p>
-      <section className="study-file-list">
+        <Message
+          warning
+          header="Keep these tokens private!"
+          content="They will not be displayed again after being created."
+        />
+      </Segment>
+      <Segment basic>
         <Query query={GET_DEV_TOKENS}>
           {({loading, error, data}) => (
             <Mutation
@@ -62,7 +70,13 @@ const TokensListView = () => {
             >
               {deleteToken => {
                 if (loading)
-                  return <LoadingPlaceholder componentName="Tokens" />;
+                  return (
+                    <Segment basic style={{minHeight: '100px'}}>
+                      <Dimmer active inverted>
+                        <Loader inverted>Loading tokens...</Loader>
+                      </Dimmer>
+                    </Segment>
+                  );
                 if (error) return `Error!: ${error}`;
 
                 return (
@@ -76,10 +90,10 @@ const TokensListView = () => {
           )}
         </Query>
 
-        <h3>Make a new token</h3>
+        <Header as="h3">Make a new token</Header>
         <NewTokenFormContainer />
-      </section>
-    </div>
+      </Segment>
+    </Container>
   );
 };
 
