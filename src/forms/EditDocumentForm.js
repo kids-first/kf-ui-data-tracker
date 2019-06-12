@@ -20,6 +20,7 @@ const EditDocumentForm = ({
 }) => {
   const versionStatusList = Object.keys(versionState);
   const dropdownClass = classes('Dropdown');
+  const roles = JSON.parse(localStorage.getItem('roles'));
   return (
     <form className="pt-16">
       <GridContainer>
@@ -45,37 +46,41 @@ const EditDocumentForm = ({
           Approval Status:
         </label>
         <div className="row-2 cell-9">
-          <div className={dropdownClass}>
-            <button
-              type="button"
-              className="Dropdown--button justify-start pl-20"
-              tabIndex="0"
-              data-testid="status-dropdown"
-            >
-              <Badge state={versionStatus} />
-              <Icon
-                className="m-12"
-                width={20}
-                height={20}
-                kind="chevron-down"
-              />
-            </button>
-            <div className="Dropdown--container">
-              <ul className="Dropdown--list">
-                {versionStatusList.map(versionStatusValue => (
-                  <button
-                    onClick={() => onVersionStatusChange(versionStatusValue)}
-                    type="button"
-                    className="Dropdown--item"
-                    tabIndex="0"
-                    key={versionStatusValue}
-                  >
-                    <Badge state={versionStatusValue} />
-                  </button>
-                ))}
-              </ul>
+          {roles && roles.includes('ADMIN') ? (
+            <div className={dropdownClass}>
+              <button
+                type="button"
+                className="Dropdown--button justify-start pl-20"
+                tabIndex="0"
+                data-testid="status-dropdown"
+              >
+                <Badge state={versionStatus} />
+                <Icon
+                  className="m-12"
+                  width={20}
+                  height={20}
+                  kind="chevron-down"
+                />
+              </button>
+              <div className="Dropdown--container">
+                <ul className="Dropdown--list">
+                  {versionStatusList.map(versionStatusValue => (
+                    <button
+                      onClick={() => onVersionStatusChange(versionStatusValue)}
+                      type="button"
+                      className="Dropdown--item"
+                      tabIndex="0"
+                      key={versionStatusValue}
+                    >
+                      <Badge state={versionStatusValue} />
+                    </button>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div>
+          ) : (
+            <Badge state={versionStatus} />
+          )}
         </div>
         <label
           className="Form--Label row-3 cell-3 text-right Form--Label-required"
