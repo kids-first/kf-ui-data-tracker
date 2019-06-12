@@ -1,6 +1,7 @@
 import React from 'react';
 import {graphql} from 'react-apollo';
 import {MY_PROFILE} from '../../state/queries';
+import {auth} from '../../state/auth';
 import {Avatar, Icon} from 'kf-uikit';
 
 const ProfileDropdown = ({
@@ -50,9 +51,7 @@ const ProfileDropdown = ({
               className="Dropdown--item w-full"
               tabIndex="0"
               onClick={() => {
-                localStorage.removeItem('accessToken');
-                localStorage.removeItem('idToken');
-                localStorage.removeItem('egoToken');
+                auth.logout();
                 history.go();
               }}
             >
