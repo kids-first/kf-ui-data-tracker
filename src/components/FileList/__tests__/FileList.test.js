@@ -23,7 +23,9 @@ it('renders with files', async () => {
   expect(lisPage1.length).toBe(5);
 
   // Click on the next button to go to next page
-  let button = tree.getByText(/>/);
+
+  let button = tree.container.querySelector('.next > a');
+  console.log(button);
   button.click();
 
   await wait();

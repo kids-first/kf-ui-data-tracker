@@ -1,0 +1,40 @@
+.Pagination {
+  @extend .flex, .flex-row, .justify-end, .mb-20;
+}
+
+.Pagination--PageList {
+  @extend .flex,
+    .list-reset,
+    .justify-center,
+    .rounded-sm,
+    .border,
+    .border-lightGrey;
+
+  li {
+    @extend .border, .border-lightGrey, .text-grey, .text-sm;
+    .Icon {
+      width: 12px;
+      height: 12px;
+    }
+    a {
+      @extend .block, .py-4, .px-8, .m-0;
+    }
+  }
+
+  .next,
+  .previous {
+    &.disabled {
+      .Icon {
+        @extend .fill-current, .text-grey-lightest;
+      }
+    }
+  }
+}
+
+.Pagination--active {
+  @extend .bg-lightGrey;
+}
+
+.Pagination--active a {
+  @extend .text-lightBlue;
+}

@@ -2,9 +2,9 @@ import React, {useState, Fragment} from 'react';
 import PropTypes from 'prop-types';
 import classes from 'classnames';
 import FileElement from './FileElement';
-import ReactPaginate from 'react-paginate';
 import NotificationBar from '../NotificationBar/NotificationBar';
 import {fileSortedVersions} from '../../common/fileUtils';
+import Pagination from '../Pagination/Pagination';
 /**
  * Displays list of study files
  */
@@ -59,26 +59,14 @@ const FileList = ({className, fileList, studyId}) => {
           <h3 className="FileList--Empty">You don't have any documents yet.</h3>
         )}
       </ul>
-      {pageCount() > 0 && (
-        <Fragment>
-          <p className="m-0 text-sm text-mediumGrey text-right">
-            {offset.length} of {fileList.length} files
-          </p>
-          <ReactPaginate
-            previousLabel={'<'}
-            nextLabel={'>'}
-            breakLabel={'...'}
-            breakClassName={'break-me'}
-            pageCount={pageCount()}
-            marginPagesDisplayed={2}
-            pageRangeDisplayed={3}
-            forcePage={page}
-            onPageChange={handlePageClick}
-            containerClassName={'Pagination'}
-            subContainerClassName={'Pagination'}
-            activeClassName={'Pagination--active'}
-          />
-        </Fragment>
+      {pageCount() > 1 && (
+        <Pagination
+          rowCount={fileList.length}
+          currentPageNum={offset.length}
+          pageCount={pageCount()}
+          page={page}
+          onPageClick={handlePageClick}
+        />
       )}
     </Fragment>
   );
