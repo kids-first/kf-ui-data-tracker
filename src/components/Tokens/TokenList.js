@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Container, Header, Image, List, Icon} from 'semantic-ui-react';
+import {Button, Header, Image, List, Icon} from 'semantic-ui-react';
 import TimeAgo from 'react-timeago';
 import CopyButton from '../CopyButton/CopyButton';
 
