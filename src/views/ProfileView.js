@@ -3,7 +3,15 @@ import {graphql, compose} from 'react-apollo';
 import jwtDecode from 'jwt-decode';
 import {MY_PROFILE} from '../state/queries';
 import {UPDATE_PROFILE} from '../state/mutations';
-import {Avatar, GridContainer} from 'kf-uikit';
+import {
+  Container,
+  Form,
+  Grid,
+  Header,
+  Image,
+  Label,
+  Segment,
+} from 'semantic-ui-react';
 import UpdateProfileForm from '../forms/UpdateProfileForm';
 import StudySubscriptionContanier from '../containers/StudySubscriptionContainer';
 
@@ -20,6 +28,7 @@ const ProfileView = ({
 
   const handleSave = (slackNotify, slackMemberId) => {
     setMessage();
+    setErrors();
     setSubmitting(true);
     // Call update mutation
     updateProfile({variables: {slackNotify, slackMemberId}})
@@ -51,39 +60,69 @@ const ProfileView = ({
   const roles =
     decoded['https://kidsfirstdrc.org/roles'] || decoded.context.roles;
   return (
-    <GridContainer collapsed={true}>
-      <h3 className="row-1 cell-12 text-blue font-normal">Your Profile</h3>
-      <Avatar
-        className="row-2 cell-1 align-right mx-16"
-        size={100}
-        imgUrl={profile.picture}
-      />
-      <div className="row-2 cell-5">
-        {Object.keys(fields).map(field => (
-          <div className="row-2 cell-8">
-            {fields[field]}: <input disabled value={profile[field]} />
-          </div>
-        ))}
-      </div>
-      <div className="row-2 cell-5 text-xs">
-        <h4>Your Roles:</h4>
-        <ul className="inline-block list-none">
-          {roles.map((role, i) => (
-            <li className="inline-block rounded-sm bg-lightGrey" key={i}>
-              {role}
-            </li>
-          ))}
-        </ul>
-        <h4>Your Groups:</h4>
-        <ul>
-          {groups.map((group, i) => (
-            <li className="inline-block rounded-sm bg-lightGrey" key={i}>
-              {group}
-            </li>
-          ))}
-        </ul>
-      </div>
-      <h3 className="row-3 cell-12 text-blue font-normal">Notifications</h3>
+    <Container style={{marginTop: '30px'}}>
+      <Header as="h3">Your Profile</Header>
+      <Segment basic>
+        <Grid>
+          <Grid.Row>
+            <Grid.Column width="2" verticalAlign="middle">
+              <Image
+                centered
+                circular
+                size={100}
+                src={profile.picture}
+              />
+            </Grid.Column>
+            <Grid.Column width="8">
+              <Form size="mini">
+                <Form.Group widths={2}>
+                  <Form.Field
+                    label={fields['username']}
+                    control="input"
+                    disabled
+                    value={profile['username']}
+                  />
+                  <Form.Field
+                    label={fields['email']}
+                    control="input"
+                    disabled
+                    value={profile['email']}
+                  />
+                </Form.Group>
+                <Form.Group widths={2}>
+                  <Form.Field
+                    label={fields['firstName']}
+                    control="input"
+                    disabled
+                    value={profile['firstName']}
+                  />
+                  <Form.Field
+                    label={fields['lastName']}
+                    control="input"
+                    disabled
+                    value={profile['lastName']}
+                  />
+                </Form.Group>
+              </Form>
+            </Grid.Column>
+            <Grid.Column width="6" textAlign="right">
+              <Header as="h5">Your Roles</Header>
+              <Label.Group size="tiny">
+                {roles.map((role, i) => (
+                  <Label key={i}>{role}</Label>
+                ))}
+              </Label.Group>
+              <Header as="h5">Your Groups</Header>
+              <Label.Group size="tiny">
+                {groups.map((group, i) => (
+                  <Label key={i}>{group}</Label>
+                ))}
+              </Label.Group>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      </Segment>
+      <Header as="h3">Notifications</Header>
       <UpdateProfileForm
         handleSubmit={handleSave}
         defaultState={{
@@ -94,16 +133,12 @@ const ProfileView = ({
         loading={submitting}
         message={message}
       />
-      <h3 className="row-5 cell-12 text-blue font-normal">
-        Your Subscriptions
-      </h3>
-      <p className="row-6 cell-12 font-title">
+      <Header as="h3">Your Subscriptions</Header>
+      <p>
         We'll notify you of daily activity when you subscribe to studies below
       </p>
-      <div className="row-7 cell-12">
-        <StudySubscriptionContanier />
-      </div>
-    </GridContainer>
+      <StudySubscriptionContanier />
+    </Container>
   );
 };
 
