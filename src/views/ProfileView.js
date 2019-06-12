@@ -1,12 +1,10 @@
 import React, {useState} from 'react';
 import {graphql, compose} from 'react-apollo';
-import jwtDecode from 'jwt-decode';
 import {MY_PROFILE} from '../state/queries';
 import {UPDATE_PROFILE} from '../state/mutations';
 import {Avatar, GridContainer} from 'kf-uikit';
 import UpdateProfileForm from '../forms/UpdateProfileForm';
 import StudySubscriptionContanier from '../containers/StudySubscriptionContainer';
-
 /**
  * A user's profile view
  */
@@ -42,14 +40,9 @@ const ProfileView = ({
     lastName: 'Last Name',
     email: 'Email',
   };
+  const groups = JSON.parse(localStorage.getItem('groups'));
+  const roles = JSON.parse(localStorage.getItem('roles'));
 
-  const token =
-    localStorage.getItem('egoToken') || localStorage.getItem('accessToken');
-  const decoded = jwtDecode(token);
-  const groups =
-    decoded['https://kidsfirstdrc.org/groups'] || decoded.context.groups;
-  const roles =
-    decoded['https://kidsfirstdrc.org/roles'] || decoded.context.roles;
   return (
     <GridContainer collapsed={true}>
       <h3 className="row-1 cell-12 text-blue font-normal">Your Profile</h3>
