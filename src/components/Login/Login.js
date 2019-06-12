@@ -7,7 +7,7 @@ import {Button} from 'kf-uikit';
 import {withRouter} from 'react-router';
 import {auth} from '../../state/auth';
 
-const onSuccess = (repsonse, client, history) => {
+const onSuccess = (repsonse, client, history, originalUrl) => {
   fetch(EGO_API + '/oauth/google/token', {
     method: 'GET',
     mode: 'cors',

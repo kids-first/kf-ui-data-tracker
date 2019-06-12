@@ -15,7 +15,16 @@ const PrivateRoute = ({component: Component, ...rest}) => (
   <Route
     {...rest}
     render={props =>
-      hasToken() ? <Component {...props} /> : <Redirect to="/login" />
+      hasToken() ? (
+        <Component {...props} />
+      ) : (
+        <Redirect
+          to={{
+            pathname: '/login',
+            state: {from: window.location.pathname},
+          }}
+        />
+      )
     }
   />
 );
