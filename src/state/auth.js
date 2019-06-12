@@ -1,4 +1,5 @@
 import auth0 from 'auth0-js';
+import jwtDecode from 'jwt-decode';
 import {
   auth0Domain,
   auth0ClientId,
@@ -32,6 +33,15 @@ class Auth {
         if (authResult && authResult.accessToken && authResult.idToken) {
           localStorage.setItem('accessToken', authResult.accessToken);
           localStorage.setItem('idToken', authResult.idToken);
+          const token = authResult.idToken || authResult.accessToken;
+          const decoded = jwtDecode(token);
+          const groups =
+            decoded['https://kidsfirstdrc.org/groups'] ||
+            decoded.context.groups;
+          const roles =
+            decoded['https://kidsfirstdrc.org/roles'] || decoded.context.roles;
+          localStorage.setItem('groups', JSON.stringify(groups));
+          localStorage.setItem('roles', JSON.stringify(roles));
           history.push(
             new URLSearchParams(history.location.search).get('from'),
           );
