@@ -3,7 +3,7 @@ import {Mutation} from 'react-apollo';
 
 import {GET_DEV_TOKENS} from '../state/queries';
 import {CREATE_DEV_TOKEN} from '../state/mutations';
-import NewTokenForm from '../components/Tokens/NewTokenForm';
+import NewTokenForm from '../forms/NewTokenForm';
 
 const NewTokenFormContainer = () => {
   const onSubmit = (e, createToken) => {
@@ -39,7 +39,7 @@ const NewTokenFormContainer = () => {
     >
       {(createToken, {loading, error}) => (
         <NewTokenForm
-          error={error}
+          error={error && error.message}
           loading={loading}
           onSubmit={e => onSubmit(e, createToken)}
         />
