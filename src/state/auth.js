@@ -32,7 +32,9 @@ class Auth {
         if (authResult && authResult.accessToken && authResult.idToken) {
           localStorage.setItem('accessToken', authResult.accessToken);
           localStorage.setItem('idToken', authResult.idToken);
-          history.push('/');
+          history.push(
+            new URLSearchParams(history.location.search).get('from'),
+          );
         } else if (err) {
           console.log(err);
           alert(`Error: ${err.error}. Check the console for further details.`);
