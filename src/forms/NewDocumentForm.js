@@ -4,6 +4,27 @@ import {Button, GridContainer} from 'kf-uikit';
 import SelectElement from '../components/FileAnnotation/SelectElement';
 import {fileTypeDetail} from '../common/fileUtils';
 
+const plachelderText = {
+  SHM: {
+    title: 'Biospecimen shipping manifest from ...',
+    desc:
+      'Shipping manifest for biospecimens shipped from LabA to CenterB on 00/00/0000 .....',
+  },
+  CLN: {
+    title: `20XX Phenotypic data manifest for  ...`,
+    desc:
+      'Phenotypic data for 00 patients and 00 containing demographics, diagnoses, and ...',
+  },
+  SEQ: {
+    title: 'Sequencing Center manifest from [Seq. Center Name] on [date]... ',
+    desc: 'Manifest received from [Seq. Center Name] accounting for ...',
+  },
+  OTH: {
+    title: '...data sheet...',
+    desc: 'Data for [subject matter] containing/accounting for ...',
+  },
+};
+
 /**
  * A form for uploading a new document.
  * The form will invoke the handleSubmit handle upon submission passing it
@@ -37,7 +58,7 @@ const NewFileForm = ({handleSubmit, handleCancel, errors}) => {
           className="Form--Input row-1 cell-7"
           type="text"
           name="file_name"
-          placeholder="Phenotypic Data manifest for..."
+          placeholder={fileType ? plachelderText[fileType].title : ''}
           defaultValue={fileName}
           onChange={e => setFileName(e.target.value)}
         />
@@ -68,6 +89,9 @@ const NewFileForm = ({handleSubmit, handleCancel, errors}) => {
           className="Form--TextArea row-3 cell-7"
           type="text"
           name="description"
+          placeholder={
+            fileType && !fileDescription ? plachelderText[fileType].desc : ''
+          }
           defaultValue={fileDescription}
           onChange={e => setFileDescription(e.target.value)}
         />

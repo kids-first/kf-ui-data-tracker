@@ -45,7 +45,7 @@ const NewDocumentView = ({match, history, location, createDocument}) => {
       <h3 className="text-blue font-normal m-0 cell-12 row-1">
         Tell us about your study document
       </h3>
-      <p className="m-0 cell-12 md:cell-8 row-2">
+      <p className="m-0 mb-12 cell-12 md:cell-9 row-2">
         Help ensure the fastest processing and harmonization of your study by
         telling us about the contents of your uploaded document. This helps our
         engineers accurately interpret your data.
