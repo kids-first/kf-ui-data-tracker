@@ -51,11 +51,11 @@
 .FileVersionList--text {
   @extend .my-0,
     .mr-8,
-    .text-xs,
-    .font-title,
+    .text-sm,
     .text-grey,
     .whitespace-no-wrap,
     .overflow-hidden;
+  text-overflow: ellipsis;
 }
 
 .FileVersionElement--button {
