@@ -20,8 +20,10 @@ class Auth {
     scope: 'openid profile email',
   });
 
-  login() {
-    this.auth0.authorize();
+  login(originalUrl) {
+    this.auth0.authorize({
+      redirectUri: auth0RedirectUri + '?from=' + originalUrl,
+    });
   }
 
   handleAuthentication(history) {
@@ -30,7 +32,9 @@ class Auth {
         if (authResult && authResult.accessToken && authResult.idToken) {
           localStorage.setItem('accessToken', authResult.accessToken);
           localStorage.setItem('idToken', authResult.idToken);
-          history.push('/');
+          history.push(
+            new URLSearchParams(history.location.search).get('from'),
+          );
         } else if (err) {
           console.log(err);
           alert(`Error: ${err.error}. Check the console for further details.`);

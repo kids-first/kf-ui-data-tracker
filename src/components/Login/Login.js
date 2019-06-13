@@ -7,7 +7,7 @@ import {Button} from 'kf-uikit';
 import {withRouter} from 'react-router';
 import {auth} from '../../state/auth';
 
-const onSuccess = (repsonse, client, history) => {
+const onSuccess = (repsonse, client, history, originalUrl) => {
   fetch(EGO_API + '/oauth/google/token', {
     method: 'GET',
     mode: 'cors',
@@ -26,7 +26,7 @@ const onSuccess = (repsonse, client, history) => {
       const user = {...jwtData.context};
       client.writeData({data: {user}});
 
-      history.push('/');
+      history.push(originalUrl);
 
       return text;
     })
@@ -40,14 +40,16 @@ const onFailure = repsonse => {
   console.log('Problem sign in');
 };
 
-const LoginContainer = ({history}) => (
+const LoginContainer = ({originalUrl, history}) => (
   <ApolloConsumer>
     {client => (
       <Fragment>
         <GoogleLogin
           clientId={GOOGLE_APP_ID}
           buttonText="Sign in with Google"
-          onSuccess={response => onSuccess(response, client, history)}
+          onSuccess={response =>
+            onSuccess(response, client, history, originalUrl)
+          }
           onFailure={onFailure}
           render={renderProps => (
             <Button size="large" className="mx-8" onClick={renderProps.onClick}>
@@ -55,7 +57,11 @@ const LoginContainer = ({history}) => (
             </Button>
           )}
         />
-        <Button size="large" className="mx-8" onClick={() => auth.login()}>
+        <Button
+          size="large"
+          className="mx-8"
+          onClick={() => auth.login(originalUrl, false)}
+        >
           Login with Auth0
         </Button>
       </Fragment>

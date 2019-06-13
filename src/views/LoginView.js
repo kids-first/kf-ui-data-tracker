@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import {Login} from '../components/Login';
 
-const LoginView = () => {
+const LoginView = ({location}) => {
   const loginContainer = classNames(
     'View--Login',
     'flex',
@@ -36,7 +36,7 @@ const LoginView = () => {
         <div className="Card--Login">
           <h2 className="Card--title pb-4">Log in</h2>
           <div className="pb-2">
-            <Login />
+            <Login originalUrl={location.state ? location.state.from : '/'} />
           </div>
           <hr />
           <p className="max-w-full">
