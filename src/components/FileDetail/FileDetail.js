@@ -45,39 +45,30 @@ const FileDetail = ({fileNode, history, match}) => {
               </h3>
               <div className="md:row-3 lg:cell-10 md:cell-9 cell-12">
                 <GridContainer>
-                  <div className="cell-6 sm:cell-3">
-                    <p className="FileInfo--Title">Status:</p>
+                  <div className="cell-6 sm:cell-3 self-stretch">
+                    <h4 className="FileInfo--Title">Status:</h4>
                     <Badge state={sortedVersions[0].node.state} />
                   </div>
-                  <div className="cell-6 sm:cell-3">
-                    <p className="FileInfo--Title">Document Type:</p>
-                    <div className="flex">
-                      <div className="FileInfo--Icon">
-                        <SvgIcon
-                          kind={fileTypeDetail[fileNode.fileType].icon}
-                          width="24"
-                          height="24"
-                        />
-                      </div>
-                      <p className="FileInfo--Text">
-                        {fileTypeDetail[fileNode.fileType].title}
-                      </p>
-                    </div>
+                  <div className="cell-6 sm:cell-3 self-stretch">
+                    <h4 className="FileInfo--Title">Document Type:</h4>
+
+                    <p className="m-0 FileInfo--Text flex align-center">
+                      <SvgIcon
+                        className="mr-4 inline-block"
+                        kind={fileTypeDetail[fileNode.fileType].icon}
+                        width="18"
+                        height="18"
+                      />
+                      {fileTypeDetail[fileNode.fileType].title}
+                    </p>
                   </div>
-                  <div className="cell-6 sm:cell-3">
-                    <p className="FileInfo--Title">Last Updated:</p>
+
+                  <div className="cell-6 sm:cell-3 self-stretch">
+                    <h4 className="FileInfo--Title">Last Updated:</h4>
                     {latestDate ? (
                       <div className="flex">
-                        <p className="FileInfo--Text">
-                          <TimeAgo
-                            date={latestDate}
-                            live={false}
-                            className="mr-4"
-                          />
-                          by
-                        </p>
                         <Avatar
-                          className="inline-block ml-4 mt-4"
+                          className="inline-block mr-4 mt-4"
                           size={20}
                           imgUrl={
                             fileNode.creator
@@ -89,13 +80,20 @@ const FileDetail = ({fileNode, history, match}) => {
                           }
                           userEmail={fileNode.creator && fileNode.creator.email}
                         />
+                        <p className="FileInfo--Text">
+                          <TimeAgo
+                            date={latestDate}
+                            live={false}
+                            className="mr-4"
+                          />
+                        </p>
                       </div>
                     ) : (
                       <p className="FileInfo--Text">Unknown</p>
                     )}
                   </div>
-                  <div className="cell-6 sm:cell-3">
-                    <p className="FileInfo--Title">Size:</p>
+                  <div className="cell-6 sm:cell-3 self-stretch">
+                    <h4 className="FileInfo--Title">Size:</h4>
                     <p className="FileInfo--Text">{latestSize}</p>
                   </div>
                 </GridContainer>
@@ -137,7 +135,7 @@ const FileDetail = ({fileNode, history, match}) => {
                 </Button>
               </div>
               <div className="cell-12 lg:cell-10 md:cell-9 md:h-full">
-                <p className="FileInfo--Title">Description:</p>
+                <h4 className="FileInfo--Title">Description:</h4>
                 {fileNode.description ? (
                   <p className="FileInfo--Text md:mr-0 h-full">
                     {fileNode.description}

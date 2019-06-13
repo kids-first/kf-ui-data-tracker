@@ -14,24 +14,20 @@
   @extend .my-0, .font-bold, .text-lg, .text-blue, .whitespace-normal;
 }
 
+h4[class*='FileInfo--'] {
+  @extend .font-bold, .font-body;
+}
+
 .FileInfo--Title {
   @extend .font-bold, .text-sm, .m-0;
 }
 
 .FileInfo--Text {
-  @extend .text-xs, .m-0, .h-6, .mt-4;
+  @extend .text-sm, .m-0, .mt-4;
 }
 
 .FileInfo--Icon {
-  @extend .mr-8,
-    .rounded-full,
-    .w-6,
-    .h-6,
-    .flex,
-    .justify-center,
-    .items-center,
-    .bg-lightGrey,
-    .p-4;
+  @extend .mr-0, .pt-8, .rounded-full, .w-6, .h-6, .bg-lightGrey, .p-4;
 }
 
 .FileInfo--container {
