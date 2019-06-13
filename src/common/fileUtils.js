@@ -54,12 +54,12 @@ export const fileTypeDetail = {
     description: 'File type description gose here...',
   },
   SEQ: {
-    icon: 'misc',
+    icon: 'sequencing',
     title: 'Sequencing Manifest',
     description: 'File type description gose here...',
   },
   OTH: {
-    icon: 'sequencing',
+    icon: 'misc',
     title: 'Other',
     description: 'File type description gose here...',
   },
