@@ -153,13 +153,13 @@ exports[`edits an existing file correctly 1`] = `
             class="grid-container mx-auto"
           >
             <div
-              class="cell-6 sm:cell-3"
+              class="cell-6 sm:cell-3 self-stretch"
             >
-              <p
+              <h4
                 class="FileInfo--Title"
               >
                 Status:
-              </p>
+              </h4>
               <div
                 class="Badge bg-orange"
               >
@@ -169,37 +169,40 @@ exports[`edits an existing file correctly 1`] = `
               </div>
             </div>
             <div
-              class="cell-6 sm:cell-3"
+              class="cell-6 sm:cell-3 self-stretch"
             >
-              <p
+              <h4
                 class="FileInfo--Title"
               >
                 Document Type:
+              </h4>
+              <p
+                class="m-0 FileInfo--Text flex align-center"
+              >
+                Clinical/Phenotype Data
               </p>
+            </div>
+            <div
+              class="cell-6 sm:cell-3 self-stretch"
+            >
+              <h4
+                class="FileInfo--Title"
+              >
+                Last Updated:
+              </h4>
               <div
                 class="flex"
               >
                 <div
-                  class="FileInfo--Icon"
-                />
-                <p
-                  class="FileInfo--Text"
+                  class="Avatar inline-block mr-4 mt-4"
+                  style="height: 20px; width: 20px;"
                 >
-                  Clinical/Phenotype Data
-                </p>
-              </div>
-            </div>
-            <div
-              class="cell-6 sm:cell-3"
-            >
-              <p
-                class="FileInfo--Title"
-              >
-                Last Updated:
-              </p>
-              <div
-                class="flex"
-              >
+                  <img
+                    alt="xuzhu avatar"
+                    class="Avatar-img"
+                    src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
+                  />
+                </div>
                 <p
                   class="FileInfo--Text"
                 >
@@ -210,28 +213,17 @@ exports[`edits an existing file correctly 1`] = `
                   >
                     7 months ago
                   </time>
-                  by
                 </p>
-                <div
-                  class="Avatar inline-block ml-4 mt-4"
-                  style="height: 20px; width: 20px;"
-                >
-                  <img
-                    alt="xuzhu avatar"
-                    class="Avatar-img"
-                    src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
-                  />
-                </div>
               </div>
             </div>
             <div
-              class="cell-6 sm:cell-3"
+              class="cell-6 sm:cell-3 self-stretch"
             >
-              <p
+              <h4
                 class="FileInfo--Title"
               >
                 Size:
-              </p>
+              </h4>
               <p
                 class="FileInfo--Text"
               >
@@ -330,11 +322,11 @@ exports[`edits an existing file correctly 1`] = `
         <div
           class="cell-12 lg:cell-10 md:cell-9 md:h-full"
         >
-          <p
+          <h4
             class="FileInfo--Title"
           >
             Description:
-          </p>
+          </h4>
           <p
             class="FileInfo--Text md:mr-0 h-full"
           >
@@ -798,13 +790,13 @@ exports[`edits an existing file correctly 2`] = `
             class="grid-container mx-auto"
           >
             <div
-              class="cell-6 sm:cell-3"
+              class="cell-6 sm:cell-3 self-stretch"
             >
-              <p
+              <h4
                 class="FileInfo--Title"
               >
                 Status:
-              </p>
+              </h4>
               <div
                 class="Badge bg-teal"
               >
@@ -814,37 +806,40 @@ exports[`edits an existing file correctly 2`] = `
               </div>
             </div>
             <div
-              class="cell-6 sm:cell-3"
+              class="cell-6 sm:cell-3 self-stretch"
             >
-              <p
+              <h4
                 class="FileInfo--Title"
               >
                 Document Type:
+              </h4>
+              <p
+                class="m-0 FileInfo--Text flex align-center"
+              >
+                Clinical/Phenotype Data
               </p>
+            </div>
+            <div
+              class="cell-6 sm:cell-3 self-stretch"
+            >
+              <h4
+                class="FileInfo--Title"
+              >
+                Last Updated:
+              </h4>
               <div
                 class="flex"
               >
                 <div
-                  class="FileInfo--Icon"
-                />
-                <p
-                  class="FileInfo--Text"
+                  class="Avatar inline-block mr-4 mt-4"
+                  style="height: 20px; width: 20px;"
                 >
-                  Clinical/Phenotype Data
-                </p>
-              </div>
-            </div>
-            <div
-              class="cell-6 sm:cell-3"
-            >
-              <p
-                class="FileInfo--Title"
-              >
-                Last Updated:
-              </p>
-              <div
-                class="flex"
-              >
+                  <img
+                    alt="xuzhu avatar"
+                    class="Avatar-img"
+                    src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
+                  />
+                </div>
                 <p
                   class="FileInfo--Text"
                 >
@@ -855,28 +850,17 @@ exports[`edits an existing file correctly 2`] = `
                   >
                     7 months ago
                   </time>
-                  by
                 </p>
-                <div
-                  class="Avatar inline-block ml-4 mt-4"
-                  style="height: 20px; width: 20px;"
-                >
-                  <img
-                    alt="xuzhu avatar"
-                    class="Avatar-img"
-                    src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
-                  />
-                </div>
               </div>
             </div>
             <div
-              class="cell-6 sm:cell-3"
+              class="cell-6 sm:cell-3 self-stretch"
             >
-              <p
+              <h4
                 class="FileInfo--Title"
               >
                 Size:
-              </p>
+              </h4>
               <p
                 class="FileInfo--Text"
               >
@@ -975,11 +959,11 @@ exports[`edits an existing file correctly 2`] = `
         <div
           class="cell-12 lg:cell-10 md:cell-9 md:h-full"
         >
-          <p
+          <h4
             class="FileInfo--Title"
           >
             Description:
-          </p>
+          </h4>
           <p
             class="FileInfo--Text md:mr-0 h-full"
           >
