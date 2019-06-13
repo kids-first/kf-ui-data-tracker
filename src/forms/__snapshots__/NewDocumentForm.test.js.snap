@@ -21,7 +21,7 @@ Object {
             class="Form--Input row-1 cell-7"
             data-testid="name-input"
             name="file_name"
-            placeholder="Phenotypic Data manifest for..."
+            placeholder=""
             type="text"
             value=""
           />
@@ -146,6 +146,7 @@ Object {
             class="Form--TextArea row-3 cell-7"
             data-testid="description-input"
             name="description"
+            placeholder=""
             type="text"
           />
           <div
@@ -186,7 +187,7 @@ Object {
           class="Form--Input row-1 cell-7"
           data-testid="name-input"
           name="file_name"
-          placeholder="Phenotypic Data manifest for..."
+          placeholder=""
           type="text"
           value=""
         />
@@ -311,6 +312,7 @@ Object {
           class="Form--TextArea row-3 cell-7"
           data-testid="description-input"
           name="description"
+          placeholder=""
           type="text"
         />
         <div
