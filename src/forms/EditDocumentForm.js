@@ -15,6 +15,7 @@ const EditDocumentForm = ({
   onFileTypeChange,
   onNameChange,
   onDescriptionChange,
+  isAdmin,
   onVersionStatusChange,
   handleSubmit,
   errors,
@@ -56,21 +57,24 @@ const EditDocumentForm = ({
       {versionStatus && (
         <Form.Field>
           <label>Approval Status:</label>
-          <Dropdown
-            selection
-            fluid
-            options={options}
-            value={versionStatus}
-            placeholder="Choose an option"
-            onChange={(e, {value}) => {
-              onVersionStatusChange(value);
-            }}
-          />
+          {isAdmin ? (
+            <Dropdown
+              selection
+              fluid
+              options={options}
+              value={versionStatus}
+              placeholder="Choose an option"
+              onChange={(e, {value}) => {
+                onVersionStatusChange(value);
+              }}
+            />
+          ) : (
+            <Badge state={versionStatus} />
+          )}
         </Form.Field>
       )}
       <Form.Field required>
         <label htmlFor="file_type">Document Type:</label>
-
         {Object.keys(fileTypeDetail).map(item => (
           <Form.Field key={item}>
             <SelectElement
@@ -79,7 +83,11 @@ const EditDocumentForm = ({
                 onFileTypeChange ? fileType === item : newFileType === item
               }
               select={value => {
-                onFileTypeChange ? onFileTypeChange(value) : setFileType(item);
+                if (isAdmin) {
+                  onFileTypeChange
+                    ? onFileTypeChange(value)
+                    : setFileType(item);
+                }
               }}
             />
           </Form.Field>
@@ -117,6 +125,8 @@ EditDocumentForm.propTypes = {
   fileType: PropTypes.string,
   /** The file approval status */
   versionStatus: PropTypes.string,
+  /** If the user has ADMIN role */
+  isAdmin: PropTypes.string,
   /** Action to perform when name input is updated */
   onNameChange: PropTypes.func,
   /** Action to perform when description input is updated */
