@@ -19,56 +19,38 @@ exports[`renders correctly with 0 as index -- show latest tag 1`] = `
       <div
         class="flex row-1 cell-12 lg:cell-7"
       >
-        <button
-          class="FileVersionElement--button"
+        <p
+          class="FileVersionElement--button m-0 p-0 text-lg"
         >
           VersionFileName.js
-        </button>
-        <p
-          class="FileVersionList--text italic FileVersionList--hidden pt-4 ml-16"
-        >
-          FV_TT8NF09R
         </p>
-        <span
-          class="FileVersionElement--button FileVersionList--hidden ml-4"
-        >
-          <button>
-            <svg
-              height="10"
-              id="mock-icon"
-              kind="copy"
-              width="10"
-            >
-              <title>
-                icon-
-                copy
-              </title>
-            </svg>
-          </button>
-        </span>
       </div>
       <div
-        class="flex row-3 cell-9 lg:row-1 lg:cell-4 lg:justify-end"
+        class="flex row-3 cell-9 lg:row-1 lg:cell-4 lg:justify-end align-center"
       >
         <div
-          class="Avatar inline-block mr-8"
-          style="height: 20px; width: 20px;"
+          class="flex align-center"
         >
-          <img
-            alt="xuzhu avatar"
-            class="Avatar-img"
-            src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
-          />
+          <div
+            class="Avatar inline-block mr-8"
+            style="height: 20px; width: 20px;"
+          >
+            <img
+              alt="xuzhu avatar"
+              class="Avatar-img"
+              src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
+            />
+          </div>
+          <time
+            class="FileVersionList--text  FileVersionList--Element-meta"
+            datetime="2018-08-21T03:16:11.000Z"
+            title="2018-08-21T03:16:11+00:00"
+          >
+            8 months ago
+          </time>
         </div>
-        <time
-          class="FileVersionList--text"
-          datetime="2018-08-21T03:16:11.000Z"
-          title="2018-08-21T03:16:11+00:00"
-        >
-          8 months ago
-        </time>
         <p
-          class="FileVersionList--text row-1 cell-2"
+          class=" FileVersionList--text FileVersionList--Element-meta row-1 cell-2"
         >
           9.9 kB
         </p>
@@ -89,7 +71,7 @@ exports[`renders correctly with 0 as index -- show latest tag 1`] = `
         </button>
       </div>
       <p
-        class="FileVersionList--text row-2 cell-12 lg:cell-2-11"
+        class="FileVersionList--Element-desc FileVersionList--text row-2 cell-12 lg:cell-2-11 text-xs"
       >
         version description
       </p>
@@ -112,56 +94,38 @@ exports[`renders correctly with 1 as index -- show version kfId 1`] = `
       <div
         class="flex row-1 cell-12 lg:cell-7"
       >
-        <button
-          class="FileVersionElement--button"
+        <p
+          class="FileVersionElement--button m-0 p-0 text-lg"
         >
           VersionFileName.js
-        </button>
-        <p
-          class="FileVersionList--text italic FileVersionList--hidden pt-4 ml-16"
-        >
-          FV_TT8NF09R
         </p>
-        <span
-          class="FileVersionElement--button FileVersionList--hidden ml-4"
-        >
-          <button>
-            <svg
-              height="10"
-              id="mock-icon"
-              kind="copy"
-              width="10"
-            >
-              <title>
-                icon-
-                copy
-              </title>
-            </svg>
-          </button>
-        </span>
       </div>
       <div
-        class="flex row-3 cell-9 lg:row-1 lg:cell-4 lg:justify-end"
+        class="flex row-3 cell-9 lg:row-1 lg:cell-4 lg:justify-end align-center"
       >
         <div
-          class="Avatar inline-block mr-8"
-          style="height: 20px; width: 20px;"
+          class="flex align-center"
         >
-          <img
-            alt="xuzhu avatar"
-            class="Avatar-img"
-            src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
-          />
+          <div
+            class="Avatar inline-block mr-8"
+            style="height: 20px; width: 20px;"
+          >
+            <img
+              alt="xuzhu avatar"
+              class="Avatar-img"
+              src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
+            />
+          </div>
+          <time
+            class="FileVersionList--text  FileVersionList--Element-meta"
+            datetime="2018-08-21T03:16:11.000Z"
+            title="2018-08-21T03:16:11+00:00"
+          >
+            8 months ago
+          </time>
         </div>
-        <time
-          class="FileVersionList--text"
-          datetime="2018-08-21T03:16:11.000Z"
-          title="2018-08-21T03:16:11+00:00"
-        >
-          8 months ago
-        </time>
         <p
-          class="FileVersionList--text row-1 cell-2"
+          class=" FileVersionList--text FileVersionList--Element-meta row-1 cell-2"
         >
           9.9 kB
         </p>
@@ -182,7 +146,7 @@ exports[`renders correctly with 1 as index -- show version kfId 1`] = `
         </button>
       </div>
       <p
-        class="FileVersionList--text row-2 cell-12 lg:cell-2-11"
+        class="FileVersionList--Element-desc FileVersionList--text row-2 cell-12 lg:cell-2-11 text-xs"
       >
         version description
       </p>
