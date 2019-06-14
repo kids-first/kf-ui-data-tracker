@@ -34,8 +34,20 @@
 
 .FileVersionList--Element {
   @extend .border-t, .border-mediumGrey. .list-reset, .min-w-full;
+  &:first-child {
+    @extend .border-l-5, .border-teal, .border-solid;
+    border-top: 1px solid #a0a0a0;
+  }
+  &:not(:first-child) {
+    @extend .opacity-50;
+  }
+  &:hover {
+    opacity: 1;
+  }
 }
-
+.FileVersionList--text.FileVersionList--Element-meta {
+  @extend .text-xs, .text-black, .mr-12;
+}
 .FileVersionList--hidden {
   @extend .invisible;
 }
@@ -43,7 +55,10 @@
 .FileVersionList--Element:hover .FileVersionList--hidden {
   @extend .visible;
 }
-
+.FileVersionList--Element-desc {
+  @extend .text-xs;
+  text-overflow: ellipsis;
+}
 .FileVersionList--Element:hover {
   @extend .bg-lightGrey;
 }
@@ -55,11 +70,13 @@
     .text-grey,
     .whitespace-no-wrap,
     .overflow-hidden;
-  text-overflow: ellipsis;
 }
 
 .FileVersionElement--button {
   @extend .text-sm, .font-black, .text-left, .text-blue;
+  &:hover {
+    @extend .cursor-pointer;
+  }
 }
 
 .FileVersionElement--Icon {

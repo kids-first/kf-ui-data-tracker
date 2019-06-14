@@ -5,7 +5,7 @@ import {Mutation} from 'react-apollo';
 import {FILE_DOWNLOAD_URL} from '../../state/mutations';
 import {Avatar, Icon, GridContainer} from 'kf-uikit';
 import TimeAgo from 'react-timeago';
-import CopyButton from '../CopyButton/CopyButton';
+
 import {
   fileTypeDetail,
   versionState,
@@ -55,38 +55,33 @@ const VersionItem = ({
               </div>
             )}
             <div className="flex row-1 cell-12 lg:cell-7">
-              <button
-                className="FileVersionElement--button"
+              <p
+                className="FileVersionElement--button m-0 p-0 text-lg"
                 onClick={e => onNameClick(versionNode, index)}
               >
                 {versionNode.fileName}
-              </button>
-              <p className="FileVersionList--text italic FileVersionList--hidden pt-4 ml-16">
-                {versionNode.kfId}
               </p>
-              <CopyButton
-                text={versionNode.kfId}
-                className="FileVersionElement--button FileVersionList--hidden ml-4"
-              />
             </div>
-            <div className="flex row-3 cell-9 lg:row-1 lg:cell-4 lg:justify-end">
-              <Avatar
-                className="inline-block mr-8"
-                size={20}
-                imgUrl={
-                  versionNode.creator
-                    ? versionNode.creator.picture
-                    : 'https://www.w3schools.com/css/img_avatar.png'
-                }
-                userName={versionNode.creator && versionNode.creator.username}
-                userEmail={versionNode.creator && versionNode.creator.email}
-              />
-              <TimeAgo
-                date={versionNode.createdAt}
-                live={false}
-                className="FileVersionList--text"
-              />
-              <p className="FileVersionList--text row-1 cell-2">
+            <div className="flex row-3 cell-9 lg:row-1 lg:cell-4 lg:justify-end align-center">
+              <div className="flex align-center">
+                <Avatar
+                  className="inline-block mr-8"
+                  size={20}
+                  imgUrl={
+                    versionNode.creator
+                      ? versionNode.creator.picture
+                      : 'https://www.w3schools.com/css/img_avatar.png'
+                  }
+                  userName={versionNode.creator && versionNode.creator.username}
+                  userEmail={versionNode.creator && versionNode.creator.email}
+                />
+                <TimeAgo
+                  date={versionNode.createdAt}
+                  live={false}
+                  className="FileVersionList--text  FileVersionList--Element-meta"
+                />
+              </div>
+              <p className=" FileVersionList--text FileVersionList--Element-meta row-1 cell-2">
                 {formatFileSize(versionNode.size, true) || 'Size Unknown'}
               </p>
               <button
@@ -104,7 +99,7 @@ const VersionItem = ({
               </button>
             </div>
 
-            <p className="FileVersionList--text row-2 cell-12 lg:cell-2-11">
+            <p className="FileVersionList--Element-desc FileVersionList--text row-2 cell-12 lg:cell-2-11 text-xs">
               {versionNode.description || 'No version summary available'}
             </p>
           </GridContainer>
