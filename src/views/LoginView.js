@@ -5,12 +5,13 @@ import {Login} from '../components/Login';
 const LoginView = ({location}) => {
   return (
     <Grid
+      stretched
       className="View--Login"
       textAlign="center"
       style={{height: '90vh'}}
       verticalAlign="middle"
     >
-      <Grid.Column width="7">
+      <Grid.Column computer="8" tablet="12" mobile="15">
         <Segment>
           <Header as="h1">Kids First Data Tracker</Header>
           <Login originalUrl={location.state ? location.state.from : '/'} />
