@@ -43,7 +43,16 @@ const onFailure = repsonse => {
 const LoginContainer = ({history}) => (
   <ApolloConsumer>
     {client => (
-      <Fragment>
+      <Button.Group vertical size="large">
+        <Button
+          onClick={() => auth.login()}
+          positive
+          icon
+          labelPosition="right"
+        >
+          Login with Auth0
+          <Icon name="chevron right" />
+        </Button>
         <GoogleLogin
           clientId={GOOGLE_APP_ID}
           buttonText="Sign in with Google"
@@ -52,7 +61,6 @@ const LoginContainer = ({history}) => (
           render={renderProps => (
             <Button
               onClick={() => renderProps.onClick}
-              size="large"
               icon
               labelPosition="right"
             >
@@ -61,17 +69,7 @@ const LoginContainer = ({history}) => (
             </Button>
           )}
         />
-        <Button
-          onClick={() => auth.login()}
-          size="large"
-          positive
-          icon
-          labelPosition="right"
-        >
-          Login with Auth0
-          <Icon name="chevron right" />
-        </Button>
-      </Fragment>
+      </Button.Group>
     )}
   </ApolloConsumer>
 );
