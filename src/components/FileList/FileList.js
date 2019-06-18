@@ -1,15 +1,14 @@
 import React, {useState, Fragment} from 'react';
 import PropTypes from 'prop-types';
-import classes from 'classnames';
 import FileElement from './FileElement';
 import NotificationBar from '../NotificationBar/NotificationBar';
 import {fileSortedVersions} from '../../common/fileUtils';
 import Pagination from '../Pagination/Pagination';
+import {Header, Icon, List, Segment} from 'semantic-ui-react';
 /**
  * Displays list of study files
  */
 const FileList = ({className, fileList, studyId}) => {
-  let fileListClass = classes('FileList', className);
   const perPage = 5;
   const [page, setPage] = useState(0);
   const handlePageClick = data => {
@@ -50,15 +49,20 @@ const FileList = ({className, fileList, studyId}) => {
   return (
     <Fragment>
       {showNotification()}
-      <ul className={fileListClass}>
+      <List divided selection>
         {fileList.length ? (
           offset.map(({node}) => (
             <FileElement key={node.kfId} fileListId={studyId} fileNode={node} />
           ))
         ) : (
-          <h3 className="FileList--Empty">You don't have any documents yet.</h3>
+          <Segment basic>
+            <Header icon textAlign="center">
+              <Icon name="file alternate outline" />
+              You don't have any documents yet.
+            </Header>
+          </Segment>
         )}
-      </ul>
+      </List>
       {pageCount() > 1 && (
         <Pagination
           rowCount={fileList.length}
@@ -73,8 +77,6 @@ const FileList = ({className, fileList, studyId}) => {
 };
 
 FileList.propTypes = {
-  /** Any additional classes to be applied to the study list*/
-  className: PropTypes.string,
   /** Array of study object*/
   fileList: PropTypes.array,
   /** Kids First unique study identifier (SD_XXXXXXXX) */

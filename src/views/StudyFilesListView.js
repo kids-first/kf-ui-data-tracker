@@ -4,7 +4,7 @@ import {GET_STUDY_BY_ID} from '../state/queries';
 import {UploadContainer} from '../containers';
 import FileList from '../components/FileList/FileList';
 import FileElement from '../components/FileList/FileElement';
-import {Grid, Header} from 'semantic-ui-react';
+import {Divider, Grid, Header} from 'semantic-ui-react';
 /**
  * List and manage files in a study and allow a user to upload more
  */
@@ -37,6 +37,7 @@ const StudyFilesListView = props => (
                 <FileList fileList={files} studyId={props.match.params.kfId} />
               )}
             </Grid.Row>
+            <Divider />
             <Grid.Row>
               <UploadContainer
                 handleUpload={file =>
