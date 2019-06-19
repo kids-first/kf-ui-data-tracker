@@ -1,6 +1,7 @@
 import React from 'react';
-import {Header, Icon, Grid, Message, Segment} from 'semantic-ui-react';
+import {Header, Icon, Image, Grid, Message, Segment} from 'semantic-ui-react';
 import {LoginCard} from '../components/LoginCard';
+import logo from '../assets/logo.svg';
 
 const LoginView = () => {
   return (
@@ -8,16 +9,19 @@ const LoginView = () => {
       stretched
       className="View--Login"
       textAlign="center"
-      style={{height: '90vh'}}
+      style={{height: '100vh'}}
       verticalAlign="middle"
     >
       <Grid.Column computer="8" tablet="12" mobile="15">
         <Segment>
-          <Header as="h1">Kids First Data Tracker</Header>
+          <Header as="h1">
+            <Image src={logo} />
+            <Header.Content>Kids First Data Tracker</Header.Content>
+          </Header>
           <LoginCard />
           <Message>
             New to Kids First Data Tracker?
-            <a className="no-underline" href="/">
+            <a href="/">
               Join now <Icon name="chevron right" />
             </a>
           </Message>

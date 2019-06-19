@@ -21,7 +21,7 @@ const Header = ({data: {loading, error, myProfile: profile}}) => {
           <img
             src={logo}
             alt="Kids First logo"
-            style={{margin: '-0.5em 0', width: '1.5em'}}
+            style={{margin: '-0.5em 0', width: '2.0em'}}
           />
         </Menu.Item>
         <Menu.Item header as={NavLink} to="/" activeClassName="">
@@ -32,7 +32,7 @@ const Header = ({data: {loading, error, myProfile: profile}}) => {
             <Menu.Item as={Nav} to="/" content="Studies" />
             <Menu.Menu position="right">
               <Dropdown
-                text={
+                trigger={
                   <>
                     <Image avatar src={profile.picture} />
                     {profile.username}
