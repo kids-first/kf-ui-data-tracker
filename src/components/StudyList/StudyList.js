@@ -21,8 +21,17 @@ const HeaderSkeleton = () => (
 /**
  * Displays unordered studies in grid view (include empty stage message)
  */
-const StudyList = ({className, studyList, loading, activeView = 'grid'}) => {
+const StudyList = ({studyList, loading, activeView = 'grid'}) => {
   const [view, setView] = useState(activeView);
+
+  if (loading) {
+    return (
+      <Container style={{marginTop: 30}}>
+        <HeaderSkeleton />
+        <StudyGrid loading={loading} studyList={studyList} />
+      </Container>
+    );
+  }
 
   return (
     <Grid container stackable style={{marginTop: 30}}>
@@ -58,8 +67,6 @@ const StudyList = ({className, studyList, loading, activeView = 'grid'}) => {
 };
 
 StudyList.propTypes = {
-  /** Any additional classes to be applied to the study list*/
-  className: PropTypes.string,
   /** Array of study object*/
   studyList: PropTypes.array,
   /** Loading state of the studyList*/
@@ -69,7 +76,6 @@ StudyList.propTypes = {
 };
 
 StudyList.defaultProps = {
-  className: null,
   studyList: [],
   activeView: 'grid',
 };
