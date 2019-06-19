@@ -1,33 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classes from 'classnames';
+import {Link} from 'react-router-dom';
 import TimeAgo from 'react-timeago';
-import {Card} from 'kf-uikit';
+import {Card} from 'semantic-ui-react';
 
 /**
  * Displays each study with its kfId, name(shortName), and modifiedAt
  */
 
-const StudyCard = ({className, title, body, lastUpdate}) => {
-  let studyCardClass = classes('StudyCard', 'hover:shadow-lg', className);
-
+const StudyCard = ({title, body, lastUpdate}) => {
   return (
-    <Card {...{title}} className={studyCardClass}>
-      <div className="flex flex-col justify-between">
-        <div className="overflow-hidden h-32">
-          <p className="m-0 font-title text-darkGrey">{body}</p>
-        </div>
-        <small className="w-full text-grey font-title text-right whitespace-no-wrap">
-          Updated: <TimeAgo className="whitespace-no-wrap" date={lastUpdate} />
-        </small>
-      </div>
+    <Card as={Link} to={`/study/${title}/documents`}>
+      <Card.Content>
+        <Card.Header>{title}</Card.Header>
+
+        <Card.Description>{body}</Card.Description>
+      </Card.Content>
+      <Card.Content extra>
+        Updated: <TimeAgo date={lastUpdate} />
+      </Card.Content>
     </Card>
   );
 };
 
 StudyCard.propTypes = {
-  /** Any additional classes to be applied to the study card */
-  className: PropTypes.string,
   /** Name to display as the card header */
   title: PropTypes.string,
   /** Text to display as the card body */
@@ -37,7 +33,6 @@ StudyCard.propTypes = {
 };
 
 StudyCard.defaultProps = {
-  className: null,
   title: null,
   body: null,
   lastUpdate: null,
