@@ -126,7 +126,7 @@ EditDocumentForm.propTypes = {
   /** The file approval status */
   versionStatus: PropTypes.string,
   /** If the user has ADMIN role */
-  isAdmin: PropTypes.string,
+  isAdmin: PropTypes.bool,
   /** Action to perform when name input is updated */
   onNameChange: PropTypes.func,
   /** Action to perform when description input is updated */

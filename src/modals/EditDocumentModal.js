@@ -11,9 +11,7 @@ const EditDocumentModal = ({
   updateFile,
   updateVersion,
   onCloseDialog,
-  user: {
-    myProfile: {roles: userRoles},
-  },
+  user,
 }) => {
   const [fileTypeInput, setFileType] = useState(fileNode.fileType);
   const [fileNameInput, setFileName] = useState(fileNode.name);
@@ -23,7 +21,9 @@ const EditDocumentModal = ({
 
   const latestVersion = fileSortedVersions(fileNode)[0].node;
   const [versionStatusInput, setVersionStatus] = useState(latestVersion.state);
-  const isAdmin = userRoles.includes('ADMIN');
+  const isAdmin = !user.loading
+    ? user.myProfile.roles.includes('ADMIN')
+    : false;
 
   const onSubmit = e => {
     e.preventDefault();
