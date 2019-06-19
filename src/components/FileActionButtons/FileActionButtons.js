@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Button, Icon} from 'semantic-ui-react';
+import {Button, Divider, Icon, Popup} from 'semantic-ui-react';
 import {downloadFile} from '../../common/fileUtils';
 /**
  * Simple Icon Buttons to download and delete a file passed in as the node prop
@@ -23,13 +23,25 @@ const FileActionButtons = ({
       >
         <Icon name="download" />
       </Button>
-      <Button
-        negative
-        icon
-        onClick={e => deleteFile({variables: {kfId: node.kfId}})}
-      >
-        <Icon name="trash alternate" />
-      </Button>
+      <Popup
+        trigger={<Button negative icon={<Icon name="trash alternate" />} />}
+        header="Are you sure?"
+        content={
+          <>
+            This file and all of its versions and history will be deleted
+            <Divider />
+            <Button
+              negative
+              fluid
+              icon={<Icon name="trash alternative" />}
+              content="Delete"
+              onClick={e => deleteFile({variables: {kfId: node.kfId}})}
+            />
+          </>
+        }
+        on="click"
+        position="top right"
+      />
     </Button.Group>
   );
 };
