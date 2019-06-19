@@ -17,26 +17,11 @@ import {
 } from '../views';
 const Routes = () => (
   <Fragment>
-    <Route
-      path="/"
-      render={({history}) => (
-        <Header
-          logo={{
-            onLogoClick: () => {
-              history.push(`/`);
-            },
-          }}
-          buttons={[
-            (localStorage.getItem('accessToken') !== null ||
-              localStorage.getItem('egoToken') !== null) && [
-              <ProfileDropdown history={history} key={0} />,
-            ],
-          ]}
-        />
-      )}
-    />
-    <Route path="/login" component={LoginView} />
-    <Route path="/callback" component={CallbackView} />
+    <Switch>
+      <Route path="/login" component={LoginView} />
+      <Route path="/callback" component={CallbackView} />
+      <Route path="/" render={() => <Header />} />
+    </Switch>
     <PrivateRoute path="/profile" component={ProfileView} />
     <PrivateRoute path="/study/:kfId/" component={NavBarView} />
     <Switch>
