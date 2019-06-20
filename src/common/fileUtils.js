@@ -46,22 +46,22 @@ export const fileTypeDetail = {
   SHM: {
     icon: 'box',
     title: 'Shipping Manifest',
-    description: 'File type description gose here...',
+    description: 'File type description goes here...',
   },
   CLN: {
     icon: 'clinical',
     title: 'Clinical/Phenotype Data',
-    description: 'File type description gose here...',
+    description: 'File type description goes here...',
   },
   SEQ: {
     icon: 'sequencing',
     title: 'Sequencing Manifest',
-    description: 'File type description gose here...',
+    description: 'File type description goes here...',
   },
   OTH: {
     icon: 'misc',
     title: 'Other',
-    description: 'File type description gose here...',
+    description: 'File type description goes here...',
   },
 };
 
