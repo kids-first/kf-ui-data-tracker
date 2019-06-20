@@ -2,11 +2,12 @@ import React from 'react';
 import {Query} from 'react-apollo';
 import {ALL_STUDIES} from '../state/queries';
 import StudyList from '../components/StudyList/StudyList';
+import Error from '../components/Error/Error';
 
 const StudyListView = () => (
   <Query query={ALL_STUDIES}>
     {({loading, error, data}) => {
-      if (error) return `Error! ${error.message}`;
+      if (error) return <Error errorMessage={error.message} />;
       const studyList = !loading ? data.allStudies.edges : [];
       if (!loading && studyList.length === 0)
         return (
