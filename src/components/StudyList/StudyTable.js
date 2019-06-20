@@ -23,9 +23,11 @@ const StudyTable = ({
     return <h2>loading studies</h2>;
   }
   const hidden = ['id', '__typename', ...exclude];
-  const cols = Object.keys(studyList[0].node).filter(
-    v => hidden.indexOf(v) < 0,
-  );
+  const cols = Object.keys(
+    studyList.length > 0
+      ? studyList[0].node
+      : {'No access to any studies yet': []},
+  ).filter(v => hidden.indexOf(v) < 0);
 
   return (
     <table className={StudyTableClass}>
