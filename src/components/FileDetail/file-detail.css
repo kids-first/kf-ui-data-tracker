@@ -19,7 +19,7 @@
 }
 
 .FileInfo--Text {
-  @extend .text-xs, .m-0, .h-6, .mt-4;
+  @extend .text-xs, .m-0, .mt-4;
 }
 
 .FileInfo--Icon {
