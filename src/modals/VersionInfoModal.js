@@ -37,13 +37,12 @@ const VersionInfoModal = ({
           UPLOAD VERSION
         </button>
       }
-      className="Modal--small"
     >
       {openedVersion.index === 0 && (
         <div className="FileVersionElement--Tag">Latest</div>
       )}
       <h3 className="FileTitle py-8">{openedVersion.version.fileName}</h3>
-      <GridContainer className="px-0 mb-20">
+      <GridContainer centered={false} className="px-0 mb-20">
         <div className="cell-6 lg:cell-3">
           <p className="FileInfo--Title">Status:</p>
           <Badge state={openedVersion.version.state} />

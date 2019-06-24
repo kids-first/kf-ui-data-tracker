@@ -1,10 +1,12 @@
 .Modal--container {
   border-radius: 5px;
   position: absolute;
-  top: 8%;
-  bottom: 8%;
-  left: 20%;
-  right: 20%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 85%;
+  min-height: 0px;
+
   @extend .bg-white, .flex, .flex-col, .content-between, .justify-between;
 }
 
@@ -42,18 +44,4 @@
 
 .Modal--Header-Close {
   @extend .inline-block, .m-0, .p-0;
-}
-
-.Modal--small {
-  top: 30%;
-  bottom: 30%;
-  left: 20%;
-  right: 20%;
-}
-
-.Modal--medium {
-  top: 25%;
-  bottom: 25%;
-  left: 20%;
-  right: 20%;
 }
