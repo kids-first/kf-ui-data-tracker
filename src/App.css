@@ -84,3 +84,13 @@ body {
   width: 95%;
   @extend .border, .border-grey, .text-grey, .ml-8, .mt-12, .p-12;
 }
+
+.Profile--Header {
+  background-image: linear-gradient(
+    to right,
+    rgb(38, 109, 177) 33%,
+    rgb(17, 134, 176) 66%,
+    rgb(18, 151, 215)
+  );
+  @extend .py-40;
+}
