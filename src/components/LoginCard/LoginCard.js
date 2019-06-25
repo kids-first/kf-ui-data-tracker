@@ -61,6 +61,7 @@ const LoginContainer = ({history}) => (
           render={renderProps => (
             <Button
               onClick={() => renderProps.onClick}
+              size="large"
               icon
               labelPosition="right"
             >

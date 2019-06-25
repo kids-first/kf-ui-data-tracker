@@ -2,7 +2,7 @@ import React, {Fragment} from 'react';
 import {Route, Switch} from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
 import AdminRoute from './AdminRoute';
-import {Header} from 'kf-uikit';
+import Header from '../components/Header';
 import {
   NewDocumentView,
   LoginView,
@@ -15,29 +15,13 @@ import {
   FileDetailView,
   ProfileView,
 } from '../views';
-import ProfileDropdown from '../components/HeaderButton/HeaderButton';
 const Routes = () => (
   <Fragment>
-    <Route
-      path="/"
-      render={({history}) => (
-        <Header
-          logo={{
-            onLogoClick: () => {
-              history.push(`/`);
-            },
-          }}
-          buttons={[
-            (localStorage.getItem('accessToken') !== null ||
-              localStorage.getItem('egoToken') !== null) && [
-              <ProfileDropdown history={history} key={0} />,
-            ],
-          ]}
-        />
-      )}
-    />
-    <Route path="/login" component={LoginView} />
-    <Route path="/callback" component={CallbackView} />
+    <Switch>
+      <Route path="/login" component={LoginView} />
+      <Route path="/callback" component={CallbackView} />
+      <Route path="/" render={() => <Header />} />
+    </Switch>
     <PrivateRoute path="/profile" component={ProfileView} />
     <PrivateRoute path="/study/:kfId/" component={NavBarView} />
     <Switch>
