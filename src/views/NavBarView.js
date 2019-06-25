@@ -2,7 +2,7 @@ import React from 'react';
 import {Query} from 'react-apollo';
 import {GET_STUDY_BY_ID} from '../state/queries';
 import StudyHeader from '../components/StudyHeader/StudyHeader';
-import NavBar from '../components/NavBar/NavBar';
+import StudyNavBar from '../components/StudyNavBar';
 import {Container, Segment} from 'semantic-ui-react';
 
 const NavBarView = props => (
@@ -16,7 +16,7 @@ const NavBarView = props => (
             <StudyHeader {...study} loading={loading} />
           </Segment>
           <Container>
-            <NavBar />
+            <StudyNavBar />
           </Container>
         </section>
       );
