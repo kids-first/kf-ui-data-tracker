@@ -32,9 +32,9 @@ const TokensListView = ({
   const [deletingToken, setDeletingToken] = useState();
   const [deleteTokenLoading, setDeleteTokenLoading] = useState(false);
 
-  const handleNewToken = e => {
+  const handleNewToken = name => {
     setNewTokenLoading(true);
-    createToken({variables: {name: e.target.name.value}})
+    createToken({variables: {name}})
       .then(resp => {
         refetchTokens().then(resp => setNewTokenLoading(false));
       })

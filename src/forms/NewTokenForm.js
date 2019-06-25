@@ -1,23 +1,31 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import {Button, Form, Message, Segment} from 'semantic-ui-react';
 
-const NewTokenForm = ({onSubmit, error, loading}) => (
-  <Segment>
-    <Form onSubmit={onSubmit}>
-      <Form.Field>
-        <label>
-          Name:
-          <input type="text" name="name" />
-        </label>
-      </Form.Field>
-      <Button type="submit" loading={loading}>
-        Create
-      </Button>
-      <Message hidden={!error} negative content={error} />
-    </Form>
-  </Segment>
-);
+const NewTokenForm = ({onSubmit, error, loading}) => {
+  const [name, setName] = useState('');
+
+  return (
+    <Segment>
+      <Form onSubmit={() => onSubmit(name)}>
+        <Form.Field>
+          <label>
+            Name:
+            <input
+              type="text"
+              name="name"
+              onChange={e => setName(e.target.value)}
+            />
+          </label>
+        </Form.Field>
+        <Button type="submit" loading={loading} disabled={name === ''}>
+          Create
+        </Button>
+        <Message hidden={!error} negative content={error} />
+      </Form>
+    </Segment>
+  );
+};
 
 NewTokenForm.propTypes = {
   /** Function to perform on form submission */
