@@ -24,13 +24,20 @@ const FileActionButtons = ({
         <Icon name="download" />
       </Button>
       <Popup
-        trigger={<Button negative icon={<Icon name="trash alternate" />} />}
+        trigger={
+          <Button
+            data-testid="delete-button"
+            negative
+            icon={<Icon name="trash alternate" />}
+          />
+        }
         header="Are you sure?"
         content={
           <>
             This file and all of its versions and history will be deleted
             <Divider />
             <Button
+              data-testid="delete-confirm"
               negative
               fluid
               icon={<Icon name="trash alternative" />}
