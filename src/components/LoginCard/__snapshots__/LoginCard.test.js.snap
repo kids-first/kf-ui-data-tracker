@@ -18,7 +18,7 @@ Object {
           />
         </button>
         <button
-          class="ui icon right labeled button"
+          class="ui large icon right labeled button"
         >
           Login with Ego
           <i
@@ -43,7 +43,7 @@ Object {
         />
       </button>
       <button
-        class="ui icon right labeled button"
+        class="ui large icon right labeled button"
       >
         Login with Ego
         <i
