@@ -11,45 +11,6 @@ exports[`renders correctly 1`] = `
       role="listitem"
     >
       <div
-        class="right floated content"
-      >
-        <button
-          class="ui icon negative button"
-        >
-          <i
-            aria-hidden="true"
-            class="trash icon"
-          />
-        </button>
-      </div>
-      <div
-        class="right floated content"
-      >
-        <div
-          class="ui tiny block header"
-        >
-          blah************
-           
-          <span
-            class=""
-          >
-            <button>
-              <svg
-                height="10"
-                id="mock-icon"
-                kind="copy"
-                width="10"
-              >
-                <title>
-                  icon-
-                  copy
-                </title>
-              </svg>
-            </button>
-          </span>
-        </div>
-      </div>
-      <div
         class="content"
       >
         <div
@@ -63,6 +24,35 @@ exports[`renders correctly 1`] = `
         >
           2 months from now
         </time>
+      </div>
+      <div
+        class="right floated content"
+      >
+        <div
+          class="ui action input"
+        >
+          <input
+            readonly=""
+            type="text"
+            value="blah************"
+          />
+          <button
+            class="ui icon button"
+          >
+            <i
+              aria-hidden="true"
+              class="copy icon"
+            />
+          </button>
+          <button
+            class="ui icon negative button"
+          >
+            <i
+              aria-hidden="true"
+              class="trash icon"
+            />
+          </button>
+        </div>
       </div>
     </div>
   </div>

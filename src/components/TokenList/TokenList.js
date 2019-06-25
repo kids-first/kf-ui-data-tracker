@@ -1,27 +1,36 @@
 import React from 'react';
-import {Button, Header, Image, List, Icon} from 'semantic-ui-react';
+import {Button, Popup, Image, Input, List, Icon} from 'semantic-ui-react';
 import TimeAgo from 'react-timeago';
-import CopyButton from '../CopyButton/CopyButton';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 const TokenList = ({tokens, deleteToken}) => (
   <List relaxed>
     {tokens.map(node => (
       <List.Item key={node.node.id}>
-        <List.Content floated="right">
-          <Button icon negative onClick={() => deleteToken(node.node.name)}>
-            <Icon name="trash" />
-          </Button>
-        </List.Content>
-        <List.Content floated="right">
-          <Header size="tiny" block>
-            {node.node.token} <CopyButton text={node.node.token} />
-          </Header>
-        </List.Content>
         {node.node.creator && <Image avatar src={node.node.creator.picture} />}
         <List.Content>
           <List.Header>{node.node.name}</List.Header>
           {node.node.creator && <>Created by {node.node.creator.username} </>}
           <TimeAgo live={false} date={node.node.createdAt} />
+        </List.Content>
+        <List.Content floated="right">
+          <Input readOnly action value={node.node.token}>
+            <input />
+            <Popup
+              trigger={
+                <Button icon>
+                  <CopyToClipboard text={node.node.token}>
+                    <Icon name="copy" />
+                  </CopyToClipboard>
+                </Button>
+              }
+              content="Copied!"
+              on="click"
+            />
+            <Button icon negative onClick={() => deleteToken(node.node.name)}>
+              <Icon name="trash" />
+            </Button>
+          </Input>
         </List.Content>
       </List.Item>
     ))}
