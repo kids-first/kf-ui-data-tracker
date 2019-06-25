@@ -1,6 +1,6 @@
 import React from 'react';
 import {Header, Icon, Grid, Message, Segment} from 'semantic-ui-react';
-import {Login} from '../components/Login';
+import {LoginCard} from '../components/LoginCard';
 
 const LoginView = ({location}) => {
   return (
@@ -14,7 +14,7 @@ const LoginView = ({location}) => {
       <Grid.Column computer="8" tablet="12" mobile="15">
         <Segment>
           <Header as="h1">Kids First Data Tracker</Header>
-          <Login originalUrl={location.state ? location.state.from : '/'} />
+          <LoginCard originalUrl={location.state ? location.state.from : '/'} />
           <Message>
             New to Kids First Data Tracker?
             <a className="no-underline" href="/">
