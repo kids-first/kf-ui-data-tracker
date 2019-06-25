@@ -28,7 +28,7 @@ const UpdateProfileForm = ({
         daily updates when there are changes made to the studies of your
         choosing.
       </p>
-      <label htmlForm="slackid">Slack ID: </label>
+      <label htmlFor="slackid">Slack ID: </label>
       <input
         className="FileEditor--Input mx-8 px-8"
         name="slackid"
@@ -49,7 +49,7 @@ const UpdateProfileForm = ({
         checked={slackNotify}
         onChange={ev => setSlackNotify(ev.target.value)}
       />
-      <label className="pl-8" htmlForm="notify">
+      <label className="pl-8" htmlFor="notify">
         Send me daily activity reports of my subscribed studies
       </label>
 
