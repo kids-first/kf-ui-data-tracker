@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <div
+    class="ui relaxed list"
+    role="list"
+  >
+    <div
+      class="item"
+      role="listitem"
+    >
+      <div
+        class="right floated content"
+      >
+        <button
+          class="ui icon negative button"
+        >
+          <i
+            aria-hidden="true"
+            class="trash icon"
+          />
+        </button>
+      </div>
+      <div
+        class="right floated content"
+      >
+        <div
+          class="ui tiny block header"
+        >
+          blah************
+           
+          <span
+            class=""
+          >
+            <button>
+              <svg
+                height="10"
+                id="mock-icon"
+                kind="copy"
+                width="10"
+              >
+                <title>
+                  icon-
+                  copy
+                </title>
+              </svg>
+            </button>
+          </span>
+        </div>
+      </div>
+      <div
+        class="content"
+      >
+        <div
+          class="header"
+        >
+          my token
+        </div>
+        <time
+          datetime="2019-06-13T12:05:39.381Z"
+          title="2019-06-13T12:05:39.381525+00:00"
+        >
+          2 months from now
+        </time>
+      </div>
+    </div>
+  </div>
+</div>
+`;
