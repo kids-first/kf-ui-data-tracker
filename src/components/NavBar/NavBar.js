@@ -1,12 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import classes from 'classnames';
 import {withRouter, NavLink} from 'react-router-dom';
-import {SecondaryNav} from 'kf-uikit';
+import {Menu} from 'semantic-ui-react';
+
 /**
- * Displays nav bar
+ * Menu for navigating within a study
  */
-const NavBar = ({className, match, history}) => {
+const NavBar = ({match, history}) => {
   const baseHref = `/study/${match.params.kfId}/`;
   const navList = [
     {
@@ -27,31 +26,18 @@ const NavBar = ({className, match, history}) => {
     },
   ];
   return (
-    <SecondaryNav
-      className="border-none cell-12"
-      buttons={navList.map((i, index) => (
-        <li
-          className={classes('SecondaryNav--link', {
-            'SecondaryNav--link-active': history.location.pathname.includes(
-              i.endString,
-            ),
-          })}
-          key={i.endString}
-        >
-          <NavLink to={baseHref + i.endString}>{i.tab}</NavLink>
-        </li>
+    <Menu color="pink" secondary pointing>
+      {navList.map((item, i) => (
+        <Menu.Item
+          key={i}
+          name={item.tab}
+          active={match.url.includes(item.endString)}
+          to={baseHref + item.endString}
+          as={NavLink}
+        />
       ))}
-    />
+    </Menu>
   );
-};
-
-NavBar.propTypes = {
-  /** Any additional classes to be applied to the nav bar*/
-  className: PropTypes.string,
-};
-
-NavBar.defaultProps = {
-  className: null,
 };
 
 export default withRouter(NavBar);

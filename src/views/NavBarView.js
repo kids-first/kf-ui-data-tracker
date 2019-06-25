@@ -3,7 +3,7 @@ import {Query} from 'react-apollo';
 import {GET_STUDY_BY_ID} from '../state/queries';
 import StudyHeader from '../components/StudyHeader/StudyHeader';
 import NavBar from '../components/NavBar/NavBar';
-import {Segment} from 'semantic-ui-react';
+import {Container, Segment} from 'semantic-ui-react';
 
 const NavBarView = props => (
   <Query query={GET_STUDY_BY_ID} variables={{kfId: props.match.params.kfId}}>
@@ -15,7 +15,9 @@ const NavBarView = props => (
           <Segment secondary basic>
             <StudyHeader {...study} loading={loading} />
           </Segment>
-          <NavBar />
+          <Container>
+            <NavBar />
+          </Container>
         </section>
       );
     }}
