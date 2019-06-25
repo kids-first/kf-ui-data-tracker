@@ -2,84 +2,132 @@
 
 exports[`renders correctly 1`] = `
 <div>
-  <form
-    class="upload-target"
-  >
-    <p
-      class="max-w-full pt-0 pb-4 mt-0"
+  <form>
+    <div
+      class="ui placeholder piled segment"
     >
-      Drag and drop Files here
-      <br />
-      <small
-        class="m-0 p-0"
+      <div
+        class="ui icon header"
       >
-        <i>
+        <i
+          aria-hidden="true"
+          class="file outline icon"
+        />
+        Drag and drop Files here
+        <br />
+        <small>
           or
-        </i>
-      </small>
-    </p>
-    <input
-      class="Button Button--default max-w-full"
-      type="file"
-    />
+        </small>
+      </div>
+      <br />
+      <label
+        class="ui icon primary left labeled button"
+        for="file"
+        role="button"
+      >
+        <i
+          aria-hidden="true"
+          class="file outline icon"
+        />
+        Choose a file
+      </label>
+      <input
+        hidden=""
+        id="file"
+        multiple=""
+        type="file"
+      />
+    </div>
   </form>
 </div>
 `;
 
 exports[`renders errors 1`] = `
 <div>
-  <form
-    class="upload-target"
-  >
-    <p
-      class="max-w-full pt-0 pb-4 mt-0"
+  <form>
+    <div
+      class="ui placeholder piled segment"
     >
-      Drag and drop Files here
-      <br />
-      <small
-        class="m-0 p-0"
+      <div
+        class="ui icon header"
       >
-        <i>
+        <i
+          aria-hidden="true"
+          class="file outline icon"
+        />
+        Drag and drop Files here
+        <br />
+        <small>
           or
-        </i>
-      </small>
-    </p>
-    <input
-      class="Button Button--default max-w-full"
-      type="file"
-    />
-    <h4
-      class="text-red px-2"
-    >
-      Failed to upload: 
-      something went wrong
-    </h4>
+        </small>
+      </div>
+      <br />
+      <label
+        class="ui icon primary left labeled button"
+        for="file"
+        role="button"
+      >
+        <i
+          aria-hidden="true"
+          class="file outline icon"
+        />
+        Choose a file
+      </label>
+      <input
+        hidden=""
+        id="file"
+        multiple=""
+        type="file"
+      />
+      <h4
+        class="ui header"
+      >
+        Failed to upload: 
+        something went wrong
+      </h4>
+    </div>
   </form>
 </div>
 `;
 
 exports[`renders instructions 1`] = `
 <div>
-  <form
-    class="upload-target"
-  >
-    <p
-      class="max-w-full pt-0 pb-4 mt-0"
+  <form>
+    <div
+      class="ui placeholder piled segment"
     >
-      Drag files here
-      <br />
-      <small
-        class="m-0 p-0"
+      <div
+        class="ui icon header"
       >
-        <i>
+        <i
+          aria-hidden="true"
+          class="file outline icon"
+        />
+        Drag files here
+        <br />
+        <small>
           or
-        </i>
-      </small>
-    </p>
-    <input
-      class="Button Button--default max-w-full"
-      type="file"
-    />
+        </small>
+      </div>
+      <br />
+      <label
+        class="ui icon primary left labeled button"
+        for="file"
+        role="button"
+      >
+        <i
+          aria-hidden="true"
+          class="file outline icon"
+        />
+        Choose a file
+      </label>
+      <input
+        hidden=""
+        id="file"
+        multiple=""
+        type="file"
+      />
+    </div>
   </form>
 </div>
 `;

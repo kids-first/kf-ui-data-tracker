@@ -26,7 +26,7 @@ const FileElement = ({fileNode, loading, match, fileListId}) => {
       ? fileTypeDetail[fileNode.fileType].title
       : 'unknown';
   return (
-    <List.Item>
+    <List.Item data-testid="file-item">
       <List.Content floated="left">
         <Badge
           state={
