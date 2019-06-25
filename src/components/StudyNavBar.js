@@ -5,7 +5,7 @@ import {Menu} from 'semantic-ui-react';
 /**
  * Menu for navigating within a study
  */
-const NavBar = ({match, history}) => {
+const StudyNavBar = ({match, history}) => {
   const baseHref = `/study/${match.params.kfId}/`;
   const navList = [
     {
@@ -40,4 +40,4 @@ const NavBar = ({match, history}) => {
   );
 };
 
-export default withRouter(NavBar);
+export default withRouter(StudyNavBar);
