@@ -9,120 +9,76 @@ exports[`edits an existing file correctly 1`] = `
     id="study"
   >
     <div
-      class="bg-lightGrey"
+      class="ui basic secondary segment"
     >
-      <section
-        class="grid-container mx-auto grid-container--collapsed-rows StudyHeader py-8 px-12"
+      <div
+        class="ui container"
       >
-        <p
-          class="StudyHeader--TopText"
+        <h1
+          class="ui header"
         >
-          <b>
-            SD_8WX8QQ06
-          </b>
-          <span
-            class="pl-4 pr-20"
+          <div
+            class="content"
           >
-            <button>
-              <svg
-                height="10"
-                id="mock-icon"
-                kind="copy"
-                width="10"
-              >
-                <title>
-                  icon-
-                  copy
-                </title>
-              </svg>
-            </button>
-          </span>
-          <small
-            class="font-light"
-          >
-            last updated: 
-            <time
-              datetime="2019-04-25T15:22:18.780Z"
-              title="2019-04-25T15:22:18.780221+00:00"
+            benchmark extensible e-business
+            <div
+              class="sub header"
             >
-              2 days from now
-            </time>
-          </small>
-        </p>
-        <p
-          class="StudyHeader--TitleText row-3 cell-12 md:row-2 md:cell-10"
-        >
-          benchmark extensible e-business
-        </p>
-        <div
-          class="hidden row-2 cell-12 md:cell-2 md:flex-row md:flex-col"
-        >
-          <p
-            class="m-0 text-sm font-bold inline-block pr-8"
-          >
-            Contacts:
-          </p>
-          <p
-            class="m-0 font-light inline-block"
-          >
-            Mary Marazita
-          </p>
-        </div>
-      </section>
+              SD_8WX8QQ06
+              <span
+                class=""
+              >
+                <button>
+                  <svg
+                    height="10"
+                    id="mock-icon"
+                    kind="copy"
+                    width="10"
+                  >
+                    <title>
+                      icon-
+                      copy
+                    </title>
+                  </svg>
+                </button>
+              </span>
+            </div>
+          </div>
+        </h1>
+      </div>
     </div>
     <div
-      class="border-b-2 .border-mediumGrey"
+      class="ui container"
     >
-      <section
-        class="grid-container mx-auto px-12"
+      <div
+        class="ui pink pointing secondary menu"
       >
-        <nav
-          class="SecondaryNav border-none cell-12"
+        <a
+          class="item"
+          href="/study/SD_8WX8QQ06/basicInfo"
         >
-          <ul
-            class="SecondaryNav--list"
-          >
-            <li
-              class="SecondaryNav--link"
-            >
-              <a
-                href="/study/SD_8WX8QQ06/basicInfo"
-              >
-                Basic Info
-              </a>
-            </li>
-            <li
-              class="SecondaryNav--link"
-            >
-              <a
-                href="/study/SD_8WX8QQ06/dashboard"
-              >
-                Dashboard
-              </a>
-            </li>
-            <li
-              class="SecondaryNav--link SecondaryNav--link-active"
-            >
-              <a
-                aria-current="page"
-                class="active"
-                href="/study/SD_8WX8QQ06/documents"
-              >
-                Documents
-              </a>
-            </li>
-            <li
-              class="SecondaryNav--link"
-            >
-              <a
-                href="/study/SD_8WX8QQ06/collaborators"
-              >
-                Collaborators
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </section>
+          Basic Info
+        </a>
+        <a
+          class="item"
+          href="/study/SD_8WX8QQ06/dashboard"
+        >
+          Dashboard
+        </a>
+        <a
+          aria-current="page"
+          class="item active"
+          href="/study/SD_8WX8QQ06/documents"
+        >
+          Documents
+        </a>
+        <a
+          class="item"
+          href="/study/SD_8WX8QQ06/collaborators"
+        >
+          Collaborators
+        </a>
+      </div>
     </div>
   </section>
   <section
@@ -654,120 +610,76 @@ exports[`edits an existing file correctly 2`] = `
     id="study"
   >
     <div
-      class="bg-lightGrey"
+      class="ui basic secondary segment"
     >
-      <section
-        class="grid-container mx-auto grid-container--collapsed-rows StudyHeader py-8 px-12"
+      <div
+        class="ui container"
       >
-        <p
-          class="StudyHeader--TopText"
+        <h1
+          class="ui header"
         >
-          <b>
-            SD_8WX8QQ06
-          </b>
-          <span
-            class="pl-4 pr-20"
+          <div
+            class="content"
           >
-            <button>
-              <svg
-                height="10"
-                id="mock-icon"
-                kind="copy"
-                width="10"
-              >
-                <title>
-                  icon-
-                  copy
-                </title>
-              </svg>
-            </button>
-          </span>
-          <small
-            class="font-light"
-          >
-            last updated: 
-            <time
-              datetime="2019-04-25T15:22:18.780Z"
-              title="2019-04-25T15:22:18.780221+00:00"
+            benchmark extensible e-business
+            <div
+              class="sub header"
             >
-              2 days from now
-            </time>
-          </small>
-        </p>
-        <p
-          class="StudyHeader--TitleText row-3 cell-12 md:row-2 md:cell-10"
-        >
-          benchmark extensible e-business
-        </p>
-        <div
-          class="hidden row-2 cell-12 md:cell-2 md:flex-row md:flex-col"
-        >
-          <p
-            class="m-0 text-sm font-bold inline-block pr-8"
-          >
-            Contacts:
-          </p>
-          <p
-            class="m-0 font-light inline-block"
-          >
-            Mary Marazita
-          </p>
-        </div>
-      </section>
+              SD_8WX8QQ06
+              <span
+                class=""
+              >
+                <button>
+                  <svg
+                    height="10"
+                    id="mock-icon"
+                    kind="copy"
+                    width="10"
+                  >
+                    <title>
+                      icon-
+                      copy
+                    </title>
+                  </svg>
+                </button>
+              </span>
+            </div>
+          </div>
+        </h1>
+      </div>
     </div>
     <div
-      class="border-b-2 .border-mediumGrey"
+      class="ui container"
     >
-      <section
-        class="grid-container mx-auto px-12"
+      <div
+        class="ui pink pointing secondary menu"
       >
-        <nav
-          class="SecondaryNav border-none cell-12"
+        <a
+          class="item"
+          href="/study/SD_8WX8QQ06/basicInfo"
         >
-          <ul
-            class="SecondaryNav--list"
-          >
-            <li
-              class="SecondaryNav--link"
-            >
-              <a
-                href="/study/SD_8WX8QQ06/basicInfo"
-              >
-                Basic Info
-              </a>
-            </li>
-            <li
-              class="SecondaryNav--link"
-            >
-              <a
-                href="/study/SD_8WX8QQ06/dashboard"
-              >
-                Dashboard
-              </a>
-            </li>
-            <li
-              class="SecondaryNav--link SecondaryNav--link-active"
-            >
-              <a
-                aria-current="page"
-                class="active"
-                href="/study/SD_8WX8QQ06/documents"
-              >
-                Documents
-              </a>
-            </li>
-            <li
-              class="SecondaryNav--link"
-            >
-              <a
-                href="/study/SD_8WX8QQ06/collaborators"
-              >
-                Collaborators
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </section>
+          Basic Info
+        </a>
+        <a
+          class="item"
+          href="/study/SD_8WX8QQ06/dashboard"
+        >
+          Dashboard
+        </a>
+        <a
+          aria-current="page"
+          class="item active"
+          href="/study/SD_8WX8QQ06/documents"
+        >
+          Documents
+        </a>
+        <a
+          class="item"
+          href="/study/SD_8WX8QQ06/collaborators"
+        >
+          Collaborators
+        </a>
+      </div>
     </div>
   </section>
   <section
