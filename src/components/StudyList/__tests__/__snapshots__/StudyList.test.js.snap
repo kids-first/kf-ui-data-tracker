@@ -3,15 +3,23 @@
 exports[`renders correctly 1`] = `
 <div>
   <div
-    class="ui container"
+    class="ui container stackable grid"
     style="margin-top: 30px;"
   >
-    <h1
-      class="ui header"
+    <div
+      class="eleven wide computer eight wide tablet column"
     >
-      Your Studies
+      <h1
+        class="ui header"
+      >
+        Your Studies
+      </h1>
+    </div>
+    <div
+      class="stretched right aligned middle aligned five wide computer eight wide tablet column"
+    >
       <div
-        class="ui right floated buttons"
+        class="ui buttons"
       >
         <button
           class="ui icon primary left labeled button"
@@ -21,7 +29,7 @@ exports[`renders correctly 1`] = `
             aria-hidden="true"
             class="grid layout icon"
           />
-          grid
+          Grid
         </button>
         <button
           class="ui icon left labeled button"
@@ -31,106 +39,188 @@ exports[`renders correctly 1`] = `
             aria-hidden="true"
             class="list icon"
           />
-          list
+          List
         </button>
       </div>
-    </h1>
-    <main>
+    </div>
+    <div
+      class="row"
+    >
       <div
-        class="ui stackable four cards"
+        class="column"
       >
-        <a
-          class="ui card"
-          href="/study/SD_X6E5KWM4/documents"
+        <div
+          class="ui stackable four cards"
         >
-          <div
-            class="content"
+          <a
+            class="ui card"
+            href="/study/SD_8WX8QQ06/documents"
           >
             <div
-              class="header"
+              class="content"
             >
-              SD_X6E5KWM4
+              <div
+                class="header"
+              >
+                SD_8WX8QQ06
+              </div>
+              <div
+                class="description"
+              >
+                benchmark extensible e-business
+              </div>
             </div>
             <div
-              class="description"
+              class="extra content"
             >
-              deploy bleeding-edge action-items
+              <div
+                class="ui horizontal list"
+                role="list"
+              >
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="file icon"
+                  />
+                  1
+                   files
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  <div
+                    class="ui orange mini circular empty label"
+                  />
+                   
+                  1
+                </div>
+              </div>
             </div>
-          </div>
-          <div
-            class="extra content"
-          >
-            Updated: 
-            <time
-              datetime="2019-03-29T18:45:01.230Z"
-              title="2019-03-29 18:45"
-            >
-              4 weeks ago
-            </time>
-          </div>
-        </a>
-        <a
-          class="ui card"
-          href="/study/SD_203C26IZ/documents"
-        >
-          <div
-            class="content"
-          >
-            <div
-              class="header"
-            >
-              SD_203C26IZ
-            </div>
-            <div
-              class="description"
-            >
-              syndicate extensible metrics
-            </div>
-          </div>
-          <div
-            class="extra content"
-          >
-            Updated: 
-            <time
-              datetime="2019-03-29T18:45:01.236Z"
-              title="2019-03-29 18:45"
-            >
-              4 weeks ago
-            </time>
-          </div>
-        </a>
-        <a
-          class="ui card"
-          href="/study/SD_KOECR7Q1/documents"
-        >
-          <div
-            class="content"
+          </a>
+          <a
+            class="ui card"
+            href="/study/SD_I1L92W57/documents"
           >
             <div
-              class="header"
+              class="content"
             >
-              SD_KOECR7Q1
+              <div
+                class="header"
+              >
+                SD_I1L92W57
+              </div>
+              <div
+                class="description"
+              >
+                visualize dynamic users
+              </div>
             </div>
             <div
-              class="description"
+              class="extra content"
             >
-              aggregate real-time convergence
+              <div
+                class="ui horizontal list"
+                role="list"
+              >
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="file icon"
+                  />
+                  0
+                   files
+                </div>
+              </div>
             </div>
-          </div>
-          <div
-            class="extra content"
+          </a>
+          <a
+            class="ui card"
+            href="/study/SD_SG5N41K8/documents"
           >
-            Updated: 
-            <time
-              datetime="2019-03-29T18:45:01.239Z"
-              title="2019-03-29 18:45"
+            <div
+              class="content"
             >
-              4 weeks ago
-            </time>
-          </div>
-        </a>
+              <div
+                class="header"
+              >
+                SD_SG5N41K8
+              </div>
+              <div
+                class="description"
+              >
+                strategize cross-media markets
+              </div>
+            </div>
+            <div
+              class="extra content"
+            >
+              <div
+                class="ui horizontal list"
+                role="list"
+              >
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="file icon"
+                  />
+                  0
+                   files
+                </div>
+              </div>
+            </div>
+          </a>
+          <a
+            class="ui card"
+            href="/study/SD_0YYP5ZEN/documents"
+          >
+            <div
+              class="content"
+            >
+              <div
+                class="header"
+              >
+                SD_0YYP5ZEN
+              </div>
+              <div
+                class="description"
+              >
+                drive distributed architectures
+              </div>
+            </div>
+            <div
+              class="extra content"
+            >
+              <div
+                class="ui horizontal list"
+                role="list"
+              >
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="file icon"
+                  />
+                  0
+                   files
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
       </div>
-    </main>
+    </div>
   </div>
 </div>
 `;

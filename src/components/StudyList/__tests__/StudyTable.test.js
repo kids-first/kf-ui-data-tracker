@@ -16,7 +16,7 @@ it('renders correctly', () => {
   );
   expect(tree.container).toMatchSnapshot();
 
-  const rows = tree.container.querySelectorAll('.StudyTable tbody tr');
+  const rows = tree.container.querySelectorAll('table tbody tr');
   expect(rows.length).toBe(3);
 });
 
@@ -31,7 +31,7 @@ it('renders without excluded columns passed to props', () => {
   );
   expect(tree.container).toMatchSnapshot();
 
-  const cols = tree.container.querySelectorAll('.StudyTable thead th');
+  const cols = tree.container.querySelectorAll('table thead th');
   // Should contain 4 cards in loading state
   expect(cols.length).toBe(4);
   expect(tree.queryByText(excludedColumn)).toBeNull();
