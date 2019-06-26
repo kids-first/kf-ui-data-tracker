@@ -1,24 +1,15 @@
 import React from 'react';
-import classes from 'classnames';
 import TimeAgo from 'react-timeago';
 import {withRouter} from 'react-router-dom';
+import {Table} from 'semantic-ui-react';
 
 const StudyTable = ({
   studyList,
   loading,
-  columns,
   exclude = [],
   clickable = true,
   history,
-  className,
 }) => {
-  const StudyTableClass = classes(
-    'StudyTable',
-    'grid-container',
-    'grid-container--collapsed-rows',
-    'px-0',
-    className,
-  );
   if (loading) {
     return <h2>loading studies</h2>;
   }
@@ -30,70 +21,38 @@ const StudyTable = ({
   ).filter(v => hidden.indexOf(v) < 0);
 
   return (
-    <table className={StudyTableClass}>
-      <thead className="hidden sm:block cell-12 ">
-        <tr className="grid-container grid-container--fullWidth grid-container--collapsed ">
+    <Table striped selectable singleLine columns="five">
+      <Table.Header>
+        <Table.Row>
           {cols.map(v => (
-            <th className="row-1 cell-2" key={v}>
-              {v}
-            </th>
+            <Table.HeaderCell key={v}>{v}</Table.HeaderCell>
           ))}
-        </tr>
-      </thead>
-      <tbody className="cell-1-12">
+        </Table.Row>
+      </Table.Header>
+      <Table.Body>
         {studyList.map((node, idx) => (
-          <tr
+          <Table.Row
             tabIndex="0"
-            className="grid-container grid-container--collapsed grid-container--fullWidth"
             key={node.node.kfId}
             onClick={() => {
               if (clickable) history.push(`/study/${node.node.kfId}/documents`);
             }}
           >
             {cols.map((col, idx) => {
-              // TODO: abstract this datum specific styling out of the component
-              const datumClass = classes(
-                col,
-                'px-20',
-                'py-0',
-                {
-                  hidden: col === 'name',
-                  'sm:block': col === 'name',
-                  'row-1 cell-12 pt-20': col === 'shortName',
-                  'font-title font-black sm:font-medium': col === 'shortName',
-                  'text-xl text-blue': col === 'shortName',
-                  'row-2 pt-0 pb-12': col === 'kfId',
-                  'row-3 cell-2 pb-20 text-grey sm:text-black': [
-                    'modifiedAt',
-                    'createdAt',
-                  ].includes(col),
-                },
-
-                'sm:p-20',
-                'sm:font-body sm:text-sm',
-                'sm:row-1',
-                'sm:cell-2',
-              );
               return (
-                <td className={datumClass} key={col}>
+                <Table.Cell width={1} key={col}>
                   {Date.parse(node.node[col]) ? (
-                    <span>
-                      <small className="sm:hidden text-grey lowercase">
-                        {col.split('A')[0]}
-                      </small>
-                      <br />
-                      <TimeAgo date={new Date(node.node[col])} />
-                    </span>
+                    <TimeAgo date={new Date(node.node[col])} />
                   ) : (
                     node.node[col]
                   )}
-                </td>
+                </Table.Cell>
               );
             })}
-          </tr>
+          </Table.Row>
         ))}
-      </tbody>
-    </table>
+      </Table.Body>
+    </Table>
   );
 };
 
