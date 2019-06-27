@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import {graphql} from 'react-apollo';
-import Modal from '../../components/Modal/Modal';
+import {Button, Modal, Message, Icon} from 'semantic-ui-react';
 import UploadStep from './UploadStep';
 import DescriptionStep from './DescriptionStep';
 import {GET_FILE_BY_ID} from '../../state/queries';
@@ -54,26 +54,46 @@ export const NewVersionFlow = ({
   };
 
   return (
-    <Modal
-      title={`Upload Document Version: ${fileNode.name}`}
-      onCloseModal={handleClose}
-      disableSubmit={step === 0 || !description || !file || onUploading}
-      onSubmit={handleSave}
-      submitText={onUploading ? 'UPLOADING ...' : 'UPLOAD'}
-    >
-      {step === 1 && (
-        <button
-          onClick={() => {
-            setStep(0);
-          }}
-          className="BackButton"
+    <Modal open={true} onClose={handleClose} size="small" closeIcon>
+      <Modal.Header
+        content={
+          step === 1
+            ? `Summarize Your Changes: ${fileNode.name}`
+            : `Upload Document Version: ${fileNode.name}`
+        }
+      />
+      <Modal.Content scrolling>
+        {steps[step]}
+        {additionalContent && additionalContent()}
+        {errors && <Message negative>{errors.message}</Message>}
+      </Modal.Content>
+      <Modal.Actions>
+        {step === 1 && (
+          <Button
+            icon
+            labelPosition="left"
+            floated="left"
+            size="mini"
+            onClick={() => {
+              setStep(0);
+            }}
+          >
+            <Icon name="arrow left" />
+            Back to Upload
+          </Button>
+        )}
+        <Button
+          primary
+          icon
+          labelPosition="left"
+          size="mini"
+          disabled={step === 0 || !description || !file || onUploading}
+          onClick={handleSave}
         >
-          Back to Upload
-        </button>
-      )}
-      {steps[step]}
-      {additionalContent && additionalContent()}
-      {errors && <span className="text-red">{errors.message}</span>}
+          <Icon name="upload" />
+          {onUploading ? 'UPLOADING ...' : 'UPLOAD'}
+        </Button>
+      </Modal.Actions>
     </Modal>
   );
 };
