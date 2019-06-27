@@ -13,11 +13,9 @@ exports[`renders correctly 1`] = `
         class=" cell-12 row-1 sm:row-1 sm:cell-2  sm:h-full sm:text-center  sm:border-r border-grey-lightest"
       >
         <div
-          class="Badge bg-orange ml-0"
+          class="ui orange tiny basic label"
         >
-          <span>
-            Pending Review
-          </span>
+          Pending Review
         </div>
       </div>
       <div
@@ -142,13 +140,9 @@ exports[`renders loading state 1`] = `
         class=" cell-12 row-1 sm:row-1 sm:cell-2  sm:h-full sm:text-center  sm:border-r border-grey-lightest"
       >
         <div
-          class="Badge Badge--loading ml-0"
+          class="ui orange tiny basic label"
         >
-          <span
-            class="invisible"
-          >
-            Pending Review
-          </span>
+          Pending Review
         </div>
       </div>
       <div

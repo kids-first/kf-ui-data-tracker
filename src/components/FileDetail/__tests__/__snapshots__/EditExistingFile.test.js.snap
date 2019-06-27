@@ -182,11 +182,9 @@ exports[`edits an existing file correctly 1`] = `
                 Status:
               </p>
               <div
-                class="Badge bg-orange"
+                class="ui orange tiny basic label"
               >
-                <span>
-                  Pending Review
-                </span>
+                Pending Review
               </div>
             </div>
             <div
@@ -396,7 +394,7 @@ exports[`edits an existing file correctly 1`] = `
                 class="grid-container mx-auto grid-container--collapsed-rows p-4"
               >
                 <div
-                  class="FileVersionElement--Icon row-3 cell-1 lg:row-1 lg:cell-1 bg-orange"
+                  class="FileVersionElement--Icon row-3 cell-1 lg:row-1 lg:cell-1"
                 />
                 <div
                   class="FileVersionElement--Tag row-3 cell-2 lg:row-2 lg:cell-1"
@@ -489,7 +487,7 @@ exports[`edits an existing file correctly 1`] = `
                 class="grid-container mx-auto grid-container--collapsed-rows p-4"
               >
                 <div
-                  class="FileVersionElement--Icon row-3 cell-1 lg:row-1 lg:cell-1 bg-orange"
+                  class="FileVersionElement--Icon row-3 cell-1 lg:row-1 lg:cell-1"
                 />
                 <div
                   class="flex row-1 cell-12 lg:cell-7"
@@ -577,7 +575,7 @@ exports[`edits an existing file correctly 1`] = `
                 class="grid-container mx-auto grid-container--collapsed-rows p-4"
               >
                 <div
-                  class="FileVersionElement--Icon row-3 cell-1 lg:row-1 lg:cell-1 bg-orange"
+                  class="FileVersionElement--Icon row-3 cell-1 lg:row-1 lg:cell-1"
                 />
                 <div
                   class="flex row-1 cell-12 lg:cell-7"
@@ -848,11 +846,9 @@ exports[`edits an existing file correctly 2`] = `
                 Status:
               </p>
               <div
-                class="Badge bg-teal"
+                class="ui teal tiny basic label"
               >
-                <span>
-                  Approved
-                </span>
+                Approved
               </div>
             </div>
             <div
@@ -1062,7 +1058,7 @@ exports[`edits an existing file correctly 2`] = `
                 class="grid-container mx-auto grid-container--collapsed-rows p-4"
               >
                 <div
-                  class="FileVersionElement--Icon row-3 cell-1 lg:row-1 lg:cell-1 bg-teal"
+                  class="FileVersionElement--Icon row-3 cell-1 lg:row-1 lg:cell-1"
                 />
                 <div
                   class="FileVersionElement--Tag row-3 cell-2 lg:row-2 lg:cell-1"
@@ -1155,7 +1151,7 @@ exports[`edits an existing file correctly 2`] = `
                 class="grid-container mx-auto grid-container--collapsed-rows p-4"
               >
                 <div
-                  class="FileVersionElement--Icon row-3 cell-1 lg:row-1 lg:cell-1 bg-orange"
+                  class="FileVersionElement--Icon row-3 cell-1 lg:row-1 lg:cell-1"
                 />
                 <div
                   class="flex row-1 cell-12 lg:cell-7"
@@ -1243,7 +1239,7 @@ exports[`edits an existing file correctly 2`] = `
                 class="grid-container mx-auto grid-container--collapsed-rows p-4"
               >
                 <div
-                  class="FileVersionElement--Icon row-3 cell-1 lg:row-1 lg:cell-1 bg-orange"
+                  class="FileVersionElement--Icon row-3 cell-1 lg:row-1 lg:cell-1"
                 />
                 <div
                   class="flex row-1 cell-12 lg:cell-7"
