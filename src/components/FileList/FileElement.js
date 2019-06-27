@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {withRouter, Link} from 'react-router-dom';
 import TimeAgo from 'react-timeago';
 import Badge from '../Badge/Badge';
-import {Icon, Label, List} from 'semantic-ui-react';
+import {Icon, Label, List, Popup} from 'semantic-ui-react';
 import FileActionsContainer from '../../containers/FileActionsContainer';
 import {
   fileTypeDetail,
@@ -26,7 +26,7 @@ const FileElement = ({fileNode, loading, match, fileListId}) => {
       ? fileTypeDetail[fileNode.fileType].title
       : 'unknown';
   return (
-    <List.Item data-testid="file-item">
+    <List.Item data-testid="edit-file">
       <List.Content floated="left">
         <Badge
           state={
@@ -38,34 +38,63 @@ const FileElement = ({fileNode, loading, match, fileListId}) => {
       <List.Content floated="right">
         <FileActionsContainer node={fileNode} studyId={fileListId} />
       </List.Content>
-      <Link
-        to={`/study/${match.params.kfId}/documents/${fileKfID}`}
-        data-testid="edit-file"
-      >
-        <List.Content>
-          <List.Header as="a">{fileName}</List.Header>
-          {fileDescription ? <small>{fileDescription}</small> : null}
-          <List.Description>
-            <List horizontal>
-              <List.Item>
-                <Label size="tiny" color="pink">
-                  <Icon name="database" />
-                  {fileKfID}
-                </Label>
-              </List.Item>
-              <List.Item>
+      <List.Content>
+        <List.Header
+          as={Link}
+          to={`/study/${match.params.kfId}/documents/${fileKfID}`}
+        >
+          {fileName}
+        </List.Header>
+        {fileDescription ? <small>{fileDescription}</small> : null}
+        <List.Description>
+          <Label.Group size="tiny">
+            <Label basic image>
+              <img
+                src={
+                  fileNode.creator
+                    ? fileNode.creator.picture
+                    : 'https://www.w3schools.com/css/img_avatar.png'
+                }
+              />
+              {fileNode.creator ? fileNode.creator.username : 'Unknown'}
+              <Label.Detail>
                 {latestDate ? (
                   <TimeAgo date={latestDate} live={false} />
                 ) : (
-                  <span>unknown</span>
+                  'Unknown time'
                 )}
-              </List.Item>
-              <List.Item>Size: {fileSize}</List.Item>
-              <List.Item>{fileType}</List.Item>
-            </List>
-          </List.Description>
-        </List.Content>
-      </Link>
+              </Label.Detail>
+            </Label>
+            <Popup
+              size="mini"
+              inverted
+              position="top center"
+              content="Download File"
+              trigger={
+                <Label icon>
+                  <Icon name="download" /> {fileSize}
+                </Label>
+              }
+            />
+            <Popup
+              size="mini"
+              inverted
+              position="top center"
+              content="Copy KF ID"
+              trigger={
+                <Label as="button" icon>
+                  <Icon name="copy" />
+                  {fileKfID}
+                </Label>
+              }
+            />
+            <Label icon basic>
+              <Icon name="hospital" />
+              {fileType}
+            </Label>
+          </Label.Group>
+        </List.Description>
+      </List.Content>
     </List.Item>
   );
 };
