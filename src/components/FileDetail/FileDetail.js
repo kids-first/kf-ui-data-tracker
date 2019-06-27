@@ -4,8 +4,6 @@ import {withRouter, Link} from 'react-router-dom';
 import {Mutation} from 'react-apollo';
 import {FILE_DOWNLOAD_URL} from '../../state/mutations';
 import TimeAgo from 'react-timeago';
-import {Button, Icon, GridContainer, Avatar} from 'kf-uikit';
-import Badge from '../Badge/Badge';
 import VersionList from '../VersionList/VersionList';
 import {
   fileTypeDetail,
@@ -16,7 +14,10 @@ import {
 } from '../../common/fileUtils';
 import DeleteFileMutation from '../../containers/DeleteFileMutation';
 import FileDetailModal from './FileDetailModal';
+import Badge from '../Badge/Badge';
 import SvgIcon from '../Icon/Icon';
+import {Button, Grid, Label, Statistic, Icon, Header} from 'semantic-ui-react';
+
 /**
  * Form to display file details and file versions
  */
@@ -32,131 +33,148 @@ const FileDetail = ({fileNode, history, match}) => {
       {downloadFileMutation => (
         <DeleteFileMutation studyId={studyId}>
           {(deleteFile, {loading, error}) => (
-            <GridContainer>
-              <Link
-                to={`/study/${match.params.kfId}/documents`}
-                className="BackButton"
-                data-testid="back-to-filelist"
-              >
-                Back to All Documents
-              </Link>
-              <h3 className="FileTitle font-body font-black row-2 cell-12 lg:cell-10 md:cell-9 ">
-                {fileNode.name}
-              </h3>
-              <div className="md:row-3 lg:cell-10 md:cell-9 cell-12">
-                <GridContainer>
-                  <div className="cell-6 sm:cell-3">
-                    <p className="FileInfo--Title">Status:</p>
-                    <Badge state={sortedVersions[0].node.state} />
-                  </div>
-                  <div className="cell-6 sm:cell-3">
-                    <p className="FileInfo--Title">Document Type:</p>
-                    <div className="flex">
-                      <div className="FileInfo--Icon">
+            <Grid>
+              <Grid.Row>
+                <Grid.Column>
+                  <Link
+                    to={`/study/${match.params.kfId}/documents`}
+                    data-testid="back-to-filelist"
+                  >
+                    <Button
+                      basic
+                      labeled
+                      icon
+                      size="mini"
+                      labelPosition="left"
+                      floated="left"
+                    >
+                      <Icon name="arrow left" />
+                      Back to All Documents
+                    </Button>
+                  </Link>
+                </Grid.Column>
+              </Grid.Row>
+              <Grid.Row>
+                <Grid.Column>
+                  <Header>
+                    {fileNode.name}
+                    <Button.Group icon labeled size="mini" floated="right">
+                      <Button
+                        icon="pencil"
+                        onClick={() => setDialog('annotation')}
+                        data-testid="edit-button"
+                        content="EDIT"
+                      />
+                      <Button
+                        icon="download"
+                        onClick={e =>
+                          downloadFile(
+                            studyId,
+                            fileNode.kfId,
+                            null,
+                            downloadFileMutation,
+                          )
+                        }
+                        content="DOWNLOAD"
+                      />
+                      <Button
+                        negative
+                        icon="trash alternate"
+                        onClick={e => {
+                          deleteFile({variables: {kfId: fileNode.kfId}});
+                          history.goBack();
+                        }}
+                        content="DELETE"
+                      />
+                    </Button.Group>
+                  </Header>
+                </Grid.Column>
+              </Grid.Row>
+              <Grid.Row stretched>
+                <Grid.Column mobile={8} tablet={4} computer={4}>
+                  <Statistic size="mini">
+                    <Statistic.Label>Status</Statistic.Label>
+                    <Statistic.Value>
+                      <Badge state={sortedVersions[0].node.state} />
+                    </Statistic.Value>
+                  </Statistic>
+                </Grid.Column>
+                <Grid.Column mobile={8} tablet={4} computer={4}>
+                  <Statistic size="mini">
+                    <Statistic.Label>Document Type</Statistic.Label>
+                    <Statistic.Value>
+                      <Label icon basic size="tiny">
                         <SvgIcon
                           kind={fileTypeDetail[fileNode.fileType].icon}
-                          width="24"
-                          height="24"
+                          width="12"
+                          height="12"
                         />
-                      </div>
-                      <p className="FileInfo--Text">
-                        {fileTypeDetail[fileNode.fileType].title}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="cell-6 sm:cell-3">
-                    <p className="FileInfo--Title">Last Updated:</p>
-                    {latestDate ? (
-                      <div className="flex">
-                        <p className="FileInfo--Text">
-                          <TimeAgo
-                            date={latestDate}
-                            live={false}
-                            className="mr-4"
-                          />
-                          by
-                        </p>
-                        <Avatar
-                          className="inline-block ml-4 mt-4"
-                          size={20}
-                          imgUrl={
+                        <Label.Detail>
+                          {fileTypeDetail[fileNode.fileType].title}
+                        </Label.Detail>
+                      </Label>
+                    </Statistic.Value>
+                  </Statistic>
+                </Grid.Column>
+                <Grid.Column mobile={8} tablet={4} computer={4}>
+                  <Statistic size="mini">
+                    <Statistic.Label>Last Updated</Statistic.Label>
+                    <Statistic.Value>
+                      <Label image size="tiny">
+                        <img
+                          alt={
                             fileNode.creator
+                              ? fileNode.creator.username
+                              : 'unknown'
+                          }
+                          src={
+                            fileNode.creator.picture
                               ? fileNode.creator.picture
                               : 'https://www.w3schools.com/css/img_avatar.png'
                           }
-                          userName={
-                            fileNode.creator && fileNode.creator.username
-                          }
-                          userEmail={fileNode.creator && fileNode.creator.email}
                         />
-                      </div>
-                    ) : (
-                      <p className="FileInfo--Text">Unknown</p>
-                    )}
-                  </div>
-                  <div className="cell-6 sm:cell-3">
-                    <p className="FileInfo--Title">Size:</p>
-                    <p className="FileInfo--Text">{latestSize}</p>
-                  </div>
-                </GridContainer>
-              </div>
-              <div className="row-3 lg:cell-2 md:cell-3 cell-12 flex flex-row items-start h-full w-full justify-start flex-wrap">
-                <Button
-                  type="button"
-                  icon="edit"
-                  onClick={() => setDialog('annotation')}
-                  data-testid="edit-button"
-                >
-                  EDIT
-                </Button>
-                <button
-                  className="hidden sm:inline-block text-grey test-xs font-light underline ml-12 my-4"
-                  onClick={e => {
-                    deleteFile({variables: {kfId: fileNode.kfId}});
-                    history.goBack();
-                  }}
-                >
-                  <Icon className="mr-4" width={10} height={10} kind="delete" />
-                  <span>Delete</span>
-                </button>
-                <Button
-                  type="button"
-                  icon="download"
-                  color="primary"
-                  onClick={e =>
-                    downloadFile(
-                      studyId,
-                      fileNode.kfId,
-                      null,
-                      downloadFileMutation,
-                    )
-                  }
-                  className="mx-12 md:mt-12 lg:mx-0 lg:w-full"
-                >
-                  DOWNLOAD
-                </Button>
-              </div>
-              <div className="cell-12 lg:cell-10 md:cell-9 md:h-full">
-                <p className="FileInfo--Title">Description:</p>
-                {fileNode.description ? (
-                  <p className="FileInfo--Text md:mr-0 h-full">
-                    {fileNode.description}
-                  </p>
-                ) : (
-                  <p className="FileInfo--Text md:mr-0 text-mediumGrey">
-                    No description added...
-                  </p>
-                )}
-              </div>
-              <VersionList
-                studyId={studyId}
-                fileNode={fileNode}
-                onUploadClick={() => setDialog('upload')}
-                onNameClick={(versionNode, index) => {
-                  setDialog('versionInfo');
-                  setOpenVersion({version: versionNode, index: index});
-                }}
-              />
+                        {fileNode.creator.username}
+                        <Label.Detail>
+                          {latestDate ? (
+                            <TimeAgo date={latestDate} live={false} />
+                          ) : (
+                            'Unknow'
+                          )}
+                        </Label.Detail>
+                      </Label>
+                    </Statistic.Value>
+                  </Statistic>
+                </Grid.Column>
+                <Grid.Column mobile={8} tablet={4} computer={4}>
+                  <Statistic size="mini">
+                    <Statistic.Label>Size</Statistic.Label>
+                    <Statistic.Value>
+                      <Label basic size="tiny">
+                        {latestSize}
+                      </Label>
+                    </Statistic.Value>
+                  </Statistic>
+                </Grid.Column>
+              </Grid.Row>
+              <Grid.Row>
+                <Grid.Column>
+                  <Header size="small">Description</Header>
+                  {fileNode.description || 'No description added...'}
+                </Grid.Column>
+              </Grid.Row>
+              <Grid.Row>
+                <Grid.Column>
+                  <VersionList
+                    studyId={studyId}
+                    fileNode={fileNode}
+                    onUploadClick={() => setDialog('upload')}
+                    onNameClick={(versionNode, index) => {
+                      setDialog('versionInfo');
+                      setOpenVersion({version: versionNode, index: index});
+                    }}
+                  />
+                </Grid.Column>
+              </Grid.Row>
               {dialog !== false && (
                 <FileDetailModal
                   match={match}
@@ -169,7 +187,7 @@ const FileDetail = ({fileNode, history, match}) => {
                   downloadFileMutation={downloadFileMutation}
                 />
               )}
-            </GridContainer>
+            </Grid>
           )}
         </DeleteFileMutation>
       )}
