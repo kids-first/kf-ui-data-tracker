@@ -56,21 +56,30 @@ const ProfileView = ({
   const token =
     localStorage.getItem('egoToken') || localStorage.getItem('accessToken');
   const decoded = jwtDecode(token);
-  const groups =
-    decoded['https://kidsfirstdrc.org/groups'] || decoded.context.groups;
   const roles =
     decoded['https://kidsfirstdrc.org/roles'] || decoded.context.roles;
   return (
     <Container style={{marginTop: '30px'}}>
       <Header as="h3">Your Profile</Header>
-      <Segment basic>
-        <Grid>
+      <Segment basic secondary>
+        <Grid doubling stackable>
           <Grid.Row>
-            <Grid.Column width="2" verticalAlign="middle">
-              <Image centered circular size={100} src={profile.picture} />
+            <Grid.Column
+              mobile={16}
+              tablet={4}
+              computer={2}
+              verticalAlign="middle"
+            >
+              <Image
+                centered
+                circular
+                size="small"
+                bordered
+                src={profile.picture}
+              />
             </Grid.Column>
             <Label attached="top left">{roles.join(', ')}</Label>
-            <Grid.Column width="8">
+            <Grid.Column mobile={16} tablet={12} computer={14}>
               <Form size="mini">
                 <Form.Group widths={2}>
                   <Form.Field
@@ -101,8 +110,6 @@ const ProfileView = ({
                   />
                 </Form.Group>
               </Form>
-            </Grid.Column>
-            <Grid.Column width="6" textAlign="right">
             </Grid.Column>
           </Grid.Row>
         </Grid>
