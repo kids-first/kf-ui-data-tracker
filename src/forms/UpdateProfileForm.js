@@ -23,11 +23,6 @@ const UpdateProfileForm = ({
           handleSubmit(slackNotify, slackMemId);
         }}
       >
-        <p>
-          If you are a member of the Kids-First slack channel, we can send you
-          daily updates when there are changes made to the studies of your
-          choosing.
-        </p>
         <Form.Group>
           <Form.Field>
             <label htmlForm="slackid">Slack ID:</label>

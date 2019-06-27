@@ -10,6 +10,7 @@ import {
   Header,
   Image,
   Label,
+  Message,
   Segment,
 } from 'semantic-ui-react';
 import UpdateProfileForm from '../forms/UpdateProfileForm';
@@ -107,6 +108,13 @@ const ProfileView = ({
         </Grid>
       </Segment>
       <Header as="h3">Notifications</Header>
+      <Message
+        info
+        attached
+        icon="send"
+        header="Get Notified"
+        content="If you are a member of the Kids-First slack channel, we can send you daily updates when there are changes made to the studies of your choosing."
+      />
       <UpdateProfileForm
         handleSubmit={handleSave}
         defaultState={{
