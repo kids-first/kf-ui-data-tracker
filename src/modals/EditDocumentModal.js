@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 import {UPDATE_FILE, UPDATE_VERSION} from '../state/mutations';
 import {graphql} from 'react-apollo';
 import {EditDocumentForm} from '../forms';
-import Modal from '../components/Modal/Modal';
 import {fileSortedVersions} from '../common/fileUtils';
+import {Button, Modal} from 'semantic-ui-react';
 
 const EditDocumentModal = ({
   fileNode,
@@ -40,24 +40,27 @@ const EditDocumentModal = ({
   };
 
   return (
-    <Modal
-      title="Edit Document Metadata"
-      submitText="SAVE"
-      onSubmit={e => onSubmit(e)}
-      onCloseModal={onCloseDialog}
-    >
-      <EditDocumentForm
-        fileType={fileTypeInput}
-        fileName={fileNameInput}
-        fileDescription={fileDescriptionInput}
-        versionStatus={versionStatusInput}
-        onNameChange={e => setFileName(e.target.value)}
-        onDescriptionChange={e => setFileDescription(e.target.value)}
-        onFileTypeChange={e => setFileType(e.target.value)}
-        onVersionStatusChange={versionStatusValue =>
-          setVersionStatus(versionStatusValue)
-        }
-      />
+    <Modal open={true} onClose={onCloseDialog} size="small" closeIcon>
+      <Modal.Header content="Edit Document Metadata" />
+      <Modal.Content scrolling>
+        <EditDocumentForm
+          fileType={fileTypeInput}
+          fileName={fileNameInput}
+          fileDescription={fileDescriptionInput}
+          versionStatus={versionStatusInput}
+          onNameChange={e => setFileName(e.target.value)}
+          onDescriptionChange={e => setFileDescription(e.target.value)}
+          onFileTypeChange={e => setFileType(e.target.value)}
+          onVersionStatusChange={versionStatusValue =>
+            setVersionStatus(versionStatusValue)
+          }
+        />
+      </Modal.Content>
+      <Modal.Actions>
+        <Button primary size="mini" onClick={e => onSubmit(e)}>
+          SAVE
+        </Button>
+      </Modal.Actions>
     </Modal>
   );
 };
