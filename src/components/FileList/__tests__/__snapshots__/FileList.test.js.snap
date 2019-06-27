@@ -16,11 +16,9 @@ exports[`renders with files 1`] = `
           class=" cell-12 row-1 sm:row-1 sm:cell-2  sm:h-full sm:text-center  sm:border-r border-grey-lightest"
         >
           <div
-            class="Badge bg-lightGrey Badge--invalid ml-0"
+            class="ui grey tiny basic label"
           >
-            <span>
-              Invalid
-            </span>
+            Invalid
           </div>
         </div>
         <div
@@ -140,11 +138,9 @@ exports[`renders with files 1`] = `
           class=" cell-12 row-1 sm:row-1 sm:cell-2  sm:h-full sm:text-center  sm:border-r border-grey-lightest"
         >
           <div
-            class="Badge bg-lightGrey Badge--invalid ml-0"
+            class="ui grey tiny basic label"
           >
-            <span>
-              Invalid
-            </span>
+            Invalid
           </div>
         </div>
         <div
@@ -264,11 +260,9 @@ exports[`renders with files 1`] = `
           class=" cell-12 row-1 sm:row-1 sm:cell-2  sm:h-full sm:text-center  sm:border-r border-grey-lightest"
         >
           <div
-            class="Badge bg-lightGrey Badge--invalid ml-0"
+            class="ui grey tiny basic label"
           >
-            <span>
-              Invalid
-            </span>
+            Invalid
           </div>
         </div>
         <div
@@ -388,11 +382,9 @@ exports[`renders with files 1`] = `
           class=" cell-12 row-1 sm:row-1 sm:cell-2  sm:h-full sm:text-center  sm:border-r border-grey-lightest"
         >
           <div
-            class="Badge bg-lightGrey Badge--invalid ml-0"
+            class="ui grey tiny basic label"
           >
-            <span>
-              Invalid
-            </span>
+            Invalid
           </div>
         </div>
         <div
@@ -512,11 +504,9 @@ exports[`renders with files 1`] = `
           class=" cell-12 row-1 sm:row-1 sm:cell-2  sm:h-full sm:text-center  sm:border-r border-grey-lightest"
         >
           <div
-            class="Badge bg-lightGrey Badge--invalid ml-0"
+            class="ui grey tiny basic label"
           >
-            <span>
-              Invalid
-            </span>
+            Invalid
           </div>
         </div>
         <div
