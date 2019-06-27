@@ -56,20 +56,27 @@ const ProfileView = ({
   const token =
     localStorage.getItem('egoToken') || localStorage.getItem('accessToken');
   const decoded = jwtDecode(token);
-  const groups =
-    decoded['https://kidsfirstdrc.org/groups'] || decoded.context.groups;
   const roles =
     decoded['https://kidsfirstdrc.org/roles'] || decoded.context.roles;
   return (
     <Container style={{marginTop: '30px'}}>
       <Header as="h3">Your Profile</Header>
-      <Segment basic>
-        <Grid>
+      <Segment basic secondary>
+        <Grid doubling stackable>
           <Grid.Row>
-            <Grid.Column width="2" verticalAlign="middle">
-              <Image centered circular size={100} src={profile.picture} />
+            <Grid.Column largeScreen="2" tablet="4" verticalAlign="middle">
+              <Image centered circular fluid src={profile.picture} />
+              <Label.Group
+                size="tiny"
+                color="teal"
+                style={{paddingTop: '10px'}}
+              >
+                {roles.map((role, i) => (
+                  <Label key={i}>{role}</Label>
+                ))}
+              </Label.Group>
             </Grid.Column>
-            <Grid.Column width="8">
+            <Grid.Column largeScreen="14" tablet="12">
               <Form size="mini">
                 <Form.Group widths={2}>
                   <Form.Field
@@ -100,20 +107,6 @@ const ProfileView = ({
                   />
                 </Form.Group>
               </Form>
-            </Grid.Column>
-            <Grid.Column width="6" textAlign="right">
-              <Header as="h5">Your Roles</Header>
-              <Label.Group size="tiny">
-                {roles.map((role, i) => (
-                  <Label key={i}>{role}</Label>
-                ))}
-              </Label.Group>
-              <Header as="h5">Your Groups</Header>
-              <Label.Group size="tiny">
-                {groups.map((group, i) => (
-                  <Label key={i}>{group}</Label>
-                ))}
-              </Label.Group>
             </Grid.Column>
           </Grid.Row>
         </Grid>
