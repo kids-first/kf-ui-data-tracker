@@ -25,8 +25,8 @@ it('renders correctly with 0 as index -- show latest tag', () => {
     </MockedProvider>,
   );
   expect(tree.container).toMatchSnapshot();
-  const tagLatest = tree.getByText(/Latest/);
-  expect(tagLatest.innerHTML).toBe('Latest');
+  const tagLatest = tree.getByText(/LATEST/);
+  expect(tagLatest.innerHTML).toBe('LATEST');
 });
 
 it('renders correctly with 1 as index -- show version kfId', () => {
