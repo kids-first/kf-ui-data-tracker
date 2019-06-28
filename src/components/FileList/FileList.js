@@ -3,24 +3,22 @@ import PropTypes from 'prop-types';
 import FileElement from './FileElement';
 import NotificationBar from '../NotificationBar/NotificationBar';
 import {fileSortedVersions} from '../../common/fileUtils';
-import Pagination from '../Pagination/Pagination';
-import {Header, Icon, Segment, Table} from 'semantic-ui-react';
+import {Header, Icon, Segment, Pagination, Table} from 'semantic-ui-react';
 /**
  * Displays list of study files
  */
 const FileList = ({className, fileList, studyId}) => {
   const perPage = 5;
-  const [page, setPage] = useState(0);
-  const handlePageClick = data => {
-    setPage(data.selected);
+  const [page, setPage] = useState(1);
+
+  const handlePageClick = (e, {activePage}) => {
+    setPage(activePage);
   };
-  const pageCount = () => {
-    if (Math.ceil(fileList.length / perPage) < page + 1) {
-      setPage(page - 1);
-    }
-    return Math.ceil(fileList.length / perPage);
-  };
-  const offset = fileList.slice(perPage * page, perPage * page + perPage);
+  const pageCount = Math.ceil(fileList.length / perPage);
+  const pageItems = fileList.slice(
+    perPage * (page - 1),
+    perPage * (page - 1) + perPage,
+  );
 
   const showNotification = () => {
     var statusList = [];
@@ -51,9 +49,15 @@ const FileList = ({className, fileList, studyId}) => {
       {showNotification()}
       {fileList.length ? (
         <Table unstackable compact="very" basic="very">
-          {offset.map(({node}) => (
-            <FileElement key={node.kfId} fileListId={studyId} fileNode={node} />
-          ))}
+          <Table.Body>
+            {pageItems.map(({node}) => (
+              <FileElement
+                key={node.kfId}
+                fileListId={studyId}
+                fileNode={node}
+              />
+            ))}
+          </Table.Body>
         </Table>
       ) : (
         <Segment basic>
@@ -63,14 +67,25 @@ const FileList = ({className, fileList, studyId}) => {
           </Header>
         </Segment>
       )}
-      {pageCount() > 1 && (
-        <Pagination
-          rowCount={fileList.length}
-          currentPageNum={offset.length}
-          pageCount={pageCount()}
-          page={page}
-          onPageClick={handlePageClick}
-        />
+      {pageCount > 1 && (
+        <Segment basic textAlign="right">
+          Showing {perPage} of {fileList.length} files{' '}
+          <Pagination
+            firstItem={null}
+            lastItem={null}
+            nextItem={{
+              'aria-label': 'Next page',
+              content: <Icon name="chevron right" />,
+            }}
+            prevItem={{
+              'aria-label': 'Previous page',
+              content: <Icon name="chevron left" />,
+            }}
+            activePage={page}
+            totalPages={pageCount}
+            onPageChange={handlePageClick}
+          />
+        </Segment>
       )}
     </Fragment>
   );
