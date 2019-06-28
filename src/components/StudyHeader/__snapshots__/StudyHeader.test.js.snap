@@ -2,63 +2,40 @@
 
 exports[`renders correctly 1`] = `
 <div>
-  <section
-    class="grid-container mx-auto grid-container--collapsed-rows StudyHeader py-8 px-12"
+  <div
+    class="ui container"
   >
-    <p
-      class="StudyHeader--TopText"
+    <h1
+      class="ui header"
     >
-      <b>
-        SD_00000000
-      </b>
-      <span
-        class="pl-4 pr-20"
+      <div
+        class="content"
       >
-        <button>
-          <svg
-            height="10"
-            id="mock-icon"
-            kind="copy"
-            width="10"
-          >
-            <title>
-              icon-
-              copy
-            </title>
-          </svg>
-        </button>
-      </span>
-      <small
-        class="font-light"
-      >
-        last updated: 
-        <time
-          datetime="2019-01-01T00:00:00.000Z"
-          title="2019-01-01"
+        A study used for testing the header
+        <div
+          class="sub header"
         >
-          4 months ago
-        </time>
-      </small>
-    </p>
-    <p
-      class="StudyHeader--TitleText row-3 cell-12 md:row-2 md:cell-10"
-    >
-      Test Study
-    </p>
-    <div
-      class="hidden row-2 cell-12 md:cell-2 md:flex-row md:flex-col"
-    >
-      <p
-        class="m-0 text-sm font-bold inline-block pr-8"
-      >
-        Contacts:
-      </p>
-      <p
-        class="m-0 font-light inline-block"
-      >
-        Mary Marazita
-      </p>
-    </div>
-  </section>
+          SD_00000000
+          <span
+            class=""
+          >
+            <button>
+              <svg
+                height="10"
+                id="mock-icon"
+                kind="copy"
+                width="10"
+              >
+                <title>
+                  icon-
+                  copy
+                </title>
+              </svg>
+            </button>
+          </span>
+        </div>
+      </div>
+    </h1>
+  </div>
 </div>
 `;
