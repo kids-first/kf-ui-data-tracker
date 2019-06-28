@@ -20,7 +20,6 @@ it('renders with more than one versions', () => {
     </MemoryRouter>,
   );
   expect(tree.container).toMatchSnapshot();
-
-  const lis = tree.container.querySelectorAll('.FileVersionList--Element');
+  const lis = tree.container.querySelectorAll('content');
   expect(lis.length).toBe(3);
 });
