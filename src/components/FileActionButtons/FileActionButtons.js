@@ -14,15 +14,13 @@ const FileActionButtons = ({
   deleteFile,
 }) => {
   return (
-    <Button.Group vertical size="tiny">
+    <Button.Group>
       <Button
-        icon
+        icon="download"
         onClick={e =>
           downloadFile(studyId, node.kfId, null, downloadFileMutation)
         }
-      >
-        <Icon name="download" />
-      </Button>
+      />
       <Popup
         trigger={
           <Button
@@ -40,7 +38,7 @@ const FileActionButtons = ({
               data-testid="delete-confirm"
               negative
               fluid
-              icon={<Icon name="trash alternative" />}
+              icon={<Icon name="trash alternate" />}
               content="Delete"
               onClick={e => deleteFile({variables: {kfId: node.kfId}})}
             />
