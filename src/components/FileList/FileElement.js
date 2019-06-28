@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {withRouter, Link} from 'react-router-dom';
 import TimeAgo from 'react-timeago';
 import Badge from '../Badge/Badge';
-import {Divider, Grid, Icon, Label, List, Popup} from 'semantic-ui-react';
+import {Header, Table, Icon, Label} from 'semantic-ui-react';
 import CopyButton from '../CopyButton/CopyButton';
 import FileActionsContainer from '../../containers/FileActionsContainer';
 import {
@@ -26,61 +26,75 @@ const FileElement = ({fileNode, loading, match, fileListId}) => {
     fileNode && fileTypeDetail[fileNode.fileType]
       ? fileTypeDetail[fileNode.fileType].title
       : 'unknown';
+  const creator =
+    fileNode.creator && fileNode.creator.username
+      ? fileNode.creator.username
+      : 'Unknown';
+  const creatorImg =
+    fileNode.creator && fileNode.creator.picture
+      ? fileNode.creator.picture
+      : 'https://www.w3schools.com/css/img_avatar.png';
   return (
-    <List.Item data-testid="edit-file">
-      <List.Content floated="left">
+    <Table.Row>
+      <Table.Cell singleLine collapsing textAlign="center">
         <Badge
           state={
             sortedVersions.length > 0 ? sortedVersions[0].node.state : null
           }
           loading={loading}
         />
-      </List.Content>
-      <List.Content floated="right">
-        <FileActionsContainer node={fileNode} studyId={fileListId} />
-      </List.Content>
-      <List.Content>
-        <List.Header
-          as={Link}
+      </Table.Cell>
+      <Table.Cell>
+        <Link
+          style={{display: 'block', width: '100%'}}
           to={`/study/${match.params.kfId}/documents/${fileKfID}`}
         >
-          {fileName}
-        </List.Header>
-        <List.Description
-          style={{
-            whiteSpace: 'nowrap',
-            textOverflow: 'ellipsis',
-            overflow: 'hidden',
-          }}
-        >
-          {fileDescription ? <>{fileDescription}</> : null}
-          <Label.Group size="tiny">
-            <CopyButton basic size="mini" text={fileKfID} />
-            <Label basic image>
-              <img
-                src={
-                  fileNode.creator && fileNode.creator.picture
-                    ? fileNode.creator.picture
-                    : 'https://www.w3schools.com/css/img_avatar.png'
-                }
-              />
-              {fileNode.creator ? fileNode.creator.username : 'Unknown'}
-              <Label.Detail>
-                {latestDate ? (
-                  <TimeAgo date={latestDate} live={false} />
-                ) : (
-                  'Unknown time'
-                )}
-              </Label.Detail>
-            </Label>
-            <Label icon basic>
-              <Icon name="hospital" />
-              {fileType}
-            </Label>
-          </Label.Group>
-        </List.Description>
-      </List.Content>
-    </List.Item>
+          <Header size="medium" as="span">
+            {fileName}
+          </Header>
+          <p
+            style={{
+              whiteSpace: 'nowrap',
+              textOverflow: 'ellipsis',
+              overflow: 'hidden',
+            }}
+          >
+            {fileDescription ? (
+              <>
+                {fileDescription.length > 100
+                  ? fileDescription.substring(0, 100) + '...'
+                  : fileDescription}
+              </>
+            ) : null}
+          </p>
+        </Link>
+        <Label.Group size="tiny">
+          <CopyButton basic size="mini" text={fileKfID} />
+          <Label basic image>
+            <img src={creatorImg} alt={creator} />
+            {creator}
+            <Label.Detail>
+              {latestDate ? (
+                <TimeAgo date={latestDate} live={false} />
+              ) : (
+                'Unknown time'
+              )}
+            </Label.Detail>
+          </Label>
+          <Label basic>
+            <Icon name="hospital" />
+            {fileType}
+          </Label>
+          <Label basic>
+            <Icon name="disk" />
+            {fileSize}
+          </Label>
+        </Label.Group>
+      </Table.Cell>
+      <Table.Cell collapsing textAlign="right">
+        <FileActionsContainer node={fileNode} studyId={fileListId} />
+      </Table.Cell>
+    </Table.Row>
   );
 };
 

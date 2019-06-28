@@ -4,7 +4,7 @@ import FileElement from './FileElement';
 import NotificationBar from '../NotificationBar/NotificationBar';
 import {fileSortedVersions} from '../../common/fileUtils';
 import Pagination from '../Pagination/Pagination';
-import {Header, Icon, List, Segment} from 'semantic-ui-react';
+import {Header, Icon, Segment, Table} from 'semantic-ui-react';
 /**
  * Displays list of study files
  */
@@ -49,20 +49,20 @@ const FileList = ({className, fileList, studyId}) => {
   return (
     <Fragment>
       {showNotification()}
-      <List divided selection>
-        {fileList.length ? (
-          offset.map(({node}) => (
+      {fileList.length ? (
+        <Table unstackable compact="very" basic="very">
+          {offset.map(({node}) => (
             <FileElement key={node.kfId} fileListId={studyId} fileNode={node} />
-          ))
-        ) : (
-          <Segment basic>
-            <Header icon textAlign="center">
-              <Icon name="file alternate outline" />
-              You don't have any documents yet.
-            </Header>
-          </Segment>
-        )}
-      </List>
+          ))}
+        </Table>
+      ) : (
+        <Segment basic>
+          <Header icon textAlign="center">
+            <Icon name="file alternate outline" />
+            You don't have any documents yet.
+          </Header>
+        </Segment>
+      )}
       {pageCount() > 1 && (
         <Pagination
           rowCount={fileList.length}
