@@ -47,7 +47,7 @@ const VersionItem = ({
                       : 'unknown'
                   }
                   src={
-                    versionNode.creator.picture
+                    versionNode.creator && versionNode.creator.picture
                       ? versionNode.creator.picture
                       : 'https://www.w3schools.com/css/img_avatar.png'
                   }

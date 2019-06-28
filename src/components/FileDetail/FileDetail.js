@@ -128,12 +128,12 @@ const FileDetail = ({fileNode, history, match}) => {
                               : 'unknown'
                           }
                           src={
-                            fileNode.creator.picture
+                            fileNode.creator && fileNode.creator.picture
                               ? fileNode.creator.picture
                               : 'https://www.w3schools.com/css/img_avatar.png'
                           }
                         />
-                        {fileNode.creator.username}
+                        {fileNode.creator && fileNode.creator.username}
                         <Label.Detail>
                           {latestDate ? (
                             <TimeAgo date={latestDate} live={false} />
