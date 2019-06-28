@@ -1,9 +1,15 @@
 import React, {useState, Fragment} from 'react';
 import PropTypes from 'prop-types';
 import FileElement from './FileElement';
-import NotificationBar from '../NotificationBar/NotificationBar';
 import {fileSortedVersions} from '../../common/fileUtils';
-import {Header, Icon, Segment, Pagination, Table} from 'semantic-ui-react';
+import {
+  Header,
+  Icon,
+  Segment,
+  Message,
+  Pagination,
+  Table,
+} from 'semantic-ui-react';
 /**
  * Displays list of study files
  */
@@ -31,12 +37,11 @@ const FileList = ({fileList, studyId}) => {
     }
     if (statusList.includes('CHN')) {
       return (
-        <NotificationBar
-          borderColor="rgba(221,31,42,1)"
-          backgroundColor="rgba(221,31,42,0.1)"
-          icon="error"
-          message="Changes Needed"
-          note="The DRC has requested that you make changes to some of your documents."
+        <Message
+          negative
+          icon="warning circle"
+          header="Changes Needed"
+          content="The DRC has requested that you make changes to some of your documents."
         />
       );
     } else {
