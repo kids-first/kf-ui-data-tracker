@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import {withRouter, Link} from 'react-router-dom';
 import TimeAgo from 'react-timeago';
 import Badge from '../Badge/Badge';
-import {Icon, Label, List, Popup} from 'semantic-ui-react';
+import {Divider, Grid, Icon, Label, List, Popup} from 'semantic-ui-react';
+import CopyButton from '../CopyButton/CopyButton';
 import FileActionsContainer from '../../containers/FileActionsContainer';
 import {
   fileTypeDetail,
@@ -45,13 +46,20 @@ const FileElement = ({fileNode, loading, match, fileListId}) => {
         >
           {fileName}
         </List.Header>
-        {fileDescription ? <small>{fileDescription}</small> : null}
-        <List.Description>
+        <List.Description
+          style={{
+            whiteSpace: 'nowrap',
+            textOverflow: 'ellipsis',
+            overflow: 'hidden',
+          }}
+        >
+          {fileDescription ? <>{fileDescription}</> : null}
           <Label.Group size="tiny">
+            <CopyButton basic size="mini" text={fileKfID} />
             <Label basic image>
               <img
                 src={
-                  fileNode.creator
+                  fileNode.creator && fileNode.creator.picture
                     ? fileNode.creator.picture
                     : 'https://www.w3schools.com/css/img_avatar.png'
                 }
@@ -65,29 +73,6 @@ const FileElement = ({fileNode, loading, match, fileListId}) => {
                 )}
               </Label.Detail>
             </Label>
-            <Popup
-              size="mini"
-              inverted
-              position="top center"
-              content="Download File"
-              trigger={
-                <Label icon>
-                  <Icon name="download" /> {fileSize}
-                </Label>
-              }
-            />
-            <Popup
-              size="mini"
-              inverted
-              position="top center"
-              content="Copy KF ID"
-              trigger={
-                <Label as="button" icon>
-                  <Icon name="copy" />
-                  {fileKfID}
-                </Label>
-              }
-            />
             <Label icon basic>
               <Icon name="hospital" />
               {fileType}
