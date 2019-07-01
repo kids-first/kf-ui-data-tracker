@@ -37,7 +37,10 @@ const UploadContainer = ({handleUpload}) => {
       handleDragOver={handleDragOver}
       onDragEnter={handleDragEnter}
       onDragLeave={handleDragLeave}
-      handleDrop={e => handleUpload(e.target.files[0])}
+      handleDrop={e => {
+        e.preventDefault();
+        handleUpload(e.dataTransfer.files[0]);
+      }}
       handleSelectedFile={e => handleUpload(e.target.files[0])}
       instructions="To upload Study Documents drag and drop a file here"
     />
