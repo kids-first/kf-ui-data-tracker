@@ -42,7 +42,7 @@ const StudyList = ({studyList, loading, activeView = 'grid'}) => {
         computer={5}
         tablet={8}
         stretched
-        verticalAlign="center"
+        verticalAlign="middle"
         textAlign="right"
       >
         <ToggleButtons
@@ -55,13 +55,15 @@ const StudyList = ({studyList, loading, activeView = 'grid'}) => {
           ]}
         />
       </Grid.Column>
-      <main>
-        {view === 'grid' ? (
-          <StudyGrid loading={loading} studyList={studyList} />
-        ) : (
-          <StudyTable loading={loading} studyList={studyList} />
-        )}
-      </main>
+      <Grid.Row>
+        <Grid.Column>
+          {view === 'grid' ? (
+            <StudyGrid loading={loading} studyList={studyList} />
+          ) : (
+            <StudyTable loading={loading} studyList={studyList} />
+          )}
+        </Grid.Column>
+      </Grid.Row>
     </Grid>
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
-import StudyCard from './StudyCard';
 import {Card, Placeholder} from 'semantic-ui-react';
+import StudyCard from './StudyCard';
 
 const GridSkeleton = () => (
   <Card.Group stackable itemsPerRow={4}>
@@ -38,6 +38,7 @@ const StudyGrid = ({studyList, loading}) => {
           title={node.node.kfId}
           body={node.node.name || node.node.shortName}
           lastUpdate={new Date(node.node.modifiedAt)}
+          files={node.node.files.edges}
         />
       ))}
     </Card.Group>
