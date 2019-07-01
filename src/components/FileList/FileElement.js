@@ -80,7 +80,7 @@ const FileElement = ({fileNode, loading, match, fileListId}) => {
       ? fileTypeDetail[fileNode.fileType]
       : {title: 'unknown', icon: 'question'};
   return (
-    <Table.Row>
+    <Table.Row data-testid="file-item">
       <Table.Cell singleLine collapsing textAlign="center">
         <Badge
           state={

@@ -2,254 +2,236 @@
 
 exports[`renders correctly 1`] = `
 <div>
-  <li
-    class="FileList--Element group"
-    tabindex="0"
+  <tr
+    class=""
+    data-testid="file-item"
   >
-    <section
-      class="grid-container mx-auto grid-container--collapsed-rows grid-container--fullWidth ml-0 mr-0 px-16 sm:p-0"
+    <td
+      class="collapsing single line center aligned"
     >
       <div
-        class=" cell-12 row-1 sm:row-1 sm:cell-2  sm:h-full sm:text-center  sm:border-r border-grey-lightest"
+        class="ui orange tiny basic label"
+      >
+        Pending Review
+      </div>
+    </td>
+    <td
+      class=""
+    >
+      <a
+        href="/study/undefined/documents/SF_5ZPEM167"
+        style="display: block; width: 100%;"
+      >
+        <span
+          class="ui medium header"
+        >
+          organization.jpeg
+        </span>
+        <p
+          style="text-overflow: ellipsis; overflow: hidden;"
+        >
+          Month necessary animal end standard case. View system operation message decade. Actually sing becaus...
+        </p>
+      </a>
+      <div
+        class="ui bulleted horizontal list"
+        role="list"
       >
         <div
-          class="ui orange tiny basic label"
+          class="item"
+          role="listitem"
         >
-          Pending Review
+          <button
+            class="ui mini basic icon left labeled button"
+          >
+            <i
+              aria-hidden="true"
+              class="copy icon"
+            />
+            SF_5ZPEM167
+          </button>
+        </div>
+        <div
+          class="item"
+          role="listitem"
+        >
+          <div
+            class="description"
+          >
+            Created 
+            <time
+              datetime="2018-09-27T05:32:26.000Z"
+              title="2018-09-27T05:32:26+00:00"
+            >
+              7 months ago
+            </time>
+          </div>
+        </div>
+        <div
+          class="item"
+          role="listitem"
+        >
+          <div
+            class="description"
+          >
+            5.5 kB
+          </div>
+        </div>
+        <div
+          class="item"
+          role="listitem"
+        >
+          <i
+            aria-hidden="true"
+            class="hospital icon"
+          />
+           Clinical/Phenotype Data
         </div>
       </div>
+    </td>
+    <td
+      class="collapsing right aligned"
+    >
       <div
-        class="row-2 sm:row-1 cell-12 sm:cell-9   h-full"
-      >
-        <a
-          class="w-full no-underline text-black inline-block"
-          data-testid="edit-file"
-          href="/study/undefined/documents/SF_5ZPEM167"
-        >
-          <p
-            class="FileList--Element-name text-sm font-bold mb-0 mt-4 group-hover:text-blue"
-          >
-            organization.jpeg
-          </p>
-          <p
-            class="FileList--Element-desc w-3/4 h-8 m-0 p-0 text-truncate text-black"
-          >
-            <small>
-              Month necessary animal end standard case. View system operation message decade. Actually sing because deal everything woman subject.
-            </small>
-          </p>
-        </a>
-        <span
-          class="FileStatus w-full inline-block sm:inline text-grey"
-          title="Study ID: undefined"
-        >
-          SF_5ZPEM167
-           
-          <span
-            class=""
-          >
-            <button>
-              <svg
-                height="10"
-                id="mock-icon"
-                kind="copy"
-                width="10"
-              >
-                <title>
-                  icon-
-                  copy
-                </title>
-              </svg>
-            </button>
-          </span>
-        </span>
-        <span
-          class="FileStatus w-full inline-block sm:inline text-grey"
-        >
-          Created:
-           
-          <time
-            datetime="2018-09-27T05:32:26.000Z"
-            title="2018-09-27T05:32:26+00:00"
-          >
-            7 months ago
-          </time>
-        </span>
-        <span
-          class="FileStatus w-full inline-block sm:inline text-grey"
-        >
-          Size: 
-          5.5 kB
-        </span>
-        <span
-          class="FileStatus w-full inline-block sm:inline text-grey"
-        >
-          Clinical/Phenotype Data
-        </span>
-      </div>
-      <div
-        class="FileActions opacity-25 hidden sm:block"
+        class="ui buttons"
       >
         <button
-          class="FileActions-Button"
+          class="ui icon button"
         >
-          <svg
-            color="black"
-            height="16"
-            id="mock-icon"
-            kind="download"
-            width="16"
-          >
-            <title>
-              icon-
-              download
-            </title>
-          </svg>
+          <i
+            aria-hidden="true"
+            class="download icon"
+          />
         </button>
         <button
-          class="FileActions-Button"
+          class="ui icon negative button"
+          data-testid="delete-button"
         >
-          <svg
-            height="16"
-            id="mock-icon"
-            kind="delete"
-            width="16"
-          >
-            <title>
-              icon-
-              delete
-            </title>
-          </svg>
+          <i
+            aria-hidden="true"
+            class="trash alternate icon"
+          />
         </button>
       </div>
-    </section>
-  </li>
+    </td>
+  </tr>
 </div>
 `;
 
 exports[`renders loading state 1`] = `
 <div>
-  <li
-    class="FileList--Element cursor-not-allowed group"
-    tabindex="0"
+  <tr
+    class=""
+    data-testid="file-item"
   >
-    <section
-      class="grid-container mx-auto grid-container--collapsed-rows grid-container--fullWidth ml-0 mr-0 px-16 sm:p-0"
+    <td
+      class="collapsing single line center aligned"
     >
       <div
-        class=" cell-12 row-1 sm:row-1 sm:cell-2  sm:h-full sm:text-center  sm:border-r border-grey-lightest"
+        class="ui orange tiny basic label"
+      >
+        Pending Review
+      </div>
+    </td>
+    <td
+      class=""
+    >
+      <a
+        href="/study/undefined/documents/SF_5ZPEM167"
+        style="display: block; width: 100%;"
+      >
+        <span
+          class="ui medium header"
+        >
+          organization.jpeg
+        </span>
+        <p
+          style="text-overflow: ellipsis; overflow: hidden;"
+        >
+          Month necessary animal end standard case. View system operation message decade. Actually sing becaus...
+        </p>
+      </a>
+      <div
+        class="ui bulleted horizontal list"
+        role="list"
       >
         <div
-          class="ui orange tiny basic label"
+          class="item"
+          role="listitem"
         >
-          Pending Review
+          <button
+            class="ui mini basic icon left labeled button"
+          >
+            <i
+              aria-hidden="true"
+              class="copy icon"
+            />
+            SF_5ZPEM167
+          </button>
+        </div>
+        <div
+          class="item"
+          role="listitem"
+        >
+          <div
+            class="description"
+          >
+            Created 
+            <time
+              datetime="2018-09-27T05:32:26.000Z"
+              title="2018-09-27T05:32:26+00:00"
+            >
+              7 months ago
+            </time>
+          </div>
+        </div>
+        <div
+          class="item"
+          role="listitem"
+        >
+          <div
+            class="description"
+          >
+            5.5 kB
+          </div>
+        </div>
+        <div
+          class="item"
+          role="listitem"
+        >
+          <i
+            aria-hidden="true"
+            class="hospital icon"
+          />
+           Clinical/Phenotype Data
         </div>
       </div>
+    </td>
+    <td
+      class="collapsing right aligned"
+    >
       <div
-        class="row-2 sm:row-1 cell-12 sm:cell-9   h-full"
-      >
-        <a
-          class="w-full no-underline text-black inline-block"
-          data-testid="edit-file"
-          href="/study/undefined/documents/SF_5ZPEM167"
-        >
-          <p
-            class="FileStatus--loading font-bold mb-0 mt-4 group-hover:text-blue"
-          >
-            organization.jpeg
-          </p>
-          <p
-            class="FileList--Element-desc w-3/4 h-8 m-0 p-0 text-truncate text-black"
-          >
-            <small>
-              Month necessary animal end standard case. View system operation message decade. Actually sing because deal everything woman subject.
-            </small>
-          </p>
-        </a>
-        <span
-          class="FileStatus--loading w-full inline-block sm:inline text-grey"
-          title="Study ID: undefined"
-        >
-          SF_5ZPEM167
-           
-          <span
-            class="invisible"
-          >
-            <button>
-              <svg
-                height="10"
-                id="mock-icon"
-                kind="copy"
-                width="10"
-              >
-                <title>
-                  icon-
-                  copy
-                </title>
-              </svg>
-            </button>
-          </span>
-        </span>
-        <span
-          class="FileStatus--loading w-full inline-block sm:inline text-grey"
-        >
-          Created:
-           
-          <time
-            datetime="2018-09-27T05:32:26.000Z"
-            title="2018-09-27T05:32:26+00:00"
-          >
-            7 months ago
-          </time>
-        </span>
-        <span
-          class="FileStatus--loading w-full inline-block sm:inline text-grey"
-        >
-          Size: 
-          5.5 kB
-        </span>
-        <span
-          class="FileStatus--loading w-full inline-block sm:inline text-grey"
-        >
-          Clinical/Phenotype Data
-        </span>
-      </div>
-      <div
-        class="FileActions opacity-25 hidden sm:block"
+        class="ui buttons"
       >
         <button
-          class="FileActions-Button"
+          class="ui icon button"
         >
-          <svg
-            color="black"
-            height="16"
-            id="mock-icon"
-            kind="download"
-            width="16"
-          >
-            <title>
-              icon-
-              download
-            </title>
-          </svg>
+          <i
+            aria-hidden="true"
+            class="download icon"
+          />
         </button>
         <button
-          class="FileActions-Button"
+          class="ui icon negative button"
+          data-testid="delete-button"
         >
-          <svg
-            height="16"
-            id="mock-icon"
-            kind="delete"
-            width="16"
-          >
-            <title>
-              icon-
-              delete
-            </title>
-          </svg>
+          <i
+            aria-hidden="true"
+            class="trash alternate icon"
+          />
         </button>
       </div>
-    </section>
-  </li>
+    </td>
+  </tr>
 </div>
 `;

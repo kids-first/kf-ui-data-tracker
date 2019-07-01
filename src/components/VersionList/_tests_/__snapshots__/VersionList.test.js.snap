@@ -56,23 +56,15 @@ exports[`renders with more than one versions 1`] = `
             >
               FV_DMTKEFQW
             </p>
-            <span
-              class="FileVersionElement--button FileVersionList--hidden ml-4"
+            <button
+              class="ui icon left labeled button FileVersionElement--button FileVersionList--hidden ml-4"
             >
-              <button>
-                <svg
-                  height="10"
-                  id="mock-icon"
-                  kind="copy"
-                  width="10"
-                >
-                  <title>
-                    icon-
-                    copy
-                  </title>
-                </svg>
-              </button>
-            </span>
+              <i
+                aria-hidden="true"
+                class="copy icon"
+              />
+              FV_DMTKEFQW
+            </button>
           </div>
           <div
             class="flex row-3 cell-9 lg:row-1 lg:cell-4 lg:justify-end"
@@ -144,23 +136,15 @@ exports[`renders with more than one versions 1`] = `
             >
               FV_TT8NF09R
             </p>
-            <span
-              class="FileVersionElement--button FileVersionList--hidden ml-4"
+            <button
+              class="ui icon left labeled button FileVersionElement--button FileVersionList--hidden ml-4"
             >
-              <button>
-                <svg
-                  height="10"
-                  id="mock-icon"
-                  kind="copy"
-                  width="10"
-                >
-                  <title>
-                    icon-
-                    copy
-                  </title>
-                </svg>
-              </button>
-            </span>
+              <i
+                aria-hidden="true"
+                class="copy icon"
+              />
+              FV_TT8NF09R
+            </button>
           </div>
           <div
             class="flex row-3 cell-9 lg:row-1 lg:cell-4 lg:justify-end"
@@ -232,23 +216,15 @@ exports[`renders with more than one versions 1`] = `
             >
               FV_2WV3VNJN
             </p>
-            <span
-              class="FileVersionElement--button FileVersionList--hidden ml-4"
+            <button
+              class="ui icon left labeled button FileVersionElement--button FileVersionList--hidden ml-4"
             >
-              <button>
-                <svg
-                  height="10"
-                  id="mock-icon"
-                  kind="copy"
-                  width="10"
-                >
-                  <title>
-                    icon-
-                    copy
-                  </title>
-                </svg>
-              </button>
-            </span>
+              <i
+                aria-hidden="true"
+                class="copy icon"
+              />
+              FV_2WV3VNJN
+            </button>
           </div>
           <div
             class="flex row-3 cell-9 lg:row-1 lg:cell-4 lg:justify-end"
