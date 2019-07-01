@@ -42,8 +42,8 @@ const FileAttributes = ({
       <List.Description>{fileSize}</List.Description>
     </List.Item>
     <List.Item>
-      <Icon name="hospital" />
-      {fileType}
+      <Icon name={`${fileType.icon || 'question'}`} />
+      {' ' + fileType.title}
     </List.Item>
   </List>
 );
@@ -56,7 +56,7 @@ FileAttributes.propTypes = {
   /** The size of the file */
   fileSize: PropTypes.string.isRequired,
   /** The type of file */
-  fileType: PropTypes.string.isRequired,
+  fileType: PropTypes.object.isRequired,
   /** Whether the list should be displayed horizontally */
   horizontal: PropTypes.bool,
 };
@@ -77,8 +77,8 @@ const FileElement = ({fileNode, loading, match, fileListId}) => {
   const fileSize = fileLatestSize(sortedVersions);
   const fileType =
     fileNode && fileTypeDetail[fileNode.fileType]
-      ? fileTypeDetail[fileNode.fileType].title
-      : 'unknown';
+      ? fileTypeDetail[fileNode.fileType]
+      : {title: 'unknown', icon: 'question'};
   return (
     <Table.Row>
       <Table.Cell singleLine collapsing textAlign="center">
