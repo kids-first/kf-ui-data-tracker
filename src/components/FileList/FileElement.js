@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {withRouter, Link} from 'react-router-dom';
 import TimeAgo from 'react-timeago';
 import Badge from '../Badge/Badge';
-import {Header, Table, Icon, List} from 'semantic-ui-react';
+import {Header, Table, Icon, List, Responsive} from 'semantic-ui-react';
 import CopyButton from '../CopyButton/CopyButton';
 import FileActionsContainer from '../../containers/FileActionsContainer';
 import {
@@ -12,6 +12,59 @@ import {
   fileLatestDate,
   fileLatestSize,
 } from '../../common/fileUtils';
+
+/**
+ * Displays a list of file attributes
+ */
+const FileAttributes = ({
+  fileKfID,
+  latestDate,
+  fileSize,
+  fileType,
+  horizontal,
+}) => (
+  <List bulleted={horizontal} horizontal={horizontal}>
+    <List.Item>
+      <CopyButton basic size="mini" text={fileKfID} />
+    </List.Item>
+    <List.Item>
+      <List.Description>
+        {latestDate ? (
+          <>
+            Created <TimeAgo date={latestDate} live={false} />
+          </>
+        ) : (
+          'Unknown time'
+        )}
+      </List.Description>
+    </List.Item>
+    <List.Item>
+      <List.Description>{fileSize}</List.Description>
+    </List.Item>
+    <List.Item>
+      <Icon name="hospital" />
+      {fileType}
+    </List.Item>
+  </List>
+);
+
+FileAttributes.propTypes = {
+  /** The kf id of the file */
+  fileKfID: PropTypes.string.isRequired,
+  /** The date of last modification */
+  latestDate: PropTypes.string.isRequired,
+  /** The size of the file */
+  fileSize: PropTypes.string.isRequired,
+  /** The type of file */
+  fileType: PropTypes.string.isRequired,
+  /** Whether the list should be displayed horizontally */
+  horizontal: PropTypes.bool,
+};
+
+FileAttributes.defaultProps = {
+  horizontal: false,
+};
+
 /**
  * Displays unordered study files in list view
  */
@@ -46,7 +99,6 @@ const FileElement = ({fileNode, loading, match, fileListId}) => {
           </Header>
           <p
             style={{
-              whiteSpace: 'nowrap',
               textOverflow: 'ellipsis',
               overflow: 'hidden',
             }}
@@ -60,29 +112,24 @@ const FileElement = ({fileNode, loading, match, fileListId}) => {
             ) : null}
           </p>
         </Link>
-        <List bulleted horizontal>
-          <List.Item>
-            <CopyButton basic size="mini" text={fileKfID} />
-          </List.Item>
-          <List.Item>
-            <List.Description>
-              {latestDate ? (
-                <>
-                  Created <TimeAgo date={latestDate} live={false} />
-                </>
-              ) : (
-                'Unknown time'
-              )}
-            </List.Description>
-          </List.Item>
-          <List.Item>
-            <List.Description>{fileSize}</List.Description>
-          </List.Item>
-          <List.Item>
-            <Icon name="hospital" />
-            {fileType}
-          </List.Item>
-        </List>
+        <Responsive
+          as={FileAttributes}
+          minWidth={Responsive.onlyTablet.maxWidth}
+          fileKfID={fileKfID}
+          latestDate={latestDate}
+          fileSize={fileSize}
+          fileType={fileType}
+          horizontal={true}
+        />
+        <Responsive
+          as={FileAttributes}
+          maxWidth={Responsive.onlyTablet.maxWidth}
+          fileKfID={fileKfID}
+          latestDate={latestDate}
+          fileSize={fileSize}
+          fileType={fileType}
+          horizontal={false}
+        />
       </Table.Cell>
       <Table.Cell collapsing textAlign="right">
         <FileActionsContainer node={fileNode} studyId={fileListId} />

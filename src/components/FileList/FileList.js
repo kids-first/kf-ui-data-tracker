@@ -53,7 +53,7 @@ const FileList = ({fileList, studyId}) => {
     <Fragment>
       {showNotification()}
       {fileList.length ? (
-        <Table unstackable compact="very" basic="very">
+        <Table stackable compact="very" basic="very">
           <Table.Body>
             {pageItems.map(({node}) => (
               <FileElement
