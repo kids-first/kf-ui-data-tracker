@@ -2,477 +2,506 @@
 
 exports[`deletes a file correctly 1`] = `
 <div>
-  <section
-    class="grid-container mx-auto grid-container--collapsed-cells my-20 px-12"
+  <div
+    class="ui container one column grid"
+    style="padding-top: 40px;"
   >
-    <h3
-      class="text-blue font-normal m-0 cell-12 row-1"
+    <div
+      class="sixteen wide column"
     >
-      Upload Study Documents for DRC Approval
-    </h3>
-    <section
-      class="study-file-list cell-12 row-2"
-    >
-      <ul
-        class="FileList"
+      <h3
+        class="ui header"
       >
-        <li
-          class="FileList--Element group"
-          tabindex="0"
+        Upload Study Documents for DRC Approval
+      </h3>
+      <table
+        class="ui stackable very basic very compact table"
+      >
+        <tbody
+          class=""
         >
-          <section
-            class="grid-container mx-auto grid-container--collapsed-rows grid-container--fullWidth ml-0 mr-0 px-16 sm:p-0"
+          <tr
+            class=""
+            data-testid="file-item"
           >
-            <div
-              class=" cell-12 row-1 sm:row-1 sm:cell-2  sm:h-full sm:text-center  sm:border-r border-grey-lightest"
+            <td
+              class="collapsing single line center aligned"
             >
               <div
                 class="ui orange tiny basic label"
               >
                 Pending Review
               </div>
-            </div>
-            <div
-              class="row-2 sm:row-1 cell-12 sm:cell-9   h-full"
+            </td>
+            <td
+              class=""
             >
               <a
-                class="w-full no-underline text-black inline-block"
-                data-testid="edit-file"
                 href="/study/undefined/documents/SF_5ZPEM167"
+                style="display: block; width: 100%;"
               >
-                <p
-                  class="FileList--Element-name text-sm font-bold mb-0 mt-4 group-hover:text-blue"
+                <span
+                  class="ui medium header"
                 >
                   organization.jpeg
-                </p>
+                </span>
                 <p
-                  class="FileList--Element-desc w-3/4 h-8 m-0 p-0 text-truncate text-black"
+                  style="text-overflow: ellipsis; overflow: hidden;"
                 >
-                  <small>
-                    Month necessary animal end standard case. View system operation message decade. Actually sing because deal everything woman subject.
-                  </small>
+                  Month necessary animal end standard case. View system operation message decade. Actually sing becaus...
                 </p>
               </a>
-              <span
-                class="FileStatus w-full inline-block sm:inline text-grey"
-                title="Study ID: undefined"
+              <div
+                class="ui bulleted horizontal list"
+                role="list"
               >
-                SF_5ZPEM167
-                 
-                <span
-                  class=""
+                <div
+                  class="item"
+                  role="listitem"
                 >
-                  <button>
-                    <svg
-                      height="10"
-                      id="mock-icon"
-                      kind="copy"
-                      width="10"
-                    >
-                      <title>
-                        icon-
-                        copy
-                      </title>
-                    </svg>
+                  <button
+                    class="ui mini basic icon left labeled button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="copy icon"
+                    />
+                    SF_5ZPEM167
                   </button>
-                </span>
-              </span>
-              <span
-                class="FileStatus w-full inline-block sm:inline text-grey"
-              >
-                Created:
-                 
-                <time
-                  datetime="2018-09-27T05:32:26.000Z"
-                  title="2018-09-27T05:32:26+00:00"
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
                 >
-                  7 months ago
-                </time>
-              </span>
-              <span
-                class="FileStatus w-full inline-block sm:inline text-grey"
-              >
-                Size: 
-                5.5 kB
-              </span>
-              <span
-                class="FileStatus w-full inline-block sm:inline text-grey"
-              >
-                Clinical/Phenotype Data
-              </span>
-            </div>
-            <div
-              class="FileActions opacity-25 hidden sm:block"
+                  <div
+                    class="description"
+                  >
+                    Created 
+                    <time
+                      datetime="2018-09-27T05:32:26.000Z"
+                      title="2018-09-27T05:32:26+00:00"
+                    >
+                      7 months ago
+                    </time>
+                  </div>
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  <div
+                    class="description"
+                  >
+                    5.5 kB
+                  </div>
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="hospital icon"
+                  />
+                   Clinical/Phenotype Data
+                </div>
+              </div>
+            </td>
+            <td
+              class="collapsing right aligned"
             >
-              <button
-                class="FileActions-Button"
+              <div
+                class="ui buttons"
               >
-                <svg
-                  color="black"
-                  height="16"
-                  id="mock-icon"
-                  kind="download"
-                  width="16"
+                <button
+                  class="ui icon button"
                 >
-                  <title>
-                    icon-
-                    download
-                  </title>
-                </svg>
-              </button>
-              <button
-                class="FileActions-Button"
-              >
-                <svg
-                  height="16"
-                  id="mock-icon"
-                  kind="delete"
-                  width="16"
+                  <i
+                    aria-hidden="true"
+                    class="download icon"
+                  />
+                </button>
+                <button
+                  class="ui icon negative button"
+                  data-testid="delete-button"
                 >
-                  <title>
-                    icon-
-                    delete
-                  </title>
-                </svg>
-              </button>
-            </div>
-          </section>
-        </li>
-      </ul>
-    </section>
-    <div
-      class="row-3 cell-3-8"
-    >
-      <form
-        class="upload-target"
+                  <i
+                    aria-hidden="true"
+                    class="trash alternate icon"
+                  />
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div
+        class="ui divider"
+      />
+      <div
+        class="row"
       >
-        <p
-          class="max-w-full pt-0 pb-4 mt-0"
-        >
-          To upload Study Documents drag and drop a file here
-          <br />
-          <small
-            class="m-0 p-0"
+        <form>
+          <div
+            class="ui placeholder piled segment"
           >
-            <i>
-              or
-            </i>
-          </small>
-        </p>
-        <input
-          class="Button Button--default max-w-full"
-          type="file"
-        />
-      </form>
+            <div
+              class="ui icon header"
+            >
+              <i
+                aria-hidden="true"
+                class="file outline icon"
+              />
+              To upload Study Documents drag and drop a file here
+              <br />
+              <small>
+                or
+              </small>
+            </div>
+            <br />
+            <label
+              class="ui icon primary left labeled button"
+              for="file"
+              role="button"
+            >
+              <i
+                aria-hidden="true"
+                class="file outline icon"
+              />
+              Choose a file
+            </label>
+            <input
+              hidden=""
+              id="file"
+              multiple=""
+              type="file"
+            />
+          </div>
+        </form>
+      </div>
     </div>
-  </section>
+  </div>
 </div>
 `;
 
 exports[`renders correctly 1`] = `
 <div>
-  <section
-    class="grid-container mx-auto grid-container--collapsed-cells my-20 px-12"
+  <div
+    class="ui container one column grid"
+    style="padding-top: 40px;"
   >
-    <h3
-      class="text-blue font-normal m-0 cell-12 row-1"
+    <div
+      class="sixteen wide column"
     >
-      Upload Study Documents for DRC Approval
-    </h3>
-    <section
-      class="study-file-list cell-12 row-2"
-    >
-      <ul
-        class="FileList"
+      <h3
+        class="ui header"
       >
-        <li
-          class="FileList--Element group"
-          tabindex="0"
+        Upload Study Documents for DRC Approval
+      </h3>
+      <table
+        class="ui stackable very basic very compact table"
+      >
+        <tbody
+          class=""
         >
-          <section
-            class="grid-container mx-auto grid-container--collapsed-rows grid-container--fullWidth ml-0 mr-0 px-16 sm:p-0"
+          <tr
+            class=""
+            data-testid="file-item"
           >
-            <div
-              class=" cell-12 row-1 sm:row-1 sm:cell-2  sm:h-full sm:text-center  sm:border-r border-grey-lightest"
+            <td
+              class="collapsing single line center aligned"
             >
               <div
                 class="ui orange tiny basic label"
               >
                 Pending Review
               </div>
-            </div>
-            <div
-              class="row-2 sm:row-1 cell-12 sm:cell-9   h-full"
+            </td>
+            <td
+              class=""
             >
               <a
-                class="w-full no-underline text-black inline-block"
-                data-testid="edit-file"
                 href="/study/undefined/documents/SF_5ZPEM167"
+                style="display: block; width: 100%;"
               >
-                <p
-                  class="FileList--Element-name text-sm font-bold mb-0 mt-4 group-hover:text-blue"
+                <span
+                  class="ui medium header"
                 >
                   organization.jpeg
-                </p>
+                </span>
                 <p
-                  class="FileList--Element-desc w-3/4 h-8 m-0 p-0 text-truncate text-black"
+                  style="text-overflow: ellipsis; overflow: hidden;"
                 >
-                  <small>
-                    Month necessary animal end standard case. View system operation message decade. Actually sing because deal everything woman subject.
-                  </small>
+                  Month necessary animal end standard case. View system operation message decade. Actually sing becaus...
                 </p>
               </a>
-              <span
-                class="FileStatus w-full inline-block sm:inline text-grey"
-                title="Study ID: undefined"
+              <div
+                class="ui bulleted horizontal list"
+                role="list"
               >
-                SF_5ZPEM167
-                 
-                <span
-                  class=""
+                <div
+                  class="item"
+                  role="listitem"
                 >
-                  <button>
-                    <svg
-                      height="10"
-                      id="mock-icon"
-                      kind="copy"
-                      width="10"
-                    >
-                      <title>
-                        icon-
-                        copy
-                      </title>
-                    </svg>
+                  <button
+                    class="ui mini basic icon left labeled button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="copy icon"
+                    />
+                    SF_5ZPEM167
                   </button>
-                </span>
-              </span>
-              <span
-                class="FileStatus w-full inline-block sm:inline text-grey"
-              >
-                Created:
-                 
-                <time
-                  datetime="2018-09-27T05:32:26.000Z"
-                  title="2018-09-27T05:32:26+00:00"
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
                 >
-                  7 months ago
-                </time>
-              </span>
-              <span
-                class="FileStatus w-full inline-block sm:inline text-grey"
-              >
-                Size: 
-                5.5 kB
-              </span>
-              <span
-                class="FileStatus w-full inline-block sm:inline text-grey"
-              >
-                Clinical/Phenotype Data
-              </span>
-            </div>
-            <div
-              class="FileActions opacity-25 hidden sm:block"
+                  <div
+                    class="description"
+                  >
+                    Created 
+                    <time
+                      datetime="2018-09-27T05:32:26.000Z"
+                      title="2018-09-27T05:32:26+00:00"
+                    >
+                      7 months ago
+                    </time>
+                  </div>
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  <div
+                    class="description"
+                  >
+                    5.5 kB
+                  </div>
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="hospital icon"
+                  />
+                   Clinical/Phenotype Data
+                </div>
+              </div>
+            </td>
+            <td
+              class="collapsing right aligned"
             >
-              <button
-                class="FileActions-Button"
+              <div
+                class="ui buttons"
               >
-                <svg
-                  color="black"
-                  height="16"
-                  id="mock-icon"
-                  kind="download"
-                  width="16"
+                <button
+                  class="ui icon button"
                 >
-                  <title>
-                    icon-
-                    download
-                  </title>
-                </svg>
-              </button>
-              <button
-                class="FileActions-Button"
-              >
-                <svg
-                  height="16"
-                  id="mock-icon"
-                  kind="delete"
-                  width="16"
+                  <i
+                    aria-hidden="true"
+                    class="download icon"
+                  />
+                </button>
+                <button
+                  class="ui icon negative button"
+                  data-testid="delete-button"
                 >
-                  <title>
-                    icon-
-                    delete
-                  </title>
-                </svg>
-              </button>
-            </div>
-          </section>
-        </li>
-        <li
-          class="FileList--Element group"
-          tabindex="0"
-        >
-          <section
-            class="grid-container mx-auto grid-container--collapsed-rows grid-container--fullWidth ml-0 mr-0 px-16 sm:p-0"
+                  <i
+                    aria-hidden="true"
+                    class="trash alternate icon"
+                  />
+                </button>
+              </div>
+            </td>
+          </tr>
+          <tr
+            class=""
+            data-testid="file-item"
           >
-            <div
-              class=" cell-12 row-1 sm:row-1 sm:cell-2  sm:h-full sm:text-center  sm:border-r border-grey-lightest"
+            <td
+              class="collapsing single line center aligned"
             >
               <div
                 class="ui orange tiny basic label"
               >
                 Pending Review
               </div>
-            </div>
-            <div
-              class="row-2 sm:row-1 cell-12 sm:cell-9   h-full"
+            </td>
+            <td
+              class=""
             >
               <a
-                class="w-full no-underline text-black inline-block"
-                data-testid="edit-file"
                 href="/study/undefined/documents/SF_Y07IN1HO"
+                style="display: block; width: 100%;"
               >
-                <p
-                  class="FileList--Element-name text-sm font-bold mb-0 mt-4 group-hover:text-blue"
+                <span
+                  class="ui medium header"
                 >
                   its.mp3
-                </p>
+                </span>
                 <p
-                  class="FileList--Element-desc w-3/4 h-8 m-0 p-0 text-truncate text-black"
+                  style="text-overflow: ellipsis; overflow: hidden;"
                 >
-                  <small>
-                    Question meeting move recognize.
-                  </small>
+                  Question meeting move recognize.
                 </p>
               </a>
-              <span
-                class="FileStatus w-full inline-block sm:inline text-grey"
-                title="Study ID: undefined"
+              <div
+                class="ui bulleted horizontal list"
+                role="list"
               >
-                SF_Y07IN1HO
-                 
-                <span
-                  class=""
+                <div
+                  class="item"
+                  role="listitem"
                 >
-                  <button>
-                    <svg
-                      height="10"
-                      id="mock-icon"
-                      kind="copy"
-                      width="10"
-                    >
-                      <title>
-                        icon-
-                        copy
-                      </title>
-                    </svg>
+                  <button
+                    class="ui mini basic icon left labeled button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="copy icon"
+                    />
+                    SF_Y07IN1HO
                   </button>
-                </span>
-              </span>
-              <span
-                class="FileStatus w-full inline-block sm:inline text-grey"
-              >
-                Created:
-                 
-                <time
-                  datetime="2019-04-06T07:51:17.000Z"
-                  title="2019-04-06T07:51:17+00:00"
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
                 >
-                  2 weeks ago
-                </time>
-              </span>
-              <span
-                class="FileStatus w-full inline-block sm:inline text-grey"
-              >
-                Size: 
-                6.8 kB
-              </span>
-              <span
-                class="FileStatus w-full inline-block sm:inline text-grey"
-              >
-                Shipping Manifest
-              </span>
-            </div>
-            <div
-              class="FileActions opacity-25 hidden sm:block"
+                  <div
+                    class="description"
+                  >
+                    Created 
+                    <time
+                      datetime="2019-04-06T07:51:17.000Z"
+                      title="2019-04-06T07:51:17+00:00"
+                    >
+                      2 weeks ago
+                    </time>
+                  </div>
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  <div
+                    class="description"
+                  >
+                    6.8 kB
+                  </div>
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="shipping icon"
+                  />
+                   Shipping Manifest
+                </div>
+              </div>
+            </td>
+            <td
+              class="collapsing right aligned"
             >
-              <button
-                class="FileActions-Button"
+              <div
+                class="ui buttons"
               >
-                <svg
-                  color="black"
-                  height="16"
-                  id="mock-icon"
-                  kind="download"
-                  width="16"
+                <button
+                  class="ui icon button"
                 >
-                  <title>
-                    icon-
-                    download
-                  </title>
-                </svg>
-              </button>
-              <button
-                class="FileActions-Button"
-              >
-                <svg
-                  height="16"
-                  id="mock-icon"
-                  kind="delete"
-                  width="16"
+                  <i
+                    aria-hidden="true"
+                    class="download icon"
+                  />
+                </button>
+                <button
+                  class="ui icon negative button"
+                  data-testid="delete-button"
                 >
-                  <title>
-                    icon-
-                    delete
-                  </title>
-                </svg>
-              </button>
-            </div>
-          </section>
-        </li>
-      </ul>
-    </section>
-    <div
-      class="row-3 cell-3-8"
-    >
-      <form
-        class="upload-target"
+                  <i
+                    aria-hidden="true"
+                    class="trash alternate icon"
+                  />
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div
+        class="ui divider"
+      />
+      <div
+        class="row"
       >
-        <p
-          class="max-w-full pt-0 pb-4 mt-0"
-        >
-          To upload Study Documents drag and drop a file here
-          <br />
-          <small
-            class="m-0 p-0"
+        <form>
+          <div
+            class="ui placeholder piled segment"
           >
-            <i>
-              or
-            </i>
-          </small>
-        </p>
-        <input
-          class="Button Button--default max-w-full"
-          type="file"
-        />
-      </form>
+            <div
+              class="ui icon header"
+            >
+              <i
+                aria-hidden="true"
+                class="file outline icon"
+              />
+              To upload Study Documents drag and drop a file here
+              <br />
+              <small>
+                or
+              </small>
+            </div>
+            <br />
+            <label
+              class="ui icon primary left labeled button"
+              for="file"
+              role="button"
+            >
+              <i
+                aria-hidden="true"
+                class="file outline icon"
+              />
+              Choose a file
+            </label>
+            <input
+              hidden=""
+              id="file"
+              multiple=""
+              type="file"
+            />
+          </div>
+        </form>
+      </div>
     </div>
-  </section>
+  </div>
 </div>
 `;
 
 exports[`shows an error 1`] = `
 <div>
-  <div>
-    <h3
-      class="text-red text-center"
+  <div
+    class="ui icon negative message"
+  >
+    <i
+      aria-hidden="true"
+      class="warning circle icon"
+    />
+    <div
+      class="content"
     >
-      Error! 
-    </h3>
-    <p
-      class="text-center"
-    >
-      Network error: something went wrong
-    </p>
+      <div
+        class="header"
+      >
+        Error
+      </div>
+      <p>
+        Network error: something went wrong
+      </p>
+    </div>
   </div>
 </div>
 `;

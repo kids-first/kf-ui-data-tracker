@@ -1,6 +1,5 @@
 import React from 'react';
-import {act} from 'react-dom/test-utils';
-import {render, fireEvent} from 'react-testing-library';
+import {render} from 'react-testing-library';
 import CopyButton from './CopyButton';
 
 /* Sets up some browser functions that are needed for react-copy-to-clipboard
