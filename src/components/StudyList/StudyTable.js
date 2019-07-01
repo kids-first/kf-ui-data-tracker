@@ -1,24 +1,69 @@
 import React from 'react';
-import classes from 'classnames';
 import TimeAgo from 'react-timeago';
 import {withRouter} from 'react-router-dom';
+import {Table, Popup, Icon, Label, List} from 'semantic-ui-react';
+import {versionState} from '../../common/fileUtils';
+
+const PopupBadge = ({state, count}) => (
+  <Popup
+    inverted
+    position="top center"
+    size="small"
+    content={versionState[state].title}
+    trigger={
+      <List.Item>
+        <Label
+          circular
+          empty
+          size="mini"
+          color={versionState[state].labelColor}
+        />{' '}
+        {count}
+      </List.Item>
+    }
+  />
+);
+
+/**
+ * Renders a summary of files in a study
+ */
+const StudyFileBadges = ({files}) => (
+  <List horizontal>
+    <List.Item>
+      <Icon name="file" />
+      {Object.values(files).reduce((x, y) => x + y, 0)} files
+    </List.Item>
+    {['PEN', 'CHN', 'APP', 'PRC'].map(
+      state =>
+        state in files && (
+          <PopupBadge state={state} count={files[state]} key={state} />
+        ),
+    )}
+  </List>
+);
+
+/**
+ * Renders a single row in the table
+ */
+const TableValue = ({row, col}) => {
+  switch (col) {
+    case 'files':
+      return <StudyFileBadges files={row[col]} />;
+    case 'createdAt':
+    case 'modifiedAt':
+      return <TimeAgo date={new Date(row[col])} />;
+    default:
+      return row[col];
+  }
+};
 
 const StudyTable = ({
   studyList,
   loading,
-  columns,
   exclude = [],
   clickable = true,
   history,
-  className,
 }) => {
-  const StudyTableClass = classes(
-    'StudyTable',
-    'grid-container',
-    'grid-container--collapsed-rows',
-    'px-0',
-    className,
-  );
   if (loading) {
     return <h2>loading studies</h2>;
   }
@@ -27,71 +72,55 @@ const StudyTable = ({
     v => hidden.indexOf(v) < 0,
   );
 
+  /**
+   * Returns the count of each file state within the study
+   */
+  const stateCounts = files => {
+    // Flattens to an array of states
+    const states = files.edges.map(
+      ({node: {versions}}) => versions.edges[0].node.state,
+    );
+    return states.reduce((count, state) => {
+      count[state] = (count[state] || 0) + 1;
+      return count;
+    }, {});
+  };
+
+  // Formats the study objects and computes file state counts
+  const studies = studyList.map(({node}) =>
+    cols.reduce((row, col) => {
+      row[col] = col !== 'files' ? node[col] : stateCounts(node[col]);
+      return row;
+    }, {}),
+  );
+
   return (
-    <table className={StudyTableClass}>
-      <thead className="hidden sm:block cell-12 ">
-        <tr className="grid-container grid-container--fullWidth grid-container--collapsed ">
+    <Table striped selectable columns={Object.keys(studies[0]).length}>
+      <Table.Header>
+        <Table.Row>
           {cols.map(v => (
-            <th className="row-1 cell-2" key={v}>
-              {v}
-            </th>
+            <Table.HeaderCell key={v}>{v}</Table.HeaderCell>
           ))}
-        </tr>
-      </thead>
-      <tbody className="cell-1-12">
-        {studyList.map((node, idx) => (
-          <tr
+        </Table.Row>
+      </Table.Header>
+      <Table.Body>
+        {studies.map((row, idx) => (
+          <Table.Row
             tabIndex="0"
-            className="grid-container grid-container--collapsed grid-container--fullWidth"
-            key={node.node.kfId}
+            key={idx}
             onClick={() => {
-              if (clickable) history.push(`/study/${node.node.kfId}/documents`);
+              if (clickable) history.push(`/study/${row.kfId}/documents`);
             }}
           >
-            {cols.map((col, idx) => {
-              // TODO: abstract this datum specific styling out of the component
-              const datumClass = classes(
-                col,
-                'px-20',
-                'py-0',
-                {
-                  hidden: col === 'name',
-                  'sm:block': col === 'name',
-                  'row-1 cell-12 pt-20': col === 'shortName',
-                  'font-title font-black sm:font-medium': col === 'shortName',
-                  'text-xl text-blue': col === 'shortName',
-                  'row-2 pt-0 pb-12': col === 'kfId',
-                  'row-3 cell-2 pb-20 text-grey sm:text-black': [
-                    'modifiedAt',
-                    'createdAt',
-                  ].includes(col),
-                },
-
-                'sm:p-20',
-                'sm:font-body sm:text-sm',
-                'sm:row-1',
-                'sm:cell-2',
-              );
-              return (
-                <td className={datumClass} key={col}>
-                  {Date.parse(node.node[col]) ? (
-                    <span>
-                      <small className="sm:hidden text-grey lowercase">
-                        {col.split('A')[0]}
-                      </small>
-                      <br />
-                      <TimeAgo date={new Date(node.node[col])} />
-                    </span>
-                  ) : (
-                    node.node[col]
-                  )}
-                </td>
-              );
-            })}
-          </tr>
+            {cols.map((col, idx) => (
+              <Table.Cell key={idx}>
+                <TableValue row={row} col={col} />
+              </Table.Cell>
+            ))}
+          </Table.Row>
         ))}
-      </tbody>
-    </table>
+      </Table.Body>
+    </Table>
   );
 };
 
