@@ -1,6 +1,5 @@
 import React from 'react';
 import TimeAgo from 'react-timeago';
-import SvgIcon from '../components/Icon/Icon';
 import Badge from '../components/Badge/Badge';
 import {
   Button,
@@ -41,35 +40,38 @@ const VersionInfoModal = ({
             </Grid.Column>
           </Grid.Row>
           <Grid.Row stretched>
-            <Grid.Column mobile={8} tablet={3} computer={4}>
+            <Grid.Column mobile={8} tablet={8} computer={4}>
               <Statistic size="mini">
-                <Statistic.Label>Status</Statistic.Label>
-                <Statistic.Value>
+                <Statistic.Label style={{textAlign: 'left'}}>
+                  Status
+                </Statistic.Label>
+                <Statistic.Value style={{textAlign: 'left'}}>
                   <Badge state={openedVersion.version.state} />
                 </Statistic.Value>
               </Statistic>
             </Grid.Column>
-            <Grid.Column mobile={8} tablet={5} computer={5}>
+            <Grid.Column mobile={8} tablet={8} computer={4}>
               <Statistic size="mini">
-                <Statistic.Label>Document Type</Statistic.Label>
-                <Statistic.Value>
+                <Statistic.Label style={{textAlign: 'left'}}>
+                  Document Type
+                </Statistic.Label>
+                <Statistic.Value style={{textAlign: 'left'}}>
                   <Label icon basic size="tiny">
-                    <SvgIcon
-                      kind={fileTypeDetail[fileNode.fileType].icon}
-                      width="12"
-                      height="12"
+                    <Icon
+                      name={`${fileTypeDetail[fileNode.fileType].icon ||
+                        'question'}`}
                     />
-                    <Label.Detail>
-                      {fileTypeDetail[fileNode.fileType].title}
-                    </Label.Detail>
+                    {' ' + fileTypeDetail[fileNode.fileType].title}
                   </Label>
                 </Statistic.Value>
               </Statistic>
             </Grid.Column>
-            <Grid.Column mobile={8} tablet={4} computer={4}>
+            <Grid.Column mobile={8} tablet={8} computer={5}>
               <Statistic size="mini">
-                <Statistic.Label>Last Updated</Statistic.Label>
-                <Statistic.Value>
+                <Statistic.Label style={{textAlign: 'left'}}>
+                  Last Updated
+                </Statistic.Label>
+                <Statistic.Value style={{textAlign: 'left'}}>
                   <Label image size="tiny">
                     <img
                       alt={
@@ -98,10 +100,12 @@ const VersionInfoModal = ({
                 </Statistic.Value>
               </Statistic>
             </Grid.Column>
-            <Grid.Column mobile={8} tablet={3} computer={3}>
+            <Grid.Column mobile={8} tablet={8} computer={3}>
               <Statistic size="mini">
-                <Statistic.Label>Size</Statistic.Label>
-                <Statistic.Value>
+                <Statistic.Label style={{textAlign: 'left'}}>
+                  Size
+                </Statistic.Label>
+                <Statistic.Value style={{textAlign: 'left'}}>
                   <Label basic size="tiny">
                     {formatFileSize(openedVersion.version.size)}
                   </Label>
