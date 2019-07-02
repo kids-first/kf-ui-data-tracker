@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import {graphql} from 'react-apollo';
 import {NavLink} from 'react-router-dom';
-import {MY_PROFILE} from '../state/queries';
+import {MY_PROFILE} from '../../state/queries';
 import {Container, Dropdown, Icon, Image, Menu} from 'semantic-ui-react';
 
-import logo from '../assets/logo.svg';
+import logo from '../../assets/logo.svg';
 
 const Nav = props => <NavLink exact {...props} activeClassName="active" />;
 

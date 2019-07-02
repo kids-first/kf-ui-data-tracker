@@ -2,7 +2,7 @@ import React, {Fragment} from 'react';
 import {Route, Switch} from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
 import AdminRoute from './AdminRoute';
-import Header from '../components/Header';
+import {Header} from '../components/Header';
 import {
   NewDocumentView,
   LoginView,
