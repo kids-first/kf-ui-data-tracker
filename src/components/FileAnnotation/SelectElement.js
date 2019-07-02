@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classes from 'classnames';
 import {fileTypeDetail} from '../../common/fileUtils';
-import SvgIcon from '../Icon/Icon';
+import {Icon} from 'semantic-ui-react';
 /**
  * A radio button that displays information about a file type with a title,
  * description, and icon.
@@ -28,7 +28,11 @@ const SelectElement = ({className, value, select, selected}) => {
         onChange={e => select(e)}
       />
       <div className={selectIconClass}>
-        <SvgIcon kind={fileTypeDetail[value].icon} width="30" height="30" />
+        <Icon
+          name={`${fileTypeDetail[value].icon || 'question'}`}
+          size="large"
+          style={{marignRight: 0}}
+        />
       </div>
       <div>
         <p className="m-0 font-bold font-sm">{fileTypeDetail[value].title}</p>
