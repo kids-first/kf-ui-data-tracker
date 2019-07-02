@@ -46,7 +46,12 @@ Object {
               />
               <div
                 class="SelectElement--Icon"
-              />
+              >
+                <i
+                  aria-hidden="true"
+                  class="shipping large icon"
+                />
+              </div>
               <div>
                 <p
                   class="m-0 font-bold font-sm"
@@ -71,7 +76,12 @@ Object {
               />
               <div
                 class="SelectElement--Icon"
-              />
+              >
+                <i
+                  aria-hidden="true"
+                  class="hospital large icon"
+                />
+              </div>
               <div>
                 <p
                   class="m-0 font-bold font-sm"
@@ -96,7 +106,12 @@ Object {
               />
               <div
                 class="SelectElement--Icon"
-              />
+              >
+                <i
+                  aria-hidden="true"
+                  class="dna large icon"
+                />
+              </div>
               <div>
                 <p
                   class="m-0 font-bold font-sm"
@@ -121,7 +136,12 @@ Object {
               />
               <div
                 class="SelectElement--Icon"
-              />
+              >
+                <i
+                  aria-hidden="true"
+                  class="question large icon"
+                />
+              </div>
               <div>
                 <p
                   class="m-0 font-bold font-sm"
@@ -211,7 +231,12 @@ Object {
             />
             <div
               class="SelectElement--Icon"
-            />
+            >
+              <i
+                aria-hidden="true"
+                class="shipping large icon"
+              />
+            </div>
             <div>
               <p
                 class="m-0 font-bold font-sm"
@@ -236,7 +261,12 @@ Object {
             />
             <div
               class="SelectElement--Icon"
-            />
+            >
+              <i
+                aria-hidden="true"
+                class="hospital large icon"
+              />
+            </div>
             <div>
               <p
                 class="m-0 font-bold font-sm"
@@ -261,7 +291,12 @@ Object {
             />
             <div
               class="SelectElement--Icon"
-            />
+            >
+              <i
+                aria-hidden="true"
+                class="dna large icon"
+              />
+            </div>
             <div>
               <p
                 class="m-0 font-bold font-sm"
@@ -286,7 +321,12 @@ Object {
             />
             <div
               class="SelectElement--Icon"
-            />
+            >
+              <i
+                aria-hidden="true"
+                class="question large icon"
+              />
+            </div>
             <div>
               <p
                 class="m-0 font-bold font-sm"

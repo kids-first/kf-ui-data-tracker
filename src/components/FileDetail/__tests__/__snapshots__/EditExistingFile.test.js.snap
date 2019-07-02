@@ -138,497 +138,442 @@ exports[`edits an existing file correctly 1`] = `
       </section>
     </div>
   </section>
-  <section
-    class="grid-container mx-auto grid-container--collapsed-cells my-20 px-12"
+  <div
+    class="ui container"
+    style="margin-top: 30px;"
   >
-    <section
-      class="study-file-detail cell-12"
+    <div
+      class="ui grid"
     >
-      <section
-        class="grid-container mx-auto"
+      <div
+        class="row"
       >
-        <a
-          class="BackButton"
-          data-testid="back-to-filelist"
-          href="/study/SD_8WX8QQ06/documents"
-        >
-          Back to All Documents
-        </a>
-        <h3
-          class="FileTitle font-body font-black row-2 cell-12 lg:cell-10 md:cell-9 "
-        >
-          organization.jpeg
-        </h3>
         <div
-          class="md:row-3 lg:cell-10 md:cell-9 cell-12"
+          class="column"
         >
-          <section
-            class="grid-container mx-auto"
+          <a
+            data-testid="back-to-filelist"
+            href="/study/SD_8WX8QQ06/documents"
+          >
+            <button
+              class="ui mini basic icon left floated left labeled button"
+            >
+              <i
+                aria-hidden="true"
+                class="arrow left icon"
+              />
+              Back to All Documents
+            </button>
+          </a>
+        </div>
+      </div>
+      <div
+        class="row"
+      >
+        <div
+          class="column"
+        >
+          <div
+            class="ui header"
+          >
+            organization.jpeg
+            <div
+              class="ui mini icon labeled right floated buttons"
+            >
+              <button
+                class="ui button"
+                data-testid="edit-button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="pencil icon"
+                />
+                EDIT
+              </button>
+              <button
+                class="ui button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="download icon"
+                />
+                DOWNLOAD
+              </button>
+              <button
+                class="ui negative button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="trash alternate icon"
+                />
+                DELETE
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="stretched row"
+      >
+        <div
+          class="four wide computer eight wide mobile eight wide tablet column"
+        >
+          <div
+            class="ui mini statistic"
           >
             <div
-              class="cell-6 sm:cell-3"
+              class="label"
+              style="text-align: left;"
             >
-              <p
-                class="FileInfo--Title"
-              >
-                Status:
-              </p>
+              Status
+            </div>
+            <div
+              class="value"
+              style="text-align: left;"
+            >
               <div
                 class="ui orange tiny basic label"
               >
                 Pending Review
               </div>
             </div>
-            <div
-              class="cell-6 sm:cell-3"
-            >
-              <p
-                class="FileInfo--Title"
-              >
-                Document Type:
-              </p>
-              <div
-                class="flex"
-              >
-                <div
-                  class="FileInfo--Icon"
-                />
-                <p
-                  class="FileInfo--Text"
-                >
-                  Clinical/Phenotype Data
-                </p>
-              </div>
-            </div>
-            <div
-              class="cell-6 sm:cell-3"
-            >
-              <p
-                class="FileInfo--Title"
-              >
-                Last Updated:
-              </p>
-              <div
-                class="flex"
-              >
-                <p
-                  class="FileInfo--Text"
-                >
-                  <time
-                    class="mr-4"
-                    datetime="2018-09-27T05:32:26.000Z"
-                    title="2018-09-27T05:32:26+00:00"
-                  >
-                    7 months ago
-                  </time>
-                  by
-                </p>
-                <div
-                  class="Avatar inline-block ml-4 mt-4"
-                  style="height: 20px; width: 20px;"
-                >
-                  <img
-                    alt="xuzhu avatar"
-                    class="Avatar-img"
-                    src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              class="cell-6 sm:cell-3"
-            >
-              <p
-                class="FileInfo--Title"
-              >
-                Size:
-              </p>
-              <p
-                class="FileInfo--Text"
-              >
-                5.5 kB
-              </p>
-            </div>
-          </section>
+          </div>
         </div>
         <div
-          class="row-3 lg:cell-2 md:cell-3 cell-12 flex flex-row items-start h-full w-full justify-start flex-wrap"
-        >
-          <button
-            class="Button Button--default"
-            type="button"
-          >
-            <svg
-              class="Icon text-grey-dark"
-              height="24"
-              version="1.1"
-              viewBox="0 0 24 24"
-              width="24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <defs />
-              <title>
-                icon-
-                edit
-              </title>
-              <g
-                data-name="edit icon"
-                id="edit-icon"
-              >
-                <path
-                  d="M13.9643165,4.78273381 L19.1556835,9.97410072 C19.3743137,10.1937124 19.3743137,10.5487336 19.1556835,10.7683453 L6.58589928,23.3381295 L1.24489209,23.9309353 C0.906476758,23.9689574 0.569156015,23.850864 0.328354627,23.6100626 C0.0875532393,23.3692613 -0.0305401208,23.0319405 0.00748201439,22.6935252 L0.60028777,17.352518 L13.1700719,4.78273381 C13.3896837,4.56410352 13.7447048,4.56410352 13.9643165,4.78273381 Z M23.2880576,3.4647482 C24.1628943,4.34306477 24.1628943,5.76341005 23.2880576,6.64172662 L21.2506475,8.67913669 C21.0310358,8.89776699 20.6760146,8.89776699 20.4564029,8.67913669 L15.265036,3.48776978 C15.0464057,3.26815806 15.0464057,2.9131369 15.265036,2.69352518 L17.302446,0.656115108 C18.1807626,-0.218721652 19.6011079,-0.218721652 20.4794245,0.656115108 L23.2880576,3.4647482 Z"
-                  height="100%"
-                  id="path"
-                  transform="translate(0 0)"
-                  width="100%"
-                />
-              </g>
-            </svg>
-            EDIT
-          </button>
-          <button
-            class="hidden sm:inline-block text-grey test-xs font-light underline ml-12 my-4"
-          >
-            <svg
-              class="mr-4"
-              height="10"
-              id="mock-icon"
-              kind="delete"
-              width="10"
-            >
-              <title>
-                icon-
-                delete
-              </title>
-            </svg>
-            <span>
-              Delete
-            </span>
-          </button>
-          <button
-            class="Button Button--default Button--primary mx-12 md:mt-12 lg:mx-0 lg:w-full"
-            type="button"
-          >
-            <svg
-              class="Icon text-grey-dark"
-              height="24"
-              version="1.1"
-              viewBox="0 0 24 24"
-              width="24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <defs />
-              <title>
-                icon-
-                download
-              </title>
-              <g
-                data-name="download icon"
-                id="download-icon"
-              >
-                <path
-                  d="M9.12,13.6128 L4.32,8.6976 C2.9664,7.3392 4.9968,5.304 6.3504,6.6624 L7.9968,8.3232 C8.3712,8.7024 8.6784,8.5776 8.6784,8.0448 L8.6784,1.44 C8.6784,0.64470996 9.32310996,1.4609241e-16 10.1184,0 C10.91369,-1.4609241e-16 11.5584,0.64470996 11.5584,1.44 L11.5584,8.04 C11.5584,8.568 11.8608,8.6976 12.24,8.3184 L13.8864,6.6576 C15.24,5.2992 17.2704,7.3392 15.9168,8.6928 L11.112,13.6032 C10.8506924,13.8715438 10.4925609,14.0236989 10.1180121,14.025504 C9.74346328,14.027309 9.38388186,13.8786128 9.12,13.6128 Z M17.28,19.7952 L17.28,16.9152 C17.28,16.11991 17.92471,15.4752 18.72,15.4752 C19.51529,15.4752 20.16,16.11991 20.16,16.9152 L20.16,21.2352 C20.16,22.2955867 19.3003867,23.1552 18.24,23.1552 L1.92,23.1552 C0.85961328,23.1552 1.2985992e-16,22.2955867 0,21.2352 L0,16.9152 C-9.73949402e-17,16.11991 0.64470996,15.4752 1.44,15.4752 C2.23529004,15.4752 2.88,16.11991 2.88,16.9152 L2.88,19.7952 C2.88,20.0602967 3.09490332,20.2752 3.36,20.2752 L16.8,20.2752 C17.0650967,20.2752 17.28,20.0602967 17.28,19.7952 Z"
-                  height="100%"
-                  id="path"
-                  transform="translate(0 0)"
-                  width="100%"
-                />
-              </g>
-            </svg>
-            DOWNLOAD
-          </button>
-        </div>
-        <div
-          class="cell-12 lg:cell-10 md:cell-9 md:h-full"
-        >
-          <p
-            class="FileInfo--Title"
-          >
-            Description:
-          </p>
-          <p
-            class="FileInfo--Text md:mr-0 h-full"
-          >
-            Month necessary animal end standard case. View system operation message decade. Actually sing because deal everything woman subject.
-          </p>
-        </div>
-        <div
-          class="FileVersionContainer lg:cell-10 md:cell-9 cell-12"
+          class="four wide computer eight wide mobile eight wide tablet column"
         >
           <div
-            class="p-8 flex justify-between"
+            class="ui mini statistic"
           >
-            <p
-              class="FileInfo--Title"
+            <div
+              class="label"
+              style="text-align: left;"
             >
-              Document Versions
-              <span
-                class="font-light ml-4"
+              Document Type
+            </div>
+            <div
+              class="value"
+              style="text-align: left;"
+            >
+              <div
+                class="ui tiny basic label"
               >
-                (
-                3
-                )
-              </span>
-            </p>
-            <button
-              class="FileVersionList--Button"
-            >
-              UPLOAD VERSION
-            </button>
-          </div>
-          <ul
-            class="FileVersionList"
-          >
-            <li
-              class="FileVersionList--Element"
-            >
-              <section
-                class="grid-container mx-auto grid-container--collapsed-rows p-4"
-              >
-                <div
-                  class="FileVersionElement--Icon row-3 cell-1 lg:row-1 lg:cell-1"
+                <i
+                  aria-hidden="true"
+                  class="hospital icon"
                 />
+                 Clinical/Phenotype Data
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="four wide computer eight wide mobile eight wide tablet column"
+        >
+          <div
+            class="ui mini statistic"
+          >
+            <div
+              class="label"
+              style="text-align: left;"
+            >
+              Last Updated
+            </div>
+            <div
+              class="value"
+              style="text-align: left;"
+            >
+              <div
+                class="ui tiny image label"
+                style="text-wrap: no;"
+              >
+                <img
+                  alt="xuzhu"
+                  src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
+                />
+                xuzhu
                 <div
-                  class="FileVersionElement--Tag row-3 cell-2 lg:row-2 lg:cell-1"
+                  class="detail"
                 >
-                  Latest
-                </div>
-                <div
-                  class="flex row-1 cell-12 lg:cell-7"
-                >
-                  <button
-                    class="FileVersionElement--button"
-                  >
-                    VersionFileName.js
-                  </button>
-                  <p
-                    class="FileVersionList--text italic FileVersionList--hidden pt-4 ml-16"
-                  >
-                    FV_DMTKEFQW
-                  </p>
-                  <button
-                    class="ui icon left labeled button FileVersionElement--button FileVersionList--hidden ml-4"
-                  >
-                    <i
-                      aria-hidden="true"
-                      class="copy icon"
-                    />
-                    FV_DMTKEFQW
-                  </button>
-                </div>
-                <div
-                  class="flex row-3 cell-9 lg:row-1 lg:cell-4 lg:justify-end"
-                >
-                  <div
-                    class="Avatar inline-block mr-8"
-                    style="height: 20px; width: 20px;"
-                  >
-                    <img
-                      alt="xuzhu avatar"
-                      class="Avatar-img"
-                      src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
-                    />
-                  </div>
                   <time
-                    class="FileVersionList--text"
                     datetime="2018-09-27T05:32:26.000Z"
                     title="2018-09-27T05:32:26+00:00"
                   >
                     7 months ago
                   </time>
-                  <p
-                    class="FileVersionList--text row-1 cell-2"
-                  >
-                    5.5 kB
-                  </p>
-                  <button
-                    class="FileVersionList--text row-1 cell-1"
-                  >
-                    <svg
-                      height="12"
-                      id="mock-icon"
-                      kind="download"
-                      width="12"
-                    >
-                      <title>
-                        icon-
-                        download
-                      </title>
-                    </svg>
-                  </button>
                 </div>
-                <p
-                  class="FileVersionList--text row-2 cell-12 lg:cell-2-11"
-                >
-                  version description
-                </p>
-              </section>
-            </li>
-            <li
-              class="FileVersionList--Element"
-            >
-              <section
-                class="grid-container mx-auto grid-container--collapsed-rows p-4"
-              >
-                <div
-                  class="FileVersionElement--Icon row-3 cell-1 lg:row-1 lg:cell-1"
-                />
-                <div
-                  class="flex row-1 cell-12 lg:cell-7"
-                >
-                  <button
-                    class="FileVersionElement--button"
-                  >
-                    VersionFileName.js
-                  </button>
-                  <p
-                    class="FileVersionList--text italic FileVersionList--hidden pt-4 ml-16"
-                  >
-                    FV_TT8NF09R
-                  </p>
-                  <button
-                    class="ui icon left labeled button FileVersionElement--button FileVersionList--hidden ml-4"
-                  >
-                    <i
-                      aria-hidden="true"
-                      class="copy icon"
-                    />
-                    FV_TT8NF09R
-                  </button>
-                </div>
-                <div
-                  class="flex row-3 cell-9 lg:row-1 lg:cell-4 lg:justify-end"
-                >
-                  <div
-                    class="Avatar inline-block mr-8"
-                    style="height: 20px; width: 20px;"
-                  >
-                    <img
-                      alt="xuzhu avatar"
-                      class="Avatar-img"
-                      src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
-                    />
-                  </div>
-                  <time
-                    class="FileVersionList--text"
-                    datetime="2018-08-21T03:16:11.000Z"
-                    title="2018-08-21T03:16:11+00:00"
-                  >
-                    8 months ago
-                  </time>
-                  <p
-                    class="FileVersionList--text row-1 cell-2"
-                  >
-                    9.9 kB
-                  </p>
-                  <button
-                    class="FileVersionList--text row-1 cell-1"
-                  >
-                    <svg
-                      height="12"
-                      id="mock-icon"
-                      kind="download"
-                      width="12"
-                    >
-                      <title>
-                        icon-
-                        download
-                      </title>
-                    </svg>
-                  </button>
-                </div>
-                <p
-                  class="FileVersionList--text row-2 cell-12 lg:cell-2-11"
-                >
-                  version description
-                </p>
-              </section>
-            </li>
-            <li
-              class="FileVersionList--Element"
-            >
-              <section
-                class="grid-container mx-auto grid-container--collapsed-rows p-4"
-              >
-                <div
-                  class="FileVersionElement--Icon row-3 cell-1 lg:row-1 lg:cell-1"
-                />
-                <div
-                  class="flex row-1 cell-12 lg:cell-7"
-                >
-                  <button
-                    class="FileVersionElement--button"
-                  >
-                    VersionFileName.js
-                  </button>
-                  <p
-                    class="FileVersionList--text italic FileVersionList--hidden pt-4 ml-16"
-                  >
-                    FV_2WV3VNJN
-                  </p>
-                  <button
-                    class="ui icon left labeled button FileVersionElement--button FileVersionList--hidden ml-4"
-                  >
-                    <i
-                      aria-hidden="true"
-                      class="copy icon"
-                    />
-                    FV_2WV3VNJN
-                  </button>
-                </div>
-                <div
-                  class="flex row-3 cell-9 lg:row-1 lg:cell-4 lg:justify-end"
-                >
-                  <div
-                    class="Avatar inline-block mr-8"
-                    style="height: 20px; width: 20px;"
-                  >
-                    <img
-                      alt="xuzhu avatar"
-                      class="Avatar-img"
-                      src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
-                    />
-                  </div>
-                  <time
-                    class="FileVersionList--text"
-                    datetime="2017-08-25T00:05:30.000Z"
-                    title="2017-08-25T00:05:30+00:00"
-                  >
-                    2 years ago
-                  </time>
-                  <p
-                    class="FileVersionList--text row-1 cell-2"
-                  >
-                    5.4 kB
-                  </p>
-                  <button
-                    class="FileVersionList--text row-1 cell-1"
-                  >
-                    <svg
-                      height="12"
-                      id="mock-icon"
-                      kind="download"
-                      width="12"
-                    >
-                      <title>
-                        icon-
-                        download
-                      </title>
-                    </svg>
-                  </button>
-                </div>
-                <p
-                  class="FileVersionList--text row-2 cell-12 lg:cell-2-11"
-                >
-                  version description
-                </p>
-              </section>
-            </li>
-          </ul>
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
-    </section>
-  </section>
+        <div
+          class="four wide computer eight wide mobile eight wide tablet column"
+        >
+          <div
+            class="ui mini statistic"
+          >
+            <div
+              class="label"
+              style="text-align: left;"
+            >
+              Size
+            </div>
+            <div
+              class="value"
+              style="text-align: left;"
+            >
+              <div
+                class="ui tiny basic label"
+              >
+                5.5 kB
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="row"
+      >
+        <div
+          class="column"
+        >
+          <div
+            class="ui small header"
+          >
+            Description
+          </div>
+          Month necessary animal end standard case. View system operation message decade. Actually sing because deal everything woman subject.
+        </div>
+      </div>
+      <div
+        class="row"
+      >
+        <div
+          class="column"
+        >
+          <div
+            class="ui segment"
+            style="padding: 0px;"
+          >
+            <div
+              class="ui divided selection relaxed list"
+              role="list"
+            >
+              <div
+                class="item"
+                role="listitem"
+              >
+                <h4
+                  class="header"
+                >
+                  Document Versions (
+                  3
+                  )
+                  <button
+                    class="ui mini icon primary right floated left labeled button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="cloud upload icon"
+                    />
+                    UPLOAD VERSION
+                  </button>
+                </h4>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <div
+                  class="content"
+                >
+                  <div
+                    class="ui orange mini circular empty label"
+                    style="margin-right: 15px;"
+                  />
+                  <button
+                    class="ui header"
+                    style="display: inline-block; font-size: 16px; padding-right: 20px;"
+                  >
+                    VersionFileName.js
+                  </button>
+                  <div
+                    class="ui purple mini tag label"
+                  >
+                    LATEST
+                  </div>
+                  <div
+                    class="ui mini basic image label"
+                  >
+                    <img
+                      alt="xuzhu"
+                      src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
+                    />
+                    <time
+                      datetime="2018-09-27T05:32:26.000Z"
+                      title="2018-09-27T05:32:26+00:00"
+                    >
+                      7 months ago
+                    </time>
+                  </div>
+                  <button
+                    class="ui mini basic label"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="download icon"
+                    />
+                    5.5 kB
+                  </button>
+                  <button
+                    class="ui mini basic icon left labeled button"
+                    style="padding-top: 7px; padding-bottom: 7px; font-size: 10px; margin-left: 2px;"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="copy icon"
+                    />
+                    FV_DMTKEFQW
+                  </button>
+                  <p
+                    data-testid="version-item"
+                    style="margin-top: 4px; margin-left: 24px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; font-size: 12px;"
+                  >
+                    <b>
+                      Change Summary: 
+                    </b>
+                    version description
+                  </p>
+                </div>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <div
+                  class="content"
+                >
+                  <div
+                    class="ui orange mini circular empty label"
+                    style="margin-right: 15px;"
+                  />
+                  <button
+                    class="ui header"
+                    style="display: inline-block; font-size: 16px; padding-right: 20px;"
+                  >
+                    VersionFileName.js
+                  </button>
+                  <div
+                    class="ui mini basic image label"
+                  >
+                    <img
+                      alt="xuzhu"
+                      src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
+                    />
+                    <time
+                      datetime="2018-08-21T03:16:11.000Z"
+                      title="2018-08-21T03:16:11+00:00"
+                    >
+                      8 months ago
+                    </time>
+                  </div>
+                  <button
+                    class="ui mini basic label"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="download icon"
+                    />
+                    9.9 kB
+                  </button>
+                  <button
+                    class="ui mini basic icon left labeled button"
+                    style="padding-top: 7px; padding-bottom: 7px; font-size: 10px; margin-left: 2px;"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="copy icon"
+                    />
+                    FV_TT8NF09R
+                  </button>
+                  <p
+                    data-testid="version-item"
+                    style="margin-top: 4px; margin-left: 24px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; font-size: 12px;"
+                  >
+                    <b>
+                      Change Summary: 
+                    </b>
+                    version description
+                  </p>
+                </div>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <div
+                  class="content"
+                >
+                  <div
+                    class="ui orange mini circular empty label"
+                    style="margin-right: 15px;"
+                  />
+                  <button
+                    class="ui header"
+                    style="display: inline-block; font-size: 16px; padding-right: 20px;"
+                  >
+                    VersionFileName.js
+                  </button>
+                  <div
+                    class="ui mini basic image label"
+                  >
+                    <img
+                      alt="xuzhu"
+                      src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
+                    />
+                    <time
+                      datetime="2017-08-25T00:05:30.000Z"
+                      title="2017-08-25T00:05:30+00:00"
+                    >
+                      2 years ago
+                    </time>
+                  </div>
+                  <button
+                    class="ui mini basic label"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="download icon"
+                    />
+                    5.4 kB
+                  </button>
+                  <button
+                    class="ui mini basic icon left labeled button"
+                    style="padding-top: 7px; padding-bottom: 7px; font-size: 10px; margin-left: 2px;"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="copy icon"
+                    />
+                    FV_2WV3VNJN
+                  </button>
+                  <p
+                    data-testid="version-item"
+                    style="margin-top: 4px; margin-left: 24px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; font-size: 12px;"
+                  >
+                    <b>
+                      Change Summary: 
+                    </b>
+                    version description
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;
 
@@ -770,496 +715,441 @@ exports[`edits an existing file correctly 2`] = `
       </section>
     </div>
   </section>
-  <section
-    class="grid-container mx-auto grid-container--collapsed-cells my-20 px-12"
+  <div
+    class="ui container"
+    style="margin-top: 30px;"
   >
-    <section
-      class="study-file-detail cell-12"
+    <div
+      class="ui grid"
     >
-      <section
-        class="grid-container mx-auto"
+      <div
+        class="row"
       >
-        <a
-          class="BackButton"
-          data-testid="back-to-filelist"
-          href="/study/SD_8WX8QQ06/documents"
-        >
-          Back to All Documents
-        </a>
-        <h3
-          class="FileTitle font-body font-black row-2 cell-12 lg:cell-10 md:cell-9 "
-        >
-          mynewfile.txt
-        </h3>
         <div
-          class="md:row-3 lg:cell-10 md:cell-9 cell-12"
+          class="column"
         >
-          <section
-            class="grid-container mx-auto"
+          <a
+            data-testid="back-to-filelist"
+            href="/study/SD_8WX8QQ06/documents"
+          >
+            <button
+              class="ui mini basic icon left floated left labeled button"
+            >
+              <i
+                aria-hidden="true"
+                class="arrow left icon"
+              />
+              Back to All Documents
+            </button>
+          </a>
+        </div>
+      </div>
+      <div
+        class="row"
+      >
+        <div
+          class="column"
+        >
+          <div
+            class="ui header"
+          >
+            mynewfile.txt
+            <div
+              class="ui mini icon labeled right floated buttons"
+            >
+              <button
+                class="ui button"
+                data-testid="edit-button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="pencil icon"
+                />
+                EDIT
+              </button>
+              <button
+                class="ui button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="download icon"
+                />
+                DOWNLOAD
+              </button>
+              <button
+                class="ui negative button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="trash alternate icon"
+                />
+                DELETE
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="stretched row"
+      >
+        <div
+          class="four wide computer eight wide mobile eight wide tablet column"
+        >
+          <div
+            class="ui mini statistic"
           >
             <div
-              class="cell-6 sm:cell-3"
+              class="label"
+              style="text-align: left;"
             >
-              <p
-                class="FileInfo--Title"
-              >
-                Status:
-              </p>
+              Status
+            </div>
+            <div
+              class="value"
+              style="text-align: left;"
+            >
               <div
                 class="ui teal tiny basic label"
               >
                 Approved
               </div>
             </div>
-            <div
-              class="cell-6 sm:cell-3"
-            >
-              <p
-                class="FileInfo--Title"
-              >
-                Document Type:
-              </p>
-              <div
-                class="flex"
-              >
-                <div
-                  class="FileInfo--Icon"
-                />
-                <p
-                  class="FileInfo--Text"
-                >
-                  Clinical/Phenotype Data
-                </p>
-              </div>
-            </div>
-            <div
-              class="cell-6 sm:cell-3"
-            >
-              <p
-                class="FileInfo--Title"
-              >
-                Last Updated:
-              </p>
-              <div
-                class="flex"
-              >
-                <p
-                  class="FileInfo--Text"
-                >
-                  <time
-                    class="mr-4"
-                    datetime="2018-09-27T05:32:26.000Z"
-                    title="2018-09-27T05:32:26+00:00"
-                  >
-                    7 months ago
-                  </time>
-                  by
-                </p>
-                <div
-                  class="Avatar inline-block ml-4 mt-4"
-                  style="height: 20px; width: 20px;"
-                >
-                  <img
-                    alt="xuzhu avatar"
-                    class="Avatar-img"
-                    src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              class="cell-6 sm:cell-3"
-            >
-              <p
-                class="FileInfo--Title"
-              >
-                Size:
-              </p>
-              <p
-                class="FileInfo--Text"
-              >
-                5.5 kB
-              </p>
-            </div>
-          </section>
+          </div>
         </div>
         <div
-          class="row-3 lg:cell-2 md:cell-3 cell-12 flex flex-row items-start h-full w-full justify-start flex-wrap"
-        >
-          <button
-            class="Button Button--default"
-            type="button"
-          >
-            <svg
-              class="Icon text-grey-dark"
-              height="24"
-              version="1.1"
-              viewBox="0 0 24 24"
-              width="24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <defs />
-              <title>
-                icon-
-                edit
-              </title>
-              <g
-                data-name="edit icon"
-                id="edit-icon"
-              >
-                <path
-                  d="M13.9643165,4.78273381 L19.1556835,9.97410072 C19.3743137,10.1937124 19.3743137,10.5487336 19.1556835,10.7683453 L6.58589928,23.3381295 L1.24489209,23.9309353 C0.906476758,23.9689574 0.569156015,23.850864 0.328354627,23.6100626 C0.0875532393,23.3692613 -0.0305401208,23.0319405 0.00748201439,22.6935252 L0.60028777,17.352518 L13.1700719,4.78273381 C13.3896837,4.56410352 13.7447048,4.56410352 13.9643165,4.78273381 Z M23.2880576,3.4647482 C24.1628943,4.34306477 24.1628943,5.76341005 23.2880576,6.64172662 L21.2506475,8.67913669 C21.0310358,8.89776699 20.6760146,8.89776699 20.4564029,8.67913669 L15.265036,3.48776978 C15.0464057,3.26815806 15.0464057,2.9131369 15.265036,2.69352518 L17.302446,0.656115108 C18.1807626,-0.218721652 19.6011079,-0.218721652 20.4794245,0.656115108 L23.2880576,3.4647482 Z"
-                  height="100%"
-                  id="path"
-                  transform="translate(0 0)"
-                  width="100%"
-                />
-              </g>
-            </svg>
-            EDIT
-          </button>
-          <button
-            class="hidden sm:inline-block text-grey test-xs font-light underline ml-12 my-4"
-          >
-            <svg
-              class="mr-4"
-              height="10"
-              id="mock-icon"
-              kind="delete"
-              width="10"
-            >
-              <title>
-                icon-
-                delete
-              </title>
-            </svg>
-            <span>
-              Delete
-            </span>
-          </button>
-          <button
-            class="Button Button--default Button--primary mx-12 md:mt-12 lg:mx-0 lg:w-full"
-            type="button"
-          >
-            <svg
-              class="Icon text-grey-dark"
-              height="24"
-              version="1.1"
-              viewBox="0 0 24 24"
-              width="24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <defs />
-              <title>
-                icon-
-                download
-              </title>
-              <g
-                data-name="download icon"
-                id="download-icon"
-              >
-                <path
-                  d="M9.12,13.6128 L4.32,8.6976 C2.9664,7.3392 4.9968,5.304 6.3504,6.6624 L7.9968,8.3232 C8.3712,8.7024 8.6784,8.5776 8.6784,8.0448 L8.6784,1.44 C8.6784,0.64470996 9.32310996,1.4609241e-16 10.1184,0 C10.91369,-1.4609241e-16 11.5584,0.64470996 11.5584,1.44 L11.5584,8.04 C11.5584,8.568 11.8608,8.6976 12.24,8.3184 L13.8864,6.6576 C15.24,5.2992 17.2704,7.3392 15.9168,8.6928 L11.112,13.6032 C10.8506924,13.8715438 10.4925609,14.0236989 10.1180121,14.025504 C9.74346328,14.027309 9.38388186,13.8786128 9.12,13.6128 Z M17.28,19.7952 L17.28,16.9152 C17.28,16.11991 17.92471,15.4752 18.72,15.4752 C19.51529,15.4752 20.16,16.11991 20.16,16.9152 L20.16,21.2352 C20.16,22.2955867 19.3003867,23.1552 18.24,23.1552 L1.92,23.1552 C0.85961328,23.1552 1.2985992e-16,22.2955867 0,21.2352 L0,16.9152 C-9.73949402e-17,16.11991 0.64470996,15.4752 1.44,15.4752 C2.23529004,15.4752 2.88,16.11991 2.88,16.9152 L2.88,19.7952 C2.88,20.0602967 3.09490332,20.2752 3.36,20.2752 L16.8,20.2752 C17.0650967,20.2752 17.28,20.0602967 17.28,19.7952 Z"
-                  height="100%"
-                  id="path"
-                  transform="translate(0 0)"
-                  width="100%"
-                />
-              </g>
-            </svg>
-            DOWNLOAD
-          </button>
-        </div>
-        <div
-          class="cell-12 lg:cell-10 md:cell-9 md:h-full"
-        >
-          <p
-            class="FileInfo--Title"
-          >
-            Description:
-          </p>
-          <p
-            class="FileInfo--Text md:mr-0 h-full"
-          >
-            Some description here
-          </p>
-        </div>
-        <div
-          class="FileVersionContainer lg:cell-10 md:cell-9 cell-12"
+          class="four wide computer eight wide mobile eight wide tablet column"
         >
           <div
-            class="p-8 flex justify-between"
+            class="ui mini statistic"
           >
-            <p
-              class="FileInfo--Title"
+            <div
+              class="label"
+              style="text-align: left;"
             >
-              Document Versions
-              <span
-                class="font-light ml-4"
+              Document Type
+            </div>
+            <div
+              class="value"
+              style="text-align: left;"
+            >
+              <div
+                class="ui tiny basic label"
               >
-                (
-                3
-                )
-              </span>
-            </p>
-            <button
-              class="FileVersionList--Button"
-            >
-              UPLOAD VERSION
-            </button>
-          </div>
-          <ul
-            class="FileVersionList"
-          >
-            <li
-              class="FileVersionList--Element"
-            >
-              <section
-                class="grid-container mx-auto grid-container--collapsed-rows p-4"
-              >
-                <div
-                  class="FileVersionElement--Icon row-3 cell-1 lg:row-1 lg:cell-1"
+                <i
+                  aria-hidden="true"
+                  class="hospital icon"
                 />
+                 Clinical/Phenotype Data
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="four wide computer eight wide mobile eight wide tablet column"
+        >
+          <div
+            class="ui mini statistic"
+          >
+            <div
+              class="label"
+              style="text-align: left;"
+            >
+              Last Updated
+            </div>
+            <div
+              class="value"
+              style="text-align: left;"
+            >
+              <div
+                class="ui tiny image label"
+                style="text-wrap: no;"
+              >
+                <img
+                  alt="xuzhu"
+                  src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
+                />
+                xuzhu
                 <div
-                  class="FileVersionElement--Tag row-3 cell-2 lg:row-2 lg:cell-1"
+                  class="detail"
                 >
-                  Latest
-                </div>
-                <div
-                  class="flex row-1 cell-12 lg:cell-7"
-                >
-                  <button
-                    class="FileVersionElement--button"
-                  >
-                    VersionFileName.js
-                  </button>
-                  <p
-                    class="FileVersionList--text italic FileVersionList--hidden pt-4 ml-16"
-                  >
-                    FV_DMTKEFQW
-                  </p>
-                  <button
-                    class="ui icon left labeled button FileVersionElement--button FileVersionList--hidden ml-4"
-                  >
-                    <i
-                      aria-hidden="true"
-                      class="copy icon"
-                    />
-                    FV_DMTKEFQW
-                  </button>
-                </div>
-                <div
-                  class="flex row-3 cell-9 lg:row-1 lg:cell-4 lg:justify-end"
-                >
-                  <div
-                    class="Avatar inline-block mr-8"
-                    style="height: 20px; width: 20px;"
-                  >
-                    <img
-                      alt="xuzhu avatar"
-                      class="Avatar-img"
-                      src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
-                    />
-                  </div>
                   <time
-                    class="FileVersionList--text"
                     datetime="2018-09-27T05:32:26.000Z"
                     title="2018-09-27T05:32:26+00:00"
                   >
                     7 months ago
                   </time>
-                  <p
-                    class="FileVersionList--text row-1 cell-2"
-                  >
-                    5.5 kB
-                  </p>
-                  <button
-                    class="FileVersionList--text row-1 cell-1"
-                  >
-                    <svg
-                      height="12"
-                      id="mock-icon"
-                      kind="download"
-                      width="12"
-                    >
-                      <title>
-                        icon-
-                        download
-                      </title>
-                    </svg>
-                  </button>
                 </div>
-                <p
-                  class="FileVersionList--text row-2 cell-12 lg:cell-2-11"
-                >
-                  version description
-                </p>
-              </section>
-            </li>
-            <li
-              class="FileVersionList--Element"
-            >
-              <section
-                class="grid-container mx-auto grid-container--collapsed-rows p-4"
-              >
-                <div
-                  class="FileVersionElement--Icon row-3 cell-1 lg:row-1 lg:cell-1"
-                />
-                <div
-                  class="flex row-1 cell-12 lg:cell-7"
-                >
-                  <button
-                    class="FileVersionElement--button"
-                  >
-                    VersionFileName.js
-                  </button>
-                  <p
-                    class="FileVersionList--text italic FileVersionList--hidden pt-4 ml-16"
-                  >
-                    FV_TT8NF09R
-                  </p>
-                  <button
-                    class="ui icon left labeled button FileVersionElement--button FileVersionList--hidden ml-4"
-                  >
-                    <i
-                      aria-hidden="true"
-                      class="copy icon"
-                    />
-                    FV_TT8NF09R
-                  </button>
-                </div>
-                <div
-                  class="flex row-3 cell-9 lg:row-1 lg:cell-4 lg:justify-end"
-                >
-                  <div
-                    class="Avatar inline-block mr-8"
-                    style="height: 20px; width: 20px;"
-                  >
-                    <img
-                      alt="xuzhu avatar"
-                      class="Avatar-img"
-                      src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
-                    />
-                  </div>
-                  <time
-                    class="FileVersionList--text"
-                    datetime="2018-08-21T03:16:11.000Z"
-                    title="2018-08-21T03:16:11+00:00"
-                  >
-                    8 months ago
-                  </time>
-                  <p
-                    class="FileVersionList--text row-1 cell-2"
-                  >
-                    9.9 kB
-                  </p>
-                  <button
-                    class="FileVersionList--text row-1 cell-1"
-                  >
-                    <svg
-                      height="12"
-                      id="mock-icon"
-                      kind="download"
-                      width="12"
-                    >
-                      <title>
-                        icon-
-                        download
-                      </title>
-                    </svg>
-                  </button>
-                </div>
-                <p
-                  class="FileVersionList--text row-2 cell-12 lg:cell-2-11"
-                >
-                  version description
-                </p>
-              </section>
-            </li>
-            <li
-              class="FileVersionList--Element"
-            >
-              <section
-                class="grid-container mx-auto grid-container--collapsed-rows p-4"
-              >
-                <div
-                  class="FileVersionElement--Icon row-3 cell-1 lg:row-1 lg:cell-1"
-                />
-                <div
-                  class="flex row-1 cell-12 lg:cell-7"
-                >
-                  <button
-                    class="FileVersionElement--button"
-                  >
-                    VersionFileName.js
-                  </button>
-                  <p
-                    class="FileVersionList--text italic FileVersionList--hidden pt-4 ml-16"
-                  >
-                    FV_2WV3VNJN
-                  </p>
-                  <button
-                    class="ui icon left labeled button FileVersionElement--button FileVersionList--hidden ml-4"
-                  >
-                    <i
-                      aria-hidden="true"
-                      class="copy icon"
-                    />
-                    FV_2WV3VNJN
-                  </button>
-                </div>
-                <div
-                  class="flex row-3 cell-9 lg:row-1 lg:cell-4 lg:justify-end"
-                >
-                  <div
-                    class="Avatar inline-block mr-8"
-                    style="height: 20px; width: 20px;"
-                  >
-                    <img
-                      alt="xuzhu avatar"
-                      class="Avatar-img"
-                      src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
-                    />
-                  </div>
-                  <time
-                    class="FileVersionList--text"
-                    datetime="2017-08-25T00:05:30.000Z"
-                    title="2017-08-25T00:05:30+00:00"
-                  >
-                    2 years ago
-                  </time>
-                  <p
-                    class="FileVersionList--text row-1 cell-2"
-                  >
-                    5.4 kB
-                  </p>
-                  <button
-                    class="FileVersionList--text row-1 cell-1"
-                  >
-                    <svg
-                      height="12"
-                      id="mock-icon"
-                      kind="download"
-                      width="12"
-                    >
-                      <title>
-                        icon-
-                        download
-                      </title>
-                    </svg>
-                  </button>
-                </div>
-                <p
-                  class="FileVersionList--text row-2 cell-12 lg:cell-2-11"
-                >
-                  version description
-                </p>
-              </section>
-            </li>
-          </ul>
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
-    </section>
-  </section>
+        <div
+          class="four wide computer eight wide mobile eight wide tablet column"
+        >
+          <div
+            class="ui mini statistic"
+          >
+            <div
+              class="label"
+              style="text-align: left;"
+            >
+              Size
+            </div>
+            <div
+              class="value"
+              style="text-align: left;"
+            >
+              <div
+                class="ui tiny basic label"
+              >
+                5.5 kB
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="row"
+      >
+        <div
+          class="column"
+        >
+          <div
+            class="ui small header"
+          >
+            Description
+          </div>
+          Some description here
+        </div>
+      </div>
+      <div
+        class="row"
+      >
+        <div
+          class="column"
+        >
+          <div
+            class="ui segment"
+            style="padding: 0px;"
+          >
+            <div
+              class="ui divided selection relaxed list"
+              role="list"
+            >
+              <div
+                class="item"
+                role="listitem"
+              >
+                <h4
+                  class="header"
+                >
+                  Document Versions (
+                  3
+                  )
+                  <button
+                    class="ui mini icon primary right floated left labeled button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="cloud upload icon"
+                    />
+                    UPLOAD VERSION
+                  </button>
+                </h4>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <div
+                  class="content"
+                >
+                  <div
+                    class="ui teal mini circular empty label"
+                    style="margin-right: 15px;"
+                  />
+                  <button
+                    class="ui header"
+                    style="display: inline-block; font-size: 16px; padding-right: 20px;"
+                  >
+                    VersionFileName.js
+                  </button>
+                  <div
+                    class="ui purple mini tag label"
+                  >
+                    LATEST
+                  </div>
+                  <div
+                    class="ui mini basic image label"
+                  >
+                    <img
+                      alt="xuzhu"
+                      src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
+                    />
+                    <time
+                      datetime="2018-09-27T05:32:26.000Z"
+                      title="2018-09-27T05:32:26+00:00"
+                    >
+                      7 months ago
+                    </time>
+                  </div>
+                  <button
+                    class="ui mini basic label"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="download icon"
+                    />
+                    5.5 kB
+                  </button>
+                  <button
+                    class="ui mini basic icon left labeled button"
+                    style="padding-top: 7px; padding-bottom: 7px; font-size: 10px; margin-left: 2px;"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="copy icon"
+                    />
+                    FV_DMTKEFQW
+                  </button>
+                  <p
+                    data-testid="version-item"
+                    style="margin-top: 4px; margin-left: 24px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; font-size: 12px;"
+                  >
+                    <b>
+                      Change Summary: 
+                    </b>
+                    version description
+                  </p>
+                </div>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <div
+                  class="content"
+                >
+                  <div
+                    class="ui orange mini circular empty label"
+                    style="margin-right: 15px;"
+                  />
+                  <button
+                    class="ui header"
+                    style="display: inline-block; font-size: 16px; padding-right: 20px;"
+                  >
+                    VersionFileName.js
+                  </button>
+                  <div
+                    class="ui mini basic image label"
+                  >
+                    <img
+                      alt="xuzhu"
+                      src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
+                    />
+                    <time
+                      datetime="2018-08-21T03:16:11.000Z"
+                      title="2018-08-21T03:16:11+00:00"
+                    >
+                      8 months ago
+                    </time>
+                  </div>
+                  <button
+                    class="ui mini basic label"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="download icon"
+                    />
+                    9.9 kB
+                  </button>
+                  <button
+                    class="ui mini basic icon left labeled button"
+                    style="padding-top: 7px; padding-bottom: 7px; font-size: 10px; margin-left: 2px;"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="copy icon"
+                    />
+                    FV_TT8NF09R
+                  </button>
+                  <p
+                    data-testid="version-item"
+                    style="margin-top: 4px; margin-left: 24px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; font-size: 12px;"
+                  >
+                    <b>
+                      Change Summary: 
+                    </b>
+                    version description
+                  </p>
+                </div>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <div
+                  class="content"
+                >
+                  <div
+                    class="ui orange mini circular empty label"
+                    style="margin-right: 15px;"
+                  />
+                  <button
+                    class="ui header"
+                    style="display: inline-block; font-size: 16px; padding-right: 20px;"
+                  >
+                    VersionFileName.js
+                  </button>
+                  <div
+                    class="ui mini basic image label"
+                  >
+                    <img
+                      alt="xuzhu"
+                      src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
+                    />
+                    <time
+                      datetime="2017-08-25T00:05:30.000Z"
+                      title="2017-08-25T00:05:30+00:00"
+                    >
+                      2 years ago
+                    </time>
+                  </div>
+                  <button
+                    class="ui mini basic label"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="download icon"
+                    />
+                    5.4 kB
+                  </button>
+                  <button
+                    class="ui mini basic icon left labeled button"
+                    style="padding-top: 7px; padding-bottom: 7px; font-size: 10px; margin-left: 2px;"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="copy icon"
+                    />
+                    FV_2WV3VNJN
+                  </button>
+                  <p
+                    data-testid="version-item"
+                    style="margin-top: 4px; margin-left: 24px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; font-size: 12px;"
+                  >
+                    <b>
+                      Change Summary: 
+                    </b>
+                    version description
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;
