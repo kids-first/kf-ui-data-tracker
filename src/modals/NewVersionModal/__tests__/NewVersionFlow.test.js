@@ -46,11 +46,11 @@ it('creates a new version', async () => {
 
   // Create and upload file
   const file = new File(['content'], 'my.txt');
-  const formElement = tree.getByText(/drag and drop a file here/i);
+  const formElement = tree.getByLabelText(/choose a file/i);
   Object.defineProperty(formElement, 'files', {value: [file]});
 
   act(() => {
-    fireEvent.drop(formElement);
+    fireEvent.change(formElement);
   });
   await wait(0);
 

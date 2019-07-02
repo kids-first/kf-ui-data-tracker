@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classes from 'classnames';
-import {Icon} from 'kf-uikit';
+import {Button, Divider, Icon, Popup} from 'semantic-ui-react';
 import {downloadFile} from '../../common/fileUtils';
 /**
  * Simple Icon Buttons to download and delete a file passed in as the node prop
@@ -13,33 +12,42 @@ const FileActionButtons = ({
   studyId,
   downloadFileMutation,
   deleteFile,
-  className,
-  buttonClass,
 }) => {
-  const FileActionsClass = classes(
-    'FileActions',
-    {'cursor-not-allowed': loading || error},
-    className,
-  );
-  const FileActionButton = classes('FileActions-Button', buttonClass);
-
   return (
-    <div className={FileActionsClass}>
-      <button
-        className={FileActionButton}
+    <Button.Group>
+      <Button
+        icon="download"
         onClick={e =>
           downloadFile(studyId, node.kfId, null, downloadFileMutation)
         }
-      >
-        <Icon color="black" width={16} height={16} kind="download" />
-      </button>
-      <button
-        className={FileActionButton}
-        onClick={e => deleteFile({variables: {kfId: node.kfId}})}
-      >
-        <Icon width={16} height={16} kind="delete" />
-      </button>
-    </div>
+      />
+      <Popup
+        trigger={
+          <Button
+            data-testid="delete-button"
+            negative
+            icon={<Icon name="trash alternate" />}
+          />
+        }
+        header="Are you sure?"
+        content={
+          <>
+            This file and all of its versions and history will be deleted
+            <Divider />
+            <Button
+              data-testid="delete-confirm"
+              negative
+              fluid
+              icon={<Icon name="trash alternate" />}
+              content="Delete"
+              onClick={e => deleteFile({variables: {kfId: node.kfId}})}
+            />
+          </>
+        }
+        on="click"
+        position="top right"
+      />
+    </Button.Group>
   );
 };
 
@@ -56,10 +64,6 @@ FileActionButtons.propTypes = {
   deleteFile: PropTypes.func,
   /** Action to download a file */
   downloadFile: PropTypes.func,
-  /** additional classes to add to the container element */
-  className: PropTypes.string,
-  /** additional classes to add to the buttons */
-  buttonClass: PropTypes.string,
 };
 
 export default FileActionButtons;

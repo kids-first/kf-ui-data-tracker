@@ -11,23 +11,15 @@ exports[`renders correctly 1`] = `
       <b>
         SD_00000000
       </b>
-      <span
-        class="pl-4 pr-20"
+      <button
+        class="ui icon left labeled button pl-4 pr-20"
       >
-        <button>
-          <svg
-            height="10"
-            id="mock-icon"
-            kind="copy"
-            width="10"
-          >
-            <title>
-              icon-
-              copy
-            </title>
-          </svg>
-        </button>
-      </span>
+        <i
+          aria-hidden="true"
+          class="copy icon"
+        />
+        SD_00000000
+      </button>
       <small
         class="font-light"
       >
