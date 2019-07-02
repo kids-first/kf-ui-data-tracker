@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <div
+    class="ui large top attached menu"
+  >
+    <div
+      class="ui container"
+    >
+      <div
+        class="item"
+      >
+        <img
+          alt="Kids First logo"
+          src="test-file-stub"
+          style="margin: -0.5em 0px; width: 2.0em;"
+        />
+      </div>
+      <a
+        aria-current="page"
+        class="header item"
+        href="/"
+      >
+        Data Tracker
+      </a>
+    </div>
+  </div>
+</div>
+`;
