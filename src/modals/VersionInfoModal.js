@@ -1,16 +1,7 @@
 import React from 'react';
-import TimeAgo from 'react-timeago';
-import SvgIcon from '../components/Icon/Icon';
 import Badge from '../components/Badge/Badge';
-import {
-  Button,
-  Header,
-  Modal,
-  Icon,
-  Grid,
-  Label,
-  Statistic,
-} from 'semantic-ui-react';
+import AvatarTimeAgo from '../components/AvatarTimeAgo/AvatarTimeAgo';
+import {Button, Header, Modal, Icon, Grid, Label} from 'semantic-ui-react';
 import {
   downloadFile,
   fileTypeDetail,
@@ -32,7 +23,9 @@ const VersionInfoModal = ({
         <Grid>
           <Grid.Row>
             <Grid.Column>
-              <Header size="small">{openedVersion.version.fileName}</Header>
+              <Header as="h3" size="medium" color="blue">
+                {openedVersion.version.fileName}
+              </Header>
               {openedVersion.index === 0 && (
                 <Label tag size="mini" color="purple" float="right">
                   LATEST
@@ -41,78 +34,59 @@ const VersionInfoModal = ({
             </Grid.Column>
           </Grid.Row>
           <Grid.Row stretched>
-            <Grid.Column mobile={8} tablet={3} computer={4}>
-              <Statistic size="mini">
-                <Statistic.Label>Status</Statistic.Label>
-                <Statistic.Value>
-                  <Badge state={openedVersion.version.state} />
-                </Statistic.Value>
-              </Statistic>
+            <Grid.Column mobile={8} tablet={8} computer={4}>
+              <Header as="h4" sub>
+                Status
+              </Header>
+              <span>
+                <Badge state={openedVersion.version.state} />
+              </span>
             </Grid.Column>
-            <Grid.Column mobile={8} tablet={5} computer={5}>
-              <Statistic size="mini">
-                <Statistic.Label>Document Type</Statistic.Label>
-                <Statistic.Value>
-                  <Label icon basic size="tiny">
-                    <SvgIcon
-                      kind={fileTypeDetail[fileNode.fileType].icon}
-                      width="12"
-                      height="12"
-                    />
-                    <Label.Detail>
-                      {fileTypeDetail[fileNode.fileType].title}
-                    </Label.Detail>
-                  </Label>
-                </Statistic.Value>
-              </Statistic>
+            <Grid.Column mobile={8} tablet={8} computer={4}>
+              <Header as="h4" sub>
+                Document Type
+              </Header>
+              <span>
+                <Label icon basic size="tiny">
+                  <Icon name={`${fileTypeDetail[fileNode.fileType].icon}`} />
+                  {' ' + fileTypeDetail[fileNode.fileType].title}
+                </Label>
+              </span>
             </Grid.Column>
-            <Grid.Column mobile={8} tablet={4} computer={4}>
-              <Statistic size="mini">
-                <Statistic.Label>Last Updated</Statistic.Label>
-                <Statistic.Value>
-                  <Label image size="tiny">
-                    <img
-                      alt={
-                        openedVersion.version.creator
-                          ? openedVersion.version.creator.username
-                          : 'unknown'
-                      }
-                      src={
-                        openedVersion.version.creator.picture
-                          ? openedVersion.version.creator.picture
-                          : 'https://www.w3schools.com/css/img_avatar.png'
-                      }
-                    />
-                    {openedVersion.version.creator.username}
-                    <Label.Detail>
-                      {openedVersion.version.createdAt ? (
-                        <TimeAgo
-                          date={openedVersion.version.createdAt}
-                          live={false}
-                        />
-                      ) : (
-                        'Unknow'
-                      )}
-                    </Label.Detail>
-                  </Label>
-                </Statistic.Value>
-              </Statistic>
+            <Grid.Column mobile={8} tablet={8} computer={5}>
+              <Header as="h4" sub>
+                Last Updated
+              </Header>
+              <span>
+                <AvatarTimeAgo
+                  size="tiny"
+                  showUsername
+                  creator={openedVersion.version.creator}
+                  createdAt={openedVersion.version.createdAt}
+                />
+              </span>
             </Grid.Column>
-            <Grid.Column mobile={8} tablet={3} computer={3}>
-              <Statistic size="mini">
-                <Statistic.Label>Size</Statistic.Label>
-                <Statistic.Value>
-                  <Label basic size="tiny">
-                    {formatFileSize(openedVersion.version.size)}
-                  </Label>
-                </Statistic.Value>
-              </Statistic>
+            <Grid.Column mobile={8} tablet={8} computer={3}>
+              <Header as="h4" sub>
+                Size
+              </Header>
+              <span>
+                <Label basic size="tiny">
+                  {formatFileSize(openedVersion.version.size)}
+                </Label>
+              </span>
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
             <Grid.Column>
-              <Header size="tiny">Change Summary</Header>
-              {openedVersion.version.description}
+              <Header as="h4" sub>
+                Description
+              </Header>
+              <p>
+                <small>
+                  {openedVersion.version.description || 'No summary added...'}
+                </small>
+              </p>
             </Grid.Column>
           </Grid.Row>
         </Grid>
