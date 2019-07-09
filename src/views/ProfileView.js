@@ -75,7 +75,10 @@ const ProfileView = ({
                 circular
                 size="small"
                 bordered
-                src={profile.picture}
+                src={
+                  profile.picture ||
+                  'https://www.w3schools.com/css/img_avatar.png'
+                }
               />
             </Grid.Column>
             <Label attached="top left">{roles.join(', ')}</Label>
