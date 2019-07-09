@@ -2,7 +2,7 @@ import React from 'react';
 import {Query} from 'react-apollo';
 import {GET_STUDY_BY_ID} from '../state/queries';
 import StudyHeader from '../components/StudyHeader/StudyHeader';
-import StudyNavBar from '../components/StudyNavBar';
+import {StudyNavBar} from '../components/StudyNavBar';
 import {Container, Segment} from 'semantic-ui-react';
 
 const NavBarView = props => (
