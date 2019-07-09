@@ -85,12 +85,19 @@ body {
   @extend .border, .border-grey, .text-grey, .ml-8, .mt-12, .p-12;
 }
 
-.Profile--Header {
-  background-image: linear-gradient(
-    to right,
-    rgb(38, 109, 177) 33%,
-    rgb(17, 134, 176) 66%,
-    rgb(18, 151, 215)
-  );
-  @extend .py-40;
+/* Utilities CSS classes supporting Semantic UI */
+.p-0 {
+  padding: 0px !important;
+}
+
+.list--header-inline {
+  padding-right: 20px !important;
+  display: inline-block !important;
+}
+
+.micro-button {
+  font-size: 10px !important;
+  margin-left: 2px !important;
+  padding-top: 7px !important;
+  padding-bottom: 7px !important;
 }
