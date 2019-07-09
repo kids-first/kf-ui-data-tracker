@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders AvatarTimeAgo not showing username 1`] = `
+<div>
+  <div
+    class="ui mini basic image label"
+  >
+    <img
+      alt="username"
+      src="https://www.w3schools.com/w3images/avatar6.png"
+    />
+    <time
+      datetime="2019-04-17T16:39:34.000Z"
+      title="2019-04-17T16:39:34+00:00"
+    >
+      6 days ago
+    </time>
+  </div>
+</div>
+`;
+
+exports[`renders AvatarTimeAgo showing username 1`] = `
+<div>
+  <div
+    class="ui tiny image label"
+  >
+    <img
+      alt="username"
+      src="https://www.w3schools.com/w3images/avatar6.png"
+    />
+    username
+    <div
+      class="detail"
+    >
+      <time
+        datetime="2019-04-17T16:39:34.000Z"
+        title="2019-04-17T16:39:34+00:00"
+      >
+        6 days ago
+      </time>
+    </div>
+  </div>
+</div>
+`;
