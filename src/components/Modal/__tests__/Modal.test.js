@@ -11,7 +11,6 @@ it('renders modal with no content, submit is enabled', async () => {
       onCloseModal={() => {}}
       disableSubmit={false}
     />,
-    {container: document.body},
   );
   expect(container).toMatchSnapshot();
 });
@@ -24,7 +23,6 @@ it('renders modal with no content, submit is disabled', async () => {
       onCloseModal={() => {}}
       disableSubmit={true}
     />,
-    {container: document.body},
   );
   expect(container).toMatchSnapshot();
 });
