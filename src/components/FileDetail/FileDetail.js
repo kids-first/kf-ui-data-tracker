@@ -15,7 +15,16 @@ import {
 import DeleteFileMutation from '../../containers/DeleteFileMutation';
 import FileDetailModal from './FileDetailModal';
 import Badge from '../Badge/Badge';
-import {Button, Grid, Segment, Label, Icon, Header} from 'semantic-ui-react';
+import {
+  Button,
+  Grid,
+  Segment,
+  Label,
+  Icon,
+  Header,
+  Popup,
+  Divider,
+} from 'semantic-ui-react';
 
 /**
  * Form to display file details and file versions
@@ -79,13 +88,29 @@ const FileDetail = ({fileNode, history, match}) => {
                       }
                       content="DOWNLOAD"
                     />
-                    <Button
-                      basic
-                      icon="trash alternate"
-                      onClick={e => {
-                        deleteFile({variables: {kfId: fileNode.kfId}});
-                        history.goBack();
-                      }}
+                    <Popup
+                      trigger={<Button basic icon="trash alternate" />}
+                      header="Are you sure?"
+                      content={
+                        <>
+                          This file and all of its versions and history will be
+                          deleted
+                          <Divider />
+                          <Button
+                            data-testid="delete-confirm"
+                            negative
+                            fluid
+                            icon={<Icon name="trash alternate" />}
+                            content="Delete"
+                            onClick={e => {
+                              deleteFile({variables: {kfId: fileNode.kfId}});
+                              history.goBack();
+                            }}
+                          />
+                        </>
+                      }
+                      on="click"
+                      position="top right"
                     />
                   </Button.Group>
                 </Grid.Column>
