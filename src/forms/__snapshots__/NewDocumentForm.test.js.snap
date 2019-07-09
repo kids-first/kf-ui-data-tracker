@@ -44,8 +44,9 @@ Object {
                 type="radio"
                 value="SHM"
               />
-              <div
-                class="SelectElement--Icon"
+              <i
+                aria-hidden="true"
+                class="shipping large bordered circular inverted icon"
               />
               <div>
                 <p
@@ -69,8 +70,9 @@ Object {
                 type="radio"
                 value="CLN"
               />
-              <div
-                class="SelectElement--Icon"
+              <i
+                aria-hidden="true"
+                class="hospital large bordered circular inverted icon"
               />
               <div>
                 <p
@@ -94,8 +96,9 @@ Object {
                 type="radio"
                 value="SEQ"
               />
-              <div
-                class="SelectElement--Icon"
+              <i
+                aria-hidden="true"
+                class="dna large bordered circular inverted icon"
               />
               <div>
                 <p
@@ -119,8 +122,9 @@ Object {
                 type="radio"
                 value="OTH"
               />
-              <div
-                class="SelectElement--Icon"
+              <i
+                aria-hidden="true"
+                class="question large bordered circular inverted icon"
               />
               <div>
                 <p
@@ -209,8 +213,9 @@ Object {
               type="radio"
               value="SHM"
             />
-            <div
-              class="SelectElement--Icon"
+            <i
+              aria-hidden="true"
+              class="shipping large bordered circular inverted icon"
             />
             <div>
               <p
@@ -234,8 +239,9 @@ Object {
               type="radio"
               value="CLN"
             />
-            <div
-              class="SelectElement--Icon"
+            <i
+              aria-hidden="true"
+              class="hospital large bordered circular inverted icon"
             />
             <div>
               <p
@@ -259,8 +265,9 @@ Object {
               type="radio"
               value="SEQ"
             />
-            <div
-              class="SelectElement--Icon"
+            <i
+              aria-hidden="true"
+              class="dna large bordered circular inverted icon"
             />
             <div>
               <p
@@ -284,8 +291,9 @@ Object {
               type="radio"
               value="OTH"
             />
-            <div
-              class="SelectElement--Icon"
+            <i
+              aria-hidden="true"
+              class="question large bordered circular inverted icon"
             />
             <div>
               <p
