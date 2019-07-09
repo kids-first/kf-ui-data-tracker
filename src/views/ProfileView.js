@@ -59,7 +59,7 @@ const ProfileView = ({
   const roles =
     decoded['https://kidsfirstdrc.org/roles'] || decoded.context.roles;
   return (
-    <Container style={{marginTop: '30px'}}>
+    <Container as={Segment} basic vertical>
       <Header as="h3">Your Profile</Header>
       <Segment basic secondary>
         <Grid doubling stackable>
