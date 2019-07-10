@@ -17,14 +17,16 @@ const FileActionButtons = ({
     <Button.Group>
       <Button
         icon="download"
-        onClick={e =>
-          downloadFile(studyId, node.kfId, null, downloadFileMutation)
-        }
+        onClick={e => {
+          e.stopPropagation();
+          downloadFile(studyId, node.kfId, null, downloadFileMutation);
+        }}
       />
       <Popup
         trigger={
           <Button
             data-testid="delete-button"
+            onClick={e => e.stopPropagation()}
             negative
             icon={<Icon name="trash alternate" />}
           />

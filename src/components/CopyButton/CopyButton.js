@@ -27,7 +27,12 @@ const CopyButton = ({text, ...props}) => {
             }, 700);
           }}
         >
-          <Button {...props} icon labelPosition="left">
+          <Button
+            {...props}
+            icon
+            labelPosition="left"
+            onClick={e => e.stopPropagation()}
+          >
             <Icon name="copy" />
             {text}
           </Button>
