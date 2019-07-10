@@ -2,226 +2,234 @@
 
 exports[`renders correctly 1`] = `
 <div>
-  <tr
-    class="FileList--row"
-    data-testid="file-item"
-  >
-    <td
-      class="collapsing single line center aligned"
-    >
-      <div
-        class="ui orange tiny basic label"
+  <table>
+    <tbody>
+      <tr
+        class="FileList--row"
+        data-testid="file-item"
       >
-        Pending Review
-      </div>
-    </td>
-    <td
-      class=""
-    >
-      <span
-        class="ui medium header"
-      >
-        organization.jpeg
-      </span>
-      <p
-        style="text-overflow: ellipsis; overflow: hidden;"
-      >
-        Month necessary animal end standard case. View system operation message decade. Actually sing becaus...
-      </p>
-      <div
-        class="ui bulleted horizontal list"
-        role="list"
-      >
-        <div
-          class="item"
-          role="listitem"
-        >
-          <button
-            class="ui mini basic icon left labeled button"
-          >
-            <i
-              aria-hidden="true"
-              class="copy icon"
-            />
-            SF_5ZPEM167
-          </button>
-        </div>
-        <div
-          class="item"
-          role="listitem"
+        <td
+          class="collapsing single line center aligned"
         >
           <div
-            class="description"
+            class="ui orange tiny basic label"
           >
-            Created 
-            <time
-              datetime="2018-09-27T05:32:26.000Z"
-              title="2018-09-27T05:32:26+00:00"
+            Pending Review
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <span
+            class="ui medium header"
+          >
+            organization.jpeg
+          </span>
+          <p
+            style="text-overflow: ellipsis; overflow: hidden;"
+          >
+            Month necessary animal end standard case. View system operation message decade. Actually sing becaus...
+          </p>
+          <div
+            class="ui bulleted horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
             >
-              7 months ago
-            </time>
+              <button
+                class="ui mini basic icon left labeled button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="copy icon"
+                />
+                SF_5ZPEM167
+              </button>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                Created 
+                <time
+                  datetime="2018-09-27T05:32:26.000Z"
+                  title="2018-09-27T05:32:26+00:00"
+                >
+                  7 months ago
+                </time>
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                5.5 kB
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="hospital icon"
+              />
+               Clinical/Phenotype Data
+            </div>
           </div>
-        </div>
-        <div
-          class="item"
-          role="listitem"
+        </td>
+        <td
+          class="center aligned"
         >
           <div
-            class="description"
+            class="ui mini vertical buttons"
           >
-            5.5 kB
+            <button
+              class="ui basic icon button"
+            >
+              <i
+                aria-hidden="true"
+                class="download icon"
+              />
+            </button>
+            <button
+              class="ui basic icon button"
+              data-testid="delete-button"
+            >
+              <i
+                aria-hidden="true"
+                class="trash alternate icon"
+              />
+            </button>
           </div>
-        </div>
-        <div
-          class="item"
-          role="listitem"
-        >
-          <i
-            aria-hidden="true"
-            class="hospital icon"
-          />
-           Clinical/Phenotype Data
-        </div>
-      </div>
-    </td>
-    <td
-      class="center aligned"
-    >
-      <div
-        class="ui mini vertical buttons"
-      >
-        <button
-          class="ui basic icon button"
-        >
-          <i
-            aria-hidden="true"
-            class="download icon"
-          />
-        </button>
-        <button
-          class="ui basic icon button"
-          data-testid="delete-button"
-        >
-          <i
-            aria-hidden="true"
-            class="trash alternate icon"
-          />
-        </button>
-      </div>
-    </td>
-  </tr>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 `;
 
 exports[`renders loading state 1`] = `
 <div>
-  <tr
-    class="FileList--row"
-    data-testid="file-item"
-  >
-    <td
-      class="collapsing single line center aligned"
-    >
-      <div
-        class="ui orange tiny basic label"
+  <table>
+    <tbody>
+      <tr
+        class="FileList--row"
+        data-testid="file-item"
       >
-        Pending Review
-      </div>
-    </td>
-    <td
-      class=""
-    >
-      <span
-        class="ui medium header"
-      >
-        organization.jpeg
-      </span>
-      <p
-        style="text-overflow: ellipsis; overflow: hidden;"
-      >
-        Month necessary animal end standard case. View system operation message decade. Actually sing becaus...
-      </p>
-      <div
-        class="ui bulleted horizontal list"
-        role="list"
-      >
-        <div
-          class="item"
-          role="listitem"
-        >
-          <button
-            class="ui mini basic icon left labeled button"
-          >
-            <i
-              aria-hidden="true"
-              class="copy icon"
-            />
-            SF_5ZPEM167
-          </button>
-        </div>
-        <div
-          class="item"
-          role="listitem"
+        <td
+          class="collapsing single line center aligned"
         >
           <div
-            class="description"
+            class="ui orange tiny basic label"
           >
-            Created 
-            <time
-              datetime="2018-09-27T05:32:26.000Z"
-              title="2018-09-27T05:32:26+00:00"
+            Pending Review
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <span
+            class="ui medium header"
+          >
+            organization.jpeg
+          </span>
+          <p
+            style="text-overflow: ellipsis; overflow: hidden;"
+          >
+            Month necessary animal end standard case. View system operation message decade. Actually sing becaus...
+          </p>
+          <div
+            class="ui bulleted horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
             >
-              7 months ago
-            </time>
+              <button
+                class="ui mini basic icon left labeled button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="copy icon"
+                />
+                SF_5ZPEM167
+              </button>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                Created 
+                <time
+                  datetime="2018-09-27T05:32:26.000Z"
+                  title="2018-09-27T05:32:26+00:00"
+                >
+                  7 months ago
+                </time>
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                5.5 kB
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="hospital icon"
+              />
+               Clinical/Phenotype Data
+            </div>
           </div>
-        </div>
-        <div
-          class="item"
-          role="listitem"
+        </td>
+        <td
+          class="center aligned"
         >
           <div
-            class="description"
+            class="ui mini vertical buttons"
           >
-            5.5 kB
+            <button
+              class="ui basic icon button"
+            >
+              <i
+                aria-hidden="true"
+                class="download icon"
+              />
+            </button>
+            <button
+              class="ui basic icon button"
+              data-testid="delete-button"
+            >
+              <i
+                aria-hidden="true"
+                class="trash alternate icon"
+              />
+            </button>
           </div>
-        </div>
-        <div
-          class="item"
-          role="listitem"
-        >
-          <i
-            aria-hidden="true"
-            class="hospital icon"
-          />
-           Clinical/Phenotype Data
-        </div>
-      </div>
-    </td>
-    <td
-      class="center aligned"
-    >
-      <div
-        class="ui mini vertical buttons"
-      >
-        <button
-          class="ui basic icon button"
-        >
-          <i
-            aria-hidden="true"
-            class="download icon"
-          />
-        </button>
-        <button
-          class="ui basic icon button"
-          data-testid="delete-button"
-        >
-          <i
-            aria-hidden="true"
-            class="trash alternate icon"
-          />
-        </button>
-      </div>
-    </td>
-  </tr>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 `;
