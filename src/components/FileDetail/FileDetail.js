@@ -129,7 +129,7 @@ const FileDetail = ({fileNode, history, match}) => {
                     Document Type
                   </Header>
                   <span>
-                    <Label icon basic size="tiny">
+                    <Label basic size="tiny">
                       <Icon
                         name={`${fileTypeDetail[fileNode.fileType].icon}`}
                       />
