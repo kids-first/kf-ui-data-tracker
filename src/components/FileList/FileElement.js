@@ -115,7 +115,7 @@ const FileElement = ({fileNode, loading, history, match, fileListId}) => {
         </p>
         <Responsive
           as={FileAttributes}
-          minWidth={Responsive.onlyTablet.maxWidth}
+          minWidth={Responsive.onlyTablet.minWidth}
           fileKfID={fileKfID}
           latestDate={latestDate}
           fileSize={fileSize}
@@ -124,7 +124,7 @@ const FileElement = ({fileNode, loading, history, match, fileListId}) => {
         />
         <Responsive
           as={FileAttributes}
-          maxWidth={Responsive.onlyTablet.maxWidth}
+          maxWidth={Responsive.onlyTablet.minWidth}
           fileKfID={fileKfID}
           latestDate={latestDate}
           fileSize={fileSize}
@@ -132,10 +132,22 @@ const FileElement = ({fileNode, loading, history, match, fileListId}) => {
           horizontal={false}
         />
       </Table.Cell>
-      <Table.Cell collapsing textAlign="right">
-        <FileActionsContainer
+      <Table.Cell textAlign="center">
+        <Responsive
+          as={FileActionsContainer}
+          minWidth={Responsive.onlyTablet.minWidth}
           node={fileNode}
           studyId={fileListId}
+          vertical={true}
+          fluid={false}
+        />
+        <Responsive
+          as={FileActionsContainer}
+          maxWidth={Responsive.onlyTablet.minWidth}
+          node={fileNode}
+          studyId={fileListId}
+          vertical={false}
+          fluid={true}
         />
       </Table.Cell>
     </Table.Row>
