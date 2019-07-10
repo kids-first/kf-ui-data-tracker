@@ -12,20 +12,25 @@ const FileActionButtons = ({
   studyId,
   downloadFileMutation,
   deleteFile,
+  vertical = true,
+  fluid = false,
 }) => {
   return (
-    <Button.Group>
+    <Button.Group vertical={vertical} fluid={fluid} size="mini">
       <Button
+        basic
         icon="download"
-        onClick={e =>
-          downloadFile(studyId, node.kfId, null, downloadFileMutation)
-        }
+        onClick={e => {
+          e.stopPropagation();
+          downloadFile(studyId, node.kfId, null, downloadFileMutation);
+        }}
       />
       <Popup
         trigger={
           <Button
+            basic
             data-testid="delete-button"
-            negative
+            onClick={e => e.stopPropagation()}
             icon={<Icon name="trash alternate" />}
           />
         }
@@ -40,7 +45,10 @@ const FileActionButtons = ({
               fluid
               icon={<Icon name="trash alternate" />}
               content="Delete"
-              onClick={e => deleteFile({variables: {kfId: node.kfId}})}
+              onClick={e => {
+                e.stopPropagation();
+                deleteFile({variables: {kfId: node.kfId}});
+              }}
             />
           </>
         }
@@ -64,6 +72,10 @@ FileActionButtons.propTypes = {
   deleteFile: PropTypes.func,
   /** Action to download a file */
   downloadFile: PropTypes.func,
+  /** Whether the buttons should be grouped vertically or not */
+  vertical: PropTypes.bool,
+  /** Whether the buttons should fill their container or not */
+  fluid: PropTypes.bool,
 };
 
 export default FileActionButtons;

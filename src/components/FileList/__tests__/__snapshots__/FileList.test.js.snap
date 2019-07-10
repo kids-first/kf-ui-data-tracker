@@ -3,13 +3,13 @@
 exports[`renders with files 1`] = `
 <div>
   <table
-    class="ui stackable very basic very compact table"
+    class="ui selectable stackable very basic very compact table"
   >
     <tbody
       class=""
     >
       <tr
-        class=""
+        class="FileList--row"
         data-testid="file-item"
       >
         <td
@@ -24,21 +24,16 @@ exports[`renders with files 1`] = `
         <td
           class=""
         >
-          <a
-            href="/study/undefined/documents/SF_FPVBM0JF"
-            style="display: block; width: 100%;"
+          <span
+            class="ui medium header"
           >
-            <span
-              class="ui medium header"
-            >
-              force.webm
-            </span>
-            <p
-              style="text-overflow: ellipsis; overflow: hidden;"
-            >
-              Safe always adult sometimes. Enter full agree still son expect write. According small hold someone.
-            </p>
-          </a>
+            force.webm
+          </span>
+          <p
+            style="text-overflow: ellipsis; overflow: hidden;"
+          >
+            Safe always adult sometimes. Enter full agree still son expect write. According small hold someone.
+          </p>
           <div
             class="ui bulleted horizontal list"
             role="list"
@@ -96,13 +91,13 @@ exports[`renders with files 1`] = `
           </div>
         </td>
         <td
-          class="collapsing right aligned"
+          class="center aligned"
         >
           <div
-            class="ui buttons"
+            class="ui mini vertical buttons"
           >
             <button
-              class="ui icon button"
+              class="ui basic icon button"
             >
               <i
                 aria-hidden="true"
@@ -110,7 +105,7 @@ exports[`renders with files 1`] = `
               />
             </button>
             <button
-              class="ui icon negative button"
+              class="ui basic icon button"
               data-testid="delete-button"
             >
               <i
@@ -122,7 +117,7 @@ exports[`renders with files 1`] = `
         </td>
       </tr>
       <tr
-        class=""
+        class="FileList--row"
         data-testid="file-item"
       >
         <td
@@ -137,21 +132,16 @@ exports[`renders with files 1`] = `
         <td
           class=""
         >
-          <a
-            href="/study/undefined/documents/SF_DLXEQZV1"
-            style="display: block; width: 100%;"
+          <span
+            class="ui medium header"
           >
-            <span
-              class="ui medium header"
-            >
-              those.wav
-            </span>
-            <p
-              style="text-overflow: ellipsis; overflow: hidden;"
-            >
-              Feel industry quality direction resource truth. Affect green yard various play character simply rema...
-            </p>
-          </a>
+            those.wav
+          </span>
+          <p
+            style="text-overflow: ellipsis; overflow: hidden;"
+          >
+            Feel industry quality direction resource truth. Affect green yard various play character simply rema...
+          </p>
           <div
             class="ui bulleted horizontal list"
             role="list"
@@ -209,13 +199,13 @@ exports[`renders with files 1`] = `
           </div>
         </td>
         <td
-          class="collapsing right aligned"
+          class="center aligned"
         >
           <div
-            class="ui buttons"
+            class="ui mini vertical buttons"
           >
             <button
-              class="ui icon button"
+              class="ui basic icon button"
             >
               <i
                 aria-hidden="true"
@@ -223,7 +213,7 @@ exports[`renders with files 1`] = `
               />
             </button>
             <button
-              class="ui icon negative button"
+              class="ui basic icon button"
               data-testid="delete-button"
             >
               <i
@@ -235,7 +225,7 @@ exports[`renders with files 1`] = `
         </td>
       </tr>
       <tr
-        class=""
+        class="FileList--row"
         data-testid="file-item"
       >
         <td
@@ -250,21 +240,16 @@ exports[`renders with files 1`] = `
         <td
           class=""
         >
-          <a
-            href="/study/undefined/documents/SF_6JBSGVWE"
-            style="display: block; width: 100%;"
+          <span
+            class="ui medium header"
           >
-            <span
-              class="ui medium header"
-            >
-              hand.css
-            </span>
-            <p
-              style="text-overflow: ellipsis; overflow: hidden;"
-            >
-              This democratic analysis car here likely. Protect speech exactly three order different wife.
-            </p>
-          </a>
+            hand.css
+          </span>
+          <p
+            style="text-overflow: ellipsis; overflow: hidden;"
+          >
+            This democratic analysis car here likely. Protect speech exactly three order different wife.
+          </p>
           <div
             class="ui bulleted horizontal list"
             role="list"
@@ -322,13 +307,13 @@ exports[`renders with files 1`] = `
           </div>
         </td>
         <td
-          class="collapsing right aligned"
+          class="center aligned"
         >
           <div
-            class="ui buttons"
+            class="ui mini vertical buttons"
           >
             <button
-              class="ui icon button"
+              class="ui basic icon button"
             >
               <i
                 aria-hidden="true"
@@ -336,7 +321,7 @@ exports[`renders with files 1`] = `
               />
             </button>
             <button
-              class="ui icon negative button"
+              class="ui basic icon button"
               data-testid="delete-button"
             >
               <i
@@ -348,7 +333,7 @@ exports[`renders with files 1`] = `
         </td>
       </tr>
       <tr
-        class=""
+        class="FileList--row"
         data-testid="file-item"
       >
         <td
@@ -363,21 +348,16 @@ exports[`renders with files 1`] = `
         <td
           class=""
         >
-          <a
-            href="/study/undefined/documents/SF_JT0GRZP7"
-            style="display: block; width: 100%;"
+          <span
+            class="ui medium header"
           >
-            <span
-              class="ui medium header"
-            >
-              pattern.flac
-            </span>
-            <p
-              style="text-overflow: ellipsis; overflow: hidden;"
-            >
-              Shoulder body answer especially large big risk its. Sort fly note field fish. Network him identify r...
-            </p>
-          </a>
+            pattern.flac
+          </span>
+          <p
+            style="text-overflow: ellipsis; overflow: hidden;"
+          >
+            Shoulder body answer especially large big risk its. Sort fly note field fish. Network him identify r...
+          </p>
           <div
             class="ui bulleted horizontal list"
             role="list"
@@ -435,13 +415,13 @@ exports[`renders with files 1`] = `
           </div>
         </td>
         <td
-          class="collapsing right aligned"
+          class="center aligned"
         >
           <div
-            class="ui buttons"
+            class="ui mini vertical buttons"
           >
             <button
-              class="ui icon button"
+              class="ui basic icon button"
             >
               <i
                 aria-hidden="true"
@@ -449,7 +429,7 @@ exports[`renders with files 1`] = `
               />
             </button>
             <button
-              class="ui icon negative button"
+              class="ui basic icon button"
               data-testid="delete-button"
             >
               <i
@@ -461,7 +441,7 @@ exports[`renders with files 1`] = `
         </td>
       </tr>
       <tr
-        class=""
+        class="FileList--row"
         data-testid="file-item"
       >
         <td
@@ -476,19 +456,14 @@ exports[`renders with files 1`] = `
         <td
           class=""
         >
-          <a
-            href="/study/undefined/documents/SF_16QY2ZXM"
-            style="display: block; width: 100%;"
+          <span
+            class="ui medium header"
           >
-            <span
-              class="ui medium header"
-            >
-              6.jpg
-            </span>
-            <p
-              style="text-overflow: ellipsis; overflow: hidden;"
-            />
-          </a>
+            6.jpg
+          </span>
+          <p
+            style="text-overflow: ellipsis; overflow: hidden;"
+          />
           <div
             class="ui bulleted horizontal list"
             role="list"
@@ -546,13 +521,13 @@ exports[`renders with files 1`] = `
           </div>
         </td>
         <td
-          class="collapsing right aligned"
+          class="center aligned"
         >
           <div
-            class="ui buttons"
+            class="ui mini vertical buttons"
           >
             <button
-              class="ui icon button"
+              class="ui basic icon button"
             >
               <i
                 aria-hidden="true"
@@ -560,7 +535,7 @@ exports[`renders with files 1`] = `
               />
             </button>
             <button
-              class="ui icon negative button"
+              class="ui basic icon button"
               data-testid="delete-button"
             >
               <i

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {withRouter, Link} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 import TimeAgo from 'react-timeago';
 import Badge from '../Badge/Badge';
 import {Header, Table, Icon, List, Responsive} from 'semantic-ui-react';
@@ -68,7 +68,7 @@ FileAttributes.defaultProps = {
 /**
  * Displays unordered study files in list view
  */
-const FileElement = ({fileNode, loading, match, fileListId}) => {
+const FileElement = ({fileNode, loading, history, match, fileListId}) => {
   const fileKfID = fileNode.kfId || 'unknown ID';
   const fileName = fileNode.name || 'unknown file name';
   const fileDescription = fileNode.description || null;
@@ -80,7 +80,13 @@ const FileElement = ({fileNode, loading, match, fileListId}) => {
       ? fileTypeDetail[fileNode.fileType]
       : {title: 'unknown', icon: 'question'};
   return (
-    <Table.Row data-testid="file-item">
+    <Table.Row
+      data-testid="file-item"
+      className="FileList--row"
+      onClick={() =>
+        history.push(`/study/${match.params.kfId}/documents/${fileKfID}`)
+      }
+    >
       <Table.Cell singleLine collapsing textAlign="center">
         <Badge
           state={
@@ -90,31 +96,26 @@ const FileElement = ({fileNode, loading, match, fileListId}) => {
         />
       </Table.Cell>
       <Table.Cell>
-        <Link
-          style={{display: 'block', width: '100%'}}
-          to={`/study/${match.params.kfId}/documents/${fileKfID}`}
+        <Header size="medium" as="span">
+          {fileName}
+        </Header>
+        <p
+          style={{
+            textOverflow: 'ellipsis',
+            overflow: 'hidden',
+          }}
         >
-          <Header size="medium" as="span">
-            {fileName}
-          </Header>
-          <p
-            style={{
-              textOverflow: 'ellipsis',
-              overflow: 'hidden',
-            }}
-          >
-            {fileDescription ? (
-              <>
-                {fileDescription.length > 100
-                  ? fileDescription.substring(0, 100) + '...'
-                  : fileDescription}
-              </>
-            ) : null}
-          </p>
-        </Link>
+          {fileDescription ? (
+            <>
+              {fileDescription.length > 100
+                ? fileDescription.substring(0, 100) + '...'
+                : fileDescription}
+            </>
+          ) : null}
+        </p>
         <Responsive
           as={FileAttributes}
-          minWidth={Responsive.onlyTablet.maxWidth}
+          minWidth={Responsive.onlyTablet.minWidth}
           fileKfID={fileKfID}
           latestDate={latestDate}
           fileSize={fileSize}
@@ -123,7 +124,7 @@ const FileElement = ({fileNode, loading, match, fileListId}) => {
         />
         <Responsive
           as={FileAttributes}
-          maxWidth={Responsive.onlyTablet.maxWidth}
+          maxWidth={Responsive.onlyTablet.minWidth}
           fileKfID={fileKfID}
           latestDate={latestDate}
           fileSize={fileSize}
@@ -131,8 +132,23 @@ const FileElement = ({fileNode, loading, match, fileListId}) => {
           horizontal={false}
         />
       </Table.Cell>
-      <Table.Cell collapsing textAlign="right">
-        <FileActionsContainer node={fileNode} studyId={fileListId} />
+      <Table.Cell textAlign="center">
+        <Responsive
+          as={FileActionsContainer}
+          minWidth={Responsive.onlyTablet.minWidth}
+          node={fileNode}
+          studyId={fileListId}
+          vertical={true}
+          fluid={false}
+        />
+        <Responsive
+          as={FileActionsContainer}
+          maxWidth={Responsive.onlyTablet.minWidth}
+          node={fileNode}
+          studyId={fileListId}
+          vertical={false}
+          fluid={true}
+        />
       </Table.Cell>
     </Table.Row>
   );
