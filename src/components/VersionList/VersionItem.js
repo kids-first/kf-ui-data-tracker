@@ -28,15 +28,10 @@ const VersionItem = ({
   return (
     <Mutation mutation={FILE_DOWNLOAD_URL}>
       {downloadFileMutation => (
-        <List.Item>
+        <List.Item onClick={e => onNameClick(versionNode, index)}>
           <List.Icon name="circle" color={labelColor} verticalAlign="middle" />
           <List.Content>
-            <Header
-              size="tiny"
-              as="button"
-              onClick={e => onNameClick(versionNode, index)}
-              className="list--header-inline"
-            >
+            <Header size="tiny" as="button" className="list--header-inline">
               {versionNode.fileName}
             </Header>
             {index === 0 && (
@@ -53,14 +48,15 @@ const VersionItem = ({
               basic
               size="mini"
               as="button"
-              onClick={e =>
+              onClick={e => {
+                e.stopPropagation();
                 downloadFile(
                   studyId,
                   fileId,
                   versionNode.kfId,
                   downloadFileMutation,
-                )
-              }
+                );
+              }}
             >
               <Icon name="download" />
               {size}
