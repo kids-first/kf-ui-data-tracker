@@ -12,10 +12,14 @@ it('renders correctly', () => {
   const tree = render(
     <MockedProvider mocks={mocks}>
       <MemoryRouter>
-        <FileElement
-          fileListId={studyByKfId.data.studyByKfId.kfId}
-          fileNode={file}
-        />
+        <table>
+          <tbody>
+            <FileElement
+              fileListId={studyByKfId.data.studyByKfId.kfId}
+              fileNode={file}
+            />
+          </tbody>
+        </table>
       </MemoryRouter>
     </MockedProvider>,
   );
@@ -27,11 +31,15 @@ it('renders loading state', () => {
   const tree = render(
     <MockedProvider mocks={mocks}>
       <MemoryRouter>
-        <FileElement
-          loading={true}
-          fileNode={file}
-          fileListId={studyByKfId.data.studyByKfId.kfId}
-        />
+        <table>
+          <tbody>
+            <FileElement
+              loading={true}
+              fileNode={file}
+              fileListId={studyByKfId.data.studyByKfId.kfId}
+            />
+          </tbody>
+        </table>
       </MemoryRouter>
     </MockedProvider>,
   );
