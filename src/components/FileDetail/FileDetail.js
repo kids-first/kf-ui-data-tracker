@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 import {withRouter, Link} from 'react-router-dom';
 import {Mutation} from 'react-apollo';
 import {FILE_DOWNLOAD_URL} from '../../state/mutations';
-import TimeAgo from 'react-timeago';
-import {Button, Icon, GridContainer, Avatar} from 'kf-uikit';
-import Badge from '../Badge/Badge';
+import AvatarTimeAgo from '../AvatarTimeAgo/AvatarTimeAgo';
 import VersionList from '../VersionList/VersionList';
 import {
   fileTypeDetail,
@@ -16,7 +14,18 @@ import {
 } from '../../common/fileUtils';
 import DeleteFileMutation from '../../containers/DeleteFileMutation';
 import FileDetailModal from './FileDetailModal';
-import SvgIcon from '../Icon/Icon';
+import Badge from '../Badge/Badge';
+import {
+  Button,
+  Grid,
+  Segment,
+  Label,
+  Icon,
+  Header,
+  Popup,
+  Divider,
+} from 'semantic-ui-react';
+
 /**
  * Form to display file details and file versions
  */
@@ -32,131 +41,153 @@ const FileDetail = ({fileNode, history, match}) => {
       {downloadFileMutation => (
         <DeleteFileMutation studyId={studyId}>
           {(deleteFile, {loading, error}) => (
-            <GridContainer>
-              <Link
-                to={`/study/${match.params.kfId}/documents`}
-                className="BackButton"
-                data-testid="back-to-filelist"
-              >
-                Back to All Documents
-              </Link>
-              <h3 className="FileTitle font-body font-black row-2 cell-12 lg:cell-10 md:cell-9 ">
-                {fileNode.name}
-              </h3>
-              <div className="md:row-3 lg:cell-10 md:cell-9 cell-12">
-                <GridContainer>
-                  <div className="cell-6 sm:cell-3">
-                    <p className="FileInfo--Title">Status:</p>
-                    <Badge state={sortedVersions[0].node.state} />
-                  </div>
-                  <div className="cell-6 sm:cell-3">
-                    <p className="FileInfo--Title">Document Type:</p>
-                    <div className="flex">
-                      <div className="FileInfo--Icon">
-                        <SvgIcon
-                          kind={fileTypeDetail[fileNode.fileType].icon}
-                          width="24"
-                          height="24"
-                        />
-                      </div>
-                      <p className="FileInfo--Text">
-                        {fileTypeDetail[fileNode.fileType].title}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="cell-6 sm:cell-3">
-                    <p className="FileInfo--Title">Last Updated:</p>
-                    {latestDate ? (
-                      <div className="flex">
-                        <p className="FileInfo--Text">
-                          <TimeAgo
-                            date={latestDate}
-                            live={false}
-                            className="mr-4"
+            <Grid>
+              <Grid.Row>
+                <Grid.Column>
+                  <Link
+                    to={`/study/${match.params.kfId}/documents`}
+                    data-testid="back-to-filelist"
+                  >
+                    <Button
+                      basic
+                      size="mini"
+                      labelPosition="left"
+                      floated="left"
+                    >
+                      <Icon name="arrow left" />
+                      All Documents
+                    </Button>
+                  </Link>
+                </Grid.Column>
+              </Grid.Row>
+              <Grid.Row>
+                <Grid.Column mobile={16} tablet={16} computer={12}>
+                  <Header as="h3" size="medium" color="blue">
+                    {fileNode.name}
+                  </Header>
+                </Grid.Column>
+                <Grid.Column mobile={16} tablet={16} computer={4}>
+                  <Button.Group size="mini">
+                    <Button
+                      basic
+                      icon="pencil"
+                      onClick={() => setDialog('annotation')}
+                      data-testid="edit-button"
+                      content="EDIT"
+                    />
+                    <Button
+                      primary
+                      icon="download"
+                      onClick={e =>
+                        downloadFile(
+                          studyId,
+                          fileNode.kfId,
+                          null,
+                          downloadFileMutation,
+                        )
+                      }
+                      content="DOWNLOAD"
+                    />
+                    <Popup
+                      trigger={<Button basic icon="trash alternate" />}
+                      header="Are you sure?"
+                      content={
+                        <>
+                          This file and all of its versions and history will be
+                          deleted
+                          <Divider />
+                          <Button
+                            data-testid="delete-confirm"
+                            negative
+                            fluid
+                            icon={<Icon name="trash alternate" />}
+                            content="Delete"
+                            onClick={e => {
+                              deleteFile({variables: {kfId: fileNode.kfId}});
+                              history.goBack();
+                            }}
                           />
-                          by
-                        </p>
-                        <Avatar
-                          className="inline-block ml-4 mt-4"
-                          size={20}
-                          imgUrl={
-                            fileNode.creator
-                              ? fileNode.creator.picture
-                              : 'https://www.w3schools.com/css/img_avatar.png'
-                          }
-                          userName={
-                            fileNode.creator && fileNode.creator.username
-                          }
-                          userEmail={fileNode.creator && fileNode.creator.email}
-                        />
-                      </div>
-                    ) : (
-                      <p className="FileInfo--Text">Unknown</p>
-                    )}
-                  </div>
-                  <div className="cell-6 sm:cell-3">
-                    <p className="FileInfo--Title">Size:</p>
-                    <p className="FileInfo--Text">{latestSize}</p>
-                  </div>
-                </GridContainer>
-              </div>
-              <div className="row-3 lg:cell-2 md:cell-3 cell-12 flex flex-row items-start h-full w-full justify-start flex-wrap">
-                <Button
-                  type="button"
-                  icon="edit"
-                  onClick={() => setDialog('annotation')}
-                  data-testid="edit-button"
-                >
-                  EDIT
-                </Button>
-                <button
-                  className="hidden sm:inline-block text-grey test-xs font-light underline ml-12 my-4"
-                  onClick={e => {
-                    deleteFile({variables: {kfId: fileNode.kfId}});
-                    history.goBack();
-                  }}
-                >
-                  <Icon className="mr-4" width={10} height={10} kind="delete" />
-                  <span>Delete</span>
-                </button>
-                <Button
-                  type="button"
-                  icon="download"
-                  color="primary"
-                  onClick={e =>
-                    downloadFile(
-                      studyId,
-                      fileNode.kfId,
-                      null,
-                      downloadFileMutation,
-                    )
-                  }
-                  className="mx-12 md:mt-12 lg:mx-0 lg:w-full"
-                >
-                  DOWNLOAD
-                </Button>
-              </div>
-              <div className="cell-12 lg:cell-10 md:cell-9 md:h-full">
-                <p className="FileInfo--Title">Description:</p>
-                {fileNode.description ? (
-                  <p className="FileInfo--Text md:mr-0 h-full">
-                    {fileNode.description}
+                        </>
+                      }
+                      on="click"
+                      position="top right"
+                    />
+                  </Button.Group>
+                </Grid.Column>
+              </Grid.Row>
+              <Grid.Row stretched>
+                <Grid.Column mobile={8} tablet={8} computer={4}>
+                  <Header as="h4" sub>
+                    Status
+                  </Header>
+                  <span>
+                    <Badge state={sortedVersions[0].node.state} />
+                  </span>
+                </Grid.Column>
+                <Grid.Column mobile={8} tablet={8} computer={4}>
+                  <Header as="h4" sub>
+                    Document Type
+                  </Header>
+                  <span>
+                    <Label icon basic size="tiny">
+                      <Icon
+                        name={`${fileTypeDetail[fileNode.fileType].icon}`}
+                      />
+                      {' ' + fileTypeDetail[fileNode.fileType].title}
+                    </Label>
+                  </span>
+                </Grid.Column>
+                <Grid.Column mobile={8} tablet={8} computer={4}>
+                  <Header as="h4" sub>
+                    Last Updated
+                  </Header>
+                  <span>
+                    <AvatarTimeAgo
+                      size="tiny"
+                      showUsername
+                      creator={fileNode.creator}
+                      createdAt={latestDate}
+                    />
+                  </span>
+                </Grid.Column>
+                <Grid.Column mobile={8} tablet={8} computer={4}>
+                  <Header as="h4" sub>
+                    Size
+                  </Header>
+                  <span>
+                    <Label basic size="tiny">
+                      {latestSize}
+                    </Label>
+                  </span>
+                </Grid.Column>
+              </Grid.Row>
+              <Grid.Row>
+                <Grid.Column mobile={16} tablet={16} computer={12}>
+                  <Header as="h4" sub>
+                    Description
+                  </Header>
+                  <p>
+                    <small>
+                      {fileNode.description || 'No description added...'}
+                    </small>
                   </p>
-                ) : (
-                  <p className="FileInfo--Text md:mr-0 text-mediumGrey">
-                    No description added...
-                  </p>
-                )}
-              </div>
-              <VersionList
-                studyId={studyId}
-                fileNode={fileNode}
-                onUploadClick={() => setDialog('upload')}
-                onNameClick={(versionNode, index) => {
-                  setDialog('versionInfo');
-                  setOpenVersion({version: versionNode, index: index});
-                }}
-              />
+                </Grid.Column>
+              </Grid.Row>
+              <Grid.Row>
+                <Grid.Column mobile={16} tablet={16} computer={12}>
+                  <Segment className="p-0">
+                    <VersionList
+                      studyId={studyId}
+                      fileNode={fileNode}
+                      onUploadClick={() => setDialog('upload')}
+                      onNameClick={(versionNode, index) => {
+                        setDialog('versionInfo');
+                        setOpenVersion({version: versionNode, index: index});
+                      }}
+                    />
+                  </Segment>
+                </Grid.Column>
+              </Grid.Row>
               {dialog !== false && (
                 <FileDetailModal
                   match={match}
@@ -169,7 +200,7 @@ const FileDetail = ({fileNode, history, match}) => {
                   downloadFileMutation={downloadFileMutation}
                 />
               )}
-            </GridContainer>
+            </Grid>
           )}
         </DeleteFileMutation>
       )}
