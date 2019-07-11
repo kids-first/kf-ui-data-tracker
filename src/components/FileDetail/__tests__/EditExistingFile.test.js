@@ -61,7 +61,7 @@ it('edits an existing file correctly', async () => {
   await wait();
 
   // Update approval status from 'Pending Review' to 'Approved'
-  fireEvent.click(tree.getByTestId('status-dropdown'));
+  fireEvent.click(tree.getByText(/Pending Review/));
   await wait();
   fireEvent.click(tree.getByText(/Approved/));
   await wait();
