@@ -17,7 +17,14 @@ const FileDetailContainer = ({kfId, history, match}) => {
             </Dimmer>
           );
         if (error)
-          return <Message error size="large" header="Error!" content={error} />;
+          return (
+            <Message
+              negative
+              icon="warning circle"
+              header="Error"
+              content={error.message}
+            />
+          );
         return (
           <Mutation
             mutation={UPDATE_FILE}
