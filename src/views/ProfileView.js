@@ -44,7 +44,18 @@ const ProfileView = ({
   };
 
   if (loading) return <span>Loading...</span>;
-  if (error) return <span>{error.message}</span>;
+  if (error)
+    return (
+      <Container as={Segment} basic>
+        <Header as="h3">Your Profile</Header>
+        <Message
+          negative
+          icon="warning circle"
+          header="Error"
+          content={error.message}
+        />
+      </Container>
+    );
 
   const fields = {
     username: 'Username',
