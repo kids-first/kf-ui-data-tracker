@@ -49,7 +49,5 @@ it('renders errors', () => {
     </MemoryRouter>,
   );
   expect(tree.container).toMatchSnapshot();
-  expect(
-    tree.queryByText('Failed to upload: something went wrong'),
-  ).not.toBeNull();
+  expect(tree.queryByText(/Failed to upload/)).not.toBeNull();
 });

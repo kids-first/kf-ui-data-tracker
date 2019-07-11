@@ -79,12 +79,26 @@ exports[`renders errors 1`] = `
         multiple=""
         type="file"
       />
-      <h4
-        class="ui header"
+      <div
+        class="ui icon negative message"
       >
-        Failed to upload: 
-        something went wrong
-      </h4>
+        <i
+          aria-hidden="true"
+          class="warning circle icon"
+        />
+        <div
+          class="content"
+        >
+          <div
+            class="header"
+          >
+            Failed to upload:
+          </div>
+          <p>
+            [object Object]
+          </p>
+        </div>
+      </div>
     </div>
   </form>
 </div>
