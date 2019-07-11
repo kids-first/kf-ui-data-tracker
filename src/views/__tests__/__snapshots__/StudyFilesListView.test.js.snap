@@ -469,23 +469,27 @@ exports[`renders correctly 1`] = `
 exports[`shows an error 1`] = `
 <div>
   <div
-    class="ui icon negative message"
+    class="ui basic segment ui container"
   >
-    <i
-      aria-hidden="true"
-      class="warning circle icon"
-    />
     <div
-      class="content"
+      class="ui icon negative message"
     >
+      <i
+        aria-hidden="true"
+        class="warning circle icon"
+      />
       <div
-        class="header"
+        class="content"
       >
-        Error
+        <div
+          class="header"
+        >
+          Error
+        </div>
+        <p>
+          Network error: something went wrong
+        </p>
       </div>
-      <p>
-        Network error: something went wrong
-      </p>
     </div>
   </div>
 </div>
