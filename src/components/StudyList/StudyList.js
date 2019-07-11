@@ -60,7 +60,11 @@ const StudyList = ({studyList, loading, activeView = 'grid'}) => {
           {view === 'grid' ? (
             <StudyGrid loading={loading} studyList={studyList} />
           ) : (
-            <StudyTable loading={loading} studyList={studyList} />
+            <StudyTable
+              loading={loading}
+              studyList={studyList}
+              exclude={['createdAt', 'modifiedAt']}
+            />
           )}
         </Grid.Column>
       </Grid.Row>
