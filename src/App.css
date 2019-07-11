@@ -19,6 +19,9 @@ body {
   height: 100vh;
   background-image: linear-gradient(to bottom, #fff 400px, transparent 100%),
     url(./assets/background-science.jpg);
+    .center.column{
+      min-width: 300px !important;
+    }
 }
 
 .ui.button.button--login{
@@ -32,10 +35,8 @@ body {
     margin-top:7px;
 
 }
-.Card--Login {
-  @extend .Card;
-  width: 620px;
-}
+
+
 
 .BodyContent {
   max-width: var(--site-max-width);

@@ -44,7 +44,7 @@ const onFailure = repsonse => {
 const LoginContainer = ({ history }) => (
   <ApolloConsumer>
     {client => (
-      <Button.Group fluid>
+      <Button.Group fluid textAlign="center">
         <Button
           className="button--login"
           onClick={() => auth.login()}
