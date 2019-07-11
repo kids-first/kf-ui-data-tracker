@@ -3,7 +3,15 @@ import {Query} from 'react-apollo';
 import {GET_STUDY_BY_ID} from '../state/queries';
 import {UploadContainer} from '../containers';
 import FileList from '../components/FileList/FileList';
-import {Divider, Grid, Header, Message, Placeholder} from 'semantic-ui-react';
+import {
+  Divider,
+  Grid,
+  Header,
+  Message,
+  Placeholder,
+  Container,
+  Segment,
+} from 'semantic-ui-react';
 
 /**
  * A place holder skeleton for a list of files
@@ -43,12 +51,14 @@ const StudyFilesListView = props => (
     {({loading, error, data}) => {
       if (error)
         return (
-          <Message
-            negative
-            icon="warning circle"
-            header="Error"
-            content={error.message}
-          />
+          <Container as={Segment} basic>
+            <Message
+              negative
+              icon="warning circle"
+              header="Error"
+              content={error.message}
+            />
+          </Container>
         );
       const files = !loading ? data.studyByKfId.files.edges : [];
       return (
