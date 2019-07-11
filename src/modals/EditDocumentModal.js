@@ -57,7 +57,12 @@ const EditDocumentModal = ({
         />
       </Modal.Content>
       <Modal.Actions>
-        <Button primary size="mini" onClick={e => onSubmit(e)}>
+        <Button
+          primary
+          size="mini"
+          onClick={e => onSubmit(e)}
+          disabled={!fileNameInput || !fileTypeInput || !fileDescriptionInput}
+        >
           SAVE
         </Button>
       </Modal.Actions>
