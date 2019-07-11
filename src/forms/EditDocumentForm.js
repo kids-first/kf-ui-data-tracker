@@ -6,7 +6,7 @@ import SelectElement from '../components/FileAnnotation/SelectElement';
 import Badge from '../components/Badge/Badge';
 import {fileTypeDetail, versionState} from '../common/fileUtils';
 /**
- * Form to edit document information
+ * Form to edit document information or annotate new file for uploading
  */
 const EditDocumentForm = ({
   fileType,
@@ -17,6 +17,9 @@ const EditDocumentForm = ({
   onNameChange,
   onDescriptionChange,
   onVersionStatusChange,
+  handleSubmit,
+  errors,
+  submitButtons,
 }) => {
   const versionStatusList = Object.keys(versionState);
   const dropdownClass = classes('Dropdown');
@@ -120,11 +123,15 @@ EditDocumentForm.propTypes = {
   /** The value of the currently selected fileType's enum*/
   fileType: PropTypes.string,
   /** Action to perform when name input is updated */
-  onNameChange: PropTypes.func.isRequired,
+  onNameChange: PropTypes.func,
   /** Action to perform when description input is updated */
-  onDescriptionChange: PropTypes.func.isRequired,
+  onDescriptionChange: PropTypes.func,
   /** Action to perform when fileType input is updated */
-  onFileTypeChange: PropTypes.func.isRequired,
+  onFileTypeChange: PropTypes.func,
+  /** (New file) Function to perform on form submission  */
+  handleSubmit: PropTypes.func,
+  /** (New file) Any errors that occured when submitting the form */
+  errors: PropTypes.string,
 };
 
 export default EditDocumentForm;
