@@ -65,7 +65,14 @@ export const NewVersionFlow = ({
       <Modal.Content scrolling>
         {steps[step]}
         {additionalContent && additionalContent()}
-        {errors && <Message negative>{errors.message}</Message>}
+        {errors && (
+          <Message
+            negative
+            icon="warning circle"
+            header="Error"
+            content={errors.message}
+          />
+        )}
       </Modal.Content>
       <Modal.Actions>
         {step === 1 && (
