@@ -18,7 +18,7 @@ body {
 .View--Login {
   height: 100vh;
   background-image: linear-gradient(to bottom, #fff 400px, transparent 100%),
-    url(https://portal.kidsfirstdrc.org/static/media/background-science.68317e4e.jpg);
+    url(./assets/background-science.jpg);
 }
 
 .Card--Login {
