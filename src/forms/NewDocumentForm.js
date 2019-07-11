@@ -15,7 +15,6 @@ const NewFileForm = ({handleSubmit, handleCancel, errors}) => {
   const [fileDescription, setFileDescription] = useState();
   // For the uploading stage
   const [onUploading, setUploading] = useState(false);
-  console.log(onUploading);
   return (
     <form
       onSubmit={ev => {

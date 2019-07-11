@@ -15,12 +15,10 @@ const DescriptionStep = ({file, handleDescription}) => {
       <Form>
         <Form.Field>
           <label>Uploaded File:</label>
-          <p>
-            {file.name}
-            <Label size="mini" basic pointing="left">
-              {formatFileSize(file.size)}
-            </Label>
-          </p>
+          {file.name}
+          <Label size="mini" basic pointing="left">
+            {formatFileSize(file.size)}
+          </Label>
         </Form.Field>
         <Form.Field required>
           <label>Summarize document changes:</label>
