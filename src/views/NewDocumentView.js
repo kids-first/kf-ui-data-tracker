@@ -70,13 +70,14 @@ const NewDocumentView = ({match, history, location, createDocument}) => {
                 <Button
                   floated="right"
                   type="submit"
-                  primary
+                  primary={errors.length === 0}
                   disabled={disabled}
                 >
                   {onUploading && !errors ? 'UPLOADING ...' : 'UPLOAD'}
                 </Button>
                 <Button
                   floated="right"
+                  primary={errors.length > 0}
                   onClick={() =>
                     history.push(`/study/${match.params.kfId}/documents`)
                   }
