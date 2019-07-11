@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Button, Header, Icon, Segment} from 'semantic-ui-react';
+import {Button, Header, Icon, Segment, Message} from 'semantic-ui-react';
 
 const FileUploadTarget = props => {
   const {
@@ -42,9 +42,12 @@ const FileUploadTarget = props => {
           onChange={handleSelectedFile}
         />
         {error && error.graphQLErrors && (
-          <Header as="h4">
-            Failed to upload: {error.graphQLErrors.map(err => err.message)}
-          </Header>
+          <Message
+            negative
+            icon="warning circle"
+            header="Failed to upload:"
+            content={error.graphQLErrors.join(', ')}
+          />
         )}
       </Segment>
     </form>
