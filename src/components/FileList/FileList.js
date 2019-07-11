@@ -14,7 +14,7 @@ import {
  * Displays list of study files
  */
 const FileList = ({fileList, studyId}) => {
-  const perPage = 5;
+  const perPage = 10;
   const [page, setPage] = useState(1);
 
   const handlePageClick = (e, {activePage}) => {
