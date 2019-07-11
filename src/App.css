@@ -16,6 +16,7 @@ body {
 }
 
 .View--Login {
+  height: 100vh;
   background-image: linear-gradient(to bottom, #fff 400px, transparent 100%),
     url(https://portal.kidsfirstdrc.org/static/media/background-science.68317e4e.jpg);
 }
@@ -100,4 +101,8 @@ body {
   margin-left: 2px !important;
   padding-top: 7px !important;
   padding-bottom: 7px !important;
+}
+
+.h-screen{
+  height: 100vh;
 }
