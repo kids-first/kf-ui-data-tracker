@@ -50,7 +50,7 @@ const EditDocumentModal = ({
           versionStatus={versionStatusInput}
           onNameChange={e => setFileName(e.target.value)}
           onDescriptionChange={e => setFileDescription(e.target.value)}
-          onFileTypeChange={e => setFileType(e.target.value)}
+          onFileTypeChange={item => setFileType(item)}
           onVersionStatusChange={versionStatusValue =>
             setVersionStatus(versionStatusValue)
           }
