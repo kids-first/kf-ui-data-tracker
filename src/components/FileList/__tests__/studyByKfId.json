@@ -259,6 +259,91 @@
                 ]
               }
             }
+          },
+
+          {
+            "node": {
+              "id": "RmlsZU5vZGU6U0ZfU0ZBOVdXNj1=",
+              "kfId": "SF_SFA9WW01",
+              "name": "3.jpg",
+              "fileType": "OTH",
+              "description": "",
+              "downloadUrl": "http://localhost:8080/download/study/SD_1MD8FQMY/file/SF_SFA9WW62",
+              "versions": {
+                "edges": [
+                  {
+                    "node": {
+                      "id": "T2JqZWN0Tm9kZTpGVl9EUUc3VEc201==",
+                      "size": 75510,
+                      "createdAt": "2019-05-20T14:34:21.331546+00:00"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "RmlsZU5vZGU6U0ZfU0ZBOVdXNj2=",
+              "kfId": "SF_SFA9WW02",
+              "name": "3.jpg",
+              "fileType": "OTH",
+              "description": "",
+              "downloadUrl": "http://localhost:8080/download/study/SD_1MD8FQMY/file/SF_SFA9WW62",
+              "versions": {
+                "edges": [
+                  {
+                    "node": {
+                      "id": "T2JqZWN0Tm9kZTpGVl9EUUc3VEc202==",
+                      "size": 75510,
+                      "createdAt": "2019-05-20T14:34:21.331546+00:00"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "RmlsZU5vZGU6U0ZfU0ZBOVdXNj3=",
+              "kfId": "SF_SFA9WW03",
+              "name": "3.jpg",
+              "fileType": "OTH",
+              "description": "",
+              "downloadUrl": "http://localhost:8080/download/study/SD_1MD8FQMY/file/SF_SFA9WW62",
+              "versions": {
+                "edges": [
+                  {
+                    "node": {
+                      "id": "T2JqZWN0Tm9kZTpGVl9EUUc3VEc203==",
+                      "size": 75510,
+                      "createdAt": "2019-05-20T14:34:21.331546+00:00"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "RmlsZU5vZGU6U0ZfU0ZBOVdXNj4=",
+              "kfId": "SF_SFA9WW04",
+              "name": "3.jpg",
+              "fileType": "OTH",
+              "description": "",
+              "downloadUrl": "http://localhost:8080/download/study/SD_1MD8FQMY/file/SF_SFA9WW62",
+              "versions": {
+                "edges": [
+                  {
+                    "node": {
+                      "id": "T2JqZWN0Tm9kZTpGVl9EUUc3VEc204==",
+                      "size": 75510,
+                      "createdAt": "2019-05-20T14:34:21.331546+00:00"
+                    }
+                  }
+                ]
+              }
+            }
           }
         ],
         "__typename": "FileNodeConnection"
