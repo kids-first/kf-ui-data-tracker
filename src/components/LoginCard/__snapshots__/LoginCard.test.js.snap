@@ -6,50 +6,58 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="ui large vertical buttons"
+        class="ui fluid buttons"
+        textalign="center"
       >
         <button
-          class="ui icon positive right labeled button"
+          class="ui black large button button--login"
         >
-          Login with Auth0
-          <i
-            aria-hidden="true"
-            class="chevron right icon"
+          <img
+            alt="Auth0 logo"
+            class="auth0-logo"
+            src="test-file-stub"
           />
         </button>
+        <div
+          class="or button--login"
+        />
         <button
-          class="ui large icon right labeled button"
+          class="ui large primary button button--login"
         >
-          Login with Ego
           <i
             aria-hidden="true"
-            class="chevron right icon"
+            class="google icon"
           />
+          Google
         </button>
       </div>
     </div>
   </body>,
   "container": <div>
     <div
-      class="ui large vertical buttons"
+      class="ui fluid buttons"
+      textalign="center"
     >
       <button
-        class="ui icon positive right labeled button"
+        class="ui black large button button--login"
       >
-        Login with Auth0
-        <i
-          aria-hidden="true"
-          class="chevron right icon"
+        <img
+          alt="Auth0 logo"
+          class="auth0-logo"
+          src="test-file-stub"
         />
       </button>
+      <div
+        class="or button--login"
+      />
       <button
-        class="ui large icon right labeled button"
+        class="ui large primary button button--login"
       >
-        Login with Ego
         <i
           aria-hidden="true"
-          class="chevron right icon"
+          class="google icon"
         />
+        Google
       </button>
     </div>
   </div>,
