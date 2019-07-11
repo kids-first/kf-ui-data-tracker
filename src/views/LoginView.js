@@ -22,6 +22,7 @@ const LoginView = () => {
               <LoginCard />
               <Message>
                 New to Kids First Data Tracker?
+                &nbsp;
                 <a href="mailto:support@kidsfirstdrc.org?Subject=DRC%20Data%20Tracker%20Access%20Request">
                   Join now <Icon name="chevron right" />
                 </a>
