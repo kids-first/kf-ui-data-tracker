@@ -58,11 +58,20 @@ const TokensListView = ({
           Developer download tokens allow download of any file using the{' '}
           <code>?token=</code> query parameter or passed in the Authorization
           header with a <code>Token</code> prefix.
-          <Message
-            warning
-            header="Keep these tokens private!"
-            content="They will not be displayed again after being created."
-          />
+          {devTokensError ? (
+            <Message
+              negative
+              icon="warning circle"
+              header="Error"
+              content={devTokensError}
+            />
+          ) : (
+            <Message
+              warning
+              header="Keep these tokens private!"
+              content="They will not be displayed again after being created."
+            />
+          )}
         </Segment>
         <Segment basic>
           {devTokensLoading && (
@@ -78,7 +87,6 @@ const TokensListView = ({
               deleteToken={name => handleDelete(name)}
             />
           )}
-          {devTokensError && `Error!: ${devTokensError}`}
           <Header as="h3">Make a new token</Header>
           <NewTokenForm
             error={newTokenError}
