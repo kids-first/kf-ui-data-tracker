@@ -7,13 +7,20 @@ const NewTokenForm = ({onSubmit, error, loading}) => {
 
   return (
     <Segment>
-      <Form onSubmit={() => onSubmit(name)}>
+      <Form
+        onSubmit={() => {
+          onSubmit(name);
+          setName('');
+        }}
+      >
         <Form.Field>
           <label>
             Name:
             <input
+              focus={name.length > 0}
               type="text"
               name="name"
+              value={name}
               onChange={e => setName(e.target.value)}
             />
           </label>
