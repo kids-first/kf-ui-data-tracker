@@ -16,6 +16,7 @@ const TokenList = ({tokens, deleteToken}) => (
                 ? node.node.creator.picture
                 : defaultAvatar
             }
+            alt={node.node.creator.username || 'unknown'}
           />
         )}
         <List.Content>
