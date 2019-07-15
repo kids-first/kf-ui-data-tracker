@@ -2,12 +2,23 @@ import React from 'react';
 import {Button, Popup, Image, Input, List, Icon} from 'semantic-ui-react';
 import TimeAgo from 'react-timeago';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
+import defaultAvatar from '../../assets/defaultAvatar.png';
 
 const TokenList = ({tokens, deleteToken}) => (
   <List relaxed>
     {tokens.map(node => (
       <List.Item key={node.node.id}>
-        {node.node.creator && <Image avatar src={node.node.creator.picture} />}
+        {node.node.creator && (
+          <Image
+            avatar
+            src={
+              node.node.creator.picture
+                ? node.node.creator.picture
+                : defaultAvatar
+            }
+            alt={node.node.creator.username || 'unknown'}
+          />
+        )}
         <List.Content>
           <List.Header>{node.node.name}</List.Header>
           {node.node.creator && <>Created by {node.node.creator.username} </>}
