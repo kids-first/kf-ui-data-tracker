@@ -12,6 +12,7 @@ import {
   Label,
   Message,
   Segment,
+  Placeholder,
 } from 'semantic-ui-react';
 import UpdateProfileForm from '../forms/UpdateProfileForm';
 import StudySubscriptionContanier from '../containers/StudySubscriptionContainer';
@@ -43,7 +44,23 @@ const ProfileView = ({
       });
   };
 
-  if (loading) return <span>Loading...</span>;
+  if (loading)
+    return (
+      <Container as={Segment} basic>
+        <Placeholder>
+          <Placeholder.Header image>
+            <Placeholder.Line />
+            <Placeholder.Line />
+          </Placeholder.Header>
+          <Placeholder.Paragraph>
+            <Placeholder.Line />
+            <Placeholder.Line />
+            <Placeholder.Line />
+            <Placeholder.Line />
+          </Placeholder.Paragraph>
+        </Placeholder>
+      </Container>
+    );
   if (error)
     return (
       <Container as={Segment} basic>
