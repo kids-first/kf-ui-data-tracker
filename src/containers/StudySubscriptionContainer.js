@@ -1,6 +1,6 @@
 import React from 'react';
 import {graphql, compose} from 'react-apollo';
-import {Button} from 'kf-uikit';
+import {Button} from 'semantic-ui-react';
 import StudyTable from '../components/StudyList/StudyTable';
 import {ALL_STUDIES, MY_PROFILE} from '../state/queries';
 import {SUBSCRIBE_TO, UNSUBSCRIBE_FROM} from '../state/mutations';
@@ -35,8 +35,8 @@ const StudySubscriptionContainer = ({
     const isSubscribed = subscriptions.includes(study.kfId);
     return (
       <Button
-        type="button"
-        color={isSubscribed ? 'secondary' : 'default'}
+        color={isSubscribed ? 'primary' : null}
+        size="mini"
         onClick={ev => {
           handleToggle(study);
         }}
