@@ -2,22 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Label} from 'semantic-ui-react';
 import TimeAgo from 'react-timeago';
+import defaultAvatar from '../../assets/defaultAvatar.png';
 /**
  * Displays time ago and avatar in one label
  */
 const AvatarTimeAgo = ({showUsername, creator, createdAt, size}) => {
-  if (showUsername) {
+  const picUrl = creator && creator.picture ? creator.picture : defaultAvatar;
+  const picAlt = creator && creator.username ? creator.username : 'profile';
+  if (creator && showUsername) {
     return (
       <Label image size={size}>
-        {creator && (
-          <img
-            alt={creator.username || 'unknown'}
-            src={
-              creator.picture || 'https://www.w3schools.com/css/img_avatar.png'
-            }
-          />
-        )}
-        {creator && showUsername && creator.username}
+        <img alt={picAlt} src={picUrl} />
+        {creator.username ? creator.username : 'unknown'}
         <Label.Detail>
           {createdAt ? <TimeAgo date={createdAt} live={false} /> : 'Unknown'}
         </Label.Detail>
@@ -26,14 +22,7 @@ const AvatarTimeAgo = ({showUsername, creator, createdAt, size}) => {
   } else {
     return (
       <Label image basic size={size}>
-        {creator && (
-          <img
-            alt={creator.username || 'unknown'}
-            src={
-              creator.picture || 'https://www.w3schools.com/css/img_avatar.png'
-            }
-          />
-        )}
+        <img alt={picAlt} src={picUrl} />
         {createdAt ? <TimeAgo date={createdAt} live={false} /> : 'Unknown'}
       </Label>
     );
