@@ -1,5 +1,5 @@
 import React from 'react';
-import {Query} from 'react-apollo';
+import {graphql} from 'react-apollo';
 import {GET_STUDY_BY_ID} from '../state/queries';
 import {UploadContainer} from '../containers';
 import FileList from '../components/FileList/FileList';
@@ -41,43 +41,48 @@ const StudyListSkeleton = () => (
 /**
  * List and manage files in a study and allow a user to upload more
  */
-const StudyFilesListView = props => (
-  <Query query={GET_STUDY_BY_ID} variables={{kfId: props.match.params.kfId}}>
-    {({loading, error, data}) => {
-      if (error)
-        return (
-          <Container as={Segment} basic>
-            <Message
-              negative
-              icon="warning circle"
-              header="Error"
-              content={error.message}
-            />
-          </Container>
-        );
-      const files = !loading ? data.studyByKfId.files.edges : [];
-      return (
-        <Grid as={Segment} basic container columns={1}>
-          <Grid.Column width={16}>
-            <Header as="h2">Upload Study Documents for DRC Approval</Header>
-            {loading ? (
-              <StudyListSkeleton />
-            ) : (
-              <FileList fileList={files} studyId={props.match.params.kfId} />
-            )}
-            <Divider />
-            <Grid.Row>
-              <UploadContainer
-                handleUpload={file =>
-                  props.history.push('documents/new-document', {file})
-                }
-              />
-            </Grid.Row>
-          </Grid.Column>
-        </Grid>
-      );
-    }}
-  </Query>
-);
+const StudyFilesListView = ({
+  study: {loading, studyByKfId, error},
+  match: {
+    params: {kfId},
+  },
+  history,
+}) => {
+  if (error)
+    return (
+      <Container as={Segment} basic>
+        <Message
+          negative
+          icon="warning circle"
+          header="Error"
+          content={error.message}
+        />
+      </Container>
+    );
+  const files = !loading ? studyByKfId.files.edges : [];
+  return (
+    <Grid as={Segment} basic container columns={1}>
+      <Grid.Column width={16}>
+        <Header as="h2">Upload Study Documents for DRC Approval</Header>
+        {loading ? (
+          <StudyListSkeleton />
+        ) : (
+          <FileList fileList={files} studyId={kfId} />
+        )}
+        <Divider />
+        <Grid.Row>
+          <UploadContainer
+            handleUpload={file =>
+              history.push('documents/new-document', {file})
+            }
+          />
+        </Grid.Row>
+      </Grid.Column>
+    </Grid>
+  );
+};
 
-export default StudyFilesListView;
+export default graphql(GET_STUDY_BY_ID, {
+  name: 'study',
+  options: props => ({variables: {kfId: props.match.params.kfId}}),
+})(StudyFilesListView);
