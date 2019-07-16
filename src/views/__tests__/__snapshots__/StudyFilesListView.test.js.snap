@@ -30,7 +30,7 @@ exports[`deletes a file correctly 1`] = `
               <div
                 class="ui orange tiny basic label"
               >
-                Pending Review
+                Pending review
               </div>
             </td>
             <td
@@ -209,7 +209,7 @@ exports[`renders correctly 1`] = `
               <div
                 class="ui orange tiny basic label"
               >
-                Pending Review
+                Pending review
               </div>
             </td>
             <td
@@ -317,7 +317,7 @@ exports[`renders correctly 1`] = `
               <div
                 class="ui orange tiny basic label"
               >
-                Pending Review
+                Pending review
               </div>
             </td>
             <td

@@ -2,222 +2,212 @@
 
 exports[`renders with more than one versions 1`] = `
 <div>
-  <div
-    class="ui divided selection list"
-    role="list"
+  <table
+    class="ui selectable very compact table"
   >
-    <div
-      class="item"
-      role="listitem"
+    <thead
+      class=""
     >
-      <button
-        class="ui mini icon primary right floated left labeled button"
+      <tr
+        class=""
       >
-        <i
-          aria-hidden="true"
-          class="cloud upload icon"
-        />
-        UPLOAD VERSION
-      </button>
-      <h4
-        class="ui header"
-      >
-        Document Versions (
-        3
-        )
-      </h4>
-    </div>
-    <div
-      class="item"
-      role="listitem"
-    >
-      <i
-        aria-hidden="true"
-        class="orange circle icon middle aligned"
-      />
-      <div
-        class="content"
-      >
-        <button
-          class="ui tiny header list--header-inline"
+        <th
+          class="single line center aligned bottom aligned"
+          colspan="3"
         >
-          VersionFileName.js
-        </button>
-        <div
-          class="ui purple mini tag label"
-        >
-          LATEST
-        </div>
-        <div
-          class="ui mini basic image label"
-        >
-          <img
-            alt="xuzhu"
-            src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
-          />
-          <time
-            datetime="2018-09-27T05:32:26.000Z"
-            title="2018-09-27T05:32:26+00:00"
+          Document Versions (
+          3
+          )
+          <button
+            class="ui mini compact icon primary right floated left labeled button"
           >
-            7 months ago
-          </time>
-        </div>
-        <button
-          class="ui mini basic label"
+            <i
+              aria-hidden="true"
+              class="cloud upload icon"
+            />
+            UPLOAD VERSION
+          </button>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class=""
+    >
+      <tr
+        class="version--item"
+      >
+        <td
+          class="collapsing"
         >
-          <i
-            aria-hidden="true"
-            class="download icon"
-          />
-          5.5 kB
-        </button>
-        <button
-          class="ui mini basic icon left labeled button micro-button"
+          <div
+            class="ui orange tiny basic ribbon label"
+            title="Latest Version"
+          >
+            Pending review
+          </div>
+        </td>
+        <td
+          class=""
         >
-          <i
-            aria-hidden="true"
-            class="copy icon"
-          />
-          FV_DMTKEFQW
-        </button>
-        <div
-          class="description"
-        >
-          <small
-            data-testid="version-item"
+          <p
+            title="VersionFileName.js"
           >
             <b>
-              Change Summary: 
+              VersionFileName.js
             </b>
-            version description
-          </small>
-        </div>
-      </div>
-    </div>
-    <div
-      class="item"
-      role="listitem"
-    >
-      <i
-        aria-hidden="true"
-        class="orange circle icon middle aligned"
-      />
-      <div
-        class="content"
-      >
-        <button
-          class="ui tiny header list--header-inline"
-        >
-          VersionFileName.js
-        </button>
-        <div
-          class="ui mini basic image label"
-        >
-          <img
-            alt="xuzhu"
-            src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
-          />
-          <time
-            datetime="2018-08-21T03:16:11.000Z"
-            title="2018-08-21T03:16:11+00:00"
-          >
-            8 months ago
-          </time>
-        </div>
-        <button
-          class="ui mini basic label"
-        >
-          <i
-            aria-hidden="true"
-            class="download icon"
-          />
-          9.9 kB
-        </button>
-        <button
-          class="ui mini basic icon left labeled button micro-button"
-        >
-          <i
-            aria-hidden="true"
-            class="copy icon"
-          />
-          FV_TT8NF09R
-        </button>
-        <div
-          class="description"
-        >
-          <small
+          </p>
+          <p
             data-testid="version-item"
+            title="version description"
+          >
+            <small>
+              version description
+            </small>
+          </p>
+        </td>
+        <td
+          class="collapsing right aligned top aligned"
+        >
+          <div
+            class="ui mini basic image label"
+          >
+            <img
+              alt="xuzhu"
+              src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
+            />
+            <time
+              datetime="2018-09-27T05:32:26.000Z"
+              title="2018-09-27T05:32:26+00:00"
+            >
+              7 months ago
+            </time>
+          </div>
+          <button
+            class="ui mini basic label"
+          >
+            <i
+              aria-hidden="true"
+              class="download icon"
+            />
+            5.5 kB
+          </button>
+        </td>
+      </tr>
+      <tr
+        class="version--item"
+      >
+        <td
+          class="center aligned middle aligned"
+        >
+          <div
+            class="ui orange mini circular empty label"
+          />
+        </td>
+        <td
+          class=""
+        >
+          <p
+            title="VersionFileName.js"
           >
             <b>
-              Change Summary: 
+              VersionFileName.js
             </b>
-            version description
-          </small>
-        </div>
-      </div>
-    </div>
-    <div
-      class="item"
-      role="listitem"
-    >
-      <i
-        aria-hidden="true"
-        class="orange circle icon middle aligned"
-      />
-      <div
-        class="content"
-      >
-        <button
-          class="ui tiny header list--header-inline"
-        >
-          VersionFileName.js
-        </button>
-        <div
-          class="ui mini basic image label"
-        >
-          <img
-            alt="xuzhu"
-            src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
-          />
-          <time
-            datetime="2017-08-25T00:05:30.000Z"
-            title="2017-08-25T00:05:30+00:00"
-          >
-            2 years ago
-          </time>
-        </div>
-        <button
-          class="ui mini basic label"
-        >
-          <i
-            aria-hidden="true"
-            class="download icon"
-          />
-          5.4 kB
-        </button>
-        <button
-          class="ui mini basic icon left labeled button micro-button"
-        >
-          <i
-            aria-hidden="true"
-            class="copy icon"
-          />
-          FV_2WV3VNJN
-        </button>
-        <div
-          class="description"
-        >
-          <small
+          </p>
+          <p
             data-testid="version-item"
+            title="version description"
+          >
+            <small>
+              version description
+            </small>
+          </p>
+        </td>
+        <td
+          class="collapsing right aligned top aligned"
+        >
+          <div
+            class="ui mini basic image label"
+          >
+            <img
+              alt="xuzhu"
+              src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
+            />
+            <time
+              datetime="2018-08-21T03:16:11.000Z"
+              title="2018-08-21T03:16:11+00:00"
+            >
+              8 months ago
+            </time>
+          </div>
+          <button
+            class="ui mini basic label"
+          >
+            <i
+              aria-hidden="true"
+              class="download icon"
+            />
+            9.9 kB
+          </button>
+        </td>
+      </tr>
+      <tr
+        class="version--item"
+      >
+        <td
+          class="center aligned middle aligned"
+        >
+          <div
+            class="ui orange mini circular empty label"
+          />
+        </td>
+        <td
+          class=""
+        >
+          <p
+            title="VersionFileName.js"
           >
             <b>
-              Change Summary: 
+              VersionFileName.js
             </b>
-            version description
-          </small>
-        </div>
-      </div>
-    </div>
-  </div>
+          </p>
+          <p
+            data-testid="version-item"
+            title="version description"
+          >
+            <small>
+              version description
+            </small>
+          </p>
+        </td>
+        <td
+          class="collapsing right aligned top aligned"
+        >
+          <div
+            class="ui mini basic image label"
+          >
+            <img
+              alt="xuzhu"
+              src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
+            />
+            <time
+              datetime="2017-08-25T00:05:30.000Z"
+              title="2017-08-25T00:05:30+00:00"
+            >
+              2 years ago
+            </time>
+          </div>
+          <button
+            class="ui mini basic label"
+          >
+            <i
+              aria-hidden="true"
+              class="download icon"
+            />
+            5.4 kB
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 `;

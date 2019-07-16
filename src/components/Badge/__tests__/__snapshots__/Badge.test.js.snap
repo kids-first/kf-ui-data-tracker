@@ -15,7 +15,7 @@ exports[`renders badges with all available state 1`] = `
   <div
     class="ui orange tiny basic label"
   >
-    Pending Review
+    Pending review
   </div>
 </div>
 `;
@@ -35,7 +35,7 @@ exports[`renders badges with all available state 3`] = `
   <div
     class="ui red tiny basic label"
   >
-    Changes Needed
+    Changes needed
   </div>
 </div>
 `;
