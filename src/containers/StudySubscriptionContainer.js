@@ -35,7 +35,7 @@ const StudySubscriptionContainer = ({
     const isSubscribed = subscriptions.includes(study.kfId);
     return (
       <Button
-        color={isSubscribed ? 'primary' : null}
+        primary={isSubscribed}
         size="mini"
         onClick={ev => {
           handleToggle(study);
