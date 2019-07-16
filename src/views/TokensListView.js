@@ -17,12 +17,7 @@ import {TokenList} from '../components/TokenList';
 import NewTokenForm from '../forms/NewTokenForm';
 
 const TokensListView = ({
-  devTokens: {
-    allDevTokens,
-    loading: devTokensLoading,
-    error: devTokensError,
-    refetch: refetchTokens,
-  },
+  devTokens: {allDevTokens, loading: devTokensLoading, error: devTokensError},
   createToken,
   deleteToken,
 }) => {
@@ -36,7 +31,7 @@ const TokensListView = ({
     setNewTokenLoading(true);
     createToken({variables: {name}})
       .then(resp => {
-        refetchTokens().then(resp => setNewTokenLoading(false));
+        setNewTokenLoading(false);
       })
       .catch(err => {
         setNewTokenError(err.message);
@@ -102,12 +97,13 @@ const TokensListView = ({
           setDeleteTokenLoading(true);
           deleteToken({variables: {name: deletingToken}})
             .then(resp => {
-              refetchTokens().then(resp => {
-                setConfirmOpen(false);
-                setDeleteTokenLoading(false);
-              });
+              setConfirmOpen(false);
+              setDeleteTokenLoading(false);
             })
-            .catch(err => setDeleteTokenLoading(false));
+            .catch(err => {
+              setConfirmOpen(false);
+              setDeleteTokenLoading(false);
+            });
         }}
         header={`Delete '${deletingToken}' token`}
         content="This will break any applications using this token. Are you sure?"
@@ -125,51 +121,55 @@ export default compose(
   graphql(GET_DEV_TOKENS, {name: 'devTokens'}),
   graphql(DELETE_DEV_TOKEN, {
     name: 'deleteToken',
-    update: (cache, {data: {deleteDevToken}}) => {
-      // Removes the token from the allDevTokens query in the cache
-      const {allDevTokens} = cache.readQuery({query: GET_DEV_TOKENS});
-      const deleteIndex = allDevTokens.edges.findIndex(
-        edge => edge.node.name === deleteDevToken.name,
-      );
-      if (deleteIndex < 0) {
-        return allDevTokens;
-      }
-      allDevTokens.edges.splice(deleteIndex, 1);
-      const data = {
-        allDevTokens: {
-          ...allDevTokens,
-          edges: allDevTokens.edges,
-        },
-      };
-      cache.writeQuery({
-        query: GET_DEV_TOKENS,
-        data,
-      });
+    options: {
+      update: (cache, {data: {deleteDevToken}}) => {
+        // Removes the token from the allDevTokens query in the cache
+        const {allDevTokens} = cache.readQuery({query: GET_DEV_TOKENS});
+        const deleteIndex = allDevTokens.edges.findIndex(
+          edge => edge.node.name === deleteDevToken.name,
+        );
+        if (deleteIndex < 0) {
+          return allDevTokens;
+        }
+        allDevTokens.edges.splice(deleteIndex, 1);
+        const data = {
+          allDevTokens: {
+            ...allDevTokens,
+            edges: allDevTokens.edges,
+          },
+        };
+        cache.writeQuery({
+          query: GET_DEV_TOKENS,
+          data,
+        });
+      },
     },
   }),
   graphql(CREATE_DEV_TOKEN, {
     name: 'createToken',
-    update: (cache, {data: {createDevToken}}) => {
-      // This will append the resulting token onto the list of dev tokens
-      // The token that is appended will not be obfuscated so that the
-      // user may copy it in plain text. The next time that it is fetched
-      // from the server, it will be obfuscated.
-      const {allDevTokens} = cache.readQuery({query: GET_DEV_TOKENS});
-      const data = {
-        allDevTokens: {
-          ...allDevTokens,
-          edges: allDevTokens.edges.concat([
-            {
-              __typename: 'DevDownloadTokenNodeEdge',
-              node: createDevToken.token,
-            },
-          ]),
-        },
-      };
-      cache.writeQuery({
-        query: GET_DEV_TOKENS,
-        data,
-      });
+    options: {
+      update: (cache, {data: {createDevToken}}) => {
+        // This will append the resulting token onto the list of dev tokens
+        // The token that is appended will not be obfuscated so that the
+        // user may copy it in plain text. The next time that it is fetched
+        // from the server, it will be obfuscated.
+        const {allDevTokens} = cache.readQuery({query: GET_DEV_TOKENS});
+        const data = {
+          allDevTokens: {
+            ...allDevTokens,
+            edges: allDevTokens.edges.concat([
+              {
+                node: createDevToken.token,
+                __typename: 'DevDownloadTokenNodeEdge',
+              },
+            ]),
+          },
+        };
+        cache.writeQuery({
+          query: GET_DEV_TOKENS,
+          data,
+        });
+      },
     },
   }),
 )(TokensListView);
