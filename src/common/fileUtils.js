@@ -67,9 +67,9 @@ export const fileTypeDetail = {
 
 // Store version state title and color
 export const versionState = {
-  PEN: {title: 'Pending Review', labelColor: 'orange'},
+  PEN: {title: 'Pending review', labelColor: 'orange'},
   APP: {title: 'Approved', labelColor: 'teal'},
-  CHN: {title: 'Changes Needed', labelColor: 'red'},
+  CHN: {title: 'Changes needed', labelColor: 'red'},
   PRC: {title: 'Processed', labelColor: 'blue'},
 };
 
