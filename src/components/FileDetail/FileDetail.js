@@ -18,7 +18,6 @@ import Badge from '../Badge/Badge';
 import {
   Button,
   Grid,
-  Segment,
   Label,
   Icon,
   Header,
@@ -175,17 +174,15 @@ const FileDetail = ({fileNode, history, match}) => {
               </Grid.Row>
               <Grid.Row>
                 <Grid.Column mobile={16} tablet={16} computer={12}>
-                  <Segment className="p-0">
-                    <VersionList
-                      studyId={studyId}
-                      fileNode={fileNode}
-                      onUploadClick={() => setDialog('upload')}
-                      onNameClick={(versionNode, index) => {
-                        setDialog('versionInfo');
-                        setOpenVersion({version: versionNode, index: index});
-                      }}
-                    />
-                  </Segment>
+                  <VersionList
+                    studyId={studyId}
+                    fileNode={fileNode}
+                    onUploadClick={() => setDialog('upload')}
+                    onNameClick={(versionNode, index) => {
+                      setDialog('versionInfo');
+                      setOpenVersion({version: versionNode, index: index});
+                    }}
+                  />
                 </Grid.Column>
               </Grid.Row>
               {dialog !== false && (
