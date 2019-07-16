@@ -25,7 +25,7 @@ const UpdateProfileForm = ({
       >
         <Form.Group>
           <Form.Field>
-            <label htmlForm="slackid">Slack ID:</label>
+            <label htmlFor="slackid">Slack ID:</label>
             <input
               name="slackid"
               type="text"
@@ -45,9 +45,9 @@ const UpdateProfileForm = ({
             onChange={ev => setSlackNotify(ev.target.value)}
             label="Send me daily activity reports of my subscribed studies"
           />
-          <label htmlForm="notify" />
+          <label htmlFor="notify" />
         </Form.Field>
-        <Button type="submit" color="primary" loading={loading}>
+        <Button type="submit" primary loading={loading}>
           Save
         </Button>
         <Message info hidden={!message} content={message} />
