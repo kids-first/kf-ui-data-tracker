@@ -111,7 +111,7 @@ export const GET_FILE_BY_ID = gql`
 
 // Query to get developer tokens
 export const GET_DEV_TOKENS = gql`
-  {
+  query DevTokens{
     allDevTokens {
       edges {
         node {

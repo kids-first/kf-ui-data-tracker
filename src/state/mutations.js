@@ -67,16 +67,8 @@ export const DELETE_FILE = gql`
 
 // Mutation to upload a version of a file
 export const CREATE_VERSION = gql`
-  mutation(
-    $file: Upload!
-    $fileId: String!
-    $description: String!
-  ) {
-    createVersion(
-      file: $file
-      fileId: $fileId
-      description: $description
-    ) {
+  mutation($file: Upload!, $fileId: String!, $description: String!) {
+    createVersion(file: $file, fileId: $fileId, description: $description) {
       success
       version {
         id
@@ -119,7 +111,7 @@ export const FILE_DOWNLOAD_URL = gql`
 
 // Mutation to create a new dev token
 export const CREATE_DEV_TOKEN = gql`
-  mutation($name: String!) {
+  mutation CreateToken($name: String!) {
     createDevToken(name: $name) {
       token {
         ...TokenFields
@@ -131,7 +123,7 @@ export const CREATE_DEV_TOKEN = gql`
 
 // Mutation to delete a token
 export const DELETE_DEV_TOKEN = gql`
-  mutation($name: String!) {
+  mutation DeleteToken($name: String!) {
     deleteDevToken(name: $name) {
       name
       success
