@@ -27,7 +27,7 @@ const VersionInfoModal = ({
                 {openedVersion.version.fileName}
               </Header>
               {openedVersion.index === 0 && (
-                <Label tag size="mini" color="purple" float="right">
+                <Label size="mini" color="blue" float="right" basic>
                   LATEST
                 </Label>
               )}
@@ -47,7 +47,7 @@ const VersionInfoModal = ({
                 Document Type
               </Header>
               <span>
-                <Label icon basic size="tiny">
+                <Label basic size="tiny">
                   <Icon name={`${fileTypeDetail[fileNode.fileType].icon}`} />
                   {' ' + fileTypeDetail[fileNode.fileType].title}
                 </Label>
