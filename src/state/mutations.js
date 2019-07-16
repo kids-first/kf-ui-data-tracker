@@ -1,4 +1,5 @@
 import gql from 'graphql-tag';
+import {TOKEN_FIELDS} from './fragments';
 
 // Mutation to upload a file or a version of the file to the study-creator
 export const CREATE_FILE = gql`
@@ -121,13 +122,11 @@ export const CREATE_DEV_TOKEN = gql`
   mutation($name: String!) {
     createDevToken(name: $name) {
       token {
-        id
-        name
-        token
-        createdAt
+        ...TokenFields
       }
     }
   }
+  ${TOKEN_FIELDS}
 `;
 
 // Mutation to delete a token
