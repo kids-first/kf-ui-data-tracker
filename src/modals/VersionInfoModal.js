@@ -23,8 +23,15 @@ const VersionInfoModal = ({
         <Grid>
           <Grid.Row>
             <Grid.Column>
-              <Header as="h3" size="medium" color="blue">
-                {openedVersion.version.fileName}
+              <Header
+                as="h3"
+                size="medium"
+                color="blue"
+                title={openedVersion.version.fileName}
+              >
+                {openedVersion.version.fileName.length > 65
+                  ? openedVersion.version.fileName.substring(0, 65) + '...'
+                  : openedVersion.version.fileName}
               </Header>
               {openedVersion.index === 0 && (
                 <Label size="mini" color="blue" float="right" basic>
