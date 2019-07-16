@@ -3,13 +3,12 @@ import PropTypes from 'prop-types';
 import {Mutation} from 'react-apollo';
 import {FILE_DOWNLOAD_URL} from '../../state/mutations';
 import AvatarTimeAgo from '../AvatarTimeAgo/AvatarTimeAgo';
-import CopyButton from '../CopyButton/CopyButton';
 import {
   versionState,
   formatFileSize,
   downloadFile,
 } from '../../common/fileUtils';
-import {Label, Icon, List, Header} from 'semantic-ui-react';
+import {Label, Icon, Table} from 'semantic-ui-react';
 /**
  * Displays single version item from the list
  */
@@ -28,17 +27,47 @@ const VersionItem = ({
   return (
     <Mutation mutation={FILE_DOWNLOAD_URL}>
       {downloadFileMutation => (
-        <List.Item onClick={e => onNameClick(versionNode, index)}>
-          <List.Icon name="circle" color={labelColor} verticalAlign="middle" />
-          <List.Content>
-            <Header size="tiny" as="button" className="list--header-inline">
-              {versionNode.fileName}
-            </Header>
-            {index === 0 && (
-              <Label tag color="purple" size="mini">
-                LATEST
+        <Table.Row
+          onClick={e => onNameClick(versionNode, index)}
+          className="version--item"
+        >
+          {index === 0 ? (
+            <Table.Cell collapsing>
+              <Label
+                color={labelColor}
+                basic
+                size="tiny"
+                ribbon
+                title="Latest Version"
+              >
+                {versionState[versionNode.state].title}
               </Label>
-            )}
+            </Table.Cell>
+          ) : (
+            <Table.Cell verticalAlign="middle" textAlign="center">
+              <Label circular size="mini" empty color={labelColor} />
+            </Table.Cell>
+          )}
+
+          <Table.Cell>
+            <p title={versionNode.fileName}>
+              <b>
+                {versionNode.fileName.length > 70
+                  ? versionNode.fileName.substring(0, 70) + '...'
+                  : versionNode.fileName}
+              </b>
+            </p>
+            <p title={versionNode.description} data-testid="version-item">
+              <small>
+                {versionNode.description.length > 110
+                  ? versionNode.description.substring(0, 110) + '...'
+                  : versionNode.description}
+                {versionNode.description.length === 0 &&
+                  'No version summary available'}
+              </small>
+            </p>
+          </Table.Cell>
+          <Table.Cell textAlign="right" verticalAlign="top" collapsing>
             <AvatarTimeAgo
               size="mini"
               creator={versionNode.creator}
@@ -61,24 +90,8 @@ const VersionItem = ({
               <Icon name="download" />
               {size}
             </Label>
-            <CopyButton
-              basic
-              size="mini"
-              text={versionNode.kfId}
-              className="micro-button"
-            />
-            <List.Description>
-              <small data-testid="version-item">
-                <b>Change Summary: </b>
-                {versionNode.description.length > 90
-                  ? versionNode.description.substring(0, 90) + '...'
-                  : versionNode.description}
-                {versionNode.description.length === 0 &&
-                  'No version summary available'}
-              </small>
-            </List.Description>
-          </List.Content>
-        </List.Item>
+          </Table.Cell>
+        </Table.Row>
       )}
     </Mutation>
   );

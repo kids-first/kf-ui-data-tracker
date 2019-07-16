@@ -2,47 +2,59 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {dateCompare} from '../../common/fileUtils';
 import VersionItem from './VersionItem';
-import {Button, List, Header} from 'semantic-ui-react';
+import {Button, Table} from 'semantic-ui-react';
 /**
  * Displays ordered versions of one file. (Latest first)
  */
 const VersionList = ({studyId, fileNode, onUploadClick, onNameClick}) => {
   return (
-    <List divided selection>
-      <List.Item>
-        <Button
-          primary
-          floated="right"
-          onClick={onUploadClick}
-          labelPosition="left"
-          size="mini"
-          icon="cloud upload"
-          content="UPLOAD VERSION"
-        />
-        <Header as="h4">
-          Document Versions ({fileNode.versions.edges.length})
-        </Header>
-      </List.Item>
-      {fileNode.versions.edges.length ? (
-        fileNode.versions.edges
-          .sort(dateCompare)
-          .map(({node}, index) => (
-            <VersionItem
-              key={index}
-              studyId={studyId}
-              fileId={fileNode.kfId}
-              fileType={fileNode.fileType}
-              versionNode={node}
-              index={index}
-              onNameClick={onNameClick}
+    <Table compact="very" selectable>
+      <Table.Header>
+        <Table.Row>
+          <Table.HeaderCell
+            singleLine
+            colSpan="3"
+            textAlign="center"
+            verticalAlign="bottom"
+          >
+            Document Versions ({fileNode.versions.edges.length})
+            <Button
+              compact
+              primary
+              floated="right"
+              onClick={onUploadClick}
+              labelPosition="left"
+              size="mini"
+              icon="cloud upload"
+              content="UPLOAD VERSION"
             />
-          ))
-      ) : (
-        <List.Item>
-          <h3>You don't have any versions of this file yet.</h3>
-        </List.Item>
-      )}
-    </List>
+          </Table.HeaderCell>
+        </Table.Row>
+      </Table.Header>
+      <Table.Body>
+        {fileNode.versions.edges.length ? (
+          fileNode.versions.edges
+            .sort(dateCompare)
+            .map(({node}, index) => (
+              <VersionItem
+                key={index}
+                studyId={studyId}
+                fileId={fileNode.kfId}
+                fileType={fileNode.fileType}
+                versionNode={node}
+                index={index}
+                onNameClick={onNameClick}
+              />
+            ))
+        ) : (
+          <Table.Row>
+            <Table.Cell colSpan="3" textAlign="center">
+              You don't have any versions of this file yet.
+            </Table.Cell>
+          </Table.Row>
+        )}
+      </Table.Body>
+    </Table>
   );
 };
 
