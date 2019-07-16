@@ -50,14 +50,19 @@ const EditDocumentModal = ({
           versionStatus={versionStatusInput}
           onNameChange={e => setFileName(e.target.value)}
           onDescriptionChange={e => setFileDescription(e.target.value)}
-          onFileTypeChange={e => setFileType(e.target.value)}
+          onFileTypeChange={item => setFileType(item)}
           onVersionStatusChange={versionStatusValue =>
             setVersionStatus(versionStatusValue)
           }
         />
       </Modal.Content>
       <Modal.Actions>
-        <Button primary size="mini" onClick={e => onSubmit(e)}>
+        <Button
+          primary
+          size="mini"
+          onClick={e => onSubmit(e)}
+          disabled={!fileNameInput || !fileTypeInput || !fileDescriptionInput}
+        >
           SAVE
         </Button>
       </Modal.Actions>

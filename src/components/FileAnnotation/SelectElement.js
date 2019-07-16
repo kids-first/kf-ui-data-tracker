@@ -1,43 +1,44 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classes from 'classnames';
 import {fileTypeDetail} from '../../common/fileUtils';
-import {Icon} from 'semantic-ui-react';
+import {Icon, Segment, Radio} from 'semantic-ui-react';
 /**
  * A radio button that displays information about a file type with a title,
  * description, and icon.
  */
-const SelectElement = ({className, value, select, selected}) => {
-  let selectElementClass = classes(
-    'SelectElement',
-    selected && 'SelectElement-fill',
-    className,
-  );
+const SelectElement = ({value, selected, select}) => {
   return (
-    <label className={selectElementClass}>
-      <input
-        className="border m-16"
-        type="radio"
-        name={value}
+    <Segment
+      compact
+      color={selected ? 'blue' : null}
+      className="selectionRadio--card"
+      onClick={() => select(value)}
+    >
+      <Radio
+        className="selectionRadio"
+        name="fileTypeGroup"
         value={value}
-        checked={selected}
-        onChange={e => select(e)}
-      />
-      <Icon
-        name={`${fileTypeDetail[value].icon || 'question'}`}
-        size="large"
-        bordered
-        circular
-        inverted
-        color={selected ? 'blue' : null}
+        onChange={select}
+        label={() => (
+          <Icon
+            name={fileTypeDetail[value].icon}
+            size="large"
+            bordered
+            circular
+            inverted
+            color={selected ? 'blue' : 'black'}
+          />
+        )}
       />
       <div>
-        <p className="m-0 font-bold font-sm">{fileTypeDetail[value].title}</p>
-        <span className="font-normal text-grey text-xs">
-          {fileTypeDetail[value].description}
-        </span>
+        <p>
+          <b>{fileTypeDetail[value].title}</b>
+        </p>
+        <p>
+          <small>{fileTypeDetail[value].description}</small>
+        </p>
       </div>
-    </label>
+    </Segment>
   );
 };
 
