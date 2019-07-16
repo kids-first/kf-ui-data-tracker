@@ -42,7 +42,7 @@ const FileDetail = ({fileNode, history, match}) => {
           {(deleteFile, {loading, error}) => (
             <Grid>
               <Grid.Row>
-                <Grid.Column>
+                <Grid.Column mobile={16} tablet={16} computer={14}>
                   <Link
                     to={`/study/${match.params.kfId}/documents`}
                     data-testid="back-to-filelist"
@@ -57,35 +57,17 @@ const FileDetail = ({fileNode, history, match}) => {
                       All Documents
                     </Button>
                   </Link>
-                </Grid.Column>
-              </Grid.Row>
-              <Grid.Row>
-                <Grid.Column mobile={16} tablet={16} computer={12}>
                   <Header as="h3" size="medium" color="blue">
                     {fileNode.name}
                   </Header>
                 </Grid.Column>
-                <Grid.Column mobile={16} tablet={16} computer={4}>
-                  <Button.Group size="mini">
+                <Grid.Column mobile={2} tablet={2} computer={2}>
+                  <Button.Group size="mini" attached="top" fluid>
                     <Button
-                      basic
                       icon="pencil"
                       onClick={() => setDialog('annotation')}
                       data-testid="edit-button"
                       content="EDIT"
-                    />
-                    <Button
-                      primary
-                      icon="download"
-                      onClick={e =>
-                        downloadFile(
-                          studyId,
-                          fileNode.kfId,
-                          null,
-                          downloadFileMutation,
-                        )
-                      }
-                      content="DOWNLOAD"
                     />
                     <Popup
                       trigger={<Button basic icon="trash alternate" />}
@@ -99,7 +81,8 @@ const FileDetail = ({fileNode, history, match}) => {
                             data-testid="delete-confirm"
                             negative
                             fluid
-                            icon={<Icon name="trash alternate" />}
+                            size="mini"
+                            icon="trash alternate"
                             content="Delete"
                             onClick={e => {
                               deleteFile({variables: {kfId: fileNode.kfId}});
@@ -110,6 +93,22 @@ const FileDetail = ({fileNode, history, match}) => {
                       }
                       on="click"
                       position="top right"
+                    />
+                  </Button.Group>
+                  <Button.Group attached="bottom" size="mini">
+                    <Button
+                      compact
+                      primary
+                      icon="download"
+                      onClick={e =>
+                        downloadFile(
+                          studyId,
+                          fileNode.kfId,
+                          null,
+                          downloadFileMutation,
+                        )
+                      }
+                      content="DOWNLOAD"
                     />
                   </Button.Group>
                 </Grid.Column>
@@ -161,7 +160,7 @@ const FileDetail = ({fileNode, history, match}) => {
                 </Grid.Column>
               </Grid.Row>
               <Grid.Row>
-                <Grid.Column mobile={16} tablet={16} computer={12}>
+                <Grid.Column mobile={16} tablet={16} computer={13}>
                   <Header as="h4" sub>
                     Description
                   </Header>
@@ -173,7 +172,7 @@ const FileDetail = ({fileNode, history, match}) => {
                 </Grid.Column>
               </Grid.Row>
               <Grid.Row>
-                <Grid.Column mobile={16} tablet={16} computer={12}>
+                <Grid.Column mobile={16} tablet={16} computer={14}>
                   <VersionList
                     studyId={studyId}
                     fileNode={fileNode}
