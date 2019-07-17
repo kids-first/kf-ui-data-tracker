@@ -1,3 +1,2 @@
-@import '../node_modules/kf-uikit/dist/styles.css';
 @import './App.css';
 @import-glob "./components/**/*.css";
