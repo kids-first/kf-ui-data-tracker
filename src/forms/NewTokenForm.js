@@ -17,7 +17,7 @@ const NewTokenForm = ({onSubmit, error, loading}) => {
           <label>
             Name:
             <input
-              focus={name.length > 0}
+              focus={name.length > 0 ? 'true' : 'false'}
               type="text"
               name="name"
               value={name}

@@ -20,9 +20,9 @@ it('renders with files', async () => {
   );
   expect(tree.container).toMatchSnapshot();
 
-  // 8 files in total, page 1 contains 5
+  // 12 files in total, page 1 contains 10
   const lisPage1 = tree.getAllByTestId('file-item');
-  expect(lisPage1.length).toBe(5);
+  expect(lisPage1.length).toBe(10);
 
   // Click on the next button to go to next page
 
@@ -31,9 +31,9 @@ it('renders with files', async () => {
 
   await wait();
 
-  // 8 files in total, 5 files per page, page 2 should have 3 files
+  // 12 files in total, 10 files per page, page 2 should have 2 files
   const lisPage2 = tree.getAllByTestId('file-item');
-  expect(lisPage2.length).toBe(3);
+  expect(lisPage2.length).toBe(2);
 });
 
 it('renders without files', () => {
