@@ -8,26 +8,22 @@ exports[`renders correctly 1`] = `
     <h1
       class="ui header"
     >
-      <div
-        class="content"
-      >
-        A study used for testing the header
-        <div
-          class="sub header"
-        >
-          Test Study
-        </div>
-        <button
-          class="ui basic icon left labeled button"
-        >
-          <i
-            aria-hidden="true"
-            class="copy icon"
-          />
-          SD_00000000
-        </button>
-      </div>
+      A study used for testing the header
     </h1>
+    <h2
+      class="sub header study--header-sub"
+    >
+      Test Study
+    </h2>
+    <button
+      class="ui tiny basic icon left labeled button"
+    >
+      <i
+        aria-hidden="true"
+        class="copy icon"
+      />
+      SD_00000000
+    </button>
   </div>
 </div>
 `;
