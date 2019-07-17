@@ -1,5 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`renders modal with no content, submit is disabled 1`] = `<div />`;
-
-exports[`renders modal with no content, submit is enabled 1`] = `<div />`;
