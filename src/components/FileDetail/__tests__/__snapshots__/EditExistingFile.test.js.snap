@@ -38,24 +38,20 @@ exports[`edits an existing file correctly 1`] = `
         <h1
           class="ui header"
         >
-          <div
-            class="content"
-          >
-            benchmark extensible e-business
-            <div
-              class="sub header"
-            />
-            <button
-              class="ui basic icon left labeled button"
-            >
-              <i
-                aria-hidden="true"
-                class="copy icon"
-              />
-              SD_8WX8QQ06
-            </button>
-          </div>
+          benchmark extensible e-business
         </h1>
+        <h2
+          class="sub header study--header-sub"
+        />
+        <button
+          class="ui tiny basic icon left labeled button"
+        >
+          <i
+            aria-hidden="true"
+            class="copy icon"
+          />
+          SD_8WX8QQ06
+        </button>
       </div>
     </div>
     <div
@@ -544,24 +540,20 @@ exports[`edits an existing file correctly 2`] = `
         <h1
           class="ui header"
         >
-          <div
-            class="content"
-          >
-            benchmark extensible e-business
-            <div
-              class="sub header"
-            />
-            <button
-              class="ui basic icon left labeled button"
-            >
-              <i
-                aria-hidden="true"
-                class="copy icon"
-              />
-              SD_8WX8QQ06
-            </button>
-          </div>
+          benchmark extensible e-business
         </h1>
+        <h2
+          class="sub header study--header-sub"
+        />
+        <button
+          class="ui tiny basic icon left labeled button"
+        >
+          <i
+            aria-hidden="true"
+            class="copy icon"
+          />
+          SD_8WX8QQ06
+        </button>
       </div>
     </div>
     <div
