@@ -15,7 +15,11 @@ const DescriptionStep = ({file, handleDescription}) => {
       <Form>
         <Form.Field>
           <label>Uploaded File:</label>
-          {file.name}
+          <span title={file.name}>
+            {file.name.length > 70
+              ? file.name.substring(0, 70) + '...'
+              : file.name}
+          </span>
           <Label size="mini" basic pointing="left">
             {formatFileSize(file.size)}
           </Label>

@@ -1,28 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly with 0 as index -- show latest tag 1`] = `
+exports[`renders correctly with 0 as index -- show ribbon label 1`] = `
 <div>
-  <div
-    class="item"
-    role="listitem"
+  <tr
+    class="version--item"
   >
-    <i
-      aria-hidden="true"
-      class="orange circle icon middle aligned"
-    />
-    <div
-      class="content"
+    <td
+      class="collapsing"
     >
-      <button
-        class="ui tiny header list--header-inline"
-      >
-        VersionFileName.js
-      </button>
       <div
-        class="ui purple mini tag label"
+        class="ui orange tiny basic ribbon label"
+        title="Latest Version"
       >
-        LATEST
+        Pending review
       </div>
+    </td>
+    <td
+      class=""
+    >
+      <p
+        title="VersionFileName.js"
+      >
+        <b>
+          VersionFileName.js
+        </b>
+      </p>
+      <p
+        data-testid="version-item"
+        title="version description"
+      >
+        <small>
+          version description
+        </small>
+      </p>
+    </td>
+    <td
+      class="collapsing right aligned top aligned"
+    >
       <div
         class="ui mini basic image label"
       >
@@ -46,50 +60,45 @@ exports[`renders correctly with 0 as index -- show latest tag 1`] = `
         />
         9.9 kB
       </button>
-      <button
-        class="ui mini basic icon left labeled button micro-button"
-      >
-        <i
-          aria-hidden="true"
-          class="copy icon"
-        />
-        FV_TT8NF09R
-      </button>
-      <div
-        class="description"
-      >
-        <small
-          data-testid="version-item"
-        >
-          <b>
-            Change Summary: 
-          </b>
-          version description
-        </small>
-      </div>
-    </div>
-  </div>
+    </td>
+  </tr>
 </div>
 `;
 
 exports[`renders correctly with 1 as index -- show version kfId 1`] = `
 <div>
-  <div
-    class="item"
-    role="listitem"
+  <tr
+    class="version--item"
   >
-    <i
-      aria-hidden="true"
-      class="orange circle icon middle aligned"
-    />
-    <div
-      class="content"
+    <td
+      class="center aligned middle aligned"
     >
-      <button
-        class="ui tiny header list--header-inline"
+      <div
+        class="ui orange mini circular empty label"
+      />
+    </td>
+    <td
+      class=""
+    >
+      <p
+        title="VersionFileName.js"
       >
-        VersionFileName.js
-      </button>
+        <b>
+          VersionFileName.js
+        </b>
+      </p>
+      <p
+        data-testid="version-item"
+        title="version description"
+      >
+        <small>
+          version description
+        </small>
+      </p>
+    </td>
+    <td
+      class="collapsing right aligned top aligned"
+    >
       <div
         class="ui mini basic image label"
       >
@@ -113,28 +122,7 @@ exports[`renders correctly with 1 as index -- show version kfId 1`] = `
         />
         9.9 kB
       </button>
-      <button
-        class="ui mini basic icon left labeled button micro-button"
-      >
-        <i
-          aria-hidden="true"
-          class="copy icon"
-        />
-        FV_TT8NF09R
-      </button>
-      <div
-        class="description"
-      >
-        <small
-          data-testid="version-item"
-        >
-          <b>
-            Change Summary: 
-          </b>
-          version description
-        </small>
-      </div>
-    </div>
-  </div>
+    </td>
+  </tr>
 </div>
 `;

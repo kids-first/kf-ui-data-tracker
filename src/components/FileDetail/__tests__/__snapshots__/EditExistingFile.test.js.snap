@@ -98,7 +98,7 @@ exports[`edits an existing file correctly 1`] = `
         class="row"
       >
         <div
-          class="column"
+          class="thirteen wide computer sixteen wide mobile sixteen wide tablet column"
         >
           <a
             data-testid="back-to-filelist"
@@ -114,38 +114,131 @@ exports[`edits an existing file correctly 1`] = `
               All Documents
             </button>
           </a>
+          <h2
+            class="ui header"
+          >
+            organization.jpeg
+          </h2>
         </div>
       </div>
+    </div>
+    <div
+      class="ui grid"
+    >
       <div
         class="row"
       >
         <div
-          class="twelve wide computer sixteen wide mobile sixteen wide tablet column"
-        >
-          <h3
-            class="ui blue medium header"
-          >
-            organization.jpeg
-          </h3>
-        </div>
-        <div
-          class="four wide computer sixteen wide mobile sixteen wide tablet column"
+          class="thirteen wide computer column"
         >
           <div
-            class="ui mini buttons"
+            class="ui segments noBorders"
+          >
+            <div
+              class="ui horizontal segments noBorders"
+            >
+              <div
+                class="ui segment noBorders"
+              >
+                <h4
+                  class="ui grey header"
+                >
+                  Approval Status
+                </h4>
+                <div
+                  class="ui orange tiny basic label"
+                >
+                  Pending review
+                </div>
+              </div>
+              <div
+                class="ui segment noBorders"
+              >
+                <h4
+                  class="ui grey header"
+                >
+                  Document Type
+                </h4>
+                <div
+                  class="ui small basic label"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="hospital icon"
+                  />
+                   Clinical/Phenotype Data
+                </div>
+              </div>
+              <div
+                class="ui segment noBorders"
+              >
+                <h4
+                  class="ui grey header"
+                >
+                  Last Updated
+                </h4>
+                <div
+                  class="ui tiny image label"
+                >
+                  <img
+                    alt="xuzhu"
+                    src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
+                  />
+                  xuzhu
+                  <div
+                    class="detail"
+                  >
+                    <time
+                      datetime="2018-09-27T05:32:26.000Z"
+                      title="2018-09-27T05:32:26+00:00"
+                    >
+                      7 months ago
+                    </time>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ui segment noBorders"
+              >
+                <h4
+                  class="ui grey header"
+                >
+                  Size
+                </h4>
+                <div
+                  class="ui small basic label"
+                >
+                  5.5 kB
+                </div>
+              </div>
+            </div>
+            <div
+              class="ui segment noBorders"
+            >
+              <h4
+                class="ui grey header"
+              >
+                Description
+              </h4>
+              <p>
+                Month necessary animal end standard case. View system operation message decade. Actually sing because deal everything woman subject.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="three wide computer eight wide mobile eight wide tablet column"
+        >
+          <h5
+            class="ui blue top attached center aligned header"
+          >
+            Actions
+          </h5>
+          <div
+            class="ui raised secondary attached segment"
           >
             <button
-              class="ui basic button"
-              data-testid="edit-button"
-            >
-              <i
-                aria-hidden="true"
-                class="pencil icon"
-              />
-              EDIT
-            </button>
-            <button
-              class="ui primary button"
+              class="ui medium fluid icon primary left labeled button"
             >
               <i
                 aria-hidden="true"
@@ -153,176 +246,110 @@ exports[`edits an existing file correctly 1`] = `
               />
               DOWNLOAD
             </button>
-            <button
-              class="ui basic icon button"
+            <div
+              class="ui divider"
+            />
+            <div
+              class="ui mini fluid buttons"
             >
-              <i
-                aria-hidden="true"
-                class="trash alternate icon"
-              />
-            </button>
+              <button
+                class="ui grey small icon left labeled button"
+                data-testid="edit-button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="pencil icon"
+                />
+                EDIT
+              </button>
+              <button
+                class="ui icon button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="trash alternate icon"
+                />
+              </button>
+            </div>
           </div>
         </div>
       </div>
-      <div
-        class="stretched row"
-      >
-        <div
-          class="four wide computer eight wide mobile eight wide tablet column"
-        >
-          <h4
-            class="ui sub header"
-          >
-            Status
-          </h4>
-          <span>
-            <div
-              class="ui orange tiny basic label"
-            >
-              Pending Review
-            </div>
-          </span>
-        </div>
-        <div
-          class="four wide computer eight wide mobile eight wide tablet column"
-        >
-          <h4
-            class="ui sub header"
-          >
-            Document Type
-          </h4>
-          <span>
-            <div
-              class="ui tiny basic label"
-            >
-              <i
-                aria-hidden="true"
-                class="hospital icon"
-              />
-               Clinical/Phenotype Data
-            </div>
-          </span>
-        </div>
-        <div
-          class="four wide computer eight wide mobile eight wide tablet column"
-        >
-          <h4
-            class="ui sub header"
-          >
-            Last Updated
-          </h4>
-          <span>
-            <div
-              class="ui tiny image label"
-            >
-              <img
-                alt="xuzhu"
-                src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
-              />
-              xuzhu
-              <div
-                class="detail"
-              >
-                <time
-                  datetime="2018-09-27T05:32:26.000Z"
-                  title="2018-09-27T05:32:26+00:00"
-                >
-                  7 months ago
-                </time>
-              </div>
-            </div>
-          </span>
-        </div>
-        <div
-          class="four wide computer eight wide mobile eight wide tablet column"
-        >
-          <h4
-            class="ui sub header"
-          >
-            Size
-          </h4>
-          <span>
-            <div
-              class="ui tiny basic label"
-            >
-              5.5 kB
-            </div>
-          </span>
-        </div>
-      </div>
+    </div>
+    <div
+      class="ui grid"
+    >
       <div
         class="row"
       >
         <div
-          class="twelve wide computer sixteen wide mobile sixteen wide tablet column"
+          class="thirteen wide computer sixteen wide mobile sixteen wide tablet column"
         >
-          <h4
-            class="ui sub header"
+          <table
+            class="ui selectable very compact table"
           >
-            Description
-          </h4>
-          <p>
-            <small>
-              Month necessary animal end standard case. View system operation message decade. Actually sing because deal everything woman subject.
-            </small>
-          </p>
-        </div>
-      </div>
-      <div
-        class="row"
-      >
-        <div
-          class="twelve wide computer sixteen wide mobile sixteen wide tablet column"
-        >
-          <div
-            class="ui segment p-0"
-          >
-            <div
-              class="ui divided selection list"
-              role="list"
+            <thead
+              class=""
             >
-              <div
-                class="item"
-                role="listitem"
+              <tr
+                class=""
               >
-                <button
-                  class="ui mini icon primary right floated left labeled button"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="cloud upload icon"
-                  />
-                  UPLOAD VERSION
-                </button>
-                <h4
-                  class="ui header"
+                <th
+                  class="single line center aligned bottom aligned"
+                  colspan="3"
                 >
                   Document Versions (
                   3
                   )
-                </h4>
-              </div>
-              <div
-                class="item"
-                role="listitem"
-              >
-                <i
-                  aria-hidden="true"
-                  class="orange circle icon middle aligned"
-                />
-                <div
-                  class="content"
-                >
                   <button
-                    class="ui tiny header list--header-inline"
+                    class="ui mini compact icon primary right floated left labeled button"
                   >
-                    VersionFileName.js
+                    <i
+                      aria-hidden="true"
+                      class="cloud upload icon"
+                    />
+                    UPLOAD VERSION
                   </button>
+                </th>
+              </tr>
+            </thead>
+            <tbody
+              class=""
+            >
+              <tr
+                class="version--item"
+              >
+                <td
+                  class="collapsing"
+                >
                   <div
-                    class="ui purple mini tag label"
+                    class="ui orange tiny basic ribbon label"
+                    title="Latest Version"
                   >
-                    LATEST
+                    Pending review
                   </div>
+                </td>
+                <td
+                  class=""
+                >
+                  <p
+                    title="VersionFileName.js"
+                  >
+                    <b>
+                      VersionFileName.js
+                    </b>
+                  </p>
+                  <p
+                    data-testid="version-item"
+                    title="version description"
+                  >
+                    <small>
+                      version description
+                    </small>
+                  </p>
+                </td>
+                <td
+                  class="collapsing right aligned top aligned"
+                >
                   <div
                     class="ui mini basic image label"
                   >
@@ -346,45 +373,40 @@ exports[`edits an existing file correctly 1`] = `
                     />
                     5.5 kB
                   </button>
-                  <button
-                    class="ui mini basic icon left labeled button micro-button"
-                  >
-                    <i
-                      aria-hidden="true"
-                      class="copy icon"
-                    />
-                    FV_DMTKEFQW
-                  </button>
+                </td>
+              </tr>
+              <tr
+                class="version--item"
+              >
+                <td
+                  class="center aligned middle aligned"
+                >
                   <div
-                    class="description"
+                    class="ui orange mini circular empty label"
+                  />
+                </td>
+                <td
+                  class=""
+                >
+                  <p
+                    title="VersionFileName.js"
                   >
-                    <small
-                      data-testid="version-item"
-                    >
-                      <b>
-                        Change Summary: 
-                      </b>
+                    <b>
+                      VersionFileName.js
+                    </b>
+                  </p>
+                  <p
+                    data-testid="version-item"
+                    title="version description"
+                  >
+                    <small>
                       version description
                     </small>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="item"
-                role="listitem"
-              >
-                <i
-                  aria-hidden="true"
-                  class="orange circle icon middle aligned"
-                />
-                <div
-                  class="content"
+                  </p>
+                </td>
+                <td
+                  class="collapsing right aligned top aligned"
                 >
-                  <button
-                    class="ui tiny header list--header-inline"
-                  >
-                    VersionFileName.js
-                  </button>
                   <div
                     class="ui mini basic image label"
                   >
@@ -408,45 +430,40 @@ exports[`edits an existing file correctly 1`] = `
                     />
                     9.9 kB
                   </button>
-                  <button
-                    class="ui mini basic icon left labeled button micro-button"
-                  >
-                    <i
-                      aria-hidden="true"
-                      class="copy icon"
-                    />
-                    FV_TT8NF09R
-                  </button>
+                </td>
+              </tr>
+              <tr
+                class="version--item"
+              >
+                <td
+                  class="center aligned middle aligned"
+                >
                   <div
-                    class="description"
+                    class="ui orange mini circular empty label"
+                  />
+                </td>
+                <td
+                  class=""
+                >
+                  <p
+                    title="VersionFileName.js"
                   >
-                    <small
-                      data-testid="version-item"
-                    >
-                      <b>
-                        Change Summary: 
-                      </b>
+                    <b>
+                      VersionFileName.js
+                    </b>
+                  </p>
+                  <p
+                    data-testid="version-item"
+                    title="version description"
+                  >
+                    <small>
                       version description
                     </small>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="item"
-                role="listitem"
-              >
-                <i
-                  aria-hidden="true"
-                  class="orange circle icon middle aligned"
-                />
-                <div
-                  class="content"
+                  </p>
+                </td>
+                <td
+                  class="collapsing right aligned top aligned"
                 >
-                  <button
-                    class="ui tiny header list--header-inline"
-                  >
-                    VersionFileName.js
-                  </button>
                   <div
                     class="ui mini basic image label"
                   >
@@ -470,31 +487,10 @@ exports[`edits an existing file correctly 1`] = `
                     />
                     5.4 kB
                   </button>
-                  <button
-                    class="ui mini basic icon left labeled button micro-button"
-                  >
-                    <i
-                      aria-hidden="true"
-                      class="copy icon"
-                    />
-                    FV_2WV3VNJN
-                  </button>
-                  <div
-                    class="description"
-                  >
-                    <small
-                      data-testid="version-item"
-                    >
-                      <b>
-                        Change Summary: 
-                      </b>
-                      version description
-                    </small>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
@@ -600,7 +596,7 @@ exports[`edits an existing file correctly 2`] = `
         class="row"
       >
         <div
-          class="column"
+          class="thirteen wide computer sixteen wide mobile sixteen wide tablet column"
         >
           <a
             data-testid="back-to-filelist"
@@ -616,38 +612,131 @@ exports[`edits an existing file correctly 2`] = `
               All Documents
             </button>
           </a>
+          <h2
+            class="ui header"
+          >
+            mynewfile.txt
+          </h2>
         </div>
       </div>
+    </div>
+    <div
+      class="ui grid"
+    >
       <div
         class="row"
       >
         <div
-          class="twelve wide computer sixteen wide mobile sixteen wide tablet column"
-        >
-          <h3
-            class="ui blue medium header"
-          >
-            mynewfile.txt
-          </h3>
-        </div>
-        <div
-          class="four wide computer sixteen wide mobile sixteen wide tablet column"
+          class="thirteen wide computer column"
         >
           <div
-            class="ui mini buttons"
+            class="ui segments noBorders"
+          >
+            <div
+              class="ui horizontal segments noBorders"
+            >
+              <div
+                class="ui segment noBorders"
+              >
+                <h4
+                  class="ui grey header"
+                >
+                  Approval Status
+                </h4>
+                <div
+                  class="ui teal tiny basic label"
+                >
+                  Approved
+                </div>
+              </div>
+              <div
+                class="ui segment noBorders"
+              >
+                <h4
+                  class="ui grey header"
+                >
+                  Document Type
+                </h4>
+                <div
+                  class="ui small basic label"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="hospital icon"
+                  />
+                   Clinical/Phenotype Data
+                </div>
+              </div>
+              <div
+                class="ui segment noBorders"
+              >
+                <h4
+                  class="ui grey header"
+                >
+                  Last Updated
+                </h4>
+                <div
+                  class="ui tiny image label"
+                >
+                  <img
+                    alt="xuzhu"
+                    src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
+                  />
+                  xuzhu
+                  <div
+                    class="detail"
+                  >
+                    <time
+                      datetime="2018-09-27T05:32:26.000Z"
+                      title="2018-09-27T05:32:26+00:00"
+                    >
+                      7 months ago
+                    </time>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ui segment noBorders"
+              >
+                <h4
+                  class="ui grey header"
+                >
+                  Size
+                </h4>
+                <div
+                  class="ui small basic label"
+                >
+                  5.5 kB
+                </div>
+              </div>
+            </div>
+            <div
+              class="ui segment noBorders"
+            >
+              <h4
+                class="ui grey header"
+              >
+                Description
+              </h4>
+              <p>
+                Some description here
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="three wide computer eight wide mobile eight wide tablet column"
+        >
+          <h5
+            class="ui blue top attached center aligned header"
+          >
+            Actions
+          </h5>
+          <div
+            class="ui raised secondary attached segment"
           >
             <button
-              class="ui basic button"
-              data-testid="edit-button"
-            >
-              <i
-                aria-hidden="true"
-                class="pencil icon"
-              />
-              EDIT
-            </button>
-            <button
-              class="ui primary button"
+              class="ui medium fluid icon primary left labeled button"
             >
               <i
                 aria-hidden="true"
@@ -655,176 +744,110 @@ exports[`edits an existing file correctly 2`] = `
               />
               DOWNLOAD
             </button>
-            <button
-              class="ui basic icon button"
+            <div
+              class="ui divider"
+            />
+            <div
+              class="ui mini fluid buttons"
             >
-              <i
-                aria-hidden="true"
-                class="trash alternate icon"
-              />
-            </button>
+              <button
+                class="ui grey small icon left labeled button"
+                data-testid="edit-button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="pencil icon"
+                />
+                EDIT
+              </button>
+              <button
+                class="ui icon button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="trash alternate icon"
+                />
+              </button>
+            </div>
           </div>
         </div>
       </div>
-      <div
-        class="stretched row"
-      >
-        <div
-          class="four wide computer eight wide mobile eight wide tablet column"
-        >
-          <h4
-            class="ui sub header"
-          >
-            Status
-          </h4>
-          <span>
-            <div
-              class="ui teal tiny basic label"
-            >
-              Approved
-            </div>
-          </span>
-        </div>
-        <div
-          class="four wide computer eight wide mobile eight wide tablet column"
-        >
-          <h4
-            class="ui sub header"
-          >
-            Document Type
-          </h4>
-          <span>
-            <div
-              class="ui tiny basic label"
-            >
-              <i
-                aria-hidden="true"
-                class="hospital icon"
-              />
-               Clinical/Phenotype Data
-            </div>
-          </span>
-        </div>
-        <div
-          class="four wide computer eight wide mobile eight wide tablet column"
-        >
-          <h4
-            class="ui sub header"
-          >
-            Last Updated
-          </h4>
-          <span>
-            <div
-              class="ui tiny image label"
-            >
-              <img
-                alt="xuzhu"
-                src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
-              />
-              xuzhu
-              <div
-                class="detail"
-              >
-                <time
-                  datetime="2018-09-27T05:32:26.000Z"
-                  title="2018-09-27T05:32:26+00:00"
-                >
-                  7 months ago
-                </time>
-              </div>
-            </div>
-          </span>
-        </div>
-        <div
-          class="four wide computer eight wide mobile eight wide tablet column"
-        >
-          <h4
-            class="ui sub header"
-          >
-            Size
-          </h4>
-          <span>
-            <div
-              class="ui tiny basic label"
-            >
-              5.5 kB
-            </div>
-          </span>
-        </div>
-      </div>
+    </div>
+    <div
+      class="ui grid"
+    >
       <div
         class="row"
       >
         <div
-          class="twelve wide computer sixteen wide mobile sixteen wide tablet column"
+          class="thirteen wide computer sixteen wide mobile sixteen wide tablet column"
         >
-          <h4
-            class="ui sub header"
+          <table
+            class="ui selectable very compact table"
           >
-            Description
-          </h4>
-          <p>
-            <small>
-              Some description here
-            </small>
-          </p>
-        </div>
-      </div>
-      <div
-        class="row"
-      >
-        <div
-          class="twelve wide computer sixteen wide mobile sixteen wide tablet column"
-        >
-          <div
-            class="ui segment p-0"
-          >
-            <div
-              class="ui divided selection list"
-              role="list"
+            <thead
+              class=""
             >
-              <div
-                class="item"
-                role="listitem"
+              <tr
+                class=""
               >
-                <button
-                  class="ui mini icon primary right floated left labeled button"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="cloud upload icon"
-                  />
-                  UPLOAD VERSION
-                </button>
-                <h4
-                  class="ui header"
+                <th
+                  class="single line center aligned bottom aligned"
+                  colspan="3"
                 >
                   Document Versions (
                   3
                   )
-                </h4>
-              </div>
-              <div
-                class="item"
-                role="listitem"
-              >
-                <i
-                  aria-hidden="true"
-                  class="teal circle icon middle aligned"
-                />
-                <div
-                  class="content"
-                >
                   <button
-                    class="ui tiny header list--header-inline"
+                    class="ui mini compact icon primary right floated left labeled button"
                   >
-                    VersionFileName.js
+                    <i
+                      aria-hidden="true"
+                      class="cloud upload icon"
+                    />
+                    UPLOAD VERSION
                   </button>
+                </th>
+              </tr>
+            </thead>
+            <tbody
+              class=""
+            >
+              <tr
+                class="version--item"
+              >
+                <td
+                  class="collapsing"
+                >
                   <div
-                    class="ui purple mini tag label"
+                    class="ui teal tiny basic ribbon label"
+                    title="Latest Version"
                   >
-                    LATEST
+                    Approved
                   </div>
+                </td>
+                <td
+                  class=""
+                >
+                  <p
+                    title="VersionFileName.js"
+                  >
+                    <b>
+                      VersionFileName.js
+                    </b>
+                  </p>
+                  <p
+                    data-testid="version-item"
+                    title="version description"
+                  >
+                    <small>
+                      version description
+                    </small>
+                  </p>
+                </td>
+                <td
+                  class="collapsing right aligned top aligned"
+                >
                   <div
                     class="ui mini basic image label"
                   >
@@ -848,45 +871,40 @@ exports[`edits an existing file correctly 2`] = `
                     />
                     5.5 kB
                   </button>
-                  <button
-                    class="ui mini basic icon left labeled button micro-button"
-                  >
-                    <i
-                      aria-hidden="true"
-                      class="copy icon"
-                    />
-                    FV_DMTKEFQW
-                  </button>
+                </td>
+              </tr>
+              <tr
+                class="version--item"
+              >
+                <td
+                  class="center aligned middle aligned"
+                >
                   <div
-                    class="description"
+                    class="ui orange mini circular empty label"
+                  />
+                </td>
+                <td
+                  class=""
+                >
+                  <p
+                    title="VersionFileName.js"
                   >
-                    <small
-                      data-testid="version-item"
-                    >
-                      <b>
-                        Change Summary: 
-                      </b>
+                    <b>
+                      VersionFileName.js
+                    </b>
+                  </p>
+                  <p
+                    data-testid="version-item"
+                    title="version description"
+                  >
+                    <small>
                       version description
                     </small>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="item"
-                role="listitem"
-              >
-                <i
-                  aria-hidden="true"
-                  class="orange circle icon middle aligned"
-                />
-                <div
-                  class="content"
+                  </p>
+                </td>
+                <td
+                  class="collapsing right aligned top aligned"
                 >
-                  <button
-                    class="ui tiny header list--header-inline"
-                  >
-                    VersionFileName.js
-                  </button>
                   <div
                     class="ui mini basic image label"
                   >
@@ -910,45 +928,40 @@ exports[`edits an existing file correctly 2`] = `
                     />
                     9.9 kB
                   </button>
-                  <button
-                    class="ui mini basic icon left labeled button micro-button"
-                  >
-                    <i
-                      aria-hidden="true"
-                      class="copy icon"
-                    />
-                    FV_TT8NF09R
-                  </button>
+                </td>
+              </tr>
+              <tr
+                class="version--item"
+              >
+                <td
+                  class="center aligned middle aligned"
+                >
                   <div
-                    class="description"
+                    class="ui orange mini circular empty label"
+                  />
+                </td>
+                <td
+                  class=""
+                >
+                  <p
+                    title="VersionFileName.js"
                   >
-                    <small
-                      data-testid="version-item"
-                    >
-                      <b>
-                        Change Summary: 
-                      </b>
+                    <b>
+                      VersionFileName.js
+                    </b>
+                  </p>
+                  <p
+                    data-testid="version-item"
+                    title="version description"
+                  >
+                    <small>
                       version description
                     </small>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="item"
-                role="listitem"
-              >
-                <i
-                  aria-hidden="true"
-                  class="orange circle icon middle aligned"
-                />
-                <div
-                  class="content"
+                  </p>
+                </td>
+                <td
+                  class="collapsing right aligned top aligned"
                 >
-                  <button
-                    class="ui tiny header list--header-inline"
-                  >
-                    VersionFileName.js
-                  </button>
                   <div
                     class="ui mini basic image label"
                   >
@@ -972,31 +985,10 @@ exports[`edits an existing file correctly 2`] = `
                     />
                     5.4 kB
                   </button>
-                  <button
-                    class="ui mini basic icon left labeled button micro-button"
-                  >
-                    <i
-                      aria-hidden="true"
-                      class="copy icon"
-                    />
-                    FV_2WV3VNJN
-                  </button>
-                  <div
-                    class="description"
-                  >
-                    <small
-                      data-testid="version-item"
-                    >
-                      <b>
-                        Change Summary: 
-                      </b>
-                      version description
-                    </small>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

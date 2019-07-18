@@ -86,10 +86,18 @@ body {
 }
 
 /* Utilities CSS classes supporting Semantic UI */
-.p-0 {
-  padding: 0px !important;
+.version--item {
+  td {
+    p {
+      font-size: 14px;
+      margin: 0px;
+    }
+  }
 }
-
+.noBorders {
+  border:none !important;
+  box-shadow:none !important;
+}
 .list--header-inline {
   padding-right: 20px !important;
   display: inline-block !important;
