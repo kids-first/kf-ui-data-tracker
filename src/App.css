@@ -94,7 +94,10 @@ body {
     }
   }
 }
-
+.noBorders {
+  border:none !important;
+  box-shadow:none !important;
+}
 .list--header-inline {
   padding-right: 20px !important;
   display: inline-block !important;
