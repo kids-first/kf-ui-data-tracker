@@ -87,7 +87,7 @@ const VersionInfoModal = ({
           <Grid.Row>
             <Grid.Column>
               <Header as="h4" sub>
-                Description
+                Version Summary
               </Header>
               <p>
                 <small>
