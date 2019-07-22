@@ -1,9 +1,0 @@
-export {ReactComponent as Error} from './icon-error.svg';
-export {ReactComponent as Box} from './icon-box.svg';
-export {ReactComponent as Checkmark} from './icon-checkmark.svg';
-export {ReactComponent as Clinical} from './icon-clinical.svg';
-export {ReactComponent as Notification} from './icon-notification.svg';
-export {ReactComponent as Sequencing} from './icon-sequencing.svg';
-export {ReactComponent as Upload} from './icon-upload.svg';
-export {ReactComponent as Misc} from './icon-misc.svg';
-export {ReactComponent as Edit} from './icon-edit.svg';
