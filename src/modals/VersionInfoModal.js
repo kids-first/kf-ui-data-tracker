@@ -42,7 +42,7 @@ const VersionInfoModal = ({
           </Grid.Row>
           <Grid.Row stretched>
             <Grid.Column mobile={8} tablet={8} computer={4}>
-              <Header as="h4" sub>
+              <Header as="h4" sub color="grey">
                 Status
               </Header>
               <span>
@@ -50,7 +50,7 @@ const VersionInfoModal = ({
               </span>
             </Grid.Column>
             <Grid.Column mobile={8} tablet={8} computer={4}>
-              <Header as="h4" sub>
+              <Header as="h4" sub color="grey">
                 Document Type
               </Header>
               <span>
@@ -61,7 +61,7 @@ const VersionInfoModal = ({
               </span>
             </Grid.Column>
             <Grid.Column mobile={8} tablet={8} computer={5}>
-              <Header as="h4" sub>
+              <Header as="h4" sub color="grey">
                 Last Updated
               </Header>
               <span>
@@ -74,7 +74,7 @@ const VersionInfoModal = ({
               </span>
             </Grid.Column>
             <Grid.Column mobile={8} tablet={8} computer={3}>
-              <Header as="h4" sub>
+              <Header as="h4" sub color="grey">
                 Size
               </Header>
               <span>
@@ -86,7 +86,7 @@ const VersionInfoModal = ({
           </Grid.Row>
           <Grid.Row>
             <Grid.Column>
-              <Header as="h4" sub>
+              <Header as="h4" sub color="grey">
                 Version Summary
               </Header>
               <p>
