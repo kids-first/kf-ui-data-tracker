@@ -82,7 +82,7 @@ const FileElement = ({fileNode, loading, history, match, fileListId}) => {
   return (
     <Table.Row
       data-testid="file-item"
-      className="FileList--row"
+      className="cursor-pointer"
       onClick={() =>
         history.push(`/study/${match.params.kfId}/documents/${fileKfID}`)
       }
