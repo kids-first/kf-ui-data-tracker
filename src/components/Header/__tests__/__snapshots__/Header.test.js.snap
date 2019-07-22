@@ -14,7 +14,6 @@ exports[`renders correctly 1`] = `
         <img
           alt="Kids First logo"
           src="test-file-stub"
-          style="margin: -0.5em 0px; width: 2.0em;"
         />
       </div>
       <a

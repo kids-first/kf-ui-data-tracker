@@ -14,27 +14,27 @@ exports[`renders correctly 1`] = `
         <th
           class=""
         >
-          kfId
+          Study ID
         </th>
         <th
           class=""
         >
-          name
+          Name
         </th>
         <th
           class=""
         >
-          shortName
+          Short Name
         </th>
         <th
           class=""
         >
-          createdAt
+          Created At
         </th>
         <th
           class=""
         >
-          modifiedAt
+          Modified At
         </th>
       </tr>
     </thead>
@@ -174,22 +174,22 @@ exports[`renders without excluded columns passed to props 1`] = `
         <th
           class=""
         >
-          name
+          Name
         </th>
         <th
           class=""
         >
-          shortName
+          Short Name
         </th>
         <th
           class=""
         >
-          createdAt
+          Created At
         </th>
         <th
           class=""
         >
-          modifiedAt
+          Modified At
         </th>
       </tr>
     </thead>
