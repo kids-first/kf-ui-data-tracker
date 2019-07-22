@@ -90,9 +90,7 @@ const VersionInfoModal = ({
                 Version Summary
               </Header>
               <p>
-                <small>
-                  {openedVersion.version.description || 'No summary added...'}
-                </small>
+                {openedVersion.version.description || 'No summary added...'}
               </p>
             </Grid.Column>
           </Grid.Row>
