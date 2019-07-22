@@ -19,23 +19,18 @@ import {
 const StudyListSkeleton = () => (
   <Grid divided="vertically">
     {[1, 2, 3].map(i => (
-      <Grid.Row key={i} style={{height: '90px'}}>
-        <Grid.Column width="2">
-          <Placeholder style={{width: '100%', height: '40px'}}>
-            <Placeholder.Image />
-          </Placeholder>
-        </Grid.Column>
-        <Grid.Column width="8">
+      <Grid.Row key={i}>
+        <Grid.Column mobile={14} tablet={14} computer={15}>
           <Placeholder>
-            <Placeholder.Header>
+            <Placeholder.Header image>
               <Placeholder.Line length="medium" />
               <Placeholder.Line length="full" />
             </Placeholder.Header>
           </Placeholder>
         </Grid.Column>
-        <Grid.Column width="6" textAlign="right">
-          <Placeholder style={{float: 'right', width: '100px', height: '40px'}}>
-            <Placeholder.Image />
+        <Grid.Column mobile={2} tablet={2} computer={1}>
+          <Placeholder>
+            <Placeholder.Image rectangular />
           </Placeholder>
         </Grid.Column>
       </Grid.Row>
