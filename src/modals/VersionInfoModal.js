@@ -85,7 +85,7 @@ const VersionInfoModal = ({
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            <Grid.Column>
+            <Grid.Column mobile={10} tablet={9} computer={9}>
               <Header as="h4" sub color="grey">
                 Version Summary
               </Header>
