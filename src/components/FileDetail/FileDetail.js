@@ -30,7 +30,7 @@ import {
 const ActionButtons = ({ downloadFile, studyId, fileNode, downloadFileMutation, setDialog, deleteFile, history }) => (
   <>
     <Header as="h5" attached="top" textAlign="center" color="blue">Actions</Header>
-    <Segment fluid raised attached secondary>
+    <Segment raised attached secondary>
       <Button
         primary
         icon="download"
