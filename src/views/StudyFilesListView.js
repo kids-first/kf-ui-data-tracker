@@ -62,7 +62,7 @@ const StudyFilesListView = props => (
         );
       const files = !loading ? data.studyByKfId.files.edges : [];
       return (
-        <Grid container columns={1} style={{paddingTop: '40px'}}>
+        <Grid as={Segment} basic container columns={1}>
           <Grid.Column width={16}>
             <Header as="h2">Upload Study Documents for DRC Approval</Header>
             {loading ? (
