@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {formatFileSize} from '../../common/fileUtils';
-import {Form, Label, Message} from 'semantic-ui-react';
+import {Form, Label} from 'semantic-ui-react';
 /**
  * In this step, the user will describ the file that they have uploaded
  */
 const DescriptionStep = ({file, handleDescription}) => {
   return (
     <>
-      <Message compact info>
+      <p>
         Help keep track of your document history by telling us what may have
         changed in this version
-      </Message>
+      </p>
       <Form>
         <Form.Field>
           <label>Uploaded File:</label>
