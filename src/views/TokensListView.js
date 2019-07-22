@@ -52,7 +52,7 @@ const TokensListView = ({
 
   return (
     <>
-      <Container style={{paddingTop: '40px'}}>
+      <Container as={Segment} basic>
         <Header as="h3">Manage Developer Download Tokens</Header>
         <Segment basic>
           Developer download tokens allow download of any file using the{' '}
@@ -75,7 +75,7 @@ const TokensListView = ({
         </Segment>
         <Segment basic>
           {devTokensLoading && (
-            <Segment basic style={{minHeight: '100px'}}>
+            <Segment basic padded="very">
               <Dimmer active inverted>
                 <Loader inverted>Loading tokens...</Loader>
               </Dimmer>
