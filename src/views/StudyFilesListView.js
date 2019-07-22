@@ -64,7 +64,7 @@ const StudyFilesListView = props => (
       return (
         <Grid container columns={1} style={{paddingTop: '40px'}}>
           <Grid.Column width={16}>
-            <Header as="h3">Upload Study Documents for DRC Approval</Header>
+            <Header as="h2">Upload Study Documents for DRC Approval</Header>
             {loading ? (
               <StudyListSkeleton />
             ) : (
