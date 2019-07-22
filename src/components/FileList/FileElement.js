@@ -99,12 +99,7 @@ const FileElement = ({fileNode, loading, history, match, fileListId}) => {
         <Header size="medium" as="span">
           {fileName}
         </Header>
-        <p
-          style={{
-            textOverflow: 'ellipsis',
-            overflow: 'hidden',
-          }}
-        >
+        <p>
           {fileDescription ? (
             <>
               {fileDescription.length > 100
