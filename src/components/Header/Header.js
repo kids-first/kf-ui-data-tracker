@@ -18,11 +18,7 @@ const Header = ({data: {loading, error, myProfile: profile}}) => {
     <Menu attached="top" size="large">
       <Container>
         <Menu.Item>
-          <img
-            src={logo}
-            alt="Kids First logo"
-            style={{margin: '-0.5em 0', width: '2.0em'}}
-          />
+          <img src={logo} alt="Kids First logo" />
         </Menu.Item>
         <Menu.Item header as={NavLink} to="/" activeClassName="">
           Data Tracker
