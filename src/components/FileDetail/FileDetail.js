@@ -35,7 +35,7 @@ const ActionButtons = ({ downloadFile, studyId, fileNode, downloadFileMutation, 
         primary
         icon="download"
         fluid
-        size="medium"
+        size="mini"
         labelPosition="left"
         onClick={e =>
           downloadFile(
