@@ -9,7 +9,6 @@ const LoginView = ({location}) => {
       stretched
       className="View--Login"
       textAlign="center"
-      style={{height: '100vh'}}
       verticalAlign="middle"
     >
       <Grid.Column computer="8" tablet="12" mobile="15">
