@@ -15,8 +15,7 @@ const CopyButton = ({text, ...props}) => {
       inverted
       position="top left"
       size="mini"
-      // Needed so that size does not change when showing success icon
-      style={{width: '4rem', textAlign: 'center'}}
+      className='CopyButton--popup'
       trigger={
         <CopyToClipboard
           text={text}

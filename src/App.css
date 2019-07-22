@@ -128,6 +128,13 @@ body {
 .cursor-pointer {
   cursor: pointer;
 }
+
+/* Needed so that size does not change when showing success icon */
+.CopyButton--popup {
+  width: 4rem;
+  text-align: center;
+}
+
 .View--Login {
   height: 100vh;
   background-image: linear-gradient(to bottom, #fff 400px, transparent 100%),
