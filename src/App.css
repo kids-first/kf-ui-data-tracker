@@ -128,3 +128,8 @@ body {
 .cursor-pointer {
   cursor: pointer;
 }
+.View--Login {
+  height: 100vh;
+  background-image: linear-gradient(to bottom, #fff 400px, transparent 100%),
+    url(./assets/background-science.jpg);
+}
