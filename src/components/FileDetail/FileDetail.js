@@ -132,7 +132,7 @@ const FileDetail = ({ fileNode, history, match }) => {
               </Grid>
               <Grid >
                 <Grid.Row >
-                  <Grid.Column computer={13} >
+                  <Grid.Column mobile={16} tablet={16} computer={13}>
                     <Segment.Group className="noBorders">
                       <Segment.Group horizontal className="noBorders">
                         <Segment className="noBorders">
@@ -173,7 +173,7 @@ const FileDetail = ({ fileNode, history, match }) => {
                     </Segment.Group>
 
                   </Grid.Column>
-                  <Grid.Column mobile={8} tablet={8} computer={3}>
+                  <Grid.Column mobile={8} tablet={4} computer={3}>
                     <ActionButtons {...{ downloadFile, studyId, fileNode, downloadFileMutation, setDialog, deleteFile, history }} />
                   </Grid.Column>
                 </Grid.Row>
