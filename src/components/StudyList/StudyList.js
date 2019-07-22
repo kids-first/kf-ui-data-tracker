@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import StudyGrid from './StudyGrid';
 import StudyTable from './StudyTable';
 import ToggleButtons from '../ToggleButtons/ToggleButtons';
-import {Container, Grid, Header, Placeholder} from 'semantic-ui-react';
+import {Container, Segment, Grid, Header, Placeholder} from 'semantic-ui-react';
 
 /**
  * A skeleton placeholder for the loading state of the study list header
  */
 const HeaderSkeleton = () => (
-  <Container style={{marginTop: 30}}>
-    <Placeholder style={{marginBottom: 50}}>
+  <Container as={Segment} basic>
+    <Placeholder>
       <Placeholder.Header>
         <Placeholder.Line />
       </Placeholder.Header>
@@ -26,7 +26,7 @@ const StudyList = ({studyList, loading, activeView = 'grid'}) => {
 
   if (loading) {
     return (
-      <Container style={{marginTop: 30}}>
+      <Container as={Segment} basic>
         <HeaderSkeleton />
         <StudyGrid loading={loading} studyList={studyList} />
       </Container>
@@ -34,7 +34,7 @@ const StudyList = ({studyList, loading, activeView = 'grid'}) => {
   }
 
   return (
-    <Grid container stackable style={{marginTop: 30}}>
+    <Grid as={Segment} basic container stackable>
       <Grid.Column computer={11} tablet={8}>
         <Header as="h1">Your Studies</Header>
       </Grid.Column>
