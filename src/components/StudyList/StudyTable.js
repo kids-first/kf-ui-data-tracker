@@ -96,14 +96,20 @@ const StudyTable = ({
     }, {}),
   );
 
+  const tableHeaderCell = text => {
+    const headerText =
+      text === 'kfId'
+        ? 'Study ID'
+        : text
+            .replace(/([A-Z])/g, ' $1')
+            .charAt(0)
+            .toUpperCase() + text.replace(/([A-Z])/g, ' $1').slice(1);
+    return <Table.HeaderCell key={text}>{headerText}</Table.HeaderCell>;
+  };
   return (
     <Table striped selectable columns={Object.keys(studies[0]).length}>
       <Table.Header>
-        <Table.Row>
-          {cols.map(v => (
-            <Table.HeaderCell key={v}>{v}</Table.HeaderCell>
-          ))}
-        </Table.Row>
+        <Table.Row>{cols.map(v => tableHeaderCell(v))}</Table.Row>
       </Table.Header>
       <Table.Body>
         {studies.map((row, idx) => (

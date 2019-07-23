@@ -3,17 +3,16 @@
 exports[`deletes a file correctly 1`] = `
 <div>
   <div
-    class="ui container one column grid"
-    style="padding-top: 40px;"
+    class="ui basic segment ui container one column grid"
   >
     <div
       class="sixteen wide column"
     >
-      <h3
+      <h2
         class="ui header"
       >
         Upload Study Documents for DRC Approval
-      </h3>
+      </h2>
       <table
         class="ui selectable stackable very basic very compact table"
       >
@@ -21,7 +20,7 @@ exports[`deletes a file correctly 1`] = `
           class=""
         >
           <tr
-            class="FileList--row"
+            class="cursor-pointer"
             data-testid="file-item"
           >
             <td
@@ -41,9 +40,7 @@ exports[`deletes a file correctly 1`] = `
               >
                 organization.jpeg
               </span>
-              <p
-                style="text-overflow: ellipsis; overflow: hidden;"
-              >
+              <p>
                 Month necessary animal end standard case. View system operation message decade. Actually sing becaus...
               </p>
               <div
@@ -182,17 +179,16 @@ exports[`deletes a file correctly 1`] = `
 exports[`renders correctly 1`] = `
 <div>
   <div
-    class="ui container one column grid"
-    style="padding-top: 40px;"
+    class="ui basic segment ui container one column grid"
   >
     <div
       class="sixteen wide column"
     >
-      <h3
+      <h2
         class="ui header"
       >
         Upload Study Documents for DRC Approval
-      </h3>
+      </h2>
       <table
         class="ui selectable stackable very basic very compact table"
       >
@@ -200,7 +196,7 @@ exports[`renders correctly 1`] = `
           class=""
         >
           <tr
-            class="FileList--row"
+            class="cursor-pointer"
             data-testid="file-item"
           >
             <td
@@ -220,9 +216,7 @@ exports[`renders correctly 1`] = `
               >
                 organization.jpeg
               </span>
-              <p
-                style="text-overflow: ellipsis; overflow: hidden;"
-              >
+              <p>
                 Month necessary animal end standard case. View system operation message decade. Actually sing becaus...
               </p>
               <div
@@ -308,7 +302,7 @@ exports[`renders correctly 1`] = `
             </td>
           </tr>
           <tr
-            class="FileList--row"
+            class="cursor-pointer"
             data-testid="file-item"
           >
             <td
@@ -328,9 +322,7 @@ exports[`renders correctly 1`] = `
               >
                 its.mp3
               </span>
-              <p
-                style="text-overflow: ellipsis; overflow: hidden;"
-              >
+              <p>
                 Question meeting move recognize.
               </p>
               <div

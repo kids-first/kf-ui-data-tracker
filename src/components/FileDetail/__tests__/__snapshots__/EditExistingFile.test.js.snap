@@ -14,7 +14,6 @@ exports[`edits an existing file correctly 1`] = `
         <img
           alt="Kids First logo"
           src="test-file-stub"
-          style="margin: -0.5em 0px; width: 2.0em;"
         />
       </div>
       <a
@@ -129,7 +128,7 @@ exports[`edits an existing file correctly 1`] = `
         class="row"
       >
         <div
-          class="thirteen wide computer column"
+          class="thirteen wide computer sixteen wide mobile sixteen wide tablet column"
         >
           <div
             class="ui segments noBorders"
@@ -227,7 +226,7 @@ exports[`edits an existing file correctly 1`] = `
           </div>
         </div>
         <div
-          class="three wide computer eight wide mobile eight wide tablet column"
+          class="three wide computer eight wide mobile four wide tablet column"
         >
           <h5
             class="ui blue top attached center aligned header"
@@ -238,7 +237,7 @@ exports[`edits an existing file correctly 1`] = `
             class="ui raised secondary attached segment"
           >
             <button
-              class="ui medium fluid icon primary left labeled button"
+              class="ui mini fluid icon primary left labeled button"
             >
               <i
                 aria-hidden="true"
@@ -512,7 +511,6 @@ exports[`edits an existing file correctly 2`] = `
         <img
           alt="Kids First logo"
           src="test-file-stub"
-          style="margin: -0.5em 0px; width: 2.0em;"
         />
       </div>
       <a
@@ -627,7 +625,7 @@ exports[`edits an existing file correctly 2`] = `
         class="row"
       >
         <div
-          class="thirteen wide computer column"
+          class="thirteen wide computer sixteen wide mobile sixteen wide tablet column"
         >
           <div
             class="ui segments noBorders"
@@ -725,7 +723,7 @@ exports[`edits an existing file correctly 2`] = `
           </div>
         </div>
         <div
-          class="three wide computer eight wide mobile eight wide tablet column"
+          class="three wide computer eight wide mobile four wide tablet column"
         >
           <h5
             class="ui blue top attached center aligned header"
@@ -736,7 +734,7 @@ exports[`edits an existing file correctly 2`] = `
             class="ui raised secondary attached segment"
           >
             <button
-              class="ui medium fluid icon primary left labeled button"
+              class="ui mini fluid icon primary left labeled button"
             >
               <i
                 aria-hidden="true"

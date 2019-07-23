@@ -3,8 +3,7 @@
 exports[`renders correctly 1`] = `
 <div>
   <div
-    class="ui container stackable grid"
-    style="margin-top: 30px;"
+    class="ui basic segment ui container stackable grid"
   >
     <div
       class="eleven wide computer eight wide tablet column"
@@ -228,16 +227,13 @@ exports[`renders correctly 1`] = `
 exports[`renders loading state 1`] = `
 <div>
   <div
-    class="ui container"
-    style="margin-top: 30px;"
+    class="ui basic segment ui container"
   >
     <div
-      class="ui container"
-      style="margin-top: 30px;"
+      class="ui basic segment ui container"
     >
       <div
         class="ui placeholder"
-        style="margin-bottom: 50px;"
       >
         <div
           class="header"

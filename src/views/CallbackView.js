@@ -1,15 +1,15 @@
 import React from 'react';
 import {auth} from '../state/auth';
-import {Container, Placeholder} from 'semantic-ui-react';
+import {Container, Segment, Placeholder} from 'semantic-ui-react';
 
 const CallbackView = ({history}) => {
   auth.handleAuthentication(history);
   return (
     <>
-      <Placeholder fluid style={{height: 49, marginBottom: 50}}>
+      <Placeholder fluid className="height-50">
         <Placeholder.Image />
       </Placeholder>
-      <Container>
+      <Container as={Segment} basic>
         <Placeholder fluid>
           <Placeholder.Header>
             <Placeholder.Line />

@@ -30,12 +30,12 @@ import {
 const ActionButtons = ({ downloadFile, studyId, fileNode, downloadFileMutation, setDialog, deleteFile, history }) => (
   <>
     <Header as="h5" attached="top" textAlign="center" color="blue">Actions</Header>
-    <Segment fluid raised attached secondary>
+    <Segment raised attached secondary>
       <Button
         primary
         icon="download"
         fluid
-        size="medium"
+        size="mini"
         labelPosition="left"
         onClick={e =>
           downloadFile(
@@ -132,7 +132,7 @@ const FileDetail = ({ fileNode, history, match }) => {
               </Grid>
               <Grid >
                 <Grid.Row >
-                  <Grid.Column computer={13} >
+                  <Grid.Column mobile={16} tablet={16} computer={13}>
                     <Segment.Group className="noBorders">
                       <Segment.Group horizontal className="noBorders">
                         <Segment className="noBorders">
@@ -173,7 +173,7 @@ const FileDetail = ({ fileNode, history, match }) => {
                     </Segment.Group>
 
                   </Grid.Column>
-                  <Grid.Column mobile={8} tablet={8} computer={3}>
+                  <Grid.Column mobile={8} tablet={4} computer={3}>
                     <ActionButtons {...{ downloadFile, studyId, fileNode, downloadFileMutation, setDialog, deleteFile, history }} />
                   </Grid.Column>
                 </Grid.Row>

@@ -181,7 +181,7 @@ Object {
           class="required field"
         >
           <label>
-            Describe document contents:
+            Describe Document Contents:
           </label>
           <textarea
             data-testid="description-input"
@@ -370,7 +370,7 @@ Object {
         class="required field"
       >
         <label>
-          Describe document contents:
+          Describe Document Contents:
         </label>
         <textarea
           data-testid="description-input"
@@ -624,7 +624,7 @@ Object {
           class="required field"
         >
           <label>
-            Describe document contents:
+            Describe Document Contents:
           </label>
           <textarea
             data-testid="description-input"
@@ -893,7 +893,7 @@ Object {
           class="required field"
         >
           <label>
-            Describe document contents:
+            Describe Document Contents:
           </label>
           <textarea
             data-testid="description-input"
@@ -1165,7 +1165,7 @@ Object {
         class="required field"
       >
         <label>
-          Describe document contents:
+          Describe Document Contents:
         </label>
         <textarea
           data-testid="description-input"

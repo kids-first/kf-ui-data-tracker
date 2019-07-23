@@ -8,17 +8,19 @@ const TokenList = ({tokens, deleteToken}) => (
   <List relaxed>
     {tokens.map(node => (
       <List.Item key={node.node.id}>
-        {node.node.creator && (
-          <Image
-            avatar
-            src={
-              node.node.creator.picture
-                ? node.node.creator.picture
-                : defaultAvatar
-            }
-            alt={node.node.creator.username || 'unknown'}
-          />
-        )}
+        <Image
+          avatar
+          src={
+            node.node.creator && node.node.creator.picture
+              ? node.node.creator.picture
+              : defaultAvatar
+          }
+          alt={
+            node.node.creator && node.node.creator.username
+              ? node.node.creator.username
+              : 'unknown'
+          }
+        />
         <List.Content>
           <List.Header>{node.node.name}</List.Header>
           {node.node.creator && <>Created by {node.node.creator.username} </>}

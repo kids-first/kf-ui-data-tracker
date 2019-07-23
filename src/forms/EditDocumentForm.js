@@ -86,7 +86,7 @@ const EditDocumentForm = ({
         ))}
       </Form.Field>
       <Form.Field required>
-        <label>Describe document contents:</label>
+        <label>Describe Document Contents:</label>
         <TextArea
           data-testid="description-input"
           type="text"
