@@ -2,714 +2,1143 @@
 
 exports[`renders with files 1`] = `
 <div>
-  <ul
-    class="FileList"
+  <table
+    class="ui selectable stackable very basic very compact table"
   >
-    <li
-      class="FileList--Element group"
-      tabindex="0"
+    <tbody
+      class=""
     >
-      <section
-        class="grid-container mx-auto grid-container--collapsed-rows grid-container--fullWidth ml-0 mr-0 px-16 sm:p-0"
+      <tr
+        class="cursor-pointer"
+        data-testid="file-item"
       >
-        <div
-          class=" cell-12 row-1 sm:row-1 sm:cell-2  sm:h-full sm:text-center  sm:border-r border-grey-lightest"
+        <td
+          class="collapsing single line center aligned"
         >
           <div
-            class="Badge bg-lightGrey Badge--invalid ml-0"
+            class="ui grey tiny basic label"
           >
-            <span>
-              Invalid
-            </span>
+            Invalid
           </div>
-        </div>
-        <div
-          class="row-2 sm:row-1 cell-12 sm:cell-9   h-full"
+        </td>
+        <td
+          class=""
         >
-          <a
-            class="w-full no-underline text-black inline-block"
-            data-testid="edit-file"
-            href="/study/undefined/documents/SF_FPVBM0JF"
-          >
-            <p
-              class="FileList--Element-name text-sm font-bold mb-0 mt-4 group-hover:text-blue"
-            >
-              force.webm
-            </p>
-            <p
-              class="FileList--Element-desc w-3/4 h-8 m-0 p-0 text-truncate text-black"
-            >
-              <small>
-                Safe always adult sometimes. Enter full agree still son expect write. According small hold someone.
-              </small>
-            </p>
-          </a>
           <span
-            class="FileStatus w-full inline-block sm:inline text-grey"
-            title="Study ID: undefined"
+            class="ui medium header"
           >
-            SF_FPVBM0JF
-             
-            <span
-              class=""
+            force.webm
+          </span>
+          <p>
+            Safe always adult sometimes. Enter full agree still son expect write. According small hold someone.
+          </p>
+          <div
+            class="ui bulleted horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
             >
-              <button>
-                <svg
-                  height="10"
-                  id="mock-icon"
-                  kind="copy"
-                  width="10"
-                >
-                  <title>
-                    icon-
-                    copy
-                  </title>
-                </svg>
+              <button
+                class="ui mini basic icon left labeled button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="copy icon"
+                />
+                SF_FPVBM0JF
               </button>
-            </span>
-          </span>
-          <span
-            class="FileStatus w-full inline-block sm:inline text-grey"
-          >
-            Created:
-             
-            <time
-              datetime="2018-09-19T08:33:31.000Z"
-              title="2018-09-19T08:33:31+00:00"
+            </div>
+            <div
+              class="item"
+              role="listitem"
             >
-              7 months ago
-            </time>
-          </span>
-          <span
-            class="FileStatus w-full inline-block sm:inline text-grey"
-          >
-            Size: 
-            440 B
-          </span>
-          <span
-            class="FileStatus w-full inline-block sm:inline text-grey"
-          >
-            Clinical/Phenotype Data
-          </span>
-        </div>
-        <div
-          class="FileActions opacity-25 hidden sm:block"
-        >
-          <button
-            class="FileActions-Button"
-          >
-            <svg
-              color="black"
-              height="16"
-              id="mock-icon"
-              kind="download"
-              width="16"
+              <div
+                class="description"
+              >
+                Created 
+                <time
+                  datetime="2018-09-19T08:33:31.000Z"
+                  title="2018-09-19T08:33:31+00:00"
+                >
+                  7 months ago
+                </time>
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
             >
-              <title>
-                icon-
-                download
-              </title>
-            </svg>
-          </button>
-          <button
-            class="FileActions-Button"
-          >
-            <svg
-              height="16"
-              id="mock-icon"
-              kind="delete"
-              width="16"
+              <div
+                class="description"
+              >
+                440 B
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
             >
-              <title>
-                icon-
-                delete
-              </title>
-            </svg>
-          </button>
-        </div>
-      </section>
-    </li>
-    <li
-      class="FileList--Element group"
-      tabindex="0"
-    >
-      <section
-        class="grid-container mx-auto grid-container--collapsed-rows grid-container--fullWidth ml-0 mr-0 px-16 sm:p-0"
-      >
-        <div
-          class=" cell-12 row-1 sm:row-1 sm:cell-2  sm:h-full sm:text-center  sm:border-r border-grey-lightest"
+              <i
+                aria-hidden="true"
+                class="hospital icon"
+              />
+               Clinical/Phenotype Data
+            </div>
+          </div>
+        </td>
+        <td
+          class="center aligned"
         >
           <div
-            class="Badge bg-lightGrey Badge--invalid ml-0"
+            class="ui mini vertical buttons"
           >
-            <span>
-              Invalid
-            </span>
+            <button
+              class="ui basic icon button"
+            >
+              <i
+                aria-hidden="true"
+                class="download icon"
+              />
+            </button>
+            <button
+              class="ui basic icon button"
+              data-testid="delete-button"
+            >
+              <i
+                aria-hidden="true"
+                class="trash alternate icon"
+              />
+            </button>
           </div>
-        </div>
-        <div
-          class="row-2 sm:row-1 cell-12 sm:cell-9   h-full"
-        >
-          <a
-            class="w-full no-underline text-black inline-block"
-            data-testid="edit-file"
-            href="/study/undefined/documents/SF_DLXEQZV1"
-          >
-            <p
-              class="FileList--Element-name text-sm font-bold mb-0 mt-4 group-hover:text-blue"
-            >
-              those.wav
-            </p>
-            <p
-              class="FileList--Element-desc w-3/4 h-8 m-0 p-0 text-truncate text-black"
-            >
-              <small>
-                Feel industry quality direction resource truth. Affect green yard various play character simply remain.
-              </small>
-            </p>
-          </a>
-          <span
-            class="FileStatus w-full inline-block sm:inline text-grey"
-            title="Study ID: undefined"
-          >
-            SF_DLXEQZV1
-             
-            <span
-              class=""
-            >
-              <button>
-                <svg
-                  height="10"
-                  id="mock-icon"
-                  kind="copy"
-                  width="10"
-                >
-                  <title>
-                    icon-
-                    copy
-                  </title>
-                </svg>
-              </button>
-            </span>
-          </span>
-          <span
-            class="FileStatus w-full inline-block sm:inline text-grey"
-          >
-            Created:
-             
-            <time
-              datetime="2018-07-09T05:01:45.000Z"
-              title="2018-07-09T05:01:45+00:00"
-            >
-              10 months ago
-            </time>
-          </span>
-          <span
-            class="FileStatus w-full inline-block sm:inline text-grey"
-          >
-            Size: 
-            7.0 kB
-          </span>
-          <span
-            class="FileStatus w-full inline-block sm:inline text-grey"
-          >
-            unknown
-          </span>
-        </div>
-        <div
-          class="FileActions opacity-25 hidden sm:block"
-        >
-          <button
-            class="FileActions-Button"
-          >
-            <svg
-              color="black"
-              height="16"
-              id="mock-icon"
-              kind="download"
-              width="16"
-            >
-              <title>
-                icon-
-                download
-              </title>
-            </svg>
-          </button>
-          <button
-            class="FileActions-Button"
-          >
-            <svg
-              height="16"
-              id="mock-icon"
-              kind="delete"
-              width="16"
-            >
-              <title>
-                icon-
-                delete
-              </title>
-            </svg>
-          </button>
-        </div>
-      </section>
-    </li>
-    <li
-      class="FileList--Element group"
-      tabindex="0"
-    >
-      <section
-        class="grid-container mx-auto grid-container--collapsed-rows grid-container--fullWidth ml-0 mr-0 px-16 sm:p-0"
+        </td>
+      </tr>
+      <tr
+        class="cursor-pointer"
+        data-testid="file-item"
       >
-        <div
-          class=" cell-12 row-1 sm:row-1 sm:cell-2  sm:h-full sm:text-center  sm:border-r border-grey-lightest"
+        <td
+          class="collapsing single line center aligned"
         >
           <div
-            class="Badge bg-lightGrey Badge--invalid ml-0"
+            class="ui grey tiny basic label"
           >
-            <span>
-              Invalid
-            </span>
+            Invalid
           </div>
-        </div>
-        <div
-          class="row-2 sm:row-1 cell-12 sm:cell-9   h-full"
+        </td>
+        <td
+          class=""
         >
-          <a
-            class="w-full no-underline text-black inline-block"
-            data-testid="edit-file"
-            href="/study/undefined/documents/SF_6JBSGVWE"
-          >
-            <p
-              class="FileList--Element-name text-sm font-bold mb-0 mt-4 group-hover:text-blue"
-            >
-              hand.css
-            </p>
-            <p
-              class="FileList--Element-desc w-3/4 h-8 m-0 p-0 text-truncate text-black"
-            >
-              <small>
-                This democratic analysis car here likely. Protect speech exactly three order different wife.
-              </small>
-            </p>
-          </a>
           <span
-            class="FileStatus w-full inline-block sm:inline text-grey"
-            title="Study ID: undefined"
+            class="ui medium header"
           >
-            SF_6JBSGVWE
-             
-            <span
-              class=""
+            those.wav
+          </span>
+          <p>
+            Feel industry quality direction resource truth. Affect green yard various play character simply rema...
+          </p>
+          <div
+            class="ui bulleted horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
             >
-              <button>
-                <svg
-                  height="10"
-                  id="mock-icon"
-                  kind="copy"
-                  width="10"
-                >
-                  <title>
-                    icon-
-                    copy
-                  </title>
-                </svg>
+              <button
+                class="ui mini basic icon left labeled button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="copy icon"
+                />
+                SF_DLXEQZV1
               </button>
-            </span>
-          </span>
-          <span
-            class="FileStatus w-full inline-block sm:inline text-grey"
-          >
-            Created:
-             
-            <time
-              datetime="2018-10-31T05:37:11.000Z"
-              title="2018-10-31T05:37:11+00:00"
+            </div>
+            <div
+              class="item"
+              role="listitem"
             >
-              6 months ago
-            </time>
-          </span>
-          <span
-            class="FileStatus w-full inline-block sm:inline text-grey"
-          >
-            Size: 
-            9.6 kB
-          </span>
-          <span
-            class="FileStatus w-full inline-block sm:inline text-grey"
-          >
-            unknown
-          </span>
-        </div>
-        <div
-          class="FileActions opacity-25 hidden sm:block"
-        >
-          <button
-            class="FileActions-Button"
-          >
-            <svg
-              color="black"
-              height="16"
-              id="mock-icon"
-              kind="download"
-              width="16"
+              <div
+                class="description"
+              >
+                Created 
+                <time
+                  datetime="2018-07-09T05:01:45.000Z"
+                  title="2018-07-09T05:01:45+00:00"
+                >
+                  10 months ago
+                </time>
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
             >
-              <title>
-                icon-
-                download
-              </title>
-            </svg>
-          </button>
-          <button
-            class="FileActions-Button"
-          >
-            <svg
-              height="16"
-              id="mock-icon"
-              kind="delete"
-              width="16"
+              <div
+                class="description"
+              >
+                7.0 kB
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
             >
-              <title>
-                icon-
-                delete
-              </title>
-            </svg>
-          </button>
-        </div>
-      </section>
-    </li>
-    <li
-      class="FileList--Element group"
-      tabindex="0"
-    >
-      <section
-        class="grid-container mx-auto grid-container--collapsed-rows grid-container--fullWidth ml-0 mr-0 px-16 sm:p-0"
-      >
-        <div
-          class=" cell-12 row-1 sm:row-1 sm:cell-2  sm:h-full sm:text-center  sm:border-r border-grey-lightest"
+              <i
+                aria-hidden="true"
+                class="question icon"
+              />
+               unknown
+            </div>
+          </div>
+        </td>
+        <td
+          class="center aligned"
         >
           <div
-            class="Badge bg-lightGrey Badge--invalid ml-0"
+            class="ui mini vertical buttons"
           >
-            <span>
-              Invalid
-            </span>
+            <button
+              class="ui basic icon button"
+            >
+              <i
+                aria-hidden="true"
+                class="download icon"
+              />
+            </button>
+            <button
+              class="ui basic icon button"
+              data-testid="delete-button"
+            >
+              <i
+                aria-hidden="true"
+                class="trash alternate icon"
+              />
+            </button>
           </div>
-        </div>
-        <div
-          class="row-2 sm:row-1 cell-12 sm:cell-9   h-full"
-        >
-          <a
-            class="w-full no-underline text-black inline-block"
-            data-testid="edit-file"
-            href="/study/undefined/documents/SF_JT0GRZP7"
-          >
-            <p
-              class="FileList--Element-name text-sm font-bold mb-0 mt-4 group-hover:text-blue"
-            >
-              pattern.flac
-            </p>
-            <p
-              class="FileList--Element-desc w-3/4 h-8 m-0 p-0 text-truncate text-black"
-            >
-              <small>
-                Shoulder body answer especially large big risk its. Sort fly note field fish. Network him identify rich.
-              </small>
-            </p>
-          </a>
-          <span
-            class="FileStatus w-full inline-block sm:inline text-grey"
-            title="Study ID: undefined"
-          >
-            SF_JT0GRZP7
-             
-            <span
-              class=""
-            >
-              <button>
-                <svg
-                  height="10"
-                  id="mock-icon"
-                  kind="copy"
-                  width="10"
-                >
-                  <title>
-                    icon-
-                    copy
-                  </title>
-                </svg>
-              </button>
-            </span>
-          </span>
-          <span
-            class="FileStatus w-full inline-block sm:inline text-grey"
-          >
-            Created:
-             
-            <time
-              datetime="2017-11-06T13:13:56.000Z"
-              title="2017-11-06T13:13:56+00:00"
-            >
-              1 year ago
-            </time>
-          </span>
-          <span
-            class="FileStatus w-full inline-block sm:inline text-grey"
-          >
-            Size: 
-            6.6 kB
-          </span>
-          <span
-            class="FileStatus w-full inline-block sm:inline text-grey"
-          >
-            Clinical/Phenotype Data
-          </span>
-        </div>
-        <div
-          class="FileActions opacity-25 hidden sm:block"
-        >
-          <button
-            class="FileActions-Button"
-          >
-            <svg
-              color="black"
-              height="16"
-              id="mock-icon"
-              kind="download"
-              width="16"
-            >
-              <title>
-                icon-
-                download
-              </title>
-            </svg>
-          </button>
-          <button
-            class="FileActions-Button"
-          >
-            <svg
-              height="16"
-              id="mock-icon"
-              kind="delete"
-              width="16"
-            >
-              <title>
-                icon-
-                delete
-              </title>
-            </svg>
-          </button>
-        </div>
-      </section>
-    </li>
-    <li
-      class="FileList--Element group"
-      tabindex="0"
-    >
-      <section
-        class="grid-container mx-auto grid-container--collapsed-rows grid-container--fullWidth ml-0 mr-0 px-16 sm:p-0"
+        </td>
+      </tr>
+      <tr
+        class="cursor-pointer"
+        data-testid="file-item"
       >
-        <div
-          class=" cell-12 row-1 sm:row-1 sm:cell-2  sm:h-full sm:text-center  sm:border-r border-grey-lightest"
+        <td
+          class="collapsing single line center aligned"
         >
           <div
-            class="Badge bg-lightGrey Badge--invalid ml-0"
+            class="ui grey tiny basic label"
           >
-            <span>
-              Invalid
-            </span>
+            Invalid
           </div>
-        </div>
-        <div
-          class="row-2 sm:row-1 cell-12 sm:cell-9   h-full"
+        </td>
+        <td
+          class=""
         >
-          <a
-            class="w-full no-underline text-black inline-block"
-            data-testid="edit-file"
-            href="/study/undefined/documents/SF_16QY2ZXM"
-          >
-            <p
-              class="FileList--Element-name text-sm font-bold mb-0 mt-4 group-hover:text-blue"
-            >
-              6.jpg
-            </p>
-          </a>
           <span
-            class="FileStatus w-full inline-block sm:inline text-grey"
-            title="Study ID: undefined"
+            class="ui medium header"
           >
-            SF_16QY2ZXM
-             
-            <span
-              class=""
+            hand.css
+          </span>
+          <p>
+            This democratic analysis car here likely. Protect speech exactly three order different wife.
+          </p>
+          <div
+            class="ui bulleted horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
             >
-              <button>
-                <svg
-                  height="10"
-                  id="mock-icon"
-                  kind="copy"
-                  width="10"
-                >
-                  <title>
-                    icon-
-                    copy
-                  </title>
-                </svg>
+              <button
+                class="ui mini basic icon left labeled button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="copy icon"
+                />
+                SF_6JBSGVWE
               </button>
-            </span>
-          </span>
-          <span
-            class="FileStatus w-full inline-block sm:inline text-grey"
-          >
-            Created:
-             
-            <time
-              datetime="2019-05-20T14:38:31.374Z"
-              title="2019-05-20T14:38:31.374233+00:00"
+            </div>
+            <div
+              class="item"
+              role="listitem"
             >
-              4 weeks from now
-            </time>
-          </span>
-          <span
-            class="FileStatus w-full inline-block sm:inline text-grey"
-          >
-            Size: 
-            61.2 kB
-          </span>
-          <span
-            class="FileStatus w-full inline-block sm:inline text-grey"
-          >
-            Other
-          </span>
-        </div>
-        <div
-          class="FileActions opacity-25 hidden sm:block"
+              <div
+                class="description"
+              >
+                Created 
+                <time
+                  datetime="2018-10-31T05:37:11.000Z"
+                  title="2018-10-31T05:37:11+00:00"
+                >
+                  6 months ago
+                </time>
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                9.6 kB
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="question icon"
+              />
+               unknown
+            </div>
+          </div>
+        </td>
+        <td
+          class="center aligned"
         >
-          <button
-            class="FileActions-Button"
+          <div
+            class="ui mini vertical buttons"
           >
-            <svg
-              color="black"
-              height="16"
-              id="mock-icon"
-              kind="download"
-              width="16"
+            <button
+              class="ui basic icon button"
             >
-              <title>
-                icon-
-                download
-              </title>
-            </svg>
-          </button>
-          <button
-            class="FileActions-Button"
+              <i
+                aria-hidden="true"
+                class="download icon"
+              />
+            </button>
+            <button
+              class="ui basic icon button"
+              data-testid="delete-button"
+            >
+              <i
+                aria-hidden="true"
+                class="trash alternate icon"
+              />
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="cursor-pointer"
+        data-testid="file-item"
+      >
+        <td
+          class="collapsing single line center aligned"
+        >
+          <div
+            class="ui grey tiny basic label"
           >
-            <svg
-              height="16"
-              id="mock-icon"
-              kind="delete"
-              width="16"
+            Invalid
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <span
+            class="ui medium header"
+          >
+            pattern.flac
+          </span>
+          <p>
+            Shoulder body answer especially large big risk its. Sort fly note field fish. Network him identify r...
+          </p>
+          <div
+            class="ui bulleted horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
             >
-              <title>
-                icon-
-                delete
-              </title>
-            </svg>
-          </button>
-        </div>
-      </section>
-    </li>
-  </ul>
+              <button
+                class="ui mini basic icon left labeled button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="copy icon"
+                />
+                SF_JT0GRZP7
+              </button>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                Created 
+                <time
+                  datetime="2017-11-06T13:13:56.000Z"
+                  title="2017-11-06T13:13:56+00:00"
+                >
+                  1 year ago
+                </time>
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                6.6 kB
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="hospital icon"
+              />
+               Clinical/Phenotype Data
+            </div>
+          </div>
+        </td>
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui mini vertical buttons"
+          >
+            <button
+              class="ui basic icon button"
+            >
+              <i
+                aria-hidden="true"
+                class="download icon"
+              />
+            </button>
+            <button
+              class="ui basic icon button"
+              data-testid="delete-button"
+            >
+              <i
+                aria-hidden="true"
+                class="trash alternate icon"
+              />
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="cursor-pointer"
+        data-testid="file-item"
+      >
+        <td
+          class="collapsing single line center aligned"
+        >
+          <div
+            class="ui grey tiny basic label"
+          >
+            Invalid
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <span
+            class="ui medium header"
+          >
+            6.jpg
+          </span>
+          <p />
+          <div
+            class="ui bulleted horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <button
+                class="ui mini basic icon left labeled button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="copy icon"
+                />
+                SF_16QY2ZXM
+              </button>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                Created 
+                <time
+                  datetime="2019-05-20T14:38:31.374Z"
+                  title="2019-05-20T14:38:31.374233+00:00"
+                >
+                  4 weeks from now
+                </time>
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                61.2 kB
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="question icon"
+              />
+               Other
+            </div>
+          </div>
+        </td>
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui mini vertical buttons"
+          >
+            <button
+              class="ui basic icon button"
+            >
+              <i
+                aria-hidden="true"
+                class="download icon"
+              />
+            </button>
+            <button
+              class="ui basic icon button"
+              data-testid="delete-button"
+            >
+              <i
+                aria-hidden="true"
+                class="trash alternate icon"
+              />
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="cursor-pointer"
+        data-testid="file-item"
+      >
+        <td
+          class="collapsing single line center aligned"
+        >
+          <div
+            class="ui grey tiny basic label"
+          >
+            Invalid
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <span
+            class="ui medium header"
+          >
+            5.jpg
+          </span>
+          <p />
+          <div
+            class="ui bulleted horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <button
+                class="ui mini basic icon left labeled button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="copy icon"
+                />
+                SF_MKTW3YRN
+              </button>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                Created 
+                <time
+                  datetime="2019-05-20T14:38:25.692Z"
+                  title="2019-05-20T14:38:25.692686+00:00"
+                >
+                  4 weeks from now
+                </time>
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                63.0 kB
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="question icon"
+              />
+               Other
+            </div>
+          </div>
+        </td>
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui mini vertical buttons"
+          >
+            <button
+              class="ui basic icon button"
+            >
+              <i
+                aria-hidden="true"
+                class="download icon"
+              />
+            </button>
+            <button
+              class="ui basic icon button"
+              data-testid="delete-button"
+            >
+              <i
+                aria-hidden="true"
+                class="trash alternate icon"
+              />
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="cursor-pointer"
+        data-testid="file-item"
+      >
+        <td
+          class="collapsing single line center aligned"
+        >
+          <div
+            class="ui grey tiny basic label"
+          >
+            Invalid
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <span
+            class="ui medium header"
+          >
+            4.jpg
+          </span>
+          <p />
+          <div
+            class="ui bulleted horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <button
+                class="ui mini basic icon left labeled button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="copy icon"
+                />
+                SF_AZMTRAND
+              </button>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                Created 
+                <time
+                  datetime="2019-05-20T14:38:20.880Z"
+                  title="2019-05-20T14:38:20.880001+00:00"
+                >
+                  4 weeks from now
+                </time>
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                61.0 kB
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="question icon"
+              />
+               Other
+            </div>
+          </div>
+        </td>
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui mini vertical buttons"
+          >
+            <button
+              class="ui basic icon button"
+            >
+              <i
+                aria-hidden="true"
+                class="download icon"
+              />
+            </button>
+            <button
+              class="ui basic icon button"
+              data-testid="delete-button"
+            >
+              <i
+                aria-hidden="true"
+                class="trash alternate icon"
+              />
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="cursor-pointer"
+        data-testid="file-item"
+      >
+        <td
+          class="collapsing single line center aligned"
+        >
+          <div
+            class="ui grey tiny basic label"
+          >
+            Invalid
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <span
+            class="ui medium header"
+          >
+            3.jpg
+          </span>
+          <p />
+          <div
+            class="ui bulleted horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <button
+                class="ui mini basic icon left labeled button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="copy icon"
+                />
+                SF_SFA9WW62
+              </button>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                Created 
+                <time
+                  datetime="2019-05-20T14:34:21.331Z"
+                  title="2019-05-20T14:34:21.331546+00:00"
+                >
+                  4 weeks from now
+                </time>
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                75.5 kB
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="question icon"
+              />
+               Other
+            </div>
+          </div>
+        </td>
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui mini vertical buttons"
+          >
+            <button
+              class="ui basic icon button"
+            >
+              <i
+                aria-hidden="true"
+                class="download icon"
+              />
+            </button>
+            <button
+              class="ui basic icon button"
+              data-testid="delete-button"
+            >
+              <i
+                aria-hidden="true"
+                class="trash alternate icon"
+              />
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="cursor-pointer"
+        data-testid="file-item"
+      >
+        <td
+          class="collapsing single line center aligned"
+        >
+          <div
+            class="ui grey tiny basic label"
+          >
+            Invalid
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <span
+            class="ui medium header"
+          >
+            3.jpg
+          </span>
+          <p />
+          <div
+            class="ui bulleted horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <button
+                class="ui mini basic icon left labeled button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="copy icon"
+                />
+                SF_SFA9WW01
+              </button>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                Created 
+                <time
+                  datetime="2019-05-20T14:34:21.331Z"
+                  title="2019-05-20T14:34:21.331546+00:00"
+                >
+                  4 weeks from now
+                </time>
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                75.5 kB
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="question icon"
+              />
+               Other
+            </div>
+          </div>
+        </td>
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui mini vertical buttons"
+          >
+            <button
+              class="ui basic icon button"
+            >
+              <i
+                aria-hidden="true"
+                class="download icon"
+              />
+            </button>
+            <button
+              class="ui basic icon button"
+              data-testid="delete-button"
+            >
+              <i
+                aria-hidden="true"
+                class="trash alternate icon"
+              />
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="cursor-pointer"
+        data-testid="file-item"
+      >
+        <td
+          class="collapsing single line center aligned"
+        >
+          <div
+            class="ui grey tiny basic label"
+          >
+            Invalid
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <span
+            class="ui medium header"
+          >
+            3.jpg
+          </span>
+          <p />
+          <div
+            class="ui bulleted horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <button
+                class="ui mini basic icon left labeled button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="copy icon"
+                />
+                SF_SFA9WW02
+              </button>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                Created 
+                <time
+                  datetime="2019-05-20T14:34:21.331Z"
+                  title="2019-05-20T14:34:21.331546+00:00"
+                >
+                  4 weeks from now
+                </time>
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                75.5 kB
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="question icon"
+              />
+               Other
+            </div>
+          </div>
+        </td>
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui mini vertical buttons"
+          >
+            <button
+              class="ui basic icon button"
+            >
+              <i
+                aria-hidden="true"
+                class="download icon"
+              />
+            </button>
+            <button
+              class="ui basic icon button"
+              data-testid="delete-button"
+            >
+              <i
+                aria-hidden="true"
+                class="trash alternate icon"
+              />
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
   <div
-    class="Pagination"
+    class="ui basic right aligned segment"
   >
-    <p
-      class="inline-block m-0 pt-12 text-sm text-mediumGrey  text-left"
+    Showing 
+    10
+     of 
+    12
+     files
+     
+    <div
+      aria-label="Pagination Navigation"
+      class="ui pagination menu"
+      role="navigation"
     >
-      Showing 
-      5
-       of 
-      8
-       files
-    </p>
-    <ul
-      class="Pagination--PageList"
-    >
-      <li
-        class="previous disabled"
+      <a
+        aria-current="false"
+        aria-disabled="false"
+        aria-label="Previous page"
+        class="item"
+        tabindex="0"
+        type="prevItem"
+        value="1"
       >
-        <a
-          aria-disabled="true"
-          role="button"
-          tabindex="0"
-        >
-          <svg
-            id="mock-icon"
-            kind="previous"
-            size="4"
-          >
-            <title>
-              icon-
-              previous
-            </title>
-          </svg>
-        </a>
-      </li>
-      <li
-        class="Pagination--active"
+        <i
+          aria-hidden="true"
+          class="chevron left icon"
+        />
+      </a>
+      <a
+        aria-current="true"
+        aria-disabled="false"
+        class="active item"
+        tabindex="0"
+        type="pageItem"
+        value="1"
       >
-        <a
-          aria-current="page"
-          aria-label="Page 1 is your current page"
-          role="button"
-          tabindex="0"
-        >
-          1
-        </a>
-      </li>
-      <li>
-        <a
-          aria-label="Page 2"
-          role="button"
-          tabindex="0"
-        >
-          2
-        </a>
-      </li>
-      <li
-        class="next"
+        1
+      </a>
+      <a
+        aria-current="false"
+        aria-disabled="false"
+        class="item"
+        tabindex="0"
+        type="pageItem"
+        value="2"
       >
-        <a
-          aria-disabled="false"
-          role="button"
-          tabindex="0"
-        >
-          <svg
-            id="mock-icon"
-            kind="next"
-            size="4"
-          >
-            <title>
-              icon-
-              next
-            </title>
-          </svg>
-        </a>
-      </li>
-    </ul>
+        2
+      </a>
+      <a
+        aria-current="false"
+        aria-disabled="false"
+        aria-label="Next page"
+        class="item"
+        tabindex="0"
+        type="nextItem"
+        value="2"
+      >
+        <i
+          aria-hidden="true"
+          class="chevron right icon"
+        />
+      </a>
+    </div>
   </div>
 </div>
 `;
 
 exports[`renders without files 1`] = `
 <div>
-  <ul
-    class="FileList"
+  <div
+    class="ui basic segment"
   >
-    <h3
-      class="FileList--Empty"
+    <div
+      class="ui icon center aligned header"
     >
+      <i
+        aria-hidden="true"
+        class="file alternate outline icon"
+      />
       You don't have any documents yet.
-    </h3>
-  </ul>
+    </div>
+  </div>
 </div>
 `;

@@ -12,6 +12,20 @@ export const ALL_STUDIES = gql`
           id
           createdAt
           modifiedAt
+          files {
+            edges {
+              node {
+                versions(first: 1, orderBy: "-created_at") {
+                  edges {
+                    node {
+                      id
+                      state
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -104,6 +118,10 @@ export const GET_DEV_TOKENS = gql`
           name
           token
           createdAt
+          creator {
+            username
+            picture
+          }
         }
       }
     }

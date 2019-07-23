@@ -1,48 +1,54 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import classes from 'classnames';
+import {Button, Icon, Popup} from 'semantic-ui-react';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
-import {Icon} from 'kf-uikit';
-import SvgIcon from '../Icon/Icon';
 
-const CopyButton = ({className, text}) => {
-  const copyButtonClass = classes(className);
+/**
+ * A simple button that is wrapped with an icon and a popup prompting the user
+ * to copy the provided text.
+ * Passes additional props to the Button
+ */
+const CopyButton = ({text, ...props}) => {
   const [copied, setCopied] = useState(false);
   return (
-    <span className={copyButtonClass}>
-      <CopyToClipboard
-        text={text}
-        onCopy={() => {
-          setCopied(true);
-          setTimeout(() => {
-            setCopied(false);
-          }, 700);
-        }}
-      >
-        <button>
-          {copied ? (
-            <span className="CopyButton">
-              <SvgIcon kind="Checkmark" width="10" height="10" />
-              <span className="CopyTooltip">Copied!</span>
-            </span>
-          ) : (
-            <Icon width={10} height={10} kind="copy" />
-          )}
-        </button>
-      </CopyToClipboard>
-    </span>
+    <Popup
+      inverted
+      position="top left"
+      size="mini"
+      className='CopyButton--popup'
+      trigger={
+        <CopyToClipboard
+          text={text}
+          onCopy={() => {
+            setCopied(true);
+            setTimeout(() => {
+              setCopied(false);
+            }, 700);
+          }}
+        >
+          <Button
+            {...props}
+            icon
+            labelPosition="left"
+            onClick={e => e.stopPropagation()}
+          >
+            <Icon name="copy" />
+            {text}
+          </Button>
+        </CopyToClipboard>
+      }
+    >
+      {copied ? <Icon color="green" name="check" /> : 'Copy'}
+    </Popup>
   );
 };
 
 CopyButton.propTypes = {
-  /** Any additional classes to be applied to the copy button*/
-  className: PropTypes.string,
   /** The string to be copied */
   text: PropTypes.string.isRequired,
 };
 
 CopyButton.defaultProps = {
-  className: null,
   text: null,
 };
 

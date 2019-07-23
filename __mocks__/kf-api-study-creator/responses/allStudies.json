@@ -10,6 +10,56 @@
             "shortName": null,
             "createdAt": "2018-06-17T23:32:00+00:00",
             "modifiedAt": "2019-04-25T15:22:18.780221+00:00",
+            "files": {
+              "edges": [
+                {
+                  "node": {
+                    "id": "f1",
+                    "kfId": "SF_5ZPEM167",
+                    "name": "organization.jpeg",
+                    "description": "Month necessary animal end standard case. View system operation message decade. Actually sing because deal everything woman subject.",
+                    "fileType": "CLN",
+                    "downloadUrl": "http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167",
+                    "creator": {
+                      "email": "xuzhu@d3b.center",
+                      "id": "VXNlck5vZGU6Mg==",
+                      "picture": "https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg",
+                      "username": "xuzhu",
+                      "__typename": "UserNode"
+                    },
+                    "versions": {
+                      "edges": [
+                        {
+                          "node": {
+                            "id": "v2",
+                            "kfId": "FV_DMTKEFQW",
+                            "downloadUrl": "http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167/version/FV_DMTKEFQW",
+                            "size": 5460,
+                            "state": "PEN",
+                            "createdAt": "2018-09-27T05:32:26+00:00",
+                            "description": "version description",
+                            "fileName": "VersionFileName.js",
+                            "creator": {
+                              "email": "xuzhu@d3b.center",
+                              "id": "VXNlck5vZGU6Mg==",
+                              "picture": "https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg",
+                              "username": "xuzhu",
+                              "__typename": "UserNode"
+                            },
+                            "__typename": "VersionNode"
+                          },
+                          "__typename": "VersionNodeEdge"
+                        }
+                      ],
+                      "__typename": "VersionNodeConnection"
+                    },
+                    "__typename": "FileNode"
+                  },
+                  "__typename": "FileNodeEdge"
+                }
+              ],
+              "__typename": "FileNodeConnection"
+            },
             "__typename": "StudyNode"
           },
           "__typename": "StudyNodeEdge"
@@ -22,6 +72,7 @@
             "shortName": null,
             "createdAt": "2018-03-25T10:47:50+00:00",
             "modifiedAt": "2019-04-25T15:22:18.786031+00:00",
+            "files": {"edges": [], "__typename": "FileNodeConnection"},
             "__typename": "StudyNode"
           },
           "__typename": "StudyNodeEdge"
@@ -34,6 +85,7 @@
             "shortName": null,
             "createdAt": "2017-07-07T09:23:24+00:00",
             "modifiedAt": "2019-04-25T15:22:18.789881+00:00",
+            "files": {"edges": [], "__typename": "FileNodeConnection"},
             "__typename": "StudyNode"
           },
           "__typename": "StudyNodeEdge"
@@ -46,6 +98,7 @@
             "shortName": null,
             "createdAt": "2017-05-23T06:26:36+00:00",
             "modifiedAt": "2019-04-25T15:22:18.793566+00:00",
+            "files": {"edges": [], "__typename": "FileNodeConnection"},
             "__typename": "StudyNode"
           },
           "__typename": "StudyNodeEdge"

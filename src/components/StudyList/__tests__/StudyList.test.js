@@ -1,8 +1,10 @@
 import React from 'react';
 import {MemoryRouter} from 'react-router-dom';
-import {render} from 'react-testing-library';
-import allStudies from './allStudies.json';
+import {render, cleanup} from 'react-testing-library';
+import allStudies from '../../../../__mocks__/kf-api-study-creator/responses/allStudies.json';
 import StudyList from '../StudyList';
+
+afterEach(cleanup);
 
 it('renders correctly', () => {
   const studies = allStudies.data.allStudies.edges;
@@ -14,8 +16,8 @@ it('renders correctly', () => {
   );
   expect(tree.container).toMatchSnapshot();
 
-  const cards = tree.container.querySelectorAll('.StudyList li');
-  expect(cards.length).toBe(3);
+  const cards = tree.container.querySelectorAll('.ui .card');
+  expect(cards.length).toBe(4);
 });
 
 it('renders loading state', () => {
@@ -26,7 +28,7 @@ it('renders loading state', () => {
   );
   expect(tree.container).toMatchSnapshot();
 
-  const cards = tree.container.querySelectorAll('.StudyList li');
+  const cards = tree.container.querySelectorAll('.ui .card');
   // Should contain 4 cards in loading state
   expect(cards.length).toBe(4);
 });

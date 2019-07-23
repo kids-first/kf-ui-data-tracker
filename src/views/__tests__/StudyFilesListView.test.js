@@ -38,7 +38,8 @@ it('deletes a file correctly', async () => {
   expect(fileIds.length).toBe(2);
 
   // Delete the second file
-  fireEvent.click(tree.queryAllByText(/icon-delete/i)[1]);
+  fireEvent.click(tree.getAllByTestId('delete-button')[1]);
+  fireEvent.click(tree.getByTestId('delete-confirm'));
   await wait();
 
   // Should only be one file now
@@ -58,5 +59,5 @@ it('shows an error', async () => {
   await wait(0);
 
   expect(tree.container).toMatchSnapshot();
-  expect(tree.queryByText('Error!')).not.toBeNull();
+  expect(tree.queryByText('Error')).not.toBeNull();
 });

@@ -1,10 +1,9 @@
 import React from 'react';
-import classes from 'classnames';
 import PropTypes from 'prop-types';
+import {Button, Header, Icon, Segment, Message} from 'semantic-ui-react';
 
 const FileUploadTarget = props => {
   const {
-    className,
     error,
     instructions,
     handleSelectedFile,
@@ -14,42 +13,48 @@ const FileUploadTarget = props => {
     handleDrop,
   } = props;
 
-  const fileUploadFormClass = classes('upload-target', className);
-
   return (
     <form
-      className={fileUploadFormClass}
       onDragOver={handleDragOver}
       onDragEnter={handleDragEnter}
       onDragLeave={handleDragLeave}
       onDrop={handleDrop}
     >
-      {instructions ? (
-        <p className="max-w-full pt-0 pb-4 mt-0">
-          {instructions}
-          <br />
-          <small className="m-0 p-0">
-            <i>or</i>
-          </small>
-        </p>
-      ) : null}
-      <input
-        type="file"
-        className="Button Button--default max-w-full"
-        onChange={handleSelectedFile}
-      />
-      {error && error.graphQLErrors && (
-        <h4 className="text-red px-2">
-          Failed to upload: {error.graphQLErrors.map(err => err.message)}
-        </h4>
-      )}
+      <Segment piled placeholder>
+        {instructions ? (
+          <Header icon>
+            <Icon name="file outline" />
+            {instructions}
+            <br />
+            <small>or</small>
+          </Header>
+        ) : null}
+        <br />
+        <Button icon primary labelPosition="left" as="label" htmlFor="file">
+          <Icon name="file outline" />
+          Choose a file
+        </Button>
+        <input
+          hidden
+          multiple
+          id="file"
+          type="file"
+          onChange={handleSelectedFile}
+        />
+        {error && error.graphQLErrors && (
+          <Message
+            negative
+            icon="warning circle"
+            header="Failed to upload:"
+            content={error.graphQLErrors.join(', ')}
+          />
+        )}
+      </Segment>
     </form>
   );
 };
 
 FileUploadTarget.propTypes = {
-  /** any additional classes that should be added to the container */
-  className: PropTypes.string,
   /** if cursor is currently dragging over the component */
   dragging: PropTypes.bool,
   /** Errors from graphQL */
@@ -69,7 +74,6 @@ FileUploadTarget.propTypes = {
 };
 
 FileUploadTarget.defaultProps = {
-  className: null,
   instructions: 'Drag and drop Files here',
   dragging: false,
 };

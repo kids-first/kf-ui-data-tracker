@@ -2,9 +2,11 @@ import React from 'react';
 import wait from 'waait';
 import {MemoryRouter} from 'react-router-dom';
 import {MockedProvider} from 'react-apollo/test-utils';
-import {render} from 'react-testing-library';
+import {render, cleanup} from 'react-testing-library';
 import FileList from '../FileList';
 import studyByKfId from './studyByKfId';
+
+afterEach(cleanup);
 
 it('renders with files', async () => {
   const files = studyByKfId.data.studyByKfId.files.edges;
@@ -18,34 +20,31 @@ it('renders with files', async () => {
   );
   expect(tree.container).toMatchSnapshot();
 
-  // 8 files in total, page 1 contains 5
-  const lisPage1 = tree.container.querySelectorAll('.FileList--Element');
-  expect(lisPage1.length).toBe(5);
+  // 12 files in total, page 1 contains 10
+  const lisPage1 = tree.getAllByTestId('file-item');
+  expect(lisPage1.length).toBe(10);
 
   // Click on the next button to go to next page
 
-  let button = tree.container.querySelector('.next > a');
-
+  let button = tree.container.querySelector('.chevron.right.icon');
   button.click();
 
   await wait();
 
-  // 8 files in total, 5 files per page, page 2 should have 3 files
-  const lisPage2 = tree.container.querySelectorAll('.FileList--Element');
-  expect(lisPage2.length).toBe(3);
+  // 12 files in total, 10 files per page, page 2 should have 2 files
+  const lisPage2 = tree.getAllByTestId('file-item');
+  expect(lisPage2.length).toBe(2);
 });
 
 it('renders without files', () => {
   const tree = render(
     <MemoryRouter>
-      <MockedProvider>
-        <FileList fileList={[]} studyId={'SD_00000000'} />
-      </MockedProvider>
+      <FileList fileList={[]} studyId={'SD_00000000'} />
     </MemoryRouter>,
   );
   expect(tree.container).toMatchSnapshot();
 
-  const lis = tree.container.querySelectorAll('.FileList--Element');
+  const lis = tree.queryAllByTestId('file-item');
   expect(lis.length).toBe(0);
 
   // Hide pagination when no files exist

@@ -1,105 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`displays checkmark svg on click 1`] = `
-<span
-  class=""
->
-  <button>
-    <svg
-      height="10"
-      id="mock-icon"
-      kind="copy"
-      width="10"
-    >
-      <title>
-        icon-
-        copy
-      </title>
-    </svg>
-  </button>
-</span>
-`;
-
-exports[`displays checkmark svg on click 2`] = `
-<span
-  class=""
->
-  <button>
-    <span
-      class="CopyButton"
-    >
-      <span
-        class="CopyTooltip"
-      >
-        Copied!
-      </span>
-    </span>
-  </button>
-</span>
-`;
-
-exports[`displays checkmark svg on click 3`] = `
-<span
-  class=""
->
-  <button>
-    <svg
-      height="10"
-      id="mock-icon"
-      kind="copy"
-      width="10"
-    >
-      <title>
-        icon-
-        copy
-      </title>
-    </svg>
-  </button>
-</span>
-`;
-
 exports[`renders correctly 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <span
-        class=""
+      <button
+        class="ui icon left labeled button"
       >
-        <button>
-          <svg
-            height="10"
-            id="mock-icon"
-            kind="copy"
-            width="10"
-          >
-            <title>
-              icon-
-              copy
-            </title>
-          </svg>
-        </button>
-      </span>
+        <i
+          aria-hidden="true"
+          class="copy icon"
+        />
+        testing
+      </button>
     </div>
   </body>,
   "container": <div>
-    <span
-      class=""
+    <button
+      class="ui icon left labeled button"
     >
-      <button>
-        <svg
-          height="10"
-          id="mock-icon"
-          kind="copy"
-          width="10"
-        >
-          <title>
-            icon-
-            copy
-          </title>
-        </svg>
-      </button>
-    </span>
+      <i
+        aria-hidden="true"
+        class="copy icon"
+      />
+      testing
+    </button>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

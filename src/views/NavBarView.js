@@ -2,24 +2,32 @@ import React from 'react';
 import {Query} from 'react-apollo';
 import {GET_STUDY_BY_ID} from '../state/queries';
 import StudyHeader from '../components/StudyHeader/StudyHeader';
-import NavBar from '../components/NavBar/NavBar';
-import {GridContainer} from 'kf-uikit';
+import {StudyNavBar} from '../components/StudyNavBar';
+import {Container, Segment, Message} from 'semantic-ui-react';
 
 const NavBarView = props => (
   <Query query={GET_STUDY_BY_ID} variables={{kfId: props.match.params.kfId}}>
     {({loading, error, data}) => {
-      if (error) return `Error!: ${error}`;
+      if (error)
+        return (
+          <Container as={Segment} basic>
+            <Message
+              negative
+              icon="warning circle"
+              header="Error"
+              content={error.message}
+            />
+          </Container>
+        );
       const study = data.studyByKfId;
       return (
         <section id="study">
-          <div className="bg-lightGrey">
+          <Segment secondary basic>
             <StudyHeader {...study} loading={loading} />
-          </div>
-          <div className="border-b-2 .border-mediumGrey">
-            <GridContainer className="px-12">
-              <NavBar />
-            </GridContainer>
-          </div>
+          </Segment>
+          <Container>
+            <StudyNavBar />
+          </Container>
         </section>
       );
     }}

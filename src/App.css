@@ -10,87 +10,64 @@
 body {
 }
 
-.BodyContent {
-  max-width: var(--site-max-width);
-  margin: auto;
-}
-
-.View--Login {
-  background-image: linear-gradient(to bottom, #fff 400px, transparent 100%),
-    url(https://portal.kidsfirstdrc.org/static/media/background-science.68317e4e.jpg);
-}
-
-.Card--Login {
-  @extend .Card;
-  width: 620px;
-}
-
-.BodyContent {
-  max-width: var(--site-max-width);
-  margin: auto;
-}
-
-.Header {
-  @extend .border-b-2;
-}
-
-.Header--navigation {
-  @extend .grid-container, .mx-auto, .border-none, .p-12;
-
-  .Navigation--buttons {
-    @extend .Navigation--buttons, .cell-11-2;
-  }
-}
-
-.Form--Header {
-  background-color: #d3d2d3;
-  @extend .py-12;
-}
-
-.Form {
-  @extend .w-full, .bg-lightGrey, .p-20;
-
-  .Form--Actions {
-    @extend .flex, .justify-end, .mt-16;
-    .Button {
-      @extend .mx-4;
+/* Utilities CSS classes supporting Semantic UI */
+.version--item {
+  td {
+    p {
+      font-size: 14px;
+      margin: 0px;
     }
   }
 }
 
-.Form--Label {
-  @extend .h-full, .pt-8, .text-title, .text-sm;
+.noBorders {
+  border: none !important;
+  box-shadow: none !important;
 }
 
-.Form--TextArea {
-  border-radius: 5px;
-  min-height: 200px;
-  @extend .w-full, .text-grey, .mt-8, .p-8;
+.height-50 {
+  height: 50px;
 }
 
-.Form--Input {
-  border-radius: 5px;
-  @extend .w-full, .bg-white, .text-grey, .h-8, .px-16;
+.list--header-inline {
+  padding-right: 20px !important;
+  display: inline-block !important;
 }
 
-.Form--Label-required:after {
-  color: red;
-  content: ' *';
+.micro-button {
+  font-size: 10px !important;
+  margin-left: 2px !important;
+  padding-top: 7px !important;
+  padding-bottom: 7px !important;
 }
 
-.Form--TextArea--dialog {
-  border-radius: 5px;
-  min-height: 200px;
-  width: 95%;
-  @extend .border, .border-grey, .text-grey, .ml-8, .mt-12, .p-12;
+.selectionRadio--card {
+  display: flex !important;
+  align-items: center;
+  cursor: pointer;
+  i {
+    margin-right: 10px;
+  }
 }
 
-.Profile--Header {
-  background-image: linear-gradient(
-    to right,
-    rgb(38, 109, 177) 33%,
-    rgb(17, 134, 176) 66%,
-    rgb(18, 151, 215)
-  );
-  @extend .py-40;
+.study--header-sub {
+  display: inline-block;
+  margin-top: 0px;
+  margin-right: 20px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* Needed so that size does not change when showing success icon */
+.CopyButton--popup {
+  width: 4rem;
+  text-align: center;
+}
+
+.View--Login {
+  height: 100vh;
+  background-image: linear-gradient(to bottom, #fff 400px, transparent 100%),
+    url(./assets/background-science.jpg);
 }

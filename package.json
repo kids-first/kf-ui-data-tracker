@@ -23,7 +23,6 @@
     "graphql": "^14.1.1",
     "graphql-tag": "^2.10.1",
     "jwt-decode": "^2.2.0",
-    "kf-uikit": "https://s3.amazonaws.com/kf-uikit-prd-bucket/0.6.1/kf-uikit/kf-uikit.tar.gz",
     "react": "^16.8.3",
     "react-apollo": "^2.5.1",
     "react-app-rewire-postcss": "^3.0.2",
@@ -32,11 +31,11 @@
     "react-google-login": "^5.0.2",
     "react-hot-loader": "^4.3.12",
     "react-modal": "^3.8.1",
-    "react-paginate": "^6.3.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "3.0.0",
     "react-testing-library": "^6.1.2",
-    "react-timeago": "^4.4.0"
+    "react-timeago": "^4.4.0",
+    "semantic-ui-react": "^0.87.1"
   },
   "resolutions": {
     "babel-core": "7.0.0-bridge.0"

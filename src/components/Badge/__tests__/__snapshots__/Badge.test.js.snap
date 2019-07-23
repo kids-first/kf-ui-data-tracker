@@ -1,63 +1,51 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders badge on loading mode 1`] = `
-<body>
+<div>
   <div
-    class="Badge Badge--loading"
+    class="ui grey tiny basic label"
   >
-    <span
-      class="invisible"
-    >
-      Invalid
-    </span>
+    Invalid
   </div>
-</body>
+</div>
 `;
 
 exports[`renders badges with all available state 1`] = `
-<body>
+<div>
   <div
-    class="Badge bg-orange"
+    class="ui orange tiny basic label"
   >
-    <span>
-      Pending Review
-    </span>
+    Pending review
   </div>
-</body>
+</div>
 `;
 
 exports[`renders badges with all available state 2`] = `
-<body>
+<div>
   <div
-    class="Badge bg-teal"
+    class="ui teal tiny basic label"
   >
-    <span>
-      Approved
-    </span>
+    Approved
   </div>
-</body>
+</div>
 `;
 
 exports[`renders badges with all available state 3`] = `
-<body>
+<div>
   <div
-    class="Badge bg-red"
+    class="ui red tiny basic label"
   >
-    <span>
-      Changes Needed
-    </span>
+    Changes needed
   </div>
-</body>
+</div>
 `;
 
 exports[`renders badges with all available state 4`] = `
-<body>
+<div>
   <div
-    class="Badge bg-blue"
+    class="ui blue tiny basic label"
   >
-    <span>
-      Processed
-    </span>
+    Processed
   </div>
-</body>
+</div>
 `;

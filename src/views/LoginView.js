@@ -1,54 +1,32 @@
 import React from 'react';
-import classNames from 'classnames';
-import {Login} from '../components/Login';
+import {Header, Icon, Image, Grid, Message, Segment} from 'semantic-ui-react';
+import {LoginCard} from '../components/LoginCard';
+import logo from '../assets/logo.svg';
 
 const LoginView = ({location}) => {
-  const loginContainer = classNames(
-    'View--Login',
-    'flex',
-    'justify-center',
-    'items-center',
-    'min-h-screen',
-    'text-center,',
-  );
-
   return (
-    <div className={loginContainer}>
-      <div className="text-center">
-        <h1 className="mt-0">
-          <svg className="w-full h-6">
-            <defs>
-              <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor={'rgb(64, 76, 154)'} />
-                <stop offset="100%" stopColor={'rgb(2, 176, 237)'} />
-              </linearGradient>
-            </defs>
-            <text
-              fill="url(#gradient)"
-              x="50%"
-              y="50%"
-              dominantBaseline="central"
-              textAnchor="middle"
-              children={'Kids First Data Tracker'}
-            />
-          </svg>
-        </h1>
-        <div className="Card--Login">
-          <h2 className="Card--title pb-4">Log in</h2>
-          <div className="pb-2">
-            <Login originalUrl={location.state ? location.state.from : '/'} />
-          </div>
-          <hr />
-          <p className="max-w-full">
-            <span>New to Kids First Data Tracker?</span>
-            <a className="no-underline" href="/">
-              {' '}
-              Join now >
+    <Grid
+      stretched
+      className="View--Login"
+      textAlign="center"
+      verticalAlign="middle"
+    >
+      <Grid.Column computer="8" tablet="12" mobile="15">
+        <Segment>
+          <Header as="h1">
+            <Image src={logo} />
+            <Header.Content>Kids First Data Tracker</Header.Content>
+          </Header>
+          <LoginCard originalUrl={location.state ? location.state.from : '/'} />
+          <Message>
+            New to Kids First Data Tracker?
+            <a href="/">
+              Join now <Icon name="chevron right" />
             </a>
-          </p>
-        </div>
-      </div>
-    </div>
+          </Message>
+        </Segment>
+      </Grid.Column>
+    </Grid>
   );
 };
 

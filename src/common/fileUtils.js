@@ -44,22 +44,22 @@ export const downloadFile = (
 // Store file type title, description and icon
 export const fileTypeDetail = {
   SHM: {
-    icon: 'box',
+    icon: 'shipping',
     title: 'Shipping Manifest',
     description: 'File type description goes here...',
   },
   CLN: {
-    icon: 'clinical',
+    icon: 'hospital',
     title: 'Clinical/Phenotype Data',
     description: 'File type description goes here...',
   },
   SEQ: {
-    icon: 'sequencing',
+    icon: 'dna',
     title: 'Sequencing Manifest',
     description: 'File type description goes here...',
   },
   OTH: {
-    icon: 'misc',
+    icon: 'question',
     title: 'Other',
     description: 'File type description goes here...',
   },
@@ -67,10 +67,10 @@ export const fileTypeDetail = {
 
 // Store version state title and color
 export const versionState = {
-  PEN: {color: 'bg-orange', title: 'Pending Review'},
-  APP: {color: 'bg-teal', title: 'Approved'},
-  CHN: {color: 'bg-red', title: 'Changes Needed'},
-  PRC: {color: 'bg-blue', title: 'Processed'},
+  PEN: {title: 'Pending review', labelColor: 'orange'},
+  APP: {title: 'Approved', labelColor: 'teal'},
+  CHN: {title: 'Changes needed', labelColor: 'red'},
+  PRC: {title: 'Processed', labelColor: 'blue'},
 };
 
 // Sort file versions based on the version createdAt date (Latest first)

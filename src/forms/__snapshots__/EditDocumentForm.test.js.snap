@@ -1,0 +1,1241 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly for annotating new file before upload 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <form
+        class="ui form"
+      >
+        <div
+          class="required field"
+        >
+          <label
+            for="file_title"
+          >
+            Document Title:
+          </label>
+          <input
+            data-testid="name-input"
+            name="file_name"
+            placeholder="Phenotypic Data manifest for..."
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="required field"
+        >
+          <label
+            for="file_type"
+          >
+            Document Type:
+          </label>
+          <div
+            class="field"
+          >
+            <div
+              class="ui compact segment selectionRadio--card"
+            >
+              <div
+                class="ui radio checkbox selectionRadio"
+              >
+                <input
+                  class="hidden"
+                  name="fileTypeGroup"
+                  readonly=""
+                  tabindex="0"
+                  type="radio"
+                  value="SHM"
+                />
+                <i
+                  aria-hidden="true"
+                  class="black shipping large bordered circular inverted icon"
+                />
+              </div>
+              <div>
+                <p>
+                  <b>
+                    Shipping Manifest
+                  </b>
+                </p>
+                <p>
+                  <small>
+                    File type description goes here...
+                  </small>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="field"
+          >
+            <div
+              class="ui compact segment selectionRadio--card"
+            >
+              <div
+                class="ui radio checkbox selectionRadio"
+              >
+                <input
+                  class="hidden"
+                  name="fileTypeGroup"
+                  readonly=""
+                  tabindex="0"
+                  type="radio"
+                  value="CLN"
+                />
+                <i
+                  aria-hidden="true"
+                  class="black hospital large bordered circular inverted icon"
+                />
+              </div>
+              <div>
+                <p>
+                  <b>
+                    Clinical/Phenotype Data
+                  </b>
+                </p>
+                <p>
+                  <small>
+                    File type description goes here...
+                  </small>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="field"
+          >
+            <div
+              class="ui compact segment selectionRadio--card"
+            >
+              <div
+                class="ui radio checkbox selectionRadio"
+              >
+                <input
+                  class="hidden"
+                  name="fileTypeGroup"
+                  readonly=""
+                  tabindex="0"
+                  type="radio"
+                  value="SEQ"
+                />
+                <i
+                  aria-hidden="true"
+                  class="black dna large bordered circular inverted icon"
+                />
+              </div>
+              <div>
+                <p>
+                  <b>
+                    Sequencing Manifest
+                  </b>
+                </p>
+                <p>
+                  <small>
+                    File type description goes here...
+                  </small>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="field"
+          >
+            <div
+              class="ui compact segment selectionRadio--card"
+            >
+              <div
+                class="ui radio checkbox selectionRadio"
+              >
+                <input
+                  class="hidden"
+                  name="fileTypeGroup"
+                  readonly=""
+                  tabindex="0"
+                  type="radio"
+                  value="OTH"
+                />
+                <i
+                  aria-hidden="true"
+                  class="black question large bordered circular inverted icon"
+                />
+              </div>
+              <div>
+                <p>
+                  <b>
+                    Other
+                  </b>
+                </p>
+                <p>
+                  <small>
+                    File type description goes here...
+                  </small>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="required field"
+        >
+          <label>
+            Describe Document Contents:
+          </label>
+          <textarea
+            data-testid="description-input"
+            name="description"
+            rows="3"
+            type="text"
+          />
+        </div>
+      </form>
+    </div>
+  </body>,
+  "container": <div>
+    <form
+      class="ui form"
+    >
+      <div
+        class="required field"
+      >
+        <label
+          for="file_title"
+        >
+          Document Title:
+        </label>
+        <input
+          data-testid="name-input"
+          name="file_name"
+          placeholder="Phenotypic Data manifest for..."
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="required field"
+      >
+        <label
+          for="file_type"
+        >
+          Document Type:
+        </label>
+        <div
+          class="field"
+        >
+          <div
+            class="ui compact segment selectionRadio--card"
+          >
+            <div
+              class="ui radio checkbox selectionRadio"
+            >
+              <input
+                class="hidden"
+                name="fileTypeGroup"
+                readonly=""
+                tabindex="0"
+                type="radio"
+                value="SHM"
+              />
+              <i
+                aria-hidden="true"
+                class="black shipping large bordered circular inverted icon"
+              />
+            </div>
+            <div>
+              <p>
+                <b>
+                  Shipping Manifest
+                </b>
+              </p>
+              <p>
+                <small>
+                  File type description goes here...
+                </small>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="field"
+        >
+          <div
+            class="ui compact segment selectionRadio--card"
+          >
+            <div
+              class="ui radio checkbox selectionRadio"
+            >
+              <input
+                class="hidden"
+                name="fileTypeGroup"
+                readonly=""
+                tabindex="0"
+                type="radio"
+                value="CLN"
+              />
+              <i
+                aria-hidden="true"
+                class="black hospital large bordered circular inverted icon"
+              />
+            </div>
+            <div>
+              <p>
+                <b>
+                  Clinical/Phenotype Data
+                </b>
+              </p>
+              <p>
+                <small>
+                  File type description goes here...
+                </small>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="field"
+        >
+          <div
+            class="ui compact segment selectionRadio--card"
+          >
+            <div
+              class="ui radio checkbox selectionRadio"
+            >
+              <input
+                class="hidden"
+                name="fileTypeGroup"
+                readonly=""
+                tabindex="0"
+                type="radio"
+                value="SEQ"
+              />
+              <i
+                aria-hidden="true"
+                class="black dna large bordered circular inverted icon"
+              />
+            </div>
+            <div>
+              <p>
+                <b>
+                  Sequencing Manifest
+                </b>
+              </p>
+              <p>
+                <small>
+                  File type description goes here...
+                </small>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="field"
+        >
+          <div
+            class="ui compact segment selectionRadio--card"
+          >
+            <div
+              class="ui radio checkbox selectionRadio"
+            >
+              <input
+                class="hidden"
+                name="fileTypeGroup"
+                readonly=""
+                tabindex="0"
+                type="radio"
+                value="OTH"
+              />
+              <i
+                aria-hidden="true"
+                class="black question large bordered circular inverted icon"
+              />
+            </div>
+            <div>
+              <p>
+                <b>
+                  Other
+                </b>
+              </p>
+              <p>
+                <small>
+                  File type description goes here...
+                </small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="required field"
+      >
+        <label>
+          Describe Document Contents:
+        </label>
+        <textarea
+          data-testid="description-input"
+          name="description"
+          rows="3"
+          type="text"
+        />
+      </div>
+    </form>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllBySelectText": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getAllByValue": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getBySelectText": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "getByValue": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllBySelectText": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryAllByValue": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryBySelectText": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "queryByValue": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`renders correctly for editing existing file 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <form
+        class="ui form"
+      >
+        <div
+          class="required field"
+        >
+          <label
+            for="file_title"
+          >
+            Document Title:
+          </label>
+          <input
+            data-testid="name-input"
+            name="file_name"
+            placeholder="Phenotypic Data manifest for..."
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="required field"
+        >
+          <label
+            for="file_type"
+          >
+            Document Type:
+          </label>
+          <div
+            class="field"
+          >
+            <div
+              class="ui compact segment selectionRadio--card"
+            >
+              <div
+                class="ui radio checkbox selectionRadio"
+              >
+                <input
+                  class="hidden"
+                  name="fileTypeGroup"
+                  readonly=""
+                  tabindex="0"
+                  type="radio"
+                  value="SHM"
+                />
+                <i
+                  aria-hidden="true"
+                  class="black shipping large bordered circular inverted icon"
+                />
+              </div>
+              <div>
+                <p>
+                  <b>
+                    Shipping Manifest
+                  </b>
+                </p>
+                <p>
+                  <small>
+                    File type description goes here...
+                  </small>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="field"
+          >
+            <div
+              class="ui compact segment selectionRadio--card"
+            >
+              <div
+                class="ui radio checkbox selectionRadio"
+              >
+                <input
+                  class="hidden"
+                  name="fileTypeGroup"
+                  readonly=""
+                  tabindex="0"
+                  type="radio"
+                  value="CLN"
+                />
+                <i
+                  aria-hidden="true"
+                  class="black hospital large bordered circular inverted icon"
+                />
+              </div>
+              <div>
+                <p>
+                  <b>
+                    Clinical/Phenotype Data
+                  </b>
+                </p>
+                <p>
+                  <small>
+                    File type description goes here...
+                  </small>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="field"
+          >
+            <div
+              class="ui compact segment selectionRadio--card"
+            >
+              <div
+                class="ui radio checkbox selectionRadio"
+              >
+                <input
+                  class="hidden"
+                  name="fileTypeGroup"
+                  readonly=""
+                  tabindex="0"
+                  type="radio"
+                  value="SEQ"
+                />
+                <i
+                  aria-hidden="true"
+                  class="black dna large bordered circular inverted icon"
+                />
+              </div>
+              <div>
+                <p>
+                  <b>
+                    Sequencing Manifest
+                  </b>
+                </p>
+                <p>
+                  <small>
+                    File type description goes here...
+                  </small>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="field"
+          >
+            <div
+              class="ui compact segment selectionRadio--card"
+            >
+              <div
+                class="ui radio checkbox selectionRadio"
+              >
+                <input
+                  class="hidden"
+                  name="fileTypeGroup"
+                  readonly=""
+                  tabindex="0"
+                  type="radio"
+                  value="OTH"
+                />
+                <i
+                  aria-hidden="true"
+                  class="black question large bordered circular inverted icon"
+                />
+              </div>
+              <div>
+                <p>
+                  <b>
+                    Other
+                  </b>
+                </p>
+                <p>
+                  <small>
+                    File type description goes here...
+                  </small>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="required field"
+        >
+          <label>
+            Describe Document Contents:
+          </label>
+          <textarea
+            data-testid="description-input"
+            name="description"
+            rows="3"
+            type="text"
+          />
+        </div>
+      </form>
+    </div>
+    <div>
+      <form
+        class="ui form"
+      >
+        <div
+          class="required field"
+        >
+          <label
+            for="file_title"
+          >
+            Document Title:
+          </label>
+          <input
+            data-testid="name-input"
+            name="file_name"
+            placeholder="Phenotypic Data manifest for..."
+            type="text"
+            value="Existing File Name"
+          />
+        </div>
+        <div
+          class="field"
+        >
+          <label>
+            Approval Status:
+          </label>
+          <div
+            aria-expanded="false"
+            class="ui fluid selection dropdown"
+            role="listbox"
+            tabindex="0"
+          >
+            <div
+              aria-live="polite"
+              class="text"
+              role="alert"
+            >
+              Pending review
+            </div>
+            <i
+              aria-hidden="true"
+              class="dropdown icon"
+            />
+            <div
+              class="menu transition"
+            >
+              <div
+                aria-checked="true"
+                aria-selected="true"
+                class="active selected item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <div
+                  class="ui orange tiny basic label"
+                >
+                  Pending review
+                </div>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <div
+                  class="ui teal tiny basic label"
+                >
+                  Approved
+                </div>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <div
+                  class="ui red tiny basic label"
+                >
+                  Changes needed
+                </div>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <div
+                  class="ui blue tiny basic label"
+                >
+                  Processed
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="required field"
+        >
+          <label
+            for="file_type"
+          >
+            Document Type:
+          </label>
+          <div
+            class="field"
+          >
+            <div
+              class="ui compact segment selectionRadio--card"
+            >
+              <div
+                class="ui radio checkbox selectionRadio"
+              >
+                <input
+                  class="hidden"
+                  name="fileTypeGroup"
+                  readonly=""
+                  tabindex="0"
+                  type="radio"
+                  value="SHM"
+                />
+                <i
+                  aria-hidden="true"
+                  class="black shipping large bordered circular inverted icon"
+                />
+              </div>
+              <div>
+                <p>
+                  <b>
+                    Shipping Manifest
+                  </b>
+                </p>
+                <p>
+                  <small>
+                    File type description goes here...
+                  </small>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="field"
+          >
+            <div
+              class="ui blue compact segment selectionRadio--card"
+            >
+              <div
+                class="ui radio checkbox selectionRadio"
+              >
+                <input
+                  class="hidden"
+                  name="fileTypeGroup"
+                  readonly=""
+                  tabindex="0"
+                  type="radio"
+                  value="CLN"
+                />
+                <i
+                  aria-hidden="true"
+                  class="blue hospital large bordered circular inverted icon"
+                />
+              </div>
+              <div>
+                <p>
+                  <b>
+                    Clinical/Phenotype Data
+                  </b>
+                </p>
+                <p>
+                  <small>
+                    File type description goes here...
+                  </small>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="field"
+          >
+            <div
+              class="ui compact segment selectionRadio--card"
+            >
+              <div
+                class="ui radio checkbox selectionRadio"
+              >
+                <input
+                  class="hidden"
+                  name="fileTypeGroup"
+                  readonly=""
+                  tabindex="0"
+                  type="radio"
+                  value="SEQ"
+                />
+                <i
+                  aria-hidden="true"
+                  class="black dna large bordered circular inverted icon"
+                />
+              </div>
+              <div>
+                <p>
+                  <b>
+                    Sequencing Manifest
+                  </b>
+                </p>
+                <p>
+                  <small>
+                    File type description goes here...
+                  </small>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="field"
+          >
+            <div
+              class="ui compact segment selectionRadio--card"
+            >
+              <div
+                class="ui radio checkbox selectionRadio"
+              >
+                <input
+                  class="hidden"
+                  name="fileTypeGroup"
+                  readonly=""
+                  tabindex="0"
+                  type="radio"
+                  value="OTH"
+                />
+                <i
+                  aria-hidden="true"
+                  class="black question large bordered circular inverted icon"
+                />
+              </div>
+              <div>
+                <p>
+                  <b>
+                    Other
+                  </b>
+                </p>
+                <p>
+                  <small>
+                    File type description goes here...
+                  </small>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="required field"
+        >
+          <label>
+            Describe Document Contents:
+          </label>
+          <textarea
+            data-testid="description-input"
+            name="description"
+            rows="3"
+            type="text"
+          >
+            Existing File Description
+          </textarea>
+        </div>
+      </form>
+    </div>
+  </body>,
+  "container": <div>
+    <form
+      class="ui form"
+    >
+      <div
+        class="required field"
+      >
+        <label
+          for="file_title"
+        >
+          Document Title:
+        </label>
+        <input
+          data-testid="name-input"
+          name="file_name"
+          placeholder="Phenotypic Data manifest for..."
+          type="text"
+          value="Existing File Name"
+        />
+      </div>
+      <div
+        class="field"
+      >
+        <label>
+          Approval Status:
+        </label>
+        <div
+          aria-expanded="false"
+          class="ui fluid selection dropdown"
+          role="listbox"
+          tabindex="0"
+        >
+          <div
+            aria-live="polite"
+            class="text"
+            role="alert"
+          >
+            Pending review
+          </div>
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          >
+            <div
+              aria-checked="true"
+              aria-selected="true"
+              class="active selected item"
+              role="option"
+              style="pointer-events: all;"
+            >
+              <div
+                class="ui orange tiny basic label"
+              >
+                Pending review
+              </div>
+            </div>
+            <div
+              aria-checked="false"
+              aria-selected="false"
+              class="item"
+              role="option"
+              style="pointer-events: all;"
+            >
+              <div
+                class="ui teal tiny basic label"
+              >
+                Approved
+              </div>
+            </div>
+            <div
+              aria-checked="false"
+              aria-selected="false"
+              class="item"
+              role="option"
+              style="pointer-events: all;"
+            >
+              <div
+                class="ui red tiny basic label"
+              >
+                Changes needed
+              </div>
+            </div>
+            <div
+              aria-checked="false"
+              aria-selected="false"
+              class="item"
+              role="option"
+              style="pointer-events: all;"
+            >
+              <div
+                class="ui blue tiny basic label"
+              >
+                Processed
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="required field"
+      >
+        <label
+          for="file_type"
+        >
+          Document Type:
+        </label>
+        <div
+          class="field"
+        >
+          <div
+            class="ui compact segment selectionRadio--card"
+          >
+            <div
+              class="ui radio checkbox selectionRadio"
+            >
+              <input
+                class="hidden"
+                name="fileTypeGroup"
+                readonly=""
+                tabindex="0"
+                type="radio"
+                value="SHM"
+              />
+              <i
+                aria-hidden="true"
+                class="black shipping large bordered circular inverted icon"
+              />
+            </div>
+            <div>
+              <p>
+                <b>
+                  Shipping Manifest
+                </b>
+              </p>
+              <p>
+                <small>
+                  File type description goes here...
+                </small>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="field"
+        >
+          <div
+            class="ui blue compact segment selectionRadio--card"
+          >
+            <div
+              class="ui radio checkbox selectionRadio"
+            >
+              <input
+                class="hidden"
+                name="fileTypeGroup"
+                readonly=""
+                tabindex="0"
+                type="radio"
+                value="CLN"
+              />
+              <i
+                aria-hidden="true"
+                class="blue hospital large bordered circular inverted icon"
+              />
+            </div>
+            <div>
+              <p>
+                <b>
+                  Clinical/Phenotype Data
+                </b>
+              </p>
+              <p>
+                <small>
+                  File type description goes here...
+                </small>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="field"
+        >
+          <div
+            class="ui compact segment selectionRadio--card"
+          >
+            <div
+              class="ui radio checkbox selectionRadio"
+            >
+              <input
+                class="hidden"
+                name="fileTypeGroup"
+                readonly=""
+                tabindex="0"
+                type="radio"
+                value="SEQ"
+              />
+              <i
+                aria-hidden="true"
+                class="black dna large bordered circular inverted icon"
+              />
+            </div>
+            <div>
+              <p>
+                <b>
+                  Sequencing Manifest
+                </b>
+              </p>
+              <p>
+                <small>
+                  File type description goes here...
+                </small>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="field"
+        >
+          <div
+            class="ui compact segment selectionRadio--card"
+          >
+            <div
+              class="ui radio checkbox selectionRadio"
+            >
+              <input
+                class="hidden"
+                name="fileTypeGroup"
+                readonly=""
+                tabindex="0"
+                type="radio"
+                value="OTH"
+              />
+              <i
+                aria-hidden="true"
+                class="black question large bordered circular inverted icon"
+              />
+            </div>
+            <div>
+              <p>
+                <b>
+                  Other
+                </b>
+              </p>
+              <p>
+                <small>
+                  File type description goes here...
+                </small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="required field"
+      >
+        <label>
+          Describe Document Contents:
+        </label>
+        <textarea
+          data-testid="description-input"
+          name="description"
+          rows="3"
+          type="text"
+        >
+          Existing File Description
+        </textarea>
+      </div>
+    </form>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllBySelectText": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getAllByValue": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getBySelectText": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "getByValue": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllBySelectText": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryAllByValue": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryBySelectText": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "queryByValue": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

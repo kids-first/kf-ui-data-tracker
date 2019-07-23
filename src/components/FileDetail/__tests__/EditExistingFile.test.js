@@ -60,8 +60,8 @@ it('edits an existing file correctly', async () => {
   fireEvent.change(descInput, {target: {value: 'Some description here'}});
   await wait();
 
-  // Update approval status from 'Pending Review' to 'Approved'
-  fireEvent.click(tree.getByTestId('status-dropdown'));
+  // Update approval status from 'Pending review' to 'Approved'
+  fireEvent.click(tree.getByText(/Pending review/));
   await wait();
   fireEvent.click(tree.getByText(/Approved/));
   await wait();
@@ -76,7 +76,7 @@ it('edits an existing file correctly', async () => {
   expect(tree.queryAllByText(/mynewfile.txt/i).length).toBe(1);
 
   // Expect to see the file status updated on detail view
-  expect(tree.queryAllByText(/Approved/).length).toBe(1);
+  expect(tree.queryAllByText(/Approved/).length).toBe(2);
 
   expect(tree.container).toMatchSnapshot();
 });

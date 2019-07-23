@@ -7,7 +7,7 @@ import fileByKfId from '../../../../__mocks__/kf-api-study-creator/responses/fil
 import VersionItem from '../VersionItem';
 
 afterEach(cleanup);
-it('renders correctly with 0 as index -- show latest tag', () => {
+it('renders correctly with 0 as index -- show ribbon label', () => {
   const fileNode = fileByKfId.data.fileByKfId;
   const versionNode = fileNode.versions.edges[0].node;
   const tree = render(
@@ -25,8 +25,8 @@ it('renders correctly with 0 as index -- show latest tag', () => {
     </MockedProvider>,
   );
   expect(tree.container).toMatchSnapshot();
-  const tagLatest = tree.getByText(/Latest/);
-  expect(tagLatest.innerHTML).toBe('Latest');
+  const tagLatest = tree.getByText(/Pending review/);
+  expect(tagLatest.innerHTML).toBe('Pending review');
 });
 
 it('renders correctly with 1 as index -- show version kfId', () => {

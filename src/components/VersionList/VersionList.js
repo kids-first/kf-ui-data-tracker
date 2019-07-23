@@ -1,36 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classes from 'classnames';
 import {dateCompare} from '../../common/fileUtils';
 import VersionItem from './VersionItem';
-import SvgIcon from '../Icon/Icon';
+import {Button, Table} from 'semantic-ui-react';
 /**
  * Displays ordered versions of one file. (Latest first)
  */
-const VersionList = ({
-  className,
-  studyId,
-  fileNode,
-  onUploadClick,
-  onNameClick,
-}) => {
-  let versionListClass = classes('FileVersionList', className);
-
+const VersionList = ({studyId, fileNode, onUploadClick, onNameClick}) => {
   return (
-    <div className="FileVersionContainer lg:cell-10 md:cell-9 cell-12">
-      <div className="p-8 flex justify-between">
-        <p className="FileInfo--Title">
-          Document Versions
-          <span className="font-light ml-4">
-            ({fileNode.versions.edges.length})
-          </span>
-        </p>
-        <button className="FileVersionList--Button" onClick={onUploadClick}>
-          <SvgIcon kind="Upload" height="15" width="15" className="mr-4" />
-          UPLOAD VERSION
-        </button>
-      </div>
-      <ul className={versionListClass}>
+    <Table compact="very" selectable>
+      <Table.Header>
+        <Table.Row>
+          <Table.HeaderCell
+            singleLine
+            colSpan="3"
+            textAlign="center"
+            verticalAlign="bottom"
+          >
+            Document Versions ({fileNode.versions.edges.length})
+            <Button
+              compact
+              primary
+              floated="right"
+              onClick={onUploadClick}
+              labelPosition="left"
+              size="mini"
+              icon="cloud upload"
+              content="UPLOAD VERSION"
+            />
+          </Table.HeaderCell>
+        </Table.Row>
+      </Table.Header>
+      <Table.Body>
         {fileNode.versions.edges.length ? (
           fileNode.versions.edges
             .sort(dateCompare)
@@ -46,16 +47,18 @@ const VersionList = ({
               />
             ))
         ) : (
-          <h3>You don't have any versions of this file yet.</h3>
+          <Table.Row>
+            <Table.Cell colSpan="3" textAlign="center">
+              You don't have any versions of this file yet.
+            </Table.Cell>
+          </Table.Row>
         )}
-      </ul>
-    </div>
+      </Table.Body>
+    </Table>
   );
 };
 
 VersionList.propTypes = {
-  /** Any additional classes to be applied to the version list*/
-  className: PropTypes.string,
   /** Study kfId*/
   studyId: PropTypes.string,
   /** File object*/
@@ -65,7 +68,6 @@ VersionList.propTypes = {
 };
 
 VersionList.defaultProps = {
-  className: null,
   studyId: null,
   fileNode: {},
 };
