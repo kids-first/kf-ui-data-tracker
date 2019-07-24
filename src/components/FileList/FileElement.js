@@ -79,6 +79,8 @@ const FileElement = ({fileNode, loading, history, match, fileListId}) => {
     fileNode && fileTypeDetail[fileNode.fileType]
       ? fileTypeDetail[fileNode.fileType]
       : {title: 'unknown', icon: 'question'};
+  const versionState =
+    sortedVersions.length > 0 ? sortedVersions[0].node.state : null;
   return (
     <Table.Row
       data-testid="file-item"
@@ -89,10 +91,9 @@ const FileElement = ({fileNode, loading, history, match, fileListId}) => {
     >
       <Table.Cell singleLine collapsing textAlign="center">
         <Badge
-          state={
-            sortedVersions.length > 0 ? sortedVersions[0].node.state : null
-          }
+          state={versionState}
           loading={loading}
+          filled={versionState === 'CHN'}
         />
       </Table.Cell>
       <Table.Cell>
