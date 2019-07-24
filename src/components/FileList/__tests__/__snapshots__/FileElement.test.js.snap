@@ -25,7 +25,9 @@ exports[`renders correctly 1`] = `
           >
             organization.jpeg
           </span>
-          <p>
+          <p
+            class="noMargin"
+          >
             Month necessary animal end standard case. View system operation message decade. Actually sing becaus...
           </p>
           <div
@@ -140,7 +142,9 @@ exports[`renders loading state 1`] = `
           >
             organization.jpeg
           </span>
-          <p>
+          <p
+            class="noMargin"
+          >
             Month necessary animal end standard case. View system operation message decade. Actually sing becaus...
           </p>
           <div
