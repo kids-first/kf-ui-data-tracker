@@ -1,4 +1,5 @@
 import gql from 'graphql-tag';
+import {TOKEN_FIELDS} from './fragments';
 
 // Query to get all studies in the study-creator
 export const ALL_STUDIES = gql`
@@ -110,22 +111,16 @@ export const GET_FILE_BY_ID = gql`
 
 // Query to get developer tokens
 export const GET_DEV_TOKENS = gql`
-  {
+  query DevTokens{
     allDevTokens {
       edges {
         node {
-          id
-          name
-          token
-          createdAt
-          creator {
-            username
-            picture
-          }
+          ...TokenFields
         }
       }
     }
   }
+  ${TOKEN_FIELDS}
 `;
 
 // Query to get the current user's profile
