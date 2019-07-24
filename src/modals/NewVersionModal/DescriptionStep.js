@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {formatFileSize} from '../../common/fileUtils';
 import {Form, Label} from 'semantic-ui-react';
+import {lengthLimit} from '../../common/fileUtils';
 /**
  * In this step, the user will describ the file that they have uploaded
  */
@@ -15,11 +16,7 @@ const DescriptionStep = ({file, handleDescription}) => {
       <Form>
         <Form.Field>
           <label>Uploaded File:</label>
-          <span title={file.name}>
-            {file.name.length > 70
-              ? file.name.substring(0, 70) + '...'
-              : file.name}
-          </span>
+          <span title={file.name}>{lengthLimit(file.name, 70)}</span>
           <Label size="mini" basic pointing="left">
             {formatFileSize(file.size)}
           </Label>

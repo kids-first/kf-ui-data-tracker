@@ -13,7 +13,7 @@ const FileDetailContainer = ({kfId, history, match}) => {
         if (loading)
           return (
             <Dimmer active inverted>
-              <Loader size="large">Loading File Detials ...</Loader>
+              <Loader size="large">Loading File Details ...</Loader>
             </Dimmer>
           );
         if (error)

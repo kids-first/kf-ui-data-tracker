@@ -97,3 +97,16 @@ export const fileLatestSize = sortedVersions => {
     return 'unknown';
   }
 };
+
+// Get the file status from the latest version of the file
+export const fileLatestStatus = fileNode => {
+  const sortedVersions = fileSortedVersions(fileNode);
+  const versionStatus =
+    sortedVersions.length > 0 ? sortedVersions[0].node.state : null;
+  return versionStatus;
+};
+
+// Limit the length of text and add '...' at the end
+export const lengthLimit = (text, limit) => {
+  return text.length > limit ? text.substring(0, limit) + '...' : text;
+};

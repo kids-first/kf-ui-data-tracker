@@ -6,6 +6,7 @@ import {
   downloadFile,
   fileTypeDetail,
   formatFileSize,
+  lengthLimit,
 } from '../common/fileUtils';
 
 const VersionInfoModal = ({
@@ -29,9 +30,7 @@ const VersionInfoModal = ({
                 color="blue"
                 title={openedVersion.version.fileName}
               >
-                {openedVersion.version.fileName.length > 65
-                  ? openedVersion.version.fileName.substring(0, 65) + '...'
-                  : openedVersion.version.fileName}
+                {lengthLimit(openedVersion.version.fileName, 65)}
               </Header>
               {openedVersion.index === 0 && (
                 <Label size="mini" color="blue" float="right" basic>

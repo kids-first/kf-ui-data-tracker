@@ -7,6 +7,7 @@ import {
   versionState,
   formatFileSize,
   downloadFile,
+  lengthLimit,
 } from '../../common/fileUtils';
 import {Label, Icon, Table} from 'semantic-ui-react';
 /**
@@ -51,17 +52,11 @@ const VersionItem = ({
 
           <Table.Cell>
             <p title={versionNode.fileName}>
-              <b>
-                {versionNode.fileName.length > 70
-                  ? versionNode.fileName.substring(0, 70) + '...'
-                  : versionNode.fileName}
-              </b>
+              <b>{lengthLimit(versionNode.fileName, 70)}</b>
             </p>
             <p title={versionNode.description} data-testid="version-item">
               <small>
-                {versionNode.description.length > 110
-                  ? versionNode.description.substring(0, 110) + '...'
-                  : versionNode.description}
+                {lengthLimit(versionNode.description, 110)}
                 {versionNode.description.length === 0 &&
                   'No version summary available'}
               </small>

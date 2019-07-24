@@ -4,6 +4,7 @@ import {EditDocumentForm} from '../forms';
 import {CREATE_FILE} from '../state/mutations';
 import {GET_STUDY_BY_ID} from '../state/queries';
 import {Message, Segment, Container, Button, Header} from 'semantic-ui-react';
+import {lengthLimit} from '../common/fileUtils';
 /**
  * The NewDocumentView displays a form to collect details about a new file.
  * It expects that the user lands on the page after being forwarded from a
@@ -59,7 +60,9 @@ const NewDocumentView = ({match, history, location, createDocument}) => {
       </Container>
       <Segment.Group>
         <Segment>
-          <Header as="h4">Uploaded File: {location.state.file.name}</Header>
+          <Header as="h4" title={location.state.file.name.length}>
+            Uploaded File: {lengthLimit(location.state.file.name, 80)}
+          </Header>
         </Segment>
         <Container as={Segment} padded="very">
           <EditDocumentForm

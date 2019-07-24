@@ -5,9 +5,9 @@ import {Label} from 'semantic-ui-react';
 /**
  * Displays badge describing the file state
  */
-const Badge = ({state, size}) => (
+const Badge = ({state, size, filled}) => (
   <Label
-    basic
+    basic={!filled}
     size={size}
     color={versionState[state] ? versionState[state].labelColor : 'grey'}
   >
@@ -29,6 +29,8 @@ Badge.propTypes = {
     'huge',
     'massive',
   ]),
+  /** If to fill the badge label */
+  filled: PropTypes.bool,
 };
 
 Badge.defaultProps = {

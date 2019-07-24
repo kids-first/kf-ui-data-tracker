@@ -40,7 +40,9 @@ exports[`deletes a file correctly 1`] = `
               >
                 organization.jpeg
               </span>
-              <p>
+              <p
+                class="noMargin"
+              >
                 Month necessary animal end standard case. View system operation message decade. Actually sing becaus...
               </p>
               <div
@@ -216,7 +218,9 @@ exports[`renders correctly 1`] = `
               >
                 organization.jpeg
               </span>
-              <p>
+              <p
+                class="noMargin"
+              >
                 Month necessary animal end standard case. View system operation message decade. Actually sing becaus...
               </p>
               <div
@@ -322,7 +326,9 @@ exports[`renders correctly 1`] = `
               >
                 its.mp3
               </span>
-              <p>
+              <p
+                class="noMargin"
+              >
                 Question meeting move recognize.
               </p>
               <div

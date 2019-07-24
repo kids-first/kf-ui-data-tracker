@@ -20,6 +20,10 @@ body {
   }
 }
 
+.noMargin {
+  margin: 0px;
+}
+
 .noBorders {
   border: none !important;
   box-shadow: none !important;
