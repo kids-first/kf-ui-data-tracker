@@ -1,7 +1,7 @@
 import React, {useState, Fragment} from 'react';
 import PropTypes from 'prop-types';
 import FileElement from './FileElement';
-import {fileSortedVersions} from '../../common/fileUtils';
+import {fileLatestStatus} from '../../common/fileUtils';
 import {
   Header,
   Icon,
@@ -20,38 +20,26 @@ const FileList = ({fileList, studyId}) => {
   const handlePageClick = (e, {activePage}) => {
     setPage(activePage);
   };
-  const pageCount = Math.ceil(fileList.length / perPage);
-  const pageItems = fileList.slice(
+  const sortedFileList = fileList
+    .filter(obj => fileLatestStatus(obj.node) === 'CHN')
+    .concat(fileList.filter(obj => fileLatestStatus(obj.node) !== 'CHN'));
+  const pageCount = Math.ceil(sortedFileList.length / perPage);
+  const pageItems = sortedFileList.slice(
     perPage * (page - 1),
     perPage * (page - 1) + perPage,
   );
 
-  const showNotification = () => {
-    var statusList = [];
-    var i;
-    for (i in fileList) {
-      const sortedVersions = fileSortedVersions(fileList[i].node);
-      const versionStatus =
-        sortedVersions.length > 0 ? sortedVersions[0].node.state : null;
-      statusList.push(versionStatus);
-    }
-    if (statusList.includes('CHN')) {
-      return (
+  return (
+    <Fragment>
+      {fileList.filter(obj => fileLatestStatus(obj.node) === 'CHN').length >
+        0 && (
         <Message
           negative
           icon="warning circle"
           header="Changes Needed"
           content="The DRC has requested that you make changes to some of your documents."
         />
-      );
-    } else {
-      return null;
-    }
-  };
-
-  return (
-    <Fragment>
-      {showNotification()}
+      )}
       {fileList.length ? (
         <Table stackable selectable compact="very" basic="very">
           <Table.Body>
