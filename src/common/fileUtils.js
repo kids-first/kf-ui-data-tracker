@@ -105,3 +105,8 @@ export const fileLatestStatus = fileNode => {
     sortedVersions.length > 0 ? sortedVersions[0].node.state : null;
   return versionStatus;
 };
+
+// Limit the length of text and add '...' at the end
+export const lengthLimit = (text, limit) => {
+  return text.length > limit ? text.substring(0, limit) + '...' : text;
+};
