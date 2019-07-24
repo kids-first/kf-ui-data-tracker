@@ -97,3 +97,11 @@ export const fileLatestSize = sortedVersions => {
     return 'unknown';
   }
 };
+
+// Get the file status from the latest version of the file
+export const fileLatestStatus = fileNode => {
+  const sortedVersions = fileSortedVersions(fileNode);
+  const versionStatus =
+    sortedVersions.length > 0 ? sortedVersions[0].node.state : null;
+  return versionStatus;
+};
