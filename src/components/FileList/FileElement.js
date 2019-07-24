@@ -11,6 +11,7 @@ import {
   fileSortedVersions,
   fileLatestDate,
   fileLatestSize,
+  lengthLimit,
 } from '../../common/fileUtils';
 
 /**
@@ -101,13 +102,7 @@ const FileElement = ({fileNode, loading, history, match, fileListId}) => {
           {fileName}
         </Header>
         <p>
-          {fileDescription ? (
-            <>
-              {fileDescription.length > 100
-                ? fileDescription.substring(0, 100) + '...'
-                : fileDescription}
-            </>
-          ) : null}
+          {fileDescription ? <>{lengthLimit(fileDescription, 100)}</> : null}
         </p>
         <Responsive
           as={FileAttributes}
