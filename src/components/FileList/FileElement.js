@@ -101,7 +101,7 @@ const FileElement = ({fileNode, loading, history, match, fileListId}) => {
         <Header size="medium" as="span">
           {fileName}
         </Header>
-        <p>
+        <p className="noMargin">
           {fileDescription ? <>{lengthLimit(fileDescription, 100)}</> : null}
         </p>
         <Responsive
