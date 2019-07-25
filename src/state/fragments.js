@@ -34,3 +34,15 @@ export const FILE_FIELDS = gql`
     downloadUrl
   }
 `;
+
+export const VERSION_FIELDS = gql`
+  fragment VersionFields on VersionNode {
+    id
+    kfId
+    fileName
+    size
+    state
+    description
+    createdAt
+  }
+`;
