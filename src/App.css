@@ -24,13 +24,7 @@ body {
     }
 }
 
-.ui.button.button--login{
-    margin-bottom: 10px;
-    .auth0-logo{
-      width: 70px;
-    }
-
-  }
+  
   .ui.buttons .or.button--login{
     margin-top:7px;
 
