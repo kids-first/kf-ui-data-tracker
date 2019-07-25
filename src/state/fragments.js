@@ -12,3 +12,14 @@ export const TOKEN_FIELDS = gql`
     }
   }
 `;
+
+export const STUDY_FIELDS = gql`
+  fragment StudyFields on StudyNode {
+    id
+    kfId
+    name
+    shortName
+    createdAt
+    modifiedAt
+  }
+`;
