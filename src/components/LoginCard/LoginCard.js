@@ -41,11 +41,6 @@ const onFailure = repsonse => {
   console.log('Problem sign in');
 }
 
-console.log('Responsive.onlyMobile', Responsive.onlyMobile)
-console.log('Responsive.onlyTablet', Responsive.onlyTablet)
-console.log('Responsive.onlyComputer', Responsive.onlyComputer)
-console.log('Responsive.onlyLargeScreen', Responsive.onlyLargeScreen)
-console.log('Responsive.onlyWideScreen', Responsive.onlyWidescreen)
 
 const LoginContainer = ({ history }) => (
   <ApolloConsumer>
