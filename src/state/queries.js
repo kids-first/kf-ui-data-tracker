@@ -44,12 +44,7 @@ export const GET_STUDY_BY_ID = gql`
       files {
         edges {
           node {
-            id
-            kfId
-            name
-            fileType
-            description
-            downloadUrl
+            ...FileFields
             versions {
               edges {
                 node {
@@ -66,18 +61,14 @@ export const GET_STUDY_BY_ID = gql`
     }
   }
   ${STUDY_FIELDS}
+  ${FILE_FIELDS}
 `;
 
 // Query to get a file by its kf id
 export const GET_FILE_BY_ID = gql`
   query File($kfId: String!) {
     fileByKfId(kfId: $kfId) {
-      id
-      kfId
-      name
-      description
-      fileType
-      downloadUrl
+      ...FileFields
       creator {
         id
         username
@@ -106,6 +97,7 @@ export const GET_FILE_BY_ID = gql`
       }
     }
   }
+  ${FILE_FIELDS}
 `;
 
 // Query to get developer tokens
