@@ -1,3 +1,36 @@
+# Kids First Data Tracker Release 0.5.0
+
+## Features
+
+Replace ui kit with Semantic. General code improvements.
+
+### Summary
+
+Feature Emojis: 💄x5 ♻️x5 ✨x4 🐛x2 🔥 x1 x1
+Feature Labels: [refactor](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/refactor) x9 [design](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/design) x7 [bug](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/bug) x3 [feature](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/feature) x3 [component](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/component) x2
+
+### New features and changes
+
+- (#385) 💄 Study File List sort status of changes needed to the top - @XuTheBunny
+- (#369) ♻️  Replace Query component with HOC in study file list - @dankolbman
+- (#371) ♻️  Replace Query component with HOC in study list - @dankolbman
+- (#372) ♻️  Replace Query component with HOC in navbar - @dankolbman
+- (#374) ♻️  Add Token fragment - @dankolbman
+- (#379) 💄 Semantic - @dankolbman
+- (#382) 🔥 Semantic ui style cleanup - @XuTheBunny
+- (#327) 💄 Profile view bug fix and style updates - @XuTheBunny
+- (#299) 💄 refactor modal positioning - @bdolly
+- (#328) 🐛 Fix minor typo and style issue on file type and file description - @XuTheBunny
+- (#326) 🐛 Fix file type icon mismatch - @XuTheBunny
+- (#298) ✨ Redirect user back to the original requested page after login - @XuTheBunny
+- (#297) 💄 Refactor pagination styling - @bdolly
+- (#289) ♻️  Refactor upload verbiage - @bdolly
+- (#296)  ✨ Add "uploading" stage to submit button when uploading new file or new version - @XuTheBunny
+- (#294) ✨ Add profile dropdown to header - @XuTheBunny
+- (#288) ✨ Add approval status dropdown to file annotation modal - @XuTheBunny
+- (#292) ✨ Conditional rendering notification bar on top of file list - @XuTheBunny
+
+
 # Kids First Data Tracker Release 0.4.0
 
 ## Features
