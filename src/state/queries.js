@@ -78,14 +78,8 @@ export const GET_FILE_BY_ID = gql`
       versions {
         edges {
           node {
-            id
-            kfId
-            createdAt
-            size
+            ...VersionFields
             downloadUrl
-            state
-            description
-            fileName
             creator {
               id
               username
@@ -98,6 +92,7 @@ export const GET_FILE_BY_ID = gql`
     }
   }
   ${FILE_FIELDS}
+  ${VERSION_FIELDS}
 `;
 
 // Query to get developer tokens
