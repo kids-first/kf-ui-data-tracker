@@ -1,5 +1,11 @@
 import gql from 'graphql-tag';
-import {TOKEN_FIELDS} from './fragments';
+import {
+  TOKEN_FIELDS,
+  CREATOR_FIELDS,
+  STUDY_FIELDS,
+  FILE_FIELDS,
+  VERSION_FIELDS,
+} from './fragments';
 
 // Query to get all studies in the study-creator
 export const ALL_STUDIES = gql`
@@ -7,12 +13,7 @@ export const ALL_STUDIES = gql`
     allStudies {
       edges {
         node {
-          shortName
-          name
-          kfId
-          id
-          createdAt
-          modifiedAt
+          ...StudyFields
           files {
             edges {
               node {
@@ -31,27 +32,19 @@ export const ALL_STUDIES = gql`
       }
     }
   }
+  ${STUDY_FIELDS}
 `;
 
 // Query to get a study by its relay id
 export const GET_STUDY_BY_ID = gql`
   query Study($kfId: String!) {
     studyByKfId(kfId: $kfId) {
-      id
-      name
-      shortName
+      ...StudyFields
       bucket
-      kfId
-      modifiedAt
       files {
         edges {
           node {
-            id
-            kfId
-            name
-            fileType
-            description
-            downloadUrl
+            ...FileFields
             versions {
               edges {
                 node {
@@ -67,51 +60,39 @@ export const GET_STUDY_BY_ID = gql`
       }
     }
   }
+  ${STUDY_FIELDS}
+  ${FILE_FIELDS}
 `;
 
 // Query to get a file by its kf id
 export const GET_FILE_BY_ID = gql`
   query File($kfId: String!) {
     fileByKfId(kfId: $kfId) {
-      id
-      kfId
-      name
-      description
-      fileType
-      downloadUrl
+      ...FileFields
       creator {
-        id
-        username
-        email
-        picture
+        ...CreatorFields
       }
       versions {
         edges {
           node {
-            id
-            kfId
-            createdAt
-            size
+            ...VersionFields
             downloadUrl
-            state
-            description
-            fileName
             creator {
-              id
-              username
-              email
-              picture
+              ...CreatorFields
             }
           }
         }
       }
     }
   }
+  ${FILE_FIELDS}
+  ${VERSION_FIELDS}
+  ${CREATOR_FIELDS}
 `;
 
 // Query to get developer tokens
 export const GET_DEV_TOKENS = gql`
-  query DevTokens{
+  query DevTokens {
     allDevTokens {
       edges {
         node {

@@ -1,5 +1,5 @@
 import gql from 'graphql-tag';
-import {TOKEN_FIELDS} from './fragments';
+import {TOKEN_FIELDS, FILE_FIELDS, VERSION_FIELDS} from './fragments';
 
 // Mutation to upload a file or a version of the file to the study-creator
 export const CREATE_FILE = gql`
@@ -19,15 +19,11 @@ export const CREATE_FILE = gql`
     ) {
       success
       file {
-        id
-        kfId
-        name
-        description
-        fileType
-        downloadUrl
+        ...FileFields
       }
     }
   }
+  ${FILE_FIELDS}
 `;
 
 // Mutation to update file metadata
@@ -45,14 +41,11 @@ export const UPDATE_FILE = gql`
       fileType: $fileType
     ) {
       file {
-        id
-        kfId
-        name
-        description
-        fileType
+        ...FileFields
       }
     }
   }
+  ${FILE_FIELDS}
 `;
 
 // Mutation to delete a file
@@ -71,16 +64,11 @@ export const CREATE_VERSION = gql`
     createVersion(file: $file, fileId: $fileId, description: $description) {
       success
       version {
-        id
-        kfId
-        fileName
-        description
-        state
-        createdAt
-        size
+        ...VersionFields
       }
     }
   }
+  ${VERSION_FIELDS}
 `;
 
 // Mutation to update a version of a file
@@ -88,16 +76,11 @@ export const UPDATE_VERSION = gql`
   mutation($versionId: String!, $description: String, $state: VersionState!) {
     updateVersion(kfId: $versionId, description: $description, state: $state) {
       version {
-        id
-        kfId
-        fileName
-        description
-        state
-        createdAt
-        size
+        ...VersionFields
       }
     }
   }
+  ${VERSION_FIELDS}
 `;
 
 // Mutation to get a signed url for a file or a version of the file
