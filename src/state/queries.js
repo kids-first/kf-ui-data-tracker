@@ -70,10 +70,7 @@ export const GET_FILE_BY_ID = gql`
     fileByKfId(kfId: $kfId) {
       ...FileFields
       creator {
-        id
-        username
-        email
-        picture
+        ...CreatorFields
       }
       versions {
         edges {
@@ -81,10 +78,7 @@ export const GET_FILE_BY_ID = gql`
             ...VersionFields
             downloadUrl
             creator {
-              id
-              username
-              email
-              picture
+              ...CreatorFields
             }
           }
         }
@@ -93,6 +87,7 @@ export const GET_FILE_BY_ID = gql`
   }
   ${FILE_FIELDS}
   ${VERSION_FIELDS}
+  ${CREATOR_FIELDS}
 `;
 
 // Query to get developer tokens
