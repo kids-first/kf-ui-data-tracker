@@ -23,3 +23,14 @@ export const STUDY_FIELDS = gql`
     modifiedAt
   }
 `;
+
+export const FILE_FIELDS = gql`
+  fragment FileFields on FileNode {
+    id
+    kfId
+    name
+    description
+    fileType
+    downloadUrl
+  }
+`;
