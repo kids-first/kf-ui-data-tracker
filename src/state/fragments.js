@@ -46,3 +46,12 @@ export const VERSION_FIELDS = gql`
     createdAt
   }
 `;
+
+export const CREATOR_FIELDS = gql`
+  fragment CreatorFields on UserNode {
+    id
+    username
+    email
+    picture
+  }
+`;
