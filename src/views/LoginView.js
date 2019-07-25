@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header, Icon, Image, Grid, Responsive, Segment, GridColumn } from 'semantic-ui-react';
+import { Header, Icon, Image, Grid, Responsive, Segment } from 'semantic-ui-react';
 import { LoginCard } from '../components/LoginCard';
 import logo from '../assets/logo.svg';
 
@@ -13,7 +13,7 @@ const LoginView = () => {
       >
         <Grid.Row verticalAlign="middle" >
 
-          <Grid.Column computer={3} tablet={8} mobile={14} textAlign="center">
+          <Grid.Column widescreen={3} computer={5} tablet={8} mobile={14} textAlign="center">
             <Header as="h1">
               <Image src={logo} />
               <Header.Content>Kids First Data Tracker</Header.Content>

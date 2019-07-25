@@ -3,7 +3,7 @@ import GoogleLogin from 'react-google-login';
 import { GOOGLE_APP_ID, EGO_API } from '../../common/globals';
 import jwtDecode from 'jwt-decode';
 import { ApolloConsumer } from 'react-apollo';
-import { Button, Icon, Responsive } from 'semantic-ui-react';
+import { Button, Icon, Responsive, Segment, Divider } from 'semantic-ui-react';
 import { withRouter } from 'react-router';
 import { auth } from '../../state/auth';
 import Auth0_logo from '../../assets/Auth0_logo.png';
@@ -46,7 +46,7 @@ const LoginContainer = ({ history }) => (
   <ApolloConsumer>
     {client => (
       <>
-        <Responsive as={Button.Group} fluid vertical textAlign="center" maxWidth={Responsive.onlyLargeScreen.maxWidth}>
+        <Responsive as={Segment} fluid vertical maxWidth={Responsive.onlyTablet.maxWidth}>
           <Button
             className="button--login"
             onClick={() => auth.login()}
@@ -56,6 +56,7 @@ const LoginContainer = ({ history }) => (
           >
             <img className="auth0-logo m-auto" src={Auth0_logo} alt="Auth0 logo" />
           </Button>
+          <Divider />
           <GoogleLogin
             clientId={GOOGLE_APP_ID}
             buttonText="Sign in with Google"
@@ -66,7 +67,7 @@ const LoginContainer = ({ history }) => (
                 className="button--login"
                 onClick={() => renderProps.onClick}
                 size="large"
-                textAlign="center"
+                fluid
                 primary
               >
 
@@ -79,11 +80,11 @@ const LoginContainer = ({ history }) => (
           />
         </Responsive>
 
-        <Responsive as={Button.Group} fluid textAlign="center" minWidth={Responsive.onlyLargeScreen.maxWidth}>
+        <Responsive as={Button.Group} fluid minWidth={Responsive.onlyTablet.maxWidth}>
           <Button
             className="button--login"
             onClick={() => auth.login()}
-            size="large"
+            size="medium"
             color="black"
           >
             <img className="auth0-logo" src={Auth0_logo} alt="Auth0 logo" />
@@ -98,7 +99,7 @@ const LoginContainer = ({ history }) => (
               <Button
                 className="button--login"
                 onClick={() => renderProps.onClick}
-                size="large"
+                size="medium"
                 primary
               >
                 <Icon name="google" />
