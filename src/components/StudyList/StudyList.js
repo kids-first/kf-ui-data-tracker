@@ -23,6 +23,7 @@ const HeaderSkeleton = () => (
  */
 const StudyList = ({studyList, loading, activeView = 'grid'}) => {
   const [view, setView] = useState(activeView);
+  const [searchString, setSearchString] = useState('');
 
   if (loading) {
     return (
