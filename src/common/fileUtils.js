@@ -130,3 +130,14 @@ export const createDateSort = (a, b) => {
     ? -1
     : 0;
 };
+
+// Sort files by modified date
+export const modifiedDateSort = (a, b) => {
+  return Date.parse(fileLatestDate(fileSortedVersions(a.node))) >
+    Date.parse(fileLatestDate(fileSortedVersions(b.node)))
+    ? 1
+    : Date.parse(fileLatestDate(fileSortedVersions(b.node))) >
+      Date.parse(fileLatestDate(fileSortedVersions(a.node)))
+    ? -1
+    : 0;
+};
