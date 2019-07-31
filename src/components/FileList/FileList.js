@@ -78,6 +78,9 @@ const FileList = ({fileList, studyId}) => {
     sortedList = sortedList.filter(obj =>
       obj.node.fileType.includes(typeFilterStatus),
     );
+    sortedList = sortedList.filter(obj =>
+      fileLatestStatus(obj.node).includes(approvalFilterStatus),
+    );
     return sortedList;
   };
 
