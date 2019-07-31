@@ -2,6 +2,264 @@
 
 exports[`renders with files 1`] = `
 <div>
+  <div
+    class="ui basic compact left floated segment noMargin noHorizontalPadding"
+  >
+    <span
+      class="smallLabel"
+    >
+      Filter by:
+    </span>
+    <div
+      aria-expanded="false"
+      class="ui selection dropdown"
+      role="listbox"
+      tabindex="0"
+    >
+      <div
+        aria-live="polite"
+        class="default text"
+        role="alert"
+      >
+        Approval status
+      </div>
+      <i
+        aria-hidden="true"
+        class="dropdown icon"
+      />
+      <div
+        class="menu transition"
+      >
+        <div
+          aria-checked="false"
+          aria-selected="true"
+          class="selected item"
+          role="option"
+          style="pointer-events: all;"
+        >
+          <div
+            class="ui orange tiny basic label"
+          >
+            Pending review
+          </div>
+        </div>
+        <div
+          aria-checked="false"
+          aria-selected="false"
+          class="item"
+          role="option"
+          style="pointer-events: all;"
+        >
+          <div
+            class="ui teal tiny basic label"
+          >
+            Approved
+          </div>
+        </div>
+        <div
+          aria-checked="false"
+          aria-selected="false"
+          class="item"
+          role="option"
+          style="pointer-events: all;"
+        >
+          <div
+            class="ui red tiny basic label"
+          >
+            Changes needed
+          </div>
+        </div>
+        <div
+          aria-checked="false"
+          aria-selected="false"
+          class="item"
+          role="option"
+          style="pointer-events: all;"
+        >
+          <div
+            class="ui blue tiny basic label"
+          >
+            Processed
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ui basic compact left floated segment noMargin noHorizontalPadding"
+  >
+    <div
+      aria-expanded="false"
+      class="ui selection dropdown"
+      role="listbox"
+      tabindex="0"
+    >
+      <div
+        aria-live="polite"
+        class="default text"
+        role="alert"
+      >
+        File type
+      </div>
+      <i
+        aria-hidden="true"
+        class="dropdown icon"
+      />
+      <div
+        class="menu transition"
+      >
+        <div
+          aria-checked="false"
+          aria-selected="true"
+          class="selected item"
+          role="option"
+          style="pointer-events: all;"
+        >
+          <small
+            class="text"
+          >
+            <i
+              aria-hidden="true"
+              class="shipping icon"
+            />
+             Shipping Manifest
+          </small>
+        </div>
+        <div
+          aria-checked="false"
+          aria-selected="false"
+          class="item"
+          role="option"
+          style="pointer-events: all;"
+        >
+          <small
+            class="text"
+          >
+            <i
+              aria-hidden="true"
+              class="hospital icon"
+            />
+             Clinical/Phenotype Data
+          </small>
+        </div>
+        <div
+          aria-checked="false"
+          aria-selected="false"
+          class="item"
+          role="option"
+          style="pointer-events: all;"
+        >
+          <small
+            class="text"
+          >
+            <i
+              aria-hidden="true"
+              class="dna icon"
+            />
+             Sequencing Manifest
+          </small>
+        </div>
+        <div
+          aria-checked="false"
+          aria-selected="false"
+          class="item"
+          role="option"
+          style="pointer-events: all;"
+        >
+          <small
+            class="text"
+          >
+            <i
+              aria-hidden="true"
+              class="question icon"
+            />
+             Other
+          </small>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ui basic compact left floated segment noMargin noHorizontalPadding"
+  >
+    <span
+      class="smallLabel"
+    >
+      Sorted by:
+    </span>
+    <div
+      aria-expanded="false"
+      class="ui selection dropdown"
+      role="listbox"
+      tabindex="0"
+    >
+      <div
+        aria-live="polite"
+        class="text"
+        role="alert"
+      >
+        Modified date
+      </div>
+      <i
+        aria-hidden="true"
+        class="dropdown icon clear"
+      />
+      <div
+        class="menu transition"
+      >
+        <div
+          aria-checked="false"
+          aria-selected="false"
+          class="item"
+          role="option"
+          style="pointer-events: all;"
+        >
+          <span
+            class="text"
+          >
+            Create date
+          </span>
+        </div>
+        <div
+          aria-checked="true"
+          aria-selected="true"
+          class="active selected item"
+          role="option"
+          style="pointer-events: all;"
+        >
+          <span
+            class="text"
+          >
+            Modified date
+          </span>
+        </div>
+      </div>
+    </div>
+    <button
+      class="ui basic icon button"
+    >
+      <i
+        aria-hidden="true"
+        class="sort content ascending icon"
+      />
+    </button>
+  </div>
+  <div
+    class="ui basic compact right floated segment noMargin noHorizontalPadding"
+  >
+    <div
+      class="ui icon input"
+    >
+      <input
+        type="text"
+        value=""
+      />
+      <i
+        aria-hidden="true"
+        class="search icon"
+      />
+    </div>
+  </div>
   <table
     class="ui selectable stackable very basic very compact table"
   >
@@ -16,333 +274,9 @@ exports[`renders with files 1`] = `
           class="collapsing single line center aligned"
         >
           <div
-            class="ui grey tiny basic label"
+            class="ui orange tiny basic label"
           >
-            Invalid
-          </div>
-        </td>
-        <td
-          class=""
-        >
-          <span
-            class="ui medium header"
-          >
-            force.webm
-          </span>
-          <p
-            class="noMargin"
-          >
-            Safe always adult sometimes. Enter full agree still son expect write. According small hold someone.
-          </p>
-          <div
-            class="ui bulleted horizontal list"
-            role="list"
-          >
-            <div
-              class="item"
-              role="listitem"
-            >
-              <button
-                class="ui mini basic icon left labeled button"
-              >
-                <i
-                  aria-hidden="true"
-                  class="copy icon"
-                />
-                SF_FPVBM0JF
-              </button>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                Created 
-                <time
-                  datetime="2018-09-19T08:33:31.000Z"
-                  title="2018-09-19T08:33:31+00:00"
-                >
-                  7 months ago
-                </time>
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                440 B
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <i
-                aria-hidden="true"
-                class="hospital icon"
-              />
-               Clinical/Phenotype Data
-            </div>
-          </div>
-        </td>
-        <td
-          class="center aligned"
-        >
-          <div
-            class="ui mini vertical buttons"
-          >
-            <button
-              class="ui basic icon button"
-            >
-              <i
-                aria-hidden="true"
-                class="download icon"
-              />
-            </button>
-            <button
-              class="ui basic icon button"
-              data-testid="delete-button"
-            >
-              <i
-                aria-hidden="true"
-                class="trash alternate icon"
-              />
-            </button>
-          </div>
-        </td>
-      </tr>
-      <tr
-        class="cursor-pointer"
-        data-testid="file-item"
-      >
-        <td
-          class="collapsing single line center aligned"
-        >
-          <div
-            class="ui grey tiny basic label"
-          >
-            Invalid
-          </div>
-        </td>
-        <td
-          class=""
-        >
-          <span
-            class="ui medium header"
-          >
-            those.wav
-          </span>
-          <p
-            class="noMargin"
-          >
-            Feel industry quality direction resource truth. Affect green yard various play character simply rema...
-          </p>
-          <div
-            class="ui bulleted horizontal list"
-            role="list"
-          >
-            <div
-              class="item"
-              role="listitem"
-            >
-              <button
-                class="ui mini basic icon left labeled button"
-              >
-                <i
-                  aria-hidden="true"
-                  class="copy icon"
-                />
-                SF_DLXEQZV1
-              </button>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                Created 
-                <time
-                  datetime="2018-07-09T05:01:45.000Z"
-                  title="2018-07-09T05:01:45+00:00"
-                >
-                  10 months ago
-                </time>
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                7.0 kB
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <i
-                aria-hidden="true"
-                class="question icon"
-              />
-               unknown
-            </div>
-          </div>
-        </td>
-        <td
-          class="center aligned"
-        >
-          <div
-            class="ui mini vertical buttons"
-          >
-            <button
-              class="ui basic icon button"
-            >
-              <i
-                aria-hidden="true"
-                class="download icon"
-              />
-            </button>
-            <button
-              class="ui basic icon button"
-              data-testid="delete-button"
-            >
-              <i
-                aria-hidden="true"
-                class="trash alternate icon"
-              />
-            </button>
-          </div>
-        </td>
-      </tr>
-      <tr
-        class="cursor-pointer"
-        data-testid="file-item"
-      >
-        <td
-          class="collapsing single line center aligned"
-        >
-          <div
-            class="ui grey tiny basic label"
-          >
-            Invalid
-          </div>
-        </td>
-        <td
-          class=""
-        >
-          <span
-            class="ui medium header"
-          >
-            hand.css
-          </span>
-          <p
-            class="noMargin"
-          >
-            This democratic analysis car here likely. Protect speech exactly three order different wife.
-          </p>
-          <div
-            class="ui bulleted horizontal list"
-            role="list"
-          >
-            <div
-              class="item"
-              role="listitem"
-            >
-              <button
-                class="ui mini basic icon left labeled button"
-              >
-                <i
-                  aria-hidden="true"
-                  class="copy icon"
-                />
-                SF_6JBSGVWE
-              </button>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                Created 
-                <time
-                  datetime="2018-10-31T05:37:11.000Z"
-                  title="2018-10-31T05:37:11+00:00"
-                >
-                  6 months ago
-                </time>
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                9.6 kB
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <i
-                aria-hidden="true"
-                class="question icon"
-              />
-               unknown
-            </div>
-          </div>
-        </td>
-        <td
-          class="center aligned"
-        >
-          <div
-            class="ui mini vertical buttons"
-          >
-            <button
-              class="ui basic icon button"
-            >
-              <i
-                aria-hidden="true"
-                class="download icon"
-              />
-            </button>
-            <button
-              class="ui basic icon button"
-              data-testid="delete-button"
-            >
-              <i
-                aria-hidden="true"
-                class="trash alternate icon"
-              />
-            </button>
-          </div>
-        </td>
-      </tr>
-      <tr
-        class="cursor-pointer"
-        data-testid="file-item"
-      >
-        <td
-          class="collapsing single line center aligned"
-        >
-          <div
-            class="ui grey tiny basic label"
-          >
-            Invalid
+            Pending review
           </div>
         </td>
         <td
@@ -383,7 +317,7 @@ exports[`renders with files 1`] = `
               <div
                 class="description"
               >
-                Created 
+                Modified 
                 <time
                   datetime="2017-11-06T13:13:56.000Z"
                   title="2017-11-06T13:13:56+00:00"
@@ -448,9 +382,9 @@ exports[`renders with files 1`] = `
           class="collapsing single line center aligned"
         >
           <div
-            class="ui grey tiny basic label"
+            class="ui orange tiny basic label"
           >
-            Invalid
+            Pending review
           </div>
         </td>
         <td
@@ -459,11 +393,13 @@ exports[`renders with files 1`] = `
           <span
             class="ui medium header"
           >
-            6.jpg
+            those.wav
           </span>
           <p
             class="noMargin"
-          />
+          >
+            Feel industry quality direction resource truth. Affect green yard various play character simply rema...
+          </p>
           <div
             class="ui bulleted horizontal list"
             role="list"
@@ -479,7 +415,7 @@ exports[`renders with files 1`] = `
                   aria-hidden="true"
                   class="copy icon"
                 />
-                SF_16QY2ZXM
+                SF_DLXEQZV1
               </button>
             </div>
             <div
@@ -489,12 +425,12 @@ exports[`renders with files 1`] = `
               <div
                 class="description"
               >
-                Created 
+                Modified 
                 <time
-                  datetime="2019-05-20T14:38:31.374Z"
-                  title="2019-05-20T14:38:31.374233+00:00"
+                  datetime="2018-07-09T05:01:45.000Z"
+                  title="2018-07-09T05:01:45+00:00"
                 >
-                  4 weeks from now
+                  10 months ago
                 </time>
               </div>
             </div>
@@ -505,7 +441,7 @@ exports[`renders with files 1`] = `
               <div
                 class="description"
               >
-                61.2 kB
+                7.0 kB
               </div>
             </div>
             <div
@@ -516,7 +452,7 @@ exports[`renders with files 1`] = `
                 aria-hidden="true"
                 class="question icon"
               />
-               Other
+               unknown
             </div>
           </div>
         </td>
@@ -554,9 +490,9 @@ exports[`renders with files 1`] = `
           class="collapsing single line center aligned"
         >
           <div
-            class="ui grey tiny basic label"
+            class="ui orange tiny basic label"
           >
-            Invalid
+            Pending review
           </div>
         </td>
         <td
@@ -565,11 +501,13 @@ exports[`renders with files 1`] = `
           <span
             class="ui medium header"
           >
-            5.jpg
+            force.webm
           </span>
           <p
             class="noMargin"
-          />
+          >
+            Safe always adult sometimes. Enter full agree still son expect write. According small hold someone.
+          </p>
           <div
             class="ui bulleted horizontal list"
             role="list"
@@ -585,7 +523,7 @@ exports[`renders with files 1`] = `
                   aria-hidden="true"
                   class="copy icon"
                 />
-                SF_MKTW3YRN
+                SF_FPVBM0JF
               </button>
             </div>
             <div
@@ -595,12 +533,12 @@ exports[`renders with files 1`] = `
               <div
                 class="description"
               >
-                Created 
+                Modified 
                 <time
-                  datetime="2019-05-20T14:38:25.692Z"
-                  title="2019-05-20T14:38:25.692686+00:00"
+                  datetime="2018-09-19T08:33:31.000Z"
+                  title="2018-09-19T08:33:31+00:00"
                 >
-                  4 weeks from now
+                  7 months ago
                 </time>
               </div>
             </div>
@@ -611,7 +549,7 @@ exports[`renders with files 1`] = `
               <div
                 class="description"
               >
-                63.0 kB
+                440 B
               </div>
             </div>
             <div
@@ -620,9 +558,9 @@ exports[`renders with files 1`] = `
             >
               <i
                 aria-hidden="true"
-                class="question icon"
+                class="hospital icon"
               />
-               Other
+               Clinical/Phenotype Data
             </div>
           </div>
         </td>
@@ -660,9 +598,9 @@ exports[`renders with files 1`] = `
           class="collapsing single line center aligned"
         >
           <div
-            class="ui grey tiny basic label"
+            class="ui orange tiny basic label"
           >
-            Invalid
+            Pending review
           </div>
         </td>
         <td
@@ -671,11 +609,13 @@ exports[`renders with files 1`] = `
           <span
             class="ui medium header"
           >
-            4.jpg
+            hand.css
           </span>
           <p
             class="noMargin"
-          />
+          >
+            This democratic analysis car here likely. Protect speech exactly three order different wife.
+          </p>
           <div
             class="ui bulleted horizontal list"
             role="list"
@@ -691,7 +631,7 @@ exports[`renders with files 1`] = `
                   aria-hidden="true"
                   class="copy icon"
                 />
-                SF_AZMTRAND
+                SF_6JBSGVWE
               </button>
             </div>
             <div
@@ -701,12 +641,12 @@ exports[`renders with files 1`] = `
               <div
                 class="description"
               >
-                Created 
+                Modified 
                 <time
-                  datetime="2019-05-20T14:38:20.880Z"
-                  title="2019-05-20T14:38:20.880001+00:00"
+                  datetime="2018-10-31T05:37:11.000Z"
+                  title="2018-10-31T05:37:11+00:00"
                 >
-                  4 weeks from now
+                  6 months ago
                 </time>
               </div>
             </div>
@@ -717,7 +657,7 @@ exports[`renders with files 1`] = `
               <div
                 class="description"
               >
-                61.0 kB
+                9.6 kB
               </div>
             </div>
             <div
@@ -728,7 +668,7 @@ exports[`renders with files 1`] = `
                 aria-hidden="true"
                 class="question icon"
               />
-               Other
+               unknown
             </div>
           </div>
         </td>
@@ -766,9 +706,9 @@ exports[`renders with files 1`] = `
           class="collapsing single line center aligned"
         >
           <div
-            class="ui grey tiny basic label"
+            class="ui orange tiny basic label"
           >
-            Invalid
+            Pending review
           </div>
         </td>
         <td
@@ -807,7 +747,7 @@ exports[`renders with files 1`] = `
               <div
                 class="description"
               >
-                Created 
+                Modified 
                 <time
                   datetime="2019-05-20T14:34:21.331Z"
                   title="2019-05-20T14:34:21.331546+00:00"
@@ -872,9 +812,9 @@ exports[`renders with files 1`] = `
           class="collapsing single line center aligned"
         >
           <div
-            class="ui grey tiny basic label"
+            class="ui orange tiny basic label"
           >
-            Invalid
+            Pending review
           </div>
         </td>
         <td
@@ -913,7 +853,7 @@ exports[`renders with files 1`] = `
               <div
                 class="description"
               >
-                Created 
+                Modified 
                 <time
                   datetime="2019-05-20T14:34:21.331Z"
                   title="2019-05-20T14:34:21.331546+00:00"
@@ -978,9 +918,9 @@ exports[`renders with files 1`] = `
           class="collapsing single line center aligned"
         >
           <div
-            class="ui grey tiny basic label"
+            class="ui orange tiny basic label"
           >
-            Invalid
+            Pending review
           </div>
         </td>
         <td
@@ -1019,7 +959,7 @@ exports[`renders with files 1`] = `
               <div
                 class="description"
               >
-                Created 
+                Modified 
                 <time
                   datetime="2019-05-20T14:34:21.331Z"
                   title="2019-05-20T14:34:21.331546+00:00"
@@ -1036,6 +976,324 @@ exports[`renders with files 1`] = `
                 class="description"
               >
                 75.5 kB
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="question icon"
+              />
+               Other
+            </div>
+          </div>
+        </td>
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui mini vertical buttons"
+          >
+            <button
+              class="ui basic icon button"
+            >
+              <i
+                aria-hidden="true"
+                class="download icon"
+              />
+            </button>
+            <button
+              class="ui basic icon button"
+              data-testid="delete-button"
+            >
+              <i
+                aria-hidden="true"
+                class="trash alternate icon"
+              />
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="cursor-pointer"
+        data-testid="file-item"
+      >
+        <td
+          class="collapsing single line center aligned"
+        >
+          <div
+            class="ui orange tiny basic label"
+          >
+            Pending review
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <span
+            class="ui medium header"
+          >
+            3.jpg
+          </span>
+          <p
+            class="noMargin"
+          />
+          <div
+            class="ui bulleted horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <button
+                class="ui mini basic icon left labeled button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="copy icon"
+                />
+                SF_SFA9WW03
+              </button>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                Modified 
+                <time
+                  datetime="2019-05-20T14:34:21.331Z"
+                  title="2019-05-20T14:34:21.331546+00:00"
+                >
+                  4 weeks from now
+                </time>
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                75.5 kB
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="question icon"
+              />
+               Other
+            </div>
+          </div>
+        </td>
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui mini vertical buttons"
+          >
+            <button
+              class="ui basic icon button"
+            >
+              <i
+                aria-hidden="true"
+                class="download icon"
+              />
+            </button>
+            <button
+              class="ui basic icon button"
+              data-testid="delete-button"
+            >
+              <i
+                aria-hidden="true"
+                class="trash alternate icon"
+              />
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="cursor-pointer"
+        data-testid="file-item"
+      >
+        <td
+          class="collapsing single line center aligned"
+        >
+          <div
+            class="ui orange tiny basic label"
+          >
+            Pending review
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <span
+            class="ui medium header"
+          >
+            3.jpg
+          </span>
+          <p
+            class="noMargin"
+          />
+          <div
+            class="ui bulleted horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <button
+                class="ui mini basic icon left labeled button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="copy icon"
+                />
+                SF_SFA9WW04
+              </button>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                Modified 
+                <time
+                  datetime="2019-05-20T14:34:21.331Z"
+                  title="2019-05-20T14:34:21.331546+00:00"
+                >
+                  4 weeks from now
+                </time>
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                75.5 kB
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="question icon"
+              />
+               Other
+            </div>
+          </div>
+        </td>
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui mini vertical buttons"
+          >
+            <button
+              class="ui basic icon button"
+            >
+              <i
+                aria-hidden="true"
+                class="download icon"
+              />
+            </button>
+            <button
+              class="ui basic icon button"
+              data-testid="delete-button"
+            >
+              <i
+                aria-hidden="true"
+                class="trash alternate icon"
+              />
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="cursor-pointer"
+        data-testid="file-item"
+      >
+        <td
+          class="collapsing single line center aligned"
+        >
+          <div
+            class="ui orange tiny basic label"
+          >
+            Pending review
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <span
+            class="ui medium header"
+          >
+            4.jpg
+          </span>
+          <p
+            class="noMargin"
+          />
+          <div
+            class="ui bulleted horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <button
+                class="ui mini basic icon left labeled button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="copy icon"
+                />
+                SF_AZMTRAND
+              </button>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                Modified 
+                <time
+                  datetime="2019-05-20T14:38:20.880Z"
+                  title="2019-05-20T14:38:20.880001+00:00"
+                >
+                  4 weeks from now
+                </time>
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                61.0 kB
               </div>
             </div>
             <div
@@ -1147,6 +1405,264 @@ exports[`renders with files 1`] = `
 
 exports[`renders without files 1`] = `
 <div>
+  <div
+    class="ui basic compact left floated segment noMargin noHorizontalPadding"
+  >
+    <span
+      class="smallLabel"
+    >
+      Filter by:
+    </span>
+    <div
+      aria-expanded="false"
+      class="ui selection dropdown"
+      role="listbox"
+      tabindex="0"
+    >
+      <div
+        aria-live="polite"
+        class="default text"
+        role="alert"
+      >
+        Approval status
+      </div>
+      <i
+        aria-hidden="true"
+        class="dropdown icon"
+      />
+      <div
+        class="menu transition"
+      >
+        <div
+          aria-checked="false"
+          aria-selected="true"
+          class="selected item"
+          role="option"
+          style="pointer-events: all;"
+        >
+          <div
+            class="ui orange tiny basic label"
+          >
+            Pending review
+          </div>
+        </div>
+        <div
+          aria-checked="false"
+          aria-selected="false"
+          class="item"
+          role="option"
+          style="pointer-events: all;"
+        >
+          <div
+            class="ui teal tiny basic label"
+          >
+            Approved
+          </div>
+        </div>
+        <div
+          aria-checked="false"
+          aria-selected="false"
+          class="item"
+          role="option"
+          style="pointer-events: all;"
+        >
+          <div
+            class="ui red tiny basic label"
+          >
+            Changes needed
+          </div>
+        </div>
+        <div
+          aria-checked="false"
+          aria-selected="false"
+          class="item"
+          role="option"
+          style="pointer-events: all;"
+        >
+          <div
+            class="ui blue tiny basic label"
+          >
+            Processed
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ui basic compact left floated segment noMargin noHorizontalPadding"
+  >
+    <div
+      aria-expanded="false"
+      class="ui selection dropdown"
+      role="listbox"
+      tabindex="0"
+    >
+      <div
+        aria-live="polite"
+        class="default text"
+        role="alert"
+      >
+        File type
+      </div>
+      <i
+        aria-hidden="true"
+        class="dropdown icon"
+      />
+      <div
+        class="menu transition"
+      >
+        <div
+          aria-checked="false"
+          aria-selected="true"
+          class="selected item"
+          role="option"
+          style="pointer-events: all;"
+        >
+          <small
+            class="text"
+          >
+            <i
+              aria-hidden="true"
+              class="shipping icon"
+            />
+             Shipping Manifest
+          </small>
+        </div>
+        <div
+          aria-checked="false"
+          aria-selected="false"
+          class="item"
+          role="option"
+          style="pointer-events: all;"
+        >
+          <small
+            class="text"
+          >
+            <i
+              aria-hidden="true"
+              class="hospital icon"
+            />
+             Clinical/Phenotype Data
+          </small>
+        </div>
+        <div
+          aria-checked="false"
+          aria-selected="false"
+          class="item"
+          role="option"
+          style="pointer-events: all;"
+        >
+          <small
+            class="text"
+          >
+            <i
+              aria-hidden="true"
+              class="dna icon"
+            />
+             Sequencing Manifest
+          </small>
+        </div>
+        <div
+          aria-checked="false"
+          aria-selected="false"
+          class="item"
+          role="option"
+          style="pointer-events: all;"
+        >
+          <small
+            class="text"
+          >
+            <i
+              aria-hidden="true"
+              class="question icon"
+            />
+             Other
+          </small>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ui basic compact left floated segment noMargin noHorizontalPadding"
+  >
+    <span
+      class="smallLabel"
+    >
+      Sorted by:
+    </span>
+    <div
+      aria-expanded="false"
+      class="ui selection dropdown"
+      role="listbox"
+      tabindex="0"
+    >
+      <div
+        aria-live="polite"
+        class="default text"
+        role="alert"
+      >
+        Date option
+      </div>
+      <i
+        aria-hidden="true"
+        class="dropdown icon"
+      />
+      <div
+        class="menu transition"
+      >
+        <div
+          aria-checked="false"
+          aria-selected="true"
+          class="selected item"
+          role="option"
+          style="pointer-events: all;"
+        >
+          <span
+            class="text"
+          >
+            Create date
+          </span>
+        </div>
+        <div
+          aria-checked="false"
+          aria-selected="false"
+          class="item"
+          role="option"
+          style="pointer-events: all;"
+        >
+          <span
+            class="text"
+          >
+            Modified date
+          </span>
+        </div>
+      </div>
+    </div>
+    <button
+      class="ui basic icon button"
+    >
+      <i
+        aria-hidden="true"
+        class="sort content ascending icon"
+      />
+    </button>
+  </div>
+  <div
+    class="ui basic compact right floated segment noMargin noHorizontalPadding"
+  >
+    <div
+      class="ui icon input"
+    >
+      <input
+        type="text"
+        value=""
+      />
+      <i
+        aria-hidden="true"
+        class="search icon"
+      />
+    </div>
+  </div>
   <div
     class="ui basic segment"
   >

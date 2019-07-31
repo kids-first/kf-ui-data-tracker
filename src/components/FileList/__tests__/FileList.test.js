@@ -2,7 +2,7 @@ import React from 'react';
 import wait from 'waait';
 import {MemoryRouter} from 'react-router-dom';
 import {MockedProvider} from 'react-apollo/test-utils';
-import {render, cleanup} from 'react-testing-library';
+import {render, cleanup, fireEvent} from 'react-testing-library';
 import FileList from '../FileList';
 import studyByKfId from './studyByKfId';
 
@@ -18,6 +18,15 @@ it('renders with files', async () => {
       </MockedProvider>
     </MemoryRouter>,
   );
+
+  // Sort files by create date by clicking on the file sorting dropdown
+  const sortDropdown = tree.getByText(/Date option/i);
+  fireEvent.click(sortDropdown);
+  await wait();
+  const sortByCreateDate = tree.getByText(/Modified date/i);
+  fireEvent.click(sortByCreateDate);
+  await wait();
+
   expect(tree.container).toMatchSnapshot();
 
   // 12 files in total, page 1 contains 10
