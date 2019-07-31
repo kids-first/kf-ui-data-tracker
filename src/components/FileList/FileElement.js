@@ -32,7 +32,7 @@ const FileAttributes = ({
       <List.Description>
         {latestDate ? (
           <>
-            Created <TimeAgo date={latestDate} live={false} />
+            Modified <TimeAgo date={latestDate} live={false} />
           </>
         ) : (
           'Unknown time'
