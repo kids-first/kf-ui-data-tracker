@@ -36,6 +36,7 @@ const FileList = ({fileList, studyId}) => {
   const [sortDirection, setSortDirection] = useState('ascending');
   const [typeFilterStatus, setTypeFilterStatus] = useState('');
   const [approvalFilterStatus, setApprovalFilterStatus] = useState('');
+  const [searchString, setSearchString] = useState('');
 
   const statusOptions = Object.keys(versionState).map(state => ({
     key: state,
