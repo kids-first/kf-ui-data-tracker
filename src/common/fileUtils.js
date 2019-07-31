@@ -80,10 +80,19 @@ export const fileSortedVersions = fileNode => {
   } else return [];
 };
 
-// Get the lastest date from the latest version of the file
+// Get the file modified date from the latest version of the file
 export const fileLatestDate = sortedVersions => {
   if (sortedVersions.length > 0) {
     return sortedVersions[0].node.createdAt;
+  } else {
+    return null;
+  }
+};
+
+// Get the file created date from the oldest version of the file
+export const fileOldestDate = sortedVersions => {
+  if (sortedVersions.length > 0) {
+    return sortedVersions.reverse()[0].node.createdAt;
   } else {
     return null;
   }
@@ -109,4 +118,36 @@ export const fileLatestStatus = fileNode => {
 // Limit the length of text and add '...' at the end
 export const lengthLimit = (text, limit) => {
   return text.length > limit ? text.substring(0, limit) + '...' : text;
+};
+
+// Sort files by created date
+export const createDateSort = (a, b) => {
+  return Date.parse(fileOldestDate(fileSortedVersions(a.node))) >
+    Date.parse(fileOldestDate(fileSortedVersions(b.node)))
+    ? 1
+    : Date.parse(fileOldestDate(fileSortedVersions(b.node))) >
+      Date.parse(fileOldestDate(fileSortedVersions(a.node)))
+    ? -1
+    : 0;
+};
+
+// Sort files by modified date
+export const modifiedDateSort = (a, b) => {
+  return Date.parse(fileLatestDate(fileSortedVersions(a.node))) >
+    Date.parse(fileLatestDate(fileSortedVersions(b.node)))
+    ? 1
+    : Date.parse(fileLatestDate(fileSortedVersions(b.node))) >
+      Date.parse(fileLatestDate(fileSortedVersions(a.node)))
+    ? -1
+    : 0;
+};
+
+// Default sorting by brining "Changes Needed" files to the top
+export const defaultSort = (a, b) => {
+  return fileLatestStatus(a.node) !== 'CHN' &&
+    fileLatestStatus(b.node) === 'CHN'
+    ? 1
+    : fileLatestStatus(b.node) !== 'CHN' && fileLatestStatus(a.node) === 'CHN'
+    ? -1
+    : 0;
 };

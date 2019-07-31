@@ -21,12 +21,23 @@ body {
 }
 
 .noMargin {
-  margin: 0px;
+  margin: 0px !important;
+}
+
+.noHorizontalPadding {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
 }
 
 .noBorders {
   border: none !important;
   box-shadow: none !important;
+}
+
+.smallLabel {
+  padding-left: 10px;
+  padding-right: 5px;
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .height-50 {

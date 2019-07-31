@@ -23,6 +23,7 @@
                   {
                     "node": {
                       "id": "T2JqZWN0Tm9kZTpGVl9TSUI1RlE2TA==",
+                      "state": "PEN",
                       "size": 9037,
                       "createdAt": "2017-11-29T04:15:57+00:00",
                       "__typename": "VersionNode"
@@ -32,6 +33,7 @@
                   {
                     "node": {
                       "id": "T2JqZWN0Tm9kZTpGVl8zT1RURFM3SA==",
+                      "state": "PEN",
                       "size": 440,
                       "createdAt": "2018-09-19T08:33:31+00:00",
                       "__typename": "VersionNode"
@@ -58,6 +60,7 @@
                   {
                     "node": {
                       "id": "T2JqZWN0Tm9kZTpGVl9WMU0zRUpZRA==",
+                      "state": "PEN",
                       "size": 5267,
                       "createdAt": "2017-11-17T13:39:26+00:00",
                       "__typename": "VersionNode"
@@ -67,6 +70,7 @@
                   {
                     "node": {
                       "id": "T2JqZWN0Tm9kZTpGVl9YM0RPMFc0TQ==",
+                      "state": "PEN",
                       "size": 7032,
                       "createdAt": "2018-07-09T05:01:45+00:00",
                       "__typename": "VersionNode"
@@ -93,6 +97,7 @@
                   {
                     "node": {
                       "id": "T2JqZWN0Tm9kZTpGVl80T1ZMVFc5TQ==",
+                      "state": "PEN",
                       "size": 9605,
                       "createdAt": "2018-10-31T05:37:11+00:00",
                       "__typename": "VersionNode"
@@ -102,6 +107,7 @@
                   {
                     "node": {
                       "id": "T2JqZWN0Tm9kZTpGVl9FMDRIQjQzSw==",
+                      "state": "PEN",
                       "size": 8631,
                       "createdAt": "2017-05-09T23:36:39+00:00",
                       "__typename": "VersionNode"
@@ -111,6 +117,7 @@
                   {
                     "node": {
                       "id": "T2JqZWN0Tm9kZTpGVl83RkE3WFA4Tg==",
+                      "state": "PEN",
                       "size": 3186,
                       "createdAt": "2017-08-20T09:28:39+00:00",
                       "__typename": "VersionNode"
@@ -120,6 +127,7 @@
                   {
                     "node": {
                       "id": "T2JqZWN0Tm9kZTpGVl9HSExZOVlZWA==",
+                      "state": "PEN",
                       "size": 6863,
                       "createdAt": "2017-04-05T14:44:06+00:00",
                       "__typename": "VersionNode"
@@ -129,6 +137,7 @@
                   {
                     "node": {
                       "id": "T2JqZWN0Tm9kZTpGVl9ZQUxDVzI2NA==",
+                      "state": "PEN",
                       "size": 3247,
                       "createdAt": "2018-09-09T06:30:35+00:00",
                       "__typename": "VersionNode"
@@ -155,6 +164,7 @@
                   {
                     "node": {
                       "id": "T2JqZWN0Tm9kZTpGVl9CVEs3RVlIWA==",
+                      "state": "PEN",
                       "size": 6563,
                       "createdAt": "2017-11-06T13:13:56+00:00",
                       "__typename": "VersionNode"
@@ -164,6 +174,7 @@
                   {
                     "node": {
                       "id": "T2JqZWN0Tm9kZTpGVl9QTkExNjdOSA==",
+                      "state": "PEN",
                       "size": 7957,
                       "createdAt": "2017-09-24T04:10:21+00:00",
                       "__typename": "VersionNode"
@@ -190,6 +201,7 @@
                   {
                     "node": {
                       "id": "T2JqZWN0Tm9kZTpGVl9TVjJLODlBMQ==",
+                      "state": "PEN",
                       "size": 61153,
                       "createdAt": "2019-05-20T14:38:31.374233+00:00"
                     }
@@ -211,6 +223,7 @@
                   {
                     "node": {
                       "id": "T2JqZWN0Tm9kZTpGVl9CNlBBUUI2SA==",
+                      "state": "PEN",
                       "size": 62998,
                       "createdAt": "2019-05-20T14:38:25.692686+00:00"
                     }
@@ -232,6 +245,7 @@
                   {
                     "node": {
                       "id": "T2JqZWN0Tm9kZTpGVl9OWVhRWU1NMw==",
+                      "state": "PEN",
                       "size": 60985,
                       "createdAt": "2019-05-20T14:38:20.880001+00:00"
                     }
@@ -253,6 +267,7 @@
                   {
                     "node": {
                       "id": "T2JqZWN0Tm9kZTpGVl9EUUc3VEc2TQ==",
+                      "state": "PEN",
                       "size": 75510,
                       "createdAt": "2019-05-20T14:34:21.331546+00:00"
                     }
@@ -275,6 +290,7 @@
                   {
                     "node": {
                       "id": "T2JqZWN0Tm9kZTpGVl9EUUc3VEc201==",
+                      "state": "PEN",
                       "size": 75510,
                       "createdAt": "2019-05-20T14:34:21.331546+00:00"
                     }
@@ -296,6 +312,7 @@
                   {
                     "node": {
                       "id": "T2JqZWN0Tm9kZTpGVl9EUUc3VEc202==",
+                      "state": "PEN",
                       "size": 75510,
                       "createdAt": "2019-05-20T14:34:21.331546+00:00"
                     }
@@ -317,6 +334,7 @@
                   {
                     "node": {
                       "id": "T2JqZWN0Tm9kZTpGVl9EUUc3VEc203==",
+                      "state": "PEN",
                       "size": 75510,
                       "createdAt": "2019-05-20T14:34:21.331546+00:00"
                     }
@@ -338,6 +356,7 @@
                   {
                     "node": {
                       "id": "T2JqZWN0Tm9kZTpGVl9EUUc3VEc204==",
+                      "state": "PEN",
                       "size": 75510,
                       "createdAt": "2019-05-20T14:34:21.331546+00:00"
                     }

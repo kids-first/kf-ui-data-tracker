@@ -55,7 +55,7 @@ exports[`renders correctly 1`] = `
               <div
                 class="description"
               >
-                Created 
+                Modified 
                 <time
                   datetime="2018-09-27T05:32:26.000Z"
                   title="2018-09-27T05:32:26+00:00"
@@ -172,7 +172,7 @@ exports[`renders loading state 1`] = `
               <div
                 class="description"
               >
-                Created 
+                Modified 
                 <time
                   datetime="2018-09-27T05:32:26.000Z"
                   title="2018-09-27T05:32:26+00:00"
