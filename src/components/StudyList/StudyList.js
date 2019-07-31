@@ -34,6 +34,19 @@ const StudyList = ({studyList, loading, activeView = 'grid'}) => {
     );
   }
 
+  const filteredStudyList = () => {
+    var filteredList = studyList.filter(
+      obj =>
+        (obj.node.name &&
+          obj.node.name.toLowerCase().includes(searchString.toLowerCase())) ||
+        (obj.node.shortName &&
+          obj.node.shortName
+            .toLowerCase()
+            .includes(searchString.toLowerCase())),
+    );
+    return filteredList;
+  };
+
   return (
     <Grid as={Segment} basic container stackable>
       <Grid.Column computer={11} tablet={8}>
@@ -59,11 +72,11 @@ const StudyList = ({studyList, loading, activeView = 'grid'}) => {
       <Grid.Row>
         <Grid.Column>
           {view === 'grid' ? (
-            <StudyGrid loading={loading} studyList={studyList} />
+            <StudyGrid loading={loading} studyList={filteredStudyList()} />
           ) : (
             <StudyTable
               loading={loading}
-              studyList={studyList}
+              studyList={filteredStudyList()}
               exclude={['createdAt', 'modifiedAt']}
             />
           )}
