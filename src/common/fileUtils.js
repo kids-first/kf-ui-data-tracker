@@ -119,3 +119,14 @@ export const fileLatestStatus = fileNode => {
 export const lengthLimit = (text, limit) => {
   return text.length > limit ? text.substring(0, limit) + '...' : text;
 };
+
+// Sort files by created date
+export const createDateSort = (a, b) => {
+  return Date.parse(fileOldestDate(fileSortedVersions(a.node))) >
+    Date.parse(fileOldestDate(fileSortedVersions(b.node)))
+    ? 1
+    : Date.parse(fileOldestDate(fileSortedVersions(b.node))) >
+      Date.parse(fileOldestDate(fileSortedVersions(a.node)))
+    ? -1
+    : 0;
+};
