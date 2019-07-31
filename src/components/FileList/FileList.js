@@ -16,6 +16,7 @@ import {
   Message,
   Pagination,
   Table,
+  Dropdown,
 } from 'semantic-ui-react';
 import Badge from '../Badge/Badge';
 
@@ -97,6 +98,25 @@ const FileList = ({fileList, studyId}) => {
 
   return (
     <Fragment>
+      <Segment
+        className="noMargin noHorizontalPadding"
+        basic
+        compact
+        floated="left"
+      >
+        <span className="smallLabel">Filter by:</span>
+        <Dropdown
+          selection
+          clearable
+          selectOnBlur={false}
+          value={approvalFilterStatus}
+          options={statusOptions}
+          placeholder="Approval status"
+          onChange={(e, {value}) => {
+            setApprovalFilterStatus(value);
+          }}
+        />
+      </Segment>
       {fileList.filter(obj => fileLatestStatus(obj.node) === 'CHN').length >
         0 && (
         <Message
