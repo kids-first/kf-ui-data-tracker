@@ -81,6 +81,11 @@ const FileList = ({fileList, studyId}) => {
     sortedList = sortedList.filter(obj =>
       fileLatestStatus(obj.node).includes(approvalFilterStatus),
     );
+    sortedList = sortedList.filter(
+      obj =>
+        obj.node.name.toLowerCase().includes(searchString.toLowerCase()) ||
+        obj.node.description.toLowerCase().includes(searchString.toLowerCase()),
+    );
     return sortedList;
   };
 
