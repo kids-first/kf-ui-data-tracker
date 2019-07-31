@@ -56,16 +56,10 @@ const StudyList = ({studyList, loading, activeView = 'grid'}) => {
 
   return (
     <Grid as={Segment} basic container stackable>
-      <Grid.Column computer={11} tablet={8}>
+      <Grid.Column width={8} textAlign="left">
         <Header as="h1">Your Studies</Header>
       </Grid.Column>
-      <Grid.Column
-        computer={5}
-        tablet={8}
-        stretched
-        verticalAlign="middle"
-        textAlign="right"
-      >
+      <Grid.Column width={8} textAlign="right">
         <Input
           className="pr-5"
           size="mini"
@@ -78,6 +72,8 @@ const StudyList = ({studyList, loading, activeView = 'grid'}) => {
           value={searchString}
         />
         <ToggleButtons
+          size="mini"
+          hideText
           onToggle={({text}) => {
             setView(text.toLowerCase());
           }}
