@@ -49,6 +49,19 @@ const FileList = ({fileList, studyId}) => {
       </small>
     ),
   }));
+  const sortOptions = [
+    {
+      key: 'createDate',
+      value: 'createDate',
+      text: 'Create date',
+    },
+    {
+      key: 'modifyDate',
+      value: 'modifyDate',
+      text: 'Modified date',
+    },
+  ];
+
     perPage * (page - 1),
     perPage * (page - 1) + perPage,
   );
