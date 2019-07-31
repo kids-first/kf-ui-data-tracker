@@ -16,6 +16,7 @@ import {
   Message,
   Pagination,
   Table,
+  Button,
   Dropdown,
 } from 'semantic-ui-react';
 import Badge from '../Badge/Badge';
@@ -153,6 +154,19 @@ const FileList = ({fileList, studyId}) => {
             setSortMethod(value);
           }}
         />
+        <Button
+          icon
+          basic
+          onClick={() => {
+            if (sortDirection === 'ascending') {
+              setSortDirection('descending');
+            } else {
+              setSortDirection('ascending');
+            }
+          }}
+        >
+          <Icon name={'sort content ' + sortDirection} />
+        </Button>
       </Segment>
       {fileList.filter(obj => fileLatestStatus(obj.node) === 'CHN').length >
         0 && (
