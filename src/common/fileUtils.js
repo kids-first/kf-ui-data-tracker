@@ -80,10 +80,19 @@ export const fileSortedVersions = fileNode => {
   } else return [];
 };
 
-// Get the lastest date from the latest version of the file
+// Get the file modified date from the latest version of the file
 export const fileLatestDate = sortedVersions => {
   if (sortedVersions.length > 0) {
     return sortedVersions[0].node.createdAt;
+  } else {
+    return null;
+  }
+};
+
+// Get the file created date from the oldest version of the file
+export const fileOldestDate = sortedVersions => {
+  if (sortedVersions.length > 0) {
+    return sortedVersions.reverse()[0].node.createdAt;
   } else {
     return null;
   }
