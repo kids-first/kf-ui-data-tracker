@@ -135,6 +135,25 @@ const FileList = ({fileList, studyId}) => {
           }}
         />
       </Segment>
+      <Segment
+        className="noMargin noHorizontalPadding"
+        basic
+        compact
+        floated="left"
+      >
+        <span className="smallLabel">Sorted by:</span>
+        <Dropdown
+          selection
+          clearable
+          selectOnBlur={false}
+          value={sortMethod}
+          options={sortOptions}
+          placeholder="Date option"
+          onChange={(e, {value}) => {
+            setSortMethod(value);
+          }}
+        />
+      </Segment>
       {fileList.filter(obj => fileLatestStatus(obj.node) === 'CHN').length >
         0 && (
         <Message
