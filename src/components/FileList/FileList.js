@@ -1,7 +1,10 @@
 import React, {useState, Fragment} from 'react';
 import PropTypes from 'prop-types';
 import FileElement from './FileElement';
-import {fileLatestStatus} from '../../common/fileUtils';
+import {
+  fileLatestStatus,
+  versionState,
+} from '../../common/fileUtils';
 import {
   Header,
   Icon,
@@ -10,6 +13,8 @@ import {
   Pagination,
   Table,
 } from 'semantic-ui-react';
+import Badge from '../Badge/Badge';
+
 /**
  * Displays list of study files
  */
@@ -25,6 +30,13 @@ const FileList = ({fileList, studyId}) => {
     .concat(fileList.filter(obj => fileLatestStatus(obj.node) !== 'CHN'));
   const pageCount = Math.ceil(sortedFileList.length / perPage);
   const pageItems = sortedFileList.slice(
+
+  const statusOptions = Object.keys(versionState).map(state => ({
+    key: state,
+    value: state,
+    text: versionState[state].title,
+    content: <Badge state={state} />,
+  }));
     perPage * (page - 1),
     perPage * (page - 1) + perPage,
   );
