@@ -73,6 +73,8 @@ const FileList = ({fileList, studyId}) => {
       default: defaultSort,
     };
     var sortedList = fileList.sort(sortFuncs[sortMethod] || sortFuncs.default);
+    sortedList =
+      sortDirection === 'ascending' ? sortedList : sortedList.reverse();
     return sortedList;
   };
 
