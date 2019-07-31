@@ -3,7 +3,14 @@ import PropTypes from 'prop-types';
 import StudyGrid from './StudyGrid';
 import StudyTable from './StudyTable';
 import ToggleButtons from '../ToggleButtons/ToggleButtons';
-import {Container, Segment, Grid, Header, Placeholder} from 'semantic-ui-react';
+import {
+  Container,
+  Segment,
+  Grid,
+  Header,
+  Placeholder,
+  Input,
+} from 'semantic-ui-react';
 
 /**
  * A skeleton placeholder for the loading state of the study list header
@@ -59,6 +66,17 @@ const StudyList = ({studyList, loading, activeView = 'grid'}) => {
         verticalAlign="middle"
         textAlign="right"
       >
+        <Input
+          className="pr-5"
+          size="mini"
+          iconPosition="left"
+          icon="search"
+          placeholder="Search by Study Name"
+          onChange={(e, {value}) => {
+            setSearchString(value);
+          }}
+          value={searchString}
+        />
         <ToggleButtons
           onToggle={({text}) => {
             setView(text.toLowerCase());
