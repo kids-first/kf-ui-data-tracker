@@ -4,6 +4,7 @@ import FileElement from './FileElement';
 import {
   fileLatestStatus,
   versionState,
+  fileTypeDetail,
 } from '../../common/fileUtils';
 import {
   Header,
@@ -36,6 +37,17 @@ const FileList = ({fileList, studyId}) => {
     value: state,
     text: versionState[state].title,
     content: <Badge state={state} />,
+  }));
+  const typeOptions = Object.keys(fileTypeDetail).map(type => ({
+    key: type,
+    value: type,
+    text: fileTypeDetail[type].title,
+    content: (
+      <small>
+        <Icon name={`${fileTypeDetail[type].icon || 'question'}`} />
+        {' ' + fileTypeDetail[type].title}
+      </small>
+    ),
   }));
     perPage * (page - 1),
     perPage * (page - 1) + perPage,
