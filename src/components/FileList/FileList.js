@@ -32,6 +32,11 @@ const FileList = ({fileList, studyId}) => {
   const pageCount = Math.ceil(sortedFileList.length / perPage);
   const pageItems = sortedFileList.slice(
 
+  const [sortMethod, setSortMethod] = useState('');
+  const [sortDirection, setSortDirection] = useState('ascending');
+  const [typeFilterStatus, setTypeFilterStatus] = useState('');
+  const [approvalFilterStatus, setApprovalFilterStatus] = useState('');
+
   const statusOptions = Object.keys(versionState).map(state => ({
     key: state,
     value: state,
