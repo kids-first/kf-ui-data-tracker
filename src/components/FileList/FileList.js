@@ -75,6 +75,9 @@ const FileList = ({fileList, studyId}) => {
     var sortedList = fileList.sort(sortFuncs[sortMethod] || sortFuncs.default);
     sortedList =
       sortDirection === 'ascending' ? sortedList : sortedList.reverse();
+    sortedList = sortedList.filter(obj =>
+      obj.node.fileType.includes(typeFilterStatus),
+    );
     return sortedList;
   };
 
