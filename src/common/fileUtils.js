@@ -141,3 +141,13 @@ export const modifiedDateSort = (a, b) => {
     ? -1
     : 0;
 };
+
+// Default sorting by brining "Changes Needed" files to the top
+export const defaultSort = (a, b) => {
+  return fileLatestStatus(a.node) !== 'CHN' &&
+    fileLatestStatus(b.node) === 'CHN'
+    ? 1
+    : fileLatestStatus(b.node) !== 'CHN' && fileLatestStatus(a.node) === 'CHN'
+    ? -1
+    : 0;
+};
