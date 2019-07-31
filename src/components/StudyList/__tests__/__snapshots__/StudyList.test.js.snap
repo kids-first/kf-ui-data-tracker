@@ -6,7 +6,7 @@ exports[`renders correctly 1`] = `
     class="ui basic segment ui container stackable grid"
   >
     <div
-      class="eleven wide computer eight wide tablet column"
+      class="left aligned eight wide column"
     >
       <h1
         class="ui header"
@@ -15,30 +15,41 @@ exports[`renders correctly 1`] = `
       </h1>
     </div>
     <div
-      class="stretched right aligned middle aligned five wide computer eight wide tablet column"
+      class="right aligned eight wide column"
     >
       <div
-        class="ui buttons"
+        class="ui mini left icon input pr-5"
+      >
+        <input
+          placeholder="Search by Study Name"
+          type="text"
+          value=""
+        />
+        <i
+          aria-hidden="true"
+          class="search icon"
+        />
+      </div>
+      <div
+        class="ui mini buttons"
       >
         <button
-          class="ui icon primary left labeled button"
+          class="ui icon primary button"
           tabindex="0"
         >
           <i
             aria-hidden="true"
             class="grid layout icon"
           />
-          Grid
         </button>
         <button
-          class="ui icon left labeled button"
+          class="ui icon button"
           tabindex="0"
         >
           <i
             aria-hidden="true"
             class="list icon"
           />
-          List
         </button>
       </div>
     </div>
