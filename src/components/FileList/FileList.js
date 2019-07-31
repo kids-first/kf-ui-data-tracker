@@ -18,6 +18,7 @@ import {
   Table,
   Button,
   Dropdown,
+  Input,
 } from 'semantic-ui-react';
 import Badge from '../Badge/Badge';
 
@@ -167,6 +168,20 @@ const FileList = ({fileList, studyId}) => {
         >
           <Icon name={'sort content ' + sortDirection} />
         </Button>
+      </Segment>
+      <Segment
+        className="noMargin noHorizontalPadding"
+        basic
+        compact
+        floated="right"
+      >
+        <Input
+          icon="search"
+          onChange={(e, {value}) => {
+            setSearchString(value);
+          }}
+          value={searchString}
+        />
       </Segment>
       {fileList.filter(obj => fileLatestStatus(obj.node) === 'CHN').length >
         0 && (
