@@ -5,6 +5,9 @@ import {
   fileLatestStatus,
   versionState,
   fileTypeDetail,
+  createDateSort,
+  modifiedDateSort,
+  defaultSort,
 } from '../../common/fileUtils';
 import {
   Header,
@@ -64,6 +67,12 @@ const FileList = ({fileList, studyId}) => {
   ];
 
   const sortedFileList = () => {
+    const sortFuncs = {
+      createdDate: createDateSort,
+      modifyDate: modifiedDateSort,
+      default: defaultSort,
+    };
+    var sortedList = fileList.sort(sortFuncs[sortMethod] || sortFuncs.default);
     return sortedList;
   };
 
