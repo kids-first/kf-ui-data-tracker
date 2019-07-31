@@ -2,16 +2,15 @@ import React, {useState} from 'react';
 import propTypes from 'prop-types';
 import {Button, Icon} from 'semantic-ui-react';
 
-const ToggleButtons = ({buttons, onToggle}) => {
+const ToggleButtons = ({buttons, onToggle, size, hideText}) => {
   const [active, setActive] = useState(0);
 
   return (
-    <Button.Group>
+    <Button.Group size={size}>
       {buttons.map(({text, icon}, idx) => (
         <Button
           key={text}
-          icon
-          labelPosition="left"
+          icon={hideText}
           primary={active === idx}
           onClick={() => {
             setActive(idx);
@@ -20,7 +19,7 @@ const ToggleButtons = ({buttons, onToggle}) => {
           tabIndex="0"
         >
           <Icon name={icon} />
-          {text}
+          {!hideText && text}
         </Button>
       ))}
     </Button.Group>
@@ -38,6 +37,19 @@ ToggleButtons.propTypes = {
   ),
   /** onClick callback that rececives the button object as args */
   onToggle: propTypes.func,
+  /** Button group size. */
+  size: propTypes.oneOf([
+    'mini',
+    'tiny',
+    'small',
+    'medium',
+    'large',
+    'big',
+    'huge',
+    'massive',
+  ]),
+  /** Show toggle button as icons obly */
+  hideText: propTypes.bool,
 };
 
 export default ToggleButtons;
