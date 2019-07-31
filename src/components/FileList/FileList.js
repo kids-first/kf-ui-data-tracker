@@ -26,11 +26,6 @@ const FileList = ({fileList, studyId}) => {
   const handlePageClick = (e, {activePage}) => {
     setPage(activePage);
   };
-  const sortedFileList = fileList
-    .filter(obj => fileLatestStatus(obj.node) === 'CHN')
-    .concat(fileList.filter(obj => fileLatestStatus(obj.node) !== 'CHN'));
-  const pageCount = Math.ceil(sortedFileList.length / perPage);
-  const pageItems = sortedFileList.slice(
 
   const [sortMethod, setSortMethod] = useState('');
   const [sortDirection, setSortDirection] = useState('ascending');
@@ -68,6 +63,12 @@ const FileList = ({fileList, studyId}) => {
     },
   ];
 
+  const sortedFileList = () => {
+    return sortedList;
+  };
+
+  const pageCount = Math.ceil(sortedFileList().length / perPage);
+  const pageItems = sortedFileList().slice(
     perPage * (page - 1),
     perPage * (page - 1) + perPage,
   );
