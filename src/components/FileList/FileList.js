@@ -117,6 +117,24 @@ const FileList = ({fileList, studyId}) => {
           }}
         />
       </Segment>
+      <Segment
+        className="noMargin noHorizontalPadding"
+        basic
+        compact
+        floated="left"
+      >
+        <Dropdown
+          selection
+          clearable
+          selectOnBlur={false}
+          value={typeFilterStatus}
+          options={typeOptions}
+          placeholder="File type"
+          onChange={(e, {value}) => {
+            setTypeFilterStatus(value);
+          }}
+        />
+      </Segment>
       {fileList.filter(obj => fileLatestStatus(obj.node) === 'CHN').length >
         0 && (
         <Message
