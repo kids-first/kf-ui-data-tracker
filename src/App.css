@@ -34,6 +34,10 @@ body {
   box-shadow: none !important;
 }
 
+.pr-5 {
+  padding-right: 5px !important;
+}
+
 .smallLabel {
   padding-left: 10px;
   padding-right: 5px;

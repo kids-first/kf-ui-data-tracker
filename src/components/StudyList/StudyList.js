@@ -3,7 +3,14 @@ import PropTypes from 'prop-types';
 import StudyGrid from './StudyGrid';
 import StudyTable from './StudyTable';
 import ToggleButtons from '../ToggleButtons/ToggleButtons';
-import {Container, Segment, Grid, Header, Placeholder} from 'semantic-ui-react';
+import {
+  Container,
+  Segment,
+  Grid,
+  Header,
+  Placeholder,
+  Input,
+} from 'semantic-ui-react';
 
 /**
  * A skeleton placeholder for the loading state of the study list header
@@ -23,6 +30,7 @@ const HeaderSkeleton = () => (
  */
 const StudyList = ({studyList, loading, activeView = 'grid'}) => {
   const [view, setView] = useState(activeView);
+  const [searchString, setSearchString] = useState('');
 
   if (loading) {
     return (
@@ -33,19 +41,39 @@ const StudyList = ({studyList, loading, activeView = 'grid'}) => {
     );
   }
 
+  const filteredStudyList = () => {
+    var filteredList = studyList.filter(
+      obj =>
+        (obj.node.name &&
+          obj.node.name.toLowerCase().includes(searchString.toLowerCase())) ||
+        (obj.node.shortName &&
+          obj.node.shortName
+            .toLowerCase()
+            .includes(searchString.toLowerCase())),
+    );
+    return filteredList;
+  };
+
   return (
     <Grid as={Segment} basic container stackable>
-      <Grid.Column computer={11} tablet={8}>
+      <Grid.Column width={8} textAlign="left">
         <Header as="h1">Your Studies</Header>
       </Grid.Column>
-      <Grid.Column
-        computer={5}
-        tablet={8}
-        stretched
-        verticalAlign="middle"
-        textAlign="right"
-      >
+      <Grid.Column width={8} textAlign="right">
+        <Input
+          className="pr-5"
+          size="mini"
+          iconPosition="left"
+          icon="search"
+          placeholder="Search by Study Name"
+          onChange={(e, {value}) => {
+            setSearchString(value);
+          }}
+          value={searchString}
+        />
         <ToggleButtons
+          size="mini"
+          hideText
           onToggle={({text}) => {
             setView(text.toLowerCase());
           }}
@@ -58,11 +86,11 @@ const StudyList = ({studyList, loading, activeView = 'grid'}) => {
       <Grid.Row>
         <Grid.Column>
           {view === 'grid' ? (
-            <StudyGrid loading={loading} studyList={studyList} />
+            <StudyGrid loading={loading} studyList={filteredStudyList()} />
           ) : (
             <StudyTable
               loading={loading}
-              studyList={studyList}
+              studyList={filteredStudyList()}
               exclude={['createdAt', 'modifiedAt']}
             />
           )}

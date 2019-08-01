@@ -6,7 +6,7 @@ exports[`calls onToggle prop on click 1`] = `
     class="ui buttons"
   >
     <button
-      class="ui icon left labeled button"
+      class="ui button"
       tabindex="0"
     >
       <i
@@ -16,7 +16,7 @@ exports[`calls onToggle prop on click 1`] = `
       Grid
     </button>
     <button
-      class="ui icon primary left labeled button"
+      class="ui primary button"
       tabindex="0"
     >
       <i
@@ -35,7 +35,7 @@ exports[`changes active button on click 1`] = `
     class="ui buttons"
   >
     <button
-      class="ui icon left labeled button"
+      class="ui button"
       tabindex="0"
     >
       <i
@@ -45,7 +45,7 @@ exports[`changes active button on click 1`] = `
       Grid
     </button>
     <button
-      class="ui icon primary left labeled button"
+      class="ui primary button"
       tabindex="0"
     >
       <i
@@ -64,7 +64,7 @@ exports[`renders correctly 1`] = `
     class="ui buttons"
   >
     <button
-      class="ui icon primary left labeled button"
+      class="ui primary button"
       tabindex="0"
     >
       <i
@@ -74,7 +74,7 @@ exports[`renders correctly 1`] = `
       Grid
     </button>
     <button
-      class="ui icon left labeled button"
+      class="ui button"
       tabindex="0"
     >
       <i
