@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {graphql, compose} from 'react-apollo';
-import jwtDecode from 'jwt-decode';
 import {MY_PROFILE} from '../state/queries';
 import {UPDATE_PROFILE} from '../state/mutations';
 import {
@@ -81,11 +80,6 @@ const ProfileView = ({
     email: 'Email',
   };
 
-  const token =
-    localStorage.getItem('egoToken') || localStorage.getItem('accessToken');
-  const decoded = jwtDecode(token);
-  const roles =
-    decoded['https://kidsfirstdrc.org/roles'] || decoded.context.roles;
   return (
     <Container as={Segment} basic vertical>
       <Header as="h3">Your Profile</Header>
@@ -109,7 +103,7 @@ const ProfileView = ({
                 }
               />
             </Grid.Column>
-            <Label attached="top left">{roles.join(', ')}</Label>
+            <Label attached="top left">{profile.roles.join(', ')}</Label>
             <Grid.Column mobile={16} tablet={12} computer={14}>
               <Form size="mini">
                 <Form.Group widths={2}>

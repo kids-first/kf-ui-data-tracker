@@ -5,6 +5,7 @@ import {MemoryRouter} from 'react-router-dom';
 import {render, fireEvent} from 'react-testing-library';
 import Routes from '../../../Routes';
 import {mocks} from '../../../../__mocks__/kf-api-study-creator/mocks';
+import myProfile from '../../../../__mocks__/kf-api-study-creator/responses/myProfile.json';
 
 jest.mock('auth0-js');
 
@@ -28,7 +29,14 @@ beforeAll(() => {
 
 it('edits an existing file correctly', async () => {
   const tree = render(
-    <MockedProvider mocks={mocks}>
+    <MockedProvider
+      resolvers={{
+        UserNode: {
+          ...myProfile.data.myProfile,
+        },
+      }}
+      mocks={mocks}
+    >
       <MemoryRouter initialEntries={['/study/SD_8WX8QQ06/documents/']}>
         <Routes />
       </MemoryRouter>

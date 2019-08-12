@@ -108,6 +108,8 @@ export const GET_DEV_TOKENS = gql`
 export const MY_PROFILE = gql`
   {
     myProfile {
+      roles @client
+      groups @client
       id
       username
       firstName

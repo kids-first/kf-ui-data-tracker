@@ -30,18 +30,18 @@ it('renders with files', async () => {
   expect(tree.container).toMatchSnapshot();
 
   // 12 files in total, page 1 contains 10
-  const lisPage1 = tree.getAllByTestId('file-item');
+  const lisPage1 = tree.queryAllByTestId('file-item');
   expect(lisPage1.length).toBe(10);
 
   // Click on the next button to go to next page
 
-  let button = tree.container.querySelector('.chevron.right.icon');
+  let button = tree.getByLabelText('Next page');
   button.click();
 
   await wait();
 
   // 12 files in total, 10 files per page, page 2 should have 2 files
-  const lisPage2 = tree.getAllByTestId('file-item');
+  const lisPage2 =  tree.queryAllByTestId('file-item');
   expect(lisPage2.length).toBe(2);
 });
 
