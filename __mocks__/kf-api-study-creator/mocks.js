@@ -2,10 +2,12 @@ import allStudies from './responses/allStudies';
 import studyByKfId from './responses/studyByKfId.json';
 import deleteFile from './responses/deleteFile.json';
 import fileByKfId from './responses/fileByKfId.json';
+import myProfile from './responses/myProfile.json';
 import {
   ALL_STUDIES,
   GET_STUDY_BY_ID,
   GET_FILE_BY_ID,
+  MY_PROFILE,
 } from '../../src/state/queries';
 import updateFile from './responses/updateFile.json';
 import updateVersion from './responses/updateVersion.json';
@@ -80,5 +82,11 @@ export const mocks = [
       },
     },
     result: updateVersion,
+  },
+  {
+    request: {
+      query: MY_PROFILE,
+    },
+    result: myProfile,
   },
 ];

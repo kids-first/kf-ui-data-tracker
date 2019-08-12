@@ -662,78 +662,9 @@ Object {
             Approval Status:
           </label>
           <div
-            aria-expanded="false"
-            class="ui fluid selection dropdown"
-            role="listbox"
-            tabindex="0"
+            class="ui orange tiny basic label"
           >
-            <div
-              aria-live="polite"
-              class="text"
-              role="alert"
-            >
-              Pending review
-            </div>
-            <i
-              aria-hidden="true"
-              class="dropdown icon"
-            />
-            <div
-              class="menu transition"
-            >
-              <div
-                aria-checked="true"
-                aria-selected="true"
-                class="active selected item"
-                role="option"
-                style="pointer-events: all;"
-              >
-                <div
-                  class="ui orange tiny basic label"
-                >
-                  Pending review
-                </div>
-              </div>
-              <div
-                aria-checked="false"
-                aria-selected="false"
-                class="item"
-                role="option"
-                style="pointer-events: all;"
-              >
-                <div
-                  class="ui teal tiny basic label"
-                >
-                  Approved
-                </div>
-              </div>
-              <div
-                aria-checked="false"
-                aria-selected="false"
-                class="item"
-                role="option"
-                style="pointer-events: all;"
-              >
-                <div
-                  class="ui red tiny basic label"
-                >
-                  Changes needed
-                </div>
-              </div>
-              <div
-                aria-checked="false"
-                aria-selected="false"
-                class="item"
-                role="option"
-                style="pointer-events: all;"
-              >
-                <div
-                  class="ui blue tiny basic label"
-                >
-                  Processed
-                </div>
-              </div>
-            </div>
+            Pending review
           </div>
         </div>
         <div
@@ -934,78 +865,9 @@ Object {
           Approval Status:
         </label>
         <div
-          aria-expanded="false"
-          class="ui fluid selection dropdown"
-          role="listbox"
-          tabindex="0"
+          class="ui orange tiny basic label"
         >
-          <div
-            aria-live="polite"
-            class="text"
-            role="alert"
-          >
-            Pending review
-          </div>
-          <i
-            aria-hidden="true"
-            class="dropdown icon"
-          />
-          <div
-            class="menu transition"
-          >
-            <div
-              aria-checked="true"
-              aria-selected="true"
-              class="active selected item"
-              role="option"
-              style="pointer-events: all;"
-            >
-              <div
-                class="ui orange tiny basic label"
-              >
-                Pending review
-              </div>
-            </div>
-            <div
-              aria-checked="false"
-              aria-selected="false"
-              class="item"
-              role="option"
-              style="pointer-events: all;"
-            >
-              <div
-                class="ui teal tiny basic label"
-              >
-                Approved
-              </div>
-            </div>
-            <div
-              aria-checked="false"
-              aria-selected="false"
-              class="item"
-              role="option"
-              style="pointer-events: all;"
-            >
-              <div
-                class="ui red tiny basic label"
-              >
-                Changes needed
-              </div>
-            </div>
-            <div
-              aria-checked="false"
-              aria-selected="false"
-              class="item"
-              role="option"
-              style="pointer-events: all;"
-            >
-              <div
-                class="ui blue tiny basic label"
-              >
-                Processed
-              </div>
-            </div>
-          </div>
+          Pending review
         </div>
       </div>
       <div
