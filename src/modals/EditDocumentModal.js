@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import gql from 'graphql-tag';
 import {UPDATE_FILE, UPDATE_VERSION} from '../state/mutations';
+import {MY_PROFILE} from '../state/queries';
 import {graphql, compose} from 'react-apollo';
 import {EditDocumentForm} from '../forms';
 import {fileSortedVersions} from '../common/fileUtils';
@@ -79,14 +79,5 @@ const EditDocumentModal = ({
 export default compose(
   graphql(UPDATE_FILE, {name: 'updateFile'}),
   graphql(UPDATE_VERSION, {name: 'updateVersion'}),
-  graphql(
-    gql`
-      {
-        myProfile {
-          roles @client
-        }
-      }
-    `,
-    {name: 'user'},
-  ),
+  graphql(MY_PROFILE, {name: 'user'}),
 )(EditDocumentModal);
