@@ -195,22 +195,22 @@ exports[`renders with files 1`] = `
     >
       <div
         aria-live="polite"
-        class="default text"
+        class="text"
         role="alert"
       >
-        Date option
+        Modified date
       </div>
       <i
         aria-hidden="true"
-        class="dropdown icon"
+        class="dropdown icon clear"
       />
       <div
         class="menu transition"
       >
         <div
           aria-checked="false"
-          aria-selected="true"
-          class="selected item"
+          aria-selected="false"
+          class="item"
           role="option"
           style="pointer-events: all;"
         >
@@ -221,9 +221,9 @@ exports[`renders with files 1`] = `
           </span>
         </div>
         <div
-          aria-checked="false"
-          aria-selected="false"
-          class="item"
+          aria-checked="true"
+          aria-selected="true"
+          class="active selected item"
           role="option"
           style="pointer-events: all;"
         >
@@ -266,328 +266,6 @@ exports[`renders with files 1`] = `
     <tbody
       class=""
     >
-      <tr
-        class="cursor-pointer"
-        data-testid="file-item"
-      >
-        <td
-          class="collapsing single line center aligned"
-        >
-          <div
-            class="ui orange tiny basic label"
-          >
-            Pending review
-          </div>
-        </td>
-        <td
-          class=""
-        >
-          <span
-            class="ui medium header"
-          >
-            those.wav
-          </span>
-          <p
-            class="noMargin"
-          >
-            Feel industry quality direction resource truth. Affect green yard various play character simply rema...
-          </p>
-          <div
-            class="ui bulleted horizontal list"
-            role="list"
-          >
-            <div
-              class="item"
-              role="listitem"
-            >
-              <button
-                class="ui mini basic icon left labeled button"
-              >
-                <i
-                  aria-hidden="true"
-                  class="copy icon"
-                />
-                SF_DLXEQZV1
-              </button>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                Modified 
-                <time
-                  datetime="2018-07-09T05:01:45.000Z"
-                  title="2018-07-09T05:01:45+00:00"
-                >
-                  10 months ago
-                </time>
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                7.0 kB
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <i
-                aria-hidden="true"
-                class="question icon"
-              />
-               unknown
-            </div>
-          </div>
-        </td>
-        <td
-          class="center aligned"
-        >
-          <div
-            class="ui mini vertical buttons"
-          >
-            <button
-              class="ui basic icon button"
-            >
-              <i
-                aria-hidden="true"
-                class="download icon"
-              />
-            </button>
-            <button
-              class="ui basic icon button"
-              data-testid="delete-button"
-            >
-              <i
-                aria-hidden="true"
-                class="trash alternate icon"
-              />
-            </button>
-          </div>
-        </td>
-      </tr>
-      <tr
-        class="cursor-pointer"
-        data-testid="file-item"
-      >
-        <td
-          class="collapsing single line center aligned"
-        >
-          <div
-            class="ui orange tiny basic label"
-          >
-            Pending review
-          </div>
-        </td>
-        <td
-          class=""
-        >
-          <span
-            class="ui medium header"
-          >
-            4.jpg
-          </span>
-          <p
-            class="noMargin"
-          />
-          <div
-            class="ui bulleted horizontal list"
-            role="list"
-          >
-            <div
-              class="item"
-              role="listitem"
-            >
-              <button
-                class="ui mini basic icon left labeled button"
-              >
-                <i
-                  aria-hidden="true"
-                  class="copy icon"
-                />
-                SF_AZMTRAND
-              </button>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                Modified 
-                <time
-                  datetime="2019-05-20T14:38:20.880Z"
-                  title="2019-05-20T14:38:20.880001+00:00"
-                >
-                  4 weeks from now
-                </time>
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                61.0 kB
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <i
-                aria-hidden="true"
-                class="question icon"
-              />
-               Other
-            </div>
-          </div>
-        </td>
-        <td
-          class="center aligned"
-        >
-          <div
-            class="ui mini vertical buttons"
-          >
-            <button
-              class="ui basic icon button"
-            >
-              <i
-                aria-hidden="true"
-                class="download icon"
-              />
-            </button>
-            <button
-              class="ui basic icon button"
-              data-testid="delete-button"
-            >
-              <i
-                aria-hidden="true"
-                class="trash alternate icon"
-              />
-            </button>
-          </div>
-        </td>
-      </tr>
-      <tr
-        class="cursor-pointer"
-        data-testid="file-item"
-      >
-        <td
-          class="collapsing single line center aligned"
-        >
-          <div
-            class="ui orange tiny basic label"
-          >
-            Pending review
-          </div>
-        </td>
-        <td
-          class=""
-        >
-          <span
-            class="ui medium header"
-          >
-            hand.css
-          </span>
-          <p
-            class="noMargin"
-          >
-            This democratic analysis car here likely. Protect speech exactly three order different wife.
-          </p>
-          <div
-            class="ui bulleted horizontal list"
-            role="list"
-          >
-            <div
-              class="item"
-              role="listitem"
-            >
-              <button
-                class="ui mini basic icon left labeled button"
-              >
-                <i
-                  aria-hidden="true"
-                  class="copy icon"
-                />
-                SF_6JBSGVWE
-              </button>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                Modified 
-                <time
-                  datetime="2018-10-31T05:37:11.000Z"
-                  title="2018-10-31T05:37:11+00:00"
-                >
-                  6 months ago
-                </time>
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                9.6 kB
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <i
-                aria-hidden="true"
-                class="question icon"
-              />
-               unknown
-            </div>
-          </div>
-        </td>
-        <td
-          class="center aligned"
-        >
-          <div
-            class="ui mini vertical buttons"
-          >
-            <button
-              class="ui basic icon button"
-            >
-              <i
-                aria-hidden="true"
-                class="download icon"
-              />
-            </button>
-            <button
-              class="ui basic icon button"
-              data-testid="delete-button"
-            >
-              <i
-                aria-hidden="true"
-                class="trash alternate icon"
-              />
-            </button>
-          </div>
-        </td>
-      </tr>
       <tr
         class="cursor-pointer"
         data-testid="file-item"
@@ -715,11 +393,13 @@ exports[`renders with files 1`] = `
           <span
             class="ui medium header"
           >
-            6.jpg
+            those.wav
           </span>
           <p
             class="noMargin"
-          />
+          >
+            Feel industry quality direction resource truth. Affect green yard various play character simply rema...
+          </p>
           <div
             class="ui bulleted horizontal list"
             role="list"
@@ -735,7 +415,7 @@ exports[`renders with files 1`] = `
                   aria-hidden="true"
                   class="copy icon"
                 />
-                SF_16QY2ZXM
+                SF_DLXEQZV1
               </button>
             </div>
             <div
@@ -747,10 +427,10 @@ exports[`renders with files 1`] = `
               >
                 Modified 
                 <time
-                  datetime="2019-05-20T14:38:31.374Z"
-                  title="2019-05-20T14:38:31.374233+00:00"
+                  datetime="2018-07-09T05:01:45.000Z"
+                  title="2018-07-09T05:01:45+00:00"
                 >
-                  4 weeks from now
+                  10 months ago
                 </time>
               </div>
             </div>
@@ -761,7 +441,7 @@ exports[`renders with files 1`] = `
               <div
                 class="description"
               >
-                61.2 kB
+                7.0 kB
               </div>
             </div>
             <div
@@ -772,113 +452,7 @@ exports[`renders with files 1`] = `
                 aria-hidden="true"
                 class="question icon"
               />
-               Other
-            </div>
-          </div>
-        </td>
-        <td
-          class="center aligned"
-        >
-          <div
-            class="ui mini vertical buttons"
-          >
-            <button
-              class="ui basic icon button"
-            >
-              <i
-                aria-hidden="true"
-                class="download icon"
-              />
-            </button>
-            <button
-              class="ui basic icon button"
-              data-testid="delete-button"
-            >
-              <i
-                aria-hidden="true"
-                class="trash alternate icon"
-              />
-            </button>
-          </div>
-        </td>
-      </tr>
-      <tr
-        class="cursor-pointer"
-        data-testid="file-item"
-      >
-        <td
-          class="collapsing single line center aligned"
-        >
-          <div
-            class="ui orange tiny basic label"
-          >
-            Pending review
-          </div>
-        </td>
-        <td
-          class=""
-        >
-          <span
-            class="ui medium header"
-          >
-            5.jpg
-          </span>
-          <p
-            class="noMargin"
-          />
-          <div
-            class="ui bulleted horizontal list"
-            role="list"
-          >
-            <div
-              class="item"
-              role="listitem"
-            >
-              <button
-                class="ui mini basic icon left labeled button"
-              >
-                <i
-                  aria-hidden="true"
-                  class="copy icon"
-                />
-                SF_MKTW3YRN
-              </button>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                Modified 
-                <time
-                  datetime="2019-05-20T14:38:25.692Z"
-                  title="2019-05-20T14:38:25.692686+00:00"
-                >
-                  4 weeks from now
-                </time>
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                63.0 kB
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <i
-                aria-hidden="true"
-                class="question icon"
-              />
-               Other
+               unknown
             </div>
           </div>
         </td>
@@ -987,6 +561,114 @@ exports[`renders with files 1`] = `
                 class="hospital icon"
               />
                Clinical/Phenotype Data
+            </div>
+          </div>
+        </td>
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui mini vertical buttons"
+          >
+            <button
+              class="ui basic icon button"
+            >
+              <i
+                aria-hidden="true"
+                class="download icon"
+              />
+            </button>
+            <button
+              class="ui basic icon button"
+              data-testid="delete-button"
+            >
+              <i
+                aria-hidden="true"
+                class="trash alternate icon"
+              />
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="cursor-pointer"
+        data-testid="file-item"
+      >
+        <td
+          class="collapsing single line center aligned"
+        >
+          <div
+            class="ui orange tiny basic label"
+          >
+            Pending review
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <span
+            class="ui medium header"
+          >
+            hand.css
+          </span>
+          <p
+            class="noMargin"
+          >
+            This democratic analysis car here likely. Protect speech exactly three order different wife.
+          </p>
+          <div
+            class="ui bulleted horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <button
+                class="ui mini basic icon left labeled button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="copy icon"
+                />
+                SF_6JBSGVWE
+              </button>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                Modified 
+                <time
+                  datetime="2018-10-31T05:37:11.000Z"
+                  title="2018-10-31T05:37:11+00:00"
+                >
+                  6 months ago
+                </time>
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                9.6 kB
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="question icon"
+              />
+               unknown
             </div>
           </div>
         </td>
@@ -1294,6 +976,324 @@ exports[`renders with files 1`] = `
                 class="description"
               >
                 75.5 kB
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="question icon"
+              />
+               Other
+            </div>
+          </div>
+        </td>
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui mini vertical buttons"
+          >
+            <button
+              class="ui basic icon button"
+            >
+              <i
+                aria-hidden="true"
+                class="download icon"
+              />
+            </button>
+            <button
+              class="ui basic icon button"
+              data-testid="delete-button"
+            >
+              <i
+                aria-hidden="true"
+                class="trash alternate icon"
+              />
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="cursor-pointer"
+        data-testid="file-item"
+      >
+        <td
+          class="collapsing single line center aligned"
+        >
+          <div
+            class="ui orange tiny basic label"
+          >
+            Pending review
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <span
+            class="ui medium header"
+          >
+            3.jpg
+          </span>
+          <p
+            class="noMargin"
+          />
+          <div
+            class="ui bulleted horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <button
+                class="ui mini basic icon left labeled button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="copy icon"
+                />
+                SF_SFA9WW03
+              </button>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                Modified 
+                <time
+                  datetime="2019-05-20T14:34:21.331Z"
+                  title="2019-05-20T14:34:21.331546+00:00"
+                >
+                  4 weeks from now
+                </time>
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                75.5 kB
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="question icon"
+              />
+               Other
+            </div>
+          </div>
+        </td>
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui mini vertical buttons"
+          >
+            <button
+              class="ui basic icon button"
+            >
+              <i
+                aria-hidden="true"
+                class="download icon"
+              />
+            </button>
+            <button
+              class="ui basic icon button"
+              data-testid="delete-button"
+            >
+              <i
+                aria-hidden="true"
+                class="trash alternate icon"
+              />
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="cursor-pointer"
+        data-testid="file-item"
+      >
+        <td
+          class="collapsing single line center aligned"
+        >
+          <div
+            class="ui orange tiny basic label"
+          >
+            Pending review
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <span
+            class="ui medium header"
+          >
+            3.jpg
+          </span>
+          <p
+            class="noMargin"
+          />
+          <div
+            class="ui bulleted horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <button
+                class="ui mini basic icon left labeled button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="copy icon"
+                />
+                SF_SFA9WW04
+              </button>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                Modified 
+                <time
+                  datetime="2019-05-20T14:34:21.331Z"
+                  title="2019-05-20T14:34:21.331546+00:00"
+                >
+                  4 weeks from now
+                </time>
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                75.5 kB
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="question icon"
+              />
+               Other
+            </div>
+          </div>
+        </td>
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui mini vertical buttons"
+          >
+            <button
+              class="ui basic icon button"
+            >
+              <i
+                aria-hidden="true"
+                class="download icon"
+              />
+            </button>
+            <button
+              class="ui basic icon button"
+              data-testid="delete-button"
+            >
+              <i
+                aria-hidden="true"
+                class="trash alternate icon"
+              />
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="cursor-pointer"
+        data-testid="file-item"
+      >
+        <td
+          class="collapsing single line center aligned"
+        >
+          <div
+            class="ui orange tiny basic label"
+          >
+            Pending review
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <span
+            class="ui medium header"
+          >
+            4.jpg
+          </span>
+          <p
+            class="noMargin"
+          />
+          <div
+            class="ui bulleted horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <button
+                class="ui mini basic icon left labeled button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="copy icon"
+                />
+                SF_AZMTRAND
+              </button>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                Modified 
+                <time
+                  datetime="2019-05-20T14:38:20.880Z"
+                  title="2019-05-20T14:38:20.880001+00:00"
+                >
+                  4 weeks from now
+                </time>
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                61.0 kB
               </div>
             </div>
             <div

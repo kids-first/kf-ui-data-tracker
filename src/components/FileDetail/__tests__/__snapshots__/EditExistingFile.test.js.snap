@@ -23,6 +23,58 @@ exports[`edits an existing file correctly 1`] = `
       >
         Data Tracker
       </a>
+      <a
+        class="item"
+        href="/"
+      >
+        Studies
+      </a>
+      <div
+        class="right menu"
+      >
+        <div
+          aria-expanded="false"
+          class="ui dropdown link item"
+          role="listbox"
+          tabindex="0"
+        >
+          <img
+            class="ui avatar image"
+            src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
+          />
+          bendolly
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          >
+            <a
+              class="item"
+              href="/profile"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="user icon"
+              />
+              Profile
+            </a>
+            <a
+              class="item"
+              href="/login"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="log out icon"
+              />
+              Logout
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <section
@@ -652,6 +704,58 @@ exports[`edits an existing file correctly 2`] = `
       >
         Data Tracker
       </a>
+      <a
+        class="item"
+        href="/"
+      >
+        Studies
+      </a>
+      <div
+        class="right menu"
+      >
+        <div
+          aria-expanded="false"
+          class="ui dropdown link item"
+          role="listbox"
+          tabindex="0"
+        >
+          <img
+            class="ui avatar image"
+            src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
+          />
+          xuzhu
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          >
+            <a
+              class="item"
+              href="/profile"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="user icon"
+              />
+              Profile
+            </a>
+            <a
+              class="item"
+              href="/login"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="log out icon"
+              />
+              Logout
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <section
@@ -1149,6 +1253,58 @@ exports[`edits an existing file correctly 3`] = `
       >
         Data Tracker
       </a>
+      <a
+        class="item"
+        href="/"
+      >
+        Studies
+      </a>
+      <div
+        class="right menu"
+      >
+        <div
+          aria-expanded="false"
+          class="ui dropdown link item"
+          role="listbox"
+          tabindex="0"
+        >
+          <img
+            class="ui avatar image"
+            src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
+          />
+          xuzhu
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          >
+            <a
+              class="item"
+              href="/profile"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="user icon"
+              />
+              Profile
+            </a>
+            <a
+              class="item"
+              href="/login"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="log out icon"
+              />
+              Logout
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <section
