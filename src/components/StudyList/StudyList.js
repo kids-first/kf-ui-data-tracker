@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import StudyGrid from './StudyGrid';
 import StudyTable from './StudyTable';
+import {Link} from 'react-router-dom';
 import ToggleButtons from '../ToggleButtons/ToggleButtons';
 import {
   Container,
@@ -10,6 +11,7 @@ import {
   Header,
   Placeholder,
   Input,
+  Button,
 } from 'semantic-ui-react';
 
 /**
@@ -60,6 +62,15 @@ const StudyList = ({studyList, loading, activeView = 'grid'}) => {
         <Header as="h1">Your Studies</Header>
       </Grid.Column>
       <Grid.Column width={8} textAlign="right">
+        <Button
+          basic
+          primary
+          size="mini"
+          icon="add"
+          content="Add Study"
+          as={Link}
+          to={`/study/new-study`}
+        />
         <Input
           className="pr-5"
           size="mini"
