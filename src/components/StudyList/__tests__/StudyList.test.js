@@ -1,6 +1,9 @@
 import React from 'react';
 import {MemoryRouter} from 'react-router-dom';
+import {MockedProvider} from 'react-apollo/test-utils';
 import {render, cleanup} from 'react-testing-library';
+import {mocks} from '../../../../__mocks__/kf-api-study-creator/mocks';
+import myProfile from '../../../../__mocks__/kf-api-study-creator/responses/myProfile.json';
 import allStudies from '../../../../__mocks__/kf-api-study-creator/responses/allStudies.json';
 import StudyList from '../StudyList';
 
@@ -10,9 +13,18 @@ it('renders correctly', () => {
   const studies = allStudies.data.allStudies.edges;
 
   const tree = render(
-    <MemoryRouter>
-      <StudyList studyList={studies} />
-    </MemoryRouter>,
+    <MockedProvider
+      resolvers={{
+        UserNode: {
+          ...myProfile.data.myProfile,
+        },
+      }}
+      mocks={mocks}
+    >
+      <MemoryRouter>
+        <StudyList studyList={studies} />
+      </MemoryRouter>
+    </MockedProvider>,
   );
   expect(tree.container).toMatchSnapshot();
 
@@ -22,9 +34,18 @@ it('renders correctly', () => {
 
 it('renders loading state', () => {
   const tree = render(
-    <MemoryRouter>
-      <StudyList loading={true} />
-    </MemoryRouter>,
+    <MockedProvider
+      resolvers={{
+        UserNode: {
+          ...myProfile.data.myProfile,
+        },
+      }}
+      mocks={mocks}
+    >
+      <MemoryRouter>
+        <StudyList loading={true} />
+      </MemoryRouter>
+    </MockedProvider>,
   );
   expect(tree.container).toMatchSnapshot();
 
