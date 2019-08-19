@@ -100,89 +100,6 @@ const FileList = ({fileList, studyId}) => {
 
   return (
     <Fragment>
-      <Segment
-        className="noMargin noHorizontalPadding"
-        basic
-        compact
-        floated="left"
-      >
-        <span className="smallLabel">Filter by:</span>
-        <Dropdown
-          selection
-          clearable
-          selectOnBlur={false}
-          value={approvalFilterStatus}
-          options={statusOptions}
-          placeholder="Approval status"
-          onChange={(e, {value}) => {
-            setApprovalFilterStatus(value);
-          }}
-        />
-      </Segment>
-      <Segment
-        className="noMargin noHorizontalPadding"
-        basic
-        compact
-        floated="left"
-      >
-        <Dropdown
-          selection
-          clearable
-          selectOnBlur={false}
-          value={typeFilterStatus}
-          options={typeOptions}
-          placeholder="File type"
-          onChange={(e, {value}) => {
-            setTypeFilterStatus(value);
-          }}
-        />
-      </Segment>
-      <Segment
-        className="noMargin noHorizontalPadding"
-        basic
-        compact
-        floated="left"
-      >
-        <span className="smallLabel">Sorted by:</span>
-        <Dropdown
-          selection
-          clearable
-          selectOnBlur={false}
-          value={sortMethod}
-          options={sortOptions}
-          placeholder="Date option"
-          onChange={(e, {value}) => {
-            setSortMethod(value);
-          }}
-        />
-        <Button
-          icon
-          basic
-          onClick={() => {
-            if (sortDirection === 'ascending') {
-              setSortDirection('descending');
-            } else {
-              setSortDirection('ascending');
-            }
-          }}
-        >
-          <Icon name={'sort content ' + sortDirection} />
-        </Button>
-      </Segment>
-      <Segment
-        className="noMargin noHorizontalPadding"
-        basic
-        compact
-        floated="right"
-      >
-        <Input
-          icon="search"
-          onChange={(e, {value}) => {
-            setSearchString(value);
-          }}
-          value={searchString}
-        />
-      </Segment>
       {fileList.filter(obj => fileLatestStatus(obj.node) === 'CHN').length >
         0 && (
         <Message
@@ -193,17 +110,102 @@ const FileList = ({fileList, studyId}) => {
         />
       )}
       {fileList.length ? (
-        <Table stackable selectable compact="very" basic="very">
-          <Table.Body>
-            {pageItems.map(({node}) => (
-              <FileElement
-                key={node.kfId}
-                fileListId={studyId}
-                fileNode={node}
-              />
-            ))}
-          </Table.Body>
-        </Table>
+        <>
+          <Segment
+            className="noMargin noHorizontalPadding"
+            basic
+            compact
+            floated="left"
+          >
+            <span className="smallLabel">Filter by:</span>
+            <Dropdown
+              selection
+              clearable
+              selectOnBlur={false}
+              value={approvalFilterStatus}
+              options={statusOptions}
+              placeholder="Approval status"
+              onChange={(e, {value}) => {
+                setApprovalFilterStatus(value);
+              }}
+            />
+          </Segment>
+          <Segment
+            className="noMargin noHorizontalPadding"
+            basic
+            compact
+            floated="left"
+          >
+            <Dropdown
+              selection
+              clearable
+              selectOnBlur={false}
+              value={typeFilterStatus}
+              options={typeOptions}
+              placeholder="File type"
+              onChange={(e, {value}) => {
+                setTypeFilterStatus(value);
+              }}
+            />
+          </Segment>
+          <Segment
+            className="noMargin noHorizontalPadding"
+            basic
+            compact
+            floated="left"
+          >
+            <span className="smallLabel">Sorted by:</span>
+            <Dropdown
+              selection
+              clearable
+              selectOnBlur={false}
+              value={sortMethod}
+              options={sortOptions}
+              placeholder="Date option"
+              onChange={(e, {value}) => {
+                setSortMethod(value);
+              }}
+            />
+            <Button
+              icon
+              basic
+              onClick={() => {
+                if (sortDirection === 'ascending') {
+                  setSortDirection('descending');
+                } else {
+                  setSortDirection('ascending');
+                }
+              }}
+            >
+              <Icon name={'sort content ' + sortDirection} />
+            </Button>
+          </Segment>
+          <Segment
+            className="noMargin noHorizontalPadding"
+            basic
+            compact
+            floated="right"
+          >
+            <Input
+              icon="search"
+              onChange={(e, {value}) => {
+                setSearchString(value);
+              }}
+              value={searchString}
+            />
+          </Segment>
+          <Table stackable selectable compact="very" basic="very">
+            <Table.Body>
+              {pageItems.map(({node}) => (
+                <FileElement
+                  key={node.kfId}
+                  fileListId={studyId}
+                  fileNode={node}
+                />
+              ))}
+            </Table.Body>
+          </Table>
+        </>
       ) : (
         <Segment basic>
           <Header icon textAlign="center">
