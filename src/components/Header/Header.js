@@ -3,13 +3,15 @@ import {graphql} from 'react-apollo';
 import {NavLink} from 'react-router-dom';
 import {MY_PROFILE} from '../../state/queries';
 import {Container, Dropdown, Icon, Image, Menu} from 'semantic-ui-react';
-
+import defaultAvatar from '../../assets/defaultAvatar.png';
 import logo from '../../assets/logo.svg';
 
 const Nav = props => <NavLink exact {...props} activeClassName="active" />;
 
 const Header = ({data: {loading, error, myProfile: profile}}) => {
   const [loggedIn, setLoggedIn] = useState(profile !== undefined);
+  const picUrl = profile && profile.picture ? profile.picture : defaultAvatar;
+  const picAlt = profile && profile.username ? profile.username : 'profile';
   if (!loading && profile && !loggedIn) {
     setLoggedIn(true);
   }
@@ -30,7 +32,7 @@ const Header = ({data: {loading, error, myProfile: profile}}) => {
               <Dropdown
                 trigger={
                   <>
-                    <Image avatar src={profile.picture} />
+                    <Image avatar src={picUrl} alt={picAlt} />
                     {profile.username}
                   </>
                 }
