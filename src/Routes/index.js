@@ -26,7 +26,7 @@ const Routes = () => (
     </Switch>
     <PrivateRoute path="/profile" component={ProfileView} />
     <PrivateRoute path="/study/:kfId(SD_\w{8})/" component={NavBarView} />
-    <PrivateRoute exact path="/study/new-study" component={NewStudyView} />
+    <AdminRoute exact path="/study/new-study" component={NewStudyView} />
     <Switch>
       <PrivateRoute exact path="/" component={StudyListView} />
       <PrivateRoute
