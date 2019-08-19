@@ -39,6 +39,7 @@ exports[`edits an existing file correctly 1`] = `
           tabindex="0"
         >
           <img
+            alt="bendolly"
             class="ui avatar image"
             src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
           />
@@ -720,6 +721,7 @@ exports[`edits an existing file correctly 2`] = `
           tabindex="0"
         >
           <img
+            alt="xuzhu"
             class="ui avatar image"
             src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
           />
@@ -1269,6 +1271,7 @@ exports[`edits an existing file correctly 3`] = `
           tabindex="0"
         >
           <img
+            alt="xuzhu"
             class="ui avatar image"
             src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
           />
