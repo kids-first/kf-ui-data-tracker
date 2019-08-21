@@ -29,6 +29,16 @@ const Header = ({data: {loading, error, myProfile: profile}}) => {
           <>
             <Menu.Item as={Nav} to="/" content="Studies" />
             <Menu.Menu position="right">
+              {profile.roles.includes('ADMIN') && (
+                <Dropdown trigger={'Admin'} className="link item">
+                  <Dropdown.Menu>
+                    <Dropdown.Item as={Nav} to="/tokens">
+                      <Icon name="key" />
+                      Developer Tokens
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              )}
               <Dropdown
                 trigger={
                   <>
