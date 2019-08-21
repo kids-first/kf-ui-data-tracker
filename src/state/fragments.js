@@ -24,6 +24,22 @@ export const STUDY_FIELDS = gql`
   }
 `;
 
+export const PROJECT_FIELDS = gql`
+  fragment ProjectFields on ProjectNode {
+    id
+    createdBy
+    createdOn
+    description
+    modifiedOn
+    name
+    projectId
+    projectType
+    url
+    workflowType
+  }
+  ${STUDY_FIELDS}
+`;
+
 export const FILE_FIELDS = gql`
   fragment FileFields on FileNode {
     id
