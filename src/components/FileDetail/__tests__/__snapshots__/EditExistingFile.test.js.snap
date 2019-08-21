@@ -57,6 +57,17 @@ exports[`edits an existing file correctly 1`] = `
               />
               Developer Tokens
             </a>
+            <a
+              class="item"
+              href="/cavatica-projects"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="folder open icon"
+              />
+              Cavatica Projects
+            </a>
           </div>
         </div>
         <div
@@ -766,6 +777,17 @@ exports[`edits an existing file correctly 2`] = `
               />
               Developer Tokens
             </a>
+            <a
+              class="item"
+              href="/cavatica-projects"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="folder open icon"
+              />
+              Cavatica Projects
+            </a>
           </div>
         </div>
         <div
@@ -1342,6 +1364,17 @@ exports[`edits an existing file correctly 3`] = `
                 class="key icon"
               />
               Developer Tokens
+            </a>
+            <a
+              class="item"
+              href="/cavatica-projects"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="folder open icon"
+              />
+              Cavatica Projects
             </a>
           </div>
         </div>
