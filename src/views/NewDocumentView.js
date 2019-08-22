@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import {graphql} from 'react-apollo';
+import {graphql, compose} from 'react-apollo';
 import {EditDocumentForm} from '../forms';
 import {CREATE_FILE} from '../state/mutations';
-import {GET_STUDY_BY_ID} from '../state/queries';
+import {GET_STUDY_BY_ID, MY_PROFILE} from '../state/queries';
 import {Message, Segment, Container, Button, Header} from 'semantic-ui-react';
 import {lengthLimit} from '../common/fileUtils';
 /**
@@ -11,7 +11,7 @@ import {lengthLimit} from '../common/fileUtils';
  * file browser dialog and a file present in `location.state.file` as
  * populated by the router (eg: history.push('/new', {state: <File>}) )
  */
-const NewDocumentView = ({match, history, location, createDocument}) => {
+const NewDocumentView = ({match, history, location, createDocument, user}) => {
   // Tracks any error state reported from the server
   const [errors, setErrors] = useState('');
 
@@ -40,6 +40,10 @@ const NewDocumentView = ({match, history, location, createDocument}) => {
       });
   };
 
+  const isAdmin = !user.loading
+    ? user.myProfile.roles.includes('ADMIN')
+    : false;
+
   return (
     <Container as={Segment} vertical basic>
       <Container as={Segment} vertical basic>
@@ -66,6 +70,7 @@ const NewDocumentView = ({match, history, location, createDocument}) => {
         </Segment>
         <Container as={Segment} padded="very">
           <EditDocumentForm
+            isAdmin={isAdmin}
             handleSubmit={handleSubmit}
             errors={errors}
             submitButtons={(disabled, onUploading) => (
@@ -96,12 +101,15 @@ const NewDocumentView = ({match, history, location, createDocument}) => {
   );
 };
 
-export default graphql(CREATE_FILE, {
-  name: 'createDocument',
-  options: ({match}) => ({
-    awaitRefetchQueries: true,
-    refetchQueries: [
-      {query: GET_STUDY_BY_ID, variables: {kfId: match.params.kfId}},
-    ],
+export default compose(
+  graphql(CREATE_FILE, {
+    name: 'createDocument',
+    options: ({match}) => ({
+      awaitRefetchQueries: true,
+      refetchQueries: [
+        {query: GET_STUDY_BY_ID, variables: {kfId: match.params.kfId}},
+      ],
+    }),
   }),
-})(NewDocumentView);
+  graphql(MY_PROFILE, {name: 'user'}),
+)(NewDocumentView);
