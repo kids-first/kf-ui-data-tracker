@@ -1,6 +1,7 @@
 import gql from 'graphql-tag';
 import {
   TOKEN_FIELDS,
+  PROJECT_FIELDS,
   CREATOR_FIELDS,
   STUDY_FIELDS,
   FILE_FIELDS,
@@ -102,6 +103,23 @@ export const GET_DEV_TOKENS = gql`
     }
   }
   ${TOKEN_FIELDS}
+`;
+
+// Query to get Cavatica projects registered in the study creator
+export const GET_PROJECTS = gql`
+  query CavaticaProjects {
+    allProjects {
+      edges {
+        node {
+          ...ProjectFields
+          study {
+            ...StudyFields
+          }
+        }
+      }
+    }
+  }
+  ${PROJECT_FIELDS}
 `;
 
 // Query to get the current user's profile

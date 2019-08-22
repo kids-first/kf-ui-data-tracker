@@ -36,6 +36,10 @@ const Header = ({data: {loading, error, myProfile: profile}}) => {
                       <Icon name="key" />
                       Developer Tokens
                     </Dropdown.Item>
+                    <Dropdown.Item as={Nav} to="/cavatica-projects">
+                      <Icon name="folder open" />
+                      Cavatica Projects
+                    </Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
               )}

@@ -12,6 +12,7 @@ import {
   NavBarView,
   EmptyView,
   TokensListView,
+  CavaticaProjectsView,
   FileDetailView,
   ProfileView,
 } from '../views';
@@ -48,6 +49,11 @@ const Routes = () => (
         component={EmptyView}
       />
       <AdminRoute exact path="/tokens" component={TokensListView} />
+      <AdminRoute
+        exact
+        path="/cavatica-projects"
+        component={CavaticaProjectsView}
+      />
     </Switch>
   </Fragment>
 );

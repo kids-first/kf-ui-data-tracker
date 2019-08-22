@@ -1,5 +1,10 @@
 import gql from 'graphql-tag';
-import {TOKEN_FIELDS, FILE_FIELDS, VERSION_FIELDS} from './fragments';
+import {
+  TOKEN_FIELDS,
+  PROJECT_FIELDS,
+  FILE_FIELDS,
+  VERSION_FIELDS,
+} from './fragments';
 
 // Mutation to upload a file or a version of the file to the study-creator
 export const CREATE_FILE = gql`
@@ -112,6 +117,29 @@ export const DELETE_DEV_TOKEN = gql`
       success
     }
   }
+`;
+
+// Mutation to create a new dev token
+export const SYNC_PROJECTS = gql`
+  mutation SyncProjects {
+    syncProjects {
+      updated {
+        edges {
+          node {
+            ...ProjectFields
+          }
+        }
+      }
+      created {
+        edges {
+          node {
+            ...ProjectFields
+          }
+        }
+      }
+    }
+  }
+  ${PROJECT_FIELDS}
 `;
 
 // Mutation to update current user's profile
