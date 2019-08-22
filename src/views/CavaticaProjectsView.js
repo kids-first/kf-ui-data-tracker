@@ -66,6 +66,9 @@ const CavaticaProjectsView = ({
                   <List.Item>
                     Created: {syncResult.created.edges.length} projects
                   </List.Item>
+                  <List.Item>
+                    Deleted: {syncResult.deleted.edges.length} projects
+                  </List.Item>
                 </List>
               </Message.Content>
             </Message>
