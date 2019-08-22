@@ -1,7 +1,10 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
+import {MY_PROFILE} from '../../state/queries';
+import {graphql} from 'react-apollo';
 import StudyGrid from './StudyGrid';
 import StudyTable from './StudyTable';
+import {Link} from 'react-router-dom';
 import ToggleButtons from '../ToggleButtons/ToggleButtons';
 import {
   Container,
@@ -10,6 +13,7 @@ import {
   Header,
   Placeholder,
   Input,
+  Button,
 } from 'semantic-ui-react';
 
 /**
@@ -28,9 +32,12 @@ const HeaderSkeleton = () => (
 /**
  * Displays unordered studies in grid view (include empty stage message)
  */
-const StudyList = ({studyList, loading, activeView = 'grid'}) => {
+const StudyList = ({studyList, loading, activeView = 'grid', user}) => {
   const [view, setView] = useState(activeView);
   const [searchString, setSearchString] = useState('');
+  const isAdmin = !user.loading
+    ? user.myProfile.roles.includes('ADMIN')
+    : false;
 
   if (loading) {
     return (
@@ -60,6 +67,17 @@ const StudyList = ({studyList, loading, activeView = 'grid'}) => {
         <Header as="h1">Your Studies</Header>
       </Grid.Column>
       <Grid.Column width={8} textAlign="right">
+        {isAdmin && (
+          <Button
+            basic
+            primary
+            size="mini"
+            icon="add"
+            content="Add Study"
+            as={Link}
+            to={`/study/new-study`}
+          />
+        )}
         <Input
           className="pr-5"
           size="mini"
@@ -114,4 +132,4 @@ StudyList.defaultProps = {
   activeView: 'grid',
 };
 
-export default StudyList;
+export default graphql(MY_PROFILE, {name: 'user'})(StudyList);

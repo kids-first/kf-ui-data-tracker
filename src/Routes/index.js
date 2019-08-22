@@ -15,6 +15,7 @@ import {
   CavaticaProjectsView,
   FileDetailView,
   ProfileView,
+  NewStudyView,
 } from '../views';
 const Routes = () => (
   <Fragment>
@@ -24,7 +25,8 @@ const Routes = () => (
       <Route path="/" render={() => <Header />} />
     </Switch>
     <PrivateRoute path="/profile" component={ProfileView} />
-    <PrivateRoute path="/study/:kfId/" component={NavBarView} />
+    <PrivateRoute path="/study/:kfId(SD_\w{8})/" component={NavBarView} />
+    <AdminRoute exact path="/study/new-study" component={NewStudyView} />
     <Switch>
       <PrivateRoute exact path="/" component={StudyListView} />
       <PrivateRoute
