@@ -119,6 +119,7 @@ export const GET_PROJECTS = gql`
       }
     }
   }
+  ${STUDY_FIELDS}
   ${PROJECT_FIELDS}
 `;
 

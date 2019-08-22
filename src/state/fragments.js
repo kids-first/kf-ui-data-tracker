@@ -37,7 +37,6 @@ export const PROJECT_FIELDS = gql`
     url
     workflowType
   }
-  ${STUDY_FIELDS}
 `;
 
 export const FILE_FIELDS = gql`
