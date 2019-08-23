@@ -21,7 +21,7 @@ exports[`renders correctly 1`] = `
           class="right floated content"
         >
           <a
-            href="/studies/SD_WGP8RW3W"
+            href="/study/SD_WGP8RW3W/documents"
           >
             SD_WGP8RW3W
           </a>
