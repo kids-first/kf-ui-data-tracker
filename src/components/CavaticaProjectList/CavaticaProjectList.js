@@ -13,7 +13,7 @@ const CavaticaProjectList = ({projects}) => (
           <List.Content>
             <List.Content floated="right">
               {node.study ? (
-                <Link to={`/studies/${node.study.kfId}`}>
+                <Link to={`/study/${node.study.kfId}/documents`}>
                   {node.study.shortName || node.study.name || node.study.kfId}
                 </Link>
               ) : node.deleted ? (
