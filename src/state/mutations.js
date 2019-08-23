@@ -138,6 +138,13 @@ export const SYNC_PROJECTS = gql`
           }
         }
       }
+      deleted {
+        edges {
+          node {
+            ...ProjectFields
+          }
+        }
+      }
     }
   }
   ${PROJECT_FIELDS}
