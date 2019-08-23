@@ -43,7 +43,11 @@ const NewStudyForm = ({submitValue, apiErrors}) => {
         onSubmit={(values, {setSubmitting}) => {
           setSubmitting(false);
           setConfirmOpen(false);
-          submitValue(values);
+          var inputObject = values;
+          if (values.releaseDate.length === 0) {
+            inputObject.releaseDate = null;
+          }
+          submitValue(inputObject);
         }}
       >
         {({
