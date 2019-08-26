@@ -39,6 +39,16 @@ export const STUDY_INFO_FIELDS = gql`
   }
 `;
 
+export const EVENT_FIELDS = gql`
+  fragment EventFields on EventNode {
+    id
+    uuid
+    createdAt
+    eventType
+    description
+  }
+`;
+
 export const PROJECT_FIELDS = gql`
   fragment ProjectFields on ProjectNode {
     id
