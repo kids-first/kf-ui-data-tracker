@@ -7,6 +7,7 @@ import {
   STUDY_INFO_FIELDS,
   FILE_FIELDS,
   VERSION_FIELDS,
+  EVENT_FIELDS,
 } from './fragments';
 
 // Query to get all studies in the study-creator
@@ -43,6 +44,23 @@ export const GET_STUDY_BY_ID = gql`
     studyByKfId(kfId: $kfId) {
       ...StudyBasicFields
       ...StudyInfoFields
+      events(first: 10, orderBy: "-created_at") {
+        edges {
+          node {
+            ...EventFields
+          }
+        }
+      }
+      projects {
+        edges {
+          node {
+            ...ProjectFields
+            study {
+              ...StudyBasicFields
+            }
+          }
+        }
+      }
       files {
         edges {
           node {
@@ -65,6 +83,8 @@ export const GET_STUDY_BY_ID = gql`
   ${STUDY_BASIC_FIELDS}
   ${STUDY_INFO_FIELDS}
   ${FILE_FIELDS}
+  ${EVENT_FIELDS}
+  ${PROJECT_FIELDS}
 `;
 
 // Query to get a file by its kf id
