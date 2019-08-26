@@ -61,6 +61,7 @@ export const PROJECT_FIELDS = gql`
     projectType
     url
     workflowType
+    deleted
   }
 `;
 
