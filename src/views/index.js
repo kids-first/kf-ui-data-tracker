@@ -10,3 +10,4 @@ export {default as CavaticaProjectsView} from './CavaticaProjectsView';
 export {default as NewDocumentView} from './NewDocumentView';
 export {default as NewStudyView} from './NewStudyView';
 export {default as ProfileView} from './ProfileView';
+export {default as StudyInfoView} from './StudyInfoView';

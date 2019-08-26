@@ -16,6 +16,7 @@ import {
   FileDetailView,
   ProfileView,
   NewStudyView,
+  StudyInfoView,
 } from '../views';
 const Routes = () => (
   <Fragment>
@@ -43,7 +44,11 @@ const Routes = () => (
         path="/study/:kfId/documents/:fileId"
         component={FileDetailView}
       />
-      <PrivateRoute exact path="/study/:kfId/basicInfo" component={EmptyView} />
+      <PrivateRoute
+        exact
+        path="/study/:kfId/basicInfo"
+        component={StudyInfoView}
+      />
       <PrivateRoute exact path="/study/:kfId/dashboard" component={EmptyView} />
       <PrivateRoute
         exact
