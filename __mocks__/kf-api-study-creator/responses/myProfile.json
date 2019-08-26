@@ -5,7 +5,7 @@
       "username": "bendolly",
       "firstName": "Ben",
 
-      "roles": ["ADMIN"],
+      "roles": ["ADMIN", "BETA"],
       "groups": [],
 
       "lastName": "Dolly",
