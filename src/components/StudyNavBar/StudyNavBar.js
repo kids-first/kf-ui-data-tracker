@@ -10,7 +10,7 @@ const StudyNavBar = ({match, history, isBeta}) => {
   const navList = [
     {
       tab: 'Basic Info',
-      endString: 'basicInfo',
+      endString: 'basic-info',
     },
     {
       tab: 'Dashboard',
@@ -36,7 +36,7 @@ const StudyNavBar = ({match, history, isBeta}) => {
           as={NavLink}
         >
           {item.tab}
-          {item.endString === 'basicInfo' && isBeta && (
+          {item.endString === 'basic-info' && isBeta && (
             <Label color="blue" size="mini">
               BETA
             </Label>
