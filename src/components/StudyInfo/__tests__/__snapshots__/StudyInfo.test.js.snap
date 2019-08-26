@@ -1,0 +1,701 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Study basic info page renders correctly 1`] = `
+<div>
+  <div
+    class="ui vertically padded grid"
+  >
+    <div
+      class="stretched row"
+    >
+      <div
+        class="eight wide computer sixteen wide mobile sixteen wide tablet column"
+      >
+        <div
+          class="ui padded segment"
+        >
+          <h3
+            class="ui header"
+          >
+            Study Info
+          </h3>
+          <div
+            class="ui large relaxed list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                Name
+              </div>
+              <div
+                class="header"
+              >
+                benchmark extensible e-business
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                Short Name
+              </div>
+              <div
+                class="header"
+              >
+                Unknown
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                Created At
+              </div>
+              <div
+                class="header"
+              >
+                <time
+                  datetime="2019-04-20T15:22:18.780Z"
+                  title="2019-04-20T15:22:18.780221+00:00"
+                >
+                  3 days ago
+                </time>
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                Modified At
+              </div>
+              <div
+                class="header"
+              >
+                <time
+                  datetime="2019-04-25T15:22:18.780Z"
+                  title="2019-04-25T15:22:18.780221+00:00"
+                >
+                  2 days from now
+                </time>
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                S3 Bucket Name
+              </div>
+              <div
+                class="header"
+              >
+                stay-wrong-ready
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                Release Status
+              </div>
+              <div
+                class="header"
+              >
+                Unknown
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                ReleaseDate
+              </div>
+              <div
+                class="header"
+              >
+                2019-08-24
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                The expected number of samples for the study
+              </div>
+              <div
+                class="header"
+              >
+                100
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                The organization that the grant was awarded to
+              </div>
+              <div
+                class="header"
+              >
+                CHOP
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                dbGaP - Link to Attribution
+              </div>
+              <div
+                class="header"
+              >
+                Unknown
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                dbGaP - Accession Number
+              </div>
+              <div
+                class="header"
+              >
+                dbGaP
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="description"
+              >
+                dbGaP - Version
+              </div>
+              <div
+                class="header"
+              >
+                Unknown
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ui padded segment"
+        >
+          <h3
+            class="ui header"
+          >
+            Study Files
+          </h3>
+          <div
+            class="ui horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="file icon"
+              />
+              2
+               files
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="ui orange mini circular empty label"
+              />
+               
+              2
+            </div>
+          </div>
+          <div
+            class="ui label ui mini basic icon right floated button"
+            role="button"
+          >
+            <i
+              aria-hidden="true"
+              class="chevron down icon"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="eight wide computer sixteen wide mobile sixteen wide tablet column"
+      >
+        <div
+          class="ui padded segment"
+        >
+          <h3
+            class="ui header"
+          >
+            Description
+          </h3>
+          <p>
+            Sudy description in markdown, commonly the X01 abstract text. --  As test study description
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="stretched row"
+    >
+      <div
+        class="sixteen wide computer sixteen wide mobile sixteen wide tablet column"
+      >
+        <div
+          class="ui padded segment"
+        >
+          <h3
+            class="ui header"
+          >
+            Cavatica Projects
+          </h3>
+          <div
+            class="ui divided relaxed list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="truck icon"
+              />
+              <div
+                class="content"
+              >
+                <div
+                  class="right floated content"
+                >
+                  <a
+                    href="/study/SD_8WX8QQ06/documents"
+                  >
+                    benchmark extensible e-business
+                  </a>
+                </div>
+                <a
+                  class="header"
+                  href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06"
+                >
+                  test study name 
+                  <i
+                    aria-hidden="true"
+                    class="external small link icon"
+                  />
+                </a>
+                <div
+                  class="ui bulleted horizontal list"
+                  role="list"
+                >
+                  <div
+                    class="item"
+                    role="listitem"
+                  >
+                    Created 
+                    <time
+                      datetime="2019-08-26T18:22:41.000Z"
+                      title="2019-08-26T18:22:41+00:00"
+                    >
+                      4 months from now
+                    </time>
+                  </div>
+                  <div
+                    class="item"
+                    role="listitem"
+                  >
+                    <code>
+                      zhux3/sd-8wx8qq06
+                    </code>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="dna icon"
+              />
+              <div
+                class="content"
+              >
+                <div
+                  class="right floated content"
+                >
+                  <a
+                    href="/study/SD_8WX8QQ06/documents"
+                  >
+                    benchmark extensible e-business
+                  </a>
+                </div>
+                <a
+                  class="header"
+                  href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06-bwa-mem"
+                >
+                  test study name bwa-mem 
+                  <i
+                    aria-hidden="true"
+                    class="external small link icon"
+                  />
+                </a>
+                <div
+                  class="ui bulleted horizontal list"
+                  role="list"
+                >
+                  <div
+                    class="item"
+                    role="listitem"
+                  >
+                    Created 
+                    <time
+                      datetime="2019-08-26T18:22:42.000Z"
+                      title="2019-08-26T18:22:42+00:00"
+                    >
+                      4 months from now
+                    </time>
+                  </div>
+                  <div
+                    class="item"
+                    role="listitem"
+                  >
+                    bwa_mem
+                  </div>
+                  <div
+                    class="item"
+                    role="listitem"
+                  >
+                    <code>
+                      zhux3/sd-8wx8qq06-bwa-mem
+                    </code>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="dna icon"
+              />
+              <div
+                class="content"
+              >
+                <div
+                  class="right floated content"
+                >
+                  <a
+                    href="/study/SD_8WX8QQ06/documents"
+                  >
+                    benchmark extensible e-business
+                  </a>
+                </div>
+                <a
+                  class="header"
+                  href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06-gatk-haplotypecaller"
+                >
+                  test study name gatk-haplotypecaller 
+                  <i
+                    aria-hidden="true"
+                    class="external small link icon"
+                  />
+                </a>
+                <div
+                  class="ui bulleted horizontal list"
+                  role="list"
+                >
+                  <div
+                    class="item"
+                    role="listitem"
+                  >
+                    Created 
+                    <time
+                      datetime="2019-08-26T18:22:43.000Z"
+                      title="2019-08-26T18:22:43+00:00"
+                    >
+                      4 months from now
+                    </time>
+                  </div>
+                  <div
+                    class="item"
+                    role="listitem"
+                  >
+                    gatk_haplotypecaller
+                  </div>
+                  <div
+                    class="item"
+                    role="listitem"
+                  >
+                    <code>
+                      zhux3/sd-8wx8qq06-gatk-haplotypecaller
+                    </code>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="row"
+    >
+      <div
+        class="sixteen wide computer sixteen wide mobile sixteen wide tablet column"
+      >
+        <div
+          class="ui padded segment"
+        >
+          <h3
+            class="ui header"
+          >
+            Event Logs
+          </h3>
+          <div
+            class="ui very relaxed list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="green add icon"
+              />
+              <div
+                class="content"
+              >
+                <div
+                  class="right floated content"
+                >
+                  <time
+                    datetime="2019-08-26T18:25:02.985Z"
+                    title="2019-08-26T18:25:02.985155+00:00"
+                  >
+                    4 months from now
+                  </time>
+                </div>
+                devadmin created version FV_9AF7CC3Z of file SF_5ZPEM167
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="yellow refresh icon"
+              />
+              <div
+                class="content"
+              >
+                <div
+                  class="right floated content"
+                >
+                  <time
+                    datetime="2019-08-26T18:24:46.341Z"
+                    title="2019-08-26T18:24:46.341665+00:00"
+                  >
+                    4 months from now
+                  </time>
+                </div>
+                devadmin updated version FV_4FCEYZ3T of file SF_5ZPEM167
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="green add icon"
+              />
+              <div
+                class="content"
+              >
+                <div
+                  class="right floated content"
+                >
+                  <time
+                    datetime="2019-08-26T18:24:36.763Z"
+                    title="2019-08-26T18:24:36.763314+00:00"
+                  >
+                    4 months from now
+                  </time>
+                </div>
+                devadmin created version FV_ABCPEQRK of file SF_Y07IN1HO
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="green add icon"
+              />
+              <div
+                class="content"
+              >
+                <div
+                  class="right floated content"
+                >
+                  <time
+                    datetime="2019-08-26T18:24:19.986Z"
+                    title="2019-08-26T18:24:19.986588+00:00"
+                  >
+                    4 months from now
+                  </time>
+                </div>
+                devadmin created version FV_BHXN2F7A of file SF_Y07IN1HO
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="yellow refresh icon"
+              />
+              <div
+                class="content"
+              >
+                <div
+                  class="right floated content"
+                >
+                  <time
+                    datetime="2019-08-26T18:24:03.184Z"
+                    title="2019-08-26T18:24:03.184513+00:00"
+                  >
+                    4 months from now
+                  </time>
+                </div>
+                devadmin updated version FV_Z0NZQZNX of file SF_Y07IN1HO
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="yellow refresh icon"
+              />
+              <div
+                class="content"
+              >
+                <div
+                  class="right floated content"
+                >
+                  <time
+                    datetime="2019-08-26T18:24:03.182Z"
+                    title="2019-08-26T18:24:03.182570+00:00"
+                  >
+                    4 months from now
+                  </time>
+                </div>
+                devadmin updated file SF_5ZPEM167
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="green add icon"
+              />
+              <div
+                class="content"
+              >
+                <div
+                  class="right floated content"
+                >
+                  <time
+                    datetime="2019-08-26T18:23:53.703Z"
+                    title="2019-08-26T18:23:53.703031+00:00"
+                  >
+                    4 months from now
+                  </time>
+                </div>
+                devadmin created version FV_4FCEYZ3T of file SF_Y07IN1HO
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="green add icon"
+              />
+              <div
+                class="content"
+              >
+                <div
+                  class="right floated content"
+                >
+                  <time
+                    datetime="2019-08-26T18:23:53.695Z"
+                    title="2019-08-26T18:23:53.695244+00:00"
+                  >
+                    4 months from now
+                  </time>
+                </div>
+                devadmin created file SF_Y07IN1HO
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
