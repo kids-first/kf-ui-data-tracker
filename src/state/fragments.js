@@ -13,14 +13,29 @@ export const TOKEN_FIELDS = gql`
   }
 `;
 
-export const STUDY_FIELDS = gql`
-  fragment StudyFields on StudyNode {
+export const STUDY_BASIC_FIELDS = gql`
+  fragment StudyBasicFields on StudyNode {
     id
     kfId
     name
     shortName
     createdAt
     modifiedAt
+  }
+`;
+
+export const STUDY_INFO_FIELDS = gql`
+  fragment StudyInfoFields on StudyNode {
+    bucket
+    attribution
+    dataAccessAuthority
+    externalId
+    releaseStatus
+    version
+    releaseDate
+    description
+    anticipatedSamples
+    awardeeOrganization
   }
 `;
 
