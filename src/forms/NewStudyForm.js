@@ -278,7 +278,7 @@ const NewStudyForm = ({submitValue, apiErrors}) => {
                     <List.Item>Dataservice study</List.Item>
                     <List.Item>S3 bucket</List.Item>
                     <List.Item>Cavatica delivery project</List.Item>
-                    <List.Item>Cavatice harmonization projects</List.Item>
+                    <List.Item>Cavatica harmonization projects</List.Item>
                   </List>
                 </Container>
               }

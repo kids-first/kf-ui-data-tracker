@@ -1,20 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import TimeAgo from 'react-timeago';
-import {List, Grid, Header, Segment} from 'semantic-ui-react';
+import {List, Grid, Header, Segment, Button} from 'semantic-ui-react';
 import EventList from './EventList';
 import FileSimpleList from './FileSimpleList';
 import CavaticaProjectList from '../CavaticaProjectList/CavaticaProjectList';
 /**
  * Displays study baisc information
  */
-const StudyInfo = ({studyNode}) => {
+const StudyInfo = ({studyNode, setShowModal}) => {
   return (
     <Grid padded="vertically">
       <Grid.Row stretched>
         <Grid.Column mobile={16} tablet={16} computer={8}>
           <Segment padded>
-            <Header as="h3">Study Info</Header>
+            <Header as="h3">
+              Study Info
+              <Button
+                floated="right"
+                size="mini"
+                primary
+                onClick={() => setShowModal(true)}
+              >
+                EDIT
+              </Button>
+            </Header>
             <List relaxed size="large">
               <List.Item>
                 <List.Description>Name</List.Description>

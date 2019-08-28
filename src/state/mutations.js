@@ -5,6 +5,7 @@ import {
   FILE_FIELDS,
   VERSION_FIELDS,
   STUDY_BASIC_FIELDS,
+  STUDY_INFO_FIELDS,
 } from './fragments';
 
 // Mutation to upload a file or a version of the file to the study-creator
@@ -213,4 +214,18 @@ export const CREATE_STUDY = gql`
     }
   }
   ${STUDY_BASIC_FIELDS}
+`;
+
+// Mutation to update a study
+export const UPDATE_STUDY = gql`
+  mutation UPDATE_STUDY($id: ID!, $input: StudyInput!) {
+    updateStudy(id: $id, input: $input) {
+      study {
+        ...StudyBasicFields
+        ...StudyInfoFields
+      }
+    }
+  }
+  ${STUDY_BASIC_FIELDS}
+  ${STUDY_INFO_FIELDS}
 `;
