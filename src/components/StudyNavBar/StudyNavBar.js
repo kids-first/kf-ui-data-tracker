@@ -1,16 +1,16 @@
 import React from 'react';
 import {withRouter, NavLink} from 'react-router-dom';
-import {Menu} from 'semantic-ui-react';
+import {Menu, Label} from 'semantic-ui-react';
 
 /**
  * Menu for navigating within a study
  */
-const StudyNavBar = ({match, history}) => {
+const StudyNavBar = ({match, history, isBeta}) => {
   const baseHref = `/study/${match.params.kfId}/`;
   const navList = [
     {
       tab: 'Basic Info',
-      endString: 'basicInfo',
+      endString: 'basic-info',
     },
     {
       tab: 'Dashboard',
@@ -34,7 +34,14 @@ const StudyNavBar = ({match, history}) => {
           active={match.url.includes(item.endString)}
           to={baseHref + item.endString}
           as={NavLink}
-        />
+        >
+          {item.tab}
+          {item.endString === 'basic-info' && isBeta && (
+            <Label color="blue" size="mini">
+              BETA
+            </Label>
+          )}
+        </Menu.Item>
       ))}
     </Menu>
   );

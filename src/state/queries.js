@@ -3,9 +3,11 @@ import {
   TOKEN_FIELDS,
   PROJECT_FIELDS,
   CREATOR_FIELDS,
-  STUDY_FIELDS,
+  STUDY_BASIC_FIELDS,
+  STUDY_INFO_FIELDS,
   FILE_FIELDS,
   VERSION_FIELDS,
+  EVENT_FIELDS,
 } from './fragments';
 
 // Query to get all studies in the study-creator
@@ -14,7 +16,7 @@ export const ALL_STUDIES = gql`
     allStudies {
       edges {
         node {
-          ...StudyFields
+          ...StudyBasicFields
           files {
             edges {
               node {
@@ -33,15 +35,32 @@ export const ALL_STUDIES = gql`
       }
     }
   }
-  ${STUDY_FIELDS}
+  ${STUDY_BASIC_FIELDS}
 `;
 
 // Query to get a study by its relay id
 export const GET_STUDY_BY_ID = gql`
   query Study($kfId: String!) {
     studyByKfId(kfId: $kfId) {
-      ...StudyFields
-      bucket
+      ...StudyBasicFields
+      ...StudyInfoFields
+      events(first: 10, orderBy: "-created_at") {
+        edges {
+          node {
+            ...EventFields
+          }
+        }
+      }
+      projects {
+        edges {
+          node {
+            ...ProjectFields
+            study {
+              ...StudyBasicFields
+            }
+          }
+        }
+      }
       files {
         edges {
           node {
@@ -61,8 +80,11 @@ export const GET_STUDY_BY_ID = gql`
       }
     }
   }
-  ${STUDY_FIELDS}
+  ${STUDY_BASIC_FIELDS}
+  ${STUDY_INFO_FIELDS}
   ${FILE_FIELDS}
+  ${EVENT_FIELDS}
+  ${PROJECT_FIELDS}
 `;
 
 // Query to get a file by its kf id
@@ -113,13 +135,13 @@ export const GET_PROJECTS = gql`
         node {
           ...ProjectFields
           study {
-            ...StudyFields
+            ...StudyBasicFields
           }
         }
       }
     }
   }
-  ${STUDY_FIELDS}
+  ${STUDY_BASIC_FIELDS}
   ${PROJECT_FIELDS}
 `;
 

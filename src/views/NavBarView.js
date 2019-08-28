@@ -1,11 +1,13 @@
 import React from 'react';
-import {graphql} from 'react-apollo';
-import {GET_STUDY_BY_ID} from '../state/queries';
+import {graphql, compose} from 'react-apollo';
+import {GET_STUDY_BY_ID, MY_PROFILE} from '../state/queries';
 import StudyHeader from '../components/StudyHeader/StudyHeader';
 import {StudyNavBar} from '../components/StudyNavBar';
 import {Container, Segment, Message} from 'semantic-ui-react';
 
-const NavBarView = ({study: {loading, studyByKfId, error}}) => {
+const NavBarView = ({study: {loading, studyByKfId, error}, user}) => {
+  const isBeta = !user.loading ? user.myProfile.roles.includes('BETA') : false;
+
   if (error)
     return (
       <Container as={Segment} basic>
@@ -23,17 +25,20 @@ const NavBarView = ({study: {loading, studyByKfId, error}}) => {
         <StudyHeader {...studyByKfId} loading={loading} />
       </Segment>
       <Container>
-        <StudyNavBar />
+        <StudyNavBar isBeta={isBeta} />
       </Container>
     </section>
   );
 };
 
-export default graphql(GET_STUDY_BY_ID, {
-  name: 'study',
-  options: props => ({
-    variables: {
-      kfId: props.match.params.kfId,
-    },
+export default compose(
+  graphql(GET_STUDY_BY_ID, {
+    name: 'study',
+    options: props => ({
+      variables: {
+        kfId: props.match.params.kfId,
+      },
+    }),
   }),
-})(NavBarView);
+  graphql(MY_PROFILE, {name: 'user'}),
+)(NavBarView);

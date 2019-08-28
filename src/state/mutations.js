@@ -4,7 +4,7 @@ import {
   PROJECT_FIELDS,
   FILE_FIELDS,
   VERSION_FIELDS,
-  STUDY_FIELDS,
+  STUDY_BASIC_FIELDS,
 } from './fragments';
 
 // Mutation to upload a file or a version of the file to the study-creator
@@ -208,9 +208,9 @@ export const CREATE_STUDY = gql`
   mutation CREATE_STUDY($input: StudyInput!) {
     createStudy(input: $input) {
       study {
-        ...StudyFields
+        ...StudyBasicFields
       }
     }
   }
-  ${STUDY_FIELDS}
+  ${STUDY_BASIC_FIELDS}
 `;

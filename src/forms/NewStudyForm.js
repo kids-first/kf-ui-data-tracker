@@ -122,7 +122,7 @@ const NewStudyForm = ({submitValue, apiErrors}) => {
                 </Grid.Column>
                 <Grid.Column width={8}>
                   <Message size="small">
-                    Full name of the study, often the full title of the XO1
+                    Full name of the study, often the full title of the X01
                     grant application.
                   </Message>
                 </Grid.Column>
@@ -227,7 +227,7 @@ const NewStudyForm = ({submitValue, apiErrors}) => {
                   <Form.Field>
                     <label>Description:</label>
                     <Message size="small">
-                      Study description in markdown, commonly the XO1 abstract
+                      Study description in markdown, commonly the X01 abstract
                       text.
                     </Message>
                     <Form.TextArea

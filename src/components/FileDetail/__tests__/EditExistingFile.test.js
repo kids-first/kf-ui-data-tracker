@@ -31,8 +31,8 @@ it('edits an existing file correctly', async () => {
   const tree = render(
     <MockedProvider
       resolvers={{
-        UserNode: {
-          ...myProfile.data.myProfile,
+        Query: {
+          myProfile: _ => myProfile.data.myProfile,
         },
       }}
       mocks={mocks}
@@ -42,7 +42,7 @@ it('edits an existing file correctly', async () => {
       </MemoryRouter>
     </MockedProvider>,
   );
-  await wait();
+  await wait(10);
 
   expect(tree.container).toMatchSnapshot();
 
@@ -52,7 +52,7 @@ it('edits an existing file correctly', async () => {
   // Click on the first file's name to go to file detail page
   const fileName = tree.getByText(/organization.jpeg/i);
   fireEvent.click(fileName);
-  await wait();
+  await wait(10);
 
   // Click on the file's edit button to open annotation modal
   fireEvent.click(tree.getByText(/EDIT/));
