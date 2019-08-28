@@ -18,6 +18,11 @@ exports[`Study basic info page renders correctly 1`] = `
             class="ui header"
           >
             Study Info
+            <button
+              class="ui mini primary right floated button"
+            >
+              EDIT
+            </button>
           </h3>
           <div
             class="ui large relaxed list"
