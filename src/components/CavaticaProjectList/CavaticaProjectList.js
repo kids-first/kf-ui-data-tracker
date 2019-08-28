@@ -9,7 +9,13 @@ const CavaticaProjectList = ({projects}) => (
       .sort(({node}) => node.name)
       .map(({node}) => (
         <List.Item key={node.id}>
-          <Icon name={node.projectType === 'DEL' ? 'truck' : 'dna'} />
+          <Icon
+            name={
+              node.projectType === 'DEL'
+                ? 'paper plane outline'
+                : 'sliders horizontal'
+            }
+          />
           <List.Content>
             <List.Content floated="right">
               {node.study ? (
@@ -26,6 +32,7 @@ const CavaticaProjectList = ({projects}) => (
             </List.Content>
             <List.Header
               as="a"
+              target="_blank"
               href={`https://cavatica.sbgenomics.com/u/${node.projectId}`}
             >
               {node.name + ' '}

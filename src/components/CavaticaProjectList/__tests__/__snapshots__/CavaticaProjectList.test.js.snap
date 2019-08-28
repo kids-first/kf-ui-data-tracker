@@ -12,7 +12,7 @@ exports[`renders correctly 1`] = `
     >
       <i
         aria-hidden="true"
-        class="truck icon"
+        class="paper plane outline icon"
       />
       <div
         class="content"
@@ -29,6 +29,7 @@ exports[`renders correctly 1`] = `
         <a
           class="header"
           href="https://cavatica.sbgenomics.com/u/kolbmand/sd-wgp8rw3w-gatk-haplotypecaller"
+          target="_blank"
         >
           SD_WGP8RW3W gatk-haplotypecaller 
           <i
@@ -75,7 +76,7 @@ exports[`renders correctly 1`] = `
     >
       <i
         aria-hidden="true"
-        class="truck icon"
+        class="paper plane outline icon"
       />
       <div
         class="content"
@@ -88,6 +89,7 @@ exports[`renders correctly 1`] = `
         <a
           class="header"
           href="https://cavatica.sbgenomics.com/u/kfdrc-harmonization/sd-e1br2tfk"
+          target="_blank"
         >
           data harmonization 
           <i
@@ -134,7 +136,7 @@ exports[`renders correctly 1`] = `
     >
       <i
         aria-hidden="true"
-        class="truck icon"
+        class="paper plane outline icon"
       />
       <div
         class="content"
@@ -147,6 +149,7 @@ exports[`renders correctly 1`] = `
         <a
           class="header"
           href="https://cavatica.sbgenomics.com/u/kfdrc-harmonization/sd-jws3v24d-01"
+          target="_blank"
         >
           Test Joint Genotyping 
           <i
