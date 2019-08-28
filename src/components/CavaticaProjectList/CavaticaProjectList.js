@@ -26,6 +26,7 @@ const CavaticaProjectList = ({projects}) => (
             </List.Content>
             <List.Header
               as="a"
+              target="_blank"
               href={`https://cavatica.sbgenomics.com/u/${node.projectId}`}
             >
               {node.name + ' '}
