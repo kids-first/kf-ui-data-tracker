@@ -229,3 +229,15 @@ export const UPDATE_STUDY = gql`
   ${STUDY_BASIC_FIELDS}
   ${STUDY_INFO_FIELDS}
 `;
+
+// Mutation to create a new analysis project
+export const CREATE_PROJECT = gql`
+  mutation($workflowType: WorkflowType!, $study: ID!) {
+    createProject(input: {workflowType: $workflowType, study: $study}) {
+      project {
+        ...ProjectFields
+      }
+    }
+  }
+  ${PROJECT_FIELDS}
+`;

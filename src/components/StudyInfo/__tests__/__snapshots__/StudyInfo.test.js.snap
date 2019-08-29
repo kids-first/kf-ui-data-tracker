@@ -295,6 +295,11 @@ exports[`Study basic info edit study modal renders correctly 1`] = `
             class="ui header"
           >
             Cavatica Projects
+            <button
+              class="ui mini right floated button"
+            >
+              NEW PROJECT
+            </button>
           </h3>
           <div
             class="ui divided relaxed list"
@@ -1003,6 +1008,11 @@ exports[`Study basic info page renders correctly 1`] = `
             class="ui header"
           >
             Cavatica Projects
+            <button
+              class="ui mini right floated button"
+            >
+              NEW PROJECT
+            </button>
           </h3>
           <div
             class="ui divided relaxed list"
