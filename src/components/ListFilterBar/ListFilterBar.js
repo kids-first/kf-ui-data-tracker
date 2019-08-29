@@ -2,11 +2,10 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import {
   Icon,
-  Segment,
   Button,
   Dropdown,
   Input,
-  Divider,
+  Menu
 } from 'semantic-ui-react';
 import Badge from '../Badge/Badge';
 import {
@@ -88,93 +87,70 @@ const ListFilterBar = ({ fileList, filteredList }) => {
 
   return (
     <>
-      <section className='noPadding'>
-        <Segment
-          className="noMargin noVerticalPadding noHorizontalPadding"
+      <Menu size='small' >
+        <Menu.Item>Filter by:</Menu.Item>
+        <Dropdown
+          selection
+          clearable
+          text={approvalFilterStatus ? statusOptions.filter(o => o.key === approvalFilterStatus).text : "Approval Status"}
+          selectOnBlur={false}
+          value={approvalFilterStatus}
+          options={statusOptions}
+          placeholder="Approval status"
+          onChange={(e, { value }) => {
+            setApprovalFilterStatus(value);
+          }}
+        />
+        <Dropdown
+          selection
+          clearable
+          selectOnBlur={false}
+          text={typeFilterStatus ? typeOptions.filter(o => o.key === typeFilterStatus).text : "File Category"}
+          options={typeOptions}
+          placeholder="File type"
+          onChange={(e, { value }) => {
+            setTypeFilterStatus(value);
+          }}
+        />
+        <Menu.Item></Menu.Item>
+        <Menu.Item>Sort by:</Menu.Item>
+        <Dropdown
+          selection
+          clearable
+          selectOnBlur={false}
+          value={sortMethod}
+          options={sortOptions}
+          placeholder="Date option"
+          onChange={(e, { value }) => {
+            setSortMethod(value);
+          }}
+        />
+        <Button
+          icon
           basic
-          compact
-          floated="left"
+          onClick={() => {
+            if (sortDirection === 'ascending') {
+              setSortDirection('descending');
+            } else {
+              setSortDirection('ascending');
+            }
+          }}
         >
-          <span className="smallLabel">Filter by:</span>
-          <Dropdown
-            selection
-            clearable
-            selectOnBlur={false}
-            value={approvalFilterStatus}
-            options={statusOptions}
-            placeholder="Approval status"
-            onChange={(e, { value }) => {
-              setApprovalFilterStatus(value);
-            }}
-          />
-        </Segment>
-
-        <Segment
-          className="noMargin noVerticalPadding noHorizontalPadding"
-          basic
-          compact
-          floated="left"
-        >
-          <Dropdown
-            selection
-            clearable
-            selectOnBlur={false}
-            // value={typeFilterStatus}
-            options={typeOptions}
-            placeholder="File type"
-            onChange={(e, { value }) => {
-              setTypeFilterStatus(value);
-            }}
-          />
-        </Segment>
-
-        <Segment
-          className="noMargin noVerticalPadding noHorizontalPadding"
-          basic
-          compact
-          floated="left"
-        >
-          <span className="smallLabel">Sorted by:</span>
-          <Dropdown
-            selection
-            clearable
-            selectOnBlur={false}
-            value={sortMethod}
-            options={sortOptions}
-            placeholder="Date option"
-            onChange={(e, { value }) => {
-              setSortMethod(value);
-            }}
-          />
-          <Button
-            icon
-            basic
-            onClick={() => {
-              if (sortDirection === 'ascending') {
-                setSortDirection('descending');
-              } else {
-                setSortDirection('ascending');
-              }
-            }}
-          >
-            <Icon name={'sort content ' + sortDirection} />
-          </Button>
-        </Segment>
-        <Segment
-          className="noMargin noVerticalPadding noHorizontalPadding"
-          basic
-          compact
-          floated="right"
-        >
+          <Icon name={'sort content ' + sortDirection} />
+        </Button>
+        <Menu.Item position="right" fitted>
           <Input
+            type="text"
             icon="search"
+            placeholder="Search documents"
             onChange={(e, { value }) => {
               setSearchString(value);
             }}
             value={searchString}
           />
-        </Segment>
-      </section>
+        </Menu.Item>
+
+      </Menu>
       {filteredList(sortedFileList())}
     </>
   )

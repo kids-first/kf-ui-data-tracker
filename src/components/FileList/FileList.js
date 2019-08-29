@@ -4,11 +4,6 @@ import FileElement from './FileElement';
 import ListFilterBar from '../ListFilterBar/ListFilterBar';
 import {
   fileLatestStatus,
-  versionState,
-  fileTypeDetail,
-  createDateSort,
-  modifiedDateSort,
-  defaultSort,
 } from '../../common/fileUtils';
 import {
   Header,
@@ -17,11 +12,8 @@ import {
   Message,
   Pagination,
   Table,
-  Button,
-  Dropdown,
-  Input,
 } from 'semantic-ui-react';
-import Badge from '../Badge/Badge';
+
 
 /**
  * Displays list of study files
