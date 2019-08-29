@@ -4,7 +4,6 @@ import {createUploadLink} from 'apollo-upload-client';
 import {setContext} from 'apollo-link-context';
 import {InMemoryCache} from 'apollo-cache-inmemory';
 import {KF_STUDY_API} from '../common/globals';
-import {clientTypeDefs as typeDefs, resolvers} from './clientSchema';
 
 const authLink = setContext((_, {headers}) => {
   const token =
@@ -23,6 +22,4 @@ export const client = new ApolloClient({
     authLink,
     createUploadLink({uri: `${KF_STUDY_API}/graphql`}),
   ]),
-  typeDefs,
-  resolvers,
 });
