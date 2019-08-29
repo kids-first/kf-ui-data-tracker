@@ -8,7 +8,7 @@ import CavaticaProjectList from '../CavaticaProjectList/CavaticaProjectList';
 /**
  * Displays study baisc information
  */
-const StudyInfo = ({studyNode, setShowModal}) => {
+const StudyInfo = ({studyNode, setShowModal, setShowNewProjectModal}) => {
   return (
     <Grid padded="vertically">
       <Grid.Row stretched>
@@ -127,7 +127,16 @@ const StudyInfo = ({studyNode, setShowModal}) => {
       <Grid.Row stretched>
         <Grid.Column mobile={16} tablet={16} computer={16}>
           <Segment padded>
-            <Header as="h3">Cavatica Projects</Header>
+            <Header as="h3">
+              Cavatica Projects
+              <Button
+                floated="right"
+                size="mini"
+                onClick={() => setShowNewProjectModal(true)}
+              >
+                NEW PROJECT
+              </Button>
+            </Header>
             {studyNode.projects.edges.length > 0 ? (
               <CavaticaProjectList projects={studyNode.projects.edges} />
             ) : (
