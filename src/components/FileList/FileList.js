@@ -1,6 +1,7 @@
 import React, {useState, Fragment} from 'react';
 import PropTypes from 'prop-types';
 import FileElement from './FileElement';
+import ListFilterBar from '../ListFilterBar/ListFilterBar';
 import {
   fileLatestStatus,
   versionState,
@@ -28,75 +29,11 @@ import Badge from '../Badge/Badge';
 const FileList = ({fileList, studyId}) => {
   const perPage = 10;
   const [page, setPage] = useState(1);
+  const [pageCount, setPageCount] = useState(1);
 
   const handlePageClick = (e, {activePage}) => {
     setPage(activePage);
   };
-
-  const [sortMethod, setSortMethod] = useState('');
-  const [sortDirection, setSortDirection] = useState('ascending');
-  const [typeFilterStatus, setTypeFilterStatus] = useState('');
-  const [approvalFilterStatus, setApprovalFilterStatus] = useState('');
-  const [searchString, setSearchString] = useState('');
-
-  const statusOptions = Object.keys(versionState).map(state => ({
-    key: state,
-    value: state,
-    text: versionState[state].title,
-    content: <Badge state={state} />,
-  }));
-  const typeOptions = Object.keys(fileTypeDetail).map(type => ({
-    key: type,
-    value: type,
-    text: fileTypeDetail[type].title,
-    content: (
-      <small>
-        <Icon name={`${fileTypeDetail[type].icon || 'question'}`} />
-        {' ' + fileTypeDetail[type].title}
-      </small>
-    ),
-  }));
-  const sortOptions = [
-    {
-      key: 'createDate',
-      value: 'createDate',
-      text: 'Create date',
-    },
-    {
-      key: 'modifyDate',
-      value: 'modifyDate',
-      text: 'Modified date',
-    },
-  ];
-
-  const sortedFileList = () => {
-    const sortFuncs = {
-      createdDate: createDateSort,
-      modifyDate: modifiedDateSort,
-      default: defaultSort,
-    };
-    var sortedList = fileList.sort(sortFuncs[sortMethod] || sortFuncs.default);
-    sortedList =
-      sortDirection === 'ascending' ? sortedList : sortedList.reverse();
-    sortedList = sortedList.filter(obj =>
-      obj.node.fileType.includes(typeFilterStatus),
-    );
-    sortedList = sortedList.filter(obj =>
-      fileLatestStatus(obj.node).includes(approvalFilterStatus),
-    );
-    sortedList = sortedList.filter(
-      obj =>
-        obj.node.name.toLowerCase().includes(searchString.toLowerCase()) ||
-        obj.node.description.toLowerCase().includes(searchString.toLowerCase()),
-    );
-    return sortedList;
-  };
-
-  const pageCount = Math.ceil(sortedFileList().length / perPage);
-  const pageItems = sortedFileList().slice(
-    perPage * (page - 1),
-    perPage * (page - 1) + perPage,
-  );
 
   return (
     <Fragment>
@@ -111,107 +48,31 @@ const FileList = ({fileList, studyId}) => {
       )}
       {fileList.length ? (
         <>
-          <Segment
-            className="noMargin noHorizontalPadding"
-            basic
-            compact
-            floated="left"
-          >
-            <span className="smallLabel">Filter by:</span>
-            <Dropdown
-              selection
-              clearable
-              selectOnBlur={false}
-              value={approvalFilterStatus}
-              options={statusOptions}
-              placeholder="Approval status"
-              onChange={(e, {value}) => {
-                setApprovalFilterStatus(value);
-              }}
-            />
-          </Segment>
-          <Segment
-            className="noMargin noHorizontalPadding"
-            basic
-            compact
-            floated="left"
-          >
-            <Dropdown
-              selection
-              clearable
-              selectOnBlur={false}
-              value={typeFilterStatus}
-              options={typeOptions}
-              placeholder="File type"
-              onChange={(e, {value}) => {
-                setTypeFilterStatus(value);
-              }}
-            />
-          </Segment>
-          <Segment
-            className="noMargin noHorizontalPadding"
-            basic
-            compact
-            floated="left"
-          >
-            <span className="smallLabel">Sorted by:</span>
-            <Dropdown
-              selection
-              clearable
-              selectOnBlur={false}
-              value={sortMethod}
-              options={sortOptions}
-              placeholder="Date option"
-              onChange={(e, {value}) => {
-                setSortMethod(value);
-              }}
-            />
-            <Button
-              icon
-              basic
-              onClick={() => {
-                if (sortDirection === 'ascending') {
-                  setSortDirection('descending');
-                } else {
-                  setSortDirection('ascending');
-                }
-              }}
-            >
-              <Icon name={'sort content ' + sortDirection} />
-            </Button>
-          </Segment>
-          <Segment
-            className="noMargin noHorizontalPadding"
-            basic
-            compact
-            floated="right"
-          >
-            <Input
-              icon="search"
-              onChange={(e, {value}) => {
-                setSearchString(value);
-              }}
-              value={searchString}
-            />
-          </Segment>
-          <Table stackable selectable compact="very" basic="very" celled>
-            <Table.Header>
-              <Table.Row>
-                <Table.HeaderCell textAlign="center">Approval</Table.HeaderCell>
-                <Table.HeaderCell>Document Details</Table.HeaderCell>
-                <Table.HeaderCell textAlign="center">Actions</Table.HeaderCell>
-              </Table.Row>
-            </Table.Header>
-            <Table.Body>
-              {pageItems.map(({node}) => (
-                <FileElement
-                  key={node.kfId}
-                  fileListId={studyId}
-                  fileNode={node}
-                />
-              ))}
-            </Table.Body>
-          </Table>
+          <ListFilterBar
+            fileList={fileList}
+            filteredList={filteredList => {
+              setPageCount(Math.ceil(filteredList.length / perPage));
+
+              let paginatedList = filteredList.slice(
+                perPage * (page - 1),
+                perPage * (page - 1) + perPage,
+              );
+
+              return (
+                <Table stackable selectable compact="very" basic="very">
+                  <Table.Body>
+                    {paginatedList.map(({node}) => (
+                      <FileElement
+                        key={node.kfId}
+                        fileListId={studyId}
+                        fileNode={node}
+                      />
+                    ))}
+                  </Table.Body>
+                </Table>
+              );
+            }}
+          />
         </>
       ) : (
         <Segment basic>
