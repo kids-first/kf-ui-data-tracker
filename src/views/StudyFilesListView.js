@@ -1,7 +1,7 @@
-import React from 'react';
-import {graphql} from 'react-apollo';
-import {GET_STUDY_BY_ID} from '../state/queries';
-import {UploadContainer} from '../containers';
+import React, { useState } from 'react';
+import { graphql } from 'react-apollo';
+import { GET_STUDY_BY_ID } from '../state/queries';
+import { UploadContainer } from '../containers';
 import FileList from '../components/FileList/FileList';
 import {
   Divider,
@@ -11,7 +11,10 @@ import {
   Placeholder,
   Container,
   Segment,
+  Button
 } from 'semantic-ui-react';
+
+import UploadMethodsModal from '../modals/UploadMethodsModal';
 
 /**
  * A place holder skeleton for a list of files
@@ -42,12 +45,14 @@ const StudyListSkeleton = () => (
  * List and manage files in a study and allow a user to upload more
  */
 const StudyFilesListView = ({
-  study: {loading, studyByKfId, error},
+  study: { loading, studyByKfId, error },
   match: {
-    params: {kfId},
+    params: { kfId },
   },
   history,
 }) => {
+  const [dialog, setDialog] = useState(false);
+  const [uploadedFile, setFile] = useState(false);
   if (error)
     return (
       <Container as={Segment} basic>
@@ -62,27 +67,72 @@ const StudyFilesListView = ({
   const files = !loading ? studyByKfId.files.edges : [];
   return (
     <Grid as={Segment} basic container columns={1}>
-      <Grid.Column width={16}>
-        <Header as="h2">Upload Study Documents for DRC Approval</Header>
-        {loading ? (
-          <StudyListSkeleton />
-        ) : (
-          <FileList fileList={files} studyId={kfId} />
-        )}
-        <Divider />
-        <Grid.Row>
-          <UploadContainer
-            handleUpload={file =>
-              history.push('documents/new-document', {file})
-            }
-          />
-        </Grid.Row>
-      </Grid.Column>
-    </Grid>
+      <Grid.Row>
+        <Grid.Column width={10}>
+          <h2 inline>Study Documents</h2>
+        </Grid.Column>
+        {
+          files.length ? <Grid.Column width={6}>
+            <Button
+              compact
+              primary
+              floated="right"
+              size="large"
+              icon="cloud upload"
+              labelPosition="left"
+              content="Upload Document"
+              as="label"
+              htmlFor="file"
+            />
+            <input
+              hidden
+              multiple
+              id="file"
+              type="file"
+              onChange={e => {
+                setFile(e.target.files[0]);
+                setDialog(true);
+              }}
+            />
+          </Grid.Column> : null
+        }
+
+      </Grid.Row>
+      <Grid.Row>
+        <Grid.Column width={16}>
+          {loading ? (
+            <StudyListSkeleton />
+          ) : (
+              <FileList fileList={files} studyId={kfId} />
+            )}
+          <Divider />
+          <Grid.Row>
+            <UploadContainer
+              handleUpload={file => {
+                setFile(file);
+                return !files.length ? history.push('documents/new-document', { file }) : setDialog(true)
+              }}
+            />
+          </Grid.Row>
+          {
+            dialog ?
+              <UploadMethodsModal
+                history={history}
+                file={uploadedFile}
+                onCloseDialog={() => { setFile(false); setDialog(false) }}
+              />
+              : null
+          }
+
+        </Grid.Column>
+      </Grid.Row>
+
+
+    </Grid >
   );
 };
 
 export default graphql(GET_STUDY_BY_ID, {
   name: 'study',
-  options: props => ({variables: {kfId: props.match.params.kfId}}),
+  options: props => ({ variables: { kfId: props.match.params.kfId } }),
 })(StudyFilesListView);
