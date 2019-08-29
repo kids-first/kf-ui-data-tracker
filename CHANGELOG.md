@@ -1,3 +1,40 @@
+# Kids First Data Tracker Release 0.6.0
+
+## Features
+
+Adds views for creating studies and projects.
+
+### Summary
+
+Feature Emojis: ✨x10 🐛x4 💄x3 🔥x1 📝x1
+Feature Labels: [feature](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/feature) x10 [refactor](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/refactor) x8 [bug](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/bug) x4 [component](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/component) x4 [devops](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/devops) x2 [design](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/design) x1 [documentation](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/documentation) x1
+
+### New features and changes
+
+- (#428) 🔥 Move role and group resolvers to server - @dankolbman
+- (#426) ✨ Add form for new Cavatica project - @dankolbman
+- (#427) 🐛 Don't show studies in profile if the user has none - @dankolbman
+- (#424) ✨ Add modal for editing study information - @XuTheBunny
+- (#425) 💄 Refactor Cavatica project list icon and link - @XuTheBunny
+- (#420) ✨ Add study basic info screen for beta team - @XuTheBunny
+- (#421) Bump eslint-utils from 1.3.1 to 1.4.2 - @dependabot[bot]
+- (#416) 🐛 Fix new study form date field and Cavatica project study link - @XuTheBunny
+- (#415) 🐛 Return deleted projects in sync mutation - @dankolbman
+- (#414) 🐛 Fix new file annotation form by adding user object to it - @XuTheBunny
+- (#413) ✨ Show information about deleted projects - @dankolbman
+- (#403) ✨ Add form page for creating new study - @XuTheBunny
+- (#412) ✨ Add Cavatica Project list view - @dankolbman
+- (#410) ✨ Add drop down for admin functions - @dankolbman
+- (#407) 💄 Hide filter and search bar on file list when no files exist - @XuTheBunny
+- (#406) 💄 Show alternative image when no user profile photo exist - @XuTheBunny
+- (#325) ✨ Feature user roles client state - @bdolly
+- (#391) Bump lodash.template from 4.4.0 to 4.5.0 - @dependabot[bot]
+- (#390) ✨ Search study by its name / short name from study list screen - @XuTheBunny
+- (#389) ✨ Filter files by approval status/type, sort by created/modified date, and search by file title/description - @XuTheBunny
+- (#384) 📝 Update README file with development and testing section - @XuTheBunny
+- (#388) ♻️ Fragments for study field, file fields, version fields, and creator fields - @XuTheBunny
+
+
 # Kids First Data Tracker Release 0.5.0
 
 ## Features
