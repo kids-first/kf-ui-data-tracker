@@ -1,6 +1,6 @@
 import React from 'react';
 import {graphql, compose} from 'react-apollo';
-import {Button} from 'semantic-ui-react';
+import {Button, Message} from 'semantic-ui-react';
 import StudyTable from '../components/StudyList/StudyTable';
 import {ALL_STUDIES, MY_PROFILE} from '../state/queries';
 import {SUBSCRIBE_TO, UNSUBSCRIBE_FROM} from '../state/mutations';
@@ -17,6 +17,15 @@ const StudySubscriptionContainer = ({
 }) => {
   if (loadingProfile || loadingStudies || !studies)
     return <div>Loading subscriptions...</div>;
+
+  if (studies.edges.length === 0)
+    return (
+      <Message
+        warning
+        header="You don't have access to any studies yet"
+        content="Your account is being reviewed for the proper permissions."
+      />
+    );
 
   // The studie kfIds the user is subscribed to
   const subscriptions = profile.studySubscriptions.edges.map(
