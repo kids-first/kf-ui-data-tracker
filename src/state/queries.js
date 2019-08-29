@@ -149,8 +149,8 @@ export const GET_PROJECTS = gql`
 export const MY_PROFILE = gql`
   {
     myProfile {
-      roles @client
-      groups @client
+      roles
+      groups
       id
       username
       firstName
