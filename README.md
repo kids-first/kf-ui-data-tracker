@@ -23,13 +23,14 @@ docker network create kf-data-stack
 ```
 
 Checkout kf-api-study-creator master and bring up the study creator API:
+Checkout the [Kids First Data Stack](https://github.com/kids-first/kf-data-stack)
+and make sure the study creator services are running:
 
 ```
-docker-compose up
+docker-compose up study-creator
 ```
 
-APIs endpoint would be viewable from http://localhost:8080/ as GraphiQL portal.
-For more details, go to https://github.com/kids-first/kf-api-study-creator
+For more details on configuring the backend behavior, see the [Study Creator Documentation](https://kids-first.github.io/kf-api-study-creator/index.html).
 
 #### Setup front-end server
 
@@ -40,15 +41,10 @@ git clone https://github.com/kids-first/kf-api-study-creator.git
 cd kf-ui-data-tracker
 ```
 
-Install all dependencies:
+Install all dependencies and start the server:
 
 ```
 yarn
-```
-
-Start the server:
-
-```
 yarn start
 ```
 
@@ -67,10 +63,14 @@ REACT_APP_AUTH0_REDIRECT_URI
 REACT_APP_AUTH0_AUD
 ```
 
+See the provided `.env.schema` file for more details.
+
 #### Access kf-ui-data-tracker front-end
 
-Go to http://localhost:3000/ and login to explore data-tracker
-You can:
+The development server should default to `http://localhost:3000` where you may
+view the Data Tracker in a development environment.
+
+Features include:
 
 - Login with Auth0 or login with Ego
 - View studies, files, and versions
