@@ -241,3 +241,27 @@ export const CREATE_PROJECT = gql`
   }
   ${PROJECT_FIELDS}
 `;
+
+// Mutation to link an exist analysis project
+export const LINK_PROJECT = gql`
+  mutation($project: ID!, $study: ID!) {
+    linkProject(project: $project, study: $study) {
+      project {
+        ...ProjectFields
+      }
+    }
+  }
+  ${PROJECT_FIELDS}
+`;
+
+// Mutation to unlink an exist analysis project
+export const UNLINK_PROJECT = gql`
+  mutation($project: ID!, $study: ID!) {
+    unlinkProject(project: $project, study: $study) {
+      project {
+        ...ProjectFields
+      }
+    }
+  }
+  ${PROJECT_FIELDS}
+`;
