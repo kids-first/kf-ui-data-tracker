@@ -139,7 +139,11 @@ const StudyInfo = ({studyNode, setShowModal, unlinkProject}) => {
               </Button.Group>
             </Header>
             {studyNode.projects.edges.length > 0 ? (
-              <CavaticaProjectList projects={studyNode.projects.edges} />
+              <CavaticaProjectList
+                projects={studyNode.projects.edges}
+                studyId={studyNode.id}
+                unlinkProject={unlinkProject}
+              />
             ) : (
               <Header disabled textAlign="center" as="h4">
                 No linked Cavatica projects.
