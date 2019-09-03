@@ -15,6 +15,7 @@ import {
 } from 'semantic-ui-react';
 
 import UploadMethodsModal from '../modals/UploadMethodsModal';
+import UploadWizard from '../modals/UploadWizard/UploadWizad';
 
 /**
  * A place holder skeleton for a list of files
@@ -116,9 +117,10 @@ const StudyFilesListView = ({
           </Grid.Row>
           {
             dialog ?
-              <UploadMethodsModal
+              <UploadWizard
                 history={history}
                 file={uploadedFile}
+                fileList={files}
                 onCloseDialog={() => { setFile(false); setDialog(false) }}
               />
               : null
