@@ -127,7 +127,7 @@ const StudyInfo = ({studyNode, setShowModal, unlinkProject}) => {
       <Grid.Row stretched>
         <Grid.Column mobile={16} tablet={16} computer={16}>
           <Segment padded>
-            <Header as="h3">
+            <Header as="h3" className="pb-10">
               Cavatica Projects
               <Button.Group floated="right" size="mini">
                 <Button onClick={() => setShowModal('addProject')}>
