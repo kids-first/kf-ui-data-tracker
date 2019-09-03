@@ -1,10 +1,14 @@
 import React from 'react';
-import {graphql} from 'react-apollo';
-import {ALL_STUDIES} from '../state/queries';
+import {compose, graphql} from 'react-apollo';
+import {Link} from 'react-router-dom';
+import {ALL_STUDIES, MY_PROFILE} from '../state/queries';
 import StudyList from '../components/StudyList/StudyList';
-import {Message, Container, Segment} from 'semantic-ui-react';
+import {Button, Message, Container, Segment} from 'semantic-ui-react';
 
-const StudyListView = ({studies: {loading, allStudies, error}}) => {
+const StudyListView = ({
+  studies: {loading, allStudies, error},
+  myProfile: {myProfile},
+}) => {
   if (error)
     return (
       <Container as={Segment} basic>
@@ -20,15 +24,40 @@ const StudyListView = ({studies: {loading, allStudies, error}}) => {
   if (!loading && studyList.length === 0)
     return (
       <Container as={Segment} basic>
-        <Message
-          warning
-          icon="warning circle"
-          header="You don't have access to any studies yet."
-          content="Your account is being reviewed for the proper permissions."
-        />
+        {myProfile && myProfile.roles.includes('ADMIN') ? (
+          <>
+            <Message
+              info
+              icon="info circle"
+              header="No studies yet."
+              content="Create the first study to initialize the Data Resource Center"
+            />
+            <Segment basic textAlign="center">
+              <Button
+                basic
+                primary
+                size="large"
+                icon="add"
+                content="Create Study"
+                as={Link}
+                to={`/study/new-study`}
+              />
+            </Segment>
+          </>
+        ) : (
+          <Message
+            warning
+            icon="warning circle"
+            header="You don't have access to any studies yet."
+            content="Your account is being reviewed for the proper permissions."
+          />
+        )}
       </Container>
     );
   return <StudyList studyList={studyList} loading={loading} />;
 };
 
-export default graphql(ALL_STUDIES, {name: 'studies'})(StudyListView);
+export default compose(
+  graphql(ALL_STUDIES, {name: 'studies'}),
+  graphql(MY_PROFILE, {name: 'myProfile'}),
+)(StudyListView);
