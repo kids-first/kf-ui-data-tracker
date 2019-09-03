@@ -13,13 +13,18 @@ import {
 } from 'semantic-ui-react';
 import {CavaticaProjectList} from '../components/CavaticaProjectList';
 
-import {GET_PROJECTS} from '../state/queries';
-import {SYNC_PROJECTS} from '../state/mutations';
+import {GET_PROJECTS, MY_PROFILE} from '../state/queries';
+import {SYNC_PROJECTS, UNLINK_PROJECT} from '../state/mutations';
 
 const CavaticaProjectsView = ({
   projects: {allProjects, loading, error},
   syncProjects,
+  unlinkProject,
+  user,
 }) => {
+  const isAdmin = !user.loading
+    ? user.myProfile.roles.includes('ADMIN')
+    : false;
   const [syncing, setSyncing] = useState(false);
   const [syncResult, setSyncResult] = useState();
   const [syncErrors, setSyncErrors] = useState();
@@ -92,7 +97,10 @@ const CavaticaProjectsView = ({
           </Segment>
         )}
         {!loading && allProjects && (
-          <CavaticaProjectList projects={allProjects.edges} />
+          <CavaticaProjectList
+            projects={allProjects.edges}
+            unlinkProject={isAdmin ? unlinkProject : null}
+          />
         )}
       </Segment>
     </Container>
@@ -100,6 +108,7 @@ const CavaticaProjectsView = ({
 };
 
 export default compose(
+  graphql(MY_PROFILE, {name: 'user'}),
   graphql(GET_PROJECTS, {name: 'projects'}),
   graphql(SYNC_PROJECTS, {name: 'syncProjects'}),
 )(CavaticaProjectsView);
