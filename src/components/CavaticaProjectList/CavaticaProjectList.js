@@ -3,7 +3,12 @@ import {Link} from 'react-router-dom';
 import {List, Icon} from 'semantic-ui-react';
 import TimeAgo from 'react-timeago';
 
-const CavaticaProjectList = ({projects}) => (
+const CavaticaProjectList = ({
+  projects,
+  unlinkProject,
+  studyId,
+  disableLink,
+}) => (
   <List relaxed divided>
     {projects
       .sort(({node}) => node.name)
