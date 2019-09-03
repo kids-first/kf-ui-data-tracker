@@ -110,5 +110,24 @@ const CavaticaProjectsView = ({
 export default compose(
   graphql(MY_PROFILE, {name: 'user'}),
   graphql(GET_PROJECTS, {name: 'projects'}),
-  graphql(SYNC_PROJECTS, {name: 'syncProjects'}),
+  graphql(SYNC_PROJECTS, {
+    name: 'syncProjects',
+    options: props => ({
+      refetchQueries: [
+        {
+          query: GET_PROJECTS,
+        },
+      ],
+    }),
+  }),
+  graphql(UNLINK_PROJECT, {
+    name: 'unlinkProject',
+    options: props => ({
+      refetchQueries: [
+        {
+          query: GET_PROJECTS,
+        },
+      ],
+    }),
+  }),
 )(CavaticaProjectsView);
