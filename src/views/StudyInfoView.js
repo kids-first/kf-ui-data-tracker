@@ -7,6 +7,7 @@ import {Container, Segment, Message, Placeholder} from 'semantic-ui-react';
 import EmptyView from './EmptyView';
 import EditStudyModal from '../modals/EditStudyModal';
 import NewProjectModal from '../modals/NewProjectModal';
+import LinkProjectModal from '../modals/LinkProjectModal';
 
 const StudyInfoView = ({
   study: {loading, studyByKfId, error},
@@ -17,8 +18,7 @@ const StudyInfoView = ({
   unlinkProject,
 }) => {
   const isBeta = !user.loading ? user.myProfile.roles.includes('BETA') : false;
-  const [showModal, setShowModal] = useState(false);
-  const [showNewProjectModal, setShowNewProjectModal] = useState(false);
+  const [showModal, setShowModal] = useState('');
 
   if (loading)
     return (
@@ -54,19 +54,27 @@ const StudyInfoView = ({
         <StudyInfo
           studyNode={studyByKfId}
           setShowModal={setShowModal}
-          setShowNewProjectModal={setShowNewProjectModal}
+          unlinkProject={unlinkProject}
         />
-        {showModal && (
+        {showModal === 'edit' && (
           <EditStudyModal
             updateStudy={updateStudy}
             studyNode={studyByKfId}
-            onCloseDialog={() => setShowModal(false)}
+            onCloseDialog={() => setShowModal('')}
           />
         )}
-        {showNewProjectModal && (
+        {showModal === 'addProject' && (
           <NewProjectModal
             study={studyByKfId}
-            onCloseDialog={() => setShowNewProjectModal(false)}
+            onCloseDialog={() => setShowModal('')}
+          />
+        )}
+        {showModal === 'linkProject' && (
+          <LinkProjectModal
+            study={studyByKfId}
+            allProjects={allProjects}
+            linkProject={linkProject}
+            onCloseDialog={() => setShowModal('')}
           />
         )}
       </Container>

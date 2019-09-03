@@ -8,7 +8,7 @@ import CavaticaProjectList from '../CavaticaProjectList/CavaticaProjectList';
 /**
  * Displays study baisc information
  */
-const StudyInfo = ({studyNode, setShowModal, setShowNewProjectModal}) => {
+const StudyInfo = ({studyNode, setShowModal, unlinkProject}) => {
   return (
     <Grid padded="vertically">
       <Grid.Row stretched>
@@ -20,7 +20,7 @@ const StudyInfo = ({studyNode, setShowModal, setShowNewProjectModal}) => {
                 floated="right"
                 size="mini"
                 primary
-                onClick={() => setShowModal(true)}
+                onClick={() => setShowModal('edit')}
               >
                 EDIT
               </Button>
@@ -129,13 +129,14 @@ const StudyInfo = ({studyNode, setShowModal, setShowNewProjectModal}) => {
           <Segment padded>
             <Header as="h3">
               Cavatica Projects
-              <Button
-                floated="right"
-                size="mini"
-                onClick={() => setShowNewProjectModal(true)}
-              >
-                NEW PROJECT
-              </Button>
+              <Button.Group floated="right" size="mini">
+                <Button onClick={() => setShowModal('addProject')}>
+                  NEW PROJECT
+                </Button>
+                <Button primary onClick={() => setShowModal('linkProject')}>
+                  LINK PROJECT
+                </Button>
+              </Button.Group>
             </Header>
             {studyNode.projects.edges.length > 0 ? (
               <CavaticaProjectList projects={studyNode.projects.edges} />
