@@ -1,15 +1,23 @@
 import React from 'react';
 import {List, Icon} from 'semantic-ui-react';
 import TimeAgo from 'react-timeago';
-import {eventType} from '../../common/fileUtils';
+import {eventType} from '../../common/enums';
 
 const EventList = ({events}) => (
   <List relaxed="very">
     {events.map(({node}) => (
       <List.Item key={node.id}>
         <Icon
-          name={eventType[node.eventType].iconName}
-          color={eventType[node.eventType].iconColor}
+          name={
+            node.eventType in eventType
+              ? eventType[node.eventType].iconName
+              : eventType.OTH.iconName
+          }
+          color={
+            node.eventType in eventType
+              ? eventType[node.eventType].iconColor
+              : eventType.OTH.iconColor
+          }
         />
         <List.Content>
           <List.Content floated="right">
