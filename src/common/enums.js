@@ -102,5 +102,30 @@ export const eventType = {
     iconName: 'refresh',
     iconColor: 'yellow',
   },
+  PR_CRE: {
+    title: 'Project Created',
+    iconName: 'add',
+    iconColor: 'green',
+  },
+  PR_UPD: {
+    title: 'Project Updated',
+    iconName: 'refresh',
+    iconColor: 'green',
+  },
+  PR_DEL: {
+    title: 'Project Deleted',
+    iconName: 'delete',
+    iconColor: 'red',
+  },
+  PR_LIN: {
+    title: 'Project Linked',
+    iconName: 'linkify',
+    iconColor: 'green',
+  },
+  PR_UNL: {
+    title: 'Project Unlinked',
+    iconName: 'unlinkify',
+    iconColor: 'red',
+  },
   OTH: {title: 'Other', iconName: 'question', iconColor: 'blue'},
 };
