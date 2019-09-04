@@ -171,3 +171,64 @@ export const MY_PROFILE = gql`
     }
   }
 `;
+// Get all users
+export const ALL_USERS = gql`
+  query AllUsers {
+    allUsers {
+      edges {
+        node {
+          id
+          username
+        }
+      }
+    }
+  }
+`;
+
+// Get all events
+export const ALL_EVENTS = gql`
+  query AllEvents(
+    $studyId: String
+    $fileId: String
+    $versionId: String
+    $createdAfter: DateTime
+    $createdBefore: DateTime
+    $username: String
+    $eventType: String
+    $orderBy: String
+  ) {
+    allEvents(
+      studyKfId: $studyId
+      fileKfId: $fileId
+      versionKfId: $versionId
+      createdAfter: $createdAfter
+      createdBefore: $createdBefore
+      username: $username
+      eventType: $eventType
+      orderBy: $orderBy
+    ) {
+      edges {
+        node {
+          ...EventFields
+          study {
+            ...StudyBasicFields
+          }
+          project {
+            ...ProjectFields
+          }
+          file {
+            ...FileFields
+          }
+          version {
+            ...VersionFields
+          }
+        }
+      }
+    }
+  }
+  ${EVENT_FIELDS}
+  ${STUDY_BASIC_FIELDS}
+  ${FILE_FIELDS}
+  ${VERSION_FIELDS}
+  ${PROJECT_FIELDS}
+`;
