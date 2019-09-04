@@ -1,7 +1,7 @@
 import React from 'react';
 import {List, Icon} from 'semantic-ui-react';
 import TimeAgo from 'react-timeago';
-import {eventType} from '../../common/fileUtils';
+import {eventType} from '../../common/enums';
 
 const EventList = ({events}) => (
   <List relaxed="very">

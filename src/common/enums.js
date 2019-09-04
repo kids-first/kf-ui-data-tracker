@@ -68,3 +68,39 @@ export const workflowOptions = [
   {key: 'arriba', value: 'arriba', text: 'Arriba'},
   {key: 'peddy', value: 'peddy', text: 'peddy'},
 ];
+
+// Styling for different event types
+export const eventType = {
+  SF_CRE: {
+    title: 'Study File Created',
+    iconName: 'add',
+    iconColor: 'green',
+  },
+  SF_UPD: {
+    title: 'Study File Updated',
+    iconName: 'refresh',
+    iconColor: 'yellow',
+  },
+  SF_DEL: {
+    title: 'Study File Deleted',
+    iconName: 'delete',
+    iconColor: 'red',
+  },
+  FV_CRE: {
+    title: 'File Version Created',
+    iconName: 'add',
+    iconColor: 'green',
+  },
+  FV_UPD: {
+    title: 'File Version Updated',
+    iconName: 'refresh',
+    iconColor: 'yellow',
+  },
+  SD_CRE: {title: 'Study Created', iconName: 'add', iconColor: 'green'},
+  SD_UPD: {
+    title: 'Study Updated',
+    iconName: 'refresh',
+    iconColor: 'yellow',
+  },
+  OTH: {title: 'Other', iconName: 'question', iconColor: 'blue'},
+};
