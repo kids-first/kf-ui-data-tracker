@@ -1,4 +1,6 @@
-import {KF_STUDY_API} from './globals';
+import { KF_STUDY_API } from './globals';
+
+import * as stringSimilarity from 'string-similarity';
 
 // Compare date of file versions based on their createdAt time. (Latest first)
 export const dateCompare = (version1, version2) => {
@@ -67,10 +69,46 @@ export const fileTypeDetail = {
 
 // Store version state title and color
 export const versionState = {
-  PEN: {title: 'Pending review', labelColor: 'orange'},
-  APP: {title: 'Approved', labelColor: 'teal'},
-  CHN: {title: 'Changes needed', labelColor: 'red'},
-  PRC: {title: 'Processed', labelColor: 'blue'},
+  PEN: { title: 'Pending review', labelColor: 'orange' },
+  APP: { title: 'Approved', labelColor: 'teal' },
+  CHN: { title: 'Changes needed', labelColor: 'red' },
+  PRC: { title: 'Processed', labelColor: 'blue' },
+};
+
+// Store event type title and color
+export const eventType = {
+  SF_CRE: {
+    title: 'Study File Created',
+    iconName: 'add',
+    iconColor: 'green',
+  },
+  SF_UPD: {
+    title: 'Study File Updated',
+    iconName: 'refresh',
+    iconColor: 'yellow',
+  },
+  SF_DEL: {
+    title: 'Study File Deleted',
+    iconName: 'delete',
+    iconColor: 'red',
+  },
+  FV_CRE: {
+    title: 'File Version Created',
+    iconName: 'add',
+    iconColor: 'green',
+  },
+  FV_UPD: {
+    title: 'File Version Updated',
+    iconName: 'refresh',
+    iconColor: 'yellow',
+  },
+  SD_CRE: { title: 'Study Created', iconName: 'add', iconColor: 'green' },
+  SD_UPD: {
+    title: 'Study Updated',
+    iconName: 'refresh',
+    iconColor: 'yellow',
+  },
+  OTH: { title: 'Other', iconName: 'question', iconColor: 'blue' },
 };
 
 // Sort file versions based on the version createdAt date (Latest first)
@@ -127,8 +165,8 @@ export const createDateSort = (a, b) => {
     ? 1
     : Date.parse(fileOldestDate(fileSortedVersions(b.node))) >
       Date.parse(fileOldestDate(fileSortedVersions(a.node)))
-    ? -1
-    : 0;
+      ? -1
+      : 0;
 };
 
 // Sort files by modified date
@@ -138,8 +176,8 @@ export const modifiedDateSort = (a, b) => {
     ? 1
     : Date.parse(fileLatestDate(fileSortedVersions(b.node))) >
       Date.parse(fileLatestDate(fileSortedVersions(a.node)))
-    ? -1
-    : 0;
+      ? -1
+      : 0;
 };
 
 // Default sorting by brining "Changes Needed" files to the top
@@ -148,6 +186,26 @@ export const defaultSort = (a, b) => {
     fileLatestStatus(b.node) === 'CHN'
     ? 1
     : fileLatestStatus(b.node) !== 'CHN' && fileLatestStatus(a.node) === 'CHN'
-    ? -1
-    : 0;
+      ? -1
+      : 0;
 };
+
+
+// sort list of file nodes by string similarity to file name
+export const sortFilesBySimilarity = (file, fileList, threshold = 0.3) => {
+
+  const sortByRating = files => files.sort((a, b) => (a.rating > b.rating) ? 1 : -1).reverse()
+
+  // find bestMatches for filename's similar to the uploaded document
+  const fileMatches = stringSimilarity.findBestMatch(file.name || '', fileList.length ? fileList.map(x => x.node.name) : [])
+  // sort bestMatches by rating descending
+  const similarDocuments = fileMatches.ratings.filter(f => f.rating > threshold);
+
+  const updateDocumentsList = fileList.map(({ node }) => ({ rating: fileMatches.ratings.filter(({ target }) => target === node.name)[0].rating, ...node }))
+
+  return {
+    best_match: fileMatches.bestMatch,
+    matches: sortByRating(similarDocuments),
+    ranked_files: sortByRating(updateDocumentsList)
+  }
+}
