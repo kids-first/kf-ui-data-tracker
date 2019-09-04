@@ -312,7 +312,22 @@ const NewStudyForm = ({submitValue, apiErrors}) => {
                     <List.Item>Dataservice study</List.Item>
                     <List.Item>S3 bucket</List.Item>
                     <List.Item>Cavatica delivery project</List.Item>
-                    <List.Item>Cavatica harmonization projects</List.Item>
+                    <List.Item>
+                      Cavatica harmonization projects
+                      {workflowType.length > 0 && (
+                        <List.List>
+                          {workflowType.map(type => (
+                            <List.Item key={type}>
+                              {
+                                workflowOptions.filter(
+                                  obj => obj.value === type,
+                                )[0].text
+                              }
+                            </List.Item>
+                          ))}
+                        </List.List>
+                      )}
+                    </List.Item>
                   </List>
                 </Container>
               }
