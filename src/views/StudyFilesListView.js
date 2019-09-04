@@ -14,7 +14,6 @@ import {
   Button
 } from 'semantic-ui-react';
 
-import UploadMethodsModal from '../modals/UploadMethodsModal';
 import UploadWizard from '../modals/UploadWizard/UploadWizad';
 
 /**
@@ -119,6 +118,7 @@ const StudyFilesListView = ({
             dialog ?
               <UploadWizard
                 history={history}
+                studyId={kfId}
                 file={uploadedFile}
                 fileList={files}
                 onCloseDialog={() => { setFile(false); setDialog(false) }}
