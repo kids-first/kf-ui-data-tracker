@@ -13,7 +13,9 @@ const NewStudyView = ({match, history, location, createStudy}) => {
 
   const submitValue = values => {
     setStudyCreating(true);
-    createStudy({variables: {input: values}})
+    createStudy({
+      variables: {input: values.input, workflows: values.workflowType},
+    })
       .then(resp => {
         const studyId = resp.data.createStudy.study.kfId;
         setStudyCreating(false);
