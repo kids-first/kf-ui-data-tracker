@@ -8,8 +8,16 @@ const EventList = ({events}) => (
     {events.map(({node}) => (
       <List.Item key={node.id}>
         <Icon
-          name={eventType[node.eventType].iconName}
-          color={eventType[node.eventType].iconColor}
+          name={
+            node.eventType in eventType
+              ? eventType[node.eventType].iconName
+              : eventType.OTH.iconName
+          }
+          color={
+            node.eventType in eventType
+              ? eventType[node.eventType].iconColor
+              : eventType.OTH.iconColor
+          }
         />
         <List.Content>
           <List.Content floated="right">
