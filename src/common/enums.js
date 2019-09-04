@@ -14,7 +14,7 @@ export const workflowOptions = [
     text: 'GATK Genotypgvcf',
   },
   {
-    key: 'gatk_genotypgvcf_vqsr',
+    key: 'gatk_genotypegvcf_vqsr',
     value: 'gatk_genotypegvcf_vqsr',
     text: 'GATK GenotypeGVCF VQSR',
   },

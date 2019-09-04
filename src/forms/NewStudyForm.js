@@ -10,11 +10,18 @@ import {
   Grid,
   Confirm,
   List,
+  Dropdown,
 } from 'semantic-ui-react';
 import {Formik} from 'formik';
+import {workflowOptions} from '../common/enums';
 
 const NewStudyForm = ({submitValue, apiErrors}) => {
   const [confirmOpen, setConfirmOpen] = useState(false);
+  const [workflowType, setSelection] = useState([
+    'bwa_mem',
+    'gatk_haplotypecaller',
+  ]);
+
   return (
     <Segment padded="very" clearing>
       <Formik
@@ -47,7 +54,7 @@ const NewStudyForm = ({submitValue, apiErrors}) => {
           if (values.releaseDate.length === 0) {
             inputObject.releaseDate = null;
           }
-          submitValue(inputObject);
+          submitValue({input: inputObject, workflowType: workflowType});
         }}
       >
         {({
@@ -223,6 +230,33 @@ const NewStudyForm = ({submitValue, apiErrors}) => {
                 </Grid.Column>
               </Grid.Row>
               <Grid.Row verticalAlign="middle">
+                <Grid.Column width={8}>
+                  <Form.Field>
+                    <label>Cavatica Projects:</label>
+                    <Dropdown
+                      id="workflowType"
+                      name="workflowType"
+                      placeholder="Workflow Type"
+                      fluid
+                      selection
+                      clearable
+                      multiple
+                      options={workflowOptions}
+                      onChange={(e, {value}) => {
+                        setSelection(value);
+                      }}
+                      value={workflowType}
+                    />
+                  </Form.Field>
+                </Grid.Column>
+                <Grid.Column width={8}>
+                  <Message size="small">
+                    Select one or multiple workflows to be run for this study,
+                    default as "bwa_mem" and "GATK Haplotypecaller"
+                  </Message>
+                </Grid.Column>
+              </Grid.Row>
+              <Grid.Row verticalAlign="middle">
                 <Grid.Column width={16}>
                   <Form.Field>
                     <label>Description:</label>
@@ -278,7 +312,22 @@ const NewStudyForm = ({submitValue, apiErrors}) => {
                     <List.Item>Dataservice study</List.Item>
                     <List.Item>S3 bucket</List.Item>
                     <List.Item>Cavatica delivery project</List.Item>
-                    <List.Item>Cavatica harmonization projects</List.Item>
+                    <List.Item>
+                      Cavatica harmonization projects
+                      {workflowType.length > 0 && (
+                        <List.List>
+                          {workflowType.map(type => (
+                            <List.Item key={type}>
+                              {
+                                workflowOptions.filter(
+                                  obj => obj.value === type,
+                                )[0].text
+                              }
+                            </List.Item>
+                          ))}
+                        </List.List>
+                      )}
+                    </List.Item>
                   </List>
                 </Container>
               }
