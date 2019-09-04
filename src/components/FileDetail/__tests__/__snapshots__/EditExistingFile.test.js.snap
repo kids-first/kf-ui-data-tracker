@@ -68,6 +68,17 @@ exports[`edits an existing file correctly 1`] = `
               />
               Cavatica Projects
             </a>
+            <a
+              class="item"
+              href="/events"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="history icon"
+              />
+              Event Log
+            </a>
           </div>
         </div>
         <div
@@ -793,6 +804,17 @@ exports[`edits an existing file correctly 2`] = `
               />
               Cavatica Projects
             </a>
+            <a
+              class="item"
+              href="/events"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="history icon"
+              />
+              Event Log
+            </a>
           </div>
         </div>
         <div
@@ -1385,6 +1407,17 @@ exports[`edits an existing file correctly 3`] = `
                 class="folder open icon"
               />
               Cavatica Projects
+            </a>
+            <a
+              class="item"
+              href="/events"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="history icon"
+              />
+              Event Log
             </a>
           </div>
         </div>
