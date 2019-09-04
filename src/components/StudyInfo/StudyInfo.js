@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TimeAgo from 'react-timeago';
 import {List, Grid, Header, Segment, Button} from 'semantic-ui-react';
-import EventList from './EventList';
+import EventList from '../EventList/EventList';
 import FileSimpleList from './FileSimpleList';
 import CavaticaProjectList from '../CavaticaProjectList/CavaticaProjectList';
 /**
