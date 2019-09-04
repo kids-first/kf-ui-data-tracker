@@ -32,7 +32,6 @@ const ChooseMethodStep = ({ file, history, setStep }) => (
 );
 
 ChooseMethodStep.propTypes = {
-
   /** The file that the document is being created or updated for */
   file: PropTypes.object.isRequired,
   /** Function to advance multi-step modal to the next step  */

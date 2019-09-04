@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Header, Modal, Icon, Message } from 'semantic-ui-react';
-import ChooseMethodStep from './ChooseMethodStep';
-import ExistingDocuentSelectionStep from './ExistingDocuentSelectionStep'
-import VersionSummaryStep from './VersionSummaryStep';
-import * as stringSimilarity from 'string-similarity';
+import { ChooseMethodStep, DocumentSelectionStep, SuccessStep, VersionSummaryStep } from './UploadSteps';
+import { graphql } from 'react-apollo';
+import { GET_STUDY_BY_ID } from '../../state/queries';
+import { CREATE_VERSION } from '../../state/mutations';
+import { sortFilesBySimilarity } from '../../common/fileUtils';
 
 
+// store all of our upload steps and their associated components
 const UPLOAD_STEPS = {
   0: {
     title: 'Choose an Upload Method',
@@ -14,30 +16,87 @@ const UPLOAD_STEPS = {
   },
   1: {
     title: 'Update Existing Study Document',
-    comp: ExistingDocuentSelectionStep
+    comp: DocumentSelectionStep
   },
   2: {
     title: 'Summarize Your Update',
     comp: VersionSummaryStep,
+  },
+  3: {
+    title: 'Document Updated',
+    comp: SuccessStep
   }
 }
 
-/** Multi-step modal for uplaoding new documents as files versions or creating new documents */
-const UploadWizard = ({ onCloseDialog, history, file, fileList }) => {
+/** custom hook to set a 3 second timer  */
+const useTimerHook = (isActive, onEnd) => {
+  const [seconds, setSeconds] = useState(0);
+
+  useEffect(() => {
+    let interval = null;
+    if (isActive && seconds < 3) {
+      interval = setInterval(() => {
+        setSeconds(seconds => seconds + 1);
+      }, 1000);
+    } else if (seconds >= 3) {
+      clearInterval(interval);
+      onEnd();
+    } else {
+      clearInterval(interval);
+    }
+    return () => clearInterval(interval);
+  }, [isActive, seconds, onEnd]);
+
+  return seconds;
+
+}
+
+/** Multi-step modal for uplaoding files as document versions or creating new documents */
+const UploadWizard = ({ createVersion, onCloseDialog, history, file, fileList, studyId }) => {
   // The current step that the flow is on
   const [step, setStep] = useState(0);
+  // store the selected study file to create version for
   const [fileToUpdate, setFileToUpdate] = useState(null);
+  // TODO: set upload error state in ui
+  // For any errors that occur during upload
+  const [errors, setErrors] = useState();
+  // For the uploading stage
+  const [onUploading, setUploading] = useState(false);
+  // Hold the version change description
+  const [description, setDescription] = useState();
+
+  const similarDocuments = sortFilesBySimilarity(file, fileList)
+
+  const handleCloseDialog = () => {
+    setStep(0);
+    onCloseDialog();
+  }
+
+  const [isTimerActive, setIsTimerActive] = useState(false);
+  const seconds = useTimerHook(isTimerActive, handleCloseDialog);
 
 
-  const MIN_SIMILIRATIY = 0.3;
-  // find bestMatches for filename's similar to the uploaded document
-  const fileMatches = stringSimilarity.findBestMatch(file.name || '', fileList.length ? fileList.map(x => x.node.name) : [])
-  // sort bestMatches by rating descending
-  const similarDocuments = fileMatches.ratings.filter(f => f.rating > MIN_SIMILIRATIY).sort((a, b) => (a.rating > b.rating) ? 1 : -1).reverse();
+
+  /** TODO: abstract to custom hook or external util */
+  const handleSave = async (props) => {
+    try {
+      setUploading(true);
+      await createVersion({ variables: { file, fileId: fileToUpdate.kfId, description } })
+      setUploading(false);
+      setIsTimerActive(true);
+      setStep(3);
+
+    } catch (e) {
+      setIsTimerActive(false);
+      setErrors(e)
+    }
+  };
+
+
 
 
   return (
-    <Modal open={true} onClose={() => { setStep(0); onCloseDialog() }} closeIcon>
+    <Modal open={true} onClose={() => { handleCloseDialog() }} closeIcon>
 
       <Header>
         <Header.Subheader as='h2'><Icon name="upload cloud" />Upload: {file.name}</Header.Subheader>
@@ -46,14 +105,14 @@ const UploadWizard = ({ onCloseDialog, history, file, fileList }) => {
 
       <Modal.Content >
 
-        {similarDocuments.length && step < 2 ?
+        {similarDocuments.matches.length && step < 2 ?
           <Message info size="mini" >
             <Icon name='info circle' />
-            <strong>{similarDocuments.length}</strong> similar documents found
+            <strong>{similarDocuments.matches.length}</strong> similar documents found
           </Message>
           : null}
 
-        {UPLOAD_STEPS[step].comp({ history, file, fileList, setStep, setFileToUpdate, fileToUpdate })}
+        {UPLOAD_STEPS[step].comp({ history, file, fileList, setStep, setFileToUpdate, fileToUpdate, setDescription, handleCloseDialog, isTimerActive, seconds })}
 
 
       </Modal.Content>
@@ -65,28 +124,28 @@ const UploadWizard = ({ onCloseDialog, history, file, fileList }) => {
           labelPosition="left"
           floated="left"
           size="mini"
+          disabled={onUploading}
           onClick={() => {
-            if (step === 0) {
-              setStep(0);
-              onCloseDialog();
+            if (step === 0 || step === 3) {
+              handleCloseDialog();
             }
             setStep(step - 1);
           }}
         >
-          <Icon name="arrow left" />
-          Back
-          </Button>
+
+          {step === 3 ? <><Icon name="x" />Close</> : <><Icon name="arrow left" /> Back </>}
+        </Button>
 
         <Button
           primary
           icon
           labelPosition="left"
           size="mini"
-          disabled={step < 2 || !file}
-        // onClick={handleSave}
+          disabled={step !== 2 || !file}
+          onClick={handleSave}
         >
           <Icon name="upload cloud" />
-          UPLOAD
+          {onUploading ? 'UPLOADING ...' : 'UPLOAD'}
         </Button>
       </Modal.Actions>
 
@@ -106,4 +165,12 @@ UploadWizard.propTypes = {
   history: PropTypes.any,
 }
 
-export default UploadWizard;
+export default graphql(CREATE_VERSION, {
+  name: 'createVersion',
+  options: ({ studyId }) => ({
+    awaitRefetchQueries: true,
+    refetchQueries: [
+      { query: GET_STUDY_BY_ID, variables: { kfId: studyId } },
+    ],
+  }),
+})(UploadWizard);
