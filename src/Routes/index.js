@@ -17,6 +17,7 @@ import {
   ProfileView,
   NewStudyView,
   StudyInfoView,
+  EventsView,
 } from '../views';
 const Routes = () => (
   <Fragment>
@@ -60,6 +61,11 @@ const Routes = () => (
         exact
         path="/cavatica-projects"
         component={CavaticaProjectsView}
+      />
+      <AdminRoute
+        exact
+        path="/events"
+        component={EventsView}
       />
     </Switch>
   </Fragment>
