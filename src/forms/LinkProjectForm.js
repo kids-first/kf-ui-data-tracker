@@ -6,7 +6,7 @@ import CavaticaProjectItem from '../components/CavaticaProjectList/CavaticaProje
 const LinkProjectForm = ({formikProps, apiErrors, allProjects}) => {
   const {errors, touched, handleBlur, setFieldValue} = formikProps;
   const options =
-    allProjects.edges && allProjects.edges.length > 0
+    allProjects && allProjects.edges && allProjects.edges.length > 0
       ? allProjects.edges.map(({node}) => ({
           key: node.id,
           value: node.id,
@@ -31,7 +31,7 @@ const LinkProjectForm = ({formikProps, apiErrors, allProjects}) => {
           options={options}
           placeholder={
             options.length === 0
-              ? "You don't have access to link any projects."
+              ? "There are no projects to link"
               : 'Choose a project'
           }
           onChange={(e, {name, value}) => {
