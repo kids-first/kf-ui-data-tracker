@@ -34,6 +34,10 @@ const StudyInfo = ({studyNode, setShowModal, unlinkProject}) => {
               </Header>
               <List relaxed size="large">
                 <List.Item>
+                  <List.Description>External ID</List.Description>
+                  <List.Header>{studyNode.externalId || 'Unknown'}</List.Header>
+                </List.Item>
+                <List.Item>
                   <List.Description>Name</List.Description>
                   <List.Header>{studyNode.name || 'Unknown'}</List.Header>
                 </List.Item>
