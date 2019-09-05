@@ -171,6 +171,7 @@ const EditStudyForm = ({formikProps}) => {
               Study description in markdown, commonly the X01 abstract text.
             </Message>
             <Form.TextArea
+              rows="15"
               type="text"
               name="description"
               onChange={handleChange}

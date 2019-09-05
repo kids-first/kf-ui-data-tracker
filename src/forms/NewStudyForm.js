@@ -264,6 +264,7 @@ const NewStudyForm = ({submitValue, apiErrors}) => {
                       text.
                     </Message>
                     <Form.TextArea
+                      rows="15"
                       type="text"
                       name="description"
                       onChange={handleChange}

@@ -57,7 +57,7 @@ const EditStudyModal = ({studyNode, updateStudy, onCloseDialog}) => {
           as={Form}
           open={true}
           onClose={onCloseDialog}
-          size="small"
+          size="large"
           closeIcon
         >
           <Modal.Header content="Edit Study Info" />
