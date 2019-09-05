@@ -73,39 +73,6 @@ const NewStudyForm = ({submitValue, apiErrors}) => {
               <Grid.Row verticalAlign="middle">
                 <Grid.Column width={8}>
                   <Form.Field required>
-                    <label>External ID:</label>
-                    <Form.Input
-                      fluid
-                      type="text"
-                      name="externalId"
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      value={values.externalId}
-                      error={
-                        touched.externalId !== undefined &&
-                        errors.externalId !== undefined &&
-                        errors.externalId.length > 0
-                      }
-                    />
-                    {touched.externalId &&
-                      errors.externalId &&
-                      errors.externalId.length > 0 && (
-                        <Label pointing basic color="red">
-                          {errors.externalId}
-                        </Label>
-                      )}
-                  </Form.Field>
-                </Grid.Column>
-                <Grid.Column width={8}>
-                  <Message size="small">
-                    Identifier used by external systems, often the PHS ID if the
-                    study is registered with dbGaP.
-                  </Message>
-                </Grid.Column>
-              </Grid.Row>
-              <Grid.Row verticalAlign="middle">
-                <Grid.Column width={8}>
-                  <Form.Field required>
                     <label>Study name:</label>
                     <Form.Input
                       fluid
@@ -154,7 +121,39 @@ const NewStudyForm = ({submitValue, apiErrors}) => {
                   </Message>
                 </Grid.Column>
               </Grid.Row>
-
+              <Grid.Row verticalAlign="middle">
+                <Grid.Column width={8}>
+                  <Form.Field required>
+                    <label>External ID:</label>
+                    <Form.Input
+                      fluid
+                      type="text"
+                      name="externalId"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.externalId}
+                      error={
+                        touched.externalId !== undefined &&
+                        errors.externalId !== undefined &&
+                        errors.externalId.length > 0
+                      }
+                    />
+                    {touched.externalId &&
+                      errors.externalId &&
+                      errors.externalId.length > 0 && (
+                        <Label pointing basic color="red">
+                          {errors.externalId}
+                        </Label>
+                      )}
+                  </Form.Field>
+                </Grid.Column>
+                <Grid.Column width={8}>
+                  <Message size="small">
+                    Identifier used by external systems, often the PHS ID if the
+                    study is registered with dbGaP.
+                  </Message>
+                </Grid.Column>
+              </Grid.Row>
               <Grid.Row verticalAlign="middle">
                 <Grid.Column width={8}>
                   <Form.Field>
