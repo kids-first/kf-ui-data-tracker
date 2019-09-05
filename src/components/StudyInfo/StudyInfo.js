@@ -98,21 +98,19 @@ const StudyInfo = ({studyNode, setShowModal, unlinkProject}) => {
                   </List.Header>
                 </List.Item>
                 <List.Item>
-                  <List.Description>
-                    dbGaP - Link to Attribution
-                  </List.Description>
+                  <List.Description>Link to Attribution</List.Description>
                   <List.Header>
                     {studyNode.attribution || 'Unknown'}
                   </List.Header>
                 </List.Item>
                 <List.Item>
-                  <List.Description>dbGaP - Accession Number</List.Description>
+                  <List.Description>Access Authority</List.Description>
                   <List.Header>
                     {studyNode.dataAccessAuthority || 'Unknown'}
                   </List.Header>
                 </List.Item>
                 <List.Item>
-                  <List.Description>dbGaP - Version</List.Description>
+                  <List.Description>Access Authority Version</List.Description>
                   <List.Header>{studyNode.version || 'Unknown'}</List.Header>
                 </List.Item>
               </List>
