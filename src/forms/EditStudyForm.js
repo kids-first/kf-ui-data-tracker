@@ -99,7 +99,7 @@ const EditStudyForm = ({formikProps}) => {
               name="releaseDate"
               onChange={handleChange}
               onBlur={handleBlur}
-              value={values.releaseDate}
+              value={values.releaseDate == null ? '' : values.releaseDate}
             />
           </Form.Field>
         </Grid.Column>
