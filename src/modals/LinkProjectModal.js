@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {LinkProjectForm} from '../forms';
-import {Button, Form, Modal} from 'semantic-ui-react';
+import {Button, Form, Message, Modal} from 'semantic-ui-react';
 import {Formik} from 'formik';
 
 const LinkProjectModal = ({linkProject, onCloseDialog, study, allProjects}) => {
@@ -47,19 +47,31 @@ const LinkProjectModal = ({linkProject, onCloseDialog, study, allProjects}) => {
         >
           <Modal.Header content="Link an Existing Analysis Project" />
           <Modal.Content>
-            <p>An existing Cavatica project will be linked to this study.</p>
-            <LinkProjectForm
-              formikProps={formikProps}
-              allProjects={allProjects}
-              apiErrors={errors}
-            />
+            <p>Link a Cavatica Project to this study</p>
+            {!allProjects || allProjects.length === 0 ? (
+              <Message
+                info
+                icon="info"
+                header="No Projects Available"
+                content="There are currently no projects available for linking. All projects may already be linked, or they need to be sychronized with Cavatica by an administrator."
+              />
+            ) : (
+              <LinkProjectForm
+                formikProps={formikProps}
+                allProjects={allProjects}
+                apiErrors={errors}
+              />
+            )}
           </Modal.Content>
           <Modal.Actions>
             <Button
               primary
               size="mini"
               type="submit"
-              disabled={Object.keys(formikProps.errors).length > 0}
+              disabled={
+                Object.keys(formikProps.errors).length > 0 ||
+                (!allProjects || allProjects.length === 0)
+              }
               loading={formikProps.isSubmitting}
             >
               Link
