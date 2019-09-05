@@ -92,6 +92,34 @@ const EditStudyForm = ({formikProps}) => {
       <Grid.Row verticalAlign="middle">
         <Grid.Column width={8}>
           <Form.Field>
+            <label>Version:</label>
+            <Form.Input
+              fluid
+              type="text"
+              name="version"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.version}
+              error={
+                touched.version && errors.version && errors.version.length > 0
+              }
+            />
+            {touched.version && errors.version && errors.version.length > 0 && (
+              <Label pointing basic color="red">
+                {errors.version}
+              </Label>
+            )}
+          </Form.Field>
+        </Grid.Column>
+        <Grid.Column width={8}>
+          <Message size="small">
+            Study version, often the provided by the data access authority.
+          </Message>
+        </Grid.Column>
+      </Grid.Row>
+      <Grid.Row verticalAlign="middle">
+        <Grid.Column width={8}>
+          <Form.Field>
             <label>Release date:</label>
             <Form.Input
               fluid
@@ -160,6 +188,46 @@ const EditStudyForm = ({formikProps}) => {
         <Grid.Column width={8}>
           <Message size="small">
             The organization responsible for this study.
+          </Message>
+        </Grid.Column>
+      </Grid.Row>
+      <Grid.Row verticalAlign="middle">
+        <Grid.Column width={8}>
+          <Form.Field>
+            <label>Attribution:</label>
+            <Form.Input
+              fluid
+              type="text"
+              name="attribution"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.attribution}
+            />
+          </Form.Field>
+        </Grid.Column>
+        <Grid.Column width={8}>
+          <Message size="small">
+            The URL providing more information about the study.
+          </Message>
+        </Grid.Column>
+      </Grid.Row>
+      <Grid.Row verticalAlign="middle">
+        <Grid.Column width={8}>
+          <Form.Field>
+            <label>S3 Bucket:</label>
+            <Form.Input
+              fluid
+              type="text"
+              name="bucket"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.bucket}
+            />
+          </Form.Field>
+        </Grid.Column>
+        <Grid.Column width={8}>
+          <Message size="small">
+            The s3 bucket where data for this study resides.
           </Message>
         </Grid.Column>
       </Grid.Row>
