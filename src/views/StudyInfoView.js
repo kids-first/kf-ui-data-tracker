@@ -124,6 +124,7 @@ export default compose(
           query: GET_PROJECTS,
           variables: {
             study: '',
+            deleted: false,
           },
         },
       ],
@@ -135,6 +136,7 @@ export default compose(
     options: props => ({
       variables: {
         study: '',
+        deleted: false,
       },
     }),
   }),
