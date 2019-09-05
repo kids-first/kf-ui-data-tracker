@@ -32,6 +32,9 @@ const EditStudyModal = ({studyNode, updateStudy, onCloseDialog}) => {
         releaseDate: studyNode.releaseDate || '',
         anticipatedSamples: studyNode.anticipatedSamples || 0,
         awardeeOrganization: studyNode.awardeeOrganization || '',
+        attribution: studyNode.attribution || '',
+        version: studyNode.version || '',
+        bucket: studyNode.bucket || '',
       }}
       validate={values => {
         let errors = {};
@@ -43,6 +46,9 @@ const EditStudyModal = ({studyNode, updateStudy, onCloseDialog}) => {
         }
         if (values.anticipatedSamples < 0) {
           errors.anticipatedSamples = 'Invalid number of anticipated samples';
+        }
+        if (values.version.length > 10) {
+          errors.version = 'Maximum 10 characters long';
         }
         return errors;
       }}
@@ -57,7 +63,7 @@ const EditStudyModal = ({studyNode, updateStudy, onCloseDialog}) => {
           as={Form}
           open={true}
           onClose={onCloseDialog}
-          size="small"
+          size="large"
           closeIcon
         >
           <Modal.Header content="Edit Study Info" />

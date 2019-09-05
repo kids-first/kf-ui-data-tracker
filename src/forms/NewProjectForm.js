@@ -11,6 +11,7 @@ const NewProjectForm = ({formikProps, apiErrors, excludeWorkflows}) => {
       <Form.Field required>
         <label>Workflow Type:</label>
         <Form.Select
+          id="workflowType"
           type="select"
           name="workflowType"
           onChange={(e, {name, value}) => setFieldValue(name, value)}
