@@ -12,256 +12,275 @@ exports[`Study basic info edit study modal renders correctly 1`] = `
         class="eight wide computer sixteen wide mobile sixteen wide tablet column"
       >
         <div
-          class="ui padded segment"
+          class="ui segments"
         >
-          <h3
-            class="ui header"
-          >
-            Study Info
-            <button
-              class="ui mini primary right floated button"
-            >
-              EDIT
-            </button>
-          </h3>
           <div
-            class="ui large relaxed list"
-            role="list"
+            class="ui padded segment"
           >
+            <h3
+              class="ui header"
+            >
+              Study Info
+              <button
+                class="ui mini primary right floated button"
+              >
+                EDIT
+              </button>
+            </h3>
             <div
-              class="item"
-              role="listitem"
+              class="ui large relaxed list"
+              role="list"
             >
               <div
-                class="description"
+                class="item"
+                role="listitem"
               >
-                Name
-              </div>
-              <div
-                class="header"
-              >
-                benchmark extensible e-business
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                Short Name
-              </div>
-              <div
-                class="header"
-              >
-                Unknown
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                Created At
-              </div>
-              <div
-                class="header"
-              >
-                <time
-                  datetime="2019-04-20T15:22:18.780Z"
-                  title="2019-04-20T15:22:18.780221+00:00"
+                <div
+                  class="description"
                 >
-                  3 days ago
-                </time>
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                Modified At
-              </div>
-              <div
-                class="header"
-              >
-                <time
-                  datetime="2019-04-25T15:22:18.780Z"
-                  title="2019-04-25T15:22:18.780221+00:00"
+                  External ID
+                </div>
+                <div
+                  class="header"
                 >
-                  2 days from now
-                </time>
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                S3 Bucket Name
+                  test_study_external_id
+                </div>
               </div>
               <div
-                class="header"
+                class="item"
+                role="listitem"
               >
-                stay-wrong-ready
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                Release Status
-              </div>
-              <div
-                class="header"
-              >
-                Unknown
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                ReleaseDate
+                <div
+                  class="description"
+                >
+                  Name
+                </div>
+                <div
+                  class="header"
+                >
+                  benchmark extensible e-business
+                </div>
               </div>
               <div
-                class="header"
+                class="item"
+                role="listitem"
               >
-                2019-08-24
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                The expected number of samples for the study
-              </div>
-              <div
-                class="header"
-              >
-                100
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                The organization that the grant was awarded to
+                <div
+                  class="description"
+                >
+                  Short Name
+                </div>
+                <div
+                  class="header"
+                >
+                  Unknown
+                </div>
               </div>
               <div
-                class="header"
+                class="item"
+                role="listitem"
               >
-                CHOP
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                dbGaP - Link to Attribution
-              </div>
-              <div
-                class="header"
-              >
-                Unknown
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                dbGaP - Accession Number
+                <div
+                  class="description"
+                >
+                  Created At
+                </div>
+                <div
+                  class="header"
+                >
+                  <time
+                    datetime="2019-04-20T15:22:18.780Z"
+                    title="2019-04-20T15:22:18.780221+00:00"
+                  >
+                    3 days ago
+                  </time>
+                </div>
               </div>
               <div
-                class="header"
+                class="item"
+                role="listitem"
               >
-                dbGaP
+                <div
+                  class="description"
+                >
+                  Modified At
+                </div>
+                <div
+                  class="header"
+                >
+                  <time
+                    datetime="2019-04-25T15:22:18.780Z"
+                    title="2019-04-25T15:22:18.780221+00:00"
+                  >
+                    2 days from now
+                  </time>
+                </div>
               </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
               <div
-                class="description"
+                class="item"
+                role="listitem"
               >
-                dbGaP - Version
+                <div
+                  class="description"
+                >
+                  S3 Bucket Name
+                </div>
+                <div
+                  class="header"
+                >
+                  stay-wrong-ready
+                </div>
               </div>
               <div
-                class="header"
+                class="item"
+                role="listitem"
               >
-                Unknown
+                <div
+                  class="description"
+                >
+                  Release Status
+                </div>
+                <div
+                  class="header"
+                >
+                  Unknown
+                </div>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <div
+                  class="description"
+                >
+                  ReleaseDate
+                </div>
+                <div
+                  class="header"
+                >
+                  2019-08-24
+                </div>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <div
+                  class="description"
+                >
+                  The expected number of samples for the study
+                </div>
+                <div
+                  class="header"
+                >
+                  100
+                </div>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <div
+                  class="description"
+                >
+                  The organization that the grant was awarded to
+                </div>
+                <div
+                  class="header"
+                >
+                  CHOP
+                </div>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <div
+                  class="description"
+                >
+                  Link to Attribution
+                </div>
+                <div
+                  class="header"
+                >
+                  Unknown
+                </div>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <div
+                  class="description"
+                >
+                  Access Authority
+                </div>
+                <div
+                  class="header"
+                >
+                  dbGaP
+                </div>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <div
+                  class="description"
+                >
+                  Access Authority Version
+                </div>
+                <div
+                  class="header"
+                >
+                  Unknown
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div
-          class="ui padded segment"
-        >
-          <h3
-            class="ui header"
-          >
-            Study Files
-          </h3>
           <div
-            class="ui horizontal list"
-            role="list"
+            class="ui padded segment"
           >
+            <h3
+              class="ui header"
+            >
+              Study Files
+            </h3>
             <div
-              class="item"
-              role="listitem"
+              class="ui horizontal list"
+              role="list"
+            >
+              <div
+                class="item"
+                role="listitem"
+              >
+                <i
+                  aria-hidden="true"
+                  class="file icon"
+                />
+                2
+                 files
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <div
+                  class="ui orange mini circular empty label"
+                />
+                 
+                2
+              </div>
+            </div>
+            <div
+              class="ui label ui mini basic icon right floated button"
+              role="button"
             >
               <i
                 aria-hidden="true"
-                class="file icon"
+                class="chevron down icon"
               />
-              2
-               files
             </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="ui orange mini circular empty label"
-              />
-               
-              2
-            </div>
-          </div>
-          <div
-            class="ui label ui mini basic icon right floated button"
-            role="button"
-          >
-            <i
-              aria-hidden="true"
-              class="chevron down icon"
-            />
           </div>
         </div>
       </div>
@@ -734,256 +753,275 @@ exports[`Study basic info link project modal renders correctly 1`] = `
         class="eight wide computer sixteen wide mobile sixteen wide tablet column"
       >
         <div
-          class="ui padded segment"
+          class="ui segments"
         >
-          <h3
-            class="ui header"
-          >
-            Study Info
-            <button
-              class="ui mini primary right floated button"
-            >
-              EDIT
-            </button>
-          </h3>
           <div
-            class="ui large relaxed list"
-            role="list"
+            class="ui padded segment"
           >
+            <h3
+              class="ui header"
+            >
+              Study Info
+              <button
+                class="ui mini primary right floated button"
+              >
+                EDIT
+              </button>
+            </h3>
             <div
-              class="item"
-              role="listitem"
+              class="ui large relaxed list"
+              role="list"
             >
               <div
-                class="description"
+                class="item"
+                role="listitem"
               >
-                Name
-              </div>
-              <div
-                class="header"
-              >
-                benchmark extensible e-business
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                Short Name
-              </div>
-              <div
-                class="header"
-              >
-                Unknown
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                Created At
-              </div>
-              <div
-                class="header"
-              >
-                <time
-                  datetime="2019-04-20T15:22:18.780Z"
-                  title="2019-04-20T15:22:18.780221+00:00"
+                <div
+                  class="description"
                 >
-                  3 days ago
-                </time>
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                Modified At
-              </div>
-              <div
-                class="header"
-              >
-                <time
-                  datetime="2019-04-25T15:22:18.780Z"
-                  title="2019-04-25T15:22:18.780221+00:00"
+                  External ID
+                </div>
+                <div
+                  class="header"
                 >
-                  2 days from now
-                </time>
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                S3 Bucket Name
+                  test_study_external_id
+                </div>
               </div>
               <div
-                class="header"
+                class="item"
+                role="listitem"
               >
-                stay-wrong-ready
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                Release Status
-              </div>
-              <div
-                class="header"
-              >
-                Unknown
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                ReleaseDate
+                <div
+                  class="description"
+                >
+                  Name
+                </div>
+                <div
+                  class="header"
+                >
+                  benchmark extensible e-business
+                </div>
               </div>
               <div
-                class="header"
+                class="item"
+                role="listitem"
               >
-                2019-08-24
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                The expected number of samples for the study
-              </div>
-              <div
-                class="header"
-              >
-                100
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                The organization that the grant was awarded to
+                <div
+                  class="description"
+                >
+                  Short Name
+                </div>
+                <div
+                  class="header"
+                >
+                  Unknown
+                </div>
               </div>
               <div
-                class="header"
+                class="item"
+                role="listitem"
               >
-                CHOP
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                dbGaP - Link to Attribution
-              </div>
-              <div
-                class="header"
-              >
-                Unknown
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                dbGaP - Accession Number
+                <div
+                  class="description"
+                >
+                  Created At
+                </div>
+                <div
+                  class="header"
+                >
+                  <time
+                    datetime="2019-04-20T15:22:18.780Z"
+                    title="2019-04-20T15:22:18.780221+00:00"
+                  >
+                    3 days ago
+                  </time>
+                </div>
               </div>
               <div
-                class="header"
+                class="item"
+                role="listitem"
               >
-                dbGaP
+                <div
+                  class="description"
+                >
+                  Modified At
+                </div>
+                <div
+                  class="header"
+                >
+                  <time
+                    datetime="2019-04-25T15:22:18.780Z"
+                    title="2019-04-25T15:22:18.780221+00:00"
+                  >
+                    2 days from now
+                  </time>
+                </div>
               </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
               <div
-                class="description"
+                class="item"
+                role="listitem"
               >
-                dbGaP - Version
+                <div
+                  class="description"
+                >
+                  S3 Bucket Name
+                </div>
+                <div
+                  class="header"
+                >
+                  stay-wrong-ready
+                </div>
               </div>
               <div
-                class="header"
+                class="item"
+                role="listitem"
               >
-                Unknown
+                <div
+                  class="description"
+                >
+                  Release Status
+                </div>
+                <div
+                  class="header"
+                >
+                  Unknown
+                </div>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <div
+                  class="description"
+                >
+                  ReleaseDate
+                </div>
+                <div
+                  class="header"
+                >
+                  2019-08-24
+                </div>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <div
+                  class="description"
+                >
+                  The expected number of samples for the study
+                </div>
+                <div
+                  class="header"
+                >
+                  100
+                </div>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <div
+                  class="description"
+                >
+                  The organization that the grant was awarded to
+                </div>
+                <div
+                  class="header"
+                >
+                  CHOP
+                </div>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <div
+                  class="description"
+                >
+                  Link to Attribution
+                </div>
+                <div
+                  class="header"
+                >
+                  Unknown
+                </div>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <div
+                  class="description"
+                >
+                  Access Authority
+                </div>
+                <div
+                  class="header"
+                >
+                  dbGaP
+                </div>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <div
+                  class="description"
+                >
+                  Access Authority Version
+                </div>
+                <div
+                  class="header"
+                >
+                  Unknown
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div
-          class="ui padded segment"
-        >
-          <h3
-            class="ui header"
-          >
-            Study Files
-          </h3>
           <div
-            class="ui horizontal list"
-            role="list"
+            class="ui padded segment"
           >
+            <h3
+              class="ui header"
+            >
+              Study Files
+            </h3>
             <div
-              class="item"
-              role="listitem"
+              class="ui horizontal list"
+              role="list"
+            >
+              <div
+                class="item"
+                role="listitem"
+              >
+                <i
+                  aria-hidden="true"
+                  class="file icon"
+                />
+                2
+                 files
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <div
+                  class="ui orange mini circular empty label"
+                />
+                 
+                2
+              </div>
+            </div>
+            <div
+              class="ui label ui mini basic icon right floated button"
+              role="button"
             >
               <i
                 aria-hidden="true"
-                class="file icon"
+                class="chevron down icon"
               />
-              2
-               files
             </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="ui orange mini circular empty label"
-              />
-               
-              2
-            </div>
-          </div>
-          <div
-            class="ui label ui mini basic icon right floated button"
-            role="button"
-          >
-            <i
-              aria-hidden="true"
-              class="chevron down icon"
-            />
           </div>
         </div>
       </div>
@@ -1456,256 +1494,275 @@ exports[`Study basic info new project modal renders correctly 1`] = `
         class="eight wide computer sixteen wide mobile sixteen wide tablet column"
       >
         <div
-          class="ui padded segment"
+          class="ui segments"
         >
-          <h3
-            class="ui header"
-          >
-            Study Info
-            <button
-              class="ui mini primary right floated button"
-            >
-              EDIT
-            </button>
-          </h3>
           <div
-            class="ui large relaxed list"
-            role="list"
+            class="ui padded segment"
           >
+            <h3
+              class="ui header"
+            >
+              Study Info
+              <button
+                class="ui mini primary right floated button"
+              >
+                EDIT
+              </button>
+            </h3>
             <div
-              class="item"
-              role="listitem"
+              class="ui large relaxed list"
+              role="list"
             >
               <div
-                class="description"
+                class="item"
+                role="listitem"
               >
-                Name
-              </div>
-              <div
-                class="header"
-              >
-                benchmark extensible e-business
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                Short Name
-              </div>
-              <div
-                class="header"
-              >
-                Unknown
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                Created At
-              </div>
-              <div
-                class="header"
-              >
-                <time
-                  datetime="2019-04-20T15:22:18.780Z"
-                  title="2019-04-20T15:22:18.780221+00:00"
+                <div
+                  class="description"
                 >
-                  3 days ago
-                </time>
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                Modified At
-              </div>
-              <div
-                class="header"
-              >
-                <time
-                  datetime="2019-04-25T15:22:18.780Z"
-                  title="2019-04-25T15:22:18.780221+00:00"
+                  External ID
+                </div>
+                <div
+                  class="header"
                 >
-                  2 days from now
-                </time>
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                S3 Bucket Name
+                  test_study_external_id
+                </div>
               </div>
               <div
-                class="header"
+                class="item"
+                role="listitem"
               >
-                stay-wrong-ready
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                Release Status
-              </div>
-              <div
-                class="header"
-              >
-                Unknown
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                ReleaseDate
+                <div
+                  class="description"
+                >
+                  Name
+                </div>
+                <div
+                  class="header"
+                >
+                  benchmark extensible e-business
+                </div>
               </div>
               <div
-                class="header"
+                class="item"
+                role="listitem"
               >
-                2019-08-24
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                The expected number of samples for the study
-              </div>
-              <div
-                class="header"
-              >
-                100
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                The organization that the grant was awarded to
+                <div
+                  class="description"
+                >
+                  Short Name
+                </div>
+                <div
+                  class="header"
+                >
+                  Unknown
+                </div>
               </div>
               <div
-                class="header"
+                class="item"
+                role="listitem"
               >
-                CHOP
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                dbGaP - Link to Attribution
-              </div>
-              <div
-                class="header"
-              >
-                Unknown
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                dbGaP - Accession Number
+                <div
+                  class="description"
+                >
+                  Created At
+                </div>
+                <div
+                  class="header"
+                >
+                  <time
+                    datetime="2019-04-20T15:22:18.780Z"
+                    title="2019-04-20T15:22:18.780221+00:00"
+                  >
+                    3 days ago
+                  </time>
+                </div>
               </div>
               <div
-                class="header"
+                class="item"
+                role="listitem"
               >
-                dbGaP
+                <div
+                  class="description"
+                >
+                  Modified At
+                </div>
+                <div
+                  class="header"
+                >
+                  <time
+                    datetime="2019-04-25T15:22:18.780Z"
+                    title="2019-04-25T15:22:18.780221+00:00"
+                  >
+                    2 days from now
+                  </time>
+                </div>
               </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
               <div
-                class="description"
+                class="item"
+                role="listitem"
               >
-                dbGaP - Version
+                <div
+                  class="description"
+                >
+                  S3 Bucket Name
+                </div>
+                <div
+                  class="header"
+                >
+                  stay-wrong-ready
+                </div>
               </div>
               <div
-                class="header"
+                class="item"
+                role="listitem"
               >
-                Unknown
+                <div
+                  class="description"
+                >
+                  Release Status
+                </div>
+                <div
+                  class="header"
+                >
+                  Unknown
+                </div>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <div
+                  class="description"
+                >
+                  ReleaseDate
+                </div>
+                <div
+                  class="header"
+                >
+                  2019-08-24
+                </div>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <div
+                  class="description"
+                >
+                  The expected number of samples for the study
+                </div>
+                <div
+                  class="header"
+                >
+                  100
+                </div>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <div
+                  class="description"
+                >
+                  The organization that the grant was awarded to
+                </div>
+                <div
+                  class="header"
+                >
+                  CHOP
+                </div>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <div
+                  class="description"
+                >
+                  Link to Attribution
+                </div>
+                <div
+                  class="header"
+                >
+                  Unknown
+                </div>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <div
+                  class="description"
+                >
+                  Access Authority
+                </div>
+                <div
+                  class="header"
+                >
+                  dbGaP
+                </div>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <div
+                  class="description"
+                >
+                  Access Authority Version
+                </div>
+                <div
+                  class="header"
+                >
+                  Unknown
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div
-          class="ui padded segment"
-        >
-          <h3
-            class="ui header"
-          >
-            Study Files
-          </h3>
           <div
-            class="ui horizontal list"
-            role="list"
+            class="ui padded segment"
           >
+            <h3
+              class="ui header"
+            >
+              Study Files
+            </h3>
             <div
-              class="item"
-              role="listitem"
+              class="ui horizontal list"
+              role="list"
+            >
+              <div
+                class="item"
+                role="listitem"
+              >
+                <i
+                  aria-hidden="true"
+                  class="file icon"
+                />
+                2
+                 files
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <div
+                  class="ui orange mini circular empty label"
+                />
+                 
+                2
+              </div>
+            </div>
+            <div
+              class="ui label ui mini basic icon right floated button"
+              role="button"
             >
               <i
                 aria-hidden="true"
-                class="file icon"
+                class="chevron down icon"
               />
-              2
-               files
             </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="ui orange mini circular empty label"
-              />
-               
-              2
-            </div>
-          </div>
-          <div
-            class="ui label ui mini basic icon right floated button"
-            role="button"
-          >
-            <i
-              aria-hidden="true"
-              class="chevron down icon"
-            />
           </div>
         </div>
       </div>
@@ -2178,256 +2235,275 @@ exports[`Study basic info page renders correctly 1`] = `
         class="eight wide computer sixteen wide mobile sixteen wide tablet column"
       >
         <div
-          class="ui padded segment"
+          class="ui segments"
         >
-          <h3
-            class="ui header"
-          >
-            Study Info
-            <button
-              class="ui mini primary right floated button"
-            >
-              EDIT
-            </button>
-          </h3>
           <div
-            class="ui large relaxed list"
-            role="list"
+            class="ui padded segment"
           >
+            <h3
+              class="ui header"
+            >
+              Study Info
+              <button
+                class="ui mini primary right floated button"
+              >
+                EDIT
+              </button>
+            </h3>
             <div
-              class="item"
-              role="listitem"
+              class="ui large relaxed list"
+              role="list"
             >
               <div
-                class="description"
+                class="item"
+                role="listitem"
               >
-                Name
-              </div>
-              <div
-                class="header"
-              >
-                benchmark extensible e-business
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                Short Name
-              </div>
-              <div
-                class="header"
-              >
-                Unknown
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                Created At
-              </div>
-              <div
-                class="header"
-              >
-                <time
-                  datetime="2019-04-20T15:22:18.780Z"
-                  title="2019-04-20T15:22:18.780221+00:00"
+                <div
+                  class="description"
                 >
-                  3 days ago
-                </time>
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                Modified At
-              </div>
-              <div
-                class="header"
-              >
-                <time
-                  datetime="2019-04-25T15:22:18.780Z"
-                  title="2019-04-25T15:22:18.780221+00:00"
+                  External ID
+                </div>
+                <div
+                  class="header"
                 >
-                  2 days from now
-                </time>
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                S3 Bucket Name
+                  test_study_external_id
+                </div>
               </div>
               <div
-                class="header"
+                class="item"
+                role="listitem"
               >
-                stay-wrong-ready
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                Release Status
-              </div>
-              <div
-                class="header"
-              >
-                Unknown
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                ReleaseDate
+                <div
+                  class="description"
+                >
+                  Name
+                </div>
+                <div
+                  class="header"
+                >
+                  benchmark extensible e-business
+                </div>
               </div>
               <div
-                class="header"
+                class="item"
+                role="listitem"
               >
-                2019-08-24
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                The expected number of samples for the study
-              </div>
-              <div
-                class="header"
-              >
-                100
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                The organization that the grant was awarded to
+                <div
+                  class="description"
+                >
+                  Short Name
+                </div>
+                <div
+                  class="header"
+                >
+                  Unknown
+                </div>
               </div>
               <div
-                class="header"
+                class="item"
+                role="listitem"
               >
-                CHOP
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                dbGaP - Link to Attribution
-              </div>
-              <div
-                class="header"
-              >
-                Unknown
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                dbGaP - Accession Number
+                <div
+                  class="description"
+                >
+                  Created At
+                </div>
+                <div
+                  class="header"
+                >
+                  <time
+                    datetime="2019-04-20T15:22:18.780Z"
+                    title="2019-04-20T15:22:18.780221+00:00"
+                  >
+                    3 days ago
+                  </time>
+                </div>
               </div>
               <div
-                class="header"
+                class="item"
+                role="listitem"
               >
-                dbGaP
+                <div
+                  class="description"
+                >
+                  Modified At
+                </div>
+                <div
+                  class="header"
+                >
+                  <time
+                    datetime="2019-04-25T15:22:18.780Z"
+                    title="2019-04-25T15:22:18.780221+00:00"
+                  >
+                    2 days from now
+                  </time>
+                </div>
               </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
               <div
-                class="description"
+                class="item"
+                role="listitem"
               >
-                dbGaP - Version
+                <div
+                  class="description"
+                >
+                  S3 Bucket Name
+                </div>
+                <div
+                  class="header"
+                >
+                  stay-wrong-ready
+                </div>
               </div>
               <div
-                class="header"
+                class="item"
+                role="listitem"
               >
-                Unknown
+                <div
+                  class="description"
+                >
+                  Release Status
+                </div>
+                <div
+                  class="header"
+                >
+                  Unknown
+                </div>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <div
+                  class="description"
+                >
+                  ReleaseDate
+                </div>
+                <div
+                  class="header"
+                >
+                  2019-08-24
+                </div>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <div
+                  class="description"
+                >
+                  The expected number of samples for the study
+                </div>
+                <div
+                  class="header"
+                >
+                  100
+                </div>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <div
+                  class="description"
+                >
+                  The organization that the grant was awarded to
+                </div>
+                <div
+                  class="header"
+                >
+                  CHOP
+                </div>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <div
+                  class="description"
+                >
+                  Link to Attribution
+                </div>
+                <div
+                  class="header"
+                >
+                  Unknown
+                </div>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <div
+                  class="description"
+                >
+                  Access Authority
+                </div>
+                <div
+                  class="header"
+                >
+                  dbGaP
+                </div>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <div
+                  class="description"
+                >
+                  Access Authority Version
+                </div>
+                <div
+                  class="header"
+                >
+                  Unknown
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div
-          class="ui padded segment"
-        >
-          <h3
-            class="ui header"
-          >
-            Study Files
-          </h3>
           <div
-            class="ui horizontal list"
-            role="list"
+            class="ui padded segment"
           >
+            <h3
+              class="ui header"
+            >
+              Study Files
+            </h3>
             <div
-              class="item"
-              role="listitem"
+              class="ui horizontal list"
+              role="list"
+            >
+              <div
+                class="item"
+                role="listitem"
+              >
+                <i
+                  aria-hidden="true"
+                  class="file icon"
+                />
+                2
+                 files
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <div
+                  class="ui orange mini circular empty label"
+                />
+                 
+                2
+              </div>
+            </div>
+            <div
+              class="ui label ui mini basic icon right floated button"
+              role="button"
             >
               <i
                 aria-hidden="true"
-                class="file icon"
+                class="chevron down icon"
               />
-              2
-               files
             </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="ui orange mini circular empty label"
-              />
-               
-              2
-            </div>
-          </div>
-          <div
-            class="ui label ui mini basic icon right floated button"
-            role="button"
-          >
-            <i
-              aria-hidden="true"
-              class="chevron down icon"
-            />
           </div>
         </div>
       </div>
