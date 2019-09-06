@@ -17,7 +17,7 @@ const ChooseMethodStep = ({ file, history, setStep }) => (
           <Header icon> <Icon name='copy' /> Update to Existing Document
                 <Header.Subheader as='p'>This is a new version of a previously uploaded document.</Header.Subheader>
           </Header>
-          <Button primary onClick={() => setStep(1)}>Update Existing Document</Button>
+          <Button data-testid="update-existing-button" primary onClick={() => setStep(1)}>Update Existing Document</Button>
 
         </Grid.Column>
 

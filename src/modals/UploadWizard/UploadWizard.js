@@ -94,12 +94,11 @@ const UploadWizard = ({ createVersion, onCloseDialog, history, file, fileList, s
 
 
 
-
   return (
     <Modal open={true} onClose={() => { handleCloseDialog() }} closeIcon>
 
       <Header>
-        <Header.Subheader as='h2'><Icon name="upload cloud" />Upload: {file.name}</Header.Subheader>
+        <Header.Subheader as='h2' data-testid="wizard-subhead"><Icon name="upload cloud" />Upload: {file.name}</Header.Subheader>
         {UPLOAD_STEPS[step].title}
       </Header>
 
@@ -142,6 +141,7 @@ const UploadWizard = ({ createVersion, onCloseDialog, history, file, fileList, s
           labelPosition="left"
           size="mini"
           disabled={step !== 2 || !file}
+          data-testid='upload-button'
           onClick={handleSave}
         >
           <Icon name="upload cloud" />
@@ -163,14 +163,12 @@ UploadWizard.propTypes = {
   fileList: PropTypes.array.isRequired,
   /** React-router hisotry object  */
   history: PropTypes.any,
+  /** Mutation that will upload and create the version */
+  createVersion: PropTypes.func.isRequired,
 }
 
 export default graphql(CREATE_VERSION, {
   name: 'createVersion',
-  options: ({ studyId }) => ({
-    awaitRefetchQueries: true,
-    refetchQueries: [
-      { query: GET_STUDY_BY_ID, variables: { kfId: studyId } },
-    ],
-  }),
 })(UploadWizard);
+
+// export default UploadWizard;

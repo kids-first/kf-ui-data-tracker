@@ -5,7 +5,7 @@ import { sortFilesBySimilarity } from '../../../common/fileUtils';
 
 const DocRow = ({ document, setStep, setFileToUpdate }) => {
   const isSimilar = document.rating > 0.3
-  return (<Table.Row style={{ background: isSimilar ? '#f8ffff' : 'inherit' }} onClick={() => { setFileToUpdate(document); setStep(2); }} >
+  return (<Table.Row style={{ background: isSimilar ? '#f8ffff' : 'inherit' }} data-testid={isSimilar ? 'similar-document-item' : 'document-item'} onClick={() => { setFileToUpdate(document); setStep(2); }} >
     <Table.Cell>
       <Icon name='file' />  {document.name}
     </Table.Cell>
