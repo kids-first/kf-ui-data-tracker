@@ -1,16 +1,26 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import TimeAgo from 'react-timeago';
-import {List, Grid, Header, Segment, Button} from 'semantic-ui-react';
+import {
+  List,
+  Grid,
+  Header,
+  Segment,
+  Button,
+  Image,
+  Table,
+} from 'semantic-ui-react';
 import EventList from '../EventList/EventList';
 import FileSimpleList from './FileSimpleList';
 import CavaticaProjectList from '../CavaticaProjectList/CavaticaProjectList';
+import Markdown from 'react-markdown';
 /**
  * Displays study baisc information
  */
 const StudyInfo = ({studyNode, setShowModal, unlinkProject}) => {
   const longDescription =
     studyNode.description && studyNode.description.length > 3500 ? true : false;
+  const [foldDescription, setFoldDescription] = useState(true);
   return (
     <Grid padded="vertically">
       <Grid.Row stretched>
@@ -127,22 +137,43 @@ const StudyInfo = ({studyNode, setShowModal, unlinkProject}) => {
             </Segment>
           </Segment.Group>
         </Grid.Column>
-
         <Grid.Column
           mobile={16}
           tablet={16}
           computer={longDescription ? 16 : 8}
         >
-          <Segment padded>
-            <Header as="h3">Description</Header>
-            {studyNode.description && studyNode.description.length > 0 ? (
-              <p>{studyNode.description}</p>
-            ) : (
-              <Header disabled textAlign="center" as="h4">
-                No study description available.
-              </Header>
+          <div>
+            <Segment
+              padded
+              attached={studyNode.description.length > 0}
+              className={foldDescription ? 'max-h-500' : null}
+            >
+              <Header as="h3">Description</Header>
+              {studyNode.description && studyNode.description.length > 0 ? (
+                <Markdown
+                  source={studyNode.description}
+                  renderers={{
+                    image: Image,
+                    table: props => <Table>{props.children}</Table>,
+                    list: List,
+                    listItem: List.Item,
+                  }}
+                />
+              ) : (
+                <Header disabled textAlign="center" as="h4">
+                  No study description available.
+                </Header>
+              )}
+            </Segment>
+            {studyNode.description && studyNode.description.length > 0 && (
+              <Button
+                attached="bottom"
+                onClick={() => setFoldDescription(!foldDescription)}
+              >
+                {foldDescription ? 'Read More' : 'Read Less'}
+              </Button>
             )}
-          </Segment>
+          </div>
         </Grid.Column>
       </Grid.Row>
       <Grid.Row stretched>

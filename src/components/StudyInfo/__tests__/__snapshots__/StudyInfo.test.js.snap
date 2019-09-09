@@ -287,17 +287,26 @@ exports[`Study basic info edit study modal renders correctly 1`] = `
       <div
         class="eight wide computer sixteen wide mobile sixteen wide tablet column"
       >
-        <div
-          class="ui padded segment"
-        >
-          <h3
-            class="ui header"
+        <div>
+          <div
+            class="ui attached padded segment max-h-500"
           >
-            Description
-          </h3>
-          <p>
-            Sudy description in markdown, commonly the X01 abstract text. --  As test study description
-          </p>
+            <h3
+              class="ui header"
+            >
+              Description
+            </h3>
+            <p>
+              Sudy description in markdown, commonly the X01 abstract text. --  As test study description
+            </p>
+          </div>
+          <div
+            class="ui bottom attached button"
+            role="button"
+            tabindex="0"
+          >
+            Read More
+          </div>
         </div>
       </div>
     </div>
@@ -1028,17 +1037,26 @@ exports[`Study basic info link project modal renders correctly 1`] = `
       <div
         class="eight wide computer sixteen wide mobile sixteen wide tablet column"
       >
-        <div
-          class="ui padded segment"
-        >
-          <h3
-            class="ui header"
+        <div>
+          <div
+            class="ui attached padded segment max-h-500"
           >
-            Description
-          </h3>
-          <p>
-            Sudy description in markdown, commonly the X01 abstract text. --  As test study description
-          </p>
+            <h3
+              class="ui header"
+            >
+              Description
+            </h3>
+            <p>
+              Sudy description in markdown, commonly the X01 abstract text. --  As test study description
+            </p>
+          </div>
+          <div
+            class="ui bottom attached button"
+            role="button"
+            tabindex="0"
+          >
+            Read More
+          </div>
         </div>
       </div>
     </div>
@@ -1769,17 +1787,26 @@ exports[`Study basic info new project modal renders correctly 1`] = `
       <div
         class="eight wide computer sixteen wide mobile sixteen wide tablet column"
       >
-        <div
-          class="ui padded segment"
-        >
-          <h3
-            class="ui header"
+        <div>
+          <div
+            class="ui attached padded segment max-h-500"
           >
-            Description
-          </h3>
-          <p>
-            Sudy description in markdown, commonly the X01 abstract text. --  As test study description
-          </p>
+            <h3
+              class="ui header"
+            >
+              Description
+            </h3>
+            <p>
+              Sudy description in markdown, commonly the X01 abstract text. --  As test study description
+            </p>
+          </div>
+          <div
+            class="ui bottom attached button"
+            role="button"
+            tabindex="0"
+          >
+            Read More
+          </div>
         </div>
       </div>
     </div>
@@ -2510,17 +2537,26 @@ exports[`Study basic info page renders correctly 1`] = `
       <div
         class="eight wide computer sixteen wide mobile sixteen wide tablet column"
       >
-        <div
-          class="ui padded segment"
-        >
-          <h3
-            class="ui header"
+        <div>
+          <div
+            class="ui attached padded segment max-h-500"
           >
-            Description
-          </h3>
-          <p>
-            Sudy description in markdown, commonly the X01 abstract text. --  As test study description
-          </p>
+            <h3
+              class="ui header"
+            >
+              Description
+            </h3>
+            <p>
+              Sudy description in markdown, commonly the X01 abstract text. --  As test study description
+            </p>
+          </div>
+          <div
+            class="ui bottom attached button"
+            role="button"
+            tabindex="0"
+          >
+            Read More
+          </div>
         </div>
       </div>
     </div>
