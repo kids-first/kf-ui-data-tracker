@@ -4,7 +4,7 @@ import {Button, Modal, Form, Message} from 'semantic-ui-react';
 import {Formik} from 'formik';
 
 const EditStudyModal = ({studyNode, updateStudy, onCloseDialog}) => {
-  const [apiErrors, setApiErrors] = useState(null);
+  const [apiErrors, setApiErrors] = useState('');
   const submitUpdate = values => {
     var inputObject = values;
     if (values.releaseDate.length === 0) {
@@ -18,7 +18,7 @@ const EditStudyModal = ({studyNode, updateStudy, onCloseDialog}) => {
     })
       .then(() => {
         onCloseDialog();
-        setApiErrors(null);
+        setApiErrors('');
       })
       .catch(err => setApiErrors(err.message));
   };
