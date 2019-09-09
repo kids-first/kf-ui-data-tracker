@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {GET_STUDY_BY_ID} from '../state/queries';
 import {CREATE_PROJECT} from '../state/mutations';
 import {graphql, compose} from 'react-apollo';
 import {NewProjectForm} from '../forms';
@@ -77,6 +78,18 @@ const NewProjectModal = ({createProject, onCloseDialog, study}) => {
   );
 };
 
-export default compose(graphql(CREATE_PROJECT, {name: 'createProject'}))(
-  NewProjectModal,
-);
+export default compose(
+  graphql(CREATE_PROJECT, {
+    name: 'createProject',
+    options: props => ({
+      refetchQueries: [
+        {
+          query: GET_STUDY_BY_ID,
+          variables: {
+            kfId: props.study.kfId,
+          },
+        },
+      ],
+    }),
+  }),
+)(NewProjectModal);
