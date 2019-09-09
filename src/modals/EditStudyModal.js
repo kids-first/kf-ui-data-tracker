@@ -4,7 +4,7 @@ import {Button, Modal, Form, Message} from 'semantic-ui-react';
 import {Formik} from 'formik';
 
 const EditStudyModal = ({studyNode, updateStudy, onCloseDialog}) => {
-  const [apiErrors, setApiErrors] = useState(null);
+  const [apiErrors, setApiErrors] = useState('');
   const submitUpdate = values => {
     var inputObject = values;
     if (values.releaseDate.length === 0) {
@@ -18,7 +18,7 @@ const EditStudyModal = ({studyNode, updateStudy, onCloseDialog}) => {
     })
       .then(() => {
         onCloseDialog();
-        setApiErrors(null);
+        setApiErrors('');
       })
       .catch(err => setApiErrors(err.message));
   };
@@ -68,23 +68,27 @@ const EditStudyModal = ({studyNode, updateStudy, onCloseDialog}) => {
         >
           <Modal.Header content="Edit Study Info" />
           <Modal.Content scrolling>
-            {apiErrors && (
-              <Message size="mini" negative>
-                {apiErrors}
-              </Message>
-            )}
             <EditStudyForm formikProps={formikProps} />
           </Modal.Content>
           <Modal.Actions>
-            <Button
-              primary
-              size="mini"
-              type="submit"
-              loading={formikProps.isSubmitting}
-              disabled={Object.keys(formikProps.errors).length > 0}
-            >
-              SAVE
-            </Button>
+            {apiErrors.length > 0 ? (
+              <Message size="mini" negative className="text-left">
+                {apiErrors}
+              </Message>
+            ) : (
+              <Button
+                primary
+                size="mini"
+                type="submit"
+                loading={formikProps.isSubmitting}
+                disabled={
+                  Object.keys(formikProps.errors).length > 0 ||
+                  !apiErrors.length > 0
+                }
+              >
+                SAVE
+              </Button>
+            )}
           </Modal.Actions>
         </Modal>
       )}

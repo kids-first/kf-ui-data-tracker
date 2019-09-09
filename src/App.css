@@ -64,6 +64,10 @@ body {
   padding-bottom: 7px !important;
 }
 
+.text-left {
+  text-align: left;
+}
+
 .selectionRadio--card {
   display: flex !important;
   align-items: center;
