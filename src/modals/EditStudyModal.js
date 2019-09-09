@@ -68,23 +68,27 @@ const EditStudyModal = ({studyNode, updateStudy, onCloseDialog}) => {
         >
           <Modal.Header content="Edit Study Info" />
           <Modal.Content scrolling>
-            {apiErrors && (
-              <Message size="mini" negative>
-                {apiErrors}
-              </Message>
-            )}
             <EditStudyForm formikProps={formikProps} />
           </Modal.Content>
           <Modal.Actions>
-            <Button
-              primary
-              size="mini"
-              type="submit"
-              loading={formikProps.isSubmitting}
-              disabled={Object.keys(formikProps.errors).length > 0}
-            >
-              SAVE
-            </Button>
+            {apiErrors.length > 0 ? (
+              <Message size="mini" negative className="text-left">
+                {apiErrors}
+              </Message>
+            ) : (
+              <Button
+                primary
+                size="mini"
+                type="submit"
+                loading={formikProps.isSubmitting}
+                disabled={
+                  Object.keys(formikProps.errors).length > 0 ||
+                  !apiErrors.length > 0
+                }
+              >
+                SAVE
+              </Button>
+            )}
           </Modal.Actions>
         </Modal>
       )}
