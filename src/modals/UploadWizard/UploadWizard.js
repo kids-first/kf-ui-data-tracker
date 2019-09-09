@@ -87,8 +87,9 @@ const UploadWizard = ({ createVersion, onCloseDialog, history, file, fileList, s
       setStep(3);
 
     } catch (e) {
+      console.error(e)
       setIsTimerActive(false);
-      setErrors(e)
+      // setErrors(e)
     }
   };
 
