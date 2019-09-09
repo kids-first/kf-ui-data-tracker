@@ -1,13 +1,6 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import {
-  Icon,
-  Segment,
-  Button,
-  Dropdown,
-  Input,
-  Divider,
-} from 'semantic-ui-react';
+import {Icon, Button, Dropdown, Input} from 'semantic-ui-react';
 import Badge from '../Badge/Badge';
 import {
   fileLatestStatus,
@@ -18,11 +11,10 @@ import {
   defaultSort,
 } from '../../common/fileUtils';
 
-
 /**
  * Filter Bar for Study Files, returns filtered list in "filteredList" render prop
  */
-const ListFilterBar = ({ fileList, filteredList }) => {
+const ListFilterBar = ({fileList, filteredList}) => {
   const [sortMethod, setSortMethod] = useState('');
   const [sortDirection, setSortDirection] = useState('ascending');
   const [typeFilterStatus, setTypeFilterStatus] = useState('');
@@ -61,7 +53,6 @@ const ListFilterBar = ({ fileList, filteredList }) => {
     },
   ];
 
-
   const sortedFileList = () => {
     const sortFuncs = {
       createdDate: createDateSort,
@@ -85,10 +76,9 @@ const ListFilterBar = ({ fileList, filteredList }) => {
     return sortedList;
   };
 
-
   return (
     <>
-      <section className='noPadding'>
+      <section className="noPadding">
         <Segment
           className="noMargin noVerticalPadding noHorizontalPadding"
           basic
@@ -103,7 +93,7 @@ const ListFilterBar = ({ fileList, filteredList }) => {
             value={approvalFilterStatus}
             options={statusOptions}
             placeholder="Approval status"
-            onChange={(e, { value }) => {
+            onChange={(e, {value}) => {
               setApprovalFilterStatus(value);
             }}
           />
@@ -122,7 +112,7 @@ const ListFilterBar = ({ fileList, filteredList }) => {
             // value={typeFilterStatus}
             options={typeOptions}
             placeholder="File type"
-            onChange={(e, { value }) => {
+            onChange={(e, {value}) => {
               setTypeFilterStatus(value);
             }}
           />
@@ -142,7 +132,7 @@ const ListFilterBar = ({ fileList, filteredList }) => {
             value={sortMethod}
             options={sortOptions}
             placeholder="Date option"
-            onChange={(e, { value }) => {
+            onChange={(e, {value}) => {
               setSortMethod(value);
             }}
           />
@@ -168,7 +158,7 @@ const ListFilterBar = ({ fileList, filteredList }) => {
         >
           <Input
             icon="search"
-            onChange={(e, { value }) => {
+            onChange={(e, {value}) => {
               setSearchString(value);
             }}
             value={searchString}
@@ -177,8 +167,8 @@ const ListFilterBar = ({ fileList, filteredList }) => {
       </section>
       {filteredList(sortedFileList())}
     </>
-  )
-}
+  );
+};
 
 ListFilterBar.propTypes = {
   /** Array of study files object*/
