@@ -6,7 +6,6 @@ import FileList from '../components/FileList/FileList';
 import {
   Divider,
   Grid,
-  Header,
   Message,
   Placeholder,
   Container,

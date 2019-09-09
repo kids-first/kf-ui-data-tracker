@@ -2,7 +2,7 @@ import React from 'react';
 import wait from 'waait';
 import { MockedProvider } from 'react-apollo/test-utils';
 import { MemoryRouter } from 'react-router-dom';
-import { render, fireEvent, cleanup, act, waitForElement, waitForElementToBeRemoved } from 'react-testing-library';
+import { render, fireEvent, cleanup, act } from 'react-testing-library';
 import UploadWizard from '../UploadWizard';
 import { mocks } from '../../../../__mocks__/kf-api-study-creator/mocks';
 import studyByKfId from '../../../../__mocks__/kf-api-study-creator/responses/studyByKfId.json';
@@ -48,7 +48,7 @@ it('renders with uploaded file name', async () => {
 
 it('progresses to Step 1: Update Existing Study Document ', async () => {
 
-  const { container, getByText, getByTestId, queryAllByTestId } = render(
+  const { getByText, getByTestId, queryAllByTestId } = render(
 
     <MockedProvider mocks={mocks}>
       <UploadWizard
@@ -72,7 +72,7 @@ it('progresses to Step 1: Update Existing Study Document ', async () => {
 
   expect(getByText(/Update Existing Study Document/i)).toBeTruthy()
   // should render a list of two documents
-  expect(queryAllByTestId(/document\-item/).length).toBe(studyFiles.length)
+  expect(queryAllByTestId(/document-item/).length).toBe(studyFiles.length)
   // should only have one similar document in list
   expect(getByTestId('similar-document-item')).toBeDefined()
 
@@ -81,7 +81,7 @@ it('progresses to Step 1: Update Existing Study Document ', async () => {
 
 it('progresses to Step 2: Summarize Your Update', async () => {
 
-  const { container, getByText, getByTestId } = render(
+  const { getByText, getByTestId } = render(
 
     <MockedProvider mocks={mocks}>
       <UploadWizard
@@ -120,7 +120,7 @@ it('progresses to Step 2: Summarize Your Update', async () => {
 
 it('progresses to Step 3: Document Updated ', async (done) => {
 
-  const { container, getByText, getByTestId, debug } = render(
+  const { getByText, getByTestId } = render(
 
     <MockedProvider mocks={mocks}>
       <MemoryRouter

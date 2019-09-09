@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Button, Header, Modal, Icon, Message } from 'semantic-ui-react';
 import { ChooseMethodStep, DocumentSelectionStep, SuccessStep, VersionSummaryStep } from './UploadSteps';
 import { graphql } from 'react-apollo';
-import { GET_STUDY_BY_ID } from '../../state/queries';
+
 import { CREATE_VERSION } from '../../state/mutations';
 import { sortFilesBySimilarity } from '../../common/fileUtils';
 
@@ -57,9 +57,11 @@ const UploadWizard = ({ createVersion, onCloseDialog, history, file, fileList, s
   const [step, setStep] = useState(0);
   // store the selected study file to create version for
   const [fileToUpdate, setFileToUpdate] = useState(null);
+
   // TODO: set upload error state in ui
   // For any errors that occur during upload
-  const [errors, setErrors] = useState();
+  // const [errors, setErrors] = useState();
+
   // For the uploading stage
   const [onUploading, setUploading] = useState(false);
   // Hold the version change description
@@ -68,7 +70,6 @@ const UploadWizard = ({ createVersion, onCloseDialog, history, file, fileList, s
   const similarDocuments = sortFilesBySimilarity(file, fileList)
 
   const handleCloseDialog = () => {
-    setStep(0);
     onCloseDialog();
   }
 
