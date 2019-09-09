@@ -1,10 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import TimeAgo from 'react-timeago';
-import {List, Grid, Header, Segment, Button} from 'semantic-ui-react';
+import {
+  List,
+  Grid,
+  Header,
+  Segment,
+  Button,
+  Image,
+  Table,
+} from 'semantic-ui-react';
 import EventList from '../EventList/EventList';
 import FileSimpleList from './FileSimpleList';
 import CavaticaProjectList from '../CavaticaProjectList/CavaticaProjectList';
+import Markdown from 'react-markdown';
 /**
  * Displays study baisc information
  */
@@ -136,7 +145,15 @@ const StudyInfo = ({studyNode, setShowModal, unlinkProject}) => {
           <Segment padded>
             <Header as="h3">Description</Header>
             {studyNode.description && studyNode.description.length > 0 ? (
-              <p>{studyNode.description}</p>
+              <Markdown
+                source={studyNode.description}
+                renderers={{
+                  image: Image,
+                  table: props => <Table>{props.children}</Table>,
+                  list: List,
+                  listItem: List.Item,
+                }}
+              />
             ) : (
               <Header disabled textAlign="center" as="h4">
                 No study description available.
