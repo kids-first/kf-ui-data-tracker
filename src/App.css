@@ -94,3 +94,8 @@ body {
   background-image: linear-gradient(to bottom, #fff 400px, transparent 100%),
     url(./assets/background-science.jpg);
 }
+
+.max-h-500 {
+  max-height: 500px;
+  overflow: hidden;
+}
