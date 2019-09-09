@@ -14,7 +14,7 @@ import {
   Button
 } from 'semantic-ui-react';
 
-import UploadWizard from '../modals/UploadWizard/UploadWizad';
+import UploadWizard from '../modals/UploadWizard/UploadWizard';
 
 /**
  * A place holder skeleton for a list of files
