@@ -201,5 +201,3 @@ UploadWizard.propTypes = {
 export default graphql(CREATE_VERSION, {
   name: 'createVersion',
 })(UploadWizard);
-
-// export default UploadWizard;

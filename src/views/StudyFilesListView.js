@@ -70,7 +70,7 @@ const StudyFilesListView = ({
         <Grid.Column width={10}>
           <h2 inline>Study Documents</h2>
         </Grid.Column>
-        {files.length ? (
+        {files.length && (
           <Grid.Column width={6}>
             <Button
               compact
@@ -94,7 +94,7 @@ const StudyFilesListView = ({
               }}
             />
           </Grid.Column>
-        ) : null}
+        )}
       </Grid.Row>
       <Grid.Row>
         <Grid.Column width={16}>
@@ -114,7 +114,7 @@ const StudyFilesListView = ({
               }}
             />
           </Grid.Row>
-          {dialog ? (
+          {dialog && (
             <UploadWizard
               history={history}
               studyId={kfId}
@@ -125,7 +125,7 @@ const StudyFilesListView = ({
                 setDialog(false);
               }}
             />
-          ) : null}
+          )}
         </Grid.Column>
       </Grid.Row>
     </Grid>
