@@ -44,13 +44,13 @@ exports[`deletes a file correctly 1`] = `
         class="sixteen wide column"
       >
         <div
-          class="ui basic compact left floated segment noMargin noHorizontalPadding"
+          class="ui small menu"
         >
-          <span
-            class="smallLabel"
+          <div
+            class="item"
           >
             Filter by:
-          </span>
+          </div>
           <div
             aria-expanded="false"
             class="ui selection dropdown"
@@ -62,7 +62,7 @@ exports[`deletes a file correctly 1`] = `
               class="default text"
               role="alert"
             >
-              Approval status
+              Approval Status
             </div>
             <i
               aria-hidden="true"
@@ -125,10 +125,6 @@ exports[`deletes a file correctly 1`] = `
               </div>
             </div>
           </div>
-        </div>
-        <div
-          class="ui basic compact left floated segment noMargin noHorizontalPadding"
-        >
           <div
             aria-expanded="false"
             class="ui selection dropdown"
@@ -140,7 +136,7 @@ exports[`deletes a file correctly 1`] = `
               class="default text"
               role="alert"
             >
-              File type
+              File Category
             </div>
             <i
               aria-hidden="true"
@@ -219,15 +215,16 @@ exports[`deletes a file correctly 1`] = `
               </div>
             </div>
           </div>
-        </div>
-        <div
-          class="ui basic compact left floated segment noMargin noHorizontalPadding"
-        >
-          <span
-            class="smallLabel"
+          <div
+            class="item"
           >
-            Sorted by:
-          </span>
+            
+          </div>
+          <div
+            class="item"
+          >
+            Sort by:
+          </div>
           <div
             aria-expanded="false"
             class="ui selection dropdown"
@@ -284,21 +281,22 @@ exports[`deletes a file correctly 1`] = `
               class="sort content ascending icon"
             />
           </button>
-        </div>
-        <div
-          class="ui basic compact right floated segment noMargin noHorizontalPadding"
-        >
           <div
-            class="ui icon input"
+            class="right fitted item"
           >
-            <input
-              type="text"
-              value=""
-            />
-            <i
-              aria-hidden="true"
-              class="search icon"
-            />
+            <div
+              class="ui icon input"
+            >
+              <input
+                placeholder="Search documents"
+                type="text"
+                value=""
+              />
+              <i
+                aria-hidden="true"
+                class="search icon"
+              />
+            </div>
           </div>
         </div>
         <table
@@ -511,13 +509,13 @@ exports[`renders correctly 1`] = `
         class="sixteen wide column"
       >
         <div
-          class="ui basic compact left floated segment noMargin noHorizontalPadding"
+          class="ui small menu"
         >
-          <span
-            class="smallLabel"
+          <div
+            class="item"
           >
             Filter by:
-          </span>
+          </div>
           <div
             aria-expanded="false"
             class="ui selection dropdown"
@@ -529,7 +527,7 @@ exports[`renders correctly 1`] = `
               class="default text"
               role="alert"
             >
-              Approval status
+              Approval Status
             </div>
             <i
               aria-hidden="true"
@@ -592,10 +590,6 @@ exports[`renders correctly 1`] = `
               </div>
             </div>
           </div>
-        </div>
-        <div
-          class="ui basic compact left floated segment noMargin noHorizontalPadding"
-        >
           <div
             aria-expanded="false"
             class="ui selection dropdown"
@@ -607,7 +601,7 @@ exports[`renders correctly 1`] = `
               class="default text"
               role="alert"
             >
-              File type
+              File Category
             </div>
             <i
               aria-hidden="true"
@@ -686,15 +680,16 @@ exports[`renders correctly 1`] = `
               </div>
             </div>
           </div>
-        </div>
-        <div
-          class="ui basic compact left floated segment noMargin noHorizontalPadding"
-        >
-          <span
-            class="smallLabel"
+          <div
+            class="item"
           >
-            Sorted by:
-          </span>
+            
+          </div>
+          <div
+            class="item"
+          >
+            Sort by:
+          </div>
           <div
             aria-expanded="false"
             class="ui selection dropdown"
@@ -751,21 +746,22 @@ exports[`renders correctly 1`] = `
               class="sort content ascending icon"
             />
           </button>
-        </div>
-        <div
-          class="ui basic compact right floated segment noMargin noHorizontalPadding"
-        >
           <div
-            class="ui icon input"
+            class="right fitted item"
           >
-            <input
-              type="text"
-              value=""
-            />
-            <i
-              aria-hidden="true"
-              class="search icon"
-            />
+            <div
+              class="ui icon input"
+            >
+              <input
+                placeholder="Search documents"
+                type="text"
+                value=""
+              />
+              <i
+                aria-hidden="true"
+                class="search icon"
+              />
+            </div>
           </div>
         </div>
         <table
