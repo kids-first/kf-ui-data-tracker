@@ -26,7 +26,7 @@ it('renders with uploaded file name', async () => {
     <MockedProvider mocks={mocks}>
       <UploadWizard
         history={historyMock}
-        studyId={studyByKfId.data.kfId}
+        studyId={studyByKfId.data.studyByKfId.kfId}
         file={uploadedFile}
         fileList={studyFiles}
         onCloseDialog={handleClose}
@@ -53,7 +53,7 @@ it('progresses to Step 1: Update Existing Study Document ', async () => {
     <MockedProvider mocks={mocks}>
       <UploadWizard
         history={historyMock}
-        studyId={studyByKfId.data.kfId}
+        studyId={studyByKfId.data.studyByKfId.kfId}
         file={uploadedFile}
         fileList={studyFiles}
         onCloseDialog={handleClose}
@@ -86,7 +86,7 @@ it('progresses to Step 2: Summarize Your Update', async () => {
     <MockedProvider mocks={mocks}>
       <UploadWizard
         history={historyMock}
-        studyId={studyByKfId.data.kfId}
+        studyId={studyByKfId.data.studyByKfId.kfId}
         file={uploadedFile}
         fileList={studyFiles}
         onCloseDialog={handleClose}
@@ -128,7 +128,7 @@ it('progresses to Step 3: Document Updated ', async (done) => {
       >
         <UploadWizard
           history={historyMock}
-          studyId={studyByKfId.data.kfId}
+          studyId={studyByKfId.data.studyByKfId.kfId}
           file={file}
           fileList={studyFiles}
           onCloseDialog={handleClose}

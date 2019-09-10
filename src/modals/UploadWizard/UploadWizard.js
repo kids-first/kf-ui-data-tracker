@@ -213,7 +213,6 @@ UploadWizard.propTypes = {
 export default graphql(CREATE_VERSION, {
   name: 'createVersion',
   options: ({ studyId }) => ({
-    awaitRefetchQueries: true,
     refetchQueries: [
       { query: GET_STUDY_BY_ID, variables: { kfId: studyId } },
     ],
