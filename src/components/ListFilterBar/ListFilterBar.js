@@ -1,12 +1,6 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import {
-  Icon,
-  Button,
-  Dropdown,
-  Input,
-  Menu
-} from 'semantic-ui-react';
+import {Icon, Button, Dropdown, Input, Menu} from 'semantic-ui-react';
 import Badge from '../Badge/Badge';
 import {
   fileLatestStatus,
@@ -17,11 +11,10 @@ import {
   defaultSort,
 } from '../../common/fileUtils';
 
-
 /**
  * Filter Bar for Study Files, returns filtered list in "filteredList" render prop
  */
-const ListFilterBar = ({ fileList, filteredList }) => {
+const ListFilterBar = ({fileList, filteredList}) => {
   const [sortMethod, setSortMethod] = useState('');
   const [sortDirection, setSortDirection] = useState('ascending');
   const [typeFilterStatus, setTypeFilterStatus] = useState('');
@@ -60,7 +53,6 @@ const ListFilterBar = ({ fileList, filteredList }) => {
     },
   ];
 
-
   const sortedFileList = () => {
     const sortFuncs = {
       createdDate: createDateSort,
@@ -84,20 +76,23 @@ const ListFilterBar = ({ fileList, filteredList }) => {
     return sortedList;
   };
 
-
   return (
     <>
-      <Menu size='small' >
+      <Menu size="small">
         <Menu.Item>Filter by:</Menu.Item>
         <Dropdown
           selection
           clearable
-          text={approvalFilterStatus ? statusOptions.filter(o => o.key === approvalFilterStatus).text : "Approval Status"}
+          text={
+            approvalFilterStatus
+              ? statusOptions.filter(o => o.key === approvalFilterStatus).text
+              : 'Approval Status'
+          }
           selectOnBlur={false}
           value={approvalFilterStatus}
           options={statusOptions}
           placeholder="Approval status"
-          onChange={(e, { value }) => {
+          onChange={(e, {value}) => {
             setApprovalFilterStatus(value);
           }}
         />
@@ -105,14 +100,18 @@ const ListFilterBar = ({ fileList, filteredList }) => {
           selection
           clearable
           selectOnBlur={false}
-          text={typeFilterStatus ? typeOptions.filter(o => o.key === typeFilterStatus).text : "File Category"}
+          text={
+            typeFilterStatus
+              ? typeOptions.filter(o => o.key === typeFilterStatus).text
+              : 'File Category'
+          }
           options={typeOptions}
           placeholder="File type"
-          onChange={(e, { value }) => {
+          onChange={(e, {value}) => {
             setTypeFilterStatus(value);
           }}
         />
-        <Menu.Item></Menu.Item>
+        <Menu.Item />
         <Menu.Item>Sort by:</Menu.Item>
         <Dropdown
           selection
@@ -121,7 +120,7 @@ const ListFilterBar = ({ fileList, filteredList }) => {
           value={sortMethod}
           options={sortOptions}
           placeholder="Date option"
-          onChange={(e, { value }) => {
+          onChange={(e, {value}) => {
             setSortMethod(value);
           }}
         />
@@ -143,18 +142,17 @@ const ListFilterBar = ({ fileList, filteredList }) => {
             type="text"
             icon="search"
             placeholder="Search documents"
-            onChange={(e, { value }) => {
+            onChange={(e, {value}) => {
               setSearchString(value);
             }}
             value={searchString}
           />
         </Menu.Item>
-
       </Menu>
       {filteredList(sortedFileList())}
     </>
-  )
-}
+  );
+};
 
 ListFilterBar.propTypes = {
   /** Array of study files object*/
