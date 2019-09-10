@@ -1,5 +1,7 @@
 import {KF_STUDY_API} from './globals';
 
+import * as stringSimilarity from 'string-similarity';
+
 // Compare date of file versions based on their createdAt time. (Latest first)
 export const dateCompare = (version1, version2) => {
   return new Date(version2.node.createdAt) - new Date(version1.node.createdAt);
@@ -150,4 +152,32 @@ export const defaultSort = (a, b) => {
     : fileLatestStatus(b.node) !== 'CHN' && fileLatestStatus(a.node) === 'CHN'
     ? -1
     : 0;
+};
+
+// sort list of file nodes by string similarity to file name
+export const sortFilesBySimilarity = (file, fileList, threshold = 0.3) => {
+  const sortByRating = files =>
+    files.sort((a, b) => (a.rating > b.rating ? 1 : -1)).reverse();
+
+  // find bestMatches for filename's similar to the uploaded document
+  const fileMatches = stringSimilarity.findBestMatch(
+    file.name || '',
+    fileList.length ? fileList.map(x => x.node.name) : [],
+  );
+  // sort bestMatches by rating descending
+  const similarDocuments = fileMatches.ratings.filter(
+    f => f.rating > threshold,
+  );
+
+  const updateDocumentsList = fileList.map(({node}) => ({
+    rating: fileMatches.ratings.filter(({target}) => target === node.name)[0]
+      .rating,
+    ...node,
+  }));
+
+  return {
+    best_match: fileMatches.bestMatch,
+    matches: sortByRating(similarDocuments),
+    ranked_files: sortByRating(updateDocumentsList),
+  };
 };

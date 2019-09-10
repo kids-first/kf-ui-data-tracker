@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {graphql} from 'react-apollo';
 import {GET_STUDY_BY_ID} from '../state/queries';
 import {UploadContainer} from '../containers';
@@ -6,12 +6,14 @@ import FileList from '../components/FileList/FileList';
 import {
   Divider,
   Grid,
-  Header,
   Message,
   Placeholder,
   Container,
   Segment,
+  Button,
 } from 'semantic-ui-react';
+
+import UploadWizard from '../modals/UploadWizard/UploadWizard';
 
 /**
  * A place holder skeleton for a list of files
@@ -48,6 +50,8 @@ const StudyFilesListView = ({
   },
   history,
 }) => {
+  const [dialog, setDialog] = useState(false);
+  const [uploadedFile, setFile] = useState(false);
   if (error)
     return (
       <Container as={Segment} basic>
@@ -62,22 +66,68 @@ const StudyFilesListView = ({
   const files = !loading ? studyByKfId.files.edges : [];
   return (
     <Grid as={Segment} basic container columns={1}>
-      <Grid.Column width={16}>
-        <Header as="h2">Upload Study Documents for DRC Approval</Header>
-        {loading ? (
-          <StudyListSkeleton />
-        ) : (
-          <FileList fileList={files} studyId={kfId} />
+      <Grid.Row>
+        <Grid.Column width={10}>
+          <h2 inline>Study Documents</h2>
+        </Grid.Column>
+        {files.length && (
+          <Grid.Column width={6}>
+            <Button
+              compact
+              primary
+              floated="right"
+              size="large"
+              icon="cloud upload"
+              labelPosition="left"
+              content="Upload Document"
+              as="label"
+              htmlFor="file"
+            />
+            <input
+              hidden
+              multiple
+              id="file"
+              type="file"
+              onChange={e => {
+                setFile(e.target.files[0]);
+                setDialog(true);
+              }}
+            />
+          </Grid.Column>
         )}
-        <Divider />
-        <Grid.Row>
-          <UploadContainer
-            handleUpload={file =>
-              history.push('documents/new-document', {file})
-            }
-          />
-        </Grid.Row>
-      </Grid.Column>
+      </Grid.Row>
+      <Grid.Row>
+        <Grid.Column width={16}>
+          {loading ? (
+            <StudyListSkeleton />
+          ) : (
+            <FileList fileList={files} studyId={kfId} />
+          )}
+          <Divider />
+          <Grid.Row>
+            <UploadContainer
+              handleUpload={file => {
+                setFile(file);
+                return !files.length
+                  ? history.push('documents/new-document', {file})
+                  : setDialog(true);
+              }}
+            />
+          </Grid.Row>
+          {dialog && (
+            <UploadWizard
+              history={history}
+              studyId={kfId}
+              file={uploadedFile}
+              fileList={files}
+              onCloseDialog={() => {
+                setFile(false);
+                setDialog(false);
+              }}
+            />
+          )}
+        </Grid.Column>
+      </Grid.Row>
     </Grid>
   );
 };

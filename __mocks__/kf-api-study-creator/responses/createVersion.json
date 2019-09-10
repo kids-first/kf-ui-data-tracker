@@ -1,0 +1,18 @@
+{
+  "data": {
+    "createVersion": {
+      "success": true,
+      "version": {
+        "id": "v2",
+        "kfId": "FV_DMTKEFQW",
+        "fileName": "organize.tsv",
+        "description": "version description",
+        "state": "PEN",
+        "createdAt": "2018-09-27T05:32:26+00:00",
+        "size": 5460,
+        "__typename": "VersionNode"
+      },
+      "__typename": "VersionMutation"
+    }
+  }
+}

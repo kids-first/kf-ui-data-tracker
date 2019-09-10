@@ -11,10 +11,12 @@ import {
 } from '../../src/state/queries';
 import updateFile from './responses/updateFile.json';
 import updateVersion from './responses/updateVersion.json';
+import createVersion from './responses/createVersion.json';
 import {
   DELETE_FILE,
   UPDATE_FILE,
   UPDATE_VERSION,
+  CREATE_VERSION,
 } from '../../src/state/mutations';
 
 export const mocks = [
@@ -82,6 +84,23 @@ export const mocks = [
       },
     },
     result: updateVersion,
+  },
+  {
+    request: {
+      query: CREATE_VERSION,
+      variables: {
+        file: {
+          lastModified: 1567797130510,
+          name: 'organize.tsv',
+          size: 7,
+          type: 'text/tab-separated-values',
+          webkitRelativePath: '',
+        },
+        fileId: 'SF_5ZPEM167',
+        description: 'version description',
+      },
+    },
+    result: createVersion,
   },
   {
     request: {
