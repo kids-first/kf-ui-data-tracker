@@ -41,7 +41,7 @@ it('renders with files', async () => {
   await wait();
 
   // 12 files in total, 10 files per page, page 2 should have 2 files
-  const lisPage2 =  tree.queryAllByTestId('file-item');
+  const lisPage2 = tree.queryAllByTestId('file-item');
   expect(lisPage2.length).toBe(2);
 });
 

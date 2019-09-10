@@ -91,14 +91,14 @@ export const mocks = [
       variables: {
         file: {
           lastModified: 1567797130510,
-          name: "organize.tsv",
+          name: 'organize.tsv',
           size: 7,
-          type: "text/tab-separated-values",
-          webkitRelativePath: ""
+          type: 'text/tab-separated-values',
+          webkitRelativePath: '',
         },
-        fileId: "SF_5ZPEM167",
-        description: "version description"
-      }
+        fileId: 'SF_5ZPEM167',
+        description: 'version description',
+      },
     },
     result: createVersion,
   },

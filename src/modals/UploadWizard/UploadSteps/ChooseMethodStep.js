@@ -1,30 +1,49 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Header, Icon, Grid, Segment, Divider } from 'semantic-ui-react';
+import {Button, Header, Icon, Grid, Segment, Divider} from 'semantic-ui-react';
 
-/** 
- * Step 1 in multi-step upload proess to choose whether to 
+/**
+ * Step 1 in multi-step upload proess to choose whether to
  * create a new document or a new document version
  */
 
-const ChooseMethodStep = ({ file, history, setStep }) => (
-  <Segment placeholder >
-    <Grid columns={2} stackable textAlign='center'>
+const ChooseMethodStep = ({file, history, setStep}) => (
+  <Segment placeholder>
+    <Grid columns={2} stackable textAlign="center">
       <Divider vertical>Or</Divider>
 
-      <Grid.Row verticalAlign='middle'>
+      <Grid.Row verticalAlign="middle">
         <Grid.Column>
-          <Header icon> <Icon name='copy' /> Update to Existing Document
-                <Header.Subheader as='p'>This is a new version of a previously uploaded document.</Header.Subheader>
+          <Header icon>
+            {' '}
+            <Icon name="copy" /> Update to Existing Document
+            <Header.Subheader as="p">
+              This is a new version of a previously uploaded document.
+            </Header.Subheader>
           </Header>
-          <Button data-testid="update-existing-button" primary onClick={() => setStep(1)}>Update Existing Document</Button>
-
+          <Button
+            data-testid="update-existing-button"
+            primary
+            onClick={() => setStep(1)}
+          >
+            Update Existing Document
+          </Button>
         </Grid.Column>
 
         <Grid.Column>
-          <Header icon> <Icon name='file' /> New Study Document
-                <Header.Subheader as='p'>This document has not previously been provided uploaded.</Header.Subheader></Header>
-          <Button primary onClick={() => history.push('documents/new-document', { file })}>Create New Document</Button>
+          <Header icon>
+            {' '}
+            <Icon name="file" /> New Study Document
+            <Header.Subheader as="p">
+              This document has not previously been provided uploaded.
+            </Header.Subheader>
+          </Header>
+          <Button
+            primary
+            onClick={() => history.push('documents/new-document', {file})}
+          >
+            Create New Document
+          </Button>
         </Grid.Column>
       </Grid.Row>
     </Grid>
@@ -38,6 +57,6 @@ ChooseMethodStep.propTypes = {
   setStep: PropTypes.func.isRequired,
   /** React-router hisotry object  */
   history: PropTypes.any,
-}
+};
 
 export default ChooseMethodStep;

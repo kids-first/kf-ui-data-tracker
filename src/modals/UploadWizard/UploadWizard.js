@@ -1,12 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
-import { Button, Header, Modal, Icon, Message } from 'semantic-ui-react';
-import { ChooseMethodStep, DocumentSelectionStep, SuccessStep, VersionSummaryStep } from './UploadSteps';
-import { graphql } from 'react-apollo';
+import {Button, Header, Modal, Icon, Message} from 'semantic-ui-react';
+import {
+  ChooseMethodStep,
+  DocumentSelectionStep,
+  SuccessStep,
+  VersionSummaryStep,
+} from './UploadSteps';
+import {graphql} from 'react-apollo';
 
-import { CREATE_VERSION } from '../../state/mutations';
-import { sortFilesBySimilarity } from '../../common/fileUtils';
-
+import {CREATE_VERSION} from '../../state/mutations';
+import {sortFilesBySimilarity} from '../../common/fileUtils';
 
 // store all of our upload steps and their associated components
 const UPLOAD_STEPS = {
@@ -16,7 +20,7 @@ const UPLOAD_STEPS = {
   },
   1: {
     title: 'Update Existing Study Document',
-    comp: DocumentSelectionStep
+    comp: DocumentSelectionStep,
   },
   2: {
     title: 'Summarize Your Update',
@@ -24,9 +28,9 @@ const UPLOAD_STEPS = {
   },
   3: {
     title: 'Document Updated',
-    comp: SuccessStep
-  }
-}
+    comp: SuccessStep,
+  },
+};
 
 /** custom hook to set a 3 second timer  */
 const useTimerHook = (isActive, onEnd) => {
@@ -48,11 +52,17 @@ const useTimerHook = (isActive, onEnd) => {
   }, [isActive, seconds, onEnd]);
 
   return seconds;
-
-}
+};
 
 /** Multi-step modal for uplaoding files as document versions or creating new documents */
-const UploadWizard = ({ createVersion, onCloseDialog, history, file, fileList, studyId }) => {
+const UploadWizard = ({
+  createVersion,
+  onCloseDialog,
+  history,
+  file,
+  fileList,
+  studyId,
+}) => {
   // The current step that the flow is on
   const [step, setStep] = useState(0);
   // store the selected study file to create version for
@@ -67,59 +77,72 @@ const UploadWizard = ({ createVersion, onCloseDialog, history, file, fileList, s
   // Hold the version change description
   const [description, setDescription] = useState();
 
-  const similarDocuments = sortFilesBySimilarity(file, fileList)
+  const similarDocuments = sortFilesBySimilarity(file, fileList);
 
   const handleCloseDialog = () => {
     onCloseDialog();
-  }
+  };
 
   const [isTimerActive, setIsTimerActive] = useState(false);
   const seconds = useTimerHook(isTimerActive, handleCloseDialog);
 
-
-
   /** TODO: abstract to custom hook or external util */
-  const handleSave = async (props) => {
+  const handleSave = async props => {
     try {
       setUploading(true);
-      await createVersion({ variables: { file, fileId: fileToUpdate.kfId, description } })
+      await createVersion({
+        variables: {file, fileId: fileToUpdate.kfId, description},
+      });
       setUploading(false);
       setIsTimerActive(true);
       setStep(3);
-
     } catch (e) {
-      console.error(e)
+      console.error(e);
       setIsTimerActive(false);
       // setErrors(e)
     }
   };
 
-
-
   return (
-    <Modal open={true} onClose={() => { handleCloseDialog() }} closeIcon>
-
+    <Modal
+      open={true}
+      onClose={() => {
+        handleCloseDialog();
+      }}
+      closeIcon
+    >
       <Header>
-        <Header.Subheader as='h2' data-testid="wizard-subhead"><Icon name="upload cloud" />Upload: {file.name}</Header.Subheader>
+        <Header.Subheader as="h2" data-testid="wizard-subhead">
+          <Icon name="upload cloud" />
+          Upload: {file.name}
+        </Header.Subheader>
         {UPLOAD_STEPS[step].title}
       </Header>
 
-      <Modal.Content >
-
-        {similarDocuments.matches.length && step < 2 ?
-          <Message info size="mini" >
-            <Icon name='info circle' />
-            <strong>{similarDocuments.matches.length}</strong> similar documents found
+      <Modal.Content>
+        {similarDocuments.matches.length && step < 2 ? (
+          <Message info size="mini">
+            <Icon name="info circle" />
+            <strong>{similarDocuments.matches.length}</strong> similar documents
+            found
           </Message>
-          : null}
+        ) : null}
 
-        {UPLOAD_STEPS[step].comp({ history, file, fileList, setStep, setFileToUpdate, fileToUpdate, setDescription, handleCloseDialog, isTimerActive, seconds })}
-
-
+        {UPLOAD_STEPS[step].comp({
+          history,
+          file,
+          fileList,
+          setStep,
+          setFileToUpdate,
+          fileToUpdate,
+          setDescription,
+          handleCloseDialog,
+          isTimerActive,
+          seconds,
+        })}
       </Modal.Content>
 
       <Modal.Actions>
-
         <Button
           icon
           labelPosition="left"
@@ -133,8 +156,16 @@ const UploadWizard = ({ createVersion, onCloseDialog, history, file, fileList, s
             setStep(step - 1);
           }}
         >
-
-          {step === 3 ? <><Icon name="x" />Close</> : <><Icon name="arrow left" /> Back </>}
+          {step === 3 ? (
+            <>
+              <Icon name="x" />
+              Close
+            </>
+          ) : (
+            <>
+              <Icon name="arrow left" /> Back{' '}
+            </>
+          )}
         </Button>
 
         <Button
@@ -143,17 +174,15 @@ const UploadWizard = ({ createVersion, onCloseDialog, history, file, fileList, s
           labelPosition="left"
           size="mini"
           disabled={step !== 2 || !file}
-          data-testid='upload-button'
+          data-testid="upload-button"
           onClick={handleSave}
         >
           <Icon name="upload cloud" />
           {onUploading ? 'UPLOADING ...' : 'UPLOAD'}
         </Button>
       </Modal.Actions>
-
-    </Modal >
+    </Modal>
   );
-
 };
 
 UploadWizard.propTypes = {
@@ -167,7 +196,7 @@ UploadWizard.propTypes = {
   history: PropTypes.any,
   /** Mutation that will upload and create the version */
   createVersion: PropTypes.func.isRequired,
-}
+};
 
 export default graphql(CREATE_VERSION, {
   name: 'createVersion',

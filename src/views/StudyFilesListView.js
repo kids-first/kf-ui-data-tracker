@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { graphql } from 'react-apollo';
-import { GET_STUDY_BY_ID } from '../state/queries';
-import { UploadContainer } from '../containers';
+import React, {useState} from 'react';
+import {graphql} from 'react-apollo';
+import {GET_STUDY_BY_ID} from '../state/queries';
+import {UploadContainer} from '../containers';
 import FileList from '../components/FileList/FileList';
 import {
   Divider,
@@ -10,7 +10,7 @@ import {
   Placeholder,
   Container,
   Segment,
-  Button
+  Button,
 } from 'semantic-ui-react';
 
 import UploadWizard from '../modals/UploadWizard/UploadWizard';
@@ -44,9 +44,9 @@ const StudyListSkeleton = () => (
  * List and manage files in a study and allow a user to upload more
  */
 const StudyFilesListView = ({
-  study: { loading, studyByKfId, error },
+  study: {loading, studyByKfId, error},
   match: {
-    params: { kfId },
+    params: {kfId},
   },
   history,
 }) => {
@@ -70,8 +70,8 @@ const StudyFilesListView = ({
         <Grid.Column width={10}>
           <h2 inline>Study Documents</h2>
         </Grid.Column>
-        {
-          files.length ? <Grid.Column width={6}>
+        {files.length ? (
+          <Grid.Column width={6}>
             <Button
               compact
               primary
@@ -93,47 +93,46 @@ const StudyFilesListView = ({
                 setDialog(true);
               }}
             />
-          </Grid.Column> : null
-        }
-
+          </Grid.Column>
+        ) : null}
       </Grid.Row>
       <Grid.Row>
         <Grid.Column width={16}>
           {loading ? (
             <StudyListSkeleton />
           ) : (
-              <FileList fileList={files} studyId={kfId} />
-            )}
+            <FileList fileList={files} studyId={kfId} />
+          )}
           <Divider />
           <Grid.Row>
             <UploadContainer
               handleUpload={file => {
                 setFile(file);
-                return !files.length ? history.push('documents/new-document', { file }) : setDialog(true)
+                return !files.length
+                  ? history.push('documents/new-document', {file})
+                  : setDialog(true);
               }}
             />
           </Grid.Row>
-          {
-            dialog ?
-              <UploadWizard
-                history={history}
-                studyId={kfId}
-                file={uploadedFile}
-                fileList={files}
-                onCloseDialog={() => { setFile(false); setDialog(false) }}
-              />
-              : null
-          }
-
+          {dialog ? (
+            <UploadWizard
+              history={history}
+              studyId={kfId}
+              file={uploadedFile}
+              fileList={files}
+              onCloseDialog={() => {
+                setFile(false);
+                setDialog(false);
+              }}
+            />
+          ) : null}
         </Grid.Column>
       </Grid.Row>
-
-
-    </Grid >
+    </Grid>
   );
 };
 
 export default graphql(GET_STUDY_BY_ID, {
   name: 'study',
-  options: props => ({ variables: { kfId: props.match.params.kfId } }),
+  options: props => ({variables: {kfId: props.match.params.kfId}}),
 })(StudyFilesListView);

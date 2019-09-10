@@ -1,4 +1,4 @@
-import { KF_STUDY_API } from './globals';
+import {KF_STUDY_API} from './globals';
 
 import * as stringSimilarity from 'string-similarity';
 
@@ -69,13 +69,11 @@ export const fileTypeDetail = {
 
 // Store version state title and color
 export const versionState = {
-  PEN: { title: 'Pending review', labelColor: 'orange' },
-  APP: { title: 'Approved', labelColor: 'teal' },
-  CHN: { title: 'Changes needed', labelColor: 'red' },
-  PRC: { title: 'Processed', labelColor: 'blue' },
+  PEN: {title: 'Pending review', labelColor: 'orange'},
+  APP: {title: 'Approved', labelColor: 'teal'},
+  CHN: {title: 'Changes needed', labelColor: 'red'},
+  PRC: {title: 'Processed', labelColor: 'blue'},
 };
-
-
 
 // Sort file versions based on the version createdAt date (Latest first)
 export const fileSortedVersions = fileNode => {
@@ -131,8 +129,8 @@ export const createDateSort = (a, b) => {
     ? 1
     : Date.parse(fileOldestDate(fileSortedVersions(b.node))) >
       Date.parse(fileOldestDate(fileSortedVersions(a.node)))
-      ? -1
-      : 0;
+    ? -1
+    : 0;
 };
 
 // Sort files by modified date
@@ -142,8 +140,8 @@ export const modifiedDateSort = (a, b) => {
     ? 1
     : Date.parse(fileLatestDate(fileSortedVersions(b.node))) >
       Date.parse(fileLatestDate(fileSortedVersions(a.node)))
-      ? -1
-      : 0;
+    ? -1
+    : 0;
 };
 
 // Default sorting by brining "Changes Needed" files to the top
@@ -152,26 +150,34 @@ export const defaultSort = (a, b) => {
     fileLatestStatus(b.node) === 'CHN'
     ? 1
     : fileLatestStatus(b.node) !== 'CHN' && fileLatestStatus(a.node) === 'CHN'
-      ? -1
-      : 0;
+    ? -1
+    : 0;
 };
-
 
 // sort list of file nodes by string similarity to file name
 export const sortFilesBySimilarity = (file, fileList, threshold = 0.3) => {
-
-  const sortByRating = files => files.sort((a, b) => (a.rating > b.rating) ? 1 : -1).reverse()
+  const sortByRating = files =>
+    files.sort((a, b) => (a.rating > b.rating ? 1 : -1)).reverse();
 
   // find bestMatches for filename's similar to the uploaded document
-  const fileMatches = stringSimilarity.findBestMatch(file.name || '', fileList.length ? fileList.map(x => x.node.name) : [])
+  const fileMatches = stringSimilarity.findBestMatch(
+    file.name || '',
+    fileList.length ? fileList.map(x => x.node.name) : [],
+  );
   // sort bestMatches by rating descending
-  const similarDocuments = fileMatches.ratings.filter(f => f.rating > threshold);
+  const similarDocuments = fileMatches.ratings.filter(
+    f => f.rating > threshold,
+  );
 
-  const updateDocumentsList = fileList.map(({ node }) => ({ rating: fileMatches.ratings.filter(({ target }) => target === node.name)[0].rating, ...node }))
+  const updateDocumentsList = fileList.map(({node}) => ({
+    rating: fileMatches.ratings.filter(({target}) => target === node.name)[0]
+      .rating,
+    ...node,
+  }));
 
   return {
     best_match: fileMatches.bestMatch,
     matches: sortByRating(similarDocuments),
-    ranked_files: sortByRating(updateDocumentsList)
-  }
-}
+    ranked_files: sortByRating(updateDocumentsList),
+  };
+};
