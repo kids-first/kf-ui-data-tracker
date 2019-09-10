@@ -181,14 +181,23 @@ const StudyInfo = ({studyNode, setShowModal, unlinkProject}) => {
           <Segment padded>
             <Header as="h3" className="pb-10">
               Cavatica Projects
-              <Button.Group floated="right" size="mini">
-                <Button onClick={() => setShowModal('addProject')}>
-                  NEW PROJECT
-                </Button>
-                <Button primary onClick={() => setShowModal('linkProject')}>
-                  LINK PROJECT
-                </Button>
-              </Button.Group>
+              <Button
+                primary
+                floated="right"
+                size="mini"
+                icon="linkify"
+                content="LINK PROJECT"
+                onClick={() => setShowModal('linkProject')}
+              />
+              <Button
+                basic
+                primary
+                floated="right"
+                size="mini"
+                icon="add"
+                content="NEW PROJECT"
+                onClick={() => setShowModal('addProject')}
+              />
             </Header>
             {studyNode.projects.edges.length > 0 ? (
               <CavaticaProjectList

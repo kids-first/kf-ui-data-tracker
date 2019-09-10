@@ -1,7 +1,49 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {List, Icon, Button, Popup, Divider} from 'semantic-ui-react';
+import {List, Icon, Button, Popup, Divider, Header} from 'semantic-ui-react';
 import TimeAgo from 'react-timeago';
+
+const ProjectAttributes = ({projectNode}) => (
+  <List bulleted horizontal>
+    <List.Item>
+      Created
+      {projectNode.createdBy ? ' by ' + projectNode.createdBy + ' ' : ' '}
+      <TimeAgo live={false} date={projectNode.createdOn} />
+    </List.Item>
+    {projectNode.workflowType && (
+      <List.Item>{projectNode.workflowType}</List.Item>
+    )}
+    <List.Item>
+      <code>{projectNode.projectId}</code>
+    </List.Item>
+  </List>
+);
+
+const ProjectLink = ({projectNode, disableLink}) => (
+  <List.Header
+    as="a"
+    target="_blank"
+    href={
+      !disableLink &&
+      `https://cavatica.sbgenomics.com/u/${projectNode.projectId}`
+    }
+  >
+    {projectNode.name + ' '}
+    <Icon link size="small" name="external" />
+  </List.Header>
+);
+
+const StudyLink = ({study, hideLink}) => {
+  if (study) {
+    return (
+      <Link to={`/study/${study.kfId}/documents`}>
+        {hideLink ? '' : study.shortName || study.name || study.kfId}
+      </Link>
+    );
+  } else {
+    return 'Not linked';
+  }
+};
 
 const CavaticaProjectItem = ({
   projectNode,
@@ -9,28 +51,45 @@ const CavaticaProjectItem = ({
   studyId,
   disableLink,
 }) => {
-  return (
-    <List.Item>
-      <Icon
-        name={
-          projectNode.projectType === 'DEL'
-            ? 'paper plane outline'
-            : 'sliders horizontal'
-        }
-      />
-      <List.Content>
-        {unlinkProject && studyId ? (
-          <List.Content floated="right">
+  if (projectNode.deleted) {
+    return (
+      <List.Item className="disabled">
+        <List.Content floated="right" verticalAlign="middle">
+          Deleted
+        </List.Content>
+        <Icon
+          name={
+            projectNode.projectType === 'DEL'
+              ? 'paper plane outline'
+              : 'sliders horizontal'
+          }
+        />
+        <List.Content>
+          <List.Header as={Header} disabled size="tiny">
+            {projectNode.name + ' '}
+          </List.Header>
+          <ProjectAttributes projectNode={projectNode} />
+        </List.Content>
+      </List.Item>
+    );
+  } else {
+    return (
+      <List.Item>
+        <List.Content floated="right">
+          <StudyLink study={projectNode.study} hideLink={studyId} />
+          {unlinkProject && (studyId || projectNode.study) && (
             <Popup
               trigger={
                 <Button
-                  size="mini"
                   basic
                   negative
+                  floated="right"
+                  size="mini"
+                  icon="unlink"
+                  content="UNLINK"
+                  className="ml-10"
                   onClick={e => e.stopPropagation()}
-                >
-                  UNLINK PROJECT
-                </Button>
+                />
               }
               header="Are you sure?"
               content={
@@ -59,96 +118,22 @@ const CavaticaProjectItem = ({
               on="click"
               position="top right"
             />
-          </List.Content>
-        ) : (
-          <List.Content floated="right">
-            {projectNode.study ? (
-              <>
-                <Link
-                  to={`/study/${projectNode.study.kfId}/documents`}
-                  className={unlinkProject ? 'pr-5' : null}
-                >
-                  {projectNode.study.shortName ||
-                    projectNode.study.name ||
-                    projectNode.study.kfId}
-                </Link>
-                {unlinkProject && (
-                  <Popup
-                    trigger={
-                      <Button
-                        basic
-                        className="micro-button"
-                        color="red"
-                        icon="unlink"
-                        onClick={e => e.stopPropagation()}
-                      />
-                    }
-                    header="Are you sure?"
-                    content={
-                      <>
-                        This will unlink the project from its study. It may
-                        always be linked back later.
-                        <Divider />
-                        <Button
-                          data-testid="delete-confirm"
-                          negative
-                          fluid
-                          icon={<Icon name="unlink" />}
-                          content="Unlink"
-                          onClick={e => {
-                            e.stopPropagation();
-                            unlinkProject({
-                              variables: {
-                                project: projectNode.id,
-                                study: studyId ? studyId : projectNode.study.id,
-                              },
-                            });
-                          }}
-                        />
-                      </>
-                    }
-                    on="click"
-                    position="top right"
-                  />
-                )}
-              </>
-            ) : projectNode.deleted ? (
-              <>
-                Deleted <Icon name="warning" inverted bordered color="red" />
-              </>
-            ) : (
-              'Not linked'
-            )}
-          </List.Content>
-        )}
-        <List.Header
-          as="a"
-          target="_blank"
-          href={
-            disableLink
-              ? null
-              : `https://cavatica.sbgenomics.com/u/${projectNode.projectId}`
-          }
-        >
-          {projectNode.name + ' '}
-          <Icon link size="small" name="external" />
-        </List.Header>
-
-        {projectNode.creator && <>Created by {projectNode.creator.username} </>}
-        <List bulleted horizontal>
-          <List.Item>
-            Created <TimeAgo live={false} date={projectNode.createdOn} />
-          </List.Item>
-          {projectNode.workflowType && (
-            <List.Item>{projectNode.workflowType}</List.Item>
           )}
-          <List.Item>
-            <code>{projectNode.projectId}</code>
-          </List.Item>
-        </List>
-      </List.Content>
-    </List.Item>
-  );
+        </List.Content>
+        <Icon
+          name={
+            projectNode.projectType === 'DEL'
+              ? 'paper plane outline'
+              : 'sliders horizontal'
+          }
+        />
+        <List.Content>
+          <ProjectLink projectNode={projectNode} disableLink={disableLink} />
+          <ProjectAttributes projectNode={projectNode} />
+        </List.Content>
+      </List.Item>
+    );
+  }
 };
 
 export default CavaticaProjectItem;

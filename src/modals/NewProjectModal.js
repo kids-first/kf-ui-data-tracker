@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {GET_STUDY_BY_ID} from '../state/queries';
 import {CREATE_PROJECT} from '../state/mutations';
 import {graphql, compose} from 'react-apollo';
 import {NewProjectForm} from '../forms';
@@ -6,20 +7,20 @@ import {Button, Form, Modal} from 'semantic-ui-react';
 import {Formik} from 'formik';
 
 const NewProjectModal = ({createProject, onCloseDialog, study}) => {
-  const [errors, setErrors] = useState();
+  const [apiErrors, setApiErrors] = useState('');
   const onSubmit = (values, {setSubmitting}) => {
     setSubmitting(true);
     createProject({
       variables: {study: study.id, workflowType: values.workflowType},
     })
       .then(res => {
-        setErrors(false);
+        setApiErrors('');
         setSubmitting(false);
         onCloseDialog();
       })
       .catch(err => {
         setSubmitting(false);
-        setErrors(err.message);
+        setApiErrors(err.message);
       });
   };
 
@@ -54,7 +55,7 @@ const NewProjectModal = ({createProject, onCloseDialog, study}) => {
             </p>
             <NewProjectForm
               formikProps={formikProps}
-              apiErrors={errors}
+              apiErrors={apiErrors}
               excludeWorkflows={study.projects.edges.map(
                 ({node}) => node.workflowType,
               )}
@@ -77,6 +78,18 @@ const NewProjectModal = ({createProject, onCloseDialog, study}) => {
   );
 };
 
-export default compose(graphql(CREATE_PROJECT, {name: 'createProject'}))(
-  NewProjectModal,
-);
+export default compose(
+  graphql(CREATE_PROJECT, {
+    name: 'createProject',
+    options: props => ({
+      refetchQueries: [
+        {
+          query: GET_STUDY_BY_ID,
+          variables: {
+            kfId: props.study.kfId,
+          },
+        },
+      ],
+    }),
+  }),
+)(NewProjectModal);

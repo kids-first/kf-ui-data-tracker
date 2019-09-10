@@ -323,20 +323,24 @@ exports[`Study basic info edit study modal renders correctly 1`] = `
             class="ui header pb-10"
           >
             Cavatica Projects
-            <div
-              class="ui mini right floated buttons"
+            <button
+              class="ui mini primary right floated button"
             >
-              <button
-                class="ui button"
-              >
-                NEW PROJECT
-              </button>
-              <button
-                class="ui primary button"
-              >
-                LINK PROJECT
-              </button>
-            </div>
+              <i
+                aria-hidden="true"
+                class="linkify icon"
+              />
+              LINK PROJECT
+            </button>
+            <button
+              class="ui mini basic primary right floated button"
+            >
+              <i
+                aria-hidden="true"
+                class="add icon"
+              />
+              NEW PROJECT
+            </button>
           </h3>
           <div
             class="ui divided relaxed list"
@@ -346,6 +350,13 @@ exports[`Study basic info edit study modal renders correctly 1`] = `
               class="item"
               role="listitem"
             >
+              <div
+                class="right floated content"
+              >
+                <a
+                  href="/study/SD_8WX8QQ06/documents"
+                />
+              </div>
               <i
                 aria-hidden="true"
                 class="paper plane outline icon"
@@ -353,15 +364,6 @@ exports[`Study basic info edit study modal renders correctly 1`] = `
               <div
                 class="content"
               >
-                <div
-                  class="right floated content"
-                >
-                  <a
-                    href="/study/SD_8WX8QQ06/documents"
-                  >
-                    benchmark extensible e-business
-                  </a>
-                </div>
                 <a
                   class="header"
                   href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06"
@@ -381,7 +383,8 @@ exports[`Study basic info edit study modal renders correctly 1`] = `
                     class="item"
                     role="listitem"
                   >
-                    Created 
+                    Created
+                     by zhux3 
                     <time
                       datetime="2019-08-26T18:22:41.000Z"
                       title="2019-08-26T18:22:41+00:00"
@@ -404,6 +407,13 @@ exports[`Study basic info edit study modal renders correctly 1`] = `
               class="item"
               role="listitem"
             >
+              <div
+                class="right floated content"
+              >
+                <a
+                  href="/study/SD_8WX8QQ06/documents"
+                />
+              </div>
               <i
                 aria-hidden="true"
                 class="sliders horizontal icon"
@@ -411,15 +421,6 @@ exports[`Study basic info edit study modal renders correctly 1`] = `
               <div
                 class="content"
               >
-                <div
-                  class="right floated content"
-                >
-                  <a
-                    href="/study/SD_8WX8QQ06/documents"
-                  >
-                    benchmark extensible e-business
-                  </a>
-                </div>
                 <a
                   class="header"
                   href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06-bwa-mem"
@@ -439,7 +440,8 @@ exports[`Study basic info edit study modal renders correctly 1`] = `
                     class="item"
                     role="listitem"
                   >
-                    Created 
+                    Created
+                     by zhux3 
                     <time
                       datetime="2019-08-26T18:22:42.000Z"
                       title="2019-08-26T18:22:42+00:00"
@@ -468,6 +470,13 @@ exports[`Study basic info edit study modal renders correctly 1`] = `
               class="item"
               role="listitem"
             >
+              <div
+                class="right floated content"
+              >
+                <a
+                  href="/study/SD_8WX8QQ06/documents"
+                />
+              </div>
               <i
                 aria-hidden="true"
                 class="sliders horizontal icon"
@@ -475,15 +484,6 @@ exports[`Study basic info edit study modal renders correctly 1`] = `
               <div
                 class="content"
               >
-                <div
-                  class="right floated content"
-                >
-                  <a
-                    href="/study/SD_8WX8QQ06/documents"
-                  >
-                    benchmark extensible e-business
-                  </a>
-                </div>
                 <a
                   class="header"
                   href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06-gatk-haplotypecaller"
@@ -503,7 +503,8 @@ exports[`Study basic info edit study modal renders correctly 1`] = `
                     class="item"
                     role="listitem"
                   >
-                    Created 
+                    Created
+                     by zhux3 
                     <time
                       datetime="2019-08-26T18:22:43.000Z"
                       title="2019-08-26T18:22:43+00:00"
@@ -1073,20 +1074,24 @@ exports[`Study basic info link project modal renders correctly 1`] = `
             class="ui header pb-10"
           >
             Cavatica Projects
-            <div
-              class="ui mini right floated buttons"
+            <button
+              class="ui mini primary right floated button"
             >
-              <button
-                class="ui button"
-              >
-                NEW PROJECT
-              </button>
-              <button
-                class="ui primary button"
-              >
-                LINK PROJECT
-              </button>
-            </div>
+              <i
+                aria-hidden="true"
+                class="linkify icon"
+              />
+              LINK PROJECT
+            </button>
+            <button
+              class="ui mini basic primary right floated button"
+            >
+              <i
+                aria-hidden="true"
+                class="add icon"
+              />
+              NEW PROJECT
+            </button>
           </h3>
           <div
             class="ui divided relaxed list"
@@ -1096,6 +1101,13 @@ exports[`Study basic info link project modal renders correctly 1`] = `
               class="item"
               role="listitem"
             >
+              <div
+                class="right floated content"
+              >
+                <a
+                  href="/study/SD_8WX8QQ06/documents"
+                />
+              </div>
               <i
                 aria-hidden="true"
                 class="paper plane outline icon"
@@ -1103,15 +1115,6 @@ exports[`Study basic info link project modal renders correctly 1`] = `
               <div
                 class="content"
               >
-                <div
-                  class="right floated content"
-                >
-                  <a
-                    href="/study/SD_8WX8QQ06/documents"
-                  >
-                    benchmark extensible e-business
-                  </a>
-                </div>
                 <a
                   class="header"
                   href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06"
@@ -1131,7 +1134,8 @@ exports[`Study basic info link project modal renders correctly 1`] = `
                     class="item"
                     role="listitem"
                   >
-                    Created 
+                    Created
+                     by zhux3 
                     <time
                       datetime="2019-08-26T18:22:41.000Z"
                       title="2019-08-26T18:22:41+00:00"
@@ -1154,6 +1158,13 @@ exports[`Study basic info link project modal renders correctly 1`] = `
               class="item"
               role="listitem"
             >
+              <div
+                class="right floated content"
+              >
+                <a
+                  href="/study/SD_8WX8QQ06/documents"
+                />
+              </div>
               <i
                 aria-hidden="true"
                 class="sliders horizontal icon"
@@ -1161,15 +1172,6 @@ exports[`Study basic info link project modal renders correctly 1`] = `
               <div
                 class="content"
               >
-                <div
-                  class="right floated content"
-                >
-                  <a
-                    href="/study/SD_8WX8QQ06/documents"
-                  >
-                    benchmark extensible e-business
-                  </a>
-                </div>
                 <a
                   class="header"
                   href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06-bwa-mem"
@@ -1189,7 +1191,8 @@ exports[`Study basic info link project modal renders correctly 1`] = `
                     class="item"
                     role="listitem"
                   >
-                    Created 
+                    Created
+                     by zhux3 
                     <time
                       datetime="2019-08-26T18:22:42.000Z"
                       title="2019-08-26T18:22:42+00:00"
@@ -1218,6 +1221,13 @@ exports[`Study basic info link project modal renders correctly 1`] = `
               class="item"
               role="listitem"
             >
+              <div
+                class="right floated content"
+              >
+                <a
+                  href="/study/SD_8WX8QQ06/documents"
+                />
+              </div>
               <i
                 aria-hidden="true"
                 class="sliders horizontal icon"
@@ -1225,15 +1235,6 @@ exports[`Study basic info link project modal renders correctly 1`] = `
               <div
                 class="content"
               >
-                <div
-                  class="right floated content"
-                >
-                  <a
-                    href="/study/SD_8WX8QQ06/documents"
-                  >
-                    benchmark extensible e-business
-                  </a>
-                </div>
                 <a
                   class="header"
                   href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06-gatk-haplotypecaller"
@@ -1253,7 +1254,8 @@ exports[`Study basic info link project modal renders correctly 1`] = `
                     class="item"
                     role="listitem"
                   >
-                    Created 
+                    Created
+                     by zhux3 
                     <time
                       datetime="2019-08-26T18:22:43.000Z"
                       title="2019-08-26T18:22:43+00:00"
@@ -1823,20 +1825,24 @@ exports[`Study basic info new project modal renders correctly 1`] = `
             class="ui header pb-10"
           >
             Cavatica Projects
-            <div
-              class="ui mini right floated buttons"
+            <button
+              class="ui mini primary right floated button"
             >
-              <button
-                class="ui button"
-              >
-                NEW PROJECT
-              </button>
-              <button
-                class="ui primary button"
-              >
-                LINK PROJECT
-              </button>
-            </div>
+              <i
+                aria-hidden="true"
+                class="linkify icon"
+              />
+              LINK PROJECT
+            </button>
+            <button
+              class="ui mini basic primary right floated button"
+            >
+              <i
+                aria-hidden="true"
+                class="add icon"
+              />
+              NEW PROJECT
+            </button>
           </h3>
           <div
             class="ui divided relaxed list"
@@ -1846,6 +1852,13 @@ exports[`Study basic info new project modal renders correctly 1`] = `
               class="item"
               role="listitem"
             >
+              <div
+                class="right floated content"
+              >
+                <a
+                  href="/study/SD_8WX8QQ06/documents"
+                />
+              </div>
               <i
                 aria-hidden="true"
                 class="paper plane outline icon"
@@ -1853,15 +1866,6 @@ exports[`Study basic info new project modal renders correctly 1`] = `
               <div
                 class="content"
               >
-                <div
-                  class="right floated content"
-                >
-                  <a
-                    href="/study/SD_8WX8QQ06/documents"
-                  >
-                    benchmark extensible e-business
-                  </a>
-                </div>
                 <a
                   class="header"
                   href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06"
@@ -1881,7 +1885,8 @@ exports[`Study basic info new project modal renders correctly 1`] = `
                     class="item"
                     role="listitem"
                   >
-                    Created 
+                    Created
+                     by zhux3 
                     <time
                       datetime="2019-08-26T18:22:41.000Z"
                       title="2019-08-26T18:22:41+00:00"
@@ -1904,6 +1909,13 @@ exports[`Study basic info new project modal renders correctly 1`] = `
               class="item"
               role="listitem"
             >
+              <div
+                class="right floated content"
+              >
+                <a
+                  href="/study/SD_8WX8QQ06/documents"
+                />
+              </div>
               <i
                 aria-hidden="true"
                 class="sliders horizontal icon"
@@ -1911,15 +1923,6 @@ exports[`Study basic info new project modal renders correctly 1`] = `
               <div
                 class="content"
               >
-                <div
-                  class="right floated content"
-                >
-                  <a
-                    href="/study/SD_8WX8QQ06/documents"
-                  >
-                    benchmark extensible e-business
-                  </a>
-                </div>
                 <a
                   class="header"
                   href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06-bwa-mem"
@@ -1939,7 +1942,8 @@ exports[`Study basic info new project modal renders correctly 1`] = `
                     class="item"
                     role="listitem"
                   >
-                    Created 
+                    Created
+                     by zhux3 
                     <time
                       datetime="2019-08-26T18:22:42.000Z"
                       title="2019-08-26T18:22:42+00:00"
@@ -1968,6 +1972,13 @@ exports[`Study basic info new project modal renders correctly 1`] = `
               class="item"
               role="listitem"
             >
+              <div
+                class="right floated content"
+              >
+                <a
+                  href="/study/SD_8WX8QQ06/documents"
+                />
+              </div>
               <i
                 aria-hidden="true"
                 class="sliders horizontal icon"
@@ -1975,15 +1986,6 @@ exports[`Study basic info new project modal renders correctly 1`] = `
               <div
                 class="content"
               >
-                <div
-                  class="right floated content"
-                >
-                  <a
-                    href="/study/SD_8WX8QQ06/documents"
-                  >
-                    benchmark extensible e-business
-                  </a>
-                </div>
                 <a
                   class="header"
                   href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06-gatk-haplotypecaller"
@@ -2003,7 +2005,8 @@ exports[`Study basic info new project modal renders correctly 1`] = `
                     class="item"
                     role="listitem"
                   >
-                    Created 
+                    Created
+                     by zhux3 
                     <time
                       datetime="2019-08-26T18:22:43.000Z"
                       title="2019-08-26T18:22:43+00:00"
@@ -2573,20 +2576,24 @@ exports[`Study basic info page renders correctly 1`] = `
             class="ui header pb-10"
           >
             Cavatica Projects
-            <div
-              class="ui mini right floated buttons"
+            <button
+              class="ui mini primary right floated button"
             >
-              <button
-                class="ui button"
-              >
-                NEW PROJECT
-              </button>
-              <button
-                class="ui primary button"
-              >
-                LINK PROJECT
-              </button>
-            </div>
+              <i
+                aria-hidden="true"
+                class="linkify icon"
+              />
+              LINK PROJECT
+            </button>
+            <button
+              class="ui mini basic primary right floated button"
+            >
+              <i
+                aria-hidden="true"
+                class="add icon"
+              />
+              NEW PROJECT
+            </button>
           </h3>
           <div
             class="ui divided relaxed list"
@@ -2596,6 +2603,13 @@ exports[`Study basic info page renders correctly 1`] = `
               class="item"
               role="listitem"
             >
+              <div
+                class="right floated content"
+              >
+                <a
+                  href="/study/SD_8WX8QQ06/documents"
+                />
+              </div>
               <i
                 aria-hidden="true"
                 class="paper plane outline icon"
@@ -2603,15 +2617,6 @@ exports[`Study basic info page renders correctly 1`] = `
               <div
                 class="content"
               >
-                <div
-                  class="right floated content"
-                >
-                  <a
-                    href="/study/SD_8WX8QQ06/documents"
-                  >
-                    benchmark extensible e-business
-                  </a>
-                </div>
                 <a
                   class="header"
                   href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06"
@@ -2631,7 +2636,8 @@ exports[`Study basic info page renders correctly 1`] = `
                     class="item"
                     role="listitem"
                   >
-                    Created 
+                    Created
+                     by zhux3 
                     <time
                       datetime="2019-08-26T18:22:41.000Z"
                       title="2019-08-26T18:22:41+00:00"
@@ -2654,6 +2660,13 @@ exports[`Study basic info page renders correctly 1`] = `
               class="item"
               role="listitem"
             >
+              <div
+                class="right floated content"
+              >
+                <a
+                  href="/study/SD_8WX8QQ06/documents"
+                />
+              </div>
               <i
                 aria-hidden="true"
                 class="sliders horizontal icon"
@@ -2661,15 +2674,6 @@ exports[`Study basic info page renders correctly 1`] = `
               <div
                 class="content"
               >
-                <div
-                  class="right floated content"
-                >
-                  <a
-                    href="/study/SD_8WX8QQ06/documents"
-                  >
-                    benchmark extensible e-business
-                  </a>
-                </div>
                 <a
                   class="header"
                   href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06-bwa-mem"
@@ -2689,7 +2693,8 @@ exports[`Study basic info page renders correctly 1`] = `
                     class="item"
                     role="listitem"
                   >
-                    Created 
+                    Created
+                     by zhux3 
                     <time
                       datetime="2019-08-26T18:22:42.000Z"
                       title="2019-08-26T18:22:42+00:00"
@@ -2718,6 +2723,13 @@ exports[`Study basic info page renders correctly 1`] = `
               class="item"
               role="listitem"
             >
+              <div
+                class="right floated content"
+              >
+                <a
+                  href="/study/SD_8WX8QQ06/documents"
+                />
+              </div>
               <i
                 aria-hidden="true"
                 class="sliders horizontal icon"
@@ -2725,15 +2737,6 @@ exports[`Study basic info page renders correctly 1`] = `
               <div
                 class="content"
               >
-                <div
-                  class="right floated content"
-                >
-                  <a
-                    href="/study/SD_8WX8QQ06/documents"
-                  >
-                    benchmark extensible e-business
-                  </a>
-                </div>
                 <a
                   class="header"
                   href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06-gatk-haplotypecaller"
@@ -2753,7 +2756,8 @@ exports[`Study basic info page renders correctly 1`] = `
                     class="item"
                     role="listitem"
                   >
-                    Created 
+                    Created
+                     by zhux3 
                     <time
                       datetime="2019-08-26T18:22:43.000Z"
                       title="2019-08-26T18:22:43+00:00"
