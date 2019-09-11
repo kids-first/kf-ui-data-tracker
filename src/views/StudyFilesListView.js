@@ -68,9 +68,13 @@ const StudyFilesListView = ({
     <Grid as={Segment} basic container columns={1}>
       <Grid.Row>
         <Grid.Column width={10}>
-          <h2 inline>Study Documents</h2>
+          <h2>Study Documents</h2>
         </Grid.Column>
+<<<<<<< HEAD
         {files.length && (
+=======
+        {files.length > 0 && (
+>>>>>>> 64bb7b0... :ok_hand: user conjunction render instead of ternary
           <Grid.Column width={6}>
             <Button
               compact
