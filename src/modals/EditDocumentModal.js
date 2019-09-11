@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useRef} from 'react';
 import {UPDATE_FILE, UPDATE_VERSION} from '../state/mutations';
 import {MY_PROFILE} from '../state/queries';
 import {graphql, compose} from 'react-apollo';
@@ -13,23 +13,15 @@ const EditDocumentModal = ({
   onCloseDialog,
   user,
 }) => {
-  const [fileTypeInput, setFileType] = useState(fileNode.fileType);
-  const [fileNameInput, setFileName] = useState(fileNode.name);
-  const [fileDescriptionInput, setFileDescription] = useState(
-    fileNode.description,
-  );
+  const formEl = useRef(null);
 
   const latestVersion = fileSortedVersions(fileNode)[0].node;
-  const [versionStatusInput, setVersionStatus] = useState(latestVersion.state);
+
   const isAdmin = !user.loading
     ? user.myProfile.roles.includes('ADMIN')
     : false;
 
-  const onSubmit = e => {
-    e.preventDefault();
-    const name = fileNameInput;
-    const description = fileDescriptionInput;
-    const fileType = fileTypeInput;
+  const handleSubmit = (name, fileType, description, versionStatus) => {
     updateFile({variables: {kfId: fileNode.kfId, name, description, fileType}})
       .then(() => onCloseDialog())
       .catch(err => console.log(err));
@@ -37,7 +29,7 @@ const EditDocumentModal = ({
       variables: {
         versionId: latestVersion.kfId,
         description: latestVersion.description,
-        state: versionStatusInput,
+        state: versionStatus,
       },
     })
       .then(() => onCloseDialog())
@@ -49,25 +41,23 @@ const EditDocumentModal = ({
       <Modal.Header content="Edit Document Metadata" />
       <Modal.Content scrolling>
         <EditDocumentForm
-          fileType={fileTypeInput}
-          fileName={fileNameInput}
+          ref={formEl}
+          fileType={fileNode.fileType}
+          fileName={fileNode.name}
+          versionStatus={latestVersion.state}
           isAdmin={isAdmin}
-          fileDescription={fileDescriptionInput}
-          versionStatus={versionStatusInput}
-          onNameChange={e => setFileName(e.target.value)}
-          onDescriptionChange={e => setFileDescription(e.target.value)}
-          onFileTypeChange={item => setFileType(item)}
-          onVersionStatusChange={versionStatusValue =>
-            setVersionStatus(versionStatusValue)
-          }
+          fileDescription={fileNode.description}
+          handleSubmit={handleSubmit}
         />
       </Modal.Content>
       <Modal.Actions>
         <Button
           primary
           size="mini"
-          onClick={e => onSubmit(e)}
-          disabled={!fileNameInput || !fileTypeInput || !fileDescriptionInput}
+          type="submit"
+          onClick={e => {
+            formEl.current.handleSubmit();
+          }}
         >
           SAVE
         </Button>
