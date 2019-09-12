@@ -21,8 +21,8 @@ const StudyNavBar = ({match, history, isBeta}) => {
       endString: 'documents',
     },
     {
-      tab: 'Collaborators',
-      endString: 'collaborators',
+      tab: 'Cavatica',
+      endString: 'cavatica',
     },
   ];
   return (
