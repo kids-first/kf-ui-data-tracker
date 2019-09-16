@@ -1,9 +1,15 @@
 import React, {useState} from 'react';
 import {LinkProjectForm} from '../forms';
-import {Button, Form, Message, Modal} from 'semantic-ui-react';
+import {Button, Form, Message, Modal, Header, Icon} from 'semantic-ui-react';
 import {Formik} from 'formik';
 
-const LinkProjectModal = ({linkProject, onCloseDialog, study, allProjects}) => {
+const LinkProjectModal = ({
+  linkProject,
+  onCloseDialog,
+  study,
+  allProjects,
+  syncProjects,
+}) => {
   const [errors, setErrors] = useState('');
 
   const onSubmit = (values, {setSubmitting}) => {
@@ -23,6 +29,21 @@ const LinkProjectModal = ({linkProject, onCloseDialog, study, allProjects}) => {
       });
   };
 
+  const [syncing, setSyncing] = useState(false);
+  const [syncErrors, setSyncErrors] = useState();
+  const sync = () => {
+    setSyncing(true);
+    setSyncErrors(null);
+    syncProjects()
+      .then(resp => {
+        setSyncing(false);
+      })
+      .catch(err => {
+        setSyncing(false);
+        setSyncErrors(err.message);
+      });
+  };
+
   return (
     <Formik
       initialValues={{
@@ -38,16 +59,49 @@ const LinkProjectModal = ({linkProject, onCloseDialog, study, allProjects}) => {
       onSubmit={onSubmit}
     >
       {formikProps => (
-        <Modal
-          as={Form}
-          onSubmit={formikProps.handleSubmit}
-          open={true}
-          onClose={onCloseDialog}
-          closeIcon
-        >
+        <Modal open={true} onClose={onCloseDialog} closeIcon>
           <Modal.Header content="Link an Existing Analysis Project" />
-          <Modal.Content>
-            <p>Link a Cavatica Project to this study</p>
+          <Modal.Content className="pb-0">
+            <Header
+              as="h3"
+              floated="left"
+              content="Link a Cavatica Project to this study"
+            />
+            <Button
+              basic
+              primary
+              type="button"
+              floated="right"
+              size="mini"
+              icon="sync"
+              loading={syncing}
+              content="SYNC PROJECTS"
+              onClick={sync}
+            />
+            {syncing ? (
+              <Message
+                icon={<Icon name="sync" loading />}
+                header="Syncing Cavatica Projects"
+                content="This could take a moment..."
+              />
+            ) : (
+              <Message
+                warning
+                icon="attention"
+                header="Attention"
+                content="Projects created recently from Cavatica may require a sync before being available for linking."
+              />
+            )}
+            {syncErrors && (
+              <Message
+                negative
+                icon="warning circle"
+                header="Error"
+                content={syncErrors}
+              />
+            )}
+          </Modal.Content>
+          <Modal.Content as={Form} onSubmit={formikProps.handleSubmit}>
             {!allProjects || allProjects.length === 0 ? (
               <Message
                 info
@@ -60,10 +114,11 @@ const LinkProjectModal = ({linkProject, onCloseDialog, study, allProjects}) => {
                 formikProps={formikProps}
                 allProjects={allProjects}
                 apiErrors={errors}
+                disabled={syncing}
               />
             )}
           </Modal.Content>
-          <Modal.Actions>
+          <Modal.Actions as={Form} onSubmit={formikProps.handleSubmit}>
             <Button
               primary
               size="mini"

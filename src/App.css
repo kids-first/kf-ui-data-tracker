@@ -34,6 +34,10 @@ body {
   box-shadow: none !important;
 }
 
+.pb-0 {
+  padding-bottom: 0px !important;
+}
+
 .pr-5 {
   padding-right: 5px !important;
 }
