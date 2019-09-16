@@ -24,8 +24,9 @@ const ProjectLink = ({projectNode, disableLink}) => (
     as="a"
     target="_blank"
     href={
-      !disableLink &&
-      `https://cavatica.sbgenomics.com/u/${projectNode.projectId}`
+      disableLink
+        ? null
+        : `https://cavatica.sbgenomics.com/u/${projectNode.projectId}`
     }
   >
     {projectNode.name + ' '}
