@@ -12,3 +12,4 @@ export {default as NewStudyView} from './NewStudyView';
 export {default as ProfileView} from './ProfileView';
 export {default as StudyInfoView} from './StudyInfoView';
 export {default as EventsView} from './EventsView';
+export {default as CavaticaBixView} from './CavaticaBixView';
