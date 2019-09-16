@@ -129,8 +129,8 @@ export const GET_DEV_TOKENS = gql`
 
 // Query to get Cavatica projects registered in the study creator
 export const GET_PROJECTS = gql`
-  query CavaticaProjects($study: ID) {
-    allProjects(study: $study) {
+  query CavaticaProjects($study: ID, $deleted: Boolean) {
+    allProjects(study: $study, deleted: $deleted) {
       edges {
         node {
           ...ProjectFields
