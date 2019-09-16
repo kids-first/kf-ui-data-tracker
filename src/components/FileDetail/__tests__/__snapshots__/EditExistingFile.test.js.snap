@@ -187,9 +187,9 @@ exports[`edits an existing file correctly 1`] = `
         </a>
         <a
           class="item"
-          href="/study/SD_8WX8QQ06/collaborators"
+          href="/study/SD_8WX8QQ06/cavatica"
         >
-          Collaborators
+          Cavatica
         </a>
       </div>
     </div>
@@ -954,9 +954,9 @@ exports[`edits an existing file correctly 2`] = `
         </a>
         <a
           class="item"
-          href="/study/SD_8WX8QQ06/collaborators"
+          href="/study/SD_8WX8QQ06/cavatica"
         >
-          Collaborators
+          Cavatica
         </a>
       </div>
     </div>
@@ -1558,9 +1558,9 @@ exports[`edits an existing file correctly 3`] = `
         </a>
         <a
           class="item"
-          href="/study/SD_8WX8QQ06/collaborators"
+          href="/study/SD_8WX8QQ06/cavatica"
         >
-          Collaborators
+          Cavatica
         </a>
       </div>
     </div>

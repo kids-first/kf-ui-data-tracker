@@ -25,9 +25,9 @@ exports[`renders correctly 1`] = `
     </a>
     <a
       class="item"
-      href="/study/undefined/collaborators"
+      href="/study/undefined/cavatica"
     >
-      Collaborators
+      Cavatica
     </a>
   </div>
 </div>
