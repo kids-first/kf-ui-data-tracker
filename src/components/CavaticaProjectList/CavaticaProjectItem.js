@@ -36,11 +36,11 @@ const ProjectLink = ({projectNode, disableLink}) => {
   }
 };
 
-const StudyLink = ({study, hideLink}) => {
+const StudyLink = ({study}) => {
   if (study) {
     return (
       <Link to={`/study/${study.kfId}/documents`}>
-        {hideLink ? '' : study.shortName || study.name || study.kfId}
+        {study.shortName || study.name || study.kfId}
       </Link>
     );
   } else {
@@ -132,7 +132,7 @@ const CavaticaProjectItem = ({
     return (
       <List.Item>
         <List.Content floated="right">
-          <StudyLink study={projectNode.study} hideLink={studyId} />
+          {!hideStudy && <StudyLink study={projectNode.study} />}
           {unlinkProject && projectNode.study && (
             <UnlinkButton
               unlinkProject={unlinkProject}
