@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import {List, Icon, Button, Popup, Divider, Header} from 'semantic-ui-react';
 import TimeAgo from 'react-timeago';
@@ -155,6 +156,17 @@ const CavaticaProjectItem = ({
       </List.Item>
     );
   }
+};
+
+CavaticaProjectItem.propTypes = {
+  /** Project object with study object nested if linked */
+  projectNode: PropTypes.object.isRequired,
+  /** Action to unlink a project taking project id and study id */
+  unlinkProject: PropTypes.func,
+  /** If disable the external link to Cavatica on project name */
+  disableLink: PropTypes.bool,
+  /** For linked project if to hide the study link */
+  hideStudy: PropTypes.bool,
 };
 
 export default CavaticaProjectItem;
