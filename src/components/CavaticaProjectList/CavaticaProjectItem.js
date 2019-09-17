@@ -19,20 +19,22 @@ const ProjectAttributes = ({projectNode}) => (
   </List>
 );
 
-const ProjectLink = ({projectNode, disableLink}) => (
-  <List.Header
-    as="a"
-    target="_blank"
-    href={
-      disableLink
-        ? null
-        : `https://cavatica.sbgenomics.com/u/${projectNode.projectId}`
-    }
-  >
-    {projectNode.name + ' '}
-    <Icon link size="small" name="external" />
-  </List.Header>
-);
+const ProjectLink = ({projectNode, disableLink}) => {
+  if (disableLink) {
+    return <List.Header>{projectNode.name}</List.Header>;
+  } else {
+    return (
+      <List.Header
+        as="a"
+        target="_blank"
+        href={`https://cavatica.sbgenomics.com/u/${projectNode.projectId}`}
+      >
+        {projectNode.name + ' '}
+        <Icon link size="small" name="external" />
+      </List.Header>
+    );
+  }
+};
 
 const StudyLink = ({study, hideLink}) => {
   if (study) {
