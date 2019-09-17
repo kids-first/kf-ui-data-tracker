@@ -352,11 +352,7 @@ exports[`Study basic info edit study modal renders correctly 1`] = `
             >
               <div
                 class="right floated content"
-              >
-                <a
-                  href="/study/SD_8WX8QQ06/documents"
-                />
-              </div>
+              />
               <i
                 aria-hidden="true"
                 class="paper plane outline icon"
@@ -409,11 +405,7 @@ exports[`Study basic info edit study modal renders correctly 1`] = `
             >
               <div
                 class="right floated content"
-              >
-                <a
-                  href="/study/SD_8WX8QQ06/documents"
-                />
-              </div>
+              />
               <i
                 aria-hidden="true"
                 class="sliders horizontal icon"
@@ -472,11 +464,7 @@ exports[`Study basic info edit study modal renders correctly 1`] = `
             >
               <div
                 class="right floated content"
-              >
-                <a
-                  href="/study/SD_8WX8QQ06/documents"
-                />
-              </div>
+              />
               <i
                 aria-hidden="true"
                 class="sliders horizontal icon"
@@ -1103,11 +1091,7 @@ exports[`Study basic info link project modal renders correctly 1`] = `
             >
               <div
                 class="right floated content"
-              >
-                <a
-                  href="/study/SD_8WX8QQ06/documents"
-                />
-              </div>
+              />
               <i
                 aria-hidden="true"
                 class="paper plane outline icon"
@@ -1160,11 +1144,7 @@ exports[`Study basic info link project modal renders correctly 1`] = `
             >
               <div
                 class="right floated content"
-              >
-                <a
-                  href="/study/SD_8WX8QQ06/documents"
-                />
-              </div>
+              />
               <i
                 aria-hidden="true"
                 class="sliders horizontal icon"
@@ -1223,11 +1203,7 @@ exports[`Study basic info link project modal renders correctly 1`] = `
             >
               <div
                 class="right floated content"
-              >
-                <a
-                  href="/study/SD_8WX8QQ06/documents"
-                />
-              </div>
+              />
               <i
                 aria-hidden="true"
                 class="sliders horizontal icon"
@@ -1854,11 +1830,7 @@ exports[`Study basic info new project modal renders correctly 1`] = `
             >
               <div
                 class="right floated content"
-              >
-                <a
-                  href="/study/SD_8WX8QQ06/documents"
-                />
-              </div>
+              />
               <i
                 aria-hidden="true"
                 class="paper plane outline icon"
@@ -1911,11 +1883,7 @@ exports[`Study basic info new project modal renders correctly 1`] = `
             >
               <div
                 class="right floated content"
-              >
-                <a
-                  href="/study/SD_8WX8QQ06/documents"
-                />
-              </div>
+              />
               <i
                 aria-hidden="true"
                 class="sliders horizontal icon"
@@ -1974,11 +1942,7 @@ exports[`Study basic info new project modal renders correctly 1`] = `
             >
               <div
                 class="right floated content"
-              >
-                <a
-                  href="/study/SD_8WX8QQ06/documents"
-                />
-              </div>
+              />
               <i
                 aria-hidden="true"
                 class="sliders horizontal icon"
@@ -2605,11 +2569,7 @@ exports[`Study basic info page renders correctly 1`] = `
             >
               <div
                 class="right floated content"
-              >
-                <a
-                  href="/study/SD_8WX8QQ06/documents"
-                />
-              </div>
+              />
               <i
                 aria-hidden="true"
                 class="paper plane outline icon"
@@ -2662,11 +2622,7 @@ exports[`Study basic info page renders correctly 1`] = `
             >
               <div
                 class="right floated content"
-              >
-                <a
-                  href="/study/SD_8WX8QQ06/documents"
-                />
-              </div>
+              />
               <i
                 aria-hidden="true"
                 class="sliders horizontal icon"
@@ -2725,11 +2681,7 @@ exports[`Study basic info page renders correctly 1`] = `
             >
               <div
                 class="right floated content"
-              >
-                <a
-                  href="/study/SD_8WX8QQ06/documents"
-                />
-              </div>
+              />
               <i
                 aria-hidden="true"
                 class="sliders horizontal icon"
