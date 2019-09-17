@@ -46,6 +46,49 @@ const StudyLink = ({study, hideLink}) => {
   }
 };
 
+const UnlinkButton = ({unlinkProject, study, projectId}) => (
+  <Popup
+    trigger={
+      <Button
+        basic
+        negative
+        floated="right"
+        size="mini"
+        icon="unlink"
+        content="UNLINK"
+        className="ml-10"
+        onClick={e => e.stopPropagation()}
+      />
+    }
+    header="Are you sure?"
+    content={
+      <>
+        This will unlink the project from its study. It may always be linked
+        back later.
+        <Divider />
+        <Button
+          data-testid="delete-confirm"
+          negative
+          fluid
+          icon={<Icon name="unlink" />}
+          content="Unlink"
+          onClick={e => {
+            e.stopPropagation();
+            unlinkProject({
+              variables: {
+                project: projectId,
+                study: study.id,
+              },
+            });
+          }}
+        />
+      </>
+    }
+    on="click"
+    position="top right"
+  />
+);
+
 const CavaticaProjectItem = ({
   projectNode,
   unlinkProject,
@@ -57,6 +100,13 @@ const CavaticaProjectItem = ({
       <List.Item className="disabled">
         <List.Content floated="right" verticalAlign="middle">
           Deleted
+          {unlinkProject && projectNode.study && (
+            <UnlinkButton
+              unlinkProject={unlinkProject}
+              projectId={projectNode.id}
+              study={projectNode.study}
+            />
+          )}
         </List.Content>
         <Icon
           name={
@@ -78,46 +128,11 @@ const CavaticaProjectItem = ({
       <List.Item>
         <List.Content floated="right">
           <StudyLink study={projectNode.study} hideLink={studyId} />
-          {unlinkProject && (studyId || projectNode.study) && (
-            <Popup
-              trigger={
-                <Button
-                  basic
-                  negative
-                  floated="right"
-                  size="mini"
-                  icon="unlink"
-                  content="UNLINK"
-                  className="ml-10"
-                  onClick={e => e.stopPropagation()}
-                />
-              }
-              header="Are you sure?"
-              content={
-                <>
-                  This will unlink the project from its study. It may always be
-                  linked back later.
-                  <Divider />
-                  <Button
-                    data-testid="delete-confirm"
-                    negative
-                    fluid
-                    icon={<Icon name="unlink" />}
-                    content="Unlink"
-                    onClick={e => {
-                      e.stopPropagation();
-                      unlinkProject({
-                        variables: {
-                          project: projectNode.id,
-                          study: studyId ? studyId : projectNode.study.id,
-                        },
-                      });
-                    }}
-                  />
-                </>
-              }
-              on="click"
-              position="top right"
+          {unlinkProject && projectNode.study && (
+            <UnlinkButton
+              unlinkProject={unlinkProject}
+              projectId={projectNode.id}
+              study={projectNode.study}
             />
           )}
         </List.Content>
