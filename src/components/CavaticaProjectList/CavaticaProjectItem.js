@@ -3,17 +3,17 @@ import {Link} from 'react-router-dom';
 import {List, Icon, Button, Popup, Divider, Header} from 'semantic-ui-react';
 import TimeAgo from 'react-timeago';
 
-const ProjectAttributes = ({projectNode}) => (
+const ProjectAttributes = ({projectNode, disabled}) => (
   <List bulleted horizontal>
-    <List.Item>
+    <List.Item disabled={disabled}>
       Created
       {projectNode.createdBy ? ' by ' + projectNode.createdBy + ' ' : ' '}
       <TimeAgo live={false} date={projectNode.createdOn} />
     </List.Item>
     {projectNode.workflowType && (
-      <List.Item>{projectNode.workflowType}</List.Item>
+      <List.Item disabled={disabled}>{projectNode.workflowType}</List.Item>
     )}
-    <List.Item>
+    <List.Item disabled={disabled}>
       <code>{projectNode.projectId}</code>
     </List.Item>
   </List>
@@ -99,9 +99,8 @@ const CavaticaProjectItem = ({
 }) => {
   if (projectNode.deleted) {
     return (
-      <List.Item className="disabled">
+      <List.Item>
         <List.Content floated="right" verticalAlign="middle">
-          Deleted
           {unlinkProject && projectNode.study && (
             <UnlinkButton
               unlinkProject={unlinkProject}
@@ -111,6 +110,7 @@ const CavaticaProjectItem = ({
           )}
         </List.Content>
         <Icon
+          color="grey"
           name={
             projectNode.projectType === 'DEL'
               ? 'paper plane outline'
@@ -118,10 +118,13 @@ const CavaticaProjectItem = ({
           }
         />
         <List.Content>
-          <List.Header as={Header} disabled size="tiny">
+          <Header floated="right" disabled size="tiny">
+            Deleted
+          </Header>
+          <List.Header as={Header} color="grey" size="tiny">
             {projectNode.name + ' '}
           </List.Header>
-          <ProjectAttributes projectNode={projectNode} />
+          <ProjectAttributes projectNode={projectNode} disabled />
         </List.Content>
       </List.Item>
     );
