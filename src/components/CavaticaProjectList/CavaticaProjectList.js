@@ -5,8 +5,8 @@ import CavaticaProjectItem from './CavaticaProjectItem';
 const CavaticaProjectList = ({
   projects,
   unlinkProject,
-  studyId,
   disableLink,
+  hideStudy,
 }) => (
   <List relaxed divided>
     {projects
@@ -16,8 +16,8 @@ const CavaticaProjectList = ({
           key={node.id}
           projectNode={node}
           unlinkProject={unlinkProject}
-          studyId={studyId}
           disableLink={disableLink}
+          hideStudy={hideStudy}
         />
       ))}
   </List>

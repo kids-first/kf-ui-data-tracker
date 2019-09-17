@@ -103,8 +103,8 @@ const CavaticaBixView = ({
         {studyByKfId.projects.edges.length > 0 ? (
           <CavaticaProjectList
             projects={studyByKfId.projects.edges}
-            studyId={studyByKfId.id}
             unlinkProject={unlinkProject}
+            hideStudy
           />
         ) : (
           <Header disabled textAlign="center" as="h4">

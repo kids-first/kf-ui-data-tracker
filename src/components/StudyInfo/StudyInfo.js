@@ -202,8 +202,8 @@ const StudyInfo = ({studyNode, setShowModal, unlinkProject}) => {
             {studyNode.projects.edges.length > 0 ? (
               <CavaticaProjectList
                 projects={studyNode.projects.edges}
-                studyId={studyNode.id}
                 unlinkProject={unlinkProject}
+                hideStudy
               />
             ) : (
               <Header disabled textAlign="center" as="h4">

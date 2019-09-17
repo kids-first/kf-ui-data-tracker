@@ -94,8 +94,8 @@ const UnlinkButton = ({unlinkProject, study, projectId}) => (
 const CavaticaProjectItem = ({
   projectNode,
   unlinkProject,
-  studyId,
   disableLink,
+  hideStudy,
 }) => {
   if (projectNode.deleted) {
     return (
