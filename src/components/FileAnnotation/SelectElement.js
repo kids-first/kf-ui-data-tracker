@@ -6,22 +6,34 @@ import {Icon, Segment, Radio} from 'semantic-ui-react';
  * A radio button that displays information about a file type with a title,
  * description, and icon.
  */
-const SelectElement = ({value, selected, select}) => {
+const SelectElement = ({
+  field: {name, value, onChange},
+  form: {values, setFieldValue},
+  id,
+  label,
+  className,
+  ...props
+}) => {
+  const selected = id === values.file_type;
   return (
     <Segment
       compact
       color={selected ? 'blue' : null}
       className="selectionRadio--card"
-      onClick={() => select(value)}
+      onClick={() => {
+        setFieldValue(name, id);
+      }}
     >
       <Radio
         className="selectionRadio"
-        name="fileTypeGroup"
-        value={value}
-        onChange={select}
+        name={name}
+        id={id}
+        value={id}
+        checked={selected}
+        onChange={onChange}
         label={() => (
           <Icon
-            name={fileTypeDetail[value].icon}
+            name={fileTypeDetail[id].icon}
             size="large"
             bordered
             circular
@@ -32,10 +44,10 @@ const SelectElement = ({value, selected, select}) => {
       />
       <div>
         <p>
-          <b>{fileTypeDetail[value].title}</b>
+          <b>{fileTypeDetail[id].title}</b>
         </p>
         <p>
-          <small>{fileTypeDetail[value].description}</small>
+          <small>{fileTypeDetail[id].description}</small>
         </p>
       </div>
     </Segment>

@@ -48,6 +48,7 @@ const EditDocumentModal = ({
           isAdmin={isAdmin}
           fileDescription={fileNode.description}
           handleSubmit={handleSubmit}
+          showFieldHints={false}
         />
       </Modal.Content>
       <Modal.Actions>

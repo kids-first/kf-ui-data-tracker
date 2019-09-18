@@ -1,11 +1,161 @@
+/* eslint-disable  no-useless-escape */
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-
+import * as stringSimilarity from 'string-similarity';
 import {Formik, Field} from 'formik';
 import SelectElement from '../components/FileAnnotation/SelectElement';
 import Badge from '../components/Badge/Badge';
 import {fileTypeDetail, versionState} from '../common/fileUtils';
-import {Form, TextArea, Dropdown} from 'semantic-ui-react';
+import {
+  Form,
+  TextArea,
+  Dropdown,
+  Message,
+  List,
+  Icon,
+  Button,
+} from 'semantic-ui-react';
+
+const MIN_SIMILARITY = 0.65;
+const DOC_NAME_REGEXS = [
+  `(new)|(final)|(modified)|(saved)|(updated)|(edit)|(\([0-9]\))|(\[[0-9]\])`, // black listed words
+  `[.$@&$!%*#?&\/-]`, //special chars
+  `\..[a-z]{2,}`, // file extensions
+  `[0-9]{1,2}[\.\/\-][0-9]{1,2}[\.\/\-][0-9]{2,4}|[0-9]{8}`, // dates
+];
+
+const validate = ({file_name}, fileNode) => {
+  let errors = {
+    file_name: {
+      blacklisted: null,
+      special_char: null,
+      existing_similarity: null,
+      file_ext: null,
+      dates: null,
+    },
+  };
+
+  const replaceWithSpaces = str =>
+    str
+      .replace(/-|_/gi, ' ')
+      .trim()
+      .toLowerCase();
+  const removeFileExt = str => str.replace(/\.(.*)/, '');
+  let cleanFileName = replaceWithSpaces(removeFileExt(fileNode.name));
+  const DOC_NAME_INPUT = replaceWithSpaces(file_name);
+
+  const uploadedFileSimilarity = stringSimilarity.compareTwoStrings(
+    DOC_NAME_INPUT,
+    cleanFileName,
+  );
+
+  // black listed words
+  // more than a quarter 75% of the name's bigrams matches the uploaded file name bigrams
+  if (
+    new RegExp(DOC_NAME_REGEXS[0], 'gi').test(file_name) ||
+    uploadedFileSimilarity > MIN_SIMILARITY
+  )
+    errors.file_name.existing_similarity = true;
+
+  // special chars
+  if (new RegExp(DOC_NAME_REGEXS[1], 'gi').test(file_name))
+    errors.file_name.special_char = true;
+
+  // file extensions in name
+  if (new RegExp(DOC_NAME_REGEXS[2], 'gi').test(file_name))
+    errors.file_name.file_ext = true;
+
+  console.log(
+    `${new RegExp(DOC_NAME_REGEXS[3], 'gi').test(file_name)} ${file_name} ${
+      DOC_NAME_REGEXS[3]
+    }`,
+  );
+  // date of formats (dd-mm-yyy, d-m-yy, yyyymmdd, yymmdd, dd.mm.yyyy, dd.mm.yy)
+  if (new RegExp(DOC_NAME_REGEXS[3], 'gi').test(DOC_NAME_INPUT))
+    errors.file_name.dates = true;
+
+  return errors;
+};
+
+const ExistingDocsMessage = () => {
+  const [showSimilar, setShowSimilar] = useState(false);
+
+  return (
+    <Message info icon size="small">
+      <Icon name="info circle" verticalAlign="top" />
+      <Message.Content>
+        <Message.Header>Update Existing Document Instead?</Message.Header>
+        We found <strong> X similar document titles</strong> in this study.{' '}
+        <a
+          href=" "
+          onClick={e => {
+            e.preventDefault();
+            setShowSimilar(!showSimilar);
+          }}
+        >
+          {' '}
+          {!showSimilar ? 'Show' : 'Hide'} Similar
+        </a>
+        {showSimilar && (
+          <Message.List>
+            <Message.Item>document name </Message.Item>
+            <Message.Item>document name</Message.Item>
+          </Message.List>
+        )}
+      </Message.Content>
+
+      <Button floated="right">Update Existing</Button>
+    </Message>
+  );
+};
+
+const TitleHints = ({errors}) => {
+  return (
+    <List size="tiny">
+      <List.Item>
+        <Icon
+          name={
+            errors.file_name && errors.file_name.existing_similarity
+              ? 'info circle'
+              : 'check'
+          }
+          color={
+            errors.file_name && errors.file_name.existing_similarity
+              ? 'teal'
+              : ''
+          }
+        />
+        Document Title should be unique within study.
+      </List.Item>
+      <List.Item>
+        <Icon
+          name={
+            errors.file_name && errors.file_name.special_char ? 'x' : 'check'
+          }
+          color={errors.file_name && errors.file_name.special_char ? 'red' : ''}
+        />
+        Avoid using special characters ( . $ @ & $ ! % * # ? / - )
+      </List.Item>
+      <List.Item>
+        <Icon
+          name={errors.file_name && errors.file_name.file_ext ? 'x' : 'check'}
+          color={errors.file_name && errors.file_name.file_ext ? 'red' : ''}
+        />
+        Name your document different than the uploaded file to help give us more
+        context.
+      </List.Item>
+
+      <List.Item>
+        <Icon
+          name={errors.file_name && errors.file_name.dates ? 'x' : 'check'}
+          color={errors.file_name && errors.file_name.dates ? 'red' : ''}
+        />
+        Avoid using specific dates, they can be recorded in the contents section
+        or metadata.
+      </List.Item>
+    </List>
+  );
+};
 
 /**
  * Form to edit document information or annotate new file for uploading
@@ -13,6 +163,7 @@ import {Form, TextArea, Dropdown} from 'semantic-ui-react';
 const EditDocumentForm = React.forwardRef(
   (
     {
+      fileNode,
       fileType,
       fileName,
       fileDescription,
@@ -20,10 +171,12 @@ const EditDocumentForm = React.forwardRef(
       isAdmin,
       handleSubmit,
       submitButtons,
+      showFieldHints = true,
     },
     ref,
   ) => {
     const [onUploading, setUploading] = useState(false);
+
     const options = Object.keys(versionState).map(state => ({
       key: state,
       value: state,
@@ -38,78 +191,97 @@ const EditDocumentForm = React.forwardRef(
           file_desc: fileDescription,
           file_status: versionStatus,
         }}
+        validate={vals => validate(vals, fileNode)}
         onSubmit={values => {
           setUploading(true);
           handleSubmit(...Object.values(values));
         }}
       >
-        {({values, handleChange, handleSubmit, setFieldValue}) => (
-          <Form onSubmit={handleSubmit} ref={ref}>
-            <Form.Field required>
-              <label htmlFor="file_name">Document Title:</label>
-              <input
-                data-testid="name-input"
-                type="text"
-                name="file_name"
-                placeholder="Phenotypic Data manifest for..."
-                value={values.file_name}
-                onChange={handleChange}
-              />
-            </Form.Field>
-            {versionStatus && (
-              <Form.Field>
-                <label>Approval Status:</label>
-                {isAdmin ? (
-                  <Dropdown
-                    selection
-                    fluid
-                    name="file_status"
-                    options={options}
-                    value={values.file_status}
-                    placeholder="Choose an option"
-                    onChange={(e, {value}) => {
-                      setFieldValue('file_status', value);
-                    }}
-                  />
-                ) : (
-                  <Badge state={versionStatus} />
+        {({
+          values,
+          handleChange,
+          handleBlur,
+          handleSubmit,
+          setFieldValue,
+          errors,
+          touched,
+        }) => (
+          <>
+            {showFieldHints &&
+              errors.file_name &&
+              errors.file_name.existing_similarity && <ExistingDocsMessage />}
+            <Form onSubmit={handleSubmit} ref={ref}>
+              <Form.Field required>
+                <label htmlFor="file_name">Document Title:</label>
+                <Form.Input
+                  data-testid="name-input"
+                  type="text"
+                  name="file_name"
+                  placeholder="Phenotypic Data manifest for..."
+                  value={values.file_name}
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                  error={
+                    errors.file_name &&
+                    Object.values(errors.file_name).some(x => x != null)
+                  }
+                />
+                {showFieldHints && touched.file_name && (
+                  <TitleHints errors={errors} />
                 )}
               </Form.Field>
-            )}
-
-            <Form.Field required>
-              <label htmlFor="file_type">Document Type:</label>
-              {Object.keys(fileTypeDetail).map(item => (
-                <Form.Field key={item}>
-                  <Field
-                    component={SelectElement}
-                    name="file_type"
-                    id={item}
-                    label={item}
-                  />
+              {versionStatus && (
+                <Form.Field>
+                  <label>Approval Status:</label>
+                  {isAdmin ? (
+                    <Dropdown
+                      selection
+                      fluid
+                      name="file_status"
+                      options={options}
+                      value={values.file_status}
+                      placeholder="Choose an option"
+                      onChange={(e, {value}) => {
+                        setFieldValue('file_status', value);
+                      }}
+                    />
+                  ) : (
+                    <Badge state={versionStatus} />
+                  )}
                 </Form.Field>
-              ))}
-            </Form.Field>
-
-            <Form.Field required>
-              <label>Describe Document Contents:</label>
-              <TextArea
-                data-testid="description-input"
-                type="text"
-                name="file_desc"
-                value={values.file_desc}
-                onChange={handleChange}
-              />
-            </Form.Field>
-            {submitButtons &&
-              submitButtons(
-                !Object.values(values).every(x => {
-                  console.log(x);
-                  return Boolean(x !== undefined);
-                }),
-                onUploading,
               )}
-          </Form>
+
+              <Form.Field required>
+                <label htmlFor="file_type">Document Type:</label>
+                {Object.keys(fileTypeDetail).map(item => (
+                  <Form.Field key={item}>
+                    <Field
+                      component={SelectElement}
+                      name="file_type"
+                      id={item}
+                      label={item}
+                    />
+                  </Form.Field>
+                ))}
+              </Form.Field>
+
+              <Form.Field required>
+                <label>Describe Document Contents:</label>
+                <TextArea
+                  data-testid="description-input"
+                  type="text"
+                  name="file_desc"
+                  value={values.file_desc}
+                  onChange={handleChange}
+                />
+              </Form.Field>
+              {submitButtons &&
+                submitButtons(
+                  Object.values(values).every(x => Boolean(x !== undefined)),
+                  onUploading,
+                )}
+            </Form>
+          </>
         )}
       </Formik>
     );
@@ -133,6 +305,8 @@ EditDocumentForm.propTypes = {
   errors: PropTypes.string,
   /** (New file) Displays as buttons for form submitting */
   submitButtons: PropTypes.func,
+  /** show validation hints */
+  showFieldHints: PropTypes.Boolean,
 };
 
 export default EditDocumentForm;

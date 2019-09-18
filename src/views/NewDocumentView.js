@@ -66,9 +66,8 @@ const NewDocumentView = ({match, history, location, createDocument}) => {
         </Segment>
         <Container as={Segment} padded="very">
           <EditDocumentForm
-            /* We will allow any user to select fields for new documents,
-             * editing existing documents requires the user to be admin */
-            isAdmin={true}
+            isAdmin={isAdmin}
+            fileNode={location.state.file}
             handleSubmit={handleSubmit}
             errors={errors}
             submitButtons={(disabled, onUploading) => (
@@ -108,5 +107,5 @@ export default compose(
         {query: GET_STUDY_BY_ID, variables: {kfId: match.params.kfId}},
       ],
     }),
-  })
+  }),
 )(NewDocumentView);
