@@ -24,6 +24,10 @@ const StudyNavBar = ({match, history, isBeta}) => {
       tab: 'Cavatica',
       endString: 'cavatica',
     },
+    {
+      tab: 'Logs',
+      endString: 'logs',
+    },
   ];
   return (
     <Menu color="pink" secondary pointing>
