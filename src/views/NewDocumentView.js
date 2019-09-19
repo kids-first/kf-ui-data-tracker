@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {graphql, compose} from 'react-apollo';
-import {EditDocumentForm} from '../forms';
+import EditDocumentForm from '../forms/EditDocument/EditDocumentForm';
 import {CREATE_FILE} from '../state/mutations';
 import {GET_STUDY_BY_ID} from '../state/queries';
 import {Message, Segment, Container, Button, Header} from 'semantic-ui-react';
