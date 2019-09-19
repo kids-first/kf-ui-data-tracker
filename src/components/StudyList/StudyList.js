@@ -49,14 +49,10 @@ const StudyList = ({studyList, loading, activeView = 'grid', user}) => {
   }
 
   const filteredStudyList = () => {
-    var filteredList = studyList.filter(
-      obj =>
-        (obj.node.name &&
-          obj.node.name.toLowerCase().includes(searchString.toLowerCase())) ||
-        (obj.node.shortName &&
-          obj.node.shortName
-            .toLowerCase()
-            .includes(searchString.toLowerCase())),
+    var filteredList = studyList.filter(obj =>
+      (obj.node.name + obj.node.shortName + obj.node.kfId)
+        .toLowerCase()
+        .includes(searchString.toLowerCase()),
     );
     return filteredList;
   };
