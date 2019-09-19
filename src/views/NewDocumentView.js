@@ -11,9 +11,17 @@ import {lengthLimit} from '../common/fileUtils';
  * file browser dialog and a file present in `location.state.file` as
  * populated by the router (eg: history.push('/new', {state: <File>}) )
  */
-const NewDocumentView = ({match, history, location, createDocument}) => {
+const NewDocumentView = ({
+  match,
+  history,
+  location,
+  createDocument,
+  user,
+  study,
+}) => {
   // Tracks any error state reported from the server
   const [errors, setErrors] = useState('');
+  const studyFiles = study.studyByKfId ? study.studyByKfId.files.edges : [];
 
   // If the user landed here without a file, they probably got here from
   // some external page. We'll send them back to the study's file list view.
@@ -23,6 +31,7 @@ const NewDocumentView = ({match, history, location, createDocument}) => {
   const handleSubmit = (fileName, fileType, fileDescription) => {
     const studyId = match.params.kfId;
     const file = location.state.file;
+    debugger;
     createDocument({
       variables: {
         file,
@@ -66,6 +75,7 @@ const NewDocumentView = ({match, history, location, createDocument}) => {
         </Segment>
         <Container as={Segment} padded="very">
           <EditDocumentForm
+            studyFiles={studyFiles}
             isAdmin={isAdmin}
             fileNode={location.state.file}
             handleSubmit={handleSubmit}
@@ -108,4 +118,9 @@ export default compose(
       ],
     }),
   }),
+  graphql(GET_STUDY_BY_ID, {
+    name: 'study',
+    options: props => ({variables: {kfId: props.match.params.kfId}}),
+  }),
+  graphql(MY_PROFILE, {name: 'user'}),
 )(NewDocumentView);

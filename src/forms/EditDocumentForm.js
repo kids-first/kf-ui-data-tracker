@@ -5,7 +5,11 @@ import * as stringSimilarity from 'string-similarity';
 import {Formik, Field} from 'formik';
 import SelectElement from '../components/FileAnnotation/SelectElement';
 import Badge from '../components/Badge/Badge';
-import {fileTypeDetail, versionState} from '../common/fileUtils';
+import {
+  fileTypeDetail,
+  versionState,
+  sortFilesBySimilarity,
+} from '../common/fileUtils';
 import {
   Form,
   TextArea,
@@ -18,18 +22,19 @@ import {
 
 const MIN_SIMILARITY = 0.65;
 const DOC_NAME_REGEXS = [
-  `(new)|(final)|(modified)|(saved)|(updated)|(edit)|(\([0-9]\))|(\[[0-9]\])`, // black listed words
-  `[.$@&$!%*#?&\/-]`, //special chars
-  `\..[a-z]{2,}`, // file extensions
-  `[0-9]{1,2}[\.\/\-][0-9]{1,2}[\.\/\-][0-9]{2,4}|[0-9]{8}`, // dates
+  /(new)|(final)|(modified)|(saved)|(updated?)|(edit)|(\([0-9]\))|(\[[0-9]\])/, // black listed words
+  /[\.\$\@\&\!\%\*\]\[\#\?\/\-]/, //special chars
+  /\.[a-z]{2,}/, // file extensions
+  /[0-9]{1,2}[\.\/\-][0-9]{1,2}[\.\/\-][0-9]{2,4}|[0-9]{8}/, // dates
 ];
 
-const validate = ({file_name}, fileNode) => {
+const validate = ({file_name}, fileNode, studyFiles) => {
   let errors = {
     file_name: {
       blacklisted: null,
       special_char: null,
       existing_similarity: null,
+      upload_similarity: null,
       file_ext: null,
       dates: null,
     },
@@ -44,32 +49,42 @@ const validate = ({file_name}, fileNode) => {
   let cleanFileName = replaceWithSpaces(removeFileExt(fileNode.name));
   const DOC_NAME_INPUT = replaceWithSpaces(file_name);
 
+  const similarDocs = sortFilesBySimilarity(
+    {name: DOC_NAME_INPUT},
+    studyFiles,
+    0.33,
+  );
+  console.log(similarDocs);
+
   const uploadedFileSimilarity = stringSimilarity.compareTwoStrings(
     DOC_NAME_INPUT,
     cleanFileName,
   );
+  // console.log(
+  //   `${DOC_NAME_INPUT} + ${cleanFileName} = ${uploadedFileSimilarity} (${MIN_SIMILARITY})`,
+  // );
+
+  // more than a quarter 75% of the inputed Document Title bigrams matches names of
+  //existing study files
+  if (similarDocs.matches.length > 0)
+    errors.file_name.existing_similarity = true;
 
   // black listed words
-  // more than a quarter 75% of the name's bigrams matches the uploaded file name bigrams
   if (
     new RegExp(DOC_NAME_REGEXS[0], 'gi').test(file_name) ||
     uploadedFileSimilarity > MIN_SIMILARITY
   )
-    errors.file_name.existing_similarity = true;
+    errors.file_name.upload_similarity = true;
 
-  // special chars
-  if (new RegExp(DOC_NAME_REGEXS[1], 'gi').test(file_name))
+  if (new RegExp(DOC_NAME_REGEXS[1], 'gi').test(DOC_NAME_INPUT))
+    // special chars
     errors.file_name.special_char = true;
 
   // file extensions in name
-  if (new RegExp(DOC_NAME_REGEXS[2], 'gi').test(file_name))
+  if (new RegExp(DOC_NAME_REGEXS[2], 'gi').test(DOC_NAME_INPUT)) {
     errors.file_name.file_ext = true;
+  }
 
-  console.log(
-    `${new RegExp(DOC_NAME_REGEXS[3], 'gi').test(file_name)} ${file_name} ${
-      DOC_NAME_REGEXS[3]
-    }`,
-  );
   // date of formats (dd-mm-yyy, d-m-yy, yyyymmdd, yymmdd, dd.mm.yyyy, dd.mm.yy)
   if (new RegExp(DOC_NAME_REGEXS[3], 'gi').test(DOC_NAME_INPUT))
     errors.file_name.dates = true;
@@ -77,31 +92,60 @@ const validate = ({file_name}, fileNode) => {
   return errors;
 };
 
-const ExistingDocsMessage = () => {
+const ExistingDocsMessage = ({existingDocs, fileNameInput, errors}) => {
   const [showSimilar, setShowSimilar] = useState(false);
+  const similarStudyDocs = sortFilesBySimilarity(
+    {name: fileNameInput},
+    existingDocs,
+    0.33,
+  );
+  const SimilarTitleContent = () => (
+    <>
+      We found
+      <strong>
+        {similarStudyDocs.matches.length ? similarStudyDocs.matches.length : ''}{' '}
+        similar document titles
+      </strong>{' '}
+      in this study.
+      <a
+        href=" "
+        onClick={e => {
+          e.preventDefault();
+          setShowSimilar(!showSimilar);
+        }}
+      >
+        {' '}
+        {!showSimilar ? 'Show' : 'Hide'} Similar
+      </a>
+      {showSimilar && (
+        <List>
+          {similarStudyDocs.matches.map(doc => (
+            <List.Item>
+              <List.Icon name="file" />
+              {doc.target} (
+              {
+                existingDocs.filter(({node}) => node.name === doc.target)[0]
+                  .node.versions.edges.length
+              }{' '}
+              versions)
+            </List.Item>
+          ))}
+        </List>
+      )}
+    </>
+  );
+
+  const CopiedFileContent = () => (
+    <>Looks like this may be a copy of an existing file.</>
+  );
 
   return (
     <Message info icon size="small">
       <Icon name="info circle" verticalAlign="top" />
       <Message.Content>
         <Message.Header>Update Existing Document Instead?</Message.Header>
-        We found <strong> X similar document titles</strong> in this study.{' '}
-        <a
-          href=" "
-          onClick={e => {
-            e.preventDefault();
-            setShowSimilar(!showSimilar);
-          }}
-        >
-          {' '}
-          {!showSimilar ? 'Show' : 'Hide'} Similar
-        </a>
-        {showSimilar && (
-          <Message.List>
-            <Message.Item>document name </Message.Item>
-            <Message.Item>document name</Message.Item>
-          </Message.List>
-        )}
+        {errors.file_name.upload_similarity && <CopiedFileContent />}
+        {errors.file_name.existing_similarity && <SimilarTitleContent />}
       </Message.Content>
 
       <Button floated="right">Update Existing</Button>
@@ -138,8 +182,18 @@ const TitleHints = ({errors}) => {
       </List.Item>
       <List.Item>
         <Icon
-          name={errors.file_name && errors.file_name.file_ext ? 'x' : 'check'}
-          color={errors.file_name && errors.file_name.file_ext ? 'red' : ''}
+          name={
+            (errors.file_name && errors.file_name.file_ext) ||
+            (errors.file_name && errors.file_name.upload_similarity)
+              ? 'x'
+              : 'check'
+          }
+          color={
+            (errors.file_name && errors.file_name.file_ext) ||
+            (errors.file_name && errors.file_name.upload_similarity)
+              ? 'red'
+              : ''
+          }
         />
         Name your document different than the uploaded file to help give us more
         context.
@@ -172,6 +226,7 @@ const EditDocumentForm = React.forwardRef(
       handleSubmit,
       submitButtons,
       showFieldHints = true,
+      studyFiles,
     },
     ref,
   ) => {
@@ -191,7 +246,7 @@ const EditDocumentForm = React.forwardRef(
           file_desc: fileDescription,
           file_status: versionStatus,
         }}
-        validate={vals => validate(vals, fileNode)}
+        validate={vals => validate(vals, fileNode, studyFiles)}
         onSubmit={values => {
           setUploading(true);
           handleSubmit(...Object.values(values));
@@ -209,7 +264,14 @@ const EditDocumentForm = React.forwardRef(
           <>
             {showFieldHints &&
               errors.file_name &&
-              errors.file_name.existing_similarity && <ExistingDocsMessage />}
+              (errors.file_name.existing_similarity ||
+                errors.file_name.upload_similarity) && (
+                <ExistingDocsMessage
+                  errors={errors}
+                  existingDocs={studyFiles}
+                  fileNameInput={values.file_name}
+                />
+              )}
             <Form onSubmit={handleSubmit} ref={ref}>
               <Form.Field required>
                 <label htmlFor="file_name">Document Title:</label>
@@ -226,9 +288,7 @@ const EditDocumentForm = React.forwardRef(
                     Object.values(errors.file_name).some(x => x != null)
                   }
                 />
-                {showFieldHints && touched.file_name && (
-                  <TitleHints errors={errors} />
-                )}
+                {showFieldHints && <TitleHints errors={errors} />}
               </Form.Field>
               {versionStatus && (
                 <Form.Field>
