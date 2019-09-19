@@ -1,3 +1,35 @@
+# Kids First Data Tracker Release 0.7.0
+
+## Features
+
+New BIX features for Cavatica projects, UI refactoring and fixes.
+
+### Summary
+
+Feature Emojis: ✨x7 ♻️x4 💄x3 🐛x2 🔧x1
+Feature Labels: [feature](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/feature) x9 [refactor](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/refactor) x6 [bug](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/bug) x4 [design](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/design) x2 [usability improvement](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/usability%20improvement) x1 [devops](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/devops) x1 [documentation](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/documentation) x1
+
+### New features and changes
+
+- (#476) 🐛 Allow selection of file type for normal users - @dankolbman
+- (#466) ♻️ Refactor project button and link rendering - @XuTheBunny
+- (#465) ✨ Add Cavatica tab with Cavatica projects and create/link/unlink actions - @XuTheBunny
+- (#454) ♻️ Refactor create project and list project rendering - @XuTheBunny
+- (#452) ✨ Upload document flow re-visited  - @bdolly
+- (#453) 💄 Display api error message at the bottom of the edit study modal - @XuTheBunny
+- (#447) ✨ Support markdown for study description - @XuTheBunny
+- (#446) 💄 Refactor study edit layout and add more fields - @XuTheBunny
+- (#445) 💄 Refactor study info layout - @XuTheBunny
+- (#444) 🐛 Handle no projects - @dankolbman
+- (#436) ✨ Add option to create which type of Cavatica projects on creating a new study - @XuTheBunny
+- (#439) ✨ Add view for event history - @dankolbman
+- (#438) ♻️ Reorganize event list - @dankolbman
+- (#429) ✨ Add modal for link / unlink Cavatica project - @XuTheBunny
+- (#435) ♻️ Refactor project list showing unlink button for admin user - @XuTheBunny
+- (#432) 🔧 Update env schema - @dankolbman
+- (#433) ✨ Add button to create first study for admins - @dankolbman
+
+
 # Kids First Data Tracker Release 0.6.0
 
 ## Features
