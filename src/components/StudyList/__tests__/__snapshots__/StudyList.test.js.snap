@@ -235,6 +235,76 @@ exports[`renders correctly 1`] = `
 </div>
 `;
 
+exports[`renders empty state 1`] = `
+<div>
+  <div
+    class="ui basic segment ui container stackable grid"
+  >
+    <div
+      class="left aligned eight wide column"
+    >
+      <h1
+        class="ui header"
+      >
+        Your Studies
+      </h1>
+    </div>
+    <div
+      class="right aligned eight wide column"
+    >
+      <div
+        class="ui mini left icon input pr-5"
+      >
+        <input
+          placeholder="Search by Study Name"
+          type="text"
+          value=""
+        />
+        <i
+          aria-hidden="true"
+          class="search icon"
+        />
+      </div>
+      <div
+        class="ui mini buttons"
+      >
+        <button
+          class="ui icon primary button"
+          tabindex="0"
+        >
+          <i
+            aria-hidden="true"
+            class="grid layout icon"
+          />
+        </button>
+        <button
+          class="ui icon button"
+          tabindex="0"
+        >
+          <i
+            aria-hidden="true"
+            class="list icon"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      class="row"
+    >
+      <div
+        class="column"
+      >
+        <h4
+          class="ui disabled center aligned header"
+        >
+          No Studies matching your search term. Try searching by Study Name
+        </h4>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`renders loading state 1`] = `
 <div>
   <div

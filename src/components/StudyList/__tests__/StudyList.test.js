@@ -53,3 +53,24 @@ it('renders loading state', () => {
   // Should contain 4 cards in loading state
   expect(cards.length).toBe(4);
 });
+
+it('renders empty state', () => {
+  const tree = render(
+    <MockedProvider
+      resolvers={{
+        UserNode: {
+          ...myProfile.data.myProfile,
+        },
+      }}
+      mocks={mocks}
+    >
+      <MemoryRouter>
+        <StudyList studyList={[]} />
+      </MemoryRouter>
+    </MockedProvider>,
+  );
+  expect(tree.container).toMatchSnapshot();
+
+  const cards = tree.container.querySelectorAll('.ui .card');
+  expect(cards.length).toBe(0);
+});
