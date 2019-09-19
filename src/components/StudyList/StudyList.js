@@ -49,14 +49,10 @@ const StudyList = ({studyList, loading, activeView = 'grid', user}) => {
   }
 
   const filteredStudyList = () => {
-    var filteredList = studyList.filter(
-      obj =>
-        (obj.node.name &&
-          obj.node.name.toLowerCase().includes(searchString.toLowerCase())) ||
-        (obj.node.shortName &&
-          obj.node.shortName
-            .toLowerCase()
-            .includes(searchString.toLowerCase())),
+    var filteredList = studyList.filter(obj =>
+      (obj.node.name + obj.node.shortName + obj.node.kfId)
+        .toLowerCase()
+        .includes(searchString.toLowerCase()),
     );
     return filteredList;
   };
@@ -102,17 +98,25 @@ const StudyList = ({studyList, loading, activeView = 'grid', user}) => {
         />
       </Grid.Column>
       <Grid.Row>
-        <Grid.Column>
-          {view === 'grid' ? (
-            <StudyGrid loading={loading} studyList={filteredStudyList()} />
-          ) : (
-            <StudyTable
-              loading={loading}
-              studyList={filteredStudyList()}
-              exclude={['createdAt', 'modifiedAt']}
-            />
-          )}
-        </Grid.Column>
+        {filteredStudyList().length > 0 ? (
+          <Grid.Column>
+            {view === 'grid' ? (
+              <StudyGrid loading={loading} studyList={filteredStudyList()} />
+            ) : (
+              <StudyTable
+                loading={loading}
+                studyList={filteredStudyList()}
+                exclude={['createdAt', 'modifiedAt']}
+              />
+            )}
+          </Grid.Column>
+        ) : (
+          <Grid.Column>
+            <Header as="h4" disabled textAlign="center">
+              No Studies matching your search term. Try searching by Study Name
+            </Header>
+          </Grid.Column>
+        )}
       </Grid.Row>
     </Grid>
   );
