@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {graphql, compose} from 'react-apollo';
 import {EditDocumentForm} from '../forms';
 import {CREATE_FILE} from '../state/mutations';
-import {GET_STUDY_BY_ID, MY_PROFILE} from '../state/queries';
+import {GET_STUDY_BY_ID} from '../state/queries';
 import {Message, Segment, Container, Button, Header} from 'semantic-ui-react';
 import {lengthLimit} from '../common/fileUtils';
 /**
@@ -11,7 +11,7 @@ import {lengthLimit} from '../common/fileUtils';
  * file browser dialog and a file present in `location.state.file` as
  * populated by the router (eg: history.push('/new', {state: <File>}) )
  */
-const NewDocumentView = ({match, history, location, createDocument, user}) => {
+const NewDocumentView = ({match, history, location, createDocument}) => {
   // Tracks any error state reported from the server
   const [errors, setErrors] = useState('');
 
@@ -40,10 +40,6 @@ const NewDocumentView = ({match, history, location, createDocument, user}) => {
       });
   };
 
-  const isAdmin = !user.loading
-    ? user.myProfile.roles.includes('ADMIN')
-    : false;
-
   return (
     <Container as={Segment} vertical basic>
       <Container as={Segment} vertical basic>
@@ -70,7 +66,9 @@ const NewDocumentView = ({match, history, location, createDocument, user}) => {
         </Segment>
         <Container as={Segment} padded="very">
           <EditDocumentForm
-            isAdmin={isAdmin}
+            /* We will allow any user to select fields for new documents,
+             * editing existing documents requires the user to be admin */
+            isAdmin={true}
             handleSubmit={handleSubmit}
             errors={errors}
             submitButtons={(disabled, onUploading) => (
@@ -110,6 +108,5 @@ export default compose(
         {query: GET_STUDY_BY_ID, variables: {kfId: match.params.kfId}},
       ],
     }),
-  }),
-  graphql(MY_PROFILE, {name: 'user'}),
+  })
 )(NewDocumentView);
