@@ -98,17 +98,25 @@ const StudyList = ({studyList, loading, activeView = 'grid', user}) => {
         />
       </Grid.Column>
       <Grid.Row>
-        <Grid.Column>
-          {view === 'grid' ? (
-            <StudyGrid loading={loading} studyList={filteredStudyList()} />
-          ) : (
-            <StudyTable
-              loading={loading}
-              studyList={filteredStudyList()}
-              exclude={['createdAt', 'modifiedAt']}
-            />
-          )}
-        </Grid.Column>
+        {filteredStudyList().length > 0 ? (
+          <Grid.Column>
+            {view === 'grid' ? (
+              <StudyGrid loading={loading} studyList={filteredStudyList()} />
+            ) : (
+              <StudyTable
+                loading={loading}
+                studyList={filteredStudyList()}
+                exclude={['createdAt', 'modifiedAt']}
+              />
+            )}
+          </Grid.Column>
+        ) : (
+          <Grid.Column>
+            <Header as="h4" disabled textAlign="center">
+              No Studies matching your search term. Try searching by Study Name
+            </Header>
+          </Grid.Column>
+        )}
       </Grid.Row>
     </Grid>
   );
