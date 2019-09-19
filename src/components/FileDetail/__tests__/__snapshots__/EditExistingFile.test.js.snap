@@ -191,6 +191,12 @@ exports[`edits an existing file correctly 1`] = `
         >
           Cavatica
         </a>
+        <a
+          class="item"
+          href="/study/SD_8WX8QQ06/logs"
+        >
+          Logs
+        </a>
       </div>
     </div>
   </section>
@@ -958,6 +964,12 @@ exports[`edits an existing file correctly 2`] = `
         >
           Cavatica
         </a>
+        <a
+          class="item"
+          href="/study/SD_8WX8QQ06/logs"
+        >
+          Logs
+        </a>
       </div>
     </div>
   </section>
@@ -1561,6 +1573,12 @@ exports[`edits an existing file correctly 3`] = `
           href="/study/SD_8WX8QQ06/cavatica"
         >
           Cavatica
+        </a>
+        <a
+          class="item"
+          href="/study/SD_8WX8QQ06/logs"
+        >
+          Logs
         </a>
       </div>
     </div>

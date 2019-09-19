@@ -29,6 +29,12 @@ exports[`renders correctly 1`] = `
     >
       Cavatica
     </a>
+    <a
+      class="item"
+      href="/study/undefined/logs"
+    >
+      Logs
+    </a>
   </div>
 </div>
 `;
