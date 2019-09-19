@@ -19,6 +19,7 @@ import {
   StudyInfoView,
   EventsView,
   CavaticaBixView,
+  LogsView,
 } from '../views';
 const Routes = () => (
   <Fragment>
@@ -57,6 +58,7 @@ const Routes = () => (
         path="/study/:kfId/cavatica"
         component={CavaticaBixView}
       />
+      <PrivateRoute exact path="/study/:kfId/logs" component={LogsView} />
       <AdminRoute exact path="/tokens" component={TokensListView} />
       <AdminRoute
         exact
