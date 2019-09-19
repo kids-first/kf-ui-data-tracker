@@ -60,11 +60,12 @@ const UploadWizard = ({
   onCloseDialog,
   history,
   file,
+  startingStep = 0,
   fileList,
   studyId,
 }) => {
   // The current step that the flow is on
-  const [step, setStep] = useState(0);
+  const [step, setStep] = useState(startingStep);
   // store the selected study file to create version for
   const [fileToUpdate, setFileToUpdate] = useState(null);
 
@@ -84,7 +85,11 @@ const UploadWizard = ({
   };
 
   const [isTimerActive, setIsTimerActive] = useState(false);
-  const seconds = useTimerHook(isTimerActive, handleCloseDialog);
+  const seconds = useTimerHook(isTimerActive, () => {
+    handleCloseDialog();
+    if (history.location.pathname.split('/').includes('new-document'))
+      history.push(`/study/${studyId}/documents/${fileToUpdate.kfId}`);
+  });
 
   /** TODO: abstract to custom hook or external util */
   const handleSave = async props => {

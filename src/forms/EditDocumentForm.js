@@ -5,6 +5,7 @@ import * as stringSimilarity from 'string-similarity';
 import {Formik, Field} from 'formik';
 import SelectElement from '../components/FileAnnotation/SelectElement';
 import Badge from '../components/Badge/Badge';
+import UploadWizard from '../modals/UploadWizard/UploadWizard';
 import {
   fileTypeDetail,
   versionState,
@@ -22,7 +23,7 @@ import {
 
 const MIN_SIMILARITY = 0.65;
 const DOC_NAME_REGEXS = [
-  /(new)|(final)|(modified)|(saved)|(updated?)|(edit)|(\([0-9]\))|(\[[0-9]\])/, // black listed words
+  /(new)|(final)|(modified)|(saved?)|(updated?)|(edit)|(\([0-9]\))|(\[[0-9]\])/, // black listed words
   /[\.\$\@\&\!\%\*\]\[\#\?\/\-]/, //special chars
   /\.[a-z]{2,}/, // file extensions
   /[0-9]{1,2}[\.\/\-][0-9]{1,2}[\.\/\-][0-9]{2,4}|[0-9]{8}/, // dates
@@ -92,7 +93,12 @@ const validate = ({file_name}, fileNode, studyFiles) => {
   return errors;
 };
 
-const ExistingDocsMessage = ({existingDocs, fileNameInput, errors}) => {
+const ExistingDocsMessage = ({
+  existingDocs,
+  fileNameInput,
+  errors,
+  setShowDialog,
+}) => {
   const [showSimilar, setShowSimilar] = useState(false);
   const similarStudyDocs = sortFilesBySimilarity(
     {name: fileNameInput},
@@ -148,7 +154,9 @@ const ExistingDocsMessage = ({existingDocs, fileNameInput, errors}) => {
         {errors.file_name.existing_similarity && <SimilarTitleContent />}
       </Message.Content>
 
-      <Button floated="right">Update Existing</Button>
+      <Button color="blue" floated="right" onClick={() => setShowDialog(true)}>
+        Update Existing Document
+      </Button>
     </Message>
   );
 };
@@ -223,6 +231,7 @@ const EditDocumentForm = React.forwardRef(
       fileDescription,
       versionStatus,
       isAdmin,
+      history,
       handleSubmit,
       submitButtons,
       showFieldHints = true,
@@ -231,7 +240,7 @@ const EditDocumentForm = React.forwardRef(
     ref,
   ) => {
     const [onUploading, setUploading] = useState(false);
-
+    const [showDialog, setShowDialog] = useState(false);
     const options = Object.keys(versionState).map(state => ({
       key: state,
       value: state,
@@ -239,111 +248,126 @@ const EditDocumentForm = React.forwardRef(
       content: <Badge state={state} />,
     }));
     return (
-      <Formik
-        initialValues={{
-          file_name: fileName,
-          file_type: fileType,
-          file_desc: fileDescription,
-          file_status: versionStatus,
-        }}
-        validate={vals => validate(vals, fileNode, studyFiles)}
-        onSubmit={values => {
-          setUploading(true);
-          handleSubmit(...Object.values(values));
-        }}
-      >
-        {({
-          values,
-          handleChange,
-          handleBlur,
-          handleSubmit,
-          setFieldValue,
-          errors,
-          touched,
-        }) => (
-          <>
-            {showFieldHints &&
-              errors.file_name &&
-              (errors.file_name.existing_similarity ||
-                errors.file_name.upload_similarity) && (
-                <ExistingDocsMessage
-                  errors={errors}
-                  existingDocs={studyFiles}
-                  fileNameInput={values.file_name}
-                />
-              )}
-            <Form onSubmit={handleSubmit} ref={ref}>
-              <Form.Field required>
-                <label htmlFor="file_name">Document Title:</label>
-                <Form.Input
-                  data-testid="name-input"
-                  type="text"
-                  name="file_name"
-                  placeholder="Phenotypic Data manifest for..."
-                  value={values.file_name}
-                  onBlur={handleBlur}
-                  onChange={handleChange}
-                  error={
-                    errors.file_name &&
-                    Object.values(errors.file_name).some(x => x != null)
-                  }
-                />
-                {showFieldHints && <TitleHints errors={errors} />}
-              </Form.Field>
-              {versionStatus && (
-                <Form.Field>
-                  <label>Approval Status:</label>
-                  {isAdmin ? (
-                    <Dropdown
-                      selection
-                      fluid
-                      name="file_status"
-                      options={options}
-                      value={values.file_status}
-                      placeholder="Choose an option"
-                      onChange={(e, {value}) => {
-                        setFieldValue('file_status', value);
-                      }}
-                    />
-                  ) : (
-                    <Badge state={versionStatus} />
-                  )}
-                </Form.Field>
-              )}
-
-              <Form.Field required>
-                <label htmlFor="file_type">Document Type:</label>
-                {Object.keys(fileTypeDetail).map(item => (
-                  <Form.Field key={item}>
-                    <Field
-                      component={SelectElement}
-                      name="file_type"
-                      id={item}
-                      label={item}
-                    />
-                  </Form.Field>
-                ))}
-              </Form.Field>
-
-              <Form.Field required>
-                <label>Describe Document Contents:</label>
-                <TextArea
-                  data-testid="description-input"
-                  type="text"
-                  name="file_desc"
-                  value={values.file_desc}
-                  onChange={handleChange}
-                />
-              </Form.Field>
-              {submitButtons &&
-                submitButtons(
-                  Object.values(values).every(x => Boolean(x !== undefined)),
-                  onUploading,
+      <>
+        <Formik
+          initialValues={{
+            file_name: fileName,
+            file_type: fileType,
+            file_desc: fileDescription,
+            file_status: versionStatus,
+          }}
+          validate={vals => validate(vals, fileNode, studyFiles)}
+          onSubmit={values => {
+            setUploading(true);
+            handleSubmit(...Object.values(values));
+          }}
+        >
+          {({
+            values,
+            handleChange,
+            handleBlur,
+            handleSubmit,
+            setFieldValue,
+            errors,
+            touched,
+          }) => (
+            <>
+              {showFieldHints &&
+                errors.file_name &&
+                (errors.file_name.existing_similarity ||
+                  errors.file_name.upload_similarity) && (
+                  <ExistingDocsMessage
+                    setShowDialog={setShowDialog}
+                    errors={errors}
+                    existingDocs={studyFiles}
+                    fileNameInput={values.file_name}
+                  />
                 )}
-            </Form>
-          </>
+              <Form onSubmit={handleSubmit} ref={ref}>
+                <Form.Field required>
+                  <label htmlFor="file_name">Document Title:</label>
+                  <Form.Input
+                    data-testid="name-input"
+                    type="text"
+                    name="file_name"
+                    placeholder="Phenotypic Data manifest for..."
+                    value={values.file_name}
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                    error={
+                      errors.file_name &&
+                      Object.values(errors.file_name).some(x => x != null)
+                    }
+                  />
+                  {showFieldHints && <TitleHints errors={errors} />}
+                </Form.Field>
+                {versionStatus && (
+                  <Form.Field>
+                    <label>Approval Status:</label>
+                    {isAdmin ? (
+                      <Dropdown
+                        selection
+                        fluid
+                        name="file_status"
+                        options={options}
+                        value={values.file_status}
+                        placeholder="Choose an option"
+                        onChange={(e, {value}) => {
+                          setFieldValue('file_status', value);
+                        }}
+                      />
+                    ) : (
+                      <Badge state={versionStatus} />
+                    )}
+                  </Form.Field>
+                )}
+
+                <Form.Field required>
+                  <label htmlFor="file_type">Document Type:</label>
+                  {Object.keys(fileTypeDetail).map(item => (
+                    <Form.Field key={item}>
+                      <Field
+                        component={SelectElement}
+                        name="file_type"
+                        id={item}
+                        label={item}
+                      />
+                    </Form.Field>
+                  ))}
+                </Form.Field>
+
+                <Form.Field required>
+                  <label>Describe Document Contents:</label>
+                  <TextArea
+                    data-testid="description-input"
+                    type="text"
+                    name="file_desc"
+                    value={values.file_desc}
+                    onChange={handleChange}
+                  />
+                </Form.Field>
+                {submitButtons &&
+                  submitButtons(
+                    Object.values(values).every(x => Boolean(x !== undefined)),
+                    onUploading,
+                  )}
+              </Form>
+            </>
+          )}
+        </Formik>
+        {showDialog && (
+          <UploadWizard
+            startingStep={1}
+            studyId={history.location.pathname.split('/')[2]}
+            onCloseDialog={() => {
+              setShowDialog(false);
+            }}
+            file={fileNode}
+            fileList={studyFiles}
+            history={history}
+          />
         )}
-      </Formik>
+      </>
     );
   },
 );

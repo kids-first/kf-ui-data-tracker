@@ -5,6 +5,7 @@ import {CREATE_FILE} from '../state/mutations';
 import {GET_STUDY_BY_ID} from '../state/queries';
 import {Message, Segment, Container, Button, Header} from 'semantic-ui-react';
 import {lengthLimit} from '../common/fileUtils';
+
 /**
  * The NewDocumentView displays a form to collect details about a new file.
  * It expects that the user lands on the page after being forwarded from a
@@ -31,7 +32,7 @@ const NewDocumentView = ({
   const handleSubmit = (fileName, fileType, fileDescription) => {
     const studyId = match.params.kfId;
     const file = location.state.file;
-    debugger;
+
     createDocument({
       variables: {
         file,
@@ -80,6 +81,7 @@ const NewDocumentView = ({
             fileNode={location.state.file}
             handleSubmit={handleSubmit}
             errors={errors}
+            history={history}
             submitButtons={(disabled, onUploading) => (
               <Segment vertical basic compact>
                 <Button
