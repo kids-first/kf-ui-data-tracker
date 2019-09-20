@@ -32,11 +32,11 @@ const TokenList = ({tokens, deleteToken}) => (
             {node.node.token.split('*').length !== 24 && (
               <Popup
                 trigger={
-                  <Button icon>
-                    <CopyToClipboard text={node.node.token}>
+                  <CopyToClipboard text={node.node.token}>
+                    <Button icon>
                       <Icon name="copy" />
-                    </CopyToClipboard>
-                  </Button>
+                    </Button>
+                  </CopyToClipboard>
                 }
                 content="Copied!"
                 on="click"
