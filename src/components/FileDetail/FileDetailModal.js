@@ -31,7 +31,11 @@ const FileDetailModal = ({
         />
       )}
       {dialog === 'annotation' && (
-        <EditDocumentModal fileNode={fileNode} onCloseDialog={onCloseModal} />
+        <EditDocumentModal
+          studyId={studyId}
+          fileNode={fileNode}
+          onCloseDialog={onCloseModal}
+        />
       )}
       {dialog === 'versionInfo' && (
         <VersionInfoModal

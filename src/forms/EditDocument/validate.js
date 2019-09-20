@@ -18,7 +18,7 @@ const replaceWithSpaces = str =>
 
 const removeFileExt = str => str.replace(/\.(.*)/, '');
 
-const validate = ({file_name}, fileNode, studyFiles) => {
+const validate = ({file_name}, fileNode, studyFiles = []) => {
   let errors = {
     file_name: {
       blacklisted: null,
@@ -32,12 +32,14 @@ const validate = ({file_name}, fileNode, studyFiles) => {
 
   let cleanFileName = replaceWithSpaces(removeFileExt(fileNode.name));
   const DOC_NAME_INPUT = replaceWithSpaces(file_name);
-
-  const similarDocs = sortFilesBySimilarity(
-    {name: DOC_NAME_INPUT},
-    studyFiles,
-    0.33,
-  );
+  let similarDocs = null;
+  if (studyFiles.length) {
+    similarDocs = sortFilesBySimilarity(
+      {name: DOC_NAME_INPUT},
+      studyFiles,
+      0.33,
+    );
+  }
 
   const uploadedFileSimilarity = stringSimilarity.compareTwoStrings(
     DOC_NAME_INPUT,
@@ -46,7 +48,7 @@ const validate = ({file_name}, fileNode, studyFiles) => {
 
   // more than a quarter 75% of the inputed Document Title bigrams matches names of
   //existing study files
-  if (similarDocs.matches.length > 0)
+  if (similarDocs && similarDocs.matches.length > 0)
     errors.file_name.existing_similarity = true;
 
   // black listed words

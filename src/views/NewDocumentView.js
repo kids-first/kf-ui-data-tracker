@@ -82,6 +82,7 @@ const NewDocumentView = ({
             handleSubmit={handleSubmit}
             errors={errors}
             history={history}
+            showFieldHints={true}
             submitButtons={(disabled, onUploading) => (
               <Segment vertical basic compact>
                 <Button

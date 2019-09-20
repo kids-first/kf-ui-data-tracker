@@ -26,7 +26,7 @@ const EditDocumentForm = React.forwardRef(
       history,
       handleSubmit,
       submitButtons,
-      showFieldHints = true,
+      showFieldHints,
       studyFiles,
     },
     ref,
@@ -91,9 +91,8 @@ const EditDocumentForm = React.forwardRef(
                       Object.values(errors.file_name).some(x => x != null)
                     }
                   />
-                  {showFieldHints && (
-                    <DocumentTitleValidationIndicators errors={errors} />
-                  )}
+
+                  <DocumentTitleValidationIndicators errors={errors} />
                 </Form.Field>
                 {versionStatus && (
                   <Form.Field>

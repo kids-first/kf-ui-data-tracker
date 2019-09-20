@@ -1,6 +1,6 @@
 import React, {useRef} from 'react';
 import {UPDATE_FILE, UPDATE_VERSION} from '../state/mutations';
-import {MY_PROFILE} from '../state/queries';
+import {MY_PROFILE, GET_STUDY_BY_ID} from '../state/queries';
 import {graphql, compose} from 'react-apollo';
 import {EditDocumentForm} from '../forms';
 import {fileSortedVersions} from '../common/fileUtils';
@@ -8,9 +8,11 @@ import {Button, Modal} from 'semantic-ui-react';
 
 const EditDocumentModal = ({
   fileNode,
+  studyId,
   updateFile,
   updateVersion,
   onCloseDialog,
+  study,
   user,
 }) => {
   const formEl = useRef(null);
@@ -22,8 +24,11 @@ const EditDocumentModal = ({
     : false;
 
   const handleSubmit = (name, fileType, description, versionStatus) => {
+    debugger;
     updateFile({variables: {kfId: fileNode.kfId, name, description, fileType}})
-      .then(() => onCloseDialog())
+      .then(() => {
+        onCloseDialog();
+      })
       .catch(err => console.log(err));
     updateVersion({
       variables: {
@@ -42,6 +47,14 @@ const EditDocumentModal = ({
       <Modal.Content scrolling>
         <EditDocumentForm
           ref={formEl}
+          fileNode={{name: fileNode.versions.edges[0].node.fileName}}
+          studyFiles={
+            study.studyByKfId
+              ? study.studyByKfId.files.edges.filter(
+                  ({node}) => node.name !== fileNode.name,
+                )
+              : []
+          }
           fileType={fileNode.fileType}
           fileName={fileNode.name}
           versionStatus={latestVersion.state}
@@ -55,9 +68,10 @@ const EditDocumentModal = ({
         <Button
           primary
           size="mini"
-          type="submit"
           onClick={e => {
-            formEl.current.handleSubmit();
+            e.preventDefault();
+            const {name, fileType, description, versionStatus} = fileNode;
+            handleSubmit(name, fileType, description, versionStatus);
           }}
         >
           SAVE
@@ -71,4 +85,8 @@ export default compose(
   graphql(UPDATE_FILE, {name: 'updateFile'}),
   graphql(UPDATE_VERSION, {name: 'updateVersion'}),
   graphql(MY_PROFILE, {name: 'user'}),
+  graphql(GET_STUDY_BY_ID, {
+    name: 'study',
+    options: props => ({variables: {kfId: props.studyId}}),
+  }),
 )(EditDocumentModal);
