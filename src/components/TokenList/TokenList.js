@@ -29,17 +29,19 @@ const TokenList = ({tokens, deleteToken}) => (
         <List.Content floated="right">
           <Input readOnly action value={node.node.token}>
             <input />
-            <Popup
-              trigger={
-                <Button icon>
-                  <CopyToClipboard text={node.node.token}>
-                    <Icon name="copy" />
-                  </CopyToClipboard>
-                </Button>
-              }
-              content="Copied!"
-              on="click"
-            />
+            {node.node.token.split('*').length !== 24 && (
+              <Popup
+                trigger={
+                  <Button icon>
+                    <CopyToClipboard text={node.node.token}>
+                      <Icon name="copy" />
+                    </CopyToClipboard>
+                  </Button>
+                }
+                content="Copied!"
+                on="click"
+              />
+            )}
             <Button icon negative onClick={() => deleteToken(node.node.name)}>
               <Icon name="trash" />
             </Button>
