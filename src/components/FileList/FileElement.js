@@ -13,14 +13,13 @@ import {
   fileLatestSize,
   lengthLimit,
 } from '../../common/fileUtils';
-import {longDate} from '../../common/dateUtils';
 
 const useRecentlyUpdated = (latestDate, fileId) => {
   const [justUpdated, setJustUpdated] = useState(false);
 
   useEffect(() => {
     let FIVE_MIN = 300000;
-    let docs = sessionStorage.getItem('kf_udpated_docs');
+    let docs = sessionStorage.getItem('kf_updated_docs');
     // make sure we only select one row
     if (fileId === docs) {
       // make sure that row was updated less than 5 minutes ago
@@ -29,7 +28,7 @@ const useRecentlyUpdated = (latestDate, fileId) => {
         setTimeout(() => {
           // reset after 7seconds
           setJustUpdated(false);
-          sessionStorage.removeItem('kf_udpated_docs');
+          sessionStorage.removeItem('kf_updated_docs');
         }, 7000);
       }
     }

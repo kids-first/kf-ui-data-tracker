@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
-<<<<<<< HEAD
 import {Button, Header, Modal, Icon, Message} from 'semantic-ui-react';
 import {
   ChooseMethodStep,
@@ -10,18 +9,9 @@ import {
 } from './UploadSteps';
 import {graphql} from 'react-apollo';
 
+import {GET_STUDY_BY_ID} from '../../state/queries';
 import {CREATE_VERSION} from '../../state/mutations';
 import {sortFilesBySimilarity} from '../../common/fileUtils';
-=======
-import { Button, Header, Modal, Icon, Message } from 'semantic-ui-react';
-import { ChooseMethodStep, DocumentSelectionStep, SuccessStep, VersionSummaryStep } from './UploadSteps';
-import { graphql } from 'react-apollo';
-
-import { GET_STUDY_BY_ID } from '../../state/queries';
-import { CREATE_VERSION } from '../../state/mutations';
-import { sortFilesBySimilarity } from '../../common/fileUtils';
-
->>>>>>> dbdb358... :sparkles: highlight recently updated file list row
 
 // store all of our upload steps and their associated components
 const UPLOAD_STEPS = {
@@ -101,9 +91,11 @@ const UploadWizard = ({
   const handleSave = async props => {
     try {
       setUploading(true);
-      await createVersion({ variables: { file, fileId: fileToUpdate.kfId, description } })
-      // TODO: maybe make this part of local state 
-      sessionStorage.setItem('kf_updated_docs', fileToUpdate.kfId)
+      await createVersion({
+        variables: {file, fileId: fileToUpdate.kfId, description},
+      });
+      // TODO: maybe make this part of local state
+      sessionStorage.setItem('kf_updated_docs', fileToUpdate.kfId);
 
       setUploading(false);
       setIsTimerActive(true);
@@ -212,9 +204,9 @@ UploadWizard.propTypes = {
 
 export default graphql(CREATE_VERSION, {
   name: 'createVersion',
-  options: ({ studyId }) => ({
-    refetchQueries: [
-      { query: GET_STUDY_BY_ID, variables: { kfId: studyId } },
-    ],
+  options: ({studyId}) => ({
+    refetchQueries: [{query: GET_STUDY_BY_ID, variables: {kfId: studyId}}],
   }),
 })(UploadWizard);
+
+// export default UploadWizard;
