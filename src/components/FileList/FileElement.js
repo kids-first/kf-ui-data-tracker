@@ -138,13 +138,12 @@ const FileElement = ({fileNode, loading, history, match, fileListId}) => {
     >
       <Table.Cell textAlign="center">
         <Header>
-          {justUpdated ? (
+          {justUpdated && (
             <>
-              {' '}
               <Badge state="UPD" icon="refresh" className="mb-5" />
               <br />
             </>
-          ) : null}
+          )}
 
           <Badge
             state={versionState}
