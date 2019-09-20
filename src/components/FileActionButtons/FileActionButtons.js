@@ -17,13 +17,20 @@ const FileActionButtons = ({
 }) => {
   return (
     <Button.Group vertical={vertical} fluid={fluid} size="mini">
-      <Button
-        basic
-        icon="download"
-        onClick={e => {
-          e.stopPropagation();
-          downloadFile(studyId, node.kfId, null, downloadFileMutation);
-        }}
+      <Popup
+        trigger={
+          <Button
+            basic
+            icon="download"
+            onClick={e => {
+              e.stopPropagation();
+              downloadFile(studyId, node.kfId, null, downloadFileMutation);
+            }}
+          />
+        }
+        inverted
+        position="top right"
+        content="Download latest version"
       />
       <Popup
         trigger={
