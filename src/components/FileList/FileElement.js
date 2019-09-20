@@ -3,7 +3,14 @@ import PropTypes from 'prop-types';
 import {withRouter} from 'react-router-dom';
 import TimeAgo from 'react-timeago';
 import Badge from '../Badge/Badge';
-import {Header, Table, Icon, List, Responsive} from 'semantic-ui-react';
+import {
+  Divider,
+  Header,
+  Table,
+  Icon,
+  List,
+  Responsive,
+} from 'semantic-ui-react';
 
 import FileActionsContainer from '../../containers/FileActionsContainer';
 import {
@@ -31,6 +38,7 @@ const FileAttributes = ({latestDate, fileSize, fileType, horizontal}) => (
         {fileType.title}
       </List.Content>
     </List.Item>
+
     <List.Item>
       <List.Content>
         {latestDate ? (

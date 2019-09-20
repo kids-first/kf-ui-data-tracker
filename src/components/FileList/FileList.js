@@ -194,7 +194,14 @@ const FileList = ({fileList, studyId}) => {
               value={searchString}
             />
           </Segment>
-          <Table stackable selectable compact="very" basic="very">
+          <Table stackable selectable compact="very" basic="very" celled>
+            <Table.Header>
+              <Table.Row>
+                <Table.HeaderCell textAlign="center">Approval</Table.HeaderCell>
+                <Table.HeaderCell>Document Details</Table.HeaderCell>
+                <Table.HeaderCell textAlign="center">Actions</Table.HeaderCell>
+              </Table.Row>
+            </Table.Header>
             <Table.Body>
               {pageItems.map(({node}) => (
                 <FileElement
