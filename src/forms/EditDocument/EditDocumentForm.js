@@ -183,7 +183,7 @@ EditDocumentForm.propTypes = {
   /** (New file) Displays as buttons for form submitting */
   submitButtons: PropTypes.func,
   /** show validation hints */
-  showFieldHints: PropTypes.Boolean,
+  showFieldHints: PropTypes.boolean,
 };
 
 export default EditDocumentForm;

@@ -32,14 +32,12 @@ const validate = ({file_name}, fileNode, studyFiles = []) => {
 
   let cleanFileName = replaceWithSpaces(removeFileExt(fileNode.name));
   const DOC_NAME_INPUT = replaceWithSpaces(file_name);
-  let similarDocs = null;
-  if (studyFiles.length) {
-    similarDocs = sortFilesBySimilarity(
-      {name: DOC_NAME_INPUT},
-      studyFiles,
-      0.33,
-    );
-  }
+
+  const similarDocs = sortFilesBySimilarity(
+    {name: DOC_NAME_INPUT},
+    studyFiles,
+    0.33,
+  );
 
   const uploadedFileSimilarity = stringSimilarity.compareTwoStrings(
     DOC_NAME_INPUT,
@@ -71,7 +69,8 @@ const validate = ({file_name}, fileNode, studyFiles = []) => {
   if (new RegExp(DOC_NAME_REGEXS[3], 'gi').test(DOC_NAME_INPUT))
     errors.file_name.dates = true;
 
-  return errors;
+  // only return errros object if any exists
+  return Object.values(errors.file_name).some(x => x) ? errors : {};
 };
 
 export default validate;
