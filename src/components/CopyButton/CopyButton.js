@@ -8,17 +8,23 @@ import {CopyToClipboard} from 'react-copy-to-clipboard';
  * to copy the provided text.
  * Passes additional props to the Button
  */
-const CopyButton = ({text, ...props}) => {
+const CopyButton = ({
+  text,
+  textToCopy,
+  icon = 'copy',
+  tooltip = 'Copy',
+  ...props
+}) => {
   const [copied, setCopied] = useState(false);
   return (
     <Popup
       inverted
       position="top left"
       size="mini"
-      className='CopyButton--popup'
+      className="CopyButton--popup"
       trigger={
         <CopyToClipboard
-          text={text}
+          text={text || textToCopy}
           onCopy={() => {
             setCopied(true);
             setTimeout(() => {
@@ -26,19 +32,14 @@ const CopyButton = ({text, ...props}) => {
             }, 700);
           }}
         >
-          <Button
-            {...props}
-            icon
-            labelPosition="left"
-            onClick={e => e.stopPropagation()}
-          >
-            <Icon name="copy" />
+          <Button icon onClick={e => e.stopPropagation()} {...props}>
+            <Icon name={icon} />
             {text}
           </Button>
         </CopyToClipboard>
       }
     >
-      {copied ? <Icon color="green" name="check" /> : 'Copy'}
+      {copied ? <Icon color="green" name="check" /> : tooltip}
     </Popup>
   );
 };

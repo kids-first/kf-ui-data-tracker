@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Button, Divider, Icon, Popup} from 'semantic-ui-react';
-import {downloadFile} from '../../common/fileUtils';
+import {downloadFile, createDateSort} from '../../common/fileUtils';
+import CopyButton from '../CopyButton/CopyButton';
 /**
  * Simple Icon Buttons to download and delete a file passed in as the node prop
  */
@@ -16,9 +17,20 @@ const FileActionButtons = ({
   fluid = false,
 }) => {
   return (
-    <Button.Group vertical={vertical} fluid={fluid} size="mini">
+    <Button.Group fluid={fluid} size="small">
+      <CopyButton
+        textToCopy={
+          node.downloadUrl +
+          `/version/${node.versions.edges.sort(createDateSort)[0].node.kfId}`
+        }
+        icon="share"
+        basic="very"
+        compact="very"
+        tooltip="copy download link"
+      />
       <Button
         basic
+        compact="very"
         icon="download"
         onClick={e => {
           e.stopPropagation();
@@ -29,6 +41,7 @@ const FileActionButtons = ({
         trigger={
           <Button
             basic
+            compact="very"
             data-testid="delete-button"
             onClick={e => e.stopPropagation()}
             icon={<Icon name="trash alternate" />}

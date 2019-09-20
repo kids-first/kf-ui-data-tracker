@@ -80,6 +80,7 @@ export const GET_STUDY_BY_ID = gql`
               edges {
                 node {
                   id
+                  kfId
                   size
                   createdAt
                   state

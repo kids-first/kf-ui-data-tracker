@@ -170,7 +170,7 @@ const FileElement = ({fileNode, loading, history, match, fileListId}) => {
           latestDate={latestDate}
           fileSize={fileSize}
           fileType={fileType}
-          fileVersions={sortedVersions.length}
+          fileVersions={fileNode.versions.edges.length}
           horizontal={true}
         />
         <Responsive
@@ -180,7 +180,7 @@ const FileElement = ({fileNode, loading, history, match, fileListId}) => {
           latestDate={latestDate}
           fileSize={fileSize}
           fileType={fileType}
-          fileVersions={sortedVersions.length}
+          fileVersions={fileNode.versions.edges.length}
           horizontal={false}
         />
       </Table.Cell>
