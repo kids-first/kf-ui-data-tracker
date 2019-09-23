@@ -33,6 +33,7 @@ const EditDocumentForm = React.forwardRef(
   ) => {
     const [onUploading, setUploading] = useState(false);
     const [showDialog, setShowDialog] = useState(false);
+
     const options = Object.keys(versionState).map(state => ({
       key: state,
       value: state,
@@ -77,7 +78,9 @@ const EditDocumentForm = React.forwardRef(
                 )}
               <Form onSubmit={handleSubmit} ref={ref}>
                 <Form.Field required>
-                  <label htmlFor="file_name">Document Title:</label>
+                  <label htmlFor="file_name">
+                    Document Title: <small>(required)</small>
+                  </label>
                   <Form.Input
                     data-testid="name-input"
                     type="text"
@@ -91,12 +94,16 @@ const EditDocumentForm = React.forwardRef(
                       Object.values(errors.file_name).some(x => x != null)
                     }
                   />
-
-                  <DocumentTitleValidationIndicators errors={errors} />
+                  {touched.file_name &&
+                    Object.values(errors.file_name || {}).some(
+                      x => x != null,
+                    ) && <DocumentTitleValidationIndicators errors={errors} />}
                 </Form.Field>
                 {versionStatus && (
                   <Form.Field>
-                    <label>Approval Status:</label>
+                    <label>
+                      Approval Status: <small>(required)</small>
+                    </label>
                     {isAdmin ? (
                       <Dropdown
                         selection
@@ -116,7 +123,9 @@ const EditDocumentForm = React.forwardRef(
                 )}
 
                 <Form.Field required>
-                  <label htmlFor="file_type">Document Type:</label>
+                  <label htmlFor="file_type">
+                    Document Type: <small>(required)</small>
+                  </label>
                   {Object.keys(fileTypeDetail).map(item => (
                     <Form.Field key={item}>
                       <Field
@@ -130,7 +139,9 @@ const EditDocumentForm = React.forwardRef(
                 </Form.Field>
 
                 <Form.Field required>
-                  <label>Describe Document Contents:</label>
+                  <label>
+                    Describe Document Contents: <small>(required)</small>
+                  </label>
                   <TextArea
                     data-testid="description-input"
                     type="text"
