@@ -1,24 +1,22 @@
 import React, {useState} from 'react';
 import {graphql, compose} from 'react-apollo';
-import {GET_STUDY_BY_ID, MY_PROFILE, GET_PROJECTS} from '../state/queries';
-import {UPDATE_STUDY, LINK_PROJECT, UNLINK_PROJECT} from '../state/mutations';
-import StudyInfo from '../components/StudyInfo/StudyInfo';
-import {Container, Segment, Message, Placeholder} from 'semantic-ui-react';
+import {GET_STUDY_BY_ID, MY_PROFILE} from '../state/queries';
+import {UPDATE_STUDY} from '../state/mutations';
+import {
+  Container,
+  Segment,
+  Message,
+  Placeholder,
+  Header,
+} from 'semantic-ui-react';
 import EmptyView from './EmptyView';
-import EditStudyModal from '../modals/EditStudyModal';
-import NewProjectModal from '../modals/NewProjectModal';
-import LinkProjectModal from '../modals/LinkProjectModal';
 
 const StudyInfoView = ({
   study: {loading, studyByKfId, error},
-  projects: {allProjects, projectLoading, projectError},
   user,
   updateStudy,
-  linkProject,
-  unlinkProject,
 }) => {
   const isBeta = !user.loading ? user.myProfile.roles.includes('BETA') : false;
-  const [showModal, setShowModal] = useState('');
 
   if (loading)
     return (
@@ -51,32 +49,10 @@ const StudyInfoView = ({
   if (isBeta) {
     return (
       <Container as={Segment} basic vertical>
-        <StudyInfo
-          studyNode={studyByKfId}
-          setShowModal={setShowModal}
-          unlinkProject={unlinkProject}
+        <Header as="h2" className="mt-6" floated="left">
+          Study basic info
+        </Header>
         />
-        {showModal === 'edit' && (
-          <EditStudyModal
-            updateStudy={updateStudy}
-            studyNode={studyByKfId}
-            onCloseDialog={() => setShowModal('')}
-          />
-        )}
-        {showModal === 'addProject' && (
-          <NewProjectModal
-            study={studyByKfId}
-            onCloseDialog={() => setShowModal('')}
-          />
-        )}
-        {showModal === 'linkProject' && (
-          <LinkProjectModal
-            study={studyByKfId}
-            allProjects={allProjects}
-            linkProject={linkProject}
-            onCloseDialog={() => setShowModal('')}
-          />
-        )}
       </Container>
     );
   } else {
@@ -97,47 +73,5 @@ export default compose(
   graphql(UPDATE_STUDY, {
     name: 'updateStudy',
   }),
-  graphql(LINK_PROJECT, {
-    name: 'linkProject',
-    options: props => ({
-      refetchQueries: [
-        {
-          query: GET_STUDY_BY_ID,
-          variables: {
-            kfId: props.match.params.kfId,
-          },
-        },
-      ],
-    }),
-  }),
-  graphql(UNLINK_PROJECT, {
-    name: 'unlinkProject',
-    options: props => ({
-      refetchQueries: [
-        {
-          query: GET_STUDY_BY_ID,
-          variables: {
-            kfId: props.match.params.kfId,
-          },
-        },
-        {
-          query: GET_PROJECTS,
-          variables: {
-            study: '',
-            deleted: false,
-          },
-        },
-      ],
-    }),
-  }),
   graphql(MY_PROFILE, {name: 'user'}),
-  graphql(GET_PROJECTS, {
-    name: 'projects',
-    options: props => ({
-      variables: {
-        study: '',
-        deleted: false,
-      },
-    }),
-  }),
 )(StudyInfoView);
