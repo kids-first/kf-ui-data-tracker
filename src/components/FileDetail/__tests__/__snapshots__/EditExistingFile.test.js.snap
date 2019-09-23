@@ -556,10 +556,11 @@ exports[`edits an existing file correctly 1`] = `
                     <div
                       class="description"
                     >
-                      Modified 
+                      Modified
+                       
                       <time
                         datetime="2018-09-27T05:32:26.000Z"
-                        title="2018-09-27T05:32:26+00:00"
+                        title="27 Sept 2018"
                       >
                         7 months ago
                       </time>
@@ -664,10 +665,11 @@ exports[`edits an existing file correctly 1`] = `
                     <div
                       class="description"
                     >
-                      Modified 
+                      Modified
+                       
                       <time
                         datetime="2019-04-06T07:51:17.000Z"
-                        title="2019-04-06T07:51:17+00:00"
+                        title="6 Apr 2019"
                       >
                         2 weeks ago
                       </time>
@@ -1075,7 +1077,7 @@ exports[`edits an existing file correctly 2`] = `
                   >
                     <time
                       datetime="2018-09-27T05:32:26.000Z"
-                      title="2018-09-27T05:32:26+00:00"
+                      title="27 Sept 2018"
                     >
                       7 months ago
                     </time>
@@ -1244,7 +1246,7 @@ exports[`edits an existing file correctly 2`] = `
                     />
                     <time
                       datetime="2018-09-27T05:32:26.000Z"
-                      title="2018-09-27T05:32:26+00:00"
+                      title="27 Sept 2018"
                     >
                       7 months ago
                     </time>
@@ -1301,7 +1303,7 @@ exports[`edits an existing file correctly 2`] = `
                     />
                     <time
                       datetime="2018-08-21T03:16:11.000Z"
-                      title="2018-08-21T03:16:11+00:00"
+                      title="21 Aug 2018"
                     >
                       8 months ago
                     </time>
@@ -1358,7 +1360,7 @@ exports[`edits an existing file correctly 2`] = `
                     />
                     <time
                       datetime="2017-08-25T00:05:30.000Z"
-                      title="2017-08-25T00:05:30+00:00"
+                      title="25 Aug 2017"
                     >
                       2 years ago
                     </time>
@@ -1685,7 +1687,7 @@ exports[`edits an existing file correctly 3`] = `
                   >
                     <time
                       datetime="2018-09-27T05:32:26.000Z"
-                      title="2018-09-27T05:32:26+00:00"
+                      title="27 Sept 2018"
                     >
                       7 months ago
                     </time>
@@ -1854,7 +1856,7 @@ exports[`edits an existing file correctly 3`] = `
                     />
                     <time
                       datetime="2018-09-27T05:32:26.000Z"
-                      title="2018-09-27T05:32:26+00:00"
+                      title="27 Sept 2018"
                     >
                       7 months ago
                     </time>
@@ -1911,7 +1913,7 @@ exports[`edits an existing file correctly 3`] = `
                     />
                     <time
                       datetime="2018-08-21T03:16:11.000Z"
-                      title="2018-08-21T03:16:11+00:00"
+                      title="21 Aug 2018"
                     >
                       8 months ago
                     </time>
@@ -1968,7 +1970,7 @@ exports[`edits an existing file correctly 3`] = `
                     />
                     <time
                       datetime="2017-08-25T00:05:30.000Z"
-                      title="2017-08-25T00:05:30+00:00"
+                      title="25 Aug 2017"
                     >
                       2 years ago
                     </time>

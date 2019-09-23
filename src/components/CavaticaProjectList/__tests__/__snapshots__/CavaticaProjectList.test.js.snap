@@ -49,7 +49,7 @@ exports[`renders correctly 1`] = `
              by kolbmand 
             <time
               datetime="2019-08-14T18:29:01.000Z"
-              title="2019-08-14T18:29:01+00:00"
+              title="14 Aug 2019"
             >
               4 months from now
             </time>
@@ -110,7 +110,7 @@ exports[`renders correctly 1`] = `
              by kfdrc-harmonization 
             <time
               datetime="2019-06-10T14:49:01.000Z"
-              title="2019-06-10T14:49:01+00:00"
+              title="10 Jun 2019"
             >
               2 months from now
             </time>
@@ -171,7 +171,7 @@ exports[`renders correctly 1`] = `
              by kfdrc-harmonization 
             <time
               datetime="2019-05-21T14:13:10.000Z"
-              title="2019-05-21T14:13:10+00:00"
+              title="21 May 2019"
             >
               4 weeks from now
             </time>

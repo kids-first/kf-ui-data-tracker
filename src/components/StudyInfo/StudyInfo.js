@@ -14,6 +14,7 @@ import EventList from '../EventList/EventList';
 import FileSimpleList from './FileSimpleList';
 import CavaticaProjectList from '../CavaticaProjectList/CavaticaProjectList';
 import Markdown from 'react-markdown';
+import {longDate} from '../../common/dateUtils';
 /**
  * Displays study baisc information
  */
@@ -59,7 +60,11 @@ const StudyInfo = ({studyNode, setShowModal, unlinkProject}) => {
                   <List.Description>Created At</List.Description>
                   <List.Header>
                     {studyNode.createdAt ? (
-                      <TimeAgo date={studyNode.createdAt} live={false} />
+                      <TimeAgo
+                        date={studyNode.createdAt}
+                        title={longDate(studyNode.createdAt)}
+                        live={false}
+                      />
                     ) : (
                       'Unknown'
                     )}
@@ -69,7 +74,11 @@ const StudyInfo = ({studyNode, setShowModal, unlinkProject}) => {
                   <List.Description>Modified At</List.Description>
                   <List.Header>
                     {studyNode.modifiedAt ? (
-                      <TimeAgo date={studyNode.modifiedAt} live={false} />
+                      <TimeAgo
+                        date={studyNode.modifiedAt}
+                        title={longDate(studyNode.modifiedAt)}
+                        live={false}
+                      />
                     ) : (
                       'Unknown'
                     )}

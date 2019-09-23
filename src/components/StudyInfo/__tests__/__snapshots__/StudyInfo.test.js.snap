@@ -90,7 +90,7 @@ exports[`Study basic info edit study modal renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-04-20T15:22:18.780Z"
-                    title="2019-04-20T15:22:18.780221+00:00"
+                    title="20 Apr 2019"
                   >
                     3 days ago
                   </time>
@@ -110,7 +110,7 @@ exports[`Study basic info edit study modal renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-04-25T15:22:18.780Z"
-                    title="2019-04-25T15:22:18.780221+00:00"
+                    title="25 Apr 2019"
                   >
                     2 days from now
                   </time>
@@ -383,7 +383,7 @@ exports[`Study basic info edit study modal renders correctly 1`] = `
                      by zhux3 
                     <time
                       datetime="2019-08-26T18:22:41.000Z"
-                      title="2019-08-26T18:22:41+00:00"
+                      title="26 Aug 2019"
                     >
                       4 months from now
                     </time>
@@ -436,7 +436,7 @@ exports[`Study basic info edit study modal renders correctly 1`] = `
                      by zhux3 
                     <time
                       datetime="2019-08-26T18:22:42.000Z"
-                      title="2019-08-26T18:22:42+00:00"
+                      title="26 Aug 2019"
                     >
                       4 months from now
                     </time>
@@ -495,7 +495,7 @@ exports[`Study basic info edit study modal renders correctly 1`] = `
                      by zhux3 
                     <time
                       datetime="2019-08-26T18:22:43.000Z"
-                      title="2019-08-26T18:22:43+00:00"
+                      title="26 Aug 2019"
                     >
                       4 months from now
                     </time>
@@ -555,7 +555,7 @@ exports[`Study basic info edit study modal renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-08-26T18:25:02.985Z"
-                    title="2019-08-26T18:25:02.985155+00:00"
+                    title="26 Aug 2019"
                   >
                     4 months from now
                   </time>
@@ -579,7 +579,7 @@ exports[`Study basic info edit study modal renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-08-26T18:24:46.341Z"
-                    title="2019-08-26T18:24:46.341665+00:00"
+                    title="26 Aug 2019"
                   >
                     4 months from now
                   </time>
@@ -603,7 +603,7 @@ exports[`Study basic info edit study modal renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-08-26T18:24:36.763Z"
-                    title="2019-08-26T18:24:36.763314+00:00"
+                    title="26 Aug 2019"
                   >
                     4 months from now
                   </time>
@@ -627,7 +627,7 @@ exports[`Study basic info edit study modal renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-08-26T18:24:19.986Z"
-                    title="2019-08-26T18:24:19.986588+00:00"
+                    title="26 Aug 2019"
                   >
                     4 months from now
                   </time>
@@ -651,7 +651,7 @@ exports[`Study basic info edit study modal renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-08-26T18:24:03.184Z"
-                    title="2019-08-26T18:24:03.184513+00:00"
+                    title="26 Aug 2019"
                   >
                     4 months from now
                   </time>
@@ -675,7 +675,7 @@ exports[`Study basic info edit study modal renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-08-26T18:24:03.182Z"
-                    title="2019-08-26T18:24:03.182570+00:00"
+                    title="26 Aug 2019"
                   >
                     4 months from now
                   </time>
@@ -699,7 +699,7 @@ exports[`Study basic info edit study modal renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-08-26T18:23:53.703Z"
-                    title="2019-08-26T18:23:53.703031+00:00"
+                    title="26 Aug 2019"
                   >
                     4 months from now
                   </time>
@@ -723,7 +723,7 @@ exports[`Study basic info edit study modal renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-08-26T18:23:53.695Z"
-                    title="2019-08-26T18:23:53.695244+00:00"
+                    title="26 Aug 2019"
                   >
                     4 months from now
                   </time>
@@ -829,7 +829,7 @@ exports[`Study basic info link project modal renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-04-20T15:22:18.780Z"
-                    title="2019-04-20T15:22:18.780221+00:00"
+                    title="20 Apr 2019"
                   >
                     3 days ago
                   </time>
@@ -849,7 +849,7 @@ exports[`Study basic info link project modal renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-04-25T15:22:18.780Z"
-                    title="2019-04-25T15:22:18.780221+00:00"
+                    title="25 Apr 2019"
                   >
                     2 days from now
                   </time>
@@ -1122,7 +1122,7 @@ exports[`Study basic info link project modal renders correctly 1`] = `
                      by zhux3 
                     <time
                       datetime="2019-08-26T18:22:41.000Z"
-                      title="2019-08-26T18:22:41+00:00"
+                      title="26 Aug 2019"
                     >
                       4 months from now
                     </time>
@@ -1175,7 +1175,7 @@ exports[`Study basic info link project modal renders correctly 1`] = `
                      by zhux3 
                     <time
                       datetime="2019-08-26T18:22:42.000Z"
-                      title="2019-08-26T18:22:42+00:00"
+                      title="26 Aug 2019"
                     >
                       4 months from now
                     </time>
@@ -1234,7 +1234,7 @@ exports[`Study basic info link project modal renders correctly 1`] = `
                      by zhux3 
                     <time
                       datetime="2019-08-26T18:22:43.000Z"
-                      title="2019-08-26T18:22:43+00:00"
+                      title="26 Aug 2019"
                     >
                       4 months from now
                     </time>
@@ -1294,7 +1294,7 @@ exports[`Study basic info link project modal renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-08-26T18:25:02.985Z"
-                    title="2019-08-26T18:25:02.985155+00:00"
+                    title="26 Aug 2019"
                   >
                     4 months from now
                   </time>
@@ -1318,7 +1318,7 @@ exports[`Study basic info link project modal renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-08-26T18:24:46.341Z"
-                    title="2019-08-26T18:24:46.341665+00:00"
+                    title="26 Aug 2019"
                   >
                     4 months from now
                   </time>
@@ -1342,7 +1342,7 @@ exports[`Study basic info link project modal renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-08-26T18:24:36.763Z"
-                    title="2019-08-26T18:24:36.763314+00:00"
+                    title="26 Aug 2019"
                   >
                     4 months from now
                   </time>
@@ -1366,7 +1366,7 @@ exports[`Study basic info link project modal renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-08-26T18:24:19.986Z"
-                    title="2019-08-26T18:24:19.986588+00:00"
+                    title="26 Aug 2019"
                   >
                     4 months from now
                   </time>
@@ -1390,7 +1390,7 @@ exports[`Study basic info link project modal renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-08-26T18:24:03.184Z"
-                    title="2019-08-26T18:24:03.184513+00:00"
+                    title="26 Aug 2019"
                   >
                     4 months from now
                   </time>
@@ -1414,7 +1414,7 @@ exports[`Study basic info link project modal renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-08-26T18:24:03.182Z"
-                    title="2019-08-26T18:24:03.182570+00:00"
+                    title="26 Aug 2019"
                   >
                     4 months from now
                   </time>
@@ -1438,7 +1438,7 @@ exports[`Study basic info link project modal renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-08-26T18:23:53.703Z"
-                    title="2019-08-26T18:23:53.703031+00:00"
+                    title="26 Aug 2019"
                   >
                     4 months from now
                   </time>
@@ -1462,7 +1462,7 @@ exports[`Study basic info link project modal renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-08-26T18:23:53.695Z"
-                    title="2019-08-26T18:23:53.695244+00:00"
+                    title="26 Aug 2019"
                   >
                     4 months from now
                   </time>
@@ -1568,7 +1568,7 @@ exports[`Study basic info new project modal renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-04-20T15:22:18.780Z"
-                    title="2019-04-20T15:22:18.780221+00:00"
+                    title="20 Apr 2019"
                   >
                     3 days ago
                   </time>
@@ -1588,7 +1588,7 @@ exports[`Study basic info new project modal renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-04-25T15:22:18.780Z"
-                    title="2019-04-25T15:22:18.780221+00:00"
+                    title="25 Apr 2019"
                   >
                     2 days from now
                   </time>
@@ -1861,7 +1861,7 @@ exports[`Study basic info new project modal renders correctly 1`] = `
                      by zhux3 
                     <time
                       datetime="2019-08-26T18:22:41.000Z"
-                      title="2019-08-26T18:22:41+00:00"
+                      title="26 Aug 2019"
                     >
                       4 months from now
                     </time>
@@ -1914,7 +1914,7 @@ exports[`Study basic info new project modal renders correctly 1`] = `
                      by zhux3 
                     <time
                       datetime="2019-08-26T18:22:42.000Z"
-                      title="2019-08-26T18:22:42+00:00"
+                      title="26 Aug 2019"
                     >
                       4 months from now
                     </time>
@@ -1973,7 +1973,7 @@ exports[`Study basic info new project modal renders correctly 1`] = `
                      by zhux3 
                     <time
                       datetime="2019-08-26T18:22:43.000Z"
-                      title="2019-08-26T18:22:43+00:00"
+                      title="26 Aug 2019"
                     >
                       4 months from now
                     </time>
@@ -2033,7 +2033,7 @@ exports[`Study basic info new project modal renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-08-26T18:25:02.985Z"
-                    title="2019-08-26T18:25:02.985155+00:00"
+                    title="26 Aug 2019"
                   >
                     4 months from now
                   </time>
@@ -2057,7 +2057,7 @@ exports[`Study basic info new project modal renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-08-26T18:24:46.341Z"
-                    title="2019-08-26T18:24:46.341665+00:00"
+                    title="26 Aug 2019"
                   >
                     4 months from now
                   </time>
@@ -2081,7 +2081,7 @@ exports[`Study basic info new project modal renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-08-26T18:24:36.763Z"
-                    title="2019-08-26T18:24:36.763314+00:00"
+                    title="26 Aug 2019"
                   >
                     4 months from now
                   </time>
@@ -2105,7 +2105,7 @@ exports[`Study basic info new project modal renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-08-26T18:24:19.986Z"
-                    title="2019-08-26T18:24:19.986588+00:00"
+                    title="26 Aug 2019"
                   >
                     4 months from now
                   </time>
@@ -2129,7 +2129,7 @@ exports[`Study basic info new project modal renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-08-26T18:24:03.184Z"
-                    title="2019-08-26T18:24:03.184513+00:00"
+                    title="26 Aug 2019"
                   >
                     4 months from now
                   </time>
@@ -2153,7 +2153,7 @@ exports[`Study basic info new project modal renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-08-26T18:24:03.182Z"
-                    title="2019-08-26T18:24:03.182570+00:00"
+                    title="26 Aug 2019"
                   >
                     4 months from now
                   </time>
@@ -2177,7 +2177,7 @@ exports[`Study basic info new project modal renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-08-26T18:23:53.703Z"
-                    title="2019-08-26T18:23:53.703031+00:00"
+                    title="26 Aug 2019"
                   >
                     4 months from now
                   </time>
@@ -2201,7 +2201,7 @@ exports[`Study basic info new project modal renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-08-26T18:23:53.695Z"
-                    title="2019-08-26T18:23:53.695244+00:00"
+                    title="26 Aug 2019"
                   >
                     4 months from now
                   </time>
@@ -2307,7 +2307,7 @@ exports[`Study basic info page renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-04-20T15:22:18.780Z"
-                    title="2019-04-20T15:22:18.780221+00:00"
+                    title="20 Apr 2019"
                   >
                     3 days ago
                   </time>
@@ -2327,7 +2327,7 @@ exports[`Study basic info page renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-04-25T15:22:18.780Z"
-                    title="2019-04-25T15:22:18.780221+00:00"
+                    title="25 Apr 2019"
                   >
                     2 days from now
                   </time>
@@ -2600,7 +2600,7 @@ exports[`Study basic info page renders correctly 1`] = `
                      by zhux3 
                     <time
                       datetime="2019-08-26T18:22:41.000Z"
-                      title="2019-08-26T18:22:41+00:00"
+                      title="26 Aug 2019"
                     >
                       4 months from now
                     </time>
@@ -2653,7 +2653,7 @@ exports[`Study basic info page renders correctly 1`] = `
                      by zhux3 
                     <time
                       datetime="2019-08-26T18:22:42.000Z"
-                      title="2019-08-26T18:22:42+00:00"
+                      title="26 Aug 2019"
                     >
                       4 months from now
                     </time>
@@ -2712,7 +2712,7 @@ exports[`Study basic info page renders correctly 1`] = `
                      by zhux3 
                     <time
                       datetime="2019-08-26T18:22:43.000Z"
-                      title="2019-08-26T18:22:43+00:00"
+                      title="26 Aug 2019"
                     >
                       4 months from now
                     </time>
@@ -2772,7 +2772,7 @@ exports[`Study basic info page renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-08-26T18:25:02.985Z"
-                    title="2019-08-26T18:25:02.985155+00:00"
+                    title="26 Aug 2019"
                   >
                     4 months from now
                   </time>
@@ -2796,7 +2796,7 @@ exports[`Study basic info page renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-08-26T18:24:46.341Z"
-                    title="2019-08-26T18:24:46.341665+00:00"
+                    title="26 Aug 2019"
                   >
                     4 months from now
                   </time>
@@ -2820,7 +2820,7 @@ exports[`Study basic info page renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-08-26T18:24:36.763Z"
-                    title="2019-08-26T18:24:36.763314+00:00"
+                    title="26 Aug 2019"
                   >
                     4 months from now
                   </time>
@@ -2844,7 +2844,7 @@ exports[`Study basic info page renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-08-26T18:24:19.986Z"
-                    title="2019-08-26T18:24:19.986588+00:00"
+                    title="26 Aug 2019"
                   >
                     4 months from now
                   </time>
@@ -2868,7 +2868,7 @@ exports[`Study basic info page renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-08-26T18:24:03.184Z"
-                    title="2019-08-26T18:24:03.184513+00:00"
+                    title="26 Aug 2019"
                   >
                     4 months from now
                   </time>
@@ -2892,7 +2892,7 @@ exports[`Study basic info page renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-08-26T18:24:03.182Z"
-                    title="2019-08-26T18:24:03.182570+00:00"
+                    title="26 Aug 2019"
                   >
                     4 months from now
                   </time>
@@ -2916,7 +2916,7 @@ exports[`Study basic info page renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-08-26T18:23:53.703Z"
-                    title="2019-08-26T18:23:53.703031+00:00"
+                    title="26 Aug 2019"
                   >
                     4 months from now
                   </time>
@@ -2940,7 +2940,7 @@ exports[`Study basic info page renders correctly 1`] = `
                 >
                   <time
                     datetime="2019-08-26T18:23:53.695Z"
-                    title="2019-08-26T18:23:53.695244+00:00"
+                    title="26 Aug 2019"
                   >
                     4 months from now
                   </time>

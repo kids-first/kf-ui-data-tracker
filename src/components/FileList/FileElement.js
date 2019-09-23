@@ -13,6 +13,7 @@ import {
   fileLatestSize,
   lengthLimit,
 } from '../../common/fileUtils';
+import {longDate} from '../../common/dateUtils';
 
 /**
  * Displays a list of file attributes
@@ -32,7 +33,12 @@ const FileAttributes = ({
       <List.Description>
         {latestDate ? (
           <>
-            Modified <TimeAgo date={latestDate} live={false} />
+            Modified{' '}
+            <TimeAgo
+              date={latestDate}
+              live={false}
+              title={longDate(latestDate)}
+            />
           </>
         ) : (
           'Unknown time'

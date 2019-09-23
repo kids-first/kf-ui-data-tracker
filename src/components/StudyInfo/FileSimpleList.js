@@ -9,6 +9,7 @@ import {
   fileLatestDate,
   versionState,
 } from '../../common/fileUtils';
+import {longDate} from '../../common/dateUtils';
 
 const FileSimpleList = ({files}) => {
   const [showDetail, setShowDetail] = useState(false);
@@ -37,6 +38,7 @@ const FileSimpleList = ({files}) => {
                   <TimeAgo
                     live={false}
                     date={fileLatestDate(fileSortedVersions(node))}
+                    title={longDate(fileLatestDate(fileSortedVersions(node)))}
                   />
                 </List.Content>
                 {node.name}
