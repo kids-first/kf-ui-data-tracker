@@ -7,7 +7,7 @@ import {Icon, Segment, Radio} from 'semantic-ui-react';
  * description, and icon.
  */
 const SelectElement = ({
-  field: {name, value, onChange},
+  field: {name, onChange},
   form: {values, setFieldValue},
   id,
   label,
@@ -55,12 +55,12 @@ const SelectElement = ({
 };
 
 SelectElement.propTypes = {
-  /** The value of the fileType enum */
-  value: PropTypes.string.isRequired,
-  /** onChange event for the radio button */
-  select: PropTypes.func.isRequired,
-  /** whether the radio button is selected or not */
-  selected: PropTypes.bool.isRequired,
+  /** Formik field object  */
+  field: PropTypes.object.isRequired,
+  /** Formik form prop object */
+  form: PropTypes.object.isRequired,
+  /** the html name attribute to pass as the value for the Radio element */
+  id: PropTypes.string.isRequired,
 };
 
 export default SelectElement;

@@ -24,7 +24,6 @@ const EditDocumentModal = ({
     : false;
 
   const handleSubmit = (name, fileType, description, versionStatus) => {
-    debugger;
     updateFile({variables: {kfId: fileNode.kfId, name, description, fileType}})
       .then(() => {
         onCloseDialog();

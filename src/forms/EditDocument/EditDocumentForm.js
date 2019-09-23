@@ -81,7 +81,7 @@ const EditDocumentForm = React.forwardRef(
                   <label htmlFor="file_name">
                     Document Title: <small>(required)</small>
                   </label>
-                  <Form.Input
+                  <input
                     data-testid="name-input"
                     type="text"
                     name="file_name"
@@ -194,7 +194,7 @@ EditDocumentForm.propTypes = {
   /** (New file) Displays as buttons for form submitting */
   submitButtons: PropTypes.func,
   /** show validation hints */
-  showFieldHints: PropTypes.boolean,
+  showFieldHints: PropTypes.bool,
 };
 
 export default EditDocumentForm;
