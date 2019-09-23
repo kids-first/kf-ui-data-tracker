@@ -49,13 +49,17 @@ const NewStudyView = ({match, history, location, createStudy}) => {
         <>
           <Container as={Segment} vertical basic>
             <Header as="h3">Tell us about your new study</Header>
-            <p>
+            <p className="text-wrap-75">
               We'll setup a new study for you by registering it in the Kids
               First system and initializing all the necessary systems. You can
               come after the study has been created to make changes at any time.
             </p>
           </Container>
-          <NewStudyForm submitValue={submitValue} apiErrors={newStudyError} />
+          <NewStudyForm
+            submitValue={submitValue}
+            apiErrors={newStudyError}
+            history={history}
+          />
         </>
       )}
     </Container>

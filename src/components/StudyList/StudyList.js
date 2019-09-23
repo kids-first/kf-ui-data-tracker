@@ -71,7 +71,7 @@ const StudyList = ({studyList, loading, activeView = 'grid', user}) => {
             icon="add"
             content="Add Study"
             as={Link}
-            to={`/study/new-study`}
+            to={`/study/new-study/info`}
           />
         )}
         <Input

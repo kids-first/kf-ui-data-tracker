@@ -83,7 +83,7 @@ const EditStudyModal = ({studyNode, updateStudy, onCloseDialog}) => {
                 loading={formikProps.isSubmitting}
                 disabled={
                   Object.keys(formikProps.errors).length > 0 ||
-                  !apiErrors.length > 0
+                  apiErrors.length > 0
                 }
               >
                 SAVE

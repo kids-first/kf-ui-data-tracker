@@ -1,351 +1,134 @@
-import React, {useState} from 'react';
+import React, {useState, Fragment} from 'react';
+import {Switch, Route} from 'react-router-dom';
 import PropTypes from 'prop-types';
-import {
-  Form,
-  Segment,
-  Container,
-  Label,
-  Button,
-  Message,
-  Grid,
-  Confirm,
-  List,
-  Dropdown,
-} from 'semantic-ui-react';
+import {Form, Segment, Message, Step} from 'semantic-ui-react';
 import {Formik} from 'formik';
-import {workflowOptions} from '../common/enums';
+import {InfoStep, ExternalStep, GrantStep} from './StudyFormSteps';
 
-const NewStudyForm = ({submitValue, apiErrors}) => {
+const NewStudyForm = ({submitValue, apiErrors, history}) => {
   const [confirmOpen, setConfirmOpen] = useState(false);
   const [workflowType, setSelection] = useState([
     'bwa_mem',
     'gatk_haplotypecaller',
   ]);
-
+  const [focused, setFocused] = useState('');
+  const STUDY_STEPS = [
+    {
+      title: 'Info',
+      desc: 'General Study Details',
+      icon: 'info',
+      comp: InfoStep,
+      href: 'info',
+    },
+    {
+      title: 'External',
+      desc: 'For dbGaP project',
+      icon: 'disk',
+      comp: ExternalStep,
+      href: 'external',
+    },
+    {
+      title: 'Logistics',
+      desc: 'Scheduling & Collection',
+      icon: 'calendar check',
+      comp: GrantStep,
+      href: 'logistics',
+    },
+  ];
+  const newStudy = true;
   return (
-    <Segment padded="very" clearing>
-      <Formik
-        initialValues={{
-          externalId: '',
-          name: '',
-          shortName: '',
-          description: '',
-          releaseDate: '',
-          anticipatedSamples: 0,
-          awardeeOrganization: '',
-        }}
-        validate={values => {
-          let errors = {};
-          if (!values.externalId) {
-            errors.externalId = 'Required';
-          }
-          if (!values.name) {
-            errors.name = 'Required';
-          }
-          if (values.anticipatedSamples < 0) {
-            errors.anticipatedSamples = 'Invalid number of anticipated samples';
-          }
-          return errors;
-        }}
-        onSubmit={(values, {setSubmitting}) => {
-          setSubmitting(false);
-          setConfirmOpen(false);
-          var inputObject = values;
-          if (values.releaseDate.length === 0) {
-            inputObject.releaseDate = null;
-          }
-          submitValue({input: inputObject, workflowType: workflowType});
-        }}
-      >
-        {({
-          values,
-          errors,
-          touched,
-          handleChange,
-          handleBlur,
-          handleSubmit,
-          isSubmitting,
-          validateForm,
-          setErrors,
-        }) => (
-          <Form onSubmit={handleSubmit}>
-            <Grid doubling stackable>
-              <Grid.Row verticalAlign="middle">
-                <Grid.Column width={8}>
-                  <Form.Field required>
-                    <label>Study name:</label>
-                    <Form.Input
-                      fluid
-                      type="text"
-                      name="name"
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      value={values.name}
-                      error={
-                        touched.name !== undefined &&
-                        errors.name !== undefined &&
-                        errors.name.length > 0
-                      }
-                    />
-                    {touched.name && errors.name && errors.name.length > 0 && (
-                      <Label pointing basic color="red">
-                        {errors.name}
-                      </Label>
-                    )}
-                  </Form.Field>
-                </Grid.Column>
-                <Grid.Column width={8}>
-                  <Message size="small">
-                    Full name of the study, often the full title of the X01
-                    grant application.
-                  </Message>
-                </Grid.Column>
-              </Grid.Row>
-              <Grid.Row verticalAlign="middle">
-                <Grid.Column width={8}>
-                  <Form.Field>
-                    <label>Study short name:</label>
-                    <Form.Input
-                      fluid
-                      type="text"
-                      name="shortName"
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      value={values.shortName}
-                    />
-                  </Form.Field>
-                </Grid.Column>
-                <Grid.Column width={8}>
-                  <Message size="small">
-                    The name that will appear under portal facets.
-                  </Message>
-                </Grid.Column>
-              </Grid.Row>
-              <Grid.Row verticalAlign="middle">
-                <Grid.Column width={8}>
-                  <Form.Field required>
-                    <label>External ID:</label>
-                    <Form.Input
-                      fluid
-                      type="text"
-                      name="externalId"
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      value={values.externalId}
-                      error={
-                        touched.externalId !== undefined &&
-                        errors.externalId !== undefined &&
-                        errors.externalId.length > 0
-                      }
-                    />
-                    {touched.externalId &&
-                      errors.externalId &&
-                      errors.externalId.length > 0 && (
-                        <Label pointing basic color="red">
-                          {errors.externalId}
-                        </Label>
-                      )}
-                  </Form.Field>
-                </Grid.Column>
-                <Grid.Column width={8}>
-                  <Message size="small">
-                    Identifier used by external systems, often the PHS ID if the
-                    study is registered with dbGaP.
-                  </Message>
-                </Grid.Column>
-              </Grid.Row>
-              <Grid.Row verticalAlign="middle">
-                <Grid.Column width={8}>
-                  <Form.Field>
-                    <label>Release date:</label>
-                    <Form.Input
-                      fluid
-                      type="date"
-                      name="releaseDate"
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      value={values.releaseDate}
-                    />
-                  </Form.Field>
-                </Grid.Column>
-                <Grid.Column width={8}>
-                  <Message size="small">
-                    The anticipated date on which this study's data will be made
-                    public in Kids First.
-                  </Message>
-                </Grid.Column>
-              </Grid.Row>
-              <Grid.Row verticalAlign="middle">
-                <Grid.Column width={8}>
-                  <Form.Field>
-                    <label>Number of anticipated samples:</label>
-                    <Form.Input
-                      fluid
-                      type="number"
-                      name="anticipatedSamples"
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      value={values.anticipatedSamples}
-                      error={
-                        touched.anticipatedSamples !== undefined &&
-                        errors.anticipatedSamples !== undefined &&
-                        errors.anticipatedSamples.length > 0
-                      }
-                    />
-                    {touched.anticipatedSamples &&
-                      errors.anticipatedSamples &&
-                      errors.anticipatedSamples.length > 0 && (
-                        <Label pointing basic color="red">
-                          {errors.anticipatedSamples}
-                        </Label>
-                      )}
-                  </Form.Field>
-                </Grid.Column>
-                <Grid.Column width={8}>
-                  <Message size="small">
-                    The anticipated number of samples awarded for sequencing for
-                    the study.
-                  </Message>
-                </Grid.Column>
-              </Grid.Row>
-              <Grid.Row verticalAlign="middle">
-                <Grid.Column width={8}>
-                  <Form.Field>
-                    <label>Awardee organization:</label>
-                    <Form.Input
-                      fluid
-                      type="text"
-                      name="awardeeOrganization"
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      value={values.awardeeOrganization}
-                    />
-                  </Form.Field>
-                </Grid.Column>
-                <Grid.Column width={8}>
-                  <Message size="small">
-                    The organization responsible for this study.
-                  </Message>
-                </Grid.Column>
-              </Grid.Row>
-              <Grid.Row verticalAlign="middle">
-                <Grid.Column width={8}>
-                  <Form.Field>
-                    <label>Cavatica Projects:</label>
-                    <Dropdown
-                      id="workflowType"
-                      name="workflowType"
-                      placeholder="Workflow Type"
-                      fluid
-                      selection
-                      clearable
-                      multiple
-                      options={workflowOptions}
-                      onChange={(e, {value}) => {
-                        setSelection(value);
-                      }}
-                      value={workflowType}
-                    />
-                  </Form.Field>
-                </Grid.Column>
-                <Grid.Column width={8}>
-                  <Message size="small">
-                    Select one or multiple workflows to be run for this study,
-                    default as "bwa_mem" and "GATK Haplotypecaller"
-                  </Message>
-                </Grid.Column>
-              </Grid.Row>
-              <Grid.Row verticalAlign="middle">
-                <Grid.Column width={16}>
-                  <Form.Field>
-                    <label>Description:</label>
-                    <Message size="small">
-                      Study description in markdown, commonly the X01 abstract
-                      text.
-                    </Message>
-                    <Form.TextArea
-                      rows="15"
-                      type="text"
-                      name="description"
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      value={values.description}
-                    />
-                  </Form.Field>
-                </Grid.Column>
-              </Grid.Row>
-              <Grid.Row>
-                <Grid.Column width={13}>
-                  {apiErrors && (
-                    <Message size="mini" negative>
-                      {apiErrors}
-                    </Message>
-                  )}
-                </Grid.Column>
-                <Grid.Column width={3}>
-                  <Button
-                    primary
-                    floated="right"
-                    type="button"
-                    disabled={Object.keys(errors).length > 0}
-                    onClick={() => {
-                      validateForm().then(errors => {
-                        Object.keys(errors).length === 0 &&
-                          setConfirmOpen(true);
-                      });
-                    }}
-                  >
-                    SUBMIT
-                  </Button>
-                </Grid.Column>
-              </Grid.Row>
-            </Grid>
-            <Confirm
-              open={confirmOpen}
-              onCancel={() => setConfirmOpen(false)}
-              onConfirm={handleSubmit}
-              header="Create Study"
-              content={
-                <Container as={Segment} basic padded>
-                  <p>The following resources will be created for this study</p>
-                  <List bulleted>
-                    <List.Item>Dataservice study</List.Item>
-                    <List.Item>S3 bucket</List.Item>
-                    <List.Item>Cavatica delivery project</List.Item>
-                    {workflowType.length > 0 && (
-                      <List.Item>
-                        Cavatica harmonization projects
-                        <List.List>
-                          {workflowType.map(type => (
-                            <List.Item key={type}>
-                              {
-                                workflowOptions.filter(
-                                  obj => obj.value === type,
-                                )[0].text
-                              }
-                            </List.Item>
-                          ))}
-                        </List.List>
-                      </List.Item>
-                    )}
-                  </List>
-                </Container>
-              }
-              confirmButton={
-                <Button
-                  primary
-                  floated="right"
-                  type="submit"
-                  loading={isSubmitting}
-                >
-                  SUBMIT
-                </Button>
-              }
+    <Formik
+      initialValues={{
+        externalId: '',
+        name: '',
+        shortName: '',
+        description: '',
+        releaseDate: '',
+        version: '',
+        attribution: '',
+        anticipatedSamples: 0,
+        awardeeOrganization: '',
+      }}
+      validate={values => {
+        let errors = {};
+        if (!values.externalId) {
+          errors.externalId = 'Required';
+        }
+        if (!values.name) {
+          errors.name = 'Required';
+        }
+        if (values.anticipatedSamples < 0) {
+          errors.anticipatedSamples =
+            'Please tell us how many samples you are anticipating';
+        }
+        if (values.version.length > 10) {
+          errors.version =
+            'Max. 10 characters, typically in the format v[0-9].p[0-9]';
+        }
+        return errors;
+      }}
+      onSubmit={(values, {setSubmitting}) => {
+        setSubmitting(false);
+        setConfirmOpen(false);
+        var inputObject = values;
+        if (values.releaseDate.length === 0) {
+          inputObject.releaseDate = null;
+        }
+        submitValue({input: inputObject, workflowType: workflowType});
+      }}
+    >
+      {formikProps => (
+        <Fragment>
+          {apiErrors && (
+            <Message
+              negative
+              icon="attention"
+              header="Error"
+              content={apiErrors}
             />
-          </Form>
-        )}
-      </Formik>
-    </Segment>
+          )}
+
+          <Step.Group attached="top" fluid widths={3}>
+            {STUDY_STEPS.map(step => (
+              <Step
+                link
+                key={STUDY_STEPS.indexOf(step)}
+                active={history.location.pathname.endsWith(step.href)}
+                onClick={() => history.push('/study/new-study/' + step.href)}
+                icon={step.icon}
+                title={step.title}
+                description={step.desc}
+              />
+            ))}
+          </Step.Group>
+          <Segment padded clearing attached>
+            <Form onSubmit={formikProps.handleSubmit}>
+              <Switch>
+                {STUDY_STEPS.map(step => (
+                  <Route
+                    key={STUDY_STEPS.indexOf(step)}
+                    path={'/study/new-study/' + step.href}
+                    render={() =>
+                      step.comp({
+                        newStudy,
+                        formikProps,
+                        setFocused,
+                        focused,
+                        setSelection,
+                        workflowType,
+                        setConfirmOpen,
+                        confirmOpen,
+                        history,
+                      })
+                    }
+                  />
+                ))}
+              </Switch>
+            </Form>
+          </Segment>
+        </Fragment>
+      )}
+    </Formik>
   );
 };
 
