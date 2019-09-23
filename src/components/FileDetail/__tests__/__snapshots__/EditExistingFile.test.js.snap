@@ -1643,7 +1643,7 @@ exports[`edits an existing file correctly 3`] = `
           <h2
             class="ui header"
           >
-            mynewfile.txt
+            foo bar file
           </h2>
         </div>
       </div>

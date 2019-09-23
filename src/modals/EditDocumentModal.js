@@ -22,21 +22,22 @@ const EditDocumentModal = ({
     ? user.myProfile.roles.includes('ADMIN')
     : false;
 
-  const handleSubmit = (name, fileType, description, versionStatus) => {
-    updateFile({variables: {kfId: fileNode.kfId, name, description, fileType}})
-      .then(() => {
-        onCloseDialog();
-      })
-      .catch(err => console.log(err));
-    updateVersion({
-      variables: {
-        versionId: latestVersion.kfId,
-        description: latestVersion.description,
-        state: versionStatus,
-      },
-    })
-      .then(() => onCloseDialog())
-      .catch(err => console.log(err));
+  const handleSubmit = async (name, fileType, description, versionStatus) => {
+    try {
+      await updateFile({
+        variables: {kfId: fileNode.kfId, name, description, fileType},
+      });
+      await updateVersion({
+        variables: {
+          versionId: latestVersion.kfId,
+          description: latestVersion.description,
+          state: versionStatus,
+        },
+      });
+      onCloseDialog();
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return (

@@ -12,9 +12,12 @@ Object {
           class="required field"
         >
           <label
-            for="file_title"
+            for="file_name"
           >
-            Document Title:
+            Document Title: 
+            <small>
+              (required)
+            </small>
           </label>
           <input
             data-testid="name-input"
@@ -30,7 +33,10 @@ Object {
           <label
             for="file_type"
           >
-            Document Type:
+            Document Type: 
+            <small>
+              (required)
+            </small>
           </label>
           <div
             class="field"
@@ -43,7 +49,8 @@ Object {
               >
                 <input
                   class="hidden"
-                  name="fileTypeGroup"
+                  id="SHM"
+                  name="file_type"
                   readonly=""
                   tabindex="0"
                   type="radio"
@@ -79,7 +86,8 @@ Object {
               >
                 <input
                   class="hidden"
-                  name="fileTypeGroup"
+                  id="CLN"
+                  name="file_type"
                   readonly=""
                   tabindex="0"
                   type="radio"
@@ -115,7 +123,8 @@ Object {
               >
                 <input
                   class="hidden"
-                  name="fileTypeGroup"
+                  id="SEQ"
+                  name="file_type"
                   readonly=""
                   tabindex="0"
                   type="radio"
@@ -151,7 +160,8 @@ Object {
               >
                 <input
                   class="hidden"
-                  name="fileTypeGroup"
+                  id="OTH"
+                  name="file_type"
                   readonly=""
                   tabindex="0"
                   type="radio"
@@ -181,11 +191,14 @@ Object {
           class="required field"
         >
           <label>
-            Describe Document Contents:
+            Describe Document Contents: 
+            <small>
+              (required)
+            </small>
           </label>
           <textarea
             data-testid="description-input"
-            name="description"
+            name="file_desc"
             rows="3"
             type="text"
           />
@@ -201,9 +214,12 @@ Object {
         class="required field"
       >
         <label
-          for="file_title"
+          for="file_name"
         >
-          Document Title:
+          Document Title: 
+          <small>
+            (required)
+          </small>
         </label>
         <input
           data-testid="name-input"
@@ -219,7 +235,10 @@ Object {
         <label
           for="file_type"
         >
-          Document Type:
+          Document Type: 
+          <small>
+            (required)
+          </small>
         </label>
         <div
           class="field"
@@ -232,7 +251,8 @@ Object {
             >
               <input
                 class="hidden"
-                name="fileTypeGroup"
+                id="SHM"
+                name="file_type"
                 readonly=""
                 tabindex="0"
                 type="radio"
@@ -268,7 +288,8 @@ Object {
             >
               <input
                 class="hidden"
-                name="fileTypeGroup"
+                id="CLN"
+                name="file_type"
                 readonly=""
                 tabindex="0"
                 type="radio"
@@ -304,7 +325,8 @@ Object {
             >
               <input
                 class="hidden"
-                name="fileTypeGroup"
+                id="SEQ"
+                name="file_type"
                 readonly=""
                 tabindex="0"
                 type="radio"
@@ -340,7 +362,8 @@ Object {
             >
               <input
                 class="hidden"
-                name="fileTypeGroup"
+                id="OTH"
+                name="file_type"
                 readonly=""
                 tabindex="0"
                 type="radio"
@@ -370,11 +393,14 @@ Object {
         class="required field"
       >
         <label>
-          Describe Document Contents:
+          Describe Document Contents: 
+          <small>
+            (required)
+          </small>
         </label>
         <textarea
           data-testid="description-input"
-          name="description"
+          name="file_desc"
           rows="3"
           type="text"
         />
@@ -455,9 +481,12 @@ Object {
           class="required field"
         >
           <label
-            for="file_title"
+            for="file_name"
           >
-            Document Title:
+            Document Title: 
+            <small>
+              (required)
+            </small>
           </label>
           <input
             data-testid="name-input"
@@ -473,7 +502,10 @@ Object {
           <label
             for="file_type"
           >
-            Document Type:
+            Document Type: 
+            <small>
+              (required)
+            </small>
           </label>
           <div
             class="field"
@@ -486,7 +518,8 @@ Object {
               >
                 <input
                   class="hidden"
-                  name="fileTypeGroup"
+                  id="SHM"
+                  name="file_type"
                   readonly=""
                   tabindex="0"
                   type="radio"
@@ -522,7 +555,8 @@ Object {
               >
                 <input
                   class="hidden"
-                  name="fileTypeGroup"
+                  id="CLN"
+                  name="file_type"
                   readonly=""
                   tabindex="0"
                   type="radio"
@@ -558,7 +592,8 @@ Object {
               >
                 <input
                   class="hidden"
-                  name="fileTypeGroup"
+                  id="SEQ"
+                  name="file_type"
                   readonly=""
                   tabindex="0"
                   type="radio"
@@ -594,7 +629,8 @@ Object {
               >
                 <input
                   class="hidden"
-                  name="fileTypeGroup"
+                  id="OTH"
+                  name="file_type"
                   readonly=""
                   tabindex="0"
                   type="radio"
@@ -624,11 +660,14 @@ Object {
           class="required field"
         >
           <label>
-            Describe Document Contents:
+            Describe Document Contents: 
+            <small>
+              (required)
+            </small>
           </label>
           <textarea
             data-testid="description-input"
-            name="description"
+            name="file_desc"
             rows="3"
             type="text"
           />
@@ -643,9 +682,12 @@ Object {
           class="required field"
         >
           <label
-            for="file_title"
+            for="file_name"
           >
-            Document Title:
+            Document Title: 
+            <small>
+              (required)
+            </small>
           </label>
           <input
             data-testid="name-input"
@@ -659,7 +701,10 @@ Object {
           class="field"
         >
           <label>
-            Approval Status:
+            Approval Status: 
+            <small>
+              (required)
+            </small>
           </label>
           <div
             class="ui orange tiny basic label"
@@ -673,7 +718,10 @@ Object {
           <label
             for="file_type"
           >
-            Document Type:
+            Document Type: 
+            <small>
+              (required)
+            </small>
           </label>
           <div
             class="field"
@@ -686,7 +734,8 @@ Object {
               >
                 <input
                   class="hidden"
-                  name="fileTypeGroup"
+                  id="SHM"
+                  name="file_type"
                   readonly=""
                   tabindex="0"
                   type="radio"
@@ -718,11 +767,13 @@ Object {
               class="ui blue compact segment selectionRadio--card"
             >
               <div
-                class="ui radio checkbox selectionRadio"
+                class="ui checked radio checkbox selectionRadio"
               >
                 <input
+                  checked=""
                   class="hidden"
-                  name="fileTypeGroup"
+                  id="CLN"
+                  name="file_type"
                   readonly=""
                   tabindex="0"
                   type="radio"
@@ -758,7 +809,8 @@ Object {
               >
                 <input
                   class="hidden"
-                  name="fileTypeGroup"
+                  id="SEQ"
+                  name="file_type"
                   readonly=""
                   tabindex="0"
                   type="radio"
@@ -794,7 +846,8 @@ Object {
               >
                 <input
                   class="hidden"
-                  name="fileTypeGroup"
+                  id="OTH"
+                  name="file_type"
                   readonly=""
                   tabindex="0"
                   type="radio"
@@ -824,11 +877,14 @@ Object {
           class="required field"
         >
           <label>
-            Describe Document Contents:
+            Describe Document Contents: 
+            <small>
+              (required)
+            </small>
           </label>
           <textarea
             data-testid="description-input"
-            name="description"
+            name="file_desc"
             rows="3"
             type="text"
           >
@@ -846,9 +902,12 @@ Object {
         class="required field"
       >
         <label
-          for="file_title"
+          for="file_name"
         >
-          Document Title:
+          Document Title: 
+          <small>
+            (required)
+          </small>
         </label>
         <input
           data-testid="name-input"
@@ -862,7 +921,10 @@ Object {
         class="field"
       >
         <label>
-          Approval Status:
+          Approval Status: 
+          <small>
+            (required)
+          </small>
         </label>
         <div
           class="ui orange tiny basic label"
@@ -876,7 +938,10 @@ Object {
         <label
           for="file_type"
         >
-          Document Type:
+          Document Type: 
+          <small>
+            (required)
+          </small>
         </label>
         <div
           class="field"
@@ -889,7 +954,8 @@ Object {
             >
               <input
                 class="hidden"
-                name="fileTypeGroup"
+                id="SHM"
+                name="file_type"
                 readonly=""
                 tabindex="0"
                 type="radio"
@@ -921,11 +987,13 @@ Object {
             class="ui blue compact segment selectionRadio--card"
           >
             <div
-              class="ui radio checkbox selectionRadio"
+              class="ui checked radio checkbox selectionRadio"
             >
               <input
+                checked=""
                 class="hidden"
-                name="fileTypeGroup"
+                id="CLN"
+                name="file_type"
                 readonly=""
                 tabindex="0"
                 type="radio"
@@ -961,7 +1029,8 @@ Object {
             >
               <input
                 class="hidden"
-                name="fileTypeGroup"
+                id="SEQ"
+                name="file_type"
                 readonly=""
                 tabindex="0"
                 type="radio"
@@ -997,7 +1066,8 @@ Object {
             >
               <input
                 class="hidden"
-                name="fileTypeGroup"
+                id="OTH"
+                name="file_type"
                 readonly=""
                 tabindex="0"
                 type="radio"
@@ -1027,11 +1097,14 @@ Object {
         class="required field"
       >
         <label>
-          Describe Document Contents:
+          Describe Document Contents: 
+          <small>
+            (required)
+          </small>
         </label>
         <textarea
           data-testid="description-input"
-          name="description"
+          name="file_desc"
           rows="3"
           type="text"
         >

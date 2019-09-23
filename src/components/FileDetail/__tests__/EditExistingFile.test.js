@@ -2,7 +2,12 @@ import React from 'react';
 import wait from 'waait';
 import {MockedProvider} from 'react-apollo/test-utils';
 import {MemoryRouter} from 'react-router-dom';
-import {render, fireEvent} from 'react-testing-library';
+import {
+  render,
+  fireEvent,
+  act,
+  waitForElementToBeRemoved,
+} from 'react-testing-library';
 import Routes from '../../../Routes';
 import {mocks} from '../../../../__mocks__/kf-api-study-creator/mocks';
 import myProfile from '../../../../__mocks__/kf-api-study-creator/responses/myProfile.json';
@@ -51,18 +56,24 @@ it('edits an existing file correctly', async () => {
 
   // Click on the first file's name to go to file detail page
   const fileName = tree.getByText(/organization.jpeg/i);
-  fireEvent.click(fileName);
+  act(() => {
+    fireEvent.click(fileName);
+  });
   await wait(10);
 
   // Click on the file's edit button to open annotation modal
-  fireEvent.click(tree.getByText(/EDIT/));
+  act(() => {
+    fireEvent.click(tree.getByText(/EDIT/));
+  });
   await wait();
 
   expect(tree.container).toMatchSnapshot();
 
   // Update file name
   const nameInput = tree.getByTestId('name-input');
-  fireEvent.change(nameInput, {target: {value: 'mynewfile.txt'}});
+  act(() => {
+    fireEvent.change(nameInput, {target: {value: 'foo bar file'}});
+  });
   await wait();
 
   // Update file description
@@ -71,19 +82,29 @@ it('edits an existing file correctly', async () => {
   await wait();
 
   // Update approval status from 'Pending review' to 'Approved'
-  fireEvent.click(tree.getByText(/Pending review/));
+  act(() => {
+    fireEvent.click(tree.getByText(/Pending review/));
+  });
   await wait();
-  fireEvent.click(tree.getByText(/Approved/));
+  act(() => {
+    fireEvent.click(tree.getByText(/Approved/));
+  });
   await wait();
-
+  expect(tree.queryAllByText(/SAVE/i).length).toBe(1);
   // Click 'Save' button to return to file detail view
-  fireEvent.click(tree.getByText(/SAVE/));
-  await wait();
+  act(() => {
+    fireEvent.click(tree.getByText(/SAVE/));
+    // fireEvent.click(document.querySelector('.close.icon'));
+  });
+
+  // make sure our modal closes after save
+  await waitForElementToBeRemoved(() => document.querySelector('.modals'));
+  expect(document.querySelector('.modals')).toBeFalsy();
 
   // Expect to see the file name and description updated on detail view
   expect(tree.queryAllByText(/organizaton.jpeg/i).length).toBe(0);
   expect(tree.queryAllByText(/Some description here/i).length).toBe(1);
-  expect(tree.queryAllByText(/mynewfile.txt/i).length).toBe(1);
+  expect(tree.queryAllByText(/foo bar file/i).length).toBe(1);
 
   // Expect to see the file status updated on detail view
   expect(tree.queryAllByText(/Approved/).length).toBe(2);
