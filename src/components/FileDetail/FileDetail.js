@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import { withRouter, Link } from 'react-router-dom';
-import { Mutation } from 'react-apollo';
-import { FILE_DOWNLOAD_URL } from '../../state/mutations';
+import {withRouter, Link} from 'react-router-dom';
+import {Mutation} from 'react-apollo';
+import {FILE_DOWNLOAD_URL} from '../../state/mutations';
 import AvatarTimeAgo from '../AvatarTimeAgo/AvatarTimeAgo';
 import VersionList from '../VersionList/VersionList';
 import {
@@ -26,10 +26,19 @@ import {
   Divider,
 } from 'semantic-ui-react';
 
-
-const ActionButtons = ({ downloadFile, studyId, fileNode, downloadFileMutation, setDialog, deleteFile, history }) => (
+const ActionButtons = ({
+  downloadFile,
+  studyId,
+  fileNode,
+  downloadFileMutation,
+  setDialog,
+  deleteFile,
+  history,
+}) => (
   <>
-    <Header as="h5" attached="top" textAlign="center" color="blue">Actions</Header>
+    <Header as="h5" attached="top" textAlign="center" color="blue">
+      Actions
+    </Header>
     <Segment raised attached secondary>
       <Button
         primary
@@ -38,17 +47,12 @@ const ActionButtons = ({ downloadFile, studyId, fileNode, downloadFileMutation, 
         size="mini"
         labelPosition="left"
         onClick={e =>
-          downloadFile(
-            studyId,
-            fileNode.kfId,
-            null,
-            downloadFileMutation,
-          )
+          downloadFile(studyId, fileNode.kfId, null, downloadFileMutation)
         }
         content="DOWNLOAD"
       />
       <Divider />
-      <Button.Group size="mini" fluid >
+      <Button.Group size="mini" fluid>
         <Button
           icon="pencil"
           size="small"
@@ -64,9 +68,8 @@ const ActionButtons = ({ downloadFile, studyId, fileNode, downloadFileMutation, 
           header="Are you sure?"
           content={
             <>
-              This file and all of its versions and history will be
-              deleted
-                          <Divider />
+              This file and all of its versions and history will be deleted
+              <Divider />
               <Button
                 data-testid="delete-confirm"
                 negative
@@ -75,7 +78,7 @@ const ActionButtons = ({ downloadFile, studyId, fileNode, downloadFileMutation, 
                 icon="trash alternate"
                 content="Delete"
                 onClick={e => {
-                  deleteFile({ variables: { kfId: fileNode.kfId } });
+                  deleteFile({variables: {kfId: fileNode.kfId}});
                   history.goBack();
                 }}
               />
@@ -89,13 +92,12 @@ const ActionButtons = ({ downloadFile, studyId, fileNode, downloadFileMutation, 
   </>
 );
 
-
 /**
  * Form to display file details and file versions
  */
-const FileDetail = ({ fileNode, history, match }) => {
+const FileDetail = ({fileNode, history, match}) => {
   const [dialog, setDialog] = useState(false);
-  const [versionOpened, setOpenVersion] = useState({ version: {}, index: null });
+  const [versionOpened, setOpenVersion] = useState({version: {}, index: null});
   const sortedVersions = fileSortedVersions(fileNode);
   const latestDate = fileLatestDate(sortedVersions);
   const latestSize = fileLatestSize(sortedVersions);
@@ -104,7 +106,7 @@ const FileDetail = ({ fileNode, history, match }) => {
     <Mutation mutation={FILE_DOWNLOAD_URL}>
       {downloadFileMutation => (
         <DeleteFileMutation studyId={studyId}>
-          {(deleteFile, { loading, error }) => (
+          {(deleteFile, {loading, error}) => (
             <>
               <Grid>
                 <Grid.Row>
@@ -121,26 +123,27 @@ const FileDetail = ({ fileNode, history, match }) => {
                       >
                         <Icon name="arrow left" />
                         All Documents
-                    </Button>
+                      </Button>
                     </Link>
-                    <Header as="h2" >
-                      {fileNode.name}
-                    </Header>
-
+                    <Header as="h2">{fileNode.name}</Header>
                   </Grid.Column>
                 </Grid.Row>
               </Grid>
-              <Grid >
-                <Grid.Row >
+              <Grid>
+                <Grid.Row>
                   <Grid.Column mobile={16} tablet={16} computer={13}>
                     <Segment.Group className="noBorders">
                       <Segment.Group horizontal className="noBorders">
                         <Segment className="noBorders">
-                          <Header as="h4" color="grey" >Approval Status</Header>
+                          <Header as="h4" color="grey">
+                            Approval Status
+                          </Header>
                           <Badge state={sortedVersions[0].node.state} />
                         </Segment>
                         <Segment className="noBorders">
-                          <Header as="h4" color="grey" >Document Type</Header>
+                          <Header as="h4" color="grey">
+                            Document Type
+                          </Header>
                           <Label basic size="small">
                             <Icon
                               name={`${fileTypeDetail[fileNode.fileType].icon}`}
@@ -149,7 +152,9 @@ const FileDetail = ({ fileNode, history, match }) => {
                           </Label>
                         </Segment>
                         <Segment className="noBorders">
-                          <Header as="h4" color="grey" >Last Updated</Header>
+                          <Header as="h4" color="grey">
+                            Last Updated
+                          </Header>
                           <AvatarTimeAgo
                             size="tiny"
                             showUsername
@@ -158,23 +163,36 @@ const FileDetail = ({ fileNode, history, match }) => {
                           />
                         </Segment>
                         <Segment className="noBorders">
-                          <Header as="h4" color="grey" >Size</Header>
+                          <Header as="h4" color="grey">
+                            Size
+                          </Header>
                           <Label basic size="small">
                             {latestSize}
                           </Label>
                         </Segment>
                       </Segment.Group>
                       <Segment className="noBorders">
-                        <Header as="h4" color="grey" >Description</Header>
+                        <Header as="h4" color="grey">
+                          Description
+                        </Header>
                         <p>
                           {fileNode.description || 'No description added...'}
                         </p>
                       </Segment>
                     </Segment.Group>
-
                   </Grid.Column>
                   <Grid.Column mobile={8} tablet={4} computer={3}>
-                    <ActionButtons {...{ downloadFile, studyId, fileNode, downloadFileMutation, setDialog, deleteFile, history }} />
+                    <ActionButtons
+                      {...{
+                        downloadFile,
+                        studyId,
+                        fileNode,
+                        downloadFileMutation,
+                        setDialog,
+                        deleteFile,
+                        history,
+                      }}
+                    />
                   </Grid.Column>
                 </Grid.Row>
               </Grid>
@@ -188,7 +206,7 @@ const FileDetail = ({ fileNode, history, match }) => {
                       onUploadClick={() => setDialog('upload')}
                       onNameClick={(versionNode, index) => {
                         setDialog('versionInfo');
-                        setOpenVersion({ version: versionNode, index: index });
+                        setOpenVersion({version: versionNode, index: index});
                       }}
                     />
                   </Grid.Column>
@@ -209,9 +227,8 @@ const FileDetail = ({ fileNode, history, match }) => {
             </>
           )}
         </DeleteFileMutation>
-      )
-      }
-    </Mutation >
+      )}
+    </Mutation>
   );
 };
 

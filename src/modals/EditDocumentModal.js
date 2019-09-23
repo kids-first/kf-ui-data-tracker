@@ -8,7 +8,6 @@ import {Button, Modal} from 'semantic-ui-react';
 
 const EditDocumentModal = ({
   fileNode,
-  studyId,
   updateFile,
   updateVersion,
   onCloseDialog,
@@ -69,8 +68,7 @@ const EditDocumentModal = ({
           size="mini"
           onClick={e => {
             e.preventDefault();
-            const {name, fileType, description, versionStatus} = fileNode;
-            handleSubmit(name, fileType, description, versionStatus);
+            formEl.current.handleSubmit();
           }}
         >
           SAVE
