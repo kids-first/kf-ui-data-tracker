@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import {Label} from 'semantic-ui-react';
 import TimeAgo from 'react-timeago';
 import defaultAvatar from '../../assets/defaultAvatar.png';
+import {longDate} from '../../common/dateUtils';
+
 /**
  * Displays time ago and avatar in one label
  */
@@ -15,7 +17,15 @@ const AvatarTimeAgo = ({showUsername, creator, createdAt, size}) => {
         <img alt={picAlt} src={picUrl} />
         {creator.username ? creator.username : 'unknown'}
         <Label.Detail>
-          {createdAt ? <TimeAgo date={createdAt} live={false} /> : 'Unknown'}
+          {createdAt ? (
+            <TimeAgo
+              date={createdAt}
+              live={false}
+              title={longDate(createdAt)}
+            />
+          ) : (
+            'Unknown'
+          )}
         </Label.Detail>
       </Label>
     );
@@ -23,7 +33,11 @@ const AvatarTimeAgo = ({showUsername, creator, createdAt, size}) => {
     return (
       <Label image basic size={size}>
         <img alt={picAlt} src={picUrl} />
-        {createdAt ? <TimeAgo date={createdAt} live={false} /> : 'Unknown'}
+        {createdAt ? (
+          <TimeAgo date={createdAt} live={false} title={longDate(createdAt)} />
+        ) : (
+          'Unknown'
+        )}
       </Label>
     );
   }

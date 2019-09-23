@@ -3,6 +3,7 @@ import {Button, Popup, Image, Input, List, Icon} from 'semantic-ui-react';
 import TimeAgo from 'react-timeago';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import defaultAvatar from '../../assets/defaultAvatar.png';
+import {longDate} from '../../common/dateUtils';
 
 const TokenList = ({tokens, deleteToken}) => (
   <List relaxed>
@@ -24,7 +25,11 @@ const TokenList = ({tokens, deleteToken}) => (
         <List.Content>
           <List.Header>{node.node.name}</List.Header>
           {node.node.creator && <>Created by {node.node.creator.username} </>}
-          <TimeAgo live={false} date={node.node.createdAt} />
+          <TimeAgo
+            live={false}
+            date={node.node.createdAt}
+            title={longDate(node.node.createdAt)}
+          />
         </List.Content>
         <List.Content floated="right">
           <Input readOnly action value={node.node.token}>

@@ -2,6 +2,7 @@ import React from 'react';
 import {List, Icon} from 'semantic-ui-react';
 import TimeAgo from 'react-timeago';
 import {eventType} from '../../common/enums';
+import {longDate} from '../../common/dateUtils';
 
 const EventList = ({events}) => (
   <List relaxed="very">
@@ -21,7 +22,11 @@ const EventList = ({events}) => (
         />
         <List.Content>
           <List.Content floated="right">
-            <TimeAgo live={false} date={node.createdAt} />
+            <TimeAgo
+              live={false}
+              date={node.createdAt}
+              title={longDate(node.createdAt)}
+            />
           </List.Content>
           {node.description}
         </List.Content>

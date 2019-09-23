@@ -3,6 +3,7 @@ import TimeAgo from 'react-timeago';
 import {withRouter} from 'react-router-dom';
 import {Table, Popup, Icon, Label, List} from 'semantic-ui-react';
 import {versionState} from '../../common/fileUtils';
+import {longDate} from '../../common/dateUtils';
 
 const PopupBadge = ({state, count}) => (
   <Popup
@@ -51,7 +52,13 @@ const TableValue = ({row, col}) => {
       return <StudyFileBadges files={row[col]} />;
     case 'createdAt':
     case 'modifiedAt':
-      return <TimeAgo date={new Date(row[col])} />;
+      return (
+        <TimeAgo
+          date={new Date(row[col])}
+          title={longDate(new Date(row[col]))}
+          live={false}
+        />
+      );
     default:
       return row[col];
   }

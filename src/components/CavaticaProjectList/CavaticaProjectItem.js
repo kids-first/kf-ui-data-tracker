@@ -3,13 +3,18 @@ import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import {List, Icon, Button, Popup, Divider, Header} from 'semantic-ui-react';
 import TimeAgo from 'react-timeago';
+import {longDate} from '../../common/dateUtils';
 
 const ProjectAttributes = ({projectNode, disabled}) => (
   <List bulleted horizontal>
     <List.Item disabled={disabled}>
       Created
       {projectNode.createdBy ? ' by ' + projectNode.createdBy + ' ' : ' '}
-      <TimeAgo live={false} date={projectNode.createdOn} />
+      <TimeAgo
+        live={false}
+        date={projectNode.createdOn}
+        title={longDate(projectNode.createdOn)}
+      />
     </List.Item>
     {projectNode.workflowType && (
       <List.Item disabled={disabled}>{projectNode.workflowType}</List.Item>
