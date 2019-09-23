@@ -30,6 +30,7 @@ const FormField = ({
       children
     ) : (
       <Form.Input
+        className="noMargin"
         fluid
         type={type}
         name={id}

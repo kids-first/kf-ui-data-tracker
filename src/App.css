@@ -69,6 +69,11 @@ body {
   display: inline-block !important;
 }
 
+.ui.form .required.field > label::after {
+  font-size: 0.8em;
+  content: '* (required)';
+}
+
 .micro-button {
   font-size: 10px !important;
   margin-left: 2px !important;
