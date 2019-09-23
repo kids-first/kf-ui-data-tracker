@@ -55,7 +55,11 @@ const NewStudyView = ({match, history, location, createStudy}) => {
               come after the study has been created to make changes at any time.
             </p>
           </Container>
-          <NewStudyForm submitValue={submitValue} apiErrors={newStudyError} />
+          <NewStudyForm
+            submitValue={submitValue}
+            apiErrors={newStudyError}
+            history={history}
+          />
         </>
       )}
     </Container>

@@ -20,6 +20,7 @@ export const InfoStep = ({
   setSelection,
   workflowType,
   newStudy,
+  history,
 }) => {
   const {values, errors, touched, handleChange, handleBlur} = formikProps;
   return (
@@ -103,9 +104,7 @@ export const InfoStep = ({
         primary
         floated="right"
         type="button"
-        onClick={() => {
-          setActiveStep(1);
-        }}
+        onClick={() => history.push('/study/new-study/external')}
         labelPosition="right"
         icon="right arrow"
         content="NEXT"
@@ -120,6 +119,7 @@ export const ExternalStep = ({
   setActiveStep,
   setFocused,
   focused,
+  history,
 }) => {
   const {values, errors, touched, handleChange, handleBlur} = formikProps;
   return (
@@ -175,9 +175,7 @@ export const ExternalStep = ({
         primary
         floated="left"
         type="button"
-        onClick={() => {
-          setActiveStep(0);
-        }}
+        onClick={() => history.push('/study/new-study/info')}
         labelPosition="left"
         icon="left arrow"
         content="PREVIOUS"
@@ -186,9 +184,7 @@ export const ExternalStep = ({
         primary
         floated="right"
         type="button"
-        onClick={() => {
-          setActiveStep(2);
-        }}
+        onClick={() => history.push('/study/new-study/logistics')}
         labelPosition="right"
         icon="right arrow"
         content="NEXT"
@@ -206,6 +202,7 @@ export const GrantStep = ({
   setConfirmOpen,
   confirmOpen,
   workflowType,
+  history,
 }) => {
   const {
     values,
@@ -290,9 +287,7 @@ export const GrantStep = ({
         primary
         floated="left"
         type="button"
-        onClick={() => {
-          setActiveStep(1);
-        }}
+        onClick={() => history.push('/study/new-study/external')}
         labelPosition="left"
         icon="left arrow"
         content="PREVIOUS"

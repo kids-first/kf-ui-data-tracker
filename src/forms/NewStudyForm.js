@@ -1,35 +1,38 @@
 import React, {useState, Fragment} from 'react';
+import {Switch, Route} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {Form, Segment, Message, Step} from 'semantic-ui-react';
 import {Formik} from 'formik';
 import {InfoStep, ExternalStep, GrantStep} from './StudyFormSteps';
 
-const NewStudyForm = ({submitValue, apiErrors}) => {
+const NewStudyForm = ({submitValue, apiErrors, history}) => {
   const [confirmOpen, setConfirmOpen] = useState(false);
   const [workflowType, setSelection] = useState([
     'bwa_mem',
     'gatk_haplotypecaller',
   ]);
   const [focused, setFocused] = useState('');
-  const [activeStep, setActiveStep] = useState(0);
   const STUDY_STEPS = [
     {
       title: 'Info',
       desc: 'General Study Details',
       icon: 'info',
       comp: InfoStep,
+      href: 'info',
     },
     {
       title: 'External',
       desc: 'For dbGaP project',
       icon: 'disk',
       comp: ExternalStep,
+      href: 'external',
     },
     {
-      title: 'logistics',
+      title: 'Logistics',
       desc: 'Scheduling & Collection',
       icon: 'calendar check',
       comp: GrantStep,
+      href: 'logistics',
     },
   ];
   const newStudy = true;
@@ -84,13 +87,14 @@ const NewStudyForm = ({submitValue, apiErrors}) => {
               content={apiErrors}
             />
           )}
+
           <Step.Group attached="top" fluid widths={3}>
             {STUDY_STEPS.map(step => (
               <Step
                 link
                 key={STUDY_STEPS.indexOf(step)}
-                active={activeStep === STUDY_STEPS.indexOf(step)}
-                onClick={() => setActiveStep(STUDY_STEPS.indexOf(step))}
+                active={history.location.pathname.endsWith(step.href)}
+                onClick={() => history.push('/study/new-study/' + step.href)}
                 icon={step.icon}
                 title={step.title}
                 description={step.desc}
@@ -99,17 +103,27 @@ const NewStudyForm = ({submitValue, apiErrors}) => {
           </Step.Group>
           <Segment padded clearing attached>
             <Form onSubmit={formikProps.handleSubmit}>
-              {STUDY_STEPS[activeStep].comp({
-                newStudy,
-                formikProps,
-                setActiveStep,
-                setFocused,
-                focused,
-                setSelection,
-                workflowType,
-                setConfirmOpen,
-                confirmOpen,
-              })}
+              <Switch>
+                {STUDY_STEPS.map(step => (
+                  <Route
+                    key={STUDY_STEPS.indexOf(step)}
+                    path={'/study/new-study/' + step.href}
+                    render={() =>
+                      step.comp({
+                        newStudy,
+                        formikProps,
+                        setFocused,
+                        focused,
+                        setSelection,
+                        workflowType,
+                        setConfirmOpen,
+                        confirmOpen,
+                        history,
+                      })
+                    }
+                  />
+                ))}
+              </Switch>
             </Form>
           </Segment>
         </Fragment>
