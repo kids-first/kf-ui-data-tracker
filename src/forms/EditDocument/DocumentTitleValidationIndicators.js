@@ -18,15 +18,7 @@ const DocumentTitleValidationIndicators = ({errors}) => {
         />
         Document Title should be unique within study.
       </List.Item>
-      <List.Item>
-        <Icon
-          name={
-            errors.file_name && errors.file_name.special_char ? 'x' : 'check'
-          }
-          color={errors.file_name && errors.file_name.special_char ? 'red' : ''}
-        />
-        Avoid using special characters ( . $ @ & $ ! % * # ? / - )
-      </List.Item>
+
       <List.Item>
         <Icon
           name={

@@ -5,7 +5,6 @@ import {sortFilesBySimilarity} from '../../common/fileUtils';
 const MIN_SIMILARITY = 0.65;
 const DOC_NAME_REGEXS = [
   /(new)|(final)|(modified)|(saved?)|(updated?)|(edit)|(\([0-9]\))|(\[[0-9]\])/, // black listed words
-  /[\.\$\@\&\!\%\*\]\[\#\?\/\-]/, //special chars
   /\.[a-z]{2,}/, // file extensions
   /[0-9]{1,2}[\.\/\-][0-9]{1,2}[\.\/\-][0-9]{2,4}|[0-9]{8}/, // dates
 ];
@@ -22,7 +21,6 @@ const validate = ({file_name}, fileNode, studyFiles = []) => {
   let errors = {
     file_name: {
       blacklisted: null,
-      special_char: null,
       existing_similarity: null,
       upload_similarity: null,
       file_ext: null,
@@ -56,17 +54,13 @@ const validate = ({file_name}, fileNode, studyFiles = []) => {
   )
     errors.file_name.upload_similarity = true;
 
-  if (new RegExp(DOC_NAME_REGEXS[1], 'gi').test(DOC_NAME_INPUT))
-    // special chars
-    errors.file_name.special_char = true;
-
   // file extensions in name
-  if (new RegExp(DOC_NAME_REGEXS[2], 'gi').test(DOC_NAME_INPUT)) {
+  if (new RegExp(DOC_NAME_REGEXS[1], 'gi').test(DOC_NAME_INPUT)) {
     errors.file_name.file_ext = true;
   }
 
   // date of formats (dd-mm-yyy, d-m-yy, yyyymmdd, yymmdd, dd.mm.yyyy, dd.mm.yy)
-  if (new RegExp(DOC_NAME_REGEXS[3], 'gi').test(DOC_NAME_INPUT))
+  if (new RegExp(DOC_NAME_REGEXS[2], 'gi').test(DOC_NAME_INPUT))
     errors.file_name.dates = true;
 
   // only return errros object if any exists
