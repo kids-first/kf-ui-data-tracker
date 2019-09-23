@@ -26,7 +26,8 @@ export const InfoStep = ({
     <>
       <Header
         as="h4"
-        content="Please provide the study's full name and a shortened version that may be"
+        className="text-wrap-75"
+        content="Please provide the study's full name and a shortened version that may be used for display purposes."
       />
       <FormField
         required
@@ -125,6 +126,7 @@ export const ExternalStep = ({
     <>
       <Header
         as="h4"
+        className="text-wrap-75"
         content="If the study is a dbGaP project, additional information is needed to ensure access is granted correctly. For non-dbGaP studies, an external identifier which this study may otherwise be known by is required."
       />
       <FormField
@@ -219,6 +221,7 @@ export const GrantStep = ({
     <>
       <Header
         as="h4"
+        className="text-wrap-75"
         content="Provide details about the Kids First grant that this study was awarded."
       />
       <FormField
