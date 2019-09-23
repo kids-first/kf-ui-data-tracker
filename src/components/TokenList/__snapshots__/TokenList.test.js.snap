@@ -25,7 +25,7 @@ exports[`renders correctly 1`] = `
         </div>
         <time
           datetime="2019-06-13T12:05:39.381Z"
-          title="2019-06-13T12:05:39.381525+00:00"
+          title="13 Jun 2019"
         >
           2 months from now
         </time>

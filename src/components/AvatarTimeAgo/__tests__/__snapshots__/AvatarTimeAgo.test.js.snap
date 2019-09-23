@@ -11,7 +11,7 @@ exports[`renders AvatarTimeAgo not showing username 1`] = `
     />
     <time
       datetime="2019-04-17T16:39:34.000Z"
-      title="2019-04-17T16:39:34+00:00"
+      title="17 Apr 2019"
     >
       6 days ago
     </time>
@@ -34,7 +34,7 @@ exports[`renders AvatarTimeAgo showing username 1`] = `
     >
       <time
         datetime="2019-04-17T16:39:34.000Z"
-        title="2019-04-17T16:39:34+00:00"
+        title="17 Apr 2019"
       >
         6 days ago
       </time>

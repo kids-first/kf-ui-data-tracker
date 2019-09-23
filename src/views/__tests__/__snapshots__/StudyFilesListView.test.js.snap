@@ -358,10 +358,11 @@ exports[`deletes a file correctly 1`] = `
                     <div
                       class="description"
                     >
-                      Modified 
+                      Modified
+                       
                       <time
                         datetime="2018-09-27T05:32:26.000Z"
-                        title="2018-09-27T05:32:26+00:00"
+                        title="27 Sept 2018"
                       >
                         7 months ago
                       </time>
@@ -825,10 +826,11 @@ exports[`renders correctly 1`] = `
                     <div
                       class="description"
                     >
-                      Modified 
+                      Modified
+                       
                       <time
                         datetime="2018-09-27T05:32:26.000Z"
-                        title="2018-09-27T05:32:26+00:00"
+                        title="27 Sept 2018"
                       >
                         7 months ago
                       </time>
@@ -933,10 +935,11 @@ exports[`renders correctly 1`] = `
                     <div
                       class="description"
                     >
-                      Modified 
+                      Modified
+                       
                       <time
                         datetime="2019-04-06T07:51:17.000Z"
-                        title="2019-04-06T07:51:17+00:00"
+                        title="6 Apr 2019"
                       >
                         2 weeks ago
                       </time>

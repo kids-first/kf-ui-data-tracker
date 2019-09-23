@@ -22,7 +22,7 @@ exports[`Event list renders correctly 1`] = `
         >
           <time
             datetime="2019-08-26T18:25:02.985Z"
-            title="2019-08-26T18:25:02.985155+00:00"
+            title="26 Aug 2019"
           >
             4 months from now
           </time>
@@ -46,7 +46,7 @@ exports[`Event list renders correctly 1`] = `
         >
           <time
             datetime="2019-08-26T18:24:46.341Z"
-            title="2019-08-26T18:24:46.341665+00:00"
+            title="26 Aug 2019"
           >
             4 months from now
           </time>
@@ -70,7 +70,7 @@ exports[`Event list renders correctly 1`] = `
         >
           <time
             datetime="2019-08-26T18:24:36.763Z"
-            title="2019-08-26T18:24:36.763314+00:00"
+            title="26 Aug 2019"
           >
             4 months from now
           </time>
@@ -94,7 +94,7 @@ exports[`Event list renders correctly 1`] = `
         >
           <time
             datetime="2019-08-26T18:24:19.986Z"
-            title="2019-08-26T18:24:19.986588+00:00"
+            title="26 Aug 2019"
           >
             4 months from now
           </time>
@@ -118,7 +118,7 @@ exports[`Event list renders correctly 1`] = `
         >
           <time
             datetime="2019-08-26T18:24:03.184Z"
-            title="2019-08-26T18:24:03.184513+00:00"
+            title="26 Aug 2019"
           >
             4 months from now
           </time>
@@ -142,7 +142,7 @@ exports[`Event list renders correctly 1`] = `
         >
           <time
             datetime="2019-08-26T18:24:03.182Z"
-            title="2019-08-26T18:24:03.182570+00:00"
+            title="26 Aug 2019"
           >
             4 months from now
           </time>
@@ -166,7 +166,7 @@ exports[`Event list renders correctly 1`] = `
         >
           <time
             datetime="2019-08-26T18:23:53.703Z"
-            title="2019-08-26T18:23:53.703031+00:00"
+            title="26 Aug 2019"
           >
             4 months from now
           </time>
@@ -190,7 +190,7 @@ exports[`Event list renders correctly 1`] = `
         >
           <time
             datetime="2019-08-26T18:23:53.695Z"
-            title="2019-08-26T18:23:53.695244+00:00"
+            title="26 Aug 2019"
           >
             4 months from now
           </time>

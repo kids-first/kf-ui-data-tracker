@@ -77,7 +77,7 @@ exports[`renders with more than one versions 1`] = `
             />
             <time
               datetime="2018-09-27T05:32:26.000Z"
-              title="2018-09-27T05:32:26+00:00"
+              title="27 Sept 2018"
             >
               7 months ago
             </time>
@@ -134,7 +134,7 @@ exports[`renders with more than one versions 1`] = `
             />
             <time
               datetime="2018-08-21T03:16:11.000Z"
-              title="2018-08-21T03:16:11+00:00"
+              title="21 Aug 2018"
             >
               8 months ago
             </time>
@@ -191,7 +191,7 @@ exports[`renders with more than one versions 1`] = `
             />
             <time
               datetime="2017-08-25T00:05:30.000Z"
-              title="2017-08-25T00:05:30+00:00"
+              title="25 Aug 2017"
             >
               2 years ago
             </time>

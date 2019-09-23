@@ -63,7 +63,7 @@ exports[`renders correctly 1`] = `
         >
           <time
             datetime="2019-01-30T03:41:39.000Z"
-            title="2019-01-30 03:41"
+            title="30 Jan 2019"
           >
             3 months ago
           </time>
@@ -73,7 +73,7 @@ exports[`renders correctly 1`] = `
         >
           <time
             datetime="2019-03-29T18:45:01.230Z"
-            title="2019-03-29 18:45"
+            title="29 Mar 2019"
           >
             4 weeks ago
           </time>
@@ -101,7 +101,7 @@ exports[`renders correctly 1`] = `
         >
           <time
             datetime="2017-07-11T21:02:37.000Z"
-            title="2017-07-11 21:02"
+            title="11 Jul 2017"
           >
             2 years ago
           </time>
@@ -111,7 +111,7 @@ exports[`renders correctly 1`] = `
         >
           <time
             datetime="2019-03-29T18:45:01.236Z"
-            title="2019-03-29 18:45"
+            title="29 Mar 2019"
           >
             4 weeks ago
           </time>
@@ -139,7 +139,7 @@ exports[`renders correctly 1`] = `
         >
           <time
             datetime="2017-05-05T03:05:57.000Z"
-            title="2017-05-05 03:05"
+            title="5 May 2017"
           >
             2 years ago
           </time>
@@ -149,7 +149,7 @@ exports[`renders correctly 1`] = `
         >
           <time
             datetime="2019-03-29T18:45:01.239Z"
-            title="2019-03-29 18:45"
+            title="29 Mar 2019"
           >
             4 weeks ago
           </time>
@@ -213,7 +213,7 @@ exports[`renders without excluded columns passed to props 1`] = `
         >
           <time
             datetime="2019-01-30T03:41:39.000Z"
-            title="2019-01-30 03:41"
+            title="30 Jan 2019"
           >
             3 months ago
           </time>
@@ -223,7 +223,7 @@ exports[`renders without excluded columns passed to props 1`] = `
         >
           <time
             datetime="2019-03-29T18:45:01.230Z"
-            title="2019-03-29 18:45"
+            title="29 Mar 2019"
           >
             4 weeks ago
           </time>
@@ -246,7 +246,7 @@ exports[`renders without excluded columns passed to props 1`] = `
         >
           <time
             datetime="2017-07-11T21:02:37.000Z"
-            title="2017-07-11 21:02"
+            title="11 Jul 2017"
           >
             2 years ago
           </time>
@@ -256,7 +256,7 @@ exports[`renders without excluded columns passed to props 1`] = `
         >
           <time
             datetime="2019-03-29T18:45:01.236Z"
-            title="2019-03-29 18:45"
+            title="29 Mar 2019"
           >
             4 weeks ago
           </time>
@@ -279,7 +279,7 @@ exports[`renders without excluded columns passed to props 1`] = `
         >
           <time
             datetime="2017-05-05T03:05:57.000Z"
-            title="2017-05-05 03:05"
+            title="5 May 2017"
           >
             2 years ago
           </time>
@@ -289,7 +289,7 @@ exports[`renders without excluded columns passed to props 1`] = `
         >
           <time
             datetime="2019-03-29T18:45:01.239Z"
-            title="2019-03-29 18:45"
+            title="29 Mar 2019"
           >
             4 weeks ago
           </time>

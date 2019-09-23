@@ -46,7 +46,7 @@ exports[`renders correctly with 0 as index -- show ribbon label 1`] = `
         />
         <time
           datetime="2018-08-21T03:16:11.000Z"
-          title="2018-08-21T03:16:11+00:00"
+          title="21 Aug 2018"
         >
           8 months ago
         </time>
@@ -108,7 +108,7 @@ exports[`renders correctly with 1 as index -- show version kfId 1`] = `
         />
         <time
           datetime="2018-08-21T03:16:11.000Z"
-          title="2018-08-21T03:16:11+00:00"
+          title="21 Aug 2018"
         >
           8 months ago
         </time>
