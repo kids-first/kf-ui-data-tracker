@@ -48,6 +48,9 @@ const validate = ({file_name}, fileNode, studyFiles = []) => {
     errors.file_name.existing_similarity = true;
 
   // black listed words
+  if (new RegExp(DOC_NAME_REGEXS[0], 'gi').test(file_name))
+    errors.file_name.blacklisted = true;
+
   if (
     new RegExp(DOC_NAME_REGEXS[0], 'gi').test(file_name) ||
     uploadedFileSimilarity > MIN_SIMILARITY

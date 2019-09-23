@@ -22,6 +22,19 @@ const DocumentTitleValidationIndicators = ({errors}) => {
       <List.Item>
         <Icon
           name={
+            errors.file_name && errors.file_name.blacklisted
+              ? 'info circle'
+              : 'check'
+          }
+          color={errors.file_name && errors.file_name.blacklisted ? 'teal' : ''}
+        />
+        Avoid using vague qualifier adjectives such as (new , updated, modified,
+        saved, edit, final, (0-9), [ 0-9 ] )
+      </List.Item>
+
+      <List.Item>
+        <Icon
+          name={
             (errors.file_name && errors.file_name.file_ext) ||
             (errors.file_name && errors.file_name.upload_similarity)
               ? 'x'
