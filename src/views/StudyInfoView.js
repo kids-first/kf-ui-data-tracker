@@ -2,21 +2,34 @@ import React, {useState} from 'react';
 import {graphql, compose} from 'react-apollo';
 import {GET_STUDY_BY_ID, MY_PROFILE} from '../state/queries';
 import {UPDATE_STUDY} from '../state/mutations';
-import {
-  Container,
-  Segment,
-  Message,
-  Placeholder,
-  Header,
-} from 'semantic-ui-react';
+import NewStudyForm from '../forms/NewStudyForm';
+import {Container, Segment, Message, Placeholder} from 'semantic-ui-react';
 import EmptyView from './EmptyView';
 
 const StudyInfoView = ({
   study: {loading, studyByKfId, error},
   user,
   updateStudy,
+  history,
 }) => {
   const isBeta = !user.loading ? user.myProfile.roles.includes('BETA') : false;
+  const isAdmin = !user.loading
+    ? user.myProfile.roles.includes('ADMIN')
+    : false;
+  const [apiErrors, setApiErrors] = useState(null);
+  const [editing, setEditing] = useState(false);
+  const submitUpdate = values => {
+    updateStudy({
+      variables: {
+        id: studyByKfId.id,
+        input: values,
+      },
+    })
+      .then(() => {
+        setApiErrors(null);
+      })
+      .catch(err => setApiErrors(err.message));
+  };
 
   if (loading)
     return (
@@ -49,9 +62,14 @@ const StudyInfoView = ({
   if (isBeta) {
     return (
       <Container as={Segment} basic vertical>
-        <Header as="h2" className="mt-6" floated="left">
-          Study basic info
-        </Header>
+        <NewStudyForm
+          isAdmin={isAdmin}
+          history={history}
+          submitValue={submitUpdate}
+          apiErrors={apiErrors}
+          studyNode={studyByKfId}
+          editing={editing}
+          setEditing={setEditing}
         />
       </Container>
     );

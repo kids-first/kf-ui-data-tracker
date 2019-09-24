@@ -1,11 +1,20 @@
 import React, {useState, Fragment} from 'react';
 import {Switch, Route} from 'react-router-dom';
 import PropTypes from 'prop-types';
-import {Form, Segment, Message, Step} from 'semantic-ui-react';
+import {Form, Segment, Message, Step, Button, Header} from 'semantic-ui-react';
 import {Formik} from 'formik';
-import {InfoStep, ExternalStep, GrantStep} from './StudyFormSteps';
+import {InfoStep, ExternalStep, LogisticsStep} from './StudyFormSteps';
 
-const NewStudyForm = ({submitValue, apiErrors, history}) => {
+const NewStudyForm = ({
+  submitValue,
+  apiErrors,
+  studyNode,
+  newStudy,
+  setEditing,
+  editing,
+  history,
+  isAdmin,
+}) => {
   const [confirmOpen, setConfirmOpen] = useState(false);
   const [workflowType, setSelection] = useState([
     'bwa_mem',
@@ -35,10 +44,20 @@ const NewStudyForm = ({submitValue, apiErrors, history}) => {
       href: 'logistics',
     },
   ];
-  const newStudy = true;
-  return (
-    <Formik
-      initialValues={{
+  const initialValues = studyNode
+    ? {
+        externalId: studyNode.externalId || '',
+        name: studyNode.name || '',
+        shortName: studyNode.shortName || '',
+        description: studyNode.description || '',
+        releaseDate: studyNode.releaseDate || '',
+        anticipatedSamples: studyNode.anticipatedSamples || 0,
+        awardeeOrganization: studyNode.awardeeOrganization || '',
+        attribution: studyNode.attribution || '',
+        version: studyNode.version || '',
+        bucket: studyNode.bucket || '',
+      }
+    : {
         externalId: '',
         name: '',
         shortName: '',
@@ -48,7 +67,10 @@ const NewStudyForm = ({submitValue, apiErrors, history}) => {
         attribution: '',
         anticipatedSamples: 0,
         awardeeOrganization: '',
-      }}
+      };
+  return (
+    <Formik
+      initialValues={initialValues}
       validate={values => {
         let errors = {};
         if (!values.externalId) {
@@ -69,16 +91,26 @@ const NewStudyForm = ({submitValue, apiErrors, history}) => {
       }}
       onSubmit={(values, {setSubmitting}) => {
         setSubmitting(false);
-        setConfirmOpen(false);
         var inputObject = values;
-        if (values.releaseDate.length === 0) {
+        if (values.releaseDate != null && values.releaseDate.length === 0) {
           inputObject.releaseDate = null;
         }
-        submitValue({input: inputObject, workflowType: workflowType});
+        if (newStudy) {
+          setConfirmOpen(false);
+          submitValue({input: inputObject, workflowType: workflowType});
+        } else {
+          setEditing(false);
+          submitValue(values);
+        }
       }}
     >
       {formikProps => (
         <Fragment>
+          {!newStudy && (
+            <Header as="h2" className="mt-6" floated="left">
+              Study Basic Info
+            </Header>
+          )}
           {apiErrors && (
             <Message
               negative
