@@ -63,7 +63,8 @@ const validate = ({file_name}, fileNode, studyFiles = []) => {
   }
 
   // date of formats (dd-mm-yyy, d-m-yy, yyyymmdd, yymmdd, dd.mm.yyyy, dd.mm.yy)
-  if (new RegExp(DOC_NAME_REGEXS[2], 'gi').test(DOC_NAME_INPUT))
+
+  if (new RegExp(DOC_NAME_REGEXS[2], 'gi').test(file_name))
     errors.file_name.dates = true;
 
   // only return errros object if any exists
