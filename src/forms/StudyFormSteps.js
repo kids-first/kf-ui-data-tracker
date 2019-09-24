@@ -12,6 +12,19 @@ import {
 import {workflowOptions} from '../common/enums';
 import FormField from './FormField';
 
+const prevNextStep = (stepName, newStudy, history) => {
+  if (newStudy) {
+    history.push('/study/new-study/' + stepName);
+  } else {
+    history.push(
+      '/study/' +
+        history.location.pathname.split('/')[2] +
+        '/basic-info/' +
+        stepName,
+    );
+  }
+};
+
 export const InfoStep = ({
   formikProps,
   setActiveStep,
@@ -104,7 +117,7 @@ export const InfoStep = ({
         primary
         floated="right"
         type="button"
-        onClick={() => history.push('/study/new-study/external')}
+        onClick={() => prevNextStep('external', newStudy, history)}
         labelPosition="right"
         icon="right arrow"
         content="NEXT"
@@ -175,7 +188,7 @@ export const ExternalStep = ({
         primary
         floated="left"
         type="button"
-        onClick={() => history.push('/study/new-study/info')}
+        onClick={() => prevNextStep('info', newStudy, history)}
         labelPosition="left"
         icon="left arrow"
         content="PREVIOUS"
@@ -184,7 +197,7 @@ export const ExternalStep = ({
         primary
         floated="right"
         type="button"
-        onClick={() => history.push('/study/new-study/logistics')}
+        onClick={() => prevNextStep('logistics', newStudy, history)}
         labelPosition="right"
         icon="right arrow"
         content="NEXT"
@@ -287,7 +300,7 @@ export const GrantStep = ({
         primary
         floated="left"
         type="button"
-        onClick={() => history.push('/study/new-study/external')}
+        onClick={() => prevNextStep('external', newStudy, history)}
         labelPosition="left"
         icon="left arrow"
         content="PREVIOUS"

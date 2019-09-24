@@ -10,7 +10,7 @@ const StudyNavBar = ({match, history, isBeta}) => {
   const navList = [
     {
       tab: 'Basic Info',
-      endString: 'basic-info',
+      endString: 'basic-info/info',
     },
     {
       tab: 'Dashboard',
@@ -35,12 +35,14 @@ const StudyNavBar = ({match, history, isBeta}) => {
         <Menu.Item
           key={i}
           name={item.tab}
-          active={match.url.includes(item.endString)}
+          active={history.location.pathname.includes(
+            item.endString.split('/')[0],
+          )}
           to={baseHref + item.endString}
           as={NavLink}
         >
           {item.tab}
-          {item.endString === 'basic-info' && isBeta && (
+          {item.endString === 'basic-info/info' && isBeta && (
             <Label color="blue" size="mini">
               BETA
             </Label>

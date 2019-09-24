@@ -47,11 +47,7 @@ const Routes = () => (
         path="/study/:kfId/documents/:fileId"
         component={FileDetailView}
       />
-      <PrivateRoute
-        exact
-        path="/study/:kfId/basic-info"
-        component={StudyInfoView}
-      />
+      <PrivateRoute path="/study/:kfId/basic-info" component={StudyInfoView} />
       <PrivateRoute exact path="/study/:kfId/dashboard" component={EmptyView} />
       <PrivateRoute
         exact

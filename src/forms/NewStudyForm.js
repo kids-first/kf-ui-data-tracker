@@ -40,7 +40,7 @@ const NewStudyForm = ({
       title: 'Logistics',
       desc: 'Scheduling & Collection',
       icon: 'calendar check',
-      comp: GrantStep,
+      comp: LogisticsStep,
       href: 'logistics',
     },
   ];
@@ -119,14 +119,24 @@ const NewStudyForm = ({
               content={apiErrors}
             />
           )}
-
           <Step.Group attached="top" fluid widths={3}>
             {STUDY_STEPS.map(step => (
               <Step
                 link
                 key={STUDY_STEPS.indexOf(step)}
                 active={history.location.pathname.endsWith(step.href)}
-                onClick={() => history.push('/study/new-study/' + step.href)}
+                onClick={() => {
+                  if (newStudy) {
+                    history.push('/study/new-study/' + step.href);
+                  } else {
+                    history.push(
+                      '/study/' +
+                        history.location.pathname.split('/')[2] +
+                        '/basic-info/' +
+                        step.href,
+                    );
+                  }
+                }}
                 icon={step.icon}
                 title={step.title}
                 description={step.desc}
@@ -139,7 +149,14 @@ const NewStudyForm = ({
                 {STUDY_STEPS.map(step => (
                   <Route
                     key={STUDY_STEPS.indexOf(step)}
-                    path={'/study/new-study/' + step.href}
+                    path={
+                      newStudy
+                        ? '/study/new-study/' + step.href
+                        : '/study/' +
+                          history.location.pathname.split('/')[2] +
+                          '/basic-info/' +
+                          step.href
+                    }
                     render={() =>
                       step.comp({
                         newStudy,
