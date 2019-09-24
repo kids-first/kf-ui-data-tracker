@@ -100,6 +100,7 @@ const CavaticaProjectsView = ({
           <CavaticaProjectList
             projects={allProjects.edges}
             unlinkProject={isAdmin ? unlinkProject : null}
+            editable={isAdmin}
           />
         )}
       </Segment>

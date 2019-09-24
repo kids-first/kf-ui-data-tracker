@@ -5,6 +5,7 @@ import CavaticaProjectItem from './CavaticaProjectItem';
 const CavaticaProjectList = ({
   projects,
   unlinkProject,
+  editable,
   disableLink,
   hideStudy,
 }) => (
@@ -16,6 +17,7 @@ const CavaticaProjectList = ({
           key={node.id}
           projectNode={node}
           unlinkProject={unlinkProject}
+          editable={editable}
           disableLink={disableLink}
           hideStudy={hideStudy}
         />
