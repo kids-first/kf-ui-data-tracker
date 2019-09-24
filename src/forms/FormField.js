@@ -20,18 +20,23 @@ const FormField = ({
   handleBlur,
   handleFocus,
   children,
+  readOnly,
+  newStudy,
 }) => (
   <Form.Field required={required}>
     <label className="noMargin">{name}:</label>
-    <p className="noMargin">
-      <small>{description}</small>
-    </p>
+    {!readOnly && description && (
+      <p className="noMargin">
+        <small>{description}</small>
+      </p>
+    )}
     {children ? (
       children
     ) : (
       <Form.Input
-        className="noMargin"
+        className={readOnly ? 'readOnlyField noMargin' : 'noMargin'}
         fluid
+        readOnly={readOnly}
         type={type}
         name={id}
         placeholder={placeholder}

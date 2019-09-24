@@ -56,6 +56,7 @@ export const InfoStep = ({
         handleBlur={handleBlur}
         handleFocus={id => setFocused(id)}
         descriptionDisplay="tooltip"
+        readOnly={!editing && !newStudy}
       />
       <FormField
         id="shortName"
@@ -69,6 +70,7 @@ export const InfoStep = ({
         handleChange={handleChange}
         handleBlur={handleBlur}
         handleFocus={id => setFocused(id)}
+        readOnly={!editing && !newStudy}
       />
       {newStudy ? (
         <FormField
@@ -111,6 +113,7 @@ export const InfoStep = ({
           handleChange={handleChange}
           handleBlur={handleBlur}
           handleFocus={id => setFocused(id)}
+          readOnly={!editing && !newStudy}
         />
       )}
       <Button
@@ -156,6 +159,7 @@ export const ExternalStep = ({
         handleChange={handleChange}
         handleBlur={handleBlur}
         handleFocus={id => setFocused(id)}
+        readOnly={!editing && !newStudy}
       />
       <FormField
         id="version"
@@ -170,6 +174,7 @@ export const ExternalStep = ({
         handleChange={handleChange}
         handleBlur={handleBlur}
         handleFocus={id => setFocused(id)}
+        readOnly={!editing && !newStudy}
       />
       <FormField
         id="attribution"
@@ -183,6 +188,7 @@ export const ExternalStep = ({
         handleChange={handleChange}
         handleBlur={handleBlur}
         handleFocus={id => setFocused(id)}
+        readOnly={!editing && !newStudy}
       />
       <Button
         primary
@@ -246,6 +252,7 @@ export const GrantStep = ({
         handleChange={handleChange}
         handleBlur={handleBlur}
         handleFocus={id => setFocused(id)}
+        readOnly={!editing && !newStudy}
       />
       <FormField
         id="anticipatedSamples"
@@ -259,6 +266,7 @@ export const GrantStep = ({
         handleChange={handleChange}
         handleBlur={handleBlur}
         handleFocus={id => setFocused(id)}
+        readOnly={!editing && !newStudy}
       />
       <FormField
         id="awardeeOrganization"
@@ -272,6 +280,7 @@ export const GrantStep = ({
         handleChange={handleChange}
         handleBlur={handleBlur}
         handleFocus={id => setFocused(id)}
+        readOnly={!editing && !newStudy}
       />
       <FormField
         id="description"

@@ -38,6 +38,16 @@ body {
   box-shadow: none !important;
 }
 
+.readOnlyField {
+  margin-bottom: 0px !important;
+  div {
+    input {
+      border-width: 0px 0px 1px 0px !important;
+      margin-bottom: 0px !important;
+    }
+  }
+}
+
 .pb-0 {
   padding-bottom: 0px !important;
 }
