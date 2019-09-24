@@ -45,6 +45,7 @@ export const InfoStep = ({
         content="Please provide the study's full name and a shortened version that may be used for display purposes."
       />
       <FormField
+        newStudy={newStudy}
         required
         id="name"
         name="Study Name"
@@ -60,6 +61,7 @@ export const InfoStep = ({
         readOnly={!editing && !newStudy}
       />
       <FormField
+        newStudy={newStudy}
         id="shortName"
         name="Study Short Name"
         description="The name that will appear under portal facets."
@@ -75,6 +77,7 @@ export const InfoStep = ({
       />
       {newStudy ? (
         <FormField
+          newStudy={newStudy}
           id="workflowType"
           name="Cavatica Projects"
           description="Workflow projects to be instantiated for the new study."
@@ -103,6 +106,7 @@ export const InfoStep = ({
         </FormField>
       ) : (
         <FormField
+          newStudy={newStudy}
           id="bucket"
           name="S3 Bucket"
           description="The s3 bucket where data for this study resides."
@@ -137,6 +141,7 @@ export const ExternalStep = ({
   setFocused,
   focused,
   editing,
+  newStudy,
   history,
 }) => {
   const {values, errors, touched, handleChange, handleBlur} = formikProps;
@@ -148,13 +153,14 @@ export const ExternalStep = ({
         content="If the study is a dbGaP project, additional information is needed to ensure access is granted correctly. For non-dbGaP studies, an external identifier which this study may otherwise be known by is required."
       />
       <FormField
+        newStudy={newStudy}
         required
         id="externalId"
         name="External ID"
         description="Identifier used by external systems, often the PHS ID if the study is registered with dbGaP."
         type="text"
         focused={focused === 'externalId'}
-        placeholder="phs000178"
+        placeholder="Example: phs000178"
         value={values.externalId}
         touched={touched.externalId}
         errors={errors.externalId}
@@ -164,9 +170,10 @@ export const ExternalStep = ({
         readOnly={!editing && !newStudy}
       />
       <FormField
+        newStudy={newStudy}
         id="version"
         name="dbGaP Version"
-        placeholder="v1.p1"
+        placeholder="Example: v1.p1"
         description="Study version, often the provided by the data access authority."
         type="text"
         focused={focused === 'version'}
@@ -179,6 +186,7 @@ export const ExternalStep = ({
         readOnly={!editing && !newStudy}
       />
       <FormField
+        newStudy={newStudy}
         id="attribution"
         name="Attribution"
         description="The URL providing more information about the study."
@@ -215,7 +223,8 @@ export const ExternalStep = ({
   );
 };
 
-export const GrantStep = ({
+export const LogisticsStep = ({
+  newStudy,
   formikProps,
   setActiveStep,
   setFocused,
@@ -245,6 +254,7 @@ export const GrantStep = ({
         content="Provide details about the Kids First grant that this study was awarded."
       />
       <FormField
+        newStudy={newStudy}
         id="releaseDate"
         name="Release Date"
         description="The anticipated date on which this study's data will be made public in Kids First."
@@ -259,6 +269,7 @@ export const GrantStep = ({
         readOnly={!editing && !newStudy}
       />
       <FormField
+        newStudy={newStudy}
         id="anticipatedSamples"
         name="Number of anticipated samples"
         description="The anticipated number of samples awarded for sequencing for the study."
@@ -273,6 +284,7 @@ export const GrantStep = ({
         readOnly={!editing && !newStudy}
       />
       <FormField
+        newStudy={newStudy}
         id="awardeeOrganization"
         name="Awardee organization"
         description="The organization responsible for this study."
@@ -318,23 +330,25 @@ export const GrantStep = ({
         icon="left arrow"
         content="PREVIOUS"
       />
-      <Button
-        primary
-        floated="right"
-        type="button"
-        disabled={
-          Object.keys(errors).length > 0 ||
-          values.name.length === 0 ||
-          values.externalId.length === 0
-        }
-        onClick={() => {
-          validateForm().then(errors => {
-            Object.keys(errors).length === 0 && setConfirmOpen(true);
-          });
-        }}
-      >
-        SUBMIT
-      </Button>
+      {newStudy && (
+        <Button
+          primary
+          floated="right"
+          type="button"
+          disabled={
+            Object.keys(errors).length > 0 ||
+            values.name.length === 0 ||
+            values.externalId.length === 0
+          }
+          onClick={() => {
+            validateForm().then(errors => {
+              Object.keys(errors).length === 0 && setConfirmOpen(true);
+            });
+          }}
+        >
+          SUBMIT
+        </Button>
+      )}
       {editing && (
         <Button
           primary

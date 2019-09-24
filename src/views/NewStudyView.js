@@ -56,6 +56,7 @@ const NewStudyView = ({match, history, location, createStudy}) => {
             </p>
           </Container>
           <NewStudyForm
+            newStudy
             submitValue={submitValue}
             apiErrors={newStudyError}
             history={history}
