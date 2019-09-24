@@ -34,6 +34,7 @@ export const InfoStep = ({
   workflowType,
   newStudy,
   history,
+  editing,
 }) => {
   const {values, errors, touched, handleChange, handleBlur} = formikProps;
   return (
@@ -135,6 +136,7 @@ export const ExternalStep = ({
   setActiveStep,
   setFocused,
   focused,
+  editing,
   history,
 }) => {
   const {values, errors, touched, handleChange, handleBlur} = formikProps;
@@ -221,6 +223,8 @@ export const GrantStep = ({
   setConfirmOpen,
   confirmOpen,
   workflowType,
+  editing,
+  setEditing,
   history,
 }) => {
   const {
@@ -331,6 +335,20 @@ export const GrantStep = ({
       >
         SUBMIT
       </Button>
+      {editing && (
+        <Button
+          primary
+          floated="right"
+          type="submit"
+          disabled={
+            Object.keys(errors).length > 0 ||
+            values.name.length === 0 ||
+            values.externalId.length === 0
+          }
+        >
+          SAVE
+        </Button>
+      )}
       <Confirm
         open={confirmOpen}
         onCancel={() => setConfirmOpen(false)}
