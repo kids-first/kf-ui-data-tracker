@@ -14,13 +14,11 @@ Object {
           <label
             for="file_name"
           >
-            Document Title: 
-            <small>
-              (required)
-            </small>
+            Document Title:
           </label>
           <input
             data-testid="name-input"
+            error="undefined"
             name="file_name"
             placeholder="Phenotypic Data manifest for..."
             type="text"
@@ -33,10 +31,7 @@ Object {
           <label
             for="file_type"
           >
-            Document Type: 
-            <small>
-              (required)
-            </small>
+            Document Type:
           </label>
           <div
             class="field"
@@ -191,10 +186,7 @@ Object {
           class="required field"
         >
           <label>
-            Describe Document Contents: 
-            <small>
-              (required)
-            </small>
+            Describe Document Contents:
           </label>
           <textarea
             data-testid="description-input"
@@ -216,13 +208,11 @@ Object {
         <label
           for="file_name"
         >
-          Document Title: 
-          <small>
-            (required)
-          </small>
+          Document Title:
         </label>
         <input
           data-testid="name-input"
+          error="undefined"
           name="file_name"
           placeholder="Phenotypic Data manifest for..."
           type="text"
@@ -235,10 +225,7 @@ Object {
         <label
           for="file_type"
         >
-          Document Type: 
-          <small>
-            (required)
-          </small>
+          Document Type:
         </label>
         <div
           class="field"
@@ -393,10 +380,7 @@ Object {
         class="required field"
       >
         <label>
-          Describe Document Contents: 
-          <small>
-            (required)
-          </small>
+          Describe Document Contents:
         </label>
         <textarea
           data-testid="description-input"
@@ -483,13 +467,11 @@ Object {
           <label
             for="file_name"
           >
-            Document Title: 
-            <small>
-              (required)
-            </small>
+            Document Title:
           </label>
           <input
             data-testid="name-input"
+            error="undefined"
             name="file_name"
             placeholder="Phenotypic Data manifest for..."
             type="text"
@@ -502,10 +484,7 @@ Object {
           <label
             for="file_type"
           >
-            Document Type: 
-            <small>
-              (required)
-            </small>
+            Document Type:
           </label>
           <div
             class="field"
@@ -660,10 +639,7 @@ Object {
           class="required field"
         >
           <label>
-            Describe Document Contents: 
-            <small>
-              (required)
-            </small>
+            Describe Document Contents:
           </label>
           <textarea
             data-testid="description-input"
@@ -684,13 +660,11 @@ Object {
           <label
             for="file_name"
           >
-            Document Title: 
-            <small>
-              (required)
-            </small>
+            Document Title:
           </label>
           <input
             data-testid="name-input"
+            error="undefined"
             name="file_name"
             placeholder="Phenotypic Data manifest for..."
             type="text"
@@ -701,10 +675,7 @@ Object {
           class="field"
         >
           <label>
-            Approval Status: 
-            <small>
-              (required)
-            </small>
+            Approval Status:
           </label>
           <div
             class="ui orange tiny basic label"
@@ -718,10 +689,7 @@ Object {
           <label
             for="file_type"
           >
-            Document Type: 
-            <small>
-              (required)
-            </small>
+            Document Type:
           </label>
           <div
             class="field"
@@ -877,10 +845,7 @@ Object {
           class="required field"
         >
           <label>
-            Describe Document Contents: 
-            <small>
-              (required)
-            </small>
+            Describe Document Contents:
           </label>
           <textarea
             data-testid="description-input"
@@ -904,13 +869,11 @@ Object {
         <label
           for="file_name"
         >
-          Document Title: 
-          <small>
-            (required)
-          </small>
+          Document Title:
         </label>
         <input
           data-testid="name-input"
+          error="undefined"
           name="file_name"
           placeholder="Phenotypic Data manifest for..."
           type="text"
@@ -921,10 +884,7 @@ Object {
         class="field"
       >
         <label>
-          Approval Status: 
-          <small>
-            (required)
-          </small>
+          Approval Status:
         </label>
         <div
           class="ui orange tiny basic label"
@@ -938,10 +898,7 @@ Object {
         <label
           for="file_type"
         >
-          Document Type: 
-          <small>
-            (required)
-          </small>
+          Document Type:
         </label>
         <div
           class="field"
@@ -1097,10 +1054,7 @@ Object {
         class="required field"
       >
         <label>
-          Describe Document Contents: 
-          <small>
-            (required)
-          </small>
+          Describe Document Contents:
         </label>
         <textarea
           data-testid="description-input"

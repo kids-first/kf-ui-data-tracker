@@ -11,10 +11,7 @@ exports[`blocks submission for invalid Document Name input 1`] = `
       <label
         for="file_name"
       >
-        Document Title: 
-        <small>
-          (required)
-        </small>
+        Document Title:
       </label>
       <input
         data-testid="name-input"
@@ -31,10 +28,7 @@ exports[`blocks submission for invalid Document Name input 1`] = `
       <label
         for="file_type"
       >
-        Document Type: 
-        <small>
-          (required)
-        </small>
+        Document Type:
       </label>
       <div
         class="field"
@@ -189,10 +183,7 @@ exports[`blocks submission for invalid Document Name input 1`] = `
       class="required field"
     >
       <label>
-        Describe Document Contents: 
-        <small>
-          (required)
-        </small>
+        Describe Document Contents:
       </label>
       <textarea
         data-testid="description-input"
