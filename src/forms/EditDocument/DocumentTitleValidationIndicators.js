@@ -1,5 +1,6 @@
 import React from 'react';
 import {List, Icon} from 'semantic-ui-react';
+
 const DocumentTitleValidationIndicators = ({errors}) => {
   return (
     <List size="tiny">
@@ -13,7 +14,7 @@ const DocumentTitleValidationIndicators = ({errors}) => {
           color={
             errors.file_name && errors.file_name.existing_similarity
               ? 'teal'
-              : ''
+              : 'black'
           }
         />
         Document Title should be unique within study.
@@ -26,7 +27,9 @@ const DocumentTitleValidationIndicators = ({errors}) => {
               ? 'info circle'
               : 'check'
           }
-          color={errors.file_name && errors.file_name.blacklisted ? 'teal' : ''}
+          color={
+            errors.file_name && errors.file_name.blacklisted ? 'teal' : 'black'
+          }
         />
         Avoid using vague qualifier adjectives such as (new , updated, modified,
         saved, edit, final, (0-9), [ 0-9 ] )
@@ -44,7 +47,7 @@ const DocumentTitleValidationIndicators = ({errors}) => {
             (errors.file_name && errors.file_name.file_ext) ||
             (errors.file_name && errors.file_name.upload_similarity)
               ? 'red'
-              : ''
+              : 'black'
           }
         />
         Name your document different than the uploaded file to help give us more
@@ -54,7 +57,7 @@ const DocumentTitleValidationIndicators = ({errors}) => {
       <List.Item>
         <Icon
           name={errors.file_name && errors.file_name.dates ? 'x' : 'check'}
-          color={errors.file_name && errors.file_name.dates ? 'red' : ''}
+          color={errors.file_name && errors.file_name.dates ? 'red' : 'black'}
         />
         Avoid using specific dates, they can be recorded in the contents section
         or metadata.

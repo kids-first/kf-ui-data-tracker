@@ -56,7 +56,7 @@ const ExistingDocsMessage = ({
 
   return (
     <Message info icon size="small">
-      <Icon name="info circle" verticalAlign="top" />
+      <Icon name="info circle" />
       <Message.Content>
         <Message.Header>Update Existing Document Instead?</Message.Header>
         {errors.file_name.upload_similarity && <CopiedFileContent />}

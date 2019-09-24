@@ -6,7 +6,7 @@ import {Formik, Field} from 'formik';
 import validate from './validate';
 import ExistingDocsMessage from './ExistingDocsMessage';
 import DocumentTitleValidationIndicators from './DocumentTitleValidationIndicators';
-import SelectElement from '../../components/FileAnnotation/SelectElement';
+import SelectElement from '../../components/FileDetail/SelectElement';
 import Badge from '../../components/Badge/Badge';
 import UploadWizard from '../../modals/UploadWizard/UploadWizard';
 import {fileTypeDetail, versionState} from '../../common/fileUtils';
@@ -89,15 +89,12 @@ const EditDocumentForm = React.forwardRef(
                     value={values.file_name}
                     onBlur={handleBlur}
                     onChange={handleChange}
-                    error={
-                      errors.file_name &&
-                      Object.values(errors.file_name).some(x => x != null)
-                    }
+                    error={`${errors.file_name &&
+                      Object.values(errors.file_name).some(x => x != null)}`}
                   />
-                  {touched.file_name &&
-                    Object.values(errors.file_name || {}).some(
-                      x => x != null,
-                    ) && <DocumentTitleValidationIndicators errors={errors} />}
+                  {Object.values(errors.file_name || {}).some(
+                    x => x != null,
+                  ) && <DocumentTitleValidationIndicators errors={errors} />}
                 </Form.Field>
                 {versionStatus && (
                   <Form.Field>
@@ -190,7 +187,7 @@ EditDocumentForm.propTypes = {
   /** (New file) Function to perform on form submission  */
   handleSubmit: PropTypes.func,
   /** (New file) Any errors that occured when submitting the form */
-  errors: PropTypes.string,
+  errors: PropTypes.object,
   /** (New file) Displays as buttons for form submitting */
   submitButtons: PropTypes.func,
   /** show validation hints */
