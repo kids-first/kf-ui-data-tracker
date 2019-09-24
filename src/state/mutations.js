@@ -242,6 +242,18 @@ export const CREATE_PROJECT = gql`
   ${PROJECT_FIELDS}
 `;
 
+// Mutation to update a project
+export const UPDATE_PROJECT = gql`
+  mutation UPDATE_PROJECT($id: ID!, $input: UpdateProjectInput!) {
+    updateProject(id: $id, input: $input) {
+      project {
+        ...ProjectFields
+      }
+    }
+  }
+  ${PROJECT_FIELDS}
+`;
+
 // Mutation to link an exist analysis project
 export const LINK_PROJECT = gql`
   mutation($project: ID!, $study: ID!) {
