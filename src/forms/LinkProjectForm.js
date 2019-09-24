@@ -13,7 +13,11 @@ const LinkProjectForm = ({formikProps, apiErrors, allProjects, disabled}) => {
           text: node.name,
           content: (
             <List>
-              <CavaticaProjectItem projectNode={node} disableLink />
+              <CavaticaProjectItem
+                projectNode={node}
+                disableLink
+                editable={false}
+              />
             </List>
           ),
         }))

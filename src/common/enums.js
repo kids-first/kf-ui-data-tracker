@@ -1,3 +1,9 @@
+export const projectOptions = [
+  {key: 'DEL', value: 'DEL', text: 'Delivery', icon: 'paper plane outline'},
+  {key: 'HAR', value: 'HAR', text: 'Analysis', icon: 'sliders horizontal'},
+  {key: 'RES', value: 'RES', text: 'Research', icon: 'flask'},
+];
+
 // Different kinds of workflows Cavatica projects
 export const workflowOptions = [
   {key: 'bwa_mem', value: 'bwa_mem', text: 'bwa_mem'},

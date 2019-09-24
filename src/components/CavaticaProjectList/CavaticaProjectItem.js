@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import {List, Icon, Button, Popup, Divider, Header} from 'semantic-ui-react';
 import TimeAgo from 'react-timeago';
 import {longDate} from '../../common/dateUtils';
+import {EditProjectModal} from '../../modals';
 
 const ProjectAttributes = ({projectNode, disabled}) => (
   <List bulleted horizontal>
@@ -102,7 +103,9 @@ const CavaticaProjectItem = ({
   unlinkProject,
   disableLink,
   hideStudy,
+  editable = true,
 }) => {
+  const [isEditing, setIsEditing] = useState(false);
   if (projectNode.deleted) {
     return (
       <List.Item>
@@ -136,29 +139,58 @@ const CavaticaProjectItem = ({
     );
   } else {
     return (
-      <List.Item>
-        <List.Content floated="right">
-          {!hideStudy && <StudyLink study={projectNode.study} />}
-          {unlinkProject && projectNode.study && (
-            <UnlinkButton
-              unlinkProject={unlinkProject}
-              projectId={projectNode.id}
-              study={projectNode.study}
-            />
-          )}
-        </List.Content>
-        <Icon
-          name={
-            projectNode.projectType === 'DEL'
-              ? 'paper plane outline'
-              : 'sliders horizontal'
-          }
-        />
-        <List.Content>
-          <ProjectLink projectNode={projectNode} disableLink={disableLink} />
-          <ProjectAttributes projectNode={projectNode} />
-        </List.Content>
-      </List.Item>
+      <>
+        <List.Item>
+          <List.Content floated="right">
+            {!hideStudy && <StudyLink study={projectNode.study} />}
+            {editable && (
+              <Popup
+                trigger={
+                  <Button
+                    primary
+                    basic
+                    size="mini"
+                    floated="right"
+                    icon="pencil"
+                    content="EDIT"
+                    onClick={() => setIsEditing(true)}
+                  />
+                }
+                inverted
+                content="Edit this project"
+                on="hover"
+                position="top right"
+              />
+            )}
+            {unlinkProject && projectNode.study && (
+              <UnlinkButton
+                unlinkProject={unlinkProject}
+                projectId={projectNode.id}
+                study={projectNode.study}
+              />
+            )}
+          </List.Content>
+          <Icon
+            name={
+              {
+                DEL: 'paper plane outline',
+                HAR: 'sliders horizontal',
+                RES: 'flask',
+              }[projectNode.projectType]
+            }
+          />
+          <List.Content>
+            <ProjectLink projectNode={projectNode} disableLink={disableLink} />
+            <ProjectAttributes projectNode={projectNode} />
+          </List.Content>
+        </List.Item>
+        {editable && isEditing && (
+          <EditProjectModal
+            projectNode={projectNode}
+            onCloseDialog={() => setIsEditing(false)}
+          />
+        )}
+      </>
     );
   }
 };
@@ -172,6 +204,8 @@ CavaticaProjectItem.propTypes = {
   disableLink: PropTypes.bool,
   /** For linked project if to hide the study link */
   hideStudy: PropTypes.bool,
+  /** Whether or not to allow the edit modal to be spawned */
+  editable: PropTypes.bool,
 };
 
 export default CavaticaProjectItem;
