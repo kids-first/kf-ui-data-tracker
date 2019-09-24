@@ -78,9 +78,7 @@ const EditDocumentForm = React.forwardRef(
                 )}
               <Form onSubmit={handleSubmit} ref={ref}>
                 <Form.Field required>
-                  <label htmlFor="file_name">
-                    Document Title: <small>(required)</small>
-                  </label>
+                  <label htmlFor="file_name">Document Title:</label>
                   <input
                     data-testid="name-input"
                     type="text"
@@ -98,9 +96,7 @@ const EditDocumentForm = React.forwardRef(
                 </Form.Field>
                 {versionStatus && (
                   <Form.Field>
-                    <label>
-                      Approval Status: <small>(required)</small>
-                    </label>
+                    <label>Approval Status:</label>
                     {isAdmin ? (
                       <Dropdown
                         selection
@@ -120,9 +116,7 @@ const EditDocumentForm = React.forwardRef(
                 )}
 
                 <Form.Field required>
-                  <label htmlFor="file_type">
-                    Document Type: <small>(required)</small>
-                  </label>
+                  <label htmlFor="file_type">Document Type:</label>
                   {Object.keys(fileTypeDetail).map(item => (
                     <Form.Field key={item}>
                       <Field
@@ -136,9 +130,7 @@ const EditDocumentForm = React.forwardRef(
                 </Form.Field>
 
                 <Form.Field required>
-                  <label>
-                    Describe Document Contents: <small>(required)</small>
-                  </label>
+                  <label>Describe Document Contents:</label>
                   <TextArea
                     data-testid="description-input"
                     type="text"

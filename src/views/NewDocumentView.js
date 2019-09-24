@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {graphql, compose} from 'react-apollo';
 import EditDocumentForm from '../forms/EditDocument/EditDocumentForm';
 import {CREATE_FILE} from '../state/mutations';
-import {GET_STUDY_BY_ID} from '../state/queries';
+import {GET_STUDY_BY_ID, MY_PROFILE} from '../state/queries';
 import {Message, Segment, Container, Button, Header} from 'semantic-ui-react';
 import {lengthLimit} from '../common/fileUtils';
 
@@ -49,7 +49,9 @@ const NewDocumentView = ({
         setErrors(err.message);
       });
   };
-
+  const isAdmin = !user.loading
+    ? user.myProfile.roles.includes('ADMIN')
+    : false;
   return (
     <Container as={Segment} vertical basic>
       <Container as={Segment} vertical basic>
