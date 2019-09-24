@@ -175,7 +175,7 @@ EditDocumentForm.propTypes = {
   /** The file approval status */
   versionStatus: PropTypes.string,
   /** If the user has ADMIN role */
-  isAdmin: PropTypes.bool.isRequired,
+  isAdmin: PropTypes.bool,
   /** (New file) Function to perform on form submission  */
   handleSubmit: PropTypes.func,
   /** (New file) Any errors that occured when submitting the form */

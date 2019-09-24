@@ -1,8 +1,4 @@
 import React from 'react';
-import wait from 'waait';
-import {MockedProvider} from 'react-apollo/test-utils';
-import {mocks} from '../../../../__mocks__/kf-api-study-creator/mocks';
-import {MemoryRouter} from 'react-router-dom';
 import {render} from 'react-testing-library';
 import EditDocumentForm from '../EditDocumentForm';
 

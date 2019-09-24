@@ -1,3 +1,4 @@
+/* eslint-disable no-loop-func */
 import React from 'react';
 import wait from 'waait';
 import {MockedProvider} from 'react-apollo/test-utils';
@@ -27,7 +28,7 @@ let errors = {};
 it('blocks submission for invalid Document Name input', async () => {
   const handleSubmit = jest.fn();
 
-  const {container, getByTestId, getByText, queryAllByText, debug} = render(
+  const {container, getByTestId, getByText, queryAllByText} = render(
     <MockedProvider mocks={mocks}>
       <MemoryRouter
         initialEntries={['/study/SD_8WX8QQ06/documents/new-document']}
@@ -50,13 +51,7 @@ it('blocks submission for invalid Document Name input', async () => {
               >
                 {onUploading && !errors ? 'UPLOADING ...' : 'UPLOAD'}
               </Button>
-              <Button
-                floated="right"
-                primary={errors.length > 0}
-                onClick={() =>
-                  history.push(`/study/${match.params.kfId}/documents`)
-                }
-              >
+              <Button floated="right" primary={errors.length > 0}>
                 CANCEL
               </Button>
             </Segment>
@@ -109,14 +104,7 @@ for (let index = 0; index < BLACKLISTED_WORDS.length; index++) {
   it(`shows validation indicators for Document Title input blacklisted word: "${word}" `, async () => {
     const handleSubmit = jest.fn();
 
-    const {
-      container,
-      getByTestId,
-      getByText,
-      queryAllByText,
-      findAllByRole,
-      debug,
-    } = render(
+    const {getByTestId, getByText, queryAllByText} = render(
       <MockedProvider mocks={mocks}>
         <MemoryRouter
           initialEntries={['/study/SD_8WX8QQ06/documents/new-document']}
@@ -139,13 +127,7 @@ for (let index = 0; index < BLACKLISTED_WORDS.length; index++) {
                 >
                   {onUploading && !errors ? 'UPLOADING ...' : 'UPLOAD'}
                 </Button>
-                <Button
-                  floated="right"
-                  primary={errors.length > 0}
-                  onClick={() =>
-                    history.push(`/study/${match.params.kfId}/documents`)
-                  }
-                >
+                <Button floated="right" primary={errors.length > 0}>
                   CANCEL
                 </Button>
               </Segment>
@@ -195,7 +177,7 @@ for (let index = 0; index < FILE_EXT.length; index++) {
   it(`shows validation indicators for Document Title input with file extension: "${word}" `, async () => {
     const handleSubmit = jest.fn();
 
-    const {container, getByTestId, getByText, queryAllByText, debug} = render(
+    const {getByTestId, getByText, queryAllByText} = render(
       <MockedProvider mocks={mocks}>
         <MemoryRouter
           initialEntries={['/study/SD_8WX8QQ06/documents/new-document']}
@@ -218,13 +200,7 @@ for (let index = 0; index < FILE_EXT.length; index++) {
                 >
                   {onUploading && !errors ? 'UPLOADING ...' : 'UPLOAD'}
                 </Button>
-                <Button
-                  floated="right"
-                  primary={errors.length > 0}
-                  onClick={() =>
-                    history.push(`/study/${match.params.kfId}/documents`)
-                  }
-                >
+                <Button floated="right" primary={errors.length > 0}>
                   CANCEL
                 </Button>
               </Segment>
@@ -278,7 +254,7 @@ for (let index = 0; index < DATE_FORMATS.length; index++) {
   }" `, async () => {
     const handleSubmit = jest.fn();
 
-    const {container, getByTestId, getByText, queryAllByText, debug} = render(
+    const {getByTestId, getByText, queryAllByText} = render(
       <MockedProvider mocks={mocks}>
         <MemoryRouter
           initialEntries={['/study/SD_8WX8QQ06/documents/new-document']}
@@ -301,13 +277,7 @@ for (let index = 0; index < DATE_FORMATS.length; index++) {
                 >
                   {onUploading && !errors ? 'UPLOADING ...' : 'UPLOAD'}
                 </Button>
-                <Button
-                  floated="right"
-                  primary={errors.length > 0}
-                  onClick={() =>
-                    history.push(`/study/${match.params.kfId}/documents`)
-                  }
-                >
+                <Button floated="right" primary={errors.length > 0}>
                   CANCEL
                 </Button>
               </Segment>
