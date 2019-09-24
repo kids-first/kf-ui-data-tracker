@@ -1,0 +1,221 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`blocks submission for invalid Document Name input 1`] = `
+<div>
+  <form
+    class="ui form"
+  >
+    <div
+      class="required field"
+    >
+      <label
+        for="file_name"
+      >
+        Document Title: 
+        <small>
+          (required)
+        </small>
+      </label>
+      <input
+        data-testid="name-input"
+        error="undefined"
+        name="file_name"
+        placeholder="Phenotypic Data manifest for..."
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      class="required field"
+    >
+      <label
+        for="file_type"
+      >
+        Document Type: 
+        <small>
+          (required)
+        </small>
+      </label>
+      <div
+        class="field"
+      >
+        <div
+          class="ui compact segment selectionRadio--card"
+        >
+          <div
+            class="ui radio checkbox selectionRadio"
+          >
+            <input
+              class="hidden"
+              id="SHM"
+              name="file_type"
+              readonly=""
+              tabindex="0"
+              type="radio"
+              value="SHM"
+            />
+            <i
+              aria-hidden="true"
+              class="black shipping large bordered circular inverted icon"
+            />
+          </div>
+          <div>
+            <p>
+              <b>
+                Shipping Manifest
+              </b>
+            </p>
+            <p>
+              <small>
+                File type description goes here...
+              </small>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="field"
+      >
+        <div
+          class="ui compact segment selectionRadio--card"
+        >
+          <div
+            class="ui radio checkbox selectionRadio"
+          >
+            <input
+              class="hidden"
+              id="CLN"
+              name="file_type"
+              readonly=""
+              tabindex="0"
+              type="radio"
+              value="CLN"
+            />
+            <i
+              aria-hidden="true"
+              class="black hospital large bordered circular inverted icon"
+            />
+          </div>
+          <div>
+            <p>
+              <b>
+                Clinical/Phenotype Data
+              </b>
+            </p>
+            <p>
+              <small>
+                File type description goes here...
+              </small>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="field"
+      >
+        <div
+          class="ui compact segment selectionRadio--card"
+        >
+          <div
+            class="ui radio checkbox selectionRadio"
+          >
+            <input
+              class="hidden"
+              id="SEQ"
+              name="file_type"
+              readonly=""
+              tabindex="0"
+              type="radio"
+              value="SEQ"
+            />
+            <i
+              aria-hidden="true"
+              class="black dna large bordered circular inverted icon"
+            />
+          </div>
+          <div>
+            <p>
+              <b>
+                Sequencing Manifest
+              </b>
+            </p>
+            <p>
+              <small>
+                File type description goes here...
+              </small>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="field"
+      >
+        <div
+          class="ui compact segment selectionRadio--card"
+        >
+          <div
+            class="ui radio checkbox selectionRadio"
+          >
+            <input
+              class="hidden"
+              id="OTH"
+              name="file_type"
+              readonly=""
+              tabindex="0"
+              type="radio"
+              value="OTH"
+            />
+            <i
+              aria-hidden="true"
+              class="black question large bordered circular inverted icon"
+            />
+          </div>
+          <div>
+            <p>
+              <b>
+                Other
+              </b>
+            </p>
+            <p>
+              <small>
+                File type description goes here...
+              </small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="required field"
+    >
+      <label>
+        Describe Document Contents: 
+        <small>
+          (required)
+        </small>
+      </label>
+      <textarea
+        data-testid="description-input"
+        name="file_desc"
+        rows="3"
+        type="text"
+      />
+    </div>
+    <div
+      class="ui basic compact vertical segment"
+    >
+      <button
+        class="ui right floated button"
+        type="submit"
+      >
+        UPLOAD
+      </button>
+      <button
+        class="ui right floated button"
+      >
+        CANCEL
+      </button>
+    </div>
+  </form>
+</div>
+`;
