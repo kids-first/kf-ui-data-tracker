@@ -172,9 +172,11 @@ const CavaticaProjectItem = ({
           </List.Content>
           <Icon
             name={
-              projectNode.projectType === 'DEL'
-                ? 'paper plane outline'
-                : 'sliders horizontal'
+              {
+                DEL: 'paper plane outline',
+                HAR: 'sliders horizontal',
+                RES: 'flask',
+              }[projectNode.projectType]
             }
           />
           <List.Content>
