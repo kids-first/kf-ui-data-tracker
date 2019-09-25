@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
-import {withRouter} from 'react-router-dom';
+import {withRouter, Link} from 'react-router-dom';
 import TimeAgo from 'react-timeago';
 import Badge from '../Badge/Badge';
 import {Header, Table, Icon, List, Responsive} from 'semantic-ui-react';
@@ -157,7 +157,9 @@ const FileElement = ({fileNode, loading, history, match, fileListId}) => {
       </Table.Cell>
       <Table.Cell>
         <Header size="medium" as="span">
-          {fileName}
+          <Link to={`/study/${match.params.kfId}/documents/${fileKfID}`}>
+            {fileName}
+          </Link>
         </Header>
         <p className="noMargin">
           {fileDescription ? <>{lengthLimit(fileDescription, 100)}</> : null}
