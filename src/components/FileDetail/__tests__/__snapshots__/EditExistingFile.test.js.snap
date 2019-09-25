@@ -163,7 +163,7 @@ exports[`edits an existing file correctly 1`] = `
       >
         <a
           class="item"
-          href="/study/SD_8WX8QQ06/basic-info"
+          href="/study/SD_8WX8QQ06/basic-info/info"
         >
           Basic Info
           <div
@@ -180,7 +180,7 @@ exports[`edits an existing file correctly 1`] = `
         </a>
         <a
           aria-current="page"
-          class="item active"
+          class="active item active"
           href="/study/SD_8WX8QQ06/documents"
         >
           Documents
@@ -938,7 +938,7 @@ exports[`edits an existing file correctly 2`] = `
       >
         <a
           class="item"
-          href="/study/SD_8WX8QQ06/basic-info"
+          href="/study/SD_8WX8QQ06/basic-info/info"
         >
           Basic Info
           <div
@@ -955,7 +955,7 @@ exports[`edits an existing file correctly 2`] = `
         </a>
         <a
           aria-current="page"
-          class="item active"
+          class="active item active"
           href="/study/SD_8WX8QQ06/documents"
         >
           Documents
@@ -1548,7 +1548,7 @@ exports[`edits an existing file correctly 3`] = `
       >
         <a
           class="item"
-          href="/study/SD_8WX8QQ06/basic-info"
+          href="/study/SD_8WX8QQ06/basic-info/info"
         >
           Basic Info
           <div
@@ -1565,7 +1565,7 @@ exports[`edits an existing file correctly 3`] = `
         </a>
         <a
           aria-current="page"
-          class="item active"
+          class="active item active"
           href="/study/SD_8WX8QQ06/documents"
         >
           Documents
