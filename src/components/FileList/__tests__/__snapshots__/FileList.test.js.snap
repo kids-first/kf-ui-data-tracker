@@ -261,8 +261,31 @@ exports[`renders with files 1`] = `
     </div>
   </div>
   <table
-    class="ui selectable stackable very basic very compact table"
+    class="ui celled selectable stackable very basic very compact table"
   >
+    <thead
+      class=""
+    >
+      <tr
+        class=""
+      >
+        <th
+          class="center aligned"
+        >
+          Approval
+        </th>
+        <th
+          class=""
+        >
+          Document Details
+        </th>
+        <th
+          class="center aligned"
+        >
+          Actions
+        </th>
+      </tr>
+    </thead>
     <tbody
       class=""
     >
@@ -293,29 +316,31 @@ exports[`renders with files 1`] = `
             Shoulder body answer especially large big risk its. Sort fly note field fish. Network him identify r...
           </p>
           <div
-            class="ui bulleted horizontal list"
+            class="ui horizontal link list"
             role="list"
           >
             <div
               class="item"
               role="listitem"
             >
-              <button
-                class="ui mini basic icon left labeled button"
+              <div
+                class="middle aligned content"
               >
+                 
                 <i
                   aria-hidden="true"
-                  class="copy icon"
+                  class="grey hospital small icon"
                 />
-                SF_JT0GRZP7
-              </button>
+                 
+                Clinical/Phenotype Data
+              </div>
             </div>
             <div
               class="item"
               role="listitem"
             >
               <div
-                class="description"
+                class="content"
               >
                 Modified
                  
@@ -332,20 +357,21 @@ exports[`renders with files 1`] = `
               role="listitem"
             >
               <div
-                class="description"
+                class="content"
               >
-                6.6 kB
+                2
+                 versions 
               </div>
             </div>
             <div
               class="item"
               role="listitem"
             >
-              <i
-                aria-hidden="true"
-                class="hospital icon"
-              />
-               Clinical/Phenotype Data
+              <div
+                class="content"
+              >
+                6.6 kB
+              </div>
             </div>
           </div>
         </td>
@@ -402,29 +428,31 @@ exports[`renders with files 1`] = `
             Feel industry quality direction resource truth. Affect green yard various play character simply rema...
           </p>
           <div
-            class="ui bulleted horizontal list"
+            class="ui horizontal link list"
             role="list"
           >
             <div
               class="item"
               role="listitem"
             >
-              <button
-                class="ui mini basic icon left labeled button"
+              <div
+                class="middle aligned content"
               >
+                 
                 <i
                   aria-hidden="true"
-                  class="copy icon"
+                  class="grey question small icon"
                 />
-                SF_DLXEQZV1
-              </button>
+                 
+                unknown
+              </div>
             </div>
             <div
               class="item"
               role="listitem"
             >
               <div
-                class="description"
+                class="content"
               >
                 Modified
                  
@@ -441,20 +469,21 @@ exports[`renders with files 1`] = `
               role="listitem"
             >
               <div
-                class="description"
+                class="content"
               >
-                7.0 kB
+                2
+                 versions 
               </div>
             </div>
             <div
               class="item"
               role="listitem"
             >
-              <i
-                aria-hidden="true"
-                class="question icon"
-              />
-               unknown
+              <div
+                class="content"
+              >
+                7.0 kB
+              </div>
             </div>
           </div>
         </td>
@@ -511,29 +540,31 @@ exports[`renders with files 1`] = `
             Safe always adult sometimes. Enter full agree still son expect write. According small hold someone.
           </p>
           <div
-            class="ui bulleted horizontal list"
+            class="ui horizontal link list"
             role="list"
           >
             <div
               class="item"
               role="listitem"
             >
-              <button
-                class="ui mini basic icon left labeled button"
+              <div
+                class="middle aligned content"
               >
+                 
                 <i
                   aria-hidden="true"
-                  class="copy icon"
+                  class="grey hospital small icon"
                 />
-                SF_FPVBM0JF
-              </button>
+                 
+                Clinical/Phenotype Data
+              </div>
             </div>
             <div
               class="item"
               role="listitem"
             >
               <div
-                class="description"
+                class="content"
               >
                 Modified
                  
@@ -550,20 +581,21 @@ exports[`renders with files 1`] = `
               role="listitem"
             >
               <div
-                class="description"
+                class="content"
               >
-                440 B
+                2
+                 versions 
               </div>
             </div>
             <div
               class="item"
               role="listitem"
             >
-              <i
-                aria-hidden="true"
-                class="hospital icon"
-              />
-               Clinical/Phenotype Data
+              <div
+                class="content"
+              >
+                440 B
+              </div>
             </div>
           </div>
         </td>
@@ -620,29 +652,31 @@ exports[`renders with files 1`] = `
             This democratic analysis car here likely. Protect speech exactly three order different wife.
           </p>
           <div
-            class="ui bulleted horizontal list"
+            class="ui horizontal link list"
             role="list"
           >
             <div
               class="item"
               role="listitem"
             >
-              <button
-                class="ui mini basic icon left labeled button"
+              <div
+                class="middle aligned content"
               >
+                 
                 <i
                   aria-hidden="true"
-                  class="copy icon"
+                  class="grey question small icon"
                 />
-                SF_6JBSGVWE
-              </button>
+                 
+                unknown
+              </div>
             </div>
             <div
               class="item"
               role="listitem"
             >
               <div
-                class="description"
+                class="content"
               >
                 Modified
                  
@@ -659,20 +693,131 @@ exports[`renders with files 1`] = `
               role="listitem"
             >
               <div
-                class="description"
+                class="content"
+              >
+                5
+                 versions 
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="content"
               >
                 9.6 kB
               </div>
             </div>
+          </div>
+        </td>
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui mini vertical buttons"
+          >
+            <button
+              class="ui basic icon button"
+            >
+              <i
+                aria-hidden="true"
+                class="download icon"
+              />
+            </button>
+            <button
+              class="ui basic icon button"
+              data-testid="delete-button"
+            >
+              <i
+                aria-hidden="true"
+                class="trash alternate icon"
+              />
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="cursor-pointer"
+        data-testid="file-item"
+      >
+        <td
+          class="collapsing single line center aligned"
+        >
+          <div
+            class="ui orange tiny basic label"
+          >
+            Pending review
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <span
+            class="ui medium header"
+          >
+            3.jpg
+          </span>
+          <p
+            class="noMargin"
+          />
+          <div
+            class="ui horizontal link list"
+            role="list"
+          >
             <div
               class="item"
               role="listitem"
             >
-              <i
-                aria-hidden="true"
-                class="question icon"
-              />
-               unknown
+              <div
+                class="middle aligned content"
+              >
+                 
+                <i
+                  aria-hidden="true"
+                  class="grey question small icon"
+                />
+                 
+                Other
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="content"
+              >
+                Modified
+                 
+                <time
+                  datetime="2019-05-20T14:34:21.331Z"
+                  title="20 May 2019"
+                >
+                  4 weeks from now
+                </time>
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="content"
+              >
+                1
+                 versions 
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="content"
+              >
+                75.5 kB
+              </div>
             </div>
           </div>
         </td>
@@ -727,29 +872,31 @@ exports[`renders with files 1`] = `
             class="noMargin"
           />
           <div
-            class="ui bulleted horizontal list"
+            class="ui horizontal link list"
             role="list"
           >
             <div
               class="item"
               role="listitem"
             >
-              <button
-                class="ui mini basic icon left labeled button"
+              <div
+                class="middle aligned content"
               >
+                 
                 <i
                   aria-hidden="true"
-                  class="copy icon"
+                  class="grey question small icon"
                 />
-                SF_SFA9WW62
-              </button>
+                 
+                Other
+              </div>
             </div>
             <div
               class="item"
               role="listitem"
             >
               <div
-                class="description"
+                class="content"
               >
                 Modified
                  
@@ -766,20 +913,21 @@ exports[`renders with files 1`] = `
               role="listitem"
             >
               <div
-                class="description"
+                class="content"
               >
-                75.5 kB
+                1
+                 versions 
               </div>
             </div>
             <div
               class="item"
               role="listitem"
             >
-              <i
-                aria-hidden="true"
-                class="question icon"
-              />
-               Other
+              <div
+                class="content"
+              >
+                75.5 kB
+              </div>
             </div>
           </div>
         </td>
@@ -834,29 +982,31 @@ exports[`renders with files 1`] = `
             class="noMargin"
           />
           <div
-            class="ui bulleted horizontal list"
+            class="ui horizontal link list"
             role="list"
           >
             <div
               class="item"
               role="listitem"
             >
-              <button
-                class="ui mini basic icon left labeled button"
+              <div
+                class="middle aligned content"
               >
+                 
                 <i
                   aria-hidden="true"
-                  class="copy icon"
+                  class="grey question small icon"
                 />
-                SF_SFA9WW01
-              </button>
+                 
+                Other
+              </div>
             </div>
             <div
               class="item"
               role="listitem"
             >
               <div
-                class="description"
+                class="content"
               >
                 Modified
                  
@@ -873,20 +1023,21 @@ exports[`renders with files 1`] = `
               role="listitem"
             >
               <div
-                class="description"
+                class="content"
               >
-                75.5 kB
+                1
+                 versions 
               </div>
             </div>
             <div
               class="item"
               role="listitem"
             >
-              <i
-                aria-hidden="true"
-                class="question icon"
-              />
-               Other
+              <div
+                class="content"
+              >
+                75.5 kB
+              </div>
             </div>
           </div>
         </td>
@@ -941,29 +1092,31 @@ exports[`renders with files 1`] = `
             class="noMargin"
           />
           <div
-            class="ui bulleted horizontal list"
+            class="ui horizontal link list"
             role="list"
           >
             <div
               class="item"
               role="listitem"
             >
-              <button
-                class="ui mini basic icon left labeled button"
+              <div
+                class="middle aligned content"
               >
+                 
                 <i
                   aria-hidden="true"
-                  class="copy icon"
+                  class="grey question small icon"
                 />
-                SF_SFA9WW02
-              </button>
+                 
+                Other
+              </div>
             </div>
             <div
               class="item"
               role="listitem"
             >
               <div
-                class="description"
+                class="content"
               >
                 Modified
                  
@@ -980,20 +1133,21 @@ exports[`renders with files 1`] = `
               role="listitem"
             >
               <div
-                class="description"
+                class="content"
               >
-                75.5 kB
+                1
+                 versions 
               </div>
             </div>
             <div
               class="item"
               role="listitem"
             >
-              <i
-                aria-hidden="true"
-                class="question icon"
-              />
-               Other
+              <div
+                class="content"
+              >
+                75.5 kB
+              </div>
             </div>
           </div>
         </td>
@@ -1048,29 +1202,31 @@ exports[`renders with files 1`] = `
             class="noMargin"
           />
           <div
-            class="ui bulleted horizontal list"
+            class="ui horizontal link list"
             role="list"
           >
             <div
               class="item"
               role="listitem"
             >
-              <button
-                class="ui mini basic icon left labeled button"
+              <div
+                class="middle aligned content"
               >
+                 
                 <i
                   aria-hidden="true"
-                  class="copy icon"
+                  class="grey question small icon"
                 />
-                SF_SFA9WW03
-              </button>
+                 
+                Other
+              </div>
             </div>
             <div
               class="item"
               role="listitem"
             >
               <div
-                class="description"
+                class="content"
               >
                 Modified
                  
@@ -1087,106 +1243,10 @@ exports[`renders with files 1`] = `
               role="listitem"
             >
               <div
-                class="description"
+                class="content"
               >
-                75.5 kB
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <i
-                aria-hidden="true"
-                class="question icon"
-              />
-               Other
-            </div>
-          </div>
-        </td>
-        <td
-          class="center aligned"
-        >
-          <div
-            class="ui mini vertical buttons"
-          >
-            <button
-              class="ui basic icon button"
-            >
-              <i
-                aria-hidden="true"
-                class="download icon"
-              />
-            </button>
-            <button
-              class="ui basic icon button"
-              data-testid="delete-button"
-            >
-              <i
-                aria-hidden="true"
-                class="trash alternate icon"
-              />
-            </button>
-          </div>
-        </td>
-      </tr>
-      <tr
-        class="cursor-pointer"
-        data-testid="file-item"
-      >
-        <td
-          class="collapsing single line center aligned"
-        >
-          <div
-            class="ui orange tiny basic label"
-          >
-            Pending review
-          </div>
-        </td>
-        <td
-          class=""
-        >
-          <span
-            class="ui medium header"
-          >
-            3.jpg
-          </span>
-          <p
-            class="noMargin"
-          />
-          <div
-            class="ui bulleted horizontal list"
-            role="list"
-          >
-            <div
-              class="item"
-              role="listitem"
-            >
-              <button
-                class="ui mini basic icon left labeled button"
-              >
-                <i
-                  aria-hidden="true"
-                  class="copy icon"
-                />
-                SF_SFA9WW04
-              </button>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="description"
-              >
-                Modified
-                 
-                <time
-                  datetime="2019-05-20T14:34:21.331Z"
-                  title="20 May 2019"
-                >
-                  4 weeks from now
-                </time>
+                1
+                 versions 
               </div>
             </div>
             <div
@@ -1194,20 +1254,10 @@ exports[`renders with files 1`] = `
               role="listitem"
             >
               <div
-                class="description"
+                class="content"
               >
                 75.5 kB
               </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <i
-                aria-hidden="true"
-                class="question icon"
-              />
-               Other
             </div>
           </div>
         </td>
@@ -1262,29 +1312,31 @@ exports[`renders with files 1`] = `
             class="noMargin"
           />
           <div
-            class="ui bulleted horizontal list"
+            class="ui horizontal link list"
             role="list"
           >
             <div
               class="item"
               role="listitem"
             >
-              <button
-                class="ui mini basic icon left labeled button"
+              <div
+                class="middle aligned content"
               >
+                 
                 <i
                   aria-hidden="true"
-                  class="copy icon"
+                  class="grey question small icon"
                 />
-                SF_AZMTRAND
-              </button>
+                 
+                Other
+              </div>
             </div>
             <div
               class="item"
               role="listitem"
             >
               <div
-                class="description"
+                class="content"
               >
                 Modified
                  
@@ -1301,20 +1353,21 @@ exports[`renders with files 1`] = `
               role="listitem"
             >
               <div
-                class="description"
+                class="content"
               >
-                61.0 kB
+                1
+                 versions 
               </div>
             </div>
             <div
               class="item"
               role="listitem"
             >
-              <i
-                aria-hidden="true"
-                class="question icon"
-              />
-               Other
+              <div
+                class="content"
+              >
+                61.0 kB
+              </div>
             </div>
           </div>
         </td>
