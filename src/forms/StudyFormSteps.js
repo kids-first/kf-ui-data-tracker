@@ -8,9 +8,12 @@ import {
   List,
   Dropdown,
   Header,
+  Image,
+  Table,
 } from 'semantic-ui-react';
 import {workflowOptions} from '../common/enums';
 import FormField from './FormField';
+import Markdown from 'react-markdown';
 
 const prevNextStep = (stepName, newStudy, history) => {
   if (newStudy) {
@@ -235,6 +238,8 @@ export const LogisticsStep = ({
   editing,
   setEditing,
   history,
+  foldDescription,
+  setFoldDescription,
 }) => {
   const {
     values,
@@ -298,29 +303,67 @@ export const LogisticsStep = ({
         handleFocus={id => setFocused(id)}
         readOnly={!editing && !newStudy}
       />
-      <FormField
-        id="description"
-        name="Description"
-        description="Study description in markdown, commonly the X01 abstract
+      {!editing && !newStudy ? (
+        <>
+          <Header as="h5">Description:</Header>
+          <Segment
+            attached={values.description.length > 0}
+            className={foldDescription ? 'max-h-500' : 'x-scroll'}
+          >
+            {values.description && values.description.length > 0 ? (
+              <Markdown
+                source={values.description}
+                renderers={{
+                  image: Image,
+                  table: props => <Table>{props.children}</Table>,
+                  list: List,
+                  listItem: List.Item,
+                }}
+              />
+            ) : (
+              <Header disabled className="mt-6" as="h5">
+                No study description available.
+              </Header>
+            )}
+          </Segment>
+          {values.description && values.description.length > 0 && (
+            <Button
+              attached="bottom"
+              onClick={() => setFoldDescription(!foldDescription)}
+              className="mb-15"
+            >
+              {foldDescription ? 'Read More' : 'Read Less'}
+            </Button>
+          )}
+        </>
+      ) : (
+        <FormField
+          newStudy={newStudy}
+          id="description"
+          name="Description"
+          description="Study description in markdown, commonly the X01 abstract
       text."
-        type="text"
-        focused={focused === 'description'}
-        value={values.description}
-        touched={touched.description}
-        errors={errors.description}
-        handleChange={handleChange}
-        handleBlur={handleBlur}
-        handleFocus={id => setFocused(id)}
-      >
-        <Form.TextArea
-          rows="15"
           type="text"
-          name="description"
-          onChange={handleChange}
-          onBlur={handleBlur}
+          focused={focused === 'description'}
           value={values.description}
-        />
-      </FormField>
+          touched={touched.description}
+          errors={errors.description}
+          handleChange={handleChange}
+          handleBlur={handleBlur}
+          handleFocus={id => setFocused(id)}
+        >
+          <Form.TextArea
+            className="noMargin"
+            rows="15"
+            type="text"
+            name="description"
+            onChange={handleChange}
+            onBlur={handleBlur}
+            value={values.description}
+            readOnly={!editing && !newStudy}
+          />
+        </FormField>
+      )}
       <Button
         primary
         floated="left"

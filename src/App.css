@@ -64,6 +64,10 @@ body {
   margin-left: 10px !important;
 }
 
+.mb-15 {
+  margin-bottom: 15px !important;
+}
+
 .smallLabel {
   padding-left: 10px;
   padding-right: 5px;
@@ -129,6 +133,10 @@ body {
 .max-h-500 {
   max-height: 500px;
   overflow: hidden;
+}
+
+.x-scroll {
+  overflow-x: scroll;
 }
 
 .text-wrap-75 {

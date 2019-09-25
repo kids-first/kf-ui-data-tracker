@@ -21,6 +21,7 @@ const NewStudyForm = ({
     'gatk_haplotypecaller',
   ]);
   const [focused, setFocused] = useState('');
+  const [foldDescription, setFoldDescription] = useState(true);
   const STUDY_STEPS = [
     {
       title: 'Info',
@@ -202,6 +203,8 @@ const NewStudyForm = ({
                         confirmOpen,
                         history,
                         editing,
+                        foldDescription,
+                        setFoldDescription,
                       })
                     }
                   />
