@@ -31,29 +31,31 @@ exports[`renders correctly 1`] = `
             Month necessary animal end standard case. View system operation message decade. Actually sing becaus...
           </p>
           <div
-            class="ui bulleted horizontal list"
+            class="ui horizontal link list"
             role="list"
           >
             <div
               class="item"
               role="listitem"
             >
-              <button
-                class="ui mini basic icon left labeled button"
+              <div
+                class="middle aligned content"
               >
+                 
                 <i
                   aria-hidden="true"
-                  class="copy icon"
+                  class="grey hospital small icon"
                 />
-                SF_5ZPEM167
-              </button>
+                 
+                Clinical/Phenotype Data
+              </div>
             </div>
             <div
               class="item"
               role="listitem"
             >
               <div
-                class="description"
+                class="content"
               >
                 Modified
                  
@@ -70,20 +72,21 @@ exports[`renders correctly 1`] = `
               role="listitem"
             >
               <div
-                class="description"
+                class="content"
               >
-                5.5 kB
+                3
+                 versions 
               </div>
             </div>
             <div
               class="item"
               role="listitem"
             >
-              <i
-                aria-hidden="true"
-                class="hospital icon"
-              />
-               Clinical/Phenotype Data
+              <div
+                class="content"
+              >
+                5.5 kB
+              </div>
             </div>
           </div>
         </td>
@@ -149,29 +152,31 @@ exports[`renders loading state 1`] = `
             Month necessary animal end standard case. View system operation message decade. Actually sing becaus...
           </p>
           <div
-            class="ui bulleted horizontal list"
+            class="ui horizontal link list"
             role="list"
           >
             <div
               class="item"
               role="listitem"
             >
-              <button
-                class="ui mini basic icon left labeled button"
+              <div
+                class="middle aligned content"
               >
+                 
                 <i
                   aria-hidden="true"
-                  class="copy icon"
+                  class="grey hospital small icon"
                 />
-                SF_5ZPEM167
-              </button>
+                 
+                Clinical/Phenotype Data
+              </div>
             </div>
             <div
               class="item"
               role="listitem"
             >
               <div
-                class="description"
+                class="content"
               >
                 Modified
                  
@@ -188,20 +193,21 @@ exports[`renders loading state 1`] = `
               role="listitem"
             >
               <div
-                class="description"
+                class="content"
               >
-                5.5 kB
+                3
+                 versions 
               </div>
             </div>
             <div
               class="item"
               role="listitem"
             >
-              <i
-                aria-hidden="true"
-                class="hospital icon"
-              />
-               Clinical/Phenotype Data
+              <div
+                class="content"
+              >
+                5.5 kB
+              </div>
             </div>
           </div>
         </td>

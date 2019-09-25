@@ -104,16 +104,7 @@ const StudyFilesListView = ({
             <FileList fileList={files} studyId={kfId} />
           )}
           <Divider />
-          <Grid.Row>
-            <UploadContainer
-              handleUpload={file => {
-                setFile(file);
-                return !files.length
-                  ? history.push('documents/new-document', {file})
-                  : setDialog(true);
-              }}
-            />
-          </Grid.Row>
+
           {dialog && (
             <UploadWizard
               history={history}
@@ -127,6 +118,16 @@ const StudyFilesListView = ({
             />
           )}
         </Grid.Column>
+      </Grid.Row>
+      <Grid.Row centered>
+        <UploadContainer
+          handleUpload={file => {
+            setFile(file);
+            return !files.length
+              ? history.push('documents/new-document', {file})
+              : setDialog(true);
+          }}
+        />
       </Grid.Row>
     </Grid>
   );

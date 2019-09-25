@@ -18,8 +18,9 @@ it('renders correctly', async () => {
   );
   await wait(0);
 
-  const fileIds = tree.queryAllByText(/SF_/i).map(f => f.textContent);
-  expect(fileIds.length).toBe(2);
+  const rows = tree.getAllByTestId('file-item');
+
+  expect(rows.length).toBe(2);
 
   expect(tree.container).toMatchSnapshot();
 });
@@ -34,8 +35,8 @@ it('deletes a file correctly', async () => {
   );
   await wait(0);
 
-  const fileIds = tree.queryAllByText(/SF_/i).map(f => f.textContent);
-  expect(fileIds.length).toBe(2);
+  const rows = tree.getAllByTestId('file-item');
+  expect(rows.length).toBe(2);
 
   // Delete the second file
   fireEvent.click(tree.getAllByTestId('delete-button')[1]);
@@ -43,8 +44,9 @@ it('deletes a file correctly', async () => {
   await wait();
 
   // Should only be one file now
-  const newFileIds = tree.queryAllByText(/SF_/i).map(f => f.textContent);
-  expect(newFileIds.length).toBe(1);
+
+  const newRows = tree.getAllByTestId('file-item');
+  expect(newRows.length).toBe(1);
   expect(tree.container).toMatchSnapshot();
 });
 

@@ -4,7 +4,7 @@ import {withRouter} from 'react-router-dom';
 import TimeAgo from 'react-timeago';
 import Badge from '../Badge/Badge';
 import {Header, Table, Icon, List, Responsive} from 'semantic-ui-react';
-import CopyButton from '../CopyButton/CopyButton';
+
 import FileActionsContainer from '../../containers/FileActionsContainer';
 import {
   fileTypeDetail,
@@ -19,18 +19,27 @@ import {longDate} from '../../common/dateUtils';
  * Displays a list of file attributes
  */
 const FileAttributes = ({
-  fileKfID,
   latestDate,
   fileSize,
   fileType,
   horizontal,
+  fileVersions,
 }) => (
-  <List bulleted={horizontal} horizontal={horizontal}>
+  <List horizontal={horizontal} link>
     <List.Item>
-      <CopyButton basic size="mini" text={fileKfID} />
+      <List.Content verticalAlign="middle">
+        {' '}
+        <Icon
+          name={`${fileType.icon || 'question'}`}
+          size="small"
+          color="grey"
+        />{' '}
+        {fileType.title}
+      </List.Content>
     </List.Item>
+
     <List.Item>
-      <List.Description>
+      <List.Content>
         {latestDate ? (
           <>
             Modified{' '}
@@ -43,14 +52,13 @@ const FileAttributes = ({
         ) : (
           'Unknown time'
         )}
-      </List.Description>
+      </List.Content>
     </List.Item>
     <List.Item>
-      <List.Description>{fileSize}</List.Description>
+      <List.Content>{fileVersions} versions </List.Content>
     </List.Item>
     <List.Item>
-      <Icon name={`${fileType.icon || 'question'}`} />
-      {' ' + fileType.title}
+      <List.Content>{fileSize}</List.Content>
     </List.Item>
   </List>
 );
@@ -117,6 +125,7 @@ const FileElement = ({fileNode, loading, history, match, fileListId}) => {
           latestDate={latestDate}
           fileSize={fileSize}
           fileType={fileType}
+          fileVersions={sortedVersions.length}
           horizontal={true}
         />
         <Responsive
@@ -126,6 +135,7 @@ const FileElement = ({fileNode, loading, history, match, fileListId}) => {
           latestDate={latestDate}
           fileSize={fileSize}
           fileType={fileType}
+          fileVersions={sortedVersions.length}
           horizontal={false}
         />
       </Table.Cell>
