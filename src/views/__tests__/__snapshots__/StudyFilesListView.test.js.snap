@@ -302,8 +302,31 @@ exports[`deletes a file correctly 1`] = `
           </div>
         </div>
         <table
-          class="ui selectable stackable very basic very compact table"
+          class="ui celled selectable stackable very basic very compact table"
         >
+          <thead
+            class=""
+          >
+            <tr
+              class=""
+            >
+              <th
+                class="center aligned"
+              >
+                Approval
+              </th>
+              <th
+                class=""
+              >
+                Document Details
+              </th>
+              <th
+                class="center aligned"
+              >
+                Actions
+              </th>
+            </tr>
+          </thead>
           <tbody
             class=""
           >
@@ -334,29 +357,31 @@ exports[`deletes a file correctly 1`] = `
                   Month necessary animal end standard case. View system operation message decade. Actually sing becaus...
                 </p>
                 <div
-                  class="ui bulleted horizontal list"
+                  class="ui horizontal link list"
                   role="list"
                 >
                   <div
                     class="item"
                     role="listitem"
                   >
-                    <button
-                      class="ui mini basic icon left labeled button"
+                    <div
+                      class="middle aligned content"
                     >
+                       
                       <i
                         aria-hidden="true"
-                        class="copy icon"
+                        class="grey hospital small icon"
                       />
-                      SF_5ZPEM167
-                    </button>
+                       
+                      Clinical/Phenotype Data
+                    </div>
                   </div>
                   <div
                     class="item"
                     role="listitem"
                   >
                     <div
-                      class="description"
+                      class="content"
                     >
                       Modified
                        
@@ -373,20 +398,21 @@ exports[`deletes a file correctly 1`] = `
                     role="listitem"
                   >
                     <div
-                      class="description"
+                      class="content"
                     >
-                      5.5 kB
+                      3
+                       versions 
                     </div>
                   </div>
                   <div
                     class="item"
                     role="listitem"
                   >
-                    <i
-                      aria-hidden="true"
-                      class="hospital icon"
-                    />
-                     Clinical/Phenotype Data
+                    <div
+                      class="content"
+                    >
+                      5.5 kB
+                    </div>
                   </div>
                 </div>
               </td>
@@ -421,48 +447,48 @@ exports[`deletes a file correctly 1`] = `
         <div
           class="ui divider"
         />
-        <div
-          class="row"
-        >
-          <form>
-            <div
-              class="ui placeholder piled segment"
-            >
-              <div
-                class="ui icon header"
-              >
-                <i
-                  aria-hidden="true"
-                  class="file outline icon"
-                />
-                To upload Study Documents drag and drop a file here
-                <br />
-                <small>
-                  or
-                </small>
-              </div>
-              <br />
-              <label
-                class="ui icon primary left labeled button"
-                for="file"
-                role="button"
-              >
-                <i
-                  aria-hidden="true"
-                  class="file outline icon"
-                />
-                Choose a file
-              </label>
-              <input
-                hidden=""
-                id="file"
-                multiple=""
-                type="file"
-              />
-            </div>
-          </form>
-        </div>
       </div>
+    </div>
+    <div
+      class="centered row"
+    >
+      <form>
+        <div
+          class="ui placeholder piled segment"
+        >
+          <div
+            class="ui icon header"
+          >
+            <i
+              aria-hidden="true"
+              class="file outline icon"
+            />
+            To upload Study Documents drag and drop a file here
+            <br />
+            <small>
+              or
+            </small>
+          </div>
+          <br />
+          <label
+            class="ui icon primary left labeled button"
+            for="file"
+            role="button"
+          >
+            <i
+              aria-hidden="true"
+              class="file outline icon"
+            />
+            Choose a file
+          </label>
+          <input
+            hidden=""
+            id="file"
+            multiple=""
+            type="file"
+          />
+        </div>
+      </form>
     </div>
   </div>
 </div>
@@ -770,8 +796,31 @@ exports[`renders correctly 1`] = `
           </div>
         </div>
         <table
-          class="ui selectable stackable very basic very compact table"
+          class="ui celled selectable stackable very basic very compact table"
         >
+          <thead
+            class=""
+          >
+            <tr
+              class=""
+            >
+              <th
+                class="center aligned"
+              >
+                Approval
+              </th>
+              <th
+                class=""
+              >
+                Document Details
+              </th>
+              <th
+                class="center aligned"
+              >
+                Actions
+              </th>
+            </tr>
+          </thead>
           <tbody
             class=""
           >
@@ -802,29 +851,31 @@ exports[`renders correctly 1`] = `
                   Month necessary animal end standard case. View system operation message decade. Actually sing becaus...
                 </p>
                 <div
-                  class="ui bulleted horizontal list"
+                  class="ui horizontal link list"
                   role="list"
                 >
                   <div
                     class="item"
                     role="listitem"
                   >
-                    <button
-                      class="ui mini basic icon left labeled button"
+                    <div
+                      class="middle aligned content"
                     >
+                       
                       <i
                         aria-hidden="true"
-                        class="copy icon"
+                        class="grey hospital small icon"
                       />
-                      SF_5ZPEM167
-                    </button>
+                       
+                      Clinical/Phenotype Data
+                    </div>
                   </div>
                   <div
                     class="item"
                     role="listitem"
                   >
                     <div
-                      class="description"
+                      class="content"
                     >
                       Modified
                        
@@ -841,20 +892,21 @@ exports[`renders correctly 1`] = `
                     role="listitem"
                   >
                     <div
-                      class="description"
+                      class="content"
                     >
-                      5.5 kB
+                      3
+                       versions 
                     </div>
                   </div>
                   <div
                     class="item"
                     role="listitem"
                   >
-                    <i
-                      aria-hidden="true"
-                      class="hospital icon"
-                    />
-                     Clinical/Phenotype Data
+                    <div
+                      class="content"
+                    >
+                      5.5 kB
+                    </div>
                   </div>
                 </div>
               </td>
@@ -911,29 +963,31 @@ exports[`renders correctly 1`] = `
                   Question meeting move recognize.
                 </p>
                 <div
-                  class="ui bulleted horizontal list"
+                  class="ui horizontal link list"
                   role="list"
                 >
                   <div
                     class="item"
                     role="listitem"
                   >
-                    <button
-                      class="ui mini basic icon left labeled button"
+                    <div
+                      class="middle aligned content"
                     >
+                       
                       <i
                         aria-hidden="true"
-                        class="copy icon"
+                        class="grey shipping small icon"
                       />
-                      SF_Y07IN1HO
-                    </button>
+                       
+                      Shipping Manifest
+                    </div>
                   </div>
                   <div
                     class="item"
                     role="listitem"
                   >
                     <div
-                      class="description"
+                      class="content"
                     >
                       Modified
                        
@@ -950,20 +1004,21 @@ exports[`renders correctly 1`] = `
                     role="listitem"
                   >
                     <div
-                      class="description"
+                      class="content"
                     >
-                      6.8 kB
+                      5
+                       versions 
                     </div>
                   </div>
                   <div
                     class="item"
                     role="listitem"
                   >
-                    <i
-                      aria-hidden="true"
-                      class="shipping icon"
-                    />
-                     Shipping Manifest
+                    <div
+                      class="content"
+                    >
+                      6.8 kB
+                    </div>
                   </div>
                 </div>
               </td>
@@ -998,48 +1053,48 @@ exports[`renders correctly 1`] = `
         <div
           class="ui divider"
         />
-        <div
-          class="row"
-        >
-          <form>
-            <div
-              class="ui placeholder piled segment"
-            >
-              <div
-                class="ui icon header"
-              >
-                <i
-                  aria-hidden="true"
-                  class="file outline icon"
-                />
-                To upload Study Documents drag and drop a file here
-                <br />
-                <small>
-                  or
-                </small>
-              </div>
-              <br />
-              <label
-                class="ui icon primary left labeled button"
-                for="file"
-                role="button"
-              >
-                <i
-                  aria-hidden="true"
-                  class="file outline icon"
-                />
-                Choose a file
-              </label>
-              <input
-                hidden=""
-                id="file"
-                multiple=""
-                type="file"
-              />
-            </div>
-          </form>
-        </div>
       </div>
+    </div>
+    <div
+      class="centered row"
+    >
+      <form>
+        <div
+          class="ui placeholder piled segment"
+        >
+          <div
+            class="ui icon header"
+          >
+            <i
+              aria-hidden="true"
+              class="file outline icon"
+            />
+            To upload Study Documents drag and drop a file here
+            <br />
+            <small>
+              or
+            </small>
+          </div>
+          <br />
+          <label
+            class="ui icon primary left labeled button"
+            for="file"
+            role="button"
+          >
+            <i
+              aria-hidden="true"
+              class="file outline icon"
+            />
+            Choose a file
+          </label>
+          <input
+            hidden=""
+            id="file"
+            multiple=""
+            type="file"
+          />
+        </div>
+      </form>
     </div>
   </div>
 </div>
