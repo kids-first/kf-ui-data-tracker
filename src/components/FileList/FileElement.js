@@ -3,14 +3,7 @@ import PropTypes from 'prop-types';
 import {withRouter} from 'react-router-dom';
 import TimeAgo from 'react-timeago';
 import Badge from '../Badge/Badge';
-import {
-  Divider,
-  Header,
-  Table,
-  Icon,
-  List,
-  Responsive,
-} from 'semantic-ui-react';
+import {Header, Table, Icon, List, Responsive} from 'semantic-ui-react';
 
 import FileActionsContainer from '../../containers/FileActionsContainer';
 import {
@@ -25,7 +18,13 @@ import {longDate} from '../../common/dateUtils';
 /**
  * Displays a list of file attributes
  */
-const FileAttributes = ({latestDate, fileSize, fileType, horizontal}) => (
+const FileAttributes = ({
+  latestDate,
+  fileSize,
+  fileType,
+  horizontal,
+  fileVersions,
+}) => (
   <List horizontal={horizontal} link>
     <List.Item>
       <List.Content verticalAlign="middle">
@@ -54,6 +53,9 @@ const FileAttributes = ({latestDate, fileSize, fileType, horizontal}) => (
           'Unknown time'
         )}
       </List.Content>
+    </List.Item>
+    <List.Item>
+      <List.Content>{fileVersions} versions </List.Content>
     </List.Item>
     <List.Item>
       <List.Content>{fileSize}</List.Content>
@@ -123,6 +125,7 @@ const FileElement = ({fileNode, loading, history, match, fileListId}) => {
           latestDate={latestDate}
           fileSize={fileSize}
           fileType={fileType}
+          fileVersions={sortedVersions.length}
           horizontal={true}
         />
         <Responsive
@@ -132,6 +135,7 @@ const FileElement = ({fileNode, loading, history, match, fileListId}) => {
           latestDate={latestDate}
           fileSize={fileSize}
           fileType={fileType}
+          fileVersions={sortedVersions.length}
           horizontal={false}
         />
       </Table.Cell>
