@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import {Icon, Button, Dropdown, Input} from 'semantic-ui-react';
+import {Icon, Button, Dropdown, Input, Segment} from 'semantic-ui-react';
 import Badge from '../Badge/Badge';
 import {
   fileLatestStatus,

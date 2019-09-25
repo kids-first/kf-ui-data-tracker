@@ -14,6 +14,8 @@ import {
   lengthLimit,
 } from '../../common/fileUtils';
 
+import {longDate} from '../../common/dateUtils';
+
 const useRecentlyUpdated = (latestDate, fileId) => {
   const [justUpdated, setJustUpdated] = useState(false);
 
@@ -49,6 +51,7 @@ const FileAttributes = ({
   fileType,
   horizontal,
   fileVersions,
+  fileKfID,
 }) => {
   const justUpdated = useRecentlyUpdated(latestDate, fileKfID);
 
