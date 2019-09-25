@@ -7,7 +7,7 @@ exports[`renders correctly 1`] = `
   >
     <a
       class="item"
-      href="/study/undefined/basic-info"
+      href="/study/undefined/basic-info/info"
     >
       Basic Info
     </a>

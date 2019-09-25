@@ -38,6 +38,16 @@ body {
   box-shadow: none !important;
 }
 
+.readOnlyField {
+  margin-bottom: 0px !important;
+  div {
+    input {
+      border-width: 0px 0px 1px 0px !important;
+      margin-bottom: 0px !important;
+    }
+  }
+}
+
 .pb-0 {
   padding-bottom: 0px !important;
 }
@@ -52,6 +62,10 @@ body {
 
 .ml-10 {
   margin-left: 10px !important;
+}
+
+.mb-15 {
+  margin-bottom: 15px !important;
 }
 
 .smallLabel {
@@ -119,6 +133,10 @@ body {
 .max-h-500 {
   max-height: 500px;
   overflow: hidden;
+}
+
+.x-scroll {
+  overflow-x: scroll;
 }
 
 .text-wrap-75 {

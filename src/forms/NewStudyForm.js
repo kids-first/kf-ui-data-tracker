@@ -1,17 +1,27 @@
 import React, {useState, Fragment} from 'react';
 import {Switch, Route} from 'react-router-dom';
 import PropTypes from 'prop-types';
-import {Form, Segment, Message, Step} from 'semantic-ui-react';
+import {Form, Segment, Message, Step, Button, Header} from 'semantic-ui-react';
 import {Formik} from 'formik';
-import {InfoStep, ExternalStep, GrantStep} from './StudyFormSteps';
+import {InfoStep, ExternalStep, LogisticsStep} from './StudyFormSteps';
 
-const NewStudyForm = ({submitValue, apiErrors, history}) => {
+const NewStudyForm = ({
+  submitValue,
+  apiErrors,
+  studyNode,
+  newStudy,
+  setEditing,
+  editing,
+  history,
+  isAdmin,
+}) => {
   const [confirmOpen, setConfirmOpen] = useState(false);
   const [workflowType, setSelection] = useState([
     'bwa_mem',
     'gatk_haplotypecaller',
   ]);
   const [focused, setFocused] = useState('');
+  const [foldDescription, setFoldDescription] = useState(true);
   const STUDY_STEPS = [
     {
       title: 'Info',
@@ -31,14 +41,24 @@ const NewStudyForm = ({submitValue, apiErrors, history}) => {
       title: 'Logistics',
       desc: 'Scheduling & Collection',
       icon: 'calendar check',
-      comp: GrantStep,
+      comp: LogisticsStep,
       href: 'logistics',
     },
   ];
-  const newStudy = true;
-  return (
-    <Formik
-      initialValues={{
+  const initialValues = studyNode
+    ? {
+        externalId: studyNode.externalId || '',
+        name: studyNode.name || '',
+        shortName: studyNode.shortName || '',
+        description: studyNode.description || '',
+        releaseDate: studyNode.releaseDate || '',
+        anticipatedSamples: studyNode.anticipatedSamples || 0,
+        awardeeOrganization: studyNode.awardeeOrganization || '',
+        attribution: studyNode.attribution || '',
+        version: studyNode.version || '',
+        bucket: studyNode.bucket || '',
+      }
+    : {
         externalId: '',
         name: '',
         shortName: '',
@@ -48,7 +68,10 @@ const NewStudyForm = ({submitValue, apiErrors, history}) => {
         attribution: '',
         anticipatedSamples: 0,
         awardeeOrganization: '',
-      }}
+      };
+  return (
+    <Formik
+      initialValues={initialValues}
       validate={values => {
         let errors = {};
         if (!values.externalId) {
@@ -69,16 +92,59 @@ const NewStudyForm = ({submitValue, apiErrors, history}) => {
       }}
       onSubmit={(values, {setSubmitting}) => {
         setSubmitting(false);
-        setConfirmOpen(false);
         var inputObject = values;
-        if (values.releaseDate.length === 0) {
+        if (values.releaseDate != null && values.releaseDate.length === 0) {
           inputObject.releaseDate = null;
         }
-        submitValue({input: inputObject, workflowType: workflowType});
+        if (newStudy) {
+          setConfirmOpen(false);
+          submitValue({input: inputObject, workflowType: workflowType});
+        } else {
+          setEditing(false);
+          submitValue(values);
+        }
       }}
     >
       {formikProps => (
         <Fragment>
+          {!newStudy && (
+            <Header as="h2" className="mt-6" floated="left">
+              Study Basic Info
+            </Header>
+          )}
+          {!newStudy && isAdmin && editing && (
+            <Button.Group floated="right" size="small">
+              <Button
+                primary
+                type="submit"
+                disabled={
+                  Object.keys(formikProps.errors).length > 0 ||
+                  formikProps.values.name.length === 0 ||
+                  formikProps.values.externalId.length === 0
+                }
+                onClick={() => formikProps.handleSubmit()}
+                content="SAVE"
+              />
+              <Button
+                type="button"
+                onClick={() => {
+                  formikProps.handleReset();
+                  setEditing(false);
+                }}
+                content="CANCEL"
+              />
+            </Button.Group>
+          )}
+          {!newStudy && isAdmin && !editing && (
+            <Button
+              floated="right"
+              size="small"
+              primary
+              type="button"
+              onClick={() => setEditing(true)}
+              content="EDIT"
+            />
+          )}
           {apiErrors && (
             <Message
               negative
@@ -87,14 +153,24 @@ const NewStudyForm = ({submitValue, apiErrors, history}) => {
               content={apiErrors}
             />
           )}
-
           <Step.Group attached="top" fluid widths={3}>
             {STUDY_STEPS.map(step => (
               <Step
                 link
                 key={STUDY_STEPS.indexOf(step)}
                 active={history.location.pathname.endsWith(step.href)}
-                onClick={() => history.push('/study/new-study/' + step.href)}
+                onClick={() => {
+                  if (newStudy) {
+                    history.push('/study/new-study/' + step.href);
+                  } else {
+                    history.push(
+                      '/study/' +
+                        history.location.pathname.split('/')[2] +
+                        '/basic-info/' +
+                        step.href,
+                    );
+                  }
+                }}
                 icon={step.icon}
                 title={step.title}
                 description={step.desc}
@@ -107,7 +183,14 @@ const NewStudyForm = ({submitValue, apiErrors, history}) => {
                 {STUDY_STEPS.map(step => (
                   <Route
                     key={STUDY_STEPS.indexOf(step)}
-                    path={'/study/new-study/' + step.href}
+                    path={
+                      newStudy
+                        ? '/study/new-study/' + step.href
+                        : '/study/' +
+                          history.location.pathname.split('/')[2] +
+                          '/basic-info/' +
+                          step.href
+                    }
                     render={() =>
                       step.comp({
                         newStudy,
@@ -119,6 +202,9 @@ const NewStudyForm = ({submitValue, apiErrors, history}) => {
                         setConfirmOpen,
                         confirmOpen,
                         history,
+                        editing,
+                        foldDescription,
+                        setFoldDescription,
                       })
                     }
                   />
