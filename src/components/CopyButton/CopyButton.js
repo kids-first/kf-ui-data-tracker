@@ -13,15 +13,14 @@ const CopyButton = ({
   textToCopy,
   icon = 'copy',
   tooltip = 'Copy',
+  position = 'top left',
   ...props
 }) => {
   const [copied, setCopied] = useState(false);
   return (
     <Popup
       inverted
-      position="top left"
-      size="mini"
-      className="CopyButton--popup"
+      position={position}
       trigger={
         <CopyToClipboard
           text={text || textToCopy}

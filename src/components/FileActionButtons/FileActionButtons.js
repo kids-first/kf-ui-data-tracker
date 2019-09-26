@@ -23,20 +23,29 @@ const FileActionButtons = ({
           node.downloadUrl +
           `/version/${node.versions.edges.sort(createDateSort)[0].node.kfId}`
         }
-        icon="share"
         basic="very"
         compact="very"
-        tooltip="copy download link"
+        position="top right"
+        tooltip="Copy download link"
       />
-      <Button
-        basic
-        compact="very"
+      <Popup
+        inverted
+        position="top right"
         icon="download"
-        onClick={e => {
-          e.stopPropagation();
-          downloadFile(studyId, node.kfId, null, downloadFileMutation);
-        }}
+        content="Download latest version"
+        trigger={
+          <Button
+            basic
+            compact="very"
+            icon="download"
+            onClick={e => {
+              e.stopPropagation();
+              downloadFile(studyId, node.kfId, null, downloadFileMutation);
+            }}
+          />
+        }
       />
+
       <Popup
         trigger={
           <Button
