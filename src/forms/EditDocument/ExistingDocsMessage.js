@@ -22,7 +22,6 @@ const ExistingDocsMessage = ({
       </strong>
       in this study.
       <details>
-        <sumamry>Show Similar</sumamry>
         <List>
           {similarStudyDocs.matches.map(doc => (
             <List.Item>
