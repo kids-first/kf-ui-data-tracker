@@ -9,7 +9,7 @@ import {
   downloadFile,
   lengthLimit,
 } from '../../common/fileUtils';
-import {Label, Icon, Table} from 'semantic-ui-react';
+import {Label, Icon, Table, Popup} from 'semantic-ui-react';
 /**
  * Displays single version item from the list
  */
@@ -46,7 +46,16 @@ const VersionItem = ({
             </Table.Cell>
           ) : (
             <Table.Cell verticalAlign="middle" textAlign="center">
-              <Label circular size="mini" empty color={labelColor} />
+              <Popup
+                inverted
+                position="left center"
+                size="small"
+                content={versionState[versionNode.state].title}
+                key={versionState[versionNode.state].title}
+                trigger={
+                  <Label circular size="mini" empty color={labelColor} />
+                }
+              />
             </Table.Cell>
           )}
 
