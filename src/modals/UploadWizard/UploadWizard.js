@@ -208,5 +208,3 @@ export default graphql(CREATE_VERSION, {
     refetchQueries: [{query: GET_STUDY_BY_ID, variables: {kfId: studyId}}],
   }),
 })(UploadWizard);
-
-// export default UploadWizard;

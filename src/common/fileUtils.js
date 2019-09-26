@@ -76,42 +76,6 @@ export const versionState = {
   UPD: {title: 'Updated', labelColor: 'blue'},
 };
 
-// Store event type title and color
-export const eventType = {
-  SF_CRE: {
-    title: 'Study File Created',
-    iconName: 'add',
-    iconColor: 'green',
-  },
-  SF_UPD: {
-    title: 'Study File Updated',
-    iconName: 'refresh',
-    iconColor: 'yellow',
-  },
-  SF_DEL: {
-    title: 'Study File Deleted',
-    iconName: 'delete',
-    iconColor: 'red',
-  },
-  FV_CRE: {
-    title: 'File Version Created',
-    iconName: 'add',
-    iconColor: 'green',
-  },
-  FV_UPD: {
-    title: 'File Version Updated',
-    iconName: 'refresh',
-    iconColor: 'yellow',
-  },
-  SD_CRE: {title: 'Study Created', iconName: 'add', iconColor: 'green'},
-  SD_UPD: {
-    title: 'Study Updated',
-    iconName: 'refresh',
-    iconColor: 'yellow',
-  },
-  OTH: {title: 'Other', iconName: 'question', iconColor: 'blue'},
-};
-
 // Sort file versions based on the version createdAt date (Latest first)
 export const fileSortedVersions = fileNode => {
   if (fileNode && fileNode.versions && fileNode.versions.edges.length > 0) {
