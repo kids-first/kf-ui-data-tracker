@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {sortFilesBySimilarity} from '../../common/fileUtils';
+import {existingDocsSimilarityThreshold} from '../../common/globals';
 import {Message, List, Icon, Button} from 'semantic-ui-react';
 
 const ExistingDocsMessage = ({
@@ -8,31 +9,20 @@ const ExistingDocsMessage = ({
   errors,
   setShowDialog,
 }) => {
-  const [showSimilar, setShowSimilar] = useState(false);
   const similarStudyDocs = sortFilesBySimilarity(
     {name: fileNameInput},
     existingDocs,
-    0.33,
+    existingDocsSimilarityThreshold,
   );
   const SimilarTitleContent = () => (
     <>
-      We found
+      We found &nbsp;
       <strong>
-        {similarStudyDocs.matches.length ? similarStudyDocs.matches.length : ''}{' '}
-        similar document titles
-      </strong>{' '}
+        {similarStudyDocs.matches.length}&nbsp; similar document titles &nbsp;
+      </strong>
       in this study.
-      <a
-        href=" "
-        onClick={e => {
-          e.preventDefault();
-          setShowSimilar(!showSimilar);
-        }}
-      >
-        {' '}
-        {!showSimilar ? 'Show' : 'Hide'} Similar
-      </a>
-      {showSimilar && (
+      <details>
+        <sumamry>Show Similar</sumamry>
         <List>
           {similarStudyDocs.matches.map(doc => (
             <List.Item>
@@ -46,7 +36,7 @@ const ExistingDocsMessage = ({
             </List.Item>
           ))}
         </List>
-      )}
+      </details>
     </>
   );
 
