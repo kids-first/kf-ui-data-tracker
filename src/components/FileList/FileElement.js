@@ -85,7 +85,9 @@ const FileAttributes = ({
         </List.Content>
       </List.Item>
       <List.Item>
-        <List.Content>{fileVersions} versions </List.Content>
+        <List.Content>
+          {fileVersions} version{fileVersions > 1 && 's'}{' '}
+        </List.Content>
       </List.Item>
       <List.Item>
         <List.Content>{fileSize}</List.Content>
