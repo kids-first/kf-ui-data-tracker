@@ -1,8 +1,12 @@
 /* eslint-disable no-useless-escape */
 import * as stringSimilarity from 'string-similarity';
 import {sortFilesBySimilarity} from '../../common/fileUtils';
+import {
+  STUDY_DOCS_SIMILARITY_THRESHOLD,
+  DOC_TITLE_FILENAME_SIMILARITY_THRESHOLD,
+} from '../../common/globals';
 
-const MIN_SIMILARITY = 0.65;
+const MIN_SIMILARITY = DOC_TITLE_FILENAME_SIMILARITY_THRESHOLD;
 const DOC_NAME_REGEXS = [
   /(new)|(final)|(modified)|(saved?)|(updated?)|(edit)|(\([0-9]\))|(\[[0-9]\])/, // black listed words
   /\.[a-z]{2,}/, // file extensions
@@ -34,7 +38,7 @@ const validate = ({file_name}, fileNode, studyFiles = []) => {
   const similarDocs = sortFilesBySimilarity(
     {name: DOC_NAME_INPUT},
     studyFiles,
-    0.33,
+    STUDY_DOCS_SIMILARITY_THRESHOLD,
   );
 
   const uploadedFileSimilarity = stringSimilarity.compareTwoStrings(
@@ -42,7 +46,6 @@ const validate = ({file_name}, fileNode, studyFiles = []) => {
     cleanFileName,
   );
 
-  // more than a quarter 75% of the inputed Document Title bigrams matches names of
   //existing study files
   if (similarDocs && similarDocs.matches.length > 0)
     errors.file_name.existing_similarity = true;

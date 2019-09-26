@@ -1,6 +1,6 @@
 import React from 'react';
 import {sortFilesBySimilarity} from '../../common/fileUtils';
-import {existingDocsSimilarityThreshold} from '../../common/globals';
+import {STUDY_DOCS_SIMILARITY_THRESHOLD} from '../../common/globals';
 import {Message, List, Icon, Button} from 'semantic-ui-react';
 
 const ExistingDocsMessage = ({
@@ -12,7 +12,7 @@ const ExistingDocsMessage = ({
   const similarStudyDocs = sortFilesBySimilarity(
     {name: fileNameInput},
     existingDocs,
-    existingDocsSimilarityThreshold,
+    STUDY_DOCS_SIMILARITY_THRESHOLD,
   );
   const SimilarTitleContent = () => (
     <>
