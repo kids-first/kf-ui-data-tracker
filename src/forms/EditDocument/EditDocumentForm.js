@@ -141,7 +141,12 @@ const EditDocumentForm = React.forwardRef(
                 </Form.Field>
                 {submitButtons &&
                   submitButtons(
-                    Object.values(values).every(x => Boolean(x !== undefined)),
+                    Object.values(values).every(x =>
+                      Boolean(x !== undefined),
+                    ) ||
+                      Object.values(errors.file_name || {}).some(
+                        x => x != null,
+                      ),
                     onUploading,
                   )}
               </Form>
