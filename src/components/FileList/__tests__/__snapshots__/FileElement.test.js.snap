@@ -7,14 +7,19 @@ exports[`renders correctly 1`] = `
       <tr
         class="cursor-pointer"
         data-testid="file-item"
+        style="background-color: inherit;"
       >
         <td
-          class="collapsing single line center aligned"
+          class="center aligned"
         >
           <div
-            class="ui orange tiny basic label"
+            class="ui header"
           >
-            Pending review
+            <div
+              class="ui orange tiny basic label"
+            >
+              Pending review
+            </div>
           </div>
         </td>
         <td
@@ -23,7 +28,11 @@ exports[`renders correctly 1`] = `
           <span
             class="ui medium header"
           >
-            organization.jpeg
+            <a
+              href="/study/undefined/documents/SF_5ZPEM167"
+            >
+              organization.jpeg
+            </a>
           </span>
           <p
             class="noMargin"
@@ -41,12 +50,10 @@ exports[`renders correctly 1`] = `
               <div
                 class="middle aligned content"
               >
-                 
                 <i
                   aria-hidden="true"
                   class="grey hospital small icon"
                 />
-                 
                 Clinical/Phenotype Data
               </div>
             </div>
@@ -128,14 +135,19 @@ exports[`renders loading state 1`] = `
       <tr
         class="cursor-pointer"
         data-testid="file-item"
+        style="background-color: inherit;"
       >
         <td
-          class="collapsing single line center aligned"
+          class="center aligned"
         >
           <div
-            class="ui orange tiny basic label"
+            class="ui header"
           >
-            Pending review
+            <div
+              class="ui orange tiny basic label"
+            >
+              Pending review
+            </div>
           </div>
         </td>
         <td
@@ -144,7 +156,11 @@ exports[`renders loading state 1`] = `
           <span
             class="ui medium header"
           >
-            organization.jpeg
+            <a
+              href="/study/undefined/documents/SF_5ZPEM167"
+            >
+              organization.jpeg
+            </a>
           </span>
           <p
             class="noMargin"
@@ -162,12 +178,10 @@ exports[`renders loading state 1`] = `
               <div
                 class="middle aligned content"
               >
-                 
                 <i
                   aria-hidden="true"
                   class="grey hospital small icon"
                 />
-                 
                 Clinical/Phenotype Data
               </div>
             </div>
