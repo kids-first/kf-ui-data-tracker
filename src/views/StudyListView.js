@@ -54,7 +54,13 @@ const StudyListView = ({
         )}
       </Container>
     );
-  return <StudyList studyList={studyList} loading={loading} />;
+  return (
+    <StudyList
+      studyList={studyList}
+      loading={loading}
+      roles={myProfile ? myProfile.roles : []}
+    />
+  );
 };
 
 export default compose(
