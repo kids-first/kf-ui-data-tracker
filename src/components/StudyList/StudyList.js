@@ -106,7 +106,20 @@ const StudyList = ({studyList, loading, activeView = 'grid', user}) => {
               <StudyTable
                 loading={loading}
                 studyList={filteredStudyList()}
-                exclude={['createdAt', 'modifiedAt']}
+                exclude={[
+                  'createdAt',
+                  'modifiedAt',
+                  'bucket',
+                  'attribution',
+                  'dataAccessAuthority',
+                  'externalId',
+                  'releaseStatus',
+                  'version',
+                  'releaseDate',
+                  'description',
+                  'anticipatedSamples',
+                  'awardeeOrganization',
+                ]}
               />
             )}
           </Grid.Column>
