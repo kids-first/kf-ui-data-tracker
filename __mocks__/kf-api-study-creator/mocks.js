@@ -67,7 +67,7 @@ export const mocks = [
       query: UPDATE_FILE,
       variables: {
         kfId: 'SF_5ZPEM167',
-        name: 'mynewfile.txt',
+        name: 'foo bar file',
         description: 'Some description here',
         fileType: 'CLN',
       },
@@ -85,6 +85,7 @@ export const mocks = [
     },
     result: updateVersion,
   },
+
   {
     request: {
       query: CREATE_VERSION,

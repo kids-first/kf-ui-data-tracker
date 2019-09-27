@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from 'react-testing-library';
-import EditDocumentForm from './EditDocumentForm';
+import EditDocumentForm from '../EditDocumentForm';
 
 it('renders correctly for annotating new file before upload', () => {
   const cancelMock = jest.fn();

@@ -4,7 +4,7 @@
       "file": {
         "id": "f1",
         "kfId": "SF_5ZPEM167",
-        "name": "mynewfile.txt",
+        "name": "foo bar file",
         "description": "Some description here",
         "fileType": "CLN",
         "downloadUrl": "http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167",

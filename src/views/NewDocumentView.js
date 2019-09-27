@@ -1,19 +1,28 @@
 import React, {useState} from 'react';
 import {graphql, compose} from 'react-apollo';
-import {EditDocumentForm} from '../forms';
+import EditDocumentForm from '../forms/EditDocument/EditDocumentForm';
 import {CREATE_FILE} from '../state/mutations';
-import {GET_STUDY_BY_ID} from '../state/queries';
+import {GET_STUDY_BY_ID, MY_PROFILE} from '../state/queries';
 import {Message, Segment, Container, Button, Header} from 'semantic-ui-react';
 import {lengthLimit} from '../common/fileUtils';
+
 /**
  * The NewDocumentView displays a form to collect details about a new file.
  * It expects that the user lands on the page after being forwarded from a
  * file browser dialog and a file present in `location.state.file` as
  * populated by the router (eg: history.push('/new', {state: <File>}) )
  */
-const NewDocumentView = ({match, history, location, createDocument}) => {
+const NewDocumentView = ({
+  match,
+  history,
+  location,
+  createDocument,
+  user,
+  study,
+}) => {
   // Tracks any error state reported from the server
   const [errors, setErrors] = useState('');
+  const studyFiles = study.studyByKfId ? study.studyByKfId.files.edges : [];
 
   // If the user landed here without a file, they probably got here from
   // some external page. We'll send them back to the study's file list view.
@@ -23,6 +32,7 @@ const NewDocumentView = ({match, history, location, createDocument}) => {
   const handleSubmit = (fileName, fileType, fileDescription) => {
     const studyId = match.params.kfId;
     const file = location.state.file;
+
     createDocument({
       variables: {
         file,
@@ -39,7 +49,9 @@ const NewDocumentView = ({match, history, location, createDocument}) => {
         setErrors(err.message);
       });
   };
-
+  const isAdmin = !user.loading
+    ? user.myProfile.roles.includes('ADMIN')
+    : false;
   return (
     <Container as={Segment} vertical basic>
       <Container as={Segment} vertical basic>
@@ -66,11 +78,13 @@ const NewDocumentView = ({match, history, location, createDocument}) => {
         </Segment>
         <Container as={Segment} padded="very">
           <EditDocumentForm
-            /* We will allow any user to select fields for new documents,
-             * editing existing documents requires the user to be admin */
-            isAdmin={true}
+            studyFiles={studyFiles}
+            isAdmin={isAdmin}
+            fileNode={location.state.file}
             handleSubmit={handleSubmit}
             errors={errors}
+            history={history}
+            showFieldHints={true}
             submitButtons={(disabled, onUploading) => (
               <Segment vertical basic compact>
                 <Button
@@ -108,5 +122,10 @@ export default compose(
         {query: GET_STUDY_BY_ID, variables: {kfId: match.params.kfId}},
       ],
     }),
-  })
+  }),
+  graphql(GET_STUDY_BY_ID, {
+    name: 'study',
+    options: props => ({variables: {kfId: props.match.params.kfId}}),
+  }),
+  graphql(MY_PROFILE, {name: 'user'}),
 )(NewDocumentView);
