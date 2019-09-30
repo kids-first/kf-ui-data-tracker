@@ -41,3 +41,11 @@ export const countProjectNotification = study => {
   }
   return counts;
 };
+
+// Count the number of "changes needed" files for a given study and return the notification number
+export const countFileNotification = study => {
+  var counts = 0;
+  counts = study.files.edges.filter(obj => fileLatestStatus(obj.node) === 'CHN')
+    .length;
+  return counts;
+};
