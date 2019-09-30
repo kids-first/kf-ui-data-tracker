@@ -1,7 +1,7 @@
 import React from 'react';
 import TimeAgo from 'react-timeago';
 import {Link, withRouter} from 'react-router-dom';
-import {Table, Icon, Popup} from 'semantic-ui-react';
+import {Table, Icon} from 'semantic-ui-react';
 import FileCounts from '../StudyInfo/FileCounts';
 import CavaticaCounts from '../StudyInfo/CavaticaCounts';
 import {longDate} from '../../common/dateUtils';
@@ -29,39 +29,25 @@ const TableValue = ({row, col, title}) => {
           live={false}
         />
       );
-    case 'kfId':
+    case 'description':
       return (
-        <>
-          {row[col].kfId}
-          <Popup
-            inverted
-            position="top center"
-            size="small"
-            content={
-              trackedStudyFields.length -
-              row[col].missingValue +
-              '/' +
-              trackedStudyFields.length +
-              ' complete'
+        <Link
+          to={`/study/${title}/basic-info/info`}
+          className="ml-10"
+          onClick={e => e.stopPropagation()}
+        >
+          <Icon
+            name={
+              row[col].missingValue > 0 ? 'clipboard list' : 'clipboard check'
             }
-            trigger={
-              <Link
-                to={`/study/${title}/basic-info/info`}
-                className="ml-10"
-                onClick={e => e.stopPropagation()}
-              >
-                <Icon
-                  name={
-                    row[col].missingValue > 0
-                      ? 'clipboard list'
-                      : 'clipboard check'
-                  }
-                  color={row[col].missingValue > 0 ? 'red' : 'grey'}
-                />
-              </Link>
-            }
+            color={row[col].missingValue > 0 ? 'red' : 'grey'}
           />
-        </>
+          {trackedStudyFields.length -
+            row[col].missingValue +
+            '/' +
+            trackedStudyFields.length +
+            ' complete'}
+        </Link>
       );
     default:
       return row[col];
@@ -89,27 +75,33 @@ const StudyTable = ({
   // Formats the study objects and computes file state counts
   const studies = studyList.map(({node}) =>
     cols.reduce((row, col) => {
-      row[col] =
-        col !== 'kfId'
-          ? node[col]
-          : {
-              kfId: node.kfId,
-              missingValue: isAdmin ? countStudyNotification(node) : 0,
-              missingProject: isAdmin ? countProjectNotification(node) : 0,
-              requiredFileChanges: isAdmin ? countFileNotification(node) : 0,
-            };
+      if (col === 'description') {
+        row[col] = {
+          missingValue: isAdmin ? countStudyNotification(node) : 0,
+          missingProject: isAdmin ? countProjectNotification(node) : 0,
+          requiredFileChanges: isAdmin ? countFileNotification(node) : 0,
+        };
+      } else if (col === 'name') {
+        row[col] =
+          node.name && node.name.length > 0 ? node.name : node.shortName;
+      } else {
+        row[col] = node[col];
+      }
       return row;
     }, {}),
   );
 
   const tableHeaderCell = text => {
-    const headerText =
-      text === 'kfId'
-        ? 'Study ID'
-        : text
-            .replace(/([A-Z])/g, ' $1')
-            .charAt(0)
-            .toUpperCase() + text.replace(/([A-Z])/g, ' $1').slice(1);
+    var headerText =
+      text
+        .replace(/([A-Z])/g, ' $1')
+        .charAt(0)
+        .toUpperCase() + text.replace(/([A-Z])/g, ' $1').slice(1);
+    if (text === 'kfId') {
+      headerText = 'ID';
+    } else if (text === 'description') {
+      headerText = 'Info';
+    }
     return <Table.HeaderCell key={text}>{headerText}</Table.HeaderCell>;
   };
   return (
@@ -123,12 +115,12 @@ const StudyTable = ({
             tabIndex="0"
             key={idx}
             onClick={() => {
-              if (clickable) history.push(`/study/${row.kfId.kfId}/documents`);
+              if (clickable) history.push(`/study/${row.kfId}/documents`);
             }}
           >
             {cols.map((col, idx) => (
               <Table.Cell key={idx}>
-                <TableValue row={row} col={col} title={row.kfId.kfId} />
+                <TableValue row={row} col={col} title={row.kfId} />
               </Table.Cell>
             ))}
           </Table.Row>

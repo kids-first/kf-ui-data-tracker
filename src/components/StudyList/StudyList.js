@@ -108,6 +108,7 @@ const StudyList = ({studyList, loading, activeView = 'grid', roles}) => {
                 loading={loading}
                 studyList={filteredStudyList()}
                 exclude={[
+                  'shortName',
                   'createdAt',
                   'modifiedAt',
                   'bucket',
@@ -117,7 +118,6 @@ const StudyList = ({studyList, loading, activeView = 'grid', roles}) => {
                   'releaseStatus',
                   'version',
                   'releaseDate',
-                  'description',
                   'anticipatedSamples',
                   'awardeeOrganization',
                 ]}
