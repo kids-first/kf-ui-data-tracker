@@ -49,11 +49,7 @@ const Routes = () => (
       />
       <PrivateRoute path="/study/:kfId/basic-info" component={StudyInfoView} />
       <PrivateRoute exact path="/study/:kfId/dashboard" component={EmptyView} />
-      <PrivateRoute
-        exact
-        path="/study/:kfId/cavatica"
-        component={CavaticaBixView}
-      />
+      <PrivateRoute path="/study/:kfId/cavatica" component={CavaticaBixView} />
       <PrivateRoute exact path="/study/:kfId/logs" component={LogsView} />
       <AdminRoute exact path="/tokens" component={TokensListView} />
       <AdminRoute
@@ -61,11 +57,7 @@ const Routes = () => (
         path="/cavatica-projects"
         component={CavaticaProjectsView}
       />
-      <AdminRoute
-        exact
-        path="/events"
-        component={EventsView}
-      />
+      <AdminRoute exact path="/events" component={EventsView} />
     </Switch>
   </Fragment>
 );
