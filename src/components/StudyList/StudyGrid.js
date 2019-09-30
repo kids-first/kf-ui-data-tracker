@@ -1,6 +1,11 @@
 import React from 'react';
 import {Card, Placeholder} from 'semantic-ui-react';
 import StudyCard from './StudyCard';
+import {
+  countStudyNotification,
+  countProjectNotification,
+  countFileNotification,
+} from '../../common/notificationUtils';
 
 const GridSkeleton = () => (
   <Card.Group stackable itemsPerRow={4}>
@@ -28,7 +33,7 @@ const GridSkeleton = () => (
   </Card.Group>
 );
 
-const StudyGrid = ({studyList, loading}) => {
+const StudyGrid = ({studyList, loading, isAdmin}) => {
   if (loading) return <GridSkeleton />;
   return (
     <Card.Group stackable itemsPerRow={4}>
@@ -39,6 +44,10 @@ const StudyGrid = ({studyList, loading}) => {
           body={node.node.name || node.node.shortName}
           lastUpdate={new Date(node.node.modifiedAt)}
           files={node.node.files.edges}
+          projects={node.node.projects.edges}
+          missingValue={isAdmin ? countStudyNotification(node.node) : 0}
+          missingProject={isAdmin ? countProjectNotification(node.node) : 0}
+          requiredFileChanges={isAdmin ? countFileNotification(node.node) : 0}
         />
       ))}
     </Card.Group>
