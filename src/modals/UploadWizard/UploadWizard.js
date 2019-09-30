@@ -9,6 +9,7 @@ import {
 } from './UploadSteps';
 import {graphql} from 'react-apollo';
 
+import {GET_STUDY_BY_ID} from '../../state/queries';
 import {CREATE_VERSION} from '../../state/mutations';
 import {sortFilesBySimilarity} from '../../common/fileUtils';
 
@@ -98,6 +99,9 @@ const UploadWizard = ({
       await createVersion({
         variables: {file, fileId: fileToUpdate.kfId, description},
       });
+      // TODO: maybe make this part of local state
+      sessionStorage.setItem('kf_updated_docs', fileToUpdate.kfId);
+
       setUploading(false);
       setIsTimerActive(true);
       setStep(3);
@@ -205,4 +209,7 @@ UploadWizard.propTypes = {
 
 export default graphql(CREATE_VERSION, {
   name: 'createVersion',
+  options: ({studyId}) => ({
+    refetchQueries: [{query: GET_STUDY_BY_ID, variables: {kfId: studyId}}],
+  }),
 })(UploadWizard);

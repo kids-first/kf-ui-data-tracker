@@ -73,6 +73,7 @@ export const versionState = {
   APP: {title: 'Approved', labelColor: 'teal'},
   CHN: {title: 'Changes needed', labelColor: 'red'},
   PRC: {title: 'Processed', labelColor: 'blue'},
+  UPD: {title: 'Updated', labelColor: 'blue'},
 };
 
 // Sort file versions based on the version createdAt date (Latest first)

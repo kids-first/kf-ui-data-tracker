@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
-import {withRouter} from 'react-router-dom';
+import {withRouter, Link} from 'react-router-dom';
 import TimeAgo from 'react-timeago';
 import Badge from '../Badge/Badge';
 import {Header, Table, Icon, List, Responsive} from 'semantic-ui-react';
@@ -13,7 +13,34 @@ import {
   fileLatestSize,
   lengthLimit,
 } from '../../common/fileUtils';
+
 import {longDate} from '../../common/dateUtils';
+
+const useRecentlyUpdated = (latestDate, fileId) => {
+  const [justUpdated, setJustUpdated] = useState(false);
+
+  useEffect(() => {
+    let FIVE_MIN = 300000;
+    let docs = sessionStorage.getItem('kf_updated_docs');
+    // make sure we only select one row
+    if (fileId === docs) {
+      // make sure that row was updated less than 5 minutes ago
+      if (new Date().getTime() - Date.parse(latestDate) < FIVE_MIN) {
+        setJustUpdated(true);
+        setTimeout(() => {
+          // reset after 7seconds
+          setJustUpdated(false);
+          sessionStorage.removeItem('kf_updated_docs');
+        }, 7000);
+      }
+    }
+    return () => {
+      setJustUpdated(false);
+    };
+  }, [latestDate, fileId]);
+
+  return justUpdated;
+};
 
 /**
  * Displays a list of file attributes
@@ -24,44 +51,49 @@ const FileAttributes = ({
   fileType,
   horizontal,
   fileVersions,
-}) => (
-  <List horizontal={horizontal} link>
-    <List.Item>
-      <List.Content verticalAlign="middle">
-        {' '}
-        <Icon
-          name={`${fileType.icon || 'question'}`}
-          size="small"
-          color="grey"
-        />{' '}
-        {fileType.title}
-      </List.Content>
-    </List.Item>
+  fileKfID,
+}) => {
+  const justUpdated = useRecentlyUpdated(latestDate, fileKfID);
 
-    <List.Item>
-      <List.Content>
-        {latestDate ? (
-          <>
-            Modified{' '}
-            <TimeAgo
-              date={latestDate}
-              live={false}
-              title={longDate(latestDate)}
-            />
-          </>
-        ) : (
-          'Unknown time'
-        )}
-      </List.Content>
-    </List.Item>
-    <List.Item>
-      <List.Content>{fileVersions} versions </List.Content>
-    </List.Item>
-    <List.Item>
-      <List.Content>{fileSize}</List.Content>
-    </List.Item>
-  </List>
-);
+  return (
+    <List horizontal={horizontal} link={!justUpdated}>
+      <List.Item>
+        <List.Content verticalAlign="middle">
+          <Icon
+            name={`${fileType.icon || 'question'}`}
+            size="small"
+            color="grey"
+          />
+          {fileType.title}
+        </List.Content>
+      </List.Item>
+
+      <List.Item>
+        <List.Content>
+          {justUpdated ? <Icon name="refresh" /> : null}
+          {latestDate ? (
+            <>
+              Modified{' '}
+              <TimeAgo
+                date={latestDate}
+                live={false}
+                title={longDate(latestDate)}
+              />
+            </>
+          ) : (
+            'Unknown time'
+          )}
+        </List.Content>
+      </List.Item>
+      <List.Item>
+        <List.Content>{fileVersions} versions </List.Content>
+      </List.Item>
+      <List.Item>
+        <List.Content>{fileSize}</List.Content>
+      </List.Item>
+    </List>
+  );
+};
 
 FileAttributes.propTypes = {
   /** The kf id of the file */
@@ -96,24 +128,38 @@ const FileElement = ({fileNode, loading, history, match, fileListId}) => {
       : {title: 'unknown', icon: 'question'};
   const versionState =
     sortedVersions.length > 0 ? sortedVersions[0].node.state : null;
+
+  const justUpdated = useRecentlyUpdated(latestDate, fileKfID);
   return (
     <Table.Row
+      style={{backgroundColor: justUpdated ? '#f8ffff' : 'inherit'}}
       data-testid="file-item"
       className="cursor-pointer"
       onClick={() =>
         history.push(`/study/${match.params.kfId}/documents/${fileKfID}`)
       }
     >
-      <Table.Cell singleLine collapsing textAlign="center">
-        <Badge
-          state={versionState}
-          loading={loading}
-          filled={versionState === 'CHN'}
-        />
+      <Table.Cell textAlign="center">
+        <Header>
+          {justUpdated && (
+            <>
+              <Badge state="UPD" icon="refresh" className="mb-5" />
+              <br />
+            </>
+          )}
+
+          <Badge
+            state={versionState}
+            loading={loading}
+            filled={versionState === 'CHN'}
+          />
+        </Header>
       </Table.Cell>
       <Table.Cell>
         <Header size="medium" as="span">
-          {fileName}
+          <Link to={`/study/${match.params.kfId}/documents/${fileKfID}`}>
+            {fileName}
+          </Link>
         </Header>
         <p className="noMargin">
           {fileDescription ? <>{lengthLimit(fileDescription, 100)}</> : null}

@@ -70,7 +70,7 @@ const StudyFilesListView = ({
         <Grid.Column width={10}>
           <h2>Study Documents</h2>
         </Grid.Column>
-        {files.length && (
+        {files.length > 0 && (
           <Grid.Column width={6}>
             <Button
               compact

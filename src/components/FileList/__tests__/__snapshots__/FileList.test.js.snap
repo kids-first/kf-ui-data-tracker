@@ -2,304 +2,303 @@
 
 exports[`renders with files 1`] = `
 <div>
-  <div
-    class="ui basic compact left floated segment noMargin noHorizontalPadding"
+  <section
+    class="noPadding"
   >
-    <span
-      class="smallLabel"
-    >
-      Filter by:
-    </span>
     <div
-      aria-expanded="false"
-      class="ui selection dropdown"
-      role="listbox"
-      tabindex="0"
+      class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
     >
-      <div
-        aria-live="polite"
-        class="default text"
-        role="alert"
+      <span
+        class="smallLabel"
       >
-        Approval status
-      </div>
-      <i
-        aria-hidden="true"
-        class="dropdown icon"
-      />
+        Filter by:
+      </span>
       <div
-        class="menu transition"
+        aria-expanded="false"
+        class="ui selection dropdown"
+        role="listbox"
+        tabindex="0"
       >
         <div
-          aria-checked="false"
-          aria-selected="true"
-          class="selected item"
-          role="option"
-          style="pointer-events: all;"
+          aria-live="polite"
+          class="default text"
+          role="alert"
         >
-          <div
-            class="ui orange tiny basic label"
-          >
-            Pending review
-          </div>
+          Approval status
         </div>
+        <i
+          aria-hidden="true"
+          class="dropdown icon"
+        />
         <div
-          aria-checked="false"
-          aria-selected="false"
-          class="item"
-          role="option"
-          style="pointer-events: all;"
+          class="menu transition"
         >
           <div
-            class="ui teal tiny basic label"
+            aria-checked="false"
+            aria-selected="true"
+            class="selected item"
+            role="option"
+            style="pointer-events: all;"
           >
-            Approved
+            <div
+              class="ui orange tiny basic label text"
+            >
+              Pending review
+            </div>
           </div>
-        </div>
-        <div
-          aria-checked="false"
-          aria-selected="false"
-          class="item"
-          role="option"
-          style="pointer-events: all;"
-        >
           <div
-            class="ui red tiny basic label"
+            aria-checked="false"
+            aria-selected="false"
+            class="item"
+            role="option"
+            style="pointer-events: all;"
           >
-            Changes needed
+            <div
+              class="ui teal tiny basic label text"
+            >
+              Approved
+            </div>
           </div>
-        </div>
-        <div
-          aria-checked="false"
-          aria-selected="false"
-          class="item"
-          role="option"
-          style="pointer-events: all;"
-        >
           <div
-            class="ui blue tiny basic label"
+            aria-checked="false"
+            aria-selected="false"
+            class="item"
+            role="option"
+            style="pointer-events: all;"
           >
-            Processed
+            <div
+              class="ui red tiny basic label text"
+            >
+              Changes needed
+            </div>
+          </div>
+          <div
+            aria-checked="false"
+            aria-selected="false"
+            class="item"
+            role="option"
+            style="pointer-events: all;"
+          >
+            <div
+              class="ui blue tiny basic label text"
+            >
+              Processed
+            </div>
+          </div>
+          <div
+            aria-checked="false"
+            aria-selected="false"
+            class="item"
+            role="option"
+            style="pointer-events: all;"
+          >
+            <div
+              class="ui blue tiny basic label text"
+            >
+              Updated
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div
-    class="ui basic compact left floated segment noMargin noHorizontalPadding"
-  >
     <div
-      aria-expanded="false"
-      class="ui selection dropdown"
-      role="listbox"
-      tabindex="0"
+      class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
     >
       <div
-        aria-live="polite"
-        class="default text"
-        role="alert"
-      >
-        File type
-      </div>
-      <i
-        aria-hidden="true"
-        class="dropdown icon"
-      />
-      <div
-        class="menu transition"
+        aria-expanded="false"
+        class="ui selection dropdown"
+        role="listbox"
+        tabindex="0"
       >
         <div
-          aria-checked="false"
-          aria-selected="true"
-          class="selected item"
-          role="option"
-          style="pointer-events: all;"
+          aria-live="polite"
+          class="default text"
+          role="alert"
         >
-          <small
-            class="text"
-          >
-            <i
-              aria-hidden="true"
-              class="shipping icon"
-            />
-             Shipping Manifest
-          </small>
+          File type
         </div>
+        <i
+          aria-hidden="true"
+          class="dropdown icon"
+        />
         <div
-          aria-checked="false"
-          aria-selected="false"
-          class="item"
-          role="option"
-          style="pointer-events: all;"
+          class="menu transition"
         >
-          <small
-            class="text"
+          <div
+            aria-checked="false"
+            aria-selected="true"
+            class="selected item"
+            role="option"
+            style="pointer-events: all;"
           >
-            <i
-              aria-hidden="true"
-              class="hospital icon"
-            />
-             Clinical/Phenotype Data
-          </small>
-        </div>
-        <div
-          aria-checked="false"
-          aria-selected="false"
-          class="item"
-          role="option"
-          style="pointer-events: all;"
-        >
-          <small
-            class="text"
+            <small
+              class="text"
+            >
+              <i
+                aria-hidden="true"
+                class="shipping icon"
+              />
+               Shipping Manifest
+            </small>
+          </div>
+          <div
+            aria-checked="false"
+            aria-selected="false"
+            class="item"
+            role="option"
+            style="pointer-events: all;"
           >
-            <i
-              aria-hidden="true"
-              class="dna icon"
-            />
-             Sequencing Manifest
-          </small>
-        </div>
-        <div
-          aria-checked="false"
-          aria-selected="false"
-          class="item"
-          role="option"
-          style="pointer-events: all;"
-        >
-          <small
-            class="text"
+            <small
+              class="text"
+            >
+              <i
+                aria-hidden="true"
+                class="hospital icon"
+              />
+               Clinical/Phenotype Data
+            </small>
+          </div>
+          <div
+            aria-checked="false"
+            aria-selected="false"
+            class="item"
+            role="option"
+            style="pointer-events: all;"
           >
-            <i
-              aria-hidden="true"
-              class="question icon"
-            />
-             Other
-          </small>
+            <small
+              class="text"
+            >
+              <i
+                aria-hidden="true"
+                class="dna icon"
+              />
+               Sequencing Manifest
+            </small>
+          </div>
+          <div
+            aria-checked="false"
+            aria-selected="false"
+            class="item"
+            role="option"
+            style="pointer-events: all;"
+          >
+            <small
+              class="text"
+            >
+              <i
+                aria-hidden="true"
+                class="question icon"
+              />
+               Other
+            </small>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div
-    class="ui basic compact left floated segment noMargin noHorizontalPadding"
-  >
-    <span
-      class="smallLabel"
-    >
-      Sorted by:
-    </span>
     <div
-      aria-expanded="false"
-      class="ui selection dropdown"
-      role="listbox"
-      tabindex="0"
+      class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
     >
-      <div
-        aria-live="polite"
-        class="text"
-        role="alert"
+      <span
+        class="smallLabel"
       >
-        Modified date
-      </div>
-      <i
-        aria-hidden="true"
-        class="dropdown icon clear"
-      />
+        Sorted by:
+      </span>
       <div
-        class="menu transition"
+        aria-expanded="false"
+        class="ui selection dropdown"
+        role="listbox"
+        tabindex="0"
       >
         <div
-          aria-checked="false"
-          aria-selected="false"
-          class="item"
-          role="option"
-          style="pointer-events: all;"
+          aria-live="polite"
+          class="text"
+          role="alert"
         >
-          <span
-            class="text"
-          >
-            Create date
-          </span>
+          Modified date
         </div>
+        <i
+          aria-hidden="true"
+          class="dropdown icon clear"
+        />
         <div
-          aria-checked="true"
-          aria-selected="true"
-          class="active selected item"
-          role="option"
-          style="pointer-events: all;"
+          class="menu transition"
         >
-          <span
-            class="text"
+          <div
+            aria-checked="false"
+            aria-selected="false"
+            class="item"
+            role="option"
+            style="pointer-events: all;"
           >
-            Modified date
-          </span>
+            <span
+              class="text"
+            >
+              Create date
+            </span>
+          </div>
+          <div
+            aria-checked="true"
+            aria-selected="true"
+            class="active selected item"
+            role="option"
+            style="pointer-events: all;"
+          >
+            <span
+              class="text"
+            >
+              Modified date
+            </span>
+          </div>
         </div>
       </div>
+      <button
+        class="ui basic icon button"
+      >
+        <i
+          aria-hidden="true"
+          class="sort content ascending icon"
+        />
+      </button>
     </div>
-    <button
-      class="ui basic icon button"
-    >
-      <i
-        aria-hidden="true"
-        class="sort content ascending icon"
-      />
-    </button>
-  </div>
-  <div
-    class="ui basic compact right floated segment noMargin noHorizontalPadding"
-  >
     <div
-      class="ui icon input"
+      class="ui basic compact right floated segment noMargin noVerticalPadding noHorizontalPadding"
     >
-      <input
-        type="text"
-        value=""
-      />
-      <i
-        aria-hidden="true"
-        class="search icon"
-      />
+      <div
+        class="ui icon input"
+      >
+        <input
+          type="text"
+          value=""
+        />
+        <i
+          aria-hidden="true"
+          class="search icon"
+        />
+      </div>
     </div>
-  </div>
+  </section>
   <table
-    class="ui celled selectable stackable very basic very compact table"
+    class="ui selectable stackable very basic very compact table"
   >
-    <thead
-      class=""
-    >
-      <tr
-        class=""
-      >
-        <th
-          class="center aligned"
-        >
-          Approval
-        </th>
-        <th
-          class=""
-        >
-          Document Details
-        </th>
-        <th
-          class="center aligned"
-        >
-          Actions
-        </th>
-      </tr>
-    </thead>
     <tbody
       class=""
     >
       <tr
         class="cursor-pointer"
         data-testid="file-item"
+        style="background-color: inherit;"
       >
         <td
-          class="collapsing single line center aligned"
+          class="center aligned"
         >
           <div
-            class="ui orange tiny basic label"
+            class="ui header"
           >
-            Pending review
+            <div
+              class="ui orange tiny basic label"
+            >
+              Pending review
+            </div>
           </div>
         </td>
         <td
@@ -308,7 +307,11 @@ exports[`renders with files 1`] = `
           <span
             class="ui medium header"
           >
-            pattern.flac
+            <a
+              href="/study/undefined/documents/SF_JT0GRZP7"
+            >
+              pattern.flac
+            </a>
           </span>
           <p
             class="noMargin"
@@ -326,12 +329,10 @@ exports[`renders with files 1`] = `
               <div
                 class="middle aligned content"
               >
-                 
                 <i
                   aria-hidden="true"
                   class="grey hospital small icon"
                 />
-                 
                 Clinical/Phenotype Data
               </div>
             </div>
@@ -404,14 +405,19 @@ exports[`renders with files 1`] = `
       <tr
         class="cursor-pointer"
         data-testid="file-item"
+        style="background-color: inherit;"
       >
         <td
-          class="collapsing single line center aligned"
+          class="center aligned"
         >
           <div
-            class="ui orange tiny basic label"
+            class="ui header"
           >
-            Pending review
+            <div
+              class="ui orange tiny basic label"
+            >
+              Pending review
+            </div>
           </div>
         </td>
         <td
@@ -420,7 +426,11 @@ exports[`renders with files 1`] = `
           <span
             class="ui medium header"
           >
-            those.wav
+            <a
+              href="/study/undefined/documents/SF_DLXEQZV1"
+            >
+              those.wav
+            </a>
           </span>
           <p
             class="noMargin"
@@ -438,12 +448,10 @@ exports[`renders with files 1`] = `
               <div
                 class="middle aligned content"
               >
-                 
                 <i
                   aria-hidden="true"
                   class="grey question small icon"
                 />
-                 
                 unknown
               </div>
             </div>
@@ -516,14 +524,19 @@ exports[`renders with files 1`] = `
       <tr
         class="cursor-pointer"
         data-testid="file-item"
+        style="background-color: inherit;"
       >
         <td
-          class="collapsing single line center aligned"
+          class="center aligned"
         >
           <div
-            class="ui orange tiny basic label"
+            class="ui header"
           >
-            Pending review
+            <div
+              class="ui orange tiny basic label"
+            >
+              Pending review
+            </div>
           </div>
         </td>
         <td
@@ -532,7 +545,11 @@ exports[`renders with files 1`] = `
           <span
             class="ui medium header"
           >
-            force.webm
+            <a
+              href="/study/undefined/documents/SF_FPVBM0JF"
+            >
+              force.webm
+            </a>
           </span>
           <p
             class="noMargin"
@@ -550,12 +567,10 @@ exports[`renders with files 1`] = `
               <div
                 class="middle aligned content"
               >
-                 
                 <i
                   aria-hidden="true"
                   class="grey hospital small icon"
                 />
-                 
                 Clinical/Phenotype Data
               </div>
             </div>
@@ -628,14 +643,19 @@ exports[`renders with files 1`] = `
       <tr
         class="cursor-pointer"
         data-testid="file-item"
+        style="background-color: inherit;"
       >
         <td
-          class="collapsing single line center aligned"
+          class="center aligned"
         >
           <div
-            class="ui orange tiny basic label"
+            class="ui header"
           >
-            Pending review
+            <div
+              class="ui orange tiny basic label"
+            >
+              Pending review
+            </div>
           </div>
         </td>
         <td
@@ -644,7 +664,11 @@ exports[`renders with files 1`] = `
           <span
             class="ui medium header"
           >
-            hand.css
+            <a
+              href="/study/undefined/documents/SF_6JBSGVWE"
+            >
+              hand.css
+            </a>
           </span>
           <p
             class="noMargin"
@@ -662,12 +686,10 @@ exports[`renders with files 1`] = `
               <div
                 class="middle aligned content"
               >
-                 
                 <i
                   aria-hidden="true"
                   class="grey question small icon"
                 />
-                 
                 unknown
               </div>
             </div>
@@ -740,14 +762,19 @@ exports[`renders with files 1`] = `
       <tr
         class="cursor-pointer"
         data-testid="file-item"
+        style="background-color: inherit;"
       >
         <td
-          class="collapsing single line center aligned"
+          class="center aligned"
         >
           <div
-            class="ui orange tiny basic label"
+            class="ui header"
           >
-            Pending review
+            <div
+              class="ui orange tiny basic label"
+            >
+              Pending review
+            </div>
           </div>
         </td>
         <td
@@ -756,7 +783,11 @@ exports[`renders with files 1`] = `
           <span
             class="ui medium header"
           >
-            3.jpg
+            <a
+              href="/study/undefined/documents/SF_SFA9WW62"
+            >
+              3.jpg
+            </a>
           </span>
           <p
             class="noMargin"
@@ -772,12 +803,10 @@ exports[`renders with files 1`] = `
               <div
                 class="middle aligned content"
               >
-                 
                 <i
                   aria-hidden="true"
                   class="grey question small icon"
                 />
-                 
                 Other
               </div>
             </div>
@@ -850,14 +879,19 @@ exports[`renders with files 1`] = `
       <tr
         class="cursor-pointer"
         data-testid="file-item"
+        style="background-color: inherit;"
       >
         <td
-          class="collapsing single line center aligned"
+          class="center aligned"
         >
           <div
-            class="ui orange tiny basic label"
+            class="ui header"
           >
-            Pending review
+            <div
+              class="ui orange tiny basic label"
+            >
+              Pending review
+            </div>
           </div>
         </td>
         <td
@@ -866,7 +900,11 @@ exports[`renders with files 1`] = `
           <span
             class="ui medium header"
           >
-            3.jpg
+            <a
+              href="/study/undefined/documents/SF_SFA9WW01"
+            >
+              3.jpg
+            </a>
           </span>
           <p
             class="noMargin"
@@ -882,12 +920,10 @@ exports[`renders with files 1`] = `
               <div
                 class="middle aligned content"
               >
-                 
                 <i
                   aria-hidden="true"
                   class="grey question small icon"
                 />
-                 
                 Other
               </div>
             </div>
@@ -960,14 +996,19 @@ exports[`renders with files 1`] = `
       <tr
         class="cursor-pointer"
         data-testid="file-item"
+        style="background-color: inherit;"
       >
         <td
-          class="collapsing single line center aligned"
+          class="center aligned"
         >
           <div
-            class="ui orange tiny basic label"
+            class="ui header"
           >
-            Pending review
+            <div
+              class="ui orange tiny basic label"
+            >
+              Pending review
+            </div>
           </div>
         </td>
         <td
@@ -976,7 +1017,11 @@ exports[`renders with files 1`] = `
           <span
             class="ui medium header"
           >
-            3.jpg
+            <a
+              href="/study/undefined/documents/SF_SFA9WW02"
+            >
+              3.jpg
+            </a>
           </span>
           <p
             class="noMargin"
@@ -992,12 +1037,10 @@ exports[`renders with files 1`] = `
               <div
                 class="middle aligned content"
               >
-                 
                 <i
                   aria-hidden="true"
                   class="grey question small icon"
                 />
-                 
                 Other
               </div>
             </div>
@@ -1070,14 +1113,19 @@ exports[`renders with files 1`] = `
       <tr
         class="cursor-pointer"
         data-testid="file-item"
+        style="background-color: inherit;"
       >
         <td
-          class="collapsing single line center aligned"
+          class="center aligned"
         >
           <div
-            class="ui orange tiny basic label"
+            class="ui header"
           >
-            Pending review
+            <div
+              class="ui orange tiny basic label"
+            >
+              Pending review
+            </div>
           </div>
         </td>
         <td
@@ -1086,7 +1134,11 @@ exports[`renders with files 1`] = `
           <span
             class="ui medium header"
           >
-            3.jpg
+            <a
+              href="/study/undefined/documents/SF_SFA9WW03"
+            >
+              3.jpg
+            </a>
           </span>
           <p
             class="noMargin"
@@ -1102,12 +1154,10 @@ exports[`renders with files 1`] = `
               <div
                 class="middle aligned content"
               >
-                 
                 <i
                   aria-hidden="true"
                   class="grey question small icon"
                 />
-                 
                 Other
               </div>
             </div>
@@ -1180,14 +1230,19 @@ exports[`renders with files 1`] = `
       <tr
         class="cursor-pointer"
         data-testid="file-item"
+        style="background-color: inherit;"
       >
         <td
-          class="collapsing single line center aligned"
+          class="center aligned"
         >
           <div
-            class="ui orange tiny basic label"
+            class="ui header"
           >
-            Pending review
+            <div
+              class="ui orange tiny basic label"
+            >
+              Pending review
+            </div>
           </div>
         </td>
         <td
@@ -1196,7 +1251,11 @@ exports[`renders with files 1`] = `
           <span
             class="ui medium header"
           >
-            3.jpg
+            <a
+              href="/study/undefined/documents/SF_SFA9WW04"
+            >
+              3.jpg
+            </a>
           </span>
           <p
             class="noMargin"
@@ -1212,12 +1271,10 @@ exports[`renders with files 1`] = `
               <div
                 class="middle aligned content"
               >
-                 
                 <i
                   aria-hidden="true"
                   class="grey question small icon"
                 />
-                 
                 Other
               </div>
             </div>
@@ -1290,14 +1347,19 @@ exports[`renders with files 1`] = `
       <tr
         class="cursor-pointer"
         data-testid="file-item"
+        style="background-color: inherit;"
       >
         <td
-          class="collapsing single line center aligned"
+          class="center aligned"
         >
           <div
-            class="ui orange tiny basic label"
+            class="ui header"
           >
-            Pending review
+            <div
+              class="ui orange tiny basic label"
+            >
+              Pending review
+            </div>
           </div>
         </td>
         <td
@@ -1306,7 +1368,11 @@ exports[`renders with files 1`] = `
           <span
             class="ui medium header"
           >
-            4.jpg
+            <a
+              href="/study/undefined/documents/SF_AZMTRAND"
+            >
+              4.jpg
+            </a>
           </span>
           <p
             class="noMargin"
@@ -1322,12 +1388,10 @@ exports[`renders with files 1`] = `
               <div
                 class="middle aligned content"
               >
-                 
                 <i
                   aria-hidden="true"
                   class="grey question small icon"
                 />
-                 
                 Other
               </div>
             </div>

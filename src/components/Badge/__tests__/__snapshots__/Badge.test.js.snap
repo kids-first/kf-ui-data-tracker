@@ -4,9 +4,7 @@ exports[`renders badge on loading mode 1`] = `
 <div>
   <div
     class="ui grey tiny basic label"
-  >
-    Invalid
-  </div>
+  />
 </div>
 `;
 
@@ -46,6 +44,16 @@ exports[`renders badges with all available state 4`] = `
     class="ui blue tiny basic label"
   >
     Processed
+  </div>
+</div>
+`;
+
+exports[`renders badges with all available state 5`] = `
+<div>
+  <div
+    class="ui blue tiny basic label"
+  >
+    Updated
   </div>
 </div>
 `;
