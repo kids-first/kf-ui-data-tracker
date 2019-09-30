@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import {List, Icon, Popup, Label, Button} from 'semantic-ui-react';
 import {versionState} from '../../common/fileUtils';
 
-const FileCounts = ({files, title}) => {
+const FileCounts = ({files, title, history}) => {
   if (files && files.length > 0) {
     const states = files.map(
       ({node: {versions}}) => versions.edges[0].node.state,
@@ -51,11 +51,7 @@ const FileCounts = ({files, title}) => {
   } else {
     return (
       <List horizontal>
-        <List.Item
-          as={Link}
-          to={`/study/${title}/documents#upload-document`}
-          onClick={e => e.stopPropagation()}
-        >
+        <List.Item>
           <Icon color="red" name="file" />
           <Button
             basic
@@ -64,6 +60,19 @@ const FileCounts = ({files, title}) => {
             size="mini"
             icon="upload cloud"
             content="Upload"
+            as="label"
+            htmlFor="file"
+          />
+          <input
+            hidden
+            multiple
+            id="file"
+            type="file"
+            onChange={e => {
+              history.push(`/study/${title}/documents/new-document`, {
+                file: e.target.files[0],
+              });
+            }}
           />
         </List.Item>
       </List>
