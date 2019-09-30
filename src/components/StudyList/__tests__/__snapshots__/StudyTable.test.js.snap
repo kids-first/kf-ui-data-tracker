@@ -3,7 +3,7 @@
 exports[`renders correctly 1`] = `
 <div>
   <table
-    class="ui selectable striped five column table"
+    class="ui selectable striped 17 column table"
   >
     <thead
       class=""
@@ -11,11 +11,6 @@ exports[`renders correctly 1`] = `
       <tr
         class=""
       >
-        <th
-          class=""
-        >
-          Study ID
-        </th>
         <th
           class=""
         >
@@ -29,12 +24,77 @@ exports[`renders correctly 1`] = `
         <th
           class=""
         >
+          ID
+        </th>
+        <th
+          class=""
+        >
           Created At
         </th>
         <th
           class=""
         >
           Modified At
+        </th>
+        <th
+          class=""
+        >
+          Bucket
+        </th>
+        <th
+          class=""
+        >
+          Attribution
+        </th>
+        <th
+          class=""
+        >
+          Data Access Authority
+        </th>
+        <th
+          class=""
+        >
+          External Id
+        </th>
+        <th
+          class=""
+        >
+          Release Status
+        </th>
+        <th
+          class=""
+        >
+          Version
+        </th>
+        <th
+          class=""
+        >
+          Release Date
+        </th>
+        <th
+          class=""
+        >
+          Info
+        </th>
+        <th
+          class=""
+        >
+          Anticipated Samples
+        </th>
+        <th
+          class=""
+        >
+          Awardee Organization
+        </th>
+        <th
+          class=""
+        >
+          Files
+        </th>
+        <th
+          class=""
+        >
+          Projects
         </th>
       </tr>
     </thead>
@@ -48,12 +108,7 @@ exports[`renders correctly 1`] = `
         <td
           class=""
         >
-          SD_X6E5KWM4
-        </td>
-        <td
-          class=""
-        >
-          deploy bleeding-edge action-items
+          benchmark extensible e-business
         </td>
         <td
           class=""
@@ -61,22 +116,155 @@ exports[`renders correctly 1`] = `
         <td
           class=""
         >
+          SD_8WX8QQ06
+        </td>
+        <td
+          class=""
+        >
           <time
-            datetime="2019-01-30T03:41:39.000Z"
-            title="30 Jan 2019"
+            datetime="2018-06-17T23:32:00.000Z"
+            title="17 Jun 2018"
           >
-            3 months ago
+            10 months ago
           </time>
         </td>
         <td
           class=""
         >
           <time
-            datetime="2019-03-29T18:45:01.230Z"
-            title="29 Mar 2019"
+            datetime="2019-04-25T15:22:18.780Z"
+            title="25 Apr 2019"
           >
-            4 weeks ago
+            2 days from now
           </time>
+        </td>
+        <td
+          class=""
+        >
+          bucket_1
+        </td>
+        <td
+          class=""
+        />
+        <td
+          class=""
+        >
+          dbGaP
+        </td>
+        <td
+          class=""
+        >
+          external_id_1
+        </td>
+        <td
+          class=""
+        />
+        <td
+          class=""
+        />
+        <td
+          class=""
+        >
+          2019-08-24
+        </td>
+        <td
+          class=""
+        >
+          <a
+            class="ml-10"
+            href="/study/SD_8WX8QQ06/basic-info/info"
+          >
+            <i
+              aria-hidden="true"
+              class="grey clipboard check icon"
+            />
+            8/8 complete
+          </a>
+        </td>
+        <td
+          class=""
+        >
+          100
+        </td>
+        <td
+          class=""
+        >
+          CHOP
+        </td>
+        <td
+          class=""
+        >
+          <div
+            class="ui horizontal list"
+            role="list"
+          >
+            <a
+              class="item"
+              href="/study/SD_8WX8QQ06/documents"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="file icon"
+              />
+              1
+               files
+            </a>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="ui orange mini circular empty label"
+              />
+               
+              1
+            </div>
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <div
+            class="ui horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="red code branch icon"
+              />
+              <div
+                class="ui mini basic compact buttons"
+              >
+                <a
+                  class="ui mini primary button"
+                  href="/study/SD_8WX8QQ06/cavatica#link-cavatica-project"
+                  role="button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="linkify icon"
+                  />
+                  LINK
+                </a>
+                <a
+                  class="ui mini basic primary button"
+                  href="/study/SD_8WX8QQ06/cavatica#add-cavatica-project"
+                  role="button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="add icon"
+                  />
+                  NEW 
+                </a>
+              </div>
+            </div>
+          </div>
         </td>
       </tr>
       <tr
@@ -86,12 +274,7 @@ exports[`renders correctly 1`] = `
         <td
           class=""
         >
-          SD_203C26IZ
-        </td>
-        <td
-          class=""
-        >
-          syndicate extensible metrics
+          visualize dynamic users
         </td>
         <td
           class=""
@@ -99,22 +282,159 @@ exports[`renders correctly 1`] = `
         <td
           class=""
         >
+          SD_I1L92W57
+        </td>
+        <td
+          class=""
+        >
           <time
-            datetime="2017-07-11T21:02:37.000Z"
-            title="11 Jul 2017"
+            datetime="2018-03-25T10:47:50.000Z"
+            title="25 Mar 2018"
           >
-            2 years ago
+            1 year ago
           </time>
         </td>
         <td
           class=""
         >
           <time
-            datetime="2019-03-29T18:45:01.236Z"
-            title="29 Mar 2019"
+            datetime="2019-04-25T15:22:18.786Z"
+            title="25 Apr 2019"
           >
-            4 weeks ago
+            2 days from now
           </time>
+        </td>
+        <td
+          class=""
+        >
+          bucket_2
+        </td>
+        <td
+          class=""
+        />
+        <td
+          class=""
+        >
+          dbGaP
+        </td>
+        <td
+          class=""
+        >
+          external_id_2
+        </td>
+        <td
+          class=""
+        />
+        <td
+          class=""
+        />
+        <td
+          class=""
+        >
+          2019-08-24
+        </td>
+        <td
+          class=""
+        >
+          <a
+            class="ml-10"
+            href="/study/SD_I1L92W57/basic-info/info"
+          >
+            <i
+              aria-hidden="true"
+              class="grey clipboard check icon"
+            />
+            8/8 complete
+          </a>
+        </td>
+        <td
+          class=""
+        >
+          100
+        </td>
+        <td
+          class=""
+        >
+          CHOP
+        </td>
+        <td
+          class=""
+        >
+          <div
+            class="ui horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="red file icon"
+              />
+              <label
+                class="ui mini basic compact primary button"
+                for="file"
+                role="button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="upload cloud icon"
+                />
+                Upload
+              </label>
+              <input
+                hidden=""
+                id="file"
+                multiple=""
+                type="file"
+              />
+            </div>
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <div
+            class="ui horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="red code branch icon"
+              />
+              <div
+                class="ui mini basic compact buttons"
+              >
+                <a
+                  class="ui mini primary button"
+                  href="/study/SD_I1L92W57/cavatica#link-cavatica-project"
+                  role="button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="linkify icon"
+                  />
+                  LINK
+                </a>
+                <a
+                  class="ui mini basic primary button"
+                  href="/study/SD_I1L92W57/cavatica#add-cavatica-project"
+                  role="button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="add icon"
+                  />
+                  NEW 
+                </a>
+              </div>
+            </div>
+          </div>
         </td>
       </tr>
       <tr
@@ -124,12 +444,7 @@ exports[`renders correctly 1`] = `
         <td
           class=""
         >
-          SD_KOECR7Q1
-        </td>
-        <td
-          class=""
-        >
-          aggregate real-time convergence
+          strategize cross-media markets
         </td>
         <td
           class=""
@@ -137,9 +452,14 @@ exports[`renders correctly 1`] = `
         <td
           class=""
         >
+          SD_SG5N41K8
+        </td>
+        <td
+          class=""
+        >
           <time
-            datetime="2017-05-05T03:05:57.000Z"
-            title="5 May 2017"
+            datetime="2017-07-07T09:23:24.000Z"
+            title="7 Jul 2017"
           >
             2 years ago
           </time>
@@ -148,11 +468,310 @@ exports[`renders correctly 1`] = `
           class=""
         >
           <time
-            datetime="2019-03-29T18:45:01.239Z"
-            title="29 Mar 2019"
+            datetime="2019-04-25T15:22:18.789Z"
+            title="25 Apr 2019"
           >
-            4 weeks ago
+            2 days from now
           </time>
+        </td>
+        <td
+          class=""
+        >
+          bucket_3
+        </td>
+        <td
+          class=""
+        />
+        <td
+          class=""
+        >
+          dbGaP
+        </td>
+        <td
+          class=""
+        >
+          external_id_3
+        </td>
+        <td
+          class=""
+        />
+        <td
+          class=""
+        />
+        <td
+          class=""
+        >
+          2019-08-24
+        </td>
+        <td
+          class=""
+        >
+          <a
+            class="ml-10"
+            href="/study/SD_SG5N41K8/basic-info/info"
+          >
+            <i
+              aria-hidden="true"
+              class="grey clipboard check icon"
+            />
+            8/8 complete
+          </a>
+        </td>
+        <td
+          class=""
+        >
+          100
+        </td>
+        <td
+          class=""
+        >
+          CHOP
+        </td>
+        <td
+          class=""
+        >
+          <div
+            class="ui horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="red file icon"
+              />
+              <label
+                class="ui mini basic compact primary button"
+                for="file"
+                role="button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="upload cloud icon"
+                />
+                Upload
+              </label>
+              <input
+                hidden=""
+                id="file"
+                multiple=""
+                type="file"
+              />
+            </div>
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <div
+            class="ui horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="red code branch icon"
+              />
+              <div
+                class="ui mini basic compact buttons"
+              >
+                <a
+                  class="ui mini primary button"
+                  href="/study/SD_SG5N41K8/cavatica#link-cavatica-project"
+                  role="button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="linkify icon"
+                  />
+                  LINK
+                </a>
+                <a
+                  class="ui mini basic primary button"
+                  href="/study/SD_SG5N41K8/cavatica#add-cavatica-project"
+                  role="button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="add icon"
+                  />
+                  NEW 
+                </a>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class=""
+        tabindex="0"
+      >
+        <td
+          class=""
+        >
+          drive distributed architectures
+        </td>
+        <td
+          class=""
+        />
+        <td
+          class=""
+        >
+          SD_0YYP5ZEN
+        </td>
+        <td
+          class=""
+        >
+          <time
+            datetime="2017-05-23T06:26:36.000Z"
+            title="23 May 2017"
+          >
+            2 years ago
+          </time>
+        </td>
+        <td
+          class=""
+        >
+          <time
+            datetime="2019-04-25T15:22:18.793Z"
+            title="25 Apr 2019"
+          >
+            2 days from now
+          </time>
+        </td>
+        <td
+          class=""
+        >
+          bucket_4
+        </td>
+        <td
+          class=""
+        />
+        <td
+          class=""
+        >
+          dbGaP
+        </td>
+        <td
+          class=""
+        >
+          external_id_4
+        </td>
+        <td
+          class=""
+        />
+        <td
+          class=""
+        />
+        <td
+          class=""
+        >
+          2019-08-24
+        </td>
+        <td
+          class=""
+        >
+          <a
+            class="ml-10"
+            href="/study/SD_0YYP5ZEN/basic-info/info"
+          >
+            <i
+              aria-hidden="true"
+              class="grey clipboard check icon"
+            />
+            8/8 complete
+          </a>
+        </td>
+        <td
+          class=""
+        >
+          100
+        </td>
+        <td
+          class=""
+        >
+          CHOP
+        </td>
+        <td
+          class=""
+        >
+          <div
+            class="ui horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="red file icon"
+              />
+              <label
+                class="ui mini basic compact primary button"
+                for="file"
+                role="button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="upload cloud icon"
+                />
+                Upload
+              </label>
+              <input
+                hidden=""
+                id="file"
+                multiple=""
+                type="file"
+              />
+            </div>
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <div
+            class="ui horizontal list"
+            role="list"
+          >
+            <a
+              class="item"
+              href="/study/SD_0YYP5ZEN/cavatica"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="code branch icon"
+              />
+              2
+               projects
+            </a>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="ui olive mini circular empty label"
+              />
+               
+              1
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="ui olive mini circular empty label"
+              />
+               
+              1
+            </div>
+          </div>
         </td>
       </tr>
     </tbody>
@@ -163,7 +782,7 @@ exports[`renders correctly 1`] = `
 exports[`renders without excluded columns passed to props 1`] = `
 <div>
   <table
-    class="ui selectable striped four column table"
+    class="ui selectable striped sixteen column table"
   >
     <thead
       class=""
@@ -174,12 +793,12 @@ exports[`renders without excluded columns passed to props 1`] = `
         <th
           class=""
         >
-          Name
+          Short Name
         </th>
         <th
           class=""
         >
-          Short Name
+          ID
         </th>
         <th
           class=""
@@ -190,6 +809,66 @@ exports[`renders without excluded columns passed to props 1`] = `
           class=""
         >
           Modified At
+        </th>
+        <th
+          class=""
+        >
+          Bucket
+        </th>
+        <th
+          class=""
+        >
+          Attribution
+        </th>
+        <th
+          class=""
+        >
+          Data Access Authority
+        </th>
+        <th
+          class=""
+        >
+          External Id
+        </th>
+        <th
+          class=""
+        >
+          Release Status
+        </th>
+        <th
+          class=""
+        >
+          Version
+        </th>
+        <th
+          class=""
+        >
+          Release Date
+        </th>
+        <th
+          class=""
+        >
+          Info
+        </th>
+        <th
+          class=""
+        >
+          Anticipated Samples
+        </th>
+        <th
+          class=""
+        >
+          Awardee Organization
+        </th>
+        <th
+          class=""
+        >
+          Files
+        </th>
+        <th
+          class=""
+        >
+          Projects
         </th>
       </tr>
     </thead>
@@ -202,8 +881,36 @@ exports[`renders without excluded columns passed to props 1`] = `
       >
         <td
           class=""
+        />
+        <td
+          class=""
         >
-          deploy bleeding-edge action-items
+          SD_8WX8QQ06
+        </td>
+        <td
+          class=""
+        >
+          <time
+            datetime="2018-06-17T23:32:00.000Z"
+            title="17 Jun 2018"
+          >
+            10 months ago
+          </time>
+        </td>
+        <td
+          class=""
+        >
+          <time
+            datetime="2019-04-25T15:22:18.780Z"
+            title="25 Apr 2019"
+          >
+            2 days from now
+          </time>
+        </td>
+        <td
+          class=""
+        >
+          bucket_1
         </td>
         <td
           class=""
@@ -211,22 +918,122 @@ exports[`renders without excluded columns passed to props 1`] = `
         <td
           class=""
         >
-          <time
-            datetime="2019-01-30T03:41:39.000Z"
-            title="30 Jan 2019"
-          >
-            3 months ago
-          </time>
+          dbGaP
         </td>
         <td
           class=""
         >
-          <time
-            datetime="2019-03-29T18:45:01.230Z"
-            title="29 Mar 2019"
+          external_id_1
+        </td>
+        <td
+          class=""
+        />
+        <td
+          class=""
+        />
+        <td
+          class=""
+        >
+          2019-08-24
+        </td>
+        <td
+          class=""
+        >
+          <a
+            class="ml-10"
+            href="/study/SD_8WX8QQ06/basic-info/info"
           >
-            4 weeks ago
-          </time>
+            <i
+              aria-hidden="true"
+              class="grey clipboard check icon"
+            />
+            8/8 complete
+          </a>
+        </td>
+        <td
+          class=""
+        >
+          100
+        </td>
+        <td
+          class=""
+        >
+          CHOP
+        </td>
+        <td
+          class=""
+        >
+          <div
+            class="ui horizontal list"
+            role="list"
+          >
+            <a
+              class="item"
+              href="/study/SD_8WX8QQ06/documents"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="file icon"
+              />
+              1
+               files
+            </a>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="ui orange mini circular empty label"
+              />
+               
+              1
+            </div>
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <div
+            class="ui horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="red code branch icon"
+              />
+              <div
+                class="ui mini basic compact buttons"
+              >
+                <a
+                  class="ui mini primary button"
+                  href="/study/SD_8WX8QQ06/cavatica#link-cavatica-project"
+                  role="button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="linkify icon"
+                  />
+                  LINK
+                </a>
+                <a
+                  class="ui mini basic primary button"
+                  href="/study/SD_8WX8QQ06/cavatica#add-cavatica-project"
+                  role="button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="add icon"
+                  />
+                  NEW 
+                </a>
+              </div>
+            </div>
+          </div>
         </td>
       </tr>
       <tr
@@ -235,8 +1042,36 @@ exports[`renders without excluded columns passed to props 1`] = `
       >
         <td
           class=""
+        />
+        <td
+          class=""
         >
-          syndicate extensible metrics
+          SD_I1L92W57
+        </td>
+        <td
+          class=""
+        >
+          <time
+            datetime="2018-03-25T10:47:50.000Z"
+            title="25 Mar 2018"
+          >
+            1 year ago
+          </time>
+        </td>
+        <td
+          class=""
+        >
+          <time
+            datetime="2019-04-25T15:22:18.786Z"
+            title="25 Apr 2019"
+          >
+            2 days from now
+          </time>
+        </td>
+        <td
+          class=""
+        >
+          bucket_2
         </td>
         <td
           class=""
@@ -244,22 +1079,126 @@ exports[`renders without excluded columns passed to props 1`] = `
         <td
           class=""
         >
-          <time
-            datetime="2017-07-11T21:02:37.000Z"
-            title="11 Jul 2017"
-          >
-            2 years ago
-          </time>
+          dbGaP
         </td>
         <td
           class=""
         >
-          <time
-            datetime="2019-03-29T18:45:01.236Z"
-            title="29 Mar 2019"
+          external_id_2
+        </td>
+        <td
+          class=""
+        />
+        <td
+          class=""
+        />
+        <td
+          class=""
+        >
+          2019-08-24
+        </td>
+        <td
+          class=""
+        >
+          <a
+            class="ml-10"
+            href="/study/SD_I1L92W57/basic-info/info"
           >
-            4 weeks ago
-          </time>
+            <i
+              aria-hidden="true"
+              class="grey clipboard check icon"
+            />
+            8/8 complete
+          </a>
+        </td>
+        <td
+          class=""
+        >
+          100
+        </td>
+        <td
+          class=""
+        >
+          CHOP
+        </td>
+        <td
+          class=""
+        >
+          <div
+            class="ui horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="red file icon"
+              />
+              <label
+                class="ui mini basic compact primary button"
+                for="file"
+                role="button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="upload cloud icon"
+                />
+                Upload
+              </label>
+              <input
+                hidden=""
+                id="file"
+                multiple=""
+                type="file"
+              />
+            </div>
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <div
+            class="ui horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="red code branch icon"
+              />
+              <div
+                class="ui mini basic compact buttons"
+              >
+                <a
+                  class="ui mini primary button"
+                  href="/study/SD_I1L92W57/cavatica#link-cavatica-project"
+                  role="button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="linkify icon"
+                  />
+                  LINK
+                </a>
+                <a
+                  class="ui mini basic primary button"
+                  href="/study/SD_I1L92W57/cavatica#add-cavatica-project"
+                  role="button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="add icon"
+                  />
+                  NEW 
+                </a>
+              </div>
+            </div>
+          </div>
         </td>
       </tr>
       <tr
@@ -268,18 +1207,18 @@ exports[`renders without excluded columns passed to props 1`] = `
       >
         <td
           class=""
-        >
-          aggregate real-time convergence
-        </td>
-        <td
-          class=""
         />
         <td
           class=""
         >
+          SD_SG5N41K8
+        </td>
+        <td
+          class=""
+        >
           <time
-            datetime="2017-05-05T03:05:57.000Z"
-            title="5 May 2017"
+            datetime="2017-07-07T09:23:24.000Z"
+            title="7 Jul 2017"
           >
             2 years ago
           </time>
@@ -288,11 +1227,305 @@ exports[`renders without excluded columns passed to props 1`] = `
           class=""
         >
           <time
-            datetime="2019-03-29T18:45:01.239Z"
-            title="29 Mar 2019"
+            datetime="2019-04-25T15:22:18.789Z"
+            title="25 Apr 2019"
           >
-            4 weeks ago
+            2 days from now
           </time>
+        </td>
+        <td
+          class=""
+        >
+          bucket_3
+        </td>
+        <td
+          class=""
+        />
+        <td
+          class=""
+        >
+          dbGaP
+        </td>
+        <td
+          class=""
+        >
+          external_id_3
+        </td>
+        <td
+          class=""
+        />
+        <td
+          class=""
+        />
+        <td
+          class=""
+        >
+          2019-08-24
+        </td>
+        <td
+          class=""
+        >
+          <a
+            class="ml-10"
+            href="/study/SD_SG5N41K8/basic-info/info"
+          >
+            <i
+              aria-hidden="true"
+              class="grey clipboard check icon"
+            />
+            8/8 complete
+          </a>
+        </td>
+        <td
+          class=""
+        >
+          100
+        </td>
+        <td
+          class=""
+        >
+          CHOP
+        </td>
+        <td
+          class=""
+        >
+          <div
+            class="ui horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="red file icon"
+              />
+              <label
+                class="ui mini basic compact primary button"
+                for="file"
+                role="button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="upload cloud icon"
+                />
+                Upload
+              </label>
+              <input
+                hidden=""
+                id="file"
+                multiple=""
+                type="file"
+              />
+            </div>
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <div
+            class="ui horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="red code branch icon"
+              />
+              <div
+                class="ui mini basic compact buttons"
+              >
+                <a
+                  class="ui mini primary button"
+                  href="/study/SD_SG5N41K8/cavatica#link-cavatica-project"
+                  role="button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="linkify icon"
+                  />
+                  LINK
+                </a>
+                <a
+                  class="ui mini basic primary button"
+                  href="/study/SD_SG5N41K8/cavatica#add-cavatica-project"
+                  role="button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="add icon"
+                  />
+                  NEW 
+                </a>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class=""
+        tabindex="0"
+      >
+        <td
+          class=""
+        />
+        <td
+          class=""
+        >
+          SD_0YYP5ZEN
+        </td>
+        <td
+          class=""
+        >
+          <time
+            datetime="2017-05-23T06:26:36.000Z"
+            title="23 May 2017"
+          >
+            2 years ago
+          </time>
+        </td>
+        <td
+          class=""
+        >
+          <time
+            datetime="2019-04-25T15:22:18.793Z"
+            title="25 Apr 2019"
+          >
+            2 days from now
+          </time>
+        </td>
+        <td
+          class=""
+        >
+          bucket_4
+        </td>
+        <td
+          class=""
+        />
+        <td
+          class=""
+        >
+          dbGaP
+        </td>
+        <td
+          class=""
+        >
+          external_id_4
+        </td>
+        <td
+          class=""
+        />
+        <td
+          class=""
+        />
+        <td
+          class=""
+        >
+          2019-08-24
+        </td>
+        <td
+          class=""
+        >
+          <a
+            class="ml-10"
+            href="/study/SD_0YYP5ZEN/basic-info/info"
+          >
+            <i
+              aria-hidden="true"
+              class="grey clipboard check icon"
+            />
+            8/8 complete
+          </a>
+        </td>
+        <td
+          class=""
+        >
+          100
+        </td>
+        <td
+          class=""
+        >
+          CHOP
+        </td>
+        <td
+          class=""
+        >
+          <div
+            class="ui horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="red file icon"
+              />
+              <label
+                class="ui mini basic compact primary button"
+                for="file"
+                role="button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="upload cloud icon"
+                />
+                Upload
+              </label>
+              <input
+                hidden=""
+                id="file"
+                multiple=""
+                type="file"
+              />
+            </div>
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <div
+            class="ui horizontal list"
+            role="list"
+          >
+            <a
+              class="item"
+              href="/study/SD_0YYP5ZEN/cavatica"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="code branch icon"
+              />
+              2
+               projects
+            </a>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="ui olive mini circular empty label"
+              />
+               
+              1
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="ui olive mini circular empty label"
+              />
+               
+              1
+            </div>
+          </div>
         </td>
       </tr>
     </tbody>

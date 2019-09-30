@@ -1,7 +1,7 @@
 import React from 'react';
 import {MemoryRouter} from 'react-router-dom';
 import {render, cleanup} from 'react-testing-library';
-import allStudies from './allStudies.json';
+import allStudies from '../../../../__mocks__/kf-api-study-creator/responses/allStudies.json';
 import StudyTable from '../StudyTable';
 
 afterEach(cleanup);
@@ -17,12 +17,12 @@ it('renders correctly', () => {
   expect(tree.container).toMatchSnapshot();
 
   const rows = tree.container.querySelectorAll('table tbody tr');
-  expect(rows.length).toBe(3);
+  expect(rows.length).toBe(4);
 });
 
 it('renders without excluded columns passed to props', () => {
   const studies = allStudies.data.allStudies.edges;
-  const excludedColumn = 'kfId';
+  const excludedColumn = 'name';
 
   const tree = render(
     <MemoryRouter>
@@ -33,6 +33,6 @@ it('renders without excluded columns passed to props', () => {
 
   const cols = tree.container.querySelectorAll('table thead th');
   // Should contain 4 cards in loading state
-  expect(cols.length).toBe(4);
+  expect(cols.length).toBe(16);
   expect(tree.queryByText(excludedColumn)).toBeNull();
 });
