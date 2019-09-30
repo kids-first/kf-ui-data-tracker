@@ -23,3 +23,21 @@ export const countStudyNotification = study => {
   });
   return counts;
 };
+
+// Count the missing projects for a given study and return the notification number
+export const countProjectNotification = study => {
+  var counts = 0;
+  if (
+    study.projects.edges.filter(obj => obj.node.projectType === 'HAR')
+      .length === 0
+  ) {
+    counts += 1;
+  }
+  if (
+    study.projects.edges.filter(obj => obj.node.projectType === 'DEL')
+      .length === 0
+  ) {
+    counts += 1;
+  }
+  return counts;
+};
