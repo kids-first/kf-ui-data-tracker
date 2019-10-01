@@ -1,9 +1,19 @@
 import React, {useState, Fragment} from 'react';
 import {Switch, Route} from 'react-router-dom';
 import PropTypes from 'prop-types';
-import {Form, Segment, Message, Step, Button, Header} from 'semantic-ui-react';
+import {
+  Form,
+  Segment,
+  Message,
+  Step,
+  Button,
+  Header,
+  Icon,
+  List,
+} from 'semantic-ui-react';
 import {Formik} from 'formik';
 import {InfoStep, ExternalStep, LogisticsStep} from './StudyFormSteps';
+import ProgressBar from '../components/StudyInfo/ProgressBar';
 import {fieldLabel, trackedStudyFields} from '../common/notificationUtils';
 
 const NewStudyForm = ({
@@ -200,10 +210,19 @@ const NewStudyForm = ({
                     );
                   }
                 }}
-                icon={step.icon}
-                title={step.title}
-                description={step.desc}
-              />
+              >
+                <Icon circular name={step.icon} />
+                <Step.Content>
+                  <Step.Title>{step.title}</Step.Title>
+                  <Step.Description>{step.desc}</Step.Description>
+                  {editing && (
+                    <ProgressBar
+                      values={formikProps.values}
+                      step={STUDY_STEPS.indexOf(step)}
+                    />
+                  )}
+                </Step.Content>
+              </Step>
             ))}
           </Step.Group>
           <Segment padded clearing attached>
