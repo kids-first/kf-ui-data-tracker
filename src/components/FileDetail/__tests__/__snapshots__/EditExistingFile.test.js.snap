@@ -141,9 +141,6 @@ exports[`edits an existing file correctly 1`] = `
         >
           benchmark extensible e-business
         </h1>
-        <h2
-          class="sub header study--header-sub"
-        />
         <button
           class="ui tiny basic icon left labeled button"
         >
@@ -953,9 +950,6 @@ exports[`edits an existing file correctly 2`] = `
         >
           benchmark extensible e-business
         </h1>
-        <h2
-          class="sub header study--header-sub"
-        />
         <button
           class="ui tiny basic icon left labeled button"
         >
@@ -1563,9 +1557,6 @@ exports[`edits an existing file correctly 3`] = `
         >
           benchmark extensible e-business
         </h1>
-        <h2
-          class="sub header study--header-sub"
-        />
         <button
           class="ui tiny basic icon left labeled button"
         >
