@@ -12,6 +12,13 @@ export const trackedStudyFields = [
   'description',
 ];
 
+// A list of study fields for each step to display as study basic info
+export const steppingFields = [
+  ['name', 'shortName', 'bucket'],
+  ['externalId', 'version', 'attribution'],
+  ['releaseDate', 'anticipatedSamples', 'awardeeOrganization', 'description'],
+];
+
 // Count the missing fields for a given study and return the notification number
 export const countStudyNotification = study => {
   var counts = 0;
