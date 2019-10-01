@@ -1,6 +1,6 @@
 import React from 'react';
 import {render, cleanup} from 'react-testing-library';
-import {versionState} from '../../../common/fileUtils';
+import {versionState} from '../../../common/enums';
 import Badge from '../Badge';
 
 afterEach(cleanup);

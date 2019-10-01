@@ -135,3 +135,36 @@ export const eventType = {
   },
   OTH: {title: 'Other', iconName: 'question', iconColor: 'blue'},
 };
+
+// Store file type title, description and icon
+export const fileTypeDetail = {
+  SHM: {
+    icon: 'shipping',
+    title: 'Shipping Manifest',
+    description: 'File type description goes here...',
+  },
+  CLN: {
+    icon: 'hospital',
+    title: 'Clinical/Phenotype Data',
+    description: 'File type description goes here...',
+  },
+  SEQ: {
+    icon: 'dna',
+    title: 'Sequencing Manifest',
+    description: 'File type description goes here...',
+  },
+  OTH: {
+    icon: 'question',
+    title: 'Other',
+    description: 'File type description goes here...',
+  },
+};
+
+// Store version state title and color
+export const versionState = {
+  PEN: {title: 'Pending review', labelColor: 'orange'},
+  APP: {title: 'Approved', labelColor: 'teal'},
+  CHN: {title: 'Changes needed', labelColor: 'red'},
+  PRC: {title: 'Processed', labelColor: 'blue'},
+  UPD: {title: 'Updated', labelColor: 'blue'},
+};

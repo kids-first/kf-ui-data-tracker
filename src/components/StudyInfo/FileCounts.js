@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {List, Icon, Popup, Label, Button} from 'semantic-ui-react';
-import {versionState} from '../../common/fileUtils';
+import {versionState} from '../../common/enums';
 
 const FileCounts = ({files, title, history}) => {
   if (files && files.length > 0) {
@@ -23,29 +23,31 @@ const FileCounts = ({files, title, history}) => {
           <Icon name="file" />
           {files.length} files
         </List.Item>
-        {['PEN', 'CHN', 'APP', 'PRC'].map(
-          state =>
-            state in stateCounts && (
-              <Popup
-                inverted
-                position="top center"
-                size="small"
-                content={versionState[state].title}
-                key={state}
-                trigger={
-                  <List.Item>
-                    <Label
-                      circular
-                      empty
-                      size="mini"
-                      color={versionState[state].labelColor}
-                    />{' '}
-                    {stateCounts[state]}
-                  </List.Item>
-                }
-              />
-            ),
-        )}
+        {Object.keys(versionState)
+          .slice(0, 4)
+          .map(
+            state =>
+              state in stateCounts && (
+                <Popup
+                  inverted
+                  position="top center"
+                  size="small"
+                  content={versionState[state].title}
+                  key={state}
+                  trigger={
+                    <List.Item>
+                      <Label
+                        circular
+                        empty
+                        size="mini"
+                        color={versionState[state].labelColor}
+                      />{' '}
+                      {stateCounts[state]}
+                    </List.Item>
+                  }
+                />
+              ),
+          )}
       </List>
     );
   } else {

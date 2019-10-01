@@ -3,12 +3,11 @@ import {Icon, Label, List, Button} from 'semantic-ui-react';
 import TimeAgo from 'react-timeago';
 import FileCounts from './FileCounts';
 import {
-  fileTypeDetail,
   fileSortedVersions,
   fileLatestStatus,
   fileLatestDate,
-  versionState,
 } from '../../common/fileUtils';
+import {fileTypeDetail, versionState} from '../../common/enums';
 import {longDate} from '../../common/dateUtils';
 
 const FileSimpleList = ({files}) => {

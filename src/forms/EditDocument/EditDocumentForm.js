@@ -9,7 +9,7 @@ import DocumentTitleValidationIndicators from './DocumentTitleValidationIndicato
 import SelectElement from '../../components/FileDetail/SelectElement';
 import Badge from '../../components/Badge/Badge';
 import UploadWizard from '../../modals/UploadWizard/UploadWizard';
-import {fileTypeDetail, versionState} from '../../common/fileUtils';
+import {fileTypeDetail, versionState} from '../../common/enums';
 
 /**
  * Form to edit document information or annotate new file for uploading
