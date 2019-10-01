@@ -10,6 +10,7 @@ import {
   Header,
   Button,
   Icon,
+  List,
 } from 'semantic-ui-react';
 import EmptyView from './EmptyView';
 import NewProjectModal from '../modals/NewProjectModal';
@@ -108,12 +109,26 @@ const CavaticaBixView = ({
           studyByKfId.projects.edges.filter(
             obj => obj.node.projectType === 'DEL',
           ).length === 0) && (
-          <Message
-            negative
-            icon="warning circle"
-            header={'Missing projects'}
-            content="Each study should have at lease one delivery and one analysis Cavatica project. Please link or create projects for the study."
-          />
+          <Message negative icon>
+            <Icon name="warning circle" />
+            <Message.Content>
+              <Message.Header>Missing projects</Message.Header>
+              <p>
+                Please link or create projects for the study. Each study
+                requires at least one of the following:
+              </p>
+              <List>
+                <List.Item
+                  icon="paper plane outline"
+                  content="Delivery Project"
+                />
+                <List.Item
+                  icon="sliders horizontal"
+                  content="Analysis Project"
+                />
+              </List>
+            </Message.Content>
+          </Message>
         )}
 
         {studyByKfId.projects.edges.length > 0 ? (
