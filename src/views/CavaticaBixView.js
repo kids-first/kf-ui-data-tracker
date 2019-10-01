@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {graphql, compose} from 'react-apollo';
 import {GET_STUDY_BY_ID, MY_PROFILE, GET_PROJECTS} from '../state/queries';
 import {SYNC_PROJECTS, LINK_PROJECT, UNLINK_PROJECT} from '../state/mutations';
@@ -23,11 +23,15 @@ const CavaticaBixView = ({
   syncProjects,
   linkProject,
   unlinkProject,
+  history,
 }) => {
   const isAdmin = !user.loading
     ? user.myProfile.roles.includes('ADMIN')
     : false;
-  const [showModal, setShowModal] = useState('');
+  const hashOpenHook = (history, modalName) => {
+    const modalNameHash = modalName.replace(' ', '-').toLowerCase();
+    return modalNameHash === history.location.hash;
+  };
   if (loading)
     return (
       <Container as={Segment} basic vertical>
@@ -72,7 +76,13 @@ const CavaticaBixView = ({
           size="mini"
           icon="linkify"
           content="LINK PROJECT"
-          onClick={() => setShowModal('linkProject')}
+          onClick={() =>
+            history.push(
+              '/study/' +
+                history.location.pathname.split('/')[2] +
+                '/cavatica#link-cavatica-project',
+            )
+          }
         />
         <Button
           basic
@@ -81,7 +91,13 @@ const CavaticaBixView = ({
           size="mini"
           icon="add"
           content="NEW PROJECT"
-          onClick={() => setShowModal('addProject')}
+          onClick={() =>
+            history.push(
+              '/study/' +
+                history.location.pathname.split('/')[2] +
+                '/cavatica#add-cavatica-project',
+            )
+          }
         />
         <Header as="h2" className="noMargin">
           Cavatica Projects
@@ -112,21 +128,27 @@ const CavaticaBixView = ({
           </Header>
         )}
 
-        {showModal === 'addProject' && (
-          <NewProjectModal
-            study={studyByKfId}
-            onCloseDialog={() => setShowModal('')}
-          />
-        )}
-        {showModal === 'linkProject' && (
-          <LinkProjectModal
-            study={studyByKfId}
-            allProjects={projects.allProjects}
-            linkProject={linkProject}
-            syncProjects={syncProjects}
-            onCloseDialog={() => setShowModal('')}
-          />
-        )}
+        <NewProjectModal
+          open={hashOpenHook(history, '#add-cavatica-project')}
+          study={studyByKfId}
+          onCloseDialog={() =>
+            history.push(
+              '/study/' + history.location.pathname.split('/')[2] + '/cavatica',
+            )
+          }
+        />
+        <LinkProjectModal
+          open={hashOpenHook(history, '#link-cavatica-project')}
+          study={studyByKfId}
+          allProjects={projects.allProjects}
+          linkProject={linkProject}
+          syncProjects={syncProjects}
+          onCloseDialog={() =>
+            history.push(
+              '/study/' + history.location.pathname.split('/')[2] + '/cavatica',
+            )
+          }
+        />
       </Container>
     );
   } else {

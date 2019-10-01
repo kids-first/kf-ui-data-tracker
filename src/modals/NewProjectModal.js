@@ -6,7 +6,7 @@ import {NewProjectForm} from '../forms';
 import {Button, Form, Modal} from 'semantic-ui-react';
 import {Formik} from 'formik';
 
-const NewProjectModal = ({createProject, onCloseDialog, study}) => {
+const NewProjectModal = ({open, createProject, onCloseDialog, study}) => {
   const [apiErrors, setApiErrors] = useState('');
   const onSubmit = (values, {setSubmitting}) => {
     setSubmitting(true);
@@ -42,7 +42,7 @@ const NewProjectModal = ({createProject, onCloseDialog, study}) => {
         <Modal
           as={Form}
           onSubmit={formikProps.handleSubmit}
-          open={true}
+          open={open}
           onClose={onCloseDialog}
           closeIcon
         >

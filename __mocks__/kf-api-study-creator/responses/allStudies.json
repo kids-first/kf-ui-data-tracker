@@ -5,11 +5,21 @@
         {
           "node": {
             "id": "U3R1ZHlOb2RlOlNEXzhXWDhRUTA2",
-            "kfId": "SD_8WX8QQ06",
             "name": "benchmark extensible e-business",
             "shortName": null,
+            "kfId": "SD_8WX8QQ06",
             "createdAt": "2018-06-17T23:32:00+00:00",
             "modifiedAt": "2019-04-25T15:22:18.780221+00:00",
+            "bucket": "bucket_1",
+            "attribution": null,
+            "dataAccessAuthority": "dbGaP",
+            "externalId": "external_id_1",
+            "releaseStatus": null,
+            "version": null,
+            "releaseDate": "2019-08-24",
+            "description": "Sudy description in markdown, commonly the X01 abstract text. --  As test study description",
+            "anticipatedSamples": 100,
+            "awardeeOrganization": "CHOP",
             "files": {
               "edges": [
                 {
@@ -60,6 +70,7 @@
               ],
               "__typename": "FileNodeConnection"
             },
+            "projects": {"edges": [], "__typename": "ProjectNodeConnection"},
             "__typename": "StudyNode"
           },
           "__typename": "StudyNodeEdge"
@@ -67,12 +78,23 @@
         {
           "node": {
             "id": "U3R1ZHlOb2RlOlNEX0kxTDkyVzU3",
-            "kfId": "SD_I1L92W57",
             "name": "visualize dynamic users",
             "shortName": null,
+            "kfId": "SD_I1L92W57",
             "createdAt": "2018-03-25T10:47:50+00:00",
             "modifiedAt": "2019-04-25T15:22:18.786031+00:00",
+            "bucket": "bucket_2",
+            "attribution": null,
+            "dataAccessAuthority": "dbGaP",
+            "externalId": "external_id_2",
+            "releaseStatus": null,
+            "version": null,
+            "releaseDate": "2019-08-24",
+            "description": "Sudy description in markdown, commonly the X01 abstract text. --  As test study description",
+            "anticipatedSamples": 100,
+            "awardeeOrganization": "CHOP",
             "files": {"edges": [], "__typename": "FileNodeConnection"},
+            "projects": {"edges": [], "__typename": "ProjectNodeConnection"},
             "__typename": "StudyNode"
           },
           "__typename": "StudyNodeEdge"
@@ -80,12 +102,23 @@
         {
           "node": {
             "id": "U3R1ZHlOb2RlOlNEX1NHNU40MUs4",
-            "kfId": "SD_SG5N41K8",
             "name": "strategize cross-media markets",
             "shortName": null,
+            "kfId": "SD_SG5N41K8",
             "createdAt": "2017-07-07T09:23:24+00:00",
             "modifiedAt": "2019-04-25T15:22:18.789881+00:00",
+            "bucket": "bucket_3",
+            "attribution": null,
+            "dataAccessAuthority": "dbGaP",
+            "externalId": "external_id_3",
+            "releaseStatus": null,
+            "version": null,
+            "releaseDate": "2019-08-24",
+            "description": "Sudy description in markdown, commonly the X01 abstract text. --  As test study description",
+            "anticipatedSamples": 100,
+            "awardeeOrganization": "CHOP",
             "files": {"edges": [], "__typename": "FileNodeConnection"},
+            "projects": {"edges": [], "__typename": "ProjectNodeConnection"},
             "__typename": "StudyNode"
           },
           "__typename": "StudyNodeEdge"
@@ -93,11 +126,60 @@
         {
           "node": {
             "id": "U3R1ZHlOb2RlOlNEXzBZWVA1WkVO",
-            "kfId": "SD_0YYP5ZEN",
             "name": "drive distributed architectures",
             "shortName": null,
+            "kfId": "SD_0YYP5ZEN",
             "createdAt": "2017-05-23T06:26:36+00:00",
             "modifiedAt": "2019-04-25T15:22:18.793566+00:00",
+            "bucket": "bucket_4",
+            "attribution": null,
+            "dataAccessAuthority": "dbGaP",
+            "externalId": "external_id_4",
+            "releaseStatus": null,
+            "version": null,
+            "releaseDate": "2019-08-24",
+            "description": "Sudy description in markdown, commonly the X01 abstract text. --  As test study description",
+            "anticipatedSamples": 100,
+            "awardeeOrganization": "CHOP",
+            "projects": {
+              "edges": [
+                {
+                  "node": {
+                    "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtNTUwNDB4bmY4",
+                    "createdBy": "zhux3",
+                    "createdOn": "2019-08-26T18:22:41+00:00",
+                    "description": "",
+                    "modifiedOn": "2019-08-26T18:22:41+00:00",
+                    "name": "test study name",
+                    "projectId": "zhux3/sd_0yyp5zen",
+                    "projectType": "DEL",
+                    "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd_0yyp5zen",
+                    "workflowType": null,
+                    "deleted": false,
+                    "__typename": "ProjectNode"
+                  },
+                  "__typename": "ProjectNodeEdge"
+                },
+                {
+                  "node": {
+                    "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtNTUwNDB4bmYtYndhLW1lbQ=4",
+                    "createdBy": "zhux3",
+                    "createdOn": "2019-08-26T18:22:42+00:00",
+                    "description": "",
+                    "modifiedOn": "2019-08-26T18:22:42+00:00",
+                    "name": "test study name bwa-mem",
+                    "projectId": "zhux3/sd_0yyp5zen-bwa-mem",
+                    "projectType": "HAR",
+                    "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd_0yyp5zen-bwa-mem",
+                    "workflowType": "bwa_mem",
+                    "deleted": false,
+                    "__typename": "ProjectNode"
+                  },
+                  "__typename": "ProjectNodeEdge"
+                }
+              ],
+              "__typename": "ProjectNodeConnection"
+            },
             "files": {"edges": [], "__typename": "FileNodeConnection"},
             "__typename": "StudyNode"
           },

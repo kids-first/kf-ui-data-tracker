@@ -4,6 +4,7 @@ import {Button, Form, Message, Modal, Header, Icon} from 'semantic-ui-react';
 import {Formik} from 'formik';
 
 const LinkProjectModal = ({
+  open,
   linkProject,
   onCloseDialog,
   study,
@@ -11,6 +12,7 @@ const LinkProjectModal = ({
   syncProjects,
 }) => {
   const [errors, setErrors] = useState('');
+  const [visible, setVisible] = useState(true);
 
   const onSubmit = (values, {setSubmitting}) => {
     setSubmitting(true);
@@ -59,34 +61,39 @@ const LinkProjectModal = ({
       onSubmit={onSubmit}
     >
       {formikProps => (
-        <Modal open={true} onClose={onCloseDialog} closeIcon>
+        <Modal open={open} onClose={onCloseDialog} closeIcon>
           <Modal.Header content="Link an Existing Analysis Project" />
           <Modal.Content className="pb-0">
-            <Header
-              as="h3"
-              floated="left"
-              content="Link a Cavatica Project to this study"
-            />
             <Button
               basic
               primary
               type="button"
-              floated="right"
               size="mini"
               icon="sync"
+              floated="right"
               loading={syncing}
               content="SYNC PROJECTS"
               onClick={sync}
             />
-            {syncing ? (
+            <Header
+              as="h3"
+              className="noMargin pb-10"
+              content={'Link a Cavatica Project to ' + study.name}
+            />
+
+            {syncing && (
               <Message
                 icon={<Icon name="sync" loading />}
                 header="Syncing Cavatica Projects"
                 content="This could take a moment..."
               />
-            ) : (
+            )}
+            {visible && !syncing && (
               <Message
                 warning
+                onDismiss={() => {
+                  setVisible(false);
+                }}
                 icon="attention"
                 header="Attention"
                 content="Projects created recently from Cavatica may require a sync before being available for linking."

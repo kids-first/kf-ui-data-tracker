@@ -4,11 +4,11 @@ import {Mutation} from 'react-apollo';
 import {FILE_DOWNLOAD_URL} from '../../state/mutations';
 import AvatarTimeAgo from '../AvatarTimeAgo/AvatarTimeAgo';
 import {
-  versionState,
   formatFileSize,
   downloadFile,
   lengthLimit,
 } from '../../common/fileUtils';
+import {versionState} from '../../common/enums';
 import {Label, Icon, Table, Popup} from 'semantic-ui-react';
 /**
  * Displays single version item from the list

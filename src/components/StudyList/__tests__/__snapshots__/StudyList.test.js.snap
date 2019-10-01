@@ -62,172 +62,290 @@ exports[`renders correctly 1`] = `
         <div
           class="ui stackable four cards"
         >
-          <a
-            class="ui card"
-            href="/study/SD_8WX8QQ06/documents"
+          <div
+            class="ui red card"
+            to="/study/SD_8WX8QQ06/documents"
           >
             <div
+              class="ui mini right corner label"
+            >
+              <i
+                aria-hidden="true"
+                class="red exclamation mini icon"
+              />
+            </div>
+            <a
               class="content"
+              href="/study/SD_8WX8QQ06/basic-info/info"
             >
               <div
                 class="header"
-              >
-                SD_8WX8QQ06
-              </div>
-              <div
-                class="description"
               >
                 benchmark extensible e-business
               </div>
-            </div>
+              <div
+                class="meta"
+              >
+                SD_8WX8QQ06
+              </div>
+            </a>
             <div
               class="extra content"
+              compact="very"
             >
-              <div
-                class="ui horizontal list"
-                role="list"
+              <a
+                class="pr-5"
+                href="/study/SD_8WX8QQ06/basic-info/info"
               >
-                <div
-                  class="item"
-                  role="listitem"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="file icon"
-                  />
-                  1
-                   files
-                </div>
-                <div
-                  class="item"
-                  role="listitem"
-                >
-                  <div
-                    class="ui orange mini circular empty label"
-                  />
-                   
-                  1
-                </div>
+                <i
+                  aria-hidden="true"
+                  class="grey clipboard check icon"
+                />
+                Info
+              </a>
+              <a
+                class="pr-5"
+                href="/study/SD_8WX8QQ06/documents"
+              >
+                <i
+                  aria-hidden="true"
+                  class="grey file icon"
+                />
+                1
+                 Files
+              </a>
+              <a
+                href="/study/SD_8WX8QQ06/cavatica"
+              >
+                <i
+                  aria-hidden="true"
+                  class="red code branch icon"
+                />
+                0
+                 projects
+              </a>
+              <div
+                class="ui label ui mini basic icon right floated button"
+                role="button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="chevron down icon"
+                />
               </div>
             </div>
-          </a>
-          <a
-            class="ui card"
-            href="/study/SD_I1L92W57/documents"
+          </div>
+          <div
+            class="ui red card"
+            to="/study/SD_I1L92W57/documents"
           >
             <div
+              class="ui mini right corner label"
+            >
+              <i
+                aria-hidden="true"
+                class="red exclamation mini icon"
+              />
+            </div>
+            <a
               class="content"
+              href="/study/SD_I1L92W57/basic-info/info"
             >
               <div
                 class="header"
-              >
-                SD_I1L92W57
-              </div>
-              <div
-                class="description"
               >
                 visualize dynamic users
               </div>
-            </div>
+              <div
+                class="meta"
+              >
+                SD_I1L92W57
+              </div>
+            </a>
             <div
               class="extra content"
+              compact="very"
             >
-              <div
-                class="ui horizontal list"
-                role="list"
+              <a
+                class="pr-5"
+                href="/study/SD_I1L92W57/basic-info/info"
               >
-                <div
-                  class="item"
-                  role="listitem"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="file icon"
-                  />
-                  0
-                   files
-                </div>
+                <i
+                  aria-hidden="true"
+                  class="grey clipboard check icon"
+                />
+                Info
+              </a>
+              <a
+                class="pr-5"
+                href="/study/SD_I1L92W57/documents"
+              >
+                <i
+                  aria-hidden="true"
+                  class="red file icon"
+                />
+                0
+                 Files
+              </a>
+              <a
+                href="/study/SD_I1L92W57/cavatica"
+              >
+                <i
+                  aria-hidden="true"
+                  class="red code branch icon"
+                />
+                0
+                 projects
+              </a>
+              <div
+                class="ui label ui mini basic icon right floated button"
+                role="button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="chevron down icon"
+                />
               </div>
             </div>
-          </a>
-          <a
-            class="ui card"
-            href="/study/SD_SG5N41K8/documents"
+          </div>
+          <div
+            class="ui red card"
+            to="/study/SD_SG5N41K8/documents"
           >
             <div
+              class="ui mini right corner label"
+            >
+              <i
+                aria-hidden="true"
+                class="red exclamation mini icon"
+              />
+            </div>
+            <a
               class="content"
+              href="/study/SD_SG5N41K8/basic-info/info"
             >
               <div
                 class="header"
-              >
-                SD_SG5N41K8
-              </div>
-              <div
-                class="description"
               >
                 strategize cross-media markets
               </div>
-            </div>
+              <div
+                class="meta"
+              >
+                SD_SG5N41K8
+              </div>
+            </a>
             <div
               class="extra content"
+              compact="very"
             >
-              <div
-                class="ui horizontal list"
-                role="list"
+              <a
+                class="pr-5"
+                href="/study/SD_SG5N41K8/basic-info/info"
               >
-                <div
-                  class="item"
-                  role="listitem"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="file icon"
-                  />
-                  0
-                   files
-                </div>
+                <i
+                  aria-hidden="true"
+                  class="grey clipboard check icon"
+                />
+                Info
+              </a>
+              <a
+                class="pr-5"
+                href="/study/SD_SG5N41K8/documents"
+              >
+                <i
+                  aria-hidden="true"
+                  class="red file icon"
+                />
+                0
+                 Files
+              </a>
+              <a
+                href="/study/SD_SG5N41K8/cavatica"
+              >
+                <i
+                  aria-hidden="true"
+                  class="red code branch icon"
+                />
+                0
+                 projects
+              </a>
+              <div
+                class="ui label ui mini basic icon right floated button"
+                role="button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="chevron down icon"
+                />
               </div>
             </div>
-          </a>
-          <a
+          </div>
+          <div
             class="ui card"
-            href="/study/SD_0YYP5ZEN/documents"
+            to="/study/SD_0YYP5ZEN/documents"
           >
-            <div
+            <a
               class="content"
+              href="/study/SD_0YYP5ZEN/basic-info/info"
             >
               <div
                 class="header"
               >
-                SD_0YYP5ZEN
-              </div>
-              <div
-                class="description"
-              >
                 drive distributed architectures
               </div>
-            </div>
+              <div
+                class="meta"
+              >
+                SD_0YYP5ZEN
+              </div>
+            </a>
             <div
               class="extra content"
+              compact="very"
             >
-              <div
-                class="ui horizontal list"
-                role="list"
+              <a
+                class="pr-5"
+                href="/study/SD_0YYP5ZEN/basic-info/info"
               >
-                <div
-                  class="item"
-                  role="listitem"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="file icon"
-                  />
-                  0
-                   files
-                </div>
+                <i
+                  aria-hidden="true"
+                  class="grey clipboard check icon"
+                />
+                Info
+              </a>
+              <a
+                class="pr-5"
+                href="/study/SD_0YYP5ZEN/documents"
+              >
+                <i
+                  aria-hidden="true"
+                  class="red file icon"
+                />
+                0
+                 Files
+              </a>
+              <a
+                href="/study/SD_0YYP5ZEN/cavatica"
+              >
+                <i
+                  aria-hidden="true"
+                  class="grey code branch icon"
+                />
+                2
+                 projects
+              </a>
+              <div
+                class="ui label ui mini basic icon right floated button"
+                role="button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="chevron down icon"
+                />
               </div>
             </div>
-          </a>
+          </div>
         </div>
       </div>
     </div>

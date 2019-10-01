@@ -1,55 +1,25 @@
 import React from 'react';
 import TimeAgo from 'react-timeago';
-import {withRouter} from 'react-router-dom';
-import {Table, Popup, Icon, Label, List} from 'semantic-ui-react';
-import {versionState} from '../../common/fileUtils';
+import {Link, withRouter} from 'react-router-dom';
+import {Table, Icon} from 'semantic-ui-react';
+import FileCounts from '../StudyInfo/FileCounts';
+import CavaticaCounts from '../StudyInfo/CavaticaCounts';
 import {longDate} from '../../common/dateUtils';
-
-const PopupBadge = ({state, count}) => (
-  <Popup
-    inverted
-    position="top center"
-    size="small"
-    content={versionState[state].title}
-    trigger={
-      <List.Item>
-        <Label
-          circular
-          empty
-          size="mini"
-          color={versionState[state].labelColor}
-        />{' '}
-        {count}
-      </List.Item>
-    }
-  />
-);
-
-/**
- * Renders a summary of files in a study
- */
-const StudyFileBadges = ({files}) => (
-  <List horizontal>
-    <List.Item>
-      <Icon name="file" />
-      {Object.values(files).reduce((x, y) => x + y, 0)} files
-    </List.Item>
-    {['PEN', 'CHN', 'APP', 'PRC'].map(
-      state =>
-        state in files && (
-          <PopupBadge state={state} count={files[state]} key={state} />
-        ),
-    )}
-  </List>
-);
-
+import {
+  countStudyNotification,
+  countProjectNotification,
+  countFileNotification,
+  trackedStudyFields,
+} from '../../common/notificationUtils';
 /**
  * Renders a single row in the table
  */
-const TableValue = ({row, col}) => {
+const TableValue = ({row, col, title}) => {
   switch (col) {
     case 'files':
-      return <StudyFileBadges files={row[col]} />;
+      return <FileCounts files={row[col].edges} title={title} />;
+    case 'projects':
+      return <CavaticaCounts projects={row[col].edges} title={title} />;
     case 'createdAt':
     case 'modifiedAt':
       return (
@@ -58,6 +28,26 @@ const TableValue = ({row, col}) => {
           title={longDate(new Date(row[col]))}
           live={false}
         />
+      );
+    case 'description':
+      return (
+        <Link
+          to={`/study/${title}/basic-info/info`}
+          className="ml-10"
+          onClick={e => e.stopPropagation()}
+        >
+          <Icon
+            name={
+              row[col].missingValue > 0 ? 'clipboard list' : 'clipboard check'
+            }
+            color={row[col].missingValue > 0 ? 'red' : 'grey'}
+          />
+          {trackedStudyFields.length -
+            row[col].missingValue +
+            '/' +
+            trackedStudyFields.length +
+            ' complete'}
+        </Link>
       );
     default:
       return row[col];
@@ -70,6 +60,7 @@ const StudyTable = ({
   exclude = [],
   clickable = true,
   history,
+  isAdmin,
 }) => {
   if (loading) {
     return <h2>loading studies</h2>;
@@ -81,36 +72,36 @@ const StudyTable = ({
       : {'No access to any studies yet': []},
   ).filter(v => hidden.indexOf(v) < 0);
 
-  /**
-   * Returns the count of each file state within the study
-   */
-  const stateCounts = files => {
-    // Flattens to an array of states
-    const states = files.edges.map(
-      ({node: {versions}}) => versions.edges[0].node.state,
-    );
-    return states.reduce((count, state) => {
-      count[state] = (count[state] || 0) + 1;
-      return count;
-    }, {});
-  };
-
   // Formats the study objects and computes file state counts
   const studies = studyList.map(({node}) =>
     cols.reduce((row, col) => {
-      row[col] = col !== 'files' ? node[col] : stateCounts(node[col]);
+      if (col === 'description') {
+        row[col] = {
+          missingValue: isAdmin ? countStudyNotification(node) : 0,
+          missingProject: isAdmin ? countProjectNotification(node) : 0,
+          requiredFileChanges: isAdmin ? countFileNotification(node) : 0,
+        };
+      } else if (col === 'name') {
+        row[col] =
+          node.name && node.name.length > 0 ? node.name : node.shortName;
+      } else {
+        row[col] = node[col];
+      }
       return row;
     }, {}),
   );
 
   const tableHeaderCell = text => {
-    const headerText =
-      text === 'kfId'
-        ? 'Study ID'
-        : text
-            .replace(/([A-Z])/g, ' $1')
-            .charAt(0)
-            .toUpperCase() + text.replace(/([A-Z])/g, ' $1').slice(1);
+    var headerText =
+      text
+        .replace(/([A-Z])/g, ' $1')
+        .charAt(0)
+        .toUpperCase() + text.replace(/([A-Z])/g, ' $1').slice(1);
+    if (text === 'kfId') {
+      headerText = 'ID';
+    } else if (text === 'description') {
+      headerText = 'Info';
+    }
     return <Table.HeaderCell key={text}>{headerText}</Table.HeaderCell>;
   };
   return (
@@ -129,7 +120,7 @@ const StudyTable = ({
           >
             {cols.map((col, idx) => (
               <Table.Cell key={idx}>
-                <TableValue row={row} col={col} />
+                <TableValue row={row} col={col} title={row.kfId} />
               </Table.Cell>
             ))}
           </Table.Row>

@@ -1,7 +1,5 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import {MY_PROFILE} from '../../state/queries';
-import {graphql} from 'react-apollo';
 import StudyGrid from './StudyGrid';
 import StudyTable from './StudyTable';
 import {Link} from 'react-router-dom';
@@ -32,12 +30,10 @@ const HeaderSkeleton = () => (
 /**
  * Displays unordered studies in grid view (include empty stage message)
  */
-const StudyList = ({studyList, loading, activeView = 'grid', user}) => {
+const StudyList = ({studyList, loading, activeView = 'grid', roles}) => {
   const [view, setView] = useState(activeView);
   const [searchString, setSearchString] = useState('');
-  const isAdmin = !user.loading
-    ? user.myProfile.roles.includes('ADMIN')
-    : false;
+  const isAdmin = roles && roles.includes('ADMIN');
 
   if (loading) {
     return (
@@ -101,12 +97,30 @@ const StudyList = ({studyList, loading, activeView = 'grid', user}) => {
         {filteredStudyList().length > 0 ? (
           <Grid.Column>
             {view === 'grid' ? (
-              <StudyGrid loading={loading} studyList={filteredStudyList()} />
-            ) : (
-              <StudyTable
+              <StudyGrid
                 loading={loading}
                 studyList={filteredStudyList()}
-                exclude={['createdAt', 'modifiedAt']}
+                isAdmin={isAdmin}
+              />
+            ) : (
+              <StudyTable
+                isAdmin={isAdmin}
+                loading={loading}
+                studyList={filteredStudyList()}
+                exclude={[
+                  'shortName',
+                  'createdAt',
+                  'modifiedAt',
+                  'bucket',
+                  'attribution',
+                  'dataAccessAuthority',
+                  'externalId',
+                  'releaseStatus',
+                  'version',
+                  'releaseDate',
+                  'anticipatedSamples',
+                  'awardeeOrganization',
+                ]}
               />
             )}
           </Grid.Column>
@@ -136,4 +150,4 @@ StudyList.defaultProps = {
   activeView: 'grid',
 };
 
-export default graphql(MY_PROFILE, {name: 'user'})(StudyList);
+export default StudyList;

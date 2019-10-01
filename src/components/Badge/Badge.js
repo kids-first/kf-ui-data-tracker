@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {versionState} from '../../common/fileUtils';
+import {versionState} from '../../common/enums';
 import {Label, Icon} from 'semantic-ui-react';
 /**
  * Displays badge describing the file state

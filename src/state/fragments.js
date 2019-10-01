@@ -16,9 +16,9 @@ export const TOKEN_FIELDS = gql`
 export const STUDY_BASIC_FIELDS = gql`
   fragment StudyBasicFields on StudyNode {
     id
-    kfId
     name
     shortName
+    kfId
     createdAt
     modifiedAt
   }

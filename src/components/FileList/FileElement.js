@@ -7,13 +7,12 @@ import {Header, Table, Icon, List, Responsive} from 'semantic-ui-react';
 
 import FileActionsContainer from '../../containers/FileActionsContainer';
 import {
-  fileTypeDetail,
   fileSortedVersions,
   fileLatestDate,
   fileLatestSize,
   lengthLimit,
 } from '../../common/fileUtils';
-
+import {fileTypeDetail} from '../../common/enums';
 import {longDate} from '../../common/dateUtils';
 
 const useRecentlyUpdated = (latestDate, fileId) => {

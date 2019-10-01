@@ -6,12 +6,12 @@ import {FILE_DOWNLOAD_URL} from '../../state/mutations';
 import AvatarTimeAgo from '../AvatarTimeAgo/AvatarTimeAgo';
 import VersionList from '../VersionList/VersionList';
 import {
-  fileTypeDetail,
   downloadFile,
   fileSortedVersions,
   fileLatestDate,
   fileLatestSize,
 } from '../../common/fileUtils';
+import {fileTypeDetail} from '../../common/enums';
 import DeleteFileMutation from '../../containers/DeleteFileMutation';
 import FileDetailModal from './FileDetailModal';
 import Badge from '../Badge/Badge';

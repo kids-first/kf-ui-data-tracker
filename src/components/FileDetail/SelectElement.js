@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {fileTypeDetail} from '../../common/fileUtils';
+import {fileTypeDetail} from '../../common/enums';
 import {Icon, Segment, Radio} from 'semantic-ui-react';
 /**
  * A radio button that displays information about a file type with a title,
