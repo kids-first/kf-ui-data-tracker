@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import {Form, Segment, Message, Step, Button, Header} from 'semantic-ui-react';
 import {Formik} from 'formik';
 import {InfoStep, ExternalStep, LogisticsStep} from './StudyFormSteps';
+import {fieldLabel, trackedStudyFields} from '../common/notificationUtils';
 
 const NewStudyForm = ({
   submitValue,
@@ -45,6 +46,33 @@ const NewStudyForm = ({
       href: 'logistics',
     },
   ];
+  const missingValueMessage = values => {
+    var fields = [];
+    trackedStudyFields.map(field => {
+      if (!values[field] || values[field].length === 0 || values[field] === 0) {
+        fields.push(fieldLabel[field]);
+      }
+      return fields;
+    });
+    if (fields.length > 0) {
+      return (
+        <Message negative icon>
+          <Icon name="warning circle" />
+          <Message.Content>
+            <Message.Header>Missing values</Message.Header>
+            <p>Please add values to the following fields:</p>
+            <List bulleted horizontal>
+              {fields.map(label => (
+                <List.Item key={label} content={label} />
+              ))}
+            </List>
+          </Message.Content>
+        </Message>
+      );
+    } else {
+      return null;
+    }
+  };
   const initialValues = studyNode
     ? {
         externalId: studyNode.externalId || '',
@@ -153,6 +181,7 @@ const NewStudyForm = ({
               content={apiErrors}
             />
           )}
+          {!newStudy && missingValueMessage(formikProps.values)}
           <Step.Group attached="top" fluid widths={3}>
             {STUDY_STEPS.map(step => (
               <Step
