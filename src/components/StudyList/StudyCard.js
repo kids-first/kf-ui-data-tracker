@@ -9,8 +9,8 @@ import {trackedStudyFields} from '../../common/notificationUtils';
  * Displays each study with its kfId, name(shortName), and modifiedAt
  */
 const StudyCard = ({
-  title,
-  body,
+  studyId,
+  studyName,
   files,
   projects,
   history,
@@ -28,7 +28,7 @@ const StudyCard = ({
   const [showDetail, setShowDetail] = useState(false);
   return (
     <Card
-      to={`/study/${title}/documents`}
+      to={`/study/${studyId}/documents`}
       color={needsAttention ? 'red' : null}
     >
       {needsAttention && (
@@ -36,9 +36,9 @@ const StudyCard = ({
           <Icon name="exclamation" size="mini" color="red" />
         </Label>
       )}
-      <Card.Content as={Link} to={`/study/${title}/basic-info/info`}>
-        <Card.Header>{body}</Card.Header>
-        <Card.Meta>{title}</Card.Meta>
+      <Card.Content as={Link} to={`/study/${studyId}/basic-info/info`}>
+        <Card.Header>{studyName}</Card.Header>
+        <Card.Meta>{studyId}</Card.Meta>
       </Card.Content>
       {showDetail === false && (
         <Card.Content extra compact="very" size="mini">
@@ -54,7 +54,7 @@ const StudyCard = ({
               ' complete'
             }
             trigger={
-              <Link to={`/study/${title}/basic-info/info`} className="pr-5">
+              <Link to={`/study/${studyId}/basic-info/info`} className="pr-5">
                 <Icon
                   name={missingValue > 0 ? 'clipboard list' : 'clipboard check'}
                   color={missingValue > 0 ? 'red' : 'grey'}
@@ -76,7 +76,7 @@ const StudyCard = ({
             }
             disabled={files.length > 0 && requiredFileChanges < 1}
             trigger={
-              <Link to={`/study/${title}/documents`} className="pr-5">
+              <Link to={`/study/${studyId}/documents`} className="pr-5">
                 <Icon
                   name="file"
                   color={
@@ -94,7 +94,7 @@ const StudyCard = ({
             content="Missing projects"
             disabled={projectsCounts > 0 && missingProject < 1}
             trigger={
-              <Link to={`/study/${title}/cavatica`}>
+              <Link to={`/study/${studyId}/cavatica`}>
                 <Icon
                   name="code branch"
                   color={
@@ -118,7 +118,7 @@ const StudyCard = ({
       {showDetail && (
         <>
           <Card.Content extra compact="very" size="mini">
-            <FileCounts title={title} files={files} history={history} />
+            <FileCounts title={studyId} files={files} history={history} />
             <Button
               as={Label}
               basic
@@ -129,7 +129,7 @@ const StudyCard = ({
             />
           </Card.Content>
           <Card.Content extra compact="very" size="mini">
-            <CavaticaCounts title={title} projects={projects} />
+            <CavaticaCounts title={studyId} projects={projects} />
           </Card.Content>
         </>
       )}
@@ -139,16 +139,16 @@ const StudyCard = ({
 
 StudyCard.propTypes = {
   /** Name to display as the card header */
-  title: PropTypes.string,
+  studyId: PropTypes.string,
   /** Text to display as the card body */
-  body: PropTypes.string,
+  studyName: PropTypes.string,
   /** Optional lastUpdate date to display in the card body */
   lastUpdate: PropTypes.instanceOf(Date),
 };
 
 StudyCard.defaultProps = {
-  title: null,
-  body: null,
+  studyId: null,
+  studyName: null,
   lastUpdate: null,
 };
 

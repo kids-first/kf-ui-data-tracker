@@ -40,8 +40,8 @@ const StudyGrid = ({studyList, loading, isAdmin}) => {
       {studyList.map((node, i) => (
         <StudyCard
           key={i}
-          title={node.node.kfId}
-          body={node.node.name || node.node.shortName}
+          studyId={node.node.kfId}
+          studyName={node.node.name || node.node.shortName}
           lastUpdate={new Date(node.node.modifiedAt)}
           files={node.node.files.edges}
           projects={node.node.projects.edges}
