@@ -1,4 +1,5 @@
 import auth0 from 'auth0-js';
+import jwtDecode from 'jwt-decode';
 import {
   auth0Domain,
   auth0ClientId,
@@ -11,6 +12,7 @@ import analyticsTrackingConstants from '../common/analyticsTrackingConstants';
 
 const {AUTH: TRACKING_AUTH} = analyticsTrackingConstants;
 
+const ampltd = amplitude.getInstance();
 class Auth {
   accessToken;
   idToken;
