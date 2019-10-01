@@ -28,6 +28,10 @@ const CavaticaBixView = ({
   const isAdmin = !user.loading
     ? user.myProfile.roles.includes('ADMIN')
     : false;
+  const hashOpenHook = (history, modalName) => {
+    const modalNameHash = modalName.replace(' ', '-').toLowerCase();
+    return modalNameHash === history.location.hash;
+  };
   if (loading)
     return (
       <Container as={Segment} basic vertical>
@@ -124,33 +128,27 @@ const CavaticaBixView = ({
           </Header>
         )}
 
-        {history.location.hash === '#add-cavatica-project' && (
-          <NewProjectModal
-            study={studyByKfId}
-            onCloseDialog={() =>
-              history.push(
-                '/study/' +
-                  history.location.pathname.split('/')[2] +
-                  '/cavatica',
-              )
-            }
-          />
-        )}
-        {history.location.hash === '#link-cavatica-project' && (
-          <LinkProjectModal
-            study={studyByKfId}
-            allProjects={projects.allProjects}
-            linkProject={linkProject}
-            syncProjects={syncProjects}
-            onCloseDialog={() =>
-              history.push(
-                '/study/' +
-                  history.location.pathname.split('/')[2] +
-                  '/cavatica',
-              )
-            }
-          />
-        )}
+        <NewProjectModal
+          open={hashOpenHook(history, '#add-cavatica-project')}
+          study={studyByKfId}
+          onCloseDialog={() =>
+            history.push(
+              '/study/' + history.location.pathname.split('/')[2] + '/cavatica',
+            )
+          }
+        />
+        <LinkProjectModal
+          open={hashOpenHook(history, '#link-cavatica-project')}
+          study={studyByKfId}
+          allProjects={projects.allProjects}
+          linkProject={linkProject}
+          syncProjects={syncProjects}
+          onCloseDialog={() =>
+            history.push(
+              '/study/' + history.location.pathname.split('/')[2] + '/cavatica',
+            )
+          }
+        />
       </Container>
     );
   } else {

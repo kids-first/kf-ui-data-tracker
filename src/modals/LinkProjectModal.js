@@ -4,6 +4,7 @@ import {Button, Form, Message, Modal, Header, Icon} from 'semantic-ui-react';
 import {Formik} from 'formik';
 
 const LinkProjectModal = ({
+  open,
   linkProject,
   onCloseDialog,
   study,
@@ -60,7 +61,7 @@ const LinkProjectModal = ({
       onSubmit={onSubmit}
     >
       {formikProps => (
-        <Modal open={true} onClose={onCloseDialog} closeIcon>
+        <Modal open={open} onClose={onCloseDialog} closeIcon>
           <Modal.Header content="Link an Existing Analysis Project" />
           <Modal.Content className="pb-0">
             <Button
