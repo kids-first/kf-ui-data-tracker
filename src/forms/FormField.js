@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Form, Label} from 'semantic-ui-react';
+import {Form, Label, Input} from 'semantic-ui-react';
+import {trackedStudyFields} from '../common/notificationUtils';
 /**
  * The FormField will render a semantic form field that will show a
  * description below label and error message if given.
@@ -22,44 +23,52 @@ const FormField = ({
   children,
   readOnly,
   newStudy,
-}) => (
-  <Form.Field required={required}>
-    <label className="noMargin">{name}:</label>
-    {!readOnly && description && (
-      <p className="noMargin">
-        <small>{description}</small>
-      </p>
-    )}
-    {children ? (
-      children
-    ) : (
-      <Form.Input
-        className={readOnly ? 'readOnlyField noMargin' : 'noMargin'}
-        fluid
-        readOnly={readOnly}
-        type={type}
-        name={id}
-        placeholder={placeholder}
-        open={focused}
-        onChange={handleChange}
-        onBlur={e => {
-          handleFocus('');
-          handleBlur(e);
-        }}
-        onFocus={e => handleFocus(id)}
-        value={value}
-        error={
-          touched !== undefined && errors !== undefined && errors.length > 0
-        }
-      />
-    )}
-    {touched && errors && errors.length > 0 && (
-      <Label pointing basic color="red">
-        {errors}
-      </Label>
-    )}
-  </Form.Field>
-);
+  isAdmin,
+}) => {
+  const hasError = touched && errors && errors.length > 0;
+  const tracking =
+    isAdmin &&
+    trackedStudyFields.includes(id) &&
+    (value === null || value === 0 || value.length === 0);
+  return (
+    <Form.Field required={required}>
+      <label className="noMargin">{name}:</label>
+      {!readOnly && description && (
+        <p className="noMargin">
+          <small>{description}</small>
+        </p>
+      )}
+      {children ? (
+        children
+      ) : (
+        <Input
+          className={readOnly ? 'readOnlyField noMargin' : 'noMargin'}
+          fluid
+          readOnly={readOnly}
+          type={type}
+          name={id}
+          placeholder={placeholder}
+          open={focused}
+          onChange={handleChange}
+          onBlur={e => {
+            handleFocus(null);
+            handleBlur(e);
+          }}
+          onFocus={e => handleFocus(id)}
+          value={value}
+          error={hasError || tracking}
+          label={tracking ? {icon: 'asterisk', color: 'red'} : null}
+          labelPosition={tracking ? 'left corner' : null}
+        />
+      )}
+      {hasError && !tracking && (
+        <Label pointing basic color="red">
+          {errors}
+        </Label>
+      )}
+    </Form.Field>
+  );
+};
 
 FormField.propTypes = {
   /** The field input element name */

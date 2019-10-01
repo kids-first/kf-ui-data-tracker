@@ -38,6 +38,7 @@ export const InfoStep = ({
   newStudy,
   history,
   editing,
+  isAdmin,
 }) => {
   const {values, errors, touched, handleChange, handleBlur} = formikProps;
   return (
@@ -48,6 +49,7 @@ export const InfoStep = ({
         content="Please provide the study's full name and a shortened version that may be used for display purposes."
       />
       <FormField
+        isAdmin={isAdmin}
         newStudy={newStudy}
         required
         id="name"
@@ -64,6 +66,7 @@ export const InfoStep = ({
         readOnly={!editing && !newStudy}
       />
       <FormField
+        isAdmin={isAdmin}
         newStudy={newStudy}
         id="shortName"
         name="Study Short Name"
@@ -80,6 +83,7 @@ export const InfoStep = ({
       />
       {newStudy ? (
         <FormField
+          isAdmin={isAdmin}
           newStudy={newStudy}
           id="workflowType"
           name="Cavatica Projects"
@@ -109,6 +113,7 @@ export const InfoStep = ({
         </FormField>
       ) : (
         <FormField
+          isAdmin={isAdmin}
           newStudy={newStudy}
           id="bucket"
           name="S3 Bucket"
@@ -146,6 +151,7 @@ export const ExternalStep = ({
   editing,
   newStudy,
   history,
+  isAdmin,
 }) => {
   const {values, errors, touched, handleChange, handleBlur} = formikProps;
   return (
@@ -156,6 +162,7 @@ export const ExternalStep = ({
         content="If the study is a dbGaP project, additional information is needed to ensure access is granted correctly. For non-dbGaP studies, an external identifier which this study may otherwise be known by is required."
       />
       <FormField
+        isAdmin={isAdmin}
         newStudy={newStudy}
         required
         id="externalId"
@@ -173,6 +180,7 @@ export const ExternalStep = ({
         readOnly={!editing && !newStudy}
       />
       <FormField
+        isAdmin={isAdmin}
         newStudy={newStudy}
         id="version"
         name="dbGaP Version"
@@ -189,6 +197,7 @@ export const ExternalStep = ({
         readOnly={!editing && !newStudy}
       />
       <FormField
+        isAdmin={isAdmin}
         newStudy={newStudy}
         id="attribution"
         name="Attribution"
@@ -240,6 +249,7 @@ export const LogisticsStep = ({
   history,
   foldDescription,
   setFoldDescription,
+  isAdmin,
 }) => {
   const {
     values,
@@ -259,6 +269,7 @@ export const LogisticsStep = ({
         content="Provide details about the Kids First grant that this study was awarded."
       />
       <FormField
+        isAdmin={isAdmin}
         newStudy={newStudy}
         id="releaseDate"
         name="Release Date"
@@ -274,6 +285,7 @@ export const LogisticsStep = ({
         readOnly={!editing && !newStudy}
       />
       <FormField
+        isAdmin={isAdmin}
         newStudy={newStudy}
         id="anticipatedSamples"
         name="Number of anticipated samples"
@@ -289,6 +301,7 @@ export const LogisticsStep = ({
         readOnly={!editing && !newStudy}
       />
       <FormField
+        isAdmin={isAdmin}
         newStudy={newStudy}
         id="awardeeOrganization"
         name="Awardee organization"
@@ -338,6 +351,7 @@ export const LogisticsStep = ({
         </>
       ) : (
         <FormField
+          isAdmin={isAdmin}
           newStudy={newStudy}
           id="description"
           name="Description"

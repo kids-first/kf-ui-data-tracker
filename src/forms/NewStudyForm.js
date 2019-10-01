@@ -253,6 +253,7 @@ const NewStudyForm = ({
                         editing,
                         foldDescription,
                         setFoldDescription,
+                        isAdmin,
                       })
                     }
                   />
