@@ -78,7 +78,7 @@ const LinkProjectModal = ({
             <Header
               as="h3"
               className="noMargin pb-10"
-              content="Link a Cavatica Project to this study"
+              content={'Link a Cavatica Project to ' + study.name}
             />
 
             {syncing && (
