@@ -1,5 +1,20 @@
 import {fileLatestStatus} from './fileUtils';
 
+// An object contains the label for each study data field
+export const fieldLabel = {
+  externalId: 'External ID',
+  name: 'Study Name',
+  shortName: 'Study Short Name',
+  description: 'Description',
+  releaseDate: 'Release Date',
+  anticipatedSamples: 'Number of anticipated samples',
+  awardeeOrganization: 'Awardee organization',
+  attribution: 'Attribution',
+  version: 'dbGaP Version',
+  bucket: 'S3 Bucket',
+  workflowType: 'Cavatica Projects',
+};
+
 // A list of study field that are tracked for completemess for ADMIN
 export const trackedStudyFields = [
   'name',
