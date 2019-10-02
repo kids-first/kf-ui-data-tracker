@@ -1,5 +1,5 @@
 import React, {useState, Fragment} from 'react';
-import {Switch, Route} from 'react-router-dom';
+import {Switch, Route, Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {
   Form,
@@ -14,7 +14,11 @@ import {
 import {Formik} from 'formik';
 import {InfoStep, ExternalStep, LogisticsStep} from './Steps';
 import ProgressBar from '../../components/StudyInfo/ProgressBar';
-import {fieldLabel, trackedStudyFields} from '../../common/notificationUtils';
+import {
+  fieldLabel,
+  trackedStudyFields,
+  steppingFields,
+} from '../../common/notificationUtils';
 
 const NewStudyForm = ({
   submitValue,
@@ -58,9 +62,21 @@ const NewStudyForm = ({
   ];
   const missingValueMessage = values => {
     var fields = [];
+    const flatList = steppingFields[0]
+      .concat(steppingFields[1])
+      .concat(steppingFields[2]);
     trackedStudyFields.map(field => {
+      var stepIndex = 1;
+      if (flatList.indexOf(field) < steppingFields[0].length) {
+        stepIndex = 0;
+      } else if (
+        flatList.indexOf(field) >=
+        steppingFields[0].length + steppingFields[1].length
+      ) {
+        stepIndex = 2;
+      }
       if (!values[field] || values[field].length === 0 || values[field] === 0) {
-        fields.push(fieldLabel[field]);
+        fields.push({label: fieldLabel[field], step: stepIndex});
       }
       return fields;
     });
@@ -72,8 +88,15 @@ const NewStudyForm = ({
             <Message.Header>Missing values</Message.Header>
             <p>Please add values to the following fields:</p>
             <List bulleted horizontal>
-              {fields.map(label => (
-                <List.Item key={label} content={label} />
+              {fields.map(item => (
+                <List.Item
+                  as={Link}
+                  to={`/study/${
+                    history.location.pathname.split('/')[2]
+                  }/basic-info/${STUDY_STEPS[item.step].href}`}
+                  key={item.label}
+                  content={item.label}
+                />
               ))}
             </List>
           </Message.Content>
