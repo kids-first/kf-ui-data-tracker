@@ -2,6 +2,7 @@ import React from 'react';
 import {compose, graphql} from 'react-apollo';
 import {Link} from 'react-router-dom';
 import {ALL_STUDIES, MY_PROFILE} from '../state/queries';
+import AmplitudeViewConsumer from './AmplitudeViewConsumer';
 import StudyList from '../components/StudyList/StudyList';
 import {Button, Message, Container, Segment} from 'semantic-ui-react';
 
@@ -11,14 +12,20 @@ const StudyListView = ({
 }) => {
   if (error)
     return (
-      <Container as={Segment} basic>
-        <Message
-          negative
-          icon="warning circle"
-          header="Error"
-          content={error.message}
-        />
-      </Container>
+      <AmplitudeViewConsumer
+        status="ERROR"
+        mountProps={{error}}
+        view="StudyListView"
+      >
+        <Container as={Segment} basic>
+          <Message
+            negative
+            icon="warning circle"
+            header="Error"
+            content={error.message}
+          />
+        </Container>
+      </AmplitudeViewConsumer>
     );
   const studyList = !loading ? allStudies.edges : [];
   if (!loading && studyList.length === 0)
@@ -55,11 +62,13 @@ const StudyListView = ({
       </Container>
     );
   return (
-    <StudyList
-      studyList={studyList}
-      loading={loading}
-      roles={myProfile ? myProfile.roles : []}
-    />
+    <AmplitudeViewConsumer view="StudyListView">
+      <StudyList
+        studyList={studyList}
+        loading={loading}
+        roles={myProfile ? myProfile.roles : []}
+      />
+    </AmplitudeViewConsumer>
   );
 };
 

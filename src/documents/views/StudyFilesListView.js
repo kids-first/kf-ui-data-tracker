@@ -12,6 +12,7 @@ import {
   Segment,
   Button,
 } from 'semantic-ui-react';
+import AmplitudeViewConsumer from './AmplitudeViewConsumer';
 import UploadWizard from '../modals/UploadWizard/UploadWizard';
 
 /**
@@ -54,84 +55,104 @@ const StudyFilesListView = ({
     user && !user.loading ? user.myProfile.roles.includes('ADMIN') : false;
   const [dialog, setDialog] = useState(false);
   const [uploadedFile, setFile] = useState(false);
+
   if (error)
     return (
-      <Container as={Segment} basic>
-        <Message
-          negative
-          icon="warning circle"
-          header="Error"
-          content={error.message}
-        />
-      </Container>
+      <AmplitudeViewConsumer
+        status="ERROR"
+        eventProperties={{
+          error,
+          study: {kfId},
+          history: {length: history.length},
+        }}
+        view="StudyFilesListView"
+      >
+        <Container as={Segment} basic>
+          <Message
+            negative
+            icon="warning circle"
+            header="Error"
+            content={error.message}
+          />
+        </Container>
+      </AmplitudeViewConsumer>
     );
   const files = !loading ? studyByKfId.files.edges : [];
   return (
-    <Grid as={Segment} basic container columns={1}>
-      <Grid.Row>
-        <Grid.Column width={10}>
-          <h2>Study Documents</h2>
-        </Grid.Column>
-        {files.length > 0 && (
-          <Grid.Column width={6}>
-            <Button
-              compact
-              primary
-              floated="right"
-              size="large"
-              icon="cloud upload"
-              labelPosition="left"
-              content="Upload Document"
-              as="label"
-              htmlFor="file"
-            />
-            <input
-              hidden
-              multiple
-              id="file"
-              type="file"
-              onChange={e => {
-                setFile(e.target.files[0]);
-                setDialog(true);
-              }}
-            />
+    <AmplitudeViewConsumer
+      eventProperties={{
+        study: {kfId, name: !loading ? studyByKfId.name : null},
+        files: files.length,
+        history: {length: history.length},
+      }}
+      view="StudyFilesListView"
+    >
+      <Grid as={Segment} basic container columns={1}>
+        <Grid.Row>
+          <Grid.Column width={10}>
+            <h2>Study Documents</h2>
           </Grid.Column>
-        )}
-      </Grid.Row>
-      <Grid.Row>
-        <Grid.Column width={16}>
-          {loading ? (
-            <StudyListSkeleton />
-          ) : (
-            <FileList fileList={files} studyId={kfId} isAdmin={isAdmin} />
+          {files.length > 0 && (
+            <Grid.Column width={6}>
+              <Button
+                compact
+                primary
+                floated="right"
+                size="large"
+                icon="cloud upload"
+                labelPosition="left"
+                content="Upload Document"
+                as="label"
+                htmlFor="file"
+              />
+              <input
+                hidden
+                multiple
+                id="file"
+                type="file"
+                onChange={e => {
+                  setFile(e.target.files[0]);
+                  setDialog(true);
+                }}
+              />
+            </Grid.Column>
           )}
-          <Divider />
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column width={16}>
+            {loading ? (
+              <StudyListSkeleton />
+            ) : (
+              <FileList fileList={files} studyId={kfId} />
+            )}
+            <Divider />
 
-          {dialog && (
-            <UploadWizard
-              history={history}
-              studyId={kfId}
-              file={uploadedFile}
-              fileList={files}
-              onCloseDialog={() => {
-                setFile(false);
-                setDialog(false);
-              }}
-            />
-          )}
-        </Grid.Column>
-      </Grid.Row>
-      <Grid.Row centered>
-        <UploadContainer
-          handleUpload={file => {
-            setFile(file);
-            return !files.length
-              ? history.push('documents/new-document', {file})
-              : setDialog(true);
-          }}
-        />
-      </Grid.Row>
-    </Grid>
+            {dialog && (
+              <UploadWizard
+                history={history}
+                studyId={kfId}
+                file={uploadedFile}
+                fileList={files}
+                onCloseDialog={() => {
+                  setFile(false);
+                  setDialog(false);
+                }}
+              />
+            )}
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row centered>
+          <UploadContainer
+            handleUpload={file => {
+              setFile(file);
+              return !files.length
+                ? history.push('documents/new-document', {file})
+                : setDialog(true);
+            }}
+          />
+        </Grid.Row>
+      </Grid>
+    </AmplitudeViewConsumer>
   );
 };
 

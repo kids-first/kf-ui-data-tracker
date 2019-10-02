@@ -5,7 +5,11 @@ import {AMPLITUDE_KEY} from './common/globals';
 import {ApolloProvider} from 'react-apollo';
 import {client} from './state/client';
 import AmplitudeUser from './common/amplitudeUserUtils';
-import {AmplitudeProvider} from '@amplitude/react-amplitude';
+import {
+  AmplitudeProvider,
+  Amplitude,
+  LogOnMount,
+} from '@amplitude/react-amplitude';
 import amplitude from 'amplitude-js';
 
 const App = () => {
@@ -28,11 +32,14 @@ const App = () => {
       userId={ampltdUser ? ampltdUser.userId : null}
     >
       <ApolloProvider client={client}>
-        <Router>
-          <main className="App">
-            <Routes />
-          </main>
-        </Router>
+        <Amplitude eventProperties={{scope: ['App']}}>
+          <LogOnMount eventType="app_mount" />
+          <Router>
+            <main className="App">
+              <Routes />
+            </main>
+          </Router>
+        </Amplitude>
       </ApolloProvider>
     </AmplitudeProvider>
   );
