@@ -17,7 +17,7 @@ const App = () => {
     ampltdUser.instance.logEvent('auto Sign In', {
       status: 'SUCCESS',
       auth_sub: ampltdUser.auth_sub_arr[0],
-      refferer: document.referrer,
+      referrer: document.referrer,
     });
   }
 

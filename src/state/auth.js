@@ -39,7 +39,7 @@ class Auth {
           ampltdUser.instance.logEvent('Sign In', {
             status: 'SUCCESS',
             auth_sub: ampltdUser.auth_sub_arr[0],
-            refferer: document.referrer,
+            referrer: document.referrer,
           });
 
           history.push(
