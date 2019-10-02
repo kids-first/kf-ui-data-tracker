@@ -20,6 +20,9 @@ import {
   steppingFields,
 } from '../../common/notificationUtils';
 
+/**
+ * A form for the user to create or update a study, displaying in three steps
+ */
 const NewStudyForm = ({
   submitValue,
   apiErrors,
