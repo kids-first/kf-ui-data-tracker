@@ -55,7 +55,8 @@ class Auth {
 
           ampltd.logEvent('Sign In', {
             status: 'SUCCESS',
-            auth_sub: userSubArr[0],
+            auth_sub: ampltdUser.auth_sub_arr[0],
+            refferer: document.referrer,
           });
 
           history.push(
