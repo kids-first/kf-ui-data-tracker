@@ -41,6 +41,31 @@ const LogisticsStep = ({
     isSubmitting,
     validateForm,
   } = formikProps;
+  const mapFields = [
+    {
+      required: false,
+      id: 'releaseDate',
+      name: 'Release Date',
+      description:
+        "The anticipated date on which this study's data will be made public in Kids First.",
+      type: 'date',
+    },
+    {
+      required: false,
+      id: 'anticipatedSamples',
+      name: 'Number of anticipated samples',
+      description:
+        'The anticipated number of samples awarded for sequencing for the study.',
+      type: 'number',
+    },
+    {
+      required: false,
+      id: 'awardeeOrganization',
+      name: 'Awardee organization',
+      description: 'The organization responsible for this study.',
+      type: 'text',
+    },
+  ];
   return (
     <>
       <Header
@@ -48,54 +73,26 @@ const LogisticsStep = ({
         className="text-wrap-75"
         content="Provide details about the Kids First grant that this study was awarded."
       />
-      <FormField
-        isAdmin={isAdmin}
-        newStudy={newStudy}
-        id="releaseDate"
-        name="Release Date"
-        description="The anticipated date on which this study's data will be made public in Kids First."
-        type="date"
-        focused={focused === 'releaseDate'}
-        value={values.releaseDate}
-        touched={touched.releaseDate}
-        errors={errors.releaseDate}
-        handleChange={handleChange}
-        handleBlur={handleBlur}
-        handleFocus={id => setFocused(id)}
-        readOnly={!editing && !newStudy}
-      />
-      <FormField
-        isAdmin={isAdmin}
-        newStudy={newStudy}
-        id="anticipatedSamples"
-        name="Number of anticipated samples"
-        description="The anticipated number of samples awarded for sequencing for the study."
-        type="number"
-        focused={focused === 'anticipatedSamples'}
-        value={values.anticipatedSamples}
-        touched={touched.anticipatedSamples}
-        errors={errors.anticipatedSamples}
-        handleChange={handleChange}
-        handleBlur={handleBlur}
-        handleFocus={id => setFocused(id)}
-        readOnly={!editing && !newStudy}
-      />
-      <FormField
-        isAdmin={isAdmin}
-        newStudy={newStudy}
-        id="awardeeOrganization"
-        name="Awardee organization"
-        description="The organization responsible for this study."
-        type="text"
-        focused={focused === 'awardeeOrganization'}
-        value={values.awardeeOrganization}
-        touched={touched.awardeeOrganization}
-        errors={errors.awardeeOrganization}
-        handleChange={handleChange}
-        handleBlur={handleBlur}
-        handleFocus={id => setFocused(id)}
-        readOnly={!editing && !newStudy}
-      />
+      {mapFields.map(item => (
+        <FormField
+          key={item.id}
+          isAdmin={isAdmin}
+          newStudy={newStudy}
+          required={item.required}
+          id={item.id}
+          name={item.name}
+          description={item.description}
+          type={item.type}
+          focused={focused === item.id}
+          value={values[item.id]}
+          touched={touched[item.id]}
+          errors={errors[item.id]}
+          handleChange={handleChange}
+          handleBlur={handleBlur}
+          handleFocus={id => setFocused(id)}
+          readOnly={!editing && !newStudy}
+        />
+      ))}
       {!editing && !newStudy ? (
         <>
           <Header as="h5">Description:</Header>

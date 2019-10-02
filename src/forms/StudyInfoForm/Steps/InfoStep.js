@@ -17,6 +17,21 @@ const InfoStep = ({
   isAdmin,
 }) => {
   const {values, errors, touched, handleChange, handleBlur} = formikProps;
+  const mapFields = [
+    {
+      required: true,
+      id: 'name',
+      name: 'Study Name',
+      description:
+        'Full name of the study, often the full title of the X01 grant application.',
+    },
+    {
+      required: false,
+      id: 'shortName',
+      name: 'Study Short Name',
+      description: 'The name that will appear under portal facets.',
+    },
+  ];
   return (
     <>
       <Header
@@ -24,39 +39,25 @@ const InfoStep = ({
         className="text-wrap-75"
         content="Please provide the study's full name and a shortened version that may be used for display purposes."
       />
-      <FormField
-        isAdmin={isAdmin}
-        newStudy={newStudy}
-        required
-        id="name"
-        name="Study Name"
-        description="Full name of the study, often the full title of the X01 grant application."
-        focused={focused === 'name'}
-        value={values.name}
-        touched={touched.name}
-        errors={errors.name}
-        handleChange={handleChange}
-        handleBlur={handleBlur}
-        handleFocus={id => setFocused(id)}
-        descriptionDisplay="tooltip"
-        readOnly={!editing && !newStudy}
-      />
-      <FormField
-        isAdmin={isAdmin}
-        newStudy={newStudy}
-        id="shortName"
-        name="Study Short Name"
-        description="The name that will appear under portal facets."
-        type="text"
-        focused={focused === 'shortName'}
-        value={values.shortName}
-        touched={touched.shortName}
-        errors={errors.shortName}
-        handleChange={handleChange}
-        handleBlur={handleBlur}
-        handleFocus={id => setFocused(id)}
-        readOnly={!editing && !newStudy}
-      />
+      {mapFields.map(item => (
+        <FormField
+          key={item.id}
+          isAdmin={isAdmin}
+          newStudy={newStudy}
+          required={item.required}
+          id={item.id}
+          name={item.name}
+          description={item.description}
+          focused={focused === item.id}
+          value={values[item.id]}
+          touched={touched[item.id]}
+          errors={errors[item.id]}
+          handleChange={handleChange}
+          handleBlur={handleBlur}
+          handleFocus={id => setFocused(id)}
+          readOnly={!editing && !newStudy}
+        />
+      ))}
       {newStudy ? (
         <FormField
           isAdmin={isAdmin}

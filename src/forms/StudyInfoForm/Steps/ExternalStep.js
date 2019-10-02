@@ -14,6 +14,31 @@ const ExternalStep = ({
   isAdmin,
 }) => {
   const {values, errors, touched, handleChange, handleBlur} = formikProps;
+  const mapFields = [
+    {
+      required: true,
+      id: 'externalId',
+      name: 'External ID',
+      description:
+        'Identifier used by external systems, often the PHS ID if the study is registered with dbGaP.',
+      placeholder: 'Example: phs000178',
+    },
+    {
+      required: false,
+      id: 'version',
+      name: 'dbGaP Version',
+      description:
+        'Study version, often the provided by the data access authority.',
+      placeholder: 'Example: v1.p1',
+    },
+    {
+      required: false,
+      id: 'attribution',
+      name: 'Attribution',
+      description: 'The URL providing more information about the study.',
+      placeholder: '',
+    },
+  ];
   return (
     <>
       <Header
@@ -21,57 +46,26 @@ const ExternalStep = ({
         className="text-wrap-75"
         content="If the study is a dbGaP project, additional information is needed to ensure access is granted correctly. For non-dbGaP studies, an external identifier which this study may otherwise be known by is required."
       />
-      <FormField
-        isAdmin={isAdmin}
-        newStudy={newStudy}
-        required
-        id="externalId"
-        name="External ID"
-        description="Identifier used by external systems, often the PHS ID if the study is registered with dbGaP."
-        type="text"
-        focused={focused === 'externalId'}
-        placeholder="Example: phs000178"
-        value={values.externalId}
-        touched={touched.externalId}
-        errors={errors.externalId}
-        handleChange={handleChange}
-        handleBlur={handleBlur}
-        handleFocus={id => setFocused(id)}
-        readOnly={!editing && !newStudy}
-      />
-      <FormField
-        isAdmin={isAdmin}
-        newStudy={newStudy}
-        id="version"
-        name="dbGaP Version"
-        placeholder="Example: v1.p1"
-        description="Study version, often the provided by the data access authority."
-        type="text"
-        focused={focused === 'version'}
-        value={values.version}
-        touched={touched.version}
-        errors={errors.version}
-        handleChange={handleChange}
-        handleBlur={handleBlur}
-        handleFocus={id => setFocused(id)}
-        readOnly={!editing && !newStudy}
-      />
-      <FormField
-        isAdmin={isAdmin}
-        newStudy={newStudy}
-        id="attribution"
-        name="Attribution"
-        description="The URL providing more information about the study."
-        type="text"
-        focused={focused === 'attribution'}
-        value={values.attribution}
-        touched={touched.attribution}
-        errors={errors.attribution}
-        handleChange={handleChange}
-        handleBlur={handleBlur}
-        handleFocus={id => setFocused(id)}
-        readOnly={!editing && !newStudy}
-      />
+      {mapFields.map(item => (
+        <FormField
+          key={item.id}
+          isAdmin={isAdmin}
+          newStudy={newStudy}
+          required={item.required}
+          id={item.id}
+          name={item.name}
+          description={item.description}
+          placeholder={item.placeholder}
+          focused={focused === item.id}
+          value={values[item.id]}
+          touched={touched[item.id]}
+          errors={errors[item.id]}
+          handleChange={handleChange}
+          handleBlur={handleBlur}
+          handleFocus={id => setFocused(id)}
+          readOnly={!editing && !newStudy}
+        />
+      ))}
       <Button
         primary
         floated="left"
