@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Form, Label, Input} from 'semantic-ui-react';
-import {trackedStudyFields} from '../common/notificationUtils';
+import {noValueWarning} from '../common/notificationUtils';
 /**
  * The FormField will render a semantic form field that will show a
  * description below label and error message if given.
@@ -26,10 +26,7 @@ const FormField = ({
   isAdmin,
 }) => {
   const hasError = touched && errors && errors.length > 0;
-  const tracking =
-    isAdmin &&
-    trackedStudyFields.includes(id) &&
-    (value === null || value === 0 || value.length === 0);
+  const tracking = noValueWarning(isAdmin, id, value);
   return (
     <Form.Field required={required}>
       <label className="noMargin">{name}:</label>

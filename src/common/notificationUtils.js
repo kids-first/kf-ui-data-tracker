@@ -85,3 +85,17 @@ export const prevNextStep = (stepName, newStudy, history) => {
     );
   }
 };
+
+/**
+ * Return true for false to determin if current field is on tracking
+ * - Only tracking for ADMIN
+ * - Only tracking the fields listed in trackedStudyFields
+ * - Only return true when field has no value
+ */
+export const noValueWarning = (isAdmin, id, value) => {
+  return (
+    isAdmin &&
+    trackedStudyFields.includes(id) &&
+    (value === null || value === 0 || value.length === 0)
+  );
+};
