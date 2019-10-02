@@ -2,7 +2,7 @@ import React from 'react';
 import {Button, Dropdown, Header} from 'semantic-ui-react';
 import {workflowOptions} from '../../../common/enums';
 import {prevNextStep} from '../../../common/notificationUtils';
-import FormField from './FormField';
+import FormField from '../../FormField';
 
 const InfoStep = ({
   formikProps,

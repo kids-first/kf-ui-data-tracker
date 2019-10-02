@@ -12,7 +12,7 @@ import {
 } from 'semantic-ui-react';
 import {workflowOptions} from '../../../common/enums';
 import {prevNextStep} from '../../../common/notificationUtils';
-import FormField from './FormField';
+import FormField from '../../FormField';
 import Markdown from 'react-markdown';
 
 const LogisticsStep = ({

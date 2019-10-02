@@ -1,7 +1,7 @@
 import React from 'react';
 import {Button, Header} from 'semantic-ui-react';
 import {prevNextStep} from '../../../common/notificationUtils';
-import FormField from './FormField';
+import FormField from '../../FormField';
 
 const ExternalStep = ({
   formikProps,
