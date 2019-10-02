@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Form, Label, Input} from 'semantic-ui-react';
-import {trackedStudyFields} from '../common/notificationUtils';
+import {trackedStudyFields} from '../../../common/notificationUtils';
 /**
  * The FormField will render a semantic form field that will show a
  * description below label and error message if given.

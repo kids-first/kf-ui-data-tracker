@@ -71,3 +71,17 @@ export const countFileNotification = study => {
     .length;
   return counts;
 };
+
+// Controlling the previous/next steps in study info page
+export const prevNextStep = (stepName, newStudy, history) => {
+  if (newStudy) {
+    history.push('/study/new-study/' + stepName);
+  } else {
+    history.push(
+      '/study/' +
+        history.location.pathname.split('/')[2] +
+        '/basic-info/' +
+        stepName,
+    );
+  }
+};

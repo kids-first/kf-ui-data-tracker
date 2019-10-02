@@ -12,9 +12,9 @@ import {
   List,
 } from 'semantic-ui-react';
 import {Formik} from 'formik';
-import {InfoStep, ExternalStep, LogisticsStep} from './StudyFormSteps';
-import ProgressBar from '../components/StudyInfo/ProgressBar';
-import {fieldLabel, trackedStudyFields} from '../common/notificationUtils';
+import {InfoStep, ExternalStep, LogisticsStep} from './Steps';
+import ProgressBar from '../../components/StudyInfo/ProgressBar';
+import {fieldLabel, trackedStudyFields} from '../../common/notificationUtils';
 
 const NewStudyForm = ({
   submitValue,
