@@ -6,6 +6,7 @@ import jwtDecode from 'jwt-decode';
  */
 class AmplitudeUser {
   instance;
+  userId;
   auth_sub_arr;
 
   // decoded jwt values
@@ -38,7 +39,8 @@ class AmplitudeUser {
    * @param {string} id
    */
   setId(id) {
-    this.instance.setUserId(this.auth_sub_arr[1]);
+    this.userId = this.auth_sub_arr[1];
+    this.instance.setUserId(this.userId);
   }
 
   setUserProperies() {
