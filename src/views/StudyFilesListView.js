@@ -70,15 +70,7 @@ const StudyFilesListView = ({
         <Grid.Column width={10}>
           <h2>Study Documents</h2>
         </Grid.Column>
-<<<<<<< HEAD
         {files.length > 0 && (
-=======
-<<<<<<< HEAD
-        {files.length && (
-=======
-        {files.length > 0 && (
->>>>>>> 64bb7b0... :ok_hand: user conjunction render instead of ternary
->>>>>>> :ok_hand: use conjunction render instead of ternary
           <Grid.Column width={6}>
             <Button
               compact
