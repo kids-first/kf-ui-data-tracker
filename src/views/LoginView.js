@@ -1,6 +1,7 @@
 import React from 'react';
 import {Header, Grid, Segment, Dimmer, Loader} from 'semantic-ui-react';
 import {auth} from '../state/auth';
+
 import {AnalyticsViewConsumer} from '../analyticsTracking';
 
 const LoginView = ({location, history}) => {
