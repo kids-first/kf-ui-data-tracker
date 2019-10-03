@@ -12,7 +12,7 @@ import {
 
 // Query to get all studies in the study-creator
 export const ALL_STUDIES = gql`
-  {
+  query AllStudies {
     allStudies {
       edges {
         node {
@@ -157,7 +157,7 @@ export const GET_PROJECTS = gql`
 
 // Query to get the current user's profile
 export const MY_PROFILE = gql`
-  {
+  query MyProfile {
     myProfile {
       roles
       groups
