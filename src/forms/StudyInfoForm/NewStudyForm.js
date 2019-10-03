@@ -209,10 +209,10 @@ const NewStudyForm = ({
             </Message>
           )}
           <Step.Group attached="top" fluid widths={3}>
-            {STUDY_STEPS.map(step => (
+            {STUDY_STEPS.map((step, stepNum) => (
               <Step
                 link
-                key={STUDY_STEPS.indexOf(step)}
+                key={stepNum}
                 active={history.location.pathname.endsWith(step.href)}
                 onClick={() => {
                   if (newStudy) {
@@ -232,10 +232,7 @@ const NewStudyForm = ({
                   <Step.Title>{step.title}</Step.Title>
                   <Step.Description>{step.desc}</Step.Description>
                   {editing && (
-                    <ProgressBar
-                      values={formikProps.values}
-                      step={STUDY_STEPS.indexOf(step)}
-                    />
+                    <ProgressBar values={formikProps.values} step={stepNum} />
                   )}
                 </Step.Content>
               </Step>
@@ -244,9 +241,9 @@ const NewStudyForm = ({
           <Segment padded clearing attached>
             <Form onSubmit={formikProps.handleSubmit}>
               <Switch>
-                {STUDY_STEPS.map(step => (
+                {STUDY_STEPS.map((step, stepNum) => (
                   <Route
-                    key={STUDY_STEPS.indexOf(step)}
+                    key={stepNum}
                     path={
                       newStudy
                         ? '/study/new-study/' + step.href
