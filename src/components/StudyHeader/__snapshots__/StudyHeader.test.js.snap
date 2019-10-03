@@ -16,7 +16,7 @@ exports[`renders correctly 1`] = `
       Test Study
     </h2>
     <button
-      class="ui tiny basic icon left labeled button"
+      class="ui tiny basic icon button"
     >
       <i
         aria-hidden="true"

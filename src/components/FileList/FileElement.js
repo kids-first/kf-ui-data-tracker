@@ -85,7 +85,9 @@ const FileAttributes = ({
         </List.Content>
       </List.Item>
       <List.Item>
-        <List.Content>{fileVersions} versions </List.Content>
+        <List.Content>
+          {fileVersions} version{fileVersions > 1 && 's'}{' '}
+        </List.Content>
       </List.Item>
       <List.Item>
         <List.Content>{fileSize}</List.Content>
@@ -170,7 +172,7 @@ const FileElement = ({fileNode, loading, history, match, fileListId}) => {
           latestDate={latestDate}
           fileSize={fileSize}
           fileType={fileType}
-          fileVersions={sortedVersions.length}
+          fileVersions={fileNode.versions.edges.length}
           horizontal={true}
         />
         <Responsive
@@ -180,7 +182,7 @@ const FileElement = ({fileNode, loading, history, match, fileListId}) => {
           latestDate={latestDate}
           fileSize={fileSize}
           fileType={fileType}
-          fileVersions={sortedVersions.length}
+          fileVersions={fileNode.versions.edges.length}
           horizontal={false}
         />
       </Table.Cell>

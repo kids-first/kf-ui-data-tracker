@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <button
-        class="ui icon left labeled button"
+        class="ui icon button"
       >
         <i
           aria-hidden="true"
@@ -18,7 +18,7 @@ Object {
   </body>,
   "container": <div>
     <button
-      class="ui icon left labeled button"
+      class="ui icon button"
     >
       <i
         aria-hidden="true"

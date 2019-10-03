@@ -402,7 +402,9 @@ exports[`deletes a file correctly 1`] = `
                       class="content"
                     >
                       3
-                       versions 
+                       version
+                      s
+                       
                     </div>
                   </div>
                   <div
@@ -421,10 +423,18 @@ exports[`deletes a file correctly 1`] = `
                 class="center aligned"
               >
                 <div
-                  class="ui mini vertical buttons"
+                  class="ui small buttons"
                 >
                   <button
-                    class="ui basic icon button"
+                    class="ui basic compact icon button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="copy icon"
+                    />
+                  </button>
+                  <button
+                    class="ui basic compact icon button"
                   >
                     <i
                       aria-hidden="true"
@@ -432,7 +442,7 @@ exports[`deletes a file correctly 1`] = `
                     />
                   </button>
                   <button
-                    class="ui basic icon button"
+                    class="ui basic compact icon button"
                     data-testid="delete-button"
                   >
                     <i
@@ -897,7 +907,9 @@ exports[`renders correctly 1`] = `
                       class="content"
                     >
                       3
-                       versions 
+                       version
+                      s
+                       
                     </div>
                   </div>
                   <div
@@ -916,10 +928,18 @@ exports[`renders correctly 1`] = `
                 class="center aligned"
               >
                 <div
-                  class="ui mini vertical buttons"
+                  class="ui small buttons"
                 >
                   <button
-                    class="ui basic icon button"
+                    class="ui basic compact icon button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="copy icon"
+                    />
+                  </button>
+                  <button
+                    class="ui basic compact icon button"
                   >
                     <i
                       aria-hidden="true"
@@ -927,7 +947,7 @@ exports[`renders correctly 1`] = `
                     />
                   </button>
                   <button
-                    class="ui basic icon button"
+                    class="ui basic compact icon button"
                     data-testid="delete-button"
                   >
                     <i
@@ -1016,7 +1036,9 @@ exports[`renders correctly 1`] = `
                       class="content"
                     >
                       5
-                       versions 
+                       version
+                      s
+                       
                     </div>
                   </div>
                   <div
@@ -1035,10 +1057,18 @@ exports[`renders correctly 1`] = `
                 class="center aligned"
               >
                 <div
-                  class="ui mini vertical buttons"
+                  class="ui small buttons"
                 >
                   <button
-                    class="ui basic icon button"
+                    class="ui basic compact icon button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="copy icon"
+                    />
+                  </button>
+                  <button
+                    class="ui basic compact icon button"
                   >
                     <i
                       aria-hidden="true"
@@ -1046,7 +1076,7 @@ exports[`renders correctly 1`] = `
                     />
                   </button>
                   <button
-                    class="ui basic icon button"
+                    class="ui basic compact icon button"
                     data-testid="delete-button"
                   >
                     <i

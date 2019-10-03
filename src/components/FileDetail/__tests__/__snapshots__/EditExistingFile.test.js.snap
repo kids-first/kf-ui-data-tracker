@@ -142,7 +142,7 @@ exports[`edits an existing file correctly 1`] = `
           benchmark extensible e-business
         </h1>
         <button
-          class="ui tiny basic icon left labeled button"
+          class="ui tiny basic icon button"
         >
           <i
             aria-hidden="true"
@@ -597,7 +597,9 @@ exports[`edits an existing file correctly 1`] = `
                       class="content"
                     >
                       3
-                       versions 
+                       version
+                      s
+                       
                     </div>
                   </div>
                   <div
@@ -616,10 +618,18 @@ exports[`edits an existing file correctly 1`] = `
                 class="center aligned"
               >
                 <div
-                  class="ui mini vertical buttons"
+                  class="ui small buttons"
                 >
                   <button
-                    class="ui basic icon button"
+                    class="ui basic compact icon button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="copy icon"
+                    />
+                  </button>
+                  <button
+                    class="ui basic compact icon button"
                   >
                     <i
                       aria-hidden="true"
@@ -627,7 +637,7 @@ exports[`edits an existing file correctly 1`] = `
                     />
                   </button>
                   <button
-                    class="ui basic icon button"
+                    class="ui basic compact icon button"
                     data-testid="delete-button"
                   >
                     <i
@@ -716,7 +726,9 @@ exports[`edits an existing file correctly 1`] = `
                       class="content"
                     >
                       5
-                       versions 
+                       version
+                      s
+                       
                     </div>
                   </div>
                   <div
@@ -735,10 +747,18 @@ exports[`edits an existing file correctly 1`] = `
                 class="center aligned"
               >
                 <div
-                  class="ui mini vertical buttons"
+                  class="ui small buttons"
                 >
                   <button
-                    class="ui basic icon button"
+                    class="ui basic compact icon button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="copy icon"
+                    />
+                  </button>
+                  <button
+                    class="ui basic compact icon button"
                   >
                     <i
                       aria-hidden="true"
@@ -746,7 +766,7 @@ exports[`edits an existing file correctly 1`] = `
                     />
                   </button>
                   <button
-                    class="ui basic icon button"
+                    class="ui basic compact icon button"
                     data-testid="delete-button"
                   >
                     <i
@@ -951,7 +971,7 @@ exports[`edits an existing file correctly 2`] = `
           benchmark extensible e-business
         </h1>
         <button
-          class="ui tiny basic icon left labeled button"
+          class="ui tiny basic icon button"
         >
           <i
             aria-hidden="true"
@@ -1558,7 +1578,7 @@ exports[`edits an existing file correctly 3`] = `
           benchmark extensible e-business
         </h1>
         <button
-          class="ui tiny basic icon left labeled button"
+          class="ui tiny basic icon button"
         >
           <i
             aria-hidden="true"
