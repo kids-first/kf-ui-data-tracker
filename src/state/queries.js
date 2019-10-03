@@ -28,6 +28,7 @@ export const ALL_STUDIES = gql`
           files {
             edges {
               node {
+                id
                 versions(first: 1, orderBy: "-created_at") {
                   edges {
                     node {
