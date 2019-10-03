@@ -7,24 +7,31 @@ import {steppingFields} from '../../common/notificationUtils';
  * - Show as red when none of the fields in current step have values
  * - Show as yellow when one or more fields have values but not completed yet
  * - Show as green when all the field are given values.
+ * - Show error stage when no step data found or total fields are 0
  */
 const ProgressBar = ({values, step}) => {
   var filled = 0;
-  steppingFields[step].map(field => {
-    if (values[field] && (values[field] > 0 || values[field].length > 0)) {
-      filled += 1;
-    }
-    return true;
-  });
-  const total = steppingFields[step].length;
+  var total = 0;
+  if (steppingFields[step] && steppingFields[step].length > 0) {
+    steppingFields[step].forEach(function(field) {
+      if (values[field] && (values[field] > 0 || values[field].length > 0)) {
+        filled += 1;
+      }
+    });
+    total = steppingFields[step].length;
+  }
   return (
     <Progress
       className="progress-bar--custom"
       value={filled}
       total={total}
       size="tiny"
-      label={filled + '/' + total + ' fields complete'}
-      error={filled === 0}
+      label={
+        total > 0
+          ? filled + '/' + total + ' fields complete'
+          : 'Invalid  progress'
+      }
+      error={filled === 0 || total === 0}
       warning={filled > 0 && filled < total}
       success={filled === total}
     />
