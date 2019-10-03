@@ -1,5 +1,6 @@
 import amplitude from 'amplitude-js';
 import jwtDecode from 'jwt-decode';
+
 /**
  * convenience class to log user properties on Auth0 login success
  * @see https://help.amplitude.com/hc/en-us/articles/115002380567-User-Properties-Event-Properties#applying-user-properties-to-events

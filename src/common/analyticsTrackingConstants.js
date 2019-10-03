@@ -80,7 +80,8 @@ const scope = (name, eventsList) => {
  */
 const analytiicsTrackingConstants = {
   ...scope('APP', ['MOUNT']),
-  ...scope('LOGIN', ['LOGIN', 'LOGOUT']),
+  ...scope('AUTH', ['LOGIN', 'LOGOUT']),
+  ...scope('VIEW', ['MOUNT']),
 };
 
 export default analytiicsTrackingConstants;
