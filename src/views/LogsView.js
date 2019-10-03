@@ -13,6 +13,7 @@ import {
 import EmptyView from './EmptyView';
 import EventList from '../components/EventList/EventList';
 import {eventType} from '../common/enums';
+import {AnalyticsViewConsumer} from '../analyticsTracking';
 
 const LogsView = ({events: {loading, allEvents, error, refetch}, user}) => {
   const isAdmin = !user.loading
@@ -58,26 +59,32 @@ const LogsView = ({events: {loading, allEvents, error, refetch}, user}) => {
     );
   if (isAdmin) {
     return (
-      <Container as={Segment} basic vertical>
-        <Segment basic floated="right" className="noMargin noPadding">
-          <Select
-            clearable
-            placeholder="Event Type"
-            options={eventTypeOptions}
-            onChange={(e, {name, value}) => refetch({eventType: value})}
-          />
-        </Segment>
-        <Header as="h2" className="mt-6">
-          Event Logs
-        </Header>
-        {allEvents.edges.length > 0 ? (
-          <EventList events={allEvents.edges} />
-        ) : (
-          <Header disabled textAlign="center" as="h4">
-            No event logs available or match your filter option.
+      <AnalyticsViewConsumer
+        mountProperties={{
+          events_length: allEvents.edges.map(({node}) => node).length,
+        }}
+      >
+        <Container as={Segment} basic vertical>
+          <Segment basic floated="right" className="noMargin noPadding">
+            <Select
+              clearable
+              placeholder="Event Type"
+              options={eventTypeOptions}
+              onChange={(e, {name, value}) => refetch({eventType: value})}
+            />
+          </Segment>
+          <Header as="h2" className="mt-6">
+            Event Logs
           </Header>
-        )}
-      </Container>
+          {allEvents.edges.length > 0 ? (
+            <EventList events={allEvents.edges} />
+          ) : (
+            <Header disabled textAlign="center" as="h4">
+              No event logs available or match your filter option.
+            </Header>
+          )}
+        </Container>
+      </AnalyticsViewConsumer>
     );
   } else {
     return <EmptyView />;

@@ -15,6 +15,7 @@ import {GET_DEV_TOKENS} from '../state/queries';
 import {CREATE_DEV_TOKEN, DELETE_DEV_TOKEN} from '../state/mutations';
 import {TokenList} from '../components/TokenList';
 import NewTokenForm from '../forms/NewTokenForm';
+import {AnalyticsViewConsumer} from '../analyticsTracking';
 
 const TokensListView = ({
   devTokens: {allDevTokens, loading: devTokensLoading, error: devTokensError},
@@ -46,7 +47,7 @@ const TokensListView = ({
   };
 
   return (
-    <>
+    <AnalyticsViewConsumer>
       <Container as={Segment} basic>
         <Header as="h3">Manage Developer Download Tokens</Header>
         <Segment basic>
@@ -113,7 +114,7 @@ const TokensListView = ({
           </Button>
         }
       />
-    </>
+    </AnalyticsViewConsumer>
   );
 };
 

@@ -16,6 +16,7 @@ import EmptyView from './EmptyView';
 import NewProjectModal from '../modals/NewProjectModal';
 import LinkProjectModal from '../modals/LinkProjectModal';
 import CavaticaProjectList from '../components/CavaticaProjectList/CavaticaProjectList';
+import {AnalyticsViewConsumer} from '../analyticsTracking';
 
 const CavaticaBixView = ({
   study: {loading, studyByKfId, error},
@@ -70,101 +71,100 @@ const CavaticaBixView = ({
     );
   if (isAdmin) {
     return (
-      <Container as={Segment} basic vertical>
-        <Button
-          primary
-          floated="right"
-          size="mini"
-          icon="linkify"
-          content="LINK PROJECT"
-          onClick={() =>
-            history.push(
-              '/study/' +
-                history.location.pathname.split('/')[2] +
-                '/cavatica#link-cavatica-project',
-            )
-          }
-        />
-        <Button
-          basic
-          primary
-          floated="right"
-          size="mini"
-          icon="add"
-          content="NEW PROJECT"
-          onClick={() =>
-            history.push(
-              '/study/' +
-                history.location.pathname.split('/')[2] +
-                '/cavatica#add-cavatica-project',
-            )
-          }
-        />
-        <Header as="h2" className="noMargin">
-          Cavatica Projects
-        </Header>
-        {(studyByKfId.projects.edges.filter(
-          obj => obj.node.projectType === 'HAR',
-        ).length === 0 ||
-          studyByKfId.projects.edges.filter(
-            obj => obj.node.projectType === 'DEL',
-          ).length === 0) && (
-          <Message negative icon>
-            <Icon name="warning circle" />
-            <Message.Content>
-              <Message.Header>Missing projects</Message.Header>
-              <p>
-                Please link or create projects for the study. Each study
-                requires at least one of the following:
-              </p>
-              <List>
-                <List.Item
-                  icon="paper plane outline"
-                  content="Delivery Project"
-                />
-                <List.Item
-                  icon="sliders horizontal"
-                  content="Analysis Project"
-                />
-              </List>
-            </Message.Content>
-          </Message>
-        )}
-
-        {studyByKfId.projects.edges.length > 0 ? (
-          <CavaticaProjectList
-            projects={studyByKfId.projects.edges}
-            unlinkProject={unlinkProject}
-            hideStudy
+      <AnalyticsViewConsumer
+        mountProperties={{
+          study: {kfId: studyByKfId.kfId, name: studyByKfId.name},
+          projects: projects.edges,
+        }}
+      >
+        <Container as={Segment} basic vertical>
+          <Button
+            primary
+            floated="right"
+            size="mini"
+            icon="linkify"
+            content="LINK PROJECT"
+            onClick={() =>
+              history.push(
+                '/study/' +
+                  history.location.pathname.split('/')[2] +
+                  '/cavatica#link-cavatica-project',
+              )
+            }
           />
-        ) : (
-          <Header disabled textAlign="center" as="h4">
-            No linked Cavatica projects.
+          <Button
+            basic
+            primary
+            floated="right"
+            size="mini"
+            icon="add"
+            content="NEW PROJECT"
+            onClick={() =>
+              history.push(
+                '/study/' +
+                  history.location.pathname.split('/')[2] +
+                  '/cavatica#add-cavatica-project',
+              )
+            }
+          />
+          <Header as="h2" className="noMargin">
+            Cavatica Projects
           </Header>
-        )}
+          {(studyByKfId.projects.edges.filter(
+            obj => obj.node.projectType === 'HAR',
+          ).length === 0 ||
+            studyByKfId.projects.edges.filter(
+              obj => obj.node.projectType === 'DEL',
+            ).length === 0) && (
+            <Message negative icon>
+              <Icon name="warning circle" />
+              <Message.Content>
+                <Message.Header>Missing projects</Message.Header>
+                <p>
+                  Please link or create projects for the study. Each study
+                  requires at least one of the following:
+                </p>
+                <List>
+                  <List.Item
+                    icon="paper plane outline"
+                    content="Delivery Project"
+                  />
+                  <List.Item
+                    icon="sliders horizontal"
+                    content="Analysis Project"
+                  />
+                </List>
+              </Message.Content>
+            </Message>
+          )}
 
-        <NewProjectModal
-          open={hashOpenHook(history, '#add-cavatica-project')}
-          study={studyByKfId}
-          onCloseDialog={() =>
-            history.push(
-              '/study/' + history.location.pathname.split('/')[2] + '/cavatica',
-            )
-          }
-        />
-        <LinkProjectModal
-          open={hashOpenHook(history, '#link-cavatica-project')}
-          study={studyByKfId}
-          allProjects={projects.allProjects}
-          linkProject={linkProject}
-          syncProjects={syncProjects}
-          onCloseDialog={() =>
-            history.push(
-              '/study/' + history.location.pathname.split('/')[2] + '/cavatica',
-            )
-          }
-        />
-      </Container>
+          <NewProjectModal
+            open={hashOpenHook(history, '#add-cavatica-project')}
+            study={studyByKfId}
+            onCloseDialog={() =>
+              history.push(
+                '/study/' +
+                  history.location.pathname.split('/')[2] +
+                  '/cavatica',
+              )
+            }
+          />
+          <LinkProjectModal
+            open={hashOpenHook(history, '#link-cavatica-project')}
+            study={studyByKfId}
+            allProjects={projects.allProjects}
+            linkProject={linkProject}
+            syncProjects={syncProjects}
+            onCloseDialog={() =>
+              history.push(
+                '/study/' +
+                  history.location.pathname.split('/')[2] +
+                  '/cavatica',
+              )
+            }
+          />
+        </Container>
+      </AnalyticsViewConsumer>
     );
   } else {
     return <EmptyView />;

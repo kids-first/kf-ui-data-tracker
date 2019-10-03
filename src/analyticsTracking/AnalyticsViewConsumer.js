@@ -9,11 +9,21 @@ const AnalyticsViewConsumer = ({
   view,
 }) => {
   const {VIEW: VIEW_SCOPE} = useAnalyticsTracking();
+
+  const viewName = [];
+  React.Children.forEach(children, c => {
+    let source = c._source.fileName.split('/');
+    viewName.push(source[source.length - 1].replace(/\..*/i, ''));
+  });
+
   return (
     <Amplitude
       eventProperties={inheritedProps => ({
         ...inheritedProps,
-        scope: [...inheritedProps.scope, `${VIEW_SCOPE.scope}_${view}`],
+        scope: [
+          ...inheritedProps.scope,
+          `${VIEW_SCOPE.scope}_${view || viewName[0]}`,
+        ],
       })}
     >
       <LogOnMount

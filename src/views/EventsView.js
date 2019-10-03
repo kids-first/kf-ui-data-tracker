@@ -12,6 +12,7 @@ import {
 import {eventType} from '../common/enums';
 import {EventList} from '../components/EventList';
 import {ALL_EVENTS, ALL_STUDIES, ALL_USERS} from '../state/queries';
+import {AnalyticsViewConsumer} from '../analyticsTracking';
 
 const EventsView = ({
   allUsers: {allUsers, loading: loadingUsers},
@@ -35,44 +36,46 @@ const EventsView = ({
     value: type,
   }));
   return (
-    <Container as={Segment} basic>
-      <Header as="h3">Data Tracker Event Log</Header>
-      <Segment basic>
-        All actions taken in the data tracker are available here for auditing.
-      </Segment>
-      <Segment basic>
-        <span className="smallLabel">Filter by:</span>
-        <Select
-          clearable
-          placeholder="User"
-          loading={loadingUsers}
-          options={userOptions}
-          onChange={(e, {name, value}) => refetch({username: value})}
-        />
-        <Select
-          clearable
-          placeholder="Study"
-          loading={loadingUsers}
-          options={studyOptions}
-          onChange={(e, {name, value}) => refetch({studyId: value})}
-        />
-        <Select
-          clearable
-          placeholder="Event Type"
-          options={eventTypeOptions}
-          onChange={(e, {name, value}) => refetch({eventType: value})}
-        />
-        <Divider />
-        {loading && (
-          <Segment basic padded="very">
-            <Dimmer active inverted>
-              <Loader inverted>Loading events...</Loader>
-            </Dimmer>
-          </Segment>
-        )}
-        {!loading && allEvents && <EventList events={allEvents.edges} />}
-      </Segment>
-    </Container>
+    <AnalyticsViewConsumer mountProperties={{}}>
+      <Container as={Segment} basic>
+        <Header as="h3">Data Tracker Event Log</Header>
+        <Segment basic>
+          All actions taken in the data tracker are available here for auditing.
+        </Segment>
+        <Segment basic>
+          <span className="smallLabel">Filter by:</span>
+          <Select
+            clearable
+            placeholder="User"
+            loading={loadingUsers}
+            options={userOptions}
+            onChange={(e, {name, value}) => refetch({username: value})}
+          />
+          <Select
+            clearable
+            placeholder="Study"
+            loading={loadingUsers}
+            options={studyOptions}
+            onChange={(e, {name, value}) => refetch({studyId: value})}
+          />
+          <Select
+            clearable
+            placeholder="Event Type"
+            options={eventTypeOptions}
+            onChange={(e, {name, value}) => refetch({eventType: value})}
+          />
+          <Divider />
+          {loading && (
+            <Segment basic padded="very">
+              <Dimmer active inverted>
+                <Loader inverted>Loading events...</Loader>
+              </Dimmer>
+            </Segment>
+          )}
+          {!loading && allEvents && <EventList events={allEvents.edges} />}
+        </Segment>
+      </Container>
+    </AnalyticsViewConsumer>
   );
 };
 

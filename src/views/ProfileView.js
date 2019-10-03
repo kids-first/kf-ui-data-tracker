@@ -15,6 +15,7 @@ import {
 } from 'semantic-ui-react';
 import UpdateProfileForm from '../forms/UpdateProfileForm';
 import StudySubscriptionContanier from '../containers/StudySubscriptionContainer';
+import {AnalyticsViewConsumer} from '../analyticsTracking';
 
 /**
  * A user's profile view
@@ -62,15 +63,17 @@ const ProfileView = ({
     );
   if (error)
     return (
-      <Container as={Segment} basic>
-        <Header as="h3">Your Profile</Header>
-        <Message
-          negative
-          icon="warning circle"
-          header="Error"
-          content={error.message}
-        />
-      </Container>
+      <AnalyticsViewConsumer>
+        <Container as={Segment} basic>
+          <Header as="h3">Your Profile</Header>
+          <Message
+            negative
+            icon="warning circle"
+            header="Error"
+            content={error.message}
+          />
+        </Container>
+      </AnalyticsViewConsumer>
     );
 
   const fields = {

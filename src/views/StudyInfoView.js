@@ -5,6 +5,7 @@ import {UPDATE_STUDY} from '../state/mutations';
 import NewStudyForm from '../forms/StudyInfoForm/NewStudyForm';
 import {Container, Segment, Message, Placeholder} from 'semantic-ui-react';
 import EmptyView from './EmptyView';
+import {AnalyticsViewConsumer} from '../analyticsTracking';
 
 const StudyInfoView = ({
   study: {loading, studyByKfId, error},
@@ -49,27 +50,41 @@ const StudyInfoView = ({
     );
   if (error)
     return (
-      <Container as={Segment} basic>
-        <Message
-          negative
-          icon="warning circle"
-          header="Error"
-          content={error.message}
-        />
-      </Container>
+      <AnalyticsViewConsumer
+        status="ERROR"
+        mountProperties={{
+          error,
+          study: {kfId: studyByKfId.kfId, name: studyByKfId.name},
+        }}
+      >
+        <Container as={Segment} basic>
+          <Message
+            negative
+            icon="warning circle"
+            header="Error"
+            content={error.message}
+          />
+        </Container>
+      </AnalyticsViewConsumer>
     );
   if (isBeta) {
     return (
-      <Container as={Segment} basic vertical>
-        <NewStudyForm
-          isAdmin={isAdmin}
-          history={history}
-          submitValue={submitUpdate}
-          apiErrors={apiErrors}
-          studyNode={studyByKfId}
-          editing={isAdmin}
-        />
-      </Container>
+      <AnalyticsViewConsumer
+        mountProperties={{
+          study: {kfId: studyByKfId.kfId, name: studyByKfId.name},
+        }}
+      >
+        <Container as={Segment} basic vertical>
+          <NewStudyForm
+            isAdmin={isAdmin}
+            history={history}
+            submitValue={submitUpdate}
+            apiErrors={apiErrors}
+            studyNode={studyByKfId}
+            editing={isAdmin}
+          />
+        </Container>
+      </AnalyticsViewConsumer>
     );
   } else {
     return <EmptyView />;
