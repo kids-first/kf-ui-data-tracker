@@ -5,8 +5,15 @@ import {AMPLITUDE_KEY} from './common/globals';
 import {ApolloProvider} from 'react-apollo';
 import {client} from './state/client';
 import AmplitudeUser from './common/amplitudeUserUtils';
-import {AmplitudeProvider} from '@amplitude/react-amplitude';
+import analyticsTrackingConstants from './common/analyticsTrackingConstants';
+import {
+  AmplitudeProvider,
+  Amplitude,
+  LogOnMount,
+} from '@amplitude/react-amplitude';
 import amplitude from 'amplitude-js';
+
+const {LOGIN, APP} = analyticsTrackingConstants;
 
 const App = () => {
   let ampltdUser = null;
@@ -14,7 +21,8 @@ const App = () => {
   if (localStorage.getItem('idToken')) {
     ampltdUser = new AmplitudeUser(localStorage.getItem('idToken'));
 
-    ampltdUser.instance.logEvent('auto Sign In', {
+    ampltdUser.instance.logEvent(LOGIN.LOGIN, {
+      scope: [LOGIN.scope, APP.scope],
       status: 'SUCCESS',
       auth_sub: ampltdUser.auth_sub_arr[0],
       referrer: document.referrer,
@@ -28,11 +36,14 @@ const App = () => {
       userId={ampltdUser ? ampltdUser.userId : null}
     >
       <ApolloProvider client={client}>
-        <Router>
-          <main className="App">
-            <Routes />
-          </main>
-        </Router>
+        <Amplitude eventProperties={{scope: [APP.scope]}}>
+          <LogOnMount eventType={APP.MOUNT} />
+          <Router>
+            <main className="App">
+              <Routes />
+            </main>
+          </Router>
+        </Amplitude>
       </ApolloProvider>
     </AmplitudeProvider>
   );
