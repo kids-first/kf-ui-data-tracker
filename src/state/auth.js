@@ -6,8 +6,9 @@ import {
   auth0Aud,
 } from '../common/globals';
 import amplitude from 'amplitude-js';
-import AmplitudeUser from '../common/amplitudeUserUtils';
-
+import AmplitudeUser from '../analyticsTracking/amplitudeUserUtils';
+import analyticsTrackingConstants from '../common/analyticsTrackingConstants';
+const {AUTH: TRACKING_AUTH} = analyticsTrackingConstants;
 class Auth {
   accessToken;
   idToken;
@@ -36,7 +37,7 @@ class Auth {
           localStorage.setItem('idToken', authResult.idToken);
           const ampltdUser = new AmplitudeUser(authResult.idToken);
 
-          ampltdUser.instance.logEvent('Sign In', {
+          ampltdUser.instance.logEvent(TRACKING_AUTH.LOGIN, {
             status: 'SUCCESS',
             auth_sub: ampltdUser.auth_sub_arr[0],
             referrer: document.referrer,
@@ -47,7 +48,7 @@ class Auth {
           );
         } else if (err) {
           console.log(err);
-          amplitude.getInstance().logEvent('Sign In', {
+          amplitude.getInstance().logEvent(TRACKING_AUTH.LOGIN, {
             status: 'FAILED',
             err,
           });
@@ -73,7 +74,7 @@ class Auth {
     localStorage.removeItem('accessToken');
     localStorage.removeItem('idToken');
 
-    amplitude.getInstance().logEvent('Sign Out');
+    amplitude.getInstance().logEvent(TRACKING_AUTH.LOGOUT);
     amplitude.getInstance().setUserId(null); // not string 'null'
     amplitude.getInstance().regenerateDeviceId();
   }
