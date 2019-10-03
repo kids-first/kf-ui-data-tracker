@@ -13,6 +13,7 @@ class Auth {
   accessToken;
   idToken;
   expiresAt;
+  amplitudeUser;
 
   auth0 = new auth0.WebAuth({
     domain: auth0Domain,
@@ -35,11 +36,11 @@ class Auth {
         if (authResult && authResult.accessToken && authResult.idToken) {
           localStorage.setItem('accessToken', authResult.accessToken);
           localStorage.setItem('idToken', authResult.idToken);
-          const ampltdUser = new AmplitudeUser(authResult.idToken);
+          this.amplitudeUser = new AmplitudeUser(authResult.idToken);
 
-          ampltdUser.instance.logEvent(TRACKING_AUTH.LOGIN, {
+          this.amplitudeUser.instance.logEvent(TRACKING_AUTH.LOGIN, {
             status: 'SUCCESS',
-            auth_sub: ampltdUser.auth_sub_arr[0],
+            auth_sub: this.amplitudeUser.auth_sub_arr[0],
             referrer: document.referrer,
           });
 
@@ -74,9 +75,9 @@ class Auth {
     localStorage.removeItem('accessToken');
     localStorage.removeItem('idToken');
 
-    amplitude.getInstance().logEvent(TRACKING_AUTH.LOGOUT);
-    amplitude.getInstance().setUserId(null); // not string 'null'
-    amplitude.getInstance().regenerateDeviceId();
+    this.amplitudeUser.instance.logEvent(TRACKING_AUTH.LOGOUT);
+    this.amplitudeUser.setId(null);
+    this.amplitudeUser.instance.regenerateDeviceId();
   }
 
   isAuthenticated() {
