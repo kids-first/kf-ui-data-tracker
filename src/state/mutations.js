@@ -10,7 +10,7 @@ import {
 
 // Mutation to upload a file or a version of the file to the study-creator
 export const CREATE_FILE = gql`
-  mutation(
+  mutation CreateFile(
     $file: Upload!
     $studyId: String!
     $name: String!
@@ -35,7 +35,7 @@ export const CREATE_FILE = gql`
 
 // Mutation to update file metadata
 export const UPDATE_FILE = gql`
-  mutation(
+  mutation UpdateFile(
     $kfId: String!
     $name: String
     $description: String
@@ -57,7 +57,7 @@ export const UPDATE_FILE = gql`
 
 // Mutation to delete a file
 export const DELETE_FILE = gql`
-  mutation($kfId: String!) {
+  mutation DeleteFile($kfId: String!) {
     deleteFile(kfId: $kfId) {
       kfId
       success
@@ -67,7 +67,11 @@ export const DELETE_FILE = gql`
 
 // Mutation to upload a version of a file
 export const CREATE_VERSION = gql`
-  mutation($file: Upload!, $fileId: String!, $description: String!) {
+  mutation CreateVersion(
+    $file: Upload!
+    $fileId: String!
+    $description: String!
+  ) {
     createVersion(file: $file, fileId: $fileId, description: $description) {
       success
       version {
@@ -80,7 +84,11 @@ export const CREATE_VERSION = gql`
 
 // Mutation to update a version of a file
 export const UPDATE_VERSION = gql`
-  mutation($versionId: String!, $description: String, $state: VersionState!) {
+  mutation UpdateVersion(
+    $versionId: String!
+    $description: String
+    $state: VersionState!
+  ) {
     updateVersion(kfId: $versionId, description: $description, state: $state) {
       version {
         ...VersionFields
@@ -92,7 +100,7 @@ export const UPDATE_VERSION = gql`
 
 // Mutation to get a signed url for a file or a version of the file
 export const FILE_DOWNLOAD_URL = gql`
-  mutation($studyId: String!, $fileId: String!, $versionId: String) {
+  mutation SignedUrl($studyId: String!, $fileId: String!, $versionId: String) {
     signedUrl(studyId: $studyId, fileId: $fileId, versionId: $versionId) {
       url
     }
@@ -153,7 +161,7 @@ export const SYNC_PROJECTS = gql`
 
 // Mutation to update current user's profile
 export const UPDATE_PROFILE = gql`
-  mutation($slackNotify: Boolean, $slackMemberId: String) {
+  mutation UpdateMyProfile($slackNotify: Boolean, $slackMemberId: String) {
     updateMyProfile(slackNotify: $slackNotify, slackMemberId: $slackMemberId) {
       user {
         id
@@ -166,7 +174,7 @@ export const UPDATE_PROFILE = gql`
 
 // Mutation to subscribe to a study
 export const SUBSCRIBE_TO = gql`
-  mutation($studyId: String!) {
+  mutation SubscribeTo($studyId: String!) {
     subscribeTo(studyId: $studyId) {
       user {
         id
@@ -186,7 +194,7 @@ export const SUBSCRIBE_TO = gql`
 
 // Mutation to unsubscribe from a study
 export const UNSUBSCRIBE_FROM = gql`
-  mutation($studyId: String!) {
+  mutation UnsubscribeFrom($studyId: String!) {
     unsubscribeFrom(studyId: $studyId) {
       user {
         id
@@ -232,7 +240,7 @@ export const UPDATE_STUDY = gql`
 
 // Mutation to create a new analysis project
 export const CREATE_PROJECT = gql`
-  mutation($workflowType: WorkflowType!, $study: ID!) {
+  mutation CreateProject($workflowType: WorkflowType!, $study: ID!) {
     createProject(input: {workflowType: $workflowType, study: $study}) {
       project {
         ...ProjectFields
@@ -256,7 +264,7 @@ export const UPDATE_PROJECT = gql`
 
 // Mutation to link an exist analysis project
 export const LINK_PROJECT = gql`
-  mutation($project: ID!, $study: ID!) {
+  mutation LinkProject($project: ID!, $study: ID!) {
     linkProject(project: $project, study: $study) {
       project {
         ...ProjectFields
@@ -268,7 +276,7 @@ export const LINK_PROJECT = gql`
 
 // Mutation to unlink an exist analysis project
 export const UNLINK_PROJECT = gql`
-  mutation($project: ID!, $study: ID!) {
+  mutation UnlinkProject($project: ID!, $study: ID!) {
     unlinkProject(project: $project, study: $study) {
       project {
         ...ProjectFields
