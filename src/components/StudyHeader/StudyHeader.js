@@ -26,9 +26,11 @@ const StudyHeader = ({
   return (
     <Container>
       <Header as="h1">{studyName}</Header>
-      <Header.Subheader as="h2" className="study--header-sub">
-        {shortName}
-      </Header.Subheader>
+      {shortName && (
+        <Header.Subheader as="h2" className="study--header-sub">
+          {shortName}
+        </Header.Subheader>
+      )}
       {kfId && <CopyButton basic text={kfId} size="tiny" />}
     </Container>
   );

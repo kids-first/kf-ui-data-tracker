@@ -1,5 +1,20 @@
 import {fileLatestStatus} from './fileUtils';
 
+// An object contains the label for each study data field
+export const fieldLabel = {
+  externalId: 'External ID',
+  name: 'Study Name',
+  shortName: 'Study Short Name',
+  description: 'Description',
+  releaseDate: 'Release Date',
+  anticipatedSamples: 'Number of anticipated samples',
+  awardeeOrganization: 'Awardee organization',
+  attribution: 'Attribution',
+  version: 'dbGaP Version',
+  bucket: 'S3 Bucket',
+  workflowType: 'Cavatica Projects',
+};
+
 // A list of study field that are tracked for completemess for ADMIN
 export const trackedStudyFields = [
   'name',
@@ -10,6 +25,13 @@ export const trackedStudyFields = [
   'anticipatedSamples',
   'awardeeOrganization',
   'description',
+];
+
+// A list of study fields for each step to display as study basic info
+export const steppingFields = [
+  ['name', 'shortName', 'bucket'],
+  ['externalId', 'version', 'attribution'],
+  ['releaseDate', 'anticipatedSamples', 'awardeeOrganization', 'description'],
 ];
 
 // Count the missing fields for a given study and return the notification number
@@ -48,4 +70,32 @@ export const countFileNotification = study => {
   counts = study.files.edges.filter(obj => fileLatestStatus(obj.node) === 'CHN')
     .length;
   return counts;
+};
+
+// Controlling the previous/next steps in study info page
+export const prevNextStep = (stepName, newStudy, history) => {
+  if (newStudy) {
+    history.push('/study/new-study/' + stepName);
+  } else {
+    history.push(
+      '/study/' +
+        history.location.pathname.split('/')[2] +
+        '/basic-info/' +
+        stepName,
+    );
+  }
+};
+
+/**
+ * Return true for false to determin if current field is on tracking
+ * - Only tracking for ADMIN
+ * - Only tracking the fields listed in trackedStudyFields
+ * - Only return true when field has no value
+ */
+export const noValueWarning = (isAdmin, id, value) => {
+  return (
+    isAdmin &&
+    trackedStudyFields.includes(id) &&
+    (value === null || value === 0 || value.length === 0)
+  );
 };

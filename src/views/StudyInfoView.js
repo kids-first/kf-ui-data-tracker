@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {graphql, compose} from 'react-apollo';
 import {GET_STUDY_BY_ID, MY_PROFILE} from '../state/queries';
 import {UPDATE_STUDY} from '../state/mutations';
-import NewStudyForm from '../forms/NewStudyForm';
+import NewStudyForm from '../forms/StudyInfoForm/NewStudyForm';
 import {Container, Segment, Message, Placeholder} from 'semantic-ui-react';
 import EmptyView from './EmptyView';
 

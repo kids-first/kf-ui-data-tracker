@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {graphql} from 'react-apollo';
-import NewStudyForm from '../forms/NewStudyForm';
+import NewStudyForm from '../forms/StudyInfoForm/NewStudyForm';
 import {Segment, Container, Header, Loader} from 'semantic-ui-react';
 import {CREATE_STUDY} from '../state/mutations';
 /**

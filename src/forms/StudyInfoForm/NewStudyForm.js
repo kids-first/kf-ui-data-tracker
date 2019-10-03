@@ -1,10 +1,28 @@
 import React, {useState, Fragment} from 'react';
-import {Switch, Route} from 'react-router-dom';
+import {Switch, Route, Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
-import {Form, Segment, Message, Step, Button, Header} from 'semantic-ui-react';
+import {
+  Form,
+  Segment,
+  Message,
+  Step,
+  Button,
+  Header,
+  Icon,
+  List,
+} from 'semantic-ui-react';
 import {Formik} from 'formik';
-import {InfoStep, ExternalStep, LogisticsStep} from './StudyFormSteps';
+import {InfoStep, ExternalStep, LogisticsStep} from './Steps';
+import ProgressBar from '../../components/StudyInfo/ProgressBar';
+import {
+  fieldLabel,
+  trackedStudyFields,
+  steppingFields,
+} from '../../common/notificationUtils';
 
+/**
+ * A form for the user to create or update a study, displaying in three steps
+ */
 const NewStudyForm = ({
   submitValue,
   apiErrors,
@@ -45,6 +63,22 @@ const NewStudyForm = ({
       href: 'logistics',
     },
   ];
+  const missingValueMessage = values => {
+    let fields = steppingFields.reduce((acc, stepsArr, step) => {
+      return acc.concat(
+        stepsArr
+          .filter(
+            field =>
+              trackedStudyFields.includes(field) &&
+              (!values[field] ||
+                values[field].length === 0 ||
+                values[field] === 0),
+          )
+          .map(f => ({label: fieldLabel[f], step})),
+      );
+    }, []);
+    return fields;
+  };
   const initialValues = studyNode
     ? {
         externalId: studyNode.externalId || '',
@@ -153,11 +187,32 @@ const NewStudyForm = ({
               content={apiErrors}
             />
           )}
+          {!newStudy && missingValueMessage(formikProps.values).length > 0 && (
+            <Message negative icon>
+              <Icon name="warning circle" />
+              <Message.Content>
+                <Message.Header>Missing values</Message.Header>
+                <p>Please add values to the following fields:</p>
+                <List bulleted horizontal>
+                  {missingValueMessage(formikProps.values).map(item => (
+                    <List.Item
+                      as={Link}
+                      to={`/study/${
+                        history.location.pathname.split('/')[2]
+                      }/basic-info/${STUDY_STEPS[item.step].href}`}
+                      key={item.label}
+                      content={item.label}
+                    />
+                  ))}
+                </List>
+              </Message.Content>
+            </Message>
+          )}
           <Step.Group attached="top" fluid widths={3}>
-            {STUDY_STEPS.map(step => (
+            {STUDY_STEPS.map((step, stepNum) => (
               <Step
                 link
-                key={STUDY_STEPS.indexOf(step)}
+                key={stepNum}
                 active={history.location.pathname.endsWith(step.href)}
                 onClick={() => {
                   if (newStudy) {
@@ -171,18 +226,24 @@ const NewStudyForm = ({
                     );
                   }
                 }}
-                icon={step.icon}
-                title={step.title}
-                description={step.desc}
-              />
+              >
+                <Icon circular name={step.icon} />
+                <Step.Content>
+                  <Step.Title>{step.title}</Step.Title>
+                  <Step.Description>{step.desc}</Step.Description>
+                  {editing && (
+                    <ProgressBar values={formikProps.values} step={stepNum} />
+                  )}
+                </Step.Content>
+              </Step>
             ))}
           </Step.Group>
           <Segment padded clearing attached>
             <Form onSubmit={formikProps.handleSubmit}>
               <Switch>
-                {STUDY_STEPS.map(step => (
+                {STUDY_STEPS.map((step, stepNum) => (
                   <Route
-                    key={STUDY_STEPS.indexOf(step)}
+                    key={stepNum}
                     path={
                       newStudy
                         ? '/study/new-study/' + step.href
@@ -205,6 +266,7 @@ const NewStudyForm = ({
                         editing,
                         foldDescription,
                         setFoldDescription,
+                        isAdmin,
                       })
                     }
                   />

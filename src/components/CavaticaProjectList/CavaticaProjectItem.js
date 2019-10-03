@@ -46,7 +46,7 @@ const ProjectLink = ({projectNode, disableLink}) => {
 const StudyLink = ({study}) => {
   if (study) {
     return (
-      <Link to={`/study/${study.kfId}/documents`}>
+      <Link to={`/study/${study.kfId}/basic-info/info`}>
         {study.shortName || study.name || study.kfId}
       </Link>
     );

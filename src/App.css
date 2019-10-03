@@ -154,3 +154,12 @@ body {
 .text-wrap-75 {
   max-width: 32em;
 }
+
+.progress-bar--custom {
+  margin-top: 5px !important;
+  div {
+    text-align: left !important;
+    font-weight: normal !important;
+    color: grey !important;
+  }
+}
