@@ -2,7 +2,7 @@ import React from 'react';
 import {compose, graphql} from 'react-apollo';
 import {Link} from 'react-router-dom';
 import {ALL_STUDIES, MY_PROFILE} from '../state/queries';
-import AmplitudeViewConsumer from './AmplitudeViewConsumer';
+import {AnalyticsViewConsumer} from '../analyticsTracking';
 import StudyList from '../components/StudyList/StudyList';
 import {Button, Message, Container, Segment} from 'semantic-ui-react';
 
@@ -12,9 +12,9 @@ const StudyListView = ({
 }) => {
   if (error)
     return (
-      <AmplitudeViewConsumer
+      <AnalyticsViewConsumer
         status="ERROR"
-        mountProps={{error}}
+        mountProperties={{error}}
         view="StudyListView"
       >
         <Container as={Segment} basic>
@@ -25,7 +25,7 @@ const StudyListView = ({
             content={error.message}
           />
         </Container>
-      </AmplitudeViewConsumer>
+      </AnalyticsViewConsumer>
     );
   const studyList = !loading ? allStudies.edges : [];
   if (!loading && studyList.length === 0)
@@ -62,13 +62,13 @@ const StudyListView = ({
       </Container>
     );
   return (
-    <AmplitudeViewConsumer view="StudyListView">
+    <AnalyticsViewConsumer view="StudyListView">
       <StudyList
         studyList={studyList}
         loading={loading}
         roles={myProfile ? myProfile.roles : []}
       />
-    </AmplitudeViewConsumer>
+    </AnalyticsViewConsumer>
   );
 };
 

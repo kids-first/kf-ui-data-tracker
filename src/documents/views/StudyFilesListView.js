@@ -12,7 +12,7 @@ import {
   Segment,
   Button,
 } from 'semantic-ui-react';
-import AmplitudeViewConsumer from './AmplitudeViewConsumer';
+import {AnalyticsViewConsumer} from '../analyticsTracking';
 import UploadWizard from '../modals/UploadWizard/UploadWizard';
 
 /**
@@ -58,9 +58,9 @@ const StudyFilesListView = ({
 
   if (error)
     return (
-      <AmplitudeViewConsumer
+      <AnalyticsViewConsumer
         status="ERROR"
-        eventProperties={{
+        mountProperties={{
           error,
           study: {kfId},
           history: {length: history.length},
@@ -75,11 +75,11 @@ const StudyFilesListView = ({
             content={error.message}
           />
         </Container>
-      </AmplitudeViewConsumer>
+      </AnalyticsViewConsumer>
     );
   const files = !loading ? studyByKfId.files.edges : [];
   return (
-    <AmplitudeViewConsumer
+    <AnalyticsViewConsumer
       eventProperties={{
         study: {kfId, name: !loading ? studyByKfId.name : null},
         files: files.length,
@@ -152,7 +152,7 @@ const StudyFilesListView = ({
           />
         </Grid.Row>
       </Grid>
-    </AmplitudeViewConsumer>
+    </AnalyticsViewConsumer>
   );
 };
 
