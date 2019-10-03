@@ -5,7 +5,7 @@ import {MY_PROFILE} from '../../state/queries';
 import {Container, Dropdown, Icon, Image, Menu} from 'semantic-ui-react';
 import defaultAvatar from '../../assets/defaultAvatar.png';
 import logo from '../../assets/logo.svg';
-
+import {auth} from '../../state/auth';
 const Nav = props => <NavLink exact {...props} activeClassName="active" />;
 
 const Header = ({data: {loading, error, myProfile: profile}}) => {
@@ -66,8 +66,7 @@ const Header = ({data: {loading, error, myProfile: profile}}) => {
                     to="/logout"
                     onClick={() => {
                       setLoggedIn(false);
-                      localStorage.removeItem('accessToken');
-                      localStorage.removeItem('idToken');
+                      auth.logout();
                     }}
                   >
                     <Icon name="log out" />
