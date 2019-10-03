@@ -56,60 +56,62 @@ const NewDocumentView = ({
   return (
     <AnalyticsViewConsumer mountProperties={{file: location.state.file.name}}>
       <Container as={Segment} vertical basic>
-        <Header as="h3">Tell us about your study document</Header>
-        <p>
-          Help ensure the fastest processing and harmonization of your study by
-          telling us about the contents of your uploaded document. This helps
-          our engineers accurately interpret your data.
-        </p>
-        {errors && (
-          <Message
-            negative
-            icon="warning circle"
-            header="Error"
-            content={errors}
-          />
-        )}
-      </Container>
-      <Segment.Group>
-        <Segment>
-          <Header as="h4" title={location.state.file.name.length}>
-            Uploaded File: {lengthLimit(location.state.file.name, 80)}
-          </Header>
-        </Segment>
-        <Container as={Segment} padded="very">
-          <EditDocumentForm
-            studyFiles={studyFiles}
-            isAdmin={isAdmin}
-            fileNode={location.state.file}
-            handleSubmit={handleSubmit}
-            errors={errors}
-            history={history}
-            showFieldHints={true}
-            submitButtons={(disabled, onUploading) => (
-              <Segment vertical basic compact>
-                <Button
-                  floated="right"
-                  type="submit"
-                  primary={errors.length === 0}
-                  disabled={disabled}
-                >
-                  {onUploading && !errors ? 'UPLOADING ...' : 'UPLOAD'}
-                </Button>
-                <Button
-                  floated="right"
-                  primary={errors.length > 0}
-                  onClick={() =>
-                    history.push(`/study/${match.params.kfId}/documents`)
-                  }
-                >
-                  CANCEL
-                </Button>
-              </Segment>
-            )}
-          />
+        <Container as={Segment} vertical basic>
+          <Header as="h3">Tell us about your study document</Header>
+          <p>
+            Help ensure the fastest processing and harmonization of your study
+            by telling us about the contents of your uploaded document. This
+            helps our engineers accurately interpret your data.
+          </p>
+          {errors && (
+            <Message
+              negative
+              icon="warning circle"
+              header="Error"
+              content={errors}
+            />
+          )}
         </Container>
-      </Segment.Group>
+        <Segment.Group>
+          <Segment>
+            <Header as="h4" title={location.state.file.name.length}>
+              Uploaded File: {lengthLimit(location.state.file.name, 80)}
+            </Header>
+          </Segment>
+          <Container as={Segment} padded="very">
+            <EditDocumentForm
+              studyFiles={studyFiles}
+              isAdmin={isAdmin}
+              fileNode={location.state.file}
+              handleSubmit={handleSubmit}
+              errors={errors}
+              history={history}
+              showFieldHints={true}
+              submitButtons={(disabled, onUploading) => (
+                <Segment vertical basic compact>
+                  <Button
+                    floated="right"
+                    type="submit"
+                    primary={errors.length === 0}
+                    disabled={disabled}
+                  >
+                    {onUploading && !errors ? 'UPLOADING ...' : 'UPLOAD'}
+                  </Button>
+                  <Button
+                    floated="right"
+                    primary={errors.length > 0}
+                    onClick={() =>
+                      history.push(`/study/${match.params.kfId}/documents`)
+                    }
+                  >
+                    CANCEL
+                  </Button>
+                </Segment>
+              )}
+            />
+          </Container>
+        </Segment.Group>
+      </Container>
     </AnalyticsViewConsumer>
   );
 };
