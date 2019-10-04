@@ -1,3 +1,34 @@
+# Kids First Data Tracker Release 0.8.0
+
+## Features
+
+Adds required action alerts and various UX improvements.
+
+### Summary
+
+Feature Emojis: ✨x10 💄x3 🐛x2 ♻️x1
+Feature Labels: [feature](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/feature) x10 [usability improvement](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/usability%20improvement) x5 [bug](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/bug) x4 [design](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/design) x4 [refactor](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/refactor) x4
+
+### New features and changes
+
+- (#484) ✨ FileElement copy download link action button - @bdolly
+- (#496) 🐛 Add query name to solve Error writing result to store for query - @XuTheBunny
+- (#495) ✨ Add alert for study data completeness to study info page - @XuTheBunny
+- (#467) ✨ Add alert for study data completeness, files, and projects to study list - @XuTheBunny
+- (#458) ✨ Updated Document Indicator - @bdolly
+- (#485) ✨ Feature document name validation - @bdolly
+- (#492) ✨ Feature version list item status tooltip - @bdolly
+- (#481) 💄 Re-style Study  List Item attributes  - @bdolly
+- (#491) ✨ Feature UserSnap widget  - @bdolly
+- (#487) ✨ Add step view for study info page with editing mode - @XuTheBunny
+- (#489) ✨ Edit Project modal - @dankolbman
+- (#486) 💄 Add user friendly time formats to TimeAgo on hover - @XuTheBunny
+- (#461) 💄 Re-style input hints for study form - @dankolbman
+- (#482) 🐛 Hide copy button for masked tokens - @dankolbman
+- (#473) ♻️ Refactor study list search by adding empty state and make kfId searchable - @XuTheBunny
+- (#468) ✨ Add event logs tab view for ADMIN user with type filter and auto refresh - @XuTheBunny
+
+
 # Kids First Data Tracker Release 0.7.0
 
 ## Features
