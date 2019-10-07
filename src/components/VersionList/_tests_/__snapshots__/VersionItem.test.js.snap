@@ -2,127 +2,275 @@
 
 exports[`renders correctly with 0 as index -- show ribbon label 1`] = `
 <div>
-  <tr
-    class="version--item"
+  <table
+    class="ui selectable very compact table"
   >
-    <td
-      class="collapsing"
-    >
-      <div
-        class="ui orange tiny basic ribbon label"
-        title="Latest Version"
-      >
-        Pending review
-      </div>
-    </td>
-    <td
+    <tbody
       class=""
     >
-      <p
-        title="VersionFileName.js"
+      <tr
+        class="version--item"
       >
-        <b>
-          VersionFileName.js
-        </b>
-      </p>
-      <p
-        data-testid="version-item"
-        title="version description"
-      >
-        <small>
-          version description
-        </small>
-      </p>
-    </td>
-    <td
-      class="collapsing right aligned top aligned"
-    >
-      <div
-        class="ui mini basic image label"
-      >
-        <img
-          alt="xuzhu"
-          src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
-        />
-        <time
-          datetime="2018-08-21T03:16:11.000Z"
-          title="21 Aug 2018"
+        <td
+          class="collapsing"
         >
-          8 months ago
-        </time>
-      </div>
-      <button
-        class="ui mini basic label"
-      >
-        <i
-          aria-hidden="true"
-          class="download icon"
-        />
-        9.9 kB
-      </button>
-    </td>
-  </tr>
+          <div
+            class="ui orange tiny basic ribbon label"
+            title="Latest Version"
+          >
+            Pending review
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <p
+            title="VersionFileName.js"
+          >
+            <b>
+              VersionFileName.js
+            </b>
+          </p>
+          <p
+            data-testid="version-item"
+            title="version description"
+          >
+            <small>
+              version description
+            </small>
+          </p>
+        </td>
+        <td
+          class="collapsing right aligned top aligned"
+        >
+          <div
+            class="ui mini basic image label"
+          >
+            <img
+              alt="xuzhu"
+              src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
+            />
+            <time
+              datetime="2018-08-21T03:16:11.000Z"
+              title="21 Aug 2018"
+            >
+              8 months ago
+            </time>
+          </div>
+          <button
+            class="ui mini basic label"
+          >
+            <i
+              aria-hidden="true"
+              class="download icon"
+            />
+            9.9 kB
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 `;
 
-exports[`renders correctly with 1 as index -- show version kfId 1`] = `
+exports[`renders correctly with 1 as index -- status dot 1`] = `
 <div>
-  <tr
-    class="version--item"
+  <table
+    class="ui selectable very compact table"
   >
-    <td
-      class="center aligned middle aligned"
-    >
-      <div
-        class="ui orange mini circular empty label"
-      />
-    </td>
-    <td
+    <tbody
       class=""
     >
-      <p
-        title="VersionFileName.js"
+      <tr
+        class="version--item"
       >
-        <b>
-          VersionFileName.js
-        </b>
-      </p>
-      <p
-        data-testid="version-item"
-        title="version description"
-      >
-        <small>
-          version description
-        </small>
-      </p>
-    </td>
-    <td
-      class="collapsing right aligned top aligned"
-    >
-      <div
-        class="ui mini basic image label"
-      >
-        <img
-          alt="xuzhu"
-          src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
-        />
-        <time
-          datetime="2018-08-21T03:16:11.000Z"
-          title="21 Aug 2018"
+        <td
+          class="center aligned middle aligned"
         >
-          8 months ago
-        </time>
-      </div>
-      <button
-        class="ui mini basic label"
+          <div
+            class="ui orange mini circular empty label"
+          />
+        </td>
+        <td
+          class=""
+        >
+          <p
+            title="VersionFileName.js"
+          >
+            <b>
+              VersionFileName.js
+            </b>
+          </p>
+          <p
+            data-testid="version-item"
+            title="version description"
+          >
+            <small>
+              version description
+            </small>
+          </p>
+        </td>
+        <td
+          class="collapsing right aligned top aligned"
+        >
+          <div
+            class="ui mini basic image label"
+          >
+            <img
+              alt="xuzhu"
+              src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
+            />
+            <time
+              datetime="2018-08-21T03:16:11.000Z"
+              title="21 Aug 2018"
+            >
+              8 months ago
+            </time>
+          </div>
+          <button
+            class="ui mini basic label"
+          >
+            <i
+              aria-hidden="true"
+              class="download icon"
+            />
+            9.9 kB
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`renders correctly with not enough data 1`] = `
+<div>
+  <table
+    class="ui selectable very compact table"
+  >
+    <tbody
+      class=""
+    >
+      <tr
+        class="version--item"
       >
-        <i
-          aria-hidden="true"
-          class="download icon"
-        />
-        9.9 kB
-      </button>
-    </td>
-  </tr>
+        <td
+          class="collapsing"
+        >
+          <div
+            class="ui grey tiny basic ribbon label"
+            title="Latest Version"
+          >
+            Unknown
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <p
+            title="VersionFileName.js"
+          >
+            <b>
+              VersionFileName.js
+            </b>
+          </p>
+          <p
+            data-testid="version-item"
+            title=""
+          >
+            <small>
+              
+              No version summary available
+            </small>
+          </p>
+        </td>
+        <td
+          class="collapsing right aligned top aligned"
+        >
+          <div
+            class="ui mini basic image label"
+          >
+            <img
+              alt="xuzhu"
+              src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
+            />
+            <time
+              datetime="2018-08-21T03:16:11.000Z"
+              title="21 Aug 2018"
+            >
+              8 months ago
+            </time>
+          </div>
+          <button
+            class="ui mini basic label"
+          >
+            <i
+              aria-hidden="true"
+              class="download icon"
+            />
+            Size Unknown
+          </button>
+        </td>
+      </tr>
+      <tr
+        class="version--item"
+      >
+        <td
+          class="center aligned middle aligned"
+        >
+          <div
+            class="ui grey mini circular empty label"
+          />
+        </td>
+        <td
+          class=""
+        >
+          <p
+            title="VersionFileName.js"
+          >
+            <b>
+              VersionFileName.js
+            </b>
+          </p>
+          <p
+            data-testid="version-item"
+            title=""
+          >
+            <small>
+              
+              No version summary available
+            </small>
+          </p>
+        </td>
+        <td
+          class="collapsing right aligned top aligned"
+        >
+          <div
+            class="ui mini basic image label"
+          >
+            <img
+              alt="xuzhu"
+              src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
+            />
+            <time
+              datetime="2018-08-21T03:16:11.000Z"
+              title="21 Aug 2018"
+            >
+              8 months ago
+            </time>
+          </div>
+          <button
+            class="ui mini basic label"
+          >
+            <i
+              aria-hidden="true"
+              class="download icon"
+            />
+            Size Unknown
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 `;

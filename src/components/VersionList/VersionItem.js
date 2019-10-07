@@ -23,8 +23,10 @@ const VersionItem = ({
 }) => {
   const labelColor = versionNode.state
     ? versionState[versionNode.state].labelColor
-    : 'bg-lightGrey';
-  const size = formatFileSize(versionNode.size, true) || 'Size Unknown';
+    : 'grey';
+  const size = versionNode.size
+    ? formatFileSize(versionNode.size, true)
+    : 'Size Unknown';
   return (
     <Mutation mutation={FILE_DOWNLOAD_URL}>
       {downloadFileMutation => (
@@ -41,7 +43,9 @@ const VersionItem = ({
                 ribbon
                 title="Latest Version"
               >
-                {versionState[versionNode.state].title}
+                {versionNode.state
+                  ? versionState[versionNode.state].title
+                  : 'Unknown'}
               </Label>
             </Table.Cell>
           ) : (
@@ -50,8 +54,12 @@ const VersionItem = ({
                 inverted
                 position="left center"
                 size="small"
-                content={versionState[versionNode.state].title}
-                key={versionState[versionNode.state].title}
+                content={
+                  versionNode.state
+                    ? versionState[versionNode.state].title
+                    : 'Unknown'
+                }
+                key={versionNode.state}
                 trigger={
                   <Label circular size="mini" empty color={labelColor} />
                 }
