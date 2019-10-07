@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders FileCounts in default stage 1`] = `
+<div>
+  <div
+    class="ui horizontal list"
+    role="list"
+  >
+    <a
+      class="item"
+      href="/study/SD_8WX8QQ06/documents"
+      role="listitem"
+    >
+      <i
+        aria-hidden="true"
+        class="file icon"
+      />
+      2
+       files
+    </a>
+    <div
+      class="item"
+      role="listitem"
+    >
+      <div
+        class="ui orange mini circular empty label"
+      />
+       
+      2
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders FileFileCounts with empty file list 1`] = `
+<div>
+  <div
+    class="ui horizontal list"
+    role="list"
+  >
+    <div
+      class="item"
+      role="listitem"
+    >
+      <i
+        aria-hidden="true"
+        class="red file icon"
+      />
+      <label
+        class="ui mini basic compact primary button"
+        for="file"
+        role="button"
+      >
+        <i
+          aria-hidden="true"
+          class="upload cloud icon"
+        />
+        Upload
+      </label>
+      <input
+        hidden=""
+        id="file"
+        multiple=""
+        type="file"
+      />
+    </div>
+  </div>
+</div>
+`;

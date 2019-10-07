@@ -1,8 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import {List, Icon, Popup, Label, Button} from 'semantic-ui-react';
 import {versionState} from '../../common/enums';
-
+/**
+ * Displays file counts with total number and breaking down by each status
+ * When no files exist, show buttons guiding user to upload files
+ */
 const FileCounts = ({files, title, history}) => {
   if (files && files.length > 0) {
     const states = files.map(
@@ -80,6 +84,19 @@ const FileCounts = ({files, title, history}) => {
       </List>
     );
   }
+};
+
+FileCounts.propTypes = {
+  /** Array of file object*/
+  files: PropTypes.array.isRequired,
+  /** Study id used by forming the redirect url*/
+  title: PropTypes.string.isRequired,
+  /** Rect-router history object  */
+  history: PropTypes.object,
+};
+
+FileCounts.defaultProps = {
+  files: [],
 };
 
 export default FileCounts;
