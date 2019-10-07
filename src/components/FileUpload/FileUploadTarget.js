@@ -55,18 +55,16 @@ const FileUploadTarget = props => {
 };
 
 FileUploadTarget.propTypes = {
-  /** if cursor is currently dragging over the component */
-  dragging: PropTypes.bool,
   /** Errors from graphQL */
-  errors: PropTypes.object,
+  error: PropTypes.object,
   /** add helpful instruction about how to drag and drop files */
   instructions: PropTypes.string,
   /** operation when component is dragged over */
   handleDragOver: PropTypes.func.isRequired,
   /** operation when the cursor enters the componen in drag state */
-  onDragEnter: PropTypes.func.isRequired,
+  handleDragEnter: PropTypes.func.isRequired,
   /** operation when cursor leaves component in drag state */
-  onDragLeave: PropTypes.func.isRequired,
+  handleDragLeave: PropTypes.func.isRequired,
   /** operation when a drag is released on the component */
   handleDrop: PropTypes.func.isRequired,
   /** operations for selected files */
@@ -75,7 +73,6 @@ FileUploadTarget.propTypes = {
 
 FileUploadTarget.defaultProps = {
   instructions: 'Drag and drop Files here',
-  dragging: false,
 };
 
 /**
