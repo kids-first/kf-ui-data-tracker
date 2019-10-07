@@ -294,6 +294,7 @@ exports[`deletes a file correctly 1`] = `
             </div>
             <button
               class="ui basic icon button"
+              data-testid="sort-direction-button"
             >
               <i
                 aria-hidden="true"
@@ -800,6 +801,7 @@ exports[`renders correctly 1`] = `
             </div>
             <button
               class="ui basic icon button"
+              data-testid="sort-direction-button"
             >
               <i
                 aria-hidden="true"

@@ -9,7 +9,6 @@ import {
   defaultSort,
 } from '../../common/fileUtils';
 import {versionState, fileTypeDetail} from '../../common/enums';
-
 /**
  * Filter Bar for Study Files, returns filtered list in "filteredList" render prop
  */
@@ -138,6 +137,7 @@ const ListFilterBar = ({fileList, filteredList}) => {
           <Button
             icon
             basic
+            data-testid="sort-direction-button"
             onClick={() => {
               if (sortDirection === 'ascending') {
                 setSortDirection('descending');
@@ -174,6 +174,10 @@ ListFilterBar.propTypes = {
   fileList: PropTypes.array,
   /** render prop that returns an array of filtered study file objects*/
   filteredList: PropTypes.func,
+};
+
+ListFilterBar.defaultProps = {
+  fileList: [],
 };
 
 export default ListFilterBar;
