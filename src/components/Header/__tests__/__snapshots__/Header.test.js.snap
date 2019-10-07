@@ -263,6 +263,7 @@ exports[`renders correctly -- default stage (USER role) 1`] = `
               </a>
               <div
                 class="ui label ui mini basic icon right floated button"
+                data-testid="show-detail"
                 role="button"
               >
                 <i
@@ -336,6 +337,7 @@ exports[`renders correctly -- default stage (USER role) 1`] = `
               </a>
               <div
                 class="ui label ui mini basic icon right floated button"
+                data-testid="show-detail"
                 role="button"
               >
                 <i
@@ -409,6 +411,7 @@ exports[`renders correctly -- default stage (USER role) 1`] = `
               </a>
               <div
                 class="ui label ui mini basic icon right floated button"
+                data-testid="show-detail"
                 role="button"
               >
                 <i
@@ -482,6 +485,7 @@ exports[`renders correctly -- default stage (USER role) 1`] = `
               </a>
               <div
                 class="ui label ui mini basic icon right floated button"
+                data-testid="show-detail"
                 role="button"
               >
                 <i
@@ -761,6 +765,7 @@ exports[`renders correctly -- default stage (USER role) 2`] = `
               </a>
               <div
                 class="ui label ui mini basic icon right floated button"
+                data-testid="show-detail"
                 role="button"
               >
                 <i
@@ -834,6 +839,7 @@ exports[`renders correctly -- default stage (USER role) 2`] = `
               </a>
               <div
                 class="ui label ui mini basic icon right floated button"
+                data-testid="show-detail"
                 role="button"
               >
                 <i
@@ -907,6 +913,7 @@ exports[`renders correctly -- default stage (USER role) 2`] = `
               </a>
               <div
                 class="ui label ui mini basic icon right floated button"
+                data-testid="show-detail"
                 role="button"
               >
                 <i
@@ -980,6 +987,7 @@ exports[`renders correctly -- default stage (USER role) 2`] = `
               </a>
               <div
                 class="ui label ui mini basic icon right floated button"
+                data-testid="show-detail"
                 role="button"
               >
                 <i
@@ -1259,6 +1267,7 @@ exports[`renders correctly -- default stage (USER role) 3`] = `
               </a>
               <div
                 class="ui label ui mini basic icon right floated button"
+                data-testid="show-detail"
                 role="button"
               >
                 <i
@@ -1332,6 +1341,7 @@ exports[`renders correctly -- default stage (USER role) 3`] = `
               </a>
               <div
                 class="ui label ui mini basic icon right floated button"
+                data-testid="show-detail"
                 role="button"
               >
                 <i
@@ -1405,6 +1415,7 @@ exports[`renders correctly -- default stage (USER role) 3`] = `
               </a>
               <div
                 class="ui label ui mini basic icon right floated button"
+                data-testid="show-detail"
                 role="button"
               >
                 <i
@@ -1478,6 +1489,7 @@ exports[`renders correctly -- default stage (USER role) 3`] = `
               </a>
               <div
                 class="ui label ui mini basic icon right floated button"
+                data-testid="show-detail"
                 role="button"
               >
                 <i
