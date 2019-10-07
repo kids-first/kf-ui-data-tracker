@@ -1,7 +1,12 @@
 import React, {useState} from 'react';
 import propTypes from 'prop-types';
 import {Button, Icon} from 'semantic-ui-react';
-
+/**
+ * Toggle Buttons taking two or more buttons and show as a group for toggle
+ * Takes buttons prop as an array of {text, icon} objects
+ * Dispaly text on buttons as optional
+ * Customize diffrent buttons in diffrent sized
+ */
 const ToggleButtons = ({buttons, onToggle, size, hideText}) => {
   const [active, setActive] = useState(0);
 

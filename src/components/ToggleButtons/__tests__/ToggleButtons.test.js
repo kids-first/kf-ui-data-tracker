@@ -9,7 +9,7 @@ import ToggleButtons from '../ToggleButtons';
 
 afterEach(cleanup);
 
-it('renders correctly', () => {
+it('renders toggle button correctly', () => {
   const mockButtons = [
     {text: 'Grid', icon: 'grid layout'},
     {text: 'list', icon: 'list'},
@@ -60,4 +60,31 @@ it('calls onToggle prop on click', async () => {
   expect(mockOnToggle.mock.calls[0][0].text).toBe('list');
   // renders the list button with the active state
   expect(activeButton.className).toContain('primary');
+});
+
+it('renders toggle button in diffrent sizes', () => {
+  const mockButtons = [
+    {text: 'Grid', icon: 'grid layout'},
+    {text: 'list', icon: 'list'},
+  ];
+  const tree = render(
+    <>
+      <ToggleButtons onToggle={jest.fn()} buttons={mockButtons} size="medium" />
+      <ToggleButtons onToggle={jest.fn()} buttons={mockButtons} size="large" />
+    </>,
+  );
+  expect(tree.container).toMatchSnapshot();
+});
+
+it('renders toggle button hiding Text', () => {
+  const mockButtons = [
+    {text: 'Grid', icon: 'grid layout'},
+    {text: 'list', icon: 'list'},
+  ];
+  const tree = render(
+    <>
+      <ToggleButtons onToggle={jest.fn()} buttons={mockButtons} hideText />
+    </>,
+  );
+  expect(tree.container).toMatchSnapshot();
 });
