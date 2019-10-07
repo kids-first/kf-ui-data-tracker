@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders CavaticaCounts in default stage 1`] = `
+<div>
+  <div
+    class="ui horizontal list"
+    role="list"
+  >
+    <a
+      class="item"
+      href="/study/SD_8WX8QQ06/cavatica"
+      role="listitem"
+    >
+      <i
+        aria-hidden="true"
+        class="code branch icon"
+      />
+      3
+       projects
+    </a>
+    <div
+      class="item"
+      role="listitem"
+    >
+      <div
+        class="ui olive mini circular empty label"
+      />
+       
+      1
+    </div>
+    <div
+      class="item"
+      role="listitem"
+    >
+      <div
+        class="ui olive mini circular empty label"
+      />
+       
+      2
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders CavaticaCounts with empty project list 1`] = `
+<div>
+  <div
+    class="ui horizontal list"
+    role="list"
+  >
+    <div
+      class="item"
+      role="listitem"
+    >
+      <i
+        aria-hidden="true"
+        class="red code branch icon"
+      />
+      <div
+        class="ui mini basic compact buttons"
+      >
+        <a
+          class="ui mini primary button"
+          href="/study/SD_8WX8QQ06/cavatica#link-cavatica-project"
+          role="button"
+        >
+          <i
+            aria-hidden="true"
+            class="linkify icon"
+          />
+          LINK
+        </a>
+        <a
+          class="ui mini basic primary button"
+          href="/study/SD_8WX8QQ06/cavatica#add-cavatica-project"
+          role="button"
+        >
+          <i
+            aria-hidden="true"
+            class="add icon"
+          />
+          NEW 
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
