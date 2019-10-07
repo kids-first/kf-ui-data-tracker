@@ -1530,6 +1530,15 @@ exports[`renders correctly -- default stage (USER role) 4`] = `
               class="chevron right icon"
             />
           </button>
+          <button
+            class="ui large icon right labeled button"
+          >
+            Login with Ego
+            <i
+              aria-hidden="true"
+              class="chevron right icon"
+            />
+          </button>
         </div>
         <div
           class="ui message"

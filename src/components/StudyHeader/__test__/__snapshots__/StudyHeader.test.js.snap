@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders study header in loading stage 1`] = `
+<div>
+  <div
+    class="ui container"
+  >
+    <div
+      class="ui placeholder"
+    >
+      <div
+        class="header"
+      >
+        <div
+          class="line"
+        />
+        <div
+          class="line"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders study header with no data 1`] = `
+<div>
+  <div
+    class="ui container"
+  >
+    <h1
+      class="ui header"
+    >
+      Unknown study name
+    </h1>
+  </div>
+</div>
+`;
+
+exports[`renders study header with study name and short name 1`] = `
+<div>
+  <div
+    class="ui container"
+  >
+    <h1
+      class="ui header"
+    >
+      A study used for testing the header
+    </h1>
+    <h2
+      class="sub header study--header-sub"
+    >
+      Test Study
+    </h2>
+    <button
+      class="ui tiny basic icon button"
+    >
+      <i
+        aria-hidden="true"
+        class="copy icon"
+      />
+      SD_00000000
+    </button>
+  </div>
+</div>
+`;

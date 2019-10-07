@@ -25,7 +25,7 @@ const StudyHeader = ({
 
   return (
     <Container>
-      <Header as="h1">{studyName}</Header>
+      <Header as="h1">{studyName || 'Unknown study name'}</Header>
       {shortName && (
         <Header.Subheader as="h2" className="study--header-sub">
           {shortName}
