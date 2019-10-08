@@ -8,6 +8,107 @@ exports[`renders badge on loading mode 1`] = `
 </div>
 `;
 
+exports[`renders badge with customized icon 1`] = `
+<div>
+  <div
+    class="ui grey tiny basic label"
+  >
+    <i
+      aria-hidden="true"
+      class="star outline icon"
+    />
+  </div>
+</div>
+`;
+
+exports[`renders badge with missing values for size and state 1`] = `
+<div>
+  <div
+    class="ui grey tiny basic label"
+  />
+</div>
+`;
+
+exports[`renders badges in different sizes 1`] = `
+<div>
+  <div
+    class="ui orange mini basic label"
+  >
+    Pending review
+  </div>
+</div>
+`;
+
+exports[`renders badges in different sizes 2`] = `
+<div>
+  <div
+    class="ui orange tiny basic label"
+  >
+    Pending review
+  </div>
+</div>
+`;
+
+exports[`renders badges in different sizes 3`] = `
+<div>
+  <div
+    class="ui orange small basic label"
+  >
+    Pending review
+  </div>
+</div>
+`;
+
+exports[`renders badges in different sizes 4`] = `
+<div>
+  <div
+    class="ui orange medium basic label"
+  >
+    Pending review
+  </div>
+</div>
+`;
+
+exports[`renders badges in different sizes 5`] = `
+<div>
+  <div
+    class="ui orange large basic label"
+  >
+    Pending review
+  </div>
+</div>
+`;
+
+exports[`renders badges in different sizes 6`] = `
+<div>
+  <div
+    class="ui orange big basic label"
+  >
+    Pending review
+  </div>
+</div>
+`;
+
+exports[`renders badges in different sizes 7`] = `
+<div>
+  <div
+    class="ui orange huge basic label"
+  >
+    Pending review
+  </div>
+</div>
+`;
+
+exports[`renders badges in different sizes 8`] = `
+<div>
+  <div
+    class="ui orange massive basic label"
+  >
+    Pending review
+  </div>
+</div>
+`;
+
 exports[`renders badges with all available state 1`] = `
 <div>
   <div
