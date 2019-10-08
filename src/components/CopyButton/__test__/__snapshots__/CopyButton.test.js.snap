@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Copy Button renders correctly -- customized button icon and text 1`] = `
+<div>
+  <button
+    class="ui icon button"
+  >
+    <i
+      aria-hidden="true"
+      class="star outline icon"
+    />
+    COPY BUTTON
+  </button>
+</div>
+`;
+
+exports[`Copy Button renders correctly -- customized style 1`] = `
+<div>
+  <button
+    class="ui large basic icon primary button"
+  >
+    <i
+      aria-hidden="true"
+      class="copy icon"
+    />
+    testing2
+  </button>
+</div>
+`;
+
+exports[`Copy Button renders correctly -- customized tooltip 1`] = `
+<div>
+  <button
+    class="ui icon button"
+  >
+    <i
+      aria-hidden="true"
+      class="copy icon"
+    />
+    testing3
+  </button>
+</div>
+`;
+
+exports[`Copy Button renders correctly -- default style 1`] = `
+<div>
+  <button
+    class="ui icon button"
+  >
+    <i
+      aria-hidden="true"
+      class="copy icon"
+    />
+    testing1
+  </button>
+</div>
+`;

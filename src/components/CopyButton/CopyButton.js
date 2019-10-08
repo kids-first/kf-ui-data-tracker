@@ -2,20 +2,12 @@ import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import {Button, Icon, Popup} from 'semantic-ui-react';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
-
 /**
  * A simple button that is wrapped with an icon and a popup prompting the user
  * to copy the provided text.
  * Passes additional props to the Button
  */
-const CopyButton = ({
-  text,
-  textToCopy,
-  icon = 'copy',
-  tooltip = 'Copy',
-  position = 'top left',
-  ...props
-}) => {
+const CopyButton = ({text, textToCopy, icon, tooltip, position, ...props}) => {
   const [copied, setCopied] = useState(false);
   return (
     <Popup
@@ -44,12 +36,32 @@ const CopyButton = ({
 };
 
 CopyButton.propTypes = {
+  /** The string to be displayed on button and copied */
+  text: PropTypes.string,
   /** The string to be copied */
-  text: PropTypes.string.isRequired,
+  textToCopy: PropTypes.string,
+  /** Copy button icon name */
+  icon: PropTypes.string,
+  /** Copy button tooltip text */
+  tooltip: PropTypes.string,
+  /** Copy button tooltip position */
+  position: PropTypes.oneOf([
+    'top center',
+    'top left',
+    'top right',
+    'bottom center',
+    'bottom left',
+    'bottom right',
+    'right center',
+    'left center',
+  ]),
 };
 
 CopyButton.defaultProps = {
   text: null,
+  icon: 'copy',
+  tooltip: 'Copy',
+  position: 'top left',
 };
 
 export default CopyButton;
