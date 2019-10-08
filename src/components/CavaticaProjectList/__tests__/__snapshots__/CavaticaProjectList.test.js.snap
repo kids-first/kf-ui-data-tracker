@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`renders cavatica project list correctly - default look 1`] = `
 <div>
   <div
     class="ui divided relaxed list"
@@ -221,5 +221,14 @@ exports[`renders correctly 1`] = `
       </div>
     </div>
   </div>
+</div>
+`;
+
+exports[`renders cavatica project list correctly - no data 1`] = `
+<div>
+  <div
+    class="ui divided relaxed list"
+    role="list"
+  />
 </div>
 `;
