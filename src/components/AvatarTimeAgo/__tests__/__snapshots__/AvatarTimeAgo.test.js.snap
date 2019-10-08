@@ -42,3 +42,50 @@ exports[`renders AvatarTimeAgo showing username 1`] = `
   </div>
 </div>
 `;
+
+exports[`renders AvatarTimeAgo without any data 1`] = `
+<div>
+  <div
+    class="ui basic image label"
+  >
+    <img
+      alt="profile"
+      src="test-file-stub"
+    />
+    Unknown
+  </div>
+</div>
+`;
+
+exports[`renders AvatarTimeAgo without createdAt data 1`] = `
+<div>
+  <div
+    class="ui mini basic image label"
+  >
+    <img
+      alt="username"
+      src="https://www.w3schools.com/w3images/avatar6.png"
+    />
+    Unknown
+  </div>
+</div>
+`;
+
+exports[`renders AvatarTimeAgo without creator data 1`] = `
+<div>
+  <div
+    class="ui mini basic image label"
+  >
+    <img
+      alt="profile"
+      src="test-file-stub"
+    />
+    <time
+      datetime="2019-04-17T16:39:34.000Z"
+      title="17 Apr 2019"
+    >
+      6 days ago
+    </time>
+  </div>
+</div>
+`;
