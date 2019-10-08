@@ -64,7 +64,9 @@ const ActionButtons = ({
         />
 
         <Popup
-          trigger={<Button icon="trash alternate" />}
+          trigger={
+            <Button icon="trash alternate" data-testid="delete-button" />
+          }
           header="Are you sure?"
           content={
             <>
