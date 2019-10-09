@@ -63,7 +63,7 @@ const Header = ({data: {loading, error, myProfile: profile}}) => {
                   </Dropdown.Item>
                   <Dropdown.Item
                     as={Nav}
-                    to="/login"
+                    to="/logout"
                     onClick={() => {
                       setLoggedIn(false);
                       localStorage.removeItem('accessToken');
