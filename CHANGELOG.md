@@ -1,3 +1,22 @@
+# Kids First Data Tracker Release 0.8.1
+
+## Features
+
+Hotfix for file downloads.
+
+### Summary
+
+Feature Emojis: 📷x3 🐛x1
+Feature Labels: [component](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/component) x3 [refactor](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/refactor) x3 [bug](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/bug) x1
+
+### New features and changes
+
+- (#509) 🐛 Fix download mutation by removing the id - @XuTheBunny
+- (#497) 📷 Improve Snapshot Coverage 3/3 - @XuTheBunny
+- (#500) 📷 Improve Snapshot Coverage 2/3 - @XuTheBunny
+- (#499) 📷 Improve Snapshot Coverage 1/3 - @XuTheBunny
+
+
 # Kids First Data Tracker Release 0.8.0
 
 ## Features
