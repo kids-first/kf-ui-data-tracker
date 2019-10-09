@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`renders study table correctly 1`] = `
 <div>
   <table
-    class="ui selectable striped 17 column table"
+    class="ui selectable striped fourteen column table"
   >
     <thead
       class=""
@@ -14,27 +14,12 @@ exports[`renders correctly 1`] = `
         <th
           class=""
         >
-          Name
-        </th>
-        <th
-          class=""
-        >
           Short Name
         </th>
         <th
           class=""
         >
           ID
-        </th>
-        <th
-          class=""
-        >
-          Created At
-        </th>
-        <th
-          class=""
-        >
-          Modified At
         </th>
         <th
           class=""
@@ -107,36 +92,11 @@ exports[`renders correctly 1`] = `
       >
         <td
           class=""
-        >
-          benchmark extensible e-business
-        </td>
-        <td
-          class=""
         />
         <td
           class=""
         >
           SD_8WX8QQ06
-        </td>
-        <td
-          class=""
-        >
-          <time
-            datetime="2018-06-17T23:32:00.000Z"
-            title="17 Jun 2018"
-          >
-            10 months ago
-          </time>
-        </td>
-        <td
-          class=""
-        >
-          <time
-            datetime="2019-04-25T15:22:18.780Z"
-            title="25 Apr 2019"
-          >
-            2 days from now
-          </time>
         </td>
         <td
           class=""
@@ -273,36 +233,11 @@ exports[`renders correctly 1`] = `
       >
         <td
           class=""
-        >
-          visualize dynamic users
-        </td>
-        <td
-          class=""
         />
         <td
           class=""
         >
           SD_I1L92W57
-        </td>
-        <td
-          class=""
-        >
-          <time
-            datetime="2018-03-25T10:47:50.000Z"
-            title="25 Mar 2018"
-          >
-            1 year ago
-          </time>
-        </td>
-        <td
-          class=""
-        >
-          <time
-            datetime="2019-04-25T15:22:18.786Z"
-            title="25 Apr 2019"
-          >
-            2 days from now
-          </time>
         </td>
         <td
           class=""
@@ -443,36 +378,11 @@ exports[`renders correctly 1`] = `
       >
         <td
           class=""
-        >
-          strategize cross-media markets
-        </td>
-        <td
-          class=""
         />
         <td
           class=""
         >
           SD_SG5N41K8
-        </td>
-        <td
-          class=""
-        >
-          <time
-            datetime="2017-07-07T09:23:24.000Z"
-            title="7 Jul 2017"
-          >
-            2 years ago
-          </time>
-        </td>
-        <td
-          class=""
-        >
-          <time
-            datetime="2019-04-25T15:22:18.789Z"
-            title="25 Apr 2019"
-          >
-            2 days from now
-          </time>
         </td>
         <td
           class=""
@@ -613,36 +523,11 @@ exports[`renders correctly 1`] = `
       >
         <td
           class=""
-        >
-          drive distributed architectures
-        </td>
-        <td
-          class=""
         />
         <td
           class=""
         >
           SD_0YYP5ZEN
-        </td>
-        <td
-          class=""
-        >
-          <time
-            datetime="2017-05-23T06:26:36.000Z"
-            title="23 May 2017"
-          >
-            2 years ago
-          </time>
-        </td>
-        <td
-          class=""
-        >
-          <time
-            datetime="2019-04-25T15:22:18.793Z"
-            title="25 Apr 2019"
-          >
-            2 days from now
-          </time>
         </td>
         <td
           class=""
@@ -779,7 +664,679 @@ exports[`renders correctly 1`] = `
 </div>
 `;
 
-exports[`renders without excluded columns passed to props 1`] = `
+exports[`renders study table for ADMIN role 1`] = `
+<div>
+  <table
+    class="ui selectable striped fourteen column table"
+  >
+    <thead
+      class=""
+    >
+      <tr
+        class=""
+      >
+        <th
+          class=""
+        >
+          Short Name
+        </th>
+        <th
+          class=""
+        >
+          ID
+        </th>
+        <th
+          class=""
+        >
+          Bucket
+        </th>
+        <th
+          class=""
+        >
+          Attribution
+        </th>
+        <th
+          class=""
+        >
+          Data Access Authority
+        </th>
+        <th
+          class=""
+        >
+          External Id
+        </th>
+        <th
+          class=""
+        >
+          Release Status
+        </th>
+        <th
+          class=""
+        >
+          Version
+        </th>
+        <th
+          class=""
+        >
+          Release Date
+        </th>
+        <th
+          class=""
+        >
+          Info
+        </th>
+        <th
+          class=""
+        >
+          Anticipated Samples
+        </th>
+        <th
+          class=""
+        >
+          Awardee Organization
+        </th>
+        <th
+          class=""
+        >
+          Files
+        </th>
+        <th
+          class=""
+        >
+          Projects
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class=""
+    >
+      <tr
+        class=""
+        tabindex="0"
+      >
+        <td
+          class=""
+        />
+        <td
+          class=""
+        >
+          SD_8WX8QQ06
+        </td>
+        <td
+          class=""
+        >
+          bucket_1
+        </td>
+        <td
+          class=""
+        />
+        <td
+          class=""
+        >
+          dbGaP
+        </td>
+        <td
+          class=""
+        >
+          external_id_1
+        </td>
+        <td
+          class=""
+        />
+        <td
+          class=""
+        />
+        <td
+          class=""
+        >
+          2019-08-24
+        </td>
+        <td
+          class=""
+        >
+          <a
+            class="ml-10"
+            href="/study/SD_8WX8QQ06/basic-info/info"
+          >
+            <i
+              aria-hidden="true"
+              class="red clipboard list icon"
+            />
+            7/8 complete
+          </a>
+        </td>
+        <td
+          class=""
+        >
+          100
+        </td>
+        <td
+          class=""
+        >
+          CHOP
+        </td>
+        <td
+          class=""
+        >
+          <div
+            class="ui horizontal list"
+            role="list"
+          >
+            <a
+              class="item"
+              href="/study/SD_8WX8QQ06/documents"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="file icon"
+              />
+              1
+               files
+            </a>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="ui orange mini circular empty label"
+              />
+               
+              1
+            </div>
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <div
+            class="ui horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="red code branch icon"
+              />
+              <div
+                class="ui mini basic compact buttons"
+              >
+                <a
+                  class="ui mini primary button"
+                  href="/study/SD_8WX8QQ06/cavatica#link-cavatica-project"
+                  role="button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="linkify icon"
+                  />
+                  LINK
+                </a>
+                <a
+                  class="ui mini basic primary button"
+                  href="/study/SD_8WX8QQ06/cavatica#add-cavatica-project"
+                  role="button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="add icon"
+                  />
+                  NEW 
+                </a>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class=""
+        tabindex="0"
+      >
+        <td
+          class=""
+        />
+        <td
+          class=""
+        >
+          SD_I1L92W57
+        </td>
+        <td
+          class=""
+        >
+          bucket_2
+        </td>
+        <td
+          class=""
+        />
+        <td
+          class=""
+        >
+          dbGaP
+        </td>
+        <td
+          class=""
+        >
+          external_id_2
+        </td>
+        <td
+          class=""
+        />
+        <td
+          class=""
+        />
+        <td
+          class=""
+        >
+          2019-08-24
+        </td>
+        <td
+          class=""
+        >
+          <a
+            class="ml-10"
+            href="/study/SD_I1L92W57/basic-info/info"
+          >
+            <i
+              aria-hidden="true"
+              class="red clipboard list icon"
+            />
+            7/8 complete
+          </a>
+        </td>
+        <td
+          class=""
+        >
+          100
+        </td>
+        <td
+          class=""
+        >
+          CHOP
+        </td>
+        <td
+          class=""
+        >
+          <div
+            class="ui horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="red file icon"
+              />
+              <label
+                class="ui mini basic compact primary button"
+                for="file"
+                role="button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="upload cloud icon"
+                />
+                Upload
+              </label>
+              <input
+                hidden=""
+                id="file"
+                multiple=""
+                type="file"
+              />
+            </div>
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <div
+            class="ui horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="red code branch icon"
+              />
+              <div
+                class="ui mini basic compact buttons"
+              >
+                <a
+                  class="ui mini primary button"
+                  href="/study/SD_I1L92W57/cavatica#link-cavatica-project"
+                  role="button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="linkify icon"
+                  />
+                  LINK
+                </a>
+                <a
+                  class="ui mini basic primary button"
+                  href="/study/SD_I1L92W57/cavatica#add-cavatica-project"
+                  role="button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="add icon"
+                  />
+                  NEW 
+                </a>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class=""
+        tabindex="0"
+      >
+        <td
+          class=""
+        />
+        <td
+          class=""
+        >
+          SD_SG5N41K8
+        </td>
+        <td
+          class=""
+        >
+          bucket_3
+        </td>
+        <td
+          class=""
+        />
+        <td
+          class=""
+        >
+          dbGaP
+        </td>
+        <td
+          class=""
+        >
+          external_id_3
+        </td>
+        <td
+          class=""
+        />
+        <td
+          class=""
+        />
+        <td
+          class=""
+        >
+          2019-08-24
+        </td>
+        <td
+          class=""
+        >
+          <a
+            class="ml-10"
+            href="/study/SD_SG5N41K8/basic-info/info"
+          >
+            <i
+              aria-hidden="true"
+              class="red clipboard list icon"
+            />
+            7/8 complete
+          </a>
+        </td>
+        <td
+          class=""
+        >
+          100
+        </td>
+        <td
+          class=""
+        >
+          CHOP
+        </td>
+        <td
+          class=""
+        >
+          <div
+            class="ui horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="red file icon"
+              />
+              <label
+                class="ui mini basic compact primary button"
+                for="file"
+                role="button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="upload cloud icon"
+                />
+                Upload
+              </label>
+              <input
+                hidden=""
+                id="file"
+                multiple=""
+                type="file"
+              />
+            </div>
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <div
+            class="ui horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="red code branch icon"
+              />
+              <div
+                class="ui mini basic compact buttons"
+              >
+                <a
+                  class="ui mini primary button"
+                  href="/study/SD_SG5N41K8/cavatica#link-cavatica-project"
+                  role="button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="linkify icon"
+                  />
+                  LINK
+                </a>
+                <a
+                  class="ui mini basic primary button"
+                  href="/study/SD_SG5N41K8/cavatica#add-cavatica-project"
+                  role="button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="add icon"
+                  />
+                  NEW 
+                </a>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class=""
+        tabindex="0"
+      >
+        <td
+          class=""
+        />
+        <td
+          class=""
+        >
+          SD_0YYP5ZEN
+        </td>
+        <td
+          class=""
+        >
+          bucket_4
+        </td>
+        <td
+          class=""
+        />
+        <td
+          class=""
+        >
+          dbGaP
+        </td>
+        <td
+          class=""
+        >
+          external_id_4
+        </td>
+        <td
+          class=""
+        />
+        <td
+          class=""
+        />
+        <td
+          class=""
+        >
+          2019-08-24
+        </td>
+        <td
+          class=""
+        >
+          <a
+            class="ml-10"
+            href="/study/SD_0YYP5ZEN/basic-info/info"
+          >
+            <i
+              aria-hidden="true"
+              class="red clipboard list icon"
+            />
+            7/8 complete
+          </a>
+        </td>
+        <td
+          class=""
+        >
+          100
+        </td>
+        <td
+          class=""
+        >
+          CHOP
+        </td>
+        <td
+          class=""
+        >
+          <div
+            class="ui horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="red file icon"
+              />
+              <label
+                class="ui mini basic compact primary button"
+                for="file"
+                role="button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="upload cloud icon"
+                />
+                Upload
+              </label>
+              <input
+                hidden=""
+                id="file"
+                multiple=""
+                type="file"
+              />
+            </div>
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <div
+            class="ui horizontal list"
+            role="list"
+          >
+            <a
+              class="item"
+              href="/study/SD_0YYP5ZEN/cavatica"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="code branch icon"
+              />
+              2
+               projects
+            </a>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="ui olive mini circular empty label"
+              />
+               
+              1
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="ui olive mini circular empty label"
+              />
+               
+              1
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`renders study table loading state 1`] = `
+<div>
+  <h2>
+    loading studies
+  </h2>
+</div>
+`;
+
+exports[`renders study table without excluded columns passed to props 1`] = `
 <div>
   <table
     class="ui selectable striped sixteen column table"

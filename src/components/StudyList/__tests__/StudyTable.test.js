@@ -6,12 +6,13 @@ import StudyTable from '../StudyTable';
 
 afterEach(cleanup);
 
-it('renders correctly', () => {
+it('renders study table correctly', () => {
   const studies = allStudies.data.allStudies.edges;
-
+  const excludedColumns = ['name', 'createdAt', 'modifiedAt'];
+  // Should contain 4 cards in loading state
   const tree = render(
     <MemoryRouter>
-      <StudyTable studyList={studies} />
+      <StudyTable studyList={studies} exclude={excludedColumns} />
     </MemoryRouter>,
   );
   expect(tree.container).toMatchSnapshot();
@@ -20,7 +21,7 @@ it('renders correctly', () => {
   expect(rows.length).toBe(4);
 });
 
-it('renders without excluded columns passed to props', () => {
+it('renders study table without excluded columns passed to props', () => {
   const studies = allStudies.data.allStudies.edges;
   const excludedColumn = 'name';
 
@@ -32,7 +33,37 @@ it('renders without excluded columns passed to props', () => {
   expect(tree.container).toMatchSnapshot();
 
   const cols = tree.container.querySelectorAll('table thead th');
-  // Should contain 4 cards in loading state
   expect(cols.length).toBe(16);
   expect(tree.queryByText(excludedColumn)).toBeNull();
+});
+
+it('renders study table for ADMIN role', () => {
+  const studies = allStudies.data.allStudies.edges;
+  const excludedColumns = ['name', 'createdAt', 'modifiedAt'];
+
+  const tree = render(
+    <MemoryRouter>
+      <StudyTable
+        studyList={studies}
+        isAdmin={true}
+        exclude={excludedColumns}
+      />
+    </MemoryRouter>,
+  );
+  expect(tree.container).toMatchSnapshot();
+
+  const rows = tree.container.querySelectorAll('table tbody tr');
+  expect(rows.length).toBe(4);
+});
+
+it('renders study table loading state', () => {
+  const tree = render(
+    <MemoryRouter>
+      <StudyTable loading={true} />
+    </MemoryRouter>,
+  );
+  expect(tree.container).toMatchSnapshot();
+
+  const rows = tree.container.querySelectorAll('table tbody tr');
+  expect(rows.length).toBe(0);
 });

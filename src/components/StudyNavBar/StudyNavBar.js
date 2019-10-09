@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {withRouter, NavLink} from 'react-router-dom';
 import {Menu, Label} from 'semantic-ui-react';
 
@@ -51,6 +52,15 @@ const StudyNavBar = ({match, history, isBeta}) => {
       ))}
     </Menu>
   );
+};
+
+StudyNavBar.propTypes = {
+  /** If current user is BETA*/
+  isBeta: PropTypes.bool,
+  /** Rect-router match object*/
+  match: PropTypes.object,
+  /** Rect-router history object  */
+  history: PropTypes.object,
 };
 
 export default withRouter(StudyNavBar);

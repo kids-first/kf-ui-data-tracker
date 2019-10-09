@@ -58,10 +58,90 @@ exports[`changes active button on click 1`] = `
 </div>
 `;
 
-exports[`renders correctly 1`] = `
+exports[`renders toggle button correctly 1`] = `
 <div>
   <div
     class="ui buttons"
+  >
+    <button
+      class="ui primary button"
+      tabindex="0"
+    >
+      <i
+        aria-hidden="true"
+        class="grid layout icon"
+      />
+      Grid
+    </button>
+    <button
+      class="ui button"
+      tabindex="0"
+    >
+      <i
+        aria-hidden="true"
+        class="list icon"
+      />
+      list
+    </button>
+  </div>
+</div>
+`;
+
+exports[`renders toggle button hiding Text 1`] = `
+<div>
+  <div
+    class="ui buttons"
+  >
+    <button
+      class="ui icon primary button"
+      tabindex="0"
+    >
+      <i
+        aria-hidden="true"
+        class="grid layout icon"
+      />
+    </button>
+    <button
+      class="ui icon button"
+      tabindex="0"
+    >
+      <i
+        aria-hidden="true"
+        class="list icon"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`renders toggle button in diffrent sizes 1`] = `
+<div>
+  <div
+    class="ui medium buttons"
+  >
+    <button
+      class="ui primary button"
+      tabindex="0"
+    >
+      <i
+        aria-hidden="true"
+        class="grid layout icon"
+      />
+      Grid
+    </button>
+    <button
+      class="ui button"
+      tabindex="0"
+    >
+      <i
+        aria-hidden="true"
+        class="list icon"
+      />
+      list
+    </button>
+  </div>
+  <div
+    class="ui large buttons"
   >
     <button
       class="ui primary button"

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`renders study grid correctly 1`] = `
 <div>
   <div
     class="ui basic segment ui container stackable grid"
@@ -126,6 +126,7 @@ exports[`renders correctly 1`] = `
               </a>
               <div
                 class="ui label ui mini basic icon right floated button"
+                data-testid="show-detail"
                 role="button"
               >
                 <i
@@ -199,6 +200,7 @@ exports[`renders correctly 1`] = `
               </a>
               <div
                 class="ui label ui mini basic icon right floated button"
+                data-testid="show-detail"
                 role="button"
               >
                 <i
@@ -272,6 +274,7 @@ exports[`renders correctly 1`] = `
               </a>
               <div
                 class="ui label ui mini basic icon right floated button"
+                data-testid="show-detail"
                 role="button"
               >
                 <i
@@ -337,6 +340,7 @@ exports[`renders correctly 1`] = `
               </a>
               <div
                 class="ui label ui mini basic icon right floated button"
+                data-testid="show-detail"
                 role="button"
               >
                 <i
@@ -353,7 +357,7 @@ exports[`renders correctly 1`] = `
 </div>
 `;
 
-exports[`renders empty state 1`] = `
+exports[`renders study grid for ADMIN role 1`] = `
 <div>
   <div
     class="ui basic segment ui container stackable grid"
@@ -370,6 +374,17 @@ exports[`renders empty state 1`] = `
     <div
       class="right aligned eight wide column"
     >
+      <a
+        class="ui mini basic primary button"
+        href="/study/new-study/info"
+        role="button"
+      >
+        <i
+          aria-hidden="true"
+          class="add icon"
+        />
+        Add Study
+      </a>
       <div
         class="ui mini left icon input pr-5"
       >
@@ -412,18 +427,1106 @@ exports[`renders empty state 1`] = `
       <div
         class="column"
       >
-        <h4
-          class="ui disabled center aligned header"
+        <div
+          class="ui stackable four cards"
         >
-          No Studies matching your search term. Try searching by Study Name
-        </h4>
+          <div
+            class="ui red card"
+            to="/study/SD_8WX8QQ06/documents"
+          >
+            <div
+              class="ui mini right corner label"
+            >
+              <i
+                aria-hidden="true"
+                class="red exclamation mini icon"
+              />
+            </div>
+            <a
+              class="content"
+              href="/study/SD_8WX8QQ06/basic-info/info"
+            >
+              <div
+                class="header"
+              >
+                benchmark extensible e-business
+              </div>
+              <div
+                class="meta"
+              >
+                SD_8WX8QQ06
+              </div>
+            </a>
+            <div
+              class="extra content"
+              compact="very"
+            >
+              <a
+                class="pr-5"
+                href="/study/SD_8WX8QQ06/basic-info/info"
+              >
+                <i
+                  aria-hidden="true"
+                  class="red clipboard list icon"
+                />
+                Info
+              </a>
+              <a
+                class="pr-5"
+                href="/study/SD_8WX8QQ06/documents"
+              >
+                <i
+                  aria-hidden="true"
+                  class="grey file icon"
+                />
+                1
+                 Files
+              </a>
+              <a
+                href="/study/SD_8WX8QQ06/cavatica"
+              >
+                <i
+                  aria-hidden="true"
+                  class="red code branch icon"
+                />
+                0
+                 projects
+              </a>
+              <div
+                class="ui label ui mini basic icon right floated button"
+                data-testid="show-detail"
+                role="button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="chevron down icon"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="ui red card"
+            to="/study/SD_I1L92W57/documents"
+          >
+            <div
+              class="ui mini right corner label"
+            >
+              <i
+                aria-hidden="true"
+                class="red exclamation mini icon"
+              />
+            </div>
+            <a
+              class="content"
+              href="/study/SD_I1L92W57/basic-info/info"
+            >
+              <div
+                class="header"
+              >
+                visualize dynamic users
+              </div>
+              <div
+                class="meta"
+              >
+                SD_I1L92W57
+              </div>
+            </a>
+            <div
+              class="extra content"
+              compact="very"
+            >
+              <a
+                class="pr-5"
+                href="/study/SD_I1L92W57/basic-info/info"
+              >
+                <i
+                  aria-hidden="true"
+                  class="red clipboard list icon"
+                />
+                Info
+              </a>
+              <a
+                class="pr-5"
+                href="/study/SD_I1L92W57/documents"
+              >
+                <i
+                  aria-hidden="true"
+                  class="red file icon"
+                />
+                0
+                 Files
+              </a>
+              <a
+                href="/study/SD_I1L92W57/cavatica"
+              >
+                <i
+                  aria-hidden="true"
+                  class="red code branch icon"
+                />
+                0
+                 projects
+              </a>
+              <div
+                class="ui label ui mini basic icon right floated button"
+                data-testid="show-detail"
+                role="button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="chevron down icon"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="ui red card"
+            to="/study/SD_SG5N41K8/documents"
+          >
+            <div
+              class="ui mini right corner label"
+            >
+              <i
+                aria-hidden="true"
+                class="red exclamation mini icon"
+              />
+            </div>
+            <a
+              class="content"
+              href="/study/SD_SG5N41K8/basic-info/info"
+            >
+              <div
+                class="header"
+              >
+                strategize cross-media markets
+              </div>
+              <div
+                class="meta"
+              >
+                SD_SG5N41K8
+              </div>
+            </a>
+            <div
+              class="extra content"
+              compact="very"
+            >
+              <a
+                class="pr-5"
+                href="/study/SD_SG5N41K8/basic-info/info"
+              >
+                <i
+                  aria-hidden="true"
+                  class="red clipboard list icon"
+                />
+                Info
+              </a>
+              <a
+                class="pr-5"
+                href="/study/SD_SG5N41K8/documents"
+              >
+                <i
+                  aria-hidden="true"
+                  class="red file icon"
+                />
+                0
+                 Files
+              </a>
+              <a
+                href="/study/SD_SG5N41K8/cavatica"
+              >
+                <i
+                  aria-hidden="true"
+                  class="red code branch icon"
+                />
+                0
+                 projects
+              </a>
+              <div
+                class="ui label ui mini basic icon right floated button"
+                data-testid="show-detail"
+                role="button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="chevron down icon"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="ui red card"
+            to="/study/SD_0YYP5ZEN/documents"
+          >
+            <div
+              class="ui mini right corner label"
+            >
+              <i
+                aria-hidden="true"
+                class="red exclamation mini icon"
+              />
+            </div>
+            <a
+              class="content"
+              href="/study/SD_0YYP5ZEN/basic-info/info"
+            >
+              <div
+                class="header"
+              >
+                drive distributed architectures
+              </div>
+              <div
+                class="meta"
+              >
+                SD_0YYP5ZEN
+              </div>
+            </a>
+            <div
+              class="extra content"
+              compact="very"
+            >
+              <a
+                class="pr-5"
+                href="/study/SD_0YYP5ZEN/basic-info/info"
+              >
+                <i
+                  aria-hidden="true"
+                  class="red clipboard list icon"
+                />
+                Info
+              </a>
+              <a
+                class="pr-5"
+                href="/study/SD_0YYP5ZEN/documents"
+              >
+                <i
+                  aria-hidden="true"
+                  class="red file icon"
+                />
+                0
+                 Files
+              </a>
+              <a
+                href="/study/SD_0YYP5ZEN/cavatica"
+              >
+                <i
+                  aria-hidden="true"
+                  class="grey code branch icon"
+                />
+                2
+                 projects
+              </a>
+              <div
+                class="ui label ui mini basic icon right floated button"
+                data-testid="show-detail"
+                role="button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="chevron down icon"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 `;
 
-exports[`renders loading state 1`] = `
+exports[`renders study grid for ADMIN role 2`] = `
+<div>
+  <div
+    class="ui basic segment ui container stackable grid"
+  >
+    <div
+      class="left aligned eight wide column"
+    >
+      <h1
+        class="ui header"
+      >
+        Your Studies
+      </h1>
+    </div>
+    <div
+      class="right aligned eight wide column"
+    >
+      <a
+        class="ui mini basic primary button"
+        href="/study/new-study/info"
+        role="button"
+      >
+        <i
+          aria-hidden="true"
+          class="add icon"
+        />
+        Add Study
+      </a>
+      <div
+        class="ui mini left icon input pr-5"
+      >
+        <input
+          placeholder="Search by Study Name"
+          type="text"
+          value=""
+        />
+        <i
+          aria-hidden="true"
+          class="search icon"
+        />
+      </div>
+      <div
+        class="ui mini buttons"
+      >
+        <button
+          class="ui icon primary button"
+          tabindex="0"
+        >
+          <i
+            aria-hidden="true"
+            class="grid layout icon"
+          />
+        </button>
+        <button
+          class="ui icon button"
+          tabindex="0"
+        >
+          <i
+            aria-hidden="true"
+            class="list icon"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      class="row"
+    >
+      <div
+        class="column"
+      >
+        <div
+          class="ui stackable four cards"
+        >
+          <div
+            class="ui red card"
+            to="/study/SD_8WX8QQ06/documents"
+          >
+            <div
+              class="ui mini right corner label"
+            >
+              <i
+                aria-hidden="true"
+                class="red exclamation mini icon"
+              />
+            </div>
+            <a
+              class="content"
+              href="/study/SD_8WX8QQ06/basic-info/info"
+            >
+              <div
+                class="header"
+              >
+                benchmark extensible e-business
+              </div>
+              <div
+                class="meta"
+              >
+                SD_8WX8QQ06
+              </div>
+            </a>
+            <div
+              class="extra content"
+              compact="very"
+            >
+              <div
+                class="ui horizontal list"
+                role="list"
+              >
+                <a
+                  class="item"
+                  href="/study/SD_8WX8QQ06/documents"
+                  role="listitem"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="file icon"
+                  />
+                  1
+                   files
+                </a>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  <div
+                    class="ui orange mini circular empty label"
+                  />
+                   
+                  1
+                </div>
+              </div>
+              <div
+                class="ui label ui mini basic icon right floated button"
+                data-testid="hide-detail"
+                role="button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="chevron up icon"
+                />
+              </div>
+            </div>
+            <div
+              class="extra content"
+              compact="very"
+            >
+              <div
+                class="ui horizontal list"
+                role="list"
+              >
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="red code branch icon"
+                  />
+                  <div
+                    class="ui mini basic compact buttons"
+                  >
+                    <a
+                      class="ui mini primary button"
+                      href="/study/SD_8WX8QQ06/cavatica#link-cavatica-project"
+                      role="button"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="linkify icon"
+                      />
+                      LINK
+                    </a>
+                    <a
+                      class="ui mini basic primary button"
+                      href="/study/SD_8WX8QQ06/cavatica#add-cavatica-project"
+                      role="button"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="add icon"
+                      />
+                      NEW 
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ui red card"
+            to="/study/SD_I1L92W57/documents"
+          >
+            <div
+              class="ui mini right corner label"
+            >
+              <i
+                aria-hidden="true"
+                class="red exclamation mini icon"
+              />
+            </div>
+            <a
+              class="content"
+              href="/study/SD_I1L92W57/basic-info/info"
+            >
+              <div
+                class="header"
+              >
+                visualize dynamic users
+              </div>
+              <div
+                class="meta"
+              >
+                SD_I1L92W57
+              </div>
+            </a>
+            <div
+              class="extra content"
+              compact="very"
+            >
+              <a
+                class="pr-5"
+                href="/study/SD_I1L92W57/basic-info/info"
+              >
+                <i
+                  aria-hidden="true"
+                  class="red clipboard list icon"
+                />
+                Info
+              </a>
+              <a
+                class="pr-5"
+                href="/study/SD_I1L92W57/documents"
+              >
+                <i
+                  aria-hidden="true"
+                  class="red file icon"
+                />
+                0
+                 Files
+              </a>
+              <a
+                href="/study/SD_I1L92W57/cavatica"
+              >
+                <i
+                  aria-hidden="true"
+                  class="red code branch icon"
+                />
+                0
+                 projects
+              </a>
+              <div
+                class="ui label ui mini basic icon right floated button"
+                data-testid="show-detail"
+                role="button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="chevron down icon"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="ui red card"
+            to="/study/SD_SG5N41K8/documents"
+          >
+            <div
+              class="ui mini right corner label"
+            >
+              <i
+                aria-hidden="true"
+                class="red exclamation mini icon"
+              />
+            </div>
+            <a
+              class="content"
+              href="/study/SD_SG5N41K8/basic-info/info"
+            >
+              <div
+                class="header"
+              >
+                strategize cross-media markets
+              </div>
+              <div
+                class="meta"
+              >
+                SD_SG5N41K8
+              </div>
+            </a>
+            <div
+              class="extra content"
+              compact="very"
+            >
+              <a
+                class="pr-5"
+                href="/study/SD_SG5N41K8/basic-info/info"
+              >
+                <i
+                  aria-hidden="true"
+                  class="red clipboard list icon"
+                />
+                Info
+              </a>
+              <a
+                class="pr-5"
+                href="/study/SD_SG5N41K8/documents"
+              >
+                <i
+                  aria-hidden="true"
+                  class="red file icon"
+                />
+                0
+                 Files
+              </a>
+              <a
+                href="/study/SD_SG5N41K8/cavatica"
+              >
+                <i
+                  aria-hidden="true"
+                  class="red code branch icon"
+                />
+                0
+                 projects
+              </a>
+              <div
+                class="ui label ui mini basic icon right floated button"
+                data-testid="show-detail"
+                role="button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="chevron down icon"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="ui red card"
+            to="/study/SD_0YYP5ZEN/documents"
+          >
+            <div
+              class="ui mini right corner label"
+            >
+              <i
+                aria-hidden="true"
+                class="red exclamation mini icon"
+              />
+            </div>
+            <a
+              class="content"
+              href="/study/SD_0YYP5ZEN/basic-info/info"
+            >
+              <div
+                class="header"
+              >
+                drive distributed architectures
+              </div>
+              <div
+                class="meta"
+              >
+                SD_0YYP5ZEN
+              </div>
+            </a>
+            <div
+              class="extra content"
+              compact="very"
+            >
+              <a
+                class="pr-5"
+                href="/study/SD_0YYP5ZEN/basic-info/info"
+              >
+                <i
+                  aria-hidden="true"
+                  class="red clipboard list icon"
+                />
+                Info
+              </a>
+              <a
+                class="pr-5"
+                href="/study/SD_0YYP5ZEN/documents"
+              >
+                <i
+                  aria-hidden="true"
+                  class="red file icon"
+                />
+                0
+                 Files
+              </a>
+              <a
+                href="/study/SD_0YYP5ZEN/cavatica"
+              >
+                <i
+                  aria-hidden="true"
+                  class="grey code branch icon"
+                />
+                2
+                 projects
+              </a>
+              <div
+                class="ui label ui mini basic icon right floated button"
+                data-testid="show-detail"
+                role="button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="chevron down icon"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders study grid for ADMIN role 3`] = `
+<div>
+  <div
+    class="ui basic segment ui container stackable grid"
+  >
+    <div
+      class="left aligned eight wide column"
+    >
+      <h1
+        class="ui header"
+      >
+        Your Studies
+      </h1>
+    </div>
+    <div
+      class="right aligned eight wide column"
+    >
+      <a
+        class="ui mini basic primary button"
+        href="/study/new-study/info"
+        role="button"
+      >
+        <i
+          aria-hidden="true"
+          class="add icon"
+        />
+        Add Study
+      </a>
+      <div
+        class="ui mini left icon input pr-5"
+      >
+        <input
+          placeholder="Search by Study Name"
+          type="text"
+          value=""
+        />
+        <i
+          aria-hidden="true"
+          class="search icon"
+        />
+      </div>
+      <div
+        class="ui mini buttons"
+      >
+        <button
+          class="ui icon primary button"
+          tabindex="0"
+        >
+          <i
+            aria-hidden="true"
+            class="grid layout icon"
+          />
+        </button>
+        <button
+          class="ui icon button"
+          tabindex="0"
+        >
+          <i
+            aria-hidden="true"
+            class="list icon"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      class="row"
+    >
+      <div
+        class="column"
+      >
+        <div
+          class="ui stackable four cards"
+        >
+          <div
+            class="ui red card"
+            to="/study/SD_8WX8QQ06/documents"
+          >
+            <div
+              class="ui mini right corner label"
+            >
+              <i
+                aria-hidden="true"
+                class="red exclamation mini icon"
+              />
+            </div>
+            <a
+              class="content"
+              href="/study/SD_8WX8QQ06/basic-info/info"
+            >
+              <div
+                class="header"
+              >
+                benchmark extensible e-business
+              </div>
+              <div
+                class="meta"
+              >
+                SD_8WX8QQ06
+              </div>
+            </a>
+            <div
+              class="extra content"
+              compact="very"
+            >
+              <a
+                class="pr-5"
+                href="/study/SD_8WX8QQ06/basic-info/info"
+              >
+                <i
+                  aria-hidden="true"
+                  class="red clipboard list icon"
+                />
+                Info
+              </a>
+              <a
+                class="pr-5"
+                href="/study/SD_8WX8QQ06/documents"
+              >
+                <i
+                  aria-hidden="true"
+                  class="grey file icon"
+                />
+                1
+                 Files
+              </a>
+              <a
+                href="/study/SD_8WX8QQ06/cavatica"
+              >
+                <i
+                  aria-hidden="true"
+                  class="red code branch icon"
+                />
+                0
+                 projects
+              </a>
+              <div
+                class="ui label ui mini basic icon right floated button"
+                data-testid="show-detail"
+                role="button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="chevron down icon"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="ui red card"
+            to="/study/SD_I1L92W57/documents"
+          >
+            <div
+              class="ui mini right corner label"
+            >
+              <i
+                aria-hidden="true"
+                class="red exclamation mini icon"
+              />
+            </div>
+            <a
+              class="content"
+              href="/study/SD_I1L92W57/basic-info/info"
+            >
+              <div
+                class="header"
+              >
+                visualize dynamic users
+              </div>
+              <div
+                class="meta"
+              >
+                SD_I1L92W57
+              </div>
+            </a>
+            <div
+              class="extra content"
+              compact="very"
+            >
+              <a
+                class="pr-5"
+                href="/study/SD_I1L92W57/basic-info/info"
+              >
+                <i
+                  aria-hidden="true"
+                  class="red clipboard list icon"
+                />
+                Info
+              </a>
+              <a
+                class="pr-5"
+                href="/study/SD_I1L92W57/documents"
+              >
+                <i
+                  aria-hidden="true"
+                  class="red file icon"
+                />
+                0
+                 Files
+              </a>
+              <a
+                href="/study/SD_I1L92W57/cavatica"
+              >
+                <i
+                  aria-hidden="true"
+                  class="red code branch icon"
+                />
+                0
+                 projects
+              </a>
+              <div
+                class="ui label ui mini basic icon right floated button"
+                data-testid="show-detail"
+                role="button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="chevron down icon"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="ui red card"
+            to="/study/SD_SG5N41K8/documents"
+          >
+            <div
+              class="ui mini right corner label"
+            >
+              <i
+                aria-hidden="true"
+                class="red exclamation mini icon"
+              />
+            </div>
+            <a
+              class="content"
+              href="/study/SD_SG5N41K8/basic-info/info"
+            >
+              <div
+                class="header"
+              >
+                strategize cross-media markets
+              </div>
+              <div
+                class="meta"
+              >
+                SD_SG5N41K8
+              </div>
+            </a>
+            <div
+              class="extra content"
+              compact="very"
+            >
+              <a
+                class="pr-5"
+                href="/study/SD_SG5N41K8/basic-info/info"
+              >
+                <i
+                  aria-hidden="true"
+                  class="red clipboard list icon"
+                />
+                Info
+              </a>
+              <a
+                class="pr-5"
+                href="/study/SD_SG5N41K8/documents"
+              >
+                <i
+                  aria-hidden="true"
+                  class="red file icon"
+                />
+                0
+                 Files
+              </a>
+              <a
+                href="/study/SD_SG5N41K8/cavatica"
+              >
+                <i
+                  aria-hidden="true"
+                  class="red code branch icon"
+                />
+                0
+                 projects
+              </a>
+              <div
+                class="ui label ui mini basic icon right floated button"
+                data-testid="show-detail"
+                role="button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="chevron down icon"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="ui red card"
+            to="/study/SD_0YYP5ZEN/documents"
+          >
+            <div
+              class="ui mini right corner label"
+            >
+              <i
+                aria-hidden="true"
+                class="red exclamation mini icon"
+              />
+            </div>
+            <a
+              class="content"
+              href="/study/SD_0YYP5ZEN/basic-info/info"
+            >
+              <div
+                class="header"
+              >
+                drive distributed architectures
+              </div>
+              <div
+                class="meta"
+              >
+                SD_0YYP5ZEN
+              </div>
+            </a>
+            <div
+              class="extra content"
+              compact="very"
+            >
+              <a
+                class="pr-5"
+                href="/study/SD_0YYP5ZEN/basic-info/info"
+              >
+                <i
+                  aria-hidden="true"
+                  class="red clipboard list icon"
+                />
+                Info
+              </a>
+              <a
+                class="pr-5"
+                href="/study/SD_0YYP5ZEN/documents"
+              >
+                <i
+                  aria-hidden="true"
+                  class="red file icon"
+                />
+                0
+                 Files
+              </a>
+              <a
+                href="/study/SD_0YYP5ZEN/cavatica"
+              >
+                <i
+                  aria-hidden="true"
+                  class="grey code branch icon"
+                />
+                2
+                 projects
+              </a>
+              <div
+                class="ui label ui mini basic icon right floated button"
+                data-testid="show-detail"
+                role="button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="chevron down icon"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders study grid loading state 1`] = `
 <div>
   <div
     class="ui basic segment ui container"
@@ -609,6 +1712,76 @@ exports[`renders loading state 1`] = `
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders study grid/table empty state 1`] = `
+<div>
+  <div
+    class="ui basic segment ui container stackable grid"
+  >
+    <div
+      class="left aligned eight wide column"
+    >
+      <h1
+        class="ui header"
+      >
+        Your Studies
+      </h1>
+    </div>
+    <div
+      class="right aligned eight wide column"
+    >
+      <div
+        class="ui mini left icon input pr-5"
+      >
+        <input
+          placeholder="Search by Study Name"
+          type="text"
+          value=""
+        />
+        <i
+          aria-hidden="true"
+          class="search icon"
+        />
+      </div>
+      <div
+        class="ui mini buttons"
+      >
+        <button
+          class="ui icon primary button"
+          tabindex="0"
+        >
+          <i
+            aria-hidden="true"
+            class="grid layout icon"
+          />
+        </button>
+        <button
+          class="ui icon button"
+          tabindex="0"
+        >
+          <i
+            aria-hidden="true"
+            class="list icon"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      class="row"
+    >
+      <div
+        class="column"
+      >
+        <h4
+          class="ui disabled center aligned header"
+        >
+          No Studies matching your search term. Try searching by Study Name
+        </h4>
       </div>
     </div>
   </div>

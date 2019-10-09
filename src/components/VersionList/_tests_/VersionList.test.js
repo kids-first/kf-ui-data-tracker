@@ -23,3 +23,19 @@ it('renders with more than one versions', () => {
   const lis = tree.getAllByTestId('version-item');
   expect(lis.length).toBe(3);
 });
+
+it('renders with no versions', () => {
+  var fileNodeNoVersion = fileByKfId.data.fileByKfId;
+  fileNodeNoVersion.versions.edges = [];
+
+  const tree = render(
+    <MemoryRouter>
+      <MockedProvider mocks={mocks}>
+        <VersionList fileNode={fileNodeNoVersion} studyId={'SD_00000000'} />
+      </MockedProvider>
+    </MemoryRouter>,
+  );
+  expect(tree.container).toMatchSnapshot();
+  const lis = tree.getAllByTestId('version-item');
+  expect(lis.length).toBe(3);
+});

@@ -110,6 +110,7 @@ const StudyCard = ({
             basic
             floated="right"
             size="mini"
+            data-testid="show-detail"
             icon={showDetail ? 'chevron up' : 'chevron down'}
             onClick={() => setShowDetail(!showDetail)}
           />
@@ -124,6 +125,7 @@ const StudyCard = ({
               basic
               floated="right"
               size="mini"
+              data-testid="hide-detail"
               icon={showDetail ? 'chevron up' : 'chevron down'}
               onClick={() => setShowDetail(!showDetail)}
             />
