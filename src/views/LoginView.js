@@ -1,9 +1,9 @@
 import React from 'react';
-import {Header, Icon, Image, Grid, Message, Segment} from 'semantic-ui-react';
-import {LoginCard} from '../components/LoginCard';
-import logo from '../assets/logo.svg';
+import {Header, Grid, Segment, Dimmer, Loader} from 'semantic-ui-react';
+import {auth} from '../state/auth';
 
-const LoginView = ({location}) => {
+const LoginView = ({location, history}) => {
+  auth.login(location.state ? location.state.from : '/', false);
   return (
     <Grid
       stretched
@@ -12,18 +12,15 @@ const LoginView = ({location}) => {
       verticalAlign="middle"
     >
       <Grid.Column computer="8" tablet="12" mobile="15">
-        <Segment>
-          <Header as="h1">
-            <Image src={logo} />
-            <Header.Content>Kids First Data Tracker</Header.Content>
-          </Header>
-          <LoginCard originalUrl={location.state ? location.state.from : '/'} />
-          <Message>
-            New to Kids First Data Tracker?
-            <a href="/">
-              Join now <Icon name="chevron right" />
-            </a>
-          </Message>
+        <Segment placeholder>
+          <Dimmer active inverted>
+            <Loader inverted size="huge">
+              <Header as="h2" className="mt-6 mb-15">
+                Kids First Data Tracker
+              </Header>
+              Redirecing you to the login page...
+            </Loader>
+          </Dimmer>
         </Segment>
       </Grid.Column>
     </Grid>
