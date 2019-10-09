@@ -1,0 +1,176 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`File Action Buttons renders correctly -- default look 1`] = `
+<div>
+  <div
+    class="ui small buttons"
+  >
+    <button
+      class="ui basic compact icon button"
+    >
+      <i
+        aria-hidden="true"
+        class="copy icon"
+      />
+    </button>
+    <button
+      class="ui basic compact icon button"
+      data-testid="download-file"
+    >
+      <i
+        aria-hidden="true"
+        class="download icon"
+      />
+    </button>
+    <button
+      class="ui basic compact icon button"
+      data-testid="delete-button"
+    >
+      <i
+        aria-hidden="true"
+        class="trash alternate icon"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`File Action Buttons renders correctly -- default look 2`] = `
+<div>
+  <div
+    class="ui small buttons"
+  >
+    <button
+      class="ui basic compact icon button"
+    >
+      <i
+        aria-hidden="true"
+        class="copy icon"
+      />
+    </button>
+    <button
+      class="ui basic compact icon button"
+      data-testid="download-file"
+    >
+      <i
+        aria-hidden="true"
+        class="download icon"
+      />
+    </button>
+    <button
+      class="ui basic compact icon button"
+      data-testid="delete-button"
+    >
+      <i
+        aria-hidden="true"
+        class="trash alternate icon"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`File Action Buttons renders correctly -- default look 3`] = `
+<div>
+  <div
+    class="ui small buttons"
+  >
+    <button
+      class="ui basic compact icon button"
+    >
+      <i
+        aria-hidden="true"
+        class="copy icon"
+      />
+    </button>
+    <button
+      class="ui basic compact icon button"
+      data-testid="download-file"
+    >
+      <i
+        aria-hidden="true"
+        class="download icon"
+      />
+    </button>
+    <button
+      class="ui basic compact icon button"
+      data-testid="delete-button"
+    >
+      <i
+        aria-hidden="true"
+        class="trash alternate icon"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`File Action Buttons renders correctly -- fluid look 1`] = `
+<div>
+  <div
+    class="ui small fluid buttons"
+  >
+    <button
+      class="ui basic compact icon button"
+    >
+      <i
+        aria-hidden="true"
+        class="copy icon"
+      />
+    </button>
+    <button
+      class="ui basic compact icon button"
+      data-testid="download-file"
+    >
+      <i
+        aria-hidden="true"
+        class="download icon"
+      />
+    </button>
+    <button
+      class="ui basic compact icon button"
+      data-testid="delete-button"
+    >
+      <i
+        aria-hidden="true"
+        class="trash alternate icon"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`File Action Buttons renders correctly -- vertical look 1`] = `
+<div>
+  <div
+    class="ui small buttons"
+  >
+    <button
+      class="ui basic compact icon button"
+    >
+      <i
+        aria-hidden="true"
+        class="copy icon"
+      />
+    </button>
+    <button
+      class="ui basic compact icon button"
+      data-testid="download-file"
+    >
+      <i
+        aria-hidden="true"
+        class="download icon"
+      />
+    </button>
+    <button
+      class="ui basic compact icon button"
+      data-testid="delete-button"
+    >
+      <i
+        aria-hidden="true"
+        class="trash alternate icon"
+      />
+    </button>
+  </div>
+</div>
+`;

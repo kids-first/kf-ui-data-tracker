@@ -23,8 +23,8 @@ const FileActionButtons = ({
           node.downloadUrl +
           `/version/${node.versions.edges.sort(createDateSort)[0].node.kfId}`
         }
-        basic="very"
-        compact="very"
+        basic
+        compact
         position="top right"
         tooltip="Copy download link"
       />
@@ -36,8 +36,9 @@ const FileActionButtons = ({
         trigger={
           <Button
             basic
-            compact="very"
+            compact
             icon="download"
+            data-testid="download-file"
             onClick={e => {
               e.stopPropagation();
               downloadFile(studyId, node.kfId, null, downloadFileMutation);
@@ -50,7 +51,7 @@ const FileActionButtons = ({
         trigger={
           <Button
             basic
-            compact="very"
+            compact
             data-testid="delete-button"
             onClick={e => e.stopPropagation()}
             icon={<Icon name="trash alternate" />}
@@ -93,7 +94,7 @@ FileActionButtons.propTypes = {
   /** Action to delete a file */
   deleteFile: PropTypes.func,
   /** Action to download a file */
-  downloadFile: PropTypes.func,
+  downloadFileMutation: PropTypes.func,
   /** Whether the buttons should be grouped vertically or not */
   vertical: PropTypes.bool,
   /** Whether the buttons should fill their container or not */

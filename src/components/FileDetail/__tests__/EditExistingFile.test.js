@@ -78,7 +78,9 @@ it('edits an existing file correctly', async () => {
 
   // Update file description
   const descInput = tree.getByTestId('description-input');
-  fireEvent.change(descInput, {target: {value: 'Some description here'}});
+  act(() => {
+    fireEvent.change(descInput, {target: {value: 'Some description here'}});
+  });
   await wait();
 
   // Update approval status from 'Pending review' to 'Approved'
@@ -109,5 +111,32 @@ it('edits an existing file correctly', async () => {
   // Expect to see the file status updated on detail view
   expect(tree.queryAllByText(/Approved/).length).toBe(2);
 
+  expect(tree.container).toMatchSnapshot();
+
+  // Click on the file's delete button to open delete confirm modal
+  act(() => {
+    fireEvent.click(tree.getByTestId('delete-button'));
+  });
+  await wait();
+
+  expect(tree.container).toMatchSnapshot();
+
+  // Click on upload version button
+  act(() => {
+    fireEvent.click(tree.getByText(/UPLOAD VERSION/));
+  });
+  await wait();
+  expect(tree.container).toMatchSnapshot();
+
+  // Close upload version modal
+  act(() => {
+    fireEvent.keyDown(tree.container, {key: 'esc', code: 13});
+  });
+
+  // Click on version file name to open version info modal
+  act(() => {
+    fireEvent.click(tree.getByText(/VersionFileName.js/));
+  });
+  await wait();
   expect(tree.container).toMatchSnapshot();
 });

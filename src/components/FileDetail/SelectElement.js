@@ -61,6 +61,10 @@ SelectElement.propTypes = {
   form: PropTypes.object.isRequired,
   /** the html name attribute to pass as the value for the Radio element */
   id: PropTypes.string.isRequired,
+  /** Icon name to append to badge */
+  label: PropTypes.string,
+  /** additional classes to add to the select element component  */
+  className: PropTypes.string,
 };
 
 export default SelectElement;

@@ -435,6 +435,7 @@ exports[`deletes a file correctly 1`] = `
                   </button>
                   <button
                     class="ui basic compact icon button"
+                    data-testid="download-file"
                   >
                     <i
                       aria-hidden="true"
@@ -940,6 +941,7 @@ exports[`renders correctly 1`] = `
                   </button>
                   <button
                     class="ui basic compact icon button"
+                    data-testid="download-file"
                   >
                     <i
                       aria-hidden="true"
@@ -1069,6 +1071,7 @@ exports[`renders correctly 1`] = `
                   </button>
                   <button
                     class="ui basic compact icon button"
+                    data-testid="download-file"
                   >
                     <i
                       aria-hidden="true"

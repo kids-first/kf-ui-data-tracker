@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Event list renders correctly 1`] = `
+exports[`Event list renders correctly -- with mock data 1`] = `
 <div>
   <div
     class="ui very relaxed list"
@@ -199,5 +199,14 @@ exports[`Event list renders correctly 1`] = `
       </div>
     </div>
   </div>
+</div>
+`;
+
+exports[`Event list renders correctly -- with no data 1`] = `
+<div>
+  <div
+    class="ui very relaxed list"
+    role="list"
+  />
 </div>
 `;
