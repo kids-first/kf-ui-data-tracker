@@ -35,8 +35,8 @@ const UploadContainer = ({handleUpload}) => {
     <FileUploadTarget
       dragging={dragging}
       handleDragOver={handleDragOver}
-      onDragEnter={handleDragEnter}
-      onDragLeave={handleDragLeave}
+      handleDragEnter={handleDragEnter}
+      handleDragLeave={handleDragLeave}
       handleDrop={e => {
         e.preventDefault();
         handleUpload(e.dataTransfer.files[0]);

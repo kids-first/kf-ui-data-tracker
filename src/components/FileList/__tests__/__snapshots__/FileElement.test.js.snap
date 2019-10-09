@@ -139,6 +139,145 @@ exports[`renders correctly 1`] = `
 </div>
 `;
 
+exports[`renders latest temporary state 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr
+        class="cursor-pointer"
+        data-testid="file-item"
+        style="background-color: inherit;"
+      >
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui header"
+          >
+            <div
+              class="ui orange tiny basic label"
+            >
+              Pending review
+            </div>
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <span
+            class="ui medium header"
+          >
+            <a
+              href="/study/undefined/documents/SF_5ZPEM167"
+            >
+              organization.jpeg
+            </a>
+          </span>
+          <p
+            class="noMargin"
+          >
+            Month necessary animal end standard case. View system operation message decade. Actually sing becaus...
+          </p>
+          <div
+            class="ui horizontal link list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="middle aligned content"
+              >
+                <i
+                  aria-hidden="true"
+                  class="grey hospital small icon"
+                />
+                Clinical/Phenotype Data
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="content"
+              >
+                Modified
+                 
+                <time
+                  datetime="2018-09-27T05:32:27.000Z"
+                  title="27 Sept 2018"
+                >
+                  7 months ago
+                </time>
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="content"
+              >
+                3
+                 version
+                s
+                 
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="content"
+              >
+                5.5 kB
+              </div>
+            </div>
+          </div>
+        </td>
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui small buttons"
+          >
+            <button
+              class="ui basic compact icon button"
+            >
+              <i
+                aria-hidden="true"
+                class="copy icon"
+              />
+            </button>
+            <button
+              class="ui basic compact icon button"
+              data-testid="download-file"
+            >
+              <i
+                aria-hidden="true"
+                class="download icon"
+              />
+            </button>
+            <button
+              class="ui basic compact icon button"
+              data-testid="delete-button"
+            >
+              <i
+                aria-hidden="true"
+                class="trash alternate icon"
+              />
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
 exports[`renders loading state 1`] = `
 <div>
   <table>

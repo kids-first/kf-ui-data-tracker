@@ -253,6 +253,7 @@ exports[`renders with files 1`] = `
       </div>
       <button
         class="ui basic icon button"
+        data-testid="sort-direction-button"
       >
         <i
           aria-hidden="true"
@@ -1631,6 +1632,1918 @@ exports[`renders with files 1`] = `
       </a>
     </div>
   </div>
+</div>
+`;
+
+exports[`renders with files 2`] = `
+<div>
+  <section
+    class="noPadding"
+  >
+    <div
+      class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
+    >
+      <span
+        class="smallLabel"
+      >
+        Filter by:
+      </span>
+      <div
+        aria-expanded="false"
+        class="ui selection dropdown"
+        role="listbox"
+        tabindex="0"
+      >
+        <div
+          aria-live="polite"
+          class="default text"
+          role="alert"
+        >
+          Approval status
+        </div>
+        <i
+          aria-hidden="true"
+          class="dropdown icon"
+        />
+        <div
+          class="menu transition"
+        >
+          <div
+            aria-checked="false"
+            aria-selected="true"
+            class="selected item"
+            role="option"
+            style="pointer-events: all;"
+          >
+            <div
+              class="ui orange tiny basic label text"
+            >
+              Pending review
+            </div>
+          </div>
+          <div
+            aria-checked="false"
+            aria-selected="false"
+            class="item"
+            role="option"
+            style="pointer-events: all;"
+          >
+            <div
+              class="ui teal tiny basic label text"
+            >
+              Approved
+            </div>
+          </div>
+          <div
+            aria-checked="false"
+            aria-selected="false"
+            class="item"
+            role="option"
+            style="pointer-events: all;"
+          >
+            <div
+              class="ui red tiny basic label text"
+            >
+              Changes needed
+            </div>
+          </div>
+          <div
+            aria-checked="false"
+            aria-selected="false"
+            class="item"
+            role="option"
+            style="pointer-events: all;"
+          >
+            <div
+              class="ui blue tiny basic label text"
+            >
+              Processed
+            </div>
+          </div>
+          <div
+            aria-checked="false"
+            aria-selected="false"
+            class="item"
+            role="option"
+            style="pointer-events: all;"
+          >
+            <div
+              class="ui blue tiny basic label text"
+            >
+              Updated
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
+    >
+      <div
+        aria-expanded="false"
+        class="ui selection dropdown"
+        role="listbox"
+        tabindex="0"
+      >
+        <div
+          aria-live="polite"
+          class="default text"
+          role="alert"
+        >
+          File type
+        </div>
+        <i
+          aria-hidden="true"
+          class="dropdown icon"
+        />
+        <div
+          class="menu transition"
+        >
+          <div
+            aria-checked="false"
+            aria-selected="true"
+            class="selected item"
+            role="option"
+            style="pointer-events: all;"
+          >
+            <small
+              class="text"
+            >
+              <i
+                aria-hidden="true"
+                class="shipping icon"
+              />
+               Shipping Manifest
+            </small>
+          </div>
+          <div
+            aria-checked="false"
+            aria-selected="false"
+            class="item"
+            role="option"
+            style="pointer-events: all;"
+          >
+            <small
+              class="text"
+            >
+              <i
+                aria-hidden="true"
+                class="hospital icon"
+              />
+               Clinical/Phenotype Data
+            </small>
+          </div>
+          <div
+            aria-checked="false"
+            aria-selected="false"
+            class="item"
+            role="option"
+            style="pointer-events: all;"
+          >
+            <small
+              class="text"
+            >
+              <i
+                aria-hidden="true"
+                class="dna icon"
+              />
+               Sequencing Manifest
+            </small>
+          </div>
+          <div
+            aria-checked="false"
+            aria-selected="false"
+            class="item"
+            role="option"
+            style="pointer-events: all;"
+          >
+            <small
+              class="text"
+            >
+              <i
+                aria-hidden="true"
+                class="question icon"
+              />
+               Other
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
+    >
+      <span
+        class="smallLabel"
+      >
+        Sorted by:
+      </span>
+      <div
+        aria-expanded="false"
+        class="ui selection dropdown"
+        role="listbox"
+        tabindex="0"
+      >
+        <div
+          aria-live="polite"
+          class="text"
+          role="alert"
+        >
+          Modified date
+        </div>
+        <i
+          aria-hidden="true"
+          class="dropdown icon clear"
+        />
+        <div
+          class="menu transition"
+        >
+          <div
+            aria-checked="false"
+            aria-selected="false"
+            class="item"
+            role="option"
+            style="pointer-events: all;"
+          >
+            <span
+              class="text"
+            >
+              Create date
+            </span>
+          </div>
+          <div
+            aria-checked="true"
+            aria-selected="true"
+            class="active selected item"
+            role="option"
+            style="pointer-events: all;"
+          >
+            <span
+              class="text"
+            >
+              Modified date
+            </span>
+          </div>
+        </div>
+      </div>
+      <button
+        class="ui basic icon button"
+        data-testid="sort-direction-button"
+      >
+        <i
+          aria-hidden="true"
+          class="sort content ascending icon"
+        />
+      </button>
+    </div>
+    <div
+      class="ui basic compact right floated segment noMargin noVerticalPadding noHorizontalPadding"
+    >
+      <div
+        class="ui icon input"
+      >
+        <input
+          type="text"
+          value=""
+        />
+        <i
+          aria-hidden="true"
+          class="search icon"
+        />
+      </div>
+    </div>
+  </section>
+  <table
+    class="ui selectable stackable very basic very compact table"
+  >
+    <tbody
+      class=""
+    >
+      <tr
+        class="cursor-pointer"
+        data-testid="file-item"
+        style="background-color: inherit;"
+      >
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui header"
+          >
+            <div
+              class="ui orange tiny basic label"
+            >
+              Pending review
+            </div>
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <span
+            class="ui medium header"
+          >
+            <a
+              href="/study/undefined/documents/SF_MKTW3YRN"
+            >
+              5.jpg
+            </a>
+          </span>
+          <p
+            class="noMargin"
+          />
+          <div
+            class="ui horizontal link list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="middle aligned content"
+              >
+                <i
+                  aria-hidden="true"
+                  class="grey question small icon"
+                />
+                Other
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="content"
+              >
+                Modified
+                 
+                <time
+                  datetime="2019-05-20T14:38:25.692Z"
+                  title="20 May 2019"
+                >
+                  4 weeks from now
+                </time>
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="content"
+              >
+                1
+                 version
+                 
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="content"
+              >
+                63.0 kB
+              </div>
+            </div>
+          </div>
+        </td>
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui small buttons"
+          >
+            <button
+              class="ui basic compact icon button"
+            >
+              <i
+                aria-hidden="true"
+                class="copy icon"
+              />
+            </button>
+            <button
+              class="ui basic compact icon button"
+              data-testid="download-file"
+            >
+              <i
+                aria-hidden="true"
+                class="download icon"
+              />
+            </button>
+            <button
+              class="ui basic compact icon button"
+              data-testid="delete-button"
+            >
+              <i
+                aria-hidden="true"
+                class="trash alternate icon"
+              />
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="cursor-pointer"
+        data-testid="file-item"
+        style="background-color: inherit;"
+      >
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui header"
+          >
+            <div
+              class="ui orange tiny basic label"
+            >
+              Pending review
+            </div>
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <span
+            class="ui medium header"
+          >
+            <a
+              href="/study/undefined/documents/SF_16QY2ZXM"
+            >
+              6.jpg
+            </a>
+          </span>
+          <p
+            class="noMargin"
+          />
+          <div
+            class="ui horizontal link list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="middle aligned content"
+              >
+                <i
+                  aria-hidden="true"
+                  class="grey question small icon"
+                />
+                Other
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="content"
+              >
+                Modified
+                 
+                <time
+                  datetime="2019-05-20T14:38:31.374Z"
+                  title="20 May 2019"
+                >
+                  4 weeks from now
+                </time>
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="content"
+              >
+                1
+                 version
+                 
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="content"
+              >
+                61.2 kB
+              </div>
+            </div>
+          </div>
+        </td>
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui small buttons"
+          >
+            <button
+              class="ui basic compact icon button"
+            >
+              <i
+                aria-hidden="true"
+                class="copy icon"
+              />
+            </button>
+            <button
+              class="ui basic compact icon button"
+              data-testid="download-file"
+            >
+              <i
+                aria-hidden="true"
+                class="download icon"
+              />
+            </button>
+            <button
+              class="ui basic compact icon button"
+              data-testid="delete-button"
+            >
+              <i
+                aria-hidden="true"
+                class="trash alternate icon"
+              />
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div
+    class="ui basic right aligned segment"
+  >
+    Showing 
+    10
+     of 
+    12
+     files
+     
+    <div
+      aria-label="Pagination Navigation"
+      class="ui pagination menu"
+      role="navigation"
+    >
+      <a
+        aria-current="false"
+        aria-disabled="false"
+        aria-label="Previous page"
+        class="item"
+        tabindex="0"
+        type="prevItem"
+        value="1"
+      >
+        <i
+          aria-hidden="true"
+          class="chevron left icon"
+        />
+      </a>
+      <a
+        aria-current="false"
+        aria-disabled="false"
+        class="item"
+        tabindex="0"
+        type="pageItem"
+        value="1"
+      >
+        1
+      </a>
+      <a
+        aria-current="true"
+        aria-disabled="false"
+        class="active item"
+        tabindex="0"
+        type="pageItem"
+        value="2"
+      >
+        2
+      </a>
+      <a
+        aria-current="false"
+        aria-disabled="false"
+        aria-label="Next page"
+        class="item"
+        tabindex="0"
+        type="nextItem"
+        value="2"
+      >
+        <i
+          aria-hidden="true"
+          class="chevron right icon"
+        />
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders with files 3`] = `
+<div>
+  <section
+    class="noPadding"
+  >
+    <div
+      class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
+    >
+      <span
+        class="smallLabel"
+      >
+        Filter by:
+      </span>
+      <div
+        aria-expanded="false"
+        class="ui selection dropdown"
+        role="listbox"
+        tabindex="0"
+      >
+        <div
+          aria-live="polite"
+          class="default text"
+          role="alert"
+        >
+          Approval status
+        </div>
+        <i
+          aria-hidden="true"
+          class="dropdown icon"
+        />
+        <div
+          class="menu transition"
+        >
+          <div
+            aria-checked="false"
+            aria-selected="true"
+            class="selected item"
+            role="option"
+            style="pointer-events: all;"
+          >
+            <div
+              class="ui orange tiny basic label text"
+            >
+              Pending review
+            </div>
+          </div>
+          <div
+            aria-checked="false"
+            aria-selected="false"
+            class="item"
+            role="option"
+            style="pointer-events: all;"
+          >
+            <div
+              class="ui teal tiny basic label text"
+            >
+              Approved
+            </div>
+          </div>
+          <div
+            aria-checked="false"
+            aria-selected="false"
+            class="item"
+            role="option"
+            style="pointer-events: all;"
+          >
+            <div
+              class="ui red tiny basic label text"
+            >
+              Changes needed
+            </div>
+          </div>
+          <div
+            aria-checked="false"
+            aria-selected="false"
+            class="item"
+            role="option"
+            style="pointer-events: all;"
+          >
+            <div
+              class="ui blue tiny basic label text"
+            >
+              Processed
+            </div>
+          </div>
+          <div
+            aria-checked="false"
+            aria-selected="false"
+            class="item"
+            role="option"
+            style="pointer-events: all;"
+          >
+            <div
+              class="ui blue tiny basic label text"
+            >
+              Updated
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
+    >
+      <div
+        aria-expanded="false"
+        class="ui selection dropdown"
+        role="listbox"
+        tabindex="0"
+      >
+        <div
+          aria-live="polite"
+          class="text"
+          role="alert"
+        >
+          Other
+        </div>
+        <i
+          aria-hidden="true"
+          class="dropdown icon clear"
+        />
+        <div
+          class="menu transition"
+        >
+          <div
+            aria-checked="false"
+            aria-selected="false"
+            class="item"
+            role="option"
+            style="pointer-events: all;"
+          >
+            <small
+              class="text"
+            >
+              <i
+                aria-hidden="true"
+                class="shipping icon"
+              />
+               Shipping Manifest
+            </small>
+          </div>
+          <div
+            aria-checked="false"
+            aria-selected="false"
+            class="item"
+            role="option"
+            style="pointer-events: all;"
+          >
+            <small
+              class="text"
+            >
+              <i
+                aria-hidden="true"
+                class="hospital icon"
+              />
+               Clinical/Phenotype Data
+            </small>
+          </div>
+          <div
+            aria-checked="false"
+            aria-selected="false"
+            class="item"
+            role="option"
+            style="pointer-events: all;"
+          >
+            <small
+              class="text"
+            >
+              <i
+                aria-hidden="true"
+                class="dna icon"
+              />
+               Sequencing Manifest
+            </small>
+          </div>
+          <div
+            aria-checked="true"
+            aria-selected="true"
+            class="active selected item"
+            role="option"
+            style="pointer-events: all;"
+          >
+            <small
+              class="text"
+            >
+              <i
+                aria-hidden="true"
+                class="question icon"
+              />
+               Other
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
+    >
+      <span
+        class="smallLabel"
+      >
+        Sorted by:
+      </span>
+      <div
+        aria-expanded="false"
+        class="ui selection dropdown"
+        role="listbox"
+        tabindex="0"
+      >
+        <div
+          aria-live="polite"
+          class="text"
+          role="alert"
+        >
+          Modified date
+        </div>
+        <i
+          aria-hidden="true"
+          class="dropdown icon clear"
+        />
+        <div
+          class="menu transition"
+        >
+          <div
+            aria-checked="false"
+            aria-selected="false"
+            class="item"
+            role="option"
+            style="pointer-events: all;"
+          >
+            <span
+              class="text"
+            >
+              Create date
+            </span>
+          </div>
+          <div
+            aria-checked="true"
+            aria-selected="true"
+            class="active selected item"
+            role="option"
+            style="pointer-events: all;"
+          >
+            <span
+              class="text"
+            >
+              Modified date
+            </span>
+          </div>
+        </div>
+      </div>
+      <button
+        class="ui basic icon button"
+        data-testid="sort-direction-button"
+      >
+        <i
+          aria-hidden="true"
+          class="sort content ascending icon"
+        />
+      </button>
+    </div>
+    <div
+      class="ui basic compact right floated segment noMargin noVerticalPadding noHorizontalPadding"
+    >
+      <div
+        class="ui icon input"
+      >
+        <input
+          type="text"
+          value=""
+        />
+        <i
+          aria-hidden="true"
+          class="search icon"
+        />
+      </div>
+    </div>
+  </section>
+  <table
+    class="ui selectable stackable very basic very compact table"
+  >
+    <tbody
+      class=""
+    >
+      <tr
+        class="cursor-pointer"
+        data-testid="file-item"
+        style="background-color: inherit;"
+      >
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui header"
+          >
+            <div
+              class="ui orange tiny basic label"
+            >
+              Pending review
+            </div>
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <span
+            class="ui medium header"
+          >
+            <a
+              href="/study/undefined/documents/SF_SFA9WW62"
+            >
+              3.jpg
+            </a>
+          </span>
+          <p
+            class="noMargin"
+          />
+          <div
+            class="ui horizontal link list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="middle aligned content"
+              >
+                <i
+                  aria-hidden="true"
+                  class="grey question small icon"
+                />
+                Other
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="content"
+              >
+                Modified
+                 
+                <time
+                  datetime="2019-05-20T14:34:21.331Z"
+                  title="20 May 2019"
+                >
+                  4 weeks from now
+                </time>
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="content"
+              >
+                1
+                 version
+                 
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="content"
+              >
+                75.5 kB
+              </div>
+            </div>
+          </div>
+        </td>
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui small buttons"
+          >
+            <button
+              class="ui basic compact icon button"
+            >
+              <i
+                aria-hidden="true"
+                class="copy icon"
+              />
+            </button>
+            <button
+              class="ui basic compact icon button"
+              data-testid="download-file"
+            >
+              <i
+                aria-hidden="true"
+                class="download icon"
+              />
+            </button>
+            <button
+              class="ui basic compact icon button"
+              data-testid="delete-button"
+            >
+              <i
+                aria-hidden="true"
+                class="trash alternate icon"
+              />
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="cursor-pointer"
+        data-testid="file-item"
+        style="background-color: inherit;"
+      >
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui header"
+          >
+            <div
+              class="ui orange tiny basic label"
+            >
+              Pending review
+            </div>
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <span
+            class="ui medium header"
+          >
+            <a
+              href="/study/undefined/documents/SF_SFA9WW01"
+            >
+              3.jpg
+            </a>
+          </span>
+          <p
+            class="noMargin"
+          />
+          <div
+            class="ui horizontal link list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="middle aligned content"
+              >
+                <i
+                  aria-hidden="true"
+                  class="grey question small icon"
+                />
+                Other
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="content"
+              >
+                Modified
+                 
+                <time
+                  datetime="2019-05-20T14:34:21.331Z"
+                  title="20 May 2019"
+                >
+                  4 weeks from now
+                </time>
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="content"
+              >
+                1
+                 version
+                 
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="content"
+              >
+                75.5 kB
+              </div>
+            </div>
+          </div>
+        </td>
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui small buttons"
+          >
+            <button
+              class="ui basic compact icon button"
+            >
+              <i
+                aria-hidden="true"
+                class="copy icon"
+              />
+            </button>
+            <button
+              class="ui basic compact icon button"
+              data-testid="download-file"
+            >
+              <i
+                aria-hidden="true"
+                class="download icon"
+              />
+            </button>
+            <button
+              class="ui basic compact icon button"
+              data-testid="delete-button"
+            >
+              <i
+                aria-hidden="true"
+                class="trash alternate icon"
+              />
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="cursor-pointer"
+        data-testid="file-item"
+        style="background-color: inherit;"
+      >
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui header"
+          >
+            <div
+              class="ui orange tiny basic label"
+            >
+              Pending review
+            </div>
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <span
+            class="ui medium header"
+          >
+            <a
+              href="/study/undefined/documents/SF_SFA9WW02"
+            >
+              3.jpg
+            </a>
+          </span>
+          <p
+            class="noMargin"
+          />
+          <div
+            class="ui horizontal link list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="middle aligned content"
+              >
+                <i
+                  aria-hidden="true"
+                  class="grey question small icon"
+                />
+                Other
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="content"
+              >
+                Modified
+                 
+                <time
+                  datetime="2019-05-20T14:34:21.331Z"
+                  title="20 May 2019"
+                >
+                  4 weeks from now
+                </time>
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="content"
+              >
+                1
+                 version
+                 
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="content"
+              >
+                75.5 kB
+              </div>
+            </div>
+          </div>
+        </td>
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui small buttons"
+          >
+            <button
+              class="ui basic compact icon button"
+            >
+              <i
+                aria-hidden="true"
+                class="copy icon"
+              />
+            </button>
+            <button
+              class="ui basic compact icon button"
+              data-testid="download-file"
+            >
+              <i
+                aria-hidden="true"
+                class="download icon"
+              />
+            </button>
+            <button
+              class="ui basic compact icon button"
+              data-testid="delete-button"
+            >
+              <i
+                aria-hidden="true"
+                class="trash alternate icon"
+              />
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="cursor-pointer"
+        data-testid="file-item"
+        style="background-color: inherit;"
+      >
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui header"
+          >
+            <div
+              class="ui orange tiny basic label"
+            >
+              Pending review
+            </div>
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <span
+            class="ui medium header"
+          >
+            <a
+              href="/study/undefined/documents/SF_SFA9WW03"
+            >
+              3.jpg
+            </a>
+          </span>
+          <p
+            class="noMargin"
+          />
+          <div
+            class="ui horizontal link list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="middle aligned content"
+              >
+                <i
+                  aria-hidden="true"
+                  class="grey question small icon"
+                />
+                Other
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="content"
+              >
+                Modified
+                 
+                <time
+                  datetime="2019-05-20T14:34:21.331Z"
+                  title="20 May 2019"
+                >
+                  4 weeks from now
+                </time>
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="content"
+              >
+                1
+                 version
+                 
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="content"
+              >
+                75.5 kB
+              </div>
+            </div>
+          </div>
+        </td>
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui small buttons"
+          >
+            <button
+              class="ui basic compact icon button"
+            >
+              <i
+                aria-hidden="true"
+                class="copy icon"
+              />
+            </button>
+            <button
+              class="ui basic compact icon button"
+              data-testid="download-file"
+            >
+              <i
+                aria-hidden="true"
+                class="download icon"
+              />
+            </button>
+            <button
+              class="ui basic compact icon button"
+              data-testid="delete-button"
+            >
+              <i
+                aria-hidden="true"
+                class="trash alternate icon"
+              />
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="cursor-pointer"
+        data-testid="file-item"
+        style="background-color: inherit;"
+      >
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui header"
+          >
+            <div
+              class="ui orange tiny basic label"
+            >
+              Pending review
+            </div>
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <span
+            class="ui medium header"
+          >
+            <a
+              href="/study/undefined/documents/SF_SFA9WW04"
+            >
+              3.jpg
+            </a>
+          </span>
+          <p
+            class="noMargin"
+          />
+          <div
+            class="ui horizontal link list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="middle aligned content"
+              >
+                <i
+                  aria-hidden="true"
+                  class="grey question small icon"
+                />
+                Other
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="content"
+              >
+                Modified
+                 
+                <time
+                  datetime="2019-05-20T14:34:21.331Z"
+                  title="20 May 2019"
+                >
+                  4 weeks from now
+                </time>
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="content"
+              >
+                1
+                 version
+                 
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="content"
+              >
+                75.5 kB
+              </div>
+            </div>
+          </div>
+        </td>
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui small buttons"
+          >
+            <button
+              class="ui basic compact icon button"
+            >
+              <i
+                aria-hidden="true"
+                class="copy icon"
+              />
+            </button>
+            <button
+              class="ui basic compact icon button"
+              data-testid="download-file"
+            >
+              <i
+                aria-hidden="true"
+                class="download icon"
+              />
+            </button>
+            <button
+              class="ui basic compact icon button"
+              data-testid="delete-button"
+            >
+              <i
+                aria-hidden="true"
+                class="trash alternate icon"
+              />
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="cursor-pointer"
+        data-testid="file-item"
+        style="background-color: inherit;"
+      >
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui header"
+          >
+            <div
+              class="ui orange tiny basic label"
+            >
+              Pending review
+            </div>
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <span
+            class="ui medium header"
+          >
+            <a
+              href="/study/undefined/documents/SF_AZMTRAND"
+            >
+              4.jpg
+            </a>
+          </span>
+          <p
+            class="noMargin"
+          />
+          <div
+            class="ui horizontal link list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="middle aligned content"
+              >
+                <i
+                  aria-hidden="true"
+                  class="grey question small icon"
+                />
+                Other
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="content"
+              >
+                Modified
+                 
+                <time
+                  datetime="2019-05-20T14:38:20.880Z"
+                  title="20 May 2019"
+                >
+                  4 weeks from now
+                </time>
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="content"
+              >
+                1
+                 version
+                 
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="content"
+              >
+                61.0 kB
+              </div>
+            </div>
+          </div>
+        </td>
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui small buttons"
+          >
+            <button
+              class="ui basic compact icon button"
+            >
+              <i
+                aria-hidden="true"
+                class="copy icon"
+              />
+            </button>
+            <button
+              class="ui basic compact icon button"
+              data-testid="download-file"
+            >
+              <i
+                aria-hidden="true"
+                class="download icon"
+              />
+            </button>
+            <button
+              class="ui basic compact icon button"
+              data-testid="delete-button"
+            >
+              <i
+                aria-hidden="true"
+                class="trash alternate icon"
+              />
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="cursor-pointer"
+        data-testid="file-item"
+        style="background-color: inherit;"
+      >
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui header"
+          >
+            <div
+              class="ui orange tiny basic label"
+            >
+              Pending review
+            </div>
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <span
+            class="ui medium header"
+          >
+            <a
+              href="/study/undefined/documents/SF_MKTW3YRN"
+            >
+              5.jpg
+            </a>
+          </span>
+          <p
+            class="noMargin"
+          />
+          <div
+            class="ui horizontal link list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="middle aligned content"
+              >
+                <i
+                  aria-hidden="true"
+                  class="grey question small icon"
+                />
+                Other
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="content"
+              >
+                Modified
+                 
+                <time
+                  datetime="2019-05-20T14:38:25.692Z"
+                  title="20 May 2019"
+                >
+                  4 weeks from now
+                </time>
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="content"
+              >
+                1
+                 version
+                 
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="content"
+              >
+                63.0 kB
+              </div>
+            </div>
+          </div>
+        </td>
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui small buttons"
+          >
+            <button
+              class="ui basic compact icon button"
+            >
+              <i
+                aria-hidden="true"
+                class="copy icon"
+              />
+            </button>
+            <button
+              class="ui basic compact icon button"
+              data-testid="download-file"
+            >
+              <i
+                aria-hidden="true"
+                class="download icon"
+              />
+            </button>
+            <button
+              class="ui basic compact icon button"
+              data-testid="delete-button"
+            >
+              <i
+                aria-hidden="true"
+                class="trash alternate icon"
+              />
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="cursor-pointer"
+        data-testid="file-item"
+        style="background-color: inherit;"
+      >
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui header"
+          >
+            <div
+              class="ui orange tiny basic label"
+            >
+              Pending review
+            </div>
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <span
+            class="ui medium header"
+          >
+            <a
+              href="/study/undefined/documents/SF_16QY2ZXM"
+            >
+              6.jpg
+            </a>
+          </span>
+          <p
+            class="noMargin"
+          />
+          <div
+            class="ui horizontal link list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="middle aligned content"
+              >
+                <i
+                  aria-hidden="true"
+                  class="grey question small icon"
+                />
+                Other
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="content"
+              >
+                Modified
+                 
+                <time
+                  datetime="2019-05-20T14:38:31.374Z"
+                  title="20 May 2019"
+                >
+                  4 weeks from now
+                </time>
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="content"
+              >
+                1
+                 version
+                 
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <div
+                class="content"
+              >
+                61.2 kB
+              </div>
+            </div>
+          </div>
+        </td>
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui small buttons"
+          >
+            <button
+              class="ui basic compact icon button"
+            >
+              <i
+                aria-hidden="true"
+                class="copy icon"
+              />
+            </button>
+            <button
+              class="ui basic compact icon button"
+              data-testid="download-file"
+            >
+              <i
+                aria-hidden="true"
+                class="download icon"
+              />
+            </button>
+            <button
+              class="ui basic compact icon button"
+              data-testid="delete-button"
+            >
+              <i
+                aria-hidden="true"
+                class="trash alternate icon"
+              />
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 `;
 

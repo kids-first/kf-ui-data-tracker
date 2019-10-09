@@ -1,8 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import {List, Icon, Popup, Label, Button} from 'semantic-ui-react';
 import {projectOptions} from '../../common/enums';
-
+/**
+ * Displays project counts with total number and breaking down by each type
+ * When no projects exist, show buttons guiding user to add/link projects
+ */
 const CavaticaCounts = ({projects, title}) => {
   if (projects && projects.length > 0) {
     const types = projects.map(({node: {projectType}}) => projectType);
@@ -70,6 +74,17 @@ const CavaticaCounts = ({projects, title}) => {
       </List>
     );
   }
+};
+
+CavaticaCounts.propTypes = {
+  /** Array of project object*/
+  projects: PropTypes.array.isRequired,
+  /** Study id used by forming the redirect url*/
+  title: PropTypes.string.isRequired,
+};
+
+CavaticaCounts.defaultProps = {
+  projects: [],
 };
 
 export default CavaticaCounts;

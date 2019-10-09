@@ -1,7 +1,7 @@
 import React from 'react';
 import {MemoryRouter} from 'react-router-dom';
 import {render} from 'react-testing-library';
-import FileUploadTarget from './FileUploadTarget';
+import FileUploadTarget from '../FileUploadTarget';
 
 it('renders correctly', () => {
   const tree = render(
@@ -9,8 +9,8 @@ it('renders correctly', () => {
       <FileUploadTarget
         handleSelectedFile={jest.fn()}
         handleDragOver={jest.fn()}
-        onDragEnter={jest.fn()}
-        onDragLeave={jest.fn()}
+        handleDragEnter={jest.fn()}
+        handleDragLeave={jest.fn()}
         handleDrop={jest.fn()}
       />
     </MemoryRouter>,
@@ -25,8 +25,8 @@ it('renders instructions', () => {
         instructions="Drag files here"
         handleSelectedFile={jest.fn()}
         handleDragOver={jest.fn()}
-        onDragEnter={jest.fn()}
-        onDragLeave={jest.fn()}
+        handleDragEnter={jest.fn()}
+        handleDragLeave={jest.fn()}
         handleDrop={jest.fn()}
       />
     </MemoryRouter>,
@@ -42,8 +42,8 @@ it('renders errors', () => {
         error={{graphQLErrors: [{message: 'something went wrong'}]}}
         handleSelectedFile={jest.fn()}
         handleDragOver={jest.fn()}
-        onDragEnter={jest.fn()}
-        onDragLeave={jest.fn()}
+        handleDragEnter={jest.fn()}
+        handleDragLeave={jest.fn()}
         handleDrop={jest.fn()}
       />
     </MemoryRouter>,
