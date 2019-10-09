@@ -102,7 +102,6 @@ export const UPDATE_VERSION = gql`
 export const FILE_DOWNLOAD_URL = gql`
   mutation SignedUrl($studyId: String!, $fileId: String!, $versionId: String) {
     signedUrl(studyId: $studyId, fileId: $fileId, versionId: $versionId) {
-      id
       url
     }
   }
