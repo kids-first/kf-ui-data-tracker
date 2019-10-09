@@ -113,7 +113,7 @@ exports[`edits an existing file correctly 1`] = `
             </a>
             <a
               class="item"
-              href="/login"
+              href="/logout"
               role="option"
             >
               <i
@@ -945,7 +945,7 @@ exports[`edits an existing file correctly 2`] = `
             </a>
             <a
               class="item"
-              href="/login"
+              href="/logout"
               role="option"
             >
               <i
@@ -1553,7 +1553,7 @@ exports[`edits an existing file correctly 3`] = `
             </a>
             <a
               class="item"
-              href="/login"
+              href="/logout"
               role="option"
             >
               <i
@@ -2161,7 +2161,7 @@ exports[`edits an existing file correctly 4`] = `
             </a>
             <a
               class="item"
-              href="/login"
+              href="/logout"
               role="option"
             >
               <i
@@ -2769,7 +2769,7 @@ exports[`edits an existing file correctly 5`] = `
             </a>
             <a
               class="item"
-              href="/login"
+              href="/logout"
               role="option"
             >
               <i
@@ -3377,7 +3377,7 @@ exports[`edits an existing file correctly 6`] = `
             </a>
             <a
               class="item"
-              href="/login"
+              href="/logout"
               role="option"
             >
               <i
