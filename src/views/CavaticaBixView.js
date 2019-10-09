@@ -68,6 +68,7 @@ const CavaticaBixView = ({
         </Message>
       </Container>
     );
+
   if (isAdmin) {
     return (
       <Container as={Segment} basic vertical>
