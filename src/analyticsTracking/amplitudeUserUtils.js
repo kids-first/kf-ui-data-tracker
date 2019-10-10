@@ -24,7 +24,8 @@ class AmplitudeUser {
     ['picture'],
   ];
 
-  constructor(idToken) {
+  constructor(idToken, api_key) {
+    amplitude.getInstance().init(api_key);
     this.instance = amplitude.getInstance();
     this.auth_user = jwtDecode(idToken);
     this.auth_sub_arr = this.auth_user.sub.split('|');
