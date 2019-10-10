@@ -31,11 +31,6 @@ const StudyCard = ({
       to={`/study/${studyId}/documents`}
       color={needsAttention ? 'red' : null}
     >
-      {needsAttention && (
-        <Label corner="right" size="mini">
-          <Icon name="exclamation" size="mini" color="red" />
-        </Label>
-      )}
       <Card.Content as={Link} to={`/study/${studyId}/basic-info/info`}>
         <Card.Header>{studyName}</Card.Header>
         <Card.Meta>{studyId}</Card.Meta>
