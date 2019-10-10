@@ -12,7 +12,10 @@ it('renders correctly', async () => {
   const tree = render(
     <MockedProvider mocks={mocks}>
       <MemoryRouter initialEntries={['/study/SD_8WX8QQ06']}>
-        <StudyFilesListView match={{params: {kfId: 'SD_8WX8QQ06'}}} />
+        <StudyFilesListView
+          history={[]}
+          match={{params: {kfId: 'SD_8WX8QQ06'}}}
+        />
       </MemoryRouter>
     </MockedProvider>,
   );
@@ -29,7 +32,10 @@ it('deletes a file correctly', async () => {
   const tree = render(
     <MockedProvider mocks={mocks}>
       <MemoryRouter initialEntries={['/study/SD_8WX8QQ06']}>
-        <StudyFilesListView match={{params: {kfId: 'SD_8WX8QQ06'}}} />
+        <StudyFilesListView
+          history={[]}
+          match={{params: {kfId: 'SD_8WX8QQ06'}}}
+        />
       </MemoryRouter>
     </MockedProvider>,
   );
@@ -59,7 +65,10 @@ it('shows an error', async () => {
   const tree = render(
     <MockedProvider mocks={[mocks[2], mocks[8]]}>
       <MemoryRouter initialEntries={['/study/SD_8WX8QQ06']}>
-        <StudyFilesListView match={{params: {kfId: 'SD_8WX8QQ06'}}} />
+        <StudyFilesListView
+          history={[]}
+          match={{params: {kfId: 'SD_8WX8QQ06'}}}
+        />
       </MemoryRouter>
     </MockedProvider>,
   );
