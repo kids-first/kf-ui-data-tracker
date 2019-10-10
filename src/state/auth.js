@@ -8,7 +8,9 @@ import {
 import amplitude from 'amplitude-js';
 import AmplitudeUser from '../analyticsTracking/amplitudeUserUtils';
 import analyticsTrackingConstants from '../common/analyticsTrackingConstants';
+
 const {AUTH: TRACKING_AUTH} = analyticsTrackingConstants;
+
 class Auth {
   accessToken;
   idToken;
@@ -75,9 +77,10 @@ class Auth {
     localStorage.removeItem('accessToken');
     localStorage.removeItem('idToken');
 
-    this.amplitudeUser.instance.logEvent(TRACKING_AUTH.LOGOUT);
-    this.amplitudeUser.setId(null);
-    this.amplitudeUser.instance.regenerateDeviceId();
+    // fire analytics events
+    amplitude.getInstance().logEvent(TRACKING_AUTH.LOGOUT);
+    amplitude.getInstance().setUserId(null); // not string 'null'
+    amplitude.getInstance().regenerateDeviceId();
   }
 
   isAuthenticated() {
