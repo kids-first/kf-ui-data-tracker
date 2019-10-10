@@ -5,6 +5,7 @@ import {Card, Icon, Label, Button, Popup} from 'semantic-ui-react';
 import FileCounts from '../StudyInfo/FileCounts';
 import CavaticaCounts from '../StudyInfo/CavaticaCounts';
 import {trackedStudyFields} from '../../common/notificationUtils';
+import CavaticaLogo from '../../assets/CavaticaLogo';
 /**
  * Displays each study with its kfId, name(shortName), and modifiedAt
  */
@@ -27,10 +28,7 @@ const StudyCard = ({
     projectsCounts < 1;
   const [showDetail, setShowDetail] = useState(false);
   return (
-    <Card
-      to={`/study/${studyId}/documents`}
-      color={needsAttention ? 'red' : null}
-    >
+    <Card color={needsAttention ? 'red' : null}>
       <Card.Content as={Link} to={`/study/${studyId}/basic-info/info`}>
         <Card.Header>{studyName}</Card.Header>
         <Card.Meta>{studyId}</Card.Meta>
@@ -90,10 +88,12 @@ const StudyCard = ({
             disabled={projectsCounts > 0 && missingProject < 1}
             trigger={
               <Link to={`/study/${studyId}/cavatica`}>
-                <Icon
-                  name="code branch"
-                  color={
-                    projectsCounts > 0 && missingProject < 1 ? 'grey' : 'red'
+                <CavaticaLogo
+                  className="mr-5 vertical-middle"
+                  fill={
+                    projectsCounts > 0 && missingProject < 1
+                      ? 'rgba(0,0,0,.6)'
+                      : '#db2828'
                   }
                 />
                 {projectsCounts} projects
