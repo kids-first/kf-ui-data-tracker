@@ -76,8 +76,16 @@ body {
   margin-left: 10px !important;
 }
 
+.mr-5 {
+  margin-right: 5px !important;
+}
+
 .mb-15 {
   margin-bottom: 15px !important;
+}
+
+.ui.stackable.cards > .card {
+  display: flex !important;
 }
 
 .smallLabel {
@@ -109,6 +117,14 @@ body {
 
 .text-left {
   text-align: left;
+}
+
+.text-red {
+  color: #db2828 !important;
+}
+
+.vertical-middle {
+  vertical-align: middle !important;
 }
 
 .selectionRadio--card {
