@@ -11,7 +11,10 @@ const {AUTH, APP} = analyticsTrackingConstants;
 let amplitudeUser = null;
 // log amplitude users on auto-login
 if (localStorage.getItem('idToken')) {
-  amplitudeUser = new AmplitudeUser(localStorage.getItem('idToken'));
+  amplitudeUser = new AmplitudeUser(
+    localStorage.getItem('idToken'),
+    AMPLITUDE_KEY,
+  );
 
   amplitudeUser.instance.logEvent(AUTH.LOGIN, {
     scope: [AUTH.scope, APP.scope],
