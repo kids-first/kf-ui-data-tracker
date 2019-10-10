@@ -45,7 +45,7 @@ const AnalyticsViewConsumer = ({
   );
 };
 
-AnalyticsViewConsumer.PropTypes = {
+AnalyticsViewConsumer.propTypes = {
   /** view components */
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
