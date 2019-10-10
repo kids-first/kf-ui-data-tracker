@@ -77,9 +77,10 @@ class Auth {
     localStorage.removeItem('accessToken');
     localStorage.removeItem('idToken');
 
-    this.amplitudeUser.instance.logEvent(TRACKING_AUTH.LOGOUT);
-    this.amplitudeUser.setId(null);
-    this.amplitudeUser.instance.regenerateDeviceId();
+    // fire analytics events
+    amplitude.getInstance().logEvent(TRACKING_AUTH.LOGOUT);
+    amplitude.getInstance().setUserId(null); // not string 'null'
+    amplitude.getInstance().regenerateDeviceId();
   }
 
   isAuthenticated() {
