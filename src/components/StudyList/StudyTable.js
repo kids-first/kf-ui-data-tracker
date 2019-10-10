@@ -18,9 +18,11 @@ import {
 const TableValue = ({row, col, title}) => {
   switch (col) {
     case 'files':
-      return <FileCounts files={row[col].edges} title={title} />;
+      return <FileCounts files={row[col].edges} title={title} hideIcon />;
     case 'projects':
-      return <CavaticaCounts projects={row[col].edges} title={title} />;
+      return (
+        <CavaticaCounts projects={row[col].edges} title={title} hideIcon />
+      );
     case 'createdAt':
     case 'modifiedAt':
       return (
@@ -34,15 +36,9 @@ const TableValue = ({row, col, title}) => {
       return (
         <Link
           to={`/study/${title}/basic-info/info`}
-          className="ml-10"
           onClick={e => e.stopPropagation()}
+          className={row[col].missingValue > 0 ? 'text-red' : null}
         >
-          <Icon
-            name={
-              row[col].missingValue > 0 ? 'clipboard list' : 'clipboard check'
-            }
-            color={row[col].missingValue > 0 ? 'red' : 'grey'}
-          />
           {trackedStudyFields.length -
             row[col].missingValue +
             '/' +
