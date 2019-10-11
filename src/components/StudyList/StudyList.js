@@ -38,7 +38,7 @@ const StudyList = ({
   activeView = 'grid',
   roles,
   tracking: {
-    buttonTrackingProps,
+    buttonTracking,
     logEvent,
     EVENT_CONSTANTS: {INPUT},
   },
@@ -80,7 +80,7 @@ const StudyList = ({
             content="Add Study"
             as={Link}
             to={`/study/new-study/info`}
-            {...buttonTrackingProps('Add Study')}
+            {...buttonTracking('Add Study')}
           />
         )}
         <Input
