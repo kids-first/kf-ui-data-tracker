@@ -85,6 +85,20 @@ const ExternalStep = ({
         content="NEXT"
         disabled={values.externalId.length === 0}
       />
+      {editing && (
+        <Button
+          primary
+          floated="right"
+          type="submit"
+          disabled={
+            Object.keys(errors).length > 0 ||
+            values.name.length === 0 ||
+            values.externalId.length === 0
+          }
+        >
+          SAVE
+        </Button>
+      )}
     </>
   );
 };

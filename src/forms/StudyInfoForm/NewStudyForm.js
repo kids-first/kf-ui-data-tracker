@@ -6,7 +6,6 @@ import {
   Segment,
   Message,
   Step,
-  Button,
   Header,
   Icon,
   List,
@@ -28,7 +27,6 @@ const NewStudyForm = ({
   apiErrors,
   studyNode,
   newStudy,
-  setEditing,
   editing,
   history,
   isAdmin,
@@ -134,7 +132,6 @@ const NewStudyForm = ({
           setConfirmOpen(false);
           submitValue({input: inputObject, workflowType: workflowType});
         } else {
-          setEditing(false);
           submitValue(values);
         }
       }}
@@ -145,39 +142,6 @@ const NewStudyForm = ({
             <Header as="h2" className="mt-6" floated="left">
               Study Basic Info
             </Header>
-          )}
-          {!newStudy && isAdmin && editing && (
-            <Button.Group floated="right" size="small">
-              <Button
-                primary
-                type="submit"
-                disabled={
-                  Object.keys(formikProps.errors).length > 0 ||
-                  formikProps.values.name.length === 0 ||
-                  formikProps.values.externalId.length === 0
-                }
-                onClick={() => formikProps.handleSubmit()}
-                content="SAVE"
-              />
-              <Button
-                type="button"
-                onClick={() => {
-                  formikProps.handleReset();
-                  setEditing(false);
-                }}
-                content="CANCEL"
-              />
-            </Button.Group>
-          )}
-          {!newStudy && isAdmin && !editing && (
-            <Button
-              floated="right"
-              size="small"
-              primary
-              type="button"
-              onClick={() => setEditing(true)}
-              content="EDIT"
-            />
           )}
           {apiErrors && (
             <Message
