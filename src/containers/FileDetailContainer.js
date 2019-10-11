@@ -6,7 +6,7 @@ import {UPDATE_FILE} from '../state/mutations';
 import {GET_FILE_BY_ID} from '../state/queries';
 import PropTypes from 'prop-types';
 
-const FileDetailContainer = ({kfId, history, match}) => {
+const FileDetailContainer = ({kfId, history, match, isAdmin}) => {
   return (
     <Query query={GET_FILE_BY_ID} variables={{kfId}}>
       {({loading, error, data}) => {
@@ -36,7 +36,9 @@ const FileDetailContainer = ({kfId, history, match}) => {
             ]}
           >
             {(updateFile, {_}) => {
-              return <FileDetail fileNode={data.fileByKfId} />;
+              return (
+                <FileDetail fileNode={data.fileByKfId} isAdmin={isAdmin} />
+              );
             }}
           </Mutation>
         );
