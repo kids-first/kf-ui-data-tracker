@@ -2,13 +2,17 @@ import React from 'react';
 import {compose, graphql} from 'react-apollo';
 import {Link} from 'react-router-dom';
 import {ALL_STUDIES, MY_PROFILE} from '../state/queries';
-import {AnalyticsViewConsumer} from '../analyticsTracking';
+import {
+  AnalyticsViewConsumer,
+  withAnalyticsTracking,
+} from '../analyticsTracking';
 import StudyList from '../components/StudyList/StudyList';
 import {Button, Message, Container, Segment} from 'semantic-ui-react';
 
 const StudyListView = ({
   studies: {loading, allStudies, error},
   myProfile: {myProfile},
+  tracking: {buttonTracking},
 }) => {
   if (error)
     return (
@@ -48,6 +52,7 @@ const StudyListView = ({
                 content="Create Study"
                 as={Link}
                 to={`/study/new-study`}
+                {...buttonTracking('Create Study')}
               />
             </Segment>
           </>
@@ -75,4 +80,5 @@ const StudyListView = ({
 export default compose(
   graphql(ALL_STUDIES, {name: 'studies'}),
   graphql(MY_PROFILE, {name: 'myProfile'}),
+  withAnalyticsTracking,
 )(StudyListView);
