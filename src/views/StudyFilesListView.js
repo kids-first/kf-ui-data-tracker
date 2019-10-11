@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import {graphql} from 'react-apollo';
-import {GET_STUDY_BY_ID} from '../state/queries';
+import {graphql, compose} from 'react-apollo';
+import {GET_STUDY_BY_ID, MY_PROFILE} from '../state/queries';
 import {UploadContainer} from '../containers';
 import FileList from '../components/FileList/FileList';
 import {
@@ -49,7 +49,10 @@ const StudyFilesListView = ({
     params: {kfId},
   },
   history,
+  user,
 }) => {
+  const isAdmin =
+    user && !user.loading ? user.myProfile.roles.includes('ADMIN') : false;
   const [dialog, setDialog] = useState(false);
   const [uploadedFile, setFile] = useState(false);
   if (error)
@@ -101,7 +104,7 @@ const StudyFilesListView = ({
           {loading ? (
             <StudyListSkeleton />
           ) : (
-            <FileList fileList={files} studyId={kfId} />
+            <FileList fileList={files} studyId={kfId} isAdmin={isAdmin} />
           )}
           <Divider />
 
@@ -133,7 +136,10 @@ const StudyFilesListView = ({
   );
 };
 
-export default graphql(GET_STUDY_BY_ID, {
-  name: 'study',
-  options: props => ({variables: {kfId: props.match.params.kfId}}),
-})(StudyFilesListView);
+export default compose(
+  graphql(GET_STUDY_BY_ID, {
+    name: 'study',
+    options: props => ({variables: {kfId: props.match.params.kfId}}),
+  }),
+  graphql(MY_PROFILE, {name: 'user'}),
+)(StudyFilesListView);

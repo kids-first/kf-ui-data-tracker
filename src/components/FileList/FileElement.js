@@ -116,7 +116,14 @@ FileAttributes.defaultProps = {
 /**
  * Displays unordered study files in list view
  */
-const FileElement = ({fileNode, loading, history, match, fileListId}) => {
+const FileElement = ({
+  fileNode,
+  loading,
+  history,
+  match,
+  fileListId,
+  isAdmin,
+}) => {
   const fileKfID = fileNode.kfId || 'unknown ID';
   const fileName = fileNode.name || 'unknown file name';
   const fileDescription = fileNode.description || null;
@@ -194,6 +201,7 @@ const FileElement = ({fileNode, loading, history, match, fileListId}) => {
           studyId={fileListId}
           vertical={true}
           fluid={false}
+          isAdmin={isAdmin}
         />
         <Responsive
           as={FileActionsContainer}
@@ -202,6 +210,7 @@ const FileElement = ({fileNode, loading, history, match, fileListId}) => {
           studyId={fileListId}
           vertical={false}
           fluid={true}
+          isAdmin={isAdmin}
         />
       </Table.Cell>
     </Table.Row>
