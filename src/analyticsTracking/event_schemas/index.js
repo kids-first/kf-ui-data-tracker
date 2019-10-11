@@ -25,6 +25,11 @@ const schemas = {
   // auth
   AUTH__LOGIN: authLoginSchema.default,
   AUTH__LOGOUT: {no: 'event props'},
+  //button
+  BUTTON__CLICK: {},
+  BUTTON__HOVER: {},
+  // input
+  INPUT: {},
 };
 
 export default schemas;
