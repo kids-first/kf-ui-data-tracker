@@ -29,7 +29,7 @@ const schemas = {
   BUTTON__CLICK: {},
   BUTTON__HOVER: {},
   // input
-  INPUT: {},
+  INPUT__TEXT: {},
 };
 
 export default schemas;

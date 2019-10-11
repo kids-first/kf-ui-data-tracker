@@ -14,6 +14,8 @@ import {
   Button,
 } from 'semantic-ui-react';
 
+import {withAnalyticsTracking} from '../../analyticsTracking';
+
 /**
  * A skeleton placeholder for the loading state of the study list header
  */
@@ -30,7 +32,17 @@ const HeaderSkeleton = () => (
 /**
  * Displays unordered studies in grid view (include empty stage message)
  */
-const StudyList = ({studyList, loading, activeView, roles}) => {
+const StudyList = ({
+  studyList,
+  loading,
+  activeView = 'grid',
+  roles,
+  tracking: {
+    buttonTracking,
+    logEvent,
+    EVENT_CONSTANTS: {INPUT},
+  },
+}) => {
   const [view, setView] = useState(activeView);
   const [searchString, setSearchString] = useState('');
   const isAdmin = roles && roles.includes('ADMIN');
@@ -68,6 +80,7 @@ const StudyList = ({studyList, loading, activeView, roles}) => {
             content="Add Study"
             as={Link}
             to={`/study/new-study/info`}
+            {...buttonTracking('Add Study')}
           />
         )}
         <Input
@@ -78,6 +91,11 @@ const StudyList = ({studyList, loading, activeView, roles}) => {
           placeholder="Search by Study Name"
           onChange={(e, {value}) => {
             setSearchString(value);
+            logEvent(INPUT.TEXT, {
+              input_name: 'Search by Study Name',
+              value,
+              results_length: filteredStudyList().length,
+            });
           }}
           value={searchString}
         />
@@ -150,4 +168,4 @@ StudyList.defaultProps = {
   activeView: 'list',
 };
 
-export default StudyList;
+export default withAnalyticsTracking(StudyList);
