@@ -1,13 +1,20 @@
 import React, {useState} from 'react';
 import propTypes from 'prop-types';
 import {Button, Icon} from 'semantic-ui-react';
+import {withAnalyticsTracking} from '../../analyticsTracking';
 /**
  * Toggle Buttons taking two or more buttons and show as a group for toggle
  * Takes buttons prop as an array of {text, icon} objects
  * Dispaly text on buttons as optional
  * Customize diffrent buttons in diffrent sized
  */
-const ToggleButtons = ({buttons, onToggle, size, hideText}) => {
+const ToggleButtons = ({
+  buttons,
+  onToggle,
+  size,
+  hideText,
+  tracking: {buttonTrackingProps},
+}) => {
   const [active, setActive] = useState(0);
 
   return (
@@ -20,7 +27,11 @@ const ToggleButtons = ({buttons, onToggle, size, hideText}) => {
           onClick={() => {
             setActive(idx);
             onToggle({active, text, icon});
+            buttonTrackingProps(text, {button_type: 'toggle'}).onClick();
           }}
+          onMouseOver={() =>
+            buttonTrackingProps(text, {button_type: 'toggle'}).onMouseOver()
+          }
           tabIndex="0"
         >
           <Icon name={icon} />
@@ -57,4 +68,4 @@ ToggleButtons.propTypes = {
   hideText: propTypes.bool,
 };
 
-export default ToggleButtons;
+export default withAnalyticsTracking(ToggleButtons);
