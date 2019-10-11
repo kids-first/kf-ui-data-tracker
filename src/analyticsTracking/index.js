@@ -1,4 +1,6 @@
-// export {default as AnalyticsTrackingContext} from './AnalyticsTrackingContext';
+export {default as useAnalyticsTracking} from './useAnalyticsTracking';
+export {default as withAnalyticsTracking} from './withAnalyticsTracking';
+
 export {
   default as AnalyticsTrackingProvider,
 } from './AnalyticsTrackingProvider';
