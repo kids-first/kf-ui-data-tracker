@@ -78,9 +78,12 @@ const scope = (name, eventsList) => {
 /**
  * analytics tracking constants object
  */
-const analytiicsTrackingConstants = {
+const analyticsTrackingConstants = {
+  ...scope('INPUT', ['TEXT']),
+  ...scope('MOUSE', ['HOVER', 'CLICK']),
+  ...scope('APP', ['MOUNT']),
   ...scope('AUTH', ['LOGIN', 'LOGOUT']),
   ...scope('PAGE', ['VIEW']),
 };
 
-export default analytiicsTrackingConstants;
+export default analyticsTrackingConstants;
