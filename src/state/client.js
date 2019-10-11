@@ -6,8 +6,7 @@ import {InMemoryCache} from 'apollo-cache-inmemory';
 import {KF_STUDY_API} from '../common/globals';
 
 const authLink = setContext((_, {headers}) => {
-  const token =
-    localStorage.getItem('egoToken') || localStorage.getItem('accessToken');
+  const token = localStorage.getItem('accessToken');
   return {
     headers: {
       ...headers,

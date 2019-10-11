@@ -68,7 +68,6 @@ const Header = ({data: {loading, error, myProfile: profile}}) => {
                       setLoggedIn(false);
                       localStorage.removeItem('accessToken');
                       localStorage.removeItem('idToken');
-                      localStorage.removeItem('egoToken');
                     }}
                   >
                     <Icon name="log out" />

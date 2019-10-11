@@ -58,7 +58,6 @@ class Auth {
 
     localStorage.removeItem('accessToken');
     localStorage.removeItem('idToken');
-    localStorage.removeItem('egoToken');
   }
 
   isAuthenticated() {
