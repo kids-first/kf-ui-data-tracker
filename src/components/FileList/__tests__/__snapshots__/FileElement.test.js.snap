@@ -122,15 +122,6 @@ exports[`renders correctly 1`] = `
                 class="download icon"
               />
             </button>
-            <button
-              class="ui basic compact icon button"
-              data-testid="delete-button"
-            >
-              <i
-                aria-hidden="true"
-                class="trash alternate icon"
-              />
-            </button>
           </div>
         </td>
       </tr>
@@ -261,15 +252,6 @@ exports[`renders latest temporary state 1`] = `
                 class="download icon"
               />
             </button>
-            <button
-              class="ui basic compact icon button"
-              data-testid="delete-button"
-            >
-              <i
-                aria-hidden="true"
-                class="trash alternate icon"
-              />
-            </button>
           </div>
         </td>
       </tr>
@@ -398,15 +380,6 @@ exports[`renders loading state 1`] = `
               <i
                 aria-hidden="true"
                 class="download icon"
-              />
-            </button>
-            <button
-              class="ui basic compact icon button"
-              data-testid="delete-button"
-            >
-              <i
-                aria-hidden="true"
-                class="trash alternate icon"
               />
             </button>
           </div>
