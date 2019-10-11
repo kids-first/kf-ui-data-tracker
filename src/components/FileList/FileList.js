@@ -2,9 +2,7 @@ import React, {useState, Fragment} from 'react';
 import PropTypes from 'prop-types';
 import FileElement from './FileElement';
 import ListFilterBar from '../ListFilterBar/ListFilterBar';
-import {
-  fileLatestStatus,
-} from '../../common/fileUtils';
+import {fileLatestStatus} from '../../common/fileUtils';
 import {
   Header,
   Icon,
@@ -14,11 +12,10 @@ import {
   Table,
 } from 'semantic-ui-react';
 
-
 /**
  * Displays list of study files
  */
-const FileList = ({fileList, studyId}) => {
+const FileList = ({fileList, studyId, isAdmin}) => {
   const perPage = 10;
   const [page, setPage] = useState(1);
   const [pageCount, setPageCount] = useState(1);
@@ -58,6 +55,7 @@ const FileList = ({fileList, studyId}) => {
                         key={node.kfId}
                         fileListId={studyId}
                         fileNode={node}
+                        isAdmin={isAdmin}
                       />
                     ))}
                   </Table.Body>

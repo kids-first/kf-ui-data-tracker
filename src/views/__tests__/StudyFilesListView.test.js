@@ -34,6 +34,7 @@ it('deletes a file correctly', async () => {
     </MockedProvider>,
   );
   await wait(0);
+  expect(tree.container).toMatchSnapshot();
 
   const rows = tree.getAllByTestId('file-item');
   expect(rows.length).toBe(2);
@@ -52,7 +53,7 @@ it('deletes a file correctly', async () => {
 
 it('shows an error', async () => {
   const tree = render(
-    <MockedProvider mocks={[mocks[2]]}>
+    <MockedProvider mocks={[mocks[2], mocks[8]]}>
       <MemoryRouter initialEntries={['/study/SD_8WX8QQ06']}>
         <StudyFilesListView match={{params: {kfId: 'SD_8WX8QQ06'}}} />
       </MemoryRouter>

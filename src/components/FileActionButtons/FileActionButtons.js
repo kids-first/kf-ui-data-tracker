@@ -46,38 +46,39 @@ const FileActionButtons = ({
           />
         }
       />
-
-      <Popup
-        trigger={
-          <Button
-            basic
-            compact
-            data-testid="delete-button"
-            onClick={e => e.stopPropagation()}
-            icon={<Icon name="trash alternate" />}
-          />
-        }
-        header="Are you sure?"
-        content={
-          <>
-            This file and all of its versions and history will be deleted
-            <Divider />
+      {deleteFile && (
+        <Popup
+          trigger={
             <Button
-              data-testid="delete-confirm"
-              negative
-              fluid
+              basic
+              compact
+              data-testid="delete-button"
+              onClick={e => e.stopPropagation()}
               icon={<Icon name="trash alternate" />}
-              content="Delete"
-              onClick={e => {
-                e.stopPropagation();
-                deleteFile({variables: {kfId: node.kfId}});
-              }}
             />
-          </>
-        }
-        on="click"
-        position="top right"
-      />
+          }
+          header="Are you sure?"
+          content={
+            <>
+              This file and all of its versions and history will be deleted
+              <Divider />
+              <Button
+                data-testid="delete-confirm"
+                negative
+                fluid
+                icon={<Icon name="trash alternate" />}
+                content="Delete"
+                onClick={e => {
+                  e.stopPropagation();
+                  deleteFile({variables: {kfId: node.kfId}});
+                }}
+              />
+            </>
+          }
+          on="click"
+          position="top right"
+        />
+      )}
     </Button.Group>
   );
 };

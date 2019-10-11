@@ -34,6 +34,7 @@ const ActionButtons = ({
   setDialog,
   deleteFile,
   history,
+  isAdmin,
 }) => (
   <>
     <Header as="h5" attached="top" textAlign="center" color="blue">
@@ -62,33 +63,34 @@ const ActionButtons = ({
           data-testid="edit-button"
           content="EDIT"
         />
-
-        <Popup
-          trigger={
-            <Button icon="trash alternate" data-testid="delete-button" />
-          }
-          header="Are you sure?"
-          content={
-            <>
-              This file and all of its versions and history will be deleted
-              <Divider />
-              <Button
-                data-testid="delete-confirm"
-                negative
-                fluid
-                size="mini"
-                icon="trash alternate"
-                content="Delete"
-                onClick={e => {
-                  deleteFile({variables: {kfId: fileNode.kfId}});
-                  history.goBack();
-                }}
-              />
-            </>
-          }
-          on="click"
-          position="top right"
-        />
+        {isAdmin && (
+          <Popup
+            trigger={
+              <Button icon="trash alternate" data-testid="delete-button" />
+            }
+            header="Are you sure?"
+            content={
+              <>
+                This file and all of its versions and history will be deleted
+                <Divider />
+                <Button
+                  data-testid="delete-confirm"
+                  negative
+                  fluid
+                  size="mini"
+                  icon="trash alternate"
+                  content="Delete"
+                  onClick={e => {
+                    deleteFile({variables: {kfId: fileNode.kfId}});
+                    history.goBack();
+                  }}
+                />
+              </>
+            }
+            on="click"
+            position="top right"
+          />
+        )}
       </Button.Group>
     </Segment>
   </>
@@ -97,7 +99,7 @@ const ActionButtons = ({
 /**
  * Form to display file details and file versions
  */
-const FileDetail = ({fileNode, history, match}) => {
+const FileDetail = ({fileNode, history, match, isAdmin}) => {
   const [dialog, setDialog] = useState(false);
   const [versionOpened, setOpenVersion] = useState({version: {}, index: null});
   const sortedVersions = fileSortedVersions(fileNode);
@@ -193,6 +195,7 @@ const FileDetail = ({fileNode, history, match}) => {
                         setDialog,
                         deleteFile,
                         history,
+                        isAdmin,
                       }}
                     />
                   </Grid.Column>

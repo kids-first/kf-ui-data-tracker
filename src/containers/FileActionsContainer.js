@@ -4,7 +4,7 @@ import {Mutation} from 'react-apollo';
 import {FILE_DOWNLOAD_URL} from '../state/mutations';
 import FileActionButtons from '../components/FileActionButtons/FileActionButtons';
 import DeleteFileMutation from './DeleteFileMutation';
-const FileActionsContainer = ({node, studyId, fluid, vertical}) => {
+const FileActionsContainer = ({node, studyId, fluid, vertical, isAdmin}) => {
   if (node) {
     return (
       <Mutation mutation={FILE_DOWNLOAD_URL} key={node.kfId}>
@@ -15,7 +15,7 @@ const FileActionsContainer = ({node, studyId, fluid, vertical}) => {
                 {...{
                   node,
                   studyId,
-                  deleteFile,
+                  deleteFile: isAdmin ? deleteFile : null,
                   downloadFileMutation: downloadFile,
                   loading,
                   error,
