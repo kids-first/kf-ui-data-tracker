@@ -17,7 +17,6 @@ const StudyInfoView = ({
     ? user.myProfile.roles.includes('ADMIN')
     : false;
   const [apiErrors, setApiErrors] = useState(null);
-  const [editing, setEditing] = useState(false);
   const submitUpdate = values => {
     updateStudy({
       variables: {
@@ -68,8 +67,7 @@ const StudyInfoView = ({
           submitValue={submitUpdate}
           apiErrors={apiErrors}
           studyNode={studyByKfId}
-          editing={editing}
-          setEditing={setEditing}
+          editing={isAdmin}
         />
       </Container>
     );
