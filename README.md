@@ -54,8 +54,6 @@ yarn start
 Create .env file from the root directory, and include the following variables:
 
 ```
-REACT_APP_GOOGLE_APP_ID
-REACT_APP_EGO_API
 REACT_APP_STUDY_API
 SKIP_PREFLIGHT_CHECK
 REACT_APP_AUTH0_DOMAIN
@@ -73,7 +71,7 @@ view the Data Tracker in a development environment.
 
 Features include:
 
-- Login with Auth0 or login with Ego
+- Login with Auth0
 - View studies, files, and versions
 - Annotate new files, edit existing files
 - Upload/download/delete files
