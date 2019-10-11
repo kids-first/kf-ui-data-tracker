@@ -156,7 +156,6 @@ const LogisticsStep = ({
         </FormField>
       )}
       <Button
-        primary
         floated="left"
         type="button"
         onClick={() => prevNextStep('external', newStudy, history)}

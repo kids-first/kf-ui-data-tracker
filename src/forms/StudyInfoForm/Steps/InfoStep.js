@@ -107,7 +107,6 @@ const InfoStep = ({
         />
       )}
       <Button
-        primary
         floated="right"
         type="button"
         onClick={() => prevNextStep('external', newStudy, history)}

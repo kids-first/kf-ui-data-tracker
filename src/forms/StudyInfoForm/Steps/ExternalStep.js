@@ -67,7 +67,6 @@ const ExternalStep = ({
         />
       ))}
       <Button
-        primary
         floated="left"
         type="button"
         onClick={() => prevNextStep('info', newStudy, history)}
@@ -76,7 +75,6 @@ const ExternalStep = ({
         content="PREVIOUS"
       />
       <Button
-        primary
         floated="right"
         type="button"
         onClick={() => prevNextStep('logistics', newStudy, history)}
