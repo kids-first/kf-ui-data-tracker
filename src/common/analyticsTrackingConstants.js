@@ -81,7 +81,10 @@ const dropdownEvents = ['OPEN', 'CLOSE', 'CHANGE'];
 /**
  * analytics tracking constants object
  */
-const analytiicsTrackingConstants = {
+const analyticsTrackingConstants = {
+  ...scope('INPUT', ['TEXT']),
+  ...scope('MOUSE', ['HOVER', 'CLICK']),
+  ...scope('APP', ['MOUNT']),
   ...scope('AUTH', ['LOGIN', 'LOGOUT']),
   ...scope('PAGE', ['VIEW']),
   ...scope('MOUSE', mouseEvents),
@@ -89,4 +92,4 @@ const analytiicsTrackingConstants = {
   ...scope('DROPDOWN', dropdownEvents),
 };
 
-export default analytiicsTrackingConstants;
+export default analyticsTrackingConstants;
