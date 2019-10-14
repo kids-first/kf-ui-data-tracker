@@ -23,7 +23,7 @@ it('renders study grid correctly', () => {
       mocks={mocks}
     >
       <MemoryRouter>
-        <StudyList studyList={studies} />
+        <StudyList activeView="grid" studyList={studies} />
       </MemoryRouter>
     </MockedProvider>,
   );
@@ -46,7 +46,7 @@ it('renders study grid for ADMIN role', async () => {
       mocks={mocks}
     >
       <MemoryRouter>
-        <StudyList studyList={studies} roles={roles} />
+        <StudyList activeView="grid" studyList={studies} roles={roles} />
       </MemoryRouter>
     </MockedProvider>,
   );
@@ -80,7 +80,7 @@ it('renders study grid loading state', () => {
       mocks={mocks}
     >
       <MemoryRouter>
-        <StudyList loading={true} />
+        <StudyList activeView="grid" loading={true} />
       </MemoryRouter>
     </MockedProvider>,
   );
@@ -102,7 +102,7 @@ it('renders study grid/table empty state', () => {
       mocks={mocks}
     >
       <MemoryRouter>
-        <StudyList studyList={[]} />
+        <StudyList activeView="grid" studyList={[]} />
       </MemoryRouter>
     </MockedProvider>,
   );

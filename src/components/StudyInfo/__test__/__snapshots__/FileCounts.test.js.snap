@@ -13,7 +13,7 @@ exports[`renders FileCounts in default stage 1`] = `
     >
       <i
         aria-hidden="true"
-        class="file icon"
+        class="grey file icon"
       />
       2
        files
@@ -38,32 +38,18 @@ exports[`renders FileFileCounts with empty file list 1`] = `
     class="ui horizontal list"
     role="list"
   >
-    <div
+    <a
       class="item"
+      href="/study/SD_8WX8QQ06/documents"
       role="listitem"
     >
       <i
         aria-hidden="true"
         class="red file icon"
       />
-      <label
-        class="ui mini basic compact primary button"
-        for="file"
-        role="button"
-      >
-        <i
-          aria-hidden="true"
-          class="upload cloud icon"
-        />
-        Upload
-      </label>
-      <input
-        hidden=""
-        id="file"
-        multiple=""
-        type="file"
-      />
-    </div>
+      No
+       files
+    </a>
   </div>
 </div>
 `;
