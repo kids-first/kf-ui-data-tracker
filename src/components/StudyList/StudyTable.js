@@ -4,6 +4,7 @@ import {Link, withRouter} from 'react-router-dom';
 import {Table, Icon} from 'semantic-ui-react';
 import FileCounts from '../StudyInfo/FileCounts';
 import CavaticaCounts from '../StudyInfo/CavaticaCounts';
+import CavaticaLogo from '../../assets/CavaticaLogo';
 import {longDate} from '../../common/dateUtils';
 import {
   countStudyNotification,
@@ -17,9 +18,11 @@ import {
 const TableValue = ({row, col, title}) => {
   switch (col) {
     case 'files':
-      return <FileCounts files={row[col].edges} title={title} />;
+      return <FileCounts files={row[col].edges} title={title} hideIcon />;
     case 'projects':
-      return <CavaticaCounts projects={row[col].edges} title={title} />;
+      return (
+        <CavaticaCounts projects={row[col].edges} title={title} hideIcon />
+      );
     case 'createdAt':
     case 'modifiedAt':
       return (
@@ -33,15 +36,9 @@ const TableValue = ({row, col, title}) => {
       return (
         <Link
           to={`/study/${title}/basic-info/info`}
-          className="ml-10"
           onClick={e => e.stopPropagation()}
+          className={row[col].missingValue > 0 ? 'text-red' : null}
         >
-          <Icon
-            name={
-              row[col].missingValue > 0 ? 'clipboard list' : 'clipboard check'
-            }
-            color={row[col].missingValue > 0 ? 'red' : 'grey'}
-          />
           {trackedStudyFields.length -
             row[col].missingValue +
             '/' +
@@ -97,12 +94,36 @@ const StudyTable = ({
         .replace(/([A-Z])/g, ' $1')
         .charAt(0)
         .toUpperCase() + text.replace(/([A-Z])/g, ' $1').slice(1);
-    if (text === 'kfId') {
-      headerText = 'ID';
-    } else if (text === 'description') {
-      headerText = 'Info';
+
+    switch (text) {
+      case 'kfId':
+        return (
+          <Table.HeaderCell key={text}>Kids First Study ID</Table.HeaderCell>
+        );
+      case 'name':
+        return <Table.HeaderCell key={text}>Study Name</Table.HeaderCell>;
+      case 'description':
+        return (
+          <Table.HeaderCell key={text}>
+            <Icon name="clipboard list" color="grey" />
+            Study Info
+          </Table.HeaderCell>
+        );
+      case 'projects':
+        return (
+          <Table.HeaderCell key={text}>
+            <CavaticaLogo className="mr-5 vertical-middle" />
+            <span>Cavatica Projects</span>
+          </Table.HeaderCell>
+        );
+      default:
+        return (
+          <Table.HeaderCell key={text}>
+            <Icon name="file" color="grey" />
+            {headerText}
+          </Table.HeaderCell>
+        );
     }
-    return <Table.HeaderCell key={text}>{headerText}</Table.HeaderCell>;
   };
   return (
     <Table striped selectable columns={Object.keys(studies[0]).length}>
