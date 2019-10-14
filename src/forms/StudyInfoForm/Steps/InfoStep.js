@@ -1,7 +1,6 @@
 import React from 'react';
-import {Button, Dropdown, Header} from 'semantic-ui-react';
+import {Dropdown, Header} from 'semantic-ui-react';
 import {workflowOptions} from '../../../common/enums';
-import {prevNextStep} from '../../../common/notificationUtils';
 import FormField from '../../FormField';
 
 const InfoStep = ({
@@ -105,29 +104,6 @@ const InfoStep = ({
           handleFocus={id => setFocused(id)}
           readOnly={!editing && !newStudy}
         />
-      )}
-      <Button
-        floated="right"
-        type="button"
-        onClick={() => prevNextStep('external', newStudy, history)}
-        labelPosition="right"
-        icon="right arrow"
-        content="NEXT"
-        disabled={values.name.length === 0}
-      />
-      {editing && (
-        <Button
-          primary
-          floated="right"
-          type="submit"
-          disabled={
-            Object.keys(errors).length > 0 ||
-            values.name.length === 0 ||
-            values.externalId.length === 0
-          }
-        >
-          SAVE
-        </Button>
       )}
     </>
   );

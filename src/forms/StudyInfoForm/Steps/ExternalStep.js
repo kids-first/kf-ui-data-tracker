@@ -1,6 +1,5 @@
 import React from 'react';
-import {Button, Header} from 'semantic-ui-react';
-import {prevNextStep} from '../../../common/notificationUtils';
+import {Header} from 'semantic-ui-react';
 import FormField from '../../FormField';
 
 const ExternalStep = ({
@@ -66,37 +65,6 @@ const ExternalStep = ({
           readOnly={!editing && !newStudy}
         />
       ))}
-      <Button
-        floated="left"
-        type="button"
-        onClick={() => prevNextStep('info', newStudy, history)}
-        labelPosition="left"
-        icon="left arrow"
-        content="PREVIOUS"
-      />
-      <Button
-        floated="right"
-        type="button"
-        onClick={() => prevNextStep('logistics', newStudy, history)}
-        labelPosition="right"
-        icon="right arrow"
-        content="NEXT"
-        disabled={values.externalId.length === 0}
-      />
-      {editing && (
-        <Button
-          primary
-          floated="right"
-          type="submit"
-          disabled={
-            Object.keys(errors).length > 0 ||
-            values.name.length === 0 ||
-            values.externalId.length === 0
-          }
-        >
-          SAVE
-        </Button>
-      )}
     </>
   );
 };
