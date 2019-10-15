@@ -1,9 +1,9 @@
 import React from 'react';
-import Badge from '../components/Badge/Badge';
-import AvatarTimeAgo from '../components/AvatarTimeAgo/AvatarTimeAgo';
+import Badge from '../../components/Badge/Badge';
+import AvatarTimeAgo from '../../components/AvatarTimeAgo/AvatarTimeAgo';
 import {Button, Header, Modal, Icon, Grid, Label} from 'semantic-ui-react';
-import {downloadFile, formatFileSize, lengthLimit} from '../common/fileUtils';
-import {fileTypeDetail} from '../common/enums';
+import {downloadFile, formatFileSize, lengthLimit} from '../utilities';
+import {fileTypeDetail} from '../../common/enums';
 
 const VersionInfoModal = ({
   studyId,
