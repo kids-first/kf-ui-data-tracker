@@ -82,7 +82,6 @@ const NewDocumentView = ({
             isAdmin={isAdmin}
             fileNode={location.state.file}
             handleSubmit={handleSubmit}
-            errors={errors}
             history={history}
             showFieldHints={true}
             submitButtons={(disabled, onUploading) => (
