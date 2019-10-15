@@ -1,7 +1,7 @@
 import React from 'react';
 import {graphql} from 'react-apollo';
 import FileDetailContainer from '../containers/FileDetailContainer';
-import {MY_PROFILE} from '../state/queries';
+import {MY_PROFILE} from '../../state/queries';
 import {Container, Segment} from 'semantic-ui-react';
 
 const FileDetailView = ({match, user}) => {
