@@ -67,6 +67,7 @@ const EditDocumentModal = ({
         <Button
           primary
           size="mini"
+          type="button"
           onClick={e => {
             e.preventDefault();
             formEl.current.handleSubmit();
