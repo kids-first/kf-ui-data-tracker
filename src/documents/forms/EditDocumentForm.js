@@ -44,7 +44,7 @@ const EditDocumentForm = React.forwardRef(
       <>
         <Formik
           initialValues={{
-            file_name: fileName,
+            file_name: fileName || '',
             file_type: fileType,
             file_desc: fileDescription,
             file_status: versionStatus,
