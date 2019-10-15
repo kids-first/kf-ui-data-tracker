@@ -2,8 +2,8 @@ import React from 'react';
 import {MemoryRouter} from 'react-router-dom';
 import {render, cleanup} from 'react-testing-library';
 import FileElement from '../FileElement';
-import {mocks} from '../../../../__mocks__/kf-api-study-creator/mocks';
-import studyByKfId from '../../../../__mocks__/kf-api-study-creator/responses/studyByKfId';
+import {mocks} from '../../../../../__mocks__/kf-api-study-creator/mocks';
+import studyByKfId from '../../../../../__mocks__/kf-api-study-creator/responses/studyByKfId';
 import {MockedProvider} from 'react-apollo/test-utils';
 
 afterEach(cleanup);

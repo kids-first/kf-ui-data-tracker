@@ -2,7 +2,7 @@ import React, {useState, Fragment} from 'react';
 import PropTypes from 'prop-types';
 import FileElement from './FileElement';
 import ListFilterBar from '../ListFilterBar/ListFilterBar';
-import {fileLatestStatus} from '../../common/fileUtils';
+import {fileLatestStatus} from '../../utilities';
 import {
   Header,
   Icon,

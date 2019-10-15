@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import {withRouter, Link} from 'react-router-dom';
 import TimeAgo from 'react-timeago';
-import Badge from '../Badge/Badge';
+import Badge from '../../../components/Badge/Badge';
 import {Header, Table, Icon, List, Responsive} from 'semantic-ui-react';
 
 import FileActionsContainer from '../../containers/FileActionsContainer';
@@ -11,9 +11,9 @@ import {
   fileLatestDate,
   fileLatestSize,
   lengthLimit,
-} from '../../common/fileUtils';
-import {fileTypeDetail} from '../../common/enums';
-import {longDate} from '../../common/dateUtils';
+} from '../../utilities';
+import {fileTypeDetail} from '../../../common/enums';
+import {longDate} from '../../../common/dateUtils';
 
 const useRecentlyUpdated = (latestDate, fileId) => {
   const [justUpdated, setJustUpdated] = useState(false);
