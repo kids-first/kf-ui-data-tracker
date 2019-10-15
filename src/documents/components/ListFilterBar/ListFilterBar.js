@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import {Icon, Button, Dropdown, Input, Segment} from 'semantic-ui-react';
-import Badge from '../Badge/Badge';
+import Badge from '../../../components/Badge/Badge';
 import {
   fileLatestStatus,
   createDateSort,
   modifiedDateSort,
   defaultSort,
-} from '../../common/fileUtils';
-import {versionState, fileTypeDetail} from '../../common/enums';
+} from '../../utilities';
+import {versionState, fileTypeDetail} from '../../../common/enums';
 /**
  * Filter Bar for Study Files, returns filtered list in "filteredList" render prop
  */

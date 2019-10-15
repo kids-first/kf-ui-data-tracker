@@ -4,7 +4,7 @@ import {MemoryRouter} from 'react-router-dom';
 import {MockedProvider} from 'react-apollo/test-utils';
 import {render, cleanup, act, fireEvent} from 'react-testing-library';
 import ListFilterBar from '../ListFilterBar';
-import studyByKfId from '../../../../__mocks__/kf-api-study-creator/responses/studyByKfId';
+import studyByKfId from '../../../../../__mocks__/kf-api-study-creator/responses/studyByKfId';
 
 afterEach(cleanup);
 
