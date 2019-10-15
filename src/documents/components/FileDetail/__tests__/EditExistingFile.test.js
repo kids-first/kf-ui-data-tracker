@@ -8,9 +8,9 @@ import {
   act,
   waitForElementToBeRemoved,
 } from 'react-testing-library';
-import Routes from '../../../Routes';
-import {mocks} from '../../../../__mocks__/kf-api-study-creator/mocks';
-import myProfile from '../../../../__mocks__/kf-api-study-creator/responses/myProfile.json';
+import Routes from '../../../../Routes';
+import {mocks} from '../../../../../__mocks__/kf-api-study-creator/mocks';
+import myProfile from '../../../../../__mocks__/kf-api-study-creator/responses/myProfile.json';
 
 jest.mock('auth0-js');
 

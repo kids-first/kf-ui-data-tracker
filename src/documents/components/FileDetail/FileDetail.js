@@ -2,19 +2,19 @@ import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import {withRouter, Link} from 'react-router-dom';
 import {Mutation} from 'react-apollo';
-import {FILE_DOWNLOAD_URL} from '../../state/mutations';
-import AvatarTimeAgo from '../AvatarTimeAgo/AvatarTimeAgo';
+import {FILE_DOWNLOAD_URL} from '../../mutations';
+import AvatarTimeAgo from '../../../components/AvatarTimeAgo/AvatarTimeAgo';
 import VersionList from '../VersionList/VersionList';
 import {
   downloadFile,
   fileSortedVersions,
   fileLatestDate,
   fileLatestSize,
-} from '../../common/fileUtils';
-import {fileTypeDetail} from '../../common/enums';
+} from '../../utilities';
+import {fileTypeDetail} from '../../../common/enums';
 import DeleteFileMutation from '../../containers/DeleteFileMutation';
 import FileDetailModal from './FileDetailModal';
-import Badge from '../Badge/Badge';
+import Badge from '../../../components/Badge/Badge';
 import {
   Button,
   Grid,
