@@ -6,9 +6,9 @@ import {Formik, Field} from 'formik';
 import validate from './validate';
 import ExistingDocsMessage from './ExistingDocsMessage';
 import DocumentTitleValidationIndicators from './DocumentTitleValidationIndicators';
-import SelectElement from '../../components/FileDetail/SelectElement';
+import SelectElement from '../components/FileDetail/SelectElement';
 import Badge from '../../components/Badge/Badge';
-import UploadWizard from '../../modals/UploadWizard/UploadWizard';
+import UploadWizard from '../modals/UploadWizard/UploadWizard';
 import {fileTypeDetail, versionState} from '../../common/enums';
 
 /**

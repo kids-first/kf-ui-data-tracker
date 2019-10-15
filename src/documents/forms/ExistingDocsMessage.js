@@ -1,5 +1,5 @@
 import React from 'react';
-import {sortFilesBySimilarity} from '../../common/fileUtils';
+import {sortFilesBySimilarity} from '../utilities';
 import {STUDY_DOCS_SIMILARITY_THRESHOLD} from '../../common/globals';
 import {Message, List, Icon, Button} from 'semantic-ui-react';
 

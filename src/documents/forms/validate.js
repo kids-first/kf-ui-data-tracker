@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-escape */
 import * as stringSimilarity from 'string-similarity';
-import {sortFilesBySimilarity} from '../../common/fileUtils';
+import {sortFilesBySimilarity} from '../utilities';
 import {
   STUDY_DOCS_SIMILARITY_THRESHOLD,
   DOC_TITLE_FILENAME_SIMILARITY_THRESHOLD,
