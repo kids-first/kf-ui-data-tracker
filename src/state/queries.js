@@ -2,13 +2,11 @@ import gql from 'graphql-tag';
 import {
   TOKEN_FIELDS,
   PROJECT_FIELDS,
-  CREATOR_FIELDS,
   STUDY_BASIC_FIELDS,
   STUDY_INFO_FIELDS,
-  FILE_FIELDS,
-  VERSION_FIELDS,
   EVENT_FIELDS,
 } from './fragments';
+import {FILE_FIELDS, VERSION_FIELDS} from '../documents/fragments';
 
 // Query to get all studies in the study-creator
 export const ALL_STUDIES = gql`
@@ -97,32 +95,6 @@ export const GET_STUDY_BY_ID = gql`
   ${FILE_FIELDS}
   ${EVENT_FIELDS}
   ${PROJECT_FIELDS}
-`;
-
-// Query to get a file by its kf id
-export const GET_FILE_BY_ID = gql`
-  query File($kfId: String!) {
-    fileByKfId(kfId: $kfId) {
-      ...FileFields
-      creator {
-        ...CreatorFields
-      }
-      versions {
-        edges {
-          node {
-            ...VersionFields
-            downloadUrl
-            creator {
-              ...CreatorFields
-            }
-          }
-        }
-      }
-    }
-  }
-  ${FILE_FIELDS}
-  ${VERSION_FIELDS}
-  ${CREATOR_FIELDS}
 `;
 
 // Query to get developer tokens

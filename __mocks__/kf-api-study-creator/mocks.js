@@ -6,9 +6,9 @@ import myProfile from './responses/myProfile.json';
 import {
   ALL_STUDIES,
   GET_STUDY_BY_ID,
-  GET_FILE_BY_ID,
   MY_PROFILE,
 } from '../../src/state/queries';
+import {GET_FILE_BY_ID} from '../../src/documents/queries';
 import updateFile from './responses/updateFile.json';
 import updateVersion from './responses/updateVersion.json';
 import createVersion from './responses/createVersion.json';
@@ -17,7 +17,7 @@ import {
   UPDATE_FILE,
   UPDATE_VERSION,
   CREATE_VERSION,
-} from '../../src/state/mutations';
+} from '../../src/documents/mutations';
 
 export const mocks = [
   {
