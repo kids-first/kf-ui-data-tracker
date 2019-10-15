@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Icon, Table} from 'semantic-ui-react';
-import {sortFilesBySimilarity} from '../../../common/fileUtils';
+import {sortFilesBySimilarity} from '../../../utilities';
 
 const DocRow = ({document, setStep, setFileToUpdate}) => {
   const isSimilar = document.rating > 0.3;

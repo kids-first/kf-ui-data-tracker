@@ -9,9 +9,9 @@ import {
 } from './UploadSteps';
 import {graphql} from 'react-apollo';
 
-import {GET_STUDY_BY_ID} from '../../state/queries';
-import {CREATE_VERSION} from '../../state/mutations';
-import {sortFilesBySimilarity} from '../../common/fileUtils';
+import {GET_STUDY_BY_ID} from '../../../state/queries';
+import {CREATE_VERSION} from '../../mutations';
+import {sortFilesBySimilarity} from '../../utilities';
 
 // store all of our upload steps and their associated components
 const UPLOAD_STEPS = {

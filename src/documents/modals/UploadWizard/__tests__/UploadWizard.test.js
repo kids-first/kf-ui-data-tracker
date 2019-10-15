@@ -4,8 +4,8 @@ import {MockedProvider} from 'react-apollo/test-utils';
 import {MemoryRouter} from 'react-router-dom';
 import {render, fireEvent, cleanup, act} from 'react-testing-library';
 import UploadWizard from '../UploadWizard';
-import {mocks} from '../../../../__mocks__/kf-api-study-creator/mocks';
-import studyByKfId from '../../../../__mocks__/kf-api-study-creator/responses/studyByKfId.json';
+import {mocks} from '../../../../../__mocks__/kf-api-study-creator/mocks';
+import studyByKfId from '../../../../../__mocks__/kf-api-study-creator/responses/studyByKfId.json';
 
 afterEach(cleanup);
 
