@@ -1,4 +1,4 @@
-import {KF_STUDY_API} from './globals';
+import {KF_STUDY_API} from '../common/globals';
 import * as stringSimilarity from 'string-similarity';
 
 // Compare date of file versions based on their createdAt time. (Latest first)
