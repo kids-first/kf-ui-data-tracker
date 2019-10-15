@@ -4,7 +4,7 @@ import {MockedProvider} from 'react-apollo/test-utils';
 import {MemoryRouter} from 'react-router-dom';
 import {render, fireEvent, cleanup} from 'react-testing-library';
 import StudyFilesListView from '../StudyFilesListView';
-import {mocks} from '../../../__mocks__/kf-api-study-creator/mocks';
+import {mocks} from '../../../../__mocks__/kf-api-study-creator/mocks';
 
 afterEach(cleanup);
 
