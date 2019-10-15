@@ -2,8 +2,8 @@ import React from 'react';
 import {MemoryRouter} from 'react-router-dom';
 import {MockedProvider} from 'react-apollo/test-utils';
 import {render} from 'react-testing-library';
-import {mocks} from '../../../../__mocks__/kf-api-study-creator/mocks';
-import fileByKfId from '../../../../__mocks__/kf-api-study-creator/responses/fileByKfId';
+import {mocks} from '../../../../../__mocks__/kf-api-study-creator/mocks';
+import fileByKfId from '../../../../../__mocks__/kf-api-study-creator/responses/fileByKfId';
 import VersionList from '../VersionList';
 
 it('renders with more than one versions', () => {

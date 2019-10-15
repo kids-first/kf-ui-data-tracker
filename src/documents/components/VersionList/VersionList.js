@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {dateCompare} from '../../common/fileUtils';
+import {dateCompare} from '../../utilities';
 import VersionItem from './VersionItem';
 import {Button, Table} from 'semantic-ui-react';
 /**

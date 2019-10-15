@@ -1,14 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Mutation} from 'react-apollo';
-import {FILE_DOWNLOAD_URL} from '../../state/mutations';
-import AvatarTimeAgo from '../AvatarTimeAgo/AvatarTimeAgo';
-import {
-  formatFileSize,
-  downloadFile,
-  lengthLimit,
-} from '../../common/fileUtils';
-import {versionState} from '../../common/enums';
+import {FILE_DOWNLOAD_URL} from '../../mutations';
+import AvatarTimeAgo from '../../../components/AvatarTimeAgo/AvatarTimeAgo';
+import {formatFileSize, downloadFile, lengthLimit} from '../../utilities';
+import {versionState} from '../../../common/enums';
 import {Label, Icon, Table, Popup} from 'semantic-ui-react';
 /**
  * Displays single version item from the list

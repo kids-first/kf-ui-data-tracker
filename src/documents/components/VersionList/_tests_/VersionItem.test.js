@@ -3,8 +3,8 @@ import {Table} from 'semantic-ui-react';
 import {MemoryRouter} from 'react-router-dom';
 import {MockedProvider} from 'react-apollo/test-utils';
 import {render, cleanup, fireEvent, act} from 'react-testing-library';
-import {mocks} from '../../../../__mocks__/kf-api-study-creator/mocks';
-import fileByKfId from '../../../../__mocks__/kf-api-study-creator/responses/fileByKfId';
+import {mocks} from '../../../../../__mocks__/kf-api-study-creator/mocks';
+import fileByKfId from '../../../../../__mocks__/kf-api-study-creator/responses/fileByKfId';
 import VersionItem from '../VersionItem';
 
 afterEach(cleanup);
