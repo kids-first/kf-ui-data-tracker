@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Mutation} from 'react-apollo';
-import {FILE_DOWNLOAD_URL} from '../state/mutations';
+import {FILE_DOWNLOAD_URL} from '../mutations';
 import FileActionButtons from '../components/FileActionButtons/FileActionButtons';
 import DeleteFileMutation from './DeleteFileMutation';
 const FileActionsContainer = ({node, studyId, fluid, vertical, isAdmin}) => {
