@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Button, Divider, Icon, Popup} from 'semantic-ui-react';
-import {downloadFile, createDateSort} from '../../common/fileUtils';
-import CopyButton from '../CopyButton/CopyButton';
+import {downloadFile, createDateSort} from '../../utilities';
+import CopyButton from '../../../components/CopyButton/CopyButton';
 /**
  * Simple Icon Buttons to download and delete a file passed in as the node prop
  */

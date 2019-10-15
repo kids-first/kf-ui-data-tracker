@@ -2,8 +2,8 @@ import React from 'react';
 import wait from 'waait';
 import {render, cleanup, fireEvent, act} from 'react-testing-library';
 import {MockedProvider} from 'react-apollo/test-utils';
-import {mocks} from '../../../../__mocks__/kf-api-study-creator/mocks';
-import studyByKfId from '../../../../__mocks__/kf-api-study-creator/responses/studyByKfId';
+import {mocks} from '../../../../../__mocks__/kf-api-study-creator/mocks';
+import studyByKfId from '../../../../../__mocks__/kf-api-study-creator/responses/studyByKfId';
 import FileActionButtons from '../FileActionButtons';
 
 afterEach(cleanup);
