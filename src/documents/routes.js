@@ -15,7 +15,7 @@ const DocumentRoutes = () => (
     />
     <PrivateRoute
       exact
-      path="/study/:kfId/documents/:fileId"
+      path="/study/:kfId/documents/:fileId(SF_\w{8})"
       component={FileDetailView}
     />
   </>
