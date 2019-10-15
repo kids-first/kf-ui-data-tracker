@@ -1,9 +1,9 @@
 import React, {useRef} from 'react';
-import {UPDATE_FILE, UPDATE_VERSION} from '../state/mutations';
-import {MY_PROFILE, GET_STUDY_BY_ID} from '../state/queries';
+import {UPDATE_FILE, UPDATE_VERSION} from '../mutations';
+import {MY_PROFILE, GET_STUDY_BY_ID} from '../../state/queries';
 import {graphql, compose} from 'react-apollo';
 import {EditDocumentForm} from '../forms';
-import {fileSortedVersions} from '../common/fileUtils';
+import {fileSortedVersions} from '../utilities';
 import {Button, Modal} from 'semantic-ui-react';
 
 const EditDocumentModal = ({
