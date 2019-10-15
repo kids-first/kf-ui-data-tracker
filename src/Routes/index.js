@@ -4,16 +4,13 @@ import PrivateRoute from './PrivateRoute';
 import AdminRoute from './AdminRoute';
 import {Header} from '../components/Header';
 import {
-  NewDocumentView,
   LoginView,
   StudyListView,
-  StudyFilesListView,
   CallbackView,
   NavBarView,
   EmptyView,
   TokensListView,
   CavaticaProjectsView,
-  FileDetailView,
   ProfileView,
   NewStudyView,
   StudyInfoView,
@@ -21,6 +18,8 @@ import {
   CavaticaBixView,
   LogsView,
 } from '../views';
+import DocumentRoutes from '../documents/routes';
+
 const Routes = () => (
   <Fragment>
     <Switch>
@@ -33,20 +32,6 @@ const Routes = () => (
     <AdminRoute path="/study/new-study" component={NewStudyView} />
     <Switch>
       <PrivateRoute exact path="/" component={StudyListView} />
-      <PrivateRoute
-        exact
-        path="/study/:kfId/documents"
-        component={StudyFilesListView}
-      />
-      <PrivateRoute
-        path="/study/:kfId/documents/new-document"
-        component={NewDocumentView}
-      />
-      <PrivateRoute
-        exact
-        path="/study/:kfId/documents/:fileId"
-        component={FileDetailView}
-      />
       <PrivateRoute path="/study/:kfId/basic-info" component={StudyInfoView} />
       <PrivateRoute exact path="/study/:kfId/dashboard" component={EmptyView} />
       <PrivateRoute path="/study/:kfId/cavatica" component={CavaticaBixView} />
@@ -58,6 +43,7 @@ const Routes = () => (
         component={CavaticaProjectsView}
       />
       <AdminRoute exact path="/events" component={EventsView} />
+      <DocumentRoutes />
     </Switch>
   </Fragment>
 );

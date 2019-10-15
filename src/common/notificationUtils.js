@@ -1,4 +1,4 @@
-import {fileLatestStatus} from './fileUtils';
+import {fileLatestStatus} from '../documents/utilities';
 
 // An object contains the label for each study data field
 export const fieldLabel = {
