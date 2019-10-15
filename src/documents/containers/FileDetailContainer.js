@@ -2,8 +2,8 @@ import React from 'react';
 import FileDetail from '../components/FileDetail/FileDetail';
 import {Dimmer, Loader, Message} from 'semantic-ui-react';
 import {Query, Mutation} from 'react-apollo';
-import {UPDATE_FILE} from '../state/mutations';
-import {GET_FILE_BY_ID} from '../state/queries';
+import {UPDATE_FILE} from '../mutations';
+import {GET_FILE_BY_ID} from '../queries';
 import PropTypes from 'prop-types';
 
 const FileDetailContainer = ({kfId, history, match, isAdmin}) => {
