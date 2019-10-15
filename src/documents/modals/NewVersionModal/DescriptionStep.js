@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {formatFileSize} from '../../common/fileUtils';
+import {formatFileSize, lengthLimit} from '../../utilities';
 import {Form, Label} from 'semantic-ui-react';
-import {lengthLimit} from '../../common/fileUtils';
 /**
  * In this step, the user will describ the file that they have uploaded
  */

@@ -4,8 +4,8 @@ import {graphql} from 'react-apollo';
 import {Button, Modal, Message, Icon} from 'semantic-ui-react';
 import UploadStep from './UploadStep';
 import DescriptionStep from './DescriptionStep';
-import {GET_FILE_BY_ID} from '../../state/queries';
-import {CREATE_VERSION} from '../../state/mutations';
+import {GET_FILE_BY_ID} from '../../queries';
+import {CREATE_VERSION} from '../../mutations';
 
 /**
  * The NewVersionFlow handles flow for uploading a new version of a file
