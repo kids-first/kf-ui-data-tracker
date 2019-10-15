@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Mutation} from 'react-apollo';
-import {GET_STUDY_BY_ID} from '../state/queries';
-import {DELETE_FILE} from '../state/mutations';
+import {GET_STUDY_BY_ID} from '../../state/queries';
+import {DELETE_FILE} from '../mutations';
 /**
  * Delete file from study and the study in the cache
  */
