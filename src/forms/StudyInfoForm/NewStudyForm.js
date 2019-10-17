@@ -6,10 +6,12 @@ import {
   Segment,
   Message,
   Step,
-  Button,
   Header,
   Icon,
   List,
+  Button,
+  Confirm,
+  Container,
 } from 'semantic-ui-react';
 import {Formik} from 'formik';
 import {InfoStep, ExternalStep, LogisticsStep} from './Steps';
@@ -18,7 +20,9 @@ import {
   fieldLabel,
   trackedStudyFields,
   steppingFields,
+  prevNextStep,
 } from '../../common/notificationUtils';
+import {workflowOptions} from '../../common/enums';
 
 /**
  * A form for the user to create or update a study, displaying in three steps
@@ -28,18 +32,10 @@ const NewStudyForm = ({
   apiErrors,
   studyNode,
   newStudy,
-  setEditing,
   editing,
   history,
   isAdmin,
 }) => {
-  const [confirmOpen, setConfirmOpen] = useState(false);
-  const [workflowType, setSelection] = useState([
-    'bwa_mem',
-    'gatk_haplotypecaller',
-  ]);
-  const [focused, setFocused] = useState('');
-  const [foldDescription, setFoldDescription] = useState(true);
   const STUDY_STEPS = [
     {
       title: 'Info',
@@ -63,6 +59,22 @@ const NewStudyForm = ({
       href: 'logistics',
     },
   ];
+  const initStep = STUDY_STEPS.findIndex(
+    ({href}) =>
+      href ===
+      history.location.pathname.split('/')[
+        history.location.pathname.split('/').length - 1
+      ],
+  );
+  const [confirmOpen, setConfirmOpen] = useState(false);
+  const [workflowType, setSelection] = useState([
+    'bwa_mem',
+    'gatk_haplotypecaller',
+  ]);
+  const [focused, setFocused] = useState('');
+  const [foldDescription, setFoldDescription] = useState(true);
+  const [currentStep, setCurrentStep] = useState(initStep);
+
   const missingValueMessage = values => {
     let fields = steppingFields.reduce((acc, stepsArr, step) => {
       return acc.concat(
@@ -134,7 +146,6 @@ const NewStudyForm = ({
           setConfirmOpen(false);
           submitValue({input: inputObject, workflowType: workflowType});
         } else {
-          setEditing(false);
           submitValue(values);
         }
       }}
@@ -146,39 +157,6 @@ const NewStudyForm = ({
               Study Basic Info
             </Header>
           )}
-          {!newStudy && isAdmin && editing && (
-            <Button.Group floated="right" size="small">
-              <Button
-                primary
-                type="submit"
-                disabled={
-                  Object.keys(formikProps.errors).length > 0 ||
-                  formikProps.values.name.length === 0 ||
-                  formikProps.values.externalId.length === 0
-                }
-                onClick={() => formikProps.handleSubmit()}
-                content="SAVE"
-              />
-              <Button
-                type="button"
-                onClick={() => {
-                  formikProps.handleReset();
-                  setEditing(false);
-                }}
-                content="CANCEL"
-              />
-            </Button.Group>
-          )}
-          {!newStudy && isAdmin && !editing && (
-            <Button
-              floated="right"
-              size="small"
-              primary
-              type="button"
-              onClick={() => setEditing(true)}
-              content="EDIT"
-            />
-          )}
           {apiErrors && (
             <Message
               negative
@@ -187,27 +165,29 @@ const NewStudyForm = ({
               content={apiErrors}
             />
           )}
-          {!newStudy && missingValueMessage(formikProps.values).length > 0 && (
-            <Message negative icon>
-              <Icon name="warning circle" />
-              <Message.Content>
-                <Message.Header>Missing values</Message.Header>
-                <p>Please add values to the following fields:</p>
-                <List bulleted horizontal>
-                  {missingValueMessage(formikProps.values).map(item => (
-                    <List.Item
-                      as={Link}
-                      to={`/study/${
-                        history.location.pathname.split('/')[2]
-                      }/basic-info/${STUDY_STEPS[item.step].href}`}
-                      key={item.label}
-                      content={item.label}
-                    />
-                  ))}
-                </List>
-              </Message.Content>
-            </Message>
-          )}
+          {!newStudy &&
+            isAdmin &&
+            missingValueMessage(formikProps.values).length > 0 && (
+              <Message negative icon>
+                <Icon name="warning circle" />
+                <Message.Content>
+                  <Message.Header>Missing values</Message.Header>
+                  <p>Please add values to the following fields:</p>
+                  <List bulleted horizontal>
+                    {missingValueMessage(formikProps.values).map(item => (
+                      <List.Item
+                        as={Link}
+                        to={`/study/${
+                          history.location.pathname.split('/')[2]
+                        }/basic-info/${STUDY_STEPS[item.step].href}`}
+                        key={item.label}
+                        content={item.label}
+                      />
+                    ))}
+                  </List>
+                </Message.Content>
+              </Message>
+            )}
           <Step.Group attached="top" fluid widths={3}>
             {STUDY_STEPS.map((step, stepNum) => (
               <Step
@@ -215,6 +195,7 @@ const NewStudyForm = ({
                 key={stepNum}
                 active={history.location.pathname.endsWith(step.href)}
                 onClick={() => {
+                  setCurrentStep(stepNum);
                   if (newStudy) {
                     history.push('/study/new-study/' + step.href);
                   } else {
@@ -272,6 +253,118 @@ const NewStudyForm = ({
                   />
                 ))}
               </Switch>
+              {currentStep !== 0 && (
+                <Button
+                  floated="left"
+                  type="button"
+                  onClick={() => {
+                    setCurrentStep(currentStep - 1);
+                    prevNextStep(
+                      STUDY_STEPS[currentStep - 1].href,
+                      newStudy,
+                      history,
+                    );
+                  }}
+                  labelPosition="left"
+                  icon="left arrow"
+                  content="PREVIOUS"
+                />
+              )}
+              {currentStep !== STUDY_STEPS.length - 1 && (
+                <Button
+                  floated="right"
+                  type="button"
+                  onClick={() => {
+                    setCurrentStep(currentStep + 1);
+                    prevNextStep(
+                      STUDY_STEPS[currentStep + 1].href,
+                      newStudy,
+                      history,
+                    );
+                  }}
+                  labelPosition="right"
+                  icon="right arrow"
+                  content="NEXT"
+                />
+              )}
+              {editing && (
+                <Button
+                  primary
+                  floated="right"
+                  type="submit"
+                  disabled={
+                    Object.keys(formikProps.errors).length > 0 ||
+                    formikProps.values.name.length === 0 ||
+                    formikProps.values.externalId.length === 0
+                  }
+                >
+                  SAVE
+                </Button>
+              )}
+              {newStudy && (
+                <Button
+                  primary
+                  floated="right"
+                  type="button"
+                  disabled={
+                    Object.keys(formikProps.errors).length > 0 ||
+                    formikProps.values.name.length === 0 ||
+                    formikProps.values.externalId.length === 0
+                  }
+                  onClick={() => {
+                    formikProps.validateForm().then(errors => {
+                      Object.keys(formikProps.errors).length === 0 &&
+                        setConfirmOpen(true);
+                    });
+                  }}
+                >
+                  SUBMIT
+                </Button>
+              )}
+              <Confirm
+                open={confirmOpen}
+                onCancel={() => setConfirmOpen(false)}
+                onConfirm={formikProps.handleSubmit}
+                header="Create Study"
+                content={
+                  <Container as={Segment} basic padded>
+                    <p>
+                      The following resources will be created for this study
+                    </p>
+                    <List bulleted>
+                      <List.Item>Dataservice study</List.Item>
+                      <List.Item>S3 bucket</List.Item>
+                      <List.Item>Cavatica delivery project</List.Item>
+                      {workflowType.length > 0 && (
+                        <List.Item>
+                          Cavatica harmonization projects
+                          <List.List>
+                            {workflowType.map(type => (
+                              <List.Item key={type}>
+                                {
+                                  workflowOptions.filter(
+                                    obj => obj.value === type,
+                                  )[0].text
+                                }
+                              </List.Item>
+                            ))}
+                          </List.List>
+                        </List.Item>
+                      )}
+                    </List>
+                  </Container>
+                }
+                confirmButton={
+                  <Button
+                    primary
+                    floated="right"
+                    type="submit"
+                    loading={formikProps.isSubmitting}
+                  >
+                    SUBMIT
+                  </Button>
+                }
+              />
             </Form>
           </Segment>
         </Fragment>

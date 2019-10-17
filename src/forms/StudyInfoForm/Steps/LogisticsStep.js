@@ -2,16 +2,12 @@ import React from 'react';
 import {
   Form,
   Segment,
-  Container,
   Button,
-  Confirm,
   List,
   Header,
   Image,
   Table,
 } from 'semantic-ui-react';
-import {workflowOptions} from '../../../common/enums';
-import {prevNextStep} from '../../../common/notificationUtils';
 import FormField from '../../FormField';
 import Markdown from 'react-markdown';
 
@@ -31,16 +27,7 @@ const LogisticsStep = ({
   setFoldDescription,
   isAdmin,
 }) => {
-  const {
-    values,
-    errors,
-    touched,
-    handleChange,
-    handleBlur,
-    handleSubmit,
-    isSubmitting,
-    validateForm,
-  } = formikProps;
+  const {values, errors, touched, handleChange, handleBlur} = formikProps;
   const mapFields = [
     {
       required: false,
@@ -155,84 +142,6 @@ const LogisticsStep = ({
           />
         </FormField>
       )}
-      <Button
-        primary
-        floated="left"
-        type="button"
-        onClick={() => prevNextStep('external', newStudy, history)}
-        labelPosition="left"
-        icon="left arrow"
-        content="PREVIOUS"
-      />
-      {newStudy && (
-        <Button
-          primary
-          floated="right"
-          type="button"
-          disabled={
-            Object.keys(errors).length > 0 ||
-            values.name.length === 0 ||
-            values.externalId.length === 0
-          }
-          onClick={() => {
-            validateForm().then(errors => {
-              Object.keys(errors).length === 0 && setConfirmOpen(true);
-            });
-          }}
-        >
-          SUBMIT
-        </Button>
-      )}
-      {editing && (
-        <Button
-          primary
-          floated="right"
-          type="submit"
-          disabled={
-            Object.keys(errors).length > 0 ||
-            values.name.length === 0 ||
-            values.externalId.length === 0
-          }
-        >
-          SAVE
-        </Button>
-      )}
-      <Confirm
-        open={confirmOpen}
-        onCancel={() => setConfirmOpen(false)}
-        onConfirm={handleSubmit}
-        header="Create Study"
-        content={
-          <Container as={Segment} basic padded>
-            <p>The following resources will be created for this study</p>
-            <List bulleted>
-              <List.Item>Dataservice study</List.Item>
-              <List.Item>S3 bucket</List.Item>
-              <List.Item>Cavatica delivery project</List.Item>
-              {workflowType.length > 0 && (
-                <List.Item>
-                  Cavatica harmonization projects
-                  <List.List>
-                    {workflowType.map(type => (
-                      <List.Item key={type}>
-                        {
-                          workflowOptions.filter(obj => obj.value === type)[0]
-                            .text
-                        }
-                      </List.Item>
-                    ))}
-                  </List.List>
-                </List.Item>
-              )}
-            </List>
-          </Container>
-        }
-        confirmButton={
-          <Button primary floated="right" type="submit" loading={isSubmitting}>
-            SUBMIT
-          </Button>
-        }
-      />
     </>
   );
 };
