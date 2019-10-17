@@ -3,8 +3,7 @@ import jwtDecode from 'jwt-decode';
 import {Route, Redirect, withRouter} from 'react-router-dom';
 
 export const isAdmin = () => {
-  const token =
-    localStorage.getItem('egoToken') || localStorage.getItem('accessToken');
+  const token = localStorage.getItem('accessToken');
   if (token == null) {
     return false;
   }
@@ -12,7 +11,7 @@ export const isAdmin = () => {
   const decoded = jwtDecode(token);
   if (decoded.exp < Math.floor(new Date().getTime() / 1000)) return false;
 
-  // Extract roles based on whether the token is from ego or auth0
+  // Extract roles based on whether the token is from auth0
   const roles = decoded.context
     ? decoded.context.user.roles
     : decoded['https://kidsfirstdrc.org/roles'];

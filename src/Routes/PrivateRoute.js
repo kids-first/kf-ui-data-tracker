@@ -3,8 +3,7 @@ import jwtDecode from 'jwt-decode';
 import {Route, Redirect, withRouter} from 'react-router-dom';
 
 export const hasToken = () => {
-  const token =
-    localStorage.getItem('egoToken') || localStorage.getItem('accessToken');
+  const token = localStorage.getItem('accessToken');
   if (token == null) {
     return false;
   }

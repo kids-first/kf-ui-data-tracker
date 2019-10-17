@@ -1,5 +1,6 @@
 export {default as StudyListView} from './StudyListView';
 export {default as LoginView} from './LoginView';
+export {default as LogoutView} from './LogoutView';
 export {default as CallbackView} from './CallbackView';
 export {default as NavBarView} from './NavBarView';
 export {default as EmptyView} from './EmptyView';

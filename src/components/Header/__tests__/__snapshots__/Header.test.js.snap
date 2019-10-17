@@ -114,7 +114,7 @@ exports[`renders correctly -- default stage (USER role) 1`] = `
             </a>
             <a
               class="item"
-              href="/login"
+              href="/logout"
               role="option"
             >
               <i
@@ -649,7 +649,7 @@ exports[`renders correctly -- default stage (USER role) 2`] = `
             </a>
             <a
               class="item"
-              href="/login"
+              href="/logout"
               role="option"
             >
               <i
@@ -1184,7 +1184,7 @@ exports[`renders correctly -- default stage (USER role) 3`] = `
             </a>
             <a
               class="item"
-              href="/login"
+              href="/logout"
               role="option"
             >
               <i
@@ -1629,42 +1629,20 @@ exports[`renders correctly -- default stage (USER role) 4`] = `
             Kids First Data Tracker
           </div>
         </h1>
-        <div
-          class="ui large vertical buttons"
+        <h3
+          class="ui header"
         >
-          <button
-            class="ui icon positive right labeled button"
-          >
-            Login with Auth0
-            <i
-              aria-hidden="true"
-              class="chevron right icon"
-            />
-          </button>
-          <button
-            class="ui large icon right labeled button"
-          >
-            Login with Ego
-            <i
-              aria-hidden="true"
-              class="chevron right icon"
-            />
-          </button>
-        </div>
-        <div
-          class="ui message"
+          You have been logged out successfully
+        </h3>
+        <button
+          class="ui big icon positive right labeled button mb-15"
         >
-          New to Kids First Data Tracker?
-          <a
-            href="/"
-          >
-            Join now 
-            <i
-              aria-hidden="true"
-              class="chevron right icon"
-            />
-          </a>
-        </div>
+          Click here to login
+          <i
+            aria-hidden="true"
+            class="chevron right icon"
+          />
+        </button>
       </div>
     </div>
   </div>

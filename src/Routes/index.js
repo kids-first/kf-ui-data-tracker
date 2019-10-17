@@ -17,6 +17,7 @@ import {
   EventsView,
   CavaticaBixView,
   LogsView,
+  LogoutView,
 } from '../views';
 import DocumentRoutes from '../documents/routes';
 
@@ -24,6 +25,7 @@ const Routes = () => (
   <Fragment>
     <Switch>
       <Route path="/login" component={LoginView} />
+      <Route path="/logout" component={LogoutView} />
       <Route path="/callback" component={CallbackView} />
       <Route path="/" render={() => <Header />} />
     </Switch>
