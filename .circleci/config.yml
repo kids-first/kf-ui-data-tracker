@@ -40,3 +40,4 @@ jobs:
           yarn add -D bundlesize
           yarn run bundlesize
       - run: yarn test
+      - run: yarn codecov
