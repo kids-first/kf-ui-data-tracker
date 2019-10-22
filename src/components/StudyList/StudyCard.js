@@ -5,7 +5,8 @@ import {Card, Icon, Label, Button, Popup} from 'semantic-ui-react';
 import FileCounts from '../StudyInfo/FileCounts';
 import CavaticaCounts from '../StudyInfo/CavaticaCounts';
 import {trackedStudyFields} from '../../common/notificationUtils';
-import CavaticaLogo from '../../assets/CavaticaLogo';
+import {withAnalyticsTracking} from '../../analyticsTracking';
+
 /**
  * Displays each study with its kfId, name(shortName), and modifiedAt
  */
@@ -19,6 +20,16 @@ const StudyCard = ({
   missingValue,
   missingProject,
   requiredFileChanges,
+  onClick = () => {},
+  onMouseOver = () => {},
+  tracking: {
+    logEvent,
+    instrument,
+    buttonTracking,
+    EVENT_CONSTANTS,
+    inheritedEventProps,
+    popupTracking,
+  },
 }) => {
   const projectsCounts = projects && projects.length > 0 ? projects.length : 0;
   const needsAttention =
@@ -27,9 +38,59 @@ const StudyCard = ({
     requiredFileChanges > 0 ||
     projectsCounts < 1;
   const [showDetail, setShowDetail] = useState(false);
+  const toolTips = {
+    info:
+      trackedStudyFields.length -
+      missingValue +
+      '/' +
+      trackedStudyFields.length +
+      ' complete',
+    files:
+      files.length === 0
+        ? 'No files'
+        : '' + requiredFileChanges > 0
+        ? requiredFileChanges + ' files need changes'
+        : '',
+  };
+
+  const ToggleDetailButton = ({testId}) => (
+    <Button
+      as={Label}
+      basic
+      floated="right"
+      size="mini"
+      data-testid={testId}
+      icon={showDetail ? 'chevron up' : 'chevron down'}
+      onClick={e => {
+        setShowDetail(!showDetail);
+        buttonTracking({
+          button_text: testId,
+          show_detail: !showDetail,
+          button_type: 'label',
+        }).onClick();
+      }}
+      onMouseOver={
+        buttonTracking({
+          button_text: testId,
+          show_detail: !showDetail,
+          button_type: 'label',
+        }).onMouseOver
+      }
+    />
+  );
+
   return (
     <Card color={needsAttention ? 'red' : null}>
-      <Card.Content as={Link} to={`/study/${studyId}/basic-info/info`}>
+      {needsAttention && (
+        <Label corner="right" size="mini">
+          <Icon name="exclamation" size="mini" color="red" />
+        </Label>
+      )}
+      <Card.Content
+        as={Link}
+        to={`/study/${studyId}/basic-info/info`}
+        {...buttonTracking()}
+      >
         <Card.Header>{studyName}</Card.Header>
         <Card.Meta>{studyId}</Card.Meta>
       </Card.Content>
@@ -39,15 +100,17 @@ const StudyCard = ({
             inverted
             position="top center"
             size="small"
-            content={
-              trackedStudyFields.length -
-              missingValue +
-              '/' +
-              trackedStudyFields.length +
-              ' complete'
-            }
+            content={toolTips.info}
             trigger={
-              <Link to={`/study/${studyId}/basic-info/info`} className="pr-5">
+              <Link
+                {...popupTracking({
+                  name: 'Info',
+                  content: toolTips.info,
+                  link: `/study/${studyId}/basic-info/info`,
+                })}
+                to={`/study/${studyId}/basic-info/info`}
+                className="pr-5"
+              >
                 <Icon
                   name={missingValue > 0 ? 'clipboard list' : 'clipboard check'}
                   color={missingValue > 0 ? 'red' : 'grey'}
@@ -60,16 +123,18 @@ const StudyCard = ({
             inverted
             position="top center"
             size="small"
-            content={
-              files.length === 0
-                ? 'No files'
-                : '' + requiredFileChanges > 0
-                ? requiredFileChanges + ' files need changes'
-                : ''
-            }
+            content={toolTips.files}
             disabled={files.length > 0 && requiredFileChanges < 1}
             trigger={
-              <Link to={`/study/${studyId}/documents`} className="pr-5">
+              <Link
+                {...popupTracking({
+                  name: 'Files',
+                  content: toolTips.files,
+                  link: `/study/${studyId}/documents`,
+                })}
+                to={`/study/${studyId}/documents`}
+                className="pr-5"
+              >
                 <Icon
                   name="file"
                   color={
@@ -87,7 +152,14 @@ const StudyCard = ({
             content="Missing projects"
             disabled={projectsCounts > 0 && missingProject < 1}
             trigger={
-              <Link to={`/study/${studyId}/cavatica`}>
+              <Link
+                to={`/study/${studyId}/cavatica`}
+                {...popupTracking({
+                  name: 'Projects',
+                  content: 'Missing projects',
+                  link: `/study/${studyId}/cavatica`,
+                })}
+              >
                 <CavaticaLogo
                   className="mr-5 vertical-middle"
                   fill={
@@ -100,30 +172,21 @@ const StudyCard = ({
               </Link>
             }
           />
-          <Button
-            as={Label}
-            basic
-            floated="right"
-            size="mini"
-            data-testid="show-detail"
-            icon={showDetail ? 'chevron up' : 'chevron down'}
-            onClick={() => setShowDetail(!showDetail)}
-          />
+          <ToggleDetailButton testId="show-detail" />
         </Card.Content>
       )}
       {showDetail && (
         <>
           <Card.Content extra compact="very" size="mini">
-            <FileCounts title={studyId} files={files} history={history} />
-            <Button
-              as={Label}
-              basic
-              floated="right"
-              size="mini"
-              data-testid="hide-detail"
-              icon={showDetail ? 'chevron up' : 'chevron down'}
-              onClick={() => setShowDetail(!showDetail)}
+            <FileCounts
+              title={studyId}
+              files={files}
+              history={history}
+              eventProperties={{
+                scope: [...inheritedEventProps.scope, 'FileCounts'],
+              }}
             />
+            <ToggleDetailButton testId="show-detail" />
           </Card.Content>
           <Card.Content extra compact="very" size="mini">
             <CavaticaCounts title={studyId} projects={projects} />
@@ -149,4 +212,4 @@ StudyCard.defaultProps = {
   lastUpdate: null,
 };
 
-export default withRouter(StudyCard);
+export default withRouter(withAnalyticsTracking(StudyCard));

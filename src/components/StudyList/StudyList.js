@@ -80,7 +80,10 @@ const StudyList = ({
             content="Add Study"
             as={Link}
             to={`/study/new-study/info`}
-            {...buttonTracking('Add Study')}
+            {...buttonTracking({
+              button_text: 'Add Study',
+              link: `/study/new-study/info`,
+            })}
           />
         )}
         <Input
