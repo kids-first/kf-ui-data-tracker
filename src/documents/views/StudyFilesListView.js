@@ -3,6 +3,7 @@ import {graphql, compose} from 'react-apollo';
 import {GET_STUDY_BY_ID, MY_PROFILE} from '../../state/queries';
 import {UploadContainer} from '../containers';
 import FileList from '../components/FileList/FileList';
+
 import {
   Grid,
   Message,
@@ -12,6 +13,7 @@ import {
   Button,
   Responsive,
 } from 'semantic-ui-react';
+
 import UploadWizard from '../modals/UploadWizard/UploadWizard';
 
 /**
