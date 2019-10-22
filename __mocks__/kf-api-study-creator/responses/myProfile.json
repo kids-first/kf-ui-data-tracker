@@ -11,6 +11,7 @@
       "lastName": "Dolly",
       "picture": "https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg",
       "email": "bendolly@d3b.center",
+      "emailNotify": false,
       "slackNotify": false,
       "slackMemberId": "",
       "studySubscriptions": {
