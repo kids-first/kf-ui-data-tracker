@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import {Link, withRouter} from 'react-router-dom';
 import {Card, Icon, Label, Button, Popup} from 'semantic-ui-react';
 import FileCounts from '../StudyInfo/FileCounts';
+import CavaticaLogo from '../../assets/CavaticaLogo';
+
 import CavaticaCounts from '../StudyInfo/CavaticaCounts';
 import {trackedStudyFields} from '../../common/notificationUtils';
 import {withAnalyticsTracking} from '../../analyticsTracking';
