@@ -52,7 +52,10 @@ const StudyListView = ({
                 content="Create Study"
                 as={Link}
                 to={`/study/new-study`}
-                {...buttonTracking('Create Study')}
+                {...buttonTracking({
+                  button_text: 'Create Study',
+                  link: `/study/new-study`,
+                })}
               />
             </Segment>
           </>

@@ -18,8 +18,6 @@ const mouseEvents = log => (eventProps = {}) => {
       }
     },
     onMouseOver: e => {
-      console.log(eventProps);
-      console.log(log);
       if (eventProps.stopPropagation) e.stopPropagation();
       try {
         log(EVENT_CONSTANTS.MOUSE.HOVER, eventProps);

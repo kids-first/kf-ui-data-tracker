@@ -12,6 +12,7 @@ import {
   countFileNotification,
   trackedStudyFields,
 } from '../../common/notificationUtils';
+
 /**
  * Renders a single row in the table
  */

@@ -27,10 +27,16 @@ const ToggleButtons = ({
           onClick={() => {
             setActive(idx);
             onToggle({active, text, icon});
-            buttonTracking(text, {button_type: 'toggle'}).onClick();
+            buttonTracking({
+              button_type: 'toggle',
+              button_text: text,
+            }).onClick();
           }}
           onMouseOver={() =>
-            buttonTracking(text, {button_type: 'toggle'}).onMouseOver()
+            buttonTracking({
+              button_text: text,
+              button_type: 'toggle',
+            }).onMouseOver()
           }
           tabIndex="0"
         >
