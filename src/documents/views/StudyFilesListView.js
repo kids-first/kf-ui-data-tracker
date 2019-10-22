@@ -3,6 +3,7 @@ import {graphql, compose} from 'react-apollo';
 import {GET_STUDY_BY_ID, MY_PROFILE} from '../../state/queries';
 import {UploadContainer} from '../containers';
 import FileList from '../components/FileList/FileList';
+
 import {
   Divider,
   Grid,
@@ -12,7 +13,7 @@ import {
   Segment,
   Button,
 } from 'semantic-ui-react';
-import {AnalyticsViewConsumer} from '../analyticsTracking';
+import {AnalyticsViewConsumer} from '../../analyticsTracking';
 import UploadWizard from '../modals/UploadWizard/UploadWizard';
 
 /**
@@ -123,7 +124,7 @@ const StudyFilesListView = ({
             {loading ? (
               <StudyListSkeleton />
             ) : (
-              <FileList fileList={files} studyId={kfId} />
+              <FileList fileList={files} studyId={kfId} isAdmin={isAdmin} />
             )}
             <Divider />
 

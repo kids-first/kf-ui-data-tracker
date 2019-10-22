@@ -4,8 +4,8 @@ import EditDocumentForm from '../forms/EditDocumentForm';
 import {CREATE_FILE} from '../mutations';
 import {GET_STUDY_BY_ID, MY_PROFILE} from '../../state/queries';
 import {Message, Segment, Container, Button, Header} from 'semantic-ui-react';
-import {lengthLimit} from '../common/fileUtils';
-import {AnalyticsViewConsumer} from '../analyticsTracking';
+import {lengthLimit} from '../utilities';
+import {AnalyticsViewConsumer} from '../../analyticsTracking';
 
 /**
  * The NewDocumentView displays a form to collect details about a new file.
