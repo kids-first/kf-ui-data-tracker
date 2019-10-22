@@ -138,6 +138,18 @@ const CavaticaBixView = ({
             </Message>
           )}
 
+          {studyByKfId.projects.edges.length > 0 ? (
+            <CavaticaProjectList
+              projects={studyByKfId.projects.edges}
+              unlinkProject={unlinkProject}
+              hideStudy
+            />
+          ) : (
+            <Header disabled textAlign="center" as="h4">
+              No linked Cavatica projects.
+            </Header>
+          )}
+
           <NewProjectModal
             open={hashOpenHook(history, '#add-cavatica-project')}
             study={studyByKfId}
