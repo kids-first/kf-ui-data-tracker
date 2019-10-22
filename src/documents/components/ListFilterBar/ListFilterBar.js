@@ -76,7 +76,7 @@ const ListFilterBar = ({fileList, filteredList}) => {
 
   return (
     <>
-      <section className="noPadding">
+      <Segment clearing basic className="noHorizontalPadding">
         <Segment
           className="noMargin noVerticalPadding noHorizontalPadding"
           basic
@@ -163,7 +163,7 @@ const ListFilterBar = ({fileList, filteredList}) => {
             value={searchString}
           />
         </Segment>
-      </section>
+      </Segment>
       {filteredList(sortedFileList())}
     </>
   );
