@@ -141,6 +141,7 @@ export const MY_PROFILE = gql`
       lastName
       picture
       email
+      emailNotify
       slackNotify
       slackMemberId
       studySubscriptions {
