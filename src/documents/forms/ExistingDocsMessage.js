@@ -24,7 +24,7 @@ const ExistingDocsMessage = ({
       <details>
         <List>
           {similarStudyDocs.matches.map(doc => (
-            <List.Item key={doc}>
+            <List.Item key={doc.target}>
               <List.Icon name="file" />
               {doc.target} (
               {
