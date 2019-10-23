@@ -123,6 +123,8 @@ export const defaultSort = (a, b) => {
 
 // sort list of file nodes by string similarity to file name
 export const sortFilesBySimilarity = (file, fileList, threshold = 0.3) => {
+  if (!fileList.length) return false;
+
   const sortByRating = files =>
     files.sort((a, b) => (a.rating > b.rating ? 1 : -1)).reverse();
 
