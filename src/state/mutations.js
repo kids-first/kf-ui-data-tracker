@@ -60,12 +60,21 @@ export const SYNC_PROJECTS = gql`
 
 // Mutation to update current user's profile
 export const UPDATE_PROFILE = gql`
-  mutation UpdateMyProfile($slackNotify: Boolean, $slackMemberId: String) {
-    updateMyProfile(slackNotify: $slackNotify, slackMemberId: $slackMemberId) {
+  mutation UpdateMyProfile(
+    $slackNotify: Boolean
+    $slackMemberId: String
+    $emailNotify: Boolean
+  ) {
+    updateMyProfile(
+      slackNotify: $slackNotify
+      slackMemberId: $slackMemberId
+      emailNotify: $emailNotify
+    ) {
       user {
         id
         slackNotify
         slackMemberId
+        emailNotify
       }
     }
   }
