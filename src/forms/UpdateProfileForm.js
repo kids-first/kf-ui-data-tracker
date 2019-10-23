@@ -10,17 +10,23 @@ const UpdateProfileForm = ({
   errors = null,
   message = null,
   loading = false,
-  defaultState = {slackNotify: false, slackMemberId: ''},
+  defaultState = {
+    slackNotify: false,
+    slackMemberId: '',
+    email: '',
+    emailNotify: false,
+  },
 }) => {
   const [slackNotify, setSlackNotify] = useState(defaultState.slackNotify);
   const [slackMemId, setSlackMemId] = useState(defaultState.slackMemberId);
+  const [emailNotify, setEmailNotify] = useState(defaultState.emailNotify);
 
   return (
     <Segment>
       <Form
         onSubmit={ev => {
           ev.preventDefault();
-          handleSubmit(slackNotify, slackMemId);
+          handleSubmit(slackNotify, slackMemId, emailNotify);
         }}
       >
         <Form.Group>
@@ -42,11 +48,21 @@ const UpdateProfileForm = ({
           <Checkbox
             name="notify"
             checked={slackNotify}
-            onChange={ev => setSlackNotify(ev.target.value)}
-            label="Send me daily activity reports of my subscribed studies"
+            onChange={() => setSlackNotify(!slackNotify)}
+            label="SLACK me daily activity reports of my subscribed studies"
           />
-          <label htmlFor="notify" />
+          <label htmlFor="slack-notify" />
         </Form.Field>
+        <Form.Field>
+          <Checkbox
+            name="notify"
+            checked={emailNotify}
+            onChange={() => setEmailNotify(!emailNotify)}
+            label="EMAIL me daily activity reports of my subscribed studies"
+          />
+          <label htmlFor="eamil-notify" />
+        </Form.Field>
+
         <Button type="submit" primary loading={loading}>
           Save
         </Button>

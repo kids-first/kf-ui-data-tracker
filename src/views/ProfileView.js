@@ -29,12 +29,12 @@ const ProfileView = () => {
   const [message, setMessage] = useState();
   const [errors, setErrors] = useState();
 
-  const handleSave = (slackNotify, slackMemberId) => {
+  const handleSave = (slackNotify, slackMemberId, emailNotify) => {
     setMessage();
     setErrors();
     setSubmitting(true);
     // Call update mutation
-    updateProfile({variables: {slackNotify, slackMemberId}})
+    updateProfile({variables: {slackNotify, slackMemberId, emailNotify}})
       .then(resp => {
         setMessage('Saved!');
         setSubmitting(false);
@@ -160,6 +160,8 @@ const ProfileView = () => {
         defaultState={{
           slackNotify: profile.slackNotify,
           slackMemberId: profile.slackMemberId,
+          email: profile.email,
+          emailNotify: profile.emailNotify,
         }}
         errors={errors}
         loading={submitting}
