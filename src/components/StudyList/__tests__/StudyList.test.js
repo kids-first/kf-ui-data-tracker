@@ -7,6 +7,7 @@ import {mocks} from '../../../../__mocks__/kf-api-study-creator/mocks';
 import myProfile from '../../../../__mocks__/kf-api-study-creator/responses/myProfile.json';
 import allStudies from '../../../../__mocks__/kf-api-study-creator/responses/allStudies.json';
 import StudyList from '../StudyList';
+import {AnalyticsMockProvider} from '../../../analyticsTracking';
 
 afterEach(cleanup);
 
@@ -14,18 +15,20 @@ it('renders study grid correctly', () => {
   const studies = allStudies.data.allStudies.edges;
 
   const tree = render(
-    <MockedProvider
-      resolvers={{
-        UserNode: {
-          ...myProfile.data.myProfile,
-        },
-      }}
-      mocks={mocks}
-    >
-      <MemoryRouter>
-        <StudyList activeView="grid" studyList={studies} />
-      </MemoryRouter>
-    </MockedProvider>,
+    <AnalyticsMockProvider>
+      <MockedProvider
+        resolvers={{
+          UserNode: {
+            ...myProfile.data.myProfile,
+          },
+        }}
+        mocks={mocks}
+      >
+        <MemoryRouter>
+          <StudyList activeView="grid" studyList={studies} />
+        </MemoryRouter>
+      </MockedProvider>
+    </AnalyticsMockProvider>,
   );
   expect(tree.container).toMatchSnapshot();
 
@@ -37,18 +40,20 @@ it('renders study grid for ADMIN role', async () => {
   const studies = allStudies.data.allStudies.edges;
   const roles = myProfile.data.myProfile.roles;
   const tree = render(
-    <MockedProvider
-      resolvers={{
-        UserNode: {
-          ...myProfile.data.myProfile,
-        },
-      }}
-      mocks={mocks}
-    >
-      <MemoryRouter>
-        <StudyList activeView="grid" studyList={studies} roles={roles} />
-      </MemoryRouter>
-    </MockedProvider>,
+    <AnalyticsMockProvider>
+      <MockedProvider
+        resolvers={{
+          UserNode: {
+            ...myProfile.data.myProfile,
+          },
+        }}
+        mocks={mocks}
+      >
+        <MemoryRouter>
+          <StudyList activeView="grid" studyList={studies} roles={roles} />
+        </MemoryRouter>
+      </MockedProvider>
+    </AnalyticsMockProvider>,
   );
   expect(tree.container).toMatchSnapshot();
 
@@ -62,7 +67,7 @@ it('renders study grid for ADMIN role', async () => {
 
   // Click on chevron button to hide detail
   act(() => {
-    fireEvent.click(tree.getAllByTestId('hide-detail')[0]);
+    fireEvent.click(tree.getAllByTestId('show-detail')[0]);
   });
   await wait();
 
