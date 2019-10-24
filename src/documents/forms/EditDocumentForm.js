@@ -34,7 +34,7 @@ const EditDocumentForm = React.forwardRef(
     const [onUploading, setUploading] = useState(false);
     const [showDialog, setShowDialog] = useState(false);
 
-    const options = Object.keys(versionState).map(state => ({
+    const options = ['PEN', 'APP', 'CHN', 'PRC'].map(state => ({
       key: state,
       value: state,
       text: versionState[state].title,
