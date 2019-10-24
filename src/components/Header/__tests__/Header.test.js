@@ -7,23 +7,26 @@ import {mocks} from '../../../../__mocks__/kf-api-study-creator/mocks';
 import myProfile from '../../../../__mocks__/kf-api-study-creator/responses/myProfile.json';
 import Header from '../Header';
 import Routes from '../../../Routes';
+import {AnalyticsMockProvider} from '../../../analyticsTracking';
 
 jest.mock('auth0-js');
 
 it('renders correctly -- default stage (USER role)', async () => {
   const tree = render(
-    <MockedProvider
-      mocks={mocks}
-      resolvers={{
-        Query: {
-          myProfile: _ => myProfile.data.myProfile,
-        },
-      }}
-    >
-      <MemoryRouter initialEntries={['/']}>
-        <Routes />
-      </MemoryRouter>
-    </MockedProvider>,
+    <AnalyticsMockProvider>
+      <MockedProvider
+        mocks={mocks}
+        resolvers={{
+          Query: {
+            myProfile: _ => myProfile.data.myProfile,
+          },
+        }}
+      >
+        <MemoryRouter initialEntries={['/']}>
+          <Routes />
+        </MemoryRouter>
+      </MockedProvider>
+    </AnalyticsMockProvider>,
   );
 
   await wait(10);
