@@ -167,12 +167,16 @@ it('progresses to Step 3: Document Updated ', async done => {
   expect(getByText(/Exit \(3\)/i)).toBeTruthy();
 
   // wait 1 sec and make sure timer is counting down
+
   await sleep(1000);
   expect(getByText(/Exit \(2\)/i)).toBeTruthy();
   expect(handleClose.mock.calls.length).toBe(0);
+
   await sleep(1000);
   expect(getByText(/Exit \(1\)/i)).toBeTruthy();
-  await sleep(1010);
+
+  await sleep(2000);
+  expect(getByText(/Exit \(0\)/i)).toBeTruthy();
   // make sure it closes after 3 seconds
   expect(handleClose.mock.calls.length).toBe(1);
 

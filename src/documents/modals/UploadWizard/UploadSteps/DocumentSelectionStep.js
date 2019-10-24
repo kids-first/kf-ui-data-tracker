@@ -31,6 +31,7 @@ const SimilarDocumentsTable = ({documents, setStep, setFileToUpdate}) => (
     <Table.Body>
       {documents.map(doc => (
         <DocRow
+          key={doc.name}
           document={doc}
           setStep={setStep}
           setFileToUpdate={setFileToUpdate}
