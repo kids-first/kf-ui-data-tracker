@@ -147,6 +147,9 @@ const StudyList = ({
                   'anticipatedSamples',
                   'awardeeOrganization',
                 ]}
+                eventProperties={inheritedProps => ({
+                  scope: [...inheritedProps.scope, 'StudyTable'],
+                })}
               />
             )}
           </Grid.Column>
