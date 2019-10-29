@@ -14,44 +14,82 @@ import {
 } from '../../common/notificationUtils';
 import {withAnalyticsTracking} from '../../analyticsTracking';
 
+import {withAnalyticsTracking} from '../../analyticsTracking';
+
 /**
  * Renders a single row in the table
  */
-const TableValue = ({row, col, title}) => {
-  switch (col) {
-    case 'files':
-      return <FileCounts files={row[col].edges} title={title} hideIcon />;
-    case 'projects':
-      return (
-        <CavaticaCounts projects={row[col].edges} title={title} hideIcon />
-      );
-    case 'createdAt':
-    case 'modifiedAt':
-      return (
-        <TimeAgo
-          date={new Date(row[col])}
-          title={longDate(new Date(row[col]))}
-          live={false}
-        />
-      );
-    case 'description':
-      return (
-        <Link
-          to={`/study/${title}/basic-info/info`}
-          onClick={e => e.stopPropagation()}
-          className={row[col].missingValue > 0 ? 'text-red' : null}
-        >
-          {trackedStudyFields.length -
-            row[col].missingValue +
-            '/' +
-            trackedStudyFields.length +
-            ' complete'}
-        </Link>
-      );
-    default:
-      return row[col];
-  }
-};
+const TableValue = withAnalyticsTracking(
+  ({
+    row,
+    col,
+    title,
+    tracking: {
+      buttonTracking,
+      EVENT_CONSTANTS: {STUDY_TABLE},
+    },
+  }) => {
+    switch (col) {
+      case 'files':
+        return (
+          <FileCounts
+            files={row[col].edges}
+            title={title}
+            hideIcon
+            eventProperties={{study: {kfId: row.kfId}}}
+          />
+        );
+      case 'projects':
+        return (
+          <CavaticaCounts
+            projects={row[col].edges}
+            title={title}
+            hideIcon
+            eventProperties={{study: {kfId: row.kfId}}}
+          />
+        );
+      // Are these depricated??
+      case 'createdAt':
+      case 'modifiedAt':
+        return (
+          <TimeAgo
+            date={new Date(row[col])}
+            title={longDate(new Date(row[col]))}
+            live={false}
+          />
+        );
+      case 'description':
+        return (
+          <Link
+            to={`/study/${title}/basic-info/info`}
+            className={row[col].missingValue > 0 ? 'text-red' : null}
+            onClick={
+              buttonTracking(
+                `${trackedStudyFields.length - row[col].missingValue}/${
+                  trackedStudyFields.length
+                } complete`,
+                'Table.Row',
+                {
+                  link: `/study/${title}/basic-info/info`,
+                  study: {kfId: row.kfId},
+                  stopPropagation: true,
+                },
+                STUDY_TABLE.scope,
+              ).onClick
+            }
+          >
+            {trackedStudyFields.length -
+              row[col].missingValue +
+              '/' +
+              trackedStudyFields.length +
+              ' complete'}
+          </Link>
+        );
+      default:
+        return row[col];
+    }
+  },
+);
 
 const StudyTable = ({
   studyList,
@@ -60,6 +98,11 @@ const StudyTable = ({
   clickable = true,
   history,
   isAdmin,
+  tracking: {
+    buttonTracking,
+    inheritedEventProps,
+    EVENT_CONSTANTS: {STUDY_TABLE},
+  },
 }) => {
   if (loading) {
     return <h2>loading studies</h2>;
@@ -141,12 +184,40 @@ const StudyTable = ({
             tabIndex="0"
             key={idx}
             onClick={() => {
-              if (clickable) history.push(`/study/${row.kfId}/documents`);
+              if (clickable) {
+                buttonTracking(
+                  row.name,
+                  'Table.Row',
+                  {
+                    study: {kfId: row.kfId},
+                    link: `/study/${row.kfId}/documents`,
+                  },
+                  STUDY_TABLE.scope,
+                ).onClick();
+                history.push(`/study/${row.kfId}/documents`);
+              }
             }}
+            onMouseOver={() =>
+              buttonTracking({
+                button_text: row.name,
+                study: row,
+                button_tupe: 'table row',
+                scope: [...inheritedEventProps.scope, 'Table.Row'],
+              }).onMouseOver()
+            }
           >
             {cols.map((col, idx) => (
               <Table.Cell key={idx}>
-                <TableValue row={row} col={col} title={row.kfId} />
+                <TableValue
+                  row={row}
+                  col={col}
+                  title={row.kfId}
+                  tracking={{
+                    inheritedEventProps,
+                    buttonTracking,
+                    EVENT_CONSTANTS: {STUDY_TABLE},
+                  }}
+                />
               </Table.Cell>
             ))}
           </Table.Row>
