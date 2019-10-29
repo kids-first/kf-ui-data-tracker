@@ -13,17 +13,43 @@ import {
   trackedStudyFields,
 } from '../../common/notificationUtils';
 
+import {withAnalyticsTracking} from '../../analyticsTracking';
+
 /**
  * Renders a single row in the table
  */
-const TableValue = ({row, col, title}) => {
+const TableValue = ({
+  row,
+  col,
+  title,
+  tracking: {buttonTracking, inheritedEventProps},
+}) => {
   switch (col) {
     case 'files':
-      return <FileCounts files={row[col].edges} title={title} hideIcon />;
+      return (
+        <FileCounts
+          files={row[col].edges}
+          title={title}
+          hideIcon
+          eventProperties={inherit => ({
+            study: row,
+            scope: [...inherit.scope, 'FileCounts'],
+          })}
+        />
+      );
     case 'projects':
       return (
-        <CavaticaCounts projects={row[col].edges} title={title} hideIcon />
+        <CavaticaCounts
+          projects={row[col].edges}
+          title={title}
+          hideIcon
+          eventProperties={inherit => ({
+            scope: [...inherit.scope, 'CavaticaCounts'],
+            study: row,
+          })}
+        />
       );
+    // Are these depricated??
     case 'createdAt':
     case 'modifiedAt':
       return (
@@ -39,6 +65,13 @@ const TableValue = ({row, col, title}) => {
           to={`/study/${title}/basic-info/info`}
           onClick={e => e.stopPropagation()}
           className={row[col].missingValue > 0 ? 'text-red' : null}
+          {...buttonTracking({
+            button_text: `${trackedStudyFields.length -
+              row[col].missingValue}/${trackedStudyFields.length} complete`,
+            link: `/study/${title}/basic-info/info`,
+            study: row,
+            scope: [...inheritedEventProps.scope, 'StudyInfo'],
+          })}
         >
           {trackedStudyFields.length -
             row[col].missingValue +
@@ -59,6 +92,7 @@ const StudyTable = ({
   clickable = true,
   history,
   isAdmin,
+  tracking: {buttonTracking, inheritedEventProps},
 }) => {
   if (loading) {
     return <h2>loading studies</h2>;
@@ -137,12 +171,34 @@ const StudyTable = ({
             tabIndex="0"
             key={idx}
             onClick={() => {
-              if (clickable) history.push(`/study/${row.kfId}/documents`);
+              if (clickable) {
+                buttonTracking({
+                  button_text: row.name,
+                  button_tupe: 'table row',
+                  study: row,
+                  scope: [...inheritedEventProps.scope, 'Table.Row'],
+                  link: `/study/${row.kfId}/documents`,
+                }).onClick();
+                history.push(`/study/${row.kfId}/documents`);
+              }
             }}
+            onMouseOver={() =>
+              buttonTracking({
+                button_text: row.name,
+                study: row,
+                button_tupe: 'table row',
+                scope: [...inheritedEventProps.scope, 'Table.Row'],
+              }).onMouseOver()
+            }
           >
             {cols.map((col, idx) => (
               <Table.Cell key={idx}>
-                <TableValue row={row} col={col} title={row.kfId} />
+                <TableValue
+                  row={row}
+                  col={col}
+                  title={row.kfId}
+                  tracking={{inheritedEventProps, buttonTracking}}
+                />
               </Table.Cell>
             ))}
           </Table.Row>
@@ -152,4 +208,4 @@ const StudyTable = ({
   );
 };
 
-export default withRouter(StudyTable);
+export default withRouter(withAnalyticsTracking(StudyTable));
