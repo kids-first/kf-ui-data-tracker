@@ -13,7 +13,7 @@ const CavaticaCounts = ({
   projects,
   title,
   hideIcon,
-  tracking: {logEvent, inheritedEventProps},
+  tracking: {buttonTracking, popupTracking, logEvent, inheritedEventProps},
 }) => {
   const types = projects.map(({node: {projectType}}) => projectType);
   const typeCounts = types.reduce((count, type) => {
@@ -41,6 +41,13 @@ const CavaticaCounts = ({
           );
         }}
         className={hideIcon && projects.length === 0 ? 'text-red' : null}
+        {...buttonTracking({
+          button_text: `${
+            projects.length > 0 ? projects.length : 'No'
+          } projects`,
+          button_type: 'text link',
+          link: `/study/${title}/cavatica`,
+        })}
       >
         {!hideIcon && (
           <CavaticaLogo
@@ -62,7 +69,12 @@ const CavaticaCounts = ({
               content={type.text}
               key={type.key}
               trigger={
-                <List.Item>
+                <List.Item
+                  {...popupTracking({
+                    name: typeCounts[type.key],
+                    content: type.text,
+                  })}
+                >
                   <Label circular empty size="mini" color="olive" />{' '}
                   {typeCounts[type.key]}
                 </List.Item>
