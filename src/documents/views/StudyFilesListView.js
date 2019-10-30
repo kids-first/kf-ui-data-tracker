@@ -13,7 +13,10 @@ import {
   Button,
   Responsive,
 } from 'semantic-ui-react';
-
+import {
+  AnalyticsViewConsumer,
+  withAnalyticsTracking,
+} from '../../analyticsTracking';
 import UploadWizard from '../modals/UploadWizard/UploadWizard';
 
 /**
@@ -42,6 +45,43 @@ const StudyListSkeleton = () => (
 );
 
 /**
+ * wrap our upload button in withAnalyticsTracking HOC
+ * in-order to get proper event inheritance with
+ * AnalyticsViewConsumer
+ */
+const UploadDocumentsButton = withAnalyticsTracking(
+  ({onUpload, tracking: {buttonTracking}}) => (
+    <>
+      <Button
+        compact
+        primary
+        floated="right"
+        size="large"
+        icon="cloud upload"
+        labelPosition="left"
+        content="Upload Document"
+        as="label"
+        htmlFor="file"
+        {...buttonTracking({
+          button_text: 'Upload Document',
+        })}
+      />
+      <input
+        hidden
+        multiple
+        id="file"
+        type="file"
+        onChange={e => {
+          onUpload(e);
+          // setFile(e.target.files[0]);
+          // setDialog(true);
+        }}
+      />
+    </>
+  ),
+);
+
+/**
  * List and manage files in a study and allow a user to upload more
  */
 const StudyFilesListView = ({
@@ -51,6 +91,7 @@ const StudyFilesListView = ({
   },
   history,
   user,
+  tracking: {buttonTracking},
 }) => {
   const isAdmin =
     user && !user.loading ? user.myProfile.roles.includes('ADMIN') : false;
@@ -143,4 +184,5 @@ export default compose(
     options: props => ({variables: {kfId: props.match.params.kfId}}),
   }),
   graphql(MY_PROFILE, {name: 'user'}),
+  withAnalyticsTracking,
 )(StudyFilesListView);
