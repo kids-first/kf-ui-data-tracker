@@ -41,6 +41,41 @@ const StudyListSkeleton = () => (
 );
 
 /**
+ 
+ * in-order to get proper event inheritance with
+ * AnalyticsViewConsumer
+ */
+const UploadDocumentsButton = withAnalyticsTracking(({onUpload}) => (
+  <>
+    <Button
+      compact
+      primary
+      floated="right"
+      size="large"
+      icon="cloud upload"
+      labelPosition="left"
+      content="Upload Document"
+      as="label"
+      htmlFor="file"
+      {...buttonTracking({
+        button_text: 'Upload Document',
+      })}
+    />
+    <input
+      hidden
+      multiple
+      id="file"
+      type="file"
+      onChange={e => {
+        onUpload(e);
+        // setFile(e.target.files[0]);
+        // setDialog(true);
+      }}
+    />
+  </>
+));
+
+/**
  * List and manage files in a study and allow a user to upload more
  */
 const StudyFilesListView = ({
@@ -48,6 +83,7 @@ const StudyFilesListView = ({
     params: {kfId},
   },
   history,
+  user,
 }) => {
   const {loading, data, error} = useQuery(GET_STUDY_BY_ID, {
     variables: {
