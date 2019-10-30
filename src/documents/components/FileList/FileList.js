@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import FileElement from './FileElement';
 import ListFilterBar from '../ListFilterBar/ListFilterBar';
 import {fileLatestStatus} from '../../utilities';
+
 import {
   Header,
   Icon,
@@ -12,15 +13,33 @@ import {
   Table,
 } from 'semantic-ui-react';
 
+import {withAnalyticsTracking} from '../../../analyticsTracking';
+
 /**
  * Displays list of study files
  */
-const FileList = ({fileList, studyId, isAdmin}) => {
+const FileList = ({
+  fileList,
+  studyId,
+  isAdmin,
+  tracking: {logEvent, EVENT_CONSTANTS, inheritedEventProps},
+}) => {
   const perPage = 10;
   const [page, setPage] = useState(1);
   const [pageCount, setPageCount] = useState(1);
 
   const handlePageClick = (e, {activePage}) => {
+    e.persist();
+    logEvent(EVENT_CONSTANTS.MOUSE.CLICK, {
+      button_text: isNaN(e.target.innerHTML)
+        ? e.target.innerHTML.match(/chevron (left|right)/g)[0]
+        : e.target.innerHTML,
+      active_page: activePage,
+      button_type: 'pagination item',
+      page_count: pageCount,
+      per_page: perPage,
+      scope: [...inheritedEventProps.scope, 'Pagination'],
+    });
     setPage(activePage);
   };
 
@@ -121,4 +140,4 @@ FileList.defaultProps = {
   studyId: null,
 };
 
-export default FileList;
+export default withAnalyticsTracking(FileList);
