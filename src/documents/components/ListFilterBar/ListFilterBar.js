@@ -27,7 +27,7 @@ const ListFilterBar = ({
     buttonTracking,
     logEvent,
     inheritedEventProps: {scope: inheritedScope},
-    EVENT_CONSTANTS: {DROPDOWN: DD_EVENT},
+    EVENT_CONSTANTS: {DROPDOWN: DD_EVENT, INPUT},
   },
 }) => {
   const [sortMethod, setSortMethod] = useState('');
@@ -49,7 +49,7 @@ const ListFilterBar = ({
       logEvent(DD_EVENT.CLOSE, {
         placehodler: name,
         scope: [...inheritedScope, 'Dropdown'],
-        results: filteredList.length,
+        results_length: filteredList.length,
       });
     },
   });
@@ -328,7 +328,7 @@ const ListFilterBar = ({
                 value: versionState[value]
                   ? versionState[value].title
                   : 'cleared',
-                results: filteredList.length,
+                results_length: filteredList.length,
               });
               setApprovalFilterStatus(value);
             }}
@@ -347,7 +347,7 @@ const ListFilterBar = ({
                 value: versionState[value]
                   ? versionState[value].title
                   : 'cleared',
-                results: filteredList.length,
+                results_length: filteredList.length,
               });
               setTypeFilterStatus(value);
             }}
@@ -374,7 +374,7 @@ const ListFilterBar = ({
                 value: versionState[value]
                   ? versionState[value].title
                   : 'cleared',
-                results: filteredList.length,
+                results_length: filteredList.length,
               });
               setSortMethod(value);
             }}
@@ -393,14 +393,14 @@ const ListFilterBar = ({
               buttonTracking({
                 button_text: 'sort-direction-button',
                 direction: sortDirection,
-                results: filteredList.length,
+                results_length: filteredList.length,
               }).onClick();
             }}
             onMouseOver={() =>
               buttonTracking({
                 button_text: 'sort-direction-button',
                 direction: sortDirection,
-                results: filteredList.length,
+                results_length: filteredList.length,
               }).onMouseOver()
             }
           >
@@ -408,14 +408,19 @@ const ListFilterBar = ({
           </Button>
         </Segment>
         <Input
-          fluid
           icon="search"
           onChange={(e, {value}) => {
             setSearchString(value);
+            logEvent(INPUT.TEXT, {
+              input_name: 'StudyFileList Search',
+              value,
+              results: filteredList.length,
+            });
           }}
           value={searchString}
         />
       </Responsive>
+
       {filteredList(sortedFileList())}
     </>
   );
