@@ -10,6 +10,7 @@ import {
   Container,
   Segment,
   Button,
+  Responsive,
 } from 'semantic-ui-react';
 import UploadWizard from '../modals/UploadWizard/UploadWizard';
 
@@ -119,7 +120,9 @@ const StudyFilesListView = ({
         </Grid.Column>
       </Grid.Row>
       <Grid.Row centered>
-        <UploadContainer
+        <Responsive
+          as={UploadContainer}
+          minWidth={Responsive.onlyTablet.minWidth}
           handleUpload={file => {
             setFile(file);
             return !files.length
