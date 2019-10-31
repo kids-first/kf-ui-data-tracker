@@ -39,5 +39,5 @@ jobs:
       - run: |
           yarn add -D bundlesize
           yarn run bundlesize
-      - run: yarn test
+      - run: yarn test -w 1
       - run: yarn codecov
