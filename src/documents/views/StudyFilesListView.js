@@ -13,10 +13,7 @@ import {
   Button,
   Responsive,
 } from 'semantic-ui-react';
-import {
-  AnalyticsViewConsumer,
-  withAnalyticsTracking,
-} from '../../analyticsTracking';
+import {withAnalyticsTracking} from '../../analyticsTracking';
 import UploadWizard from '../modals/UploadWizard/UploadWizard';
 
 /**
@@ -91,7 +88,7 @@ const StudyFilesListView = ({
   },
   history,
   user,
-  tracking: {buttonTracking},
+  tracking: {buttonTracking, logEvent},
 }) => {
   const isAdmin =
     user && !user.loading ? user.myProfile.roles.includes('ADMIN') : false;
@@ -168,10 +165,18 @@ const StudyFilesListView = ({
           minWidth={Responsive.onlyTablet.minWidth}
           handleUpload={file => {
             setFile(file);
+
             return !files.length
               ? history.push('documents/new-document', {file})
               : setDialog(true);
           }}
+          eventProperties={inherit => ({
+            scope: 'StudyFilesListView',
+            study: {
+              kfid: studyByKfId ? studyByKfId.kfId : '',
+              files: studyByKfId ? studyByKfId.files.edges.length : '',
+            },
+          })}
         />
       </Grid.Row>
     </Grid>
