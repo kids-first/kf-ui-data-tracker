@@ -5,19 +5,22 @@ import {MemoryRouter} from 'react-router-dom';
 import {render, act, fireEvent, cleanup} from 'react-testing-library';
 import StudyFilesListView from '../StudyFilesListView';
 import {mocks} from '../../../../__mocks__/kf-api-study-creator/mocks';
+import {AnalyticsMockProvider} from '../../../analyticsTracking';
 
 afterEach(cleanup);
 
 it('renders correctly', async () => {
   const tree = render(
-    <MockedProvider mocks={mocks}>
-      <MemoryRouter initialEntries={['/study/SD_8WX8QQ06']}>
-        <StudyFilesListView
-          history={[]}
-          match={{params: {kfId: 'SD_8WX8QQ06'}}}
-        />
-      </MemoryRouter>
-    </MockedProvider>,
+    <AnalyticsMockProvider>
+      <MockedProvider mocks={mocks}>
+        <MemoryRouter initialEntries={['/study/SD_8WX8QQ06']}>
+          <StudyFilesListView
+            history={[]}
+            match={{params: {kfId: 'SD_8WX8QQ06'}}}
+          />
+        </MemoryRouter>
+      </MockedProvider>
+    </AnalyticsMockProvider>,
   );
   await wait(0);
 
@@ -30,14 +33,16 @@ it('renders correctly', async () => {
 
 it('deletes a file correctly', async () => {
   const tree = render(
-    <MockedProvider mocks={mocks}>
-      <MemoryRouter initialEntries={['/study/SD_8WX8QQ06']}>
-        <StudyFilesListView
-          history={[]}
-          match={{params: {kfId: 'SD_8WX8QQ06'}}}
-        />
-      </MemoryRouter>
-    </MockedProvider>,
+    <AnalyticsMockProvider>
+      <MockedProvider mocks={mocks}>
+        <MemoryRouter initialEntries={['/study/SD_8WX8QQ06']}>
+          <StudyFilesListView
+            history={[]}
+            match={{params: {kfId: 'SD_8WX8QQ06'}}}
+          />
+        </MemoryRouter>
+      </MockedProvider>
+    </AnalyticsMockProvider>,
   );
   await wait(0);
   expect(tree.container).toMatchSnapshot();
@@ -63,14 +68,16 @@ it('deletes a file correctly', async () => {
 
 it('shows an error', async () => {
   const tree = render(
-    <MockedProvider mocks={[mocks[2], mocks[8]]}>
-      <MemoryRouter initialEntries={['/study/SD_8WX8QQ06']}>
-        <StudyFilesListView
-          history={[]}
-          match={{params: {kfId: 'SD_8WX8QQ06'}}}
-        />
-      </MemoryRouter>
-    </MockedProvider>,
+    <AnalyticsMockProvider>
+      <MockedProvider mocks={[mocks[2], mocks[8]]}>
+        <MemoryRouter initialEntries={['/study/SD_8WX8QQ06']}>
+          <StudyFilesListView
+            history={[]}
+            match={{params: {kfId: 'SD_8WX8QQ06'}}}
+          />
+        </MemoryRouter>
+      </MockedProvider>
+    </AnalyticsMockProvider>,
   );
   await wait(0);
 

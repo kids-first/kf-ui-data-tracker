@@ -55,7 +55,6 @@ it('edits an existing file correctly', async () => {
 
   expect(tree.queryAllByText(/organization.jpeg/i).length).toBe(1);
   expect(tree.queryAllByText(/Approved/).length).toBe(1);
-  tree.debug();
 
   // Click on the first file's name to go to file detail page
   const fileName = tree.getByText(/organization.jpeg/i);
