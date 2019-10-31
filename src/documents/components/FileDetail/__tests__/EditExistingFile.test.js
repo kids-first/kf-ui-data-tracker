@@ -11,7 +11,7 @@ import {
 import Routes from '../../../../Routes';
 import {mocks} from '../../../../../__mocks__/kf-api-study-creator/mocks';
 import myProfile from '../../../../../__mocks__/kf-api-study-creator/responses/myProfile.json';
-
+import {AnalyticsMockProvider} from '../../../../analyticsTracking';
 jest.mock('auth0-js');
 
 beforeAll(() => {
@@ -34,18 +34,20 @@ beforeAll(() => {
 
 it('edits an existing file correctly', async () => {
   const tree = render(
-    <MockedProvider
-      resolvers={{
-        Query: {
-          myProfile: _ => myProfile.data.myProfile,
-        },
-      }}
-      mocks={mocks}
-    >
-      <MemoryRouter initialEntries={['/study/SD_8WX8QQ06/documents/']}>
-        <Routes />
-      </MemoryRouter>
-    </MockedProvider>,
+    <AnalyticsMockProvider>
+      <MockedProvider
+        resolvers={{
+          Query: {
+            myProfile: _ => myProfile.data.myProfile,
+          },
+        }}
+        mocks={mocks}
+      >
+        <MemoryRouter initialEntries={['/study/SD_8WX8QQ06/documents/']}>
+          <Routes />
+        </MemoryRouter>
+      </MockedProvider>
+    </AnalyticsMockProvider>,
   );
   await wait(10);
 
@@ -53,6 +55,7 @@ it('edits an existing file correctly', async () => {
 
   expect(tree.queryAllByText(/organization.jpeg/i).length).toBe(1);
   expect(tree.queryAllByText(/Approved/).length).toBe(1);
+  tree.debug();
 
   // Click on the first file's name to go to file detail page
   const fileName = tree.getByText(/organization.jpeg/i);
