@@ -16,10 +16,20 @@ import {
   defaultSort,
 } from '../../utilities';
 import {versionState, fileTypeDetail} from '../../../common/enums';
+import {withAnalyticsTracking} from '../../../analyticsTracking';
 /**
  * Filter Bar for Study Files, returns filtered list in "filteredList" render prop
  */
-const ListFilterBar = ({fileList, filteredList}) => {
+const ListFilterBar = ({
+  fileList,
+  filteredList,
+  tracking: {
+    buttonTracking,
+    logEvent,
+    inheritedEventProps: {scope: inheritedScope},
+    EVENT_CONSTANTS: {DROPDOWN: DD_EVENT},
+  },
+}) => {
   const [sortMethod, setSortMethod] = useState('');
   const [sortDirection, setSortDirection] = useState('ascending');
   const [typeFilterStatus, setTypeFilterStatus] = useState('');
@@ -27,6 +37,22 @@ const ListFilterBar = ({fileList, filteredList}) => {
   const [searchString, setSearchString] = useState('');
   const [showFilter, setShowFilter] = useState(false);
   const [showSort, setShowSort] = useState(false);
+
+  const dropdownTracking = ({name}) => ({
+    onOpen: () => {
+      logEvent(DD_EVENT.OPEN, {
+        placeholder: name,
+        scope: [...inheritedScope, 'Dropdown'],
+      });
+    },
+    onClose: () => {
+      logEvent(DD_EVENT.CLOSE, {
+        placehodler: name,
+        scope: [...inheritedScope, 'Dropdown'],
+        results: filteredList.length,
+      });
+    },
+  });
 
   const statusOptions = Object.keys(versionState).map(state => ({
     key: state,
@@ -296,8 +322,17 @@ const ListFilterBar = ({fileList, filteredList}) => {
             options={statusOptions}
             placeholder="Approval status"
             onChange={(e, {value}) => {
+              console.log(value);
+              logEvent(DD_EVENT.CHANGE, {
+                placehodler: 'Approval status',
+                value: versionState[value]
+                  ? versionState[value].title
+                  : 'cleared',
+                results: filteredList.length,
+              });
               setApprovalFilterStatus(value);
             }}
+            {...dropdownTracking({name: 'Approval Stauts'})}
           />
           <Dropdown
             selection
@@ -307,8 +342,16 @@ const ListFilterBar = ({fileList, filteredList}) => {
             options={typeOptions}
             placeholder="File type"
             onChange={(e, {value}) => {
+              logEvent(DD_EVENT.CHANGE, {
+                placehodler: 'File type',
+                value: versionState[value]
+                  ? versionState[value].title
+                  : 'cleared',
+                results: filteredList.length,
+              });
               setTypeFilterStatus(value);
             }}
+            {...dropdownTracking({name: 'File Type'})}
           />
         </Segment>
         <Segment
@@ -326,8 +369,16 @@ const ListFilterBar = ({fileList, filteredList}) => {
             options={sortOptions}
             placeholder="Date option"
             onChange={(e, {value}) => {
+              logEvent(DD_EVENT.CHANGE, {
+                placehodler: 'Date option',
+                value: versionState[value]
+                  ? versionState[value].title
+                  : 'cleared',
+                results: filteredList.length,
+              });
               setSortMethod(value);
             }}
+            {...dropdownTracking({name: 'Date option'})}
           />
           <Button
             icon
@@ -339,7 +390,19 @@ const ListFilterBar = ({fileList, filteredList}) => {
               } else {
                 setSortDirection('ascending');
               }
+              buttonTracking({
+                button_text: 'sort-direction-button',
+                direction: sortDirection,
+                results: filteredList.length,
+              }).onClick();
             }}
+            onMouseOver={() =>
+              buttonTracking({
+                button_text: 'sort-direction-button',
+                direction: sortDirection,
+                results: filteredList.length,
+              }).onMouseOver()
+            }
           >
             <Icon name={'sort content ' + sortDirection} />
           </Button>
@@ -369,4 +432,4 @@ ListFilterBar.defaultProps = {
   fileList: [],
 };
 
-export default ListFilterBar;
+export default withAnalyticsTracking(ListFilterBar);
