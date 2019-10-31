@@ -84,6 +84,7 @@ const MOUSE_EVENTS = ['HOVER', 'CLICK'];
 const analyticsTrackingConstants = {
   ...scope('INPUT', ['TEXT']),
   ...scope('MOUSE', MOUSE_EVENTS),
+  ...scope('DROPDOWN', ['CHANGE', 'BLUR', 'FOCUS', 'OPEN', 'CLOSE']),
   ...scope('AUTH', ['LOGIN', 'LOGOUT']),
   ...scope('PAGE', ['VIEW']),
   ...scope('MOUSE', MOUSE_EVENTS),

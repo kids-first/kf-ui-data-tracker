@@ -94,6 +94,10 @@ const FileList = ({
                 </Table>
               );
             }}
+            eventProperties={inherit => ({
+              scope: [...inherit.scope, 'ListFilterBar'],
+              study: {kfId: studyId},
+            })}
           />
         </>
       ) : (
