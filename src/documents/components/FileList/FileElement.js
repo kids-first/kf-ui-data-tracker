@@ -14,6 +14,7 @@ import {
 } from '../../utilities';
 import {fileTypeDetail} from '../../../common/enums';
 import {longDate} from '../../../common/dateUtils';
+import {withAnalyticsTracking} from '../../../analyticsTracking';
 
 const useRecentlyUpdated = (latestDate, fileId) => {
   const [justUpdated, setJustUpdated] = useState(false);
@@ -123,6 +124,12 @@ const FileElement = ({
   match,
   fileListId,
   isAdmin,
+  tracking: {
+    logEvent,
+    EVENT_CONSTANTS: {MOUSE},
+    inheritedEventProps,
+    buttonTracking,
+  },
 }) => {
   const fileKfID = fileNode.kfId || 'unknown ID';
   const fileName = fileNode.name || 'unknown file name';
@@ -138,14 +145,27 @@ const FileElement = ({
     sortedVersions.length > 0 ? sortedVersions[0].node.state : null;
 
   const justUpdated = useRecentlyUpdated(latestDate, fileKfID);
+
+  const fileTrackingObj = {
+    file_name: fileName,
+    file_type: fileType.title,
+    file_status: versionState,
+    file_versions: fileNode.versions.edges.length,
+    modified_at: latestDate,
+  };
   return (
     <Table.Row
       style={{backgroundColor: justUpdated ? '#f8ffff' : 'inherit'}}
       data-testid="file-item"
       className="cursor-pointer"
-      onClick={() =>
-        history.push(`/study/${match.params.kfId}/documents/${fileKfID}`)
-      }
+      onMouseOver={() => logEvent(MOUSE.HOVER, fileTrackingObj)}
+      onClick={() => {
+        logEvent(MOUSE.CLICK, {
+          ...fileTrackingObj,
+          link: `/study/${match.params.kfId}/documents/${fileKfID}`,
+        });
+        history.push(`/study/${match.params.kfId}/documents/${fileKfID}`);
+      }}
     >
       <Table.Cell textAlign="center">
         <Header>
@@ -155,12 +175,20 @@ const FileElement = ({
               <br />
             </>
           )}
-
-          <Badge
-            state={versionState}
-            loading={loading}
-            filled={versionState === 'CHN'}
-          />
+          <span
+            {...buttonTracking({
+              ...fileTrackingObj,
+              button_text: fileTrackingObj.file_status,
+              button_type: 'badge',
+              scope: [...inheritedEventProps.scope, 'Badge'],
+            })}
+          >
+            <Badge
+              state={versionState}
+              loading={loading}
+              filled={versionState === 'CHN'}
+            />
+          </span>
         </Header>
       </Table.Cell>
       <Table.Cell className="px-20">
@@ -226,4 +254,4 @@ FileList.defaultProps = {
   fileNode: null,
 };
 
-export default withRouter(FileElement);
+export default withRouter(withAnalyticsTracking(FileElement));
