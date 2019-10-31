@@ -49,7 +49,7 @@ const scope = (name, eventsList) => {
   let scopeOriginal = {
     scope: name.trim().toUpperCase(),
     ...events(
-      eventsList.map(e =>
+      (eventsList || []).map(e =>
         e
           .trim()
           .replace(' ', '_')
@@ -82,8 +82,10 @@ const MOUSE_EVENTS = ['HOVER', 'CLICK'];
  * analytics tracking constants object
  */
 const analyticsTrackingConstants = {
-  ...scope('INPUT', ['TEXT']),
   ...scope('MOUSE', MOUSE_EVENTS),
+  ...scope('INPUT', ['TEXT', 'FILE']),
+  ...scope('UPLOAD'),
+  ...scope('DRAG', ['OVER', 'ENTER', 'LEAVE', 'DROP']),
   ...scope('DROPDOWN', ['CHANGE', 'BLUR', 'FOCUS', 'OPEN', 'CLOSE']),
   ...scope('AUTH', ['LOGIN', 'LOGOUT']),
   ...scope('PAGE', ['VIEW']),
