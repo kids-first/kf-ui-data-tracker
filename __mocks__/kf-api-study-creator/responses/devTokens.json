@@ -1,0 +1,50 @@
+{
+  "data": {
+    "allDevTokens": {
+      "edges": [
+        {
+          "node": {
+            "id": "token1",
+            "name": "my token 1",
+            "createdAt": "2019-06-13T12:05:39.381525+00:00",
+            "token": "blahtestingtokenstringhere",
+            "creator": {
+              "username": "John",
+              "picture": "https://docs.atlassian.com/aui/8.3.1/docs/images/avatar-person.svg",
+              "__typename": "UserNode"
+            },
+            "__typename": "DevDownloadTokenNode"
+          },
+          "__typename": "DevDownloadTokenNodeEdge"
+        },
+        {
+          "node": {
+            "id": "token2",
+            "name": "my token 2",
+            "createdAt": "2019-06-13T12:05:39.381525+00:00",
+            "token": "test***********************",
+            "creator": {
+              "username": "John",
+              "picture": "https://docs.atlassian.com/aui/8.3.1/docs/images/avatar-person.svg",
+              "__typename": "UserNode"
+            },
+            "__typename": "DevDownloadTokenNode"
+          },
+          "__typename": "DevDownloadTokenNodeEdge"
+        },
+        {
+          "node": {
+            "id": "token3",
+            "name": "my token 3",
+            "createdAt": "2019-06-13T12:05:39.381525+00:00",
+            "token": "test***********************",
+            "creator": null,
+            "__typename": "DevDownloadTokenNode"
+          },
+          "__typename": "DevDownloadTokenNodeEdge"
+        }
+      ],
+      "__typename": "DevDownloadTokenNodeConnection"
+    }
+  }
+}

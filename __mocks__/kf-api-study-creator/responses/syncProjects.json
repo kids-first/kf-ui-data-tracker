@@ -1,0 +1,19 @@
+{
+  "data": {
+    "syncProjects": {
+      "updated": {
+        "edges": [],
+        "__typename": "ProjectNodeConnection"
+      },
+      "created": {
+        "edges": [],
+        "__typename": "ProjectNodeConnection"
+      },
+      "deleted": {
+        "edges": [],
+        "__typename": "ProjectNodeConnection"
+      },
+      "__typename": "SyncProjectsMutation"
+    }
+  }
+}

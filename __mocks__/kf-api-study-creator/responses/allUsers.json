@@ -1,0 +1,169 @@
+{
+  "data": {
+    "allUsers": {
+      "edges": [
+        {
+          "node": {
+            "id": "VXNlck5vZGU6MQ==",
+            "username": "Roger Swanson",
+            "__typename": "UserNode"
+          },
+          "__typename": "UserNodeEdge"
+        },
+        {
+          "node": {
+            "id": "VXNlck5vZGU6Mg==",
+            "username": "Justin Heath",
+            "__typename": "UserNode"
+          },
+          "__typename": "UserNodeEdge"
+        },
+        {
+          "node": {
+            "id": "VXNlck5vZGU6Mw==",
+            "username": "Charles Booker",
+            "__typename": "UserNode"
+          },
+          "__typename": "UserNodeEdge"
+        },
+        {
+          "node": {
+            "id": "VXNlck5vZGU6NA==",
+            "username": "Steven Morgan",
+            "__typename": "UserNode"
+          },
+          "__typename": "UserNodeEdge"
+        },
+        {
+          "node": {
+            "id": "VXNlck5vZGU6NQ==",
+            "username": "Elizabeth White",
+            "__typename": "UserNode"
+          },
+          "__typename": "UserNodeEdge"
+        },
+        {
+          "node": {
+            "id": "VXNlck5vZGU6Ng==",
+            "username": "Lisa Booker",
+            "__typename": "UserNode"
+          },
+          "__typename": "UserNodeEdge"
+        },
+        {
+          "node": {
+            "id": "VXNlck5vZGU6Nw==",
+            "username": "Brittany Olsen",
+            "__typename": "UserNode"
+          },
+          "__typename": "UserNodeEdge"
+        },
+        {
+          "node": {
+            "id": "VXNlck5vZGU6OA==",
+            "username": "Jeff Salazar",
+            "__typename": "UserNode"
+          },
+          "__typename": "UserNodeEdge"
+        },
+        {
+          "node": {
+            "id": "VXNlck5vZGU6OQ==",
+            "username": "Jennifer Cunningham",
+            "__typename": "UserNode"
+          },
+          "__typename": "UserNodeEdge"
+        },
+        {
+          "node": {
+            "id": "VXNlck5vZGU6MTA=",
+            "username": "Chris Farley",
+            "__typename": "UserNode"
+          },
+          "__typename": "UserNodeEdge"
+        },
+        {
+          "node": {
+            "id": "VXNlck5vZGU6MTE=",
+            "username": "Kelly Blackburn",
+            "__typename": "UserNode"
+          },
+          "__typename": "UserNodeEdge"
+        },
+        {
+          "node": {
+            "id": "VXNlck5vZGU6MTI=",
+            "username": "Bridget Alvarado",
+            "__typename": "UserNode"
+          },
+          "__typename": "UserNodeEdge"
+        },
+        {
+          "node": {
+            "id": "VXNlck5vZGU6MTM=",
+            "username": "Kristin Bond",
+            "__typename": "UserNode"
+          },
+          "__typename": "UserNodeEdge"
+        },
+        {
+          "node": {
+            "id": "VXNlck5vZGU6MTQ=",
+            "username": "Kendra Campbell",
+            "__typename": "UserNode"
+          },
+          "__typename": "UserNodeEdge"
+        },
+        {
+          "node": {
+            "id": "VXNlck5vZGU6MTU=",
+            "username": "Denise Moore",
+            "__typename": "UserNode"
+          },
+          "__typename": "UserNodeEdge"
+        },
+        {
+          "node": {
+            "id": "VXNlck5vZGU6MTY=",
+            "username": "Lisa Steele",
+            "__typename": "UserNode"
+          },
+          "__typename": "UserNodeEdge"
+        },
+        {
+          "node": {
+            "id": "VXNlck5vZGU6MTc=",
+            "username": "Katrina Torres",
+            "__typename": "UserNode"
+          },
+          "__typename": "UserNodeEdge"
+        },
+        {
+          "node": {
+            "id": "VXNlck5vZGU6MTg=",
+            "username": "Frank Johnson",
+            "__typename": "UserNode"
+          },
+          "__typename": "UserNodeEdge"
+        },
+        {
+          "node": {
+            "id": "VXNlck5vZGU6MTk=",
+            "username": "Jason Norman",
+            "__typename": "UserNode"
+          },
+          "__typename": "UserNodeEdge"
+        },
+        {
+          "node": {
+            "id": "VXNlck5vZGU6MjA=",
+            "username": "devadmin",
+            "__typename": "UserNode"
+          },
+          "__typename": "UserNodeEdge"
+        }
+      ],
+      "__typename": "UserNodeConnection"
+    }
+  }
+}

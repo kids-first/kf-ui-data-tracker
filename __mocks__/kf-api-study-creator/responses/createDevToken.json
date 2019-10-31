@@ -1,0 +1,19 @@
+{
+  "data": {
+    "createDevToken": {
+      "token": {
+        "id": "token4",
+        "name": "my token 4",
+        "createdAt": "2019-09-13T12:05:39.381525+00:00",
+        "token": "blahtestingtokenstringher4",
+        "creator": {
+          "username": "John",
+          "picture": "https://docs.atlassian.com/aui/8.3.1/docs/images/avatar-person.svg",
+          "__typename": "UserNode"
+        },
+        "__typename": "DevDownloadTokenNode"
+      },
+      "__typename": "DevDownloadTokenMutation"
+    }
+  }
+}

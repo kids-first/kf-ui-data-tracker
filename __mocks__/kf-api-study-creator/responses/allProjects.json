@@ -1,0 +1,61 @@
+{
+  "data": {
+    "allProjects": {
+      "edges": [
+        {
+          "node": {
+            "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtNjJ3YjN5NjQtZ2F0ay1oYXBsb3R5cGVjYWxsZXI=",
+            "createdBy": "zhux3",
+            "createdOn": "2019-10-29T15:14:45+00:00",
+            "description": "",
+            "modifiedOn": "2019-10-29T15:14:45+00:00",
+            "name": "repurpose bricks-and-clicks bandwidth gatk-haplotypecaller",
+            "projectId": "zhux3/sd-62wb3y64-gatk-haplotypecaller",
+            "projectType": "HAR",
+            "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-62wb3y64-gatk-haplotypecaller",
+            "workflowType": "gatk_haplotypecaller",
+            "deleted": false,
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEXzYyV0IzWTY0",
+              "name": "repurpose bricks-and-clicks bandwidth",
+              "shortName": null,
+              "kfId": "SD_8WX8QQ06",
+              "createdAt": "2019-06-07T00:54:49+00:00",
+              "modifiedAt": "2019-10-29T14:51:36.021941+00:00",
+              "__typename": "StudyNode"
+            },
+            "__typename": "ProjectNode"
+          },
+          "__typename": "ProjectNodeEdge"
+        },
+        {
+          "node": {
+            "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtNjJ3YjN5NjQtYndhLW1lbQ==",
+            "createdBy": "zhux3",
+            "createdOn": "2019-10-29T15:14:25+00:00",
+            "description": "",
+            "modifiedOn": "2019-10-29T15:14:25+00:00",
+            "name": "repurpose bricks-and-clicks bandwidth bwa-mem",
+            "projectId": "zhux3/sd-62wb3y64-bwa-mem",
+            "projectType": "DEL",
+            "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-62wb3y64-bwa-mem",
+            "workflowType": "bwa_mem",
+            "deleted": false,
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEXzYyV0IzWTY0",
+              "name": "repurpose bricks-and-clicks bandwidth",
+              "shortName": null,
+              "kfId": "SD_8WX8QQ06",
+              "createdAt": "2019-06-07T00:54:49+00:00",
+              "modifiedAt": "2019-10-29T14:51:36.021941+00:00",
+              "__typename": "StudyNode"
+            },
+            "__typename": "ProjectNode"
+          },
+          "__typename": "ProjectNodeEdge"
+        }
+      ],
+      "__typename": "ProjectNodeConnection"
+    }
+  }
+}
