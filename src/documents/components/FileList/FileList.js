@@ -56,6 +56,9 @@ const FileList = ({fileList, studyId, isAdmin}) => {
                         fileListId={studyId}
                         fileNode={node}
                         isAdmin={isAdmin}
+                        eventProperties={inherit => ({
+                          scope: [...inherit.scope, 'FileElement'],
+                        })}
                       />
                     ))}
                   </Table.Body>
