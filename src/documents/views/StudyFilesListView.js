@@ -13,6 +13,7 @@ import {
   Button,
   Responsive,
 } from 'semantic-ui-react';
+import {withAnalyticsTracking} from '../../analyticsTracking';
 import UploadWizard from '../modals/UploadWizard/UploadWizard';
 
 /**
@@ -84,6 +85,7 @@ const StudyFilesListView = ({
   },
   history,
   user,
+  tracking: {buttonTracking, logEvent},
 }) => {
   const {loading, data, error} = useQuery(GET_STUDY_BY_ID, {
     variables: {
@@ -184,14 +186,22 @@ const StudyFilesListView = ({
           minWidth={Responsive.onlyTablet.minWidth}
           handleUpload={file => {
             setFile(file);
+
             return !files.length
               ? history.push('documents/new-document', {file})
               : setDialog(true);
           }}
+          eventProperties={inherit => ({
+            scope: 'StudyFilesListView',
+            study: {
+              kfid: studyByKfId ? studyByKfId.kfId : '',
+              files: studyByKfId ? studyByKfId.files.edges.length : '',
+            },
+          })}
         />
       </Grid.Row>
     </Grid>
   );
 };
 
-export default StudyFilesListView;
+export default withAnalyticsTracking(StudyFilesListView);

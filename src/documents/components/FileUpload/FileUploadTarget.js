@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Button, Header, Icon, Segment, Message} from 'semantic-ui-react';
+import {withAnalyticsTracking} from '../../../analyticsTracking';
 
 const FileUploadTarget = props => {
   const {
@@ -11,14 +12,18 @@ const FileUploadTarget = props => {
     handleDragEnter,
     handleDragLeave,
     handleDrop,
+    tracking: {
+      instrument,
+      EVENT_CONSTANTS: {DRAG},
+    },
   } = props;
 
   return (
     <form
       onDragOver={handleDragOver}
-      onDragEnter={handleDragEnter}
-      onDragLeave={handleDragLeave}
-      onDrop={handleDrop}
+      onDragEnter={instrument(DRAG.ENTER, handleDragEnter)}
+      onDragLeave={instrument(DRAG.LEAVE, handleDragLeave)}
+      onDrop={instrument(DRAG.DROP, handleDrop)}
     >
       <Segment piled placeholder>
         {instructions ? (
@@ -78,4 +83,4 @@ FileUploadTarget.defaultProps = {
 /**
  * @component
  */
-export default FileUploadTarget;
+export default withAnalyticsTracking(FileUploadTarget);
