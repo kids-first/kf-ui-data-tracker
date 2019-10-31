@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`redirect user back to login view when there is no auth data 1`] = `
+<div>
+  <div
+    class="ui stretched center aligned middle aligned grid View--Login"
+  >
+    <div
+      class="eight wide computer fifteen wide mobile twelve wide tablet column"
+    >
+      <div
+        class="ui placeholder segment"
+      >
+        <div
+          class="ui active transition visible inverted dimmer"
+          style="display: flex;"
+        >
+          <div
+            class="content"
+          >
+            <div
+              class="ui huge inverted text loader"
+            >
+              <h2
+                class="ui header mt-6 mb-15"
+              >
+                Kids First Data Tracker
+              </h2>
+              Redirecing you to the login page...
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
