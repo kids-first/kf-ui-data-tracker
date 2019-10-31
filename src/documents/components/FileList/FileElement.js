@@ -205,7 +205,7 @@ const FileElement = ({
         />
         <Responsive
           as={FileActionsContainer}
-          maxWidth={Responsive.onlyTablet.minWidth}
+          maxWidth={Responsive.onlyTablet.minWidth - 1}
           node={fileNode}
           studyId={fileListId}
           vertical={false}

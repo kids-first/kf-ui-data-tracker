@@ -46,7 +46,7 @@ const FileActionButtons = ({
           />
         }
       />
-      {deleteFile && (
+      {deleteFile && vertical && (
         <Popup
           trigger={
             <Button
