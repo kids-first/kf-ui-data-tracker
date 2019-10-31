@@ -3490,9 +3490,7 @@ exports[`renders correctly 1`] = `
 </div>
 `;
 
-exports[`shows an error 1`] = `<div />`;
-
-exports[`shows an error 2`] = `
+exports[`shows an error 1`] = `
 <div>
   <div
     class="ui basic segment ui container"
