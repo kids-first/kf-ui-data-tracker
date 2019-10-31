@@ -44,6 +44,7 @@ const FormField = ({
           readOnly={readOnly}
           type={type}
           name={id}
+          aria-label={id}
           placeholder={placeholder}
           open={focused}
           onChange={handleChange}

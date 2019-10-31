@@ -1,0 +1,4739 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders new study view correctly --  with error on submit 1`] = `
+<body
+  class=""
+>
+  <div
+    class="ui large top attached menu"
+  >
+    <div
+      class="ui container"
+    >
+      <div
+        class="item"
+      >
+        <img
+          alt="Kids First logo"
+          src="test-file-stub"
+        />
+      </div>
+      <a
+        aria-current="page"
+        class="header item"
+        href="/"
+      >
+        Data Tracker
+      </a>
+      <a
+        class="item"
+        href="/"
+      >
+        Studies
+      </a>
+      <div
+        class="right menu"
+      >
+        <div
+          aria-expanded="false"
+          class="ui dropdown link item"
+          role="listbox"
+          tabindex="0"
+        >
+          Admin
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          >
+            <a
+              class="item"
+              href="/tokens"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="key icon"
+              />
+              Developer Tokens
+            </a>
+            <a
+              class="item"
+              href="/cavatica-projects"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="folder open icon"
+              />
+              Cavatica Projects
+            </a>
+            <a
+              class="item"
+              href="/events"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="history icon"
+              />
+              Event Log
+            </a>
+          </div>
+        </div>
+        <div
+          aria-expanded="false"
+          class="ui dropdown link item"
+          role="listbox"
+          tabindex="0"
+        >
+          <img
+            alt="bendolly"
+            class="ui avatar image"
+            src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
+          />
+          bendolly
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          >
+            <a
+              class="item"
+              href="/profile"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="user icon"
+              />
+              Profile
+            </a>
+            <a
+              class="item"
+              href="/logout"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="log out icon"
+              />
+              Logout
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ui basic vertical segment ui container"
+  >
+    <div
+      class="ui basic vertical segment ui container"
+      style=""
+    >
+      <h3
+        class="ui header"
+      >
+        Tell us about your new study
+      </h3>
+      <p
+        class="text-wrap-75"
+      >
+        We'll setup a new study for you by registering it in the Kids First system and initializing all the necessary systems. You can come after the study has been created to make changes at any time.
+      </p>
+    </div>
+    <div
+      class="ui icon negative message"
+    >
+      <i
+        aria-hidden="true"
+        class="attention icon"
+      />
+      <div
+        class="content"
+      >
+        <div
+          class="header"
+        >
+          Error
+        </div>
+        <p>
+          Network error: Failed to create the new study
+        </p>
+      </div>
+    </div>
+    <div
+      class="ui fluid top attached three steps"
+    >
+      <a
+        class="link step"
+      >
+        <i
+          aria-hidden="true"
+          class="info circular icon"
+        />
+        <div
+          class="content"
+        >
+          <div
+            class="title"
+          >
+            Info
+          </div>
+          <div
+            class="description"
+          >
+            General Study Details
+          </div>
+        </div>
+      </a>
+      <a
+        class="link step"
+      >
+        <i
+          aria-hidden="true"
+          class="disk circular icon"
+        />
+        <div
+          class="content"
+        >
+          <div
+            class="title"
+          >
+            External
+          </div>
+          <div
+            class="description"
+          >
+            For dbGaP project
+          </div>
+        </div>
+      </a>
+      <a
+        class="active link step"
+      >
+        <i
+          aria-hidden="true"
+          class="calendar check circular icon"
+        />
+        <div
+          class="content"
+        >
+          <div
+            class="title"
+          >
+            Logistics
+          </div>
+          <div
+            class="description"
+          >
+            Scheduling & Collection
+          </div>
+        </div>
+      </a>
+    </div>
+    <div
+      class="ui clearing attached padded segment"
+    >
+      <form
+        class="ui form"
+      >
+        <h4
+          class="ui header text-wrap-75"
+        >
+          Provide details about the Kids First grant that this study was awarded.
+        </h4>
+        <div
+          class="field"
+        >
+          <label
+            class="noMargin"
+          >
+            Release Date
+            :
+          </label>
+          <p
+            class="noMargin"
+          >
+            <small>
+              The anticipated date on which this study's data will be made public in Kids First.
+            </small>
+          </p>
+          <div
+            class="ui fluid input noMargin"
+          >
+            <input
+              aria-label="releaseDate"
+              name="releaseDate"
+              type="date"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="field"
+        >
+          <label
+            class="noMargin"
+          >
+            Number of anticipated samples
+            :
+          </label>
+          <p
+            class="noMargin"
+          >
+            <small>
+              The anticipated number of samples awarded for sequencing for the study.
+            </small>
+          </p>
+          <div
+            class="ui fluid input noMargin"
+          >
+            <input
+              aria-label="anticipatedSamples"
+              name="anticipatedSamples"
+              type="number"
+              value="0"
+            />
+          </div>
+        </div>
+        <div
+          class="field"
+        >
+          <label
+            class="noMargin"
+          >
+            Awardee organization
+            :
+          </label>
+          <p
+            class="noMargin"
+          >
+            <small>
+              The organization responsible for this study.
+            </small>
+          </p>
+          <div
+            class="ui fluid input noMargin"
+          >
+            <input
+              aria-label="awardeeOrganization"
+              name="awardeeOrganization"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="field"
+        >
+          <label
+            class="noMargin"
+          >
+            Description
+            :
+          </label>
+          <p
+            class="noMargin"
+          >
+            <small>
+              Study description in markdown, commonly the X01 abstract text.
+            </small>
+          </p>
+          <div
+            class="field noMargin"
+          >
+            <textarea
+              name="description"
+              rows="15"
+              type="text"
+            />
+          </div>
+        </div>
+        <button
+          class="ui icon left floated left labeled button"
+          type="button"
+        >
+          <i
+            aria-hidden="true"
+            class="left arrow icon"
+          />
+          PREVIOUS
+        </button>
+        <button
+          class="ui primary disabled right floated button"
+          disabled=""
+          tabindex="-1"
+          type="button"
+        >
+          SUBMIT
+        </button>
+      </form>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`renders new study view correctly 1`] = `
+<body>
+  <div
+    class="ui large top attached menu"
+  >
+    <div
+      class="ui container"
+    >
+      <div
+        class="item"
+      >
+        <img
+          alt="Kids First logo"
+          src="test-file-stub"
+        />
+      </div>
+      <a
+        aria-current="page"
+        class="header item"
+        href="/"
+      >
+        Data Tracker
+      </a>
+      <a
+        class="item"
+        href="/"
+      >
+        Studies
+      </a>
+      <div
+        class="right menu"
+      >
+        <div
+          aria-expanded="false"
+          class="ui dropdown link item"
+          role="listbox"
+          tabindex="0"
+        >
+          Admin
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          >
+            <a
+              class="item"
+              href="/tokens"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="key icon"
+              />
+              Developer Tokens
+            </a>
+            <a
+              class="item"
+              href="/cavatica-projects"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="folder open icon"
+              />
+              Cavatica Projects
+            </a>
+            <a
+              class="item"
+              href="/events"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="history icon"
+              />
+              Event Log
+            </a>
+          </div>
+        </div>
+        <div
+          aria-expanded="false"
+          class="ui dropdown link item"
+          role="listbox"
+          tabindex="0"
+        >
+          <img
+            alt="bendolly"
+            class="ui avatar image"
+            src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
+          />
+          bendolly
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          >
+            <a
+              class="item"
+              href="/profile"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="user icon"
+              />
+              Profile
+            </a>
+            <a
+              class="item"
+              href="/logout"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="log out icon"
+              />
+              Logout
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ui basic vertical segment ui container"
+  >
+    <div
+      class="ui basic vertical segment ui container"
+    >
+      <h3
+        class="ui header"
+      >
+        Tell us about your new study
+      </h3>
+      <p
+        class="text-wrap-75"
+      >
+        We'll setup a new study for you by registering it in the Kids First system and initializing all the necessary systems. You can come after the study has been created to make changes at any time.
+      </p>
+    </div>
+    <div
+      class="ui fluid top attached three steps"
+    >
+      <a
+        class="active link step"
+      >
+        <i
+          aria-hidden="true"
+          class="info circular icon"
+        />
+        <div
+          class="content"
+        >
+          <div
+            class="title"
+          >
+            Info
+          </div>
+          <div
+            class="description"
+          >
+            General Study Details
+          </div>
+        </div>
+      </a>
+      <a
+        class="link step"
+      >
+        <i
+          aria-hidden="true"
+          class="disk circular icon"
+        />
+        <div
+          class="content"
+        >
+          <div
+            class="title"
+          >
+            External
+          </div>
+          <div
+            class="description"
+          >
+            For dbGaP project
+          </div>
+        </div>
+      </a>
+      <a
+        class="link step"
+      >
+        <i
+          aria-hidden="true"
+          class="calendar check circular icon"
+        />
+        <div
+          class="content"
+        >
+          <div
+            class="title"
+          >
+            Logistics
+          </div>
+          <div
+            class="description"
+          >
+            Scheduling & Collection
+          </div>
+        </div>
+      </a>
+    </div>
+    <div
+      class="ui clearing attached padded segment"
+    >
+      <form
+        class="ui form"
+      >
+        <h4
+          class="ui header text-wrap-75"
+        >
+          Please provide the study's full name and a shortened version that may be used for display purposes.
+        </h4>
+        <div
+          class="required field"
+        >
+          <label
+            class="noMargin"
+          >
+            Study Name
+            :
+          </label>
+          <p
+            class="noMargin"
+          >
+            <small>
+              Full name of the study, often the full title of the X01 grant application.
+            </small>
+          </p>
+          <div
+            class="ui fluid input noMargin"
+          >
+            <input
+              aria-label="name"
+              name="name"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="field"
+        >
+          <label
+            class="noMargin"
+          >
+            Study Short Name
+            :
+          </label>
+          <p
+            class="noMargin"
+          >
+            <small>
+              The name that will appear under portal facets.
+            </small>
+          </p>
+          <div
+            class="ui fluid input noMargin"
+          >
+            <input
+              aria-label="shortName"
+              name="shortName"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="field"
+        >
+          <label
+            class="noMargin"
+          >
+            Cavatica Projects
+            :
+          </label>
+          <p
+            class="noMargin"
+          >
+            <small>
+              Workflow projects to be instantiated for the new study.
+            </small>
+          </p>
+          <div
+            aria-expanded="false"
+            aria-multiselectable="true"
+            class="ui fluid multiple selection dropdown"
+            id="workflowType"
+            name="workflowType"
+            role="listbox"
+            tabindex="0"
+          >
+            <a
+              class="ui label"
+              value="bwa_mem"
+            >
+              bwa_mem
+              <i
+                aria-hidden="true"
+                class="delete icon"
+              />
+            </a>
+            <a
+              class="ui label"
+              value="gatk_haplotypecaller"
+            >
+              GATK Haplotypecaller
+              <i
+                aria-hidden="true"
+                class="delete icon"
+              />
+            </a>
+            <div
+              aria-live="polite"
+              class="text"
+              role="alert"
+            />
+            <i
+              aria-hidden="true"
+              class="dropdown icon clear"
+            />
+            <div
+              class="menu transition"
+            >
+              <div
+                aria-checked="false"
+                aria-selected="true"
+                class="selected item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  bwa_mem_bqsr
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  star_2_pass
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  GATK Genotypgvcf
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  GATK GenotypeGVCF VQSR
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  Strelka2 Somatic Mode
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  MuTect2 Somatic Mode
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  MuTect2 Tumor Only Mode
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  VarDict Single Sample Mode
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  VarDict Paired Sample Mode
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  Control FREEC Somatic Mode
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  Control FREEC Germline Mode
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  StringTie Expression
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  Manta Somatic
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  Manta Germline
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  LUMPY Somatic
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  LUMPY Germline
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  RSEM
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  Kallisto
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  Star Fusion
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  Arriba
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  peddy
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="ui icon right floated right labeled button"
+          type="button"
+        >
+          <i
+            aria-hidden="true"
+            class="right arrow icon"
+          />
+          NEXT
+        </button>
+        <button
+          class="ui primary disabled right floated button"
+          disabled=""
+          tabindex="-1"
+          type="button"
+        >
+          SUBMIT
+        </button>
+      </form>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`renders new study view correctly 2`] = `
+<body>
+  <div
+    class="ui large top attached menu"
+  >
+    <div
+      class="ui container"
+    >
+      <div
+        class="item"
+      >
+        <img
+          alt="Kids First logo"
+          src="test-file-stub"
+        />
+      </div>
+      <a
+        aria-current="page"
+        class="header item"
+        href="/"
+      >
+        Data Tracker
+      </a>
+      <a
+        class="item"
+        href="/"
+      >
+        Studies
+      </a>
+      <div
+        class="right menu"
+      >
+        <div
+          aria-expanded="false"
+          class="ui dropdown link item"
+          role="listbox"
+          tabindex="0"
+        >
+          Admin
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          >
+            <a
+              class="item"
+              href="/tokens"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="key icon"
+              />
+              Developer Tokens
+            </a>
+            <a
+              class="item"
+              href="/cavatica-projects"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="folder open icon"
+              />
+              Cavatica Projects
+            </a>
+            <a
+              class="item"
+              href="/events"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="history icon"
+              />
+              Event Log
+            </a>
+          </div>
+        </div>
+        <div
+          aria-expanded="false"
+          class="ui dropdown link item"
+          role="listbox"
+          tabindex="0"
+        >
+          <img
+            alt="bendolly"
+            class="ui avatar image"
+            src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
+          />
+          bendolly
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          >
+            <a
+              class="item"
+              href="/profile"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="user icon"
+              />
+              Profile
+            </a>
+            <a
+              class="item"
+              href="/logout"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="log out icon"
+              />
+              Logout
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ui basic vertical segment ui container"
+  >
+    <div
+      class="ui basic vertical segment ui container"
+    >
+      <h3
+        class="ui header"
+      >
+        Tell us about your new study
+      </h3>
+      <p
+        class="text-wrap-75"
+      >
+        We'll setup a new study for you by registering it in the Kids First system and initializing all the necessary systems. You can come after the study has been created to make changes at any time.
+      </p>
+    </div>
+    <div
+      class="ui fluid top attached three steps"
+    >
+      <a
+        class="active link step"
+      >
+        <i
+          aria-hidden="true"
+          class="info circular icon"
+        />
+        <div
+          class="content"
+        >
+          <div
+            class="title"
+          >
+            Info
+          </div>
+          <div
+            class="description"
+          >
+            General Study Details
+          </div>
+        </div>
+      </a>
+      <a
+        class="link step"
+      >
+        <i
+          aria-hidden="true"
+          class="disk circular icon"
+        />
+        <div
+          class="content"
+        >
+          <div
+            class="title"
+          >
+            External
+          </div>
+          <div
+            class="description"
+          >
+            For dbGaP project
+          </div>
+        </div>
+      </a>
+      <a
+        class="link step"
+      >
+        <i
+          aria-hidden="true"
+          class="calendar check circular icon"
+        />
+        <div
+          class="content"
+        >
+          <div
+            class="title"
+          >
+            Logistics
+          </div>
+          <div
+            class="description"
+          >
+            Scheduling & Collection
+          </div>
+        </div>
+      </a>
+    </div>
+    <div
+      class="ui clearing attached padded segment"
+    >
+      <form
+        class="ui form"
+      >
+        <h4
+          class="ui header text-wrap-75"
+        >
+          Please provide the study's full name and a shortened version that may be used for display purposes.
+        </h4>
+        <div
+          class="required field"
+        >
+          <label
+            class="noMargin"
+          >
+            Study Name
+            :
+          </label>
+          <p
+            class="noMargin"
+          >
+            <small>
+              Full name of the study, often the full title of the X01 grant application.
+            </small>
+          </p>
+          <div
+            class="ui fluid input noMargin"
+          >
+            <input
+              aria-label="name"
+              name="name"
+              type="text"
+              value="benchmark extensible e-business"
+            />
+          </div>
+        </div>
+        <div
+          class="field"
+        >
+          <label
+            class="noMargin"
+          >
+            Study Short Name
+            :
+          </label>
+          <p
+            class="noMargin"
+          >
+            <small>
+              The name that will appear under portal facets.
+            </small>
+          </p>
+          <div
+            class="ui fluid input noMargin"
+          >
+            <input
+              aria-label="shortName"
+              name="shortName"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="field"
+        >
+          <label
+            class="noMargin"
+          >
+            Cavatica Projects
+            :
+          </label>
+          <p
+            class="noMargin"
+          >
+            <small>
+              Workflow projects to be instantiated for the new study.
+            </small>
+          </p>
+          <div
+            aria-expanded="false"
+            aria-multiselectable="true"
+            class="ui fluid multiple selection dropdown"
+            id="workflowType"
+            name="workflowType"
+            role="listbox"
+            tabindex="0"
+          >
+            <a
+              class="ui label"
+              value="bwa_mem"
+            >
+              bwa_mem
+              <i
+                aria-hidden="true"
+                class="delete icon"
+              />
+            </a>
+            <a
+              class="ui label"
+              value="gatk_haplotypecaller"
+            >
+              GATK Haplotypecaller
+              <i
+                aria-hidden="true"
+                class="delete icon"
+              />
+            </a>
+            <div
+              aria-live="polite"
+              class="text"
+              role="alert"
+            />
+            <i
+              aria-hidden="true"
+              class="dropdown icon clear"
+            />
+            <div
+              class="menu transition"
+            >
+              <div
+                aria-checked="false"
+                aria-selected="true"
+                class="selected item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  bwa_mem_bqsr
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  star_2_pass
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  GATK Genotypgvcf
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  GATK GenotypeGVCF VQSR
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  Strelka2 Somatic Mode
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  MuTect2 Somatic Mode
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  MuTect2 Tumor Only Mode
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  VarDict Single Sample Mode
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  VarDict Paired Sample Mode
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  Control FREEC Somatic Mode
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  Control FREEC Germline Mode
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  StringTie Expression
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  Manta Somatic
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  Manta Germline
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  LUMPY Somatic
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  LUMPY Germline
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  RSEM
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  Kallisto
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  Star Fusion
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  Arriba
+                </span>
+              </div>
+              <div
+                aria-checked="false"
+                aria-selected="false"
+                class="item"
+                role="option"
+                style="pointer-events: all;"
+              >
+                <span
+                  class="text"
+                >
+                  peddy
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="ui icon right floated right labeled button"
+          type="button"
+        >
+          <i
+            aria-hidden="true"
+            class="right arrow icon"
+          />
+          NEXT
+        </button>
+        <button
+          class="ui primary disabled right floated button"
+          disabled=""
+          tabindex="-1"
+          type="button"
+        >
+          SUBMIT
+        </button>
+      </form>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`renders new study view correctly 3`] = `
+<body>
+  <div
+    class="ui large top attached menu"
+  >
+    <div
+      class="ui container"
+    >
+      <div
+        class="item"
+      >
+        <img
+          alt="Kids First logo"
+          src="test-file-stub"
+        />
+      </div>
+      <a
+        aria-current="page"
+        class="header item"
+        href="/"
+      >
+        Data Tracker
+      </a>
+      <a
+        class="item"
+        href="/"
+      >
+        Studies
+      </a>
+      <div
+        class="right menu"
+      >
+        <div
+          aria-expanded="false"
+          class="ui dropdown link item"
+          role="listbox"
+          tabindex="0"
+        >
+          Admin
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          >
+            <a
+              class="item"
+              href="/tokens"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="key icon"
+              />
+              Developer Tokens
+            </a>
+            <a
+              class="item"
+              href="/cavatica-projects"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="folder open icon"
+              />
+              Cavatica Projects
+            </a>
+            <a
+              class="item"
+              href="/events"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="history icon"
+              />
+              Event Log
+            </a>
+          </div>
+        </div>
+        <div
+          aria-expanded="false"
+          class="ui dropdown link item"
+          role="listbox"
+          tabindex="0"
+        >
+          <img
+            alt="bendolly"
+            class="ui avatar image"
+            src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
+          />
+          bendolly
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          >
+            <a
+              class="item"
+              href="/profile"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="user icon"
+              />
+              Profile
+            </a>
+            <a
+              class="item"
+              href="/logout"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="log out icon"
+              />
+              Logout
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ui basic vertical segment ui container"
+  >
+    <div
+      class="ui basic vertical segment ui container"
+    >
+      <h3
+        class="ui header"
+      >
+        Tell us about your new study
+      </h3>
+      <p
+        class="text-wrap-75"
+      >
+        We'll setup a new study for you by registering it in the Kids First system and initializing all the necessary systems. You can come after the study has been created to make changes at any time.
+      </p>
+    </div>
+    <div
+      class="ui fluid top attached three steps"
+    >
+      <a
+        class="link step"
+      >
+        <i
+          aria-hidden="true"
+          class="info circular icon"
+        />
+        <div
+          class="content"
+        >
+          <div
+            class="title"
+          >
+            Info
+          </div>
+          <div
+            class="description"
+          >
+            General Study Details
+          </div>
+        </div>
+      </a>
+      <a
+        class="active link step"
+      >
+        <i
+          aria-hidden="true"
+          class="disk circular icon"
+        />
+        <div
+          class="content"
+        >
+          <div
+            class="title"
+          >
+            External
+          </div>
+          <div
+            class="description"
+          >
+            For dbGaP project
+          </div>
+        </div>
+      </a>
+      <a
+        class="link step"
+      >
+        <i
+          aria-hidden="true"
+          class="calendar check circular icon"
+        />
+        <div
+          class="content"
+        >
+          <div
+            class="title"
+          >
+            Logistics
+          </div>
+          <div
+            class="description"
+          >
+            Scheduling & Collection
+          </div>
+        </div>
+      </a>
+    </div>
+    <div
+      class="ui clearing attached padded segment"
+    >
+      <form
+        class="ui form"
+      >
+        <h4
+          class="ui header text-wrap-75"
+        >
+          If the study is a dbGaP project, additional information is needed to ensure access is granted correctly. For non-dbGaP studies, an external identifier which this study may otherwise be known by is required.
+        </h4>
+        <div
+          class="required field"
+        >
+          <label
+            class="noMargin"
+          >
+            External ID
+            :
+          </label>
+          <p
+            class="noMargin"
+          >
+            <small>
+              Identifier used by external systems, often the PHS ID if the study is registered with dbGaP.
+            </small>
+          </p>
+          <div
+            class="ui fluid input noMargin"
+          >
+            <input
+              aria-label="externalId"
+              name="externalId"
+              placeholder="Example: phs000178"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="field"
+        >
+          <label
+            class="noMargin"
+          >
+            dbGaP Version
+            :
+          </label>
+          <p
+            class="noMargin"
+          >
+            <small>
+              Study version, often the provided by the data access authority.
+            </small>
+          </p>
+          <div
+            class="ui fluid input noMargin"
+          >
+            <input
+              aria-label="version"
+              name="version"
+              placeholder="Example: v1.p1"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="field"
+        >
+          <label
+            class="noMargin"
+          >
+            Attribution
+            :
+          </label>
+          <p
+            class="noMargin"
+          >
+            <small>
+              The URL providing more information about the study.
+            </small>
+          </p>
+          <div
+            class="ui fluid input noMargin"
+          >
+            <input
+              aria-label="attribution"
+              name="attribution"
+              placeholder=""
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <button
+          class="ui icon left floated left labeled button"
+          type="button"
+        >
+          <i
+            aria-hidden="true"
+            class="left arrow icon"
+          />
+          PREVIOUS
+        </button>
+        <button
+          class="ui icon right floated right labeled button"
+          type="button"
+        >
+          <i
+            aria-hidden="true"
+            class="right arrow icon"
+          />
+          NEXT
+        </button>
+        <button
+          class="ui primary disabled right floated button"
+          disabled=""
+          tabindex="-1"
+          type="button"
+        >
+          SUBMIT
+        </button>
+      </form>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`renders new study view correctly 4`] = `
+<body>
+  <div
+    class="ui large top attached menu"
+  >
+    <div
+      class="ui container"
+    >
+      <div
+        class="item"
+      >
+        <img
+          alt="Kids First logo"
+          src="test-file-stub"
+        />
+      </div>
+      <a
+        aria-current="page"
+        class="header item"
+        href="/"
+      >
+        Data Tracker
+      </a>
+      <a
+        class="item"
+        href="/"
+      >
+        Studies
+      </a>
+      <div
+        class="right menu"
+      >
+        <div
+          aria-expanded="false"
+          class="ui dropdown link item"
+          role="listbox"
+          tabindex="0"
+        >
+          Admin
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          >
+            <a
+              class="item"
+              href="/tokens"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="key icon"
+              />
+              Developer Tokens
+            </a>
+            <a
+              class="item"
+              href="/cavatica-projects"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="folder open icon"
+              />
+              Cavatica Projects
+            </a>
+            <a
+              class="item"
+              href="/events"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="history icon"
+              />
+              Event Log
+            </a>
+          </div>
+        </div>
+        <div
+          aria-expanded="false"
+          class="ui dropdown link item"
+          role="listbox"
+          tabindex="0"
+        >
+          <img
+            alt="bendolly"
+            class="ui avatar image"
+            src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
+          />
+          bendolly
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          >
+            <a
+              class="item"
+              href="/profile"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="user icon"
+              />
+              Profile
+            </a>
+            <a
+              class="item"
+              href="/logout"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="log out icon"
+              />
+              Logout
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ui basic vertical segment ui container"
+  >
+    <div
+      class="ui basic vertical segment ui container"
+    >
+      <h3
+        class="ui header"
+      >
+        Tell us about your new study
+      </h3>
+      <p
+        class="text-wrap-75"
+      >
+        We'll setup a new study for you by registering it in the Kids First system and initializing all the necessary systems. You can come after the study has been created to make changes at any time.
+      </p>
+    </div>
+    <div
+      class="ui fluid top attached three steps"
+    >
+      <a
+        class="link step"
+      >
+        <i
+          aria-hidden="true"
+          class="info circular icon"
+        />
+        <div
+          class="content"
+        >
+          <div
+            class="title"
+          >
+            Info
+          </div>
+          <div
+            class="description"
+          >
+            General Study Details
+          </div>
+        </div>
+      </a>
+      <a
+        class="active link step"
+      >
+        <i
+          aria-hidden="true"
+          class="disk circular icon"
+        />
+        <div
+          class="content"
+        >
+          <div
+            class="title"
+          >
+            External
+          </div>
+          <div
+            class="description"
+          >
+            For dbGaP project
+          </div>
+        </div>
+      </a>
+      <a
+        class="link step"
+      >
+        <i
+          aria-hidden="true"
+          class="calendar check circular icon"
+        />
+        <div
+          class="content"
+        >
+          <div
+            class="title"
+          >
+            Logistics
+          </div>
+          <div
+            class="description"
+          >
+            Scheduling & Collection
+          </div>
+        </div>
+      </a>
+    </div>
+    <div
+      class="ui clearing attached padded segment"
+    >
+      <form
+        class="ui form"
+      >
+        <h4
+          class="ui header text-wrap-75"
+        >
+          If the study is a dbGaP project, additional information is needed to ensure access is granted correctly. For non-dbGaP studies, an external identifier which this study may otherwise be known by is required.
+        </h4>
+        <div
+          class="required field"
+        >
+          <label
+            class="noMargin"
+          >
+            External ID
+            :
+          </label>
+          <p
+            class="noMargin"
+          >
+            <small>
+              Identifier used by external systems, often the PHS ID if the study is registered with dbGaP.
+            </small>
+          </p>
+          <div
+            class="ui fluid input noMargin"
+          >
+            <input
+              aria-label="externalId"
+              name="externalId"
+              placeholder="Example: phs000178"
+              type="text"
+              value="benchmark extensible e-business"
+            />
+          </div>
+        </div>
+        <div
+          class="field"
+        >
+          <label
+            class="noMargin"
+          >
+            dbGaP Version
+            :
+          </label>
+          <p
+            class="noMargin"
+          >
+            <small>
+              Study version, often the provided by the data access authority.
+            </small>
+          </p>
+          <div
+            class="ui fluid input noMargin"
+          >
+            <input
+              aria-label="version"
+              name="version"
+              placeholder="Example: v1.p1"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="field"
+        >
+          <label
+            class="noMargin"
+          >
+            Attribution
+            :
+          </label>
+          <p
+            class="noMargin"
+          >
+            <small>
+              The URL providing more information about the study.
+            </small>
+          </p>
+          <div
+            class="ui fluid input noMargin"
+          >
+            <input
+              aria-label="attribution"
+              name="attribution"
+              placeholder=""
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <button
+          class="ui icon left floated left labeled button"
+          type="button"
+        >
+          <i
+            aria-hidden="true"
+            class="left arrow icon"
+          />
+          PREVIOUS
+        </button>
+        <button
+          class="ui icon right floated right labeled button"
+          type="button"
+        >
+          <i
+            aria-hidden="true"
+            class="right arrow icon"
+          />
+          NEXT
+        </button>
+        <button
+          class="ui primary right floated button"
+          type="button"
+        >
+          SUBMIT
+        </button>
+      </form>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`renders new study view correctly 5`] = `
+<body>
+  <div
+    class="ui large top attached menu"
+  >
+    <div
+      class="ui container"
+    >
+      <div
+        class="item"
+      >
+        <img
+          alt="Kids First logo"
+          src="test-file-stub"
+        />
+      </div>
+      <a
+        aria-current="page"
+        class="header item"
+        href="/"
+      >
+        Data Tracker
+      </a>
+      <a
+        class="item"
+        href="/"
+      >
+        Studies
+      </a>
+      <div
+        class="right menu"
+      >
+        <div
+          aria-expanded="false"
+          class="ui dropdown link item"
+          role="listbox"
+          tabindex="0"
+        >
+          Admin
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          >
+            <a
+              class="item"
+              href="/tokens"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="key icon"
+              />
+              Developer Tokens
+            </a>
+            <a
+              class="item"
+              href="/cavatica-projects"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="folder open icon"
+              />
+              Cavatica Projects
+            </a>
+            <a
+              class="item"
+              href="/events"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="history icon"
+              />
+              Event Log
+            </a>
+          </div>
+        </div>
+        <div
+          aria-expanded="false"
+          class="ui dropdown link item"
+          role="listbox"
+          tabindex="0"
+        >
+          <img
+            alt="bendolly"
+            class="ui avatar image"
+            src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
+          />
+          bendolly
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          >
+            <a
+              class="item"
+              href="/profile"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="user icon"
+              />
+              Profile
+            </a>
+            <a
+              class="item"
+              href="/logout"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="log out icon"
+              />
+              Logout
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ui basic vertical segment ui container"
+  >
+    <div
+      class="ui basic vertical segment ui container"
+    >
+      <h3
+        class="ui header"
+      >
+        Tell us about your new study
+      </h3>
+      <p
+        class="text-wrap-75"
+      >
+        We'll setup a new study for you by registering it in the Kids First system and initializing all the necessary systems. You can come after the study has been created to make changes at any time.
+      </p>
+    </div>
+    <div
+      class="ui fluid top attached three steps"
+    >
+      <a
+        class="link step"
+      >
+        <i
+          aria-hidden="true"
+          class="info circular icon"
+        />
+        <div
+          class="content"
+        >
+          <div
+            class="title"
+          >
+            Info
+          </div>
+          <div
+            class="description"
+          >
+            General Study Details
+          </div>
+        </div>
+      </a>
+      <a
+        class="link step"
+      >
+        <i
+          aria-hidden="true"
+          class="disk circular icon"
+        />
+        <div
+          class="content"
+        >
+          <div
+            class="title"
+          >
+            External
+          </div>
+          <div
+            class="description"
+          >
+            For dbGaP project
+          </div>
+        </div>
+      </a>
+      <a
+        class="active link step"
+      >
+        <i
+          aria-hidden="true"
+          class="calendar check circular icon"
+        />
+        <div
+          class="content"
+        >
+          <div
+            class="title"
+          >
+            Logistics
+          </div>
+          <div
+            class="description"
+          >
+            Scheduling & Collection
+          </div>
+        </div>
+      </a>
+    </div>
+    <div
+      class="ui clearing attached padded segment"
+    >
+      <form
+        class="ui form"
+      >
+        <h4
+          class="ui header text-wrap-75"
+        >
+          Provide details about the Kids First grant that this study was awarded.
+        </h4>
+        <div
+          class="field"
+        >
+          <label
+            class="noMargin"
+          >
+            Release Date
+            :
+          </label>
+          <p
+            class="noMargin"
+          >
+            <small>
+              The anticipated date on which this study's data will be made public in Kids First.
+            </small>
+          </p>
+          <div
+            class="ui fluid input noMargin"
+          >
+            <input
+              aria-label="releaseDate"
+              name="releaseDate"
+              type="date"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="field"
+        >
+          <label
+            class="noMargin"
+          >
+            Number of anticipated samples
+            :
+          </label>
+          <p
+            class="noMargin"
+          >
+            <small>
+              The anticipated number of samples awarded for sequencing for the study.
+            </small>
+          </p>
+          <div
+            class="ui fluid input noMargin"
+          >
+            <input
+              aria-label="anticipatedSamples"
+              name="anticipatedSamples"
+              type="number"
+              value="0"
+            />
+          </div>
+        </div>
+        <div
+          class="field"
+        >
+          <label
+            class="noMargin"
+          >
+            Awardee organization
+            :
+          </label>
+          <p
+            class="noMargin"
+          >
+            <small>
+              The organization responsible for this study.
+            </small>
+          </p>
+          <div
+            class="ui fluid input noMargin"
+          >
+            <input
+              aria-label="awardeeOrganization"
+              name="awardeeOrganization"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="field"
+        >
+          <label
+            class="noMargin"
+          >
+            Description
+            :
+          </label>
+          <p
+            class="noMargin"
+          >
+            <small>
+              Study description in markdown, commonly the X01 abstract text.
+            </small>
+          </p>
+          <div
+            class="field noMargin"
+          >
+            <textarea
+              name="description"
+              rows="15"
+              type="text"
+            />
+          </div>
+        </div>
+        <button
+          class="ui icon left floated left labeled button"
+          type="button"
+        >
+          <i
+            aria-hidden="true"
+            class="left arrow icon"
+          />
+          PREVIOUS
+        </button>
+        <button
+          class="ui primary right floated button"
+          type="button"
+        >
+          SUBMIT
+        </button>
+      </form>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`renders new study view correctly 6`] = `
+<body
+  class="dimmable dimmed"
+>
+  <div
+    class="ui large top attached menu"
+  >
+    <div
+      class="ui container"
+    >
+      <div
+        class="item"
+      >
+        <img
+          alt="Kids First logo"
+          src="test-file-stub"
+        />
+      </div>
+      <a
+        aria-current="page"
+        class="header item"
+        href="/"
+      >
+        Data Tracker
+      </a>
+      <a
+        class="item"
+        href="/"
+      >
+        Studies
+      </a>
+      <div
+        class="right menu"
+      >
+        <div
+          aria-expanded="false"
+          class="ui dropdown link item"
+          role="listbox"
+          tabindex="0"
+        >
+          Admin
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          >
+            <a
+              class="item"
+              href="/tokens"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="key icon"
+              />
+              Developer Tokens
+            </a>
+            <a
+              class="item"
+              href="/cavatica-projects"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="folder open icon"
+              />
+              Cavatica Projects
+            </a>
+            <a
+              class="item"
+              href="/events"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="history icon"
+              />
+              Event Log
+            </a>
+          </div>
+        </div>
+        <div
+          aria-expanded="false"
+          class="ui dropdown link item"
+          role="listbox"
+          tabindex="0"
+        >
+          <img
+            alt="bendolly"
+            class="ui avatar image"
+            src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
+          />
+          bendolly
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          >
+            <a
+              class="item"
+              href="/profile"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="user icon"
+              />
+              Profile
+            </a>
+            <a
+              class="item"
+              href="/logout"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="log out icon"
+              />
+              Logout
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ui basic vertical segment ui container"
+  >
+    <div
+      class="ui basic vertical segment ui container"
+    >
+      <h3
+        class="ui header"
+      >
+        Tell us about your new study
+      </h3>
+      <p
+        class="text-wrap-75"
+      >
+        We'll setup a new study for you by registering it in the Kids First system and initializing all the necessary systems. You can come after the study has been created to make changes at any time.
+      </p>
+    </div>
+    <div
+      class="ui fluid top attached three steps"
+    >
+      <a
+        class="link step"
+      >
+        <i
+          aria-hidden="true"
+          class="info circular icon"
+        />
+        <div
+          class="content"
+        >
+          <div
+            class="title"
+          >
+            Info
+          </div>
+          <div
+            class="description"
+          >
+            General Study Details
+          </div>
+        </div>
+      </a>
+      <a
+        class="link step"
+      >
+        <i
+          aria-hidden="true"
+          class="disk circular icon"
+        />
+        <div
+          class="content"
+        >
+          <div
+            class="title"
+          >
+            External
+          </div>
+          <div
+            class="description"
+          >
+            For dbGaP project
+          </div>
+        </div>
+      </a>
+      <a
+        class="active link step"
+      >
+        <i
+          aria-hidden="true"
+          class="calendar check circular icon"
+        />
+        <div
+          class="content"
+        >
+          <div
+            class="title"
+          >
+            Logistics
+          </div>
+          <div
+            class="description"
+          >
+            Scheduling & Collection
+          </div>
+        </div>
+      </a>
+    </div>
+    <div
+      class="ui clearing attached padded segment"
+    >
+      <form
+        class="ui form"
+      >
+        <h4
+          class="ui header text-wrap-75"
+        >
+          Provide details about the Kids First grant that this study was awarded.
+        </h4>
+        <div
+          class="field"
+        >
+          <label
+            class="noMargin"
+          >
+            Release Date
+            :
+          </label>
+          <p
+            class="noMargin"
+          >
+            <small>
+              The anticipated date on which this study's data will be made public in Kids First.
+            </small>
+          </p>
+          <div
+            class="ui fluid input noMargin"
+          >
+            <input
+              aria-label="releaseDate"
+              name="releaseDate"
+              type="date"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="field"
+        >
+          <label
+            class="noMargin"
+          >
+            Number of anticipated samples
+            :
+          </label>
+          <p
+            class="noMargin"
+          >
+            <small>
+              The anticipated number of samples awarded for sequencing for the study.
+            </small>
+          </p>
+          <div
+            class="ui fluid input noMargin"
+          >
+            <input
+              aria-label="anticipatedSamples"
+              name="anticipatedSamples"
+              type="number"
+              value="0"
+            />
+          </div>
+        </div>
+        <div
+          class="field"
+        >
+          <label
+            class="noMargin"
+          >
+            Awardee organization
+            :
+          </label>
+          <p
+            class="noMargin"
+          >
+            <small>
+              The organization responsible for this study.
+            </small>
+          </p>
+          <div
+            class="ui fluid input noMargin"
+          >
+            <input
+              aria-label="awardeeOrganization"
+              name="awardeeOrganization"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="field"
+        >
+          <label
+            class="noMargin"
+          >
+            Description
+            :
+          </label>
+          <p
+            class="noMargin"
+          >
+            <small>
+              Study description in markdown, commonly the X01 abstract text.
+            </small>
+          </p>
+          <div
+            class="field noMargin"
+          >
+            <textarea
+              name="description"
+              rows="15"
+              type="text"
+            />
+          </div>
+        </div>
+        <button
+          class="ui icon left floated left labeled button"
+          type="button"
+        >
+          <i
+            aria-hidden="true"
+            class="left arrow icon"
+          />
+          PREVIOUS
+        </button>
+        <button
+          class="ui primary right floated button"
+          type="button"
+        >
+          SUBMIT
+        </button>
+      </form>
+    </div>
+  </div>
+  <div
+    class="ui page modals dimmer transition visible active"
+    style="display: flex;"
+  >
+    <div
+      class="ui small modal transition visible active"
+    >
+      <div
+        class="header"
+      >
+        Create Study
+      </div>
+      <div
+        class="ui basic padded segment ui container"
+      >
+        <p>
+          The following resources will be created for this study
+        </p>
+        <div
+          class="ui bulleted list"
+          role="list"
+        >
+          <div
+            class="item"
+            role="listitem"
+          >
+            Dataservice study
+          </div>
+          <div
+            class="item"
+            role="listitem"
+          >
+            S3 bucket
+          </div>
+          <div
+            class="item"
+            role="listitem"
+          >
+            Cavatica delivery project
+          </div>
+          <div
+            class="item"
+            role="listitem"
+          >
+            Cavatica harmonization projects
+            <div
+              class="list"
+            >
+              <div
+                class="item"
+                role="listitem"
+              >
+                bwa_mem
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                GATK Haplotypecaller
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="actions"
+      >
+        <button
+          class="ui button"
+        >
+          Cancel
+        </button>
+        <button
+          class="ui primary right floated button"
+          data-testid="new-study-confirm"
+          type="submit"
+        >
+          SUBMIT
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`renders new study view correctly 7`] = `
+<body
+  class="dimmable dimmed"
+>
+  <div
+    class="ui large top attached menu"
+  >
+    <div
+      class="ui container"
+    >
+      <div
+        class="item"
+      >
+        <img
+          alt="Kids First logo"
+          src="test-file-stub"
+        />
+      </div>
+      <a
+        aria-current="page"
+        class="header item"
+        href="/"
+      >
+        Data Tracker
+      </a>
+      <a
+        class="item"
+        href="/"
+      >
+        Studies
+      </a>
+      <div
+        class="right menu"
+      >
+        <div
+          aria-expanded="false"
+          class="ui dropdown link item"
+          role="listbox"
+          tabindex="0"
+        >
+          Admin
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          >
+            <a
+              class="item"
+              href="/tokens"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="key icon"
+              />
+              Developer Tokens
+            </a>
+            <a
+              class="item"
+              href="/cavatica-projects"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="folder open icon"
+              />
+              Cavatica Projects
+            </a>
+            <a
+              class="item"
+              href="/events"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="history icon"
+              />
+              Event Log
+            </a>
+          </div>
+        </div>
+        <div
+          aria-expanded="false"
+          class="ui dropdown link item"
+          role="listbox"
+          tabindex="0"
+        >
+          <img
+            alt="bendolly"
+            class="ui avatar image"
+            src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
+          />
+          bendolly
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          >
+            <a
+              class="item"
+              href="/profile"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="user icon"
+              />
+              Profile
+            </a>
+            <a
+              class="item"
+              href="/logout"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="log out icon"
+              />
+              Logout
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ui basic vertical segment ui container"
+  >
+    <div
+      class="ui basic vertical segment ui container"
+    >
+      <h3
+        class="ui header"
+      >
+        Tell us about your new study
+      </h3>
+      <p
+        class="text-wrap-75"
+      >
+        We'll setup a new study for you by registering it in the Kids First system and initializing all the necessary systems. You can come after the study has been created to make changes at any time.
+      </p>
+    </div>
+    <div
+      class="ui fluid top attached three steps"
+    >
+      <a
+        class="link step"
+      >
+        <i
+          aria-hidden="true"
+          class="info circular icon"
+        />
+        <div
+          class="content"
+        >
+          <div
+            class="title"
+          >
+            Info
+          </div>
+          <div
+            class="description"
+          >
+            General Study Details
+          </div>
+        </div>
+      </a>
+      <a
+        class="link step"
+      >
+        <i
+          aria-hidden="true"
+          class="disk circular icon"
+        />
+        <div
+          class="content"
+        >
+          <div
+            class="title"
+          >
+            External
+          </div>
+          <div
+            class="description"
+          >
+            For dbGaP project
+          </div>
+        </div>
+      </a>
+      <a
+        class="active link step"
+      >
+        <i
+          aria-hidden="true"
+          class="calendar check circular icon"
+        />
+        <div
+          class="content"
+        >
+          <div
+            class="title"
+          >
+            Logistics
+          </div>
+          <div
+            class="description"
+          >
+            Scheduling & Collection
+          </div>
+        </div>
+      </a>
+    </div>
+    <div
+      class="ui clearing attached padded segment"
+    >
+      <form
+        class="ui form"
+      >
+        <h4
+          class="ui header text-wrap-75"
+        >
+          Provide details about the Kids First grant that this study was awarded.
+        </h4>
+        <div
+          class="field"
+        >
+          <label
+            class="noMargin"
+          >
+            Release Date
+            :
+          </label>
+          <p
+            class="noMargin"
+          >
+            <small>
+              The anticipated date on which this study's data will be made public in Kids First.
+            </small>
+          </p>
+          <div
+            class="ui fluid input noMargin"
+          >
+            <input
+              aria-label="releaseDate"
+              name="releaseDate"
+              type="date"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="field"
+        >
+          <label
+            class="noMargin"
+          >
+            Number of anticipated samples
+            :
+          </label>
+          <p
+            class="noMargin"
+          >
+            <small>
+              The anticipated number of samples awarded for sequencing for the study.
+            </small>
+          </p>
+          <div
+            class="ui fluid input noMargin"
+          >
+            <input
+              aria-label="anticipatedSamples"
+              name="anticipatedSamples"
+              type="number"
+              value="0"
+            />
+          </div>
+        </div>
+        <div
+          class="field"
+        >
+          <label
+            class="noMargin"
+          >
+            Awardee organization
+            :
+          </label>
+          <p
+            class="noMargin"
+          >
+            <small>
+              The organization responsible for this study.
+            </small>
+          </p>
+          <div
+            class="ui fluid input noMargin"
+          >
+            <input
+              aria-label="awardeeOrganization"
+              name="awardeeOrganization"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="field"
+        >
+          <label
+            class="noMargin"
+          >
+            Description
+            :
+          </label>
+          <p
+            class="noMargin"
+          >
+            <small>
+              Study description in markdown, commonly the X01 abstract text.
+            </small>
+          </p>
+          <div
+            class="field noMargin"
+          >
+            <textarea
+              name="description"
+              rows="15"
+              type="text"
+            />
+          </div>
+        </div>
+        <button
+          class="ui icon left floated left labeled button"
+          type="button"
+        >
+          <i
+            aria-hidden="true"
+            class="left arrow icon"
+          />
+          PREVIOUS
+        </button>
+        <button
+          class="ui primary right floated button"
+          type="button"
+        >
+          SUBMIT
+        </button>
+      </form>
+    </div>
+  </div>
+  <div
+    class="ui page modals dimmer transition visible active"
+    style="display: flex;"
+  >
+    <div
+      class="ui small modal transition visible active"
+    >
+      <div
+        class="header"
+      >
+        Create Study
+      </div>
+      <div
+        class="ui basic padded segment ui container"
+      >
+        <p>
+          The following resources will be created for this study
+        </p>
+        <div
+          class="ui bulleted list"
+          role="list"
+        >
+          <div
+            class="item"
+            role="listitem"
+          >
+            Dataservice study
+          </div>
+          <div
+            class="item"
+            role="listitem"
+          >
+            S3 bucket
+          </div>
+          <div
+            class="item"
+            role="listitem"
+          >
+            Cavatica delivery project
+          </div>
+          <div
+            class="item"
+            role="listitem"
+          >
+            Cavatica harmonization projects
+            <div
+              class="list"
+            >
+              <div
+                class="item"
+                role="listitem"
+              >
+                bwa_mem
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                GATK Haplotypecaller
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="actions"
+      >
+        <button
+          class="ui button"
+        >
+          Cancel
+        </button>
+        <button
+          class="ui loading primary right floated button"
+          data-testid="new-study-confirm"
+          type="submit"
+        >
+          SUBMIT
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`renders new study view correctly 8`] = `
+<body
+  class=""
+>
+  <div
+    class="ui large top attached menu"
+  >
+    <div
+      class="ui container"
+    >
+      <div
+        class="item"
+      >
+        <img
+          alt="Kids First logo"
+          src="test-file-stub"
+        />
+      </div>
+      <a
+        aria-current="page"
+        class="header item"
+        href="/"
+      >
+        Data Tracker
+      </a>
+      <a
+        class="item"
+        href="/"
+      >
+        Studies
+      </a>
+      <div
+        class="right menu"
+      >
+        <div
+          aria-expanded="false"
+          class="ui dropdown link item"
+          role="listbox"
+          tabindex="0"
+        >
+          Admin
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          >
+            <a
+              class="item"
+              href="/tokens"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="key icon"
+              />
+              Developer Tokens
+            </a>
+            <a
+              class="item"
+              href="/cavatica-projects"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="folder open icon"
+              />
+              Cavatica Projects
+            </a>
+            <a
+              class="item"
+              href="/events"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="history icon"
+              />
+              Event Log
+            </a>
+          </div>
+        </div>
+        <div
+          aria-expanded="false"
+          class="ui dropdown link item"
+          role="listbox"
+          tabindex="0"
+        >
+          <img
+            alt="bendolly"
+            class="ui avatar image"
+            src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
+          />
+          bendolly
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          >
+            <a
+              class="item"
+              href="/profile"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="user icon"
+              />
+              Profile
+            </a>
+            <a
+              class="item"
+              href="/logout"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="log out icon"
+              />
+              Logout
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section
+    id="study"
+  >
+    <div
+      class="ui basic secondary segment"
+    >
+      <div
+        class="ui container"
+      >
+        <h1
+          class="ui header"
+        >
+          benchmark extensible e-business
+        </h1>
+        <button
+          class="ui tiny basic icon button"
+        >
+          <i
+            aria-hidden="true"
+            class="copy icon"
+          />
+          SD_8WX8QQ06
+        </button>
+      </div>
+    </div>
+    <div
+      class="ui container"
+    >
+      <div
+        class="ui pink pointing secondary menu"
+      >
+        <a
+          class="item"
+          href="/study/SD_8WX8QQ06/basic-info/info"
+        >
+          Basic Info
+          <div
+            class="ui blue mini label"
+          >
+            BETA
+          </div>
+        </a>
+        <a
+          class="item"
+          href="/study/SD_8WX8QQ06/dashboard"
+        >
+          Dashboard
+        </a>
+        <a
+          aria-current="page"
+          class="active item active"
+          href="/study/SD_8WX8QQ06/documents"
+        >
+          Documents
+        </a>
+        <a
+          class="item"
+          href="/study/SD_8WX8QQ06/cavatica"
+        >
+          Cavatica
+        </a>
+        <a
+          class="item"
+          href="/study/SD_8WX8QQ06/logs"
+        >
+          Logs
+        </a>
+      </div>
+    </div>
+  </section>
+  <div
+    class="ui basic segment ui container one column grid"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="ten wide column"
+      >
+        <h2>
+          Study Documents
+        </h2>
+      </div>
+      <div
+        class="six wide column"
+      >
+        <label
+          class="ui large compact icon primary right floated left labeled button"
+          for="file"
+          role="button"
+        >
+          <i
+            aria-hidden="true"
+            class="cloud upload icon"
+          />
+          Upload Document
+        </label>
+        <input
+          hidden=""
+          id="file"
+          multiple=""
+          type="file"
+        />
+      </div>
+    </div>
+    <div
+      class="row"
+    >
+      <div
+        class="sixteen wide column"
+      >
+        <section
+          class="noPadding"
+        >
+          <div
+            class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
+          >
+            <span
+              class="smallLabel"
+            >
+              Filter by:
+            </span>
+            <div
+              aria-expanded="false"
+              class="ui selection dropdown"
+              role="listbox"
+              tabindex="0"
+            >
+              <div
+                aria-live="polite"
+                class="default text"
+                role="alert"
+              >
+                Approval status
+              </div>
+              <i
+                aria-hidden="true"
+                class="dropdown icon"
+              />
+              <div
+                class="menu transition"
+              >
+                <div
+                  aria-checked="false"
+                  aria-selected="true"
+                  class="selected item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <div
+                    class="ui orange tiny basic label text"
+                  >
+                    Pending review
+                  </div>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <div
+                    class="ui teal tiny basic label text"
+                  >
+                    Approved
+                  </div>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <div
+                    class="ui red tiny basic label text"
+                  >
+                    Changes needed
+                  </div>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <div
+                    class="ui blue tiny basic label text"
+                  >
+                    Processed
+                  </div>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <div
+                    class="ui blue tiny basic label text"
+                  >
+                    Updated
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
+          >
+            <div
+              aria-expanded="false"
+              class="ui selection dropdown"
+              role="listbox"
+              tabindex="0"
+            >
+              <div
+                aria-live="polite"
+                class="default text"
+                role="alert"
+              >
+                File type
+              </div>
+              <i
+                aria-hidden="true"
+                class="dropdown icon"
+              />
+              <div
+                class="menu transition"
+              >
+                <div
+                  aria-checked="false"
+                  aria-selected="true"
+                  class="selected item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <small
+                    class="text"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="shipping icon"
+                    />
+                     Shipping Manifest
+                  </small>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <small
+                    class="text"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="hospital icon"
+                    />
+                     Clinical/Phenotype Data
+                  </small>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <small
+                    class="text"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="dna icon"
+                    />
+                     Sequencing Manifest
+                  </small>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <small
+                    class="text"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="question icon"
+                    />
+                     Other
+                  </small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
+          >
+            <span
+              class="smallLabel"
+            >
+              Sorted by:
+            </span>
+            <div
+              aria-expanded="false"
+              class="ui selection dropdown"
+              role="listbox"
+              tabindex="0"
+            >
+              <div
+                aria-live="polite"
+                class="default text"
+                role="alert"
+              >
+                Date option
+              </div>
+              <i
+                aria-hidden="true"
+                class="dropdown icon"
+              />
+              <div
+                class="menu transition"
+              >
+                <div
+                  aria-checked="false"
+                  aria-selected="true"
+                  class="selected item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <span
+                    class="text"
+                  >
+                    Create date
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <span
+                    class="text"
+                  >
+                    Modified date
+                  </span>
+                </div>
+              </div>
+            </div>
+            <button
+              class="ui basic icon button"
+              data-testid="sort-direction-button"
+            >
+              <i
+                aria-hidden="true"
+                class="sort content ascending icon"
+              />
+            </button>
+          </div>
+          <div
+            class="ui basic compact right floated segment noMargin noVerticalPadding noHorizontalPadding"
+          >
+            <div
+              class="ui icon input"
+            >
+              <input
+                type="text"
+                value=""
+              />
+              <i
+                aria-hidden="true"
+                class="search icon"
+              />
+            </div>
+          </div>
+        </section>
+        <table
+          class="ui selectable stackable very basic very compact table"
+        >
+          <tbody
+            class=""
+          >
+            <tr
+              class="cursor-pointer"
+              data-testid="file-item"
+              style="background-color: inherit;"
+            >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui header"
+                >
+                  <div
+                    class="ui orange tiny basic label"
+                  >
+                    Pending review
+                  </div>
+                </div>
+              </td>
+              <td
+                class=""
+              >
+                <span
+                  class="ui medium header"
+                >
+                  <a
+                    href="/study/SD_8WX8QQ06/documents/SF_5ZPEM167"
+                  >
+                    organization.jpeg
+                  </a>
+                </span>
+                <p
+                  class="noMargin"
+                >
+                  Month necessary animal end standard case. View system operation message decade. Actually sing becaus...
+                </p>
+                <div
+                  class="ui horizontal link list"
+                  role="list"
+                >
+                  <div
+                    class="item"
+                    role="listitem"
+                  >
+                    <div
+                      class="middle aligned content"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="grey hospital small icon"
+                      />
+                      Clinical/Phenotype Data
+                    </div>
+                  </div>
+                  <div
+                    class="item"
+                    role="listitem"
+                  >
+                    <div
+                      class="content"
+                    >
+                      Modified
+                       
+                      <time
+                        datetime="2018-09-27T05:32:26.000Z"
+                        title="27 Sept 2018"
+                      >
+                        7 months ago
+                      </time>
+                    </div>
+                  </div>
+                  <div
+                    class="item"
+                    role="listitem"
+                  >
+                    <div
+                      class="content"
+                    >
+                      3
+                       version
+                      s
+                       
+                    </div>
+                  </div>
+                  <div
+                    class="item"
+                    role="listitem"
+                  >
+                    <div
+                      class="content"
+                    >
+                      5.5 kB
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui small buttons"
+                >
+                  <button
+                    class="ui basic compact icon button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="copy icon"
+                    />
+                  </button>
+                  <button
+                    class="ui basic compact icon button"
+                    data-testid="download-file"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="download icon"
+                    />
+                  </button>
+                  <button
+                    class="ui basic compact icon button"
+                    data-testid="delete-button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="trash alternate icon"
+                    />
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr
+              class="cursor-pointer"
+              data-testid="file-item"
+              style="background-color: inherit;"
+            >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui header"
+                >
+                  <div
+                    class="ui orange tiny basic label"
+                  >
+                    Pending review
+                  </div>
+                </div>
+              </td>
+              <td
+                class=""
+              >
+                <span
+                  class="ui medium header"
+                >
+                  <a
+                    href="/study/SD_8WX8QQ06/documents/SF_Y07IN1HO"
+                  >
+                    its.mp3
+                  </a>
+                </span>
+                <p
+                  class="noMargin"
+                >
+                  Question meeting move recognize.
+                </p>
+                <div
+                  class="ui horizontal link list"
+                  role="list"
+                >
+                  <div
+                    class="item"
+                    role="listitem"
+                  >
+                    <div
+                      class="middle aligned content"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="grey shipping small icon"
+                      />
+                      Shipping Manifest
+                    </div>
+                  </div>
+                  <div
+                    class="item"
+                    role="listitem"
+                  >
+                    <div
+                      class="content"
+                    >
+                      Modified
+                       
+                      <time
+                        datetime="2019-04-06T07:51:17.000Z"
+                        title="6 Apr 2019"
+                      >
+                        2 weeks ago
+                      </time>
+                    </div>
+                  </div>
+                  <div
+                    class="item"
+                    role="listitem"
+                  >
+                    <div
+                      class="content"
+                    >
+                      5
+                       version
+                      s
+                       
+                    </div>
+                  </div>
+                  <div
+                    class="item"
+                    role="listitem"
+                  >
+                    <div
+                      class="content"
+                    >
+                      6.8 kB
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui small buttons"
+                >
+                  <button
+                    class="ui basic compact icon button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="copy icon"
+                    />
+                  </button>
+                  <button
+                    class="ui basic compact icon button"
+                    data-testid="download-file"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="download icon"
+                    />
+                  </button>
+                  <button
+                    class="ui basic compact icon button"
+                    data-testid="delete-button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="trash alternate icon"
+                    />
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div
+          class="ui divider"
+        />
+      </div>
+    </div>
+    <div
+      class="centered row"
+    >
+      <form>
+        <div
+          class="ui placeholder piled segment"
+        >
+          <div
+            class="ui icon header"
+          >
+            <i
+              aria-hidden="true"
+              class="file outline icon"
+            />
+            To upload Study Documents drag and drop a file here
+            <br />
+            <small>
+              or
+            </small>
+          </div>
+          <br />
+          <label
+            class="ui icon primary left labeled button"
+            for="file"
+            role="button"
+          >
+            <i
+              aria-hidden="true"
+              class="file outline icon"
+            />
+            Choose a file
+          </label>
+          <input
+            hidden=""
+            id="file"
+            multiple=""
+            type="file"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`renders new study view correctly 9`] = `
+<body
+  class=""
+>
+  <div
+    class="ui large top attached menu"
+  >
+    <div
+      class="ui container"
+    >
+      <div
+        class="item"
+      >
+        <img
+          alt="Kids First logo"
+          src="test-file-stub"
+        />
+      </div>
+      <a
+        aria-current="page"
+        class="header item"
+        href="/"
+      >
+        Data Tracker
+      </a>
+      <a
+        class="item"
+        href="/"
+      >
+        Studies
+      </a>
+      <div
+        class="right menu"
+      >
+        <div
+          aria-expanded="false"
+          class="ui dropdown link item"
+          role="listbox"
+          tabindex="0"
+        >
+          Admin
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          >
+            <a
+              class="item"
+              href="/tokens"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="key icon"
+              />
+              Developer Tokens
+            </a>
+            <a
+              class="item"
+              href="/cavatica-projects"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="folder open icon"
+              />
+              Cavatica Projects
+            </a>
+            <a
+              class="item"
+              href="/events"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="history icon"
+              />
+              Event Log
+            </a>
+          </div>
+        </div>
+        <div
+          aria-expanded="false"
+          class="ui dropdown link item"
+          role="listbox"
+          tabindex="0"
+        >
+          <img
+            alt="bendolly"
+            class="ui avatar image"
+            src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
+          />
+          bendolly
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          >
+            <a
+              class="item"
+              href="/profile"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="user icon"
+              />
+              Profile
+            </a>
+            <a
+              class="item"
+              href="/logout"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="log out icon"
+              />
+              Logout
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section
+    id="study"
+  >
+    <div
+      class="ui basic secondary segment"
+    >
+      <div
+        class="ui container"
+      >
+        <h1
+          class="ui header"
+        >
+          benchmark extensible e-business
+        </h1>
+        <button
+          class="ui tiny basic icon button"
+        >
+          <i
+            aria-hidden="true"
+            class="copy icon"
+          />
+          SD_8WX8QQ06
+        </button>
+      </div>
+    </div>
+    <div
+      class="ui container"
+    >
+      <div
+        class="ui pink pointing secondary menu"
+      >
+        <a
+          aria-current="page"
+          class="active item active"
+          href="/study/SD_8WX8QQ06/basic-info/info"
+        >
+          Basic Info
+          <div
+            class="ui blue mini label"
+          >
+            BETA
+          </div>
+        </a>
+        <a
+          class="item"
+          href="/study/SD_8WX8QQ06/dashboard"
+        >
+          Dashboard
+        </a>
+        <a
+          class="item"
+          href="/study/SD_8WX8QQ06/documents"
+        >
+          Documents
+        </a>
+        <a
+          class="item"
+          href="/study/SD_8WX8QQ06/cavatica"
+        >
+          Cavatica
+        </a>
+        <a
+          class="item"
+          href="/study/SD_8WX8QQ06/logs"
+        >
+          Logs
+        </a>
+      </div>
+    </div>
+  </section>
+  <div
+    class="ui basic segment ui container"
+  >
+    <div
+      class="ui icon negative message"
+    >
+      <i
+        aria-hidden="true"
+        class="warning circle icon"
+      />
+      <div
+        class="content"
+      >
+        <div
+          class="header"
+        >
+          Error
+        </div>
+        <p>
+          Network error: No more mocked responses for the query: query Study($kfId: String!) {
+  studyByKfId(kfId: $kfId) {
+    ...StudyBasicFields
+    ...StudyInfoFields
+    events(first: 10, orderBy: "-created_at") {
+      edges {
+        node {
+          ...EventFields
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    projects {
+      edges {
+        node {
+          ...ProjectFields
+          study {
+            ...StudyBasicFields
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    files {
+      edges {
+        node {
+          ...FileFields
+          versions {
+            edges {
+              node {
+                id
+                kfId
+                size
+                createdAt
+                state
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment StudyBasicFields on StudyNode {
+  id
+  name
+  shortName
+  kfId
+  createdAt
+  modifiedAt
+  __typename
+}
+
+fragment StudyInfoFields on StudyNode {
+  bucket
+  attribution
+  dataAccessAuthority
+  externalId
+  releaseStatus
+  version
+  releaseDate
+  description
+  anticipatedSamples
+  awardeeOrganization
+  __typename
+}
+
+fragment FileFields on FileNode {
+  id
+  kfId
+  name
+  description
+  fileType
+  downloadUrl
+  __typename
+}
+
+fragment EventFields on EventNode {
+  id
+  uuid
+  createdAt
+  eventType
+  description
+  __typename
+}
+
+fragment ProjectFields on ProjectNode {
+  id
+  createdBy
+  createdOn
+  description
+  modifiedOn
+  name
+  projectId
+  projectType
+  url
+  workflowType
+  deleted
+  __typename
+}
+, variables: {"kfId":"SD_8WX8QQ06"}
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+`;
