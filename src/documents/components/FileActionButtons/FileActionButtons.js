@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {Button, Divider, Icon, Popup} from 'semantic-ui-react';
 import {downloadFile, createDateSort} from '../../utilities';
 import CopyButton from '../../../components/CopyButton/CopyButton';
+import {withAnalyticsTracking} from '../../../analyticsTracking';
 /**
  * Simple Icon Buttons to download and delete a file passed in as the node prop
  */
@@ -15,6 +16,7 @@ const FileActionButtons = ({
   deleteFile,
   vertical = true,
   fluid = false,
+  tracking: {popupTracking, buttonTracking},
 }) => {
   return (
     <Button.Group fluid={fluid} size="small">
@@ -39,8 +41,17 @@ const FileActionButtons = ({
             compact
             icon="download"
             data-testid="download-file"
+            onMouseOver={e =>
+              popupTracking({
+                name: 'Download latest version',
+                content: {studyId, kfId: node.kfId},
+              }).onMouseOver(e)
+            }
             onClick={e => {
-              e.stopPropagation();
+              popupTracking({
+                name: 'Download latest version',
+                content: {studyId, kfId: node.kfId},
+              }).onClick(e);
               downloadFile(studyId, node.kfId, null, downloadFileMutation);
             }}
           />
@@ -53,7 +64,12 @@ const FileActionButtons = ({
               basic
               compact
               data-testid="delete-button"
-              onClick={e => e.stopPropagation()}
+              {...buttonTracking({
+                button_text: 'delete-button',
+                button_type: 'icon',
+                button_content: 'Delete confirm',
+                stopPropagation: true,
+              })}
               icon={<Icon name="trash alternate" />}
             />
           }
@@ -68,8 +84,18 @@ const FileActionButtons = ({
                 fluid
                 icon={<Icon name="trash alternate" />}
                 content="Delete"
+                onMouseOver={e => {
+                  popupTracking({
+                    name: 'Are you sure?',
+                    content: 'Delete',
+                  }).onMouseOver(e);
+                }}
                 onClick={e => {
                   e.stopPropagation();
+                  popupTracking({
+                    name: 'Are you sure?',
+                    content: 'Delete',
+                  }).onClick(e);
                   deleteFile({variables: {kfId: node.kfId}});
                 }}
               />
@@ -102,4 +128,4 @@ FileActionButtons.propTypes = {
   fluid: PropTypes.bool,
 };
 
-export default FileActionButtons;
+export default withAnalyticsTracking(FileActionButtons);
