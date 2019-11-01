@@ -53,6 +53,10 @@ it('renders correctly -- default stage (USER role)', async () => {
   await wait();
 
   expect(tree.container).toMatchSnapshot();
+
+  act(() => {
+    fireEvent.click(tree.getByText(/Click here to login/));
+  });
 });
 
 it('renders correctly -- loading stage (USER role)', () => {

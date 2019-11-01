@@ -1,0 +1,26 @@
+{
+  "data": {
+    "updateStudy": {
+      "study": {
+        "id": "U3R1ZHlOb2RlOlNEXzhXWDhRUTA2",
+        "name": "benchmark extensible e-business",
+        "shortName": null,
+        "bucket": "stay-wrong-ready",
+        "kfId": "SD_8WX8QQ06",
+        "createdAt": "2019-04-20T15:22:18.780221+00:00",
+        "modifiedAt": "2019-04-25T15:22:18.780221+00:00",
+        "attribution": null,
+        "dataAccessAuthority": "dbGaP",
+        "externalId": "test_study_external_id",
+        "releaseStatus": null,
+        "version": null,
+        "releaseDate": "2019-08-24",
+        "description": "Study description in markdown, commonly the X01 abstract text. --  As test study description",
+        "anticipatedSamples": 100,
+        "awardeeOrganization": "CHOP",
+        "__typename": "StudyNode"
+      },
+      "__typename": "UpdateStudyMutation"
+    }
+  }
+}

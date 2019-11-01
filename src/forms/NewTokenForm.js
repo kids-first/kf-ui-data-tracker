@@ -17,6 +17,7 @@ const NewTokenForm = ({onSubmit, error, loading}) => {
           <label>
             Name:
             <input
+              data-testid="token-name-input"
               focus={name.length > 0 ? 'true' : 'false'}
               type="text"
               name="name"

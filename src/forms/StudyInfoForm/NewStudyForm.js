@@ -359,6 +359,7 @@ const NewStudyForm = ({
                     primary
                     floated="right"
                     type="submit"
+                    data-testid="new-study-confirm"
                     loading={formikProps.isSubmitting}
                   >
                     SUBMIT
