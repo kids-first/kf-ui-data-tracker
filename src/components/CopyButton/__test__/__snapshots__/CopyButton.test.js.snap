@@ -25,6 +25,7 @@ exports[`Copy Button renders correctly -- customized style 1`] = `
     />
     testing2
   </button>
+  ,
 </div>
 `;
 
