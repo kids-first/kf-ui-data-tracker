@@ -22,6 +22,10 @@ const FileActionsContainer = ({node, studyId, fluid, vertical, isAdmin}) => {
           error,
           vertical,
           fluid,
+          eventProperties: {
+            file: {studyId, kfId: node.kfId},
+            is_admin: isAdmin,
+          },
         }}
       />
     );

@@ -2,12 +2,21 @@ import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import {Button, Icon, Popup} from 'semantic-ui-react';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
+import {withAnalyticsTracking} from '../../analyticsTracking';
 /**
  * A simple button that is wrapped with an icon and a popup prompting the user
  * to copy the provided text.
  * Passes additional props to the Button
  */
-const CopyButton = ({text, textToCopy, icon, tooltip, position, ...props}) => {
+const CopyButton = ({
+  text,
+  textToCopy,
+  icon,
+  tooltip,
+  position,
+  tracking: {popupTracking},
+  ...props
+}) => {
   const [copied, setCopied] = useState(false);
   return (
     <Popup
@@ -22,8 +31,22 @@ const CopyButton = ({text, textToCopy, icon, tooltip, position, ...props}) => {
               setCopied(false);
             }, 700);
           }}
+          {...popupTracking({
+            name: tooltip,
+            content: text || textToCopy,
+          })}
         >
-          <Button icon onClick={e => e.stopPropagation()} {...props}>
+          <Button
+            icon
+            onClick={e => {
+              e.stopPropagation();
+              popupTracking({
+                name: tooltip,
+                content: text || textToCopy,
+              }).onClick(e);
+            }}
+            {...props}
+          >
             <Icon name={icon} />
             {text}
           </Button>
@@ -64,4 +87,4 @@ CopyButton.defaultProps = {
   position: 'top left',
 };
 
-export default CopyButton;
+export default withAnalyticsTracking(CopyButton);
