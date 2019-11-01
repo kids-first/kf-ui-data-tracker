@@ -3,6 +3,7 @@ import {render, cleanup, fireEvent, act} from 'react-testing-library';
 import {mocks} from '../../../../__mocks__/kf-api-study-creator/mocks';
 import {MockedProvider} from 'react-apollo/test-utils';
 import CopyButton from '../CopyButton';
+import {AnalyticsMockProvider} from '../../../analyticsTracking';
 
 /* Sets up some browser functions that are needed for react-copy-to-clipboard
  * that do not exist in the test renderer
@@ -29,9 +30,11 @@ afterEach(cleanup);
 
 it('Copy Button renders correctly -- default style', async () => {
   const tree = render(
-    <MockedProvider mocks={mocks}>
-      <CopyButton text="testing1" />
-    </MockedProvider>,
+    <AnalyticsMockProvider>
+      <MockedProvider mocks={mocks}>
+        <CopyButton text="testing1" />
+      </MockedProvider>
+    </AnalyticsMockProvider>,
   );
   expect(tree.container).toMatchSnapshot();
 
@@ -43,25 +46,35 @@ it('Copy Button renders correctly -- default style', async () => {
 
 it('Copy Button renders correctly -- customized style', () => {
   const {container} = render(
-    <CopyButton text="testing2" primary basic size="large" />,
+    <AnalyticsMockProvider>
+      <CopyButton text="testing2" primary basic size="large" />,
+    </AnalyticsMockProvider>,
   );
   expect(container).toMatchSnapshot();
 });
 
 it('Copy Button renders correctly -- customized tooltip', () => {
   const {container} = render(
-    <CopyButton
-      text="testing3"
-      tooltip="tooltip text"
-      position="bottom center"
-    />,
+    <AnalyticsMockProvider>
+      <CopyButton
+        text="testing3"
+        tooltip="tooltip text"
+        position="bottom center"
+      />
+    </AnalyticsMockProvider>,
   );
   expect(container).toMatchSnapshot();
 });
 
 it('Copy Button renders correctly -- customized button icon and text', () => {
   const {container} = render(
-    <CopyButton text="COPY BUTTON" textToCopy="testing4" icon="star outline" />,
+    <AnalyticsMockProvider>
+      <CopyButton
+        text="COPY BUTTON"
+        textToCopy="testing4"
+        icon="star outline"
+      />
+    </AnalyticsMockProvider>,
   );
   expect(container).toMatchSnapshot();
 });

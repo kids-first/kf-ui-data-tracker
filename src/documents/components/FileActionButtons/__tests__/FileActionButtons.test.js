@@ -5,27 +5,30 @@ import {MockedProvider} from 'react-apollo/test-utils';
 import {mocks} from '../../../../../__mocks__/kf-api-study-creator/mocks';
 import studyByKfId from '../../../../../__mocks__/kf-api-study-creator/responses/studyByKfId';
 import FileActionButtons from '../FileActionButtons';
+import {AnalyticsMockProvider} from '../../../../analyticsTracking';
 
 afterEach(cleanup);
 it('File Action Buttons renders correctly -- default look', async () => {
   const studyId = studyByKfId.data.studyByKfId.kfId;
   const file = studyByKfId.data.studyByKfId.files.edges[0].node;
   const tree = render(
-    <MockedProvider mocks={mocks}>
-      <FileActionButtons
-        node={file}
-        studyId={studyId}
-        downloadFileMutation={jest.fn().mockResolvedValue({
-          data: {
-            signedUrl: {
-              url:
-                'http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM16',
+    <AnalyticsMockProvider>
+      <MockedProvider mocks={mocks}>
+        <FileActionButtons
+          node={file}
+          studyId={studyId}
+          downloadFileMutation={jest.fn().mockResolvedValue({
+            data: {
+              signedUrl: {
+                url:
+                  'http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM16',
+              },
             },
-          },
-        })}
-        deleteFile={jest.fn()}
-      />
-    </MockedProvider>,
+          })}
+          deleteFile={jest.fn()}
+        />
+      </MockedProvider>
+    </AnalyticsMockProvider>,
   );
   expect(tree.container).toMatchSnapshot();
 
@@ -50,15 +53,17 @@ it('File Action Buttons renders correctly -- vertical look', () => {
   const studyId = studyByKfId.data.studyByKfId.kfId;
   const file = studyByKfId.data.studyByKfId.files.edges[0].node;
   const tree = render(
-    <MockedProvider mocks={mocks}>
-      <FileActionButtons
-        node={file}
-        studyId={studyId}
-        downloadFileMutation={jest.fn()}
-        deleteFile={jest.fn()}
-        vertical
-      />
-    </MockedProvider>,
+    <AnalyticsMockProvider>
+      <MockedProvider mocks={mocks}>
+        <FileActionButtons
+          node={file}
+          studyId={studyId}
+          downloadFileMutation={jest.fn()}
+          deleteFile={jest.fn()}
+          vertical
+        />
+      </MockedProvider>
+    </AnalyticsMockProvider>,
   );
   expect(tree.container).toMatchSnapshot();
 });
@@ -67,15 +72,17 @@ it('File Action Buttons renders correctly -- fluid look', () => {
   const studyId = studyByKfId.data.studyByKfId.kfId;
   const file = studyByKfId.data.studyByKfId.files.edges[0].node;
   const tree = render(
-    <MockedProvider mocks={mocks}>
-      <FileActionButtons
-        node={file}
-        studyId={studyId}
-        downloadFileMutation={jest.fn()}
-        deleteFile={jest.fn()}
-        fluid
-      />
-    </MockedProvider>,
+    <AnalyticsMockProvider>
+      <MockedProvider mocks={mocks}>
+        <FileActionButtons
+          node={file}
+          studyId={studyId}
+          downloadFileMutation={jest.fn()}
+          deleteFile={jest.fn()}
+          fluid
+        />
+      </MockedProvider>
+    </AnalyticsMockProvider>,
   );
   expect(tree.container).toMatchSnapshot();
 });
