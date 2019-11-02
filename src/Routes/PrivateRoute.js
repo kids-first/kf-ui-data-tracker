@@ -1,7 +1,7 @@
 import React from 'react';
 import jwtDecode from 'jwt-decode';
-import {Route, Redirect, withRouter} from 'react-router-dom';
-import {Amplitude} from '@amplitude/react-amplitude';
+import {Redirect, withRouter} from 'react-router-dom';
+import TrackedRoute from './TrackedRoute';
 
 export const hasToken = () => {
   const token = localStorage.getItem('accessToken');
@@ -12,34 +12,22 @@ export const hasToken = () => {
 };
 
 const PrivateRoute = ({component: Component, ...rest}) => {
-  // note: unsure if this mounts the
-  let comp = <Component />;
-
   return (
-    <Amplitude
-      eventProperties={{
-        view: comp.type.WrappedComponent
-          ? comp.type.WrappedComponent.name
-          : comp.type.name,
-        route: rest.path,
-      }}
-    >
-      <Route
-        {...rest}
-        render={props =>
-          hasToken() ? (
-            <Component {...props} />
-          ) : (
-            <Redirect
-              to={{
-                pathname: '/login',
-                state: {from: window.location.pathname},
-              }}
-            />
-          )
-        }
-      />
-    </Amplitude>
+    <TrackedRoute
+      {...rest}
+      render={props =>
+        hasToken() ? (
+          <Component {...props} />
+        ) : (
+          <Redirect
+            to={{
+              pathname: '/login',
+              state: {from: window.location.pathname},
+            }}
+          />
+        )
+      }
+    />
   );
 };
 

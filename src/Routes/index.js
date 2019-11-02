@@ -20,20 +20,7 @@ import {
   LogoutView,
 } from '../views';
 import DocumentRoutes from '../documents/routes';
-import {Amplitude} from '@amplitude/react-amplitude';
-
-const TrackedRoute = ({component, path, ...rest}) => {
-  return (
-    <Amplitude
-      eventProperties={{
-        view: component ? component.name : null,
-        route: path,
-      }}
-    >
-      <Route {...{component, path}} {...rest} />
-    </Amplitude>
-  );
-};
+import TrackedRoute from './TrackedRoute';
 
 const Routes = () => (
   <Fragment>
@@ -43,10 +30,14 @@ const Routes = () => (
       <Route path="/callback" component={CallbackView} />
       <Route path="/" render={() => <Header />} />
     </Switch>
-    <PrivateRoute path="/profile" component={ProfileView} />
-    <PrivateRoute path="/study/:kfId(SD_\w{8})/" component={NavBarView} />
-    <AdminRoute path="/study/new-study" component={NewStudyView} />
+    <PrivateRoute
+      path="/study/:kfId(SD_\w{8})/"
+      logMount={false}
+      component={NavBarView}
+    />
     <Switch>
+      <AdminRoute path="/study/new-study" component={NewStudyView} />
+      <PrivateRoute path="/profile" component={ProfileView} />
       <PrivateRoute exact path="/" component={StudyListView} />
       <PrivateRoute path="/study/:kfId/basic-info" component={StudyInfoView} />
       <PrivateRoute exact path="/study/:kfId/dashboard" component={EmptyView} />

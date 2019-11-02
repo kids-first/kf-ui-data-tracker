@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Route} from 'react-router-dom';
 import {Amplitude, LogOnMount} from '@amplitude/react-amplitude';
+import {EVENT_CONSTANTS} from '../analyticsTracking';
 
 /** Wrap all of our routes to make them log the view and route they render  */
 const TrackedRoute = ({
@@ -20,7 +21,7 @@ const TrackedRoute = ({
         ...eventProperties,
       }}
     >
-      {logMount && <LogOnMount eventType="PAGEVIEW" />}
+      {logMount && <LogOnMount eventType={EVENT_CONSTANTS.PAGE.VIEW} />}
       <Route {...{component, path, render}} {...rest} />
     </Amplitude>
   );
