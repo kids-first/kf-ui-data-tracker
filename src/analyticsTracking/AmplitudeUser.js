@@ -15,19 +15,16 @@ class AmplitudeUser {
 
   // values to pluck from jwt in the format of [[jwt_prop_name, renmae_to], ... ]
   user_props = [
-    ['email'],
-    ['email_verified'],
-    ['family_name', 'last_name'],
-    ['given_name', 'first_name'],
     ['https://kidsfirstdrc.org/roles', 'roles'],
-    ['https://kidsfirstdrc.org/permissions', 'premissions'],
-    ['picture'],
+    ['https://kidsfirstdrc.org/groups', 'studies'],
+    ['https://kidsfirstdrc.org/permissions', 'permissions'],
   ];
 
   constructor(idToken, api_key) {
     amplitude.getInstance().init(api_key);
     this.instance = amplitude.getInstance();
     this.auth_user = jwtDecode(idToken);
+
     this.auth_sub_arr = this.auth_user.sub.split('|');
 
     this.setId();
