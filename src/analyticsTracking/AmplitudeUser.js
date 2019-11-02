@@ -49,7 +49,9 @@ class AmplitudeUser {
     this.user_props.forEach(prop => {
       identify.set(prop[1] || prop[0], this.auth_user[prop[0]]);
     });
-    // send to amplitude
+    /**
+     * @event_docs analyticsTracking/user/user.schema.json
+     */
     this.instance.identify(identify);
   }
 }
