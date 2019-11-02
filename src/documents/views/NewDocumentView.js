@@ -5,7 +5,6 @@ import {CREATE_FILE} from '../mutations';
 import {GET_STUDY_BY_ID, MY_PROFILE} from '../../state/queries';
 import {Message, Segment, Container, Button, Header} from 'semantic-ui-react';
 import {lengthLimit} from '../utilities';
-import {AnalyticsViewConsumer} from '../../analyticsTracking';
 
 /**
  * The NewDocumentView displays a form to collect details about a new file.
@@ -54,7 +53,7 @@ const NewDocumentView = ({
     ? user.myProfile.roles.includes('ADMIN')
     : false;
   return (
-    <AnalyticsViewConsumer mountProperties={{file: location.state.file.name}}>
+    <>
       <Container as={Segment} vertical basic>
         <Header as="h3">Tell us about your study document</Header>
         <p>
@@ -110,7 +109,7 @@ const NewDocumentView = ({
           />
         </Container>
       </Segment.Group>
-    </AnalyticsViewConsumer>
+    </>
   );
 };
 

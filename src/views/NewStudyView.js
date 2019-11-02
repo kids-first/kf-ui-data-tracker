@@ -3,7 +3,7 @@ import {graphql} from 'react-apollo';
 import NewStudyForm from '../forms/StudyInfoForm/NewStudyForm';
 import {Segment, Container, Header, Loader} from 'semantic-ui-react';
 import {CREATE_STUDY} from '../state/mutations';
-import {AnalyticsViewConsumer} from '../analyticsTracking';
+
 /**
  * The NewStudyView displays a form to collect details about a new study.
  */
@@ -47,7 +47,7 @@ const NewStudyView = ({match, history, location, createStudy}) => {
           </Header>
         </Container>
       ) : (
-        <AnalyticsViewConsumer>
+        <>
           <Container as={Segment} vertical basic>
             <Header as="h3">Tell us about your new study</Header>
             <p className="text-wrap-75">
@@ -62,7 +62,7 @@ const NewStudyView = ({match, history, location, createStudy}) => {
             apiErrors={newStudyError}
             history={history}
           />
-        </AnalyticsViewConsumer>
+        </>
       )}
     </Container>
   );
