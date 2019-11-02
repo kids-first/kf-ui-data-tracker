@@ -4,9 +4,9 @@ import {AmplitudeProvider} from '@amplitude/react-amplitude';
 import amplitude from 'amplitude-js';
 import AnalyticsTrackingContext from './AnalyticsTrackingContext';
 import analyticsTrackingConstants from '../common/analyticsTrackingConstants';
-import AmplitudeUser from './amplitudeUserUtils';
+import AmplitudeUser from './AmplitudeUser';
 
-const {AUTH, APP} = analyticsTrackingConstants;
+const {AUTH} = analyticsTrackingConstants;
 
 let amplitudeUser = null;
 // log amplitude users on auto-login
@@ -17,7 +17,6 @@ if (localStorage.getItem('idToken')) {
   );
 
   amplitudeUser.instance.logEvent(AUTH.LOGIN, {
-    scope: [AUTH.scope, APP.scope],
     status: 'SUCCESS',
     auth_sub: amplitudeUser.auth_sub_arr[0],
   });
