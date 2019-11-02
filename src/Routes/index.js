@@ -21,12 +21,26 @@ import {
   LogoutView,
 } from '../views';
 import DocumentRoutes from '../documents/routes';
+import {Amplitude} from '@amplitude/react-amplitude';
+
+const TrackedRoute = ({component, path, ...rest}) => {
+  return (
+    <Amplitude
+      eventProperties={{
+        view: component ? component.name : null,
+        route: path,
+      }}
+    >
+      <Route {...{component, path}} {...rest} />
+    </Amplitude>
+  );
+};
 
 const Routes = () => (
   <Fragment>
     <Switch>
-      <Route path="/login" component={LoginView} />
-      <Route path="/logout" component={LogoutView} />
+      <TrackedRoute path="/login" component={LoginView} />
+      <TrackedRoute path="/logout" component={LogoutView} />
       <Route path="/callback" component={CallbackView} />
       <Route path="/" render={() => <Header />} />
     </Switch>
