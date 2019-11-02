@@ -50,7 +50,7 @@ class AmplitudeUser {
       identify.set(prop[1] || prop[0], this.auth_user[prop[0]]);
     });
     /**
-     * @event_docs analyticsTracking/user/user.schema.json
+     * @event_scehma analyticsTracking/user/user.schema.json
      */
     this.instance.identify(identify);
   }

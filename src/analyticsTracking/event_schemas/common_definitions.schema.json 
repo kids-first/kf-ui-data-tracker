@@ -4,6 +4,10 @@
   "title": "Schema definitions",
   "description": "common definitions for easy reuse in other schemas ",
   "definitions": {
+    "path": {
+      "type": "uri-reference",
+      "description": "the url of the current screen, logged from App.js"
+    },
     "study": {
       "type": "object",
       "properties": {

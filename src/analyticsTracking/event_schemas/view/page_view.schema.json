@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://kf-ui-data-tracker/src/analyticsTracking/event_schemas/page/page.schema.json",
+  "title": "PAGE_VIEW Schema",
+  "description": "event fired from TrackedRoute componet",
+  "type": "object",
+  "allOf": [
+    {"$ref": "/common_defintions.json#/path"},
+    {
+      "properties": {
+        "view": {
+          "type": "string",
+          "description": "The name of the component render by the Route, if it's a wrapped or HOC it will record the wrapped component"
+        },
+        "route": {
+          "type": "string",
+          "description": "path RegEx passed to the route, not the resolved url"
+        }
+      },
+      "required": ["view"]
+    }
+  ]
+}
