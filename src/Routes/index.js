@@ -21,20 +21,7 @@ import {
   LogoutView,
 } from '../views';
 import DocumentRoutes from '../documents/routes';
-import {Amplitude} from '@amplitude/react-amplitude';
-
-const TrackedRoute = ({component, path, ...rest}) => {
-  return (
-    <Amplitude
-      eventProperties={{
-        view: component ? component.name : null,
-        route: path,
-      }}
-    >
-      <Route {...{component, path}} {...rest} />
-    </Amplitude>
-  );
-};
+import TrackedRoute from './TrackedRoute';
 
 const Routes = () => (
   <Fragment>

@@ -1,7 +1,7 @@
 import React from 'react';
 import jwtDecode from 'jwt-decode';
-import {Route, Redirect, withRouter} from 'react-router-dom';
-import {Amplitude} from '@amplitude/react-amplitude';
+import {Redirect, withRouter} from 'react-router-dom';
+import TrackedRoute from './TrackedRoute';
 
 export const isAdmin = () => {
   const token = localStorage.getItem('accessToken');
@@ -24,27 +24,14 @@ export const isAdmin = () => {
  * A route that only allows access to admin users, otherwise routes to the
  * index page
  */
-const AdminRoute = ({component: Component, path, ...rest}) => {
-  let comp = <Component />;
-
-  return (
-    <Amplitude
-      eventProperties={{
-        view: comp.type.WrappedComponent
-          ? comp.type.WrappedComponent.name
-          : comp.type.name,
-        route: path,
-      }}
-    >
-      <Route
-        {...rest}
-        path={path}
-        render={props =>
-          isAdmin() ? <Component {...props} /> : <Redirect to="/" />
-        }
-      />
-    </Amplitude>
-  );
-};
+const AdminRoute = ({component: Component, path, ...rest}) => (
+  <TrackedRoute
+    {...rest}
+    path={path}
+    render={props =>
+      isAdmin() ? <Component {...props} /> : <Redirect to="/" />
+    }
+  />
+);
 
 export default withRouter(AdminRoute);
