@@ -4,7 +4,11 @@ import {Route} from 'react-router-dom';
 import {Amplitude, LogOnMount} from '@amplitude/react-amplitude';
 import {EVENT_CONSTANTS} from '../analyticsTracking';
 
-/** Wrap all of our routes to make them log the view and route they render  */
+/**
+ * Wrap all of our routes to make them log the view and route they render
+ *
+ *  @event_scehma analyticsTracking/event_schemas/page/page_view.schema.json
+ * */
 const TrackedRoute = ({
   component,
   path,
