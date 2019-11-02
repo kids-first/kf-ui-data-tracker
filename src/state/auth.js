@@ -7,7 +7,7 @@ import {
   auth0Aud,
 } from '../common/globals';
 import amplitude from 'amplitude-js';
-import AmplitudeUser from '../analyticsTracking/amplitudeUserUtils';
+import AmplitudeUser from '../analyticsTracking/AmplitudeUser';
 import analyticsTrackingConstants from '../common/analyticsTrackingConstants';
 
 const {AUTH: TRACKING_AUTH} = analyticsTrackingConstants;
