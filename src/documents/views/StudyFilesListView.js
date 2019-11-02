@@ -107,7 +107,6 @@ const StudyFilesListView = ({
           ) : (
             <FileList fileList={files} studyId={kfId} isAdmin={isAdmin} />
           )}
-
           <Divider />
 
           {dialog && (
