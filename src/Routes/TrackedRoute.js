@@ -20,7 +20,11 @@ const TrackedRoute = ({
   return (
     <Amplitude
       eventProperties={{
-        view: component ? component.name : render().type.WrappedComponent.name,
+        view: component
+          ? component.name
+          : render().type.WrappedComponent
+          ? render().type.WrappedComponent.name
+          : null,
         route: path,
         ...eventProperties,
       }}

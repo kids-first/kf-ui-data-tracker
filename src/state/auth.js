@@ -1,5 +1,5 @@
 import auth0 from 'auth0-js';
-import jwtDecode from 'jwt-decode';
+
 import {
   auth0Domain,
   auth0ClientId,
