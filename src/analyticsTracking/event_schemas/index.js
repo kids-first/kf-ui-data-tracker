@@ -30,6 +30,10 @@ const schemas = {
   BUTTON__HOVER: {},
   // input
   INPUT__TEXT: {},
+  // study list view
+  STUDY_LIST__VIEW_TOGGLE: {},
+  STUDY_LIST__ADD_STUDY: {},
+  STUDY_LIST__SEARCH: {},
 };
 
 export default schemas;
