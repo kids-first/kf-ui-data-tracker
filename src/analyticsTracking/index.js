@@ -1,5 +1,5 @@
-export {default as useAnalyticsTracking} from './useAnalyticsTracking';
 export {default as withAnalyticsTracking} from './withAnalyticsTracking';
+
 export {default as AnalyticsMockProvider} from './AnalyticsMockProvider';
 
 export {
