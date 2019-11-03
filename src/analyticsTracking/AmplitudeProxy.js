@@ -3,6 +3,8 @@ import {memoize} from '@amplitude/react-amplitude/src/lib/memoize';
 import debounce from 'lodash.debounce';
 
 class AmplitudeProxy extends Amplitude {
+  logToConsole = false;
+
   constructor(props) {
     super(props);
 
@@ -21,7 +23,10 @@ class AmplitudeProxy extends Amplitude {
   // proxy our logging calls so we can hook
   // other analytics services into it
   dispatch = (eventType, eventProps, cb) => {
-    console.log(`dispatch ${eventType}`, eventProps);
+    if (this.logToConsole || this.props.logToConsole) {
+      console.log(`AmplitudeProxy::dispatch ${eventType}`, eventProps);
+    }
+
     return this._makeLogEvent()(
       eventType,
       {

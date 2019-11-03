@@ -6,8 +6,10 @@ import AmplitudeProxy from './AmplitudeProxy';
 const EVENT_CONSTANTS = analyticsTrackingConstants;
 
 /** HOC to augment and extend Amplitude tracking methods  */
-const withAnalyticsTracking = Component => {
+const withAnalyticsTracking = (Component, config) => {
   return class extends AmplitudeProxy {
+    logToConsole = config ? config.logToConsole : false;
+
     render() {
       return (
         <Component
