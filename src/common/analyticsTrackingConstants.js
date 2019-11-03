@@ -90,6 +90,7 @@ const analyticsTrackingConstants = {
   ...scope('MOUSE', mouseEvents),
   ...scope('TOOLTIP', mouseEvents),
   ...scope('DROPDOWN', dropdownEvents),
+  ...scope('STUDY_LIST', ['VIEW_TOGGLE', 'SEARCH', 'ADD_STUDY']),
 };
 
 export default analyticsTrackingConstants;
