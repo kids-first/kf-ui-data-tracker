@@ -48,7 +48,7 @@ export const popupTracking = (log, inheritedProps) => ({
     tooltip_name: name,
     tooltip_content: content,
     link,
-    scope: [...inheritedProps.scope, `TOOLTIP_${name}`],
+    scope: `TOOLTIP_${name}`,
     stopPropagation: true,
   }),
 });

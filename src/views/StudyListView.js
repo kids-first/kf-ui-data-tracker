@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import {ALL_STUDIES, MY_PROFILE} from '../state/queries';
 import StudyList from '../components/StudyList/StudyList';
 import {Button, Message, Container, Segment} from 'semantic-ui-react';
+import {withAnalyticsTracking} from '../analyticsTracking';
 
 const StudyListView = ({
   studies: {loading, allStudies, error},
