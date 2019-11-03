@@ -22,7 +22,14 @@ class AmplitudeProxy extends Amplitude {
   // other analytics services into it
   dispatch = (eventType, eventProps, cb) => {
     console.log(`dispatch ${eventType}`, eventProps);
-    return this._makeLogEvent(eventType, eventProps, cb);
+    return this._makeLogEvent()(
+      eventType,
+      {
+        ...this.getAmplitudeEventProperties(),
+        ...(eventProps || {}),
+      },
+      cb,
+    );
   };
 
   instrument = memoize((eventType, func, props = {}) => {

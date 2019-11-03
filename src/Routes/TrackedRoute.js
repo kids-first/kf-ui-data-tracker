@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Route} from 'react-router-dom';
-import {Amplitude, LogOnMount} from '@amplitude/react-amplitude';
-import {EVENT_CONSTANTS} from '../analyticsTracking';
+import {LogOnMount} from '@amplitude/react-amplitude';
+import {EVENT_CONSTANTS, AmplitudeProxy} from '../analyticsTracking';
 
 /**
  * Wrap all of our routes to make them log the view and route they render
@@ -17,21 +17,30 @@ const TrackedRoute = ({
   eventProperties,
   ...rest
 }) => {
+  const eventProps = {
+    view: component
+      ? component.name
+      : render().type.WrappedComponent
+      ? render().type.WrappedComponent.name
+      : null,
+    route: path,
+    ...eventProperties,
+  };
+
+  // console.log(`${eventProps.view} TrackedRoutes Props`, {
+  //   component,
+  //   path,
+  //   render: render && render(),
+  //   logMount,
+  //   eventProperties,
+  //   ...rest,
+  // });
+  // console.log(`${eventProps.view} TrackedRoutes eventProps`, eventProps);
   return (
-    <Amplitude
-      eventProperties={{
-        view: component
-          ? component.name
-          : render().type.WrappedComponent
-          ? render().type.WrappedComponent.name
-          : null,
-        route: path,
-        ...eventProperties,
-      }}
-    >
+    <AmplitudeProxy eventProperties={eventProps}>
       {logMount && <LogOnMount eventType={EVENT_CONSTANTS.PAGE.VIEW} />}
       <Route {...{component, path, render}} {...rest} />
-    </Amplitude>
+    </AmplitudeProxy>
   );
 };
 

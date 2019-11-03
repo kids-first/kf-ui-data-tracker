@@ -38,9 +38,8 @@ const StudyList = ({
   activeView = 'grid',
   roles,
   tracking: {
-    buttonTracking,
     logEvent,
-    EVENT_CONSTANTS: {INPUT, STUDY_LIST_},
+    EVENT_CONSTANTS: {STUDY_LIST_},
   },
 }) => {
   const [view, setView] = useState(activeView);
