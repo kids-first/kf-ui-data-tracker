@@ -50,12 +50,14 @@ const StudyGrid = ({studyList, loading, isAdmin}) => {
           requiredFileChanges={isAdmin ? countFileNotification(node.node) : 0}
           eventProperties={inherited => ({
             link: `/study/${node.node.kfId}/documents`,
+            scope: 'StudyCard',
             study: {
               ...(inherited.study || {}),
               kfId: node.node.kfId,
               study_name: node.node.name || node.node.shortName,
               files: node.node.files.edges.length,
               projects: node.node.projects.edges.length,
+              missing_info_fields: countStudyNotification(node.node),
             },
           })}
         />

@@ -3,12 +3,19 @@ import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import {List, Icon, Popup, Label} from 'semantic-ui-react';
 import {versionState} from '../../common/enums';
+import {withAnalyticsTracking} from '../../analyticsTracking';
 
 /**
  * Displays file counts with total number and breaking down by each status
  * When no files exist, show buttons guiding user to upload files
  */
-const FileCounts = ({files, title, history, hideIcon}) => {
+const FileCounts = ({
+  files,
+  title,
+  history,
+  hideIcon,
+  tracking: {popupTracking},
+}) => {
   const states = files.map(
     ({node: {versions}}) => versions.edges[0].node.state,
   );
@@ -22,7 +29,13 @@ const FileCounts = ({files, title, history, hideIcon}) => {
       <List.Item
         as={Link}
         to={`/study/${title}/documents`}
-        onClick={e => e.stopPropagation()}
+        onClick={
+          popupTracking({
+            name: 'Files',
+            content: `${files.length > 0 ? files.length : 'No'} files`,
+            link: `/study/${title}/documents`,
+          }).onClick
+        }
         className={hideIcon && files.length === 0 ? 'text-red' : null}
       >
         {!hideIcon && (
@@ -75,4 +88,4 @@ FileCounts.defaultProps = {
   files: [],
 };
 
-export default FileCounts;
+export default withAnalyticsTracking(FileCounts);

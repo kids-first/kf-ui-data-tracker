@@ -75,16 +75,19 @@ const scope = (name, eventsList) => {
   };
 };
 
+const MOUSE_EVENTS = ['HOVER', 'CLICK'];
+
 /**
  * analytics tracking constants object
  */
 const analyticsTrackingConstants = {
   ...scope('INPUT', ['TEXT']),
-  ...scope('MOUSE', ['HOVER', 'CLICK']),
-  ...scope('APP', ['MOUNT']),
+  ...scope('MOUSE', MOUSE_EVENTS),
   ...scope('AUTH', ['LOGIN', 'LOGOUT']),
   ...scope('PAGE', ['VIEW']),
   ...scope('STUDY_LIST_', ['VIEW_TOGGLE', 'SEARCH', 'ADD_STUDY']),
+  ...scope('STUDY_CARD_', ['TOGGLE_DETAIL', ...MOUSE_EVENTS]),
+  ...scope('TOOLTIP', MOUSE_EVENTS),
 };
 
 export default analyticsTrackingConstants;
