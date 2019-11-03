@@ -50,3 +50,24 @@ export const buttonTracking = log => (name, type, props, scope) =>
     {button_text: name, button_type: type, ...props},
     scope ? `${normalizeEventType(scope)}` : null,
   );
+
+export const popupTracking = (log, inheritedProps = {}) => (
+  eventProps = {},
+  scope,
+) =>
+  mouseEvents(log)(
+    {
+      tooltip_name: eventProps.name || null,
+      tooltip_content: eventProps.content || null,
+      link: eventProps.link || null,
+      stopPropagation: true,
+      ...(inheritedProps || {}),
+    },
+    scope
+      ? normalizeEventType(scope)
+      : `${EVENT_CONSTANTS.TOOLTIP.scope}${
+          typeof scope == 'string' || typeof eventProps.name == 'string'
+            ? '__' + normalizeEventType(scope || eventProps.name)
+            : null
+        }`,
+  );
