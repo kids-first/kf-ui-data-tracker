@@ -1,4 +1,5 @@
 export {default as withAnalyticsTracking} from './withAnalyticsTracking';
+export {default as AmplitudeProxy} from './AmplitudeProxy';
 
 export {default as AnalyticsMockProvider} from './AnalyticsMockProvider';
 
