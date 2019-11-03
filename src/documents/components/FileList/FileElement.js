@@ -180,7 +180,7 @@ const FileElement = ({
               ...fileTrackingObj,
               button_text: fileTrackingObj.file_status,
               button_type: 'badge',
-              scope: [...inheritedEventProps.scope, 'Badge'],
+              scope: 'Badge',
             })}
           >
             <Badge

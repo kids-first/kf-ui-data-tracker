@@ -49,7 +49,6 @@ const StudyGrid = ({studyList, loading, isAdmin}) => {
           missingProject={isAdmin ? countProjectNotification(node.node) : 0}
           requiredFileChanges={isAdmin ? countFileNotification(node.node) : 0}
           eventProperties={inherited => ({
-            scope: [...inherited.scope, 'StudyCard'],
             link: `/study/${node.node.kfId}/documents`,
             study: {
               ...(inherited.study || {}),

@@ -185,7 +185,7 @@ const StudyCard = ({
               files={files}
               history={history}
               eventProperties={{
-                scope: [...inheritedEventProps.scope, 'FileCounts'],
+                scope: 'FileCounts',
               }}
             />
             <ToggleDetailButton testId="show-detail" />
