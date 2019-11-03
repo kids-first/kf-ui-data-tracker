@@ -84,6 +84,7 @@ const analyticsTrackingConstants = {
   ...scope('APP', ['MOUNT']),
   ...scope('AUTH', ['LOGIN', 'LOGOUT']),
   ...scope('PAGE', ['VIEW']),
+  ...scope('STUDY_LIST_', ['VIEW_TOGGLE', 'SEARCH', 'ADD_STUDY']),
 };
 
 export default analyticsTrackingConstants;

@@ -40,12 +40,15 @@ const StudyList = ({
   tracking: {
     buttonTracking,
     logEvent,
-    EVENT_CONSTANTS: {INPUT},
+    EVENT_CONSTANTS: {INPUT, STUDY_LIST_},
   },
 }) => {
   const [view, setView] = useState(activeView);
   const [searchString, setSearchString] = useState('');
   const isAdmin = roles && roles.includes('ADMIN');
+
+  const logStudyListEvent = (action, payload) =>
+    logEvent(STUDY_LIST_[action], payload);
 
   if (loading) {
     return (
@@ -80,10 +83,12 @@ const StudyList = ({
             content="Add Study"
             as={Link}
             to={`/study/new-study/info`}
-            {...buttonTracking({
-              button_text: 'Add Study',
-              link: `/study/new-study/info`,
-            })}
+            onClick={() =>
+              logStudyListEvent('ADD_STUDY', {
+                button_text: 'Add Study',
+                link: `/study/new-study/info`,
+              })
+            }
           />
         )}
         <Input
@@ -94,7 +99,7 @@ const StudyList = ({
           placeholder="Search by Study Name"
           onChange={(e, {value}) => {
             setSearchString(value);
-            logEvent(INPUT.TEXT, {
+            logStudyListEvent('SEARCH', {
               input_name: 'Search by Study Name',
               value,
               results_length: filteredStudyList().length,
@@ -105,7 +110,8 @@ const StudyList = ({
         <ToggleButtons
           size="mini"
           hideText
-          onToggle={({text}) => {
+          onToggle={({text, active, icon}) => {
+            logStudyListEvent('VIEW_TOGGLE', {text, active});
             setView(text.toLowerCase());
           }}
           buttons={[
