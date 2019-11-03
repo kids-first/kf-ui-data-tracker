@@ -35,20 +35,21 @@ const mouseEvents = log => (eventProps = {}) => {
   return mouseActions;
 };
 
-export const buttonTracking = log => {
-  return mouseEvents(log);
-};
+/**
+ * Curry'd function to ensure all button events have the
+ * button_text and button_type event properties attached
+ * @param {func} log - event logging function
+ * @param {string} name - inner button text
+ * @param {string} type - type of button ('toggle','label','icon', etc )
+ * @param {object} props - additional event props to log
+ */
+export const buttonTracking = log => (name, type, props) =>
+  mouseEvents(log)({button_text: name, button_type: type, ...props});
 
-export const popupTracking = (log, inheritedProps) => ({
-  name,
-  content,
-  link,
-}) => ({
-  ...mouseEvents(log)({
+export const popupTracking = (log, inheritedProps) => ({name, content, link}) =>
+  mouseEvents(log)({
     tooltip_name: name,
     tooltip_content: content,
     link,
-    scope: `TOOLTIP_${name}`,
     stopPropagation: true,
-  }),
-});
+  });
