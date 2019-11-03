@@ -22,14 +22,10 @@ const StudyCard = ({
   missingValue,
   missingProject,
   requiredFileChanges,
-  onClick = () => {},
-  onMouseOver = () => {},
   tracking: {
     logEvent,
-    instrument,
     buttonTracking,
-    EVENT_CONSTANTS,
-    inheritedEventProps,
+    EVENT_CONSTANTS: {STUDY_CARD_},
     popupTracking,
   },
 }) => {
@@ -55,6 +51,9 @@ const StudyCard = ({
         : '',
   };
 
+  const logStudyCardEvent = (action, payload) =>
+    logEvent(STUDY_CARD_[action], payload);
+
   const ToggleDetailButton = ({testId}) => (
     <Button
       as={Label}
@@ -65,19 +64,12 @@ const StudyCard = ({
       icon={showDetail ? 'chevron up' : 'chevron down'}
       onClick={e => {
         setShowDetail(!showDetail);
-        buttonTracking({
+        logStudyCardEvent('TOGGLE_DETAIL', {
           button_text: testId,
+          button_type: 'icon',
           show_detail: !showDetail,
-          button_type: 'label',
-        }).onClick();
+        });
       }}
-      onMouseOver={
-        buttonTracking({
-          button_text: testId,
-          show_detail: !showDetail,
-          button_type: 'label',
-        }).onMouseOver
-      }
     />
   );
 
@@ -91,7 +83,9 @@ const StudyCard = ({
       <Card.Content
         as={Link}
         to={`/study/${studyId}/basic-info/info`}
-        {...buttonTracking()}
+        onClick={() => {
+          logStudyCardEvent('CLICK');
+        }}
       >
         <Card.Header>{studyName}</Card.Header>
         <Card.Meta>{studyId}</Card.Meta>
@@ -105,11 +99,13 @@ const StudyCard = ({
             content={toolTips.info}
             trigger={
               <Link
-                {...popupTracking({
-                  name: 'Info',
-                  content: toolTips.info,
-                  link: `/study/${studyId}/basic-info/info`,
-                })}
+                onClick={
+                  popupTracking({
+                    name: 'Info',
+                    content: toolTips.info,
+                    link: `/study/${studyId}/basic-info/info`,
+                  }).onClick
+                }
                 to={`/study/${studyId}/basic-info/info`}
                 className="pr-5"
               >
@@ -129,11 +125,13 @@ const StudyCard = ({
             disabled={files.length > 0 && requiredFileChanges < 1}
             trigger={
               <Link
-                {...popupTracking({
-                  name: 'Files',
-                  content: toolTips.files,
-                  link: `/study/${studyId}/documents`,
-                })}
+                onClick={
+                  popupTracking({
+                    name: 'Files',
+                    content: toolTips.files,
+                    link: `/study/${studyId}/documents`,
+                  }).onClick
+                }
                 to={`/study/${studyId}/documents`}
                 className="pr-5"
               >
@@ -156,11 +154,13 @@ const StudyCard = ({
             trigger={
               <Link
                 to={`/study/${studyId}/cavatica`}
-                {...popupTracking({
-                  name: 'Projects',
-                  content: 'Missing projects',
-                  link: `/study/${studyId}/cavatica`,
-                })}
+                onClick={
+                  popupTracking({
+                    name: 'Projects',
+                    content: 'Missing projects',
+                    link: `/study/${studyId}/cavatica`,
+                  }).onClick
+                }
               >
                 <CavaticaLogo
                   className="mr-5 vertical-middle"
@@ -185,7 +185,7 @@ const StudyCard = ({
               files={files}
               history={history}
               eventProperties={{
-                scope: 'FileCounts',
+                scope: 'StudyCard',
               }}
             />
             <ToggleDetailButton testId="show-detail" />

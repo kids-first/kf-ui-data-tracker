@@ -75,22 +75,23 @@ const scope = (name, eventsList) => {
   };
 };
 
-const mouseEvents = ['CLICK', 'HOVER'];
-const dropdownEvents = ['OPEN', 'CLOSE', 'CHANGE'];
+const DROPDOWN_EVENTS = ['OPEN', 'CLOSE', 'CHANGE'];
+const MOUSE_EVENTS = ['HOVER', 'CLICK'];
 
 /**
  * analytics tracking constants object
  */
 const analyticsTrackingConstants = {
   ...scope('INPUT', ['TEXT']),
-  ...scope('MOUSE', ['HOVER', 'CLICK']),
-  ...scope('APP', ['MOUNT']),
+  ...scope('MOUSE', MOUSE_EVENTS),
   ...scope('AUTH', ['LOGIN', 'LOGOUT']),
   ...scope('PAGE', ['VIEW']),
-  ...scope('MOUSE', mouseEvents),
-  ...scope('TOOLTIP', mouseEvents),
-  ...scope('DROPDOWN', dropdownEvents),
+  ...scope('MOUSE', MOUSE_EVENTS),
+  ...scope('TOOLTIP', MOUSE_EVENTS),
+  ...scope('DROPDOWN', DROPDOWN_EVENTS),
   ...scope('STUDY_LIST', ['VIEW_TOGGLE', 'SEARCH', 'ADD_STUDY']),
+  ...scope('STUDY_CARD', ['TOGGLE_DETAIL', ...MOUSE_EVENTS]),
+  ...scope('TOOLTIP', MOUSE_EVENTS),
 };
 
 export default analyticsTrackingConstants;
