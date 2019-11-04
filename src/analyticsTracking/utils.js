@@ -69,5 +69,8 @@ export const popupTracking = (log, inheritedProps) => (
       stopPropagation: true,
       ...inheritedProps,
     },
-    scope || `${EVENT_CONSTANTS.TOOLTIP.scope}_${name.toUpperCase()}_`,
+    scope ||
+      `${EVENT_CONSTANTS.TOOLTIP.scope}${
+        typeof name == 'string' ? '_' + name.toUpperCase() : null
+      }_`,
   );
