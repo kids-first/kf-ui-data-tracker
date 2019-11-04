@@ -22,7 +22,10 @@ const TableValue = ({
   row,
   col,
   title,
-  tracking: {buttonTracking, inheritedEventProps},
+  tracking: {
+    buttonTracking,
+    EVENT_CONSTANTS: {STUDY_TABLE_},
+  },
 }) => {
   switch (col) {
     case 'files':
@@ -31,10 +34,7 @@ const TableValue = ({
           files={row[col].edges}
           title={title}
           hideIcon
-          eventProperties={inherit => ({
-            study: row,
-            scope: [...inherit.scope, 'FileCounts'],
-          })}
+          eventProperties={{study: {kfId: row.kfId}}}
         />
       );
     case 'projects':
@@ -43,10 +43,7 @@ const TableValue = ({
           projects={row[col].edges}
           title={title}
           hideIcon
-          eventProperties={inherit => ({
-            scope: [...inherit.scope, 'CavaticaCounts'],
-            study: row,
-          })}
+          eventProperties={{study: {kfId: row.kfId}}}
         />
       );
     // Are these depricated??
@@ -63,15 +60,21 @@ const TableValue = ({
       return (
         <Link
           to={`/study/${title}/basic-info/info`}
-          onClick={e => e.stopPropagation()}
           className={row[col].missingValue > 0 ? 'text-red' : null}
-          {...buttonTracking({
-            button_text: `${trackedStudyFields.length -
-              row[col].missingValue}/${trackedStudyFields.length} complete`,
-            link: `/study/${title}/basic-info/info`,
-            study: row,
-            scope: [...inheritedEventProps.scope, 'StudyInfo'],
-          })}
+          onClick={
+            buttonTracking(
+              `${trackedStudyFields.length - row[col].missingValue}/${
+                trackedStudyFields.length
+              } complete`,
+              'Table.Row',
+              {
+                link: `/study/${title}/basic-info/info`,
+                study: {kfId: row.kfId},
+                stopPropagation: true,
+              },
+              STUDY_TABLE_.scope,
+            ).onClick
+          }
         >
           {trackedStudyFields.length -
             row[col].missingValue +
@@ -92,7 +95,11 @@ const StudyTable = ({
   clickable = true,
   history,
   isAdmin,
-  tracking: {buttonTracking, inheritedEventProps},
+  tracking: {
+    buttonTracking,
+    inheritedEventProps,
+    EVENT_CONSTANTS: {STUDY_TABLE_},
+  },
 }) => {
   if (loading) {
     return <h2>loading studies</h2>;
@@ -160,6 +167,7 @@ const StudyTable = ({
         );
     }
   };
+
   return (
     <Table striped selectable columns={Object.keys(studies[0]).length}>
       <Table.Header>
@@ -172,24 +180,18 @@ const StudyTable = ({
             key={idx}
             onClick={() => {
               if (clickable) {
-                buttonTracking({
-                  button_text: row.name,
-                  button_tupe: 'table row',
-                  study: row,
-                  scope: [...inheritedEventProps.scope, 'Table.Row'],
-                  link: `/study/${row.kfId}/documents`,
-                }).onClick();
+                buttonTracking(
+                  row.name,
+                  'Table.Row',
+                  {
+                    study: {kfId: row.kfId},
+                    link: `/study/${row.kfId}/documents`,
+                  },
+                  STUDY_TABLE_.scope,
+                ).onClick();
                 history.push(`/study/${row.kfId}/documents`);
               }
             }}
-            onMouseOver={() =>
-              buttonTracking({
-                button_text: row.name,
-                study: row,
-                button_tupe: 'table row',
-                scope: [...inheritedEventProps.scope, 'Table.Row'],
-              }).onMouseOver()
-            }
           >
             {cols.map((col, idx) => (
               <Table.Cell key={idx}>
@@ -197,7 +199,11 @@ const StudyTable = ({
                   row={row}
                   col={col}
                   title={row.kfId}
-                  tracking={{inheritedEventProps, buttonTracking}}
+                  tracking={{
+                    inheritedEventProps,
+                    buttonTracking,
+                    EVENT_CONSTANTS: {STUDY_TABLE_},
+                  }}
                 />
               </Table.Cell>
             ))}

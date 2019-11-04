@@ -6,6 +6,7 @@ const mouseEvents = log => (eventProps = {}, eventType = null) => {
   const mouseActions = {
     onClick: e => {
       if (eventProps.stopPropagation) e.stopPropagation();
+      delete eventProps.stopPropagation;
       try {
         log(
           eventType ? `${eventType}_CLICK` : EVENT_CONSTANTS.MOUSE.CLICK,
@@ -22,6 +23,7 @@ const mouseEvents = log => (eventProps = {}, eventType = null) => {
     },
     onMouseOver: e => {
       if (eventProps.stopPropagation) e.stopPropagation();
+      delete eventProps.stopPropagation;
       try {
         log(
           eventType ? `${eventType}_HOVER` : EVENT_CONSTANTS.MOUSE.HOVER,
@@ -49,8 +51,11 @@ const mouseEvents = log => (eventProps = {}, eventType = null) => {
  * @param {string} type - type of button ('toggle','label','icon', etc )
  * @param {object} props - additional event props to log
  */
-export const buttonTracking = log => (name, type, props) =>
-  mouseEvents(log)({button_text: name, button_type: type, ...props});
+export const buttonTracking = log => (name, type, props, scope) =>
+  mouseEvents(log)(
+    {button_text: name, button_type: type, ...props},
+    scope ? `${scope.toUpperCase()}_` : null,
+  );
 
 export const popupTracking = (log, inheritedProps) => (
   {name, content, link},

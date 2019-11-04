@@ -127,6 +127,7 @@ const StudyList = ({
                 loading={loading}
                 studyList={filteredStudyList()}
                 isAdmin={isAdmin}
+                eventProperties={{scope: 'StudyGrid'}}
               />
             ) : (
               <StudyTable
@@ -147,9 +148,7 @@ const StudyList = ({
                   'anticipatedSamples',
                   'awardeeOrganization',
                 ]}
-                eventProperties={inheritedProps => ({
-                  scope: [...inheritedProps.scope, 'StudyTable'],
-                })}
+                eventProperties={{scope: 'StudyTable'}}
               />
             )}
           </Grid.Column>
