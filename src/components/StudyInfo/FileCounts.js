@@ -9,13 +9,7 @@ import {withAnalyticsTracking} from '../../analyticsTracking';
  * Displays file counts with total number and breaking down by each status
  * When no files exist, show buttons guiding user to upload files
  */
-const FileCounts = ({
-  files,
-  title,
-  history,
-  hideIcon,
-  tracking: {buttonTracking, popupTracking},
-}) => {
+const FileCounts = ({files, title, hideIcon, tracking: {popupTracking}}) => {
   const states = files.map(
     ({node: {versions}}) => versions.edges[0].node.state,
   );
@@ -37,10 +31,6 @@ const FileCounts = ({
           }).onClick
         }
         className={hideIcon && files.length === 0 ? 'text-red' : null}
-        {...buttonTracking({
-          button_text: `${files.length > 0 ? files.length : 'No'} files`,
-          button_type: 'text link',
-        })}
       >
         {!hideIcon && (
           <Icon
