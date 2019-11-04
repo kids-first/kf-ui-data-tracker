@@ -123,6 +123,12 @@ const FileElement = ({
   match,
   fileListId,
   isAdmin,
+  tracking: {
+    logEvent,
+    EVENT_CONSTANTS: {FILE_ELEMENT},
+    inheritedEventProps,
+    buttonTracking,
+  },
 }) => {
   const fileKfID = fileNode.kfId || 'unknown ID';
   const fileName = fileNode.name || 'unknown file name';
@@ -143,9 +149,13 @@ const FileElement = ({
       style={{backgroundColor: justUpdated ? '#f8ffff' : 'inherit'}}
       data-testid="file-item"
       className="cursor-pointer"
-      onClick={() =>
-        history.push(`/study/${match.params.kfId}/documents/${fileKfID}`)
-      }
+      onClick={() => {
+        logEvent(FILE_ELEMENT.CLICK, {
+          ...fileTrackingObj,
+          link: `/study/${match.params.kfId}/documents/${fileKfID}`,
+        });
+        history.push(`/study/${match.params.kfId}/documents/${fileKfID}`);
+      }}
     >
       <Table.Cell textAlign="center">
         <Header>
@@ -155,12 +165,23 @@ const FileElement = ({
               <br />
             </>
           )}
-
-          <Badge
-            state={versionState}
-            loading={loading}
-            filled={versionState === 'CHN'}
-          />
+          <span
+            {...buttonTracking(
+              fileTrackingObj.file_status,
+              'badge',
+              {
+                ...fileTrackingObj,
+                scope: 'FileElement',
+              },
+              'File_STATUS_BADGE_',
+            )}
+          >
+            <Badge
+              state={versionState}
+              loading={loading}
+              filled={versionState === 'CHN'}
+            />
+          </span>
         </Header>
       </Table.Cell>
       <Table.Cell className="px-20">

@@ -26,7 +26,7 @@ const ListFilterBar = ({
   tracking: {
     buttonTracking,
     logEvent,
-    inheritedEventProps: {scope: inheritedScope},
+    dropdownTracking,
     EVENT_CONSTANTS: {DROPDOWN: DD_EVENT, INPUT},
   },
 }) => {
@@ -37,22 +37,6 @@ const ListFilterBar = ({
   const [searchString, setSearchString] = useState('');
   const [showFilter, setShowFilter] = useState(false);
   const [showSort, setShowSort] = useState(false);
-
-  const dropdownTracking = ({name}) => ({
-    onOpen: () => {
-      logEvent(DD_EVENT.OPEN, {
-        placeholder: name,
-        scope: [...inheritedScope, 'Dropdown'],
-      });
-    },
-    onClose: () => {
-      logEvent(DD_EVENT.CLOSE, {
-        placehodler: name,
-        scope: [...inheritedScope, 'Dropdown'],
-        results_length: filteredList.length,
-      });
-    },
-  });
 
   const statusOptions = Object.keys(versionState).map(state => ({
     key: state,
@@ -321,18 +305,16 @@ const ListFilterBar = ({
             value={approvalFilterStatus}
             options={statusOptions}
             placeholder="Approval status"
+            {...dropdownTracking('Approval Stauts')}
             onChange={(e, {value}) => {
-              console.log(value);
-              logEvent(DD_EVENT.CHANGE, {
-                placehodler: 'Approval status',
+              dropdownTracking('Approval status', {
                 value: versionState[value]
                   ? versionState[value].title
                   : 'cleared',
                 results_length: filteredList.length,
-              });
+              }).onChange(e, {value});
               setApprovalFilterStatus(value);
             }}
-            {...dropdownTracking({name: 'Approval Stauts'})}
           />
           <Dropdown
             selection
@@ -341,17 +323,21 @@ const ListFilterBar = ({
             value={typeFilterStatus}
             options={typeOptions}
             placeholder="File type"
+            {...dropdownTracking('File Type')}
             onChange={(e, {value}) => {
-              logEvent(DD_EVENT.CHANGE, {
-                placehodler: 'File type',
-                value: versionState[value]
-                  ? versionState[value].title
-                  : 'cleared',
+              let keyedtypeOptions = typeOptions.reduce((acc, curr) => {
+                return {
+                  [curr.key]: curr.text,
+                  ...acc,
+                };
+              }, {});
+
+              dropdownTracking('File type', {
+                value: keyedtypeOptions[value] || 'cleared',
                 results_length: filteredList.length,
-              });
+              }).onChange(e, {value});
               setTypeFilterStatus(value);
             }}
-            {...dropdownTracking({name: 'File Type'})}
           />
         </Segment>
         <Segment
@@ -368,17 +354,20 @@ const ListFilterBar = ({
             value={sortMethod}
             options={sortOptions}
             placeholder="Date option"
+            {...dropdownTracking('Date option')}
             onChange={(e, {value}) => {
-              logEvent(DD_EVENT.CHANGE, {
-                placehodler: 'Date option',
-                value: versionState[value]
-                  ? versionState[value].title
-                  : 'cleared',
+              let keyedsortOptions = sortOptions.reduce((acc, curr) => {
+                return {
+                  [curr.key]: curr.text,
+                  ...acc,
+                };
+              }, {});
+              dropdownTracking('Date option', {
+                value: keyedsortOptions[value] || 'cleared',
                 results_length: filteredList.length,
-              });
+              }).onChange(e, {value});
               setSortMethod(value);
             }}
-            {...dropdownTracking({name: 'Date option'})}
           />
           <Button
             icon
@@ -390,19 +379,16 @@ const ListFilterBar = ({
               } else {
                 setSortDirection('ascending');
               }
-              buttonTracking({
-                button_text: 'sort-direction-button',
-                direction: sortDirection,
-                results_length: filteredList.length,
-              }).onClick();
+              buttonTracking(
+                'sort-direction-button',
+                'icon',
+                {
+                  direction: sortDirection,
+                  results_length: filteredList.length,
+                },
+                'sort direction_',
+              ).onClick();
             }}
-            onMouseOver={() =>
-              buttonTracking({
-                button_text: 'sort-direction-button',
-                direction: sortDirection,
-                results_length: filteredList.length,
-              }).onMouseOver()
-            }
           >
             <Icon name={'sort content ' + sortDirection} />
           </Button>

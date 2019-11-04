@@ -22,7 +22,7 @@ const FileList = ({
   fileList,
   studyId,
   isAdmin,
-  tracking: {logEvent, EVENT_CONSTANTS, inheritedEventProps},
+  tracking: {logEvent, EVENT_CONSTANTS},
 }) => {
   const perPage = 10;
   const [page, setPage] = useState(1);
@@ -30,7 +30,7 @@ const FileList = ({
 
   const handlePageClick = (e, {activePage}) => {
     e.persist();
-    logEvent(EVENT_CONSTANTS.MOUSE.CLICK, {
+    logEvent(EVENT_CONSTANTS.LIST.PAGINATE, {
       button_text: isNaN(e.target.innerHTML)
         ? e.target.innerHTML.match(/chevron (left|right)/g)[0]
         : e.target.innerHTML,
@@ -38,7 +38,6 @@ const FileList = ({
       button_type: 'pagination item',
       page_count: pageCount,
       per_page: perPage,
-      scope: [...inheritedEventProps.scope, 'Pagination'],
     });
     setPage(activePage);
   };
@@ -88,16 +87,14 @@ const FileList = ({
                         fileListId={studyId}
                         fileNode={node}
                         isAdmin={isAdmin}
+                        eventProperties={{scope: 'StudyFilesListView'}}
                       />
                     ))}
                   </Table.Body>
                 </Table>
               );
             }}
-            eventProperties={inherit => ({
-              scope: [...inherit.scope, 'ListFilterBar'],
-              study: {kfId: studyId},
-            })}
+            eventProperties={{study: {kfId: studyId}}}
           />
         </>
       ) : (

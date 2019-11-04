@@ -46,35 +46,34 @@ const StudyListSkeleton = () => (
  * in-order to get proper event inheritance with
  * AnalyticsViewConsumer
  */
-const UploadDocumentsButton = withAnalyticsTracking(({onUpload}) => (
-  <>
-    <Button
-      compact
-      primary
-      floated="right"
-      size="large"
-      icon="cloud upload"
-      labelPosition="left"
-      content="Upload Document"
-      as="label"
-      htmlFor="file"
-      {...buttonTracking({
-        button_text: 'Upload Document',
-      })}
-    />
-    <input
-      hidden
-      multiple
-      id="file"
-      type="file"
-      onChange={e => {
-        onUpload(e);
-        // setFile(e.target.files[0]);
-        // setDialog(true);
-      }}
-    />
-  </>
-));
+const UploadDocumentsButton = withAnalyticsTracking(
+  ({onUpload, tracking: {buttonTracking}}) => (
+    <>
+      <Button
+        compact
+        primary
+        floated="right"
+        size="large"
+        icon="cloud upload"
+        labelPosition="left"
+        content="Upload Document"
+        as="label"
+        htmlFor="file"
+        onClick={
+          buttonTracking(
+            'Upload Document',
+            null,
+            {
+              scope: 'StudyFilesListView',
+            },
+            'Upload Document',
+          ).onClick
+        }
+      />
+      <input hidden multiple id="file" type="file" onChange={onUpload} />
+    </>
+  ),
+);
 
 /**
  * List and manage files in a study and allow a user to upload more
@@ -135,23 +134,8 @@ const StudyFilesListView = ({
         </Grid.Column>
         {files.length > 0 && (
           <Grid.Column width={6}>
-            <Button
-              compact
-              primary
-              floated="right"
-              size="large"
-              icon="cloud upload"
-              labelPosition="left"
-              content="Upload Document"
-              as="label"
-              htmlFor="file"
-            />
-            <input
-              hidden
-              multiple
-              id="file"
-              type="file"
-              onChange={e => {
+            <UploadDocumentsButton
+              onUpload={e => {
                 setFile(e.target.files[0]);
                 setDialog(true);
               }}
