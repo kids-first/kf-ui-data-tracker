@@ -295,11 +295,13 @@ exports[`renders with files 1`] = `
           <div
             class="ui header"
           >
-            <div
-              class="ui orange tiny basic label"
-            >
-              Pending review
-            </div>
+            <span>
+              <div
+                class="ui orange tiny basic label"
+              >
+                Pending review
+              </div>
+            </span>
           </div>
         </td>
         <td
@@ -416,11 +418,13 @@ exports[`renders with files 1`] = `
           <div
             class="ui header"
           >
-            <div
-              class="ui orange tiny basic label"
-            >
-              Pending review
-            </div>
+            <span>
+              <div
+                class="ui orange tiny basic label"
+              >
+                Pending review
+              </div>
+            </span>
           </div>
         </td>
         <td
@@ -537,11 +541,13 @@ exports[`renders with files 1`] = `
           <div
             class="ui header"
           >
-            <div
-              class="ui orange tiny basic label"
-            >
-              Pending review
-            </div>
+            <span>
+              <div
+                class="ui orange tiny basic label"
+              >
+                Pending review
+              </div>
+            </span>
           </div>
         </td>
         <td
@@ -658,11 +664,13 @@ exports[`renders with files 1`] = `
           <div
             class="ui header"
           >
-            <div
-              class="ui orange tiny basic label"
-            >
-              Pending review
-            </div>
+            <span>
+              <div
+                class="ui orange tiny basic label"
+              >
+                Pending review
+              </div>
+            </span>
           </div>
         </td>
         <td
@@ -779,11 +787,13 @@ exports[`renders with files 1`] = `
           <div
             class="ui header"
           >
-            <div
-              class="ui orange tiny basic label"
-            >
-              Pending review
-            </div>
+            <span>
+              <div
+                class="ui orange tiny basic label"
+              >
+                Pending review
+              </div>
+            </span>
           </div>
         </td>
         <td
@@ -897,11 +907,13 @@ exports[`renders with files 1`] = `
           <div
             class="ui header"
           >
-            <div
-              class="ui orange tiny basic label"
-            >
-              Pending review
-            </div>
+            <span>
+              <div
+                class="ui orange tiny basic label"
+              >
+                Pending review
+              </div>
+            </span>
           </div>
         </td>
         <td
@@ -1015,11 +1027,13 @@ exports[`renders with files 1`] = `
           <div
             class="ui header"
           >
-            <div
-              class="ui orange tiny basic label"
-            >
-              Pending review
-            </div>
+            <span>
+              <div
+                class="ui orange tiny basic label"
+              >
+                Pending review
+              </div>
+            </span>
           </div>
         </td>
         <td
@@ -1133,11 +1147,13 @@ exports[`renders with files 1`] = `
           <div
             class="ui header"
           >
-            <div
-              class="ui orange tiny basic label"
-            >
-              Pending review
-            </div>
+            <span>
+              <div
+                class="ui orange tiny basic label"
+              >
+                Pending review
+              </div>
+            </span>
           </div>
         </td>
         <td
@@ -1251,11 +1267,13 @@ exports[`renders with files 1`] = `
           <div
             class="ui header"
           >
-            <div
-              class="ui orange tiny basic label"
-            >
-              Pending review
-            </div>
+            <span>
+              <div
+                class="ui orange tiny basic label"
+              >
+                Pending review
+              </div>
+            </span>
           </div>
         </td>
         <td
@@ -1369,11 +1387,13 @@ exports[`renders with files 1`] = `
           <div
             class="ui header"
           >
-            <div
-              class="ui orange tiny basic label"
-            >
-              Pending review
-            </div>
+            <span>
+              <div
+                class="ui orange tiny basic label"
+              >
+                Pending review
+              </div>
+            </span>
           </div>
         </td>
         <td
@@ -1840,11 +1860,13 @@ exports[`renders with files 2`] = `
           <div
             class="ui header"
           >
-            <div
-              class="ui orange tiny basic label"
-            >
-              Pending review
-            </div>
+            <span>
+              <div
+                class="ui orange tiny basic label"
+              >
+                Pending review
+              </div>
+            </span>
           </div>
         </td>
         <td
@@ -1958,11 +1980,13 @@ exports[`renders with files 2`] = `
           <div
             class="ui header"
           >
-            <div
-              class="ui orange tiny basic label"
-            >
-              Pending review
-            </div>
+            <span>
+              <div
+                class="ui orange tiny basic label"
+              >
+                Pending review
+              </div>
+            </span>
           </div>
         </td>
         <td
@@ -2429,11 +2453,13 @@ exports[`renders with files 3`] = `
           <div
             class="ui header"
           >
-            <div
-              class="ui orange tiny basic label"
-            >
-              Pending review
-            </div>
+            <span>
+              <div
+                class="ui orange tiny basic label"
+              >
+                Pending review
+              </div>
+            </span>
           </div>
         </td>
         <td
@@ -2547,11 +2573,13 @@ exports[`renders with files 3`] = `
           <div
             class="ui header"
           >
-            <div
-              class="ui orange tiny basic label"
-            >
-              Pending review
-            </div>
+            <span>
+              <div
+                class="ui orange tiny basic label"
+              >
+                Pending review
+              </div>
+            </span>
           </div>
         </td>
         <td
@@ -2665,11 +2693,13 @@ exports[`renders with files 3`] = `
           <div
             class="ui header"
           >
-            <div
-              class="ui orange tiny basic label"
-            >
-              Pending review
-            </div>
+            <span>
+              <div
+                class="ui orange tiny basic label"
+              >
+                Pending review
+              </div>
+            </span>
           </div>
         </td>
         <td
@@ -2783,11 +2813,13 @@ exports[`renders with files 3`] = `
           <div
             class="ui header"
           >
-            <div
-              class="ui orange tiny basic label"
-            >
-              Pending review
-            </div>
+            <span>
+              <div
+                class="ui orange tiny basic label"
+              >
+                Pending review
+              </div>
+            </span>
           </div>
         </td>
         <td
@@ -2901,11 +2933,13 @@ exports[`renders with files 3`] = `
           <div
             class="ui header"
           >
-            <div
-              class="ui orange tiny basic label"
-            >
-              Pending review
-            </div>
+            <span>
+              <div
+                class="ui orange tiny basic label"
+              >
+                Pending review
+              </div>
+            </span>
           </div>
         </td>
         <td
@@ -3019,11 +3053,13 @@ exports[`renders with files 3`] = `
           <div
             class="ui header"
           >
-            <div
-              class="ui orange tiny basic label"
-            >
-              Pending review
-            </div>
+            <span>
+              <div
+                class="ui orange tiny basic label"
+              >
+                Pending review
+              </div>
+            </span>
           </div>
         </td>
         <td
@@ -3137,11 +3173,13 @@ exports[`renders with files 3`] = `
           <div
             class="ui header"
           >
-            <div
-              class="ui orange tiny basic label"
-            >
-              Pending review
-            </div>
+            <span>
+              <div
+                class="ui orange tiny basic label"
+              >
+                Pending review
+              </div>
+            </span>
           </div>
         </td>
         <td
@@ -3255,11 +3293,13 @@ exports[`renders with files 3`] = `
           <div
             class="ui header"
           >
-            <div
-              class="ui orange tiny basic label"
-            >
-              Pending review
-            </div>
+            <span>
+              <div
+                class="ui orange tiny basic label"
+              >
+                Pending review
+              </div>
+            </span>
           </div>
         </td>
         <td

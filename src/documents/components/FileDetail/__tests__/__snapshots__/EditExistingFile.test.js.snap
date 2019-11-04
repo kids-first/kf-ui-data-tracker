@@ -531,11 +531,13 @@ exports[`edits an existing file correctly 1`] = `
                 <div
                   class="ui header"
                 >
-                  <div
-                    class="ui orange tiny basic label"
-                  >
-                    Pending review
-                  </div>
+                  <span>
+                    <div
+                      class="ui orange tiny basic label"
+                    >
+                      Pending review
+                    </div>
+                  </span>
                 </div>
               </td>
               <td
@@ -661,11 +663,13 @@ exports[`edits an existing file correctly 1`] = `
                 <div
                   class="ui header"
                 >
-                  <div
-                    class="ui orange tiny basic label"
-                  >
-                    Pending review
-                  </div>
+                  <span>
+                    <div
+                      class="ui orange tiny basic label"
+                    >
+                      Pending review
+                    </div>
+                  </span>
                 </div>
               </td>
               <td

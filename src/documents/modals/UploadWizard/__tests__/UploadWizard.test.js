@@ -172,7 +172,7 @@ it('progresses to Step 3: Document Updated ', async done => {
   expect(getByText(/Exit \(2\)/i)).toBeTruthy();
   expect(handleClose.mock.calls.length).toBe(0);
 
-  await sleep(1000);
+  await sleep(1100);
   expect(getByText(/Exit \(1\)/i)).toBeTruthy();
 
   await sleep(2000);
