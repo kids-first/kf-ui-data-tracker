@@ -13,7 +13,7 @@ const FileCounts = ({
   title,
   history,
   hideIcon,
-  tracking: {logEvent, popupTracking, inheritedEventProps, buttonTracking},
+  tracking: {logEvent, popupTracking, inheritedEventProps},
 }) => {
   const states = files.map(
     ({node: {versions}}) => versions.edges[0].node.state,
@@ -43,10 +43,6 @@ const FileCounts = ({
           )
         }
         className={hideIcon && files.length === 0 ? 'text-red' : null}
-        {...buttonTracking({
-          button_text: `${files.length > 0 ? files.length : 'No'} files`,
-          button_type: 'text link',
-        })}
       >
         {!hideIcon && (
           <Icon
