@@ -64,10 +64,9 @@ const FileActionButtons = ({
               basic
               compact
               data-testid="delete-button"
-              {...buttonTracking({
-                button_text: 'delete-button',
-                button_type: 'icon',
-                button_content: 'Delete confirm',
+              {...popupTracking({
+                name: 'Delete confirm',
+                content: 'Are you sure?',
                 stopPropagation: true,
               })}
               icon={<Icon name="trash alternate" />}
@@ -92,10 +91,16 @@ const FileActionButtons = ({
                 }}
                 onClick={e => {
                   e.stopPropagation();
-                  popupTracking({
-                    name: 'Are you sure?',
-                    content: 'Delete',
-                  }).onClick(e);
+                  buttonTracking(
+                    'Delete',
+                    'icon',
+                    {
+                      button_text: 'Delete',
+                      scope: 'Tooltip - Are you sure? ',
+                      stopPropagation: true,
+                    },
+                    'DELETE_FILE_',
+                  ).onClick(e);
                   deleteFile({variables: {kfId: node.kfId}});
                 }}
               />

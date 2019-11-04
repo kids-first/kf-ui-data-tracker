@@ -59,21 +59,18 @@ const UploadDocumentsButton = withAnalyticsTracking(
         content="Upload Document"
         as="label"
         htmlFor="file"
-        {...buttonTracking({
-          button_text: 'Upload Document',
-        })}
+        onClick={
+          buttonTracking(
+            'Upload Document',
+            null,
+            {
+              scope: 'StudyFilesListView',
+            },
+            'Upload Document',
+          ).onClick
+        }
       />
-      <input
-        hidden
-        multiple
-        id="file"
-        type="file"
-        onChange={e => {
-          onUpload(e);
-          // setFile(e.target.files[0]);
-          // setDialog(true);
-        }}
-      />
+      <input hidden multiple id="file" type="file" onChange={onUpload} />
     </>
   ),
 );
@@ -114,23 +111,8 @@ const StudyFilesListView = ({
         </Grid.Column>
         {files.length > 0 && (
           <Grid.Column width={6}>
-            <Button
-              compact
-              primary
-              floated="right"
-              size="large"
-              icon="cloud upload"
-              labelPosition="left"
-              content="Upload Document"
-              as="label"
-              htmlFor="file"
-            />
-            <input
-              hidden
-              multiple
-              id="file"
-              type="file"
-              onChange={e => {
+            <UploadDocumentsButton
+              onUpload={e => {
                 setFile(e.target.files[0]);
                 setDialog(true);
               }}

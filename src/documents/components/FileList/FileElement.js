@@ -126,7 +126,7 @@ const FileElement = ({
   isAdmin,
   tracking: {
     logEvent,
-    EVENT_CONSTANTS: {MOUSE},
+    EVENT_CONSTANTS: {FILE_ELEMENT_},
     inheritedEventProps,
     buttonTracking,
   },
@@ -158,9 +158,8 @@ const FileElement = ({
       style={{backgroundColor: justUpdated ? '#f8ffff' : 'inherit'}}
       data-testid="file-item"
       className="cursor-pointer"
-      onMouseOver={() => logEvent(MOUSE.HOVER, fileTrackingObj)}
       onClick={() => {
-        logEvent(MOUSE.CLICK, {
+        logEvent(FILE_ELEMENT_.CLICK, {
           ...fileTrackingObj,
           link: `/study/${match.params.kfId}/documents/${fileKfID}`,
         });
@@ -176,12 +175,15 @@ const FileElement = ({
             </>
           )}
           <span
-            {...buttonTracking({
-              ...fileTrackingObj,
-              button_text: fileTrackingObj.file_status,
-              button_type: 'badge',
-              scope: 'Badge',
-            })}
+            {...buttonTracking(
+              fileTrackingObj.file_status,
+              'badge',
+              {
+                ...fileTrackingObj,
+                scope: 'FileElement',
+              },
+              'File_STATUS_BADGE_',
+            )}
           >
             <Badge
               state={versionState}

@@ -23,7 +23,6 @@ const FileActionsContainer = ({node, studyId, fluid, vertical, isAdmin}) => {
                   fluid,
                 }}
                 eventProperties={inherit => ({
-                  scope: [...inherit.scope, 'FileActionButtons'],
                   file: {studyId, kfId: node.kfId},
                   is_admin: isAdmin,
                 })}

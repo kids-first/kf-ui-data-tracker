@@ -59,9 +59,6 @@ const UploadContainer = ({
       }}
       handleSelectedFile={e => handleUpload(e.target.files[0])}
       instructions="To upload Study Documents drag and drop a file here"
-      eventProperties={inherit => ({
-        scope: [...inherit.scope, 'FileUploadTarget'],
-      })}
     />
   );
 };

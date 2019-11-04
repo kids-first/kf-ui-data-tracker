@@ -82,21 +82,19 @@ const MOUSE_EVENTS = ['HOVER', 'CLICK'];
  * analytics tracking constants object
  */
 const analyticsTrackingConstants = {
-  ...scope('MOUSE', MOUSE_EVENTS),
-  ...scope('INPUT', ['TEXT', 'FILE']),
-  ...scope('UPLOAD'),
-  ...scope('DRAG', ['OVER', 'ENTER', 'LEAVE', 'DROP']),
-  ...scope('DROPDOWN', ['CHANGE', 'BLUR', 'FOCUS', 'OPEN', 'CLOSE']),
   ...scope('AUTH', ['LOGIN', 'LOGOUT']),
   ...scope('PAGE', ['VIEW']),
   ...scope('MOUSE', MOUSE_EVENTS),
-  ...scope('TOOLTIP', MOUSE_EVENTS),
+  ...scope('INPUT', ['TEXT', 'FILE']),
   ...scope('DROPDOWN', DROPDOWN_EVENTS),
-  ...scope('STUDY_LIST', ['VIEW_TOGGLE', 'SEARCH', 'ADD_STUDY']),
-  ...scope('STUDY_CARD', ['TOGGLE_DETAIL', ...MOUSE_EVENTS]),
-  ...scope('STUDY_TABLE', MOUSE_EVENTS),
-
+  ...scope('DRAG', ['OVER', 'ENTER', 'LEAVE', 'DROP']),
+  ...scope('LIST', ['PAGINATE']),
   ...scope('TOOLTIP', MOUSE_EVENTS),
+  ...scope('UPLOAD'),
+  ...scope('STUDY_LIST', ['VIEW_TOGGLE', 'SEARCH', 'ADD_STUDY']),
+  ...scope('STUDY_TABLE', MOUSE_EVENTS),
+  ...scope('STUDY_CARD', ['TOGGLE_DETAIL', ...MOUSE_EVENTS]),
+  ...scope('FILE_ELEMENT', MOUSE_EVENTS),
 };
 
 export default analyticsTrackingConstants;
