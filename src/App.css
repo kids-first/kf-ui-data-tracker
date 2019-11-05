@@ -82,6 +82,14 @@ body {
   margin-bottom: 15px !important;
 }
 
+.mr-40 {
+  margin-right: 40px !important;
+}
+
+.mr-80 {
+  margin-right: 80px !important;
+}
+
 .ui.stackable.cards > .card {
   display: flex !important;
 }
