@@ -54,7 +54,9 @@ const FileList = ({fileList, studyId, isAdmin}) => {
                       <Table.HeaderCell textAlign="center">
                         Approval
                       </Table.HeaderCell>
-                      <Table.HeaderCell>Document Details</Table.HeaderCell>
+                      <Table.HeaderCell className="px-20">
+                        Document Details
+                      </Table.HeaderCell>
                       <Table.HeaderCell textAlign="center">
                         Actions
                       </Table.HeaderCell>

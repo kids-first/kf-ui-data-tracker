@@ -66,6 +66,11 @@ body {
   padding-right: 5px !important;
 }
 
+.px-20 {
+  padding-right: 20px !important;
+  padding-left: 20px !important;
+}
+
 .mt-6 {
   margin-top: 6px !important;
 }

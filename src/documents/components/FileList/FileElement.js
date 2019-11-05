@@ -163,7 +163,7 @@ const FileElement = ({
           />
         </Header>
       </Table.Cell>
-      <Table.Cell>
+      <Table.Cell className="px-20">
         <Header size="medium" as="span">
           <Link to={`/study/${match.params.kfId}/documents/${fileKfID}`}>
             {fileName}
