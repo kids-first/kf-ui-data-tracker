@@ -6,6 +6,7 @@
   command = "REACT_APP_AUTH0_REDIRECT_URI=$URL/callback yarn build"
 
 [context.master.environment]
+  REACT_APP_ENV = "qa"
   REACT_APP_STUDY_API = "https://kf-study-creator-qa.kids-first.io"
 
 [[redirects]]
