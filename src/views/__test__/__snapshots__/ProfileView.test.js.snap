@@ -26,31 +26,68 @@ exports[`renders profile view -- shows an error 1`] = `
     </div>
   </div>
   <div
-    class="ui basic segment ui container"
+    class="page"
   >
-    <h3
-      class="ui header"
-    >
-      Your Profile
-    </h3>
     <div
-      class="ui icon negative message"
+      class="ui basic segment ui container"
     >
-      <i
-        aria-hidden="true"
-        class="warning circle icon"
-      />
+      <h3
+        class="ui header"
+      >
+        Your Profile
+      </h3>
       <div
-        class="content"
+        class="ui icon negative message"
+      >
+        <i
+          aria-hidden="true"
+          class="warning circle icon"
+        />
+        <div
+          class="content"
+        >
+          <div
+            class="header"
+          >
+            Error
+          </div>
+          <p>
+            Network error: Failed to get user profile information
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ui segment footer"
+  >
+    <div
+      class="ui container text-10"
+    >
+      <div
+        class="ui horizontal list"
+        role="list"
       >
         <div
-          class="header"
+          class="item"
+          role="listitem"
         >
-          Error
+          <div
+            class="ui basic horizontal label text-10"
+          />
         </div>
-        <p>
-          Network error: Failed to get user profile information
-        </p>
+        <div
+          class="item noMargin"
+          role="listitem"
+        >
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -83,36 +120,73 @@ exports[`renders profile view correctly 1`] = `
     </div>
   </div>
   <div
-    class="ui basic segment ui container"
+    class="page"
   >
     <div
-      class="ui placeholder"
+      class="ui basic segment ui container"
     >
       <div
-        class="image header"
+        class="ui placeholder"
       >
         <div
-          class="line"
-        />
+          class="image header"
+        >
+          <div
+            class="line"
+          />
+          <div
+            class="line"
+          />
+        </div>
         <div
-          class="line"
-        />
+          class="paragraph"
+        >
+          <div
+            class="line"
+          />
+          <div
+            class="line"
+          />
+          <div
+            class="line"
+          />
+          <div
+            class="line"
+          />
+        </div>
       </div>
+    </div>
+  </div>
+  <div
+    class="ui segment footer"
+  >
+    <div
+      class="ui container text-10"
+    >
       <div
-        class="paragraph"
+        class="ui horizontal list"
+        role="list"
       >
         <div
-          class="line"
-        />
+          class="item"
+          role="listitem"
+        >
+          <div
+            class="ui basic horizontal label text-10"
+          />
+        </div>
         <div
-          class="line"
-        />
-        <div
-          class="line"
-        />
-        <div
-          class="line"
-        />
+          class="item noMargin"
+          role="listitem"
+        >
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -248,199 +322,236 @@ exports[`renders profile view correctly 2`] = `
     </div>
   </div>
   <div
-    class="ui basic vertical segment ui container"
+    class="page"
   >
-    <h3
-      class="ui header"
-    >
-      Your Profile
-    </h3>
     <div
-      class="ui basic secondary segment"
+      class="ui basic vertical segment ui container"
     >
+      <h3
+        class="ui header"
+      >
+        Your Profile
+      </h3>
       <div
-        class="ui doubling stackable grid"
+        class="ui basic secondary segment"
       >
         <div
-          class="row"
+          class="ui doubling stackable grid"
         >
           <div
-            class="middle aligned two wide computer sixteen wide mobile four wide tablet column"
+            class="row"
           >
-            <img
-              class="ui small bordered circular centered image"
-              src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
-            />
-          </div>
-          <div
-            class="ui top left attached label"
-          >
-            ADMIN, BETA
-          </div>
-          <div
-            class="fourteen wide computer sixteen wide mobile twelve wide tablet column"
-          >
-            <form
-              class="ui mini form"
+            <div
+              class="middle aligned two wide computer sixteen wide mobile four wide tablet column"
             >
-              <div
-                class="two fields"
+              <img
+                class="ui small bordered circular centered image"
+                src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
+              />
+            </div>
+            <div
+              class="ui top left attached label"
+            >
+              ADMIN, BETA
+            </div>
+            <div
+              class="fourteen wide computer sixteen wide mobile twelve wide tablet column"
+            >
+              <form
+                class="ui mini form"
               >
                 <div
-                  class="disabled field"
+                  class="two fields"
                 >
-                  <label>
-                    Username
-                  </label>
-                  <input
-                    disabled=""
-                    value="bendolly"
-                  />
+                  <div
+                    class="disabled field"
+                  >
+                    <label>
+                      Username
+                    </label>
+                    <input
+                      disabled=""
+                      value="bendolly"
+                    />
+                  </div>
+                  <div
+                    class="disabled field"
+                  >
+                    <label>
+                      Email
+                    </label>
+                    <input
+                      disabled=""
+                      value="bendolly@d3b.center"
+                    />
+                  </div>
                 </div>
                 <div
-                  class="disabled field"
+                  class="two fields"
                 >
-                  <label>
-                    Email
-                  </label>
-                  <input
-                    disabled=""
-                    value="bendolly@d3b.center"
-                  />
+                  <div
+                    class="disabled field"
+                  >
+                    <label>
+                      First Name
+                    </label>
+                    <input
+                      disabled=""
+                      value="Ben"
+                    />
+                  </div>
+                  <div
+                    class="disabled field"
+                  >
+                    <label>
+                      Last Name
+                    </label>
+                    <input
+                      disabled=""
+                      value="Dolly"
+                    />
+                  </div>
                 </div>
-              </div>
-              <div
-                class="two fields"
-              >
-                <div
-                  class="disabled field"
-                >
-                  <label>
-                    First Name
-                  </label>
-                  <input
-                    disabled=""
-                    value="Ben"
-                  />
-                </div>
-                <div
-                  class="disabled field"
-                >
-                  <label>
-                    Last Name
-                  </label>
-                  <input
-                    disabled=""
-                    value="Dolly"
-                  />
-                </div>
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <h3
-      class="ui header"
-    >
-      Notifications
-    </h3>
-    <div
-      class="ui icon info attached message"
-    >
-      <i
-        aria-hidden="true"
-        class="send icon"
-      />
+      <h3
+        class="ui header"
+      >
+        Notifications
+      </h3>
       <div
-        class="content"
+        class="ui icon info attached message"
       >
+        <i
+          aria-hidden="true"
+          class="send icon"
+        />
         <div
-          class="header"
+          class="content"
         >
-          Get Notified
+          <div
+            class="header"
+          >
+            Get Notified
+          </div>
+          <p>
+            If you are a member of the Kids-First slack channel, we can send you daily updates when there are changes made to the studies of your choosing.
+          </p>
         </div>
-        <p>
-          If you are a member of the Kids-First slack channel, we can send you daily updates when there are changes made to the studies of your choosing.
-        </p>
       </div>
-    </div>
-    <div
-      class="ui segment"
-    >
-      <form
-        class="ui form"
+      <div
+        class="ui segment"
       >
-        <div
-          class="fields"
+        <form
+          class="ui form"
         >
+          <div
+            class="fields"
+          >
+            <div
+              class="field"
+            >
+              <label
+                for="slackid"
+              >
+                Slack ID:
+              </label>
+              <input
+                name="slackid"
+                placeholder="U1234ABC"
+                type="text"
+                value=""
+              />
+              <a
+                href="https://medium.com/@moshfeu/how-to-find-my-member-id-in-slack-workspace-d4bba942e38c"
+              >
+                Where do I find my id?
+              </a>
+            </div>
+          </div>
           <div
             class="field"
           >
+            <div
+              class="ui checkbox"
+            >
+              <input
+                class="hidden"
+                name="notify"
+                readonly=""
+                tabindex="0"
+                type="checkbox"
+                value=""
+              />
+              <label>
+                Send me daily activity reports of my subscribed studies
+              </label>
+            </div>
             <label
-              for="slackid"
-            >
-              Slack ID:
-            </label>
-            <input
-              name="slackid"
-              placeholder="U1234ABC"
-              type="text"
-              value=""
+              for="notify"
             />
-            <a
-              href="https://medium.com/@moshfeu/how-to-find-my-member-id-in-slack-workspace-d4bba942e38c"
-            >
-              Where do I find my id?
-            </a>
           </div>
-        </div>
+          <button
+            class="ui primary button"
+            type="submit"
+          >
+            Save
+          </button>
+          <div
+            class="ui hidden info message"
+          />
+          <div
+            class="ui hidden negative message"
+          />
+        </form>
+      </div>
+      <h3
+        class="ui header"
+      >
+        Your Subscriptions
+      </h3>
+      <p>
+        We'll notify you of daily activity when you subscribe to studies below
+      </p>
+      <div>
+        Loading subscriptions...
+      </div>
+    </div>
+  </div>
+  <div
+    class="ui segment footer"
+  >
+    <div
+      class="ui container text-10"
+    >
+      <div
+        class="ui horizontal list"
+        role="list"
+      >
         <div
-          class="field"
+          class="item"
+          role="listitem"
         >
           <div
-            class="ui checkbox"
-          >
-            <input
-              class="hidden"
-              name="notify"
-              readonly=""
-              tabindex="0"
-              type="checkbox"
-              value=""
-            />
-            <label>
-              Send me daily activity reports of my subscribed studies
-            </label>
-          </div>
-          <label
-            for="notify"
+            class="ui basic horizontal label text-10"
           />
         </div>
-        <button
-          class="ui primary button"
-          type="submit"
+        <div
+          class="item noMargin"
+          role="listitem"
         >
-          Save
-        </button>
-        <div
-          class="ui hidden info message"
-        />
-        <div
-          class="ui hidden negative message"
-        />
-      </form>
-    </div>
-    <h3
-      class="ui header"
-    >
-      Your Subscriptions
-    </h3>
-    <p>
-      We'll notify you of daily activity when you subscribe to studies below
-    </p>
-    <div>
-      Loading subscriptions...
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -78,83 +78,120 @@ exports[`renders study info view as empty view -- not BETA user 1`] = `
       </div>
     </div>
   </div>
-  <section
-    id="study"
+  <div
+    class="page"
   >
-    <div
-      class="ui basic secondary segment"
+    <section
+      id="study"
     >
+      <div
+        class="ui basic secondary segment"
+      >
+        <div
+          class="ui container"
+        >
+          <h1
+            class="ui header"
+          >
+            benchmark extensible e-business
+          </h1>
+          <button
+            class="ui tiny basic icon button"
+          >
+            <i
+              aria-hidden="true"
+              class="copy icon"
+            />
+            SD_8WX8QQ06
+          </button>
+        </div>
+      </div>
       <div
         class="ui container"
       >
-        <h1
-          class="ui header"
+        <div
+          class="ui pink pointing secondary menu"
         >
-          benchmark extensible e-business
-        </h1>
-        <button
-          class="ui tiny basic icon button"
-        >
-          <i
-            aria-hidden="true"
-            class="copy icon"
-          />
-          SD_8WX8QQ06
-        </button>
+          <a
+            aria-current="page"
+            class="active item active"
+            href="/study/SD_8WX8QQ06/basic-info/info"
+          >
+            Basic Info
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/dashboard"
+          >
+            Dashboard
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/documents"
+          >
+            Documents
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/cavatica"
+          >
+            Cavatica
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/logs"
+          >
+            Logs
+          </a>
+        </div>
       </div>
-    </div>
+    </section>
     <div
-      class="ui container"
+      class="ui basic very padded segment ui container"
+    >
+      <h2
+        class="ui disabled center aligned header"
+      >
+        <i
+          aria-hidden="true"
+          class="clock outline icon"
+        />
+        Coming Soon...
+      </h2>
+    </div>
+  </div>
+  <div
+    class="ui segment footer"
+  >
+    <div
+      class="ui container text-10"
     >
       <div
-        class="ui pink pointing secondary menu"
+        class="ui horizontal list"
+        role="list"
       >
-        <a
-          aria-current="page"
-          class="active item active"
-          href="/study/SD_8WX8QQ06/basic-info/info"
-        >
-          Basic Info
-        </a>
-        <a
+        <div
           class="item"
-          href="/study/SD_8WX8QQ06/dashboard"
+          role="listitem"
         >
-          Dashboard
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/documents"
+          <div
+            class="ui basic horizontal label text-10"
+          />
+        </div>
+        <div
+          class="item noMargin"
+          role="listitem"
         >
-          Documents
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/cavatica"
-        >
-          Cavatica
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/logs"
-        >
-          Logs
-        </a>
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
+        </div>
       </div>
     </div>
-  </section>
-  <div
-    class="ui basic very padded segment ui container"
-  >
-    <h2
-      class="ui disabled center aligned header"
-    >
-      <i
-        aria-hidden="true"
-        class="clock outline icon"
-      />
-      Coming Soon...
-    </h2>
   </div>
 </div>
 `;
@@ -237,257 +274,294 @@ exports[`renders study info view as read-only -- BETA but not ADMIN user 1`] = `
       </div>
     </div>
   </div>
-  <section
-    id="study"
+  <div
+    class="page"
   >
-    <div
-      class="ui basic secondary segment"
+    <section
+      id="study"
     >
+      <div
+        class="ui basic secondary segment"
+      >
+        <div
+          class="ui container"
+        >
+          <h1
+            class="ui header"
+          >
+            benchmark extensible e-business
+          </h1>
+          <button
+            class="ui tiny basic icon button"
+          >
+            <i
+              aria-hidden="true"
+              class="copy icon"
+            />
+            SD_8WX8QQ06
+          </button>
+        </div>
+      </div>
       <div
         class="ui container"
       >
-        <h1
-          class="ui header"
+        <div
+          class="ui pink pointing secondary menu"
         >
-          benchmark extensible e-business
-        </h1>
-        <button
-          class="ui tiny basic icon button"
+          <a
+            class="active item"
+            href="/study/SD_8WX8QQ06/basic-info/info"
+          >
+            Basic Info
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/dashboard"
+          >
+            Dashboard
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/documents"
+          >
+            Documents
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/cavatica"
+          >
+            Cavatica
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/logs"
+          >
+            Logs
+          </a>
+        </div>
+      </div>
+    </section>
+    <div
+      class="ui basic vertical segment ui container"
+    >
+      <h2
+        class="ui left floated header mt-6"
+      >
+        Study Basic Info
+      </h2>
+      <div
+        class="ui fluid top attached three steps"
+      >
+        <a
+          class="link step"
         >
           <i
             aria-hidden="true"
-            class="copy icon"
+            class="info circular icon"
           />
-          SD_8WX8QQ06
-        </button>
+          <div
+            class="content"
+          >
+            <div
+              class="title"
+            >
+              Info
+            </div>
+            <div
+              class="description"
+            >
+              General Study Details
+            </div>
+          </div>
+        </a>
+        <a
+          class="link step"
+        >
+          <i
+            aria-hidden="true"
+            class="disk circular icon"
+          />
+          <div
+            class="content"
+          >
+            <div
+              class="title"
+            >
+              External
+            </div>
+            <div
+              class="description"
+            >
+              For dbGaP project
+            </div>
+          </div>
+        </a>
+        <a
+          class="active link step"
+        >
+          <i
+            aria-hidden="true"
+            class="calendar check circular icon"
+          />
+          <div
+            class="content"
+          >
+            <div
+              class="title"
+            >
+              Logistics
+            </div>
+            <div
+              class="description"
+            >
+              Scheduling & Collection
+            </div>
+          </div>
+        </a>
+      </div>
+      <div
+        class="ui clearing attached padded segment"
+      >
+        <form
+          class="ui form"
+        >
+          <h4
+            class="ui header text-wrap-75"
+          >
+            Provide details about the Kids First grant that this study was awarded.
+          </h4>
+          <div
+            class="field"
+          >
+            <label
+              class="noMargin"
+            >
+              Release Date
+              :
+            </label>
+            <div
+              class="ui fluid input readOnlyField noMargin"
+            >
+              <input
+                aria-label="releaseDate"
+                name="releaseDate"
+                readonly=""
+                type="date"
+                value="2019-08-24"
+              />
+            </div>
+          </div>
+          <div
+            class="field"
+          >
+            <label
+              class="noMargin"
+            >
+              Number of anticipated samples
+              :
+            </label>
+            <div
+              class="ui fluid input readOnlyField noMargin"
+            >
+              <input
+                aria-label="anticipatedSamples"
+                name="anticipatedSamples"
+                readonly=""
+                type="number"
+                value="100"
+              />
+            </div>
+          </div>
+          <div
+            class="field"
+          >
+            <label
+              class="noMargin"
+            >
+              Awardee organization
+              :
+            </label>
+            <div
+              class="ui fluid input readOnlyField noMargin"
+            >
+              <input
+                aria-label="awardeeOrganization"
+                name="awardeeOrganization"
+                readonly=""
+                type="text"
+                value="CHOP"
+              />
+            </div>
+          </div>
+          <h5
+            class="ui header"
+          >
+            Description:
+          </h5>
+          <div
+            class="ui attached segment max-h-500"
+          >
+            <p>
+              Sudy description in markdown, commonly the X01 abstract text. --  As test study description
+            </p>
+          </div>
+          <div
+            class="ui bottom attached button mb-15"
+            role="button"
+            tabindex="0"
+          >
+            Read More
+          </div>
+          <button
+            class="ui icon left floated left labeled button"
+            type="button"
+          >
+            <i
+              aria-hidden="true"
+              class="left arrow icon"
+            />
+            PREVIOUS
+          </button>
+        </form>
       </div>
     </div>
+  </div>
+  <div
+    class="ui segment footer"
+  >
     <div
-      class="ui container"
+      class="ui container text-10"
     >
       <div
-        class="ui pink pointing secondary menu"
+        class="ui horizontal list"
+        role="list"
       >
-        <a
-          class="active item"
-          href="/study/SD_8WX8QQ06/basic-info/info"
-        >
-          Basic Info
-          <div
-            class="ui blue mini label"
-          >
-            BETA
-          </div>
-        </a>
-        <a
+        <div
           class="item"
-          href="/study/SD_8WX8QQ06/dashboard"
-        >
-          Dashboard
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/documents"
-        >
-          Documents
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/cavatica"
-        >
-          Cavatica
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/logs"
-        >
-          Logs
-        </a>
-      </div>
-    </div>
-  </section>
-  <div
-    class="ui basic vertical segment ui container"
-  >
-    <h2
-      class="ui left floated header mt-6"
-    >
-      Study Basic Info
-    </h2>
-    <div
-      class="ui fluid top attached three steps"
-    >
-      <a
-        class="link step"
-      >
-        <i
-          aria-hidden="true"
-          class="info circular icon"
-        />
-        <div
-          class="content"
+          role="listitem"
         >
           <div
-            class="title"
-          >
-            Info
-          </div>
-          <div
-            class="description"
-          >
-            General Study Details
-          </div>
-        </div>
-      </a>
-      <a
-        class="link step"
-      >
-        <i
-          aria-hidden="true"
-          class="disk circular icon"
-        />
-        <div
-          class="content"
-        >
-          <div
-            class="title"
-          >
-            External
-          </div>
-          <div
-            class="description"
-          >
-            For dbGaP project
-          </div>
-        </div>
-      </a>
-      <a
-        class="active link step"
-      >
-        <i
-          aria-hidden="true"
-          class="calendar check circular icon"
-        />
-        <div
-          class="content"
-        >
-          <div
-            class="title"
-          >
-            Logistics
-          </div>
-          <div
-            class="description"
-          >
-            Scheduling & Collection
-          </div>
-        </div>
-      </a>
-    </div>
-    <div
-      class="ui clearing attached padded segment"
-    >
-      <form
-        class="ui form"
-      >
-        <h4
-          class="ui header text-wrap-75"
-        >
-          Provide details about the Kids First grant that this study was awarded.
-        </h4>
-        <div
-          class="field"
-        >
-          <label
-            class="noMargin"
-          >
-            Release Date
-            :
-          </label>
-          <div
-            class="ui fluid input readOnlyField noMargin"
-          >
-            <input
-              aria-label="releaseDate"
-              name="releaseDate"
-              readonly=""
-              type="date"
-              value="2019-08-24"
-            />
-          </div>
-        </div>
-        <div
-          class="field"
-        >
-          <label
-            class="noMargin"
-          >
-            Number of anticipated samples
-            :
-          </label>
-          <div
-            class="ui fluid input readOnlyField noMargin"
-          >
-            <input
-              aria-label="anticipatedSamples"
-              name="anticipatedSamples"
-              readonly=""
-              type="number"
-              value="100"
-            />
-          </div>
-        </div>
-        <div
-          class="field"
-        >
-          <label
-            class="noMargin"
-          >
-            Awardee organization
-            :
-          </label>
-          <div
-            class="ui fluid input readOnlyField noMargin"
-          >
-            <input
-              aria-label="awardeeOrganization"
-              name="awardeeOrganization"
-              readonly=""
-              type="text"
-              value="CHOP"
-            />
-          </div>
-        </div>
-        <h5
-          class="ui header"
-        >
-          Description:
-        </h5>
-        <div
-          class="ui attached segment max-h-500"
-        >
-          <p>
-            Sudy description in markdown, commonly the X01 abstract text. --  As test study description
-          </p>
-        </div>
-        <div
-          class="ui bottom attached button mb-15"
-          role="button"
-          tabindex="0"
-        >
-          Read More
-        </div>
-        <button
-          class="ui icon left floated left labeled button"
-          type="button"
-        >
-          <i
-            aria-hidden="true"
-            class="left arrow icon"
+            class="ui basic horizontal label text-10"
           />
-          PREVIOUS
-        </button>
-      </form>
+        </div>
+        <div
+          class="item noMargin"
+          role="listitem"
+        >
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -571,251 +645,288 @@ exports[`renders study info view as read-only -- BETA but not ADMIN user 2`] = `
       </div>
     </div>
   </div>
-  <section
-    id="study"
+  <div
+    class="page"
   >
-    <div
-      class="ui basic secondary segment"
+    <section
+      id="study"
     >
+      <div
+        class="ui basic secondary segment"
+      >
+        <div
+          class="ui container"
+        >
+          <h1
+            class="ui header"
+          >
+            benchmark extensible e-business
+          </h1>
+          <button
+            class="ui tiny basic icon button"
+          >
+            <i
+              aria-hidden="true"
+              class="copy icon"
+            />
+            SD_8WX8QQ06
+          </button>
+        </div>
+      </div>
       <div
         class="ui container"
       >
-        <h1
-          class="ui header"
+        <div
+          class="ui pink pointing secondary menu"
         >
-          benchmark extensible e-business
-        </h1>
-        <button
-          class="ui tiny basic icon button"
+          <a
+            class="active item"
+            href="/study/SD_8WX8QQ06/basic-info/info"
+          >
+            Basic Info
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/dashboard"
+          >
+            Dashboard
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/documents"
+          >
+            Documents
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/cavatica"
+          >
+            Cavatica
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/logs"
+          >
+            Logs
+          </a>
+        </div>
+      </div>
+    </section>
+    <div
+      class="ui basic vertical segment ui container"
+    >
+      <h2
+        class="ui left floated header mt-6"
+      >
+        Study Basic Info
+      </h2>
+      <div
+        class="ui fluid top attached three steps"
+      >
+        <a
+          class="link step"
         >
           <i
             aria-hidden="true"
-            class="copy icon"
+            class="info circular icon"
           />
-          SD_8WX8QQ06
-        </button>
+          <div
+            class="content"
+          >
+            <div
+              class="title"
+            >
+              Info
+            </div>
+            <div
+              class="description"
+            >
+              General Study Details
+            </div>
+          </div>
+        </a>
+        <a
+          class="active link step"
+        >
+          <i
+            aria-hidden="true"
+            class="disk circular icon"
+          />
+          <div
+            class="content"
+          >
+            <div
+              class="title"
+            >
+              External
+            </div>
+            <div
+              class="description"
+            >
+              For dbGaP project
+            </div>
+          </div>
+        </a>
+        <a
+          class="link step"
+        >
+          <i
+            aria-hidden="true"
+            class="calendar check circular icon"
+          />
+          <div
+            class="content"
+          >
+            <div
+              class="title"
+            >
+              Logistics
+            </div>
+            <div
+              class="description"
+            >
+              Scheduling & Collection
+            </div>
+          </div>
+        </a>
+      </div>
+      <div
+        class="ui clearing attached padded segment"
+      >
+        <form
+          class="ui form"
+        >
+          <h4
+            class="ui header text-wrap-75"
+          >
+            If the study is a dbGaP project, additional information is needed to ensure access is granted correctly. For non-dbGaP studies, an external identifier which this study may otherwise be known by is required.
+          </h4>
+          <div
+            class="required field"
+          >
+            <label
+              class="noMargin"
+            >
+              External ID
+              :
+            </label>
+            <div
+              class="ui fluid input readOnlyField noMargin"
+            >
+              <input
+                aria-label="externalId"
+                name="externalId"
+                placeholder="Example: phs000178"
+                readonly=""
+                type="text"
+                value="test_study_external_id"
+              />
+            </div>
+          </div>
+          <div
+            class="field"
+          >
+            <label
+              class="noMargin"
+            >
+              dbGaP Version
+              :
+            </label>
+            <div
+              class="ui fluid input readOnlyField noMargin"
+            >
+              <input
+                aria-label="version"
+                name="version"
+                placeholder="Example: v1.p1"
+                readonly=""
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="field"
+          >
+            <label
+              class="noMargin"
+            >
+              Attribution
+              :
+            </label>
+            <div
+              class="ui fluid input readOnlyField noMargin"
+            >
+              <input
+                aria-label="attribution"
+                name="attribution"
+                placeholder=""
+                readonly=""
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <button
+            class="ui icon left floated left labeled button"
+            type="button"
+          >
+            <i
+              aria-hidden="true"
+              class="left arrow icon"
+            />
+            PREVIOUS
+          </button>
+          <button
+            class="ui icon right floated right labeled button"
+            type="button"
+          >
+            <i
+              aria-hidden="true"
+              class="right arrow icon"
+            />
+            NEXT
+          </button>
+        </form>
       </div>
     </div>
+  </div>
+  <div
+    class="ui segment footer"
+  >
     <div
-      class="ui container"
+      class="ui container text-10"
     >
       <div
-        class="ui pink pointing secondary menu"
+        class="ui horizontal list"
+        role="list"
       >
-        <a
-          class="active item"
-          href="/study/SD_8WX8QQ06/basic-info/info"
+        <div
+          class="item"
+          role="listitem"
         >
-          Basic Info
           <div
-            class="ui blue mini label"
-          >
-            BETA
-          </div>
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/dashboard"
+            class="ui basic horizontal label text-10"
+          />
+        </div>
+        <div
+          class="item noMargin"
+          role="listitem"
         >
-          Dashboard
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/documents"
-        >
-          Documents
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/cavatica"
-        >
-          Cavatica
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/logs"
-        >
-          Logs
-        </a>
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
+        </div>
       </div>
-    </div>
-  </section>
-  <div
-    class="ui basic vertical segment ui container"
-  >
-    <h2
-      class="ui left floated header mt-6"
-    >
-      Study Basic Info
-    </h2>
-    <div
-      class="ui fluid top attached three steps"
-    >
-      <a
-        class="link step"
-      >
-        <i
-          aria-hidden="true"
-          class="info circular icon"
-        />
-        <div
-          class="content"
-        >
-          <div
-            class="title"
-          >
-            Info
-          </div>
-          <div
-            class="description"
-          >
-            General Study Details
-          </div>
-        </div>
-      </a>
-      <a
-        class="active link step"
-      >
-        <i
-          aria-hidden="true"
-          class="disk circular icon"
-        />
-        <div
-          class="content"
-        >
-          <div
-            class="title"
-          >
-            External
-          </div>
-          <div
-            class="description"
-          >
-            For dbGaP project
-          </div>
-        </div>
-      </a>
-      <a
-        class="link step"
-      >
-        <i
-          aria-hidden="true"
-          class="calendar check circular icon"
-        />
-        <div
-          class="content"
-        >
-          <div
-            class="title"
-          >
-            Logistics
-          </div>
-          <div
-            class="description"
-          >
-            Scheduling & Collection
-          </div>
-        </div>
-      </a>
-    </div>
-    <div
-      class="ui clearing attached padded segment"
-    >
-      <form
-        class="ui form"
-      >
-        <h4
-          class="ui header text-wrap-75"
-        >
-          If the study is a dbGaP project, additional information is needed to ensure access is granted correctly. For non-dbGaP studies, an external identifier which this study may otherwise be known by is required.
-        </h4>
-        <div
-          class="required field"
-        >
-          <label
-            class="noMargin"
-          >
-            External ID
-            :
-          </label>
-          <div
-            class="ui fluid input readOnlyField noMargin"
-          >
-            <input
-              aria-label="externalId"
-              name="externalId"
-              placeholder="Example: phs000178"
-              readonly=""
-              type="text"
-              value="test_study_external_id"
-            />
-          </div>
-        </div>
-        <div
-          class="field"
-        >
-          <label
-            class="noMargin"
-          >
-            dbGaP Version
-            :
-          </label>
-          <div
-            class="ui fluid input readOnlyField noMargin"
-          >
-            <input
-              aria-label="version"
-              name="version"
-              placeholder="Example: v1.p1"
-              readonly=""
-              type="text"
-              value=""
-            />
-          </div>
-        </div>
-        <div
-          class="field"
-        >
-          <label
-            class="noMargin"
-          >
-            Attribution
-            :
-          </label>
-          <div
-            class="ui fluid input readOnlyField noMargin"
-          >
-            <input
-              aria-label="attribution"
-              name="attribution"
-              placeholder=""
-              readonly=""
-              type="text"
-              value=""
-            />
-          </div>
-        </div>
-        <button
-          class="ui icon left floated left labeled button"
-          type="button"
-        >
-          <i
-            aria-hidden="true"
-            class="left arrow icon"
-          />
-          PREVIOUS
-        </button>
-        <button
-          class="ui icon right floated right labeled button"
-          type="button"
-        >
-          <i
-            aria-hidden="true"
-            class="right arrow icon"
-          />
-          NEXT
-        </button>
-      </form>
     </div>
   </div>
 </div>
@@ -846,101 +957,138 @@ exports[`renders study info view correctly -- BETA & ADMIN user 1`] = `
       </a>
     </div>
   </div>
-  <section
-    id="study"
+  <div
+    class="page"
   >
-    <div
-      class="ui basic secondary segment"
+    <section
+      id="study"
     >
+      <div
+        class="ui basic secondary segment"
+      >
+        <div
+          class="ui container"
+        >
+          <div
+            class="ui placeholder"
+          >
+            <div
+              class="header"
+            >
+              <div
+                class="line"
+              />
+              <div
+                class="line"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
       <div
         class="ui container"
       >
         <div
-          class="ui placeholder"
+          class="ui pink pointing secondary menu"
+        >
+          <a
+            class="active item"
+            href="/study/SD_8WX8QQ06/basic-info/info"
+          >
+            Basic Info
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/dashboard"
+          >
+            Dashboard
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/documents"
+          >
+            Documents
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/cavatica"
+          >
+            Cavatica
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/logs"
+          >
+            Logs
+          </a>
+        </div>
+      </div>
+    </section>
+    <div
+      class="ui basic vertical segment ui container"
+    >
+      <div
+        class="ui placeholder"
+      >
+        <div
+          class="image header"
         >
           <div
-            class="header"
-          >
-            <div
-              class="line"
-            />
-            <div
-              class="line"
-            />
-          </div>
+            class="line"
+          />
+          <div
+            class="line"
+          />
+        </div>
+        <div
+          class="paragraph"
+        >
+          <div
+            class="line"
+          />
+          <div
+            class="line"
+          />
+          <div
+            class="line"
+          />
+          <div
+            class="line"
+          />
         </div>
       </div>
     </div>
-    <div
-      class="ui container"
-    >
-      <div
-        class="ui pink pointing secondary menu"
-      >
-        <a
-          class="active item"
-          href="/study/SD_8WX8QQ06/basic-info/info"
-        >
-          Basic Info
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/dashboard"
-        >
-          Dashboard
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/documents"
-        >
-          Documents
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/cavatica"
-        >
-          Cavatica
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/logs"
-        >
-          Logs
-        </a>
-      </div>
-    </div>
-  </section>
+  </div>
   <div
-    class="ui basic vertical segment ui container"
+    class="ui segment footer"
   >
     <div
-      class="ui placeholder"
+      class="ui container text-10"
     >
       <div
-        class="image header"
+        class="ui horizontal list"
+        role="list"
       >
         <div
-          class="line"
-        />
+          class="item"
+          role="listitem"
+        >
+          <div
+            class="ui basic horizontal label text-10"
+          />
+        </div>
         <div
-          class="line"
-        />
-      </div>
-      <div
-        class="paragraph"
-      >
-        <div
-          class="line"
-        />
-        <div
-          class="line"
-        />
-        <div
-          class="line"
-        />
-        <div
-          class="line"
-        />
+          class="item noMargin"
+          role="listitem"
+        >
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -1074,364 +1222,401 @@ exports[`renders study info view correctly -- BETA & ADMIN user 2`] = `
       </div>
     </div>
   </div>
-  <section
-    id="study"
+  <div
+    class="page"
   >
-    <div
-      class="ui basic secondary segment"
+    <section
+      id="study"
     >
+      <div
+        class="ui basic secondary segment"
+      >
+        <div
+          class="ui container"
+        >
+          <h1
+            class="ui header"
+          >
+            benchmark extensible e-business
+          </h1>
+          <button
+            class="ui tiny basic icon button"
+          >
+            <i
+              aria-hidden="true"
+              class="copy icon"
+            />
+            SD_8WX8QQ06
+          </button>
+        </div>
+      </div>
       <div
         class="ui container"
       >
-        <h1
-          class="ui header"
-        >
-          benchmark extensible e-business
-        </h1>
-        <button
-          class="ui tiny basic icon button"
-        >
-          <i
-            aria-hidden="true"
-            class="copy icon"
-          />
-          SD_8WX8QQ06
-        </button>
-      </div>
-    </div>
-    <div
-      class="ui container"
-    >
-      <div
-        class="ui pink pointing secondary menu"
-      >
-        <a
-          class="active item"
-          href="/study/SD_8WX8QQ06/basic-info/info"
-        >
-          Basic Info
-          <div
-            class="ui blue mini label"
-          >
-            BETA
-          </div>
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/dashboard"
-        >
-          Dashboard
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/documents"
-        >
-          Documents
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/cavatica"
-        >
-          Cavatica
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/logs"
-        >
-          Logs
-        </a>
-      </div>
-    </div>
-  </section>
-  <div
-    class="ui basic vertical segment ui container"
-  >
-    <h2
-      class="ui left floated header mt-6"
-    >
-      Study Basic Info
-    </h2>
-    <div
-      class="ui icon negative message"
-    >
-      <i
-        aria-hidden="true"
-        class="warning circle icon"
-      />
-      <div
-        class="content"
-      >
         <div
-          class="header"
-        >
-          Missing values
-        </div>
-        <p>
-          Please add values to the following fields:
-        </p>
-        <div
-          class="ui bulleted horizontal list"
-          role="list"
+          class="ui pink pointing secondary menu"
         >
           <a
-            class="item"
+            class="active item"
             href="/study/SD_8WX8QQ06/basic-info/info"
-            role="listitem"
           >
-            Study Short Name
+            Basic Info
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/dashboard"
+          >
+            Dashboard
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/documents"
+          >
+            Documents
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/cavatica"
+          >
+            Cavatica
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/logs"
+          >
+            Logs
           </a>
         </div>
       </div>
-    </div>
+    </section>
     <div
-      class="ui fluid top attached three steps"
+      class="ui basic vertical segment ui container"
     >
-      <a
-        class="link step"
+      <h2
+        class="ui left floated header mt-6"
+      >
+        Study Basic Info
+      </h2>
+      <div
+        class="ui icon negative message"
       >
         <i
           aria-hidden="true"
-          class="info circular icon"
+          class="warning circle icon"
         />
         <div
           class="content"
         >
           <div
-            class="title"
+            class="header"
           >
-            Info
+            Missing values
           </div>
+          <p>
+            Please add values to the following fields:
+          </p>
           <div
-            class="description"
+            class="ui bulleted horizontal list"
+            role="list"
           >
-            General Study Details
-          </div>
-          <div
-            class="ui tiny warning progress progress-bar--custom"
-            data-percent="66"
-          >
-            <div
-              class="bar"
-              style="width: 66.66666666666666%;"
-            />
-            <div
-              class="label"
+            <a
+              class="item"
+              href="/study/SD_8WX8QQ06/basic-info/info"
+              role="listitem"
             >
-              2/3 fields complete
-            </div>
+              Study Short Name
+            </a>
           </div>
         </div>
-      </a>
-      <a
-        class="link step"
+      </div>
+      <div
+        class="ui fluid top attached three steps"
       >
-        <i
-          aria-hidden="true"
-          class="disk circular icon"
-        />
-        <div
-          class="content"
-        >
-          <div
-            class="title"
-          >
-            External
-          </div>
-          <div
-            class="description"
-          >
-            For dbGaP project
-          </div>
-          <div
-            class="ui tiny warning progress progress-bar--custom"
-            data-percent="33"
-          >
-            <div
-              class="bar"
-              style="width: 33.33333333333333%;"
-            />
-            <div
-              class="label"
-            >
-              1/3 fields complete
-            </div>
-          </div>
-        </div>
-      </a>
-      <a
-        class="active link step"
-      >
-        <i
-          aria-hidden="true"
-          class="calendar check circular icon"
-        />
-        <div
-          class="content"
-        >
-          <div
-            class="title"
-          >
-            Logistics
-          </div>
-          <div
-            class="description"
-          >
-            Scheduling & Collection
-          </div>
-          <div
-            class="ui tiny success progress progress-bar--custom"
-            data-percent="100"
-          >
-            <div
-              class="bar"
-              style="width: 100%;"
-            />
-            <div
-              class="label"
-            >
-              4/4 fields complete
-            </div>
-          </div>
-        </div>
-      </a>
-    </div>
-    <div
-      class="ui clearing attached padded segment"
-    >
-      <form
-        class="ui form"
-      >
-        <h4
-          class="ui header text-wrap-75"
-        >
-          Provide details about the Kids First grant that this study was awarded.
-        </h4>
-        <div
-          class="field"
-        >
-          <label
-            class="noMargin"
-          >
-            Release Date
-            :
-          </label>
-          <p
-            class="noMargin"
-          >
-            <small>
-              The anticipated date on which this study's data will be made public in Kids First.
-            </small>
-          </p>
-          <div
-            class="ui fluid input noMargin"
-          >
-            <input
-              aria-label="releaseDate"
-              name="releaseDate"
-              type="date"
-              value="2019-08-24"
-            />
-          </div>
-        </div>
-        <div
-          class="field"
-        >
-          <label
-            class="noMargin"
-          >
-            Number of anticipated samples
-            :
-          </label>
-          <p
-            class="noMargin"
-          >
-            <small>
-              The anticipated number of samples awarded for sequencing for the study.
-            </small>
-          </p>
-          <div
-            class="ui fluid input noMargin"
-          >
-            <input
-              aria-label="anticipatedSamples"
-              name="anticipatedSamples"
-              type="number"
-              value="100"
-            />
-          </div>
-        </div>
-        <div
-          class="field"
-        >
-          <label
-            class="noMargin"
-          >
-            Awardee organization
-            :
-          </label>
-          <p
-            class="noMargin"
-          >
-            <small>
-              The organization responsible for this study.
-            </small>
-          </p>
-          <div
-            class="ui fluid input noMargin"
-          >
-            <input
-              aria-label="awardeeOrganization"
-              name="awardeeOrganization"
-              type="text"
-              value="CHOP"
-            />
-          </div>
-        </div>
-        <div
-          class="field"
-        >
-          <label
-            class="noMargin"
-          >
-            Description
-            :
-          </label>
-          <p
-            class="noMargin"
-          >
-            <small>
-              Study description in markdown, commonly the X01 abstract text.
-            </small>
-          </p>
-          <div
-            class="field noMargin"
-          >
-            <textarea
-              name="description"
-              rows="15"
-              type="text"
-            >
-              Sudy description in markdown, commonly the X01 abstract text. --  As test study description
-            </textarea>
-          </div>
-        </div>
-        <button
-          class="ui icon left floated left labeled button"
-          type="button"
+        <a
+          class="link step"
         >
           <i
             aria-hidden="true"
-            class="left arrow icon"
+            class="info circular icon"
           />
-          PREVIOUS
-        </button>
-        <button
-          class="ui primary right floated button"
-          type="submit"
+          <div
+            class="content"
+          >
+            <div
+              class="title"
+            >
+              Info
+            </div>
+            <div
+              class="description"
+            >
+              General Study Details
+            </div>
+            <div
+              class="ui tiny warning progress progress-bar--custom"
+              data-percent="66"
+            >
+              <div
+                class="bar"
+                style="width: 66.66666666666666%;"
+              />
+              <div
+                class="label"
+              >
+                2/3 fields complete
+              </div>
+            </div>
+          </div>
+        </a>
+        <a
+          class="link step"
         >
-          SAVE
-        </button>
-      </form>
+          <i
+            aria-hidden="true"
+            class="disk circular icon"
+          />
+          <div
+            class="content"
+          >
+            <div
+              class="title"
+            >
+              External
+            </div>
+            <div
+              class="description"
+            >
+              For dbGaP project
+            </div>
+            <div
+              class="ui tiny warning progress progress-bar--custom"
+              data-percent="33"
+            >
+              <div
+                class="bar"
+                style="width: 33.33333333333333%;"
+              />
+              <div
+                class="label"
+              >
+                1/3 fields complete
+              </div>
+            </div>
+          </div>
+        </a>
+        <a
+          class="active link step"
+        >
+          <i
+            aria-hidden="true"
+            class="calendar check circular icon"
+          />
+          <div
+            class="content"
+          >
+            <div
+              class="title"
+            >
+              Logistics
+            </div>
+            <div
+              class="description"
+            >
+              Scheduling & Collection
+            </div>
+            <div
+              class="ui tiny success progress progress-bar--custom"
+              data-percent="100"
+            >
+              <div
+                class="bar"
+                style="width: 100%;"
+              />
+              <div
+                class="label"
+              >
+                4/4 fields complete
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div
+        class="ui clearing attached padded segment"
+      >
+        <form
+          class="ui form"
+        >
+          <h4
+            class="ui header text-wrap-75"
+          >
+            Provide details about the Kids First grant that this study was awarded.
+          </h4>
+          <div
+            class="field"
+          >
+            <label
+              class="noMargin"
+            >
+              Release Date
+              :
+            </label>
+            <p
+              class="noMargin"
+            >
+              <small>
+                The anticipated date on which this study's data will be made public in Kids First.
+              </small>
+            </p>
+            <div
+              class="ui fluid input noMargin"
+            >
+              <input
+                aria-label="releaseDate"
+                name="releaseDate"
+                type="date"
+                value="2019-08-24"
+              />
+            </div>
+          </div>
+          <div
+            class="field"
+          >
+            <label
+              class="noMargin"
+            >
+              Number of anticipated samples
+              :
+            </label>
+            <p
+              class="noMargin"
+            >
+              <small>
+                The anticipated number of samples awarded for sequencing for the study.
+              </small>
+            </p>
+            <div
+              class="ui fluid input noMargin"
+            >
+              <input
+                aria-label="anticipatedSamples"
+                name="anticipatedSamples"
+                type="number"
+                value="100"
+              />
+            </div>
+          </div>
+          <div
+            class="field"
+          >
+            <label
+              class="noMargin"
+            >
+              Awardee organization
+              :
+            </label>
+            <p
+              class="noMargin"
+            >
+              <small>
+                The organization responsible for this study.
+              </small>
+            </p>
+            <div
+              class="ui fluid input noMargin"
+            >
+              <input
+                aria-label="awardeeOrganization"
+                name="awardeeOrganization"
+                type="text"
+                value="CHOP"
+              />
+            </div>
+          </div>
+          <div
+            class="field"
+          >
+            <label
+              class="noMargin"
+            >
+              Description
+              :
+            </label>
+            <p
+              class="noMargin"
+            >
+              <small>
+                Study description in markdown, commonly the X01 abstract text.
+              </small>
+            </p>
+            <div
+              class="field noMargin"
+            >
+              <textarea
+                name="description"
+                rows="15"
+                type="text"
+              >
+                Sudy description in markdown, commonly the X01 abstract text. --  As test study description
+              </textarea>
+            </div>
+          </div>
+          <button
+            class="ui icon left floated left labeled button"
+            type="button"
+          >
+            <i
+              aria-hidden="true"
+              class="left arrow icon"
+            />
+            PREVIOUS
+          </button>
+          <button
+            class="ui primary right floated button"
+            type="submit"
+          >
+            SAVE
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ui segment footer"
+  >
+    <div
+      class="ui container text-10"
+    >
+      <div
+        class="ui horizontal list"
+        role="list"
+      >
+        <div
+          class="item"
+          role="listitem"
+        >
+          <div
+            class="ui basic horizontal label text-10"
+          />
+        </div>
+        <div
+          class="item noMargin"
+          role="listitem"
+        >
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -1564,364 +1749,401 @@ exports[`renders study info view correctly -- BETA & ADMIN user 3`] = `
       </div>
     </div>
   </div>
-  <section
-    id="study"
+  <div
+    class="page"
   >
-    <div
-      class="ui basic secondary segment"
+    <section
+      id="study"
     >
+      <div
+        class="ui basic secondary segment"
+      >
+        <div
+          class="ui container"
+        >
+          <h1
+            class="ui header"
+          >
+            benchmark extensible e-business
+          </h1>
+          <button
+            class="ui tiny basic icon button"
+          >
+            <i
+              aria-hidden="true"
+              class="copy icon"
+            />
+            SD_8WX8QQ06
+          </button>
+        </div>
+      </div>
       <div
         class="ui container"
       >
-        <h1
-          class="ui header"
-        >
-          benchmark extensible e-business
-        </h1>
-        <button
-          class="ui tiny basic icon button"
-        >
-          <i
-            aria-hidden="true"
-            class="copy icon"
-          />
-          SD_8WX8QQ06
-        </button>
-      </div>
-    </div>
-    <div
-      class="ui container"
-    >
-      <div
-        class="ui pink pointing secondary menu"
-      >
-        <a
-          class="active item"
-          href="/study/SD_8WX8QQ06/basic-info/info"
-        >
-          Basic Info
-          <div
-            class="ui blue mini label"
-          >
-            BETA
-          </div>
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/dashboard"
-        >
-          Dashboard
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/documents"
-        >
-          Documents
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/cavatica"
-        >
-          Cavatica
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/logs"
-        >
-          Logs
-        </a>
-      </div>
-    </div>
-  </section>
-  <div
-    class="ui basic vertical segment ui container"
-  >
-    <h2
-      class="ui left floated header mt-6"
-    >
-      Study Basic Info
-    </h2>
-    <div
-      class="ui icon negative message"
-    >
-      <i
-        aria-hidden="true"
-        class="warning circle icon"
-      />
-      <div
-        class="content"
-      >
         <div
-          class="header"
-        >
-          Missing values
-        </div>
-        <p>
-          Please add values to the following fields:
-        </p>
-        <div
-          class="ui bulleted horizontal list"
-          role="list"
+          class="ui pink pointing secondary menu"
         >
           <a
-            class="item"
+            class="active item"
             href="/study/SD_8WX8QQ06/basic-info/info"
-            role="listitem"
           >
-            Study Short Name
+            Basic Info
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/dashboard"
+          >
+            Dashboard
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/documents"
+          >
+            Documents
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/cavatica"
+          >
+            Cavatica
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/logs"
+          >
+            Logs
           </a>
         </div>
       </div>
-    </div>
+    </section>
     <div
-      class="ui fluid top attached three steps"
+      class="ui basic vertical segment ui container"
     >
-      <a
-        class="link step"
+      <h2
+        class="ui left floated header mt-6"
+      >
+        Study Basic Info
+      </h2>
+      <div
+        class="ui icon negative message"
       >
         <i
           aria-hidden="true"
-          class="info circular icon"
+          class="warning circle icon"
         />
         <div
           class="content"
         >
           <div
-            class="title"
+            class="header"
           >
-            Info
+            Missing values
           </div>
+          <p>
+            Please add values to the following fields:
+          </p>
           <div
-            class="description"
+            class="ui bulleted horizontal list"
+            role="list"
           >
-            General Study Details
-          </div>
-          <div
-            class="ui tiny warning progress progress-bar--custom"
-            data-percent="66"
-          >
-            <div
-              class="bar"
-              style="width: 66.66666666666666%;"
-            />
-            <div
-              class="label"
+            <a
+              class="item"
+              href="/study/SD_8WX8QQ06/basic-info/info"
+              role="listitem"
             >
-              2/3 fields complete
-            </div>
+              Study Short Name
+            </a>
           </div>
         </div>
-      </a>
-      <a
-        class="link step"
+      </div>
+      <div
+        class="ui fluid top attached three steps"
       >
-        <i
-          aria-hidden="true"
-          class="disk circular icon"
-        />
-        <div
-          class="content"
-        >
-          <div
-            class="title"
-          >
-            External
-          </div>
-          <div
-            class="description"
-          >
-            For dbGaP project
-          </div>
-          <div
-            class="ui tiny warning progress progress-bar--custom"
-            data-percent="33"
-          >
-            <div
-              class="bar"
-              style="width: 33.33333333333333%;"
-            />
-            <div
-              class="label"
-            >
-              1/3 fields complete
-            </div>
-          </div>
-        </div>
-      </a>
-      <a
-        class="active link step"
-      >
-        <i
-          aria-hidden="true"
-          class="calendar check circular icon"
-        />
-        <div
-          class="content"
-        >
-          <div
-            class="title"
-          >
-            Logistics
-          </div>
-          <div
-            class="description"
-          >
-            Scheduling & Collection
-          </div>
-          <div
-            class="ui tiny success progress progress-bar--custom"
-            data-percent="100"
-          >
-            <div
-              class="bar"
-              style="width: 100%;"
-            />
-            <div
-              class="label"
-            >
-              4/4 fields complete
-            </div>
-          </div>
-        </div>
-      </a>
-    </div>
-    <div
-      class="ui clearing attached padded segment"
-    >
-      <form
-        class="ui form"
-      >
-        <h4
-          class="ui header text-wrap-75"
-        >
-          Provide details about the Kids First grant that this study was awarded.
-        </h4>
-        <div
-          class="field"
-        >
-          <label
-            class="noMargin"
-          >
-            Release Date
-            :
-          </label>
-          <p
-            class="noMargin"
-          >
-            <small>
-              The anticipated date on which this study's data will be made public in Kids First.
-            </small>
-          </p>
-          <div
-            class="ui fluid input noMargin"
-          >
-            <input
-              aria-label="releaseDate"
-              name="releaseDate"
-              type="date"
-              value="2019-08-24"
-            />
-          </div>
-        </div>
-        <div
-          class="field"
-        >
-          <label
-            class="noMargin"
-          >
-            Number of anticipated samples
-            :
-          </label>
-          <p
-            class="noMargin"
-          >
-            <small>
-              The anticipated number of samples awarded for sequencing for the study.
-            </small>
-          </p>
-          <div
-            class="ui fluid input noMargin"
-          >
-            <input
-              aria-label="anticipatedSamples"
-              name="anticipatedSamples"
-              type="number"
-              value="100"
-            />
-          </div>
-        </div>
-        <div
-          class="field"
-        >
-          <label
-            class="noMargin"
-          >
-            Awardee organization
-            :
-          </label>
-          <p
-            class="noMargin"
-          >
-            <small>
-              The organization responsible for this study.
-            </small>
-          </p>
-          <div
-            class="ui fluid input noMargin"
-          >
-            <input
-              aria-label="awardeeOrganization"
-              name="awardeeOrganization"
-              type="text"
-              value="CHOP"
-            />
-          </div>
-        </div>
-        <div
-          class="field"
-        >
-          <label
-            class="noMargin"
-          >
-            Description
-            :
-          </label>
-          <p
-            class="noMargin"
-          >
-            <small>
-              Study description in markdown, commonly the X01 abstract text.
-            </small>
-          </p>
-          <div
-            class="field noMargin"
-          >
-            <textarea
-              name="description"
-              rows="15"
-              type="text"
-            >
-              Sudy description in markdown, commonly the X01 abstract text. --  As test study description
-            </textarea>
-          </div>
-        </div>
-        <button
-          class="ui icon left floated left labeled button"
-          type="button"
+        <a
+          class="link step"
         >
           <i
             aria-hidden="true"
-            class="left arrow icon"
+            class="info circular icon"
           />
-          PREVIOUS
-        </button>
-        <button
-          class="ui primary right floated button"
-          type="submit"
+          <div
+            class="content"
+          >
+            <div
+              class="title"
+            >
+              Info
+            </div>
+            <div
+              class="description"
+            >
+              General Study Details
+            </div>
+            <div
+              class="ui tiny warning progress progress-bar--custom"
+              data-percent="66"
+            >
+              <div
+                class="bar"
+                style="width: 66.66666666666666%;"
+              />
+              <div
+                class="label"
+              >
+                2/3 fields complete
+              </div>
+            </div>
+          </div>
+        </a>
+        <a
+          class="link step"
         >
-          SAVE
-        </button>
-      </form>
+          <i
+            aria-hidden="true"
+            class="disk circular icon"
+          />
+          <div
+            class="content"
+          >
+            <div
+              class="title"
+            >
+              External
+            </div>
+            <div
+              class="description"
+            >
+              For dbGaP project
+            </div>
+            <div
+              class="ui tiny warning progress progress-bar--custom"
+              data-percent="33"
+            >
+              <div
+                class="bar"
+                style="width: 33.33333333333333%;"
+              />
+              <div
+                class="label"
+              >
+                1/3 fields complete
+              </div>
+            </div>
+          </div>
+        </a>
+        <a
+          class="active link step"
+        >
+          <i
+            aria-hidden="true"
+            class="calendar check circular icon"
+          />
+          <div
+            class="content"
+          >
+            <div
+              class="title"
+            >
+              Logistics
+            </div>
+            <div
+              class="description"
+            >
+              Scheduling & Collection
+            </div>
+            <div
+              class="ui tiny success progress progress-bar--custom"
+              data-percent="100"
+            >
+              <div
+                class="bar"
+                style="width: 100%;"
+              />
+              <div
+                class="label"
+              >
+                4/4 fields complete
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div
+        class="ui clearing attached padded segment"
+      >
+        <form
+          class="ui form"
+        >
+          <h4
+            class="ui header text-wrap-75"
+          >
+            Provide details about the Kids First grant that this study was awarded.
+          </h4>
+          <div
+            class="field"
+          >
+            <label
+              class="noMargin"
+            >
+              Release Date
+              :
+            </label>
+            <p
+              class="noMargin"
+            >
+              <small>
+                The anticipated date on which this study's data will be made public in Kids First.
+              </small>
+            </p>
+            <div
+              class="ui fluid input noMargin"
+            >
+              <input
+                aria-label="releaseDate"
+                name="releaseDate"
+                type="date"
+                value="2019-08-24"
+              />
+            </div>
+          </div>
+          <div
+            class="field"
+          >
+            <label
+              class="noMargin"
+            >
+              Number of anticipated samples
+              :
+            </label>
+            <p
+              class="noMargin"
+            >
+              <small>
+                The anticipated number of samples awarded for sequencing for the study.
+              </small>
+            </p>
+            <div
+              class="ui fluid input noMargin"
+            >
+              <input
+                aria-label="anticipatedSamples"
+                name="anticipatedSamples"
+                type="number"
+                value="100"
+              />
+            </div>
+          </div>
+          <div
+            class="field"
+          >
+            <label
+              class="noMargin"
+            >
+              Awardee organization
+              :
+            </label>
+            <p
+              class="noMargin"
+            >
+              <small>
+                The organization responsible for this study.
+              </small>
+            </p>
+            <div
+              class="ui fluid input noMargin"
+            >
+              <input
+                aria-label="awardeeOrganization"
+                name="awardeeOrganization"
+                type="text"
+                value="CHOP"
+              />
+            </div>
+          </div>
+          <div
+            class="field"
+          >
+            <label
+              class="noMargin"
+            >
+              Description
+              :
+            </label>
+            <p
+              class="noMargin"
+            >
+              <small>
+                Study description in markdown, commonly the X01 abstract text.
+              </small>
+            </p>
+            <div
+              class="field noMargin"
+            >
+              <textarea
+                name="description"
+                rows="15"
+                type="text"
+              >
+                Sudy description in markdown, commonly the X01 abstract text. --  As test study description
+              </textarea>
+            </div>
+          </div>
+          <button
+            class="ui icon left floated left labeled button"
+            type="button"
+          >
+            <i
+              aria-hidden="true"
+              class="left arrow icon"
+            />
+            PREVIOUS
+          </button>
+          <button
+            class="ui primary right floated button"
+            type="submit"
+          >
+            SAVE
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ui segment footer"
+  >
+    <div
+      class="ui container text-10"
+    >
+      <div
+        class="ui horizontal list"
+        role="list"
+      >
+        <div
+          class="item"
+          role="listitem"
+        >
+          <div
+            class="ui basic horizontal label text-10"
+          />
+        </div>
+        <div
+          class="item noMargin"
+          role="listitem"
+        >
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -2054,371 +2276,408 @@ exports[`renders study info view correctly -- BETA & ADMIN user 4`] = `
       </div>
     </div>
   </div>
-  <section
-    id="study"
+  <div
+    class="page"
   >
-    <div
-      class="ui basic secondary segment"
+    <section
+      id="study"
     >
+      <div
+        class="ui basic secondary segment"
+      >
+        <div
+          class="ui container"
+        >
+          <h1
+            class="ui header"
+          >
+            benchmark extensible e-business
+          </h1>
+          <button
+            class="ui tiny basic icon button"
+          >
+            <i
+              aria-hidden="true"
+              class="copy icon"
+            />
+            SD_8WX8QQ06
+          </button>
+        </div>
+      </div>
       <div
         class="ui container"
       >
-        <h1
-          class="ui header"
-        >
-          benchmark extensible e-business
-        </h1>
-        <button
-          class="ui tiny basic icon button"
-        >
-          <i
-            aria-hidden="true"
-            class="copy icon"
-          />
-          SD_8WX8QQ06
-        </button>
-      </div>
-    </div>
-    <div
-      class="ui container"
-    >
-      <div
-        class="ui pink pointing secondary menu"
-      >
-        <a
-          class="active item"
-          href="/study/SD_8WX8QQ06/basic-info/info"
-        >
-          Basic Info
-          <div
-            class="ui blue mini label"
-          >
-            BETA
-          </div>
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/dashboard"
-        >
-          Dashboard
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/documents"
-        >
-          Documents
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/cavatica"
-        >
-          Cavatica
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/logs"
-        >
-          Logs
-        </a>
-      </div>
-    </div>
-  </section>
-  <div
-    class="ui basic vertical segment ui container"
-  >
-    <h2
-      class="ui left floated header mt-6"
-    >
-      Study Basic Info
-    </h2>
-    <div
-      class="ui icon negative message"
-    >
-      <i
-        aria-hidden="true"
-        class="warning circle icon"
-      />
-      <div
-        class="content"
-      >
         <div
-          class="header"
-        >
-          Missing values
-        </div>
-        <p>
-          Please add values to the following fields:
-        </p>
-        <div
-          class="ui bulleted horizontal list"
-          role="list"
+          class="ui pink pointing secondary menu"
         >
           <a
-            class="item"
+            class="active item"
             href="/study/SD_8WX8QQ06/basic-info/info"
-            role="listitem"
           >
-            Study Short Name
+            Basic Info
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/dashboard"
+          >
+            Dashboard
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/documents"
+          >
+            Documents
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/cavatica"
+          >
+            Cavatica
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/logs"
+          >
+            Logs
           </a>
         </div>
       </div>
-    </div>
+    </section>
     <div
-      class="ui fluid top attached three steps"
+      class="ui basic vertical segment ui container"
     >
-      <a
-        class="link step"
+      <h2
+        class="ui left floated header mt-6"
+      >
+        Study Basic Info
+      </h2>
+      <div
+        class="ui icon negative message"
       >
         <i
           aria-hidden="true"
-          class="info circular icon"
+          class="warning circle icon"
         />
         <div
           class="content"
         >
           <div
-            class="title"
+            class="header"
           >
-            Info
+            Missing values
           </div>
+          <p>
+            Please add values to the following fields:
+          </p>
           <div
-            class="description"
+            class="ui bulleted horizontal list"
+            role="list"
           >
-            General Study Details
-          </div>
-          <div
-            class="ui tiny warning progress progress-bar--custom"
-            data-percent="66"
-          >
-            <div
-              class="bar"
-              style="width: 66.66666666666666%;"
-            />
-            <div
-              class="label"
+            <a
+              class="item"
+              href="/study/SD_8WX8QQ06/basic-info/info"
+              role="listitem"
             >
-              2/3 fields complete
-            </div>
+              Study Short Name
+            </a>
           </div>
         </div>
-      </a>
-      <a
-        class="link step"
+      </div>
+      <div
+        class="ui fluid top attached three steps"
       >
-        <i
-          aria-hidden="true"
-          class="disk circular icon"
-        />
-        <div
-          class="content"
-        >
-          <div
-            class="title"
-          >
-            External
-          </div>
-          <div
-            class="description"
-          >
-            For dbGaP project
-          </div>
-          <div
-            class="ui tiny warning progress progress-bar--custom"
-            data-percent="33"
-          >
-            <div
-              class="bar"
-              style="width: 33.33333333333333%;"
-            />
-            <div
-              class="label"
-            >
-              1/3 fields complete
-            </div>
-          </div>
-        </div>
-      </a>
-      <a
-        class="active link step"
-      >
-        <i
-          aria-hidden="true"
-          class="calendar check circular icon"
-        />
-        <div
-          class="content"
-        >
-          <div
-            class="title"
-          >
-            Logistics
-          </div>
-          <div
-            class="description"
-          >
-            Scheduling & Collection
-          </div>
-          <div
-            class="ui tiny warning progress progress-bar--custom"
-            data-percent="75"
-          >
-            <div
-              class="bar"
-              style="width: 75%;"
-            />
-            <div
-              class="label"
-            >
-              3/4 fields complete
-            </div>
-          </div>
-        </div>
-      </a>
-    </div>
-    <div
-      class="ui clearing attached padded segment"
-    >
-      <form
-        class="ui form"
-      >
-        <h4
-          class="ui header text-wrap-75"
-        >
-          Provide details about the Kids First grant that this study was awarded.
-        </h4>
-        <div
-          class="field"
-        >
-          <label
-            class="noMargin"
-          >
-            Release Date
-            :
-          </label>
-          <p
-            class="noMargin"
-          >
-            <small>
-              The anticipated date on which this study's data will be made public in Kids First.
-            </small>
-          </p>
-          <div
-            class="ui fluid input noMargin"
-          >
-            <input
-              aria-label="releaseDate"
-              name="releaseDate"
-              type="date"
-              value="2019-08-24"
-            />
-          </div>
-        </div>
-        <div
-          class="field"
-        >
-          <label
-            class="noMargin"
-          >
-            Number of anticipated samples
-            :
-          </label>
-          <p
-            class="noMargin"
-          >
-            <small>
-              The anticipated number of samples awarded for sequencing for the study.
-            </small>
-          </p>
-          <div
-            class="ui error fluid input noMargin"
-          >
-            <input
-              aria-label="anticipatedSamples"
-              name="anticipatedSamples"
-              type="number"
-              value="-1"
-            />
-          </div>
-          <div
-            class="ui red pointing basic label"
-          >
-            Please tell us how many samples you are anticipating
-          </div>
-        </div>
-        <div
-          class="field"
-        >
-          <label
-            class="noMargin"
-          >
-            Awardee organization
-            :
-          </label>
-          <p
-            class="noMargin"
-          >
-            <small>
-              The organization responsible for this study.
-            </small>
-          </p>
-          <div
-            class="ui fluid input noMargin"
-          >
-            <input
-              aria-label="awardeeOrganization"
-              name="awardeeOrganization"
-              type="text"
-              value="CHOP"
-            />
-          </div>
-        </div>
-        <div
-          class="field"
-        >
-          <label
-            class="noMargin"
-          >
-            Description
-            :
-          </label>
-          <p
-            class="noMargin"
-          >
-            <small>
-              Study description in markdown, commonly the X01 abstract text.
-            </small>
-          </p>
-          <div
-            class="field noMargin"
-          >
-            <textarea
-              name="description"
-              rows="15"
-              type="text"
-            >
-              Sudy description in markdown, commonly the X01 abstract text. --  As test study description
-            </textarea>
-          </div>
-        </div>
-        <button
-          class="ui icon left floated left labeled button"
-          type="button"
+        <a
+          class="link step"
         >
           <i
             aria-hidden="true"
-            class="left arrow icon"
+            class="info circular icon"
           />
-          PREVIOUS
-        </button>
-        <button
-          class="ui primary disabled right floated button"
-          disabled=""
-          tabindex="-1"
-          type="submit"
+          <div
+            class="content"
+          >
+            <div
+              class="title"
+            >
+              Info
+            </div>
+            <div
+              class="description"
+            >
+              General Study Details
+            </div>
+            <div
+              class="ui tiny warning progress progress-bar--custom"
+              data-percent="66"
+            >
+              <div
+                class="bar"
+                style="width: 66.66666666666666%;"
+              />
+              <div
+                class="label"
+              >
+                2/3 fields complete
+              </div>
+            </div>
+          </div>
+        </a>
+        <a
+          class="link step"
         >
-          SAVE
-        </button>
-      </form>
+          <i
+            aria-hidden="true"
+            class="disk circular icon"
+          />
+          <div
+            class="content"
+          >
+            <div
+              class="title"
+            >
+              External
+            </div>
+            <div
+              class="description"
+            >
+              For dbGaP project
+            </div>
+            <div
+              class="ui tiny warning progress progress-bar--custom"
+              data-percent="33"
+            >
+              <div
+                class="bar"
+                style="width: 33.33333333333333%;"
+              />
+              <div
+                class="label"
+              >
+                1/3 fields complete
+              </div>
+            </div>
+          </div>
+        </a>
+        <a
+          class="active link step"
+        >
+          <i
+            aria-hidden="true"
+            class="calendar check circular icon"
+          />
+          <div
+            class="content"
+          >
+            <div
+              class="title"
+            >
+              Logistics
+            </div>
+            <div
+              class="description"
+            >
+              Scheduling & Collection
+            </div>
+            <div
+              class="ui tiny warning progress progress-bar--custom"
+              data-percent="75"
+            >
+              <div
+                class="bar"
+                style="width: 75%;"
+              />
+              <div
+                class="label"
+              >
+                3/4 fields complete
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div
+        class="ui clearing attached padded segment"
+      >
+        <form
+          class="ui form"
+        >
+          <h4
+            class="ui header text-wrap-75"
+          >
+            Provide details about the Kids First grant that this study was awarded.
+          </h4>
+          <div
+            class="field"
+          >
+            <label
+              class="noMargin"
+            >
+              Release Date
+              :
+            </label>
+            <p
+              class="noMargin"
+            >
+              <small>
+                The anticipated date on which this study's data will be made public in Kids First.
+              </small>
+            </p>
+            <div
+              class="ui fluid input noMargin"
+            >
+              <input
+                aria-label="releaseDate"
+                name="releaseDate"
+                type="date"
+                value="2019-08-24"
+              />
+            </div>
+          </div>
+          <div
+            class="field"
+          >
+            <label
+              class="noMargin"
+            >
+              Number of anticipated samples
+              :
+            </label>
+            <p
+              class="noMargin"
+            >
+              <small>
+                The anticipated number of samples awarded for sequencing for the study.
+              </small>
+            </p>
+            <div
+              class="ui error fluid input noMargin"
+            >
+              <input
+                aria-label="anticipatedSamples"
+                name="anticipatedSamples"
+                type="number"
+                value="-1"
+              />
+            </div>
+            <div
+              class="ui red pointing basic label"
+            >
+              Please tell us how many samples you are anticipating
+            </div>
+          </div>
+          <div
+            class="field"
+          >
+            <label
+              class="noMargin"
+            >
+              Awardee organization
+              :
+            </label>
+            <p
+              class="noMargin"
+            >
+              <small>
+                The organization responsible for this study.
+              </small>
+            </p>
+            <div
+              class="ui fluid input noMargin"
+            >
+              <input
+                aria-label="awardeeOrganization"
+                name="awardeeOrganization"
+                type="text"
+                value="CHOP"
+              />
+            </div>
+          </div>
+          <div
+            class="field"
+          >
+            <label
+              class="noMargin"
+            >
+              Description
+              :
+            </label>
+            <p
+              class="noMargin"
+            >
+              <small>
+                Study description in markdown, commonly the X01 abstract text.
+              </small>
+            </p>
+            <div
+              class="field noMargin"
+            >
+              <textarea
+                name="description"
+                rows="15"
+                type="text"
+              >
+                Sudy description in markdown, commonly the X01 abstract text. --  As test study description
+              </textarea>
+            </div>
+          </div>
+          <button
+            class="ui icon left floated left labeled button"
+            type="button"
+          >
+            <i
+              aria-hidden="true"
+              class="left arrow icon"
+            />
+            PREVIOUS
+          </button>
+          <button
+            class="ui primary disabled right floated button"
+            disabled=""
+            tabindex="-1"
+            type="submit"
+          >
+            SAVE
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ui segment footer"
+  >
+    <div
+      class="ui container text-10"
+    >
+      <div
+        class="ui horizontal list"
+        role="list"
+      >
+        <div
+          class="item"
+          role="listitem"
+        >
+          <div
+            class="ui basic horizontal label text-10"
+          />
+        </div>
+        <div
+          class="item noMargin"
+          role="listitem"
+        >
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -2551,356 +2810,393 @@ exports[`renders study info view correctly -- BETA & ADMIN user 5`] = `
       </div>
     </div>
   </div>
-  <section
-    id="study"
+  <div
+    class="page"
   >
-    <div
-      class="ui basic secondary segment"
+    <section
+      id="study"
     >
+      <div
+        class="ui basic secondary segment"
+      >
+        <div
+          class="ui container"
+        >
+          <h1
+            class="ui header"
+          >
+            benchmark extensible e-business
+          </h1>
+          <button
+            class="ui tiny basic icon button"
+          >
+            <i
+              aria-hidden="true"
+              class="copy icon"
+            />
+            SD_8WX8QQ06
+          </button>
+        </div>
+      </div>
       <div
         class="ui container"
       >
-        <h1
-          class="ui header"
-        >
-          benchmark extensible e-business
-        </h1>
-        <button
-          class="ui tiny basic icon button"
-        >
-          <i
-            aria-hidden="true"
-            class="copy icon"
-          />
-          SD_8WX8QQ06
-        </button>
-      </div>
-    </div>
-    <div
-      class="ui container"
-    >
-      <div
-        class="ui pink pointing secondary menu"
-      >
-        <a
-          class="active item"
-          href="/study/SD_8WX8QQ06/basic-info/info"
-        >
-          Basic Info
-          <div
-            class="ui blue mini label"
-          >
-            BETA
-          </div>
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/dashboard"
-        >
-          Dashboard
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/documents"
-        >
-          Documents
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/cavatica"
-        >
-          Cavatica
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/logs"
-        >
-          Logs
-        </a>
-      </div>
-    </div>
-  </section>
-  <div
-    class="ui basic vertical segment ui container"
-  >
-    <h2
-      class="ui left floated header mt-6"
-    >
-      Study Basic Info
-    </h2>
-    <div
-      class="ui icon negative message"
-    >
-      <i
-        aria-hidden="true"
-        class="warning circle icon"
-      />
-      <div
-        class="content"
-      >
         <div
-          class="header"
-        >
-          Missing values
-        </div>
-        <p>
-          Please add values to the following fields:
-        </p>
-        <div
-          class="ui bulleted horizontal list"
-          role="list"
+          class="ui pink pointing secondary menu"
         >
           <a
-            class="item"
+            class="active item"
             href="/study/SD_8WX8QQ06/basic-info/info"
-            role="listitem"
           >
-            Study Short Name
+            Basic Info
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/dashboard"
+          >
+            Dashboard
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/documents"
+          >
+            Documents
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/cavatica"
+          >
+            Cavatica
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/logs"
+          >
+            Logs
           </a>
         </div>
       </div>
-    </div>
+    </section>
     <div
-      class="ui fluid top attached three steps"
+      class="ui basic vertical segment ui container"
     >
-      <a
-        class="link step"
+      <h2
+        class="ui left floated header mt-6"
+      >
+        Study Basic Info
+      </h2>
+      <div
+        class="ui icon negative message"
       >
         <i
           aria-hidden="true"
-          class="info circular icon"
+          class="warning circle icon"
         />
         <div
           class="content"
         >
           <div
-            class="title"
+            class="header"
           >
-            Info
+            Missing values
           </div>
-          <div
-            class="description"
-          >
-            General Study Details
-          </div>
-          <div
-            class="ui tiny warning progress progress-bar--custom"
-            data-percent="66"
-          >
-            <div
-              class="bar"
-              style="width: 66.66666666666666%;"
-            />
-            <div
-              class="label"
-            >
-              2/3 fields complete
-            </div>
-          </div>
-        </div>
-      </a>
-      <a
-        class="active link step"
-      >
-        <i
-          aria-hidden="true"
-          class="disk circular icon"
-        />
-        <div
-          class="content"
-        >
-          <div
-            class="title"
-          >
-            External
-          </div>
-          <div
-            class="description"
-          >
-            For dbGaP project
-          </div>
-          <div
-            class="ui tiny warning progress progress-bar--custom"
-            data-percent="66"
-          >
-            <div
-              class="bar"
-              style="width: 66.66666666666666%;"
-            />
-            <div
-              class="label"
-            >
-              2/3 fields complete
-            </div>
-          </div>
-        </div>
-      </a>
-      <a
-        class="link step"
-      >
-        <i
-          aria-hidden="true"
-          class="calendar check circular icon"
-        />
-        <div
-          class="content"
-        >
-          <div
-            class="title"
-          >
-            Logistics
-          </div>
-          <div
-            class="description"
-          >
-            Scheduling & Collection
-          </div>
-          <div
-            class="ui tiny warning progress progress-bar--custom"
-            data-percent="75"
-          >
-            <div
-              class="bar"
-              style="width: 75%;"
-            />
-            <div
-              class="label"
-            >
-              3/4 fields complete
-            </div>
-          </div>
-        </div>
-      </a>
-    </div>
-    <div
-      class="ui clearing attached padded segment"
-    >
-      <form
-        class="ui form"
-      >
-        <h4
-          class="ui header text-wrap-75"
-        >
-          If the study is a dbGaP project, additional information is needed to ensure access is granted correctly. For non-dbGaP studies, an external identifier which this study may otherwise be known by is required.
-        </h4>
-        <div
-          class="required field"
-        >
-          <label
-            class="noMargin"
-          >
-            External ID
-            :
-          </label>
-          <p
-            class="noMargin"
-          >
-            <small>
-              Identifier used by external systems, often the PHS ID if the study is registered with dbGaP.
-            </small>
+          <p>
+            Please add values to the following fields:
           </p>
           <div
-            class="ui fluid input noMargin"
+            class="ui bulleted horizontal list"
+            role="list"
           >
-            <input
-              aria-label="externalId"
-              name="externalId"
-              placeholder="Example: phs000178"
-              type="text"
-              value="test_study_external_id"
-            />
+            <a
+              class="item"
+              href="/study/SD_8WX8QQ06/basic-info/info"
+              role="listitem"
+            >
+              Study Short Name
+            </a>
           </div>
         </div>
-        <div
-          class="field"
-        >
-          <label
-            class="noMargin"
-          >
-            dbGaP Version
-            :
-          </label>
-          <p
-            class="noMargin"
-          >
-            <small>
-              Study version, often the provided by the data access authority.
-            </small>
-          </p>
-          <div
-            class="ui error fluid input noMargin"
-          >
-            <input
-              aria-label="version"
-              name="version"
-              placeholder="Example: v1.p1"
-              type="text"
-              value="more-than-ten-characters"
-            />
-          </div>
-          <div
-            class="ui red pointing basic label"
-          >
-            Max. 10 characters, typically in the format v[0-9].p[0-9]
-          </div>
-        </div>
-        <div
-          class="field"
-        >
-          <label
-            class="noMargin"
-          >
-            Attribution
-            :
-          </label>
-          <p
-            class="noMargin"
-          >
-            <small>
-              The URL providing more information about the study.
-            </small>
-          </p>
-          <div
-            class="ui fluid input noMargin"
-          >
-            <input
-              aria-label="attribution"
-              name="attribution"
-              placeholder=""
-              type="text"
-              value=""
-            />
-          </div>
-        </div>
-        <button
-          class="ui icon left floated left labeled button"
-          type="button"
+      </div>
+      <div
+        class="ui fluid top attached three steps"
+      >
+        <a
+          class="link step"
         >
           <i
             aria-hidden="true"
-            class="left arrow icon"
+            class="info circular icon"
           />
-          PREVIOUS
-        </button>
-        <button
-          class="ui icon right floated right labeled button"
-          type="button"
+          <div
+            class="content"
+          >
+            <div
+              class="title"
+            >
+              Info
+            </div>
+            <div
+              class="description"
+            >
+              General Study Details
+            </div>
+            <div
+              class="ui tiny warning progress progress-bar--custom"
+              data-percent="66"
+            >
+              <div
+                class="bar"
+                style="width: 66.66666666666666%;"
+              />
+              <div
+                class="label"
+              >
+                2/3 fields complete
+              </div>
+            </div>
+          </div>
+        </a>
+        <a
+          class="active link step"
         >
           <i
             aria-hidden="true"
-            class="right arrow icon"
+            class="disk circular icon"
           />
-          NEXT
-        </button>
-        <button
-          class="ui primary disabled right floated button"
-          disabled=""
-          tabindex="-1"
-          type="submit"
+          <div
+            class="content"
+          >
+            <div
+              class="title"
+            >
+              External
+            </div>
+            <div
+              class="description"
+            >
+              For dbGaP project
+            </div>
+            <div
+              class="ui tiny warning progress progress-bar--custom"
+              data-percent="66"
+            >
+              <div
+                class="bar"
+                style="width: 66.66666666666666%;"
+              />
+              <div
+                class="label"
+              >
+                2/3 fields complete
+              </div>
+            </div>
+          </div>
+        </a>
+        <a
+          class="link step"
         >
-          SAVE
-        </button>
-      </form>
+          <i
+            aria-hidden="true"
+            class="calendar check circular icon"
+          />
+          <div
+            class="content"
+          >
+            <div
+              class="title"
+            >
+              Logistics
+            </div>
+            <div
+              class="description"
+            >
+              Scheduling & Collection
+            </div>
+            <div
+              class="ui tiny warning progress progress-bar--custom"
+              data-percent="75"
+            >
+              <div
+                class="bar"
+                style="width: 75%;"
+              />
+              <div
+                class="label"
+              >
+                3/4 fields complete
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div
+        class="ui clearing attached padded segment"
+      >
+        <form
+          class="ui form"
+        >
+          <h4
+            class="ui header text-wrap-75"
+          >
+            If the study is a dbGaP project, additional information is needed to ensure access is granted correctly. For non-dbGaP studies, an external identifier which this study may otherwise be known by is required.
+          </h4>
+          <div
+            class="required field"
+          >
+            <label
+              class="noMargin"
+            >
+              External ID
+              :
+            </label>
+            <p
+              class="noMargin"
+            >
+              <small>
+                Identifier used by external systems, often the PHS ID if the study is registered with dbGaP.
+              </small>
+            </p>
+            <div
+              class="ui fluid input noMargin"
+            >
+              <input
+                aria-label="externalId"
+                name="externalId"
+                placeholder="Example: phs000178"
+                type="text"
+                value="test_study_external_id"
+              />
+            </div>
+          </div>
+          <div
+            class="field"
+          >
+            <label
+              class="noMargin"
+            >
+              dbGaP Version
+              :
+            </label>
+            <p
+              class="noMargin"
+            >
+              <small>
+                Study version, often the provided by the data access authority.
+              </small>
+            </p>
+            <div
+              class="ui error fluid input noMargin"
+            >
+              <input
+                aria-label="version"
+                name="version"
+                placeholder="Example: v1.p1"
+                type="text"
+                value="more-than-ten-characters"
+              />
+            </div>
+            <div
+              class="ui red pointing basic label"
+            >
+              Max. 10 characters, typically in the format v[0-9].p[0-9]
+            </div>
+          </div>
+          <div
+            class="field"
+          >
+            <label
+              class="noMargin"
+            >
+              Attribution
+              :
+            </label>
+            <p
+              class="noMargin"
+            >
+              <small>
+                The URL providing more information about the study.
+              </small>
+            </p>
+            <div
+              class="ui fluid input noMargin"
+            >
+              <input
+                aria-label="attribution"
+                name="attribution"
+                placeholder=""
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <button
+            class="ui icon left floated left labeled button"
+            type="button"
+          >
+            <i
+              aria-hidden="true"
+              class="left arrow icon"
+            />
+            PREVIOUS
+          </button>
+          <button
+            class="ui icon right floated right labeled button"
+            type="button"
+          >
+            <i
+              aria-hidden="true"
+              class="right arrow icon"
+            />
+            NEXT
+          </button>
+          <button
+            class="ui primary disabled right floated button"
+            disabled=""
+            tabindex="-1"
+            type="submit"
+          >
+            SAVE
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ui segment footer"
+  >
+    <div
+      class="ui container text-10"
+    >
+      <div
+        class="ui horizontal list"
+        role="list"
+      >
+        <div
+          class="item"
+          role="listitem"
+        >
+          <div
+            class="ui basic horizontal label text-10"
+          />
+        </div>
+        <div
+          class="item noMargin"
+          role="listitem"
+        >
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -3033,372 +3329,409 @@ exports[`renders study info view correctly -- BETA & ADMIN user 6`] = `
       </div>
     </div>
   </div>
-  <section
-    id="study"
+  <div
+    class="page"
   >
-    <div
-      class="ui basic secondary segment"
+    <section
+      id="study"
     >
+      <div
+        class="ui basic secondary segment"
+      >
+        <div
+          class="ui container"
+        >
+          <h1
+            class="ui header"
+          >
+            benchmark extensible e-business
+          </h1>
+          <button
+            class="ui tiny basic icon button"
+          >
+            <i
+              aria-hidden="true"
+              class="copy icon"
+            />
+            SD_8WX8QQ06
+          </button>
+        </div>
+      </div>
       <div
         class="ui container"
       >
-        <h1
-          class="ui header"
+        <div
+          class="ui pink pointing secondary menu"
         >
-          benchmark extensible e-business
-        </h1>
-        <button
-          class="ui tiny basic icon button"
+          <a
+            aria-current="page"
+            class="active item active"
+            href="/study/SD_8WX8QQ06/basic-info/info"
+          >
+            Basic Info
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/dashboard"
+          >
+            Dashboard
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/documents"
+          >
+            Documents
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/cavatica"
+          >
+            Cavatica
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/logs"
+          >
+            Logs
+          </a>
+        </div>
+      </div>
+    </section>
+    <div
+      class="ui basic vertical segment ui container"
+    >
+      <h2
+        class="ui left floated header mt-6"
+      >
+        Study Basic Info
+      </h2>
+      <div
+        class="ui icon negative message"
+      >
+        <i
+          aria-hidden="true"
+          class="warning circle icon"
+        />
+        <div
+          class="content"
+        >
+          <div
+            class="header"
+          >
+            Missing values
+          </div>
+          <p>
+            Please add values to the following fields:
+          </p>
+          <div
+            class="ui bulleted horizontal list"
+            role="list"
+          >
+            <a
+              class="item"
+              href="/study/SD_8WX8QQ06/basic-info/info"
+              role="listitem"
+            >
+              Study Name
+            </a>
+            <a
+              class="item"
+              href="/study/SD_8WX8QQ06/basic-info/info"
+              role="listitem"
+            >
+              Study Short Name
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ui fluid top attached three steps"
+      >
+        <a
+          class="active link step"
         >
           <i
             aria-hidden="true"
-            class="copy icon"
+            class="info circular icon"
           />
-          SD_8WX8QQ06
-        </button>
-      </div>
-    </div>
-    <div
-      class="ui container"
-    >
-      <div
-        class="ui pink pointing secondary menu"
-      >
-        <a
-          aria-current="page"
-          class="active item active"
-          href="/study/SD_8WX8QQ06/basic-info/info"
-        >
-          Basic Info
           <div
-            class="ui blue mini label"
+            class="content"
           >
-            BETA
+            <div
+              class="title"
+            >
+              Info
+            </div>
+            <div
+              class="description"
+            >
+              General Study Details
+            </div>
+            <div
+              class="ui tiny warning progress progress-bar--custom"
+              data-percent="33"
+            >
+              <div
+                class="bar"
+                style="width: 33.33333333333333%;"
+              />
+              <div
+                class="label"
+              >
+                1/3 fields complete
+              </div>
+            </div>
           </div>
         </a>
         <a
-          class="item"
-          href="/study/SD_8WX8QQ06/dashboard"
+          class="link step"
         >
-          Dashboard
+          <i
+            aria-hidden="true"
+            class="disk circular icon"
+          />
+          <div
+            class="content"
+          >
+            <div
+              class="title"
+            >
+              External
+            </div>
+            <div
+              class="description"
+            >
+              For dbGaP project
+            </div>
+            <div
+              class="ui tiny warning progress progress-bar--custom"
+              data-percent="66"
+            >
+              <div
+                class="bar"
+                style="width: 66.66666666666666%;"
+              />
+              <div
+                class="label"
+              >
+                2/3 fields complete
+              </div>
+            </div>
+          </div>
         </a>
         <a
-          class="item"
-          href="/study/SD_8WX8QQ06/documents"
+          class="link step"
         >
-          Documents
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/cavatica"
-        >
-          Cavatica
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/logs"
-        >
-          Logs
+          <i
+            aria-hidden="true"
+            class="calendar check circular icon"
+          />
+          <div
+            class="content"
+          >
+            <div
+              class="title"
+            >
+              Logistics
+            </div>
+            <div
+              class="description"
+            >
+              Scheduling & Collection
+            </div>
+            <div
+              class="ui tiny warning progress progress-bar--custom"
+              data-percent="75"
+            >
+              <div
+                class="bar"
+                style="width: 75%;"
+              />
+              <div
+                class="label"
+              >
+                3/4 fields complete
+              </div>
+            </div>
+          </div>
         </a>
       </div>
+      <div
+        class="ui clearing attached padded segment"
+      >
+        <form
+          class="ui form"
+        >
+          <h4
+            class="ui header text-wrap-75"
+          >
+            Please provide the study's full name and a shortened version that may be used for display purposes.
+          </h4>
+          <div
+            class="required field"
+          >
+            <label
+              class="noMargin"
+            >
+              Study Name
+              :
+            </label>
+            <p
+              class="noMargin"
+            >
+              <small>
+                Full name of the study, often the full title of the X01 grant application.
+              </small>
+            </p>
+            <div
+              class="ui error fluid left corner labeled input noMargin"
+            >
+              <div
+                class="ui red label label left corner"
+              >
+                <i
+                  aria-hidden="true"
+                  class="asterisk icon"
+                />
+              </div>
+              <input
+                aria-label="name"
+                name="name"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="field"
+          >
+            <label
+              class="noMargin"
+            >
+              Study Short Name
+              :
+            </label>
+            <p
+              class="noMargin"
+            >
+              <small>
+                The name that will appear under portal facets.
+              </small>
+            </p>
+            <div
+              class="ui error fluid left corner labeled input noMargin"
+            >
+              <div
+                class="ui red label label left corner"
+              >
+                <i
+                  aria-hidden="true"
+                  class="asterisk icon"
+                />
+              </div>
+              <input
+                aria-label="shortName"
+                name="shortName"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="field"
+          >
+            <label
+              class="noMargin"
+            >
+              S3 Bucket
+              :
+            </label>
+            <p
+              class="noMargin"
+            >
+              <small>
+                The s3 bucket where data for this study resides.
+              </small>
+            </p>
+            <div
+              class="ui fluid input noMargin"
+            >
+              <input
+                aria-label="bucket"
+                name="bucket"
+                type="text"
+                value="stay-wrong-ready"
+              />
+            </div>
+          </div>
+          <button
+            class="ui icon left floated left labeled button"
+            type="button"
+          >
+            <i
+              aria-hidden="true"
+              class="left arrow icon"
+            />
+            PREVIOUS
+          </button>
+          <button
+            class="ui icon right floated right labeled button"
+            type="button"
+          >
+            <i
+              aria-hidden="true"
+              class="right arrow icon"
+            />
+            NEXT
+          </button>
+          <button
+            class="ui primary disabled right floated button"
+            disabled=""
+            tabindex="-1"
+            type="submit"
+          >
+            SAVE
+          </button>
+        </form>
+      </div>
     </div>
-  </section>
+  </div>
   <div
-    class="ui basic vertical segment ui container"
+    class="ui segment footer"
   >
-    <h2
-      class="ui left floated header mt-6"
-    >
-      Study Basic Info
-    </h2>
     <div
-      class="ui icon negative message"
+      class="ui container text-10"
     >
-      <i
-        aria-hidden="true"
-        class="warning circle icon"
-      />
       <div
-        class="content"
+        class="ui horizontal list"
+        role="list"
       >
         <div
-          class="header"
+          class="item"
+          role="listitem"
         >
-          Missing values
+          <div
+            class="ui basic horizontal label text-10"
+          />
         </div>
-        <p>
-          Please add values to the following fields:
-        </p>
         <div
-          class="ui bulleted horizontal list"
-          role="list"
+          class="item noMargin"
+          role="listitem"
         >
+          UI
+           
           <a
-            class="item"
-            href="/study/SD_8WX8QQ06/basic-info/info"
-            role="listitem"
-          >
-            Study Name
-          </a>
-          <a
-            class="item"
-            href="/study/SD_8WX8QQ06/basic-info/info"
-            role="listitem"
-          >
-            Study Short Name
-          </a>
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
         </div>
       </div>
-    </div>
-    <div
-      class="ui fluid top attached three steps"
-    >
-      <a
-        class="active link step"
-      >
-        <i
-          aria-hidden="true"
-          class="info circular icon"
-        />
-        <div
-          class="content"
-        >
-          <div
-            class="title"
-          >
-            Info
-          </div>
-          <div
-            class="description"
-          >
-            General Study Details
-          </div>
-          <div
-            class="ui tiny warning progress progress-bar--custom"
-            data-percent="33"
-          >
-            <div
-              class="bar"
-              style="width: 33.33333333333333%;"
-            />
-            <div
-              class="label"
-            >
-              1/3 fields complete
-            </div>
-          </div>
-        </div>
-      </a>
-      <a
-        class="link step"
-      >
-        <i
-          aria-hidden="true"
-          class="disk circular icon"
-        />
-        <div
-          class="content"
-        >
-          <div
-            class="title"
-          >
-            External
-          </div>
-          <div
-            class="description"
-          >
-            For dbGaP project
-          </div>
-          <div
-            class="ui tiny warning progress progress-bar--custom"
-            data-percent="66"
-          >
-            <div
-              class="bar"
-              style="width: 66.66666666666666%;"
-            />
-            <div
-              class="label"
-            >
-              2/3 fields complete
-            </div>
-          </div>
-        </div>
-      </a>
-      <a
-        class="link step"
-      >
-        <i
-          aria-hidden="true"
-          class="calendar check circular icon"
-        />
-        <div
-          class="content"
-        >
-          <div
-            class="title"
-          >
-            Logistics
-          </div>
-          <div
-            class="description"
-          >
-            Scheduling & Collection
-          </div>
-          <div
-            class="ui tiny warning progress progress-bar--custom"
-            data-percent="75"
-          >
-            <div
-              class="bar"
-              style="width: 75%;"
-            />
-            <div
-              class="label"
-            >
-              3/4 fields complete
-            </div>
-          </div>
-        </div>
-      </a>
-    </div>
-    <div
-      class="ui clearing attached padded segment"
-    >
-      <form
-        class="ui form"
-      >
-        <h4
-          class="ui header text-wrap-75"
-        >
-          Please provide the study's full name and a shortened version that may be used for display purposes.
-        </h4>
-        <div
-          class="required field"
-        >
-          <label
-            class="noMargin"
-          >
-            Study Name
-            :
-          </label>
-          <p
-            class="noMargin"
-          >
-            <small>
-              Full name of the study, often the full title of the X01 grant application.
-            </small>
-          </p>
-          <div
-            class="ui error fluid left corner labeled input noMargin"
-          >
-            <div
-              class="ui red label label left corner"
-            >
-              <i
-                aria-hidden="true"
-                class="asterisk icon"
-              />
-            </div>
-            <input
-              aria-label="name"
-              name="name"
-              type="text"
-              value=""
-            />
-          </div>
-        </div>
-        <div
-          class="field"
-        >
-          <label
-            class="noMargin"
-          >
-            Study Short Name
-            :
-          </label>
-          <p
-            class="noMargin"
-          >
-            <small>
-              The name that will appear under portal facets.
-            </small>
-          </p>
-          <div
-            class="ui error fluid left corner labeled input noMargin"
-          >
-            <div
-              class="ui red label label left corner"
-            >
-              <i
-                aria-hidden="true"
-                class="asterisk icon"
-              />
-            </div>
-            <input
-              aria-label="shortName"
-              name="shortName"
-              type="text"
-              value=""
-            />
-          </div>
-        </div>
-        <div
-          class="field"
-        >
-          <label
-            class="noMargin"
-          >
-            S3 Bucket
-            :
-          </label>
-          <p
-            class="noMargin"
-          >
-            <small>
-              The s3 bucket where data for this study resides.
-            </small>
-          </p>
-          <div
-            class="ui fluid input noMargin"
-          >
-            <input
-              aria-label="bucket"
-              name="bucket"
-              type="text"
-              value="stay-wrong-ready"
-            />
-          </div>
-        </div>
-        <button
-          class="ui icon left floated left labeled button"
-          type="button"
-        >
-          <i
-            aria-hidden="true"
-            class="left arrow icon"
-          />
-          PREVIOUS
-        </button>
-        <button
-          class="ui icon right floated right labeled button"
-          type="button"
-        >
-          <i
-            aria-hidden="true"
-            class="right arrow icon"
-          />
-          NEXT
-        </button>
-        <button
-          class="ui primary disabled right floated button"
-          disabled=""
-          tabindex="-1"
-          type="submit"
-        >
-          SAVE
-        </button>
-      </form>
     </div>
   </div>
 </div>
@@ -3532,50 +3865,87 @@ exports[`renders study info view with get study info error 1`] = `
     </div>
   </div>
   <div
-    class="ui basic segment ui container"
+    class="page"
   >
     <div
-      class="ui icon negative message"
+      class="ui basic segment ui container"
     >
-      <i
-        aria-hidden="true"
-        class="warning circle icon"
-      />
       <div
-        class="content"
+        class="ui icon negative message"
       >
+        <i
+          aria-hidden="true"
+          class="warning circle icon"
+        />
         <div
-          class="header"
+          class="content"
         >
-          Error
+          <div
+            class="header"
+          >
+            Error
+          </div>
+          <p>
+            Network error: something went wrong
+          </p>
         </div>
-        <p>
-          Network error: something went wrong
-        </p>
+      </div>
+    </div>
+    <div
+      class="ui basic segment ui container"
+    >
+      <div
+        class="ui icon negative message"
+      >
+        <i
+          aria-hidden="true"
+          class="warning circle icon"
+        />
+        <div
+          class="content"
+        >
+          <div
+            class="header"
+          >
+            Error
+          </div>
+          <p>
+            Network error: something went wrong
+          </p>
+        </div>
       </div>
     </div>
   </div>
   <div
-    class="ui basic segment ui container"
+    class="ui segment footer"
   >
     <div
-      class="ui icon negative message"
+      class="ui container text-10"
     >
-      <i
-        aria-hidden="true"
-        class="warning circle icon"
-      />
       <div
-        class="content"
+        class="ui horizontal list"
+        role="list"
       >
         <div
-          class="header"
+          class="item"
+          role="listitem"
         >
-          Error
+          <div
+            class="ui basic horizontal label text-10"
+          />
         </div>
-        <p>
-          Network error: something went wrong
-        </p>
+        <div
+          class="item noMargin"
+          role="listitem"
+        >
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -3709,369 +4079,406 @@ exports[`renders study info view with update study info error 1`] = `
       </div>
     </div>
   </div>
-  <section
-    id="study"
+  <div
+    class="page"
   >
-    <div
-      class="ui basic secondary segment"
+    <section
+      id="study"
     >
+      <div
+        class="ui basic secondary segment"
+      >
+        <div
+          class="ui container"
+        >
+          <h1
+            class="ui header"
+          >
+            benchmark extensible e-business
+          </h1>
+          <button
+            class="ui tiny basic icon button"
+          >
+            <i
+              aria-hidden="true"
+              class="copy icon"
+            />
+            SD_8WX8QQ06
+          </button>
+        </div>
+      </div>
       <div
         class="ui container"
       >
-        <h1
-          class="ui header"
-        >
-          benchmark extensible e-business
-        </h1>
-        <button
-          class="ui tiny basic icon button"
-        >
-          <i
-            aria-hidden="true"
-            class="copy icon"
-          />
-          SD_8WX8QQ06
-        </button>
-      </div>
-    </div>
-    <div
-      class="ui container"
-    >
-      <div
-        class="ui pink pointing secondary menu"
-      >
-        <a
-          class="active item"
-          href="/study/SD_8WX8QQ06/basic-info/info"
-        >
-          Basic Info
-          <div
-            class="ui blue mini label"
-          >
-            BETA
-          </div>
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/dashboard"
-        >
-          Dashboard
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/documents"
-        >
-          Documents
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/cavatica"
-        >
-          Cavatica
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/logs"
-        >
-          Logs
-        </a>
-      </div>
-    </div>
-  </section>
-  <div
-    class="ui basic vertical segment ui container"
-  >
-    <h2
-      class="ui left floated header mt-6"
-    >
-      Study Basic Info
-    </h2>
-    <div
-      class="ui icon negative message"
-    >
-      <i
-        aria-hidden="true"
-        class="attention icon"
-      />
-      <div
-        class="content"
-      >
         <div
-          class="header"
-        >
-          Error
-        </div>
-        <p>
-          Network error: Failed to update the study
-        </p>
-      </div>
-    </div>
-    <div
-      class="ui icon negative message"
-    >
-      <i
-        aria-hidden="true"
-        class="warning circle icon"
-      />
-      <div
-        class="content"
-      >
-        <div
-          class="header"
-        >
-          Missing values
-        </div>
-        <p>
-          Please add values to the following fields:
-        </p>
-        <div
-          class="ui bulleted horizontal list"
-          role="list"
+          class="ui pink pointing secondary menu"
         >
           <a
-            class="item"
+            class="active item"
             href="/study/SD_8WX8QQ06/basic-info/info"
-            role="listitem"
           >
-            Study Short Name
+            Basic Info
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/dashboard"
+          >
+            Dashboard
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/documents"
+          >
+            Documents
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/cavatica"
+          >
+            Cavatica
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/logs"
+          >
+            Logs
           </a>
         </div>
       </div>
-    </div>
+    </section>
     <div
-      class="ui fluid top attached three steps"
+      class="ui basic vertical segment ui container"
     >
-      <a
-        class="link step"
+      <h2
+        class="ui left floated header mt-6"
+      >
+        Study Basic Info
+      </h2>
+      <div
+        class="ui icon negative message"
       >
         <i
           aria-hidden="true"
-          class="info circular icon"
+          class="attention icon"
         />
         <div
           class="content"
         >
           <div
-            class="title"
+            class="header"
           >
-            Info
+            Error
           </div>
-          <div
-            class="description"
-          >
-            General Study Details
-          </div>
-          <div
-            class="ui tiny warning progress progress-bar--custom"
-            data-percent="66"
-          >
-            <div
-              class="bar"
-              style="width: 66.66666666666666%;"
-            />
-            <div
-              class="label"
-            >
-              2/3 fields complete
-            </div>
-          </div>
+          <p>
+            Network error: Failed to update the study
+          </p>
         </div>
-      </a>
-      <a
-        class="active link step"
+      </div>
+      <div
+        class="ui icon negative message"
       >
         <i
           aria-hidden="true"
-          class="disk circular icon"
+          class="warning circle icon"
         />
         <div
           class="content"
         >
           <div
-            class="title"
+            class="header"
           >
-            External
+            Missing values
           </div>
+          <p>
+            Please add values to the following fields:
+          </p>
           <div
-            class="description"
+            class="ui bulleted horizontal list"
+            role="list"
           >
-            For dbGaP project
-          </div>
-          <div
-            class="ui tiny warning progress progress-bar--custom"
-            data-percent="33"
-          >
-            <div
-              class="bar"
-              style="width: 33.33333333333333%;"
-            />
-            <div
-              class="label"
+            <a
+              class="item"
+              href="/study/SD_8WX8QQ06/basic-info/info"
+              role="listitem"
             >
-              1/3 fields complete
-            </div>
+              Study Short Name
+            </a>
           </div>
         </div>
-      </a>
-      <a
-        class="link step"
+      </div>
+      <div
+        class="ui fluid top attached three steps"
       >
-        <i
-          aria-hidden="true"
-          class="calendar check circular icon"
-        />
-        <div
-          class="content"
-        >
-          <div
-            class="title"
-          >
-            Logistics
-          </div>
-          <div
-            class="description"
-          >
-            Scheduling & Collection
-          </div>
-          <div
-            class="ui tiny success progress progress-bar--custom"
-            data-percent="100"
-          >
-            <div
-              class="bar"
-              style="width: 100%;"
-            />
-            <div
-              class="label"
-            >
-              4/4 fields complete
-            </div>
-          </div>
-        </div>
-      </a>
-    </div>
-    <div
-      class="ui clearing attached padded segment"
-    >
-      <form
-        class="ui form"
-      >
-        <h4
-          class="ui header text-wrap-75"
-        >
-          If the study is a dbGaP project, additional information is needed to ensure access is granted correctly. For non-dbGaP studies, an external identifier which this study may otherwise be known by is required.
-        </h4>
-        <div
-          class="required field"
-        >
-          <label
-            class="noMargin"
-          >
-            External ID
-            :
-          </label>
-          <p
-            class="noMargin"
-          >
-            <small>
-              Identifier used by external systems, often the PHS ID if the study is registered with dbGaP.
-            </small>
-          </p>
-          <div
-            class="ui fluid input noMargin"
-          >
-            <input
-              aria-label="externalId"
-              name="externalId"
-              placeholder="Example: phs000178"
-              type="text"
-              value="test_study_external_id"
-            />
-          </div>
-        </div>
-        <div
-          class="field"
-        >
-          <label
-            class="noMargin"
-          >
-            dbGaP Version
-            :
-          </label>
-          <p
-            class="noMargin"
-          >
-            <small>
-              Study version, often the provided by the data access authority.
-            </small>
-          </p>
-          <div
-            class="ui fluid input noMargin"
-          >
-            <input
-              aria-label="version"
-              name="version"
-              placeholder="Example: v1.p1"
-              type="text"
-              value=""
-            />
-          </div>
-        </div>
-        <div
-          class="field"
-        >
-          <label
-            class="noMargin"
-          >
-            Attribution
-            :
-          </label>
-          <p
-            class="noMargin"
-          >
-            <small>
-              The URL providing more information about the study.
-            </small>
-          </p>
-          <div
-            class="ui fluid input noMargin"
-          >
-            <input
-              aria-label="attribution"
-              name="attribution"
-              placeholder=""
-              type="text"
-              value=""
-            />
-          </div>
-        </div>
-        <button
-          class="ui icon left floated left labeled button"
-          type="button"
+        <a
+          class="link step"
         >
           <i
             aria-hidden="true"
-            class="left arrow icon"
+            class="info circular icon"
           />
-          PREVIOUS
-        </button>
-        <button
-          class="ui icon right floated right labeled button"
-          type="button"
+          <div
+            class="content"
+          >
+            <div
+              class="title"
+            >
+              Info
+            </div>
+            <div
+              class="description"
+            >
+              General Study Details
+            </div>
+            <div
+              class="ui tiny warning progress progress-bar--custom"
+              data-percent="66"
+            >
+              <div
+                class="bar"
+                style="width: 66.66666666666666%;"
+              />
+              <div
+                class="label"
+              >
+                2/3 fields complete
+              </div>
+            </div>
+          </div>
+        </a>
+        <a
+          class="active link step"
         >
           <i
             aria-hidden="true"
-            class="right arrow icon"
+            class="disk circular icon"
           />
-          NEXT
-        </button>
-        <button
-          class="ui primary right floated button"
-          type="submit"
+          <div
+            class="content"
+          >
+            <div
+              class="title"
+            >
+              External
+            </div>
+            <div
+              class="description"
+            >
+              For dbGaP project
+            </div>
+            <div
+              class="ui tiny warning progress progress-bar--custom"
+              data-percent="33"
+            >
+              <div
+                class="bar"
+                style="width: 33.33333333333333%;"
+              />
+              <div
+                class="label"
+              >
+                1/3 fields complete
+              </div>
+            </div>
+          </div>
+        </a>
+        <a
+          class="link step"
         >
-          SAVE
-        </button>
-      </form>
+          <i
+            aria-hidden="true"
+            class="calendar check circular icon"
+          />
+          <div
+            class="content"
+          >
+            <div
+              class="title"
+            >
+              Logistics
+            </div>
+            <div
+              class="description"
+            >
+              Scheduling & Collection
+            </div>
+            <div
+              class="ui tiny success progress progress-bar--custom"
+              data-percent="100"
+            >
+              <div
+                class="bar"
+                style="width: 100%;"
+              />
+              <div
+                class="label"
+              >
+                4/4 fields complete
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div
+        class="ui clearing attached padded segment"
+      >
+        <form
+          class="ui form"
+        >
+          <h4
+            class="ui header text-wrap-75"
+          >
+            If the study is a dbGaP project, additional information is needed to ensure access is granted correctly. For non-dbGaP studies, an external identifier which this study may otherwise be known by is required.
+          </h4>
+          <div
+            class="required field"
+          >
+            <label
+              class="noMargin"
+            >
+              External ID
+              :
+            </label>
+            <p
+              class="noMargin"
+            >
+              <small>
+                Identifier used by external systems, often the PHS ID if the study is registered with dbGaP.
+              </small>
+            </p>
+            <div
+              class="ui fluid input noMargin"
+            >
+              <input
+                aria-label="externalId"
+                name="externalId"
+                placeholder="Example: phs000178"
+                type="text"
+                value="test_study_external_id"
+              />
+            </div>
+          </div>
+          <div
+            class="field"
+          >
+            <label
+              class="noMargin"
+            >
+              dbGaP Version
+              :
+            </label>
+            <p
+              class="noMargin"
+            >
+              <small>
+                Study version, often the provided by the data access authority.
+              </small>
+            </p>
+            <div
+              class="ui fluid input noMargin"
+            >
+              <input
+                aria-label="version"
+                name="version"
+                placeholder="Example: v1.p1"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="field"
+          >
+            <label
+              class="noMargin"
+            >
+              Attribution
+              :
+            </label>
+            <p
+              class="noMargin"
+            >
+              <small>
+                The URL providing more information about the study.
+              </small>
+            </p>
+            <div
+              class="ui fluid input noMargin"
+            >
+              <input
+                aria-label="attribution"
+                name="attribution"
+                placeholder=""
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <button
+            class="ui icon left floated left labeled button"
+            type="button"
+          >
+            <i
+              aria-hidden="true"
+              class="left arrow icon"
+            />
+            PREVIOUS
+          </button>
+          <button
+            class="ui icon right floated right labeled button"
+            type="button"
+          >
+            <i
+              aria-hidden="true"
+              class="right arrow icon"
+            />
+            NEXT
+          </button>
+          <button
+            class="ui primary right floated button"
+            type="submit"
+          >
+            SAVE
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ui segment footer"
+  >
+    <div
+      class="ui container text-10"
+    >
+      <div
+        class="ui horizontal list"
+        role="list"
+      >
+        <div
+          class="item"
+          role="listitem"
+        >
+          <div
+            class="ui basic horizontal label text-10"
+          />
+        </div>
+        <div
+          class="item noMargin"
+          role="listitem"
+        >
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </div>

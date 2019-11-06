@@ -1,0 +1,159 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders footer correctly -- development 1`] = `
+<div>
+  <div
+    class="ui segment footer"
+  >
+    <div
+      class="ui container text-10"
+    >
+      <div
+        class="ui horizontal list"
+        role="list"
+      >
+        <div
+          class="item"
+          role="listitem"
+        >
+          <div
+            class="ui basic horizontal label text-10"
+          >
+            development
+          </div>
+        </div>
+        <div
+          class="item noMargin"
+          role="listitem"
+        >
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/releases/tag/0.8.2"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            0.8.2
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders footer correctly -- local 1`] = `
+<div>
+  <div
+    class="ui segment footer"
+  >
+    <div
+      class="ui container text-10"
+    >
+      <div
+        class="ui horizontal list"
+        role="list"
+      >
+        <div
+          class="item"
+          role="listitem"
+        >
+          <div
+            class="ui orange basic horizontal label text-10"
+          >
+            local
+          </div>
+        </div>
+        <div
+          class="item noMargin"
+          role="listitem"
+        >
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/gb110ca36"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            0.8.1-80-gb110ca36
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders footer correctly -- production 1`] = `
+<div>
+  <div
+    class="ui segment footer"
+  >
+    <div
+      class="ui container text-10"
+    >
+      <div
+        class="ui horizontal list"
+        role="list"
+      >
+        <div
+          class="item noMargin"
+          role="listitem"
+        >
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/gb110ca36"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            0.8.1-80-gb110ca36
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders footer correctly -- qa 1`] = `
+<div>
+  <div
+    class="ui segment footer"
+  >
+    <div
+      class="ui container text-10"
+    >
+      <div
+        class="ui horizontal list"
+        role="list"
+      >
+        <div
+          class="item"
+          role="listitem"
+        >
+          <div
+            class="ui blue basic horizontal label text-10"
+          >
+            qa
+          </div>
+        </div>
+        <div
+          class="item noMargin"
+          role="listitem"
+        >
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/releases/tag/0.8.2"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            0.8.2
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

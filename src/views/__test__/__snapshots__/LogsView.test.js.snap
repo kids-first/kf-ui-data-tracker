@@ -79,51 +79,88 @@ exports[`renders study logs view -- shows an error 1`] = `
     </div>
   </div>
   <div
-    class="ui basic segment ui container"
+    class="page"
   >
     <div
-      class="ui icon negative message"
+      class="ui basic segment ui container"
     >
-      <i
-        aria-hidden="true"
-        class="warning circle icon"
-      />
       <div
-        class="content"
+        class="ui icon negative message"
       >
+        <i
+          aria-hidden="true"
+          class="warning circle icon"
+        />
         <div
-          class="header"
+          class="content"
         >
-          Error
+          <div
+            class="header"
+          >
+            Error
+          </div>
+          <p>
+            Network error: something went wrong
+          </p>
         </div>
-        <p>
-          Network error: something went wrong
-        </p>
+      </div>
+    </div>
+    <div
+      class="ui basic segment ui container"
+    >
+      <div
+        class="ui icon negative message"
+      >
+        <i
+          aria-hidden="true"
+          class="warning circle icon"
+        />
+        <div
+          class="content"
+        >
+          <div
+            class="header"
+          >
+            Error
+          </div>
+          <p>
+            Event Error: 
+            Network error: something went wrong with your event logs request
+          </p>
+        </div>
       </div>
     </div>
   </div>
   <div
-    class="ui basic segment ui container"
+    class="ui segment footer"
   >
     <div
-      class="ui icon negative message"
+      class="ui container text-10"
     >
-      <i
-        aria-hidden="true"
-        class="warning circle icon"
-      />
       <div
-        class="content"
+        class="ui horizontal list"
+        role="list"
       >
         <div
-          class="header"
+          class="item"
+          role="listitem"
         >
-          Error
+          <div
+            class="ui basic horizontal label text-10"
+          />
         </div>
-        <p>
-          Event Error: 
-          Network error: something went wrong with your event logs request
-        </p>
+        <div
+          class="item noMargin"
+          role="listitem"
+        >
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -208,83 +245,120 @@ exports[`renders study logs view correctly --  showing empty view for non-admin 
       </div>
     </div>
   </div>
-  <section
-    id="study"
+  <div
+    class="page"
   >
-    <div
-      class="ui basic secondary segment"
+    <section
+      id="study"
     >
+      <div
+        class="ui basic secondary segment"
+      >
+        <div
+          class="ui container"
+        >
+          <h1
+            class="ui header"
+          >
+            benchmark extensible e-business
+          </h1>
+          <button
+            class="ui tiny basic icon button"
+          >
+            <i
+              aria-hidden="true"
+              class="copy icon"
+            />
+            SD_8WX8QQ06
+          </button>
+        </div>
+      </div>
       <div
         class="ui container"
       >
-        <h1
-          class="ui header"
+        <div
+          class="ui pink pointing secondary menu"
         >
-          benchmark extensible e-business
-        </h1>
-        <button
-          class="ui tiny basic icon button"
-        >
-          <i
-            aria-hidden="true"
-            class="copy icon"
-          />
-          SD_8WX8QQ06
-        </button>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/basic-info/info"
+          >
+            Basic Info
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/dashboard"
+          >
+            Dashboard
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/documents"
+          >
+            Documents
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/cavatica"
+          >
+            Cavatica
+          </a>
+          <a
+            aria-current="page"
+            class="active item active"
+            href="/study/SD_8WX8QQ06/logs"
+          >
+            Logs
+          </a>
+        </div>
       </div>
-    </div>
+    </section>
     <div
-      class="ui container"
+      class="ui basic very padded segment ui container"
+    >
+      <h2
+        class="ui disabled center aligned header"
+      >
+        <i
+          aria-hidden="true"
+          class="clock outline icon"
+        />
+        Coming Soon...
+      </h2>
+    </div>
+  </div>
+  <div
+    class="ui segment footer"
+  >
+    <div
+      class="ui container text-10"
     >
       <div
-        class="ui pink pointing secondary menu"
+        class="ui horizontal list"
+        role="list"
       >
-        <a
+        <div
           class="item"
-          href="/study/SD_8WX8QQ06/basic-info/info"
+          role="listitem"
         >
-          Basic Info
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/dashboard"
+          <div
+            class="ui basic horizontal label text-10"
+          />
+        </div>
+        <div
+          class="item noMargin"
+          role="listitem"
         >
-          Dashboard
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/documents"
-        >
-          Documents
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/cavatica"
-        >
-          Cavatica
-        </a>
-        <a
-          aria-current="page"
-          class="active item active"
-          href="/study/SD_8WX8QQ06/logs"
-        >
-          Logs
-        </a>
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
+        </div>
       </div>
     </div>
-  </section>
-  <div
-    class="ui basic very padded segment ui container"
-  >
-    <h2
-      class="ui disabled center aligned header"
-    >
-      <i
-        aria-hidden="true"
-        class="clock outline icon"
-      />
-      Coming Soon...
-    </h2>
   </div>
 </div>
 `;
@@ -314,102 +388,139 @@ exports[`renders study logs view correctly 1`] = `
       </a>
     </div>
   </div>
-  <section
-    id="study"
+  <div
+    class="page"
   >
-    <div
-      class="ui basic secondary segment"
+    <section
+      id="study"
     >
+      <div
+        class="ui basic secondary segment"
+      >
+        <div
+          class="ui container"
+        >
+          <div
+            class="ui placeholder"
+          >
+            <div
+              class="header"
+            >
+              <div
+                class="line"
+              />
+              <div
+                class="line"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
       <div
         class="ui container"
       >
         <div
-          class="ui placeholder"
+          class="ui pink pointing secondary menu"
+        >
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/basic-info/info"
+          >
+            Basic Info
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/dashboard"
+          >
+            Dashboard
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/documents"
+          >
+            Documents
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/cavatica"
+          >
+            Cavatica
+          </a>
+          <a
+            aria-current="page"
+            class="active item active"
+            href="/study/SD_8WX8QQ06/logs"
+          >
+            Logs
+          </a>
+        </div>
+      </div>
+    </section>
+    <div
+      class="ui basic vertical segment ui container"
+    >
+      <div
+        class="ui placeholder"
+      >
+        <div
+          class="image header"
         >
           <div
-            class="header"
-          >
-            <div
-              class="line"
-            />
-            <div
-              class="line"
-            />
-          </div>
+            class="line"
+          />
+          <div
+            class="line"
+          />
+        </div>
+        <div
+          class="paragraph"
+        >
+          <div
+            class="line"
+          />
+          <div
+            class="line"
+          />
+          <div
+            class="line"
+          />
+          <div
+            class="line"
+          />
         </div>
       </div>
     </div>
-    <div
-      class="ui container"
-    >
-      <div
-        class="ui pink pointing secondary menu"
-      >
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/basic-info/info"
-        >
-          Basic Info
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/dashboard"
-        >
-          Dashboard
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/documents"
-        >
-          Documents
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/cavatica"
-        >
-          Cavatica
-        </a>
-        <a
-          aria-current="page"
-          class="active item active"
-          href="/study/SD_8WX8QQ06/logs"
-        >
-          Logs
-        </a>
-      </div>
-    </div>
-  </section>
+  </div>
   <div
-    class="ui basic vertical segment ui container"
+    class="ui segment footer"
   >
     <div
-      class="ui placeholder"
+      class="ui container text-10"
     >
       <div
-        class="image header"
+        class="ui horizontal list"
+        role="list"
       >
         <div
-          class="line"
-        />
+          class="item"
+          role="listitem"
+        >
+          <div
+            class="ui basic horizontal label text-10"
+          />
+        </div>
         <div
-          class="line"
-        />
-      </div>
-      <div
-        class="paragraph"
-      >
-        <div
-          class="line"
-        />
-        <div
-          class="line"
-        />
-        <div
-          class="line"
-        />
-        <div
-          class="line"
-        />
+          class="item noMargin"
+          role="listitem"
+        >
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -543,449 +654,486 @@ exports[`renders study logs view correctly 2`] = `
       </div>
     </div>
   </div>
-  <section
-    id="study"
+  <div
+    class="page"
   >
-    <div
-      class="ui basic secondary segment"
+    <section
+      id="study"
     >
+      <div
+        class="ui basic secondary segment"
+      >
+        <div
+          class="ui container"
+        >
+          <h1
+            class="ui header"
+          >
+            benchmark extensible e-business
+          </h1>
+          <button
+            class="ui tiny basic icon button"
+          >
+            <i
+              aria-hidden="true"
+              class="copy icon"
+            />
+            SD_8WX8QQ06
+          </button>
+        </div>
+      </div>
       <div
         class="ui container"
       >
-        <h1
-          class="ui header"
+        <div
+          class="ui pink pointing secondary menu"
         >
-          benchmark extensible e-business
-        </h1>
-        <button
-          class="ui tiny basic icon button"
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/basic-info/info"
+          >
+            Basic Info
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/dashboard"
+          >
+            Dashboard
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/documents"
+          >
+            Documents
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/cavatica"
+          >
+            Cavatica
+          </a>
+          <a
+            aria-current="page"
+            class="active item active"
+            href="/study/SD_8WX8QQ06/logs"
+          >
+            Logs
+          </a>
+        </div>
+      </div>
+    </section>
+    <div
+      class="ui basic vertical segment ui container"
+    >
+      <div
+        class="ui basic right floated segment noMargin noPadding"
+      >
+        <div
+          aria-expanded="false"
+          class="ui selection dropdown"
+          role="listbox"
+          tabindex="0"
+        >
+          <div
+            aria-live="polite"
+            class="default text"
+            role="alert"
+          >
+            Event Type
+          </div>
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          >
+            <div
+              aria-checked="false"
+              aria-selected="true"
+              class="selected item"
+              role="option"
+              style="pointer-events: all;"
+            >
+              <span
+                class="text"
+              >
+                Study File Created
+              </span>
+            </div>
+            <div
+              aria-checked="false"
+              aria-selected="false"
+              class="item"
+              role="option"
+              style="pointer-events: all;"
+            >
+              <span
+                class="text"
+              >
+                Study File Updated
+              </span>
+            </div>
+            <div
+              aria-checked="false"
+              aria-selected="false"
+              class="item"
+              role="option"
+              style="pointer-events: all;"
+            >
+              <span
+                class="text"
+              >
+                Study File Deleted
+              </span>
+            </div>
+            <div
+              aria-checked="false"
+              aria-selected="false"
+              class="item"
+              role="option"
+              style="pointer-events: all;"
+            >
+              <span
+                class="text"
+              >
+                File Version Created
+              </span>
+            </div>
+            <div
+              aria-checked="false"
+              aria-selected="false"
+              class="item"
+              role="option"
+              style="pointer-events: all;"
+            >
+              <span
+                class="text"
+              >
+                File Version Updated
+              </span>
+            </div>
+            <div
+              aria-checked="false"
+              aria-selected="false"
+              class="item"
+              role="option"
+              style="pointer-events: all;"
+            >
+              <span
+                class="text"
+              >
+                Study Created
+              </span>
+            </div>
+            <div
+              aria-checked="false"
+              aria-selected="false"
+              class="item"
+              role="option"
+              style="pointer-events: all;"
+            >
+              <span
+                class="text"
+              >
+                Study Updated
+              </span>
+            </div>
+            <div
+              aria-checked="false"
+              aria-selected="false"
+              class="item"
+              role="option"
+              style="pointer-events: all;"
+            >
+              <span
+                class="text"
+              >
+                Project Created
+              </span>
+            </div>
+            <div
+              aria-checked="false"
+              aria-selected="false"
+              class="item"
+              role="option"
+              style="pointer-events: all;"
+            >
+              <span
+                class="text"
+              >
+                Project Updated
+              </span>
+            </div>
+            <div
+              aria-checked="false"
+              aria-selected="false"
+              class="item"
+              role="option"
+              style="pointer-events: all;"
+            >
+              <span
+                class="text"
+              >
+                Project Deleted
+              </span>
+            </div>
+            <div
+              aria-checked="false"
+              aria-selected="false"
+              class="item"
+              role="option"
+              style="pointer-events: all;"
+            >
+              <span
+                class="text"
+              >
+                Project Linked
+              </span>
+            </div>
+            <div
+              aria-checked="false"
+              aria-selected="false"
+              class="item"
+              role="option"
+              style="pointer-events: all;"
+            >
+              <span
+                class="text"
+              >
+                Project Unlinked
+              </span>
+            </div>
+            <div
+              aria-checked="false"
+              aria-selected="false"
+              class="item"
+              role="option"
+              style="pointer-events: all;"
+            >
+              <span
+                class="text"
+              >
+                Other
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2
+        class="ui header mt-6"
+      >
+        Event Logs
+      </h2>
+      <div
+        class="ui very relaxed list"
+        role="list"
+      >
+        <div
+          class="item"
+          role="listitem"
         >
           <i
             aria-hidden="true"
-            class="copy icon"
+            class="green add icon"
           />
-          SD_8WX8QQ06
-        </button>
-      </div>
-    </div>
-    <div
-      class="ui container"
-    >
-      <div
-        class="ui pink pointing secondary menu"
-      >
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/basic-info/info"
-        >
-          Basic Info
           <div
-            class="ui blue mini label"
+            class="content"
           >
-            BETA
+            <div
+              class="right floated content"
+            >
+              <time
+                datetime="2019-10-24T15:29:53.799Z"
+                title="24 Oct 2019"
+              >
+                6 months from now
+              </time>
+            </div>
+            Katrina Torres created version FV_CZ9APDBX of file SF_ID7TZFDM
           </div>
-        </a>
-        <a
+        </div>
+        <div
           class="item"
-          href="/study/SD_8WX8QQ06/dashboard"
+          role="listitem"
         >
-          Dashboard
-        </a>
-        <a
+          <i
+            aria-hidden="true"
+            class="green add icon"
+          />
+          <div
+            class="content"
+          >
+            <div
+              class="right floated content"
+            >
+              <time
+                datetime="2019-10-24T15:29:53.792Z"
+                title="24 Oct 2019"
+              >
+                6 months from now
+              </time>
+            </div>
+            Lisa Steele created file SF_ID7TZFDM
+          </div>
+        </div>
+        <div
           class="item"
-          href="/study/SD_8WX8QQ06/documents"
+          role="listitem"
         >
-          Documents
-        </a>
-        <a
+          <i
+            aria-hidden="true"
+            class="green add icon"
+          />
+          <div
+            class="content"
+          >
+            <div
+              class="right floated content"
+            >
+              <time
+                datetime="2019-10-24T15:29:53.711Z"
+                title="24 Oct 2019"
+              >
+                6 months from now
+              </time>
+            </div>
+            Elizabeth White created version FV_IR5YTHKJ of file SF_SX4YTPYK
+          </div>
+        </div>
+        <div
           class="item"
-          href="/study/SD_8WX8QQ06/cavatica"
+          role="listitem"
         >
-          Cavatica
-        </a>
-        <a
-          aria-current="page"
-          class="active item active"
-          href="/study/SD_8WX8QQ06/logs"
+          <i
+            aria-hidden="true"
+            class="green add icon"
+          />
+          <div
+            class="content"
+          >
+            <div
+              class="right floated content"
+            >
+              <time
+                datetime="2019-10-24T15:29:53.703Z"
+                title="24 Oct 2019"
+              >
+                6 months from now
+              </time>
+            </div>
+            Steven Morgan created version FV_HWYZ3P9S of file SF_SX4YTPYK
+          </div>
+        </div>
+        <div
+          class="item"
+          role="listitem"
         >
-          Logs
-        </a>
+          <i
+            aria-hidden="true"
+            class="green add icon"
+          />
+          <div
+            class="content"
+          >
+            <div
+              class="right floated content"
+            >
+              <time
+                datetime="2019-10-24T15:29:53.695Z"
+                title="24 Oct 2019"
+              >
+                6 months from now
+              </time>
+            </div>
+            Charles Booker created version FV_Z00M0H85 of file SF_SX4YTPYK
+          </div>
+        </div>
+        <div
+          class="item"
+          role="listitem"
+        >
+          <i
+            aria-hidden="true"
+            class="green add icon"
+          />
+          <div
+            class="content"
+          >
+            <div
+              class="right floated content"
+            >
+              <time
+                datetime="2019-10-24T15:29:53.687Z"
+                title="24 Oct 2019"
+              >
+                6 months from now
+              </time>
+            </div>
+            Justin Heath created version FV_FSTR09MV of file SF_SX4YTPYK
+          </div>
+        </div>
+        <div
+          class="item"
+          role="listitem"
+        >
+          <i
+            aria-hidden="true"
+            class="green add icon"
+          />
+          <div
+            class="content"
+          >
+            <div
+              class="right floated content"
+            >
+              <time
+                datetime="2019-10-24T15:29:53.678Z"
+                title="24 Oct 2019"
+              >
+                6 months from now
+              </time>
+            </div>
+            Roger Swanson created file SF_SX4YTPYK
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
   <div
-    class="ui basic vertical segment ui container"
+    class="ui segment footer"
   >
     <div
-      class="ui basic right floated segment noMargin noPadding"
+      class="ui container text-10"
     >
       <div
-        aria-expanded="false"
-        class="ui selection dropdown"
-        role="listbox"
-        tabindex="0"
+        class="ui horizontal list"
+        role="list"
       >
         <div
-          aria-live="polite"
-          class="default text"
-          role="alert"
+          class="item"
+          role="listitem"
         >
-          Event Type
+          <div
+            class="ui basic horizontal label text-10"
+          />
         </div>
-        <i
-          aria-hidden="true"
-          class="dropdown icon"
-        />
         <div
-          class="menu transition"
+          class="item noMargin"
+          role="listitem"
         >
-          <div
-            aria-checked="false"
-            aria-selected="true"
-            class="selected item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              Study File Created
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              Study File Updated
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              Study File Deleted
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              File Version Created
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              File Version Updated
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              Study Created
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              Study Updated
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              Project Created
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              Project Updated
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              Project Deleted
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              Project Linked
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              Project Unlinked
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              Other
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <h2
-      class="ui header mt-6"
-    >
-      Event Logs
-    </h2>
-    <div
-      class="ui very relaxed list"
-      role="list"
-    >
-      <div
-        class="item"
-        role="listitem"
-      >
-        <i
-          aria-hidden="true"
-          class="green add icon"
-        />
-        <div
-          class="content"
-        >
-          <div
-            class="right floated content"
-          >
-            <time
-              datetime="2019-10-24T15:29:53.799Z"
-              title="24 Oct 2019"
-            >
-              6 months from now
-            </time>
-          </div>
-          Katrina Torres created version FV_CZ9APDBX of file SF_ID7TZFDM
-        </div>
-      </div>
-      <div
-        class="item"
-        role="listitem"
-      >
-        <i
-          aria-hidden="true"
-          class="green add icon"
-        />
-        <div
-          class="content"
-        >
-          <div
-            class="right floated content"
-          >
-            <time
-              datetime="2019-10-24T15:29:53.792Z"
-              title="24 Oct 2019"
-            >
-              6 months from now
-            </time>
-          </div>
-          Lisa Steele created file SF_ID7TZFDM
-        </div>
-      </div>
-      <div
-        class="item"
-        role="listitem"
-      >
-        <i
-          aria-hidden="true"
-          class="green add icon"
-        />
-        <div
-          class="content"
-        >
-          <div
-            class="right floated content"
-          >
-            <time
-              datetime="2019-10-24T15:29:53.711Z"
-              title="24 Oct 2019"
-            >
-              6 months from now
-            </time>
-          </div>
-          Elizabeth White created version FV_IR5YTHKJ of file SF_SX4YTPYK
-        </div>
-      </div>
-      <div
-        class="item"
-        role="listitem"
-      >
-        <i
-          aria-hidden="true"
-          class="green add icon"
-        />
-        <div
-          class="content"
-        >
-          <div
-            class="right floated content"
-          >
-            <time
-              datetime="2019-10-24T15:29:53.703Z"
-              title="24 Oct 2019"
-            >
-              6 months from now
-            </time>
-          </div>
-          Steven Morgan created version FV_HWYZ3P9S of file SF_SX4YTPYK
-        </div>
-      </div>
-      <div
-        class="item"
-        role="listitem"
-      >
-        <i
-          aria-hidden="true"
-          class="green add icon"
-        />
-        <div
-          class="content"
-        >
-          <div
-            class="right floated content"
-          >
-            <time
-              datetime="2019-10-24T15:29:53.695Z"
-              title="24 Oct 2019"
-            >
-              6 months from now
-            </time>
-          </div>
-          Charles Booker created version FV_Z00M0H85 of file SF_SX4YTPYK
-        </div>
-      </div>
-      <div
-        class="item"
-        role="listitem"
-      >
-        <i
-          aria-hidden="true"
-          class="green add icon"
-        />
-        <div
-          class="content"
-        >
-          <div
-            class="right floated content"
-          >
-            <time
-              datetime="2019-10-24T15:29:53.687Z"
-              title="24 Oct 2019"
-            >
-              6 months from now
-            </time>
-          </div>
-          Justin Heath created version FV_FSTR09MV of file SF_SX4YTPYK
-        </div>
-      </div>
-      <div
-        class="item"
-        role="listitem"
-      >
-        <i
-          aria-hidden="true"
-          class="green add icon"
-        />
-        <div
-          class="content"
-        >
-          <div
-            class="right floated content"
-          >
-            <time
-              datetime="2019-10-24T15:29:53.678Z"
-              title="24 Oct 2019"
-            >
-              6 months from now
-            </time>
-          </div>
-          Roger Swanson created file SF_SX4YTPYK
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
         </div>
       </div>
     </div>
@@ -1120,449 +1268,486 @@ exports[`renders study logs view correctly 3`] = `
       </div>
     </div>
   </div>
-  <section
-    id="study"
+  <div
+    class="page"
   >
-    <div
-      class="ui basic secondary segment"
+    <section
+      id="study"
     >
+      <div
+        class="ui basic secondary segment"
+      >
+        <div
+          class="ui container"
+        >
+          <h1
+            class="ui header"
+          >
+            benchmark extensible e-business
+          </h1>
+          <button
+            class="ui tiny basic icon button"
+          >
+            <i
+              aria-hidden="true"
+              class="copy icon"
+            />
+            SD_8WX8QQ06
+          </button>
+        </div>
+      </div>
       <div
         class="ui container"
       >
-        <h1
-          class="ui header"
+        <div
+          class="ui pink pointing secondary menu"
         >
-          benchmark extensible e-business
-        </h1>
-        <button
-          class="ui tiny basic icon button"
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/basic-info/info"
+          >
+            Basic Info
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/dashboard"
+          >
+            Dashboard
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/documents"
+          >
+            Documents
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/cavatica"
+          >
+            Cavatica
+          </a>
+          <a
+            aria-current="page"
+            class="active item active"
+            href="/study/SD_8WX8QQ06/logs"
+          >
+            Logs
+          </a>
+        </div>
+      </div>
+    </section>
+    <div
+      class="ui basic vertical segment ui container"
+    >
+      <div
+        class="ui basic right floated segment noMargin noPadding"
+      >
+        <div
+          aria-expanded="true"
+          class="ui active visible selection dropdown"
+          role="listbox"
+          tabindex="0"
+        >
+          <div
+            aria-live="polite"
+            class="default text"
+            role="alert"
+          >
+            Study File Created
+          </div>
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="visible menu transition"
+          >
+            <div
+              aria-checked="false"
+              aria-selected="true"
+              class="selected item"
+              role="option"
+              style="pointer-events: all;"
+            >
+              <span
+                class="text"
+              >
+                Study File Created
+              </span>
+            </div>
+            <div
+              aria-checked="false"
+              aria-selected="false"
+              class="item"
+              role="option"
+              style="pointer-events: all;"
+            >
+              <span
+                class="text"
+              >
+                Study File Updated
+              </span>
+            </div>
+            <div
+              aria-checked="false"
+              aria-selected="false"
+              class="item"
+              role="option"
+              style="pointer-events: all;"
+            >
+              <span
+                class="text"
+              >
+                Study File Deleted
+              </span>
+            </div>
+            <div
+              aria-checked="false"
+              aria-selected="false"
+              class="item"
+              role="option"
+              style="pointer-events: all;"
+            >
+              <span
+                class="text"
+              >
+                File Version Created
+              </span>
+            </div>
+            <div
+              aria-checked="false"
+              aria-selected="false"
+              class="item"
+              role="option"
+              style="pointer-events: all;"
+            >
+              <span
+                class="text"
+              >
+                File Version Updated
+              </span>
+            </div>
+            <div
+              aria-checked="false"
+              aria-selected="false"
+              class="item"
+              role="option"
+              style="pointer-events: all;"
+            >
+              <span
+                class="text"
+              >
+                Study Created
+              </span>
+            </div>
+            <div
+              aria-checked="false"
+              aria-selected="false"
+              class="item"
+              role="option"
+              style="pointer-events: all;"
+            >
+              <span
+                class="text"
+              >
+                Study Updated
+              </span>
+            </div>
+            <div
+              aria-checked="false"
+              aria-selected="false"
+              class="item"
+              role="option"
+              style="pointer-events: all;"
+            >
+              <span
+                class="text"
+              >
+                Project Created
+              </span>
+            </div>
+            <div
+              aria-checked="false"
+              aria-selected="false"
+              class="item"
+              role="option"
+              style="pointer-events: all;"
+            >
+              <span
+                class="text"
+              >
+                Project Updated
+              </span>
+            </div>
+            <div
+              aria-checked="false"
+              aria-selected="false"
+              class="item"
+              role="option"
+              style="pointer-events: all;"
+            >
+              <span
+                class="text"
+              >
+                Project Deleted
+              </span>
+            </div>
+            <div
+              aria-checked="false"
+              aria-selected="false"
+              class="item"
+              role="option"
+              style="pointer-events: all;"
+            >
+              <span
+                class="text"
+              >
+                Project Linked
+              </span>
+            </div>
+            <div
+              aria-checked="false"
+              aria-selected="false"
+              class="item"
+              role="option"
+              style="pointer-events: all;"
+            >
+              <span
+                class="text"
+              >
+                Project Unlinked
+              </span>
+            </div>
+            <div
+              aria-checked="false"
+              aria-selected="false"
+              class="item"
+              role="option"
+              style="pointer-events: all;"
+            >
+              <span
+                class="text"
+              >
+                Other
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2
+        class="ui header mt-6"
+      >
+        Event Logs
+      </h2>
+      <div
+        class="ui very relaxed list"
+        role="list"
+      >
+        <div
+          class="item"
+          role="listitem"
         >
           <i
             aria-hidden="true"
-            class="copy icon"
+            class="green add icon"
           />
-          SD_8WX8QQ06
-        </button>
-      </div>
-    </div>
-    <div
-      class="ui container"
-    >
-      <div
-        class="ui pink pointing secondary menu"
-      >
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/basic-info/info"
-        >
-          Basic Info
           <div
-            class="ui blue mini label"
+            class="content"
           >
-            BETA
+            <div
+              class="right floated content"
+            >
+              <time
+                datetime="2019-10-24T15:29:53.799Z"
+                title="24 Oct 2019"
+              >
+                6 months from now
+              </time>
+            </div>
+            Katrina Torres created version FV_CZ9APDBX of file SF_ID7TZFDM
           </div>
-        </a>
-        <a
+        </div>
+        <div
           class="item"
-          href="/study/SD_8WX8QQ06/dashboard"
+          role="listitem"
         >
-          Dashboard
-        </a>
-        <a
+          <i
+            aria-hidden="true"
+            class="green add icon"
+          />
+          <div
+            class="content"
+          >
+            <div
+              class="right floated content"
+            >
+              <time
+                datetime="2019-10-24T15:29:53.792Z"
+                title="24 Oct 2019"
+              >
+                6 months from now
+              </time>
+            </div>
+            Lisa Steele created file SF_ID7TZFDM
+          </div>
+        </div>
+        <div
           class="item"
-          href="/study/SD_8WX8QQ06/documents"
+          role="listitem"
         >
-          Documents
-        </a>
-        <a
+          <i
+            aria-hidden="true"
+            class="green add icon"
+          />
+          <div
+            class="content"
+          >
+            <div
+              class="right floated content"
+            >
+              <time
+                datetime="2019-10-24T15:29:53.711Z"
+                title="24 Oct 2019"
+              >
+                6 months from now
+              </time>
+            </div>
+            Elizabeth White created version FV_IR5YTHKJ of file SF_SX4YTPYK
+          </div>
+        </div>
+        <div
           class="item"
-          href="/study/SD_8WX8QQ06/cavatica"
+          role="listitem"
         >
-          Cavatica
-        </a>
-        <a
-          aria-current="page"
-          class="active item active"
-          href="/study/SD_8WX8QQ06/logs"
+          <i
+            aria-hidden="true"
+            class="green add icon"
+          />
+          <div
+            class="content"
+          >
+            <div
+              class="right floated content"
+            >
+              <time
+                datetime="2019-10-24T15:29:53.703Z"
+                title="24 Oct 2019"
+              >
+                6 months from now
+              </time>
+            </div>
+            Steven Morgan created version FV_HWYZ3P9S of file SF_SX4YTPYK
+          </div>
+        </div>
+        <div
+          class="item"
+          role="listitem"
         >
-          Logs
-        </a>
+          <i
+            aria-hidden="true"
+            class="green add icon"
+          />
+          <div
+            class="content"
+          >
+            <div
+              class="right floated content"
+            >
+              <time
+                datetime="2019-10-24T15:29:53.695Z"
+                title="24 Oct 2019"
+              >
+                6 months from now
+              </time>
+            </div>
+            Charles Booker created version FV_Z00M0H85 of file SF_SX4YTPYK
+          </div>
+        </div>
+        <div
+          class="item"
+          role="listitem"
+        >
+          <i
+            aria-hidden="true"
+            class="green add icon"
+          />
+          <div
+            class="content"
+          >
+            <div
+              class="right floated content"
+            >
+              <time
+                datetime="2019-10-24T15:29:53.687Z"
+                title="24 Oct 2019"
+              >
+                6 months from now
+              </time>
+            </div>
+            Justin Heath created version FV_FSTR09MV of file SF_SX4YTPYK
+          </div>
+        </div>
+        <div
+          class="item"
+          role="listitem"
+        >
+          <i
+            aria-hidden="true"
+            class="green add icon"
+          />
+          <div
+            class="content"
+          >
+            <div
+              class="right floated content"
+            >
+              <time
+                datetime="2019-10-24T15:29:53.678Z"
+                title="24 Oct 2019"
+              >
+                6 months from now
+              </time>
+            </div>
+            Roger Swanson created file SF_SX4YTPYK
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
   <div
-    class="ui basic vertical segment ui container"
+    class="ui segment footer"
   >
     <div
-      class="ui basic right floated segment noMargin noPadding"
+      class="ui container text-10"
     >
       <div
-        aria-expanded="true"
-        class="ui active visible selection dropdown"
-        role="listbox"
-        tabindex="0"
+        class="ui horizontal list"
+        role="list"
       >
         <div
-          aria-live="polite"
-          class="default text"
-          role="alert"
+          class="item"
+          role="listitem"
         >
-          Study File Created
+          <div
+            class="ui basic horizontal label text-10"
+          />
         </div>
-        <i
-          aria-hidden="true"
-          class="dropdown icon"
-        />
         <div
-          class="visible menu transition"
+          class="item noMargin"
+          role="listitem"
         >
-          <div
-            aria-checked="false"
-            aria-selected="true"
-            class="selected item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              Study File Created
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              Study File Updated
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              Study File Deleted
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              File Version Created
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              File Version Updated
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              Study Created
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              Study Updated
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              Project Created
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              Project Updated
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              Project Deleted
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              Project Linked
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              Project Unlinked
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              Other
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <h2
-      class="ui header mt-6"
-    >
-      Event Logs
-    </h2>
-    <div
-      class="ui very relaxed list"
-      role="list"
-    >
-      <div
-        class="item"
-        role="listitem"
-      >
-        <i
-          aria-hidden="true"
-          class="green add icon"
-        />
-        <div
-          class="content"
-        >
-          <div
-            class="right floated content"
-          >
-            <time
-              datetime="2019-10-24T15:29:53.799Z"
-              title="24 Oct 2019"
-            >
-              6 months from now
-            </time>
-          </div>
-          Katrina Torres created version FV_CZ9APDBX of file SF_ID7TZFDM
-        </div>
-      </div>
-      <div
-        class="item"
-        role="listitem"
-      >
-        <i
-          aria-hidden="true"
-          class="green add icon"
-        />
-        <div
-          class="content"
-        >
-          <div
-            class="right floated content"
-          >
-            <time
-              datetime="2019-10-24T15:29:53.792Z"
-              title="24 Oct 2019"
-            >
-              6 months from now
-            </time>
-          </div>
-          Lisa Steele created file SF_ID7TZFDM
-        </div>
-      </div>
-      <div
-        class="item"
-        role="listitem"
-      >
-        <i
-          aria-hidden="true"
-          class="green add icon"
-        />
-        <div
-          class="content"
-        >
-          <div
-            class="right floated content"
-          >
-            <time
-              datetime="2019-10-24T15:29:53.711Z"
-              title="24 Oct 2019"
-            >
-              6 months from now
-            </time>
-          </div>
-          Elizabeth White created version FV_IR5YTHKJ of file SF_SX4YTPYK
-        </div>
-      </div>
-      <div
-        class="item"
-        role="listitem"
-      >
-        <i
-          aria-hidden="true"
-          class="green add icon"
-        />
-        <div
-          class="content"
-        >
-          <div
-            class="right floated content"
-          >
-            <time
-              datetime="2019-10-24T15:29:53.703Z"
-              title="24 Oct 2019"
-            >
-              6 months from now
-            </time>
-          </div>
-          Steven Morgan created version FV_HWYZ3P9S of file SF_SX4YTPYK
-        </div>
-      </div>
-      <div
-        class="item"
-        role="listitem"
-      >
-        <i
-          aria-hidden="true"
-          class="green add icon"
-        />
-        <div
-          class="content"
-        >
-          <div
-            class="right floated content"
-          >
-            <time
-              datetime="2019-10-24T15:29:53.695Z"
-              title="24 Oct 2019"
-            >
-              6 months from now
-            </time>
-          </div>
-          Charles Booker created version FV_Z00M0H85 of file SF_SX4YTPYK
-        </div>
-      </div>
-      <div
-        class="item"
-        role="listitem"
-      >
-        <i
-          aria-hidden="true"
-          class="green add icon"
-        />
-        <div
-          class="content"
-        >
-          <div
-            class="right floated content"
-          >
-            <time
-              datetime="2019-10-24T15:29:53.687Z"
-              title="24 Oct 2019"
-            >
-              6 months from now
-            </time>
-          </div>
-          Justin Heath created version FV_FSTR09MV of file SF_SX4YTPYK
-        </div>
-      </div>
-      <div
-        class="item"
-        role="listitem"
-      >
-        <i
-          aria-hidden="true"
-          class="green add icon"
-        />
-        <div
-          class="content"
-        >
-          <div
-            class="right floated content"
-          >
-            <time
-              datetime="2019-10-24T15:29:53.678Z"
-              title="24 Oct 2019"
-            >
-              6 months from now
-            </time>
-          </div>
-          Roger Swanson created file SF_SX4YTPYK
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
         </div>
       </div>
     </div>

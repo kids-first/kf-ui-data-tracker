@@ -79,33 +79,180 @@ exports[`renders Cavatica projects view -- empty view for regular user 1`] = `
     </div>
   </div>
   <div
-    class="ui basic segment ui container"
+    class="page"
   >
-    <h3
-      class="ui header"
+    <div
+      class="ui basic segment ui container"
     >
-      <button
-        class="ui primary right floated button"
+      <h3
+        class="ui header"
       >
-        Scan Cavatica
-      </button>
-      Cavatica Projects
-    </h3>
-    <div
-      class="ui basic segment"
-    >
-      Listed are the Cavatica projects for analysis and investigator delivery and the studies they are related to. Projects created manually in Cavatica need to be scanned by the api to make them available for linking to studies. This may be done using the 
-      <i>
-        Scan Cavatica
-      </i>
-       
-      button.
+        <button
+          class="ui primary right floated button"
+        >
+          Scan Cavatica
+        </button>
+        Cavatica Projects
+      </h3>
+      <div
+        class="ui basic segment"
+      >
+        Listed are the Cavatica projects for analysis and investigator delivery and the studies they are related to. Projects created manually in Cavatica need to be scanned by the api to make them available for linking to studies. This may be done using the 
+        <i>
+          Scan Cavatica
+        </i>
+         
+        button.
+      </div>
+      <div
+        class="ui basic segment"
+      >
+        <div
+          class="ui divided relaxed list"
+          role="list"
+        >
+          <div
+            class="item"
+            role="listitem"
+          >
+            <div
+              class="right floated content"
+            >
+              <a
+                href="/study/SD_8WX8QQ06/basic-info/info"
+              >
+                repurpose bricks-and-clicks bandwidth
+              </a>
+            </div>
+            <i
+              aria-hidden="true"
+              class="sliders horizontal icon"
+            />
+            <div
+              class="content"
+            >
+              <a
+                class="header"
+                href="https://cavatica.sbgenomics.com/u/zhux3/sd-62wb3y64-gatk-haplotypecaller"
+                target="_blank"
+              >
+                repurpose bricks-and-clicks bandwidth gatk-haplotypecaller 
+                <i
+                  aria-hidden="true"
+                  class="external small link icon"
+                />
+              </a>
+              <div
+                class="ui bulleted horizontal list"
+                role="list"
+              >
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  Created
+                   by zhux3 
+                  <time
+                    datetime="2019-10-29T15:14:45.000Z"
+                    title="29 Oct 2019"
+                  >
+                    6 months from now
+                  </time>
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  gatk_haplotypecaller
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  <code>
+                    zhux3/sd-62wb3y64-gatk-haplotypecaller
+                  </code>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="item"
+            role="listitem"
+          >
+            <div
+              class="right floated content"
+            >
+              <a
+                href="/study/SD_8WX8QQ06/basic-info/info"
+              >
+                repurpose bricks-and-clicks bandwidth
+              </a>
+            </div>
+            <i
+              aria-hidden="true"
+              class="paper plane outline icon"
+            />
+            <div
+              class="content"
+            >
+              <a
+                class="header"
+                href="https://cavatica.sbgenomics.com/u/zhux3/sd-62wb3y64-bwa-mem"
+                target="_blank"
+              >
+                repurpose bricks-and-clicks bandwidth bwa-mem 
+                <i
+                  aria-hidden="true"
+                  class="external small link icon"
+                />
+              </a>
+              <div
+                class="ui bulleted horizontal list"
+                role="list"
+              >
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  Created
+                   by zhux3 
+                  <time
+                    datetime="2019-10-29T15:14:25.000Z"
+                    title="29 Oct 2019"
+                  >
+                    6 months from now
+                  </time>
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  bwa_mem
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  <code>
+                    zhux3/sd-62wb3y64-bwa-mem
+                  </code>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+  <div
+    class="ui segment footer"
+  >
     <div
-      class="ui basic segment"
+      class="ui container text-10"
     >
       <div
-        class="ui divided relaxed list"
+        class="ui horizontal list"
         role="list"
       >
         <div
@@ -113,130 +260,20 @@ exports[`renders Cavatica projects view -- empty view for regular user 1`] = `
           role="listitem"
         >
           <div
-            class="right floated content"
-          >
-            <a
-              href="/study/SD_8WX8QQ06/basic-info/info"
-            >
-              repurpose bricks-and-clicks bandwidth
-            </a>
-          </div>
-          <i
-            aria-hidden="true"
-            class="sliders horizontal icon"
+            class="ui basic horizontal label text-10"
           />
-          <div
-            class="content"
-          >
-            <a
-              class="header"
-              href="https://cavatica.sbgenomics.com/u/zhux3/sd-62wb3y64-gatk-haplotypecaller"
-              target="_blank"
-            >
-              repurpose bricks-and-clicks bandwidth gatk-haplotypecaller 
-              <i
-                aria-hidden="true"
-                class="external small link icon"
-              />
-            </a>
-            <div
-              class="ui bulleted horizontal list"
-              role="list"
-            >
-              <div
-                class="item"
-                role="listitem"
-              >
-                Created
-                 by zhux3 
-                <time
-                  datetime="2019-10-29T15:14:45.000Z"
-                  title="29 Oct 2019"
-                >
-                  6 months from now
-                </time>
-              </div>
-              <div
-                class="item"
-                role="listitem"
-              >
-                gatk_haplotypecaller
-              </div>
-              <div
-                class="item"
-                role="listitem"
-              >
-                <code>
-                  zhux3/sd-62wb3y64-gatk-haplotypecaller
-                </code>
-              </div>
-            </div>
-          </div>
         </div>
         <div
-          class="item"
+          class="item noMargin"
           role="listitem"
         >
-          <div
-            class="right floated content"
-          >
-            <a
-              href="/study/SD_8WX8QQ06/basic-info/info"
-            >
-              repurpose bricks-and-clicks bandwidth
-            </a>
-          </div>
-          <i
-            aria-hidden="true"
-            class="paper plane outline icon"
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
           />
-          <div
-            class="content"
-          >
-            <a
-              class="header"
-              href="https://cavatica.sbgenomics.com/u/zhux3/sd-62wb3y64-bwa-mem"
-              target="_blank"
-            >
-              repurpose bricks-and-clicks bandwidth bwa-mem 
-              <i
-                aria-hidden="true"
-                class="external small link icon"
-              />
-            </a>
-            <div
-              class="ui bulleted horizontal list"
-              role="list"
-            >
-              <div
-                class="item"
-                role="listitem"
-              >
-                Created
-                 by zhux3 
-                <time
-                  datetime="2019-10-29T15:14:25.000Z"
-                  title="29 Oct 2019"
-                >
-                  6 months from now
-                </time>
-              </div>
-              <div
-                class="item"
-                role="listitem"
-              >
-                bwa_mem
-              </div>
-              <div
-                class="item"
-                role="listitem"
-              >
-                <code>
-                  zhux3/sd-62wb3y64-bwa-mem
-                </code>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -323,48 +360,195 @@ exports[`renders Cavatica projects view correctly -- with sync error 1`] = `
     </div>
   </div>
   <div
-    class="ui basic segment ui container"
+    class="page"
   >
-    <h3
-      class="ui header"
-    >
-      <button
-        class="ui primary right floated button"
-      >
-        Scan Cavatica
-      </button>
-      Cavatica Projects
-    </h3>
     <div
-      class="ui basic segment"
+      class="ui basic segment ui container"
     >
+      <h3
+        class="ui header"
+      >
+        <button
+          class="ui primary right floated button"
+        >
+          Scan Cavatica
+        </button>
+        Cavatica Projects
+      </h3>
       <div
-        class="ui negative message"
+        class="ui basic segment"
       >
         <div
-          class="content"
+          class="ui negative message"
         >
-          <p>
-            Network error: Failed to sync Cavatica projects
-          </p>
+          <div
+            class="content"
+          >
+            <p>
+              Network error: Failed to sync Cavatica projects
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ui basic segment"
+      >
+        Listed are the Cavatica projects for analysis and investigator delivery and the studies they are related to. Projects created manually in Cavatica need to be scanned by the api to make them available for linking to studies. This may be done using the 
+        <i>
+          Scan Cavatica
+        </i>
+         
+        button.
+      </div>
+      <div
+        class="ui basic segment"
+      >
+        <div
+          class="ui divided relaxed list"
+          role="list"
+        >
+          <div
+            class="item"
+            role="listitem"
+          >
+            <div
+              class="right floated content"
+            >
+              <a
+                href="/study/SD_8WX8QQ06/basic-info/info"
+              >
+                repurpose bricks-and-clicks bandwidth
+              </a>
+            </div>
+            <i
+              aria-hidden="true"
+              class="sliders horizontal icon"
+            />
+            <div
+              class="content"
+            >
+              <a
+                class="header"
+                href="https://cavatica.sbgenomics.com/u/zhux3/sd-62wb3y64-gatk-haplotypecaller"
+                target="_blank"
+              >
+                repurpose bricks-and-clicks bandwidth gatk-haplotypecaller 
+                <i
+                  aria-hidden="true"
+                  class="external small link icon"
+                />
+              </a>
+              <div
+                class="ui bulleted horizontal list"
+                role="list"
+              >
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  Created
+                   by zhux3 
+                  <time
+                    datetime="2019-10-29T15:14:45.000Z"
+                    title="29 Oct 2019"
+                  >
+                    6 months from now
+                  </time>
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  gatk_haplotypecaller
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  <code>
+                    zhux3/sd-62wb3y64-gatk-haplotypecaller
+                  </code>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="item"
+            role="listitem"
+          >
+            <div
+              class="right floated content"
+            >
+              <a
+                href="/study/SD_8WX8QQ06/basic-info/info"
+              >
+                repurpose bricks-and-clicks bandwidth
+              </a>
+            </div>
+            <i
+              aria-hidden="true"
+              class="paper plane outline icon"
+            />
+            <div
+              class="content"
+            >
+              <a
+                class="header"
+                href="https://cavatica.sbgenomics.com/u/zhux3/sd-62wb3y64-bwa-mem"
+                target="_blank"
+              >
+                repurpose bricks-and-clicks bandwidth bwa-mem 
+                <i
+                  aria-hidden="true"
+                  class="external small link icon"
+                />
+              </a>
+              <div
+                class="ui bulleted horizontal list"
+                role="list"
+              >
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  Created
+                   by zhux3 
+                  <time
+                    datetime="2019-10-29T15:14:25.000Z"
+                    title="29 Oct 2019"
+                  >
+                    6 months from now
+                  </time>
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  bwa_mem
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  <code>
+                    zhux3/sd-62wb3y64-bwa-mem
+                  </code>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+  </div>
+  <div
+    class="ui segment footer"
+  >
     <div
-      class="ui basic segment"
-    >
-      Listed are the Cavatica projects for analysis and investigator delivery and the studies they are related to. Projects created manually in Cavatica need to be scanned by the api to make them available for linking to studies. This may be done using the 
-      <i>
-        Scan Cavatica
-      </i>
-       
-      button.
-    </div>
-    <div
-      class="ui basic segment"
+      class="ui container text-10"
     >
       <div
-        class="ui divided relaxed list"
+        class="ui horizontal list"
         role="list"
       >
         <div
@@ -372,130 +556,20 @@ exports[`renders Cavatica projects view correctly -- with sync error 1`] = `
           role="listitem"
         >
           <div
-            class="right floated content"
-          >
-            <a
-              href="/study/SD_8WX8QQ06/basic-info/info"
-            >
-              repurpose bricks-and-clicks bandwidth
-            </a>
-          </div>
-          <i
-            aria-hidden="true"
-            class="sliders horizontal icon"
+            class="ui basic horizontal label text-10"
           />
-          <div
-            class="content"
-          >
-            <a
-              class="header"
-              href="https://cavatica.sbgenomics.com/u/zhux3/sd-62wb3y64-gatk-haplotypecaller"
-              target="_blank"
-            >
-              repurpose bricks-and-clicks bandwidth gatk-haplotypecaller 
-              <i
-                aria-hidden="true"
-                class="external small link icon"
-              />
-            </a>
-            <div
-              class="ui bulleted horizontal list"
-              role="list"
-            >
-              <div
-                class="item"
-                role="listitem"
-              >
-                Created
-                 by zhux3 
-                <time
-                  datetime="2019-10-29T15:14:45.000Z"
-                  title="29 Oct 2019"
-                >
-                  6 months from now
-                </time>
-              </div>
-              <div
-                class="item"
-                role="listitem"
-              >
-                gatk_haplotypecaller
-              </div>
-              <div
-                class="item"
-                role="listitem"
-              >
-                <code>
-                  zhux3/sd-62wb3y64-gatk-haplotypecaller
-                </code>
-              </div>
-            </div>
-          </div>
         </div>
         <div
-          class="item"
+          class="item noMargin"
           role="listitem"
         >
-          <div
-            class="right floated content"
-          >
-            <a
-              href="/study/SD_8WX8QQ06/basic-info/info"
-            >
-              repurpose bricks-and-clicks bandwidth
-            </a>
-          </div>
-          <i
-            aria-hidden="true"
-            class="paper plane outline icon"
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
           />
-          <div
-            class="content"
-          >
-            <a
-              class="header"
-              href="https://cavatica.sbgenomics.com/u/zhux3/sd-62wb3y64-bwa-mem"
-              target="_blank"
-            >
-              repurpose bricks-and-clicks bandwidth bwa-mem 
-              <i
-                aria-hidden="true"
-                class="external small link icon"
-              />
-            </a>
-            <div
-              class="ui bulleted horizontal list"
-              role="list"
-            >
-              <div
-                class="item"
-                role="listitem"
-              >
-                Created
-                 by zhux3 
-                <time
-                  datetime="2019-10-29T15:14:25.000Z"
-                  title="29 Oct 2019"
-                >
-                  6 months from now
-                </time>
-              </div>
-              <div
-                class="item"
-                role="listitem"
-              >
-                bwa_mem
-              </div>
-              <div
-                class="item"
-                role="listitem"
-              >
-                <code>
-                  zhux3/sd-62wb3y64-bwa-mem
-                </code>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -529,47 +603,84 @@ exports[`renders Cavatica projects view correctly 1`] = `
     </div>
   </div>
   <div
-    class="ui basic segment ui container"
+    class="page"
   >
-    <h3
-      class="ui header"
+    <div
+      class="ui basic segment ui container"
     >
-      <button
-        class="ui primary right floated button"
+      <h3
+        class="ui header"
       >
-        Scan Cavatica
-      </button>
-      Cavatica Projects
-    </h3>
-    <div
-      class="ui basic segment"
-    >
-      Listed are the Cavatica projects for analysis and investigator delivery and the studies they are related to. Projects created manually in Cavatica need to be scanned by the api to make them available for linking to studies. This may be done using the 
-      <i>
-        Scan Cavatica
-      </i>
-       
-      button.
-    </div>
-    <div
-      class="ui basic segment"
-    >
+        <button
+          class="ui primary right floated button"
+        >
+          Scan Cavatica
+        </button>
+        Cavatica Projects
+      </h3>
       <div
-        class="ui basic very padded segment"
+        class="ui basic segment"
+      >
+        Listed are the Cavatica projects for analysis and investigator delivery and the studies they are related to. Projects created manually in Cavatica need to be scanned by the api to make them available for linking to studies. This may be done using the 
+        <i>
+          Scan Cavatica
+        </i>
+         
+        button.
+      </div>
+      <div
+        class="ui basic segment"
       >
         <div
-          class="ui active transition visible inverted dimmer"
-          style="display: flex;"
+          class="ui basic very padded segment"
         >
           <div
-            class="content"
+            class="ui active transition visible inverted dimmer"
+            style="display: flex;"
           >
             <div
-              class="ui inverted text loader"
+              class="content"
             >
-              Loading projects...
+              <div
+                class="ui inverted text loader"
+              >
+                Loading projects...
+              </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ui segment footer"
+  >
+    <div
+      class="ui container text-10"
+    >
+      <div
+        class="ui horizontal list"
+        role="list"
+      >
+        <div
+          class="item"
+          role="listitem"
+        >
+          <div
+            class="ui basic horizontal label text-10"
+          />
+        </div>
+        <div
+          class="item noMargin"
+          role="listitem"
+        >
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
         </div>
       </div>
     </div>
@@ -706,33 +817,216 @@ exports[`renders Cavatica projects view correctly 2`] = `
     </div>
   </div>
   <div
-    class="ui basic segment ui container"
+    class="page"
   >
-    <h3
-      class="ui header"
+    <div
+      class="ui basic segment ui container"
     >
-      <button
-        class="ui primary right floated button"
+      <h3
+        class="ui header"
       >
-        Scan Cavatica
-      </button>
-      Cavatica Projects
-    </h3>
-    <div
-      class="ui basic segment"
-    >
-      Listed are the Cavatica projects for analysis and investigator delivery and the studies they are related to. Projects created manually in Cavatica need to be scanned by the api to make them available for linking to studies. This may be done using the 
-      <i>
-        Scan Cavatica
-      </i>
-       
-      button.
+        <button
+          class="ui primary right floated button"
+        >
+          Scan Cavatica
+        </button>
+        Cavatica Projects
+      </h3>
+      <div
+        class="ui basic segment"
+      >
+        Listed are the Cavatica projects for analysis and investigator delivery and the studies they are related to. Projects created manually in Cavatica need to be scanned by the api to make them available for linking to studies. This may be done using the 
+        <i>
+          Scan Cavatica
+        </i>
+         
+        button.
+      </div>
+      <div
+        class="ui basic segment"
+      >
+        <div
+          class="ui divided relaxed list"
+          role="list"
+        >
+          <div
+            class="item"
+            role="listitem"
+          >
+            <div
+              class="right floated content"
+            >
+              <a
+                href="/study/SD_8WX8QQ06/basic-info/info"
+              >
+                repurpose bricks-and-clicks bandwidth
+              </a>
+              <button
+                class="ui mini basic primary right floated button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="pencil icon"
+                />
+                EDIT
+              </button>
+              <button
+                class="ui mini basic negative right floated button ml-10"
+              >
+                <i
+                  aria-hidden="true"
+                  class="unlink icon"
+                />
+                UNLINK
+              </button>
+            </div>
+            <i
+              aria-hidden="true"
+              class="sliders horizontal icon"
+            />
+            <div
+              class="content"
+            >
+              <a
+                class="header"
+                href="https://cavatica.sbgenomics.com/u/zhux3/sd-62wb3y64-gatk-haplotypecaller"
+                target="_blank"
+              >
+                repurpose bricks-and-clicks bandwidth gatk-haplotypecaller 
+                <i
+                  aria-hidden="true"
+                  class="external small link icon"
+                />
+              </a>
+              <div
+                class="ui bulleted horizontal list"
+                role="list"
+              >
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  Created
+                   by zhux3 
+                  <time
+                    datetime="2019-10-29T15:14:45.000Z"
+                    title="29 Oct 2019"
+                  >
+                    6 months from now
+                  </time>
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  gatk_haplotypecaller
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  <code>
+                    zhux3/sd-62wb3y64-gatk-haplotypecaller
+                  </code>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="item"
+            role="listitem"
+          >
+            <div
+              class="right floated content"
+            >
+              <a
+                href="/study/SD_8WX8QQ06/basic-info/info"
+              >
+                repurpose bricks-and-clicks bandwidth
+              </a>
+              <button
+                class="ui mini basic primary right floated button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="pencil icon"
+                />
+                EDIT
+              </button>
+              <button
+                class="ui mini basic negative right floated button ml-10"
+              >
+                <i
+                  aria-hidden="true"
+                  class="unlink icon"
+                />
+                UNLINK
+              </button>
+            </div>
+            <i
+              aria-hidden="true"
+              class="paper plane outline icon"
+            />
+            <div
+              class="content"
+            >
+              <a
+                class="header"
+                href="https://cavatica.sbgenomics.com/u/zhux3/sd-62wb3y64-bwa-mem"
+                target="_blank"
+              >
+                repurpose bricks-and-clicks bandwidth bwa-mem 
+                <i
+                  aria-hidden="true"
+                  class="external small link icon"
+                />
+              </a>
+              <div
+                class="ui bulleted horizontal list"
+                role="list"
+              >
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  Created
+                   by zhux3 
+                  <time
+                    datetime="2019-10-29T15:14:25.000Z"
+                    title="29 Oct 2019"
+                  >
+                    6 months from now
+                  </time>
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  bwa_mem
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  <code>
+                    zhux3/sd-62wb3y64-bwa-mem
+                  </code>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+  <div
+    class="ui segment footer"
+  >
     <div
-      class="ui basic segment"
+      class="ui container text-10"
     >
       <div
-        class="ui divided relaxed list"
+        class="ui horizontal list"
         role="list"
       >
         <div
@@ -740,166 +1034,20 @@ exports[`renders Cavatica projects view correctly 2`] = `
           role="listitem"
         >
           <div
-            class="right floated content"
-          >
-            <a
-              href="/study/SD_8WX8QQ06/basic-info/info"
-            >
-              repurpose bricks-and-clicks bandwidth
-            </a>
-            <button
-              class="ui mini basic primary right floated button"
-            >
-              <i
-                aria-hidden="true"
-                class="pencil icon"
-              />
-              EDIT
-            </button>
-            <button
-              class="ui mini basic negative right floated button ml-10"
-            >
-              <i
-                aria-hidden="true"
-                class="unlink icon"
-              />
-              UNLINK
-            </button>
-          </div>
-          <i
-            aria-hidden="true"
-            class="sliders horizontal icon"
+            class="ui basic horizontal label text-10"
           />
-          <div
-            class="content"
-          >
-            <a
-              class="header"
-              href="https://cavatica.sbgenomics.com/u/zhux3/sd-62wb3y64-gatk-haplotypecaller"
-              target="_blank"
-            >
-              repurpose bricks-and-clicks bandwidth gatk-haplotypecaller 
-              <i
-                aria-hidden="true"
-                class="external small link icon"
-              />
-            </a>
-            <div
-              class="ui bulleted horizontal list"
-              role="list"
-            >
-              <div
-                class="item"
-                role="listitem"
-              >
-                Created
-                 by zhux3 
-                <time
-                  datetime="2019-10-29T15:14:45.000Z"
-                  title="29 Oct 2019"
-                >
-                  6 months from now
-                </time>
-              </div>
-              <div
-                class="item"
-                role="listitem"
-              >
-                gatk_haplotypecaller
-              </div>
-              <div
-                class="item"
-                role="listitem"
-              >
-                <code>
-                  zhux3/sd-62wb3y64-gatk-haplotypecaller
-                </code>
-              </div>
-            </div>
-          </div>
         </div>
         <div
-          class="item"
+          class="item noMargin"
           role="listitem"
         >
-          <div
-            class="right floated content"
-          >
-            <a
-              href="/study/SD_8WX8QQ06/basic-info/info"
-            >
-              repurpose bricks-and-clicks bandwidth
-            </a>
-            <button
-              class="ui mini basic primary right floated button"
-            >
-              <i
-                aria-hidden="true"
-                class="pencil icon"
-              />
-              EDIT
-            </button>
-            <button
-              class="ui mini basic negative right floated button ml-10"
-            >
-              <i
-                aria-hidden="true"
-                class="unlink icon"
-              />
-              UNLINK
-            </button>
-          </div>
-          <i
-            aria-hidden="true"
-            class="paper plane outline icon"
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
           />
-          <div
-            class="content"
-          >
-            <a
-              class="header"
-              href="https://cavatica.sbgenomics.com/u/zhux3/sd-62wb3y64-bwa-mem"
-              target="_blank"
-            >
-              repurpose bricks-and-clicks bandwidth bwa-mem 
-              <i
-                aria-hidden="true"
-                class="external small link icon"
-              />
-            </a>
-            <div
-              class="ui bulleted horizontal list"
-              role="list"
-            >
-              <div
-                class="item"
-                role="listitem"
-              >
-                Created
-                 by zhux3 
-                <time
-                  datetime="2019-10-29T15:14:25.000Z"
-                  title="29 Oct 2019"
-                >
-                  6 months from now
-                </time>
-              </div>
-              <div
-                class="item"
-                role="listitem"
-              >
-                bwa_mem
-              </div>
-              <div
-                class="item"
-                role="listitem"
-              >
-                <code>
-                  zhux3/sd-62wb3y64-bwa-mem
-                </code>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -1036,57 +1184,240 @@ exports[`renders Cavatica projects view correctly 3`] = `
     </div>
   </div>
   <div
-    class="ui basic segment ui container"
+    class="page"
   >
-    <h3
-      class="ui header"
-    >
-      <button
-        class="ui loading primary right floated button"
-      >
-        Scan Cavatica
-      </button>
-      Cavatica Projects
-    </h3>
     <div
-      class="ui basic segment"
+      class="ui basic segment ui container"
     >
-      <div
-        class="ui icon message"
+      <h3
+        class="ui header"
       >
-        <i
-          aria-hidden="true"
-          class="sync loading icon"
-        />
+        <button
+          class="ui loading primary right floated button"
+        >
+          Scan Cavatica
+        </button>
+        Cavatica Projects
+      </h3>
+      <div
+        class="ui basic segment"
+      >
         <div
-          class="content"
+          class="ui icon message"
+        >
+          <i
+            aria-hidden="true"
+            class="sync loading icon"
+          />
+          <div
+            class="content"
+          >
+            <div
+              class="header"
+            >
+              Scanning
+            </div>
+            <p>
+              This could take a moment...
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ui basic segment"
+      >
+        Listed are the Cavatica projects for analysis and investigator delivery and the studies they are related to. Projects created manually in Cavatica need to be scanned by the api to make them available for linking to studies. This may be done using the 
+        <i>
+          Scan Cavatica
+        </i>
+         
+        button.
+      </div>
+      <div
+        class="ui basic segment"
+      >
+        <div
+          class="ui divided relaxed list"
+          role="list"
         >
           <div
-            class="header"
+            class="item"
+            role="listitem"
           >
-            Scanning
+            <div
+              class="right floated content"
+            >
+              <a
+                href="/study/SD_8WX8QQ06/basic-info/info"
+              >
+                repurpose bricks-and-clicks bandwidth
+              </a>
+              <button
+                class="ui mini basic primary right floated button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="pencil icon"
+                />
+                EDIT
+              </button>
+              <button
+                class="ui mini basic negative right floated button ml-10"
+              >
+                <i
+                  aria-hidden="true"
+                  class="unlink icon"
+                />
+                UNLINK
+              </button>
+            </div>
+            <i
+              aria-hidden="true"
+              class="sliders horizontal icon"
+            />
+            <div
+              class="content"
+            >
+              <a
+                class="header"
+                href="https://cavatica.sbgenomics.com/u/zhux3/sd-62wb3y64-gatk-haplotypecaller"
+                target="_blank"
+              >
+                repurpose bricks-and-clicks bandwidth gatk-haplotypecaller 
+                <i
+                  aria-hidden="true"
+                  class="external small link icon"
+                />
+              </a>
+              <div
+                class="ui bulleted horizontal list"
+                role="list"
+              >
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  Created
+                   by zhux3 
+                  <time
+                    datetime="2019-10-29T15:14:45.000Z"
+                    title="29 Oct 2019"
+                  >
+                    6 months from now
+                  </time>
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  gatk_haplotypecaller
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  <code>
+                    zhux3/sd-62wb3y64-gatk-haplotypecaller
+                  </code>
+                </div>
+              </div>
+            </div>
           </div>
-          <p>
-            This could take a moment...
-          </p>
+          <div
+            class="item"
+            role="listitem"
+          >
+            <div
+              class="right floated content"
+            >
+              <a
+                href="/study/SD_8WX8QQ06/basic-info/info"
+              >
+                repurpose bricks-and-clicks bandwidth
+              </a>
+              <button
+                class="ui mini basic primary right floated button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="pencil icon"
+                />
+                EDIT
+              </button>
+              <button
+                class="ui mini basic negative right floated button ml-10"
+              >
+                <i
+                  aria-hidden="true"
+                  class="unlink icon"
+                />
+                UNLINK
+              </button>
+            </div>
+            <i
+              aria-hidden="true"
+              class="paper plane outline icon"
+            />
+            <div
+              class="content"
+            >
+              <a
+                class="header"
+                href="https://cavatica.sbgenomics.com/u/zhux3/sd-62wb3y64-bwa-mem"
+                target="_blank"
+              >
+                repurpose bricks-and-clicks bandwidth bwa-mem 
+                <i
+                  aria-hidden="true"
+                  class="external small link icon"
+                />
+              </a>
+              <div
+                class="ui bulleted horizontal list"
+                role="list"
+              >
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  Created
+                   by zhux3 
+                  <time
+                    datetime="2019-10-29T15:14:25.000Z"
+                    title="29 Oct 2019"
+                  >
+                    6 months from now
+                  </time>
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  bwa_mem
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  <code>
+                    zhux3/sd-62wb3y64-bwa-mem
+                  </code>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+  </div>
+  <div
+    class="ui segment footer"
+  >
     <div
-      class="ui basic segment"
-    >
-      Listed are the Cavatica projects for analysis and investigator delivery and the studies they are related to. Projects created manually in Cavatica need to be scanned by the api to make them available for linking to studies. This may be done using the 
-      <i>
-        Scan Cavatica
-      </i>
-       
-      button.
-    </div>
-    <div
-      class="ui basic segment"
+      class="ui container text-10"
     >
       <div
-        class="ui divided relaxed list"
+        class="ui horizontal list"
         role="list"
       >
         <div
@@ -1094,166 +1425,20 @@ exports[`renders Cavatica projects view correctly 3`] = `
           role="listitem"
         >
           <div
-            class="right floated content"
-          >
-            <a
-              href="/study/SD_8WX8QQ06/basic-info/info"
-            >
-              repurpose bricks-and-clicks bandwidth
-            </a>
-            <button
-              class="ui mini basic primary right floated button"
-            >
-              <i
-                aria-hidden="true"
-                class="pencil icon"
-              />
-              EDIT
-            </button>
-            <button
-              class="ui mini basic negative right floated button ml-10"
-            >
-              <i
-                aria-hidden="true"
-                class="unlink icon"
-              />
-              UNLINK
-            </button>
-          </div>
-          <i
-            aria-hidden="true"
-            class="sliders horizontal icon"
+            class="ui basic horizontal label text-10"
           />
-          <div
-            class="content"
-          >
-            <a
-              class="header"
-              href="https://cavatica.sbgenomics.com/u/zhux3/sd-62wb3y64-gatk-haplotypecaller"
-              target="_blank"
-            >
-              repurpose bricks-and-clicks bandwidth gatk-haplotypecaller 
-              <i
-                aria-hidden="true"
-                class="external small link icon"
-              />
-            </a>
-            <div
-              class="ui bulleted horizontal list"
-              role="list"
-            >
-              <div
-                class="item"
-                role="listitem"
-              >
-                Created
-                 by zhux3 
-                <time
-                  datetime="2019-10-29T15:14:45.000Z"
-                  title="29 Oct 2019"
-                >
-                  6 months from now
-                </time>
-              </div>
-              <div
-                class="item"
-                role="listitem"
-              >
-                gatk_haplotypecaller
-              </div>
-              <div
-                class="item"
-                role="listitem"
-              >
-                <code>
-                  zhux3/sd-62wb3y64-gatk-haplotypecaller
-                </code>
-              </div>
-            </div>
-          </div>
         </div>
         <div
-          class="item"
+          class="item noMargin"
           role="listitem"
         >
-          <div
-            class="right floated content"
-          >
-            <a
-              href="/study/SD_8WX8QQ06/basic-info/info"
-            >
-              repurpose bricks-and-clicks bandwidth
-            </a>
-            <button
-              class="ui mini basic primary right floated button"
-            >
-              <i
-                aria-hidden="true"
-                class="pencil icon"
-              />
-              EDIT
-            </button>
-            <button
-              class="ui mini basic negative right floated button ml-10"
-            >
-              <i
-                aria-hidden="true"
-                class="unlink icon"
-              />
-              UNLINK
-            </button>
-          </div>
-          <i
-            aria-hidden="true"
-            class="paper plane outline icon"
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
           />
-          <div
-            class="content"
-          >
-            <a
-              class="header"
-              href="https://cavatica.sbgenomics.com/u/zhux3/sd-62wb3y64-bwa-mem"
-              target="_blank"
-            >
-              repurpose bricks-and-clicks bandwidth bwa-mem 
-              <i
-                aria-hidden="true"
-                class="external small link icon"
-              />
-            </a>
-            <div
-              class="ui bulleted horizontal list"
-              role="list"
-            >
-              <div
-                class="item"
-                role="listitem"
-              >
-                Created
-                 by zhux3 
-                <time
-                  datetime="2019-10-29T15:14:25.000Z"
-                  title="29 Oct 2019"
-                >
-                  6 months from now
-                </time>
-              </div>
-              <div
-                class="item"
-                role="listitem"
-              >
-                bwa_mem
-              </div>
-              <div
-                class="item"
-                role="listitem"
-              >
-                <code>
-                  zhux3/sd-62wb3y64-bwa-mem
-                </code>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -1390,80 +1575,263 @@ exports[`renders Cavatica projects view correctly 4`] = `
     </div>
   </div>
   <div
-    class="ui basic segment ui container"
+    class="page"
   >
-    <h3
-      class="ui header"
-    >
-      <button
-        class="ui primary right floated button"
-      >
-        Scan Cavatica
-      </button>
-      Cavatica Projects
-    </h3>
     <div
-      class="ui basic segment"
+      class="ui basic segment ui container"
     >
+      <h3
+        class="ui header"
+      >
+        <button
+          class="ui primary right floated button"
+        >
+          Scan Cavatica
+        </button>
+        Cavatica Projects
+      </h3>
       <div
-        class="ui info message"
+        class="ui basic segment"
       >
         <div
-          class="header"
+          class="ui info message"
         >
-          Synced
-        </div>
-        <div
-          class="content"
-        >
-          Projects should now be sycrhronized with Cavatica:
           <div
-            class="ui list"
-            role="list"
+            class="header"
+          >
+            Synced
+          </div>
+          <div
+            class="content"
+          >
+            Projects should now be sycrhronized with Cavatica:
+            <div
+              class="ui list"
+              role="list"
+            >
+              <div
+                class="item"
+                role="listitem"
+              >
+                Updated: 
+                0
+                 projects
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                Created: 
+                0
+                 projects
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                Deleted: 
+                0
+                 projects
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ui basic segment"
+      >
+        Listed are the Cavatica projects for analysis and investigator delivery and the studies they are related to. Projects created manually in Cavatica need to be scanned by the api to make them available for linking to studies. This may be done using the 
+        <i>
+          Scan Cavatica
+        </i>
+         
+        button.
+      </div>
+      <div
+        class="ui basic segment"
+      >
+        <div
+          class="ui divided relaxed list"
+          role="list"
+        >
+          <div
+            class="item"
+            role="listitem"
           >
             <div
-              class="item"
-              role="listitem"
+              class="right floated content"
             >
-              Updated: 
-              0
-               projects
+              <a
+                href="/study/SD_8WX8QQ06/basic-info/info"
+              >
+                repurpose bricks-and-clicks bandwidth
+              </a>
+              <button
+                class="ui mini basic primary right floated button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="pencil icon"
+                />
+                EDIT
+              </button>
+              <button
+                class="ui mini basic negative right floated button ml-10"
+              >
+                <i
+                  aria-hidden="true"
+                  class="unlink icon"
+                />
+                UNLINK
+              </button>
             </div>
+            <i
+              aria-hidden="true"
+              class="sliders horizontal icon"
+            />
             <div
-              class="item"
-              role="listitem"
+              class="content"
             >
-              Created: 
-              0
-               projects
+              <a
+                class="header"
+                href="https://cavatica.sbgenomics.com/u/zhux3/sd-62wb3y64-gatk-haplotypecaller"
+                target="_blank"
+              >
+                repurpose bricks-and-clicks bandwidth gatk-haplotypecaller 
+                <i
+                  aria-hidden="true"
+                  class="external small link icon"
+                />
+              </a>
+              <div
+                class="ui bulleted horizontal list"
+                role="list"
+              >
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  Created
+                   by zhux3 
+                  <time
+                    datetime="2019-10-29T15:14:45.000Z"
+                    title="29 Oct 2019"
+                  >
+                    6 months from now
+                  </time>
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  gatk_haplotypecaller
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  <code>
+                    zhux3/sd-62wb3y64-gatk-haplotypecaller
+                  </code>
+                </div>
+              </div>
             </div>
+          </div>
+          <div
+            class="item"
+            role="listitem"
+          >
             <div
-              class="item"
-              role="listitem"
+              class="right floated content"
             >
-              Deleted: 
-              0
-               projects
+              <a
+                href="/study/SD_8WX8QQ06/basic-info/info"
+              >
+                repurpose bricks-and-clicks bandwidth
+              </a>
+              <button
+                class="ui mini basic primary right floated button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="pencil icon"
+                />
+                EDIT
+              </button>
+              <button
+                class="ui mini basic negative right floated button ml-10"
+              >
+                <i
+                  aria-hidden="true"
+                  class="unlink icon"
+                />
+                UNLINK
+              </button>
+            </div>
+            <i
+              aria-hidden="true"
+              class="paper plane outline icon"
+            />
+            <div
+              class="content"
+            >
+              <a
+                class="header"
+                href="https://cavatica.sbgenomics.com/u/zhux3/sd-62wb3y64-bwa-mem"
+                target="_blank"
+              >
+                repurpose bricks-and-clicks bandwidth bwa-mem 
+                <i
+                  aria-hidden="true"
+                  class="external small link icon"
+                />
+              </a>
+              <div
+                class="ui bulleted horizontal list"
+                role="list"
+              >
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  Created
+                   by zhux3 
+                  <time
+                    datetime="2019-10-29T15:14:25.000Z"
+                    title="29 Oct 2019"
+                  >
+                    6 months from now
+                  </time>
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  bwa_mem
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  <code>
+                    zhux3/sd-62wb3y64-bwa-mem
+                  </code>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+  <div
+    class="ui segment footer"
+  >
     <div
-      class="ui basic segment"
-    >
-      Listed are the Cavatica projects for analysis and investigator delivery and the studies they are related to. Projects created manually in Cavatica need to be scanned by the api to make them available for linking to studies. This may be done using the 
-      <i>
-        Scan Cavatica
-      </i>
-       
-      button.
-    </div>
-    <div
-      class="ui basic segment"
+      class="ui container text-10"
     >
       <div
-        class="ui divided relaxed list"
+        class="ui horizontal list"
         role="list"
       >
         <div
@@ -1471,166 +1839,20 @@ exports[`renders Cavatica projects view correctly 4`] = `
           role="listitem"
         >
           <div
-            class="right floated content"
-          >
-            <a
-              href="/study/SD_8WX8QQ06/basic-info/info"
-            >
-              repurpose bricks-and-clicks bandwidth
-            </a>
-            <button
-              class="ui mini basic primary right floated button"
-            >
-              <i
-                aria-hidden="true"
-                class="pencil icon"
-              />
-              EDIT
-            </button>
-            <button
-              class="ui mini basic negative right floated button ml-10"
-            >
-              <i
-                aria-hidden="true"
-                class="unlink icon"
-              />
-              UNLINK
-            </button>
-          </div>
-          <i
-            aria-hidden="true"
-            class="sliders horizontal icon"
+            class="ui basic horizontal label text-10"
           />
-          <div
-            class="content"
-          >
-            <a
-              class="header"
-              href="https://cavatica.sbgenomics.com/u/zhux3/sd-62wb3y64-gatk-haplotypecaller"
-              target="_blank"
-            >
-              repurpose bricks-and-clicks bandwidth gatk-haplotypecaller 
-              <i
-                aria-hidden="true"
-                class="external small link icon"
-              />
-            </a>
-            <div
-              class="ui bulleted horizontal list"
-              role="list"
-            >
-              <div
-                class="item"
-                role="listitem"
-              >
-                Created
-                 by zhux3 
-                <time
-                  datetime="2019-10-29T15:14:45.000Z"
-                  title="29 Oct 2019"
-                >
-                  6 months from now
-                </time>
-              </div>
-              <div
-                class="item"
-                role="listitem"
-              >
-                gatk_haplotypecaller
-              </div>
-              <div
-                class="item"
-                role="listitem"
-              >
-                <code>
-                  zhux3/sd-62wb3y64-gatk-haplotypecaller
-                </code>
-              </div>
-            </div>
-          </div>
         </div>
         <div
-          class="item"
+          class="item noMargin"
           role="listitem"
         >
-          <div
-            class="right floated content"
-          >
-            <a
-              href="/study/SD_8WX8QQ06/basic-info/info"
-            >
-              repurpose bricks-and-clicks bandwidth
-            </a>
-            <button
-              class="ui mini basic primary right floated button"
-            >
-              <i
-                aria-hidden="true"
-                class="pencil icon"
-              />
-              EDIT
-            </button>
-            <button
-              class="ui mini basic negative right floated button ml-10"
-            >
-              <i
-                aria-hidden="true"
-                class="unlink icon"
-              />
-              UNLINK
-            </button>
-          </div>
-          <i
-            aria-hidden="true"
-            class="paper plane outline icon"
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
           />
-          <div
-            class="content"
-          >
-            <a
-              class="header"
-              href="https://cavatica.sbgenomics.com/u/zhux3/sd-62wb3y64-bwa-mem"
-              target="_blank"
-            >
-              repurpose bricks-and-clicks bandwidth bwa-mem 
-              <i
-                aria-hidden="true"
-                class="external small link icon"
-              />
-            </a>
-            <div
-              class="ui bulleted horizontal list"
-              role="list"
-            >
-              <div
-                class="item"
-                role="listitem"
-              >
-                Created
-                 by zhux3 
-                <time
-                  datetime="2019-10-29T15:14:25.000Z"
-                  title="29 Oct 2019"
-                >
-                  6 months from now
-                </time>
-              </div>
-              <div
-                class="item"
-                role="listitem"
-              >
-                bwa_mem
-              </div>
-              <div
-                class="item"
-                role="listitem"
-              >
-                <code>
-                  zhux3/sd-62wb3y64-bwa-mem
-                </code>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -1767,80 +1989,263 @@ exports[`renders Cavatica projects view correctly 5`] = `
     </div>
   </div>
   <div
-    class="ui basic segment ui container"
+    class="page"
   >
-    <h3
-      class="ui header"
-    >
-      <button
-        class="ui primary right floated button"
-      >
-        Scan Cavatica
-      </button>
-      Cavatica Projects
-    </h3>
     <div
-      class="ui basic segment"
+      class="ui basic segment ui container"
     >
+      <h3
+        class="ui header"
+      >
+        <button
+          class="ui primary right floated button"
+        >
+          Scan Cavatica
+        </button>
+        Cavatica Projects
+      </h3>
       <div
-        class="ui info message"
+        class="ui basic segment"
       >
         <div
-          class="header"
+          class="ui info message"
         >
-          Synced
-        </div>
-        <div
-          class="content"
-        >
-          Projects should now be sycrhronized with Cavatica:
           <div
-            class="ui list"
-            role="list"
+            class="header"
+          >
+            Synced
+          </div>
+          <div
+            class="content"
+          >
+            Projects should now be sycrhronized with Cavatica:
+            <div
+              class="ui list"
+              role="list"
+            >
+              <div
+                class="item"
+                role="listitem"
+              >
+                Updated: 
+                0
+                 projects
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                Created: 
+                0
+                 projects
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                Deleted: 
+                0
+                 projects
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ui basic segment"
+      >
+        Listed are the Cavatica projects for analysis and investigator delivery and the studies they are related to. Projects created manually in Cavatica need to be scanned by the api to make them available for linking to studies. This may be done using the 
+        <i>
+          Scan Cavatica
+        </i>
+         
+        button.
+      </div>
+      <div
+        class="ui basic segment"
+      >
+        <div
+          class="ui divided relaxed list"
+          role="list"
+        >
+          <div
+            class="item"
+            role="listitem"
           >
             <div
-              class="item"
-              role="listitem"
+              class="right floated content"
             >
-              Updated: 
-              0
-               projects
+              <a
+                href="/study/SD_8WX8QQ06/basic-info/info"
+              >
+                repurpose bricks-and-clicks bandwidth
+              </a>
+              <button
+                class="ui mini basic primary right floated button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="pencil icon"
+                />
+                EDIT
+              </button>
+              <button
+                class="ui mini basic negative right floated button ml-10"
+              >
+                <i
+                  aria-hidden="true"
+                  class="unlink icon"
+                />
+                UNLINK
+              </button>
             </div>
+            <i
+              aria-hidden="true"
+              class="sliders horizontal icon"
+            />
             <div
-              class="item"
-              role="listitem"
+              class="content"
             >
-              Created: 
-              0
-               projects
+              <a
+                class="header"
+                href="https://cavatica.sbgenomics.com/u/zhux3/sd-62wb3y64-gatk-haplotypecaller"
+                target="_blank"
+              >
+                repurpose bricks-and-clicks bandwidth gatk-haplotypecaller 
+                <i
+                  aria-hidden="true"
+                  class="external small link icon"
+                />
+              </a>
+              <div
+                class="ui bulleted horizontal list"
+                role="list"
+              >
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  Created
+                   by zhux3 
+                  <time
+                    datetime="2019-10-29T15:14:45.000Z"
+                    title="29 Oct 2019"
+                  >
+                    6 months from now
+                  </time>
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  gatk_haplotypecaller
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  <code>
+                    zhux3/sd-62wb3y64-gatk-haplotypecaller
+                  </code>
+                </div>
+              </div>
             </div>
+          </div>
+          <div
+            class="item"
+            role="listitem"
+          >
             <div
-              class="item"
-              role="listitem"
+              class="right floated content"
             >
-              Deleted: 
-              0
-               projects
+              <a
+                href="/study/SD_8WX8QQ06/basic-info/info"
+              >
+                repurpose bricks-and-clicks bandwidth
+              </a>
+              <button
+                class="ui mini basic primary right floated button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="pencil icon"
+                />
+                EDIT
+              </button>
+              <button
+                class="ui mini basic negative right floated button ml-10"
+              >
+                <i
+                  aria-hidden="true"
+                  class="unlink icon"
+                />
+                UNLINK
+              </button>
+            </div>
+            <i
+              aria-hidden="true"
+              class="paper plane outline icon"
+            />
+            <div
+              class="content"
+            >
+              <a
+                class="header"
+                href="https://cavatica.sbgenomics.com/u/zhux3/sd-62wb3y64-bwa-mem"
+                target="_blank"
+              >
+                repurpose bricks-and-clicks bandwidth bwa-mem 
+                <i
+                  aria-hidden="true"
+                  class="external small link icon"
+                />
+              </a>
+              <div
+                class="ui bulleted horizontal list"
+                role="list"
+              >
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  Created
+                   by zhux3 
+                  <time
+                    datetime="2019-10-29T15:14:25.000Z"
+                    title="29 Oct 2019"
+                  >
+                    6 months from now
+                  </time>
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  bwa_mem
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  <code>
+                    zhux3/sd-62wb3y64-bwa-mem
+                  </code>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+  <div
+    class="ui segment footer"
+  >
     <div
-      class="ui basic segment"
-    >
-      Listed are the Cavatica projects for analysis and investigator delivery and the studies they are related to. Projects created manually in Cavatica need to be scanned by the api to make them available for linking to studies. This may be done using the 
-      <i>
-        Scan Cavatica
-      </i>
-       
-      button.
-    </div>
-    <div
-      class="ui basic segment"
+      class="ui container text-10"
     >
       <div
-        class="ui divided relaxed list"
+        class="ui horizontal list"
         role="list"
       >
         <div
@@ -1848,166 +2253,20 @@ exports[`renders Cavatica projects view correctly 5`] = `
           role="listitem"
         >
           <div
-            class="right floated content"
-          >
-            <a
-              href="/study/SD_8WX8QQ06/basic-info/info"
-            >
-              repurpose bricks-and-clicks bandwidth
-            </a>
-            <button
-              class="ui mini basic primary right floated button"
-            >
-              <i
-                aria-hidden="true"
-                class="pencil icon"
-              />
-              EDIT
-            </button>
-            <button
-              class="ui mini basic negative right floated button ml-10"
-            >
-              <i
-                aria-hidden="true"
-                class="unlink icon"
-              />
-              UNLINK
-            </button>
-          </div>
-          <i
-            aria-hidden="true"
-            class="sliders horizontal icon"
+            class="ui basic horizontal label text-10"
           />
-          <div
-            class="content"
-          >
-            <a
-              class="header"
-              href="https://cavatica.sbgenomics.com/u/zhux3/sd-62wb3y64-gatk-haplotypecaller"
-              target="_blank"
-            >
-              repurpose bricks-and-clicks bandwidth gatk-haplotypecaller 
-              <i
-                aria-hidden="true"
-                class="external small link icon"
-              />
-            </a>
-            <div
-              class="ui bulleted horizontal list"
-              role="list"
-            >
-              <div
-                class="item"
-                role="listitem"
-              >
-                Created
-                 by zhux3 
-                <time
-                  datetime="2019-10-29T15:14:45.000Z"
-                  title="29 Oct 2019"
-                >
-                  6 months from now
-                </time>
-              </div>
-              <div
-                class="item"
-                role="listitem"
-              >
-                gatk_haplotypecaller
-              </div>
-              <div
-                class="item"
-                role="listitem"
-              >
-                <code>
-                  zhux3/sd-62wb3y64-gatk-haplotypecaller
-                </code>
-              </div>
-            </div>
-          </div>
         </div>
         <div
-          class="item"
+          class="item noMargin"
           role="listitem"
         >
-          <div
-            class="right floated content"
-          >
-            <a
-              href="/study/SD_8WX8QQ06/basic-info/info"
-            >
-              repurpose bricks-and-clicks bandwidth
-            </a>
-            <button
-              class="ui mini basic primary right floated button"
-            >
-              <i
-                aria-hidden="true"
-                class="pencil icon"
-              />
-              EDIT
-            </button>
-            <button
-              class="ui mini basic negative right floated button ml-10"
-            >
-              <i
-                aria-hidden="true"
-                class="unlink icon"
-              />
-              UNLINK
-            </button>
-          </div>
-          <i
-            aria-hidden="true"
-            class="paper plane outline icon"
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
           />
-          <div
-            class="content"
-          >
-            <a
-              class="header"
-              href="https://cavatica.sbgenomics.com/u/zhux3/sd-62wb3y64-bwa-mem"
-              target="_blank"
-            >
-              repurpose bricks-and-clicks bandwidth bwa-mem 
-              <i
-                aria-hidden="true"
-                class="external small link icon"
-              />
-            </a>
-            <div
-              class="ui bulleted horizontal list"
-              role="list"
-            >
-              <div
-                class="item"
-                role="listitem"
-              >
-                Created
-                 by zhux3 
-                <time
-                  datetime="2019-10-29T15:14:25.000Z"
-                  title="29 Oct 2019"
-                >
-                  6 months from now
-                </time>
-              </div>
-              <div
-                class="item"
-                role="listitem"
-              >
-                bwa_mem
-              </div>
-              <div
-                class="item"
-                role="listitem"
-              >
-                <code>
-                  zhux3/sd-62wb3y64-bwa-mem
-                </code>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
