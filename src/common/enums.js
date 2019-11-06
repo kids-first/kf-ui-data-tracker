@@ -168,3 +168,11 @@ export const versionState = {
   PRC: {title: 'Processed', labelColor: 'blue'},
   UPD: {title: 'Updated', labelColor: 'blue'},
 };
+
+// Store label colors for system version footer
+export const systemEnvColors = {
+  local: 'orange',
+  dev: 'yellow',
+  prd: 'green',
+  qa: 'blue',
+};

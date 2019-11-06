@@ -78,83 +78,120 @@ exports[`renders study Cavatica projects view -- empty view for regular user 1`]
       </div>
     </div>
   </div>
-  <section
-    id="study"
+  <div
+    class="page"
   >
-    <div
-      class="ui basic secondary segment"
+    <section
+      id="study"
     >
+      <div
+        class="ui basic secondary segment"
+      >
+        <div
+          class="ui container"
+        >
+          <h1
+            class="ui header"
+          >
+            benchmark extensible e-business
+          </h1>
+          <button
+            class="ui tiny basic icon button"
+          >
+            <i
+              aria-hidden="true"
+              class="copy icon"
+            />
+            SD_8WX8QQ06
+          </button>
+        </div>
+      </div>
       <div
         class="ui container"
       >
-        <h1
-          class="ui header"
+        <div
+          class="ui pink pointing secondary menu"
         >
-          benchmark extensible e-business
-        </h1>
-        <button
-          class="ui tiny basic icon button"
-        >
-          <i
-            aria-hidden="true"
-            class="copy icon"
-          />
-          SD_8WX8QQ06
-        </button>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/basic-info/info"
+          >
+            Basic Info
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/dashboard"
+          >
+            Dashboard
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/documents"
+          >
+            Documents
+          </a>
+          <a
+            aria-current="page"
+            class="active item active"
+            href="/study/SD_8WX8QQ06/cavatica"
+          >
+            Cavatica
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/logs"
+          >
+            Logs
+          </a>
+        </div>
       </div>
-    </div>
+    </section>
     <div
-      class="ui container"
+      class="ui basic very padded segment ui container"
+    >
+      <h2
+        class="ui disabled center aligned header"
+      >
+        <i
+          aria-hidden="true"
+          class="clock outline icon"
+        />
+        Coming Soon...
+      </h2>
+    </div>
+  </div>
+  <div
+    class="ui segment footer"
+  >
+    <div
+      class="ui container text-10"
     >
       <div
-        class="ui pink pointing secondary menu"
+        class="ui horizontal list"
+        role="list"
       >
-        <a
+        <div
           class="item"
-          href="/study/SD_8WX8QQ06/basic-info/info"
+          role="listitem"
         >
-          Basic Info
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/dashboard"
+          <div
+            class="ui basic horizontal label text-10"
+          />
+        </div>
+        <div
+          class="item noMargin"
+          role="listitem"
         >
-          Dashboard
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/documents"
-        >
-          Documents
-        </a>
-        <a
-          aria-current="page"
-          class="active item active"
-          href="/study/SD_8WX8QQ06/cavatica"
-        >
-          Cavatica
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/logs"
-        >
-          Logs
-        </a>
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
+        </div>
       </div>
     </div>
-  </section>
-  <div
-    class="ui basic very padded segment ui container"
-  >
-    <h2
-      class="ui disabled center aligned header"
-    >
-      <i
-        aria-hidden="true"
-        class="clock outline icon"
-      />
-      Coming Soon...
-    </h2>
   </div>
 </div>
 `;
@@ -286,98 +323,135 @@ exports[`renders study Cavatica projects view -- shows an error 1`] = `
       </div>
     </div>
   </div>
-  <section
-    id="study"
+  <div
+    class="page"
   >
-    <div
-      class="ui basic secondary segment"
+    <section
+      id="study"
     >
+      <div
+        class="ui basic secondary segment"
+      >
+        <div
+          class="ui container"
+        >
+          <h1
+            class="ui header"
+          >
+            benchmark extensible e-business
+          </h1>
+          <button
+            class="ui tiny basic icon button"
+          >
+            <i
+              aria-hidden="true"
+              class="copy icon"
+            />
+            SD_8WX8QQ06
+          </button>
+        </div>
+      </div>
       <div
         class="ui container"
       >
-        <h1
-          class="ui header"
+        <div
+          class="ui pink pointing secondary menu"
         >
-          benchmark extensible e-business
-        </h1>
-        <button
-          class="ui tiny basic icon button"
-        >
-          <i
-            aria-hidden="true"
-            class="copy icon"
-          />
-          SD_8WX8QQ06
-        </button>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/basic-info/info"
+          >
+            Basic Info
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/dashboard"
+          >
+            Dashboard
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/documents"
+          >
+            Documents
+          </a>
+          <a
+            aria-current="page"
+            class="active item active"
+            href="/study/SD_8WX8QQ06/cavatica"
+          >
+            Cavatica
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/logs"
+          >
+            Logs
+          </a>
+        </div>
       </div>
-    </div>
+    </section>
     <div
-      class="ui container"
+      class="ui basic segment ui container"
     >
       <div
-        class="ui pink pointing secondary menu"
+        class="ui icon negative message"
       >
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/basic-info/info"
+        <i
+          aria-hidden="true"
+          class="warning circle icon"
+        />
+        <div
+          class="content"
         >
-          Basic Info
           <div
-            class="ui blue mini label"
+            class="header"
           >
-            BETA
+            Error
           </div>
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/dashboard"
-        >
-          Dashboard
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/documents"
-        >
-          Documents
-        </a>
-        <a
-          aria-current="page"
-          class="active item active"
-          href="/study/SD_8WX8QQ06/cavatica"
-        >
-          Cavatica
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/logs"
-        >
-          Logs
-        </a>
+          <p>
+            Project Error: 
+            Network error: Failed to get the Cavatica project data for this study
+          </p>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
   <div
-    class="ui basic segment ui container"
+    class="ui segment footer"
   >
     <div
-      class="ui icon negative message"
+      class="ui container text-10"
     >
-      <i
-        aria-hidden="true"
-        class="warning circle icon"
-      />
       <div
-        class="content"
+        class="ui horizontal list"
+        role="list"
       >
         <div
-          class="header"
+          class="item"
+          role="listitem"
         >
-          Error
+          <div
+            class="ui basic horizontal label text-10"
+          />
         </div>
-        <p>
-          Project Error: 
-          Network error: Failed to get the Cavatica project data for this study
-        </p>
+        <div
+          class="item noMargin"
+          role="listitem"
+        >
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -409,102 +483,139 @@ exports[`renders study Cavatica projects view correctly 1`] = `
       </a>
     </div>
   </div>
-  <section
-    id="study"
+  <div
+    class="page"
   >
-    <div
-      class="ui basic secondary segment"
+    <section
+      id="study"
     >
+      <div
+        class="ui basic secondary segment"
+      >
+        <div
+          class="ui container"
+        >
+          <div
+            class="ui placeholder"
+          >
+            <div
+              class="header"
+            >
+              <div
+                class="line"
+              />
+              <div
+                class="line"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
       <div
         class="ui container"
       >
         <div
-          class="ui placeholder"
+          class="ui pink pointing secondary menu"
+        >
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/basic-info/info"
+          >
+            Basic Info
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/dashboard"
+          >
+            Dashboard
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/documents"
+          >
+            Documents
+          </a>
+          <a
+            aria-current="page"
+            class="active item active"
+            href="/study/SD_8WX8QQ06/cavatica"
+          >
+            Cavatica
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/logs"
+          >
+            Logs
+          </a>
+        </div>
+      </div>
+    </section>
+    <div
+      class="ui basic vertical segment ui container"
+    >
+      <div
+        class="ui placeholder"
+      >
+        <div
+          class="image header"
         >
           <div
-            class="header"
-          >
-            <div
-              class="line"
-            />
-            <div
-              class="line"
-            />
-          </div>
+            class="line"
+          />
+          <div
+            class="line"
+          />
+        </div>
+        <div
+          class="paragraph"
+        >
+          <div
+            class="line"
+          />
+          <div
+            class="line"
+          />
+          <div
+            class="line"
+          />
+          <div
+            class="line"
+          />
         </div>
       </div>
     </div>
-    <div
-      class="ui container"
-    >
-      <div
-        class="ui pink pointing secondary menu"
-      >
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/basic-info/info"
-        >
-          Basic Info
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/dashboard"
-        >
-          Dashboard
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/documents"
-        >
-          Documents
-        </a>
-        <a
-          aria-current="page"
-          class="active item active"
-          href="/study/SD_8WX8QQ06/cavatica"
-        >
-          Cavatica
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/logs"
-        >
-          Logs
-        </a>
-      </div>
-    </div>
-  </section>
+  </div>
   <div
-    class="ui basic vertical segment ui container"
+    class="ui segment footer"
   >
     <div
-      class="ui placeholder"
+      class="ui container text-10"
     >
       <div
-        class="image header"
+        class="ui horizontal list"
+        role="list"
       >
         <div
-          class="line"
-        />
+          class="item"
+          role="listitem"
+        >
+          <div
+            class="ui basic horizontal label text-10"
+          />
+        </div>
         <div
-          class="line"
-        />
-      </div>
-      <div
-        class="paragraph"
-      >
-        <div
-          class="line"
-        />
-        <div
-          class="line"
-        />
-        <div
-          class="line"
-        />
-        <div
-          class="line"
-        />
+          class="item noMargin"
+          role="listitem"
+        >
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -638,332 +749,369 @@ exports[`renders study Cavatica projects view correctly 2`] = `
       </div>
     </div>
   </div>
-  <section
-    id="study"
+  <div
+    class="page"
   >
-    <div
-      class="ui basic secondary segment"
+    <section
+      id="study"
     >
+      <div
+        class="ui basic secondary segment"
+      >
+        <div
+          class="ui container"
+        >
+          <h1
+            class="ui header"
+          >
+            benchmark extensible e-business
+          </h1>
+          <button
+            class="ui tiny basic icon button"
+          >
+            <i
+              aria-hidden="true"
+              class="copy icon"
+            />
+            SD_8WX8QQ06
+          </button>
+        </div>
+      </div>
       <div
         class="ui container"
       >
-        <h1
-          class="ui header"
+        <div
+          class="ui pink pointing secondary menu"
         >
-          benchmark extensible e-business
-        </h1>
-        <button
-          class="ui tiny basic icon button"
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/basic-info/info"
+          >
+            Basic Info
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/dashboard"
+          >
+            Dashboard
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/documents"
+          >
+            Documents
+          </a>
+          <a
+            aria-current="page"
+            class="active item active"
+            href="/study/SD_8WX8QQ06/cavatica"
+          >
+            Cavatica
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/logs"
+          >
+            Logs
+          </a>
+        </div>
+      </div>
+    </section>
+    <div
+      class="ui basic vertical segment ui container"
+    >
+      <button
+        class="ui mini primary right floated button"
+      >
+        <i
+          aria-hidden="true"
+          class="linkify icon"
+        />
+        LINK PROJECT
+      </button>
+      <button
+        class="ui mini basic primary right floated button"
+      >
+        <i
+          aria-hidden="true"
+          class="add icon"
+        />
+        NEW PROJECT
+      </button>
+      <h2
+        class="ui header noMargin"
+      >
+        Cavatica Projects
+      </h2>
+      <div
+        class="ui divided relaxed list"
+        role="list"
+      >
+        <div
+          class="item"
+          role="listitem"
         >
+          <div
+            class="right floated content"
+          >
+            <button
+              class="ui mini basic primary right floated button"
+            >
+              <i
+                aria-hidden="true"
+                class="pencil icon"
+              />
+              EDIT
+            </button>
+            <button
+              class="ui mini basic negative right floated button ml-10"
+            >
+              <i
+                aria-hidden="true"
+                class="unlink icon"
+              />
+              UNLINK
+            </button>
+          </div>
           <i
             aria-hidden="true"
-            class="copy icon"
+            class="paper plane outline icon"
           />
-          SD_8WX8QQ06
-        </button>
-      </div>
-    </div>
-    <div
-      class="ui container"
-    >
-      <div
-        class="ui pink pointing secondary menu"
-      >
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/basic-info/info"
-        >
-          Basic Info
           <div
-            class="ui blue mini label"
+            class="content"
           >
-            BETA
+            <a
+              class="header"
+              href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06"
+              target="_blank"
+            >
+              test study name 
+              <i
+                aria-hidden="true"
+                class="external small link icon"
+              />
+            </a>
+            <div
+              class="ui bulleted horizontal list"
+              role="list"
+            >
+              <div
+                class="item"
+                role="listitem"
+              >
+                Created
+                 by zhux3 
+                <time
+                  datetime="2019-08-26T18:22:41.000Z"
+                  title="26 Aug 2019"
+                >
+                  4 months from now
+                </time>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <code>
+                  zhux3/sd-8wx8qq06
+                </code>
+              </div>
+            </div>
           </div>
-        </a>
-        <a
+        </div>
+        <div
           class="item"
-          href="/study/SD_8WX8QQ06/dashboard"
+          role="listitem"
         >
-          Dashboard
-        </a>
-        <a
+          <div
+            class="right floated content"
+          >
+            <button
+              class="ui mini basic primary right floated button"
+            >
+              <i
+                aria-hidden="true"
+                class="pencil icon"
+              />
+              EDIT
+            </button>
+            <button
+              class="ui mini basic negative right floated button ml-10"
+            >
+              <i
+                aria-hidden="true"
+                class="unlink icon"
+              />
+              UNLINK
+            </button>
+          </div>
+          <i
+            aria-hidden="true"
+            class="sliders horizontal icon"
+          />
+          <div
+            class="content"
+          >
+            <a
+              class="header"
+              href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06-bwa-mem"
+              target="_blank"
+            >
+              test study name bwa-mem 
+              <i
+                aria-hidden="true"
+                class="external small link icon"
+              />
+            </a>
+            <div
+              class="ui bulleted horizontal list"
+              role="list"
+            >
+              <div
+                class="item"
+                role="listitem"
+              >
+                Created
+                 by zhux3 
+                <time
+                  datetime="2019-08-26T18:22:42.000Z"
+                  title="26 Aug 2019"
+                >
+                  4 months from now
+                </time>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                bwa_mem
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <code>
+                  zhux3/sd-8wx8qq06-bwa-mem
+                </code>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
           class="item"
-          href="/study/SD_8WX8QQ06/documents"
+          role="listitem"
         >
-          Documents
-        </a>
-        <a
-          aria-current="page"
-          class="active item active"
-          href="/study/SD_8WX8QQ06/cavatica"
-        >
-          Cavatica
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/logs"
-        >
-          Logs
-        </a>
+          <div
+            class="right floated content"
+          >
+            <button
+              class="ui mini basic primary right floated button"
+            >
+              <i
+                aria-hidden="true"
+                class="pencil icon"
+              />
+              EDIT
+            </button>
+            <button
+              class="ui mini basic negative right floated button ml-10"
+            >
+              <i
+                aria-hidden="true"
+                class="unlink icon"
+              />
+              UNLINK
+            </button>
+          </div>
+          <i
+            aria-hidden="true"
+            class="sliders horizontal icon"
+          />
+          <div
+            class="content"
+          >
+            <a
+              class="header"
+              href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06-gatk-haplotypecaller"
+              target="_blank"
+            >
+              test study name gatk-haplotypecaller 
+              <i
+                aria-hidden="true"
+                class="external small link icon"
+              />
+            </a>
+            <div
+              class="ui bulleted horizontal list"
+              role="list"
+            >
+              <div
+                class="item"
+                role="listitem"
+              >
+                Created
+                 by zhux3 
+                <time
+                  datetime="2019-08-26T18:22:43.000Z"
+                  title="26 Aug 2019"
+                >
+                  4 months from now
+                </time>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                gatk_haplotypecaller
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <code>
+                  zhux3/sd-8wx8qq06-gatk-haplotypecaller
+                </code>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
   <div
-    class="ui basic vertical segment ui container"
+    class="ui segment footer"
   >
-    <button
-      class="ui mini primary right floated button"
-    >
-      <i
-        aria-hidden="true"
-        class="linkify icon"
-      />
-      LINK PROJECT
-    </button>
-    <button
-      class="ui mini basic primary right floated button"
-    >
-      <i
-        aria-hidden="true"
-        class="add icon"
-      />
-      NEW PROJECT
-    </button>
-    <h2
-      class="ui header noMargin"
-    >
-      Cavatica Projects
-    </h2>
     <div
-      class="ui divided relaxed list"
-      role="list"
+      class="ui container text-10"
     >
       <div
-        class="item"
-        role="listitem"
+        class="ui horizontal list"
+        role="list"
       >
         <div
-          class="right floated content"
+          class="item"
+          role="listitem"
         >
-          <button
-            class="ui mini basic primary right floated button"
-          >
-            <i
-              aria-hidden="true"
-              class="pencil icon"
-            />
-            EDIT
-          </button>
-          <button
-            class="ui mini basic negative right floated button ml-10"
-          >
-            <i
-              aria-hidden="true"
-              class="unlink icon"
-            />
-            UNLINK
-          </button>
-        </div>
-        <i
-          aria-hidden="true"
-          class="paper plane outline icon"
-        />
-        <div
-          class="content"
-        >
-          <a
-            class="header"
-            href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06"
-            target="_blank"
-          >
-            test study name 
-            <i
-              aria-hidden="true"
-              class="external small link icon"
-            />
-          </a>
           <div
-            class="ui bulleted horizontal list"
-            role="list"
-          >
-            <div
-              class="item"
-              role="listitem"
-            >
-              Created
-               by zhux3 
-              <time
-                datetime="2019-08-26T18:22:41.000Z"
-                title="26 Aug 2019"
-              >
-                4 months from now
-              </time>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <code>
-                zhux3/sd-8wx8qq06
-              </code>
-            </div>
-          </div>
+            class="ui basic horizontal label text-10"
+          />
         </div>
-      </div>
-      <div
-        class="item"
-        role="listitem"
-      >
         <div
-          class="right floated content"
+          class="item noMargin"
+          role="listitem"
         >
-          <button
-            class="ui mini basic primary right floated button"
-          >
-            <i
-              aria-hidden="true"
-              class="pencil icon"
-            />
-            EDIT
-          </button>
-          <button
-            class="ui mini basic negative right floated button ml-10"
-          >
-            <i
-              aria-hidden="true"
-              class="unlink icon"
-            />
-            UNLINK
-          </button>
-        </div>
-        <i
-          aria-hidden="true"
-          class="sliders horizontal icon"
-        />
-        <div
-          class="content"
-        >
+          UI
+           
           <a
-            class="header"
-            href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06-bwa-mem"
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
             target="_blank"
-          >
-            test study name bwa-mem 
-            <i
-              aria-hidden="true"
-              class="external small link icon"
-            />
-          </a>
-          <div
-            class="ui bulleted horizontal list"
-            role="list"
-          >
-            <div
-              class="item"
-              role="listitem"
-            >
-              Created
-               by zhux3 
-              <time
-                datetime="2019-08-26T18:22:42.000Z"
-                title="26 Aug 2019"
-              >
-                4 months from now
-              </time>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              bwa_mem
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <code>
-                zhux3/sd-8wx8qq06-bwa-mem
-              </code>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="item"
-        role="listitem"
-      >
-        <div
-          class="right floated content"
-        >
-          <button
-            class="ui mini basic primary right floated button"
-          >
-            <i
-              aria-hidden="true"
-              class="pencil icon"
-            />
-            EDIT
-          </button>
-          <button
-            class="ui mini basic negative right floated button ml-10"
-          >
-            <i
-              aria-hidden="true"
-              class="unlink icon"
-            />
-            UNLINK
-          </button>
-        </div>
-        <i
-          aria-hidden="true"
-          class="sliders horizontal icon"
-        />
-        <div
-          class="content"
-        >
-          <a
-            class="header"
-            href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06-gatk-haplotypecaller"
-            target="_blank"
-          >
-            test study name gatk-haplotypecaller 
-            <i
-              aria-hidden="true"
-              class="external small link icon"
-            />
-          </a>
-          <div
-            class="ui bulleted horizontal list"
-            role="list"
-          >
-            <div
-              class="item"
-              role="listitem"
-            >
-              Created
-               by zhux3 
-              <time
-                datetime="2019-08-26T18:22:43.000Z"
-                title="26 Aug 2019"
-              >
-                4 months from now
-              </time>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              gatk_haplotypecaller
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <code>
-                zhux3/sd-8wx8qq06-gatk-haplotypecaller
-              </code>
-            </div>
-          </div>
+          />
         </div>
       </div>
     </div>
@@ -1098,332 +1246,369 @@ exports[`renders study Cavatica projects view correctly 3`] = `
       </div>
     </div>
   </div>
-  <section
-    id="study"
+  <div
+    class="page"
   >
-    <div
-      class="ui basic secondary segment"
+    <section
+      id="study"
     >
+      <div
+        class="ui basic secondary segment"
+      >
+        <div
+          class="ui container"
+        >
+          <h1
+            class="ui header"
+          >
+            benchmark extensible e-business
+          </h1>
+          <button
+            class="ui tiny basic icon button"
+          >
+            <i
+              aria-hidden="true"
+              class="copy icon"
+            />
+            SD_8WX8QQ06
+          </button>
+        </div>
+      </div>
       <div
         class="ui container"
       >
-        <h1
-          class="ui header"
+        <div
+          class="ui pink pointing secondary menu"
         >
-          benchmark extensible e-business
-        </h1>
-        <button
-          class="ui tiny basic icon button"
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/basic-info/info"
+          >
+            Basic Info
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/dashboard"
+          >
+            Dashboard
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/documents"
+          >
+            Documents
+          </a>
+          <a
+            aria-current="page"
+            class="active item active"
+            href="/study/SD_8WX8QQ06/cavatica"
+          >
+            Cavatica
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/logs"
+          >
+            Logs
+          </a>
+        </div>
+      </div>
+    </section>
+    <div
+      class="ui basic vertical segment ui container"
+    >
+      <button
+        class="ui mini primary right floated button"
+      >
+        <i
+          aria-hidden="true"
+          class="linkify icon"
+        />
+        LINK PROJECT
+      </button>
+      <button
+        class="ui mini basic primary right floated button"
+      >
+        <i
+          aria-hidden="true"
+          class="add icon"
+        />
+        NEW PROJECT
+      </button>
+      <h2
+        class="ui header noMargin"
+      >
+        Cavatica Projects
+      </h2>
+      <div
+        class="ui divided relaxed list"
+        role="list"
+      >
+        <div
+          class="item"
+          role="listitem"
         >
+          <div
+            class="right floated content"
+          >
+            <button
+              class="ui mini basic primary right floated button"
+            >
+              <i
+                aria-hidden="true"
+                class="pencil icon"
+              />
+              EDIT
+            </button>
+            <button
+              class="ui mini basic negative right floated button ml-10"
+            >
+              <i
+                aria-hidden="true"
+                class="unlink icon"
+              />
+              UNLINK
+            </button>
+          </div>
           <i
             aria-hidden="true"
-            class="copy icon"
+            class="paper plane outline icon"
           />
-          SD_8WX8QQ06
-        </button>
-      </div>
-    </div>
-    <div
-      class="ui container"
-    >
-      <div
-        class="ui pink pointing secondary menu"
-      >
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/basic-info/info"
-        >
-          Basic Info
           <div
-            class="ui blue mini label"
+            class="content"
           >
-            BETA
+            <a
+              class="header"
+              href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06"
+              target="_blank"
+            >
+              test study name 
+              <i
+                aria-hidden="true"
+                class="external small link icon"
+              />
+            </a>
+            <div
+              class="ui bulleted horizontal list"
+              role="list"
+            >
+              <div
+                class="item"
+                role="listitem"
+              >
+                Created
+                 by zhux3 
+                <time
+                  datetime="2019-08-26T18:22:41.000Z"
+                  title="26 Aug 2019"
+                >
+                  4 months from now
+                </time>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <code>
+                  zhux3/sd-8wx8qq06
+                </code>
+              </div>
+            </div>
           </div>
-        </a>
-        <a
+        </div>
+        <div
           class="item"
-          href="/study/SD_8WX8QQ06/dashboard"
+          role="listitem"
         >
-          Dashboard
-        </a>
-        <a
+          <div
+            class="right floated content"
+          >
+            <button
+              class="ui mini basic primary right floated button"
+            >
+              <i
+                aria-hidden="true"
+                class="pencil icon"
+              />
+              EDIT
+            </button>
+            <button
+              class="ui mini basic negative right floated button ml-10"
+            >
+              <i
+                aria-hidden="true"
+                class="unlink icon"
+              />
+              UNLINK
+            </button>
+          </div>
+          <i
+            aria-hidden="true"
+            class="sliders horizontal icon"
+          />
+          <div
+            class="content"
+          >
+            <a
+              class="header"
+              href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06-bwa-mem"
+              target="_blank"
+            >
+              test study name bwa-mem 
+              <i
+                aria-hidden="true"
+                class="external small link icon"
+              />
+            </a>
+            <div
+              class="ui bulleted horizontal list"
+              role="list"
+            >
+              <div
+                class="item"
+                role="listitem"
+              >
+                Created
+                 by zhux3 
+                <time
+                  datetime="2019-08-26T18:22:42.000Z"
+                  title="26 Aug 2019"
+                >
+                  4 months from now
+                </time>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                bwa_mem
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <code>
+                  zhux3/sd-8wx8qq06-bwa-mem
+                </code>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
           class="item"
-          href="/study/SD_8WX8QQ06/documents"
+          role="listitem"
         >
-          Documents
-        </a>
-        <a
-          aria-current="page"
-          class="active item active"
-          href="/study/SD_8WX8QQ06/cavatica"
-        >
-          Cavatica
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/logs"
-        >
-          Logs
-        </a>
+          <div
+            class="right floated content"
+          >
+            <button
+              class="ui mini basic primary right floated button"
+            >
+              <i
+                aria-hidden="true"
+                class="pencil icon"
+              />
+              EDIT
+            </button>
+            <button
+              class="ui mini basic negative right floated button ml-10"
+            >
+              <i
+                aria-hidden="true"
+                class="unlink icon"
+              />
+              UNLINK
+            </button>
+          </div>
+          <i
+            aria-hidden="true"
+            class="sliders horizontal icon"
+          />
+          <div
+            class="content"
+          >
+            <a
+              class="header"
+              href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06-gatk-haplotypecaller"
+              target="_blank"
+            >
+              test study name gatk-haplotypecaller 
+              <i
+                aria-hidden="true"
+                class="external small link icon"
+              />
+            </a>
+            <div
+              class="ui bulleted horizontal list"
+              role="list"
+            >
+              <div
+                class="item"
+                role="listitem"
+              >
+                Created
+                 by zhux3 
+                <time
+                  datetime="2019-08-26T18:22:43.000Z"
+                  title="26 Aug 2019"
+                >
+                  4 months from now
+                </time>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                gatk_haplotypecaller
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <code>
+                  zhux3/sd-8wx8qq06-gatk-haplotypecaller
+                </code>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
   <div
-    class="ui basic vertical segment ui container"
+    class="ui segment footer"
   >
-    <button
-      class="ui mini primary right floated button"
-    >
-      <i
-        aria-hidden="true"
-        class="linkify icon"
-      />
-      LINK PROJECT
-    </button>
-    <button
-      class="ui mini basic primary right floated button"
-    >
-      <i
-        aria-hidden="true"
-        class="add icon"
-      />
-      NEW PROJECT
-    </button>
-    <h2
-      class="ui header noMargin"
-    >
-      Cavatica Projects
-    </h2>
     <div
-      class="ui divided relaxed list"
-      role="list"
+      class="ui container text-10"
     >
       <div
-        class="item"
-        role="listitem"
+        class="ui horizontal list"
+        role="list"
       >
         <div
-          class="right floated content"
+          class="item"
+          role="listitem"
         >
-          <button
-            class="ui mini basic primary right floated button"
-          >
-            <i
-              aria-hidden="true"
-              class="pencil icon"
-            />
-            EDIT
-          </button>
-          <button
-            class="ui mini basic negative right floated button ml-10"
-          >
-            <i
-              aria-hidden="true"
-              class="unlink icon"
-            />
-            UNLINK
-          </button>
-        </div>
-        <i
-          aria-hidden="true"
-          class="paper plane outline icon"
-        />
-        <div
-          class="content"
-        >
-          <a
-            class="header"
-            href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06"
-            target="_blank"
-          >
-            test study name 
-            <i
-              aria-hidden="true"
-              class="external small link icon"
-            />
-          </a>
           <div
-            class="ui bulleted horizontal list"
-            role="list"
-          >
-            <div
-              class="item"
-              role="listitem"
-            >
-              Created
-               by zhux3 
-              <time
-                datetime="2019-08-26T18:22:41.000Z"
-                title="26 Aug 2019"
-              >
-                4 months from now
-              </time>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <code>
-                zhux3/sd-8wx8qq06
-              </code>
-            </div>
-          </div>
+            class="ui basic horizontal label text-10"
+          />
         </div>
-      </div>
-      <div
-        class="item"
-        role="listitem"
-      >
         <div
-          class="right floated content"
+          class="item noMargin"
+          role="listitem"
         >
-          <button
-            class="ui mini basic primary right floated button"
-          >
-            <i
-              aria-hidden="true"
-              class="pencil icon"
-            />
-            EDIT
-          </button>
-          <button
-            class="ui mini basic negative right floated button ml-10"
-          >
-            <i
-              aria-hidden="true"
-              class="unlink icon"
-            />
-            UNLINK
-          </button>
-        </div>
-        <i
-          aria-hidden="true"
-          class="sliders horizontal icon"
-        />
-        <div
-          class="content"
-        >
+          UI
+           
           <a
-            class="header"
-            href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06-bwa-mem"
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
             target="_blank"
-          >
-            test study name bwa-mem 
-            <i
-              aria-hidden="true"
-              class="external small link icon"
-            />
-          </a>
-          <div
-            class="ui bulleted horizontal list"
-            role="list"
-          >
-            <div
-              class="item"
-              role="listitem"
-            >
-              Created
-               by zhux3 
-              <time
-                datetime="2019-08-26T18:22:42.000Z"
-                title="26 Aug 2019"
-              >
-                4 months from now
-              </time>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              bwa_mem
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <code>
-                zhux3/sd-8wx8qq06-bwa-mem
-              </code>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="item"
-        role="listitem"
-      >
-        <div
-          class="right floated content"
-        >
-          <button
-            class="ui mini basic primary right floated button"
-          >
-            <i
-              aria-hidden="true"
-              class="pencil icon"
-            />
-            EDIT
-          </button>
-          <button
-            class="ui mini basic negative right floated button ml-10"
-          >
-            <i
-              aria-hidden="true"
-              class="unlink icon"
-            />
-            UNLINK
-          </button>
-        </div>
-        <i
-          aria-hidden="true"
-          class="sliders horizontal icon"
-        />
-        <div
-          class="content"
-        >
-          <a
-            class="header"
-            href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06-gatk-haplotypecaller"
-            target="_blank"
-          >
-            test study name gatk-haplotypecaller 
-            <i
-              aria-hidden="true"
-              class="external small link icon"
-            />
-          </a>
-          <div
-            class="ui bulleted horizontal list"
-            role="list"
-          >
-            <div
-              class="item"
-              role="listitem"
-            >
-              Created
-               by zhux3 
-              <time
-                datetime="2019-08-26T18:22:43.000Z"
-                title="26 Aug 2019"
-              >
-                4 months from now
-              </time>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              gatk_haplotypecaller
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <code>
-                zhux3/sd-8wx8qq06-gatk-haplotypecaller
-              </code>
-            </div>
-          </div>
+          />
         </div>
       </div>
     </div>
@@ -1558,332 +1743,369 @@ exports[`renders study Cavatica projects view correctly 4`] = `
       </div>
     </div>
   </div>
-  <section
-    id="study"
+  <div
+    class="page"
   >
-    <div
-      class="ui basic secondary segment"
+    <section
+      id="study"
     >
+      <div
+        class="ui basic secondary segment"
+      >
+        <div
+          class="ui container"
+        >
+          <h1
+            class="ui header"
+          >
+            benchmark extensible e-business
+          </h1>
+          <button
+            class="ui tiny basic icon button"
+          >
+            <i
+              aria-hidden="true"
+              class="copy icon"
+            />
+            SD_8WX8QQ06
+          </button>
+        </div>
+      </div>
       <div
         class="ui container"
       >
-        <h1
-          class="ui header"
+        <div
+          class="ui pink pointing secondary menu"
         >
-          benchmark extensible e-business
-        </h1>
-        <button
-          class="ui tiny basic icon button"
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/basic-info/info"
+          >
+            Basic Info
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/dashboard"
+          >
+            Dashboard
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/documents"
+          >
+            Documents
+          </a>
+          <a
+            aria-current="page"
+            class="active item active"
+            href="/study/SD_8WX8QQ06/cavatica"
+          >
+            Cavatica
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/logs"
+          >
+            Logs
+          </a>
+        </div>
+      </div>
+    </section>
+    <div
+      class="ui basic vertical segment ui container"
+    >
+      <button
+        class="ui mini primary right floated button"
+      >
+        <i
+          aria-hidden="true"
+          class="linkify icon"
+        />
+        LINK PROJECT
+      </button>
+      <button
+        class="ui mini basic primary right floated button"
+      >
+        <i
+          aria-hidden="true"
+          class="add icon"
+        />
+        NEW PROJECT
+      </button>
+      <h2
+        class="ui header noMargin"
+      >
+        Cavatica Projects
+      </h2>
+      <div
+        class="ui divided relaxed list"
+        role="list"
+      >
+        <div
+          class="item"
+          role="listitem"
         >
+          <div
+            class="right floated content"
+          >
+            <button
+              class="ui mini basic primary right floated button"
+            >
+              <i
+                aria-hidden="true"
+                class="pencil icon"
+              />
+              EDIT
+            </button>
+            <button
+              class="ui mini basic negative right floated button ml-10"
+            >
+              <i
+                aria-hidden="true"
+                class="unlink icon"
+              />
+              UNLINK
+            </button>
+          </div>
           <i
             aria-hidden="true"
-            class="copy icon"
+            class="paper plane outline icon"
           />
-          SD_8WX8QQ06
-        </button>
-      </div>
-    </div>
-    <div
-      class="ui container"
-    >
-      <div
-        class="ui pink pointing secondary menu"
-      >
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/basic-info/info"
-        >
-          Basic Info
           <div
-            class="ui blue mini label"
+            class="content"
           >
-            BETA
+            <a
+              class="header"
+              href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06"
+              target="_blank"
+            >
+              test study name 
+              <i
+                aria-hidden="true"
+                class="external small link icon"
+              />
+            </a>
+            <div
+              class="ui bulleted horizontal list"
+              role="list"
+            >
+              <div
+                class="item"
+                role="listitem"
+              >
+                Created
+                 by zhux3 
+                <time
+                  datetime="2019-08-26T18:22:41.000Z"
+                  title="26 Aug 2019"
+                >
+                  4 months from now
+                </time>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <code>
+                  zhux3/sd-8wx8qq06
+                </code>
+              </div>
+            </div>
           </div>
-        </a>
-        <a
+        </div>
+        <div
           class="item"
-          href="/study/SD_8WX8QQ06/dashboard"
+          role="listitem"
         >
-          Dashboard
-        </a>
-        <a
+          <div
+            class="right floated content"
+          >
+            <button
+              class="ui mini basic primary right floated button"
+            >
+              <i
+                aria-hidden="true"
+                class="pencil icon"
+              />
+              EDIT
+            </button>
+            <button
+              class="ui mini basic negative right floated button ml-10"
+            >
+              <i
+                aria-hidden="true"
+                class="unlink icon"
+              />
+              UNLINK
+            </button>
+          </div>
+          <i
+            aria-hidden="true"
+            class="sliders horizontal icon"
+          />
+          <div
+            class="content"
+          >
+            <a
+              class="header"
+              href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06-bwa-mem"
+              target="_blank"
+            >
+              test study name bwa-mem 
+              <i
+                aria-hidden="true"
+                class="external small link icon"
+              />
+            </a>
+            <div
+              class="ui bulleted horizontal list"
+              role="list"
+            >
+              <div
+                class="item"
+                role="listitem"
+              >
+                Created
+                 by zhux3 
+                <time
+                  datetime="2019-08-26T18:22:42.000Z"
+                  title="26 Aug 2019"
+                >
+                  4 months from now
+                </time>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                bwa_mem
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <code>
+                  zhux3/sd-8wx8qq06-bwa-mem
+                </code>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
           class="item"
-          href="/study/SD_8WX8QQ06/documents"
+          role="listitem"
         >
-          Documents
-        </a>
-        <a
-          aria-current="page"
-          class="active item active"
-          href="/study/SD_8WX8QQ06/cavatica"
-        >
-          Cavatica
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/logs"
-        >
-          Logs
-        </a>
+          <div
+            class="right floated content"
+          >
+            <button
+              class="ui mini basic primary right floated button"
+            >
+              <i
+                aria-hidden="true"
+                class="pencil icon"
+              />
+              EDIT
+            </button>
+            <button
+              class="ui mini basic negative right floated button ml-10"
+            >
+              <i
+                aria-hidden="true"
+                class="unlink icon"
+              />
+              UNLINK
+            </button>
+          </div>
+          <i
+            aria-hidden="true"
+            class="sliders horizontal icon"
+          />
+          <div
+            class="content"
+          >
+            <a
+              class="header"
+              href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06-gatk-haplotypecaller"
+              target="_blank"
+            >
+              test study name gatk-haplotypecaller 
+              <i
+                aria-hidden="true"
+                class="external small link icon"
+              />
+            </a>
+            <div
+              class="ui bulleted horizontal list"
+              role="list"
+            >
+              <div
+                class="item"
+                role="listitem"
+              >
+                Created
+                 by zhux3 
+                <time
+                  datetime="2019-08-26T18:22:43.000Z"
+                  title="26 Aug 2019"
+                >
+                  4 months from now
+                </time>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                gatk_haplotypecaller
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <code>
+                  zhux3/sd-8wx8qq06-gatk-haplotypecaller
+                </code>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
   <div
-    class="ui basic vertical segment ui container"
+    class="ui segment footer"
   >
-    <button
-      class="ui mini primary right floated button"
-    >
-      <i
-        aria-hidden="true"
-        class="linkify icon"
-      />
-      LINK PROJECT
-    </button>
-    <button
-      class="ui mini basic primary right floated button"
-    >
-      <i
-        aria-hidden="true"
-        class="add icon"
-      />
-      NEW PROJECT
-    </button>
-    <h2
-      class="ui header noMargin"
-    >
-      Cavatica Projects
-    </h2>
     <div
-      class="ui divided relaxed list"
-      role="list"
+      class="ui container text-10"
     >
       <div
-        class="item"
-        role="listitem"
+        class="ui horizontal list"
+        role="list"
       >
         <div
-          class="right floated content"
+          class="item"
+          role="listitem"
         >
-          <button
-            class="ui mini basic primary right floated button"
-          >
-            <i
-              aria-hidden="true"
-              class="pencil icon"
-            />
-            EDIT
-          </button>
-          <button
-            class="ui mini basic negative right floated button ml-10"
-          >
-            <i
-              aria-hidden="true"
-              class="unlink icon"
-            />
-            UNLINK
-          </button>
-        </div>
-        <i
-          aria-hidden="true"
-          class="paper plane outline icon"
-        />
-        <div
-          class="content"
-        >
-          <a
-            class="header"
-            href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06"
-            target="_blank"
-          >
-            test study name 
-            <i
-              aria-hidden="true"
-              class="external small link icon"
-            />
-          </a>
           <div
-            class="ui bulleted horizontal list"
-            role="list"
-          >
-            <div
-              class="item"
-              role="listitem"
-            >
-              Created
-               by zhux3 
-              <time
-                datetime="2019-08-26T18:22:41.000Z"
-                title="26 Aug 2019"
-              >
-                4 months from now
-              </time>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <code>
-                zhux3/sd-8wx8qq06
-              </code>
-            </div>
-          </div>
+            class="ui basic horizontal label text-10"
+          />
         </div>
-      </div>
-      <div
-        class="item"
-        role="listitem"
-      >
         <div
-          class="right floated content"
+          class="item noMargin"
+          role="listitem"
         >
-          <button
-            class="ui mini basic primary right floated button"
-          >
-            <i
-              aria-hidden="true"
-              class="pencil icon"
-            />
-            EDIT
-          </button>
-          <button
-            class="ui mini basic negative right floated button ml-10"
-          >
-            <i
-              aria-hidden="true"
-              class="unlink icon"
-            />
-            UNLINK
-          </button>
-        </div>
-        <i
-          aria-hidden="true"
-          class="sliders horizontal icon"
-        />
-        <div
-          class="content"
-        >
+          UI
+           
           <a
-            class="header"
-            href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06-bwa-mem"
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
             target="_blank"
-          >
-            test study name bwa-mem 
-            <i
-              aria-hidden="true"
-              class="external small link icon"
-            />
-          </a>
-          <div
-            class="ui bulleted horizontal list"
-            role="list"
-          >
-            <div
-              class="item"
-              role="listitem"
-            >
-              Created
-               by zhux3 
-              <time
-                datetime="2019-08-26T18:22:42.000Z"
-                title="26 Aug 2019"
-              >
-                4 months from now
-              </time>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              bwa_mem
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <code>
-                zhux3/sd-8wx8qq06-bwa-mem
-              </code>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="item"
-        role="listitem"
-      >
-        <div
-          class="right floated content"
-        >
-          <button
-            class="ui mini basic primary right floated button"
-          >
-            <i
-              aria-hidden="true"
-              class="pencil icon"
-            />
-            EDIT
-          </button>
-          <button
-            class="ui mini basic negative right floated button ml-10"
-          >
-            <i
-              aria-hidden="true"
-              class="unlink icon"
-            />
-            UNLINK
-          </button>
-        </div>
-        <i
-          aria-hidden="true"
-          class="sliders horizontal icon"
-        />
-        <div
-          class="content"
-        >
-          <a
-            class="header"
-            href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06-gatk-haplotypecaller"
-            target="_blank"
-          >
-            test study name gatk-haplotypecaller 
-            <i
-              aria-hidden="true"
-              class="external small link icon"
-            />
-          </a>
-          <div
-            class="ui bulleted horizontal list"
-            role="list"
-          >
-            <div
-              class="item"
-              role="listitem"
-            >
-              Created
-               by zhux3 
-              <time
-                datetime="2019-08-26T18:22:43.000Z"
-                title="26 Aug 2019"
-              >
-                4 months from now
-              </time>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              gatk_haplotypecaller
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <code>
-                zhux3/sd-8wx8qq06-gatk-haplotypecaller
-              </code>
-            </div>
-          </div>
+          />
         </div>
       </div>
     </div>
@@ -2018,332 +2240,369 @@ exports[`renders study Cavatica projects view correctly 5`] = `
       </div>
     </div>
   </div>
-  <section
-    id="study"
+  <div
+    class="page"
   >
-    <div
-      class="ui basic secondary segment"
+    <section
+      id="study"
     >
+      <div
+        class="ui basic secondary segment"
+      >
+        <div
+          class="ui container"
+        >
+          <h1
+            class="ui header"
+          >
+            benchmark extensible e-business
+          </h1>
+          <button
+            class="ui tiny basic icon button"
+          >
+            <i
+              aria-hidden="true"
+              class="copy icon"
+            />
+            SD_8WX8QQ06
+          </button>
+        </div>
+      </div>
       <div
         class="ui container"
       >
-        <h1
-          class="ui header"
+        <div
+          class="ui pink pointing secondary menu"
         >
-          benchmark extensible e-business
-        </h1>
-        <button
-          class="ui tiny basic icon button"
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/basic-info/info"
+          >
+            Basic Info
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/dashboard"
+          >
+            Dashboard
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/documents"
+          >
+            Documents
+          </a>
+          <a
+            aria-current="page"
+            class="active item active"
+            href="/study/SD_8WX8QQ06/cavatica"
+          >
+            Cavatica
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/logs"
+          >
+            Logs
+          </a>
+        </div>
+      </div>
+    </section>
+    <div
+      class="ui basic vertical segment ui container"
+    >
+      <button
+        class="ui mini primary right floated button"
+      >
+        <i
+          aria-hidden="true"
+          class="linkify icon"
+        />
+        LINK PROJECT
+      </button>
+      <button
+        class="ui mini basic primary right floated button"
+      >
+        <i
+          aria-hidden="true"
+          class="add icon"
+        />
+        NEW PROJECT
+      </button>
+      <h2
+        class="ui header noMargin"
+      >
+        Cavatica Projects
+      </h2>
+      <div
+        class="ui divided relaxed list"
+        role="list"
+      >
+        <div
+          class="item"
+          role="listitem"
         >
+          <div
+            class="right floated content"
+          >
+            <button
+              class="ui mini basic primary right floated button"
+            >
+              <i
+                aria-hidden="true"
+                class="pencil icon"
+              />
+              EDIT
+            </button>
+            <button
+              class="ui mini basic negative right floated button ml-10"
+            >
+              <i
+                aria-hidden="true"
+                class="unlink icon"
+              />
+              UNLINK
+            </button>
+          </div>
           <i
             aria-hidden="true"
-            class="copy icon"
+            class="paper plane outline icon"
           />
-          SD_8WX8QQ06
-        </button>
-      </div>
-    </div>
-    <div
-      class="ui container"
-    >
-      <div
-        class="ui pink pointing secondary menu"
-      >
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/basic-info/info"
-        >
-          Basic Info
           <div
-            class="ui blue mini label"
+            class="content"
           >
-            BETA
+            <a
+              class="header"
+              href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06"
+              target="_blank"
+            >
+              test study name 
+              <i
+                aria-hidden="true"
+                class="external small link icon"
+              />
+            </a>
+            <div
+              class="ui bulleted horizontal list"
+              role="list"
+            >
+              <div
+                class="item"
+                role="listitem"
+              >
+                Created
+                 by zhux3 
+                <time
+                  datetime="2019-08-26T18:22:41.000Z"
+                  title="26 Aug 2019"
+                >
+                  4 months from now
+                </time>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <code>
+                  zhux3/sd-8wx8qq06
+                </code>
+              </div>
+            </div>
           </div>
-        </a>
-        <a
+        </div>
+        <div
           class="item"
-          href="/study/SD_8WX8QQ06/dashboard"
+          role="listitem"
         >
-          Dashboard
-        </a>
-        <a
+          <div
+            class="right floated content"
+          >
+            <button
+              class="ui mini basic primary right floated button"
+            >
+              <i
+                aria-hidden="true"
+                class="pencil icon"
+              />
+              EDIT
+            </button>
+            <button
+              class="ui mini basic negative right floated button ml-10"
+            >
+              <i
+                aria-hidden="true"
+                class="unlink icon"
+              />
+              UNLINK
+            </button>
+          </div>
+          <i
+            aria-hidden="true"
+            class="sliders horizontal icon"
+          />
+          <div
+            class="content"
+          >
+            <a
+              class="header"
+              href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06-bwa-mem"
+              target="_blank"
+            >
+              test study name bwa-mem 
+              <i
+                aria-hidden="true"
+                class="external small link icon"
+              />
+            </a>
+            <div
+              class="ui bulleted horizontal list"
+              role="list"
+            >
+              <div
+                class="item"
+                role="listitem"
+              >
+                Created
+                 by zhux3 
+                <time
+                  datetime="2019-08-26T18:22:42.000Z"
+                  title="26 Aug 2019"
+                >
+                  4 months from now
+                </time>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                bwa_mem
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <code>
+                  zhux3/sd-8wx8qq06-bwa-mem
+                </code>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
           class="item"
-          href="/study/SD_8WX8QQ06/documents"
+          role="listitem"
         >
-          Documents
-        </a>
-        <a
-          aria-current="page"
-          class="active item active"
-          href="/study/SD_8WX8QQ06/cavatica"
-        >
-          Cavatica
-        </a>
-        <a
-          class="item"
-          href="/study/SD_8WX8QQ06/logs"
-        >
-          Logs
-        </a>
+          <div
+            class="right floated content"
+          >
+            <button
+              class="ui mini basic primary right floated button"
+            >
+              <i
+                aria-hidden="true"
+                class="pencil icon"
+              />
+              EDIT
+            </button>
+            <button
+              class="ui mini basic negative right floated button ml-10"
+            >
+              <i
+                aria-hidden="true"
+                class="unlink icon"
+              />
+              UNLINK
+            </button>
+          </div>
+          <i
+            aria-hidden="true"
+            class="sliders horizontal icon"
+          />
+          <div
+            class="content"
+          >
+            <a
+              class="header"
+              href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06-gatk-haplotypecaller"
+              target="_blank"
+            >
+              test study name gatk-haplotypecaller 
+              <i
+                aria-hidden="true"
+                class="external small link icon"
+              />
+            </a>
+            <div
+              class="ui bulleted horizontal list"
+              role="list"
+            >
+              <div
+                class="item"
+                role="listitem"
+              >
+                Created
+                 by zhux3 
+                <time
+                  datetime="2019-08-26T18:22:43.000Z"
+                  title="26 Aug 2019"
+                >
+                  4 months from now
+                </time>
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                gatk_haplotypecaller
+              </div>
+              <div
+                class="item"
+                role="listitem"
+              >
+                <code>
+                  zhux3/sd-8wx8qq06-gatk-haplotypecaller
+                </code>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
   <div
-    class="ui basic vertical segment ui container"
+    class="ui segment footer"
   >
-    <button
-      class="ui mini primary right floated button"
-    >
-      <i
-        aria-hidden="true"
-        class="linkify icon"
-      />
-      LINK PROJECT
-    </button>
-    <button
-      class="ui mini basic primary right floated button"
-    >
-      <i
-        aria-hidden="true"
-        class="add icon"
-      />
-      NEW PROJECT
-    </button>
-    <h2
-      class="ui header noMargin"
-    >
-      Cavatica Projects
-    </h2>
     <div
-      class="ui divided relaxed list"
-      role="list"
+      class="ui container text-10"
     >
       <div
-        class="item"
-        role="listitem"
+        class="ui horizontal list"
+        role="list"
       >
         <div
-          class="right floated content"
+          class="item"
+          role="listitem"
         >
-          <button
-            class="ui mini basic primary right floated button"
-          >
-            <i
-              aria-hidden="true"
-              class="pencil icon"
-            />
-            EDIT
-          </button>
-          <button
-            class="ui mini basic negative right floated button ml-10"
-          >
-            <i
-              aria-hidden="true"
-              class="unlink icon"
-            />
-            UNLINK
-          </button>
-        </div>
-        <i
-          aria-hidden="true"
-          class="paper plane outline icon"
-        />
-        <div
-          class="content"
-        >
-          <a
-            class="header"
-            href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06"
-            target="_blank"
-          >
-            test study name 
-            <i
-              aria-hidden="true"
-              class="external small link icon"
-            />
-          </a>
           <div
-            class="ui bulleted horizontal list"
-            role="list"
-          >
-            <div
-              class="item"
-              role="listitem"
-            >
-              Created
-               by zhux3 
-              <time
-                datetime="2019-08-26T18:22:41.000Z"
-                title="26 Aug 2019"
-              >
-                4 months from now
-              </time>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <code>
-                zhux3/sd-8wx8qq06
-              </code>
-            </div>
-          </div>
+            class="ui basic horizontal label text-10"
+          />
         </div>
-      </div>
-      <div
-        class="item"
-        role="listitem"
-      >
         <div
-          class="right floated content"
+          class="item noMargin"
+          role="listitem"
         >
-          <button
-            class="ui mini basic primary right floated button"
-          >
-            <i
-              aria-hidden="true"
-              class="pencil icon"
-            />
-            EDIT
-          </button>
-          <button
-            class="ui mini basic negative right floated button ml-10"
-          >
-            <i
-              aria-hidden="true"
-              class="unlink icon"
-            />
-            UNLINK
-          </button>
-        </div>
-        <i
-          aria-hidden="true"
-          class="sliders horizontal icon"
-        />
-        <div
-          class="content"
-        >
+          UI
+           
           <a
-            class="header"
-            href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06-bwa-mem"
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
             target="_blank"
-          >
-            test study name bwa-mem 
-            <i
-              aria-hidden="true"
-              class="external small link icon"
-            />
-          </a>
-          <div
-            class="ui bulleted horizontal list"
-            role="list"
-          >
-            <div
-              class="item"
-              role="listitem"
-            >
-              Created
-               by zhux3 
-              <time
-                datetime="2019-08-26T18:22:42.000Z"
-                title="26 Aug 2019"
-              >
-                4 months from now
-              </time>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              bwa_mem
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <code>
-                zhux3/sd-8wx8qq06-bwa-mem
-              </code>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="item"
-        role="listitem"
-      >
-        <div
-          class="right floated content"
-        >
-          <button
-            class="ui mini basic primary right floated button"
-          >
-            <i
-              aria-hidden="true"
-              class="pencil icon"
-            />
-            EDIT
-          </button>
-          <button
-            class="ui mini basic negative right floated button ml-10"
-          >
-            <i
-              aria-hidden="true"
-              class="unlink icon"
-            />
-            UNLINK
-          </button>
-        </div>
-        <i
-          aria-hidden="true"
-          class="sliders horizontal icon"
-        />
-        <div
-          class="content"
-        >
-          <a
-            class="header"
-            href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06-gatk-haplotypecaller"
-            target="_blank"
-          >
-            test study name gatk-haplotypecaller 
-            <i
-              aria-hidden="true"
-              class="external small link icon"
-            />
-          </a>
-          <div
-            class="ui bulleted horizontal list"
-            role="list"
-          >
-            <div
-              class="item"
-              role="listitem"
-            >
-              Created
-               by zhux3 
-              <time
-                datetime="2019-08-26T18:22:43.000Z"
-                title="26 Aug 2019"
-              >
-                4 months from now
-              </time>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              gatk_haplotypecaller
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <code>
-                zhux3/sd-8wx8qq06-gatk-haplotypecaller
-              </code>
-            </div>
-          </div>
+          />
         </div>
       </div>
     </div>

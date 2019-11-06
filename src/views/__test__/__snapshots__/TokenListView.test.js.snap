@@ -26,101 +26,138 @@ exports[`renders token list correctly - displaying look & hidden look 1`] = `
     </div>
   </div>
   <div
-    class="ui basic segment ui container"
+    class="page"
   >
-    <h3
-      class="ui header"
-    >
-      Manage Developer Download Tokens
-    </h3>
     <div
-      class="ui basic segment"
+      class="ui basic segment ui container"
     >
-      Developer download tokens allow download of any file using the
-       
-      <code>
-        ?token=
-      </code>
-       query parameter or passed in the Authorization header with a 
-      <code>
-        Token
-      </code>
-       prefix.
-      <div
-        class="ui warning message"
+      <h3
+        class="ui header"
       >
-        <div
-          class="content"
-        >
-          <div
-            class="header"
-          >
-            Keep these tokens private!
-          </div>
-          <p>
-            They will not be displayed again after being created.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div
-      class="ui basic segment"
-    >
+        Manage Developer Download Tokens
+      </h3>
       <div
-        class="ui basic very padded segment"
+        class="ui basic segment"
       >
+        Developer download tokens allow download of any file using the
+         
+        <code>
+          ?token=
+        </code>
+         query parameter or passed in the Authorization header with a 
+        <code>
+          Token
+        </code>
+         prefix.
         <div
-          class="ui active transition visible inverted dimmer"
-          style="display: flex;"
+          class="ui warning message"
         >
           <div
             class="content"
           >
             <div
-              class="ui inverted text loader"
+              class="header"
             >
-              Loading tokens...
+              Keep these tokens private!
             </div>
+            <p>
+              They will not be displayed again after being created.
+            </p>
           </div>
         </div>
       </div>
-      <h3
-        class="ui header"
-      >
-        Make a new token
-      </h3>
       <div
-        class="ui segment"
+        class="ui basic segment"
       >
-        <form
-          class="ui form"
+        <div
+          class="ui basic very padded segment"
         >
           <div
-            class="field"
+            class="ui active transition visible inverted dimmer"
+            style="display: flex;"
           >
-            <label>
-              Name:
-              <input
-                data-testid="token-name-input"
-                focus="false"
-                name="name"
-                type="text"
-                value=""
-              />
-            </label>
+            <div
+              class="content"
+            >
+              <div
+                class="ui inverted text loader"
+              >
+                Loading tokens...
+              </div>
+            </div>
           </div>
-          <button
-            class="ui disabled button"
-            disabled=""
-            tabindex="-1"
-            type="submit"
+        </div>
+        <h3
+          class="ui header"
+        >
+          Make a new token
+        </h3>
+        <div
+          class="ui segment"
+        >
+          <form
+            class="ui form"
           >
-            Create
-          </button>
+            <div
+              class="field"
+            >
+              <label>
+                Name:
+                <input
+                  data-testid="token-name-input"
+                  focus="false"
+                  name="name"
+                  type="text"
+                  value=""
+                />
+              </label>
+            </div>
+            <button
+              class="ui disabled button"
+              disabled=""
+              tabindex="-1"
+              type="submit"
+            >
+              Create
+            </button>
+            <div
+              class="ui hidden negative message"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ui segment footer"
+  >
+    <div
+      class="ui container text-10"
+    >
+      <div
+        class="ui horizontal list"
+        role="list"
+      >
+        <div
+          class="item"
+          role="listitem"
+        >
           <div
-            class="ui hidden negative message"
+            class="ui basic horizontal label text-10"
           />
-        </form>
+        </div>
+        <div
+          class="item noMargin"
+          role="listitem"
+        >
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -256,241 +293,278 @@ exports[`renders token list correctly - displaying look & hidden look 2`] = `
     </div>
   </div>
   <div
-    class="ui basic segment ui container"
+    class="page"
   >
-    <h3
-      class="ui header"
-    >
-      Manage Developer Download Tokens
-    </h3>
     <div
-      class="ui basic segment"
+      class="ui basic segment ui container"
     >
-      Developer download tokens allow download of any file using the
-       
-      <code>
-        ?token=
-      </code>
-       query parameter or passed in the Authorization header with a 
-      <code>
-        Token
-      </code>
-       prefix.
-      <div
-        class="ui warning message"
+      <h3
+        class="ui header"
       >
+        Manage Developer Download Tokens
+      </h3>
+      <div
+        class="ui basic segment"
+      >
+        Developer download tokens allow download of any file using the
+         
+        <code>
+          ?token=
+        </code>
+         query parameter or passed in the Authorization header with a 
+        <code>
+          Token
+        </code>
+         prefix.
         <div
-          class="content"
+          class="ui warning message"
         >
           <div
-            class="header"
+            class="content"
           >
-            Keep these tokens private!
+            <div
+              class="header"
+            >
+              Keep these tokens private!
+            </div>
+            <p>
+              They will not be displayed again after being created.
+            </p>
           </div>
-          <p>
-            They will not be displayed again after being created.
-          </p>
+        </div>
+      </div>
+      <div
+        class="ui basic segment"
+      >
+        <div
+          class="ui relaxed list"
+          role="list"
+        >
+          <div
+            class="item"
+            role="listitem"
+          >
+            <img
+              alt="John"
+              class="ui avatar image"
+              src="https://docs.atlassian.com/aui/8.3.1/docs/images/avatar-person.svg"
+            />
+            <div
+              class="content"
+            >
+              <div
+                class="header"
+              >
+                my token 1
+              </div>
+              Created by 
+              John
+               
+              <time
+                datetime="2019-06-13T12:05:39.381Z"
+                title="13 Jun 2019"
+              >
+                2 months from now
+              </time>
+            </div>
+            <div
+              class="right floated content"
+            >
+              <div
+                class="ui action input"
+              >
+                <input
+                  readonly=""
+                  type="text"
+                  value="blahtestingtokenstringhere"
+                />
+                <button
+                  class="ui icon button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="copy icon"
+                  />
+                </button>
+                <button
+                  class="ui icon negative button"
+                  data-testid="delete-token-button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="trash icon"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="item"
+            role="listitem"
+          >
+            <img
+              alt="John"
+              class="ui avatar image"
+              src="https://docs.atlassian.com/aui/8.3.1/docs/images/avatar-person.svg"
+            />
+            <div
+              class="content"
+            >
+              <div
+                class="header"
+              >
+                my token 2
+              </div>
+              Created by 
+              John
+               
+              <time
+                datetime="2019-06-13T12:05:39.381Z"
+                title="13 Jun 2019"
+              >
+                2 months from now
+              </time>
+            </div>
+            <div
+              class="right floated content"
+            >
+              <div
+                class="ui action input"
+              >
+                <input
+                  readonly=""
+                  type="text"
+                  value="test***********************"
+                />
+                <button
+                  class="ui icon negative button"
+                  data-testid="delete-token-button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="trash icon"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="item"
+            role="listitem"
+          >
+            <img
+              alt="unknown"
+              class="ui avatar image"
+              src="test-file-stub"
+            />
+            <div
+              class="content"
+            >
+              <div
+                class="header"
+              >
+                my token 3
+              </div>
+              <time
+                datetime="2019-06-13T12:05:39.381Z"
+                title="13 Jun 2019"
+              >
+                2 months from now
+              </time>
+            </div>
+            <div
+              class="right floated content"
+            >
+              <div
+                class="ui action input"
+              >
+                <input
+                  readonly=""
+                  type="text"
+                  value="test***********************"
+                />
+                <button
+                  class="ui icon negative button"
+                  data-testid="delete-token-button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="trash icon"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h3
+          class="ui header"
+        >
+          Make a new token
+        </h3>
+        <div
+          class="ui segment"
+        >
+          <form
+            class="ui form"
+          >
+            <div
+              class="field"
+            >
+              <label>
+                Name:
+                <input
+                  data-testid="token-name-input"
+                  focus="true"
+                  name="name"
+                  type="text"
+                  value="my token 4"
+                />
+              </label>
+            </div>
+            <button
+              class="ui button"
+              type="submit"
+            >
+              Create
+            </button>
+            <div
+              class="ui hidden negative message"
+            />
+          </form>
         </div>
       </div>
     </div>
+  </div>
+  <div
+    class="ui segment footer"
+  >
     <div
-      class="ui basic segment"
+      class="ui container text-10"
     >
       <div
-        class="ui relaxed list"
+        class="ui horizontal list"
         role="list"
       >
         <div
           class="item"
           role="listitem"
         >
-          <img
-            alt="John"
-            class="ui avatar image"
-            src="https://docs.atlassian.com/aui/8.3.1/docs/images/avatar-person.svg"
+          <div
+            class="ui basic horizontal label text-10"
           />
-          <div
-            class="content"
-          >
-            <div
-              class="header"
-            >
-              my token 1
-            </div>
-            Created by 
-            John
-             
-            <time
-              datetime="2019-06-13T12:05:39.381Z"
-              title="13 Jun 2019"
-            >
-              2 months from now
-            </time>
-          </div>
-          <div
-            class="right floated content"
-          >
-            <div
-              class="ui action input"
-            >
-              <input
-                readonly=""
-                type="text"
-                value="blahtestingtokenstringhere"
-              />
-              <button
-                class="ui icon button"
-              >
-                <i
-                  aria-hidden="true"
-                  class="copy icon"
-                />
-              </button>
-              <button
-                class="ui icon negative button"
-                data-testid="delete-token-button"
-              >
-                <i
-                  aria-hidden="true"
-                  class="trash icon"
-                />
-              </button>
-            </div>
-          </div>
         </div>
         <div
-          class="item"
+          class="item noMargin"
           role="listitem"
         >
-          <img
-            alt="John"
-            class="ui avatar image"
-            src="https://docs.atlassian.com/aui/8.3.1/docs/images/avatar-person.svg"
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
           />
-          <div
-            class="content"
-          >
-            <div
-              class="header"
-            >
-              my token 2
-            </div>
-            Created by 
-            John
-             
-            <time
-              datetime="2019-06-13T12:05:39.381Z"
-              title="13 Jun 2019"
-            >
-              2 months from now
-            </time>
-          </div>
-          <div
-            class="right floated content"
-          >
-            <div
-              class="ui action input"
-            >
-              <input
-                readonly=""
-                type="text"
-                value="test***********************"
-              />
-              <button
-                class="ui icon negative button"
-                data-testid="delete-token-button"
-              >
-                <i
-                  aria-hidden="true"
-                  class="trash icon"
-                />
-              </button>
-            </div>
-          </div>
         </div>
-        <div
-          class="item"
-          role="listitem"
-        >
-          <img
-            alt="unknown"
-            class="ui avatar image"
-            src="test-file-stub"
-          />
-          <div
-            class="content"
-          >
-            <div
-              class="header"
-            >
-              my token 3
-            </div>
-            <time
-              datetime="2019-06-13T12:05:39.381Z"
-              title="13 Jun 2019"
-            >
-              2 months from now
-            </time>
-          </div>
-          <div
-            class="right floated content"
-          >
-            <div
-              class="ui action input"
-            >
-              <input
-                readonly=""
-                type="text"
-                value="test***********************"
-              />
-              <button
-                class="ui icon negative button"
-                data-testid="delete-token-button"
-              >
-                <i
-                  aria-hidden="true"
-                  class="trash icon"
-                />
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <h3
-        class="ui header"
-      >
-        Make a new token
-      </h3>
-      <div
-        class="ui segment"
-      >
-        <form
-          class="ui form"
-        >
-          <div
-            class="field"
-          >
-            <label>
-              Name:
-              <input
-                data-testid="token-name-input"
-                focus="true"
-                name="name"
-                type="text"
-                value="my token 4"
-              />
-            </label>
-          </div>
-          <button
-            class="ui button"
-            type="submit"
-          >
-            Create
-          </button>
-          <div
-            class="ui hidden negative message"
-          />
-        </form>
       </div>
     </div>
   </div>

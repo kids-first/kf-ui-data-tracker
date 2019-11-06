@@ -129,406 +129,443 @@ exports[`renders correctly -- default stage (USER role) 1`] = `
     </div>
   </div>
   <div
-    class="ui basic segment ui container stackable grid"
+    class="page"
   >
     <div
-      class="left aligned eight wide column"
+      class="ui basic segment ui container stackable grid"
     >
-      <h1
-        class="ui header"
-      >
-        Your Studies
-      </h1>
-    </div>
-    <div
-      class="right aligned eight wide column"
-    >
-      <a
-        class="ui mini basic primary button"
-        href="/study/new-study/info"
-        role="button"
-      >
-        <i
-          aria-hidden="true"
-          class="add icon"
-        />
-        Add Study
-      </a>
       <div
-        class="ui mini left icon input pr-5"
+        class="left aligned eight wide column"
       >
-        <input
-          placeholder="Search by Study Name"
-          type="text"
-          value=""
-        />
-        <i
-          aria-hidden="true"
-          class="search icon"
-        />
+        <h1
+          class="ui header"
+        >
+          Your Studies
+        </h1>
       </div>
       <div
-        class="ui mini buttons"
+        class="right aligned eight wide column"
       >
-        <button
-          class="ui icon primary button"
-          tabindex="0"
+        <a
+          class="ui mini basic primary button"
+          href="/study/new-study/info"
+          role="button"
         >
           <i
             aria-hidden="true"
-            class="list icon"
+            class="add icon"
           />
-        </button>
-        <button
-          class="ui icon button"
-          tabindex="0"
+          Add Study
+        </a>
+        <div
+          class="ui mini left icon input pr-5"
         >
+          <input
+            placeholder="Search by Study Name"
+            type="text"
+            value=""
+          />
           <i
             aria-hidden="true"
-            class="grid layout icon"
+            class="search icon"
           />
-        </button>
-      </div>
-    </div>
-    <div
-      class="row"
-    >
-      <div
-        class="column"
-      >
-        <table
-          class="ui selectable striped five column table"
+        </div>
+        <div
+          class="ui mini buttons"
         >
-          <thead
-            class=""
+          <button
+            class="ui icon primary button"
+            tabindex="0"
           >
-            <tr
+            <i
+              aria-hidden="true"
+              class="list icon"
+            />
+          </button>
+          <button
+            class="ui icon button"
+            tabindex="0"
+          >
+            <i
+              aria-hidden="true"
+              class="grid layout icon"
+            />
+          </button>
+        </div>
+      </div>
+      <div
+        class="row"
+      >
+        <div
+          class="column"
+        >
+          <table
+            class="ui selectable striped five column table"
+          >
+            <thead
               class=""
             >
-              <th
+              <tr
                 class=""
               >
-                Study Name
-              </th>
-              <th
-                class=""
-              >
-                Kids First Study ID
-              </th>
-              <th
-                class=""
-              >
-                <i
-                  aria-hidden="true"
-                  class="grey clipboard list icon"
-                />
-                Study Info
-              </th>
-              <th
-                class=""
-              >
-                <svg
-                  class="mr-5 vertical-middle"
-                  height="16"
-                  version="1.1"
-                  viewBox="0 0 24 24"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
+                <th
+                  class=""
                 >
-                  <title>
-                    logo-cavatica
-                  </title>
-                  <path
-                    d="M26,13.28a.89.89,0,0,0-1.1-.5l-3.6-8a1.13,1.13,0,0,0,.3-1.1,1,1,0,0,0-1.3-.5c-.1.1-.3.2-.3.3l-5.7-2.4a.75.75,0,0,0-.1-.5,1,1,0,0,0-1.3-.5,1,1,0,0,0-.6.9l-6.5,2.2A1,1,0,1,0,4,4a1.21,1.21,0,0,0,.5.5l-3.4,6.1a.75.75,0,0,0-.5.1.88.88,0,0,0-.5,1.2,1.1,1.1,0,0,0,1,.6l3.1,6.9a.93.93,0,0,0-.3,1.2,1,1,0,0,0,1.3.5.78.78,0,0,0,.4-.4l6.3,2.9a.6.6,0,0,0,.1.4,1,1,0,0,0,1.3.5,1,1,0,0,0,.6-.9l6.9-2.3a1.15,1.15,0,0,0,1.2.4,1,1,0,0,0,.5-1.3,1.21,1.21,0,0,0-.5-.5l2.8-5.3a.93.93,0,0,0,1.2-1.3ZM12.88,17l5.2-.1a.6.6,0,0,0,.1.4,1,1,0,0,0,1.3.5l1.4,2.2Zm-11.1-4.9,2.7,1.5a.85.85,0,0,0,0,.7,1.06,1.06,0,0,0,.7.6l-.4,4.5h-.3l-3.1-6.9C1.48,12.28,1.68,12.18,1.78,12.08ZM21,4.88l3.6,8-.3.3-4.7-3.9a1.1,1.1,0,0,0,0-.8,1.38,1.38,0,0,0-.3-.4l1.1-3.2ZM18.68,16a1.21,1.21,0,0,0-.5.5l-5.4.1a.6.6,0,0,0-.1-.4,1.38,1.38,0,0,0-.3-.4l6.1-6.1h.1ZM7.38,7.88l4.4.2c0,.1,0,.2.1.2a1.56,1.56,0,0,0,.8.6l-.9,6.7a.76.76,0,0,0-.4.1c-.1,0-.1.1-.2.1l-4-7.6C7.28,8.08,7.38,8,7.38,7.88Zm10.4,1.3a1.38,1.38,0,0,0,.3.4l-6,6,.9-6.7h.1a1.21,1.21,0,0,0,.5-.5l4.1.4A.6.6,0,0,0,17.78,9.18Zm0-.8L13.68,8a.6.6,0,0,0-.1-.4,1,1,0,0,0-.4-.5l.1-5.4a.37.37,0,0,0,.3-.1c.1-.1.2-.1.3-.3l4.2,6.8ZM13,1.78l-.1,5.3a.9.9,0,0,0-.5.1,1.06,1.06,0,0,0-.6.7l-4.3-.2a.76.76,0,0,0-.1-.4.35.35,0,0,0-.1-.2Zm-6.4,6.8a.37.37,0,0,0,.3-.1H7l4,7.7v.1l-4.7-2.1c.1-.2,0-.4,0-.6a1.21,1.21,0,0,0-.5-.5Zm-1.1,11a1.38,1.38,0,0,0-.4-.3l.4-4.6c.1,0,.1,0,.2-.1a1.38,1.38,0,0,0,.4-.3l4.7,2.1v.4Zm13.6-3.7-.3-6.1a.37.37,0,0,0,.3-.1c.1-.1.2-.1.3-.2l4.8,4v.4l-4.4,2.4A.87.87,0,0,0,19.08,15.88Zm.7-11.5a.78.78,0,0,0,.4.4l-1.3,3.1c-.2-.1-.4,0-.6,0l-4-6.5,5.4,2.2A2.2,2.2,0,0,0,19.78,4.38Zm-7.4-3.2c.1.1.2.3.3.4L7,6.78a1.27,1.27,0,0,0-.6-.1l-.9-2.5a1.08,1.08,0,0,0,.3-.7Zm-7.6,3.2a.6.6,0,0,0,.4-.1l.9,2.5A.91.91,0,0,0,5.58,8a.74.74,0,0,0,.6.5l-.9,4.3a.6.6,0,0,0-.4.1c-.1.1-.3.2-.4.3l-2.7-1.5v-.6a.78.78,0,0,0-.4-.4Zm.9,16v-.5l5.4-2.7a1,1,0,0,0,.9.4l.6,5.1h-.1a1,1,0,0,0-.5.6Zm8,2.8a1.56,1.56,0,0,0-.8-.6l-.6-5.1.3-.3,8.1,3a.88.88,0,0,0-.1.7Zm7.9-3.4a.6.6,0,0,0-.4.1l-1.4-2.3a.91.91,0,0,0,.2-1.1l4.4-2.3c0,.1.1.1.2.2Z"
-                    fill="#000000"
+                  Study Name
+                </th>
+                <th
+                  class=""
+                >
+                  Kids First Study ID
+                </th>
+                <th
+                  class=""
+                >
+                  <i
+                    aria-hidden="true"
+                    class="grey clipboard list icon"
                   />
-                </svg>
-                <span>
-                  Cavatica Projects
-                </span>
-              </th>
-              <th
-                class=""
-              >
-                <i
-                  aria-hidden="true"
-                  class="grey file icon"
-                />
-                Files
-              </th>
-            </tr>
-          </thead>
-          <tbody
-            class=""
-          >
-            <tr
-              class=""
-              tabindex="0"
-            >
-              <td
-                class=""
-              >
-                benchmark extensible e-business
-              </td>
-              <td
-                class=""
-              >
-                SD_8WX8QQ06
-              </td>
-              <td
-                class=""
-              >
-                <a
-                  class="text-red"
-                  href="/study/SD_8WX8QQ06/basic-info/info"
+                  Study Info
+                </th>
+                <th
+                  class=""
                 >
-                  7/8 complete
-                </a>
-              </td>
-              <td
-                class=""
-              >
-                <div
-                  class="ui horizontal list"
-                  role="list"
-                >
-                  <a
-                    class="item text-red"
-                    href="/study/SD_8WX8QQ06/cavatica"
-                    role="listitem"
+                  <svg
+                    class="mr-5 vertical-middle"
+                    height="16"
+                    version="1.1"
+                    viewBox="0 0 24 24"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    No
-                     projects
-                  </a>
-                </div>
-              </td>
-              <td
-                class=""
-              >
-                <div
-                  class="ui horizontal list"
-                  role="list"
-                >
-                  <a
-                    class="item"
-                    href="/study/SD_8WX8QQ06/documents"
-                    role="listitem"
-                  >
-                    1
-                     files
-                  </a>
-                  <div
-                    class="item"
-                    role="listitem"
-                  >
-                    <div
-                      class="ui orange mini circular empty label"
+                    <title>
+                      logo-cavatica
+                    </title>
+                    <path
+                      d="M26,13.28a.89.89,0,0,0-1.1-.5l-3.6-8a1.13,1.13,0,0,0,.3-1.1,1,1,0,0,0-1.3-.5c-.1.1-.3.2-.3.3l-5.7-2.4a.75.75,0,0,0-.1-.5,1,1,0,0,0-1.3-.5,1,1,0,0,0-.6.9l-6.5,2.2A1,1,0,1,0,4,4a1.21,1.21,0,0,0,.5.5l-3.4,6.1a.75.75,0,0,0-.5.1.88.88,0,0,0-.5,1.2,1.1,1.1,0,0,0,1,.6l3.1,6.9a.93.93,0,0,0-.3,1.2,1,1,0,0,0,1.3.5.78.78,0,0,0,.4-.4l6.3,2.9a.6.6,0,0,0,.1.4,1,1,0,0,0,1.3.5,1,1,0,0,0,.6-.9l6.9-2.3a1.15,1.15,0,0,0,1.2.4,1,1,0,0,0,.5-1.3,1.21,1.21,0,0,0-.5-.5l2.8-5.3a.93.93,0,0,0,1.2-1.3ZM12.88,17l5.2-.1a.6.6,0,0,0,.1.4,1,1,0,0,0,1.3.5l1.4,2.2Zm-11.1-4.9,2.7,1.5a.85.85,0,0,0,0,.7,1.06,1.06,0,0,0,.7.6l-.4,4.5h-.3l-3.1-6.9C1.48,12.28,1.68,12.18,1.78,12.08ZM21,4.88l3.6,8-.3.3-4.7-3.9a1.1,1.1,0,0,0,0-.8,1.38,1.38,0,0,0-.3-.4l1.1-3.2ZM18.68,16a1.21,1.21,0,0,0-.5.5l-5.4.1a.6.6,0,0,0-.1-.4,1.38,1.38,0,0,0-.3-.4l6.1-6.1h.1ZM7.38,7.88l4.4.2c0,.1,0,.2.1.2a1.56,1.56,0,0,0,.8.6l-.9,6.7a.76.76,0,0,0-.4.1c-.1,0-.1.1-.2.1l-4-7.6C7.28,8.08,7.38,8,7.38,7.88Zm10.4,1.3a1.38,1.38,0,0,0,.3.4l-6,6,.9-6.7h.1a1.21,1.21,0,0,0,.5-.5l4.1.4A.6.6,0,0,0,17.78,9.18Zm0-.8L13.68,8a.6.6,0,0,0-.1-.4,1,1,0,0,0-.4-.5l.1-5.4a.37.37,0,0,0,.3-.1c.1-.1.2-.1.3-.3l4.2,6.8ZM13,1.78l-.1,5.3a.9.9,0,0,0-.5.1,1.06,1.06,0,0,0-.6.7l-4.3-.2a.76.76,0,0,0-.1-.4.35.35,0,0,0-.1-.2Zm-6.4,6.8a.37.37,0,0,0,.3-.1H7l4,7.7v.1l-4.7-2.1c.1-.2,0-.4,0-.6a1.21,1.21,0,0,0-.5-.5Zm-1.1,11a1.38,1.38,0,0,0-.4-.3l.4-4.6c.1,0,.1,0,.2-.1a1.38,1.38,0,0,0,.4-.3l4.7,2.1v.4Zm13.6-3.7-.3-6.1a.37.37,0,0,0,.3-.1c.1-.1.2-.1.3-.2l4.8,4v.4l-4.4,2.4A.87.87,0,0,0,19.08,15.88Zm.7-11.5a.78.78,0,0,0,.4.4l-1.3,3.1c-.2-.1-.4,0-.6,0l-4-6.5,5.4,2.2A2.2,2.2,0,0,0,19.78,4.38Zm-7.4-3.2c.1.1.2.3.3.4L7,6.78a1.27,1.27,0,0,0-.6-.1l-.9-2.5a1.08,1.08,0,0,0,.3-.7Zm-7.6,3.2a.6.6,0,0,0,.4-.1l.9,2.5A.91.91,0,0,0,5.58,8a.74.74,0,0,0,.6.5l-.9,4.3a.6.6,0,0,0-.4.1c-.1.1-.3.2-.4.3l-2.7-1.5v-.6a.78.78,0,0,0-.4-.4Zm.9,16v-.5l5.4-2.7a1,1,0,0,0,.9.4l.6,5.1h-.1a1,1,0,0,0-.5.6Zm8,2.8a1.56,1.56,0,0,0-.8-.6l-.6-5.1.3-.3,8.1,3a.88.88,0,0,0-.1.7Zm7.9-3.4a.6.6,0,0,0-.4.1l-1.4-2.3a.91.91,0,0,0,.2-1.1l4.4-2.3c0,.1.1.1.2.2Z"
+                      fill="#000000"
                     />
-                     
-                    1
-                  </div>
-                </div>
-              </td>
-            </tr>
-            <tr
+                  </svg>
+                  <span>
+                    Cavatica Projects
+                  </span>
+                </th>
+                <th
+                  class=""
+                >
+                  <i
+                    aria-hidden="true"
+                    class="grey file icon"
+                  />
+                  Files
+                </th>
+              </tr>
+            </thead>
+            <tbody
               class=""
-              tabindex="0"
             >
-              <td
+              <tr
                 class=""
+                tabindex="0"
               >
-                visualize dynamic users
-              </td>
-              <td
-                class=""
-              >
-                SD_I1L92W57
-              </td>
-              <td
-                class=""
-              >
-                <a
-                  class="text-red"
-                  href="/study/SD_I1L92W57/basic-info/info"
+                <td
+                  class=""
                 >
-                  7/8 complete
-                </a>
-              </td>
-              <td
-                class=""
-              >
-                <div
-                  class="ui horizontal list"
-                  role="list"
+                  benchmark extensible e-business
+                </td>
+                <td
+                  class=""
+                >
+                  SD_8WX8QQ06
+                </td>
+                <td
+                  class=""
                 >
                   <a
-                    class="item text-red"
-                    href="/study/SD_I1L92W57/cavatica"
-                    role="listitem"
+                    class="text-red"
+                    href="/study/SD_8WX8QQ06/basic-info/info"
                   >
-                    No
-                     projects
+                    7/8 complete
                   </a>
-                </div>
-              </td>
-              <td
-                class=""
-              >
-                <div
-                  class="ui horizontal list"
-                  role="list"
+                </td>
+                <td
+                  class=""
                 >
-                  <a
-                    class="item text-red"
-                    href="/study/SD_I1L92W57/documents"
-                    role="listitem"
-                  >
-                    No
-                     files
-                  </a>
-                </div>
-              </td>
-            </tr>
-            <tr
-              class=""
-              tabindex="0"
-            >
-              <td
-                class=""
-              >
-                strategize cross-media markets
-              </td>
-              <td
-                class=""
-              >
-                SD_SG5N41K8
-              </td>
-              <td
-                class=""
-              >
-                <a
-                  class="text-red"
-                  href="/study/SD_SG5N41K8/basic-info/info"
-                >
-                  7/8 complete
-                </a>
-              </td>
-              <td
-                class=""
-              >
-                <div
-                  class="ui horizontal list"
-                  role="list"
-                >
-                  <a
-                    class="item text-red"
-                    href="/study/SD_SG5N41K8/cavatica"
-                    role="listitem"
-                  >
-                    No
-                     projects
-                  </a>
-                </div>
-              </td>
-              <td
-                class=""
-              >
-                <div
-                  class="ui horizontal list"
-                  role="list"
-                >
-                  <a
-                    class="item text-red"
-                    href="/study/SD_SG5N41K8/documents"
-                    role="listitem"
-                  >
-                    No
-                     files
-                  </a>
-                </div>
-              </td>
-            </tr>
-            <tr
-              class=""
-              tabindex="0"
-            >
-              <td
-                class=""
-              >
-                drive distributed architectures
-              </td>
-              <td
-                class=""
-              >
-                SD_0YYP5ZEN
-              </td>
-              <td
-                class=""
-              >
-                <a
-                  class="text-red"
-                  href="/study/SD_0YYP5ZEN/basic-info/info"
-                >
-                  7/8 complete
-                </a>
-              </td>
-              <td
-                class=""
-              >
-                <div
-                  class="ui horizontal list"
-                  role="list"
-                >
-                  <a
-                    class="item"
-                    href="/study/SD_0YYP5ZEN/cavatica"
-                    role="listitem"
-                  >
-                    2
-                     projects
-                  </a>
                   <div
-                    class="item"
-                    role="listitem"
+                    class="ui horizontal list"
+                    role="list"
                   >
-                    <div
-                      class="ui olive mini circular empty label"
-                    />
-                     
-                    1
+                    <a
+                      class="item text-red"
+                      href="/study/SD_8WX8QQ06/cavatica"
+                      role="listitem"
+                    >
+                      No
+                       projects
+                    </a>
                   </div>
+                </td>
+                <td
+                  class=""
+                >
                   <div
-                    class="item"
-                    role="listitem"
+                    class="ui horizontal list"
+                    role="list"
                   >
+                    <a
+                      class="item"
+                      href="/study/SD_8WX8QQ06/documents"
+                      role="listitem"
+                    >
+                      1
+                       files
+                    </a>
                     <div
-                      class="ui olive mini circular empty label"
-                    />
-                     
-                    1
+                      class="item"
+                      role="listitem"
+                    >
+                      <div
+                        class="ui orange mini circular empty label"
+                      />
+                       
+                      1
+                    </div>
                   </div>
-                </div>
-              </td>
-              <td
+                </td>
+              </tr>
+              <tr
                 class=""
+                tabindex="0"
               >
-                <div
-                  class="ui horizontal list"
-                  role="list"
+                <td
+                  class=""
+                >
+                  visualize dynamic users
+                </td>
+                <td
+                  class=""
+                >
+                  SD_I1L92W57
+                </td>
+                <td
+                  class=""
                 >
                   <a
-                    class="item text-red"
-                    href="/study/SD_0YYP5ZEN/documents"
-                    role="listitem"
+                    class="text-red"
+                    href="/study/SD_I1L92W57/basic-info/info"
                   >
-                    No
-                     files
+                    7/8 complete
                   </a>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+                </td>
+                <td
+                  class=""
+                >
+                  <div
+                    class="ui horizontal list"
+                    role="list"
+                  >
+                    <a
+                      class="item text-red"
+                      href="/study/SD_I1L92W57/cavatica"
+                      role="listitem"
+                    >
+                      No
+                       projects
+                    </a>
+                  </div>
+                </td>
+                <td
+                  class=""
+                >
+                  <div
+                    class="ui horizontal list"
+                    role="list"
+                  >
+                    <a
+                      class="item text-red"
+                      href="/study/SD_I1L92W57/documents"
+                      role="listitem"
+                    >
+                      No
+                       files
+                    </a>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                class=""
+                tabindex="0"
+              >
+                <td
+                  class=""
+                >
+                  strategize cross-media markets
+                </td>
+                <td
+                  class=""
+                >
+                  SD_SG5N41K8
+                </td>
+                <td
+                  class=""
+                >
+                  <a
+                    class="text-red"
+                    href="/study/SD_SG5N41K8/basic-info/info"
+                  >
+                    7/8 complete
+                  </a>
+                </td>
+                <td
+                  class=""
+                >
+                  <div
+                    class="ui horizontal list"
+                    role="list"
+                  >
+                    <a
+                      class="item text-red"
+                      href="/study/SD_SG5N41K8/cavatica"
+                      role="listitem"
+                    >
+                      No
+                       projects
+                    </a>
+                  </div>
+                </td>
+                <td
+                  class=""
+                >
+                  <div
+                    class="ui horizontal list"
+                    role="list"
+                  >
+                    <a
+                      class="item text-red"
+                      href="/study/SD_SG5N41K8/documents"
+                      role="listitem"
+                    >
+                      No
+                       files
+                    </a>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                class=""
+                tabindex="0"
+              >
+                <td
+                  class=""
+                >
+                  drive distributed architectures
+                </td>
+                <td
+                  class=""
+                >
+                  SD_0YYP5ZEN
+                </td>
+                <td
+                  class=""
+                >
+                  <a
+                    class="text-red"
+                    href="/study/SD_0YYP5ZEN/basic-info/info"
+                  >
+                    7/8 complete
+                  </a>
+                </td>
+                <td
+                  class=""
+                >
+                  <div
+                    class="ui horizontal list"
+                    role="list"
+                  >
+                    <a
+                      class="item"
+                      href="/study/SD_0YYP5ZEN/cavatica"
+                      role="listitem"
+                    >
+                      2
+                       projects
+                    </a>
+                    <div
+                      class="item"
+                      role="listitem"
+                    >
+                      <div
+                        class="ui olive mini circular empty label"
+                      />
+                       
+                      1
+                    </div>
+                    <div
+                      class="item"
+                      role="listitem"
+                    >
+                      <div
+                        class="ui olive mini circular empty label"
+                      />
+                       
+                      1
+                    </div>
+                  </div>
+                </td>
+                <td
+                  class=""
+                >
+                  <div
+                    class="ui horizontal list"
+                    role="list"
+                  >
+                    <a
+                      class="item text-red"
+                      href="/study/SD_0YYP5ZEN/documents"
+                      role="listitem"
+                    >
+                      No
+                       files
+                    </a>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ui segment footer"
+  >
+    <div
+      class="ui container text-10"
+    >
+      <div
+        class="ui horizontal list"
+        role="list"
+      >
+        <div
+          class="item"
+          role="listitem"
+        >
+          <div
+            class="ui basic horizontal label text-10"
+          />
+        </div>
+        <div
+          class="item noMargin"
+          role="listitem"
+        >
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -664,406 +701,443 @@ exports[`renders correctly -- default stage (USER role) 2`] = `
     </div>
   </div>
   <div
-    class="ui basic segment ui container stackable grid"
+    class="page"
   >
     <div
-      class="left aligned eight wide column"
+      class="ui basic segment ui container stackable grid"
     >
-      <h1
-        class="ui header"
-      >
-        Your Studies
-      </h1>
-    </div>
-    <div
-      class="right aligned eight wide column"
-    >
-      <a
-        class="ui mini basic primary button"
-        href="/study/new-study/info"
-        role="button"
-      >
-        <i
-          aria-hidden="true"
-          class="add icon"
-        />
-        Add Study
-      </a>
       <div
-        class="ui mini left icon input pr-5"
+        class="left aligned eight wide column"
       >
-        <input
-          placeholder="Search by Study Name"
-          type="text"
-          value=""
-        />
-        <i
-          aria-hidden="true"
-          class="search icon"
-        />
+        <h1
+          class="ui header"
+        >
+          Your Studies
+        </h1>
       </div>
       <div
-        class="ui mini buttons"
+        class="right aligned eight wide column"
       >
-        <button
-          class="ui icon primary button"
-          tabindex="0"
+        <a
+          class="ui mini basic primary button"
+          href="/study/new-study/info"
+          role="button"
         >
           <i
             aria-hidden="true"
-            class="list icon"
+            class="add icon"
           />
-        </button>
-        <button
-          class="ui icon button"
-          tabindex="0"
+          Add Study
+        </a>
+        <div
+          class="ui mini left icon input pr-5"
         >
+          <input
+            placeholder="Search by Study Name"
+            type="text"
+            value=""
+          />
           <i
             aria-hidden="true"
-            class="grid layout icon"
+            class="search icon"
           />
-        </button>
-      </div>
-    </div>
-    <div
-      class="row"
-    >
-      <div
-        class="column"
-      >
-        <table
-          class="ui selectable striped five column table"
+        </div>
+        <div
+          class="ui mini buttons"
         >
-          <thead
-            class=""
+          <button
+            class="ui icon primary button"
+            tabindex="0"
           >
-            <tr
+            <i
+              aria-hidden="true"
+              class="list icon"
+            />
+          </button>
+          <button
+            class="ui icon button"
+            tabindex="0"
+          >
+            <i
+              aria-hidden="true"
+              class="grid layout icon"
+            />
+          </button>
+        </div>
+      </div>
+      <div
+        class="row"
+      >
+        <div
+          class="column"
+        >
+          <table
+            class="ui selectable striped five column table"
+          >
+            <thead
               class=""
             >
-              <th
+              <tr
                 class=""
               >
-                Study Name
-              </th>
-              <th
-                class=""
-              >
-                Kids First Study ID
-              </th>
-              <th
-                class=""
-              >
-                <i
-                  aria-hidden="true"
-                  class="grey clipboard list icon"
-                />
-                Study Info
-              </th>
-              <th
-                class=""
-              >
-                <svg
-                  class="mr-5 vertical-middle"
-                  height="16"
-                  version="1.1"
-                  viewBox="0 0 24 24"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
+                <th
+                  class=""
                 >
-                  <title>
-                    logo-cavatica
-                  </title>
-                  <path
-                    d="M26,13.28a.89.89,0,0,0-1.1-.5l-3.6-8a1.13,1.13,0,0,0,.3-1.1,1,1,0,0,0-1.3-.5c-.1.1-.3.2-.3.3l-5.7-2.4a.75.75,0,0,0-.1-.5,1,1,0,0,0-1.3-.5,1,1,0,0,0-.6.9l-6.5,2.2A1,1,0,1,0,4,4a1.21,1.21,0,0,0,.5.5l-3.4,6.1a.75.75,0,0,0-.5.1.88.88,0,0,0-.5,1.2,1.1,1.1,0,0,0,1,.6l3.1,6.9a.93.93,0,0,0-.3,1.2,1,1,0,0,0,1.3.5.78.78,0,0,0,.4-.4l6.3,2.9a.6.6,0,0,0,.1.4,1,1,0,0,0,1.3.5,1,1,0,0,0,.6-.9l6.9-2.3a1.15,1.15,0,0,0,1.2.4,1,1,0,0,0,.5-1.3,1.21,1.21,0,0,0-.5-.5l2.8-5.3a.93.93,0,0,0,1.2-1.3ZM12.88,17l5.2-.1a.6.6,0,0,0,.1.4,1,1,0,0,0,1.3.5l1.4,2.2Zm-11.1-4.9,2.7,1.5a.85.85,0,0,0,0,.7,1.06,1.06,0,0,0,.7.6l-.4,4.5h-.3l-3.1-6.9C1.48,12.28,1.68,12.18,1.78,12.08ZM21,4.88l3.6,8-.3.3-4.7-3.9a1.1,1.1,0,0,0,0-.8,1.38,1.38,0,0,0-.3-.4l1.1-3.2ZM18.68,16a1.21,1.21,0,0,0-.5.5l-5.4.1a.6.6,0,0,0-.1-.4,1.38,1.38,0,0,0-.3-.4l6.1-6.1h.1ZM7.38,7.88l4.4.2c0,.1,0,.2.1.2a1.56,1.56,0,0,0,.8.6l-.9,6.7a.76.76,0,0,0-.4.1c-.1,0-.1.1-.2.1l-4-7.6C7.28,8.08,7.38,8,7.38,7.88Zm10.4,1.3a1.38,1.38,0,0,0,.3.4l-6,6,.9-6.7h.1a1.21,1.21,0,0,0,.5-.5l4.1.4A.6.6,0,0,0,17.78,9.18Zm0-.8L13.68,8a.6.6,0,0,0-.1-.4,1,1,0,0,0-.4-.5l.1-5.4a.37.37,0,0,0,.3-.1c.1-.1.2-.1.3-.3l4.2,6.8ZM13,1.78l-.1,5.3a.9.9,0,0,0-.5.1,1.06,1.06,0,0,0-.6.7l-4.3-.2a.76.76,0,0,0-.1-.4.35.35,0,0,0-.1-.2Zm-6.4,6.8a.37.37,0,0,0,.3-.1H7l4,7.7v.1l-4.7-2.1c.1-.2,0-.4,0-.6a1.21,1.21,0,0,0-.5-.5Zm-1.1,11a1.38,1.38,0,0,0-.4-.3l.4-4.6c.1,0,.1,0,.2-.1a1.38,1.38,0,0,0,.4-.3l4.7,2.1v.4Zm13.6-3.7-.3-6.1a.37.37,0,0,0,.3-.1c.1-.1.2-.1.3-.2l4.8,4v.4l-4.4,2.4A.87.87,0,0,0,19.08,15.88Zm.7-11.5a.78.78,0,0,0,.4.4l-1.3,3.1c-.2-.1-.4,0-.6,0l-4-6.5,5.4,2.2A2.2,2.2,0,0,0,19.78,4.38Zm-7.4-3.2c.1.1.2.3.3.4L7,6.78a1.27,1.27,0,0,0-.6-.1l-.9-2.5a1.08,1.08,0,0,0,.3-.7Zm-7.6,3.2a.6.6,0,0,0,.4-.1l.9,2.5A.91.91,0,0,0,5.58,8a.74.74,0,0,0,.6.5l-.9,4.3a.6.6,0,0,0-.4.1c-.1.1-.3.2-.4.3l-2.7-1.5v-.6a.78.78,0,0,0-.4-.4Zm.9,16v-.5l5.4-2.7a1,1,0,0,0,.9.4l.6,5.1h-.1a1,1,0,0,0-.5.6Zm8,2.8a1.56,1.56,0,0,0-.8-.6l-.6-5.1.3-.3,8.1,3a.88.88,0,0,0-.1.7Zm7.9-3.4a.6.6,0,0,0-.4.1l-1.4-2.3a.91.91,0,0,0,.2-1.1l4.4-2.3c0,.1.1.1.2.2Z"
-                    fill="#000000"
+                  Study Name
+                </th>
+                <th
+                  class=""
+                >
+                  Kids First Study ID
+                </th>
+                <th
+                  class=""
+                >
+                  <i
+                    aria-hidden="true"
+                    class="grey clipboard list icon"
                   />
-                </svg>
-                <span>
-                  Cavatica Projects
-                </span>
-              </th>
-              <th
-                class=""
-              >
-                <i
-                  aria-hidden="true"
-                  class="grey file icon"
-                />
-                Files
-              </th>
-            </tr>
-          </thead>
-          <tbody
-            class=""
-          >
-            <tr
-              class=""
-              tabindex="0"
-            >
-              <td
-                class=""
-              >
-                benchmark extensible e-business
-              </td>
-              <td
-                class=""
-              >
-                SD_8WX8QQ06
-              </td>
-              <td
-                class=""
-              >
-                <a
-                  class="text-red"
-                  href="/study/SD_8WX8QQ06/basic-info/info"
+                  Study Info
+                </th>
+                <th
+                  class=""
                 >
-                  7/8 complete
-                </a>
-              </td>
-              <td
-                class=""
-              >
-                <div
-                  class="ui horizontal list"
-                  role="list"
-                >
-                  <a
-                    class="item text-red"
-                    href="/study/SD_8WX8QQ06/cavatica"
-                    role="listitem"
+                  <svg
+                    class="mr-5 vertical-middle"
+                    height="16"
+                    version="1.1"
+                    viewBox="0 0 24 24"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    No
-                     projects
-                  </a>
-                </div>
-              </td>
-              <td
-                class=""
-              >
-                <div
-                  class="ui horizontal list"
-                  role="list"
-                >
-                  <a
-                    class="item"
-                    href="/study/SD_8WX8QQ06/documents"
-                    role="listitem"
-                  >
-                    1
-                     files
-                  </a>
-                  <div
-                    class="item"
-                    role="listitem"
-                  >
-                    <div
-                      class="ui orange mini circular empty label"
+                    <title>
+                      logo-cavatica
+                    </title>
+                    <path
+                      d="M26,13.28a.89.89,0,0,0-1.1-.5l-3.6-8a1.13,1.13,0,0,0,.3-1.1,1,1,0,0,0-1.3-.5c-.1.1-.3.2-.3.3l-5.7-2.4a.75.75,0,0,0-.1-.5,1,1,0,0,0-1.3-.5,1,1,0,0,0-.6.9l-6.5,2.2A1,1,0,1,0,4,4a1.21,1.21,0,0,0,.5.5l-3.4,6.1a.75.75,0,0,0-.5.1.88.88,0,0,0-.5,1.2,1.1,1.1,0,0,0,1,.6l3.1,6.9a.93.93,0,0,0-.3,1.2,1,1,0,0,0,1.3.5.78.78,0,0,0,.4-.4l6.3,2.9a.6.6,0,0,0,.1.4,1,1,0,0,0,1.3.5,1,1,0,0,0,.6-.9l6.9-2.3a1.15,1.15,0,0,0,1.2.4,1,1,0,0,0,.5-1.3,1.21,1.21,0,0,0-.5-.5l2.8-5.3a.93.93,0,0,0,1.2-1.3ZM12.88,17l5.2-.1a.6.6,0,0,0,.1.4,1,1,0,0,0,1.3.5l1.4,2.2Zm-11.1-4.9,2.7,1.5a.85.85,0,0,0,0,.7,1.06,1.06,0,0,0,.7.6l-.4,4.5h-.3l-3.1-6.9C1.48,12.28,1.68,12.18,1.78,12.08ZM21,4.88l3.6,8-.3.3-4.7-3.9a1.1,1.1,0,0,0,0-.8,1.38,1.38,0,0,0-.3-.4l1.1-3.2ZM18.68,16a1.21,1.21,0,0,0-.5.5l-5.4.1a.6.6,0,0,0-.1-.4,1.38,1.38,0,0,0-.3-.4l6.1-6.1h.1ZM7.38,7.88l4.4.2c0,.1,0,.2.1.2a1.56,1.56,0,0,0,.8.6l-.9,6.7a.76.76,0,0,0-.4.1c-.1,0-.1.1-.2.1l-4-7.6C7.28,8.08,7.38,8,7.38,7.88Zm10.4,1.3a1.38,1.38,0,0,0,.3.4l-6,6,.9-6.7h.1a1.21,1.21,0,0,0,.5-.5l4.1.4A.6.6,0,0,0,17.78,9.18Zm0-.8L13.68,8a.6.6,0,0,0-.1-.4,1,1,0,0,0-.4-.5l.1-5.4a.37.37,0,0,0,.3-.1c.1-.1.2-.1.3-.3l4.2,6.8ZM13,1.78l-.1,5.3a.9.9,0,0,0-.5.1,1.06,1.06,0,0,0-.6.7l-4.3-.2a.76.76,0,0,0-.1-.4.35.35,0,0,0-.1-.2Zm-6.4,6.8a.37.37,0,0,0,.3-.1H7l4,7.7v.1l-4.7-2.1c.1-.2,0-.4,0-.6a1.21,1.21,0,0,0-.5-.5Zm-1.1,11a1.38,1.38,0,0,0-.4-.3l.4-4.6c.1,0,.1,0,.2-.1a1.38,1.38,0,0,0,.4-.3l4.7,2.1v.4Zm13.6-3.7-.3-6.1a.37.37,0,0,0,.3-.1c.1-.1.2-.1.3-.2l4.8,4v.4l-4.4,2.4A.87.87,0,0,0,19.08,15.88Zm.7-11.5a.78.78,0,0,0,.4.4l-1.3,3.1c-.2-.1-.4,0-.6,0l-4-6.5,5.4,2.2A2.2,2.2,0,0,0,19.78,4.38Zm-7.4-3.2c.1.1.2.3.3.4L7,6.78a1.27,1.27,0,0,0-.6-.1l-.9-2.5a1.08,1.08,0,0,0,.3-.7Zm-7.6,3.2a.6.6,0,0,0,.4-.1l.9,2.5A.91.91,0,0,0,5.58,8a.74.74,0,0,0,.6.5l-.9,4.3a.6.6,0,0,0-.4.1c-.1.1-.3.2-.4.3l-2.7-1.5v-.6a.78.78,0,0,0-.4-.4Zm.9,16v-.5l5.4-2.7a1,1,0,0,0,.9.4l.6,5.1h-.1a1,1,0,0,0-.5.6Zm8,2.8a1.56,1.56,0,0,0-.8-.6l-.6-5.1.3-.3,8.1,3a.88.88,0,0,0-.1.7Zm7.9-3.4a.6.6,0,0,0-.4.1l-1.4-2.3a.91.91,0,0,0,.2-1.1l4.4-2.3c0,.1.1.1.2.2Z"
+                      fill="#000000"
                     />
-                     
-                    1
-                  </div>
-                </div>
-              </td>
-            </tr>
-            <tr
+                  </svg>
+                  <span>
+                    Cavatica Projects
+                  </span>
+                </th>
+                <th
+                  class=""
+                >
+                  <i
+                    aria-hidden="true"
+                    class="grey file icon"
+                  />
+                  Files
+                </th>
+              </tr>
+            </thead>
+            <tbody
               class=""
-              tabindex="0"
             >
-              <td
+              <tr
                 class=""
+                tabindex="0"
               >
-                visualize dynamic users
-              </td>
-              <td
-                class=""
-              >
-                SD_I1L92W57
-              </td>
-              <td
-                class=""
-              >
-                <a
-                  class="text-red"
-                  href="/study/SD_I1L92W57/basic-info/info"
+                <td
+                  class=""
                 >
-                  7/8 complete
-                </a>
-              </td>
-              <td
-                class=""
-              >
-                <div
-                  class="ui horizontal list"
-                  role="list"
+                  benchmark extensible e-business
+                </td>
+                <td
+                  class=""
+                >
+                  SD_8WX8QQ06
+                </td>
+                <td
+                  class=""
                 >
                   <a
-                    class="item text-red"
-                    href="/study/SD_I1L92W57/cavatica"
-                    role="listitem"
+                    class="text-red"
+                    href="/study/SD_8WX8QQ06/basic-info/info"
                   >
-                    No
-                     projects
+                    7/8 complete
                   </a>
-                </div>
-              </td>
-              <td
-                class=""
-              >
-                <div
-                  class="ui horizontal list"
-                  role="list"
+                </td>
+                <td
+                  class=""
                 >
-                  <a
-                    class="item text-red"
-                    href="/study/SD_I1L92W57/documents"
-                    role="listitem"
-                  >
-                    No
-                     files
-                  </a>
-                </div>
-              </td>
-            </tr>
-            <tr
-              class=""
-              tabindex="0"
-            >
-              <td
-                class=""
-              >
-                strategize cross-media markets
-              </td>
-              <td
-                class=""
-              >
-                SD_SG5N41K8
-              </td>
-              <td
-                class=""
-              >
-                <a
-                  class="text-red"
-                  href="/study/SD_SG5N41K8/basic-info/info"
-                >
-                  7/8 complete
-                </a>
-              </td>
-              <td
-                class=""
-              >
-                <div
-                  class="ui horizontal list"
-                  role="list"
-                >
-                  <a
-                    class="item text-red"
-                    href="/study/SD_SG5N41K8/cavatica"
-                    role="listitem"
-                  >
-                    No
-                     projects
-                  </a>
-                </div>
-              </td>
-              <td
-                class=""
-              >
-                <div
-                  class="ui horizontal list"
-                  role="list"
-                >
-                  <a
-                    class="item text-red"
-                    href="/study/SD_SG5N41K8/documents"
-                    role="listitem"
-                  >
-                    No
-                     files
-                  </a>
-                </div>
-              </td>
-            </tr>
-            <tr
-              class=""
-              tabindex="0"
-            >
-              <td
-                class=""
-              >
-                drive distributed architectures
-              </td>
-              <td
-                class=""
-              >
-                SD_0YYP5ZEN
-              </td>
-              <td
-                class=""
-              >
-                <a
-                  class="text-red"
-                  href="/study/SD_0YYP5ZEN/basic-info/info"
-                >
-                  7/8 complete
-                </a>
-              </td>
-              <td
-                class=""
-              >
-                <div
-                  class="ui horizontal list"
-                  role="list"
-                >
-                  <a
-                    class="item"
-                    href="/study/SD_0YYP5ZEN/cavatica"
-                    role="listitem"
-                  >
-                    2
-                     projects
-                  </a>
                   <div
-                    class="item"
-                    role="listitem"
+                    class="ui horizontal list"
+                    role="list"
                   >
-                    <div
-                      class="ui olive mini circular empty label"
-                    />
-                     
-                    1
+                    <a
+                      class="item text-red"
+                      href="/study/SD_8WX8QQ06/cavatica"
+                      role="listitem"
+                    >
+                      No
+                       projects
+                    </a>
                   </div>
+                </td>
+                <td
+                  class=""
+                >
                   <div
-                    class="item"
-                    role="listitem"
+                    class="ui horizontal list"
+                    role="list"
                   >
+                    <a
+                      class="item"
+                      href="/study/SD_8WX8QQ06/documents"
+                      role="listitem"
+                    >
+                      1
+                       files
+                    </a>
                     <div
-                      class="ui olive mini circular empty label"
-                    />
-                     
-                    1
+                      class="item"
+                      role="listitem"
+                    >
+                      <div
+                        class="ui orange mini circular empty label"
+                      />
+                       
+                      1
+                    </div>
                   </div>
-                </div>
-              </td>
-              <td
+                </td>
+              </tr>
+              <tr
                 class=""
+                tabindex="0"
               >
-                <div
-                  class="ui horizontal list"
-                  role="list"
+                <td
+                  class=""
+                >
+                  visualize dynamic users
+                </td>
+                <td
+                  class=""
+                >
+                  SD_I1L92W57
+                </td>
+                <td
+                  class=""
                 >
                   <a
-                    class="item text-red"
-                    href="/study/SD_0YYP5ZEN/documents"
-                    role="listitem"
+                    class="text-red"
+                    href="/study/SD_I1L92W57/basic-info/info"
                   >
-                    No
-                     files
+                    7/8 complete
                   </a>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+                </td>
+                <td
+                  class=""
+                >
+                  <div
+                    class="ui horizontal list"
+                    role="list"
+                  >
+                    <a
+                      class="item text-red"
+                      href="/study/SD_I1L92W57/cavatica"
+                      role="listitem"
+                    >
+                      No
+                       projects
+                    </a>
+                  </div>
+                </td>
+                <td
+                  class=""
+                >
+                  <div
+                    class="ui horizontal list"
+                    role="list"
+                  >
+                    <a
+                      class="item text-red"
+                      href="/study/SD_I1L92W57/documents"
+                      role="listitem"
+                    >
+                      No
+                       files
+                    </a>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                class=""
+                tabindex="0"
+              >
+                <td
+                  class=""
+                >
+                  strategize cross-media markets
+                </td>
+                <td
+                  class=""
+                >
+                  SD_SG5N41K8
+                </td>
+                <td
+                  class=""
+                >
+                  <a
+                    class="text-red"
+                    href="/study/SD_SG5N41K8/basic-info/info"
+                  >
+                    7/8 complete
+                  </a>
+                </td>
+                <td
+                  class=""
+                >
+                  <div
+                    class="ui horizontal list"
+                    role="list"
+                  >
+                    <a
+                      class="item text-red"
+                      href="/study/SD_SG5N41K8/cavatica"
+                      role="listitem"
+                    >
+                      No
+                       projects
+                    </a>
+                  </div>
+                </td>
+                <td
+                  class=""
+                >
+                  <div
+                    class="ui horizontal list"
+                    role="list"
+                  >
+                    <a
+                      class="item text-red"
+                      href="/study/SD_SG5N41K8/documents"
+                      role="listitem"
+                    >
+                      No
+                       files
+                    </a>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                class=""
+                tabindex="0"
+              >
+                <td
+                  class=""
+                >
+                  drive distributed architectures
+                </td>
+                <td
+                  class=""
+                >
+                  SD_0YYP5ZEN
+                </td>
+                <td
+                  class=""
+                >
+                  <a
+                    class="text-red"
+                    href="/study/SD_0YYP5ZEN/basic-info/info"
+                  >
+                    7/8 complete
+                  </a>
+                </td>
+                <td
+                  class=""
+                >
+                  <div
+                    class="ui horizontal list"
+                    role="list"
+                  >
+                    <a
+                      class="item"
+                      href="/study/SD_0YYP5ZEN/cavatica"
+                      role="listitem"
+                    >
+                      2
+                       projects
+                    </a>
+                    <div
+                      class="item"
+                      role="listitem"
+                    >
+                      <div
+                        class="ui olive mini circular empty label"
+                      />
+                       
+                      1
+                    </div>
+                    <div
+                      class="item"
+                      role="listitem"
+                    >
+                      <div
+                        class="ui olive mini circular empty label"
+                      />
+                       
+                      1
+                    </div>
+                  </div>
+                </td>
+                <td
+                  class=""
+                >
+                  <div
+                    class="ui horizontal list"
+                    role="list"
+                  >
+                    <a
+                      class="item text-red"
+                      href="/study/SD_0YYP5ZEN/documents"
+                      role="listitem"
+                    >
+                      No
+                       files
+                    </a>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ui segment footer"
+  >
+    <div
+      class="ui container text-10"
+    >
+      <div
+        class="ui horizontal list"
+        role="list"
+      >
+        <div
+          class="item"
+          role="listitem"
+        >
+          <div
+            class="ui basic horizontal label text-10"
+          />
+        </div>
+        <div
+          class="item noMargin"
+          role="listitem"
+        >
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -1199,406 +1273,443 @@ exports[`renders correctly -- default stage (USER role) 3`] = `
     </div>
   </div>
   <div
-    class="ui basic segment ui container stackable grid"
+    class="page"
   >
     <div
-      class="left aligned eight wide column"
+      class="ui basic segment ui container stackable grid"
     >
-      <h1
-        class="ui header"
-      >
-        Your Studies
-      </h1>
-    </div>
-    <div
-      class="right aligned eight wide column"
-    >
-      <a
-        class="ui mini basic primary button"
-        href="/study/new-study/info"
-        role="button"
-      >
-        <i
-          aria-hidden="true"
-          class="add icon"
-        />
-        Add Study
-      </a>
       <div
-        class="ui mini left icon input pr-5"
+        class="left aligned eight wide column"
       >
-        <input
-          placeholder="Search by Study Name"
-          type="text"
-          value=""
-        />
-        <i
-          aria-hidden="true"
-          class="search icon"
-        />
+        <h1
+          class="ui header"
+        >
+          Your Studies
+        </h1>
       </div>
       <div
-        class="ui mini buttons"
+        class="right aligned eight wide column"
       >
-        <button
-          class="ui icon primary button"
-          tabindex="0"
+        <a
+          class="ui mini basic primary button"
+          href="/study/new-study/info"
+          role="button"
         >
           <i
             aria-hidden="true"
-            class="list icon"
+            class="add icon"
           />
-        </button>
-        <button
-          class="ui icon button"
-          tabindex="0"
+          Add Study
+        </a>
+        <div
+          class="ui mini left icon input pr-5"
         >
+          <input
+            placeholder="Search by Study Name"
+            type="text"
+            value=""
+          />
           <i
             aria-hidden="true"
-            class="grid layout icon"
+            class="search icon"
           />
-        </button>
-      </div>
-    </div>
-    <div
-      class="row"
-    >
-      <div
-        class="column"
-      >
-        <table
-          class="ui selectable striped five column table"
+        </div>
+        <div
+          class="ui mini buttons"
         >
-          <thead
-            class=""
+          <button
+            class="ui icon primary button"
+            tabindex="0"
           >
-            <tr
+            <i
+              aria-hidden="true"
+              class="list icon"
+            />
+          </button>
+          <button
+            class="ui icon button"
+            tabindex="0"
+          >
+            <i
+              aria-hidden="true"
+              class="grid layout icon"
+            />
+          </button>
+        </div>
+      </div>
+      <div
+        class="row"
+      >
+        <div
+          class="column"
+        >
+          <table
+            class="ui selectable striped five column table"
+          >
+            <thead
               class=""
             >
-              <th
+              <tr
                 class=""
               >
-                Study Name
-              </th>
-              <th
-                class=""
-              >
-                Kids First Study ID
-              </th>
-              <th
-                class=""
-              >
-                <i
-                  aria-hidden="true"
-                  class="grey clipboard list icon"
-                />
-                Study Info
-              </th>
-              <th
-                class=""
-              >
-                <svg
-                  class="mr-5 vertical-middle"
-                  height="16"
-                  version="1.1"
-                  viewBox="0 0 24 24"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
+                <th
+                  class=""
                 >
-                  <title>
-                    logo-cavatica
-                  </title>
-                  <path
-                    d="M26,13.28a.89.89,0,0,0-1.1-.5l-3.6-8a1.13,1.13,0,0,0,.3-1.1,1,1,0,0,0-1.3-.5c-.1.1-.3.2-.3.3l-5.7-2.4a.75.75,0,0,0-.1-.5,1,1,0,0,0-1.3-.5,1,1,0,0,0-.6.9l-6.5,2.2A1,1,0,1,0,4,4a1.21,1.21,0,0,0,.5.5l-3.4,6.1a.75.75,0,0,0-.5.1.88.88,0,0,0-.5,1.2,1.1,1.1,0,0,0,1,.6l3.1,6.9a.93.93,0,0,0-.3,1.2,1,1,0,0,0,1.3.5.78.78,0,0,0,.4-.4l6.3,2.9a.6.6,0,0,0,.1.4,1,1,0,0,0,1.3.5,1,1,0,0,0,.6-.9l6.9-2.3a1.15,1.15,0,0,0,1.2.4,1,1,0,0,0,.5-1.3,1.21,1.21,0,0,0-.5-.5l2.8-5.3a.93.93,0,0,0,1.2-1.3ZM12.88,17l5.2-.1a.6.6,0,0,0,.1.4,1,1,0,0,0,1.3.5l1.4,2.2Zm-11.1-4.9,2.7,1.5a.85.85,0,0,0,0,.7,1.06,1.06,0,0,0,.7.6l-.4,4.5h-.3l-3.1-6.9C1.48,12.28,1.68,12.18,1.78,12.08ZM21,4.88l3.6,8-.3.3-4.7-3.9a1.1,1.1,0,0,0,0-.8,1.38,1.38,0,0,0-.3-.4l1.1-3.2ZM18.68,16a1.21,1.21,0,0,0-.5.5l-5.4.1a.6.6,0,0,0-.1-.4,1.38,1.38,0,0,0-.3-.4l6.1-6.1h.1ZM7.38,7.88l4.4.2c0,.1,0,.2.1.2a1.56,1.56,0,0,0,.8.6l-.9,6.7a.76.76,0,0,0-.4.1c-.1,0-.1.1-.2.1l-4-7.6C7.28,8.08,7.38,8,7.38,7.88Zm10.4,1.3a1.38,1.38,0,0,0,.3.4l-6,6,.9-6.7h.1a1.21,1.21,0,0,0,.5-.5l4.1.4A.6.6,0,0,0,17.78,9.18Zm0-.8L13.68,8a.6.6,0,0,0-.1-.4,1,1,0,0,0-.4-.5l.1-5.4a.37.37,0,0,0,.3-.1c.1-.1.2-.1.3-.3l4.2,6.8ZM13,1.78l-.1,5.3a.9.9,0,0,0-.5.1,1.06,1.06,0,0,0-.6.7l-4.3-.2a.76.76,0,0,0-.1-.4.35.35,0,0,0-.1-.2Zm-6.4,6.8a.37.37,0,0,0,.3-.1H7l4,7.7v.1l-4.7-2.1c.1-.2,0-.4,0-.6a1.21,1.21,0,0,0-.5-.5Zm-1.1,11a1.38,1.38,0,0,0-.4-.3l.4-4.6c.1,0,.1,0,.2-.1a1.38,1.38,0,0,0,.4-.3l4.7,2.1v.4Zm13.6-3.7-.3-6.1a.37.37,0,0,0,.3-.1c.1-.1.2-.1.3-.2l4.8,4v.4l-4.4,2.4A.87.87,0,0,0,19.08,15.88Zm.7-11.5a.78.78,0,0,0,.4.4l-1.3,3.1c-.2-.1-.4,0-.6,0l-4-6.5,5.4,2.2A2.2,2.2,0,0,0,19.78,4.38Zm-7.4-3.2c.1.1.2.3.3.4L7,6.78a1.27,1.27,0,0,0-.6-.1l-.9-2.5a1.08,1.08,0,0,0,.3-.7Zm-7.6,3.2a.6.6,0,0,0,.4-.1l.9,2.5A.91.91,0,0,0,5.58,8a.74.74,0,0,0,.6.5l-.9,4.3a.6.6,0,0,0-.4.1c-.1.1-.3.2-.4.3l-2.7-1.5v-.6a.78.78,0,0,0-.4-.4Zm.9,16v-.5l5.4-2.7a1,1,0,0,0,.9.4l.6,5.1h-.1a1,1,0,0,0-.5.6Zm8,2.8a1.56,1.56,0,0,0-.8-.6l-.6-5.1.3-.3,8.1,3a.88.88,0,0,0-.1.7Zm7.9-3.4a.6.6,0,0,0-.4.1l-1.4-2.3a.91.91,0,0,0,.2-1.1l4.4-2.3c0,.1.1.1.2.2Z"
-                    fill="#000000"
+                  Study Name
+                </th>
+                <th
+                  class=""
+                >
+                  Kids First Study ID
+                </th>
+                <th
+                  class=""
+                >
+                  <i
+                    aria-hidden="true"
+                    class="grey clipboard list icon"
                   />
-                </svg>
-                <span>
-                  Cavatica Projects
-                </span>
-              </th>
-              <th
-                class=""
-              >
-                <i
-                  aria-hidden="true"
-                  class="grey file icon"
-                />
-                Files
-              </th>
-            </tr>
-          </thead>
-          <tbody
-            class=""
-          >
-            <tr
-              class=""
-              tabindex="0"
-            >
-              <td
-                class=""
-              >
-                benchmark extensible e-business
-              </td>
-              <td
-                class=""
-              >
-                SD_8WX8QQ06
-              </td>
-              <td
-                class=""
-              >
-                <a
-                  class="text-red"
-                  href="/study/SD_8WX8QQ06/basic-info/info"
+                  Study Info
+                </th>
+                <th
+                  class=""
                 >
-                  7/8 complete
-                </a>
-              </td>
-              <td
-                class=""
-              >
-                <div
-                  class="ui horizontal list"
-                  role="list"
-                >
-                  <a
-                    class="item text-red"
-                    href="/study/SD_8WX8QQ06/cavatica"
-                    role="listitem"
+                  <svg
+                    class="mr-5 vertical-middle"
+                    height="16"
+                    version="1.1"
+                    viewBox="0 0 24 24"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    No
-                     projects
-                  </a>
-                </div>
-              </td>
-              <td
-                class=""
-              >
-                <div
-                  class="ui horizontal list"
-                  role="list"
-                >
-                  <a
-                    class="item"
-                    href="/study/SD_8WX8QQ06/documents"
-                    role="listitem"
-                  >
-                    1
-                     files
-                  </a>
-                  <div
-                    class="item"
-                    role="listitem"
-                  >
-                    <div
-                      class="ui orange mini circular empty label"
+                    <title>
+                      logo-cavatica
+                    </title>
+                    <path
+                      d="M26,13.28a.89.89,0,0,0-1.1-.5l-3.6-8a1.13,1.13,0,0,0,.3-1.1,1,1,0,0,0-1.3-.5c-.1.1-.3.2-.3.3l-5.7-2.4a.75.75,0,0,0-.1-.5,1,1,0,0,0-1.3-.5,1,1,0,0,0-.6.9l-6.5,2.2A1,1,0,1,0,4,4a1.21,1.21,0,0,0,.5.5l-3.4,6.1a.75.75,0,0,0-.5.1.88.88,0,0,0-.5,1.2,1.1,1.1,0,0,0,1,.6l3.1,6.9a.93.93,0,0,0-.3,1.2,1,1,0,0,0,1.3.5.78.78,0,0,0,.4-.4l6.3,2.9a.6.6,0,0,0,.1.4,1,1,0,0,0,1.3.5,1,1,0,0,0,.6-.9l6.9-2.3a1.15,1.15,0,0,0,1.2.4,1,1,0,0,0,.5-1.3,1.21,1.21,0,0,0-.5-.5l2.8-5.3a.93.93,0,0,0,1.2-1.3ZM12.88,17l5.2-.1a.6.6,0,0,0,.1.4,1,1,0,0,0,1.3.5l1.4,2.2Zm-11.1-4.9,2.7,1.5a.85.85,0,0,0,0,.7,1.06,1.06,0,0,0,.7.6l-.4,4.5h-.3l-3.1-6.9C1.48,12.28,1.68,12.18,1.78,12.08ZM21,4.88l3.6,8-.3.3-4.7-3.9a1.1,1.1,0,0,0,0-.8,1.38,1.38,0,0,0-.3-.4l1.1-3.2ZM18.68,16a1.21,1.21,0,0,0-.5.5l-5.4.1a.6.6,0,0,0-.1-.4,1.38,1.38,0,0,0-.3-.4l6.1-6.1h.1ZM7.38,7.88l4.4.2c0,.1,0,.2.1.2a1.56,1.56,0,0,0,.8.6l-.9,6.7a.76.76,0,0,0-.4.1c-.1,0-.1.1-.2.1l-4-7.6C7.28,8.08,7.38,8,7.38,7.88Zm10.4,1.3a1.38,1.38,0,0,0,.3.4l-6,6,.9-6.7h.1a1.21,1.21,0,0,0,.5-.5l4.1.4A.6.6,0,0,0,17.78,9.18Zm0-.8L13.68,8a.6.6,0,0,0-.1-.4,1,1,0,0,0-.4-.5l.1-5.4a.37.37,0,0,0,.3-.1c.1-.1.2-.1.3-.3l4.2,6.8ZM13,1.78l-.1,5.3a.9.9,0,0,0-.5.1,1.06,1.06,0,0,0-.6.7l-4.3-.2a.76.76,0,0,0-.1-.4.35.35,0,0,0-.1-.2Zm-6.4,6.8a.37.37,0,0,0,.3-.1H7l4,7.7v.1l-4.7-2.1c.1-.2,0-.4,0-.6a1.21,1.21,0,0,0-.5-.5Zm-1.1,11a1.38,1.38,0,0,0-.4-.3l.4-4.6c.1,0,.1,0,.2-.1a1.38,1.38,0,0,0,.4-.3l4.7,2.1v.4Zm13.6-3.7-.3-6.1a.37.37,0,0,0,.3-.1c.1-.1.2-.1.3-.2l4.8,4v.4l-4.4,2.4A.87.87,0,0,0,19.08,15.88Zm.7-11.5a.78.78,0,0,0,.4.4l-1.3,3.1c-.2-.1-.4,0-.6,0l-4-6.5,5.4,2.2A2.2,2.2,0,0,0,19.78,4.38Zm-7.4-3.2c.1.1.2.3.3.4L7,6.78a1.27,1.27,0,0,0-.6-.1l-.9-2.5a1.08,1.08,0,0,0,.3-.7Zm-7.6,3.2a.6.6,0,0,0,.4-.1l.9,2.5A.91.91,0,0,0,5.58,8a.74.74,0,0,0,.6.5l-.9,4.3a.6.6,0,0,0-.4.1c-.1.1-.3.2-.4.3l-2.7-1.5v-.6a.78.78,0,0,0-.4-.4Zm.9,16v-.5l5.4-2.7a1,1,0,0,0,.9.4l.6,5.1h-.1a1,1,0,0,0-.5.6Zm8,2.8a1.56,1.56,0,0,0-.8-.6l-.6-5.1.3-.3,8.1,3a.88.88,0,0,0-.1.7Zm7.9-3.4a.6.6,0,0,0-.4.1l-1.4-2.3a.91.91,0,0,0,.2-1.1l4.4-2.3c0,.1.1.1.2.2Z"
+                      fill="#000000"
                     />
-                     
-                    1
-                  </div>
-                </div>
-              </td>
-            </tr>
-            <tr
+                  </svg>
+                  <span>
+                    Cavatica Projects
+                  </span>
+                </th>
+                <th
+                  class=""
+                >
+                  <i
+                    aria-hidden="true"
+                    class="grey file icon"
+                  />
+                  Files
+                </th>
+              </tr>
+            </thead>
+            <tbody
               class=""
-              tabindex="0"
             >
-              <td
+              <tr
                 class=""
+                tabindex="0"
               >
-                visualize dynamic users
-              </td>
-              <td
-                class=""
-              >
-                SD_I1L92W57
-              </td>
-              <td
-                class=""
-              >
-                <a
-                  class="text-red"
-                  href="/study/SD_I1L92W57/basic-info/info"
+                <td
+                  class=""
                 >
-                  7/8 complete
-                </a>
-              </td>
-              <td
-                class=""
-              >
-                <div
-                  class="ui horizontal list"
-                  role="list"
+                  benchmark extensible e-business
+                </td>
+                <td
+                  class=""
+                >
+                  SD_8WX8QQ06
+                </td>
+                <td
+                  class=""
                 >
                   <a
-                    class="item text-red"
-                    href="/study/SD_I1L92W57/cavatica"
-                    role="listitem"
+                    class="text-red"
+                    href="/study/SD_8WX8QQ06/basic-info/info"
                   >
-                    No
-                     projects
+                    7/8 complete
                   </a>
-                </div>
-              </td>
-              <td
-                class=""
-              >
-                <div
-                  class="ui horizontal list"
-                  role="list"
+                </td>
+                <td
+                  class=""
                 >
-                  <a
-                    class="item text-red"
-                    href="/study/SD_I1L92W57/documents"
-                    role="listitem"
-                  >
-                    No
-                     files
-                  </a>
-                </div>
-              </td>
-            </tr>
-            <tr
-              class=""
-              tabindex="0"
-            >
-              <td
-                class=""
-              >
-                strategize cross-media markets
-              </td>
-              <td
-                class=""
-              >
-                SD_SG5N41K8
-              </td>
-              <td
-                class=""
-              >
-                <a
-                  class="text-red"
-                  href="/study/SD_SG5N41K8/basic-info/info"
-                >
-                  7/8 complete
-                </a>
-              </td>
-              <td
-                class=""
-              >
-                <div
-                  class="ui horizontal list"
-                  role="list"
-                >
-                  <a
-                    class="item text-red"
-                    href="/study/SD_SG5N41K8/cavatica"
-                    role="listitem"
-                  >
-                    No
-                     projects
-                  </a>
-                </div>
-              </td>
-              <td
-                class=""
-              >
-                <div
-                  class="ui horizontal list"
-                  role="list"
-                >
-                  <a
-                    class="item text-red"
-                    href="/study/SD_SG5N41K8/documents"
-                    role="listitem"
-                  >
-                    No
-                     files
-                  </a>
-                </div>
-              </td>
-            </tr>
-            <tr
-              class=""
-              tabindex="0"
-            >
-              <td
-                class=""
-              >
-                drive distributed architectures
-              </td>
-              <td
-                class=""
-              >
-                SD_0YYP5ZEN
-              </td>
-              <td
-                class=""
-              >
-                <a
-                  class="text-red"
-                  href="/study/SD_0YYP5ZEN/basic-info/info"
-                >
-                  7/8 complete
-                </a>
-              </td>
-              <td
-                class=""
-              >
-                <div
-                  class="ui horizontal list"
-                  role="list"
-                >
-                  <a
-                    class="item"
-                    href="/study/SD_0YYP5ZEN/cavatica"
-                    role="listitem"
-                  >
-                    2
-                     projects
-                  </a>
                   <div
-                    class="item"
-                    role="listitem"
+                    class="ui horizontal list"
+                    role="list"
                   >
-                    <div
-                      class="ui olive mini circular empty label"
-                    />
-                     
-                    1
+                    <a
+                      class="item text-red"
+                      href="/study/SD_8WX8QQ06/cavatica"
+                      role="listitem"
+                    >
+                      No
+                       projects
+                    </a>
                   </div>
+                </td>
+                <td
+                  class=""
+                >
                   <div
-                    class="item"
-                    role="listitem"
+                    class="ui horizontal list"
+                    role="list"
                   >
+                    <a
+                      class="item"
+                      href="/study/SD_8WX8QQ06/documents"
+                      role="listitem"
+                    >
+                      1
+                       files
+                    </a>
                     <div
-                      class="ui olive mini circular empty label"
-                    />
-                     
-                    1
+                      class="item"
+                      role="listitem"
+                    >
+                      <div
+                        class="ui orange mini circular empty label"
+                      />
+                       
+                      1
+                    </div>
                   </div>
-                </div>
-              </td>
-              <td
+                </td>
+              </tr>
+              <tr
                 class=""
+                tabindex="0"
               >
-                <div
-                  class="ui horizontal list"
-                  role="list"
+                <td
+                  class=""
+                >
+                  visualize dynamic users
+                </td>
+                <td
+                  class=""
+                >
+                  SD_I1L92W57
+                </td>
+                <td
+                  class=""
                 >
                   <a
-                    class="item text-red"
-                    href="/study/SD_0YYP5ZEN/documents"
-                    role="listitem"
+                    class="text-red"
+                    href="/study/SD_I1L92W57/basic-info/info"
                   >
-                    No
-                     files
+                    7/8 complete
                   </a>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+                </td>
+                <td
+                  class=""
+                >
+                  <div
+                    class="ui horizontal list"
+                    role="list"
+                  >
+                    <a
+                      class="item text-red"
+                      href="/study/SD_I1L92W57/cavatica"
+                      role="listitem"
+                    >
+                      No
+                       projects
+                    </a>
+                  </div>
+                </td>
+                <td
+                  class=""
+                >
+                  <div
+                    class="ui horizontal list"
+                    role="list"
+                  >
+                    <a
+                      class="item text-red"
+                      href="/study/SD_I1L92W57/documents"
+                      role="listitem"
+                    >
+                      No
+                       files
+                    </a>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                class=""
+                tabindex="0"
+              >
+                <td
+                  class=""
+                >
+                  strategize cross-media markets
+                </td>
+                <td
+                  class=""
+                >
+                  SD_SG5N41K8
+                </td>
+                <td
+                  class=""
+                >
+                  <a
+                    class="text-red"
+                    href="/study/SD_SG5N41K8/basic-info/info"
+                  >
+                    7/8 complete
+                  </a>
+                </td>
+                <td
+                  class=""
+                >
+                  <div
+                    class="ui horizontal list"
+                    role="list"
+                  >
+                    <a
+                      class="item text-red"
+                      href="/study/SD_SG5N41K8/cavatica"
+                      role="listitem"
+                    >
+                      No
+                       projects
+                    </a>
+                  </div>
+                </td>
+                <td
+                  class=""
+                >
+                  <div
+                    class="ui horizontal list"
+                    role="list"
+                  >
+                    <a
+                      class="item text-red"
+                      href="/study/SD_SG5N41K8/documents"
+                      role="listitem"
+                    >
+                      No
+                       files
+                    </a>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                class=""
+                tabindex="0"
+              >
+                <td
+                  class=""
+                >
+                  drive distributed architectures
+                </td>
+                <td
+                  class=""
+                >
+                  SD_0YYP5ZEN
+                </td>
+                <td
+                  class=""
+                >
+                  <a
+                    class="text-red"
+                    href="/study/SD_0YYP5ZEN/basic-info/info"
+                  >
+                    7/8 complete
+                  </a>
+                </td>
+                <td
+                  class=""
+                >
+                  <div
+                    class="ui horizontal list"
+                    role="list"
+                  >
+                    <a
+                      class="item"
+                      href="/study/SD_0YYP5ZEN/cavatica"
+                      role="listitem"
+                    >
+                      2
+                       projects
+                    </a>
+                    <div
+                      class="item"
+                      role="listitem"
+                    >
+                      <div
+                        class="ui olive mini circular empty label"
+                      />
+                       
+                      1
+                    </div>
+                    <div
+                      class="item"
+                      role="listitem"
+                    >
+                      <div
+                        class="ui olive mini circular empty label"
+                      />
+                       
+                      1
+                    </div>
+                  </div>
+                </td>
+                <td
+                  class=""
+                >
+                  <div
+                    class="ui horizontal list"
+                    role="list"
+                  >
+                    <a
+                      class="item text-red"
+                      href="/study/SD_0YYP5ZEN/documents"
+                      role="listitem"
+                    >
+                      No
+                       files
+                    </a>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ui segment footer"
+  >
+    <div
+      class="ui container text-10"
+    >
+      <div
+        class="ui horizontal list"
+        role="list"
+      >
+        <div
+          class="item"
+          role="listitem"
+        >
+          <div
+            class="ui basic horizontal label text-10"
+          />
+        </div>
+        <div
+          class="item noMargin"
+          role="listitem"
+        >
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -1643,6 +1754,42 @@ exports[`renders correctly -- default stage (USER role) 4`] = `
             class="chevron right icon"
           />
         </button>
+      </div>
+    </div>
+  </div>
+  <div
+    class="page"
+  />
+  <div
+    class="ui segment footer"
+  >
+    <div
+      class="ui container text-10"
+    >
+      <div
+        class="ui horizontal list"
+        role="list"
+      >
+        <div
+          class="item"
+          role="listitem"
+        >
+          <div
+            class="ui basic horizontal label text-10"
+          />
+        </div>
+        <div
+          class="item noMargin"
+          role="listitem"
+        >
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
+        </div>
       </div>
     </div>
   </div>

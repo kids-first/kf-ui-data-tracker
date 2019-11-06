@@ -44,8 +44,8 @@
     "babel-core": "7.0.0-bridge.0"
   },
   "scripts": {
-    "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
+    "start": "REACT_APP_COMMITHASH=`git rev-parse --short HEAD` REACT_APP_LAST_VERSION=`git describe --always --tags` react-app-rewired start",
+    "build": "REACT_APP_COMMITHASH=`git rev-parse --short HEAD` REACT_APP_LAST_VERSION=`git describe --always --tags` react-app-rewired build",
     "test": "yarn run jest",
     "prettify": "prettier --write \"**/*.{js,json,css,md}\" \"!package.json\""
   },
