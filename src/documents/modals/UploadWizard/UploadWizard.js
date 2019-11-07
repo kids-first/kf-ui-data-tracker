@@ -68,7 +68,7 @@ const UploadWizard = ({
   studyId,
   tracking: {
     logEvent,
-    EVENT_CONSTANTS: {UPLOAD_WIZARD_},
+    EVENT_CONSTANTS: {UPLOAD_WIZARD_, NEW_VERSION_},
   },
 }) => {
   // The current step that the flow is on
@@ -103,17 +103,38 @@ const UploadWizard = ({
   const handleSave = async props => {
     try {
       setUploading(true);
-      await createVersion({
+      const {
+        data: {
+          createVersion: {success, version: new_version},
+        },
+      } = await createVersion({
         variables: {file, fileId: fileToUpdate.kfId, description},
       });
       // TODO: maybe make this part of local state
       sessionStorage.setItem('kf_updated_docs', fileToUpdate.kfId);
 
+      logEvent(NEW_VERSION_.UPLOAD, {
+        upload_success: success,
+        new_version: {
+          file_name: new_version.fileName,
+          description: new_version.description,
+          kfId: new_version.kfId,
+          state: new_version.sate,
+        },
+        document_to_update: {
+          document_name: fileToUpdate.name,
+          type: fileToUpdate.fileType,
+          kfId: fileToUpdate.kfId,
+          similarity_rating: fileToUpdate.rating,
+          num_previous_versions: fileToUpdate.versions.edges.length,
+        },
+      });
       setUploading(false);
       setIsTimerActive(true);
       setStep(3);
     } catch (e) {
       console.error(e);
+      logEvent(NEW_VERSION_.UPLOAD, {upload_success: false, error: e});
       setIsTimerActive(false);
       // setErrors(e)
     }
