@@ -119,6 +119,13 @@ const StudyFilesListView = ({
                 setFile(false);
                 setDialog(false);
               }}
+              eventProperties={{
+                study: {
+                  kfId,
+                  name: studyByKfId.name,
+                  documents: files.length,
+                },
+              }}
             />
           )}
         </Grid.Column>

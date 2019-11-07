@@ -1,6 +1,8 @@
 import {Amplitude} from '@amplitude/react-amplitude';
 import {memoize} from '@amplitude/react-amplitude/src/lib/memoize';
 import debounce from 'lodash.debounce';
+import {buttonTracking} from './utils';
+import {EVENT_CONSTANTS} from '../analyticsTracking';
 
 class AmplitudeProxy extends Amplitude {
   logToConsole = false;
@@ -17,6 +19,8 @@ class AmplitudeProxy extends Amplitude {
     this._renderPropParams = {
       logEvent: this.logEvent,
       instrument: this.instrument,
+      EVENT_CONSTANTS,
+      buttonTracking: buttonTracking(this.logEvent),
     };
   }
 

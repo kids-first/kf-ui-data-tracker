@@ -88,6 +88,7 @@ const analyticsTrackingConstants = {
   ...scope('STUDY_LIST_', ['VIEW_TOGGLE', 'SEARCH', 'ADD_STUDY']),
   ...scope('STUDY_TABLE_', MOUSE_EVENTS),
   ...scope('STUDY_CARD_', ['TOGGLE_DETAIL', ...MOUSE_EVENTS]),
+  ...scope('UPLOAD_WIZARD_', ['STEP', 'CLOSE']),
   ...scope('TOOLTIP', MOUSE_EVENTS),
 };
 
