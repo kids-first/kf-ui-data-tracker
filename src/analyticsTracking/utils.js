@@ -1,6 +1,11 @@
 import analyticsTrackingConstants from '../common/analyticsTrackingConstants';
 
 const EVENT_CONSTANTS = analyticsTrackingConstants;
+const normalizeEventType = str =>
+  str
+    .replace(/ /gi, '_')
+    .toUpperCase()
+    .trim();
 
 const mouseEvents = log => (eventProps = {}, eventType = null) => {
   const mouseActions = {
@@ -42,6 +47,49 @@ const mouseEvents = log => (eventProps = {}, eventType = null) => {
 
   return mouseActions;
 };
+
+//@TODO: make input events
+
+export const dropdownEvents = log => (
+  name,
+  eventProps = {},
+  eventType = null,
+) => ({
+  onOpen: () => {
+    log(
+      eventType
+        ? `${normalizeEventType(eventType)}_OPEN`
+        : name
+        ? `DROPDOWN_${normalizeEventType(name)}__OPEN`
+        : EVENT_CONSTANTS.DROPDOWN.OPEN,
+      {placeholder: name, ...eventProps},
+    );
+  },
+  onClose: () => {
+    log(
+      eventType
+        ? `${normalizeEventType(eventType)}_CLOSE`
+        : name
+        ? `DROPDOWN_${normalizeEventType(name)}__CLOSE`
+        : EVENT_CONSTANTS.DROPDOWN.OPEN,
+      {placeholder: name, ...eventProps},
+    );
+  },
+  onChange: (e, {value}) => {
+    log(
+      eventType
+        ? `${normalizeEventType(eventType)}_CHANGE`
+        : name
+        ? `DROPDOWN_${normalizeEventType(name)}__CHANGE`
+        : EVENT_CONSTANTS.DROPDOWN.OPEN,
+      {
+        placehodler: name,
+        value: value || (e & e.target ? e.target.value : null),
+        ...eventProps,
+      },
+    );
+  },
+});
 
 /**
  * Curry'd function to ensure all button events have the

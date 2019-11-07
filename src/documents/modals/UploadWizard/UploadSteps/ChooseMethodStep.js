@@ -29,7 +29,7 @@ const ChooseMethodStep = ({file, history, setStep, trackingProperties}) => (
                 </Header.Subheader>
               </Header>
               <Button
-                datavfsary
+                primary
                 {...buttonTracking(
                   'Update Existing Document',
                   null,

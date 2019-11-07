@@ -1,6 +1,6 @@
 import React from 'react';
 import analyticsTrackingConstants from '../common/analyticsTrackingConstants';
-import {popupTracking, buttonTracking} from './utils';
+import {popupTracking, buttonTracking, dropdownEvents} from './utils';
 import AmplitudeProxy from './AmplitudeProxy';
 
 const EVENT_CONSTANTS = analyticsTrackingConstants;
@@ -21,6 +21,7 @@ const withAnalyticsTracking = (Component, config) => {
               this.getAmplitudeEventProperties(),
             ),
             buttonTracking: buttonTracking(this.logEvent),
+            dropdownTracking: dropdownEvents(this.logEvent),
             inheritedEventProps: this.getAmplitudeEventProperties(),
             EVENT_CONSTANTS,
           }}

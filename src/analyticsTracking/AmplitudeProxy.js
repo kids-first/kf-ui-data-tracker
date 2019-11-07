@@ -11,6 +11,7 @@ class AmplitudeProxy extends Amplitude {
     super(props);
 
     if (typeof props.debounceInterval === 'number') {
+      console.log('debounce');
       this.logEvent = debounce(this.dispatch, props.debounceInterval);
     } else {
       this.logEvent = this.dispatch;

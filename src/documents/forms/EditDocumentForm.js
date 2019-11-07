@@ -10,6 +10,7 @@ import SelectElement from '../components/FileDetail/SelectElement';
 import Badge from '../../components/Badge/Badge';
 import UploadWizard from '../modals/UploadWizard/UploadWizard';
 import {fileTypeDetail, versionState} from '../../common/enums';
+import {withAnalyticsTracking} from '../../analyticsTracking';
 
 /**
  * Form to edit document information or annotate new file for uploading
@@ -28,6 +29,11 @@ const EditDocumentForm = React.forwardRef(
       submitButtons,
       showFieldHints,
       studyFiles,
+      tracking: {
+        instrument,
+        dropdownTracking,
+        EVENT_CONSTANTS: {INPUT},
+      },
     },
     ref,
   ) => {
@@ -86,7 +92,12 @@ const EditDocumentForm = React.forwardRef(
                     placeholder="Phenotypic Data manifest for..."
                     value={values.file_name}
                     onBlur={handleBlur}
-                    onChange={handleChange}
+                    onChange={instrument(INPUT._CHANGE, handleChange, {
+                      input_type: 'text',
+                      name: 'file_name',
+                      value: values.file_name,
+                      validation: errors,
+                    })}
                     error={`${errors.file_name &&
                       Object.values(errors.file_name).some(x => x != null)}`}
                   />
@@ -105,7 +116,17 @@ const EditDocumentForm = React.forwardRef(
                         options={options}
                         value={values.file_status}
                         placeholder="Choose an option"
+                        {...dropdownTracking(
+                          'Choose an option',
+                          {value: values.file_status},
+                          'file status',
+                        )}
                         onChange={(e, {value}) => {
+                          dropdownTracking(
+                            'Choose an option',
+                            {value},
+                            'file status',
+                          ).onChange(e, {value});
                           setFieldValue('file_status', value);
                         }}
                       />
@@ -124,6 +145,11 @@ const EditDocumentForm = React.forwardRef(
                         name="file_type"
                         id={item}
                         label={item}
+                        eventProperties={{
+                          value: item,
+                          placeholder: 'Document Type',
+                          input_type: 'radio',
+                        }}
                       />
                     </Form.Field>
                   ))}
@@ -136,7 +162,17 @@ const EditDocumentForm = React.forwardRef(
                     type="text"
                     name="file_desc"
                     value={values.file_desc}
-                    onChange={handleChange}
+                    onChange={instrument(
+                      INPUT._CHANGE,
+                      handleChange,
+                      {
+                        input_type: 'text',
+                        name: 'file_desc',
+                        value: values.file_desc,
+                        validation: errors,
+                      },
+                      'file desc',
+                    )}
                   />
                 </Form.Field>
                 {submitButtons &&
@@ -191,4 +227,4 @@ EditDocumentForm.propTypes = {
   showFieldHints: PropTypes.bool,
 };
 
-export default EditDocumentForm;
+export default withAnalyticsTracking(EditDocumentForm, {logToConsole: true});
