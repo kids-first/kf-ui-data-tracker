@@ -23,8 +23,8 @@ const VersionSummaryStep = ({
               eventType={`${UPLOAD_WIZARD_.STEP}_2`}
               eventProperties={{
                 ...trackingProperties,
-                file_to_update: {
-                  name: fileToUpdate.name,
+                document_to_update: {
+                  document_name: fileToUpdate.name,
                   type: fileToUpdate.fileType,
                   kfId: fileToUpdate.kfId,
                   similarity_rating: fileToUpdate.rating,

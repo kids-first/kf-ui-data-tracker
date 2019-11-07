@@ -77,6 +77,7 @@ const scope = (name, eventsList) => {
 
 const DROPDOWN_EVENTS = ['OPEN', 'CLOSE', 'CHANGE'];
 const MOUSE_EVENTS = ['HOVER', 'CLICK'];
+const DOCUMENT_EVENTS = ['UPLOAD', 'DOWNLOAD', 'DELETE', 'EDIT'];
 
 /**
  * analytics tracking constants object
@@ -90,6 +91,9 @@ const analyticsTrackingConstants = {
   ...scope('DRAG', ['OVER', 'ENTER', 'LEAVE', 'DROP']),
   ...scope('LIST', ['PAGINATE']),
   ...scope('UPLOAD_WIZARD', ['STEP', 'CLOSE']),
+  ...scope('DOCUMENT', DOCUMENT_EVENTS),
+  ...scope('NEW_DOCUMENT', DOCUMENT_EVENTS),
+  ...scope('NEW_VERSION', DOCUMENT_EVENTS),
   ...scope('TOOLTIP', MOUSE_EVENTS),
   ...scope('UPLOAD'),
   ...scope('STUDY_LIST', ['VIEW_TOGGLE', 'SEARCH', 'ADD_STUDY']),
