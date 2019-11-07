@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {fileTypeDetail} from '../../../common/enums';
 import {Icon, Segment, Radio} from 'semantic-ui-react';
+import {withAnalyticsTracking} from '../../../analyticsTracking';
 /**
  * A radio button that displays information about a file type with a title,
  * description, and icon.
@@ -12,6 +13,11 @@ const SelectElement = ({
   id,
   label,
   className,
+  tracking: {
+    logEvent,
+    instrument,
+    EVENT_CONSTANTS: {INPUT},
+  },
   ...props
 }) => {
   const selected = id === values.file_type;
@@ -21,6 +27,11 @@ const SelectElement = ({
       color={selected ? 'blue' : null}
       className="selectionRadio--card"
       onClick={() => {
+        logEvent(INPUT._CHANGE, {
+          name,
+          label,
+          radio_text: fileTypeDetail[id].title,
+        });
         setFieldValue(name, id);
       }}
     >
@@ -30,7 +41,7 @@ const SelectElement = ({
         id={id}
         value={id}
         checked={selected}
-        onChange={onChange}
+        onChange={instrument(INPUT._CHANGE, onChange)}
         label={() => (
           <Icon
             name={fileTypeDetail[id].icon}
@@ -67,4 +78,4 @@ SelectElement.propTypes = {
   className: PropTypes.string,
 };
 
-export default SelectElement;
+export default withAnalyticsTracking(SelectElement);

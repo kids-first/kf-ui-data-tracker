@@ -5,11 +5,12 @@ import {CREATE_FILE} from '../mutations';
 import {GET_STUDY_BY_ID, MY_PROFILE} from '../../state/queries';
 import {Message, Segment, Container, Button, Header} from 'semantic-ui-react';
 import {lengthLimit} from '../utilities';
+import {withAnalyticsTracking} from '../../analyticsTracking';
 
 /**
  * The NewDocumentView displays a form to collect details about a new file.
  * It expects that the user lands on the page after being forwarded from a
- * file browser dialog and a file present in `location.state.file` as
+ * file browser dialog and a file present in `l \ocation.state.file` as
  * populated by the router (eg: history.push('/new', {state: <File>}) )
  */
 const NewDocumentView = ({
@@ -19,6 +20,11 @@ const NewDocumentView = ({
   createDocument,
   user,
   study,
+  tracking: {
+    logEvent,
+    buttonTracking,
+    EVENT_CONSTANTS: {NEW_DOCUMENT_},
+  },
 }) => {
   // Tracks any error state reported from the server
   const [errors, setErrors] = useState('');
@@ -42,10 +48,31 @@ const NewDocumentView = ({
         description: fileDescription,
       },
     })
-      .then(resp => {
+      .then(({data: {createFile}}) => {
+        logEvent(NEW_DOCUMENT_.UPLOAD, {
+          upload_success: createFile.success,
+          file: {
+            file_name: fileName,
+            type: fileType,
+          },
+          new_document: {
+            document_name: createFile.file.name,
+            type: createFile.file.fileType,
+            kfId: createFile.file.kfId,
+          },
+        });
         history.push(`/study/${studyId}/documents`);
       })
       .catch(err => {
+        logEvent(NEW_DOCUMENT_.UPLOAD, {
+          error: err,
+          upload_success: false,
+          file: {
+            file_name: fileName,
+            type: fileType,
+          },
+        });
+
         setErrors(err.message);
       });
   };
@@ -85,6 +112,17 @@ const NewDocumentView = ({
             errors={errors}
             history={history}
             showFieldHints={true}
+            eventProperties={{
+              study: {
+                kfId: study.studyByKfId ? study.studyByKfId.kfId : null,
+                name: study.studyByKfId ? study.studyByKfId.name : null,
+              },
+              file: {
+                file_name: location.state.file.name,
+                size: location.state.file.size,
+                type: location.state.file.type,
+              },
+            }}
             submitButtons={(disabled, onUploading) => (
               <Segment vertical basic compact>
                 <Button
@@ -92,15 +130,33 @@ const NewDocumentView = ({
                   type="submit"
                   primary={errors.length === 0}
                   disabled={disabled}
+                  {...buttonTracking(
+                    'UPLOAD',
+                    'submit',
+                    {disabled: disabled, errors: errors.length},
+                    'UPLOAD',
+                  )}
                 >
                   {onUploading && !errors ? 'UPLOADING ...' : 'UPLOAD'}
                 </Button>
                 <Button
                   floated="right"
                   primary={errors.length > 0}
-                  onClick={() =>
-                    history.push(`/study/${match.params.kfId}/documents`)
-                  }
+                  {...buttonTracking(
+                    'cancel',
+                    'link',
+                    {link: `/study/${match.params.kfId}/documents`},
+                    'CANCEL UPLOAD',
+                  )}
+                  onClick={() => {
+                    buttonTracking(
+                      'cancel',
+                      'link',
+                      {link: `/study/${match.params.kfId}/documents`},
+                      'CANCEL UPLOAD',
+                    ).onClick();
+                    history.push(`/study/${match.params.kfId}/documents`);
+                  }}
                 >
                   CANCEL
                 </Button>
@@ -128,4 +184,5 @@ export default compose(
     options: props => ({variables: {kfId: props.match.params.kfId}}),
   }),
   graphql(MY_PROFILE, {name: 'user'}),
+  withAnalyticsTracking,
 )(NewDocumentView);
