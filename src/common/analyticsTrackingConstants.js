@@ -89,6 +89,7 @@ const analyticsTrackingConstants = {
   ...scope('DROPDOWN', DROPDOWN_EVENTS),
   ...scope('DRAG', ['OVER', 'ENTER', 'LEAVE', 'DROP']),
   ...scope('LIST', ['PAGINATE']),
+  ...scope('UPLOAD_WIZARD', ['STEP', 'CLOSE']),
   ...scope('TOOLTIP', MOUSE_EVENTS),
   ...scope('UPLOAD'),
   ...scope('STUDY_LIST', ['VIEW_TOGGLE', 'SEARCH', 'ADD_STUDY']),

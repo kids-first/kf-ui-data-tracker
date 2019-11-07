@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Icon, Table} from 'semantic-ui-react';
+import {LogOnMount} from '@amplitude/react-amplitude';
+import {AmplitudeProxy} from '../../../../analyticsTracking';
 import {sortFilesBySimilarity} from '../../../utilities';
 
 const DocRow = ({document, setStep, setFileToUpdate}) => {
@@ -45,23 +47,38 @@ const SimilarDocumentsTable = ({documents, setStep, setFileToUpdate}) => (
  * Allows users to select study documents based on the
  * string similarity of file names
  */
-const DocumentSelectionStep = ({fileList, file, setStep, setFileToUpdate}) => {
+const DocumentSelectionStep = ({
+  fileList,
+  file,
+  setStep,
+  setFileToUpdate,
+  trackingProperties,
+}) => {
   // find bestMatches for filename's similar to the uploaded document
   const fileMatches = sortFilesBySimilarity(file, fileList);
 
   return (
-    <>
-      <p>
-        Adding changes to existing documents in your study? You can rest easy
-        knowing that any previous versions of your documents are automatically
-        archived, and available to you for easy download/review at any time.
-      </p>
-      <SimilarDocumentsTable
-        documents={fileMatches.ranked_files}
-        setStep={setStep}
-        setFileToUpdate={setFileToUpdate}
-      />
-    </>
+    <AmplitudeProxy eventProperties={trackingProperties}>
+      {({EVENT_CONSTANTS: {UPLOAD_WIZARD_}}) => (
+        <>
+          <LogOnMount
+            eventType={`${UPLOAD_WIZARD_.STEP}_1`}
+            eventProperties={trackingProperties}
+          />
+          <p>
+            Adding changes to existing documents in your study? You can rest
+            easy knowing that any previous versions of your documents are
+            automatically archived, and available to you for easy
+            download/review at any time.
+          </p>
+          <SimilarDocumentsTable
+            documents={fileMatches.ranked_files}
+            setStep={setStep}
+            setFileToUpdate={setFileToUpdate}
+          />
+        </>
+      )}
+    </AmplitudeProxy>
   );
 };
 

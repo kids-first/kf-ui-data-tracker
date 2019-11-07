@@ -7,7 +7,9 @@ import {
   SuccessStep,
   VersionSummaryStep,
 } from './UploadSteps';
-import {graphql} from 'react-apollo';
+import {graphql, compose} from 'react-apollo';
+
+import {withAnalyticsTracking} from '../../../analyticsTracking';
 
 import {GET_STUDY_BY_ID} from '../../../state/queries';
 import {CREATE_VERSION} from '../../mutations';
@@ -64,6 +66,10 @@ const UploadWizard = ({
   startingStep = 0,
   fileList,
   studyId,
+  tracking: {
+    logEvent,
+    EVENT_CONSTANTS: {UPLOAD_WIZARD_},
+  },
 }) => {
   // The current step that the flow is on
   const [step, setStep] = useState(startingStep);
@@ -82,6 +88,7 @@ const UploadWizard = ({
   const similarDocuments = sortFilesBySimilarity(file, fileList);
 
   const handleCloseDialog = () => {
+    logEvent(UPLOAD_WIZARD_.CLOSE);
     onCloseDialog();
   };
 
@@ -148,6 +155,22 @@ const UploadWizard = ({
           handleCloseDialog,
           isTimerActive,
           seconds,
+          trackingProperties: {
+            similar_documents: similarDocuments.ranked_files.map(
+              ({name, rating, kfId, fleType}) => ({
+                name,
+                rating,
+                kfId,
+                fleType,
+              }),
+            ),
+            step_title: UPLOAD_STEPS[step].title,
+            file: {
+              name: file.name,
+              type: file.type,
+              size: file.size,
+            },
+          },
         })}
       </Modal.Content>
 
@@ -207,9 +230,12 @@ UploadWizard.propTypes = {
   createVersion: PropTypes.func.isRequired,
 };
 
-export default graphql(CREATE_VERSION, {
-  name: 'createVersion',
-  options: ({studyId}) => ({
-    refetchQueries: [{query: GET_STUDY_BY_ID, variables: {kfId: studyId}}],
+export default compose(
+  graphql(CREATE_VERSION, {
+    name: 'createVersion',
+    options: ({studyId}) => ({
+      refetchQueries: [{query: GET_STUDY_BY_ID, variables: {kfId: studyId}}],
+    }),
   }),
-})(UploadWizard);
+  withAnalyticsTracking,
+)(UploadWizard);
