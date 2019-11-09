@@ -26,75 +26,113 @@ import {
   Popup,
   Divider,
 } from 'semantic-ui-react';
+import {withAnalyticsTracking} from '../../../analyticsTracking';
 
-const ActionButtons = ({
-  downloadFile,
-  studyId,
-  fileNode,
-  downloadFileMutation,
-  setDialog,
-  deleteFile,
-  history,
-  isAdmin,
-}) => (
-  <>
-    <Header as="h5" attached="top" textAlign="center" color="blue">
-      Actions
-    </Header>
-    <Segment raised attached secondary>
-      <Button
-        primary
-        icon="download"
-        fluid
-        size="mini"
-        labelPosition="left"
-        onClick={e =>
-          downloadFile(studyId, fileNode.kfId, null, downloadFileMutation)
-        }
-        content="DOWNLOAD"
-      />
-      <Divider />
-      <Button.Group size="mini" fluid>
+const ActionButtons = withAnalyticsTracking(
+  ({
+    downloadFile,
+    studyId,
+    fileNode,
+    downloadFileMutation,
+    setDialog,
+    deleteFile,
+    history,
+    isAdmin,
+    tracking: {
+      EVENT_CONSTANTS: {DOCUMENT_},
+      buttonTracking,
+      instrument,
+      popupTracking,
+    },
+  }) => (
+    <>
+      <Header as="h5" attached="top" textAlign="center" color="blue">
+        Actions
+      </Header>
+      <Segment raised attached secondary>
         <Button
-          icon="pencil"
-          size="small"
+          primary
+          icon="download"
+          fluid
+          size="mini"
           labelPosition="left"
-          color="grey"
-          onClick={() => setDialog('annotation')}
-          data-testid="edit-button"
-          content="EDIT"
+          {...buttonTracking('DOWNLOAD', null, {}, DOCUMENT_.DOWNLOAD)}
+          onClick={e => {
+            buttonTracking('DOWNLOAD', null, {}, DOCUMENT_.DOWNLOAD).onClick();
+            downloadFile(studyId, fileNode.kfId, null, downloadFileMutation);
+          }}
+          content="DOWNLOAD"
         />
-        {isAdmin && (
-          <Popup
-            trigger={
-              <Button icon="trash alternate" data-testid="delete-button" />
-            }
-            header="Are you sure?"
-            content={
-              <>
-                This file and all of its versions and history will be deleted
-                <Divider />
-                <Button
-                  data-testid="delete-confirm"
-                  negative
-                  fluid
-                  size="mini"
-                  icon="trash alternate"
-                  content="Delete"
-                  onClick={e => {
-                    deleteFile({variables: {kfId: fileNode.kfId}});
-                    history.goBack();
-                  }}
-                />
-              </>
-            }
-            on="click"
-            position="top right"
+        <Divider />
+        <Button.Group size="mini" fluid>
+          <Button
+            icon="pencil"
+            size="small"
+            labelPosition="left"
+            color="grey"
+            {...buttonTracking('EDIT', null, {}, DOCUMENT_.EDIT)}
+            onClick={() => {
+              buttonTracking('EDIT', null, {}, DOCUMENT_.EDIT).onClick();
+              setDialog('annotation');
+            }}
+            data-testid="edit-button"
+            content="EDIT"
           />
-        )}
-      </Button.Group>
-    </Segment>
-  </>
+          {isAdmin && (
+            <Popup
+              trigger={
+                <Button
+                  {...popupTracking(
+                    {
+                      name: DOCUMENT_.DELETE,
+                      content:
+                        'This file and all of its versions and history will be deleted',
+                    },
+                    DOCUMENT_.DELETE,
+                  )}
+                  icon="trash alternate"
+                  data-testid="delete-button"
+                />
+              }
+              header="Are you sure?"
+              content={
+                <>
+                  This file and all of its versions and history will be deleted
+                  <Divider />
+                  <Button
+                    data-testid="delete-confirm"
+                    negative
+                    fluid
+                    size="mini"
+                    icon="trash alternate"
+                    content="Delete"
+                    {...buttonTracking(
+                      'Delete confirm',
+                      null,
+                      null,
+                      'delete-confirm',
+                    )}
+                    onClick={e => {
+                      buttonTracking(
+                        'Delete confirm',
+                        null,
+                        null,
+                        'delete-confirm',
+                      ).onClick();
+                      deleteFile({variables: {kfId: fileNode.kfId}});
+                      history.goBack();
+                    }}
+                  />
+                </>
+              }
+              on="click"
+              position="top right"
+            />
+          )}
+        </Button.Group>
+      </Segment>
+    </>
+  ),
 );
 
 /**
@@ -197,6 +235,15 @@ const FileDetail = ({fileNode, history, match, isAdmin}) => {
                         deleteFile,
                         history,
                         isAdmin,
+                        eventProperties: {
+                          document_version: {
+                            kfId: fileNode.kfId,
+                            file_name: fileNode.fileName,
+                            state: fileNode.versions.edges[0].node.state,
+                            created_at:
+                              fileNode.versions.edges[0].node.createdAt,
+                          },
+                        },
                       }}
                     />
                   </Grid.Column>

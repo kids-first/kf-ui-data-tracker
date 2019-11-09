@@ -47,7 +47,7 @@ const FileDetailModal = ({
           onUploadClick={onUploadClick}
           downloadFileMutation={downloadFileMutation}
           eventProperties={{
-            document_version: {
+            document: {
               kfId: fileNode.kfId,
               file_name: fileNode.fileName,
               state: openedVersion.version.state,

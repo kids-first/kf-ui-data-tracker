@@ -32,6 +32,19 @@ class AmplitudeProxy extends Amplitude {
       console.log(`AmplitudeProxy::dispatch ${eventType}`, eventProps);
     }
 
+    /** log all events to sessionStorage */
+    // sessionStorage.setItem(
+    //   'session_events',
+    //   JSON.stringify([
+    //     ...(JSON.parse(sessionStorage.getItem('session_events')) || []),
+    //     {
+    //       eventType,
+    //       eventProps,
+    //       time: Date.now(),
+    //     },
+    //   ]),
+    // );
+
     return this._makeLogEvent()(
       eventType,
       {
