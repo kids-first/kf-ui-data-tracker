@@ -4,6 +4,7 @@ import {
   VersionInfoModal,
   EditDocumentModal,
 } from '../../modals';
+
 /**
  * Render NewVersionModal, EditDocumentModal or VersionInfoModal
  * Handling conditional rendering in a separate file to keep FileDetail clean
@@ -45,6 +46,14 @@ const FileDetailModal = ({
           onCloseDialog={onCloseModal}
           onUploadClick={onUploadClick}
           downloadFileMutation={downloadFileMutation}
+          eventProperties={{
+            document_version: {
+              kfId: fileNode.kfId,
+              file_name: fileNode.fileName,
+              state: openedVersion.version.state,
+              created_at: openedVersion.version.createdAt,
+            },
+          }}
         />
       )}
     </Fragment>

@@ -4,6 +4,8 @@ import AvatarTimeAgo from '../../components/AvatarTimeAgo/AvatarTimeAgo';
 import {Button, Header, Modal, Icon, Grid, Label} from 'semantic-ui-react';
 import {downloadFile, formatFileSize, lengthLimit} from '../utilities';
 import {fileTypeDetail} from '../../common/enums';
+import {LogOnMount} from '@amplitude/react-amplitude';
+import {withAnalyticsTracking} from '../../analyticsTracking';
 
 const VersionInfoModal = ({
   studyId,
@@ -12,9 +14,19 @@ const VersionInfoModal = ({
   onCloseDialog,
   onUploadClick,
   downloadFileMutation,
+  tracking: {
+    buttonTracking,
+    instrument,
+    EVENT_CONSTANTS: {DOCUMENT_VERSION_},
+  },
 }) => {
   return (
-    <Modal open={true} onClose={onCloseDialog} closeIcon>
+    <Modal
+      open={true}
+      onClose={instrument(DOCUMENT_VERSION_.MODAL__CLOSE, onCloseDialog)}
+      closeIcon
+    >
+      <LogOnMount eventType={DOCUMENT_VERSION_.MODAL__OPEN} />
       <Header content={`Document Versions: ${fileNode.name}`} />
       <Modal.Content scrolling>
         <Grid>
@@ -97,7 +109,8 @@ const VersionInfoModal = ({
           icon
           labelPosition="left"
           size="mini"
-          onClick={onUploadClick}
+          {...buttonTracking('UPLOAD VERSION', null, null, 'UPLOAD VERSION')}
+          onClick={instrument('UPLOAD_VERSION__CLICK', onUploadClick)}
         >
           <Icon name="cloud upload" />
           UPLOAD VERSION
@@ -107,14 +120,26 @@ const VersionInfoModal = ({
           icon
           labelPosition="left"
           size="mini"
-          onClick={() =>
+          {...buttonTracking(
+            'DOWNLOAD VERSION',
+            null,
+            null,
+            'DOWNLOAD VERSION',
+          )}
+          onClick={() => {
+            buttonTracking(
+              'DOWNLOAD VERSION',
+              null,
+              null,
+              'DOWNLOAD VERSION',
+            ).onClick();
             downloadFile(
               studyId,
               fileNode.kfId,
               openedVersion.version.kfId,
               downloadFileMutation,
-            )
-          }
+            );
+          }}
         >
           <Icon name="download" />
           DOWNLOAD
@@ -124,4 +149,4 @@ const VersionInfoModal = ({
   );
 };
 
-export default VersionInfoModal;
+export default withAnalyticsTracking(VersionInfoModal);

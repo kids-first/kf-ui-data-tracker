@@ -45,19 +45,24 @@ const VersionList = ({
       </Table.Header>
       <Table.Body>
         {fileNode.versions.edges.length ? (
-          fileNode.versions.edges
-            .sort(dateCompare)
-            .map(({node}, index) => (
-              <VersionItem
-                key={index}
-                studyId={studyId}
-                fileId={fileNode.kfId}
-                fileType={fileNode.fileType}
-                versionNode={node}
-                index={index}
-                onNameClick={onNameClick}
-              />
-            ))
+          fileNode.versions.edges.sort(dateCompare).map(({node}, index) => (
+            <VersionItem
+              key={index}
+              studyId={studyId}
+              fileId={fileNode.kfId}
+              fileType={fileNode.fileType}
+              versionNode={node}
+              index={index}
+              onNameClick={onNameClick}
+              eventProperties={{
+                document_version: {
+                  kfId: node.kfId,
+                  file_name: node.fileName,
+                  state: node.state,
+                },
+              }}
+            />
+          ))
         ) : (
           <Table.Row>
             <Table.Cell colSpan="3" textAlign="center">

@@ -49,12 +49,14 @@ const scope = (name, eventsList) => {
   let scopeOriginal = {
     scope: name.trim().toUpperCase(),
     ...events(
-      eventsList.map(e =>
-        e
-          .trim()
-          .replace(' ', '_')
-          .toUpperCase(),
-      ),
+      eventsList
+        .filter(x => typeof x === 'string')
+        .map(e =>
+          e
+            .trim()
+            .replace(' ', '_')
+            .toUpperCase(),
+        ),
     ),
   };
   /**
@@ -78,6 +80,8 @@ const scope = (name, eventsList) => {
 const MOUSE_EVENTS = ['HOVER', 'CLICK'];
 const DOCUMENT_EVENTS = ['UPLOAD', 'DOWNLOAD', 'DELETE', 'EDIT'];
 const INPUT_EVENTS = ['_BLUR', '_FOCUS', '_CHANGE'];
+const MODAL_EVENTS = ['MODAL__OPEN', 'MODAL__CLOSE'];
+
 /**
  * analytics tracking constants object
  */
@@ -90,8 +94,12 @@ const analyticsTrackingConstants = {
   ...scope('STUDY_TABLE_', MOUSE_EVENTS),
   ...scope('STUDY_CARD_', ['TOGGLE_DETAIL', ...MOUSE_EVENTS]),
   ...scope('UPLOAD_WIZARD_', ['STEP', 'CLOSE']),
-  ...scope('DOCUMENT_', DOCUMENT_EVENTS),
-  ...scope('DOCUMENT_VERSION_', [...DOCUMENT_EVENTS, ...MOUSE_EVENTS]),
+  ...scope('DOCUMENT_', [...DOCUMENT_EVENTS, ...MODAL_EVENTS]),
+  ...scope('DOCUMENT_VERSION_', [
+    ...DOCUMENT_EVENTS,
+    ...MOUSE_EVENTS,
+    ...MODAL_EVENTS,
+  ]),
   ...scope('NEW_DOCUMENT_', DOCUMENT_EVENTS),
   ...scope('NEW_VERSION_', DOCUMENT_EVENTS),
   ...scope('TOOLTIP', MOUSE_EVENTS),
