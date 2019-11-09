@@ -6,6 +6,7 @@ import AvatarTimeAgo from '../../../components/AvatarTimeAgo/AvatarTimeAgo';
 import {formatFileSize, downloadFile, lengthLimit} from '../../utilities';
 import {versionState} from '../../../common/enums';
 import {Label, Icon, Table, Popup} from 'semantic-ui-react';
+import {withAnalyticsTracking} from '../../../analyticsTracking';
 /**
  * Displays single version item from the list
  */
@@ -16,6 +17,11 @@ const VersionItem = ({
   versionNode,
   index,
   onNameClick,
+  tracking: {
+    EVENT_CONSTANTS: {DOCUMENT_VERSION_},
+    buttonTracking,
+    instrument,
+  },
 }) => {
   const labelColor = versionNode.state
     ? versionState[versionNode.state].labelColor
@@ -27,7 +33,33 @@ const VersionItem = ({
     <Mutation mutation={FILE_DOWNLOAD_URL}>
       {downloadFileMutation => (
         <Table.Row
-          onClick={e => onNameClick(versionNode, index)}
+          {...buttonTracking(
+            versionNode.fileName,
+            'Table.Row',
+            {
+              document_version: {
+                kfId: versionNode.kfId,
+                file_name: versionNode.fileName,
+                state: versionNode.state,
+              },
+            },
+            DOCUMENT_VERSION_.scope + 'item',
+          )}
+          onClick={e => {
+            onNameClick(versionNode, index);
+            buttonTracking(
+              versionNode.fileName,
+              'Table.Row',
+              {
+                document_version: {
+                  kfId: versionNode.kfId,
+                  file_name: versionNode.fileName,
+                  state: versionNode.state,
+                },
+              },
+              DOCUMENT_VERSION_.scope + 'item',
+            ).onClick();
+          }}
           className="version--item"
         >
           {index === 0 ? (
@@ -38,6 +70,20 @@ const VersionItem = ({
                 size="tiny"
                 ribbon
                 title="Latest Version"
+                onClick={() =>
+                  buttonTracking(
+                    DOCUMENT_VERSION_.scope + 'STATE',
+                    'label',
+                    {
+                      document_version: {
+                        kfId: versionNode.kfId,
+                        file_name: versionNode.fileName,
+                        state: versionNode.state,
+                      },
+                    },
+                    DOCUMENT_VERSION_.scope + 'STATE',
+                  ).onClick()
+                }
               >
                 {versionNode.state
                   ? versionState[versionNode.state].title
@@ -87,6 +133,19 @@ const VersionItem = ({
               as="button"
               onClick={e => {
                 e.stopPropagation();
+
+                buttonTracking(
+                  size,
+                  'icon button',
+                  {
+                    document_version: {
+                      kfId: versionNode.kfId,
+                      file_name: versionNode.fileName,
+                      state: versionNode.state,
+                    },
+                  },
+                  DOCUMENT_VERSION_.scope + 'SIZE',
+                ).onClick();
                 downloadFile(
                   studyId,
                   fileId,
@@ -126,4 +185,4 @@ VersionItem.defaultProps = {
   index: null,
 };
 
-export default VersionItem;
+export default withAnalyticsTracking(VersionItem);

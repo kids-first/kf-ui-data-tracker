@@ -3,10 +3,21 @@ import PropTypes from 'prop-types';
 import {dateCompare} from '../../utilities';
 import VersionItem from './VersionItem';
 import {Button, Table} from 'semantic-ui-react';
+import {withAnalyticsTracking} from '../../../analyticsTracking';
 /**
  * Displays ordered versions of one file. (Latest first)
  */
-const VersionList = ({studyId, fileNode, onUploadClick, onNameClick}) => {
+const VersionList = ({
+  studyId,
+  fileNode,
+  onUploadClick,
+  onNameClick,
+  tracking: {
+    EVENT_CONSTANTS: {DOCUMENT_VERSION_},
+    buttonTracking,
+    instrument,
+  },
+}) => {
   return (
     <Table compact="very" selectable>
       <Table.Header>
@@ -22,7 +33,8 @@ const VersionList = ({studyId, fileNode, onUploadClick, onNameClick}) => {
               compact
               primary
               floated="right"
-              onClick={onUploadClick}
+              {...buttonTracking('Upload Version', null, {}, 'Upload Version')}
+              onClick={instrument('UPLOAD_VERSION__CLICK', onUploadClick)}
               labelPosition="left"
               size="mini"
               icon="cloud upload"
@@ -72,4 +84,4 @@ VersionList.defaultProps = {
   fileNode: {},
 };
 
-export default VersionList;
+export default withAnalyticsTracking(VersionList);

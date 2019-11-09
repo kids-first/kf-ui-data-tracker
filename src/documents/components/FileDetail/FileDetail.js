@@ -13,6 +13,7 @@ import {
 } from '../../utilities';
 import {fileTypeDetail} from '../../../common/enums';
 import DeleteFileMutation from '../../containers/DeleteFileMutation';
+
 import FileDetailModal from './FileDetailModal';
 import Badge from '../../../components/Badge/Badge';
 import {
@@ -212,6 +213,19 @@ const FileDetail = ({fileNode, history, match, isAdmin}) => {
                       onNameClick={(versionNode, index) => {
                         setDialog('versionInfo');
                         setOpenVersion({version: versionNode, index: index});
+                      }}
+                      eventProperties={{
+                        document: {
+                          kfId: fileNode.kfId,
+                          document_name: fileNode.name,
+                          type: fileNode.fileType,
+                          last_version_state: fileNode.versions.edges[0]
+                            ? fileNode.versions.edges[0].node.state
+                            : null,
+                          last_version_created_at: fileNode.versions.edges[0]
+                            ? fileNode.versions.edges[0].node.createdAt
+                            : null,
+                        },
                       }}
                     />
                   </Grid.Column>

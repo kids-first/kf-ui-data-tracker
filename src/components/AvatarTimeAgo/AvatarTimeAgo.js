@@ -4,16 +4,35 @@ import {Label} from 'semantic-ui-react';
 import TimeAgo from 'react-timeago';
 import defaultAvatar from '../../assets/defaultAvatar.png';
 import {longDate} from '../../common/dateUtils';
-
+import {withAnalyticsTracking} from '../../analyticsTracking';
 /**
  * Displays time ago and avatar in one label
  */
-const AvatarTimeAgo = ({showUsername, creator, createdAt, size}) => {
+const AvatarTimeAgo = ({
+  showUsername,
+  creator,
+  createdAt,
+  size,
+  tracking: {
+    EVENT_CONSTANTS: {AVATAR_},
+    buttonTracking,
+  },
+}) => {
   const picUrl = creator && creator.picture ? creator.picture : defaultAvatar;
   const picAlt = creator && creator.username ? creator.username : 'profile';
   if (creator && showUsername) {
     return (
-      <Label image size={size}>
+      <Label
+        image
+        size={size}
+        as={'span'}
+        {...buttonTracking(
+          creator.username ? creator.username : 'unknown',
+          'label',
+          {created_at: createdAt},
+          AVATAR_.scope,
+        )}
+      >
         <img alt={picAlt} src={picUrl} />
         {creator.username ? creator.username : 'unknown'}
         <Label.Detail>
@@ -31,7 +50,17 @@ const AvatarTimeAgo = ({showUsername, creator, createdAt, size}) => {
     );
   } else {
     return (
-      <Label image basic size={size}>
+      <Label
+        image
+        basic
+        size={size}
+        {...buttonTracking(
+          creator.username ? creator.username : 'unknown',
+          'label',
+          {created_at: createdAt},
+          AVATAR_.scope,
+        )}
+      >
         <img alt={picAlt} src={picUrl} />
         {createdAt ? (
           <TimeAgo date={createdAt} live={false} title={longDate(createdAt)} />
@@ -63,4 +92,4 @@ AvatarTimeAgo.propTypes = {
   ]),
 };
 
-export default AvatarTimeAgo;
+export default withAnalyticsTracking(AvatarTimeAgo);
