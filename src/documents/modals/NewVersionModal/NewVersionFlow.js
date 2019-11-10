@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import {graphql} from 'react-apollo';
+import {graphql, compose} from 'react-apollo';
 import {Button, Modal, Message, Icon} from 'semantic-ui-react';
 import UploadStep from './UploadStep';
 import DescriptionStep from './DescriptionStep';
 import {GET_FILE_BY_ID} from '../../queries';
 import {CREATE_VERSION} from '../../mutations';
+import {withAnalyticsTracking} from '../../../analyticsTracking';
 
 /**
  * The NewVersionFlow handles flow for uploading a new version of a file
@@ -16,6 +17,11 @@ export const NewVersionFlow = ({
   additionalContent,
   handleClose,
   createVersion,
+  tracking: {
+    instrument,
+    logEvent,
+    EVENT_CONSTANTS: {NEW_VERSION_},
+  },
 }) => {
   // The current step that the flow is on
   const [step, setStep] = useState(0);
@@ -37,6 +43,13 @@ export const NewVersionFlow = ({
   // Handle the version upload mutation
   const handleSave = props => {
     setUploading(true);
+    logEvent(NEW_VERSION_.UPLOAD, {
+      file: {
+        file_name: file.name,
+        size: file.size,
+        type: file.type,
+      },
+    });
     createVersion({
       variables: {file, fileId: match.params.fileId, description},
     })
@@ -117,12 +130,15 @@ NewVersionFlow.propTypes = {
 };
 
 // TODO: Update the cache instead of refetching the query
-export default graphql(CREATE_VERSION, {
-  name: 'createVersion',
-  options: ({match}) => ({
-    awaitRefetchQueries: true,
-    refetchQueries: [
-      {query: GET_FILE_BY_ID, variables: {kfId: match.params.fileId}},
-    ],
+export default compose(
+  graphql(CREATE_VERSION, {
+    name: 'createVersion',
+    options: ({match}) => ({
+      awaitRefetchQueries: true,
+      refetchQueries: [
+        {query: GET_FILE_BY_ID, variables: {kfId: match.params.fileId}},
+      ],
+    }),
   }),
-})(NewVersionFlow);
+  withAnalyticsTracking,
+)(NewVersionFlow);

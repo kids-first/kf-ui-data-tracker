@@ -41,7 +41,6 @@ const ActionButtons = withAnalyticsTracking(
     tracking: {
       EVENT_CONSTANTS: {DOCUMENT_},
       buttonTracking,
-      instrument,
       popupTracking,
     },
   }) => (
@@ -138,7 +137,16 @@ const ActionButtons = withAnalyticsTracking(
 /**
  * Form to display file details and file versions
  */
-const FileDetail = ({fileNode, history, match, isAdmin}) => {
+const FileDetail = ({
+  fileNode,
+  history,
+  match,
+  isAdmin,
+  tracking: {
+    EVENT_CONSTANTS: {DOCUMENT_},
+    logEvent,
+  },
+}) => {
   const [dialog, setDialog] = useState(false);
   const [versionOpened, setOpenVersion] = useState({version: {}, index: null});
   const sortedVersions = fileSortedVersions(fileNode);
@@ -282,7 +290,14 @@ const FileDetail = ({fileNode, history, match, isAdmin}) => {
                     match={match}
                     studyId={studyId}
                     fileNode={fileNode}
-                    onCloseModal={() => setDialog(false)}
+                    onCloseModal={() => {
+                      logEvent(
+                        DOCUMENT_.scope +
+                          dialog.toUpperCase() +
+                          '_MODAL__CLOSE',
+                      );
+                      setDialog(false);
+                    }}
                     dialog={dialog}
                     onUploadClick={() => setDialog('upload')}
                     openedVersion={versionOpened}
@@ -307,4 +322,4 @@ FileDetail.defaultProps = {
   fileNode: {},
 };
 
-export default withRouter(FileDetail);
+export default withRouter(withAnalyticsTracking(FileDetail));

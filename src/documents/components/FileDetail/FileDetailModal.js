@@ -29,6 +29,14 @@ const FileDetailModal = ({
           match={match}
           fileNode={fileNode}
           handleClose={onCloseModal}
+          eventProperties={{
+            document: {
+              kfId: fileNode.kfId,
+              file_name: fileNode.fileName,
+              state: openedVersion.version.state,
+              created_at: openedVersion.version.createdAt,
+            },
+          }}
         />
       )}
       {dialog === 'annotation' && (
@@ -36,6 +44,14 @@ const FileDetailModal = ({
           studyId={studyId}
           fileNode={fileNode}
           onCloseDialog={onCloseModal}
+          eventProperties={{
+            document: {
+              kfId: fileNode.kfId,
+              file_name: fileNode.fileName,
+              state: openedVersion.version.state,
+              created_at: openedVersion.version.createdAt,
+            },
+          }}
         />
       )}
       {dialog === 'versionInfo' && (

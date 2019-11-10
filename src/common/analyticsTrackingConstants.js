@@ -101,7 +101,7 @@ const analyticsTrackingConstants = {
     ...MODAL_EVENTS,
   ]),
   ...scope('NEW_DOCUMENT_', DOCUMENT_EVENTS),
-  ...scope('NEW_VERSION_', DOCUMENT_EVENTS),
+  ...scope('NEW_VERSION_', [...DOCUMENT_EVENTS, ...MOUSE_EVENTS]),
   ...scope('TOOLTIP', MOUSE_EVENTS),
   ...scope('AVATAR_', MOUSE_EVENTS),
 };
