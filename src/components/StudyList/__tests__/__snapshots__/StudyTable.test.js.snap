@@ -14,10 +14,6 @@ exports[`renders study table correctly 1`] = `
         <th
           class=""
         >
-          <i
-            aria-hidden="true"
-            class="grey file icon"
-          />
           Short Name
         </th>
         <th
@@ -28,64 +24,36 @@ exports[`renders study table correctly 1`] = `
         <th
           class=""
         >
-          <i
-            aria-hidden="true"
-            class="grey file icon"
-          />
           Bucket
         </th>
         <th
           class=""
         >
-          <i
-            aria-hidden="true"
-            class="grey file icon"
-          />
           Attribution
         </th>
         <th
           class=""
         >
-          <i
-            aria-hidden="true"
-            class="grey file icon"
-          />
           Data Access Authority
         </th>
         <th
           class=""
         >
-          <i
-            aria-hidden="true"
-            class="grey file icon"
-          />
           External Id
         </th>
         <th
           class=""
         >
-          <i
-            aria-hidden="true"
-            class="grey file icon"
-          />
           Release Status
         </th>
         <th
           class=""
         >
-          <i
-            aria-hidden="true"
-            class="grey file icon"
-          />
           Version
         </th>
         <th
           class=""
         >
-          <i
-            aria-hidden="true"
-            class="grey file icon"
-          />
           Release Date
         </th>
         <th
@@ -100,19 +68,11 @@ exports[`renders study table correctly 1`] = `
         <th
           class=""
         >
-          <i
-            aria-hidden="true"
-            class="grey file icon"
-          />
           Anticipated Samples
         </th>
         <th
           class=""
         >
-          <i
-            aria-hidden="true"
-            class="grey file icon"
-          />
           Awardee Organization
         </th>
         <th
@@ -581,10 +541,6 @@ exports[`renders study table for ADMIN role 1`] = `
         <th
           class=""
         >
-          <i
-            aria-hidden="true"
-            class="grey file icon"
-          />
           Short Name
         </th>
         <th
@@ -595,64 +551,36 @@ exports[`renders study table for ADMIN role 1`] = `
         <th
           class=""
         >
-          <i
-            aria-hidden="true"
-            class="grey file icon"
-          />
           Bucket
         </th>
         <th
           class=""
         >
-          <i
-            aria-hidden="true"
-            class="grey file icon"
-          />
           Attribution
         </th>
         <th
           class=""
         >
-          <i
-            aria-hidden="true"
-            class="grey file icon"
-          />
           Data Access Authority
         </th>
         <th
           class=""
         >
-          <i
-            aria-hidden="true"
-            class="grey file icon"
-          />
           External Id
         </th>
         <th
           class=""
         >
-          <i
-            aria-hidden="true"
-            class="grey file icon"
-          />
           Release Status
         </th>
         <th
           class=""
         >
-          <i
-            aria-hidden="true"
-            class="grey file icon"
-          />
           Version
         </th>
         <th
           class=""
         >
-          <i
-            aria-hidden="true"
-            class="grey file icon"
-          />
           Release Date
         </th>
         <th
@@ -667,19 +595,11 @@ exports[`renders study table for ADMIN role 1`] = `
         <th
           class=""
         >
-          <i
-            aria-hidden="true"
-            class="grey file icon"
-          />
           Anticipated Samples
         </th>
         <th
           class=""
         >
-          <i
-            aria-hidden="true"
-            class="grey file icon"
-          />
           Awardee Organization
         </th>
         <th
@@ -1160,10 +1080,6 @@ exports[`renders study table without excluded columns passed to props 1`] = `
         <th
           class=""
         >
-          <i
-            aria-hidden="true"
-            class="grey file icon"
-          />
           Short Name
         </th>
         <th
@@ -1174,82 +1090,46 @@ exports[`renders study table without excluded columns passed to props 1`] = `
         <th
           class=""
         >
-          <i
-            aria-hidden="true"
-            class="grey file icon"
-          />
           Created At
         </th>
         <th
           class=""
         >
-          <i
-            aria-hidden="true"
-            class="grey file icon"
-          />
           Modified At
         </th>
         <th
           class=""
         >
-          <i
-            aria-hidden="true"
-            class="grey file icon"
-          />
           Bucket
         </th>
         <th
           class=""
         >
-          <i
-            aria-hidden="true"
-            class="grey file icon"
-          />
           Attribution
         </th>
         <th
           class=""
         >
-          <i
-            aria-hidden="true"
-            class="grey file icon"
-          />
           Data Access Authority
         </th>
         <th
           class=""
         >
-          <i
-            aria-hidden="true"
-            class="grey file icon"
-          />
           External Id
         </th>
         <th
           class=""
         >
-          <i
-            aria-hidden="true"
-            class="grey file icon"
-          />
           Release Status
         </th>
         <th
           class=""
         >
-          <i
-            aria-hidden="true"
-            class="grey file icon"
-          />
           Version
         </th>
         <th
           class=""
         >
-          <i
-            aria-hidden="true"
-            class="grey file icon"
-          />
           Release Date
         </th>
         <th
@@ -1264,19 +1144,11 @@ exports[`renders study table without excluded columns passed to props 1`] = `
         <th
           class=""
         >
-          <i
-            aria-hidden="true"
-            class="grey file icon"
-          />
           Anticipated Samples
         </th>
         <th
           class=""
         >
-          <i
-            aria-hidden="true"
-            class="grey file icon"
-          />
           Awardee Organization
         </th>
         <th
