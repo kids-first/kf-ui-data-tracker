@@ -194,6 +194,12 @@ const NewStudyForm = ({
                           history.location.pathname.split('/')[2]
                         }/basic-info/${STUDY_STEPS[item.step].href}`}
                         key={item.label}
+                        {...buttonTracking(
+                          item.label,
+                          'link',
+                          studyTrackingProps,
+                          STUDY_INFO_.scope + 'MISSING_VAL_LINK',
+                        )}
                         content={item.label}
                       />
                     ))}
