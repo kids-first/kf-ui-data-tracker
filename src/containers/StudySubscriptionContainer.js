@@ -69,7 +69,22 @@ const StudySubscriptionContainer = ({
     <StudyTable
       studyList={studyList}
       clickable={false}
-      exclude={['createdAt', 'modifiedAt', 'name']}
+      exclude={[
+        'shortName',
+        'createdAt',
+        'modifiedAt',
+        'bucket',
+        'attribution',
+        'dataAccessAuthority',
+        'externalId',
+        'releaseStatus',
+        'version',
+        'releaseDate',
+        'anticipatedSamples',
+        'awardeeOrganization',
+        'description',
+        'projects',
+      ]}
       loading={loadingProfile || loadingStudies}
     />
   );
