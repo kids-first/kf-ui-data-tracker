@@ -78,7 +78,7 @@ const scope = (name, eventsList) => {
 };
 
 const MOUSE_EVENTS = ['HOVER', 'CLICK'];
-const DOCUMENT_EVENTS = ['UPLOAD', 'DOWNLOAD', 'DELETE', 'EDIT'];
+const DOCUMENT_EVENTS = ['UPLOAD', 'DOWNLOAD', 'DELETE', 'EDIT', 'SAVE'];
 const INPUT_EVENTS = ['_BLUR', '_FOCUS', '_CHANGE'];
 const MODAL_EVENTS = ['MODAL__OPEN', 'MODAL__CLOSE'];
 

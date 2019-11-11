@@ -38,6 +38,17 @@ const NewStudyForm = ({
   isAdmin,
   tracking,
 }) => {
+  const {
+    EVENT_CONSTANTS: {STUDY_INFO_},
+    buttonTracking,
+  } = tracking;
+  const studyTrackingProps = {
+    study: {
+      kfId: studyNode.kfId,
+      name: studyNode.name,
+      study_created_at: studyNode.createdAt,
+    },
+  };
   const STUDY_STEPS = [
     {
       title: 'Info',
@@ -262,7 +273,19 @@ const NewStudyForm = ({
                 <Button
                   floated="left"
                   type="button"
+                  {...buttonTracking(
+                    'PREVIOUS',
+                    null,
+                    studyTrackingProps,
+                    STUDY_INFO_.scope + 'PREVIOUS',
+                  )}
                   onClick={() => {
+                    buttonTracking(
+                      'PREVIOUS',
+                      null,
+                      studyTrackingProps,
+                      STUDY_INFO_.scope + 'PREVIOUS',
+                    ).onClick();
                     setCurrentStep(currentStep - 1);
                     prevNextStep(
                       STUDY_STEPS[currentStep - 1].href,
@@ -279,7 +302,19 @@ const NewStudyForm = ({
                 <Button
                   floated="right"
                   type="button"
+                  {...buttonTracking(
+                    'NEXT',
+                    null,
+                    studyTrackingProps,
+                    STUDY_INFO_.scope + 'NEXT',
+                  )}
                   onClick={() => {
+                    buttonTracking(
+                      'NEXT',
+                      null,
+                      studyTrackingProps,
+                      STUDY_INFO_.scope + 'NEXT',
+                    ).onClick();
                     setCurrentStep(currentStep + 1);
                     prevNextStep(
                       STUDY_STEPS[currentStep + 1].href,
@@ -297,6 +332,12 @@ const NewStudyForm = ({
                   primary
                   floated="right"
                   type="submit"
+                  {...buttonTracking(
+                    'SAVE',
+                    null,
+                    studyTrackingProps,
+                    STUDY_INFO_.SAVE,
+                  )}
                   disabled={
                     Object.keys(formikProps.errors).length > 0 ||
                     formikProps.values.name.length === 0 ||
