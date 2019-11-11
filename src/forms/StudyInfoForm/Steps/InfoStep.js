@@ -19,7 +19,7 @@ const InfoStep = ({
   studyNode,
   stepNum,
   tracking: {
-    EVENT_CONSTANTS: {DOCUMENT_INFO_, INPUT},
+    EVENT_CONSTANTS: {STUDY_INFO_, INPUT},
     instrument,
   },
 }) => {
@@ -50,7 +50,7 @@ const InfoStep = ({
   return (
     <>
       <LogOnMount
-        eventType={DOCUMENT_INFO_.scope + 'INFO_STEP'}
+        eventType={STUDY_INFO_.scope + 'INFO_STEP'}
         eventProperties={{
           ...studyTrackingProps,
           completed_fileds: steppingFields[stepNum].filter(

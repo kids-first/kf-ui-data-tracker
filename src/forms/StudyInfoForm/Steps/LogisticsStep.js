@@ -31,7 +31,7 @@ const LogisticsStep = ({
   studyNode,
   stepNum,
   tracking: {
-    EVENT_CONSTANTS: {DOCUMENT_INFO_, INPUT},
+    EVENT_CONSTANTS: {STUDY_INFO_, INPUT},
     instrument,
   },
 }) => {
@@ -72,7 +72,7 @@ const LogisticsStep = ({
   return (
     <>
       <LogOnMount
-        eventType={DOCUMENT_INFO_.scope + 'LOGISTICS_STEP'}
+        eventType={STUDY_INFO_.scope + 'LOGISTICS_STEP'}
         eventProperties={{
           ...studyTrackingProps,
           completed_fileds: steppingFields[stepNum].filter(

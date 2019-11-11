@@ -17,7 +17,7 @@ const ExternalStep = ({
   stepNum,
   tracking: {
     instrument,
-    EVENT_CONSTANTS: {DOCUMENT_INFO_, INPUT},
+    EVENT_CONSTANTS: {STUDY_INFO_, INPUT},
   },
 }) => {
   const {values, errors, touched, handleChange, handleBlur} = formikProps;
@@ -56,7 +56,7 @@ const ExternalStep = ({
   return (
     <>
       <LogOnMount
-        eventType={DOCUMENT_INFO_.scope + 'EXTERNAL_STEP'}
+        eventType={STUDY_INFO_.scope + 'EXTERNAL_STEP'}
         eventProperties={{
           ...studyTrackingProps,
           completed_fileds: steppingFields[stepNum].filter(
