@@ -11,7 +11,7 @@ import {
 import FormField from '../../FormField';
 import {steppingFields} from '../../../common/notificationUtils';
 import Markdown from 'react-markdown';
-import {LogOnMount} from '@amplitude/react-amplitude';
+import {LogOnMount, LogOnChange} from '@amplitude/react-amplitude';
 
 const LogisticsStep = ({
   newStudy,
@@ -31,9 +31,17 @@ const LogisticsStep = ({
   studyNode,
   stepNum,
   tracking: {
-    EVENT_CONSTANTS: {DOCUMENT_INFO_},
+    EVENT_CONSTANTS: {DOCUMENT_INFO_, INPUT},
+    instrument,
   },
 }) => {
+  const studyTrackingProps = {
+    study: {
+      kfId: studyNode.kfId,
+      name: studyNode.name,
+      study_created_at: studyNode.createdAt,
+    },
+  };
   const {values, errors, touched, handleChange, handleBlur} = formikProps;
   const mapFields = [
     {
@@ -60,22 +68,28 @@ const LogisticsStep = ({
       type: 'text',
     },
   ];
+
   return (
     <>
       <LogOnMount
         eventType={DOCUMENT_INFO_.scope + 'LOGISTICS_STEP'}
         eventProperties={{
-          study: {
-            kfId: studyNode.kfId,
-            name: studyNode.name,
-            study_created_at: studyNode.createdAt,
-          },
+          ...studyTrackingProps,
           completed_fileds: steppingFields[stepNum].filter(
             field => values[field] > 0 || values[field] !== '',
           ),
           incomplete_fields: steppingFields[stepNum].filter(
             field => values[field] === 0 || values[field] === '',
           ),
+        }}
+      />
+      <LogOnChange
+        value={values.description}
+        eventType={INPUT._CHANGE}
+        eventProperties={{
+          ...studyTrackingProps,
+          value: values.description,
+          input_name: 'Description',
         }}
       />
       <Header
@@ -97,7 +111,11 @@ const LogisticsStep = ({
           value={values[item.id]}
           touched={touched[item.id]}
           errors={errors[item.id]}
-          handleChange={handleChange}
+          handleChange={instrument(INPUT._CHANGE, handleChange, {
+            ...studyTrackingProps,
+            input_name: item.name,
+            value: values[item.id],
+          })}
           handleBlur={handleBlur}
           handleFocus={id => setFocused(id)}
           readOnly={!editing && !newStudy}

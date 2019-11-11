@@ -16,7 +16,8 @@ const ExternalStep = ({
   studyNode,
   stepNum,
   tracking: {
-    EVENT_CONSTANTS: {DOCUMENT_INFO_},
+    instrument,
+    EVENT_CONSTANTS: {DOCUMENT_INFO_, INPUT},
   },
 }) => {
   const {values, errors, touched, handleChange, handleBlur} = formikProps;
@@ -45,16 +46,19 @@ const ExternalStep = ({
       placeholder: '',
     },
   ];
+  const studyTrackingProps = {
+    study: {
+      kfId: studyNode.kfId,
+      name: studyNode.name,
+      study_created_at: studyNode.createdAt,
+    },
+  };
   return (
     <>
       <LogOnMount
         eventType={DOCUMENT_INFO_.scope + 'EXTERNAL_STEP'}
         eventProperties={{
-          study: {
-            kfId: studyNode.kfId,
-            name: studyNode.name,
-            study_created_at: studyNode.createdAt,
-          },
+          ...studyTrackingProps,
           completed_fileds: steppingFields[stepNum].filter(
             field => values[field] > 0 || values[field] !== '',
           ),
@@ -82,7 +86,11 @@ const ExternalStep = ({
           value={values[item.id]}
           touched={touched[item.id]}
           errors={errors[item.id]}
-          handleChange={handleChange}
+          handleChange={instrument(INPUT._CHANGE, handleChange, {
+            ...studyTrackingProps,
+            input_name: item.name,
+            value: values[item.id],
+          })}
           handleBlur={handleBlur}
           handleFocus={id => setFocused(id)}
           readOnly={!editing && !newStudy}

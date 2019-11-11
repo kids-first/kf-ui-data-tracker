@@ -19,7 +19,8 @@ const InfoStep = ({
   studyNode,
   stepNum,
   tracking: {
-    EVENT_CONSTANTS: {DOCUMENT_INFO_},
+    EVENT_CONSTANTS: {DOCUMENT_INFO_, INPUT},
+    instrument,
   },
 }) => {
   const {values, errors, touched, handleChange, handleBlur} = formikProps;
@@ -39,16 +40,19 @@ const InfoStep = ({
       description: 'The name that will appear under portal facets.',
     },
   ];
+  const studyTrackingProps = {
+    study: {
+      kfId: studyNode.kfId,
+      name: studyNode.name,
+      study_created_at: studyNode.createdAt,
+    },
+  };
   return (
     <>
       <LogOnMount
         eventType={DOCUMENT_INFO_.scope + 'INFO_STEP'}
         eventProperties={{
-          study: {
-            kfId: studyNode.kfId,
-            name: studyNode.name,
-            study_created_at: studyNode.createdAt,
-          },
+          ...studyTrackingProps,
           completed_fileds: steppingFields[stepNum].filter(
             field => values[field] > 0 || values[field] !== '',
           ),
@@ -76,7 +80,11 @@ const InfoStep = ({
           value={values[item.id]}
           touched={touched[item.id]}
           errors={errors[item.id]}
-          handleChange={handleChange}
+          handleChange={instrument(INPUT._CHANGE, handleChange, {
+            ...studyTrackingProps,
+            input_name: item.name,
+            value: values[item.id],
+          })}
           handleBlur={handleBlur}
           handleFocus={id => setFocused(id)}
           readOnly={!editing && !newStudy}
@@ -124,7 +132,11 @@ const InfoStep = ({
           value={values.bucket}
           touched={touched.bucket}
           errors={errors.bucket}
-          handleChange={handleChange}
+          handleChange={instrument(INPUT._CHANGE, handleChange, {
+            ...studyTrackingProps,
+            name: 'S3 Bucket',
+            value: values.bucket,
+          })}
           handleBlur={handleBlur}
           handleFocus={id => setFocused(id)}
           readOnly={!editing && !newStudy}
