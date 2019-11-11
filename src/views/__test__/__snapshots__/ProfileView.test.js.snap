@@ -487,11 +487,33 @@ exports[`renders profile view correctly 2`] = `
                 value=""
               />
               <label>
-                Send me daily activity reports of my subscribed studies
+                SLACK me daily activity reports of my subscribed studies
               </label>
             </div>
             <label
-              for="notify"
+              for="slack-notify"
+            />
+          </div>
+          <div
+            class="field"
+          >
+            <div
+              class="ui checkbox"
+            >
+              <input
+                class="hidden"
+                name="notify"
+                readonly=""
+                tabindex="0"
+                type="checkbox"
+                value=""
+              />
+              <label>
+                EMAIL me daily activity reports of my subscribed studies
+              </label>
+            </div>
+            <label
+              for="eamil-notify"
             />
           </div>
           <button
