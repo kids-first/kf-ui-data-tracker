@@ -129,6 +129,7 @@ const UploadWizard = ({
           num_previous_versions: fileToUpdate.versions.edges.length,
         },
       });
+
       setUploading(false);
       setIsTimerActive(true);
       setStep(3);

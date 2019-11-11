@@ -1,6 +1,8 @@
 import React from 'react';
 import {Header} from 'semantic-ui-react';
 import FormField from '../../FormField';
+import {steppingFields} from '../../../common/notificationUtils';
+import {LogOnMount} from '@amplitude/react-amplitude';
 
 const ExternalStep = ({
   formikProps,
@@ -11,6 +13,11 @@ const ExternalStep = ({
   newStudy,
   history,
   isAdmin,
+  studyNode,
+  stepNum,
+  tracking: {
+    EVENT_CONSTANTS: {DOCUMENT_INFO_},
+  },
 }) => {
   const {values, errors, touched, handleChange, handleBlur} = formikProps;
   const mapFields = [
@@ -40,6 +47,22 @@ const ExternalStep = ({
   ];
   return (
     <>
+      <LogOnMount
+        eventType={DOCUMENT_INFO_.scope + 'EXTERNAL_STEP'}
+        eventProperties={{
+          study: {
+            kfId: studyNode.kfId,
+            name: studyNode.name,
+            study_created_at: studyNode.createdAt,
+          },
+          completed_fileds: steppingFields[stepNum].filter(
+            field => values[field] > 0 || values[field] !== '',
+          ),
+          incomplete_fields: steppingFields[stepNum].filter(
+            field => values[field] === 0 || values[field] === '',
+          ),
+        }}
+      />
       <Header
         as="h4"
         className="text-wrap-75"

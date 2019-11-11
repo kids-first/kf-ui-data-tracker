@@ -95,6 +95,7 @@ const analyticsTrackingConstants = {
   ...scope('STUDY_CARD_', ['TOGGLE_DETAIL', ...MOUSE_EVENTS]),
   ...scope('UPLOAD_WIZARD_', ['STEP', 'CLOSE']),
   ...scope('DOCUMENT_', [...DOCUMENT_EVENTS, ...MODAL_EVENTS]),
+  ...scope('DOCUMENT_INFO_', DOCUMENT_EVENTS),
   ...scope('DOCUMENT_VERSION_', [
     ...DOCUMENT_EVENTS,
     ...MOUSE_EVENTS,

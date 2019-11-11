@@ -9,7 +9,9 @@ import {
   Table,
 } from 'semantic-ui-react';
 import FormField from '../../FormField';
+import {steppingFields} from '../../../common/notificationUtils';
 import Markdown from 'react-markdown';
+import {LogOnMount} from '@amplitude/react-amplitude';
 
 const LogisticsStep = ({
   newStudy,
@@ -26,6 +28,11 @@ const LogisticsStep = ({
   foldDescription,
   setFoldDescription,
   isAdmin,
+  studyNode,
+  stepNum,
+  tracking: {
+    EVENT_CONSTANTS: {DOCUMENT_INFO_},
+  },
 }) => {
   const {values, errors, touched, handleChange, handleBlur} = formikProps;
   const mapFields = [
@@ -55,6 +62,22 @@ const LogisticsStep = ({
   ];
   return (
     <>
+      <LogOnMount
+        eventType={DOCUMENT_INFO_.scope + 'LOGISTICS_STEP'}
+        eventProperties={{
+          study: {
+            kfId: studyNode.kfId,
+            name: studyNode.name,
+            study_created_at: studyNode.createdAt,
+          },
+          completed_fileds: steppingFields[stepNum].filter(
+            field => values[field] > 0 || values[field] !== '',
+          ),
+          incomplete_fields: steppingFields[stepNum].filter(
+            field => values[field] === 0 || values[field] === '',
+          ),
+        }}
+      />
       <Header
         as="h4"
         className="text-wrap-75"

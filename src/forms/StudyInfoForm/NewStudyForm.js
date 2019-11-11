@@ -23,6 +23,7 @@ import {
   prevNextStep,
 } from '../../common/notificationUtils';
 import {workflowOptions} from '../../common/enums';
+import {withAnalyticsTracking} from '../../analyticsTracking';
 
 /**
  * A form for the user to create or update a study, displaying in three steps
@@ -35,6 +36,7 @@ const NewStudyForm = ({
   editing,
   history,
   isAdmin,
+  tracking,
 }) => {
   const STUDY_STEPS = [
     {
@@ -235,6 +237,7 @@ const NewStudyForm = ({
                     }
                     render={() =>
                       step.comp({
+                        stepNum,
                         newStudy,
                         formikProps,
                         setFocused,
@@ -248,6 +251,8 @@ const NewStudyForm = ({
                         foldDescription,
                         setFoldDescription,
                         isAdmin,
+                        tracking,
+                        studyNode,
                       })
                     }
                   />
@@ -380,4 +385,4 @@ NewStudyForm.propTypes = {
   apiErrors: PropTypes.string,
 };
 
-export default NewStudyForm;
+export default withAnalyticsTracking(NewStudyForm);
