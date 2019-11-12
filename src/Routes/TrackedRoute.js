@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Route} from 'react-router-dom';
-import {Amplitude, LogOnMount} from '@amplitude/react-amplitude';
-import {EVENT_CONSTANTS} from '../analyticsTracking';
+import {AmplitudeProxy} from '../analyticsTracking';
 
 /**
  * Wrap all of our routes to make them log the view and route they render
@@ -13,12 +12,13 @@ const TrackedRoute = ({
   component,
   path,
   render,
-  logMount = true,
+  logPageView = false,
   eventProperties,
   ...rest
 }) => {
   return (
-    <Amplitude
+    <AmplitudeProxy
+      logToConsole
       eventProperties={{
         view: component
           ? component.name
@@ -29,9 +29,17 @@ const TrackedRoute = ({
         ...eventProperties,
       }}
     >
-      {logMount && <LogOnMount eventType={EVENT_CONSTANTS.PAGE.VIEW} />}
-      <Route {...{component, path, render}} {...rest} />
-    </Amplitude>
+      {({logEvent, EVENT_CONSTANTS: {PAGE}}) => {
+        /**
+         * here we use logEvent to that it gets
+         * pasesd through our proxy class instead
+         * of the default Amplitude class used by LogOnMount
+         */
+
+        if (logPageView) logEvent(PAGE.VIEW);
+        return <Route {...{component, path, render}} {...rest} />;
+      }}
+    </AmplitudeProxy>
   );
 };
 
@@ -43,7 +51,7 @@ TrackedRoute.propTypes = {
   /** url regex path to pass to Route */
   path: PropTypes.string.isRequired,
   /** boolean to fire a PAGEVIEW event Route mount (default: True) */
-  logMount: PropTypes.bool,
+  logPageView: PropTypes.bool,
   /** additional event properties object for events wihin the route */
   eventProperties: PropTypes.object,
 };

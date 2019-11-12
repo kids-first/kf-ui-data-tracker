@@ -26,7 +26,9 @@ const AnalyticsTrackingProvider = props => {
   return (
     <AnalyticsTrackingContext.Provider value={analyticsTrackingConstants}>
       <AmplitudeProvider
-        amplitudeInstance={amplitude.getInstance()}
+        amplitudeInstance={
+          amplitudeUser ? amplitudeUser.instance : amplitude.getInstance()
+        }
         apiKey={AMPLITUDE_KEY}
         userId={amplitudeUser ? amplitudeUser.userId : null}
       >

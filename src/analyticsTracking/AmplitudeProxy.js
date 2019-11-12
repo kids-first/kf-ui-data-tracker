@@ -4,6 +4,9 @@ import debounce from 'lodash.debounce';
 import {buttonTracking} from './eventUtils';
 import {EVENT_CONSTANTS} from '../analyticsTracking';
 
+/**
+ *
+ */
 class AmplitudeProxy extends Amplitude {
   logToConsole = false;
 
@@ -31,18 +34,31 @@ class AmplitudeProxy extends Amplitude {
       console.log(`AmplitudeProxy::dispatch ${eventType}`, eventProps);
     }
 
-    /** log all events to sessionStorage */
-    // sessionStorage.setItem(
-    //   'session_events',
-    //   JSON.stringify([
-    //     ...(JSON.parse(sessionStorage.getItem('session_events')) || []),
-    //     {
-    //       eventType,
-    //       eventProps,
-    //       time: Date.now(),
-    //     },
-    //   ]),
-    // );
+    if (
+      process.env === 'TEST' ||
+      process.env === 'TESTING' ||
+      process.env === 'CI' ||
+      this.props.storeSessionEvents
+    ) {
+      (window.dataLayer = window.dataLayer || []).push({
+        eventType,
+        eventProps,
+        utc_time: Date.now(),
+      });
+
+      /** log all events to sessionStorage */
+      // sessionStorage.setItem(
+      //   'session_events',
+      //   JSON.stringify([
+      //     ...(JSON.parse(sessionStorage.getItem('session_events')) || []),
+      //     {
+      //       eventType,
+      //       eventProps,
+      //       time: Date.now(),
+      //     },
+      //   ]),
+      // );
+    }
 
     return this._makeLogEvent()(
       eventType,
