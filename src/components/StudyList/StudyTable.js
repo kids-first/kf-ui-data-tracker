@@ -116,13 +116,15 @@ const StudyTable = ({
             <span>Cavatica Projects</span>
           </Table.HeaderCell>
         );
-      default:
+      case 'files':
         return (
           <Table.HeaderCell key={text}>
             <Icon name="file" color="grey" />
-            {headerText}
+            Files
           </Table.HeaderCell>
         );
+      default:
+        return <Table.HeaderCell key={text}>{headerText}</Table.HeaderCell>;
     }
   };
   return (
