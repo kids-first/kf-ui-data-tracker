@@ -140,23 +140,27 @@ export const eventType = {
 export const fileTypeDetail = {
   SHM: {
     icon: 'shipping',
-    title: 'Shipping Manifest',
-    description: 'File type description goes here...',
+    title: 'Biospecimen Manifest',
+    description:
+      'Tabular files (e.g. CSV, TSV, Excel) containing biospecimen identifiers and metadata (e.g. tissue type, composition) provided to sequencing centers as well as consent type.',
   },
   CLN: {
     icon: 'hospital',
-    title: 'Clinical/Phenotype Data',
-    description: 'File type description goes here...',
+    title: 'Clinical/Phenotypic Data',
+    description:
+      'Structured files with data linked to the biospecimen identifiers provided in the shipping manifest(s). Exports from data management applications, such as REDCap, are the fastest to process, but we will work with you on most formats.',
   },
   SEQ: {
     icon: 'dna',
     title: 'Sequencing Manifest',
-    description: 'File type description goes here...',
+    description:
+      'Tabular files (e.g. CSV, TSV, Excel) containing the biospecimen identifiers and the associated genomic data files. Typically provided by the sequencing center.',
   },
   OTH: {
     icon: 'question',
     title: 'Other',
-    description: 'File type description goes here...',
+    description:
+      'Any useful documents, such as study background information, data dictionaries, etc., that does not clearly fit in the other categories.',
   },
 };
 
