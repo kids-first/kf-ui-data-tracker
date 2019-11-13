@@ -84,6 +84,7 @@ const analytiicsTrackingConstants = {
   ...scope('AUTH', ['LOGIN', 'LOGOUT']),
   ...scope('PAGE', ['VIEW']),
   ...scope('MOUSE', mouseEvents),
+  ...scope('TOOLTIP', mouseEvents),
 };
 
 export default analytiicsTrackingConstants;

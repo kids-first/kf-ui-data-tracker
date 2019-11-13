@@ -41,9 +41,8 @@ export const mouseEvents = log => (eventProps = {}, eventType = null) => {
         );
       } catch (e) {
         console.error(
-          `[analytic-tracking] ERROR mouseEvents eventType: ${
-            EVENT_CONSTANTS.MOUSE.HOVER
-          }`,
+          `[analytic-tracking] ERROR mouseEvents:onMouseHover eventType: ${eventType}`,
+          eventProps,
           e,
         );
       }
@@ -110,20 +109,23 @@ export const buttonTracking = log => (name, type, props, scope) =>
     scope ? `${normalizeEventType(scope)}_` : null,
   );
 
-export const popupTracking = (log, inheritedProps) => (
-  {name, content, link},
+export const popupTracking = (log, inheritedProps = {}) => (
+  eventProps = {},
   scope,
 ) =>
   mouseEvents(log)(
     {
-      tooltip_name: name,
-      tooltip_content: content,
-      link,
+      tooltip_name: eventProps.name || null,
+      tooltip_content: eventProps.content || null,
+      link: eventProps.link || null,
       stopPropagation: true,
-      ...inheritedProps,
+      ...(inheritedProps || {}),
     },
-    scope ||
-      `${EVENT_CONSTANTS.TOOLTIP.scope}${
-        typeof name == 'string' ? '_' + name.toUpperCase() : null
-      }_`,
+    scope
+      ? normalizeEventType(scope)
+      : `${EVENT_CONSTANTS.TOOLTIP.scope}${
+          typeof scope == 'string' || typeof eventProps.name == 'string'
+            ? '_' + normalizeEventType(scope || eventProps.name)
+            : null
+        }_`,
   );
