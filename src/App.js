@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router} from 'react-router-dom';
 import Routes from './Routes';
-import {ApolloProvider} from 'react-apollo';
+import {ApolloProvider} from '@apollo/react-common';
 import {client} from './state/client';
 
 const App = () => (
