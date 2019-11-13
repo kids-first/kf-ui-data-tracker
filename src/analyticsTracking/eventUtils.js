@@ -1,11 +1,11 @@
 import analyticsTrackingConstants from '../common/analyticsTrackingConstants';
 
 const EVENT_CONSTANTS = analyticsTrackingConstants;
-const normalizeEventType = str =>
+export const normalizeEventType = str =>
   str
+    .trim()
     .replace(/ /gi, '_')
-    .toUpperCase()
-    .trim();
+    .toUpperCase();
 
 export const mouseEvents = log => (eventProps = {}, eventType = null) => {
   if (typeof log !== 'function') {
@@ -107,7 +107,7 @@ export const dropdownEvents = log => (
 export const buttonTracking = log => (name, type, props, scope) =>
   mouseEvents(log)(
     {button_text: name, button_type: type, ...props},
-    scope ? `${scope.toUpperCase()}_` : null,
+    scope ? `${normalizeEventType(scope)}_` : null,
   );
 
 export const popupTracking = (log, inheritedProps) => (
