@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import {graphql} from 'react-apollo';
+import {useMutation} from '@apollo/react-hooks';
 import {Button, Modal, Message, Icon} from 'semantic-ui-react';
 import UploadStep from './UploadStep';
 import DescriptionStep from './DescriptionStep';
@@ -15,8 +15,14 @@ export const NewVersionFlow = ({
   fileNode,
   additionalContent,
   handleClose,
-  createVersion,
 }) => {
+  const [createVersion] = useMutation(CREATE_VERSION, {
+    awaitRefetchQueries: true,
+    refetchQueries: [
+      {query: GET_FILE_BY_ID, variables: {kfId: match.params.fileId}},
+    ],
+  });
+
   // The current step that the flow is on
   const [step, setStep] = useState(0);
   // To keep track of the selected file
@@ -112,17 +118,7 @@ NewVersionFlow.propTypes = {
   additionalContent: PropTypes.func,
   /** Function to be called when the modal should be closed */
   handleClose: PropTypes.func.isRequired,
-  /** Mutation that will upload and create the version */
-  createVersion: PropTypes.func.isRequired,
 };
 
 // TODO: Update the cache instead of refetching the query
-export default graphql(CREATE_VERSION, {
-  name: 'createVersion',
-  options: ({match}) => ({
-    awaitRefetchQueries: true,
-    refetchQueries: [
-      {query: GET_FILE_BY_ID, variables: {kfId: match.params.fileId}},
-    ],
-  }),
-})(NewVersionFlow);
+export default NewVersionFlow;

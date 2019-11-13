@@ -1,21 +1,31 @@
 import React, {useState} from 'react';
-import {graphql, compose} from 'react-apollo';
+import {useQuery, useMutation} from '@apollo/react-hooks';
 import {GET_STUDY_BY_ID, MY_PROFILE} from '../state/queries';
 import {UPDATE_STUDY} from '../state/mutations';
 import NewStudyForm from '../forms/StudyInfoForm/NewStudyForm';
 import {Container, Segment, Message, Placeholder} from 'semantic-ui-react';
 import EmptyView from './EmptyView';
 
-const StudyInfoView = ({
-  study: {loading, studyByKfId, error},
-  user,
-  updateStudy,
-  history,
-}) => {
-  const isBeta = !user.loading ? user.myProfile.roles.includes('BETA') : false;
-  const isAdmin = !user.loading
-    ? user.myProfile.roles.includes('ADMIN')
-    : false;
+const StudyInfoView = ({match, history}) => {
+  const {loading, data, error} = useQuery(GET_STUDY_BY_ID, {
+    variables: {
+      kfId: match.params.kfId,
+    },
+    fetchPolicy: 'network-only',
+  });
+  const studyByKfId = data && data.studyByKfId;
+  const user = useQuery(MY_PROFILE);
+  const [updateStudy] = useMutation(UPDATE_STUDY);
+
+  const isBeta =
+    !user.loading && user.data.myProfile
+      ? user.data.myProfile.roles.includes('BETA')
+      : false;
+  const isAdmin =
+    !user.loading && user.data.myProfile
+      ? user.data.myProfile.roles.includes('ADMIN')
+      : false;
+
   const [apiErrors, setApiErrors] = useState(null);
   const submitUpdate = values => {
     updateStudy({
@@ -76,18 +86,4 @@ const StudyInfoView = ({
   }
 };
 
-export default compose(
-  graphql(GET_STUDY_BY_ID, {
-    name: 'study',
-    options: props => ({
-      variables: {
-        kfId: props.match.params.kfId,
-      },
-      fetchPolicy: 'network-only',
-    }),
-  }),
-  graphql(UPDATE_STUDY, {
-    name: 'updateStudy',
-  }),
-  graphql(MY_PROFILE, {name: 'user'}),
-)(StudyInfoView);
+export default StudyInfoView;

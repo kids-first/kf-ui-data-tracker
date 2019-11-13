@@ -1,5 +1,5 @@
 import React from 'react';
-import {graphql, compose} from 'react-apollo';
+import {useQuery, useMutation} from '@apollo/react-hooks';
 import {GET_STUDY_BY_ID, MY_PROFILE, GET_PROJECTS} from '../state/queries';
 import {SYNC_PROJECTS, LINK_PROJECT, UNLINK_PROJECT} from '../state/mutations';
 import {
@@ -17,18 +17,64 @@ import NewProjectModal from '../modals/NewProjectModal';
 import LinkProjectModal from '../modals/LinkProjectModal';
 import CavaticaProjectList from '../components/CavaticaProjectList/CavaticaProjectList';
 
-const CavaticaBixView = ({
-  study: {loading, studyByKfId, error},
-  projects,
-  user,
-  syncProjects,
-  linkProject,
-  unlinkProject,
-  history,
-}) => {
-  const isAdmin = !user.loading
-    ? user.myProfile.roles.includes('ADMIN')
-    : false;
+const CavaticaBixView = ({match, history}) => {
+  const {loading, data, error} = useQuery(GET_STUDY_BY_ID, {
+    variables: {
+      kfId: match.params.kfId,
+    },
+    fetchPolicy: 'network-only',
+  });
+  const studyByKfId = data && data.studyByKfId;
+  const projects = useQuery(GET_PROJECTS, {
+    variables: {
+      study: '',
+      deleted: false,
+    },
+  });
+  const user = useQuery(MY_PROFILE);
+  const [linkProject] = useMutation(LINK_PROJECT, {
+    refetchQueries: [
+      {
+        query: GET_STUDY_BY_ID,
+        variables: {
+          kfId: match.params.kfId,
+        },
+      },
+    ],
+  });
+  const [unlinkProject] = useMutation(UNLINK_PROJECT, {
+    refetchQueries: [
+      {
+        query: GET_STUDY_BY_ID,
+        variables: {
+          kfId: match.params.kfId,
+        },
+      },
+      {
+        query: GET_PROJECTS,
+        variables: {
+          study: '',
+          deleted: false,
+        },
+      },
+    ],
+  });
+  const [syncProjects] = useMutation(SYNC_PROJECTS, {
+    refetchQueries: [
+      {
+        query: GET_PROJECTS,
+        variables: {
+          study: '',
+          deleted: false,
+        },
+      },
+    ],
+  });
+
+  const isAdmin =
+    !user.loading && user.data.myProfile
+      ? user.data.myProfile.roles.includes('ADMIN')
+      : false;
   const hashOpenHook = (history, modalName) => {
     const modalNameHash = modalName.replace(' ', '-').toLowerCase();
     return modalNameHash === history.location.hash;
@@ -155,7 +201,7 @@ const CavaticaBixView = ({
         <LinkProjectModal
           open={hashOpenHook(history, '#link-cavatica-project')}
           study={studyByKfId}
-          allProjects={projects.allProjects}
+          allProjects={projects.data && projects.data.allProjects}
           linkProject={linkProject}
           syncProjects={syncProjects}
           onCloseDialog={() =>
@@ -171,71 +217,4 @@ const CavaticaBixView = ({
   }
 };
 
-export default compose(
-  graphql(GET_STUDY_BY_ID, {
-    name: 'study',
-    options: props => ({
-      variables: {
-        kfId: props.match.params.kfId,
-      },
-      fetchPolicy: 'network-only',
-    }),
-  }),
-  graphql(SYNC_PROJECTS, {
-    name: 'syncProjects',
-    options: props => ({
-      refetchQueries: [
-        {
-          query: GET_PROJECTS,
-          variables: {
-            study: '',
-            deleted: false,
-          },
-        },
-      ],
-    }),
-  }),
-  graphql(LINK_PROJECT, {
-    name: 'linkProject',
-    options: props => ({
-      refetchQueries: [
-        {
-          query: GET_STUDY_BY_ID,
-          variables: {
-            kfId: props.match.params.kfId,
-          },
-        },
-      ],
-    }),
-  }),
-  graphql(UNLINK_PROJECT, {
-    name: 'unlinkProject',
-    options: props => ({
-      refetchQueries: [
-        {
-          query: GET_STUDY_BY_ID,
-          variables: {
-            kfId: props.match.params.kfId,
-          },
-        },
-        {
-          query: GET_PROJECTS,
-          variables: {
-            study: '',
-            deleted: false,
-          },
-        },
-      ],
-    }),
-  }),
-  graphql(MY_PROFILE, {name: 'user'}),
-  graphql(GET_PROJECTS, {
-    name: 'projects',
-    options: props => ({
-      variables: {
-        study: '',
-        deleted: false,
-      },
-    }),
-  }),
-)(CavaticaBixView);
+export default CavaticaBixView;

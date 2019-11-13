@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {graphql, compose} from 'react-apollo';
+import {useQuery, useMutation} from '@apollo/react-hooks';
 import {MY_PROFILE} from '../state/queries';
 import {UPDATE_PROFILE} from '../state/mutations';
 import {
@@ -19,10 +19,11 @@ import StudySubscriptionContanier from '../containers/StudySubscriptionContainer
 /**
  * A user's profile view
  */
-const ProfileView = ({
-  data: {loading, error, myProfile: profile},
-  updateProfile,
-}) => {
+const ProfileView = () => {
+  const {loading, error, data} = useQuery(MY_PROFILE);
+  const profile = data && data.myProfile;
+  const [updateProfile] = useMutation(UPDATE_PROFILE);
+
   const [submitting, setSubmitting] = useState(false);
   const [message, setMessage] = useState();
   const [errors, setErrors] = useState();
@@ -166,7 +167,4 @@ const ProfileView = ({
   );
 };
 
-export default compose(
-  graphql(MY_PROFILE),
-  graphql(UPDATE_PROFILE, {name: 'updateProfile'}),
-)(ProfileView);
+export default ProfileView;

@@ -1,6 +1,6 @@
 import React from 'react';
-import {graphql, compose} from 'react-apollo';
-import {Button, Message} from 'semantic-ui-react';
+import {useQuery, useMutation} from '@apollo/react-hooks';
+import {Button, Message, Container, Segment, Icon} from 'semantic-ui-react';
 import StudyTable from '../components/StudyList/StudyTable';
 import {ALL_STUDIES, MY_PROFILE} from '../state/queries';
 import {SUBSCRIBE_TO, UNSUBSCRIBE_FROM} from '../state/mutations';
@@ -9,12 +9,22 @@ import {SUBSCRIBE_TO, UNSUBSCRIBE_FROM} from '../state/mutations';
  * Provides a list of studies and their subscription status and allows a user
  * to subscribe or unsubscribe from them.
  */
-const StudySubscriptionContainer = ({
-  profile: {loadingProfile, errorProfile, myProfile: profile},
-  studies: {loadingStudies, errorStudies, allStudies: studies},
-  subscribeTo,
-  unsubscribeFrom,
-}) => {
+const StudySubscriptionContainer = () => {
+  const {
+    loading: loadingProfile,
+    error: errorProfile,
+    data: dataProfile,
+  } = useQuery(MY_PROFILE);
+  const profile = dataProfile && dataProfile.myProfile;
+  const {
+    loading: loadingStudies,
+    error: errorStudies,
+    data: dataStudies,
+  } = useQuery(ALL_STUDIES);
+  const studies = dataStudies && dataStudies.allStudies;
+  const [subscribeTo] = useMutation(SUBSCRIBE_TO);
+  const [unsubscribeFrom] = useMutation(UNSUBSCRIBE_FROM);
+
   if (loadingProfile || loadingStudies || !studies)
     return <div>Loading subscriptions...</div>;
 
@@ -65,6 +75,24 @@ const StudySubscriptionContainer = ({
     },
   }));
 
+  if (errorProfile || errorStudies)
+    return (
+      <Container as={Segment} basic>
+        <Message negative icon>
+          <Icon name="warning circle" />
+          <Message.Content>
+            <Message.Header>Error</Message.Header>
+            {errorProfile && errorProfile.message && (
+              <p>User profile Error: {errorProfile.message}</p>
+            )}
+            {errorStudies && errorStudies.message && (
+              <p>Studies fetching Error: {errorStudies.message}</p>
+            )}
+          </Message.Content>
+        </Message>
+      </Container>
+    );
+
   return (
     <StudyTable
       studyList={studyList}
@@ -90,9 +118,4 @@ const StudySubscriptionContainer = ({
   );
 };
 
-export default compose(
-  graphql(ALL_STUDIES, {name: 'studies'}),
-  graphql(MY_PROFILE, {name: 'profile'}),
-  graphql(SUBSCRIBE_TO, {name: 'subscribeTo'}),
-  graphql(UNSUBSCRIBE_FROM, {name: 'unsubscribeFrom'}),
-)(StudySubscriptionContainer);
+export default StudySubscriptionContainer;

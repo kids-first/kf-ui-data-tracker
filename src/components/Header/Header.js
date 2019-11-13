@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {graphql} from 'react-apollo';
+import {useQuery} from '@apollo/react-hooks';
 import {NavLink} from 'react-router-dom';
 import {MY_PROFILE} from '../../state/queries';
 import {Container, Dropdown, Icon, Image, Menu} from 'semantic-ui-react';
@@ -8,11 +8,14 @@ import logo from '../../assets/logo.svg';
 
 const Nav = props => <NavLink exact {...props} activeClassName="active" />;
 
-const Header = ({data: {loading, error, myProfile: profile}}) => {
+const Header = () => {
+  const {loading, error, data} = useQuery(MY_PROFILE);
+  const profile = data && data.myProfile;
+
   const [loggedIn, setLoggedIn] = useState(profile !== undefined);
   const picUrl = profile && profile.picture ? profile.picture : defaultAvatar;
   const picAlt = profile && profile.username ? profile.username : 'profile';
-  if (!loading && profile && !loggedIn) {
+  if (!loading && profile && !loggedIn && !error) {
     setLoggedIn(true);
   }
 
@@ -83,4 +86,4 @@ const Header = ({data: {loading, error, myProfile: profile}}) => {
   );
 };
 
-export default graphql(MY_PROFILE)(Header);
+export default Header;

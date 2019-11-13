@@ -1,5 +1,5 @@
 import React from 'react';
-import {graphql, compose} from 'react-apollo';
+import {useQuery} from '@apollo/react-hooks';
 import {ALL_EVENTS, MY_PROFILE} from '../state/queries';
 import {
   Container,
@@ -14,10 +14,21 @@ import EmptyView from './EmptyView';
 import EventList from '../components/EventList/EventList';
 import {eventType} from '../common/enums';
 
-const LogsView = ({events: {loading, allEvents, error, refetch}, user}) => {
-  const isAdmin = !user.loading
-    ? user.myProfile.roles.includes('ADMIN')
-    : false;
+const LogsView = ({match}) => {
+  const {loading, data, error, refetch} = useQuery(ALL_EVENTS, {
+    variables: {
+      studyId: match.params.kfId,
+      orderBy: '-created_at',
+    },
+    pollInterval: 30000,
+  });
+  const allEvents = data && data.allEvents;
+  const user = useQuery(MY_PROFILE);
+
+  const isAdmin =
+    !user.loading && user.data.myProfile
+      ? user.data.myProfile.roles.includes('ADMIN')
+      : false;
 
   const eventTypeOptions = Object.keys(eventType).map(type => ({
     text: eventType[type].title,
@@ -84,16 +95,4 @@ const LogsView = ({events: {loading, allEvents, error, refetch}, user}) => {
   }
 };
 
-export default compose(
-  graphql(ALL_EVENTS, {
-    name: 'events',
-    options: props => ({
-      variables: {
-        studyId: props.match.params.kfId,
-        orderBy: '-created_at',
-      },
-      pollInterval: 30000,
-    }),
-  }),
-  graphql(MY_PROFILE, {name: 'user'}),
-)(LogsView);
+export default LogsView;

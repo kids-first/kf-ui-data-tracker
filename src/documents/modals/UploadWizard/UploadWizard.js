@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
+import {useMutation} from '@apollo/react-hooks';
 import {Button, Header, Modal, Icon, Message} from 'semantic-ui-react';
 import {
   ChooseMethodStep,
@@ -7,8 +8,6 @@ import {
   SuccessStep,
   VersionSummaryStep,
 } from './UploadSteps';
-import {graphql} from 'react-apollo';
-
 import {GET_STUDY_BY_ID} from '../../../state/queries';
 import {CREATE_VERSION} from '../../mutations';
 import {sortFilesBySimilarity} from '../../utilities';
@@ -57,7 +56,6 @@ const useTimerHook = (isActive, onEnd) => {
 
 /** Multi-step modal for uplaoding files as document versions or creating new documents */
 const UploadWizard = ({
-  createVersion,
   onCloseDialog,
   history,
   file,
@@ -65,6 +63,10 @@ const UploadWizard = ({
   fileList,
   studyId,
 }) => {
+  const [createVersion] = useMutation(CREATE_VERSION, {
+    refetchQueries: [{query: GET_STUDY_BY_ID, variables: {kfId: studyId}}],
+  });
+
   // The current step that the flow is on
   const [step, setStep] = useState(startingStep);
   // store the selected study file to create version for
@@ -207,9 +209,4 @@ UploadWizard.propTypes = {
   createVersion: PropTypes.func.isRequired,
 };
 
-export default graphql(CREATE_VERSION, {
-  name: 'createVersion',
-  options: ({studyId}) => ({
-    refetchQueries: [{query: GET_STUDY_BY_ID, variables: {kfId: studyId}}],
-  }),
-})(UploadWizard);
+export default UploadWizard;
