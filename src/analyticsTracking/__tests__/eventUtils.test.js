@@ -5,7 +5,7 @@ import {
   popupTracking,
   normalizeEventType,
 } from '../eventUtils';
-import {render, cleanup, act} from 'react-testing-library';
+import {cleanup} from 'react-testing-library';
 
 /**
  *

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import debounce from 'lodash.debounce';
 import {render, cleanup, act} from 'react-testing-library';
@@ -105,7 +106,7 @@ describe('AmplitudeProxy class', () => {
     const mockCallback = jest.fn();
     render(
       <AnalyticsProviderMock>
-        {/* set to debounce events every 1sec */}
+        {/* set to debounce events every 1s */}
         <AmplitudeProxy debounceInterval={1000}>
           {({logEvent}) => {
             // Call it immediately
