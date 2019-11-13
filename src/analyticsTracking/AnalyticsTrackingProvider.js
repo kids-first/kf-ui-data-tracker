@@ -3,6 +3,7 @@ import {AMPLITUDE_KEY} from '../common/globals';
 import {AmplitudeProvider} from '@amplitude/react-amplitude';
 import amplitude from 'amplitude-js';
 import AnalyticsTrackingContext from './AnalyticsTrackingContext';
+import AmplitudeProxy from './AmplitudeProxy';
 import analyticsTrackingConstants from '../common/analyticsTrackingConstants';
 import AmplitudeUser from './AmplitudeUser';
 
@@ -32,7 +33,9 @@ const AnalyticsTrackingProvider = props => {
         apiKey={AMPLITUDE_KEY}
         userId={amplitudeUser ? amplitudeUser.userId : null}
       >
-        {props.children}
+        <AmplitudeProxy eventProperties={{path: window.location.pathname}}>
+          {props.children}
+        </AmplitudeProxy>
       </AmplitudeProvider>
     </AnalyticsTrackingContext.Provider>
   );
