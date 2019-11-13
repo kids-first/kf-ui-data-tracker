@@ -34,46 +34,37 @@ class AmplitudeProxy extends Amplitude {
       console.log(`AmplitudeProxy::dispatch ${eventType}`, eventProps);
     }
 
+    const combinedEventProps = {
+      ...this.getAmplitudeEventProperties(),
+      ...(eventProps || {}),
+    };
+
     if (
-      process.env === 'TEST' ||
-      process.env === 'TESTING' ||
-      process.env === 'CI' ||
+      process.env.NODE_ENV === 'test' ||
+      process.env.NODE_ENV === 'CI' ||
       this.props.storeSessionEvents
     ) {
-      (window.dataLayer = window.dataLayer || []).push({
-        eventType,
-        eventProps,
-        utc_time: Date.now(),
-      });
-
       /** log all events to sessionStorage */
-      // sessionStorage.setItem(
-      //   'session_events',
-      //   JSON.stringify([
-      //     ...(JSON.parse(sessionStorage.getItem('session_events')) || []),
-      //     {
-      //       eventType,
-      //       eventProps,
-      //       time: Date.now(),
-      //     },
-      //   ]),
-      // );
+      sessionStorage.setItem(
+        'session_events',
+        JSON.stringify([
+          ...(JSON.parse(sessionStorage.getItem('session_events')) || []),
+          {
+            eventType,
+
+            eventProps: combinedEventProps,
+            utc_time: Date.now(),
+          },
+        ]),
+      );
     }
 
-    return this._makeLogEvent()(
-      eventType,
-      {
-        ...this.getAmplitudeEventProperties(),
-        ...(eventProps || {}),
-      },
-      cb,
-    );
+    return this._makeLogEvent()(eventType, combinedEventProps, cb);
   };
 
   instrument = memoize((eventType, func, props = {}) => {
     return (...params) => {
-      const retVal = func ? func(...params) : undefined;
-
+      const retVal = typeof func === 'function' ? func(...params) : undefined;
       this.dispatch(eventType, props);
 
       return retVal;
