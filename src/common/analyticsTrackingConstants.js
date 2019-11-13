@@ -75,12 +75,15 @@ const scope = (name, eventsList) => {
   };
 };
 
+const mouseEvents = ['CLICK', 'HOVER'];
+
 /**
  * analytics tracking constants object
  */
 const analytiicsTrackingConstants = {
   ...scope('AUTH', ['LOGIN', 'LOGOUT']),
   ...scope('PAGE', ['VIEW']),
+  ...scope('MOUSE', mouseEvents),
 };
 
 export default analytiicsTrackingConstants;

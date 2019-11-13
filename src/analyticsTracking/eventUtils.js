@@ -7,10 +7,16 @@ const normalizeEventType = str =>
     .toUpperCase()
     .trim();
 
-const mouseEvents = log => (eventProps = {}, eventType = null) => {
+export const mouseEvents = log => (eventProps = {}, eventType = null) => {
+  if (typeof log !== 'function') {
+    console.error(
+      `[analytic-tracking]  ERROR mouseEvents must be instantiated with a "log" parameter, log param given = ${log}`,
+    );
+    return false;
+  }
   const mouseActions = {
     onClick: e => {
-      if (eventProps.stopPropagation) e.stopPropagation();
+      if (e && eventProps.stopPropagation) e.stopPropagation();
       delete eventProps.stopPropagation;
       try {
         log(
@@ -19,15 +25,14 @@ const mouseEvents = log => (eventProps = {}, eventType = null) => {
         );
       } catch (e) {
         console.error(
-          `[analytic-tracking]  ERROR mouseEvents eventType: ${
-            EVENT_CONSTANTS.MOUSE.CLICK
-          }`,
+          `[analytic-tracking]  ERROR mouseEvents:onClick eventType: ${eventType}`,
+          eventProps,
           e,
         );
       }
     },
     onMouseOver: e => {
-      if (eventProps.stopPropagation) e.stopPropagation();
+      if (e && eventProps.stopPropagation) e.stopPropagation();
       delete eventProps.stopPropagation;
       try {
         log(
