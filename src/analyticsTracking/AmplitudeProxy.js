@@ -31,7 +31,10 @@ class AmplitudeProxy extends Amplitude {
   // other analytics services into it
   dispatch = (eventType, eventProps, cb) => {
     if (this.logToConsole || this.props.logToConsole) {
-      console.log(`AmplitudeProxy::dispatch ${eventType}`, eventProps);
+      console.log(
+        `AmplitudeProxy::dispatch eventType:${eventType}`,
+        eventProps,
+      );
     }
 
     const combinedEventProps = {
