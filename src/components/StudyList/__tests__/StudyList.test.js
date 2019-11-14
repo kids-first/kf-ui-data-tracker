@@ -1,7 +1,7 @@
 import React from 'react';
 import wait from 'waait';
 import {MemoryRouter} from 'react-router-dom';
-import {MockedProvider} from 'react-apollo/test-utils';
+import {MockedProvider} from '@apollo/react-testing';
 import {render, cleanup, fireEvent, act} from 'react-testing-library';
 import {mocks} from '../../../../__mocks__/kf-api-study-creator/mocks';
 import myProfile from '../../../../__mocks__/kf-api-study-creator/responses/myProfile.json';

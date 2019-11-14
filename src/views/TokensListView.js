@@ -21,51 +21,10 @@ const TokensListView = () => {
   );
   const allDevTokens = data && data.allDevTokens;
   const [createToken] = useMutation(CREATE_DEV_TOKEN, {
-    update: (cache, {data: {createDevToken}}) => {
-      // This will append the resulting token onto the list of dev tokens
-      // The token that is appended will not be obfuscated so that the
-      // user may copy it in plain text. The next time that it is fetched
-      // from the server, it will be obfuscated.
-      const {allDevTokens} = cache.readQuery({query: GET_DEV_TOKENS});
-      const data = {
-        allDevTokens: {
-          ...allDevTokens,
-          edges: allDevTokens.edges.concat([
-            {
-              node: createDevToken.token,
-              __typename: 'DevDownloadTokenNodeEdge',
-            },
-          ]),
-        },
-      };
-      cache.writeQuery({
-        query: GET_DEV_TOKENS,
-        data,
-      });
-    },
+    refetchQueries: [{query: GET_DEV_TOKENS}],
   });
   const [deleteToken] = useMutation(DELETE_DEV_TOKEN, {
-    update: (cache, {data: {deleteDevToken}}) => {
-      // Removes the token from the allDevTokens query in the cache
-      const {allDevTokens} = cache.readQuery({query: GET_DEV_TOKENS});
-      const deleteIndex = allDevTokens.edges.findIndex(
-        edge => edge.node.name === deleteDevToken.name,
-      );
-      if (deleteIndex < 0) {
-        return allDevTokens;
-      }
-      allDevTokens.edges.splice(deleteIndex, 1);
-      const data = {
-        allDevTokens: {
-          ...allDevTokens,
-          edges: allDevTokens.edges,
-        },
-      };
-      cache.writeQuery({
-        query: GET_DEV_TOKENS,
-        data,
-      });
-    },
+    refetchQueries: [{query: GET_DEV_TOKENS}],
   });
 
   const [newTokenError, setNewTokenError] = useState();
@@ -105,7 +64,7 @@ const TokensListView = () => {
               negative
               icon="warning circle"
               header="Error"
-              content={devTokensError}
+              content={devTokensError.message}
             />
           ) : (
             <Message
@@ -142,20 +101,18 @@ const TokensListView = () => {
         onCancel={() => setConfirmOpen(false)}
         onConfirm={() => {
           setDeleteTokenLoading(true);
-          deleteToken({variables: {name: deletingToken}})
-            .then(resp => {
-              setConfirmOpen(false);
-              setDeleteTokenLoading(false);
-            })
-            .catch(err => {
-              setConfirmOpen(false);
-              setDeleteTokenLoading(false);
-            });
+          deleteToken({variables: {name: deletingToken}});
+          setConfirmOpen(false);
+          setDeleteTokenLoading(false);
         }}
         header={`Delete '${deletingToken}' token`}
         content="This will break any applications using this token. Are you sure?"
         confirmButton={
-          <Button negative loading={deleteTokenLoading}>
+          <Button
+            negative
+            loading={deleteTokenLoading}
+            data-testid="delete-token-confirm"
+          >
             Delete
           </Button>
         }

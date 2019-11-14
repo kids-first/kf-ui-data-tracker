@@ -1,7 +1,7 @@
 import React from 'react';
 import wait from 'waait';
 import {MemoryRouter} from 'react-router-dom';
-import {MockedProvider} from 'react-apollo/test-utils';
+import {MockedProvider} from '@apollo/react-testing';
 import {render, cleanup, fireEvent} from 'react-testing-library';
 import FileList from '../FileList';
 import studyByKfId from './studyByKfId';

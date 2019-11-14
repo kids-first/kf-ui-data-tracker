@@ -1348,8 +1348,8 @@ exports[`renders study logs view correctly 3`] = `
         class="ui basic right floated segment noMargin noPadding"
       >
         <div
-          aria-expanded="true"
-          class="ui active visible selection dropdown"
+          aria-expanded="false"
+          class="ui selection dropdown"
           role="listbox"
           tabindex="0"
         >
@@ -1358,14 +1358,14 @@ exports[`renders study logs view correctly 3`] = `
             class="default text"
             role="alert"
           >
-            Study File Created
+            Event Type
           </div>
           <i
             aria-hidden="true"
             class="dropdown icon"
           />
           <div
-            class="visible menu transition"
+            class="menu transition"
           >
             <div
               aria-checked="false"
@@ -1563,126 +1563,6 @@ exports[`renders study logs view correctly 3`] = `
               class="right floated content"
             >
               <time
-                datetime="2019-10-24T15:29:53.799Z"
-                title="24 Oct 2019"
-              >
-                6 months from now
-              </time>
-            </div>
-            Katrina Torres created version FV_CZ9APDBX of file SF_ID7TZFDM
-          </div>
-        </div>
-        <div
-          class="item"
-          role="listitem"
-        >
-          <i
-            aria-hidden="true"
-            class="green add icon"
-          />
-          <div
-            class="content"
-          >
-            <div
-              class="right floated content"
-            >
-              <time
-                datetime="2019-10-24T15:29:53.792Z"
-                title="24 Oct 2019"
-              >
-                6 months from now
-              </time>
-            </div>
-            Lisa Steele created file SF_ID7TZFDM
-          </div>
-        </div>
-        <div
-          class="item"
-          role="listitem"
-        >
-          <i
-            aria-hidden="true"
-            class="green add icon"
-          />
-          <div
-            class="content"
-          >
-            <div
-              class="right floated content"
-            >
-              <time
-                datetime="2019-10-24T15:29:53.711Z"
-                title="24 Oct 2019"
-              >
-                6 months from now
-              </time>
-            </div>
-            Elizabeth White created version FV_IR5YTHKJ of file SF_SX4YTPYK
-          </div>
-        </div>
-        <div
-          class="item"
-          role="listitem"
-        >
-          <i
-            aria-hidden="true"
-            class="green add icon"
-          />
-          <div
-            class="content"
-          >
-            <div
-              class="right floated content"
-            >
-              <time
-                datetime="2019-10-24T15:29:53.703Z"
-                title="24 Oct 2019"
-              >
-                6 months from now
-              </time>
-            </div>
-            Steven Morgan created version FV_HWYZ3P9S of file SF_SX4YTPYK
-          </div>
-        </div>
-        <div
-          class="item"
-          role="listitem"
-        >
-          <i
-            aria-hidden="true"
-            class="green add icon"
-          />
-          <div
-            class="content"
-          >
-            <div
-              class="right floated content"
-            >
-              <time
-                datetime="2019-10-24T15:29:53.695Z"
-                title="24 Oct 2019"
-              >
-                6 months from now
-              </time>
-            </div>
-            Charles Booker created version FV_Z00M0H85 of file SF_SX4YTPYK
-          </div>
-        </div>
-        <div
-          class="item"
-          role="listitem"
-        >
-          <i
-            aria-hidden="true"
-            class="green add icon"
-          />
-          <div
-            class="content"
-          >
-            <div
-              class="right floated content"
-            >
-              <time
                 datetime="2019-10-24T15:29:53.687Z"
                 title="24 Oct 2019"
               >
@@ -1690,30 +1570,6 @@ exports[`renders study logs view correctly 3`] = `
               </time>
             </div>
             Justin Heath created version FV_FSTR09MV of file SF_SX4YTPYK
-          </div>
-        </div>
-        <div
-          class="item"
-          role="listitem"
-        >
-          <i
-            aria-hidden="true"
-            class="green add icon"
-          />
-          <div
-            class="content"
-          >
-            <div
-              class="right floated content"
-            >
-              <time
-                datetime="2019-10-24T15:29:53.678Z"
-                title="24 Oct 2019"
-              >
-                6 months from now
-              </time>
-            </div>
-            Roger Swanson created file SF_SX4YTPYK
           </div>
         </div>
       </div>

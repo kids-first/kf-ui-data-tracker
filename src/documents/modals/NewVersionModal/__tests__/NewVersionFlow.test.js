@@ -1,6 +1,6 @@
 import React from 'react';
 import wait from 'waait';
-import {MockedProvider} from 'react-apollo/test-utils';
+import {MockedProvider} from '@apollo/react-testing';
 import {MemoryRouter} from 'react-router-dom';
 import {render, fireEvent, cleanup, act} from 'react-testing-library';
 import {NewVersionFlow} from '../NewVersionFlow';
@@ -12,12 +12,7 @@ afterEach(cleanup);
 it('creates a new version', async () => {
   const fileNode = fileByKfId.data.fileByKfId;
   const handleClose = jest.fn();
-  const createVersion = jest.fn(
-    _ =>
-      new Promise((resolve, reject) => {
-        process.nextTick(() => resolve({data: 'test'}));
-      }),
-  );
+
   const tree = render(
     <MockedProvider mocks={mocks}>
       <MemoryRouter
@@ -32,7 +27,6 @@ it('creates a new version', async () => {
           }}
           fileNode={fileNode}
           handleClose={handleClose}
-          createVersion={createVersion}
         />
       </MemoryRouter>
     </MockedProvider>,
@@ -67,9 +61,8 @@ it('creates a new version', async () => {
   act(() => {
     fireEvent.click(uploadButton);
   });
-  await wait(0);
+  await wait(100);
 
   // Check that the handles were called
-  expect(createVersion.mock.calls.length).toBe(1);
   expect(handleClose.mock.calls.length).toBe(1);
 });

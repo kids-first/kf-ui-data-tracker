@@ -1,7 +1,7 @@
 import React from 'react';
 import {render, cleanup} from 'react-testing-library';
 import {MemoryRouter} from 'react-router-dom';
-import {MockedProvider} from 'react-apollo/test-utils';
+import {MockedProvider} from '@apollo/react-testing';
 import CavaticaCounts from '../CavaticaCounts';
 import studyByKfId from '../../../../__mocks__/kf-api-study-creator/responses/studyByKfId';
 
