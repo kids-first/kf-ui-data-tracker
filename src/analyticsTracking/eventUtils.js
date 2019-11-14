@@ -14,46 +14,30 @@ export const mouseEvents = log => (eventProps = {}, eventType = null) => {
     );
     return false;
   }
-  const mouseActions = {
-    onClick: e => {
-      if (e && eventProps.stopPropagation) e.stopPropagation();
-      delete eventProps.stopPropagation;
-      try {
-        log(
-          eventType
-            ? `${normalizeEventType(eventType)}__CLICK`
-            : EVENT_CONSTANTS.MOUSE.CLICK,
-          eventProps,
-        );
-      } catch (e) {
-        console.error(
-          `[analyticsTracking]  ERROR mouseEvents:onClick eventType: ${eventType}`,
-          eventProps,
-          e,
-        );
-      }
-    },
-    onMouseOver: e => {
-      if (e && eventProps.stopPropagation) e.stopPropagation();
-      delete eventProps.stopPropagation;
-      try {
-        log(
-          eventType
-            ? `${normalizeEventType(eventType)}__HOVER`
-            : EVENT_CONSTANTS.MOUSE.HOVER,
-          eventProps,
-        );
-      } catch (e) {
-        console.error(
-          `[analyticsTracking] ERROR mouseEvents:onMouseHover eventType: ${eventType}`,
-          eventProps,
-          e,
-        );
-      }
-    },
+
+  const mouseEvent = ({action, domEvent}, e) => {
+    if (e && eventProps.stopPropagation) e.stopPropagation();
+    delete eventProps.stopPropagation;
+    try {
+      log(
+        eventType
+          ? `${normalizeEventType(eventType)}__${action}`
+          : EVENT_CONSTANTS.MOUSE[action],
+        eventProps,
+      );
+    } catch (e) {
+      console.error(
+        `[analyticsTracking]  ERROR mouseEvents:on${domEvent} eventType: ${eventType}`,
+        eventProps,
+        e,
+      );
+    }
   };
 
-  return mouseActions;
+  return {
+    onClick: e => mouseEvent({action: 'CLICK', domEvent: 'onClick'}, e),
+    onMouseOver: e => mouseEvent({action: 'HOVER', domEvent: 'onMouseOver'}, e),
+  };
 };
 
 //@TODO: make input events
@@ -69,36 +53,27 @@ export const dropdownTracking = log => (
     );
     return false;
   }
+  const dropdownEvent = action =>
+    log(
+      eventType
+        ? `${normalizeEventType(eventType)}__${action}`
+        : name
+        ? `DROPDOWN_${normalizeEventType(name)}__${action}`
+        : EVENT_CONSTANTS.DROPDOWN[action],
+      {placeholder: name, ...eventProps},
+    );
   const dropdownEvents = {
-    onOpen: () => {
-      log(
-        eventType
-          ? `${normalizeEventType(eventType)}__OPEN`
-          : name
-          ? `DROPDOWN_${normalizeEventType(name)}__OPEN`
-          : EVENT_CONSTANTS.DROPDOWN.OPEN,
-        {placeholder: name, ...eventProps},
-      );
-    },
-    onClose: () => {
-      log(
-        eventType
-          ? `${normalizeEventType(eventType)}__CLOSE`
-          : name
-          ? `DROPDOWN_${normalizeEventType(name)}__CLOSE`
-          : EVENT_CONSTANTS.DROPDOWN.OPEN,
-        {placeholder: name, ...eventProps},
-      );
-    },
+    onOpen: () => dropdownEvent('OPEN'),
+    onClose: () => dropdownEvent('CLOSE'),
     onChange: (e, {value}) => {
       log(
         eventType
           ? `${normalizeEventType(eventType)}__CHANGE`
           : name
           ? `DROPDOWN_${normalizeEventType(name)}__CHANGE`
-          : EVENT_CONSTANTS.DROPDOWN.OPEN,
+          : EVENT_CONSTANTS.DROPDOWN.CHANGE,
         {
-          placehodler: name,
+          placeholder: name,
           value: value || (e & e.target ? e.target.value : null),
           ...eventProps,
         },
