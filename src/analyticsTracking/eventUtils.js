@@ -10,7 +10,7 @@ export const normalizeEventType = str =>
 export const mouseEvents = log => (eventProps = {}, eventType = null) => {
   if (typeof log !== 'function') {
     console.error(
-      `[analytic-tracking]  ERROR mouseEvents must be instantiated with a "log" parameter, log param given = ${log}`,
+      `[analyticsTracking]  ERROR mouseEvents must be instantiated with a "log" parameter, log param given = ${log}`,
     );
     return false;
   }
@@ -25,7 +25,7 @@ export const mouseEvents = log => (eventProps = {}, eventType = null) => {
         );
       } catch (e) {
         console.error(
-          `[analytic-tracking]  ERROR mouseEvents:onClick eventType: ${eventType}`,
+          `[analyticsTracking]  ERROR mouseEvents:onClick eventType: ${eventType}`,
           eventProps,
           e,
         );
@@ -41,7 +41,7 @@ export const mouseEvents = log => (eventProps = {}, eventType = null) => {
         );
       } catch (e) {
         console.error(
-          `[analytic-tracking] ERROR mouseEvents:onMouseHover eventType: ${eventType}`,
+          `[analyticsTracking] ERROR mouseEvents:onMouseHover eventType: ${eventType}`,
           eventProps,
           e,
         );
