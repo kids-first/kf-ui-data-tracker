@@ -163,7 +163,7 @@ const FileElement = ({
           />
         </Header>
       </Table.Cell>
-      <Table.Cell>
+      <Table.Cell className="px-20">
         <Header size="medium" as="span">
           <Link to={`/study/${match.params.kfId}/documents/${fileKfID}`}>
             {fileName}
@@ -205,7 +205,7 @@ const FileElement = ({
         />
         <Responsive
           as={FileActionsContainer}
-          maxWidth={Responsive.onlyTablet.minWidth}
+          maxWidth={Responsive.onlyTablet.minWidth - 1}
           node={fileNode}
           studyId={fileListId}
           vertical={false}

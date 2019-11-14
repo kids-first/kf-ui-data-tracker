@@ -2,8 +2,8 @@
 
 exports[`renders ListFilterBar with files 1`] = `
 <div>
-  <section
-    class="noPadding"
+  <div
+    class="ui basic clearing segment noHorizontalPadding"
   >
     <div
       class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
@@ -100,10 +100,6 @@ exports[`renders ListFilterBar with files 1`] = `
           </div>
         </div>
       </div>
-    </div>
-    <div
-      class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
-    >
       <div
         aria-expanded="false"
         class="ui selection dropdown"
@@ -201,7 +197,7 @@ exports[`renders ListFilterBar with files 1`] = `
       <span
         class="smallLabel"
       >
-        Sorted by:
+        Sort by:
       </span>
       <div
         aria-expanded="false"
@@ -262,29 +258,25 @@ exports[`renders ListFilterBar with files 1`] = `
       </button>
     </div>
     <div
-      class="ui basic compact right floated segment noMargin noVerticalPadding noHorizontalPadding"
+      class="ui fluid icon input"
     >
-      <div
-        class="ui icon input"
-      >
-        <input
-          type="text"
-          value=""
-        />
-        <i
-          aria-hidden="true"
-          class="search icon"
-        />
-      </div>
+      <input
+        type="text"
+        value=""
+      />
+      <i
+        aria-hidden="true"
+        class="search icon"
+      />
     </div>
-  </section>
+  </div>
 </div>
 `;
 
 exports[`renders ListFilterBar with files 2`] = `
 <div>
-  <section
-    class="noPadding"
+  <div
+    class="ui basic clearing segment noHorizontalPadding"
   >
     <div
       class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
@@ -381,10 +373,6 @@ exports[`renders ListFilterBar with files 2`] = `
           </div>
         </div>
       </div>
-    </div>
-    <div
-      class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
-    >
       <div
         aria-expanded="false"
         class="ui selection dropdown"
@@ -482,7 +470,7 @@ exports[`renders ListFilterBar with files 2`] = `
       <span
         class="smallLabel"
       >
-        Sorted by:
+        Sort by:
       </span>
       <div
         aria-expanded="false"
@@ -543,29 +531,25 @@ exports[`renders ListFilterBar with files 2`] = `
       </button>
     </div>
     <div
-      class="ui basic compact right floated segment noMargin noVerticalPadding noHorizontalPadding"
+      class="ui fluid icon input"
     >
-      <div
-        class="ui icon input"
-      >
-        <input
-          type="text"
-          value=""
-        />
-        <i
-          aria-hidden="true"
-          class="search icon"
-        />
-      </div>
+      <input
+        type="text"
+        value=""
+      />
+      <i
+        aria-hidden="true"
+        class="search icon"
+      />
     </div>
-  </section>
+  </div>
 </div>
 `;
 
 exports[`renders ListFilterBar with files 3`] = `
 <div>
-  <section
-    class="noPadding"
+  <div
+    class="ui basic clearing segment noHorizontalPadding"
   >
     <div
       class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
@@ -662,10 +646,6 @@ exports[`renders ListFilterBar with files 3`] = `
           </div>
         </div>
       </div>
-    </div>
-    <div
-      class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
-    >
       <div
         aria-expanded="true"
         class="ui active visible selection dropdown"
@@ -763,7 +743,7 @@ exports[`renders ListFilterBar with files 3`] = `
       <span
         class="smallLabel"
       >
-        Sorted by:
+        Sort by:
       </span>
       <div
         aria-expanded="false"
@@ -824,29 +804,25 @@ exports[`renders ListFilterBar with files 3`] = `
       </button>
     </div>
     <div
-      class="ui basic compact right floated segment noMargin noVerticalPadding noHorizontalPadding"
+      class="ui fluid icon input"
     >
-      <div
-        class="ui icon input"
-      >
-        <input
-          type="text"
-          value=""
-        />
-        <i
-          aria-hidden="true"
-          class="search icon"
-        />
-      </div>
+      <input
+        type="text"
+        value=""
+      />
+      <i
+        aria-hidden="true"
+        class="search icon"
+      />
     </div>
-  </section>
+  </div>
 </div>
 `;
 
 exports[`renders ListFilterBar with files 4`] = `
 <div>
-  <section
-    class="noPadding"
+  <div
+    class="ui basic clearing segment noHorizontalPadding"
   >
     <div
       class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
@@ -943,10 +919,6 @@ exports[`renders ListFilterBar with files 4`] = `
           </div>
         </div>
       </div>
-    </div>
-    <div
-      class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
-    >
       <div
         aria-expanded="false"
         class="ui selection dropdown"
@@ -1044,7 +1016,7 @@ exports[`renders ListFilterBar with files 4`] = `
       <span
         class="smallLabel"
       >
-        Sorted by:
+        Sort by:
       </span>
       <div
         aria-expanded="true"
@@ -1105,29 +1077,25 @@ exports[`renders ListFilterBar with files 4`] = `
       </button>
     </div>
     <div
-      class="ui basic compact right floated segment noMargin noVerticalPadding noHorizontalPadding"
+      class="ui fluid icon input"
     >
-      <div
-        class="ui icon input"
-      >
-        <input
-          type="text"
-          value=""
-        />
-        <i
-          aria-hidden="true"
-          class="search icon"
-        />
-      </div>
+      <input
+        type="text"
+        value=""
+      />
+      <i
+        aria-hidden="true"
+        class="search icon"
+      />
     </div>
-  </section>
+  </div>
 </div>
 `;
 
 exports[`renders ListFilterBar with files 5`] = `
 <div>
-  <section
-    class="noPadding"
+  <div
+    class="ui basic clearing segment noHorizontalPadding"
   >
     <div
       class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
@@ -1224,10 +1192,6 @@ exports[`renders ListFilterBar with files 5`] = `
           </div>
         </div>
       </div>
-    </div>
-    <div
-      class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
-    >
       <div
         aria-expanded="false"
         class="ui selection dropdown"
@@ -1325,7 +1289,7 @@ exports[`renders ListFilterBar with files 5`] = `
       <span
         class="smallLabel"
       >
-        Sorted by:
+        Sort by:
       </span>
       <div
         aria-expanded="false"
@@ -1386,29 +1350,25 @@ exports[`renders ListFilterBar with files 5`] = `
       </button>
     </div>
     <div
-      class="ui basic compact right floated segment noMargin noVerticalPadding noHorizontalPadding"
+      class="ui fluid icon input"
     >
-      <div
-        class="ui icon input"
-      >
-        <input
-          type="text"
-          value=""
-        />
-        <i
-          aria-hidden="true"
-          class="search icon"
-        />
-      </div>
+      <input
+        type="text"
+        value=""
+      />
+      <i
+        aria-hidden="true"
+        class="search icon"
+      />
     </div>
-  </section>
+  </div>
 </div>
 `;
 
 exports[`renders ListFilterBar with no files 1`] = `
 <div>
-  <section
-    class="noPadding"
+  <div
+    class="ui basic clearing segment noHorizontalPadding"
   >
     <div
       class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
@@ -1505,10 +1465,6 @@ exports[`renders ListFilterBar with no files 1`] = `
           </div>
         </div>
       </div>
-    </div>
-    <div
-      class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
-    >
       <div
         aria-expanded="false"
         class="ui selection dropdown"
@@ -1606,7 +1562,7 @@ exports[`renders ListFilterBar with no files 1`] = `
       <span
         class="smallLabel"
       >
-        Sorted by:
+        Sort by:
       </span>
       <div
         aria-expanded="false"
@@ -1667,21 +1623,17 @@ exports[`renders ListFilterBar with no files 1`] = `
       </button>
     </div>
     <div
-      class="ui basic compact right floated segment noMargin noVerticalPadding noHorizontalPadding"
+      class="ui fluid icon input"
     >
-      <div
-        class="ui icon input"
-      >
-        <input
-          type="text"
-          value=""
-        />
-        <i
-          aria-hidden="true"
-          class="search icon"
-        />
-      </div>
+      <input
+        type="text"
+        value=""
+      />
+      <i
+        aria-hidden="true"
+        class="search icon"
+      />
     </div>
-  </section>
+  </div>
 </div>
 `;

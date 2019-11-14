@@ -4,13 +4,13 @@ import {GET_STUDY_BY_ID, MY_PROFILE} from '../../state/queries';
 import {UploadContainer} from '../containers';
 import FileList from '../components/FileList/FileList';
 import {
-  Divider,
   Grid,
   Message,
   Placeholder,
   Container,
   Segment,
   Button,
+  Responsive,
 } from 'semantic-ui-react';
 import UploadWizard from '../modals/UploadWizard/UploadWizard';
 
@@ -105,8 +105,6 @@ const StudyFilesListView = ({
           ) : (
             <FileList fileList={files} studyId={kfId} isAdmin={isAdmin} />
           )}
-          <Divider />
-
           {dialog && (
             <UploadWizard
               history={history}
@@ -122,7 +120,9 @@ const StudyFilesListView = ({
         </Grid.Column>
       </Grid.Row>
       <Grid.Row centered>
-        <UploadContainer
+        <Responsive
+          as={UploadContainer}
+          minWidth={Responsive.onlyTablet.minWidth}
           handleUpload={file => {
             setFile(file);
             return !files.length

@@ -1,6 +1,13 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import {Icon, Button, Dropdown, Input, Segment} from 'semantic-ui-react';
+import {
+  Icon,
+  Button,
+  Dropdown,
+  Input,
+  Segment,
+  Responsive,
+} from 'semantic-ui-react';
 import Badge from '../../../components/Badge/Badge';
 import {
   fileLatestStatus,
@@ -18,6 +25,8 @@ const ListFilterBar = ({fileList, filteredList}) => {
   const [typeFilterStatus, setTypeFilterStatus] = useState('');
   const [approvalFilterStatus, setApprovalFilterStatus] = useState('');
   const [searchString, setSearchString] = useState('');
+  const [showFilter, setShowFilter] = useState(false);
+  const [showSort, setShowSort] = useState(false);
 
   const statusOptions = Object.keys(versionState).map(state => ({
     key: state,
@@ -76,7 +85,202 @@ const ListFilterBar = ({fileList, filteredList}) => {
 
   return (
     <>
-      <section className="noPadding">
+      <Responsive
+        as={Segment}
+        maxWidth={699}
+        basic
+        className="noHorizontalPadding"
+      >
+        <Button
+          data-testid="show-sort-button"
+          basic={!showSort}
+          floated="right"
+          primary={sortMethod !== ''}
+          icon="sort"
+          onClick={() => setShowSort(!showSort)}
+        />
+        <Button
+          data-testid="show-filter-button"
+          basic={!showFilter}
+          floated="right"
+          primary={typeFilterStatus !== '' || approvalFilterStatus !== ''}
+          icon="filter"
+          onClick={() => setShowFilter(!showFilter)}
+        />
+        <Input
+          className="mr-80"
+          fluid
+          icon="search"
+          onChange={(e, {value}) => {
+            setSearchString(value);
+          }}
+          value={searchString}
+        />
+        {showFilter && (
+          <Segment>
+            <p className="mb-5">
+              <Icon name="filter" />
+              Filter by:
+            </p>
+            <Dropdown
+              fluid
+              selection
+              clearable
+              selectOnBlur={false}
+              value={approvalFilterStatus}
+              options={statusOptions}
+              placeholder="Approval status"
+              onChange={(e, {value}) => {
+                setApprovalFilterStatus(value);
+              }}
+            />
+            <Dropdown
+              fluid
+              selection
+              clearable
+              selectOnBlur={false}
+              value={typeFilterStatus}
+              options={typeOptions}
+              placeholder="File type"
+              onChange={(e, {value}) => {
+                setTypeFilterStatus(value);
+              }}
+            />
+          </Segment>
+        )}
+        {showSort && (
+          <Segment>
+            <p className="mb-5">
+              <Icon name="sort" />
+              Sort by:
+            </p>
+            <Button
+              icon
+              basic
+              floated="right"
+              data-testid="sort-direction-button"
+              onClick={() => {
+                if (sortDirection === 'ascending') {
+                  setSortDirection('descending');
+                } else {
+                  setSortDirection('ascending');
+                }
+              }}
+            >
+              <Icon name={'sort content ' + sortDirection} />
+            </Button>
+            <div className="mr-40">
+              <Dropdown
+                fluid
+                selection
+                clearable
+                selectOnBlur={false}
+                value={sortMethod}
+                options={sortOptions}
+                placeholder="Date option"
+                onChange={(e, {value}) => {
+                  setSortMethod(value);
+                }}
+              />
+            </div>
+          </Segment>
+        )}
+      </Responsive>
+      <Responsive
+        as={Segment}
+        minWidth={700}
+        maxWidth={999}
+        basic
+        className="noHorizontalPadding"
+      >
+        <Input
+          fluid
+          icon="search"
+          onChange={(e, {value}) => {
+            setSearchString(value);
+          }}
+          value={searchString}
+        />
+        <Segment clearing basic className="noHorizontalPadding noMargin">
+          <Segment
+            className="noMargin noVerticalPadding noHorizontalPadding"
+            basic
+            compact
+            floated="left"
+          >
+            <Dropdown
+              labeled
+              button
+              className="icon noMargin"
+              placeholder="Approval status"
+              icon="filter"
+              selection
+              clearable
+              selectOnBlur={false}
+              value={approvalFilterStatus}
+              options={statusOptions}
+              onChange={(e, {value}) => {
+                setApprovalFilterStatus(value);
+              }}
+            />
+            <Dropdown
+              button
+              selection
+              clearable
+              selectOnBlur={false}
+              value={typeFilterStatus}
+              options={typeOptions}
+              placeholder="File type"
+              onChange={(e, {value}) => {
+                setTypeFilterStatus(value);
+              }}
+            />
+          </Segment>
+          <Segment
+            className="noMargin noVerticalPadding noHorizontalPadding"
+            basic
+            compact
+            floated="right"
+          >
+            <Dropdown
+              labeled
+              button
+              className="icon noMargin"
+              placeholder="Date option"
+              icon="sort"
+              selection
+              clearable
+              selectOnBlur={false}
+              value={sortMethod}
+              options={sortOptions}
+              onChange={(e, {value}) => {
+                setSortMethod(value);
+              }}
+            />
+            <Button
+              icon
+              basic
+              data-testid="sort-direction-button"
+              onClick={() => {
+                if (sortDirection === 'ascending') {
+                  setSortDirection('descending');
+                } else {
+                  setSortDirection('ascending');
+                }
+              }}
+            >
+              <Icon name={'sort content ' + sortDirection} />
+            </Button>
+          </Segment>
+        </Segment>
+      </Responsive>
+      <Responsive
+        as={Segment}
+        minWidth={1000}
+        clearing
+        basic
+        className="noHorizontalPadding"
+      >
         <Segment
           className="noMargin noVerticalPadding noHorizontalPadding"
           basic
@@ -95,19 +299,11 @@ const ListFilterBar = ({fileList, filteredList}) => {
               setApprovalFilterStatus(value);
             }}
           />
-        </Segment>
-
-        <Segment
-          className="noMargin noVerticalPadding noHorizontalPadding"
-          basic
-          compact
-          floated="left"
-        >
           <Dropdown
             selection
             clearable
             selectOnBlur={false}
-            // value={typeFilterStatus}
+            value={typeFilterStatus}
             options={typeOptions}
             placeholder="File type"
             onChange={(e, {value}) => {
@@ -115,14 +311,13 @@ const ListFilterBar = ({fileList, filteredList}) => {
             }}
           />
         </Segment>
-
         <Segment
           className="noMargin noVerticalPadding noHorizontalPadding"
           basic
           compact
           floated="left"
         >
-          <span className="smallLabel">Sorted by:</span>
+          <span className="smallLabel">Sort by:</span>
           <Dropdown
             selection
             clearable
@@ -149,21 +344,15 @@ const ListFilterBar = ({fileList, filteredList}) => {
             <Icon name={'sort content ' + sortDirection} />
           </Button>
         </Segment>
-        <Segment
-          className="noMargin noVerticalPadding noHorizontalPadding"
-          basic
-          compact
-          floated="right"
-        >
-          <Input
-            icon="search"
-            onChange={(e, {value}) => {
-              setSearchString(value);
-            }}
-            value={searchString}
-          />
-        </Segment>
-      </section>
+        <Input
+          fluid
+          icon="search"
+          onChange={(e, {value}) => {
+            setSearchString(value);
+          }}
+          value={searchString}
+        />
+      </Responsive>
       {filteredList(sortedFileList())}
     </>
   );

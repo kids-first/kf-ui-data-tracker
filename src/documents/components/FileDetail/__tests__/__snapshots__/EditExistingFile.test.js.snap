@@ -241,8 +241,8 @@ exports[`edits an existing file correctly 1`] = `
         <div
           class="sixteen wide column"
         >
-          <section
-            class="noPadding"
+          <div
+            class="ui basic clearing segment noHorizontalPadding"
           >
             <div
               class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
@@ -339,10 +339,6 @@ exports[`edits an existing file correctly 1`] = `
                   </div>
                 </div>
               </div>
-            </div>
-            <div
-              class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
-            >
               <div
                 aria-expanded="false"
                 class="ui selection dropdown"
@@ -440,7 +436,7 @@ exports[`edits an existing file correctly 1`] = `
               <span
                 class="smallLabel"
               >
-                Sorted by:
+                Sort by:
               </span>
               <div
                 aria-expanded="false"
@@ -501,25 +497,44 @@ exports[`edits an existing file correctly 1`] = `
               </button>
             </div>
             <div
-              class="ui basic compact right floated segment noMargin noVerticalPadding noHorizontalPadding"
+              class="ui fluid icon input"
             >
-              <div
-                class="ui icon input"
-              >
-                <input
-                  type="text"
-                  value=""
-                />
-                <i
-                  aria-hidden="true"
-                  class="search icon"
-                />
-              </div>
+              <input
+                type="text"
+                value=""
+              />
+              <i
+                aria-hidden="true"
+                class="search icon"
+              />
             </div>
-          </section>
+          </div>
           <table
-            class="ui selectable stackable very basic very compact table"
+            class="ui celled selectable stackable very compact table"
           >
+            <thead
+              class=""
+            >
+              <tr
+                class=""
+              >
+                <th
+                  class="center aligned"
+                >
+                  Approval
+                </th>
+                <th
+                  class="px-20"
+                >
+                  Document Details
+                </th>
+                <th
+                  class="center aligned"
+                >
+                  Actions
+                </th>
+              </tr>
+            </thead>
             <tbody
               class=""
             >
@@ -542,7 +557,7 @@ exports[`edits an existing file correctly 1`] = `
                   </div>
                 </td>
                 <td
-                  class=""
+                  class="px-20"
                 >
                   <span
                     class="ui medium header"
@@ -672,7 +687,7 @@ exports[`edits an existing file correctly 1`] = `
                   </div>
                 </td>
                 <td
-                  class=""
+                  class="px-20"
                 >
                   <span
                     class="ui medium header"
@@ -785,9 +800,6 @@ exports[`edits an existing file correctly 1`] = `
               </tr>
             </tbody>
           </table>
-          <div
-            class="ui divider"
-          />
         </div>
       </div>
       <div

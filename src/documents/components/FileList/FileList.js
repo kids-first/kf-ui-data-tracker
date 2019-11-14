@@ -48,7 +48,20 @@ const FileList = ({fileList, studyId, isAdmin}) => {
               );
 
               return (
-                <Table stackable selectable compact="very" basic="very">
+                <Table stackable selectable compact="very" celled>
+                  <Table.Header>
+                    <Table.Row>
+                      <Table.HeaderCell textAlign="center">
+                        Approval
+                      </Table.HeaderCell>
+                      <Table.HeaderCell className="px-20">
+                        Document Details
+                      </Table.HeaderCell>
+                      <Table.HeaderCell textAlign="center">
+                        Actions
+                      </Table.HeaderCell>
+                    </Table.Row>
+                  </Table.Header>
                   <Table.Body>
                     {paginatedList.map(({node}) => (
                       <FileElement
