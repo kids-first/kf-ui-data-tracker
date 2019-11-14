@@ -4,6 +4,7 @@ import {
   buttonTracking,
   popupTracking,
   normalizeEventType,
+  dropdownTracking,
 } from '../eventUtils';
 import {cleanup} from 'react-testing-library';
 
@@ -65,14 +66,14 @@ describe('analyticsTracking eventUtils', () => {
         });
       });
 
-      it('should return an event with "_CLICK" appended to the eventType', () => {
+      it('should return an event with "__CLICK" appended to the eventType', () => {
         const MockMouseEvents = mouseEvents(mockLogger)(
           ...Object.values(mockMouseEventParams),
         );
         MockMouseEvents.onClick();
         expect(mockLogger).toHaveBeenCalled();
         expect(mockLogger).toHaveBeenCalledWith(
-          `${mockMouseEventParams.eventType}_CLICK`,
+          `${mockMouseEventParams.eventType}__CLICK`,
           {
             ...mockMouseEventParams.eventProps,
           },
@@ -100,7 +101,7 @@ describe('analyticsTracking eventUtils', () => {
         expect(mockPropagation).toHaveBeenCalled();
         expect(mockLogger).toHaveBeenCalled();
         expect(mockLogger).toHaveBeenCalledWith(
-          `${mockMouseEventParams.eventType}_CLICK`,
+          `${mockMouseEventParams.eventType}__CLICK`,
           {
             ...mockMouseEventParams.eventProps,
           },
@@ -142,14 +143,14 @@ describe('analyticsTracking eventUtils', () => {
         });
       });
 
-      it('should return an event with "_CLICK" appended to the eventType', () => {
+      it('should return an event with "__HOVER" appended to the eventType', () => {
         const MockMouseEvents = mouseEvents(mockLogger)(
           ...Object.values(mockMouseEventParams),
         );
         MockMouseEvents.onMouseOver();
         expect(mockLogger).toHaveBeenCalled();
         expect(mockLogger).toHaveBeenCalledWith(
-          `${mockMouseEventParams.eventType}_HOVER`,
+          `${mockMouseEventParams.eventType}__HOVER`,
           {
             ...mockMouseEventParams.eventProps,
           },
@@ -177,7 +178,7 @@ describe('analyticsTracking eventUtils', () => {
         expect(mockPropagation).toHaveBeenCalled();
         expect(mockLogger).toHaveBeenCalled();
         expect(mockLogger).toHaveBeenCalledWith(
-          `${mockMouseEventParams.eventType}_HOVER`,
+          `${mockMouseEventParams.eventType}__HOVER`,
           {
             ...mockMouseEventParams.eventProps,
           },
@@ -217,13 +218,15 @@ describe('analyticsTracking eventUtils', () => {
         });
       });
 
-      it(`should call log with eventType "${mockButtonEventParams.scope.toUpperCase()}__CLICK" when "scope" param is given `, () => {
+      it(`should call log with eventType "${normalizeEventType(
+        mockButtonEventParams.scope,
+      )}__CLICK" when "scope" param is given `, () => {
         const mockButton = buttonTracking(mockLogger)(
           ...Object.values(mockButtonEventParams),
         );
         mockButton.onClick();
         expect(mockLogger).toHaveBeenCalledWith(
-          `${mockButtonEventParams.scope.toUpperCase()}__CLICK`,
+          `${normalizeEventType(mockButtonEventParams.scope)}__CLICK`,
           {
             button_text: mockButtonEventParams.name,
             button_type: mockButtonEventParams.type,
@@ -263,13 +266,15 @@ describe('analyticsTracking eventUtils', () => {
         });
       });
 
-      it(`should call log with eventType "${mockButtonEventParams.scope.toUpperCase()}__HOVER" when "scope" param is given `, () => {
+      it(`should call log with eventType "${normalizeEventType(
+        mockButtonEventParams.scope,
+      )}__HOVER" when "scope" param is given `, () => {
         const mockButton = buttonTracking(mockLogger)(
           ...Object.values(mockButtonEventParams),
         );
         mockButton.onMouseOver();
         expect(mockLogger).toHaveBeenCalledWith(
-          `${mockButtonEventParams.scope.toUpperCase()}__HOVER`,
+          `${normalizeEventType(mockButtonEventParams.scope)}__HOVER`,
           {
             button_text: mockButtonEventParams.name,
             button_type: mockButtonEventParams.type,
@@ -315,7 +320,7 @@ describe('analyticsTracking eventUtils', () => {
         mockPopupEvent.onClick();
         /** @TODO: use json schema to validate this  */
         expect(mockLogger).toHaveBeenCalledWith(
-          `${EVENT_CONSTANTS.TOOLTIP.scope}_${normalizeEventType(
+          `${EVENT_CONSTANTS.TOOLTIP.scope}__${normalizeEventType(
             mockPopupEventParams.eventProps.name,
           )}__CLICK`,
           mockLogPopupProps,
@@ -330,7 +335,7 @@ describe('analyticsTracking eventUtils', () => {
         mockPopupEvent.onClick();
         /** @TODO: use json schema to validate this  */
         expect(mockLogger).toHaveBeenCalledWith(
-          `${normalizeEventType(mockPopupEventParams.scope)}_CLICK`,
+          `${normalizeEventType(mockPopupEventParams.scope)}__CLICK`,
           {...mockLogPopupProps, ...inheritedProps},
         );
       });
@@ -366,14 +371,14 @@ describe('analyticsTracking eventUtils', () => {
 
       it(`should use a standard "${
         EVENT_CONSTANTS.TOOLTIP.scope
-      }_<normalized_name>__HOVER" eventType when no scope param is given`, () => {
+      }__<normalized_name>__HOVER" eventType when no scope param is given`, () => {
         const mockPopupEvent = popupTracking(mockLogger)(
           mockPopupEventParams.eventProps,
         );
         mockPopupEvent.onMouseOver();
         /** @TODO: use json schema to validate this  */
         expect(mockLogger).toHaveBeenCalledWith(
-          `${EVENT_CONSTANTS.TOOLTIP.scope}_${normalizeEventType(
+          `${EVENT_CONSTANTS.TOOLTIP.scope}__${normalizeEventType(
             mockPopupEventParams.eventProps.name,
           )}__HOVER`,
           mockLogPopupProps,
@@ -388,7 +393,7 @@ describe('analyticsTracking eventUtils', () => {
         mockPopupEvent.onMouseOver();
         /** @TODO: use json schema to validate this  */
         expect(mockLogger).toHaveBeenCalledWith(
-          `${normalizeEventType(mockPopupEventParams.scope)}_HOVER`,
+          `${normalizeEventType(mockPopupEventParams.scope)}__HOVER`,
           {...mockLogPopupProps, ...inheritedProps},
         );
       });
@@ -410,4 +415,48 @@ describe('analyticsTracking eventUtils', () => {
       });
     }); //onMouseOver
   }); //popupTracking
+
+  describe('dropdownTracking', () => {
+    const mockDropdownEventParams = {
+      name: 'drop d',
+      eventProps: {
+        foo: 'bar dropdown',
+      },
+      eventType: 'dropdow n n',
+    };
+
+    const mockDropdownEventProps = {
+      placeholder: mockDropdownEventParams.name,
+      ...mockDropdownEventParams.eventProps,
+    };
+
+    it('shouuld curry "log" param to mouseEvents without error', () => {
+      // test with no logger
+      expect(dropdownTracking()).not.toThrowError(TypeError);
+      expect(dropdownTracking()()).toBe(false);
+      // test with logger
+      const mockDropdown = dropdownTracking(mockLogger)(
+        ...Object.values(mockDropdownEventParams),
+      );
+      mockDropdown.onOpen();
+      expect(mockLogger).toHaveBeenCalled();
+    });
+
+    describe('onOpen', () => {
+      it(`should use a standard "${
+        EVENT_CONSTANTS.DROPDOWN.scope
+      }_<normalized_name>__OPEN" eventType when no eventType param is given`, () => {
+        const mockDropdown = dropdownTracking(mockLogger)(
+          ...Object.values(mockDropdownEventParams).slice(0, 2),
+        );
+
+        mockDropdown.onOpen();
+        /** @TODO: use json schema to validate this  */
+        expect(mockLogger).toHaveBeenCalledWith(
+          `DROPDOWN_${normalizeEventType(mockDropdownEventParams.name)}__OPEN`,
+          mockDropdownEventProps,
+        );
+      });
+    }); //onOpen
+  }); // dropdownTracking
 });

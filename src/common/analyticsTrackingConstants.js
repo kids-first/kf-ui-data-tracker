@@ -64,7 +64,7 @@ const scope = (name, eventsList) => {
     get(target, name, receiver) {
       let rv = Reflect.get(target, name, receiver);
       if (typeof rv === 'string' && name !== 'scope') {
-        rv = Reflect.get(target, 'scope', receiver) + '_' + rv;
+        rv = Reflect.get(target, 'scope', receiver) + '__' + rv;
       }
       return rv;
     },
@@ -76,6 +76,7 @@ const scope = (name, eventsList) => {
 };
 
 const mouseEvents = ['CLICK', 'HOVER'];
+const dropdownEvents = ['OPEN', 'CLOSE', 'CHANGE'];
 
 /**
  * analytics tracking constants object
@@ -85,6 +86,7 @@ const analytiicsTrackingConstants = {
   ...scope('PAGE', ['VIEW']),
   ...scope('MOUSE', mouseEvents),
   ...scope('TOOLTIP', mouseEvents),
+  ...scope('DROPDOWN', dropdownEvents),
 };
 
 export default analytiicsTrackingConstants;
