@@ -2,7 +2,7 @@ import React from 'react';
 import AnalyticsTrackingProvider from './AnalyticsTrackingProvider';
 import AmplitudeProxy from './AmplitudeProxy';
 
-const AnaltyticsMockProvider = ({children}) => (
+const AnalyticsProviderMock = ({children}) => (
   <AnalyticsTrackingProvider>
     <AmplitudeProxy eventProperties={{scope: ['TEST']}}>
       {children}
@@ -10,4 +10,4 @@ const AnaltyticsMockProvider = ({children}) => (
   </AnalyticsTrackingProvider>
 );
 
-export default AnaltyticsMockProvider;
+export default AnalyticsProviderMock;
