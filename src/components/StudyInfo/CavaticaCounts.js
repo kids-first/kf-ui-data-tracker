@@ -25,15 +25,16 @@ const CavaticaCounts = ({
       <List.Item
         as={Link}
         to={`/study/${title}/cavatica`}
-        onClick={e => e.stopPropagation()}
         className={hideIcon && projects.length === 0 ? 'text-red' : null}
-        {...buttonTracking({
-          button_text: `${
-            projects.length > 0 ? projects.length : 'No'
-          } projects`,
-          button_type: 'text link',
-          link: `/study/${title}/cavatica`,
-        })}
+        {...buttonTracking(
+          `${projects.length > 0 ? projects.length : 'No'} projects`,
+          'link',
+          {
+            link: `/study/${title}/cavatica`,
+            stopPropagation: true,
+          },
+          'cavatica projects',
+        )}
       >
         {!hideIcon && (
           <CavaticaLogo
