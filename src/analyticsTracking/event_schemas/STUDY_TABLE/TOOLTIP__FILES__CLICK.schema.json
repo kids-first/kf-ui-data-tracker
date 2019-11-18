@@ -1,0 +1,17 @@
+{
+  "$id": "https://kf-ui-datatracker.kidsfirstdrc.org/event_schemas/STUDY_CARD/TOOLTIP__FILES__CLICK.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "TOOLTIP__FILES__CLICK",
+  "type": "object",
+  "description": "click event for StudyTable FileCounts 'N files' link ",
+  "allOf": [
+    {"$ref": "../common_defintions.json#/path"},
+    {"$ref": "../common_defintions.json#/route"},
+    {"$ref": "../common_defintions.json#/view"},
+    {"$ref": "../common_defintions.json#/scope"},
+    {"$ref": "../common_defintions.json#/study"},
+    {"$ref": "../TOOLTIP/tooltip_definitions.schema.json#/tooltip_name"},
+    {"$ref": "../TOOLTIP/tooltip_definitions.schema.json#/tooltip_content"},
+    {"$ref": "../BUTTON/button_definitions.schema.json#/link"}
+  ]
+}

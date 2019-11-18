@@ -1,0 +1,16 @@
+{
+  "$id": "https://kf-ui-datatracker.kidsfirstdrc.org/event_schemas/STUDY_CARD/TOOLTIP__<file_status>__HOVER.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "TOOLTIP__<file_status>__HOVER",
+  "type": "object",
+  "description": "mouse hover event for StudyTable FileCounts element, this can be any of the file status indicators (<file_status>) ",
+  "allOf": [
+    {"$ref": "../common_defintions.json#/path"},
+    {"$ref": "../common_defintions.json#/route"},
+    {"$ref": "../common_defintions.json#/view"},
+    {"$ref": "../common_defintions.json#/scope"},
+    {"$ref": "../common_defintions.json#/study"},
+    {"$ref": "../TOOLTIP/tooltip_definitions.schema.json#/tooltip_name"},
+    {"$ref": "../TOOLTIP/tooltip_definitions.schema.json#/tooltip_content"}
+  ]
+}

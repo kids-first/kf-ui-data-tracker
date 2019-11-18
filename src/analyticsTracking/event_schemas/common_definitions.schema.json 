@@ -4,6 +4,10 @@
   "title": "Schema definitions",
   "description": "common definitions for easy reuse in other schemas ",
   "definitions": {
+    "scope": {
+      "type": "string",
+      "description": "name of containing component"
+    },
     "path": {
       "type": "string",
       "format": "uri-reference",

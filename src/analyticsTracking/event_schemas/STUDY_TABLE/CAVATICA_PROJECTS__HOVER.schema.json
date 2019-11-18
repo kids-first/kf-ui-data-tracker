@@ -1,0 +1,17 @@
+{
+  "$id": "https://kf-ui-datatracker.kidsfirstdrc.org/event_schemas/CAVATICA_PROJECTS/CAVATICA_PROJECTS__HOVER.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "CAVATICA_PROJECTS__HOVER",
+  "type": "object",
+  "description": "mouse hover event for StudyTable Row CavaticaProject link",
+  "allOf": [
+    {"$ref": "../common_defintions.json#/path"},
+    {"$ref": "../common_defintions.json#/route"},
+    {"$ref": "../common_defintions.json#/view"},
+    {"$ref": "../common_defintions.json#/scope"},
+    {"$ref": "../BUTTON/button_definitions.schema.json#/study"},
+    {"$ref": "../BUTTON/button_definitions.schema.json#/button_text"},
+    {"$ref": "../BUTTON/button_definitions.schema.json#/button_type"},
+    {"$ref": "../BUTTON/button_definitions.schema.json#/link"}
+  ]
+}
