@@ -25,7 +25,7 @@ const StudyCard = ({
   tracking: {
     logEvent,
     buttonTracking,
-    EVENT_CONSTANTS: {STUDY_CARD_},
+    EVENT_CONSTANTS: {STUDY_CARD},
     popupTracking,
   },
 }) => {
@@ -52,20 +52,20 @@ const StudyCard = ({
   };
 
   const logStudyCardEvent = (action, payload) =>
-    logEvent(STUDY_CARD_[action], payload);
+    logEvent(STUDY_CARD[action], payload);
 
-  const ToggleDetailButton = ({testId}) => (
+  const ToggleDetailButton = () => (
     <Button
       as={Label}
       basic
       floated="right"
       size="mini"
-      data-testid={testId}
+      data-testid={showDetail ? 'hide-detail' : 'show-detail'}
       icon={showDetail ? 'chevron up' : 'chevron down'}
       onClick={e => {
         setShowDetail(!showDetail);
         logStudyCardEvent('TOGGLE_DETAIL', {
-          button_text: testId,
+          button_text: showDetail ? 'hide-detail' : 'show-detail',
           button_type: 'icon',
           show_detail: !showDetail,
         });
@@ -174,7 +174,7 @@ const StudyCard = ({
               </Link>
             }
           />
-          <ToggleDetailButton testId="show-detail" />
+          <ToggleDetailButton />
         </Card.Content>
       )}
       {showDetail && (
