@@ -18,75 +18,77 @@ import {withAnalyticsTracking} from '../../analyticsTracking';
 /**
  * Renders a single row in the table
  */
-const TableValue = ({
-  row,
-  col,
-  title,
-  tracking: {
-    buttonTracking,
-    EVENT_CONSTANTS: {STUDY_TABLE_},
+const TableValue = withAnalyticsTracking(
+  ({
+    row,
+    col,
+    title,
+    tracking: {
+      buttonTracking,
+      EVENT_CONSTANTS: {STUDY_TABLE},
+    },
+  }) => {
+    switch (col) {
+      case 'files':
+        return (
+          <FileCounts
+            files={row[col].edges}
+            title={title}
+            hideIcon
+            eventProperties={{study: {kfId: row.kfId}}}
+          />
+        );
+      case 'projects':
+        return (
+          <CavaticaCounts
+            projects={row[col].edges}
+            title={title}
+            hideIcon
+            eventProperties={{study: {kfId: row.kfId}}}
+          />
+        );
+      // Are these depricated??
+      case 'createdAt':
+      case 'modifiedAt':
+        return (
+          <TimeAgo
+            date={new Date(row[col])}
+            title={longDate(new Date(row[col]))}
+            live={false}
+          />
+        );
+      case 'description':
+        return (
+          <Link
+            to={`/study/${title}/basic-info/info`}
+            className={row[col].missingValue > 0 ? 'text-red' : null}
+            onClick={
+              buttonTracking(
+                `${trackedStudyFields.length - row[col].missingValue}/${
+                  trackedStudyFields.length
+                } complete`,
+                'Table.Row',
+                {
+                  link: `/study/${title}/basic-info/info`,
+                  study: {kfId: row.kfId},
+                  stopPropagation: true,
+                },
+                STUDY_TABLE.scope,
+              ).onClick
+            }
+          >
+            {trackedStudyFields.length -
+              row[col].missingValue +
+              '/' +
+              trackedStudyFields.length +
+              ' complete'}
+          </Link>
+        );
+      default:
+        return row[col];
+    }
   },
-}) => {
-  switch (col) {
-    case 'files':
-      return (
-        <FileCounts
-          files={row[col].edges}
-          title={title}
-          hideIcon
-          eventProperties={{study: {kfId: row.kfId}}}
-        />
-      );
-    case 'projects':
-      return (
-        <CavaticaCounts
-          projects={row[col].edges}
-          title={title}
-          hideIcon
-          eventProperties={{study: {kfId: row.kfId}}}
-        />
-      );
-    // Are these depricated??
-    case 'createdAt':
-    case 'modifiedAt':
-      return (
-        <TimeAgo
-          date={new Date(row[col])}
-          title={longDate(new Date(row[col]))}
-          live={false}
-        />
-      );
-    case 'description':
-      return (
-        <Link
-          to={`/study/${title}/basic-info/info`}
-          className={row[col].missingValue > 0 ? 'text-red' : null}
-          onClick={
-            buttonTracking(
-              `${trackedStudyFields.length - row[col].missingValue}/${
-                trackedStudyFields.length
-              } complete`,
-              'Table.Row',
-              {
-                link: `/study/${title}/basic-info/info`,
-                study: {kfId: row.kfId},
-                stopPropagation: true,
-              },
-              STUDY_TABLE_.scope,
-            ).onClick
-          }
-        >
-          {trackedStudyFields.length -
-            row[col].missingValue +
-            '/' +
-            trackedStudyFields.length +
-            ' complete'}
-        </Link>
-      );
-    default:
-      return row[col];
-  }
-};
+);
 
 const StudyTable = ({
   studyList,
@@ -98,7 +100,7 @@ const StudyTable = ({
   tracking: {
     buttonTracking,
     inheritedEventProps,
-    EVENT_CONSTANTS: {STUDY_TABLE_},
+    EVENT_CONSTANTS: {STUDY_TABLE},
   },
 }) => {
   if (loading) {
@@ -189,7 +191,7 @@ const StudyTable = ({
                     study: {kfId: row.kfId},
                     link: `/study/${row.kfId}/documents`,
                   },
-                  STUDY_TABLE_.scope,
+                  STUDY_TABLE.scope,
                 ).onClick();
                 history.push(`/study/${row.kfId}/documents`);
               }
@@ -204,7 +206,7 @@ const StudyTable = ({
                   tracking={{
                     inheritedEventProps,
                     buttonTracking,
-                    EVENT_CONSTANTS: {STUDY_TABLE_},
+                    EVENT_CONSTANTS: {STUDY_TABLE},
                   }}
                 />
               </Table.Cell>
@@ -216,4 +218,6 @@ const StudyTable = ({
   );
 };
 
-export default withRouter(withAnalyticsTracking(StudyTable));
+export default withRouter(
+  withAnalyticsTracking(StudyTable, {saveSchemas: true}),
+);
