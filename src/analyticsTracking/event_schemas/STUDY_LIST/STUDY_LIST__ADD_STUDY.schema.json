@@ -8,7 +8,7 @@
     {"$ref": "../common_defintions.schema.json#/path"},
     {"$ref": "../common_defintions.schema.json#/route"},
     {"$ref": "../common_defintions.schema.json#/view"},
-    {"$ref": "../button/button_definitions.schema.json#/button_text"},
-    {"$ref": "../button/button_definitions.schema.json#/link"}
+    {"$ref": "../BUTTON/button_definitions.schema.json#/button_text"},
+    {"$ref": "../BUTTON/button_definitions.schema.json#/link"}
   ]
 }

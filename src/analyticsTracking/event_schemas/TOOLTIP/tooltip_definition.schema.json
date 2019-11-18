@@ -1,0 +1,25 @@
+{
+  "$id": "https://example.com/tooltip_definitons.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TOOLTIP__* common event schema properties",
+  "description": "passed to all tooltip/popup events and derivatives",
+  "type": "object",
+  "definitions": {
+    "tooltip_content": {
+      "type": "string",
+      "description": "identifing text contained inside of a popup"
+    },
+    "tooltip_name": {
+      "type": "string",
+      "description": "text shown to a user when they hover the tooltip"
+    }
+  },
+  "allOf": [
+    {"$ref": "../common_defintions.json#/path"},
+    {"$ref": "../common_defintions.schema.json#/route"},
+    {"$ref": "../common_defintions.schema.json#/view"},
+    {"$ref": "../BUTTON/button_definitions.schema.json#/link"},
+    {"$ref": "#tooltip_name"},
+    {"$ref": "#tooltip_content"}
+  ]
+}

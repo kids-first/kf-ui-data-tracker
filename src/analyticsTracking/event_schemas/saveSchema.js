@@ -26,7 +26,7 @@ const saveSchema = async (eventType, eventProps, cb) => {
     });
 
     const schemaFile = await saveAs(blob, `${eventType}.schema.json`);
-    if (typeof cb) cb(schemaFile, schema);
+    if (typeof cb == 'function') cb(schemaFile, schema);
   } catch (e) {
     console.error(e);
   }

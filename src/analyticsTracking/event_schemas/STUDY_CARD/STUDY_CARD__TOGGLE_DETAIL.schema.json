@@ -1,0 +1,50 @@
+{
+  "$id": "https://kf-ui-datatracker.kidsfirstdrc.org/event_schemas/STUDY_CARD/STUDY_CARD__TOGGLE_DETAIL.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "STUDY_CARD__TOGGLE_DETAIL",
+  "type": "object",
+  "description": "click event when a StudyCard detail is opened or closed",
+  "allOf": [
+    {"$ref": "../common_defintions.json#/path"},
+    {"$ref": "../common_defintions.json#/route"},
+    {"$ref": "../common_defintions.json#/view"},
+    {"$ref": "../BUTTON/button_definitions.schema.json#/button_text"},
+    {"$ref": "../BUTTON/button_definitions.schema.json#/button_type"},
+    {"$ref": "../BUTTON/button_definitions.schema.json#/link"},
+    {
+      "properties": {
+        "scope": {"type": "string", "description": "containing component name"},
+        "study": {
+          "allOf": [
+            {"$ref": "../BUTTON/button_definitions.schema.json#/study"},
+            {
+              "properties": {
+                "study_name": {
+                  "type": "string",
+                  "description": "study short list"
+                },
+                "files": {
+                  "type": "number",
+                  "description": "number of documents in the study"
+                },
+                "projects": {
+                  "type": "number",
+                  "description": "number of projects in the study"
+                },
+                "missing_info_fields": {
+                  "type": "number",
+                  "description": "nubmer of missing user-input meta fields for the study"
+                }
+              }
+            }
+          ],
+          "required": ["kfId"]
+        },
+        "show_detail": {
+          "type": "boolean",
+          "description": "whether or not the details were open or closed on click"
+        }
+      }
+    }
+  ]
+}

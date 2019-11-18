@@ -1,0 +1,48 @@
+{
+  "$id": "https://kf-ui-datatracker.kidsfirstdrc.org/event_schemas/STUDY_CARD/TOOLTIP__PROJECTS__CLICK.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "TOOLTIP__INFO__CLICK",
+  "type": "object",
+  "description": "click event on the 'Info' tooltip of the StudyCard component",
+  "allOf": [
+    {"$ref": "../common_defintions.json#/path"},
+    {"$ref": "../common_defintions.json#/route"},
+    {"$ref": "../common_defintions.json#/view"},
+    {"$ref": "../BUTTON/button_definitions.schema.json#/button_text"},
+    {"$ref": "../BUTTON/button_definitions.schema.json#/button_type"},
+    {"$ref": "../BUTTON/button_definitions.schema.json#/link"},
+    {"$ref": "../TOOLTIP/tooltip_definitions.schema.json#/tooltip_name"},
+    {"$ref": "../TOOLTIP/tooltip_definitions.schema.json#/tooltip_content"},
+    {
+      "properties": {
+        "scope": {"type": "string", "description": "containing component name"},
+        "study": {
+          "allOf": [
+            {"$ref": "../BUTTON/button_definitions.schema.json#/study"},
+            {
+              "properties": {
+                "study_name": {
+                  "type": "string",
+                  "description": "study short list"
+                },
+                "files": {
+                  "type": "number",
+                  "description": "number of documents in the study"
+                },
+                "projects": {
+                  "type": "number",
+                  "description": "number of projects in the study"
+                },
+                "missing_info_fields": {
+                  "type": "number",
+                  "description": "nubmer of missing user-input meta fields for the study"
+                }
+              }
+            }
+          ],
+          "required": ["kfId"]
+        }
+      }
+    }
+  ]
+}
