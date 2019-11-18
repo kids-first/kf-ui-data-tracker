@@ -16,17 +16,18 @@ const saveSchema = async (eventType, eventProps, cb) => {
         ...schema.properties,
         path: {
           $ref:
-            'http://kf-ui-data-tracker.kidsfirsrdrc.og/src/analyticsTracking/event_schemas/common_definitions.schema.json#/definitions/path',
+            'http://kf-ui-data-tracker.kidsfirsrdrc.og/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/path',
         },
         route: {
           $ref:
-            'http://kf-ui-data-tracker.kidsfirsrdrc.og/src/analyticsTracking/event_schemas/common_definitions.schema.json#/definitions/route',
+            'http://kf-ui-data-tracker.kidsfirsrdrc.og/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/route',
         },
         view: {
           $ref:
-            'http://kf-ui-data-tracker.kidsfirsrdrc.og/src/analyticsTracking/event_schemas/common_definitions.schema.json#/definitions/view',
+            'http://kf-ui-data-tracker.kidsfirsrdrc.og/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/view',
         },
       },
+      allAdditonalProperites: false,
       required: ['path', 'route', 'view'],
     };
 

@@ -6,7 +6,7 @@ import StudyList from '../components/StudyList/StudyList';
 import {Button, Message, Container, Segment} from 'semantic-ui-react';
 import {withAnalyticsTracking} from '../analyticsTracking';
 
-const StudyListView = () => {
+const StudyListView = ({tracking: {buttonTracking}}) => {
   const {data: profileData} = useQuery(MY_PROFILE);
   const myProfile = profileData && profileData.myProfile;
   const {loading, error, data} = useQuery(ALL_STUDIES);
@@ -44,10 +44,14 @@ const StudyListView = () => {
                 content="Create Study"
                 as={Link}
                 to={`/study/new-study`}
-                {...buttonTracking({
-                  button_text: 'Create Study',
-                  link: `/study/new-study`,
-                })}
+                {...buttonTracking(
+                  'Create Study',
+                  null,
+                  {
+                    link: `/study/new-study`,
+                  },
+                  'Create Study',
+                )}
               />
             </Segment>
           </>
@@ -70,4 +74,4 @@ const StudyListView = () => {
   );
 };
 
-export default StudyListView;
+export default withAnalyticsTracking(StudyListView);

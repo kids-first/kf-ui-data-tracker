@@ -15,19 +15,11 @@
       "items": [
         {
           "type": "string",
-          "enum": [
-            "ADMIN",
-            "USER",
-            "BETA"
-          ]
+          "enum": ["ADMIN", "USER", "BETA"]
         },
         {
           "type": "string",
-          "enum": [
-            "ADMIN",
-            "USER",
-            "BETA"
-          ]
+          "enum": ["ADMIN", "USER", "BETA"]
         }
       ],
       "minItems": 1,
@@ -37,7 +29,7 @@
       "description": "List of study kfIds the user has access to, parsed from  https://kidsfirstdrc.org/groups",
       "type": "array",
       "items": {
-        "$ref": "common_definitions.schema.json#/study"
+        "$ref": "common_defs.schema.json#/study"
       },
       "uniqueItems": true
     },
@@ -47,17 +39,10 @@
       "items": [
         {
           "type": "string",
-          "enum": [
-            "file:read",
-            "files:write"
-          ]
+          "enum": ["file:read", "files:write"]
         }
       ]
     }
   },
-  "required": [
-    "userId",
-    "studies",
-    "groups"
-  ]
+  "required": ["userId", "studies", "groups"]
 }

@@ -1,6 +1,12 @@
 import * as commonDefsSchema from './common_defs.schema.json';
 import * as authLoginSchema from './AUTH/AUTH__LOGIN.schema.json';
 import * as pageViewSchema from './PAGE/PAGE__VIEW.schema.json';
+import * as buttonEventSchema from './BUTTON/BUTTON_EVENT.schema.json';
+import {
+  STUDY_LIST__VIEW_TOGGLE,
+  STUDY_LIST__ADD_STUDY,
+  STUDY_LIST__SEARCH,
+} from './STUDY_LIST';
 
 /**
  * List of all possible analytics event types associated with
@@ -26,16 +32,16 @@ const schemas = {
   AUTH__LOGIN: authLoginSchema.default,
   AUTH__LOGOUT: {no: 'event props'},
   //button
-  BUTTON__CLICK: {},
-  BUTTON__HOVER: {},
+  BUTTON__CLICK: buttonEventSchema.default,
+  BUTTON__HOVER: buttonEventSchema.default,
   // input
   INPUT__TEXT: {},
   //tooltip/popup
   TOOLTIP: {},
   // study list view
-  STUDY_LIST__VIEW_TOGGLE: {},
-  STUDY_LIST__ADD_STUDY: {},
-  STUDY_LIST__SEARCH: {},
+  STUDY_LIST__VIEW_TOGGLE: STUDY_LIST__VIEW_TOGGLE,
+  STUDY_LIST__ADD_STUDY: STUDY_LIST__ADD_STUDY,
+  STUDY_LIST__SEARCH: STUDY_LIST__SEARCH,
   // study card
   STUDY_CARD__TOGGLE_DETAIL: {},
 };
