@@ -1,0 +1,15 @@
+{
+  "$id": "https://example.com/MOUSE__CLICK.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BUTTON__HOVER event schema",
+  "description": "called on the onMouseOver DOM event",
+  "type": "object",
+  "allOf": [
+    {"$ref": "../common_defintions.json#/path"},
+    {"$ref": "../common_defintions.schema.json#/route"},
+    {"$ref": "../common_defintions.schema.json#/view"},
+    {"$ref": "./button_definitions.schema.json#/button_text"},
+    {"$ref": "./button_definitions.schema.json#/button_type"},
+    {"$ref": "./button_definitions.schema.json#/link"}
+  ]
+}

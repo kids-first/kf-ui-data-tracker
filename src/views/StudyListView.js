@@ -9,6 +9,10 @@ import {withAnalyticsTracking} from '../analyticsTracking';
 const StudyListView = ({
   studies: {loading, allStudies, error},
   myProfile: {myProfile},
+  tracking: {
+    buttonTracking,
+    EVENT_CONSTANTS: {STUDY_LIST},
+  },
 }) => {
   if (error)
     return (
@@ -42,10 +46,14 @@ const StudyListView = ({
                 content="Create Study"
                 as={Link}
                 to={`/study/new-study`}
-                {...buttonTracking({
-                  button_text: 'Create Study',
-                  link: `/study/new-study`,
-                })}
+                {...buttonTracking(
+                  'Create Study',
+                  null,
+                  {
+                    link: `/study/new-study`,
+                  },
+                  'Create Study',
+                )}
               />
             </Segment>
           </>
@@ -71,4 +79,5 @@ const StudyListView = ({
 export default compose(
   graphql(ALL_STUDIES, {name: 'studies'}),
   graphql(MY_PROFILE, {name: 'myProfile'}),
+  withAnalyticsTracking,
 )(StudyListView);

@@ -5,8 +5,18 @@
   "description": "common definitions for easy reuse in other schemas ",
   "definitions": {
     "path": {
-      "type": "uri-reference",
+      "type": "string",
+      "format": "uri-reference",
       "description": "the url of the current screen, logged from App.js"
+    },
+    "route": {
+      "type": "string",
+      "format": "uri-reference",
+      "description": "regex version of the route, path prop passed to Route component"
+    },
+    "view": {
+      "type": "string",
+      "description": "container component name or functional component function name"
     },
     "study": {
       "type": "object",
@@ -15,7 +25,9 @@
           "type": "string",
           "format": "(SD_)[aZ09]{8}"
         },
-        "required": ["kfId"]
+        "required": [
+          "kfId"
+        ]
       }
     }
   }
