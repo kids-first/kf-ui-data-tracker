@@ -10,6 +10,7 @@ import saveSchema from './event_schemas/saveSchema';
  */
 class AmplitudeProxy extends Amplitude {
   logToConsole = false;
+  saveSchema = false;
 
   constructor(props) {
     super(props);
