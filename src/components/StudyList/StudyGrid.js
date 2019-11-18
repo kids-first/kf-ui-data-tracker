@@ -52,7 +52,7 @@ const StudyGrid = ({studyList, loading, isAdmin}) => {
             link: `/study/${node.node.kfId}/documents`,
             scope: 'StudyCard',
             study: {
-              ...(inherited.study || {}),
+              ...(inherited ? inherited.study : {}),
               kfId: node.node.kfId,
               study_name: node.node.name || node.node.shortName,
               files: node.node.files.edges.length,

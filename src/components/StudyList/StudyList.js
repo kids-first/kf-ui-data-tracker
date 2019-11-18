@@ -38,17 +38,17 @@ const StudyList = ({
   activeView = 'grid',
   roles,
   tracking: {
-    buttonTrackingProps,
     logEvent,
-    EVENT_CONSTANTS: {INPUT, STUDY_LIST_},
+    EVENT_CONSTANTS: {INPUT, STUDY_LIST},
   },
 }) => {
   const [view, setView] = useState(activeView);
   const [searchString, setSearchString] = useState('');
   const isAdmin = roles && roles.includes('ADMIN');
 
+  /** @event_schema: src/event_schemas/STUDY_LIST/** */
   const logStudyListEvent = (action, payload) =>
-    logEvent(STUDY_LIST_[action], payload);
+    logEvent(STUDY_LIST[action], payload);
 
   if (loading) {
     return (
@@ -111,7 +111,10 @@ const StudyList = ({
           size="mini"
           hideText
           onToggle={({text, active, icon}) => {
-            logStudyListEvent('VIEW_TOGGLE', {text, active});
+            logStudyListEvent('VIEW_TOGGLE', {
+              text,
+              active: active ? true : false,
+            });
             setView(text.toLowerCase());
           }}
           buttons={[

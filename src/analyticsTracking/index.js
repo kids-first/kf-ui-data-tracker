@@ -1,6 +1,6 @@
 export {default as withAnalyticsTracking} from './withAnalyticsTracking';
 
-export {default as AnalyticsMockProvider} from './AnalyticsMockProvider';
+export {default as AnalyticsProviderMock} from './AnalyticsProviderMock';
 
 export {
   default as AnalyticsTrackingProvider,

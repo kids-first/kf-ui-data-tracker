@@ -177,4 +177,4 @@ it('progresses to Step 3: Document Updated ', async done => {
   expect(handleClose.mock.calls.length).toBe(1);
 
   done();
-}, 6000);
+}, 8000);
