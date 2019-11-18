@@ -1,8 +1,9 @@
 import {Amplitude} from '@amplitude/react-amplitude';
 import {memoize} from '@amplitude/react-amplitude/src/lib/memoize';
 import debounce from 'lodash.debounce';
-import {buttonTracking} from './eventUtils';
+import {buttonTracking, normalizeEventType} from './eventUtils';
 import {EVENT_CONSTANTS} from '../analyticsTracking';
+import saveSchema from './event_schemas/saveSchema';
 
 /**
  *
@@ -30,17 +31,21 @@ class AmplitudeProxy extends Amplitude {
   // proxy our logging calls so we can hook
   // other analytics services into it
   dispatch = (eventType, eventProps, cb) => {
-    if (this.logToConsole || this.props.logToConsole) {
-      console.log(
-        `AmplitudeProxy::dispatch eventType:${eventType}`,
-        eventProps,
-      );
-    }
-
     const combinedEventProps = {
       ...this.getAmplitudeEventProperties(),
       ...(eventProps || {}),
     };
+    if (this.logToConsole || this.props.logToConsole) {
+      console.log(
+        `AmplitudeProxy::dispatch eventType:${eventType}`,
+        combinedEventProps,
+      );
+    }
+
+    /** saves the event schema as a "<event_type>.schema.json" file for download */
+    if (this.props.saveSchemas || this.saveSchemas) {
+      saveSchema(normalizeEventType(eventType), combinedEventProps, cb);
+    }
 
     if (
       process.env.NODE_ENV === 'test' ||
