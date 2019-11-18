@@ -6,7 +6,6 @@ const withAnalyticsTracking = (Component, config) => {
   class AnalyticsTrackingHOC extends AmplitudeProxy {
     logToConsole = config ? config.logToConsole : false;
     saveSchemas = config ? config.saveSchemas : false;
-    view = Component.name;
     render() {
       return (
         <Component
