@@ -44,7 +44,10 @@ class AmplitudeProxy extends Amplitude {
     }
 
     /** saves the event schema as a "<event_type>.schema.json" file for download */
-    if (this.props.saveSchemas || this.saveSchemas) {
+    if (
+      (process.env.NODE_ENV === 'development' && this.props.saveSchemas) ||
+      this.saveSchemas
+    ) {
       saveSchema(normalizeEventType(eventType), combinedEventProps, cb);
     }
 
