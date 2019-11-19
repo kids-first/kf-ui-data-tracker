@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {graphql, compose} from 'react-apollo';
+import {useQuery, useMutation} from '@apollo/react-hooks';
 import EditDocumentForm from '../forms/EditDocumentForm';
 import {CREATE_FILE} from '../mutations';
 import {GET_STUDY_BY_ID, MY_PROFILE} from '../../state/queries';
@@ -12,17 +12,28 @@ import {lengthLimit} from '../utilities';
  * file browser dialog and a file present in `location.state.file` as
  * populated by the router (eg: history.push('/new', {state: <File>}) )
  */
-const NewDocumentView = ({
-  match,
-  history,
-  location,
-  createDocument,
-  user,
-  study,
-}) => {
+const NewDocumentView = ({match, history, location}) => {
+  const study = useQuery(GET_STUDY_BY_ID, {
+    variables: {kfId: match.params.kfId},
+  });
+  const user = useQuery(MY_PROFILE);
+  const [createDocument] = useMutation(CREATE_FILE, {
+    awaitRefetchQueries: true,
+    refetchQueries: [
+      {query: GET_STUDY_BY_ID, variables: {kfId: match.params.kfId}},
+    ],
+  });
+
+  const isAdmin =
+    !user.loading && user.data.myProfile
+      ? user.data.myProfile.roles.includes('ADMIN')
+      : false;
+
   // Tracks any error state reported from the server
   const [errors, setErrors] = useState('');
-  const studyFiles = study.studyByKfId ? study.studyByKfId.files.edges : [];
+  const studyFiles = study.data.studyByKfId
+    ? study.data.studyByKfId.files.edges
+    : [];
 
   // If the user landed here without a file, they probably got here from
   // some external page. We'll send them back to the study's file list view.
@@ -49,9 +60,6 @@ const NewDocumentView = ({
         setErrors(err.message);
       });
   };
-  const isAdmin = !user.loading
-    ? user.myProfile.roles.includes('ADMIN')
-    : false;
   return (
     <Container as={Segment} vertical basic>
       <Container as={Segment} vertical basic>
@@ -112,19 +120,4 @@ const NewDocumentView = ({
   );
 };
 
-export default compose(
-  graphql(CREATE_FILE, {
-    name: 'createDocument',
-    options: ({match}) => ({
-      awaitRefetchQueries: true,
-      refetchQueries: [
-        {query: GET_STUDY_BY_ID, variables: {kfId: match.params.kfId}},
-      ],
-    }),
-  }),
-  graphql(GET_STUDY_BY_ID, {
-    name: 'study',
-    options: props => ({variables: {kfId: props.match.params.kfId}}),
-  }),
-  graphql(MY_PROFILE, {name: 'user'}),
-)(NewDocumentView);
+export default NewDocumentView;

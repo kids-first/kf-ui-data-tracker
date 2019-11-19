@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
+import {useMutation} from '@apollo/react-hooks';
 import {withRouter, Link} from 'react-router-dom';
-import {Mutation} from 'react-apollo';
-import {FILE_DOWNLOAD_URL} from '../../mutations';
+import {FILE_DOWNLOAD_URL, DELETE_FILE} from '../../mutations';
+import {GET_STUDY_BY_ID} from '../../../state/queries';
 import AvatarTimeAgo from '../../../components/AvatarTimeAgo/AvatarTimeAgo';
 import VersionList from '../VersionList/VersionList';
 import {
@@ -12,7 +13,6 @@ import {
   fileLatestSize,
 } from '../../utilities';
 import {fileTypeDetail} from '../../../common/enums';
-import DeleteFileMutation from '../../containers/DeleteFileMutation';
 import FileDetailModal from './FileDetailModal';
 import Badge from '../../../components/Badge/Badge';
 import {
@@ -100,140 +100,128 @@ const ActionButtons = ({
  * Form to display file details and file versions
  */
 const FileDetail = ({fileNode, history, match, isAdmin}) => {
+  const studyId = match.params.kfId;
+  const [downloadFileMutation] = useMutation(FILE_DOWNLOAD_URL);
+  const [deleteFile] = useMutation(DELETE_FILE, {
+    refetchQueries: [{query: GET_STUDY_BY_ID, variables: {kfId: studyId}}],
+  });
+
   const [dialog, setDialog] = useState(false);
   const [versionOpened, setOpenVersion] = useState({version: {}, index: null});
   const sortedVersions = fileSortedVersions(fileNode);
   const latestDate = fileLatestDate(sortedVersions);
   const latestSize = fileLatestSize(sortedVersions);
-  const studyId = match.params.kfId;
   return (
-    <Mutation mutation={FILE_DOWNLOAD_URL}>
-      {downloadFileMutation => (
-        <DeleteFileMutation studyId={studyId}>
-          {(deleteFile, {loading, error}) => (
-            <>
-              <Grid>
-                <Grid.Row>
-                  <Grid.Column mobile={16} tablet={16} computer={13}>
-                    <Link
-                      to={`/study/${match.params.kfId}/documents`}
-                      data-testid="back-to-filelist"
-                    >
-                      <Button
-                        basic
-                        size="mini"
-                        labelPosition="left"
-                        floated="left"
-                      >
-                        <Icon name="arrow left" />
-                        All Documents
-                      </Button>
-                    </Link>
-                    <Header as="h2">{fileNode.name}</Header>
-                  </Grid.Column>
-                </Grid.Row>
-              </Grid>
-              <Grid>
-                <Grid.Row>
-                  <Grid.Column mobile={16} tablet={16} computer={13}>
-                    <Segment.Group className="noBorders">
-                      <Segment.Group horizontal className="noBorders">
-                        <Segment className="noBorders">
-                          <Header as="h4" color="grey">
-                            Approval Status
-                          </Header>
-                          <Badge state={sortedVersions[0].node.state} />
-                        </Segment>
-                        <Segment className="noBorders">
-                          <Header as="h4" color="grey">
-                            Document Type
-                          </Header>
-                          <Label basic size="small">
-                            <Icon
-                              name={`${fileTypeDetail[fileNode.fileType].icon}`}
-                            />
-                            {' ' + fileTypeDetail[fileNode.fileType].title}
-                          </Label>
-                        </Segment>
-                        <Segment className="noBorders">
-                          <Header as="h4" color="grey">
-                            Last Updated
-                          </Header>
-                          <AvatarTimeAgo
-                            size="tiny"
-                            showUsername
-                            creator={fileNode.creator}
-                            createdAt={latestDate}
-                          />
-                        </Segment>
-                        <Segment className="noBorders">
-                          <Header as="h4" color="grey">
-                            Size
-                          </Header>
-                          <Label basic size="small">
-                            {latestSize}
-                          </Label>
-                        </Segment>
-                      </Segment.Group>
-                      <Segment className="noBorders">
-                        <Header as="h4" color="grey">
-                          Description
-                        </Header>
-                        <p>
-                          {fileNode.description || 'No description added...'}
-                        </p>
-                      </Segment>
-                    </Segment.Group>
-                  </Grid.Column>
-                  <Grid.Column mobile={8} tablet={4} computer={3}>
-                    <ActionButtons
-                      {...{
-                        downloadFile,
-                        studyId,
-                        fileNode,
-                        downloadFileMutation,
-                        setDialog,
-                        deleteFile,
-                        history,
-                        isAdmin,
-                      }}
-                    />
-                  </Grid.Column>
-                </Grid.Row>
-              </Grid>
-
-              <Grid>
-                <Grid.Row>
-                  <Grid.Column mobile={16} tablet={16} computer={13}>
-                    <VersionList
-                      studyId={studyId}
-                      fileNode={fileNode}
-                      onUploadClick={() => setDialog('upload')}
-                      onNameClick={(versionNode, index) => {
-                        setDialog('versionInfo');
-                        setOpenVersion({version: versionNode, index: index});
-                      }}
-                    />
-                  </Grid.Column>
-                </Grid.Row>
-                {dialog !== false && (
-                  <FileDetailModal
-                    match={match}
-                    studyId={studyId}
-                    fileNode={fileNode}
-                    onCloseModal={() => setDialog(false)}
-                    dialog={dialog}
-                    onUploadClick={() => setDialog('upload')}
-                    openedVersion={versionOpened}
-                    downloadFileMutation={downloadFileMutation}
+    <>
+      <Grid>
+        <Grid.Row>
+          <Grid.Column mobile={16} tablet={16} computer={13}>
+            <Link
+              to={`/study/${match.params.kfId}/documents`}
+              data-testid="back-to-filelist"
+            >
+              <Button basic size="mini" labelPosition="left" floated="left">
+                <Icon name="arrow left" />
+                All Documents
+              </Button>
+            </Link>
+            <Header as="h2">{fileNode.name}</Header>
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
+      <Grid>
+        <Grid.Row>
+          <Grid.Column mobile={16} tablet={16} computer={13}>
+            <Segment.Group className="noBorders">
+              <Segment.Group horizontal className="noBorders">
+                <Segment className="noBorders">
+                  <Header as="h4" color="grey">
+                    Approval Status
+                  </Header>
+                  <Badge state={sortedVersions[0].node.state} />
+                </Segment>
+                <Segment className="noBorders">
+                  <Header as="h4" color="grey">
+                    Document Type
+                  </Header>
+                  <Label basic size="small">
+                    <Icon name={`${fileTypeDetail[fileNode.fileType].icon}`} />
+                    {' ' + fileTypeDetail[fileNode.fileType].title}
+                  </Label>
+                </Segment>
+                <Segment className="noBorders">
+                  <Header as="h4" color="grey">
+                    Last Updated
+                  </Header>
+                  <AvatarTimeAgo
+                    size="tiny"
+                    showUsername
+                    creator={fileNode.creator}
+                    createdAt={latestDate}
                   />
-                )}
-              </Grid>
-            </>
-          )}
-        </DeleteFileMutation>
-      )}
-    </Mutation>
+                </Segment>
+                <Segment className="noBorders">
+                  <Header as="h4" color="grey">
+                    Size
+                  </Header>
+                  <Label basic size="small">
+                    {latestSize}
+                  </Label>
+                </Segment>
+              </Segment.Group>
+              <Segment className="noBorders">
+                <Header as="h4" color="grey">
+                  Description
+                </Header>
+                <p>{fileNode.description || 'No description added...'}</p>
+              </Segment>
+            </Segment.Group>
+          </Grid.Column>
+          <Grid.Column mobile={8} tablet={4} computer={3}>
+            <ActionButtons
+              {...{
+                downloadFile,
+                studyId,
+                fileNode,
+                downloadFileMutation,
+                setDialog,
+                deleteFile,
+                history,
+                isAdmin,
+              }}
+            />
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
+
+      <Grid>
+        <Grid.Row>
+          <Grid.Column mobile={16} tablet={16} computer={13}>
+            <VersionList
+              studyId={studyId}
+              fileNode={fileNode}
+              onUploadClick={() => setDialog('upload')}
+              onNameClick={(versionNode, index) => {
+                setDialog('versionInfo');
+                setOpenVersion({version: versionNode, index: index});
+              }}
+            />
+          </Grid.Column>
+        </Grid.Row>
+        {dialog !== false && (
+          <FileDetailModal
+            match={match}
+            studyId={studyId}
+            fileNode={fileNode}
+            onCloseModal={() => setDialog(false)}
+            dialog={dialog}
+            onUploadClick={() => setDialog('upload')}
+            openedVersion={versionOpened}
+            downloadFileMutation={downloadFileMutation}
+          />
+        )}
+      </Grid>
+    </>
   );
 };
 

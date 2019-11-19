@@ -1,7 +1,7 @@
 import React from 'react';
 import wait from 'waait';
 import {render} from 'react-testing-library';
-import {MockedProvider} from 'react-apollo/test-utils';
+import {MockedProvider} from '@apollo/react-testing';
 import {MemoryRouter} from 'react-router-dom';
 import Routes from '../../Routes';
 

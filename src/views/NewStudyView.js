@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {graphql} from 'react-apollo';
+import {useMutation} from '@apollo/react-hooks';
 import NewStudyForm from '../forms/StudyInfoForm/NewStudyForm';
 import {Segment, Container, Header, Loader} from 'semantic-ui-react';
 import {CREATE_STUDY} from '../state/mutations';
@@ -7,7 +7,9 @@ import {CREATE_STUDY} from '../state/mutations';
  * The NewStudyView displays a form to collect details about a new study.
  */
 
-const NewStudyView = ({match, history, location, createStudy}) => {
+const NewStudyView = ({match, history, location}) => {
+  const [createStudy] = useMutation(CREATE_STUDY);
+
   const [newStudyError, setNewStudyError] = useState();
   const [studyCreating, setStudyCreating] = useState(false);
 
@@ -67,6 +69,4 @@ const NewStudyView = ({match, history, location, createStudy}) => {
   );
 };
 
-export default graphql(CREATE_STUDY, {
-  name: 'createStudy',
-})(NewStudyView);
+export default NewStudyView;

@@ -1,12 +1,23 @@
 import React, {useState} from 'react';
+import {useMutation} from '@apollo/react-hooks';
 import {GET_STUDY_BY_ID} from '../state/queries';
 import {CREATE_PROJECT} from '../state/mutations';
-import {graphql, compose} from 'react-apollo';
 import {NewProjectForm} from '../forms';
 import {Button, Form, Modal} from 'semantic-ui-react';
 import {Formik} from 'formik';
 
-const NewProjectModal = ({open, createProject, onCloseDialog, study}) => {
+const NewProjectModal = ({open, onCloseDialog, study}) => {
+  const [createProject] = useMutation(CREATE_PROJECT, {
+    refetchQueries: [
+      {
+        query: GET_STUDY_BY_ID,
+        variables: {
+          kfId: study.kfId,
+        },
+      },
+    ],
+  });
+
   const [apiErrors, setApiErrors] = useState('');
   const onSubmit = (values, {setSubmitting}) => {
     setSubmitting(true);
@@ -78,18 +89,4 @@ const NewProjectModal = ({open, createProject, onCloseDialog, study}) => {
   );
 };
 
-export default compose(
-  graphql(CREATE_PROJECT, {
-    name: 'createProject',
-    options: props => ({
-      refetchQueries: [
-        {
-          query: GET_STUDY_BY_ID,
-          variables: {
-            kfId: props.study.kfId,
-          },
-        },
-      ],
-    }),
-  }),
-)(NewProjectModal);
+export default NewProjectModal;

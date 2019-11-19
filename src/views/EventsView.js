@@ -1,5 +1,5 @@
 import React from 'react';
-import {graphql, compose} from 'react-apollo';
+import {useQuery} from '@apollo/react-hooks';
 import {
   Container,
   Dimmer,
@@ -8,16 +8,22 @@ import {
   Loader,
   Select,
   Segment,
+  Message,
 } from 'semantic-ui-react';
 import {eventType} from '../common/enums';
 import {EventList} from '../components/EventList';
 import {ALL_EVENTS, ALL_STUDIES, ALL_USERS} from '../state/queries';
 
-const EventsView = ({
-  allUsers: {allUsers, loading: loadingUsers},
-  allStudies: {allStudies, loading: loadingStudies},
-  allEvents: {allEvents, refetch, loading, error},
-}) => {
+const EventsView = () => {
+  const {loading, data: eventData, error, refetch} = useQuery(ALL_EVENTS, {
+    variables: {orderBy: '-created_at'},
+  });
+  const allEvents = eventData && eventData.allEvents;
+  const {loading: loadingStudies, data: studyData} = useQuery(ALL_STUDIES);
+  const allStudies = studyData && studyData.allStudies;
+  const {loading: loadingUsers, data: userData} = useQuery(ALL_USERS);
+  const allUsers = userData && userData.allUsers;
+
   const studyOptions = allStudies
     ? allStudies.edges.map(({node}) => ({
         text: `${node.kfId} - ${node.name || node.shortName}`,
@@ -34,6 +40,18 @@ const EventsView = ({
     text: eventType[type].title,
     value: type,
   }));
+
+  if (error)
+    return (
+      <Container as={Segment} basic>
+        <Message
+          negative
+          icon="warning circle"
+          header="Error"
+          content={error.message}
+        />
+      </Container>
+    );
   return (
     <Container as={Segment} basic>
       <Header as="h3">Data Tracker Event Log</Header>
@@ -52,7 +70,7 @@ const EventsView = ({
         <Select
           clearable
           placeholder="Study"
-          loading={loadingUsers}
+          loading={loadingStudies}
           options={studyOptions}
           onChange={(e, {name, value}) => refetch({studyId: value})}
         />
@@ -76,15 +94,4 @@ const EventsView = ({
   );
 };
 
-export default compose(
-  graphql(ALL_USERS, {
-    name: 'allUsers',
-  }),
-  graphql(ALL_STUDIES, {
-    name: 'allStudies',
-  }),
-  graphql(ALL_EVENTS, {
-    name: 'allEvents',
-    options: {variables: {orderBy: '-created_at'}},
-  }),
-)(EventsView);
+export default EventsView;

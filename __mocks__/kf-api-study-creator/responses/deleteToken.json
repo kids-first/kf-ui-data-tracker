@@ -1,0 +1,9 @@
+{
+  "data": {
+    "deleteDevToken": {
+      "name": "my token 1",
+      "success": true,
+      "__typename": "DeleteDevDownloadTokenMutation"
+    }
+  }
+}

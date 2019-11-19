@@ -1,14 +1,16 @@
 import React from 'react';
-import {compose, graphql} from 'react-apollo';
+import {useQuery} from '@apollo/react-hooks';
 import {Link} from 'react-router-dom';
 import {ALL_STUDIES, MY_PROFILE} from '../state/queries';
 import StudyList from '../components/StudyList/StudyList';
 import {Button, Message, Container, Segment} from 'semantic-ui-react';
 
-const StudyListView = ({
-  studies: {loading, allStudies, error},
-  myProfile: {myProfile},
-}) => {
+const StudyListView = () => {
+  const {data: profileData} = useQuery(MY_PROFILE);
+  const myProfile = profileData && profileData.myProfile;
+  const {loading, error, data} = useQuery(ALL_STUDIES);
+  const allStudies = data && data.allStudies;
+
   if (error)
     return (
       <Container as={Segment} basic>
@@ -20,7 +22,7 @@ const StudyListView = ({
         />
       </Container>
     );
-  const studyList = !loading ? allStudies.edges : [];
+  const studyList = !loading && allStudies ? allStudies.edges : [];
   if (!loading && studyList.length === 0)
     return (
       <Container as={Segment} basic>
@@ -63,7 +65,4 @@ const StudyListView = ({
   );
 };
 
-export default compose(
-  graphql(ALL_STUDIES, {name: 'studies'}),
-  graphql(MY_PROFILE, {name: 'myProfile'}),
-)(StudyListView);
+export default StudyListView;

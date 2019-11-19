@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {graphql} from 'react-apollo';
+import {useMutation} from '@apollo/react-hooks';
 import TimeAgo from 'react-timeago';
 import {Formik} from 'formik';
 import {Button, Header, Message, Modal} from 'semantic-ui-react';
@@ -10,7 +10,9 @@ import {longDate} from '../common/dateUtils';
 /**
  * A modal that allows a user to update an existing project
  */
-const EditProjectModal = ({projectNode, updateProject, onCloseDialog}) => {
+const EditProjectModal = ({projectNode, onCloseDialog}) => {
+  const [updateProject] = useMutation(UPDATE_PROJECT);
+
   const [error, setError] = useState(null);
   const [submitting, setSubmitting] = useState(false);
 
@@ -81,6 +83,7 @@ const EditProjectModal = ({projectNode, updateProject, onCloseDialog}) => {
               <Button
                 primary
                 size="mini"
+                type="submit"
                 loading={submitting}
                 onClick={formikProps.handleSubmit}
               >
@@ -94,6 +97,4 @@ const EditProjectModal = ({projectNode, updateProject, onCloseDialog}) => {
   );
 };
 
-export default graphql(UPDATE_PROJECT, {name: 'updateProject'})(
-  EditProjectModal,
-);
+export default EditProjectModal;

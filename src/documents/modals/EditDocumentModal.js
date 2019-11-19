@@ -1,26 +1,27 @@
 import React, {useRef} from 'react';
+import {useQuery, useMutation} from '@apollo/react-hooks';
 import {UPDATE_FILE, UPDATE_VERSION} from '../mutations';
 import {MY_PROFILE, GET_STUDY_BY_ID} from '../../state/queries';
-import {graphql, compose} from 'react-apollo';
 import {EditDocumentForm} from '../forms';
 import {fileSortedVersions} from '../utilities';
 import {Button, Modal} from 'semantic-ui-react';
 
-const EditDocumentModal = ({
-  fileNode,
-  updateFile,
-  updateVersion,
-  onCloseDialog,
-  study,
-  user,
-}) => {
+const EditDocumentModal = ({fileNode, onCloseDialog, studyId}) => {
+  const study = useQuery(GET_STUDY_BY_ID, {
+    variables: {kfId: studyId},
+  });
+  const user = useQuery(MY_PROFILE);
+  const [updateFile] = useMutation(UPDATE_FILE);
+  const [updateVersion] = useMutation(UPDATE_VERSION);
+
+  const isAdmin =
+    !user.loading && user.data.myProfile
+      ? user.data.myProfile.roles.includes('ADMIN')
+      : false;
+
   const formEl = useRef(null);
 
   const latestVersion = fileSortedVersions(fileNode)[0].node;
-
-  const isAdmin = !user.loading
-    ? user.myProfile.roles.includes('ADMIN')
-    : false;
 
   const handleSubmit = async (name, fileType, description, versionStatus) => {
     try {
@@ -48,8 +49,8 @@ const EditDocumentModal = ({
           ref={formEl}
           fileNode={{name: fileNode.versions.edges[0].node.fileName}}
           studyFiles={
-            study.studyByKfId
-              ? study.studyByKfId.files.edges.filter(
+            study.data.studyByKfId
+              ? study.data.studyByKfId.files.edges.filter(
                   ({node}) => node.name !== fileNode.name,
                 )
               : []
@@ -80,12 +81,4 @@ const EditDocumentModal = ({
   );
 };
 
-export default compose(
-  graphql(UPDATE_FILE, {name: 'updateFile'}),
-  graphql(UPDATE_VERSION, {name: 'updateVersion'}),
-  graphql(MY_PROFILE, {name: 'user'}),
-  graphql(GET_STUDY_BY_ID, {
-    name: 'study',
-    options: props => ({variables: {kfId: props.studyId}}),
-  }),
-)(EditDocumentModal);
+export default EditDocumentModal;

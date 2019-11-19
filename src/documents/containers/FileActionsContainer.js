@@ -1,32 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Mutation} from 'react-apollo';
-import {FILE_DOWNLOAD_URL} from '../mutations';
+import {useMutation} from '@apollo/react-hooks';
+import {FILE_DOWNLOAD_URL, DELETE_FILE} from '../mutations';
+import {GET_STUDY_BY_ID} from '../../state/queries';
 import FileActionButtons from '../components/FileActionButtons/FileActionButtons';
-import DeleteFileMutation from './DeleteFileMutation';
+
 const FileActionsContainer = ({node, studyId, fluid, vertical, isAdmin}) => {
+  const [downloadFileMutation] = useMutation(FILE_DOWNLOAD_URL);
+  const [deleteFile, {loading, error}] = useMutation(DELETE_FILE, {
+    refetchQueries: [{query: GET_STUDY_BY_ID, variables: {kfId: studyId}}],
+  });
   if (node) {
     return (
-      <Mutation mutation={FILE_DOWNLOAD_URL} key={node.kfId}>
-        {downloadFile => (
-          <DeleteFileMutation studyId={studyId}>
-            {(deleteFile, {loading, error}) => (
-              <FileActionButtons
-                {...{
-                  node,
-                  studyId,
-                  deleteFile: isAdmin ? deleteFile : null,
-                  downloadFileMutation: downloadFile,
-                  loading,
-                  error,
-                  vertical,
-                  fluid,
-                }}
-              />
-            )}
-          </DeleteFileMutation>
-        )}
-      </Mutation>
+      <FileActionButtons
+        {...{
+          node,
+          studyId,
+          deleteFile: isAdmin ? deleteFile : null,
+          downloadFileMutation,
+          loading,
+          error,
+          vertical,
+          fluid,
+        }}
+      />
     );
   }
   return null;

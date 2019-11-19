@@ -1,0 +1,49 @@
+{
+  "data": {
+    "allEvents": {
+      "edges": [
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjI=",
+            "uuid": "fbff3133-63ee-422f-91da-9c8c828dff63",
+            "createdAt": "2019-10-24T15:29:53.687590+00:00",
+            "eventType": "FV_CRE",
+            "description": "Justin Heath created version FV_FSTR09MV of file SF_SX4YTPYK",
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEX1RFSUpNUjhT",
+              "name": "strategize cross-media markets",
+              "shortName": null,
+              "kfId": "SD_8WX8QQ06",
+              "createdAt": "2018-04-13T06:56:44+00:00",
+              "modifiedAt": "2019-10-24T15:29:52.609519+00:00",
+              "__typename": "StudyNode"
+            },
+            "project": null,
+            "file": {
+              "id": "RmlsZU5vZGU6U0ZfU1g0WVRQWUs=",
+              "kfId": "SF_SX4YTPYK",
+              "name": "there.wav",
+              "description": "Social throughout alone science. I believe thank hundred. Pm left morning much ability billion class.",
+              "fileType": "OTH",
+              "downloadUrl": "http://localhost:5002/download/study/SD_8WX8QQ06/file/SF_SX4YTPYK",
+              "__typename": "FileNode"
+            },
+            "version": {
+              "id": "VmVyc2lvbk5vZGU6RlZfRlNUUjA5TVY=",
+              "kfId": "FV_FSTR09MV",
+              "fileName": "loss.mp3",
+              "size": 7205,
+              "state": "PEN",
+              "description": "Raise message wish design million. Receive for lead ten best. Pay line significant dream central. Where difficult strategy magazine.",
+              "createdAt": "2018-11-17T19:04:23+00:00",
+              "__typename": "VersionNode"
+            },
+            "__typename": "EventNode"
+          },
+          "__typename": "EventNodeEdge"
+        }
+      ],
+      "__typename": "EventNodeConnection"
+    }
+  }
+}

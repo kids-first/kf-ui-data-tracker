@@ -1,6 +1,6 @@
 import React from 'react';
 import wait from 'waait';
-import {MockedProvider} from 'react-apollo/test-utils';
+import {MockedProvider} from '@apollo/react-testing';
 import {MemoryRouter} from 'react-router-dom';
 import {render, act, fireEvent, cleanup} from 'react-testing-library';
 import StudyFilesListView from '../StudyFilesListView';
@@ -27,7 +27,7 @@ it('renders correctly', async () => {
 
 it('deletes a file correctly', async () => {
   const tree = render(
-    <MockedProvider mocks={mocks}>
+    <MockedProvider mocks={[mocks[1], mocks[3], mocks[8], mocks[26]]}>
       <MemoryRouter initialEntries={['/study/SD_8WX8QQ06']}>
         <StudyFilesListView match={{params: {kfId: 'SD_8WX8QQ06'}}} />
       </MemoryRouter>
@@ -46,7 +46,7 @@ it('deletes a file correctly', async () => {
   act(() => {
     fireEvent.click(tree.getByTestId('delete-confirm'));
   });
-  await wait();
+  await wait(100);
 
   // Should only be one file now
 

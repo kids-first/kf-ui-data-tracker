@@ -1,8 +1,3 @@
-import allStudies from './responses/allStudies';
-import studyByKfId from './responses/studyByKfId.json';
-import deleteFile from './responses/deleteFile.json';
-import fileByKfId from './responses/fileByKfId.json';
-import myProfile from './responses/myProfile.json';
 import {
   ALL_STUDIES,
   GET_STUDY_BY_ID,
@@ -17,8 +12,23 @@ import {
   SYNC_PROJECTS,
   CREATE_STUDY,
   UPDATE_STUDY,
+  DELETE_DEV_TOKEN,
+  CREATE_DEV_TOKEN,
 } from '../../src/state/mutations';
 import {GET_FILE_BY_ID} from '../../src/documents/queries';
+import {
+  DELETE_FILE,
+  UPDATE_FILE,
+  UPDATE_VERSION,
+  CREATE_VERSION,
+  FILE_DOWNLOAD_URL,
+} from '../../src/documents/mutations';
+import allStudies from './responses/allStudies';
+import studyByKfId from './responses/studyByKfId.json';
+import studyByKfId_refetch from './responses/studyByKfId_refetch.json';
+import deleteFile from './responses/deleteFile.json';
+import fileByKfId from './responses/fileByKfId.json';
+import myProfile from './responses/myProfile.json';
 import updateFile from './responses/updateFile.json';
 import updateVersion from './responses/updateVersion.json';
 import createVersion from './responses/createVersion.json';
@@ -27,16 +37,12 @@ import updateStudy from './responses/updateStudy.json';
 import devTokens from './responses/devTokens.json';
 import createDevToken from './responses/createDevToken.json';
 import allEvents from './responses/allEvents.json';
+import allEvents_refetch from './responses/allEvents_refetch.json';
 import allUsers from './responses/allUsers.json';
 import allProjects from './responses/allProjects.json';
+import signedUrl from './responses/signedUrl.json';
 import syncProjects from './responses/syncProjects.json';
-import {
-  DELETE_FILE,
-  UPDATE_FILE,
-  UPDATE_VERSION,
-  CREATE_VERSION,
-  CREATE_DEV_TOKEN,
-} from '../../src/documents/mutations';
+import deleteToken from './responses/deleteToken.json';
 
 export const mocks = [
   {
@@ -135,7 +141,7 @@ export const mocks = [
   },
   {
     request: {
-      query: GET_DEV_TOKENS,
+      query: CREATE_DEV_TOKEN,
       variables: {
         name: 'my token 4',
       },
@@ -306,5 +312,127 @@ export const mocks = [
       },
     },
     error: new Error('Failed to update the study'),
+  },
+  {
+    request: {
+      query: ALL_EVENTS,
+      variables: {
+        orderBy: '-created_at',
+      },
+    },
+    result: allEvents,
+  },
+  {
+    request: {
+      query: GET_STUDY_BY_ID,
+      variables: {
+        kfId: 'SD_8WX8QQ06',
+      },
+    },
+    result: studyByKfId_refetch,
+  },
+  {
+    request: {
+      query: CREATE_VERSION,
+      variables: {
+        file: {},
+        fileId: 'SF_5ZPEM167',
+        description: 'my changes',
+      },
+    },
+    result: createVersion,
+  },
+  {
+    request: {
+      query: ALL_EVENTS,
+      variables: {
+        orderBy: '-created_at',
+        username: 'Justin Heath',
+      },
+    },
+    result: allEvents_refetch,
+  },
+  {
+    request: {
+      query: ALL_EVENTS,
+      variables: {
+        orderBy: '-created_at',
+        studyId: 'SD_SG5N41K8',
+      },
+    },
+    result: allEvents_refetch,
+  },
+  {
+    request: {
+      query: ALL_EVENTS,
+      variables: {
+        orderBy: '-created_at',
+        studyId: 'SD_SG5N41K8',
+        eventType: 'FV_CRE',
+      },
+    },
+    result: allEvents_refetch,
+  },
+  {
+    request: {
+      query: ALL_EVENTS,
+      variables: {
+        orderBy: '-created_at',
+      },
+    },
+    error: new Error('Failed to fetch events information'),
+  },
+  {
+    request: {
+      query: FILE_DOWNLOAD_URL,
+      variables: {
+        studyId: 'SD_00000000',
+        fileId: 'SF_5ZPEM167',
+        versionId: 'FV_TT8NF09R',
+      },
+    },
+    result: signedUrl,
+  },
+  {
+    request: {
+      query: GET_PROJECTS,
+      variables: {},
+    },
+    error: new Error('Failed to fetch projects information'),
+  },
+  {
+    request: {
+      query: DELETE_DEV_TOKEN,
+      variables: {
+        name: 'my token 1',
+      },
+    },
+    result: deleteToken,
+  },
+  {
+    request: {
+      query: CREATE_DEV_TOKEN,
+      variables: {
+        name: 'my token 4',
+      },
+    },
+    error: new Error('Failed to create new token'),
+  },
+  {
+    request: {
+      query: GET_DEV_TOKENS,
+    },
+    error: new Error('Failed to fetch tokens information'),
+  },
+  {
+    request: {
+      query: ALL_EVENTS,
+      variables: {
+        orderBy: '-created_at',
+        studyId: 'SD_8WX8QQ06',
+        eventType: 'FV_CRE',
+      },
+    },
+    result: allEvents_refetch,
   },
 ];

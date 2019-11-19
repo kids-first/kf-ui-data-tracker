@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {graphql, compose} from 'react-apollo';
+import {useQuery, useMutation} from '@apollo/react-hooks';
 import {
   Button,
   Container,
@@ -16,15 +16,32 @@ import {CavaticaProjectList} from '../components/CavaticaProjectList';
 import {GET_PROJECTS, MY_PROFILE} from '../state/queries';
 import {SYNC_PROJECTS, UNLINK_PROJECT} from '../state/mutations';
 
-const CavaticaProjectsView = ({
-  projects: {allProjects, loading, error},
-  syncProjects,
-  unlinkProject,
-  user,
-}) => {
-  const isAdmin = !user.loading
-    ? user.myProfile.roles.includes('ADMIN')
-    : false;
+const CavaticaProjectsView = () => {
+  const {loading, error, data} = useQuery(GET_PROJECTS, {
+    variables: {},
+  });
+  const allProjects = data && data.allProjects;
+  const user = useQuery(MY_PROFILE);
+  const [syncProjects] = useMutation(SYNC_PROJECTS, {
+    refetchQueries: [
+      {
+        query: GET_PROJECTS,
+      },
+    ],
+  });
+  const [unlinkProject] = useMutation(UNLINK_PROJECT, {
+    refetchQueries: [
+      {
+        query: GET_PROJECTS,
+      },
+    ],
+  });
+
+  const isAdmin =
+    !user.loading && user.data.myProfile
+      ? user.data.myProfile.roles.includes('ADMIN')
+      : false;
+
   const [syncing, setSyncing] = useState(false);
   const [syncResult, setSyncResult] = useState();
   const [syncErrors, setSyncErrors] = useState();
@@ -42,6 +59,17 @@ const CavaticaProjectsView = ({
         setSyncErrors(err.message);
       });
   };
+  if (error)
+    return (
+      <Container as={Segment} basic>
+        <Message
+          negative
+          icon="warning circle"
+          header="Error"
+          content={error.message}
+        />
+      </Container>
+    );
   return (
     <Container as={Segment} basic>
       <Header as="h3">
@@ -108,27 +136,4 @@ const CavaticaProjectsView = ({
   );
 };
 
-export default compose(
-  graphql(MY_PROFILE, {name: 'user'}),
-  graphql(GET_PROJECTS, {name: 'projects'}),
-  graphql(SYNC_PROJECTS, {
-    name: 'syncProjects',
-    options: props => ({
-      refetchQueries: [
-        {
-          query: GET_PROJECTS,
-        },
-      ],
-    }),
-  }),
-  graphql(UNLINK_PROJECT, {
-    name: 'unlinkProject',
-    options: props => ({
-      refetchQueries: [
-        {
-          query: GET_PROJECTS,
-        },
-      ],
-    }),
-  }),
-)(CavaticaProjectsView);
+export default CavaticaProjectsView;

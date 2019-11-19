@@ -1,12 +1,23 @@
 import React from 'react';
-import {graphql, compose} from 'react-apollo';
+import {useQuery} from '@apollo/react-hooks';
 import {GET_STUDY_BY_ID, MY_PROFILE} from '../state/queries';
 import StudyHeader from '../components/StudyHeader/StudyHeader';
 import {StudyNavBar} from '../components/StudyNavBar';
 import {Container, Segment, Message} from 'semantic-ui-react';
 
-const NavBarView = ({study: {loading, studyByKfId, error}, user}) => {
-  const isBeta = !user.loading ? user.myProfile.roles.includes('BETA') : false;
+const NavBarView = ({match}) => {
+  const {loading, data, error} = useQuery(GET_STUDY_BY_ID, {
+    variables: {
+      kfId: match.params.kfId,
+    },
+  });
+  const studyByKfId = data && data.studyByKfId;
+  const user = useQuery(MY_PROFILE);
+
+  const isBeta =
+    !user.loading && user.data.myProfile
+      ? user.data.myProfile.roles.includes('BETA')
+      : false;
 
   if (error)
     return (
@@ -31,14 +42,4 @@ const NavBarView = ({study: {loading, studyByKfId, error}, user}) => {
   );
 };
 
-export default compose(
-  graphql(GET_STUDY_BY_ID, {
-    name: 'study',
-    options: props => ({
-      variables: {
-        kfId: props.match.params.kfId,
-      },
-    }),
-  }),
-  graphql(MY_PROFILE, {name: 'user'}),
-)(NavBarView);
+export default NavBarView;

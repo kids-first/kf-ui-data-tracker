@@ -1,7 +1,7 @@
 import React from 'react';
 import {Header, Image, Grid, Segment, Button, Icon} from 'semantic-ui-react';
 import logo from '../assets/logo.svg';
-import {ApolloConsumer} from 'react-apollo';
+import {ApolloConsumer} from '@apollo/react-common';
 import {auth} from '../state/auth';
 
 const LoginView = ({location, history}) => (

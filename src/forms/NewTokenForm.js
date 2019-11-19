@@ -9,6 +9,7 @@ const NewTokenForm = ({onSubmit, error, loading}) => {
     <Segment>
       <Form
         onSubmit={() => {
+          console.log(name);
           onSubmit(name);
           setName('');
         }}
@@ -26,7 +27,12 @@ const NewTokenForm = ({onSubmit, error, loading}) => {
             />
           </label>
         </Form.Field>
-        <Button type="submit" loading={loading} disabled={name === ''}>
+        <Button
+          data-testid="token-create"
+          type="submit"
+          loading={loading}
+          disabled={name === ''}
+        >
           Create
         </Button>
         <Message hidden={!error} negative content={error} />

@@ -1,20 +1,21 @@
 import React from 'react';
-import {graphql, compose} from 'react-apollo';
+import {useQuery} from '@apollo/react-hooks';
 import {MY_PROFILE} from '../../state/queries';
 import {GET_FILE_BY_ID} from '../queries';
-import {UPDATE_FILE} from '../mutations';
 import {Container, Segment, Dimmer, Loader, Message} from 'semantic-ui-react';
 import FileDetail from '../components/FileDetail/FileDetail';
 
-const FileDetailView = ({
-  file: {loading, error, fileByKfId},
-  match,
-  user,
-  updateFile,
-}) => {
-  const isAdmin = !user.loading
-    ? user.myProfile.roles.includes('ADMIN')
-    : false;
+const FileDetailView = ({match}) => {
+  const {loading, data, error} = useQuery(GET_FILE_BY_ID, {
+    variables: {kfId: match.params.fileId},
+  });
+  const fileByKfId = data && data.fileByKfId;
+  const user = useQuery(MY_PROFILE);
+
+  const isAdmin =
+    !user.loading && user.data.myProfile
+      ? user.data.myProfile.roles.includes('ADMIN')
+      : false;
 
   if (loading)
     return (
@@ -42,19 +43,4 @@ const FileDetailView = ({
   );
 };
 
-export default compose(
-  graphql(GET_FILE_BY_ID, {
-    name: 'file',
-    options: props => ({variables: {kfId: props.match.params.fileId}}),
-  }),
-  graphql(UPDATE_FILE, {
-    name: 'updateFile',
-    options: props => ({
-      awaitRefetchQueries: true,
-      refetchQueries: [
-        {query: GET_FILE_BY_ID, variables: {kfId: props.match.params.fileId}},
-      ],
-    }),
-  }),
-  graphql(MY_PROFILE, {name: 'user'}),
-)(FileDetailView);
+export default FileDetailView;
