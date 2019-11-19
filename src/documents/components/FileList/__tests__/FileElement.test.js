@@ -5,13 +5,13 @@ import FileElement from '../FileElement';
 import {mocks} from '../../../../../__mocks__/kf-api-study-creator/mocks';
 import studyByKfId from '../../../../../__mocks__/kf-api-study-creator/responses/studyByKfId';
 import {MockedProvider} from 'react-apollo/test-utils';
-import {AnalyticsMockProvider} from '../../../../analyticsTracking';
+import {AnalyticsProviderMock} from '../../../../analyticsTracking';
 
 afterEach(cleanup);
 it('renders correctly', () => {
   const file = studyByKfId.data.studyByKfId.files.edges[0].node;
   const tree = render(
-    <AnalyticsMockProvider>
+    <AnalyticsProviderMock>
       <MockedProvider mocks={mocks}>
         <MemoryRouter>
           <table>
@@ -24,7 +24,7 @@ it('renders correctly', () => {
           </table>
         </MemoryRouter>
       </MockedProvider>
-    </AnalyticsMockProvider>,
+    </AnalyticsProviderMock>,
   );
   expect(tree.container).toMatchSnapshot();
 });
@@ -32,7 +32,7 @@ it('renders correctly', () => {
 it('renders loading state', () => {
   const file = studyByKfId.data.studyByKfId.files.edges[0].node;
   const tree = render(
-    <AnalyticsMockProvider>
+    <AnalyticsProviderMock>
       <MockedProvider mocks={mocks}>
         <MemoryRouter>
           <table>
@@ -46,7 +46,7 @@ it('renders loading state', () => {
           </table>
         </MemoryRouter>
       </MockedProvider>
-    </AnalyticsMockProvider>,
+    </AnalyticsProviderMock>,
   );
   expect(tree.container).toMatchSnapshot();
 });
@@ -61,7 +61,7 @@ it('renders latest temporary state', () => {
   global.Date.now = _Date.now;
 
   const tree = render(
-    <AnalyticsMockProvider>
+    <AnalyticsProviderMock>
       <MockedProvider mocks={mocks}>
         <MemoryRouter>
           <table>
@@ -75,7 +75,7 @@ it('renders latest temporary state', () => {
           </table>
         </MemoryRouter>
       </MockedProvider>
-    </AnalyticsMockProvider>,
+    </AnalyticsProviderMock>,
   );
   expect(tree.container).toMatchSnapshot();
 });

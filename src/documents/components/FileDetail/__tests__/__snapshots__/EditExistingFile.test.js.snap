@@ -497,7 +497,7 @@ exports[`edits an existing file correctly 1`] = `
               </button>
             </div>
             <div
-              class="ui fluid icon input"
+              class="ui icon input"
             >
               <input
                 type="text"

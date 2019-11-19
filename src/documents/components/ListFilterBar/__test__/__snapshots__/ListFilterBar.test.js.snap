@@ -258,7 +258,7 @@ exports[`renders ListFilterBar with files 1`] = `
       </button>
     </div>
     <div
-      class="ui fluid icon input"
+      class="ui icon input"
     >
       <input
         type="text"
@@ -531,7 +531,7 @@ exports[`renders ListFilterBar with files 2`] = `
       </button>
     </div>
     <div
-      class="ui fluid icon input"
+      class="ui icon input"
     >
       <input
         type="text"
@@ -804,7 +804,7 @@ exports[`renders ListFilterBar with files 3`] = `
       </button>
     </div>
     <div
-      class="ui fluid icon input"
+      class="ui icon input"
     >
       <input
         type="text"
@@ -1077,7 +1077,7 @@ exports[`renders ListFilterBar with files 4`] = `
       </button>
     </div>
     <div
-      class="ui fluid icon input"
+      class="ui icon input"
     >
       <input
         type="text"
@@ -1350,7 +1350,7 @@ exports[`renders ListFilterBar with files 5`] = `
       </button>
     </div>
     <div
-      class="ui fluid icon input"
+      class="ui icon input"
     >
       <input
         type="text"
@@ -1623,7 +1623,7 @@ exports[`renders ListFilterBar with no files 1`] = `
       </button>
     </div>
     <div
-      class="ui fluid icon input"
+      class="ui icon input"
     >
       <input
         type="text"

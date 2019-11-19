@@ -5,14 +5,14 @@ import {MockedProvider} from 'react-apollo/test-utils';
 import {mocks} from '../../../../../__mocks__/kf-api-study-creator/mocks';
 import studyByKfId from '../../../../../__mocks__/kf-api-study-creator/responses/studyByKfId';
 import FileActionButtons from '../FileActionButtons';
-import {AnalyticsMockProvider} from '../../../../analyticsTracking';
+import {AnalyticsProviderMock} from '../../../../analyticsTracking';
 
 afterEach(cleanup);
 it('File Action Buttons renders correctly -- default look', async () => {
   const studyId = studyByKfId.data.studyByKfId.kfId;
   const file = studyByKfId.data.studyByKfId.files.edges[0].node;
   const tree = render(
-    <AnalyticsMockProvider>
+    <AnalyticsProviderMock>
       <MockedProvider mocks={mocks}>
         <FileActionButtons
           node={file}
@@ -28,7 +28,7 @@ it('File Action Buttons renders correctly -- default look', async () => {
           deleteFile={jest.fn()}
         />
       </MockedProvider>
-    </AnalyticsMockProvider>,
+    </AnalyticsProviderMock>,
   );
   expect(tree.container).toMatchSnapshot();
 
@@ -53,7 +53,7 @@ it('File Action Buttons renders correctly -- vertical look', () => {
   const studyId = studyByKfId.data.studyByKfId.kfId;
   const file = studyByKfId.data.studyByKfId.files.edges[0].node;
   const tree = render(
-    <AnalyticsMockProvider>
+    <AnalyticsProviderMock>
       <MockedProvider mocks={mocks}>
         <FileActionButtons
           node={file}
@@ -63,7 +63,7 @@ it('File Action Buttons renders correctly -- vertical look', () => {
           vertical
         />
       </MockedProvider>
-    </AnalyticsMockProvider>,
+    </AnalyticsProviderMock>,
   );
   expect(tree.container).toMatchSnapshot();
 });
@@ -72,7 +72,7 @@ it('File Action Buttons renders correctly -- fluid look', () => {
   const studyId = studyByKfId.data.studyByKfId.kfId;
   const file = studyByKfId.data.studyByKfId.files.edges[0].node;
   const tree = render(
-    <AnalyticsMockProvider>
+    <AnalyticsProviderMock>
       <MockedProvider mocks={mocks}>
         <FileActionButtons
           node={file}
@@ -82,7 +82,7 @@ it('File Action Buttons renders correctly -- fluid look', () => {
           fluid
         />
       </MockedProvider>
-    </AnalyticsMockProvider>,
+    </AnalyticsProviderMock>,
   );
   expect(tree.container).toMatchSnapshot();
 });

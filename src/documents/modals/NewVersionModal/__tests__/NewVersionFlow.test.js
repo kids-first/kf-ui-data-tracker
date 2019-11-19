@@ -6,7 +6,7 @@ import {render, fireEvent, cleanup, act} from 'react-testing-library';
 import {NewVersionFlow} from '../NewVersionFlow';
 import {mocks} from '../../../../../__mocks__/kf-api-study-creator/mocks';
 import fileByKfId from '../../../../../__mocks__/kf-api-study-creator/responses/fileByKfId.json';
-import {AnalyticsMockProvider} from '../../../../analyticsTracking';
+import {AnalyticsProviderMock} from '../../../../analyticsTracking';
 
 afterEach(cleanup);
 
@@ -20,7 +20,7 @@ it('creates a new version', async () => {
       }),
   );
   const tree = render(
-    <AnalyticsMockProvider>
+    <AnalyticsProviderMock>
       <MockedProvider mocks={mocks}>
         <MemoryRouter
           initialEntries={['/study/SD_8WX8QQ06/documents/SF_5ZPEM167']}
@@ -38,7 +38,7 @@ it('creates a new version', async () => {
           />
         </MemoryRouter>
       </MockedProvider>
-    </AnalyticsMockProvider>,
+    </AnalyticsProviderMock>,
   );
   await wait(0);
 

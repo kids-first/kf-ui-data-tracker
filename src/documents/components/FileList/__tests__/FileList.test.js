@@ -5,7 +5,7 @@ import {MockedProvider} from 'react-apollo/test-utils';
 import {render, cleanup, fireEvent} from 'react-testing-library';
 import FileList from '../FileList';
 import studyByKfId from './studyByKfId';
-import {AnalyticsMockProvider} from '../../../../analyticsTracking';
+import {AnalyticsProviderMock} from '../../../../analyticsTracking';
 
 afterEach(cleanup);
 
@@ -13,13 +13,13 @@ it('renders with files', async () => {
   const files = studyByKfId.data.studyByKfId.files.edges;
 
   const tree = render(
-    <AnalyticsMockProvider>
+    <AnalyticsProviderMock>
       <MemoryRouter>
         <MockedProvider>
           <FileList fileList={files} studyId={'SD_00000000'} />
         </MockedProvider>
       </MemoryRouter>
-    </AnalyticsMockProvider>,
+    </AnalyticsProviderMock>,
   );
 
   // Sort files by create date by clicking on the file sorting dropdown
@@ -73,11 +73,11 @@ it('renders with files', async () => {
 
 it('renders without files', () => {
   const tree = render(
-    <AnalyticsMockProvider>
+    <AnalyticsProviderMock>
       <MemoryRouter>
         <FileList fileList={[]} studyId={'SD_00000000'} />
       </MemoryRouter>
-    </AnalyticsMockProvider>,
+    </AnalyticsProviderMock>,
   );
   expect(tree.container).toMatchSnapshot();
 

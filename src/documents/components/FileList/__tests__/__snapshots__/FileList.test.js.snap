@@ -258,7 +258,7 @@ exports[`renders with files 1`] = `
       </button>
     </div>
     <div
-      class="ui fluid icon input"
+      class="ui icon input"
     >
       <input
         type="text"
@@ -1838,7 +1838,7 @@ exports[`renders with files 2`] = `
       </button>
     </div>
     <div
-      class="ui fluid icon input"
+      class="ui icon input"
     >
       <input
         type="text"
@@ -2446,7 +2446,7 @@ exports[`renders with files 3`] = `
       </button>
     </div>
     <div
-      class="ui fluid icon input"
+      class="ui icon input"
     >
       <input
         type="text"

@@ -299,7 +299,7 @@ exports[`deletes a file correctly 1`] = `
             </button>
           </div>
           <div
-            class="ui fluid icon input"
+            class="ui icon input"
           >
             <input
               type="text"
@@ -952,7 +952,7 @@ exports[`deletes a file correctly 2`] = `
             </button>
           </div>
           <div
-            class="ui fluid icon input"
+            class="ui icon input"
           >
             <input
               type="text"
@@ -2483,7 +2483,7 @@ exports[`renders ListFilterBar with files -- screen width 1200 1`] = `
             </button>
           </div>
           <div
-            class="ui fluid icon input"
+            class="ui icon input"
           >
             <input
               type="text"
@@ -3136,7 +3136,7 @@ exports[`renders correctly 1`] = `
             </button>
           </div>
           <div
-            class="ui fluid icon input"
+            class="ui icon input"
           >
             <input
               type="text"
