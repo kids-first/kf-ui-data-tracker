@@ -7,7 +7,7 @@
 
 [context.master.environment]
   REACT_APP_ENV = "qa"
-  REACT_APP_STUDY_API = "https://kf-study-creator-qa.kids-first.io"
+  REACT_APP_STUDY_API = "https://kf-study-creator-qa.kidsfirstdrc.org"
 
 [[redirects]]
   from = "/*"
