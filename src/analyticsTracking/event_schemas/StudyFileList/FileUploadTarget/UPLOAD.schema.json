@@ -1,0 +1,31 @@
+{
+  "$id": "https://kf-ui-datatracker.kidsfirstdrc.org/event_schemas/UPLOAD/UPLOAD.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "UPLOAD",
+  "type": "object",
+  "description": "",
+  "allOf": [
+    {"$ref": "../../common_defintions.json#/path"},
+    {"$ref": "../../common_defintions.json#/route"},
+    {"$ref": "../../common_defintions.json#/view"},
+    {"$ref": "../../common_defintions.json#/scope"},
+    {"$ref": "../../common_defintions.json#/file"},
+    {
+      "properties": {
+        "study": {
+          "allOf": [
+            {"$ref": "../../common_defintions.json#/study"},
+            {
+              "properties": {
+                "files": {
+                  "type": "number",
+                  "description": "number of files in the study "
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

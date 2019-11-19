@@ -1,0 +1,30 @@
+{
+  "$id": "https://kf-ui-datatracker.kidsfirstdrc.org/StudyFileList/FileUploadTarget/DRAG__DROP.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "DRAG__DROP",
+  "type": "object",
+  "description": "onDrop event for StudyFileList drag and drop FileUploadTarget",
+  "allOf": [
+    {"$ref": "../../common_defintions.json#/path"},
+    {"$ref": "../../common_defintions.json#/route"},
+    {"$ref": "../../common_defintions.json#/view"},
+    {"$ref": "../../common_defintions.json#/scope"},
+    {
+      "properties": {
+        "study": {
+          "allOf": [
+            {"$ref": "../../common_defintions.json#/study"},
+            {
+              "properties": {
+                "files": {
+                  "type": "number",
+                  "description": "number of files in the study "
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

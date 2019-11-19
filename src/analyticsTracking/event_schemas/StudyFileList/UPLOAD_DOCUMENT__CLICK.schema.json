@@ -1,0 +1,16 @@
+{
+  "$id": "https://kf-ui-datatracker.kidsfirstdrc.org/event_schemas/StudyFilesList/UPLOAD_DOCUMENT__CLICK.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "UPLOAD_DOCUMENT__CLICK",
+  "type": "object",
+  "description": "click event for StudyFilesList 'Upload Document' button click ",
+  "allOf": [
+    {"$ref": "../common_defintions.json#/path"},
+    {"$ref": "../common_defintions.json#/route"},
+    {"$ref": "../common_defintions.json#/view"},
+    {"$ref": "../common_defintions.json#/study"},
+    {"$ref": "../common_defintions.json#/scope"},
+    {"$ref": "../BUTTON/button_defintions.json#/button_type"},
+    {"$ref": "../BUTTON/button_defintions.json#/button_text"}
+  ]
+}
