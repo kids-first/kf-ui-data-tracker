@@ -153,4 +153,4 @@ const StudyTable = ({
   );
 };
 
-export default withRouter(StudyTable);
+export default withRouter(withAnalyticsTracking(StudyTable));

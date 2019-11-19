@@ -1,0 +1,36 @@
+{
+  "$id": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/DRAG_AND_DROP/DRAG__DROP.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DRAG__DROP",
+  "description": "onDrop event called when the user drops a draggable element on a drop targer, NOTE: this event is usually called via instrument",
+  "properties": {
+    "path": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/path"
+    },
+    "route": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/route"
+    },
+    "view": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/view"
+    },
+    "scope": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/scope"
+    },
+    "study": {
+      "allOf": [
+        {
+          "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/study"
+        },
+        {
+          "properties": {
+            "files": {
+              "type": "number",
+              "description": "number of files in the study "
+            }
+          }
+        }
+      ]
+    }
+  },
+  "required": ["path", "route", "view", "study"]
+}

@@ -1,5 +1,5 @@
 {
-  "$id": "https://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/TOOLTIP/TOOLTIP_EVENT.schema.json",
+  "$id": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/TOOLTIP/TOOLTIP_EVENT.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "TOOLTIP__* common event schema properties",
   "description": "passed to all tooltip/popup events and derivatives",

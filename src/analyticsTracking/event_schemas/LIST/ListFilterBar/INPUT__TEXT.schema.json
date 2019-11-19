@@ -1,0 +1,40 @@
+{
+  "$id": "http://kf-ui-datatracker.kidsfirstdrc.org/event_schemas/LIST/ListFilterBar/INPUT__TEXT.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "INPUT__TEXT",
+  "type": "object",
+  "description": "onChange event for ListFilterBar search input element",
+  "properties": {
+    "path": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/path"
+    },
+    "route": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/route"
+    },
+    "view": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/view"
+    },
+    "study": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/study"
+    },
+    "input_name": {
+      "type": "string",
+      "description": "placeholder value for input element"
+    },
+    "value": {"type": "string", "description": "user provided search term"},
+    "results_length": {
+      "type": "number",
+      "description": "length of filtered list after search "
+    }
+  },
+  "required": [
+    "path",
+    "route",
+    "view",
+    "study",
+    "input_name",
+    "value",
+    "results_length"
+  ],
+  "additionalProperites": false
+}

@@ -400,7 +400,7 @@ const ListFilterBar = ({
             logEvent(INPUT.TEXT, {
               input_name: 'StudyFileList Search',
               value,
-              results: filteredList.length,
+              results_length: filteredList.length,
             });
           }}
           value={searchString}

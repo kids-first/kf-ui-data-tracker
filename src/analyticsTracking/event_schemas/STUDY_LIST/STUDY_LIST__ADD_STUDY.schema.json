@@ -1,0 +1,25 @@
+{
+  "$id": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/STUDY_LIST/STUDY_LIST__ADD_STUDY.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "STUDY_LIST__ADD_STUDY",
+  "type": "object",
+  "description": "captures the click event when someone adds a new study from the StudyListView",
+  "properties": {
+    "path": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/path"
+    },
+    "route": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/route"
+    },
+    "view": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/view"
+    },
+    "button_text": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/BUTTON/BUTTON_EVENT.schema.json#/definitions/button_text"
+    },
+    "link": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/BUTTON/BUTTON_EVENT.schema.json#/definitions/link"
+    }
+  },
+  "required": ["path", "route", "button_text"]
+}

@@ -1,0 +1,55 @@
+{
+  "$id": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/STUDY_FILES_LIST/FileActionButtons/TOOLTIP__COPY_DOWNLOAD_LINK__HOVER.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TOOLTIP__COPY_DOWNLOAD_LINK__HOVER",
+  "type": "object",
+  "description": "click event for 'Delete' button inside of FileActionButtons 'Are you sure?' toolip",
+  "properties": {
+    "path": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/path"
+    },
+    "route": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/route"
+    },
+    "view": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/view"
+    },
+    "study": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/study"
+    },
+    "scope": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/scope"
+    },
+    "link": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/BUTTON/BUTTON_EVENT.schema.json#/definitions/link"
+    },
+    "tooltip_content": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/TOOLTIP/TOOLTIP_EVENT.schema.json#/definitions/tooltip_content"
+    },
+    "tooltip_name": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/TOOLTIP/TOOLTIP_EVENT.schema.json#/definitions/tooltip_name"
+    },
+    "file": {
+      "type": "object",
+      "description": "study document to be deleted",
+      "properties": {
+        "studyId": {
+          "type": "string",
+          "pattern": "SD_[A-Z0-9]{8}",
+          "description": "kids first study identifier"
+        },
+        "kfId": {
+          "type": "string",
+          "pattern": "SF_[A-Z0-9]{8}",
+          "description": "'SF_' prefixed kids first file id for the study of which the file is in"
+        }
+      }
+    },
+    "is_admin": {
+      "type": "boolean",
+      "description": "whether or not the current use is in the ADMIN Auth0 group"
+    }
+  },
+  "required": ["path", "route", "view", "file", "is_admin", "tooltip_content"],
+  "additionalProperties": false
+}

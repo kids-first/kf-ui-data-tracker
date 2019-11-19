@@ -1,0 +1,67 @@
+{
+  "$id": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/STUDY_FILES_LIST/FileUploadTarget/UPLOAD.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UPLOAD",
+  "description": "",
+  "properties": {
+    "path": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/path"
+    },
+    "route": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/route"
+    },
+    "view": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/view"
+    },
+    "scope": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/scope"
+    },
+    "study": {
+      "allOf": [
+        {
+          "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/study"
+        },
+        {
+          "properties": {
+            "files": {
+              "type": "number",
+              "description": "number of files in the study "
+            }
+          }
+        }
+      ]
+    },
+    "file": {
+      "type": "object",
+      "description": "file properties from the file metadata on the users local file systemz",
+      "properties": {
+        "file_name": {
+          "type": "string",
+          "description": "name of the file on the users local file system"
+        },
+        "type": {
+          "type": "string",
+          "description": "MIME type of file form users local file system",
+          "examples": ["image/jpg", "text/csv"]
+        },
+        "size": {
+          "type": "integer",
+          "description": "size in bites of local file"
+        },
+        "last_modified": {
+          "type": "integer",
+          "description": "UTC time that file file was modified on the local system"
+        },
+
+        "last_modified_date": {
+          "type": ["string", "object"],
+          "format": "date-time",
+          "description": "time the study document was last modified"
+        }
+      },
+      "required": ["file_name", "type"]
+    }
+  },
+  "required": ["path", "route", "view", "study", "file"],
+  "additionalProperties": false
+}

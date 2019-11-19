@@ -1,0 +1,64 @@
+{
+  "$id": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/STUDY_FILES_LIST/FILE_STATUS_BADGE__HOVER.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FILE_STATUS_BADGE__HOVER",
+  "type": "object",
+  "description": "mouse over event for StudyFilesList Row approval badge",
+
+  "properties": {
+    "path": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/path"
+    },
+    "route": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/route"
+    },
+    "view": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/view"
+    },
+    "study": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/study"
+    },
+    "scope": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/scope"
+    },
+    "link": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/BUTTON/BUTTON_EVENT.schema.json#/definitions/link"
+    },
+    "button_type": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/BUTTON/BUTTON_EVENT.schema.json#/definitions/button_type"
+    },
+    "button_text": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/BUTTON/BUTTON_EVENT.schema.json#/definitions/button_text"
+    },
+    "file_name": {
+      "type": "string",
+      "description": "current name of study 'document' that was clicked"
+    },
+    "file_type": {
+      "type": "string",
+      "description": "study 'document' category, enum from src/commom/enums.js fileTypeDetail"
+    },
+    "file_status": {
+      "type": "string",
+      "description": "approval status of study 'document' "
+    },
+    "file_versions": {
+      "type": "number",
+      "description": "number of total versions of the study document"
+    },
+    "modified_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "time the study document was last modified"
+    }
+  },
+  "required": [
+    "path",
+    "route",
+    "view",
+    "file_name",
+    "file_type",
+    "file_status"
+  ],
+  "additionalProperties": false
+}

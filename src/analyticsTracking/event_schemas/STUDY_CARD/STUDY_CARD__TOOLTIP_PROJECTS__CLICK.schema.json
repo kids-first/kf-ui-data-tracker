@@ -1,5 +1,5 @@
 {
-  "$id": "https://kf-ui-data-tracker.kidsfirstdrc.org/event_schemas/STUDY_CARD/STUDY_CARD__TOOLTIP_PROJECTS__CLICK.schema.json",
+  "$id": "http://kf-ui-data-tracker.kidsfirstdrc.org/event_schemas/STUDY_CARD/STUDY_CARD__TOOLTIP_PROJECTS__CLICK.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "STUDY_CARD__TOOLTIP_PROJECTS__CLICK",
   "type": "object",
@@ -18,10 +18,10 @@
       "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/BUTTON/BUTTON_EVENT.schema.json#/definitions/link"
     },
     "tooltip_name": {
-      "$ref": "https://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/TOOLTIP/TOOLTIP_EVENT.schema.json#/properties/tooltip_name"
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/TOOLTIP/TOOLTIP_EVENT.schema.json#/properties/tooltip_name"
     },
     "tooltip_content": {
-      "$ref": "https://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/TOOLTIP/TOOLTIP_EVENT.schema.json#/properties/tooltip_content"
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/TOOLTIP/TOOLTIP_EVENT.schema.json#/properties/tooltip_content"
     },
     "scope": {"type": "string", "description": "containing component name"},
     "study": {

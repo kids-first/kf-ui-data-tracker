@@ -1,0 +1,36 @@
+{
+  "$id": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/LIST/LIST__PAGINATE.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LIST__PAGINATE",
+  "type": "object",
+  "description": "onClick event when clicking on a list pagination element",
+  "properties": {
+    "path": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/path"
+    },
+    "route": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/route"
+    },
+    "view": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/view"
+    },
+    "button_type": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/BUTTON/BUTTON_EVENT.schema.json#/definitions/button_type"
+    },
+    "button_text": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/BUTTON/BUTTON_EVENT.schema.json#/definitions/button_text"
+    },
+    "active_page": {
+      "type": "number",
+      "description": "page number that pagination was initiated from"
+    },
+    "page_count": {
+      "type": "number",
+      "description": "total number of pages available"
+    },
+    "per_page": {
+      "type": "number",
+      "description": "number of items per page "
+    }
+  }
+}

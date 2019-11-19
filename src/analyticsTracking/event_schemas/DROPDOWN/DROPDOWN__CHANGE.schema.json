@@ -1,0 +1,34 @@
+{
+  "$id": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/DROPDOWN/DROPDOWN__CHANGE.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DROPDOWN__CHANGE",
+  "type": "object",
+  "description": "onChange event for dropdown components",
+  "properties": {
+    "path": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/path"
+    },
+    "route": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/route"
+    },
+    "view": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/view"
+    },
+    "study": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/study"
+    },
+    "placeholder": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/DROPDOWN/DROPDOWN_EVENT.schema.json#/definitions/placeholder"
+    },
+    "value": {
+      "type": "string",
+      "description": "the value that the input was changed to"
+    },
+    "results_length": {
+      "type": "number",
+      "description": "if filtering a list, the length of the list after the filter is applied"
+    }
+  },
+  "required": ["path", "route", "view", "placeholder", "value"],
+  "additionalProperites": false
+}

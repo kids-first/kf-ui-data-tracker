@@ -1,0 +1,36 @@
+{
+  "$id": "http://kf-ui-datatracker.kidsfirstdrc.org/event_schemas/LIST/ListFilterBar/SORT_DIRECTION__CLICK.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SORT_DIRECTION__CLICK",
+  "type": "object",
+  "description": "onClick event for the ListFilterBar sort icon button",
+  "properties": {
+    "path": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/path"
+    },
+    "route": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/route"
+    },
+    "view": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/view"
+    },
+    "study": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/study"
+    },
+    "button_type": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/BUTTON/BUTTON_EVENT.schema.json#/definitions/button_type"
+    },
+    "button_text": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/BUTTON/BUTTON_EVENT.schema.json#/definitions/button_text"
+    },
+    "direction": {
+      "type": "string",
+      "enum": ["ascending", "descending"],
+      "description": "results list sort order"
+    },
+    "results_length": {
+      "type": "number",
+      "description": "length of filtered results list"
+    }
+  }
+}

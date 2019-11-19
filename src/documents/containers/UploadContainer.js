@@ -48,16 +48,27 @@ const UploadContainer = ({
         e.preventDefault();
         logEvent(UPLOAD.scope, {
           file: {
-            name: e.dataTransfer.files[0].name,
-            lastModified: e.dataTransfer.files[0].lastModified,
-            lastModifiedDate: e.dataTransfer.files[0].lastModifiedDate,
+            file_name: e.dataTransfer.files[0].name,
+            last_modified: e.dataTransfer.files[0].lastModified,
+            last_modified_date: e.dataTransfer.files[0].lastModifiedDate,
             type: e.dataTransfer.files[0].type,
             size: e.dataTransfer.files[0].size,
           },
         });
         handleUpload(e.dataTransfer.files[0]);
       }}
-      handleSelectedFile={e => handleUpload(e.target.files[0])}
+      handleSelectedFile={e => {
+        logEvent(UPLOAD.scope, {
+          file: {
+            file_name: e.target.files[0].name,
+            last_modified: e.target.files[0].lastModified,
+            last_modified_date: e.target.files[0].lastModifiedDate,
+            type: e.target.files[0].type,
+            size: e.target.files[0].size,
+          },
+        });
+        handleUpload(e.target.files[0]);
+      }}
       instructions="To upload Study Documents drag and drop a file here"
     />
   );

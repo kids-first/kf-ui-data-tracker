@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json",
   "title": "Schema definitions",
-  "description": "common definitions for easy reuse in other schemas ",
+  "description": "common definitions for easy reuse in other schemas, properties with null values will be ignored by Amplitude if sent",
   "definitions": {
     "path": {
       "$id": "#path",
@@ -16,7 +16,7 @@
       "properties": {
         "kfId": {
           "type": "string",
-          "pattern": "SD_[A-HJ-KM-NP-TV-Z0-9]{8}"
+          "pattern": "SD_[A-Z0-9]{8}"
         }
       },
       "required": ["kfId"]
@@ -25,6 +25,21 @@
       "$id": "#route",
       "type": "string",
       "description": "'path' prop passed down from Route component"
+    },
+    "view": {
+      "$id": "#view",
+      "type": ["string", "null"],
+      "description": "name of the containing component or context"
+    },
+    "scope": {
+      "$id": "#scope",
+      "type": ["string", "array"],
+      "description": "name/path of containing component(s) (ex. StudyList) OR event constants scope (ex. STUDY_LIST)",
+      "examples": [
+        "StudyList",
+        ["App", "StudyListView", "StudyList"],
+        "STUDY_LIST"
+      ]
     }
   },
   "type": "object",
@@ -34,6 +49,12 @@
     },
     "study": {
       "$ref": "#study"
+    },
+    "route": {
+      "$ref": "#route"
+    },
+    "view": {
+      "$ref": "#view"
     }
   }
 }

@@ -1,0 +1,25 @@
+{
+  "$id": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/STUDY_LIST/STUDY_LIST__VIEW_TOGGLE.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "STUDY_LIST__VIEW_TOGGLE",
+  "type": "object",
+  "description": "onClick event or the button to toggle between list and grid views of the study list",
+  "properties": {
+    "path": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/properties/path"
+    },
+    "route": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/properties/route"
+    },
+    "view": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#view"
+    },
+    "text": {"type": "string", "description": "toggle button text"},
+    "active": {
+      "type": "boolean",
+      "description": "whether or not the button is active"
+    }
+  },
+  "required": ["path", "route", "view", "text", "active"],
+  "allAdditonalProperites": false
+}
