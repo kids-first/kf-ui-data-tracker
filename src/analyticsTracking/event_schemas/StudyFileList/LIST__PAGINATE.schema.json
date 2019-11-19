@@ -1,0 +1,30 @@
+{
+  "$id": "https://kf-ui-datatracker.kidsfirstdrc.org/event_schemas/StudyFileList/LIST__PAGINATE.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "LIST__PAGINATE",
+  "type": "object",
+  "description": "",
+  "allOf": [
+    {"$ref": "../common_defintions.json#/path"},
+    {"$ref": "../common_defintions.json#/route"},
+    {"$ref": "../common_defintions.json#/view"},
+    {"$ref": "../BUTTON/button_defintions.json#/button_text"},
+    {"$ref": "../BUTTON/button_defintions.json#/button_type"},
+    {
+      "properties": {
+        "active_page": {
+          "type": "number",
+          "description": "page number that pagination was initiated from"
+        },
+        "page_count": {
+          "type": "number",
+          "description": "total number of pages available"
+        },
+        "per_page": {
+          "type": "number",
+          "description": "number of items per page "
+        }
+      }
+    }
+  ]
+}
