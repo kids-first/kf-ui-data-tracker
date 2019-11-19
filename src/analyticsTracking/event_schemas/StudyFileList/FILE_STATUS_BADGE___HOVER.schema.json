@@ -1,0 +1,42 @@
+{
+  "$id": "https://kf-ui-datatracker.kidsfirstdrc.org/event_schemas/StudyFilesList/FILE_STATUS_BADGE___HOVER.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "FILE_STATUS_BADGE___HOVER",
+  "type": "object",
+  "description": "mouse over event for StudyFilesList Row approval badge",
+  "allOf": [
+    {"$ref": "../common_defintions.json#/path"},
+    {"$ref": "../common_defintions.json#/route"},
+    {"$ref": "../common_defintions.json#/view"},
+    {"$ref": "../common_defintions.json#/study"},
+    {"$ref": "../common_defintions.json#/scope"},
+    {"$ref": "../BUTTON/button_defintions.json#/link"},
+    {"$ref": "../BUTTON/button_defintions.json#/button_type"},
+    {"$ref": "../BUTTON/button_defintions.json#/button_text"},
+    {
+      "properties": {
+        "file_name": {
+          "type": "string",
+          "description": "current name of study 'document' that was clicked"
+        },
+        "file_type": {
+          "type": "string",
+          "description": "study 'document' category, enum from src/commom/enums.js fileTypeDetail"
+        },
+        "file_status": {
+          "type": "string",
+          "description": "approval status of study 'document' "
+        },
+        "file_versions": {
+          "type": "number",
+          "description": "number of total versions of the study document"
+        },
+        "modified_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "time the study document was last modified"
+        }
+      }
+    }
+  ]
+}

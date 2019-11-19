@@ -1,0 +1,42 @@
+{
+  "$id": "https://kf-ui-datatracker.kidsfirstdrc.org/event_schemas/TOOLTIP/TOOLTIP__COPY_DOWNLOAD_LINK__HOVER.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "TOOLTIP__COPY_DOWNLOAD_LINK__HOVER",
+  "type": "object",
+  "description": "",
+  "allOf": [
+    {"$ref": "../common_defintions.json#/path"},
+    {"$ref": "../common_defintions.json#/route"},
+    {"$ref": "../common_defintions.json#/view"},
+    {"$ref": "../TOOLTIP/tooltip_defintions.json#/tooltip_name"},
+    {"$ref": "../TOOLTIP/tooltip_defintions.json#/tooltip_content"},
+    {
+      "properties": {
+        "file": {
+          "type": "object",
+          "description": "",
+          "properties": {
+            "studyId": {
+              "type": "string",
+              "format": "(SD)[aZ09]{8}",
+              "description": "kids first study identifier"
+            },
+            "kfId": {
+              "type": "string",
+              "format": "(SF_)[aZ09]{8}",
+              "description": "'SF_' prefixed kids first file id for the study of which the file is in"
+            }
+          }
+        },
+        "is_admin": {
+          "type": "boolean",
+          "description": "whether or not the current use is in the ADMIN Auth0 group"
+        },
+        "link": {
+          "type": "null",
+          "description": "download url of most recent file version in the format of `download/study/<kf_study_id>/file/<kf_file_id>/version/<kf_study_file_version_id>`"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "$id": "https://kf-ui-datatracker.kidsfirstdrc.org/event_schemas/FileActionButtons/DELETE_FILE__HOVER.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "DELETE_FILE__HOVER",
+  "type": "object",
+  "description": "mouse over event for 'Delete' button inside of FileActionButtons 'Are you sure?' toolip",
+  "allOf": [
+    {"$ref": "../common_defintions.json#/path"},
+    {"$ref": "../common_defintions.json#/route"},
+    {"$ref": "../common_defintions.json#/view"},
+    {"$ref": "../BUTTON/button_defintions.json#/link"},
+    {"$ref": "../TOOLTIP/tooltip_defintions.json#/tooltip_content"},
+    {
+      "properties": {
+        "file": {
+          "type": "object",
+          "description": "study document to be deleted",
+          "properties": {
+            "studyId": {
+              "type": "string",
+              "format": "(SD)[aZ09]{8}",
+              "description": "kids first study identifier"
+            },
+            "kfId": {
+              "type": "string",
+              "format": "(SF_)[aZ09]{8}",
+              "description": "'SF_' prefixed kids first file id for the study of which the file is in"
+            }
+          }
+        },
+        "is_admin": {
+          "type": "boolean",
+          "description": "whether or not the current use is in the ADMIN Auth0 group"
+        }
+      }
+    }
+  ]
+}
