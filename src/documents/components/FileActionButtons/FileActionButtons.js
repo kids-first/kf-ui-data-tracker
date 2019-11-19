@@ -44,13 +44,13 @@ const FileActionButtons = ({
             onMouseOver={e =>
               popupTracking({
                 name: 'Download latest version',
-                content: {studyId, kfId: node.kfId},
+                content: 'Download latest version',
               }).onMouseOver(e)
             }
             onClick={e => {
               popupTracking({
                 name: 'Download latest version',
-                content: {studyId, kfId: node.kfId},
+                content: 'Download latest version',
               }).onClick(e);
               downloadFile(studyId, node.kfId, null, downloadFileMutation);
             }}
@@ -64,11 +64,21 @@ const FileActionButtons = ({
               basic
               compact
               data-testid="delete-button"
-              {...popupTracking({
-                name: 'Delete confirm',
-                content: 'Are you sure?',
-                stopPropagation: true,
-              })}
+              onMouseOver={e => {
+                popupTracking({
+                  name: 'Delete confirm',
+                  content: 'Are you sure?',
+                  stopPropagation: true,
+                }).onMouseOver(e);
+              }}
+              onClick={e => {
+                e.stopPropagation();
+                popupTracking({
+                  name: 'Delete confirm',
+                  content: 'Are you sure?',
+                  stopPropagation: true,
+                }).onClick(e);
+              }}
               icon={<Icon name="trash alternate" />}
             />
           }
@@ -84,10 +94,16 @@ const FileActionButtons = ({
                 icon={<Icon name="trash alternate" />}
                 content="Delete"
                 onMouseOver={e => {
-                  popupTracking({
-                    name: 'Are you sure?',
-                    content: 'Delete',
-                  }).onMouseOver(e);
+                  buttonTracking(
+                    'Delete',
+                    'icon',
+                    {
+                      button_text: 'Delete',
+                      tooltip_content: 'Are you sure? ',
+                      stopPropagation: true,
+                    },
+                    'DELETE_FILE',
+                  ).onMouseOver(e);
                 }}
                 onClick={e => {
                   e.stopPropagation();
@@ -96,10 +112,10 @@ const FileActionButtons = ({
                     'icon',
                     {
                       button_text: 'Delete',
-                      scope: 'Tooltip - Are you sure? ',
+                      tooltip_content: 'Are you sure? ',
                       stopPropagation: true,
                     },
-                    'DELETE_FILE_',
+                    'DELETE_FILE',
                   ).onClick(e);
                   deleteFile({variables: {kfId: node.kfId}});
                 }}

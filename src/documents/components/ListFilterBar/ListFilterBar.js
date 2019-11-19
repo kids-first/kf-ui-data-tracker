@@ -38,22 +38,6 @@ const ListFilterBar = ({
   const [showFilter, setShowFilter] = useState(false);
   const [showSort, setShowSort] = useState(false);
 
-  // const dropdownTracking = ({name}) => ({
-  //   onOpen: () => {
-  //     logEvent(DD_EVENT.OPEN, {
-  //       placeholder: name,
-  //       scope: 'ListFilterBar',
-  //     });
-  //   },
-  //   onClose: () => {
-  //     logEvent(DD_EVENT.CLOSE, {
-  //       placehodler: name,
-  //       scope: 'ListFilterBar',
-  //       results_length: filteredList.length,
-  //     });
-  //   },
-  // });
-
   const statusOptions = Object.keys(versionState).map(state => ({
     key: state,
     value: state,
@@ -416,7 +400,7 @@ const ListFilterBar = ({
             logEvent(INPUT.TEXT, {
               input_name: 'StudyFileList Search',
               value,
-              results: filteredList.length,
+              results_length: filteredList.length,
             });
           }}
           value={searchString}

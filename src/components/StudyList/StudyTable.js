@@ -216,6 +216,4 @@ const StudyTable = ({
   );
 };
 
-export default withRouter(
-  withAnalyticsTracking(StudyTable, {saveSchemas: true}),
-);
+export default withRouter(withAnalyticsTracking(StudyTable));

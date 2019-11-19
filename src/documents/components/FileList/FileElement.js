@@ -126,8 +126,7 @@ const FileElement = ({
   isAdmin,
   tracking: {
     logEvent,
-    EVENT_CONSTANTS: {FILE_ELEMENT_},
-    inheritedEventProps,
+    EVENT_CONSTANTS: {FILE_ELEMENT},
     buttonTracking,
   },
 }) => {
@@ -159,7 +158,7 @@ const FileElement = ({
       data-testid="file-item"
       className="cursor-pointer"
       onClick={() => {
-        logEvent(FILE_ELEMENT_.CLICK, {
+        logEvent(FILE_ELEMENT.CLICK, {
           ...fileTrackingObj,
           link: `/study/${match.params.kfId}/documents/${fileKfID}`,
         });
