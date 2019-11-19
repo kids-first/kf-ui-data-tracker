@@ -1,0 +1,14 @@
+{
+  "$id": "https://kf-ui-datatracker.kidsfirstdrc.org/event_schemas/ListFilterBar/DROPDOWN_<input_placeholder_text>__OPEN.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "DROPDOWN_<input_placeholder_text>__OPEN",
+  "type": "object",
+  "description": "onOpen event for the ListFilterBar dropdown components",
+  "allOf": [
+    {"$ref": "../common_defintions.json#/path"},
+    {"$ref": "../common_defintions.json#/route"},
+    {"$ref": "../common_defintions.json#/view"},
+    {"$ref": "../common_defintions.json#/study"},
+    {"$ref": "../DROPDOWN/common_defintions.json#/placeholder"}
+  ]
+}

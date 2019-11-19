@@ -1,0 +1,14 @@
+{
+  "$id": "https://kf-ui-datatracker.kidsfirstdrc.org/event_schemas/ListFilterBar/DROPDOWN_<input_placeholder_text>__CLOSE.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "DROPDOWN_APPROVAL_STAUTS__CLOSE",
+  "type": "object",
+  "description": "onClose event for the ListFilterBar `Approval Status` dropdown component",
+  "allOf": [
+    {"$ref": "../common_defintions.json#/path"},
+    {"$ref": "../common_defintions.json#/route"},
+    {"$ref": "../common_defintions.json#/view"},
+    {"$ref": "../common_defintions.json#/study"},
+    {"$ref": "../DROPDOWN/common_defintions.json#/placeholder"}
+  ]
+}

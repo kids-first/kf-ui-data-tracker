@@ -1,0 +1,26 @@
+{
+  "$id": "https://kf-ui-datatracker.kidsfirstdrc.org/event_schemas/INPUT/INPUT__TEXT.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "INPUT__TEXT",
+  "type": "object",
+  "description": "onChange event for ListFilterBar search input element",
+  "allOf": [
+    {"$ref": "../common_defintions.json#/path"},
+    {"$ref": "../common_defintions.json#/route"},
+    {"$ref": "../common_defintions.json#/view"},
+    {"$ref": "../common_defintions.json#/study"},
+    {
+      "properties": {
+        "input_name": {
+          "type": "string",
+          "description": "placeholder value for input element"
+        },
+        "value": {"type": "string", "description": "user provided search term"},
+        "results_length": {
+          "type": "number",
+          "description": "length of filtered list after search "
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "$id": "https://kf-ui-datatracker.kidsfirstdrc.org/event_schemas/ListFilterBar/DROPDOWN_<input_placeholder_text>__CHANGE.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "DROPDOWN_<input_placeholder_text>__CHANGE",
+  "type": "object",
+  "description": "onChange event for ListFilterBar dropdown components",
+  "allOf": [
+    {"$ref": "../common_defintions.json#/path"},
+    {"$ref": "../common_defintions.json#/route"},
+    {"$ref": "../common_defintions.json#/view"},
+    {"$ref": "../common_defintions.json#/study"},
+    {"$ref": "../DROPDOWN/dropdown_defintions.json#/placeholder"},
+    {
+      "properties": {
+        "value": {
+          "type": "string",
+          "description": "the value that the input was changed to"
+        },
+        "results_length": {
+          "type": "number",
+          "description": "if filtering a list, the length of the list after the filter is applied"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "$id": "https://kf-ui-datatracker.kidsfirstdrc.org/event_schemas/SORT_DIRECTION/SORT_DIRECTION___CLICK.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "SORT_DIRECTION___CLICK",
+  "type": "object",
+  "description": "onClick event for the ListFilterBar sort icon button",
+  "allOf": [
+    {"$ref": "../common_defintions.json#/path"},
+    {"$ref": "../common_defintions.json#/route"},
+    {"$ref": "../common_defintions.json#/view"},
+    {"$ref": "../common_defintions.json#/study"},
+    {"$ref": "../BUTTON/button_defintions.json#/button_text"},
+    {"$ref": "../BUTTON/button_defintions.json#/button_type"},
+    {
+      "properties": {
+        "direction": {
+          "type": "string",
+          "enum": ["ascending", "descending"],
+          "description": "results list sort order"
+        },
+        "results_length": {
+          "type": "number",
+          "description": "length of filtered results list"
+        }
+      }
+    }
+  ]
+}
