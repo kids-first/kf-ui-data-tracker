@@ -22,6 +22,33 @@
       "type": "string",
       "description": "container component name or functional component function name"
     },
+    "file": {
+      "type": "object",
+      "description": "local file properties derived from the HTML File api",
+      "properties": {
+        "file_name": {
+          "type": "string",
+          "description": "name of the local file"
+        },
+        "last_modified": {
+          "type": "number",
+          "description": "UTC time that the local file was last modified"
+        },
+        "last_modified_date": {
+          "type": "string",
+          "format": "date-time",
+          "description": "date-time that the local file was last modified"
+        },
+        "type": {
+          "type": "string",
+          "description": "MIME type of the local file"
+        },
+        "size": {
+          "type": "number",
+          "description": "bit size of the local file"
+        }
+      }
+    },
     "study": {
       "type": "object",
       "properties": {
