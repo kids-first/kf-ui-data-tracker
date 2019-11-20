@@ -67,7 +67,7 @@ it('progresses to Step 1: Update Existing Study Document ', async () => {
   await wait(0);
 
   act(() => {
-    fireEvent.click(getByTestId('update-existing-button'));
+    fireEvent.click(getByTestId('update-existing-document-button'));
   });
 
   await wait(0);
@@ -96,7 +96,7 @@ it('progresses to Step 2: Summarize Your Update', async () => {
 
   // choose update existing document
   act(() => {
-    fireEvent.click(getByTestId('update-existing-button'));
+    fireEvent.click(getByTestId('update-existing-document-button'));
   });
 
   await wait(0);
@@ -131,7 +131,7 @@ it('progresses to Step 3: Document Updated ', async done => {
   await wait(0);
 
   act(() => {
-    fireEvent.click(getByTestId('update-existing-button'));
+    fireEvent.click(getByTestId('update-existing-document-button'));
   });
 
   await wait(0);

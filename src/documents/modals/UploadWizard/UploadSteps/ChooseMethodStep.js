@@ -30,6 +30,7 @@ const ChooseMethodStep = ({file, history, setStep, trackingProperties}) => (
               </Header>
               <Button
                 primary
+                data-testid="update-existing-document-button"
                 {...buttonTracking(
                   'Update Existing Document',
                   null,
@@ -59,6 +60,7 @@ const ChooseMethodStep = ({file, history, setStep, trackingProperties}) => (
               </Header>
               <Button
                 primary
+                data-testid="create-new-document-button"
                 {...buttonTracking(
                   'Create New Document',
                   null,

@@ -10,7 +10,7 @@ import {sortFilesBySimilarity} from '../../../utilities';
 
 const DocRow = withAnalyticsTracking(
   ({document, setStep, setFileToUpdate, tracking: {buttonTracking}}) => {
-    const isSimilar = document.rating >= 0.9;
+    const isSimilar = document.rating > 0.3;
     return (
       <Table.Row
         style={{background: isSimilar ? '#f8ffff' : 'inherit'}}
