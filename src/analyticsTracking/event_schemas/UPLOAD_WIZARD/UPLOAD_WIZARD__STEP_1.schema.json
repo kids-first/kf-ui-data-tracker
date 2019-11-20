@@ -1,0 +1,58 @@
+{
+  "$id": "https://kf-ui-datatracker.kidsfirstdrc.org/event_schemas/UPLOAD_WIZARD/UPLOAD_WIZARD__STEP_`.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "UPLOAD_WIZARD__STEP_`",
+  "type": "object",
+  "description": "onMount event for the second step 'Doucment Selection' in the UploadWizard component",
+  "allOf": [
+    {"$ref": "../common_defintions.json#/path"},
+    {"$ref": "../common_defintions.json#/route"},
+    {"$ref": "../common_defintions.json#/view"},
+    {"$ref": "../common_defintions.json#/file"},
+    {
+      "properties": {
+        "study": {
+          "type": "object",
+          "allOf": [
+            {"$ref": "../common_defintions.json#/study"},
+            {
+              "properties": {
+                "name": {"type": "string", "description": "study long name"},
+                "documents": {
+                  "type": "number",
+                  "description": "length of documents in study"
+                }
+              }
+            }
+          ]
+        },
+        "similar_documents": {
+          "type": "array",
+          "properties": {
+            "name": {
+              "type": "string",
+              "decription": "name of the local file"
+            },
+            "rating": {
+              "type": "number",
+              "description": "floating point representing the string similarity (Dice's Coefficient) between the file name of the local file to the document name of an existing document",
+              "examples": [0.04878048780487805]
+            },
+            "kfId": {
+              "type": "string",
+              "description": "kids first study file identifier",
+              "examples": ["SF_7F2EW7WS"],
+              "pattern": "^SF_[A-HJ-KM-NP-TV-Z0-9]{8}"
+            }
+          }
+        },
+        "kfId": {
+          "type": "string",
+          "description": "kids first study file identifier",
+          "examples": ["SF_7F2EW7WS"],
+          "pattern": "^SF_[A-HJ-KM-NP-TV-Z0-9]{8}"
+        }
+      }
+    }
+  ]
+}

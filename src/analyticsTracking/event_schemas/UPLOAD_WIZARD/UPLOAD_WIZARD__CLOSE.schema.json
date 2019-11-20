@@ -1,0 +1,24 @@
+{
+  "$id": "https://kf-ui-datatracker.kidsfirstdrc.org/event_schemas/UPLOAD_WIZARD/UPLOAD_WIZARD__CLOSE.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "UPLOAD_WIZARD__CLOSE",
+  "type": "object",
+  "description": "close event for the UploadWizard module",
+  "allOf": [
+    {"$ref": "../common_defintions.json#/path"},
+    {"$ref": "../common_defintions.json#/route"},
+    {"$ref": "../common_defintions.json#/view"},
+    {
+      "properties": {
+        "study": {
+          "allOf":[ {"$ref": "../common_defintions.json#/study"},{
+          "properties": {
+            "name": {"type": "string","description":"study long name"},
+            "documents": {"type": "number","description": "length of documents in study"}
+          }
+        }]
+         
+      }
+    }
+  ]
+}
