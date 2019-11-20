@@ -3,7 +3,6 @@ import {graphql, compose} from 'react-apollo';
 import {GET_STUDY_BY_ID, MY_PROFILE} from '../../state/queries';
 import {UploadContainer} from '../containers';
 import FileList from '../components/FileList/FileList';
-
 import {
   Grid,
   Message,
@@ -85,7 +84,6 @@ const StudyFilesListView = ({
   },
   history,
   user,
-  tracking: {buttonTracking, logEvent},
 }) => {
   const isAdmin =
     user && !user.loading ? user.myProfile.roles.includes('ADMIN') : false;

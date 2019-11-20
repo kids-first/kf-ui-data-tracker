@@ -8,9 +8,7 @@ import {
   VersionSummaryStep,
 } from './UploadSteps';
 import {graphql, compose} from 'react-apollo';
-
 import {withAnalyticsTracking} from '../../../analyticsTracking';
-
 import {GET_STUDY_BY_ID} from '../../../state/queries';
 import {CREATE_VERSION} from '../../mutations';
 import {sortFilesBySimilarity} from '../../utilities';
@@ -68,7 +66,7 @@ const UploadWizard = ({
   studyId,
   tracking: {
     logEvent,
-    EVENT_CONSTANTS: {UPLOAD_WIZARD_, NEW_VERSION_},
+    EVENT_CONSTANTS: {UPLOAD_WIZARD, NEW_VERSION},
   },
 }) => {
   // The current step that the flow is on
@@ -88,7 +86,7 @@ const UploadWizard = ({
   const similarDocuments = sortFilesBySimilarity(file, fileList);
 
   const handleCloseDialog = () => {
-    logEvent(UPLOAD_WIZARD_.CLOSE);
+    logEvent(UPLOAD_WIZARD.CLOSE);
     onCloseDialog();
   };
 
@@ -113,7 +111,7 @@ const UploadWizard = ({
       // TODO: maybe make this part of local state
       sessionStorage.setItem('kf_updated_docs', fileToUpdate.kfId);
 
-      logEvent(NEW_VERSION_.UPLOAD, {
+      logEvent(NEW_VERSION.UPLOAD, {
         upload_success: success,
         new_version: {
           file_name: new_version.fileName,
@@ -134,7 +132,7 @@ const UploadWizard = ({
       setStep(3);
     } catch (e) {
       console.error(e);
-      logEvent(NEW_VERSION_.UPLOAD, {upload_success: false, error: e});
+      logEvent(NEW_VERSION.UPLOAD, {upload_success: false, error: e});
       setIsTimerActive(false);
       // setErrors(e)
     }

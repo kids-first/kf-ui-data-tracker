@@ -16,11 +16,11 @@ const VersionSummaryStep = ({
 }) => {
   return (
     <AmplitudeProxy eventProperties={trackingProperties}>
-      {({logEvent, EVENT_CONSTANTS: {UPLOAD_WIZARD_}}) => (
+      {({logEvent, EVENT_CONSTANTS: {UPLOAD_WIZARD}}) => (
         <>
           <Segment size="mini" basic>
             <LogOnMount
-              eventType={`${UPLOAD_WIZARD_.STEP}_2`}
+              eventType={`${UPLOAD_WIZARD.STEP}_2`}
               eventProperties={{
                 ...trackingProperties,
                 document_to_update: {

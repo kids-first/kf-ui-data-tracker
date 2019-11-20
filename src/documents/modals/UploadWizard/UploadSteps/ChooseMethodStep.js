@@ -11,10 +11,10 @@ import {Button, Header, Icon, Grid, Segment, Divider} from 'semantic-ui-react';
 
 const ChooseMethodStep = ({file, history, setStep, trackingProperties}) => (
   <AmplitudeProxy eventProperties={trackingProperties}>
-    {({buttonTracking, EVENT_CONSTANTS: {UPLOAD_WIZARD_}}) => (
+    {({buttonTracking, EVENT_CONSTANTS: {UPLOAD_WIZARD}}) => (
       <Segment placeholder>
         <LogOnMount
-          eventType={`${UPLOAD_WIZARD_.STEP}_0`}
+          eventType={`${UPLOAD_WIZARD.STEP}_0`}
           eventProperties={trackingProperties}
         />
         <Grid columns={2} stackable textAlign="center">
@@ -29,7 +29,7 @@ const ChooseMethodStep = ({file, history, setStep, trackingProperties}) => (
                 </Header.Subheader>
               </Header>
               <Button
-                datavfsary
+                primary
                 {...buttonTracking(
                   'Update Existing Document',
                   null,

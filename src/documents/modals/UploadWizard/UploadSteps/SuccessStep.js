@@ -18,9 +18,9 @@ const SuccessStep = ({
 }) => {
   return (
     <AmplitudeProxy eventProperties={trackingProperties}>
-      {({logEvent, EVENT_CONSTANTS: {UPLOAD_WIZARD_}}) => (
+      {({logEvent, EVENT_CONSTANTS: {UPLOAD_WIZARD}}) => (
         <>
-          <LogOnMount eventType={`${UPLOAD_WIZARD_.STEP}_3`} />
+          <LogOnMount eventType={`${UPLOAD_WIZARD.STEP}_3`} />
           <Segment placeholder>
             <Header icon>
               <Icon name="check" color="green" />
