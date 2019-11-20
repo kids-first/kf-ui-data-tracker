@@ -51,6 +51,10 @@
           "description": "kids first study file identifier",
           "examples": ["SF_7F2EW7WS"],
           "pattern": "^SF_[A-HJ-KM-NP-TV-Z0-9]{8}"
+        },
+        "step_title": {
+          "type": "string",
+          "description": "modal title displayed for the current step"
         }
       }
     }

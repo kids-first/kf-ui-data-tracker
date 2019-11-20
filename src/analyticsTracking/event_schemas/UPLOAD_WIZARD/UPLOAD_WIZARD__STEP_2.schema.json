@@ -73,6 +73,10 @@
               "description": "integer representing the number of previous file versions associated with the document to be updated"
             }
           }
+        },
+        "step_title": {
+          "type": "string",
+          "description": "modal title displayed for the current step"
         }
       }
     }

@@ -1,9 +1,9 @@
 {
-  "$id": "https://kf-ui-datatracker.kidsfirstdrc.org/event_schemas/UPLOAD_WIZARD/UPLOAD_WIZARD__STEP_`.schema.json",
+  "$id": "https://kf-ui-datatracker.kidsfirstdrc.org/event_schemas/UPLOAD_WIZARD/UPLOAD_WIZARD__STEP_2.schema.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "title": "UPLOAD_WIZARD__STEP_`",
+  "title": "UPLOAD_WIZARD__STEP_2",
   "type": "object",
-  "description": "onMount event for the second step 'Doucment Selection' in the UploadWizard component",
+  "description": "onMount event for the fourth and final step 'Document Updated' in the UploadWizard component",
   "allOf": [
     {"$ref": "../common_defintions.json#/path"},
     {"$ref": "../common_defintions.json#/route"},
@@ -45,12 +45,6 @@
               "pattern": "^SF_[A-HJ-KM-NP-TV-Z0-9]{8}"
             }
           }
-        },
-        "kfId": {
-          "type": "string",
-          "description": "kids first study file identifier",
-          "examples": ["SF_7F2EW7WS"],
-          "pattern": "^SF_[A-HJ-KM-NP-TV-Z0-9]{8}"
         },
         "step_title": {
           "type": "string",
