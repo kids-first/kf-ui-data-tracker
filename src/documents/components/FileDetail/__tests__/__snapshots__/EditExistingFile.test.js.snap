@@ -373,7 +373,7 @@ exports[`edits an existing file correctly 1`] = `
                         aria-hidden="true"
                         class="shipping icon"
                       />
-                       Shipping Manifest
+                       Biospecimen Manifest
                     </small>
                   </div>
                   <div
@@ -390,7 +390,7 @@ exports[`edits an existing file correctly 1`] = `
                         aria-hidden="true"
                         class="hospital icon"
                       />
-                       Clinical/Phenotype Data
+                       Clinical/Phenotypic Data
                     </small>
                   </div>
                   <div
@@ -588,7 +588,7 @@ exports[`edits an existing file correctly 1`] = `
                           aria-hidden="true"
                           class="grey hospital small icon"
                         />
-                        Clinical/Phenotype Data
+                        Clinical/Phenotypic Data
                       </div>
                     </div>
                     <div
@@ -718,7 +718,7 @@ exports[`edits an existing file correctly 1`] = `
                           aria-hidden="true"
                           class="grey shipping small icon"
                         />
-                        Shipping Manifest
+                        Biospecimen Manifest
                       </div>
                     </div>
                     <div
@@ -1159,7 +1159,7 @@ exports[`edits an existing file correctly 2`] = `
                       aria-hidden="true"
                       class="hospital icon"
                     />
-                     Clinical/Phenotype Data
+                     Clinical/Phenotypic Data
                   </div>
                 </div>
                 <div
@@ -1804,7 +1804,7 @@ exports[`edits an existing file correctly 3`] = `
                       aria-hidden="true"
                       class="hospital icon"
                     />
-                     Clinical/Phenotype Data
+                     Clinical/Phenotypic Data
                   </div>
                 </div>
                 <div
@@ -2449,7 +2449,7 @@ exports[`edits an existing file correctly 4`] = `
                       aria-hidden="true"
                       class="hospital icon"
                     />
-                     Clinical/Phenotype Data
+                     Clinical/Phenotypic Data
                   </div>
                 </div>
                 <div
@@ -3094,7 +3094,7 @@ exports[`edits an existing file correctly 5`] = `
                       aria-hidden="true"
                       class="hospital icon"
                     />
-                     Clinical/Phenotype Data
+                     Clinical/Phenotypic Data
                   </div>
                 </div>
                 <div
@@ -3739,7 +3739,7 @@ exports[`edits an existing file correctly 6`] = `
                       aria-hidden="true"
                       class="hospital icon"
                     />
-                     Clinical/Phenotype Data
+                     Clinical/Phenotypic Data
                   </div>
                 </div>
                 <div

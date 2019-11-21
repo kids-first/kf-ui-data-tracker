@@ -54,7 +54,7 @@ exports[`renders correctly 1`] = `
                   aria-hidden="true"
                   class="grey hospital small icon"
                 />
-                Clinical/Phenotype Data
+                Clinical/Phenotypic Data
               </div>
             </div>
             <div
@@ -184,7 +184,7 @@ exports[`renders latest temporary state 1`] = `
                   aria-hidden="true"
                   class="grey hospital small icon"
                 />
-                Clinical/Phenotype Data
+                Clinical/Phenotypic Data
               </div>
             </div>
             <div
@@ -314,7 +314,7 @@ exports[`renders loading state 1`] = `
                   aria-hidden="true"
                   class="grey hospital small icon"
                 />
-                Clinical/Phenotype Data
+                Clinical/Phenotypic Data
               </div>
             </div>
             <div

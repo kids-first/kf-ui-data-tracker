@@ -175,7 +175,7 @@ exports[`deletes a file correctly 1`] = `
                       aria-hidden="true"
                       class="shipping icon"
                     />
-                     Shipping Manifest
+                     Biospecimen Manifest
                   </small>
                 </div>
                 <div
@@ -192,7 +192,7 @@ exports[`deletes a file correctly 1`] = `
                       aria-hidden="true"
                       class="hospital icon"
                     />
-                     Clinical/Phenotype Data
+                     Clinical/Phenotypic Data
                   </small>
                 </div>
                 <div
@@ -390,7 +390,7 @@ exports[`deletes a file correctly 1`] = `
                         aria-hidden="true"
                         class="grey hospital small icon"
                       />
-                      Clinical/Phenotype Data
+                      Clinical/Phenotypic Data
                     </div>
                   </div>
                   <div
@@ -520,7 +520,7 @@ exports[`deletes a file correctly 1`] = `
                         aria-hidden="true"
                         class="grey shipping small icon"
                       />
-                      Shipping Manifest
+                      Biospecimen Manifest
                     </div>
                   </div>
                   <div
@@ -824,7 +824,7 @@ exports[`deletes a file correctly 2`] = `
                       aria-hidden="true"
                       class="shipping icon"
                     />
-                     Shipping Manifest
+                     Biospecimen Manifest
                   </small>
                 </div>
                 <div
@@ -841,7 +841,7 @@ exports[`deletes a file correctly 2`] = `
                       aria-hidden="true"
                       class="hospital icon"
                     />
-                     Clinical/Phenotype Data
+                     Clinical/Phenotypic Data
                   </small>
                 </div>
                 <div
@@ -1039,7 +1039,7 @@ exports[`deletes a file correctly 2`] = `
                         aria-hidden="true"
                         class="grey hospital small icon"
                       />
-                      Clinical/Phenotype Data
+                      Clinical/Phenotypic Data
                     </div>
                   </div>
                   <div
@@ -1324,7 +1324,7 @@ exports[`renders ListFilterBar with files -- screen width 600 1`] = `
                         aria-hidden="true"
                         class="grey hospital small icon"
                       />
-                      Clinical/Phenotype Data
+                      Clinical/Phenotypic Data
                     </div>
                   </div>
                   <div
@@ -1445,7 +1445,7 @@ exports[`renders ListFilterBar with files -- screen width 600 1`] = `
                         aria-hidden="true"
                         class="grey shipping small icon"
                       />
-                      Shipping Manifest
+                      Biospecimen Manifest
                     </div>
                   </div>
                   <div
@@ -1712,7 +1712,7 @@ exports[`renders ListFilterBar with files -- screen width 800 1`] = `
                         aria-hidden="true"
                         class="shipping icon"
                       />
-                       Shipping Manifest
+                       Biospecimen Manifest
                     </small>
                   </div>
                   <div
@@ -1729,7 +1729,7 @@ exports[`renders ListFilterBar with files -- screen width 800 1`] = `
                         aria-hidden="true"
                         class="hospital icon"
                       />
-                       Clinical/Phenotype Data
+                       Clinical/Phenotypic Data
                     </small>
                   </div>
                   <div
@@ -1911,7 +1911,7 @@ exports[`renders ListFilterBar with files -- screen width 800 1`] = `
                         aria-hidden="true"
                         class="grey hospital small icon"
                       />
-                      Clinical/Phenotype Data
+                      Clinical/Phenotypic Data
                     </div>
                   </div>
                   <div
@@ -2041,7 +2041,7 @@ exports[`renders ListFilterBar with files -- screen width 800 1`] = `
                         aria-hidden="true"
                         class="grey shipping small icon"
                       />
-                      Shipping Manifest
+                      Biospecimen Manifest
                     </div>
                   </div>
                   <div
@@ -2345,7 +2345,7 @@ exports[`renders ListFilterBar with files -- screen width 1200 1`] = `
                       aria-hidden="true"
                       class="shipping icon"
                     />
-                     Shipping Manifest
+                     Biospecimen Manifest
                   </small>
                 </div>
                 <div
@@ -2362,7 +2362,7 @@ exports[`renders ListFilterBar with files -- screen width 1200 1`] = `
                       aria-hidden="true"
                       class="hospital icon"
                     />
-                     Clinical/Phenotype Data
+                     Clinical/Phenotypic Data
                   </small>
                 </div>
                 <div
@@ -2560,7 +2560,7 @@ exports[`renders ListFilterBar with files -- screen width 1200 1`] = `
                         aria-hidden="true"
                         class="grey hospital small icon"
                       />
-                      Clinical/Phenotype Data
+                      Clinical/Phenotypic Data
                     </div>
                   </div>
                   <div
@@ -2690,7 +2690,7 @@ exports[`renders ListFilterBar with files -- screen width 1200 1`] = `
                         aria-hidden="true"
                         class="grey shipping small icon"
                       />
-                      Shipping Manifest
+                      Biospecimen Manifest
                     </div>
                   </div>
                   <div
@@ -2994,7 +2994,7 @@ exports[`renders correctly 1`] = `
                       aria-hidden="true"
                       class="shipping icon"
                     />
-                     Shipping Manifest
+                     Biospecimen Manifest
                   </small>
                 </div>
                 <div
@@ -3011,7 +3011,7 @@ exports[`renders correctly 1`] = `
                       aria-hidden="true"
                       class="hospital icon"
                     />
-                     Clinical/Phenotype Data
+                     Clinical/Phenotypic Data
                   </small>
                 </div>
                 <div
@@ -3209,7 +3209,7 @@ exports[`renders correctly 1`] = `
                         aria-hidden="true"
                         class="grey hospital small icon"
                       />
-                      Clinical/Phenotype Data
+                      Clinical/Phenotypic Data
                     </div>
                   </div>
                   <div
@@ -3339,7 +3339,7 @@ exports[`renders correctly 1`] = `
                         aria-hidden="true"
                         class="grey shipping small icon"
                       />
-                      Shipping Manifest
+                      Biospecimen Manifest
                     </div>
                   </div>
                   <div
