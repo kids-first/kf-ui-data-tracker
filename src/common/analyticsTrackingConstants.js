@@ -84,11 +84,11 @@ const INPUT_EVENTS = ['BLUR', 'FOCUS', 'CHANGE'];
  */
 const analyticsTrackingConstants = {
   ...scope('INPUT', ['TEXT', ...INPUT_EVENTS]),
+  ...scope('INPUT__SELECT', INPUT_EVENTS),
   ...scope('MOUSE', MOUSE_EVENTS),
   ...scope('AUTH', ['LOGIN', 'LOGOUT']),
   ...scope('PAGE', ['VIEW']),
   ...scope('MOUSE', MOUSE_EVENTS),
-  ...scope('INPUT', ['TEXT', 'FILE']),
   ...scope('DROPDOWN', DROPDOWN_EVENTS),
   ...scope('DRAG', ['OVER', 'ENTER', 'LEAVE', 'DROP']),
   ...scope('LIST', ['PAGINATE']),

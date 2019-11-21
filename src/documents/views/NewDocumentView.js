@@ -23,7 +23,7 @@ const NewDocumentView = ({
   tracking: {
     logEvent,
     buttonTracking,
-    EVENT_CONSTANTS: {NEW_DOCUMENT_},
+    EVENT_CONSTANTS: {NEW_DOCUMENT},
   },
 }) => {
   // Tracks any error state reported from the server
@@ -49,7 +49,7 @@ const NewDocumentView = ({
       },
     })
       .then(({data: {createFile}}) => {
-        logEvent(NEW_DOCUMENT_.UPLOAD, {
+        logEvent(NEW_DOCUMENT.UPLOAD, {
           upload_success: createFile.success,
           file: {
             file_name: fileName,
@@ -64,7 +64,7 @@ const NewDocumentView = ({
         history.push(`/study/${studyId}/documents`);
       })
       .catch(err => {
-        logEvent(NEW_DOCUMENT_.UPLOAD, {
+        logEvent(NEW_DOCUMENT.UPLOAD, {
           error: err,
           upload_success: false,
           file: {

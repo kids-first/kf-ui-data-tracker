@@ -16,7 +16,7 @@ const SelectElement = ({
   tracking: {
     logEvent,
     instrument,
-    EVENT_CONSTANTS: {INPUT},
+    EVENT_CONSTANTS: {INPUT__SELECT},
   },
   ...props
 }) => {
@@ -27,7 +27,7 @@ const SelectElement = ({
       color={selected ? 'blue' : null}
       className="selectionRadio--card"
       onClick={() => {
-        logEvent(INPUT._CHANGE, {
+        logEvent(INPUT__SELECT.CHANGE, {
           name,
           label,
           radio_text: fileTypeDetail[id].title,
@@ -41,7 +41,7 @@ const SelectElement = ({
         id={id}
         value={id}
         checked={selected}
-        onChange={instrument(INPUT._CHANGE, onChange)}
+        onChange={instrument(INPUT__SELECT.CHANGE, onChange)}
         label={() => (
           <Icon
             name={fileTypeDetail[id].icon}
@@ -78,4 +78,4 @@ SelectElement.propTypes = {
   className: PropTypes.string,
 };
 
-export default withAnalyticsTracking(SelectElement);
+export default withAnalyticsTracking(SelectElement, {logToConsole: true});

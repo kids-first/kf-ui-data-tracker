@@ -92,10 +92,11 @@ const EditDocumentForm = React.forwardRef(
                     placeholder="Phenotypic Data manifest for..."
                     value={values.file_name}
                     onBlur={handleBlur}
-                    onChange={instrument(INPUT._CHANGE, handleChange, {
+                    onChange={instrument(INPUT.TEXT, handleChange, {
                       input_type: 'text',
                       name: 'file_name',
                       value: values.file_name,
+                      placeholder: 'Phenotypic Data manifest for...',
                       validation: errors,
                     })}
                     error={`${errors.file_name &&
@@ -163,7 +164,7 @@ const EditDocumentForm = React.forwardRef(
                     name="file_desc"
                     value={values.file_desc}
                     onChange={instrument(
-                      INPUT._CHANGE,
+                      INPUT.TEXT,
                       handleChange,
                       {
                         input_type: 'text',
