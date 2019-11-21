@@ -5,7 +5,6 @@ import {Form, TextArea, Dropdown} from 'semantic-ui-react';
 import {Formik, Field} from 'formik';
 import validate from './validate';
 import ExistingDocsMessage from './ExistingDocsMessage';
-import DocumentTitleValidationIndicators from './DocumentTitleValidationIndicators';
 import SelectElement from '../components/FileDetail/SelectElement';
 import Badge from '../../components/Badge/Badge';
 import UploadWizard from '../modals/UploadWizard/UploadWizard';
@@ -26,7 +25,6 @@ const EditDocumentForm = React.forwardRef(
       history,
       handleSubmit,
       submitButtons,
-      showFieldHints,
       studyFiles,
     },
     ref,
@@ -103,12 +101,7 @@ const EditDocumentForm = React.forwardRef(
                     value={values.file_name}
                     onBlur={handleBlur}
                     onChange={handleChange}
-                    error={`${errors.file_name &&
-                      Object.values(errors.file_name).some(x => x != null)}`}
                   />
-                  {Object.values(errors.file_name || {}).some(
-                    x => x != null,
-                  ) && <DocumentTitleValidationIndicators errors={errors} />}
                   <small>
                     Please provide a descriptive title without dates or
                     adjectives such as "new", "updated", "final", etc.
@@ -148,7 +141,6 @@ const EditDocumentForm = React.forwardRef(
                     </Form.Field>
                   ))}
                 </Form.Field>
-
                 <Form.Field required>
                   <label>Describe Document Contents:</label>
                   <TextArea
@@ -209,8 +201,6 @@ EditDocumentForm.propTypes = {
   errors: PropTypes.object,
   /** (New file) Displays as buttons for form submitting */
   submitButtons: PropTypes.func,
-  /** show validation hints */
-  showFieldHints: PropTypes.bool,
 };
 
 export default EditDocumentForm;

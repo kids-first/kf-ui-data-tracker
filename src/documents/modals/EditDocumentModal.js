@@ -61,7 +61,6 @@ const EditDocumentModal = ({fileNode, onCloseDialog, studyId}) => {
           isAdmin={isAdmin}
           fileDescription={fileNode.description}
           handleSubmit={handleSubmit}
-          showFieldHints={false}
         />
       </Modal.Content>
       <Modal.Actions>

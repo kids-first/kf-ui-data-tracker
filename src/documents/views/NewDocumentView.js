@@ -96,7 +96,6 @@ const NewDocumentView = ({match, history, location}) => {
             fileNode={location.state.file}
             handleSubmit={handleSubmit}
             history={history}
-            showFieldHints={true}
             submitButtons={(disabled, onUploading) => (
               <Segment vertical basic compact>
                 <Button
