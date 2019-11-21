@@ -63,11 +63,15 @@ const NewDocumentView = ({match, history, location}) => {
   return (
     <Container as={Segment} vertical basic>
       <Container as={Segment} vertical basic>
-        <Header as="h3">Tell us about your study document</Header>
-        <p>
-          Help ensure the fastest processing and harmonization of your study by
-          telling us about the contents of your uploaded document. This helps
-          our engineers accurately interpret your data.
+        <Header as="h3">Tell us about your document</Header>
+        <p className="text-wrap-75">
+          Help us process and harmonize your study faster by categorizing and
+          describing the document you are about to upload. If you have any
+          questions, please contact us at{' '}
+          <a href="mailto:support@kidsfirstdrc.org?subject=Kids First Data Tracker Help&body=Hello, I would like to upload a <insert_document_description_here> and am having trouble with the upload function">
+            support@kidsfirstdrc.org
+          </a>
+          .
         </p>
         {errors && (
           <Message
