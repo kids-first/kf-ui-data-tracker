@@ -39,7 +39,7 @@ const VersionSummaryStep = ({fileToUpdate, file, setDescription}) => {
           changed in this version
         </h5>
         <Form>
-          <Form.Field required focus>
+          <Form.Field required>
             <label>Summarize Document Changes:</label>
             <Form.TextArea
               tabIndex="1"
