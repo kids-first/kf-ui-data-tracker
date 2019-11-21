@@ -24,30 +24,31 @@ const SelectElement = ({
         setFieldValue(name, id);
       }}
     >
-      <Radio
-        className="selectionRadio"
-        name={name}
-        id={id}
-        value={id}
-        checked={selected}
-        onChange={onChange}
-        label={() => (
-          <Icon
-            name={fileTypeDetail[id].icon}
-            size="large"
-            bordered
-            circular
-            inverted
-            color={selected ? 'blue' : 'black'}
-          />
-        )}
-      />
       <div>
-        <p>
+        <Radio
+          name={name}
+          id={id}
+          value={id}
+          checked={selected}
+          onChange={onChange}
+          label={() => (
+            <Icon
+              name={fileTypeDetail[id].icon}
+              size="large"
+              bordered
+              circular
+              inverted
+              color={selected ? 'blue' : 'black'}
+            />
+          )}
+        />
+      </div>
+      <div>
+        <p className="mb-5">
           <b>{fileTypeDetail[id].title}</b>
         </p>
-        <p>
-          <small>{fileTypeDetail[id].description}</small>
+        <p className="text-wrap-75 text-grey">
+          {fileTypeDetail[id].description}
         </p>
       </div>
     </Segment>
