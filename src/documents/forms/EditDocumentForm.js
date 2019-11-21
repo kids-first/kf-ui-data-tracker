@@ -91,6 +91,11 @@ const EditDocumentForm = React.forwardRef(
                 <Form.Field required>
                   <label htmlFor="file_name">Document Title:</label>
                   <input
+                    className={
+                      touched.file_name && errors.file_name
+                        ? 'border-red'
+                        : null
+                    }
                     data-testid="name-input"
                     type="text"
                     name="file_name"
@@ -147,11 +152,17 @@ const EditDocumentForm = React.forwardRef(
                 <Form.Field required>
                   <label>Describe Document Contents:</label>
                   <TextArea
+                    className={
+                      touched.file_desc && errors.file_desc
+                        ? 'border-red'
+                        : null
+                    }
                     data-testid="description-input"
                     type="text"
                     name="file_desc"
                     value={values.file_desc}
                     onChange={handleChange}
+                    onBlur={handleBlur}
                   />
                 </Form.Field>
                 {submitButtons &&
