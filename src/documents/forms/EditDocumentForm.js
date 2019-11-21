@@ -33,6 +33,7 @@ const EditDocumentForm = React.forwardRef(
   ) => {
     const [onUploading, setUploading] = useState(false);
     const [showDialog, setShowDialog] = useState(false);
+    const [titleError, setTitleError] = useState({});
 
     const options = ['PEN', 'APP', 'CHN', 'PRC'].map(state => ({
       key: state,
@@ -49,7 +50,16 @@ const EditDocumentForm = React.forwardRef(
             file_desc: fileDescription,
             file_status: versionStatus,
           }}
-          validate={vals => validate(vals, fileNode, studyFiles)}
+          validate={vals => {
+            setTitleError(validate(vals, fileNode, studyFiles));
+            let errors = {};
+            ['file_name', 'file_type', 'file_desc'].forEach(function(field) {
+              if (!vals[field]) {
+                errors[field] = 'Required';
+              }
+            });
+            return errors;
+          }}
           onSubmit={values => {
             setUploading(true);
             handleSubmit(...Object.values(values));
@@ -65,15 +75,16 @@ const EditDocumentForm = React.forwardRef(
             touched,
           }) => (
             <>
-              {showFieldHints &&
-                errors.file_name &&
-                (errors.file_name.existing_similarity ||
-                  errors.file_name.upload_similarity) && (
+              {titleError.file_name &&
+                (titleError.file_name.existing_similarity ||
+                  titleError.file_name.exact_matches ||
+                  titleError.file_name.upload_similarity) && (
                   <ExistingDocsMessage
                     setShowDialog={setShowDialog}
-                    errors={errors}
+                    errors={titleError}
                     existingDocs={studyFiles}
                     fileNameInput={values.file_name}
+                    newFile={!versionStatus}
                   />
                 )}
               <Form onSubmit={handleSubmit} ref={ref}>
@@ -93,6 +104,10 @@ const EditDocumentForm = React.forwardRef(
                   {Object.values(errors.file_name || {}).some(
                     x => x != null,
                   ) && <DocumentTitleValidationIndicators errors={errors} />}
+                  <small>
+                    Please provide a descriptive title without dates or
+                    adjectives such as "new", "updated", "final", etc.
+                  </small>
                 </Form.Field>
                 {versionStatus && (
                   <Form.Field>
@@ -141,12 +156,8 @@ const EditDocumentForm = React.forwardRef(
                 </Form.Field>
                 {submitButtons &&
                   submitButtons(
-                    Object.values(values).every(x =>
-                      Boolean(x !== undefined),
-                    ) ||
-                      Object.values(errors.file_name || {}).some(
-                        x => x != null,
-                      ),
+                    Object.keys(errors).length > 0 ||
+                      values.file_name.length === 0,
                     onUploading,
                   )}
               </Form>
