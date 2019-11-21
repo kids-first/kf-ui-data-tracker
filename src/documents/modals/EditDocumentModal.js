@@ -16,6 +16,10 @@ const EditDocumentModal = ({
   user,
   tracking,
 }) => {
+  const {
+    logEvent,
+    EVENT_CONSTANTS: {DOCUMENT},
+  } = tracking;
   const formEl = useRef(null);
 
   const latestVersion = fileSortedVersions(fileNode)[0].node;
@@ -29,11 +33,20 @@ const EditDocumentModal = ({
       await updateFile({
         variables: {kfId: fileNode.kfId, name, description, fileType},
       });
-      await updateVersion({
+      const updatedVersion = await updateVersion({
         variables: {
           versionId: latestVersion.kfId,
           description: latestVersion.description,
           state: versionStatus,
+        },
+      });
+
+      logEvent(DOCUMENT.EDIT, {
+        updated_version: {
+          kfId: updatedVersion.data.updateVersion.version.kfId,
+          file_name: updatedVersion.data.updateVersion.version.fileName,
+          description: updatedVersion.data.updateVersion.version.description,
+          file_status: updatedVersion.data.updateVersion.version.state,
         },
       });
       onCloseDialog();

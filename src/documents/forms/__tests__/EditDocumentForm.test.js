@@ -6,7 +6,7 @@ import {
   AmplitudeProxy,
 } from '../../../analyticsTracking';
 
-it('renders correctly for annotating new file before upload', () => {
+itgit('renders correctly for annotating new file before upload', () => {
   const cancelMock = jest.fn();
   const submitMock = jest.fn();
   const tree = render(

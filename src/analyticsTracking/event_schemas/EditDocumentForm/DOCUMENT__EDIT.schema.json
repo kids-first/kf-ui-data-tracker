@@ -1,0 +1,39 @@
+{
+  "$id": "https://kf-ui-datatracker.kidsfirstdrc.org/event_schemas/DOCUMENT/DOCUMENT__EDIT.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "DOCUMENT__EDIT",
+  "type": "object",
+  "description": "",
+  "allOf": [
+    {"$ref": "../common_defintions.json#/path"},
+    {"$ref": "../common_defintions.json#/route"},
+    {"$ref": "../common_defintions.json#/view"},
+    {
+      "properties": {
+        "updated_version": {
+          "type": "object",
+          "properties": {
+            "kfId": {
+              "type": "string",
+              "description": "kids first study file version identifier",
+              "pattern": "^SF_[A-HJ-KM-NP-TV-Z0-9]{8}"
+            },
+            "file_name": {
+              "type": "string",
+              "description": "name of the local file associated with the file version"
+            },
+            "description": {
+              "type": "string",
+              "description": "user provided study document description field content"
+            },
+            "file_status": {
+              "type": "string",
+              "enum": ["PEN", "APP", "CHN", "PRC", "UPD"],
+              "description": "Approval Status code"
+            }
+          }
+        }
+      }
+    }
+  ]
+}
