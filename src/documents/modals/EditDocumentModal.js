@@ -5,6 +5,7 @@ import {graphql, compose} from 'react-apollo';
 import {EditDocumentForm} from '../forms';
 import {fileSortedVersions} from '../utilities';
 import {Button, Modal} from 'semantic-ui-react';
+import {withAnalyticsTracking} from '../../analyticsTracking';
 
 const EditDocumentModal = ({
   fileNode,
@@ -13,6 +14,7 @@ const EditDocumentModal = ({
   onCloseDialog,
   study,
   user,
+  tracking,
 }) => {
   const formEl = useRef(null);
 
@@ -46,6 +48,7 @@ const EditDocumentModal = ({
       <Modal.Content scrolling>
         <EditDocumentForm
           ref={formEl}
+          tracking={tracking}
           fileNode={{name: fileNode.versions.edges[0].node.fileName}}
           studyFiles={
             study.studyByKfId
@@ -67,7 +70,7 @@ const EditDocumentModal = ({
         <Button
           primary
           size="mini"
-          type="button"
+          type="submit"
           onClick={e => {
             e.preventDefault();
             formEl.current.handleSubmit();
@@ -88,4 +91,5 @@ export default compose(
     name: 'study',
     options: props => ({variables: {kfId: props.studyId}}),
   }),
+  withAnalyticsTracking,
 )(EditDocumentModal);

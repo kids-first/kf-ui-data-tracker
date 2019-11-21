@@ -10,7 +10,6 @@ import SelectElement from '../components/FileDetail/SelectElement';
 import Badge from '../../components/Badge/Badge';
 import UploadWizard from '../modals/UploadWizard/UploadWizard';
 import {fileTypeDetail, versionState} from '../../common/enums';
-import {withAnalyticsTracking} from '../../analyticsTracking';
 
 /**
  * Form to edit document information or annotate new file for uploading
@@ -29,14 +28,15 @@ const EditDocumentForm = React.forwardRef(
       submitButtons,
       showFieldHints,
       studyFiles,
-      tracking: {
-        instrument,
-        dropdownTracking,
-        EVENT_CONSTANTS: {INPUT},
-      },
+      tracking,
     },
     ref,
   ) => {
+    const {
+      instrument,
+      dropdownTracking,
+      EVENT_CONSTANTS: {INPUT},
+    } = tracking;
     const [onUploading, setUploading] = useState(false);
     const [showDialog, setShowDialog] = useState(false);
 
@@ -148,7 +148,6 @@ const EditDocumentForm = React.forwardRef(
                         label={item}
                         eventProperties={{
                           value: item,
-                          placeholder: 'Document Type',
                           input_type: 'radio',
                         }}
                       />
@@ -226,6 +225,8 @@ EditDocumentForm.propTypes = {
   submitButtons: PropTypes.func,
   /** show validation hints */
   showFieldHints: PropTypes.bool,
+  /** withAnalyticsTracking tracking prop object */
+  tracking: PropTypes.object.isRequired,
 };
 
-export default withAnalyticsTracking(EditDocumentForm, {logToConsole: true});
+export default EditDocumentForm;

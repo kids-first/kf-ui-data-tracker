@@ -20,12 +20,13 @@ const NewDocumentView = ({
   createDocument,
   user,
   study,
-  tracking: {
+  tracking,
+}) => {
+  const {
     logEvent,
     buttonTracking,
     EVENT_CONSTANTS: {NEW_DOCUMENT},
-  },
-}) => {
+  } = tracking;
   // Tracks any error state reported from the server
   const [errors, setErrors] = useState('');
   const studyFiles = study.studyByKfId ? study.studyByKfId.files.edges : [];
@@ -52,8 +53,8 @@ const NewDocumentView = ({
         logEvent(NEW_DOCUMENT.UPLOAD, {
           upload_success: createFile.success,
           file: {
-            file_name: fileName,
-            type: fileType,
+            file_name: file.name,
+            type: file.type,
           },
           new_document: {
             document_name: createFile.file.name,
@@ -107,6 +108,7 @@ const NewDocumentView = ({
           <EditDocumentForm
             studyFiles={studyFiles}
             isAdmin={isAdmin}
+            tracking={tracking}
             fileNode={location.state.file}
             handleSubmit={handleSubmit}
             errors={errors}
