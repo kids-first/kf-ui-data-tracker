@@ -1,0 +1,53 @@
+{
+  "$id": "https://kf-ui-datatracker.kidsfirstdrc.org/event_schemas/EditDocumentForm/NEW_DOCUMENT__UPLOAD.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "NEW_DOCUMENT__UPLOAD",
+  "type": "object",
+  "description": "fired when a new document is created from the EditDocumentForm's 'Upload' button",
+  "allOf": [
+    {"$ref": "../common_defintions.json#/path"},
+    {"$ref": "../common_defintions.json#/route"},
+    {"$ref": "../common_defintions.json#/view"},
+    {
+      "properties": {
+        "upload_success": {
+          "type": "boolean",
+          "description": "whether or not the new document was successgully created via the api"
+        },
+        "file": {
+          "type": "object",
+          "properties": {
+            "file_name": {
+              "type": "string",
+              "description": "name of the local file that was uploaded"
+            },
+            "type": {
+              "type": "string",
+              "description": "local file type"
+            }
+          }
+        },
+        "new_document": {
+          "type": "object",
+          "description": "description of the new document that was created",
+          "properties": {
+            "document_name": {
+              "type": "string",
+              "description": "user provided name of the document, not the name of the local file"
+            },
+            "type": {
+              "type": "string",
+              "description": "document category",
+              "enum": ["SHM", "CLN", "SEQ", "OTH"]
+            },
+            "kfId": {
+              "type": "string",
+              "pattern": "^SF_[A-HJ-KM-NP-TV-Z0-9]{8}",
+              "description": "kids first study file ide ntifier"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

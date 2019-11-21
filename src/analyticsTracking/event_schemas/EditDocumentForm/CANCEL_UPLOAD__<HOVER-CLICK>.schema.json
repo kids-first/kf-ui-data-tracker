@@ -1,0 +1,15 @@
+{
+  "$id": "https://kf-ui-datatracker.kidsfirstdrc.org/event_schemas/CANCEL_UPLOAD/CANCEL_UPLOAD__<HOVER-CLICK>.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "CANCEL_UPLOAD__<HOVER-CLICK>",
+  "type": "object",
+  "description": "onMouseOver event for the 'Cancel' button in the EditDocumentForm component of the NewDocumentView",
+  "allOf": [
+    {"$ref": "../common_defintions.json#/path"},
+    {"$ref": "../common_defintions.json#/route"},
+    {"$ref": "../common_defintions.json#/view"},
+    {"$ref": "../BUTTON/button_defintions.json#/buton_text"},
+    {"$ref": "../BUTTON/button_defintions.json#/buton_type"},
+    {"$ref": "../BUTTON/button_defintions.json#/link"}
+  ]
+}

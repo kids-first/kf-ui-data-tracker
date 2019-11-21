@@ -1,0 +1,24 @@
+{
+  "$id": "https://kf-ui-datatracker.kidsfirstdrc.org/event_schemas/FILE_STATUS/FILE_STATUS__<OPEN-CLOSE-CHANGE>.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "FILE_STATUS__<OPEN-CLOSE-CHANGE>",
+  "type": "object",
+  "description": "onOpen, onClose, and onChange event schema for the `File Status` dropdown in the EditDocumentForm",
+  "allOf": [
+    {"$ref": "../common_defintions.json#/path"},
+    {"$ref": "../common_defintions.json#/route"},
+    {"$ref": "../common_defintions.json#/view"},
+    {
+      "properties": {
+        "placeholder": {
+          "type": "string",
+          "description": "HTML placeholder value for the input element"
+        },
+        "value": {
+          "type": "string",
+          "description": "HTML input value at time of event, for onChange it is the value that the user selected"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "$id": "https://kf-ui-datatracker.kidsfirstdrc.org/event_schemas/INPUT/INPUT__SELECT__CHANGE.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "INPUT__SELECT__CHANGE",
+  "type": "object",
+  "description": "onChange event for the SelectElement component",
+  "allOf": [
+    {"$ref": "../common_defintions.json#/path"},
+    {"$ref": "../common_defintions.json#/route"},
+    {"$ref": "../common_defintions.json#/view"},
+    {"$ref": "../common_defintions.json#/study"},
+    {"$ref": "../common_defintions.json#/file"},
+    {
+      "properties": {
+        "value": {
+          "type": "string",
+          "description": "value set for the input element after change"
+        },
+        "input_type": {
+          "type": "string",
+          "description": "HTML type attibute for the input element"
+        },
+        "name": {
+          "type": "string",
+          "description": "name of the input value the element mutates"
+        },
+        "label": {
+          "type": "string",
+          "description": "HTML id attribute value for the input element"
+        },
+        "radio_text": {
+          "type": "string",
+          "description": "text show to user for the radio button value"
+        }
+      }
+    }
+  ]
+}

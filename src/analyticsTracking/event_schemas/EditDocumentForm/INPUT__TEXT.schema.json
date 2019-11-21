@@ -1,0 +1,32 @@
+{
+  "$id": "https://kf-ui-datatracker.kidsfirstdrc.org/event_schemas/INPUT/INPUT__TEXT.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "INPUT__TEXT",
+  "type": "object",
+  "description": "onChange event for input elements in the EditDocumentForm component ",
+  "allOf": [
+    {"$ref": "../common_defintions.json#/path"},
+    {"$ref": "../common_defintions.json#/route"},
+    {"$ref": "../common_defintions.json#/view"},
+    {"$ref": "../common_defintions.json#/study"},
+    {"$ref": "../common_defintions.json#/file"},
+    {
+      "properties": {
+        "input_type": {
+          "type": "string",
+          "description": "HTML type attibute for the input element"
+        },
+        "name": {"type": "string", "enum": ["file_name", "file_description"]},
+        "value": {"type": "string", "description": "user input"},
+        "placeholder": {
+          "type": "string",
+          "description": "placeholder text used for the input element"
+        },
+        "validation": {
+          "type": "object",
+          "description": "validation object returned by Formik, this is used to see if there are any string similarities in the document name"
+        }
+      }
+    }
+  ]
+}

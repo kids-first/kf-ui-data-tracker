@@ -1,0 +1,26 @@
+{
+  "$id": "https://kf-ui-datatracker.kidsfirstdrc.org/event_schemas/UPLOAD/UPLOAD__<HOVER-CLICK>.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "UPLOAD__[HOVER | CLICK]",
+  "type": "object",
+  "description": "onMouseOver and onClick events for the 'Upload' button",
+  "allOf": [
+    {"$ref": "../common_defintions.json#/path"},
+    {"$ref": "../common_defintions.json#/route"},
+    {"$ref": "../common_defintions.json#/view"},
+    {"$ref": "../BUTTON/button_defintions.json#/button_text"},
+    {"$ref": "../BUTTON/button_defintions.json#/button_type"},
+    {
+      "properties": {
+        "disabled": {
+          "type": "boolean",
+          "description": "whether or not the button was disabled when the user interacted with it"
+        },
+        "errors": {
+          "type": "number",
+          "description": "integer of error present in the form at the time of interaction"
+        }
+      }
+    }
+  ]
+}
