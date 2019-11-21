@@ -134,7 +134,7 @@ exports[`renders ListFilterBar with files 1`] = `
                 aria-hidden="true"
                 class="shipping icon"
               />
-               Shipping Manifest
+               Biospecimen Manifest
             </small>
           </div>
           <div
@@ -151,7 +151,7 @@ exports[`renders ListFilterBar with files 1`] = `
                 aria-hidden="true"
                 class="hospital icon"
               />
-               Clinical/Phenotype Data
+               Clinical/Phenotypic Data
             </small>
           </div>
           <div
@@ -407,7 +407,7 @@ exports[`renders ListFilterBar with files 2`] = `
                 aria-hidden="true"
                 class="shipping icon"
               />
-               Shipping Manifest
+               Biospecimen Manifest
             </small>
           </div>
           <div
@@ -424,7 +424,7 @@ exports[`renders ListFilterBar with files 2`] = `
                 aria-hidden="true"
                 class="hospital icon"
               />
-               Clinical/Phenotype Data
+               Clinical/Phenotypic Data
             </small>
           </div>
           <div
@@ -657,7 +657,7 @@ exports[`renders ListFilterBar with files 3`] = `
           class="default text"
           role="alert"
         >
-          Shipping Manifest
+          Biospecimen Manifest
         </div>
         <i
           aria-hidden="true"
@@ -680,7 +680,7 @@ exports[`renders ListFilterBar with files 3`] = `
                 aria-hidden="true"
                 class="shipping icon"
               />
-               Shipping Manifest
+               Biospecimen Manifest
             </small>
           </div>
           <div
@@ -697,7 +697,7 @@ exports[`renders ListFilterBar with files 3`] = `
                 aria-hidden="true"
                 class="hospital icon"
               />
-               Clinical/Phenotype Data
+               Clinical/Phenotypic Data
             </small>
           </div>
           <div
@@ -953,7 +953,7 @@ exports[`renders ListFilterBar with files 4`] = `
                 aria-hidden="true"
                 class="shipping icon"
               />
-               Shipping Manifest
+               Biospecimen Manifest
             </small>
           </div>
           <div
@@ -970,7 +970,7 @@ exports[`renders ListFilterBar with files 4`] = `
                 aria-hidden="true"
                 class="hospital icon"
               />
-               Clinical/Phenotype Data
+               Clinical/Phenotypic Data
             </small>
           </div>
           <div
@@ -1226,7 +1226,7 @@ exports[`renders ListFilterBar with files 5`] = `
                 aria-hidden="true"
                 class="shipping icon"
               />
-               Shipping Manifest
+               Biospecimen Manifest
             </small>
           </div>
           <div
@@ -1243,7 +1243,7 @@ exports[`renders ListFilterBar with files 5`] = `
                 aria-hidden="true"
                 class="hospital icon"
               />
-               Clinical/Phenotype Data
+               Clinical/Phenotypic Data
             </small>
           </div>
           <div
@@ -1499,7 +1499,7 @@ exports[`renders ListFilterBar with no files 1`] = `
                 aria-hidden="true"
                 class="shipping icon"
               />
-               Shipping Manifest
+               Biospecimen Manifest
             </small>
           </div>
           <div
@@ -1516,7 +1516,7 @@ exports[`renders ListFilterBar with no files 1`] = `
                 aria-hidden="true"
                 class="hospital icon"
               />
-               Clinical/Phenotype Data
+               Clinical/Phenotypic Data
             </small>
           </div>
           <div

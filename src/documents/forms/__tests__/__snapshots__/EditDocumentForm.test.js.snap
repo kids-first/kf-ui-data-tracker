@@ -39,33 +39,37 @@ Object {
             <div
               class="ui compact segment selectionRadio--card"
             >
-              <div
-                class="ui radio checkbox selectionRadio"
-              >
-                <input
-                  class="hidden"
-                  id="SHM"
-                  name="file_type"
-                  readonly=""
-                  tabindex="0"
-                  type="radio"
-                  value="SHM"
-                />
-                <i
-                  aria-hidden="true"
-                  class="black shipping large bordered circular inverted icon"
-                />
+              <div>
+                <div
+                  class="ui radio checkbox"
+                >
+                  <input
+                    class="hidden"
+                    id="SHM"
+                    name="file_type"
+                    readonly=""
+                    tabindex="0"
+                    type="radio"
+                    value="SHM"
+                  />
+                  <i
+                    aria-hidden="true"
+                    class="black shipping large bordered circular inverted icon"
+                  />
+                </div>
               </div>
               <div>
-                <p>
+                <p
+                  class="mb-5"
+                >
                   <b>
-                    Shipping Manifest
+                    Biospecimen Manifest
                   </b>
                 </p>
-                <p>
-                  <small>
-                    File type description goes here...
-                  </small>
+                <p
+                  class="text-wrap-75 text-grey"
+                >
+                  Tabular files (e.g. CSV, TSV, Excel) containing biospecimen identifiers and metadata (e.g. tissue type, composition) provided to sequencing centers as well as consent type.
                 </p>
               </div>
             </div>
@@ -76,33 +80,37 @@ Object {
             <div
               class="ui compact segment selectionRadio--card"
             >
-              <div
-                class="ui radio checkbox selectionRadio"
-              >
-                <input
-                  class="hidden"
-                  id="CLN"
-                  name="file_type"
-                  readonly=""
-                  tabindex="0"
-                  type="radio"
-                  value="CLN"
-                />
-                <i
-                  aria-hidden="true"
-                  class="black hospital large bordered circular inverted icon"
-                />
+              <div>
+                <div
+                  class="ui radio checkbox"
+                >
+                  <input
+                    class="hidden"
+                    id="CLN"
+                    name="file_type"
+                    readonly=""
+                    tabindex="0"
+                    type="radio"
+                    value="CLN"
+                  />
+                  <i
+                    aria-hidden="true"
+                    class="black hospital large bordered circular inverted icon"
+                  />
+                </div>
               </div>
               <div>
-                <p>
+                <p
+                  class="mb-5"
+                >
                   <b>
-                    Clinical/Phenotype Data
+                    Clinical/Phenotypic Data
                   </b>
                 </p>
-                <p>
-                  <small>
-                    File type description goes here...
-                  </small>
+                <p
+                  class="text-wrap-75 text-grey"
+                >
+                  Structured files with data linked to the biospecimen identifiers provided in the shipping manifest(s). Exports from data management applications, such as REDCap, are the fastest to process, but we will work with you on most formats.
                 </p>
               </div>
             </div>
@@ -113,33 +121,37 @@ Object {
             <div
               class="ui compact segment selectionRadio--card"
             >
-              <div
-                class="ui radio checkbox selectionRadio"
-              >
-                <input
-                  class="hidden"
-                  id="SEQ"
-                  name="file_type"
-                  readonly=""
-                  tabindex="0"
-                  type="radio"
-                  value="SEQ"
-                />
-                <i
-                  aria-hidden="true"
-                  class="black dna large bordered circular inverted icon"
-                />
+              <div>
+                <div
+                  class="ui radio checkbox"
+                >
+                  <input
+                    class="hidden"
+                    id="SEQ"
+                    name="file_type"
+                    readonly=""
+                    tabindex="0"
+                    type="radio"
+                    value="SEQ"
+                  />
+                  <i
+                    aria-hidden="true"
+                    class="black dna large bordered circular inverted icon"
+                  />
+                </div>
               </div>
               <div>
-                <p>
+                <p
+                  class="mb-5"
+                >
                   <b>
                     Sequencing Manifest
                   </b>
                 </p>
-                <p>
-                  <small>
-                    File type description goes here...
-                  </small>
+                <p
+                  class="text-wrap-75 text-grey"
+                >
+                  Tabular files (e.g. CSV, TSV, Excel) containing the biospecimen identifiers and the associated genomic data files. Typically provided by the sequencing center.
                 </p>
               </div>
             </div>
@@ -150,33 +162,37 @@ Object {
             <div
               class="ui compact segment selectionRadio--card"
             >
-              <div
-                class="ui radio checkbox selectionRadio"
-              >
-                <input
-                  class="hidden"
-                  id="OTH"
-                  name="file_type"
-                  readonly=""
-                  tabindex="0"
-                  type="radio"
-                  value="OTH"
-                />
-                <i
-                  aria-hidden="true"
-                  class="black question large bordered circular inverted icon"
-                />
+              <div>
+                <div
+                  class="ui radio checkbox"
+                >
+                  <input
+                    class="hidden"
+                    id="OTH"
+                    name="file_type"
+                    readonly=""
+                    tabindex="0"
+                    type="radio"
+                    value="OTH"
+                  />
+                  <i
+                    aria-hidden="true"
+                    class="black question large bordered circular inverted icon"
+                  />
+                </div>
               </div>
               <div>
-                <p>
+                <p
+                  class="mb-5"
+                >
                   <b>
                     Other
                   </b>
                 </p>
-                <p>
-                  <small>
-                    File type description goes here...
-                  </small>
+                <p
+                  class="text-wrap-75 text-grey"
+                >
+                  Any useful documents, such as study background information, data dictionaries, etc., that does not clearly fit in the other categories.
                 </p>
               </div>
             </div>
@@ -233,33 +249,37 @@ Object {
           <div
             class="ui compact segment selectionRadio--card"
           >
-            <div
-              class="ui radio checkbox selectionRadio"
-            >
-              <input
-                class="hidden"
-                id="SHM"
-                name="file_type"
-                readonly=""
-                tabindex="0"
-                type="radio"
-                value="SHM"
-              />
-              <i
-                aria-hidden="true"
-                class="black shipping large bordered circular inverted icon"
-              />
+            <div>
+              <div
+                class="ui radio checkbox"
+              >
+                <input
+                  class="hidden"
+                  id="SHM"
+                  name="file_type"
+                  readonly=""
+                  tabindex="0"
+                  type="radio"
+                  value="SHM"
+                />
+                <i
+                  aria-hidden="true"
+                  class="black shipping large bordered circular inverted icon"
+                />
+              </div>
             </div>
             <div>
-              <p>
+              <p
+                class="mb-5"
+              >
                 <b>
-                  Shipping Manifest
+                  Biospecimen Manifest
                 </b>
               </p>
-              <p>
-                <small>
-                  File type description goes here...
-                </small>
+              <p
+                class="text-wrap-75 text-grey"
+              >
+                Tabular files (e.g. CSV, TSV, Excel) containing biospecimen identifiers and metadata (e.g. tissue type, composition) provided to sequencing centers as well as consent type.
               </p>
             </div>
           </div>
@@ -270,33 +290,37 @@ Object {
           <div
             class="ui compact segment selectionRadio--card"
           >
-            <div
-              class="ui radio checkbox selectionRadio"
-            >
-              <input
-                class="hidden"
-                id="CLN"
-                name="file_type"
-                readonly=""
-                tabindex="0"
-                type="radio"
-                value="CLN"
-              />
-              <i
-                aria-hidden="true"
-                class="black hospital large bordered circular inverted icon"
-              />
+            <div>
+              <div
+                class="ui radio checkbox"
+              >
+                <input
+                  class="hidden"
+                  id="CLN"
+                  name="file_type"
+                  readonly=""
+                  tabindex="0"
+                  type="radio"
+                  value="CLN"
+                />
+                <i
+                  aria-hidden="true"
+                  class="black hospital large bordered circular inverted icon"
+                />
+              </div>
             </div>
             <div>
-              <p>
+              <p
+                class="mb-5"
+              >
                 <b>
-                  Clinical/Phenotype Data
+                  Clinical/Phenotypic Data
                 </b>
               </p>
-              <p>
-                <small>
-                  File type description goes here...
-                </small>
+              <p
+                class="text-wrap-75 text-grey"
+              >
+                Structured files with data linked to the biospecimen identifiers provided in the shipping manifest(s). Exports from data management applications, such as REDCap, are the fastest to process, but we will work with you on most formats.
               </p>
             </div>
           </div>
@@ -307,33 +331,37 @@ Object {
           <div
             class="ui compact segment selectionRadio--card"
           >
-            <div
-              class="ui radio checkbox selectionRadio"
-            >
-              <input
-                class="hidden"
-                id="SEQ"
-                name="file_type"
-                readonly=""
-                tabindex="0"
-                type="radio"
-                value="SEQ"
-              />
-              <i
-                aria-hidden="true"
-                class="black dna large bordered circular inverted icon"
-              />
+            <div>
+              <div
+                class="ui radio checkbox"
+              >
+                <input
+                  class="hidden"
+                  id="SEQ"
+                  name="file_type"
+                  readonly=""
+                  tabindex="0"
+                  type="radio"
+                  value="SEQ"
+                />
+                <i
+                  aria-hidden="true"
+                  class="black dna large bordered circular inverted icon"
+                />
+              </div>
             </div>
             <div>
-              <p>
+              <p
+                class="mb-5"
+              >
                 <b>
                   Sequencing Manifest
                 </b>
               </p>
-              <p>
-                <small>
-                  File type description goes here...
-                </small>
+              <p
+                class="text-wrap-75 text-grey"
+              >
+                Tabular files (e.g. CSV, TSV, Excel) containing the biospecimen identifiers and the associated genomic data files. Typically provided by the sequencing center.
               </p>
             </div>
           </div>
@@ -344,33 +372,37 @@ Object {
           <div
             class="ui compact segment selectionRadio--card"
           >
-            <div
-              class="ui radio checkbox selectionRadio"
-            >
-              <input
-                class="hidden"
-                id="OTH"
-                name="file_type"
-                readonly=""
-                tabindex="0"
-                type="radio"
-                value="OTH"
-              />
-              <i
-                aria-hidden="true"
-                class="black question large bordered circular inverted icon"
-              />
+            <div>
+              <div
+                class="ui radio checkbox"
+              >
+                <input
+                  class="hidden"
+                  id="OTH"
+                  name="file_type"
+                  readonly=""
+                  tabindex="0"
+                  type="radio"
+                  value="OTH"
+                />
+                <i
+                  aria-hidden="true"
+                  class="black question large bordered circular inverted icon"
+                />
+              </div>
             </div>
             <div>
-              <p>
+              <p
+                class="mb-5"
+              >
                 <b>
                   Other
                 </b>
               </p>
-              <p>
-                <small>
-                  File type description goes here...
-                </small>
+              <p
+                class="text-wrap-75 text-grey"
+              >
+                Any useful documents, such as study background information, data dictionaries, etc., that does not clearly fit in the other categories.
               </p>
             </div>
           </div>
@@ -492,33 +524,37 @@ Object {
             <div
               class="ui compact segment selectionRadio--card"
             >
-              <div
-                class="ui radio checkbox selectionRadio"
-              >
-                <input
-                  class="hidden"
-                  id="SHM"
-                  name="file_type"
-                  readonly=""
-                  tabindex="0"
-                  type="radio"
-                  value="SHM"
-                />
-                <i
-                  aria-hidden="true"
-                  class="black shipping large bordered circular inverted icon"
-                />
+              <div>
+                <div
+                  class="ui radio checkbox"
+                >
+                  <input
+                    class="hidden"
+                    id="SHM"
+                    name="file_type"
+                    readonly=""
+                    tabindex="0"
+                    type="radio"
+                    value="SHM"
+                  />
+                  <i
+                    aria-hidden="true"
+                    class="black shipping large bordered circular inverted icon"
+                  />
+                </div>
               </div>
               <div>
-                <p>
+                <p
+                  class="mb-5"
+                >
                   <b>
-                    Shipping Manifest
+                    Biospecimen Manifest
                   </b>
                 </p>
-                <p>
-                  <small>
-                    File type description goes here...
-                  </small>
+                <p
+                  class="text-wrap-75 text-grey"
+                >
+                  Tabular files (e.g. CSV, TSV, Excel) containing biospecimen identifiers and metadata (e.g. tissue type, composition) provided to sequencing centers as well as consent type.
                 </p>
               </div>
             </div>
@@ -529,33 +565,37 @@ Object {
             <div
               class="ui compact segment selectionRadio--card"
             >
-              <div
-                class="ui radio checkbox selectionRadio"
-              >
-                <input
-                  class="hidden"
-                  id="CLN"
-                  name="file_type"
-                  readonly=""
-                  tabindex="0"
-                  type="radio"
-                  value="CLN"
-                />
-                <i
-                  aria-hidden="true"
-                  class="black hospital large bordered circular inverted icon"
-                />
+              <div>
+                <div
+                  class="ui radio checkbox"
+                >
+                  <input
+                    class="hidden"
+                    id="CLN"
+                    name="file_type"
+                    readonly=""
+                    tabindex="0"
+                    type="radio"
+                    value="CLN"
+                  />
+                  <i
+                    aria-hidden="true"
+                    class="black hospital large bordered circular inverted icon"
+                  />
+                </div>
               </div>
               <div>
-                <p>
+                <p
+                  class="mb-5"
+                >
                   <b>
-                    Clinical/Phenotype Data
+                    Clinical/Phenotypic Data
                   </b>
                 </p>
-                <p>
-                  <small>
-                    File type description goes here...
-                  </small>
+                <p
+                  class="text-wrap-75 text-grey"
+                >
+                  Structured files with data linked to the biospecimen identifiers provided in the shipping manifest(s). Exports from data management applications, such as REDCap, are the fastest to process, but we will work with you on most formats.
                 </p>
               </div>
             </div>
@@ -566,33 +606,37 @@ Object {
             <div
               class="ui compact segment selectionRadio--card"
             >
-              <div
-                class="ui radio checkbox selectionRadio"
-              >
-                <input
-                  class="hidden"
-                  id="SEQ"
-                  name="file_type"
-                  readonly=""
-                  tabindex="0"
-                  type="radio"
-                  value="SEQ"
-                />
-                <i
-                  aria-hidden="true"
-                  class="black dna large bordered circular inverted icon"
-                />
+              <div>
+                <div
+                  class="ui radio checkbox"
+                >
+                  <input
+                    class="hidden"
+                    id="SEQ"
+                    name="file_type"
+                    readonly=""
+                    tabindex="0"
+                    type="radio"
+                    value="SEQ"
+                  />
+                  <i
+                    aria-hidden="true"
+                    class="black dna large bordered circular inverted icon"
+                  />
+                </div>
               </div>
               <div>
-                <p>
+                <p
+                  class="mb-5"
+                >
                   <b>
                     Sequencing Manifest
                   </b>
                 </p>
-                <p>
-                  <small>
-                    File type description goes here...
-                  </small>
+                <p
+                  class="text-wrap-75 text-grey"
+                >
+                  Tabular files (e.g. CSV, TSV, Excel) containing the biospecimen identifiers and the associated genomic data files. Typically provided by the sequencing center.
                 </p>
               </div>
             </div>
@@ -603,33 +647,37 @@ Object {
             <div
               class="ui compact segment selectionRadio--card"
             >
-              <div
-                class="ui radio checkbox selectionRadio"
-              >
-                <input
-                  class="hidden"
-                  id="OTH"
-                  name="file_type"
-                  readonly=""
-                  tabindex="0"
-                  type="radio"
-                  value="OTH"
-                />
-                <i
-                  aria-hidden="true"
-                  class="black question large bordered circular inverted icon"
-                />
+              <div>
+                <div
+                  class="ui radio checkbox"
+                >
+                  <input
+                    class="hidden"
+                    id="OTH"
+                    name="file_type"
+                    readonly=""
+                    tabindex="0"
+                    type="radio"
+                    value="OTH"
+                  />
+                  <i
+                    aria-hidden="true"
+                    class="black question large bordered circular inverted icon"
+                  />
+                </div>
               </div>
               <div>
-                <p>
+                <p
+                  class="mb-5"
+                >
                   <b>
                     Other
                   </b>
                 </p>
-                <p>
-                  <small>
-                    File type description goes here...
-                  </small>
+                <p
+                  class="text-wrap-75 text-grey"
+                >
+                  Any useful documents, such as study background information, data dictionaries, etc., that does not clearly fit in the other categories.
                 </p>
               </div>
             </div>
@@ -697,33 +745,37 @@ Object {
             <div
               class="ui compact segment selectionRadio--card"
             >
-              <div
-                class="ui radio checkbox selectionRadio"
-              >
-                <input
-                  class="hidden"
-                  id="SHM"
-                  name="file_type"
-                  readonly=""
-                  tabindex="0"
-                  type="radio"
-                  value="SHM"
-                />
-                <i
-                  aria-hidden="true"
-                  class="black shipping large bordered circular inverted icon"
-                />
+              <div>
+                <div
+                  class="ui radio checkbox"
+                >
+                  <input
+                    class="hidden"
+                    id="SHM"
+                    name="file_type"
+                    readonly=""
+                    tabindex="0"
+                    type="radio"
+                    value="SHM"
+                  />
+                  <i
+                    aria-hidden="true"
+                    class="black shipping large bordered circular inverted icon"
+                  />
+                </div>
               </div>
               <div>
-                <p>
+                <p
+                  class="mb-5"
+                >
                   <b>
-                    Shipping Manifest
+                    Biospecimen Manifest
                   </b>
                 </p>
-                <p>
-                  <small>
-                    File type description goes here...
-                  </small>
+                <p
+                  class="text-wrap-75 text-grey"
+                >
+                  Tabular files (e.g. CSV, TSV, Excel) containing biospecimen identifiers and metadata (e.g. tissue type, composition) provided to sequencing centers as well as consent type.
                 </p>
               </div>
             </div>
@@ -734,34 +786,38 @@ Object {
             <div
               class="ui blue compact segment selectionRadio--card"
             >
-              <div
-                class="ui checked radio checkbox selectionRadio"
-              >
-                <input
-                  checked=""
-                  class="hidden"
-                  id="CLN"
-                  name="file_type"
-                  readonly=""
-                  tabindex="0"
-                  type="radio"
-                  value="CLN"
-                />
-                <i
-                  aria-hidden="true"
-                  class="blue hospital large bordered circular inverted icon"
-                />
+              <div>
+                <div
+                  class="ui checked radio checkbox"
+                >
+                  <input
+                    checked=""
+                    class="hidden"
+                    id="CLN"
+                    name="file_type"
+                    readonly=""
+                    tabindex="0"
+                    type="radio"
+                    value="CLN"
+                  />
+                  <i
+                    aria-hidden="true"
+                    class="blue hospital large bordered circular inverted icon"
+                  />
+                </div>
               </div>
               <div>
-                <p>
+                <p
+                  class="mb-5"
+                >
                   <b>
-                    Clinical/Phenotype Data
+                    Clinical/Phenotypic Data
                   </b>
                 </p>
-                <p>
-                  <small>
-                    File type description goes here...
-                  </small>
+                <p
+                  class="text-wrap-75 text-grey"
+                >
+                  Structured files with data linked to the biospecimen identifiers provided in the shipping manifest(s). Exports from data management applications, such as REDCap, are the fastest to process, but we will work with you on most formats.
                 </p>
               </div>
             </div>
@@ -772,33 +828,37 @@ Object {
             <div
               class="ui compact segment selectionRadio--card"
             >
-              <div
-                class="ui radio checkbox selectionRadio"
-              >
-                <input
-                  class="hidden"
-                  id="SEQ"
-                  name="file_type"
-                  readonly=""
-                  tabindex="0"
-                  type="radio"
-                  value="SEQ"
-                />
-                <i
-                  aria-hidden="true"
-                  class="black dna large bordered circular inverted icon"
-                />
+              <div>
+                <div
+                  class="ui radio checkbox"
+                >
+                  <input
+                    class="hidden"
+                    id="SEQ"
+                    name="file_type"
+                    readonly=""
+                    tabindex="0"
+                    type="radio"
+                    value="SEQ"
+                  />
+                  <i
+                    aria-hidden="true"
+                    class="black dna large bordered circular inverted icon"
+                  />
+                </div>
               </div>
               <div>
-                <p>
+                <p
+                  class="mb-5"
+                >
                   <b>
                     Sequencing Manifest
                   </b>
                 </p>
-                <p>
-                  <small>
-                    File type description goes here...
-                  </small>
+                <p
+                  class="text-wrap-75 text-grey"
+                >
+                  Tabular files (e.g. CSV, TSV, Excel) containing the biospecimen identifiers and the associated genomic data files. Typically provided by the sequencing center.
                 </p>
               </div>
             </div>
@@ -809,33 +869,37 @@ Object {
             <div
               class="ui compact segment selectionRadio--card"
             >
-              <div
-                class="ui radio checkbox selectionRadio"
-              >
-                <input
-                  class="hidden"
-                  id="OTH"
-                  name="file_type"
-                  readonly=""
-                  tabindex="0"
-                  type="radio"
-                  value="OTH"
-                />
-                <i
-                  aria-hidden="true"
-                  class="black question large bordered circular inverted icon"
-                />
+              <div>
+                <div
+                  class="ui radio checkbox"
+                >
+                  <input
+                    class="hidden"
+                    id="OTH"
+                    name="file_type"
+                    readonly=""
+                    tabindex="0"
+                    type="radio"
+                    value="OTH"
+                  />
+                  <i
+                    aria-hidden="true"
+                    class="black question large bordered circular inverted icon"
+                  />
+                </div>
               </div>
               <div>
-                <p>
+                <p
+                  class="mb-5"
+                >
                   <b>
                     Other
                   </b>
                 </p>
-                <p>
-                  <small>
-                    File type description goes here...
-                  </small>
+                <p
+                  class="text-wrap-75 text-grey"
+                >
+                  Any useful documents, such as study background information, data dictionaries, etc., that does not clearly fit in the other categories.
                 </p>
               </div>
             </div>
@@ -906,33 +970,37 @@ Object {
           <div
             class="ui compact segment selectionRadio--card"
           >
-            <div
-              class="ui radio checkbox selectionRadio"
-            >
-              <input
-                class="hidden"
-                id="SHM"
-                name="file_type"
-                readonly=""
-                tabindex="0"
-                type="radio"
-                value="SHM"
-              />
-              <i
-                aria-hidden="true"
-                class="black shipping large bordered circular inverted icon"
-              />
+            <div>
+              <div
+                class="ui radio checkbox"
+              >
+                <input
+                  class="hidden"
+                  id="SHM"
+                  name="file_type"
+                  readonly=""
+                  tabindex="0"
+                  type="radio"
+                  value="SHM"
+                />
+                <i
+                  aria-hidden="true"
+                  class="black shipping large bordered circular inverted icon"
+                />
+              </div>
             </div>
             <div>
-              <p>
+              <p
+                class="mb-5"
+              >
                 <b>
-                  Shipping Manifest
+                  Biospecimen Manifest
                 </b>
               </p>
-              <p>
-                <small>
-                  File type description goes here...
-                </small>
+              <p
+                class="text-wrap-75 text-grey"
+              >
+                Tabular files (e.g. CSV, TSV, Excel) containing biospecimen identifiers and metadata (e.g. tissue type, composition) provided to sequencing centers as well as consent type.
               </p>
             </div>
           </div>
@@ -943,34 +1011,38 @@ Object {
           <div
             class="ui blue compact segment selectionRadio--card"
           >
-            <div
-              class="ui checked radio checkbox selectionRadio"
-            >
-              <input
-                checked=""
-                class="hidden"
-                id="CLN"
-                name="file_type"
-                readonly=""
-                tabindex="0"
-                type="radio"
-                value="CLN"
-              />
-              <i
-                aria-hidden="true"
-                class="blue hospital large bordered circular inverted icon"
-              />
+            <div>
+              <div
+                class="ui checked radio checkbox"
+              >
+                <input
+                  checked=""
+                  class="hidden"
+                  id="CLN"
+                  name="file_type"
+                  readonly=""
+                  tabindex="0"
+                  type="radio"
+                  value="CLN"
+                />
+                <i
+                  aria-hidden="true"
+                  class="blue hospital large bordered circular inverted icon"
+                />
+              </div>
             </div>
             <div>
-              <p>
+              <p
+                class="mb-5"
+              >
                 <b>
-                  Clinical/Phenotype Data
+                  Clinical/Phenotypic Data
                 </b>
               </p>
-              <p>
-                <small>
-                  File type description goes here...
-                </small>
+              <p
+                class="text-wrap-75 text-grey"
+              >
+                Structured files with data linked to the biospecimen identifiers provided in the shipping manifest(s). Exports from data management applications, such as REDCap, are the fastest to process, but we will work with you on most formats.
               </p>
             </div>
           </div>
@@ -981,33 +1053,37 @@ Object {
           <div
             class="ui compact segment selectionRadio--card"
           >
-            <div
-              class="ui radio checkbox selectionRadio"
-            >
-              <input
-                class="hidden"
-                id="SEQ"
-                name="file_type"
-                readonly=""
-                tabindex="0"
-                type="radio"
-                value="SEQ"
-              />
-              <i
-                aria-hidden="true"
-                class="black dna large bordered circular inverted icon"
-              />
+            <div>
+              <div
+                class="ui radio checkbox"
+              >
+                <input
+                  class="hidden"
+                  id="SEQ"
+                  name="file_type"
+                  readonly=""
+                  tabindex="0"
+                  type="radio"
+                  value="SEQ"
+                />
+                <i
+                  aria-hidden="true"
+                  class="black dna large bordered circular inverted icon"
+                />
+              </div>
             </div>
             <div>
-              <p>
+              <p
+                class="mb-5"
+              >
                 <b>
                   Sequencing Manifest
                 </b>
               </p>
-              <p>
-                <small>
-                  File type description goes here...
-                </small>
+              <p
+                class="text-wrap-75 text-grey"
+              >
+                Tabular files (e.g. CSV, TSV, Excel) containing the biospecimen identifiers and the associated genomic data files. Typically provided by the sequencing center.
               </p>
             </div>
           </div>
@@ -1018,33 +1094,37 @@ Object {
           <div
             class="ui compact segment selectionRadio--card"
           >
-            <div
-              class="ui radio checkbox selectionRadio"
-            >
-              <input
-                class="hidden"
-                id="OTH"
-                name="file_type"
-                readonly=""
-                tabindex="0"
-                type="radio"
-                value="OTH"
-              />
-              <i
-                aria-hidden="true"
-                class="black question large bordered circular inverted icon"
-              />
+            <div>
+              <div
+                class="ui radio checkbox"
+              >
+                <input
+                  class="hidden"
+                  id="OTH"
+                  name="file_type"
+                  readonly=""
+                  tabindex="0"
+                  type="radio"
+                  value="OTH"
+                />
+                <i
+                  aria-hidden="true"
+                  class="black question large bordered circular inverted icon"
+                />
+              </div>
             </div>
             <div>
-              <p>
+              <p
+                class="mb-5"
+              >
                 <b>
                   Other
                 </b>
               </p>
-              <p>
-                <small>
-                  File type description goes here...
-                </small>
+              <p
+                class="text-wrap-75 text-grey"
+              >
+                Any useful documents, such as study background information, data dictionaries, etc., that does not clearly fit in the other categories.
               </p>
             </div>
           </div>

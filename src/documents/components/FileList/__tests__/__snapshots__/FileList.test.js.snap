@@ -134,7 +134,7 @@ exports[`renders with files 1`] = `
                 aria-hidden="true"
                 class="shipping icon"
               />
-               Shipping Manifest
+               Biospecimen Manifest
             </small>
           </div>
           <div
@@ -151,7 +151,7 @@ exports[`renders with files 1`] = `
                 aria-hidden="true"
                 class="hospital icon"
               />
-               Clinical/Phenotype Data
+               Clinical/Phenotypic Data
             </small>
           </div>
           <div
@@ -349,7 +349,7 @@ exports[`renders with files 1`] = `
                   aria-hidden="true"
                   class="grey hospital small icon"
                 />
-                Clinical/Phenotype Data
+                Clinical/Phenotypic Data
               </div>
             </div>
             <div
@@ -591,7 +591,7 @@ exports[`renders with files 1`] = `
                   aria-hidden="true"
                   class="grey hospital small icon"
                 />
-                Clinical/Phenotype Data
+                Clinical/Phenotypic Data
               </div>
             </div>
             <div
@@ -1694,7 +1694,7 @@ exports[`renders with files 2`] = `
                 aria-hidden="true"
                 class="shipping icon"
               />
-               Shipping Manifest
+               Biospecimen Manifest
             </small>
           </div>
           <div
@@ -1711,7 +1711,7 @@ exports[`renders with files 2`] = `
                 aria-hidden="true"
                 class="hospital icon"
               />
-               Clinical/Phenotype Data
+               Clinical/Phenotypic Data
             </small>
           </div>
           <div
@@ -2298,7 +2298,7 @@ exports[`renders with files 3`] = `
                 aria-hidden="true"
                 class="shipping icon"
               />
-               Shipping Manifest
+               Biospecimen Manifest
             </small>
           </div>
           <div
@@ -2315,7 +2315,7 @@ exports[`renders with files 3`] = `
                 aria-hidden="true"
                 class="hospital icon"
               />
-               Clinical/Phenotype Data
+               Clinical/Phenotypic Data
             </small>
           </div>
           <div
