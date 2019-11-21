@@ -28,6 +28,7 @@ const validate = ({file_name}, fileNode, studyFiles = []) => {
       existing_similarity: null,
       upload_similarity: null,
       file_ext: null,
+      exact_matches: null,
       dates: null,
     },
   };
@@ -49,6 +50,9 @@ const validate = ({file_name}, fileNode, studyFiles = []) => {
   //existing study files
   if (similarDocs && similarDocs.matches.length > 0)
     errors.file_name.existing_similarity = true;
+  //title exact match
+  if (similarDocs && similarDocs.exact_matches.length > 0)
+    errors.file_name.exact_matches = true;
 
   // black listed words
   if (new RegExp(DOC_NAME_REGEXS[0], 'gi').test(file_name))
