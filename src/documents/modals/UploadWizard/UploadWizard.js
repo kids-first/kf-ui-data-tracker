@@ -206,7 +206,7 @@ UploadWizard.propTypes = {
   /** React-router hisotry object  */
   history: PropTypes.any,
   /** Mutation that will upload and create the version */
-  createVersion: PropTypes.func.isRequired,
+  createVersion: PropTypes.func,
 };
 
 export default UploadWizard;
