@@ -78,4 +78,4 @@ SelectElement.propTypes = {
   className: PropTypes.string,
 };
 
-export default withAnalyticsTracking(SelectElement, {logToConsole: true});
+export default withAnalyticsTracking(SelectElement);
