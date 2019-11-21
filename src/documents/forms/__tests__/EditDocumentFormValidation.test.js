@@ -8,6 +8,10 @@ import studyByKfId from '../../../../__mocks__/kf-api-study-creator/responses/st
 import {Segment, Button} from 'semantic-ui-react';
 import {render, fireEvent, cleanup, act} from 'react-testing-library';
 import EditDocumentForm from '../EditDocumentForm';
+import {
+  AnalyticsProviderMock,
+  AmplitudeProxy,
+} from '../../../analyticsTracking';
 
 afterEach(cleanup);
 
@@ -33,30 +37,37 @@ it('blocks submission for invalid Document Name input', async () => {
       <MemoryRouter
         initialEntries={['/study/SD_8WX8QQ06/documents/new-document']}
       >
-        <EditDocumentForm
-          studyFiles={studyByKfId.data.studyByKfId.files.edges}
-          isAdmin={false}
-          fileNode={file}
-          handleSubmit={handleSubmit}
-          errors={errors}
-          history={historyMock}
-          showFieldHints={true}
-          submitButtons={(disabled, onUploading) => (
-            <Segment vertical basic compact>
-              <Button
-                floated="right"
-                type="submit"
-                primary={errors.length === 0}
-                disabled={disabled}
-              >
-                {onUploading && !errors ? 'UPLOADING ...' : 'UPLOAD'}
-              </Button>
-              <Button floated="right" primary={errors.length > 0}>
-                CANCEL
-              </Button>
-            </Segment>
-          )}
-        />
+        <AnalyticsProviderMock>
+          <AmplitudeProxy>
+            {tracking => (
+              <EditDocumentForm
+                tracking={tracking}
+                studyFiles={studyByKfId.data.studyByKfId.files.edges}
+                isAdmin={false}
+                fileNode={file}
+                handleSubmit={handleSubmit}
+                errors={errors}
+                history={historyMock}
+                showFieldHints={true}
+                submitButtons={(disabled, onUploading) => (
+                  <Segment vertical basic compact>
+                    <Button
+                      floated="right"
+                      type="submit"
+                      primary={errors.length === 0}
+                      disabled={disabled}
+                    >
+                      {onUploading && !errors ? 'UPLOADING ...' : 'UPLOAD'}
+                    </Button>
+                    <Button floated="right" primary={errors.length > 0}>
+                      CANCEL
+                    </Button>
+                  </Segment>
+                )}
+              />
+            )}
+          </AmplitudeProxy>
+        </AnalyticsProviderMock>
       </MemoryRouter>
     </MockedProvider>,
   );
@@ -109,30 +120,37 @@ for (let index = 0; index < BLACKLISTED_WORDS.length; index++) {
         <MemoryRouter
           initialEntries={['/study/SD_8WX8QQ06/documents/new-document']}
         >
-          <EditDocumentForm
-            studyFiles={studyByKfId.data.studyByKfId.files.edges}
-            isAdmin={false}
-            fileNode={file}
-            handleSubmit={handleSubmit}
-            errors={errors}
-            history={historyMock}
-            showFieldHints={true}
-            submitButtons={(disabled, onUploading) => (
-              <Segment vertical basic compact>
-                <Button
-                  floated="right"
-                  type="submit"
-                  primary={errors.length === 0}
-                  disabled={disabled}
-                >
-                  {onUploading && !errors ? 'UPLOADING ...' : 'UPLOAD'}
-                </Button>
-                <Button floated="right" primary={errors.length > 0}>
-                  CANCEL
-                </Button>
-              </Segment>
-            )}
-          />
+          <AnalyticsProviderMock>
+            <AmplitudeProxy>
+              {tracking => (
+                <EditDocumentForm
+                  studyFiles={studyByKfId.data.studyByKfId.files.edges}
+                  isAdmin={false}
+                  tracking={tracking}
+                  fileNode={file}
+                  handleSubmit={handleSubmit}
+                  errors={errors}
+                  history={historyMock}
+                  showFieldHints={true}
+                  submitButtons={(disabled, onUploading) => (
+                    <Segment vertical basic compact>
+                      <Button
+                        floated="right"
+                        type="submit"
+                        primary={errors.length === 0}
+                        disabled={disabled}
+                      >
+                        {onUploading && !errors ? 'UPLOADING ...' : 'UPLOAD'}
+                      </Button>
+                      <Button floated="right" primary={errors.length > 0}>
+                        CANCEL
+                      </Button>
+                    </Segment>
+                  )}
+                />
+              )}
+            </AmplitudeProxy>
+          </AnalyticsProviderMock>
         </MemoryRouter>
       </MockedProvider>,
     );
@@ -182,30 +200,37 @@ for (let index = 0; index < FILE_EXT.length; index++) {
         <MemoryRouter
           initialEntries={['/study/SD_8WX8QQ06/documents/new-document']}
         >
-          <EditDocumentForm
-            studyFiles={studyByKfId.data.studyByKfId.files.edges}
-            isAdmin={false}
-            fileNode={file}
-            handleSubmit={handleSubmit}
-            errors={errors}
-            history={historyMock}
-            showFieldHints={true}
-            submitButtons={(disabled, onUploading) => (
-              <Segment vertical basic compact>
-                <Button
-                  floated="right"
-                  type="submit"
-                  primary={errors.length === 0}
-                  disabled={disabled}
-                >
-                  {onUploading && !errors ? 'UPLOADING ...' : 'UPLOAD'}
-                </Button>
-                <Button floated="right" primary={errors.length > 0}>
-                  CANCEL
-                </Button>
-              </Segment>
-            )}
-          />
+          <AnalyticsProviderMock>
+            <AmplitudeProxy>
+              {tracking => (
+                <EditDocumentForm
+                  tracking={tracking}
+                  studyFiles={studyByKfId.data.studyByKfId.files.edges}
+                  isAdmin={false}
+                  fileNode={file}
+                  handleSubmit={handleSubmit}
+                  errors={errors}
+                  history={historyMock}
+                  showFieldHints={true}
+                  submitButtons={(disabled, onUploading) => (
+                    <Segment vertical basic compact>
+                      <Button
+                        floated="right"
+                        type="submit"
+                        primary={errors.length === 0}
+                        disabled={disabled}
+                      >
+                        {onUploading && !errors ? 'UPLOADING ...' : 'UPLOAD'}
+                      </Button>
+                      <Button floated="right" primary={errors.length > 0}>
+                        CANCEL
+                      </Button>
+                    </Segment>
+                  )}
+                />
+              )}
+            </AmplitudeProxy>
+          </AnalyticsProviderMock>
         </MemoryRouter>
       </MockedProvider>,
     );
@@ -259,30 +284,37 @@ for (let index = 0; index < DATE_FORMATS.length; index++) {
         <MemoryRouter
           initialEntries={['/study/SD_8WX8QQ06/documents/new-document']}
         >
-          <EditDocumentForm
-            studyFiles={studyByKfId.data.studyByKfId.files.edges}
-            isAdmin={false}
-            fileNode={file}
-            handleSubmit={handleSubmit}
-            errors={errors}
-            history={historyMock}
-            showFieldHints={true}
-            submitButtons={(disabled, onUploading) => (
-              <Segment vertical basic compact>
-                <Button
-                  floated="right"
-                  type="submit"
-                  primary={errors.length === 0}
-                  disabled={disabled}
-                >
-                  {onUploading && !errors ? 'UPLOADING ...' : 'UPLOAD'}
-                </Button>
-                <Button floated="right" primary={errors.length > 0}>
-                  CANCEL
-                </Button>
-              </Segment>
-            )}
-          />
+          <AnalyticsProviderMock>
+            <AmplitudeProxy>
+              {tracking => (
+                <EditDocumentForm
+                  tracking={tracking}
+                  studyFiles={studyByKfId.data.studyByKfId.files.edges}
+                  isAdmin={false}
+                  fileNode={file}
+                  handleSubmit={handleSubmit}
+                  errors={errors}
+                  history={historyMock}
+                  showFieldHints={true}
+                  submitButtons={(disabled, onUploading) => (
+                    <Segment vertical basic compact>
+                      <Button
+                        floated="right"
+                        type="submit"
+                        primary={errors.length === 0}
+                        disabled={disabled}
+                      >
+                        {onUploading && !errors ? 'UPLOADING ...' : 'UPLOAD'}
+                      </Button>
+                      <Button floated="right" primary={errors.length > 0}>
+                        CANCEL
+                      </Button>
+                    </Segment>
+                  )}
+                />
+              )}
+            </AmplitudeProxy>
+          </AnalyticsProviderMock>
         </MemoryRouter>
       </MockedProvider>,
     );
