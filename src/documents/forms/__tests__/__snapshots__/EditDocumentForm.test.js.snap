@@ -18,12 +18,14 @@ Object {
           </label>
           <input
             data-testid="name-input"
-            error="undefined"
             name="file_name"
             placeholder="Phenotypic Data manifest for..."
             type="text"
             value=""
           />
+          <small>
+            Please provide a descriptive title without dates or adjectives such as "new", "updated", "final", etc.
+          </small>
         </div>
         <div
           class="required field"
@@ -228,12 +230,14 @@ Object {
         </label>
         <input
           data-testid="name-input"
-          error="undefined"
           name="file_name"
           placeholder="Phenotypic Data manifest for..."
           type="text"
           value=""
         />
+        <small>
+          Please provide a descriptive title without dates or adjectives such as "new", "updated", "final", etc.
+        </small>
       </div>
       <div
         class="required field"
@@ -503,12 +507,14 @@ Object {
           </label>
           <input
             data-testid="name-input"
-            error="undefined"
             name="file_name"
             placeholder="Phenotypic Data manifest for..."
             type="text"
             value=""
           />
+          <small>
+            Please provide a descriptive title without dates or adjectives such as "new", "updated", "final", etc.
+          </small>
         </div>
         <div
           class="required field"
@@ -712,12 +718,14 @@ Object {
           </label>
           <input
             data-testid="name-input"
-            error="undefined"
             name="file_name"
             placeholder="Phenotypic Data manifest for..."
             type="text"
             value="Existing File Name"
           />
+          <small>
+            Please provide a descriptive title without dates or adjectives such as "new", "updated", "final", etc.
+          </small>
         </div>
         <div
           class="field"
@@ -937,12 +945,14 @@ Object {
         </label>
         <input
           data-testid="name-input"
-          error="undefined"
           name="file_name"
           placeholder="Phenotypic Data manifest for..."
           type="text"
           value="Existing File Name"
         />
+        <small>
+          Please provide a descriptive title without dates or adjectives such as "new", "updated", "final", etc.
+        </small>
       </div>
       <div
         class="field"
