@@ -122,7 +122,9 @@ export const defaultSort = (a, b) => {
 };
 
 // sort list of file nodes by string similarity to file name
-export const sortFilesBySimilarity = (file, fileList, threshold = 0.3) => {
+export const sortFilesBySimilarity = (file, fileList, threshold = 0.9) => {
+  if (!fileList.length) return false;
+
   const sortByRating = files =>
     files.sort((a, b) => (a.rating > b.rating ? 1 : -1)).reverse();
 
@@ -136,6 +138,8 @@ export const sortFilesBySimilarity = (file, fileList, threshold = 0.3) => {
     f => f.rating > threshold,
   );
 
+  const sameDocuments = fileMatches.ratings.filter(f => f.rating === 1);
+
   const updateDocumentsList = fileList.map(({node}) => ({
     rating: fileMatches.ratings.filter(({target}) => target === node.name)[0]
       .rating,
@@ -143,6 +147,7 @@ export const sortFilesBySimilarity = (file, fileList, threshold = 0.3) => {
   }));
 
   return {
+    exact_matches: sameDocuments,
     best_match: fileMatches.bestMatch,
     matches: sortByRating(similarDocuments),
     ranked_files: sortByRating(updateDocumentsList),

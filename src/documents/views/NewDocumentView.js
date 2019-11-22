@@ -31,9 +31,10 @@ const NewDocumentView = ({match, history, location}) => {
 
   // Tracks any error state reported from the server
   const [errors, setErrors] = useState('');
-  const studyFiles = study.data.studyByKfId
-    ? study.data.studyByKfId.files.edges
-    : [];
+  const studyFiles =
+    study.data && study.data.studyByKfId
+      ? study.data.studyByKfId.files.edges
+      : [];
 
   // If the user landed here without a file, they probably got here from
   // some external page. We'll send them back to the study's file list view.
@@ -95,7 +96,6 @@ const NewDocumentView = ({match, history, location}) => {
             fileNode={location.state.file}
             handleSubmit={handleSubmit}
             history={history}
-            showFieldHints={true}
             submitButtons={(disabled, onUploading) => (
               <Segment vertical basic compact>
                 <Button

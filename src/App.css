@@ -46,6 +46,10 @@ body {
   box-shadow: none !important;
 }
 
+.border-red {
+  border-color: red !important;
+}
+
 .readOnlyField {
   margin-bottom: 0px !important;
   input {

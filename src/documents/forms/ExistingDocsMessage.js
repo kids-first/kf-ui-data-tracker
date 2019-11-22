@@ -8,6 +8,7 @@ const ExistingDocsMessage = ({
   fileNameInput,
   errors,
   setShowDialog,
+  newFile,
 }) => {
   const similarStudyDocs = sortFilesBySimilarity(
     {name: fileNameInput},
@@ -16,15 +17,22 @@ const ExistingDocsMessage = ({
   );
   const SimilarTitleContent = () => (
     <>
-      We found &nbsp;
-      <strong>
-        {similarStudyDocs.matches.length}&nbsp; similar document titles &nbsp;
-      </strong>
-      in this study.
+      {errors.file_name.exact_matches ? (
+        <strong>Documents with this name already exist in this study.</strong>
+      ) : (
+        <span>
+          We found &nbsp;
+          <strong>
+            {similarStudyDocs.matches.length}&nbsp; similar document titles
+            &nbsp;
+          </strong>
+          in this study.
+        </span>
+      )}
       <details>
         <List>
-          {similarStudyDocs.matches.map(doc => (
-            <List.Item key={doc}>
+          {similarStudyDocs.matches.map((doc, index) => (
+            <List.Item key={doc.target + index}>
               <List.Icon name="file" />
               {doc.target} (
               {
@@ -44,17 +52,22 @@ const ExistingDocsMessage = ({
   );
 
   return (
-    <Message info icon size="small">
+    <Message info icon size="small" error={errors.file_name.exact_matches}>
       <Icon name="info circle" />
       <Message.Content>
         <Message.Header>Update Existing Document Instead?</Message.Header>
         {errors.file_name.upload_similarity && <CopiedFileContent />}
         {errors.file_name.existing_similarity && <SimilarTitleContent />}
       </Message.Content>
-
-      <Button color="blue" floated="right" onClick={() => setShowDialog(true)}>
-        Update Existing Document
-      </Button>
+      {newFile && (
+        <Button
+          color="blue"
+          floated="right"
+          onClick={() => setShowDialog(true)}
+        >
+          Update Existing Document
+        </Button>
+      )}
     </Message>
   );
 };

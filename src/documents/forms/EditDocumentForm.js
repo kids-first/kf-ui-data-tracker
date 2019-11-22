@@ -5,7 +5,6 @@ import {Form, TextArea, Dropdown} from 'semantic-ui-react';
 import {Formik, Field} from 'formik';
 import validate from './validate';
 import ExistingDocsMessage from './ExistingDocsMessage';
-import DocumentTitleValidationIndicators from './DocumentTitleValidationIndicators';
 import SelectElement from '../components/FileDetail/SelectElement';
 import Badge from '../../components/Badge/Badge';
 import UploadWizard from '../modals/UploadWizard/UploadWizard';
@@ -26,13 +25,13 @@ const EditDocumentForm = React.forwardRef(
       history,
       handleSubmit,
       submitButtons,
-      showFieldHints,
       studyFiles,
     },
     ref,
   ) => {
     const [onUploading, setUploading] = useState(false);
     const [showDialog, setShowDialog] = useState(false);
+    const [titleError, setTitleError] = useState({});
 
     const options = ['PEN', 'APP', 'CHN', 'PRC'].map(state => ({
       key: state,
@@ -49,7 +48,16 @@ const EditDocumentForm = React.forwardRef(
             file_desc: fileDescription,
             file_status: versionStatus,
           }}
-          validate={vals => validate(vals, fileNode, studyFiles)}
+          validate={vals => {
+            setTitleError(validate(vals, fileNode, studyFiles));
+            let errors = {};
+            ['file_name', 'file_type', 'file_desc'].forEach(function(field) {
+              if (!vals[field]) {
+                errors[field] = 'Required';
+              }
+            });
+            return errors;
+          }}
           onSubmit={values => {
             setUploading(true);
             handleSubmit(...Object.values(values));
@@ -65,21 +73,27 @@ const EditDocumentForm = React.forwardRef(
             touched,
           }) => (
             <>
-              {showFieldHints &&
-                errors.file_name &&
-                (errors.file_name.existing_similarity ||
-                  errors.file_name.upload_similarity) && (
+              {titleError.file_name &&
+                (titleError.file_name.existing_similarity ||
+                  titleError.file_name.exact_matches ||
+                  titleError.file_name.upload_similarity) && (
                   <ExistingDocsMessage
                     setShowDialog={setShowDialog}
-                    errors={errors}
+                    errors={titleError}
                     existingDocs={studyFiles}
                     fileNameInput={values.file_name}
+                    newFile={!versionStatus}
                   />
                 )}
               <Form onSubmit={handleSubmit} ref={ref}>
                 <Form.Field required>
                   <label htmlFor="file_name">Document Title:</label>
                   <input
+                    className={
+                      touched.file_name && errors.file_name
+                        ? 'border-red'
+                        : null
+                    }
                     data-testid="name-input"
                     type="text"
                     name="file_name"
@@ -87,12 +101,11 @@ const EditDocumentForm = React.forwardRef(
                     value={values.file_name}
                     onBlur={handleBlur}
                     onChange={handleChange}
-                    error={`${errors.file_name &&
-                      Object.values(errors.file_name).some(x => x != null)}`}
                   />
-                  {Object.values(errors.file_name || {}).some(
-                    x => x != null,
-                  ) && <DocumentTitleValidationIndicators errors={errors} />}
+                  <small>
+                    Please provide a descriptive title without dates or
+                    adjectives such as "new", "updated", "final", etc.
+                  </small>
                 </Form.Field>
                 {versionStatus && (
                   <Form.Field>
@@ -128,25 +141,26 @@ const EditDocumentForm = React.forwardRef(
                     </Form.Field>
                   ))}
                 </Form.Field>
-
                 <Form.Field required>
                   <label>Describe Document Contents:</label>
                   <TextArea
+                    className={
+                      touched.file_desc && errors.file_desc
+                        ? 'border-red'
+                        : null
+                    }
                     data-testid="description-input"
                     type="text"
                     name="file_desc"
                     value={values.file_desc}
                     onChange={handleChange}
+                    onBlur={handleBlur}
                   />
                 </Form.Field>
                 {submitButtons &&
                   submitButtons(
-                    Object.values(values).every(x =>
-                      Boolean(x !== undefined),
-                    ) ||
-                      Object.values(errors.file_name || {}).some(
-                        x => x != null,
-                      ),
+                    Object.keys(errors).length > 0 ||
+                      values.file_name.length === 0,
                     onUploading,
                   )}
               </Form>
@@ -187,8 +201,6 @@ EditDocumentForm.propTypes = {
   errors: PropTypes.object,
   /** (New file) Displays as buttons for form submitting */
   submitButtons: PropTypes.func,
-  /** show validation hints */
-  showFieldHints: PropTypes.bool,
 };
 
 export default EditDocumentForm;
