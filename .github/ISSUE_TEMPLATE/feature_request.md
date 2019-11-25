@@ -10,6 +10,10 @@ assignees: ''
 
 Who is the intended audience impacted by this change? This should be a link to a pre-defined persona and not free text
 
+## Requirements
+
+Wireframes, mockups or detailed of the feature to the implemented.
+
 ## Motivation/Goal
 
 What is the intention of this change? What outcome do you hope to see from this change?
