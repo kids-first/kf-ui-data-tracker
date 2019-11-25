@@ -11,7 +11,7 @@ import validate from './eventSchemaValidator';
  */
 class AmplitudeProxy extends Amplitude {
   logToConsole = false;
-  saveSchema = false;
+  saveSchemas = false;
 
   constructor(props) {
     super(props);

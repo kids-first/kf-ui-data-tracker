@@ -10,22 +10,25 @@ const saveSchema = async (eventType, eventProps, cb) => {
         eventType.split('__')[0]
       }/${eventType}.schema.json`,
       ...schema,
+      $schema: 'http://json-schema.org/draft-07/schema#',
       description: '',
       properties: {
+        ...schema.properties,
         path: {
-          $ref: '../common_defintions.schema.json#/definitions/path',
+          $ref:
+            'http://kf-ui-data-tracker.kidsfirsrdrc.og/src/analyticsTracking/event_schemas/common_definitions.schema.json#/definitions/path',
         },
         route: {
-          $ref: '../common_defintions.schema.json#/definitions/route',
+          $ref:
+            'http://kf-ui-data-tracker.kidsfirsrdrc.og/src/analyticsTracking/event_schemas/common_definitions.schema.json#/definitions/route',
         },
         view: {
-          $ref: '../common_defintions.schema.json#/definitions/view',
+          $ref:
+            'http://kf-ui-data-tracker.kidsfirsrdrc.og/src/analyticsTracking/event_schemas/common_definitions.schema.json#/definitions/view',
         },
-        ...schema.properties,
       },
+      required: ['path', 'route', 'view'],
     };
-
-    delete schema.properties;
 
     var blob = new Blob([JSON.stringify(schema)], {
       type: 'text/plain;charset=utf-8',

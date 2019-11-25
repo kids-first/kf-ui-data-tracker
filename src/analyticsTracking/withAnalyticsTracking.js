@@ -9,6 +9,7 @@ const EVENT_CONSTANTS = analyticsTrackingConstants;
 const withAnalyticsTracking = (Component, config) => {
   return class extends AmplitudeProxy {
     logToConsole = config ? config.logToConsole : false;
+    saveSchemas = config ? config.saveSchemas : false;
 
     render() {
       return (
