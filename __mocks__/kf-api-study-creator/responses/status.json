@@ -1,0 +1,10 @@
+{
+  "data": {
+    "status": {
+      "name": "Kids First Study Creator",
+      "version": "1.7.2-25-g283efc9",
+      "commit": "283efc9",
+      "__typename": "Status"
+    }
+  }
+}

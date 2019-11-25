@@ -6,6 +6,7 @@ import {
   ALL_EVENTS,
   ALL_USERS,
   GET_PROJECTS,
+  STATUS,
 } from '../../src/state/queries';
 import {
   CREATE_PROJECT,
@@ -43,6 +44,7 @@ import allProjects from './responses/allProjects.json';
 import signedUrl from './responses/signedUrl.json';
 import syncProjects from './responses/syncProjects.json';
 import deleteToken from './responses/deleteToken.json';
+import status from './responses/status.json';
 
 export const mocks = [
   {
@@ -434,5 +436,11 @@ export const mocks = [
       },
     },
     result: allEvents_refetch,
+  },
+  {
+    request: {
+      query: STATUS,
+    },
+    result: status,
   },
 ];
