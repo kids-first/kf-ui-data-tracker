@@ -1,21 +1,24 @@
 {
   "$id": "https://kf-ui-datatracker.kidsfirstdrc.org/event_schemas/STUDY_LIST/STUDY_LIST__VIEW_TOGGLE.schema.json",
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "STUDY_LIST__VIEW_TOGGLE",
   "type": "object",
-  "description": "",
-  "allOf": [
-    {"$ref": "/common_defintions.json#/path"},
-    {"$ref": "/common_defintions.json#/route"},
-    {"$ref": "/common_defintions.json#/view"},
-    {
-      "properties": {
-        "text": {"type": "string", "description": "toggle button text"},
-        "active": {
-          "type": "boolean",
-          "description": "whether or not the button is active"
-        }
-      }
+  "description": "onClick event for the StudyListView list/grid toggle button",
+  "properties": {
+    "path": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirsrdrc.og/src/analyticsTracking/event_schemas/common_definitions.schema.json#/definitions/path"
+    },
+    "route": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirsrdrc.og/src/analyticsTracking/event_schemas/common_definitions.schema.json#/definitions/route"
+    },
+    "view": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirsrdrc.og/src/analyticsTracking/event_schemas/common_definitions.schema.json#/definitions/view"
+    },
+    "text": {"type": "string", "description": "toggle button text"},
+    "active": {
+      "type": "boolean",
+      "description": "whether or not the button is active"
     }
-  ]
+  },
+  "required": ["path", "route", "view", "text", "active"]
 }

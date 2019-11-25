@@ -1,34 +1,53 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://kf-ui-data-tracker/src/analyticsTracking/event_schemas/common_defintions.schema.json",
+  "$id": "http://kf-ui-data-tracker.kidsfirsrdrc.og/src/analyticsTracking/event_schemas/common_definitions.schema.json",
   "title": "Schema definitions",
   "description": "common definitions for easy reuse in other schemas ",
   "definitions": {
     "path": {
+      "$id": "path",
       "type": "string",
       "format": "uri-reference",
       "description": "the url of the current screen, logged from App.js"
     },
     "route": {
+      "$id": "route",
       "type": "string",
       "format": "uri-reference",
       "description": "regex version of the route, path prop passed to Route component"
     },
     "view": {
+      "$id": "view",
       "type": "string",
       "description": "container component name or functional component function name"
     },
     "study": {
+      "$id": "study",
       "type": "object",
       "properties": {
         "kfId": {
           "type": "string",
-          "format": "(SD_)[aZ09]{8}"
-        },
-        "required": [
-          "kfId"
-        ]
-      }
+          "format": "regex",
+          "pattern": "SD_[A-HJ-KM-NP-TV-Z0-9]{8}"
+        }
+      },
+      "required": ["kfId"]
     }
-  }
+  },
+  "type": "object",
+  "properties": {
+    "path": {
+      "$ref": "#/definitions/path"
+    },
+    "route": {
+      "$ref": "#/definitions/route"
+    },
+    "view": {
+      "$ref": "#/definitions/view"
+    },
+    "study": {
+      "$ref": "#/definitions/study"
+    }
+  },
+  "required": ["path", "route", "view"]
 }

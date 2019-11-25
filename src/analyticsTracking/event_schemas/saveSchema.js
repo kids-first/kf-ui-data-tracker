@@ -11,12 +11,18 @@ const saveSchema = async (eventType, eventProps, cb) => {
       }/${eventType}.schema.json`,
       ...schema,
       description: '',
-      allOf: [
-        {$ref: '../common_defintions.json#/path'},
-        {$ref: '../common_defintions.json#/route'},
-        {$ref: '../common_defintions.json#/view'},
-        {properties: schema.properties},
-      ],
+      properties: {
+        path: {
+          $ref: '../common_defintions.schema.json#/definitions/path',
+        },
+        route: {
+          $ref: '../common_defintions.schema.json#/definitions/route',
+        },
+        view: {
+          $ref: '../common_defintions.schema.json#/definitions/view',
+        },
+        ...schema.properties,
+      },
     };
 
     delete schema.properties;

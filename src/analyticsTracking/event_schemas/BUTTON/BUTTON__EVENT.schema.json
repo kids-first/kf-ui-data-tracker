@@ -1,0 +1,33 @@
+{
+  "$id": "http://kf-ui-data-tracker.kidsfirsrdrc.og/src/analyticsTracking/event_schemas/BUTTON/BUTTON__EVENT.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BUTTON__EVENT event schema",
+  "description": "called on a onClick and/or onMouseOver DOM events on Button elements",
+  "type": "object",
+  "properties": {
+    "path": {
+      "$ref": "../common_definitions.schema.json#/definitions/path"
+    },
+    "route": {
+      "$ref": "../common_definitions.schema.json#/definitions/route"
+    },
+    "view": {
+      "$ref": "../common_definitions.schema.json#/definitions/view"
+    },
+    "button_text": {
+      "type": "string",
+      "description": "Text shown to the user at time of event."
+    },
+    "link": {
+      "type": "string",
+      "format": "uri",
+      "description": "Button/Anchor HTML element [href] attribute value"
+    },
+    "button_type": {
+      "type": "string",
+      "description": "If it is not an obvious button specify the type (label, toggle, icon, etc)"
+    }
+  },
+  "additionalProperties": false,
+  "required": ["path", "route", "view", "button_text"]
+}
