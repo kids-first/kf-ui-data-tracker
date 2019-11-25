@@ -4,6 +4,7 @@ import debounce from 'lodash.debounce';
 import {buttonTracking, normalizeEventType} from './eventUtils';
 import {EVENT_CONSTANTS} from '../analyticsTracking';
 import saveSchema from './event_schemas/saveSchema';
+import validate from './eventSchemaValidator';
 
 /**
  *
@@ -29,23 +30,41 @@ class AmplitudeProxy extends Amplitude {
     };
   }
 
+  __storeSesssionEvents = (eventType, eventProps) => {
+    /** log all events to sessionStorage */
+    sessionStorage.setItem(
+      'session_events',
+      JSON.stringify([
+        ...(JSON.parse(sessionStorage.getItem('session_events')) || []),
+        {
+          eventType,
+
+          eventProps: eventProps,
+          utc_time: Date.now(),
+        },
+      ]),
+    );
+  };
+
   // proxy our logging calls so we can hook
   // other analytics services into it
   dispatch = (eventType, eventProps, cb) => {
+    const normalizedEventType = normalizeEventType(eventType);
+
     const combinedEventProps = {
       ...this.getAmplitudeEventProperties(),
       ...(eventProps || {}),
     };
     if (this.logToConsole || this.props.logToConsole) {
       console.log(
-        `AmplitudeProxy::dispatch eventType:${eventType}`,
+        `AmplitudeProxy::dispatch eventType:${normalizedEventType}`,
         combinedEventProps,
       );
     }
 
     /** saves the event schema as a "<event_type>.schema.json" file for download */
     if (this.props.saveSchemas || this.saveSchemas) {
-      saveSchema(normalizeEventType(eventType), combinedEventProps, cb);
+      saveSchema(normalizedEventType, combinedEventProps, cb);
     }
 
     if (
@@ -53,22 +72,15 @@ class AmplitudeProxy extends Amplitude {
       process.env.NODE_ENV === 'CI' ||
       this.props.storeSessionEvents
     ) {
-      /** log all events to sessionStorage */
-      sessionStorage.setItem(
-        'session_events',
-        JSON.stringify([
-          ...(JSON.parse(sessionStorage.getItem('session_events')) || []),
-          {
-            eventType,
-
-            eventProps: combinedEventProps,
-            utc_time: Date.now(),
-          },
-        ]),
-      );
+      this.__storeSesssionEvents(normalizedEventType, combinedEventProps);
     }
 
-    return this._makeLogEvent()(eventType, combinedEventProps, cb);
+    const eventIsValid = validate(normalizedEventType, combinedEventProps);
+    if (eventIsValid) {
+      return this._makeLogEvent()(normalizedEventType, combinedEventProps, cb);
+    } else {
+      console.warn('[AmplitudeProxy] invalid event not fired');
+    }
   };
 
   instrument = memoize((eventType, func, props = {}) => {
