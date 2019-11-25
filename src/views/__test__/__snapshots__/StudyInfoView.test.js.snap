@@ -179,7 +179,7 @@ exports[`renders study info view as empty view -- not BETA user 1`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -550,7 +550,7 @@ exports[`renders study info view as read-only -- BETA but not ADMIN user 1`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -915,7 +915,7 @@ exports[`renders study info view as read-only -- BETA but not ADMIN user 2`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -1078,7 +1078,7 @@ exports[`renders study info view correctly -- BETA & ADMIN user 1`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -1605,7 +1605,7 @@ exports[`renders study info view correctly -- BETA & ADMIN user 2`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -2132,7 +2132,7 @@ exports[`renders study info view correctly -- BETA & ADMIN user 3`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -2666,7 +2666,7 @@ exports[`renders study info view correctly -- BETA & ADMIN user 4`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -3185,7 +3185,7 @@ exports[`renders study info view correctly -- BETA & ADMIN user 5`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -3720,7 +3720,7 @@ exports[`renders study info view correctly -- BETA & ADMIN user 6`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -3935,7 +3935,7 @@ exports[`renders study info view with get study info error 1`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -4467,7 +4467,7 @@ exports[`renders study info view with update study info error 1`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI

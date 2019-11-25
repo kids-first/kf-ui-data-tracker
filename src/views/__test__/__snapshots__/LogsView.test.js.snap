@@ -150,7 +150,7 @@ exports[`renders study logs view -- shows an error 1`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -346,7 +346,7 @@ exports[`renders study logs view correctly --  showing empty view for non-admin 
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -356,6 +356,20 @@ exports[`renders study logs view correctly --  showing empty view for non-admin 
             rel="noopener noreferrer"
             target="_blank"
           />
+        </div>
+        <div
+          class="item"
+          role="listitem"
+        >
+          Study Creator API
+           
+          <a
+            href="https://github.com/kids-first/kf-api-study-creator/commit/283efc9"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            1.7.2-25-g283efc9
+          </a>
         </div>
       </div>
     </div>
@@ -510,7 +524,7 @@ exports[`renders study logs view correctly 1`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -1202,7 +1216,7 @@ exports[`renders study logs view correctly 2`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -1750,7 +1764,7 @@ exports[`renders study logs view correctly 3`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI

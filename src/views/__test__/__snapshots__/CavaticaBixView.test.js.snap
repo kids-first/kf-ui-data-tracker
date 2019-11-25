@@ -179,7 +179,7 @@ exports[`renders study Cavatica projects view -- empty view for regular user 1`]
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -189,6 +189,20 @@ exports[`renders study Cavatica projects view -- empty view for regular user 1`]
             rel="noopener noreferrer"
             target="_blank"
           />
+        </div>
+        <div
+          class="item"
+          role="listitem"
+        >
+          Study Creator API
+           
+          <a
+            href="https://github.com/kids-first/kf-api-study-creator/commit/283efc9"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            1.7.2-25-g283efc9
+          </a>
         </div>
       </div>
     </div>
@@ -441,7 +455,7 @@ exports[`renders study Cavatica projects view -- shows an error 1`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -605,7 +619,7 @@ exports[`renders study Cavatica projects view correctly 1`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -1102,7 +1116,7 @@ exports[`renders study Cavatica projects view correctly 2`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -1112,6 +1126,20 @@ exports[`renders study Cavatica projects view correctly 2`] = `
             rel="noopener noreferrer"
             target="_blank"
           />
+        </div>
+        <div
+          class="item"
+          role="listitem"
+        >
+          Study Creator API
+           
+          <a
+            href="https://github.com/kids-first/kf-api-study-creator/commit/283efc9"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            1.7.2-25-g283efc9
+          </a>
         </div>
       </div>
     </div>
@@ -1599,7 +1627,7 @@ exports[`renders study Cavatica projects view correctly 3`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -1609,6 +1637,20 @@ exports[`renders study Cavatica projects view correctly 3`] = `
             rel="noopener noreferrer"
             target="_blank"
           />
+        </div>
+        <div
+          class="item"
+          role="listitem"
+        >
+          Study Creator API
+           
+          <a
+            href="https://github.com/kids-first/kf-api-study-creator/commit/283efc9"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            1.7.2-25-g283efc9
+          </a>
         </div>
       </div>
     </div>
@@ -2096,7 +2138,7 @@ exports[`renders study Cavatica projects view correctly 4`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -2106,6 +2148,20 @@ exports[`renders study Cavatica projects view correctly 4`] = `
             rel="noopener noreferrer"
             target="_blank"
           />
+        </div>
+        <div
+          class="item"
+          role="listitem"
+        >
+          Study Creator API
+           
+          <a
+            href="https://github.com/kids-first/kf-api-study-creator/commit/283efc9"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            1.7.2-25-g283efc9
+          </a>
         </div>
       </div>
     </div>
@@ -2593,7 +2649,7 @@ exports[`renders study Cavatica projects view correctly 5`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -2603,6 +2659,20 @@ exports[`renders study Cavatica projects view correctly 5`] = `
             rel="noopener noreferrer"
             target="_blank"
           />
+        </div>
+        <div
+          class="item"
+          role="listitem"
+        >
+          Study Creator API
+           
+          <a
+            href="https://github.com/kids-first/kf-api-study-creator/commit/283efc9"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            1.7.2-25-g283efc9
+          </a>
         </div>
       </div>
     </div>
