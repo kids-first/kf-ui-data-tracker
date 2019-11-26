@@ -1,0 +1,36 @@
+{
+  "$id": "http://kf-ui-data-tracker.kidsfirsrdrc.og/src/analyticsTracking/event_schemas/TOOLTIP/TOOLTIP__EVENT.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TOOLTIP__EVENT event schema",
+  "description": "called for most Popup component events",
+  "type": "object",
+  "properties": {
+    "path": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirsrdrc.og/src/analyticsTracking/event_schemas/common_definitions.schema.json#/definitions/path"
+    },
+    "route": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirsrdrc.og/src/analyticsTracking/event_schemas/common_definitions.schema.json#/definitions/route"
+    },
+    "view": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirsrdrc.og/src/analyticsTracking/event_schemas/common_definitions.schema.json#/definitions/view"
+    },
+    "tooltip_name": {
+      "type": "string",
+      "description": "Text shown in the tooltip on hover"
+    },
+    "tooltip_content": {
+      "type": "string",
+      "description": "Identifing text for the content shown if the tooltip triggers a modal or other"
+    },
+    "link": {
+      "type": "string",
+      "format": "uri",
+      "description": "if the Popup trigger is a link , the href HTML attribute of that link"
+    },
+    "stopPropagation": {
+      "type": "boolean",
+      "description": "whether or not to keep the event from bubbling up the DOM"
+    }
+  },
+  "required": ["path", "route", "view", "tooltip_name"]
+}
