@@ -1,0 +1,19 @@
+{
+  "$id": "http://kf-ui-data-tracker.kidsfirsrdrc.og/src/analyticsTracking/event_schemas/AUTH/AUTH__LOGIN.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AUTH__LOGIN",
+  "description": "authentication event upon login/logout",
+  "type": "object",
+  "properties": {
+    "status": {
+      "type": "string",
+      "description": "whether or not the authentication was successful"
+    },
+    "auth_sub": {
+      "type": "string",
+      "description": "the authentication method and provider used for the event"
+    }
+  },
+  "additionalProperties": false,
+  "required": ["status", "auth_sub"]
+}

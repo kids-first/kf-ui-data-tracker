@@ -1,9 +1,7 @@
 import React from 'react';
-import analyticsTrackingConstants from '../common/analyticsTrackingConstants';
+import {EVENT_CONSTANTS} from '../analyticsTracking';
 import {popupTracking, buttonTracking, dropdownTracking} from './eventUtils';
 import AmplitudeProxy from './AmplitudeProxy';
-
-const EVENT_CONSTANTS = analyticsTrackingConstants;
 
 /** HOC to augment and extend Amplitude tracking methods  */
 const withAnalyticsTracking = (Component, config) => {

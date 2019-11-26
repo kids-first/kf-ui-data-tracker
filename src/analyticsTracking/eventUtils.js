@@ -1,20 +1,35 @@
-import analyticsTrackingConstants from '../common/analyticsTrackingConstants';
+import {EVENT_CONSTANTS} from './index';
 
-const EVENT_CONSTANTS = analyticsTrackingConstants;
+/**
+ * Sanitize our event names in a consistent way
+ * @param {string} str Event name
+ * @return {string} <scope>__<action>
+ */
 export const normalizeEventType = str =>
   str
     .trim()
     .replace(/ /gi, '_')
     .toUpperCase();
 
+/**
+ * Convenience methods for common mouse interaction events
+ * @param {function} log Event emitter function to log events
+ * @param {object} eventProps  Event properties object, should conform to the json schema for the given event type
+ * @param {string} eventType  String constant of format "<scope>__<action>"
+ */
 export const mouseEvents = log => (eventProps = {}, eventType = null) => {
   if (typeof log !== 'function') {
     console.error(
-      `[analyticsTracking]  ERROR mouseEvents must be instantiated with a "log" parameter, log param given = ${log}`,
+      `[analyticsTracking]  ERROR mouseEvents must be instantiated with a "log" parameter, "log" param given = ${log}`,
     );
     return false;
   }
 
+  /**
+   * Logs a MOUSE__<action> event
+   * @param {object} param0 Event payload containing the MOUSE action and DOM event
+   * @param {object} e  DOM event object, for React it will be a synthentic event (https://reactjs.org/docs/events.html)
+   */
   const mouseEvent = ({action, domEvent}, e) => {
     if (e && eventProps.stopPropagation) e.stopPropagation();
     delete eventProps.stopPropagation;
@@ -27,7 +42,7 @@ export const mouseEvents = log => (eventProps = {}, eventType = null) => {
       );
     } catch (e) {
       console.error(
-        `[analyticsTracking]  ERROR mouseEvents:on${domEvent} eventType: ${eventType}`,
+        `[analyticsTracking]  ERROR: mouseEvent:${domEvent} eventType: ${eventType}`,
         eventProps,
         e,
       );
@@ -71,7 +86,7 @@ export const dropdownTracking = log => (
           ? `${normalizeEventType(eventType)}__CHANGE`
           : name
           ? `DROPDOWN_${normalizeEventType(name)}__CHANGE`
-          : EVENT_CONSTANTS.DROPDOWN.CHANGE,
+          : EVENT_CONSTANTS.DROPDOWN__CHANGE,
         {
           placeholder: name,
           value: value || (e & e.target ? e.target.value : null),
@@ -111,7 +126,7 @@ export const popupTracking = (log, inheritedProps = {}) => (
     },
     scope
       ? normalizeEventType(scope)
-      : `${EVENT_CONSTANTS.TOOLTIP.scope}${
+      : `${EVENT_CONSTANTS.TOOLTIP}${
           typeof scope == 'string' || typeof eventProps.name == 'string'
             ? '__' + normalizeEventType(scope || eventProps.name)
             : null

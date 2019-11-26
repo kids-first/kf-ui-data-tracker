@@ -4,10 +4,10 @@ import {AmplitudeProvider} from '@amplitude/react-amplitude';
 import amplitude from 'amplitude-js';
 import AnalyticsTrackingContext from './AnalyticsTrackingContext';
 import AmplitudeProxy from './AmplitudeProxy';
-import analyticsTrackingConstants from '../common/analyticsTrackingConstants';
+import EVENT_CONSTANTS from './eventConstants';
 import AmplitudeUser from './AmplitudeUser';
 
-const {AUTH} = analyticsTrackingConstants;
+const {AUTH} = EVENT_CONSTANTS;
 
 let amplitudeUser = null;
 // log amplitude users on auto-login
@@ -25,7 +25,7 @@ if (localStorage.getItem('idToken')) {
 
 const AnalyticsTrackingProvider = props => {
   return (
-    <AnalyticsTrackingContext.Provider value={analyticsTrackingConstants}>
+    <AnalyticsTrackingContext.Provider value={EVENT_CONSTANTS}>
       <AmplitudeProvider
         amplitudeInstance={
           amplitudeUser ? amplitudeUser.instance : amplitude.getInstance()

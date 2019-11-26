@@ -1,7 +1,5 @@
 import React from 'react';
-import analyticsTrackingConstants from '../common/analyticsTrackingConstants';
+import {EVENT_CONSTANTS} from '../analyticsTracking';
 
-const AnalyticsTrackingContext = React.createContext(
-  analyticsTrackingConstants,
-);
+const AnalyticsTrackingContext = React.createContext(EVENT_CONSTANTS);
 export default AnalyticsTrackingContext;

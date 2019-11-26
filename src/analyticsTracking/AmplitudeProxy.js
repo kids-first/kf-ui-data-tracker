@@ -49,12 +49,23 @@ class AmplitudeProxy extends Amplitude {
   // proxy our logging calls so we can hook
   // other analytics services into it
   dispatch = (eventType, eventProps, cb) => {
+    // check that eventType was given
+    if (!eventType) {
+      console.error(
+        `[AmplitudProyy::dispatch] EventTypeError: No eventType given`,
+      );
+      return;
+    }
+
+    // make sure we're consistent with our naming
     const normalizedEventType = normalizeEventType(eventType);
 
+    // inherit event props
     const combinedEventProps = {
       ...this.getAmplitudeEventProperties(),
       ...(eventProps || {}),
     };
+
     if (this.logToConsole || this.props.logToConsole) {
       console.log(
         `AmplitudeProxy::dispatch eventType:${normalizedEventType}`,
@@ -62,11 +73,12 @@ class AmplitudeProxy extends Amplitude {
       );
     }
 
-    /** saves the event schema as a "<event_type>.schema.json" file for download */
+    /** saves the event schema as a "<event_constant>.schema.json" file for download */
     if (this.props.saveSchemas || this.saveSchemas) {
       saveSchema(normalizedEventType, combinedEventProps, cb);
     }
 
+    /** save all events to sessionStorage for unit testing */
     if (
       process.env.NODE_ENV === 'test' ||
       process.env.NODE_ENV === 'CI' ||
@@ -75,11 +87,13 @@ class AmplitudeProxy extends Amplitude {
       this.__storeSesssionEvents(normalizedEventType, combinedEventProps);
     }
 
+    /** Validate our events against their event props schemas (src/analyticsTracking/event_schemas) */
     const eventIsValid = validate(normalizedEventType, combinedEventProps);
     if (eventIsValid) {
       return this._makeLogEvent()(normalizedEventType, combinedEventProps, cb);
     } else {
       console.warn('[AmplitudeProxy] invalid event not fired');
+      return false;
     }
   };
 
