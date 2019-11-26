@@ -9,7 +9,6 @@ import {
   StudyListView,
   CallbackView,
   NavBarView,
-  EmptyView,
   TokensListView,
   CavaticaProjectsView,
   ProfileView,
@@ -40,11 +39,6 @@ const Routes = () => (
         <PrivateRoute
           path="/study/:kfId/basic-info"
           component={StudyInfoView}
-        />
-        <PrivateRoute
-          exact
-          path="/study/:kfId/dashboard"
-          component={EmptyView}
         />
         <PrivateRoute
           path="/study/:kfId/cavatica"
