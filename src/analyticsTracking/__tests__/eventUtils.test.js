@@ -1,4 +1,4 @@
-import analyticsTrackingConstants from '../../common/analyticsTrackingConstants';
+import {EVENT_CONSTANTS} from '../../analyticsTracking';
 import {
   mouseEvents,
   buttonTracking,
@@ -15,7 +15,6 @@ import {cleanup} from 'react-testing-library';
  *
  */
 
-const EVENT_CONSTANTS = analyticsTrackingConstants;
 afterEach(cleanup);
 
 const mockLogger = jest.fn();
@@ -320,7 +319,7 @@ describe('analyticsTracking eventUtils', () => {
         mockPopupEvent.onClick();
         /** @TODO: use json schema to validate this  */
         expect(mockLogger).toHaveBeenCalledWith(
-          `${EVENT_CONSTANTS.TOOLTIP.scope}__${normalizeEventType(
+          `${EVENT_CONSTANTS.TOOLTIP.scope}_${normalizeEventType(
             mockPopupEventParams.eventProps.name,
           )}__CLICK`,
           mockLogPopupProps,
@@ -371,14 +370,14 @@ describe('analyticsTracking eventUtils', () => {
 
       it(`should use a standard "${
         EVENT_CONSTANTS.TOOLTIP.scope
-      }__<normalized_name>__HOVER" eventType when no scope param is given`, () => {
+      }_<normalized_name>__HOVER" eventType when no scope param is given`, () => {
         const mockPopupEvent = popupTracking(mockLogger)(
           mockPopupEventParams.eventProps,
         );
         mockPopupEvent.onMouseOver();
         /** @TODO: use json schema to validate this  */
         expect(mockLogger).toHaveBeenCalledWith(
-          `${EVENT_CONSTANTS.TOOLTIP.scope}__${normalizeEventType(
+          `${EVENT_CONSTANTS.TOOLTIP.scope}_${normalizeEventType(
             mockPopupEventParams.eventProps.name,
           )}__HOVER`,
           mockLogPopupProps,

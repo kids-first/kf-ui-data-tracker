@@ -1,0 +1,27 @@
+{
+  "$id": "http://kf-ui-data-tracker.kidsfirsrdrc.og/src/analyticsTracking/event_schemas/DROPDOWN/DROPDOWN__CHANGE.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DROPDOWN__CHANGE event schema",
+  "description": "called on a onChange event for dropdown elements",
+  "type": "object",
+  "properties": {
+    "path": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirsrdrc.og/src/analyticsTracking/event_schemas/common_definitions.schema.json#/definitions/path"
+    },
+    "route": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirsrdrc.og/src/analyticsTracking/event_schemas/common_definitions.schema.json#/definitions/route"
+    },
+    "view": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirsrdrc.og/src/analyticsTracking/event_schemas/common_definitions.schema.json#/definitions/view"
+    },
+    "placeholder": {
+      "type": "string",
+      "description": "HTML placeholder atttribute value"
+    },
+    "value": {
+      "type": "string",
+      "description": "value the dropdown was chagned to AFTER the interaction"
+    }
+  },
+  "required": ["path", "route", "view", "value"]
+}

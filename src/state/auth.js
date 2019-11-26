@@ -8,9 +8,9 @@ import {
 } from '../common/globals';
 import amplitude from 'amplitude-js';
 import AmplitudeUser from '../analyticsTracking/AmplitudeUser';
-import analyticsTrackingConstants from '../common/analyticsTrackingConstants';
+import {EVENT_CONSTANTS} from '../analyticsTracking';
 
-const {AUTH: TRACKING_AUTH} = analyticsTrackingConstants;
+const {AUTH: TRACKING_AUTH} = EVENT_CONSTANTS;
 
 class Auth {
   accessToken;

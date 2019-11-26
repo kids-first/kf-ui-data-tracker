@@ -9,10 +9,7 @@ import {withAnalyticsTracking} from '../analyticsTracking';
 const StudyListView = ({
   studies: {loading, allStudies, error},
   myProfile: {myProfile},
-  tracking: {
-    buttonTracking,
-    EVENT_CONSTANTS: {STUDY_LIST},
-  },
+  tracking: {buttonTracking},
 }) => {
   if (error)
     return (

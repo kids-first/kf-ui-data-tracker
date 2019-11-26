@@ -6,13 +6,13 @@
   "type": "object",
   "properties": {
     "path": {
-      "$ref": "../common_definitions.schema.json#/definitions/path"
+      "$ref": "http://kf-ui-data-tracker.kidsfirsrdrc.og/src/analyticsTracking/event_schemas/common_definitions.schema.json#/definitions/path"
     },
     "route": {
-      "$ref": "../common_definitions.schema.json#/definitions/route"
+      "$ref": "http://kf-ui-data-tracker.kidsfirsrdrc.og/src/analyticsTracking/event_schemas/common_definitions.schema.json#/definitions/route"
     },
     "view": {
-      "$ref": "../common_definitions.schema.json#/definitions/view"
+      "$ref": "http://kf-ui-data-tracker.kidsfirsrdrc.og/src/analyticsTracking/event_schemas/common_definitions.schema.json#/definitions/view"
     },
     "button_text": {
       "type": "string",

@@ -9,13 +9,26 @@ var ajv = new Ajv({
   allErrors: true,
   jsonPointers: true,
   verbose: true,
-}).addSchema(schemas.common_definitions);
+})
+  .addSchema(schemas.common_definitions)
+  .addSchema(schemas.BUTTON__EVENT);
 
 const validate = (eventType, eventProps) => {
-  if (!schemas[eventType] && showLogs) {
-    console.error(
-      `[analytics-event-schemaValidator] EventTypeError: No matching schema found for eventType "${eventType}". Make sure you have defined json schema(s) for the event type and exported it in 'src/analyticsTracking/event_schemas/index.js'`,
-    );
+  if (!schemas[eventType] || Object.keys(schemas[eventType]).length < 1) {
+    if (showLogs) {
+      console.error(
+        `[analytics-event-schemaValidator] EventTypeError: No matching schema found for eventType "${eventType}". Make sure you have defined json schema(s) for the event type and exported it in 'src/analyticsTracking/event_schemas/index.js'`,
+      );
+    }
+    if (
+      process.env.NODE_ENV === 'CI' ||
+      process.env.NODE_ENV === 'TESTING' ||
+      process.env.NODE_ENV === 'test'
+    ) {
+      throw new Error(
+        `[analytics-event-schemaValidator] EventTypeError: No matching schema found for eventType "${eventType}". Make sure you have defined json schema(s) for the event type and exported it in 'src/analyticsTracking/event_schemas/index.js'`,
+      );
+    }
     return false;
   }
 

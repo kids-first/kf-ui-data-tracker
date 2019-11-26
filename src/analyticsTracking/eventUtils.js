@@ -86,7 +86,7 @@ export const dropdownTracking = log => (
           ? `${normalizeEventType(eventType)}__CHANGE`
           : name
           ? `DROPDOWN_${normalizeEventType(name)}__CHANGE`
-          : EVENT_CONSTANTS.DROPDOWN__CHANGE,
+          : EVENT_CONSTANTS.DROPDOWN.CHANGE,
         {
           placeholder: name,
           value: value || (e & e.target ? e.target.value : null),
@@ -126,9 +126,9 @@ export const popupTracking = (log, inheritedProps = {}) => (
     },
     scope
       ? normalizeEventType(scope)
-      : `${EVENT_CONSTANTS.TOOLTIP}${
+      : `${EVENT_CONSTANTS.TOOLTIP.scope}${
           typeof scope == 'string' || typeof eventProps.name == 'string'
-            ? '__' + normalizeEventType(scope || eventProps.name)
+            ? '_' + normalizeEventType(scope || eventProps.name)
             : null
         }`,
   );

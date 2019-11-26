@@ -138,4 +138,4 @@ it('renders new study view correctly --  with error on submit', async () => {
   await wait(3000);
 
   expect(tree.container).toMatchSnapshot();
-});
+}, 6000);
