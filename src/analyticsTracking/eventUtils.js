@@ -1,3 +1,5 @@
+import EVENT_CONSTANTS from './eventConstants';
+
 export const normalizeEventType = str =>
   str
     .trim()
@@ -71,3 +73,44 @@ export const popupTracking = (log, inheritedProps = {}) => (
             : null
         }`,
   );
+
+export const dropdownTracking = log => (
+  name,
+  eventProps = {},
+  eventType = null,
+) => {
+  if (typeof log !== 'function') {
+    console.error(
+      `[analyticsTracking]  ERROR dropdownTracking must be instantiated with a "log" parameter, log param given = ${log}`,
+    );
+    return false;
+  }
+  const dropdownEvent = action =>
+    log(
+      eventType
+        ? `${normalizeEventType(eventType)}__${action}`
+        : name
+        ? `DROPDOWN_${normalizeEventType(name)}__${action}`
+        : EVENT_CONSTANTS.DROPDOWN[action],
+      {placeholder: name, ...eventProps},
+    );
+  const dropdownEvents = {
+    onOpen: () => dropdownEvent('OPEN'),
+    onClose: () => dropdownEvent('CLOSE'),
+    onChange: (e, {value}) => {
+      log(
+        eventType
+          ? `${normalizeEventType(eventType)}__CHANGE`
+          : name
+          ? `DROPDOWN_${normalizeEventType(name)}__CHANGE`
+          : EVENT_CONSTANTS.DROPDOWN.CHANGE,
+        {
+          placeholder: name,
+          value: value || (e & e.target ? e.target.value : null),
+          ...eventProps,
+        },
+      );
+    },
+  };
+  return dropdownEvents;
+};
