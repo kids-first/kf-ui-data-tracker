@@ -89,7 +89,7 @@ export const eventType = {
   },
   SF_DEL: {
     title: 'Study File Deleted',
-    iconName: 'delete',
+    iconName: 'trash',
     iconColor: 'red',
   },
   FV_CRE: {
@@ -116,11 +116,11 @@ export const eventType = {
   PR_UPD: {
     title: 'Project Updated',
     iconName: 'refresh',
-    iconColor: 'green',
+    iconColor: 'yellow',
   },
   PR_DEL: {
     title: 'Project Deleted',
-    iconName: 'delete',
+    iconName: 'trash',
     iconColor: 'red',
   },
   PR_LIN: {
@@ -133,7 +133,29 @@ export const eventType = {
     iconName: 'unlinkify',
     iconColor: 'red',
   },
-  OTH: {title: 'Other', iconName: 'question', iconColor: 'blue'},
+  OTH: {title: 'Other', iconName: 'question', iconColor: 'grey'},
+  PR_STR: {
+    title: 'Project Creation Start',
+    iconName: 'play',
+    iconColor: 'blue',
+  },
+  PR_ERR: {title: 'Project Creation Error', iconName: 'x', iconColor: 'red'},
+  PR_SUC: {
+    title: 'Project Creation Success',
+    iconName: 'checkmark',
+    iconColor: 'blue',
+  },
+  BK_STR: {
+    title: 'Bucket Creation Start',
+    iconName: 'play',
+    iconColor: 'blue',
+  },
+  BK_ERR: {title: 'Bucket Creation Error', iconName: 'x', iconColor: 'red'},
+  BK_SUC: {
+    title: 'Bucket Creation Success',
+    iconName: 'checkmark',
+    iconColor: 'blue',
+  },
 };
 
 // Store file type title, description and icon
