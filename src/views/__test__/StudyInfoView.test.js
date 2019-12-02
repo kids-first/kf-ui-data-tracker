@@ -35,7 +35,6 @@ it('renders study info view correctly -- BETA & ADMIN user', async () => {
   act(() => {
     fireEvent.click(tree.getByText(/SAVE/i));
   });
-
   await wait();
 
   expect(tree.container).toMatchSnapshot();
@@ -81,7 +80,7 @@ it('renders study info view correctly -- BETA & ADMIN user', async () => {
   await wait();
 
   expect(tree.container).toMatchSnapshot();
-});
+}, 10000);
 
 it('renders study info view with get study info error', async () => {
   const tree = render(

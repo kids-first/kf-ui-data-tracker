@@ -139,4 +139,4 @@ it('edits an existing file correctly', async () => {
   });
   await wait();
   expect(tree.container).toMatchSnapshot();
-});
+}, 8000);

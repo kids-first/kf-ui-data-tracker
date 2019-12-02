@@ -70,18 +70,6 @@ it('renders new study view correctly', async () => {
     fireEvent.click(tree.getAllByTestId('new-study-confirm')[0]);
   });
   expect(tree.container).toMatchSnapshot();
-
-  await wait(1000);
-
-  expect(tree.container).toMatchSnapshot();
-
-  act(() => {
-    fireEvent.click(tree.getByText(/Basic Info/i));
-  });
-
-  await wait(1000);
-
-  expect(tree.container).toMatchSnapshot();
 });
 
 it('renders new study view correctly --  with error on submit', async () => {
