@@ -1,5 +1,5 @@
 import schemas from './event_schemas';
-
+console.log(schemas);
 // only show error logs in non production environments
 const showLogs =
   process.env.NODE_ENV !== 'prod' || process.env.NODE_ENV !== 'production';
@@ -8,7 +8,8 @@ const Ajv = require('ajv');
 var ajv = new Ajv({
   allErrors: true,
   verbose: true,
-}).addSchema(schemas.common_definitions);
+  schemas,
+});
 
 const validate = (eventType, eventProps) => {
   if (!schemas[eventType] || Object.keys(schemas[eventType]).length < 1) {
@@ -25,15 +26,15 @@ const validate = (eventType, eventProps) => {
     return false;
   }
 
-  ajv.compile(schemas[eventType]);
-
-  const isValid = ajv.validate(schemas[eventType], eventProps);
+  const isValid = ajv.getSchema(
+    'http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json',
+  )(eventProps);
 
   if (isValid) {
     return true;
   } else if (showLogs) {
     console.error(
-      `[analytics-event-schemaValidator] EventPropertiesError: Malformed event properties given for event type "${eventType}"\n`,
+      `[analytics-eventSchemaValidator] EventPropertiesError: Malformed event properties given for event type "${eventType}"\n`,
       ajv
         .errorsText()
         .split(/,/gi)
@@ -41,7 +42,7 @@ const validate = (eventType, eventProps) => {
       eventProps,
     );
     console.error(
-      `[analytics-event-schemaValidator] Expected event properties for event type: ${eventType} -`,
+      `[analytics-eventSchemaValidator] Expected event properties for event type: ${eventType} -`,
       schemas[eventType].description,
       schemas[eventType].properties,
     );
