@@ -1,5 +1,5 @@
 {
-  "$id": "https://kf-ui-datat-racker.kidsfirstdrc.org/scr/analyticsTracking/event_schemas/BUTTOM/BUTTON_EVENT.schema.json",
+  "$id": "http://kf-ui-data-tracker.kidsfirstdrc.org/scr/analyticsTracking/event_schemas/BUTTON/BUTTON_EVENT.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "BUTTON__* common event schema properties",
   "description": "passed to all button events and derivatives",

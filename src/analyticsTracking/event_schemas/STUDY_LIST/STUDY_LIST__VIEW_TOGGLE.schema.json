@@ -6,13 +6,13 @@
   "description": "onClick event or the button to toggle between list and grid views of the study list",
   "properties": {
     "path": {
-      "$ref": "http://kf-ui-data-tracker.kidsfirsrdrc.og/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/path"
+      "$ref": "http://kf-ui-data-tracker.kidsfirstrdrc.og/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/path"
     },
     "route": {
-      "$ref": "http://kf-ui-data-tracker.kidsfirsrdrc.og/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/route"
+      "$ref": "http://kf-ui-data-tracker.kidsfirstrdrc.og/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/route"
     },
     "view": {
-      "$ref": "http://kf-ui-data-tracker.kidsfirsrdrc.og/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/view"
+      "$ref": "http://kf-ui-data-tracker.kidsfirstrdrc.og/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/view"
     },
     "text": {"type": "string", "description": "toggle button text"},
     "active": {

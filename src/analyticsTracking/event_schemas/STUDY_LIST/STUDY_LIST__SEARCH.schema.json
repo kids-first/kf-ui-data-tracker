@@ -1,18 +1,18 @@
 {
-  "$id": "https://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/STUDY_LIST/STUDY_LIST__SEARCH.schema.json",
+  "$id": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/STUDY_LIST/STUDY_LIST__SEARCH.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "STUDY_LIST__SEARCH",
   "type": "object",
   "description": "onChange event or StudyListView search input",
   "properties": {
     "path": {
-      "$ref": "http://kf-ui-data-tracker.kidsfirsrdrc.og/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/path"
+      "$ref": "http://kf-ui-data-tracker.kidsfirstrdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/properties/path"
     },
     "route": {
-      "$ref": "http://kf-ui-data-tracker.kidsfirsrdrc.og/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/route"
+      "$ref": "http://kf-ui-data-tracker.kidsfirstrdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/properties/route"
     },
     "view": {
-      "$ref": "http://kf-ui-data-tracker.kidsfirsrdrc.og/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/view"
+      "$ref": "http://kf-ui-data-tracker.kidsfirstrdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/properties/view"
     },
     "input_name": {
       "type": "string",
@@ -24,9 +24,9 @@
     },
     "results_length": {
       "type": "number",
-      "description": "length of the resulting filtered search set"
+      "description": "integer of length of the resulting filtered search set"
     }
   },
   "required": ["path", "route", "view", "value", "input_name"],
-  "allAdditonalProperites": false
+  "allAdditionalProperties": false
 }

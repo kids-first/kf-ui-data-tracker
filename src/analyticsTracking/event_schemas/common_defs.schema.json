@@ -34,6 +34,9 @@
     },
     "study": {
       "$ref": "#study"
+    },
+    "route": {
+      "$ref": "#route"
     }
   }
 }
