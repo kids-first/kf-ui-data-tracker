@@ -5,5 +5,5 @@ export {default as withAnalyticsTracking} from './withAnalyticsTracking';
 export {
   default as AnalyticsTrackingProvider,
 } from './AnalyticsTrackingProvider';
-export {default as AnalyticsMockProvider} from './AnalyticsMockProvider';
+export {default as AnalyticsProviderMock} from './AnalyticsProviderMock';
 export {default as EVENT_CONSTANTS} from './eventConstants';
