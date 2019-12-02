@@ -21,12 +21,13 @@ import {
   LogoutView,
 } from '../views';
 import DocumentRoutes from '../documents/routes';
+import TrackedRoute from './TrackedRoute';
 
 const Routes = () => (
   <Fragment>
     <Switch>
-      <Route path="/login" component={LoginView} />
-      <Route path="/logout" component={LogoutView} />
+      <TrackedRoute path="/login" component={LoginView} />
+      <TrackedRoute path="/logout" component={LogoutView} />
       <Route path="/callback" component={CallbackView} />
       <Route path="/" render={() => <Header />} />
     </Switch>

@@ -1,6 +1,7 @@
 import React from 'react';
 import jwtDecode from 'jwt-decode';
-import {Route, Redirect, withRouter} from 'react-router-dom';
+import {Redirect, withRouter} from 'react-router-dom';
+import TrackedRoute from './TrackedRoute';
 
 export const isAdmin = () => {
   const token = localStorage.getItem('accessToken');
@@ -24,7 +25,7 @@ export const isAdmin = () => {
  * index page
  */
 const AdminRoute = ({component: Component, ...rest}) => (
-  <Route
+  <TrackedRoute
     {...rest}
     render={props =>
       isAdmin() ? <Component {...props} /> : <Redirect to="/" />

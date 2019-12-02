@@ -3,15 +3,20 @@ import {BrowserRouter as Router} from 'react-router-dom';
 import Routes from './Routes';
 import {ApolloProvider} from '@apollo/react-common';
 import {client} from './state/client';
+import {AnalyticsTrackingProvider} from './analyticsTracking';
 
-const App = () => (
-  <ApolloProvider client={client}>
-    <Router>
-      <main className="App">
-        <Routes />
-      </main>
-    </Router>
-  </ApolloProvider>
-);
+const App = () => {
+  return (
+    <AnalyticsTrackingProvider>
+      <ApolloProvider client={client}>
+        <Router>
+          <main className="App">
+            <Routes />
+          </main>
+        </Router>
+      </ApolloProvider>
+    </AnalyticsTrackingProvider>
+  );
+};
 
 export default App;

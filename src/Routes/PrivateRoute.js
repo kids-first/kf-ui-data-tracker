@@ -1,6 +1,7 @@
 import React from 'react';
 import jwtDecode from 'jwt-decode';
-import {Route, Redirect, withRouter} from 'react-router-dom';
+import {Redirect, withRouter} from 'react-router-dom';
+import TrackedRoute from './TrackedRoute';
 
 export const hasToken = () => {
   const token = localStorage.getItem('accessToken');
@@ -11,7 +12,7 @@ export const hasToken = () => {
 };
 
 const PrivateRoute = ({component: Component, ...rest}) => (
-  <Route
+  <TrackedRoute
     {...rest}
     render={props =>
       hasToken() ? (
