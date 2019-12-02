@@ -1,6 +1,7 @@
 import React from 'react';
+import {Helmet} from 'react-helmet';
 import {useQuery} from '@apollo/react-hooks';
-import {ALL_EVENTS, MY_PROFILE} from '../state/queries';
+import {GET_STUDY_BY_ID, ALL_EVENTS, MY_PROFILE} from '../state/queries';
 import {
   Container,
   Segment,
@@ -22,6 +23,13 @@ const LogsView = ({match}) => {
     },
     pollInterval: 30000,
   });
+  const {loading: studyLoading, data: studyData} = useQuery(GET_STUDY_BY_ID, {
+    variables: {
+      kfId: match.params.kfId,
+    },
+    fetchPolicy: 'network-only',
+  });
+  const studyByKfId = studyData && studyData.studyByKfId;
   const allEvents = data && data.allEvents;
   const user = useQuery(MY_PROFILE);
 
@@ -35,7 +43,7 @@ const LogsView = ({match}) => {
     value: type,
   }));
 
-  if (loading)
+  if (loading || studyLoading)
     return (
       <Container as={Segment} basic vertical>
         <Placeholder>
@@ -55,6 +63,13 @@ const LogsView = ({match}) => {
   if (error || user.error)
     return (
       <Container as={Segment} basic>
+        <Helmet>
+          <title>
+            {`KF Data Tracker - Study logs - Error ${
+              studyByKfId ? 'for ' + studyByKfId.kfId : null
+            }`}
+          </title>
+        </Helmet>
         <Message negative icon>
           <Icon name="warning circle" />
           <Message.Content>
@@ -70,6 +85,11 @@ const LogsView = ({match}) => {
   if (isAdmin) {
     return (
       <Container as={Segment} basic vertical>
+        <Helmet>
+          <title>{`KF Data Tracker - Study logs ${
+            studyByKfId ? 'for ' + studyByKfId.name : null
+          }`}</title>
+        </Helmet>
         <Segment basic floated="right" className="noMargin noPadding">
           <Select
             clearable
@@ -91,7 +111,14 @@ const LogsView = ({match}) => {
       </Container>
     );
   } else {
-    return <EmptyView />;
+    return (
+      <>
+        <Helmet>
+          <title>KF Data Tracker - Study logs for {studyByKfId.name}</title>
+        </Helmet>
+        <EmptyView />
+      </>
+    );
   }
 };
 
