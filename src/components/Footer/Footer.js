@@ -1,8 +1,12 @@
 import React from 'react';
+import {useQuery} from '@apollo/react-hooks';
+import {STATUS} from '../../state/queries';
 import {Container, Segment, Label, List} from 'semantic-ui-react';
 import {systemEnvColors} from '../../common/enums';
 
 const Footer = () => {
+  const {data} = useQuery(STATUS);
+  const status = data && data.status;
   const lastVersion = process.env.REACT_APP_LAST_VERSION;
   const syslevel = process.env.REACT_APP_ENV;
   const commitHash = process.env.REACT_APP_COMMITHASH;
@@ -23,7 +27,7 @@ const Footer = () => {
               </Label>
             </List.Item>
           )}
-          <List.Item className="noMargin">
+          <List.Item>
             UI{' '}
             {lastVersion && lastVersion.split('-').length === 1 ? (
               <a
@@ -43,6 +47,32 @@ const Footer = () => {
               </a>
             )}
           </List.Item>
+          {status && (
+            <List.Item>
+              Study Creator API{' '}
+              {status.version.split('-').length === 1 ? (
+                <a
+                  href={`https://github.com/kids-first/kf-api-study-creator/releases/tag/${
+                    status.version
+                  }`}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  {status.version}
+                </a>
+              ) : (
+                <a
+                  href={`https://github.com/kids-first/kf-api-study-creator/commit/${
+                    status.commit
+                  }`}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  {status.version}
+                </a>
+              )}
+            </List.Item>
+          )}
         </List>
       </Container>
     </Segment>

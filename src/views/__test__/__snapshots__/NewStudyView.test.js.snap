@@ -399,7 +399,7 @@ exports[`renders new study view correctly --  with error on submit 1`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -1072,7 +1072,7 @@ exports[`renders new study view correctly 1`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -1745,7 +1745,7 @@ exports[`renders new study view correctly 2`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -2125,7 +2125,7 @@ exports[`renders new study view correctly 3`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -2503,7 +2503,7 @@ exports[`renders new study view correctly 4`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -2894,7 +2894,7 @@ exports[`renders new study view correctly 5`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -3287,7 +3287,7 @@ exports[`renders new study view correctly 6`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -3762,7 +3762,7 @@ exports[`renders new study view correctly 7`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -4727,7 +4727,7 @@ exports[`renders new study view correctly 8`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -5103,7 +5103,7 @@ fragment ProjectFields on ProjectNode {
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI

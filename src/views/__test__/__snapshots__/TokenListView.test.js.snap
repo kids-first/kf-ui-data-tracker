@@ -237,7 +237,7 @@ exports[`renders token list -- with get error 1`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -402,7 +402,7 @@ exports[`renders token list correctly - displaying look & hidden look 1`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -812,7 +812,7 @@ exports[`renders token list correctly - displaying look & hidden look 2`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -1230,7 +1230,7 @@ exports[`renders token list correctly - displaying look & hidden look 3`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -1650,7 +1650,7 @@ exports[`renders token list correctly - displaying look & hidden look 4`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -2104,7 +2104,7 @@ exports[`renders token list correctly - displaying look & hidden look 5`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI

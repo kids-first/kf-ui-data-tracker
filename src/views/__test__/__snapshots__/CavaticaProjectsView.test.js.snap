@@ -264,7 +264,7 @@ exports[`renders Cavatica projects view -- empty view for regular user 1`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -406,7 +406,7 @@ exports[`renders Cavatica projects view correctly -- with get error 1`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -702,7 +702,7 @@ exports[`renders Cavatica projects view correctly -- with sync error 1`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -813,7 +813,7 @@ exports[`renders Cavatica projects view correctly 1`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -1180,7 +1180,7 @@ exports[`renders Cavatica projects view correctly 2`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -1571,7 +1571,7 @@ exports[`renders Cavatica projects view correctly 3`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -1985,7 +1985,7 @@ exports[`renders Cavatica projects view correctly 4`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI
@@ -2399,7 +2399,7 @@ exports[`renders Cavatica projects view correctly 5`] = `
           />
         </div>
         <div
-          class="item noMargin"
+          class="item"
           role="listitem"
         >
           UI

@@ -216,3 +216,14 @@ export const ALL_EVENTS = gql`
   ${VERSION_FIELDS}
   ${PROJECT_FIELDS}
 `;
+
+// Get study-creator api version status
+export const STATUS = gql`
+  query Status {
+    status {
+      name
+      version
+      commit
+    }
+  }
+`;
