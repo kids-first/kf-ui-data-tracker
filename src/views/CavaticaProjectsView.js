@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {Helmet} from 'react-helmet';
 import {useQuery, useMutation} from '@apollo/react-hooks';
 import {
   Button,
@@ -62,6 +63,9 @@ const CavaticaProjectsView = () => {
   if (error)
     return (
       <Container as={Segment} basic>
+        <Helmet>
+          <title>KF Data Tracker - Cavatica projects - Error</title>
+        </Helmet>
         <Message
           negative
           icon="warning circle"
@@ -72,6 +76,9 @@ const CavaticaProjectsView = () => {
     );
   return (
     <Container as={Segment} basic>
+      <Helmet>
+        <title>KF Data Tracker - Cavatica projects</title>
+      </Helmet>
       <Header as="h3">
         <Button primary floated="right" loading={syncing} onClick={sync}>
           Scan Cavatica

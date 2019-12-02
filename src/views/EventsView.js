@@ -1,4 +1,5 @@
 import React from 'react';
+import {Helmet} from 'react-helmet';
 import {useQuery} from '@apollo/react-hooks';
 import {
   Container,
@@ -44,6 +45,9 @@ const EventsView = () => {
   if (error)
     return (
       <Container as={Segment} basic>
+        <Helmet>
+          <title>KF Data Tracker - Events - Error</title>
+        </Helmet>
         <Message
           negative
           icon="warning circle"
@@ -54,6 +58,9 @@ const EventsView = () => {
     );
   return (
     <Container as={Segment} basic>
+      <Helmet>
+        <title>KF Data Tracker - Events</title>
+      </Helmet>
       <Header as="h3">Data Tracker Event Log</Header>
       <Segment basic>
         All actions taken in the data tracker are available here for auditing.

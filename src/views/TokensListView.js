@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {Helmet} from 'react-helmet';
 import {useQuery, useMutation} from '@apollo/react-hooks';
 import {
   Button,
@@ -53,6 +54,9 @@ const TokensListView = () => {
 
   return (
     <>
+      <Helmet>
+        <title>KF Data Tracker - Developer tokens</title>
+      </Helmet>
       <Container as={Segment} basic>
         <Header as="h3">Manage Developer Download Tokens</Header>
         <Segment basic>
