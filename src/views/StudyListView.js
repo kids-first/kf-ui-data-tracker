@@ -1,4 +1,5 @@
 import React from 'react';
+import {Helmet} from 'react-helmet';
 import {useQuery} from '@apollo/react-hooks';
 import {Link} from 'react-router-dom';
 import {ALL_STUDIES, MY_PROFILE} from '../state/queries';
@@ -26,6 +27,9 @@ const StudyListView = () => {
   if (!loading && studyList.length === 0)
     return (
       <Container as={Segment} basic>
+        <Helmet>
+          <title>KF Data Tracker - My Studies</title>
+        </Helmet>
         {myProfile && myProfile.roles.includes('ADMIN') ? (
           <>
             <Message
@@ -57,11 +61,16 @@ const StudyListView = () => {
       </Container>
     );
   return (
-    <StudyList
-      studyList={studyList}
-      loading={loading}
-      roles={myProfile ? myProfile.roles : []}
-    />
+    <>
+      <Helmet>
+        <title>KF Data Tracker - My Studies</title>
+      </Helmet>
+      <StudyList
+        studyList={studyList}
+        loading={loading}
+        roles={myProfile ? myProfile.roles : []}
+      />
+    </>
   );
 };
 

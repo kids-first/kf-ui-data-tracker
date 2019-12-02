@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {Helmet} from 'react-helmet';
 import {useMutation} from '@apollo/react-hooks';
 import NewStudyForm from '../forms/StudyInfoForm/NewStudyForm';
 import {Segment, Container, Header, Loader} from 'semantic-ui-react';
@@ -31,6 +32,9 @@ const NewStudyView = ({match, history, location}) => {
 
   return (
     <Container as={Segment} vertical basic>
+      <Helmet>
+        <title>KF Data Tracker - New study</title>
+      </Helmet>
       {studyCreating ? (
         <Container
           as={Segment}
