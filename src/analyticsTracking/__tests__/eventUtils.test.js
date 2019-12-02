@@ -1,4 +1,11 @@
-import {normalizeEventType, mouseEvents} from '../eventUtils';
+import {EVENT_CONSTANTS} from '../../analyticsTracking';
+import {
+  mouseEvents,
+  buttonTracking,
+  popupTracking,
+  normalizeEventType,
+  dropdownTracking,
+} from '../eventUtils';
 import {cleanup} from 'react-testing-library';
 
 /**
@@ -21,7 +28,8 @@ describe('analyticsTracking eventUtils', () => {
         'FOO_BAR_BAZBAS_H_H',
       );
     });
-  }); // end normalizeEventType
+  });
+
   describe('mouseEvents', () => {
     describe('onClick', () => {
       const mockMouseEventParams = {
@@ -177,6 +185,105 @@ describe('analyticsTracking eventUtils', () => {
       });
     }); //onClick
   }); //mouseEvents
+
+  describe('buttonTracking', () => {
+    describe('onClick', () => {
+      const mockButtonEventParams = {
+        name: 'test button',
+        type: '__testType__',
+        props: {foo: ['bar', 'baz'], value: 1, link: 'http://website.net'},
+        scope: 'testButton',
+      };
+      it('shouuld curry "log" param to mouseEvents without error', () => {
+        // test with no logger
+        expect(buttonTracking()).not.toThrowError(TypeError);
+        // test with logger
+        const mockButton = buttonTracking(mockLogger)(
+          ...Object.values(mockButtonEventParams),
+        );
+        mockButton.onClick();
+        expect(mockLogger).toHaveBeenCalled();
+      });
+
+      it('should derive "button_text" and "button_type" props from given params', () => {
+        const mockButton = buttonTracking(mockLogger)(
+          ...Object.values(mockButtonEventParams).slice(0, 3),
+        );
+        mockButton.onClick();
+        expect(mockLogger).toHaveBeenCalledWith(EVENT_CONSTANTS.MOUSE.CLICK, {
+          button_text: mockButtonEventParams.name,
+          button_type: mockButtonEventParams.type,
+          ...mockButtonEventParams.props,
+        });
+      });
+
+      it(`should call log with eventType "${normalizeEventType(
+        mockButtonEventParams.scope,
+      )}__CLICK" when "scope" param is given `, () => {
+        const mockButton = buttonTracking(mockLogger)(
+          ...Object.values(mockButtonEventParams),
+        );
+        mockButton.onClick();
+        expect(mockLogger).toHaveBeenCalledWith(
+          `${normalizeEventType(mockButtonEventParams.scope)}__CLICK`,
+          {
+            button_text: mockButtonEventParams.name,
+            button_type: mockButtonEventParams.type,
+            ...mockButtonEventParams.props,
+          },
+        );
+      });
+    }); //onClick
+
+    describe('onMouseOver', () => {
+      const mockButtonEventParams = {
+        name: 'test button',
+        type: '__testType__',
+        props: {foo: ['bar', 'baz'], value: 1, link: 'http://website.net'},
+        scope: 'testButton',
+      };
+      it('shouuld curry "log" param to mouseEvents without error', () => {
+        // test with no logger
+        expect(buttonTracking()).not.toThrowError(TypeError);
+        // test with logger
+        const mockButton = buttonTracking(mockLogger)(
+          ...Object.values(mockButtonEventParams),
+        );
+        mockButton.onMouseOver();
+        expect(mockLogger).toHaveBeenCalled();
+      });
+
+      it('should derive "button_text" and "button_type" props from given params', () => {
+        const mockButton = buttonTracking(mockLogger)(
+          ...Object.values(mockButtonEventParams).slice(0, 3),
+        );
+        mockButton.onMouseOver();
+        expect(mockLogger).toHaveBeenCalledWith(EVENT_CONSTANTS.MOUSE.HOVER, {
+          button_text: mockButtonEventParams.name,
+          button_type: mockButtonEventParams.type,
+          ...mockButtonEventParams.props,
+        });
+      });
+
+      it(`should call log with eventType "${normalizeEventType(
+        mockButtonEventParams.scope,
+      )}__HOVER" when "scope" param is given `, () => {
+        const mockButton = buttonTracking(mockLogger)(
+          ...Object.values(mockButtonEventParams),
+        );
+        mockButton.onMouseOver();
+        expect(mockLogger).toHaveBeenCalledWith(
+          `${normalizeEventType(mockButtonEventParams.scope)}__HOVER`,
+          {
+            button_text: mockButtonEventParams.name,
+            button_type: mockButtonEventParams.type,
+            ...mockButtonEventParams.props,
+          },
+        );
+      });
+    }); //onMouseOver
+  }); //buttonTracking
+
   describe('popupTracking', () => {
     const mockPopupEventParams = {
       eventProps: {
@@ -307,4 +414,177 @@ describe('analyticsTracking eventUtils', () => {
       });
     }); //onMouseOver
   }); //popupTracking
-}); // end eventUtils
+
+  describe('dropdownTracking', () => {
+    const mockDropdownEventParams = {
+      name: 'drop d',
+      eventProps: {
+        foo: 'bar dropdown',
+      },
+      eventType: 'dropdow n n',
+    };
+
+    const mockDropdownEventProps = {
+      placeholder: mockDropdownEventParams.name,
+      ...mockDropdownEventParams.eventProps,
+    };
+
+    it('shouuld curry "log" param to mouseEvents without error', () => {
+      // test with no logger
+      expect(dropdownTracking()).not.toThrowError(TypeError);
+      expect(dropdownTracking()()).toBe(false);
+      // test with logger
+      const mockDropdown = dropdownTracking(mockLogger)(
+        ...Object.values(mockDropdownEventParams),
+      );
+      mockDropdown.onOpen();
+      expect(mockLogger).toHaveBeenCalled();
+    });
+
+    describe('onOpen', () => {
+      it(`should use a standard "${
+        EVENT_CONSTANTS.DROPDOWN.OPEN
+      }" eventType when no "eventType" and name params is given`, () => {
+        const mockDropdown = dropdownTracking(mockLogger)(
+          null,
+          mockDropdownEventParams.eventProps,
+          null,
+        );
+
+        mockDropdown.onOpen();
+        /** @TODO: use json schema to validate this  */
+        expect(mockLogger).toHaveBeenCalledWith(EVENT_CONSTANTS.DROPDOWN.OPEN, {
+          ...mockDropdownEventProps,
+          placeholder: null,
+        });
+      });
+
+      it(`should use a standard "${
+        EVENT_CONSTANTS.DROPDOWN.scope
+      }_<normalized_name>__OPEN" eventType when no eventType params are given`, () => {
+        const mockDropdown = dropdownTracking(mockLogger)(
+          ...Object.values(mockDropdownEventParams).slice(0, 2),
+        );
+
+        mockDropdown.onOpen();
+        /** @TODO: use json schema to validate this  */
+        expect(mockLogger).toHaveBeenCalledWith(
+          `DROPDOWN_${normalizeEventType(mockDropdownEventParams.name)}__OPEN`,
+          mockDropdownEventProps,
+        );
+      });
+
+      it('should add a derived "placeholder" event prop', () => {
+        const mockDropdown = dropdownTracking(mockLogger)(
+          ...Object.values(mockDropdownEventParams),
+        );
+        mockDropdown.onOpen();
+        expect(mockLogger).toHaveBeenCalledWith(
+          `${normalizeEventType(mockDropdownEventParams.eventType)}__OPEN`,
+          mockDropdownEventProps,
+        );
+      });
+    }); //onOpen
+
+    describe('onClose', () => {
+      it(`should use a standard "${
+        EVENT_CONSTANTS.DROPDOWN.CLOSE
+      }" eventType when no "eventType" and name params is given`, () => {
+        const mockDropdown = dropdownTracking(mockLogger)(
+          null,
+          mockDropdownEventParams.eventProps,
+          null,
+        );
+
+        mockDropdown.onClose();
+        /** @TODO: use json schema to validate this  */
+        expect(mockLogger).toHaveBeenCalledWith(
+          EVENT_CONSTANTS.DROPDOWN.CLOSE,
+          {
+            ...mockDropdownEventProps,
+            placeholder: null,
+          },
+        );
+      });
+      it(`should use a standard "${
+        EVENT_CONSTANTS.DROPDOWN.scope
+      }_<normalized_name>__CLOSE" eventType when no eventType param is given`, () => {
+        const mockDropdown = dropdownTracking(mockLogger)(
+          ...Object.values(mockDropdownEventParams).slice(0, 2),
+        );
+
+        mockDropdown.onClose();
+        /** @TODO: use json schema to validate this  */
+        expect(mockLogger).toHaveBeenCalledWith(
+          `DROPDOWN_${normalizeEventType(mockDropdownEventParams.name)}__CLOSE`,
+          mockDropdownEventProps,
+        );
+      });
+
+      it('should add a derived "placeholder" event prop', () => {
+        const mockDropdown = dropdownTracking(mockLogger)(
+          ...Object.values(mockDropdownEventParams),
+        );
+        mockDropdown.onClose();
+        expect(mockLogger).toHaveBeenCalledWith(
+          `${normalizeEventType(mockDropdownEventParams.eventType)}__CLOSE`,
+          mockDropdownEventProps,
+        );
+      });
+    }); //onClose
+
+    describe('onChange', () => {
+      const mockChangeEventProp = [
+        {event: {target: {value: 200}}},
+        {value: 100},
+      ];
+      it(`should use a standard "${
+        EVENT_CONSTANTS.DROPDOWN.CHANGE
+      }" eventType when no "eventType" and name params is given`, () => {
+        const mockDropdown = dropdownTracking(mockLogger)(
+          null,
+          mockDropdownEventParams.eventProps,
+          null,
+        );
+
+        mockDropdown.onChange(...mockChangeEventProp);
+        /** @TODO: use json schema to validate this  */
+        expect(mockLogger).toHaveBeenCalledWith(
+          EVENT_CONSTANTS.DROPDOWN.CHANGE,
+          {
+            ...mockDropdownEventProps,
+            placeholder: null,
+            ...mockChangeEventProp[1],
+          },
+        );
+      });
+      it(`should use a standard "${
+        EVENT_CONSTANTS.DROPDOWN.scope
+      }_<normalized_name>__CHANGE" eventType when no eventType param is given`, () => {
+        const mockDropdown = dropdownTracking(mockLogger)(
+          ...Object.values(mockDropdownEventParams).slice(0, 2),
+        );
+
+        mockDropdown.onChange(...mockChangeEventProp);
+        /** @TODO: use json schema to validate this  */
+        expect(mockLogger).toHaveBeenCalledWith(
+          `DROPDOWN_${normalizeEventType(
+            mockDropdownEventParams.name,
+          )}__CHANGE`,
+          {...mockDropdownEventProps, ...mockChangeEventProp[1]},
+        );
+      });
+
+      it('should add a derived "placeholder" and "value" event props', () => {
+        const mockDropdown = dropdownTracking(mockLogger)(
+          ...Object.values(mockDropdownEventParams),
+        );
+        mockDropdown.onChange(...mockChangeEventProp);
+        expect(mockLogger).toHaveBeenCalledWith(
+          `${normalizeEventType(mockDropdownEventParams.eventType)}__CHANGE`,
+          {...mockDropdownEventProps, ...mockChangeEventProp[1]},
+        );
+      });
+    }); //onChange
+  }); // dropdownTracking
+});
