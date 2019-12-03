@@ -51,7 +51,7 @@ exports[`renders StudyNavBar correctly -- default look 1`] = `
   >
     <a
       class="item"
-      href="/study/undefined/basic-info/info"
+      href="/study/SD_8WX8QQ06/basic-info/info"
     >
       Basic Info
     </a>
@@ -62,20 +62,21 @@ exports[`renders StudyNavBar correctly -- default look 1`] = `
       Dashboard
     </a>
     <a
-      class="item"
-      href="/study/undefined/documents"
+      aria-current="page"
+      class="active item active"
+      href="/study/SD_8WX8QQ06/documents"
     >
       Documents
     </a>
     <a
       class="item"
-      href="/study/undefined/cavatica"
+      href="/study/SD_8WX8QQ06/cavatica"
     >
       Cavatica
     </a>
     <a
       class="item"
-      href="/study/undefined/logs"
+      href="/study/SD_8WX8QQ06/logs"
     >
       Logs
     </a>
