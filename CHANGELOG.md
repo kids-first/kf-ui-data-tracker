@@ -1,3 +1,36 @@
+# Kids First Data Tracker Release 0.9.0
+
+## Features
+
+### Summary
+
+Feature Emojis: 💄x6 ✨x4 📝x2 🐛x2 📈x1 👷x1 📷x1 ♻️x1 ✅x1 🚚x1
+Feature Labels: [feature](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/feature) x7 [refactor](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/refactor) x7 [design](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/design) x4 [documentation](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/documentation) x3 [bug](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/bug) x3 [devops](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/devops) x2 [component](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/component) x2
+
+### New features and changes
+
+- (#512) 📈 Amplitude analytics base setup  - @bdolly
+- (#548) ✨ Add study-creator-api version to footer - @XuTheBunny
+- (#555) 💄 Add icon mappings for new event types - @XuTheBunny
+- (#545) 📝 Update feature request issue template adding "requirements" section - @XuTheBunny
+- (#526) ✨ Remove file upload/edit block from document title validation - @XuTheBunny
+- (#541) 💄 Add file type description - @XuTheBunny
+- (#543) 👷 Update QA api to use kidsfirstdrc.org - @dankolbman
+- (#542) ✨ Use apollo-hooks to call graphql from views, modals and containers - @XuTheBunny
+- (#522) 🐛 Add back study file list table header - @XuTheBunny
+- (#539) 🐛 Fix study subscription table overflow columns in the user profile page - @XuTheBunny
+- (#532) ✨ Add UI version number banner to footer - @XuTheBunny
+- (#528) 📷 Improve Snapshot coverage on views - @XuTheBunny
+- (#527) ♻️ Move query logic for file detail to view - @XuTheBunny
+- (#516) 💄 Default study info on editing for ADMIN and read-only for regular users - @XuTheBunny
+- (#507) 💄 Remove Login with Ego button from login card - @XuTheBunny
+- (#519) ✅ Add Codecov test as default pull request checking method - @XuTheBunny
+- (#518) 🚚 Factor out documents application - @XuTheBunny
+- (#511) 💄 Refactor the style of study list in grid and table view with ADMIN alert - @XuTheBunny
+- (#515) 💄 Hide delete file button from non-admin users on file list and file detail page - @XuTheBunny
+- (#506) 📝 Add pull request template - @XuTheBunny
+
+
 # Kids First Data Tracker Release 0.8.1
 
 ## Features
