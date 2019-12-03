@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/user/user.schema.json",
+  "title": "Amplitude User Schema",
+  "description": "custom amplitude user properies set via the Amplitude Identify API during user authentication ",
+  "type": "object",
+  "properties": {
+    "userId": {
+      "type": "string",
+      "description": "this is used to track unique users across devices and group their events in Amplitude, it is derived from auth provider sub field"
+    },
+    "roles": {
+      "description": "Auth0 roles parsed from https://kidsfirstdrc.org/roles",
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "enum": [
+            "ADMIN",
+            "USER",
+            "BETA"
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "ADMIN",
+            "USER",
+            "BETA"
+          ]
+        }
+      ],
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "studies": {
+      "description": "List of study kfIds the user has access to, parsed from  https://kidsfirstdrc.org/groups",
+      "type": "array",
+      "items": {
+        "$ref": "common_definitions.schema.json#/study"
+      },
+      "uniqueItems": true
+    },
+    "permissions": {
+      "type": "array",
+      "description": "Auth0 values parsed from https://kidsfirstdrc.org/permissions",
+      "items": [
+        {
+          "type": "string",
+          "enum": [
+            "file:read",
+            "files:write"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "userId",
+    "studies",
+    "groups"
+  ]
+}

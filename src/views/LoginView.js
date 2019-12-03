@@ -5,12 +5,7 @@ import {auth} from '../state/auth';
 const LoginView = ({location, history}) => {
   auth.login(location.state ? location.state.from : '/', false);
   return (
-    <Grid
-      stretched
-      className="View--Login"
-      textAlign="center"
-      verticalAlign="middle"
-    >
+    <Grid>
       <Grid.Column computer="8" tablet="12" mobile="15">
         <Segment placeholder>
           <Dimmer active inverted>

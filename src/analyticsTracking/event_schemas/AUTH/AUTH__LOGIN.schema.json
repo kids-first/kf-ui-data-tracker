@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/AUTH/AUTH__LOGIN.schema.json",
+  "title": "AUTH__LOGIN",
+  "description": "User Authentication login event",
+  "properties": {
+    "success": {
+      "type": "boolean",
+      "description": "whether or not the authentication was successful"
+    },
+    "auth_sub": {
+      "type": "string",
+      "description": "format of '<auth_provider>-<auth_service>' parsed from the auth provide sub field"
+    }
+  }
+}
