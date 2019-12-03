@@ -1,3 +1,19 @@
+# Kids First Data Tracker Release 0.9.1
+
+## Features
+
+Add hot jars
+
+### Summary
+
+Feature Emojis: 📈x1
+Feature Labels: [feature](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/feature) x1 [documentation](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/documentation) x1
+
+### New features and changes
+
+- (#557) 📈 Hotjar tracking script in head tag - @bdolly
+
+
 # Kids First Data Tracker Release 0.8.1
 
 ## Features
