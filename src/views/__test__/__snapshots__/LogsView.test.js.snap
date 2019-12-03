@@ -287,12 +287,6 @@ exports[`renders study logs view correctly --  showing empty view for non-admin 
           </a>
           <a
             class="item"
-            href="/study/SD_8WX8QQ06/dashboard"
-          >
-            Dashboard
-          </a>
-          <a
-            class="item"
             href="/study/SD_8WX8QQ06/documents"
           >
             Documents
@@ -441,12 +435,6 @@ exports[`renders study logs view correctly 1`] = `
             href="/study/SD_8WX8QQ06/basic-info/info"
           >
             Basic Info
-          </a>
-          <a
-            class="item"
-            href="/study/SD_8WX8QQ06/dashboard"
-          >
-            Dashboard
           </a>
           <a
             class="item"
@@ -712,12 +700,6 @@ exports[`renders study logs view correctly 2`] = `
             >
               BETA
             </div>
-          </a>
-          <a
-            class="item"
-            href="/study/SD_8WX8QQ06/dashboard"
-          >
-            Dashboard
           </a>
           <a
             class="item"
@@ -1404,12 +1386,6 @@ exports[`renders study logs view correctly 3`] = `
             >
               BETA
             </div>
-          </a>
-          <a
-            class="item"
-            href="/study/SD_8WX8QQ06/dashboard"
-          >
-            Dashboard
           </a>
           <a
             class="item"
