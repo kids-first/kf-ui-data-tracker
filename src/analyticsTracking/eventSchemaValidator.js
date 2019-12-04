@@ -1,5 +1,5 @@
 import schemas from './event_schemas';
-console.log(schemas);
+
 // only show error logs in non production environments
 const showLogs =
   process.env.NODE_ENV !== 'prod' || process.env.NODE_ENV !== 'production';
@@ -8,7 +8,9 @@ const Ajv = require('ajv');
 var ajv = new Ajv({
   allErrors: true,
   verbose: true,
-  schemas,
+  jsonPointers: true,
+  schemaId: '$id',
+  schemas: Object.values(schemas).filter(f => f.$id),
 });
 
 const validate = (eventType, eventProps) => {
@@ -25,10 +27,8 @@ const validate = (eventType, eventProps) => {
     }
     return false;
   }
-
-  const isValid = ajv.getSchema(
-    'http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json',
-  )(eventProps);
+  // compile and validate event props against schema
+  const isValid = ajv.getSchema(schemas[eventType].$id)(eventProps);
 
   if (isValid) {
     return true;
