@@ -1,196 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders study info view as empty view -- not BETA user 1`] = `
-<div>
-  <div
-    class="ui large top attached menu"
-  >
-    <div
-      class="ui container"
-    >
-      <div
-        class="item"
-      >
-        <img
-          alt="Kids First logo"
-          src="test-file-stub"
-        />
-      </div>
-      <a
-        aria-current="page"
-        class="header item"
-        href="/"
-      >
-        Data Tracker
-      </a>
-      <a
-        class="item"
-        href="/"
-      >
-        Studies
-      </a>
-      <div
-        class="right menu"
-      >
-        <div
-          aria-expanded="false"
-          class="ui dropdown link item"
-          role="listbox"
-          tabindex="0"
-        >
-          <img
-            alt="bendolly"
-            class="ui avatar image"
-            src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
-          />
-          bendolly
-          <i
-            aria-hidden="true"
-            class="dropdown icon"
-          />
-          <div
-            class="menu transition"
-          >
-            <a
-              class="item"
-              href="/profile"
-              role="option"
-            >
-              <i
-                aria-hidden="true"
-                class="user icon"
-              />
-              Profile
-            </a>
-            <a
-              class="item"
-              href="/logout"
-              role="option"
-            >
-              <i
-                aria-hidden="true"
-                class="log out icon"
-              />
-              Logout
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    class="page"
-  >
-    <section
-      id="study"
-    >
-      <div
-        class="ui basic secondary segment"
-      >
-        <div
-          class="ui container"
-        >
-          <h1
-            class="ui header"
-          >
-            benchmark extensible e-business
-          </h1>
-          <button
-            class="ui tiny basic icon button"
-          >
-            <i
-              aria-hidden="true"
-              class="copy icon"
-            />
-            SD_8WX8QQ06
-          </button>
-        </div>
-      </div>
-      <div
-        class="ui container"
-      >
-        <div
-          class="ui pink pointing secondary menu"
-        >
-          <a
-            aria-current="page"
-            class="active item active"
-            href="/study/SD_8WX8QQ06/basic-info/info"
-          >
-            Basic Info
-          </a>
-          <a
-            class="item"
-            href="/study/SD_8WX8QQ06/documents"
-          >
-            Documents
-          </a>
-          <a
-            class="item"
-            href="/study/SD_8WX8QQ06/cavatica"
-          >
-            Cavatica
-          </a>
-          <a
-            class="item"
-            href="/study/SD_8WX8QQ06/logs"
-          >
-            Logs
-          </a>
-        </div>
-      </div>
-    </section>
-    <div
-      class="ui basic very padded segment ui container"
-    >
-      <h2
-        class="ui disabled center aligned header"
-      >
-        <i
-          aria-hidden="true"
-          class="clock outline icon"
-        />
-        Coming Soon...
-      </h2>
-    </div>
-  </div>
-  <div
-    class="ui segment footer"
-  >
-    <div
-      class="ui container text-10"
-    >
-      <div
-        class="ui horizontal list"
-        role="list"
-      >
-        <div
-          class="item"
-          role="listitem"
-        >
-          <div
-            class="ui basic horizontal label text-10"
-          />
-        </div>
-        <div
-          class="item"
-          role="listitem"
-        >
-          UI
-           
-          <a
-            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
-            rel="noopener noreferrer"
-            target="_blank"
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`renders study info view as read-only -- BETA but not ADMIN user 1`] = `
+exports[`renders study info view as read-only -- USER user 1`] = `
 <div>
   <div
     class="ui large top attached menu"
@@ -307,11 +117,6 @@ exports[`renders study info view as read-only -- BETA but not ADMIN user 1`] = `
             href="/study/SD_8WX8QQ06/basic-info/info"
           >
             Basic Info
-            <div
-              class="ui blue mini label"
-            >
-              BETA
-            </div>
           </a>
           <a
             class="item"
@@ -555,7 +360,7 @@ exports[`renders study info view as read-only -- BETA but not ADMIN user 1`] = `
 </div>
 `;
 
-exports[`renders study info view as read-only -- BETA but not ADMIN user 2`] = `
+exports[`renders study info view as read-only -- USER user 2`] = `
 <div>
   <div
     class="ui large top attached menu"
@@ -672,11 +477,6 @@ exports[`renders study info view as read-only -- BETA but not ADMIN user 2`] = `
             href="/study/SD_8WX8QQ06/basic-info/info"
           >
             Basic Info
-            <div
-              class="ui blue mini label"
-            >
-              BETA
-            </div>
           </a>
           <a
             class="item"
@@ -914,7 +714,7 @@ exports[`renders study info view as read-only -- BETA but not ADMIN user 2`] = `
 </div>
 `;
 
-exports[`renders study info view correctly -- BETA & ADMIN user 1`] = `
+exports[`renders study info view correctly -- ADMIN user 1`] = `
 <div>
   <div
     class="ui large top attached menu"
@@ -1071,7 +871,7 @@ exports[`renders study info view correctly -- BETA & ADMIN user 1`] = `
 </div>
 `;
 
-exports[`renders study info view correctly -- BETA & ADMIN user 2`] = `
+exports[`renders study info view correctly -- ADMIN user 2`] = `
 <div>
   <div
     class="ui large top attached menu"
@@ -1237,11 +1037,6 @@ exports[`renders study info view correctly -- BETA & ADMIN user 2`] = `
             href="/study/SD_8WX8QQ06/basic-info/info"
           >
             Basic Info
-            <div
-              class="ui blue mini label"
-            >
-              BETA
-            </div>
           </a>
           <a
             class="item"
@@ -1592,7 +1387,7 @@ exports[`renders study info view correctly -- BETA & ADMIN user 2`] = `
 </div>
 `;
 
-exports[`renders study info view correctly -- BETA & ADMIN user 3`] = `
+exports[`renders study info view correctly -- ADMIN user 3`] = `
 <div>
   <div
     class="ui large top attached menu"
@@ -1758,11 +1553,6 @@ exports[`renders study info view correctly -- BETA & ADMIN user 3`] = `
             href="/study/SD_8WX8QQ06/basic-info/info"
           >
             Basic Info
-            <div
-              class="ui blue mini label"
-            >
-              BETA
-            </div>
           </a>
           <a
             class="item"
@@ -2113,7 +1903,7 @@ exports[`renders study info view correctly -- BETA & ADMIN user 3`] = `
 </div>
 `;
 
-exports[`renders study info view correctly -- BETA & ADMIN user 4`] = `
+exports[`renders study info view correctly -- ADMIN user 4`] = `
 <div>
   <div
     class="ui large top attached menu"
@@ -2279,11 +2069,6 @@ exports[`renders study info view correctly -- BETA & ADMIN user 4`] = `
             href="/study/SD_8WX8QQ06/basic-info/info"
           >
             Basic Info
-            <div
-              class="ui blue mini label"
-            >
-              BETA
-            </div>
           </a>
           <a
             class="item"
@@ -2641,7 +2426,7 @@ exports[`renders study info view correctly -- BETA & ADMIN user 4`] = `
 </div>
 `;
 
-exports[`renders study info view correctly -- BETA & ADMIN user 5`] = `
+exports[`renders study info view correctly -- ADMIN user 5`] = `
 <div>
   <div
     class="ui large top attached menu"
@@ -2807,11 +2592,6 @@ exports[`renders study info view correctly -- BETA & ADMIN user 5`] = `
             href="/study/SD_8WX8QQ06/basic-info/info"
           >
             Basic Info
-            <div
-              class="ui blue mini label"
-            >
-              BETA
-            </div>
           </a>
           <a
             class="item"
@@ -3154,7 +2934,7 @@ exports[`renders study info view correctly -- BETA & ADMIN user 5`] = `
 </div>
 `;
 
-exports[`renders study info view correctly -- BETA & ADMIN user 6`] = `
+exports[`renders study info view correctly -- ADMIN user 6`] = `
 <div>
   <div
     class="ui large top attached menu"
@@ -3321,11 +3101,6 @@ exports[`renders study info view correctly -- BETA & ADMIN user 6`] = `
             href="/study/SD_8WX8QQ06/basic-info/info"
           >
             Basic Info
-            <div
-              class="ui blue mini label"
-            >
-              BETA
-            </div>
           </a>
           <a
             class="item"
@@ -4064,11 +3839,6 @@ exports[`renders study info view with update study info error 1`] = `
             href="/study/SD_8WX8QQ06/basic-info/info"
           >
             Basic Info
-            <div
-              class="ui blue mini label"
-            >
-              BETA
-            </div>
           </a>
           <a
             class="item"

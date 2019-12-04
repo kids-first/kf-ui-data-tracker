@@ -370,11 +370,6 @@ exports[`renders study Cavatica projects view -- shows an error 1`] = `
             href="/study/SD_8WX8QQ06/basic-info/info"
           >
             Basic Info
-            <div
-              class="ui blue mini label"
-            >
-              BETA
-            </div>
           </a>
           <a
             class="item"
@@ -784,11 +779,6 @@ exports[`renders study Cavatica projects view correctly 2`] = `
             href="/study/SD_8WX8QQ06/basic-info/info"
           >
             Basic Info
-            <div
-              class="ui blue mini label"
-            >
-              BETA
-            </div>
           </a>
           <a
             class="item"
@@ -1289,11 +1279,6 @@ exports[`renders study Cavatica projects view correctly 3`] = `
             href="/study/SD_8WX8QQ06/basic-info/info"
           >
             Basic Info
-            <div
-              class="ui blue mini label"
-            >
-              BETA
-            </div>
           </a>
           <a
             class="item"
@@ -1794,11 +1779,6 @@ exports[`renders study Cavatica projects view correctly 4`] = `
             href="/study/SD_8WX8QQ06/basic-info/info"
           >
             Basic Info
-            <div
-              class="ui blue mini label"
-            >
-              BETA
-            </div>
           </a>
           <a
             class="item"
@@ -2299,11 +2279,6 @@ exports[`renders study Cavatica projects view correctly 5`] = `
             href="/study/SD_8WX8QQ06/basic-info/info"
           >
             Basic Info
-            <div
-              class="ui blue mini label"
-            >
-              BETA
-            </div>
           </a>
           <a
             class="item"

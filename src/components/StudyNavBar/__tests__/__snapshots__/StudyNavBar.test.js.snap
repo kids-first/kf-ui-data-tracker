@@ -1,43 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders StudyNavBar correctly -- BETA user look 1`] = `
-<div>
-  <div
-    class="ui pink pointing secondary menu"
-  >
-    <a
-      class="item"
-      href="/study/undefined/basic-info/info"
-    >
-      Basic Info
-      <div
-        class="ui blue mini label"
-      >
-        BETA
-      </div>
-    </a>
-    <a
-      class="item"
-      href="/study/undefined/documents"
-    >
-      Documents
-    </a>
-    <a
-      class="item"
-      href="/study/undefined/cavatica"
-    >
-      Cavatica
-    </a>
-    <a
-      class="item"
-      href="/study/undefined/logs"
-    >
-      Logs
-    </a>
-  </div>
-</div>
-`;
-
 exports[`renders StudyNavBar correctly -- default look 1`] = `
 <div>
   <div

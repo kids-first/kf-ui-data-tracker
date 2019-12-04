@@ -10,7 +10,7 @@ import Routes from '../../Routes';
 jest.mock('auth0-js');
 afterEach(cleanup);
 
-it('renders study info view correctly -- BETA & ADMIN user', async () => {
+it('renders study info view correctly -- ADMIN user', async () => {
   const tree = render(
     <MockedProvider
       resolvers={{
@@ -133,7 +133,7 @@ it('renders study info view with update study info error', async () => {
   expect(tree.queryByText(/Failed to update the study/)).not.toBeNull();
 });
 
-it('renders study info view as read-only -- BETA but not ADMIN user', async () => {
+it('renders study info view as read-only -- USER user', async () => {
   var regularUser = myProfile.data.myProfile;
   regularUser.roles = ['BETA'];
 
@@ -170,28 +170,4 @@ it('renders study info view as read-only -- BETA but not ADMIN user', async () =
 
   expect(tree.container).toMatchSnapshot();
   expect(tree.queryByText(/SAVE/)).toBeNull();
-});
-
-it('renders study info view as empty view -- not BETA user', async () => {
-  var regularUser = myProfile.data.myProfile;
-  regularUser.roles = ['USER'];
-
-  const tree = render(
-    <MockedProvider
-      resolvers={{
-        Query: {
-          myProfile: _ => regularUser,
-        },
-      }}
-      mocks={[mocks[1], mocks[8]]}
-    >
-      <MemoryRouter initialEntries={['/study/SD_8WX8QQ06/basic-info/info']}>
-        <Routes />
-      </MemoryRouter>
-    </MockedProvider>,
-  );
-
-  await wait();
-  expect(tree.container).toMatchSnapshot();
-  expect(tree.queryByText(/Coming Soon/)).not.toBeNull();
 });
