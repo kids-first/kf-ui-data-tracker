@@ -25,6 +25,11 @@
       "$id": "#route",
       "type": "string",
       "description": "'path' prop passed down from Route component"
+    },
+    "view": {
+      "$id": "#view",
+      "anyOf": [{"type": "string"}, {"type": "null"}],
+      "description": "name of the containing component or context"
     }
   },
   "type": "object",
@@ -37,6 +42,9 @@
     },
     "route": {
       "$ref": "#route"
+    },
+    "view": {
+      "$ref": "#view"
     }
   }
 }

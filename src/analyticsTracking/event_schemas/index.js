@@ -26,7 +26,7 @@ import {STUDY_CARD__TOGGLE_DETAIL} from './STUDY_CARD';
  */
 const schemas = {
   LOG_TEST: {description: 'sent in test and ci environments'},
-  common_definitions: commonDefsSchema.default,
+  common_defs: commonDefsSchema.default,
   // page view
   PAGE__VIEW: pageViewSchema.default,
   // mouse
@@ -41,8 +41,8 @@ const schemas = {
   AUTH__LOGOUT: {no: 'event props'},
   //button
   BUTTON_DEFINITIONS: buttonEventSchema.default,
-  BUTTON__CLICK: buttonEventSchema.default,
-  BUTTON__HOVER: buttonEventSchema.default,
+  BUTTON__CLICK: {...buttonEventSchema.default, $id: 'BUTTON__CLICK'},
+  BUTTON__HOVER: {...buttonEventSchema.default, $id: 'BUTTON__HOVER'},
   // input
   INPUT__TEXT: {},
   //tooltip/popup

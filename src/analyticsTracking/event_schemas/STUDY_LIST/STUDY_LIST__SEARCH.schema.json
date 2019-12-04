@@ -6,13 +6,13 @@
   "description": "onChange event or StudyListView search input",
   "properties": {
     "path": {
-      "$ref": "http://kf-ui-data-tracker.kidsfirstrdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/properties/path"
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/properties/path"
     },
     "route": {
-      "$ref": "http://kf-ui-data-tracker.kidsfirstrdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/properties/route"
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/properties/route"
     },
     "view": {
-      "$ref": "http://kf-ui-data-tracker.kidsfirstrdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/properties/view"
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/properties/view"
     },
     "input_name": {
       "type": "string",

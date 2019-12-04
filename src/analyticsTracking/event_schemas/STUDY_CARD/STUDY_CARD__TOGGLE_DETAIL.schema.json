@@ -6,28 +6,28 @@
   "description": "click event when a StudyCard detail is opened or closed",
   "properties": {
     "path": {
-      "$ref": "http://kf-ui-data-tracker.kidsfirstrdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/path"
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/path"
     },
     "route": {
-      "$ref": "http://kf-ui-data-tracker.kidsfirstrdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/route"
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/route"
     },
     "view": {
-      "$ref": "http://kf-ui-data-tracker.kidsfirstrdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/view"
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/view"
     },
     "button_text": {
-      "$ref": "http://kf-ui-data-tracker.kidsfirstrdrc.org/src/analyticsTracking/event_schemas/BUTTON/BUTTON_EVENT.schema.json#/definitions/button_text"
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/BUTTON/BUTTON_EVENT.schema.json#/definitions/button_text"
     },
     "button_type": {
-      "$ref": "http://kf-ui-data-tracker.kidsfirstrdrc.org/src/analyticsTracking/event_schemas/BUTTON/BUTTON_EVENT.schema.json#/definitions/button_type"
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/BUTTON/BUTTON_EVENT.schema.json#/definitions/button_type"
     },
     "link": {
-      "$ref": "http://kf-ui-data-tracker.kidsfirstrdrc.org/src/analyticsTracking/event_schemas/BUTTON/BUTTON_EVENT.schema.json#/definitions/link"
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/BUTTON/BUTTON_EVENT.schema.json#/definitions/link"
     },
     "scope": {"type": "string", "description": "containing component name"},
     "study": {
       "allOf": [
         {
-          "$ref": "http://kf-ui-data-tracker.kidsfirstrdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/study"
+          "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/study"
         },
         {
           "properties": {

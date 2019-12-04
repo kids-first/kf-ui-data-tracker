@@ -40,7 +40,7 @@ const StudyList = ({
   tracking: {
     buttonTracking,
     logEvent,
-    EVENT_CONSTANTS: {INPUT, STUDY_LIST_},
+    EVENT_CONSTANTS: {INPUT, STUDY_LIST},
   },
 }) => {
   const [view, setView] = useState(activeView);
@@ -48,7 +48,7 @@ const StudyList = ({
   const isAdmin = roles && roles.includes('ADMIN');
 
   const logStudyListEvent = (action, payload) =>
-    logEvent(STUDY_LIST_[action], payload);
+    logEvent(STUDY_LIST[action], payload);
 
   if (loading) {
     return (
@@ -83,12 +83,13 @@ const StudyList = ({
             content="Add Study"
             as={Link}
             to={`/study/new-study/info`}
-            onClick={() =>
+            onClick={e => {
+              e.preventDefault();
               logStudyListEvent('ADD_STUDY', {
                 button_text: 'Add Study',
                 link: `/study/new-study/info`,
-              })
-            }
+              });
+            }}
           />
         )}
         <Input
@@ -111,7 +112,10 @@ const StudyList = ({
           size="mini"
           hideText
           onToggle={({text, active, icon}) => {
-            logStudyListEvent('VIEW_TOGGLE', {text, active});
+            logStudyListEvent('VIEW_TOGGLE', {
+              text,
+              active: active ? true : false,
+            });
             setView(text.toLowerCase());
           }}
           buttons={[
