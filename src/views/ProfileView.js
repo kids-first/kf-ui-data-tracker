@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {Helmet} from 'react-helmet';
 import {useQuery, useMutation} from '@apollo/react-hooks';
 import {MY_PROFILE} from '../state/queries';
 import {UPDATE_PROFILE} from '../state/mutations';
@@ -64,6 +65,9 @@ const ProfileView = () => {
   if (error)
     return (
       <Container as={Segment} basic>
+        <Helmet>
+          <title>KF Data Tracker - Profile - Error</title>
+        </Helmet>
         <Header as="h3">Your Profile</Header>
         <Message
           negative
@@ -83,6 +87,9 @@ const ProfileView = () => {
 
   return (
     <Container as={Segment} basic vertical>
+      <Helmet>
+        <title>KF Data Tracker - Profile</title>
+      </Helmet>
       <Header as="h3">Your Profile</Header>
       <Segment basic secondary>
         <Grid doubling stackable>

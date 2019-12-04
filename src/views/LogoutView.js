@@ -1,4 +1,5 @@
 import React from 'react';
+import {Helmet} from 'react-helmet';
 import {Header, Image, Grid, Segment, Button, Icon} from 'semantic-ui-react';
 import logo from '../assets/logo.svg';
 import {ApolloConsumer} from '@apollo/react-common';
@@ -11,6 +12,9 @@ const LoginView = ({location, history}) => (
     textAlign="center"
     verticalAlign="middle"
   >
+    <Helmet>
+      <title>KF Data Tracker - Logout</title>
+    </Helmet>
     <Grid.Column computer="8" tablet="12" mobile="15">
       <Segment>
         <Header as="h1">

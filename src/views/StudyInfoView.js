@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {Helmet} from 'react-helmet';
 import {useQuery, useMutation} from '@apollo/react-hooks';
 import {GET_STUDY_BY_ID, MY_PROFILE} from '../state/queries';
 import {UPDATE_STUDY} from '../state/mutations';
@@ -60,6 +61,13 @@ const StudyInfoView = ({match, history}) => {
   if (error)
     return (
       <Container as={Segment} basic>
+        <Helmet>
+          <title>
+            {`KF Data Tracker - Study info - Error ${
+              studyByKfId ? 'for ' + studyByKfId.kfId : null
+            }`}
+          </title>
+        </Helmet>
         <Message
           negative
           icon="warning circle"
@@ -71,6 +79,11 @@ const StudyInfoView = ({match, history}) => {
   if (isBeta) {
     return (
       <Container as={Segment} basic vertical>
+        <Helmet>
+          <title>{`KF Data Tracker - Study info ${
+            studyByKfId ? 'for ' + studyByKfId.name : null
+          }`}</title>
+        </Helmet>
         <NewStudyForm
           isAdmin={isAdmin}
           history={history}
@@ -82,7 +95,14 @@ const StudyInfoView = ({match, history}) => {
       </Container>
     );
   } else {
-    return <EmptyView />;
+    return (
+      <>
+        <Helmet>
+          <title>KF Data Tracker - Study info for {studyByKfId.name}</title>
+        </Helmet>
+        <EmptyView />
+      </>
+    );
   }
 };
 

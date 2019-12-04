@@ -1,4 +1,5 @@
 import React from 'react';
+import {Helmet} from 'react-helmet';
 import {useQuery, useMutation} from '@apollo/react-hooks';
 import {GET_STUDY_BY_ID, MY_PROFILE, GET_PROJECTS} from '../state/queries';
 import {SYNC_PROJECTS, LINK_PROJECT, UNLINK_PROJECT} from '../state/mutations';
@@ -99,6 +100,13 @@ const CavaticaBixView = ({match, history}) => {
   if (error || projects.error || user.error)
     return (
       <Container as={Segment} basic>
+        <Helmet>
+          <title>
+            {`KF Data Tracker - Study projects - Error ${
+              studyByKfId ? 'for ' + studyByKfId.kfId : null
+            }`}
+          </title>
+        </Helmet>
         <Message negative icon>
           <Icon name="warning circle" />
           <Message.Content>
@@ -117,6 +125,11 @@ const CavaticaBixView = ({match, history}) => {
   if (isAdmin) {
     return (
       <Container as={Segment} basic vertical>
+        <Helmet>
+          <title>{`KF Data Tracker - Study projects - Error ${
+            studyByKfId ? 'for ' + studyByKfId.name : null
+          }`}</title>
+        </Helmet>
         <Button
           primary
           floated="right"
@@ -213,7 +226,14 @@ const CavaticaBixView = ({match, history}) => {
       </Container>
     );
   } else {
-    return <EmptyView />;
+    return (
+      <>
+        <Helmet>
+          <title>KF Data Tracker - Study projects for {studyByKfId.name}</title>
+        </Helmet>
+        <EmptyView />
+      </>
+    );
   }
 };
 

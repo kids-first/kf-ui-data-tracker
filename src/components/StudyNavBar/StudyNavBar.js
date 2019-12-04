@@ -14,10 +14,6 @@ const StudyNavBar = ({match, history, isBeta}) => {
       endString: 'basic-info/info',
     },
     {
-      tab: 'Dashboard',
-      endString: 'dashboard',
-    },
-    {
       tab: 'Documents',
       endString: 'documents',
     },

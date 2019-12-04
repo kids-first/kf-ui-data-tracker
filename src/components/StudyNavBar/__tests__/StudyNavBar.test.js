@@ -1,12 +1,12 @@
 import React from 'react';
 import {render} from 'react-testing-library';
-import {MemoryRouter} from 'react-router-dom';
+import {MemoryRouter, Route} from 'react-router-dom';
 import StudyNavBar from '../StudyNavBar';
 
 it('renders StudyNavBar correctly -- default look', () => {
   const tree = render(
-    <MemoryRouter>
-      <StudyNavBar />
+    <MemoryRouter initialEntries={['/study/SD_8WX8QQ06/documents']}>
+      <Route exact path="/study/:kfId/documents" component={StudyNavBar} />
     </MemoryRouter>,
   );
   expect(tree.container).toMatchSnapshot();

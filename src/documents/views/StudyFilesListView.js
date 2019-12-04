@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {Helmet} from 'react-helmet';
 import {useQuery} from '@apollo/react-hooks';
 import {GET_STUDY_BY_ID, MY_PROFILE} from '../../state/queries';
 import {UploadContainer} from '../containers';
@@ -65,6 +66,13 @@ const StudyFilesListView = ({
   if (error)
     return (
       <Container as={Segment} basic>
+        <Helmet>
+          <title>
+            {`KF Data Tracker - Study documents - Error ${
+              studyByKfId ? 'for ' + studyByKfId.kfId : null
+            }`}
+          </title>
+        </Helmet>
         <Message
           negative
           icon="warning circle"
@@ -76,6 +84,13 @@ const StudyFilesListView = ({
   const files = !loading ? studyByKfId.files.edges : [];
   return (
     <Grid as={Segment} basic container columns={1}>
+      <Helmet>
+        <title>
+          {`KF Data Tracker - Study documents ${
+            studyByKfId ? 'for ' + studyByKfId.name : null
+          }`}
+        </title>
+      </Helmet>
       <Grid.Row>
         <Grid.Column width={10}>
           <h2>Study Documents</h2>

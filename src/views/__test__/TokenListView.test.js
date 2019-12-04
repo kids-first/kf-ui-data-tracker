@@ -49,7 +49,7 @@ it('renders token list correctly - displaying look & hidden look', async () => {
   act(() => {
     fireEvent.click(tree.getAllByTestId('token-create')[0]);
   });
-  await wait();
+  await wait(10);
   expect(tree.container).toMatchSnapshot();
 
   // Update create new token -- with error
@@ -60,8 +60,9 @@ it('renders token list correctly - displaying look & hidden look', async () => {
   act(() => {
     fireEvent.click(tree.getAllByTestId('token-create')[0]);
   });
-  await wait();
+  await wait(10);
   expect(tree.container).toMatchSnapshot();
+  expect(tree.queryByText(/Failed to create new token/)).not.toBeNull();
 
   // Click on the delete token button
   act(() => {

@@ -120,12 +120,6 @@ exports[`renders study Cavatica projects view -- empty view for regular user 1`]
           </a>
           <a
             class="item"
-            href="/study/SD_8WX8QQ06/dashboard"
-          >
-            Dashboard
-          </a>
-          <a
-            class="item"
             href="/study/SD_8WX8QQ06/documents"
           >
             Documents
@@ -384,12 +378,6 @@ exports[`renders study Cavatica projects view -- shows an error 1`] = `
           </a>
           <a
             class="item"
-            href="/study/SD_8WX8QQ06/dashboard"
-          >
-            Dashboard
-          </a>
-          <a
-            class="item"
             href="/study/SD_8WX8QQ06/documents"
           >
             Documents
@@ -536,12 +524,6 @@ exports[`renders study Cavatica projects view correctly 1`] = `
             href="/study/SD_8WX8QQ06/basic-info/info"
           >
             Basic Info
-          </a>
-          <a
-            class="item"
-            href="/study/SD_8WX8QQ06/dashboard"
-          >
-            Dashboard
           </a>
           <a
             class="item"
@@ -807,12 +789,6 @@ exports[`renders study Cavatica projects view correctly 2`] = `
             >
               BETA
             </div>
-          </a>
-          <a
-            class="item"
-            href="/study/SD_8WX8QQ06/dashboard"
-          >
-            Dashboard
           </a>
           <a
             class="item"
@@ -1321,12 +1297,6 @@ exports[`renders study Cavatica projects view correctly 3`] = `
           </a>
           <a
             class="item"
-            href="/study/SD_8WX8QQ06/dashboard"
-          >
-            Dashboard
-          </a>
-          <a
-            class="item"
             href="/study/SD_8WX8QQ06/documents"
           >
             Documents
@@ -1832,12 +1802,6 @@ exports[`renders study Cavatica projects view correctly 4`] = `
           </a>
           <a
             class="item"
-            href="/study/SD_8WX8QQ06/dashboard"
-          >
-            Dashboard
-          </a>
-          <a
-            class="item"
             href="/study/SD_8WX8QQ06/documents"
           >
             Documents
@@ -2340,12 +2304,6 @@ exports[`renders study Cavatica projects view correctly 5`] = `
             >
               BETA
             </div>
-          </a>
-          <a
-            class="item"
-            href="/study/SD_8WX8QQ06/dashboard"
-          >
-            Dashboard
           </a>
           <a
             class="item"

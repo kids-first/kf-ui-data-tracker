@@ -173,12 +173,6 @@ exports[`edits an existing file correctly 1`] = `
             </div>
           </a>
           <a
-            class="item"
-            href="/study/SD_8WX8QQ06/dashboard"
-          >
-            Dashboard
-          </a>
-          <a
             aria-current="page"
             class="active item active"
             href="/study/SD_8WX8QQ06/documents"
@@ -1068,12 +1062,6 @@ exports[`edits an existing file correctly 2`] = `
             </div>
           </a>
           <a
-            class="item"
-            href="/study/SD_8WX8QQ06/dashboard"
-          >
-            Dashboard
-          </a>
-          <a
             aria-current="page"
             class="active item active"
             href="/study/SD_8WX8QQ06/documents"
@@ -1725,12 +1713,6 @@ exports[`edits an existing file correctly 3`] = `
             >
               BETA
             </div>
-          </a>
-          <a
-            class="item"
-            href="/study/SD_8WX8QQ06/dashboard"
-          >
-            Dashboard
           </a>
           <a
             aria-current="page"
@@ -2386,12 +2368,6 @@ exports[`edits an existing file correctly 4`] = `
             </div>
           </a>
           <a
-            class="item"
-            href="/study/SD_8WX8QQ06/dashboard"
-          >
-            Dashboard
-          </a>
-          <a
             aria-current="page"
             class="active item active"
             href="/study/SD_8WX8QQ06/documents"
@@ -3045,12 +3021,6 @@ exports[`edits an existing file correctly 5`] = `
             </div>
           </a>
           <a
-            class="item"
-            href="/study/SD_8WX8QQ06/dashboard"
-          >
-            Dashboard
-          </a>
-          <a
             aria-current="page"
             class="active item active"
             href="/study/SD_8WX8QQ06/documents"
@@ -3702,12 +3672,6 @@ exports[`edits an existing file correctly 6`] = `
             >
               BETA
             </div>
-          </a>
-          <a
-            class="item"
-            href="/study/SD_8WX8QQ06/dashboard"
-          >
-            Dashboard
           </a>
           <a
             aria-current="page"

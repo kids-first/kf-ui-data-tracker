@@ -137,7 +137,6 @@ exports[`renders new study view correctly --  with error on submit 1`] = `
     >
       <div
         class="ui basic vertical segment ui container"
-        style=""
       >
         <h3
           class="ui header"
