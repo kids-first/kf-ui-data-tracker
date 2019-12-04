@@ -1,16 +1,12 @@
 import React from 'react';
 import {EVENT_CONSTANTS, AmplitudeProxy} from '../analyticsTracking';
-import {
-  popupTracking,
-  buttonTracking,
-  dropdownTracking,
-  popupTracking,
-} from './eventUtils';
+import {buttonTracking, dropdownTracking, popupTracking} from './eventUtils';
 
 /** HOC to augment and extend Amplitude tracking methods  */
 const withAnalyticsTracking = (Component, config) => {
   return class extends AmplitudeProxy {
     logToConsole = config ? config.logToConsole : false;
+    saveSchemas = config ? config.saveSchemas : false;
 
     render() {
       return (
