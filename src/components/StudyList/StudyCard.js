@@ -24,9 +24,7 @@ const StudyCard = ({
   requiredFileChanges,
   tracking: {
     logEvent,
-    buttonTracking,
     EVENT_CONSTANTS: {STUDY_CARD},
-    popupTracking,
   },
 }) => {
   const projectsCounts = projects && projects.length > 0 ? projects.length : 0;
@@ -99,12 +97,12 @@ const StudyCard = ({
             content={toolTips.info}
             trigger={
               <Link
-                onClick={
-                  popupTracking({
-                    name: 'Info',
-                    content: toolTips.info,
+                onClick={() =>
+                  logEvent(STUDY_CARD.TOOLTIP_INFO, {
+                    tooltip_name: 'Info',
+                    tooltip_content: toolTips.info,
                     link: `/study/${studyId}/basic-info/info`,
-                  }).onClick
+                  })
                 }
                 to={`/study/${studyId}/basic-info/info`}
                 className="pr-5"
@@ -125,12 +123,12 @@ const StudyCard = ({
             disabled={files.length > 0 && requiredFileChanges < 1}
             trigger={
               <Link
-                onClick={
-                  popupTracking({
-                    name: 'Files',
-                    content: toolTips.files,
+                onClick={() =>
+                  logEvent(STUDY_CARD.TOOLTIP_FILES, {
+                    tooltip_name: 'Files',
+                    tooltip_content: toolTips.files,
                     link: `/study/${studyId}/documents`,
-                  }).onClick
+                  })
                 }
                 to={`/study/${studyId}/documents`}
                 className="pr-5"
@@ -154,12 +152,12 @@ const StudyCard = ({
             trigger={
               <Link
                 to={`/study/${studyId}/cavatica`}
-                onClick={
-                  popupTracking({
-                    name: 'Projects',
-                    content: 'Missing projects',
+                onClick={() =>
+                  logEvent(STUDY_CARD.TOOLTIP_PROJECTS, {
+                    tooltip_name: 'Projects',
+                    tooltip_content: 'Missing projects',
                     link: `/study/${studyId}/cavatica`,
-                  }).onClick
+                  })
                 }
               >
                 <CavaticaLogo
@@ -185,7 +183,7 @@ const StudyCard = ({
               files={files}
               history={history}
               eventProperties={{
-                scope: 'StudyCard',
+                scope: STUDY_CARD.scope,
               }}
             />
             <ToggleDetailButton testId="show-detail" />
