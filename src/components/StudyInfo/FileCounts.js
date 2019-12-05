@@ -14,7 +14,8 @@ const FileCounts = ({
   title,
   history,
   hideIcon,
-  tracking: {popupTracking},
+  eventProperties,
+  tracking: {logEvent, popupTracking, inheritedEventProps},
 }) => {
   const states = files.map(
     ({node: {versions}}) => versions.edges[0].node.state,
@@ -29,12 +30,19 @@ const FileCounts = ({
       <List.Item
         as={Link}
         to={`/study/${title}/documents`}
-        onClick={
-          popupTracking({
-            name: 'Files',
-            content: `${files.length > 0 ? files.length : 'No'} files`,
-            link: `/study/${title}/documents`,
-          }).onClick
+        onClick={() =>
+          logEvent(
+            inheritedEventProps
+              ? inheritedEventProps.scope + '__TOOLTIP_FILES__CLICK'
+              : 'TOOTLIP_FILES__CLICK',
+            {
+              tooltip_name: 'Files',
+              tooltip_content: `${
+                files.length > 0 ? files.length : 'No'
+              } files`,
+              link: `/study/${title}/documents`,
+            },
+          )
         }
         className={hideIcon && files.length === 0 ? 'text-red' : null}
       >

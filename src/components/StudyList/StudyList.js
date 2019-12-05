@@ -84,7 +84,6 @@ const StudyList = ({
             as={Link}
             to={`/study/new-study/info`}
             onClick={e => {
-              e.preventDefault();
               logStudyListEvent('ADD_STUDY', {
                 button_text: 'Add Study',
                 link: `/study/new-study/info`,
