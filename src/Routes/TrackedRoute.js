@@ -8,19 +8,12 @@ import {AmplitudeProxy} from '../analyticsTracking';
  *
  *  @event_scehma analyticsTracking/event_schemas/page/page_view.schema.json
  * */
-const TrackedRoute = ({
-  component,
-  render,
-  logPageView = false,
-  eventProperties,
-  ...rest
-}) => (
+const TrackedRoute = ({logPageView = false, eventProperties, ...rest}) => (
   <AmplitudeProxy
     eventProperties={{
-      view: component
-        ? component.name
-        : render().type.WrappedComponent
-        ? render().type.WrappedComponent.name
+      /** viewName is set for components wrapped with withAnlayticsTracking HOC  */
+      view: rest.render
+        ? rest.render().type.viewName || rest.render().type.name
         : null,
       route: rest.path,
       ...eventProperties,
@@ -34,7 +27,7 @@ const TrackedRoute = ({
        */
 
       if (logPageView) logEvent(PAGE.VIEW);
-      return <Route {...{component, render}} {...rest} />;
+      return <Route {...rest} />;
     }}
   </AmplitudeProxy>
 );

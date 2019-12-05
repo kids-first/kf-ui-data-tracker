@@ -3,10 +3,10 @@ import {EVENT_CONSTANTS, AmplitudeProxy} from '../analyticsTracking';
 
 /** HOC to augment and extend Amplitude tracking methods  */
 const withAnalyticsTracking = (Component, config) => {
-  return class extends AmplitudeProxy {
+  class AnalyticsTrackingHOC extends AmplitudeProxy {
     logToConsole = config ? config.logToConsole : false;
     saveSchemas = config ? config.saveSchemas : false;
-
+    view = Component.name;
     render() {
       return (
         <Component
@@ -19,7 +19,11 @@ const withAnalyticsTracking = (Component, config) => {
         />
       );
     }
-  };
+  }
+  AnalyticsTrackingHOC.displayName = `withAnalyticsTracking(${Component.name})`;
+  /** set the parent view name to use in eventProps.view */
+  AnalyticsTrackingHOC.viewName = Component.name;
+  return AnalyticsTrackingHOC;
 };
 
 export default withAnalyticsTracking;
