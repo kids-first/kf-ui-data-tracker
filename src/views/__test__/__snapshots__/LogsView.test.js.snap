@@ -695,11 +695,6 @@ exports[`renders study logs view correctly 2`] = `
             href="/study/SD_8WX8QQ06/basic-info/info"
           >
             Basic Info
-            <div
-              class="ui blue mini label"
-            >
-              BETA
-            </div>
           </a>
           <a
             class="item"
@@ -1381,11 +1376,6 @@ exports[`renders study logs view correctly 3`] = `
             href="/study/SD_8WX8QQ06/basic-info/info"
           >
             Basic Info
-            <div
-              class="ui blue mini label"
-            >
-              BETA
-            </div>
           </a>
           <a
             class="item"

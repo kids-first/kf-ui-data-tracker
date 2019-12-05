@@ -11,12 +11,3 @@ it('renders StudyNavBar correctly -- default look', () => {
   );
   expect(tree.container).toMatchSnapshot();
 });
-
-it('renders StudyNavBar correctly -- BETA user look', () => {
-  const tree = render(
-    <MemoryRouter>
-      <StudyNavBar isBeta={true} />
-    </MemoryRouter>,
-  );
-  expect(tree.container).toMatchSnapshot();
-});

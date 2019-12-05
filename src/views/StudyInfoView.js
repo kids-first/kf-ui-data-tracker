@@ -5,7 +5,6 @@ import {GET_STUDY_BY_ID, MY_PROFILE} from '../state/queries';
 import {UPDATE_STUDY} from '../state/mutations';
 import NewStudyForm from '../forms/StudyInfoForm/NewStudyForm';
 import {Container, Segment, Message, Placeholder} from 'semantic-ui-react';
-import EmptyView from './EmptyView';
 
 const StudyInfoView = ({match, history}) => {
   const {loading, data, error} = useQuery(GET_STUDY_BY_ID, {
@@ -18,10 +17,6 @@ const StudyInfoView = ({match, history}) => {
   const user = useQuery(MY_PROFILE);
   const [updateStudy] = useMutation(UPDATE_STUDY);
 
-  const isBeta =
-    !user.loading && user.data.myProfile
-      ? user.data.myProfile.roles.includes('BETA')
-      : false;
   const isAdmin =
     !user.loading && user.data.myProfile
       ? user.data.myProfile.roles.includes('ADMIN')
@@ -76,34 +71,23 @@ const StudyInfoView = ({match, history}) => {
         />
       </Container>
     );
-  if (isBeta) {
-    return (
-      <Container as={Segment} basic vertical>
-        <Helmet>
-          <title>{`KF Data Tracker - Study info ${
-            studyByKfId ? 'for ' + studyByKfId.name : null
-          }`}</title>
-        </Helmet>
-        <NewStudyForm
-          isAdmin={isAdmin}
-          history={history}
-          submitValue={submitUpdate}
-          apiErrors={apiErrors}
-          studyNode={studyByKfId}
-          editing={isAdmin}
-        />
-      </Container>
-    );
-  } else {
-    return (
-      <>
-        <Helmet>
-          <title>KF Data Tracker - Study info for {studyByKfId.name}</title>
-        </Helmet>
-        <EmptyView />
-      </>
-    );
-  }
+  return (
+    <Container as={Segment} basic vertical>
+      <Helmet>
+        <title>{`KF Data Tracker - Study info ${
+          studyByKfId ? 'for ' + studyByKfId.name : null
+        }`}</title>
+      </Helmet>
+      <NewStudyForm
+        isAdmin={isAdmin}
+        history={history}
+        submitValue={submitUpdate}
+        apiErrors={apiErrors}
+        studyNode={studyByKfId}
+        editing={isAdmin}
+      />
+    </Container>
+  );
 };
 
 export default StudyInfoView;

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {withRouter, NavLink} from 'react-router-dom';
-import {Menu, Label} from 'semantic-ui-react';
+import {Menu} from 'semantic-ui-react';
 
 /**
  * Menu for navigating within a study
@@ -39,11 +39,6 @@ const StudyNavBar = ({match, history, isBeta}) => {
           as={NavLink}
         >
           {item.tab}
-          {item.endString === 'basic-info/info' && isBeta && (
-            <Label color="blue" size="mini">
-              BETA
-            </Label>
-          )}
         </Menu.Item>
       ))}
     </Menu>
