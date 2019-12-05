@@ -14,10 +14,14 @@ var ajv = new Ajv({
 });
 
 const validate = (eventType, eventProps) => {
-  if (!schemas[eventType] || Object.keys(schemas[eventType]).length < 1) {
+  if (
+    !schemas[eventType] ||
+    !schemas[eventType].$id ||
+    Object.keys(schemas[eventType]).length < 1
+  ) {
     if (showLogs) {
       console.error(
-        `[analytics-event-schemaValidator] EventTypeError: No matching schema found for eventType "${eventType}". Make sure you have defined json schema(s) for the event type and exported it in 'src/analyticsTracking/event_schemas/index.js'`,
+        `[analytics-event-schemaValidator] EventTypeError: No matching schema or schema $id found for eventType "${eventType}". Make sure you have defined json schema(s) for the event type and exported it in 'src/analyticsTracking/event_schemas/index.js'`,
       );
     }
     if (['CI', 'TESTING', 'test'].includes(process.env.NODE_ENV)) {
