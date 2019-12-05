@@ -351,11 +351,13 @@ exports[`deletes a file correctly 1`] = `
                 <div
                   class="ui header"
                 >
-                  <div
-                    class="ui orange tiny basic label"
-                  >
-                    Pending review
-                  </div>
+                  <span>
+                    <div
+                      class="ui orange tiny basic label"
+                    >
+                      Pending review
+                    </div>
+                  </span>
                 </div>
               </td>
               <td
@@ -481,11 +483,13 @@ exports[`deletes a file correctly 1`] = `
                 <div
                   class="ui header"
                 >
-                  <div
-                    class="ui orange tiny basic label"
-                  >
-                    Pending review
-                  </div>
+                  <span>
+                    <div
+                      class="ui orange tiny basic label"
+                    >
+                      Pending review
+                    </div>
+                  </span>
                 </div>
               </td>
               <td
@@ -1000,11 +1004,13 @@ exports[`deletes a file correctly 2`] = `
                 <div
                   class="ui header"
                 >
-                  <div
-                    class="ui orange tiny basic label"
-                  >
-                    Pending review
-                  </div>
+                  <span>
+                    <div
+                      class="ui orange tiny basic label"
+                    >
+                      Pending review
+                    </div>
+                  </span>
                 </div>
               </td>
               <td
@@ -1285,11 +1291,13 @@ exports[`renders ListFilterBar with files -- screen width 600 1`] = `
                 <div
                   class="ui header"
                 >
-                  <div
-                    class="ui orange tiny basic label"
-                  >
-                    Pending review
-                  </div>
+                  <span>
+                    <div
+                      class="ui orange tiny basic label"
+                    >
+                      Pending review
+                    </div>
+                  </span>
                 </div>
               </td>
               <td
@@ -1406,11 +1414,13 @@ exports[`renders ListFilterBar with files -- screen width 600 1`] = `
                 <div
                   class="ui header"
                 >
-                  <div
-                    class="ui orange tiny basic label"
-                  >
-                    Pending review
-                  </div>
+                  <span>
+                    <div
+                      class="ui orange tiny basic label"
+                    >
+                      Pending review
+                    </div>
+                  </span>
                 </div>
               </td>
               <td
@@ -1872,11 +1882,13 @@ exports[`renders ListFilterBar with files -- screen width 800 1`] = `
                 <div
                   class="ui header"
                 >
-                  <div
-                    class="ui orange tiny basic label"
-                  >
-                    Pending review
-                  </div>
+                  <span>
+                    <div
+                      class="ui orange tiny basic label"
+                    >
+                      Pending review
+                    </div>
+                  </span>
                 </div>
               </td>
               <td
@@ -2002,11 +2014,13 @@ exports[`renders ListFilterBar with files -- screen width 800 1`] = `
                 <div
                   class="ui header"
                 >
-                  <div
-                    class="ui orange tiny basic label"
-                  >
-                    Pending review
-                  </div>
+                  <span>
+                    <div
+                      class="ui orange tiny basic label"
+                    >
+                      Pending review
+                    </div>
+                  </span>
                 </div>
               </td>
               <td
@@ -2521,11 +2535,13 @@ exports[`renders ListFilterBar with files -- screen width 1200 1`] = `
                 <div
                   class="ui header"
                 >
-                  <div
-                    class="ui orange tiny basic label"
-                  >
-                    Pending review
-                  </div>
+                  <span>
+                    <div
+                      class="ui orange tiny basic label"
+                    >
+                      Pending review
+                    </div>
+                  </span>
                 </div>
               </td>
               <td
@@ -2651,11 +2667,13 @@ exports[`renders ListFilterBar with files -- screen width 1200 1`] = `
                 <div
                   class="ui header"
                 >
-                  <div
-                    class="ui orange tiny basic label"
-                  >
-                    Pending review
-                  </div>
+                  <span>
+                    <div
+                      class="ui orange tiny basic label"
+                    >
+                      Pending review
+                    </div>
+                  </span>
                 </div>
               </td>
               <td
@@ -3170,11 +3188,13 @@ exports[`renders correctly 1`] = `
                 <div
                   class="ui header"
                 >
-                  <div
-                    class="ui orange tiny basic label"
-                  >
-                    Pending review
-                  </div>
+                  <span>
+                    <div
+                      class="ui orange tiny basic label"
+                    >
+                      Pending review
+                    </div>
+                  </span>
                 </div>
               </td>
               <td
@@ -3300,11 +3320,13 @@ exports[`renders correctly 1`] = `
                 <div
                   class="ui header"
                 >
-                  <div
-                    class="ui orange tiny basic label"
-                  >
-                    Pending review
-                  </div>
+                  <span>
+                    <div
+                      class="ui orange tiny basic label"
+                    >
+                      Pending review
+                    </div>
+                  </span>
                 </div>
               </td>
               <td

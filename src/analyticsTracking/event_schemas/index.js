@@ -23,7 +23,7 @@ import {
  * Schema keys coorespond to specific events types and should
  * be in the format of <scope>__<action>, with a em dash delimeter.
  *
- * <scope> is the specific UI/application area the event
+ * <scope> is the specific UI/application area the event«
  * was fired from (STUDY_LIST, BUTTON, STUDY_CARD, etc.)
  *
  * <action> is the especifc event that was performed within that scope
@@ -32,13 +32,20 @@ import {
  * Schema keys then get translated into event constants in src/analtyicsTracking/index.js
  */
 const schemas = {
-  LOG_TEST: {description: 'sent in test and ci environments'},
-  common_definitions: commonDefsSchema.default,
+  LOG_TEST: {description: 'sent in test and ci environments', $id: 'LOG_TEST'},
+  common_defs: commonDefsSchema.default,
   // page view
   PAGE__VIEW: pageViewSchema.default,
+  // mouse
+  MOUSE__CLICK: {no: 'event props', $id: 'MOUSE__CLICK'},
+  MOUSE__HOVER: {no: 'event props', $id: 'MOUSE__HOVER'},
+  // dropdown
+  DROPDOWN__OPEN: {no: 'event props'},
+  DROPDOWN__CLOSE: {no: 'event props'},
+  DROPDOWN__CHANGE: {no: 'event props'},
   // auth
   AUTH__LOGIN: authLoginSchema.default,
-  AUTH__LOGOUT: {no: 'event props'},
+  AUTH__LOGOUT: {no: 'event props', $id: 'AUTH__LOGOUT'},
   //button
   BUTTON_DEFINITIONS: buttonEventSchema.default,
   BUTTON__CLICK: {...buttonEventSchema.default, $id: 'BUTTON__CLICK'},
