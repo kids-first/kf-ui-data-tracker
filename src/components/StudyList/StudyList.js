@@ -68,6 +68,12 @@ const StudyList = ({studyList, loading, activeView, roles}) => {
             content="Add Study"
             as={Link}
             to={`/study/new-study/info`}
+            onClick={e => {
+              logStudyListEvent('ADD_STUDY', {
+                button_text: 'Add Study',
+                link: `/study/new-study/info`,
+              });
+            }}
           />
         )}
         <Input

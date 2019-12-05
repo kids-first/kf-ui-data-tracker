@@ -126,7 +126,13 @@ const StudyCard = ({
             />
           </Card.Content>
           <Card.Content extra compact="very" size="mini">
-            <CavaticaCounts title={studyId} projects={projects} />
+            <CavaticaCounts
+              title={studyId}
+              projects={projects}
+              eventProperties={{
+                scope: STUDY_CARD.scope,
+              }}
+            />
           </Card.Content>
         </>
       )}

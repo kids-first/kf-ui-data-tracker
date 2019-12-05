@@ -4,11 +4,17 @@ import {Link} from 'react-router-dom';
 import {List, Popup, Label} from 'semantic-ui-react';
 import {projectOptions} from '../../common/enums';
 import CavaticaLogo from '../../assets/CavaticaLogo';
+import {withAnalyticsTracking} from '../../analyticsTracking';
 /**
  * Displays project counts with total number and breaking down by each type
  * When no projects exist, show buttons guiding user to add/link projects
  */
-const CavaticaCounts = ({projects, title, hideIcon}) => {
+const CavaticaCounts = ({
+  projects,
+  title,
+  hideIcon,
+  tracking: {logEvent, inheritedEventProps},
+}) => {
   const types = projects.map(({node: {projectType}}) => projectType);
   const typeCounts = types.reduce((count, type) => {
     count[type] = (count[type] || 0) + 1;
@@ -19,7 +25,21 @@ const CavaticaCounts = ({projects, title, hideIcon}) => {
       <List.Item
         as={Link}
         to={`/study/${title}/cavatica`}
-        onClick={e => e.stopPropagation()}
+        onClick={e => {
+          e.stopPropagation();
+          logEvent(
+            inheritedEventProps.scope
+              ? inheritedEventProps.scope + '__TOOLTIP_PROJECTS__CLICK'
+              : 'TOOTLIP_PROJECTS__CLICK',
+            {
+              tooltip_name: 'Projects',
+              tooltip_content: `${
+                projects.length > 0 ? projects.length : 'No'
+              } Projects`,
+              link: `/study/${title}/cavatica`,
+            },
+          );
+        }}
         className={hideIcon && projects.length === 0 ? 'text-red' : null}
       >
         {!hideIcon && (
@@ -65,4 +85,4 @@ CavaticaCounts.defaultProps = {
   projects: [],
 };
 
-export default CavaticaCounts;
+export default withAnalyticsTracking(CavaticaCounts);

@@ -7,7 +7,14 @@ import {versionState} from '../../common/enums';
  * Displays file counts with total number and breaking down by each status
  * When no files exist, show buttons guiding user to upload files
  */
-const FileCounts = ({files, title, history, hideIcon}) => {
+const FileCounts = ({
+  files,
+  title,
+  history,
+  hideIcon,
+  eventProperties,
+  tracking: {logEvent, popupTracking, inheritedEventProps},
+}) => {
   const states = files.map(
     ({node: {versions}}) => versions.edges[0].node.state,
   );
@@ -21,7 +28,20 @@ const FileCounts = ({files, title, history, hideIcon}) => {
       <List.Item
         as={Link}
         to={`/study/${title}/documents`}
-        onClick={e => e.stopPropagation()}
+        onClick={() =>
+          logEvent(
+            inheritedEventProps
+              ? inheritedEventProps.scope + '__TOOLTIP_FILES__CLICK'
+              : 'TOOTLIP_FILES__CLICK',
+            {
+              tooltip_name: 'Files',
+              tooltip_content: `${
+                files.length > 0 ? files.length : 'No'
+              } files`,
+              link: `/study/${title}/documents`,
+            },
+          )
+        }
         className={hideIcon && files.length === 0 ? 'text-red' : null}
       >
         {!hideIcon && (
