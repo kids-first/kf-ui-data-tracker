@@ -62,6 +62,7 @@ class AmplitudeProxy extends Amplitude {
 
     // inherit event props
     const combinedEventProps = {
+      ...this.context.getAmplitudeEventProperties(),
       ...this.getAmplitudeEventProperties(),
       ...(eventProps || {}),
     };
