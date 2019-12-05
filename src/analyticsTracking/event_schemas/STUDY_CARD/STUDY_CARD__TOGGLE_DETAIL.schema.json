@@ -1,5 +1,5 @@
 {
-  "$id": "https://kf-ui-datat-racker.kidsfirstdrc.org/event_schemas/STUDY_CARD/STUDY_CARD__TOGGLE_DETAIL.schema.json",
+  "$id": "http://kf-ui-data-tracker.kidsfirstdrc.org/event_schemas/STUDY_CARD/STUDY_CARD__TOGGLE_DETAIL.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "STUDY_CARD__TOGGLE_DETAIL",
   "type": "object",
@@ -24,10 +24,14 @@
       "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/BUTTON/BUTTON_EVENT.schema.json#/definitions/link"
     },
     "scope": {"type": "string", "description": "containing component name"},
+    "show_detail": {
+      "type": "boolean",
+      "description": "whether or not the details were open or closed on click"
+    },
     "study": {
       "allOf": [
         {
-          "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/study"
+          "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/properties/study"
         },
         {
           "properties": {
@@ -36,27 +40,22 @@
               "description": "study short list"
             },
             "files": {
-              "type": "number",
+              "type": "integer",
               "description": "number of documents in the study"
             },
             "projects": {
-              "type": "number",
-              "description": "number of projects in the study"
+              "type": "integer",
+              "description": "integer of projects in the study"
             },
             "missing_info_fields": {
-              "type": "number",
+              "type": "integer",
               "description": "nubmer of missing user-input meta fields for the study"
             }
-          }
+          },
+          "required": ["kfId"]
         }
-      ],
-      "required": ["kfId"]
-    },
-    "show_detail": {
-      "type": "boolean",
-      "description": "whether or not the details were open or closed on click"
+      ]
     }
   },
-  "required": ["path", "route", "view", "study", "show_detail"],
-  "allAdditonalProperites": false
+  "additionalProperties": false
 }
