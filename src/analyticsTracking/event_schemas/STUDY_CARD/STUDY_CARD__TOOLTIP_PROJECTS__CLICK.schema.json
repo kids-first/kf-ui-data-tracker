@@ -52,5 +52,7 @@
       ],
       "required": ["kfId"]
     }
-  }
+  },
+  "required": ["path", "route"],
+  "additionalProperties": false
 }
