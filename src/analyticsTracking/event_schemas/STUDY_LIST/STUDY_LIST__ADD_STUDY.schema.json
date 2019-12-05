@@ -15,12 +15,11 @@
       "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/view"
     },
     "button_text": {
-      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/scr/analyticsTracking/event_schemas/BUTTON/BUTTON_EVENT.schema.json#/definitions/button_text"
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/BUTTON/BUTTON_EVENT.schema.json#/definitions/button_text"
     },
     "link": {
-      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/scr/analyticsTracking/event_schemas/BUTTON/BUTTON_EVENT.schema.json#/definitions/link"
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/BUTTON/BUTTON_EVENT.schema.json#/definitions/link"
     }
   },
-  "required": ["path", "route", "view"],
-  "allAdditonalProperites": false
+  "required": ["path", "route", "button_text"]
 }

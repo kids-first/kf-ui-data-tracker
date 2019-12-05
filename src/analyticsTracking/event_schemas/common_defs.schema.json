@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json",
   "title": "Schema definitions",
-  "description": "common definitions for easy reuse in other schemas ",
+  "description": "common definitions for easy reuse in other schemas, properties with null values will be ignored by Amplitude if sent",
   "definitions": {
     "path": {
       "$id": "#path",
@@ -28,7 +28,7 @@
     },
     "view": {
       "$id": "#view",
-      "anyOf": [{"type": "string"}, {"type": "null"}],
+      "type": ["string", "null"],
       "description": "name of the containing component or context"
     }
   },
