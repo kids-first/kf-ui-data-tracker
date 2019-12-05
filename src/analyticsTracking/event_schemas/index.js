@@ -1,6 +1,20 @@
 import * as commonDefsSchema from './common_defs.schema.json';
 import * as authLoginSchema from './AUTH/AUTH__LOGIN.schema.json';
 import * as pageViewSchema from './PAGE/PAGE__VIEW.schema.json';
+import * as buttonEventSchema from './BUTTON/BUTTON_EVENT.schema.json';
+import * as tooltipEventSchema from './TOOLTIP/TOOLTIP_EVENT.schema.json';
+
+import {
+  STUDY_LIST__VIEW_TOGGLE,
+  STUDY_LIST__ADD_STUDY,
+  STUDY_LIST__SEARCH,
+} from './STUDY_LIST';
+import {
+  STUDY_CARD__TOGGLE_DETAIL,
+  STUDY_CARD__TOOLTIP_FILES__CLICK,
+  STUDY_CARD__TOOLTIP_INFO__CLICK,
+  STUDY_CARD__TOOLTIP_PROJECTS__CLICK,
+} from './STUDY_CARD';
 
 /**
  * List of all possible analytics event types associated with
@@ -25,6 +39,23 @@ const schemas = {
   // auth
   AUTH__LOGIN: authLoginSchema.default,
   AUTH__LOGOUT: {no: 'event props'},
+  //button
+  BUTTON_DEFINITIONS: buttonEventSchema.default,
+  BUTTON__CLICK: {...buttonEventSchema.default, $id: 'BUTTON__CLICK'},
+  BUTTON__HOVER: {...buttonEventSchema.default, $id: 'BUTTON__HOVER'},
+  // input
+  INPUT__TEXT: {},
+  //tooltip/popup
+  TOOLTIP: tooltipEventSchema.default,
+  // study list view
+  STUDY_LIST__VIEW_TOGGLE: STUDY_LIST__VIEW_TOGGLE,
+  STUDY_LIST__ADD_STUDY: STUDY_LIST__ADD_STUDY,
+  STUDY_LIST__SEARCH: STUDY_LIST__SEARCH,
+  // study card
+  STUDY_CARD__TOGGLE_DETAIL: STUDY_CARD__TOGGLE_DETAIL,
+  STUDY_CARD__TOOLTIP_FILES__CLICK: STUDY_CARD__TOOLTIP_FILES__CLICK,
+  STUDY_CARD__TOOLTIP_INFO__CLICK: STUDY_CARD__TOOLTIP_INFO__CLICK,
+  STUDY_CARD__TOOLTIP_PROJECTS__CLICK: STUDY_CARD__TOOLTIP_PROJECTS__CLICK,
 };
 
 export default schemas;

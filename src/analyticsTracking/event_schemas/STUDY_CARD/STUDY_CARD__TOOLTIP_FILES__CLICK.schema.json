@@ -1,0 +1,56 @@
+{
+  "$id": "https://kf-ui-data-tracker.kidsfirstdrc.org/event_schemas/STUDY_CARD/STUDY_CARD__TOOLTIP_FILES__CLICK.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "STUDY_CARD__TOOLTIP_FILES__CLICK",
+  "type": "object",
+  "description": "click event on the 'Files' tooltip of the StudyCard component",
+  "properties": {
+    "path": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#path"
+    },
+    "route": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#route"
+    },
+    "view": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#view"
+    },
+    "link": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/BUTTON/BUTTON_EVENT.schema.json#/definitions/link"
+    },
+    "tooltip_name": {
+      "$ref": "https://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/TOOLTIP/TOOLTIP_EVENT.schema.json#/properties/tooltip_name"
+    },
+    "tooltip_content": {
+      "$ref": "https://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/TOOLTIP/TOOLTIP_EVENT.schema.json#/properties/tooltip_content"
+    },
+    "scope": {"type": "string", "description": "containing component name"},
+    "study": {
+      "allOf": [
+        {
+          "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#study"
+        },
+        {
+          "properties": {
+            "study_name": {
+              "type": "string",
+              "description": "study short name"
+            },
+            "files": {
+              "type": "number",
+              "description": "number of documents in the study"
+            },
+            "projects": {
+              "type": "number",
+              "description": "number of projects in the study"
+            },
+            "missing_info_fields": {
+              "type": "number",
+              "description": "nubmer of missing user-input meta fields for the study"
+            }
+          }
+        }
+      ],
+      "required": ["kfId"]
+    }
+  }
+}
