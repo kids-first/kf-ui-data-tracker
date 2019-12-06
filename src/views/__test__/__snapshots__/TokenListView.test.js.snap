@@ -634,14 +634,6 @@ exports[`renders token list correctly - displaying look & hidden look 2`] = `
                   value="blahtestingtokenstringhere"
                 />
                 <button
-                  class="ui icon button"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="copy icon"
-                  />
-                </button>
-                <button
                   class="ui icon negative button"
                   data-testid="delete-token-button"
                 >
@@ -1043,14 +1035,6 @@ exports[`renders token list correctly - displaying look & hidden look 3`] = `
                   type="text"
                   value="blahtestingtokenstringhere"
                 />
-                <button
-                  class="ui icon button"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="copy icon"
-                  />
-                </button>
                 <button
                   class="ui icon negative button"
                   data-testid="delete-token-button"
@@ -1463,14 +1447,6 @@ exports[`renders token list correctly - displaying look & hidden look 4`] = `
                   type="text"
                   value="blahtestingtokenstringhere"
                 />
-                <button
-                  class="ui icon button"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="copy icon"
-                  />
-                </button>
                 <button
                   class="ui icon negative button"
                   data-testid="delete-token-button"
@@ -1917,14 +1893,6 @@ exports[`renders token list correctly - displaying look & hidden look 5`] = `
                   type="text"
                   value="blahtestingtokenstringhere"
                 />
-                <button
-                  class="ui icon button"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="copy icon"
-                  />
-                </button>
                 <button
                   class="ui icon negative button"
                   data-testid="delete-token-button"
