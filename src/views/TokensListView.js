@@ -28,6 +28,7 @@ const TokensListView = () => {
     refetchQueries: [{query: GET_DEV_TOKENS}],
   });
 
+  const [newToken, setNewToken] = useState();
   const [newTokenError, setNewTokenError] = useState();
   const [newTokenLoading, setNewTokenLoading] = useState(false);
   const [confirmOpen, setConfirmOpen] = useState(false);
@@ -38,6 +39,7 @@ const TokensListView = () => {
     setNewTokenLoading(true);
     createToken({variables: {name}})
       .then(resp => {
+        setNewToken(resp.data.createDevToken.token);
         setNewTokenLoading(false);
       })
       .catch(err => {
@@ -88,6 +90,7 @@ const TokensListView = () => {
           )}
           {!devTokensLoading && allDevTokens && (
             <TokenList
+              newToken={newToken}
               tokens={allDevTokens.edges}
               deleteToken={name => handleDelete(name)}
             />
