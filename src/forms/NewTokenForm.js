@@ -9,7 +9,6 @@ const NewTokenForm = ({onSubmit, error, loading}) => {
     <Segment>
       <Form
         onSubmit={() => {
-          console.log(name);
           onSubmit(name);
           setName('');
         }}

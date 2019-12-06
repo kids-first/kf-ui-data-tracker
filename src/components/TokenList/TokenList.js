@@ -8,7 +8,7 @@ import {longDate} from '../../common/dateUtils';
 /**
  * Token list is used to display tokens with the option of copy and delete
  */
-const TokenList = ({tokens, deleteToken}) => (
+const TokenList = ({tokens, deleteToken, newToken}) => (
   <List relaxed>
     {tokens &&
       tokens.length > 0 &&
@@ -37,12 +37,12 @@ const TokenList = ({tokens, deleteToken}) => (
             />
           </List.Content>
           <List.Content floated="right">
-            <Input readOnly action value={node.node.token}>
-              <input />
-              {node.node.token.split('*').length !== 24 && (
+            {newToken && node.node.id === newToken.id ? (
+              <Input readOnly action value={newToken.token}>
+                <input />
                 <Popup
                   trigger={
-                    <CopyToClipboard text={node.node.token}>
+                    <CopyToClipboard text={newToken.token}>
                       <Button icon>
                         <Icon name="copy" />
                       </Button>
@@ -51,16 +51,28 @@ const TokenList = ({tokens, deleteToken}) => (
                   content="Copied!"
                   on="click"
                 />
-              )}
-              <Button
-                icon
-                negative
-                onClick={() => deleteToken(node.node.name)}
-                data-testid="delete-token-button"
-              >
-                <Icon name="trash" />
-              </Button>
-            </Input>
+                <Button
+                  icon
+                  negative
+                  onClick={() => deleteToken(node.node.name)}
+                  data-testid="delete-token-button"
+                >
+                  <Icon name="trash" />
+                </Button>
+              </Input>
+            ) : (
+              <Input readOnly action value={node.node.token}>
+                <input />
+                <Button
+                  icon
+                  negative
+                  onClick={() => deleteToken(node.node.name)}
+                  data-testid="delete-token-button"
+                >
+                  <Icon name="trash" />
+                </Button>
+              </Input>
+            )}
           </List.Content>
         </List.Item>
       ))}
@@ -72,6 +84,8 @@ TokenList.propTypes = {
   tokens: PropTypes.array,
   /** Action to delete token*/
   deleteToken: PropTypes.func,
+  /** Newly created token when on the page*/
+  newToken: PropTypes.object,
 };
 
 TokenList.defaultProps = {

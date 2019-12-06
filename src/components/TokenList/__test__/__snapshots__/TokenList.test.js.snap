@@ -8,3 +8,168 @@ exports[`renders token list correctly - no data 1`] = `
   />
 </div>
 `;
+
+exports[`renders token list correctly - with new token 1`] = `
+<div>
+  <div
+    class="ui relaxed list"
+    role="list"
+  >
+    <div
+      class="item"
+      role="listitem"
+    >
+      <img
+        alt="John"
+        class="ui avatar image"
+        src="https://docs.atlassian.com/aui/8.3.1/docs/images/avatar-person.svg"
+      />
+      <div
+        class="content"
+      >
+        <div
+          class="header"
+        >
+          my token 1
+        </div>
+        Created by 
+        John
+         
+        <time
+          datetime="2019-06-13T12:05:39.381Z"
+          title="13 Jun 2019"
+        >
+          2 months from now
+        </time>
+      </div>
+      <div
+        class="right floated content"
+      >
+        <div
+          class="ui action input"
+        >
+          <input
+            readonly=""
+            type="text"
+            value="blahtestingtokenstringhere"
+          />
+          <button
+            class="ui icon button"
+          >
+            <i
+              aria-hidden="true"
+              class="copy icon"
+            />
+          </button>
+          <button
+            class="ui icon negative button"
+            data-testid="delete-token-button"
+          >
+            <i
+              aria-hidden="true"
+              class="trash icon"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="item"
+      role="listitem"
+    >
+      <img
+        alt="John"
+        class="ui avatar image"
+        src="https://docs.atlassian.com/aui/8.3.1/docs/images/avatar-person.svg"
+      />
+      <div
+        class="content"
+      >
+        <div
+          class="header"
+        >
+          my token 2
+        </div>
+        Created by 
+        John
+         
+        <time
+          datetime="2019-06-13T12:05:39.381Z"
+          title="13 Jun 2019"
+        >
+          2 months from now
+        </time>
+      </div>
+      <div
+        class="right floated content"
+      >
+        <div
+          class="ui action input"
+        >
+          <input
+            readonly=""
+            type="text"
+            value="test***********************"
+          />
+          <button
+            class="ui icon negative button"
+            data-testid="delete-token-button"
+          >
+            <i
+              aria-hidden="true"
+              class="trash icon"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="item"
+      role="listitem"
+    >
+      <img
+        alt="unknown"
+        class="ui avatar image"
+        src="test-file-stub"
+      />
+      <div
+        class="content"
+      >
+        <div
+          class="header"
+        >
+          my token 3
+        </div>
+        <time
+          datetime="2019-06-13T12:05:39.381Z"
+          title="13 Jun 2019"
+        >
+          2 months from now
+        </time>
+      </div>
+      <div
+        class="right floated content"
+      >
+        <div
+          class="ui action input"
+        >
+          <input
+            readonly=""
+            type="text"
+            value="test***********************"
+          />
+          <button
+            class="ui icon negative button"
+            data-testid="delete-token-button"
+          >
+            <i
+              aria-hidden="true"
+              class="trash icon"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
