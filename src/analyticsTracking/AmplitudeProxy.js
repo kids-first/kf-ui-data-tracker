@@ -1,7 +1,12 @@
 import {Amplitude} from '@amplitude/react-amplitude';
 import {memoize} from '@amplitude/react-amplitude/src/lib/memoize';
 import debounce from 'lodash.debounce';
-import {normalizeEventType} from './eventUtils';
+import {
+  normalizeEventType,
+  popupTracking,
+  buttonTracking,
+  dropdownTracking,
+} from './eventUtils';
 import {EVENT_CONSTANTS} from '../analyticsTracking';
 import saveSchema from './event_schemas/saveSchema';
 import validate from './eventSchemaValidator';
@@ -24,6 +29,9 @@ class AmplitudeProxy extends Amplitude {
     this._renderPropParams = {
       getInstance: this.getAmplitudeInstance,
       logEvent: this.logEvent,
+      popupTracking: popupTracking(this.logEvent),
+      buttonTracking: buttonTracking(this.logEvent),
+      dropdownTracking: dropdownTracking(this.logEvent),
       instrument: this.instrument,
       EVENT_CONSTANTS,
     };
@@ -60,6 +68,7 @@ class AmplitudeProxy extends Amplitude {
 
     // inherit event props
     const combinedEventProps = {
+      ...this.context.getAmplitudeEventProperties(),
       ...this.getAmplitudeEventProperties(),
       ...(eventProps || {}),
     };
