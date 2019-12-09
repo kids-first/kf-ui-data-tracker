@@ -12,6 +12,8 @@ import {
   countFileNotification,
   trackedStudyFields,
 } from '../../common/notificationUtils';
+import {withAnalyticsTracking} from '../../analyticsTracking';
+
 /**
  * Renders a single row in the table
  */
@@ -62,6 +64,7 @@ const StudyTable = ({
   if (loading) {
     return <h2>loading studies</h2>;
   }
+
   const hidden = ['id', '__typename', ...exclude];
   const cols = Object.keys(
     studyList.length > 0

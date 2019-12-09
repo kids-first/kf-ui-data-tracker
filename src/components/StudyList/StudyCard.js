@@ -6,6 +6,7 @@ import FileCounts from '../StudyInfo/FileCounts';
 import CavaticaCounts from '../StudyInfo/CavaticaCounts';
 import {trackedStudyFields} from '../../common/notificationUtils';
 import CavaticaLogo from '../../assets/CavaticaLogo';
+import {withAnalyticsTracking} from '../../analyticsTracking';
 /**
  * Displays each study with its kfId, name(shortName), and modifiedAt
  */
@@ -19,6 +20,9 @@ const StudyCard = ({
   missingValue,
   missingProject,
   requiredFileChanges,
+  tracking: {
+    EVENT_CONSTANTS: {STUDY_CARD},
+  },
 }) => {
   const projectsCounts = projects && projects.length > 0 ? projects.length : 0;
   const needsAttention =
@@ -155,4 +159,6 @@ StudyCard.defaultProps = {
   lastUpdate: null,
 };
 
-export default withRouter(StudyCard);
+export default withRouter(
+  withAnalyticsTracking(StudyCard, {logToConsole: true}),
+);

@@ -30,10 +30,22 @@ const HeaderSkeleton = () => (
 /**
  * Displays unordered studies in grid view (include empty stage message)
  */
-const StudyList = ({studyList, loading, activeView, roles}) => {
+const StudyList = ({
+  studyList,
+  loading,
+  activeView,
+  roles,
+  tracking: {
+    buttonTracking,
+    logEvent,
+    EVENT_CONSTANTS: {INPUT, STUDY_LIST},
+  },
+}) => {
   const [view, setView] = useState(activeView);
   const [searchString, setSearchString] = useState('');
   const isAdmin = roles && roles.includes('ADMIN');
+  const logStudyListEvent = (action, payload) =>
+    logEvent(STUDY_LIST[action], payload);
 
   if (loading) {
     return (

@@ -144,6 +144,13 @@ const FileElement = ({
     sortedVersions.length > 0 ? sortedVersions[0].node.state : null;
 
   const justUpdated = useRecentlyUpdated(latestDate, fileKfID);
+  const fileTrackingObj = {
+    file_name: fileName,
+    file_type: fileType.title,
+    file_status: versionState,
+    file_versions: fileNode.versions.edges.length,
+    modified_at: latestDate,
+  };
   return (
     <Table.Row
       style={{backgroundColor: justUpdated ? '#f8ffff' : 'inherit'}}

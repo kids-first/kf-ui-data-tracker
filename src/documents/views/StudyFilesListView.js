@@ -83,7 +83,6 @@ const StudyFilesListView = ({
     params: {kfId},
   },
   history,
-  user,
   tracking: {buttonTracking, logEvent},
 }) => {
   const {loading, data, error} = useQuery(GET_STUDY_BY_ID, {
