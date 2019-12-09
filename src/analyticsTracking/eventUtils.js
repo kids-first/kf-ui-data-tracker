@@ -1,11 +1,21 @@
 import EVENT_CONSTANTS from './eventConstants';
-
+/**
+ * Takes non-standard event type string and
+ * snake cases them
+ * @param {string} str raw event type
+ */
 export const normalizeEventType = str =>
   str
     .trim()
     .replace(/ /gi, '_')
     .toUpperCase();
 
+/**
+ * Check that we have a legit log function to curry.
+ * @todo using a typescript interface would nullify the need for this function
+ * @param {string} funcName function that the log params is being checked for
+ * @param {function} logFunc log param passed from closure
+ */
 const checkLogError = (funcName, logFunc) => {
   if (
     typeof logFunc !== 'function' ||
@@ -20,7 +30,16 @@ const checkLogError = (funcName, logFunc) => {
   return true;
 };
 
-/**  */
+/**
+ * Convenience function to append event constants in
+ * "__CLICK", "__HOVER" or default to MOUSE__CLICK, MOUSE__HOVER
+ *
+ * @param {function} log curried function that logs the event to the service
+ * @param {string} domEvent one of either "onClick" or "onMouseOver"
+ * @param {string} eventType event constant
+ * @param {object} eventProps
+ * @param {object} e DOM mouse event OR react synthetic event
+ */
 const mouseEvent = log => (domEvent, eventType, eventProps, e) => {
   if (e && eventProps.stopPropagation) e.stopPropagation();
   delete eventProps.stopPropagation;
@@ -44,6 +63,11 @@ const mouseEvent = log => (domEvent, eventType, eventProps, e) => {
   }
 };
 
+/**
+ * Convenience function to that returns common DOM mouse events.
+ *
+ * @param {function} log function to puash events to analytics service
+ */
 export const mouseEvents = log => (eventProps = {}, eventType = null) => {
   if (checkLogError('mouseEvents', log))
     return {
@@ -57,7 +81,13 @@ export const mouseEvents = log => (eventProps = {}, eventType = null) => {
 
 /**
  * Curry'd function to ensure all button events have the
- * button_text and button_type event properties attached
+ * button_text and button_type event properties attached.
+ *
+ * USAGE:
+ * <button {...buttonTracking({link: '', button_text:''}, "My Button")} />
+ * -> MY_BUTTON__CLICK:{link: '', button_text:''}
+ * -> MY_BUTTON__HOVER:{link: '', button_text:''}
+ *
  * @param {func} log - event logging function
  * @param {string} name - inner button text
  * @param {string} type - type of button ('toggle','label','icon', etc )
@@ -69,10 +99,15 @@ export const buttonTracking = log => (name, type, props, scope) =>
     scope ? `${normalizeEventType(scope)}` : null,
   );
 
-export const popupTracking = (log = null, inheritedProps = {}) => (
-  eventProps = null,
-  scope,
-) => {
+/**
+ * Convenience function to log common mouse events prepending "TOOLTIP__" for
+ * toolip and semantic Popup components
+ *
+ * @param {func} log - event logging function
+ * @param {object} eventProps - additional event props to log
+ * @param {string} scope - optional: string constant override for event type
+ */
+export const popupTracking = (log = null) => (eventProps = null, scope) => {
   if (checkLogError('popupTracking', log))
     return mouseEvents(log)(
       {
@@ -80,7 +115,6 @@ export const popupTracking = (log = null, inheritedProps = {}) => (
         tooltip_content: eventProps.content || null,
         link: eventProps.link || null,
         stopPropagation: true,
-        ...(inheritedProps || {}),
       },
       scope
         ? normalizeEventType(scope)
@@ -94,6 +128,15 @@ export const popupTracking = (log = null, inheritedProps = {}) => (
   return false;
 };
 
+/**
+ * Convenience function to log common onOpen, onClose, onChange events
+ * for dropdown components
+ *
+ *
+ * @param {func} log - event logging function
+ * @param {string} name - placeholder text used to uniquely identify a dropdown
+ * @param {object} eventProps - event properites to log (placeholder and value are required)
+ */
 export const dropdownTracking = log => (
   name,
   eventProps = {},
