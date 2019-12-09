@@ -4,6 +4,7 @@ import StudyGrid from './StudyGrid';
 import StudyTable from './StudyTable';
 import {Link} from 'react-router-dom';
 import ToggleButtons from '../ToggleButtons/ToggleButtons';
+import {withAnalyticsTracking} from '../../analyticsTracking';
 import {
   Container,
   Segment,
@@ -168,4 +169,4 @@ StudyList.defaultProps = {
   activeView: 'list',
 };
 
-export default StudyList;
+export default withAnalyticsTracking(StudyList);

@@ -14,6 +14,7 @@ import {
 } from '../../utilities';
 import {fileTypeDetail} from '../../../common/enums';
 import {longDate} from '../../../common/dateUtils';
+import {withAnalyticsTracking} from '../../../analyticsTracking';
 
 const useRecentlyUpdated = (latestDate, fileId) => {
   const [justUpdated, setJustUpdated] = useState(false);
@@ -180,7 +181,7 @@ const FileElement = ({
                 ...fileTrackingObj,
                 scope: 'FileElement',
               },
-              'File_STATUS_BADGE_',
+              'File_STATUS_BADGE',
             )}
           >
             <Badge
@@ -254,4 +255,4 @@ FileList.defaultProps = {
   fileNode: null,
 };
 
-export default withRouter(FileElement);
+export default withRouter(withAnalyticsTracking(FileElement));

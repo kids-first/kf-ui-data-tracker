@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import {List, Icon, Popup, Label} from 'semantic-ui-react';
 import {versionState} from '../../common/enums';
+import {withAnalyticsTracking} from '../../analyticsTracking';
 /**
  * Displays file counts with total number and breaking down by each status
  * When no files exist, show buttons guiding user to upload files
@@ -94,4 +95,4 @@ FileCounts.defaultProps = {
   files: [],
 };
 
-export default FileCounts;
+export default withAnalyticsTracking(FileCounts);

@@ -14,6 +14,7 @@ const FileUploadTarget = props => {
     handleDrop,
     tracking: {
       instrument,
+      inheritedEventProps,
       EVENT_CONSTANTS: {DRAG},
     },
   } = props;

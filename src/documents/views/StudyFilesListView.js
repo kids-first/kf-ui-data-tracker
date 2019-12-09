@@ -175,11 +175,11 @@ const StudyFilesListView = ({
               : setDialog(true);
           }}
           eventProperties={inherit => ({
-            scope: 'StudyFilesListView',
             study: {
-              kfid: studyByKfId ? studyByKfId.kfId : '',
-              files: studyByKfId ? studyByKfId.files.edges.length : '',
+              kfId: studyByKfId ? studyByKfId.kfId : null,
+              files: studyByKfId ? studyByKfId.files.edges.length : null,
             },
+            ...inherit,
           })}
         />
       </Grid.Row>

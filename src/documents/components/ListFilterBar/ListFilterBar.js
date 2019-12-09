@@ -27,7 +27,7 @@ const ListFilterBar = ({
     buttonTracking,
     logEvent,
     dropdownTracking,
-    EVENT_CONSTANTS: {DROPDOWN: DD_EVENT, INPUT},
+    EVENT_CONSTANTS: {DROPDOWN, INPUT},
   },
 }) => {
   const [sortMethod, setSortMethod] = useState('');
@@ -305,7 +305,10 @@ const ListFilterBar = ({
             value={approvalFilterStatus}
             options={statusOptions}
             placeholder="Approval status"
-            {...dropdownTracking('Approval Stauts')}
+            {...dropdownTracking('Approval Stauts', {
+              value: approvalFilterStatus,
+              results_length: filteredList.length,
+            })}
             onChange={(e, {value}) => {
               dropdownTracking('Approval status', {
                 value: versionState[value]
@@ -313,6 +316,7 @@ const ListFilterBar = ({
                   : 'cleared',
                 results_length: filteredList.length,
               }).onChange(e, {value});
+
               setApprovalFilterStatus(value);
             }}
           />
@@ -386,7 +390,7 @@ const ListFilterBar = ({
                   direction: sortDirection,
                   results_length: filteredList.length,
                 },
-                'sort direction_',
+                'sort direction',
               ).onClick();
             }}
           >
