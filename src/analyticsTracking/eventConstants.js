@@ -21,14 +21,19 @@ import schemas from './event_schemas';
  */
 const EVENT_CONSTANTS = Object.keys(schemas).reduce((acc, curr) => {
   const keyArr = curr.split('__');
-  return {
+
+  if (acc[keyArr[0]]) {
+    acc[keyArr[0]][keyArr[1]] = curr;
+  }
+  const rtn = {
     [keyArr[0]]: {
       scope: keyArr[0],
       [keyArr[1]]: curr,
-      ...(acc[keyArr[0]] || {}),
     },
     ...acc,
   };
+
+  return rtn;
 }, {});
 
 export default EVENT_CONSTANTS;
