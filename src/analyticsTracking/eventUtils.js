@@ -107,10 +107,14 @@ export const buttonTracking = log => (name, type, props, scope) =>
  * @param {object} eventProps - additional event props to log
  * @param {string} scope - optional: string constant override for event type
  */
-export const popupTracking = (log = null) => (eventProps = null, scope) => {
+export const popupTracking = (log = null, inheritedProps = {}) => (
+  eventProps = null,
+  scope,
+) => {
   if (checkLogError('popupTracking', log))
     return mouseEvents(log)(
       {
+        ...inheritedProps,
         tooltip_name: eventProps.name || null,
         tooltip_content: eventProps.content || null,
         link: eventProps.link || null,

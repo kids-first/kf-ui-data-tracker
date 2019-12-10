@@ -65,14 +65,6 @@ exports[`renders study grid correctly 1`] = `
           <div
             class="ui red card"
           >
-            <div
-              class="ui mini right corner label"
-            >
-              <i
-                aria-hidden="true"
-                class="red exclamation mini icon"
-              />
-            </div>
             <a
               class="content"
               href="/study/SD_8WX8QQ06/basic-info/info"
@@ -150,14 +142,6 @@ exports[`renders study grid correctly 1`] = `
           <div
             class="ui red card"
           >
-            <div
-              class="ui mini right corner label"
-            >
-              <i
-                aria-hidden="true"
-                class="red exclamation mini icon"
-              />
-            </div>
             <a
               class="content"
               href="/study/SD_I1L92W57/basic-info/info"
@@ -235,14 +219,6 @@ exports[`renders study grid correctly 1`] = `
           <div
             class="ui red card"
           >
-            <div
-              class="ui mini right corner label"
-            >
-              <i
-                aria-hidden="true"
-                class="red exclamation mini icon"
-              />
-            </div>
             <a
               class="content"
               href="/study/SD_SG5N41K8/basic-info/info"
@@ -477,14 +453,6 @@ exports[`renders study grid for ADMIN role 1`] = `
           <div
             class="ui red card"
           >
-            <div
-              class="ui mini right corner label"
-            >
-              <i
-                aria-hidden="true"
-                class="red exclamation mini icon"
-              />
-            </div>
             <a
               class="content"
               href="/study/SD_8WX8QQ06/basic-info/info"
@@ -562,14 +530,6 @@ exports[`renders study grid for ADMIN role 1`] = `
           <div
             class="ui red card"
           >
-            <div
-              class="ui mini right corner label"
-            >
-              <i
-                aria-hidden="true"
-                class="red exclamation mini icon"
-              />
-            </div>
             <a
               class="content"
               href="/study/SD_I1L92W57/basic-info/info"
@@ -647,14 +607,6 @@ exports[`renders study grid for ADMIN role 1`] = `
           <div
             class="ui red card"
           >
-            <div
-              class="ui mini right corner label"
-            >
-              <i
-                aria-hidden="true"
-                class="red exclamation mini icon"
-              />
-            </div>
             <a
               class="content"
               href="/study/SD_SG5N41K8/basic-info/info"
@@ -732,14 +684,6 @@ exports[`renders study grid for ADMIN role 1`] = `
           <div
             class="ui red card"
           >
-            <div
-              class="ui mini right corner label"
-            >
-              <i
-                aria-hidden="true"
-                class="red exclamation mini icon"
-              />
-            </div>
             <a
               class="content"
               href="/study/SD_0YYP5ZEN/basic-info/info"
@@ -897,14 +841,6 @@ exports[`renders study grid for ADMIN role 2`] = `
           <div
             class="ui red card"
           >
-            <div
-              class="ui mini right corner label"
-            >
-              <i
-                aria-hidden="true"
-                class="red exclamation mini icon"
-              />
-            </div>
             <a
               class="content"
               href="/study/SD_8WX8QQ06/basic-info/info"
@@ -1000,14 +936,6 @@ exports[`renders study grid for ADMIN role 2`] = `
           <div
             class="ui red card"
           >
-            <div
-              class="ui mini right corner label"
-            >
-              <i
-                aria-hidden="true"
-                class="red exclamation mini icon"
-              />
-            </div>
             <a
               class="content"
               href="/study/SD_I1L92W57/basic-info/info"
@@ -1085,14 +1013,6 @@ exports[`renders study grid for ADMIN role 2`] = `
           <div
             class="ui red card"
           >
-            <div
-              class="ui mini right corner label"
-            >
-              <i
-                aria-hidden="true"
-                class="red exclamation mini icon"
-              />
-            </div>
             <a
               class="content"
               href="/study/SD_SG5N41K8/basic-info/info"
@@ -1170,14 +1090,6 @@ exports[`renders study grid for ADMIN role 2`] = `
           <div
             class="ui red card"
           >
-            <div
-              class="ui mini right corner label"
-            >
-              <i
-                aria-hidden="true"
-                class="red exclamation mini icon"
-              />
-            </div>
             <a
               class="content"
               href="/study/SD_0YYP5ZEN/basic-info/info"
@@ -1335,14 +1247,6 @@ exports[`renders study grid for ADMIN role 3`] = `
           <div
             class="ui red card"
           >
-            <div
-              class="ui mini right corner label"
-            >
-              <i
-                aria-hidden="true"
-                class="red exclamation mini icon"
-              />
-            </div>
             <a
               class="content"
               href="/study/SD_8WX8QQ06/basic-info/info"
@@ -1420,14 +1324,6 @@ exports[`renders study grid for ADMIN role 3`] = `
           <div
             class="ui red card"
           >
-            <div
-              class="ui mini right corner label"
-            >
-              <i
-                aria-hidden="true"
-                class="red exclamation mini icon"
-              />
-            </div>
             <a
               class="content"
               href="/study/SD_I1L92W57/basic-info/info"
@@ -1505,14 +1401,6 @@ exports[`renders study grid for ADMIN role 3`] = `
           <div
             class="ui red card"
           >
-            <div
-              class="ui mini right corner label"
-            >
-              <i
-                aria-hidden="true"
-                class="red exclamation mini icon"
-              />
-            </div>
             <a
               class="content"
               href="/study/SD_SG5N41K8/basic-info/info"
@@ -1590,14 +1478,6 @@ exports[`renders study grid for ADMIN role 3`] = `
           <div
             class="ui red card"
           >
-            <div
-              class="ui mini right corner label"
-            >
-              <i
-                aria-hidden="true"
-                class="red exclamation mini icon"
-              />
-            </div>
             <a
               class="content"
               href="/study/SD_0YYP5ZEN/basic-info/info"

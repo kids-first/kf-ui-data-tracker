@@ -33,8 +33,8 @@ it('renders correctly', async () => {
 
 it('deletes a file correctly', async () => {
   const tree = render(
-    <AnalyticsMockProvider>
-      <MockedProvider mocks={mocks}>
+    <AnalyticsProviderMock>
+      <MockedProvider mocks={[mocks[1], mocks[3], mocks[8], mocks[26]]}>
         <MemoryRouter initialEntries={['/study/SD_8WX8QQ06']}>
           <StudyFilesListView
             history={[]}
@@ -42,18 +42,20 @@ it('deletes a file correctly', async () => {
           />
         </MemoryRouter>
       </MockedProvider>
-    </AnalyticsMockProvider>,
+    </AnalyticsProviderMock>,
   );
   await wait(0);
   expect(tree.container).toMatchSnapshot();
 
   const rows = tree.getAllByTestId('file-item');
+
   expect(rows.length).toBe(2);
 
   // Delete the second file
   act(() => {
     fireEvent.click(tree.getAllByTestId('delete-button')[1]);
   });
+
   act(() => {
     fireEvent.click(tree.getByTestId('delete-confirm'));
   });
@@ -68,7 +70,7 @@ it('deletes a file correctly', async () => {
 
 it('shows an error', async () => {
   const tree = render(
-    <AnalyticsMockProvider>
+    <AnalyticsProviderMock>
       <MockedProvider mocks={[mocks[2], mocks[8]]}>
         <MemoryRouter initialEntries={['/study/SD_8WX8QQ06']}>
           <StudyFilesListView
@@ -77,7 +79,7 @@ it('shows an error', async () => {
           />
         </MemoryRouter>
       </MockedProvider>
-    </AnalyticsMockProvider>,
+    </AnalyticsProviderMock>,
   );
   await wait(0);
 

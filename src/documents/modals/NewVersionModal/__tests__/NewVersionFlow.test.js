@@ -13,6 +13,7 @@ afterEach(cleanup);
 it('creates a new version', async () => {
   const fileNode = fileByKfId.data.fileByKfId;
   const handleClose = jest.fn();
+  const createVersion = jest.fn();
 
   const tree = render(
     <AnalyticsProviderMock>
