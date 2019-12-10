@@ -79,8 +79,20 @@ body {
   margin-top: 6px !important;
 }
 
+.mt-30 {
+  margin-top: 30px !important;
+}
+
+.mt-15 {
+  margin-top: 15px !important;
+}
+
 .ml-10 {
   margin-left: 10px !important;
+}
+
+.ml-15 {
+  margin-left: 15px !important;
 }
 
 .mr-5 {
@@ -217,5 +229,45 @@ body {
 }
 
 .text-grey {
-  color: #919090;
+  color: #919090 !important;
+}
+
+.margin-x-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.noBefore {
+  div:before {
+    height: 0px !important;
+  }
+}
+
+.width-fit-content {
+  width: fit-content;
+}
+
+.text-blue {
+  color: cornflowerblue;
+}
+
+.text-green {
+  color: green;
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+
+.ui.dimmer .ui.loader:after {
+  border-color: #767676 transparent transparent;
+  border-style: solid;
+  border-width: 0.2em;
+}
+.ui.dimmer .ui.loader:before {
+  border: 0.2em solid rgba(0, 0, 0, 0.1);
 }
