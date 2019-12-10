@@ -11,7 +11,7 @@ import {
 import Routes from '../../../../Routes';
 import {mocks} from '../../../../../__mocks__/kf-api-study-creator/mocks';
 import myProfile from '../../../../../__mocks__/kf-api-study-creator/responses/myProfile.json';
-import {AnalyticsMockProvider} from '../../../../analyticsTracking';
+import {AnalyticsProviderMock} from '../../../../analyticsTracking';
 jest.mock('auth0-js');
 
 beforeAll(() => {
@@ -34,7 +34,7 @@ beforeAll(() => {
 
 it('edits an existing file correctly', async () => {
   const tree = render(
-    <AnalyticsMockProvider>
+    <AnalyticsProviderMock>
       <MockedProvider
         resolvers={{
           Query: {
@@ -47,7 +47,7 @@ it('edits an existing file correctly', async () => {
           <Routes />
         </MemoryRouter>
       </MockedProvider>
-    </AnalyticsMockProvider>,
+    </AnalyticsProviderMock>,
   );
   await wait(10);
 
@@ -141,4 +141,4 @@ it('edits an existing file correctly', async () => {
   });
   await wait();
   expect(tree.container).toMatchSnapshot();
-}, 8000);
+}, 10000);
