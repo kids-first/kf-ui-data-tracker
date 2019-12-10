@@ -10,8 +10,6 @@ import {
   Icon,
   List,
   Button,
-  Confirm,
-  Container,
 } from 'semantic-ui-react';
 import {Formik} from 'formik';
 import {InfoStep, ExternalStep, LogisticsStep} from './Steps';
@@ -22,7 +20,6 @@ import {
   steppingFields,
   prevNextStep,
 } from '../../common/notificationUtils';
-import {workflowOptions} from '../../common/enums';
 
 /**
  * A form for the user to create or update a study, displaying in three steps
@@ -66,7 +63,6 @@ const NewStudyForm = ({
         history.location.pathname.split('/').length - 1
       ],
   );
-  const [confirmOpen, setConfirmOpen] = useState(false);
   const [workflowType, setSelection] = useState([
     'bwa_mem',
     'gatk_haplotypecaller',
@@ -143,7 +139,6 @@ const NewStudyForm = ({
           inputObject.releaseDate = null;
         }
         if (newStudy) {
-          setConfirmOpen(false);
           submitValue({input: inputObject, workflowType: workflowType});
         } else {
           submitValue(values);
@@ -241,8 +236,6 @@ const NewStudyForm = ({
                         focused,
                         setSelection,
                         workflowType,
-                        setConfirmOpen,
-                        confirmOpen,
                         history,
                         editing,
                         foldDescription,
@@ -306,6 +299,7 @@ const NewStudyForm = ({
                   primary
                   floated="right"
                   type="button"
+                  loading={formikProps.isSubmitting}
                   disabled={
                     Object.keys(formikProps.errors).length > 0 ||
                     formikProps.values.name.length === 0 ||
@@ -314,58 +308,13 @@ const NewStudyForm = ({
                   onClick={() => {
                     formikProps.validateForm().then(errors => {
                       Object.keys(formikProps.errors).length === 0 &&
-                        setConfirmOpen(true);
+                        formikProps.handleSubmit();
                     });
                   }}
                 >
                   SUBMIT
                 </Button>
               )}
-              <Confirm
-                open={confirmOpen}
-                onCancel={() => setConfirmOpen(false)}
-                onConfirm={formikProps.handleSubmit}
-                header="Create Study"
-                content={
-                  <Container as={Segment} basic padded>
-                    <p>
-                      The following resources will be created for this study
-                    </p>
-                    <List bulleted>
-                      <List.Item>Dataservice study</List.Item>
-                      <List.Item>S3 bucket</List.Item>
-                      <List.Item>Cavatica delivery project</List.Item>
-                      {workflowType.length > 0 && (
-                        <List.Item>
-                          Cavatica harmonization projects
-                          <List.List>
-                            {workflowType.map(type => (
-                              <List.Item key={type}>
-                                {
-                                  workflowOptions.filter(
-                                    obj => obj.value === type,
-                                  )[0].text
-                                }
-                              </List.Item>
-                            ))}
-                          </List.List>
-                        </List.Item>
-                      )}
-                    </List>
-                  </Container>
-                }
-                confirmButton={
-                  <Button
-                    primary
-                    floated="right"
-                    type="submit"
-                    data-testid="new-study-confirm"
-                    loading={formikProps.isSubmitting}
-                  >
-                    SUBMIT
-                  </Button>
-                }
-              />
             </Form>
           </Segment>
         </Fragment>
