@@ -18,7 +18,7 @@ it('renders new study view correctly', async () => {
           myProfile: _ => myProfile.data.myProfile,
         },
       }}
-      mocks={[mocks[1], mocks[8], mocks[21]]}
+      mocks={[mocks[1], mocks[8], mocks[21], mocks[40], mocks[1]]}
     >
       <MemoryRouter initialEntries={['/study/new-study/info']}>
         <Routes />
@@ -66,9 +66,16 @@ it('renders new study view correctly', async () => {
 
   expect(tree.container).toMatchSnapshot();
 
+  await wait(1000);
+
+  expect(tree.container).toMatchSnapshot();
+
   act(() => {
-    fireEvent.click(tree.getAllByTestId('new-study-confirm')[0]);
+    fireEvent.click(tree.getByText(/Skip ahead to the study/i));
   });
+
+  await wait(100);
+
   expect(tree.container).toMatchSnapshot();
 });
 
@@ -119,22 +126,6 @@ it('renders new study view correctly --  with error on submit', async () => {
   act(() => {
     fireEvent.click(tree.getByText(/SUBMIT/i));
   });
-  await wait();
-
-  act(() => {
-    fireEvent.click(tree.getByText(/Cancel/i));
-  });
-  await wait();
-
-  act(() => {
-    fireEvent.click(tree.getByText(/SUBMIT/i));
-  });
-  await wait();
-
-  act(() => {
-    fireEvent.click(tree.getAllByTestId('new-study-confirm')[0]);
-  });
-
   await wait(3000);
 
   expect(tree.container).toMatchSnapshot();
