@@ -101,6 +101,7 @@ const StudyTable = ({
   isAdmin,
   tracking: {
     popupTracking,
+    buttonTracking,
     inheritedEventProps,
     EVENT_CONSTANTS: {STUDY_TABLE},
   },

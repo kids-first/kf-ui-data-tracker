@@ -3,6 +3,7 @@ import {MemoryRouter} from 'react-router-dom';
 import {render, cleanup} from 'react-testing-library';
 import allStudies from '../../../../__mocks__/kf-api-study-creator/responses/allStudies.json';
 import StudyTable from '../StudyTable';
+import {AnalyticsProviderMock} from '../../../analyticsTracking';
 
 afterEach(cleanup);
 
@@ -11,9 +12,11 @@ it('renders study table correctly', () => {
   const excludedColumns = ['name', 'createdAt', 'modifiedAt'];
   // Should contain 4 cards in loading state
   const tree = render(
-    <MemoryRouter>
-      <StudyTable studyList={studies} exclude={excludedColumns} />
-    </MemoryRouter>,
+    <AnalyticsProviderMock>
+      <MemoryRouter>
+        <StudyTable studyList={studies} exclude={excludedColumns} />
+      </MemoryRouter>
+    </AnalyticsProviderMock>,
   );
   expect(tree.container).toMatchSnapshot();
 
@@ -26,9 +29,11 @@ it('renders study table without excluded columns passed to props', () => {
   const excludedColumn = 'name';
 
   const tree = render(
-    <MemoryRouter>
-      <StudyTable studyList={studies} exclude={[excludedColumn]} />
-    </MemoryRouter>,
+    <AnalyticsProviderMock>
+      <MemoryRouter>
+        <StudyTable studyList={studies} exclude={[excludedColumn]} />
+      </MemoryRouter>
+    </AnalyticsProviderMock>,
   );
   expect(tree.container).toMatchSnapshot();
 
@@ -42,13 +47,15 @@ it('renders study table for ADMIN role', () => {
   const excludedColumns = ['name', 'createdAt', 'modifiedAt'];
 
   const tree = render(
-    <MemoryRouter>
-      <StudyTable
-        studyList={studies}
-        isAdmin={true}
-        exclude={excludedColumns}
-      />
-    </MemoryRouter>,
+    <AnalyticsProviderMock>
+      <MemoryRouter>
+        <StudyTable
+          studyList={studies}
+          isAdmin={true}
+          exclude={excludedColumns}
+        />
+      </MemoryRouter>
+    </AnalyticsProviderMock>,
   );
   expect(tree.container).toMatchSnapshot();
 
@@ -58,9 +65,11 @@ it('renders study table for ADMIN role', () => {
 
 it('renders study table loading state', () => {
   const tree = render(
-    <MemoryRouter>
-      <StudyTable loading={true} />
-    </MemoryRouter>,
+    <AnalyticsProviderMock>
+      <MemoryRouter>
+        <StudyTable loading={true} />
+      </MemoryRouter>
+    </AnalyticsProviderMock>,
   );
   expect(tree.container).toMatchSnapshot();
 
