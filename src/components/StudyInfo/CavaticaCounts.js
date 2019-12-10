@@ -60,8 +60,8 @@ const CavaticaCounts = ({
               trigger={
                 <List.Item
                   {...popupTracking({
-                    name: typeCounts[type.key],
-                    content: type.text,
+                    name: type.text,
+                    content: typeCounts[type.key],
                   })}
                 >
                   <Label circular empty size="mini" color="olive" />{' '}
