@@ -1,7 +1,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import CopyButton from '../CopyButton/CopyButton';
-import {Container, Header, Placeholder} from 'semantic-ui-react';
+import {Container, Header, Placeholder, Icon} from 'semantic-ui-react';
 
 const StudyHeader = ({
   kfId,
@@ -9,6 +9,8 @@ const StudyHeader = ({
   shortName,
   name: studyName,
   loading,
+  creationError,
+  showModal,
 }) => {
   if (loading) {
     return (
@@ -25,7 +27,23 @@ const StudyHeader = ({
 
   return (
     <Container>
-      <Header as="h1">{studyName || 'Unknown study name'}</Header>
+      {creationError && creationError.length > 0 && (
+        <small
+          className="text-red cursor-pointer noMargin"
+          onClick={() => {
+            showModal(true);
+          }}
+        >
+          <Icon name="warning sign" />
+          This study may not have been created successfully
+        </small>
+      )}
+      <Header
+        as="h1"
+        className={creationError && creationError.length > 0 ? 'mt-15' : ''}
+      >
+        {studyName || 'Unknown study name'}
+      </Header>
       {shortName && (
         <Header.Subheader as="h2" className="study--header-sub">
           {shortName}
