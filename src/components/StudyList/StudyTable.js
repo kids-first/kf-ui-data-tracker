@@ -23,7 +23,8 @@ const TableValue = ({
   title,
   tracking: {
     buttonTracking,
-    EVENT_CONSTANTS: {STUDY_TABLE_},
+    popupTracking,
+    EVENT_CONSTANTS: {STUDY_TABLE},
   },
 }) => {
   switch (col) {
@@ -33,7 +34,10 @@ const TableValue = ({
           files={row[col].edges}
           title={title}
           hideIcon
-          eventProperties={{study: {kfId: row.kfId}, scope: STUDY_TABLE.scope}}
+          eventProperties={{
+            study: {kfId: row.kfId},
+            scope: STUDY_TABLE.scope,
+          }}
         />
       );
     case 'projects':
@@ -42,7 +46,10 @@ const TableValue = ({
           projects={row[col].edges}
           title={title}
           hideIcon
-          eventProperties={{study: {kfId: row.kfId}, scope: STUDY_TABLE.scope}}
+          eventProperties={{
+            study: {kfId: row.kfId},
+            scope: STUDY_TABLE.scope,
+          }}
         />
       );
     // Are these depricated??
@@ -60,20 +67,18 @@ const TableValue = ({
         <Link
           to={`/study/${title}/basic-info/info`}
           className={row[col].missingValue > 0 ? 'text-red' : null}
-          onClick={
-            buttonTracking(
-              `${trackedStudyFields.length - row[col].missingValue}/${
+          {...popupTracking(
+            {
+              name: 'Info',
+              content: `${trackedStudyFields.length - row[col].missingValue}/${
                 trackedStudyFields.length
               } complete`,
-              'Table.Row',
-              {
-                link: `/study/${title}/basic-info/info`,
-                study: {kfId: row.kfId},
-                stopPropagation: true,
-              },
-              STUDY_TABLE_.scope,
-            ).onClick
-          }
+              link: `/study/${title}/basic-info/info`,
+              study: {kfId: row.kfId},
+              stopPropagation: true,
+            },
+            `${STUDY_TABLE.scope}__TOOLTIP_INFO`,
+          )}
         >
           {trackedStudyFields.length -
             row[col].missingValue +
@@ -95,7 +100,7 @@ const StudyTable = ({
   history,
   isAdmin,
   tracking: {
-    buttonTracking,
+    popupTracking,
     inheritedEventProps,
     EVENT_CONSTANTS: {STUDY_TABLE},
   },
@@ -203,7 +208,7 @@ const StudyTable = ({
                   title={row.kfId}
                   tracking={{
                     inheritedEventProps,
-                    buttonTracking,
+                    popupTracking,
                     EVENT_CONSTANTS: {STUDY_TABLE},
                   }}
                 />
