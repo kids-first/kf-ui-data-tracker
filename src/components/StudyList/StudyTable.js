@@ -14,8 +14,6 @@ import {
 } from '../../common/notificationUtils';
 import {withAnalyticsTracking} from '../../analyticsTracking';
 
-import {withAnalyticsTracking} from '../../analyticsTracking';
-
 /**
  * Renders a single row in the table
  */
@@ -35,7 +33,7 @@ const TableValue = ({
           files={row[col].edges}
           title={title}
           hideIcon
-          eventProperties={{study: {kfId: row.kfId}}}
+          eventProperties={{study: {kfId: row.kfId}, scope: STUDY_TABLE.scope}}
         />
       );
     case 'projects':
@@ -44,7 +42,7 @@ const TableValue = ({
           projects={row[col].edges}
           title={title}
           hideIcon
-          eventProperties={{study: {kfId: row.kfId}}}
+          eventProperties={{study: {kfId: row.kfId}, scope: STUDY_TABLE.scope}}
         />
       );
     // Are these depricated??

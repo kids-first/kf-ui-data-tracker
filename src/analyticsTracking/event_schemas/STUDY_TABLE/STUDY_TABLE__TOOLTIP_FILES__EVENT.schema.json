@@ -1,9 +1,9 @@
 {
-  "$id": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/STUDY_TABLE/TOOLTIP__file_status__HOVER.schema.json",
+  "$id": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/STUDY_TABLE/STUDY_TABLE__TOOLTIP_FILES__EVENT.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "TOOLTIP__file_status__HOVER",
+  "title": "STUDY_TABLE__TOOLTIP_FILES__EVENT",
   "type": "object",
-  "description": "mouse hover event for StudyTable FileCounts element, this can be any of the file status indicators (<file_status>) ",
+  "description": "click and hover event(s) for StudyTable FileCounts 'N files' links (APPROVED, CHANGES REQUESTED, PENDING REVIEW, PROCESSED)",
   "properties": {
     "path": {
       "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/path"
@@ -21,10 +21,10 @@
       "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/study"
     },
     "tooltip_name": {
-      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/TOOLTIOP/TOOLTIOP_EVENT.schema.json#/definitions/tooltip_name"
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/TOOLTIP/TOOLTIP_EVENT.schema.json#/definitions/tooltip_name"
     },
     "tooltip_content": {
-      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/TOOLTIOP/TOOLTIOP_EVENT.schema.json#/definitions/tooltip_content"
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/TOOLTIP/TOOLTIP_EVENT.schema.json#/definitions/tooltip_content"
     },
     "link": {
       "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/BUTTON/BUTTON_EVENT.schema.json#/definitions/link"

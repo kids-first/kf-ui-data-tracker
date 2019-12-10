@@ -7,7 +7,7 @@
   "definitions": {
     "tooltip_content": {
       "$id": "#tooltip_content",
-      "type": "string",
+      "type": ["string", "number"],
       "description": "identifing text contained inside of a popup"
     },
     "tooltip_name": {

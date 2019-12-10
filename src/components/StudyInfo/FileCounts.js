@@ -13,7 +13,7 @@ const FileCounts = ({
   title,
   history,
   hideIcon,
-  tracking: {logEvent, popupTracking, inheritedEventProps},
+  tracking: {popupTracking, inheritedEventProps},
 }) => {
   const states = files.map(
     ({node: {versions}}) => versions.edges[0].node.state,
@@ -28,20 +28,16 @@ const FileCounts = ({
       <List.Item
         as={Link}
         to={`/study/${title}/documents`}
-        onClick={() =>
-          logEvent(
-            inheritedEventProps
-              ? inheritedEventProps.scope + '__TOOLTIP_FILES__CLICK'
-              : 'TOOTLIP_FILES__CLICK',
-            {
-              tooltip_name: 'Files',
-              tooltip_content: `${
-                files.length > 0 ? files.length : 'No'
-              } files`,
-              link: `/study/${title}/documents`,
-            },
-          )
-        }
+        {...popupTracking(
+          {
+            name: 'Files',
+            content: `${files.length > 0 ? files.length : 'No'} files`,
+            link: `/study/${title}/documents`,
+          },
+          inheritedEventProps
+            ? inheritedEventProps.scope + '__TOOLTIP_FILES'
+            : 'TOOTLIP_FILES',
+        )}
         className={hideIcon && files.length === 0 ? 'text-red' : null}
       >
         {!hideIcon && (
@@ -65,10 +61,17 @@ const FileCounts = ({
                 key={state}
                 trigger={
                   <List.Item
-                    {...popupTracking({
-                      name: versionState[state].title,
-                      content: stateCounts[state],
-                    })}
+                    {...popupTracking(
+                      {
+                        name: versionState[state].title,
+                        content: stateCounts[state],
+                        stopPropagation: true,
+                      },
+                      inheritedEventProps
+                        ? inheritedEventProps.scope +
+                            `__TOOLTIP_${versionState[state].title}`
+                        : `TOOLTIP_${versionState[state].title}`,
+                    )}
                   >
                     <Label
                       circular

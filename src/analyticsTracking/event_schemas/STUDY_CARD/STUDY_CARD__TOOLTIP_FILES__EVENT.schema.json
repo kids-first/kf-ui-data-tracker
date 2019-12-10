@@ -1,9 +1,9 @@
 {
-  "$id": "http://kf-ui-data-tracker.kidsfirstdrc.org/event_schemas/STUDY_CARD/STUDY_CARD__TOOLTIP_FILES__CLICK.schema.json",
+  "$id": "http://kf-ui-data-tracker.kidsfirstdrc.org/event_schemas/STUDY_CARD/STUDY_CARD__TOOLTIP_FILES__EVENT.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "STUDY_CARD__TOOLTIP_FILES__CLICK",
+  "title": "STUDY_CARD__TOOLTIP_FILES__EVENT",
   "type": "object",
-  "description": "click event on the 'Files' tooltip of the StudyCard component",
+  "description": "click and hover event on the 'Files' tooltip of the StudyCard component",
   "properties": {
     "path": {
       "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#path"

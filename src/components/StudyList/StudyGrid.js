@@ -57,6 +57,7 @@ const StudyGrid = ({studyList, loading, isAdmin}) => {
               projects: node.node.projects.edges.length,
               missing_info_fields: countStudyNotification(node.node),
             },
+            scope: 'STUDY_CARD',
           }}
         />
       ))}

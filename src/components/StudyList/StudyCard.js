@@ -21,6 +21,7 @@ const StudyCard = ({
   missingProject,
   requiredFileChanges,
   tracking: {
+    popupTracking,
     EVENT_CONSTANTS: {STUDY_CARD},
   },
 }) => {
@@ -51,7 +52,26 @@ const StudyCard = ({
               ' complete'
             }
             trigger={
-              <Link to={`/study/${studyId}/basic-info/info`} className="pr-5">
+              <Link
+                {...popupTracking(
+                  {
+                    name: 'Info',
+                    content: `${
+                      trackedStudyFields.length > 0
+                        ? trackedStudyFields.length -
+                          missingValue +
+                          '/' +
+                          trackedStudyFields.length +
+                          ' complete'
+                        : 'no info'
+                    }`,
+                    link: `/study/${studyId}/basic-info/info`,
+                  },
+                  STUDY_CARD.scope + '__TOOLTIP_INFO',
+                )}
+                to={`/study/${studyId}/basic-info/info`}
+                className="pr-5"
+              >
                 <Icon
                   name={missingValue > 0 ? 'clipboard list' : 'clipboard check'}
                   color={missingValue > 0 ? 'red' : 'grey'}
@@ -73,7 +93,18 @@ const StudyCard = ({
             }
             disabled={files.length > 0 && requiredFileChanges < 1}
             trigger={
-              <Link to={`/study/${studyId}/documents`} className="pr-5">
+              <Link
+                {...popupTracking(
+                  {
+                    name: 'Files',
+                    content: `${files.length > 0 ? files.length : 'No'} files`,
+                    link: `/study/${studyId}/documents`,
+                  },
+                  STUDY_CARD.scope + '__TOOLTIP_FILES',
+                )}
+                to={`/study/${studyId}/documents`}
+                className="pr-5"
+              >
                 <Icon
                   name="file"
                   color={
@@ -91,7 +122,20 @@ const StudyCard = ({
             content="Missing projects"
             disabled={projectsCounts > 0 && missingProject < 1}
             trigger={
-              <Link to={`/study/${studyId}/cavatica`}>
+              <Link
+                {...popupTracking(
+                  {
+                    name: 'Projects',
+                    content: `${
+                      projects.length > 0 ? projects.length : 'missing'
+                    } Projects`,
+                    link: `/study/${studyId}/cavatica`,
+                    stopPropagation: true,
+                  },
+                  `${STUDY_CARD.scope}__TOOLTIP_PROJECTS`,
+                )}
+                to={`/study/${studyId}/cavatica`}
+              >
                 <CavaticaLogo
                   className="mr-5 vertical-middle"
                   fill={
@@ -159,6 +203,4 @@ StudyCard.defaultProps = {
   lastUpdate: null,
 };
 
-export default withRouter(
-  withAnalyticsTracking(StudyCard, {logToConsole: true}),
-);
+export default withRouter(withAnalyticsTracking(StudyCard));

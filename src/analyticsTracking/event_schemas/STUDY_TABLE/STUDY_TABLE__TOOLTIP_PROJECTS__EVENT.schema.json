@@ -1,9 +1,9 @@
 {
-  "$id": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/STUDY_TABLE/CAVATICA_PROJECTS__HOVER.schema.json",
+  "$id": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/STUDY_TABLE/STUDY_TABLE__TOOLTIP_PROJECTS__EVENT.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "CAVATICA_PROJECTS__HOVER",
+  "title": "STUDY_TABLE__TOOLTIP_PROJECTS__EVENT",
   "type": "object",
-  "description": "onMouseEvent click event for StudyTable Row CavaticaProject link",
+  "description": "mouse click and hover event for StudyTable Row CavaticaProject link",
   "properties": {
     "path": {
       "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/path"
@@ -20,11 +20,11 @@
     "study": {
       "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/study"
     },
-    "button_text": {
-      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/BUTTON/BUTTON_EVENT.schema.json#/definitions/button_text"
+    "tooltip_content": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/TOOLTIP/TOOLTIP_EVENT.schema.json#/definitions/tooltip_content"
     },
-    "button_type": {
-      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/BUTTON/BUTTON_EVENT.schema.json#/definitions/button_type"
+    "tooltip_name": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/TOOLTIP/TOOLTIP_EVENT.schema.json#/definitions/tooltip_name"
     },
     "link": {
       "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/BUTTON/BUTTON_EVENT.schema.json#/definitions/link"

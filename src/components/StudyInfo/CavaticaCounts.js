@@ -13,7 +13,7 @@ const CavaticaCounts = ({
   projects,
   title,
   hideIcon,
-  tracking: {buttonTracking, popupTracking, logEvent, inheritedEventProps},
+  tracking: {popupTracking, inheritedEventProps},
 }) => {
   const types = projects.map(({node: {projectType}}) => projectType);
   const typeCounts = types.reduce((count, type) => {
@@ -25,31 +25,18 @@ const CavaticaCounts = ({
       <List.Item
         as={Link}
         to={`/study/${title}/cavatica`}
-        onClick={e => {
-          e.stopPropagation();
-          logEvent(
-            inheritedEventProps.scope
-              ? inheritedEventProps.scope + '__TOOLTIP_PROJECTS__CLICK'
-              : 'TOOTLIP_PROJECTS__CLICK',
-            {
-              tooltip_name: 'Projects',
-              tooltip_content: `${
-                projects.length > 0 ? projects.length : 'No'
-              } Projects`,
-              link: `/study/${title}/cavatica`,
-            },
-          );
-        }}
-        className={hideIcon && projects.length === 0 ? 'text-red' : null}
-        {...buttonTracking(
-          `${projects.length > 0 ? projects.length : 'No'} projects`,
-          'link',
+        {...popupTracking(
           {
+            name: 'Projects',
+            content: `${projects.length > 0 ? projects.length : 'No'} Projects`,
             link: `/study/${title}/cavatica`,
             stopPropagation: true,
           },
-          'cavatica projects',
+          `${
+            inheritedEventProps.scope ? inheritedEventProps.scope + '__' : ''
+          }TOOLTIP_PROJECTS`,
         )}
+        className={hideIcon && projects.length === 0 ? 'text-red' : null}
       >
         {!hideIcon && (
           <CavaticaLogo
