@@ -202,3 +202,22 @@ export const systemEnvColors = {
   prd: 'green',
   qa: 'blue',
 };
+
+// Study creation status messages and icons
+export const statusyMessage = {
+  ERR: {
+    icon: 'warning sign',
+    text: 'Error(s) creating external study resources. Click for details.',
+    class: 'text-red cursor-pointer noMargin',
+  },
+  SUC: {
+    icon: 'check circle',
+    text: 'External study resources created! Click for details.',
+    class: 'text-green cursor-pointer noMargin',
+  },
+  STR: {
+    icon: 'clock',
+    text: 'External study resources creation in progress. Click for details.',
+    class: 'text-blue cursor-pointer noMargin',
+  },
+};
