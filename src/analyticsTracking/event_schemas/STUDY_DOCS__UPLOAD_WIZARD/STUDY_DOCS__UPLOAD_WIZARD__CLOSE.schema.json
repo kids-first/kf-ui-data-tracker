@@ -1,0 +1,46 @@
+{
+  "$id": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schema/STUDY_DOCS__UPLOAD_WIZARD__CLOSE/STUDY_DOCS__UPLOAD_WIZARD__CLOSE.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "STUDY_DOCS__UPLOAD_WIZARD__CLOSE",
+  "type": "object",
+  "description": "close event for the UploadWizard module",
+  "properties": {
+    "path": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/path"
+    },
+    "route": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/route"
+    },
+    "view": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/view"
+    },
+    "scope": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/scope"
+    },
+    "button_text": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/BUTTON/BUTTON_EVENT.schema.json#/definitions/button_text"
+    },
+    "button_type": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/BUTTON/BUTTON_EVENT.schema.json#/definitions/button_type"
+    },
+    "file": {"$ref": "../common_defintions.json#/file"},
+    "study": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/study"
+        },
+        {
+          "properties": {
+            "name": {"type": "string", "description": "study long name"},
+            "documents": {
+              "type": "integer",
+              "description": "length of documents in study"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "additionalProperties": false
+}

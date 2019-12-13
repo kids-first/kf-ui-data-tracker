@@ -20,13 +20,15 @@ class AmplitudeUser {
     ['https://kidsfirstdrc.org/permissions', 'permissions'],
   ];
 
-  constructor(idToken, api_key) {
+  constructor(instance, idToken, api_key) {
     if (!idToken) {
       console.error('[Amplitude] Error: no idToken passed on instantiatiaion');
       return false;
     }
-    amplitude.getInstance().init(api_key);
-    this.instance = amplitude.getInstance();
+
+    if (!instance) amplitude.getInstance().init(api_key);
+
+    this.instance = instance || amplitude.getInstance();
 
     this.auth_user = jwtDecode(idToken);
 

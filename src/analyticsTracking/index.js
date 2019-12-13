@@ -1,5 +1,5 @@
-export {default as AmplitudeProxy} from './AmplitudeProxy';
-export {default as AmplitudeUser} from './AmplitudeUser';
+export {default as AmplitudeProxy} from './services/Amplitude/AmplitudeProxy';
+export {default as AmplitudeUser} from './services/Amplitude/AmplitudeUser';
 
 export {
   default as AnalyticsTrackingProvider,

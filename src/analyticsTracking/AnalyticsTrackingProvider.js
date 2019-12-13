@@ -1,26 +1,13 @@
 import React from 'react';
 import {AMPLITUDE_KEY} from '../common/globals';
-import {AmplitudeProvider} from '@amplitude/react-amplitude';
+import AmplitudeProvider from './services/Amplitude/AmplitudeProvider';
 import amplitude from 'amplitude-js';
-import AmplitudeProxy from './AmplitudeProxy';
-import AmplitudeUser from './AmplitudeUser';
-
-let amplitudeUser = null;
-// log amplitude users on auto-login
-if (localStorage.getItem('idToken')) {
-  amplitudeUser = new AmplitudeUser(
-    localStorage.getItem('idToken'),
-    AMPLITUDE_KEY,
-  );
-}
+import AmplitudeProxy from './services/Amplitude/AmplitudeProxy';
 
 const AnalyticsTrackingProvider = props => (
   <AmplitudeProvider
-    amplitudeInstance={
-      amplitudeUser ? amplitudeUser.instance : amplitude.getInstance()
-    }
+    amplitudeInstance={amplitude.getInstance()}
     apiKey={AMPLITUDE_KEY}
-    userId={amplitudeUser ? amplitudeUser.userId : null}
   >
     <AmplitudeProxy eventProperties={{path: window.location.pathname}}>
       {props.children}

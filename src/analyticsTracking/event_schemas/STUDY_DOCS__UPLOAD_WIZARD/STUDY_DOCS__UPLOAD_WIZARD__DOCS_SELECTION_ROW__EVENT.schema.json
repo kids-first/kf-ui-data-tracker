@@ -1,0 +1,63 @@
+{
+  "$id": "http://kf-ui-data-tracker.kidsfirstdrc.org/event_schemas/STUDY_DOCS__UPLOAD_WIZARD/STUDY_DOCS__UPLOAD_WIZARD__DOCS_SELECTION_ROW__EVENT.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "STUDY_DOCS__UPLOAD_WIZARD__DOCS_SELECTION_ROW__EVENT",
+  "type": "object",
+  "description": "onMouseOver and onClick event for the UploadWizard 'Document Selection' step table rows",
+  "properties": {
+    "path": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/path"
+    },
+    "route": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/route"
+    },
+    "view": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/view"
+    },
+    "button_text": {
+      "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/BUTTON/BUTTON_EVENT.schema.json#/definitions/button_text"
+    },
+    "file": {"$ref": "../common_defintions.json#/file"},
+    "study": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "http://kf-ui-data-tracker.kidsfirstdrc.org/src/analyticsTracking/event_schemas/common_defs.schema.json#/definitions/study"
+        },
+        {
+          "properties": {
+            "name": {"type": "string", "description": "study long name"},
+            "documents": {
+              "type": "integer",
+              "description": "length of documents in study"
+            }
+          }
+        }
+      ]
+    },
+    "similar_documents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "decription": "name of the local file"
+          },
+          "rating": {
+            "type": "number",
+            "description": "floating point representing the string similarity (Dice's Coefficient) between the file name of the local file to the document name of an existing document",
+            "examples": [0.04878048780487805]
+          },
+          "kfId": {
+            "type": "string",
+            "description": "kids first study file identifier",
+            "examples": ["SF_7F2EW7WS"],
+            "pattern": "^SF_[A-HJ-KM-NP-TV-Z0-9]{8}"
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}
