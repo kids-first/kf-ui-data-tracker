@@ -13,6 +13,7 @@ export const useLogEvent = (
 
   return React.useMemo(() => {
     const logEvent = (eventType, eventProperties, callback) => {
+      console.log(`logEvent: ${eventType}`, eventProperties);
       if (instance) {
         instance.logEvent(
           eventType,

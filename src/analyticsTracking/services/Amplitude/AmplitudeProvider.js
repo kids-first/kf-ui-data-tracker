@@ -12,6 +12,7 @@ export const AmplitudeContext = React.createContext({
 const AmplitudeProvider = ({
   amplitudeInstance,
   apiKey,
+  userId,
   children,
   eventProperties,
 }) => {
@@ -42,18 +43,19 @@ const AmplitudeProvider = ({
         amplitudeInstance.init(apiKey);
         // setup amplitude user and user props
         // form idToken values
-        if (localStorage.getItem('idToken')) {
-          new AmplitudeUser(
-            localStorage.getItem('idToken'),
-            apiKey,
-            amplitudeInstance,
-          );
-        }
+        // console.log(localStorage.getItem('idToken'));
+        // if (localStorage.getItem('idToken') != null) {
+        //   new AmplitudeUser(
+        //     amplitudeInstance,
+        //     localStorage.getItem('idToken'),
+        //     apiKey,
+        //   );
+        // }
       }
 
-      // if (userId) {
-      // amplitudeInstance.setUserId(userId);
-      // }
+      if (userId) {
+        amplitudeInstance.setUserId(userId);
+      }
     } else {
       console.error(
         'AmplitudeProvider was not provided with a valid "amplitudeInstance" prop.',

@@ -7,15 +7,15 @@ import {AnalyticsTrackingProvider} from './analyticsTracking';
 
 const App = () => {
   return (
-    <AnalyticsTrackingProvider>
-      <ApolloProvider client={client}>
+    <ApolloProvider client={client}>
+      <AnalyticsTrackingProvider>
         <Router>
           <main className="App">
             <Routes />
           </main>
         </Router>
-      </ApolloProvider>
-    </AnalyticsTrackingProvider>
+      </AnalyticsTrackingProvider>
+    </ApolloProvider>
   );
 };
 

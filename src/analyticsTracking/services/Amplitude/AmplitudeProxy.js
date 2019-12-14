@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import {AmplitudeContext} from './AmplitudeProvider';
 import {useInstrument} from '../../hooks/use-instrument';
 import {useLogEvent} from '../../hooks/use-log-event';
-import EVENT_CONSTANTSith from '../../eventConstants';
+import EVENT_CONSTANTS from '../../eventConstants';
 
 const AmplitudeProxy = ({
   children,
@@ -36,7 +36,7 @@ const AmplitudeProxy = ({
   let childElements;
 
   if (typeof children === 'function') {
-    childElements = children({instrument, logEvent, EVENT_CONSTANTSith});
+    childElements = children({instrument, logEvent, EVENT_CONSTANTS});
   } else {
     childElements = children || null;
   }

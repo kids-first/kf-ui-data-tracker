@@ -8,7 +8,7 @@ export const hasToken = () => {
   if (token == null) {
     return false;
   }
-  return jwtDecode(token).exp > Math.floor(new Date().getTime() / 1000);
+  return jwtDecode(token || '').exp > Math.floor(new Date().getTime() / 1000);
 };
 
 const PrivateRoute = ({component: Component, ...rest}) => (

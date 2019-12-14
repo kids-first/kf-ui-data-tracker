@@ -19,7 +19,9 @@ const CavaticaCounts = ({projects, title, hideIcon}) => {
       <List.Item
         as={Link}
         to={`/study/${title}/cavatica`}
-        onClick={e => e.stopPropagation()}
+        onClick={e => {
+          e.stopPropagation();
+        }}
         className={hideIcon && projects.length === 0 ? 'text-red' : null}
       >
         {!hideIcon && (

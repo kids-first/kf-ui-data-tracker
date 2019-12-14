@@ -20,6 +20,11 @@ const StudyCard = ({
   missingProject,
   requiredFileChanges,
 }) => {
+  // const {
+  // logEvent,
+  // EVENT_CONSTANTS: {STUDY_CARD},
+  // } = useAnalyticsTracking();
+
   const projectsCounts = projects && projects.length > 0 ? projects.length : 0;
   const needsAttention =
     missingValue > 0 ||

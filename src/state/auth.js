@@ -50,10 +50,10 @@ class Auth {
           localStorage.setItem('accessToken', authResult.accessToken);
           localStorage.setItem('idToken', authResult.idToken);
 
-          this.amplitudeUser = new AmplitudeUser(
-            localStorage.getItem('idToken'),
-            AMPLITUDE_KEY,
-          );
+          // this.amplitudeUser = new AmplitudeUser(
+          //   localStorage.getItem('idToken'),
+          //   AMPLITUDE_KEY,
+          // );
 
           this.logEvent(TRACKING_AUTH.LOGIN, {
             success: true,
@@ -95,7 +95,7 @@ class Auth {
     localStorage.removeItem('idToken');
 
     // fire analytics events
-    this.logEvent('AUTH__LOGOUT');
+    // this.logEvent('AUTH__LOGOUT');
     amplitude.getInstance().setUserId(null); // not string 'null'
     amplitude.getInstance().regenerateDeviceId();
   }

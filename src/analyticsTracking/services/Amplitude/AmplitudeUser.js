@@ -30,7 +30,7 @@ class AmplitudeUser {
 
     this.instance = instance || amplitude.getInstance();
 
-    this.auth_user = jwtDecode(idToken);
+    this.auth_user = idToken ? jwtDecode(idToken) : null;
 
     this.auth_sub = this.auth_user.sub;
 
