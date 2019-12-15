@@ -23,6 +23,7 @@ const AmplitudeProxy = ({
   // useSetUserProperties(instanceName, userProperties);
 
   const inheritedContext = React.useContext(AmplitudeContext);
+
   const contextValue = React.useMemo(() => {
     return {
       ...inheritedContext,

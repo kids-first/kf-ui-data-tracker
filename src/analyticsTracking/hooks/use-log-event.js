@@ -60,6 +60,7 @@ export const useLogEvent = (
       const EventProps = {
         ...inheritedEventProperties,
         ...(eventProperties || {}),
+        scope: [...inheritedEventProperties.scope, ...eventProperties.scope],
       };
 
       logEventToConsole(EventType, EventProps, opts);

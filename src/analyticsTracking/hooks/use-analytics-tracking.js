@@ -13,8 +13,8 @@ const useAnalyticsTracking = (
     eventProperties: inheritedProperties,
   } = React.useContext(AmplitudeContext);
 
-  const logEvent = useLogEvent(instanceName, eventProperties, 0, opts);
-  const instrument = useInstrument(instanceName, eventProperties, 0, opts);
+  const logEvent = useLogEvent(instanceName, eventProperties, opts, 0);
+  const instrument = useInstrument(instanceName, eventProperties, opts, 0);
   return React.useMemo(() => {
     return {
       logEvent: logEvent,
