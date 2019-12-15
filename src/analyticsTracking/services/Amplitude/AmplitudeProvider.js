@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import AmplitudeUser from './AmplitudeUser';
-
 import {isValidAmplitudeInstance} from '@amplitude/react-amplitude/src/lib/validation';
 
 export const AmplitudeContext = React.createContext({
@@ -17,7 +16,7 @@ const AmplitudeProvider = ({
   eventProperties,
 }) => {
   const inheritedContext = React.useContext(AmplitudeContext);
-  // inrich provider with inherited context event properties
+
   const contextValue = React.useMemo(() => {
     return {
       eventProperties: {
@@ -41,21 +40,19 @@ const AmplitudeProvider = ({
     if (isValidAmplitudeInstance(amplitudeInstance)) {
       if (apiKey) {
         amplitudeInstance.init(apiKey);
-        // setup amplitude user and user props
-        // form idToken values
-        // console.log(localStorage.getItem('idToken'));
-        // if (localStorage.getItem('idToken') != null) {
-        //   new AmplitudeUser(
-        //     amplitudeInstance,
-        //     localStorage.getItem('idToken'),
-        //     apiKey,
-        //   );
-        // }
+        // setup amplitude user and user props form idToken values
+        if (localStorage.getItem('idToken') != null) {
+          new AmplitudeUser(
+            amplitudeInstance,
+            localStorage.getItem('idToken'),
+            apiKey,
+          );
+        }
       }
 
-      if (userId) {
-        amplitudeInstance.setUserId(userId);
-      }
+      // if (userId) {
+      //   amplitudeInstance.setUserId(userId);
+      // }
     } else {
       console.error(
         'AmplitudeProvider was not provided with a valid "amplitudeInstance" prop.',

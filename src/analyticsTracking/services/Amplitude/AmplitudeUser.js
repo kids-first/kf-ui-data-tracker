@@ -1,5 +1,6 @@
 import amplitude from 'amplitude-js';
 import jwtDecode from 'jwt-decode';
+import {isValidAmplitudeInstance} from '@amplitude/react-amplitude/src/lib/validation';
 
 /**
  * convenience class to log user properties on Auth0 login success
@@ -10,7 +11,7 @@ class AmplitudeUser {
   userId;
   auth_sub;
 
-  // decoded jwt values
+  // decoded jwt valuess
   auth_user;
 
   // values to pluck from jwt in the format of [[jwt_prop_name, renmae_to], ... ]
@@ -26,9 +27,10 @@ class AmplitudeUser {
       return false;
     }
 
-    if (!instance) amplitude.getInstance().init(api_key);
+    if (!isValidAmplitudeInstance(instance))
+      amplitude.getInstance().init(api_key);
 
-    this.instance = instance || amplitude.getInstance();
+    this.instance = instance || amplitude.getInstance().init(api_key);
 
     this.auth_user = idToken ? jwtDecode(idToken) : null;
 
@@ -36,6 +38,7 @@ class AmplitudeUser {
 
     this.setId();
     this.setUserProperies();
+
     return this;
   }
 

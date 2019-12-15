@@ -8,7 +8,7 @@ import {
 import jwtDecode from 'jwt-decode';
 import amplitude from 'amplitude-js';
 import validate from '../analyticsTracking/eventSchemaValidator';
-import {EVENT_CONSTANTS, AmplitudeUser} from '../analyticsTracking';
+import {EVENT_CONSTANTS} from '../analyticsTracking';
 import {AMPLITUDE_KEY} from '../common/globals';
 
 const {AUTH: TRACKING_AUTH} = EVENT_CONSTANTS;
@@ -23,6 +23,7 @@ class Auth {
     if (!eventType) {
       throw new Error(`EventTypeError: No eventType given`);
     }
+    console.log(eventType, eventProps);
     /** Validate our events against their event props schemas (src/analyticsTracking/event_schemas) */
     const eventIsValid = validate(eventType, eventProps);
     if (eventIsValid) amplitude.getInstance().logEvent(eventType, eventProps);
@@ -50,10 +51,7 @@ class Auth {
           localStorage.setItem('accessToken', authResult.accessToken);
           localStorage.setItem('idToken', authResult.idToken);
 
-          // this.amplitudeUser = new AmplitudeUser(
-          //   localStorage.getItem('idToken'),
-          //   AMPLITUDE_KEY,
-          // );
+          amplitude.getInstance().init(AMPLITUDE_KEY);
 
           this.logEvent(TRACKING_AUTH.LOGIN, {
             success: true,
@@ -95,7 +93,7 @@ class Auth {
     localStorage.removeItem('idToken');
 
     // fire analytics events
-    // this.logEvent('AUTH__LOGOUT');
+    this.logEvent('AUTH__LOGOUT');
     amplitude.getInstance().setUserId(null); // not string 'null'
     amplitude.getInstance().regenerateDeviceId();
   }

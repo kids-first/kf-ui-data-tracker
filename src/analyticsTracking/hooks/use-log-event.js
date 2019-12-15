@@ -1,5 +1,5 @@
-import debounce from 'lodash.debounce';
 import React from 'react';
+import debounce from 'lodash.debounce';
 import {useEventProperties} from './use-event-properties';
 import {useInstance} from './use-instance';
 
@@ -13,7 +13,6 @@ export const useLogEvent = (
 
   return React.useMemo(() => {
     const logEvent = (eventType, eventProperties, callback) => {
-      console.log(`logEvent: ${eventType}`, eventProperties);
       if (instance) {
         instance.logEvent(
           eventType,

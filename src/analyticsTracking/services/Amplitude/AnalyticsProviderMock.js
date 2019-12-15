@@ -1,6 +1,6 @@
 import React from 'react';
-import AnalyticsTrackingProvider from './AnalyticsTrackingProvider';
-import AmplitudeProxy from './services/Amplitude/AmplitudeProxy';
+import AnalyticsTrackingProvider from '../../AnalyticsTrackingProvider';
+import AmplitudeProxy from './AmplitudeProxy';
 
 const AnaltyticsMockProvider = ({children}) => (
   <AnalyticsTrackingProvider>
