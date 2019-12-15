@@ -30,7 +30,7 @@ const HeaderSkeleton = () => (
 /**
  * Displays unordered studies in grid view (include empty stage message)
  */
-const StudyList = ({studyList, loading, activeView, roles}) => {
+const StudyList = ({studyList, loading, activeView = 'grid', roles}) => {
   const [view, setView] = useState(activeView);
   const [searchString, setSearchString] = useState('');
   const isAdmin = roles && roles.includes('ADMIN');

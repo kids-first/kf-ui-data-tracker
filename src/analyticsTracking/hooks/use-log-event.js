@@ -41,10 +41,10 @@ const saveEventToSessionStorage = (EventType, EventProps) => {
 };
 
 export const useLogEvent = (
-  instanceName,
+  instanceName = '$default_instance',
   eventProperties,
-  debounceInterval,
   opts = {},
+  debounceInterval,
 ) => {
   const instance = useInstance(instanceName);
   const inheritedEventProperties = useEventProperties(eventProperties);

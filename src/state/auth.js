@@ -23,7 +23,7 @@ class Auth {
     if (!eventType) {
       throw new Error(`EventTypeError: No eventType given`);
     }
-    console.log(eventType, eventProps);
+
     /** Validate our events against their event props schemas (src/analyticsTracking/event_schemas) */
     const eventIsValid = validate(eventType, eventProps);
     if (eventIsValid) amplitude.getInstance().logEvent(eventType, eventProps);

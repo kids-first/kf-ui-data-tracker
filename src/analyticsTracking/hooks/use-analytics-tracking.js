@@ -5,8 +5,8 @@ import {useInstrument} from './use-instrument';
 
 const useAnalyticsTracking = (
   eventProperties = {},
-  instanceName = '$default_instance',
   opts = {},
+  instanceName = '$default_instance',
 ) => {
   const {
     amplitudeInstance,
