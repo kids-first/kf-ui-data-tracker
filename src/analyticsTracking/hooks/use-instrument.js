@@ -18,6 +18,6 @@ export const useInstrument = (
         return retVal;
       };
     },
-    [logEvent],
+    [logEvent, eventProperties],
   );
 };
