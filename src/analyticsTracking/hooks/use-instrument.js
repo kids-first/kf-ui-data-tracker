@@ -9,11 +9,11 @@ export const useInstrument = (
   const logEvent = useLogEvent(instanceName, eventProperties, debounceInterval);
 
   return React.useCallback(
-    function instrument(eventType, func) {
+    function instrument(eventType, func, eventProps) {
       return function instrumentedFunc(...params) {
         const retVal = func ? func.apply(this, params) : undefined;
-
-        logEvent(eventType);
+        /** enchace our log call by passing event props  */
+        logEvent(eventType, {...eventProperties, ...eventProps});
 
         return retVal;
       };

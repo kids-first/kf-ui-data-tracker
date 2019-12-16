@@ -24,14 +24,13 @@ const saveSchemaToLocalFile = (EventType, EventProps, opts) => {
 
 const saveEventToSessionStorage = (EventType, EventProps) => {
   /** save all events to sessionStorage for unit testing */
-  if (['test', 'CI'].includes(process.env.NODE_ENV)) {
-    /** log all events to sessionStorage */
+  if (['test', 'CI', 'testing'].includes(process.env.NODE_ENV)) {
     sessionStorage.setItem(
       'session_events',
       JSON.stringify([
         ...(JSON.parse(sessionStorage.getItem('session_events')) || []),
         {
-          EventType,
+          eventType: EventType,
           eventProps: EventProps,
           utc_time: Date.now(),
         },
@@ -57,10 +56,21 @@ export const useLogEvent = (
       }
       // make sure we're consistent with our naming
       const EventType = normalizeEventType(eventType);
+      const inheritedScope =
+        inheritedEventProperties && inheritedEventProperties.scope
+          ? inheritedEventProperties.scope
+          : [];
+      const eventScope =
+        eventProperties && eventProperties.scope ? eventProperties.scope : [];
+
       const EventProps = {
         ...inheritedEventProperties,
         ...(eventProperties || {}),
-        scope: [...inheritedEventProperties.scope, ...eventProperties.scope],
+        /**
+         * properly inheriting our scope prop from parent and grandparnet AmplitudeProxy instances
+         * this helps us having explicity inherit it in every AmplitudeProxy instance
+         */
+        scope: [...inheritedScope, ...eventScope],
       };
 
       logEventToConsole(EventType, EventProps, opts);
