@@ -1,7 +1,8 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import CopyButton from '../CopyButton/CopyButton';
-import {Container, Header, Placeholder} from 'semantic-ui-react';
+import {Container, Header, Placeholder, Icon} from 'semantic-ui-react';
+import {statusyMessage} from '../../common/enums';
 
 const StudyHeader = ({
   kfId,
@@ -9,7 +10,14 @@ const StudyHeader = ({
   shortName,
   name: studyName,
   loading,
+  newStudy,
+  showModal,
 }) => {
+  const currentStatus =
+    newStudy && newStudy.length > 0 && newStudy[0].split('_')[2]
+      ? newStudy[0].split('_')[2]
+      : 'STR';
+
   if (loading) {
     return (
       <Container>
@@ -25,7 +33,25 @@ const StudyHeader = ({
 
   return (
     <Container>
-      <Header as="h1">{studyName || 'Unknown study name'}</Header>
+      {newStudy && newStudy.length > 0 && (
+        <small
+          className={statusyMessage[currentStatus].class}
+          onClick={() => {
+            showModal(true);
+          }}
+        >
+          <Icon name={statusyMessage[currentStatus].icon} />
+          <span className="text-underline">
+            {statusyMessage[currentStatus].text}
+          </span>
+        </small>
+      )}
+      <Header
+        as="h1"
+        className={newStudy && newStudy.length > 0 ? 'mt-15' : ''}
+      >
+        {studyName || 'Unknown study name'}
+      </Header>
       {shortName && (
         <Header.Subheader as="h2" className="study--header-sub">
           {shortName}

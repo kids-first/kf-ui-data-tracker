@@ -27,6 +27,7 @@ import {
 import allStudies from './responses/allStudies';
 import studyByKfId from './responses/studyByKfId.json';
 import studyByKfId_refetch from './responses/studyByKfId_refetch.json';
+import studyByKfId_event_err from './responses/studyByKfId_event_err.json';
 import deleteFile from './responses/deleteFile.json';
 import fileByKfId from './responses/fileByKfId.json';
 import myProfile from './responses/myProfile.json';
@@ -45,6 +46,9 @@ import signedUrl from './responses/signedUrl.json';
 import syncProjects from './responses/syncProjects.json';
 import deleteToken from './responses/deleteToken.json';
 import status from './responses/status.json';
+import allEvents_studyCreation from './responses/allEvents_studyCreation.json';
+import allEvents_studyCreation_err from './responses/allEvents_studyCreation_err.json';
+import allEvents_studyCreation_ing from './responses/allEvents_studyCreation_ing.json';
 
 export const mocks = [
   {
@@ -439,8 +443,57 @@ export const mocks = [
   },
   {
     request: {
+      query: ALL_EVENTS,
+      variables: {
+        orderBy: '-created_at',
+        studyId: 'SD_8WX8QQ06',
+      },
+    },
+    result: allEvents_studyCreation,
+  },
+  {
+    request: {
+      query: ALL_EVENTS,
+      variables: {
+        orderBy: '-created_at',
+        studyId: 'SD_8WX8QQ06',
+      },
+    },
+    result: allEvents_studyCreation_err,
+  },
+  {
+    request: {
+      query: ALL_EVENTS,
+      variables: {
+        orderBy: '-created_at',
+        studyId: 'SD_8WX8QQ06',
+      },
+    },
+    result: allEvents_studyCreation_ing,
+  },
+  {
+    request: {
+      query: ALL_EVENTS,
+      variables: {
+        studyId: 'SD_8WX8QQ06',
+        orderBy: '-created_at',
+      },
+    },
+    error: new Error('Failed to fetch events information'),
+  },
+  {
+    request: {
       query: STATUS,
     },
     result: status,
+  },
+  {
+    request: {
+      query: GET_STUDY_BY_ID,
+      variables: {
+        kfId: 'SD_8WX8QQ06',
+      },
+    },
+    result: studyByKfId_event_err,
   },
 ];

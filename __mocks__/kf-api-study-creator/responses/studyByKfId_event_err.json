@@ -1,0 +1,337 @@
+{
+  "data": {
+    "studyByKfId": {
+      "id": "U3R1ZHlOb2RlOlNEXzhXWDhRUTA2",
+      "name": "benchmark extensible e-business",
+      "shortName": null,
+      "bucket": "stay-wrong-ready",
+      "kfId": "SD_8WX8QQ06",
+      "createdAt": "2019-04-20T15:22:18.780221+00:00",
+      "modifiedAt": "2019-04-25T15:22:18.780221+00:00",
+      "attribution": null,
+      "dataAccessAuthority": "dbGaP",
+      "externalId": "test_study_external_id",
+      "releaseStatus": null,
+      "version": null,
+      "releaseDate": "2019-08-24",
+      "description": "Sudy description in markdown, commonly the X01 abstract text. --  As test study description",
+      "anticipatedSamples": 100,
+      "awardeeOrganization": "CHOP",
+      "files": {
+        "edges": [
+          {
+            "node": {
+              "id": "RmlsZU5vZGU6U0ZfNVpQRU0xNjc=",
+              "kfId": "SF_5ZPEM167",
+              "name": "organization.jpeg",
+              "fileType": "CLN",
+              "description": "Month necessary animal end standard case. View system operation message decade. Actually sing because deal everything woman subject.",
+              "downloadUrl": "http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167",
+              "versions": {
+                "edges": [
+                  {
+                    "node": {
+                      "id": "T2JqZWN0Tm9kZTpGVl80TlpOQkVPRg==",
+                      "kfId": "FV_NVV741M1",
+                      "state": "PEN",
+                      "size": 9893,
+                      "createdAt": "2018-08-21T03:16:11+00:00",
+                      "__typename": "VersionNode"
+                    },
+                    "__typename": "VersionNodeEdge"
+                  },
+                  {
+                    "node": {
+                      "id": "T2JqZWN0Tm9kZTpGVl83NkhONTdaNw==",
+                      "kfId": "FV_KCDKCDYR",
+                      "state": "PEN",
+                      "size": 5460,
+                      "createdAt": "2018-09-27T05:32:26+00:00",
+                      "__typename": "VersionNode"
+                    },
+                    "__typename": "VersionNodeEdge"
+                  },
+                  {
+                    "node": {
+                      "id": "T2JqZWN0Tm9kZTpGVl9IUkFHWE5XMQ==",
+                      "kfId": "FV_800JI8IP",
+                      "state": "PEN",
+                      "size": 5419,
+                      "createdAt": "2017-08-25T00:05:30+00:00",
+                      "__typename": "VersionNode"
+                    },
+                    "__typename": "VersionNodeEdge"
+                  }
+                ],
+                "__typename": "VersionNodeConnection"
+              },
+              "__typename": "FileNode"
+            },
+            "__typename": "FileNodeEdge"
+          },
+          {
+            "node": {
+              "id": "RmlsZU5vZGU6U0ZfWTA3SU4xSE8=",
+              "kfId": "SF_Y07IN1HO",
+              "name": "its.mp3",
+              "fileType": "SHM",
+              "description": "Question meeting move recognize.",
+              "downloadUrl": "http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_Y07IN1HO",
+              "versions": {
+                "edges": [
+                  {
+                    "node": {
+                      "id": "T2JqZWN0Tm9kZTpGVl9UWjVROEhYWA==",
+                      "kfId": "FV_IJ2CN4P9",
+                      "state": "PEN",
+                      "size": 7394,
+                      "createdAt": "2017-08-22T08:32:38+00:00",
+                      "__typename": "VersionNode"
+                    },
+                    "__typename": "VersionNodeEdge"
+                  },
+                  {
+                    "node": {
+                      "id": "T2JqZWN0Tm9kZTpGVl9aOUM1SUUwRg==",
+                      "kfId": "FV_DNTN03CS",
+                      "state": "PEN",
+                      "size": 5883,
+                      "createdAt": "2017-09-02T21:02:35+00:00",
+                      "__typename": "VersionNode"
+                    },
+                    "__typename": "VersionNodeEdge"
+                  },
+                  {
+                    "node": {
+                      "id": "T2JqZWN0Tm9kZTpGVl9ITDg0SDhHTw==",
+                      "kfId": "FV_ZDB8JOCT",
+                      "state": "PEN",
+                      "size": 1899,
+                      "createdAt": "2019-03-14T05:46:35+00:00",
+                      "__typename": "VersionNode"
+                    },
+                    "__typename": "VersionNodeEdge"
+                  },
+                  {
+                    "node": {
+                      "id": "T2JqZWN0Tm9kZTpGVl9YRVg4TERHMw==",
+                      "kfId": "FV_10SBI6VA",
+                      "state": "PEN",
+                      "size": 7631,
+                      "createdAt": "2018-03-13T23:52:08+00:00",
+                      "__typename": "VersionNode"
+                    },
+                    "__typename": "VersionNodeEdge"
+                  },
+                  {
+                    "node": {
+                      "id": "T2JqZWN0Tm9kZTpGVl9HV1JLUUVDQQ==",
+                      "kfId": "FV_8KF1VMN9",
+                      "state": "PEN",
+                      "size": 6834,
+                      "createdAt": "2019-04-06T07:51:17+00:00",
+                      "__typename": "VersionNode"
+                    },
+                    "__typename": "VersionNodeEdge"
+                  }
+                ],
+                "__typename": "VersionNodeConnection"
+              },
+              "__typename": "FileNode"
+            },
+            "__typename": "FileNodeEdge"
+          }
+        ],
+        "__typename": "FileNodeConnection"
+      },
+      "events": {
+        "edges": [
+          {
+            "node": {
+              "id": "RXZlbnROb2RlOj7",
+              "uuid": "27688e28-921b-4ec6-97b3-3b96277fccd5",
+              "createdAt": "2019-11-27T17:15:22.948130+00:00",
+              "eventType": "PR_ERR",
+              "description": "devadmin failed to create project",
+              "__typename": "EventNode"
+            },
+            "__typename": "EventNodeEdge"
+          },
+          {
+            "node": {
+              "id": "RXZlbnROb2RlOjM5",
+              "uuid": "b790803e-580e-458c-8b42-78252a5403f6",
+              "createdAt": "2019-08-26T18:25:02.985155+00:00",
+              "eventType": "FV_CRE",
+              "description": "devadmin created version FV_9AF7CC3Z of file SF_5ZPEM167",
+              "__typename": "EventNode"
+            },
+            "__typename": "EventNodeEdge"
+          },
+          {
+            "node": {
+              "id": "RXZlbnROb2RlOjM4",
+              "uuid": "6372f6f7-8556-4b1c-9c29-7c0a7923f7ca",
+              "createdAt": "2019-08-26T18:24:46.341665+00:00",
+              "eventType": "FV_UPD",
+              "description": "devadmin updated version FV_4FCEYZ3T of file SF_5ZPEM167",
+              "__typename": "EventNode"
+            },
+            "__typename": "EventNodeEdge"
+          },
+          {
+            "node": {
+              "id": "RXZlbnROb2RlOjM2",
+              "uuid": "ee949b92-ddb0-491b-b807-8f754e1641ff",
+              "createdAt": "2019-08-26T18:24:36.763314+00:00",
+              "eventType": "FV_CRE",
+              "description": "devadmin created version FV_ABCPEQRK of file SF_Y07IN1HO",
+              "__typename": "EventNode"
+            },
+            "__typename": "EventNodeEdge"
+          },
+          {
+            "node": {
+              "id": "RXZlbnROb2RlOjM1",
+              "uuid": "05379686-3d68-4fed-b6a5-a5e47d97996f",
+              "createdAt": "2019-08-26T18:24:19.986588+00:00",
+              "eventType": "FV_CRE",
+              "description": "devadmin created version FV_BHXN2F7A of file SF_Y07IN1HO",
+              "__typename": "EventNode"
+            },
+            "__typename": "EventNodeEdge"
+          },
+          {
+            "node": {
+              "id": "RXZlbnROb2RlOjM0",
+              "uuid": "1ec8bb79-b6ad-47eb-bd40-7ffc81135abe",
+              "createdAt": "2019-08-26T18:24:03.184513+00:00",
+              "eventType": "FV_UPD",
+              "description": "devadmin updated version FV_Z0NZQZNX of file SF_Y07IN1HO",
+              "__typename": "EventNode"
+            },
+            "__typename": "EventNodeEdge"
+          },
+          {
+            "node": {
+              "id": "RXZlbnROb2RlOjMz",
+              "uuid": "b9b6bf82-1bdc-4d79-b69b-5e0350d64e52",
+              "createdAt": "2019-08-26T18:24:03.182570+00:00",
+              "eventType": "SF_UPD",
+              "description": "devadmin updated file SF_5ZPEM167",
+              "__typename": "EventNode"
+            },
+            "__typename": "EventNodeEdge"
+          },
+          {
+            "node": {
+              "id": "RXZlbnROb2RlOjMy",
+              "uuid": "02564a4f-ead8-4ebb-af12-7171dcc05fd4",
+              "createdAt": "2019-08-26T18:23:53.703031+00:00",
+              "eventType": "FV_CRE",
+              "description": "devadmin created version FV_4FCEYZ3T of file SF_Y07IN1HO",
+              "__typename": "EventNode"
+            },
+            "__typename": "EventNodeEdge"
+          },
+          {
+            "node": {
+              "id": "RXZlbnROb2RlOjMx",
+              "uuid": "578c24b2-dcf3-4a80-a4e8-d240e9549736",
+              "createdAt": "2019-08-26T18:23:53.695244+00:00",
+              "eventType": "SF_CRE",
+              "description": "devadmin created file SF_Y07IN1HO",
+              "__typename": "EventNode"
+            },
+            "__typename": "EventNodeEdge"
+          }
+        ],
+        "__typename": "EventNodeConnection"
+      },
+      "projects": {
+        "edges": [
+          {
+            "node": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtNTUwNDB4bmY=",
+              "createdBy": "zhux3",
+              "createdOn": "2019-08-26T18:22:41+00:00",
+              "description": "",
+              "modifiedOn": "2019-08-26T18:22:41+00:00",
+              "name": "test study name",
+              "projectId": "zhux3/sd-8wx8qq06",
+              "projectType": "DEL",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-8wx8qq06",
+              "workflowType": null,
+              "deleted": false,
+              "__typename": "ProjectNode",
+              "study": {
+                "id": "U3R1ZHlOb2RlOlNEXzhXWDhRUTA2",
+                "kfId": "SD_8WX8QQ06",
+                "name": "benchmark extensible e-business",
+                "shortName": null,
+                "createdAt": "2019-04-20T15:22:18.780221+00:00",
+                "modifiedAt": "2019-04-25T15:22:18.780221+00:00",
+                "__typename": "StudyNode"
+              }
+            },
+            "__typename": "ProjectNodeEdge"
+          },
+          {
+            "node": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtNTUwNDB4bmYtYndhLW1lbQ==",
+              "createdBy": "zhux3",
+              "createdOn": "2019-08-26T18:22:42+00:00",
+              "description": "",
+              "modifiedOn": "2019-08-26T18:22:42+00:00",
+              "name": "test study name bwa-mem",
+              "projectId": "zhux3/sd-8wx8qq06-bwa-mem",
+              "projectType": "HAR",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-8wx8qq06-bwa-mem",
+              "workflowType": "bwa_mem",
+              "deleted": false,
+              "__typename": "ProjectNode",
+              "study": {
+                "id": "U3R1ZHlOb2RlOlNEXzhXWDhRUTA2",
+                "kfId": "SD_8WX8QQ06",
+                "name": "benchmark extensible e-business",
+                "shortName": null,
+                "createdAt": "2019-04-20T15:22:18.780221+00:00",
+                "modifiedAt": "2019-04-25T15:22:18.780221+00:00",
+                "__typename": "StudyNode"
+              }
+            },
+            "__typename": "ProjectNodeEdge"
+          },
+          {
+            "node": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtNTUwNDB4bmYtZ2F0ay1oYXBsb3R5cGVjYWxsZXI=",
+              "createdBy": "zhux3",
+              "createdOn": "2019-08-26T18:22:43+00:00",
+              "description": "",
+              "modifiedOn": "2019-08-26T18:22:43+00:00",
+              "name": "test study name gatk-haplotypecaller",
+              "projectId": "zhux3/sd-8wx8qq06-gatk-haplotypecaller",
+              "projectType": "HAR",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-8wx8qq06-gatk-haplotypecaller",
+              "workflowType": "gatk_haplotypecaller",
+              "deleted": false,
+              "__typename": "ProjectNode",
+              "study": {
+                "id": "U3R1ZHlOb2RlOlNEXzhXWDhRUTA2",
+                "kfId": "SD_8WX8QQ06",
+                "name": "benchmark extensible e-business",
+                "shortName": null,
+                "createdAt": "2019-04-20T15:22:18.780221+00:00",
+                "modifiedAt": "2019-04-25T15:22:18.780221+00:00",
+                "__typename": "StudyNode"
+              }
+            },
+            "__typename": "ProjectNodeEdge"
+          }
+        ],
+        "__typename": "ProjectNodeConnection"
+      },
+      "__typename": "StudyNode"
+    }
+  }
+}

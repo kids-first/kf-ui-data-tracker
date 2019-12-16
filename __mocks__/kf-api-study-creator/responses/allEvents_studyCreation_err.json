@@ -1,0 +1,232 @@
+{
+  "data": {
+    "allEvents": {
+      "edges": [
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOj7",
+            "uuid": "27688e28-921b-4ec6-97b3-3b96277fccd5",
+            "createdAt": "2019-11-27T17:15:22.948130+00:00",
+            "eventType": "PR_ERR",
+            "description": "devadmin failed to create project",
+            "__typename": "EventNode",
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEXzlBNFRZRjE5",
+              "name": "test study name 4",
+              "shortName": "",
+              "kfId": "SD_8WX8QQ06",
+              "createdAt": "2019-11-27T17:15:15.043640+00:00",
+              "modifiedAt": "2019-11-27T17:15:15.064990+00:00",
+              "__typename": "StudyNode"
+            },
+            "project": null,
+            "file": null,
+            "version": null
+          },
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjM6",
+            "uuid": "27688e28-921b-4ec6-97b3-3b96277fccd4",
+            "createdAt": "2019-11-27T17:15:21.948130+00:00",
+            "eventType": "BK_STR",
+            "description": "devadmin creating bucket",
+            "__typename": "EventNode",
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEXzlBNFRZRjE5",
+              "name": "test study name 4",
+              "shortName": "",
+              "kfId": "SD_8WX8QQ06",
+              "createdAt": "2019-11-27T17:15:15.043640+00:00",
+              "modifiedAt": "2019-11-27T17:15:15.064990+00:00",
+              "__typename": "StudyNode"
+            },
+            "project": null,
+            "file": null,
+            "version": null
+          },
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjQ0",
+            "uuid": "53d218e1-4ae1-48ce-950f-5147eadc8e29",
+            "createdAt": "2019-11-27T17:15:20.948130+00:00",
+            "eventType": "PR_ERR",
+            "description": "Failed to create Cavatica projects for study SD_8WX8QQ06",
+            "__typename": "EventNode",
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEXzlBNFRZRjE5",
+              "name": "test study name 4",
+              "shortName": "",
+              "kfId": "SD_8WX8QQ06",
+              "createdAt": "2019-11-27T17:15:15.043640+00:00",
+              "modifiedAt": "2019-11-27T17:15:15.064990+00:00",
+              "__typename": "StudyNode"
+            },
+            "project": null,
+            "file": null,
+            "version": null
+          },
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjQz",
+            "uuid": "29fb002e-baad-43fa-90fa-f0bf6b95faa9",
+            "createdAt": "2019-11-27T17:15:20.658528+00:00",
+            "eventType": "PR_CRE",
+            "description": "devadmin created project zhux3/sd-9a4tyf19-gatk-haplotypecaller",
+            "__typename": "EventNode",
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEXzlBNFRZRjE5",
+              "name": "test study name 4",
+              "shortName": "",
+              "kfId": "SD_8WX8QQ06",
+              "createdAt": "2019-11-27T17:15:15.043640+00:00",
+              "modifiedAt": "2019-11-27T17:15:15.064990+00:00",
+              "__typename": "StudyNode"
+            },
+            "project": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtOWE0dHlmMTktZ2F0ay1oYXBsb3R5cGVjYWxsZXI=",
+              "createdBy": "zhux3",
+              "createdOn": "2019-11-27T17:15:19+00:00",
+              "description": "",
+              "modifiedOn": "2019-11-27T17:15:20+00:00",
+              "name": "test study name 4 gatk-haplotypecaller",
+              "projectId": "zhux3/sd-9a4tyf19-gatk-haplotypecaller",
+              "projectType": "HAR",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-9a4tyf19-gatk-haplotypecaller",
+              "workflowType": "gatk_haplotypecaller",
+              "deleted": false,
+              "__typename": "ProjectNode"
+            },
+            "file": null,
+            "version": null
+          },
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjQy",
+            "uuid": "c81d5b8b-1d4e-4d00-95c6-561b40aa4bfb",
+            "createdAt": "2019-11-27T17:15:19.410632+00:00",
+            "eventType": "PR_CRE",
+            "description": "devadmin created project zhux3/sd-9a4tyf19-bwa-mem",
+            "__typename": "EventNode",
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEXzlBNFRZRjE5",
+              "name": "test study name 4",
+              "shortName": "",
+              "kfId": "SD_8WX8QQ06",
+              "createdAt": "2019-11-27T17:15:15.043640+00:00",
+              "modifiedAt": "2019-11-27T17:15:15.064990+00:00",
+              "__typename": "StudyNode"
+            },
+            "project": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtOWE0dHlmMTktYndhLW1lbQ==",
+              "createdBy": "zhux3",
+              "createdOn": "2019-11-27T17:15:19+00:00",
+              "description": "",
+              "modifiedOn": "2019-11-27T17:15:19+00:00",
+              "name": "test study name 4 bwa-mem",
+              "projectId": "zhux3/sd-9a4tyf19-bwa-mem",
+              "projectType": "HAR",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-9a4tyf19-bwa-mem",
+              "workflowType": "bwa_mem",
+              "deleted": false,
+              "__typename": "ProjectNode"
+            },
+            "file": null,
+            "version": null
+          },
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjQx",
+            "uuid": "ec649545-4e19-46f1-875a-d6a607340463",
+            "createdAt": "2019-11-27T17:15:18.946890+00:00",
+            "eventType": "PR_CRE",
+            "description": "devadmin created project zhux3/sd-9a4tyf19",
+            "__typename": "EventNode",
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEXzlBNFRZRjE5",
+              "name": "test study name 4",
+              "shortName": "",
+              "kfId": "SD_8WX8QQ06",
+              "createdAt": "2019-11-27T17:15:15.043640+00:00",
+              "modifiedAt": "2019-11-27T17:15:15.064990+00:00",
+              "__typename": "StudyNode"
+            },
+            "project": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtOWE0dHlmMTk=",
+              "createdBy": "zhux3",
+              "createdOn": "2019-11-27T17:15:18+00:00",
+              "description": "",
+              "modifiedOn": "2019-11-27T17:15:18+00:00",
+              "name": "test study name 4",
+              "projectId": "zhux3/sd-9a4tyf19",
+              "projectType": "DEL",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-9a4tyf19",
+              "workflowType": null,
+              "deleted": false,
+              "__typename": "ProjectNode"
+            },
+            "file": null,
+            "version": null
+          },
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjQw",
+            "uuid": "aeb1e582-863b-40af-9733-5f7e8edce473",
+            "createdAt": "2019-11-27T17:15:18.033148+00:00",
+            "eventType": "PR_STR",
+            "description": "Creating Cavatica projects for study SD_8WX8QQ06",
+            "__typename": "EventNode",
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEXzlBNFRZRjE5",
+              "name": "test study name 4",
+              "shortName": "",
+              "kfId": "SD_8WX8QQ06",
+              "createdAt": "2019-11-27T17:15:15.043640+00:00",
+              "modifiedAt": "2019-11-27T17:15:15.064990+00:00",
+              "__typename": "StudyNode"
+            },
+            "project": null,
+            "file": null,
+            "version": null
+          },
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjM5",
+            "uuid": "27688e28-921b-4ec6-97b3-3b96277fccd3",
+            "createdAt": "2019-11-27T17:15:15.069793+00:00",
+            "eventType": "SD_CRE",
+            "description": "devadmin created study SD_8WX8QQ06",
+            "__typename": "EventNode",
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEXzlBNFRZRjE5",
+              "name": "test study name 4",
+              "shortName": "",
+              "kfId": "SD_8WX8QQ06",
+              "createdAt": "2019-11-27T17:15:15.043640+00:00",
+              "modifiedAt": "2019-11-27T17:15:15.064990+00:00",
+              "__typename": "StudyNode"
+            },
+            "project": null,
+            "file": null,
+            "version": null
+          },
+          "__typename": "EventNodeEdge"
+        }
+      ],
+      "__typename": "EventNodeConnection"
+    }
+  }
+}
