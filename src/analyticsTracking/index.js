@@ -7,5 +7,7 @@ export {
   default as AnalyticsTrackingProvider,
 } from './AnalyticsTrackingProvider';
 
-export {default as AnalyticsProviderMock} from './AnalyticsProviderMock';
+export {
+  default as AnalyticsProviderMock,
+} from './services/Amplitude/AnalyticsProviderMock';
 export {default as EVENT_CONSTANTS} from './eventConstants';

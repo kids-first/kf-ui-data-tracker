@@ -41,7 +41,7 @@ describe('AmplitudeProxy class', () => {
       eventProps: {
         ...mockEvent[1],
         // scope, path, and utc_time are inherited
-        scope: ['TEST'],
+        scope: ['Foo'],
         path: '/',
       },
       utc_time: 1556044228000,
@@ -61,9 +61,8 @@ describe('AmplitudeProxy class', () => {
     render(
       <AnalyticsProviderMock>
         <AmplitudeProxy>
-          {({getInstance}) => {
-            const instance = getInstance();
-            expect(instance._instanceName).toBe(inst._instanceName);
+          {({AmplitudeInstance}) => {
+            expect(AmplitudeInstance._instanceName).toBe(inst._instanceName);
             return <></>;
           }}
         </AmplitudeProxy>
@@ -76,17 +75,23 @@ describe('AmplitudeProxy class', () => {
       <AnalyticsProviderMock>
         <AmplitudeProxy>
           {({logEvent}) => {
-            logEvent(...mockEvent);
+            logEvent(testEvents[0].eventType, testEvents[0].eventProps);
 
             /**  events to sessionStorage in test environment */
             expect(sessionStorage.setItem).toHaveBeenCalledTimes(1);
-
+            const inhertiedEvent = {
+              ...testEvents[0],
+              eventProps: {
+                ...testEvents[0].eventProps,
+                scope: ['App', 'TEST', 'Foo'],
+              },
+            };
             // check that our event is in the session_events
             // user toContainEqual because JSON stringify
             // is not deterministic
             expect(
               JSON.parse(sessionStorage.__STORE__['session_events']),
-            ).toContainEqual(testEvents[0]);
+            ).toContainEqual(inhertiedEvent);
 
             expect(Object.keys(sessionStorage.__STORE__).length).toBe(1);
 
@@ -114,7 +119,7 @@ describe('AmplitudeProxy class', () => {
             expect(sessionStorage.setItem).toHaveBeenCalledTimes(0);
 
             // test that debounce was called
-            expect(setTimeout).toHaveBeenCalledTimes(1);
+            // expect(setTimeout).toHaveBeenCalledTimes(1);
             expect(setTimeout).toHaveBeenLastCalledWith(
               expect.any(Function),
               1000,
@@ -151,7 +156,7 @@ describe('AmplitudeProxy class', () => {
               eventProps: {
                 foo: 'bar-4',
                 // scope, path, and utc_time are inherited
-                scope: ['TEST'],
+                scope: ['App', 'TEST'],
                 path: '/',
               },
               utc_time: 1556044228000,
@@ -169,14 +174,13 @@ describe('AmplitudeProxy class', () => {
     const mockEventPropFunc = jest.fn(testObj => JSON.stringify(testObj));
     render(
       <AnalyticsProviderMock>
-        <AmplitudeProxy>
+        <AmplitudeProxy eventProperties={{scope: ['Instrument']}}>
           {({instrument}) => {
             /** test that currying of functions works  */
-            const onClick = instrument(
-              mockEvent[0],
-              mockEventPropFunc,
-              mockEvent[1],
-            );
+            const onClick = instrument(mockEvent[0], mockEventPropFunc, {
+              ...mockEvent[1],
+              scope: ['onClick'],
+            });
             onClick({foo: 'bar', baz: 'bash', a: 1});
             // test that it curried our function through
             expect(mockEventPropFunc).toHaveBeenCalledTimes(1);
@@ -195,7 +199,15 @@ describe('AmplitudeProxy class', () => {
 
             expect(
               JSON.parse(sessionStorage.__STORE__['session_events']),
-            ).toContainEqual(testEvents[0]);
+            ).toContainEqual({
+              eventProps: {
+                foo: 'bar',
+                path: '/',
+                scope: ['App', 'TEST', 'Instrument', 'onClick'],
+              },
+              eventType: 'LOG_TEST',
+              utc_time: 1556044228000,
+            });
 
             expect(Object.keys(sessionStorage.__STORE__).length).toBe(1);
 
