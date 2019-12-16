@@ -5,8 +5,6 @@ import {AmplitudeProxy} from '../analyticsTracking';
 
 /**
  * Wrap all of our routes to make them log the view and route they render
- *
- *  @event_scehma analyticsTracking/event_schemas/page/page_view.schema.json
  * */
 const TrackedRoute = ({
   component,
