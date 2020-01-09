@@ -1,3 +1,22 @@
+# Kids First Data Tracker Release 0.10.
+
+## Features
+
+Token fixes and new study creation status view.
+
+### Summary
+
+Feature Emojis: ✨x2 🐛x1 🔥x1
+Feature Labels: [feature](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/feature) x2 [bug](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/bug) x1 [refactor](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/refactor) x1
+
+### New features and changes
+
+- (#554) ✨ Add new study creation status view - @XuTheBunny
+- (#561) 🐛 Allow admin user to copy newly created token - @XuTheBunny
+- (#560) 🔥 Remove BETA user checking from study info page - @XuTheBunny
+- (#553) ✨ Add page titles to all views - @XuTheBunny
+
+
 # Kids First Data Tracker Release 0.9.1
 
 ## Features
