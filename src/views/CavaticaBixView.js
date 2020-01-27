@@ -14,7 +14,7 @@ import {
   List,
 } from 'semantic-ui-react';
 import EmptyView from './EmptyView';
-import NewProjectModal from '../modals/NewProjectModal';
+import EditProjectModal from '../modals/EditProjectModal';
 import LinkProjectModal from '../modals/LinkProjectModal';
 import CavaticaProjectList from '../components/CavaticaProjectList/CavaticaProjectList';
 
@@ -201,16 +201,19 @@ const CavaticaBixView = ({match, history}) => {
             No linked Cavatica projects.
           </Header>
         )}
+        {hashOpenHook(history, '#add-cavatica-project') && (
+          <EditProjectModal
+            study={studyByKfId}
+            onCloseDialog={() =>
+              history.push(
+                '/study/' +
+                  history.location.pathname.split('/')[2] +
+                  '/cavatica',
+              )
+            }
+          />
+        )}
 
-        <NewProjectModal
-          open={hashOpenHook(history, '#add-cavatica-project')}
-          study={studyByKfId}
-          onCloseDialog={() =>
-            history.push(
-              '/study/' + history.location.pathname.split('/')[2] + '/cavatica',
-            )
-          }
-        />
         <LinkProjectModal
           open={hashOpenHook(history, '#link-cavatica-project')}
           study={studyByKfId}
