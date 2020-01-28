@@ -10,15 +10,42 @@ import {
   Select,
   Segment,
   Message,
+  Button,
 } from 'semantic-ui-react';
 import {eventType} from '../common/enums';
 import {EventList} from '../components/EventList';
 import {ALL_EVENTS, ALL_STUDIES, ALL_USERS} from '../state/queries';
 
 const EventsView = () => {
-  const {loading, data: eventData, error, refetch} = useQuery(ALL_EVENTS, {
-    variables: {orderBy: '-created_at'},
-  });
+  const {loading, data: eventData, error, refetch, fetchMore} = useQuery(
+    ALL_EVENTS,
+    {
+      variables: {orderBy: '-created_at', first: 20},
+    },
+  );
+
+  const loadMore = () =>
+    fetchMore({
+      variables: {
+        orderBy: '-created_at',
+        first: 20,
+        cursor: eventData.allEvents.pageInfo.endCursor,
+      },
+      updateQuery: (previousResult, {fetchMoreResult}) => {
+        const newEdges = fetchMoreResult.allEvents.edges;
+        const pageInfo = fetchMoreResult.allEvents.pageInfo;
+        return newEdges.length
+          ? {
+              allEvents: {
+                __typename: previousResult.allEvents.__typename,
+                edges: [...previousResult.allEvents.edges, ...newEdges],
+                pageInfo,
+              },
+            }
+          : previousResult;
+      },
+    });
+
   const allEvents = eventData && eventData.allEvents;
   const {loading: loadingStudies, data: studyData} = useQuery(ALL_STUDIES);
   const allStudies = studyData && studyData.allStudies;
@@ -96,6 +123,12 @@ const EventsView = () => {
           </Segment>
         )}
         {!loading && allEvents && <EventList events={allEvents.edges} />}
+
+        {allEvents && allEvents.pageInfo.hasNextPage && (
+          <Button attached="bottom" onClick={loadMore}>
+            More
+          </Button>
+        )}
       </Segment>
     </Container>
   );
