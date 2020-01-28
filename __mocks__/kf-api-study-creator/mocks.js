@@ -161,6 +161,7 @@ export const mocks = [
       variables: {
         studyId: 'SD_8WX8QQ06',
         orderBy: '-created_at',
+        first: 20,
       },
     },
     result: allEvents,
@@ -171,6 +172,7 @@ export const mocks = [
       variables: {
         studyId: 'SD_8WX8QQ06',
         orderBy: '-created_at',
+        first: 20,
       },
     },
     error: new Error('something went wrong with your event logs request'),
@@ -325,6 +327,7 @@ export const mocks = [
       query: ALL_EVENTS,
       variables: {
         orderBy: '-created_at',
+        first: 20,
       },
     },
     result: allEvents,
@@ -355,6 +358,7 @@ export const mocks = [
       variables: {
         orderBy: '-created_at',
         username: 'Justin Heath',
+        first: 20,
       },
     },
     result: allEvents_refetch,
@@ -365,6 +369,7 @@ export const mocks = [
       variables: {
         orderBy: '-created_at',
         studyId: 'SD_SG5N41K8',
+        first: 20,
       },
     },
     result: allEvents_refetch,
@@ -376,6 +381,7 @@ export const mocks = [
         orderBy: '-created_at',
         studyId: 'SD_SG5N41K8',
         eventType: 'FV_CRE',
+        first: 20,
       },
     },
     result: allEvents_refetch,
@@ -385,6 +391,7 @@ export const mocks = [
       query: ALL_EVENTS,
       variables: {
         orderBy: '-created_at',
+        first: 20,
       },
     },
     error: new Error('Failed to fetch events information'),
@@ -438,6 +445,7 @@ export const mocks = [
         orderBy: '-created_at',
         studyId: 'SD_8WX8QQ06',
         eventType: 'FV_CRE',
+        first: 20,
       },
     },
     result: allEvents_refetch,

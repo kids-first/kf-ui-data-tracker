@@ -40,6 +40,7 @@
             },
             "__typename": "EventNode"
           },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjA=",
           "__typename": "EventNodeEdge"
         },
         {
@@ -71,6 +72,7 @@
             "version": null,
             "__typename": "EventNode"
           },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjE=",
           "__typename": "EventNodeEdge"
         },
         {
@@ -111,6 +113,7 @@
             },
             "__typename": "EventNode"
           },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjI=",
           "__typename": "EventNodeEdge"
         },
         {
@@ -151,6 +154,7 @@
             },
             "__typename": "EventNode"
           },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjM=",
           "__typename": "EventNodeEdge"
         },
         {
@@ -191,6 +195,7 @@
             },
             "__typename": "EventNode"
           },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjQ=",
           "__typename": "EventNodeEdge"
         },
         {
@@ -231,6 +236,7 @@
             },
             "__typename": "EventNode"
           },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjU=",
           "__typename": "EventNodeEdge"
         },
         {
@@ -262,9 +268,17 @@
             "version": null,
             "__typename": "EventNode"
           },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjE5",
           "__typename": "EventNodeEdge"
         }
       ],
+      "pageInfo": {
+        "startCursor": "YXJyYXljb25uZWN0aW9uOjA=",
+        "endCursor": "YXJyYXljb25uZWN0aW9uOjE5",
+        "hasNextPage": false,
+        "hasPreviousPage": false,
+        "__typename": "PageInfo"
+      },
       "__typename": "EventNodeConnection"
     }
   }
