@@ -1,0 +1,660 @@
+{
+  "data": {
+    "allEvents": {
+      "edges": [
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjE0NA==",
+            "uuid": "f2ab3e44-800b-4bc2-af05-a574511f88a6",
+            "createdAt": "2020-01-30T19:53:26.328079+00:00",
+            "eventType": "PR_CRE",
+            "description": "A new project was created zhux3/sd-w4re134m-sfsd",
+            "__typename": "EventNode",
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEX1c0UkUxMzRN",
+              "name": "test",
+              "shortName": "",
+              "kfId": "SD_W4RE134M",
+              "createdAt": "2020-01-28T16:57:48.721660+00:00",
+              "modifiedAt": "2020-01-28T16:57:48.753451+00:00",
+              "__typename": "StudyNode"
+            },
+            "project": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtdzRyZTEzNG0tc2ZzZA==",
+              "createdBy": "zhux3",
+              "createdOn": "2020-01-30T19:53:25+00:00",
+              "description": "",
+              "modifiedOn": "2020-01-30T19:53:26+00:00",
+              "name": "test Sfsd_",
+              "projectId": "zhux3/sd-w4re134m-sfsd",
+              "projectType": "RES",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-w4re134m-sfsd",
+              "workflowType": "Sfsd_",
+              "deleted": false,
+              "__typename": "ProjectNode"
+            },
+            "file": null,
+            "version": null
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjIw",
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjE0Mw==",
+            "uuid": "8fc147be-16ae-466b-a1b5-82bb2a384f9a",
+            "createdAt": "2020-01-30T19:39:13.332743+00:00",
+            "eventType": "PR_CRE",
+            "description": "A new project was created zhux3/sd-bnm8hxqc-ksfjsfjd",
+            "__typename": "EventNode",
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEX0JOTThIWFFD",
+              "name": "leverage ubiquitous action-items",
+              "shortName": null,
+              "kfId": "SD_BNM8HXQC",
+              "createdAt": "2019-12-24T11:03:54+00:00",
+              "modifiedAt": "2020-01-27T18:09:50.899614+00:00",
+              "__typename": "StudyNode"
+            },
+            "project": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtYm5tOGh4cWMta3NmanNmamQ=",
+              "createdBy": "zhux3",
+              "createdOn": "2020-01-30T19:39:12+00:00",
+              "description": "",
+              "modifiedOn": "2020-01-30T19:39:13+00:00",
+              "name": "leverage ubiquitous action-items ksfjsfjd_",
+              "projectId": "zhux3/sd-bnm8hxqc-ksfjsfjd",
+              "projectType": "RES",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-bnm8hxqc-ksfjsfjd",
+              "workflowType": "ksfjsfjd_",
+              "deleted": false,
+              "__typename": "ProjectNode"
+            },
+            "file": null,
+            "version": null
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjIx",
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjE0Mg==",
+            "uuid": "6379082a-3988-4a69-8a53-30b12b689ba4",
+            "createdAt": "2020-01-30T18:48:34.311351+00:00",
+            "eventType": "PR_CRE",
+            "description": "A new project was created zhux3/sd-bnm8hxqc",
+            "__typename": "EventNode",
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEX0JOTThIWFFD",
+              "name": "leverage ubiquitous action-items",
+              "shortName": null,
+              "kfId": "SD_BNM8HXQC",
+              "createdAt": "2019-12-24T11:03:54+00:00",
+              "modifiedAt": "2020-01-27T18:09:50.899614+00:00",
+              "__typename": "StudyNode"
+            },
+            "project": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtYm5tOGh4cWM=",
+              "createdBy": "zhux3",
+              "createdOn": "2020-01-30T18:48:33+00:00",
+              "description": "",
+              "modifiedOn": "2020-01-30T18:48:33+00:00",
+              "name": "leverage ubiquitous action-items @_@",
+              "projectId": "zhux3/sd-bnm8hxqc",
+              "projectType": "RES",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-bnm8hxqc",
+              "workflowType": "@_@",
+              "deleted": false,
+              "__typename": "ProjectNode"
+            },
+            "file": null,
+            "version": null
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjIy",
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjE0MQ==",
+            "uuid": "70a286aa-d974-453e-9c6e-a67c20d617cf",
+            "createdAt": "2020-01-30T18:36:48.062452+00:00",
+            "eventType": "PR_CRE",
+            "description": "A new project was created zhux3/sd-bnm8hxqc-test-aaa",
+            "__typename": "EventNode",
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEX0JOTThIWFFD",
+              "name": "leverage ubiquitous action-items",
+              "shortName": null,
+              "kfId": "SD_BNM8HXQC",
+              "createdAt": "2019-12-24T11:03:54+00:00",
+              "modifiedAt": "2020-01-27T18:09:50.899614+00:00",
+              "__typename": "StudyNode"
+            },
+            "project": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtYm5tOGh4cWMtdGVzdC1hYWE=",
+              "createdBy": "zhux3",
+              "createdOn": "2020-01-30T18:36:47+00:00",
+              "description": "",
+              "modifiedOn": "2020-01-30T18:36:47+00:00",
+              "name": "leverage ubiquitous action-items test_aaa",
+              "projectId": "zhux3/sd-bnm8hxqc-test-aaa",
+              "projectType": "RES",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-bnm8hxqc-test-aaa",
+              "workflowType": "test_aaa",
+              "deleted": false,
+              "__typename": "ProjectNode"
+            },
+            "file": null,
+            "version": null
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjIz",
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjE0MA==",
+            "uuid": "f999eb7f-54bc-4631-bb20-8adcd92a1a6d",
+            "createdAt": "2020-01-30T17:20:07.679507+00:00",
+            "eventType": "PR_CRE",
+            "description": "A new project was created zhux3/sd-bnm8hxqc-test-aa",
+            "__typename": "EventNode",
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEX0JOTThIWFFD",
+              "name": "leverage ubiquitous action-items",
+              "shortName": null,
+              "kfId": "SD_BNM8HXQC",
+              "createdAt": "2019-12-24T11:03:54+00:00",
+              "modifiedAt": "2020-01-27T18:09:50.899614+00:00",
+              "__typename": "StudyNode"
+            },
+            "project": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtYm5tOGh4cWMtdGVzdC1hYQ==",
+              "createdBy": "zhux3",
+              "createdOn": "2020-01-30T17:20:07+00:00",
+              "description": "",
+              "modifiedOn": "2020-01-30T17:20:07+00:00",
+              "name": "leverage ubiquitous action-items test_aa",
+              "projectId": "zhux3/sd-bnm8hxqc-test-aa",
+              "projectType": "RES",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-bnm8hxqc-test-aa",
+              "workflowType": "test_aa",
+              "deleted": false,
+              "__typename": "ProjectNode"
+            },
+            "file": null,
+            "version": null
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjI0",
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjEzOQ==",
+            "uuid": "4af441cd-d290-4c39-99dc-579e91c7e653",
+            "createdAt": "2020-01-30T17:19:17.631739+00:00",
+            "eventType": "PR_CRE",
+            "description": "A new project was created zhux3/sd-bnm8hxqc-test-test-aa",
+            "__typename": "EventNode",
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEX0JOTThIWFFD",
+              "name": "leverage ubiquitous action-items",
+              "shortName": null,
+              "kfId": "SD_BNM8HXQC",
+              "createdAt": "2019-12-24T11:03:54+00:00",
+              "modifiedAt": "2020-01-27T18:09:50.899614+00:00",
+              "__typename": "StudyNode"
+            },
+            "project": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtYm5tOGh4cWMtdGVzdC10ZXN0LWFh",
+              "createdBy": "zhux3",
+              "createdOn": "2020-01-30T17:19:17+00:00",
+              "description": "",
+              "modifiedOn": "2020-01-30T17:19:17+00:00",
+              "name": "leverage ubiquitous action-items test_test_aa",
+              "projectId": "zhux3/sd-bnm8hxqc-test-test-aa",
+              "projectType": "RES",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-bnm8hxqc-test-test-aa",
+              "workflowType": "test_test_aa",
+              "deleted": false,
+              "__typename": "ProjectNode"
+            },
+            "file": null,
+            "version": null
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjI1",
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjEzOA==",
+            "uuid": "2ce291e3-bdd4-4ec7-919d-083a9c27417e",
+            "createdAt": "2020-01-30T16:53:05.130144+00:00",
+            "eventType": "PR_CRE",
+            "description": "A new project was created zhux3/sd-bnm8hxqc-test-test",
+            "__typename": "EventNode",
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEX0JOTThIWFFD",
+              "name": "leverage ubiquitous action-items",
+              "shortName": null,
+              "kfId": "SD_BNM8HXQC",
+              "createdAt": "2019-12-24T11:03:54+00:00",
+              "modifiedAt": "2020-01-27T18:09:50.899614+00:00",
+              "__typename": "StudyNode"
+            },
+            "project": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtYm5tOGh4cWMtdGVzdC10ZXN0",
+              "createdBy": "zhux3",
+              "createdOn": "2020-01-30T16:53:04+00:00",
+              "description": "",
+              "modifiedOn": "2020-01-30T16:53:04+00:00",
+              "name": "leverage ubiquitous action-items test_test",
+              "projectId": "zhux3/sd-bnm8hxqc-test-test",
+              "projectType": "RES",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-bnm8hxqc-test-test",
+              "workflowType": "test_test",
+              "deleted": false,
+              "__typename": "ProjectNode"
+            },
+            "file": null,
+            "version": null
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjI2",
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjEzNw==",
+            "uuid": "4b5540cd-6a8d-4cfb-8e62-531ebc011214",
+            "createdAt": "2020-01-30T16:44:20.365399+00:00",
+            "eventType": "PR_CRE",
+            "description": "A new project was created zhux3/sd-bnm8hxqc-test-again",
+            "__typename": "EventNode",
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEX0JOTThIWFFD",
+              "name": "leverage ubiquitous action-items",
+              "shortName": null,
+              "kfId": "SD_BNM8HXQC",
+              "createdAt": "2019-12-24T11:03:54+00:00",
+              "modifiedAt": "2020-01-27T18:09:50.899614+00:00",
+              "__typename": "StudyNode"
+            },
+            "project": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtYm5tOGh4cWMtdGVzdC1hZ2Fpbg==",
+              "createdBy": "zhux3",
+              "createdOn": "2020-01-30T16:44:19+00:00",
+              "description": "",
+              "modifiedOn": "2020-01-30T16:44:20+00:00",
+              "name": "leverage ubiquitous action-items test_again",
+              "projectId": "zhux3/sd-bnm8hxqc-test-again",
+              "projectType": "RES",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-bnm8hxqc-test-again",
+              "workflowType": "test_again",
+              "deleted": false,
+              "__typename": "ProjectNode"
+            },
+            "file": null,
+            "version": null
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjI3",
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjEzNg==",
+            "uuid": "63fcda80-cbb5-43e7-9158-8469da770248",
+            "createdAt": "2020-01-30T15:00:34.650940+00:00",
+            "eventType": "PR_DEL",
+            "description": "Project was deleted in Cavatica: kfdrc-harmonization/sd-9pyzahhe-01",
+            "__typename": "EventNode",
+            "study": null,
+            "project": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtYm5tOGh4cWMtMQ==",
+              "createdBy": "zhux3",
+              "createdOn": "2020-01-28T16:30:58+00:00",
+              "description": "",
+              "modifiedOn": "2020-01-28T16:30:59+00:00",
+              "name": "leverage ubiquitous action-items ",
+              "projectId": "zhux3/sd-bnm8hxqc-1",
+              "projectType": "DEL",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-bnm8hxqc-1",
+              "workflowType": "bwa_mem",
+              "deleted": true,
+              "__typename": "ProjectNode"
+            },
+            "file": null,
+            "version": null
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjI4",
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjEzNQ==",
+            "uuid": "2687a41c-f7b2-4b8f-9178-158310d72df6",
+            "createdAt": "2020-01-30T15:00:34.649016+00:00",
+            "eventType": "PR_DEL",
+            "description": "Project was deleted in Cavatica: kfdrc-harmonization/sd-9pyzahhe-01",
+            "__typename": "EventNode",
+            "study": null,
+            "project": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtdzRyZTEzNG0=",
+              "createdBy": "zhux3",
+              "createdOn": "2020-01-28T16:57:58+00:00",
+              "description": "",
+              "modifiedOn": "2020-01-28T16:57:59+00:00",
+              "name": "test",
+              "projectId": "zhux3/sd-w4re134m",
+              "projectType": "DEL",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-w4re134m",
+              "workflowType": "bwa_mem",
+              "deleted": true,
+              "__typename": "ProjectNode"
+            },
+            "file": null,
+            "version": null
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjI5",
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjEzNA==",
+            "uuid": "89fcacf3-c114-4127-85e6-94a24fea5115",
+            "createdAt": "2020-01-30T15:00:34.645913+00:00",
+            "eventType": "PR_DEL",
+            "description": "Project was deleted in Cavatica: kfdrc-harmonization/sd-9pyzahhe-01",
+            "__typename": "EventNode",
+            "study": null,
+            "project": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtYm5tOGh4cWM=",
+              "createdBy": "zhux3",
+              "createdOn": "2020-01-30T18:48:33+00:00",
+              "description": "",
+              "modifiedOn": "2020-01-30T18:48:33+00:00",
+              "name": "leverage ubiquitous action-items @_@",
+              "projectId": "zhux3/sd-bnm8hxqc",
+              "projectType": "RES",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-bnm8hxqc",
+              "workflowType": "@_@",
+              "deleted": false,
+              "__typename": "ProjectNode"
+            },
+            "file": null,
+            "version": null
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjMw",
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjEzMw==",
+            "uuid": "07654568-2740-43b7-829b-74dcad9539f6",
+            "createdAt": "2020-01-30T15:00:34.643389+00:00",
+            "eventType": "PR_DEL",
+            "description": "Project was deleted in Cavatica: kfdrc-harmonization/sd-9pyzahhe-01",
+            "__typename": "EventNode",
+            "study": null,
+            "project": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtdzRyZTEzNG0tMQ==",
+              "createdBy": "zhux3",
+              "createdOn": "2020-01-29T16:11:02+00:00",
+              "description": "",
+              "modifiedOn": "2020-01-29T16:11:02+00:00",
+              "name": "test",
+              "projectId": "zhux3/sd-w4re134m-1",
+              "projectType": "DEL",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-w4re134m-1",
+              "workflowType": "bwa_mem",
+              "deleted": true,
+              "__typename": "ProjectNode"
+            },
+            "file": null,
+            "version": null
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjMx",
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjEzMg==",
+            "uuid": "24f0ea88-7478-41d4-b52c-552172832c35",
+            "createdAt": "2020-01-30T15:00:26.130563+00:00",
+            "eventType": "PR_DEL",
+            "description": "Project was deleted in Cavatica: kfdrc-harmonization/sd-9pyzahhe-01",
+            "__typename": "EventNode",
+            "study": null,
+            "project": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2QteTdqMWc2d2o=",
+              "createdBy": "zhux3",
+              "createdOn": "2020-01-28T15:45:31+00:00",
+              "description": "",
+              "modifiedOn": "2020-01-28T15:45:31+00:00",
+              "name": "SD_Y7J1G6WJ",
+              "projectId": "zhux3/sd-y7j1g6wj",
+              "projectType": "HAR",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-y7j1g6wj",
+              "workflowType": "bwa_mem",
+              "deleted": true,
+              "__typename": "ProjectNode"
+            },
+            "file": null,
+            "version": null
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjMy",
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjEzMQ==",
+            "uuid": "43bbf9e7-425f-45c7-b215-03c63ef27e76",
+            "createdAt": "2020-01-30T15:00:26.129025+00:00",
+            "eventType": "PR_DEL",
+            "description": "Project was deleted in Cavatica: kfdrc-harmonization/sd-9pyzahhe-01",
+            "__typename": "EventNode",
+            "study": null,
+            "project": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2Qtdzk3aTR5b2wtYndhLW1lbQ==",
+              "createdBy": "zhux3",
+              "createdOn": "2020-01-27T15:12:07+00:00",
+              "description": "",
+              "modifiedOn": "2020-01-27T15:12:08+00:00",
+              "name": "embrace scalable solutions bwa-mem",
+              "projectId": "zhux3/sd-w97i4yol-bwa-mem",
+              "projectType": "HAR",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-w97i4yol-bwa-mem",
+              "workflowType": "bwa_mem",
+              "deleted": true,
+              "__typename": "ProjectNode"
+            },
+            "file": null,
+            "version": null
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjMz",
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjEzMA==",
+            "uuid": "4fd959b4-0e9d-498d-884c-cd62e5e5e1a8",
+            "createdAt": "2020-01-30T15:00:26.127518+00:00",
+            "eventType": "PR_DEL",
+            "description": "Project was deleted in Cavatica: kfdrc-harmonization/sd-9pyzahhe-01",
+            "__typename": "EventNode",
+            "study": null,
+            "project": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2Qtdzk3aTR5b2wtZ2F0ay1oYXBsb3R5cGVjYWxsZXI=",
+              "createdBy": "zhux3",
+              "createdOn": "2020-01-27T15:59:12+00:00",
+              "description": "",
+              "modifiedOn": "2020-01-27T15:59:13+00:00",
+              "name": "embrace scalable solutions gatk-haplotypecaller",
+              "projectId": "zhux3/sd-w97i4yol-gatk-haplotypecaller",
+              "projectType": "HAR",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-w97i4yol-gatk-haplotypecaller",
+              "workflowType": "bwa_mem",
+              "deleted": true,
+              "__typename": "ProjectNode"
+            },
+            "file": null,
+            "version": null
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjM0",
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjEyOQ==",
+            "uuid": "8a6edbc6-0ed8-40dc-ae6b-b3fc4f3377da",
+            "createdAt": "2020-01-30T15:00:26.125936+00:00",
+            "eventType": "PR_DEL",
+            "description": "Project was deleted in Cavatica: kfdrc-harmonization/sd-9pyzahhe-01",
+            "__typename": "EventNode",
+            "study": null,
+            "project": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtdzRyZTEzNG0tZ2F0ay1oYXBsb3R5cGVjYWxsZXI=",
+              "createdBy": "zhux3",
+              "createdOn": "2020-01-28T16:58:00+00:00",
+              "description": "",
+              "modifiedOn": "2020-01-28T16:58:00+00:00",
+              "name": "test gatk_haplotypecaller gatk-haplotypecaller",
+              "projectId": "zhux3/sd-w4re134m-gatk-haplotypecaller",
+              "projectType": "HAR",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-w4re134m-gatk-haplotypecaller",
+              "workflowType": "bwa_mem",
+              "deleted": true,
+              "__typename": "ProjectNode"
+            },
+            "file": null,
+            "version": null
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjM1",
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjEyOA==",
+            "uuid": "cd0619a4-d1f3-43bc-ac95-e9722276a10e",
+            "createdAt": "2020-01-30T15:00:26.124280+00:00",
+            "eventType": "PR_DEL",
+            "description": "Project was deleted in Cavatica: kfdrc-harmonization/sd-9pyzahhe-01",
+            "__typename": "EventNode",
+            "study": null,
+            "project": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtdzRyZTEzNG0tYndhLW1lbS1icXNy",
+              "createdBy": "zhux3",
+              "createdOn": "2020-01-29T16:12:20+00:00",
+              "description": "",
+              "modifiedOn": "2020-01-29T16:12:20+00:00",
+              "name": "test bwa_mem_bqsr bwa-mem-bqsr",
+              "projectId": "zhux3/sd-w4re134m-bwa-mem-bqsr",
+              "projectType": "HAR",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-w4re134m-bwa-mem-bqsr",
+              "workflowType": "bwa_mem",
+              "deleted": true,
+              "__typename": "ProjectNode"
+            },
+            "file": null,
+            "version": null
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjM2",
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjEyNw==",
+            "uuid": "c3014ea6-3190-4c32-9af1-75041aa30f4c",
+            "createdAt": "2020-01-30T15:00:26.122409+00:00",
+            "eventType": "PR_DEL",
+            "description": "Project was deleted in Cavatica: kfdrc-harmonization/sd-9pyzahhe-01",
+            "__typename": "EventNode",
+            "study": null,
+            "project": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2Qtdzk3aTR5b2wtc3Rhci0yLXBhc3M=",
+              "createdBy": "zhux3",
+              "createdOn": "2020-01-27T15:59:32+00:00",
+              "description": "",
+              "modifiedOn": "2020-01-27T15:59:32+00:00",
+              "name": "embrace scalable solutions star-2-pass",
+              "projectId": "zhux3/sd-w97i4yol-star-2-pass",
+              "projectType": "HAR",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-w97i4yol-star-2-pass",
+              "workflowType": "bwa_mem",
+              "deleted": true,
+              "__typename": "ProjectNode"
+            },
+            "file": null,
+            "version": null
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjM3",
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjEyNg==",
+            "uuid": "9b4ee7bc-b12d-4f68-a0a3-2ac167c9d0df",
+            "createdAt": "2020-01-30T15:00:26.120522+00:00",
+            "eventType": "PR_DEL",
+            "description": "Project was deleted in Cavatica: kfdrc-harmonization/sd-9pyzahhe-01",
+            "__typename": "EventNode",
+            "study": null,
+            "project": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtYm5tOGh4cWMtc3Rhci0yLXBhc3M=",
+              "createdBy": "zhux3",
+              "createdOn": "2020-01-27T18:31:31+00:00",
+              "description": "",
+              "modifiedOn": "2020-01-27T18:31:31+00:00",
+              "name": "leverage ubiquitous action-items star_2_pass star-2-pass",
+              "projectId": "zhux3/sd-bnm8hxqc-star-2-pass",
+              "projectType": "HAR",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-bnm8hxqc-star-2-pass",
+              "workflowType": "bwa_mem",
+              "deleted": true,
+              "__typename": "ProjectNode"
+            },
+            "file": null,
+            "version": null
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjM4",
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjEyNQ==",
+            "uuid": "5952ce6a-3b58-40bb-b1b0-93adb9960f20",
+            "createdAt": "2020-01-30T15:00:26.118462+00:00",
+            "eventType": "PR_DEL",
+            "description": "Project was deleted in Cavatica: kfdrc-harmonization/sd-9pyzahhe-01",
+            "__typename": "EventNode",
+            "study": null,
+            "project": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtYm5tOGh4cWMtYndhLW1lbQ==",
+              "createdBy": "zhux3",
+              "createdOn": "2020-01-28T16:16:44+00:00",
+              "description": "",
+              "modifiedOn": "2020-01-28T16:16:45+00:00",
+              "name": "leverage ubiquitous action-items bwa_mem bwa-mem",
+              "projectId": "zhux3/sd-bnm8hxqc-bwa-mem",
+              "projectType": "HAR",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-bnm8hxqc-bwa-mem",
+              "workflowType": "bwa_mem",
+              "deleted": true,
+              "__typename": "ProjectNode"
+            },
+            "file": null,
+            "version": null
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjM5",
+          "__typename": "EventNodeEdge"
+        }
+      ],
+      "pageInfo": {
+        "startCursor": "YXJyYXljb25uZWN0aW9uOjIw",
+        "endCursor": "YXJyYXljb25uZWN0aW9uOjM5",
+        "hasNextPage": true,
+        "hasPreviousPage": false,
+        "__typename": "PageInfo"
+      },
+      "__typename": "EventNodeConnection"
+    }
+  }
+}

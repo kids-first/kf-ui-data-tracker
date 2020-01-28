@@ -1,0 +1,753 @@
+{
+  "data": {
+    "allEvents": {
+      "edges": [
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjE2NA==",
+            "uuid": "174daef0-dea5-424a-837b-8f80fdbc2f9c",
+            "createdAt": "2020-02-05T16:39:09.888232+00:00",
+            "eventType": "FV_CRE",
+            "description": "devadmin created version FV_P7Y78D2Y of file SF_HEDAH39D",
+            "__typename": "EventNode",
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEXzNGS0E5OVAy",
+              "name": "drive ubiquitous portals",
+              "shortName": null,
+              "kfId": "SD_3FKA99P2",
+              "createdAt": "2018-10-14T20:02:45+00:00",
+              "modifiedAt": "2020-01-27T18:09:50.893962+00:00",
+              "__typename": "StudyNode"
+            },
+            "project": null,
+            "file": {
+              "id": "RmlsZU5vZGU6U0ZfSEVEQUgzOUQ=",
+              "kfId": "SF_HEDAH39D",
+              "name": "erw",
+              "description": "afdsffsd",
+              "fileType": "CLN",
+              "downloadUrl": "http://localhost:5002/download/study/SD_3FKA99P2/file/SF_HEDAH39D",
+              "__typename": "FileNode"
+            },
+            "version": {
+              "id": "VmVyc2lvbk5vZGU6RlZfUDdZNzhEMlk=",
+              "kfId": "FV_P7Y78D2Y",
+              "fileName": "2.jpg",
+              "size": 63007,
+              "state": "PEN",
+              "description": "afdsffsd",
+              "createdAt": "2020-02-05T16:39:09.875696+00:00",
+              "__typename": "VersionNode"
+            }
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjA=",
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjE2Mw==",
+            "uuid": "c27479f6-8b79-4b14-b512-6b2643e8c7a7",
+            "createdAt": "2020-02-05T16:39:09.874307+00:00",
+            "eventType": "SF_CRE",
+            "description": "devadmin created file SF_HEDAH39D",
+            "__typename": "EventNode",
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEXzNGS0E5OVAy",
+              "name": "drive ubiquitous portals",
+              "shortName": null,
+              "kfId": "SD_3FKA99P2",
+              "createdAt": "2018-10-14T20:02:45+00:00",
+              "modifiedAt": "2020-01-27T18:09:50.893962+00:00",
+              "__typename": "StudyNode"
+            },
+            "project": null,
+            "file": {
+              "id": "RmlsZU5vZGU6U0ZfSEVEQUgzOUQ=",
+              "kfId": "SF_HEDAH39D",
+              "name": "erw",
+              "description": "afdsffsd",
+              "fileType": "CLN",
+              "downloadUrl": "http://localhost:5002/download/study/SD_3FKA99P2/file/SF_HEDAH39D",
+              "__typename": "FileNode"
+            },
+            "version": null
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjE=",
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjE2Mg==",
+            "uuid": "df973146-3e70-4b26-8166-2fbf711993ce",
+            "createdAt": "2020-02-05T16:38:58.044012+00:00",
+            "eventType": "FV_CRE",
+            "description": "devadmin created version FV_GCY082TT of file SF_E2S5RPXZ",
+            "__typename": "EventNode",
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEXzNGS0E5OVAy",
+              "name": "drive ubiquitous portals",
+              "shortName": null,
+              "kfId": "SD_3FKA99P2",
+              "createdAt": "2018-10-14T20:02:45+00:00",
+              "modifiedAt": "2020-01-27T18:09:50.893962+00:00",
+              "__typename": "StudyNode"
+            },
+            "project": null,
+            "file": {
+              "id": "RmlsZU5vZGU6U0ZfRTJTNVJQWFo=",
+              "kfId": "SF_E2S5RPXZ",
+              "name": "sfd",
+              "description": "sfsd",
+              "fileType": "SEQ",
+              "downloadUrl": "http://localhost:5002/download/study/SD_3FKA99P2/file/SF_E2S5RPXZ",
+              "__typename": "FileNode"
+            },
+            "version": {
+              "id": "VmVyc2lvbk5vZGU6RlZfR0NZMDgyVFQ=",
+              "kfId": "FV_GCY082TT",
+              "fileName": "1.jpg",
+              "size": 35629,
+              "state": "PEN",
+              "description": "sfsd",
+              "createdAt": "2020-02-05T16:38:58.034177+00:00",
+              "__typename": "VersionNode"
+            }
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjI=",
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjE2MQ==",
+            "uuid": "80e03176-956f-4fff-8b0e-0210172e2109",
+            "createdAt": "2020-02-05T16:38:58.031676+00:00",
+            "eventType": "SF_CRE",
+            "description": "devadmin created file SF_E2S5RPXZ",
+            "__typename": "EventNode",
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEXzNGS0E5OVAy",
+              "name": "drive ubiquitous portals",
+              "shortName": null,
+              "kfId": "SD_3FKA99P2",
+              "createdAt": "2018-10-14T20:02:45+00:00",
+              "modifiedAt": "2020-01-27T18:09:50.893962+00:00",
+              "__typename": "StudyNode"
+            },
+            "project": null,
+            "file": {
+              "id": "RmlsZU5vZGU6U0ZfRTJTNVJQWFo=",
+              "kfId": "SF_E2S5RPXZ",
+              "name": "sfd",
+              "description": "sfsd",
+              "fileType": "SEQ",
+              "downloadUrl": "http://localhost:5002/download/study/SD_3FKA99P2/file/SF_E2S5RPXZ",
+              "__typename": "FileNode"
+            },
+            "version": null
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjM=",
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjE2MA==",
+            "uuid": "bdb68ca9-138d-4fa9-b00e-8cebd5d545b0",
+            "createdAt": "2020-02-05T16:38:48.466431+00:00",
+            "eventType": "FV_CRE",
+            "description": "devadmin created version FV_STY4EMQT of file SF_A7BTSGJK",
+            "__typename": "EventNode",
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEXzNGS0E5OVAy",
+              "name": "drive ubiquitous portals",
+              "shortName": null,
+              "kfId": "SD_3FKA99P2",
+              "createdAt": "2018-10-14T20:02:45+00:00",
+              "modifiedAt": "2020-01-27T18:09:50.893962+00:00",
+              "__typename": "StudyNode"
+            },
+            "project": null,
+            "file": {
+              "id": "RmlsZU5vZGU6U0ZfQTdCVFNHSks=",
+              "kfId": "SF_A7BTSGJK",
+              "name": "dsf",
+              "description": "fsd",
+              "fileType": "CLN",
+              "downloadUrl": "http://localhost:5002/download/study/SD_3FKA99P2/file/SF_A7BTSGJK",
+              "__typename": "FileNode"
+            },
+            "version": {
+              "id": "VmVyc2lvbk5vZGU6RlZfU1RZNEVNUVQ=",
+              "kfId": "FV_STY4EMQT",
+              "fileName": "1.jpeg",
+              "size": 121820,
+              "state": "PEN",
+              "description": "fsd",
+              "createdAt": "2020-02-05T16:38:48.442203+00:00",
+              "__typename": "VersionNode"
+            }
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjQ=",
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjE1OQ==",
+            "uuid": "b17d8040-1c26-4952-a639-8ca3be17ffc3",
+            "createdAt": "2020-02-05T16:38:48.425403+00:00",
+            "eventType": "SF_CRE",
+            "description": "devadmin created file SF_A7BTSGJK",
+            "__typename": "EventNode",
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEXzNGS0E5OVAy",
+              "name": "drive ubiquitous portals",
+              "shortName": null,
+              "kfId": "SD_3FKA99P2",
+              "createdAt": "2018-10-14T20:02:45+00:00",
+              "modifiedAt": "2020-01-27T18:09:50.893962+00:00",
+              "__typename": "StudyNode"
+            },
+            "project": null,
+            "file": {
+              "id": "RmlsZU5vZGU6U0ZfQTdCVFNHSks=",
+              "kfId": "SF_A7BTSGJK",
+              "name": "dsf",
+              "description": "fsd",
+              "fileType": "CLN",
+              "downloadUrl": "http://localhost:5002/download/study/SD_3FKA99P2/file/SF_A7BTSGJK",
+              "__typename": "FileNode"
+            },
+            "version": null
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjU=",
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjE1OA==",
+            "uuid": "42d2f8e2-289a-4259-a6e8-4995a7eb6453",
+            "createdAt": "2020-02-05T15:58:39.458783+00:00",
+            "eventType": "PR_UPD",
+            "description": "devadmin updated project zhux3/sd-g0hfc9dd-aa",
+            "__typename": "EventNode",
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEX0cwSEZDOURE",
+              "name": "test study name1",
+              "shortName": "",
+              "kfId": "SD_G0HFC9DD",
+              "createdAt": "2020-01-28T16:08:37.106258+00:00",
+              "modifiedAt": "2020-01-28T16:08:37.140924+00:00",
+              "__typename": "StudyNode"
+            },
+            "project": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtZzBoZmM5ZGQtYWE=",
+              "createdBy": "zhux3",
+              "createdOn": "2020-02-04T15:51:40+00:00",
+              "description": "",
+              "modifiedOn": "2020-02-04T15:51:41+00:00",
+              "name": "test study name1 AA_",
+              "projectId": "zhux3/sd-g0hfc9dd-aa",
+              "projectType": "RES",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-g0hfc9dd-aa",
+              "workflowType": "sfddsf",
+              "deleted": false,
+              "__typename": "ProjectNode"
+            },
+            "file": null,
+            "version": null
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjY=",
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjE1Nw==",
+            "uuid": "fe945ae4-a457-4ce2-b993-77802f95e1da",
+            "createdAt": "2020-02-05T15:58:29.433046+00:00",
+            "eventType": "PR_UPD",
+            "description": "devadmin updated project zhux3/sd-g0hfc9dd-aa",
+            "__typename": "EventNode",
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEX0cwSEZDOURE",
+              "name": "test study name1",
+              "shortName": "",
+              "kfId": "SD_G0HFC9DD",
+              "createdAt": "2020-01-28T16:08:37.106258+00:00",
+              "modifiedAt": "2020-01-28T16:08:37.140924+00:00",
+              "__typename": "StudyNode"
+            },
+            "project": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtZzBoZmM5ZGQtYWE=",
+              "createdBy": "zhux3",
+              "createdOn": "2020-02-04T15:51:40+00:00",
+              "description": "",
+              "modifiedOn": "2020-02-04T15:51:41+00:00",
+              "name": "test study name1 AA_",
+              "projectId": "zhux3/sd-g0hfc9dd-aa",
+              "projectType": "RES",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-g0hfc9dd-aa",
+              "workflowType": "sfddsf",
+              "deleted": false,
+              "__typename": "ProjectNode"
+            },
+            "file": null,
+            "version": null
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjc=",
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjE1Ng==",
+            "uuid": "221eb9f3-4f17-4d28-86d6-6f97ae2d6a7c",
+            "createdAt": "2020-02-05T15:58:09.732186+00:00",
+            "eventType": "PR_UPD",
+            "description": "devadmin updated project zhux3/sd-g0hfc9dd-aa",
+            "__typename": "EventNode",
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEX0cwSEZDOURE",
+              "name": "test study name1",
+              "shortName": "",
+              "kfId": "SD_G0HFC9DD",
+              "createdAt": "2020-01-28T16:08:37.106258+00:00",
+              "modifiedAt": "2020-01-28T16:08:37.140924+00:00",
+              "__typename": "StudyNode"
+            },
+            "project": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtZzBoZmM5ZGQtYWE=",
+              "createdBy": "zhux3",
+              "createdOn": "2020-02-04T15:51:40+00:00",
+              "description": "",
+              "modifiedOn": "2020-02-04T15:51:41+00:00",
+              "name": "test study name1 AA_",
+              "projectId": "zhux3/sd-g0hfc9dd-aa",
+              "projectType": "RES",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-g0hfc9dd-aa",
+              "workflowType": "sfddsf",
+              "deleted": false,
+              "__typename": "ProjectNode"
+            },
+            "file": null,
+            "version": null
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjg=",
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjE1NQ==",
+            "uuid": "fee7e6af-7051-4f32-b19b-c7a011e6580d",
+            "createdAt": "2020-02-05T15:39:29.333104+00:00",
+            "eventType": "PR_CRE",
+            "description": "A new project was created zhux3/sd-g0hfc9dd-test-test",
+            "__typename": "EventNode",
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEX0cwSEZDOURE",
+              "name": "test study name1",
+              "shortName": "",
+              "kfId": "SD_G0HFC9DD",
+              "createdAt": "2020-01-28T16:08:37.106258+00:00",
+              "modifiedAt": "2020-01-28T16:08:37.140924+00:00",
+              "__typename": "StudyNode"
+            },
+            "project": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtZzBoZmM5ZGQtdGVzdC10ZXN0",
+              "createdBy": "zhux3",
+              "createdOn": "2020-02-05T15:39:28+00:00",
+              "description": "",
+              "modifiedOn": "2020-02-05T15:39:29+00:00",
+              "name": "test study name1 test_test",
+              "projectId": "zhux3/sd-g0hfc9dd-test-test",
+              "projectType": "RES",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-g0hfc9dd-test-test",
+              "workflowType": "test_test",
+              "deleted": false,
+              "__typename": "ProjectNode"
+            },
+            "file": null,
+            "version": null
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjk=",
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjE1NA==",
+            "uuid": "a957f4a1-9c09-47d8-a4e7-59c6c8446d40",
+            "createdAt": "2020-02-04T19:52:58.907573+00:00",
+            "eventType": "PR_CRE",
+            "description": "A new project was created zhux3/sd-g0hfc9dd-bwa-mem",
+            "__typename": "EventNode",
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEX0cwSEZDOURE",
+              "name": "test study name1",
+              "shortName": "",
+              "kfId": "SD_G0HFC9DD",
+              "createdAt": "2020-01-28T16:08:37.106258+00:00",
+              "modifiedAt": "2020-01-28T16:08:37.140924+00:00",
+              "__typename": "StudyNode"
+            },
+            "project": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtZzBoZmM5ZGQtYndhLW1lbQ==",
+              "createdBy": "zhux3",
+              "createdOn": "2020-02-04T19:52:58+00:00",
+              "description": "",
+              "modifiedOn": "2020-02-04T19:52:58+00:00",
+              "name": "test study name1 bwa_mem bwa-mem",
+              "projectId": "zhux3/sd-g0hfc9dd-bwa-mem",
+              "projectType": "HAR",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-g0hfc9dd-bwa-mem",
+              "workflowType": "bwa_mem",
+              "deleted": false,
+              "__typename": "ProjectNode"
+            },
+            "file": null,
+            "version": null
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjEw",
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjE1Mw==",
+            "uuid": "5f206e37-c9d1-4448-94e4-98cb9fa08fb2",
+            "createdAt": "2020-02-04T15:51:41.424741+00:00",
+            "eventType": "PR_CRE",
+            "description": "A new project was created zhux3/sd-g0hfc9dd-aa",
+            "__typename": "EventNode",
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEX0cwSEZDOURE",
+              "name": "test study name1",
+              "shortName": "",
+              "kfId": "SD_G0HFC9DD",
+              "createdAt": "2020-01-28T16:08:37.106258+00:00",
+              "modifiedAt": "2020-01-28T16:08:37.140924+00:00",
+              "__typename": "StudyNode"
+            },
+            "project": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtZzBoZmM5ZGQtYWE=",
+              "createdBy": "zhux3",
+              "createdOn": "2020-02-04T15:51:40+00:00",
+              "description": "",
+              "modifiedOn": "2020-02-04T15:51:41+00:00",
+              "name": "test study name1 AA_",
+              "projectId": "zhux3/sd-g0hfc9dd-aa",
+              "projectType": "RES",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-g0hfc9dd-aa",
+              "workflowType": "sfddsf",
+              "deleted": false,
+              "__typename": "ProjectNode"
+            },
+            "file": null,
+            "version": null
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjEx",
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjE1Mg==",
+            "uuid": "9398832a-2a62-42a3-9eed-c6b92c7ae963",
+            "createdAt": "2020-02-04T15:50:33.590448+00:00",
+            "eventType": "PR_CRE",
+            "description": "A new project was created zhux3/sd-g0hfc9dd",
+            "__typename": "EventNode",
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEX0cwSEZDOURE",
+              "name": "test study name1",
+              "shortName": "",
+              "kfId": "SD_G0HFC9DD",
+              "createdAt": "2020-01-28T16:08:37.106258+00:00",
+              "modifiedAt": "2020-01-28T16:08:37.140924+00:00",
+              "__typename": "StudyNode"
+            },
+            "project": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtZzBoZmM5ZGQ=",
+              "createdBy": "zhux3",
+              "createdOn": "2020-02-04T15:50:33+00:00",
+              "description": "",
+              "modifiedOn": "2020-02-04T15:50:33+00:00",
+              "name": "test study name1",
+              "projectId": "zhux3/sd-g0hfc9dd",
+              "projectType": "DEL",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-g0hfc9dd",
+              "workflowType": "",
+              "deleted": false,
+              "__typename": "ProjectNode"
+            },
+            "file": null,
+            "version": null
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjEy",
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjE1MQ==",
+            "uuid": "624fce91-1284-4045-a3e8-241d6cef379d",
+            "createdAt": "2020-01-30T20:12:50.161536+00:00",
+            "eventType": "PR_CRE",
+            "description": "A new project was created zhux3/sd-bnm8hxqc-a-1",
+            "__typename": "EventNode",
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEX0JOTThIWFFD",
+              "name": "leverage ubiquitous action-items",
+              "shortName": null,
+              "kfId": "SD_BNM8HXQC",
+              "createdAt": "2019-12-24T11:03:54+00:00",
+              "modifiedAt": "2020-01-27T18:09:50.899614+00:00",
+              "__typename": "StudyNode"
+            },
+            "project": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtYm5tOGh4cWMtYS0x",
+              "createdBy": "zhux3",
+              "createdOn": "2020-01-30T20:12:49+00:00",
+              "description": "",
+              "modifiedOn": "2020-01-30T20:12:49+00:00",
+              "name": "leverage ubiquitous action-items a@@",
+              "projectId": "zhux3/sd-bnm8hxqc-a-1",
+              "projectType": "RES",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-bnm8hxqc-a-1",
+              "workflowType": "a@@",
+              "deleted": false,
+              "__typename": "ProjectNode"
+            },
+            "file": null,
+            "version": null
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjEz",
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjE1MA==",
+            "uuid": "24ee93f1-e712-4210-aa09-3b77f5c20196",
+            "createdAt": "2020-01-30T20:11:44.066962+00:00",
+            "eventType": "PR_CRE",
+            "description": "A new project was created zhux3/sd-bnm8hxqc-a",
+            "__typename": "EventNode",
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEX0JOTThIWFFD",
+              "name": "leverage ubiquitous action-items",
+              "shortName": null,
+              "kfId": "SD_BNM8HXQC",
+              "createdAt": "2019-12-24T11:03:54+00:00",
+              "modifiedAt": "2020-01-27T18:09:50.899614+00:00",
+              "__typename": "StudyNode"
+            },
+            "project": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtYm5tOGh4cWMtYQ==",
+              "createdBy": "zhux3",
+              "createdOn": "2020-01-30T20:11:43+00:00",
+              "description": "",
+              "modifiedOn": "2020-01-30T20:11:43+00:00",
+              "name": "leverage ubiquitous action-items a@@@",
+              "projectId": "zhux3/sd-bnm8hxqc-a",
+              "projectType": "RES",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-bnm8hxqc-a",
+              "workflowType": "a@@@",
+              "deleted": false,
+              "__typename": "ProjectNode"
+            },
+            "file": null,
+            "version": null
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjE0",
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjE0OQ==",
+            "uuid": "8c018e9e-6fb1-46d1-89b7-3aaec2b9f811",
+            "createdAt": "2020-01-30T20:10:16.779985+00:00",
+            "eventType": "PR_CRE",
+            "description": "A new project was created zhux3/sd-bnm8hxqc-aa",
+            "__typename": "EventNode",
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEX0JOTThIWFFD",
+              "name": "leverage ubiquitous action-items",
+              "shortName": null,
+              "kfId": "SD_BNM8HXQC",
+              "createdAt": "2019-12-24T11:03:54+00:00",
+              "modifiedAt": "2020-01-27T18:09:50.899614+00:00",
+              "__typename": "StudyNode"
+            },
+            "project": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtYm5tOGh4cWMtYWE=",
+              "createdBy": "zhux3",
+              "createdOn": "2020-01-30T20:10:16+00:00",
+              "description": "",
+              "modifiedOn": "2020-01-30T20:10:16+00:00",
+              "name": "leverage ubiquitous action-items aa@@@",
+              "projectId": "zhux3/sd-bnm8hxqc-aa",
+              "projectType": "RES",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-bnm8hxqc-aa",
+              "workflowType": "aa@@@",
+              "deleted": false,
+              "__typename": "ProjectNode"
+            },
+            "file": null,
+            "version": null
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjE1",
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjE0OA==",
+            "uuid": "5c028b2b-9b2f-4fda-bed3-a3abb2af923e",
+            "createdAt": "2020-01-30T20:05:34.879510+00:00",
+            "eventType": "PR_CRE",
+            "description": "A new project was created zhux3/sd-bnm8hxqc-aaa",
+            "__typename": "EventNode",
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEX0JOTThIWFFD",
+              "name": "leverage ubiquitous action-items",
+              "shortName": null,
+              "kfId": "SD_BNM8HXQC",
+              "createdAt": "2019-12-24T11:03:54+00:00",
+              "modifiedAt": "2020-01-27T18:09:50.899614+00:00",
+              "__typename": "StudyNode"
+            },
+            "project": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtYm5tOGh4cWMtYWFh",
+              "createdBy": "zhux3",
+              "createdOn": "2020-01-30T20:05:34+00:00",
+              "description": "",
+              "modifiedOn": "2020-01-30T20:05:34+00:00",
+              "name": "leverage ubiquitous action-items aaa@@@",
+              "projectId": "zhux3/sd-bnm8hxqc-aaa",
+              "projectType": "RES",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-bnm8hxqc-aaa",
+              "workflowType": "aaa@@@",
+              "deleted": false,
+              "__typename": "ProjectNode"
+            },
+            "file": null,
+            "version": null
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjE2",
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjE0Nw==",
+            "uuid": "85e7bfc2-c981-4f85-9406-a034ddd52c8a",
+            "createdAt": "2020-01-30T20:02:53.172408+00:00",
+            "eventType": "PR_CRE",
+            "description": "A new project was created zhux3/sd-bnm8hxqc-sdfsdfs",
+            "__typename": "EventNode",
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEX0JOTThIWFFD",
+              "name": "leverage ubiquitous action-items",
+              "shortName": null,
+              "kfId": "SD_BNM8HXQC",
+              "createdAt": "2019-12-24T11:03:54+00:00",
+              "modifiedAt": "2020-01-27T18:09:50.899614+00:00",
+              "__typename": "StudyNode"
+            },
+            "project": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtYm5tOGh4cWMtc2Rmc2Rmcw==",
+              "createdBy": "zhux3",
+              "createdOn": "2020-01-30T20:02:52+00:00",
+              "description": "",
+              "modifiedOn": "2020-01-30T20:02:52+00:00",
+              "name": "leverage ubiquitous action-items sdfsdfs@@$",
+              "projectId": "zhux3/sd-bnm8hxqc-sdfsdfs",
+              "projectType": "RES",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-bnm8hxqc-sdfsdfs",
+              "workflowType": "sdfsdfs@@$",
+              "deleted": false,
+              "__typename": "ProjectNode"
+            },
+            "file": null,
+            "version": null
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjE3",
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjE0Ng==",
+            "uuid": "c3a5b026-e336-4f03-8a9f-d85f078810c2",
+            "createdAt": "2020-01-30T20:01:17.578028+00:00",
+            "eventType": "PR_CRE",
+            "description": "A new project was created zhux3/sd-w4re134m-sdfdsf",
+            "__typename": "EventNode",
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEX1c0UkUxMzRN",
+              "name": "test",
+              "shortName": "",
+              "kfId": "SD_W4RE134M",
+              "createdAt": "2020-01-28T16:57:48.721660+00:00",
+              "modifiedAt": "2020-01-28T16:57:48.753451+00:00",
+              "__typename": "StudyNode"
+            },
+            "project": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtdzRyZTEzNG0tc2RmZHNm",
+              "createdBy": "zhux3",
+              "createdOn": "2020-01-30T20:01:17+00:00",
+              "description": "",
+              "modifiedOn": "2020-01-30T20:01:17+00:00",
+              "name": "test sdfdsf#$%",
+              "projectId": "zhux3/sd-w4re134m-sdfdsf",
+              "projectType": "RES",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-w4re134m-sdfdsf",
+              "workflowType": "sdfdsf#$%",
+              "deleted": false,
+              "__typename": "ProjectNode"
+            },
+            "file": null,
+            "version": null
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjE4",
+          "__typename": "EventNodeEdge"
+        },
+        {
+          "node": {
+            "id": "RXZlbnROb2RlOjE0NQ==",
+            "uuid": "1d6b24c0-13ab-4cb6-aa27-ed45d3cc0b9e",
+            "createdAt": "2020-01-30T20:00:53.974842+00:00",
+            "eventType": "PR_CRE",
+            "description": "A new project was created zhux3/sd-bnm8hxqc-sdfsd",
+            "__typename": "EventNode",
+            "study": {
+              "id": "U3R1ZHlOb2RlOlNEX0JOTThIWFFD",
+              "name": "leverage ubiquitous action-items",
+              "shortName": null,
+              "kfId": "SD_BNM8HXQC",
+              "createdAt": "2019-12-24T11:03:54+00:00",
+              "modifiedAt": "2020-01-27T18:09:50.899614+00:00",
+              "__typename": "StudyNode"
+            },
+            "project": {
+              "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtYm5tOGh4cWMtc2Rmc2Q=",
+              "createdBy": "zhux3",
+              "createdOn": "2020-01-30T20:00:53+00:00",
+              "description": "",
+              "modifiedOn": "2020-01-30T20:00:53+00:00",
+              "name": "leverage ubiquitous action-items sdfsd$$",
+              "projectId": "zhux3/sd-bnm8hxqc-sdfsd",
+              "projectType": "RES",
+              "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-bnm8hxqc-sdfsd",
+              "workflowType": "sdfsd$$",
+              "deleted": false,
+              "__typename": "ProjectNode"
+            },
+            "file": null,
+            "version": null
+          },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjE5",
+          "__typename": "EventNodeEdge"
+        }
+      ],
+      "pageInfo": {
+        "startCursor": "YXJyYXljb25uZWN0aW9uOjA=",
+        "endCursor": "YXJyYXljb25uZWN0aW9uOjE5",
+        "hasNextPage": true,
+        "hasPreviousPage": false,
+        "__typename": "PageInfo"
+      },
+      "__typename": "EventNodeConnection"
+    }
+  }
+}

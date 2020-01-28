@@ -41,6 +41,8 @@ import devTokens from './responses/devTokens.json';
 import createDevToken from './responses/createDevToken.json';
 import allEvents from './responses/allEvents.json';
 import allEvents_refetch from './responses/allEvents_refetch.json';
+import allEvents_20 from './responses/allEvents_20.json';
+import allEvents_40 from './responses/allEvents_40.json';
 import allUsers from './responses/allUsers.json';
 import allProjects from './responses/allProjects.json';
 import signedUrl from './responses/signedUrl.json';
@@ -513,5 +515,46 @@ export const mocks = [
       },
     },
     result: studyByKfId_no_projects,
+  },
+  {
+    request: {
+      query: ALL_EVENTS,
+      variables: {orderBy: '-created_at', first: 20},
+    },
+    result: allEvents_20,
+  },
+  {
+    request: {
+      query: ALL_EVENTS,
+      variables: {
+        orderBy: '-created_at',
+        first: 20,
+        cursor: 'YXJyYXljb25uZWN0aW9uOjE5',
+      },
+    },
+    result: allEvents_40,
+  },
+  {
+    request: {
+      query: ALL_EVENTS,
+      variables: {
+        studyId: 'SD_8WX8QQ06',
+        orderBy: '-created_at',
+        first: 20,
+      },
+    },
+    result: allEvents_20,
+  },
+  {
+    request: {
+      query: ALL_EVENTS,
+      variables: {
+        studyId: 'SD_8WX8QQ06',
+        orderBy: '-created_at',
+        first: 20,
+        cursor: 'YXJyYXljb25uZWN0aW9uOjE5',
+      },
+    },
+    result: allEvents_40,
   },
 ];
