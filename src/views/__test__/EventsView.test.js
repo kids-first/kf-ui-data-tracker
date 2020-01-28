@@ -101,3 +101,33 @@ it('renders admin event logs view with error message', async () => {
   expect(tree.container).toMatchSnapshot();
   expect(tree.queryByText(/Failed to fetch events information/)).not.toBeNull();
 });
+
+it('renders admin event logs first 20, click to show more', async () => {
+  const tree = render(
+    <MockedProvider
+      mocks={[mocks[0], mocks[8], mocks[13], mocks[45], mocks[46]]}
+      resolvers={{
+        Query: {
+          myProfile: _ => myProfile.data.myProfile,
+        },
+      }}
+    >
+      <MemoryRouter initialEntries={['/events']}>
+        <Routes />
+      </MemoryRouter>
+    </MockedProvider>,
+  );
+  await wait(10);
+  expect(tree.container).toMatchSnapshot();
+  const rows20 = tree.getAllByTestId('event-item');
+  expect(rows20.length).toBe(20);
+
+  // Click on the More button to load 20 more events
+  act(() => {
+    fireEvent.click(tree.getByText(/More/i));
+  });
+  await wait(100);
+  expect(tree.container).toMatchSnapshot();
+  const rows40 = tree.getAllByTestId('event-item');
+  expect(rows40.length).toBe(40);
+});
