@@ -1,7 +1,17 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
-import {List, Icon, Button, Popup, Divider, Header} from 'semantic-ui-react';
+import {
+  List,
+  Icon,
+  Button,
+  Confirm,
+  Message,
+  Modal,
+  Popup,
+  Divider,
+  Header,
+} from 'semantic-ui-react';
 import TimeAgo from 'react-timeago';
 import {longDate} from '../../common/dateUtils';
 import {EditProjectModal} from '../../modals';
@@ -98,9 +108,143 @@ const UnlinkButton = ({unlinkProject, study, projectId}) => (
   />
 );
 
+export const ImportVolumeButton = ({importVolumeFiles, projectNode}) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [error, setError] = useState();
+  const [loading, setLoading] = useState(false);
+  // Starts from 'confirm' then progresses to 'success'
+  const [state, setState] = useState('confirm');
+
+  const handleSubmit = e => {
+    if (state === 'success') {
+      setIsOpen(false);
+      setState('confirm');
+      setError('');
+      setLoading(false);
+      return;
+    }
+    setLoading(true);
+
+    e.stopPropagation();
+    importVolumeFiles({
+      variables: {
+        project: projectNode.id,
+      },
+    })
+      .then(resp => {
+        if (resp.errors) {
+          setError(JSON.stringify(resp.errors));
+        }
+        setLoading(false);
+        setState('success');
+      })
+      .catch(err => {
+        setError(err);
+        setLoading(false);
+      });
+  };
+
+  const directory = new Date().toISOString().slice(0, 10) + '-kf-data-delivery';
+
+  return (
+    <>
+      <Button
+        primary
+        icon={<Icon name="cloud download" />}
+        content="Import Volume"
+        labelPosition="left"
+        size="mini"
+        onClick={() => setIsOpen(true)}
+      />
+
+      <Confirm
+        open={isOpen}
+        header="Import volume files to Cavatica project"
+        onCancel={() => {
+          setState('confirm');
+          setError('');
+          setIsOpen(false);
+        }}
+        onConfirm={handleSubmit}
+        confirmButton={
+          loading ? (
+            <Button loading disabled content="submitting" />
+          ) : state === 'confirm' ? (
+            'Proceed with Import'
+          ) : (
+            'OK'
+          )
+        }
+        cancelButton={state === 'confirm' ? 'Cancel' : null}
+        content={
+          state === 'confirm' ? (
+            <Modal.Content>
+              <p>
+                You are about to import all files from the connected study
+                volume's <b>source/</b> prefix into this delivery project. Any
+                users that have access to this project will be able to view
+                these files.
+              </p>
+              <p>Here's what's about to happen:</p>
+              <List bulleted>
+                <List.Item>
+                  A new folder named <b>{directory}</b> will be created in the
+                  project
+                </List.Item>
+                <List.Item>
+                  All files inside the <b>source/</b> prefix of the study volume
+                  will be imported to this folder.
+                </List.Item>
+                <List.Item>
+                  All files uploaded through the Data Tracker under{' '}
+                  <b>source/uploads/</b> will <b>not</b> be imported
+                </List.Item>
+                <List.Item>
+                  If the volume has already been imported to this project today,
+                  the previous import will be <b>overwritten</b>
+                </List.Item>
+              </List>
+              {error && <Message error header="Error" content={error} />}
+            </Modal.Content>
+          ) : (
+            <Modal.Content>
+              <Message
+                success
+                icon={<Icon size="mini" name="warning" />}
+                header="Import Started"
+                content={
+                  <>
+                    <p>Files may take a couple minutes to copy completely.</p>
+                    <p>
+                      Please view the{' '}
+                      <a
+                        as="a"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={`https://cavatica.sbgenomics.com/u/${
+                          projectNode.projectId
+                        }/files/#q?path=${directory}`}
+                      >
+                        project's file directory{' '}
+                        <Icon link size="small" name="external" />
+                      </a>{' '}
+                      and review it for any files that may not belong.
+                    </p>
+                  </>
+                }
+              />
+            </Modal.Content>
+          )
+        }
+      />
+    </>
+  );
+};
+
 const CavaticaProjectItem = ({
   projectNode,
   unlinkProject,
+  importVolumeFiles,
   disableLink,
   hideStudy,
   editable = true,
@@ -115,6 +259,12 @@ const CavaticaProjectItem = ({
               unlinkProject={unlinkProject}
               projectId={projectNode.id}
               study={projectNode.study}
+            />
+          )}
+          {projectNode.projectType === 'DEL' && importVolumeFiles && (
+            <ImportVolumeButton
+              importVolumeFiles={importVolumeFiles}
+              projectNode={projectNode}
             />
           )}
         </List.Content>
@@ -143,6 +293,12 @@ const CavaticaProjectItem = ({
         <List.Item>
           <List.Content floated="right">
             {!hideStudy && <StudyLink study={projectNode.study} />}
+            {projectNode.projectType === 'DEL' && importVolumeFiles && (
+              <ImportVolumeButton
+                importVolumeFiles={importVolumeFiles}
+                projectNode={projectNode}
+              />
+            )}
             {editable && (
               <Popup
                 trigger={

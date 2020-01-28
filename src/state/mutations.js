@@ -194,3 +194,15 @@ export const UNLINK_PROJECT = gql`
   }
   ${PROJECT_FIELDS}
 `;
+
+// Mutation to import files from a volume to a project
+export const IMPORT_VOLUME_FILES = gql`
+  mutation ImportVolumeFiles($project: ID!) {
+    importVolumeFiles(project: $project) {
+      project {
+        ...ProjectFields
+      }
+    }
+  }
+  ${PROJECT_FIELDS}
+`;

@@ -9,6 +9,7 @@ import CavaticaProjectItem from './CavaticaProjectItem';
 const CavaticaProjectList = ({
   projects,
   unlinkProject,
+  importVolumeFiles,
   editable,
   disableLink,
   hideStudy,
@@ -44,6 +45,7 @@ const CavaticaProjectList = ({
             editable={editable}
             disableLink={disableLink}
             hideStudy={hideStudy}
+            importVolumeFiles={importVolumeFiles}
           />
         ))}
   </List>
