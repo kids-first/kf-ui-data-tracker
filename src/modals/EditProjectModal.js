@@ -145,7 +145,6 @@ const EditProjectModal = ({study, projectNode, onCloseDialog}) => {
               )}
 
               <EditProjectForm
-                project={projectNode}
                 formikProps={formikProps}
                 excludeWorkflows={
                   study
