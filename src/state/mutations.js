@@ -113,7 +113,7 @@ export const UNSUBSCRIBE_FROM = gql`
 
 // Mutation to create a study
 export const CREATE_STUDY = gql`
-  mutation CREATE_STUDY($input: StudyInput!, $workflows: [WorkflowType]) {
+  mutation CREATE_STUDY($input: StudyInput!, $workflows: [String]) {
     createStudy(input: $input, workflows: $workflows) {
       study {
         ...StudyBasicFields
