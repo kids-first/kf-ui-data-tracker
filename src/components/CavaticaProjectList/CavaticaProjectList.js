@@ -16,16 +16,36 @@ const CavaticaProjectList = ({
   <List relaxed divided>
     {projects &&
       projects.length > 0 &&
-      projects.map(({node}) => (
-        <CavaticaProjectItem
-          key={node.id}
-          projectNode={node}
-          unlinkProject={unlinkProject}
-          editable={editable}
-          disableLink={disableLink}
-          hideStudy={hideStudy}
-        />
-      ))}
+      projects
+        .sort(({node: p1}, {node: p2}) => {
+          if (p1.deleted !== p2.deleted) {
+            // Sort deleted projects to the bottom
+            return p1.deleted ? 1 : -1;
+          } else if (!p1.study || !p2.study) {
+            if (p1.study === p2.study) {
+              // Sort by project name
+              return p1.projectId.localeCompare(p2.projectId);
+            }
+            // Sort unlinked projects toward the bottom
+            if (p1.study === null) {
+              return 1;
+            } else if (p2.study === null) {
+              return -1;
+            }
+          }
+          // Sort by the linked study's name
+          return p1.study.name.localeCompare(p2.study.name);
+        })
+        .map(({node}) => (
+          <CavaticaProjectItem
+            key={node.id}
+            projectNode={node}
+            unlinkProject={unlinkProject}
+            editable={editable}
+            disableLink={disableLink}
+            hideStudy={hideStudy}
+          />
+        ))}
   </List>
 );
 
