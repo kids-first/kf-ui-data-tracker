@@ -53,6 +53,42 @@
             "__typename": "ProjectNode"
           },
           "__typename": "ProjectNodeEdge"
+        },
+        {
+          "node": {
+            "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtNjJ3YjN5NjQtYndhLW1lbZ==",
+            "createdBy": "zhux3",
+            "createdOn": "2019-10-29T15:14:25+00:00",
+            "description": "",
+            "modifiedOn": "2019-10-29T15:14:25+00:00",
+            "name": "repurpose bricks-and-clicks bandwidth bwa-mem",
+            "projectId": "zhux3/sd-62wb3y64-bwa-mem",
+            "projectType": "DEL",
+            "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-62wb3y64-bwa-mem",
+            "workflowType": "bwa_mem",
+            "deleted": false,
+            "study": null,
+            "__typename": "ProjectNode"
+          },
+          "__typename": "ProjectNodeEdge"
+        },
+        {
+          "node": {
+            "id": "UHJvamVjdE5vZGU6emh1eDMvc2QtNjJ3YjN5NjQtYndhLW1lbX==",
+            "createdBy": "zhux3",
+            "createdOn": "2019-10-29T15:14:25+00:00",
+            "description": "",
+            "modifiedOn": "2019-10-29T15:14:25+00:00",
+            "name": "repurpose bricks-and-clicks bandwidth bwa-mem",
+            "projectId": "zhux3/sd-62wb3y64-bwa-mem",
+            "projectType": "DEL",
+            "url": "https://cavatica-api.sbgenomics.com/v2/projects/zhux3/sd-62wb3y64-bwa-mem",
+            "workflowType": "bwa_mem",
+            "deleted": true,
+            "study": null,
+            "__typename": "ProjectNode"
+          },
+          "__typename": "ProjectNodeEdge"
         }
       ],
       "__typename": "ProjectNodeConnection"
