@@ -241,6 +241,125 @@ exports[`renders Cavatica projects view -- empty view for regular user 1`] = `
               </div>
             </div>
           </div>
+          <div
+            class="item"
+            role="listitem"
+          >
+            <div
+              class="right floated content"
+            >
+              Not linked
+            </div>
+            <i
+              aria-hidden="true"
+              class="paper plane outline icon"
+            />
+            <div
+              class="content"
+            >
+              <a
+                class="header"
+                href="https://cavatica.sbgenomics.com/u/zhux3/sd-62wb3y64-bwa-mem"
+                target="_blank"
+              >
+                repurpose bricks-and-clicks bandwidth bwa-mem 
+                <i
+                  aria-hidden="true"
+                  class="external small link icon"
+                />
+              </a>
+              <div
+                class="ui bulleted horizontal list"
+                role="list"
+              >
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  Created
+                   by zhux3 
+                  <time
+                    datetime="2019-10-29T15:14:25.000Z"
+                    title="29 Oct 2019"
+                  >
+                    6 months from now
+                  </time>
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  bwa_mem
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  <code>
+                    zhux3/sd-62wb3y64-bwa-mem
+                  </code>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="item"
+            role="listitem"
+          >
+            <div
+              class="right floated middle aligned content"
+            />
+            <i
+              aria-hidden="true"
+              class="grey paper plane outline icon"
+            />
+            <div
+              class="content"
+            >
+              <div
+                class="ui tiny disabled right floated header"
+              >
+                Deleted
+              </div>
+              <div
+                class="ui grey tiny header header"
+              >
+                repurpose bricks-and-clicks bandwidth bwa-mem 
+              </div>
+              <div
+                class="ui bulleted horizontal list"
+                role="list"
+              >
+                <div
+                  class="disabled item"
+                  role="listitem"
+                >
+                  Created
+                   by zhux3 
+                  <time
+                    datetime="2019-10-29T15:14:25.000Z"
+                    title="29 Oct 2019"
+                  >
+                    6 months from now
+                  </time>
+                </div>
+                <div
+                  class="disabled item"
+                  role="listitem"
+                >
+                  bwa_mem
+                </div>
+                <div
+                  class="disabled item"
+                  role="listitem"
+                >
+                  <code>
+                    zhux3/sd-62wb3y64-bwa-mem
+                  </code>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -670,6 +789,125 @@ exports[`renders Cavatica projects view correctly -- with sync error 1`] = `
                 </div>
                 <div
                   class="item"
+                  role="listitem"
+                >
+                  <code>
+                    zhux3/sd-62wb3y64-bwa-mem
+                  </code>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="item"
+            role="listitem"
+          >
+            <div
+              class="right floated content"
+            >
+              Not linked
+            </div>
+            <i
+              aria-hidden="true"
+              class="paper plane outline icon"
+            />
+            <div
+              class="content"
+            >
+              <a
+                class="header"
+                href="https://cavatica.sbgenomics.com/u/zhux3/sd-62wb3y64-bwa-mem"
+                target="_blank"
+              >
+                repurpose bricks-and-clicks bandwidth bwa-mem 
+                <i
+                  aria-hidden="true"
+                  class="external small link icon"
+                />
+              </a>
+              <div
+                class="ui bulleted horizontal list"
+                role="list"
+              >
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  Created
+                   by zhux3 
+                  <time
+                    datetime="2019-10-29T15:14:25.000Z"
+                    title="29 Oct 2019"
+                  >
+                    6 months from now
+                  </time>
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  bwa_mem
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  <code>
+                    zhux3/sd-62wb3y64-bwa-mem
+                  </code>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="item"
+            role="listitem"
+          >
+            <div
+              class="right floated middle aligned content"
+            />
+            <i
+              aria-hidden="true"
+              class="grey paper plane outline icon"
+            />
+            <div
+              class="content"
+            >
+              <div
+                class="ui tiny disabled right floated header"
+              >
+                Deleted
+              </div>
+              <div
+                class="ui grey tiny header header"
+              >
+                repurpose bricks-and-clicks bandwidth bwa-mem 
+              </div>
+              <div
+                class="ui bulleted horizontal list"
+                role="list"
+              >
+                <div
+                  class="disabled item"
+                  role="listitem"
+                >
+                  Created
+                   by zhux3 
+                  <time
+                    datetime="2019-10-29T15:14:25.000Z"
+                    title="29 Oct 2019"
+                  >
+                    6 months from now
+                  </time>
+                </div>
+                <div
+                  class="disabled item"
+                  role="listitem"
+                >
+                  bwa_mem
+                </div>
+                <div
+                  class="disabled item"
                   role="listitem"
                 >
                   <code>
@@ -1157,6 +1395,134 @@ exports[`renders Cavatica projects view correctly 2`] = `
               </div>
             </div>
           </div>
+          <div
+            class="item"
+            role="listitem"
+          >
+            <div
+              class="right floated content"
+            >
+              Not linked
+              <button
+                class="ui mini basic primary right floated button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="pencil icon"
+                />
+                EDIT
+              </button>
+            </div>
+            <i
+              aria-hidden="true"
+              class="paper plane outline icon"
+            />
+            <div
+              class="content"
+            >
+              <a
+                class="header"
+                href="https://cavatica.sbgenomics.com/u/zhux3/sd-62wb3y64-bwa-mem"
+                target="_blank"
+              >
+                repurpose bricks-and-clicks bandwidth bwa-mem 
+                <i
+                  aria-hidden="true"
+                  class="external small link icon"
+                />
+              </a>
+              <div
+                class="ui bulleted horizontal list"
+                role="list"
+              >
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  Created
+                   by zhux3 
+                  <time
+                    datetime="2019-10-29T15:14:25.000Z"
+                    title="29 Oct 2019"
+                  >
+                    6 months from now
+                  </time>
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  bwa_mem
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  <code>
+                    zhux3/sd-62wb3y64-bwa-mem
+                  </code>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="item"
+            role="listitem"
+          >
+            <div
+              class="right floated middle aligned content"
+            />
+            <i
+              aria-hidden="true"
+              class="grey paper plane outline icon"
+            />
+            <div
+              class="content"
+            >
+              <div
+                class="ui tiny disabled right floated header"
+              >
+                Deleted
+              </div>
+              <div
+                class="ui grey tiny header header"
+              >
+                repurpose bricks-and-clicks bandwidth bwa-mem 
+              </div>
+              <div
+                class="ui bulleted horizontal list"
+                role="list"
+              >
+                <div
+                  class="disabled item"
+                  role="listitem"
+                >
+                  Created
+                   by zhux3 
+                  <time
+                    datetime="2019-10-29T15:14:25.000Z"
+                    title="29 Oct 2019"
+                  >
+                    6 months from now
+                  </time>
+                </div>
+                <div
+                  class="disabled item"
+                  role="listitem"
+                >
+                  bwa_mem
+                </div>
+                <div
+                  class="disabled item"
+                  role="listitem"
+                >
+                  <code>
+                    zhux3/sd-62wb3y64-bwa-mem
+                  </code>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1539,6 +1905,134 @@ exports[`renders Cavatica projects view correctly 3`] = `
                 </div>
                 <div
                   class="item"
+                  role="listitem"
+                >
+                  <code>
+                    zhux3/sd-62wb3y64-bwa-mem
+                  </code>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="item"
+            role="listitem"
+          >
+            <div
+              class="right floated content"
+            >
+              Not linked
+              <button
+                class="ui mini basic primary right floated button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="pencil icon"
+                />
+                EDIT
+              </button>
+            </div>
+            <i
+              aria-hidden="true"
+              class="paper plane outline icon"
+            />
+            <div
+              class="content"
+            >
+              <a
+                class="header"
+                href="https://cavatica.sbgenomics.com/u/zhux3/sd-62wb3y64-bwa-mem"
+                target="_blank"
+              >
+                repurpose bricks-and-clicks bandwidth bwa-mem 
+                <i
+                  aria-hidden="true"
+                  class="external small link icon"
+                />
+              </a>
+              <div
+                class="ui bulleted horizontal list"
+                role="list"
+              >
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  Created
+                   by zhux3 
+                  <time
+                    datetime="2019-10-29T15:14:25.000Z"
+                    title="29 Oct 2019"
+                  >
+                    6 months from now
+                  </time>
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  bwa_mem
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  <code>
+                    zhux3/sd-62wb3y64-bwa-mem
+                  </code>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="item"
+            role="listitem"
+          >
+            <div
+              class="right floated middle aligned content"
+            />
+            <i
+              aria-hidden="true"
+              class="grey paper plane outline icon"
+            />
+            <div
+              class="content"
+            >
+              <div
+                class="ui tiny disabled right floated header"
+              >
+                Deleted
+              </div>
+              <div
+                class="ui grey tiny header header"
+              >
+                repurpose bricks-and-clicks bandwidth bwa-mem 
+              </div>
+              <div
+                class="ui bulleted horizontal list"
+                role="list"
+              >
+                <div
+                  class="disabled item"
+                  role="listitem"
+                >
+                  Created
+                   by zhux3 
+                  <time
+                    datetime="2019-10-29T15:14:25.000Z"
+                    title="29 Oct 2019"
+                  >
+                    6 months from now
+                  </time>
+                </div>
+                <div
+                  class="disabled item"
+                  role="listitem"
+                >
+                  bwa_mem
+                </div>
+                <div
+                  class="disabled item"
                   role="listitem"
                 >
                   <code>
@@ -1962,6 +2456,134 @@ exports[`renders Cavatica projects view correctly 4`] = `
               </div>
             </div>
           </div>
+          <div
+            class="item"
+            role="listitem"
+          >
+            <div
+              class="right floated content"
+            >
+              Not linked
+              <button
+                class="ui mini basic primary right floated button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="pencil icon"
+                />
+                EDIT
+              </button>
+            </div>
+            <i
+              aria-hidden="true"
+              class="paper plane outline icon"
+            />
+            <div
+              class="content"
+            >
+              <a
+                class="header"
+                href="https://cavatica.sbgenomics.com/u/zhux3/sd-62wb3y64-bwa-mem"
+                target="_blank"
+              >
+                repurpose bricks-and-clicks bandwidth bwa-mem 
+                <i
+                  aria-hidden="true"
+                  class="external small link icon"
+                />
+              </a>
+              <div
+                class="ui bulleted horizontal list"
+                role="list"
+              >
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  Created
+                   by zhux3 
+                  <time
+                    datetime="2019-10-29T15:14:25.000Z"
+                    title="29 Oct 2019"
+                  >
+                    6 months from now
+                  </time>
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  bwa_mem
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  <code>
+                    zhux3/sd-62wb3y64-bwa-mem
+                  </code>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="item"
+            role="listitem"
+          >
+            <div
+              class="right floated middle aligned content"
+            />
+            <i
+              aria-hidden="true"
+              class="grey paper plane outline icon"
+            />
+            <div
+              class="content"
+            >
+              <div
+                class="ui tiny disabled right floated header"
+              >
+                Deleted
+              </div>
+              <div
+                class="ui grey tiny header header"
+              >
+                repurpose bricks-and-clicks bandwidth bwa-mem 
+              </div>
+              <div
+                class="ui bulleted horizontal list"
+                role="list"
+              >
+                <div
+                  class="disabled item"
+                  role="listitem"
+                >
+                  Created
+                   by zhux3 
+                  <time
+                    datetime="2019-10-29T15:14:25.000Z"
+                    title="29 Oct 2019"
+                  >
+                    6 months from now
+                  </time>
+                </div>
+                <div
+                  class="disabled item"
+                  role="listitem"
+                >
+                  bwa_mem
+                </div>
+                <div
+                  class="disabled item"
+                  role="listitem"
+                >
+                  <code>
+                    zhux3/sd-62wb3y64-bwa-mem
+                  </code>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -2367,6 +2989,134 @@ exports[`renders Cavatica projects view correctly 5`] = `
                 </div>
                 <div
                   class="item"
+                  role="listitem"
+                >
+                  <code>
+                    zhux3/sd-62wb3y64-bwa-mem
+                  </code>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="item"
+            role="listitem"
+          >
+            <div
+              class="right floated content"
+            >
+              Not linked
+              <button
+                class="ui mini basic primary right floated button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="pencil icon"
+                />
+                EDIT
+              </button>
+            </div>
+            <i
+              aria-hidden="true"
+              class="paper plane outline icon"
+            />
+            <div
+              class="content"
+            >
+              <a
+                class="header"
+                href="https://cavatica.sbgenomics.com/u/zhux3/sd-62wb3y64-bwa-mem"
+                target="_blank"
+              >
+                repurpose bricks-and-clicks bandwidth bwa-mem 
+                <i
+                  aria-hidden="true"
+                  class="external small link icon"
+                />
+              </a>
+              <div
+                class="ui bulleted horizontal list"
+                role="list"
+              >
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  Created
+                   by zhux3 
+                  <time
+                    datetime="2019-10-29T15:14:25.000Z"
+                    title="29 Oct 2019"
+                  >
+                    6 months from now
+                  </time>
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  bwa_mem
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  <code>
+                    zhux3/sd-62wb3y64-bwa-mem
+                  </code>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="item"
+            role="listitem"
+          >
+            <div
+              class="right floated middle aligned content"
+            />
+            <i
+              aria-hidden="true"
+              class="grey paper plane outline icon"
+            />
+            <div
+              class="content"
+            >
+              <div
+                class="ui tiny disabled right floated header"
+              >
+                Deleted
+              </div>
+              <div
+                class="ui grey tiny header header"
+              >
+                repurpose bricks-and-clicks bandwidth bwa-mem 
+              </div>
+              <div
+                class="ui bulleted horizontal list"
+                role="list"
+              >
+                <div
+                  class="disabled item"
+                  role="listitem"
+                >
+                  Created
+                   by zhux3 
+                  <time
+                    datetime="2019-10-29T15:14:25.000Z"
+                    title="29 Oct 2019"
+                  >
+                    6 months from now
+                  </time>
+                </div>
+                <div
+                  class="disabled item"
+                  role="listitem"
+                >
+                  bwa_mem
+                </div>
+                <div
+                  class="disabled item"
                   role="listitem"
                 >
                   <code>
