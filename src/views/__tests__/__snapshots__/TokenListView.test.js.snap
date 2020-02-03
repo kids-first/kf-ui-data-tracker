@@ -47,6 +47,17 @@ exports[`renders token list -- with get error 1`] = `
             class="menu transition"
           >
             <a
+              class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
+            <a
               aria-current="page"
               class="item active"
               href="/tokens"
@@ -466,6 +477,17 @@ exports[`renders token list correctly - displaying look & hidden look 2`] = `
             class="menu transition"
           >
             <a
+              class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
+            <a
               aria-current="page"
               class="item active"
               href="/tokens"
@@ -867,6 +889,17 @@ exports[`renders token list correctly - displaying look & hidden look 3`] = `
           <div
             class="menu transition"
           >
+            <a
+              class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
             <a
               aria-current="page"
               class="item active"
@@ -1279,6 +1312,17 @@ exports[`renders token list correctly - displaying look & hidden look 4`] = `
           <div
             class="menu transition"
           >
+            <a
+              class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
             <a
               aria-current="page"
               class="item active"
@@ -1725,6 +1769,17 @@ exports[`renders token list correctly - displaying look & hidden look 5`] = `
           <div
             class="menu transition"
           >
+            <a
+              class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
             <a
               aria-current="page"
               class="item active"

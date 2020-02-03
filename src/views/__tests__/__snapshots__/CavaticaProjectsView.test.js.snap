@@ -1116,6 +1116,17 @@ exports[`renders Cavatica projects view correctly 2`] = `
           >
             <a
               class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -1637,6 +1648,17 @@ exports[`renders Cavatica projects view correctly 3`] = `
           <div
             class="menu transition"
           >
+            <a
+              class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
             <a
               class="item"
               href="/tokens"
@@ -2184,6 +2206,17 @@ exports[`renders Cavatica projects view correctly 4`] = `
           <div
             class="menu transition"
           >
+            <a
+              class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
             <a
               class="item"
               href="/tokens"
@@ -2754,6 +2787,17 @@ exports[`renders Cavatica projects view correctly 5`] = `
           <div
             class="menu transition"
           >
+            <a
+              class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
             <a
               class="item"
               href="/tokens"

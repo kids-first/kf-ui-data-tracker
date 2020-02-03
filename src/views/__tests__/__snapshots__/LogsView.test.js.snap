@@ -48,6 +48,17 @@ exports[`renders study event logs first 20, click to show more 1`] = `
           >
             <a
               class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -1066,6 +1077,17 @@ exports[`renders study event logs first 20, click to show more 2`] = `
           <div
             class="menu transition"
           >
+            <a
+              class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
             <a
               class="item"
               href="/tokens"
@@ -3117,6 +3139,17 @@ exports[`renders study logs view correctly 2`] = `
           >
             <a
               class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -3803,6 +3836,17 @@ exports[`renders study logs view correctly 3`] = `
           <div
             class="menu transition"
           >
+            <a
+              class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
             <a
               class="item"
               href="/tokens"
