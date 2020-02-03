@@ -35,6 +35,10 @@ const Header = () => {
               {profile.roles.includes('ADMIN') && (
                 <Dropdown trigger={'Admin'} className="link item">
                   <Dropdown.Menu>
+                    <Dropdown.Item as={Nav} to="/configuration">
+                      <Icon name="settings" />
+                      Configuration
+                    </Dropdown.Item>
                     <Dropdown.Item as={Nav} to="/tokens">
                       <Icon name="key" />
                       Developer Tokens
