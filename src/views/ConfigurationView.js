@@ -4,6 +4,64 @@ import {useQuery} from '@apollo/react-hooks';
 import {Container, Header, Segment, Icon, Table} from 'semantic-ui-react';
 import {STATUS} from '../state/queries';
 
+const FeatureTable = ({features}) => (
+  <Table
+    tableData={features}
+    headerRow={['Feature', {content: 'Enabled', textAlign: 'center'}]}
+    renderBodyRow={(data, index) => ({
+      cells: [
+        {content: data.name},
+        {
+          content: <Icon name={data.enabled ? 'check' : 'delete'} />,
+          textAlign: 'center',
+        },
+      ],
+      warning: !data.enabled,
+      positive: data.enabled,
+    })}
+  />
+);
+
+const SettingsTable = ({settings}) => (
+  <Table
+    tableData={settings}
+    headerRow={['Setting', {content: 'Value', textAlign: 'left'}]}
+    renderBodyRow={(data, index) => ({
+      cells: [
+        {content: data.name},
+        {
+          content: data.value,
+          textAlign: 'left',
+        },
+      ],
+    })}
+  />
+);
+
+const Queues = ({queues}) => (
+  <Table
+    tableData={queues}
+    headerRow={[
+      'Queue',
+      'Jobs',
+      'Workers',
+      {content: 'Started Jobs', textAlign: 'right'},
+      {content: 'Failed Jobs', textAlign: 'right'},
+      {content: 'Finished Jobs', textAlign: 'right'},
+    ]}
+    renderBodyRow={(data, index) => ({
+      cells: [
+        {content: data.name},
+        {content: data.jobs},
+        {content: data.workers},
+        {content: data.started_jobs, textAlign: 'right'},
+        {content: data.failed_jobs, textAlign: 'right'},
+        {content: data.finished_jobs, textAlign: 'right'},
+      ],
+    })}
+  />
+);
+
 const ConfigurationView = () => {
   const {data} = useQuery(STATUS);
 
@@ -27,6 +85,23 @@ const ConfigurationView = () => {
         value: data.status.settings[key],
       }));
 
+  const queues = data && data.status.queues && JSON.parse(data.status.queues);
+
+  // const queues = [
+  //   {
+  //     name: 'cavatica',
+  //     jobs: 0,
+  //     workers: 0,
+  //     finished_jobs: 100,
+  //   },
+  //   {
+  //     name: 'default',
+  //     jobs: 0,
+  //     workers: 0,
+  //     finished_jobs: 100,
+  //   },
+  // ];
+
   return (
     <>
       <Helmet>
@@ -41,36 +116,13 @@ const ConfigurationView = () => {
         </Segment>
 
         <Header as="h4">Feature Flags</Header>
-        <Table
-          tableData={features}
-          headerRow={['Feature', {content: 'Enabled', textAlign: 'center'}]}
-          renderBodyRow={(data, index) => ({
-            cells: [
-              {content: data.name},
-              {
-                content: <Icon name={data.enabled ? 'check' : 'delete'} />,
-                textAlign: 'center',
-              },
-            ],
-            warning: !data.enabled,
-            positive: data.enabled,
-          })}
-        />
+        <FeatureTable features={features} />
 
         <Header as="h4">Settings</Header>
-        <Table
-          tableData={settings}
-          headerRow={['Setting', {content: 'Value', textAlign: 'left'}]}
-          renderBodyRow={(data, index) => ({
-            cells: [
-              {content: data.name},
-              {
-                content: data.value,
-                textAlign: 'left',
-              },
-            ],
-          })}
-        />
+        <SettingsTable settings={settings} />
+
+        <Header as="h4">Queues</Header>
+        <Queues queues={queues} />
       </Container>
     </>
   );

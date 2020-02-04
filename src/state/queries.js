@@ -251,6 +251,7 @@ export const STATUS = gql`
         cavaticaHarmonizationAccount
         cavaticaUserAccessProject
       }
+      queues
     }
   }
 `;
