@@ -28,6 +28,7 @@ import allStudies from './responses/allStudies';
 import studyByKfId from './responses/studyByKfId.json';
 import studyByKfId_refetch from './responses/studyByKfId_refetch.json';
 import studyByKfId_event_err from './responses/studyByKfId_event_err.json';
+import studyByKfId_no_projects from './responses/studyByKfId_no_projects.json';
 import deleteFile from './responses/deleteFile.json';
 import fileByKfId from './responses/fileByKfId.json';
 import myProfile from './responses/myProfile.json';
@@ -495,5 +496,14 @@ export const mocks = [
       },
     },
     result: studyByKfId_event_err,
+  },
+  {
+    request: {
+      query: GET_STUDY_BY_ID,
+      variables: {
+        kfId: 'SD_8WX8QQ06',
+      },
+    },
+    result: studyByKfId_no_projects,
   },
 ];
