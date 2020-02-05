@@ -2,6 +2,7 @@ import React from 'react';
 import {Helmet} from 'react-helmet';
 import {useQuery} from '@apollo/react-hooks';
 import {Container, Header, Segment, Icon, Table} from 'semantic-ui-react';
+import TimeAgo from 'react-timeago';
 import {STATUS} from '../state/queries';
 
 const FeatureTable = ({features}) => (
@@ -62,6 +63,44 @@ const Queues = ({queues}) => (
   />
 );
 
+const Jobs = ({jobs}) => (
+  <Table
+    tableData={jobs}
+    headerRow={[
+      'Job',
+      {content: 'Status', textAlign: 'center'},
+      {content: 'Error Message'},
+      {content: 'Last Run', textAlign: 'right'},
+      {content: 'Next Run', textAlign: 'right'},
+    ]}
+    renderBodyRow={(data, index) => ({
+      cells: [
+        {content: data.name},
+        {
+          content: data.failing ? (
+            <Icon name="delete" />
+          ) : data.active ? (
+            <Icon name="check" />
+          ) : (
+            <Icon name="delete" />
+          ),
+          textAlign: 'center',
+        },
+        {content: data.lastError},
+        {
+          content: <TimeAgo date={data.lastRun} live={false} />,
+          textAlign: 'right',
+        },
+        {
+          content: <TimeAgo date={data.enqueuedAt} live={false} />,
+          textAlign: 'right',
+        },
+      ],
+      error: data.failing,
+    })}
+  />
+);
+
 const ConfigurationView = () => {
   const {data} = useQuery(STATUS);
 
@@ -87,20 +126,17 @@ const ConfigurationView = () => {
 
   const queues = data && data.status.queues && JSON.parse(data.status.queues);
 
-  // const queues = [
-  //   {
-  //     name: 'cavatica',
-  //     jobs: 0,
-  //     workers: 0,
-  //     finished_jobs: 100,
-  //   },
-  //   {
-  //     name: 'default',
-  //     jobs: 0,
-  //     workers: 0,
-  //     finished_jobs: 100,
-  //   },
-  // ];
+  const jobs =
+    data &&
+    data.status.jobs &&
+    data.status.jobs.edges.map(({node}) => ({
+      name: node.name,
+      active: node.active,
+      failing: node.failing,
+      lastRun: node.lastRun,
+      lastError: node.lastError,
+      enqueuedAt: node.enqueuedAt,
+    }));
 
   return (
     <>
@@ -123,6 +159,9 @@ const ConfigurationView = () => {
 
         <Header as="h4">Queues</Header>
         <Queues queues={queues} />
+
+        <Header as="h4">Jobs</Header>
+        <Jobs jobs={jobs} />
       </Container>
     </>
   );

@@ -252,6 +252,20 @@ export const STATUS = gql`
         cavaticaUserAccessProject
       }
       queues
+      jobs {
+        edges {
+          node {
+            id
+            name
+            active
+            failing
+            lastRun
+            lastError
+            createdOn
+            enqueuedAt
+          }
+        }
+      }
     }
   }
 `;
