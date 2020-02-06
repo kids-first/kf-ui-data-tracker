@@ -3,91 +3,170 @@ import {useMutation} from '@apollo/react-hooks';
 import TimeAgo from 'react-timeago';
 import {Formik} from 'formik';
 import {Button, Header, Message, Modal} from 'semantic-ui-react';
-import {UPDATE_PROJECT} from '../state/mutations';
+import {UPDATE_PROJECT, CREATE_PROJECT} from '../state/mutations';
+import {GET_STUDY_BY_ID} from '../state/queries';
 import {EditProjectForm} from '../forms';
 import {longDate} from '../common/dateUtils';
 
 /**
  * A modal that allows a user to update an existing project
  */
-const EditProjectModal = ({projectNode, onCloseDialog}) => {
-  const [updateProject] = useMutation(UPDATE_PROJECT);
 
-  const [error, setError] = useState(null);
-  const [submitting, setSubmitting] = useState(false);
+export const projectFormValidation = values => {
+  let errors = {};
+  if (!values.projectType) {
+    errors.projectType = 'Required';
+  }
+  if (!values.workflowType && values.projectType !== 'DEL') {
+    errors.workflowType = 'Required';
+  }
+  if (/[~`!@#$%^&*+=[\]\\';,./{}|\\":<>()?]/g.test(values.workflowType)) {
+    errors.workflowType = 'No special characters allowed';
+  }
+  return errors;
+};
 
-  const onSubmit = values => {
-    setSubmitting(true);
-    setError(null);
+export const projectFormSubmission = (
+  values,
+  study,
+  projectNode,
+  createProject,
+  updateProject,
+  setError,
+  onCloseDialog,
+) => {
+  setError(null);
+  let responses = {};
 
-    updateProject({variables: {id: projectNode.id, input: values}})
-      .then(() => {
-        setSubmitting(false);
+  if (study) {
+    createProject({
+      variables: {
+        study: study.id,
+        workflowType: values.workflowType,
+        projectType: values.projectType,
+      },
+    })
+      .then(res => {
+        responses.createProject = res;
         onCloseDialog();
       })
       .catch(err => {
-        setError('Problem updating the project');
-        setSubmitting(false);
-        console.log(err);
+        responses.createProject = err;
+        const errorMessage = err.message
+          ? err.message
+          : 'Problem creating the project';
+        setError(errorMessage);
       });
-  };
+  }
+
+  if (projectNode) {
+    updateProject({variables: {id: projectNode.id, input: values}})
+      .then(res => {
+        responses.updateProject = res;
+        onCloseDialog();
+      })
+      .catch(err => {
+        responses.updateProject = err;
+        const errorMessage = err.message
+          ? err.message
+          : 'Problem updating the project';
+        setError(errorMessage);
+      });
+  }
+  return responses;
+};
+
+const EditProjectModal = ({study, projectNode, onCloseDialog}) => {
+  const [updateProject] = useMutation(UPDATE_PROJECT);
+  const [createProject] = useMutation(CREATE_PROJECT, {
+    refetchQueries: [
+      {
+        query: GET_STUDY_BY_ID,
+        variables: {
+          kfId: study ? study.kfId : '',
+        },
+      },
+    ],
+  });
+
+  const [error, setError] = useState(null);
 
   return (
     <Modal open={true} onClose={onCloseDialog} size="small" closeIcon>
       <Formik
         initialValues={{
-          workflowType: projectNode.workflowType,
-          projectType: projectNode.projectType,
+          workflowType: projectNode ? projectNode.workflowType : '',
+          projectType: projectNode ? projectNode.projectType : '',
         }}
-        validate={values => {
-          let errors = {};
-          if (!values.workflowType) {
-            errors.externalId = 'Required';
-          }
-          if (!values.projectType) {
-            errors.name = 'Required';
-          }
-          return errors;
-        }}
-        onSubmit={(values, {setSubmitting}) => {
-          onSubmit(values);
-        }}
+        validate={values => projectFormValidation(values)}
+        onSubmit={values =>
+          projectFormSubmission(
+            values,
+            study,
+            projectNode,
+            createProject,
+            updateProject,
+            setError,
+            onCloseDialog,
+          )
+        }
       >
         {formikProps => (
           <>
-            <Modal.Header content="Edit Cavatica Project" />
+            <Modal.Header
+              content={
+                projectNode ? 'Edit Cavatica Project' : 'Create a New Project'
+              }
+            />
             <Modal.Content>
-              <Header size="medium">
-                {projectNode.name}
-                <Header.Subheader>
-                  Created
-                  {projectNode.createdBy
-                    ? ' by ' + projectNode.createdBy + ' '
-                    : ' '}
-                  <TimeAgo
-                    live={false}
-                    date={projectNode.createdOn}
-                    title={longDate(projectNode.createdOn)}
-                  />
-                  <br />
-                  {projectNode.projectId}
-                </Header.Subheader>
-              </Header>
+              {projectNode ? (
+                <Header size="medium">
+                  {projectNode.name}
+                  <Header.Subheader>
+                    Created
+                    {projectNode.createdBy
+                      ? ' by ' + projectNode.createdBy + ' '
+                      : ' '}
+                    <TimeAgo
+                      live={false}
+                      date={projectNode.createdOn}
+                      title={longDate(projectNode.createdOn)}
+                    />
+                    <br />
+                    {projectNode.projectId}
+                  </Header.Subheader>
+                </Header>
+              ) : (
+                <p>
+                  A new project will be created in Cavatica for this study,
+                  initialized with all bix users, and setup for the workflow and
+                  project type of your choosing.
+                </p>
+              )}
+
               <EditProjectForm
-                project={projectNode}
                 formikProps={formikProps}
+                excludeWorkflows={
+                  study
+                    ? study.projects.edges.map(({node}) => node.workflowType)
+                    : []
+                }
+                existProject={projectNode}
               />
             </Modal.Content>
             <Modal.Actions>
               {error && <Message negative content={error} />}
               <Button
                 primary
+                disabled={
+                  Object.values(formikProps.errors).length > 0 ||
+                  formikProps.values.projectType.length === 0
+                }
                 size="mini"
                 type="submit"
-                loading={submitting}
                 onClick={formikProps.handleSubmit}
               >
-                SAVE
+                {projectNode ? 'SAVE' : 'CREATE'}
               </Button>
             </Modal.Actions>
           </>

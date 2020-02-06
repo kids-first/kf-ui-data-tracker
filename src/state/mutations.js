@@ -113,7 +113,7 @@ export const UNSUBSCRIBE_FROM = gql`
 
 // Mutation to create a study
 export const CREATE_STUDY = gql`
-  mutation CREATE_STUDY($input: StudyInput!, $workflows: [WorkflowType]) {
+  mutation CREATE_STUDY($input: StudyInput!, $workflows: [String]) {
     createStudy(input: $input, workflows: $workflows) {
       study {
         ...StudyBasicFields
@@ -139,8 +139,18 @@ export const UPDATE_STUDY = gql`
 
 // Mutation to create a new analysis project
 export const CREATE_PROJECT = gql`
-  mutation CreateProject($workflowType: WorkflowType!, $study: ID!) {
-    createProject(input: {workflowType: $workflowType, study: $study}) {
+  mutation CreateProject(
+    $workflowType: String
+    $projectType: ProjectType
+    $study: ID!
+  ) {
+    createProject(
+      input: {
+        workflowType: $workflowType
+        projectType: $projectType
+        study: $study
+      }
+    ) {
       project {
         ...ProjectFields
       }
