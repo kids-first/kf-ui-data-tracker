@@ -36,6 +36,5 @@ it('renders with no versions', () => {
     </MemoryRouter>,
   );
   expect(tree.container).toMatchSnapshot();
-  const lis = tree.getAllByTestId('version-item');
-  expect(lis.length).toBe(3);
+  expect(tree.queryAllByTestId('version-item')).toHaveLength(0);
 });
