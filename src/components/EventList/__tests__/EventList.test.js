@@ -1,5 +1,5 @@
 import React from 'react';
-import {render, cleanup} from 'react-testing-library';
+import {render, cleanup} from '@testing-library/react';
 import studyByKfId from '../../../../__mocks__/kf-api-study-creator/responses/studyByKfId';
 import EventList from '../EventList';
 

@@ -39,7 +39,6 @@
     "react-modal": "^3.8.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "3.0.0",
-    "react-testing-library": "^6.1.2",
     "react-timeago": "^4.4.0",
     "semantic-ui-react": "^0.87.1",
     "string-similarity": "^3.0.0"
@@ -71,6 +70,7 @@
     "@babel/plugin-transform-runtime": "^7.4.4",
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
+    "@testing-library/react": "^9.4.0",
     "ajv": "^6.10.2",
     "babel-jest": "^24.7.1",
     "file-saver": "^2.0.2",

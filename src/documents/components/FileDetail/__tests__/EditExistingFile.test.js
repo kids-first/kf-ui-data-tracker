@@ -7,7 +7,7 @@ import {
   fireEvent,
   act,
   waitForElementToBeRemoved,
-} from 'react-testing-library';
+} from '@testing-library/react';
 import Routes from '../../../../Routes';
 import {mocks} from '../../../../../__mocks__/kf-api-study-creator/mocks';
 import myProfile from '../../../../../__mocks__/kf-api-study-creator/responses/myProfile.json';

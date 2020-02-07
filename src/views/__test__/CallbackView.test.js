@@ -1,6 +1,6 @@
 import React from 'react';
 import wait from 'waait';
-import {render} from 'react-testing-library';
+import {render} from '@testing-library/react';
 import {MockedProvider} from '@apollo/react-testing';
 import {MemoryRouter} from 'react-router-dom';
 import CallbackView from '../CallbackView';

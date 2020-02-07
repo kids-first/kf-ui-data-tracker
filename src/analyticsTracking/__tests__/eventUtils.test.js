@@ -1,5 +1,5 @@
 import {normalizeEventType} from '../eventUtils';
-import {cleanup} from 'react-testing-library';
+import {cleanup} from '@testing-library/react';
 
 /**
  *

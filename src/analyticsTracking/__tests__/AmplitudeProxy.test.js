@@ -1,5 +1,5 @@
 import React from 'react';
-import {render, cleanup} from 'react-testing-library';
+import {render, cleanup} from '@testing-library/react';
 import amplitude from 'amplitude-js';
 import AnalyticsProviderMock from '../AnalyticsProviderMock';
 import AmplitudeProxy from '../AmplitudeProxy';

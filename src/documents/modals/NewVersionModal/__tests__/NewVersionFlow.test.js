@@ -2,7 +2,7 @@ import React from 'react';
 import wait from 'waait';
 import {MockedProvider} from '@apollo/react-testing';
 import {MemoryRouter} from 'react-router-dom';
-import {render, fireEvent, cleanup, act} from 'react-testing-library';
+import {render, fireEvent, cleanup, act} from '@testing-library/react';
 import {NewVersionFlow} from '../NewVersionFlow';
 import {mocks} from '../../../../../__mocks__/kf-api-study-creator/mocks';
 import fileByKfId from '../../../../../__mocks__/kf-api-study-creator/responses/fileByKfId.json';

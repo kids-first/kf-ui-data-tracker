@@ -6,7 +6,7 @@ import {MemoryRouter} from 'react-router-dom';
 import {mocks} from '../../../../__mocks__/kf-api-study-creator/mocks';
 import studyByKfId from '../../../../__mocks__/kf-api-study-creator/responses/studyByKfId.json';
 import {Segment, Button} from 'semantic-ui-react';
-import {render, fireEvent, cleanup, act} from 'react-testing-library';
+import {render, fireEvent, cleanup, act} from '@testing-library/react';
 import EditDocumentForm from '../EditDocumentForm';
 
 afterEach(cleanup);

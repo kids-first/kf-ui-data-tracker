@@ -1,5 +1,5 @@
 import React from 'react';
-import {render, cleanup, fireEvent, act} from 'react-testing-library';
+import {render, cleanup, fireEvent, act} from '@testing-library/react';
 import {mocks} from '../../../../__mocks__/kf-api-study-creator/mocks';
 import {MockedProvider} from '@apollo/react-testing';
 import CopyButton from '../CopyButton';

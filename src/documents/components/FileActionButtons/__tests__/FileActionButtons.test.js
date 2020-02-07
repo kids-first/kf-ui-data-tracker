@@ -1,6 +1,6 @@
 import React from 'react';
 import wait from 'waait';
-import {render, cleanup, fireEvent, act} from 'react-testing-library';
+import {render, cleanup, fireEvent, act} from '@testing-library/react';
 import {MockedProvider} from '@apollo/react-testing';
 import {mocks} from '../../../../../__mocks__/kf-api-study-creator/mocks';
 import studyByKfId from '../../../../../__mocks__/kf-api-study-creator/responses/studyByKfId';
