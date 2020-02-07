@@ -180,6 +180,8 @@ export const ALL_EVENTS = gql`
     $username: String
     $eventType: String
     $orderBy: String
+    $first: Int
+    $cursor: String
   ) {
     allEvents(
       studyKfId: $studyId
@@ -190,6 +192,8 @@ export const ALL_EVENTS = gql`
       username: $username
       eventType: $eventType
       orderBy: $orderBy
+      first: $first
+      after: $cursor
     ) {
       edges {
         node {
@@ -207,6 +211,13 @@ export const ALL_EVENTS = gql`
             ...VersionFields
           }
         }
+        cursor
+      }
+      pageInfo {
+        startCursor
+        endCursor
+        hasNextPage
+        hasPreviousPage
       }
     }
   }

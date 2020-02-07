@@ -10,19 +10,45 @@ import {
   Header,
   Icon,
   Select,
+  Button,
 } from 'semantic-ui-react';
 import EmptyView from './EmptyView';
 import EventList from '../components/EventList/EventList';
 import {eventType} from '../common/enums';
 
 const LogsView = ({match}) => {
-  const {loading, data, error, refetch} = useQuery(ALL_EVENTS, {
+  const {loading, data, error, refetch, fetchMore} = useQuery(ALL_EVENTS, {
     variables: {
       studyId: match.params.kfId,
       orderBy: '-created_at',
+      first: 20,
     },
     pollInterval: 30000,
   });
+
+  const loadMore = () =>
+    fetchMore({
+      variables: {
+        studyId: match.params.kfId,
+        orderBy: '-created_at',
+        first: 20,
+        cursor: data.allEvents.pageInfo.endCursor,
+      },
+      updateQuery: (previousResult, {fetchMoreResult}) => {
+        const newEdges = fetchMoreResult.allEvents.edges;
+        const pageInfo = fetchMoreResult.allEvents.pageInfo;
+        return newEdges.length
+          ? {
+              allEvents: {
+                __typename: previousResult.allEvents.__typename,
+                edges: [...previousResult.allEvents.edges, ...newEdges],
+                pageInfo,
+              },
+            }
+          : previousResult;
+      },
+    });
+
   const {loading: studyLoading, data: studyData} = useQuery(GET_STUDY_BY_ID, {
     variables: {
       kfId: match.params.kfId,
@@ -107,6 +133,11 @@ const LogsView = ({match}) => {
           <Header disabled textAlign="center" as="h4">
             No event logs available or match your filter option.
           </Header>
+        )}
+        {allEvents && allEvents.pageInfo.hasNextPage && (
+          <Button attached="bottom" onClick={loadMore}>
+            More
+          </Button>
         )}
       </Container>
     );

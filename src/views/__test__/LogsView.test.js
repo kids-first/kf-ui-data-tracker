@@ -47,6 +47,36 @@ it('renders study logs view correctly', async () => {
   expect(tree.container).toMatchSnapshot();
 });
 
+it('renders study event logs first 20, click to show more', async () => {
+  const tree = render(
+    <MockedProvider
+      mocks={[mocks[1], mocks[8], mocks[47], mocks[48]]}
+      resolvers={{
+        Query: {
+          myProfile: _ => myProfile.data.myProfile,
+        },
+      }}
+    >
+      <MemoryRouter initialEntries={['/study/SD_8WX8QQ06/logs']}>
+        <Routes />
+      </MemoryRouter>
+    </MockedProvider>,
+  );
+  await wait(10);
+  expect(tree.container).toMatchSnapshot();
+  const rows20 = tree.getAllByTestId('event-item');
+  expect(rows20.length).toBe(20);
+
+  // Click on the More button to load 20 more events
+  act(() => {
+    fireEvent.click(tree.getByText(/More/i));
+  });
+  await wait(100);
+  expect(tree.container).toMatchSnapshot();
+  const rows40 = tree.getAllByTestId('event-item');
+  expect(rows40.length).toBe(40);
+});
+
 it('renders study logs view correctly --  showing empty view for non-admin user', async () => {
   var regularUser = myProfile.data.myProfile;
   regularUser.roles = ['USER'];

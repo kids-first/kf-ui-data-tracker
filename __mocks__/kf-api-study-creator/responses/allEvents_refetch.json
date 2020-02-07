@@ -40,9 +40,17 @@
             },
             "__typename": "EventNode"
           },
+          "cursor": "YXJyYXljb25uZWN0aW9uOjU=",
           "__typename": "EventNodeEdge"
         }
       ],
+      "pageInfo": {
+        "startCursor": "YXJyYXljb25uZWN0aW9uOjU=",
+        "endCursor": "YXJyYXljb25uZWN0aW9uOjU=",
+        "hasNextPage": false,
+        "hasPreviousPage": false,
+        "__typename": "PageInfo"
+      },
       "__typename": "EventNodeConnection"
     }
   }

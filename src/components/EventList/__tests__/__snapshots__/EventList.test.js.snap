@@ -8,6 +8,7 @@ exports[`Event list renders correctly -- with mock data 1`] = `
   >
     <div
       class="item"
+      data-testid="event-item"
       role="listitem"
     >
       <i
@@ -32,6 +33,7 @@ exports[`Event list renders correctly -- with mock data 1`] = `
     </div>
     <div
       class="item"
+      data-testid="event-item"
       role="listitem"
     >
       <i
@@ -56,6 +58,7 @@ exports[`Event list renders correctly -- with mock data 1`] = `
     </div>
     <div
       class="item"
+      data-testid="event-item"
       role="listitem"
     >
       <i
@@ -80,6 +83,7 @@ exports[`Event list renders correctly -- with mock data 1`] = `
     </div>
     <div
       class="item"
+      data-testid="event-item"
       role="listitem"
     >
       <i
@@ -104,6 +108,7 @@ exports[`Event list renders correctly -- with mock data 1`] = `
     </div>
     <div
       class="item"
+      data-testid="event-item"
       role="listitem"
     >
       <i
@@ -128,6 +133,7 @@ exports[`Event list renders correctly -- with mock data 1`] = `
     </div>
     <div
       class="item"
+      data-testid="event-item"
       role="listitem"
     >
       <i
@@ -152,6 +158,7 @@ exports[`Event list renders correctly -- with mock data 1`] = `
     </div>
     <div
       class="item"
+      data-testid="event-item"
       role="listitem"
     >
       <i
@@ -176,6 +183,7 @@ exports[`Event list renders correctly -- with mock data 1`] = `
     </div>
     <div
       class="item"
+      data-testid="event-item"
       role="listitem"
     >
       <i

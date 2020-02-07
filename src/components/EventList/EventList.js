@@ -16,7 +16,7 @@ const EventList = ({events}) => (
     {events &&
       events.length > 0 &&
       events.map(({node}) => (
-        <List.Item key={node.id}>
+        <List.Item key={node.id} data-testid="event-item">
           <Icon
             name={
               node.eventType in eventType
