@@ -20,7 +20,7 @@ it('renders study nav bar with error for fetching study', async () => {
   await wait();
   expect(tree.container).toMatchSnapshot();
   expect(
-    tree.queryByText(/Network error: something went wrong/i),
+    tree.queryAllByText(/Network error: something went wrong/i)[0],
   ).not.toBeNull();
 });
 

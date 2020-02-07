@@ -52,7 +52,7 @@ it('renders study Cavatica projects view correctly', async () => {
   expect(tree.container).toMatchSnapshot();
 
   act(() => {
-    fireEvent.click(tree.getByText(/Delivery/i));
+    fireEvent.click(tree.queryAllByText(/Delivery/i)[0]);
   });
   await wait();
   expect(tree.container).toMatchSnapshot();
@@ -61,11 +61,11 @@ it('renders study Cavatica projects view correctly', async () => {
   expect(tree.queryByText('Type in Project Name')).toBeNull();
 
   act(() => {
-    fireEvent.click(tree.getByText(/Delivery/i));
+    fireEvent.click(tree.queryAllByText(/Delivery/i)[0]);
   });
   await wait();
   act(() => {
-    fireEvent.click(tree.getByText(/Analysis/i));
+    fireEvent.click(tree.queryAllByText(/Analysis/i)[0]);
   });
   await wait();
   expect(tree.container).toMatchSnapshot();
@@ -79,13 +79,13 @@ it('renders study Cavatica projects view correctly', async () => {
   await wait(10);
   expect(tree.container).toMatchSnapshot();
   act(() => {
-    fireEvent.click(tree.getByText(/bwa_mem_bqsr/i));
+    fireEvent.click(tree.queryAllByText(/bwa_mem_bqsr/i)[0]);
   });
   await wait();
   expect(tree.container).toMatchSnapshot();
 
   act(() => {
-    fireEvent.click(tree.getByText(/Analysis/i));
+    fireEvent.click(tree.queryAllByText(/Analysis/i)[0]);
   });
   await wait();
   act(() => {
@@ -119,7 +119,7 @@ it('renders study Cavatica projects view correctly', async () => {
   });
 
   act(() => {
-    fireEvent.click(tree.getByText(/CREATE/i));
+    fireEvent.click(tree.queryAllByText(/CREATE/i)[0]);
   });
   await wait();
   // No error message
@@ -152,15 +152,15 @@ it('renders study Cavatica projects view correctly', async () => {
 
   // Click to open the edit project modal
   act(() => {
-    fireEvent.click(tree.getByText(/EDIT/i));
+    fireEvent.click(tree.queryAllByText(/EDIT/i)[0]);
   });
   await wait();
   act(() => {
-    fireEvent.click(tree.getByText(/Delivery/i));
+    fireEvent.click(tree.queryAllByText(/Delivery/i)[0]);
   });
   await wait();
   act(() => {
-    fireEvent.click(tree.getByText(/Analysis/i));
+    fireEvent.click(tree.queryAllByText(/Analysis/i)[0]);
   });
   await wait();
   expect(tree.container).toMatchSnapshot();
@@ -169,7 +169,7 @@ it('renders study Cavatica projects view correctly', async () => {
   expect(tree.queryByText(/Project Name:/i)).toBeNull();
 
   act(() => {
-    fireEvent.click(tree.getByText(/Analysis/i));
+    fireEvent.click(tree.queryAllByText(/Analysis/i)[0]);
   });
   await wait();
   act(() => {

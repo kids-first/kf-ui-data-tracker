@@ -123,7 +123,7 @@ it('Render out the new document view', async () => {
 
   // Click on the upload button
   act(() => {
-    fireEvent.click(tree.getByText(/UPLOAD/i));
+    fireEvent.click(tree.queryAllByText(/UPLOAD/i)[0]);
   });
 
   await wait();

@@ -116,5 +116,5 @@ it('renders study logs view -- shows an error', async () => {
   await wait(0);
 
   expect(tree.container).toMatchSnapshot();
-  expect(tree.queryByText('Error')).not.toBeNull();
+  expect(tree.queryAllByText('Error')).not.toBeNull();
 });

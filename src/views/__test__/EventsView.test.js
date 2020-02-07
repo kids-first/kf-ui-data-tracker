@@ -33,7 +33,7 @@ it('renders admin event logs view correctly', async () => {
 
   // Click on the user dropdown
   act(() => {
-    fireEvent.click(tree.getByText(/User/i));
+    fireEvent.click(tree.queryAllByText(/User/i)[0]);
   });
   await wait();
 
@@ -41,7 +41,7 @@ it('renders admin event logs view correctly', async () => {
 
   // Click on the user "Justin Heath"
   act(() => {
-    fireEvent.click(tree.getByText(/Justin Heath/i));
+    fireEvent.click(tree.queryAllByText(/Justin Heath/i)[0]);
   });
 
   await wait(100);
@@ -50,7 +50,7 @@ it('renders admin event logs view correctly', async () => {
 
   // Click on the study dropdown
   act(() => {
-    fireEvent.click(tree.getByText(/Study/i));
+    fireEvent.click(tree.queryAllByText(/Study/i)[0]);
   });
   await wait();
 
