@@ -3823,198 +3823,114 @@ exports[`renders new study view correctly 7`] = `
         External Study Resources
       </div>
       <div
-        class="content"
+        class="ui icon negative message"
       >
-        <div
-          class="ui massive active centered inline loader"
+        <i
+          aria-hidden="true"
+          class="warning circle icon"
         />
-        <h2
-          class="ui icon center aligned header"
-        >
-          Initializing Study Resources
-          <div
-            class="sub header"
-          >
-            We're setting up your new study resources, sit tight.
-          </div>
-        </h2>
         <div
-          class="text-wrap-75 margin-x-auto mt-30 width-fit-content"
+          class="content"
         >
           <div
-            class="ui list"
-            role="list"
+            class="header"
           >
-            <div
-              class="item"
-              role="listitem"
-            >
-              <i
-                aria-hidden="true"
-                class="green check icon noPadding"
-              />
-              <div
-                class="content"
-              >
-                <div
-                  class="header"
-                >
-                  Registered in Data Service: 
-                  <code>
-                    SD_8WX8QQ06
-                  </code>
-                </div>
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <i
-                aria-hidden="true"
-                class="spinner loading icon noPadding"
-              />
-              <div
-                class="content"
-              >
-                <div
-                  class="header"
-                >
-                  Creating
-                   storage bucket
-                </div>
-              </div>
-              <div
-                class="ui list ml-15"
-                role="list"
-              >
-                <div
-                  class="item"
-                  role="listitem"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="aws icon"
-                  />
-                  <div
-                    class="content"
-                  >
-                    <code>
-                      stay-wrong-ready
-                    </code>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <i
-                aria-hidden="true"
-                class="spinner loading icon noPadding"
-              />
-              <div
-                class="content"
-              >
-                <div
-                  class="header"
-                >
-                  Creating
-                   Cavatica analysis projects
-                </div>
-              </div>
-              <div
-                class="ui list ml-15"
-                role="list"
-              >
-                <div
-                  class="item"
-                  role="listitem"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="sliders horizontal icon"
-                  />
-                  <a
-                    class="content"
-                    href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06-bwa-mem"
-                    target="_blank"
-                  >
-                    test study name bwa-mem 
-                    <i
-                      aria-hidden="true"
-                      class="external small link icon"
-                    />
-                  </a>
-                </div>
-                <div
-                  class="item"
-                  role="listitem"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="sliders horizontal icon"
-                  />
-                  <a
-                    class="content"
-                    href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06-gatk-haplotypecaller"
-                    target="_blank"
-                  >
-                    test study name gatk-haplotypecaller 
-                    <i
-                      aria-hidden="true"
-                      class="external small link icon"
-                    />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <i
-                aria-hidden="true"
-                class="spinner loading icon noPadding"
-              />
-              <div
-                class="content"
-              >
-                <div
-                  class="header"
-                >
-                  Creating
-                   Cavatica delivery project
-                </div>
-              </div>
-              <div
-                class="ui list ml-15"
-                role="list"
-              >
-                <div
-                  class="item"
-                  role="listitem"
-                >
-                  <i
-                    aria-hidden="true"
-                    class="paper plane outline icon"
-                  />
-                  <a
-                    class="content"
-                    href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06"
-                    target="_blank"
-                  >
-                    test study name 
-                    <i
-                      aria-hidden="true"
-                      class="external small link icon"
-                    />
-                  </a>
-                </div>
-              </div>
-            </div>
+            Error
           </div>
+          <p>
+            Network error: No more mocked responses for the query: query AllEvents($studyId: String, $fileId: String, $versionId: String, $createdAfter: DateTime, $createdBefore: DateTime, $username: String, $eventType: String, $orderBy: String, $first: Int, $cursor: String) {
+  allEvents(studyKfId: $studyId, fileKfId: $fileId, versionKfId: $versionId, createdAfter: $createdAfter, createdBefore: $createdBefore, username: $username, eventType: $eventType, orderBy: $orderBy, first: $first, after: $cursor) {
+    edges {
+      node {
+        ...EventFields
+        study {
+          ...StudyBasicFields
+          __typename
+        }
+        project {
+          ...ProjectFields
+          __typename
+        }
+        file {
+          ...FileFields
+          __typename
+        }
+        version {
+          ...VersionFields
+          __typename
+        }
+        __typename
+      }
+      cursor
+      __typename
+    }
+    pageInfo {
+      startCursor
+      endCursor
+      hasNextPage
+      hasPreviousPage
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment EventFields on EventNode {
+  id
+  uuid
+  createdAt
+  eventType
+  description
+  __typename
+}
+
+fragment StudyBasicFields on StudyNode {
+  id
+  name
+  shortName
+  kfId
+  createdAt
+  modifiedAt
+  __typename
+}
+
+fragment FileFields on FileNode {
+  id
+  kfId
+  name
+  description
+  fileType
+  downloadUrl
+  __typename
+}
+
+fragment VersionFields on VersionNode {
+  id
+  kfId
+  fileName
+  size
+  state
+  description
+  createdAt
+  __typename
+}
+
+fragment ProjectFields on ProjectNode {
+  id
+  createdBy
+  createdOn
+  description
+  modifiedOn
+  name
+  projectId
+  projectType
+  url
+  workflowType
+  deleted
+  __typename
+}
+, variables: {"studyId":"SD_8WX8QQ06","orderBy":"-created_at"}
+          </p>
         </div>
       </div>
       <div

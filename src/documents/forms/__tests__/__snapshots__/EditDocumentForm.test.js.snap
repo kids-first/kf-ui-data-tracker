@@ -449,41 +449,33 @@ Object {
   "getAllByLabelText": [Function],
   "getAllByPlaceholderText": [Function],
   "getAllByRole": [Function],
-  "getAllBySelectText": [Function],
   "getAllByTestId": [Function],
   "getAllByText": [Function],
   "getAllByTitle": [Function],
-  "getAllByValue": [Function],
   "getByAltText": [Function],
   "getByDisplayValue": [Function],
   "getByLabelText": [Function],
   "getByPlaceholderText": [Function],
   "getByRole": [Function],
-  "getBySelectText": [Function],
   "getByTestId": [Function],
   "getByText": [Function],
   "getByTitle": [Function],
-  "getByValue": [Function],
   "queryAllByAltText": [Function],
   "queryAllByDisplayValue": [Function],
   "queryAllByLabelText": [Function],
   "queryAllByPlaceholderText": [Function],
   "queryAllByRole": [Function],
-  "queryAllBySelectText": [Function],
   "queryAllByTestId": [Function],
   "queryAllByText": [Function],
   "queryAllByTitle": [Function],
-  "queryAllByValue": [Function],
   "queryByAltText": [Function],
   "queryByDisplayValue": [Function],
   "queryByLabelText": [Function],
   "queryByPlaceholderText": [Function],
   "queryByRole": [Function],
-  "queryBySelectText": [Function],
   "queryByTestId": [Function],
   "queryByText": [Function],
   "queryByTitle": [Function],
-  "queryByValue": [Function],
   "rerender": [Function],
   "unmount": [Function],
 }
@@ -493,217 +485,6 @@ exports[`renders correctly for editing existing file 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
-    <div>
-      <form
-        class="ui form"
-      >
-        <div
-          class="required field"
-        >
-          <label
-            for="file_name"
-          >
-            Document Title:
-          </label>
-          <input
-            data-testid="name-input"
-            name="file_name"
-            placeholder="Phenotypic Data manifest for..."
-            type="text"
-            value=""
-          />
-          <small>
-            Please provide a descriptive title without dates or adjectives such as "new", "updated", "final", etc.
-          </small>
-        </div>
-        <div
-          class="required field"
-        >
-          <label
-            for="file_type"
-          >
-            Document Type:
-          </label>
-          <div
-            class="field"
-          >
-            <div
-              class="ui compact segment selectionRadio--card"
-            >
-              <div>
-                <div
-                  class="ui radio checkbox"
-                >
-                  <input
-                    class="hidden"
-                    id="SHM"
-                    name="file_type"
-                    readonly=""
-                    tabindex="0"
-                    type="radio"
-                    value="SHM"
-                  />
-                  <i
-                    aria-hidden="true"
-                    class="black shipping large bordered circular inverted icon"
-                  />
-                </div>
-              </div>
-              <div>
-                <p
-                  class="mb-5"
-                >
-                  <b>
-                    Biospecimen Manifest
-                  </b>
-                </p>
-                <p
-                  class="text-wrap-75 text-grey"
-                >
-                  Tabular files (e.g. CSV, TSV, Excel) containing biospecimen identifiers and metadata (e.g. tissue type, composition) provided to sequencing centers as well as consent type.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div
-            class="field"
-          >
-            <div
-              class="ui compact segment selectionRadio--card"
-            >
-              <div>
-                <div
-                  class="ui radio checkbox"
-                >
-                  <input
-                    class="hidden"
-                    id="CLN"
-                    name="file_type"
-                    readonly=""
-                    tabindex="0"
-                    type="radio"
-                    value="CLN"
-                  />
-                  <i
-                    aria-hidden="true"
-                    class="black hospital large bordered circular inverted icon"
-                  />
-                </div>
-              </div>
-              <div>
-                <p
-                  class="mb-5"
-                >
-                  <b>
-                    Clinical/Phenotypic Data
-                  </b>
-                </p>
-                <p
-                  class="text-wrap-75 text-grey"
-                >
-                  Structured files with data linked to the biospecimen identifiers provided in the shipping manifest(s). Exports from data management applications, such as REDCap, are the fastest to process, but we will work with you on most formats.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div
-            class="field"
-          >
-            <div
-              class="ui compact segment selectionRadio--card"
-            >
-              <div>
-                <div
-                  class="ui radio checkbox"
-                >
-                  <input
-                    class="hidden"
-                    id="SEQ"
-                    name="file_type"
-                    readonly=""
-                    tabindex="0"
-                    type="radio"
-                    value="SEQ"
-                  />
-                  <i
-                    aria-hidden="true"
-                    class="black dna large bordered circular inverted icon"
-                  />
-                </div>
-              </div>
-              <div>
-                <p
-                  class="mb-5"
-                >
-                  <b>
-                    Sequencing Manifest
-                  </b>
-                </p>
-                <p
-                  class="text-wrap-75 text-grey"
-                >
-                  Tabular files (e.g. CSV, TSV, Excel) containing the biospecimen identifiers and the associated genomic data files. Typically provided by the sequencing center.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div
-            class="field"
-          >
-            <div
-              class="ui compact segment selectionRadio--card"
-            >
-              <div>
-                <div
-                  class="ui radio checkbox"
-                >
-                  <input
-                    class="hidden"
-                    id="OTH"
-                    name="file_type"
-                    readonly=""
-                    tabindex="0"
-                    type="radio"
-                    value="OTH"
-                  />
-                  <i
-                    aria-hidden="true"
-                    class="black question large bordered circular inverted icon"
-                  />
-                </div>
-              </div>
-              <div>
-                <p
-                  class="mb-5"
-                >
-                  <b>
-                    Other
-                  </b>
-                </p>
-                <p
-                  class="text-wrap-75 text-grey"
-                >
-                  Any useful documents, such as study background information, data dictionaries, etc., that does not clearly fit in the other categories.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="required field"
-        >
-          <label>
-            Describe Document Contents:
-          </label>
-          <textarea
-            data-testid="description-input"
-            name="file_desc"
-            rows="3"
-            type="text"
-          />
-        </div>
-      </form>
-    </div>
     <div>
       <form
         class="ui form"
@@ -1179,41 +960,33 @@ Object {
   "getAllByLabelText": [Function],
   "getAllByPlaceholderText": [Function],
   "getAllByRole": [Function],
-  "getAllBySelectText": [Function],
   "getAllByTestId": [Function],
   "getAllByText": [Function],
   "getAllByTitle": [Function],
-  "getAllByValue": [Function],
   "getByAltText": [Function],
   "getByDisplayValue": [Function],
   "getByLabelText": [Function],
   "getByPlaceholderText": [Function],
   "getByRole": [Function],
-  "getBySelectText": [Function],
   "getByTestId": [Function],
   "getByText": [Function],
   "getByTitle": [Function],
-  "getByValue": [Function],
   "queryAllByAltText": [Function],
   "queryAllByDisplayValue": [Function],
   "queryAllByLabelText": [Function],
   "queryAllByPlaceholderText": [Function],
   "queryAllByRole": [Function],
-  "queryAllBySelectText": [Function],
   "queryAllByTestId": [Function],
   "queryAllByText": [Function],
   "queryAllByTitle": [Function],
-  "queryAllByValue": [Function],
   "queryByAltText": [Function],
   "queryByDisplayValue": [Function],
   "queryByLabelText": [Function],
   "queryByPlaceholderText": [Function],
   "queryByRole": [Function],
-  "queryBySelectText": [Function],
   "queryByTestId": [Function],
   "queryByText": [Function],
   "queryByTitle": [Function],
-  "queryByValue": [Function],
   "rerender": [Function],
   "unmount": [Function],
 }

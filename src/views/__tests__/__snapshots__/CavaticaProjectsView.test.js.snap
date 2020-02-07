@@ -1325,6 +1325,15 @@ exports[`renders Cavatica projects view correctly 2`] = `
                 repurpose bricks-and-clicks bandwidth
               </a>
               <button
+                class="ui mini icon primary left labeled button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="cloud download icon"
+                />
+                Import Volume
+              </button>
+              <button
                 class="ui mini basic primary right floated button"
               >
                 <i
@@ -1404,6 +1413,15 @@ exports[`renders Cavatica projects view correctly 2`] = `
             >
               Not linked
               <button
+                class="ui mini icon primary left labeled button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="cloud download icon"
+                />
+                Import Volume
+              </button>
+              <button
                 class="ui mini basic primary right floated button"
               >
                 <i
@@ -1471,7 +1489,17 @@ exports[`renders Cavatica projects view correctly 2`] = `
           >
             <div
               class="right floated middle aligned content"
-            />
+            >
+              <button
+                class="ui mini icon primary left labeled button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="cloud download icon"
+                />
+                Import Volume
+              </button>
+            </div>
             <i
               aria-hidden="true"
               class="grey paper plane outline icon"
@@ -1844,6 +1872,15 @@ exports[`renders Cavatica projects view correctly 3`] = `
                 repurpose bricks-and-clicks bandwidth
               </a>
               <button
+                class="ui mini icon primary left labeled button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="cloud download icon"
+                />
+                Import Volume
+              </button>
+              <button
                 class="ui mini basic primary right floated button"
               >
                 <i
@@ -1923,6 +1960,15 @@ exports[`renders Cavatica projects view correctly 3`] = `
             >
               Not linked
               <button
+                class="ui mini icon primary left labeled button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="cloud download icon"
+                />
+                Import Volume
+              </button>
+              <button
                 class="ui mini basic primary right floated button"
               >
                 <i
@@ -1990,7 +2036,17 @@ exports[`renders Cavatica projects view correctly 3`] = `
           >
             <div
               class="right floated middle aligned content"
-            />
+            >
+              <button
+                class="ui mini icon primary left labeled button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="cloud download icon"
+                />
+                Import Volume
+              </button>
+            </div>
             <i
               aria-hidden="true"
               class="grey paper plane outline icon"
@@ -2386,6 +2442,15 @@ exports[`renders Cavatica projects view correctly 4`] = `
                 repurpose bricks-and-clicks bandwidth
               </a>
               <button
+                class="ui mini icon primary left labeled button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="cloud download icon"
+                />
+                Import Volume
+              </button>
+              <button
                 class="ui mini basic primary right floated button"
               >
                 <i
@@ -2465,6 +2530,15 @@ exports[`renders Cavatica projects view correctly 4`] = `
             >
               Not linked
               <button
+                class="ui mini icon primary left labeled button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="cloud download icon"
+                />
+                Import Volume
+              </button>
+              <button
                 class="ui mini basic primary right floated button"
               >
                 <i
@@ -2532,7 +2606,17 @@ exports[`renders Cavatica projects view correctly 4`] = `
           >
             <div
               class="right floated middle aligned content"
-            />
+            >
+              <button
+                class="ui mini icon primary left labeled button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="cloud download icon"
+                />
+                Import Volume
+              </button>
+            </div>
             <i
               aria-hidden="true"
               class="grey paper plane outline icon"
@@ -2928,6 +3012,15 @@ exports[`renders Cavatica projects view correctly 5`] = `
                 repurpose bricks-and-clicks bandwidth
               </a>
               <button
+                class="ui mini icon primary left labeled button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="cloud download icon"
+                />
+                Import Volume
+              </button>
+              <button
                 class="ui mini basic primary right floated button"
               >
                 <i
@@ -3007,6 +3100,15 @@ exports[`renders Cavatica projects view correctly 5`] = `
             >
               Not linked
               <button
+                class="ui mini icon primary left labeled button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="cloud download icon"
+                />
+                Import Volume
+              </button>
+              <button
                 class="ui mini basic primary right floated button"
               >
                 <i
@@ -3074,7 +3176,17 @@ exports[`renders Cavatica projects view correctly 5`] = `
           >
             <div
               class="right floated middle aligned content"
-            />
+            >
+              <button
+                class="ui mini icon primary left labeled button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="cloud download icon"
+                />
+                Import Volume
+              </button>
+            </div>
             <i
               aria-hidden="true"
               class="grey paper plane outline icon"

@@ -1,10 +1,10 @@
 import React from 'react';
 import wait from 'waait';
-import {render, fireEvent, act} from 'react-testing-library';
+import {render, fireEvent, act} from '@testing-library/react';
 import {MemoryRouter} from 'react-router-dom';
 import {MockedProvider} from '@apollo/react-testing';
 import {mocks} from '../../../../__mocks__/kf-api-study-creator/mocks';
-import CavaticaProjectItem from '../CavaticaProjectItem';
+import CavaticaProjectItem, {ImportVolumeButton} from '../CavaticaProjectItem';
 
 const project = {
   node: {
