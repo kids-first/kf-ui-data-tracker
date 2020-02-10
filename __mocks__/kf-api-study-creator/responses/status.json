@@ -4,6 +4,44 @@
       "name": "Kids First Study Creator",
       "version": "1.7.2-25-g283efc9",
       "commit": "283efc9",
+      "features": {
+        "studyCreation": true,
+        "studyUpdates": true,
+        "cavaticaCreateProjects": true,
+        "cavaticaCopyUsers": true,
+        "cavaticaMountVolumes": false,
+        "bucketserviceCreateBuckets": false,
+        "__typename": "Features"
+      },
+      "settings": {
+        "dataserviceUrl": "http://dataservice",
+        "bucketserviceUrl": "http://bucketservice",
+        "cavaticaUrl": "https://cavatica-api.sbgenomics.com/v2",
+        "cavaticaDeliveryAccount": "kids-first-dev",
+        "cavaticaHarmonizationAccount": null,
+        "cavaticaUserAccessProject": "kids-first-drc/user-access",
+        "__typename": "Settings"
+      },
+      "queues": "[{\"name\": \"cavatica\", \"jobs\": 0, \"oldest_job_timestamp\": \"-\", \"index\": 0, \"workers\": 0, \"finished_jobs\": 1, \"started_jobs\": 0, \"deferred_jobs\": 0, \"failed_jobs\": 0}, {\"name\": \"default\", \"jobs\": 0, \"oldest_job_timestamp\": \"-\", \"index\": 1, \"workers\": 0, \"finished_jobs\": 0, \"started_jobs\": 0, \"deferred_jobs\": 0, \"failed_jobs\": 0}]",
+      "jobs": {
+        "edges": [
+          {
+            "node": {
+              "id": "Sm9iTm9kZTpjYXZhdGljYV9zeW5j",
+              "name": "cavatica_sync",
+              "active": true,
+              "failing": false,
+              "lastRun": "2020-02-10T19:16:43.821120+00:00",
+              "lastError": "",
+              "createdOn": "2020-02-05T19:36:28.897537+00:00",
+              "enqueuedAt": "2020-02-10T19:21:37+00:00",
+              "__typename": "JobNode"
+            },
+            "__typename": "JobNodeEdge"
+          }
+        ],
+        "__typename": "JobNodeConnection"
+      },
       "__typename": "Status"
     }
   }
