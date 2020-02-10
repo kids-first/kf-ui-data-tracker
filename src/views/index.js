@@ -13,3 +13,4 @@ export {default as EventsView} from './EventsView';
 export {default as CavaticaBixView} from './CavaticaBixView';
 export {default as LogsView} from './LogsView';
 export {default as ConfigurationView} from './ConfigurationView';
+export {default as ReleasesView} from './ReleasesView';
