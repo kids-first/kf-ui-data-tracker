@@ -1885,6 +1885,17 @@ exports[`renders new study view correctly 4`] = `
           >
             Logs
           </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/releases"
+          >
+            Releases
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -2638,6 +2649,17 @@ exports[`renders new study view correctly 5`] = `
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/releases"
+          >
+            Releases
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
           </a>
         </div>
       </div>
