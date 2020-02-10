@@ -269,3 +269,25 @@ export const STATUS = gql`
     }
   }
 `;
+
+export const GET_STUDY_RELEASES = gql`
+  query GetStudyReleases($id: ID!) {
+    study(id: $id) {
+      id
+      releases(state: "published", orderBy: "-created_at") {
+        edges {
+          node {
+            id
+            kfId
+            name
+            description
+            state
+            author
+            version
+            createdAt
+          }
+        }
+      }
+    }
+  }
+`;
