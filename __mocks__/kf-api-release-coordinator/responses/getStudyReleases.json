@@ -1,0 +1,405 @@
+{
+  "data": {
+    "study": {
+      "id": "U3R1ZHlOb2RlOlNEX1lOU1NBUEhF",
+      "releases": {
+        "edges": [
+          {
+            "node": {
+              "id": "UmVsZWFzZU5vZGU6UkVfRlhSMUpCWkE=",
+              "kfId": "RE_FXR1JBZA",
+              "name": "Test ETL",
+              "description": "# Header 1\n1. numbered list\n1. and more\n\n![](https://imgc.artprintimages.com/img/print/white-bunny-rabbit-wearing-tiara-close-up-studio-shot_u-l-q10d2j30.jpg)\n\n| Tables        | Are           | Cool  |\n| ------------- |:-------------:| -----:|\n| col 3 is      | right-aligned | $1600 |\n| col 2 is      | centered      |   $12 |\n| zebra stripes | are neat      |    $1 |\n",
+              "state": "published",
+              "author": "jecos.crsj",
+              "version": "3.64.0",
+              "createdAt": "2019-11-05T21:29:30.010585+00:00",
+              "__typename": "ReleaseNode"
+            },
+            "__typename": "ReleaseNodeEdge"
+          },
+          {
+            "node": {
+              "id": "UmVsZWFzZU5vZGU6UkVfSFBGSzZIOVo=",
+              "kfId": "RE_HPFK6H9Z",
+              "name": "Fix diagnosis",
+              "description": "",
+              "state": "published",
+              "author": "jecos.crsj@gmail.com",
+              "version": "3.58.0",
+              "createdAt": "2019-09-17T19:39:03.653774+00:00",
+              "__typename": "ReleaseNode"
+            },
+            "__typename": "ReleaseNodeEdge"
+          },
+          {
+            "node": {
+              "id": "UmVsZWFzZU5vZGU6UkVfWDFYME1DU1k=",
+              "kfId": "RE_X1X0MCSY",
+              "name": "Biospecimens into diagnosis",
+              "description": "",
+              "state": "published",
+              "author": "jecos.crsj@gmail.com",
+              "version": "3.55.0",
+              "createdAt": "2019-09-04T14:59:04.070039+00:00",
+              "__typename": "ReleaseNode"
+            },
+            "__typename": "ReleaseNodeEdge"
+          },
+          {
+            "node": {
+              "id": "UmVsZWFzZU5vZGU6UkVfTTQwUktBS0g=",
+              "kfId": "RE_M40RKAKH",
+              "name": "Fix outcome",
+              "description": "",
+              "state": "published",
+              "author": "jecos.crsj@gmail.com",
+              "version": "3.53.0",
+              "createdAt": "2019-08-06T18:25:54.851893+00:00",
+              "__typename": "ReleaseNode"
+            },
+            "__typename": "ReleaseNodeEdge"
+          },
+          {
+            "node": {
+              "id": "UmVsZWFzZU5vZGU6UkVfQjIwWjJRUjM=",
+              "kfId": "RE_B20Z2QR3",
+              "name": "Fix outcome",
+              "description": "",
+              "state": "published",
+              "author": "jecos.crsj@gmail.com",
+              "version": "3.52.0",
+              "createdAt": "2019-08-01T13:37:04.853360+00:00",
+              "__typename": "ReleaseNode"
+            },
+            "__typename": "ReleaseNodeEdge"
+          },
+          {
+            "node": {
+              "id": "UmVsZWFzZU5vZGU6UkVfWUQwRTlKUVQ=",
+              "kfId": "RE_YD0E9JQT",
+              "name": "Phenotype nested",
+              "description": "",
+              "state": "published",
+              "author": "jecos.crsj@gmail.com",
+              "version": "3.51.0",
+              "createdAt": "2019-07-30T16:00:30.100193+00:00",
+              "__typename": "ReleaseNode"
+            },
+            "__typename": "ReleaseNodeEdge"
+          },
+          {
+            "node": {
+              "id": "UmVsZWFzZU5vZGU6UkVfVkVOTllLVkU=",
+              "kfId": "RE_VENNYKVE",
+              "name": "Revert phenotype",
+              "description": "",
+              "state": "published",
+              "author": "jecos.crsj@gmail.com",
+              "version": "3.50.0",
+              "createdAt": "2019-07-25T18:27:55.961069+00:00",
+              "__typename": "ReleaseNode"
+            },
+            "__typename": "ReleaseNodeEdge"
+          },
+          {
+            "node": {
+              "id": "UmVsZWFzZU5vZGU6UkVfVjZLWTFNMkY=",
+              "kfId": "RE_V6KY1M2F",
+              "name": "Fix family composition",
+              "description": "",
+              "state": "published",
+              "author": "jecos.crsj@gmail.com",
+              "version": "3.48.0",
+              "createdAt": "2019-07-23T19:31:34.729062+00:00",
+              "__typename": "ReleaseNode"
+            },
+            "__typename": "ReleaseNodeEdge"
+          },
+          {
+            "node": {
+              "id": "UmVsZWFzZU5vZGU6UkVfNEVQODlXVDc=",
+              "kfId": "RE_4EP89WT7",
+              "name": "Fix family members",
+              "description": "",
+              "state": "published",
+              "author": "jecos.crsj@gmail.com",
+              "version": "3.47.0",
+              "createdAt": "2019-07-22T19:36:58.477729+00:00",
+              "__typename": "ReleaseNode"
+            },
+            "__typename": "ReleaseNodeEdge"
+          },
+          {
+            "node": {
+              "id": "UmVsZWFzZU5vZGU6UkVfWFEzWEFSTjM=",
+              "kfId": "RE_XQ3XARN3",
+              "name": "Phenotypes nested",
+              "description": "",
+              "state": "published",
+              "author": "jecos.crsj@gmail.com",
+              "version": "3.46.0",
+              "createdAt": "2019-07-17T20:12:10.771013+00:00",
+              "__typename": "ReleaseNode"
+            },
+            "__typename": "ReleaseNodeEdge"
+          },
+          {
+            "node": {
+              "id": "UmVsZWFzZU5vZGU6UkVfMDFKVENHWE0=",
+              "kfId": "RE_01JTCGXM",
+              "name": "Test ETL",
+              "description": "",
+              "state": "published",
+              "author": "jecos.crsj@gmail.com",
+              "version": "3.41.0",
+              "createdAt": "2019-05-28T14:45:04.432395+00:00",
+              "__typename": "ReleaseNode"
+            },
+            "__typename": "ReleaseNodeEdge"
+          },
+          {
+            "node": {
+              "id": "UmVsZWFzZU5vZGU6UkVfNDJYUzBQSE0=",
+              "kfId": "RE_42XS0PHM",
+              "name": "Test ETL",
+              "description": "",
+              "state": "published",
+              "author": "jecos.crsj@gmail.com",
+              "version": "3.40.0",
+              "createdAt": "2019-05-28T14:23:54.610646+00:00",
+              "__typename": "ReleaseNode"
+            },
+            "__typename": "ReleaseNodeEdge"
+          },
+          {
+            "node": {
+              "id": "UmVsZWFzZU5vZGU6UkVfOVI2Q0pDUVI=",
+              "kfId": "RE_9R6CJCQR",
+              "name": "Test ETl",
+              "description": "",
+              "state": "published",
+              "author": "jecos.crsj@gmail.com",
+              "version": "3.39.0",
+              "createdAt": "2019-05-24T18:34:44.314458+00:00",
+              "__typename": "ReleaseNode"
+            },
+            "__typename": "ReleaseNodeEdge"
+          },
+          {
+            "node": {
+              "id": "UmVsZWFzZU5vZGU6UkVfU1FCMEJOTTA=",
+              "kfId": "RE_SQB0BNM0",
+              "name": "Test aws policy",
+              "description": "",
+              "state": "published",
+              "author": "jecos.crsj@gmail.com",
+              "version": "3.36.0",
+              "createdAt": "2019-05-17T14:32:00.616947+00:00",
+              "__typename": "ReleaseNode"
+            },
+            "__typename": "ReleaseNodeEdge"
+          },
+          {
+            "node": {
+              "id": "UmVsZWFzZU5vZGU6UkVfQ1o5QzFWNEc=",
+              "kfId": "RE_CZ9C1V4G",
+              "name": "Test Rollcall",
+              "description": "",
+              "state": "published",
+              "author": "jecos.crsj@gmail.com",
+              "version": "3.35.0",
+              "createdAt": "2019-05-15T16:03:26.914438+00:00",
+              "__typename": "ReleaseNode"
+            },
+            "__typename": "ReleaseNodeEdge"
+          },
+          {
+            "node": {
+              "id": "UmVsZWFzZU5vZGU6UkVfNkQxQzRLUUQ=",
+              "kfId": "RE_6D1C4KQD",
+              "name": "Test ETL",
+              "description": "",
+              "state": "published",
+              "author": "jecos.crsj@gmail.com",
+              "version": "3.34.0",
+              "createdAt": "2019-05-15T15:20:31.819144+00:00",
+              "__typename": "ReleaseNode"
+            },
+            "__typename": "ReleaseNodeEdge"
+          },
+          {
+            "node": {
+              "id": "UmVsZWFzZU5vZGU6UkVfQk5GWEJZUE0=",
+              "kfId": "RE_BNFXBYPM",
+              "name": "Test ETL 8",
+              "description": "",
+              "state": "published",
+              "author": "jecos.crsj@gmail.com",
+              "version": "3.33.0",
+              "createdAt": "2019-05-15T14:42:35.615018+00:00",
+              "__typename": "ReleaseNode"
+            },
+            "__typename": "ReleaseNodeEdge"
+          },
+          {
+            "node": {
+              "id": "UmVsZWFzZU5vZGU6UkVfTlBLQkdLRVE=",
+              "kfId": "RE_NPKBGKEQ",
+              "name": "Test ETL 7",
+              "description": "",
+              "state": "published",
+              "author": "jecos.crsj@gmail.com",
+              "version": "3.32.0",
+              "createdAt": "2019-05-15T14:30:46.915203+00:00",
+              "__typename": "ReleaseNode"
+            },
+            "__typename": "ReleaseNodeEdge"
+          },
+          {
+            "node": {
+              "id": "UmVsZWFzZU5vZGU6UkVfN1hKUEVHRFo=",
+              "kfId": "RE_7XJPEGDZ",
+              "name": "issue-15461 2",
+              "description": "",
+              "state": "published",
+              "author": "jecos.crsj@gmail.com",
+              "version": "3.31.0",
+              "createdAt": "2019-05-02T18:47:18.315674+00:00",
+              "__typename": "ReleaseNode"
+            },
+            "__typename": "ReleaseNodeEdge"
+          },
+          {
+            "node": {
+              "id": "UmVsZWFzZU5vZGU6UkVfVzM4NFlQS0s=",
+              "kfId": "RE_W384YPKK",
+              "name": "issue-66 test 3",
+              "description": "",
+              "state": "published",
+              "author": "jecos.crsj@gmail.com",
+              "version": "3.30.0",
+              "createdAt": "2019-05-02T13:25:31.424458+00:00",
+              "__typename": "ReleaseNode"
+            },
+            "__typename": "ReleaseNodeEdge"
+          },
+          {
+            "node": {
+              "id": "UmVsZWFzZU5vZGU6UkVfTURDNlkzUzg=",
+              "kfId": "RE_MDC6Y3S8",
+              "name": "issue-15461",
+              "description": "",
+              "state": "published",
+              "author": "jecos.crsj@gmail.com",
+              "version": "3.29.0",
+              "createdAt": "2019-04-15T19:30:29.621828+00:00",
+              "__typename": "ReleaseNode"
+            },
+            "__typename": "ReleaseNodeEdge"
+          },
+          {
+            "node": {
+              "id": "UmVsZWFzZU5vZGU6UkVfQkRNNkpBMTA=",
+              "kfId": "RE_BDM6JA10",
+              "name": "dcf externalid-latestdid test 2",
+              "description": "",
+              "state": "published",
+              "author": "joneubank@gmail.com",
+              "version": "3.28.0",
+              "createdAt": "2019-04-10T19:21:03.618244+00:00",
+              "__typename": "ReleaseNode"
+            },
+            "__typename": "ReleaseNodeEdge"
+          },
+          {
+            "node": {
+              "id": "UmVsZWFzZU5vZGU6UkVfQUtGQ1NRTVo=",
+              "kfId": "RE_AKFCSQMZ",
+              "name": "dcf externalid-latestdid test 1",
+              "description": "",
+              "state": "published",
+              "author": "joneubank@gmail.com",
+              "version": "3.27.0",
+              "createdAt": "2019-04-10T18:23:34.515179+00:00",
+              "__typename": "ReleaseNode"
+            },
+            "__typename": "ReleaseNodeEdge"
+          },
+          {
+            "node": {
+              "id": "UmVsZWFzZU5vZGU6UkVfM0gwUDVHWTA=",
+              "kfId": "RE_3H0P5GY0",
+              "name": "repo fix again",
+              "description": "",
+              "state": "published",
+              "author": "joneubank@gmail.com",
+              "version": "3.25.0",
+              "createdAt": "2019-03-26T20:05:39.915520+00:00",
+              "__typename": "ReleaseNode"
+            },
+            "__typename": "ReleaseNodeEdge"
+          },
+          {
+            "node": {
+              "id": "UmVsZWFzZU5vZGU6UkVfVlFOTlZHRDU=",
+              "kfId": "RE_VQNNVGD5",
+              "name": "fix repos try 3",
+              "description": "",
+              "state": "published",
+              "author": "joneubank@gmail.com",
+              "version": "3.23.0",
+              "createdAt": "2019-03-26T16:26:19.914633+00:00",
+              "__typename": "ReleaseNode"
+            },
+            "__typename": "ReleaseNodeEdge"
+          },
+          {
+            "node": {
+              "id": "UmVsZWFzZU5vZGU6UkVfRkE5QTZRR0s=",
+              "kfId": "RE_FA9A6QGK",
+              "name": "redeploy test 2",
+              "description": "",
+              "state": "published",
+              "author": "joneubank@gmail.com",
+              "version": "3.22.0",
+              "createdAt": "2019-03-26T15:40:20.051403+00:00",
+              "__typename": "ReleaseNode"
+            },
+            "__typename": "ReleaseNodeEdge"
+          },
+          {
+            "node": {
+              "id": "UmVsZWFzZU5vZGU6UkVfVzg1TThURk4=",
+              "kfId": "RE_W85M8TFN",
+              "name": "target test",
+              "description": "",
+              "state": "published",
+              "author": "rosi.bajari@gmail.com",
+              "version": "3.21.0",
+              "createdAt": "2019-03-25T21:22:41.514803+00:00",
+              "__typename": "ReleaseNode"
+            },
+            "__typename": "ReleaseNodeEdge"
+          },
+          {
+            "node": {
+              "id": "UmVsZWFzZU5vZGU6UkVfUVE2RktQWFo=",
+              "kfId": "RE_QQ6FKPXZ",
+              "name": "Release Target in QA",
+              "description": "",
+              "state": "published",
+              "author": "bailey@d3b.center",
+              "version": "3.15.0",
+              "createdAt": "2019-03-06T20:46:36.609298+00:00",
+              "__typename": "ReleaseNode"
+            },
+            "__typename": "ReleaseNodeEdge"
+          }
+        ],
+        "__typename": "ReleaseNodeConnection"
+      },
+      "__typename": "StudyNode"
+    }
+  }
+}
