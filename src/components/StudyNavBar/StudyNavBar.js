@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {withRouter, NavLink} from 'react-router-dom';
-import {Menu} from 'semantic-ui-react';
+import {Menu, Label} from 'semantic-ui-react';
 
 /**
  * Menu for navigating within a study
@@ -25,10 +25,14 @@ const StudyNavBar = ({match, history, isBeta}) => {
       tab: 'Logs',
       endString: 'logs',
     },
+    {
+      tab: 'Releases',
+      endString: 'releases',
+    },
   ];
   return (
     <Menu color="pink" secondary pointing>
-      {navList.map((item, i) => (
+      {navList.slice(0, isBeta ? 6 : 5).map((item, i) => (
         <Menu.Item
           key={i}
           name={item.tab}
@@ -39,6 +43,11 @@ const StudyNavBar = ({match, history, isBeta}) => {
           as={NavLink}
         >
           {item.tab}
+          {item.endString === 'releases' && isBeta && (
+            <Label color="blue" size="mini">
+              BETA
+            </Label>
+          )}
         </Menu.Item>
       ))}
     </Menu>

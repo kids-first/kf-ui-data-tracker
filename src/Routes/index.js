@@ -19,6 +19,7 @@ import {
   CavaticaBixView,
   LogsView,
   LogoutView,
+  ReleasesView,
 } from '../views';
 import DocumentRoutes from '../documents/routes';
 import TrackedRoute from './TrackedRoute';
@@ -46,6 +47,11 @@ const Routes = () => (
           component={CavaticaBixView}
         />
         <PrivateRoute exact path="/study/:kfId/logs" component={LogsView} />
+        <PrivateRoute
+          exact
+          path="/study/:kfId/releases"
+          component={ReleasesView}
+        />
         <AdminRoute exact path="/tokens" component={TokensListView} />
         <AdminRoute
           exact
