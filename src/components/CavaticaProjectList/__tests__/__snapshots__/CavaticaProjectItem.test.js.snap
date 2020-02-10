@@ -568,3 +568,31 @@ exports[`renders cavatica project item - show unlink project button 3`] = `
   </div>
 </div>
 `;
+
+exports[`renders import volume button - modal open 1`] = `
+<div>
+  <button
+    class="ui mini icon primary left labeled button"
+  >
+    <i
+      aria-hidden="true"
+      class="cloud download icon"
+    />
+    Import Volume
+  </button>
+</div>
+`;
+
+exports[`renders import volume confirm - button 1`] = `
+<div>
+  <button
+    class="ui mini icon primary left labeled button"
+  >
+    <i
+      aria-hidden="true"
+      class="cloud download icon"
+    />
+    Import Volume
+  </button>
+</div>
+`;

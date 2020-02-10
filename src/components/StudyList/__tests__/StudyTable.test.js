@@ -1,6 +1,6 @@
 import React from 'react';
 import {MemoryRouter} from 'react-router-dom';
-import {render, cleanup} from 'react-testing-library';
+import {render, cleanup} from '@testing-library/react';
 import allStudies from '../../../../__mocks__/kf-api-study-creator/responses/allStudies.json';
 import StudyTable from '../StudyTable';
 

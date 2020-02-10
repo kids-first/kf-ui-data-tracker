@@ -1,5 +1,5 @@
 import React from 'react';
-import {render, cleanup} from 'react-testing-library';
+import {render, cleanup} from '@testing-library/react';
 import {MemoryRouter} from 'react-router-dom';
 import {MockedProvider} from '@apollo/react-testing';
 import CavaticaCounts from '../CavaticaCounts';

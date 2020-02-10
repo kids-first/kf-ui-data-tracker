@@ -7,7 +7,7 @@ import {
   fireEvent,
   act,
   waitForElementToBeRemoved,
-} from 'react-testing-library';
+} from '@testing-library/react';
 import Routes from '../../../../Routes';
 import {mocks} from '../../../../../__mocks__/kf-api-study-creator/mocks';
 import myProfile from '../../../../../__mocks__/kf-api-study-creator/responses/myProfile.json';
@@ -85,7 +85,7 @@ it('edits an existing file correctly', async () => {
 
   // Update approval status from 'Pending review' to 'Approved'
   act(() => {
-    fireEvent.click(tree.getByText(/Pending review/));
+    fireEvent.click(tree.queryAllByText(/Pending review/)[0]);
   });
   await wait();
   act(() => {
@@ -135,7 +135,7 @@ it('edits an existing file correctly', async () => {
 
   // Click on version file name to open version info modal
   act(() => {
-    fireEvent.click(tree.getByText(/VersionFileName.js/));
+    fireEvent.click(tree.queryAllByText(/VersionFileName.js/)[0]);
   });
   await wait();
   expect(tree.container).toMatchSnapshot();

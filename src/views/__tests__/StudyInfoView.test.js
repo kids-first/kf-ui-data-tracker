@@ -1,6 +1,6 @@
 import React from 'react';
 import wait from 'waait';
-import {render, act, fireEvent, cleanup} from 'react-testing-library';
+import {render, act, fireEvent, cleanup} from '@testing-library/react';
 import {MockedProvider} from '@apollo/react-testing';
 import {MemoryRouter} from 'react-router-dom';
 import {mocks} from '../../../__mocks__/kf-api-study-creator/mocks';
@@ -66,7 +66,7 @@ it('renders study info view correctly -- ADMIN user', async () => {
   expect(tree.container).toMatchSnapshot();
 
   act(() => {
-    fireEvent.click(tree.getByText(/Info/i));
+    fireEvent.click(tree.queryAllByText(/Info/i)[0]);
   });
 
   await wait();
@@ -101,7 +101,7 @@ it('renders study info view with get study info error', async () => {
   await wait();
   expect(tree.container).toMatchSnapshot();
   expect(
-    tree.queryByText(/Network error: something went wrong/i),
+    tree.queryAllByText(/Network error: something went wrong/i),
   ).not.toBeNull();
 });
 

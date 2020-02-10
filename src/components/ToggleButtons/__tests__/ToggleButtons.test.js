@@ -4,7 +4,7 @@ import {
   render,
   cleanup,
   waitForElement,
-} from 'react-testing-library';
+} from '@testing-library/react';
 import ToggleButtons from '../ToggleButtons';
 
 afterEach(cleanup);

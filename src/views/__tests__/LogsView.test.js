@@ -1,6 +1,6 @@
 import React from 'react';
 import wait from 'waait';
-import {render, act, fireEvent, cleanup} from 'react-testing-library';
+import {render, act, fireEvent, cleanup} from '@testing-library/react';
 import {MockedProvider} from '@apollo/react-testing';
 import {MemoryRouter} from 'react-router-dom';
 import {mocks} from '../../../__mocks__/kf-api-study-creator/mocks';
@@ -116,5 +116,5 @@ it('renders study logs view -- shows an error', async () => {
   await wait(0);
 
   expect(tree.container).toMatchSnapshot();
-  expect(tree.queryByText('Error')).not.toBeNull();
+  expect(tree.queryAllByText('Error')).not.toBeNull();
 });

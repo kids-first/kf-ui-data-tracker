@@ -1,5 +1,5 @@
 import React from 'react';
-import {render, cleanup} from 'react-testing-library';
+import {render, cleanup} from '@testing-library/react';
 import {versionState} from '../../../common/enums';
 import Badge from '../Badge';
 

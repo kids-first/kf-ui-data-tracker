@@ -1,7 +1,7 @@
 import React from 'react';
 import {MemoryRouter} from 'react-router-dom';
 import {MockedProvider} from '@apollo/react-testing';
-import {render} from 'react-testing-library';
+import {render} from '@testing-library/react';
 import {mocks} from '../../../../../__mocks__/kf-api-study-creator/mocks';
 import fileByKfId from '../../../../../__mocks__/kf-api-study-creator/responses/fileByKfId';
 import VersionList from '../VersionList';
@@ -36,6 +36,5 @@ it('renders with no versions', () => {
     </MemoryRouter>,
   );
   expect(tree.container).toMatchSnapshot();
-  const lis = tree.getAllByTestId('version-item');
-  expect(lis.length).toBe(3);
+  expect(tree.queryAllByTestId('version-item')).toHaveLength(0);
 });

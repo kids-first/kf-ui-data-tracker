@@ -2,7 +2,7 @@ import React from 'react';
 import wait from 'waait';
 import {MemoryRouter} from 'react-router-dom';
 import {MockedProvider} from '@apollo/react-testing';
-import {render, cleanup, fireEvent} from 'react-testing-library';
+import {render, cleanup, fireEvent} from '@testing-library/react';
 import FileList from '../FileList';
 import studyByKfId from './studyByKfId';
 
@@ -59,7 +59,7 @@ it('renders with files', async () => {
   const filterDropdown = tree.getByText(/File type/i);
   fireEvent.click(filterDropdown);
   await wait();
-  const filterByFileType = tree.getByText(/Other/i);
+  const filterByFileType = tree.queryAllByText(/Other/i)[0];
   fireEvent.click(filterByFileType);
   await wait();
 

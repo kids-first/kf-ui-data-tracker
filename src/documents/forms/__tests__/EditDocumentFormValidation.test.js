@@ -6,7 +6,7 @@ import {MemoryRouter} from 'react-router-dom';
 import {mocks} from '../../../../__mocks__/kf-api-study-creator/mocks';
 import studyByKfId from '../../../../__mocks__/kf-api-study-creator/responses/studyByKfId.json';
 import {Segment, Button} from 'semantic-ui-react';
-import {render, fireEvent, cleanup, act} from 'react-testing-library';
+import {render, fireEvent, cleanup, act} from '@testing-library/react';
 import EditDocumentForm from '../EditDocumentForm';
 
 afterEach(cleanup);
@@ -28,7 +28,7 @@ let errors = {};
 it('Show warning message when input file name is similar to an existing file', async () => {
   const handleSubmit = jest.fn();
 
-  const {container, getByTestId, getByText, queryAllByText} = render(
+  const {container, getByTestId, queryAllByText} = render(
     <MockedProvider mocks={mocks}>
       <MemoryRouter
         initialEntries={['/study/SD_8WX8QQ06/documents/new-document']}
@@ -81,7 +81,7 @@ it('Show warning message when input file name is similar to an existing file', a
   expect(queryAllByText(/UPLOAD/).length).toBe(1);
 
   act(() => {
-    fireEvent.click(getByText(/Update Existing Document/i));
+    fireEvent.click(queryAllByText(/Update Existing Document/i)[0]);
   });
 
   await wait();

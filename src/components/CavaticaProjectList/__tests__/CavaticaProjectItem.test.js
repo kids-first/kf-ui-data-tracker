@@ -1,10 +1,10 @@
 import React from 'react';
 import wait from 'waait';
-import {render, fireEvent, act} from 'react-testing-library';
+import {render, fireEvent, act} from '@testing-library/react';
 import {MemoryRouter} from 'react-router-dom';
 import {MockedProvider} from '@apollo/react-testing';
 import {mocks} from '../../../../__mocks__/kf-api-study-creator/mocks';
-import CavaticaProjectItem from '../CavaticaProjectItem';
+import CavaticaProjectItem, {ImportVolumeButton} from '../CavaticaProjectItem';
 
 const project = {
   node: {
@@ -94,4 +94,110 @@ it('renders cavatica project item - hide study link', () => {
     </MemoryRouter>,
   );
   expect(tree.container).toMatchSnapshot();
+});
+
+it('renders import volume confirm - button', () => {
+  const mock = jest.fn().mockResolvedValue({data: null});
+  const tree = render(
+    <ImportVolumeButton importVolumeFiles={mock} projectNode={project.node} />,
+  );
+  expect(tree.container).toMatchSnapshot();
+});
+
+it('renders import volume button - modal open', () => {
+  const mock = jest.fn().mockResolvedValue({data: null});
+  const tree = render(
+    <ImportVolumeButton importVolumeFiles={mock} projectNode={project.node} />,
+  );
+  act(() => {
+    fireEvent.click(tree.getByText(/Import Volume/));
+  });
+
+  expect(tree.container).toMatchSnapshot();
+});
+
+it('renders import volume button - success', async () => {
+  const mock = jest.fn().mockResolvedValue({data: null});
+
+  const tree = render(
+    <ImportVolumeButton importVolumeFiles={mock} projectNode={project.node} />,
+  );
+
+  act(() => {
+    fireEvent.click(tree.getByText(/Import Volume/));
+  });
+  await wait();
+
+  act(() => {
+    fireEvent.click(tree.getByText(/Proceed with Import/));
+  });
+  await wait();
+
+  expect(tree.queryByText(/Import Started/)).toBeDefined();
+
+  fireEvent.click(tree.getByText(/OK/));
+
+  await wait();
+
+  expect(
+    tree.queryByText(/Import volume files to Cavatica project/),
+  ).toBeNull();
+});
+
+it('renders import volume button - error', async () => {
+  const mock = jest.fn(() => Promise.reject(null));
+
+  const tree = render(
+    <ImportVolumeButton importVolumeFiles={mock} projectNode={project.node} />,
+  );
+
+  act(() => {
+    fireEvent.click(tree.getByText(/Import Volume/));
+  });
+
+  act(() => {
+    fireEvent.click(tree.getByText(/Proceed with Import/));
+  });
+
+  expect(tree.queryByText(/Error/)).toBeDefined();
+  expect(tree.queryByText(/Import Started/)).toBeNull();
+});
+
+it('renders import volume button - graphql error', async () => {
+  const mock = jest.fn(() => Promise.resolve({errors: ['error']}));
+
+  const tree = render(
+    <ImportVolumeButton importVolumeFiles={mock} projectNode={project.node} />,
+  );
+
+  act(() => {
+    fireEvent.click(tree.getByText(/Import Volume/));
+  });
+
+  act(() => {
+    fireEvent.click(tree.getByText(/Proceed with Import/));
+  });
+
+  expect(tree.queryByText(/Error/)).toBeDefined();
+  expect(tree.queryByText(/Import Started/)).toBeNull();
+});
+
+it('renders import volume button - cancel', async () => {
+  const mock = jest.fn().mockResolvedValue({data: null});
+
+  const tree = render(
+    <ImportVolumeButton importVolumeFiles={mock} projectNode={project.node} />,
+  );
+
+  act(() => {
+    fireEvent.click(tree.getByText(/Import Volume/));
+  });
+
+  expect(tree.queryByText(/Proceed with Import/)).toBeDefined();
+
+  act(() => {
+    fireEvent.click(tree.getByText(/Cancel/));
+  });
+
+  expect(tree.queryByText(/Cancel/)).toBeNull();
 });

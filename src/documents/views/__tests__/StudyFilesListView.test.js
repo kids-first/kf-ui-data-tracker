@@ -2,7 +2,7 @@ import React from 'react';
 import wait from 'waait';
 import {MockedProvider} from '@apollo/react-testing';
 import {MemoryRouter} from 'react-router-dom';
-import {render, act, fireEvent, cleanup} from 'react-testing-library';
+import {render, act, fireEvent, cleanup} from '@testing-library/react';
 import StudyFilesListView from '../StudyFilesListView';
 import {mocks} from '../../../../__mocks__/kf-api-study-creator/mocks';
 

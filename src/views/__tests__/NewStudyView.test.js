@@ -1,6 +1,6 @@
 import React from 'react';
 import wait from 'waait';
-import {render, act, fireEvent, cleanup} from 'react-testing-library';
+import {render, act, fireEvent, cleanup} from '@testing-library/react';
 import {MockedProvider} from '@apollo/react-testing';
 import {MemoryRouter} from 'react-router-dom';
 import {mocks} from '../../../__mocks__/kf-api-study-creator/mocks';
@@ -66,6 +66,7 @@ it('renders new study view correctly --  with error on submit', async () => {
 });
 
 it('renders new study view correctly', async () => {
+  jest.setTimeout(30000);
   // browser sessionStorage mocks
   const sessionStorageMock = (function() {
     let store = {newStudy: 'SD_00000000_SUC'};
@@ -96,7 +97,7 @@ it('renders new study view correctly', async () => {
           myProfile: _ => myProfile.data.myProfile,
         },
       }}
-      mocks={[mocks[1], mocks[8], mocks[21], mocks[40], mocks[1]]}
+      mocks={[mocks[1], mocks[8], mocks[21], mocks[40], mocks[1], mocks[40]]}
     >
       <MemoryRouter initialEntries={['/study/new-study/info']}>
         <Routes />
@@ -106,7 +107,7 @@ it('renders new study view correctly', async () => {
       container: document.body,
     },
   );
-  await wait();
+  // await wait();
   expect(tree.container).toMatchSnapshot();
 
   act(() => {
@@ -114,13 +115,13 @@ it('renders new study view correctly', async () => {
       target: {value: 'benchmark extensible e-business'},
     });
   });
-  await wait();
-  expect(tree.container).toMatchSnapshot();
 
   act(() => {
     fireEvent.click(tree.getByText(/NEXT/i));
   });
-  await wait();
+  expect(tree.getByText(/External ID/)).not.toBeNull();
+  expect(tree.getByText(/dbGaP Version/)).not.toBeNull();
+  expect(tree.getByText(/Attribution/)).not.toBeNull();
   expect(tree.container).toMatchSnapshot();
 
   act(() => {
@@ -128,14 +129,11 @@ it('renders new study view correctly', async () => {
       target: {value: 'benchmark extensible e-business'},
     });
   });
-  await wait();
-  expect(tree.container).toMatchSnapshot();
 
   act(() => {
     fireEvent.click(tree.getByText(/NEXT/i));
   });
-  await wait();
-  expect(tree.container).toMatchSnapshot();
+  expect(tree.getByText(/Description/)).not.toBeNull();
 
   act(() => {
     fireEvent.click(tree.getByText(/SUBMIT/i));
@@ -152,7 +150,7 @@ it('renders new study view correctly', async () => {
     fireEvent.click(tree.getByText(/Skip ahead to the study/i));
   });
 
-  await wait(100);
+  // await wait(100);
 
   expect(tree.container).toMatchSnapshot();
 });

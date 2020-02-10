@@ -2,7 +2,12 @@ import React from 'react';
 import {Helmet} from 'react-helmet';
 import {useQuery, useMutation} from '@apollo/react-hooks';
 import {GET_STUDY_BY_ID, MY_PROFILE, GET_PROJECTS} from '../state/queries';
-import {SYNC_PROJECTS, LINK_PROJECT, UNLINK_PROJECT} from '../state/mutations';
+import {
+  SYNC_PROJECTS,
+  LINK_PROJECT,
+  UNLINK_PROJECT,
+  IMPORT_VOLUME_FILES,
+} from '../state/mutations';
 import {
   Container,
   Segment,
@@ -71,6 +76,7 @@ const CavaticaBixView = ({match, history}) => {
       },
     ],
   });
+  const [importVolumeFiles] = useMutation(IMPORT_VOLUME_FILES);
 
   const isAdmin =
     !user.loading && user.data.myProfile
@@ -194,6 +200,7 @@ const CavaticaBixView = ({match, history}) => {
           <CavaticaProjectList
             projects={studyByKfId.projects.edges}
             unlinkProject={unlinkProject}
+            importVolumeFiles={isAdmin ? importVolumeFiles : null}
             hideStudy
           />
         ) : (

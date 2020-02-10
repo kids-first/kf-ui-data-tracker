@@ -1,6 +1,6 @@
 import React from 'react';
 import wait from 'waait';
-import {render, act, fireEvent, cleanup} from 'react-testing-library';
+import {render, act, fireEvent, cleanup} from '@testing-library/react';
 import {MockedProvider} from '@apollo/react-testing';
 import {MemoryRouter} from 'react-router-dom';
 import {mocks} from '../../../__mocks__/kf-api-study-creator/mocks';
@@ -33,7 +33,7 @@ it('renders Cavatica projects view correctly', async () => {
 
   // Click to sync projects
   act(() => {
-    fireEvent.click(tree.getByText(/Scan Cavatica/i));
+    fireEvent.click(tree.queryAllByText(/Scan Cavatica/i)[0]);
   });
   expect(tree.container).toMatchSnapshot();
   await wait(1000);
@@ -41,7 +41,7 @@ it('renders Cavatica projects view correctly', async () => {
 
   // Click to open the edit project modal
   act(() => {
-    fireEvent.click(tree.getByText(/EDIT/i));
+    fireEvent.click(tree.queryAllByText(/EDIT/i)[0]);
   });
   await wait();
   expect(tree.container).toMatchSnapshot();
@@ -89,7 +89,7 @@ it('renders Cavatica projects view correctly -- with sync error', async () => {
 
   // Click to sync projects
   act(() => {
-    fireEvent.click(tree.getByText(/Scan Cavatica/i));
+    fireEvent.click(tree.queryAllByText(/Scan Cavatica/i)[0]);
   });
   await wait(1000);
   expect(tree.container).toMatchSnapshot();

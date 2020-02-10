@@ -1,5 +1,5 @@
 import React from 'react';
-import {render} from 'react-testing-library';
+import {render} from '@testing-library/react';
 import StudyHeader from '../StudyHeader';
 
 it('renders study header with study name and short name', () => {

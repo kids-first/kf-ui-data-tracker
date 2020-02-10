@@ -15,7 +15,11 @@ import {
 import {CavaticaProjectList} from '../components/CavaticaProjectList';
 
 import {GET_PROJECTS, MY_PROFILE} from '../state/queries';
-import {SYNC_PROJECTS, UNLINK_PROJECT} from '../state/mutations';
+import {
+  SYNC_PROJECTS,
+  UNLINK_PROJECT,
+  IMPORT_VOLUME_FILES,
+} from '../state/mutations';
 
 const CavaticaProjectsView = () => {
   const {loading, error, data} = useQuery(GET_PROJECTS, {
@@ -37,6 +41,9 @@ const CavaticaProjectsView = () => {
       },
     ],
   });
+
+  const [importVolumeFiles] = useMutation(IMPORT_VOLUME_FILES);
+  console.log(importVolumeFiles);
 
   const isAdmin =
     !user.loading && user.data.myProfile
@@ -135,6 +142,7 @@ const CavaticaProjectsView = () => {
           <CavaticaProjectList
             projects={allProjects.edges}
             unlinkProject={isAdmin ? unlinkProject : null}
+            importVolumeFiles={isAdmin ? importVolumeFiles : null}
             editable={isAdmin}
           />
         )}
