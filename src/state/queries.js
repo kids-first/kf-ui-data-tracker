@@ -291,3 +291,31 @@ export const GET_STUDY_RELEASES = gql`
     }
   }
 `;
+
+export const GET_RELEASED_STUDY = gql`
+  query allStudies {
+    allStudies {
+      edges {
+        node {
+          id
+          kfId
+          releases(state: "published", first: 1, orderBy: "-created_at") {
+            edges {
+              node {
+                id
+                kfId
+                name
+                description
+                state
+                author
+                version
+                createdAt
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
