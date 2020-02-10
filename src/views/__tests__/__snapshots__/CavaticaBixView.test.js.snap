@@ -252,6 +252,17 @@ exports[`renders study Cavatica projects view -- shows an error 1`] = `
           >
             <a
               class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -659,6 +670,17 @@ exports[`renders study Cavatica projects view correctly 2`] = `
           <div
             class="menu transition"
           >
+            <a
+              class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
             <a
               class="item"
               href="/tokens"
@@ -1170,6 +1192,17 @@ exports[`renders study Cavatica projects view correctly 3`] = `
           <div
             class="menu transition"
           >
+            <a
+              class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
             <a
               class="item"
               href="/tokens"
@@ -1810,6 +1843,17 @@ exports[`renders study Cavatica projects view correctly 4`] = `
           >
             <a
               class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -2446,6 +2490,17 @@ exports[`renders study Cavatica projects view correctly 5`] = `
           <div
             class="menu transition"
           >
+            <a
+              class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
             <a
               class="item"
               href="/tokens"
@@ -3395,6 +3450,17 @@ exports[`renders study Cavatica projects view correctly 6`] = `
           >
             <a
               class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -4340,6 +4406,17 @@ exports[`renders study Cavatica projects view correctly 7`] = `
           <div
             class="menu transition"
           >
+            <a
+              class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
             <a
               class="item"
               href="/tokens"
@@ -5289,6 +5366,17 @@ exports[`renders study Cavatica projects view correctly 8`] = `
           >
             <a
               class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -5947,6 +6035,17 @@ exports[`renders study Cavatica projects view correctly 9`] = `
           <div
             class="menu transition"
           >
+            <a
+              class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
             <a
               class="item"
               href="/tokens"
@@ -6609,6 +6708,17 @@ exports[`renders study Cavatica projects view correctly 10`] = `
           >
             <a
               class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -7265,6 +7375,17 @@ exports[`renders study Cavatica projects view correctly 11`] = `
           <div
             class="menu transition"
           >
+            <a
+              class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
             <a
               class="item"
               href="/tokens"
@@ -8167,6 +8288,17 @@ exports[`renders study Cavatica projects view correctly 12`] = `
           <div
             class="menu transition"
           >
+            <a
+              class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
             <a
               class="item"
               href="/tokens"
@@ -9158,6 +9290,17 @@ exports[`renders study Cavatica projects view correctly 13`] = `
           >
             <a
               class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -9812,6 +9955,17 @@ exports[`renders study Cavatica projects view correctly 14`] = `
           >
             <a
               class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -10462,6 +10616,17 @@ exports[`renders study Cavatica projects view correctly with warning 1`] = `
           <div
             class="menu transition"
           >
+            <a
+              class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
             <a
               class="item"
               href="/tokens"

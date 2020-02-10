@@ -48,6 +48,17 @@ exports[`edits an existing file correctly 1`] = `
           >
             <a
               class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -932,6 +943,17 @@ exports[`edits an existing file correctly 2`] = `
           >
             <a
               class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -1578,6 +1600,17 @@ exports[`edits an existing file correctly 3`] = `
           <div
             class="menu transition"
           >
+            <a
+              class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
             <a
               class="item"
               href="/tokens"
@@ -2228,6 +2261,17 @@ exports[`edits an existing file correctly 4`] = `
           >
             <a
               class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -2876,6 +2920,17 @@ exports[`edits an existing file correctly 5`] = `
           >
             <a
               class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -3522,6 +3577,17 @@ exports[`edits an existing file correctly 6`] = `
           <div
             class="menu transition"
           >
+            <a
+              class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
             <a
               class="item"
               href="/tokens"

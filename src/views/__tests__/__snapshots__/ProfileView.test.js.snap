@@ -241,6 +241,17 @@ exports[`renders profile view correctly 2`] = `
           >
             <a
               class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >

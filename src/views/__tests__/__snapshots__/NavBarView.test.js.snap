@@ -48,6 +48,17 @@ exports[`renders study nav bar with error for fetching study 1`] = `
           >
             <a
               class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -419,6 +430,17 @@ exports[`renders study nav bar with error in study creation 2`] = `
           <div
             class="menu transition"
           >
+            <a
+              class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
             <a
               class="item"
               href="/tokens"
@@ -931,6 +953,17 @@ exports[`renders study nav bar with error in study creation 3`] = `
           <div
             class="menu transition"
           >
+            <a
+              class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
             <a
               class="item"
               href="/tokens"
@@ -1674,6 +1707,17 @@ exports[`renders study nav bar with error in study creation 4`] = `
           <div
             class="menu transition"
           >
+            <a
+              class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
             <a
               class="item"
               href="/tokens"

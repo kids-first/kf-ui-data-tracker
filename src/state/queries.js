@@ -235,6 +235,37 @@ export const STATUS = gql`
       name
       version
       commit
+      features {
+        studyCreation
+        studyUpdates
+        cavaticaCreateProjects
+        cavaticaCopyUsers
+        cavaticaMountVolumes
+        bucketserviceCreateBuckets
+      }
+      settings {
+        dataserviceUrl
+        bucketserviceUrl
+        cavaticaUrl
+        cavaticaDeliveryAccount
+        cavaticaHarmonizationAccount
+        cavaticaUserAccessProject
+      }
+      queues
+      jobs {
+        edges {
+          node {
+            id
+            name
+            active
+            failing
+            lastRun
+            lastError
+            createdOn
+            enqueuedAt
+          }
+        }
+      }
     }
   }
 `;

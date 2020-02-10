@@ -8,6 +8,7 @@ import {
   LoginView,
   StudyListView,
   CallbackView,
+  ConfigurationView,
   NavBarView,
   TokensListView,
   CavaticaProjectsView,
@@ -52,6 +53,7 @@ const Routes = () => (
           component={CavaticaProjectsView}
         />
         <AdminRoute exact path="/events" component={EventsView} />
+        <AdminRoute exact path="/configuration" component={ConfigurationView} />
         <DocumentRoutes />
       </Switch>
     </div>
