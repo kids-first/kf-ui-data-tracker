@@ -839,7 +839,7 @@ exports[`renders study list correctly -- default stage 2`] = `
                     aria-hidden="true"
                     class="grey tag icon"
                   />
-                  Release
+                  Latest Release
                 </th>
               </tr>
             </thead>
@@ -917,17 +917,11 @@ exports[`renders study list correctly -- default stage 2`] = `
                 <td
                   class=""
                 >
-<<<<<<< HEAD
-                  <a
-                    class="test-gray"
-                    href="/study/SD_8WX8QQ06/releases"
-=======
                   <span
                     class="text-gray"
->>>>>>> 4e619bb7... test list
                   >
                     Not Published
-                  </a>
+                  </span>
                 </td>
               </tr>
               <tr
@@ -991,17 +985,11 @@ exports[`renders study list correctly -- default stage 2`] = `
                 <td
                   class=""
                 >
-<<<<<<< HEAD
-                  <a
-                    class="test-gray"
-                    href="/study/SD_I1L92W57/releases"
-=======
                   <span
                     class="text-gray"
->>>>>>> 4e619bb7... test list
                   >
                     Not Published
-                  </a>
+                  </span>
                 </td>
               </tr>
               <tr
@@ -1066,10 +1054,15 @@ exports[`renders study list correctly -- default stage 2`] = `
                   class=""
                 >
                   <a
-                    class=""
-                    href="/study/SD_SG5N41K8/releases"
+                    href="undefinedreleases/RE_6C8YT1Y4"
+                    rel="noopener noreferrer"
+                    target="_blank"
                   >
-                    3.60.0
+                    3.60.0 
+                    <i
+                      aria-hidden="true"
+                      class="external small link icon"
+                    />
                   </a>
                 </td>
               </tr>
@@ -1155,10 +1148,15 @@ exports[`renders study list correctly -- default stage 2`] = `
                   class=""
                 >
                   <a
-                    class=""
-                    href="/study/SD_0YYP5ZEN/releases"
+                    href="undefinedreleases/RE_1G81RRQ0"
+                    rel="noopener noreferrer"
+                    target="_blank"
                   >
-                    3.63.0
+                    3.63.0 
+                    <i
+                      aria-hidden="true"
+                      class="external small link icon"
+                    />
                   </a>
                 </td>
               </tr>

@@ -4,6 +4,7 @@ import {MemoryRouter} from 'react-router-dom';
 import {MockedProvider} from '@apollo/react-testing';
 import {render, cleanup, fireEvent, act} from '@testing-library/react';
 import {mocks} from '../../../../__mocks__/kf-api-study-creator/mocks';
+import {coordMocks} from '../../../../__mocks__/kf-api-release-coordinator/mocks';
 import myProfile from '../../../../__mocks__/kf-api-study-creator/responses/myProfile.json';
 import allStudies from '../../../../__mocks__/kf-api-study-creator/responses/allStudies.json';
 import StudyList from '../StudyList';
@@ -20,7 +21,7 @@ it('renders study grid correctly', () => {
           ...myProfile.data.myProfile,
         },
       }}
-      mocks={mocks}
+      mocks={mocks.concat([coordMocks.allReleaseStudies])}
     >
       <MemoryRouter>
         <StudyList activeView="grid" studyList={studies} />
@@ -43,7 +44,7 @@ it('renders study grid for ADMIN role', async () => {
           ...myProfile.data.myProfile,
         },
       }}
-      mocks={mocks}
+      mocks={mocks.concat([coordMocks.allReleaseStudies])}
     >
       <MemoryRouter>
         <StudyList activeView="grid" studyList={studies} roles={roles} />
@@ -77,7 +78,7 @@ it('renders study grid loading state', () => {
           ...myProfile.data.myProfile,
         },
       }}
-      mocks={mocks}
+      mocks={mocks.concat([coordMocks.allReleaseStudies])}
     >
       <MemoryRouter>
         <StudyList activeView="grid" loading={true} />
@@ -99,7 +100,7 @@ it('renders study grid/table empty state', () => {
           ...myProfile.data.myProfile,
         },
       }}
-      mocks={mocks}
+      mocks={mocks.concat([coordMocks.allReleaseStudies])}
     >
       <MemoryRouter>
         <StudyList activeView="grid" studyList={[]} />

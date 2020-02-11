@@ -4,6 +4,7 @@ import {render, fireEvent, act} from '@testing-library/react';
 import {MockedProvider} from '@apollo/react-testing';
 import {MemoryRouter} from 'react-router-dom';
 import {mocks} from '../../../../__mocks__/kf-api-study-creator/mocks';
+import {coordMocks} from '../../../../__mocks__/kf-api-release-coordinator/mocks';
 import myProfile from '../../../../__mocks__/kf-api-study-creator/responses/myProfile.json';
 import Header from '../Header';
 import Routes from '../../../Routes';
@@ -13,7 +14,7 @@ jest.mock('auth0-js');
 it('renders correctly -- default stage (USER role)', async () => {
   const tree = render(
     <MockedProvider
-      mocks={mocks}
+      mocks={mocks.concat([coordMocks.allReleaseStudies])}
       resolvers={{
         Query: {
           myProfile: _ => myProfile.data.myProfile,
@@ -25,6 +26,7 @@ it('renders correctly -- default stage (USER role)', async () => {
       </MemoryRouter>
     </MockedProvider>,
   );
+  expect(tree.container).toMatchSnapshot();
 
   await wait(10);
 
@@ -61,7 +63,7 @@ it('renders correctly -- default stage (USER role)', async () => {
 
 it('renders correctly -- loading stage (USER role)', () => {
   const tree = render(
-    <MockedProvider mocks={mocks}>
+    <MockedProvider mocks={mocks.concat([coordMocks.allReleaseStudies])}>
       <MemoryRouter>
         <Header data={{loading: true}} />
       </MemoryRouter>
