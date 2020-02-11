@@ -33,7 +33,28 @@ it('renders study releases view correctly', async () => {
   expect(tree.container).toMatchSnapshot();
 });
 
-it('renders study releases view correctly --  showing empty view for non-admin user', async () => {
+it('renders study releases view correctly --  showing empty view when no release data', async () => {
+  const tree = render(
+    <MockedProvider
+      mocks={mocks.concat([coordMocks.getStudyReleasesEmpty])}
+      resolvers={{
+        Query: {
+          myProfile: _ => myProfile.data.myProfile,
+        },
+      }}
+    >
+      <MemoryRouter initialEntries={['/study/SD_8WX8QQ06/releases']}>
+        <Routes />
+      </MemoryRouter>
+    </MockedProvider>,
+  );
+  await wait(10);
+
+  expect(tree.container).toMatchSnapshot();
+  expect(tree.queryByText(/No release information found./i)).not.toBeNull();
+});
+
+it('renders study releases view correctly --  showing no access view for non-admin user', async () => {
   var regularUser = myProfile.data.myProfile;
   regularUser.roles = ['USER'];
   const tree = render(
