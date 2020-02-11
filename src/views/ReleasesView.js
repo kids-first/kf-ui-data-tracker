@@ -1,6 +1,11 @@
 import React from 'react';
 import {useQuery} from '@apollo/react-hooks';
-import {GET_STUDY_RELEASES, MY_PROFILE} from '../state/queries';
+import {Helmet} from 'react-helmet';
+import {
+  GET_STUDY_RELEASES,
+  GET_STUDY_BY_ID,
+  MY_PROFILE,
+} from '../state/queries';
 import {
   Container,
   Header,
@@ -11,12 +16,12 @@ import {
 } from 'semantic-ui-react';
 import ReleaseList from '../components/ReleaseList/ReleaseList';
 
-const ReleasesView = props => {
+const ReleasesView = ({match}) => {
   const getUser = useQuery(MY_PROFILE);
   const isBeta = !getUser.loading
     ? getUser.data.myProfile.roles.includes('BETA')
     : false;
-  const relayId = Buffer.from('StudyNode:' + props.match.params.kfId).toString(
+  const relayId = Buffer.from('StudyNode:' + match.params.kfId).toString(
     'base64',
   );
   const {data, error, loading} = useQuery(GET_STUDY_RELEASES, {
@@ -27,6 +32,14 @@ const ReleasesView = props => {
   });
 
   const study = data && data.study && data.study;
+
+  const {data: studyData} = useQuery(GET_STUDY_BY_ID, {
+    variables: {
+      kfId: match.params.kfId,
+    },
+  });
+  const studyByKfId = studyData && studyData.studyByKfId;
+  const studyName = studyByKfId ? 'for ' + studyByKfId.name : '';
 
   if (loading)
     return (
@@ -49,6 +62,11 @@ const ReleasesView = props => {
   if (error)
     return (
       <Container as={Segment} basic>
+        <Helmet>
+          <title>
+            {`KF Data Tracker - Study releases - Error ${match.params.kfId}`}
+          </title>
+        </Helmet>
         <Message
           negative
           icon="warning circle"
@@ -61,6 +79,9 @@ const ReleasesView = props => {
   if (!isBeta)
     return (
       <Container as={Segment} basic padded="very">
+        <Helmet>
+          <title>{`KF Data Tracker - Study releases ${studyName}`}</title>
+        </Helmet>
         <Header as="h2" disabled textAlign="center">
           <Icon name="ban" />
           You don’t have access to this page.
@@ -70,6 +91,9 @@ const ReleasesView = props => {
 
   return (
     <Container as={Segment} basic vertical>
+      <Helmet>
+        <title>{`KF Data Tracker - Study releases ${studyName}`}</title>
+      </Helmet>
       <Header as="h2" className="mt-6">
         Past Published Releases
       </Header>

@@ -14,6 +14,7 @@ const StudyInfoView = ({match, history}) => {
     fetchPolicy: 'network-only',
   });
   const studyByKfId = data && data.studyByKfId;
+  const studyName = studyByKfId ? 'for ' + studyByKfId.name : '';
   const user = useQuery(MY_PROFILE);
   const [updateStudy] = useMutation(UPDATE_STUDY);
 
@@ -58,9 +59,7 @@ const StudyInfoView = ({match, history}) => {
       <Container as={Segment} basic>
         <Helmet>
           <title>
-            {`KF Data Tracker - Study info - Error ${
-              studyByKfId ? 'for ' + studyByKfId.kfId : null
-            }`}
+            {`KF Data Tracker - Study info - Error ${match.params.kfId}`}
           </title>
         </Helmet>
         <Message
@@ -74,9 +73,7 @@ const StudyInfoView = ({match, history}) => {
   return (
     <Container as={Segment} basic vertical>
       <Helmet>
-        <title>{`KF Data Tracker - Study info ${
-          studyByKfId ? 'for ' + studyByKfId.name : null
-        }`}</title>
+        <title>{`KF Data Tracker - Study info ${studyName}`}</title>
       </Helmet>
       <NewStudyForm
         isAdmin={isAdmin}
