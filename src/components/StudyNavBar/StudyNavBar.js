@@ -26,10 +26,16 @@ const StudyNavBar = ({match, history, isBeta}) => {
       endString: 'logs',
     },
     {
+      tab: 'Status',
+      endString: 'status',
+    },
+    {
       tab: 'Releases',
       endString: 'releases',
     },
   ];
+  const betaTab = ['releases', 'status'];
+
   return (
     <Menu color="pink" secondary pointing>
       {navList.slice(0, isBeta ? 6 : 5).map((item, i) => (
@@ -43,7 +49,7 @@ const StudyNavBar = ({match, history, isBeta}) => {
           as={NavLink}
         >
           {item.tab}
-          {item.endString === 'releases' && isBeta && (
+          {betaTab.includes(item.endString) && isBeta && (
             <Label color="blue" size="mini">
               BETA
             </Label>

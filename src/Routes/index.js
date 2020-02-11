@@ -20,6 +20,7 @@ import {
   LogsView,
   LogoutView,
   ReleasesView,
+  StatusView,
 } from '../views';
 import DocumentRoutes from '../documents/routes';
 import TrackedRoute from './TrackedRoute';
@@ -52,6 +53,7 @@ const Routes = () => (
           path="/study/:kfId/releases"
           component={ReleasesView}
         />
+        <PrivateRoute exact path="/study/:kfId/status" component={StatusView} />
         <AdminRoute exact path="/tokens" component={TokensListView} />
         <AdminRoute
           exact
