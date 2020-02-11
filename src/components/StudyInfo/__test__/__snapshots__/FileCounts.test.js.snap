@@ -16,7 +16,7 @@ exports[`renders FileCounts in default stage 1`] = `
         class="grey file icon"
       />
       2
-       files
+       documents
     </a>
     <div
       class="item"
@@ -48,7 +48,7 @@ exports[`renders FileFileCounts with empty file list 1`] = `
         class="red file icon"
       />
       No
-       files
+       documents
     </a>
   </div>
 </div>

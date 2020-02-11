@@ -111,7 +111,7 @@ exports[`renders with files 1`] = `
           class="default text"
           role="alert"
         >
-          File type
+          Document type
         </div>
         <i
           aria-hidden="true"
@@ -1671,7 +1671,7 @@ exports[`renders with files 2`] = `
           class="default text"
           role="alert"
         >
-          File type
+          Document type
         </div>
         <i
           aria-hidden="true"

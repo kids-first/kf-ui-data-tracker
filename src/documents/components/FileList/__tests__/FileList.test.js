@@ -55,8 +55,8 @@ it('renders with files', async () => {
 
   await wait();
 
-  // Filter files by file type by clicking on the file type dropdown
-  const filterDropdown = tree.getByText(/File type/i);
+  // Filter files by file type by clicking on the document type dropdown
+  const filterDropdown = tree.getByText(/Document type/i);
   fireEvent.click(filterDropdown);
   await wait();
   const filterByFileType = tree.queryAllByText(/Other/i)[0];

@@ -26,9 +26,9 @@ it('renders ListFilterBar with files', async () => {
   await wait();
   expect(tree.container).toMatchSnapshot();
 
-  // Click on File type dropwdown
+  // Click on Document type dropwdown
   act(() => {
-    fireEvent.click(tree.getByText(/File type/));
+    fireEvent.click(tree.getByText(/Document type/));
   });
   await wait();
   expect(tree.container).toMatchSnapshot();

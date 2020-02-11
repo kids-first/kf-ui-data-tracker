@@ -152,7 +152,7 @@ exports[`deletes a file correctly 1`] = `
                 class="default text"
                 role="alert"
               >
-                File type
+                Document type
               </div>
               <i
                 aria-hidden="true"
@@ -618,7 +618,7 @@ exports[`deletes a file correctly 1`] = `
               aria-hidden="true"
               class="file outline icon"
             />
-            To upload Study Documents drag and drop a file here
+            Drag and drop a file to create a document or update an existing one
             <br />
             <small>
               or
@@ -801,7 +801,7 @@ exports[`deletes a file correctly 2`] = `
                 class="default text"
                 role="alert"
               >
-                File type
+                Document type
               </div>
               <i
                 aria-hidden="true"
@@ -1137,7 +1137,7 @@ exports[`deletes a file correctly 2`] = `
               aria-hidden="true"
               class="file outline icon"
             />
-            To upload Study Documents drag and drop a file here
+            Drag and drop a file to create a document or update an existing one
             <br />
             <small>
               or
@@ -1689,7 +1689,7 @@ exports[`renders ListFilterBar with files -- screen width 800 1`] = `
                   class="default text"
                   role="alert"
                 >
-                  File type
+                  Document type
                 </div>
                 <i
                   aria-hidden="true"
@@ -2139,7 +2139,7 @@ exports[`renders ListFilterBar with files -- screen width 800 1`] = `
               aria-hidden="true"
               class="file outline icon"
             />
-            To upload Study Documents drag and drop a file here
+            Drag and drop a file to create a document or update an existing one
             <br />
             <small>
               or
@@ -2322,7 +2322,7 @@ exports[`renders ListFilterBar with files -- screen width 1200 1`] = `
                 class="default text"
                 role="alert"
               >
-                File type
+                Document type
               </div>
               <i
                 aria-hidden="true"
@@ -2788,7 +2788,7 @@ exports[`renders ListFilterBar with files -- screen width 1200 1`] = `
               aria-hidden="true"
               class="file outline icon"
             />
-            To upload Study Documents drag and drop a file here
+            Drag and drop a file to create a document or update an existing one
             <br />
             <small>
               or
@@ -2971,7 +2971,7 @@ exports[`renders correctly 1`] = `
                 class="default text"
                 role="alert"
               >
-                File type
+                Document type
               </div>
               <i
                 aria-hidden="true"
@@ -3437,7 +3437,7 @@ exports[`renders correctly 1`] = `
               aria-hidden="true"
               class="file outline icon"
             />
-            To upload Study Documents drag and drop a file here
+            Drag and drop a file to create a document or update an existing one
             <br />
             <small>
               or
