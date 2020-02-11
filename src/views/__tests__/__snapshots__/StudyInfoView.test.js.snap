@@ -138,6 +138,17 @@ exports[`renders study info view as read-only -- USER user 1`] = `
           </a>
           <a
             class="item"
+            href="/study/SD_8WX8QQ06/status"
+          >
+            Status
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
+          <a
+            class="item"
             href="/study/SD_8WX8QQ06/releases"
           >
             Releases
@@ -509,6 +520,17 @@ exports[`renders study info view as read-only -- USER user 2`] = `
           </a>
           <a
             class="item"
+            href="/study/SD_8WX8QQ06/status"
+          >
+            Status
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
+          <a
+            class="item"
             href="/study/SD_8WX8QQ06/releases"
           >
             Releases
@@ -821,9 +843,9 @@ exports[`renders study info view correctly -- ADMIN user 1`] = `
           </a>
           <a
             class="item"
-            href="/study/SD_8WX8QQ06/releases"
+            href="/study/SD_8WX8QQ06/status"
           >
-            Releases
+            Status
           </a>
         </div>
       </div>
@@ -1094,6 +1116,17 @@ exports[`renders study info view correctly -- ADMIN user 2`] = `
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/status"
+          >
+            Status
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
           </a>
           <a
             class="item"
@@ -1635,6 +1668,17 @@ exports[`renders study info view correctly -- ADMIN user 3`] = `
           </a>
           <a
             class="item"
+            href="/study/SD_8WX8QQ06/status"
+          >
+            Status
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
+          <a
+            class="item"
             href="/study/SD_8WX8QQ06/releases"
           >
             Releases
@@ -2170,6 +2214,17 @@ exports[`renders study info view correctly -- ADMIN user 4`] = `
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/status"
+          >
+            Status
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
           </a>
           <a
             class="item"
@@ -2718,6 +2773,17 @@ exports[`renders study info view correctly -- ADMIN user 5`] = `
           </a>
           <a
             class="item"
+            href="/study/SD_8WX8QQ06/status"
+          >
+            Status
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
+          <a
+            class="item"
             href="/study/SD_8WX8QQ06/releases"
           >
             Releases
@@ -3246,6 +3312,17 @@ exports[`renders study info view correctly -- ADMIN user 6`] = `
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/status"
+          >
+            Status
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
           </a>
           <a
             class="item"
@@ -4017,6 +4094,17 @@ exports[`renders study info view with update study info error 1`] = `
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/status"
+          >
+            Status
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
           </a>
           <a
             class="item"

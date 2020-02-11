@@ -199,6 +199,17 @@ exports[`renders study event logs first 20, click to show more 1`] = `
           </a>
           <a
             class="item"
+            href="/study/SD_8WX8QQ06/status"
+          >
+            Status
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
+          <a
+            class="item"
             href="/study/SD_8WX8QQ06/releases"
           >
             Releases
@@ -1238,6 +1249,17 @@ exports[`renders study event logs first 20, click to show more 2`] = `
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/status"
+          >
+            Status
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
           </a>
           <a
             class="item"
@@ -2890,9 +2912,9 @@ exports[`renders study logs view correctly --  showing empty view for non-admin 
           </a>
           <a
             class="item"
-            href="/study/SD_8WX8QQ06/releases"
+            href="/study/SD_8WX8QQ06/status"
           >
-            Releases
+            Status
           </a>
         </div>
       </div>
@@ -3047,9 +3069,9 @@ exports[`renders study logs view correctly 1`] = `
           </a>
           <a
             class="item"
-            href="/study/SD_8WX8QQ06/releases"
+            href="/study/SD_8WX8QQ06/status"
           >
-            Releases
+            Status
           </a>
         </div>
       </div>
@@ -3321,6 +3343,17 @@ exports[`renders study logs view correctly 2`] = `
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/status"
+          >
+            Status
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
           </a>
           <a
             class="item"
@@ -4031,6 +4064,17 @@ exports[`renders study logs view correctly 3`] = `
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/status"
+          >
+            Status
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
           </a>
           <a
             class="item"

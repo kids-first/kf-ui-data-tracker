@@ -32,9 +32,9 @@ exports[`renders StudyNavBar correctly -- beta look 1`] = `
     </a>
     <a
       class="item"
-      href="/study/SD_8WX8QQ06/releases"
+      href="/study/SD_8WX8QQ06/status"
     >
-      Releases
+      Status
     </a>
   </div>
 </div>
@@ -72,9 +72,9 @@ exports[`renders StudyNavBar correctly -- default look 1`] = `
     </a>
     <a
       class="item"
-      href="/study/SD_8WX8QQ06/releases"
+      href="/study/SD_8WX8QQ06/status"
     >
-      Releases
+      Status
     </a>
   </div>
 </div>

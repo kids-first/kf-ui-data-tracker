@@ -199,6 +199,17 @@ exports[`edits an existing file correctly 1`] = `
           </a>
           <a
             class="item"
+            href="/study/SD_8WX8QQ06/status"
+          >
+            Status
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
+          <a
+            class="item"
             href="/study/SD_8WX8QQ06/releases"
           >
             Releases
@@ -1105,6 +1116,17 @@ exports[`edits an existing file correctly 2`] = `
           </a>
           <a
             class="item"
+            href="/study/SD_8WX8QQ06/status"
+          >
+            Status
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
+          <a
+            class="item"
             href="/study/SD_8WX8QQ06/releases"
           >
             Releases
@@ -1772,6 +1794,17 @@ exports[`edits an existing file correctly 3`] = `
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/status"
+          >
+            Status
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
           </a>
           <a
             class="item"
@@ -2445,6 +2478,17 @@ exports[`edits an existing file correctly 4`] = `
           </a>
           <a
             class="item"
+            href="/study/SD_8WX8QQ06/status"
+          >
+            Status
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
+          <a
+            class="item"
             href="/study/SD_8WX8QQ06/releases"
           >
             Releases
@@ -3115,6 +3159,17 @@ exports[`edits an existing file correctly 5`] = `
           </a>
           <a
             class="item"
+            href="/study/SD_8WX8QQ06/status"
+          >
+            Status
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
+          <a
+            class="item"
             href="/study/SD_8WX8QQ06/releases"
           >
             Releases
@@ -3782,6 +3837,17 @@ exports[`edits an existing file correctly 6`] = `
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/status"
+          >
+            Status
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
           </a>
           <a
             class="item"
