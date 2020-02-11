@@ -42,7 +42,7 @@ const UploadContainer = ({handleUpload}) => {
         handleUpload(e.dataTransfer.files[0]);
       }}
       handleSelectedFile={e => handleUpload(e.target.files[0])}
-      instructions="To upload Study Documents drag and drop a file here"
+      instructions="Drag and drop a file to create a document or update an existing one"
     />
   );
 };
