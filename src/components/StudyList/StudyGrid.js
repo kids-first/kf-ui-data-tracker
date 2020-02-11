@@ -36,7 +36,7 @@ const GridSkeleton = () => (
 const StudyGrid = ({studyList, loading, isAdmin}) => {
   if (loading) return <GridSkeleton />;
   return (
-    <Card.Group stackable itemsPerRow={4}>
+    <Card.Group stackable itemsPerRow={3}>
       {studyList.map((node, i) => (
         <StudyCard
           key={i}

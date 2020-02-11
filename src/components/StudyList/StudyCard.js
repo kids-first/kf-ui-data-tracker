@@ -76,7 +76,7 @@ const StudyCard = ({
                     files.length > 0 && requiredFileChanges < 1 ? 'grey' : 'red'
                   }
                 />
-                {files.length} Files
+                {files.length} documents
               </Link>
             }
           />
