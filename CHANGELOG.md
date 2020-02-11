@@ -1,4 +1,24 @@
-# Kids First Data Tracker Release 0.10.
+# Kids First Data Tracker Release 0.10.1
+
+## Features
+
+Add configuration view for admins
+
+### Summary
+
+Feature Emojis: ✨x5 ♻️x1
+Feature Labels: [feature](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/feature) x5 [refactor](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/refactor) x2
+
+### New features and changes
+
+- (#538) ✨ Add Release coordinator status page under each study - @XuTheBunny
+- (#574) ✨ Add configuration view - @dankolbman
+- (#572) ✨ Add file import button - @dankolbman
+- (#576) ✨ Paginate events list - @XuTheBunny
+- (#570) ✨ Allow users to specify and name research projects on creation - @XuTheBunny
+- (#573) ♻️ Sort deleted projects to bottom of list - @dankolbman
+
+# Kids First Data Tracker Release 0.10.0
 
 ## Features
 
@@ -16,7 +36,6 @@ Feature Labels: [feature](https://api.github.com/repos/kids-first/kf-ui-data-tra
 - (#560) 🔥 Remove BETA user checking from study info page - @XuTheBunny
 - (#553) ✨ Add page titles to all views - @XuTheBunny
 
-
 # Kids First Data Tracker Release 0.9.1
 
 ## Features
@@ -31,7 +50,6 @@ Feature Labels: [feature](https://api.github.com/repos/kids-first/kf-ui-data-tra
 ### New features and changes
 
 - (#557) 📈 Hotjar tracking script in head tag - @bdolly
-
 
 # Kids First Data Tracker Release 0.8.1
 
@@ -50,7 +68,6 @@ Feature Labels: [component](https://api.github.com/repos/kids-first/kf-ui-data-t
 - (#497) 📷 Improve Snapshot Coverage 3/3 - @XuTheBunny
 - (#500) 📷 Improve Snapshot Coverage 2/3 - @XuTheBunny
 - (#499) 📷 Improve Snapshot Coverage 1/3 - @XuTheBunny
-
 
 # Kids First Data Tracker Release 0.8.0
 
@@ -72,8 +89,8 @@ Feature Labels: [feature](https://api.github.com/repos/kids-first/kf-ui-data-tra
 - (#458) ✨ Updated Document Indicator - @bdolly
 - (#485) ✨ Feature document name validation - @bdolly
 - (#492) ✨ Feature version list item status tooltip - @bdolly
-- (#481) 💄 Re-style Study  List Item attributes  - @bdolly
-- (#491) ✨ Feature UserSnap widget  - @bdolly
+- (#481) 💄 Re-style Study List Item attributes - @bdolly
+- (#491) ✨ Feature UserSnap widget - @bdolly
 - (#487) ✨ Add step view for study info page with editing mode - @XuTheBunny
 - (#489) ✨ Edit Project modal - @dankolbman
 - (#486) 💄 Add user friendly time formats to TimeAgo on hover - @XuTheBunny
@@ -81,7 +98,6 @@ Feature Labels: [feature](https://api.github.com/repos/kids-first/kf-ui-data-tra
 - (#482) 🐛 Hide copy button for masked tokens - @dankolbman
 - (#473) ♻️ Refactor study list search by adding empty state and make kfId searchable - @XuTheBunny
 - (#468) ✨ Add event logs tab view for ADMIN user with type filter and auto refresh - @XuTheBunny
-
 
 # Kids First Data Tracker Release 0.7.0
 
@@ -100,7 +116,7 @@ Feature Labels: [feature](https://api.github.com/repos/kids-first/kf-ui-data-tra
 - (#466) ♻️ Refactor project button and link rendering - @XuTheBunny
 - (#465) ✨ Add Cavatica tab with Cavatica projects and create/link/unlink actions - @XuTheBunny
 - (#454) ♻️ Refactor create project and list project rendering - @XuTheBunny
-- (#452) ✨ Upload document flow re-visited  - @bdolly
+- (#452) ✨ Upload document flow re-visited - @bdolly
 - (#453) 💄 Display api error message at the bottom of the edit study modal - @XuTheBunny
 - (#447) ✨ Support markdown for study description - @XuTheBunny
 - (#446) 💄 Refactor study edit layout and add more fields - @XuTheBunny
@@ -113,7 +129,6 @@ Feature Labels: [feature](https://api.github.com/repos/kids-first/kf-ui-data-tra
 - (#435) ♻️ Refactor project list showing unlink button for admin user - @XuTheBunny
 - (#432) 🔧 Update env schema - @dankolbman
 - (#433) ✨ Add button to create first study for admins - @dankolbman
-
 
 # Kids First Data Tracker Release 0.6.0
 
@@ -151,7 +166,6 @@ Feature Labels: [feature](https://api.github.com/repos/kids-first/kf-ui-data-tra
 - (#384) 📝 Update README file with development and testing section - @XuTheBunny
 - (#388) ♻️ Fragments for study field, file fields, version fields, and creator fields - @XuTheBunny
 
-
 # Kids First Data Tracker Release 0.5.0
 
 ## Features
@@ -166,10 +180,10 @@ Feature Labels: [refactor](https://api.github.com/repos/kids-first/kf-ui-data-tr
 ### New features and changes
 
 - (#385) 💄 Study File List sort status of changes needed to the top - @XuTheBunny
-- (#369) ♻️  Replace Query component with HOC in study file list - @dankolbman
-- (#371) ♻️  Replace Query component with HOC in study list - @dankolbman
-- (#372) ♻️  Replace Query component with HOC in navbar - @dankolbman
-- (#374) ♻️  Add Token fragment - @dankolbman
+- (#369) ♻️ Replace Query component with HOC in study file list - @dankolbman
+- (#371) ♻️ Replace Query component with HOC in study list - @dankolbman
+- (#372) ♻️ Replace Query component with HOC in navbar - @dankolbman
+- (#374) ♻️ Add Token fragment - @dankolbman
 - (#379) 💄 Semantic - @dankolbman
 - (#382) 🔥 Semantic ui style cleanup - @XuTheBunny
 - (#327) 💄 Profile view bug fix and style updates - @XuTheBunny
@@ -178,12 +192,11 @@ Feature Labels: [refactor](https://api.github.com/repos/kids-first/kf-ui-data-tr
 - (#326) 🐛 Fix file type icon mismatch - @XuTheBunny
 - (#298) ✨ Redirect user back to the original requested page after login - @XuTheBunny
 - (#297) 💄 Refactor pagination styling - @bdolly
-- (#289) ♻️  Refactor upload verbiage - @bdolly
-- (#296)  ✨ Add "uploading" stage to submit button when uploading new file or new version - @XuTheBunny
+- (#289) ♻️ Refactor upload verbiage - @bdolly
+- (#296) ✨ Add "uploading" stage to submit button when uploading new file or new version - @XuTheBunny
 - (#294) ✨ Add profile dropdown to header - @XuTheBunny
 - (#288) ✨ Add approval status dropdown to file annotation modal - @XuTheBunny
 - (#292) ✨ Conditional rendering notification bar on top of file list - @XuTheBunny
-
 
 # Kids First Data Tracker Release 0.4.0
 
@@ -198,18 +211,17 @@ Feature Labels: [refactor](https://api.github.com/repos/kids-first/kf-ui-data-tr
 
 ### New features and changes
 
-- (#285) ♻️  Refactor document edit modal - @XuTheBunny
+- (#285) ♻️ Refactor document edit modal - @XuTheBunny
 - (#284) ✨ Add version detail modal - @XuTheBunny
 - (#283) ✨ Study subscriptions manager - @dankolbman
-- (#282) ♻️  Refactor version upload and annotation modal style - @XuTheBunny
-- (#281) ♻️  Refactor version list component - @XuTheBunny
+- (#282) ♻️ Refactor version upload and annotation modal style - @XuTheBunny
+- (#281) ♻️ Refactor version list component - @XuTheBunny
 - (#274) ✨ Add user profile page - @dankolbman
 - (#280) ♻️ Refactor a vatar component taking creator data - @XuTheBunny
-- (#279) ♻️  Refactor badge component taking version state data - @XuTheBunny
+- (#279) ♻️ Refactor badge component taking version state data - @XuTheBunny
 - (#273) ✨ Add new version flow - @dankolbman
 - (#272) 🐛 Multistep upload - @dankolbman
 - (#265) 🚚 Rename .jsx files to .js - @dankolbman
-
 
 # Kids First Data Tracker Release 0.3.0
 
@@ -225,10 +237,10 @@ Feature Labels: [refactor](https://api.github.com/repos/kids-first/kf-ui-data-tr
 ### New features and changes
 
 - (#262) ✨ Add logout button - @dankolbman
-- (#222) ♻️  Refactor study header - @XuTheBunny
-- (#231) ✨ Add pagination on file list  - @XuTheBunny
+- (#222) ♻️ Refactor study header - @XuTheBunny
+- (#231) ✨ Add pagination on file list - @XuTheBunny
 - (#237) ✨ Add modal view for version upload and annotation - @XuTheBunny
-- (#260) ♻️  Refactor editor and upload container - @XuTheBunny
+- (#260) ♻️ Refactor editor and upload container - @XuTheBunny
 - (#258) ✨ Add general svg icon rendering component - @XuTheBunny
 - (#261) 💄Refactor study header style in grid layout - @XuTheBunny
 - (#255) ✨ Add modal component - @XuTheBunny
@@ -243,9 +255,8 @@ Feature Labels: [refactor](https://api.github.com/repos/kids-first/kf-ui-data-tr
 - (#233) 🔥 Remove unused file - @dankolbman
 - (#235) 🐛 Update date compare function - @XuTheBunny
 - (#234) ✅ Global Date.now() mocking - @dankolbman
-- (#218) ♻️  Study File List improvements - @bdolly
+- (#218) ♻️ Study File List improvements - @bdolly
 - (#230) ✅ Functional testing for annotating - @dankolbman
-
 
 # Kids First Data Tracker Release 0.2.0
 
