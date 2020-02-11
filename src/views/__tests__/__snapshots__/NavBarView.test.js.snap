@@ -310,6 +310,12 @@ exports[`renders study nav bar with error in study creation 1`] = `
           >
             Logs
           </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/releases"
+          >
+            Releases
+          </a>
         </div>
       </div>
     </section>
@@ -593,6 +599,17 @@ exports[`renders study nav bar with error in study creation 2`] = `
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/releases"
+          >
+            Releases
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
           </a>
         </div>
       </div>
@@ -1116,6 +1133,17 @@ exports[`renders study nav bar with error in study creation 3`] = `
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/releases"
+          >
+            Releases
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
           </a>
         </div>
       </div>
@@ -1870,6 +1898,17 @@ exports[`renders study nav bar with error in study creation 4`] = `
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/releases"
+          >
+            Releases
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
           </a>
         </div>
       </div>

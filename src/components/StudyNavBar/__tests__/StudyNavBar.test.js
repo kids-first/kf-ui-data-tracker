@@ -11,3 +11,17 @@ it('renders StudyNavBar correctly -- default look', () => {
   );
   expect(tree.container).toMatchSnapshot();
 });
+
+it('renders StudyNavBar correctly -- beta look', () => {
+  const tree = render(
+    <MemoryRouter initialEntries={['/study/SD_8WX8QQ06/documents']}>
+      <Route
+        exact
+        path="/study/:kfId/documents"
+        component={StudyNavBar}
+        isBeta
+      />
+    </MemoryRouter>,
+  );
+  expect(tree.container).toMatchSnapshot();
+});

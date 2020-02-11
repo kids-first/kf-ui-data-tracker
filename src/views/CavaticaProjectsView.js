@@ -43,7 +43,6 @@ const CavaticaProjectsView = () => {
   });
 
   const [importVolumeFiles] = useMutation(IMPORT_VOLUME_FILES);
-  console.log(importVolumeFiles);
 
   const isAdmin =
     !user.loading && user.data.myProfile

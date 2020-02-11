@@ -25,6 +25,7 @@ import {
   FILE_DOWNLOAD_URL,
 } from '../../src/documents/mutations';
 import allStudies from './responses/allStudies';
+import allStudies_empty from './responses/allStudies_empty';
 import studyByKfId from './responses/studyByKfId.json';
 import studyByKfId_refetch from './responses/studyByKfId_refetch.json';
 import studyByKfId_event_err from './responses/studyByKfId_event_err.json';
@@ -556,5 +557,17 @@ export const mocks = [
       },
     },
     result: allEvents_40,
+  },
+  {
+    request: {
+      query: ALL_STUDIES,
+    },
+    error: new Error('Failed to fetch study information'),
+  },
+  {
+    request: {
+      query: ALL_STUDIES,
+    },
+    result: allStudies_empty,
   },
 ];

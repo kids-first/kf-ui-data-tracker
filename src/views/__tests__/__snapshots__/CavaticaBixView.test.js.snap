@@ -137,6 +137,12 @@ exports[`renders study Cavatica projects view -- empty view for regular user 1`]
           >
             Logs
           </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/releases"
+          >
+            Releases
+          </a>
         </div>
       </div>
     </section>
@@ -401,6 +407,17 @@ exports[`renders study Cavatica projects view -- shows an error 1`] = `
           >
             Logs
           </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/releases"
+          >
+            Releases
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -549,6 +566,12 @@ exports[`renders study Cavatica projects view correctly 1`] = `
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/releases"
+          >
+            Releases
           </a>
         </div>
       </div>
@@ -820,6 +843,17 @@ exports[`renders study Cavatica projects view correctly 2`] = `
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/releases"
+          >
+            Releases
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
           </a>
         </div>
       </div>
@@ -1342,6 +1376,17 @@ exports[`renders study Cavatica projects view correctly 3`] = `
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/releases"
+          >
+            Releases
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
           </a>
         </div>
       </div>
@@ -1992,6 +2037,17 @@ exports[`renders study Cavatica projects view correctly 4`] = `
           >
             Logs
           </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/releases"
+          >
+            Releases
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -2640,6 +2696,17 @@ exports[`renders study Cavatica projects view correctly 5`] = `
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/releases"
+          >
+            Releases
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
           </a>
         </div>
       </div>
@@ -3599,6 +3666,17 @@ exports[`renders study Cavatica projects view correctly 6`] = `
           >
             Logs
           </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/releases"
+          >
+            Releases
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -4556,6 +4634,17 @@ exports[`renders study Cavatica projects view correctly 7`] = `
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/releases"
+          >
+            Releases
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
           </a>
         </div>
       </div>
@@ -5515,6 +5604,17 @@ exports[`renders study Cavatica projects view correctly 8`] = `
           >
             Logs
           </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/releases"
+          >
+            Releases
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -6185,6 +6285,17 @@ exports[`renders study Cavatica projects view correctly 9`] = `
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/releases"
+          >
+            Releases
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
           </a>
         </div>
       </div>
@@ -6857,6 +6968,17 @@ exports[`renders study Cavatica projects view correctly 10`] = `
           >
             Logs
           </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/releases"
+          >
+            Releases
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -7525,6 +7647,17 @@ exports[`renders study Cavatica projects view correctly 11`] = `
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/releases"
+          >
+            Releases
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
           </a>
         </div>
       </div>
@@ -8438,6 +8571,17 @@ exports[`renders study Cavatica projects view correctly 12`] = `
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/releases"
+          >
+            Releases
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
           </a>
         </div>
       </div>
@@ -9439,6 +9583,17 @@ exports[`renders study Cavatica projects view correctly 13`] = `
           >
             Logs
           </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/releases"
+          >
+            Releases
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -10104,6 +10259,17 @@ exports[`renders study Cavatica projects view correctly 14`] = `
           >
             Logs
           </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/releases"
+          >
+            Releases
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -10766,6 +10932,17 @@ exports[`renders study Cavatica projects view correctly with warning 1`] = `
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/releases"
+          >
+            Releases
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
           </a>
         </div>
       </div>

@@ -1,0 +1,72 @@
+{
+  "data": {
+    "allStudies": {
+      "edges": [
+        {
+          "node": {
+            "id": "U3R1ZHlOb2RlOlNEX1ZUVFNIV1Y0",
+            "kfId": "SD_I1L92W57",
+            "releases": {"edges": [], "__typename": "ReleaseNodeConnection"},
+            "__typename": "StudyNode"
+          },
+          "__typename": "StudyNodeEdge"
+        },
+        {
+          "node": {
+            "id": "U3R1ZHlOb2RlOlNEXzQ2UlI5WlI2",
+            "kfId": "SD_SG5N41K8",
+            "releases": {
+              "edges": [
+                {
+                  "node": {
+                    "id": "UmVsZWFzZU5vZGU6UkVfNkM4WVQxWTQ=",
+                    "kfId": "RE_6C8YT1Y4",
+                    "name": "Chung Prod Staging",
+                    "description": "",
+                    "state": "published",
+                    "author": "bailey",
+                    "version": "3.60.0",
+                    "createdAt": "2019-10-30T17:31:00.425515+00:00",
+                    "__typename": "ReleaseNode"
+                  },
+                  "__typename": "ReleaseNodeEdge"
+                }
+              ],
+              "__typename": "ReleaseNodeConnection"
+            },
+            "__typename": "StudyNode"
+          },
+          "__typename": "StudyNodeEdge"
+        },
+        {
+          "node": {
+            "id": "U3R1ZHlOb2RlOlNEX01FMFdNRTBX",
+            "kfId": "SD_0YYP5ZEN",
+            "releases": {
+              "edges": [
+                {
+                  "node": {
+                    "id": "UmVsZWFzZU5vZGU6UkVfMUc4MVJSUTA=",
+                    "kfId": "RE_1G81RRQ0",
+                    "name": "Test Publish",
+                    "description": "",
+                    "state": "published",
+                    "author": "daniel",
+                    "version": "3.63.0",
+                    "createdAt": "2019-11-04T19:52:32.930529+00:00",
+                    "__typename": "ReleaseNode"
+                  },
+                  "__typename": "ReleaseNodeEdge"
+                }
+              ],
+              "__typename": "ReleaseNodeConnection"
+            },
+            "__typename": "StudyNode"
+          },
+          "__typename": "StudyNodeEdge"
+        }
+      ],
+      "__typename": "StudyNodeConnection"
+    }
+  }
+}

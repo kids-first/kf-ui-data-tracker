@@ -136,6 +136,17 @@ exports[`renders study info view as read-only -- USER user 1`] = `
           >
             Logs
           </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/releases"
+          >
+            Releases
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -496,6 +507,17 @@ exports[`renders study info view as read-only -- USER user 2`] = `
           >
             Logs
           </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/releases"
+          >
+            Releases
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -797,6 +819,12 @@ exports[`renders study info view correctly -- ADMIN user 1`] = `
           >
             Logs
           </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/releases"
+          >
+            Releases
+          </a>
         </div>
       </div>
     </section>
@@ -1066,6 +1094,17 @@ exports[`renders study info view correctly -- ADMIN user 2`] = `
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/releases"
+          >
+            Releases
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
           </a>
         </div>
       </div>
@@ -1594,6 +1633,17 @@ exports[`renders study info view correctly -- ADMIN user 3`] = `
           >
             Logs
           </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/releases"
+          >
+            Releases
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -2120,6 +2170,17 @@ exports[`renders study info view correctly -- ADMIN user 4`] = `
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/releases"
+          >
+            Releases
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
           </a>
         </div>
       </div>
@@ -2655,6 +2716,17 @@ exports[`renders study info view correctly -- ADMIN user 5`] = `
           >
             Logs
           </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/releases"
+          >
+            Releases
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -3174,6 +3246,17 @@ exports[`renders study info view correctly -- ADMIN user 6`] = `
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/releases"
+          >
+            Releases
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
           </a>
         </div>
       </div>
@@ -3934,6 +4017,17 @@ exports[`renders study info view with update study info error 1`] = `
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/releases"
+          >
+            Releases
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
           </a>
         </div>
       </div>

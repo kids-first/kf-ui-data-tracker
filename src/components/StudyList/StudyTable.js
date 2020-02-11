@@ -1,7 +1,7 @@
 import React from 'react';
 import TimeAgo from 'react-timeago';
 import {Link, withRouter} from 'react-router-dom';
-import {Table, Icon} from 'semantic-ui-react';
+import {Table, Icon, Popup} from 'semantic-ui-react';
 import FileCounts from '../StudyInfo/FileCounts';
 import CavaticaCounts from '../StudyInfo/CavaticaCounts';
 import CavaticaLogo from '../../assets/CavaticaLogo';
@@ -16,6 +16,7 @@ import {
  * Renders a single row in the table
  */
 const TableValue = ({row, col, title}) => {
+  const coordUrl = process.env.REACT_APP_COORD_UI + 'releases/';
   switch (col) {
     case 'files':
       return <FileCounts files={row[col].edges} title={title} hideIcon />;
@@ -45,6 +46,37 @@ const TableValue = ({row, col, title}) => {
             trackedStudyFields.length +
             ' complete'}
         </Link>
+      );
+    case 'release':
+      const verson = row[col].node ? row[col].node.version : 'Not Published';
+      const time = row[col].node
+        ? longDate(new Date(row[col].node.createdAt))
+        : null;
+      const kfId = row[col].node ? row[col].node.kfId : '';
+      return (
+        <Popup
+          inverted
+          position="top center"
+          content={'Published on ' + time}
+          disabled={!time}
+          trigger={
+            <>
+              {verson === 'Not Published' ? (
+                <span className="text-gray">{verson}</span>
+              ) : (
+                <a
+                  href={`${coordUrl + kfId}`}
+                  onClick={e => e.stopPropagation()}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  {verson + ' '}
+                  <Icon link size="small" name="external" />
+                </a>
+              )}
+            </>
+          }
+        />
       );
     default:
       return row[col];
@@ -121,6 +153,13 @@ const StudyTable = ({
           <Table.HeaderCell key={text}>
             <Icon name="file" color="grey" />
             Files
+          </Table.HeaderCell>
+        );
+      case 'release':
+        return (
+          <Table.HeaderCell key={text}>
+            <Icon name="tag" color="grey" />
+            Latest Release
           </Table.HeaderCell>
         );
       default:

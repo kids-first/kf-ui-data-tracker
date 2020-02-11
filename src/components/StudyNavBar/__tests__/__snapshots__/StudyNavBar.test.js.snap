@@ -1,5 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`renders StudyNavBar correctly -- beta look 1`] = `
+<div>
+  <div
+    class="ui pink pointing secondary menu"
+  >
+    <a
+      class="item"
+      href="/study/SD_8WX8QQ06/basic-info/info"
+    >
+      Basic Info
+    </a>
+    <a
+      aria-current="page"
+      class="active item active"
+      href="/study/SD_8WX8QQ06/documents"
+    >
+      Documents
+    </a>
+    <a
+      class="item"
+      href="/study/SD_8WX8QQ06/cavatica"
+    >
+      Cavatica
+    </a>
+    <a
+      class="item"
+      href="/study/SD_8WX8QQ06/logs"
+    >
+      Logs
+    </a>
+    <a
+      class="item"
+      href="/study/SD_8WX8QQ06/releases"
+    >
+      Releases
+    </a>
+  </div>
+</div>
+`;
+
 exports[`renders StudyNavBar correctly -- default look 1`] = `
 <div>
   <div
@@ -29,6 +69,12 @@ exports[`renders StudyNavBar correctly -- default look 1`] = `
       href="/study/SD_8WX8QQ06/logs"
     >
       Logs
+    </a>
+    <a
+      class="item"
+      href="/study/SD_8WX8QQ06/releases"
+    >
+      Releases
     </a>
   </div>
 </div>
