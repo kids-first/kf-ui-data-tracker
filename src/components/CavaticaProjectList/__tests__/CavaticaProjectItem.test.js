@@ -87,15 +87,6 @@ it('renders cavatica project item - disable cavatica link', () => {
   expect(tree.container).toMatchSnapshot();
 });
 
-it('renders cavatica project item - hide study link', () => {
-  const tree = render(
-    <MemoryRouter initialEntries={['/cavatica-projects']}>
-      <CavaticaProjectItem projectNode={project.node} hideStudy={true} />
-    </MemoryRouter>,
-  );
-  expect(tree.container).toMatchSnapshot();
-});
-
 it('renders import volume confirm - button', () => {
   const mock = jest.fn().mockResolvedValue({data: null});
   const tree = render(

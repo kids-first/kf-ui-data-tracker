@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router-dom';
 import {
   List,
   Icon,
@@ -50,18 +49,6 @@ const ProjectLink = ({projectNode, disableLink}) => {
         <Icon link size="small" name="external" />
       </List.Header>
     );
-  }
-};
-
-const StudyLink = ({study}) => {
-  if (study) {
-    return (
-      <Link to={`/study/${study.kfId}/basic-info/info`}>
-        {study.shortName || study.name || study.kfId}
-      </Link>
-    );
-  } else {
-    return 'Not linked';
   }
 };
 
@@ -247,7 +234,6 @@ const CavaticaProjectItem = ({
   unlinkProject,
   importVolumeFiles,
   disableLink,
-  hideStudy,
   editable = true,
 }) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -293,7 +279,6 @@ const CavaticaProjectItem = ({
       <>
         <List.Item>
           <List.Content floated="right">
-            {!hideStudy && <StudyLink study={projectNode.study} />}
             {projectNode.projectType === 'DEL' && importVolumeFiles && (
               <ImportVolumeButton
                 importVolumeFiles={importVolumeFiles}
@@ -359,8 +344,6 @@ CavaticaProjectItem.propTypes = {
   unlinkProject: PropTypes.func,
   /** If disable the external link to Cavatica on project name */
   disableLink: PropTypes.bool,
-  /** For linked project if to hide the study link */
-  hideStudy: PropTypes.bool,
   /** Whether or not to allow the edit modal to be spawned */
   editable: PropTypes.bool,
 };
