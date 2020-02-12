@@ -572,7 +572,7 @@ exports[`renders cavatica project item - show unlink project button 3`] = `
 exports[`renders import volume button - modal open 1`] = `
 <div>
   <button
-    class="ui mini icon primary left labeled button"
+    class="ui mini icon primary left labeled button ml-10"
   >
     <i
       aria-hidden="true"
@@ -586,7 +586,7 @@ exports[`renders import volume button - modal open 1`] = `
 exports[`renders import volume confirm - button 1`] = `
 <div>
   <button
-    class="ui mini icon primary left labeled button"
+    class="ui mini icon primary left labeled button ml-10"
   >
     <i
       aria-hidden="true"

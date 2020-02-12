@@ -82,7 +82,7 @@ exports[`renders study table correctly 1`] = `
             aria-hidden="true"
             class="grey file icon"
           />
-          Files
+          Documents
         </th>
         <th
           class=""
@@ -185,7 +185,7 @@ exports[`renders study table correctly 1`] = `
               role="listitem"
             >
               1
-               files
+               documents
             </a>
             <div
               class="item"
@@ -290,7 +290,7 @@ exports[`renders study table correctly 1`] = `
               role="listitem"
             >
               No
-               files
+               documents
             </a>
           </div>
         </td>
@@ -385,7 +385,7 @@ exports[`renders study table correctly 1`] = `
               role="listitem"
             >
               No
-               files
+               documents
             </a>
           </div>
         </td>
@@ -480,7 +480,7 @@ exports[`renders study table correctly 1`] = `
               role="listitem"
             >
               No
-               files
+               documents
             </a>
           </div>
         </td>
@@ -609,7 +609,7 @@ exports[`renders study table for ADMIN role 1`] = `
             aria-hidden="true"
             class="grey file icon"
           />
-          Files
+          Documents
         </th>
         <th
           class=""
@@ -713,7 +713,7 @@ exports[`renders study table for ADMIN role 1`] = `
               role="listitem"
             >
               1
-               files
+               documents
             </a>
             <div
               class="item"
@@ -819,7 +819,7 @@ exports[`renders study table for ADMIN role 1`] = `
               role="listitem"
             >
               No
-               files
+               documents
             </a>
           </div>
         </td>
@@ -915,7 +915,7 @@ exports[`renders study table for ADMIN role 1`] = `
               role="listitem"
             >
               No
-               files
+               documents
             </a>
           </div>
         </td>
@@ -1011,7 +1011,7 @@ exports[`renders study table for ADMIN role 1`] = `
               role="listitem"
             >
               No
-               files
+               documents
             </a>
           </div>
         </td>
@@ -1158,7 +1158,7 @@ exports[`renders study table without excluded columns passed to props 1`] = `
             aria-hidden="true"
             class="grey file icon"
           />
-          Files
+          Documents
         </th>
         <th
           class=""
@@ -1281,7 +1281,7 @@ exports[`renders study table without excluded columns passed to props 1`] = `
               role="listitem"
             >
               1
-               files
+               documents
             </a>
             <div
               class="item"
@@ -1406,7 +1406,7 @@ exports[`renders study table without excluded columns passed to props 1`] = `
               role="listitem"
             >
               No
-               files
+               documents
             </a>
           </div>
         </td>
@@ -1521,7 +1521,7 @@ exports[`renders study table without excluded columns passed to props 1`] = `
               role="listitem"
             >
               No
-               files
+               documents
             </a>
           </div>
         </td>
@@ -1636,7 +1636,7 @@ exports[`renders study table without excluded columns passed to props 1`] = `
               role="listitem"
             >
               No
-               files
+               documents
             </a>
           </div>
         </td>

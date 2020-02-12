@@ -141,7 +141,7 @@ const ListFilterBar = ({fileList, filteredList}) => {
               selectOnBlur={false}
               value={typeFilterStatus}
               options={typeOptions}
-              placeholder="File type"
+              placeholder="Document type"
               onChange={(e, {value}) => {
                 setTypeFilterStatus(value);
               }}
@@ -230,7 +230,7 @@ const ListFilterBar = ({fileList, filteredList}) => {
               selectOnBlur={false}
               value={typeFilterStatus}
               options={typeOptions}
-              placeholder="File type"
+              placeholder="Document type"
               onChange={(e, {value}) => {
                 setTypeFilterStatus(value);
               }}
@@ -305,7 +305,7 @@ const ListFilterBar = ({fileList, filteredList}) => {
             selectOnBlur={false}
             value={typeFilterStatus}
             options={typeOptions}
-            placeholder="File type"
+            placeholder="Document type"
             onChange={(e, {value}) => {
               setTypeFilterStatus(value);
             }}

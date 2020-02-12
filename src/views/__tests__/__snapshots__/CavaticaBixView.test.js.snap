@@ -896,7 +896,7 @@ exports[`renders study Cavatica projects view correctly 2`] = `
             class="right floated content"
           >
             <button
-              class="ui mini icon primary left labeled button"
+              class="ui mini icon primary left labeled button ml-10"
             >
               <i
                 aria-hidden="true"
@@ -1429,7 +1429,7 @@ exports[`renders study Cavatica projects view correctly 3`] = `
             class="right floated content"
           >
             <button
-              class="ui mini icon primary left labeled button"
+              class="ui mini icon primary left labeled button ml-10"
             >
               <i
                 aria-hidden="true"
@@ -2089,7 +2089,7 @@ exports[`renders study Cavatica projects view correctly 4`] = `
             class="right floated content"
           >
             <button
-              class="ui mini icon primary left labeled button"
+              class="ui mini icon primary left labeled button ml-10"
             >
               <i
                 aria-hidden="true"
@@ -2749,7 +2749,7 @@ exports[`renders study Cavatica projects view correctly 5`] = `
             class="right floated content"
           >
             <button
-              class="ui mini icon primary left labeled button"
+              class="ui mini icon primary left labeled button ml-10"
             >
               <i
                 aria-hidden="true"
@@ -3718,7 +3718,7 @@ exports[`renders study Cavatica projects view correctly 6`] = `
             class="right floated content"
           >
             <button
-              class="ui mini icon primary left labeled button"
+              class="ui mini icon primary left labeled button ml-10"
             >
               <i
                 aria-hidden="true"
@@ -4687,7 +4687,7 @@ exports[`renders study Cavatica projects view correctly 7`] = `
             class="right floated content"
           >
             <button
-              class="ui mini icon primary left labeled button"
+              class="ui mini icon primary left labeled button ml-10"
             >
               <i
                 aria-hidden="true"
@@ -5656,7 +5656,7 @@ exports[`renders study Cavatica projects view correctly 8`] = `
             class="right floated content"
           >
             <button
-              class="ui mini icon primary left labeled button"
+              class="ui mini icon primary left labeled button ml-10"
             >
               <i
                 aria-hidden="true"
@@ -6338,7 +6338,7 @@ exports[`renders study Cavatica projects view correctly 9`] = `
             class="right floated content"
           >
             <button
-              class="ui mini icon primary left labeled button"
+              class="ui mini icon primary left labeled button ml-10"
             >
               <i
                 aria-hidden="true"
@@ -7020,7 +7020,7 @@ exports[`renders study Cavatica projects view correctly 10`] = `
             class="right floated content"
           >
             <button
-              class="ui mini icon primary left labeled button"
+              class="ui mini icon primary left labeled button ml-10"
             >
               <i
                 aria-hidden="true"
@@ -7700,7 +7700,7 @@ exports[`renders study Cavatica projects view correctly 11`] = `
             class="right floated content"
           >
             <button
-              class="ui mini icon primary left labeled button"
+              class="ui mini icon primary left labeled button ml-10"
             >
               <i
                 aria-hidden="true"
@@ -8624,7 +8624,7 @@ exports[`renders study Cavatica projects view correctly 12`] = `
             class="right floated content"
           >
             <button
-              class="ui mini icon primary left labeled button"
+              class="ui mini icon primary left labeled button ml-10"
             >
               <i
                 aria-hidden="true"
@@ -9635,7 +9635,7 @@ exports[`renders study Cavatica projects view correctly 13`] = `
             class="right floated content"
           >
             <button
-              class="ui mini icon primary left labeled button"
+              class="ui mini icon primary left labeled button ml-10"
             >
               <i
                 aria-hidden="true"
@@ -10311,7 +10311,7 @@ exports[`renders study Cavatica projects view correctly 14`] = `
             class="right floated content"
           >
             <button
-              class="ui mini icon primary left labeled button"
+              class="ui mini icon primary left labeled button ml-10"
             >
               <i
                 aria-hidden="true"

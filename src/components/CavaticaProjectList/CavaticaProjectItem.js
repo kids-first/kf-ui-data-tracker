@@ -150,6 +150,7 @@ export const ImportVolumeButton = ({importVolumeFiles, projectNode}) => {
     <>
       <Button
         primary
+        className="ml-10"
         icon={<Icon name="cloud download" />}
         content="Import Volume"
         labelPosition="left"

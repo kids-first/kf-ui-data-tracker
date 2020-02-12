@@ -361,7 +361,7 @@ exports[`edits an existing file correctly 1`] = `
                   class="default text"
                   role="alert"
                 >
-                  File type
+                  Document type
                 </div>
                 <i
                   aria-hidden="true"
@@ -827,7 +827,7 @@ exports[`edits an existing file correctly 1`] = `
                 aria-hidden="true"
                 class="file outline icon"
               />
-              To upload Study Documents drag and drop a file here
+              Drag and drop a file to create a document or update an existing one
               <br />
               <small>
                 or

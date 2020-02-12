@@ -152,7 +152,7 @@ const StudyTable = ({
         return (
           <Table.HeaderCell key={text}>
             <Icon name="file" color="grey" />
-            Files
+            Documents
           </Table.HeaderCell>
         );
       case 'release':

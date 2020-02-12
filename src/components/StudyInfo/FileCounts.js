@@ -30,7 +30,7 @@ const FileCounts = ({files, title, history, hideIcon}) => {
             color={files && files.length > 0 ? 'grey' : 'red'}
           />
         )}
-        {files.length > 0 ? files.length : 'No'} files
+        {files.length > 0 ? files.length : 'No'} documents
       </List.Item>
       {Object.keys(versionState)
         .slice(0, 4)

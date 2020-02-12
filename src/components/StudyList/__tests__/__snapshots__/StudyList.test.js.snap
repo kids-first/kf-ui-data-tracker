@@ -60,7 +60,7 @@ exports[`renders study grid correctly 1`] = `
         class="column"
       >
         <div
-          class="ui stackable four cards"
+          class="ui stackable three cards"
         >
           <div
             class="ui red card"
@@ -103,7 +103,7 @@ exports[`renders study grid correctly 1`] = `
                   class="grey file icon"
                 />
                 1
-                 Files
+                 documents
               </a>
               <a
                 href="/study/SD_8WX8QQ06/cavatica"
@@ -180,7 +180,7 @@ exports[`renders study grid correctly 1`] = `
                   class="red file icon"
                 />
                 0
-                 Files
+                 documents
               </a>
               <a
                 href="/study/SD_I1L92W57/cavatica"
@@ -257,7 +257,7 @@ exports[`renders study grid correctly 1`] = `
                   class="red file icon"
                 />
                 0
-                 Files
+                 documents
               </a>
               <a
                 href="/study/SD_SG5N41K8/cavatica"
@@ -334,7 +334,7 @@ exports[`renders study grid correctly 1`] = `
                   class="red file icon"
                 />
                 0
-                 Files
+                 documents
               </a>
               <a
                 href="/study/SD_0YYP5ZEN/cavatica"
@@ -448,7 +448,7 @@ exports[`renders study grid for ADMIN role 1`] = `
         class="column"
       >
         <div
-          class="ui stackable four cards"
+          class="ui stackable three cards"
         >
           <div
             class="ui red card"
@@ -491,7 +491,7 @@ exports[`renders study grid for ADMIN role 1`] = `
                   class="grey file icon"
                 />
                 1
-                 Files
+                 documents
               </a>
               <a
                 href="/study/SD_8WX8QQ06/cavatica"
@@ -568,7 +568,7 @@ exports[`renders study grid for ADMIN role 1`] = `
                   class="red file icon"
                 />
                 0
-                 Files
+                 documents
               </a>
               <a
                 href="/study/SD_I1L92W57/cavatica"
@@ -645,7 +645,7 @@ exports[`renders study grid for ADMIN role 1`] = `
                   class="red file icon"
                 />
                 0
-                 Files
+                 documents
               </a>
               <a
                 href="/study/SD_SG5N41K8/cavatica"
@@ -722,7 +722,7 @@ exports[`renders study grid for ADMIN role 1`] = `
                   class="red file icon"
                 />
                 0
-                 Files
+                 documents
               </a>
               <a
                 href="/study/SD_0YYP5ZEN/cavatica"
@@ -836,7 +836,7 @@ exports[`renders study grid for ADMIN role 2`] = `
         class="column"
       >
         <div
-          class="ui stackable four cards"
+          class="ui stackable three cards"
         >
           <div
             class="ui red card"
@@ -874,7 +874,7 @@ exports[`renders study grid for ADMIN role 2`] = `
                     class="grey file icon"
                   />
                   1
-                   files
+                   documents
                 </a>
                 <div
                   class="item"
@@ -974,7 +974,7 @@ exports[`renders study grid for ADMIN role 2`] = `
                   class="red file icon"
                 />
                 0
-                 Files
+                 documents
               </a>
               <a
                 href="/study/SD_I1L92W57/cavatica"
@@ -1051,7 +1051,7 @@ exports[`renders study grid for ADMIN role 2`] = `
                   class="red file icon"
                 />
                 0
-                 Files
+                 documents
               </a>
               <a
                 href="/study/SD_SG5N41K8/cavatica"
@@ -1128,7 +1128,7 @@ exports[`renders study grid for ADMIN role 2`] = `
                   class="red file icon"
                 />
                 0
-                 Files
+                 documents
               </a>
               <a
                 href="/study/SD_0YYP5ZEN/cavatica"
@@ -1242,7 +1242,7 @@ exports[`renders study grid for ADMIN role 3`] = `
         class="column"
       >
         <div
-          class="ui stackable four cards"
+          class="ui stackable three cards"
         >
           <div
             class="ui red card"
@@ -1285,7 +1285,7 @@ exports[`renders study grid for ADMIN role 3`] = `
                   class="grey file icon"
                 />
                 1
-                 Files
+                 documents
               </a>
               <a
                 href="/study/SD_8WX8QQ06/cavatica"
@@ -1362,7 +1362,7 @@ exports[`renders study grid for ADMIN role 3`] = `
                   class="red file icon"
                 />
                 0
-                 Files
+                 documents
               </a>
               <a
                 href="/study/SD_I1L92W57/cavatica"
@@ -1439,7 +1439,7 @@ exports[`renders study grid for ADMIN role 3`] = `
                   class="red file icon"
                 />
                 0
-                 Files
+                 documents
               </a>
               <a
                 href="/study/SD_SG5N41K8/cavatica"
@@ -1516,7 +1516,7 @@ exports[`renders study grid for ADMIN role 3`] = `
                   class="red file icon"
                 />
                 0
-                 Files
+                 documents
               </a>
               <a
                 href="/study/SD_0YYP5ZEN/cavatica"

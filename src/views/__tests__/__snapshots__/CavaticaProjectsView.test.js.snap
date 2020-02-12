@@ -1336,7 +1336,7 @@ exports[`renders Cavatica projects view correctly 2`] = `
                 repurpose bricks-and-clicks bandwidth
               </a>
               <button
-                class="ui mini icon primary left labeled button"
+                class="ui mini icon primary left labeled button ml-10"
               >
                 <i
                   aria-hidden="true"
@@ -1424,7 +1424,7 @@ exports[`renders Cavatica projects view correctly 2`] = `
             >
               Not linked
               <button
-                class="ui mini icon primary left labeled button"
+                class="ui mini icon primary left labeled button ml-10"
               >
                 <i
                   aria-hidden="true"
@@ -1502,7 +1502,7 @@ exports[`renders Cavatica projects view correctly 2`] = `
               class="right floated middle aligned content"
             >
               <button
-                class="ui mini icon primary left labeled button"
+                class="ui mini icon primary left labeled button ml-10"
               >
                 <i
                   aria-hidden="true"
@@ -1894,7 +1894,7 @@ exports[`renders Cavatica projects view correctly 3`] = `
                 repurpose bricks-and-clicks bandwidth
               </a>
               <button
-                class="ui mini icon primary left labeled button"
+                class="ui mini icon primary left labeled button ml-10"
               >
                 <i
                   aria-hidden="true"
@@ -1982,7 +1982,7 @@ exports[`renders Cavatica projects view correctly 3`] = `
             >
               Not linked
               <button
-                class="ui mini icon primary left labeled button"
+                class="ui mini icon primary left labeled button ml-10"
               >
                 <i
                   aria-hidden="true"
@@ -2060,7 +2060,7 @@ exports[`renders Cavatica projects view correctly 3`] = `
               class="right floated middle aligned content"
             >
               <button
-                class="ui mini icon primary left labeled button"
+                class="ui mini icon primary left labeled button ml-10"
               >
                 <i
                   aria-hidden="true"
@@ -2475,7 +2475,7 @@ exports[`renders Cavatica projects view correctly 4`] = `
                 repurpose bricks-and-clicks bandwidth
               </a>
               <button
-                class="ui mini icon primary left labeled button"
+                class="ui mini icon primary left labeled button ml-10"
               >
                 <i
                   aria-hidden="true"
@@ -2563,7 +2563,7 @@ exports[`renders Cavatica projects view correctly 4`] = `
             >
               Not linked
               <button
-                class="ui mini icon primary left labeled button"
+                class="ui mini icon primary left labeled button ml-10"
               >
                 <i
                   aria-hidden="true"
@@ -2641,7 +2641,7 @@ exports[`renders Cavatica projects view correctly 4`] = `
               class="right floated middle aligned content"
             >
               <button
-                class="ui mini icon primary left labeled button"
+                class="ui mini icon primary left labeled button ml-10"
               >
                 <i
                   aria-hidden="true"
@@ -3056,7 +3056,7 @@ exports[`renders Cavatica projects view correctly 5`] = `
                 repurpose bricks-and-clicks bandwidth
               </a>
               <button
-                class="ui mini icon primary left labeled button"
+                class="ui mini icon primary left labeled button ml-10"
               >
                 <i
                   aria-hidden="true"
@@ -3144,7 +3144,7 @@ exports[`renders Cavatica projects view correctly 5`] = `
             >
               Not linked
               <button
-                class="ui mini icon primary left labeled button"
+                class="ui mini icon primary left labeled button ml-10"
               >
                 <i
                   aria-hidden="true"
@@ -3222,7 +3222,7 @@ exports[`renders Cavatica projects view correctly 5`] = `
               class="right floated middle aligned content"
             >
               <button
-                class="ui mini icon primary left labeled button"
+                class="ui mini icon primary left labeled button ml-10"
               >
                 <i
                   aria-hidden="true"
