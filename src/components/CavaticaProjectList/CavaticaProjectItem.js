@@ -14,6 +14,7 @@ import {
 import TimeAgo from 'react-timeago';
 import {longDate} from '../../common/dateUtils';
 import {EditProjectModal} from '../../modals';
+import {LinkStudyPopup} from './LinkStudyPopup';
 
 const ProjectAttributes = ({projectNode, disabled}) => (
   <List bulleted horizontal>
@@ -237,6 +238,7 @@ const CavaticaProjectItem = ({
   editable = true,
 }) => {
   const [isEditing, setIsEditing] = useState(false);
+
   if (projectNode.deleted) {
     return (
       <List.Item>
@@ -304,6 +306,7 @@ const CavaticaProjectItem = ({
                 position="top right"
               />
             )}
+            {!projectNode.study && <LinkStudyPopup project={projectNode} />}
             {unlinkProject && projectNode.study && (
               <UnlinkButton
                 unlinkProject={unlinkProject}
