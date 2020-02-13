@@ -1,5 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`closes correctly 1`] = `
+<div>
+  <button
+    class="ui mini basic primary button"
+  >
+    <i
+      aria-hidden="true"
+      class="chain icon"
+    />
+    LINK STUDY
+  </button>
+</div>
+`;
+
 exports[`renders the popup correctly 1`] = `
 <div>
   <button

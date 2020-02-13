@@ -52,6 +52,7 @@ const LinkStudyForm = ({
           selection
           id="studyId"
           name="studyId"
+          data-testid="studyIdDropdown"
           disabled={options.length === 0 || disabled}
           onBlur={handleBlur}
           options={options}
@@ -83,6 +84,7 @@ const LinkStudyForm = ({
         primary
         type="submit"
         content="Link"
+        data-testid="submitButton"
         loading={loading}
         disabled={!touched.studyId || loading}
         onClick={handleSubmit}

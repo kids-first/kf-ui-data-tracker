@@ -41,4 +41,43 @@ it('renders the popup correctly', async () => {
   });
 
   expect(tree.container).toMatchSnapshot();
+
+  // Open the dropdown
+  act(() => {
+    fireEvent.click(tree.getByTestId('studyIdDropdown'));
+  });
+
+  expect(tree.getByTestId('submitButton')).toHaveProperty('disabled', true);
+
+  // Select study
+  act(() => {
+    fireEvent.click(tree.getByText(/SD_I1L92W57/));
+  });
+
+  // Link
+  act(() => {
+    fireEvent.click(tree.getByTestId('submitButton'));
+  });
+});
+
+it('closes correctly', async () => {
+  const tree = render(
+    <MockedProvider mocks={mocks}>
+      <LinkStudyPopup project={project.node} />
+    </MockedProvider>,
+  );
+  // Wait for all studies query to run
+  await wait();
+
+  // Trigger the popup with dropdown
+  act(() => {
+    fireEvent.click(tree.getByText(/LINK STUDY/));
+  });
+
+  // Close popup
+  act(() => {
+    fireEvent.click(tree.getByText(/LINK STUDY/));
+  });
+
+  expect(tree.container).toMatchSnapshot();
 });

@@ -9,16 +9,7 @@ const projectSort = ({node: p1}, {node: p2}) => {
     // Sort deleted projects to the bottom
     return p1.deleted ? 1 : -1;
   } else if (!p1.study || !p2.study) {
-    if (p1.study === p2.study) {
-      // Sort by project name
-      return p1.projectId.localeCompare(p2.projectId);
-    }
-    // Sort unlinked projects toward the bottom
-    if (p1.study === null) {
-      return 1;
-    } else if (p2.study === null) {
-      return -1;
-    }
+    return p1.projectId.localeCompare(p2.projectId);
   }
   // Sort by the linked study's name
   return p1.study.name.localeCompare(p2.study.name);
@@ -38,7 +29,6 @@ const StudyProjects = ({
   const [active, setActive] = useState(!study);
 
   const handleClick = (e, title) => {
-    console.log(active);
     setActive(!active);
   };
 

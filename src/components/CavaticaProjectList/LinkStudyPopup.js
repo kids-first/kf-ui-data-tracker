@@ -43,20 +43,13 @@ export const LinkStudyPopup = ({project}) => {
         initialValues={{
           studyId: null,
         }}
-        validate={values => {
-          let errors = {};
-          if (!values.studyId) {
-            errors.studyId = 'Required';
-          }
-          return errors;
-        }}
         onSubmit={values => {
           linkProject({
             variables: {
               project: project.id,
               study: values.studyId,
             },
-          }).then(resp => setOpen(false));
+          });
         }}
       >
         {formikProps => (

@@ -1,6 +1,8 @@
 import React from 'react';
 import {render} from '@testing-library/react';
 import {MemoryRouter} from 'react-router-dom';
+import {MockedProvider} from '@apollo/react-testing';
+import {mocks} from '../../../../__mocks__/kf-api-study-creator/mocks';
 import CavaticaProjectList from '../CavaticaProjectList';
 
 const projects = [
@@ -56,6 +58,24 @@ const projects = [
   },
   {
     node: {
+      id: 'UHJvamVjdE5vZGU6a2ZkcmMtaGFybW9uaXphdGlvbi9zZC1lMWJyMnRmaw==',
+      createdBy: 'kfdrc-harmonization',
+      createdOn: '2019-06-10T14:49:01+00:00',
+      projectId: 'kfdrc-harmonization/sd-e1br2tfk-abc',
+      projectType: 'HAR',
+      name: 'alignment',
+      workflowType: 'gatk',
+      deleted: false,
+      study: {
+        id: 'U3R1ZHlOb2RlOlNEX1dHUDhSVzNX',
+        kfId: 'SD_WGP8RW3W',
+        name: 'Test Study',
+        shortName: null,
+      },
+    },
+  },
+  {
+    node: {
       id: 'UHJvamVjdE5vZGU6a2ZkcmMtaGFybW9uaXphdGlvbi9zZC1qd3MzdjI0ZC0wMQ==',
       createdBy: 'kfdrc-harmonization',
       createdOn: '2019-05-21T14:13:10+00:00',
@@ -71,18 +91,22 @@ const projects = [
 
 it('renders cavatica project list correctly - default look', () => {
   const tree = render(
-    <MemoryRouter initialEntries={['/cavatica-projects']}>
-      <CavaticaProjectList projects={projects} />
-    </MemoryRouter>,
+    <MockedProvider mocks={mocks}>
+      <MemoryRouter initialEntries={['/cavatica-projects']}>
+        <CavaticaProjectList projects={projects} />
+      </MemoryRouter>
+    </MockedProvider>,
   );
   expect(tree.container).toMatchSnapshot();
 });
 
 it('renders cavatica project list correctly - no data', () => {
   const tree = render(
-    <MemoryRouter initialEntries={['/cavatica-projects']}>
-      <CavaticaProjectList />
-    </MemoryRouter>,
+    <MockedProvider mocks={mocks}>
+      <MemoryRouter initialEntries={['/cavatica-projects']}>
+        <CavaticaProjectList />
+      </MemoryRouter>
+    </MockedProvider>,
   );
   expect(tree.container).toMatchSnapshot();
 });

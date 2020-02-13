@@ -31,6 +31,12 @@ it('renders Cavatica projects view correctly', async () => {
 
   expect(tree.container).toMatchSnapshot();
 
+  act(() => {
+    fireEvent.click(tree.queryAllByText(/Click to Expand/i)[0]);
+  });
+
+  expect(tree.container).toMatchSnapshot();
+
   // Click to sync projects
   act(() => {
     fireEvent.click(tree.queryAllByText(/Scan Cavatica/i)[0]);
