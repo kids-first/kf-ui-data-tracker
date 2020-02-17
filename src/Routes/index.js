@@ -20,6 +20,7 @@ import {
   LogsView,
   LogoutView,
   ReleasesView,
+  NewStudySelectionView,
 } from '../views';
 import DocumentRoutes from '../documents/routes';
 import {ResearchStudyListView} from '../research/views';
@@ -37,6 +38,10 @@ const Routes = () => (
       <PrivateRoute path="/profile" component={ProfileView} />
       <PrivateRoute path="/study/:kfId(SD_\w{8})/" component={NavBarView} />
       <AdminRoute path="/study/new-study" component={NewStudyView} />
+      <AdminRoute
+        path="/study/new-study-selection"
+        component={NewStudySelectionView}
+      />
       <Switch>
         <PrivateRoute exact path="/" component={StudyListView} />
         <PrivateRoute
