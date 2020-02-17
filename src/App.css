@@ -111,6 +111,10 @@ body {
   margin-right: 80px !important;
 }
 
+.display-block {
+  display: block !important;
+}
+
 .ui.stackable.cards > .card {
   display: flex !important;
 }
