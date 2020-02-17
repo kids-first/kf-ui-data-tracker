@@ -8,8 +8,8 @@ import {
 } from '../../common/notificationUtils';
 
 const GridSkeleton = () => (
-  <Card.Group stackable itemsPerRow={4}>
-    {[1, 2, 3, 4].map(i => (
+  <Card.Group stackable itemsPerRow={3}>
+    {[1, 2, 3].map(i => (
       <Card key={i}>
         <Card.Content>
           <Placeholder>
