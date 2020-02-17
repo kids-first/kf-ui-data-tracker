@@ -27,7 +27,13 @@ exports[`renders admin event logs first 20, click to show more 1`] = `
         class="item"
         href="/"
       >
-        Studies
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
       </a>
       <div
         class="right menu"
@@ -1371,7 +1377,13 @@ exports[`renders admin event logs first 20, click to show more 2`] = `
         class="item"
         href="/"
       >
-        Studies
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
       </a>
       <div
         class="right menu"
@@ -3637,7 +3649,13 @@ exports[`renders admin event logs view correctly 2`] = `
         class="item"
         href="/"
       >
-        Studies
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
       </a>
       <div
         class="right menu"
@@ -4663,7 +4681,13 @@ exports[`renders admin event logs view correctly 3`] = `
         class="item"
         href="/"
       >
-        Studies
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
       </a>
       <div
         class="right menu"
@@ -5689,7 +5713,13 @@ exports[`renders admin event logs view correctly 4`] = `
         class="item"
         href="/"
       >
-        Studies
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
       </a>
       <div
         class="right menu"
@@ -6715,7 +6745,13 @@ exports[`renders admin event logs view correctly 5`] = `
         class="item"
         href="/"
       >
-        Studies
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
       </a>
       <div
         class="right menu"
@@ -7741,7 +7777,13 @@ exports[`renders admin event logs view correctly 6`] = `
         class="item"
         href="/"
       >
-        Studies
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
       </a>
       <div
         class="right menu"
@@ -8617,7 +8659,13 @@ exports[`renders admin event logs view correctly 7`] = `
         class="item"
         href="/"
       >
-        Studies
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
       </a>
       <div
         class="right menu"
@@ -9493,7 +9541,13 @@ exports[`renders admin event logs view with error message 1`] = `
         class="item"
         href="/"
       >
-        Studies
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
       </a>
       <div
         class="right menu"

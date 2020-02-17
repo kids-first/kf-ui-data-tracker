@@ -27,7 +27,13 @@ exports[`renders study info view as read-only -- USER user 1`] = `
         class="item"
         href="/"
       >
-        Studies
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
       </a>
       <div
         class="right menu"
@@ -398,7 +404,13 @@ exports[`renders study info view as read-only -- USER user 2`] = `
         class="item"
         href="/"
       >
-        Studies
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
       </a>
       <div
         class="right menu"
@@ -926,7 +938,13 @@ exports[`renders study info view correctly -- ADMIN user 2`] = `
         class="item"
         href="/"
       >
-        Studies
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
       </a>
       <div
         class="right menu"
@@ -1464,7 +1482,13 @@ exports[`renders study info view correctly -- ADMIN user 3`] = `
         class="item"
         href="/"
       >
-        Studies
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
       </a>
       <div
         class="right menu"
@@ -2002,7 +2026,13 @@ exports[`renders study info view correctly -- ADMIN user 4`] = `
         class="item"
         href="/"
       >
-        Studies
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
       </a>
       <div
         class="right menu"
@@ -2547,7 +2577,13 @@ exports[`renders study info view correctly -- ADMIN user 5`] = `
         class="item"
         href="/"
       >
-        Studies
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
       </a>
       <div
         class="right menu"
@@ -3077,7 +3113,13 @@ exports[`renders study info view correctly -- ADMIN user 6`] = `
         class="item"
         href="/"
       >
-        Studies
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
       </a>
       <div
         class="right menu"
@@ -3623,7 +3665,13 @@ exports[`renders study info view with get study info error 1`] = `
         class="item"
         href="/"
       >
-        Studies
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
       </a>
       <div
         class="right menu"
@@ -3849,7 +3897,13 @@ exports[`renders study info view with update study info error 1`] = `
         class="item"
         href="/"
       >
-        Studies
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
       </a>
       <div
         class="right menu"

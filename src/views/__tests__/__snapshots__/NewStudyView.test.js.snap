@@ -27,7 +27,14 @@ exports[`renders new study view correctly --  with error on submit 1`] = `
         class="item"
         href="/"
       >
-        Studies
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
+      </a>
       </a>
       <div
         class="right menu"
@@ -1298,7 +1305,13 @@ exports[`renders new study view correctly 3`] = `
         class="item"
         href="/"
       >
-        Studies
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
       </a>
       <div
         class="right menu"
@@ -1702,7 +1715,13 @@ exports[`renders new study view correctly 4`] = `
         class="item"
         href="/"
       >
-        Studies
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
       </a>
       <div
         class="right menu"
@@ -2467,7 +2486,13 @@ exports[`renders new study view correctly 5`] = `
         class="item"
         href="/"
       >
-        Studies
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
       </a>
       <div
         class="right menu"

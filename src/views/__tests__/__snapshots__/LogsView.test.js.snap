@@ -27,7 +27,13 @@ exports[`renders study event logs first 20, click to show more 1`] = `
         class="item"
         href="/"
       >
-        Studies
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
       </a>
       <div
         class="right menu"
@@ -1069,7 +1075,13 @@ exports[`renders study event logs first 20, click to show more 2`] = `
         class="item"
         href="/"
       >
-        Studies
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
       </a>
       <div
         class="right menu"
@@ -2611,7 +2623,13 @@ exports[`renders study logs view -- shows an error 1`] = `
         class="item"
         href="/"
       >
-        Studies
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
       </a>
       <div
         class="right menu"
@@ -2778,7 +2796,13 @@ exports[`renders study logs view correctly --  showing empty view for non-admin 
         class="item"
         href="/"
       >
-        Studies
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
       </a>
       <div
         class="right menu"
@@ -3152,7 +3176,13 @@ exports[`renders study logs view correctly 2`] = `
         class="item"
         href="/"
       >
-        Studies
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
       </a>
       <div
         class="right menu"
@@ -3862,7 +3892,13 @@ exports[`renders study logs view correctly 3`] = `
         class="item"
         href="/"
       >
-        Studies
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
       </a>
       <div
         class="right menu"
