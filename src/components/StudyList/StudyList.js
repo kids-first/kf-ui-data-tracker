@@ -67,7 +67,7 @@ const StudyList = ({studyList, loading, activeView, roles}) => {
             icon="add"
             content="Add Study"
             as={Link}
-            to={`/study/new-study/info`}
+            to={`/study/new-study-selection`}
           />
         )}
         <Input
