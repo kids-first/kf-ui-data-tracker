@@ -7,7 +7,7 @@ import {versionState} from '../../common/enums';
  * Displays file counts with total number and breaking down by each status
  * When no files exist, show buttons guiding user to upload files
  */
-const FileCounts = ({files, title, history, hideIcon}) => {
+const FileCounts = ({files, title, history, hideIcon, wrap}) => {
   const states = files.map(
     ({node: {versions}}) => versions.edges[0].node.state,
   );
@@ -17,9 +17,8 @@ const FileCounts = ({files, title, history, hideIcon}) => {
   }, {});
 
   return (
-    <List horizontal>
-      <List.Item
-        as={Link}
+    <>
+      <Link
         to={`/study/${title}/documents`}
         onClick={e => e.stopPropagation()}
         className={hideIcon && files.length === 0 ? 'text-red' : null}
@@ -31,33 +30,35 @@ const FileCounts = ({files, title, history, hideIcon}) => {
           />
         )}
         {files.length > 0 ? files.length : 'No'} documents
-      </List.Item>
-      {Object.keys(versionState)
-        .slice(0, 4)
-        .map(
-          state =>
-            state in stateCounts && (
-              <Popup
-                inverted
-                position="top center"
-                size="small"
-                content={versionState[state].title}
-                key={state}
-                trigger={
-                  <List.Item>
-                    <Label
-                      circular
-                      empty
-                      size="mini"
-                      color={versionState[state].labelColor}
-                    />{' '}
-                    {stateCounts[state]}
-                  </List.Item>
-                }
-              />
-            ),
-        )}
-    </List>
+      </Link>
+      <List horizontal className={wrap ? 'display-block' : 'ml-15'}>
+        {Object.keys(versionState)
+          .slice(0, 4)
+          .map(
+            state =>
+              state in stateCounts && (
+                <Popup
+                  inverted
+                  position="top center"
+                  size="small"
+                  content={versionState[state].title}
+                  key={state}
+                  trigger={
+                    <List.Item>
+                      <Label
+                        circular
+                        empty
+                        size="mini"
+                        color={versionState[state].labelColor}
+                      />{' '}
+                      {stateCounts[state]}
+                    </List.Item>
+                  }
+                />
+              ),
+          )}
+      </List>
+    </>
   );
 };
 
