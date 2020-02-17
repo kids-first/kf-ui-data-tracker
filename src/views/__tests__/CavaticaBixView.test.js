@@ -89,7 +89,7 @@ it('renders study Cavatica projects view correctly', async () => {
   });
   await wait();
   act(() => {
-    fireEvent.click(tree.getByText(/Research/i));
+    fireEvent.click(tree.getAllByText(/Research/i)[1]);
   });
   await wait();
   expect(tree.container).toMatchSnapshot();
@@ -173,7 +173,7 @@ it('renders study Cavatica projects view correctly', async () => {
   });
   await wait();
   act(() => {
-    fireEvent.click(tree.getByText(/Research/i));
+    fireEvent.click(tree.getAllByText(/Research/i)[1]);
   });
   await wait();
   expect(tree.container).toMatchSnapshot();

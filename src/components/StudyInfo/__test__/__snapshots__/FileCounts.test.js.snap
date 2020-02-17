@@ -2,22 +2,20 @@
 
 exports[`renders FileCounts in default stage 1`] = `
 <div>
+  <a
+    href="/study/SD_8WX8QQ06/documents"
+  >
+    <i
+      aria-hidden="true"
+      class="grey file icon"
+    />
+    2
+     documents
+  </a>
   <div
-    class="ui horizontal list"
+    class="ui horizontal list ml-15"
     role="list"
   >
-    <a
-      class="item"
-      href="/study/SD_8WX8QQ06/documents"
-      role="listitem"
-    >
-      <i
-        aria-hidden="true"
-        class="grey file icon"
-      />
-      2
-       documents
-    </a>
     <div
       class="item"
       role="listitem"
@@ -34,22 +32,19 @@ exports[`renders FileCounts in default stage 1`] = `
 
 exports[`renders FileFileCounts with empty file list 1`] = `
 <div>
-  <div
-    class="ui horizontal list"
-    role="list"
+  <a
+    href="/study/SD_8WX8QQ06/documents"
   >
-    <a
-      class="item"
-      href="/study/SD_8WX8QQ06/documents"
-      role="listitem"
-    >
-      <i
-        aria-hidden="true"
-        class="red file icon"
-      />
-      No
-       documents
-    </a>
-  </div>
+    <i
+      aria-hidden="true"
+      class="red file icon"
+    />
+    No
+     documents
+  </a>
+  <div
+    class="ui horizontal list ml-15"
+    role="list"
+  />
 </div>
 `;
