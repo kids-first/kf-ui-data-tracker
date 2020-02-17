@@ -9,11 +9,6 @@ exports[`renders cavatica project item - disable cavatica link 1`] = `
     <div
       class="right floated content"
     >
-      <a
-        href="/study/SD_WGP8RW3W/basic-info/info"
-      >
-        SD_WGP8RW3W
-      </a>
       <button
         class="ui mini basic primary right floated button"
       >
@@ -73,80 +68,6 @@ exports[`renders cavatica project item - disable cavatica link 1`] = `
 </div>
 `;
 
-exports[`renders cavatica project item - hide study link 1`] = `
-<div>
-  <div
-    class="item"
-    role="listitem"
-  >
-    <div
-      class="right floated content"
-    >
-      <button
-        class="ui mini basic primary right floated button"
-      >
-        <i
-          aria-hidden="true"
-          class="pencil icon"
-        />
-        EDIT
-      </button>
-    </div>
-    <i
-      aria-hidden="true"
-      class="paper plane outline icon"
-    />
-    <div
-      class="content"
-    >
-      <a
-        class="header"
-        href="https://cavatica.sbgenomics.com/u/kolbmand/sd-wgp8rw3w-gatk-haplotypecaller"
-        target="_blank"
-      >
-        SD_WGP8RW3W gatk-haplotypecaller 
-        <i
-          aria-hidden="true"
-          class="external small link icon"
-        />
-      </a>
-      <div
-        class="ui bulleted horizontal list"
-        role="list"
-      >
-        <div
-          class="item"
-          role="listitem"
-        >
-          Created
-           by kolbmand 
-          <time
-            datetime="2019-08-14T18:29:01.000Z"
-            title="14 Aug 2019"
-          >
-            4 months from now
-          </time>
-        </div>
-        <div
-          class="item"
-          role="listitem"
-        >
-          bwa_mem
-        </div>
-        <div
-          class="item"
-          role="listitem"
-        >
-          <code>
-            kolbmand/sd-wgp8rw3w-gatk-haplotypecaller
-          </code>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`renders cavatica project item - show edit button 1`] = `
 <div>
   <div
@@ -156,11 +77,6 @@ exports[`renders cavatica project item - show edit button 1`] = `
     <div
       class="right floated content"
     >
-      <a
-        href="/study/SD_WGP8RW3W/basic-info/info"
-      >
-        SD_WGP8RW3W
-      </a>
       <button
         class="ui mini basic primary right floated button"
       >
@@ -235,11 +151,6 @@ exports[`renders cavatica project item - show edit button 2`] = `
     <div
       class="right floated content"
     >
-      <a
-        href="/study/SD_WGP8RW3W/basic-info/info"
-      >
-        SD_WGP8RW3W
-      </a>
       <button
         class="ui mini basic primary right floated button"
       >
@@ -314,11 +225,6 @@ exports[`renders cavatica project item - show unlink project button 1`] = `
     <div
       class="right floated content"
     >
-      <a
-        href="/study/SD_WGP8RW3W/basic-info/info"
-      >
-        SD_WGP8RW3W
-      </a>
       <button
         class="ui mini basic primary right floated button"
       >
@@ -402,11 +308,6 @@ exports[`renders cavatica project item - show unlink project button 2`] = `
     <div
       class="right floated content"
     >
-      <a
-        href="/study/SD_WGP8RW3W/basic-info/info"
-      >
-        SD_WGP8RW3W
-      </a>
       <button
         class="ui mini basic primary right floated button"
       >
@@ -490,11 +391,6 @@ exports[`renders cavatica project item - show unlink project button 3`] = `
     <div
       class="right floated content"
     >
-      <a
-        href="/study/SD_WGP8RW3W/basic-info/info"
-      >
-        SD_WGP8RW3W
-      </a>
       <button
         class="ui mini basic primary right floated button"
       >

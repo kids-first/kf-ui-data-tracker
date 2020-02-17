@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Helmet} from 'react-helmet';
 import {useQuery, useMutation} from '@apollo/react-hooks';
 import {
+  Accordion,
   Button,
   Container,
   Dimmer,
@@ -12,7 +13,7 @@ import {
   Message,
   Segment,
 } from 'semantic-ui-react';
-import {CavaticaProjectList} from '../components/CavaticaProjectList';
+import StudyProjects from '../components/CavaticaProjectList/StudyProjects';
 
 import {GET_PROJECTS, MY_PROFILE} from '../state/queries';
 import {
@@ -66,6 +67,20 @@ const CavaticaProjectsView = () => {
         setSyncErrors(err.message);
       });
   };
+
+  // Group projects by study, store unlinked under the null key
+  const byStudy =
+    allProjects &&
+    allProjects.edges.reduce((acc, cur, i) => {
+      const study = cur.node.study ? cur.node.study.kfId : null;
+      if (study in acc) {
+        acc[study] = acc[study].concat(cur);
+      } else {
+        acc[study] = [cur];
+      }
+      return acc;
+    }, {});
+
   if (error)
     return (
       <Container as={Segment} basic>
@@ -80,16 +95,17 @@ const CavaticaProjectsView = () => {
         />
       </Container>
     );
+
   return (
     <Container as={Segment} basic>
       <Helmet>
         <title>KF Data Tracker - Cavatica projects</title>
       </Helmet>
-      <Header as="h3">
+      <Header as="h2">
         <Button primary floated="right" loading={syncing} onClick={sync}>
           Scan Cavatica
         </Button>
-        Cavatica Projects
+        Cavatica Projects by Study
       </Header>
       {(syncing || syncResult || syncErrors) && (
         <Segment basic>
@@ -138,12 +154,27 @@ const CavaticaProjectsView = () => {
           </Segment>
         )}
         {!loading && allProjects && (
-          <CavaticaProjectList
-            projects={allProjects.edges}
-            unlinkProject={isAdmin ? unlinkProject : null}
-            importVolumeFiles={isAdmin ? importVolumeFiles : null}
-            editable={isAdmin}
-          />
+          <Accordion>
+            {Object.keys(byStudy)
+              .sort((v1, v2) => {
+                if (v1 === 'null') {
+                  return -1;
+                } else if (v2 === 'null') {
+                  return 1;
+                }
+                return 0;
+              })
+              .map(study => (
+                <StudyProjects
+                  key={study.kfId}
+                  study={byStudy[study][0].node.study}
+                  projects={byStudy[study]}
+                  unlinkProject={isAdmin ? unlinkProject : null}
+                  importVolumeFiles={isAdmin ? importVolumeFiles : null}
+                  editable={isAdmin}
+                />
+              ))}
+          </Accordion>
         )}
       </Segment>
     </Container>

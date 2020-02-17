@@ -12,7 +12,6 @@ const CavaticaProjectList = ({
   importVolumeFiles,
   editable,
   disableLink,
-  hideStudy,
 }) => (
   <List relaxed divided>
     {projects &&
@@ -44,7 +43,6 @@ const CavaticaProjectList = ({
             unlinkProject={unlinkProject}
             editable={editable}
             disableLink={disableLink}
-            hideStudy={hideStudy}
             importVolumeFiles={importVolumeFiles}
           />
         ))}
@@ -60,8 +58,6 @@ CavaticaProjectList.propTypes = {
   editable: PropTypes.bool,
   /** If disable the link going to Cavatica */
   disableLink: PropTypes.bool,
-  /** If hide the study which current project links to */
-  hideStudy: PropTypes.bool,
 };
 
 export default CavaticaProjectList;

@@ -8087,13 +8087,7 @@ exports[`renders study Cavatica projects view correctly 11`] = `
                   >
                     <div
                       class="right floated content"
-                    >
-                      <a
-                        href="/study/SD_8WX8QQ06/basic-info/info"
-                      >
-                        repurpose bricks-and-clicks bandwidth
-                      </a>
-                    </div>
+                    />
                     <i
                       aria-hidden="true"
                       class="sliders horizontal icon"
@@ -8160,11 +8154,15 @@ exports[`renders study Cavatica projects view correctly 11`] = `
                     <div
                       class="right floated content"
                     >
-                      <a
-                        href="/study/SD_8WX8QQ06/basic-info/info"
+                      <button
+                        class="ui mini basic primary button"
                       >
-                        repurpose bricks-and-clicks bandwidth
-                      </a>
+                        <i
+                          aria-hidden="true"
+                          class="chain icon"
+                        />
+                        LINK STUDY
+                      </button>
                     </div>
                     <i
                       aria-hidden="true"
@@ -8231,9 +8229,7 @@ exports[`renders study Cavatica projects view correctly 11`] = `
                   >
                     <div
                       class="right floated content"
-                    >
-                      Not linked
-                    </div>
+                    />
                     <i
                       aria-hidden="true"
                       class="paper plane outline icon"

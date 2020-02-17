@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router-dom';
 import {
   List,
   Icon,
@@ -15,6 +14,7 @@ import {
 import TimeAgo from 'react-timeago';
 import {longDate} from '../../common/dateUtils';
 import {EditProjectModal} from '../../modals';
+import {LinkStudyPopup} from './LinkStudyPopup';
 
 const ProjectAttributes = ({projectNode, disabled}) => (
   <List bulleted horizontal>
@@ -50,18 +50,6 @@ const ProjectLink = ({projectNode, disableLink}) => {
         <Icon link size="small" name="external" />
       </List.Header>
     );
-  }
-};
-
-const StudyLink = ({study}) => {
-  if (study) {
-    return (
-      <Link to={`/study/${study.kfId}/basic-info/info`}>
-        {study.shortName || study.name || study.kfId}
-      </Link>
-    );
-  } else {
-    return 'Not linked';
   }
 };
 
@@ -247,10 +235,10 @@ const CavaticaProjectItem = ({
   unlinkProject,
   importVolumeFiles,
   disableLink,
-  hideStudy,
   editable = true,
 }) => {
   const [isEditing, setIsEditing] = useState(false);
+
   if (projectNode.deleted) {
     return (
       <List.Item>
@@ -293,7 +281,6 @@ const CavaticaProjectItem = ({
       <>
         <List.Item>
           <List.Content floated="right">
-            {!hideStudy && <StudyLink study={projectNode.study} />}
             {projectNode.projectType === 'DEL' && importVolumeFiles && (
               <ImportVolumeButton
                 importVolumeFiles={importVolumeFiles}
@@ -319,6 +306,7 @@ const CavaticaProjectItem = ({
                 position="top right"
               />
             )}
+            {!projectNode.study && <LinkStudyPopup project={projectNode} />}
             {unlinkProject && projectNode.study && (
               <UnlinkButton
                 unlinkProject={unlinkProject}
@@ -359,8 +347,6 @@ CavaticaProjectItem.propTypes = {
   unlinkProject: PropTypes.func,
   /** If disable the external link to Cavatica on project name */
   disableLink: PropTypes.bool,
-  /** For linked project if to hide the study link */
-  hideStudy: PropTypes.bool,
   /** Whether or not to allow the edit modal to be spawned */
   editable: PropTypes.bool,
 };

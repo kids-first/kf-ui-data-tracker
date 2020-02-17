@@ -13,11 +13,6 @@ exports[`renders cavatica project list correctly - default look 1`] = `
       <div
         class="right floated content"
       >
-        <a
-          href="/study/SD_WGP8RW3W/basic-info/info"
-        >
-          Test Study
-        </a>
         <button
           class="ui mini basic primary right floated button"
         >
@@ -87,7 +82,75 @@ exports[`renders cavatica project list correctly - default look 1`] = `
       <div
         class="right floated content"
       >
-        Not linked
+        <button
+          class="ui mini basic primary right floated button"
+        >
+          <i
+            aria-hidden="true"
+            class="pencil icon"
+          />
+          EDIT
+        </button>
+      </div>
+      <i
+        aria-hidden="true"
+        class="sliders horizontal icon"
+      />
+      <div
+        class="content"
+      >
+        <a
+          class="header"
+          href="https://cavatica.sbgenomics.com/u/kfdrc-harmonization/sd-e1br2tfk-abc"
+          target="_blank"
+        >
+          alignment 
+          <i
+            aria-hidden="true"
+            class="external small link icon"
+          />
+        </a>
+        <div
+          class="ui bulleted horizontal list"
+          role="list"
+        >
+          <div
+            class="item"
+            role="listitem"
+          >
+            Created
+             by kfdrc-harmonization 
+            <time
+              datetime="2019-06-10T14:49:01.000Z"
+              title="10 Jun 2019"
+            >
+              2 months from now
+            </time>
+          </div>
+          <div
+            class="item"
+            role="listitem"
+          >
+            gatk
+          </div>
+          <div
+            class="item"
+            role="listitem"
+          >
+            <code>
+              kfdrc-harmonization/sd-e1br2tfk-abc
+            </code>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="item"
+      role="listitem"
+    >
+      <div
+        class="right floated content"
+      >
         <button
           class="ui mini basic primary right floated button"
         >
@@ -157,7 +220,6 @@ exports[`renders cavatica project list correctly - default look 1`] = `
       <div
         class="right floated content"
       >
-        Not linked
         <button
           class="ui mini basic primary right floated button"
         >
