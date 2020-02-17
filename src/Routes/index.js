@@ -22,6 +22,7 @@ import {
   ReleasesView,
 } from '../views';
 import DocumentRoutes from '../documents/routes';
+import {ResearchStudyListView} from '../research/views';
 import TrackedRoute from './TrackedRoute';
 
 const Routes = () => (
@@ -38,6 +39,11 @@ const Routes = () => (
       <AdminRoute path="/study/new-study" component={NewStudyView} />
       <Switch>
         <PrivateRoute exact path="/" component={StudyListView} />
+        <PrivateRoute
+          exact
+          path="/research-studies"
+          component={ResearchStudyListView}
+        />
         <PrivateRoute
           path="/study/:kfId/basic-info"
           component={StudyInfoView}
