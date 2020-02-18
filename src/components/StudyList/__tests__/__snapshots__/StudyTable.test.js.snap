@@ -175,18 +175,16 @@ exports[`renders study table correctly 1`] = `
         <td
           class=""
         >
+          <a
+            href="/study/SD_8WX8QQ06/documents"
+          >
+            1
+             documents
+          </a>
           <div
-            class="ui horizontal list"
+            class="ui horizontal list display-block"
             role="list"
           >
-            <a
-              class="item"
-              href="/study/SD_8WX8QQ06/documents"
-              role="listitem"
-            >
-              1
-               documents
-            </a>
             <div
               class="item"
               role="listitem"
@@ -202,19 +200,17 @@ exports[`renders study table correctly 1`] = `
         <td
           class=""
         >
-          <div
-            class="ui horizontal list"
-            role="list"
+          <a
+            class="text-red"
+            href="/study/SD_8WX8QQ06/cavatica"
           >
-            <a
-              class="item text-red"
-              href="/study/SD_8WX8QQ06/cavatica"
-              role="listitem"
-            >
-              No
-               projects
-            </a>
-          </div>
+            No
+             projects
+          </a>
+          <div
+            class="ui horizontal list display-block"
+            role="list"
+          />
         </td>
       </tr>
       <tr
@@ -280,36 +276,32 @@ exports[`renders study table correctly 1`] = `
         <td
           class=""
         >
-          <div
-            class="ui horizontal list"
-            role="list"
+          <a
+            class="text-red"
+            href="/study/SD_I1L92W57/documents"
           >
-            <a
-              class="item text-red"
-              href="/study/SD_I1L92W57/documents"
-              role="listitem"
-            >
-              No
-               documents
-            </a>
-          </div>
+            No
+             documents
+          </a>
+          <div
+            class="ui horizontal list display-block"
+            role="list"
+          />
         </td>
         <td
           class=""
         >
-          <div
-            class="ui horizontal list"
-            role="list"
+          <a
+            class="text-red"
+            href="/study/SD_I1L92W57/cavatica"
           >
-            <a
-              class="item text-red"
-              href="/study/SD_I1L92W57/cavatica"
-              role="listitem"
-            >
-              No
-               projects
-            </a>
-          </div>
+            No
+             projects
+          </a>
+          <div
+            class="ui horizontal list display-block"
+            role="list"
+          />
         </td>
       </tr>
       <tr
@@ -375,36 +367,32 @@ exports[`renders study table correctly 1`] = `
         <td
           class=""
         >
-          <div
-            class="ui horizontal list"
-            role="list"
+          <a
+            class="text-red"
+            href="/study/SD_SG5N41K8/documents"
           >
-            <a
-              class="item text-red"
-              href="/study/SD_SG5N41K8/documents"
-              role="listitem"
-            >
-              No
-               documents
-            </a>
-          </div>
+            No
+             documents
+          </a>
+          <div
+            class="ui horizontal list display-block"
+            role="list"
+          />
         </td>
         <td
           class=""
         >
-          <div
-            class="ui horizontal list"
-            role="list"
+          <a
+            class="text-red"
+            href="/study/SD_SG5N41K8/cavatica"
           >
-            <a
-              class="item text-red"
-              href="/study/SD_SG5N41K8/cavatica"
-              role="listitem"
-            >
-              No
-               projects
-            </a>
-          </div>
+            No
+             projects
+          </a>
+          <div
+            class="ui horizontal list display-block"
+            role="list"
+          />
         </td>
       </tr>
       <tr
@@ -470,53 +458,49 @@ exports[`renders study table correctly 1`] = `
         <td
           class=""
         >
-          <div
-            class="ui horizontal list"
-            role="list"
+          <a
+            class="text-red"
+            href="/study/SD_0YYP5ZEN/documents"
           >
-            <a
-              class="item text-red"
-              href="/study/SD_0YYP5ZEN/documents"
-              role="listitem"
-            >
-              No
-               documents
-            </a>
-          </div>
+            No
+             documents
+          </a>
+          <div
+            class="ui horizontal list display-block"
+            role="list"
+          />
         </td>
         <td
           class=""
         >
+          <a
+            href="/study/SD_0YYP5ZEN/cavatica"
+          >
+            2
+             projects
+          </a>
           <div
-            class="ui horizontal list"
+            class="ui horizontal list display-block"
             role="list"
           >
-            <a
-              class="item"
-              href="/study/SD_0YYP5ZEN/cavatica"
-              role="listitem"
-            >
-              2
-               projects
-            </a>
             <div
               class="item"
               role="listitem"
             >
-              <div
-                class="ui olive mini circular empty label"
+              <i
+                aria-hidden="true"
+                class="paper plane outline icon"
               />
-               
               1
             </div>
             <div
               class="item"
               role="listitem"
             >
-              <div
-                class="ui olive mini circular empty label"
+              <i
+                aria-hidden="true"
+                class="sliders horizontal icon"
               />
-               
               1
             </div>
           </div>
@@ -703,18 +687,16 @@ exports[`renders study table for ADMIN role 1`] = `
         <td
           class=""
         >
+          <a
+            href="/study/SD_8WX8QQ06/documents"
+          >
+            1
+             documents
+          </a>
           <div
-            class="ui horizontal list"
+            class="ui horizontal list display-block"
             role="list"
           >
-            <a
-              class="item"
-              href="/study/SD_8WX8QQ06/documents"
-              role="listitem"
-            >
-              1
-               documents
-            </a>
             <div
               class="item"
               role="listitem"
@@ -730,19 +712,17 @@ exports[`renders study table for ADMIN role 1`] = `
         <td
           class=""
         >
-          <div
-            class="ui horizontal list"
-            role="list"
+          <a
+            class="text-red"
+            href="/study/SD_8WX8QQ06/cavatica"
           >
-            <a
-              class="item text-red"
-              href="/study/SD_8WX8QQ06/cavatica"
-              role="listitem"
-            >
-              No
-               projects
-            </a>
-          </div>
+            No
+             projects
+          </a>
+          <div
+            class="ui horizontal list display-block"
+            role="list"
+          />
         </td>
       </tr>
       <tr
@@ -809,36 +789,32 @@ exports[`renders study table for ADMIN role 1`] = `
         <td
           class=""
         >
-          <div
-            class="ui horizontal list"
-            role="list"
+          <a
+            class="text-red"
+            href="/study/SD_I1L92W57/documents"
           >
-            <a
-              class="item text-red"
-              href="/study/SD_I1L92W57/documents"
-              role="listitem"
-            >
-              No
-               documents
-            </a>
-          </div>
+            No
+             documents
+          </a>
+          <div
+            class="ui horizontal list display-block"
+            role="list"
+          />
         </td>
         <td
           class=""
         >
-          <div
-            class="ui horizontal list"
-            role="list"
+          <a
+            class="text-red"
+            href="/study/SD_I1L92W57/cavatica"
           >
-            <a
-              class="item text-red"
-              href="/study/SD_I1L92W57/cavatica"
-              role="listitem"
-            >
-              No
-               projects
-            </a>
-          </div>
+            No
+             projects
+          </a>
+          <div
+            class="ui horizontal list display-block"
+            role="list"
+          />
         </td>
       </tr>
       <tr
@@ -905,36 +881,32 @@ exports[`renders study table for ADMIN role 1`] = `
         <td
           class=""
         >
-          <div
-            class="ui horizontal list"
-            role="list"
+          <a
+            class="text-red"
+            href="/study/SD_SG5N41K8/documents"
           >
-            <a
-              class="item text-red"
-              href="/study/SD_SG5N41K8/documents"
-              role="listitem"
-            >
-              No
-               documents
-            </a>
-          </div>
+            No
+             documents
+          </a>
+          <div
+            class="ui horizontal list display-block"
+            role="list"
+          />
         </td>
         <td
           class=""
         >
-          <div
-            class="ui horizontal list"
-            role="list"
+          <a
+            class="text-red"
+            href="/study/SD_SG5N41K8/cavatica"
           >
-            <a
-              class="item text-red"
-              href="/study/SD_SG5N41K8/cavatica"
-              role="listitem"
-            >
-              No
-               projects
-            </a>
-          </div>
+            No
+             projects
+          </a>
+          <div
+            class="ui horizontal list display-block"
+            role="list"
+          />
         </td>
       </tr>
       <tr
@@ -1001,53 +973,49 @@ exports[`renders study table for ADMIN role 1`] = `
         <td
           class=""
         >
-          <div
-            class="ui horizontal list"
-            role="list"
+          <a
+            class="text-red"
+            href="/study/SD_0YYP5ZEN/documents"
           >
-            <a
-              class="item text-red"
-              href="/study/SD_0YYP5ZEN/documents"
-              role="listitem"
-            >
-              No
-               documents
-            </a>
-          </div>
+            No
+             documents
+          </a>
+          <div
+            class="ui horizontal list display-block"
+            role="list"
+          />
         </td>
         <td
           class=""
         >
+          <a
+            href="/study/SD_0YYP5ZEN/cavatica"
+          >
+            2
+             projects
+          </a>
           <div
-            class="ui horizontal list"
+            class="ui horizontal list display-block"
             role="list"
           >
-            <a
-              class="item"
-              href="/study/SD_0YYP5ZEN/cavatica"
-              role="listitem"
-            >
-              2
-               projects
-            </a>
             <div
               class="item"
               role="listitem"
             >
-              <div
-                class="ui olive mini circular empty label"
+              <i
+                aria-hidden="true"
+                class="paper plane outline icon"
               />
-               
               1
             </div>
             <div
               class="item"
               role="listitem"
             >
-              <div
-                class="ui olive mini circular empty label"
+              <i
+                aria-hidden="true"
+                class="sliders horizontal icon"
               />
-               
               1
             </div>
           </div>
@@ -1271,18 +1239,16 @@ exports[`renders study table without excluded columns passed to props 1`] = `
         <td
           class=""
         >
+          <a
+            href="/study/SD_8WX8QQ06/documents"
+          >
+            1
+             documents
+          </a>
           <div
-            class="ui horizontal list"
+            class="ui horizontal list display-block"
             role="list"
           >
-            <a
-              class="item"
-              href="/study/SD_8WX8QQ06/documents"
-              role="listitem"
-            >
-              1
-               documents
-            </a>
             <div
               class="item"
               role="listitem"
@@ -1298,19 +1264,17 @@ exports[`renders study table without excluded columns passed to props 1`] = `
         <td
           class=""
         >
-          <div
-            class="ui horizontal list"
-            role="list"
+          <a
+            class="text-red"
+            href="/study/SD_8WX8QQ06/cavatica"
           >
-            <a
-              class="item text-red"
-              href="/study/SD_8WX8QQ06/cavatica"
-              role="listitem"
-            >
-              No
-               projects
-            </a>
-          </div>
+            No
+             projects
+          </a>
+          <div
+            class="ui horizontal list display-block"
+            role="list"
+          />
         </td>
       </tr>
       <tr
@@ -1396,36 +1360,32 @@ exports[`renders study table without excluded columns passed to props 1`] = `
         <td
           class=""
         >
-          <div
-            class="ui horizontal list"
-            role="list"
+          <a
+            class="text-red"
+            href="/study/SD_I1L92W57/documents"
           >
-            <a
-              class="item text-red"
-              href="/study/SD_I1L92W57/documents"
-              role="listitem"
-            >
-              No
-               documents
-            </a>
-          </div>
+            No
+             documents
+          </a>
+          <div
+            class="ui horizontal list display-block"
+            role="list"
+          />
         </td>
         <td
           class=""
         >
-          <div
-            class="ui horizontal list"
-            role="list"
+          <a
+            class="text-red"
+            href="/study/SD_I1L92W57/cavatica"
           >
-            <a
-              class="item text-red"
-              href="/study/SD_I1L92W57/cavatica"
-              role="listitem"
-            >
-              No
-               projects
-            </a>
-          </div>
+            No
+             projects
+          </a>
+          <div
+            class="ui horizontal list display-block"
+            role="list"
+          />
         </td>
       </tr>
       <tr
@@ -1511,36 +1471,32 @@ exports[`renders study table without excluded columns passed to props 1`] = `
         <td
           class=""
         >
-          <div
-            class="ui horizontal list"
-            role="list"
+          <a
+            class="text-red"
+            href="/study/SD_SG5N41K8/documents"
           >
-            <a
-              class="item text-red"
-              href="/study/SD_SG5N41K8/documents"
-              role="listitem"
-            >
-              No
-               documents
-            </a>
-          </div>
+            No
+             documents
+          </a>
+          <div
+            class="ui horizontal list display-block"
+            role="list"
+          />
         </td>
         <td
           class=""
         >
-          <div
-            class="ui horizontal list"
-            role="list"
+          <a
+            class="text-red"
+            href="/study/SD_SG5N41K8/cavatica"
           >
-            <a
-              class="item text-red"
-              href="/study/SD_SG5N41K8/cavatica"
-              role="listitem"
-            >
-              No
-               projects
-            </a>
-          </div>
+            No
+             projects
+          </a>
+          <div
+            class="ui horizontal list display-block"
+            role="list"
+          />
         </td>
       </tr>
       <tr
@@ -1626,53 +1582,49 @@ exports[`renders study table without excluded columns passed to props 1`] = `
         <td
           class=""
         >
-          <div
-            class="ui horizontal list"
-            role="list"
+          <a
+            class="text-red"
+            href="/study/SD_0YYP5ZEN/documents"
           >
-            <a
-              class="item text-red"
-              href="/study/SD_0YYP5ZEN/documents"
-              role="listitem"
-            >
-              No
-               documents
-            </a>
-          </div>
+            No
+             documents
+          </a>
+          <div
+            class="ui horizontal list display-block"
+            role="list"
+          />
         </td>
         <td
           class=""
         >
+          <a
+            href="/study/SD_0YYP5ZEN/cavatica"
+          >
+            2
+             projects
+          </a>
           <div
-            class="ui horizontal list"
+            class="ui horizontal list display-block"
             role="list"
           >
-            <a
-              class="item"
-              href="/study/SD_0YYP5ZEN/cavatica"
-              role="listitem"
-            >
-              2
-               projects
-            </a>
             <div
               class="item"
               role="listitem"
             >
-              <div
-                class="ui olive mini circular empty label"
+              <i
+                aria-hidden="true"
+                class="paper plane outline icon"
               />
-               
               1
             </div>
             <div
               class="item"
               role="listitem"
             >
-              <div
-                class="ui olive mini circular empty label"
+              <i
+                aria-hidden="true"
+                class="sliders horizontal icon"
               />
-               
               1
             </div>
           </div>

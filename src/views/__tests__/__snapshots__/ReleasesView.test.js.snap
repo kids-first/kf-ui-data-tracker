@@ -27,7 +27,13 @@ exports[`renders study releases view -- shows an error 1`] = `
         class="item"
         href="/"
       >
-        Studies
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
       </a>
       <div
         class="right menu"
@@ -248,7 +254,13 @@ exports[`renders study releases view correctly --  showing empty view for non-ad
         class="item"
         href="/"
       >
-        Studies
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
       </a>
       <div
         class="right menu"
@@ -622,7 +634,13 @@ exports[`renders study releases view correctly 2`] = `
         class="item"
         href="/"
       >
-        Studies
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
       </a>
       <div
         class="right menu"

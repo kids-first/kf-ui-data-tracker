@@ -8,8 +8,8 @@ import {
 } from '../../common/notificationUtils';
 
 const GridSkeleton = () => (
-  <Card.Group stackable itemsPerRow={4}>
-    {[1, 2, 3, 4].map(i => (
+  <Card.Group stackable itemsPerRow={3}>
+    {[1, 2, 3].map(i => (
       <Card key={i}>
         <Card.Content>
           <Placeholder>
@@ -33,12 +33,13 @@ const GridSkeleton = () => (
   </Card.Group>
 );
 
-const StudyGrid = ({studyList, loading, isAdmin}) => {
+const StudyGrid = ({studyList, loading, isAdmin, isResearch}) => {
   if (loading) return <GridSkeleton />;
   return (
     <Card.Group stackable itemsPerRow={3}>
       {studyList.map((node, i) => (
         <StudyCard
+          isResearch={isResearch}
           key={i}
           studyId={node.node.kfId}
           studyName={node.node.name || node.node.shortName}

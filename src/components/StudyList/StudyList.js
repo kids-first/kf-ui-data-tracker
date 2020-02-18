@@ -56,7 +56,7 @@ const StudyList = ({studyList, loading, activeView, roles}) => {
   return (
     <Grid as={Segment} basic container stackable>
       <Grid.Column width={8} textAlign="left">
-        <Header as="h1">Your Studies</Header>
+        <Header as="h1">Your Investigator Studies</Header>
       </Grid.Column>
       <Grid.Column width={8} textAlign="right">
         {isAdmin && (
@@ -67,7 +67,7 @@ const StudyList = ({studyList, loading, activeView, roles}) => {
             icon="add"
             content="Add Study"
             as={Link}
-            to={`/study/new-study/info`}
+            to={`/study/new-study-selection`}
           />
         )}
         <Input

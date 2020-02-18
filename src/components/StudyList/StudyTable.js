@@ -15,14 +15,19 @@ import {
 /**
  * Renders a single row in the table
  */
-const TableValue = ({row, col, title}) => {
+const TableValue = ({row, col, title, isResearch}) => {
   const coordUrl = process.env.REACT_APP_COORD_UI + 'releases/';
   switch (col) {
     case 'files':
-      return <FileCounts files={row[col].edges} title={title} hideIcon />;
+      return <FileCounts files={row[col].edges} title={title} hideIcon wrap />;
     case 'projects':
       return (
-        <CavaticaCounts projects={row[col].edges} title={title} hideIcon />
+        <CavaticaCounts
+          projects={row[col].edges}
+          title={title}
+          hideIcon
+          wrap={!isResearch}
+        />
       );
     case 'createdAt':
     case 'modifiedAt':
@@ -90,6 +95,7 @@ const StudyTable = ({
   clickable = true,
   history,
   isAdmin,
+  isResearch,
 }) => {
   if (loading) {
     return <h2>loading studies</h2>;
@@ -182,7 +188,12 @@ const StudyTable = ({
           >
             {cols.map((col, idx) => (
               <Table.Cell key={idx}>
-                <TableValue row={row} col={col} title={row.kfId} />
+                <TableValue
+                  row={row}
+                  col={col}
+                  title={row.kfId}
+                  isResearch={isResearch}
+                />
               </Table.Cell>
             ))}
           </Table.Row>

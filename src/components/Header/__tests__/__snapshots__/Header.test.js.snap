@@ -47,49 +47,8 @@ exports[`renders correctly -- default stage (USER role) 1`] = `
         </div>
       </div>
       <div
-        class="ui stackable four cards"
+        class="ui stackable three cards"
       >
-        <div
-          class="ui card"
-        >
-          <div
-            class="content"
-          >
-            <div
-              class="ui placeholder"
-            >
-              <div
-                class="header"
-              >
-                <div
-                  class="line"
-                />
-              </div>
-              <div
-                class="paragraph"
-              >
-                <div
-                  class="line long"
-                />
-              </div>
-            </div>
-          </div>
-          <div
-            class="extra content"
-          >
-            <div
-              class="ui placeholder"
-            >
-              <div
-                class="paragraph"
-              >
-                <div
-                  class="line short"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
         <div
           class="ui card"
         >
@@ -283,7 +242,13 @@ exports[`renders correctly -- default stage (USER role) 2`] = `
         class="item active"
         href="/"
       >
-        Studies
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
       </a>
       <div
         class="right menu"
@@ -406,7 +371,7 @@ exports[`renders correctly -- default stage (USER role) 2`] = `
         <h1
           class="ui header"
         >
-          Your Studies
+          Your Investigator Studies
         </h1>
       </div>
       <div
@@ -414,7 +379,7 @@ exports[`renders correctly -- default stage (USER role) 2`] = `
       >
         <a
           class="ui mini basic primary button"
-          href="/study/new-study/info"
+          href="/study/new-study-selection"
           role="button"
         >
           <i
@@ -441,6 +406,7 @@ exports[`renders correctly -- default stage (USER role) 2`] = `
         >
           <button
             class="ui icon primary button"
+            data-testid="list"
             tabindex="0"
           >
             <i
@@ -450,6 +416,7 @@ exports[`renders correctly -- default stage (USER role) 2`] = `
           </button>
           <button
             class="ui icon button"
+            data-testid="grid layout"
             tabindex="0"
           >
             <i
@@ -566,35 +533,31 @@ exports[`renders correctly -- default stage (USER role) 2`] = `
                 <td
                   class=""
                 >
-                  <div
-                    class="ui horizontal list"
-                    role="list"
+                  <a
+                    class="text-red"
+                    href="/study/SD_8WX8QQ06/cavatica"
                   >
-                    <a
-                      class="item text-red"
-                      href="/study/SD_8WX8QQ06/cavatica"
-                      role="listitem"
-                    >
-                      No
-                       projects
-                    </a>
-                  </div>
+                    No
+                     projects
+                  </a>
+                  <div
+                    class="ui horizontal list display-block"
+                    role="list"
+                  />
                 </td>
                 <td
                   class=""
                 >
+                  <a
+                    href="/study/SD_8WX8QQ06/documents"
+                  >
+                    1
+                     documents
+                  </a>
                   <div
-                    class="ui horizontal list"
+                    class="ui horizontal list display-block"
                     role="list"
                   >
-                    <a
-                      class="item"
-                      href="/study/SD_8WX8QQ06/documents"
-                      role="listitem"
-                    >
-                      1
-                       documents
-                    </a>
                     <div
                       class="item"
                       role="listitem"
@@ -644,36 +607,32 @@ exports[`renders correctly -- default stage (USER role) 2`] = `
                 <td
                   class=""
                 >
-                  <div
-                    class="ui horizontal list"
-                    role="list"
+                  <a
+                    class="text-red"
+                    href="/study/SD_I1L92W57/cavatica"
                   >
-                    <a
-                      class="item text-red"
-                      href="/study/SD_I1L92W57/cavatica"
-                      role="listitem"
-                    >
-                      No
-                       projects
-                    </a>
-                  </div>
+                    No
+                     projects
+                  </a>
+                  <div
+                    class="ui horizontal list display-block"
+                    role="list"
+                  />
                 </td>
                 <td
                   class=""
                 >
-                  <div
-                    class="ui horizontal list"
-                    role="list"
+                  <a
+                    class="text-red"
+                    href="/study/SD_I1L92W57/documents"
                   >
-                    <a
-                      class="item text-red"
-                      href="/study/SD_I1L92W57/documents"
-                      role="listitem"
-                    >
-                      No
-                       documents
-                    </a>
-                  </div>
+                    No
+                     documents
+                  </a>
+                  <div
+                    class="ui horizontal list display-block"
+                    role="list"
+                  />
                 </td>
                 <td
                   class=""
@@ -712,36 +671,32 @@ exports[`renders correctly -- default stage (USER role) 2`] = `
                 <td
                   class=""
                 >
-                  <div
-                    class="ui horizontal list"
-                    role="list"
+                  <a
+                    class="text-red"
+                    href="/study/SD_SG5N41K8/cavatica"
                   >
-                    <a
-                      class="item text-red"
-                      href="/study/SD_SG5N41K8/cavatica"
-                      role="listitem"
-                    >
-                      No
-                       projects
-                    </a>
-                  </div>
+                    No
+                     projects
+                  </a>
+                  <div
+                    class="ui horizontal list display-block"
+                    role="list"
+                  />
                 </td>
                 <td
                   class=""
                 >
-                  <div
-                    class="ui horizontal list"
-                    role="list"
+                  <a
+                    class="text-red"
+                    href="/study/SD_SG5N41K8/documents"
                   >
-                    <a
-                      class="item text-red"
-                      href="/study/SD_SG5N41K8/documents"
-                      role="listitem"
-                    >
-                      No
-                       documents
-                    </a>
-                  </div>
+                    No
+                     documents
+                  </a>
+                  <div
+                    class="ui horizontal list display-block"
+                    role="list"
+                  />
                 </td>
                 <td
                   class=""
@@ -786,36 +741,34 @@ exports[`renders correctly -- default stage (USER role) 2`] = `
                 <td
                   class=""
                 >
+                  <a
+                    href="/study/SD_0YYP5ZEN/cavatica"
+                  >
+                    2
+                     projects
+                  </a>
                   <div
-                    class="ui horizontal list"
+                    class="ui horizontal list display-block"
                     role="list"
                   >
-                    <a
-                      class="item"
-                      href="/study/SD_0YYP5ZEN/cavatica"
-                      role="listitem"
-                    >
-                      2
-                       projects
-                    </a>
                     <div
                       class="item"
                       role="listitem"
                     >
-                      <div
-                        class="ui olive mini circular empty label"
+                      <i
+                        aria-hidden="true"
+                        class="paper plane outline icon"
                       />
-                       
                       1
                     </div>
                     <div
                       class="item"
                       role="listitem"
                     >
-                      <div
-                        class="ui olive mini circular empty label"
+                      <i
+                        aria-hidden="true"
+                        class="sliders horizontal icon"
                       />
-                       
                       1
                     </div>
                   </div>
@@ -823,19 +776,17 @@ exports[`renders correctly -- default stage (USER role) 2`] = `
                 <td
                   class=""
                 >
-                  <div
-                    class="ui horizontal list"
-                    role="list"
+                  <a
+                    class="text-red"
+                    href="/study/SD_0YYP5ZEN/documents"
                   >
-                    <a
-                      class="item text-red"
-                      href="/study/SD_0YYP5ZEN/documents"
-                      role="listitem"
-                    >
-                      No
-                       documents
-                    </a>
-                  </div>
+                    No
+                     documents
+                  </a>
+                  <div
+                    class="ui horizontal list display-block"
+                    role="list"
+                  />
                 </td>
                 <td
                   class=""
@@ -940,7 +891,13 @@ exports[`renders correctly -- default stage (USER role) 3`] = `
         class="item active"
         href="/"
       >
-        Studies
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
       </a>
       <div
         class="right menu"
@@ -1063,7 +1020,7 @@ exports[`renders correctly -- default stage (USER role) 3`] = `
         <h1
           class="ui header"
         >
-          Your Studies
+          Your Investigator Studies
         </h1>
       </div>
       <div
@@ -1071,7 +1028,7 @@ exports[`renders correctly -- default stage (USER role) 3`] = `
       >
         <a
           class="ui mini basic primary button"
-          href="/study/new-study/info"
+          href="/study/new-study-selection"
           role="button"
         >
           <i
@@ -1098,6 +1055,7 @@ exports[`renders correctly -- default stage (USER role) 3`] = `
         >
           <button
             class="ui icon primary button"
+            data-testid="list"
             tabindex="0"
           >
             <i
@@ -1107,6 +1065,7 @@ exports[`renders correctly -- default stage (USER role) 3`] = `
           </button>
           <button
             class="ui icon button"
+            data-testid="grid layout"
             tabindex="0"
           >
             <i
@@ -1223,35 +1182,31 @@ exports[`renders correctly -- default stage (USER role) 3`] = `
                 <td
                   class=""
                 >
-                  <div
-                    class="ui horizontal list"
-                    role="list"
+                  <a
+                    class="text-red"
+                    href="/study/SD_8WX8QQ06/cavatica"
                   >
-                    <a
-                      class="item text-red"
-                      href="/study/SD_8WX8QQ06/cavatica"
-                      role="listitem"
-                    >
-                      No
-                       projects
-                    </a>
-                  </div>
+                    No
+                     projects
+                  </a>
+                  <div
+                    class="ui horizontal list display-block"
+                    role="list"
+                  />
                 </td>
                 <td
                   class=""
                 >
+                  <a
+                    href="/study/SD_8WX8QQ06/documents"
+                  >
+                    1
+                     documents
+                  </a>
                   <div
-                    class="ui horizontal list"
+                    class="ui horizontal list display-block"
                     role="list"
                   >
-                    <a
-                      class="item"
-                      href="/study/SD_8WX8QQ06/documents"
-                      role="listitem"
-                    >
-                      1
-                       documents
-                    </a>
                     <div
                       class="item"
                       role="listitem"
@@ -1301,36 +1256,32 @@ exports[`renders correctly -- default stage (USER role) 3`] = `
                 <td
                   class=""
                 >
-                  <div
-                    class="ui horizontal list"
-                    role="list"
+                  <a
+                    class="text-red"
+                    href="/study/SD_I1L92W57/cavatica"
                   >
-                    <a
-                      class="item text-red"
-                      href="/study/SD_I1L92W57/cavatica"
-                      role="listitem"
-                    >
-                      No
-                       projects
-                    </a>
-                  </div>
+                    No
+                     projects
+                  </a>
+                  <div
+                    class="ui horizontal list display-block"
+                    role="list"
+                  />
                 </td>
                 <td
                   class=""
                 >
-                  <div
-                    class="ui horizontal list"
-                    role="list"
+                  <a
+                    class="text-red"
+                    href="/study/SD_I1L92W57/documents"
                   >
-                    <a
-                      class="item text-red"
-                      href="/study/SD_I1L92W57/documents"
-                      role="listitem"
-                    >
-                      No
-                       documents
-                    </a>
-                  </div>
+                    No
+                     documents
+                  </a>
+                  <div
+                    class="ui horizontal list display-block"
+                    role="list"
+                  />
                 </td>
                 <td
                   class=""
@@ -1369,36 +1320,32 @@ exports[`renders correctly -- default stage (USER role) 3`] = `
                 <td
                   class=""
                 >
-                  <div
-                    class="ui horizontal list"
-                    role="list"
+                  <a
+                    class="text-red"
+                    href="/study/SD_SG5N41K8/cavatica"
                   >
-                    <a
-                      class="item text-red"
-                      href="/study/SD_SG5N41K8/cavatica"
-                      role="listitem"
-                    >
-                      No
-                       projects
-                    </a>
-                  </div>
+                    No
+                     projects
+                  </a>
+                  <div
+                    class="ui horizontal list display-block"
+                    role="list"
+                  />
                 </td>
                 <td
                   class=""
                 >
-                  <div
-                    class="ui horizontal list"
-                    role="list"
+                  <a
+                    class="text-red"
+                    href="/study/SD_SG5N41K8/documents"
                   >
-                    <a
-                      class="item text-red"
-                      href="/study/SD_SG5N41K8/documents"
-                      role="listitem"
-                    >
-                      No
-                       documents
-                    </a>
-                  </div>
+                    No
+                     documents
+                  </a>
+                  <div
+                    class="ui horizontal list display-block"
+                    role="list"
+                  />
                 </td>
                 <td
                   class=""
@@ -1443,36 +1390,34 @@ exports[`renders correctly -- default stage (USER role) 3`] = `
                 <td
                   class=""
                 >
+                  <a
+                    href="/study/SD_0YYP5ZEN/cavatica"
+                  >
+                    2
+                     projects
+                  </a>
                   <div
-                    class="ui horizontal list"
+                    class="ui horizontal list display-block"
                     role="list"
                   >
-                    <a
-                      class="item"
-                      href="/study/SD_0YYP5ZEN/cavatica"
-                      role="listitem"
-                    >
-                      2
-                       projects
-                    </a>
                     <div
                       class="item"
                       role="listitem"
                     >
-                      <div
-                        class="ui olive mini circular empty label"
+                      <i
+                        aria-hidden="true"
+                        class="paper plane outline icon"
                       />
-                       
                       1
                     </div>
                     <div
                       class="item"
                       role="listitem"
                     >
-                      <div
-                        class="ui olive mini circular empty label"
+                      <i
+                        aria-hidden="true"
+                        class="sliders horizontal icon"
                       />
-                       
                       1
                     </div>
                   </div>
@@ -1480,19 +1425,17 @@ exports[`renders correctly -- default stage (USER role) 3`] = `
                 <td
                   class=""
                 >
-                  <div
-                    class="ui horizontal list"
-                    role="list"
+                  <a
+                    class="text-red"
+                    href="/study/SD_0YYP5ZEN/documents"
                   >
-                    <a
-                      class="item text-red"
-                      href="/study/SD_0YYP5ZEN/documents"
-                      role="listitem"
-                    >
-                      No
-                       documents
-                    </a>
-                  </div>
+                    No
+                     documents
+                  </a>
+                  <div
+                    class="ui horizontal list display-block"
+                    role="list"
+                  />
                 </td>
                 <td
                   class=""
@@ -1597,7 +1540,13 @@ exports[`renders correctly -- default stage (USER role) 4`] = `
         class="item active"
         href="/"
       >
-        Studies
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
       </a>
       <div
         class="right menu"
@@ -1720,7 +1669,7 @@ exports[`renders correctly -- default stage (USER role) 4`] = `
         <h1
           class="ui header"
         >
-          Your Studies
+          Your Investigator Studies
         </h1>
       </div>
       <div
@@ -1728,7 +1677,7 @@ exports[`renders correctly -- default stage (USER role) 4`] = `
       >
         <a
           class="ui mini basic primary button"
-          href="/study/new-study/info"
+          href="/study/new-study-selection"
           role="button"
         >
           <i
@@ -1755,6 +1704,7 @@ exports[`renders correctly -- default stage (USER role) 4`] = `
         >
           <button
             class="ui icon primary button"
+            data-testid="list"
             tabindex="0"
           >
             <i
@@ -1764,6 +1714,7 @@ exports[`renders correctly -- default stage (USER role) 4`] = `
           </button>
           <button
             class="ui icon button"
+            data-testid="grid layout"
             tabindex="0"
           >
             <i
@@ -1880,35 +1831,31 @@ exports[`renders correctly -- default stage (USER role) 4`] = `
                 <td
                   class=""
                 >
-                  <div
-                    class="ui horizontal list"
-                    role="list"
+                  <a
+                    class="text-red"
+                    href="/study/SD_8WX8QQ06/cavatica"
                   >
-                    <a
-                      class="item text-red"
-                      href="/study/SD_8WX8QQ06/cavatica"
-                      role="listitem"
-                    >
-                      No
-                       projects
-                    </a>
-                  </div>
+                    No
+                     projects
+                  </a>
+                  <div
+                    class="ui horizontal list display-block"
+                    role="list"
+                  />
                 </td>
                 <td
                   class=""
                 >
+                  <a
+                    href="/study/SD_8WX8QQ06/documents"
+                  >
+                    1
+                     documents
+                  </a>
                   <div
-                    class="ui horizontal list"
+                    class="ui horizontal list display-block"
                     role="list"
                   >
-                    <a
-                      class="item"
-                      href="/study/SD_8WX8QQ06/documents"
-                      role="listitem"
-                    >
-                      1
-                       documents
-                    </a>
                     <div
                       class="item"
                       role="listitem"
@@ -1958,36 +1905,32 @@ exports[`renders correctly -- default stage (USER role) 4`] = `
                 <td
                   class=""
                 >
-                  <div
-                    class="ui horizontal list"
-                    role="list"
+                  <a
+                    class="text-red"
+                    href="/study/SD_I1L92W57/cavatica"
                   >
-                    <a
-                      class="item text-red"
-                      href="/study/SD_I1L92W57/cavatica"
-                      role="listitem"
-                    >
-                      No
-                       projects
-                    </a>
-                  </div>
+                    No
+                     projects
+                  </a>
+                  <div
+                    class="ui horizontal list display-block"
+                    role="list"
+                  />
                 </td>
                 <td
                   class=""
                 >
-                  <div
-                    class="ui horizontal list"
-                    role="list"
+                  <a
+                    class="text-red"
+                    href="/study/SD_I1L92W57/documents"
                   >
-                    <a
-                      class="item text-red"
-                      href="/study/SD_I1L92W57/documents"
-                      role="listitem"
-                    >
-                      No
-                       documents
-                    </a>
-                  </div>
+                    No
+                     documents
+                  </a>
+                  <div
+                    class="ui horizontal list display-block"
+                    role="list"
+                  />
                 </td>
                 <td
                   class=""
@@ -2026,36 +1969,32 @@ exports[`renders correctly -- default stage (USER role) 4`] = `
                 <td
                   class=""
                 >
-                  <div
-                    class="ui horizontal list"
-                    role="list"
+                  <a
+                    class="text-red"
+                    href="/study/SD_SG5N41K8/cavatica"
                   >
-                    <a
-                      class="item text-red"
-                      href="/study/SD_SG5N41K8/cavatica"
-                      role="listitem"
-                    >
-                      No
-                       projects
-                    </a>
-                  </div>
+                    No
+                     projects
+                  </a>
+                  <div
+                    class="ui horizontal list display-block"
+                    role="list"
+                  />
                 </td>
                 <td
                   class=""
                 >
-                  <div
-                    class="ui horizontal list"
-                    role="list"
+                  <a
+                    class="text-red"
+                    href="/study/SD_SG5N41K8/documents"
                   >
-                    <a
-                      class="item text-red"
-                      href="/study/SD_SG5N41K8/documents"
-                      role="listitem"
-                    >
-                      No
-                       documents
-                    </a>
-                  </div>
+                    No
+                     documents
+                  </a>
+                  <div
+                    class="ui horizontal list display-block"
+                    role="list"
+                  />
                 </td>
                 <td
                   class=""
@@ -2100,36 +2039,34 @@ exports[`renders correctly -- default stage (USER role) 4`] = `
                 <td
                   class=""
                 >
+                  <a
+                    href="/study/SD_0YYP5ZEN/cavatica"
+                  >
+                    2
+                     projects
+                  </a>
                   <div
-                    class="ui horizontal list"
+                    class="ui horizontal list display-block"
                     role="list"
                   >
-                    <a
-                      class="item"
-                      href="/study/SD_0YYP5ZEN/cavatica"
-                      role="listitem"
-                    >
-                      2
-                       projects
-                    </a>
                     <div
                       class="item"
                       role="listitem"
                     >
-                      <div
-                        class="ui olive mini circular empty label"
+                      <i
+                        aria-hidden="true"
+                        class="paper plane outline icon"
                       />
-                       
                       1
                     </div>
                     <div
                       class="item"
                       role="listitem"
                     >
-                      <div
-                        class="ui olive mini circular empty label"
+                      <i
+                        aria-hidden="true"
+                        class="sliders horizontal icon"
                       />
-                       
                       1
                     </div>
                   </div>
@@ -2137,19 +2074,17 @@ exports[`renders correctly -- default stage (USER role) 4`] = `
                 <td
                   class=""
                 >
-                  <div
-                    class="ui horizontal list"
-                    role="list"
+                  <a
+                    class="text-red"
+                    href="/study/SD_0YYP5ZEN/documents"
                   >
-                    <a
-                      class="item text-red"
-                      href="/study/SD_0YYP5ZEN/documents"
-                      role="listitem"
-                    >
-                      No
-                       documents
-                    </a>
-                  </div>
+                    No
+                     documents
+                  </a>
+                  <div
+                    class="ui horizontal list display-block"
+                    role="list"
+                  />
                 </td>
                 <td
                   class=""

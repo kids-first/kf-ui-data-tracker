@@ -20,7 +20,7 @@ it('renders new study view correctly --  with error on submit', async () => {
       }}
       mocks={[mocks[1], mocks[8], mocks[22]]}
     >
-      <MemoryRouter initialEntries={['/study/new-study/info']}>
+      <MemoryRouter initialEntries={['/study/new-study-selection']}>
         <Routes />
       </MemoryRouter>
     </MockedProvider>,
@@ -29,6 +29,12 @@ it('renders new study view correctly --  with error on submit', async () => {
     },
   );
   await wait();
+  expect(tree.container).toMatchSnapshot();
+  act(() => {
+    fireEvent.click(tree.getByTestId('delivery-card'));
+  });
+  await wait();
+  expect(tree.container).toMatchSnapshot();
 
   act(() => {
     fireEvent.change(tree.getByLabelText('name'), {

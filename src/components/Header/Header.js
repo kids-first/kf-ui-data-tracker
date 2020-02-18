@@ -30,7 +30,12 @@ const Header = () => {
         </Menu.Item>
         {loggedIn && (
           <>
-            <Menu.Item as={Nav} to="/" content="Studies" />
+            <Menu.Item as={Nav} to="/" content="Investigator Studies" />
+            <Menu.Item
+              as={Nav}
+              to="/research-studies"
+              content="Research Studies"
+            />
             <Menu.Menu position="right">
               {profile.roles.includes('ADMIN') && (
                 <Dropdown trigger={'Admin'} className="link item">

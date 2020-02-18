@@ -16,6 +16,7 @@ const ToggleButtons = ({buttons, onToggle, size, hideText}) => {
         <Button
           key={text}
           icon={hideText}
+          data-testid={icon}
           primary={active === idx}
           onClick={() => {
             setActive(idx);

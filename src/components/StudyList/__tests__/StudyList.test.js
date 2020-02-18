@@ -88,8 +88,8 @@ it('renders study grid loading state', () => {
   expect(tree.container).toMatchSnapshot();
 
   const cards = tree.container.querySelectorAll('.ui .card');
-  // Should contain 4 cards in loading state
-  expect(cards.length).toBe(4);
+  // Should contain 3 cards in loading state
+  expect(cards.length).toBe(3);
 });
 
 it('renders study grid/table empty state', () => {

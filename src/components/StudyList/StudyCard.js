@@ -19,6 +19,7 @@ const StudyCard = ({
   missingValue,
   missingProject,
   requiredFileChanges,
+  isResearch,
 }) => {
   const projectsCounts = projects && projects.length > 0 ? projects.length : 0;
   const needsAttention =
@@ -56,59 +57,67 @@ const StudyCard = ({
               </Link>
             }
           />
-          <Popup
-            inverted
-            position="top center"
-            size="small"
-            content={
-              files.length === 0
-                ? 'No files'
-                : '' + requiredFileChanges > 0
-                ? requiredFileChanges + ' files need changes'
-                : ''
-            }
-            disabled={files.length > 0 && requiredFileChanges < 1}
-            trigger={
-              <Link to={`/study/${studyId}/documents`} className="pr-5">
-                <Icon
-                  name="file"
-                  color={
-                    files.length > 0 && requiredFileChanges < 1 ? 'grey' : 'red'
-                  }
-                />
-                {files.length} documents
-              </Link>
-            }
-          />
-          <Popup
-            inverted
-            position="top center"
-            size="small"
-            content="Missing projects"
-            disabled={projectsCounts > 0 && missingProject < 1}
-            trigger={
-              <Link to={`/study/${studyId}/cavatica`}>
-                <CavaticaLogo
-                  className="mr-5 vertical-middle"
-                  fill={
-                    projectsCounts > 0 && missingProject < 1
-                      ? 'rgba(0,0,0,.6)'
-                      : '#db2828'
-                  }
-                />
-                {projectsCounts} projects
-              </Link>
-            }
-          />
-          <Button
-            as={Label}
-            basic
-            floated="right"
-            size="mini"
-            data-testid="show-detail"
-            icon={showDetail ? 'chevron up' : 'chevron down'}
-            onClick={() => setShowDetail(!showDetail)}
-          />
+          {isResearch ? (
+            <CavaticaCounts title={studyId} projects={projects} />
+          ) : (
+            <>
+              <Popup
+                inverted
+                position="top center"
+                size="small"
+                content={
+                  files.length === 0
+                    ? 'No files'
+                    : '' + requiredFileChanges > 0
+                    ? requiredFileChanges + ' files need changes'
+                    : ''
+                }
+                disabled={files.length > 0 && requiredFileChanges < 1}
+                trigger={
+                  <Link to={`/study/${studyId}/documents`} className="pr-5">
+                    <Icon
+                      name="file"
+                      color={
+                        files.length > 0 && requiredFileChanges < 1
+                          ? 'grey'
+                          : 'red'
+                      }
+                    />
+                    {files.length} documents
+                  </Link>
+                }
+              />
+              <Popup
+                inverted
+                position="top center"
+                size="small"
+                content="Missing projects"
+                disabled={projectsCounts > 0 && missingProject < 1}
+                trigger={
+                  <Link to={`/study/${studyId}/cavatica`}>
+                    <CavaticaLogo
+                      className="mr-5 vertical-middle"
+                      fill={
+                        projectsCounts > 0 && missingProject < 1
+                          ? 'rgba(0,0,0,.6)'
+                          : '#db2828'
+                      }
+                    />
+                    {projectsCounts} projects
+                  </Link>
+                }
+              />
+              <Button
+                as={Label}
+                basic
+                floated="right"
+                size="mini"
+                data-testid="show-detail"
+                icon={showDetail ? 'chevron up' : 'chevron down'}
+                onClick={() => setShowDetail(!showDetail)}
+              />
+            </>
+          )}
         </Card.Content>
       )}
       {showDetail && (
