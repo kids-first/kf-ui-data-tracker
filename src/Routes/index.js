@@ -21,8 +21,13 @@ import {
   LogoutView,
   ReleasesView,
   NewStudySelectionView,
+  NotFoundView,
 } from '../views';
-import DocumentRoutes from '../documents/routes';
+import {
+  StudyFilesListView,
+  FileDetailView,
+  NewDocumentView,
+} from '../documents/views';
 import {ResearchStudyListView} from '../research/views';
 import TrackedRoute from './TrackedRoute';
 
@@ -35,15 +40,32 @@ const Routes = () => (
       <Route path="/" render={() => <Header />} />
     </Switch>
     <div className="page">
-      <PrivateRoute path="/profile" component={ProfileView} />
       <PrivateRoute path="/study/:kfId(SD_\w{8})/" component={NavBarView} />
-      <AdminRoute path="/study/new-study" component={NewStudyView} />
-      <AdminRoute
-        path="/study/new-study-selection"
-        component={NewStudySelectionView}
-      />
       <Switch>
         <PrivateRoute exact path="/" component={StudyListView} />
+        <AdminRoute exact path="/events" component={EventsView} />
+        <PrivateRoute path="/profile" component={ProfileView} />
+        <AdminRoute exact path="/configuration" component={ConfigurationView} />
+        <AdminRoute
+          exact
+          path="/study/new-study-selection"
+          component={NewStudySelectionView}
+        />
+        <AdminRoute
+          exact
+          path="/study/new-study/info"
+          component={NewStudyView}
+        />
+        <AdminRoute
+          exact
+          path="/study/new-study/external"
+          component={NewStudyView}
+        />
+        <AdminRoute
+          exact
+          path="/study/new-study/logistics"
+          component={NewStudyView}
+        />
         <PrivateRoute
           exact
           path="/research-studies"
@@ -69,9 +91,21 @@ const Routes = () => (
           path="/cavatica-projects"
           component={CavaticaProjectsView}
         />
-        <AdminRoute exact path="/events" component={EventsView} />
-        <AdminRoute exact path="/configuration" component={ConfigurationView} />
-        <DocumentRoutes />
+        <PrivateRoute
+          exact
+          path="/study/:kfId/documents"
+          component={StudyFilesListView}
+        />
+        <PrivateRoute
+          path="/study/:kfId/documents/new-document"
+          component={NewDocumentView}
+        />
+        <PrivateRoute
+          exact
+          path="/study/:kfId/documents/:fileId(SF_\w{8})"
+          component={FileDetailView}
+        />
+        <Route component={NotFoundView} />
       </Switch>
     </div>
     <Footer />

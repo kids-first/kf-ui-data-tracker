@@ -1,6 +1,11 @@
 import React from 'react';
 import {useQuery} from '@apollo/react-hooks';
-import {GET_STUDY_RELEASES, MY_PROFILE} from '../state/queries';
+import {Helmet} from 'react-helmet';
+import {
+  GET_STUDY_RELEASES,
+  GET_STUDY_BY_ID,
+  MY_PROFILE,
+} from '../state/queries';
 import {
   Container,
   Header,
@@ -10,6 +15,7 @@ import {
   Icon,
 } from 'semantic-ui-react';
 import ReleaseList from '../components/ReleaseList/ReleaseList';
+import NotFoundView from './NotFoundView';
 
 const ReleasesView = props => {
   const getUser = useQuery(MY_PROFILE);
@@ -28,7 +34,15 @@ const ReleasesView = props => {
 
   const study = data && data.study && data.study;
 
-  if (loading)
+  const {loading: studyLoading, data: studyData} = useQuery(GET_STUDY_BY_ID, {
+    variables: {
+      kfId: props.match.params.kfId,
+    },
+  });
+  const studyByKfId = studyData && studyData.studyByKfId;
+  const studyName = studyByKfId ? 'for ' + studyByKfId.name : '';
+
+  if (loading || studyLoading)
     return (
       <Container as={Segment} basic vertical>
         <Placeholder>
@@ -45,10 +59,24 @@ const ReleasesView = props => {
         </Placeholder>
       </Container>
     );
-
+  if (studyByKfId === null) {
+    return (
+      <NotFoundView
+        title="Study not found"
+        message={`Cannot find the study with ID ${props.match.params.kfId}`}
+      />
+    );
+  }
   if (error)
     return (
       <Container as={Segment} basic>
+        <Helmet>
+          <title>
+            {`KF Data Tracker - Study releases - Error ${
+              props.match.params.kfId
+            }`}
+          </title>
+        </Helmet>
         <Message
           negative
           icon="warning circle"
@@ -61,6 +89,9 @@ const ReleasesView = props => {
   if (!isBeta)
     return (
       <Container as={Segment} basic padded="very">
+        <Helmet>
+          <title>{`KF Data Tracker - Study releases ${studyName}`}</title>
+        </Helmet>
         <Header as="h2" disabled textAlign="center">
           <Icon name="ban" />
           You don’t have access to this page.
@@ -70,6 +101,9 @@ const ReleasesView = props => {
 
   return (
     <Container as={Segment} basic vertical>
+      <Helmet>
+        <title>{`KF Data Tracker - Study releases ${studyName}`}</title>
+      </Helmet>
       <Header as="h2" className="mt-6">
         Past Published Releases
       </Header>
