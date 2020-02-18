@@ -10,6 +10,7 @@ import {
   Icon,
 } from 'semantic-ui-react';
 import ReleaseList from '../components/ReleaseList/ReleaseList';
+import NotFoundView from './NotFoundView';
 
 const ReleasesView = props => {
   const getUser = useQuery(MY_PROFILE);
@@ -45,7 +46,14 @@ const ReleasesView = props => {
         </Placeholder>
       </Container>
     );
-
+  if (studyByKfId === null) {
+    return (
+      <NotFoundView
+        title="Study not found"
+        message={`Cannot find the study with ID ${props.match.params.kfId}`}
+      />
+    );
+  }
   if (error)
     return (
       <Container as={Segment} basic>

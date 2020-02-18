@@ -14,6 +14,7 @@ import {
   Responsive,
 } from 'semantic-ui-react';
 import UploadWizard from '../modals/UploadWizard/UploadWizard';
+import NotFoundView from '../../views/NotFoundView';
 
 /**
  * A place holder skeleton for a list of files
@@ -63,6 +64,14 @@ const StudyFilesListView = ({
       : false;
   const [dialog, setDialog] = useState(false);
   const [uploadedFile, setFile] = useState(false);
+  if (!loading && studyByKfId === null) {
+    return (
+      <NotFoundView
+        title="Study not found"
+        message={`Cannot find the study with ID ${kfId}`}
+      />
+    );
+  }
   if (error)
     return (
       <Container as={Segment} basic>

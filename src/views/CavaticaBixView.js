@@ -19,6 +19,7 @@ import {
   List,
 } from 'semantic-ui-react';
 import EmptyView from './EmptyView';
+import NotFoundView from './NotFoundView';
 import EditProjectModal from '../modals/EditProjectModal';
 import LinkProjectModal from '../modals/LinkProjectModal';
 import CavaticaProjectList from '../components/CavaticaProjectList/CavaticaProjectList';
@@ -128,6 +129,14 @@ const CavaticaBixView = ({match, history}) => {
         </Message>
       </Container>
     );
+  if (studyByKfId === null) {
+    return (
+      <NotFoundView
+        title="Study not found"
+        message={`Cannot find the study with ID ${match.params.kfId}`}
+      />
+    );
+  }
   if (isAdmin) {
     return (
       <Container as={Segment} basic vertical>

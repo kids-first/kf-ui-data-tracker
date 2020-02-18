@@ -13,6 +13,7 @@ import {
   Button,
 } from 'semantic-ui-react';
 import EmptyView from './EmptyView';
+import NotFoundView from './NotFoundView';
 import EventList from '../components/EventList/EventList';
 import {eventType} from '../common/enums';
 
@@ -108,6 +109,14 @@ const LogsView = ({match}) => {
         </Message>
       </Container>
     );
+  if (studyByKfId === null) {
+    return (
+      <NotFoundView
+        title="Study not found"
+        message={`Cannot find the study with ID ${match.params.kfId}`}
+      />
+    );
+  }
   if (isAdmin) {
     return (
       <Container as={Segment} basic vertical>

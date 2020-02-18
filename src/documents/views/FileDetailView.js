@@ -4,6 +4,7 @@ import {MY_PROFILE} from '../../state/queries';
 import {GET_FILE_BY_ID} from '../queries';
 import {Container, Segment, Dimmer, Loader, Message} from 'semantic-ui-react';
 import FileDetail from '../components/FileDetail/FileDetail';
+import NotFoundView from '../../views/NotFoundView';
 
 const FileDetailView = ({match}) => {
   const {loading, data, error} = useQuery(GET_FILE_BY_ID, {
@@ -35,7 +36,14 @@ const FileDetailView = ({match}) => {
         />
       </Container>
     );
-
+  if (fileByKfId === null) {
+    return (
+      <NotFoundView
+        title="Document not found"
+        message={`Cannot find the document with ID ${match.params.fileId}`}
+      />
+    );
+  }
   return (
     <Container as={Segment} basic vertical>
       <FileDetail fileNode={fileByKfId} isAdmin={isAdmin} />
