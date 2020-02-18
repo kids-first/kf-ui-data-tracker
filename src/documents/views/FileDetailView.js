@@ -1,4 +1,5 @@
 import React from 'react';
+import {Helmet} from 'react-helmet';
 import {useQuery} from '@apollo/react-hooks';
 import {MY_PROFILE} from '../../state/queries';
 import {GET_FILE_BY_ID} from '../queries';
@@ -28,6 +29,13 @@ const FileDetailView = ({match}) => {
   if (error)
     return (
       <Container as={Segment} basic vertical>
+        <Helmet>
+          <title>
+            {`KF Data Tracker - Study document - Error ${
+              fileByKfId ? 'for ' + fileByKfId.kfId : null
+            }`}
+          </title>
+        </Helmet>
         <Message
           negative
           icon="warning circle"
@@ -46,6 +54,13 @@ const FileDetailView = ({match}) => {
   }
   return (
     <Container as={Segment} basic vertical>
+      <Helmet>
+        <title>
+          {`KF Data Tracker - Study document ${
+            fileByKfId ? 'for ' + fileByKfId.name : null
+          }`}
+        </title>
+      </Helmet>
       <FileDetail fileNode={fileByKfId} isAdmin={isAdmin} />
     </Container>
   );
