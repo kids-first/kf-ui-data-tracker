@@ -21,6 +21,7 @@ import {
   LogoutView,
   ReleasesView,
   NewStudySelectionView,
+  NotFoundView,
 } from '../views';
 import DocumentRoutes from '../documents/routes';
 import {ResearchStudyListView} from '../research/views';
@@ -72,6 +73,7 @@ const Routes = () => (
         <AdminRoute exact path="/events" component={EventsView} />
         <AdminRoute exact path="/configuration" component={ConfigurationView} />
         <DocumentRoutes />
+        <Route component={NotFoundView} />
       </Switch>
     </div>
     <Footer />
