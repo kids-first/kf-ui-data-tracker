@@ -30,8 +30,10 @@ import studyByKfId from './responses/studyByKfId.json';
 import studyByKfId_refetch from './responses/studyByKfId_refetch.json';
 import studyByKfId_event_err from './responses/studyByKfId_event_err.json';
 import studyByKfId_no_projects from './responses/studyByKfId_no_projects.json';
+import studyByKfId_empty from './responses/studyByKfId_empty.json';
 import deleteFile from './responses/deleteFile.json';
 import fileByKfId from './responses/fileByKfId.json';
+import fileByKfId_empty from './responses/fileByKfId_empty.json';
 import myProfile from './responses/myProfile.json';
 import updateFile from './responses/updateFile.json';
 import updateVersion from './responses/updateVersion.json';
@@ -569,5 +571,34 @@ export const mocks = [
       query: ALL_STUDIES,
     },
     result: allStudies_empty,
+  },
+  {
+    request: {
+      query: GET_STUDY_BY_ID,
+      variables: {
+        kfId: 'SD_INVALID',
+      },
+    },
+    result: studyByKfId_empty,
+  },
+  {
+    request: {
+      query: GET_FILE_BY_ID,
+      variables: {
+        kfId: 'SF_INVALIDS',
+      },
+    },
+    result: fileByKfId_empty,
+  },
+  {
+    request: {
+      query: ALL_EVENTS,
+      variables: {
+        studyId: 'SD_INVALID',
+        orderBy: '-created_at',
+        first: 20,
+      },
+    },
+    result: allEvents,
   },
 ];
