@@ -47,6 +47,10 @@ const Routes = () => (
     </Switch>
     <div className="page">
       <PrivateRoute path="/study/:kfId(SD_\w{8})/" component={NavBarView} />
+      <PrivateRoute
+        path="/research-study/:kfId(SD_\w{8})/"
+        component={NavBarView}
+      />
       <Switch>
         <PrivateRoute exact path="/" component={StudyListView} />
         <AdminRoute exact path="/events" component={EventsView} />
@@ -85,6 +89,24 @@ const Routes = () => (
         <PrivateRoute
           path="/study/:kfId/basic-info"
           component={StudyInfoView}
+        />
+        <PrivateRoute
+          path="/research-study/:kfId/basic-info"
+          component={ResearchStudyInfoView}
+        />
+        <PrivateRoute
+          path="/research-study/:kfId/cavatica"
+          component={CavaticaBixView}
+        />
+        <PrivateRoute
+          exact
+          path="/research-study/:kfId/logs"
+          component={LogsView}
+        />
+        <PrivateRoute
+          exact
+          path="/research-study/:kfId/releases"
+          component={ReleasesView}
         />
         <PrivateRoute
           path="/study/:kfId/cavatica"
