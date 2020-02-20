@@ -1496,11 +1496,15 @@ exports[`renders study nav bar with error in study creation 3`] = `
         <h2
           class="ui icon center aligned header"
         >
-          Initializing Study Resources
+          Initializing 
+          
+           Study Resources
           <div
             class="sub header"
           >
-            We're setting up your new study resources, sit tight.
+            We're setting up your new 
+            
+             study resources, sit tight.
           </div>
         </h2>
         <div
@@ -1697,7 +1701,7 @@ exports[`renders study nav bar with error in study creation 3`] = `
             aria-hidden="true"
             class="info icon"
           />
-          Skip ahead to the study
+          Skip ahead to the  study
         </button>
       </div>
     </div>
@@ -2272,7 +2276,9 @@ exports[`renders study nav bar with error in study creation 4`] = `
           <div
             class="sub header"
           >
-            Some study resources failed to initialize, please contact
+            Some 
+            
+             study resources failed to initialize, please contact
              
             <a
               href="mailto:support@kidsfirstdrc.org?subject=Kids First Data Tracker Help&body=Hello, I had issue creating my study benchmark extensible e-business."
@@ -2470,7 +2476,7 @@ exports[`renders study nav bar with error in study creation 4`] = `
             aria-hidden="true"
             class="info icon"
           />
-          Go To Study Info
+          Go To  Study Info
         </button>
         <button
           class="ui small icon primary left labeled button"

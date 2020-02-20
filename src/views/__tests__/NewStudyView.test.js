@@ -156,7 +156,24 @@ it('renders new study view correctly', async () => {
     fireEvent.click(tree.getByText(/Skip ahead to the study/i));
   });
 
-  // await wait(100);
+  act(() => {
+    fireEvent.click(
+      tree.getByText(
+        /External study resources creation in progress. Click for details/i,
+      ),
+    );
+  });
 
+  await wait();
+  expect(tree.container).toMatchSnapshot();
+
+  act(() => {
+    fireEvent.keyDown(tree.container, {
+      key: 'Escape',
+      code: 27,
+    });
+  });
+
+  await wait();
   expect(tree.container).toMatchSnapshot();
 });
