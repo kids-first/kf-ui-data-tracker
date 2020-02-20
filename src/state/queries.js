@@ -226,15 +226,20 @@ export const STATUS = gql`
         cavaticaCreateProjects
         cavaticaCopyUsers
         cavaticaMountVolumes
-        bucketserviceCreateBuckets
+        studyBucketsCreateBuckets
       }
       settings {
         dataserviceUrl
-        bucketserviceUrl
         cavaticaUrl
         cavaticaDeliveryAccount
         cavaticaHarmonizationAccount
         cavaticaUserAccessProject
+        studyBucketsRegion
+        studyBucketsLoggingBucket
+        studyBucketsDrRegion
+        studyBucketsDrLoggingBucket
+        studyBucketsInventoryLocation
+        studyBucketsLogPrefix
       }
       queues
       jobs {
