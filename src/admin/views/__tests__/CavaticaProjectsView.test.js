@@ -3,9 +3,9 @@ import wait from 'waait';
 import {render, act, fireEvent, cleanup} from '@testing-library/react';
 import {MockedProvider} from '@apollo/react-testing';
 import {MemoryRouter} from 'react-router-dom';
-import {mocks} from '../../../__mocks__/kf-api-study-creator/mocks';
-import myProfile from '../../../__mocks__/kf-api-study-creator/responses/myProfile.json';
-import Routes from '../../Routes';
+import {mocks} from '../../../../__mocks__/kf-api-study-creator/mocks';
+import myProfile from '../../../../__mocks__/kf-api-study-creator/responses/myProfile.json';
+import Routes from '../../../Routes';
 
 jest.mock('auth0-js');
 afterEach(cleanup);
