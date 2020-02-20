@@ -12,9 +12,9 @@ import {
   Message,
   Button,
 } from 'semantic-ui-react';
-import {eventType} from '../common/enums';
-import {EventList} from '../components/EventList';
-import {ALL_EVENTS, ALL_STUDIES, ALL_USERS} from '../state/queries';
+import {eventType} from '../../common/enums';
+import {EventList} from '../../components/EventList';
+import {ALL_EVENTS, ALL_STUDIES, ALL_USERS} from '../../state/queries';
 
 const EventsView = () => {
   const {loading, data: eventData, error, refetch, fetchMore} = useQuery(

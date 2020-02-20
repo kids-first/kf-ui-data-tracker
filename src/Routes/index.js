@@ -8,14 +8,10 @@ import {
   LoginView,
   StudyListView,
   CallbackView,
-  ConfigurationView,
   NavBarView,
-  TokensListView,
-  CavaticaProjectsView,
   ProfileView,
   NewStudyView,
   StudyInfoView,
-  EventsView,
   CavaticaBixView,
   LogsView,
   LogoutView,
@@ -29,6 +25,12 @@ import {
   NewDocumentView,
 } from '../documents/views';
 import {ResearchStudyListView} from '../research/views';
+import {
+  CavaticaProjectsView,
+  ConfigurationView,
+  EventsView,
+  TokensListView,
+} from '../admin/views';
 import TrackedRoute from './TrackedRoute';
 
 const Routes = () => (

@@ -2,7 +2,7 @@ import React from 'react';
 import wait from 'waait';
 import {render, fireEvent, act} from '@testing-library/react';
 import TokenList from '../TokenList';
-import devTokens from '../../../../__mocks__/kf-api-study-creator/responses/devTokens.json';
+import devTokens from '../../../../../__mocks__/kf-api-study-creator/responses/devTokens.json';
 
 it('renders token list correctly - no data', () => {
   const tree = render(<TokenList />);

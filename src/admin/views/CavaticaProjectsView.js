@@ -13,14 +13,14 @@ import {
   Message,
   Segment,
 } from 'semantic-ui-react';
-import StudyProjects from '../components/CavaticaProjectList/StudyProjects';
+import StudyProjects from '../../components/CavaticaProjectList/StudyProjects';
 
-import {GET_PROJECTS, MY_PROFILE} from '../state/queries';
+import {GET_PROJECTS, MY_PROFILE} from '../../state/queries';
 import {
   SYNC_PROJECTS,
   UNLINK_PROJECT,
   IMPORT_VOLUME_FILES,
-} from '../state/mutations';
+} from '../../state/mutations';
 
 const CavaticaProjectsView = () => {
   const {loading, error, data} = useQuery(GET_PROJECTS, {

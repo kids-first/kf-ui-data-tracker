@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import {Button, Popup, Image, Input, List, Icon} from 'semantic-ui-react';
 import TimeAgo from 'react-timeago';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
-import defaultAvatar from '../../assets/defaultAvatar.png';
-import {longDate} from '../../common/dateUtils';
+import defaultAvatar from '../../../assets/defaultAvatar.png';
+import {longDate} from '../../../common/dateUtils';
 /**
  * Token list is used to display tokens with the option of copy and delete
  */
