@@ -72,7 +72,7 @@ class Auth {
             success: false,
             err,
           });
-          alert(`Error: ${err.error}. Check the console for further details.`);
+          history.push('/auth-error', {authError: err});
         }
       });
     }

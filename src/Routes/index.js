@@ -39,6 +39,7 @@ const Routes = () => (
       <TrackedRoute path="/login" component={LoginView} />
       <TrackedRoute path="/logout" component={LogoutView} />
       <Route path="/callback" component={CallbackView} />
+      <Route path="/auth-error" render={() => <></>} />
       <Route path="/" render={() => <Header />} />
     </Switch>
     <div className="page">
