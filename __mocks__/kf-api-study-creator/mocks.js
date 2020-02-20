@@ -1,7 +1,6 @@
 import {
   ALL_STUDIES,
   GET_STUDY_BY_ID,
-  GET_DEV_TOKENS,
   MY_PROFILE,
   ALL_EVENTS,
   ALL_USERS,
@@ -13,8 +12,6 @@ import {
   SYNC_PROJECTS,
   CREATE_STUDY,
   UPDATE_STUDY,
-  DELETE_DEV_TOKEN,
-  CREATE_DEV_TOKEN,
 } from '../../src/state/mutations';
 import {GET_FILE_BY_ID} from '../../src/documents/queries';
 import {
@@ -24,6 +21,8 @@ import {
   CREATE_VERSION,
   FILE_DOWNLOAD_URL,
 } from '../../src/documents/mutations';
+import {GET_DEV_TOKENS} from '../../src/admin/queries';
+import {DELETE_DEV_TOKEN, CREATE_DEV_TOKEN} from '../../src/admin/mutations';
 import allStudies from './responses/allStudies';
 import allStudies_empty from './responses/allStudies_empty';
 import studyByKfId from './responses/studyByKfId.json';

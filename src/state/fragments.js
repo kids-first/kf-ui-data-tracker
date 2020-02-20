@@ -1,18 +1,5 @@
 import gql from 'graphql-tag';
 
-export const TOKEN_FIELDS = gql`
-  fragment TokenFields on DevDownloadTokenNode {
-    id
-    name
-    token
-    createdAt
-    creator {
-      username
-      picture
-    }
-  }
-`;
-
 export const STUDY_BASIC_FIELDS = gql`
   fragment StudyBasicFields on StudyNode {
     id

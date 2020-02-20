@@ -1,6 +1,5 @@
 import gql from 'graphql-tag';
 import {
-  TOKEN_FIELDS,
   PROJECT_FIELDS,
   STUDY_BASIC_FIELDS,
   STUDY_INFO_FIELDS,
@@ -95,20 +94,6 @@ export const GET_STUDY_BY_ID = gql`
   ${FILE_FIELDS}
   ${EVENT_FIELDS}
   ${PROJECT_FIELDS}
-`;
-
-// Query to get developer tokens
-export const GET_DEV_TOKENS = gql`
-  query DevTokens {
-    allDevTokens {
-      edges {
-        node {
-          ...TokenFields
-        }
-      }
-    }
-  }
-  ${TOKEN_FIELDS}
 `;
 
 // Query to get Cavatica projects registered in the study creator
@@ -318,4 +303,3 @@ export const GET_RELEASED_STUDY = gql`
     }
   }
 `;
-
