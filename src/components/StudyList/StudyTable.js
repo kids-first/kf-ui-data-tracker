@@ -11,6 +11,7 @@ import {
   countProjectNotification,
   countFileNotification,
   trackedStudyFields,
+  trackedResearchStudyFields,
 } from '../../common/notificationUtils';
 /**
  * Renders a single row in the table
@@ -49,11 +50,17 @@ const TableValue = ({row, col, title, isResearch}) => {
           onClick={e => e.stopPropagation()}
           className={row[col].missingValue > 0 ? 'text-red' : null}
         >
-          {trackedStudyFields.length -
-            row[col].missingValue +
-            '/' +
-            trackedStudyFields.length +
-            ' complete'}
+          {isResearch
+            ? trackedResearchStudyFields.length -
+              row[col].missingValue +
+              '/' +
+              trackedResearchStudyFields.length +
+              ' complete'
+            : trackedStudyFields.length -
+              row[col].missingValue +
+              '/' +
+              trackedStudyFields.length +
+              ' complete'}
         </Link>
       );
     case 'release':
@@ -116,7 +123,7 @@ const StudyTable = ({
     cols.reduce((row, col) => {
       if (col === 'description') {
         row[col] = {
-          missingValue: isAdmin ? countStudyNotification(node) : 0,
+          missingValue: isAdmin ? countStudyNotification(node, isResearch) : 0,
           missingProject: isAdmin ? countProjectNotification(node) : 0,
           requiredFileChanges: isAdmin ? countFileNotification(node) : 0,
         };
