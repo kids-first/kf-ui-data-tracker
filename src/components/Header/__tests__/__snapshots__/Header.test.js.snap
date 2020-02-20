@@ -509,6 +509,7 @@ exports[`renders correctly -- default stage (USER role) 2`] = `
             >
               <tr
                 class=""
+                data-testid="table-row"
                 tabindex="0"
               >
                 <td
@@ -583,6 +584,7 @@ exports[`renders correctly -- default stage (USER role) 2`] = `
               </tr>
               <tr
                 class=""
+                data-testid="table-row"
                 tabindex="0"
               >
                 <td
@@ -647,6 +649,7 @@ exports[`renders correctly -- default stage (USER role) 2`] = `
               </tr>
               <tr
                 class=""
+                data-testid="table-row"
                 tabindex="0"
               >
                 <td
@@ -717,6 +720,7 @@ exports[`renders correctly -- default stage (USER role) 2`] = `
               </tr>
               <tr
                 class=""
+                data-testid="table-row"
                 tabindex="0"
               >
                 <td
@@ -1159,6 +1163,7 @@ exports[`renders correctly -- default stage (USER role) 3`] = `
             >
               <tr
                 class=""
+                data-testid="table-row"
                 tabindex="0"
               >
                 <td
@@ -1233,6 +1238,7 @@ exports[`renders correctly -- default stage (USER role) 3`] = `
               </tr>
               <tr
                 class=""
+                data-testid="table-row"
                 tabindex="0"
               >
                 <td
@@ -1297,6 +1303,7 @@ exports[`renders correctly -- default stage (USER role) 3`] = `
               </tr>
               <tr
                 class=""
+                data-testid="table-row"
                 tabindex="0"
               >
                 <td
@@ -1367,6 +1374,7 @@ exports[`renders correctly -- default stage (USER role) 3`] = `
               </tr>
               <tr
                 class=""
+                data-testid="table-row"
                 tabindex="0"
               >
                 <td
@@ -1809,6 +1817,7 @@ exports[`renders correctly -- default stage (USER role) 4`] = `
             >
               <tr
                 class=""
+                data-testid="table-row"
                 tabindex="0"
               >
                 <td
@@ -1883,6 +1892,7 @@ exports[`renders correctly -- default stage (USER role) 4`] = `
               </tr>
               <tr
                 class=""
+                data-testid="table-row"
                 tabindex="0"
               >
                 <td
@@ -1947,6 +1957,7 @@ exports[`renders correctly -- default stage (USER role) 4`] = `
               </tr>
               <tr
                 class=""
+                data-testid="table-row"
                 tabindex="0"
               >
                 <td
@@ -2017,6 +2028,7 @@ exports[`renders correctly -- default stage (USER role) 4`] = `
               </tr>
               <tr
                 class=""
+                data-testid="table-row"
                 tabindex="0"
               >
                 <td

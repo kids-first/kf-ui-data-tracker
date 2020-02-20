@@ -114,6 +114,7 @@ exports[`renders study table correctly 1`] = `
     >
       <tr
         class=""
+        data-testid="table-row"
         tabindex="0"
       >
         <td
@@ -215,6 +216,7 @@ exports[`renders study table correctly 1`] = `
       </tr>
       <tr
         class=""
+        data-testid="table-row"
         tabindex="0"
       >
         <td
@@ -306,6 +308,7 @@ exports[`renders study table correctly 1`] = `
       </tr>
       <tr
         class=""
+        data-testid="table-row"
         tabindex="0"
       >
         <td
@@ -397,6 +400,7 @@ exports[`renders study table correctly 1`] = `
       </tr>
       <tr
         class=""
+        data-testid="table-row"
         tabindex="0"
       >
         <td
@@ -625,6 +629,7 @@ exports[`renders study table for ADMIN role 1`] = `
     >
       <tr
         class=""
+        data-testid="table-row"
         tabindex="0"
       >
         <td
@@ -727,6 +732,7 @@ exports[`renders study table for ADMIN role 1`] = `
       </tr>
       <tr
         class=""
+        data-testid="table-row"
         tabindex="0"
       >
         <td
@@ -819,6 +825,7 @@ exports[`renders study table for ADMIN role 1`] = `
       </tr>
       <tr
         class=""
+        data-testid="table-row"
         tabindex="0"
       >
         <td
@@ -911,6 +918,7 @@ exports[`renders study table for ADMIN role 1`] = `
       </tr>
       <tr
         class=""
+        data-testid="table-row"
         tabindex="0"
       >
         <td
@@ -1158,6 +1166,7 @@ exports[`renders study table without excluded columns passed to props 1`] = `
     >
       <tr
         class=""
+        data-testid="table-row"
         tabindex="0"
       >
         <td
@@ -1279,6 +1288,7 @@ exports[`renders study table without excluded columns passed to props 1`] = `
       </tr>
       <tr
         class=""
+        data-testid="table-row"
         tabindex="0"
       >
         <td
@@ -1390,6 +1400,7 @@ exports[`renders study table without excluded columns passed to props 1`] = `
       </tr>
       <tr
         class=""
+        data-testid="table-row"
         tabindex="0"
       >
         <td
@@ -1501,6 +1512,7 @@ exports[`renders study table without excluded columns passed to props 1`] = `
       </tr>
       <tr
         class=""
+        data-testid="table-row"
         tabindex="0"
       >
         <td

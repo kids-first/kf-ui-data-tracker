@@ -192,6 +192,7 @@ const StudyTable = ({
       <Table.Body>
         {studies.map((row, idx) => (
           <Table.Row
+            data-testid="table-row"
             tabIndex="0"
             key={idx}
             onClick={() => {

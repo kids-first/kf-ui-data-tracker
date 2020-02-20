@@ -822,6 +822,7 @@ exports[`renders study list correctly -- default stage 2`] = `
             >
               <tr
                 class=""
+                data-testid="table-row"
                 tabindex="0"
               >
                 <td
@@ -896,6 +897,7 @@ exports[`renders study list correctly -- default stage 2`] = `
               </tr>
               <tr
                 class=""
+                data-testid="table-row"
                 tabindex="0"
               >
                 <td
@@ -960,6 +962,7 @@ exports[`renders study list correctly -- default stage 2`] = `
               </tr>
               <tr
                 class=""
+                data-testid="table-row"
                 tabindex="0"
               >
                 <td
@@ -1030,6 +1033,7 @@ exports[`renders study list correctly -- default stage 2`] = `
               </tr>
               <tr
                 class=""
+                data-testid="table-row"
                 tabindex="0"
               >
                 <td
@@ -2689,6 +2693,7 @@ exports[`renders study list correctly -- release error 1`] = `
             >
               <tr
                 class=""
+                data-testid="table-row"
                 tabindex="0"
               >
                 <td
@@ -2754,6 +2759,7 @@ exports[`renders study list correctly -- release error 1`] = `
               </tr>
               <tr
                 class=""
+                data-testid="table-row"
                 tabindex="0"
               >
                 <td
@@ -2809,6 +2815,7 @@ exports[`renders study list correctly -- release error 1`] = `
               </tr>
               <tr
                 class=""
+                data-testid="table-row"
                 tabindex="0"
               >
                 <td
@@ -2864,6 +2871,7 @@ exports[`renders study list correctly -- release error 1`] = `
               </tr>
               <tr
                 class=""
+                data-testid="table-row"
                 tabindex="0"
               >
                 <td

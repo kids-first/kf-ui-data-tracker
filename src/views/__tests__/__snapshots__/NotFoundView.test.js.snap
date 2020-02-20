@@ -1040,6 +1040,7 @@ exports[`renders error view on invalid path /XXXX 2`] = `
             >
               <tr
                 class=""
+                data-testid="table-row"
                 tabindex="0"
               >
                 <td
@@ -1114,6 +1115,7 @@ exports[`renders error view on invalid path /XXXX 2`] = `
               </tr>
               <tr
                 class=""
+                data-testid="table-row"
                 tabindex="0"
               >
                 <td
@@ -1178,6 +1180,7 @@ exports[`renders error view on invalid path /XXXX 2`] = `
               </tr>
               <tr
                 class=""
+                data-testid="table-row"
                 tabindex="0"
               >
                 <td
@@ -1248,6 +1251,7 @@ exports[`renders error view on invalid path /XXXX 2`] = `
               </tr>
               <tr
                 class=""
+                data-testid="table-row"
                 tabindex="0"
               >
                 <td
