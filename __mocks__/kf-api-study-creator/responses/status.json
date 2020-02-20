@@ -10,16 +10,21 @@
         "cavaticaCreateProjects": true,
         "cavaticaCopyUsers": true,
         "cavaticaMountVolumes": false,
-        "bucketserviceCreateBuckets": false,
+        "studyBucketsCreateBuckets": false,
         "__typename": "Features"
       },
       "settings": {
         "dataserviceUrl": "http://dataservice",
-        "bucketserviceUrl": "http://bucketservice",
         "cavaticaUrl": "https://cavatica-api.sbgenomics.com/v2",
         "cavaticaDeliveryAccount": "kids-first-dev",
         "cavaticaHarmonizationAccount": null,
         "cavaticaUserAccessProject": "kids-first-drc/user-access",
+        "studyBucketsRegion": true,
+        "studyBucketsLoggingBucket": null,
+        "studyBucketsDrRegion": true,
+        "studyBucketsDrLoggingBucket": null,
+        "studyBucketsInventoryLocation": false,
+        "studyBucketsLogPrefix": true,
         "__typename": "Settings"
       },
       "queues": "[{\"name\": \"cavatica\", \"jobs\": 0, \"oldest_job_timestamp\": \"-\", \"index\": 0, \"workers\": 0, \"finished_jobs\": 1, \"started_jobs\": 0, \"deferred_jobs\": 0, \"failed_jobs\": 0}, {\"name\": \"default\", \"jobs\": 0, \"oldest_job_timestamp\": \"-\", \"index\": 1, \"workers\": 0, \"finished_jobs\": 0, \"started_jobs\": 0, \"deferred_jobs\": 0, \"failed_jobs\": 0}]",

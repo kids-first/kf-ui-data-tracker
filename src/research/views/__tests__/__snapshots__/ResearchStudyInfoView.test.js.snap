@@ -2580,12 +2580,15 @@ exports[`renders research study info view with invalid study id 1`] = `
           class="sub header"
         >
           <p>
-            Cannot find the research study with ID SD_INVALID
+            <span>
+              Cannot find the research study with ID SD_INVALID
+            </span>
           </p>
           <a
             href="/"
           >
-            Click here to go back to your studies
+            Click here to go back to 
+            your studies
           </a>
         </div>
       </h2>
