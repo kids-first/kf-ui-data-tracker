@@ -48,7 +48,14 @@ const StudyCard = ({
               ' complete'
             }
             trigger={
-              <Link to={`/study/${studyId}/basic-info/info`} className="pr-5">
+              <Link
+                to={
+                  isResearch
+                    ? `/research-study/${studyId}/basic-info`
+                    : `/study/${studyId}/basic-info/info`
+                }
+                className="pr-5"
+              >
                 <Icon
                   name={missingValue > 0 ? 'clipboard list' : 'clipboard check'}
                   color={missingValue > 0 ? 'red' : 'grey'}

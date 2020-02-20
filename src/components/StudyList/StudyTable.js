@@ -41,7 +41,11 @@ const TableValue = ({row, col, title, isResearch}) => {
     case 'description':
       return (
         <Link
-          to={`/study/${title}/basic-info/info`}
+          to={
+            isResearch
+              ? `/research-study/${title}/basic-info`
+              : `/study/${title}/basic-info/info`
+          }
           onClick={e => e.stopPropagation()}
           className={row[col].missingValue > 0 ? 'text-red' : null}
         >
@@ -183,7 +187,12 @@ const StudyTable = ({
             tabIndex="0"
             key={idx}
             onClick={() => {
-              if (clickable) history.push(`/study/${row.kfId}/documents`);
+              if (clickable)
+                history.push(
+                  isResearch
+                    ? `/research-study/${row.kfId}/basic-info`
+                    : `/study/${row.kfId}/documents`,
+                );
             }}
           >
             {cols.map((col, idx) => (
