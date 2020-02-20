@@ -24,7 +24,11 @@ import {
   FileDetailView,
   NewDocumentView,
 } from '../documents/views';
-import {ResearchStudyListView} from '../research/views';
+import {
+  ResearchStudyListView,
+  NewResearchStudyView,
+  ResearchStudyInfoView,
+} from '../research/views';
 import {
   CavaticaProjectsView,
   ConfigurationView,
@@ -52,6 +56,11 @@ const Routes = () => (
           exact
           path="/study/new-study-selection"
           component={NewStudySelectionView}
+        />
+        <AdminRoute
+          exact
+          path="/study/new-research-study"
+          component={NewResearchStudyView}
         />
         <AdminRoute
           exact
