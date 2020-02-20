@@ -28,6 +28,7 @@ const TableValue = ({row, col, title, isResearch}) => {
           title={title}
           hideIcon
           wrap={!isResearch}
+          isResearch={isResearch}
         />
       );
     case 'createdAt':

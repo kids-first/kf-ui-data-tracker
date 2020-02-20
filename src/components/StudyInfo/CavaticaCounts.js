@@ -8,7 +8,7 @@ import CavaticaLogo from '../../assets/CavaticaLogo';
  * Displays project counts with total number and breaking down by each type
  * When no projects exist, show buttons guiding user to add/link projects
  */
-const CavaticaCounts = ({projects, title, hideIcon, wrap}) => {
+const CavaticaCounts = ({projects, title, hideIcon, wrap, isResearch}) => {
   const types = projects.map(({node: {projectType}}) => projectType);
   const typeCounts = types.reduce((count, type) => {
     count[type] = (count[type] || 0) + 1;
@@ -17,7 +17,11 @@ const CavaticaCounts = ({projects, title, hideIcon, wrap}) => {
   return (
     <>
       <Link
-        to={`/study/${title}/cavatica`}
+        to={
+          isResearch
+            ? `/research-study/${title}/cavatica`
+            : `/study/${title}/cavatica`
+        }
         onClick={e => e.stopPropagation()}
         className={hideIcon && projects.length === 0 ? 'text-red' : null}
       >

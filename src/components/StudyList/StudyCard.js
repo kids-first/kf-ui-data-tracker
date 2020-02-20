@@ -65,7 +65,11 @@ const StudyCard = ({
             }
           />
           {isResearch ? (
-            <CavaticaCounts title={studyId} projects={projects} />
+            <CavaticaCounts
+              title={studyId}
+              projects={projects}
+              isResearch={isResearch}
+            />
           ) : (
             <>
               <Popup
