@@ -3,7 +3,7 @@ import {Helmet} from 'react-helmet';
 import {useQuery} from '@apollo/react-hooks';
 import {Container, Header, Segment, Icon, Table} from 'semantic-ui-react';
 import TimeAgo from 'react-timeago';
-import {STATUS} from '../state/queries';
+import {STATUS} from '../../state/queries';
 
 const FeatureTable = ({features}) => (
   <Table

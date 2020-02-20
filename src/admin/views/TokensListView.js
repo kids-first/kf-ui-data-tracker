@@ -11,10 +11,10 @@ import {
   Message,
   Segment,
 } from 'semantic-ui-react';
-import {GET_DEV_TOKENS} from '../state/queries';
-import {CREATE_DEV_TOKEN, DELETE_DEV_TOKEN} from '../state/mutations';
-import {TokenList} from '../components/TokenList';
-import NewTokenForm from '../forms/NewTokenForm';
+import {GET_DEV_TOKENS} from '../../state/queries';
+import {CREATE_DEV_TOKEN, DELETE_DEV_TOKEN} from '../../state/mutations';
+import {TokenList} from '../../components/TokenList';
+import NewTokenForm from '../../forms/NewTokenForm';
 
 const TokensListView = () => {
   const {data, loading: devTokensLoading, error: devTokensError} = useQuery(
