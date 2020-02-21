@@ -43,13 +43,13 @@ it('changes active button on click', async () => {
 it('calls onToggle prop on click', async () => {
   const mockOnToggle = jest.fn();
   const mockButtons = [
-    {text: 'Grid', icon: 'grid layout'},
-    {text: 'list', icon: 'list'},
+    {key: 'grid', text: 'Grid', icon: 'grid layout'},
+    {key: 'list', text: 'List', icon: 'list'},
   ];
   const tree = render(
     <ToggleButtons onToggle={mockOnToggle} buttons={mockButtons} />,
   );
-  fireEvent.click(tree.getByText('list'));
+  fireEvent.click(tree.getByText('List'));
   const activeButton = await waitForElement(() =>
     tree.getByText(mockButtons[1].text),
   );
@@ -57,15 +57,15 @@ it('calls onToggle prop on click', async () => {
   // only gets called once
   expect(mockOnToggle.mock.calls.length).toBe(1);
   // returns an object with key value pair of {text: 'list'}
-  expect(mockOnToggle.mock.calls[0][0].text).toBe('list');
+  expect(mockOnToggle.mock.calls[0][0].key).toBe('list');
   // renders the list button with the active state
   expect(activeButton.className).toContain('primary');
 });
 
 it('renders toggle button in diffrent sizes', () => {
   const mockButtons = [
-    {text: 'Grid', icon: 'grid layout'},
-    {text: 'list', icon: 'list'},
+    {key: 'grid', text: 'Grid', icon: 'grid layout'},
+    {key: 'list', text: 'List', icon: 'list'},
   ];
   const tree = render(
     <>
@@ -78,8 +78,8 @@ it('renders toggle button in diffrent sizes', () => {
 
 it('renders toggle button hiding Text', () => {
   const mockButtons = [
-    {text: 'Grid', icon: 'grid layout'},
-    {text: 'list', icon: 'list'},
+    {key: 'grid', text: 'Grid', icon: 'grid layout'},
+    {key: 'list', text: 'List', icon: 'list'},
   ];
   const tree = render(
     <>
