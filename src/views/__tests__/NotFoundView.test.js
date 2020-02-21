@@ -7,6 +7,7 @@ import {mocks} from '../../../__mocks__/kf-api-study-creator/mocks';
 import {coordMocks} from '../../../__mocks__/kf-api-release-coordinator/mocks';
 import myProfile from '../../../__mocks__/kf-api-study-creator/responses/myProfile.json';
 import Routes from '../../Routes';
+import NotFoundView from '../NotFoundView';
 
 jest.mock('auth0-js');
 afterEach(cleanup);
@@ -230,4 +231,90 @@ it('renders error view on invalid study info step name', async () => {
   expect(
     tree.queryAllByText(/Cannot find the study info step invalid/i),
   ).not.toBeNull();
+});
+
+it('renders authentication error on invalid path /auth-error', async () => {
+  window.history.pushState(
+    {
+      authError: {
+        error: 'unauthorized',
+        errorDescription: 'user is blocked',
+        state: 'dTzjjsv94UUnyJDXmX2zBrD47eAAg2eq',
+      },
+    },
+    'Test Title',
+    '/auth-error',
+  );
+  const tree = render(
+    <MockedProvider
+      resolvers={{
+        Query: {
+          myProfile: _ => myProfile.data.myProfile,
+        },
+      }}
+      mocks={mocks.concat(Object.values(coordMocks))}
+    >
+      <MemoryRouter initialEntries={['/auth-error']}>
+        <Routes />
+      </MemoryRouter>
+    </MockedProvider>,
+  );
+  await wait();
+  expect(tree.container).toMatchSnapshot();
+  expect(tree.queryAllByText(/404 Page not found/i)).not.toBeNull();
+  expect(tree.queryAllByText(/auth-error/i)).not.toBeNull();
+});
+
+it('renders authentication error on user blocked location mock', async () => {
+  const mockLocation = {
+    pathname: '/auth-error',
+    search: '',
+    hash: '',
+    state: {
+      authError: {
+        error: 'unauthorized',
+        errorDescription: 'user is blocked',
+        state: 'dTzjjsv94UUnyJDXmX2zBrD47eAAg2eq',
+      },
+    },
+  };
+  const tree = render(
+    <MockedProvider>
+      <MemoryRouter initialEntries={['/auth-error']}>
+        <NotFoundView location={mockLocation} />
+      </MemoryRouter>
+    </MockedProvider>,
+  );
+  await wait();
+  expect(tree.container).toMatchSnapshot();
+  expect(tree.queryAllByText(/Authentication Error/i)).not.toBeNull();
+  expect(tree.queryAllByText(/user is blocked/i)).not.toBeNull();
+  act(() => {
+    fireEvent.click(tree.getByText(/Click here to go back to login page/i));
+  });
+  await wait();
+  expect(tree.container).toMatchSnapshot();
+});
+
+it('renders authentication error on user blocked callback', async () => {
+  const tree = render(
+    <MockedProvider
+      resolvers={{
+        Query: {
+          myProfile: _ => myProfile.data.myProfile,
+        },
+      }}
+      mocks={mocks.concat(Object.values(coordMocks))}
+    >
+      <MemoryRouter
+        initialEntries={[
+          '/callback?from=/#error=unauthorized&error_description=user%20is%20blocked&state=aaa',
+        ]}
+      >
+        <Routes />
+      </MemoryRouter>
+    </MockedProvider>,
+  );
+  await wait(10);
+  expect(tree.container).toMatchSnapshot();
 });
