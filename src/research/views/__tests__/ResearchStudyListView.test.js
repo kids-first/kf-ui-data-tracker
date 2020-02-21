@@ -36,7 +36,7 @@ it('renders study list correctly -- default stage', async () => {
   expect(tree.container).toMatchSnapshot();
 
   act(() => {
-    fireEvent.click(tree.getByTestId('grid layout'));
+    fireEvent.click(tree.getByTestId('grid'));
   });
   await wait(10);
   expect(tree.container).toMatchSnapshot();
