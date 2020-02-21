@@ -30,8 +30,7 @@ const HeaderSkeleton = () => (
 /**
  * Displays unordered studies in grid view (include empty stage message)
  */
-const StudyList = ({studyList, loading, activeView, roles}) => {
-  const [view, setView] = useState(activeView);
+const StudyList = ({studyList, loading, activeView, roles, history}) => {
   const [searchString, setSearchString] = useState('');
   const isAdmin = roles && roles.includes('ADMIN');
 
@@ -84,19 +83,21 @@ const StudyList = ({studyList, loading, activeView, roles}) => {
         <ToggleButtons
           size="mini"
           hideText
-          onToggle={({text}) => {
-            setView(text.toLowerCase());
+          onToggle={({key}) => {
+            history.push('#' + key);
           }}
+          selected={history && history.location.hash.slice(1)}
           buttons={[
-            {text: 'List', icon: 'list'},
-            {text: 'Grid', icon: 'grid layout'},
+            {key: 'list', text: 'List', icon: 'list'},
+            {key: 'grid', text: 'Grid', icon: 'grid layout'},
           ]}
         />
       </Grid.Column>
       <Grid.Row>
         {filteredStudyList().length > 0 ? (
           <Grid.Column>
-            {view === 'grid' ? (
+            {(history && history.location.hash === '#grid') ||
+            activeView === 'grid' ? (
               <StudyGrid
                 loading={loading}
                 studyList={filteredStudyList()}
