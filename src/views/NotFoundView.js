@@ -10,6 +10,7 @@ const NotFoundView = ({title, message, location}) => {
   if (location && noErrorPath.includes(location.pathname)) {
     return <></>;
   }
+  const authError = location && location.state && location.state.authError;
   return (
     <Container as={Segment} basic placeholder>
       <Helmet>
@@ -17,16 +18,24 @@ const NotFoundView = ({title, message, location}) => {
       </Helmet>
       <Header as="h2" icon>
         <Icon name="frown outline" />
-        {title || '404 Page not found'}
+        {authError ? 'Authentication Error' : title || '404 Page not found'}
         <Header.Subheader>
-          {message ? (
-            <p>{message}</p>
+          {authError ? (
+            <p>{authError.errorDescription || authError.error || ''}</p>
           ) : (
             <p>
-              No match found for <code>{location.pathname}</code>
+              {message ? (
+                <span>{message}</span>
+              ) : (
+                <span>
+                  No match found for <code>{location.pathname}</code>
+                </span>
+              )}
             </p>
           )}
-          <Link to={`/`}>Click here to go back to your studies</Link>
+          <Link to={authError ? '/login' : '/'}>
+            Click here to go back to {authError ? 'login page' : 'your studies'}
+          </Link>
         </Header.Subheader>
       </Header>
     </Container>
