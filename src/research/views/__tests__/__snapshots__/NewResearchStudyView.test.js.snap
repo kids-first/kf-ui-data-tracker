@@ -422,7 +422,7 @@ exports[`renders new study view correctly --  with error on submit 2`] = `
         </p>
       </div>
       <div
-        class="ui basic clearing segment ui container"
+        class="ui basic clearing segment ui container grey-container p-20"
       >
         <form
           class="ui form"
@@ -871,7 +871,7 @@ exports[`renders new study view correctly --  with error on submit 3`] = `
         </p>
       </div>
       <div
-        class="ui basic clearing segment ui container"
+        class="ui basic clearing segment ui container grey-container p-20"
       >
         <form
           class="ui form"
@@ -1318,7 +1318,7 @@ exports[`renders new study view correctly --  with error on submit 4`] = `
         </p>
       </div>
       <div
-        class="ui basic clearing segment ui container"
+        class="ui basic clearing segment ui container grey-container p-20"
       >
         <form
           class="ui form"
@@ -1785,7 +1785,7 @@ exports[`renders new study view correctly --  with error on submit 5`] = `
         </div>
       </div>
       <div
-        class="ui basic clearing segment ui container"
+        class="ui basic clearing segment ui container grey-container p-20"
       >
         <form
           class="ui form"
@@ -2489,7 +2489,7 @@ exports[`renders new study view correctly 2`] = `
         </p>
       </div>
       <div
-        class="ui basic clearing segment ui container"
+        class="ui basic clearing segment ui container grey-container p-20"
       >
         <form
           class="ui form"
@@ -2938,7 +2938,7 @@ exports[`renders new study view correctly 3`] = `
         </p>
       </div>
       <div
-        class="ui basic clearing segment ui container"
+        class="ui basic clearing segment ui container grey-container p-20"
       >
         <form
           class="ui form"
@@ -3385,7 +3385,7 @@ exports[`renders new study view correctly 4`] = `
         </p>
       </div>
       <div
-        class="ui basic clearing segment ui container"
+        class="ui basic clearing segment ui container grey-container p-20"
       >
         <form
           class="ui form"
@@ -3823,7 +3823,7 @@ exports[`renders new study view correctly 5`] = `
         </p>
       </div>
       <div
-        class="ui basic clearing segment ui container"
+        class="ui basic clearing segment ui container grey-container p-20"
       >
         <form
           class="ui form"
@@ -4253,7 +4253,7 @@ exports[`renders new study view correctly 6`] = `
         </p>
       </div>
       <div
-        class="ui basic clearing segment ui container"
+        class="ui basic clearing segment ui container grey-container p-20"
       >
         <form
           class="ui form"
@@ -4683,7 +4683,7 @@ exports[`renders new study view correctly 7`] = `
         </p>
       </div>
       <div
-        class="ui basic clearing segment ui container"
+        class="ui basic clearing segment ui container grey-container p-20"
       >
         <form
           class="ui form"
@@ -5209,7 +5209,7 @@ exports[`renders new study view correctly 8`] = `
         </div>
       </div>
       <div
-        class="ui basic clearing segment ui container"
+        class="ui basic clearing segment ui container grey-container p-20"
       >
         <form
           class="ui form"
@@ -5933,7 +5933,7 @@ exports[`renders new study view correctly 9`] = `
         </div>
       </div>
       <div
-        class="ui basic clearing segment ui container"
+        class="ui basic clearing segment ui container grey-container p-20"
       >
         <form
           class="ui form"
@@ -6657,7 +6657,7 @@ exports[`renders new study view correctly 10`] = `
         </div>
       </div>
       <div
-        class="ui basic clearing segment ui container"
+        class="ui basic clearing segment ui container grey-container p-20"
       >
         <form
           class="ui form"

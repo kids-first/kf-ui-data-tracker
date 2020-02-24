@@ -3631,7 +3631,7 @@ exports[`renders study list correctly -- study tabel buttons 1`] = `
         </div>
       </div>
       <div
-        class="ui basic clearing segment ui container"
+        class="ui basic clearing segment ui container grey-container p-20"
       >
         <form
           class="ui form"
@@ -4169,7 +4169,7 @@ exports[`renders study list correctly -- study tabel buttons 2`] = `
         </div>
       </div>
       <div
-        class="ui basic clearing segment ui container"
+        class="ui basic clearing segment ui container grey-container p-20"
       >
         <form
           class="ui form"
@@ -4664,7 +4664,7 @@ exports[`renders study list correctly -- study tabel buttons 3`] = `
           </button>
           <button
             class="ui icon button"
-            data-testid="grid layout"
+            data-testid="grid"
             tabindex="0"
           >
             <i

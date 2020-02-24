@@ -155,7 +155,7 @@ exports[`renders research study info view as read-only -- USER user 1`] = `
       class="ui basic vertical segment ui container"
     >
       <div
-        class="ui basic clearing segment ui container"
+        class="ui basic clearing segment ui container p-20"
       >
         <form
           class="ui form"
@@ -816,7 +816,7 @@ exports[`renders research study info view correctly -- ADMIN user 2`] = `
         </div>
       </div>
       <div
-        class="ui basic clearing segment ui container"
+        class="ui basic clearing segment ui container grey-container p-20"
       >
         <form
           class="ui form"
@@ -1354,7 +1354,7 @@ exports[`renders research study info view correctly -- ADMIN user 3`] = `
         </div>
       </div>
       <div
-        class="ui basic clearing segment ui container"
+        class="ui basic clearing segment ui container grey-container p-20"
       >
         <form
           class="ui form"
@@ -1902,7 +1902,7 @@ exports[`renders research study info view correctly -- ADMIN user 4`] = `
         </div>
       </div>
       <div
-        class="ui basic clearing segment ui container"
+        class="ui basic clearing segment ui container grey-container p-20"
       >
         <form
           class="ui form"
@@ -2907,7 +2907,7 @@ exports[`renders research study info view with update research study info error 
         </div>
       </div>
       <div
-        class="ui basic clearing segment ui container"
+        class="ui basic clearing segment ui container grey-container p-20"
       >
         <form
           class="ui form"
