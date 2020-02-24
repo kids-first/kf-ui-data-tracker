@@ -157,7 +157,12 @@ const NewResearchStudyForm = ({
                 </Message.Content>
               </Message>
             )}
-          <Container as={Segment} basic clearing>
+          <Container
+            as={Segment}
+            basic
+            clearing
+            className={newStudy || editing ? 'grey-container p-20' : 'p-20'}
+          >
             <Form onSubmit={formikProps.handleSubmit}>
               {mapFields.map(item => (
                 <FormField
