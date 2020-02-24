@@ -7,20 +7,20 @@ import {Button, Icon} from 'semantic-ui-react';
  * Dispaly text on buttons as optional
  * Customize diffrent buttons in diffrent sized
  */
-const ToggleButtons = ({buttons, onToggle, size, hideText}) => {
-  const [active, setActive] = useState(0);
+const ToggleButtons = ({buttons, onToggle, size, hideText, selected}) => {
+  const [active, setActive] = useState(selected || buttons[0].key);
 
   return (
     <Button.Group size={size}>
-      {buttons.map(({text, icon}, idx) => (
+      {buttons.map(({key, text, icon}, idx) => (
         <Button
-          key={text}
+          key={key}
           icon={hideText}
-          data-testid={icon}
-          primary={active === idx}
+          data-testid={key}
+          primary={active === key}
           onClick={() => {
-            setActive(idx);
-            onToggle({active, text, icon});
+            setActive(key);
+            onToggle({active, key, icon});
           }}
           tabIndex="0"
         >
@@ -35,6 +35,8 @@ const ToggleButtons = ({buttons, onToggle, size, hideText}) => {
 ToggleButtons.propTypes = {
   buttons: propTypes.arrayOf(
     propTypes.shape({
+      /** Button key (required) */
+      key: propTypes.string,
       /** Button text (optional) */
       text: propTypes.string,
       /** kf-uikit icon name (optional) */
@@ -56,6 +58,8 @@ ToggleButtons.propTypes = {
   ]),
   /** Show toggle button as icons obly */
   hideText: propTypes.bool,
+  /** The key of pre-selected button */
+  selected: propTypes.string,
 };
 
 export default ToggleButtons;

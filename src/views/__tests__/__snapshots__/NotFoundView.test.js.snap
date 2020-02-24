@@ -923,6 +923,7 @@ exports[`renders error view on invalid path /XXXX 2`] = `
           class="ui mini left icon input pr-5"
         >
           <input
+            aria-label="studySearch"
             placeholder="Search by Study Name"
             type="text"
             value=""
@@ -947,7 +948,7 @@ exports[`renders error view on invalid path /XXXX 2`] = `
           </button>
           <button
             class="ui icon button"
-            data-testid="grid layout"
+            data-testid="grid"
             tabindex="0"
           >
             <i

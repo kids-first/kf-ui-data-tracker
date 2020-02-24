@@ -392,6 +392,7 @@ exports[`renders correctly -- default stage (USER role) 2`] = `
           class="ui mini left icon input pr-5"
         >
           <input
+            aria-label="studySearch"
             placeholder="Search by Study Name"
             type="text"
             value=""
@@ -416,7 +417,7 @@ exports[`renders correctly -- default stage (USER role) 2`] = `
           </button>
           <button
             class="ui icon button"
-            data-testid="grid layout"
+            data-testid="grid"
             tabindex="0"
           >
             <i
@@ -1041,6 +1042,7 @@ exports[`renders correctly -- default stage (USER role) 3`] = `
           class="ui mini left icon input pr-5"
         >
           <input
+            aria-label="studySearch"
             placeholder="Search by Study Name"
             type="text"
             value=""
@@ -1065,7 +1067,7 @@ exports[`renders correctly -- default stage (USER role) 3`] = `
           </button>
           <button
             class="ui icon button"
-            data-testid="grid layout"
+            data-testid="grid"
             tabindex="0"
           >
             <i
@@ -1690,6 +1692,7 @@ exports[`renders correctly -- default stage (USER role) 4`] = `
           class="ui mini left icon input pr-5"
         >
           <input
+            aria-label="studySearch"
             placeholder="Search by Study Name"
             type="text"
             value=""
@@ -1714,7 +1717,7 @@ exports[`renders correctly -- default stage (USER role) 4`] = `
           </button>
           <button
             class="ui icon button"
-            data-testid="grid layout"
+            data-testid="grid"
             tabindex="0"
           >
             <i

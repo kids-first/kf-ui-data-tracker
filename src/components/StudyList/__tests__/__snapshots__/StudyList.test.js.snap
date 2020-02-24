@@ -21,6 +21,7 @@ exports[`renders study grid correctly 1`] = `
         class="ui mini left icon input pr-5"
       >
         <input
+          aria-label="studySearch"
           placeholder="Search by Study Name"
           type="text"
           value=""
@@ -45,7 +46,7 @@ exports[`renders study grid correctly 1`] = `
         </button>
         <button
           class="ui icon button"
-          data-testid="grid layout"
+          data-testid="grid"
           tabindex="0"
         >
           <i
@@ -411,6 +412,7 @@ exports[`renders study grid for ADMIN role 1`] = `
         class="ui mini left icon input pr-5"
       >
         <input
+          aria-label="studySearch"
           placeholder="Search by Study Name"
           type="text"
           value=""
@@ -435,7 +437,7 @@ exports[`renders study grid for ADMIN role 1`] = `
         </button>
         <button
           class="ui icon button"
-          data-testid="grid layout"
+          data-testid="grid"
           tabindex="0"
         >
           <i
@@ -801,6 +803,7 @@ exports[`renders study grid for ADMIN role 2`] = `
         class="ui mini left icon input pr-5"
       >
         <input
+          aria-label="studySearch"
           placeholder="Search by Study Name"
           type="text"
           value=""
@@ -825,7 +828,7 @@ exports[`renders study grid for ADMIN role 2`] = `
         </button>
         <button
           class="ui icon button"
-          data-testid="grid layout"
+          data-testid="grid"
           tabindex="0"
         >
           <i
@@ -1204,6 +1207,7 @@ exports[`renders study grid for ADMIN role 3`] = `
         class="ui mini left icon input pr-5"
       >
         <input
+          aria-label="studySearch"
           placeholder="Search by Study Name"
           type="text"
           value=""
@@ -1228,7 +1232,7 @@ exports[`renders study grid for ADMIN role 3`] = `
         </button>
         <button
           class="ui icon button"
-          data-testid="grid layout"
+          data-testid="grid"
           tabindex="0"
         >
           <i
@@ -1734,6 +1738,7 @@ exports[`renders study grid/table empty state 1`] = `
         class="ui mini left icon input pr-5"
       >
         <input
+          aria-label="studySearch"
           placeholder="Search by Study Name"
           type="text"
           value=""
@@ -1758,7 +1763,7 @@ exports[`renders study grid/table empty state 1`] = `
         </button>
         <button
           class="ui icon button"
-          data-testid="grid layout"
+          data-testid="grid"
           tabindex="0"
         >
           <i

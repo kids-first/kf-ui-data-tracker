@@ -705,6 +705,7 @@ exports[`renders study list correctly -- default stage 2`] = `
           class="ui mini left icon input pr-5"
         >
           <input
+            aria-label="studySearch"
             placeholder="Search by Study Name"
             type="text"
             value=""
@@ -729,7 +730,7 @@ exports[`renders study list correctly -- default stage 2`] = `
           </button>
           <button
             class="ui icon button"
-            data-testid="grid layout"
+            data-testid="grid"
             tabindex="0"
           >
             <i
@@ -1365,7 +1366,7 @@ exports[`renders study list correctly -- default stage 3`] = `
           </button>
           <button
             class="ui icon button"
-            data-testid="grid layout"
+            data-testid="grid"
             tabindex="0"
           >
             <i
@@ -1922,7 +1923,7 @@ exports[`renders study list correctly -- default stage 4`] = `
           </button>
           <button
             class="ui icon primary button"
-            data-testid="grid layout"
+            data-testid="grid"
             tabindex="0"
           >
             <i
@@ -2449,7 +2450,7 @@ exports[`renders study list correctly -- default stage 5`] = `
           </button>
           <button
             class="ui icon primary button"
-            data-testid="grid layout"
+            data-testid="grid"
             tabindex="0"
           >
             <i
@@ -2775,7 +2776,7 @@ exports[`renders study list correctly -- default stage 6`] = `
           </button>
           <button
             class="ui icon primary button"
-            data-testid="grid layout"
+            data-testid="grid"
             tabindex="0"
           >
             <i
@@ -3042,7 +3043,7 @@ exports[`renders study list correctly -- release error 1`] = `
           </button>
           <button
             class="ui icon button"
-            data-testid="grid layout"
+            data-testid="grid"
             tabindex="0"
           >
             <i

@@ -1,6 +1,6 @@
 import React from 'react';
 import wait from 'waait';
-import {render} from '@testing-library/react';
+import {render, act, fireEvent, cleanup} from '@testing-library/react';
 import {MockedProvider} from '@apollo/react-testing';
 import {MemoryRouter} from 'react-router-dom';
 import {mocks} from '../../../__mocks__/kf-api-study-creator/mocks';
@@ -9,6 +9,7 @@ import myProfile from '../../../__mocks__/kf-api-study-creator/responses/myProfi
 import Routes from '../../Routes';
 
 jest.mock('auth0-js');
+afterEach(cleanup);
 
 it('renders study list correctly -- default stage', async () => {
   const tree = render(
@@ -28,6 +29,34 @@ it('renders study list correctly -- default stage', async () => {
   expect(tree.container).toMatchSnapshot();
   await wait(10);
   expect(tree.container).toMatchSnapshot();
+  act(() => {
+    fireEvent.click(tree.getByTestId('grid'));
+  });
+  await wait(10);
+  expect(tree.container).toMatchSnapshot();
+  const cards4 = tree.container.querySelectorAll('.ui .card');
+  expect(cards4.length).toBe(4);
+  act(() => {
+    fireEvent.change(tree.getByLabelText('studySearch'), {
+      target: {value: 'benchmark'},
+    });
+  });
+  await wait();
+  expect(tree.container).toMatchSnapshot();
+  const cards1 = tree.container.querySelectorAll('.ui .card');
+  expect(cards1.length).toBe(1);
+  act(() => {
+    fireEvent.change(tree.getByLabelText('studySearch'), {
+      target: {value: 'no mathcing'},
+    });
+  });
+  await wait();
+  expect(tree.container).toMatchSnapshot();
+  expect(
+    tree.queryAllByText(
+      /No Studies matching your search term. Try searching by Study Name/i,
+    ),
+  ).not.toBeNull();
 });
 
 it('renders study list correctly -- release error', async () => {

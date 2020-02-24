@@ -705,6 +705,7 @@ exports[`renders study list correctly -- default stage 2`] = `
           class="ui mini left icon input pr-5"
         >
           <input
+            aria-label="studySearch"
             placeholder="Search by Study Name"
             type="text"
             value=""
@@ -729,7 +730,7 @@ exports[`renders study list correctly -- default stage 2`] = `
           </button>
           <button
             class="ui icon button"
-            data-testid="grid layout"
+            data-testid="grid"
             tabindex="0"
           >
             <i
@@ -1176,6 +1177,1232 @@ exports[`renders study list correctly -- default stage 2`] = `
 </div>
 `;
 
+exports[`renders study list correctly -- default stage 3`] = `
+<div>
+  <div
+    class="ui large top attached menu"
+  >
+    <div
+      class="ui container"
+    >
+      <div
+        class="item"
+      >
+        <img
+          alt="Kids First logo"
+          src="test-file-stub"
+        />
+      </div>
+      <a
+        aria-current="page"
+        class="header item"
+        href="/"
+      >
+        Data Tracker
+      </a>
+      <a
+        aria-current="page"
+        class="item active"
+        href="/"
+      >
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
+      </a>
+      <div
+        class="right menu"
+      >
+        <div
+          aria-expanded="false"
+          class="ui dropdown link item"
+          role="listbox"
+          tabindex="0"
+        >
+          Admin
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          >
+            <a
+              class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
+            <a
+              class="item"
+              href="/tokens"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="key icon"
+              />
+              Developer Tokens
+            </a>
+            <a
+              class="item"
+              href="/cavatica-projects"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="folder open icon"
+              />
+              Cavatica Projects
+            </a>
+            <a
+              class="item"
+              href="/events"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="history icon"
+              />
+              Event Log
+            </a>
+          </div>
+        </div>
+        <div
+          aria-expanded="false"
+          class="ui dropdown link item"
+          role="listbox"
+          tabindex="0"
+        >
+          <img
+            alt="bendolly"
+            class="ui avatar image"
+            src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
+          />
+          bendolly
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          >
+            <a
+              class="item"
+              href="/profile"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="user icon"
+              />
+              Profile
+            </a>
+            <a
+              class="item"
+              href="/logout"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="log out icon"
+              />
+              Logout
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="page"
+  >
+    <div
+      class="ui basic segment ui container stackable grid"
+    >
+      <div
+        class="left aligned eight wide column"
+      >
+        <h1
+          class="ui header"
+        >
+          Your Investigator Studies
+        </h1>
+      </div>
+      <div
+        class="right aligned eight wide column"
+      >
+        <a
+          class="ui mini basic primary button"
+          href="/study/new-study-selection"
+          role="button"
+        >
+          <i
+            aria-hidden="true"
+            class="add icon"
+          />
+          Add Study
+        </a>
+        <div
+          class="ui mini left icon input pr-5"
+        >
+          <input
+            aria-label="studySearch"
+            placeholder="Search by Study Name"
+            type="text"
+            value=""
+          />
+          <i
+            aria-hidden="true"
+            class="search icon"
+          />
+        </div>
+        <div
+          class="ui mini buttons"
+        >
+          <button
+            class="ui icon button"
+            data-testid="list"
+            tabindex="0"
+          >
+            <i
+              aria-hidden="true"
+              class="list icon"
+            />
+          </button>
+          <button
+            class="ui icon primary button"
+            data-testid="grid"
+            tabindex="0"
+          >
+            <i
+              aria-hidden="true"
+              class="grid layout icon"
+            />
+          </button>
+        </div>
+      </div>
+      <div
+        class="row"
+      >
+        <div
+          class="column"
+        >
+          <div
+            class="ui stackable three cards"
+          >
+            <div
+              class="ui red card"
+            >
+              <a
+                class="content"
+                href="/study/SD_8WX8QQ06/basic-info/info"
+              >
+                <div
+                  class="header"
+                >
+                  benchmark extensible e-business
+                </div>
+                <div
+                  class="meta"
+                >
+                  SD_8WX8QQ06
+                </div>
+              </a>
+              <div
+                class="extra content"
+                compact="very"
+              >
+                <a
+                  class="pr-5"
+                  href="/study/SD_8WX8QQ06/basic-info/info"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="red clipboard list icon"
+                  />
+                  Info
+                </a>
+                <a
+                  class="pr-5"
+                  href="/study/SD_8WX8QQ06/documents"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="grey file icon"
+                  />
+                  1
+                   documents
+                </a>
+                <a
+                  href="/study/SD_8WX8QQ06/cavatica"
+                >
+                  <svg
+                    class="mr-5 vertical-middle"
+                    height="16"
+                    version="1.1"
+                    viewBox="0 0 24 24"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <title>
+                      logo-cavatica
+                    </title>
+                    <path
+                      d="M26,13.28a.89.89,0,0,0-1.1-.5l-3.6-8a1.13,1.13,0,0,0,.3-1.1,1,1,0,0,0-1.3-.5c-.1.1-.3.2-.3.3l-5.7-2.4a.75.75,0,0,0-.1-.5,1,1,0,0,0-1.3-.5,1,1,0,0,0-.6.9l-6.5,2.2A1,1,0,1,0,4,4a1.21,1.21,0,0,0,.5.5l-3.4,6.1a.75.75,0,0,0-.5.1.88.88,0,0,0-.5,1.2,1.1,1.1,0,0,0,1,.6l3.1,6.9a.93.93,0,0,0-.3,1.2,1,1,0,0,0,1.3.5.78.78,0,0,0,.4-.4l6.3,2.9a.6.6,0,0,0,.1.4,1,1,0,0,0,1.3.5,1,1,0,0,0,.6-.9l6.9-2.3a1.15,1.15,0,0,0,1.2.4,1,1,0,0,0,.5-1.3,1.21,1.21,0,0,0-.5-.5l2.8-5.3a.93.93,0,0,0,1.2-1.3ZM12.88,17l5.2-.1a.6.6,0,0,0,.1.4,1,1,0,0,0,1.3.5l1.4,2.2Zm-11.1-4.9,2.7,1.5a.85.85,0,0,0,0,.7,1.06,1.06,0,0,0,.7.6l-.4,4.5h-.3l-3.1-6.9C1.48,12.28,1.68,12.18,1.78,12.08ZM21,4.88l3.6,8-.3.3-4.7-3.9a1.1,1.1,0,0,0,0-.8,1.38,1.38,0,0,0-.3-.4l1.1-3.2ZM18.68,16a1.21,1.21,0,0,0-.5.5l-5.4.1a.6.6,0,0,0-.1-.4,1.38,1.38,0,0,0-.3-.4l6.1-6.1h.1ZM7.38,7.88l4.4.2c0,.1,0,.2.1.2a1.56,1.56,0,0,0,.8.6l-.9,6.7a.76.76,0,0,0-.4.1c-.1,0-.1.1-.2.1l-4-7.6C7.28,8.08,7.38,8,7.38,7.88Zm10.4,1.3a1.38,1.38,0,0,0,.3.4l-6,6,.9-6.7h.1a1.21,1.21,0,0,0,.5-.5l4.1.4A.6.6,0,0,0,17.78,9.18Zm0-.8L13.68,8a.6.6,0,0,0-.1-.4,1,1,0,0,0-.4-.5l.1-5.4a.37.37,0,0,0,.3-.1c.1-.1.2-.1.3-.3l4.2,6.8ZM13,1.78l-.1,5.3a.9.9,0,0,0-.5.1,1.06,1.06,0,0,0-.6.7l-4.3-.2a.76.76,0,0,0-.1-.4.35.35,0,0,0-.1-.2Zm-6.4,6.8a.37.37,0,0,0,.3-.1H7l4,7.7v.1l-4.7-2.1c.1-.2,0-.4,0-.6a1.21,1.21,0,0,0-.5-.5Zm-1.1,11a1.38,1.38,0,0,0-.4-.3l.4-4.6c.1,0,.1,0,.2-.1a1.38,1.38,0,0,0,.4-.3l4.7,2.1v.4Zm13.6-3.7-.3-6.1a.37.37,0,0,0,.3-.1c.1-.1.2-.1.3-.2l4.8,4v.4l-4.4,2.4A.87.87,0,0,0,19.08,15.88Zm.7-11.5a.78.78,0,0,0,.4.4l-1.3,3.1c-.2-.1-.4,0-.6,0l-4-6.5,5.4,2.2A2.2,2.2,0,0,0,19.78,4.38Zm-7.4-3.2c.1.1.2.3.3.4L7,6.78a1.27,1.27,0,0,0-.6-.1l-.9-2.5a1.08,1.08,0,0,0,.3-.7Zm-7.6,3.2a.6.6,0,0,0,.4-.1l.9,2.5A.91.91,0,0,0,5.58,8a.74.74,0,0,0,.6.5l-.9,4.3a.6.6,0,0,0-.4.1c-.1.1-.3.2-.4.3l-2.7-1.5v-.6a.78.78,0,0,0-.4-.4Zm.9,16v-.5l5.4-2.7a1,1,0,0,0,.9.4l.6,5.1h-.1a1,1,0,0,0-.5.6Zm8,2.8a1.56,1.56,0,0,0-.8-.6l-.6-5.1.3-.3,8.1,3a.88.88,0,0,0-.1.7Zm7.9-3.4a.6.6,0,0,0-.4.1l-1.4-2.3a.91.91,0,0,0,.2-1.1l4.4-2.3c0,.1.1.1.2.2Z"
+                      fill="#db2828"
+                    />
+                  </svg>
+                  0
+                   projects
+                </a>
+                <div
+                  class="ui label ui mini basic icon right floated button"
+                  data-testid="show-detail"
+                  role="button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="chevron down icon"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="ui red card"
+            >
+              <a
+                class="content"
+                href="/study/SD_I1L92W57/basic-info/info"
+              >
+                <div
+                  class="header"
+                >
+                  visualize dynamic users
+                </div>
+                <div
+                  class="meta"
+                >
+                  SD_I1L92W57
+                </div>
+              </a>
+              <div
+                class="extra content"
+                compact="very"
+              >
+                <a
+                  class="pr-5"
+                  href="/study/SD_I1L92W57/basic-info/info"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="red clipboard list icon"
+                  />
+                  Info
+                </a>
+                <a
+                  class="pr-5"
+                  href="/study/SD_I1L92W57/documents"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="red file icon"
+                  />
+                  0
+                   documents
+                </a>
+                <a
+                  href="/study/SD_I1L92W57/cavatica"
+                >
+                  <svg
+                    class="mr-5 vertical-middle"
+                    height="16"
+                    version="1.1"
+                    viewBox="0 0 24 24"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <title>
+                      logo-cavatica
+                    </title>
+                    <path
+                      d="M26,13.28a.89.89,0,0,0-1.1-.5l-3.6-8a1.13,1.13,0,0,0,.3-1.1,1,1,0,0,0-1.3-.5c-.1.1-.3.2-.3.3l-5.7-2.4a.75.75,0,0,0-.1-.5,1,1,0,0,0-1.3-.5,1,1,0,0,0-.6.9l-6.5,2.2A1,1,0,1,0,4,4a1.21,1.21,0,0,0,.5.5l-3.4,6.1a.75.75,0,0,0-.5.1.88.88,0,0,0-.5,1.2,1.1,1.1,0,0,0,1,.6l3.1,6.9a.93.93,0,0,0-.3,1.2,1,1,0,0,0,1.3.5.78.78,0,0,0,.4-.4l6.3,2.9a.6.6,0,0,0,.1.4,1,1,0,0,0,1.3.5,1,1,0,0,0,.6-.9l6.9-2.3a1.15,1.15,0,0,0,1.2.4,1,1,0,0,0,.5-1.3,1.21,1.21,0,0,0-.5-.5l2.8-5.3a.93.93,0,0,0,1.2-1.3ZM12.88,17l5.2-.1a.6.6,0,0,0,.1.4,1,1,0,0,0,1.3.5l1.4,2.2Zm-11.1-4.9,2.7,1.5a.85.85,0,0,0,0,.7,1.06,1.06,0,0,0,.7.6l-.4,4.5h-.3l-3.1-6.9C1.48,12.28,1.68,12.18,1.78,12.08ZM21,4.88l3.6,8-.3.3-4.7-3.9a1.1,1.1,0,0,0,0-.8,1.38,1.38,0,0,0-.3-.4l1.1-3.2ZM18.68,16a1.21,1.21,0,0,0-.5.5l-5.4.1a.6.6,0,0,0-.1-.4,1.38,1.38,0,0,0-.3-.4l6.1-6.1h.1ZM7.38,7.88l4.4.2c0,.1,0,.2.1.2a1.56,1.56,0,0,0,.8.6l-.9,6.7a.76.76,0,0,0-.4.1c-.1,0-.1.1-.2.1l-4-7.6C7.28,8.08,7.38,8,7.38,7.88Zm10.4,1.3a1.38,1.38,0,0,0,.3.4l-6,6,.9-6.7h.1a1.21,1.21,0,0,0,.5-.5l4.1.4A.6.6,0,0,0,17.78,9.18Zm0-.8L13.68,8a.6.6,0,0,0-.1-.4,1,1,0,0,0-.4-.5l.1-5.4a.37.37,0,0,0,.3-.1c.1-.1.2-.1.3-.3l4.2,6.8ZM13,1.78l-.1,5.3a.9.9,0,0,0-.5.1,1.06,1.06,0,0,0-.6.7l-4.3-.2a.76.76,0,0,0-.1-.4.35.35,0,0,0-.1-.2Zm-6.4,6.8a.37.37,0,0,0,.3-.1H7l4,7.7v.1l-4.7-2.1c.1-.2,0-.4,0-.6a1.21,1.21,0,0,0-.5-.5Zm-1.1,11a1.38,1.38,0,0,0-.4-.3l.4-4.6c.1,0,.1,0,.2-.1a1.38,1.38,0,0,0,.4-.3l4.7,2.1v.4Zm13.6-3.7-.3-6.1a.37.37,0,0,0,.3-.1c.1-.1.2-.1.3-.2l4.8,4v.4l-4.4,2.4A.87.87,0,0,0,19.08,15.88Zm.7-11.5a.78.78,0,0,0,.4.4l-1.3,3.1c-.2-.1-.4,0-.6,0l-4-6.5,5.4,2.2A2.2,2.2,0,0,0,19.78,4.38Zm-7.4-3.2c.1.1.2.3.3.4L7,6.78a1.27,1.27,0,0,0-.6-.1l-.9-2.5a1.08,1.08,0,0,0,.3-.7Zm-7.6,3.2a.6.6,0,0,0,.4-.1l.9,2.5A.91.91,0,0,0,5.58,8a.74.74,0,0,0,.6.5l-.9,4.3a.6.6,0,0,0-.4.1c-.1.1-.3.2-.4.3l-2.7-1.5v-.6a.78.78,0,0,0-.4-.4Zm.9,16v-.5l5.4-2.7a1,1,0,0,0,.9.4l.6,5.1h-.1a1,1,0,0,0-.5.6Zm8,2.8a1.56,1.56,0,0,0-.8-.6l-.6-5.1.3-.3,8.1,3a.88.88,0,0,0-.1.7Zm7.9-3.4a.6.6,0,0,0-.4.1l-1.4-2.3a.91.91,0,0,0,.2-1.1l4.4-2.3c0,.1.1.1.2.2Z"
+                      fill="#db2828"
+                    />
+                  </svg>
+                  0
+                   projects
+                </a>
+                <div
+                  class="ui label ui mini basic icon right floated button"
+                  data-testid="show-detail"
+                  role="button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="chevron down icon"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="ui red card"
+            >
+              <a
+                class="content"
+                href="/study/SD_SG5N41K8/basic-info/info"
+              >
+                <div
+                  class="header"
+                >
+                  strategize cross-media markets
+                </div>
+                <div
+                  class="meta"
+                >
+                  SD_SG5N41K8
+                </div>
+              </a>
+              <div
+                class="extra content"
+                compact="very"
+              >
+                <a
+                  class="pr-5"
+                  href="/study/SD_SG5N41K8/basic-info/info"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="red clipboard list icon"
+                  />
+                  Info
+                </a>
+                <a
+                  class="pr-5"
+                  href="/study/SD_SG5N41K8/documents"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="red file icon"
+                  />
+                  0
+                   documents
+                </a>
+                <a
+                  href="/study/SD_SG5N41K8/cavatica"
+                >
+                  <svg
+                    class="mr-5 vertical-middle"
+                    height="16"
+                    version="1.1"
+                    viewBox="0 0 24 24"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <title>
+                      logo-cavatica
+                    </title>
+                    <path
+                      d="M26,13.28a.89.89,0,0,0-1.1-.5l-3.6-8a1.13,1.13,0,0,0,.3-1.1,1,1,0,0,0-1.3-.5c-.1.1-.3.2-.3.3l-5.7-2.4a.75.75,0,0,0-.1-.5,1,1,0,0,0-1.3-.5,1,1,0,0,0-.6.9l-6.5,2.2A1,1,0,1,0,4,4a1.21,1.21,0,0,0,.5.5l-3.4,6.1a.75.75,0,0,0-.5.1.88.88,0,0,0-.5,1.2,1.1,1.1,0,0,0,1,.6l3.1,6.9a.93.93,0,0,0-.3,1.2,1,1,0,0,0,1.3.5.78.78,0,0,0,.4-.4l6.3,2.9a.6.6,0,0,0,.1.4,1,1,0,0,0,1.3.5,1,1,0,0,0,.6-.9l6.9-2.3a1.15,1.15,0,0,0,1.2.4,1,1,0,0,0,.5-1.3,1.21,1.21,0,0,0-.5-.5l2.8-5.3a.93.93,0,0,0,1.2-1.3ZM12.88,17l5.2-.1a.6.6,0,0,0,.1.4,1,1,0,0,0,1.3.5l1.4,2.2Zm-11.1-4.9,2.7,1.5a.85.85,0,0,0,0,.7,1.06,1.06,0,0,0,.7.6l-.4,4.5h-.3l-3.1-6.9C1.48,12.28,1.68,12.18,1.78,12.08ZM21,4.88l3.6,8-.3.3-4.7-3.9a1.1,1.1,0,0,0,0-.8,1.38,1.38,0,0,0-.3-.4l1.1-3.2ZM18.68,16a1.21,1.21,0,0,0-.5.5l-5.4.1a.6.6,0,0,0-.1-.4,1.38,1.38,0,0,0-.3-.4l6.1-6.1h.1ZM7.38,7.88l4.4.2c0,.1,0,.2.1.2a1.56,1.56,0,0,0,.8.6l-.9,6.7a.76.76,0,0,0-.4.1c-.1,0-.1.1-.2.1l-4-7.6C7.28,8.08,7.38,8,7.38,7.88Zm10.4,1.3a1.38,1.38,0,0,0,.3.4l-6,6,.9-6.7h.1a1.21,1.21,0,0,0,.5-.5l4.1.4A.6.6,0,0,0,17.78,9.18Zm0-.8L13.68,8a.6.6,0,0,0-.1-.4,1,1,0,0,0-.4-.5l.1-5.4a.37.37,0,0,0,.3-.1c.1-.1.2-.1.3-.3l4.2,6.8ZM13,1.78l-.1,5.3a.9.9,0,0,0-.5.1,1.06,1.06,0,0,0-.6.7l-4.3-.2a.76.76,0,0,0-.1-.4.35.35,0,0,0-.1-.2Zm-6.4,6.8a.37.37,0,0,0,.3-.1H7l4,7.7v.1l-4.7-2.1c.1-.2,0-.4,0-.6a1.21,1.21,0,0,0-.5-.5Zm-1.1,11a1.38,1.38,0,0,0-.4-.3l.4-4.6c.1,0,.1,0,.2-.1a1.38,1.38,0,0,0,.4-.3l4.7,2.1v.4Zm13.6-3.7-.3-6.1a.37.37,0,0,0,.3-.1c.1-.1.2-.1.3-.2l4.8,4v.4l-4.4,2.4A.87.87,0,0,0,19.08,15.88Zm.7-11.5a.78.78,0,0,0,.4.4l-1.3,3.1c-.2-.1-.4,0-.6,0l-4-6.5,5.4,2.2A2.2,2.2,0,0,0,19.78,4.38Zm-7.4-3.2c.1.1.2.3.3.4L7,6.78a1.27,1.27,0,0,0-.6-.1l-.9-2.5a1.08,1.08,0,0,0,.3-.7Zm-7.6,3.2a.6.6,0,0,0,.4-.1l.9,2.5A.91.91,0,0,0,5.58,8a.74.74,0,0,0,.6.5l-.9,4.3a.6.6,0,0,0-.4.1c-.1.1-.3.2-.4.3l-2.7-1.5v-.6a.78.78,0,0,0-.4-.4Zm.9,16v-.5l5.4-2.7a1,1,0,0,0,.9.4l.6,5.1h-.1a1,1,0,0,0-.5.6Zm8,2.8a1.56,1.56,0,0,0-.8-.6l-.6-5.1.3-.3,8.1,3a.88.88,0,0,0-.1.7Zm7.9-3.4a.6.6,0,0,0-.4.1l-1.4-2.3a.91.91,0,0,0,.2-1.1l4.4-2.3c0,.1.1.1.2.2Z"
+                      fill="#db2828"
+                    />
+                  </svg>
+                  0
+                   projects
+                </a>
+                <div
+                  class="ui label ui mini basic icon right floated button"
+                  data-testid="show-detail"
+                  role="button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="chevron down icon"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="ui red card"
+            >
+              <a
+                class="content"
+                href="/study/SD_0YYP5ZEN/basic-info/info"
+              >
+                <div
+                  class="header"
+                >
+                  drive distributed architectures
+                </div>
+                <div
+                  class="meta"
+                >
+                  SD_0YYP5ZEN
+                </div>
+              </a>
+              <div
+                class="extra content"
+                compact="very"
+              >
+                <a
+                  class="pr-5"
+                  href="/study/SD_0YYP5ZEN/basic-info/info"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="red clipboard list icon"
+                  />
+                  Info
+                </a>
+                <a
+                  class="pr-5"
+                  href="/study/SD_0YYP5ZEN/documents"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="red file icon"
+                  />
+                  0
+                   documents
+                </a>
+                <a
+                  href="/study/SD_0YYP5ZEN/cavatica"
+                >
+                  <svg
+                    class="mr-5 vertical-middle"
+                    height="16"
+                    version="1.1"
+                    viewBox="0 0 24 24"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <title>
+                      logo-cavatica
+                    </title>
+                    <path
+                      d="M26,13.28a.89.89,0,0,0-1.1-.5l-3.6-8a1.13,1.13,0,0,0,.3-1.1,1,1,0,0,0-1.3-.5c-.1.1-.3.2-.3.3l-5.7-2.4a.75.75,0,0,0-.1-.5,1,1,0,0,0-1.3-.5,1,1,0,0,0-.6.9l-6.5,2.2A1,1,0,1,0,4,4a1.21,1.21,0,0,0,.5.5l-3.4,6.1a.75.75,0,0,0-.5.1.88.88,0,0,0-.5,1.2,1.1,1.1,0,0,0,1,.6l3.1,6.9a.93.93,0,0,0-.3,1.2,1,1,0,0,0,1.3.5.78.78,0,0,0,.4-.4l6.3,2.9a.6.6,0,0,0,.1.4,1,1,0,0,0,1.3.5,1,1,0,0,0,.6-.9l6.9-2.3a1.15,1.15,0,0,0,1.2.4,1,1,0,0,0,.5-1.3,1.21,1.21,0,0,0-.5-.5l2.8-5.3a.93.93,0,0,0,1.2-1.3ZM12.88,17l5.2-.1a.6.6,0,0,0,.1.4,1,1,0,0,0,1.3.5l1.4,2.2Zm-11.1-4.9,2.7,1.5a.85.85,0,0,0,0,.7,1.06,1.06,0,0,0,.7.6l-.4,4.5h-.3l-3.1-6.9C1.48,12.28,1.68,12.18,1.78,12.08ZM21,4.88l3.6,8-.3.3-4.7-3.9a1.1,1.1,0,0,0,0-.8,1.38,1.38,0,0,0-.3-.4l1.1-3.2ZM18.68,16a1.21,1.21,0,0,0-.5.5l-5.4.1a.6.6,0,0,0-.1-.4,1.38,1.38,0,0,0-.3-.4l6.1-6.1h.1ZM7.38,7.88l4.4.2c0,.1,0,.2.1.2a1.56,1.56,0,0,0,.8.6l-.9,6.7a.76.76,0,0,0-.4.1c-.1,0-.1.1-.2.1l-4-7.6C7.28,8.08,7.38,8,7.38,7.88Zm10.4,1.3a1.38,1.38,0,0,0,.3.4l-6,6,.9-6.7h.1a1.21,1.21,0,0,0,.5-.5l4.1.4A.6.6,0,0,0,17.78,9.18Zm0-.8L13.68,8a.6.6,0,0,0-.1-.4,1,1,0,0,0-.4-.5l.1-5.4a.37.37,0,0,0,.3-.1c.1-.1.2-.1.3-.3l4.2,6.8ZM13,1.78l-.1,5.3a.9.9,0,0,0-.5.1,1.06,1.06,0,0,0-.6.7l-4.3-.2a.76.76,0,0,0-.1-.4.35.35,0,0,0-.1-.2Zm-6.4,6.8a.37.37,0,0,0,.3-.1H7l4,7.7v.1l-4.7-2.1c.1-.2,0-.4,0-.6a1.21,1.21,0,0,0-.5-.5Zm-1.1,11a1.38,1.38,0,0,0-.4-.3l.4-4.6c.1,0,.1,0,.2-.1a1.38,1.38,0,0,0,.4-.3l4.7,2.1v.4Zm13.6-3.7-.3-6.1a.37.37,0,0,0,.3-.1c.1-.1.2-.1.3-.2l4.8,4v.4l-4.4,2.4A.87.87,0,0,0,19.08,15.88Zm.7-11.5a.78.78,0,0,0,.4.4l-1.3,3.1c-.2-.1-.4,0-.6,0l-4-6.5,5.4,2.2A2.2,2.2,0,0,0,19.78,4.38Zm-7.4-3.2c.1.1.2.3.3.4L7,6.78a1.27,1.27,0,0,0-.6-.1l-.9-2.5a1.08,1.08,0,0,0,.3-.7Zm-7.6,3.2a.6.6,0,0,0,.4-.1l.9,2.5A.91.91,0,0,0,5.58,8a.74.74,0,0,0,.6.5l-.9,4.3a.6.6,0,0,0-.4.1c-.1.1-.3.2-.4.3l-2.7-1.5v-.6a.78.78,0,0,0-.4-.4Zm.9,16v-.5l5.4-2.7a1,1,0,0,0,.9.4l.6,5.1h-.1a1,1,0,0,0-.5.6Zm8,2.8a1.56,1.56,0,0,0-.8-.6l-.6-5.1.3-.3,8.1,3a.88.88,0,0,0-.1.7Zm7.9-3.4a.6.6,0,0,0-.4.1l-1.4-2.3a.91.91,0,0,0,.2-1.1l4.4-2.3c0,.1.1.1.2.2Z"
+                      fill="rgba(0,0,0,.6)"
+                    />
+                  </svg>
+                  2
+                   projects
+                </a>
+                <div
+                  class="ui label ui mini basic icon right floated button"
+                  data-testid="show-detail"
+                  role="button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="chevron down icon"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="ui basic vertical segment ui container"
+    />
+  </div>
+  <div
+    class="ui segment footer"
+  >
+    <div
+      class="ui container text-10"
+    >
+      <div
+        class="ui horizontal list"
+        role="list"
+      >
+        <div
+          class="item"
+          role="listitem"
+        >
+          <div
+            class="ui basic horizontal label text-10"
+          />
+        </div>
+        <div
+          class="item"
+          role="listitem"
+        >
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
+        </div>
+        <div
+          class="item"
+          role="listitem"
+        >
+          Study Creator API
+           
+          <a
+            href="https://github.com/kids-first/kf-api-study-creator/commit/283efc9"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            1.7.2-25-g283efc9
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders study list correctly -- default stage 4`] = `
+<div>
+  <div
+    class="ui large top attached menu"
+  >
+    <div
+      class="ui container"
+    >
+      <div
+        class="item"
+      >
+        <img
+          alt="Kids First logo"
+          src="test-file-stub"
+        />
+      </div>
+      <a
+        aria-current="page"
+        class="header item"
+        href="/"
+      >
+        Data Tracker
+      </a>
+      <a
+        aria-current="page"
+        class="item active"
+        href="/"
+      >
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
+      </a>
+      <div
+        class="right menu"
+      >
+        <div
+          aria-expanded="false"
+          class="ui dropdown link item"
+          role="listbox"
+          tabindex="0"
+        >
+          Admin
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          >
+            <a
+              class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
+            <a
+              class="item"
+              href="/tokens"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="key icon"
+              />
+              Developer Tokens
+            </a>
+            <a
+              class="item"
+              href="/cavatica-projects"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="folder open icon"
+              />
+              Cavatica Projects
+            </a>
+            <a
+              class="item"
+              href="/events"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="history icon"
+              />
+              Event Log
+            </a>
+          </div>
+        </div>
+        <div
+          aria-expanded="false"
+          class="ui dropdown link item"
+          role="listbox"
+          tabindex="0"
+        >
+          <img
+            alt="bendolly"
+            class="ui avatar image"
+            src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
+          />
+          bendolly
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          >
+            <a
+              class="item"
+              href="/profile"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="user icon"
+              />
+              Profile
+            </a>
+            <a
+              class="item"
+              href="/logout"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="log out icon"
+              />
+              Logout
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="page"
+  >
+    <div
+      class="ui basic segment ui container stackable grid"
+    >
+      <div
+        class="left aligned eight wide column"
+      >
+        <h1
+          class="ui header"
+        >
+          Your Investigator Studies
+        </h1>
+      </div>
+      <div
+        class="right aligned eight wide column"
+      >
+        <a
+          class="ui mini basic primary button"
+          href="/study/new-study-selection"
+          role="button"
+        >
+          <i
+            aria-hidden="true"
+            class="add icon"
+          />
+          Add Study
+        </a>
+        <div
+          class="ui mini left icon input pr-5"
+        >
+          <input
+            aria-label="studySearch"
+            placeholder="Search by Study Name"
+            type="text"
+            value="benchmark"
+          />
+          <i
+            aria-hidden="true"
+            class="search icon"
+          />
+        </div>
+        <div
+          class="ui mini buttons"
+        >
+          <button
+            class="ui icon button"
+            data-testid="list"
+            tabindex="0"
+          >
+            <i
+              aria-hidden="true"
+              class="list icon"
+            />
+          </button>
+          <button
+            class="ui icon primary button"
+            data-testid="grid"
+            tabindex="0"
+          >
+            <i
+              aria-hidden="true"
+              class="grid layout icon"
+            />
+          </button>
+        </div>
+      </div>
+      <div
+        class="row"
+      >
+        <div
+          class="column"
+        >
+          <div
+            class="ui stackable three cards"
+          >
+            <div
+              class="ui red card"
+            >
+              <a
+                class="content"
+                href="/study/SD_8WX8QQ06/basic-info/info"
+              >
+                <div
+                  class="header"
+                >
+                  benchmark extensible e-business
+                </div>
+                <div
+                  class="meta"
+                >
+                  SD_8WX8QQ06
+                </div>
+              </a>
+              <div
+                class="extra content"
+                compact="very"
+              >
+                <a
+                  class="pr-5"
+                  href="/study/SD_8WX8QQ06/basic-info/info"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="red clipboard list icon"
+                  />
+                  Info
+                </a>
+                <a
+                  class="pr-5"
+                  href="/study/SD_8WX8QQ06/documents"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="grey file icon"
+                  />
+                  1
+                   documents
+                </a>
+                <a
+                  href="/study/SD_8WX8QQ06/cavatica"
+                >
+                  <svg
+                    class="mr-5 vertical-middle"
+                    height="16"
+                    version="1.1"
+                    viewBox="0 0 24 24"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <title>
+                      logo-cavatica
+                    </title>
+                    <path
+                      d="M26,13.28a.89.89,0,0,0-1.1-.5l-3.6-8a1.13,1.13,0,0,0,.3-1.1,1,1,0,0,0-1.3-.5c-.1.1-.3.2-.3.3l-5.7-2.4a.75.75,0,0,0-.1-.5,1,1,0,0,0-1.3-.5,1,1,0,0,0-.6.9l-6.5,2.2A1,1,0,1,0,4,4a1.21,1.21,0,0,0,.5.5l-3.4,6.1a.75.75,0,0,0-.5.1.88.88,0,0,0-.5,1.2,1.1,1.1,0,0,0,1,.6l3.1,6.9a.93.93,0,0,0-.3,1.2,1,1,0,0,0,1.3.5.78.78,0,0,0,.4-.4l6.3,2.9a.6.6,0,0,0,.1.4,1,1,0,0,0,1.3.5,1,1,0,0,0,.6-.9l6.9-2.3a1.15,1.15,0,0,0,1.2.4,1,1,0,0,0,.5-1.3,1.21,1.21,0,0,0-.5-.5l2.8-5.3a.93.93,0,0,0,1.2-1.3ZM12.88,17l5.2-.1a.6.6,0,0,0,.1.4,1,1,0,0,0,1.3.5l1.4,2.2Zm-11.1-4.9,2.7,1.5a.85.85,0,0,0,0,.7,1.06,1.06,0,0,0,.7.6l-.4,4.5h-.3l-3.1-6.9C1.48,12.28,1.68,12.18,1.78,12.08ZM21,4.88l3.6,8-.3.3-4.7-3.9a1.1,1.1,0,0,0,0-.8,1.38,1.38,0,0,0-.3-.4l1.1-3.2ZM18.68,16a1.21,1.21,0,0,0-.5.5l-5.4.1a.6.6,0,0,0-.1-.4,1.38,1.38,0,0,0-.3-.4l6.1-6.1h.1ZM7.38,7.88l4.4.2c0,.1,0,.2.1.2a1.56,1.56,0,0,0,.8.6l-.9,6.7a.76.76,0,0,0-.4.1c-.1,0-.1.1-.2.1l-4-7.6C7.28,8.08,7.38,8,7.38,7.88Zm10.4,1.3a1.38,1.38,0,0,0,.3.4l-6,6,.9-6.7h.1a1.21,1.21,0,0,0,.5-.5l4.1.4A.6.6,0,0,0,17.78,9.18Zm0-.8L13.68,8a.6.6,0,0,0-.1-.4,1,1,0,0,0-.4-.5l.1-5.4a.37.37,0,0,0,.3-.1c.1-.1.2-.1.3-.3l4.2,6.8ZM13,1.78l-.1,5.3a.9.9,0,0,0-.5.1,1.06,1.06,0,0,0-.6.7l-4.3-.2a.76.76,0,0,0-.1-.4.35.35,0,0,0-.1-.2Zm-6.4,6.8a.37.37,0,0,0,.3-.1H7l4,7.7v.1l-4.7-2.1c.1-.2,0-.4,0-.6a1.21,1.21,0,0,0-.5-.5Zm-1.1,11a1.38,1.38,0,0,0-.4-.3l.4-4.6c.1,0,.1,0,.2-.1a1.38,1.38,0,0,0,.4-.3l4.7,2.1v.4Zm13.6-3.7-.3-6.1a.37.37,0,0,0,.3-.1c.1-.1.2-.1.3-.2l4.8,4v.4l-4.4,2.4A.87.87,0,0,0,19.08,15.88Zm.7-11.5a.78.78,0,0,0,.4.4l-1.3,3.1c-.2-.1-.4,0-.6,0l-4-6.5,5.4,2.2A2.2,2.2,0,0,0,19.78,4.38Zm-7.4-3.2c.1.1.2.3.3.4L7,6.78a1.27,1.27,0,0,0-.6-.1l-.9-2.5a1.08,1.08,0,0,0,.3-.7Zm-7.6,3.2a.6.6,0,0,0,.4-.1l.9,2.5A.91.91,0,0,0,5.58,8a.74.74,0,0,0,.6.5l-.9,4.3a.6.6,0,0,0-.4.1c-.1.1-.3.2-.4.3l-2.7-1.5v-.6a.78.78,0,0,0-.4-.4Zm.9,16v-.5l5.4-2.7a1,1,0,0,0,.9.4l.6,5.1h-.1a1,1,0,0,0-.5.6Zm8,2.8a1.56,1.56,0,0,0-.8-.6l-.6-5.1.3-.3,8.1,3a.88.88,0,0,0-.1.7Zm7.9-3.4a.6.6,0,0,0-.4.1l-1.4-2.3a.91.91,0,0,0,.2-1.1l4.4-2.3c0,.1.1.1.2.2Z"
+                      fill="#db2828"
+                    />
+                  </svg>
+                  0
+                   projects
+                </a>
+                <div
+                  class="ui label ui mini basic icon right floated button"
+                  data-testid="show-detail"
+                  role="button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="chevron down icon"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="ui basic vertical segment ui container"
+    />
+  </div>
+  <div
+    class="ui segment footer"
+  >
+    <div
+      class="ui container text-10"
+    >
+      <div
+        class="ui horizontal list"
+        role="list"
+      >
+        <div
+          class="item"
+          role="listitem"
+        >
+          <div
+            class="ui basic horizontal label text-10"
+          />
+        </div>
+        <div
+          class="item"
+          role="listitem"
+        >
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
+        </div>
+        <div
+          class="item"
+          role="listitem"
+        >
+          Study Creator API
+           
+          <a
+            href="https://github.com/kids-first/kf-api-study-creator/commit/283efc9"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            1.7.2-25-g283efc9
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders study list correctly -- default stage 5`] = `
+<div>
+  <div
+    class="ui large top attached menu"
+  >
+    <div
+      class="ui container"
+    >
+      <div
+        class="item"
+      >
+        <img
+          alt="Kids First logo"
+          src="test-file-stub"
+        />
+      </div>
+      <a
+        aria-current="page"
+        class="header item"
+        href="/"
+      >
+        Data Tracker
+      </a>
+      <a
+        aria-current="page"
+        class="item active"
+        href="/"
+      >
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
+      </a>
+      <div
+        class="right menu"
+      >
+        <div
+          aria-expanded="false"
+          class="ui dropdown link item"
+          role="listbox"
+          tabindex="0"
+        >
+          Admin
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          >
+            <a
+              class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
+            <a
+              class="item"
+              href="/tokens"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="key icon"
+              />
+              Developer Tokens
+            </a>
+            <a
+              class="item"
+              href="/cavatica-projects"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="folder open icon"
+              />
+              Cavatica Projects
+            </a>
+            <a
+              class="item"
+              href="/events"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="history icon"
+              />
+              Event Log
+            </a>
+          </div>
+        </div>
+        <div
+          aria-expanded="false"
+          class="ui dropdown link item"
+          role="listbox"
+          tabindex="0"
+        >
+          <img
+            alt="bendolly"
+            class="ui avatar image"
+            src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
+          />
+          bendolly
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          >
+            <a
+              class="item"
+              href="/profile"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="user icon"
+              />
+              Profile
+            </a>
+            <a
+              class="item"
+              href="/logout"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="log out icon"
+              />
+              Logout
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="page"
+  >
+    <div
+      class="ui basic segment ui container stackable grid"
+    >
+      <div
+        class="left aligned eight wide column"
+      >
+        <h1
+          class="ui header"
+        >
+          Your Investigator Studies
+        </h1>
+      </div>
+      <div
+        class="right aligned eight wide column"
+      >
+        <a
+          class="ui mini basic primary button"
+          href="/study/new-study-selection"
+          role="button"
+        >
+          <i
+            aria-hidden="true"
+            class="add icon"
+          />
+          Add Study
+        </a>
+        <div
+          class="ui mini left icon input pr-5"
+        >
+          <input
+            aria-label="studySearch"
+            placeholder="Search by Study Name"
+            type="text"
+            value="no mathcing"
+          />
+          <i
+            aria-hidden="true"
+            class="search icon"
+          />
+        </div>
+        <div
+          class="ui mini buttons"
+        >
+          <button
+            class="ui icon button"
+            data-testid="list"
+            tabindex="0"
+          >
+            <i
+              aria-hidden="true"
+              class="list icon"
+            />
+          </button>
+          <button
+            class="ui icon primary button"
+            data-testid="grid"
+            tabindex="0"
+          >
+            <i
+              aria-hidden="true"
+              class="grid layout icon"
+            />
+          </button>
+        </div>
+      </div>
+      <div
+        class="row"
+      >
+        <div
+          class="column"
+        >
+          <h4
+            class="ui disabled center aligned header"
+          >
+            No Studies matching your search term. Try searching by Study Name
+          </h4>
+        </div>
+      </div>
+    </div>
+    <div
+      class="ui basic vertical segment ui container"
+    />
+  </div>
+  <div
+    class="ui segment footer"
+  >
+    <div
+      class="ui container text-10"
+    >
+      <div
+        class="ui horizontal list"
+        role="list"
+      >
+        <div
+          class="item"
+          role="listitem"
+        >
+          <div
+            class="ui basic horizontal label text-10"
+          />
+        </div>
+        <div
+          class="item"
+          role="listitem"
+        >
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
+        </div>
+        <div
+          class="item"
+          role="listitem"
+        >
+          Study Creator API
+           
+          <a
+            href="https://github.com/kids-first/kf-api-study-creator/commit/283efc9"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            1.7.2-25-g283efc9
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`renders study list correctly -- release error 1`] = `
 <div>
   <div
@@ -1354,6 +2581,7 @@ exports[`renders study list correctly -- release error 1`] = `
           class="ui mini left icon input pr-5"
         >
           <input
+            aria-label="studySearch"
             placeholder="Search by Study Name"
             type="text"
             value=""
@@ -1378,7 +2606,7 @@ exports[`renders study list correctly -- release error 1`] = `
           </button>
           <button
             class="ui icon button"
-            data-testid="grid layout"
+            data-testid="grid"
             tabindex="0"
           >
             <i

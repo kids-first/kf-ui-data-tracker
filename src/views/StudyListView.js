@@ -6,7 +6,7 @@ import {ALL_STUDIES, MY_PROFILE, GET_RELEASED_STUDY} from '../state/queries';
 import StudyList from '../components/StudyList/StudyList';
 import {Button, Message, Container, Segment, Icon} from 'semantic-ui-react';
 
-const StudyListView = () => {
+const StudyListView = ({history}) => {
   const {data: profileData} = useQuery(MY_PROFILE);
   const myProfile = profileData && profileData.myProfile;
   const {loading, error, data} = useQuery(ALL_STUDIES);
@@ -91,6 +91,7 @@ const StudyListView = () => {
         studyList={studyList}
         loading={loading || releasesLoading}
         roles={myProfile ? myProfile.roles : []}
+        history={history}
       />
       <Container as={Segment} basic vertical>
         {releasesError && (
