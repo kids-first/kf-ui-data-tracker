@@ -660,4 +660,10 @@ export const mocks = [
     },
     error: new Error('Failed to update the study'),
   },
+  {
+    request: {
+      query: ALL_USERS,
+    },
+    error: new Error('Failed to fetch users information'),
+  },
 ];
