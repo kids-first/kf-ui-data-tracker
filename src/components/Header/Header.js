@@ -56,6 +56,10 @@ const Header = () => {
                       <Icon name="history" />
                       Event Log
                     </Dropdown.Item>
+                    <Dropdown.Item as={Nav} to="/users">
+                      <Icon name="users" />
+                      Users
+                    </Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
               )}

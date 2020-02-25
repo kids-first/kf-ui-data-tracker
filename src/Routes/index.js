@@ -34,6 +34,7 @@ import {
   ConfigurationView,
   EventsView,
   TokensListView,
+  UsersView,
 } from '../admin/views';
 import TrackedRoute from './TrackedRoute';
 
@@ -55,6 +56,7 @@ const Routes = () => (
       <Switch>
         <PrivateRoute exact path="/" component={StudyListView} />
         <AdminRoute exact path="/events" component={EventsView} />
+        <AdminRoute exact path="/users" component={UsersView} />
         <PrivateRoute path="/profile" component={ProfileView} />
         <AdminRoute exact path="/configuration" component={ConfigurationView} />
         <AdminRoute
