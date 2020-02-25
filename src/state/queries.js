@@ -148,6 +148,12 @@ export const ALL_USERS = gql`
         node {
           id
           username
+          email
+          picture
+          roles
+          groups
+          lastLogin
+          dateJoined
         }
       }
     }
