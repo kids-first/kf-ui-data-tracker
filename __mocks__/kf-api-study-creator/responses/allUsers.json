@@ -6,6 +6,12 @@
           "node": {
             "id": "VXNlck5vZGU6MQ==",
             "username": "Roger Swanson",
+            "email": "eric48@gmail.com",
+            "picture": "",
+            "roles": [],
+            "groups": [],
+            "lastLogin": null,
+            "dateJoined": "2020-02-07T15:59:45.651947+00:00",
             "__typename": "UserNode"
           },
           "__typename": "UserNodeEdge"
@@ -14,6 +20,12 @@
           "node": {
             "id": "VXNlck5vZGU6Me==",
             "username": "Justin Heath",
+            "email": "dwilliams@yahoo.com",
+            "picture": "",
+            "roles": [],
+            "groups": [],
+            "lastLogin": null,
+            "dateJoined": "2020-02-07T15:59:45.664679+00:00",
             "__typename": "UserNode"
           },
           "__typename": "UserNodeEdge"
@@ -22,6 +34,12 @@
           "node": {
             "id": "VXNlck5vZGU6Mw==",
             "username": "Charles Booker",
+            "email": "hlee@tyler-hernandez.com",
+            "picture": "",
+            "roles": [],
+            "groups": [],
+            "lastLogin": null,
+            "dateJoined": "2020-02-07T15:59:45.673827+00:00",
             "__typename": "UserNode"
           },
           "__typename": "UserNodeEdge"
@@ -30,6 +48,12 @@
           "node": {
             "id": "VXNlck5vZGU6NA==",
             "username": "Steven Morgan",
+            "email": "ghutchinson@mcdaniel.net",
+            "picture": "",
+            "roles": [],
+            "groups": [],
+            "lastLogin": null,
+            "dateJoined": "2020-02-07T15:59:45.685429+00:00",
             "__typename": "UserNode"
           },
           "__typename": "UserNodeEdge"
@@ -38,6 +62,12 @@
           "node": {
             "id": "VXNlck5vZGU6NQ==",
             "username": "Elizabeth White",
+            "email": "hreid@gmail.com",
+            "picture": "",
+            "roles": [],
+            "groups": [],
+            "lastLogin": null,
+            "dateJoined": "2020-02-07T15:59:45.697433+00:00",
             "__typename": "UserNode"
           },
           "__typename": "UserNodeEdge"
@@ -46,6 +76,12 @@
           "node": {
             "id": "VXNlck5vZGU6Ng==",
             "username": "Lisa Booker",
+            "email": "ethanpalmer@hotmail.com",
+            "picture": "",
+            "roles": [],
+            "groups": [],
+            "lastLogin": null,
+            "dateJoined": "2020-02-07T15:59:45.713146+00:00",
             "__typename": "UserNode"
           },
           "__typename": "UserNodeEdge"
@@ -54,6 +90,12 @@
           "node": {
             "id": "VXNlck5vZGU6Nw==",
             "username": "Brittany Olsen",
+            "email": "mhuang@gmail.com",
+            "picture": "",
+            "roles": [],
+            "groups": [],
+            "lastLogin": null,
+            "dateJoined": "2020-02-07T15:59:45.719360+00:00",
             "__typename": "UserNode"
           },
           "__typename": "UserNodeEdge"
@@ -62,6 +104,12 @@
           "node": {
             "id": "VXNlck5vZGU6OA==",
             "username": "Jeff Salazar",
+            "email": "stephaniefuentes@robertson.org",
+            "picture": "",
+            "roles": [],
+            "groups": [],
+            "lastLogin": null,
+            "dateJoined": "2020-02-07T15:59:45.725456+00:00",
             "__typename": "UserNode"
           },
           "__typename": "UserNodeEdge"
@@ -70,6 +118,12 @@
           "node": {
             "id": "VXNlck5vZGU6OQ==",
             "username": "Jennifer Cunningham",
+            "email": "brenda21@gmail.com",
+            "picture": "",
+            "roles": [],
+            "groups": [],
+            "lastLogin": null,
+            "dateJoined": "2020-02-07T15:59:45.732094+00:00",
             "__typename": "UserNode"
           },
           "__typename": "UserNodeEdge"
@@ -78,6 +132,12 @@
           "node": {
             "id": "VXNlck5vZGU6MTA=",
             "username": "Chris Farley",
+            "email": "johnwilliams@hotmail.com",
+            "picture": "",
+            "roles": [],
+            "groups": [],
+            "lastLogin": null,
+            "dateJoined": "2020-02-07T15:59:45.740264+00:00",
             "__typename": "UserNode"
           },
           "__typename": "UserNodeEdge"
@@ -86,6 +146,12 @@
           "node": {
             "id": "VXNlck5vZGU6MTE=",
             "username": "Kelly Blackburn",
+            "email": "daniel41@gmail.com",
+            "picture": "",
+            "roles": [],
+            "groups": [],
+            "lastLogin": null,
+            "dateJoined": "2020-02-07T15:59:45.746563+00:00",
             "__typename": "UserNode"
           },
           "__typename": "UserNodeEdge"
@@ -94,6 +160,12 @@
           "node": {
             "id": "VXNlck5vZGU6MTI=",
             "username": "Bridget Alvarado",
+            "email": "marissa29@hotmail.com",
+            "picture": "",
+            "roles": [],
+            "groups": [],
+            "lastLogin": null,
+            "dateJoined": "2020-02-07T15:59:45.755625+00:00",
             "__typename": "UserNode"
           },
           "__typename": "UserNodeEdge"
@@ -102,6 +174,12 @@
           "node": {
             "id": "VXNlck5vZGU6MTM=",
             "username": "Kristin Bond",
+            "email": "hfreeman@morales.net",
+            "picture": "",
+            "roles": [],
+            "groups": [],
+            "lastLogin": null,
+            "dateJoined": "2020-02-07T15:59:45.762115+00:00",
             "__typename": "UserNode"
           },
           "__typename": "UserNodeEdge"
@@ -110,6 +188,12 @@
           "node": {
             "id": "VXNlck5vZGU6MTQ=",
             "username": "Kendra Campbell",
+            "email": "cjenkins@hotmail.com",
+            "picture": "",
+            "roles": [],
+            "groups": [],
+            "lastLogin": null,
+            "dateJoined": "2020-02-07T15:59:45.768853+00:00",
             "__typename": "UserNode"
           },
           "__typename": "UserNodeEdge"
@@ -118,6 +202,12 @@
           "node": {
             "id": "VXNlck5vZGU6MTU=",
             "username": "Denise Moore",
+            "email": "hayleyfranklin@yahoo.com",
+            "picture": "",
+            "roles": [],
+            "groups": [],
+            "lastLogin": null,
+            "dateJoined": "2020-02-07T15:59:45.775184+00:00",
             "__typename": "UserNode"
           },
           "__typename": "UserNodeEdge"
@@ -126,6 +216,12 @@
           "node": {
             "id": "VXNlck5vZGU6MTY=",
             "username": "Lisa Steele",
+            "email": "kevin29@gomez.biz",
+            "picture": "",
+            "roles": [],
+            "groups": [],
+            "lastLogin": null,
+            "dateJoined": "2020-02-07T15:59:45.781254+00:00",
             "__typename": "UserNode"
           },
           "__typename": "UserNodeEdge"
@@ -134,6 +230,12 @@
           "node": {
             "id": "VXNlck5vZGU6MTc=",
             "username": "Katrina Torres",
+            "email": "yvonne90@reed.com",
+            "picture": "",
+            "roles": [],
+            "groups": [],
+            "lastLogin": null,
+            "dateJoined": "2020-02-07T15:59:45.789837+00:00",
             "__typename": "UserNode"
           },
           "__typename": "UserNodeEdge"
@@ -142,6 +244,12 @@
           "node": {
             "id": "VXNlck5vZGU6MTg=",
             "username": "Frank Johnson",
+            "email": "jbyrd@hotmail.com",
+            "picture": "",
+            "roles": [],
+            "groups": [],
+            "lastLogin": null,
+            "dateJoined": "2020-02-07T15:59:45.796050+00:00",
             "__typename": "UserNode"
           },
           "__typename": "UserNodeEdge"
@@ -150,6 +258,12 @@
           "node": {
             "id": "VXNlck5vZGU6MTk=",
             "username": "Jason Norman",
+            "email": "tuckerrebecca@hotmail.com",
+            "picture": "",
+            "roles": [],
+            "groups": [],
+            "lastLogin": null,
+            "dateJoined": "2020-02-07T15:59:45.802723+00:00",
             "__typename": "UserNode"
           },
           "__typename": "UserNodeEdge"
@@ -158,6 +272,12 @@
           "node": {
             "id": "VXNlck5vZGU6MjA=",
             "username": "devadmin",
+            "email": "admin@myproject.com",
+            "picture": "",
+            "roles": ["ADMIN"],
+            "groups": [],
+            "lastLogin": null,
+            "dateJoined": "2020-02-07T15:59:46.466984+00:00",
             "__typename": "UserNode"
           },
           "__typename": "UserNodeEdge"
