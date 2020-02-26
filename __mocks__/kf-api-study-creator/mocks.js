@@ -372,6 +372,7 @@ export const mocks = [
       query: ALL_EVENTS,
       variables: {
         orderBy: '-created_at',
+        username: 'Justin Heath',
         studyId: 'SD_SG5N41K8',
         first: 20,
       },
@@ -383,6 +384,7 @@ export const mocks = [
       query: ALL_EVENTS,
       variables: {
         orderBy: '-created_at',
+        username: 'Justin Heath',
         studyId: 'SD_SG5N41K8',
         eventType: 'FV_CRE',
         first: 20,

@@ -106,11 +106,11 @@ exports[`renders admin event logs first 20, click to show more 1`] = `
           tabindex="0"
         >
           <img
-            alt="Justin Heath"
+            alt="bendolly"
             class="ui avatar image"
             src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
           />
-          Justin Heath
+          bendolly
           <i
             aria-hidden="true"
             class="dropdown icon"
@@ -1456,11 +1456,11 @@ exports[`renders admin event logs first 20, click to show more 2`] = `
           tabindex="0"
         >
           <img
-            alt="Justin Heath"
+            alt="bendolly"
             class="ui avatar image"
             src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
           />
-          Justin Heath
+          bendolly
           <i
             aria-hidden="true"
             class="dropdown icon"
@@ -3728,11 +3728,11 @@ exports[`renders admin event logs view correctly 2`] = `
           tabindex="0"
         >
           <img
-            alt="Justin Heath"
+            alt="bendolly"
             class="ui avatar image"
             src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
           />
-          Justin Heath
+          bendolly
           <i
             aria-hidden="true"
             class="dropdown icon"
@@ -4760,11 +4760,11 @@ exports[`renders admin event logs view correctly 3`] = `
           tabindex="0"
         >
           <img
-            alt="Justin Heath"
+            alt="bendolly"
             class="ui avatar image"
             src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
           />
-          Justin Heath
+          bendolly
           <i
             aria-hidden="true"
             class="dropdown icon"
@@ -5786,23 +5786,23 @@ exports[`renders admin event logs view correctly 4`] = `
           </div>
         </div>
         <div
-          aria-expanded="true"
-          class="ui active visible dropdown link item"
+          aria-expanded="false"
+          class="ui dropdown link item"
           role="listbox"
           tabindex="0"
         >
           <img
-            alt="Justin Heath"
+            alt="bendolly"
             class="ui avatar image"
             src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
           />
-          Justin Heath
+          bendolly
           <i
             aria-hidden="true"
             class="dropdown icon"
           />
           <div
-            class="menu transition visible"
+            class="menu transition"
           >
             <a
               class="item"
@@ -5864,22 +5864,22 @@ exports[`renders admin event logs view correctly 4`] = `
         >
           <div
             aria-live="polite"
-            class="default text"
+            class="text"
             role="alert"
           >
-            User
+            Justin Heath
           </div>
           <i
             aria-hidden="true"
-            class="dropdown icon"
+            class="dropdown icon clear"
           />
           <div
             class="menu transition"
           >
             <div
               aria-checked="false"
-              aria-selected="true"
-              class="selected item"
+              aria-selected="false"
+              class="item"
               role="option"
               style="pointer-events: all;"
             >
@@ -5890,9 +5890,9 @@ exports[`renders admin event logs view correctly 4`] = `
               </span>
             </div>
             <div
-              aria-checked="false"
-              aria-selected="false"
-              class="item"
+              aria-checked="true"
+              aria-selected="true"
+              class="active selected item"
               role="option"
               style="pointer-events: all;"
             >
@@ -6505,131 +6505,6 @@ exports[`renders admin event logs view correctly 4`] = `
                 class="right floated content"
               >
                 <time
-                  datetime="2019-10-24T15:29:53.799Z"
-                  title="24 Oct 2019"
-                >
-                  6 months from now
-                </time>
-              </div>
-              Katrina Torres created version FV_CZ9APDBX of file SF_ID7TZFDM
-            </div>
-          </div>
-          <div
-            class="item"
-            data-testid="event-item"
-            role="listitem"
-          >
-            <i
-              aria-hidden="true"
-              class="green add icon"
-            />
-            <div
-              class="content"
-            >
-              <div
-                class="right floated content"
-              >
-                <time
-                  datetime="2019-10-24T15:29:53.792Z"
-                  title="24 Oct 2019"
-                >
-                  6 months from now
-                </time>
-              </div>
-              Lisa Steele created file SF_ID7TZFDM
-            </div>
-          </div>
-          <div
-            class="item"
-            data-testid="event-item"
-            role="listitem"
-          >
-            <i
-              aria-hidden="true"
-              class="green add icon"
-            />
-            <div
-              class="content"
-            >
-              <div
-                class="right floated content"
-              >
-                <time
-                  datetime="2019-10-24T15:29:53.711Z"
-                  title="24 Oct 2019"
-                >
-                  6 months from now
-                </time>
-              </div>
-              Elizabeth White created version FV_IR5YTHKJ of file SF_SX4YTPYK
-            </div>
-          </div>
-          <div
-            class="item"
-            data-testid="event-item"
-            role="listitem"
-          >
-            <i
-              aria-hidden="true"
-              class="green add icon"
-            />
-            <div
-              class="content"
-            >
-              <div
-                class="right floated content"
-              >
-                <time
-                  datetime="2019-10-24T15:29:53.703Z"
-                  title="24 Oct 2019"
-                >
-                  6 months from now
-                </time>
-              </div>
-              Steven Morgan created version FV_HWYZ3P9S of file SF_SX4YTPYK
-            </div>
-          </div>
-          <div
-            class="item"
-            data-testid="event-item"
-            role="listitem"
-          >
-            <i
-              aria-hidden="true"
-              class="green add icon"
-            />
-            <div
-              class="content"
-            >
-              <div
-                class="right floated content"
-              >
-                <time
-                  datetime="2019-10-24T15:29:53.695Z"
-                  title="24 Oct 2019"
-                >
-                  6 months from now
-                </time>
-              </div>
-              Charles Booker created version FV_Z00M0H85 of file SF_SX4YTPYK
-            </div>
-          </div>
-          <div
-            class="item"
-            data-testid="event-item"
-            role="listitem"
-          >
-            <i
-              aria-hidden="true"
-              class="green add icon"
-            />
-            <div
-              class="content"
-            >
-              <div
-                class="right floated content"
-              >
-                <time
                   datetime="2019-10-24T15:29:53.687Z"
                   title="24 Oct 2019"
                 >
@@ -6637,31 +6512,6 @@ exports[`renders admin event logs view correctly 4`] = `
                 </time>
               </div>
               Justin Heath created version FV_FSTR09MV of file SF_SX4YTPYK
-            </div>
-          </div>
-          <div
-            class="item"
-            data-testid="event-item"
-            role="listitem"
-          >
-            <i
-              aria-hidden="true"
-              class="green add icon"
-            />
-            <div
-              class="content"
-            >
-              <div
-                class="right floated content"
-              >
-                <time
-                  datetime="2019-10-24T15:29:53.678Z"
-                  title="24 Oct 2019"
-                >
-                  6 months from now
-                </time>
-              </div>
-              Roger Swanson created file SF_SX4YTPYK
             </div>
           </div>
         </div>
@@ -6824,11 +6674,11 @@ exports[`renders admin event logs view correctly 5`] = `
           tabindex="0"
         >
           <img
-            alt="Justin Heath"
+            alt="bendolly"
             class="ui avatar image"
             src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
           />
-          Justin Heath
+          bendolly
           <i
             aria-hidden="true"
             class="dropdown icon"
@@ -6896,22 +6746,22 @@ exports[`renders admin event logs view correctly 5`] = `
         >
           <div
             aria-live="polite"
-            class="default text"
+            class="text"
             role="alert"
           >
-            User
+            Justin Heath
           </div>
           <i
             aria-hidden="true"
-            class="dropdown icon"
+            class="dropdown icon clear"
           />
           <div
             class="menu transition"
           >
             <div
               aria-checked="false"
-              aria-selected="true"
-              class="selected item"
+              aria-selected="false"
+              class="item"
               role="option"
               style="pointer-events: all;"
             >
@@ -6922,9 +6772,9 @@ exports[`renders admin event logs view correctly 5`] = `
               </span>
             </div>
             <div
-              aria-checked="false"
-              aria-selected="false"
-              class="item"
+              aria-checked="true"
+              aria-selected="true"
+              class="active selected item"
               role="option"
               style="pointer-events: all;"
             >
@@ -7537,131 +7387,6 @@ exports[`renders admin event logs view correctly 5`] = `
                 class="right floated content"
               >
                 <time
-                  datetime="2019-10-24T15:29:53.799Z"
-                  title="24 Oct 2019"
-                >
-                  6 months from now
-                </time>
-              </div>
-              Katrina Torres created version FV_CZ9APDBX of file SF_ID7TZFDM
-            </div>
-          </div>
-          <div
-            class="item"
-            data-testid="event-item"
-            role="listitem"
-          >
-            <i
-              aria-hidden="true"
-              class="green add icon"
-            />
-            <div
-              class="content"
-            >
-              <div
-                class="right floated content"
-              >
-                <time
-                  datetime="2019-10-24T15:29:53.792Z"
-                  title="24 Oct 2019"
-                >
-                  6 months from now
-                </time>
-              </div>
-              Lisa Steele created file SF_ID7TZFDM
-            </div>
-          </div>
-          <div
-            class="item"
-            data-testid="event-item"
-            role="listitem"
-          >
-            <i
-              aria-hidden="true"
-              class="green add icon"
-            />
-            <div
-              class="content"
-            >
-              <div
-                class="right floated content"
-              >
-                <time
-                  datetime="2019-10-24T15:29:53.711Z"
-                  title="24 Oct 2019"
-                >
-                  6 months from now
-                </time>
-              </div>
-              Elizabeth White created version FV_IR5YTHKJ of file SF_SX4YTPYK
-            </div>
-          </div>
-          <div
-            class="item"
-            data-testid="event-item"
-            role="listitem"
-          >
-            <i
-              aria-hidden="true"
-              class="green add icon"
-            />
-            <div
-              class="content"
-            >
-              <div
-                class="right floated content"
-              >
-                <time
-                  datetime="2019-10-24T15:29:53.703Z"
-                  title="24 Oct 2019"
-                >
-                  6 months from now
-                </time>
-              </div>
-              Steven Morgan created version FV_HWYZ3P9S of file SF_SX4YTPYK
-            </div>
-          </div>
-          <div
-            class="item"
-            data-testid="event-item"
-            role="listitem"
-          >
-            <i
-              aria-hidden="true"
-              class="green add icon"
-            />
-            <div
-              class="content"
-            >
-              <div
-                class="right floated content"
-              >
-                <time
-                  datetime="2019-10-24T15:29:53.695Z"
-                  title="24 Oct 2019"
-                >
-                  6 months from now
-                </time>
-              </div>
-              Charles Booker created version FV_Z00M0H85 of file SF_SX4YTPYK
-            </div>
-          </div>
-          <div
-            class="item"
-            data-testid="event-item"
-            role="listitem"
-          >
-            <i
-              aria-hidden="true"
-              class="green add icon"
-            />
-            <div
-              class="content"
-            >
-              <div
-                class="right floated content"
-              >
-                <time
                   datetime="2019-10-24T15:29:53.687Z"
                   title="24 Oct 2019"
                 >
@@ -7669,31 +7394,6 @@ exports[`renders admin event logs view correctly 5`] = `
                 </time>
               </div>
               Justin Heath created version FV_FSTR09MV of file SF_SX4YTPYK
-            </div>
-          </div>
-          <div
-            class="item"
-            data-testid="event-item"
-            role="listitem"
-          >
-            <i
-              aria-hidden="true"
-              class="green add icon"
-            />
-            <div
-              class="content"
-            >
-              <div
-                class="right floated content"
-              >
-                <time
-                  datetime="2019-10-24T15:29:53.678Z"
-                  title="24 Oct 2019"
-                >
-                  6 months from now
-                </time>
-              </div>
-              Roger Swanson created file SF_SX4YTPYK
             </div>
           </div>
         </div>
@@ -7856,11 +7556,11 @@ exports[`renders admin event logs view correctly 6`] = `
           tabindex="0"
         >
           <img
-            alt="Justin Heath"
+            alt="bendolly"
             class="ui avatar image"
             src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
           />
-          Justin Heath
+          bendolly
           <i
             aria-hidden="true"
             class="dropdown icon"
@@ -7928,22 +7628,22 @@ exports[`renders admin event logs view correctly 6`] = `
         >
           <div
             aria-live="polite"
-            class="default text"
+            class="text"
             role="alert"
           >
-            User
+            Justin Heath
           </div>
           <i
             aria-hidden="true"
-            class="dropdown icon"
+            class="dropdown icon clear"
           />
           <div
             class="menu transition"
           >
             <div
               aria-checked="false"
-              aria-selected="true"
-              class="selected item"
+              aria-selected="false"
+              class="item"
               role="option"
               style="pointer-events: all;"
             >
@@ -7954,9 +7654,9 @@ exports[`renders admin event logs view correctly 6`] = `
               </span>
             </div>
             <div
-              aria-checked="false"
-              aria-selected="false"
-              class="item"
+              aria-checked="true"
+              aria-selected="true"
+              class="active selected item"
               role="option"
               style="pointer-events: all;"
             >
@@ -8738,11 +8438,11 @@ exports[`renders admin event logs view correctly 7`] = `
           tabindex="0"
         >
           <img
-            alt="Justin Heath"
+            alt="bendolly"
             class="ui avatar image"
             src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
           />
-          Justin Heath
+          bendolly
           <i
             aria-hidden="true"
             class="dropdown icon"
@@ -8810,22 +8510,22 @@ exports[`renders admin event logs view correctly 7`] = `
         >
           <div
             aria-live="polite"
-            class="default text"
+            class="text"
             role="alert"
           >
-            User
+            Justin Heath
           </div>
           <i
             aria-hidden="true"
-            class="dropdown icon"
+            class="dropdown icon clear"
           />
           <div
             class="menu transition"
           >
             <div
               aria-checked="false"
-              aria-selected="true"
-              class="selected item"
+              aria-selected="false"
+              class="item"
               role="option"
               style="pointer-events: all;"
             >
@@ -8836,9 +8536,9 @@ exports[`renders admin event logs view correctly 7`] = `
               </span>
             </div>
             <div
-              aria-checked="false"
-              aria-selected="false"
-              class="item"
+              aria-checked="true"
+              aria-selected="true"
+              class="active selected item"
               role="option"
               style="pointer-events: all;"
             >
@@ -9620,11 +9320,11 @@ exports[`renders admin event logs view with error message 1`] = `
           tabindex="0"
         >
           <img
-            alt="Justin Heath"
+            alt="bendolly"
             class="ui avatar image"
             src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
           />
-          Justin Heath
+          bendolly
           <i
             aria-hidden="true"
             class="dropdown icon"
