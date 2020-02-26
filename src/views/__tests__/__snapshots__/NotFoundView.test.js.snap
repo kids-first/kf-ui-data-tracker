@@ -1,5 +1,247 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`renders authentication error on invalid path /auth-error 1`] = `
+<div>
+  <div
+    class="page"
+  >
+    <div
+      class="ui basic placeholder segment ui container"
+    >
+      <h2
+        class="ui icon header"
+      >
+        <i
+          aria-hidden="true"
+          class="frown outline icon"
+        />
+        404 Page not found
+        <div
+          class="sub header"
+        >
+          <p>
+            <span>
+              No match found for 
+              <code>
+                /auth-error
+              </code>
+            </span>
+          </p>
+          <a
+            href="/"
+          >
+            Click here to go back to 
+            your studies
+          </a>
+        </div>
+      </h2>
+    </div>
+  </div>
+  <div
+    class="ui segment footer"
+  >
+    <div
+      class="ui container text-10"
+    >
+      <div
+        class="ui horizontal list"
+        role="list"
+      >
+        <div
+          class="item"
+          role="listitem"
+        >
+          <div
+            class="ui basic horizontal label text-10"
+          />
+        </div>
+        <div
+          class="item"
+          role="listitem"
+        >
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
+        </div>
+        <div
+          class="item"
+          role="listitem"
+        >
+          Study Creator API
+           
+          <a
+            href="https://github.com/kids-first/kf-api-study-creator/commit/283efc9"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            1.7.2-25-g283efc9
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders authentication error on user blocked callback 1`] = `
+<div>
+  <div
+    class="ui fluid placeholder height-50"
+  >
+    <div
+      class="image"
+    />
+  </div>
+  <div
+    class="ui basic segment ui container"
+  >
+    <div
+      class="ui fluid placeholder"
+    >
+      <div
+        class="header"
+      >
+        <div
+          class="line"
+        />
+        <div
+          class="line"
+        />
+      </div>
+      <div
+        class="paragraph"
+      >
+        <div
+          class="line"
+        />
+        <div
+          class="line"
+        />
+        <div
+          class="line"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="page"
+  />
+  <div
+    class="ui segment footer"
+  >
+    <div
+      class="ui container text-10"
+    >
+      <div
+        class="ui horizontal list"
+        role="list"
+      >
+        <div
+          class="item"
+          role="listitem"
+        >
+          <div
+            class="ui basic horizontal label text-10"
+          />
+        </div>
+        <div
+          class="item"
+          role="listitem"
+        >
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
+        </div>
+        <div
+          class="item"
+          role="listitem"
+        >
+          Study Creator API
+           
+          <a
+            href="https://github.com/kids-first/kf-api-study-creator/commit/283efc9"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            1.7.2-25-g283efc9
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders authentication error on user blocked location mock 1`] = `
+<div>
+  <div
+    class="ui basic placeholder segment ui container"
+  >
+    <h2
+      class="ui icon header"
+    >
+      <i
+        aria-hidden="true"
+        class="frown outline icon"
+      />
+      Authentication Error
+      <div
+        class="sub header"
+      >
+        <p>
+          user is blocked
+        </p>
+        <a
+          href="/login"
+        >
+          Click here to go back to 
+          login page
+        </a>
+      </div>
+    </h2>
+  </div>
+</div>
+`;
+
+exports[`renders authentication error on user blocked location mock 2`] = `
+<div>
+  <div
+    class="ui basic placeholder segment ui container"
+  >
+    <h2
+      class="ui icon header"
+    >
+      <i
+        aria-hidden="true"
+        class="frown outline icon"
+      />
+      Authentication Error
+      <div
+        class="sub header"
+      >
+        <p>
+          user is blocked
+        </p>
+        <a
+          href="/login"
+        >
+          Click here to go back to 
+          login page
+        </a>
+      </div>
+    </h2>
+  </div>
+</div>
+`;
+
 exports[`renders error view on invalid document id 1`] = `
 <div>
   <div
@@ -232,12 +474,15 @@ exports[`renders error view on invalid document id 1`] = `
           class="sub header"
         >
           <p>
-            Cannot find the document with ID SF_INVALIDS
+            <span>
+              Cannot find the document with ID SF_INVALIDS
+            </span>
           </p>
           <a
             href="/"
           >
-            Click here to go back to your studies
+            Click here to go back to 
+            your studies
           </a>
         </div>
       </h2>
@@ -455,15 +700,18 @@ exports[`renders error view on invalid new study step 1`] = `
           class="sub header"
         >
           <p>
-            No match found for 
-            <code>
-              /study/new-study/info-invalid
-            </code>
+            <span>
+              No match found for 
+              <code>
+                /study/new-study/info-invalid
+              </code>
+            </span>
           </p>
           <a
             href="/"
           >
-            Click here to go back to your studies
+            Click here to go back to 
+            your studies
           </a>
         </div>
       </h2>
@@ -681,15 +929,18 @@ exports[`renders error view on invalid path /XXXX 1`] = `
           class="sub header"
         >
           <p>
-            No match found for 
-            <code>
-              /XXXX
-            </code>
+            <span>
+              No match found for 
+              <code>
+                /XXXX
+              </code>
+            </span>
           </p>
           <a
             href="/"
           >
-            Click here to go back to your studies
+            Click here to go back to 
+            your studies
           </a>
         </div>
       </h2>
@@ -1557,12 +1808,15 @@ exports[`renders error view on invalid study id 1`] = `
           class="sub header"
         >
           <p>
-            Cannot find the study with ID SD_INVALID
+            <span>
+              Cannot find the study with ID SD_INVALID
+            </span>
           </p>
           <a
             href="/"
           >
-            Click here to go back to your studies
+            Click here to go back to 
+            your studies
           </a>
         </div>
       </h2>
@@ -1780,12 +2034,15 @@ exports[`renders error view on invalid study id 2`] = `
           class="sub header"
         >
           <p>
-            Cannot find the study with ID SD_INVALID
+            <span>
+              Cannot find the study with ID SD_INVALID
+            </span>
           </p>
           <a
             href="/"
           >
-            Click here to go back to your studies
+            Click here to go back to 
+            your studies
           </a>
         </div>
       </h2>
@@ -2003,12 +2260,15 @@ exports[`renders error view on invalid study id 3`] = `
           class="sub header"
         >
           <p>
-            Cannot find the study with ID SD_INVALID
+            <span>
+              Cannot find the study with ID SD_INVALID
+            </span>
           </p>
           <a
             href="/"
           >
-            Click here to go back to your studies
+            Click here to go back to 
+            your studies
           </a>
         </div>
       </h2>
@@ -2226,12 +2486,15 @@ exports[`renders error view on invalid study id 4`] = `
           class="sub header"
         >
           <p>
-            Cannot find the study with ID SD_INVALID
+            <span>
+              Cannot find the study with ID SD_INVALID
+            </span>
           </p>
           <a
             href="/"
           >
-            Click here to go back to your studies
+            Click here to go back to 
+            your studies
           </a>
         </div>
       </h2>
@@ -2449,12 +2712,15 @@ exports[`renders error view on invalid study id 5`] = `
           class="sub header"
         >
           <p>
-            Cannot find the study with ID SD_INVALID
+            <span>
+              Cannot find the study with ID SD_INVALID
+            </span>
           </p>
           <a
             href="/"
           >
-            Click here to go back to your studies
+            Click here to go back to 
+            your studies
           </a>
         </div>
       </h2>
@@ -2741,12 +3007,15 @@ exports[`renders error view on invalid study info step name 1`] = `
           class="sub header"
         >
           <p>
-            Cannot find the study info step invalid
+            <span>
+              Cannot find the study info step invalid
+            </span>
           </p>
           <a
             href="/"
           >
-            Click here to go back to your studies
+            Click here to go back to 
+            your studies
           </a>
         </div>
       </h2>
