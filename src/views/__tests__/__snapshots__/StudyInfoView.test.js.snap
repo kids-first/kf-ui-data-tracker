@@ -1007,6 +1007,17 @@ exports[`renders study info view correctly -- ADMIN user 2`] = `
               />
               Event Log
             </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
+            </a>
           </div>
         </div>
         <div
@@ -1551,6 +1562,17 @@ exports[`renders study info view correctly -- ADMIN user 3`] = `
               />
               Event Log
             </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
+            </a>
           </div>
         </div>
         <div
@@ -2094,6 +2116,17 @@ exports[`renders study info view correctly -- ADMIN user 4`] = `
                 class="history icon"
               />
               Event Log
+            </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
             </a>
           </div>
         </div>
@@ -2646,6 +2679,17 @@ exports[`renders study info view correctly -- ADMIN user 5`] = `
               />
               Event Log
             </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
+            </a>
           </div>
         </div>
         <div
@@ -3181,6 +3225,17 @@ exports[`renders study info view correctly -- ADMIN user 6`] = `
                 class="history icon"
               />
               Event Log
+            </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
             </a>
           </div>
         </div>
@@ -3734,6 +3789,17 @@ exports[`renders study info view with get study info error 1`] = `
               />
               Event Log
             </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
+            </a>
           </div>
         </div>
         <div
@@ -3965,6 +4031,17 @@ exports[`renders study info view with update study info error 1`] = `
                 class="history icon"
               />
               Event Log
+            </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
             </a>
           </div>
         </div>

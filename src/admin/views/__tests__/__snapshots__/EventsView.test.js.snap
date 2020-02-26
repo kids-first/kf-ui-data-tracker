@@ -97,6 +97,17 @@ exports[`renders admin event logs first 20, click to show more 1`] = `
               />
               Event Log
             </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
+            </a>
           </div>
         </div>
         <div
@@ -1446,6 +1457,17 @@ exports[`renders admin event logs first 20, click to show more 2`] = `
                 class="history icon"
               />
               Event Log
+            </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
             </a>
           </div>
         </div>
@@ -3719,6 +3741,17 @@ exports[`renders admin event logs view correctly 2`] = `
               />
               Event Log
             </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
+            </a>
           </div>
         </div>
         <div
@@ -4750,6 +4783,17 @@ exports[`renders admin event logs view correctly 3`] = `
                 class="history icon"
               />
               Event Log
+            </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
             </a>
           </div>
         </div>
@@ -5783,6 +5827,17 @@ exports[`renders admin event logs view correctly 4`] = `
               />
               Event Log
             </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
+            </a>
           </div>
         </div>
         <div
@@ -6664,6 +6719,17 @@ exports[`renders admin event logs view correctly 5`] = `
                 class="history icon"
               />
               Event Log
+            </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
             </a>
           </div>
         </div>
@@ -7547,6 +7613,17 @@ exports[`renders admin event logs view correctly 6`] = `
               />
               Event Log
             </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
+            </a>
           </div>
         </div>
         <div
@@ -8429,6 +8506,17 @@ exports[`renders admin event logs view correctly 7`] = `
               />
               Event Log
             </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
+            </a>
           </div>
         </div>
         <div
@@ -9310,6 +9398,17 @@ exports[`renders admin event logs view with error message 1`] = `
                 class="history icon"
               />
               Event Log
+            </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
             </a>
           </div>
         </div>

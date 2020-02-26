@@ -96,6 +96,17 @@ exports[`renders study nav bar with error for fetching study 1`] = `
               />
               Event Log
             </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
+            </a>
           </div>
         </div>
         <div
@@ -491,6 +502,17 @@ exports[`renders study nav bar with error in study creation 2`] = `
                 class="history icon"
               />
               Event Log
+            </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
             </a>
           </div>
         </div>
@@ -1031,6 +1053,17 @@ exports[`renders study nav bar with error in study creation 3`] = `
                 class="history icon"
               />
               Event Log
+            </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
             </a>
           </div>
         </div>
@@ -1806,6 +1839,17 @@ exports[`renders study nav bar with error in study creation 4`] = `
                 class="history icon"
               />
               Event Log
+            </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
             </a>
           </div>
         </div>

@@ -97,6 +97,17 @@ exports[`renders empty study list with admin access 1`] = `
               />
               Event Log
             </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
+            </a>
           </div>
         </div>
         <div
@@ -623,6 +634,17 @@ exports[`renders study list correctly -- default stage 2`] = `
                 class="history icon"
               />
               Event Log
+            </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
             </a>
           </div>
         </div>
@@ -1264,6 +1286,17 @@ exports[`renders study list correctly -- default stage 3`] = `
               />
               Event Log
             </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
+            </a>
           </div>
         </div>
         <div
@@ -1825,6 +1858,17 @@ exports[`renders study list correctly -- default stage 4`] = `
               />
               Event Log
             </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
+            </a>
           </div>
         </div>
         <div
@@ -2352,6 +2396,17 @@ exports[`renders study list correctly -- default stage 5`] = `
               />
               Event Log
             </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
+            </a>
           </div>
         </div>
         <div
@@ -2678,6 +2733,17 @@ exports[`renders study list correctly -- default stage 6`] = `
               />
               Event Log
             </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
+            </a>
           </div>
         </div>
         <div
@@ -2944,6 +3010,17 @@ exports[`renders study list correctly -- release error 1`] = `
                 class="history icon"
               />
               Event Log
+            </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
             </a>
           </div>
         </div>
@@ -3480,6 +3557,17 @@ exports[`renders study list correctly -- study tabel buttons 1`] = `
                 class="history icon"
               />
               Event Log
+            </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
             </a>
           </div>
         </div>
@@ -4019,6 +4107,17 @@ exports[`renders study list correctly -- study tabel buttons 2`] = `
               />
               Event Log
             </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
+            </a>
           </div>
         </div>
         <div
@@ -4557,6 +4656,17 @@ exports[`renders study list correctly -- study tabel buttons 3`] = `
                 class="history icon"
               />
               Event Log
+            </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
             </a>
           </div>
         </div>
@@ -5118,6 +5228,17 @@ exports[`renders study list error and release error 1`] = `
                 class="history icon"
               />
               Event Log
+            </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
             </a>
           </div>
         </div>

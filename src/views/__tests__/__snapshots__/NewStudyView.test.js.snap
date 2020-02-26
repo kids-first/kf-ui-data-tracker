@@ -96,6 +96,17 @@ exports[`renders new study view correctly --  with error on submit 1`] = `
               />
               Event Log
             </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
+            </a>
           </div>
         </div>
         <div
@@ -352,6 +363,17 @@ exports[`renders new study view correctly --  with error on submit 2`] = `
                 class="history icon"
               />
               Event Log
+            </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
             </a>
           </div>
         </div>
@@ -1042,6 +1064,17 @@ exports[`renders new study view correctly --  with error on submit 3`] = `
                 class="history icon"
               />
               Event Log
+            </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
             </a>
           </div>
         </div>
@@ -2320,6 +2353,17 @@ exports[`renders new study view correctly 3`] = `
               />
               Event Log
             </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
+            </a>
           </div>
         </div>
         <div
@@ -2729,6 +2773,17 @@ exports[`renders new study view correctly 4`] = `
                 class="history icon"
               />
               Event Log
+            </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
             </a>
           </div>
         </div>
@@ -3505,6 +3560,17 @@ exports[`renders new study view correctly 5`] = `
               />
               Event Log
             </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
+            </a>
           </div>
         </div>
         <div
@@ -4279,6 +4345,17 @@ exports[`renders new study view correctly 6`] = `
                 class="history icon"
               />
               Event Log
+            </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
             </a>
           </div>
         </div>
