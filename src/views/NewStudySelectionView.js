@@ -33,7 +33,7 @@ const NewStudySelectionView = () => (
             data-testid="research-card"
             fluid
             as={Link}
-            to={`/study/new-study/info`}
+            to={`/study/new-research-study`}
             header={
               <Header icon>
                 <Icon name="flask" />

@@ -3,9 +3,9 @@ import wait from 'waait';
 import {render, act, fireEvent, cleanup} from '@testing-library/react';
 import {MockedProvider} from '@apollo/react-testing';
 import {MemoryRouter} from 'react-router-dom';
-import {mocks} from '../../../__mocks__/kf-api-study-creator/mocks';
-import myProfile from '../../../__mocks__/kf-api-study-creator/responses/myProfile.json';
-import Routes from '../../Routes';
+import {mocks} from '../../../../__mocks__/kf-api-study-creator/mocks';
+import myProfile from '../../../../__mocks__/kf-api-study-creator/responses/myProfile.json';
+import Routes from '../../../Routes';
 
 jest.mock('auth0-js');
 afterEach(cleanup);
@@ -18,7 +18,7 @@ it('renders new study view correctly --  with error on submit', async () => {
           myProfile: _ => myProfile.data.myProfile,
         },
       }}
-      mocks={[mocks[1], mocks[8], mocks[22]]}
+      mocks={[mocks[1], mocks[8], mocks[55]]}
     >
       <MemoryRouter initialEntries={['/study/new-study-selection']}>
         <Routes />
@@ -31,7 +31,7 @@ it('renders new study view correctly --  with error on submit', async () => {
   await wait();
   expect(tree.container).toMatchSnapshot();
   act(() => {
-    fireEvent.click(tree.getByTestId('delivery-card'));
+    fireEvent.click(tree.getByTestId('research-card'));
   });
   await wait();
   expect(tree.container).toMatchSnapshot();
@@ -44,21 +44,14 @@ it('renders new study view correctly --  with error on submit', async () => {
   await wait();
 
   act(() => {
-    fireEvent.click(tree.getByText(/External/i));
+    fireEvent.click(tree.getByText(/Select Account/i));
   });
   await wait();
-
+  expect(tree.container).toMatchSnapshot();
   act(() => {
-    fireEvent.change(tree.getByLabelText('externalId'), {
-      target: {value: 'benchmark extensible e-business'},
-    });
+    fireEvent.click(tree.getByText(/D3b/i));
   });
-  await wait();
-
-  act(() => {
-    fireEvent.click(tree.getByText(/Logistics/i));
-  });
-  await wait();
+  expect(tree.container).toMatchSnapshot();
 
   act(() => {
     fireEvent.click(tree.getByText(/SUBMIT/i));
@@ -67,7 +60,7 @@ it('renders new study view correctly --  with error on submit', async () => {
 
   expect(tree.container).toMatchSnapshot();
   expect(
-    tree.queryByText(/Network error: Failed to create the new study/i),
+    tree.queryByText(/Network error: Failed to create the new research study/i),
   ).not.toBeNull();
 });
 
@@ -103,9 +96,17 @@ it('renders new study view correctly', async () => {
           myProfile: _ => myProfile.data.myProfile,
         },
       }}
-      mocks={[mocks[1], mocks[8], mocks[21], mocks[40], mocks[1], mocks[40]]}
+      mocks={[
+        mocks[54],
+        mocks[54],
+        mocks[1],
+        mocks[8],
+        mocks[40],
+        mocks[1],
+        mocks[40],
+      ]}
     >
-      <MemoryRouter initialEntries={['/study/new-study/info']}>
+      <MemoryRouter initialEntries={['/study/new-study-selection']}>
         <Routes />
       </MemoryRouter>
     </MockedProvider>,
@@ -113,7 +114,13 @@ it('renders new study view correctly', async () => {
       container: document.body,
     },
   );
-  // await wait();
+  await wait();
+  expect(tree.container).toMatchSnapshot();
+
+  act(() => {
+    fireEvent.click(tree.getByTestId('research-card'));
+  });
+  await wait(10);
   expect(tree.container).toMatchSnapshot();
 
   act(() => {
@@ -121,39 +128,47 @@ it('renders new study view correctly', async () => {
       target: {value: 'benchmark extensible e-business'},
     });
   });
-
-  act(() => {
-    fireEvent.click(tree.getByText(/NEXT/i));
-  });
-  expect(tree.getByText(/External ID/)).not.toBeNull();
-  expect(tree.getByText(/dbGaP Version/)).not.toBeNull();
-  expect(tree.getByText(/Attribution/)).not.toBeNull();
-  expect(tree.container).toMatchSnapshot();
-
-  act(() => {
-    fireEvent.change(tree.getByLabelText('externalId'), {
-      target: {value: 'benchmark extensible e-business'},
-    });
-  });
-
-  act(() => {
-    fireEvent.click(tree.getByText(/NEXT/i));
-  });
+  expect(tree.getByText(/Study Short Name/)).not.toBeNull();
   expect(tree.getByText(/Description/)).not.toBeNull();
+
+  act(() => {
+    fireEvent.click(tree.getByText(/Select Contacts/i));
+  });
+  await wait();
+  expect(tree.container).toMatchSnapshot();
+  act(() => {
+    fireEvent.click(tree.getByText(/Allison/i));
+  });
+  expect(tree.container).toMatchSnapshot();
+  act(() => {
+    fireEvent.click(tree.getByText(/Dan/i));
+  });
+  expect(tree.container).toMatchSnapshot();
+  // Submit button is disabled
+  act(() => {
+    fireEvent.click(tree.getByText(/SUBMIT/i));
+  });
+
+  act(() => {
+    fireEvent.click(tree.getByText(/Select Account/i));
+  });
+  await wait();
+  expect(tree.container).toMatchSnapshot();
+  act(() => {
+    fireEvent.click(tree.getByText(/D3b/i));
+  });
+  expect(tree.container).toMatchSnapshot();
 
   act(() => {
     fireEvent.click(tree.getByText(/SUBMIT/i));
   });
-  await wait();
-
-  expect(tree.container).toMatchSnapshot();
 
   await wait(1500);
 
   expect(tree.container).toMatchSnapshot();
 
   act(() => {
-    fireEvent.click(tree.getByText(/Skip ahead to the study/i));
+    fireEvent.click(tree.getByText(/Skip ahead to the research study/i));
   });
 
   act(() => {
@@ -174,6 +189,6 @@ it('renders new study view correctly', async () => {
     });
   });
 
-  await wait();
+  await wait(100);
   expect(tree.container).toMatchSnapshot();
 });

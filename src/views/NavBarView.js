@@ -29,6 +29,8 @@ const NavBarView = ({match, location, history}) => {
       ? user.data.myProfile.roles.includes('BETA')
       : false;
 
+  const isResearch = match.path.includes('research');
+
   if (error)
     return (
       <Container as={Segment} basic>
@@ -52,7 +54,7 @@ const NavBarView = ({match, location, history}) => {
         />
       </Segment>
       <Container>
-        <StudyNavBar isBeta={isBeta} />
+        <StudyNavBar isBeta={isBeta} isResearch={isResearch} />
       </Container>
       {newStudy && (
         <CreatingStudyModal
@@ -63,6 +65,7 @@ const NavBarView = ({match, location, history}) => {
           studyKfId={studyByKfId && studyByKfId.kfId}
           history={history}
           closeModal={setShowModal}
+          isResearch={isResearch}
         />
       )}
     </section>

@@ -19,7 +19,13 @@ import {
  *  - If has event with eventType as 'XX_ERR' -> creation failed -> status set to Failed
  */
 
-const CreatingStudyModal = ({studyKfId, history, closeModal, displaying}) => {
+const CreatingStudyModal = ({
+  studyKfId,
+  history,
+  closeModal,
+  displaying,
+  isResearch,
+}) => {
   const {
     data,
     error,
@@ -112,7 +118,7 @@ const CreatingStudyModal = ({studyKfId, history, closeModal, displaying}) => {
     if (
       (bucketStatus === 'Created' && projectStatus === 'Pending') ||
       (projectStatus === 'Created' && bucketStatus === 'Pending') ||
-      (bucketStatus === 'Created' && bucketStatus === 'Created')
+      (projectStatus === 'Created' && bucketStatus === 'Created')
     ) {
       newStudies[currentIndex] = studyKfId + '_SUC';
       sessionStorage.setItem('newStudy', newStudies);
@@ -168,9 +174,10 @@ const CreatingStudyModal = ({studyKfId, history, closeModal, displaying}) => {
             <>
               <Loader inline="centered" active size="massive" />
               <Header textAlign="center" as="h2" icon>
-                Initializing Study Resources
+                Initializing {isResearch ? 'Research' : ''} Study Resources
                 <Header.Subheader>
-                  We're setting up your new study resources, sit tight.
+                  We're setting up your new {isResearch ? 'research' : ''} study
+                  resources, sit tight.
                 </Header.Subheader>
               </Header>
             </>
@@ -180,7 +187,8 @@ const CreatingStudyModal = ({studyKfId, history, closeModal, displaying}) => {
               <Icon name="warning sign" color="orange" />
               Error Creating Study Resouces
               <Header.Subheader>
-                Some study resources failed to initialize, please contact{' '}
+                Some {isResearch ? 'research' : ''} study resources failed to
+                initialize, please contact{' '}
                 <a
                   href={`mailto:support@kidsfirstdrc.org?subject=Kids First Data Tracker Help&body=Hello, I had issue creating my study ${studyName}.`}
                 >
@@ -192,9 +200,10 @@ const CreatingStudyModal = ({studyKfId, history, closeModal, displaying}) => {
           {studyStatus === 'Created' && (
             <Header textAlign="center" as="h2" icon className="noBefore">
               <Icon name="check" color="green" />
-              Study Setup Completed
+              {isResearch ? 'Research' : ''} Study Setup Completed
               <Header.Subheader>
-                Your study resources were successfully created
+                Your {isResearch ? 'research' : ''} study resources were
+                successfully created
               </Header.Subheader>
             </Header>
           )}
@@ -229,40 +238,41 @@ const CreatingStudyModal = ({studyKfId, history, closeModal, displaying}) => {
                   </List>
                 )}
               </List.Item>
-
-              <List.Item>
-                {statusComponent[projectStatus]}
-                <List.Content>
-                  <List.Header
-                    className={projectStatus === 'Pending' ? 'text-grey' : ''}
-                  >
-                    {projectStatus} Cavatica analysis projects
-                  </List.Header>
-                </List.Content>
-                {projects &&
-                  projects.filter(({node}) => node.projectType === 'HAR')
-                    .length > 0 && (
-                    <List className="ml-15">
-                      {projects
-                        .filter(({node}) => node.projectType === 'HAR')
-                        .map(({node}) => (
-                          <List.Item key={node.id}>
-                            <Icon name="sliders horizontal" />
-                            <List.Content
-                              as="a"
-                              target="_blank"
-                              href={`https://cavatica.sbgenomics.com/u/${
-                                node.projectId
-                              }`}
-                            >
-                              {node.name + ' '}
-                              <Icon link size="small" name="external" />
-                            </List.Content>
-                          </List.Item>
-                        ))}
-                    </List>
-                  )}
-              </List.Item>
+              {!isResearch && (
+                <List.Item>
+                  {statusComponent[projectStatus]}
+                  <List.Content>
+                    <List.Header
+                      className={projectStatus === 'Pending' ? 'text-grey' : ''}
+                    >
+                      {projectStatus} Cavatica analysis projects
+                    </List.Header>
+                  </List.Content>
+                  {projects &&
+                    projects.filter(({node}) => node.projectType === 'HAR')
+                      .length > 0 && (
+                      <List className="ml-15">
+                        {projects
+                          .filter(({node}) => node.projectType === 'HAR')
+                          .map(({node}) => (
+                            <List.Item key={node.id}>
+                              <Icon name="sliders horizontal" />
+                              <List.Content
+                                as="a"
+                                target="_blank"
+                                href={`https://cavatica.sbgenomics.com/u/${
+                                  node.projectId
+                                }`}
+                              >
+                                {node.name + ' '}
+                                <Icon link size="small" name="external" />
+                              </List.Content>
+                            </List.Item>
+                          ))}
+                      </List>
+                    )}
+                </List.Item>
+              )}
               <List.Item>
                 {statusComponent[projectStatus]}
                 <List.Content>
@@ -311,10 +321,16 @@ const CreatingStudyModal = ({studyKfId, history, closeModal, displaying}) => {
               icon="info"
               labelPosition="left"
               onClick={() => {
-                history.push(`/study/${studyKfId}/basic-info/info`);
+                history.push(
+                  isResearch
+                    ? `/research-study/${studyKfId}/basic-info`
+                    : `/study/${studyKfId}/basic-info/info`,
+                );
                 closeModal(false);
               }}
-              content="Skip ahead to the study"
+              content={`Skip ahead to the ${
+                isResearch ? 'research' : ''
+              } study`}
             />
           </>
         ) : (
@@ -324,23 +340,29 @@ const CreatingStudyModal = ({studyKfId, history, closeModal, displaying}) => {
               size="small"
               icon="info"
               labelPosition="left"
-              content="Go To Study Info"
+              content={`Go To ${isResearch ? 'Research' : ''} Study Info`}
               onClick={() => {
-                history.push(`/study/${studyKfId}/basic-info/info`);
+                history.push(
+                  isResearch
+                    ? `/research-study/${studyKfId}/basic-info`
+                    : `/study/${studyKfId}/basic-info/info`,
+                );
                 closeModal(false);
               }}
             />
-            <Button
-              primary
-              size="small"
-              icon="cloud upload"
-              labelPosition="left"
-              content="Upload Documents"
-              onClick={() => {
-                history.push(`/study/${studyKfId}/documents`);
-                closeModal(false);
-              }}
-            />
+            {!isResearch && (
+              <Button
+                primary
+                size="small"
+                icon="cloud upload"
+                labelPosition="left"
+                content="Upload Documents"
+                onClick={() => {
+                  history.push(`/study/${studyKfId}/documents`);
+                  closeModal(false);
+                }}
+              />
+            )}
           </>
         )}
       </Modal.Actions>

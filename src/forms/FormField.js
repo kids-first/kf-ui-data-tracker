@@ -82,7 +82,11 @@ FormField.propTypes = {
   /** Whether the field is currently in focus or not */
   focused: PropTypes.bool,
   /** The current value of the field */
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.array,
+  ]),
   /** An error message for the input */
   errors: PropTypes.string,
   /** Whether the field has been focused yet */

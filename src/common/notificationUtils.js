@@ -27,6 +27,9 @@ export const trackedStudyFields = [
   'description',
 ];
 
+// A list of research study field that are tracked for completemess for ADMIN
+export const trackedResearchStudyFields = ['name', 'shortName', 'description'];
+
 // A list of study fields for each step to display as study basic info
 export const steppingFields = [
   ['name', 'shortName', 'bucket'],
@@ -35,14 +38,23 @@ export const steppingFields = [
 ];
 
 // Count the missing fields for a given study and return the notification number
-export const countStudyNotification = study => {
+export const countStudyNotification = (study, isResearch) => {
   var counts = 0;
-  trackedStudyFields.map(field => {
-    if (!study[field] || study[field].length === 0 || study[field] === 0) {
-      counts += 1;
-    }
-    return counts;
-  });
+  if (isResearch) {
+    trackedResearchStudyFields.map(field => {
+      if (!study[field] || study[field].length === 0 || study[field] === 0) {
+        counts += 1;
+      }
+      return counts;
+    });
+  } else {
+    trackedStudyFields.map(field => {
+      if (!study[field] || study[field].length === 0 || study[field] === 0) {
+        counts += 1;
+      }
+      return counts;
+    });
+  }
   return counts;
 };
 

@@ -11,6 +11,7 @@ import {
   countProjectNotification,
   countFileNotification,
   trackedStudyFields,
+  trackedResearchStudyFields,
 } from '../../common/notificationUtils';
 /**
  * Renders a single row in the table
@@ -27,6 +28,7 @@ const TableValue = ({row, col, title, isResearch}) => {
           title={title}
           hideIcon
           wrap={!isResearch}
+          isResearch={isResearch}
         />
       );
     case 'createdAt':
@@ -41,15 +43,25 @@ const TableValue = ({row, col, title, isResearch}) => {
     case 'description':
       return (
         <Link
-          to={`/study/${title}/basic-info/info`}
+          to={
+            isResearch
+              ? `/research-study/${title}/basic-info`
+              : `/study/${title}/basic-info/info`
+          }
           onClick={e => e.stopPropagation()}
           className={row[col].missingValue > 0 ? 'text-red' : null}
         >
-          {trackedStudyFields.length -
-            row[col].missingValue +
-            '/' +
-            trackedStudyFields.length +
-            ' complete'}
+          {isResearch
+            ? trackedResearchStudyFields.length -
+              row[col].missingValue +
+              '/' +
+              trackedResearchStudyFields.length +
+              ' complete'
+            : trackedStudyFields.length -
+              row[col].missingValue +
+              '/' +
+              trackedStudyFields.length +
+              ' complete'}
         </Link>
       );
     case 'release':
@@ -112,7 +124,7 @@ const StudyTable = ({
     cols.reduce((row, col) => {
       if (col === 'description') {
         row[col] = {
-          missingValue: isAdmin ? countStudyNotification(node) : 0,
+          missingValue: isAdmin ? countStudyNotification(node, isResearch) : 0,
           missingProject: isAdmin ? countProjectNotification(node) : 0,
           requiredFileChanges: isAdmin ? countFileNotification(node) : 0,
         };
@@ -180,10 +192,16 @@ const StudyTable = ({
       <Table.Body>
         {studies.map((row, idx) => (
           <Table.Row
+            data-testid="table-row"
             tabIndex="0"
             key={idx}
             onClick={() => {
-              if (clickable) history.push(`/study/${row.kfId}/documents`);
+              if (clickable)
+                history.push(
+                  isResearch
+                    ? `/research-study/${row.kfId}/basic-info`
+                    : `/study/${row.kfId}/documents`,
+                );
             }}
           >
             {cols.map((col, idx) => (

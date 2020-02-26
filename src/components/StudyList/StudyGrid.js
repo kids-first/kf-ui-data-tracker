@@ -46,7 +46,9 @@ const StudyGrid = ({studyList, loading, isAdmin, isResearch}) => {
           lastUpdate={new Date(node.node.modifiedAt)}
           files={node.node.files.edges}
           projects={node.node.projects.edges}
-          missingValue={isAdmin ? countStudyNotification(node.node) : 0}
+          missingValue={
+            isAdmin ? countStudyNotification(node.node, isResearch) : 0
+          }
           missingProject={isAdmin ? countProjectNotification(node.node) : 0}
           requiredFileChanges={isAdmin ? countFileNotification(node.node) : 0}
         />

@@ -6,30 +6,51 @@ import {Menu, Label} from 'semantic-ui-react';
 /**
  * Menu for navigating within a study
  */
-const StudyNavBar = ({match, history, isBeta}) => {
-  const baseHref = `/study/${match.params.kfId}/`;
-  const navList = [
-    {
-      tab: 'Basic Info',
-      endString: 'basic-info/info',
-    },
-    {
-      tab: 'Documents',
-      endString: 'documents',
-    },
-    {
-      tab: 'Cavatica',
-      endString: 'cavatica',
-    },
-    {
-      tab: 'Logs',
-      endString: 'logs',
-    },
-    {
-      tab: 'Releases',
-      endString: 'releases',
-    },
-  ];
+const StudyNavBar = ({match, history, isBeta, isResearch}) => {
+  const baseHref = isResearch
+    ? `/research-study/${match.params.kfId}/`
+    : `/study/${match.params.kfId}/`;
+  const navList = isResearch
+    ? [
+        {
+          tab: 'Basic Info',
+          endString: 'basic-info',
+        },
+        {
+          tab: 'Cavatica',
+          endString: 'cavatica',
+        },
+        {
+          tab: 'Logs',
+          endString: 'logs',
+        },
+        {
+          tab: 'Releases',
+          endString: 'releases',
+        },
+      ]
+    : [
+        {
+          tab: 'Basic Info',
+          endString: 'basic-info/info',
+        },
+        {
+          tab: 'Documents',
+          endString: 'documents',
+        },
+        {
+          tab: 'Cavatica',
+          endString: 'cavatica',
+        },
+        {
+          tab: 'Logs',
+          endString: 'logs',
+        },
+        {
+          tab: 'Releases',
+          endString: 'releases',
+        },
+      ];
   return (
     <Menu color="pink" secondary pointing>
       {navList.slice(0, isBeta ? 6 : 5).map((item, i) => (

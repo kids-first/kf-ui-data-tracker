@@ -75,6 +75,10 @@ body {
   padding-left: 20px !important;
 }
 
+.p-20 {
+  padding: 20px !important;
+}
+
 .mt-6 {
   margin-top: 6px !important;
 }
@@ -282,4 +286,9 @@ body {
 }
 .ui.dimmer .ui.loader:before {
   border: 0.2em solid rgba(0, 0, 0, 0.1);
+}
+
+.grey-container {
+  border-radius: 8px !important;
+  background-color: rgba(0, 0, 0, 0.05) !important;
 }

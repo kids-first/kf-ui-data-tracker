@@ -196,7 +196,7 @@ exports[`renders new study view correctly --  with error on submit 1`] = `
           <a
             class="ui fluid card"
             data-testid="research-card"
-            href="/study/new-study/info"
+            href="/study/new-research-study"
           >
             <div
               class="content"
@@ -3194,11 +3194,15 @@ exports[`renders new study view correctly 4`] = `
         <h2
           class="ui icon center aligned header"
         >
-          Initializing Study Resources
+          Initializing 
+          
+           Study Resources
           <div
             class="sub header"
           >
-            We're setting up your new study resources, sit tight.
+            We're setting up your new 
+            
+             study resources, sit tight.
           </div>
         </h2>
         <div
@@ -3395,7 +3399,7 @@ exports[`renders new study view correctly 4`] = `
             aria-hidden="true"
             class="info icon"
           />
-          Skip ahead to the study
+          Skip ahead to the  study
         </button>
       </div>
     </div>
@@ -3404,6 +3408,781 @@ exports[`renders new study view correctly 4`] = `
 `;
 
 exports[`renders new study view correctly 5`] = `
+<body
+  class="dimmable dimmed"
+>
+  <div
+    class="ui large top attached menu"
+  >
+    <div
+      class="ui container"
+    >
+      <div
+        class="item"
+      >
+        <img
+          alt="Kids First logo"
+          src="test-file-stub"
+        />
+      </div>
+      <a
+        aria-current="page"
+        class="header item"
+        href="/"
+      >
+        Data Tracker
+      </a>
+      <a
+        class="item"
+        href="/"
+      >
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
+      </a>
+      <div
+        class="right menu"
+      >
+        <div
+          aria-expanded="false"
+          class="ui dropdown link item"
+          role="listbox"
+          tabindex="0"
+        >
+          Admin
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          >
+            <a
+              class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
+            <a
+              class="item"
+              href="/tokens"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="key icon"
+              />
+              Developer Tokens
+            </a>
+            <a
+              class="item"
+              href="/cavatica-projects"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="folder open icon"
+              />
+              Cavatica Projects
+            </a>
+            <a
+              class="item"
+              href="/events"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="history icon"
+              />
+              Event Log
+            </a>
+          </div>
+        </div>
+        <div
+          aria-expanded="false"
+          class="ui dropdown link item"
+          role="listbox"
+          tabindex="0"
+        >
+          <img
+            alt="bendolly"
+            class="ui avatar image"
+            src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
+          />
+          bendolly
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          >
+            <a
+              class="item"
+              href="/profile"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="user icon"
+              />
+              Profile
+            </a>
+            <a
+              class="item"
+              href="/logout"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="log out icon"
+              />
+              Logout
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="page"
+  >
+    <section
+      id="study"
+    >
+      <div
+        class="ui basic secondary segment"
+      >
+        <div
+          class="ui container"
+        >
+          <small
+            class="text-blue cursor-pointer noMargin"
+          >
+            <i
+              aria-hidden="true"
+              class="clock icon"
+            />
+            <span
+              class="text-underline"
+            >
+              External study resources creation in progress. Click for details.
+            </span>
+          </small>
+          <h1
+            class="ui header mt-15"
+          >
+            benchmark extensible e-business
+          </h1>
+          <button
+            class="ui tiny basic icon button"
+          >
+            <i
+              aria-hidden="true"
+              class="copy icon"
+            />
+            SD_8WX8QQ06
+          </button>
+        </div>
+      </div>
+      <div
+        class="ui container"
+      >
+        <div
+          class="ui pink pointing secondary menu"
+        >
+          <a
+            aria-current="page"
+            class="active item active"
+            href="/study/SD_8WX8QQ06/basic-info/info"
+          >
+            Basic Info
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/documents"
+          >
+            Documents
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/cavatica"
+          >
+            Cavatica
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/logs"
+          >
+            Logs
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/releases"
+          >
+            Releases
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <div
+      class="ui basic vertical segment ui container"
+    >
+      <h2
+        class="ui left floated header mt-6"
+      >
+        Study Basic Info
+      </h2>
+      <div
+        class="ui icon negative message"
+      >
+        <i
+          aria-hidden="true"
+          class="warning circle icon"
+        />
+        <div
+          class="content"
+        >
+          <div
+            class="header"
+          >
+            Missing values
+          </div>
+          <p>
+            Please add values to the following fields:
+          </p>
+          <div
+            class="ui bulleted horizontal list"
+            role="list"
+          >
+            <a
+              class="item"
+              href="/study/SD_8WX8QQ06/basic-info/info"
+              role="listitem"
+            >
+              Study Short Name
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ui fluid top attached three steps"
+      >
+        <a
+          class="active link step"
+        >
+          <i
+            aria-hidden="true"
+            class="info circular icon"
+          />
+          <div
+            class="content"
+          >
+            <div
+              class="title"
+            >
+              Info
+            </div>
+            <div
+              class="description"
+            >
+              General Study Details
+            </div>
+            <div
+              class="ui tiny warning progress progress-bar--custom"
+              data-percent="66"
+            >
+              <div
+                class="bar"
+                style="width: 66.66666666666666%;"
+              />
+              <div
+                class="label"
+              >
+                2/3 fields complete
+              </div>
+            </div>
+          </div>
+        </a>
+        <a
+          class="link step"
+        >
+          <i
+            aria-hidden="true"
+            class="disk circular icon"
+          />
+          <div
+            class="content"
+          >
+            <div
+              class="title"
+            >
+              External
+            </div>
+            <div
+              class="description"
+            >
+              For dbGaP project
+            </div>
+            <div
+              class="ui tiny warning progress progress-bar--custom"
+              data-percent="33"
+            >
+              <div
+                class="bar"
+                style="width: 33.33333333333333%;"
+              />
+              <div
+                class="label"
+              >
+                1/3 fields complete
+              </div>
+            </div>
+          </div>
+        </a>
+        <a
+          class="link step"
+        >
+          <i
+            aria-hidden="true"
+            class="calendar check circular icon"
+          />
+          <div
+            class="content"
+          >
+            <div
+              class="title"
+            >
+              Logistics
+            </div>
+            <div
+              class="description"
+            >
+              Scheduling & Collection
+            </div>
+            <div
+              class="ui tiny success progress progress-bar--custom"
+              data-percent="100"
+            >
+              <div
+                class="bar"
+                style="width: 100%;"
+              />
+              <div
+                class="label"
+              >
+                4/4 fields complete
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div
+        class="ui clearing attached padded segment"
+      >
+        <form
+          class="ui form"
+        >
+          <h4
+            class="ui header text-wrap-75"
+          >
+            Please provide the study's full name and a shortened version that may be used for display purposes.
+          </h4>
+          <div
+            class="required field"
+          >
+            <label
+              class="noMargin"
+            >
+              Study Name
+              :
+            </label>
+            <p
+              class="noMargin"
+            >
+              <small>
+                Full name of the study, often the full title of the X01 grant application.
+              </small>
+            </p>
+            <div
+              class="ui fluid input noMargin"
+            >
+              <input
+                aria-label="name"
+                name="name"
+                type="text"
+                value="benchmark extensible e-business"
+              />
+            </div>
+          </div>
+          <div
+            class="field"
+          >
+            <label
+              class="noMargin"
+            >
+              Study Short Name
+              :
+            </label>
+            <p
+              class="noMargin"
+            >
+              <small>
+                The name that will appear under portal facets.
+              </small>
+            </p>
+            <div
+              class="ui error fluid left corner labeled input noMargin"
+            >
+              <div
+                class="ui red label label left corner"
+              >
+                <i
+                  aria-hidden="true"
+                  class="asterisk icon"
+                />
+              </div>
+              <input
+                aria-label="shortName"
+                name="shortName"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="field"
+          >
+            <label
+              class="noMargin"
+            >
+              S3 Bucket
+              :
+            </label>
+            <p
+              class="noMargin"
+            >
+              <small>
+                The s3 bucket where data for this study resides.
+              </small>
+            </p>
+            <div
+              class="ui fluid input noMargin"
+            >
+              <input
+                aria-label="bucket"
+                name="bucket"
+                type="text"
+                value="stay-wrong-ready"
+              />
+            </div>
+          </div>
+          <button
+            class="ui icon right floated right labeled button"
+            type="button"
+          >
+            <i
+              aria-hidden="true"
+              class="right arrow icon"
+            />
+            NEXT
+          </button>
+          <button
+            class="ui primary right floated button"
+            type="submit"
+          >
+            SAVE
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ui segment footer"
+  >
+    <div
+      class="ui container text-10"
+    >
+      <div
+        class="ui horizontal list"
+        role="list"
+      >
+        <div
+          class="item"
+          role="listitem"
+        >
+          <div
+            class="ui basic horizontal label text-10"
+          />
+        </div>
+        <div
+          class="item"
+          role="listitem"
+        >
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ui page modals dimmer transition visible active"
+    style="display: flex;"
+  >
+    <div
+      class="ui small modal transition visible active"
+    >
+      <i
+        aria-hidden="true"
+        class="close icon"
+      />
+      <div
+        class="header"
+      >
+        External Study Resources
+      </div>
+      <div
+        class="content"
+      >
+        <div
+          class="ui massive active centered inline loader"
+        />
+        <h2
+          class="ui icon center aligned header"
+        >
+          Initializing 
+          
+           Study Resources
+          <div
+            class="sub header"
+          >
+            We're setting up your new 
+            
+             study resources, sit tight.
+          </div>
+        </h2>
+        <div
+          class="text-wrap-75 margin-x-auto mt-30 width-fit-content"
+        >
+          <div
+            class="ui list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="green check icon noPadding"
+              />
+              <div
+                class="content"
+              >
+                <div
+                  class="header"
+                >
+                  Registered in Data Service: 
+                  <code>
+                    SD_8WX8QQ06
+                  </code>
+                </div>
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="spinner loading icon noPadding"
+              />
+              <div
+                class="content"
+              >
+                <div
+                  class="header"
+                >
+                  Creating
+                   storage bucket
+                </div>
+              </div>
+              <div
+                class="ui list ml-15"
+                role="list"
+              >
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="aws icon"
+                  />
+                  <div
+                    class="content"
+                  >
+                    <code>
+                      stay-wrong-ready
+                    </code>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="spinner loading icon noPadding"
+              />
+              <div
+                class="content"
+              >
+                <div
+                  class="header"
+                >
+                  Creating
+                   Cavatica analysis projects
+                </div>
+              </div>
+              <div
+                class="ui list ml-15"
+                role="list"
+              >
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="sliders horizontal icon"
+                  />
+                  <a
+                    class="content"
+                    href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06-bwa-mem"
+                    target="_blank"
+                  >
+                    test study name bwa-mem 
+                    <i
+                      aria-hidden="true"
+                      class="external small link icon"
+                    />
+                  </a>
+                </div>
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="sliders horizontal icon"
+                  />
+                  <a
+                    class="content"
+                    href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06-gatk-haplotypecaller"
+                    target="_blank"
+                  >
+                    test study name gatk-haplotypecaller 
+                    <i
+                      aria-hidden="true"
+                      class="external small link icon"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              <i
+                aria-hidden="true"
+                class="spinner loading icon noPadding"
+              />
+              <div
+                class="content"
+              >
+                <div
+                  class="header"
+                >
+                  Creating
+                   Cavatica delivery project
+                </div>
+              </div>
+              <div
+                class="ui list ml-15"
+                role="list"
+              >
+                <div
+                  class="item"
+                  role="listitem"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="paper plane outline icon"
+                  />
+                  <a
+                    class="content"
+                    href="https://cavatica.sbgenomics.com/u/zhux3/sd-8wx8qq06"
+                    target="_blank"
+                  >
+                    test study name 
+                    <i
+                      aria-hidden="true"
+                      class="external small link icon"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="actions"
+      >
+        <small
+          class="text-grey"
+        >
+          Skip ahead will not affect the study creation
+        </small>
+        <button
+          class="ui small icon left labeled button"
+        >
+          <i
+            aria-hidden="true"
+            class="info icon"
+          />
+          Skip ahead to the  study
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`renders new study view correctly 6`] = `
 <body
   class=""
 >

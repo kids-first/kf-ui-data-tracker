@@ -600,4 +600,64 @@ export const mocks = [
     },
     result: allEvents,
   },
+  {
+    request: {
+      query: CREATE_STUDY,
+      variables: {
+        input: {
+          name: 'benchmark extensible e-business',
+          shortName: '',
+          description: '',
+          externalId: 'benchmark-extensible-e-business',
+        },
+        workflows: [],
+      },
+    },
+    result: createStudy,
+  },
+  {
+    request: {
+      query: CREATE_STUDY,
+      variables: {
+        workflows: [],
+        input: {
+          externalId: 'benchmark-extensible-e-business',
+          name: 'benchmark extensible e-business',
+          shortName: '',
+          description: '',
+        },
+      },
+    },
+    error: new Error('Failed to create the new research study'),
+  },
+  {
+    request: {
+      query: UPDATE_STUDY,
+      variables: {
+        id: 'U3R1ZHlOb2RlOlNEXzhXWDhRUTA2',
+        input: {
+          name: 'benchmark extensible e-business',
+          shortName: 'Test short name input on update',
+          description:
+            'Sudy description in markdown, commonly the X01 abstract text. --  As test study description',
+        },
+      },
+    },
+    result: updateStudy,
+  },
+  {
+    request: {
+      query: UPDATE_STUDY,
+      variables: {
+        id: 'U3R1ZHlOb2RlOlNEXzhXWDhRUTA2',
+        input: {
+          name: 'benchmark extensible e-business',
+          shortName: '',
+          description:
+            'Sudy description in markdown, commonly the X01 abstract text. --  As test study description',
+        },
+      },
+    },
+    error: new Error('Failed to update the study'),
+  },
 ];
