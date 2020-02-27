@@ -33,7 +33,7 @@ it('renders admin event logs view correctly', async () => {
 
   // Click on the user dropdown
   act(() => {
-    fireEvent.click(tree.queryAllByText(/User/i)[0]);
+    fireEvent.click(tree.queryAllByText(/User/i)[1]);
   });
   await wait();
 

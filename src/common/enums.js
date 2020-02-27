@@ -221,3 +221,10 @@ export const statusyMessage = {
     class: 'text-blue cursor-pointer noMargin',
   },
 };
+
+// User roles
+export const userRoleOptions = [
+  {key: 'admin', value: 'admin', text: 'Admin'},
+  {key: 'bix', value: 'bix', text: 'Bix'},
+  {key: 'dev', value: 'dev', text: 'Dev'},
+];
