@@ -135,7 +135,7 @@ exports[`renders the configuration page 1`] = `
           <td
             class=""
           >
-            bucketserviceCreateBuckets
+            studyBucketsCreateBuckets
           </td>
           <td
             class="center aligned"
@@ -197,20 +197,6 @@ exports[`renders the configuration page 1`] = `
           <td
             class=""
           >
-            bucketserviceUrl
-          </td>
-          <td
-            class="left aligned"
-          >
-            http://bucketservice
-          </td>
-        </tr>
-        <tr
-          class=""
-        >
-          <td
-            class=""
-          >
             cavaticaUrl
           </td>
           <td
@@ -258,6 +244,78 @@ exports[`renders the configuration page 1`] = `
           >
             kids-first-drc/user-access
           </td>
+        </tr>
+        <tr
+          class=""
+        >
+          <td
+            class=""
+          >
+            studyBucketsRegion
+          </td>
+          <td
+            class="left aligned"
+          />
+        </tr>
+        <tr
+          class=""
+        >
+          <td
+            class=""
+          >
+            studyBucketsLoggingBucket
+          </td>
+          <td
+            class="left aligned"
+          />
+        </tr>
+        <tr
+          class=""
+        >
+          <td
+            class=""
+          >
+            studyBucketsDrRegion
+          </td>
+          <td
+            class="left aligned"
+          />
+        </tr>
+        <tr
+          class=""
+        >
+          <td
+            class=""
+          >
+            studyBucketsDrLoggingBucket
+          </td>
+          <td
+            class="left aligned"
+          />
+        </tr>
+        <tr
+          class=""
+        >
+          <td
+            class=""
+          >
+            studyBucketsInventoryLocation
+          </td>
+          <td
+            class="left aligned"
+          />
+        </tr>
+        <tr
+          class=""
+        >
+          <td
+            class=""
+          >
+            studyBucketsLogPrefix
+          </td>
+          <td
+            class="left aligned"
+          />
         </tr>
       </tbody>
     </table>
