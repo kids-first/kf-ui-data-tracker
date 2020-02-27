@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Helmet} from 'react-helmet';
 import {useQuery, useMutation} from '@apollo/react-hooks';
-import {GET_STUDY_BY_ID, MY_PROFILE} from '../../state/queries';
+import {GET_STUDY_BY_ID, MY_PROFILE, ALL_USERS} from '../../state/queries';
 import {UPDATE_STUDY} from '../../state/mutations';
 import NewResearchStudyForm from '../forms/NewResearchStudyForm';
 import {Container, Segment, Message, Placeholder} from 'semantic-ui-react';
@@ -17,6 +17,11 @@ const NewResearchStudyInfo = ({match, history}) => {
   const studyByKfId = data && data.studyByKfId;
   const studyName = studyByKfId ? 'for ' + studyByKfId.name : '';
   const user = useQuery(MY_PROFILE);
+  const {error: userError, data: userData} = useQuery(ALL_USERS);
+  const userList =
+    userData && userData.allUsers && userData.allUsers.edges
+      ? userData.allUsers.edges
+      : [];
   const [updateStudy] = useMutation(UPDATE_STUDY);
 
   const isAdmin =
@@ -92,6 +97,14 @@ const NewResearchStudyInfo = ({match, history}) => {
       <Helmet>
         <title>{`KF Data Tracker - Study info ${studyName}`}</title>
       </Helmet>
+      {userError && (
+        <Message
+          negative
+          icon="warning circle"
+          header="Error"
+          content={userError.message}
+        />
+      )}
       <NewResearchStudyForm
         isAdmin={isAdmin}
         history={history}
@@ -99,6 +112,7 @@ const NewResearchStudyInfo = ({match, history}) => {
         apiErrors={apiErrors}
         studyNode={studyByKfId}
         editing={isAdmin}
+        userList={userList}
       />
     </Container>
   );
