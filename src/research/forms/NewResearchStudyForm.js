@@ -22,6 +22,7 @@ import FormField from '../../forms/FormField';
 import Markdown from 'react-markdown';
 import avatarM from '../../assets/avatarM.png';
 import avatarF from '../../assets/avatarF.png';
+import defaultAvatar from '../../assets/defaultAvatar.png';
 import kfLogo from '../../assets/logo.svg';
 import d3bLogo from '../../assets/d3bLogo.svg';
 /**
@@ -35,25 +36,34 @@ const NewResearchStudyForm = ({
   editing,
   history,
   isAdmin,
+  userList,
 }) => {
   const [focused, setFocused] = useState('');
   const [foldDescription, setFoldDescription] = useState(true);
   const [contactSelection, setContactSelection] = useState([]);
   const [accountSelection, setAccountSelection] = useState('');
-  const contactOptions = [
-    {
-      key: 'allison',
-      value: 'allison',
-      text: 'Allison',
-      image: {avatar: true, src: avatarF},
-    },
-    {
-      key: 'dan',
-      value: 'dan',
-      text: 'Dan',
-      image: {avatar: true, src: avatarM},
-    },
-  ];
+  const contactOptions =
+    userList && userList.length > 0
+      ? userList.map(({node}) => ({
+          key: node.id,
+          value: node.username,
+          text: node.username,
+          image: {avatar: true, src: node.picture || defaultAvatar},
+        }))
+      : [
+          {
+            key: 'allison',
+            value: 'allison',
+            text: 'Allison',
+            image: {avatar: true, src: avatarF},
+          },
+          {
+            key: 'dan',
+            value: 'dan',
+            text: 'Dan',
+            image: {avatar: true, src: avatarM},
+          },
+        ];
   const accountOptions = [
     {
       key: 'kidsFirst',
