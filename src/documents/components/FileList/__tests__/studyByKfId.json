@@ -8,6 +8,31 @@
       "kfId": "SD_X6E5KWM4",
       "createdAt": "2019-04-20T15:22:18.780221+00:00",
       "modifiedAt": "2019-03-29T18:45:01.230776+00:00",
+      "collaborators": {
+        "edges": [
+          {
+            "node": {
+              "id": "VXNlck5vZGU6MQ==",
+              "username": "Roger Swanson",
+              "email": "eric48@gmail.com",
+              "picture": "",
+              "__typename": "UserNode"
+            },
+            "__typename": "UserNodeEdge"
+          },
+          {
+            "node": {
+              "id": "VXNlck5vZGU6Me==",
+              "username": "Justin Heath",
+              "email": "dwilliams@yahoo.com",
+              "picture": "",
+              "__typename": "UserNode"
+            },
+            "__typename": "UserNodeEdge"
+          }
+        ],
+        "__typename": "UserNodeConnection"
+      },
       "files": {
         "edges": [
           {

@@ -611,6 +611,7 @@ export const mocks = [
           shortName: '',
           description: '',
           externalId: 'benchmark-extensible-e-business',
+          collaborators: ['VXNlck5vZGU6MQ==', 'VXNlck5vZGU6Me=='],
         },
         workflows: [],
       },
@@ -627,6 +628,7 @@ export const mocks = [
           name: 'benchmark extensible e-business',
           shortName: '',
           description: '',
+          collaborators: [],
         },
       },
     },
@@ -642,6 +644,7 @@ export const mocks = [
           shortName: 'Test short name input on update',
           description:
             'Sudy description in markdown, commonly the X01 abstract text. --  As test study description',
+          collaborators: ['VXNlck5vZGU6MQ==', 'VXNlck5vZGU6Me=='],
         },
       },
     },
@@ -657,6 +660,7 @@ export const mocks = [
           shortName: '',
           description:
             'Sudy description in markdown, commonly the X01 abstract text. --  As test study description',
+          collaborators: ['VXNlck5vZGU6MQ==', 'VXNlck5vZGU6Me=='],
         },
       },
     },
