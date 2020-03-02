@@ -4,6 +4,7 @@ import {
   STUDY_BASIC_FIELDS,
   STUDY_INFO_FIELDS,
   EVENT_FIELDS,
+  CREATOR_FIELDS,
 } from './fragments';
 import {FILE_FIELDS, VERSION_FIELDS} from '../documents/fragments';
 
@@ -52,6 +53,13 @@ export const GET_STUDY_BY_ID = gql`
     studyByKfId(kfId: $kfId) {
       ...StudyBasicFields
       ...StudyInfoFields
+      collaborators {
+        edges {
+          node {
+            ...CreatorFields
+          }
+        }
+      }
       events(first: 10, orderBy: "-created_at") {
         edges {
           node {
@@ -94,6 +102,7 @@ export const GET_STUDY_BY_ID = gql`
   ${FILE_FIELDS}
   ${EVENT_FIELDS}
   ${PROJECT_FIELDS}
+  ${CREATOR_FIELDS}
 `;
 
 // Query to get Cavatica projects registered in the study creator
