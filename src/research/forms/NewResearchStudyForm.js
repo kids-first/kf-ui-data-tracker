@@ -38,15 +38,19 @@ const NewResearchStudyForm = ({
   isAdmin,
   userList,
 }) => {
+  const collaboratorsInit =
+    studyNode && studyNode.collaborators.edges.length > 0
+      ? studyNode.collaborators.edges.map(({node}) => node.id)
+      : [];
   const [focused, setFocused] = useState('');
   const [foldDescription, setFoldDescription] = useState(true);
-  const [contactSelection, setContactSelection] = useState([]);
+  const [contactSelection, setContactSelection] = useState(collaboratorsInit);
   const [accountSelection, setAccountSelection] = useState('');
   const contactOptions =
     userList && userList.length > 0
       ? userList.map(({node}) => ({
           key: node.id,
-          value: node.username,
+          value: node.id,
           text: node.username,
           image: {avatar: true, src: node.picture || defaultAvatar},
         }))
@@ -95,8 +99,8 @@ const NewResearchStudyForm = ({
     shortName: studyNode && studyNode.shortName ? studyNode.shortName : '',
     description:
       studyNode && studyNode.description ? studyNode.description : '',
-    contact: studyNode && studyNode.contact ? studyNode.contact : [],
     account: studyNode && studyNode.account ? studyNode.account : '',
+    collaborators: collaboratorsInit,
   };
   const mapFields = [
     {
@@ -133,11 +137,12 @@ const NewResearchStudyForm = ({
           shortName: values.shortName,
           description: values.description,
           externalId: generatedExternalId,
+          collaborators: contactSelection,
         };
         if (newStudy) {
           submitValue({input: inputObject, workflowType: []});
         } else {
-          submitValue(values);
+          submitValue(inputObject);
         }
       }}
     >
@@ -260,22 +265,23 @@ const NewResearchStudyForm = ({
               <FormField
                 isAdmin={isAdmin}
                 newStudy={newStudy}
-                id="contact"
+                id="collaborators"
                 name="Contact"
                 description="Select the contacts associated with this research study."
-                focused={focused === 'contact'}
-                value={formikProps.values.contact}
+                focused={focused === 'collaborators'}
+                value={formikProps.values.collaborators}
                 touched={
-                  typeof formikProps.touched.contact === 'boolean'
-                    ? formikProps.touched.contact
+                  typeof formikProps.touched.collaborators === 'boolean'
+                    ? formikProps.touched.collaborators
                     : true
                 }
-                errors={formikProps.errors.contact}
+                errors={formikProps.errors.collaborators}
                 handleChange={formikProps.handleChange}
                 handleBlur={formikProps.handleBlur}
                 handleFocus={id => setFocused(id)}
               >
                 <Dropdown
+                  data-testid="collaborators-input"
                   id="contact"
                   name="contact"
                   placeholder="Select Contacts"
@@ -308,6 +314,7 @@ const NewResearchStudyForm = ({
                 handleFocus={id => setFocused(id)}
               >
                 <Dropdown
+                  data-testid="account-input"
                   id="account"
                   name="account"
                   placeholder="Select Account"

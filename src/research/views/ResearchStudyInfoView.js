@@ -35,6 +35,7 @@ const NewResearchStudyInfo = ({match, history}) => {
       name: values.name,
       shortName: values.shortName,
       description: values.description,
+      collaborators: values.collaborators,
     };
     updateStudy({
       variables: {
