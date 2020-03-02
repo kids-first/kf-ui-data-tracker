@@ -19,6 +19,7 @@ it('renders study list correctly -- default stage', async () => {
         mocks[0],
         mocks[0],
         mocks[8],
+        mocks[13],
         coordMocks.allReleaseStudies,
       ]}
       resolvers={{
@@ -106,6 +107,7 @@ it('renders study list correctly -- study tabel buttons', async () => {
         mocks[1],
         mocks[1],
         mocks[8],
+        mocks[13],
         coordMocks.allReleaseStudies,
         coordMocks.allReleaseStudies,
         coordMocks.allReleaseStudies,
@@ -150,7 +152,12 @@ it('renders study list correctly -- study tabel buttons', async () => {
 it('renders study list error and release error', async () => {
   const tree = render(
     <MockedProvider
-      mocks={[mocks[49], mocks[8], coordMocks.allReleaseStudiesError]}
+      mocks={[
+        mocks[49],
+        mocks[8],
+        mocks[13],
+        coordMocks.allReleaseStudiesError,
+      ]}
       resolvers={{
         Query: {
           myProfile: _ => myProfile.data.myProfile,
@@ -204,7 +211,7 @@ it('renders empty study list with no admin access', async () => {
 
   const tree = render(
     <MockedProvider
-      mocks={[mocks[50], coordMocks.allReleaseStudies]}
+      mocks={[mocks[50], mocks[13], coordMocks.allReleaseStudies]}
       resolvers={{
         Query: {
           myProfile: _ => regularUser,

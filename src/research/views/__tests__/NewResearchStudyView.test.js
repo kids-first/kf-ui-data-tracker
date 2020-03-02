@@ -18,7 +18,7 @@ it('renders new study view correctly --  with error on submit', async () => {
           myProfile: _ => myProfile.data.myProfile,
         },
       }}
-      mocks={[mocks[1], mocks[8], mocks[55]]}
+      mocks={[mocks[1], mocks[8], mocks[13], mocks[55]]}
     >
       <MemoryRouter initialEntries={['/study/new-study-selection']}>
         <Routes />
@@ -104,6 +104,7 @@ it('renders new study view correctly', async () => {
         mocks[40],
         mocks[1],
         mocks[40],
+        mocks[13],
       ]}
     >
       <MemoryRouter initialEntries={['/study/new-study-selection']}>
@@ -132,16 +133,16 @@ it('renders new study view correctly', async () => {
   expect(tree.getByText(/Description/)).not.toBeNull();
 
   act(() => {
-    fireEvent.click(tree.getByText(/Select Contacts/i));
+    fireEvent.click(tree.getByTestId('collaborators-input'));
   });
   await wait();
   expect(tree.container).toMatchSnapshot();
   act(() => {
-    fireEvent.click(tree.getByText(/Allison/i));
+    fireEvent.click(tree.getByText(/Roger Swanson/i));
   });
   expect(tree.container).toMatchSnapshot();
   act(() => {
-    fireEvent.click(tree.getByText(/Dan/i));
+    fireEvent.click(tree.getByText(/Justin Heath/i));
   });
   expect(tree.container).toMatchSnapshot();
   // Submit button is disabled
@@ -150,7 +151,7 @@ it('renders new study view correctly', async () => {
   });
 
   act(() => {
-    fireEvent.click(tree.getByText(/Select Account/i));
+    fireEvent.click(tree.getByTestId('account-input'));
   });
   await wait();
   expect(tree.container).toMatchSnapshot();
@@ -191,4 +192,30 @@ it('renders new study view correctly', async () => {
 
   await wait(100);
   expect(tree.container).toMatchSnapshot();
+});
+
+it('renders research study info view with get user data error', async () => {
+  const tree = render(
+    <MockedProvider
+      resolvers={{
+        Query: {
+          myProfile: _ => myProfile.data.myProfile,
+        },
+      }}
+      mocks={[mocks[1], mocks[8], mocks[54], mocks[40], mocks[58]]}
+    >
+      <MemoryRouter initialEntries={['/study/new-study-selection']}>
+        <Routes />
+      </MemoryRouter>
+    </MockedProvider>,
+  );
+  await wait();
+  act(() => {
+    fireEvent.click(tree.getByTestId('research-card'));
+  });
+  await wait();
+  expect(tree.container).toMatchSnapshot();
+  expect(
+    tree.queryAllByText(/Failed to fetch users information/i),
+  ).not.toBeNull();
 });

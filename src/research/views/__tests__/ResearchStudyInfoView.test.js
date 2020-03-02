@@ -18,7 +18,7 @@ it('renders research study info view correctly -- ADMIN user', async () => {
           myProfile: _ => myProfile.data.myProfile,
         },
       }}
-      mocks={[mocks[1], mocks[8], mocks[56]]}
+      mocks={[mocks[1], mocks[8], mocks[13], mocks[56]]}
     >
       <MemoryRouter initialEntries={['/research-study/SD_8WX8QQ06/basic-info']}>
         <Routes />
@@ -74,7 +74,7 @@ it('renders research study info view with get research study info error', async 
           myProfile: _ => myProfile.data.myProfile,
         },
       }}
-      mocks={[mocks[2], mocks[8]]}
+      mocks={[mocks[2], mocks[13], mocks[8]]}
     >
       <MemoryRouter initialEntries={['/research-study/SD_8WX8QQ06/basic-info']}>
         <Routes />
@@ -89,6 +89,29 @@ it('renders research study info view with get research study info error', async 
   ).not.toBeNull();
 });
 
+it('renders research study info view with get user data error', async () => {
+  const tree = render(
+    <MockedProvider
+      resolvers={{
+        Query: {
+          myProfile: _ => myProfile.data.myProfile,
+        },
+      }}
+      mocks={[mocks[1], mocks[8], mocks[58]]}
+    >
+      <MemoryRouter initialEntries={['/research-study/SD_8WX8QQ06/basic-info']}>
+        <Routes />
+      </MemoryRouter>
+    </MockedProvider>,
+  );
+
+  await wait();
+  expect(tree.container).toMatchSnapshot();
+  expect(
+    tree.queryAllByText(/Failed to fetch users information/i),
+  ).not.toBeNull();
+});
+
 it('renders research study info view with update research study info error', async () => {
   const tree = render(
     <MockedProvider
@@ -97,14 +120,13 @@ it('renders research study info view with update research study info error', asy
           myProfile: _ => myProfile.data.myProfile,
         },
       }}
-      mocks={[mocks[1], mocks[8], mocks[57]]}
+      mocks={[mocks[1], mocks[8], mocks[13], mocks[57]]}
     >
       <MemoryRouter initialEntries={['/research-study/SD_8WX8QQ06/basic-info']}>
         <Routes />
       </MemoryRouter>
     </MockedProvider>,
   );
-
   await wait();
   act(() => {
     fireEvent.click(tree.getByText(/SAVE/i));
@@ -151,7 +173,7 @@ it('renders research study info view as read-only -- USER user', async () => {
           myProfile: _ => regularUser,
         },
       }}
-      mocks={[mocks[1], mocks[8]]}
+      mocks={[mocks[1], mocks[8], mocks[13]]}
     >
       <MemoryRouter initialEntries={['/research-study/SD_8WX8QQ06/basic-info']}>
         <Routes />
