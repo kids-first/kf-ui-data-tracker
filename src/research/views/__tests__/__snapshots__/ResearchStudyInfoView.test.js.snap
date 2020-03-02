@@ -241,21 +241,40 @@ exports[`renders research study info view as read-only -- USER user 1`] = `
               aria-expanded="false"
               aria-multiselectable="true"
               class="ui fluid multiple selection dropdown"
+              data-testid="collaborators-input"
               id="contact"
               name="contact"
               role="listbox"
               tabindex="0"
             >
+              <a
+                class="ui label"
+                value="VXNlck5vZGU6MQ=="
+              >
+                Roger Swanson
+                <i
+                  aria-hidden="true"
+                  class="delete icon"
+                />
+              </a>
+              <a
+                class="ui label"
+                value="VXNlck5vZGU6Me=="
+              >
+                Justin Heath
+                <i
+                  aria-hidden="true"
+                  class="delete icon"
+                />
+              </a>
               <div
                 aria-live="polite"
-                class="default text"
+                class="text"
                 role="alert"
-              >
-                Select Contacts
-              </div>
+              />
               <i
                 aria-hidden="true"
-                class="dropdown icon"
+                class="dropdown icon clear"
               />
               <div
                 class="menu transition"
@@ -274,7 +293,7 @@ exports[`renders research study info view as read-only -- USER user 1`] = `
                   <span
                     class="text"
                   >
-                    Allison
+                    Charles Booker
                   </span>
                 </div>
                 <div
@@ -291,7 +310,279 @@ exports[`renders research study info view as read-only -- USER user 1`] = `
                   <span
                     class="text"
                   >
-                    Dan
+                    Steven Morgan
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Elizabeth White
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Lisa Booker
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Brittany Olsen
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Jeff Salazar
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Jennifer Cunningham
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Chris Farley
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Kelly Blackburn
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Bridget Alvarado
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Kristin Bond
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Kendra Campbell
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Denise Moore
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Lisa Steele
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Katrina Torres
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Frank Johnson
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Jason Norman
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    devadmin
                   </span>
                 </div>
               </div>
@@ -316,6 +607,7 @@ exports[`renders research study info view as read-only -- USER user 1`] = `
             <div
               aria-expanded="false"
               class="ui fluid selection dropdown"
+              data-testid="account-input"
               id="account"
               name="account"
               role="listbox"
@@ -942,21 +1234,40 @@ exports[`renders research study info view correctly -- ADMIN user 2`] = `
               aria-expanded="false"
               aria-multiselectable="true"
               class="ui fluid multiple selection dropdown"
+              data-testid="collaborators-input"
               id="contact"
               name="contact"
               role="listbox"
               tabindex="0"
             >
+              <a
+                class="ui label"
+                value="VXNlck5vZGU6MQ=="
+              >
+                Roger Swanson
+                <i
+                  aria-hidden="true"
+                  class="delete icon"
+                />
+              </a>
+              <a
+                class="ui label"
+                value="VXNlck5vZGU6Me=="
+              >
+                Justin Heath
+                <i
+                  aria-hidden="true"
+                  class="delete icon"
+                />
+              </a>
               <div
                 aria-live="polite"
-                class="default text"
+                class="text"
                 role="alert"
-              >
-                Select Contacts
-              </div>
+              />
               <i
                 aria-hidden="true"
-                class="dropdown icon"
+                class="dropdown icon clear"
               />
               <div
                 class="menu transition"
@@ -975,7 +1286,7 @@ exports[`renders research study info view correctly -- ADMIN user 2`] = `
                   <span
                     class="text"
                   >
-                    Allison
+                    Charles Booker
                   </span>
                 </div>
                 <div
@@ -992,7 +1303,279 @@ exports[`renders research study info view correctly -- ADMIN user 2`] = `
                   <span
                     class="text"
                   >
-                    Dan
+                    Steven Morgan
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Elizabeth White
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Lisa Booker
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Brittany Olsen
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Jeff Salazar
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Jennifer Cunningham
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Chris Farley
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Kelly Blackburn
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Bridget Alvarado
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Kristin Bond
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Kendra Campbell
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Denise Moore
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Lisa Steele
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Katrina Torres
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Frank Johnson
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Jason Norman
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    devadmin
                   </span>
                 </div>
               </div>
@@ -1017,6 +1600,7 @@ exports[`renders research study info view correctly -- ADMIN user 2`] = `
             <div
               aria-expanded="false"
               class="ui fluid selection dropdown"
+              data-testid="account-input"
               id="account"
               name="account"
               role="listbox"
@@ -1499,21 +2083,40 @@ exports[`renders research study info view correctly -- ADMIN user 3`] = `
               aria-expanded="false"
               aria-multiselectable="true"
               class="ui fluid multiple selection dropdown"
+              data-testid="collaborators-input"
               id="contact"
               name="contact"
               role="listbox"
               tabindex="0"
             >
+              <a
+                class="ui label"
+                value="VXNlck5vZGU6MQ=="
+              >
+                Roger Swanson
+                <i
+                  aria-hidden="true"
+                  class="delete icon"
+                />
+              </a>
+              <a
+                class="ui label"
+                value="VXNlck5vZGU6Me=="
+              >
+                Justin Heath
+                <i
+                  aria-hidden="true"
+                  class="delete icon"
+                />
+              </a>
               <div
                 aria-live="polite"
-                class="default text"
+                class="text"
                 role="alert"
-              >
-                Select Contacts
-              </div>
+              />
               <i
                 aria-hidden="true"
-                class="dropdown icon"
+                class="dropdown icon clear"
               />
               <div
                 class="menu transition"
@@ -1532,7 +2135,7 @@ exports[`renders research study info view correctly -- ADMIN user 3`] = `
                   <span
                     class="text"
                   >
-                    Allison
+                    Charles Booker
                   </span>
                 </div>
                 <div
@@ -1549,7 +2152,279 @@ exports[`renders research study info view correctly -- ADMIN user 3`] = `
                   <span
                     class="text"
                   >
-                    Dan
+                    Steven Morgan
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Elizabeth White
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Lisa Booker
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Brittany Olsen
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Jeff Salazar
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Jennifer Cunningham
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Chris Farley
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Kelly Blackburn
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Bridget Alvarado
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Kristin Bond
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Kendra Campbell
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Denise Moore
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Lisa Steele
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Katrina Torres
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Frank Johnson
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Jason Norman
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    devadmin
                   </span>
                 </div>
               </div>
@@ -1574,6 +2449,7 @@ exports[`renders research study info view correctly -- ADMIN user 3`] = `
             <div
               aria-expanded="false"
               class="ui fluid selection dropdown"
+              data-testid="account-input"
               id="account"
               name="account"
               role="listbox"
@@ -2042,21 +2918,40 @@ exports[`renders research study info view correctly -- ADMIN user 4`] = `
               aria-expanded="false"
               aria-multiselectable="true"
               class="ui fluid multiple selection dropdown"
+              data-testid="collaborators-input"
               id="contact"
               name="contact"
               role="listbox"
               tabindex="0"
             >
+              <a
+                class="ui label"
+                value="VXNlck5vZGU6MQ=="
+              >
+                Roger Swanson
+                <i
+                  aria-hidden="true"
+                  class="delete icon"
+                />
+              </a>
+              <a
+                class="ui label"
+                value="VXNlck5vZGU6Me=="
+              >
+                Justin Heath
+                <i
+                  aria-hidden="true"
+                  class="delete icon"
+                />
+              </a>
               <div
                 aria-live="polite"
-                class="default text"
+                class="text"
                 role="alert"
-              >
-                Select Contacts
-              </div>
+              />
               <i
                 aria-hidden="true"
-                class="dropdown icon"
+                class="dropdown icon clear"
               />
               <div
                 class="menu transition"
@@ -2075,7 +2970,7 @@ exports[`renders research study info view correctly -- ADMIN user 4`] = `
                   <span
                     class="text"
                   >
-                    Allison
+                    Charles Booker
                   </span>
                 </div>
                 <div
@@ -2092,7 +2987,279 @@ exports[`renders research study info view correctly -- ADMIN user 4`] = `
                   <span
                     class="text"
                   >
-                    Dan
+                    Steven Morgan
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Elizabeth White
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Lisa Booker
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Brittany Olsen
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Jeff Salazar
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Jennifer Cunningham
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Chris Farley
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Kelly Blackburn
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Bridget Alvarado
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Kristin Bond
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Kendra Campbell
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Denise Moore
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Lisa Steele
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Katrina Torres
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Frank Johnson
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Jason Norman
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    devadmin
                   </span>
                 </div>
               </div>
@@ -2117,6 +3284,7 @@ exports[`renders research study info view correctly -- ADMIN user 4`] = `
             <div
               aria-expanded="false"
               class="ui fluid selection dropdown"
+              data-testid="account-input"
               id="account"
               name="account"
               role="listbox"
@@ -2423,6 +3591,575 @@ exports[`renders research study info view with get research study info error 1`]
             Network error: something went wrong
           </p>
         </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ui segment footer"
+  >
+    <div
+      class="ui container text-10"
+    >
+      <div
+        class="ui horizontal list"
+        role="list"
+      >
+        <div
+          class="item"
+          role="listitem"
+        >
+          <div
+            class="ui basic horizontal label text-10"
+          />
+        </div>
+        <div
+          class="item"
+          role="listitem"
+        >
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders research study info view with get user data error 1`] = `
+<div>
+  <div
+    class="ui large top attached menu"
+  >
+    <div
+      class="ui container"
+    >
+      <div
+        class="item"
+      >
+        <img
+          alt="Kids First logo"
+          src="test-file-stub"
+        />
+      </div>
+      <a
+        aria-current="page"
+        class="header item"
+        href="/"
+      >
+        Data Tracker
+      </a>
+      <a
+        class="item"
+        href="/"
+      >
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
+      </a>
+      <div
+        class="right menu"
+      >
+        <div
+          aria-expanded="false"
+          class="ui dropdown link item"
+          role="listbox"
+          tabindex="0"
+        >
+          Admin
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          >
+            <a
+              class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
+            <a
+              class="item"
+              href="/tokens"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="key icon"
+              />
+              Developer Tokens
+            </a>
+            <a
+              class="item"
+              href="/cavatica-projects"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="folder open icon"
+              />
+              Cavatica Projects
+            </a>
+            <a
+              class="item"
+              href="/events"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="history icon"
+              />
+              Event Log
+            </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
+            </a>
+          </div>
+        </div>
+        <div
+          aria-expanded="false"
+          class="ui dropdown link item"
+          role="listbox"
+          tabindex="0"
+        >
+          <img
+            alt="bendolly"
+            class="ui avatar image"
+            src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
+          />
+          bendolly
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          >
+            <a
+              class="item"
+              href="/profile"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="user icon"
+              />
+              Profile
+            </a>
+            <a
+              class="item"
+              href="/logout"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="log out icon"
+              />
+              Logout
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="page"
+  >
+    <section
+      id="study"
+    >
+      <div
+        class="ui basic secondary segment"
+      >
+        <div
+          class="ui container"
+        >
+          <h1
+            class="ui header"
+          >
+            benchmark extensible e-business
+          </h1>
+          <button
+            class="ui tiny basic icon button"
+          >
+            <i
+              aria-hidden="true"
+              class="copy icon"
+            />
+            SD_8WX8QQ06
+          </button>
+        </div>
+      </div>
+      <div
+        class="ui container"
+      >
+        <div
+          class="ui pink pointing secondary menu"
+        >
+          <a
+            aria-current="page"
+            class="active item active"
+            href="/research-study/SD_8WX8QQ06/basic-info"
+          >
+            Basic Info
+          </a>
+          <a
+            class="item"
+            href="/research-study/SD_8WX8QQ06/cavatica"
+          >
+            Cavatica
+          </a>
+          <a
+            class="item"
+            href="/research-study/SD_8WX8QQ06/logs"
+          >
+            Logs
+          </a>
+          <a
+            class="item"
+            href="/research-study/SD_8WX8QQ06/releases"
+          >
+            Releases
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <div
+      class="ui basic vertical segment ui container"
+    >
+      <div
+        class="ui icon negative message"
+      >
+        <i
+          aria-hidden="true"
+          class="warning circle icon"
+        />
+        <div
+          class="content"
+        >
+          <div
+            class="header"
+          >
+            Error
+          </div>
+          <p>
+            Network error: Failed to fetch users information
+          </p>
+        </div>
+      </div>
+      <div
+        class="ui icon negative message"
+      >
+        <i
+          aria-hidden="true"
+          class="warning circle icon"
+        />
+        <div
+          class="content"
+        >
+          <div
+            class="header"
+          >
+            Missing values
+          </div>
+          <p>
+            Please add values to the following fields:
+          </p>
+          <div
+            class="ui bulleted horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            >
+              Study Short Name
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ui basic clearing segment ui container grey-container p-20"
+      >
+        <form
+          class="ui form"
+        >
+          <div
+            class="required field"
+          >
+            <label
+              class="noMargin"
+            >
+              Study Name
+              :
+            </label>
+            <p
+              class="noMargin"
+            >
+              <small>
+                Full name of the study, often the full title of the X01 grant application.
+              </small>
+            </p>
+            <div
+              class="ui fluid input noMargin"
+            >
+              <input
+                aria-label="name"
+                name="name"
+                type="text"
+                value="benchmark extensible e-business"
+              />
+            </div>
+          </div>
+          <div
+            class="field"
+          >
+            <label
+              class="noMargin"
+            >
+              Study Short Name
+              :
+            </label>
+            <p
+              class="noMargin"
+            >
+              <small>
+                The name that will appear under portal facets.
+              </small>
+            </p>
+            <div
+              class="ui error fluid left corner labeled input noMargin"
+            >
+              <div
+                class="ui red label label left corner"
+              >
+                <i
+                  aria-hidden="true"
+                  class="asterisk icon"
+                />
+              </div>
+              <input
+                aria-label="shortName"
+                name="shortName"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="field"
+          >
+            <label
+              class="noMargin"
+            >
+              Description
+              :
+            </label>
+            <p
+              class="noMargin"
+            >
+              <small>
+                Study description in markdown, commonly the X01 abstract text.
+              </small>
+            </p>
+            <div
+              class="field noMargin"
+            >
+              <textarea
+                name="description"
+                rows="15"
+                type="text"
+              >
+                Sudy description in markdown, commonly the X01 abstract text. --  As test study description
+              </textarea>
+            </div>
+          </div>
+          <div
+            class="field"
+          >
+            <label
+              class="noMargin"
+            >
+              Contact
+              :
+            </label>
+            <p
+              class="noMargin"
+            >
+              <small>
+                Select the contacts associated with this research study.
+              </small>
+            </p>
+            <div
+              aria-expanded="false"
+              aria-multiselectable="true"
+              class="ui fluid multiple selection dropdown"
+              data-testid="collaborators-input"
+              id="contact"
+              name="contact"
+              role="listbox"
+              tabindex="0"
+            >
+              <div
+                aria-live="polite"
+                class="text"
+                role="alert"
+              />
+              <i
+                aria-hidden="true"
+                class="dropdown icon clear"
+              />
+              <div
+                class="menu transition"
+              >
+                <div
+                  aria-checked="false"
+                  aria-selected="true"
+                  class="selected item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Allison
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Dan
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="required field"
+          >
+            <label
+              class="noMargin"
+            >
+              Account
+              :
+            </label>
+            <p
+              class="noMargin"
+            >
+              <small>
+                Select one account associated with this research study.
+              </small>
+            </p>
+            <div
+              aria-expanded="false"
+              class="ui fluid selection dropdown"
+              data-testid="account-input"
+              id="account"
+              name="account"
+              role="listbox"
+              tabindex="0"
+            >
+              <div
+                aria-live="polite"
+                class="default text"
+                role="alert"
+              >
+                Select Account
+              </div>
+              <i
+                aria-hidden="true"
+                class="dropdown icon"
+              />
+              <div
+                class="menu transition"
+              >
+                <div
+                  aria-checked="false"
+                  aria-selected="true"
+                  class="selected item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Kids First
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    D3b
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="ui primary right floated button"
+            type="submit"
+          >
+            SAVE
+          </button>
+        </form>
       </div>
     </div>
   </div>
@@ -3091,21 +4828,40 @@ exports[`renders research study info view with update research study info error 
               aria-expanded="false"
               aria-multiselectable="true"
               class="ui fluid multiple selection dropdown"
+              data-testid="collaborators-input"
               id="contact"
               name="contact"
               role="listbox"
               tabindex="0"
             >
+              <a
+                class="ui label"
+                value="VXNlck5vZGU6MQ=="
+              >
+                Roger Swanson
+                <i
+                  aria-hidden="true"
+                  class="delete icon"
+                />
+              </a>
+              <a
+                class="ui label"
+                value="VXNlck5vZGU6Me=="
+              >
+                Justin Heath
+                <i
+                  aria-hidden="true"
+                  class="delete icon"
+                />
+              </a>
               <div
                 aria-live="polite"
-                class="default text"
+                class="text"
                 role="alert"
-              >
-                Select Contacts
-              </div>
+              />
               <i
                 aria-hidden="true"
-                class="dropdown icon"
+                class="dropdown icon clear"
               />
               <div
                 class="menu transition"
@@ -3124,7 +4880,7 @@ exports[`renders research study info view with update research study info error 
                   <span
                     class="text"
                   >
-                    Allison
+                    Charles Booker
                   </span>
                 </div>
                 <div
@@ -3141,7 +4897,279 @@ exports[`renders research study info view with update research study info error 
                   <span
                     class="text"
                   >
-                    Dan
+                    Steven Morgan
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Elizabeth White
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Lisa Booker
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Brittany Olsen
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Jeff Salazar
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Jennifer Cunningham
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Chris Farley
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Kelly Blackburn
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Bridget Alvarado
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Kristin Bond
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Kendra Campbell
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Denise Moore
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Lisa Steele
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Katrina Torres
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Frank Johnson
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Jason Norman
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <img
+                    class="ui avatar image"
+                    src="test-file-stub"
+                  />
+                  <span
+                    class="text"
+                  >
+                    devadmin
                   </span>
                 </div>
               </div>
@@ -3166,6 +5194,7 @@ exports[`renders research study info view with update research study info error 
             <div
               aria-expanded="false"
               class="ui fluid selection dropdown"
+              data-testid="account-input"
               id="account"
               name="account"
               role="listbox"
