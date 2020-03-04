@@ -59,7 +59,7 @@ exports[`redirect user back to login view when there is no auth data 1`] = `
           role="listitem"
         >
           UI
-
+           
           <a
             href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
             rel="noopener noreferrer"
