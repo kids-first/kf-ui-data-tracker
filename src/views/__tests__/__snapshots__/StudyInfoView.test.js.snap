@@ -976,6 +976,17 @@ exports[`renders study info view correctly -- ADMIN user 2`] = `
             </a>
             <a
               class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -1531,6 +1542,17 @@ exports[`renders study info view correctly -- ADMIN user 3`] = `
             </a>
             <a
               class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -2083,6 +2105,17 @@ exports[`renders study info view correctly -- ADMIN user 4`] = `
                 class="settings icon"
               />
               Configuration
+            </a>
+            <a
+              class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
             </a>
             <a
               class="item"
@@ -2648,6 +2681,17 @@ exports[`renders study info view correctly -- ADMIN user 5`] = `
             </a>
             <a
               class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -3192,6 +3236,17 @@ exports[`renders study info view correctly -- ADMIN user 6`] = `
                 class="settings icon"
               />
               Configuration
+            </a>
+            <a
+              class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
             </a>
             <a
               class="item"
@@ -3758,6 +3813,17 @@ exports[`renders study info view with get study info error 1`] = `
             </a>
             <a
               class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -3998,6 +4064,17 @@ exports[`renders study info view with update study info error 1`] = `
                 class="settings icon"
               />
               Configuration
+            </a>
+            <a
+              class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
             </a>
             <a
               class="item"

@@ -5,6 +5,31 @@ import BucketsList from '../BucketsList';
 const buckets = [
   {
     node: {
+      id: 'QnVja2V0Tm9kZTpoYXJuZXNzIHN0aWNreSB0ZWNobm9sb2dpZXN=',
+      name: 'harness sticky technologies',
+      deleted: false,
+      createdOn: '2020-02-26T02:29:09+00:00',
+      study: null,
+    },
+  },
+  {
+    node: {
+      id: 'QnVja2V0Tm9kZTpoYXJuZXNzIHN0aWNreSB0ZWNobm9sb2dpZXN=',
+      name: 'harness',
+      deleted: false,
+      createdOn: '2020-02-26T02:29:09+00:00',
+      study: {
+        id: 'U3R1ZHlOb2RlOlNEX1lXT0RMSjBP',
+        name: 'facilitate open-source users',
+        shortName: null,
+        kfId: 'SD_YWODLJ00',
+        createdAt: '2018-04-23T17:46:55+00:00',
+        modifiedAt: '2020-03-04T16:11:18.238627+00:00',
+      },
+    },
+  },
+  {
+    node: {
       id: 'QnVja2V0Tm9kZTpoYXJuZXNzIHN0aWNreSB0ZWNobm9sb2dpZXM=',
       name: 'harness sticky technologies',
       deleted: false,

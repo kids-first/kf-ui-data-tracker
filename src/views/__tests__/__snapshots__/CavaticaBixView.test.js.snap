@@ -281,6 +281,17 @@ exports[`renders study Cavatica projects view -- shows an error 1`] = `
             </a>
             <a
               class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -732,6 +743,17 @@ exports[`renders study Cavatica projects view correctly 2`] = `
                 class="settings icon"
               />
               Configuration
+            </a>
+            <a
+              class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
             </a>
             <a
               class="item"
@@ -1282,6 +1304,17 @@ exports[`renders study Cavatica projects view correctly 3`] = `
                 class="settings icon"
               />
               Configuration
+            </a>
+            <a
+              class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
             </a>
             <a
               class="item"
@@ -1962,6 +1995,17 @@ exports[`renders study Cavatica projects view correctly 4`] = `
             </a>
             <a
               class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -2636,6 +2680,17 @@ exports[`renders study Cavatica projects view correctly 5`] = `
                 class="settings icon"
               />
               Configuration
+            </a>
+            <a
+              class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
             </a>
             <a
               class="item"
@@ -3625,6 +3680,17 @@ exports[`renders study Cavatica projects view correctly 6`] = `
             </a>
             <a
               class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -4608,6 +4674,17 @@ exports[`renders study Cavatica projects view correctly 7`] = `
                 class="settings icon"
               />
               Configuration
+            </a>
+            <a
+              class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
             </a>
             <a
               class="item"
@@ -5597,6 +5674,17 @@ exports[`renders study Cavatica projects view correctly 8`] = `
             </a>
             <a
               class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -6293,6 +6381,17 @@ exports[`renders study Cavatica projects view correctly 9`] = `
                 class="settings icon"
               />
               Configuration
+            </a>
+            <a
+              class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
             </a>
             <a
               class="item"
@@ -6995,6 +7094,17 @@ exports[`renders study Cavatica projects view correctly 10`] = `
             </a>
             <a
               class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -7689,6 +7799,17 @@ exports[`renders study Cavatica projects view correctly 11`] = `
                 class="settings icon"
               />
               Configuration
+            </a>
+            <a
+              class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
             </a>
             <a
               class="item"
@@ -8626,6 +8747,17 @@ exports[`renders study Cavatica projects view correctly 12`] = `
                 class="settings icon"
               />
               Configuration
+            </a>
+            <a
+              class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
             </a>
             <a
               class="item"
@@ -9657,6 +9789,17 @@ exports[`renders study Cavatica projects view correctly 13`] = `
             </a>
             <a
               class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -10350,6 +10493,17 @@ exports[`renders study Cavatica projects view correctly 14`] = `
             </a>
             <a
               class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -11038,6 +11192,17 @@ exports[`renders study Cavatica projects view correctly with warning 1`] = `
                 class="settings icon"
               />
               Configuration
+            </a>
+            <a
+              class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
             </a>
             <a
               class="item"

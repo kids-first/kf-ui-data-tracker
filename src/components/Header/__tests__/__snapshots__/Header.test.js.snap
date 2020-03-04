@@ -280,6 +280,17 @@ exports[`renders correctly -- default stage (USER role) 2`] = `
             </a>
             <a
               class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -945,6 +956,17 @@ exports[`renders correctly -- default stage (USER role) 3`] = `
             </a>
             <a
               class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -1607,6 +1629,17 @@ exports[`renders correctly -- default stage (USER role) 4`] = `
                 class="settings icon"
               />
               Configuration
+            </a>
+            <a
+              class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
             </a>
             <a
               class="item"

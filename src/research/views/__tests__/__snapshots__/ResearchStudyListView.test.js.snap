@@ -66,6 +66,17 @@ exports[`renders empty study list with admin access 1`] = `
             </a>
             <a
               class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -601,6 +612,17 @@ exports[`renders study list correctly -- default stage 2`] = `
                 class="settings icon"
               />
               Configuration
+            </a>
+            <a
+              class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
             </a>
             <a
               class="item"
@@ -1255,6 +1277,17 @@ exports[`renders study list correctly -- default stage 3`] = `
             </a>
             <a
               class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -1827,6 +1860,17 @@ exports[`renders study list correctly -- default stage 4`] = `
             </a>
             <a
               class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -2365,6 +2409,17 @@ exports[`renders study list correctly -- default stage 5`] = `
             </a>
             <a
               class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -2702,6 +2757,17 @@ exports[`renders study list correctly -- default stage 6`] = `
             </a>
             <a
               class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -2977,6 +3043,17 @@ exports[`renders study list correctly -- release error 1`] = `
                 class="settings icon"
               />
               Configuration
+            </a>
+            <a
+              class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
             </a>
             <a
               class="item"
@@ -3524,6 +3601,17 @@ exports[`renders study list correctly -- study tabel buttons 1`] = `
                 class="settings icon"
               />
               Configuration
+            </a>
+            <a
+              class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
             </a>
             <a
               class="item"
@@ -4076,6 +4164,17 @@ exports[`renders study list correctly -- study tabel buttons 2`] = `
             </a>
             <a
               class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -4623,6 +4722,17 @@ exports[`renders study list correctly -- study tabel buttons 3`] = `
                 class="settings icon"
               />
               Configuration
+            </a>
+            <a
+              class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
             </a>
             <a
               class="item"
@@ -5195,6 +5305,17 @@ exports[`renders study list error and release error 1`] = `
                 class="settings icon"
               />
               Configuration
+            </a>
+            <a
+              class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
             </a>
             <a
               class="item"

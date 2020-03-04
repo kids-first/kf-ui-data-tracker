@@ -307,6 +307,17 @@ exports[`renders error view on invalid document id 1`] = `
             </a>
             <a
               class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -614,6 +625,17 @@ exports[`renders error view on invalid new study step 1`] = `
             </a>
             <a
               class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -851,6 +873,17 @@ exports[`renders error view on invalid path /XXXX 1`] = `
                 class="settings icon"
               />
               Configuration
+            </a>
+            <a
+              class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
             </a>
             <a
               class="item"
@@ -1092,6 +1125,17 @@ exports[`renders error view on invalid path /XXXX 2`] = `
                 class="settings icon"
               />
               Configuration
+            </a>
+            <a
+              class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
             </a>
             <a
               class="item"
@@ -1759,6 +1803,17 @@ exports[`renders error view on invalid study id 1`] = `
             </a>
             <a
               class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -1993,6 +2048,17 @@ exports[`renders error view on invalid study id 2`] = `
                 class="settings icon"
               />
               Configuration
+            </a>
+            <a
+              class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
             </a>
             <a
               class="item"
@@ -2233,6 +2299,17 @@ exports[`renders error view on invalid study id 3`] = `
             </a>
             <a
               class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -2467,6 +2544,17 @@ exports[`renders error view on invalid study id 4`] = `
                 class="settings icon"
               />
               Configuration
+            </a>
+            <a
+              class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
             </a>
             <a
               class="item"
@@ -2707,6 +2795,17 @@ exports[`renders error view on invalid study id 5`] = `
             </a>
             <a
               class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -2941,6 +3040,17 @@ exports[`renders error view on invalid study info step name 1`] = `
                 class="settings icon"
               />
               Configuration
+            </a>
+            <a
+              class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
             </a>
             <a
               class="item"
