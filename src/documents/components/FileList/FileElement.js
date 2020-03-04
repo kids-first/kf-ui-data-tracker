@@ -14,6 +14,7 @@ import {
 } from '../../utilities';
 import {fileTypeDetail} from '../../../common/enums';
 import {longDate} from '../../../common/dateUtils';
+import FileTags from '../FileDetail/FileTags';
 
 const useRecentlyUpdated = (latestDate, fileId) => {
   const [justUpdated, setJustUpdated] = useState(false);
@@ -123,6 +124,7 @@ const FileElement = ({
   match,
   fileListId,
   isAdmin,
+  updateFile,
 }) => {
   const fileKfID = fileNode.kfId || 'unknown ID';
   const fileName = fileNode.name || 'unknown file name';
@@ -192,6 +194,9 @@ const FileElement = ({
           fileVersions={fileNode.versions.edges.length}
           horizontal={false}
         />
+      </Table.Cell>
+      <Table.Cell textAlign="center" width="4">
+        <FileTags fileNode={fileNode} updateFile={updateFile} />
       </Table.Cell>
       <Table.Cell textAlign="center">
         <Responsive
