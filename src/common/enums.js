@@ -228,3 +228,10 @@ export const userRoleOptions = [
   {key: 'bix', value: 'bix', text: 'Bix'},
   {key: 'dev', value: 'dev', text: 'Dev'},
 ];
+
+// default document tag options
+export const defaultTagOptions = [
+  {key: 'dbGaP', value: 'dbGaP', text: 'dbGaP'},
+  {key: 'dCC', value: 'dCC', text: 'DCC'},
+  {key: 'email', value: 'email', text: 'Email'},
+];

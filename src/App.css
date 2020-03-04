@@ -58,6 +58,11 @@ body {
   }
 }
 
+.my-2 {
+  margin-top:2px !important;
+  margin-bottom:2px !important;
+}
+
 .pb-0 {
   padding-bottom: 0px !important;
 }
@@ -291,4 +296,9 @@ body {
 .grey-container {
   border-radius: 8px !important;
   background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.square-26 {
+  height: 26px !important;
+  width: 26px !important;
 }
