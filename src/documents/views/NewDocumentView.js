@@ -22,6 +22,9 @@ const NewDocumentView = ({match, history, location}) => {
     refetchQueries: [
       {query: GET_STUDY_BY_ID, variables: {kfId: match.params.kfId}},
     ],
+    onError: error => {
+      setErrors(error.message);
+    },
   });
 
   const isAdmin =
@@ -40,7 +43,9 @@ const NewDocumentView = ({match, history, location}) => {
   // some external page. We'll send them back to the study's file list view.
   if (!location.state || !location.state.file) {
     history.push(`/study/${match.params.kfId}/documents`);
+    return <></>;
   }
+
   const handleSubmit = (fileName, fileType, fileDescription) => {
     const studyId = match.params.kfId;
     const file = location.state.file;
