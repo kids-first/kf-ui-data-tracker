@@ -13,6 +13,8 @@ import {lengthLimit} from '../utilities';
  * populated by the router (eg: history.push('/new', {state: <File>}) )
  */
 const NewDocumentView = ({match, history, location}) => {
+  // Tracks any error state reported from the server
+  const [errors, setErrors] = useState('');
   const study = useQuery(GET_STUDY_BY_ID, {
     variables: {kfId: match.params.kfId},
   });
@@ -32,8 +34,6 @@ const NewDocumentView = ({match, history, location}) => {
       ? user.data.myProfile.roles.includes('ADMIN')
       : false;
 
-  // Tracks any error state reported from the server
-  const [errors, setErrors] = useState('');
   const studyFiles =
     study.data && study.data.studyByKfId
       ? study.data.studyByKfId.files.edges
@@ -49,7 +49,6 @@ const NewDocumentView = ({match, history, location}) => {
   const handleSubmit = (fileName, fileType, fileDescription) => {
     const studyId = match.params.kfId;
     const file = location.state.file;
-
     createDocument({
       variables: {
         file,
@@ -58,13 +57,9 @@ const NewDocumentView = ({match, history, location}) => {
         fileType,
         description: fileDescription,
       },
-    })
-      .then(resp => {
-        history.push(`/study/${studyId}/documents`);
-      })
-      .catch(err => {
-        setErrors(err.message);
-      });
+    }).then(resp => {
+      history.push(`/study/${studyId}/documents`);
+    });
   };
   return (
     <Container as={Segment} vertical basic>
@@ -104,6 +99,7 @@ const NewDocumentView = ({match, history, location}) => {
             submitButtons={(disabled, onUploading) => (
               <Segment vertical basic compact>
                 <Button
+                  data-testid="new-file-submit"
                   floated="right"
                   type="submit"
                   primary={errors.length === 0}
@@ -112,6 +108,7 @@ const NewDocumentView = ({match, history, location}) => {
                   {onUploading && !errors ? 'UPLOADING ...' : 'UPLOAD'}
                 </Button>
                 <Button
+                  data-testid="new-file-cancel"
                   floated="right"
                   primary={errors.length > 0}
                   onClick={() =>

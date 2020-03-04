@@ -257,6 +257,7 @@ exports[`Render out the new document view 1`] = `
           >
             <button
               class="ui primary disabled right floated button"
+              data-testid="new-file-submit"
               disabled=""
               tabindex="-1"
               type="submit"
@@ -265,6 +266,7 @@ exports[`Render out the new document view 1`] = `
             </button>
             <button
               class="ui right floated button"
+              data-testid="new-file-cancel"
             >
               CANCEL
             </button>
@@ -584,6 +586,7 @@ exports[`Render out the new document view 2`] = `
           >
             <button
               class="ui primary disabled right floated button"
+              data-testid="new-file-submit"
               disabled=""
               tabindex="-1"
               type="submit"
@@ -592,6 +595,7 @@ exports[`Render out the new document view 2`] = `
             </button>
             <button
               class="ui right floated button"
+              data-testid="new-file-cancel"
             >
               CANCEL
             </button>
@@ -906,6 +910,7 @@ exports[`Render out the new document view 3`] = `
           >
             <button
               class="ui primary disabled right floated button"
+              data-testid="new-file-submit"
               disabled=""
               tabindex="-1"
               type="submit"
@@ -914,6 +919,7 @@ exports[`Render out the new document view 3`] = `
             </button>
             <button
               class="ui right floated button"
+              data-testid="new-file-cancel"
             >
               CANCEL
             </button>
@@ -1230,12 +1236,14 @@ exports[`Render out the new document view 4`] = `
           >
             <button
               class="ui primary right floated button"
+              data-testid="new-file-submit"
               type="submit"
             >
               UPLOAD
             </button>
             <button
               class="ui right floated button"
+              data-testid="new-file-cancel"
             >
               CANCEL
             </button>
@@ -1504,6 +1512,7 @@ exports[`Render out the new document view 5`] = `
           >
             <button
               class="ui primary disabled right floated button"
+              data-testid="new-file-submit"
               disabled=""
               tabindex="-1"
               type="submit"
@@ -1512,6 +1521,7 @@ exports[`Render out the new document view 5`] = `
             </button>
             <button
               class="ui right floated button"
+              data-testid="new-file-cancel"
             >
               CANCEL
             </button>
@@ -1548,46 +1558,7 @@ exports[`Render out the new document view 6`] = `
         </a>
         .
       </p>
-      <div
-        class="ui icon negative message"
-      >
-        <i
-          aria-hidden="true"
-          class="warning circle icon"
-        />
-        <div
-          class="content"
-        >
-          <div
-            class="header"
-          >
-            Error
-          </div>
-          <p>
-            No more mocked responses for the query: mutation CreateFile($file: Upload!, $studyId: String!, $name: String!, $fileType: FileFileType!, $description: String!) {
-  createFile(file: $file, studyId: $studyId, name: $name, fileType: $fileType, description: $description) {
-    success
-    file {
-      ...FileFields
-      __typename
-    }
-    __typename
-  }
-}
-
-fragment FileFields on FileNode {
-  id
-  kfId
-  name
-  description
-  fileType
-  downloadUrl
-  __typename
-}
-, variables: {"file":{"lastModified":1567797130510,"name":"organize.tsv","size":7,"type":"text/tab-separated-values","webkitRelativePath":""},"studyId":"SD_8WX8QQ06","name":"name","fileType":"SHM","description":"description"}
-          </p>
-        </div>
-      </div>
+      
     </div>
     <div
       class="ui segments"
@@ -1820,13 +1791,15 @@ fragment FileFields on FileNode {
             class="ui basic compact vertical segment"
           >
             <button
-              class="ui right floated button"
+              class="ui primary right floated button"
+              data-testid="new-file-submit"
               type="submit"
             >
-              UPLOAD
+              UPLOADING ...
             </button>
             <button
-              class="ui primary right floated button"
+              class="ui right floated button"
+              data-testid="new-file-cancel"
             >
               CANCEL
             </button>
@@ -1879,8 +1852,8 @@ exports[`Render out the new document view 7`] = `
             Error
           </div>
           <p>
-            No more mocked responses for the query: mutation CreateFile($file: Upload!, $studyId: String!, $name: String!, $fileType: FileFileType!, $description: String!) {
-  createFile(file: $file, studyId: $studyId, name: $name, fileType: $fileType, description: $description) {
+            No more mocked responses for the query: mutation CreateFile($file: Upload!, $studyId: String!, $name: String!, $fileType: FileFileType!, $description: String!, $tags: [String]) {
+  createFile(file: $file, studyId: $studyId, name: $name, fileType: $fileType, description: $description, tags: $tags) {
     success
     file {
       ...FileFields
@@ -1897,6 +1870,7 @@ fragment FileFields on FileNode {
   description
   fileType
   downloadUrl
+  tags
   __typename
 }
 , variables: {"file":{"lastModified":1567797130510,"name":"organize.tsv","size":7,"type":"text/tab-separated-values","webkitRelativePath":""},"studyId":"SD_8WX8QQ06","name":"name","fileType":"SHM","description":"description"}
@@ -2136,17 +2110,1632 @@ fragment FileFields on FileNode {
           >
             <button
               class="ui right floated button"
+              data-testid="new-file-submit"
               type="submit"
             >
               UPLOAD
             </button>
             <button
               class="ui primary right floated button"
+              data-testid="new-file-cancel"
             >
               CANCEL
             </button>
           </div>
         </form>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Render out the new document view with error on creation 1`] = `
+<div>
+  <div
+    class="ui basic vertical segment ui container"
+  >
+    <div
+      class="ui basic vertical segment ui container"
+    >
+      <h3
+        class="ui header"
+      >
+        Tell us about your document
+      </h3>
+      <p
+        class="text-wrap-75"
+      >
+        Help us process and harmonize your study faster by categorizing and describing the document you are about to upload. If you have any questions, please contact us at
+         
+        <a
+          href="mailto:support@kidsfirstdrc.org?subject=Kids First Data Tracker Help&body=Hello, I would like to upload a <insert_document_description_here> and am having trouble with the upload function"
+        >
+          support@kidsfirstdrc.org
+        </a>
+        .
+      </p>
+      
+    </div>
+    <div
+      class="ui segments"
+    >
+      <div
+        class="ui segment"
+      >
+        <h4
+          class="ui header"
+          title="12"
+        >
+          Uploaded File: 
+          organize.tsv
+        </h4>
+      </div>
+      <div
+        class="ui very padded segment ui container"
+      >
+        <form
+          class="ui form"
+        >
+          <div
+            class="required field"
+          >
+            <label
+              for="file_name"
+            >
+              Document Title:
+            </label>
+            <input
+              data-testid="name-input"
+              name="file_name"
+              placeholder="Phenotypic Data manifest for..."
+              type="text"
+              value=""
+            />
+            <small>
+              Please provide a descriptive title without dates or adjectives such as "new", "updated", "final", etc.
+            </small>
+          </div>
+          <div
+            class="required field"
+          >
+            <label
+              for="file_type"
+            >
+              Document Type:
+            </label>
+            <div
+              class="field"
+            >
+              <div
+                class="ui compact segment selectionRadio--card"
+              >
+                <div>
+                  <div
+                    class="ui radio checkbox"
+                  >
+                    <input
+                      class="hidden"
+                      id="SHM"
+                      name="file_type"
+                      readonly=""
+                      tabindex="0"
+                      type="radio"
+                      value="SHM"
+                    />
+                    <i
+                      aria-hidden="true"
+                      class="black shipping large bordered circular inverted icon"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <p
+                    class="mb-5"
+                  >
+                    <b>
+                      Biospecimen Manifest
+                    </b>
+                  </p>
+                  <p
+                    class="text-wrap-75 text-grey"
+                  >
+                    Tabular files (e.g. CSV, TSV, Excel) containing biospecimen identifiers and metadata (e.g. tissue type, composition) provided to sequencing centers as well as consent type.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="field"
+            >
+              <div
+                class="ui compact segment selectionRadio--card"
+              >
+                <div>
+                  <div
+                    class="ui radio checkbox"
+                  >
+                    <input
+                      class="hidden"
+                      id="CLN"
+                      name="file_type"
+                      readonly=""
+                      tabindex="0"
+                      type="radio"
+                      value="CLN"
+                    />
+                    <i
+                      aria-hidden="true"
+                      class="black hospital large bordered circular inverted icon"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <p
+                    class="mb-5"
+                  >
+                    <b>
+                      Clinical/Phenotypic Data
+                    </b>
+                  </p>
+                  <p
+                    class="text-wrap-75 text-grey"
+                  >
+                    Structured files with data linked to the biospecimen identifiers provided in the shipping manifest(s). Exports from data management applications, such as REDCap, are the fastest to process, but we will work with you on most formats.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="field"
+            >
+              <div
+                class="ui compact segment selectionRadio--card"
+              >
+                <div>
+                  <div
+                    class="ui radio checkbox"
+                  >
+                    <input
+                      class="hidden"
+                      id="SEQ"
+                      name="file_type"
+                      readonly=""
+                      tabindex="0"
+                      type="radio"
+                      value="SEQ"
+                    />
+                    <i
+                      aria-hidden="true"
+                      class="black dna large bordered circular inverted icon"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <p
+                    class="mb-5"
+                  >
+                    <b>
+                      Sequencing Manifest
+                    </b>
+                  </p>
+                  <p
+                    class="text-wrap-75 text-grey"
+                  >
+                    Tabular files (e.g. CSV, TSV, Excel) containing the biospecimen identifiers and the associated genomic data files. Typically provided by the sequencing center.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="field"
+            >
+              <div
+                class="ui compact segment selectionRadio--card"
+              >
+                <div>
+                  <div
+                    class="ui radio checkbox"
+                  >
+                    <input
+                      class="hidden"
+                      id="OTH"
+                      name="file_type"
+                      readonly=""
+                      tabindex="0"
+                      type="radio"
+                      value="OTH"
+                    />
+                    <i
+                      aria-hidden="true"
+                      class="black question large bordered circular inverted icon"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <p
+                    class="mb-5"
+                  >
+                    <b>
+                      Other
+                    </b>
+                  </p>
+                  <p
+                    class="text-wrap-75 text-grey"
+                  >
+                    Any useful documents, such as study background information, data dictionaries, etc., that does not clearly fit in the other categories.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="required field"
+          >
+            <label>
+              Describe Document Contents:
+            </label>
+            <textarea
+              data-testid="description-input"
+              name="file_desc"
+              rows="3"
+              type="text"
+            />
+          </div>
+          <div
+            class="ui basic compact vertical segment"
+          >
+            <button
+              class="ui primary disabled right floated button"
+              data-testid="new-file-submit"
+              disabled=""
+              tabindex="-1"
+              type="submit"
+            >
+              UPLOAD
+            </button>
+            <button
+              class="ui right floated button"
+              data-testid="new-file-cancel"
+            >
+              CANCEL
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Render out the new document view with error on creation 2`] = `
+<div>
+  <div
+    class="ui basic vertical segment ui container"
+  >
+    <div
+      class="ui basic vertical segment ui container"
+    >
+      <h3
+        class="ui header"
+      >
+        Tell us about your document
+      </h3>
+      <p
+        class="text-wrap-75"
+      >
+        Help us process and harmonize your study faster by categorizing and describing the document you are about to upload. If you have any questions, please contact us at
+         
+        <a
+          href="mailto:support@kidsfirstdrc.org?subject=Kids First Data Tracker Help&body=Hello, I would like to upload a <insert_document_description_here> and am having trouble with the upload function"
+        >
+          support@kidsfirstdrc.org
+        </a>
+        .
+      </p>
+      
+    </div>
+    <div
+      class="ui segments"
+    >
+      <div
+        class="ui segment"
+      >
+        <h4
+          class="ui header"
+          title="12"
+        >
+          Uploaded File: 
+          organize.tsv
+        </h4>
+      </div>
+      <div
+        class="ui very padded segment ui container"
+      >
+        <form
+          class="ui form"
+        >
+          <div
+            class="required field"
+          >
+            <label
+              for="file_name"
+            >
+              Document Title:
+            </label>
+            <input
+              data-testid="name-input"
+              name="file_name"
+              placeholder="Phenotypic Data manifest for..."
+              type="text"
+              value="name"
+            />
+            <small>
+              Please provide a descriptive title without dates or adjectives such as "new", "updated", "final", etc.
+            </small>
+          </div>
+          <div
+            class="required field"
+          >
+            <label
+              for="file_type"
+            >
+              Document Type:
+            </label>
+            <div
+              class="field"
+            >
+              <div
+                class="ui blue compact segment selectionRadio--card"
+              >
+                <div>
+                  <div
+                    class="ui checked radio checkbox"
+                  >
+                    <input
+                      class="hidden"
+                      id="SHM"
+                      name="file_type"
+                      readonly=""
+                      tabindex="0"
+                      type="radio"
+                      value="SHM"
+                    />
+                    <i
+                      aria-hidden="true"
+                      class="blue shipping large bordered circular inverted icon"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <p
+                    class="mb-5"
+                  >
+                    <b>
+                      Biospecimen Manifest
+                    </b>
+                  </p>
+                  <p
+                    class="text-wrap-75 text-grey"
+                  >
+                    Tabular files (e.g. CSV, TSV, Excel) containing biospecimen identifiers and metadata (e.g. tissue type, composition) provided to sequencing centers as well as consent type.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="field"
+            >
+              <div
+                class="ui compact segment selectionRadio--card"
+              >
+                <div>
+                  <div
+                    class="ui radio checkbox"
+                  >
+                    <input
+                      class="hidden"
+                      id="CLN"
+                      name="file_type"
+                      readonly=""
+                      tabindex="0"
+                      type="radio"
+                      value="CLN"
+                    />
+                    <i
+                      aria-hidden="true"
+                      class="black hospital large bordered circular inverted icon"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <p
+                    class="mb-5"
+                  >
+                    <b>
+                      Clinical/Phenotypic Data
+                    </b>
+                  </p>
+                  <p
+                    class="text-wrap-75 text-grey"
+                  >
+                    Structured files with data linked to the biospecimen identifiers provided in the shipping manifest(s). Exports from data management applications, such as REDCap, are the fastest to process, but we will work with you on most formats.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="field"
+            >
+              <div
+                class="ui compact segment selectionRadio--card"
+              >
+                <div>
+                  <div
+                    class="ui radio checkbox"
+                  >
+                    <input
+                      class="hidden"
+                      id="SEQ"
+                      name="file_type"
+                      readonly=""
+                      tabindex="0"
+                      type="radio"
+                      value="SEQ"
+                    />
+                    <i
+                      aria-hidden="true"
+                      class="black dna large bordered circular inverted icon"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <p
+                    class="mb-5"
+                  >
+                    <b>
+                      Sequencing Manifest
+                    </b>
+                  </p>
+                  <p
+                    class="text-wrap-75 text-grey"
+                  >
+                    Tabular files (e.g. CSV, TSV, Excel) containing the biospecimen identifiers and the associated genomic data files. Typically provided by the sequencing center.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="field"
+            >
+              <div
+                class="ui compact segment selectionRadio--card"
+              >
+                <div>
+                  <div
+                    class="ui radio checkbox"
+                  >
+                    <input
+                      class="hidden"
+                      id="OTH"
+                      name="file_type"
+                      readonly=""
+                      tabindex="0"
+                      type="radio"
+                      value="OTH"
+                    />
+                    <i
+                      aria-hidden="true"
+                      class="black question large bordered circular inverted icon"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <p
+                    class="mb-5"
+                  >
+                    <b>
+                      Other
+                    </b>
+                  </p>
+                  <p
+                    class="text-wrap-75 text-grey"
+                  >
+                    Any useful documents, such as study background information, data dictionaries, etc., that does not clearly fit in the other categories.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="required field"
+          >
+            <label>
+              Describe Document Contents:
+            </label>
+            <textarea
+              data-testid="description-input"
+              name="file_desc"
+              rows="3"
+              type="text"
+            >
+              description
+            </textarea>
+          </div>
+          <div
+            class="ui basic compact vertical segment"
+          >
+            <button
+              class="ui primary right floated button"
+              data-testid="new-file-submit"
+              type="submit"
+            >
+              UPLOAD
+            </button>
+            <button
+              class="ui right floated button"
+              data-testid="new-file-cancel"
+            >
+              CANCEL
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Render out the new document view with error on creation 3`] = `
+<div>
+  <div
+    class="ui basic vertical segment ui container"
+  >
+    <div
+      class="ui basic vertical segment ui container"
+    >
+      <h3
+        class="ui header"
+      >
+        Tell us about your document
+      </h3>
+      <p
+        class="text-wrap-75"
+      >
+        Help us process and harmonize your study faster by categorizing and describing the document you are about to upload. If you have any questions, please contact us at
+         
+        <a
+          href="mailto:support@kidsfirstdrc.org?subject=Kids First Data Tracker Help&body=Hello, I would like to upload a <insert_document_description_here> and am having trouble with the upload function"
+        >
+          support@kidsfirstdrc.org
+        </a>
+        .
+      </p>
+      
+    </div>
+    <div
+      class="ui segments"
+    >
+      <div
+        class="ui segment"
+      >
+        <h4
+          class="ui header"
+          title="12"
+        >
+          Uploaded File: 
+          organize.tsv
+        </h4>
+      </div>
+      <div
+        class="ui very padded segment ui container"
+      >
+        <form
+          class="ui form"
+        >
+          <div
+            class="required field"
+          >
+            <label
+              for="file_name"
+            >
+              Document Title:
+            </label>
+            <input
+              data-testid="name-input"
+              name="file_name"
+              placeholder="Phenotypic Data manifest for..."
+              type="text"
+              value="name"
+            />
+            <small>
+              Please provide a descriptive title without dates or adjectives such as "new", "updated", "final", etc.
+            </small>
+          </div>
+          <div
+            class="required field"
+          >
+            <label
+              for="file_type"
+            >
+              Document Type:
+            </label>
+            <div
+              class="field"
+            >
+              <div
+                class="ui blue compact segment selectionRadio--card"
+              >
+                <div>
+                  <div
+                    class="ui checked radio checkbox"
+                  >
+                    <input
+                      class="hidden"
+                      id="SHM"
+                      name="file_type"
+                      readonly=""
+                      tabindex="0"
+                      type="radio"
+                      value="SHM"
+                    />
+                    <i
+                      aria-hidden="true"
+                      class="blue shipping large bordered circular inverted icon"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <p
+                    class="mb-5"
+                  >
+                    <b>
+                      Biospecimen Manifest
+                    </b>
+                  </p>
+                  <p
+                    class="text-wrap-75 text-grey"
+                  >
+                    Tabular files (e.g. CSV, TSV, Excel) containing biospecimen identifiers and metadata (e.g. tissue type, composition) provided to sequencing centers as well as consent type.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="field"
+            >
+              <div
+                class="ui compact segment selectionRadio--card"
+              >
+                <div>
+                  <div
+                    class="ui radio checkbox"
+                  >
+                    <input
+                      class="hidden"
+                      id="CLN"
+                      name="file_type"
+                      readonly=""
+                      tabindex="0"
+                      type="radio"
+                      value="CLN"
+                    />
+                    <i
+                      aria-hidden="true"
+                      class="black hospital large bordered circular inverted icon"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <p
+                    class="mb-5"
+                  >
+                    <b>
+                      Clinical/Phenotypic Data
+                    </b>
+                  </p>
+                  <p
+                    class="text-wrap-75 text-grey"
+                  >
+                    Structured files with data linked to the biospecimen identifiers provided in the shipping manifest(s). Exports from data management applications, such as REDCap, are the fastest to process, but we will work with you on most formats.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="field"
+            >
+              <div
+                class="ui compact segment selectionRadio--card"
+              >
+                <div>
+                  <div
+                    class="ui radio checkbox"
+                  >
+                    <input
+                      class="hidden"
+                      id="SEQ"
+                      name="file_type"
+                      readonly=""
+                      tabindex="0"
+                      type="radio"
+                      value="SEQ"
+                    />
+                    <i
+                      aria-hidden="true"
+                      class="black dna large bordered circular inverted icon"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <p
+                    class="mb-5"
+                  >
+                    <b>
+                      Sequencing Manifest
+                    </b>
+                  </p>
+                  <p
+                    class="text-wrap-75 text-grey"
+                  >
+                    Tabular files (e.g. CSV, TSV, Excel) containing the biospecimen identifiers and the associated genomic data files. Typically provided by the sequencing center.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="field"
+            >
+              <div
+                class="ui compact segment selectionRadio--card"
+              >
+                <div>
+                  <div
+                    class="ui radio checkbox"
+                  >
+                    <input
+                      class="hidden"
+                      id="OTH"
+                      name="file_type"
+                      readonly=""
+                      tabindex="0"
+                      type="radio"
+                      value="OTH"
+                    />
+                    <i
+                      aria-hidden="true"
+                      class="black question large bordered circular inverted icon"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <p
+                    class="mb-5"
+                  >
+                    <b>
+                      Other
+                    </b>
+                  </p>
+                  <p
+                    class="text-wrap-75 text-grey"
+                  >
+                    Any useful documents, such as study background information, data dictionaries, etc., that does not clearly fit in the other categories.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="required field"
+          >
+            <label>
+              Describe Document Contents:
+            </label>
+            <textarea
+              data-testid="description-input"
+              name="file_desc"
+              rows="3"
+              type="text"
+            >
+              description
+            </textarea>
+          </div>
+          <div
+            class="ui basic compact vertical segment"
+          >
+            <button
+              class="ui primary right floated button"
+              data-testid="new-file-submit"
+              type="submit"
+            >
+              UPLOADING ...
+            </button>
+            <button
+              class="ui right floated button"
+              data-testid="new-file-cancel"
+            >
+              CANCEL
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders new document view and redirect due to lack of location.state 1`] = `
+<div>
+  <div
+    class="ui large top attached menu"
+  >
+    <div
+      class="ui container"
+    >
+      <div
+        class="item"
+      >
+        <img
+          alt="Kids First logo"
+          src="test-file-stub"
+        />
+      </div>
+      <a
+        aria-current="page"
+        class="header item"
+        href="/"
+      >
+        Data Tracker
+      </a>
+      <a
+        class="item"
+        href="/"
+      >
+        Investigator Studies
+      </a>
+      <a
+        class="item"
+        href="/research-studies"
+      >
+        Research Studies
+      </a>
+      <div
+        class="right menu"
+      >
+        <div
+          aria-expanded="false"
+          class="ui dropdown link item"
+          role="listbox"
+          tabindex="0"
+        >
+          Admin
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          >
+            <a
+              class="item"
+              href="/configuration"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="settings icon"
+              />
+              Configuration
+            </a>
+            <a
+              class="item"
+              href="/tokens"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="key icon"
+              />
+              Developer Tokens
+            </a>
+            <a
+              class="item"
+              href="/cavatica-projects"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="folder open icon"
+              />
+              Cavatica Projects
+            </a>
+            <a
+              class="item"
+              href="/events"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="history icon"
+              />
+              Event Log
+            </a>
+            <a
+              class="item"
+              href="/users"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="users icon"
+              />
+              Users
+            </a>
+          </div>
+        </div>
+        <div
+          aria-expanded="false"
+          class="ui dropdown link item"
+          role="listbox"
+          tabindex="0"
+        >
+          <img
+            alt="bendolly"
+            class="ui avatar image"
+            src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
+          />
+          bendolly
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          >
+            <a
+              class="item"
+              href="/profile"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="user icon"
+              />
+              Profile
+            </a>
+            <a
+              class="item"
+              href="/logout"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="log out icon"
+              />
+              Logout
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="page"
+  >
+    <section
+      id="study"
+    >
+      <div
+        class="ui basic secondary segment"
+      >
+        <div
+          class="ui container"
+        >
+          <h1
+            class="ui header"
+          >
+            benchmark extensible e-business
+          </h1>
+          <button
+            class="ui tiny basic icon button"
+          >
+            <i
+              aria-hidden="true"
+              class="copy icon"
+            />
+            SD_8WX8QQ06
+          </button>
+        </div>
+      </div>
+      <div
+        class="ui container"
+      >
+        <div
+          class="ui pink pointing secondary menu"
+        >
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/basic-info/info"
+          >
+            Basic Info
+          </a>
+          <a
+            aria-current="page"
+            class="active item active"
+            href="/study/SD_8WX8QQ06/documents"
+          >
+            Documents
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/cavatica"
+          >
+            Cavatica
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/logs"
+          >
+            Logs
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/releases"
+          >
+            Releases
+            <div
+              class="ui blue mini label"
+            >
+              BETA
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <div
+      class="ui basic segment ui container one column grid"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="ten wide column"
+        >
+          <h2>
+            Study Documents
+          </h2>
+        </div>
+        <div
+          class="six wide column"
+        >
+          <label
+            class="ui large compact icon primary right floated left labeled button"
+            for="file"
+            role="button"
+          >
+            <i
+              aria-hidden="true"
+              class="cloud upload icon"
+            />
+            Upload Document
+          </label>
+          <input
+            hidden=""
+            id="file"
+            multiple=""
+            type="file"
+          />
+        </div>
+      </div>
+      <div
+        class="row"
+      >
+        <div
+          class="sixteen wide column"
+        >
+          <div
+            class="ui basic clearing segment noHorizontalPadding"
+          >
+            <div
+              class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
+            >
+              <span
+                class="smallLabel"
+              >
+                Filter by:
+              </span>
+              <div
+                aria-disabled="true"
+                aria-expanded="false"
+                class="ui disabled selection dropdown"
+                role="listbox"
+                tabindex="-1"
+              >
+                <div
+                  aria-live="polite"
+                  class="default text"
+                  role="alert"
+                >
+                  Tag
+                </div>
+                <i
+                  aria-hidden="true"
+                  class="dropdown icon"
+                />
+                <div
+                  class="menu transition"
+                />
+              </div>
+              <div
+                aria-expanded="false"
+                class="ui selection dropdown"
+                role="listbox"
+                tabindex="0"
+              >
+                <div
+                  aria-live="polite"
+                  class="default text"
+                  role="alert"
+                >
+                  Document type
+                </div>
+                <i
+                  aria-hidden="true"
+                  class="dropdown icon"
+                />
+                <div
+                  class="menu transition"
+                >
+                  <div
+                    aria-checked="false"
+                    aria-selected="true"
+                    class="selected item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <small
+                      class="text"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="shipping icon"
+                      />
+                       Biospecimen Manifest
+                    </small>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <small
+                      class="text"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="hospital icon"
+                      />
+                       Clinical/Phenotypic Data
+                    </small>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <small
+                      class="text"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="dna icon"
+                      />
+                       Sequencing Manifest
+                    </small>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <small
+                      class="text"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="question icon"
+                      />
+                       Other
+                    </small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
+            >
+              <span
+                class="smallLabel"
+              >
+                Sort by:
+              </span>
+              <div
+                aria-expanded="false"
+                class="ui selection dropdown"
+                role="listbox"
+                tabindex="0"
+              >
+                <div
+                  aria-live="polite"
+                  class="default text"
+                  role="alert"
+                >
+                  Date option
+                </div>
+                <i
+                  aria-hidden="true"
+                  class="dropdown icon"
+                />
+                <div
+                  class="menu transition"
+                >
+                  <div
+                    aria-checked="false"
+                    aria-selected="true"
+                    class="selected item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <span
+                      class="text"
+                    >
+                      Create date
+                    </span>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <span
+                      class="text"
+                    >
+                      Modified date
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <button
+                class="ui basic icon button"
+                data-testid="sort-direction-button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="sort content ascending icon"
+                />
+              </button>
+            </div>
+            <div
+              class="ui fluid icon input"
+            >
+              <input
+                type="text"
+                value=""
+              />
+              <i
+                aria-hidden="true"
+                class="search icon"
+              />
+            </div>
+          </div>
+          <table
+            class="ui celled selectable stackable very compact table"
+          >
+            <thead
+              class=""
+            >
+              <tr
+                class=""
+              >
+                <th
+                  class="center aligned"
+                >
+                  Type
+                </th>
+                <th
+                  class="px-20"
+                >
+                  Document Details
+                </th>
+                <th
+                  class="center aligned"
+                >
+                  Tags
+                </th>
+                <th
+                  class="center aligned"
+                >
+                  Actions
+                </th>
+              </tr>
+            </thead>
+            <tbody
+              class=""
+            >
+              <tr
+                class="cursor-pointer"
+                data-testid="file-item"
+                style="background-color: inherit;"
+              >
+                <td
+                  class="center aligned"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="hospital big icon"
+                  />
+                </td>
+                <td
+                  class="px-20"
+                >
+                  <span
+                    class="ui medium header"
+                  >
+                    <a
+                      href="/study/SD_8WX8QQ06/documents/SF_5ZPEM167"
+                    >
+                      organization.jpeg
+                    </a>
+                  </span>
+                  <small
+                    class="text-grey ml-10"
+                  >
+                    Modified
+                     
+                    <time
+                      datetime="2018-09-27T05:32:26.000Z"
+                      title="27 Sept 2018"
+                    >
+                      7 months ago
+                    </time>
+                  </small>
+                  <p
+                    class="noMargin"
+                  >
+                    Month necessary animal end standard case. View system operation message decade. Actually sing becaus...
+                  </p>
+                </td>
+                <td
+                  class="center aligned four wide"
+                >
+                  <div
+                    class="ui labels"
+                  >
+                    <button
+                      class="ui mini basic compact icon button square-26"
+                      data-testid="tag-file"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="add icon"
+                      />
+                    </button>
+                  </div>
+                </td>
+                <td
+                  class="center aligned"
+                >
+                  <div
+                    class="ui small buttons"
+                  >
+                    <button
+                      class="ui basic compact icon button"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="copy icon"
+                      />
+                    </button>
+                    <button
+                      class="ui basic compact icon button"
+                      data-testid="download-file"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="download icon"
+                      />
+                    </button>
+                    <button
+                      class="ui basic compact icon button"
+                      data-testid="delete-button"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="trash alternate icon"
+                      />
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                class="cursor-pointer"
+                data-testid="file-item"
+                style="background-color: inherit;"
+              >
+                <td
+                  class="center aligned"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="shipping big icon"
+                  />
+                </td>
+                <td
+                  class="px-20"
+                >
+                  <span
+                    class="ui medium header"
+                  >
+                    <a
+                      href="/study/SD_8WX8QQ06/documents/SF_Y07IN1HO"
+                    >
+                      its.mp3
+                    </a>
+                  </span>
+                  <small
+                    class="text-grey ml-10"
+                  >
+                    Modified
+                     
+                    <time
+                      datetime="2019-04-06T07:51:17.000Z"
+                      title="6 Apr 2019"
+                    >
+                      2 weeks ago
+                    </time>
+                  </small>
+                  <p
+                    class="noMargin"
+                  >
+                    Question meeting move recognize.
+                  </p>
+                </td>
+                <td
+                  class="center aligned four wide"
+                >
+                  <div
+                    class="ui labels"
+                  >
+                    <button
+                      class="ui mini basic compact icon button square-26"
+                      data-testid="tag-file"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="add icon"
+                      />
+                    </button>
+                  </div>
+                </td>
+                <td
+                  class="center aligned"
+                >
+                  <div
+                    class="ui small buttons"
+                  >
+                    <button
+                      class="ui basic compact icon button"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="copy icon"
+                      />
+                    </button>
+                    <button
+                      class="ui basic compact icon button"
+                      data-testid="download-file"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="download icon"
+                      />
+                    </button>
+                    <button
+                      class="ui basic compact icon button"
+                      data-testid="delete-button"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="trash alternate icon"
+                      />
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div
+        class="centered row"
+      >
+        <form>
+          <div
+            class="ui placeholder piled segment"
+          >
+            <div
+              class="ui icon header"
+            >
+              <i
+                aria-hidden="true"
+                class="file outline icon"
+              />
+              Drag and drop a file to create a document or update an existing one
+              <br />
+              <small>
+                or
+              </small>
+            </div>
+            <br />
+            <label
+              class="ui icon primary left labeled button"
+              for="file"
+              role="button"
+            >
+              <i
+                aria-hidden="true"
+                class="file outline icon"
+              />
+              Choose a file
+            </label>
+            <input
+              hidden=""
+              id="file"
+              multiple=""
+              type="file"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ui segment footer"
+  >
+    <div
+      class="ui container text-10"
+    >
+      <div
+        class="ui horizontal list"
+        role="list"
+      >
+        <div
+          class="item"
+          role="listitem"
+        >
+          <div
+            class="ui basic horizontal label text-10"
+          />
+        </div>
+        <div
+          class="item"
+          role="listitem"
+        >
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
+        </div>
       </div>
     </div>
   </div>
