@@ -60,7 +60,7 @@ const FileList = ({fileList, studyId, isAdmin, updateFile, updateError}) => {
                   <Table.Header>
                     <Table.Row>
                       <Table.HeaderCell textAlign="center">
-                        Approval
+                        Type
                       </Table.HeaderCell>
                       <Table.HeaderCell className="px-20">
                         Document Details
