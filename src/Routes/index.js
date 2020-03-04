@@ -30,6 +30,7 @@ import {
   ResearchStudyInfoView,
 } from '../research/views';
 import {
+  BucketsView,
   CavaticaProjectsView,
   ConfigurationView,
   EventsView,
@@ -122,6 +123,7 @@ const Routes = () => (
           component={ReleasesView}
         />
         <AdminRoute exact path="/tokens" component={TokensListView} />
+        <AdminRoute exact path="/buckets" component={BucketsView} />
         <AdminRoute
           exact
           path="/cavatica-projects"
