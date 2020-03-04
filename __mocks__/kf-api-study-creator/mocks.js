@@ -709,4 +709,28 @@ export const mocks = [
     },
     error: new Error('Failed to create the file'),
   },
+  {
+    request: {
+      query: UPDATE_FILE,
+      variables: {
+        kfId: 'SF_5ZPEM167',
+        fileType: 'CLN',
+        tags: ['email'],
+      },
+    },
+    result: updateFile,
+  },
+  {
+    request: {
+      query: UPDATE_FILE,
+      variables: {
+        kfId: 'SF_5ZPEM167',
+        fileType: 'CLN',
+        tags: [],
+      },
+    },
+    result: {
+      errors: [new GraphQLError('Failed to update the file tags')],
+    },
+  },
 ];
