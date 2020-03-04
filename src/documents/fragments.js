@@ -8,6 +8,7 @@ export const FILE_FIELDS = gql`
     description
     fileType
     downloadUrl
+    tags
   }
 `;
 
