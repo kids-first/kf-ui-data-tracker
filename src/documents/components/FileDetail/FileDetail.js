@@ -24,7 +24,9 @@ import {
   Header,
   Popup,
   Divider,
+  Message,
 } from 'semantic-ui-react';
+import FileTags from './FileTags';
 
 const ActionButtons = ({
   downloadFile,
@@ -99,7 +101,14 @@ const ActionButtons = ({
 /**
  * Form to display file details and file versions
  */
-const FileDetail = ({fileNode, history, match, isAdmin}) => {
+const FileDetail = ({
+  fileNode,
+  history,
+  match,
+  isAdmin,
+  updateFile,
+  updateError,
+}) => {
   const studyId = match.params.kfId;
   const [downloadFileMutation] = useMutation(FILE_DOWNLOAD_URL);
   const [deleteFile] = useMutation(DELETE_FILE, {
@@ -174,6 +183,20 @@ const FileDetail = ({fileNode, history, match, isAdmin}) => {
                   Description
                 </Header>
                 <p>{fileNode.description || 'No description added...'}</p>
+              </Segment>
+              <Segment className="noBorders">
+                <Header as="h4" color="grey">
+                  Tags
+                </Header>
+                <FileTags fileNode={fileNode} updateFile={updateFile} />
+                {updateError && (
+                  <Message
+                    negative
+                    icon="warning circle"
+                    header="Error"
+                    content={updateError.message}
+                  />
+                )}
               </Segment>
             </Segment.Group>
           </Grid.Column>

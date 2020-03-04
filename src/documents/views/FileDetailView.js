@@ -1,8 +1,9 @@
 import React from 'react';
 import {Helmet} from 'react-helmet';
-import {useQuery} from '@apollo/react-hooks';
+import {useQuery, useMutation} from '@apollo/react-hooks';
 import {MY_PROFILE} from '../../state/queries';
 import {GET_FILE_BY_ID} from '../queries';
+import {UPDATE_FILE} from '../mutations';
 import {Container, Segment, Dimmer, Loader, Message} from 'semantic-ui-react';
 import FileDetail from '../components/FileDetail/FileDetail';
 import NotFoundView from '../../views/NotFoundView';
@@ -13,7 +14,11 @@ const FileDetailView = ({match}) => {
   });
   const fileByKfId = data && data.fileByKfId;
   const user = useQuery(MY_PROFILE);
-
+  const [updateFile, {error: updateError}] = useMutation(UPDATE_FILE, {
+    refetchQueries: [
+      {query: GET_FILE_BY_ID, variables: {kfId: match.params.fileId}},
+    ],
+  });
   const isAdmin =
     !user.loading && user.data.myProfile
       ? user.data.myProfile.roles.includes('ADMIN')
@@ -61,7 +66,12 @@ const FileDetailView = ({match}) => {
           }`}
         </title>
       </Helmet>
-      <FileDetail fileNode={fileByKfId} isAdmin={isAdmin} />
+      <FileDetail
+        fileNode={fileByKfId}
+        isAdmin={isAdmin}
+        updateFile={updateFile}
+        updateError={updateError}
+      />
     </Container>
   );
 };
