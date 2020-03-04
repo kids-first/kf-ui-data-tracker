@@ -21,7 +21,7 @@ it('renders ListFilterBar with files', async () => {
 
   // Click on Approval status dropwdown
   act(() => {
-    fireEvent.click(tree.getByText(/Approval status/));
+    fireEvent.click(tree.getByText(/Tag/));
   });
   await wait();
   expect(tree.container).toMatchSnapshot();

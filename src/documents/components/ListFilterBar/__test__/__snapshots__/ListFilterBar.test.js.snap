@@ -14,17 +14,18 @@ exports[`renders ListFilterBar with files 1`] = `
         Filter by:
       </span>
       <div
+        aria-disabled="true"
         aria-expanded="false"
-        class="ui selection dropdown"
+        class="ui disabled selection dropdown"
         role="listbox"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
           aria-live="polite"
           class="default text"
           role="alert"
         >
-          Approval status
+          Tag
         </div>
         <i
           aria-hidden="true"
@@ -32,73 +33,7 @@ exports[`renders ListFilterBar with files 1`] = `
         />
         <div
           class="menu transition"
-        >
-          <div
-            aria-checked="false"
-            aria-selected="true"
-            class="selected item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <div
-              class="ui orange tiny basic label text"
-            >
-              Pending review
-            </div>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <div
-              class="ui teal tiny basic label text"
-            >
-              Approved
-            </div>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <div
-              class="ui red tiny basic label text"
-            >
-              Changes needed
-            </div>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <div
-              class="ui blue tiny basic label text"
-            >
-              Processed
-            </div>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <div
-              class="ui blue tiny basic label text"
-            >
-              Updated
-            </div>
-          </div>
-        </div>
+        />
       </div>
       <div
         aria-expanded="false"
@@ -287,91 +222,26 @@ exports[`renders ListFilterBar with files 2`] = `
         Filter by:
       </span>
       <div
-        aria-expanded="true"
-        class="ui active visible selection dropdown"
+        aria-disabled="true"
+        aria-expanded="false"
+        class="ui disabled selection dropdown"
         role="listbox"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
           aria-live="polite"
           class="default text"
           role="alert"
         >
-          Pending review
+          Tag
         </div>
         <i
           aria-hidden="true"
           class="dropdown icon"
         />
         <div
-          class="visible menu transition"
-        >
-          <div
-            aria-checked="false"
-            aria-selected="true"
-            class="selected item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <div
-              class="ui orange tiny basic label text"
-            >
-              Pending review
-            </div>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <div
-              class="ui teal tiny basic label text"
-            >
-              Approved
-            </div>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <div
-              class="ui red tiny basic label text"
-            >
-              Changes needed
-            </div>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <div
-              class="ui blue tiny basic label text"
-            >
-              Processed
-            </div>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <div
-              class="ui blue tiny basic label text"
-            >
-              Updated
-            </div>
-          </div>
-        </div>
+          class="menu transition"
+        />
       </div>
       <div
         aria-expanded="false"
@@ -560,17 +430,18 @@ exports[`renders ListFilterBar with files 3`] = `
         Filter by:
       </span>
       <div
+        aria-disabled="true"
         aria-expanded="false"
-        class="ui selection dropdown"
+        class="ui disabled selection dropdown"
         role="listbox"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
           aria-live="polite"
           class="default text"
           role="alert"
         >
-          Approval status
+          Tag
         </div>
         <i
           aria-hidden="true"
@@ -578,73 +449,7 @@ exports[`renders ListFilterBar with files 3`] = `
         />
         <div
           class="menu transition"
-        >
-          <div
-            aria-checked="false"
-            aria-selected="true"
-            class="selected item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <div
-              class="ui orange tiny basic label text"
-            >
-              Pending review
-            </div>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <div
-              class="ui teal tiny basic label text"
-            >
-              Approved
-            </div>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <div
-              class="ui red tiny basic label text"
-            >
-              Changes needed
-            </div>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <div
-              class="ui blue tiny basic label text"
-            >
-              Processed
-            </div>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <div
-              class="ui blue tiny basic label text"
-            >
-              Updated
-            </div>
-          </div>
-        </div>
+        />
       </div>
       <div
         aria-expanded="true"
@@ -833,17 +638,18 @@ exports[`renders ListFilterBar with files 4`] = `
         Filter by:
       </span>
       <div
+        aria-disabled="true"
         aria-expanded="false"
-        class="ui selection dropdown"
+        class="ui disabled selection dropdown"
         role="listbox"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
           aria-live="polite"
           class="default text"
           role="alert"
         >
-          Approval status
+          Tag
         </div>
         <i
           aria-hidden="true"
@@ -851,73 +657,7 @@ exports[`renders ListFilterBar with files 4`] = `
         />
         <div
           class="menu transition"
-        >
-          <div
-            aria-checked="false"
-            aria-selected="true"
-            class="selected item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <div
-              class="ui orange tiny basic label text"
-            >
-              Pending review
-            </div>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <div
-              class="ui teal tiny basic label text"
-            >
-              Approved
-            </div>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <div
-              class="ui red tiny basic label text"
-            >
-              Changes needed
-            </div>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <div
-              class="ui blue tiny basic label text"
-            >
-              Processed
-            </div>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <div
-              class="ui blue tiny basic label text"
-            >
-              Updated
-            </div>
-          </div>
-        </div>
+        />
       </div>
       <div
         aria-expanded="false"
@@ -1106,17 +846,18 @@ exports[`renders ListFilterBar with files 5`] = `
         Filter by:
       </span>
       <div
+        aria-disabled="true"
         aria-expanded="false"
-        class="ui selection dropdown"
+        class="ui disabled selection dropdown"
         role="listbox"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
           aria-live="polite"
           class="default text"
           role="alert"
         >
-          Approval status
+          Tag
         </div>
         <i
           aria-hidden="true"
@@ -1124,73 +865,7 @@ exports[`renders ListFilterBar with files 5`] = `
         />
         <div
           class="menu transition"
-        >
-          <div
-            aria-checked="false"
-            aria-selected="true"
-            class="selected item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <div
-              class="ui orange tiny basic label text"
-            >
-              Pending review
-            </div>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <div
-              class="ui teal tiny basic label text"
-            >
-              Approved
-            </div>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <div
-              class="ui red tiny basic label text"
-            >
-              Changes needed
-            </div>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <div
-              class="ui blue tiny basic label text"
-            >
-              Processed
-            </div>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <div
-              class="ui blue tiny basic label text"
-            >
-              Updated
-            </div>
-          </div>
-        </div>
+        />
       </div>
       <div
         aria-expanded="false"
@@ -1379,17 +1054,18 @@ exports[`renders ListFilterBar with no files 1`] = `
         Filter by:
       </span>
       <div
+        aria-disabled="true"
         aria-expanded="false"
-        class="ui selection dropdown"
+        class="ui disabled selection dropdown"
         role="listbox"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
           aria-live="polite"
           class="default text"
           role="alert"
         >
-          Approval status
+          Tag
         </div>
         <i
           aria-hidden="true"
@@ -1397,73 +1073,7 @@ exports[`renders ListFilterBar with no files 1`] = `
         />
         <div
           class="menu transition"
-        >
-          <div
-            aria-checked="false"
-            aria-selected="true"
-            class="selected item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <div
-              class="ui orange tiny basic label text"
-            >
-              Pending review
-            </div>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <div
-              class="ui teal tiny basic label text"
-            >
-              Approved
-            </div>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <div
-              class="ui red tiny basic label text"
-            >
-              Changes needed
-            </div>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <div
-              class="ui blue tiny basic label text"
-            >
-              Processed
-            </div>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <div
-              class="ui blue tiny basic label text"
-            >
-              Updated
-            </div>
-          </div>
-        </div>
+        />
       </div>
       <div
         aria-expanded="false"
