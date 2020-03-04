@@ -22,7 +22,7 @@ const LoginView = ({location, history}) => {
               <Header as="h2" className="mt-6 mb-15">
                 Kids First Data Tracker
               </Header>
-              Redirecing you to the login page...
+              Redirecting you to the login page...
             </Loader>
           </Dimmer>
         </Segment>
