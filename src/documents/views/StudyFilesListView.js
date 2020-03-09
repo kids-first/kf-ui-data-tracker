@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import {Helmet} from 'react-helmet';
-import {useQuery} from '@apollo/react-hooks';
+import {useQuery, useMutation} from '@apollo/react-hooks';
 import {GET_STUDY_BY_ID, MY_PROFILE} from '../../state/queries';
+import {UPDATE_FILE} from '../mutations';
 import {UploadContainer} from '../containers';
 import FileList from '../components/FileList/FileList';
 import {
@@ -50,6 +51,7 @@ const StudyFilesListView = ({
   },
   history,
 }) => {
+  const [updateFileError, setUpdateFileError] = useState(null);
   const {loading, data, error} = useQuery(GET_STUDY_BY_ID, {
     variables: {
       kfId: kfId,
@@ -57,7 +59,12 @@ const StudyFilesListView = ({
   });
   const studyByKfId = data && data.studyByKfId;
   const user = useQuery(MY_PROFILE);
-
+  const [updateFile] = useMutation(UPDATE_FILE, {
+    refetchQueries: [{query: GET_STUDY_BY_ID, variables: {kfId: kfId}}],
+    onError: error => {
+      setUpdateFileError(error);
+    },
+  });
   const isAdmin =
     !user.loading && user.data.myProfile
       ? user.data.myProfile.roles.includes('ADMIN')
@@ -135,7 +142,13 @@ const StudyFilesListView = ({
           {loading ? (
             <StudyListSkeleton />
           ) : (
-            <FileList fileList={files} studyId={kfId} isAdmin={isAdmin} />
+            <FileList
+              fileList={files}
+              studyId={kfId}
+              isAdmin={isAdmin}
+              updateFile={updateFile}
+              updateError={updateFileError}
+            />
           )}
           {dialog && (
             <UploadWizard

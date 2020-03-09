@@ -15,6 +15,7 @@ import {
 } from '../../src/state/mutations';
 import {GET_FILE_BY_ID} from '../../src/documents/queries';
 import {
+  CREATE_FILE,
   DELETE_FILE,
   UPDATE_FILE,
   UPDATE_VERSION,
@@ -34,6 +35,7 @@ import deleteFile from './responses/deleteFile.json';
 import fileByKfId from './responses/fileByKfId.json';
 import fileByKfId_empty from './responses/fileByKfId_empty.json';
 import myProfile from './responses/myProfile.json';
+import createFile from './responses/createFile.json';
 import updateFile from './responses/updateFile.json';
 import updateVersion from './responses/updateVersion.json';
 import createVersion from './responses/createVersion.json';
@@ -54,6 +56,7 @@ import status from './responses/status.json';
 import allEvents_studyCreation from './responses/allEvents_studyCreation.json';
 import allEvents_studyCreation_err from './responses/allEvents_studyCreation_err.json';
 import allEvents_studyCreation_ing from './responses/allEvents_studyCreation_ing.json';
+import {GraphQLError} from 'graphql';
 
 export const mocks = [
   {
@@ -667,5 +670,67 @@ export const mocks = [
       query: ALL_USERS,
     },
     error: new Error('Failed to fetch users information'),
+  },
+  {
+    request: {
+      query: CREATE_FILE,
+      variables: {
+        file: {
+          lastModified: 1567797130510,
+          name: 'organize.tsv',
+          size: 7,
+          type: 'text/tab-separated-values',
+          webkitRelativePath: '',
+        },
+        studyId: 'SD_8WX8QQ06',
+        name: 'name',
+        fileType: 'SHM',
+        description: 'description',
+      },
+    },
+    result: createFile,
+  },
+  {
+    request: {
+      query: CREATE_FILE,
+      variables: {
+        file: {
+          lastModified: 1567797130510,
+          name: 'organize.tsv',
+          size: 7,
+          type: 'text/tab-separated-values',
+          webkitRelativePath: '',
+        },
+        studyId: 'SD_8WX8QQ06',
+        name: 'name',
+        fileType: 'SHM',
+        description: 'description',
+      },
+    },
+    error: new Error('Failed to create the file'),
+  },
+  {
+    request: {
+      query: UPDATE_FILE,
+      variables: {
+        kfId: 'SF_5ZPEM167',
+        fileType: 'CLN',
+        tags: ['email'],
+      },
+    },
+    result: updateFile,
+  },
+  {
+    request: {
+      query: UPDATE_FILE,
+      variables: {
+        kfId: 'SF_5ZPEM167',
+        fileType: 'CLN',
+        tags: [],
+      },
+    },
+    result: {
+      errors: [new GraphQLError('Failed to update the file tags')],
+    },
   },
 ];

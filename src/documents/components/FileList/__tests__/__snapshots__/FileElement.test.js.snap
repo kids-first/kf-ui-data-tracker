@@ -12,15 +12,10 @@ exports[`renders correctly 1`] = `
         <td
           class="center aligned"
         >
-          <div
-            class="ui header"
-          >
-            <div
-              class="ui orange tiny basic label"
-            >
-              Pending review
-            </div>
-          </div>
+          <i
+            aria-hidden="true"
+            class="hospital big icon"
+          />
         </td>
         <td
           class="px-20"
@@ -34,69 +29,39 @@ exports[`renders correctly 1`] = `
               organization.jpeg
             </a>
           </span>
+          <small
+            class="text-grey ml-10"
+          >
+            Modified
+             
+            <time
+              datetime="2018-09-27T05:32:26.000Z"
+              title="27 Sept 2018"
+            >
+              7 months ago
+            </time>
+          </small>
           <p
             class="noMargin"
           >
             Month necessary animal end standard case. View system operation message decade. Actually sing becaus...
           </p>
+        </td>
+        <td
+          class="center aligned four wide"
+        >
           <div
-            class="ui horizontal link list"
-            role="list"
+            class="ui labels"
           >
-            <div
-              class="item"
-              role="listitem"
+            <button
+              class="ui mini basic compact icon button square-26"
+              data-testid="tag-file"
             >
-              <div
-                class="middle aligned content"
-              >
-                <i
-                  aria-hidden="true"
-                  class="grey hospital small icon"
-                />
-                Clinical/Phenotypic Data
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="content"
-              >
-                Modified
-                 
-                <time
-                  datetime="2018-09-27T05:32:26.000Z"
-                  title="27 Sept 2018"
-                >
-                  7 months ago
-                </time>
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="content"
-              >
-                3
-                 version
-                s
-                 
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="content"
-              >
-                5.5 kB
-              </div>
-            </div>
+              <i
+                aria-hidden="true"
+                class="add icon"
+              />
+            </button>
           </div>
         </td>
         <td
@@ -142,15 +107,10 @@ exports[`renders latest temporary state 1`] = `
         <td
           class="center aligned"
         >
-          <div
-            class="ui header"
-          >
-            <div
-              class="ui orange tiny basic label"
-            >
-              Pending review
-            </div>
-          </div>
+          <i
+            aria-hidden="true"
+            class="hospital big icon"
+          />
         </td>
         <td
           class="px-20"
@@ -164,69 +124,39 @@ exports[`renders latest temporary state 1`] = `
               organization.jpeg
             </a>
           </span>
+          <small
+            class="text-grey ml-10"
+          >
+            Modified
+             
+            <time
+              datetime="2018-09-27T05:32:27.000Z"
+              title="27 Sept 2018"
+            >
+              7 months ago
+            </time>
+          </small>
           <p
             class="noMargin"
           >
             Month necessary animal end standard case. View system operation message decade. Actually sing becaus...
           </p>
+        </td>
+        <td
+          class="center aligned four wide"
+        >
           <div
-            class="ui horizontal link list"
-            role="list"
+            class="ui labels"
           >
-            <div
-              class="item"
-              role="listitem"
+            <button
+              class="ui mini basic compact icon button square-26"
+              data-testid="tag-file"
             >
-              <div
-                class="middle aligned content"
-              >
-                <i
-                  aria-hidden="true"
-                  class="grey hospital small icon"
-                />
-                Clinical/Phenotypic Data
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="content"
-              >
-                Modified
-                 
-                <time
-                  datetime="2018-09-27T05:32:27.000Z"
-                  title="27 Sept 2018"
-                >
-                  7 months ago
-                </time>
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="content"
-              >
-                3
-                 version
-                s
-                 
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="content"
-              >
-                5.5 kB
-              </div>
-            </div>
+              <i
+                aria-hidden="true"
+                class="add icon"
+              />
+            </button>
           </div>
         </td>
         <td
@@ -272,15 +202,10 @@ exports[`renders loading state 1`] = `
         <td
           class="center aligned"
         >
-          <div
-            class="ui header"
-          >
-            <div
-              class="ui orange tiny basic label"
-            >
-              Pending review
-            </div>
-          </div>
+          <i
+            aria-hidden="true"
+            class="hospital big icon"
+          />
         </td>
         <td
           class="px-20"
@@ -294,69 +219,39 @@ exports[`renders loading state 1`] = `
               organization.jpeg
             </a>
           </span>
+          <small
+            class="text-grey ml-10"
+          >
+            Modified
+             
+            <time
+              datetime="2018-09-27T05:32:26.000Z"
+              title="27 Sept 2018"
+            >
+              7 months ago
+            </time>
+          </small>
           <p
             class="noMargin"
           >
             Month necessary animal end standard case. View system operation message decade. Actually sing becaus...
           </p>
+        </td>
+        <td
+          class="center aligned four wide"
+        >
           <div
-            class="ui horizontal link list"
-            role="list"
+            class="ui labels"
           >
-            <div
-              class="item"
-              role="listitem"
+            <button
+              class="ui mini basic compact icon button square-26"
+              data-testid="tag-file"
             >
-              <div
-                class="middle aligned content"
-              >
-                <i
-                  aria-hidden="true"
-                  class="grey hospital small icon"
-                />
-                Clinical/Phenotypic Data
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="content"
-              >
-                Modified
-                 
-                <time
-                  datetime="2018-09-27T05:32:26.000Z"
-                  title="27 Sept 2018"
-                >
-                  7 months ago
-                </time>
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="content"
-              >
-                3
-                 version
-                s
-                 
-              </div>
-            </div>
-            <div
-              class="item"
-              role="listitem"
-            >
-              <div
-                class="content"
-              >
-                5.5 kB
-              </div>
-            </div>
+              <i
+                aria-hidden="true"
+                class="add icon"
+              />
+            </button>
           </div>
         </td>
         <td

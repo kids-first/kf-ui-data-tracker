@@ -9,6 +9,7 @@ export const CREATE_FILE = gql`
     $name: String!
     $fileType: FileFileType!
     $description: String!
+    $tags: [String]
   ) {
     createFile(
       file: $file
@@ -16,6 +17,7 @@ export const CREATE_FILE = gql`
       name: $name
       fileType: $fileType
       description: $description
+      tags: $tags
     ) {
       success
       file {
@@ -33,12 +35,14 @@ export const UPDATE_FILE = gql`
     $name: String
     $description: String
     $fileType: FileFileType!
+    $tags: [String]
   ) {
     updateFile(
       kfId: $kfId
       name: $name
       description: $description
       fileType: $fileType
+      tags: $tags
     ) {
       file {
         ...FileFields

@@ -15,7 +15,7 @@ import {
 /**
  * Displays list of study files
  */
-const FileList = ({fileList, studyId, isAdmin}) => {
+const FileList = ({fileList, studyId, isAdmin, updateFile, updateError}) => {
   const perPage = 10;
   const [page, setPage] = useState(1);
   const [pageCount, setPageCount] = useState(1);
@@ -35,6 +35,14 @@ const FileList = ({fileList, studyId, isAdmin}) => {
           content="The DRC has requested that you make changes to some of your documents."
         />
       )}
+      {updateError && (
+        <Message
+          negative
+          icon="warning circle"
+          header="Error"
+          content={updateError.message}
+        />
+      )}
       {fileList.length ? (
         <>
           <ListFilterBar
@@ -52,10 +60,13 @@ const FileList = ({fileList, studyId, isAdmin}) => {
                   <Table.Header>
                     <Table.Row>
                       <Table.HeaderCell textAlign="center">
-                        Approval
+                        Type
                       </Table.HeaderCell>
                       <Table.HeaderCell className="px-20">
                         Document Details
+                      </Table.HeaderCell>
+                      <Table.HeaderCell textAlign="center">
+                        Tags
                       </Table.HeaderCell>
                       <Table.HeaderCell textAlign="center">
                         Actions
@@ -69,6 +80,7 @@ const FileList = ({fileList, studyId, isAdmin}) => {
                         fileListId={studyId}
                         fileNode={node}
                         isAdmin={isAdmin}
+                        updateFile={updateFile}
                       />
                     ))}
                   </Table.Body>

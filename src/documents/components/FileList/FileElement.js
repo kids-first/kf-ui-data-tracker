@@ -2,18 +2,12 @@ import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import {withRouter, Link} from 'react-router-dom';
 import TimeAgo from 'react-timeago';
-import Badge from '../../../components/Badge/Badge';
-import {Header, Table, Icon, List, Responsive} from 'semantic-ui-react';
-
+import {Header, Table, Icon, Responsive} from 'semantic-ui-react';
 import FileActionsContainer from '../../containers/FileActionsContainer';
-import {
-  fileSortedVersions,
-  fileLatestDate,
-  fileLatestSize,
-  lengthLimit,
-} from '../../utilities';
+import {fileSortedVersions, fileLatestDate, lengthLimit} from '../../utilities';
 import {fileTypeDetail} from '../../../common/enums';
 import {longDate} from '../../../common/dateUtils';
+import FileTags from '../FileDetail/FileTags';
 
 const useRecentlyUpdated = (latestDate, fileId) => {
   const [justUpdated, setJustUpdated] = useState(false);
@@ -42,33 +36,46 @@ const useRecentlyUpdated = (latestDate, fileId) => {
 };
 
 /**
- * Displays a list of file attributes
+ * Displays unordered study files in list view
  */
-const FileAttributes = ({
-  latestDate,
-  fileSize,
-  fileType,
-  horizontal,
-  fileVersions,
-  fileKfID,
+const FileElement = ({
+  fileNode,
+  loading,
+  history,
+  match,
+  fileListId,
+  isAdmin,
+  updateFile,
 }) => {
+  const fileKfID = fileNode.kfId || 'unknown ID';
+  const fileName = fileNode.name || 'unknown file name';
+  const fileDescription = fileNode.description || null;
+  const sortedVersions = fileSortedVersions(fileNode);
+  const latestDate = fileLatestDate(sortedVersions);
+  const fileType =
+    fileNode && fileTypeDetail[fileNode.fileType]
+      ? fileTypeDetail[fileNode.fileType]
+      : {title: 'unknown', icon: 'question'};
   const justUpdated = useRecentlyUpdated(latestDate, fileKfID);
-
   return (
-    <List horizontal={horizontal} link={!justUpdated}>
-      <List.Item>
-        <List.Content verticalAlign="middle">
-          <Icon
-            name={`${fileType.icon || 'question'}`}
-            size="small"
-            color="grey"
-          />
-          {fileType.title}
-        </List.Content>
-      </List.Item>
-
-      <List.Item>
-        <List.Content>
+    <Table.Row
+      style={{backgroundColor: justUpdated ? '#f8ffff' : 'inherit'}}
+      data-testid="file-item"
+      className="cursor-pointer"
+      onClick={() =>
+        history.push(`/study/${match.params.kfId}/documents/${fileKfID}`)
+      }
+    >
+      <Table.Cell textAlign="center">
+        <Icon name={`${fileType.icon || 'question'}`} size="big" />
+      </Table.Cell>
+      <Table.Cell className="px-20">
+        <Header size="medium" as="span">
+          <Link to={`/study/${match.params.kfId}/documents/${fileKfID}`}>
+            {fileName}
+          </Link>
+        </Header>
+        <small className="text-grey ml-10">
           {justUpdated ? <Icon name="refresh" /> : null}
           {latestDate ? (
             <>
@@ -82,116 +89,13 @@ const FileAttributes = ({
           ) : (
             'Unknown time'
           )}
-        </List.Content>
-      </List.Item>
-      <List.Item>
-        <List.Content>
-          {fileVersions} version{fileVersions > 1 && 's'}{' '}
-        </List.Content>
-      </List.Item>
-      <List.Item>
-        <List.Content>{fileSize}</List.Content>
-      </List.Item>
-    </List>
-  );
-};
-
-FileAttributes.propTypes = {
-  /** The kf id of the file */
-  fileKfID: PropTypes.string.isRequired,
-  /** The date of last modification */
-  latestDate: PropTypes.string.isRequired,
-  /** The size of the file */
-  fileSize: PropTypes.string.isRequired,
-  /** The type of file */
-  fileType: PropTypes.object.isRequired,
-  /** Whether the list should be displayed horizontally */
-  horizontal: PropTypes.bool,
-};
-
-FileAttributes.defaultProps = {
-  horizontal: false,
-};
-
-/**
- * Displays unordered study files in list view
- */
-const FileElement = ({
-  fileNode,
-  loading,
-  history,
-  match,
-  fileListId,
-  isAdmin,
-}) => {
-  const fileKfID = fileNode.kfId || 'unknown ID';
-  const fileName = fileNode.name || 'unknown file name';
-  const fileDescription = fileNode.description || null;
-  const sortedVersions = fileSortedVersions(fileNode);
-  const latestDate = fileLatestDate(sortedVersions);
-  const fileSize = fileLatestSize(sortedVersions);
-  const fileType =
-    fileNode && fileTypeDetail[fileNode.fileType]
-      ? fileTypeDetail[fileNode.fileType]
-      : {title: 'unknown', icon: 'question'};
-  const versionState =
-    sortedVersions.length > 0 ? sortedVersions[0].node.state : null;
-
-  const justUpdated = useRecentlyUpdated(latestDate, fileKfID);
-  return (
-    <Table.Row
-      style={{backgroundColor: justUpdated ? '#f8ffff' : 'inherit'}}
-      data-testid="file-item"
-      className="cursor-pointer"
-      onClick={() =>
-        history.push(`/study/${match.params.kfId}/documents/${fileKfID}`)
-      }
-    >
-      <Table.Cell textAlign="center">
-        <Header>
-          {justUpdated && (
-            <>
-              <Badge state="UPD" icon="refresh" className="mb-5" />
-              <br />
-            </>
-          )}
-
-          <Badge
-            state={versionState}
-            loading={loading}
-            filled={versionState === 'CHN'}
-          />
-        </Header>
-      </Table.Cell>
-      <Table.Cell className="px-20">
-        <Header size="medium" as="span">
-          <Link to={`/study/${match.params.kfId}/documents/${fileKfID}`}>
-            {fileName}
-          </Link>
-        </Header>
+        </small>
         <p className="noMargin">
           {fileDescription ? <>{lengthLimit(fileDescription, 100)}</> : null}
         </p>
-        <Responsive
-          as={FileAttributes}
-          minWidth={Responsive.onlyTablet.minWidth}
-          fileKfID={fileKfID}
-          latestDate={latestDate}
-          fileSize={fileSize}
-          fileType={fileType}
-          fileVersions={fileNode.versions.edges.length}
-          horizontal={true}
-        />
-        <Responsive
-          as={FileAttributes}
-          maxWidth={Responsive.onlyTablet.minWidth}
-          fileKfID={fileKfID}
-          latestDate={latestDate}
-          fileSize={fileSize}
-          fileType={fileType}
-          fileVersions={fileNode.versions.edges.length}
-          horizontal={false}
-        />
+      </Table.Cell>
+      <Table.Cell textAlign="center" width="4">
+        <FileTags fileNode={fileNode} updateFile={updateFile} />
       </Table.Cell>
       <Table.Cell textAlign="center">
         <Responsive

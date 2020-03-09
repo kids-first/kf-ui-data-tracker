@@ -2,7 +2,7 @@ import React from 'react';
 import wait from 'waait';
 import {MemoryRouter} from 'react-router-dom';
 import {MockedProvider} from '@apollo/react-testing';
-import {render, cleanup, fireEvent} from '@testing-library/react';
+import {render, act, cleanup, fireEvent} from '@testing-library/react';
 import FileList from '../FileList';
 import studyByKfId from './studyByKfId';
 
@@ -66,6 +66,75 @@ it('renders with files', async () => {
   expect(tree.container).toMatchSnapshot();
   const lisPage3 = tree.queryAllByTestId('file-item');
   expect(lisPage3.length).toBe(8);
+});
+
+it('renders with files with tag filter', async () => {
+  const files = studyByKfId.data.studyByKfId.files.edges;
+
+  const tree = render(
+    <MemoryRouter>
+      <MockedProvider>
+        <FileList fileList={files} studyId={'SD_00000000'} />
+      </MockedProvider>
+    </MemoryRouter>,
+  );
+  // Sort files by create date by clicking on the file sorting dropdown
+  act(() => {
+    fireEvent.click(tree.getByText(/Date option/i));
+  });
+  act(() => {
+    fireEvent.click(tree.getByText(/Modified date/i));
+  });
+  await wait();
+  expect(tree.container).toMatchSnapshot();
+
+  const lisPage1 = tree.queryAllByTestId('file-item');
+  expect(lisPage1.length).toBe(10);
+
+  act(() => {
+    fireEvent.click(tree.getAllByText(/Tag/i)[0]);
+  });
+  expect(tree.container).toMatchSnapshot();
+  act(() => {
+    fireEvent.click(tree.getAllByText(/tag1/i)[0]);
+  });
+  await wait();
+  expect(tree.container).toMatchSnapshot();
+  const filteredPage = tree.queryAllByTestId('file-item');
+  expect(filteredPage.length).toBe(2);
+});
+
+it('renders with files with more tag toggle', async () => {
+  const files = studyByKfId.data.studyByKfId.files.edges;
+
+  const tree = render(
+    <MemoryRouter>
+      <MockedProvider>
+        <FileList fileList={files} studyId={'SD_00000000'} />
+      </MockedProvider>
+    </MemoryRouter>,
+  );
+  // Sort files by create date by clicking on the file sorting dropdown
+  act(() => {
+    fireEvent.click(tree.getByText(/Date option/i));
+  });
+  act(() => {
+    fireEvent.click(tree.getByText(/Modified date/i));
+  });
+  await wait();
+  expect(tree.container).toMatchSnapshot();
+  expect(tree.queryAllByText('hidden tag').length).toBe(1);
+  act(() => {
+    fireEvent.click(tree.getByText(/1 more/i));
+  });
+  expect(tree.container).toMatchSnapshot();
+  expect(tree.queryAllByText('hidden tag').length).toBe(2);
+  act(() => {
+    fireEvent.click(tree.getByText(/show less/i));
+  });
+  await wait();
+  expect(tree.container).toMatchSnapshot();
+  expect(tree.queryAllByText('hidden tag').length).toBe(1);
 });
 
 it('renders without files', () => {

@@ -8,14 +8,8 @@ import {
   Segment,
   Responsive,
 } from 'semantic-ui-react';
-import Badge from '../../../components/Badge/Badge';
-import {
-  fileLatestStatus,
-  createDateSort,
-  modifiedDateSort,
-  defaultSort,
-} from '../../utilities';
-import {versionState, fileTypeDetail} from '../../../common/enums';
+import {createDateSort, modifiedDateSort, defaultSort} from '../../utilities';
+import {fileTypeDetail, defaultTagOptions} from '../../../common/enums';
 /**
  * Filter Bar for Study Files, returns filtered list in "filteredList" render prop
  */
@@ -23,17 +17,26 @@ const ListFilterBar = ({fileList, filteredList}) => {
   const [sortMethod, setSortMethod] = useState('');
   const [sortDirection, setSortDirection] = useState('ascending');
   const [typeFilterStatus, setTypeFilterStatus] = useState('');
-  const [approvalFilterStatus, setApprovalFilterStatus] = useState('');
+  const [tagFilterStatus, setTagFilterStatus] = useState('');
   const [searchString, setSearchString] = useState('');
   const [showFilter, setShowFilter] = useState(false);
   const [showSort, setShowSort] = useState(false);
 
-  const statusOptions = Object.keys(versionState).map(state => ({
-    key: state,
-    value: state,
-    text: versionState[state].title,
-    content: <Badge state={state} />,
-  }));
+  var defaultTags = {};
+  defaultTagOptions.map(tagObj => (defaultTags[tagObj.key] = tagObj.text));
+  var tagList = [];
+  fileList.map(({node}) => {
+    node.tags.map(tag => {
+      if (!tagList.includes(tag)) {
+        tagList.push(tag);
+      }
+      return true;
+    });
+    return true;
+  });
+  const tagOptions = tagList
+    .sort()
+    .map(t => ({key: t, value: t, text: defaultTags[t] ? defaultTags[t] : t}));
 
   const typeOptions = Object.keys(fileTypeDetail).map(type => ({
     key: type,
@@ -73,7 +76,7 @@ const ListFilterBar = ({fileList, filteredList}) => {
       obj.node.fileType.includes(typeFilterStatus),
     );
     sortedList = sortedList.filter(obj =>
-      fileLatestStatus(obj.node).includes(approvalFilterStatus),
+      obj.node.tags.join(',').includes(tagFilterStatus),
     );
     sortedList = sortedList.filter(
       obj =>
@@ -103,11 +106,12 @@ const ListFilterBar = ({fileList, filteredList}) => {
           data-testid="show-filter-button"
           basic={!showFilter}
           floated="right"
-          primary={typeFilterStatus !== '' || approvalFilterStatus !== ''}
+          primary={typeFilterStatus !== '' || tagFilterStatus !== ''}
           icon="filter"
           onClick={() => setShowFilter(!showFilter)}
         />
         <Input
+          aria-label="file-search-input"
           className="mr-80"
           fluid
           icon="search"
@@ -126,12 +130,13 @@ const ListFilterBar = ({fileList, filteredList}) => {
               fluid
               selection
               clearable
+              disabled={tagOptions.length === 0}
               selectOnBlur={false}
-              value={approvalFilterStatus}
-              options={statusOptions}
-              placeholder="Approval status"
+              value={tagFilterStatus}
+              options={tagOptions}
+              placeholder="Tag"
               onChange={(e, {value}) => {
-                setApprovalFilterStatus(value);
+                setTagFilterStatus(value);
               }}
             />
             <Dropdown
@@ -195,6 +200,7 @@ const ListFilterBar = ({fileList, filteredList}) => {
       >
         <Input
           fluid
+          aria-label="file-search-input"
           icon="search"
           onChange={(e, {value}) => {
             setSearchString(value);
@@ -212,15 +218,16 @@ const ListFilterBar = ({fileList, filteredList}) => {
               labeled
               button
               className="icon noMargin"
-              placeholder="Approval status"
-              icon="filter"
+              placeholder="Tags"
+              icon="tag"
               selection
               clearable
+              disabled={tagOptions.length === 0}
               selectOnBlur={false}
-              value={approvalFilterStatus}
-              options={statusOptions}
+              value={tagFilterStatus}
+              options={tagOptions}
               onChange={(e, {value}) => {
-                setApprovalFilterStatus(value);
+                setTagFilterStatus(value);
               }}
             />
             <Dropdown
@@ -291,12 +298,13 @@ const ListFilterBar = ({fileList, filteredList}) => {
           <Dropdown
             selection
             clearable
+            disabled={tagOptions.length === 0}
             selectOnBlur={false}
-            value={approvalFilterStatus}
-            options={statusOptions}
-            placeholder="Approval status"
+            value={tagFilterStatus}
+            options={tagOptions}
+            placeholder="Tag"
             onChange={(e, {value}) => {
-              setApprovalFilterStatus(value);
+              setTagFilterStatus(value);
             }}
           />
           <Dropdown
@@ -346,6 +354,7 @@ const ListFilterBar = ({fileList, filteredList}) => {
         </Segment>
         <Input
           fluid
+          aria-label="file-search-input"
           icon="search"
           onChange={(e, {value}) => {
             setSearchString(value);

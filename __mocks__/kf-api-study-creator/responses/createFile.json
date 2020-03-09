@@ -1,13 +1,14 @@
 {
   "data": {
-    "updateFile": {
+    "createFile": {
+      "success": true,
       "file": {
         "id": "f1",
         "kfId": "SF_5ZPEM167",
-        "name": "foo bar file",
-        "description": "Some description here",
-        "fileType": "CLN",
-        "tags": ["email", "dbGaP", "tag"],
+        "name": "name",
+        "fileType": "SHM",
+        "description": "description",
+        "tags": [],
         "downloadUrl": "http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167",
         "__typename": "FileNode"
       },

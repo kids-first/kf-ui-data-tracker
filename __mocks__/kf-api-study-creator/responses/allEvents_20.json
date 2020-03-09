@@ -25,6 +25,7 @@
               "kfId": "SF_HEDAH39D",
               "name": "erw",
               "description": "afdsffsd",
+              "tags": [],
               "fileType": "CLN",
               "downloadUrl": "http://localhost:5002/download/study/SD_3FKA99P2/file/SF_HEDAH39D",
               "__typename": "FileNode"
@@ -66,6 +67,7 @@
               "kfId": "SF_HEDAH39D",
               "name": "erw",
               "description": "afdsffsd",
+              "tags": [],
               "fileType": "CLN",
               "downloadUrl": "http://localhost:5002/download/study/SD_3FKA99P2/file/SF_HEDAH39D",
               "__typename": "FileNode"
@@ -98,6 +100,7 @@
               "kfId": "SF_E2S5RPXZ",
               "name": "sfd",
               "description": "sfsd",
+              "tags": [],
               "fileType": "SEQ",
               "downloadUrl": "http://localhost:5002/download/study/SD_3FKA99P2/file/SF_E2S5RPXZ",
               "__typename": "FileNode"
@@ -139,6 +142,7 @@
               "kfId": "SF_E2S5RPXZ",
               "name": "sfd",
               "description": "sfsd",
+              "tags": [],
               "fileType": "SEQ",
               "downloadUrl": "http://localhost:5002/download/study/SD_3FKA99P2/file/SF_E2S5RPXZ",
               "__typename": "FileNode"
@@ -171,6 +175,7 @@
               "kfId": "SF_A7BTSGJK",
               "name": "dsf",
               "description": "fsd",
+              "tags": [],
               "fileType": "CLN",
               "downloadUrl": "http://localhost:5002/download/study/SD_3FKA99P2/file/SF_A7BTSGJK",
               "__typename": "FileNode"
@@ -212,6 +217,7 @@
               "kfId": "SF_A7BTSGJK",
               "name": "dsf",
               "description": "fsd",
+              "tags": [],
               "fileType": "CLN",
               "downloadUrl": "http://localhost:5002/download/study/SD_3FKA99P2/file/SF_A7BTSGJK",
               "__typename": "FileNode"

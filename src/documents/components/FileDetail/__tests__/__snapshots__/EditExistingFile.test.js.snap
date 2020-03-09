@@ -292,6 +292,7 @@ exports[`edits an existing file correctly 1`] = `
                 Filter by:
               </span>
               <div
+                aria-disabled="false"
                 aria-expanded="false"
                 class="ui selection dropdown"
                 role="listbox"
@@ -302,7 +303,7 @@ exports[`edits an existing file correctly 1`] = `
                   class="default text"
                   role="alert"
                 >
-                  Approval status
+                  Tag
                 </div>
                 <i
                   aria-hidden="true"
@@ -318,11 +319,11 @@ exports[`edits an existing file correctly 1`] = `
                     role="option"
                     style="pointer-events: all;"
                   >
-                    <div
-                      class="ui orange tiny basic label text"
+                    <span
+                      class="text"
                     >
-                      Pending review
-                    </div>
+                      dbGaP
+                    </span>
                   </div>
                   <div
                     aria-checked="false"
@@ -331,11 +332,11 @@ exports[`edits an existing file correctly 1`] = `
                     role="option"
                     style="pointer-events: all;"
                   >
-                    <div
-                      class="ui teal tiny basic label text"
+                    <span
+                      class="text"
                     >
-                      Approved
-                    </div>
+                      random
+                    </span>
                   </div>
                   <div
                     aria-checked="false"
@@ -344,37 +345,11 @@ exports[`edits an existing file correctly 1`] = `
                     role="option"
                     style="pointer-events: all;"
                   >
-                    <div
-                      class="ui red tiny basic label text"
+                    <span
+                      class="text"
                     >
-                      Changes needed
-                    </div>
-                  </div>
-                  <div
-                    aria-checked="false"
-                    aria-selected="false"
-                    class="item"
-                    role="option"
-                    style="pointer-events: all;"
-                  >
-                    <div
-                      class="ui blue tiny basic label text"
-                    >
-                      Processed
-                    </div>
-                  </div>
-                  <div
-                    aria-checked="false"
-                    aria-selected="false"
-                    class="item"
-                    role="option"
-                    style="pointer-events: all;"
-                  >
-                    <div
-                      class="ui blue tiny basic label text"
-                    >
-                      Updated
-                    </div>
+                      tag that has ten more char
+                    </span>
                   </div>
                 </div>
               </div>
@@ -539,6 +514,7 @@ exports[`edits an existing file correctly 1`] = `
               class="ui fluid icon input"
             >
               <input
+                aria-label="file-search-input"
                 type="text"
                 value=""
               />
@@ -560,12 +536,17 @@ exports[`edits an existing file correctly 1`] = `
                 <th
                   class="center aligned"
                 >
-                  Approval
+                  Type
                 </th>
                 <th
                   class="px-20"
                 >
                   Document Details
+                </th>
+                <th
+                  class="center aligned"
+                >
+                  Tags
                 </th>
                 <th
                   class="center aligned"
@@ -585,15 +566,10 @@ exports[`edits an existing file correctly 1`] = `
                 <td
                   class="center aligned"
                 >
-                  <div
-                    class="ui header"
-                  >
-                    <div
-                      class="ui orange tiny basic label"
-                    >
-                      Pending review
-                    </div>
-                  </div>
+                  <i
+                    aria-hidden="true"
+                    class="hospital big icon"
+                  />
                 </td>
                 <td
                   class="px-20"
@@ -607,69 +583,39 @@ exports[`edits an existing file correctly 1`] = `
                       organization.jpeg
                     </a>
                   </span>
+                  <small
+                    class="text-grey ml-10"
+                  >
+                    Modified
+                     
+                    <time
+                      datetime="2018-09-27T05:32:26.000Z"
+                      title="27 Sept 2018"
+                    >
+                      7 months ago
+                    </time>
+                  </small>
                   <p
                     class="noMargin"
                   >
                     Month necessary animal end standard case. View system operation message decade. Actually sing becaus...
                   </p>
+                </td>
+                <td
+                  class="center aligned four wide"
+                >
                   <div
-                    class="ui horizontal link list"
-                    role="list"
+                    class="ui labels"
                   >
-                    <div
-                      class="item"
-                      role="listitem"
+                    <button
+                      class="ui mini basic compact icon button square-26"
+                      data-testid="tag-file"
                     >
-                      <div
-                        class="middle aligned content"
-                      >
-                        <i
-                          aria-hidden="true"
-                          class="grey hospital small icon"
-                        />
-                        Clinical/Phenotypic Data
-                      </div>
-                    </div>
-                    <div
-                      class="item"
-                      role="listitem"
-                    >
-                      <div
-                        class="content"
-                      >
-                        Modified
-                         
-                        <time
-                          datetime="2018-09-27T05:32:26.000Z"
-                          title="27 Sept 2018"
-                        >
-                          7 months ago
-                        </time>
-                      </div>
-                    </div>
-                    <div
-                      class="item"
-                      role="listitem"
-                    >
-                      <div
-                        class="content"
-                      >
-                        3
-                         version
-                        s
-                         
-                      </div>
-                    </div>
-                    <div
-                      class="item"
-                      role="listitem"
-                    >
-                      <div
-                        class="content"
-                      >
-                        5.5 kB
-                      </div>
-                    </div>
+                      <i
+                        aria-hidden="true"
+                        class="add icon"
+                      />
+                    </button>
                   </div>
                 </td>
                 <td
@@ -715,15 +661,10 @@ exports[`edits an existing file correctly 1`] = `
                 <td
                   class="center aligned"
                 >
-                  <div
-                    class="ui header"
-                  >
-                    <div
-                      class="ui orange tiny basic label"
-                    >
-                      Pending review
-                    </div>
-                  </div>
+                  <i
+                    aria-hidden="true"
+                    class="shipping big icon"
+                  />
                 </td>
                 <td
                   class="px-20"
@@ -737,69 +678,73 @@ exports[`edits an existing file correctly 1`] = `
                       its.mp3
                     </a>
                   </span>
+                  <small
+                    class="text-grey ml-10"
+                  >
+                    Modified
+                     
+                    <time
+                      datetime="2019-04-06T07:51:17.000Z"
+                      title="6 Apr 2019"
+                    >
+                      2 weeks ago
+                    </time>
+                  </small>
                   <p
                     class="noMargin"
                   >
                     Question meeting move recognize.
                   </p>
+                </td>
+                <td
+                  class="center aligned four wide"
+                >
                   <div
-                    class="ui horizontal link list"
-                    role="list"
+                    class="ui labels"
                   >
                     <div
-                      class="item"
-                      role="listitem"
+                      class="ui label my-2"
+                      title="dbGaP"
                     >
-                      <div
-                        class="middle aligned content"
-                      >
-                        <i
-                          aria-hidden="true"
-                          class="grey shipping small icon"
-                        />
-                        Biospecimen Manifest
-                      </div>
+                      dbGaP
+                      <i
+                        aria-hidden="true"
+                        class="close icon"
+                        data-testid="remove-tag"
+                      />
                     </div>
                     <div
-                      class="item"
-                      role="listitem"
+                      class="ui label my-2"
+                      title="random"
                     >
-                      <div
-                        class="content"
-                      >
-                        Modified
-                         
-                        <time
-                          datetime="2019-04-06T07:51:17.000Z"
-                          title="6 Apr 2019"
-                        >
-                          2 weeks ago
-                        </time>
-                      </div>
+                      random
+                      <i
+                        aria-hidden="true"
+                        class="close icon"
+                        data-testid="remove-tag"
+                      />
                     </div>
                     <div
-                      class="item"
-                      role="listitem"
+                      class="ui label my-2"
+                      title="tag that has ten more char"
                     >
-                      <div
-                        class="content"
-                      >
-                        5
-                         version
-                        s
-                         
-                      </div>
+                      tag that h
+                      ...
+                      <i
+                        aria-hidden="true"
+                        class="close icon"
+                        data-testid="remove-tag"
+                      />
                     </div>
-                    <div
-                      class="item"
-                      role="listitem"
+                    <button
+                      class="ui mini basic compact icon button square-26"
+                      data-testid="tag-file"
                     >
-                      <div
-                        class="content"
-                      >
-                        6.8 kB
-                      </div>
-                    </div>
+                      <i
+                        aria-hidden="true"
+                        class="add icon"
+                      />
+                    </button>
                   </div>
                 </td>
                 <td
@@ -1308,6 +1253,39 @@ exports[`edits an existing file correctly 2`] = `
                 <p>
                   Month necessary animal end standard case. View system operation message decade. Actually sing because deal everything woman subject.
                 </p>
+              </div>
+              <div
+                class="ui segment noBorders"
+              >
+                <h4
+                  class="ui grey header"
+                >
+                  Tags
+                </h4>
+                <div
+                  class="ui labels"
+                >
+                  <div
+                    class="ui label my-2"
+                    title="email"
+                  >
+                    Email
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <button
+                    class="ui mini basic compact icon button square-26"
+                    data-testid="tag-file"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="add icon"
+                    />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -2007,6 +1985,61 @@ exports[`edits an existing file correctly 3`] = `
                   Some description here
                 </p>
               </div>
+              <div
+                class="ui segment noBorders"
+              >
+                <h4
+                  class="ui grey header"
+                >
+                  Tags
+                </h4>
+                <div
+                  class="ui labels"
+                >
+                  <div
+                    class="ui label my-2"
+                    title="email"
+                  >
+                    Email
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="dbGaP"
+                  >
+                    dbGaP
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="tag"
+                  >
+                    tag
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <button
+                    class="ui mini basic compact icon button square-26"
+                    data-testid="tag-file"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="add icon"
+                    />
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
           <div
@@ -2704,6 +2737,61 @@ exports[`edits an existing file correctly 4`] = `
                 <p>
                   Some description here
                 </p>
+              </div>
+              <div
+                class="ui segment noBorders"
+              >
+                <h4
+                  class="ui grey header"
+                >
+                  Tags
+                </h4>
+                <div
+                  class="ui labels"
+                >
+                  <div
+                    class="ui label my-2"
+                    title="email"
+                  >
+                    Email
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="dbGaP"
+                  >
+                    dbGaP
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="tag"
+                  >
+                    tag
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <button
+                    class="ui mini basic compact icon button square-26"
+                    data-testid="tag-file"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="add icon"
+                    />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -3403,6 +3491,61 @@ exports[`edits an existing file correctly 5`] = `
                   Some description here
                 </p>
               </div>
+              <div
+                class="ui segment noBorders"
+              >
+                <h4
+                  class="ui grey header"
+                >
+                  Tags
+                </h4>
+                <div
+                  class="ui labels"
+                >
+                  <div
+                    class="ui label my-2"
+                    title="email"
+                  >
+                    Email
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="dbGaP"
+                  >
+                    dbGaP
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="tag"
+                  >
+                    tag
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <button
+                    class="ui mini basic compact icon button square-26"
+                    data-testid="tag-file"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="add icon"
+                    />
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
           <div
@@ -4100,6 +4243,61 @@ exports[`edits an existing file correctly 6`] = `
                 <p>
                   Some description here
                 </p>
+              </div>
+              <div
+                class="ui segment noBorders"
+              >
+                <h4
+                  class="ui grey header"
+                >
+                  Tags
+                </h4>
+                <div
+                  class="ui labels"
+                >
+                  <div
+                    class="ui label my-2"
+                    title="email"
+                  >
+                    Email
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="dbGaP"
+                  >
+                    dbGaP
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="tag"
+                  >
+                    tag
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <button
+                    class="ui mini basic compact icon button square-26"
+                    data-testid="tag-file"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="add icon"
+                    />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
