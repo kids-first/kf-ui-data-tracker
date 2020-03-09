@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders buckets view correctly 1`] = `
+<body>
+  <div
+    class="ui large top attached menu"
+  >
+    <div
+      class="ui container"
+    >
+      <div
+        class="item"
+      >
+        <img
+          alt="Kids First logo"
+          src="test-file-stub"
+        />
+      </div>
+      <a
+        aria-current="page"
+        class="header item"
+        href="/"
+      >
+        Data Tracker
+      </a>
+    </div>
+  </div>
+  <div
+    class="page"
+  >
+    <div
+      class="ui basic segment ui container"
+    >
+      <div
+        class="ui header"
+      >
+        Study Buckets
+      </div>
+      <div
+        class="ui basic segment"
+      >
+        Buckets are synced periodically with S3 and linked to studies automatically.
+      </div>
+      <div
+        class="ui basic segment"
+      >
+        <div
+          class="ui basic very padded segment"
+        >
+          <div
+            class="ui active transition visible inverted dimmer"
+            style="display: flex;"
+          >
+            <div
+              class="content"
+            >
+              <div
+                class="ui inverted text loader"
+              >
+                Loading buckets...
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ui segment footer"
+  >
+    <div
+      class="ui container text-10"
+    >
+      <div
+        class="ui horizontal list"
+        role="list"
+      >
+        <div
+          class="item"
+          role="listitem"
+        >
+          <div
+            class="ui basic horizontal label text-10"
+          />
+        </div>
+        <div
+          class="item"
+          role="listitem"
+        >
+          UI
+           
+          <a
+            href="https://github.com/kids-first/kf-ui-data-tracker/commit/undefined"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

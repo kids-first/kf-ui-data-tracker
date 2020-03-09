@@ -64,6 +64,17 @@ exports[`renders token list -- with get error 1`] = `
               Configuration
             </a>
             <a
+              class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
+            </a>
+            <a
               aria-current="page"
               class="item active"
               href="/tokens"
@@ -511,6 +522,17 @@ exports[`renders token list correctly - displaying look & hidden look 2`] = `
               Configuration
             </a>
             <a
+              class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
+            </a>
+            <a
               aria-current="page"
               class="item active"
               href="/tokens"
@@ -939,6 +961,17 @@ exports[`renders token list correctly - displaying look & hidden look 3`] = `
                 class="settings icon"
               />
               Configuration
+            </a>
+            <a
+              class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
             </a>
             <a
               aria-current="page"
@@ -1379,6 +1412,17 @@ exports[`renders token list correctly - displaying look & hidden look 4`] = `
                 class="settings icon"
               />
               Configuration
+            </a>
+            <a
+              class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
             </a>
             <a
               aria-current="page"
@@ -1853,6 +1897,17 @@ exports[`renders token list correctly - displaying look & hidden look 5`] = `
                 class="settings icon"
               />
               Configuration
+            </a>
+            <a
+              class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
             </a>
             <a
               aria-current="page"

@@ -1,3 +1,4 @@
+export {default as BucketsView} from './BucketsView';
 export {default as CavaticaProjectsView} from './CavaticaProjectsView';
 export {default as ConfigurationView} from './ConfigurationView';
 export {default as EventsView} from './EventsView';

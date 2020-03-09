@@ -44,6 +44,10 @@ const Header = () => {
                       <Icon name="settings" />
                       Configuration
                     </Dropdown.Item>
+                    <Dropdown.Item as={Nav} to="/buckets">
+                      <Icon name="trash" />
+                      Buckets
+                    </Dropdown.Item>
                     <Dropdown.Item as={Nav} to="/tokens">
                       <Icon name="key" />
                       Developer Tokens
