@@ -3028,6 +3028,17 @@ exports[`renders new document view and redirect due to lack of location.state 1`
             </a>
             <a
               class="item"
+              href="/buckets"
+              role="option"
+            >
+              <i
+                aria-hidden="true"
+                class="trash icon"
+              />
+              Buckets
+            </a>
+            <a
+              class="item"
               href="/tokens"
               role="option"
             >
@@ -3244,11 +3255,11 @@ exports[`renders new document view and redirect due to lack of location.state 1`
                 Filter by:
               </span>
               <div
-                aria-disabled="true"
+                aria-disabled="false"
                 aria-expanded="false"
-                class="ui disabled selection dropdown"
+                class="ui selection dropdown"
                 role="listbox"
-                tabindex="-1"
+                tabindex="0"
               >
                 <div
                   aria-live="polite"
@@ -3263,7 +3274,47 @@ exports[`renders new document view and redirect due to lack of location.state 1`
                 />
                 <div
                   class="menu transition"
-                />
+                >
+                  <div
+                    aria-checked="false"
+                    aria-selected="true"
+                    class="selected item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <span
+                      class="text"
+                    >
+                      dbGaP
+                    </span>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <span
+                      class="text"
+                    >
+                      random
+                    </span>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <span
+                      class="text"
+                    >
+                      tag that has ten more char
+                    </span>
+                  </div>
+                </div>
               </div>
               <div
                 aria-expanded="false"
@@ -3426,6 +3477,7 @@ exports[`renders new document view and redirect due to lack of location.state 1`
               class="ui fluid icon input"
             >
               <input
+                aria-label="file-search-input"
                 type="text"
                 value=""
               />
@@ -3613,6 +3665,40 @@ exports[`renders new document view and redirect due to lack of location.state 1`
                   <div
                     class="ui labels"
                   >
+                    <div
+                      class="ui label my-2"
+                      title="dbGaP"
+                    >
+                      dbGaP
+                      <i
+                        aria-hidden="true"
+                        class="close icon"
+                        data-testid="remove-tag"
+                      />
+                    </div>
+                    <div
+                      class="ui label my-2"
+                      title="random"
+                    >
+                      random
+                      <i
+                        aria-hidden="true"
+                        class="close icon"
+                        data-testid="remove-tag"
+                      />
+                    </div>
+                    <div
+                      class="ui label my-2"
+                      title="tag that has ten more char"
+                    >
+                      tag that h
+                      ...
+                      <i
+                        aria-hidden="true"
+                        class="close icon"
+                        data-testid="remove-tag"
+                      />
+                    </div>
                     <button
                       class="ui mini basic compact icon button square-26"
                       data-testid="tag-file"

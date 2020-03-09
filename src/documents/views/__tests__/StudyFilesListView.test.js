@@ -81,65 +81,6 @@ it('shows an error', async () => {
   expect(tree.queryByText('Error')).not.toBeNull();
 });
 
-it('renders ListFilterBar with files -- screen width 1200', async () => {
-  const tree = render(
-    <MockedProvider mocks={mocks}>
-      <MemoryRouter initialEntries={['/study/SD_8WX8QQ06']}>
-        <StudyFilesListView match={{params: {kfId: 'SD_8WX8QQ06'}}} />
-      </MemoryRouter>
-    </MockedProvider>,
-  );
-  Object.defineProperty(window, 'innerWidth', {
-    writable: true,
-    configurable: true,
-    value: 1200,
-  });
-  await wait();
-  expect(tree.container).toMatchSnapshot();
-});
-
-it('renders ListFilterBar with files -- screen width 800', async () => {
-  const tree = render(
-    <MockedProvider mocks={mocks}>
-      <MemoryRouter initialEntries={['/study/SD_8WX8QQ06']}>
-        <StudyFilesListView match={{params: {kfId: 'SD_8WX8QQ06'}}} />
-      </MemoryRouter>
-    </MockedProvider>,
-  );
-  Object.defineProperty(window, 'innerWidth', {
-    writable: true,
-    configurable: true,
-    value: 800,
-  });
-  await wait();
-  expect(tree.container).toMatchSnapshot();
-});
-
-it('renders ListFilterBar with files -- screen width 600', async () => {
-  const tree = render(
-    <MockedProvider mocks={mocks}>
-      <MemoryRouter initialEntries={['/study/SD_8WX8QQ06']}>
-        <StudyFilesListView match={{params: {kfId: 'SD_8WX8QQ06'}}} />
-      </MemoryRouter>
-    </MockedProvider>,
-  );
-  Object.defineProperty(window, 'innerWidth', {
-    writable: true,
-    configurable: true,
-    value: 600,
-  });
-
-  await wait();
-  expect(tree.container).toMatchSnapshot();
-
-  // fireEvent.click(tree.getAllByTestId('show-filter-button'));
-  //
-  // fireEvent.click(tree.getAllByTestId('show-sort-button'));
-  //
-  // await wait();
-  // expect(tree.container).toMatchSnapshot();
-});
-
 it('update tags with no error adding tag and error with removing tag', async () => {
   const tree = render(
     <MockedProvider
