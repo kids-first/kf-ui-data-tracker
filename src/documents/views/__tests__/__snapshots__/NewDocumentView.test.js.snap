@@ -2990,13 +2990,7 @@ exports[`renders new document view and redirect due to lack of location.state 1`
         class="item"
         href="/"
       >
-        Investigator Studies
-      </a>
-      <a
-        class="item"
-        href="/research-studies"
-      >
-        Research Studies
+        Studies
       </a>
       <div
         class="right menu"

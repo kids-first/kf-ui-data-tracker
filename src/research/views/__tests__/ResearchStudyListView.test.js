@@ -27,17 +27,11 @@ it('renders study list correctly -- default stage', async () => {
         },
       }}
     >
-      <MemoryRouter initialEntries={['/']}>
+      <MemoryRouter initialEntries={['/research-studies']}>
         <Routes />
       </MemoryRouter>
     </MockedProvider>,
   );
-  expect(tree.container).toMatchSnapshot();
-  await wait(10);
-  expect(tree.container).toMatchSnapshot();
-  act(() => {
-    fireEvent.click(tree.getByText(/Research Studies/i));
-  });
   await wait(10);
   expect(tree.container).toMatchSnapshot();
 
@@ -93,58 +87,6 @@ it('renders study list correctly -- release error', async () => {
       /Network error: Failed to fetch study releases information/i,
     ),
   ).not.toBeNull();
-});
-
-it('renders study list correctly -- study tabel buttons', async () => {
-  const tree = render(
-    <MockedProvider
-      mocks={[
-        mocks[0],
-        mocks[0],
-        mocks[0],
-        mocks[0],
-        mocks[1],
-        mocks[1],
-        mocks[8],
-        coordMocks.allReleaseStudies,
-        coordMocks.allReleaseStudies,
-        coordMocks.allReleaseStudies,
-      ]}
-      resolvers={{
-        Query: {
-          myProfile: _ => myProfile.data.myProfile,
-        },
-      }}
-    >
-      <MemoryRouter initialEntries={['/research-studies']}>
-        <Routes />
-      </MemoryRouter>
-    </MockedProvider>,
-  );
-  await wait();
-  act(() => {
-    fireEvent.click(tree.getAllByText(/complete/i)[0]);
-  });
-  await wait();
-  expect(tree.container).toMatchSnapshot();
-  act(() => {
-    fireEvent.click(tree.getByText(/Research Studies/i));
-  });
-  await wait();
-  act(() => {
-    fireEvent.click(tree.getAllByTestId('table-row')[0]);
-  });
-  await wait();
-  expect(tree.container).toMatchSnapshot();
-  act(() => {
-    fireEvent.click(tree.getByText(/Research Studies/i));
-  });
-  await wait();
-  act(() => {
-    fireEvent.click(tree.getByText(/3.60.0/i));
-  });
-  await wait();
-  expect(tree.container).toMatchSnapshot();
 });
 
 it('renders study list error and release error', async () => {

@@ -269,13 +269,7 @@ exports[`renders error view on invalid document id 1`] = `
         class="item"
         href="/"
       >
-        Investigator Studies
-      </a>
-      <a
-        class="item"
-        href="/research-studies"
-      >
-        Research Studies
+        Studies
       </a>
       <div
         class="right menu"
@@ -587,13 +581,7 @@ exports[`renders error view on invalid new study step 1`] = `
         class="item"
         href="/"
       >
-        Investigator Studies
-      </a>
-      <a
-        class="item"
-        href="/research-studies"
-      >
-        Research Studies
+        Studies
       </a>
       <div
         class="right menu"
@@ -838,13 +826,7 @@ exports[`renders error view on invalid path /XXXX 1`] = `
         class="item"
         href="/"
       >
-        Investigator Studies
-      </a>
-      <a
-        class="item"
-        href="/research-studies"
-      >
-        Research Studies
+        Studies
       </a>
       <div
         class="right menu"
@@ -1090,13 +1072,7 @@ exports[`renders error view on invalid path /XXXX 2`] = `
         class="item active"
         href="/"
       >
-        Investigator Studies
-      </a>
-      <a
-        class="item"
-        href="/research-studies"
-      >
-        Research Studies
+        Studies
       </a>
       <div
         class="right menu"
@@ -1249,7 +1225,7 @@ exports[`renders error view on invalid path /XXXX 2`] = `
       >
         <a
           class="ui mini basic primary button"
-          href="/study/new-study-selection"
+          href="/study/new-study/info"
           role="button"
         >
           <i
@@ -1765,13 +1741,7 @@ exports[`renders error view on invalid study id 1`] = `
         class="item"
         href="/"
       >
-        Investigator Studies
-      </a>
-      <a
-        class="item"
-        href="/research-studies"
-      >
-        Research Studies
+        Studies
       </a>
       <div
         class="right menu"
@@ -2013,13 +1983,7 @@ exports[`renders error view on invalid study id 2`] = `
         class="item"
         href="/"
       >
-        Investigator Studies
-      </a>
-      <a
-        class="item"
-        href="/research-studies"
-      >
-        Research Studies
+        Studies
       </a>
       <div
         class="right menu"
@@ -2261,13 +2225,7 @@ exports[`renders error view on invalid study id 3`] = `
         class="item"
         href="/"
       >
-        Investigator Studies
-      </a>
-      <a
-        class="item"
-        href="/research-studies"
-      >
-        Research Studies
+        Studies
       </a>
       <div
         class="right menu"
@@ -2509,13 +2467,7 @@ exports[`renders error view on invalid study id 4`] = `
         class="item"
         href="/"
       >
-        Investigator Studies
-      </a>
-      <a
-        class="item"
-        href="/research-studies"
-      >
-        Research Studies
+        Studies
       </a>
       <div
         class="right menu"
@@ -2757,13 +2709,7 @@ exports[`renders error view on invalid study id 5`] = `
         class="item"
         href="/"
       >
-        Investigator Studies
-      </a>
-      <a
-        class="item"
-        href="/research-studies"
-      >
-        Research Studies
+        Studies
       </a>
       <div
         class="right menu"
@@ -3005,13 +2951,7 @@ exports[`renders error view on invalid study info step name 1`] = `
         class="item"
         href="/"
       >
-        Investigator Studies
-      </a>
-      <a
-        class="item"
-        href="/research-studies"
-      >
-        Research Studies
+        Studies
       </a>
       <div
         class="right menu"

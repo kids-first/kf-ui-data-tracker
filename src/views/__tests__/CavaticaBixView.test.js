@@ -89,8 +89,9 @@ it('renders study Cavatica projects view correctly', async () => {
   });
   await wait();
   act(() => {
-    fireEvent.click(tree.getAllByText(/Research/i)[1]);
+    fireEvent.click(tree.getByText(/Research/i));
   });
+  tree.debug();
   await wait();
   expect(tree.container).toMatchSnapshot();
   // If choose Analysis, the workflow type selection is hidden, and project name input is shown
@@ -173,7 +174,7 @@ it('renders study Cavatica projects view correctly', async () => {
   });
   await wait();
   act(() => {
-    fireEvent.click(tree.getAllByText(/Research/i)[1]);
+    fireEvent.click(tree.getByText(/Research/i));
   });
   await wait();
   expect(tree.container).toMatchSnapshot();

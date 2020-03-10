@@ -242,13 +242,7 @@ exports[`renders correctly -- default stage (USER role) 2`] = `
         class="item active"
         href="/"
       >
-        Investigator Studies
-      </a>
-      <a
-        class="item"
-        href="/research-studies"
-      >
-        Research Studies
+        Studies
       </a>
       <div
         class="right menu"
@@ -401,7 +395,7 @@ exports[`renders correctly -- default stage (USER role) 2`] = `
       >
         <a
           class="ui mini basic primary button"
-          href="/study/new-study-selection"
+          href="/study/new-study/info"
           role="button"
         >
           <i
@@ -918,13 +912,7 @@ exports[`renders correctly -- default stage (USER role) 3`] = `
         class="item active"
         href="/"
       >
-        Investigator Studies
-      </a>
-      <a
-        class="item"
-        href="/research-studies"
-      >
-        Research Studies
+        Studies
       </a>
       <div
         class="right menu"
@@ -1077,7 +1065,7 @@ exports[`renders correctly -- default stage (USER role) 3`] = `
       >
         <a
           class="ui mini basic primary button"
-          href="/study/new-study-selection"
+          href="/study/new-study/info"
           role="button"
         >
           <i
@@ -1594,13 +1582,7 @@ exports[`renders correctly -- default stage (USER role) 4`] = `
         class="item active"
         href="/"
       >
-        Investigator Studies
-      </a>
-      <a
-        class="item"
-        href="/research-studies"
-      >
-        Research Studies
+        Studies
       </a>
       <div
         class="right menu"
@@ -1753,7 +1735,7 @@ exports[`renders correctly -- default stage (USER role) 4`] = `
       >
         <a
           class="ui mini basic primary button"
-          href="/study/new-study-selection"
+          href="/study/new-study/info"
           role="button"
         >
           <i
