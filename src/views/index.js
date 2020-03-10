@@ -10,5 +10,6 @@ export {default as StudyInfoView} from './StudyInfoView';
 export {default as CavaticaBixView} from './CavaticaBixView';
 export {default as LogsView} from './LogsView';
 export {default as ReleasesView} from './ReleasesView';
+export {default as CollaboratorsView} from './CollaboratorsView';
 export {default as NewStudySelectionView} from './NewStudySelectionView';
 export {default as NotFoundView} from './NotFoundView';
