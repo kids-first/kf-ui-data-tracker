@@ -27,13 +27,7 @@ exports[`renders research study info view as read-only -- USER user 1`] = `
         class="item"
         href="/"
       >
-        Investigator Studies
-      </a>
-      <a
-        class="item"
-        href="/research-studies"
-      >
-        Research Studies
+        Studies
       </a>
       <div
         class="right menu"
@@ -597,13 +591,7 @@ exports[`renders research study info view correctly -- ADMIN user 2`] = `
         class="item"
         href="/"
       >
-        Investigator Studies
-      </a>
-      <a
-        class="item"
-        href="/research-studies"
-      >
-        Research Studies
+        Studies
       </a>
       <div
         class="right menu"
@@ -1157,13 +1145,7 @@ exports[`renders research study info view correctly -- ADMIN user 3`] = `
         class="item"
         href="/"
       >
-        Investigator Studies
-      </a>
-      <a
-        class="item"
-        href="/research-studies"
-      >
-        Research Studies
+        Studies
       </a>
       <div
         class="right menu"
@@ -1727,13 +1709,7 @@ exports[`renders research study info view correctly -- ADMIN user 4`] = `
         class="item"
         href="/"
       >
-        Investigator Studies
-      </a>
-      <a
-        class="item"
-        href="/research-studies"
-      >
-        Research Studies
+        Studies
       </a>
       <div
         class="right menu"
@@ -2279,13 +2255,7 @@ exports[`renders research study info view with get research study info error 1`]
         class="item"
         href="/"
       >
-        Investigator Studies
-      </a>
-      <a
-        class="item"
-        href="/research-studies"
-      >
-        Research Studies
+        Studies
       </a>
       <div
         class="right menu"
@@ -2533,13 +2503,7 @@ exports[`renders research study info view with invalid study id 1`] = `
         class="item"
         href="/"
       >
-        Investigator Studies
-      </a>
-      <a
-        class="item"
-        href="/research-studies"
-      >
-        Research Studies
+        Studies
       </a>
       <div
         class="right menu"
@@ -2781,13 +2745,7 @@ exports[`renders research study info view with update research study info error 
         class="item"
         href="/"
       >
-        Investigator Studies
-      </a>
-      <a
-        class="item"
-        href="/research-studies"
-      >
-        Research Studies
+        Studies
       </a>
       <div
         class="right menu"

@@ -27,13 +27,7 @@ exports[`renders study nav bar with error for fetching study 1`] = `
         class="item"
         href="/"
       >
-        Investigator Studies
-      </a>
-      <a
-        class="item"
-        href="/research-studies"
-      >
-        Research Studies
+        Studies
       </a>
       <div
         class="right menu"
@@ -445,13 +439,7 @@ exports[`renders study nav bar with error in study creation 2`] = `
         class="item"
         href="/"
       >
-        Investigator Studies
-      </a>
-      <a
-        class="item"
-        href="/research-studies"
-      >
-        Research Studies
+        Studies
       </a>
       <div
         class="right menu"
@@ -1007,13 +995,7 @@ exports[`renders study nav bar with error in study creation 3`] = `
         class="item"
         href="/"
       >
-        Investigator Studies
-      </a>
-      <a
-        class="item"
-        href="/research-studies"
-      >
-        Research Studies
+        Studies
       </a>
       <div
         class="right menu"
@@ -1804,13 +1786,7 @@ exports[`renders study nav bar with error in study creation 4`] = `
         class="item"
         href="/"
       >
-        Investigator Studies
-      </a>
-      <a
-        class="item"
-        href="/research-studies"
-      >
-        Research Studies
+        Studies
       </a>
       <div
         class="right menu"

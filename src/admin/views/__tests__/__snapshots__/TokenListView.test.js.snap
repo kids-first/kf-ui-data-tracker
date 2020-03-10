@@ -27,13 +27,7 @@ exports[`renders token list -- with get error 1`] = `
         class="item"
         href="/"
       >
-        Investigator Studies
-      </a>
-      <a
-        class="item"
-        href="/research-studies"
-      >
-        Research Studies
+        Studies
       </a>
       <div
         class="right menu"
@@ -485,13 +479,7 @@ exports[`renders token list correctly - displaying look & hidden look 2`] = `
         class="item"
         href="/"
       >
-        Investigator Studies
-      </a>
-      <a
-        class="item"
-        href="/research-studies"
-      >
-        Research Studies
+        Studies
       </a>
       <div
         class="right menu"
@@ -926,13 +914,7 @@ exports[`renders token list correctly - displaying look & hidden look 3`] = `
         class="item"
         href="/"
       >
-        Investigator Studies
-      </a>
-      <a
-        class="item"
-        href="/research-studies"
-      >
-        Research Studies
+        Studies
       </a>
       <div
         class="right menu"
@@ -1377,13 +1359,7 @@ exports[`renders token list correctly - displaying look & hidden look 4`] = `
         class="item"
         href="/"
       >
-        Investigator Studies
-      </a>
-      <a
-        class="item"
-        href="/research-studies"
-      >
-        Research Studies
+        Studies
       </a>
       <div
         class="right menu"
@@ -1862,13 +1838,7 @@ exports[`renders token list correctly - displaying look & hidden look 5`] = `
         class="item"
         href="/"
       >
-        Investigator Studies
-      </a>
-      <a
-        class="item"
-        href="/research-studies"
-      >
-        Research Studies
+        Studies
       </a>
       <div
         class="right menu"

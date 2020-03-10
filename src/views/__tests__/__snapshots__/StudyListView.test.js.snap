@@ -28,13 +28,7 @@ exports[`renders empty study list with admin access 1`] = `
         class="item active"
         href="/"
       >
-        Investigator Studies
-      </a>
-      <a
-        class="item"
-        href="/research-studies"
-      >
-        Research Studies
+        Studies
       </a>
       <div
         class="right menu"
@@ -577,13 +571,7 @@ exports[`renders study list correctly -- default stage 2`] = `
         class="item active"
         href="/"
       >
-        Investigator Studies
-      </a>
-      <a
-        class="item"
-        href="/research-studies"
-      >
-        Research Studies
+        Studies
       </a>
       <div
         class="right menu"
@@ -736,7 +724,7 @@ exports[`renders study list correctly -- default stage 2`] = `
       >
         <a
           class="ui mini basic primary button"
-          href="/study/new-study-selection"
+          href="/study/new-study/info"
           role="button"
         >
           <i
@@ -1253,13 +1241,7 @@ exports[`renders study list correctly -- default stage 3`] = `
         class="item active"
         href="/"
       >
-        Investigator Studies
-      </a>
-      <a
-        class="item"
-        href="/research-studies"
-      >
-        Research Studies
+        Studies
       </a>
       <div
         class="right menu"
@@ -1412,7 +1394,7 @@ exports[`renders study list correctly -- default stage 3`] = `
       >
         <a
           class="ui mini basic primary button"
-          href="/study/new-study-selection"
+          href="/study/new-study/info"
           role="button"
         >
           <i
@@ -1863,13 +1845,7 @@ exports[`renders study list correctly -- default stage 4`] = `
         class="item active"
         href="/"
       >
-        Investigator Studies
-      </a>
-      <a
-        class="item"
-        href="/research-studies"
-      >
-        Research Studies
+        Studies
       </a>
       <div
         class="right menu"
@@ -2022,7 +1998,7 @@ exports[`renders study list correctly -- default stage 4`] = `
       >
         <a
           class="ui mini basic primary button"
-          href="/study/new-study-selection"
+          href="/study/new-study/info"
           role="button"
         >
           <i
@@ -2242,13 +2218,7 @@ exports[`renders study list correctly -- default stage 5`] = `
         class="item active"
         href="/"
       >
-        Investigator Studies
-      </a>
-      <a
-        class="item"
-        href="/research-studies"
-      >
-        Research Studies
+        Studies
       </a>
       <div
         class="right menu"
@@ -2401,7 +2371,7 @@ exports[`renders study list correctly -- default stage 5`] = `
       >
         <a
           class="ui mini basic primary button"
-          href="/study/new-study-selection"
+          href="/study/new-study/info"
           role="button"
         >
           <i
@@ -2545,13 +2515,7 @@ exports[`renders study list correctly -- release error 1`] = `
         class="item active"
         href="/"
       >
-        Investigator Studies
-      </a>
-      <a
-        class="item"
-        href="/research-studies"
-      >
-        Research Studies
+        Studies
       </a>
       <div
         class="right menu"
@@ -2704,7 +2668,7 @@ exports[`renders study list correctly -- release error 1`] = `
       >
         <a
           class="ui mini basic primary button"
-          href="/study/new-study-selection"
+          href="/study/new-study/info"
           role="button"
         >
           <i
@@ -3183,13 +3147,7 @@ exports[`renders study list error and release error 1`] = `
         class="item active"
         href="/"
       >
-        Investigator Studies
-      </a>
-      <a
-        class="item"
-        href="/research-studies"
-      >
-        Research Studies
+        Studies
       </a>
       <div
         class="right menu"
