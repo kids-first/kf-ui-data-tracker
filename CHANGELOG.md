@@ -1,3 +1,32 @@
+# Kids First Data Tracker Release 0.11.0
+
+## Features
+
+Adds document tagging and administrative views.
+
+### Summary
+
+Feature Emojis: ✨x8 ♻️x5 🔥x1 🐛x1
+Feature Labels: [feature](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/feature) x8 [refactor](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/refactor) x6 [usability improvement](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/usability%20improvement) x1
+
+### New features and changes
+
+- (#612) ♻️ Update create study type name - @dankolbman
+- (#613) 🔥 Remove research studies - @dankolbman
+- (#603) ✨ Add editable document tags in document list and document detail - @XuTheBunny
+- (#609) ✨ Add buckets view - @dankolbman
+- (#610) 🐛 Fixing redirect typo - @abgeorge7
+- (#599) ✨ Add users view for admin - @XuTheBunny
+- (#596) ♻️ Add settings - @dankolbman
+- (#593) ✨ Add create new research study form - @XuTheBunny
+- (#597) ✨ Redirect user to error view when having auth0 error - @XuTheBunny
+- (#598) ✨ Add hash for study list reflecting layout option - @XuTheBunny
+- (#595) ♻️ Organize admin pages into admin directory - @XuTheBunny
+- (#583) ✨ Add 404 page for invalid url - @XuTheBunny
+- (#588) ✨ Create Research Studies UI for study list and new study options - @XuTheBunny
+- (#584) ♻️ Refactor Cavatica project list view - @dankolbman
+- (#581) ♻️ Refactor wording on document related pages - @XuTheBunny
+
 # Kids First Data Tracker Release 0.10.1
 
 ## Features
