@@ -1,3 +1,18 @@
+# Kids First Data Tracker Release 0.11.1
+
+## Features
+
+Hot fix for document upload regression.
+
+### Summary
+
+Feature Emojis: 🐛x1
+Feature Labels: [bug](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/bug) x1
+
+### New features and changes
+
+- (#615) 🐛 Fix new document creation by adding empty tag list - @XuTheBunny
+
 # Kids First Data Tracker Release 0.11.0
 
 ## Features
