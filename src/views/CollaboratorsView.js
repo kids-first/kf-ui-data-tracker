@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Helmet} from 'react-helmet';
-import {useQuery} from '@apollo/react-hooks';
+import {useQuery, useMutation} from '@apollo/react-hooks';
 import {MY_PROFILE, GET_STUDY_BY_ID} from '../state/queries';
+import {ADD_COLLABORATOR, REMOVE_COLLABORATOR} from '../state/mutations';
 import {
   Container,
+  Divider,
   Segment,
   Message,
   Placeholder,
@@ -11,7 +13,8 @@ import {
   Button,
   Icon,
 } from 'semantic-ui-react';
-import EmptyView from './EmptyView';
+import {AddCollaboratorModal} from '../modals';
+import {CollaboratorsList} from '../components/CollaboratorsList';
 import NotFoundView from './NotFoundView';
 
 const CollaboratorsView = ({match, history}) => {
@@ -22,11 +25,35 @@ const CollaboratorsView = ({match, history}) => {
     fetchPolicy: 'network-only',
   });
   const studyByKfId = data && data.studyByKfId;
-  const user = useQuery(MY_PROFILE);
+  const {loading: userLoading, data: userData, error: userError} = useQuery(
+    MY_PROFILE,
+  );
+  const [collaboratorModal, setCollaboratorModal] = useState(false);
+
+  const [addCollaborator] = useMutation(ADD_COLLABORATOR, {
+    refetchQueries: [
+      {
+        query: GET_STUDY_BY_ID,
+        variables: {
+          kfId: match.params.kfId,
+        },
+      },
+    ],
+  });
+  const [removeCollaborator] = useMutation(REMOVE_COLLABORATOR, {
+    refetchQueries: [
+      {
+        query: GET_STUDY_BY_ID,
+        variables: {
+          kfId: match.params.kfId,
+        },
+      },
+    ],
+  });
 
   const isAdmin =
-    !user.loading && user.data.myProfile
-      ? user.data.myProfile.roles.includes('ADMIN')
+    !userLoading && userData.myProfile
+      ? userData.myProfile.roles.includes('ADMIN')
       : false;
   if (loading)
     return (
@@ -45,7 +72,7 @@ const CollaboratorsView = ({match, history}) => {
         </Placeholder>
       </Container>
     );
-  if (error || user.error)
+  if (error || userError)
     return (
       <Container as={Segment} basic>
         <Helmet>
@@ -60,8 +87,8 @@ const CollaboratorsView = ({match, history}) => {
           <Message.Content>
             <Message.Header>Error</Message.Header>
             {error && error.message && <p>Study Error: {error.message}</p>}
-            {user.error && user.error.message && (
-              <p>User Error: {user.error.message}</p>
+            {userError && userError.message && (
+              <p>User Error: {userError.message}</p>
             )}
           </Message.Content>
         </Message>
@@ -75,37 +102,56 @@ const CollaboratorsView = ({match, history}) => {
       />
     );
   }
-  if (isAdmin) {
-    return (
-      <Container as={Segment} basic vertical>
-        <Helmet>
-          <title>{`KF Data Tracker - Study collaborators - Error ${
-            studyByKfId ? 'for ' + studyByKfId.name : null
-          }`}</title>
-        </Helmet>
+  return (
+    <Container as={Segment} basic vertical>
+      <Helmet>
+        <title>KF Data Tracker - Study collaborators</title>
+      </Helmet>
+      {isAdmin && (
         <Button
-          basic
           primary
-          floated="right"
-          size="mini"
           icon="add"
+          floated="right"
+          labelPosition="left"
           content="ADD COLLABORATOR"
+          onClick={() => setCollaboratorModal(!collaboratorModal)}
         />
-        <Header as="h2" className="noMargin">
-          Collaborators
-        </Header>
-      </Container>
-    );
-  } else {
-    return (
-      <>
-        <Helmet>
-          <title>KF Data Tracker - Collaborators for {studyByKfId.name}</title>
-        </Helmet>
-        <EmptyView />
-      </>
-    );
-  }
+      )}
+      <Header as="h2" className="noMargin">
+        Collaborators
+      </Header>
+      <Divider />
+
+      {studyByKfId.collaborators.edges.length === 0 ? (
+        <Container as={Segment} basic placeholder>
+          <Header as="h2" icon>
+            <Icon name="user outline" />
+            No Collaborators Yet
+          </Header>
+        </Container>
+      ) : (
+        <Container>
+          <CollaboratorsList
+            users={studyByKfId.collaborators.edges}
+            showAdminActions={isAdmin}
+            removeCollaborator={({variables}) =>
+              removeCollaborator({
+                variables: {study: studyByKfId.id, ...variables},
+              })
+            }
+          />
+        </Container>
+      )}
+
+      <AddCollaboratorModal
+        study={studyByKfId}
+        open={collaboratorModal}
+        addCollaborator={addCollaborator}
+        users={studyByKfId.collaborators.edges}
+        onCloseDialog={() => setCollaboratorModal(false)}
+      />
+    </Container>
+  );
 };
 
 export default CollaboratorsView;

@@ -6,19 +6,20 @@ import CollaboratorItem from './CollaboratorItem';
 /**
  * Display a list of collaborators
  */
-const CollaboratorsList = ({users, showAdminActions, removeCollaborator}) => (
-  <List relaxed divided>
-    {users &&
-      users.length > 0 &&
-      users
-        .sort(({node: u1}, {node: u2}) =>
-          u1.username.localeCompare(u2.username, 'en-US', {
-            caseFirst: 'upper',
-            sensitivity: 'case',
-            usage: 'sort',
-          }),
-        )
-        .map(({node}) => (
+const CollaboratorsList = ({users, showAdminActions, removeCollaborator}) => {
+  const collaborators = users.sort(({node: u1}, {node: u2}) =>
+    u1.username.localeCompare(u2.username, 'en-US', {
+      caseFirst: 'upper',
+      sensitivity: 'case',
+      usage: 'sort',
+    }),
+  );
+
+  return (
+    <List relaxed divided>
+      {users &&
+        users.length > 0 &&
+        collaborators.map(({node}) => (
           <CollaboratorItem
             key={node.id}
             user={node}
@@ -26,8 +27,9 @@ const CollaboratorsList = ({users, showAdminActions, removeCollaborator}) => (
             removeCollaborator={removeCollaborator}
           />
         ))}
-  </List>
-);
+    </List>
+  );
+};
 
 CollaboratorsList.propTypes = {
   /** Array of users */
