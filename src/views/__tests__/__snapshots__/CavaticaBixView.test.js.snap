@@ -133,15 +133,15 @@ exports[`renders study Cavatica projects view -- empty view for regular user 1`]
           </a>
           <a
             class="item"
-            href="/study/SD_8WX8QQ06/logs"
+            href="/study/SD_8WX8QQ06/collaborators"
           >
-            Logs
+            Collaborators
           </a>
           <a
             class="item"
-            href="/study/SD_8WX8QQ06/releases"
+            href="/study/SD_8WX8QQ06/logs"
           >
-            Releases
+            Logs
           </a>
         </div>
       </div>
@@ -425,6 +425,12 @@ exports[`renders study Cavatica projects view -- shows an error 1`] = `
           </a>
           <a
             class="item"
+            href="/study/SD_8WX8QQ06/collaborators"
+          >
+            Collaborators
+          </a>
+          <a
+            class="item"
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
@@ -585,15 +591,15 @@ exports[`renders study Cavatica projects view correctly 1`] = `
           </a>
           <a
             class="item"
-            href="/study/SD_8WX8QQ06/logs"
+            href="/study/SD_8WX8QQ06/collaborators"
           >
-            Logs
+            Collaborators
           </a>
           <a
             class="item"
-            href="/study/SD_8WX8QQ06/releases"
+            href="/study/SD_8WX8QQ06/logs"
           >
-            Releases
+            Logs
           </a>
         </div>
       </div>
@@ -881,6 +887,12 @@ exports[`renders study Cavatica projects view correctly 2`] = `
             href="/study/SD_8WX8QQ06/cavatica"
           >
             Cavatica
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/collaborators"
+          >
+            Collaborators
           </a>
           <a
             class="item"
@@ -1436,6 +1448,12 @@ exports[`renders study Cavatica projects view correctly 3`] = `
             href="/study/SD_8WX8QQ06/cavatica"
           >
             Cavatica
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/collaborators"
+          >
+            Collaborators
           </a>
           <a
             class="item"
@@ -2121,6 +2139,12 @@ exports[`renders study Cavatica projects view correctly 4`] = `
           </a>
           <a
             class="item"
+            href="/study/SD_8WX8QQ06/collaborators"
+          >
+            Collaborators
+          </a>
+          <a
+            class="item"
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
@@ -2800,6 +2824,12 @@ exports[`renders study Cavatica projects view correctly 5`] = `
             href="/study/SD_8WX8QQ06/cavatica"
           >
             Cavatica
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/collaborators"
+          >
+            Collaborators
           </a>
           <a
             class="item"
@@ -3794,6 +3824,12 @@ exports[`renders study Cavatica projects view correctly 6`] = `
           </a>
           <a
             class="item"
+            href="/study/SD_8WX8QQ06/collaborators"
+          >
+            Collaborators
+          </a>
+          <a
+            class="item"
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
@@ -4782,6 +4818,12 @@ exports[`renders study Cavatica projects view correctly 7`] = `
             href="/study/SD_8WX8QQ06/cavatica"
           >
             Cavatica
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/collaborators"
+          >
+            Collaborators
           </a>
           <a
             class="item"
@@ -5776,6 +5818,12 @@ exports[`renders study Cavatica projects view correctly 8`] = `
           </a>
           <a
             class="item"
+            href="/study/SD_8WX8QQ06/collaborators"
+          >
+            Collaborators
+          </a>
+          <a
+            class="item"
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
@@ -6477,6 +6525,12 @@ exports[`renders study Cavatica projects view correctly 9`] = `
             href="/study/SD_8WX8QQ06/cavatica"
           >
             Cavatica
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/collaborators"
+          >
+            Collaborators
           </a>
           <a
             class="item"
@@ -7184,6 +7238,12 @@ exports[`renders study Cavatica projects view correctly 10`] = `
           </a>
           <a
             class="item"
+            href="/study/SD_8WX8QQ06/collaborators"
+          >
+            Collaborators
+          </a>
+          <a
+            class="item"
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
@@ -7883,6 +7943,12 @@ exports[`renders study Cavatica projects view correctly 11`] = `
             href="/study/SD_8WX8QQ06/cavatica"
           >
             Cavatica
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/collaborators"
+          >
+            Collaborators
           </a>
           <a
             class="item"
@@ -8825,6 +8891,12 @@ exports[`renders study Cavatica projects view correctly 12`] = `
             href="/study/SD_8WX8QQ06/cavatica"
           >
             Cavatica
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/collaborators"
+          >
+            Collaborators
           </a>
           <a
             class="item"
@@ -9861,6 +9933,12 @@ exports[`renders study Cavatica projects view correctly 13`] = `
           </a>
           <a
             class="item"
+            href="/study/SD_8WX8QQ06/collaborators"
+          >
+            Collaborators
+          </a>
+          <a
+            class="item"
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
@@ -10559,6 +10637,12 @@ exports[`renders study Cavatica projects view correctly 14`] = `
           </a>
           <a
             class="item"
+            href="/study/SD_8WX8QQ06/collaborators"
+          >
+            Collaborators
+          </a>
+          <a
+            class="item"
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
@@ -11252,6 +11336,12 @@ exports[`renders study Cavatica projects view correctly with warning 1`] = `
             href="/study/SD_8WX8QQ06/cavatica"
           >
             Cavatica
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/collaborators"
+          >
+            Collaborators
           </a>
           <a
             class="item"

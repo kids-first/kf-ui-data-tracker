@@ -132,16 +132,15 @@ exports[`renders study releases view -- shows an error 1`] = `
           </a>
           <a
             class="item"
+            href="/study/SD_8WX8QQ06/collaborators"
+          >
+            Collaborators
+          </a>
+          <a
+            class="item"
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
-          </a>
-          <a
-            aria-current="page"
-            class="active item active"
-            href="/study/SD_8WX8QQ06/releases"
-          >
-            Releases
           </a>
         </div>
       </div>
@@ -353,16 +352,15 @@ exports[`renders study releases view correctly --  showing empty view for non-ad
           </a>
           <a
             class="item"
+            href="/study/SD_8WX8QQ06/collaborators"
+          >
+            Collaborators
+          </a>
+          <a
+            class="item"
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
-          </a>
-          <a
-            aria-current="page"
-            class="active item active"
-            href="/study/SD_8WX8QQ06/releases"
-          >
-            Releases
           </a>
         </div>
       </div>
@@ -510,16 +508,15 @@ exports[`renders study releases view correctly 1`] = `
           </a>
           <a
             class="item"
+            href="/study/SD_8WX8QQ06/collaborators"
+          >
+            Collaborators
+          </a>
+          <a
+            class="item"
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
-          </a>
-          <a
-            aria-current="page"
-            class="active item active"
-            href="/study/SD_8WX8QQ06/releases"
-          >
-            Releases
           </a>
         </div>
       </div>
@@ -806,6 +803,12 @@ exports[`renders study releases view correctly 2`] = `
             href="/study/SD_8WX8QQ06/cavatica"
           >
             Cavatica
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/collaborators"
+          >
+            Collaborators
           </a>
           <a
             class="item"

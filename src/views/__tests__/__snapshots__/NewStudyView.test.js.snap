@@ -2926,6 +2926,12 @@ exports[`renders new study view correctly 4`] = `
           </a>
           <a
             class="item"
+            href="/study/SD_8WX8QQ06/collaborators"
+          >
+            Collaborators
+          </a>
+          <a
+            class="item"
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
@@ -3717,6 +3723,12 @@ exports[`renders new study view correctly 5`] = `
           </a>
           <a
             class="item"
+            href="/study/SD_8WX8QQ06/collaborators"
+          >
+            Collaborators
+          </a>
+          <a
+            class="item"
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
@@ -4505,6 +4517,12 @@ exports[`renders new study view correctly 6`] = `
             href="/study/SD_8WX8QQ06/cavatica"
           >
             Cavatica
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/collaborators"
+          >
+            Collaborators
           </a>
           <a
             class="item"

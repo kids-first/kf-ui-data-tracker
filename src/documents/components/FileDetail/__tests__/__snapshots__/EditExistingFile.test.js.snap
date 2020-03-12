@@ -215,6 +215,12 @@ exports[`edits an existing file correctly 1`] = `
           </a>
           <a
             class="item"
+            href="/study/SD_8WX8QQ06/collaborators"
+          >
+            Collaborators
+          </a>
+          <a
+            class="item"
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
@@ -1088,6 +1094,12 @@ exports[`edits an existing file correctly 2`] = `
           </a>
           <a
             class="item"
+            href="/study/SD_8WX8QQ06/collaborators"
+          >
+            Collaborators
+          </a>
+          <a
+            class="item"
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
@@ -1810,6 +1822,12 @@ exports[`edits an existing file correctly 3`] = `
             href="/study/SD_8WX8QQ06/cavatica"
           >
             Cavatica
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/collaborators"
+          >
+            Collaborators
           </a>
           <a
             class="item"
@@ -2560,6 +2578,12 @@ exports[`edits an existing file correctly 4`] = `
           </a>
           <a
             class="item"
+            href="/study/SD_8WX8QQ06/collaborators"
+          >
+            Collaborators
+          </a>
+          <a
+            class="item"
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
@@ -3307,6 +3331,12 @@ exports[`edits an existing file correctly 5`] = `
           </a>
           <a
             class="item"
+            href="/study/SD_8WX8QQ06/collaborators"
+          >
+            Collaborators
+          </a>
+          <a
+            class="item"
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
@@ -4051,6 +4081,12 @@ exports[`edits an existing file correctly 6`] = `
             href="/study/SD_8WX8QQ06/cavatica"
           >
             Cavatica
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/collaborators"
+          >
+            Collaborators
           </a>
           <a
             class="item"

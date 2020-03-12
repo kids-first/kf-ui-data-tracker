@@ -457,6 +457,12 @@ exports[`renders error view on invalid document id 1`] = `
           </a>
           <a
             class="item"
+            href="/study/SD_8WX8QQ06/collaborators"
+          >
+            Collaborators
+          </a>
+          <a
+            class="item"
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
@@ -3135,6 +3141,12 @@ exports[`renders error view on invalid study info step name 1`] = `
             href="/study/SD_8WX8QQ06/cavatica"
           >
             Cavatica
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/collaborators"
+          >
+            Collaborators
           </a>
           <a
             class="item"

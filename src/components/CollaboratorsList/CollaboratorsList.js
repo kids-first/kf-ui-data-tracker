@@ -36,6 +36,8 @@ CollaboratorsList.propTypes = {
   users: PropTypes.array,
   /** Whether to show admin actions */
   showAdminActions: PropTypes.bool,
+  /** Mutation to remove a collaborator */
+  removeCollaborators: PropTypes.func,
 };
 
 export default CollaboratorsList;

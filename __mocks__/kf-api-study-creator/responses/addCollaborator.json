@@ -1,0 +1,16 @@
+{
+  "data": {
+    "addCollaborator": {
+      "study": {
+        "id": "U3R1ZHlOb2RlOlNEXzhXWDhRUTA2",
+        "name": "benchmark extensible e-business",
+        "shortName": null,
+        "kfId": "SD_8WX8QQ06",
+        "createdAt": "2019-04-20T15:22:18.780221+00:00",
+        "modifiedAt": "2019-04-25T15:22:18.780221+00:00",
+        "__typename": "StudyNode"
+      },
+      "__typename": "AddCollaboratorMutation"
+    }
+  }
+}

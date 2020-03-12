@@ -36,7 +36,7 @@ const AddCollaboratorModal = ({
               err.networkError.result.errors.map((err, i) => (
                 <List.Item key={i}>{err.message}</List.Item>
               ))}
-            {err.graphQLErrors.map((err, i) => (
+            {err.GraphQLErrors && err.graphQLErrors.map((err, i) => (
               <List.Item key={i}>{err.message}</List.Item>
             ))}
           </List>
@@ -90,6 +90,7 @@ const AddCollaboratorModal = ({
             <Button
               primary
               type="submit"
+              data-testId="add-button"
               loading={formikProps.isSubmitting}
               disabled={!formikProps.isValid || formikProps.isSubmitting}
             >
