@@ -1873,7 +1873,7 @@ fragment FileFields on FileNode {
   tags
   __typename
 }
-, variables: {"file":{"lastModified":1567797130510,"name":"organize.tsv","size":7,"type":"text/tab-separated-values","webkitRelativePath":""},"studyId":"SD_8WX8QQ06","name":"name","fileType":"SHM","description":"description"}
+, variables: {"file":{"lastModified":1567797130510,"name":"organize.tsv","size":7,"type":"text/tab-separated-values","webkitRelativePath":""},"studyId":"SD_8WX8QQ06","name":"name","fileType":"SHM","description":"description","tags":[]}
           </p>
         </div>
       </div>
@@ -2710,7 +2710,26 @@ exports[`Render out the new document view with error on creation 3`] = `
         </a>
         .
       </p>
-      
+      <div
+        class="ui icon negative message"
+      >
+        <i
+          aria-hidden="true"
+          class="warning circle icon"
+        />
+        <div
+          class="content"
+        >
+          <div
+            class="header"
+          >
+            Error
+          </div>
+          <p>
+            Network error: Failed to create the file
+          </p>
+        </div>
+      </div>
     </div>
     <div
       class="ui segments"
@@ -2943,14 +2962,14 @@ exports[`Render out the new document view with error on creation 3`] = `
             class="ui basic compact vertical segment"
           >
             <button
-              class="ui primary right floated button"
+              class="ui right floated button"
               data-testid="new-file-submit"
               type="submit"
             >
-              UPLOADING ...
+              UPLOAD
             </button>
             <button
-              class="ui right floated button"
+              class="ui primary right floated button"
               data-testid="new-file-cancel"
             >
               CANCEL

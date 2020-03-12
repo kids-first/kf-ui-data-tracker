@@ -173,8 +173,9 @@ it('Render out the new document view with error on creation', async () => {
   act(() => {
     fireEvent.click(tree.getByTestId('new-file-submit'));
   });
-  await wait(10);
+  await wait(1000);
   expect(tree.container).toMatchSnapshot();
+  expect(tree.queryByText(/Failed to create the file/)).not.toBeNull();
 });
 
 it('renders new document view and redirect due to lack of location.state', async () => {
