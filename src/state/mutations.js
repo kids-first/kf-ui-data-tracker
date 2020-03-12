@@ -183,3 +183,27 @@ export const IMPORT_VOLUME_FILES = gql`
   }
   ${PROJECT_FIELDS}
 `;
+
+// Mutation to add collaborator to a study
+export const ADD_COLLABORATOR = gql`
+  mutation addCollaborator($study: ID!, $user: ID!) {
+    addCollaborator(study: $study, user: $user) {
+      study {
+        ...StudyBasicFields
+      }
+    }
+  }
+  ${STUDY_BASIC_FIELDS}
+`;
+
+// Mutation to remove collaborator to a study
+export const REMOVE_COLLABORATOR = gql`
+  mutation removeCollaborator($study: ID!, $user: ID!) {
+    removeCollaborator(study: $study, user: $user) {
+      study {
+        ...StudyBasicFields
+      }
+    }
+  }
+  ${STUDY_BASIC_FIELDS}
+`;
