@@ -56,6 +56,7 @@ const NewDocumentView = ({match, history, location}) => {
         name: fileName,
         fileType,
         description: fileDescription,
+        tags: [],
       },
     }).then(resp => {
       history.push(`/study/${studyId}/documents`);
