@@ -215,6 +215,12 @@ exports[`edits an existing file description 1`] = `
           </a>
           <a
             class="item"
+            href="/study/SD_8WX8QQ06/collaborators"
+          >
+            Collaborators
+          </a>
+          <a
+            class="item"
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
@@ -708,6 +714,40 @@ exports[`edits an existing file description 1`] = `
             </table>
           </div>
         </div>
+        <div
+          class="row"
+        >
+          <div
+            class="thirteen wide computer sixteen wide mobile sixteen wide tablet column"
+          >
+            <div
+              class="ui basic vertical segment ui container"
+            >
+              <h4
+                class="ui grey header"
+              >
+                File Preview
+              </h4>
+              <div
+                class="ui basic segment scroll-container"
+              >
+                <div
+                  class="ui center aligned container"
+                >
+                  <button
+                    class="ui basic icon primary left labeled button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="eye icon"
+                    />
+                    Preview File
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -959,6 +999,12 @@ exports[`edits an existing file description 2`] = `
             href="/study/SD_8WX8QQ06/cavatica"
           >
             Cavatica
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/collaborators"
+          >
+            Collaborators
           </a>
           <a
             class="item"
@@ -1669,6 +1715,40 @@ exports[`edits an existing file description 2`] = `
             </table>
           </div>
         </div>
+        <div
+          class="row"
+        >
+          <div
+            class="thirteen wide computer sixteen wide mobile sixteen wide tablet column"
+          >
+            <div
+              class="ui basic vertical segment ui container"
+            >
+              <h4
+                class="ui grey header"
+              >
+                File Preview
+              </h4>
+              <div
+                class="ui basic segment scroll-container"
+              >
+                <div
+                  class="ui center aligned container"
+                >
+                  <button
+                    class="ui basic icon primary left labeled button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="eye icon"
+                    />
+                    Preview File
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1920,6 +2000,12 @@ exports[`edits an existing file description 3`] = `
             href="/study/SD_8WX8QQ06/cavatica"
           >
             Cavatica
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/collaborators"
+          >
+            Collaborators
           </a>
           <a
             class="item"
@@ -2631,6 +2717,40 @@ Question meeting move recognize.
             </table>
           </div>
         </div>
+        <div
+          class="row"
+        >
+          <div
+            class="thirteen wide computer sixteen wide mobile sixteen wide tablet column"
+          >
+            <div
+              class="ui basic vertical segment ui container"
+            >
+              <h4
+                class="ui grey header"
+              >
+                File Preview
+              </h4>
+              <div
+                class="ui basic segment scroll-container"
+              >
+                <div
+                  class="ui center aligned container"
+                >
+                  <button
+                    class="ui basic icon primary left labeled button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="eye icon"
+                    />
+                    Preview File
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -2882,6 +3002,12 @@ exports[`edits an existing file description 4`] = `
             href="/study/SD_8WX8QQ06/cavatica"
           >
             Cavatica
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/collaborators"
+          >
+            Collaborators
           </a>
           <a
             class="item"
@@ -3377,6 +3503,40 @@ Question meeting move recognize.
                 </tr>
               </tbody>
             </table>
+          </div>
+        </div>
+        <div
+          class="row"
+        >
+          <div
+            class="thirteen wide computer sixteen wide mobile sixteen wide tablet column"
+          >
+            <div
+              class="ui basic vertical segment ui container"
+            >
+              <h4
+                class="ui grey header"
+              >
+                File Preview
+              </h4>
+              <div
+                class="ui basic segment scroll-container"
+              >
+                <div
+                  class="ui center aligned container"
+                >
+                  <button
+                    class="ui basic icon primary left labeled button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="eye icon"
+                    />
+                    Preview File
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

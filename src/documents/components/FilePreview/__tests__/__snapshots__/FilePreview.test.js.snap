@@ -1,0 +1,242 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`File Preview renders correctly 1`] = `
+<div>
+  <div
+    class="ui basic vertical segment ui container"
+  >
+    <h4
+      class="ui grey header"
+    >
+      File Preview
+    </h4>
+    <div
+      class="ui basic segment scroll-container"
+    >
+      <div
+        class="ui center aligned container"
+      >
+        <button
+          class="ui basic icon primary left labeled button"
+        >
+          <i
+            aria-hidden="true"
+            class="eye icon"
+          />
+          Preview File
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`File Preview renders correctly 2`] = `
+<div>
+  <div
+    class="ui basic vertical segment ui container"
+  >
+    <h4
+      class="ui grey header"
+    >
+      File Preview
+    </h4>
+    <div
+      class="ui basic segment scroll-container"
+    >
+      <span
+        class="data-grid-container"
+        tabindex="0"
+      >
+        <table
+          class="ui definition single line very basic very compact table"
+        >
+          <thead
+            class=""
+          >
+            <tr
+              class=""
+            >
+              <th
+                class=""
+              >
+                a
+              </th>
+              <th
+                class=""
+              >
+                b
+              </th>
+              <th
+                class=""
+              >
+                c
+              </th>
+              <th
+                class=""
+              />
+            </tr>
+          </thead>
+          <tbody
+            class=""
+          >
+            <tr>
+              <td
+                class="cell"
+              >
+                <span
+                  class="value-viewer"
+                >
+                  1
+                </span>
+              </td>
+              <td
+                class="cell"
+              >
+                <span
+                  class="value-viewer"
+                >
+                  2
+                </span>
+              </td>
+              <td
+                class="cell"
+              >
+                <span
+                  class="value-viewer"
+                >
+                  3
+                </span>
+              </td>
+              <td
+                class="cell"
+              >
+                <span
+                  class="value-viewer"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="cell"
+              >
+                <span
+                  class="value-viewer"
+                >
+                  4
+                </span>
+              </td>
+              <td
+                class="cell"
+              >
+                <span
+                  class="value-viewer"
+                >
+                  5
+                </span>
+              </td>
+              <td
+                class="cell"
+              >
+                <span
+                  class="value-viewer"
+                >
+                  6
+                </span>
+              </td>
+              <td
+                class="cell"
+              >
+                <span
+                  class="value-viewer"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="cell"
+              >
+                <span
+                  class="value-viewer"
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`File Preview renders error correctly 1`] = `
+<div>
+  <div
+    class="ui basic vertical segment ui container"
+  >
+    <h4
+      class="ui grey header"
+    >
+      File Preview
+    </h4>
+    <div
+      class="ui basic segment scroll-container"
+    >
+      <div
+        class="ui center aligned container"
+      >
+        <button
+          class="ui basic icon primary left labeled button"
+        >
+          <i
+            aria-hidden="true"
+            class="eye icon"
+          />
+          Preview File
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`File Preview renders error correctly 2`] = `
+<div>
+  <div
+    class="ui basic vertical segment ui container"
+  >
+    <h4
+      class="ui grey header"
+    >
+      File Preview
+    </h4>
+    <div
+      class="ui basic segment scroll-container"
+    >
+      <div
+        class="ui icon warning message"
+      >
+        <i
+          aria-hidden="true"
+          class="warning sign icon"
+        />
+        <div
+          class="content"
+        >
+          <div
+            class="header"
+          >
+            Error parsing file
+          </div>
+          <p>
+            The file was not able to be read to provide a formatted preview. File contents are displayed in raw format below for the first 2048 characters.
+          </p>
+        </div>
+      </div>
+      <pre>
+        not a csv or tsv string
+      </pre>
+    </div>
+  </div>
+</div>
+`;

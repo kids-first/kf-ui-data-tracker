@@ -1570,6 +1570,40 @@ exports[`edits an existing file correctly 2`] = `
             </table>
           </div>
         </div>
+        <div
+          class="row"
+        >
+          <div
+            class="thirteen wide computer sixteen wide mobile sixteen wide tablet column"
+          >
+            <div
+              class="ui basic vertical segment ui container"
+            >
+              <h4
+                class="ui grey header"
+              >
+                File Preview
+              </h4>
+              <div
+                class="ui basic segment scroll-container"
+              >
+                <div
+                  class="ui center aligned container"
+                >
+                  <button
+                    class="ui basic icon primary left labeled button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="eye icon"
+                    />
+                    Preview File
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -2334,6 +2368,40 @@ exports[`edits an existing file correctly 3`] = `
                 </tr>
               </tbody>
             </table>
+          </div>
+        </div>
+        <div
+          class="row"
+        >
+          <div
+            class="thirteen wide computer sixteen wide mobile sixteen wide tablet column"
+          >
+            <div
+              class="ui basic vertical segment ui container"
+            >
+              <h4
+                class="ui grey header"
+              >
+                File Preview
+              </h4>
+              <div
+                class="ui basic segment scroll-container"
+              >
+                <div
+                  class="ui center aligned container"
+                >
+                  <button
+                    class="ui basic icon primary left labeled button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="eye icon"
+                    />
+                    Preview File
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -3102,6 +3170,40 @@ exports[`edits an existing file correctly 4`] = `
             </table>
           </div>
         </div>
+        <div
+          class="row"
+        >
+          <div
+            class="thirteen wide computer sixteen wide mobile sixteen wide tablet column"
+          >
+            <div
+              class="ui basic vertical segment ui container"
+            >
+              <h4
+                class="ui grey header"
+              >
+                File Preview
+              </h4>
+              <div
+                class="ui basic segment scroll-container"
+              >
+                <div
+                  class="ui center aligned container"
+                >
+                  <button
+                    class="ui basic icon primary left labeled button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="eye icon"
+                    />
+                    Preview File
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -3868,6 +3970,40 @@ exports[`edits an existing file correctly 5`] = `
             </table>
           </div>
         </div>
+        <div
+          class="row"
+        >
+          <div
+            class="thirteen wide computer sixteen wide mobile sixteen wide tablet column"
+          >
+            <div
+              class="ui basic vertical segment ui container"
+            >
+              <h4
+                class="ui grey header"
+              >
+                File Preview
+              </h4>
+              <div
+                class="ui basic segment scroll-container"
+              >
+                <div
+                  class="ui center aligned container"
+                >
+                  <button
+                    class="ui basic icon primary left labeled button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="eye icon"
+                    />
+                    Preview File
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -4632,6 +4768,40 @@ exports[`edits an existing file correctly 6`] = `
                 </tr>
               </tbody>
             </table>
+          </div>
+        </div>
+        <div
+          class="row"
+        >
+          <div
+            class="thirteen wide computer sixteen wide mobile sixteen wide tablet column"
+          >
+            <div
+              class="ui basic vertical segment ui container"
+            >
+              <h4
+                class="ui grey header"
+              >
+                File Preview
+              </h4>
+              <div
+                class="ui basic segment scroll-container"
+              >
+                <div
+                  class="ui center aligned container"
+                >
+                  <button
+                    class="ui basic icon primary left labeled button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="eye icon"
+                    />
+                    Preview File
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
