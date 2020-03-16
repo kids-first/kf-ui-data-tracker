@@ -9,6 +9,7 @@ import {
 } from 'semantic-ui-react';
 import ReactDataSheet from 'react-datasheet';
 import Papa from 'papaparse';
+import {LogOnMount} from '@amplitude/react-amplitude';
 
 const FilePreview = ({file}) => {
   const [loading, setLoading] = useState(false);
@@ -71,6 +72,7 @@ const FilePreview = ({file}) => {
         )}
         {data.length > 0 && (
           <>
+            <LogOnMount eventType="document preview" />
             {errors.length > 0 ? (
               <pre>{data}</pre>
             ) : (
