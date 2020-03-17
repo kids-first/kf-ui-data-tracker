@@ -1,4 +1,5 @@
 @import '../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+@import '../node_modules/react-datasheet/lib/react-datasheet.css';
 
 :root {
   /* define global css vars here  */
@@ -61,8 +62,8 @@ body {
 }
 
 .my-2 {
-  margin-top:2px !important;
-  margin-bottom:2px !important;
+  margin-top: 2px !important;
+  margin-bottom: 2px !important;
 }
 
 .pb-0 {
@@ -307,4 +308,10 @@ body {
 .square-26 {
   height: 26px !important;
   width: 26px !important;
+}
+
+.scroll-container {
+  overflow: scroll;
+  max-height: 500px;
+  min-height: 150px;
 }

@@ -7634,6 +7634,11 @@ pako@~1.0.5:
   resolved "https://registry.yarnpkg.com/pako/-/pako-1.0.10.tgz#4328badb5086a426aa90f541977d4955da5c9732"
   integrity sha512-0DTvPVU3ed8+HNXOu5Bs+o//Mbdj9VNQMUOe9oKCwh8l0GNwpTDMKCWbRjgtD291AWnkAgkqA/LOnQS8AmS1tw==
 
+papaparse@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/papaparse/-/papaparse-5.1.1.tgz#1da66a039f80e2db43a1226b0bf44106451e9a2d"
+  integrity sha512-KPkW4GNQxunmYTeJIjHFrvilcNuHBWrfgbyvmagEmfGOA4hnP1WIkPbv4yABhj1Nam3as4w+7MBiI27BntwqVg==
+
 parallel-transform@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/parallel-transform/-/parallel-transform-1.1.0.tgz#d410f065b05da23081fcd10f28854c29bda33b06"
@@ -8930,6 +8935,11 @@ react-copy-to-clipboard@^5.0.1:
   dependencies:
     copy-to-clipboard "^3"
     prop-types "^15.5.8"
+
+react-datasheet@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/react-datasheet/-/react-datasheet-1.4.1.tgz#9fbb1e3a5fac6283c2de0e46235e8ff4fa26d338"
+  integrity sha512-TD3wNur0tokQLm7ndDBo2+cmTXmTPqQjrP+xPWAU4dLqFx7z9cV8O4AT3Qr2KVgglKWAWskrFdgUWRC6kppH4A==
 
 react-dev-utils@^9.0.0:
   version "9.0.1"

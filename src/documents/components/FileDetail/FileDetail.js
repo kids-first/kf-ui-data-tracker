@@ -28,6 +28,7 @@ import {
 } from 'semantic-ui-react';
 import FileTags from './FileTags';
 import FileDescription from './FileDescription';
+import {FilePreview} from '../FilePreview';
 
 const ActionButtons = ({
   downloadFile,
@@ -227,6 +228,11 @@ const FileDetail = ({
                 setOpenVersion({version: versionNode, index: index});
               }}
             />
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column mobile={16} tablet={16} computer={13}>
+            <FilePreview file={fileNode} />
           </Grid.Column>
         </Grid.Row>
         {dialog !== false && (
