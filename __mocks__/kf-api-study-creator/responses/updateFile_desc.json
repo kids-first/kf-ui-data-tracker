@@ -1,0 +1,17 @@
+{
+  "data": {
+    "updateFile": {
+      "file": {
+        "id": "RmlsZU5vZGU6U0ZfWTA3SU4xSE8=",
+        "kfId": "SF_Y07IN1HO",
+        "name": "its.mp3",
+        "description": "| Tables | Are | Cool | |----------|:-------------:|------:| | col 1 is | left-aligned | $1600 | | col 2 is | centered | $12 | | col 3 is | right-aligned | $1 |\\s\\s\nQuestion meeting move recognize.\n",
+        "fileType": "SHM",
+        "tags": ["dbGaP", "random", "tag that has ten more char"],
+        "downloadUrl": "http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_Y07IN1HO",
+        "__typename": "FileNode"
+      },
+      "__typename": "FileMutation"
+    }
+  }
+}

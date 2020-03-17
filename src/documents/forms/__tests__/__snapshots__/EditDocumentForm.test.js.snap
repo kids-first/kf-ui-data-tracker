@@ -200,19 +200,6 @@ Object {
             </div>
           </div>
         </div>
-        <div
-          class="required field"
-        >
-          <label>
-            Describe Document Contents:
-          </label>
-          <textarea
-            data-testid="description-input"
-            name="file_desc"
-            rows="3"
-            type="text"
-          />
-        </div>
       </form>
     </div>
   </body>,
@@ -411,19 +398,6 @@ Object {
             </div>
           </div>
         </div>
-      </div>
-      <div
-        class="required field"
-      >
-        <label>
-          Describe Document Contents:
-        </label>
-        <textarea
-          data-testid="description-input"
-          name="file_desc"
-          rows="3"
-          type="text"
-        />
       </div>
     </form>
   </div>,
@@ -694,21 +668,6 @@ Object {
             </div>
           </div>
         </div>
-        <div
-          class="required field"
-        >
-          <label>
-            Describe Document Contents:
-          </label>
-          <textarea
-            data-testid="description-input"
-            name="file_desc"
-            rows="3"
-            type="text"
-          >
-            Existing File Description
-          </textarea>
-        </div>
       </form>
     </div>
   </body>,
@@ -920,21 +879,6 @@ Object {
             </div>
           </div>
         </div>
-      </div>
-      <div
-        class="required field"
-      >
-        <label>
-          Describe Document Contents:
-        </label>
-        <textarea
-          data-testid="description-input"
-          name="file_desc"
-          rows="3"
-          type="text"
-        >
-          Existing File Description
-        </textarea>
       </div>
     </form>
   </div>,

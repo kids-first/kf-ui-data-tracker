@@ -1,7 +1,7 @@
 /* eslint-disable  no-useless-escape */
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import {Form, TextArea, Dropdown} from 'semantic-ui-react';
+import {Form, Dropdown, Segment} from 'semantic-ui-react';
 import {Formik, Field} from 'formik';
 import validate from './validate';
 import ExistingDocsMessage from './ExistingDocsMessage';
@@ -9,7 +9,9 @@ import SelectElement from '../components/FileDetail/SelectElement';
 import Badge from '../../components/Badge/Badge';
 import UploadWizard from '../modals/UploadWizard/UploadWizard';
 import {fileTypeDetail, versionState} from '../../common/enums';
-
+import MarkdownEditor from '../components/FileDetail/MarkdownEditor';
+import draftToMarkdown from 'draftjs-to-markdown';
+import {EditorState, convertToRaw, ContentState} from 'draft-js';
 /**
  * Form to edit document information or annotate new file for uploading
  */
@@ -32,7 +34,11 @@ const EditDocumentForm = React.forwardRef(
     const [onUploading, setUploading] = useState(false);
     const [showDialog, setShowDialog] = useState(false);
     const [titleError, setTitleError] = useState({});
-
+    const [editorState, setEditorState] = useState(
+      EditorState.createWithContent(
+        ContentState.createFromText(fileDescription || ''),
+      ),
+    );
     const options = ['PEN', 'APP', 'CHN', 'PRC'].map(state => ({
       key: state,
       value: state,
@@ -51,15 +57,24 @@ const EditDocumentForm = React.forwardRef(
           validate={vals => {
             setTitleError(validate(vals, fileNode, studyFiles));
             let errors = {};
-            ['file_name', 'file_type', 'file_desc'].forEach(function(field) {
+            ['file_name', 'file_type'].forEach(function(field) {
               if (!vals[field]) {
                 errors[field] = 'Required';
               }
             });
+            const rawState = convertToRaw(editorState.getCurrentContent());
+            const mdText = draftToMarkdown(rawState);
+            if (mdText.length < 3) {
+              errors.file_desc = 'Required';
+            }
             return errors;
           }}
           onSubmit={values => {
             setUploading(true);
+            const rawState = convertToRaw(editorState.getCurrentContent());
+            const mdText = draftToMarkdown(rawState);
+            var submitValue = values;
+            submitValue.file_desc = mdText;
             handleSubmit(...Object.values(values));
           }}
         >
@@ -71,6 +86,7 @@ const EditDocumentForm = React.forwardRef(
             setFieldValue,
             errors,
             touched,
+            validateForm,
           }) => (
             <>
               {titleError.file_name &&
@@ -127,7 +143,6 @@ const EditDocumentForm = React.forwardRef(
                     )}
                   </Form.Field>
                 )}
-
                 <Form.Field required>
                   <label htmlFor="file_type">Document Type:</label>
                   {Object.keys(fileTypeDetail).map(item => (
@@ -141,22 +156,26 @@ const EditDocumentForm = React.forwardRef(
                     </Form.Field>
                   ))}
                 </Form.Field>
-                <Form.Field required>
-                  <label>Describe Document Contents:</label>
-                  <TextArea
-                    className={
-                      touched.file_desc && errors.file_desc
-                        ? 'border-red'
-                        : null
-                    }
-                    data-testid="description-input"
-                    type="text"
-                    name="file_desc"
-                    value={values.file_desc}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  />
-                </Form.Field>
+                {submitButtons && (
+                  <Form.Field required>
+                    <label>Describe Document Contents:</label>
+                    <Segment
+                      className={
+                        touched.file_desc && errors.file_desc
+                          ? 'border-red'
+                          : null
+                      }
+                    >
+                      <MarkdownEditor
+                        editorState={editorState}
+                        onEditorStateChange={e => {
+                          setEditorState(e);
+                          validateForm();
+                        }}
+                      />
+                    </Segment>
+                  </Form.Field>
+                )}
                 {submitButtons &&
                   submitButtons(
                     Object.keys(errors).length > 0 ||

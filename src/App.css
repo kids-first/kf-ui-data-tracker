@@ -1,3 +1,5 @@
+@import '../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+
 :root {
   /* define global css vars here  */
   --site-max-width: 1024px;
@@ -169,6 +171,10 @@ body {
 
 .text-gray {
   color: #676767 !important;
+}
+
+.text-primary {
+  color: #1678c2 !important;
 }
 
 .vertical-middle {
