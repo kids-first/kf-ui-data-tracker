@@ -76,13 +76,6 @@ it('edits an existing file correctly', async () => {
   });
   await wait();
 
-  // Update file description
-  const descInput = tree.getByTestId('description-input');
-  act(() => {
-    fireEvent.change(descInput, {target: {value: 'Some description here'}});
-  });
-  await wait();
-
   // Update approval status from 'Pending review' to 'Approved'
   act(() => {
     fireEvent.click(tree.queryAllByText(/Pending review/)[0]);
@@ -105,7 +98,6 @@ it('edits an existing file correctly', async () => {
 
   // Expect to see the file name and description updated on detail view
   expect(tree.queryAllByText(/organizaton.jpeg/i).length).toBe(0);
-  expect(tree.queryAllByText(/Some description here/i).length).toBe(1);
   expect(tree.queryAllByText(/foo bar file/i).length).toBe(1);
 
   // Expect to see the file status updated on detail view
