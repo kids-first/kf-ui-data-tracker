@@ -16,6 +16,7 @@ import {
   LogsView,
   LogoutView,
   ReleasesView,
+  CollaboratorsView,
   NewStudySelectionView,
   NotFoundView,
 } from '../views';
@@ -111,6 +112,11 @@ const Routes = () => (
           exact
           path="/research-study/:kfId/releases"
           component={ReleasesView}
+        />
+        <PrivateRoute
+          exact
+          path="/study/:kfId/collaborators"
+          component={CollaboratorsView}
         />
         <PrivateRoute
           path="/study/:kfId/cavatica"

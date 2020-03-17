@@ -43,6 +43,10 @@ const StudyNavBar = ({match, history, isBeta, isResearch}) => {
           endString: 'cavatica',
         },
         {
+          tab: 'Collaborators',
+          endString: 'collaborators',
+        },
+        {
           tab: 'Logs',
           endString: 'logs',
         },

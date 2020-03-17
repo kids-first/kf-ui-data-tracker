@@ -17,6 +17,50 @@
       "description": "Sudy description in markdown, commonly the X01 abstract text. --  As test study description",
       "anticipatedSamples": 100,
       "awardeeOrganization": "CHOP",
+      "collaborators": {
+        "edges": [
+          {
+            "node": {
+              "id": "VXNlck5vZGU6NQ==",
+              "username": "Jennifer Warren",
+              "firstName": "Marc",
+              "lastName": "Wilson",
+              "email": "ericksontracy@benitez-ruiz.com",
+              "picture": "",
+              "roles": [],
+              "__typename": "UserNode"
+            },
+            "__typename": "UserNodeEdge"
+          },
+          {
+            "node": {
+              "id": "VXNlck5vZGU6OQ==",
+              "username": "Anthony Hamilton",
+              "firstName": "John",
+              "lastName": "Garza",
+              "email": "richard06@merritt.net",
+              "picture": "",
+              "roles": [],
+              "__typename": "UserNode"
+            },
+            "__typename": "UserNodeEdge"
+          },
+          {
+            "node": {
+              "id": "VXNlck5vZGU6MjY=",
+              "username": "devadmin",
+              "firstName": "",
+              "lastName": "",
+              "email": "admin@myproject.com",
+              "picture": "",
+              "roles": ["ADMIN"],
+              "__typename": "UserNode"
+            },
+            "__typename": "UserNodeEdge"
+          }
+        ],
+        "__typename": "UserNodeConnection"
+      },
       "files": {
         "edges": [
           {

@@ -328,15 +328,15 @@ exports[`renders study nav bar with error in study creation 1`] = `
           </a>
           <a
             class="item"
-            href="/study/SD_8WX8QQ06/logs"
+            href="/study/SD_8WX8QQ06/collaborators"
           >
-            Logs
+            Collaborators
           </a>
           <a
             class="item"
-            href="/study/SD_8WX8QQ06/releases"
+            href="/study/SD_8WX8QQ06/logs"
           >
-            Releases
+            Logs
           </a>
         </div>
       </div>
@@ -637,6 +637,12 @@ exports[`renders study nav bar with error in study creation 2`] = `
             href="/study/SD_8WX8QQ06/cavatica"
           >
             Cavatica
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/collaborators"
+          >
+            Collaborators
           </a>
           <a
             class="item"
@@ -1193,6 +1199,12 @@ exports[`renders study nav bar with error in study creation 3`] = `
             href="/study/SD_8WX8QQ06/cavatica"
           >
             Cavatica
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/collaborators"
+          >
+            Collaborators
           </a>
           <a
             class="item"
@@ -1984,6 +1996,12 @@ exports[`renders study nav bar with error in study creation 4`] = `
             href="/study/SD_8WX8QQ06/cavatica"
           >
             Cavatica
+          </a>
+          <a
+            class="item"
+            href="/study/SD_8WX8QQ06/collaborators"
+          >
+            Collaborators
           </a>
           <a
             class="item"
