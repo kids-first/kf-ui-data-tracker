@@ -10,6 +10,10 @@ import {render, fireEvent, cleanup, act} from '@testing-library/react';
 import EditDocumentForm from '../EditDocumentForm';
 
 afterEach(cleanup);
+jest.mock('draft-js/lib/generateRandomKey', () => () => '123');
+const mockMath = Object.create(global.Math);
+mockMath.random = () => 0.5;
+global.Math = mockMath;
 
 let file = {
   lastModified: 1567797130510,

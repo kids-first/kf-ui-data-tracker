@@ -454,22 +454,22 @@ exports[`edits an existing file correctly 1`] = `
               >
                 <div
                   aria-live="polite"
-                  class="default text"
+                  class="text"
                   role="alert"
                 >
-                  Date option
+                  Modified date
                 </div>
                 <i
                   aria-hidden="true"
-                  class="dropdown icon"
+                  class="dropdown icon clear"
                 />
                 <div
                   class="menu transition"
                 >
                   <div
                     aria-checked="false"
-                    aria-selected="true"
-                    class="selected item"
+                    aria-selected="false"
+                    class="item"
                     role="option"
                     style="pointer-events: all;"
                   >
@@ -480,9 +480,9 @@ exports[`edits an existing file correctly 1`] = `
                     </span>
                   </div>
                   <div
-                    aria-checked="false"
-                    aria-selected="false"
-                    class="item"
+                    aria-checked="true"
+                    aria-selected="true"
+                    class="active selected item"
                     role="option"
                     style="pointer-events: all;"
                   >
@@ -1237,10 +1237,23 @@ exports[`edits an existing file correctly 2`] = `
                   class="ui grey header"
                 >
                   Description
+                  <button
+                    class="ui mini left labeled button ml-15 text-primary"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="pencil icon"
+                    />
+                    Edit
+                  </button>
                 </h4>
-                <p>
-                  Month necessary animal end standard case. View system operation message decade. Actually sing because deal everything woman subject.
-                </p>
+                <div
+                  class="ui basic secondary segment"
+                >
+                  <p>
+                    Month necessary animal end standard case. View system operation message decade. Actually sing because deal everything woman subject.
+                  </p>
+                </div>
               </div>
               <div
                 class="ui segment noBorders"
@@ -1962,10 +1975,23 @@ exports[`edits an existing file correctly 3`] = `
                   class="ui grey header"
                 >
                   Description
+                  <button
+                    class="ui mini left labeled button ml-15 text-primary"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="pencil icon"
+                    />
+                    Edit
+                  </button>
                 </h4>
-                <p>
-                  Some description here
-                </p>
+                <div
+                  class="ui basic secondary segment"
+                >
+                  <p>
+                    Some description here
+                  </p>
+                </div>
               </div>
               <div
                 class="ui segment noBorders"
@@ -2709,10 +2735,23 @@ exports[`edits an existing file correctly 4`] = `
                   class="ui grey header"
                 >
                   Description
+                  <button
+                    class="ui mini left labeled button ml-15 text-primary"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="pencil icon"
+                    />
+                    Edit
+                  </button>
                 </h4>
-                <p>
-                  Some description here
-                </p>
+                <div
+                  class="ui basic secondary segment"
+                >
+                  <p>
+                    Some description here
+                  </p>
+                </div>
               </div>
               <div
                 class="ui segment noBorders"
@@ -3456,10 +3495,23 @@ exports[`edits an existing file correctly 5`] = `
                   class="ui grey header"
                 >
                   Description
+                  <button
+                    class="ui mini left labeled button ml-15 text-primary"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="pencil icon"
+                    />
+                    Edit
+                  </button>
                 </h4>
-                <p>
-                  Some description here
-                </p>
+                <div
+                  class="ui basic secondary segment"
+                >
+                  <p>
+                    Some description here
+                  </p>
+                </div>
               </div>
               <div
                 class="ui segment noBorders"
@@ -4203,10 +4255,23 @@ exports[`edits an existing file correctly 6`] = `
                   class="ui grey header"
                 >
                   Description
+                  <button
+                    class="ui mini left labeled button ml-15 text-primary"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="pencil icon"
+                    />
+                    Edit
+                  </button>
                 </h4>
-                <p>
-                  Some description here
-                </p>
+                <div
+                  class="ui basic secondary segment"
+                >
+                  <p>
+                    Some description here
+                  </p>
+                </div>
               </div>
               <div
                 class="ui segment noBorders"
