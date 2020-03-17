@@ -1,3 +1,5 @@
+@import '../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+
 :root {
   /* define global css vars here  */
   --site-max-width: 1024px;
