@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Route} from 'react-router-dom';
-import {AmplitudeProxy} from '../analyticsTracking';
+import {Amplitude, LogOnMount} from '@amplitude/react-amplitude';
 
 /**
  * Wrap all of our routes to make them log the view and route they render
@@ -10,44 +10,38 @@ import {AmplitudeProxy} from '../analyticsTracking';
  * */
 const TrackedRoute = ({
   component,
+  scope = [],
+  eventProperties = {},
+  disableViewEvent = false,
   render,
-  logPageView = false,
-  eventProperties,
   ...rest
 }) => (
-  <AmplitudeProxy
-    eventProperties={{
-      view: component
-        ? component.name
-        : render().type.WrappedComponent
-        ? render().type.WrappedComponent.name
-        : null,
-      route: rest.path,
-      ...eventProperties,
-    }}
+  <Amplitude
+    eventProperties={inheritedProps => ({
+      ...inheritedProps,
+      scope: [...(inheritedProps.scope || []), ...scope],
+      study: rest.computedMatch && rest.computedMatch.params.kfId,
+      path: rest.location.pathname,
+    })}
   >
-    {({logEvent, EVENT_CONSTANTS: {PAGE}}) => {
-      /**
-       * here we use logEvent to that it gets
-       * pasesd through our proxy class instead
-       * of the default Amplitude class used by LogOnMount
-       */
-
-      if (logPageView) logEvent(PAGE.VIEW);
-      return <Route {...{component, render}} {...rest} />;
-    }}
-  </AmplitudeProxy>
+    {render ? (
+      <Route render={render} {...rest} />
+    ) : (
+      <Route component={component} {...rest} />
+    )}
+    {!disableViewEvent && <LogOnMount eventType="page view" />}
+  </Amplitude>
 );
 
 TrackedRoute.propTypes = {
   /** component passed to Route */
   component: PropTypes.func,
-  /** render function to pass to Route  */
-  render: PropTypes.func,
-  /** boolean to fire a PAGEVIEW event Route mount (default: True) */
-  logPageView: PropTypes.bool,
   /** additional event properties object for events wihin the route */
   eventProperties: PropTypes.object,
+  /** name of the view scope */
+  scope: PropTypes.array,
+  /** whether to disable evens firing on render */
+  disableViewEvent: PropTypes.bool,
 };
 
 export default TrackedRoute;
