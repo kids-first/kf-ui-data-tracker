@@ -27,6 +27,7 @@ import {
   Message,
 } from 'semantic-ui-react';
 import FileTags from './FileTags';
+import FileDescription from './FileDescription';
 
 const ActionButtons = ({
   downloadFile,
@@ -179,10 +180,7 @@ const FileDetail = ({
                 </Segment>
               </Segment.Group>
               <Segment className="noBorders">
-                <Header as="h4" color="grey">
-                  Description
-                </Header>
-                <p>{fileNode.description || 'No description added...'}</p>
+                <FileDescription fileNode={fileNode} updateFile={updateFile} />
               </Segment>
               <Segment className="noBorders">
                 <Header as="h4" color="grey">
