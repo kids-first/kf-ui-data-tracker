@@ -262,7 +262,7 @@ exports[`edits an existing file description 1`] = `
             <h2
               class="ui header"
             >
-              organization.jpeg
+              its.mp3
             </h2>
           </div>
         </div>
@@ -309,9 +309,9 @@ exports[`edits an existing file description 1`] = `
                   >
                     <i
                       aria-hidden="true"
-                      class="hospital icon"
+                      class="shipping icon"
                     />
-                     Clinical/Phenotypic Data
+                     Biospecimen Manifest
                   </div>
                 </div>
                 <div
@@ -378,7 +378,7 @@ exports[`edits an existing file description 1`] = `
                   class="ui basic secondary segment"
                 >
                   <p>
-                    Month necessary animal end standard case. View system operation message decade. Actually sing because deal everything woman subject.
+                    Question meeting move recognize.
                   </p>
                 </div>
               </div>
@@ -395,9 +395,32 @@ exports[`edits an existing file description 1`] = `
                 >
                   <div
                     class="ui label my-2"
-                    title="email"
+                    title="dbGaP"
                   >
-                    Email
+                    dbGaP
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="random"
+                  >
+                    random
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="tag that has ten more char"
+                  >
+                    tag that h
+                    ...
                     <i
                       aria-hidden="true"
                       class="close icon"
@@ -986,7 +1009,7 @@ exports[`edits an existing file description 2`] = `
             <h2
               class="ui header"
             >
-              organization.jpeg
+              its.mp3
             </h2>
           </div>
         </div>
@@ -1033,9 +1056,9 @@ exports[`edits an existing file description 2`] = `
                   >
                     <i
                       aria-hidden="true"
-                      class="hospital icon"
+                      class="shipping icon"
                     />
-                     Clinical/Phenotypic Data
+                     Biospecimen Manifest
                   </div>
                 </div>
                 <div
@@ -1293,7 +1316,7 @@ exports[`edits an existing file description 2`] = `
                                     <span
                                       data-text="true"
                                     >
-                                      Month necessary animal end standard case. View system operation message decade. Actually sing because deal everything woman subject.
+                                      Question meeting move recognize.
                                     </span>
                                   </span>
                                 </div>
@@ -1333,9 +1356,32 @@ exports[`edits an existing file description 2`] = `
                 >
                   <div
                     class="ui label my-2"
-                    title="email"
+                    title="dbGaP"
                   >
-                    Email
+                    dbGaP
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="random"
+                  >
+                    random
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="tag that has ten more char"
+                  >
+                    tag that h
+                    ...
                     <i
                       aria-hidden="true"
                       class="close icon"
@@ -1924,7 +1970,7 @@ exports[`edits an existing file description 3`] = `
             <h2
               class="ui header"
             >
-              organization.jpeg
+              its.mp3
             </h2>
           </div>
         </div>
@@ -1971,9 +2017,9 @@ exports[`edits an existing file description 3`] = `
                   >
                     <i
                       aria-hidden="true"
-                      class="hospital icon"
+                      class="shipping icon"
                     />
-                     Clinical/Phenotypic Data
+                     Biospecimen Manifest
                   </div>
                 </div>
                 <div
@@ -2232,7 +2278,7 @@ exports[`edits an existing file description 3`] = `
                                       data-text="true"
                                     >
                                       | Tables | Are | Cool | |----------|:-------------:|------:| | col 1 is | left-aligned | $1600 | | col 2 is | centered | $12 | | col 3 is | right-aligned | $1 |
-Month necessary animal end standard case. View system operation message decade. Actually sing because deal everything woman subject.
+Question meeting move recognize.
                                     </span>
                                   </span>
                                 </div>
@@ -2272,9 +2318,32 @@ Month necessary animal end standard case. View system operation message decade. 
                 >
                   <div
                     class="ui label my-2"
-                    title="email"
+                    title="dbGaP"
                   >
-                    Email
+                    dbGaP
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="random"
+                  >
+                    random
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="tag that has ten more char"
+                  >
+                    tag that h
+                    ...
                     <i
                       aria-hidden="true"
                       class="close icon"
@@ -2863,7 +2932,7 @@ exports[`edits an existing file description 4`] = `
             <h2
               class="ui header"
             >
-              foo bar file
+              its.mp3
             </h2>
           </div>
         </div>
@@ -2910,9 +2979,9 @@ exports[`edits an existing file description 4`] = `
                   >
                     <i
                       aria-hidden="true"
-                      class="hospital icon"
+                      class="shipping icon"
                     />
-                     Clinical/Phenotypic Data
+                     Biospecimen Manifest
                   </div>
                 </div>
                 <div
@@ -2978,76 +3047,9 @@ exports[`edits an existing file description 4`] = `
                 <div
                   class="ui basic secondary segment"
                 >
-                  <table
-                    class="ui table"
-                  >
-                    <thead>
-                      <tr>
-                        <th>
-                          Tables
-                        </th>
-                        <th
-                          style="text-align: center;"
-                        >
-                          Are
-                        </th>
-                        <th
-                          style="text-align: right;"
-                        >
-                          Cool
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          col 1 is
-                        </td>
-                        <td
-                          style="text-align: center;"
-                        >
-                          left-aligned
-                        </td>
-                        <td
-                          style="text-align: right;"
-                        >
-                          $1600
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          col 2 is
-                        </td>
-                        <td
-                          style="text-align: center;"
-                        >
-                          centered
-                        </td>
-                        <td
-                          style="text-align: right;"
-                        >
-                          $12
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          col 3 is
-                        </td>
-                        <td
-                          style="text-align: center;"
-                        >
-                          right-aligned
-                        </td>
-                        <td
-                          style="text-align: right;"
-                        >
-                          $1
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
                   <p>
-                    Month necessary animal end standard case. View system operation message decade. Actually sing because deal everything woman subject.
+                    | Tables | Are | Cool | |----------|:-------------:|------:| | col 1 is | left-aligned | $1600 | | col 2 is | centered | $12 | | col 3 is | right-aligned | $1 |\\s\\s
+Question meeting move recognize.
                   </p>
                 </div>
               </div>
@@ -3064,17 +3066,6 @@ exports[`edits an existing file description 4`] = `
                 >
                   <div
                     class="ui label my-2"
-                    title="email"
-                  >
-                    Email
-                    <i
-                      aria-hidden="true"
-                      class="close icon"
-                      data-testid="remove-tag"
-                    />
-                  </div>
-                  <div
-                    class="ui label my-2"
                     title="dbGaP"
                   >
                     dbGaP
@@ -3086,9 +3077,21 @@ exports[`edits an existing file description 4`] = `
                   </div>
                   <div
                     class="ui label my-2"
-                    title="tag"
+                    title="random"
                   >
-                    tag
+                    random
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="tag that has ten more char"
+                  >
+                    tag that h
+                    ...
                     <i
                       aria-hidden="true"
                       class="close icon"

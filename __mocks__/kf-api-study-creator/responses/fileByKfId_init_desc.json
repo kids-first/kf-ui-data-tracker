@@ -1,13 +1,13 @@
 {
   "data": {
     "fileByKfId": {
-      "id": "f1",
-      "kfId": "SF_5ZPEM167",
-      "tags": ["email", "dbGaP", "tag"],
-      "name": "foo bar file",
-      "description": "| Tables   |      Are      |  Cool |\n|----------|:-------------:|------:|\n| col 1 is |  left-aligned | $1600 |\n| col 2 is |    centered   |   $12 |\n| col 3 is | right-aligned |    $1 |\nMonth necessary animal end standard case. View system operation message decade. Actually sing because deal everything woman subject.\n",
-      "fileType": "CLN",
-      "downloadUrl": "http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167",
+      "id": "RmlsZU5vZGU6U0ZfWTA3SU4xSE8=",
+      "kfId": "SF_Y07IN1HO",
+      "name": "its.mp3",
+      "fileType": "SHM",
+      "tags": ["dbGaP", "random", "tag that has ten more char"],
+      "description": "Question meeting move recognize.",
+      "downloadUrl": "http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_Y07IN1HO",
       "creator": {
         "email": "xuzhu@d3b.center",
         "id": "VXNlck5vZGU6Mg==",

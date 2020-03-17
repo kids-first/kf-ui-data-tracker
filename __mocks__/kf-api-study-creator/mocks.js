@@ -34,10 +34,12 @@ import studyByKfId_empty from './responses/studyByKfId_empty.json';
 import deleteFile from './responses/deleteFile.json';
 import fileByKfId from './responses/fileByKfId.json';
 import fileByKfId_empty from './responses/fileByKfId_empty.json';
-import fileByKfId_refresh from './responses/fileByKfId_refresh.json';
+import fileByKfId_init_desc from './responses/fileByKfId_init_desc.json';
+import fileByKfId_update_desc from './responses/fileByKfId_update_desc.json';
 import myProfile from './responses/myProfile.json';
 import createFile from './responses/createFile.json';
 import updateFile from './responses/updateFile.json';
+import updateFile_desc from './responses/updateFile_desc.json';
 import updateVersion from './responses/updateVersion.json';
 import createVersion from './responses/createVersion.json';
 import createStudy from './responses/createStudy.json';
@@ -753,9 +755,30 @@ export const mocks = [
     request: {
       query: GET_FILE_BY_ID,
       variables: {
-        kfId: 'SF_5ZPEM167',
+        kfId: 'SF_Y07IN1HO',
       },
     },
-    result: fileByKfId_refresh,
+    result: fileByKfId_init_desc,
+  },
+  {
+    request: {
+      query: UPDATE_FILE,
+      variables: {
+        kfId: 'SF_Y07IN1HO',
+        fileType: 'SHM',
+        description:
+          '| Tables | Are | Cool | |----------|:-------------:|------:| | col 1 is | left-aligned | $1600 | | col 2 is | centered | $12 | | col 3 is | right-aligned | $1 |\\s\\s\nQuestion meeting move recognize.\n',
+      },
+    },
+    result: updateFile_desc,
+  },
+  {
+    request: {
+      query: GET_FILE_BY_ID,
+      variables: {
+        kfId: 'SF_Y07IN1HO',
+      },
+    },
+    result: fileByKfId_update_desc,
   },
 ];

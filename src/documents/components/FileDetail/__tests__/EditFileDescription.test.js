@@ -22,10 +22,10 @@ it('edits an existing file description', async () => {
           myProfile: _ => myProfile.data.myProfile,
         },
       }}
-      mocks={[mocks[4], mocks[5], mocks[64], mocks[8], mocks[1]]}
+      mocks={[mocks[64], mocks[65], mocks[66], mocks[8], mocks[1]]}
     >
       <MemoryRouter
-        initialEntries={['/study/SD_8WX8QQ06/documents/SF_5ZPEM167']}
+        initialEntries={['/study/SD_8WX8QQ06/documents/SF_Y07IN1HO']}
       >
         <Routes />
       </MemoryRouter>
