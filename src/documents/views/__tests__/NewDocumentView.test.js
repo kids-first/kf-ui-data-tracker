@@ -8,9 +8,14 @@ import {mocks} from '../../../../__mocks__/kf-api-study-creator/mocks';
 import myProfile from '../../../../__mocks__/kf-api-study-creator/responses/myProfile.json';
 import NewDocumentView from '../NewDocumentView';
 import Routes from '../../../Routes';
+import ReactTestUtils from 'react-dom/test-utils';
 
 jest.mock('auth0-js');
 afterEach(cleanup);
+jest.mock('draft-js/lib/generateRandomKey', () => () => '123');
+const mockMath = Object.create(global.Math);
+mockMath.random = () => 0.5;
+global.Math = mockMath;
 
 let file = {
   lastModified: 1567797130510,
@@ -65,18 +70,13 @@ it('Render out the new document view', async () => {
 
   expect(tree.container).toMatchSnapshot();
 
-  // Select file type
-  act(() => {
-    fireEvent.click(tree.getByText(/Biospecimen Manifest/i));
-  });
-
-  await wait();
-
   // Add description
-  const descriptionInput = tree.getByTestId('description-input');
+  const descriptionInput = tree.container.querySelector(
+    '.public-DraftEditor-content',
+  );
   act(() => {
-    fireEvent.change(descriptionInput, {
-      target: {value: 'description input added'},
+    ReactTestUtils.Simulate.beforeInput(descriptionInput, {
+      data: 'description input added',
     });
   });
   await wait();
@@ -92,8 +92,8 @@ it('Render out the new document view', async () => {
   await wait();
 
   act(() => {
-    fireEvent.change(descriptionInput, {
-      target: {value: ''},
+    ReactTestUtils.Simulate.beforeInput(descriptionInput, {
+      data: '',
     });
   });
   await wait();
@@ -109,10 +109,17 @@ it('Render out the new document view', async () => {
   await wait();
 
   act(() => {
-    fireEvent.change(descriptionInput, {
-      target: {value: 'description'},
+    ReactTestUtils.Simulate.beforeInput(descriptionInput, {
+      data: 'description',
     });
   });
+  await wait();
+
+  // Select file type
+  act(() => {
+    fireEvent.click(tree.getByText(/Biospecimen Manifest/i));
+  });
+
   await wait();
 
   // Click on the cancle button
@@ -157,15 +164,17 @@ it('Render out the new document view with error on creation', async () => {
     });
   });
   await wait();
+  const descriptionInput = tree.container.querySelector(
+    '.public-DraftEditor-content',
+  );
   act(() => {
-    fireEvent.click(tree.getByText(/Biospecimen Manifest/i));
+    ReactTestUtils.Simulate.beforeInput(descriptionInput, {
+      data: '#description',
+    });
   });
   await wait();
-  const descriptionInput = tree.getByTestId('description-input');
   act(() => {
-    fireEvent.change(descriptionInput, {
-      target: {value: 'description'},
-    });
+    fireEvent.click(tree.getByText(/Biospecimen Manifest/i));
   });
   await wait();
   expect(tree.container).toMatchSnapshot();
