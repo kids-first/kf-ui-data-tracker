@@ -34,6 +34,7 @@ import studyByKfId_empty from './responses/studyByKfId_empty.json';
 import deleteFile from './responses/deleteFile.json';
 import fileByKfId from './responses/fileByKfId.json';
 import fileByKfId_empty from './responses/fileByKfId_empty.json';
+import fileByKfId_refresh from './responses/fileByKfId_refresh.json';
 import myProfile from './responses/myProfile.json';
 import createFile from './responses/createFile.json';
 import updateFile from './responses/updateFile.json';
@@ -106,8 +107,8 @@ export const mocks = [
       query: UPDATE_FILE,
       variables: {
         kfId: 'SF_5ZPEM167',
-        name: 'foo bar file',
-        description: 'Some description here',
+        description:
+          '| Tables | Are | Cool | |----------|:-------------:|------:| | col 1 is | left-aligned | $1600 | | col 2 is | centered | $12 | | col 3 is | right-aligned | $1 |\\s\\s\nMonth necessary animal end standard case. View system operation message decade. Actually sing because deal everything woman subject.\n',
         fileType: 'CLN',
       },
     },
@@ -734,5 +735,27 @@ export const mocks = [
     result: {
       errors: [new GraphQLError('Failed to update the file tags')],
     },
+  },
+  {
+    request: {
+      query: UPDATE_FILE,
+      variables: {
+        kfId: 'SF_5ZPEM167',
+        name: 'foo bar file',
+        description:
+          'Month necessary animal end standard case. View system operation message decade. Actually sing because deal everything woman subject.\n',
+        fileType: 'CLN',
+      },
+    },
+    result: updateFile,
+  },
+  {
+    request: {
+      query: GET_FILE_BY_ID,
+      variables: {
+        kfId: 'SF_5ZPEM167',
+      },
+    },
+    result: fileByKfId_refresh,
   },
 ];
