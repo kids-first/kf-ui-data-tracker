@@ -49,6 +49,15 @@ it('edits an existing file correctly', async () => {
   );
   await wait(10);
 
+  // Sort files by create date by clicking on the file sorting dropdown
+  act(() => {
+    fireEvent.click(tree.getByText(/Date option/i));
+  });
+  await wait();
+  act(() => {
+    fireEvent.click(tree.getByText(/Modified date/i));
+  });
+  await wait();
   expect(tree.container).toMatchSnapshot();
 
   expect(tree.queryAllByText(/organization.jpeg/i).length).toBe(1);
