@@ -12,6 +12,23 @@ exports[`renders correctly 1`] = `
         <td
           class="center aligned"
         >
+          <div
+            class="ui fitted checkbox"
+            data-testid="file-select"
+          >
+            <input
+              class="hidden"
+              readonly=""
+              tabindex="0"
+              type="checkbox"
+              value=""
+            />
+            <label />
+          </div>
+        </td>
+        <td
+          class="center aligned"
+        >
           <i
             aria-hidden="true"
             class="hospital big icon"
@@ -107,6 +124,23 @@ exports[`renders latest temporary state 1`] = `
         <td
           class="center aligned"
         >
+          <div
+            class="ui fitted checkbox"
+            data-testid="file-select"
+          >
+            <input
+              class="hidden"
+              readonly=""
+              tabindex="0"
+              type="checkbox"
+              value=""
+            />
+            <label />
+          </div>
+        </td>
+        <td
+          class="center aligned"
+        >
           <i
             aria-hidden="true"
             class="hospital big icon"
@@ -199,6 +233,23 @@ exports[`renders loading state 1`] = `
         data-testid="file-item"
         style="background-color: inherit;"
       >
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui fitted checkbox"
+            data-testid="file-select"
+          >
+            <input
+              class="hidden"
+              readonly=""
+              tabindex="0"
+              type="checkbox"
+              value=""
+            />
+            <label />
+          </div>
+        </td>
         <td
           class="center aligned"
         >
