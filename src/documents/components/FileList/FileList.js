@@ -16,7 +16,15 @@ import {
 /**
  * Displays list of study files
  */
-const FileList = ({fileList, studyId, isAdmin, updateFile, updateError}) => {
+const FileList = ({
+  fileList,
+  studyId,
+  isAdmin,
+  updateFile,
+  updateError,
+  downloadFileMutation,
+  deleteFile,
+}) => {
   const perPage = 10;
   const [page, setPage] = useState(1);
   const [pageCount, setPageCount] = useState(1);
@@ -60,6 +68,11 @@ const FileList = ({fileList, studyId, isAdmin, updateFile, updateError}) => {
       {fileList.length ? (
         <>
           <ListFilterBar
+            downloadFileMutation={downloadFileMutation}
+            deleteFile={isAdmin ? deleteFile : null}
+            selection={selection}
+            setSelection={setSelection}
+            studyId={studyId}
             fileList={fileList}
             filteredList={filteredList => {
               setPageCount(Math.ceil(filteredList.length / perPage));
