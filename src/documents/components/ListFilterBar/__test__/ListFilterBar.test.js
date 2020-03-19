@@ -15,7 +15,11 @@ it('renders ListFilterBar with files', async () => {
   const tree = render(
     <MemoryRouter>
       <MockedProvider>
-        <ListFilterBar fileList={files} filteredList={jest.fn()} />
+        <ListFilterBar
+          selection={[]}
+          fileList={files}
+          filteredList={jest.fn()}
+        />
       </MockedProvider>
     </MemoryRouter>,
   );
@@ -54,7 +58,7 @@ it('renders ListFilterBar with no files', async () => {
   const tree = render(
     <MemoryRouter>
       <MockedProvider>
-        <ListFilterBar filteredList={jest.fn()} />
+        <ListFilterBar selection={[]} filteredList={jest.fn()} />
       </MockedProvider>
     </MemoryRouter>,
   );
