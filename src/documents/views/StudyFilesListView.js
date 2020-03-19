@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Helmet} from 'react-helmet';
 import {useQuery, useMutation} from '@apollo/react-hooks';
 import {GET_STUDY_BY_ID, MY_PROFILE} from '../../state/queries';
-import {UPDATE_FILE} from '../mutations';
+import {FILE_DOWNLOAD_URL, UPDATE_FILE, DELETE_FILE} from '../mutations';
 import {UploadContainer} from '../containers';
 import FileList from '../components/FileList/FileList';
 import {
@@ -51,6 +51,10 @@ const StudyFilesListView = ({
   },
   history,
 }) => {
+  const [downloadFileMutation] = useMutation(FILE_DOWNLOAD_URL);
+  const [deleteFile] = useMutation(DELETE_FILE, {
+    refetchQueries: [{query: GET_STUDY_BY_ID, variables: {kfId: kfId}}],
+  });
   const [updateFileError, setUpdateFileError] = useState(null);
   const {loading, data, error} = useQuery(GET_STUDY_BY_ID, {
     variables: {
@@ -148,6 +152,8 @@ const StudyFilesListView = ({
               isAdmin={isAdmin}
               updateFile={updateFile}
               updateError={updateFileError}
+              downloadFileMutation={downloadFileMutation}
+              deleteFile={deleteFile}
             />
           )}
           {dialog && (
