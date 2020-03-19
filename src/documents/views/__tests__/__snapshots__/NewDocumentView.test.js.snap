@@ -5598,7 +5598,24 @@ exports[`renders new document view and redirect due to lack of location.state 1`
                 class=""
               >
                 <th
-                  class="center aligned"
+                  class="center aligned one wide"
+                >
+                  <div
+                    class="ui fitted checkbox"
+                    data-testid="file-select-all"
+                  >
+                    <input
+                      class="hidden"
+                      readonly=""
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <label />
+                  </div>
+                </th>
+                <th
+                  class="center aligned one wide"
                 >
                   Type
                 </th>
@@ -5627,6 +5644,23 @@ exports[`renders new document view and redirect due to lack of location.state 1`
                 data-testid="file-item"
                 style="background-color: inherit;"
               >
+                <td
+                  class="center aligned"
+                >
+                  <div
+                    class="ui fitted checkbox"
+                    data-testid="file-select"
+                  >
+                    <input
+                      class="hidden"
+                      readonly=""
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <label />
+                  </div>
+                </td>
                 <td
                   class="center aligned"
                 >
@@ -5722,6 +5756,23 @@ exports[`renders new document view and redirect due to lack of location.state 1`
                 data-testid="file-item"
                 style="background-color: inherit;"
               >
+                <td
+                  class="center aligned"
+                >
+                  <div
+                    class="ui fitted checkbox"
+                    data-testid="file-select"
+                  >
+                    <input
+                      class="hidden"
+                      readonly=""
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <label />
+                  </div>
+                </td>
                 <td
                   class="center aligned"
                 >

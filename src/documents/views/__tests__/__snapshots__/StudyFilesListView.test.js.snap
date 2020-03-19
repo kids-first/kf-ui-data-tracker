@@ -297,7 +297,24 @@ exports[`deletes a file correctly 1`] = `
               class=""
             >
               <th
-                class="center aligned"
+                class="center aligned one wide"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select-all"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </th>
+              <th
+                class="center aligned one wide"
               >
                 Type
               </th>
@@ -326,6 +343,23 @@ exports[`deletes a file correctly 1`] = `
               data-testid="file-item"
               style="background-color: inherit;"
             >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
               <td
                 class="center aligned"
               >
@@ -421,6 +455,23 @@ exports[`deletes a file correctly 1`] = `
               data-testid="file-item"
               style="background-color: inherit;"
             >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
               <td
                 class="center aligned"
               >
@@ -865,7 +916,24 @@ exports[`deletes a file correctly 2`] = `
               class=""
             >
               <th
-                class="center aligned"
+                class="center aligned one wide"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select-all"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </th>
+              <th
+                class="center aligned one wide"
               >
                 Type
               </th>
@@ -894,6 +962,23 @@ exports[`deletes a file correctly 2`] = `
               data-testid="file-item"
               style="background-color: inherit;"
             >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
               <td
                 class="center aligned"
               >
@@ -2709,7 +2794,24 @@ exports[`renders correctly 1`] = `
               class=""
             >
               <th
-                class="center aligned"
+                class="center aligned one wide"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select-all"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </th>
+              <th
+                class="center aligned one wide"
               >
                 Type
               </th>
@@ -2738,6 +2840,23 @@ exports[`renders correctly 1`] = `
               data-testid="file-item"
               style="background-color: inherit;"
             >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
               <td
                 class="center aligned"
               >
@@ -2833,6 +2952,23 @@ exports[`renders correctly 1`] = `
               data-testid="file-item"
               style="background-color: inherit;"
             >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
               <td
                 class="center aligned"
               >
@@ -3360,7 +3496,24 @@ exports[`update tags with no error adding tag and error with removing tag 1`] = 
                 class=""
               >
                 <th
-                  class="center aligned"
+                  class="center aligned one wide"
+                >
+                  <div
+                    class="ui fitted checkbox"
+                    data-testid="file-select-all"
+                  >
+                    <input
+                      class="hidden"
+                      readonly=""
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <label />
+                  </div>
+                </th>
+                <th
+                  class="center aligned one wide"
                 >
                   Type
                 </th>
@@ -3389,6 +3542,23 @@ exports[`update tags with no error adding tag and error with removing tag 1`] = 
                 data-testid="file-item"
                 style="background-color: inherit;"
               >
+                <td
+                  class="center aligned"
+                >
+                  <div
+                    class="ui fitted checkbox"
+                    data-testid="file-select"
+                  >
+                    <input
+                      class="hidden"
+                      readonly=""
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <label />
+                  </div>
+                </td>
                 <td
                   class="center aligned"
                 >
@@ -3475,6 +3645,23 @@ exports[`update tags with no error adding tag and error with removing tag 1`] = 
                 data-testid="file-item"
                 style="background-color: inherit;"
               >
+                <td
+                  class="center aligned"
+                >
+                  <div
+                    class="ui fitted checkbox"
+                    data-testid="file-select"
+                  >
+                    <input
+                      class="hidden"
+                      readonly=""
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <label />
+                  </div>
+                </td>
                 <td
                   class="center aligned"
                 >
@@ -4034,7 +4221,24 @@ exports[`update tags with no error adding tag and error with removing tag 2`] = 
                 class=""
               >
                 <th
-                  class="center aligned"
+                  class="center aligned one wide"
+                >
+                  <div
+                    class="ui fitted checkbox"
+                    data-testid="file-select-all"
+                  >
+                    <input
+                      class="hidden"
+                      readonly=""
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <label />
+                  </div>
+                </th>
+                <th
+                  class="center aligned one wide"
                 >
                   Type
                 </th>
@@ -4063,6 +4267,23 @@ exports[`update tags with no error adding tag and error with removing tag 2`] = 
                 data-testid="file-item"
                 style="background-color: inherit;"
               >
+                <td
+                  class="center aligned"
+                >
+                  <div
+                    class="ui fitted checkbox"
+                    data-testid="file-select"
+                  >
+                    <input
+                      class="hidden"
+                      readonly=""
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <label />
+                  </div>
+                </td>
                 <td
                   class="center aligned"
                 >
@@ -4149,6 +4370,23 @@ exports[`update tags with no error adding tag and error with removing tag 2`] = 
                 data-testid="file-item"
                 style="background-color: inherit;"
               >
+                <td
+                  class="center aligned"
+                >
+                  <div
+                    class="ui fitted checkbox"
+                    data-testid="file-select"
+                  >
+                    <input
+                      class="hidden"
+                      readonly=""
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <label />
+                  </div>
+                </td>
                 <td
                   class="center aligned"
                 >
@@ -4708,7 +4946,24 @@ exports[`update tags with no error adding tag and error with removing tag 3`] = 
                 class=""
               >
                 <th
-                  class="center aligned"
+                  class="center aligned one wide"
+                >
+                  <div
+                    class="ui fitted checkbox"
+                    data-testid="file-select-all"
+                  >
+                    <input
+                      class="hidden"
+                      readonly=""
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <label />
+                  </div>
+                </th>
+                <th
+                  class="center aligned one wide"
                 >
                   Type
                 </th>
@@ -4737,6 +4992,23 @@ exports[`update tags with no error adding tag and error with removing tag 3`] = 
                 data-testid="file-item"
                 style="background-color: inherit;"
               >
+                <td
+                  class="center aligned"
+                >
+                  <div
+                    class="ui fitted checkbox"
+                    data-testid="file-select"
+                  >
+                    <input
+                      class="hidden"
+                      readonly=""
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <label />
+                  </div>
+                </td>
                 <td
                   class="center aligned"
                 >
@@ -4823,6 +5095,23 @@ exports[`update tags with no error adding tag and error with removing tag 3`] = 
                 data-testid="file-item"
                 style="background-color: inherit;"
               >
+                <td
+                  class="center aligned"
+                >
+                  <div
+                    class="ui fitted checkbox"
+                    data-testid="file-select"
+                  >
+                    <input
+                      class="hidden"
+                      readonly=""
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <label />
+                  </div>
+                </td>
                 <td
                   class="center aligned"
                 >
@@ -5473,7 +5762,24 @@ exports[`update tags with no error adding tag and error with removing tag 4`] = 
                 class=""
               >
                 <th
-                  class="center aligned"
+                  class="center aligned one wide"
+                >
+                  <div
+                    class="ui fitted checkbox"
+                    data-testid="file-select-all"
+                  >
+                    <input
+                      class="hidden"
+                      readonly=""
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <label />
+                  </div>
+                </th>
+                <th
+                  class="center aligned one wide"
                 >
                   Type
                 </th>
@@ -5502,6 +5808,23 @@ exports[`update tags with no error adding tag and error with removing tag 4`] = 
                 data-testid="file-item"
                 style="background-color: inherit;"
               >
+                <td
+                  class="center aligned"
+                >
+                  <div
+                    class="ui fitted checkbox"
+                    data-testid="file-select"
+                  >
+                    <input
+                      class="hidden"
+                      readonly=""
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <label />
+                  </div>
+                </td>
                 <td
                   class="center aligned"
                 >
@@ -5588,6 +5911,23 @@ exports[`update tags with no error adding tag and error with removing tag 4`] = 
                 data-testid="file-item"
                 style="background-color: inherit;"
               >
+                <td
+                  class="center aligned"
+                >
+                  <div
+                    class="ui fitted checkbox"
+                    data-testid="file-select"
+                  >
+                    <input
+                      class="hidden"
+                      readonly=""
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <label />
+                  </div>
+                </td>
                 <td
                   class="center aligned"
                 >
@@ -6238,7 +6578,24 @@ exports[`update tags with no error adding tag and error with removing tag 5`] = 
                 class=""
               >
                 <th
-                  class="center aligned"
+                  class="center aligned one wide"
+                >
+                  <div
+                    class="ui fitted checkbox"
+                    data-testid="file-select-all"
+                  >
+                    <input
+                      class="hidden"
+                      readonly=""
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <label />
+                  </div>
+                </th>
+                <th
+                  class="center aligned one wide"
                 >
                   Type
                 </th>
@@ -6267,6 +6624,23 @@ exports[`update tags with no error adding tag and error with removing tag 5`] = 
                 data-testid="file-item"
                 style="background-color: inherit;"
               >
+                <td
+                  class="center aligned"
+                >
+                  <div
+                    class="ui fitted checkbox"
+                    data-testid="file-select"
+                  >
+                    <input
+                      class="hidden"
+                      readonly=""
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <label />
+                  </div>
+                </td>
                 <td
                   class="center aligned"
                 >
@@ -6353,6 +6727,23 @@ exports[`update tags with no error adding tag and error with removing tag 5`] = 
                 data-testid="file-item"
                 style="background-color: inherit;"
               >
+                <td
+                  class="center aligned"
+                >
+                  <div
+                    class="ui fitted checkbox"
+                    data-testid="file-select"
+                  >
+                    <input
+                      class="hidden"
+                      readonly=""
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <label />
+                  </div>
+                </td>
                 <td
                   class="center aligned"
                 >
@@ -7003,7 +7394,24 @@ exports[`update tags with no error adding tag and error with removing tag 6`] = 
                 class=""
               >
                 <th
-                  class="center aligned"
+                  class="center aligned one wide"
+                >
+                  <div
+                    class="ui fitted checkbox"
+                    data-testid="file-select-all"
+                  >
+                    <input
+                      class="hidden"
+                      readonly=""
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <label />
+                  </div>
+                </th>
+                <th
+                  class="center aligned one wide"
                 >
                   Type
                 </th>
@@ -7032,6 +7440,23 @@ exports[`update tags with no error adding tag and error with removing tag 6`] = 
                 data-testid="file-item"
                 style="background-color: inherit;"
               >
+                <td
+                  class="center aligned"
+                >
+                  <div
+                    class="ui fitted checkbox"
+                    data-testid="file-select"
+                  >
+                    <input
+                      class="hidden"
+                      readonly=""
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <label />
+                  </div>
+                </td>
                 <td
                   class="center aligned"
                 >
@@ -7568,7 +7993,24 @@ exports[`update tags with no error adding tag and error with removing tag 7`] = 
                 class=""
               >
                 <th
-                  class="center aligned"
+                  class="center aligned one wide"
+                >
+                  <div
+                    class="ui fitted checkbox"
+                    data-testid="file-select-all"
+                  >
+                    <input
+                      class="hidden"
+                      readonly=""
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <label />
+                  </div>
+                </th>
+                <th
+                  class="center aligned one wide"
                 >
                   Type
                 </th>
@@ -7597,6 +8039,23 @@ exports[`update tags with no error adding tag and error with removing tag 7`] = 
                 data-testid="file-item"
                 style="background-color: inherit;"
               >
+                <td
+                  class="center aligned"
+                >
+                  <div
+                    class="ui fitted checkbox"
+                    data-testid="file-select"
+                  >
+                    <input
+                      class="hidden"
+                      readonly=""
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <label />
+                  </div>
+                </td>
                 <td
                   class="center aligned"
                 >
@@ -8272,7 +8731,24 @@ exports[`update tags with no error adding tag and error with removing tag 8`] = 
                 class=""
               >
                 <th
-                  class="center aligned"
+                  class="center aligned one wide"
+                >
+                  <div
+                    class="ui fitted checkbox"
+                    data-testid="file-select-all"
+                  >
+                    <input
+                      class="hidden"
+                      readonly=""
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <label />
+                  </div>
+                </th>
+                <th
+                  class="center aligned one wide"
                 >
                   Type
                 </th>
@@ -8301,6 +8777,23 @@ exports[`update tags with no error adding tag and error with removing tag 8`] = 
                 data-testid="file-item"
                 style="background-color: inherit;"
               >
+                <td
+                  class="center aligned"
+                >
+                  <div
+                    class="ui fitted checkbox"
+                    data-testid="file-select"
+                  >
+                    <input
+                      class="hidden"
+                      readonly=""
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <label />
+                  </div>
+                </td>
                 <td
                   class="center aligned"
                 >
@@ -8976,7 +9469,24 @@ exports[`update tags with no error adding tag and error with removing tag 9`] = 
                 class=""
               >
                 <th
-                  class="center aligned"
+                  class="center aligned one wide"
+                >
+                  <div
+                    class="ui fitted checkbox"
+                    data-testid="file-select-all"
+                  >
+                    <input
+                      class="hidden"
+                      readonly=""
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <label />
+                  </div>
+                </th>
+                <th
+                  class="center aligned one wide"
                 >
                   Type
                 </th>
@@ -9005,6 +9515,23 @@ exports[`update tags with no error adding tag and error with removing tag 9`] = 
                 data-testid="file-item"
                 style="background-color: inherit;"
               >
+                <td
+                  class="center aligned"
+                >
+                  <div
+                    class="ui fitted checkbox"
+                    data-testid="file-select"
+                  >
+                    <input
+                      class="hidden"
+                      readonly=""
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <label />
+                  </div>
+                </td>
                 <td
                   class="center aligned"
                 >
@@ -9680,7 +10207,24 @@ exports[`update tags with no error adding tag and error with removing tag 10`] =
                 class=""
               >
                 <th
-                  class="center aligned"
+                  class="center aligned one wide"
+                >
+                  <div
+                    class="ui fitted checkbox"
+                    data-testid="file-select-all"
+                  >
+                    <input
+                      class="hidden"
+                      readonly=""
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <label />
+                  </div>
+                </th>
+                <th
+                  class="center aligned one wide"
                 >
                   Type
                 </th>
@@ -9709,6 +10253,23 @@ exports[`update tags with no error adding tag and error with removing tag 10`] =
                 data-testid="file-item"
                 style="background-color: inherit;"
               >
+                <td
+                  class="center aligned"
+                >
+                  <div
+                    class="ui fitted checkbox"
+                    data-testid="file-select"
+                  >
+                    <input
+                      class="hidden"
+                      readonly=""
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <label />
+                  </div>
+                </td>
                 <td
                   class="center aligned"
                 >
@@ -10384,7 +10945,24 @@ exports[`update tags with no error adding tag and error with removing tag 11`] =
                 class=""
               >
                 <th
-                  class="center aligned"
+                  class="center aligned one wide"
+                >
+                  <div
+                    class="ui fitted checkbox"
+                    data-testid="file-select-all"
+                  >
+                    <input
+                      class="hidden"
+                      readonly=""
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <label />
+                  </div>
+                </th>
+                <th
+                  class="center aligned one wide"
                 >
                   Type
                 </th>
@@ -10413,6 +10991,23 @@ exports[`update tags with no error adding tag and error with removing tag 11`] =
                 data-testid="file-item"
                 style="background-color: inherit;"
               >
+                <td
+                  class="center aligned"
+                >
+                  <div
+                    class="ui fitted checkbox"
+                    data-testid="file-select"
+                  >
+                    <input
+                      class="hidden"
+                      readonly=""
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <label />
+                  </div>
+                </td>
                 <td
                   class="center aligned"
                 >
@@ -11166,7 +11761,24 @@ exports[`update tags with no error adding tag and error with removing tag 12`] =
                 class=""
               >
                 <th
-                  class="center aligned"
+                  class="center aligned one wide"
+                >
+                  <div
+                    class="ui fitted checkbox"
+                    data-testid="file-select-all"
+                  >
+                    <input
+                      class="hidden"
+                      readonly=""
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <label />
+                  </div>
+                </th>
+                <th
+                  class="center aligned one wide"
                 >
                   Type
                 </th>
@@ -11195,6 +11807,23 @@ exports[`update tags with no error adding tag and error with removing tag 12`] =
                 data-testid="file-item"
                 style="background-color: inherit;"
               >
+                <td
+                  class="center aligned"
+                >
+                  <div
+                    class="ui fitted checkbox"
+                    data-testid="file-select"
+                  >
+                    <input
+                      class="hidden"
+                      readonly=""
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <label />
+                  </div>
+                </td>
                 <td
                   class="center aligned"
                 >
@@ -11939,7 +12568,24 @@ exports[`update tags with no error adding tag and error with removing tag 13`] =
                 class=""
               >
                 <th
-                  class="center aligned"
+                  class="center aligned one wide"
+                >
+                  <div
+                    class="ui fitted checkbox"
+                    data-testid="file-select-all"
+                  >
+                    <input
+                      class="hidden"
+                      readonly=""
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <label />
+                  </div>
+                </th>
+                <th
+                  class="center aligned one wide"
                 >
                   Type
                 </th>
@@ -11968,6 +12614,23 @@ exports[`update tags with no error adding tag and error with removing tag 13`] =
                 data-testid="file-item"
                 style="background-color: inherit;"
               >
+                <td
+                  class="center aligned"
+                >
+                  <div
+                    class="ui fitted checkbox"
+                    data-testid="file-select"
+                  >
+                    <input
+                      class="hidden"
+                      readonly=""
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <label />
+                  </div>
+                </td>
                 <td
                   class="center aligned"
                 >
@@ -12748,7 +13411,24 @@ exports[`update tags with no error adding tag and error with removing tag 14`] =
                 class=""
               >
                 <th
-                  class="center aligned"
+                  class="center aligned one wide"
+                >
+                  <div
+                    class="ui fitted checkbox"
+                    data-testid="file-select-all"
+                  >
+                    <input
+                      class="hidden"
+                      readonly=""
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <label />
+                  </div>
+                </th>
+                <th
+                  class="center aligned one wide"
                 >
                   Type
                 </th>
@@ -12777,6 +13457,23 @@ exports[`update tags with no error adding tag and error with removing tag 14`] =
                 data-testid="file-item"
                 style="background-color: inherit;"
               >
+                <td
+                  class="center aligned"
+                >
+                  <div
+                    class="ui fitted checkbox"
+                    data-testid="file-select"
+                  >
+                    <input
+                      class="hidden"
+                      readonly=""
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <label />
+                  </div>
+                </td>
                 <td
                   class="center aligned"
                 >
