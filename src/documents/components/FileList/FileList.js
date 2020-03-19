@@ -10,6 +10,7 @@ import {
   Message,
   Pagination,
   Table,
+  Checkbox,
 } from 'semantic-ui-react';
 
 /**
@@ -19,11 +20,24 @@ const FileList = ({fileList, studyId, isAdmin, updateFile, updateError}) => {
   const perPage = 10;
   const [page, setPage] = useState(1);
   const [pageCount, setPageCount] = useState(1);
-
   const handlePageClick = (e, {activePage}) => {
     setPage(activePage);
   };
-
+  const [selection, setSelection] = useState([]);
+  const onSelectOne = fileKfID => {
+    if (selection.includes(fileKfID)) {
+      setSelection(selection.filter(id => id !== fileKfID));
+    } else {
+      setSelection([...selection, fileKfID]);
+    }
+  };
+  const onSelectAll = () => {
+    if (selection.length === fileList.length) {
+      setSelection([]);
+    } else {
+      setSelection(fileList.map(({node}) => node.kfId));
+    }
+  };
   return (
     <Fragment>
       {fileList.filter(obj => fileLatestStatus(obj.node) === 'CHN').length >
@@ -59,7 +73,20 @@ const FileList = ({fileList, studyId, isAdmin, updateFile, updateError}) => {
                 <Table stackable selectable compact="very" celled>
                   <Table.Header>
                     <Table.Row>
-                      <Table.HeaderCell textAlign="center">
+                      <Table.HeaderCell
+                        textAlign="center"
+                        width="1"
+                        onClick={e => {
+                          e.stopPropagation();
+                          onSelectAll();
+                        }}
+                      >
+                        <Checkbox
+                          data-testid="file-select-all"
+                          checked={selection.length === fileList.length}
+                        />
+                      </Table.HeaderCell>
+                      <Table.HeaderCell textAlign="center" width="1">
                         Type
                       </Table.HeaderCell>
                       <Table.HeaderCell className="px-20">
