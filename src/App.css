@@ -315,3 +315,7 @@ body {
   max-height: 500px;
   min-height: 150px;
 }
+
+.h-38 {
+  height: 38px !important;
+}
