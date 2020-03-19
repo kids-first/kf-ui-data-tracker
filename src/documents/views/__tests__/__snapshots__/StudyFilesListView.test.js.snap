@@ -1044,6 +1044,1374 @@ exports[`deletes a file correctly 2`] = `
 </div>
 `;
 
+exports[`download and delete multiple documents using checkbox selection 1`] = `
+<div>
+  <div
+    class="ui basic segment ui container one column grid"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="ten wide column"
+      >
+        <h2>
+          Study Documents
+        </h2>
+      </div>
+      <div
+        class="six wide column"
+      >
+        <label
+          class="ui large compact icon primary right floated left labeled button"
+          for="file"
+          role="button"
+        >
+          <i
+            aria-hidden="true"
+            class="cloud upload icon"
+          />
+          Upload Document
+        </label>
+        <input
+          hidden=""
+          id="file"
+          multiple=""
+          type="file"
+        />
+      </div>
+    </div>
+    <div
+      class="row"
+    >
+      <div
+        class="sixteen wide column"
+      >
+        <div
+          class="ui basic segment noHorizontalPadding"
+        >
+          <button
+            class="ui basic icon right floated button"
+            data-testid="show-sort-button"
+          >
+            <i
+              aria-hidden="true"
+              class="sort icon"
+            />
+          </button>
+          <button
+            class="ui basic icon right floated button"
+            data-testid="show-filter-button"
+          >
+            <i
+              aria-hidden="true"
+              class="filter icon"
+            />
+          </button>
+          <div
+            class="ui fluid icon input mr-80"
+          >
+            <input
+              aria-label="file-search-input"
+              type="text"
+              value=""
+            />
+            <i
+              aria-hidden="true"
+              class="search icon"
+            />
+          </div>
+        </div>
+        <table
+          class="ui celled selectable stackable very compact table"
+        >
+          <thead
+            class=""
+          >
+            <tr
+              class=""
+            >
+              <th
+                class="center aligned one wide"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select-all"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </th>
+              <th
+                class="center aligned one wide"
+              >
+                Type
+              </th>
+              <th
+                class="px-20"
+              >
+                Document Details
+              </th>
+              <th
+                class="center aligned"
+              >
+                Tags
+              </th>
+              <th
+                class="center aligned"
+              >
+                Actions
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            class=""
+          >
+            <tr
+              class="cursor-pointer"
+              data-testid="file-item"
+              style="background-color: inherit;"
+            >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
+              <td
+                class="center aligned"
+              >
+                <i
+                  aria-hidden="true"
+                  class="hospital big icon"
+                />
+              </td>
+              <td
+                class="px-20"
+              >
+                <span
+                  class="ui medium header"
+                >
+                  <a
+                    href="/study/undefined/documents/SF_5ZPEM167"
+                  >
+                    organization.jpeg
+                  </a>
+                </span>
+                <small
+                  class="text-grey ml-10"
+                >
+                  Modified
+                   
+                  <time
+                    datetime="2018-09-27T05:32:26.000Z"
+                    title="27 Sept 2018"
+                  >
+                    7 months ago
+                  </time>
+                </small>
+                <p
+                  class="noMargin"
+                >
+                  Month necessary animal end standard case. View system operation message decade. Actually sing becaus...
+                </p>
+              </td>
+              <td
+                class="center aligned four wide"
+              >
+                <div
+                  class="ui labels"
+                >
+                  <button
+                    class="ui mini basic compact icon button square-26"
+                    data-testid="tag-file"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="add icon"
+                    />
+                  </button>
+                </div>
+              </td>
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui small fluid buttons"
+                >
+                  <button
+                    class="ui basic compact icon button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="copy icon"
+                    />
+                  </button>
+                  <button
+                    class="ui basic compact icon button"
+                    data-testid="download-file"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="download icon"
+                    />
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr
+              class="cursor-pointer"
+              data-testid="file-item"
+              style="background-color: inherit;"
+            >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
+              <td
+                class="center aligned"
+              >
+                <i
+                  aria-hidden="true"
+                  class="shipping big icon"
+                />
+              </td>
+              <td
+                class="px-20"
+              >
+                <span
+                  class="ui medium header"
+                >
+                  <a
+                    href="/study/undefined/documents/SF_Y07IN1HO"
+                  >
+                    its.mp3
+                  </a>
+                </span>
+                <small
+                  class="text-grey ml-10"
+                >
+                  Modified
+                   
+                  <time
+                    datetime="2019-04-06T07:51:17.000Z"
+                    title="6 Apr 2019"
+                  >
+                    2 weeks ago
+                  </time>
+                </small>
+                <p
+                  class="noMargin"
+                >
+                  Question meeting move recognize.
+                </p>
+              </td>
+              <td
+                class="center aligned four wide"
+              >
+                <div
+                  class="ui labels"
+                >
+                  <div
+                    class="ui label my-2"
+                    title="dbGaP"
+                  >
+                    dbGaP
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="random"
+                  >
+                    random
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="tag that has ten more char"
+                  >
+                    tag that h
+                    ...
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <button
+                    class="ui mini basic compact icon button square-26"
+                    data-testid="tag-file"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="add icon"
+                    />
+                  </button>
+                </div>
+              </td>
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui small fluid buttons"
+                >
+                  <button
+                    class="ui basic compact icon button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="copy icon"
+                    />
+                  </button>
+                  <button
+                    class="ui basic compact icon button"
+                    data-testid="download-file"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="download icon"
+                    />
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div
+      class="centered row"
+    />
+  </div>
+</div>
+`;
+
+exports[`download and delete multiple documents using checkbox selection 2`] = `
+<div>
+  <div
+    class="ui basic segment ui container one column grid"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="ten wide column"
+      >
+        <h2>
+          Study Documents
+        </h2>
+      </div>
+      <div
+        class="six wide column"
+      >
+        <label
+          class="ui large compact icon primary right floated left labeled button"
+          for="file"
+          role="button"
+        >
+          <i
+            aria-hidden="true"
+            class="cloud upload icon"
+          />
+          Upload Document
+        </label>
+        <input
+          hidden=""
+          id="file"
+          multiple=""
+          type="file"
+        />
+      </div>
+    </div>
+    <div
+      class="row"
+    >
+      <div
+        class="sixteen wide column"
+      >
+        <div
+          class="ui basic compact right floated segment noHorizontalPadding"
+        >
+          <button
+            class="ui large basic compact icon primary left labeled button h-38"
+          >
+            <i
+              aria-hidden="true"
+              class="download icon"
+            />
+            Download Selected Document
+          </button>
+          <button
+            class="ui large basic compact icon negative left labeled button h-38"
+          >
+            <i
+              aria-hidden="true"
+              class="trash alternate icon"
+            />
+            Delete Selected Document
+          </button>
+        </div>
+        <table
+          class="ui celled selectable stackable very compact table"
+        >
+          <thead
+            class=""
+          >
+            <tr
+              class=""
+            >
+              <th
+                class="center aligned one wide"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select-all"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </th>
+              <th
+                class="center aligned one wide"
+              >
+                Type
+              </th>
+              <th
+                class="px-20"
+              >
+                Document Details
+              </th>
+              <th
+                class="center aligned"
+              >
+                Tags
+              </th>
+              <th
+                class="center aligned"
+              >
+                Actions
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            class=""
+          >
+            <tr
+              class="cursor-pointer"
+              data-testid="file-item"
+              style="background-color: inherit;"
+            >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui checked fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
+              <td
+                class="center aligned"
+              >
+                <i
+                  aria-hidden="true"
+                  class="hospital big icon"
+                />
+              </td>
+              <td
+                class="px-20"
+              >
+                <span
+                  class="ui medium header"
+                >
+                  <a
+                    href="/study/undefined/documents/SF_5ZPEM167"
+                  >
+                    organization.jpeg
+                  </a>
+                </span>
+                <small
+                  class="text-grey ml-10"
+                >
+                  Modified
+                   
+                  <time
+                    datetime="2018-09-27T05:32:26.000Z"
+                    title="27 Sept 2018"
+                  >
+                    7 months ago
+                  </time>
+                </small>
+                <p
+                  class="noMargin"
+                >
+                  Month necessary animal end standard case. View system operation message decade. Actually sing becaus...
+                </p>
+              </td>
+              <td
+                class="center aligned four wide"
+              >
+                <div
+                  class="ui labels"
+                >
+                  <button
+                    class="ui mini basic compact icon button square-26"
+                    data-testid="tag-file"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="add icon"
+                    />
+                  </button>
+                </div>
+              </td>
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui small fluid buttons"
+                >
+                  <button
+                    class="ui basic compact icon button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="copy icon"
+                    />
+                  </button>
+                  <button
+                    class="ui basic compact icon button"
+                    data-testid="download-file"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="download icon"
+                    />
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr
+              class="cursor-pointer"
+              data-testid="file-item"
+              style="background-color: inherit;"
+            >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
+              <td
+                class="center aligned"
+              >
+                <i
+                  aria-hidden="true"
+                  class="shipping big icon"
+                />
+              </td>
+              <td
+                class="px-20"
+              >
+                <span
+                  class="ui medium header"
+                >
+                  <a
+                    href="/study/undefined/documents/SF_Y07IN1HO"
+                  >
+                    its.mp3
+                  </a>
+                </span>
+                <small
+                  class="text-grey ml-10"
+                >
+                  Modified
+                   
+                  <time
+                    datetime="2019-04-06T07:51:17.000Z"
+                    title="6 Apr 2019"
+                  >
+                    2 weeks ago
+                  </time>
+                </small>
+                <p
+                  class="noMargin"
+                >
+                  Question meeting move recognize.
+                </p>
+              </td>
+              <td
+                class="center aligned four wide"
+              >
+                <div
+                  class="ui labels"
+                >
+                  <div
+                    class="ui label my-2"
+                    title="dbGaP"
+                  >
+                    dbGaP
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="random"
+                  >
+                    random
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="tag that has ten more char"
+                  >
+                    tag that h
+                    ...
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <button
+                    class="ui mini basic compact icon button square-26"
+                    data-testid="tag-file"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="add icon"
+                    />
+                  </button>
+                </div>
+              </td>
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui small fluid buttons"
+                >
+                  <button
+                    class="ui basic compact icon button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="copy icon"
+                    />
+                  </button>
+                  <button
+                    class="ui basic compact icon button"
+                    data-testid="download-file"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="download icon"
+                    />
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div
+      class="centered row"
+    />
+  </div>
+</div>
+`;
+
+exports[`download and delete multiple documents using checkbox selection 3`] = `
+<div>
+  <div
+    class="ui basic segment ui container one column grid"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="ten wide column"
+      >
+        <h2>
+          Study Documents
+        </h2>
+      </div>
+      <div
+        class="six wide column"
+      >
+        <label
+          class="ui large compact icon primary right floated left labeled button"
+          for="file"
+          role="button"
+        >
+          <i
+            aria-hidden="true"
+            class="cloud upload icon"
+          />
+          Upload Document
+        </label>
+        <input
+          hidden=""
+          id="file"
+          multiple=""
+          type="file"
+        />
+      </div>
+    </div>
+    <div
+      class="row"
+    >
+      <div
+        class="sixteen wide column"
+      >
+        <div
+          class="ui basic compact right floated segment noHorizontalPadding"
+        >
+          <button
+            class="ui large basic compact icon primary left labeled button h-38"
+          >
+            <i
+              aria-hidden="true"
+              class="download icon"
+            />
+            Download Selected Document
+          </button>
+          <button
+            class="ui large basic compact icon negative left labeled button h-38"
+          >
+            <i
+              aria-hidden="true"
+              class="trash alternate icon"
+            />
+            Delete Selected Document
+          </button>
+        </div>
+        <table
+          class="ui celled selectable stackable very compact table"
+        >
+          <thead
+            class=""
+          >
+            <tr
+              class=""
+            >
+              <th
+                class="center aligned one wide"
+              >
+                <div
+                  class="ui checked fitted checkbox"
+                  data-testid="file-select-all"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </th>
+              <th
+                class="center aligned one wide"
+              >
+                Type
+              </th>
+              <th
+                class="px-20"
+              >
+                Document Details
+              </th>
+              <th
+                class="center aligned"
+              >
+                Tags
+              </th>
+              <th
+                class="center aligned"
+              >
+                Actions
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            class=""
+          >
+            <tr
+              class="cursor-pointer"
+              data-testid="file-item"
+              style="background-color: inherit;"
+            >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui checked fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
+              <td
+                class="center aligned"
+              >
+                <i
+                  aria-hidden="true"
+                  class="hospital big icon"
+                />
+              </td>
+              <td
+                class="px-20"
+              >
+                <span
+                  class="ui medium header"
+                >
+                  <a
+                    href="/study/undefined/documents/SF_5ZPEM167"
+                  >
+                    organization.jpeg
+                  </a>
+                </span>
+                <small
+                  class="text-grey ml-10"
+                >
+                  Modified
+                   
+                  <time
+                    datetime="2018-09-27T05:32:26.000Z"
+                    title="27 Sept 2018"
+                  >
+                    7 months ago
+                  </time>
+                </small>
+                <p
+                  class="noMargin"
+                >
+                  Month necessary animal end standard case. View system operation message decade. Actually sing becaus...
+                </p>
+              </td>
+              <td
+                class="center aligned four wide"
+              >
+                <div
+                  class="ui labels"
+                >
+                  <button
+                    class="ui mini basic compact icon button square-26"
+                    data-testid="tag-file"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="add icon"
+                    />
+                  </button>
+                </div>
+              </td>
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui small fluid buttons"
+                >
+                  <button
+                    class="ui basic compact icon button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="copy icon"
+                    />
+                  </button>
+                  <button
+                    class="ui basic compact icon button"
+                    data-testid="download-file"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="download icon"
+                    />
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr
+              class="cursor-pointer"
+              data-testid="file-item"
+              style="background-color: inherit;"
+            >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui checked fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
+              <td
+                class="center aligned"
+              >
+                <i
+                  aria-hidden="true"
+                  class="shipping big icon"
+                />
+              </td>
+              <td
+                class="px-20"
+              >
+                <span
+                  class="ui medium header"
+                >
+                  <a
+                    href="/study/undefined/documents/SF_Y07IN1HO"
+                  >
+                    its.mp3
+                  </a>
+                </span>
+                <small
+                  class="text-grey ml-10"
+                >
+                  Modified
+                   
+                  <time
+                    datetime="2019-04-06T07:51:17.000Z"
+                    title="6 Apr 2019"
+                  >
+                    2 weeks ago
+                  </time>
+                </small>
+                <p
+                  class="noMargin"
+                >
+                  Question meeting move recognize.
+                </p>
+              </td>
+              <td
+                class="center aligned four wide"
+              >
+                <div
+                  class="ui labels"
+                >
+                  <div
+                    class="ui label my-2"
+                    title="dbGaP"
+                  >
+                    dbGaP
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="random"
+                  >
+                    random
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="tag that has ten more char"
+                  >
+                    tag that h
+                    ...
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <button
+                    class="ui mini basic compact icon button square-26"
+                    data-testid="tag-file"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="add icon"
+                    />
+                  </button>
+                </div>
+              </td>
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui small fluid buttons"
+                >
+                  <button
+                    class="ui basic compact icon button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="copy icon"
+                    />
+                  </button>
+                  <button
+                    class="ui basic compact icon button"
+                    data-testid="download-file"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="download icon"
+                    />
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div
+      class="centered row"
+    />
+  </div>
+</div>
+`;
+
+exports[`download and delete multiple documents using checkbox selection 4`] = `
+<div>
+  <div
+    class="ui basic segment ui container one column grid"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="ten wide column"
+      >
+        <h2>
+          Study Documents
+        </h2>
+      </div>
+      <div
+        class="six wide column"
+      >
+        <label
+          class="ui large compact icon primary right floated left labeled button"
+          for="file"
+          role="button"
+        >
+          <i
+            aria-hidden="true"
+            class="cloud upload icon"
+          />
+          Upload Document
+        </label>
+        <input
+          hidden=""
+          id="file"
+          multiple=""
+          type="file"
+        />
+      </div>
+    </div>
+    <div
+      class="row"
+    >
+      <div
+        class="sixteen wide column"
+      >
+        <div
+          class="ui basic segment noHorizontalPadding"
+        >
+          <button
+            class="ui basic icon right floated button"
+            data-testid="show-sort-button"
+          >
+            <i
+              aria-hidden="true"
+              class="sort icon"
+            />
+          </button>
+          <button
+            class="ui basic icon right floated button"
+            data-testid="show-filter-button"
+          >
+            <i
+              aria-hidden="true"
+              class="filter icon"
+            />
+          </button>
+          <div
+            class="ui fluid icon input mr-80"
+          >
+            <input
+              aria-label="file-search-input"
+              type="text"
+              value=""
+            />
+            <i
+              aria-hidden="true"
+              class="search icon"
+            />
+          </div>
+        </div>
+        <table
+          class="ui celled selectable stackable very compact table"
+        >
+          <thead
+            class=""
+          >
+            <tr
+              class=""
+            >
+              <th
+                class="center aligned one wide"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select-all"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </th>
+              <th
+                class="center aligned one wide"
+              >
+                Type
+              </th>
+              <th
+                class="px-20"
+              >
+                Document Details
+              </th>
+              <th
+                class="center aligned"
+              >
+                Tags
+              </th>
+              <th
+                class="center aligned"
+              >
+                Actions
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            class=""
+          >
+            <tr
+              class="cursor-pointer"
+              data-testid="file-item"
+              style="background-color: inherit;"
+            >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
+              <td
+                class="center aligned"
+              >
+                <i
+                  aria-hidden="true"
+                  class="hospital big icon"
+                />
+              </td>
+              <td
+                class="px-20"
+              >
+                <span
+                  class="ui medium header"
+                >
+                  <a
+                    href="/study/undefined/documents/SF_5ZPEM167"
+                  >
+                    organization.jpeg
+                  </a>
+                </span>
+                <small
+                  class="text-grey ml-10"
+                >
+                  Modified
+                   
+                  <time
+                    datetime="2018-09-27T05:32:26.000Z"
+                    title="27 Sept 2018"
+                  >
+                    7 months ago
+                  </time>
+                </small>
+                <p
+                  class="noMargin"
+                >
+                  Month necessary animal end standard case. View system operation message decade. Actually sing becaus...
+                </p>
+              </td>
+              <td
+                class="center aligned four wide"
+              >
+                <div
+                  class="ui labels"
+                >
+                  <div
+                    class="ui label my-2"
+                    title="email"
+                  >
+                    Email
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <button
+                    class="ui mini basic compact icon button square-26"
+                    data-testid="tag-file"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="add icon"
+                    />
+                  </button>
+                </div>
+              </td>
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui small fluid buttons"
+                >
+                  <button
+                    class="ui basic compact icon button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="copy icon"
+                    />
+                  </button>
+                  <button
+                    class="ui basic compact icon button"
+                    data-testid="download-file"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="download icon"
+                    />
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div
+      class="centered row"
+    />
+  </div>
+</div>
+`;
+
 exports[`renders correctly 1`] = `
 <div>
   <div

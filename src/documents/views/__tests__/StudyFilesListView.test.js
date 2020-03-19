@@ -55,10 +55,9 @@ it('deletes a file correctly', async () => {
   act(() => {
     fireEvent.click(tree.getByTestId('delete-confirm'));
   });
-  await wait(100);
+  await wait(200);
 
   // Should only be one file now
-
   const newRows = tree.getAllByTestId('file-item');
   expect(newRows.length).toBe(1);
   expect(tree.container).toMatchSnapshot();
@@ -169,7 +168,7 @@ it('update tags with no error adding tag and error with removing tag', async () 
   });
   expect(tree.container).toMatchSnapshot();
   act(() => {
-    fireEvent.change(tree.container.querySelectorAll('input')[2], {
+    fireEvent.change(tree.container.querySelectorAll('input')[4], {
       target: {value: 'email'},
     });
   });
@@ -180,7 +179,7 @@ it('update tags with no error adding tag and error with removing tag', async () 
   expect(tree.queryByText(/Tag already exist/)).not.toBeNull();
 
   act(() => {
-    fireEvent.change(tree.container.querySelectorAll('input')[2], {
+    fireEvent.change(tree.container.querySelectorAll('input')[4], {
       target: {
         value: 'Lorem ipsum dolor sit amet mei ex posse verear invenire',
       },
@@ -199,4 +198,65 @@ it('update tags with no error adding tag and error with removing tag', async () 
   await wait(10);
   expect(tree.container).toMatchSnapshot();
   expect(tree.queryByText(/Failed to update the file tags/)).not.toBeNull();
+});
+
+it('download and delete multiple documents using checkbox selection', async () => {
+  const tree = render(
+    <MockedProvider
+      mocks={[mocks[1], mocks[3], mocks[8], mocks[26], mocks[67], mocks[68]]}
+    >
+      <MemoryRouter initialEntries={['/study/SD_8WX8QQ06']}>
+        <StudyFilesListView
+          history={[]}
+          match={{params: {kfId: 'SD_8WX8QQ06'}}}
+        />
+      </MemoryRouter>
+    </MockedProvider>,
+  );
+  await wait();
+  expect(tree.container).toMatchSnapshot();
+
+  // Download/Delete selected button are hidden when no file is selected
+  expect(tree.queryByText(/Delete Selected Document/)).toBeNull();
+
+  act(() => {
+    fireEvent.click(tree.getAllByTestId('file-select')[0]);
+  });
+  expect(tree.container).toMatchSnapshot();
+  expect(tree.queryByText(/Delete Selected Document/)).not.toBeNull();
+
+  act(() => {
+    fireEvent.click(tree.getAllByTestId('file-select')[1]);
+  });
+  act(() => {
+    fireEvent.click(tree.getByTestId('file-select-all'));
+  });
+  act(() => {
+    fireEvent.click(tree.getByTestId('file-select-all'));
+  });
+  expect(tree.container).toMatchSnapshot();
+
+  // Download selected files
+  act(() => {
+    fireEvent.click(tree.queryByText(/Download Selected Document/));
+  });
+  await wait();
+
+  act(() => {
+    fireEvent.click(tree.getAllByTestId('file-select')[0]);
+  });
+
+  // Delete the second file
+  act(() => {
+    fireEvent.click(tree.queryByText(/Delete Selected Document/));
+  });
+  act(() => {
+    fireEvent.click(tree.getByTestId('delete-confirm'));
+  });
+  await wait(100);
+
+  // Should only be one file now
+  const newRows = tree.getAllByTestId('file-item');
+  expect(tree.container).toMatchSnapshot();
+  expect(newRows.length).toBe(1);
 });
