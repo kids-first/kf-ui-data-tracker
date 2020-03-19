@@ -88,7 +88,24 @@ exports[`renders ListFilterBar with files -- screen width 600 1`] = `
               class=""
             >
               <th
-                class="center aligned"
+                class="center aligned one wide"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select-all"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </th>
+              <th
+                class="center aligned one wide"
               >
                 Type
               </th>
@@ -117,6 +134,23 @@ exports[`renders ListFilterBar with files -- screen width 600 1`] = `
               data-testid="file-item"
               style="background-color: inherit;"
             >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
               <td
                 class="center aligned"
               >
@@ -237,6 +271,23 @@ exports[`renders ListFilterBar with files -- screen width 600 1`] = `
               data-testid="file-item"
               style="background-color: inherit;"
             >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
               <td
                 class="center aligned"
               >
@@ -491,7 +542,24 @@ exports[`renders ListFilterBar with files -- screen width 600 2`] = `
               class=""
             >
               <th
-                class="center aligned"
+                class="center aligned one wide"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select-all"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </th>
+              <th
+                class="center aligned one wide"
               >
                 Type
               </th>
@@ -520,6 +588,23 @@ exports[`renders ListFilterBar with files -- screen width 600 2`] = `
               data-testid="file-item"
               style="background-color: inherit;"
             >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
               <td
                 class="center aligned"
               >
@@ -640,6 +725,23 @@ exports[`renders ListFilterBar with files -- screen width 600 2`] = `
               data-testid="file-item"
               style="background-color: inherit;"
             >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
               <td
                 class="center aligned"
               >
@@ -894,7 +996,24 @@ exports[`renders ListFilterBar with files -- screen width 600 3`] = `
               class=""
             >
               <th
-                class="center aligned"
+                class="center aligned one wide"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select-all"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </th>
+              <th
+                class="center aligned one wide"
               >
                 Type
               </th>
@@ -923,6 +1042,23 @@ exports[`renders ListFilterBar with files -- screen width 600 3`] = `
               data-testid="file-item"
               style="background-color: inherit;"
             >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
               <td
                 class="center aligned"
               >
@@ -1009,6 +1145,23 @@ exports[`renders ListFilterBar with files -- screen width 600 3`] = `
               data-testid="file-item"
               style="background-color: inherit;"
             >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
               <td
                 class="center aligned"
               >
@@ -1462,7 +1615,24 @@ exports[`renders ListFilterBar with files -- screen width 600 4`] = `
               class=""
             >
               <th
-                class="center aligned"
+                class="center aligned one wide"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select-all"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </th>
+              <th
+                class="center aligned one wide"
               >
                 Type
               </th>
@@ -1491,6 +1661,23 @@ exports[`renders ListFilterBar with files -- screen width 600 4`] = `
               data-testid="file-item"
               style="background-color: inherit;"
             >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
               <td
                 class="center aligned"
               >
@@ -1577,6 +1764,23 @@ exports[`renders ListFilterBar with files -- screen width 600 4`] = `
               data-testid="file-item"
               style="background-color: inherit;"
             >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
               <td
                 class="center aligned"
               >
@@ -2030,7 +2234,24 @@ exports[`renders ListFilterBar with files -- screen width 600 5`] = `
               class=""
             >
               <th
-                class="center aligned"
+                class="center aligned one wide"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select-all"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </th>
+              <th
+                class="center aligned one wide"
               >
                 Type
               </th>
@@ -2059,6 +2280,23 @@ exports[`renders ListFilterBar with files -- screen width 600 5`] = `
               data-testid="file-item"
               style="background-color: inherit;"
             >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
               <td
                 class="center aligned"
               >
@@ -2512,7 +2750,24 @@ exports[`renders ListFilterBar with files -- screen width 600 6`] = `
               class=""
             >
               <th
-                class="center aligned"
+                class="center aligned one wide"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select-all"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </th>
+              <th
+                class="center aligned one wide"
               >
                 Type
               </th>
@@ -2541,6 +2796,23 @@ exports[`renders ListFilterBar with files -- screen width 600 6`] = `
               data-testid="file-item"
               style="background-color: inherit;"
             >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
               <td
                 class="center aligned"
               >
@@ -2994,7 +3266,24 @@ exports[`renders ListFilterBar with files -- screen width 600 7`] = `
               class=""
             >
               <th
-                class="center aligned"
+                class="center aligned one wide"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select-all"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </th>
+              <th
+                class="center aligned one wide"
               >
                 Type
               </th>
@@ -3023,6 +3312,23 @@ exports[`renders ListFilterBar with files -- screen width 600 7`] = `
               data-testid="file-item"
               style="background-color: inherit;"
             >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
               <td
                 class="center aligned"
               >
@@ -3476,7 +3782,24 @@ exports[`renders ListFilterBar with files -- screen width 600 8`] = `
               class=""
             >
               <th
-                class="center aligned"
+                class="center aligned one wide"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select-all"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </th>
+              <th
+                class="center aligned one wide"
               >
                 Type
               </th>
@@ -3505,6 +3828,23 @@ exports[`renders ListFilterBar with files -- screen width 600 8`] = `
               data-testid="file-item"
               style="background-color: inherit;"
             >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
               <td
                 class="center aligned"
               >
@@ -3922,7 +4262,24 @@ exports[`renders ListFilterBar with files -- screen width 800 1`] = `
               class=""
             >
               <th
-                class="center aligned"
+                class="center aligned one wide"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select-all"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </th>
+              <th
+                class="center aligned one wide"
               >
                 Type
               </th>
@@ -3951,6 +4308,23 @@ exports[`renders ListFilterBar with files -- screen width 800 1`] = `
               data-testid="file-item"
               style="background-color: inherit;"
             >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
               <td
                 class="center aligned"
               >
@@ -4080,6 +4454,23 @@ exports[`renders ListFilterBar with files -- screen width 800 1`] = `
               data-testid="file-item"
               style="background-color: inherit;"
             >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
               <td
                 class="center aligned"
               >
@@ -4510,7 +4901,24 @@ exports[`renders ListFilterBar with files -- screen width 800 2`] = `
               class=""
             >
               <th
-                class="center aligned"
+                class="center aligned one wide"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select-all"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </th>
+              <th
+                class="center aligned one wide"
               >
                 Type
               </th>
@@ -4539,6 +4947,23 @@ exports[`renders ListFilterBar with files -- screen width 800 2`] = `
               data-testid="file-item"
               style="background-color: inherit;"
             >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
               <td
                 class="center aligned"
               >
@@ -4668,6 +5093,23 @@ exports[`renders ListFilterBar with files -- screen width 800 2`] = `
               data-testid="file-item"
               style="background-color: inherit;"
             >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
               <td
                 class="center aligned"
               >
@@ -5098,7 +5540,24 @@ exports[`renders ListFilterBar with files -- screen width 800 3`] = `
               class=""
             >
               <th
-                class="center aligned"
+                class="center aligned one wide"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select-all"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </th>
+              <th
+                class="center aligned one wide"
               >
                 Type
               </th>
@@ -5127,6 +5586,23 @@ exports[`renders ListFilterBar with files -- screen width 800 3`] = `
               data-testid="file-item"
               style="background-color: inherit;"
             >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
               <td
                 class="center aligned"
               >
@@ -5222,6 +5698,23 @@ exports[`renders ListFilterBar with files -- screen width 800 3`] = `
               data-testid="file-item"
               style="background-color: inherit;"
             >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
               <td
                 class="center aligned"
               >
@@ -5686,7 +6179,24 @@ exports[`renders ListFilterBar with files -- screen width 800 4`] = `
               class=""
             >
               <th
-                class="center aligned"
+                class="center aligned one wide"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select-all"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </th>
+              <th
+                class="center aligned one wide"
               >
                 Type
               </th>
@@ -5715,6 +6225,23 @@ exports[`renders ListFilterBar with files -- screen width 800 4`] = `
               data-testid="file-item"
               style="background-color: inherit;"
             >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
               <td
                 class="center aligned"
               >
@@ -6179,7 +6706,24 @@ exports[`renders ListFilterBar with files -- screen width 800 5`] = `
               class=""
             >
               <th
-                class="center aligned"
+                class="center aligned one wide"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select-all"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </th>
+              <th
+                class="center aligned one wide"
               >
                 Type
               </th>
@@ -6208,6 +6752,23 @@ exports[`renders ListFilterBar with files -- screen width 800 5`] = `
               data-testid="file-item"
               style="background-color: inherit;"
             >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
               <td
                 class="center aligned"
               >
@@ -6672,7 +7233,24 @@ exports[`renders ListFilterBar with files -- screen width 800 6`] = `
               class=""
             >
               <th
-                class="center aligned"
+                class="center aligned one wide"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select-all"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </th>
+              <th
+                class="center aligned one wide"
               >
                 Type
               </th>
@@ -6701,6 +7279,23 @@ exports[`renders ListFilterBar with files -- screen width 800 6`] = `
               data-testid="file-item"
               style="background-color: inherit;"
             >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
               <td
                 class="center aligned"
               >
@@ -7171,7 +7766,24 @@ exports[`renders ListFilterBar with files -- screen width 1200 1`] = `
               class=""
             >
               <th
-                class="center aligned"
+                class="center aligned one wide"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select-all"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </th>
+              <th
+                class="center aligned one wide"
               >
                 Type
               </th>
@@ -7200,6 +7812,23 @@ exports[`renders ListFilterBar with files -- screen width 1200 1`] = `
               data-testid="file-item"
               style="background-color: inherit;"
             >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
               <td
                 class="center aligned"
               >
@@ -7329,6 +7958,23 @@ exports[`renders ListFilterBar with files -- screen width 1200 1`] = `
               data-testid="file-item"
               style="background-color: inherit;"
             >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
               <td
                 class="center aligned"
               >
@@ -7765,7 +8411,24 @@ exports[`renders ListFilterBar with files -- screen width 1200 2`] = `
               class=""
             >
               <th
-                class="center aligned"
+                class="center aligned one wide"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select-all"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </th>
+              <th
+                class="center aligned one wide"
               >
                 Type
               </th>
@@ -7794,6 +8457,23 @@ exports[`renders ListFilterBar with files -- screen width 1200 2`] = `
               data-testid="file-item"
               style="background-color: inherit;"
             >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
               <td
                 class="center aligned"
               >
@@ -7923,6 +8603,23 @@ exports[`renders ListFilterBar with files -- screen width 1200 2`] = `
               data-testid="file-item"
               style="background-color: inherit;"
             >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
               <td
                 class="center aligned"
               >
@@ -8359,7 +9056,24 @@ exports[`renders ListFilterBar with files -- screen width 1200 3`] = `
               class=""
             >
               <th
-                class="center aligned"
+                class="center aligned one wide"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select-all"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </th>
+              <th
+                class="center aligned one wide"
               >
                 Type
               </th>
@@ -8388,6 +9102,23 @@ exports[`renders ListFilterBar with files -- screen width 1200 3`] = `
               data-testid="file-item"
               style="background-color: inherit;"
             >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
               <td
                 class="center aligned"
               >
@@ -8483,6 +9214,23 @@ exports[`renders ListFilterBar with files -- screen width 1200 3`] = `
               data-testid="file-item"
               style="background-color: inherit;"
             >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
               <td
                 class="center aligned"
               >
@@ -8953,7 +9701,24 @@ exports[`renders ListFilterBar with files -- screen width 1200 4`] = `
               class=""
             >
               <th
-                class="center aligned"
+                class="center aligned one wide"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select-all"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </th>
+              <th
+                class="center aligned one wide"
               >
                 Type
               </th>
@@ -8982,6 +9747,23 @@ exports[`renders ListFilterBar with files -- screen width 1200 4`] = `
               data-testid="file-item"
               style="background-color: inherit;"
             >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
               <td
                 class="center aligned"
               >
@@ -9452,7 +10234,24 @@ exports[`renders ListFilterBar with files -- screen width 1200 5`] = `
               class=""
             >
               <th
-                class="center aligned"
+                class="center aligned one wide"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select-all"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </th>
+              <th
+                class="center aligned one wide"
               >
                 Type
               </th>
@@ -9481,6 +10280,23 @@ exports[`renders ListFilterBar with files -- screen width 1200 5`] = `
               data-testid="file-item"
               style="background-color: inherit;"
             >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
               <td
                 class="center aligned"
               >
@@ -9951,7 +10767,24 @@ exports[`renders ListFilterBar with files -- screen width 1200 6`] = `
               class=""
             >
               <th
-                class="center aligned"
+                class="center aligned one wide"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select-all"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </th>
+              <th
+                class="center aligned one wide"
               >
                 Type
               </th>
@@ -9980,6 +10813,23 @@ exports[`renders ListFilterBar with files -- screen width 1200 6`] = `
               data-testid="file-item"
               style="background-color: inherit;"
             >
+              <td
+                class="center aligned"
+              >
+                <div
+                  class="ui fitted checkbox"
+                  data-testid="file-select"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label />
+                </div>
+              </td>
               <td
                 class="center aligned"
               >
