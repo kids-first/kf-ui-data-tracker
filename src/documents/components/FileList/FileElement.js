@@ -2,8 +2,8 @@ import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import {withRouter, Link} from 'react-router-dom';
 import TimeAgo from 'react-timeago';
-import {Header, Table, Icon, Responsive} from 'semantic-ui-react';
 import FileActionsContainer from '../../containers/FileActionsContainer';
+import {Header, Table, Icon, Responsive, Checkbox} from 'semantic-ui-react';
 import {fileSortedVersions, fileLatestDate, lengthLimit} from '../../utilities';
 import {fileTypeDetail} from '../../../common/enums';
 import {longDate} from '../../../common/dateUtils';
@@ -46,6 +46,8 @@ const FileElement = ({
   fileListId,
   isAdmin,
   updateFile,
+  selection,
+  onSelectOne,
 }) => {
   const fileKfID = fileNode.kfId || 'unknown ID';
   const fileName = fileNode.name || 'unknown file name';
@@ -66,6 +68,18 @@ const FileElement = ({
         history.push(`/study/${match.params.kfId}/documents/${fileKfID}`)
       }
     >
+      <Table.Cell
+        textAlign="center"
+        onClick={e => {
+          e.stopPropagation();
+          onSelectOne(fileKfID);
+        }}
+      >
+        <Checkbox
+          data-testid="file-select"
+          checked={selection.includes(fileKfID)}
+        />
+      </Table.Cell>
       <Table.Cell textAlign="center">
         <Icon name={`${fileType.icon || 'question'}`} size="big" />
       </Table.Cell>
