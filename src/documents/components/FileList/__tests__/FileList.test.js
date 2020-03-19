@@ -14,7 +14,7 @@ it('renders with files', async () => {
   const tree = render(
     <MemoryRouter>
       <MockedProvider>
-        <FileList fileList={files} studyId={'SD_00000000'} />
+        <FileList fileList={files} studyId={'SD_00000000'} selection={[]} />
       </MockedProvider>
     </MemoryRouter>,
   );
@@ -74,7 +74,7 @@ it('renders with files with tag filter', async () => {
   const tree = render(
     <MemoryRouter>
       <MockedProvider>
-        <FileList fileList={files} studyId={'SD_00000000'} />
+        <FileList fileList={files} studyId={'SD_00000000'} selection={[]} />
       </MockedProvider>
     </MemoryRouter>,
   );
@@ -110,7 +110,7 @@ it('renders with files with more tag toggle', async () => {
   const tree = render(
     <MemoryRouter>
       <MockedProvider>
-        <FileList fileList={files} studyId={'SD_00000000'} />
+        <FileList fileList={files} studyId={'SD_00000000'} selection={[]} />
       </MockedProvider>
     </MemoryRouter>,
   );
