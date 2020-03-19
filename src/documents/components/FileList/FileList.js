@@ -121,6 +121,10 @@ const FileList = ({
                         fileNode={node}
                         isAdmin={isAdmin}
                         updateFile={updateFile}
+                        selection={selection}
+                        onSelectOne={onSelectOne}
+                        deleteFile={isAdmin ? deleteFile : null}
+                        downloadFileMutation={downloadFileMutation}
                       />
                     ))}
                   </Table.Body>

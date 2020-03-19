@@ -2,8 +2,8 @@ import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import {withRouter, Link} from 'react-router-dom';
 import TimeAgo from 'react-timeago';
-import FileActionsContainer from '../../containers/FileActionsContainer';
 import {Header, Table, Icon, Responsive, Checkbox} from 'semantic-ui-react';
+import FileActionButtons from '../FileActionButtons/FileActionButtons';
 import {fileSortedVersions, fileLatestDate, lengthLimit} from '../../utilities';
 import {fileTypeDetail} from '../../../common/enums';
 import {longDate} from '../../../common/dateUtils';
@@ -46,6 +46,8 @@ const FileElement = ({
   fileListId,
   isAdmin,
   updateFile,
+  deleteFile,
+  downloadFileMutation,
   selection,
   onSelectOne,
 }) => {
@@ -113,22 +115,26 @@ const FileElement = ({
       </Table.Cell>
       <Table.Cell textAlign="center">
         <Responsive
-          as={FileActionsContainer}
+          as={FileActionButtons}
           minWidth={Responsive.onlyTablet.minWidth}
           node={fileNode}
           studyId={fileListId}
           vertical={true}
           fluid={false}
           isAdmin={isAdmin}
+          deleteFile={deleteFile}
+          downloadFileMutation={downloadFileMutation}
         />
         <Responsive
-          as={FileActionsContainer}
+          as={FileActionButtons}
           maxWidth={Responsive.onlyTablet.minWidth - 1}
           node={fileNode}
           studyId={fileListId}
           vertical={false}
           fluid={true}
           isAdmin={isAdmin}
+          deleteFile={deleteFile}
+          downloadFileMutation={downloadFileMutation}
         />
       </Table.Cell>
     </Table.Row>
