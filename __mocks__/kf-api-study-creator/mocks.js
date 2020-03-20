@@ -803,4 +803,13 @@ export const mocks = [
     },
     result: signedUrl,
   },
+  {
+    request: {
+      query: GET_FILE_BY_ID,
+      variables: {
+        kfId: 'SF_5ZPEMOOO',
+      },
+    },
+    error: new Error('Failed to get the file information'),
+  },
 ];
