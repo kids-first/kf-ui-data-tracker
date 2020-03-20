@@ -781,4 +781,26 @@ export const mocks = [
     },
     result: fileByKfId_update_desc,
   },
+  {
+    request: {
+      query: FILE_DOWNLOAD_URL,
+      variables: {
+        studyId: 'SD_8WX8QQ06',
+        fileId: 'SF_Y07IN1HO',
+        versionId: null,
+      },
+    },
+    result: signedUrl,
+  },
+  {
+    request: {
+      query: FILE_DOWNLOAD_URL,
+      variables: {
+        studyId: 'SD_8WX8QQ06',
+        fileId: 'SF_5ZPEM167',
+        versionId: null,
+      },
+    },
+    result: signedUrl,
+  },
 ];
