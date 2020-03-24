@@ -1553,10 +1553,15 @@ exports[`download and delete multiple documents using checkbox selection 2`] = `
         class="sixteen wide column"
       >
         <div
-          class="ui basic compact right floated segment noHorizontalPadding"
+          class="ui basic clearing left aligned segment noHorizontalPadding mt-0"
         >
+          <div
+            class="small-inline"
+          >
+            1/2 selected 
+          </div>
           <button
-            class="ui large basic compact icon primary left labeled button h-38"
+            class="ui large basic compact icon primary right floated left labeled button h-38"
           >
             <i
               aria-hidden="true"
@@ -1565,7 +1570,7 @@ exports[`download and delete multiple documents using checkbox selection 2`] = `
             Download Selected Document
           </button>
           <button
-            class="ui large basic compact icon negative left labeled button h-38"
+            class="ui large basic compact icon negative right floated left labeled button h-38"
           >
             <i
               aria-hidden="true"
@@ -1920,10 +1925,15 @@ exports[`download and delete multiple documents using checkbox selection 3`] = `
         class="sixteen wide column"
       >
         <div
-          class="ui basic compact right floated segment noHorizontalPadding"
+          class="ui basic clearing left aligned segment noHorizontalPadding mt-0"
         >
+          <div
+            class="small-inline"
+          >
+            2/2 selected 
+          </div>
           <button
-            class="ui large basic compact icon primary left labeled button h-38"
+            class="ui large basic compact icon primary right floated left labeled button h-38"
           >
             <i
               aria-hidden="true"
@@ -1932,7 +1942,7 @@ exports[`download and delete multiple documents using checkbox selection 3`] = `
             Download Selected Document
           </button>
           <button
-            class="ui large basic compact icon negative left labeled button h-38"
+            class="ui large basic compact icon negative right floated left labeled button h-38"
           >
             <i
               aria-hidden="true"
