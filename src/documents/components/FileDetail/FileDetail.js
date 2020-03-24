@@ -26,6 +26,7 @@ import {
   Divider,
   Message,
 } from 'semantic-ui-react';
+import {Amplitude} from '@amplitude/react-amplitude';
 import FileTags from './FileTags';
 import FileDescription from './FileDescription';
 import {FilePreview} from '../FilePreview';
@@ -45,17 +46,27 @@ const ActionButtons = ({
       Actions
     </Header>
     <Segment raised attached secondary>
-      <Button
-        primary
-        icon="download"
-        fluid
-        size="mini"
-        labelPosition="left"
-        onClick={e =>
-          downloadFile(studyId, fileNode.kfId, null, downloadFileMutation)
-        }
-        content="DOWNLOAD"
-      />
+      <Amplitude
+        eventProperties={inheritedProps => ({
+          ...inheritedProps,
+          scope: [...(inheritedProps.scope || []), 'download button'],
+        })}
+      >
+        {({logEvent}) => (
+          <Button
+            primary
+            icon="download"
+            fluid
+            size="mini"
+            labelPosition="left"
+            onClick={e => {
+              logEvent('download file');
+              downloadFile(studyId, fileNode.kfId, null, downloadFileMutation);
+            }}
+            content="DOWNLOAD"
+          />
+        )}
+      </Amplitude>
       <Divider />
       <Button.Group size="mini" fluid>
         <Button
@@ -68,36 +79,58 @@ const ActionButtons = ({
           content="EDIT"
         />
         {isAdmin && (
-          <Popup
-            trigger={
-              <Button icon="trash alternate" data-testid="delete-button" />
-            }
-            header="Are you sure?"
-            content={
-              <>
-                This file and all of its versions and history will be deleted
-                <Divider />
-                <Button
-                  data-testid="delete-confirm"
-                  negative
-                  fluid
-                  size="mini"
-                  icon="trash alternate"
-                  content="Delete"
-                  onClick={e => {
-                    deleteFile({variables: {kfId: fileNode.kfId}});
-                    history.goBack();
-                  }}
-                />
-              </>
-            }
-            on="click"
-            position="top right"
-          />
+          <Amplitude
+            eventProperties={inheritedProps => ({
+              ...inheritedProps,
+              scope: [...(inheritedProps.scope || []), 'delete button'],
+            })}
+          >
+            {({logEvent}) => (
+              <Popup
+                trigger={
+                  <Button icon="trash alternate" data-testid="delete-button" />
+                }
+                header="Are you sure?"
+                content={
+                  <>
+                    This file and all of its versions and history will be
+                    deleted
+                    <Divider />
+                    <Button
+                      data-testid="delete-confirm"
+                      negative
+                      fluid
+                      size="mini"
+                      icon="trash alternate"
+                      content="Delete"
+                      onClick={e => {
+                        logEvent('delete file');
+                        deleteFile({variables: {kfId: fileNode.kfId}});
+                        history.goBack();
+                      }}
+                    />
+                  </>
+                }
+                on="click"
+                position="top right"
+              />
+            )}
+          </Amplitude>
         )}
       </Button.Group>
     </Segment>
   </>
+);
+
+const AmplitudeActionButtons = props => (
+  <Amplitude
+    eventProperties={inheritedProps => ({
+      ...inheritedProps,
+      scope: [...(inheritedProps.scope || []), 'file actions'],
+    })}
+  >
+    <ActionButtons {...props} />
+  </Amplitude>
 );
 
 /**
@@ -200,7 +233,7 @@ const FileDetail = ({
             </Segment.Group>
           </Grid.Column>
           <Grid.Column mobile={8} tablet={4} computer={3}>
-            <ActionButtons
+            <AmplitudeActionButtons
               {...{
                 downloadFile,
                 studyId,
