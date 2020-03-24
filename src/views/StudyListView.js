@@ -89,7 +89,7 @@ const StudyListView = ({history}) => {
       </Helmet>
       <StudyList
         studyList={studyList}
-        loading={loading || releasesLoading}
+        loading={loading}
         roles={myProfile ? myProfile.roles : []}
         history={history}
       />
