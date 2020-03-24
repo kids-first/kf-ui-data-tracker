@@ -104,8 +104,17 @@ const ListFilterBar = ({
   return (
     <>
       {selection.length > 0 ? (
-        <Segment className="noHorizontalPadding" basic compact floated="right">
+        <Segment
+          className="noHorizontalPadding mt-0"
+          clearing
+          basic
+          textAlign="left"
+        >
+          <div className="small-inline">
+            {selection.length + '/' + fileList.length + ' selected '}
+          </div>
           <Button
+            floated="right"
             className="h-38"
             compact
             basic
@@ -125,6 +134,7 @@ const ListFilterBar = ({
             <Popup
               trigger={
                 <Button
+                  floated="right"
                   className="h-38"
                   compact
                   basic
