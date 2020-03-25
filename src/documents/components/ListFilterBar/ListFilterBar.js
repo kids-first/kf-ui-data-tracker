@@ -7,28 +7,13 @@ import {
   Input,
   Segment,
   Responsive,
-  Divider,
-  Popup,
 } from 'semantic-ui-react';
-import {
-  createDateSort,
-  modifiedDateSort,
-  defaultSort,
-  downloadFile,
-} from '../../utilities';
+import {createDateSort, modifiedDateSort, defaultSort} from '../../utilities';
 import {fileTypeDetail, defaultTagOptions} from '../../../common/enums';
 /**
  * Filter Bar for Study Files, returns filtered list in "filteredList" render prop
  */
-const ListFilterBar = ({
-  fileList,
-  filteredList,
-  studyId,
-  selection,
-  setSelection,
-  downloadFileMutation,
-  deleteFile,
-}) => {
+const ListFilterBar = ({fileList, filteredList, hidden}) => {
   const [sortMethod, setSortMethod] = useState('');
   const [sortDirection, setSortDirection] = useState('ascending');
   const [typeFilterStatus, setTypeFilterStatus] = useState('');
@@ -103,288 +88,47 @@ const ListFilterBar = ({
 
   return (
     <>
-      {selection.length > 0 ? (
-        <Segment
-          className="noHorizontalPadding mt-0"
-          clearing
+      <div className={hidden ? 'hidden' : ''}>
+        <Responsive
+          as={Segment}
+          maxWidth={699}
           basic
-          textAlign="left"
+          className="noHorizontalPadding"
         >
-          <div className="small-inline">
-            {selection.length + '/' + fileList.length + ' selected '}
-          </div>
           <Button
+            data-testid="show-sort-button"
+            basic={!showSort}
             floated="right"
-            className="h-38"
-            compact
-            basic
-            primary
-            size="large"
-            icon="download"
-            labelPosition="left"
-            content="Download Selected Document"
-            onClick={e => {
-              e.stopPropagation();
-              selection.map(fileId =>
-                downloadFile(studyId, fileId, null, downloadFileMutation),
-              );
-            }}
+            primary={sortMethod !== ''}
+            icon="sort"
+            onClick={() => setShowSort(!showSort)}
           />
-          {deleteFile && (
-            <Popup
-              trigger={
-                <Button
-                  floated="right"
-                  className="h-38"
-                  compact
-                  basic
-                  negative
-                  size="large"
-                  icon="trash alternate"
-                  labelPosition="left"
-                  content="Delete Selected Document"
-                  onClick={e => {
-                    e.stopPropagation();
-                  }}
-                />
-              }
-              header="Are you sure?"
-              content={
-                <>
-                  These files and all of their versions and history will be
-                  deleted
-                  <Divider />
-                  <Button
-                    data-testid="delete-confirm"
-                    negative
-                    fluid
-                    icon={<Icon name="trash alternate" />}
-                    content="Delete"
-                    onClick={e => {
-                      e.stopPropagation();
-                      selection.map(fileId =>
-                        deleteFile({variables: {kfId: fileId}}),
-                      );
-                      setSelection([]);
-                    }}
-                  />
-                </>
-              }
-              on="click"
-              position="top right"
-            />
-          )}
-        </Segment>
-      ) : (
-        <>
-          <Responsive
-            as={Segment}
-            maxWidth={699}
-            basic
-            className="noHorizontalPadding"
-          >
-            <Button
-              data-testid="show-sort-button"
-              basic={!showSort}
-              floated="right"
-              primary={sortMethod !== ''}
-              icon="sort"
-              onClick={() => setShowSort(!showSort)}
-            />
-            <Button
-              data-testid="show-filter-button"
-              basic={!showFilter}
-              floated="right"
-              primary={typeFilterStatus !== '' || tagFilterStatus !== ''}
-              icon="filter"
-              onClick={() => setShowFilter(!showFilter)}
-            />
-            <Input
-              aria-label="file-search-input"
-              className="mr-80"
-              fluid
-              icon="search"
-              onChange={(e, {value}) => {
-                setSearchString(value);
-              }}
-              value={searchString}
-            />
-            {showFilter && (
-              <Segment>
-                <p className="mb-5">
-                  <Icon name="filter" />
-                  Filter by:
-                </p>
-                <Dropdown
-                  fluid
-                  selection
-                  clearable
-                  disabled={tagOptions.length === 0}
-                  selectOnBlur={false}
-                  value={tagFilterStatus}
-                  options={tagOptions}
-                  placeholder="Tag"
-                  onChange={(e, {value}) => {
-                    setTagFilterStatus(value);
-                  }}
-                />
-                <Dropdown
-                  fluid
-                  selection
-                  clearable
-                  selectOnBlur={false}
-                  value={typeFilterStatus}
-                  options={typeOptions}
-                  placeholder="Document type"
-                  onChange={(e, {value}) => {
-                    setTypeFilterStatus(value);
-                  }}
-                />
-              </Segment>
-            )}
-            {showSort && (
-              <Segment>
-                <p className="mb-5">
-                  <Icon name="sort" />
-                  Sort by:
-                </p>
-                <Button
-                  icon
-                  basic
-                  floated="right"
-                  data-testid="sort-direction-button"
-                  onClick={() => {
-                    if (sortDirection === 'ascending') {
-                      setSortDirection('descending');
-                    } else {
-                      setSortDirection('ascending');
-                    }
-                  }}
-                >
-                  <Icon name={'sort content ' + sortDirection} />
-                </Button>
-                <div className="mr-40">
-                  <Dropdown
-                    fluid
-                    selection
-                    clearable
-                    selectOnBlur={false}
-                    value={sortMethod}
-                    options={sortOptions}
-                    placeholder="Date option"
-                    onChange={(e, {value}) => {
-                      setSortMethod(value);
-                    }}
-                  />
-                </div>
-              </Segment>
-            )}
-          </Responsive>
-          <Responsive
-            as={Segment}
-            minWidth={700}
-            maxWidth={999}
-            basic
-            className="noHorizontalPadding"
-          >
-            <Input
-              fluid
-              aria-label="file-search-input"
-              icon="search"
-              onChange={(e, {value}) => {
-                setSearchString(value);
-              }}
-              value={searchString}
-            />
-            <Segment clearing basic className="noHorizontalPadding noMargin">
-              <Segment
-                className="noMargin noVerticalPadding noHorizontalPadding"
-                basic
-                compact
-                floated="left"
-              >
-                <Dropdown
-                  labeled
-                  button
-                  className="icon noMargin"
-                  placeholder="Tags"
-                  icon="tag"
-                  selection
-                  clearable
-                  disabled={tagOptions.length === 0}
-                  selectOnBlur={false}
-                  value={tagFilterStatus}
-                  options={tagOptions}
-                  onChange={(e, {value}) => {
-                    setTagFilterStatus(value);
-                  }}
-                />
-                <Dropdown
-                  button
-                  selection
-                  clearable
-                  selectOnBlur={false}
-                  value={typeFilterStatus}
-                  options={typeOptions}
-                  placeholder="Document type"
-                  onChange={(e, {value}) => {
-                    setTypeFilterStatus(value);
-                  }}
-                />
-              </Segment>
-              <Segment
-                className="noMargin noVerticalPadding noHorizontalPadding"
-                basic
-                compact
-                floated="right"
-              >
-                <Dropdown
-                  labeled
-                  button
-                  className="icon noMargin"
-                  placeholder="Date option"
-                  icon="sort"
-                  selection
-                  clearable
-                  selectOnBlur={false}
-                  value={sortMethod}
-                  options={sortOptions}
-                  onChange={(e, {value}) => {
-                    setSortMethod(value);
-                  }}
-                />
-                <Button
-                  icon
-                  basic
-                  data-testid="sort-direction-button"
-                  onClick={() => {
-                    if (sortDirection === 'ascending') {
-                      setSortDirection('descending');
-                    } else {
-                      setSortDirection('ascending');
-                    }
-                  }}
-                >
-                  <Icon name={'sort content ' + sortDirection} />
-                </Button>
-              </Segment>
-            </Segment>
-          </Responsive>
-          <Responsive
-            as={Segment}
-            minWidth={1000}
-            clearing
-            basic
-            className="noHorizontalPadding"
-          >
-            <Segment
-              className="noMargin noVerticalPadding noHorizontalPadding"
-              basic
-              compact
-              floated="left"
-            >
-              <span className="smallLabel">Filter by:</span>
+          <Button
+            data-testid="show-filter-button"
+            basic={!showFilter}
+            floated="right"
+            primary={typeFilterStatus !== '' || tagFilterStatus !== ''}
+            icon="filter"
+            onClick={() => setShowFilter(!showFilter)}
+          />
+          <Input
+            aria-label="file-search-input"
+            className="mr-80"
+            fluid
+            icon="search"
+            onChange={(e, {value}) => {
+              setSearchString(value);
+            }}
+            value={searchString}
+          />
+          {showFilter && (
+            <Segment>
+              <p className="mb-5">
+                <Icon name="filter" />
+                Filter by:
+              </p>
               <Dropdown
+                fluid
                 selection
                 clearable
                 disabled={tagOptions.length === 0}
@@ -397,6 +141,98 @@ const ListFilterBar = ({
                 }}
               />
               <Dropdown
+                fluid
+                selection
+                clearable
+                selectOnBlur={false}
+                value={typeFilterStatus}
+                options={typeOptions}
+                placeholder="Document type"
+                onChange={(e, {value}) => {
+                  setTypeFilterStatus(value);
+                }}
+              />
+            </Segment>
+          )}
+          {showSort && (
+            <Segment>
+              <p className="mb-5">
+                <Icon name="sort" />
+                Sort by:
+              </p>
+              <Button
+                icon
+                basic
+                floated="right"
+                data-testid="sort-direction-button"
+                onClick={() => {
+                  if (sortDirection === 'ascending') {
+                    setSortDirection('descending');
+                  } else {
+                    setSortDirection('ascending');
+                  }
+                }}
+              >
+                <Icon name={'sort content ' + sortDirection} />
+              </Button>
+              <div className="mr-40">
+                <Dropdown
+                  fluid
+                  selection
+                  clearable
+                  selectOnBlur={false}
+                  value={sortMethod}
+                  options={sortOptions}
+                  placeholder="Date option"
+                  onChange={(e, {value}) => {
+                    setSortMethod(value);
+                  }}
+                />
+              </div>
+            </Segment>
+          )}
+        </Responsive>
+        <Responsive
+          as={Segment}
+          minWidth={700}
+          maxWidth={999}
+          basic
+          className="noHorizontalPadding"
+        >
+          <Input
+            fluid
+            aria-label="file-search-input"
+            icon="search"
+            onChange={(e, {value}) => {
+              setSearchString(value);
+            }}
+            value={searchString}
+          />
+          <Segment clearing basic className="noHorizontalPadding noMargin">
+            <Segment
+              className="noMargin noVerticalPadding noHorizontalPadding"
+              basic
+              compact
+              floated="left"
+            >
+              <Dropdown
+                labeled
+                button
+                className="icon noMargin"
+                placeholder="Tags"
+                icon="tag"
+                selection
+                clearable
+                disabled={tagOptions.length === 0}
+                selectOnBlur={false}
+                value={tagFilterStatus}
+                options={tagOptions}
+                onChange={(e, {value}) => {
+                  setTagFilterStatus(value);
+                }}
+              />
+              <Dropdown
+                button
                 selection
                 clearable
                 selectOnBlur={false}
@@ -412,16 +248,19 @@ const ListFilterBar = ({
               className="noMargin noVerticalPadding noHorizontalPadding"
               basic
               compact
-              floated="left"
+              floated="right"
             >
-              <span className="smallLabel">Sort by:</span>
               <Dropdown
+                labeled
+                button
+                className="icon noMargin"
+                placeholder="Date option"
+                icon="sort"
                 selection
                 clearable
                 selectOnBlur={false}
                 value={sortMethod}
                 options={sortOptions}
-                placeholder="Date option"
                 onChange={(e, {value}) => {
                   setSortMethod(value);
                 }}
@@ -441,18 +280,90 @@ const ListFilterBar = ({
                 <Icon name={'sort content ' + sortDirection} />
               </Button>
             </Segment>
-            <Input
-              fluid
-              aria-label="file-search-input"
-              icon="search"
+          </Segment>
+        </Responsive>
+        <Responsive
+          as={Segment}
+          minWidth={1000}
+          clearing
+          basic
+          className="noHorizontalPadding"
+        >
+          <Segment
+            className="noMargin noVerticalPadding noHorizontalPadding"
+            basic
+            compact
+            floated="left"
+          >
+            <span className="smallLabel">Filter by:</span>
+            <Dropdown
+              selection
+              clearable
+              disabled={tagOptions.length === 0}
+              selectOnBlur={false}
+              value={tagFilterStatus}
+              options={tagOptions}
+              placeholder="Tag"
               onChange={(e, {value}) => {
-                setSearchString(value);
+                setTagFilterStatus(value);
               }}
-              value={searchString}
             />
-          </Responsive>
-        </>
-      )}
+            <Dropdown
+              selection
+              clearable
+              selectOnBlur={false}
+              value={typeFilterStatus}
+              options={typeOptions}
+              placeholder="Document type"
+              onChange={(e, {value}) => {
+                setTypeFilterStatus(value);
+              }}
+            />
+          </Segment>
+          <Segment
+            className="noMargin noVerticalPadding noHorizontalPadding"
+            basic
+            compact
+            floated="left"
+          >
+            <span className="smallLabel">Sort by:</span>
+            <Dropdown
+              selection
+              clearable
+              selectOnBlur={false}
+              value={sortMethod}
+              options={sortOptions}
+              placeholder="Date option"
+              onChange={(e, {value}) => {
+                setSortMethod(value);
+              }}
+            />
+            <Button
+              icon
+              basic
+              data-testid="sort-direction-button"
+              onClick={() => {
+                if (sortDirection === 'ascending') {
+                  setSortDirection('descending');
+                } else {
+                  setSortDirection('ascending');
+                }
+              }}
+            >
+              <Icon name={'sort content ' + sortDirection} />
+            </Button>
+          </Segment>
+          <Input
+            fluid
+            aria-label="file-search-input"
+            icon="search"
+            onChange={(e, {value}) => {
+              setSearchString(value);
+            }}
+            value={searchString}
+          />
+        </Responsive>
+      </div>
       {filteredList(sortedFileList())}
     </>
   );

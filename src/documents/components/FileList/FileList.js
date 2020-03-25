@@ -2,6 +2,7 @@ import React, {useState, Fragment} from 'react';
 import PropTypes from 'prop-types';
 import FileElement from './FileElement';
 import ListFilterBar from '../ListFilterBar/ListFilterBar';
+import BatchActionBar from '../ListFilterBar/BatchActionBar';
 import {fileLatestStatus} from '../../utilities';
 import {
   Header,
@@ -67,12 +68,18 @@ const FileList = ({
       )}
       {fileList.length ? (
         <>
+          {selection.length > 0 && (
+            <BatchActionBar
+              fileList={fileList}
+              downloadFileMutation={downloadFileMutation}
+              deleteFile={isAdmin ? deleteFile : null}
+              selection={selection}
+              setSelection={setSelection}
+              studyId={studyId}
+            />
+          )}
           <ListFilterBar
-            downloadFileMutation={downloadFileMutation}
-            deleteFile={isAdmin ? deleteFile : null}
-            selection={selection}
-            setSelection={setSelection}
-            studyId={studyId}
+            hidden={selection.length > 0}
             fileList={fileList}
             filteredList={filteredList => {
               setPageCount(Math.ceil(filteredList.length / perPage));
