@@ -44,247 +44,251 @@ exports[`deletes a file correctly 1`] = `
         class="sixteen wide column"
       >
         <div
-          class="ui basic clearing segment noHorizontalPadding"
+          class=""
         >
           <div
-            class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
+            class="ui basic clearing segment noHorizontalPadding"
           >
-            <span
-              class="smallLabel"
-            >
-              Filter by:
-            </span>
             <div
-              aria-disabled="false"
-              aria-expanded="false"
-              class="ui selection dropdown"
-              role="listbox"
-              tabindex="0"
+              class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
             >
-              <div
-                aria-live="polite"
-                class="default text"
-                role="alert"
+              <span
+                class="smallLabel"
               >
-                Tag
+                Filter by:
+              </span>
+              <div
+                aria-disabled="false"
+                aria-expanded="false"
+                class="ui selection dropdown"
+                role="listbox"
+                tabindex="0"
+              >
+                <div
+                  aria-live="polite"
+                  class="default text"
+                  role="alert"
+                >
+                  Tag
+                </div>
+                <i
+                  aria-hidden="true"
+                  class="dropdown icon"
+                />
+                <div
+                  class="menu transition"
+                >
+                  <div
+                    aria-checked="false"
+                    aria-selected="true"
+                    class="selected item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <span
+                      class="text"
+                    >
+                      dbGaP
+                    </span>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <span
+                      class="text"
+                    >
+                      random
+                    </span>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <span
+                      class="text"
+                    >
+                      tag that has ten more char
+                    </span>
+                  </div>
+                </div>
               </div>
-              <i
-                aria-hidden="true"
-                class="dropdown icon"
-              />
               <div
-                class="menu transition"
+                aria-expanded="false"
+                class="ui selection dropdown"
+                role="listbox"
+                tabindex="0"
               >
                 <div
-                  aria-checked="false"
-                  aria-selected="true"
-                  class="selected item"
-                  role="option"
-                  style="pointer-events: all;"
+                  aria-live="polite"
+                  class="default text"
+                  role="alert"
                 >
-                  <span
-                    class="text"
-                  >
-                    dbGaP
-                  </span>
+                  Document type
                 </div>
+                <i
+                  aria-hidden="true"
+                  class="dropdown icon"
+                />
                 <div
-                  aria-checked="false"
-                  aria-selected="false"
-                  class="item"
-                  role="option"
-                  style="pointer-events: all;"
+                  class="menu transition"
                 >
-                  <span
-                    class="text"
+                  <div
+                    aria-checked="false"
+                    aria-selected="true"
+                    class="selected item"
+                    role="option"
+                    style="pointer-events: all;"
                   >
-                    random
-                  </span>
-                </div>
-                <div
-                  aria-checked="false"
-                  aria-selected="false"
-                  class="item"
-                  role="option"
-                  style="pointer-events: all;"
-                >
-                  <span
-                    class="text"
+                    <small
+                      class="text"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="shipping icon"
+                      />
+                       Biospecimen Manifest
+                    </small>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
                   >
-                    tag that has ten more char
-                  </span>
+                    <small
+                      class="text"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="hospital icon"
+                      />
+                       Clinical/Phenotypic Data
+                    </small>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <small
+                      class="text"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="dna icon"
+                      />
+                       Sequencing Manifest
+                    </small>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <small
+                      class="text"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="question icon"
+                      />
+                       Other
+                    </small>
+                  </div>
                 </div>
               </div>
             </div>
             <div
-              aria-expanded="false"
-              class="ui selection dropdown"
-              role="listbox"
-              tabindex="0"
+              class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
             >
-              <div
-                aria-live="polite"
-                class="default text"
-                role="alert"
+              <span
+                class="smallLabel"
               >
-                Document type
-              </div>
-              <i
-                aria-hidden="true"
-                class="dropdown icon"
-              />
+                Sort by:
+              </span>
               <div
-                class="menu transition"
+                aria-expanded="false"
+                class="ui selection dropdown"
+                role="listbox"
+                tabindex="0"
               >
                 <div
-                  aria-checked="false"
-                  aria-selected="true"
-                  class="selected item"
-                  role="option"
-                  style="pointer-events: all;"
+                  aria-live="polite"
+                  class="default text"
+                  role="alert"
                 >
-                  <small
-                    class="text"
-                  >
-                    <i
-                      aria-hidden="true"
-                      class="shipping icon"
-                    />
-                     Biospecimen Manifest
-                  </small>
+                  Date option
                 </div>
+                <i
+                  aria-hidden="true"
+                  class="dropdown icon"
+                />
                 <div
-                  aria-checked="false"
-                  aria-selected="false"
-                  class="item"
-                  role="option"
-                  style="pointer-events: all;"
+                  class="menu transition"
                 >
-                  <small
-                    class="text"
+                  <div
+                    aria-checked="false"
+                    aria-selected="true"
+                    class="selected item"
+                    role="option"
+                    style="pointer-events: all;"
                   >
-                    <i
-                      aria-hidden="true"
-                      class="hospital icon"
-                    />
-                     Clinical/Phenotypic Data
-                  </small>
-                </div>
-                <div
-                  aria-checked="false"
-                  aria-selected="false"
-                  class="item"
-                  role="option"
-                  style="pointer-events: all;"
-                >
-                  <small
-                    class="text"
+                    <span
+                      class="text"
+                    >
+                      Create date
+                    </span>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
                   >
-                    <i
-                      aria-hidden="true"
-                      class="dna icon"
-                    />
-                     Sequencing Manifest
-                  </small>
-                </div>
-                <div
-                  aria-checked="false"
-                  aria-selected="false"
-                  class="item"
-                  role="option"
-                  style="pointer-events: all;"
-                >
-                  <small
-                    class="text"
-                  >
-                    <i
-                      aria-hidden="true"
-                      class="question icon"
-                    />
-                     Other
-                  </small>
+                    <span
+                      class="text"
+                    >
+                      Modified date
+                    </span>
+                  </div>
                 </div>
               </div>
+              <button
+                class="ui basic icon button"
+                data-testid="sort-direction-button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="sort content ascending icon"
+                />
+              </button>
             </div>
-          </div>
-          <div
-            class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
-          >
-            <span
-              class="smallLabel"
-            >
-              Sort by:
-            </span>
             <div
-              aria-expanded="false"
-              class="ui selection dropdown"
-              role="listbox"
-              tabindex="0"
+              class="ui fluid icon input"
             >
-              <div
-                aria-live="polite"
-                class="default text"
-                role="alert"
-              >
-                Date option
-              </div>
+              <input
+                aria-label="file-search-input"
+                type="text"
+                value=""
+              />
               <i
                 aria-hidden="true"
-                class="dropdown icon"
+                class="search icon"
               />
-              <div
-                class="menu transition"
-              >
-                <div
-                  aria-checked="false"
-                  aria-selected="true"
-                  class="selected item"
-                  role="option"
-                  style="pointer-events: all;"
-                >
-                  <span
-                    class="text"
-                  >
-                    Create date
-                  </span>
-                </div>
-                <div
-                  aria-checked="false"
-                  aria-selected="false"
-                  class="item"
-                  role="option"
-                  style="pointer-events: all;"
-                >
-                  <span
-                    class="text"
-                  >
-                    Modified date
-                  </span>
-                </div>
-              </div>
             </div>
-            <button
-              class="ui basic icon button"
-              data-testid="sort-direction-button"
-            >
-              <i
-                aria-hidden="true"
-                class="sort content ascending icon"
-              />
-            </button>
-          </div>
-          <div
-            class="ui fluid icon input"
-          >
-            <input
-              aria-label="file-search-input"
-              type="text"
-              value=""
-            />
-            <i
-              aria-hidden="true"
-              class="search icon"
-            />
           </div>
         </div>
         <table
@@ -689,221 +693,225 @@ exports[`deletes a file correctly 2`] = `
         class="sixteen wide column"
       >
         <div
-          class="ui basic clearing segment noHorizontalPadding"
+          class=""
         >
           <div
-            class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
+            class="ui basic clearing segment noHorizontalPadding"
           >
-            <span
-              class="smallLabel"
-            >
-              Filter by:
-            </span>
             <div
-              aria-disabled="false"
-              aria-expanded="false"
-              class="ui selection dropdown"
-              role="listbox"
-              tabindex="0"
+              class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
             >
-              <div
-                aria-live="polite"
-                class="default text"
-                role="alert"
+              <span
+                class="smallLabel"
               >
-                Tag
-              </div>
-              <i
-                aria-hidden="true"
-                class="dropdown icon"
-              />
+                Filter by:
+              </span>
               <div
-                class="menu transition"
+                aria-disabled="false"
+                aria-expanded="false"
+                class="ui selection dropdown"
+                role="listbox"
+                tabindex="0"
               >
                 <div
-                  aria-checked="false"
-                  aria-selected="true"
-                  class="selected item"
-                  role="option"
-                  style="pointer-events: all;"
+                  aria-live="polite"
+                  class="default text"
+                  role="alert"
                 >
-                  <span
-                    class="text"
+                  Tag
+                </div>
+                <i
+                  aria-hidden="true"
+                  class="dropdown icon"
+                />
+                <div
+                  class="menu transition"
+                >
+                  <div
+                    aria-checked="false"
+                    aria-selected="true"
+                    class="selected item"
+                    role="option"
+                    style="pointer-events: all;"
                   >
-                    Email
-                  </span>
+                    <span
+                      class="text"
+                    >
+                      Email
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-expanded="false"
+                class="ui selection dropdown"
+                role="listbox"
+                tabindex="0"
+              >
+                <div
+                  aria-live="polite"
+                  class="default text"
+                  role="alert"
+                >
+                  Document type
+                </div>
+                <i
+                  aria-hidden="true"
+                  class="dropdown icon"
+                />
+                <div
+                  class="menu transition"
+                >
+                  <div
+                    aria-checked="false"
+                    aria-selected="true"
+                    class="selected item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <small
+                      class="text"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="shipping icon"
+                      />
+                       Biospecimen Manifest
+                    </small>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <small
+                      class="text"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="hospital icon"
+                      />
+                       Clinical/Phenotypic Data
+                    </small>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <small
+                      class="text"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="dna icon"
+                      />
+                       Sequencing Manifest
+                    </small>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <small
+                      class="text"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="question icon"
+                      />
+                       Other
+                    </small>
+                  </div>
                 </div>
               </div>
             </div>
             <div
-              aria-expanded="false"
-              class="ui selection dropdown"
-              role="listbox"
-              tabindex="0"
+              class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
             >
-              <div
-                aria-live="polite"
-                class="default text"
-                role="alert"
+              <span
+                class="smallLabel"
               >
-                Document type
-              </div>
-              <i
-                aria-hidden="true"
-                class="dropdown icon"
-              />
+                Sort by:
+              </span>
               <div
-                class="menu transition"
+                aria-expanded="false"
+                class="ui selection dropdown"
+                role="listbox"
+                tabindex="0"
               >
                 <div
-                  aria-checked="false"
-                  aria-selected="true"
-                  class="selected item"
-                  role="option"
-                  style="pointer-events: all;"
+                  aria-live="polite"
+                  class="default text"
+                  role="alert"
                 >
-                  <small
-                    class="text"
-                  >
-                    <i
-                      aria-hidden="true"
-                      class="shipping icon"
-                    />
-                     Biospecimen Manifest
-                  </small>
+                  Date option
                 </div>
+                <i
+                  aria-hidden="true"
+                  class="dropdown icon"
+                />
                 <div
-                  aria-checked="false"
-                  aria-selected="false"
-                  class="item"
-                  role="option"
-                  style="pointer-events: all;"
+                  class="menu transition"
                 >
-                  <small
-                    class="text"
+                  <div
+                    aria-checked="false"
+                    aria-selected="true"
+                    class="selected item"
+                    role="option"
+                    style="pointer-events: all;"
                   >
-                    <i
-                      aria-hidden="true"
-                      class="hospital icon"
-                    />
-                     Clinical/Phenotypic Data
-                  </small>
-                </div>
-                <div
-                  aria-checked="false"
-                  aria-selected="false"
-                  class="item"
-                  role="option"
-                  style="pointer-events: all;"
-                >
-                  <small
-                    class="text"
+                    <span
+                      class="text"
+                    >
+                      Create date
+                    </span>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
                   >
-                    <i
-                      aria-hidden="true"
-                      class="dna icon"
-                    />
-                     Sequencing Manifest
-                  </small>
-                </div>
-                <div
-                  aria-checked="false"
-                  aria-selected="false"
-                  class="item"
-                  role="option"
-                  style="pointer-events: all;"
-                >
-                  <small
-                    class="text"
-                  >
-                    <i
-                      aria-hidden="true"
-                      class="question icon"
-                    />
-                     Other
-                  </small>
+                    <span
+                      class="text"
+                    >
+                      Modified date
+                    </span>
+                  </div>
                 </div>
               </div>
+              <button
+                class="ui basic icon button"
+                data-testid="sort-direction-button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="sort content ascending icon"
+                />
+              </button>
             </div>
-          </div>
-          <div
-            class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
-          >
-            <span
-              class="smallLabel"
-            >
-              Sort by:
-            </span>
             <div
-              aria-expanded="false"
-              class="ui selection dropdown"
-              role="listbox"
-              tabindex="0"
+              class="ui fluid icon input"
             >
-              <div
-                aria-live="polite"
-                class="default text"
-                role="alert"
-              >
-                Date option
-              </div>
+              <input
+                aria-label="file-search-input"
+                type="text"
+                value=""
+              />
               <i
                 aria-hidden="true"
-                class="dropdown icon"
+                class="search icon"
               />
-              <div
-                class="menu transition"
-              >
-                <div
-                  aria-checked="false"
-                  aria-selected="true"
-                  class="selected item"
-                  role="option"
-                  style="pointer-events: all;"
-                >
-                  <span
-                    class="text"
-                  >
-                    Create date
-                  </span>
-                </div>
-                <div
-                  aria-checked="false"
-                  aria-selected="false"
-                  class="item"
-                  role="option"
-                  style="pointer-events: all;"
-                >
-                  <span
-                    class="text"
-                  >
-                    Modified date
-                  </span>
-                </div>
-              </div>
             </div>
-            <button
-              class="ui basic icon button"
-              data-testid="sort-direction-button"
-            >
-              <i
-                aria-hidden="true"
-                class="sort content ascending icon"
-              />
-            </button>
-          </div>
-          <div
-            class="ui fluid icon input"
-          >
-            <input
-              aria-label="file-search-input"
-              type="text"
-              value=""
-            />
-            <i
-              aria-hidden="true"
-              class="search icon"
-            />
           </div>
         </div>
         <table
@@ -1173,38 +1181,42 @@ exports[`download and delete multiple documents using checkbox selection 1`] = `
         class="sixteen wide column"
       >
         <div
-          class="ui basic segment noHorizontalPadding"
+          class=""
         >
-          <button
-            class="ui basic icon right floated button"
-            data-testid="show-sort-button"
-          >
-            <i
-              aria-hidden="true"
-              class="sort icon"
-            />
-          </button>
-          <button
-            class="ui basic icon right floated button"
-            data-testid="show-filter-button"
-          >
-            <i
-              aria-hidden="true"
-              class="filter icon"
-            />
-          </button>
           <div
-            class="ui fluid icon input mr-80"
+            class="ui basic segment noHorizontalPadding"
           >
-            <input
-              aria-label="file-search-input"
-              type="text"
-              value=""
-            />
-            <i
-              aria-hidden="true"
-              class="search icon"
-            />
+            <button
+              class="ui basic icon right floated button"
+              data-testid="show-sort-button"
+            >
+              <i
+                aria-hidden="true"
+                class="sort icon"
+              />
+            </button>
+            <button
+              class="ui basic icon right floated button"
+              data-testid="show-filter-button"
+            >
+              <i
+                aria-hidden="true"
+                class="filter icon"
+              />
+            </button>
+            <div
+              class="ui fluid icon input mr-80"
+            >
+              <input
+                aria-label="file-search-input"
+                type="text"
+                value=""
+              />
+              <i
+                aria-hidden="true"
+                class="search icon"
+              />
+            </div>
           </div>
         </div>
         <table
@@ -1579,6 +1591,45 @@ exports[`download and delete multiple documents using checkbox selection 2`] = `
             Delete Selected Document
           </button>
         </div>
+        <div
+          class="hidden"
+        >
+          <div
+            class="ui basic segment noHorizontalPadding"
+          >
+            <button
+              class="ui basic icon right floated button"
+              data-testid="show-sort-button"
+            >
+              <i
+                aria-hidden="true"
+                class="sort icon"
+              />
+            </button>
+            <button
+              class="ui basic icon right floated button"
+              data-testid="show-filter-button"
+            >
+              <i
+                aria-hidden="true"
+                class="filter icon"
+              />
+            </button>
+            <div
+              class="ui fluid icon input mr-80"
+            >
+              <input
+                aria-label="file-search-input"
+                type="text"
+                value=""
+              />
+              <i
+                aria-hidden="true"
+                class="search icon"
+              />
+            </div>
+          </div>
+        </div>
         <table
           class="ui celled selectable stackable very compact table"
         >
@@ -1951,6 +2002,45 @@ exports[`download and delete multiple documents using checkbox selection 3`] = `
             Delete Selected Document
           </button>
         </div>
+        <div
+          class="hidden"
+        >
+          <div
+            class="ui basic segment noHorizontalPadding"
+          >
+            <button
+              class="ui basic icon right floated button"
+              data-testid="show-sort-button"
+            >
+              <i
+                aria-hidden="true"
+                class="sort icon"
+              />
+            </button>
+            <button
+              class="ui basic icon right floated button"
+              data-testid="show-filter-button"
+            >
+              <i
+                aria-hidden="true"
+                class="filter icon"
+              />
+            </button>
+            <div
+              class="ui fluid icon input mr-80"
+            >
+              <input
+                aria-label="file-search-input"
+                type="text"
+                value=""
+              />
+              <i
+                aria-hidden="true"
+                class="search icon"
+              />
+            </div>
+          </div>
+        </div>
         <table
           class="ui celled selectable stackable very compact table"
         >
@@ -2297,38 +2387,42 @@ exports[`download and delete multiple documents using checkbox selection 4`] = `
         class="sixteen wide column"
       >
         <div
-          class="ui basic segment noHorizontalPadding"
+          class=""
         >
-          <button
-            class="ui basic icon right floated button"
-            data-testid="show-sort-button"
-          >
-            <i
-              aria-hidden="true"
-              class="sort icon"
-            />
-          </button>
-          <button
-            class="ui basic icon right floated button"
-            data-testid="show-filter-button"
-          >
-            <i
-              aria-hidden="true"
-              class="filter icon"
-            />
-          </button>
           <div
-            class="ui fluid icon input mr-80"
+            class="ui basic segment noHorizontalPadding"
           >
-            <input
-              aria-label="file-search-input"
-              type="text"
-              value=""
-            />
-            <i
-              aria-hidden="true"
-              class="search icon"
-            />
+            <button
+              class="ui basic icon right floated button"
+              data-testid="show-sort-button"
+            >
+              <i
+                aria-hidden="true"
+                class="sort icon"
+              />
+            </button>
+            <button
+              class="ui basic icon right floated button"
+              data-testid="show-filter-button"
+            >
+              <i
+                aria-hidden="true"
+                class="filter icon"
+              />
+            </button>
+            <div
+              class="ui fluid icon input mr-80"
+            >
+              <input
+                aria-label="file-search-input"
+                type="text"
+                value=""
+              />
+              <i
+                aria-hidden="true"
+                class="search icon"
+              />
+            </div>
           </div>
         </div>
         <table
@@ -2551,247 +2645,251 @@ exports[`renders correctly 1`] = `
         class="sixteen wide column"
       >
         <div
-          class="ui basic clearing segment noHorizontalPadding"
+          class=""
         >
           <div
-            class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
+            class="ui basic clearing segment noHorizontalPadding"
           >
-            <span
-              class="smallLabel"
-            >
-              Filter by:
-            </span>
             <div
-              aria-disabled="false"
-              aria-expanded="false"
-              class="ui selection dropdown"
-              role="listbox"
-              tabindex="0"
+              class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
             >
-              <div
-                aria-live="polite"
-                class="default text"
-                role="alert"
+              <span
+                class="smallLabel"
               >
-                Tag
+                Filter by:
+              </span>
+              <div
+                aria-disabled="false"
+                aria-expanded="false"
+                class="ui selection dropdown"
+                role="listbox"
+                tabindex="0"
+              >
+                <div
+                  aria-live="polite"
+                  class="default text"
+                  role="alert"
+                >
+                  Tag
+                </div>
+                <i
+                  aria-hidden="true"
+                  class="dropdown icon"
+                />
+                <div
+                  class="menu transition"
+                >
+                  <div
+                    aria-checked="false"
+                    aria-selected="true"
+                    class="selected item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <span
+                      class="text"
+                    >
+                      dbGaP
+                    </span>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <span
+                      class="text"
+                    >
+                      random
+                    </span>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <span
+                      class="text"
+                    >
+                      tag that has ten more char
+                    </span>
+                  </div>
+                </div>
               </div>
-              <i
-                aria-hidden="true"
-                class="dropdown icon"
-              />
               <div
-                class="menu transition"
+                aria-expanded="false"
+                class="ui selection dropdown"
+                role="listbox"
+                tabindex="0"
               >
                 <div
-                  aria-checked="false"
-                  aria-selected="true"
-                  class="selected item"
-                  role="option"
-                  style="pointer-events: all;"
+                  aria-live="polite"
+                  class="default text"
+                  role="alert"
                 >
-                  <span
-                    class="text"
-                  >
-                    dbGaP
-                  </span>
+                  Document type
                 </div>
+                <i
+                  aria-hidden="true"
+                  class="dropdown icon"
+                />
                 <div
-                  aria-checked="false"
-                  aria-selected="false"
-                  class="item"
-                  role="option"
-                  style="pointer-events: all;"
+                  class="menu transition"
                 >
-                  <span
-                    class="text"
+                  <div
+                    aria-checked="false"
+                    aria-selected="true"
+                    class="selected item"
+                    role="option"
+                    style="pointer-events: all;"
                   >
-                    random
-                  </span>
-                </div>
-                <div
-                  aria-checked="false"
-                  aria-selected="false"
-                  class="item"
-                  role="option"
-                  style="pointer-events: all;"
-                >
-                  <span
-                    class="text"
+                    <small
+                      class="text"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="shipping icon"
+                      />
+                       Biospecimen Manifest
+                    </small>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
                   >
-                    tag that has ten more char
-                  </span>
+                    <small
+                      class="text"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="hospital icon"
+                      />
+                       Clinical/Phenotypic Data
+                    </small>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <small
+                      class="text"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="dna icon"
+                      />
+                       Sequencing Manifest
+                    </small>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <small
+                      class="text"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="question icon"
+                      />
+                       Other
+                    </small>
+                  </div>
                 </div>
               </div>
             </div>
             <div
-              aria-expanded="false"
-              class="ui selection dropdown"
-              role="listbox"
-              tabindex="0"
+              class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
             >
-              <div
-                aria-live="polite"
-                class="default text"
-                role="alert"
+              <span
+                class="smallLabel"
               >
-                Document type
-              </div>
-              <i
-                aria-hidden="true"
-                class="dropdown icon"
-              />
+                Sort by:
+              </span>
               <div
-                class="menu transition"
+                aria-expanded="false"
+                class="ui selection dropdown"
+                role="listbox"
+                tabindex="0"
               >
                 <div
-                  aria-checked="false"
-                  aria-selected="true"
-                  class="selected item"
-                  role="option"
-                  style="pointer-events: all;"
+                  aria-live="polite"
+                  class="default text"
+                  role="alert"
                 >
-                  <small
-                    class="text"
-                  >
-                    <i
-                      aria-hidden="true"
-                      class="shipping icon"
-                    />
-                     Biospecimen Manifest
-                  </small>
+                  Date option
                 </div>
+                <i
+                  aria-hidden="true"
+                  class="dropdown icon"
+                />
                 <div
-                  aria-checked="false"
-                  aria-selected="false"
-                  class="item"
-                  role="option"
-                  style="pointer-events: all;"
+                  class="menu transition"
                 >
-                  <small
-                    class="text"
+                  <div
+                    aria-checked="false"
+                    aria-selected="true"
+                    class="selected item"
+                    role="option"
+                    style="pointer-events: all;"
                   >
-                    <i
-                      aria-hidden="true"
-                      class="hospital icon"
-                    />
-                     Clinical/Phenotypic Data
-                  </small>
-                </div>
-                <div
-                  aria-checked="false"
-                  aria-selected="false"
-                  class="item"
-                  role="option"
-                  style="pointer-events: all;"
-                >
-                  <small
-                    class="text"
+                    <span
+                      class="text"
+                    >
+                      Create date
+                    </span>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
                   >
-                    <i
-                      aria-hidden="true"
-                      class="dna icon"
-                    />
-                     Sequencing Manifest
-                  </small>
-                </div>
-                <div
-                  aria-checked="false"
-                  aria-selected="false"
-                  class="item"
-                  role="option"
-                  style="pointer-events: all;"
-                >
-                  <small
-                    class="text"
-                  >
-                    <i
-                      aria-hidden="true"
-                      class="question icon"
-                    />
-                     Other
-                  </small>
+                    <span
+                      class="text"
+                    >
+                      Modified date
+                    </span>
+                  </div>
                 </div>
               </div>
+              <button
+                class="ui basic icon button"
+                data-testid="sort-direction-button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="sort content ascending icon"
+                />
+              </button>
             </div>
-          </div>
-          <div
-            class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
-          >
-            <span
-              class="smallLabel"
-            >
-              Sort by:
-            </span>
             <div
-              aria-expanded="false"
-              class="ui selection dropdown"
-              role="listbox"
-              tabindex="0"
+              class="ui fluid icon input"
             >
-              <div
-                aria-live="polite"
-                class="default text"
-                role="alert"
-              >
-                Date option
-              </div>
+              <input
+                aria-label="file-search-input"
+                type="text"
+                value=""
+              />
               <i
                 aria-hidden="true"
-                class="dropdown icon"
+                class="search icon"
               />
-              <div
-                class="menu transition"
-              >
-                <div
-                  aria-checked="false"
-                  aria-selected="true"
-                  class="selected item"
-                  role="option"
-                  style="pointer-events: all;"
-                >
-                  <span
-                    class="text"
-                  >
-                    Create date
-                  </span>
-                </div>
-                <div
-                  aria-checked="false"
-                  aria-selected="false"
-                  class="item"
-                  role="option"
-                  style="pointer-events: all;"
-                >
-                  <span
-                    class="text"
-                  >
-                    Modified date
-                  </span>
-                </div>
-              </div>
             </div>
-            <button
-              class="ui basic icon button"
-              data-testid="sort-direction-button"
-            >
-              <i
-                aria-hidden="true"
-                class="sort content ascending icon"
-              />
-            </button>
-          </div>
-          <div
-            class="ui fluid icon input"
-          >
-            <input
-              aria-label="file-search-input"
-              type="text"
-              value=""
-            />
-            <i
-              aria-hidden="true"
-              class="search icon"
-            />
           </div>
         </div>
         <table
@@ -3462,38 +3560,42 @@ exports[`update tags with no error adding tag and error with removing tag 1`] = 
           class="sixteen wide column"
         >
           <div
-            class="ui basic segment noHorizontalPadding"
+            class=""
           >
-            <button
-              class="ui basic icon right floated button"
-              data-testid="show-sort-button"
-            >
-              <i
-                aria-hidden="true"
-                class="sort icon"
-              />
-            </button>
-            <button
-              class="ui basic icon right floated button"
-              data-testid="show-filter-button"
-            >
-              <i
-                aria-hidden="true"
-                class="filter icon"
-              />
-            </button>
             <div
-              class="ui fluid icon input mr-80"
+              class="ui basic segment noHorizontalPadding"
             >
-              <input
-                aria-label="file-search-input"
-                type="text"
-                value=""
-              />
-              <i
-                aria-hidden="true"
-                class="search icon"
-              />
+              <button
+                class="ui basic icon right floated button"
+                data-testid="show-sort-button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="sort icon"
+                />
+              </button>
+              <button
+                class="ui basic icon right floated button"
+                data-testid="show-filter-button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="filter icon"
+                />
+              </button>
+              <div
+                class="ui fluid icon input mr-80"
+              >
+                <input
+                  aria-label="file-search-input"
+                  type="text"
+                  value=""
+                />
+                <i
+                  aria-hidden="true"
+                  class="search icon"
+                />
+              </div>
             </div>
           </div>
           <table
@@ -4113,108 +4215,112 @@ exports[`update tags with no error adding tag and error with removing tag 2`] = 
           class="sixteen wide column"
         >
           <div
-            class="ui basic segment noHorizontalPadding"
+            class=""
           >
-            <button
-              class="ui icon primary right floated button"
-              data-testid="show-sort-button"
-            >
-              <i
-                aria-hidden="true"
-                class="sort icon"
-              />
-            </button>
-            <button
-              class="ui basic icon right floated button"
-              data-testid="show-filter-button"
-            >
-              <i
-                aria-hidden="true"
-                class="filter icon"
-              />
-            </button>
             <div
-              class="ui fluid icon input mr-80"
+              class="ui basic segment noHorizontalPadding"
             >
-              <input
-                aria-label="file-search-input"
-                type="text"
-                value=""
-              />
-              <i
-                aria-hidden="true"
-                class="search icon"
-              />
-            </div>
-            <div
-              class="ui segment"
-            >
-              <p
-                class="mb-5"
+              <button
+                class="ui icon primary right floated button"
+                data-testid="show-sort-button"
               >
                 <i
                   aria-hidden="true"
                   class="sort icon"
                 />
-                Sort by:
-              </p>
+              </button>
               <button
                 class="ui basic icon right floated button"
-                data-testid="sort-direction-button"
+                data-testid="show-filter-button"
               >
                 <i
                   aria-hidden="true"
-                  class="sort content ascending icon"
+                  class="filter icon"
                 />
               </button>
               <div
-                class="mr-40"
+                class="ui fluid icon input mr-80"
               >
-                <div
-                  aria-expanded="false"
-                  class="ui fluid selection dropdown"
-                  role="listbox"
-                  tabindex="0"
+                <input
+                  aria-label="file-search-input"
+                  type="text"
+                  value=""
+                />
+                <i
+                  aria-hidden="true"
+                  class="search icon"
+                />
+              </div>
+              <div
+                class="ui segment"
+              >
+                <p
+                  class="mb-5"
                 >
-                  <div
-                    aria-live="polite"
-                    class="text"
-                    role="alert"
-                  >
-                    Modified date
-                  </div>
                   <i
                     aria-hidden="true"
-                    class="dropdown icon clear"
+                    class="sort icon"
                   />
+                  Sort by:
+                </p>
+                <button
+                  class="ui basic icon right floated button"
+                  data-testid="sort-direction-button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="sort content ascending icon"
+                  />
+                </button>
+                <div
+                  class="mr-40"
+                >
                   <div
-                    class="menu transition"
+                    aria-expanded="false"
+                    class="ui fluid selection dropdown"
+                    role="listbox"
+                    tabindex="0"
                   >
                     <div
-                      aria-checked="false"
-                      aria-selected="false"
-                      class="item"
-                      role="option"
-                      style="pointer-events: all;"
+                      aria-live="polite"
+                      class="text"
+                      role="alert"
                     >
-                      <span
-                        class="text"
-                      >
-                        Create date
-                      </span>
+                      Modified date
                     </div>
+                    <i
+                      aria-hidden="true"
+                      class="dropdown icon clear"
+                    />
                     <div
-                      aria-checked="true"
-                      aria-selected="true"
-                      class="active selected item"
-                      role="option"
-                      style="pointer-events: all;"
+                      class="menu transition"
                     >
-                      <span
-                        class="text"
+                      <div
+                        aria-checked="false"
+                        aria-selected="false"
+                        class="item"
+                        role="option"
+                        style="pointer-events: all;"
                       >
-                        Modified date
-                      </span>
+                        <span
+                          class="text"
+                        >
+                          Create date
+                        </span>
+                      </div>
+                      <div
+                        aria-checked="true"
+                        aria-selected="true"
+                        class="active selected item"
+                        role="option"
+                        style="pointer-events: all;"
+                      >
+                        <span
+                          class="text"
+                        >
+                          Modified date
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -4838,108 +4944,112 @@ exports[`update tags with no error adding tag and error with removing tag 3`] = 
           class="sixteen wide column"
         >
           <div
-            class="ui basic segment noHorizontalPadding"
+            class=""
           >
-            <button
-              class="ui icon primary right floated button"
-              data-testid="show-sort-button"
-            >
-              <i
-                aria-hidden="true"
-                class="sort icon"
-              />
-            </button>
-            <button
-              class="ui basic icon right floated button"
-              data-testid="show-filter-button"
-            >
-              <i
-                aria-hidden="true"
-                class="filter icon"
-              />
-            </button>
             <div
-              class="ui fluid icon input mr-80"
+              class="ui basic segment noHorizontalPadding"
             >
-              <input
-                aria-label="file-search-input"
-                type="text"
-                value=""
-              />
-              <i
-                aria-hidden="true"
-                class="search icon"
-              />
-            </div>
-            <div
-              class="ui segment"
-            >
-              <p
-                class="mb-5"
+              <button
+                class="ui icon primary right floated button"
+                data-testid="show-sort-button"
               >
                 <i
                   aria-hidden="true"
                   class="sort icon"
                 />
-                Sort by:
-              </p>
+              </button>
               <button
                 class="ui basic icon right floated button"
-                data-testid="sort-direction-button"
+                data-testid="show-filter-button"
               >
                 <i
                   aria-hidden="true"
-                  class="sort content ascending icon"
+                  class="filter icon"
                 />
               </button>
               <div
-                class="mr-40"
+                class="ui fluid icon input mr-80"
               >
-                <div
-                  aria-expanded="false"
-                  class="ui fluid selection dropdown"
-                  role="listbox"
-                  tabindex="0"
+                <input
+                  aria-label="file-search-input"
+                  type="text"
+                  value=""
+                />
+                <i
+                  aria-hidden="true"
+                  class="search icon"
+                />
+              </div>
+              <div
+                class="ui segment"
+              >
+                <p
+                  class="mb-5"
                 >
-                  <div
-                    aria-live="polite"
-                    class="text"
-                    role="alert"
-                  >
-                    Modified date
-                  </div>
                   <i
                     aria-hidden="true"
-                    class="dropdown icon clear"
+                    class="sort icon"
                   />
+                  Sort by:
+                </p>
+                <button
+                  class="ui basic icon right floated button"
+                  data-testid="sort-direction-button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="sort content ascending icon"
+                  />
+                </button>
+                <div
+                  class="mr-40"
+                >
                   <div
-                    class="menu transition"
+                    aria-expanded="false"
+                    class="ui fluid selection dropdown"
+                    role="listbox"
+                    tabindex="0"
                   >
                     <div
-                      aria-checked="false"
-                      aria-selected="false"
-                      class="item"
-                      role="option"
-                      style="pointer-events: all;"
+                      aria-live="polite"
+                      class="text"
+                      role="alert"
                     >
-                      <span
-                        class="text"
-                      >
-                        Create date
-                      </span>
+                      Modified date
                     </div>
+                    <i
+                      aria-hidden="true"
+                      class="dropdown icon clear"
+                    />
                     <div
-                      aria-checked="true"
-                      aria-selected="true"
-                      class="active selected item"
-                      role="option"
-                      style="pointer-events: all;"
+                      class="menu transition"
                     >
-                      <span
-                        class="text"
+                      <div
+                        aria-checked="false"
+                        aria-selected="false"
+                        class="item"
+                        role="option"
+                        style="pointer-events: all;"
                       >
-                        Modified date
-                      </span>
+                        <span
+                          class="text"
+                        >
+                          Create date
+                        </span>
+                      </div>
+                      <div
+                        aria-checked="true"
+                        aria-selected="true"
+                        class="active selected item"
+                        role="option"
+                        style="pointer-events: all;"
+                      >
+                        <span
+                          class="text"
+                        >
+                          Modified date
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -5654,108 +5764,112 @@ exports[`update tags with no error adding tag and error with removing tag 4`] = 
           class="sixteen wide column"
         >
           <div
-            class="ui basic segment noHorizontalPadding"
+            class=""
           >
-            <button
-              class="ui icon primary right floated button"
-              data-testid="show-sort-button"
-            >
-              <i
-                aria-hidden="true"
-                class="sort icon"
-              />
-            </button>
-            <button
-              class="ui basic icon right floated button"
-              data-testid="show-filter-button"
-            >
-              <i
-                aria-hidden="true"
-                class="filter icon"
-              />
-            </button>
             <div
-              class="ui fluid icon input mr-80"
+              class="ui basic segment noHorizontalPadding"
             >
-              <input
-                aria-label="file-search-input"
-                type="text"
-                value=""
-              />
-              <i
-                aria-hidden="true"
-                class="search icon"
-              />
-            </div>
-            <div
-              class="ui segment"
-            >
-              <p
-                class="mb-5"
+              <button
+                class="ui icon primary right floated button"
+                data-testid="show-sort-button"
               >
                 <i
                   aria-hidden="true"
                   class="sort icon"
                 />
-                Sort by:
-              </p>
+              </button>
               <button
                 class="ui basic icon right floated button"
-                data-testid="sort-direction-button"
+                data-testid="show-filter-button"
               >
                 <i
                   aria-hidden="true"
-                  class="sort content ascending icon"
+                  class="filter icon"
                 />
               </button>
               <div
-                class="mr-40"
+                class="ui fluid icon input mr-80"
               >
-                <div
-                  aria-expanded="false"
-                  class="ui fluid selection dropdown"
-                  role="listbox"
-                  tabindex="0"
+                <input
+                  aria-label="file-search-input"
+                  type="text"
+                  value=""
+                />
+                <i
+                  aria-hidden="true"
+                  class="search icon"
+                />
+              </div>
+              <div
+                class="ui segment"
+              >
+                <p
+                  class="mb-5"
                 >
-                  <div
-                    aria-live="polite"
-                    class="text"
-                    role="alert"
-                  >
-                    Modified date
-                  </div>
                   <i
                     aria-hidden="true"
-                    class="dropdown icon clear"
+                    class="sort icon"
                   />
+                  Sort by:
+                </p>
+                <button
+                  class="ui basic icon right floated button"
+                  data-testid="sort-direction-button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="sort content ascending icon"
+                  />
+                </button>
+                <div
+                  class="mr-40"
+                >
                   <div
-                    class="menu transition"
+                    aria-expanded="false"
+                    class="ui fluid selection dropdown"
+                    role="listbox"
+                    tabindex="0"
                   >
                     <div
-                      aria-checked="false"
-                      aria-selected="false"
-                      class="item"
-                      role="option"
-                      style="pointer-events: all;"
+                      aria-live="polite"
+                      class="text"
+                      role="alert"
                     >
-                      <span
-                        class="text"
-                      >
-                        Create date
-                      </span>
+                      Modified date
                     </div>
+                    <i
+                      aria-hidden="true"
+                      class="dropdown icon clear"
+                    />
                     <div
-                      aria-checked="true"
-                      aria-selected="true"
-                      class="active selected item"
-                      role="option"
-                      style="pointer-events: all;"
+                      class="menu transition"
                     >
-                      <span
-                        class="text"
+                      <div
+                        aria-checked="false"
+                        aria-selected="false"
+                        class="item"
+                        role="option"
+                        style="pointer-events: all;"
                       >
-                        Modified date
-                      </span>
+                        <span
+                          class="text"
+                        >
+                          Create date
+                        </span>
+                      </div>
+                      <div
+                        aria-checked="true"
+                        aria-selected="true"
+                        class="active selected item"
+                        role="option"
+                        style="pointer-events: all;"
+                      >
+                        <span
+                          class="text"
+                        >
+                          Modified date
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -6470,108 +6584,112 @@ exports[`update tags with no error adding tag and error with removing tag 5`] = 
           class="sixteen wide column"
         >
           <div
-            class="ui basic segment noHorizontalPadding"
+            class=""
           >
-            <button
-              class="ui icon primary right floated button"
-              data-testid="show-sort-button"
-            >
-              <i
-                aria-hidden="true"
-                class="sort icon"
-              />
-            </button>
-            <button
-              class="ui basic icon right floated button"
-              data-testid="show-filter-button"
-            >
-              <i
-                aria-hidden="true"
-                class="filter icon"
-              />
-            </button>
             <div
-              class="ui fluid icon input mr-80"
+              class="ui basic segment noHorizontalPadding"
             >
-              <input
-                aria-label="file-search-input"
-                type="text"
-                value=""
-              />
-              <i
-                aria-hidden="true"
-                class="search icon"
-              />
-            </div>
-            <div
-              class="ui segment"
-            >
-              <p
-                class="mb-5"
+              <button
+                class="ui icon primary right floated button"
+                data-testid="show-sort-button"
               >
                 <i
                   aria-hidden="true"
                   class="sort icon"
                 />
-                Sort by:
-              </p>
+              </button>
               <button
                 class="ui basic icon right floated button"
-                data-testid="sort-direction-button"
+                data-testid="show-filter-button"
               >
                 <i
                   aria-hidden="true"
-                  class="sort content ascending icon"
+                  class="filter icon"
                 />
               </button>
               <div
-                class="mr-40"
+                class="ui fluid icon input mr-80"
               >
-                <div
-                  aria-expanded="false"
-                  class="ui fluid selection dropdown"
-                  role="listbox"
-                  tabindex="0"
+                <input
+                  aria-label="file-search-input"
+                  type="text"
+                  value=""
+                />
+                <i
+                  aria-hidden="true"
+                  class="search icon"
+                />
+              </div>
+              <div
+                class="ui segment"
+              >
+                <p
+                  class="mb-5"
                 >
-                  <div
-                    aria-live="polite"
-                    class="text"
-                    role="alert"
-                  >
-                    Modified date
-                  </div>
                   <i
                     aria-hidden="true"
-                    class="dropdown icon clear"
+                    class="sort icon"
                   />
+                  Sort by:
+                </p>
+                <button
+                  class="ui basic icon right floated button"
+                  data-testid="sort-direction-button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="sort content ascending icon"
+                  />
+                </button>
+                <div
+                  class="mr-40"
+                >
                   <div
-                    class="menu transition"
+                    aria-expanded="false"
+                    class="ui fluid selection dropdown"
+                    role="listbox"
+                    tabindex="0"
                   >
                     <div
-                      aria-checked="false"
-                      aria-selected="false"
-                      class="item"
-                      role="option"
-                      style="pointer-events: all;"
+                      aria-live="polite"
+                      class="text"
+                      role="alert"
                     >
-                      <span
-                        class="text"
-                      >
-                        Create date
-                      </span>
+                      Modified date
                     </div>
+                    <i
+                      aria-hidden="true"
+                      class="dropdown icon clear"
+                    />
                     <div
-                      aria-checked="true"
-                      aria-selected="true"
-                      class="active selected item"
-                      role="option"
-                      style="pointer-events: all;"
+                      class="menu transition"
                     >
-                      <span
-                        class="text"
+                      <div
+                        aria-checked="false"
+                        aria-selected="false"
+                        class="item"
+                        role="option"
+                        style="pointer-events: all;"
                       >
-                        Modified date
-                      </span>
+                        <span
+                          class="text"
+                        >
+                          Create date
+                        </span>
+                      </div>
+                      <div
+                        aria-checked="true"
+                        aria-selected="true"
+                        class="active selected item"
+                        role="option"
+                        style="pointer-events: all;"
+                      >
+                        <span
+                          class="text"
+                        >
+                          Modified date
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -7286,108 +7404,112 @@ exports[`update tags with no error adding tag and error with removing tag 6`] = 
           class="sixteen wide column"
         >
           <div
-            class="ui basic segment noHorizontalPadding"
+            class=""
           >
-            <button
-              class="ui icon primary right floated button"
-              data-testid="show-sort-button"
-            >
-              <i
-                aria-hidden="true"
-                class="sort icon"
-              />
-            </button>
-            <button
-              class="ui basic icon right floated button"
-              data-testid="show-filter-button"
-            >
-              <i
-                aria-hidden="true"
-                class="filter icon"
-              />
-            </button>
             <div
-              class="ui fluid icon input mr-80"
+              class="ui basic segment noHorizontalPadding"
             >
-              <input
-                aria-label="file-search-input"
-                type="text"
-                value=""
-              />
-              <i
-                aria-hidden="true"
-                class="search icon"
-              />
-            </div>
-            <div
-              class="ui segment"
-            >
-              <p
-                class="mb-5"
+              <button
+                class="ui icon primary right floated button"
+                data-testid="show-sort-button"
               >
                 <i
                   aria-hidden="true"
                   class="sort icon"
                 />
-                Sort by:
-              </p>
+              </button>
               <button
                 class="ui basic icon right floated button"
-                data-testid="sort-direction-button"
+                data-testid="show-filter-button"
               >
                 <i
                   aria-hidden="true"
-                  class="sort content ascending icon"
+                  class="filter icon"
                 />
               </button>
               <div
-                class="mr-40"
+                class="ui fluid icon input mr-80"
               >
-                <div
-                  aria-expanded="false"
-                  class="ui fluid selection dropdown"
-                  role="listbox"
-                  tabindex="0"
+                <input
+                  aria-label="file-search-input"
+                  type="text"
+                  value=""
+                />
+                <i
+                  aria-hidden="true"
+                  class="search icon"
+                />
+              </div>
+              <div
+                class="ui segment"
+              >
+                <p
+                  class="mb-5"
                 >
-                  <div
-                    aria-live="polite"
-                    class="text"
-                    role="alert"
-                  >
-                    Modified date
-                  </div>
                   <i
                     aria-hidden="true"
-                    class="dropdown icon clear"
+                    class="sort icon"
                   />
+                  Sort by:
+                </p>
+                <button
+                  class="ui basic icon right floated button"
+                  data-testid="sort-direction-button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="sort content ascending icon"
+                  />
+                </button>
+                <div
+                  class="mr-40"
+                >
                   <div
-                    class="menu transition"
+                    aria-expanded="false"
+                    class="ui fluid selection dropdown"
+                    role="listbox"
+                    tabindex="0"
                   >
                     <div
-                      aria-checked="false"
-                      aria-selected="false"
-                      class="item"
-                      role="option"
-                      style="pointer-events: all;"
+                      aria-live="polite"
+                      class="text"
+                      role="alert"
                     >
-                      <span
-                        class="text"
-                      >
-                        Create date
-                      </span>
+                      Modified date
                     </div>
+                    <i
+                      aria-hidden="true"
+                      class="dropdown icon clear"
+                    />
                     <div
-                      aria-checked="true"
-                      aria-selected="true"
-                      class="active selected item"
-                      role="option"
-                      style="pointer-events: all;"
+                      class="menu transition"
                     >
-                      <span
-                        class="text"
+                      <div
+                        aria-checked="false"
+                        aria-selected="false"
+                        class="item"
+                        role="option"
+                        style="pointer-events: all;"
                       >
-                        Modified date
-                      </span>
+                        <span
+                          class="text"
+                        >
+                          Create date
+                        </span>
+                      </div>
+                      <div
+                        aria-checked="true"
+                        aria-selected="true"
+                        class="active selected item"
+                        role="option"
+                        style="pointer-events: all;"
+                      >
+                        <span
+                          class="text"
+                        >
+                          Modified date
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -7885,108 +8007,112 @@ exports[`update tags with no error adding tag and error with removing tag 7`] = 
           class="sixteen wide column"
         >
           <div
-            class="ui basic segment noHorizontalPadding"
+            class=""
           >
-            <button
-              class="ui icon primary right floated button"
-              data-testid="show-sort-button"
-            >
-              <i
-                aria-hidden="true"
-                class="sort icon"
-              />
-            </button>
-            <button
-              class="ui basic icon right floated button"
-              data-testid="show-filter-button"
-            >
-              <i
-                aria-hidden="true"
-                class="filter icon"
-              />
-            </button>
             <div
-              class="ui fluid icon input mr-80"
+              class="ui basic segment noHorizontalPadding"
             >
-              <input
-                aria-label="file-search-input"
-                type="text"
-                value=""
-              />
-              <i
-                aria-hidden="true"
-                class="search icon"
-              />
-            </div>
-            <div
-              class="ui segment"
-            >
-              <p
-                class="mb-5"
+              <button
+                class="ui icon primary right floated button"
+                data-testid="show-sort-button"
               >
                 <i
                   aria-hidden="true"
                   class="sort icon"
                 />
-                Sort by:
-              </p>
+              </button>
               <button
                 class="ui basic icon right floated button"
-                data-testid="sort-direction-button"
+                data-testid="show-filter-button"
               >
                 <i
                   aria-hidden="true"
-                  class="sort content ascending icon"
+                  class="filter icon"
                 />
               </button>
               <div
-                class="mr-40"
+                class="ui fluid icon input mr-80"
               >
-                <div
-                  aria-expanded="false"
-                  class="ui fluid selection dropdown"
-                  role="listbox"
-                  tabindex="0"
+                <input
+                  aria-label="file-search-input"
+                  type="text"
+                  value=""
+                />
+                <i
+                  aria-hidden="true"
+                  class="search icon"
+                />
+              </div>
+              <div
+                class="ui segment"
+              >
+                <p
+                  class="mb-5"
                 >
-                  <div
-                    aria-live="polite"
-                    class="text"
-                    role="alert"
-                  >
-                    Modified date
-                  </div>
                   <i
                     aria-hidden="true"
-                    class="dropdown icon clear"
+                    class="sort icon"
                   />
+                  Sort by:
+                </p>
+                <button
+                  class="ui basic icon right floated button"
+                  data-testid="sort-direction-button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="sort content ascending icon"
+                  />
+                </button>
+                <div
+                  class="mr-40"
+                >
                   <div
-                    class="menu transition"
+                    aria-expanded="false"
+                    class="ui fluid selection dropdown"
+                    role="listbox"
+                    tabindex="0"
                   >
                     <div
-                      aria-checked="false"
-                      aria-selected="false"
-                      class="item"
-                      role="option"
-                      style="pointer-events: all;"
+                      aria-live="polite"
+                      class="text"
+                      role="alert"
                     >
-                      <span
-                        class="text"
-                      >
-                        Create date
-                      </span>
+                      Modified date
                     </div>
+                    <i
+                      aria-hidden="true"
+                      class="dropdown icon clear"
+                    />
                     <div
-                      aria-checked="true"
-                      aria-selected="true"
-                      class="active selected item"
-                      role="option"
-                      style="pointer-events: all;"
+                      class="menu transition"
                     >
-                      <span
-                        class="text"
+                      <div
+                        aria-checked="false"
+                        aria-selected="false"
+                        class="item"
+                        role="option"
+                        style="pointer-events: all;"
                       >
-                        Modified date
-                      </span>
+                        <span
+                          class="text"
+                        >
+                          Create date
+                        </span>
+                      </div>
+                      <div
+                        aria-checked="true"
+                        aria-selected="true"
+                        class="active selected item"
+                        role="option"
+                        style="pointer-events: all;"
+                      >
+                        <span
+                          class="text"
+                        >
+                          Modified date
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -8484,202 +8610,90 @@ exports[`update tags with no error adding tag and error with removing tag 8`] = 
           class="sixteen wide column"
         >
           <div
-            class="ui basic segment noHorizontalPadding"
+            class=""
           >
-            <button
-              class="ui icon primary right floated button"
-              data-testid="show-sort-button"
-            >
-              <i
-                aria-hidden="true"
-                class="sort icon"
-              />
-            </button>
-            <button
-              class="ui icon right floated button"
-              data-testid="show-filter-button"
-            >
-              <i
-                aria-hidden="true"
-                class="filter icon"
-              />
-            </button>
             <div
-              class="ui fluid icon input mr-80"
+              class="ui basic segment noHorizontalPadding"
             >
-              <input
-                aria-label="file-search-input"
-                type="text"
-                value=""
-              />
-              <i
-                aria-hidden="true"
-                class="search icon"
-              />
-            </div>
-            <div
-              class="ui segment"
-            >
-              <p
-                class="mb-5"
-              >
-                <i
-                  aria-hidden="true"
-                  class="filter icon"
-                />
-                Filter by:
-              </p>
-              <div
-                aria-disabled="false"
-                aria-expanded="false"
-                class="ui fluid selection dropdown"
-                role="listbox"
-                tabindex="0"
-              >
-                <div
-                  aria-live="polite"
-                  class="default text"
-                  role="alert"
-                >
-                  Tag
-                </div>
-                <i
-                  aria-hidden="true"
-                  class="dropdown icon"
-                />
-                <div
-                  class="menu transition"
-                >
-                  <div
-                    aria-checked="false"
-                    aria-selected="true"
-                    class="selected item"
-                    role="option"
-                    style="pointer-events: all;"
-                  >
-                    <span
-                      class="text"
-                    >
-                      Email
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div
-                aria-expanded="false"
-                class="ui fluid selection dropdown"
-                role="listbox"
-                tabindex="0"
-              >
-                <div
-                  aria-live="polite"
-                  class="default text"
-                  role="alert"
-                >
-                  Document type
-                </div>
-                <i
-                  aria-hidden="true"
-                  class="dropdown icon"
-                />
-                <div
-                  class="menu transition"
-                >
-                  <div
-                    aria-checked="false"
-                    aria-selected="true"
-                    class="selected item"
-                    role="option"
-                    style="pointer-events: all;"
-                  >
-                    <small
-                      class="text"
-                    >
-                      <i
-                        aria-hidden="true"
-                        class="shipping icon"
-                      />
-                       Biospecimen Manifest
-                    </small>
-                  </div>
-                  <div
-                    aria-checked="false"
-                    aria-selected="false"
-                    class="item"
-                    role="option"
-                    style="pointer-events: all;"
-                  >
-                    <small
-                      class="text"
-                    >
-                      <i
-                        aria-hidden="true"
-                        class="hospital icon"
-                      />
-                       Clinical/Phenotypic Data
-                    </small>
-                  </div>
-                  <div
-                    aria-checked="false"
-                    aria-selected="false"
-                    class="item"
-                    role="option"
-                    style="pointer-events: all;"
-                  >
-                    <small
-                      class="text"
-                    >
-                      <i
-                        aria-hidden="true"
-                        class="dna icon"
-                      />
-                       Sequencing Manifest
-                    </small>
-                  </div>
-                  <div
-                    aria-checked="false"
-                    aria-selected="false"
-                    class="item"
-                    role="option"
-                    style="pointer-events: all;"
-                  >
-                    <small
-                      class="text"
-                    >
-                      <i
-                        aria-hidden="true"
-                        class="question icon"
-                      />
-                       Other
-                    </small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="ui segment"
-            >
-              <p
-                class="mb-5"
+              <button
+                class="ui icon primary right floated button"
+                data-testid="show-sort-button"
               >
                 <i
                   aria-hidden="true"
                   class="sort icon"
                 />
-                Sort by:
-              </p>
+              </button>
               <button
-                class="ui basic icon right floated button"
-                data-testid="sort-direction-button"
+                class="ui icon right floated button"
+                data-testid="show-filter-button"
               >
                 <i
                   aria-hidden="true"
-                  class="sort content ascending icon"
+                  class="filter icon"
                 />
               </button>
               <div
-                class="mr-40"
+                class="ui fluid icon input mr-80"
               >
+                <input
+                  aria-label="file-search-input"
+                  type="text"
+                  value=""
+                />
+                <i
+                  aria-hidden="true"
+                  class="search icon"
+                />
+              </div>
+              <div
+                class="ui segment"
+              >
+                <p
+                  class="mb-5"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="filter icon"
+                  />
+                  Filter by:
+                </p>
+                <div
+                  aria-disabled="false"
+                  aria-expanded="false"
+                  class="ui fluid selection dropdown"
+                  role="listbox"
+                  tabindex="0"
+                >
+                  <div
+                    aria-live="polite"
+                    class="default text"
+                    role="alert"
+                  >
+                    Tag
+                  </div>
+                  <i
+                    aria-hidden="true"
+                    class="dropdown icon"
+                  />
+                  <div
+                    class="menu transition"
+                  >
+                    <div
+                      aria-checked="false"
+                      aria-selected="true"
+                      class="selected item"
+                      role="option"
+                      style="pointer-events: all;"
+                    >
+                      <span
+                        class="text"
+                      >
+                        Email
+                      </span>
+                    </div>
+                  </div>
+                </div>
                 <div
                   aria-expanded="false"
                   class="ui fluid selection dropdown"
@@ -8688,18 +8702,35 @@ exports[`update tags with no error adding tag and error with removing tag 8`] = 
                 >
                   <div
                     aria-live="polite"
-                    class="text"
+                    class="default text"
                     role="alert"
                   >
-                    Modified date
+                    Document type
                   </div>
                   <i
                     aria-hidden="true"
-                    class="dropdown icon clear"
+                    class="dropdown icon"
                   />
                   <div
                     class="menu transition"
                   >
+                    <div
+                      aria-checked="false"
+                      aria-selected="true"
+                      class="selected item"
+                      role="option"
+                      style="pointer-events: all;"
+                    >
+                      <small
+                        class="text"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="shipping icon"
+                        />
+                         Biospecimen Manifest
+                      </small>
+                    </div>
                     <div
                       aria-checked="false"
                       aria-selected="false"
@@ -8707,24 +8738,123 @@ exports[`update tags with no error adding tag and error with removing tag 8`] = 
                       role="option"
                       style="pointer-events: all;"
                     >
-                      <span
+                      <small
                         class="text"
                       >
-                        Create date
-                      </span>
+                        <i
+                          aria-hidden="true"
+                          class="hospital icon"
+                        />
+                         Clinical/Phenotypic Data
+                      </small>
                     </div>
                     <div
-                      aria-checked="true"
-                      aria-selected="true"
-                      class="active selected item"
+                      aria-checked="false"
+                      aria-selected="false"
+                      class="item"
                       role="option"
                       style="pointer-events: all;"
                     >
-                      <span
+                      <small
                         class="text"
                       >
-                        Modified date
-                      </span>
+                        <i
+                          aria-hidden="true"
+                          class="dna icon"
+                        />
+                         Sequencing Manifest
+                      </small>
+                    </div>
+                    <div
+                      aria-checked="false"
+                      aria-selected="false"
+                      class="item"
+                      role="option"
+                      style="pointer-events: all;"
+                    >
+                      <small
+                        class="text"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="question icon"
+                        />
+                         Other
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ui segment"
+              >
+                <p
+                  class="mb-5"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="sort icon"
+                  />
+                  Sort by:
+                </p>
+                <button
+                  class="ui basic icon right floated button"
+                  data-testid="sort-direction-button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="sort content ascending icon"
+                  />
+                </button>
+                <div
+                  class="mr-40"
+                >
+                  <div
+                    aria-expanded="false"
+                    class="ui fluid selection dropdown"
+                    role="listbox"
+                    tabindex="0"
+                  >
+                    <div
+                      aria-live="polite"
+                      class="text"
+                      role="alert"
+                    >
+                      Modified date
+                    </div>
+                    <i
+                      aria-hidden="true"
+                      class="dropdown icon clear"
+                    />
+                    <div
+                      class="menu transition"
+                    >
+                      <div
+                        aria-checked="false"
+                        aria-selected="false"
+                        class="item"
+                        role="option"
+                        style="pointer-events: all;"
+                      >
+                        <span
+                          class="text"
+                        >
+                          Create date
+                        </span>
+                      </div>
+                      <div
+                        aria-checked="true"
+                        aria-selected="true"
+                        class="active selected item"
+                        role="option"
+                        style="pointer-events: all;"
+                      >
+                        <span
+                          class="text"
+                        >
+                          Modified date
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -9222,202 +9352,90 @@ exports[`update tags with no error adding tag and error with removing tag 9`] = 
           class="sixteen wide column"
         >
           <div
-            class="ui basic segment noHorizontalPadding"
+            class=""
           >
-            <button
-              class="ui icon primary right floated button"
-              data-testid="show-sort-button"
-            >
-              <i
-                aria-hidden="true"
-                class="sort icon"
-              />
-            </button>
-            <button
-              class="ui icon right floated button"
-              data-testid="show-filter-button"
-            >
-              <i
-                aria-hidden="true"
-                class="filter icon"
-              />
-            </button>
             <div
-              class="ui fluid icon input mr-80"
+              class="ui basic segment noHorizontalPadding"
             >
-              <input
-                aria-label="file-search-input"
-                type="text"
-                value=""
-              />
-              <i
-                aria-hidden="true"
-                class="search icon"
-              />
-            </div>
-            <div
-              class="ui segment"
-            >
-              <p
-                class="mb-5"
-              >
-                <i
-                  aria-hidden="true"
-                  class="filter icon"
-                />
-                Filter by:
-              </p>
-              <div
-                aria-disabled="false"
-                aria-expanded="true"
-                class="ui active visible fluid selection dropdown"
-                role="listbox"
-                tabindex="0"
-              >
-                <div
-                  aria-live="polite"
-                  class="default text"
-                  role="alert"
-                >
-                  Email
-                </div>
-                <i
-                  aria-hidden="true"
-                  class="dropdown icon"
-                />
-                <div
-                  class="visible menu transition"
-                >
-                  <div
-                    aria-checked="false"
-                    aria-selected="true"
-                    class="selected item"
-                    role="option"
-                    style="pointer-events: all;"
-                  >
-                    <span
-                      class="text"
-                    >
-                      Email
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div
-                aria-expanded="false"
-                class="ui fluid selection dropdown"
-                role="listbox"
-                tabindex="0"
-              >
-                <div
-                  aria-live="polite"
-                  class="default text"
-                  role="alert"
-                >
-                  Document type
-                </div>
-                <i
-                  aria-hidden="true"
-                  class="dropdown icon"
-                />
-                <div
-                  class="menu transition"
-                >
-                  <div
-                    aria-checked="false"
-                    aria-selected="true"
-                    class="selected item"
-                    role="option"
-                    style="pointer-events: all;"
-                  >
-                    <small
-                      class="text"
-                    >
-                      <i
-                        aria-hidden="true"
-                        class="shipping icon"
-                      />
-                       Biospecimen Manifest
-                    </small>
-                  </div>
-                  <div
-                    aria-checked="false"
-                    aria-selected="false"
-                    class="item"
-                    role="option"
-                    style="pointer-events: all;"
-                  >
-                    <small
-                      class="text"
-                    >
-                      <i
-                        aria-hidden="true"
-                        class="hospital icon"
-                      />
-                       Clinical/Phenotypic Data
-                    </small>
-                  </div>
-                  <div
-                    aria-checked="false"
-                    aria-selected="false"
-                    class="item"
-                    role="option"
-                    style="pointer-events: all;"
-                  >
-                    <small
-                      class="text"
-                    >
-                      <i
-                        aria-hidden="true"
-                        class="dna icon"
-                      />
-                       Sequencing Manifest
-                    </small>
-                  </div>
-                  <div
-                    aria-checked="false"
-                    aria-selected="false"
-                    class="item"
-                    role="option"
-                    style="pointer-events: all;"
-                  >
-                    <small
-                      class="text"
-                    >
-                      <i
-                        aria-hidden="true"
-                        class="question icon"
-                      />
-                       Other
-                    </small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="ui segment"
-            >
-              <p
-                class="mb-5"
+              <button
+                class="ui icon primary right floated button"
+                data-testid="show-sort-button"
               >
                 <i
                   aria-hidden="true"
                   class="sort icon"
                 />
-                Sort by:
-              </p>
+              </button>
               <button
-                class="ui basic icon right floated button"
-                data-testid="sort-direction-button"
+                class="ui icon right floated button"
+                data-testid="show-filter-button"
               >
                 <i
                   aria-hidden="true"
-                  class="sort content ascending icon"
+                  class="filter icon"
                 />
               </button>
               <div
-                class="mr-40"
+                class="ui fluid icon input mr-80"
               >
+                <input
+                  aria-label="file-search-input"
+                  type="text"
+                  value=""
+                />
+                <i
+                  aria-hidden="true"
+                  class="search icon"
+                />
+              </div>
+              <div
+                class="ui segment"
+              >
+                <p
+                  class="mb-5"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="filter icon"
+                  />
+                  Filter by:
+                </p>
+                <div
+                  aria-disabled="false"
+                  aria-expanded="true"
+                  class="ui active visible fluid selection dropdown"
+                  role="listbox"
+                  tabindex="0"
+                >
+                  <div
+                    aria-live="polite"
+                    class="default text"
+                    role="alert"
+                  >
+                    Email
+                  </div>
+                  <i
+                    aria-hidden="true"
+                    class="dropdown icon"
+                  />
+                  <div
+                    class="visible menu transition"
+                  >
+                    <div
+                      aria-checked="false"
+                      aria-selected="true"
+                      class="selected item"
+                      role="option"
+                      style="pointer-events: all;"
+                    >
+                      <span
+                        class="text"
+                      >
+                        Email
+                      </span>
+                    </div>
+                  </div>
+                </div>
                 <div
                   aria-expanded="false"
                   class="ui fluid selection dropdown"
@@ -9426,18 +9444,35 @@ exports[`update tags with no error adding tag and error with removing tag 9`] = 
                 >
                   <div
                     aria-live="polite"
-                    class="text"
+                    class="default text"
                     role="alert"
                   >
-                    Modified date
+                    Document type
                   </div>
                   <i
                     aria-hidden="true"
-                    class="dropdown icon clear"
+                    class="dropdown icon"
                   />
                   <div
                     class="menu transition"
                   >
+                    <div
+                      aria-checked="false"
+                      aria-selected="true"
+                      class="selected item"
+                      role="option"
+                      style="pointer-events: all;"
+                    >
+                      <small
+                        class="text"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="shipping icon"
+                        />
+                         Biospecimen Manifest
+                      </small>
+                    </div>
                     <div
                       aria-checked="false"
                       aria-selected="false"
@@ -9445,24 +9480,123 @@ exports[`update tags with no error adding tag and error with removing tag 9`] = 
                       role="option"
                       style="pointer-events: all;"
                     >
-                      <span
+                      <small
                         class="text"
                       >
-                        Create date
-                      </span>
+                        <i
+                          aria-hidden="true"
+                          class="hospital icon"
+                        />
+                         Clinical/Phenotypic Data
+                      </small>
                     </div>
                     <div
-                      aria-checked="true"
-                      aria-selected="true"
-                      class="active selected item"
+                      aria-checked="false"
+                      aria-selected="false"
+                      class="item"
                       role="option"
                       style="pointer-events: all;"
                     >
-                      <span
+                      <small
                         class="text"
                       >
-                        Modified date
-                      </span>
+                        <i
+                          aria-hidden="true"
+                          class="dna icon"
+                        />
+                         Sequencing Manifest
+                      </small>
+                    </div>
+                    <div
+                      aria-checked="false"
+                      aria-selected="false"
+                      class="item"
+                      role="option"
+                      style="pointer-events: all;"
+                    >
+                      <small
+                        class="text"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="question icon"
+                        />
+                         Other
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ui segment"
+              >
+                <p
+                  class="mb-5"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="sort icon"
+                  />
+                  Sort by:
+                </p>
+                <button
+                  class="ui basic icon right floated button"
+                  data-testid="sort-direction-button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="sort content ascending icon"
+                  />
+                </button>
+                <div
+                  class="mr-40"
+                >
+                  <div
+                    aria-expanded="false"
+                    class="ui fluid selection dropdown"
+                    role="listbox"
+                    tabindex="0"
+                  >
+                    <div
+                      aria-live="polite"
+                      class="text"
+                      role="alert"
+                    >
+                      Modified date
+                    </div>
+                    <i
+                      aria-hidden="true"
+                      class="dropdown icon clear"
+                    />
+                    <div
+                      class="menu transition"
+                    >
+                      <div
+                        aria-checked="false"
+                        aria-selected="false"
+                        class="item"
+                        role="option"
+                        style="pointer-events: all;"
+                      >
+                        <span
+                          class="text"
+                        >
+                          Create date
+                        </span>
+                      </div>
+                      <div
+                        aria-checked="true"
+                        aria-selected="true"
+                        class="active selected item"
+                        role="option"
+                        style="pointer-events: all;"
+                      >
+                        <span
+                          class="text"
+                        >
+                          Modified date
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -9960,202 +10094,90 @@ exports[`update tags with no error adding tag and error with removing tag 10`] =
           class="sixteen wide column"
         >
           <div
-            class="ui basic segment noHorizontalPadding"
+            class=""
           >
-            <button
-              class="ui icon primary right floated button"
-              data-testid="show-sort-button"
-            >
-              <i
-                aria-hidden="true"
-                class="sort icon"
-              />
-            </button>
-            <button
-              class="ui icon right floated button"
-              data-testid="show-filter-button"
-            >
-              <i
-                aria-hidden="true"
-                class="filter icon"
-              />
-            </button>
             <div
-              class="ui fluid icon input mr-80"
+              class="ui basic segment noHorizontalPadding"
             >
-              <input
-                aria-label="file-search-input"
-                type="text"
-                value=""
-              />
-              <i
-                aria-hidden="true"
-                class="search icon"
-              />
-            </div>
-            <div
-              class="ui segment"
-            >
-              <p
-                class="mb-5"
-              >
-                <i
-                  aria-hidden="true"
-                  class="filter icon"
-                />
-                Filter by:
-              </p>
-              <div
-                aria-disabled="false"
-                aria-expanded="false"
-                class="ui fluid selection dropdown"
-                role="listbox"
-                tabindex="0"
-              >
-                <div
-                  aria-live="polite"
-                  class="default text"
-                  role="alert"
-                >
-                  Tag
-                </div>
-                <i
-                  aria-hidden="true"
-                  class="dropdown icon"
-                />
-                <div
-                  class="menu transition"
-                >
-                  <div
-                    aria-checked="false"
-                    aria-selected="true"
-                    class="selected item"
-                    role="option"
-                    style="pointer-events: all;"
-                  >
-                    <span
-                      class="text"
-                    >
-                      Email
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div
-                aria-expanded="false"
-                class="ui fluid selection dropdown"
-                role="listbox"
-                tabindex="0"
-              >
-                <div
-                  aria-live="polite"
-                  class="default text"
-                  role="alert"
-                >
-                  Document type
-                </div>
-                <i
-                  aria-hidden="true"
-                  class="dropdown icon"
-                />
-                <div
-                  class="menu transition"
-                >
-                  <div
-                    aria-checked="false"
-                    aria-selected="true"
-                    class="selected item"
-                    role="option"
-                    style="pointer-events: all;"
-                  >
-                    <small
-                      class="text"
-                    >
-                      <i
-                        aria-hidden="true"
-                        class="shipping icon"
-                      />
-                       Biospecimen Manifest
-                    </small>
-                  </div>
-                  <div
-                    aria-checked="false"
-                    aria-selected="false"
-                    class="item"
-                    role="option"
-                    style="pointer-events: all;"
-                  >
-                    <small
-                      class="text"
-                    >
-                      <i
-                        aria-hidden="true"
-                        class="hospital icon"
-                      />
-                       Clinical/Phenotypic Data
-                    </small>
-                  </div>
-                  <div
-                    aria-checked="false"
-                    aria-selected="false"
-                    class="item"
-                    role="option"
-                    style="pointer-events: all;"
-                  >
-                    <small
-                      class="text"
-                    >
-                      <i
-                        aria-hidden="true"
-                        class="dna icon"
-                      />
-                       Sequencing Manifest
-                    </small>
-                  </div>
-                  <div
-                    aria-checked="false"
-                    aria-selected="false"
-                    class="item"
-                    role="option"
-                    style="pointer-events: all;"
-                  >
-                    <small
-                      class="text"
-                    >
-                      <i
-                        aria-hidden="true"
-                        class="question icon"
-                      />
-                       Other
-                    </small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="ui segment"
-            >
-              <p
-                class="mb-5"
+              <button
+                class="ui icon primary right floated button"
+                data-testid="show-sort-button"
               >
                 <i
                   aria-hidden="true"
                   class="sort icon"
                 />
-                Sort by:
-              </p>
+              </button>
               <button
-                class="ui basic icon right floated button"
-                data-testid="sort-direction-button"
+                class="ui icon right floated button"
+                data-testid="show-filter-button"
               >
                 <i
                   aria-hidden="true"
-                  class="sort content ascending icon"
+                  class="filter icon"
                 />
               </button>
               <div
-                class="mr-40"
+                class="ui fluid icon input mr-80"
               >
+                <input
+                  aria-label="file-search-input"
+                  type="text"
+                  value=""
+                />
+                <i
+                  aria-hidden="true"
+                  class="search icon"
+                />
+              </div>
+              <div
+                class="ui segment"
+              >
+                <p
+                  class="mb-5"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="filter icon"
+                  />
+                  Filter by:
+                </p>
+                <div
+                  aria-disabled="false"
+                  aria-expanded="false"
+                  class="ui fluid selection dropdown"
+                  role="listbox"
+                  tabindex="0"
+                >
+                  <div
+                    aria-live="polite"
+                    class="default text"
+                    role="alert"
+                  >
+                    Tag
+                  </div>
+                  <i
+                    aria-hidden="true"
+                    class="dropdown icon"
+                  />
+                  <div
+                    class="menu transition"
+                  >
+                    <div
+                      aria-checked="false"
+                      aria-selected="true"
+                      class="selected item"
+                      role="option"
+                      style="pointer-events: all;"
+                    >
+                      <span
+                        class="text"
+                      >
+                        Email
+                      </span>
+                    </div>
+                  </div>
+                </div>
                 <div
                   aria-expanded="false"
                   class="ui fluid selection dropdown"
@@ -10164,18 +10186,35 @@ exports[`update tags with no error adding tag and error with removing tag 10`] =
                 >
                   <div
                     aria-live="polite"
-                    class="text"
+                    class="default text"
                     role="alert"
                   >
-                    Modified date
+                    Document type
                   </div>
                   <i
                     aria-hidden="true"
-                    class="dropdown icon clear"
+                    class="dropdown icon"
                   />
                   <div
                     class="menu transition"
                   >
+                    <div
+                      aria-checked="false"
+                      aria-selected="true"
+                      class="selected item"
+                      role="option"
+                      style="pointer-events: all;"
+                    >
+                      <small
+                        class="text"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="shipping icon"
+                        />
+                         Biospecimen Manifest
+                      </small>
+                    </div>
                     <div
                       aria-checked="false"
                       aria-selected="false"
@@ -10183,24 +10222,123 @@ exports[`update tags with no error adding tag and error with removing tag 10`] =
                       role="option"
                       style="pointer-events: all;"
                     >
-                      <span
+                      <small
                         class="text"
                       >
-                        Create date
-                      </span>
+                        <i
+                          aria-hidden="true"
+                          class="hospital icon"
+                        />
+                         Clinical/Phenotypic Data
+                      </small>
                     </div>
                     <div
-                      aria-checked="true"
-                      aria-selected="true"
-                      class="active selected item"
+                      aria-checked="false"
+                      aria-selected="false"
+                      class="item"
                       role="option"
                       style="pointer-events: all;"
                     >
-                      <span
+                      <small
                         class="text"
                       >
-                        Modified date
-                      </span>
+                        <i
+                          aria-hidden="true"
+                          class="dna icon"
+                        />
+                         Sequencing Manifest
+                      </small>
+                    </div>
+                    <div
+                      aria-checked="false"
+                      aria-selected="false"
+                      class="item"
+                      role="option"
+                      style="pointer-events: all;"
+                    >
+                      <small
+                        class="text"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="question icon"
+                        />
+                         Other
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ui segment"
+              >
+                <p
+                  class="mb-5"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="sort icon"
+                  />
+                  Sort by:
+                </p>
+                <button
+                  class="ui basic icon right floated button"
+                  data-testid="sort-direction-button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="sort content ascending icon"
+                  />
+                </button>
+                <div
+                  class="mr-40"
+                >
+                  <div
+                    aria-expanded="false"
+                    class="ui fluid selection dropdown"
+                    role="listbox"
+                    tabindex="0"
+                  >
+                    <div
+                      aria-live="polite"
+                      class="text"
+                      role="alert"
+                    >
+                      Modified date
+                    </div>
+                    <i
+                      aria-hidden="true"
+                      class="dropdown icon clear"
+                    />
+                    <div
+                      class="menu transition"
+                    >
+                      <div
+                        aria-checked="false"
+                        aria-selected="false"
+                        class="item"
+                        role="option"
+                        style="pointer-events: all;"
+                      >
+                        <span
+                          class="text"
+                        >
+                          Create date
+                        </span>
+                      </div>
+                      <div
+                        aria-checked="true"
+                        aria-selected="true"
+                        class="active selected item"
+                        role="option"
+                        style="pointer-events: all;"
+                      >
+                        <span
+                          class="text"
+                        >
+                          Modified date
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -10698,202 +10836,90 @@ exports[`update tags with no error adding tag and error with removing tag 11`] =
           class="sixteen wide column"
         >
           <div
-            class="ui basic segment noHorizontalPadding"
+            class=""
           >
-            <button
-              class="ui icon primary right floated button"
-              data-testid="show-sort-button"
-            >
-              <i
-                aria-hidden="true"
-                class="sort icon"
-              />
-            </button>
-            <button
-              class="ui icon right floated button"
-              data-testid="show-filter-button"
-            >
-              <i
-                aria-hidden="true"
-                class="filter icon"
-              />
-            </button>
             <div
-              class="ui fluid icon input mr-80"
+              class="ui basic segment noHorizontalPadding"
             >
-              <input
-                aria-label="file-search-input"
-                type="text"
-                value=""
-              />
-              <i
-                aria-hidden="true"
-                class="search icon"
-              />
-            </div>
-            <div
-              class="ui segment"
-            >
-              <p
-                class="mb-5"
-              >
-                <i
-                  aria-hidden="true"
-                  class="filter icon"
-                />
-                Filter by:
-              </p>
-              <div
-                aria-disabled="false"
-                aria-expanded="false"
-                class="ui fluid selection dropdown"
-                role="listbox"
-                tabindex="0"
-              >
-                <div
-                  aria-live="polite"
-                  class="default text"
-                  role="alert"
-                >
-                  Tag
-                </div>
-                <i
-                  aria-hidden="true"
-                  class="dropdown icon"
-                />
-                <div
-                  class="menu transition"
-                >
-                  <div
-                    aria-checked="false"
-                    aria-selected="true"
-                    class="selected item"
-                    role="option"
-                    style="pointer-events: all;"
-                  >
-                    <span
-                      class="text"
-                    >
-                      Email
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div
-                aria-expanded="false"
-                class="ui fluid selection dropdown"
-                role="listbox"
-                tabindex="0"
-              >
-                <div
-                  aria-live="polite"
-                  class="default text"
-                  role="alert"
-                >
-                  Document type
-                </div>
-                <i
-                  aria-hidden="true"
-                  class="dropdown icon"
-                />
-                <div
-                  class="menu transition"
-                >
-                  <div
-                    aria-checked="false"
-                    aria-selected="true"
-                    class="selected item"
-                    role="option"
-                    style="pointer-events: all;"
-                  >
-                    <small
-                      class="text"
-                    >
-                      <i
-                        aria-hidden="true"
-                        class="shipping icon"
-                      />
-                       Biospecimen Manifest
-                    </small>
-                  </div>
-                  <div
-                    aria-checked="false"
-                    aria-selected="false"
-                    class="item"
-                    role="option"
-                    style="pointer-events: all;"
-                  >
-                    <small
-                      class="text"
-                    >
-                      <i
-                        aria-hidden="true"
-                        class="hospital icon"
-                      />
-                       Clinical/Phenotypic Data
-                    </small>
-                  </div>
-                  <div
-                    aria-checked="false"
-                    aria-selected="false"
-                    class="item"
-                    role="option"
-                    style="pointer-events: all;"
-                  >
-                    <small
-                      class="text"
-                    >
-                      <i
-                        aria-hidden="true"
-                        class="dna icon"
-                      />
-                       Sequencing Manifest
-                    </small>
-                  </div>
-                  <div
-                    aria-checked="false"
-                    aria-selected="false"
-                    class="item"
-                    role="option"
-                    style="pointer-events: all;"
-                  >
-                    <small
-                      class="text"
-                    >
-                      <i
-                        aria-hidden="true"
-                        class="question icon"
-                      />
-                       Other
-                    </small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="ui segment"
-            >
-              <p
-                class="mb-5"
+              <button
+                class="ui icon primary right floated button"
+                data-testid="show-sort-button"
               >
                 <i
                   aria-hidden="true"
                   class="sort icon"
                 />
-                Sort by:
-              </p>
+              </button>
               <button
-                class="ui basic icon right floated button"
-                data-testid="sort-direction-button"
+                class="ui icon right floated button"
+                data-testid="show-filter-button"
               >
                 <i
                   aria-hidden="true"
-                  class="sort content ascending icon"
+                  class="filter icon"
                 />
               </button>
               <div
-                class="mr-40"
+                class="ui fluid icon input mr-80"
               >
+                <input
+                  aria-label="file-search-input"
+                  type="text"
+                  value=""
+                />
+                <i
+                  aria-hidden="true"
+                  class="search icon"
+                />
+              </div>
+              <div
+                class="ui segment"
+              >
+                <p
+                  class="mb-5"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="filter icon"
+                  />
+                  Filter by:
+                </p>
+                <div
+                  aria-disabled="false"
+                  aria-expanded="false"
+                  class="ui fluid selection dropdown"
+                  role="listbox"
+                  tabindex="0"
+                >
+                  <div
+                    aria-live="polite"
+                    class="default text"
+                    role="alert"
+                  >
+                    Tag
+                  </div>
+                  <i
+                    aria-hidden="true"
+                    class="dropdown icon"
+                  />
+                  <div
+                    class="menu transition"
+                  >
+                    <div
+                      aria-checked="false"
+                      aria-selected="true"
+                      class="selected item"
+                      role="option"
+                      style="pointer-events: all;"
+                    >
+                      <span
+                        class="text"
+                      >
+                        Email
+                      </span>
+                    </div>
+                  </div>
+                </div>
                 <div
                   aria-expanded="false"
                   class="ui fluid selection dropdown"
@@ -10902,18 +10928,35 @@ exports[`update tags with no error adding tag and error with removing tag 11`] =
                 >
                   <div
                     aria-live="polite"
-                    class="text"
+                    class="default text"
                     role="alert"
                   >
-                    Modified date
+                    Document type
                   </div>
                   <i
                     aria-hidden="true"
-                    class="dropdown icon clear"
+                    class="dropdown icon"
                   />
                   <div
                     class="menu transition"
                   >
+                    <div
+                      aria-checked="false"
+                      aria-selected="true"
+                      class="selected item"
+                      role="option"
+                      style="pointer-events: all;"
+                    >
+                      <small
+                        class="text"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="shipping icon"
+                        />
+                         Biospecimen Manifest
+                      </small>
+                    </div>
                     <div
                       aria-checked="false"
                       aria-selected="false"
@@ -10921,24 +10964,123 @@ exports[`update tags with no error adding tag and error with removing tag 11`] =
                       role="option"
                       style="pointer-events: all;"
                     >
-                      <span
+                      <small
                         class="text"
                       >
-                        Create date
-                      </span>
+                        <i
+                          aria-hidden="true"
+                          class="hospital icon"
+                        />
+                         Clinical/Phenotypic Data
+                      </small>
                     </div>
                     <div
-                      aria-checked="true"
-                      aria-selected="true"
-                      class="active selected item"
+                      aria-checked="false"
+                      aria-selected="false"
+                      class="item"
                       role="option"
                       style="pointer-events: all;"
                     >
-                      <span
+                      <small
                         class="text"
                       >
-                        Modified date
-                      </span>
+                        <i
+                          aria-hidden="true"
+                          class="dna icon"
+                        />
+                         Sequencing Manifest
+                      </small>
+                    </div>
+                    <div
+                      aria-checked="false"
+                      aria-selected="false"
+                      class="item"
+                      role="option"
+                      style="pointer-events: all;"
+                    >
+                      <small
+                        class="text"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="question icon"
+                        />
+                         Other
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ui segment"
+              >
+                <p
+                  class="mb-5"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="sort icon"
+                  />
+                  Sort by:
+                </p>
+                <button
+                  class="ui basic icon right floated button"
+                  data-testid="sort-direction-button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="sort content ascending icon"
+                  />
+                </button>
+                <div
+                  class="mr-40"
+                >
+                  <div
+                    aria-expanded="false"
+                    class="ui fluid selection dropdown"
+                    role="listbox"
+                    tabindex="0"
+                  >
+                    <div
+                      aria-live="polite"
+                      class="text"
+                      role="alert"
+                    >
+                      Modified date
+                    </div>
+                    <i
+                      aria-hidden="true"
+                      class="dropdown icon clear"
+                    />
+                    <div
+                      class="menu transition"
+                    >
+                      <div
+                        aria-checked="false"
+                        aria-selected="false"
+                        class="item"
+                        role="option"
+                        style="pointer-events: all;"
+                      >
+                        <span
+                          class="text"
+                        >
+                          Create date
+                        </span>
+                      </div>
+                      <div
+                        aria-checked="true"
+                        aria-selected="true"
+                        class="active selected item"
+                        role="option"
+                        style="pointer-events: all;"
+                      >
+                        <span
+                          class="text"
+                        >
+                          Modified date
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -11514,202 +11656,90 @@ exports[`update tags with no error adding tag and error with removing tag 12`] =
           class="sixteen wide column"
         >
           <div
-            class="ui basic segment noHorizontalPadding"
+            class=""
           >
-            <button
-              class="ui icon primary right floated button"
-              data-testid="show-sort-button"
-            >
-              <i
-                aria-hidden="true"
-                class="sort icon"
-              />
-            </button>
-            <button
-              class="ui icon right floated button"
-              data-testid="show-filter-button"
-            >
-              <i
-                aria-hidden="true"
-                class="filter icon"
-              />
-            </button>
             <div
-              class="ui fluid icon input mr-80"
+              class="ui basic segment noHorizontalPadding"
             >
-              <input
-                aria-label="file-search-input"
-                type="text"
-                value=""
-              />
-              <i
-                aria-hidden="true"
-                class="search icon"
-              />
-            </div>
-            <div
-              class="ui segment"
-            >
-              <p
-                class="mb-5"
-              >
-                <i
-                  aria-hidden="true"
-                  class="filter icon"
-                />
-                Filter by:
-              </p>
-              <div
-                aria-disabled="false"
-                aria-expanded="false"
-                class="ui fluid selection dropdown"
-                role="listbox"
-                tabindex="0"
-              >
-                <div
-                  aria-live="polite"
-                  class="default text"
-                  role="alert"
-                >
-                  Tag
-                </div>
-                <i
-                  aria-hidden="true"
-                  class="dropdown icon"
-                />
-                <div
-                  class="menu transition"
-                >
-                  <div
-                    aria-checked="false"
-                    aria-selected="true"
-                    class="selected item"
-                    role="option"
-                    style="pointer-events: all;"
-                  >
-                    <span
-                      class="text"
-                    >
-                      Email
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div
-                aria-expanded="false"
-                class="ui fluid selection dropdown"
-                role="listbox"
-                tabindex="0"
-              >
-                <div
-                  aria-live="polite"
-                  class="default text"
-                  role="alert"
-                >
-                  Document type
-                </div>
-                <i
-                  aria-hidden="true"
-                  class="dropdown icon"
-                />
-                <div
-                  class="menu transition"
-                >
-                  <div
-                    aria-checked="false"
-                    aria-selected="true"
-                    class="selected item"
-                    role="option"
-                    style="pointer-events: all;"
-                  >
-                    <small
-                      class="text"
-                    >
-                      <i
-                        aria-hidden="true"
-                        class="shipping icon"
-                      />
-                       Biospecimen Manifest
-                    </small>
-                  </div>
-                  <div
-                    aria-checked="false"
-                    aria-selected="false"
-                    class="item"
-                    role="option"
-                    style="pointer-events: all;"
-                  >
-                    <small
-                      class="text"
-                    >
-                      <i
-                        aria-hidden="true"
-                        class="hospital icon"
-                      />
-                       Clinical/Phenotypic Data
-                    </small>
-                  </div>
-                  <div
-                    aria-checked="false"
-                    aria-selected="false"
-                    class="item"
-                    role="option"
-                    style="pointer-events: all;"
-                  >
-                    <small
-                      class="text"
-                    >
-                      <i
-                        aria-hidden="true"
-                        class="dna icon"
-                      />
-                       Sequencing Manifest
-                    </small>
-                  </div>
-                  <div
-                    aria-checked="false"
-                    aria-selected="false"
-                    class="item"
-                    role="option"
-                    style="pointer-events: all;"
-                  >
-                    <small
-                      class="text"
-                    >
-                      <i
-                        aria-hidden="true"
-                        class="question icon"
-                      />
-                       Other
-                    </small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="ui segment"
-            >
-              <p
-                class="mb-5"
+              <button
+                class="ui icon primary right floated button"
+                data-testid="show-sort-button"
               >
                 <i
                   aria-hidden="true"
                   class="sort icon"
                 />
-                Sort by:
-              </p>
+              </button>
               <button
-                class="ui basic icon right floated button"
-                data-testid="sort-direction-button"
+                class="ui icon right floated button"
+                data-testid="show-filter-button"
               >
                 <i
                   aria-hidden="true"
-                  class="sort content ascending icon"
+                  class="filter icon"
                 />
               </button>
               <div
-                class="mr-40"
+                class="ui fluid icon input mr-80"
               >
+                <input
+                  aria-label="file-search-input"
+                  type="text"
+                  value=""
+                />
+                <i
+                  aria-hidden="true"
+                  class="search icon"
+                />
+              </div>
+              <div
+                class="ui segment"
+              >
+                <p
+                  class="mb-5"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="filter icon"
+                  />
+                  Filter by:
+                </p>
+                <div
+                  aria-disabled="false"
+                  aria-expanded="false"
+                  class="ui fluid selection dropdown"
+                  role="listbox"
+                  tabindex="0"
+                >
+                  <div
+                    aria-live="polite"
+                    class="default text"
+                    role="alert"
+                  >
+                    Tag
+                  </div>
+                  <i
+                    aria-hidden="true"
+                    class="dropdown icon"
+                  />
+                  <div
+                    class="menu transition"
+                  >
+                    <div
+                      aria-checked="false"
+                      aria-selected="true"
+                      class="selected item"
+                      role="option"
+                      style="pointer-events: all;"
+                    >
+                      <span
+                        class="text"
+                      >
+                        Email
+                      </span>
+                    </div>
+                  </div>
+                </div>
                 <div
                   aria-expanded="false"
                   class="ui fluid selection dropdown"
@@ -11718,18 +11748,35 @@ exports[`update tags with no error adding tag and error with removing tag 12`] =
                 >
                   <div
                     aria-live="polite"
-                    class="text"
+                    class="default text"
                     role="alert"
                   >
-                    Modified date
+                    Document type
                   </div>
                   <i
                     aria-hidden="true"
-                    class="dropdown icon clear"
+                    class="dropdown icon"
                   />
                   <div
                     class="menu transition"
                   >
+                    <div
+                      aria-checked="false"
+                      aria-selected="true"
+                      class="selected item"
+                      role="option"
+                      style="pointer-events: all;"
+                    >
+                      <small
+                        class="text"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="shipping icon"
+                        />
+                         Biospecimen Manifest
+                      </small>
+                    </div>
                     <div
                       aria-checked="false"
                       aria-selected="false"
@@ -11737,24 +11784,123 @@ exports[`update tags with no error adding tag and error with removing tag 12`] =
                       role="option"
                       style="pointer-events: all;"
                     >
-                      <span
+                      <small
                         class="text"
                       >
-                        Create date
-                      </span>
+                        <i
+                          aria-hidden="true"
+                          class="hospital icon"
+                        />
+                         Clinical/Phenotypic Data
+                      </small>
                     </div>
                     <div
-                      aria-checked="true"
-                      aria-selected="true"
-                      class="active selected item"
+                      aria-checked="false"
+                      aria-selected="false"
+                      class="item"
                       role="option"
                       style="pointer-events: all;"
                     >
-                      <span
+                      <small
                         class="text"
                       >
-                        Modified date
-                      </span>
+                        <i
+                          aria-hidden="true"
+                          class="dna icon"
+                        />
+                         Sequencing Manifest
+                      </small>
+                    </div>
+                    <div
+                      aria-checked="false"
+                      aria-selected="false"
+                      class="item"
+                      role="option"
+                      style="pointer-events: all;"
+                    >
+                      <small
+                        class="text"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="question icon"
+                        />
+                         Other
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ui segment"
+              >
+                <p
+                  class="mb-5"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="sort icon"
+                  />
+                  Sort by:
+                </p>
+                <button
+                  class="ui basic icon right floated button"
+                  data-testid="sort-direction-button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="sort content ascending icon"
+                  />
+                </button>
+                <div
+                  class="mr-40"
+                >
+                  <div
+                    aria-expanded="false"
+                    class="ui fluid selection dropdown"
+                    role="listbox"
+                    tabindex="0"
+                  >
+                    <div
+                      aria-live="polite"
+                      class="text"
+                      role="alert"
+                    >
+                      Modified date
+                    </div>
+                    <i
+                      aria-hidden="true"
+                      class="dropdown icon clear"
+                    />
+                    <div
+                      class="menu transition"
+                    >
+                      <div
+                        aria-checked="false"
+                        aria-selected="false"
+                        class="item"
+                        role="option"
+                        style="pointer-events: all;"
+                      >
+                        <span
+                          class="text"
+                        >
+                          Create date
+                        </span>
+                      </div>
+                      <div
+                        aria-checked="true"
+                        aria-selected="true"
+                        class="active selected item"
+                        role="option"
+                        style="pointer-events: all;"
+                      >
+                        <span
+                          class="text"
+                        >
+                          Modified date
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -12321,202 +12467,90 @@ exports[`update tags with no error adding tag and error with removing tag 13`] =
           class="sixteen wide column"
         >
           <div
-            class="ui basic segment noHorizontalPadding"
+            class=""
           >
-            <button
-              class="ui icon primary right floated button"
-              data-testid="show-sort-button"
-            >
-              <i
-                aria-hidden="true"
-                class="sort icon"
-              />
-            </button>
-            <button
-              class="ui icon right floated button"
-              data-testid="show-filter-button"
-            >
-              <i
-                aria-hidden="true"
-                class="filter icon"
-              />
-            </button>
             <div
-              class="ui fluid icon input mr-80"
+              class="ui basic segment noHorizontalPadding"
             >
-              <input
-                aria-label="file-search-input"
-                type="text"
-                value=""
-              />
-              <i
-                aria-hidden="true"
-                class="search icon"
-              />
-            </div>
-            <div
-              class="ui segment"
-            >
-              <p
-                class="mb-5"
-              >
-                <i
-                  aria-hidden="true"
-                  class="filter icon"
-                />
-                Filter by:
-              </p>
-              <div
-                aria-disabled="false"
-                aria-expanded="false"
-                class="ui fluid selection dropdown"
-                role="listbox"
-                tabindex="0"
-              >
-                <div
-                  aria-live="polite"
-                  class="default text"
-                  role="alert"
-                >
-                  Tag
-                </div>
-                <i
-                  aria-hidden="true"
-                  class="dropdown icon"
-                />
-                <div
-                  class="menu transition"
-                >
-                  <div
-                    aria-checked="false"
-                    aria-selected="true"
-                    class="selected item"
-                    role="option"
-                    style="pointer-events: all;"
-                  >
-                    <span
-                      class="text"
-                    >
-                      Email
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div
-                aria-expanded="false"
-                class="ui fluid selection dropdown"
-                role="listbox"
-                tabindex="0"
-              >
-                <div
-                  aria-live="polite"
-                  class="default text"
-                  role="alert"
-                >
-                  Document type
-                </div>
-                <i
-                  aria-hidden="true"
-                  class="dropdown icon"
-                />
-                <div
-                  class="menu transition"
-                >
-                  <div
-                    aria-checked="false"
-                    aria-selected="true"
-                    class="selected item"
-                    role="option"
-                    style="pointer-events: all;"
-                  >
-                    <small
-                      class="text"
-                    >
-                      <i
-                        aria-hidden="true"
-                        class="shipping icon"
-                      />
-                       Biospecimen Manifest
-                    </small>
-                  </div>
-                  <div
-                    aria-checked="false"
-                    aria-selected="false"
-                    class="item"
-                    role="option"
-                    style="pointer-events: all;"
-                  >
-                    <small
-                      class="text"
-                    >
-                      <i
-                        aria-hidden="true"
-                        class="hospital icon"
-                      />
-                       Clinical/Phenotypic Data
-                    </small>
-                  </div>
-                  <div
-                    aria-checked="false"
-                    aria-selected="false"
-                    class="item"
-                    role="option"
-                    style="pointer-events: all;"
-                  >
-                    <small
-                      class="text"
-                    >
-                      <i
-                        aria-hidden="true"
-                        class="dna icon"
-                      />
-                       Sequencing Manifest
-                    </small>
-                  </div>
-                  <div
-                    aria-checked="false"
-                    aria-selected="false"
-                    class="item"
-                    role="option"
-                    style="pointer-events: all;"
-                  >
-                    <small
-                      class="text"
-                    >
-                      <i
-                        aria-hidden="true"
-                        class="question icon"
-                      />
-                       Other
-                    </small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="ui segment"
-            >
-              <p
-                class="mb-5"
+              <button
+                class="ui icon primary right floated button"
+                data-testid="show-sort-button"
               >
                 <i
                   aria-hidden="true"
                   class="sort icon"
                 />
-                Sort by:
-              </p>
+              </button>
               <button
-                class="ui basic icon right floated button"
-                data-testid="sort-direction-button"
+                class="ui icon right floated button"
+                data-testid="show-filter-button"
               >
                 <i
                   aria-hidden="true"
-                  class="sort content ascending icon"
+                  class="filter icon"
                 />
               </button>
               <div
-                class="mr-40"
+                class="ui fluid icon input mr-80"
               >
+                <input
+                  aria-label="file-search-input"
+                  type="text"
+                  value=""
+                />
+                <i
+                  aria-hidden="true"
+                  class="search icon"
+                />
+              </div>
+              <div
+                class="ui segment"
+              >
+                <p
+                  class="mb-5"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="filter icon"
+                  />
+                  Filter by:
+                </p>
+                <div
+                  aria-disabled="false"
+                  aria-expanded="false"
+                  class="ui fluid selection dropdown"
+                  role="listbox"
+                  tabindex="0"
+                >
+                  <div
+                    aria-live="polite"
+                    class="default text"
+                    role="alert"
+                  >
+                    Tag
+                  </div>
+                  <i
+                    aria-hidden="true"
+                    class="dropdown icon"
+                  />
+                  <div
+                    class="menu transition"
+                  >
+                    <div
+                      aria-checked="false"
+                      aria-selected="true"
+                      class="selected item"
+                      role="option"
+                      style="pointer-events: all;"
+                    >
+                      <span
+                        class="text"
+                      >
+                        Email
+                      </span>
+                    </div>
+                  </div>
+                </div>
                 <div
                   aria-expanded="false"
                   class="ui fluid selection dropdown"
@@ -12525,18 +12559,35 @@ exports[`update tags with no error adding tag and error with removing tag 13`] =
                 >
                   <div
                     aria-live="polite"
-                    class="text"
+                    class="default text"
                     role="alert"
                   >
-                    Modified date
+                    Document type
                   </div>
                   <i
                     aria-hidden="true"
-                    class="dropdown icon clear"
+                    class="dropdown icon"
                   />
                   <div
                     class="menu transition"
                   >
+                    <div
+                      aria-checked="false"
+                      aria-selected="true"
+                      class="selected item"
+                      role="option"
+                      style="pointer-events: all;"
+                    >
+                      <small
+                        class="text"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="shipping icon"
+                        />
+                         Biospecimen Manifest
+                      </small>
+                    </div>
                     <div
                       aria-checked="false"
                       aria-selected="false"
@@ -12544,24 +12595,123 @@ exports[`update tags with no error adding tag and error with removing tag 13`] =
                       role="option"
                       style="pointer-events: all;"
                     >
-                      <span
+                      <small
                         class="text"
                       >
-                        Create date
-                      </span>
+                        <i
+                          aria-hidden="true"
+                          class="hospital icon"
+                        />
+                         Clinical/Phenotypic Data
+                      </small>
                     </div>
                     <div
-                      aria-checked="true"
-                      aria-selected="true"
-                      class="active selected item"
+                      aria-checked="false"
+                      aria-selected="false"
+                      class="item"
                       role="option"
                       style="pointer-events: all;"
                     >
-                      <span
+                      <small
                         class="text"
                       >
-                        Modified date
-                      </span>
+                        <i
+                          aria-hidden="true"
+                          class="dna icon"
+                        />
+                         Sequencing Manifest
+                      </small>
+                    </div>
+                    <div
+                      aria-checked="false"
+                      aria-selected="false"
+                      class="item"
+                      role="option"
+                      style="pointer-events: all;"
+                    >
+                      <small
+                        class="text"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="question icon"
+                        />
+                         Other
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ui segment"
+              >
+                <p
+                  class="mb-5"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="sort icon"
+                  />
+                  Sort by:
+                </p>
+                <button
+                  class="ui basic icon right floated button"
+                  data-testid="sort-direction-button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="sort content ascending icon"
+                  />
+                </button>
+                <div
+                  class="mr-40"
+                >
+                  <div
+                    aria-expanded="false"
+                    class="ui fluid selection dropdown"
+                    role="listbox"
+                    tabindex="0"
+                  >
+                    <div
+                      aria-live="polite"
+                      class="text"
+                      role="alert"
+                    >
+                      Modified date
+                    </div>
+                    <i
+                      aria-hidden="true"
+                      class="dropdown icon clear"
+                    />
+                    <div
+                      class="menu transition"
+                    >
+                      <div
+                        aria-checked="false"
+                        aria-selected="false"
+                        class="item"
+                        role="option"
+                        style="pointer-events: all;"
+                      >
+                        <span
+                          class="text"
+                        >
+                          Create date
+                        </span>
+                      </div>
+                      <div
+                        aria-checked="true"
+                        aria-selected="true"
+                        class="active selected item"
+                        role="option"
+                        style="pointer-events: all;"
+                      >
+                        <span
+                          class="text"
+                        >
+                          Modified date
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -13164,202 +13314,90 @@ exports[`update tags with no error adding tag and error with removing tag 14`] =
             </div>
           </div>
           <div
-            class="ui basic segment noHorizontalPadding"
+            class=""
           >
-            <button
-              class="ui icon primary right floated button"
-              data-testid="show-sort-button"
-            >
-              <i
-                aria-hidden="true"
-                class="sort icon"
-              />
-            </button>
-            <button
-              class="ui icon right floated button"
-              data-testid="show-filter-button"
-            >
-              <i
-                aria-hidden="true"
-                class="filter icon"
-              />
-            </button>
             <div
-              class="ui fluid icon input mr-80"
+              class="ui basic segment noHorizontalPadding"
             >
-              <input
-                aria-label="file-search-input"
-                type="text"
-                value=""
-              />
-              <i
-                aria-hidden="true"
-                class="search icon"
-              />
-            </div>
-            <div
-              class="ui segment"
-            >
-              <p
-                class="mb-5"
-              >
-                <i
-                  aria-hidden="true"
-                  class="filter icon"
-                />
-                Filter by:
-              </p>
-              <div
-                aria-disabled="false"
-                aria-expanded="false"
-                class="ui fluid selection dropdown"
-                role="listbox"
-                tabindex="0"
-              >
-                <div
-                  aria-live="polite"
-                  class="default text"
-                  role="alert"
-                >
-                  Tag
-                </div>
-                <i
-                  aria-hidden="true"
-                  class="dropdown icon"
-                />
-                <div
-                  class="menu transition"
-                >
-                  <div
-                    aria-checked="false"
-                    aria-selected="true"
-                    class="selected item"
-                    role="option"
-                    style="pointer-events: all;"
-                  >
-                    <span
-                      class="text"
-                    >
-                      Email
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div
-                aria-expanded="false"
-                class="ui fluid selection dropdown"
-                role="listbox"
-                tabindex="0"
-              >
-                <div
-                  aria-live="polite"
-                  class="default text"
-                  role="alert"
-                >
-                  Document type
-                </div>
-                <i
-                  aria-hidden="true"
-                  class="dropdown icon"
-                />
-                <div
-                  class="menu transition"
-                >
-                  <div
-                    aria-checked="false"
-                    aria-selected="true"
-                    class="selected item"
-                    role="option"
-                    style="pointer-events: all;"
-                  >
-                    <small
-                      class="text"
-                    >
-                      <i
-                        aria-hidden="true"
-                        class="shipping icon"
-                      />
-                       Biospecimen Manifest
-                    </small>
-                  </div>
-                  <div
-                    aria-checked="false"
-                    aria-selected="false"
-                    class="item"
-                    role="option"
-                    style="pointer-events: all;"
-                  >
-                    <small
-                      class="text"
-                    >
-                      <i
-                        aria-hidden="true"
-                        class="hospital icon"
-                      />
-                       Clinical/Phenotypic Data
-                    </small>
-                  </div>
-                  <div
-                    aria-checked="false"
-                    aria-selected="false"
-                    class="item"
-                    role="option"
-                    style="pointer-events: all;"
-                  >
-                    <small
-                      class="text"
-                    >
-                      <i
-                        aria-hidden="true"
-                        class="dna icon"
-                      />
-                       Sequencing Manifest
-                    </small>
-                  </div>
-                  <div
-                    aria-checked="false"
-                    aria-selected="false"
-                    class="item"
-                    role="option"
-                    style="pointer-events: all;"
-                  >
-                    <small
-                      class="text"
-                    >
-                      <i
-                        aria-hidden="true"
-                        class="question icon"
-                      />
-                       Other
-                    </small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="ui segment"
-            >
-              <p
-                class="mb-5"
+              <button
+                class="ui icon primary right floated button"
+                data-testid="show-sort-button"
               >
                 <i
                   aria-hidden="true"
                   class="sort icon"
                 />
-                Sort by:
-              </p>
+              </button>
               <button
-                class="ui basic icon right floated button"
-                data-testid="sort-direction-button"
+                class="ui icon right floated button"
+                data-testid="show-filter-button"
               >
                 <i
                   aria-hidden="true"
-                  class="sort content ascending icon"
+                  class="filter icon"
                 />
               </button>
               <div
-                class="mr-40"
+                class="ui fluid icon input mr-80"
               >
+                <input
+                  aria-label="file-search-input"
+                  type="text"
+                  value=""
+                />
+                <i
+                  aria-hidden="true"
+                  class="search icon"
+                />
+              </div>
+              <div
+                class="ui segment"
+              >
+                <p
+                  class="mb-5"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="filter icon"
+                  />
+                  Filter by:
+                </p>
+                <div
+                  aria-disabled="false"
+                  aria-expanded="false"
+                  class="ui fluid selection dropdown"
+                  role="listbox"
+                  tabindex="0"
+                >
+                  <div
+                    aria-live="polite"
+                    class="default text"
+                    role="alert"
+                  >
+                    Tag
+                  </div>
+                  <i
+                    aria-hidden="true"
+                    class="dropdown icon"
+                  />
+                  <div
+                    class="menu transition"
+                  >
+                    <div
+                      aria-checked="false"
+                      aria-selected="true"
+                      class="selected item"
+                      role="option"
+                      style="pointer-events: all;"
+                    >
+                      <span
+                        class="text"
+                      >
+                        Email
+                      </span>
+                    </div>
+                  </div>
+                </div>
                 <div
                   aria-expanded="false"
                   class="ui fluid selection dropdown"
@@ -13368,18 +13406,35 @@ exports[`update tags with no error adding tag and error with removing tag 14`] =
                 >
                   <div
                     aria-live="polite"
-                    class="text"
+                    class="default text"
                     role="alert"
                   >
-                    Modified date
+                    Document type
                   </div>
                   <i
                     aria-hidden="true"
-                    class="dropdown icon clear"
+                    class="dropdown icon"
                   />
                   <div
                     class="menu transition"
                   >
+                    <div
+                      aria-checked="false"
+                      aria-selected="true"
+                      class="selected item"
+                      role="option"
+                      style="pointer-events: all;"
+                    >
+                      <small
+                        class="text"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="shipping icon"
+                        />
+                         Biospecimen Manifest
+                      </small>
+                    </div>
                     <div
                       aria-checked="false"
                       aria-selected="false"
@@ -13387,24 +13442,123 @@ exports[`update tags with no error adding tag and error with removing tag 14`] =
                       role="option"
                       style="pointer-events: all;"
                     >
-                      <span
+                      <small
                         class="text"
                       >
-                        Create date
-                      </span>
+                        <i
+                          aria-hidden="true"
+                          class="hospital icon"
+                        />
+                         Clinical/Phenotypic Data
+                      </small>
                     </div>
                     <div
-                      aria-checked="true"
-                      aria-selected="true"
-                      class="active selected item"
+                      aria-checked="false"
+                      aria-selected="false"
+                      class="item"
                       role="option"
                       style="pointer-events: all;"
                     >
-                      <span
+                      <small
                         class="text"
                       >
-                        Modified date
-                      </span>
+                        <i
+                          aria-hidden="true"
+                          class="dna icon"
+                        />
+                         Sequencing Manifest
+                      </small>
+                    </div>
+                    <div
+                      aria-checked="false"
+                      aria-selected="false"
+                      class="item"
+                      role="option"
+                      style="pointer-events: all;"
+                    >
+                      <small
+                        class="text"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="question icon"
+                        />
+                         Other
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ui segment"
+              >
+                <p
+                  class="mb-5"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="sort icon"
+                  />
+                  Sort by:
+                </p>
+                <button
+                  class="ui basic icon right floated button"
+                  data-testid="sort-direction-button"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="sort content ascending icon"
+                  />
+                </button>
+                <div
+                  class="mr-40"
+                >
+                  <div
+                    aria-expanded="false"
+                    class="ui fluid selection dropdown"
+                    role="listbox"
+                    tabindex="0"
+                  >
+                    <div
+                      aria-live="polite"
+                      class="text"
+                      role="alert"
+                    >
+                      Modified date
+                    </div>
+                    <i
+                      aria-hidden="true"
+                      class="dropdown icon clear"
+                    />
+                    <div
+                      class="menu transition"
+                    >
+                      <div
+                        aria-checked="false"
+                        aria-selected="false"
+                        class="item"
+                        role="option"
+                        style="pointer-events: all;"
+                      >
+                        <span
+                          class="text"
+                        >
+                          Create date
+                        </span>
+                      </div>
+                      <div
+                        aria-checked="true"
+                        aria-selected="true"
+                        class="active selected item"
+                        role="option"
+                        style="pointer-events: all;"
+                      >
+                        <span
+                          class="text"
+                        >
+                          Modified date
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
