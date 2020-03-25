@@ -16,6 +16,8 @@ import {
 } from 'semantic-ui-react';
 import UploadWizard from '../modals/UploadWizard/UploadWizard';
 import NotFoundView from '../../views/NotFoundView';
+import ListFilterBar from '../components/ListFilterBar/ListFilterBar';
+import BatchActionBar from '../components/ListFilterBar/BatchActionBar';
 
 /**
  * A place holder skeleton for a list of files
@@ -42,6 +44,10 @@ const StudyListSkeleton = () => (
   </Grid>
 );
 
+const filterFiles = (files, filters) => {
+  return files.filter(file => true);
+};
+
 /**
  * List and manage files in a study and allow a user to upload more
  */
@@ -51,30 +57,49 @@ const StudyFilesListView = ({
   },
   history,
 }) => {
-  const [downloadFileMutation] = useMutation(FILE_DOWNLOAD_URL);
+  // Document mutations
+  const [downloadFile] = useMutation(FILE_DOWNLOAD_URL);
   const [deleteFile] = useMutation(DELETE_FILE, {
     refetchQueries: [{query: GET_STUDY_BY_ID, variables: {kfId: kfId}}],
   });
-  const [updateFileError, setUpdateFileError] = useState(null);
-  const {loading, data, error} = useQuery(GET_STUDY_BY_ID, {
-    variables: {
-      kfId: kfId,
-    },
-  });
-  const studyByKfId = data && data.studyByKfId;
-  const user = useQuery(MY_PROFILE);
   const [updateFile] = useMutation(UPDATE_FILE, {
     refetchQueries: [{query: GET_STUDY_BY_ID, variables: {kfId: kfId}}],
     onError: error => {
       setUpdateFileError(error);
     },
   });
+
+  // Study query, includes documents
+  const {loading, data, error} = useQuery(GET_STUDY_BY_ID, {
+    variables: {
+      kfId: kfId,
+    },
+  });
+  const studyByKfId = data && data.studyByKfId;
+  // Query for user
+  const user = useQuery(MY_PROFILE);
   const isAdmin =
     !user.loading && user.data.myProfile
       ? user.data.myProfile.roles.includes('ADMIN')
       : false;
+
   const [dialog, setDialog] = useState(false);
+  // View state
   const [uploadedFile, setFile] = useState(false);
+  const [updateFileError, setUpdateFileError] = useState(null);
+  const [filters, setFilters] = useState({
+    sortMethod: '',
+    sortDirection: 'ascending',
+    typeFilterStatus: '',
+    tagFilterStatus: '',
+    searchString: '',
+  });
+  const [selectedFiles, setSelectedFiles] = useState([]);
+
+  // Computed state
+  const files = !loading ? studyByKfId.files.edges : [];
+  const filteredFiles = filterFiles(files, filters);
+
   if (!loading && studyByKfId === null) {
     return (
       <NotFoundView
@@ -101,7 +126,6 @@ const StudyFilesListView = ({
         />
       </Container>
     );
-  const files = !loading ? studyByKfId.files.edges : [];
   return (
     <Grid as={Segment} basic container columns={1}>
       <Helmet>
@@ -146,15 +170,33 @@ const StudyFilesListView = ({
           {loading ? (
             <StudyListSkeleton />
           ) : (
-            <FileList
-              fileList={files}
-              studyId={kfId}
-              isAdmin={isAdmin}
-              updateFile={updateFile}
-              updateError={updateFileError}
-              downloadFileMutation={downloadFileMutation}
-              deleteFile={deleteFile}
-            />
+            <>
+              {selectedFiles.length === 0 ? (
+                <ListFilterBar
+                  fileList={files}
+                  filters={filters}
+                  setFilters={setFilters}
+                />
+              ) : (
+                <BatchActionBar
+                  fileList={files}
+                  deleteFile={deleteFile}
+                  downloadFile={downloadFile}
+                  selection={selectedFiles}
+                />
+              )}
+              <FileList
+                fileList={files}
+                studyId={kfId}
+                isAdmin={isAdmin}
+                updateFile={updateFile}
+                updateError={updateFileError}
+                downloadFileMutation={downloadFile}
+                deleteFile={deleteFile}
+                selection={selectedFiles}
+                setSelection={setSelectedFiles}
+              />
+            </>
           )}
           {dialog && (
             <UploadWizard
