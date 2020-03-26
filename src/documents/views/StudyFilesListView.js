@@ -51,30 +51,49 @@ const StudyFilesListView = ({
   },
   history,
 }) => {
-  const [downloadFileMutation] = useMutation(FILE_DOWNLOAD_URL);
+  // Document mutations
+  const [downloadFile] = useMutation(FILE_DOWNLOAD_URL);
   const [deleteFile] = useMutation(DELETE_FILE, {
     refetchQueries: [{query: GET_STUDY_BY_ID, variables: {kfId: kfId}}],
   });
-  const [updateFileError, setUpdateFileError] = useState(null);
-  const {loading, data, error} = useQuery(GET_STUDY_BY_ID, {
-    variables: {
-      kfId: kfId,
-    },
-  });
-  const studyByKfId = data && data.studyByKfId;
-  const user = useQuery(MY_PROFILE);
   const [updateFile] = useMutation(UPDATE_FILE, {
     refetchQueries: [{query: GET_STUDY_BY_ID, variables: {kfId: kfId}}],
     onError: error => {
       setUpdateFileError(error);
     },
   });
+
+  // Study query, includes documents
+  const {loading, data, error} = useQuery(GET_STUDY_BY_ID, {
+    variables: {
+      kfId: kfId,
+    },
+  });
+  const studyByKfId = data && data.studyByKfId;
+  // Query for user
+  const user = useQuery(MY_PROFILE);
   const isAdmin =
     !user.loading && user.data.myProfile
       ? user.data.myProfile.roles.includes('ADMIN')
       : false;
+
   const [dialog, setDialog] = useState(false);
+  // View state
   const [uploadedFile, setFile] = useState(false);
+  const [updateFileError, setUpdateFileError] = useState(null);
+  const [filters, setFilters] = useState({
+    sortMethod: '',
+    sortDirection: 'ascending',
+    typeFilterStatus: '',
+    tagFilterStatus: '',
+    searchString: '',
+  });
+  const [selectedFiles, setSelectedFiles] = useState([]);
+
+  // Computed state
+  const files = !loading && studyByKfId ? studyByKfId.files.edges : [];
+  const filteredFiles = filterFiles(files, filters);
+
   if (!loading && studyByKfId === null) {
     return (
       <NotFoundView
@@ -101,7 +120,6 @@ const StudyFilesListView = ({
         />
       </Container>
     );
-  const files = !loading ? studyByKfId.files.edges : [];
   return (
     <Grid as={Segment} basic container columns={1}>
       <Helmet>
