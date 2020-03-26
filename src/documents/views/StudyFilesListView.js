@@ -16,6 +16,8 @@ import {
 } from 'semantic-ui-react';
 import UploadWizard from '../modals/UploadWizard/UploadWizard';
 import NotFoundView from '../../views/NotFoundView';
+import ListFilterBar from '../components/ListFilterBar/ListFilterBar';
+import BatchActionBar from '../components/ListFilterBar/BatchActionBar';
 
 /**
  * A place holder skeleton for a list of files
@@ -164,15 +166,35 @@ const StudyFilesListView = ({
           {loading ? (
             <StudyListSkeleton />
           ) : (
-            <FileList
-              fileList={files}
-              studyId={kfId}
-              isAdmin={isAdmin}
-              updateFile={updateFile}
-              updateError={updateFileError}
-              downloadFileMutation={downloadFileMutation}
-              deleteFile={deleteFile}
-            />
+            <>
+              {selectedFiles.length === 0 ? (
+                <ListFilterBar
+                  fileList={files}
+                  filters={filters}
+                  setFilters={setFilters}
+                />
+              ) : (
+                <BatchActionBar
+                  fileList={files}
+                  studyId={kfId}
+                  deleteFile={deleteFile}
+                  downloadFileMutation={downloadFile}
+                  selection={selectedFiles}
+                  setSelection={setSelectedFiles}
+                />
+              )}
+              <FileList
+                fileList={filteredFiles}
+                studyId={kfId}
+                isAdmin={isAdmin}
+                updateFile={updateFile}
+                updateError={updateFileError}
+                downloadFileMutation={downloadFile}
+                deleteFile={deleteFile}
+                selection={selectedFiles}
+                setSelection={setSelectedFiles}
+              />
+            </>
           )}
           {dialog && (
             <UploadWizard
