@@ -18,6 +18,7 @@ import UploadWizard from '../modals/UploadWizard/UploadWizard';
 import NotFoundView from '../../views/NotFoundView';
 import ListFilterBar from '../components/ListFilterBar/ListFilterBar';
 import BatchActionBar from '../components/ListFilterBar/BatchActionBar';
+import {createDateSort, modifiedDateSort, defaultSort} from '../utilities';
 
 /**
  * A place holder skeleton for a list of files
@@ -43,6 +44,35 @@ const StudyListSkeleton = () => (
     ))}
   </Grid>
 );
+
+const filterFiles = (fileList, filters) => {
+  const sortFuncs = {
+    createDate: createDateSort,
+    modifyDate: modifiedDateSort,
+    default: defaultSort,
+  };
+  var sortedList = fileList.sort(
+    sortFuncs[filters.sortMethod] || sortFuncs.default,
+  );
+  sortedList =
+    filters.sortDirection === 'ascending' ? sortedList : sortedList.reverse();
+  sortedList = sortedList.filter(obj =>
+    obj.node.fileType.includes(filters.typeFilterStatus),
+  );
+  sortedList = sortedList.filter(obj =>
+    obj.node.tags.join(',').includes(filters.tagFilterStatus),
+  );
+  sortedList = sortedList.filter(
+    obj =>
+      obj.node.name
+        .toLowerCase()
+        .includes(filters.searchString.toLowerCase()) ||
+      obj.node.description
+        .toLowerCase()
+        .includes(filters.searchString.toLowerCase()),
+  );
+  return sortedList;
+};
 
 /**
  * List and manage files in a study and allow a user to upload more
