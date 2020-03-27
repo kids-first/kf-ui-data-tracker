@@ -97,7 +97,7 @@ const FileTags = ({fileNode, updateFile}) => {
         content={
           <Form onSubmit={addTag}>
             <Dropdown
-              data-testId="tag-dropdown"
+              data-testid="tag-dropdown"
               placeholder="Tags"
               search
               selection

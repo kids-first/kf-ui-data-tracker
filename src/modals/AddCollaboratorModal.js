@@ -90,7 +90,7 @@ const AddCollaboratorModal = ({
             <Button
               primary
               type="submit"
-              data-testId="add-button"
+              data-testid="add-button"
               loading={formikProps.isSubmitting}
               disabled={!formikProps.isValid || formikProps.isSubmitting}
             >
