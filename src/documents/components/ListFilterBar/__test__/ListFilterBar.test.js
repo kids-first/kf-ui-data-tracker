@@ -4,61 +4,23 @@ import {MemoryRouter} from 'react-router-dom';
 import {MockedProvider} from '@apollo/react-testing';
 import {render, cleanup, act, fireEvent} from '@testing-library/react';
 import ListFilterBar from '../ListFilterBar';
-import studyByKfId from '../../../../../__mocks__/kf-api-study-creator/responses/studyByKfId';
 import {mocks} from '../../../../../__mocks__/kf-api-study-creator/mocks';
 import StudyFilesListView from '../../../views/StudyFilesListView';
 
 afterEach(cleanup);
 
-it('renders ListFilterBar with files', async () => {
-  const files = studyByKfId.data.studyByKfId.files.edges;
-  const tree = render(
-    <MemoryRouter>
-      <MockedProvider>
-        <ListFilterBar
-          selection={[]}
-          fileList={files}
-          filteredList={jest.fn()}
-        />
-      </MockedProvider>
-    </MemoryRouter>,
-  );
-  expect(tree.container).toMatchSnapshot();
-
-  // Click on Approval status dropwdown
-  act(() => {
-    fireEvent.click(tree.getByText(/Tag/));
-  });
-  await wait();
-  expect(tree.container).toMatchSnapshot();
-
-  // Click on Document type dropwdown
-  act(() => {
-    fireEvent.click(tree.getByText(/Document type/));
-  });
-  await wait();
-  expect(tree.container).toMatchSnapshot();
-
-  // Click on Date option dropwdown
-  act(() => {
-    fireEvent.click(tree.getByText(/Date option/));
-  });
-  await wait();
-  expect(tree.container).toMatchSnapshot();
-
-  // Click on sort direction button
-  act(() => {
-    fireEvent.click(tree.getAllByTestId('sort-direction-button')[0]);
-  });
-  await wait();
-  expect(tree.container).toMatchSnapshot();
-});
-
 it('renders ListFilterBar with no files', async () => {
+  const filters = {
+    sortMethod: '',
+    sortDirection: 'ascending',
+    typeFilterStatus: '',
+    tagFilterStatus: '',
+    searchString: '',
+  };
   const tree = render(
     <MemoryRouter>
       <MockedProvider>
-        <ListFilterBar selection={[]} filteredList={jest.fn()} />
+        <ListFilterBar filters={filters} setFilters={jest.fn()} />
       </MockedProvider>
     </MemoryRouter>,
   );
