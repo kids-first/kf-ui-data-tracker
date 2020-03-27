@@ -31,6 +31,7 @@ import studyByKfId_refetch from './responses/studyByKfId_refetch.json';
 import studyByKfId_event_err from './responses/studyByKfId_event_err.json';
 import studyByKfId_no_projects from './responses/studyByKfId_no_projects.json';
 import studyByKfId_empty from './responses/studyByKfId_empty.json';
+import studyByKfId_pagination from './responses/studyByKfId_pagination.json';
 import deleteFile from './responses/deleteFile.json';
 import fileByKfId from './responses/fileByKfId.json';
 import fileByKfId_empty from './responses/fileByKfId_empty.json';
@@ -811,5 +812,14 @@ export const mocks = [
       },
     },
     error: new Error('Failed to get the file information'),
+  },
+  {
+    request: {
+      query: GET_STUDY_BY_ID,
+      variables: {
+        kfId: 'SD_X6E5KWM4',
+      },
+    },
+    result: studyByKfId_pagination,
   },
 ];
