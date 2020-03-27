@@ -156,7 +156,7 @@ exports[`renders ListFilterBar with files -- screen width 600 1`] = `
               >
                 <i
                   aria-hidden="true"
-                  class="shipping big icon"
+                  class="hospital big icon"
                 />
               </td>
               <td
@@ -166,9 +166,9 @@ exports[`renders ListFilterBar with files -- screen width 600 1`] = `
                   class="ui medium header"
                 >
                   <a
-                    href="/study/undefined/documents/SF_Y07IN1HO"
+                    href="/study/undefined/documents/SF_5ZPEM167"
                   >
-                    its.mp3
+                    organization.jpeg
                   </a>
                 </span>
                 <small
@@ -177,16 +177,16 @@ exports[`renders ListFilterBar with files -- screen width 600 1`] = `
                   Modified
                    
                   <time
-                    datetime="2019-04-06T07:51:17.000Z"
-                    title="6 Apr 2019"
+                    datetime="2018-09-27T05:32:26.000Z"
+                    title="27 Sept 2018"
                   >
-                    2 weeks ago
+                    7 months ago
                   </time>
                 </small>
                 <p
                   class="noMargin"
                 >
-                  Question meeting move recognize.
+                  Month necessary animal end standard case. View system operation message decade. Actually sing becaus...
                 </p>
               </td>
               <td
@@ -195,40 +195,6 @@ exports[`renders ListFilterBar with files -- screen width 600 1`] = `
                 <div
                   class="ui labels"
                 >
-                  <div
-                    class="ui label my-2"
-                    title="dbGaP"
-                  >
-                    dbGaP
-                    <i
-                      aria-hidden="true"
-                      class="close icon"
-                      data-testid="remove-tag"
-                    />
-                  </div>
-                  <div
-                    class="ui label my-2"
-                    title="random"
-                  >
-                    random
-                    <i
-                      aria-hidden="true"
-                      class="close icon"
-                      data-testid="remove-tag"
-                    />
-                  </div>
-                  <div
-                    class="ui label my-2"
-                    title="tag that has ten more char"
-                  >
-                    tag that h
-                    ...
-                    <i
-                      aria-hidden="true"
-                      class="close icon"
-                      data-testid="remove-tag"
-                    />
-                  </div>
                   <button
                     class="ui mini basic compact icon button square-26"
                     data-testid="tag-file"
@@ -293,7 +259,7 @@ exports[`renders ListFilterBar with files -- screen width 600 1`] = `
               >
                 <i
                   aria-hidden="true"
-                  class="hospital big icon"
+                  class="shipping big icon"
                 />
               </td>
               <td
@@ -303,9 +269,9 @@ exports[`renders ListFilterBar with files -- screen width 600 1`] = `
                   class="ui medium header"
                 >
                   <a
-                    href="/study/undefined/documents/SF_5ZPEM167"
+                    href="/study/undefined/documents/SF_Y07IN1HO"
                   >
-                    organization.jpeg
+                    its.mp3
                   </a>
                 </span>
                 <small
@@ -314,16 +280,16 @@ exports[`renders ListFilterBar with files -- screen width 600 1`] = `
                   Modified
                    
                   <time
-                    datetime="2018-09-27T05:32:26.000Z"
-                    title="27 Sept 2018"
+                    datetime="2019-04-06T07:51:17.000Z"
+                    title="6 Apr 2019"
                   >
-                    7 months ago
+                    2 weeks ago
                   </time>
                 </small>
                 <p
                   class="noMargin"
                 >
-                  Month necessary animal end standard case. View system operation message decade. Actually sing becaus...
+                  Question meeting move recognize.
                 </p>
               </td>
               <td
@@ -332,6 +298,67 @@ exports[`renders ListFilterBar with files -- screen width 600 1`] = `
                 <div
                   class="ui labels"
                 >
+                  <div
+                    class="ui label my-2"
+                    title="dbGaP"
+                  >
+                    dbGaP
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="dCC"
+                  >
+                    DCC
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="random"
+                  >
+                    random
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="random2"
+                  >
+                    random2
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="tag that has ten more char"
+                  >
+                    tag that h
+                    ...
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <small
+                    class="mr-5"
+                  >
+                    + 1 more
+                  </small>
                   <button
                     class="ui mini basic compact icon button square-26"
                     data-testid="tag-file"
@@ -662,9 +689,31 @@ exports[`renders ListFilterBar with files -- screen width 600 2`] = `
                   </div>
                   <div
                     class="ui label my-2"
+                    title="dCC"
+                  >
+                    DCC
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
                     title="random"
                   >
                     random
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="random2"
+                  >
+                    random2
                     <i
                       aria-hidden="true"
                       class="close icon"
@@ -683,6 +732,11 @@ exports[`renders ListFilterBar with files -- screen width 600 2`] = `
                       data-testid="remove-tag"
                     />
                   </div>
+                  <small
+                    class="mr-5"
+                  >
+                    + 1 more
+                  </small>
                   <button
                     class="ui mini basic compact icon button square-26"
                     data-testid="tag-file"
@@ -1219,9 +1273,31 @@ exports[`renders ListFilterBar with files -- screen width 600 3`] = `
                   </div>
                   <div
                     class="ui label my-2"
+                    title="dCC"
+                  >
+                    DCC
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
                     title="random"
                   >
                     random
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="random2"
+                  >
+                    random2
                     <i
                       aria-hidden="true"
                       class="close icon"
@@ -1240,6 +1316,11 @@ exports[`renders ListFilterBar with files -- screen width 600 3`] = `
                       data-testid="remove-tag"
                     />
                   </div>
+                  <small
+                    class="mr-5"
+                  >
+                    + 1 more
+                  </small>
                   <button
                     class="ui mini basic compact icon button square-26"
                     data-testid="tag-file"
@@ -1408,6 +1489,19 @@ exports[`renders ListFilterBar with files -- screen width 600 4`] = `
                   <span
                     class="text"
                   >
+                    DCC
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <span
+                    class="text"
+                  >
                     dbGaP
                   </span>
                 </div>
@@ -1421,7 +1515,33 @@ exports[`renders ListFilterBar with files -- screen width 600 4`] = `
                   <span
                     class="text"
                   >
+                    hidden tag
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <span
+                    class="text"
+                  >
                     random
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <span
+                    class="text"
+                  >
+                    random2
                   </span>
                 </div>
                 <div
@@ -1838,9 +1958,31 @@ exports[`renders ListFilterBar with files -- screen width 600 4`] = `
                   </div>
                   <div
                     class="ui label my-2"
+                    title="dCC"
+                  >
+                    DCC
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
                     title="random"
                   >
                     random
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="random2"
+                  >
+                    random2
                     <i
                       aria-hidden="true"
                       class="close icon"
@@ -1859,6 +2001,11 @@ exports[`renders ListFilterBar with files -- screen width 600 4`] = `
                       data-testid="remove-tag"
                     />
                   </div>
+                  <small
+                    class="mr-5"
+                  >
+                    + 1 more
+                  </small>
                   <button
                     class="ui mini basic compact icon button square-26"
                     data-testid="tag-file"
@@ -2027,6 +2174,19 @@ exports[`renders ListFilterBar with files -- screen width 600 5`] = `
                   <span
                     class="text"
                   >
+                    DCC
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <span
+                    class="text"
+                  >
                     dbGaP
                   </span>
                 </div>
@@ -2040,7 +2200,33 @@ exports[`renders ListFilterBar with files -- screen width 600 5`] = `
                   <span
                     class="text"
                   >
+                    hidden tag
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <span
+                    class="text"
+                  >
                     random
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <span
+                    class="text"
+                  >
+                    random2
                   </span>
                 </div>
                 <div
@@ -2354,9 +2540,31 @@ exports[`renders ListFilterBar with files -- screen width 600 5`] = `
                   </div>
                   <div
                     class="ui label my-2"
+                    title="dCC"
+                  >
+                    DCC
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
                     title="random"
                   >
                     random
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="random2"
+                  >
+                    random2
                     <i
                       aria-hidden="true"
                       class="close icon"
@@ -2375,6 +2583,11 @@ exports[`renders ListFilterBar with files -- screen width 600 5`] = `
                       data-testid="remove-tag"
                     />
                   </div>
+                  <small
+                    class="mr-5"
+                  >
+                    + 1 more
+                  </small>
                   <button
                     class="ui mini basic compact icon button square-26"
                     data-testid="tag-file"
@@ -2524,7 +2737,7 @@ exports[`renders ListFilterBar with files -- screen width 600 6`] = `
                 class="default text"
                 role="alert"
               >
-                dbGaP
+                DCC
               </div>
               <i
                 aria-hidden="true"
@@ -2537,6 +2750,19 @@ exports[`renders ListFilterBar with files -- screen width 600 6`] = `
                   aria-checked="false"
                   aria-selected="true"
                   class="selected item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <span
+                    class="text"
+                  >
+                    DCC
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
                   role="option"
                   style="pointer-events: all;"
                 >
@@ -2556,7 +2782,33 @@ exports[`renders ListFilterBar with files -- screen width 600 6`] = `
                   <span
                     class="text"
                   >
+                    hidden tag
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <span
+                    class="text"
+                  >
                     random
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <span
+                    class="text"
+                  >
+                    random2
                   </span>
                 </div>
                 <div
@@ -2870,9 +3122,31 @@ exports[`renders ListFilterBar with files -- screen width 600 6`] = `
                   </div>
                   <div
                     class="ui label my-2"
+                    title="dCC"
+                  >
+                    DCC
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
                     title="random"
                   >
                     random
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="random2"
+                  >
+                    random2
                     <i
                       aria-hidden="true"
                       class="close icon"
@@ -2891,6 +3165,11 @@ exports[`renders ListFilterBar with files -- screen width 600 6`] = `
                       data-testid="remove-tag"
                     />
                   </div>
+                  <small
+                    class="mr-5"
+                  >
+                    + 1 more
+                  </small>
                   <button
                     class="ui mini basic compact icon button square-26"
                     data-testid="tag-file"
@@ -3037,22 +3316,35 @@ exports[`renders ListFilterBar with files -- screen width 600 7`] = `
             >
               <div
                 aria-live="polite"
-                class="text"
+                class="default text"
                 role="alert"
               >
-                dbGaP
+                Tag
               </div>
               <i
                 aria-hidden="true"
-                class="dropdown icon clear"
+                class="dropdown icon"
               />
               <div
                 class="menu transition"
               >
                 <div
-                  aria-checked="true"
+                  aria-checked="false"
                   aria-selected="true"
-                  class="active selected item"
+                  class="selected item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <span
+                    class="text"
+                  >
+                    DCC
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
                   role="option"
                   style="pointer-events: all;"
                 >
@@ -3072,7 +3364,33 @@ exports[`renders ListFilterBar with files -- screen width 600 7`] = `
                   <span
                     class="text"
                   >
+                    hidden tag
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <span
+                    class="text"
+                  >
                     random
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <span
+                    class="text"
+                  >
+                    random2
                   </span>
                 </div>
                 <div
@@ -3386,9 +3704,31 @@ exports[`renders ListFilterBar with files -- screen width 600 7`] = `
                   </div>
                   <div
                     class="ui label my-2"
+                    title="dCC"
+                  >
+                    DCC
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
                     title="random"
                   >
                     random
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="random2"
+                  >
+                    random2
                     <i
                       aria-hidden="true"
                       class="close icon"
@@ -3407,6 +3747,11 @@ exports[`renders ListFilterBar with files -- screen width 600 7`] = `
                       data-testid="remove-tag"
                     />
                   </div>
+                  <small
+                    class="mr-5"
+                  >
+                    + 1 more
+                  </small>
                   <button
                     class="ui mini basic compact icon button square-26"
                     data-testid="tag-file"
@@ -3553,22 +3898,35 @@ exports[`renders ListFilterBar with files -- screen width 600 8`] = `
             >
               <div
                 aria-live="polite"
-                class="text"
+                class="default text"
                 role="alert"
               >
-                dbGaP
+                Tag
               </div>
               <i
                 aria-hidden="true"
-                class="dropdown icon clear"
+                class="dropdown icon"
               />
               <div
                 class="menu transition"
               >
                 <div
-                  aria-checked="true"
+                  aria-checked="false"
                   aria-selected="true"
-                  class="active selected item"
+                  class="selected item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <span
+                    class="text"
+                  >
+                    DCC
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
                   role="option"
                   style="pointer-events: all;"
                 >
@@ -3588,7 +3946,33 @@ exports[`renders ListFilterBar with files -- screen width 600 8`] = `
                   <span
                     class="text"
                   >
+                    hidden tag
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <span
+                    class="text"
+                  >
                     random
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <span
+                    class="text"
+                  >
+                    random2
                   </span>
                 </div>
                 <div
@@ -3902,9 +4286,31 @@ exports[`renders ListFilterBar with files -- screen width 600 8`] = `
                   </div>
                   <div
                     class="ui label my-2"
+                    title="dCC"
+                  >
+                    DCC
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
                     title="random"
                   >
                     random
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="random2"
+                  >
+                    random2
                     <i
                       aria-hidden="true"
                       class="close icon"
@@ -3923,6 +4329,11 @@ exports[`renders ListFilterBar with files -- screen width 600 8`] = `
                       data-testid="remove-tag"
                     />
                   </div>
+                  <small
+                    class="mr-5"
+                  >
+                    + 1 more
+                  </small>
                   <button
                     class="ui mini basic compact icon button square-26"
                     data-testid="tag-file"
@@ -4067,6 +4478,19 @@ exports[`renders ListFilterBar with files -- screen width 800 1`] = `
                     <span
                       class="text"
                     >
+                      DCC
+                    </span>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <span
+                      class="text"
+                    >
                       dbGaP
                     </span>
                   </div>
@@ -4080,7 +4504,33 @@ exports[`renders ListFilterBar with files -- screen width 800 1`] = `
                     <span
                       class="text"
                     >
+                      hidden tag
+                    </span>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <span
+                      class="text"
+                    >
                       random
+                    </span>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <span
+                      class="text"
+                    >
+                      random2
                     </span>
                   </div>
                   <div
@@ -4330,7 +4780,7 @@ exports[`renders ListFilterBar with files -- screen width 800 1`] = `
               >
                 <i
                   aria-hidden="true"
-                  class="shipping big icon"
+                  class="hospital big icon"
                 />
               </td>
               <td
@@ -4340,9 +4790,9 @@ exports[`renders ListFilterBar with files -- screen width 800 1`] = `
                   class="ui medium header"
                 >
                   <a
-                    href="/study/undefined/documents/SF_Y07IN1HO"
+                    href="/study/undefined/documents/SF_5ZPEM167"
                   >
-                    its.mp3
+                    organization.jpeg
                   </a>
                 </span>
                 <small
@@ -4351,16 +4801,16 @@ exports[`renders ListFilterBar with files -- screen width 800 1`] = `
                   Modified
                    
                   <time
-                    datetime="2019-04-06T07:51:17.000Z"
-                    title="6 Apr 2019"
+                    datetime="2018-09-27T05:32:26.000Z"
+                    title="27 Sept 2018"
                   >
-                    2 weeks ago
+                    7 months ago
                   </time>
                 </small>
                 <p
                   class="noMargin"
                 >
-                  Question meeting move recognize.
+                  Month necessary animal end standard case. View system operation message decade. Actually sing becaus...
                 </p>
               </td>
               <td
@@ -4369,40 +4819,6 @@ exports[`renders ListFilterBar with files -- screen width 800 1`] = `
                 <div
                   class="ui labels"
                 >
-                  <div
-                    class="ui label my-2"
-                    title="dbGaP"
-                  >
-                    dbGaP
-                    <i
-                      aria-hidden="true"
-                      class="close icon"
-                      data-testid="remove-tag"
-                    />
-                  </div>
-                  <div
-                    class="ui label my-2"
-                    title="random"
-                  >
-                    random
-                    <i
-                      aria-hidden="true"
-                      class="close icon"
-                      data-testid="remove-tag"
-                    />
-                  </div>
-                  <div
-                    class="ui label my-2"
-                    title="tag that has ten more char"
-                  >
-                    tag that h
-                    ...
-                    <i
-                      aria-hidden="true"
-                      class="close icon"
-                      data-testid="remove-tag"
-                    />
-                  </div>
                   <button
                     class="ui mini basic compact icon button square-26"
                     data-testid="tag-file"
@@ -4476,7 +4892,7 @@ exports[`renders ListFilterBar with files -- screen width 800 1`] = `
               >
                 <i
                   aria-hidden="true"
-                  class="hospital big icon"
+                  class="shipping big icon"
                 />
               </td>
               <td
@@ -4486,9 +4902,9 @@ exports[`renders ListFilterBar with files -- screen width 800 1`] = `
                   class="ui medium header"
                 >
                   <a
-                    href="/study/undefined/documents/SF_5ZPEM167"
+                    href="/study/undefined/documents/SF_Y07IN1HO"
                   >
-                    organization.jpeg
+                    its.mp3
                   </a>
                 </span>
                 <small
@@ -4497,16 +4913,16 @@ exports[`renders ListFilterBar with files -- screen width 800 1`] = `
                   Modified
                    
                   <time
-                    datetime="2018-09-27T05:32:26.000Z"
-                    title="27 Sept 2018"
+                    datetime="2019-04-06T07:51:17.000Z"
+                    title="6 Apr 2019"
                   >
-                    7 months ago
+                    2 weeks ago
                   </time>
                 </small>
                 <p
                   class="noMargin"
                 >
-                  Month necessary animal end standard case. View system operation message decade. Actually sing becaus...
+                  Question meeting move recognize.
                 </p>
               </td>
               <td
@@ -4515,6 +4931,67 @@ exports[`renders ListFilterBar with files -- screen width 800 1`] = `
                 <div
                   class="ui labels"
                 >
+                  <div
+                    class="ui label my-2"
+                    title="dbGaP"
+                  >
+                    dbGaP
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="dCC"
+                  >
+                    DCC
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="random"
+                  >
+                    random
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="random2"
+                  >
+                    random2
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="tag that has ten more char"
+                  >
+                    tag that h
+                    ...
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <small
+                    class="mr-5"
+                  >
+                    + 1 more
+                  </small>
                   <button
                     class="ui mini basic compact icon button square-26"
                     data-testid="tag-file"
@@ -4706,6 +5183,19 @@ exports[`renders ListFilterBar with files -- screen width 800 2`] = `
                     <span
                       class="text"
                     >
+                      DCC
+                    </span>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <span
+                      class="text"
+                    >
                       dbGaP
                     </span>
                   </div>
@@ -4719,7 +5209,33 @@ exports[`renders ListFilterBar with files -- screen width 800 2`] = `
                     <span
                       class="text"
                     >
+                      hidden tag
+                    </span>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <span
+                      class="text"
+                    >
                       random
+                    </span>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <span
+                      class="text"
+                    >
+                      random2
                     </span>
                   </div>
                   <div
@@ -5021,9 +5537,31 @@ exports[`renders ListFilterBar with files -- screen width 800 2`] = `
                   </div>
                   <div
                     class="ui label my-2"
+                    title="dCC"
+                  >
+                    DCC
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
                     title="random"
                   >
                     random
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="random2"
+                  >
+                    random2
                     <i
                       aria-hidden="true"
                       class="close icon"
@@ -5042,6 +5580,11 @@ exports[`renders ListFilterBar with files -- screen width 800 2`] = `
                       data-testid="remove-tag"
                     />
                   </div>
+                  <small
+                    class="mr-5"
+                  >
+                    + 1 more
+                  </small>
                   <button
                     class="ui mini basic compact icon button square-26"
                     data-testid="tag-file"
@@ -5345,6 +5888,19 @@ exports[`renders ListFilterBar with files -- screen width 800 3`] = `
                     <span
                       class="text"
                     >
+                      DCC
+                    </span>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <span
+                      class="text"
+                    >
                       dbGaP
                     </span>
                   </div>
@@ -5358,7 +5914,33 @@ exports[`renders ListFilterBar with files -- screen width 800 3`] = `
                     <span
                       class="text"
                     >
+                      hidden tag
+                    </span>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <span
+                      class="text"
+                    >
                       random
+                    </span>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <span
+                      class="text"
+                    >
+                      random2
                     </span>
                   </div>
                   <div
@@ -5772,9 +6354,31 @@ exports[`renders ListFilterBar with files -- screen width 800 3`] = `
                   </div>
                   <div
                     class="ui label my-2"
+                    title="dCC"
+                  >
+                    DCC
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
                     title="random"
                   >
                     random
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="random2"
+                  >
+                    random2
                     <i
                       aria-hidden="true"
                       class="close icon"
@@ -5793,6 +6397,11 @@ exports[`renders ListFilterBar with files -- screen width 800 3`] = `
                       data-testid="remove-tag"
                     />
                   </div>
+                  <small
+                    class="mr-5"
+                  >
+                    + 1 more
+                  </small>
                   <button
                     class="ui mini basic compact icon button square-26"
                     data-testid="tag-file"
@@ -5984,6 +6593,19 @@ exports[`renders ListFilterBar with files -- screen width 800 4`] = `
                     <span
                       class="text"
                     >
+                      DCC
+                    </span>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <span
+                      class="text"
+                    >
                       dbGaP
                     </span>
                   </div>
@@ -5997,7 +6619,33 @@ exports[`renders ListFilterBar with files -- screen width 800 4`] = `
                     <span
                       class="text"
                     >
+                      hidden tag
+                    </span>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <span
+                      class="text"
+                    >
                       random
+                    </span>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <span
+                      class="text"
+                    >
+                      random2
                     </span>
                   </div>
                   <div
@@ -6299,9 +6947,31 @@ exports[`renders ListFilterBar with files -- screen width 800 4`] = `
                   </div>
                   <div
                     class="ui label my-2"
+                    title="dCC"
+                  >
+                    DCC
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
                     title="random"
                   >
                     random
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="random2"
+                  >
+                    random2
                     <i
                       aria-hidden="true"
                       class="close icon"
@@ -6320,6 +6990,11 @@ exports[`renders ListFilterBar with files -- screen width 800 4`] = `
                       data-testid="remove-tag"
                     />
                   </div>
+                  <small
+                    class="mr-5"
+                  >
+                    + 1 more
+                  </small>
                   <button
                     class="ui mini basic compact icon button square-26"
                     data-testid="tag-file"
@@ -6489,22 +7164,35 @@ exports[`renders ListFilterBar with files -- screen width 800 5`] = `
               >
                 <div
                   aria-live="polite"
-                  class="text"
+                  class="default text"
                   role="alert"
                 >
-                  dbGaP
+                  Tags
                 </div>
                 <i
                   aria-hidden="true"
-                  class="tag icon clear"
+                  class="tag icon"
                 />
                 <div
                   class="menu transition"
                 >
                   <div
-                    aria-checked="true"
+                    aria-checked="false"
                     aria-selected="true"
-                    class="active selected item"
+                    class="selected item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <span
+                      class="text"
+                    >
+                      DCC
+                    </span>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
                     role="option"
                     style="pointer-events: all;"
                   >
@@ -6524,7 +7212,33 @@ exports[`renders ListFilterBar with files -- screen width 800 5`] = `
                     <span
                       class="text"
                     >
+                      hidden tag
+                    </span>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <span
+                      class="text"
+                    >
                       random
+                    </span>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <span
+                      class="text"
+                    >
+                      random2
                     </span>
                   </div>
                   <div
@@ -6826,9 +7540,31 @@ exports[`renders ListFilterBar with files -- screen width 800 5`] = `
                   </div>
                   <div
                     class="ui label my-2"
+                    title="dCC"
+                  >
+                    DCC
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
                     title="random"
                   >
                     random
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="random2"
+                  >
+                    random2
                     <i
                       aria-hidden="true"
                       class="close icon"
@@ -6847,6 +7583,11 @@ exports[`renders ListFilterBar with files -- screen width 800 5`] = `
                       data-testid="remove-tag"
                     />
                   </div>
+                  <small
+                    class="mr-5"
+                  >
+                    + 1 more
+                  </small>
                   <button
                     class="ui mini basic compact icon button square-26"
                     data-testid="tag-file"
@@ -7016,22 +7757,35 @@ exports[`renders ListFilterBar with files -- screen width 800 6`] = `
               >
                 <div
                   aria-live="polite"
-                  class="text"
+                  class="default text"
                   role="alert"
                 >
-                  dbGaP
+                  Tags
                 </div>
                 <i
                   aria-hidden="true"
-                  class="tag icon clear"
+                  class="tag icon"
                 />
                 <div
                   class="menu transition"
                 >
                   <div
-                    aria-checked="true"
+                    aria-checked="false"
                     aria-selected="true"
-                    class="active selected item"
+                    class="selected item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <span
+                      class="text"
+                    >
+                      DCC
+                    </span>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
                     role="option"
                     style="pointer-events: all;"
                   >
@@ -7051,7 +7805,33 @@ exports[`renders ListFilterBar with files -- screen width 800 6`] = `
                     <span
                       class="text"
                     >
+                      hidden tag
+                    </span>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <span
+                      class="text"
+                    >
                       random
+                    </span>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <span
+                      class="text"
+                    >
+                      random2
                     </span>
                   </div>
                   <div
@@ -7353,9 +8133,31 @@ exports[`renders ListFilterBar with files -- screen width 800 6`] = `
                   </div>
                   <div
                     class="ui label my-2"
+                    title="dCC"
+                  >
+                    DCC
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
                     title="random"
                   >
                     random
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="random2"
+                  >
+                    random2
                     <i
                       aria-hidden="true"
                       class="close icon"
@@ -7374,6 +8176,11 @@ exports[`renders ListFilterBar with files -- screen width 800 6`] = `
                       data-testid="remove-tag"
                     />
                   </div>
+                  <small
+                    class="mr-5"
+                  >
+                    + 1 more
+                  </small>
                   <button
                     class="ui mini basic compact icon button square-26"
                     data-testid="tag-file"
@@ -7554,6 +8361,19 @@ exports[`renders ListFilterBar with files -- screen width 1200 1`] = `
                   <span
                     class="text"
                   >
+                    DCC
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <span
+                    class="text"
+                  >
                     dbGaP
                   </span>
                 </div>
@@ -7567,7 +8387,33 @@ exports[`renders ListFilterBar with files -- screen width 1200 1`] = `
                   <span
                     class="text"
                   >
+                    hidden tag
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <span
+                    class="text"
+                  >
                     random
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <span
+                    class="text"
+                  >
+                    random2
                   </span>
                 </div>
                 <div
@@ -7834,7 +8680,7 @@ exports[`renders ListFilterBar with files -- screen width 1200 1`] = `
               >
                 <i
                   aria-hidden="true"
-                  class="shipping big icon"
+                  class="hospital big icon"
                 />
               </td>
               <td
@@ -7844,9 +8690,9 @@ exports[`renders ListFilterBar with files -- screen width 1200 1`] = `
                   class="ui medium header"
                 >
                   <a
-                    href="/study/undefined/documents/SF_Y07IN1HO"
+                    href="/study/undefined/documents/SF_5ZPEM167"
                   >
-                    its.mp3
+                    organization.jpeg
                   </a>
                 </span>
                 <small
@@ -7855,16 +8701,16 @@ exports[`renders ListFilterBar with files -- screen width 1200 1`] = `
                   Modified
                    
                   <time
-                    datetime="2019-04-06T07:51:17.000Z"
-                    title="6 Apr 2019"
+                    datetime="2018-09-27T05:32:26.000Z"
+                    title="27 Sept 2018"
                   >
-                    2 weeks ago
+                    7 months ago
                   </time>
                 </small>
                 <p
                   class="noMargin"
                 >
-                  Question meeting move recognize.
+                  Month necessary animal end standard case. View system operation message decade. Actually sing becaus...
                 </p>
               </td>
               <td
@@ -7873,40 +8719,6 @@ exports[`renders ListFilterBar with files -- screen width 1200 1`] = `
                 <div
                   class="ui labels"
                 >
-                  <div
-                    class="ui label my-2"
-                    title="dbGaP"
-                  >
-                    dbGaP
-                    <i
-                      aria-hidden="true"
-                      class="close icon"
-                      data-testid="remove-tag"
-                    />
-                  </div>
-                  <div
-                    class="ui label my-2"
-                    title="random"
-                  >
-                    random
-                    <i
-                      aria-hidden="true"
-                      class="close icon"
-                      data-testid="remove-tag"
-                    />
-                  </div>
-                  <div
-                    class="ui label my-2"
-                    title="tag that has ten more char"
-                  >
-                    tag that h
-                    ...
-                    <i
-                      aria-hidden="true"
-                      class="close icon"
-                      data-testid="remove-tag"
-                    />
-                  </div>
                   <button
                     class="ui mini basic compact icon button square-26"
                     data-testid="tag-file"
@@ -7980,7 +8792,7 @@ exports[`renders ListFilterBar with files -- screen width 1200 1`] = `
               >
                 <i
                   aria-hidden="true"
-                  class="hospital big icon"
+                  class="shipping big icon"
                 />
               </td>
               <td
@@ -7990,9 +8802,9 @@ exports[`renders ListFilterBar with files -- screen width 1200 1`] = `
                   class="ui medium header"
                 >
                   <a
-                    href="/study/undefined/documents/SF_5ZPEM167"
+                    href="/study/undefined/documents/SF_Y07IN1HO"
                   >
-                    organization.jpeg
+                    its.mp3
                   </a>
                 </span>
                 <small
@@ -8001,16 +8813,16 @@ exports[`renders ListFilterBar with files -- screen width 1200 1`] = `
                   Modified
                    
                   <time
-                    datetime="2018-09-27T05:32:26.000Z"
-                    title="27 Sept 2018"
+                    datetime="2019-04-06T07:51:17.000Z"
+                    title="6 Apr 2019"
                   >
-                    7 months ago
+                    2 weeks ago
                   </time>
                 </small>
                 <p
                   class="noMargin"
                 >
-                  Month necessary animal end standard case. View system operation message decade. Actually sing becaus...
+                  Question meeting move recognize.
                 </p>
               </td>
               <td
@@ -8019,6 +8831,67 @@ exports[`renders ListFilterBar with files -- screen width 1200 1`] = `
                 <div
                   class="ui labels"
                 >
+                  <div
+                    class="ui label my-2"
+                    title="dbGaP"
+                  >
+                    dbGaP
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="dCC"
+                  >
+                    DCC
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="random"
+                  >
+                    random
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="random2"
+                  >
+                    random2
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="tag that has ten more char"
+                  >
+                    tag that h
+                    ...
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <small
+                    class="mr-5"
+                  >
+                    + 1 more
+                  </small>
                   <button
                     class="ui mini basic compact icon button square-26"
                     data-testid="tag-file"
@@ -8199,6 +9072,19 @@ exports[`renders ListFilterBar with files -- screen width 1200 2`] = `
                   <span
                     class="text"
                   >
+                    DCC
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <span
+                    class="text"
+                  >
                     dbGaP
                   </span>
                 </div>
@@ -8212,7 +9098,33 @@ exports[`renders ListFilterBar with files -- screen width 1200 2`] = `
                   <span
                     class="text"
                   >
+                    hidden tag
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <span
+                    class="text"
+                  >
                     random
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <span
+                    class="text"
+                  >
+                    random2
                   </span>
                 </div>
                 <div
@@ -8531,9 +9443,31 @@ exports[`renders ListFilterBar with files -- screen width 1200 2`] = `
                   </div>
                   <div
                     class="ui label my-2"
+                    title="dCC"
+                  >
+                    DCC
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
                     title="random"
                   >
                     random
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="random2"
+                  >
+                    random2
                     <i
                       aria-hidden="true"
                       class="close icon"
@@ -8552,6 +9486,11 @@ exports[`renders ListFilterBar with files -- screen width 1200 2`] = `
                       data-testid="remove-tag"
                     />
                   </div>
+                  <small
+                    class="mr-5"
+                  >
+                    + 1 more
+                  </small>
                   <button
                     class="ui mini basic compact icon button square-26"
                     data-testid="tag-file"
@@ -8844,6 +9783,19 @@ exports[`renders ListFilterBar with files -- screen width 1200 3`] = `
                   <span
                     class="text"
                   >
+                    DCC
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <span
+                    class="text"
+                  >
                     dbGaP
                   </span>
                 </div>
@@ -8857,7 +9809,33 @@ exports[`renders ListFilterBar with files -- screen width 1200 3`] = `
                   <span
                     class="text"
                   >
+                    hidden tag
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <span
+                    class="text"
+                  >
                     random
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <span
+                    class="text"
+                  >
+                    random2
                   </span>
                 </div>
                 <div
@@ -9288,9 +10266,31 @@ exports[`renders ListFilterBar with files -- screen width 1200 3`] = `
                   </div>
                   <div
                     class="ui label my-2"
+                    title="dCC"
+                  >
+                    DCC
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
                     title="random"
                   >
                     random
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="random2"
+                  >
+                    random2
                     <i
                       aria-hidden="true"
                       class="close icon"
@@ -9309,6 +10309,11 @@ exports[`renders ListFilterBar with files -- screen width 1200 3`] = `
                       data-testid="remove-tag"
                     />
                   </div>
+                  <small
+                    class="mr-5"
+                  >
+                    + 1 more
+                  </small>
                   <button
                     class="ui mini basic compact icon button square-26"
                     data-testid="tag-file"
@@ -9489,6 +10494,19 @@ exports[`renders ListFilterBar with files -- screen width 1200 4`] = `
                   <span
                     class="text"
                   >
+                    DCC
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <span
+                    class="text"
+                  >
                     dbGaP
                   </span>
                 </div>
@@ -9502,7 +10520,33 @@ exports[`renders ListFilterBar with files -- screen width 1200 4`] = `
                   <span
                     class="text"
                   >
+                    hidden tag
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <span
+                    class="text"
+                  >
                     random
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <span
+                    class="text"
+                  >
+                    random2
                   </span>
                 </div>
                 <div
@@ -9821,9 +10865,31 @@ exports[`renders ListFilterBar with files -- screen width 1200 4`] = `
                   </div>
                   <div
                     class="ui label my-2"
+                    title="dCC"
+                  >
+                    DCC
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
                     title="random"
                   >
                     random
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="random2"
+                  >
+                    random2
                     <i
                       aria-hidden="true"
                       class="close icon"
@@ -9842,6 +10908,11 @@ exports[`renders ListFilterBar with files -- screen width 1200 4`] = `
                       data-testid="remove-tag"
                     />
                   </div>
+                  <small
+                    class="mr-5"
+                  >
+                    + 1 more
+                  </small>
                   <button
                     class="ui mini basic compact icon button square-26"
                     data-testid="tag-file"
@@ -10000,22 +11071,35 @@ exports[`renders ListFilterBar with files -- screen width 1200 5`] = `
             >
               <div
                 aria-live="polite"
-                class="text"
+                class="default text"
                 role="alert"
               >
-                dbGaP
+                Tag
               </div>
               <i
                 aria-hidden="true"
-                class="dropdown icon clear"
+                class="dropdown icon"
               />
               <div
                 class="menu transition"
               >
                 <div
-                  aria-checked="true"
+                  aria-checked="false"
                   aria-selected="true"
-                  class="active selected item"
+                  class="selected item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <span
+                    class="text"
+                  >
+                    DCC
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
                   role="option"
                   style="pointer-events: all;"
                 >
@@ -10035,7 +11119,33 @@ exports[`renders ListFilterBar with files -- screen width 1200 5`] = `
                   <span
                     class="text"
                   >
+                    hidden tag
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <span
+                    class="text"
+                  >
                     random
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <span
+                    class="text"
+                  >
+                    random2
                   </span>
                 </div>
                 <div
@@ -10354,9 +11464,31 @@ exports[`renders ListFilterBar with files -- screen width 1200 5`] = `
                   </div>
                   <div
                     class="ui label my-2"
+                    title="dCC"
+                  >
+                    DCC
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
                     title="random"
                   >
                     random
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="random2"
+                  >
+                    random2
                     <i
                       aria-hidden="true"
                       class="close icon"
@@ -10375,6 +11507,11 @@ exports[`renders ListFilterBar with files -- screen width 1200 5`] = `
                       data-testid="remove-tag"
                     />
                   </div>
+                  <small
+                    class="mr-5"
+                  >
+                    + 1 more
+                  </small>
                   <button
                     class="ui mini basic compact icon button square-26"
                     data-testid="tag-file"
@@ -10533,22 +11670,35 @@ exports[`renders ListFilterBar with files -- screen width 1200 6`] = `
             >
               <div
                 aria-live="polite"
-                class="text"
+                class="default text"
                 role="alert"
               >
-                dbGaP
+                Tag
               </div>
               <i
                 aria-hidden="true"
-                class="dropdown icon clear"
+                class="dropdown icon"
               />
               <div
                 class="menu transition"
               >
                 <div
-                  aria-checked="true"
+                  aria-checked="false"
                   aria-selected="true"
-                  class="active selected item"
+                  class="selected item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <span
+                    class="text"
+                  >
+                    DCC
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
                   role="option"
                   style="pointer-events: all;"
                 >
@@ -10568,7 +11718,33 @@ exports[`renders ListFilterBar with files -- screen width 1200 6`] = `
                   <span
                     class="text"
                   >
+                    hidden tag
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <span
+                    class="text"
+                  >
                     random
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <span
+                    class="text"
+                  >
+                    random2
                   </span>
                 </div>
                 <div
@@ -10887,9 +12063,31 @@ exports[`renders ListFilterBar with files -- screen width 1200 6`] = `
                   </div>
                   <div
                     class="ui label my-2"
+                    title="dCC"
+                  >
+                    DCC
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
                     title="random"
                   >
                     random
+                    <i
+                      aria-hidden="true"
+                      class="close icon"
+                      data-testid="remove-tag"
+                    />
+                  </div>
+                  <div
+                    class="ui label my-2"
+                    title="random2"
+                  >
+                    random2
                     <i
                       aria-hidden="true"
                       class="close icon"
@@ -10908,6 +12106,11 @@ exports[`renders ListFilterBar with files -- screen width 1200 6`] = `
                       data-testid="remove-tag"
                     />
                   </div>
+                  <small
+                    class="mr-5"
+                  >
+                    + 1 more
+                  </small>
                   <button
                     class="ui mini basic compact icon button square-26"
                     data-testid="tag-file"
@@ -10998,1251 +12201,6 @@ exports[`renders ListFilterBar with files -- screen width 1200 6`] = `
           />
         </div>
       </form>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`renders ListFilterBar with files 1`] = `
-<div>
-  <div
-    class="ui basic clearing segment noHorizontalPadding"
-  >
-    <div
-      class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
-    >
-      <span
-        class="smallLabel"
-      >
-        Filter by:
-      </span>
-      <div
-        aria-disabled="false"
-        aria-expanded="false"
-        class="ui selection dropdown"
-        role="listbox"
-        tabindex="0"
-      >
-        <div
-          aria-live="polite"
-          class="default text"
-          role="alert"
-        >
-          Tag
-        </div>
-        <i
-          aria-hidden="true"
-          class="dropdown icon"
-        />
-        <div
-          class="menu transition"
-        >
-          <div
-            aria-checked="false"
-            aria-selected="true"
-            class="selected item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              dbGaP
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              random
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              tag that has ten more char
-            </span>
-          </div>
-        </div>
-      </div>
-      <div
-        aria-expanded="false"
-        class="ui selection dropdown"
-        role="listbox"
-        tabindex="0"
-      >
-        <div
-          aria-live="polite"
-          class="default text"
-          role="alert"
-        >
-          Document type
-        </div>
-        <i
-          aria-hidden="true"
-          class="dropdown icon"
-        />
-        <div
-          class="menu transition"
-        >
-          <div
-            aria-checked="false"
-            aria-selected="true"
-            class="selected item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <small
-              class="text"
-            >
-              <i
-                aria-hidden="true"
-                class="shipping icon"
-              />
-               Biospecimen Manifest
-            </small>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <small
-              class="text"
-            >
-              <i
-                aria-hidden="true"
-                class="hospital icon"
-              />
-               Clinical/Phenotypic Data
-            </small>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <small
-              class="text"
-            >
-              <i
-                aria-hidden="true"
-                class="dna icon"
-              />
-               Sequencing Manifest
-            </small>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <small
-              class="text"
-            >
-              <i
-                aria-hidden="true"
-                class="question icon"
-              />
-               Other
-            </small>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
-    >
-      <span
-        class="smallLabel"
-      >
-        Sort by:
-      </span>
-      <div
-        aria-expanded="false"
-        class="ui selection dropdown"
-        role="listbox"
-        tabindex="0"
-      >
-        <div
-          aria-live="polite"
-          class="default text"
-          role="alert"
-        >
-          Date option
-        </div>
-        <i
-          aria-hidden="true"
-          class="dropdown icon"
-        />
-        <div
-          class="menu transition"
-        >
-          <div
-            aria-checked="false"
-            aria-selected="true"
-            class="selected item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              Create date
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              Modified date
-            </span>
-          </div>
-        </div>
-      </div>
-      <button
-        class="ui basic icon button"
-        data-testid="sort-direction-button"
-      >
-        <i
-          aria-hidden="true"
-          class="sort content ascending icon"
-        />
-      </button>
-    </div>
-    <div
-      class="ui fluid icon input"
-    >
-      <input
-        aria-label="file-search-input"
-        type="text"
-        value=""
-      />
-      <i
-        aria-hidden="true"
-        class="search icon"
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`renders ListFilterBar with files 2`] = `
-<div>
-  <div
-    class="ui basic clearing segment noHorizontalPadding"
-  >
-    <div
-      class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
-    >
-      <span
-        class="smallLabel"
-      >
-        Filter by:
-      </span>
-      <div
-        aria-disabled="false"
-        aria-expanded="true"
-        class="ui active visible selection dropdown"
-        role="listbox"
-        tabindex="0"
-      >
-        <div
-          aria-live="polite"
-          class="default text"
-          role="alert"
-        >
-          dbGaP
-        </div>
-        <i
-          aria-hidden="true"
-          class="dropdown icon"
-        />
-        <div
-          class="visible menu transition"
-        >
-          <div
-            aria-checked="false"
-            aria-selected="true"
-            class="selected item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              dbGaP
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              random
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              tag that has ten more char
-            </span>
-          </div>
-        </div>
-      </div>
-      <div
-        aria-expanded="false"
-        class="ui selection dropdown"
-        role="listbox"
-        tabindex="0"
-      >
-        <div
-          aria-live="polite"
-          class="default text"
-          role="alert"
-        >
-          Document type
-        </div>
-        <i
-          aria-hidden="true"
-          class="dropdown icon"
-        />
-        <div
-          class="menu transition"
-        >
-          <div
-            aria-checked="false"
-            aria-selected="true"
-            class="selected item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <small
-              class="text"
-            >
-              <i
-                aria-hidden="true"
-                class="shipping icon"
-              />
-               Biospecimen Manifest
-            </small>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <small
-              class="text"
-            >
-              <i
-                aria-hidden="true"
-                class="hospital icon"
-              />
-               Clinical/Phenotypic Data
-            </small>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <small
-              class="text"
-            >
-              <i
-                aria-hidden="true"
-                class="dna icon"
-              />
-               Sequencing Manifest
-            </small>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <small
-              class="text"
-            >
-              <i
-                aria-hidden="true"
-                class="question icon"
-              />
-               Other
-            </small>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
-    >
-      <span
-        class="smallLabel"
-      >
-        Sort by:
-      </span>
-      <div
-        aria-expanded="false"
-        class="ui selection dropdown"
-        role="listbox"
-        tabindex="0"
-      >
-        <div
-          aria-live="polite"
-          class="default text"
-          role="alert"
-        >
-          Date option
-        </div>
-        <i
-          aria-hidden="true"
-          class="dropdown icon"
-        />
-        <div
-          class="menu transition"
-        >
-          <div
-            aria-checked="false"
-            aria-selected="true"
-            class="selected item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              Create date
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              Modified date
-            </span>
-          </div>
-        </div>
-      </div>
-      <button
-        class="ui basic icon button"
-        data-testid="sort-direction-button"
-      >
-        <i
-          aria-hidden="true"
-          class="sort content ascending icon"
-        />
-      </button>
-    </div>
-    <div
-      class="ui fluid icon input"
-    >
-      <input
-        aria-label="file-search-input"
-        type="text"
-        value=""
-      />
-      <i
-        aria-hidden="true"
-        class="search icon"
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`renders ListFilterBar with files 3`] = `
-<div>
-  <div
-    class="ui basic clearing segment noHorizontalPadding"
-  >
-    <div
-      class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
-    >
-      <span
-        class="smallLabel"
-      >
-        Filter by:
-      </span>
-      <div
-        aria-disabled="false"
-        aria-expanded="false"
-        class="ui selection dropdown"
-        role="listbox"
-        tabindex="0"
-      >
-        <div
-          aria-live="polite"
-          class="default text"
-          role="alert"
-        >
-          Tag
-        </div>
-        <i
-          aria-hidden="true"
-          class="dropdown icon"
-        />
-        <div
-          class="menu transition"
-        >
-          <div
-            aria-checked="false"
-            aria-selected="true"
-            class="selected item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              dbGaP
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              random
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              tag that has ten more char
-            </span>
-          </div>
-        </div>
-      </div>
-      <div
-        aria-expanded="true"
-        class="ui active visible selection dropdown"
-        role="listbox"
-        tabindex="0"
-      >
-        <div
-          aria-live="polite"
-          class="default text"
-          role="alert"
-        >
-          Biospecimen Manifest
-        </div>
-        <i
-          aria-hidden="true"
-          class="dropdown icon"
-        />
-        <div
-          class="visible menu transition"
-        >
-          <div
-            aria-checked="false"
-            aria-selected="true"
-            class="selected item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <small
-              class="text"
-            >
-              <i
-                aria-hidden="true"
-                class="shipping icon"
-              />
-               Biospecimen Manifest
-            </small>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <small
-              class="text"
-            >
-              <i
-                aria-hidden="true"
-                class="hospital icon"
-              />
-               Clinical/Phenotypic Data
-            </small>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <small
-              class="text"
-            >
-              <i
-                aria-hidden="true"
-                class="dna icon"
-              />
-               Sequencing Manifest
-            </small>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <small
-              class="text"
-            >
-              <i
-                aria-hidden="true"
-                class="question icon"
-              />
-               Other
-            </small>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
-    >
-      <span
-        class="smallLabel"
-      >
-        Sort by:
-      </span>
-      <div
-        aria-expanded="false"
-        class="ui selection dropdown"
-        role="listbox"
-        tabindex="0"
-      >
-        <div
-          aria-live="polite"
-          class="default text"
-          role="alert"
-        >
-          Date option
-        </div>
-        <i
-          aria-hidden="true"
-          class="dropdown icon"
-        />
-        <div
-          class="menu transition"
-        >
-          <div
-            aria-checked="false"
-            aria-selected="true"
-            class="selected item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              Create date
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              Modified date
-            </span>
-          </div>
-        </div>
-      </div>
-      <button
-        class="ui basic icon button"
-        data-testid="sort-direction-button"
-      >
-        <i
-          aria-hidden="true"
-          class="sort content ascending icon"
-        />
-      </button>
-    </div>
-    <div
-      class="ui fluid icon input"
-    >
-      <input
-        aria-label="file-search-input"
-        type="text"
-        value=""
-      />
-      <i
-        aria-hidden="true"
-        class="search icon"
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`renders ListFilterBar with files 4`] = `
-<div>
-  <div
-    class="ui basic clearing segment noHorizontalPadding"
-  >
-    <div
-      class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
-    >
-      <span
-        class="smallLabel"
-      >
-        Filter by:
-      </span>
-      <div
-        aria-disabled="false"
-        aria-expanded="false"
-        class="ui selection dropdown"
-        role="listbox"
-        tabindex="0"
-      >
-        <div
-          aria-live="polite"
-          class="default text"
-          role="alert"
-        >
-          Tag
-        </div>
-        <i
-          aria-hidden="true"
-          class="dropdown icon"
-        />
-        <div
-          class="menu transition"
-        >
-          <div
-            aria-checked="false"
-            aria-selected="true"
-            class="selected item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              dbGaP
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              random
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              tag that has ten more char
-            </span>
-          </div>
-        </div>
-      </div>
-      <div
-        aria-expanded="false"
-        class="ui selection dropdown"
-        role="listbox"
-        tabindex="0"
-      >
-        <div
-          aria-live="polite"
-          class="default text"
-          role="alert"
-        >
-          Document type
-        </div>
-        <i
-          aria-hidden="true"
-          class="dropdown icon"
-        />
-        <div
-          class="menu transition"
-        >
-          <div
-            aria-checked="false"
-            aria-selected="true"
-            class="selected item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <small
-              class="text"
-            >
-              <i
-                aria-hidden="true"
-                class="shipping icon"
-              />
-               Biospecimen Manifest
-            </small>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <small
-              class="text"
-            >
-              <i
-                aria-hidden="true"
-                class="hospital icon"
-              />
-               Clinical/Phenotypic Data
-            </small>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <small
-              class="text"
-            >
-              <i
-                aria-hidden="true"
-                class="dna icon"
-              />
-               Sequencing Manifest
-            </small>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <small
-              class="text"
-            >
-              <i
-                aria-hidden="true"
-                class="question icon"
-              />
-               Other
-            </small>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
-    >
-      <span
-        class="smallLabel"
-      >
-        Sort by:
-      </span>
-      <div
-        aria-expanded="true"
-        class="ui active visible selection dropdown"
-        role="listbox"
-        tabindex="0"
-      >
-        <div
-          aria-live="polite"
-          class="default text"
-          role="alert"
-        >
-          Create date
-        </div>
-        <i
-          aria-hidden="true"
-          class="dropdown icon"
-        />
-        <div
-          class="visible menu transition"
-        >
-          <div
-            aria-checked="false"
-            aria-selected="true"
-            class="selected item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              Create date
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              Modified date
-            </span>
-          </div>
-        </div>
-      </div>
-      <button
-        class="ui basic icon button"
-        data-testid="sort-direction-button"
-      >
-        <i
-          aria-hidden="true"
-          class="sort content ascending icon"
-        />
-      </button>
-    </div>
-    <div
-      class="ui fluid icon input"
-    >
-      <input
-        aria-label="file-search-input"
-        type="text"
-        value=""
-      />
-      <i
-        aria-hidden="true"
-        class="search icon"
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`renders ListFilterBar with files 5`] = `
-<div>
-  <div
-    class="ui basic clearing segment noHorizontalPadding"
-  >
-    <div
-      class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
-    >
-      <span
-        class="smallLabel"
-      >
-        Filter by:
-      </span>
-      <div
-        aria-disabled="false"
-        aria-expanded="false"
-        class="ui selection dropdown"
-        role="listbox"
-        tabindex="0"
-      >
-        <div
-          aria-live="polite"
-          class="default text"
-          role="alert"
-        >
-          Tag
-        </div>
-        <i
-          aria-hidden="true"
-          class="dropdown icon"
-        />
-        <div
-          class="menu transition"
-        >
-          <div
-            aria-checked="false"
-            aria-selected="true"
-            class="selected item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              dbGaP
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              random
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              tag that has ten more char
-            </span>
-          </div>
-        </div>
-      </div>
-      <div
-        aria-expanded="false"
-        class="ui selection dropdown"
-        role="listbox"
-        tabindex="0"
-      >
-        <div
-          aria-live="polite"
-          class="default text"
-          role="alert"
-        >
-          Document type
-        </div>
-        <i
-          aria-hidden="true"
-          class="dropdown icon"
-        />
-        <div
-          class="menu transition"
-        >
-          <div
-            aria-checked="false"
-            aria-selected="true"
-            class="selected item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <small
-              class="text"
-            >
-              <i
-                aria-hidden="true"
-                class="shipping icon"
-              />
-               Biospecimen Manifest
-            </small>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <small
-              class="text"
-            >
-              <i
-                aria-hidden="true"
-                class="hospital icon"
-              />
-               Clinical/Phenotypic Data
-            </small>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <small
-              class="text"
-            >
-              <i
-                aria-hidden="true"
-                class="dna icon"
-              />
-               Sequencing Manifest
-            </small>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <small
-              class="text"
-            >
-              <i
-                aria-hidden="true"
-                class="question icon"
-              />
-               Other
-            </small>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="ui basic compact left floated segment noMargin noVerticalPadding noHorizontalPadding"
-    >
-      <span
-        class="smallLabel"
-      >
-        Sort by:
-      </span>
-      <div
-        aria-expanded="false"
-        class="ui selection dropdown"
-        role="listbox"
-        tabindex="0"
-      >
-        <div
-          aria-live="polite"
-          class="default text"
-          role="alert"
-        >
-          Date option
-        </div>
-        <i
-          aria-hidden="true"
-          class="dropdown icon"
-        />
-        <div
-          class="menu transition"
-        >
-          <div
-            aria-checked="false"
-            aria-selected="true"
-            class="selected item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              Create date
-            </span>
-          </div>
-          <div
-            aria-checked="false"
-            aria-selected="false"
-            class="item"
-            role="option"
-            style="pointer-events: all;"
-          >
-            <span
-              class="text"
-            >
-              Modified date
-            </span>
-          </div>
-        </div>
-      </div>
-      <button
-        class="ui basic icon button"
-        data-testid="sort-direction-button"
-      >
-        <i
-          aria-hidden="true"
-          class="sort content descending icon"
-        />
-      </button>
-    </div>
-    <div
-      class="ui fluid icon input"
-    >
-      <input
-        aria-label="file-search-input"
-        type="text"
-        value=""
-      />
-      <i
-        aria-hidden="true"
-        class="search icon"
-      />
     </div>
   </div>
 </div>

@@ -322,6 +322,19 @@ exports[`edits an existing file correctly 1`] = `
                     <span
                       class="text"
                     >
+                      DCC
+                    </span>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <span
+                      class="text"
+                    >
                       dbGaP
                     </span>
                   </div>
@@ -335,7 +348,33 @@ exports[`edits an existing file correctly 1`] = `
                     <span
                       class="text"
                     >
+                      hidden tag
+                    </span>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <span
+                      class="text"
+                    >
                       random
+                    </span>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <span
+                      class="text"
+                    >
+                      random2
                     </span>
                   </div>
                   <div
@@ -766,9 +805,31 @@ exports[`edits an existing file correctly 1`] = `
                     </div>
                     <div
                       class="ui label my-2"
+                      title="dCC"
+                    >
+                      DCC
+                      <i
+                        aria-hidden="true"
+                        class="close icon"
+                        data-testid="remove-tag"
+                      />
+                    </div>
+                    <div
+                      class="ui label my-2"
                       title="random"
                     >
                       random
+                      <i
+                        aria-hidden="true"
+                        class="close icon"
+                        data-testid="remove-tag"
+                      />
+                    </div>
+                    <div
+                      class="ui label my-2"
+                      title="random2"
+                    >
+                      random2
                       <i
                         aria-hidden="true"
                         class="close icon"
@@ -787,6 +848,11 @@ exports[`edits an existing file correctly 1`] = `
                         data-testid="remove-tag"
                       />
                     </div>
+                    <small
+                      class="mr-5"
+                    >
+                      + 1 more
+                    </small>
                     <button
                       class="ui mini basic compact icon button square-26"
                       data-testid="tag-file"
