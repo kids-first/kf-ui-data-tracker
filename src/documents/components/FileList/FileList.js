@@ -116,9 +116,9 @@ const FileList = ({
         </>
       ) : (
         <Segment basic>
-          <Header icon textAlign="center">
+          <Header disabled icon textAlign="center">
             <Icon name="file alternate outline" />
-            You don't have any documents yet.
+            No documents matching your filter or search term
           </Header>
         </Segment>
       )}

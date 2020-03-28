@@ -13,6 +13,8 @@ import {
   Segment,
   Button,
   Responsive,
+  Header,
+  Icon,
 } from 'semantic-ui-react';
 import UploadWizard from '../modals/UploadWizard/UploadWizard';
 import NotFoundView from '../../views/NotFoundView';
@@ -193,9 +195,7 @@ const StudyFilesListView = ({
       </Grid.Row>
       <Grid.Row>
         <Grid.Column width={16}>
-          {loading ? (
-            <StudyListSkeleton />
-          ) : (
+          {files.length > 0 ? (
             <>
               {selectedFiles.length === 0 ? (
                 <ListFilterBar
@@ -224,6 +224,19 @@ const StudyFilesListView = ({
                 selection={selectedFiles}
                 setSelection={setSelectedFiles}
               />
+            </>
+          ) : (
+            <>
+              {loading ? (
+                <StudyListSkeleton />
+              ) : (
+                <Segment basic>
+                  <Header icon textAlign="center">
+                    <Icon name="file alternate outline" />
+                    You don't have any documents yet.
+                  </Header>
+                </Segment>
+              )}
             </>
           )}
           {dialog && (
