@@ -56,8 +56,6 @@ const filterFiles = (fileList, filters) => {
   var sortedList = fileList.sort(
     sortFuncs[filters.sortMethod] || sortFuncs.default,
   );
-  sortedList =
-    filters.sortDirection === 'ascending' ? sortedList : sortedList.reverse();
   sortedList = sortedList.filter(obj =>
     obj.node.fileType.includes(filters.typeFilterStatus),
   );
@@ -126,7 +124,10 @@ const StudyFilesListView = ({
 
   // Computed state
   const files = !loading && studyByKfId ? studyByKfId.files.edges : [];
-  const filteredFiles = filterFiles(files, filters);
+  const filteredFiles =
+    filters.sortDirection === 'ascending'
+      ? filterFiles(files, filters)
+      : filterFiles(files, filters).reverse();
 
   if (!loading && studyByKfId === null) {
     return (
