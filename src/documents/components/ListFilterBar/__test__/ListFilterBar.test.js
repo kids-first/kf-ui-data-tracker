@@ -73,7 +73,7 @@ it('renders ListFilterBar with files -- screen width 1200', async () => {
     fireEvent.click(tree.getAllByText(/Tag/i)[0]);
   });
   act(() => {
-    fireEvent.click(tree.getAllByText(/dbGaP/i)[1]);
+    fireEvent.click(tree.getAllByText(/dbGaP/i)[0]);
   });
   await wait();
   expect(tree.container).toMatchSnapshot();
@@ -133,7 +133,7 @@ it('renders ListFilterBar with files -- screen width 800', async () => {
     fireEvent.click(tree.getAllByText(/Tag/i)[0]);
   });
   act(() => {
-    fireEvent.click(tree.getAllByText(/dbGaP/i)[1]);
+    fireEvent.click(tree.getAllByText(/dbGaP/i)[0]);
   });
   await wait();
   expect(tree.container).toMatchSnapshot();
@@ -203,7 +203,7 @@ it('renders ListFilterBar with files -- screen width 600', async () => {
   });
   expect(tree.container).toMatchSnapshot();
   act(() => {
-    fireEvent.click(tree.getAllByText(/dbGaP/i)[1]);
+    fireEvent.click(tree.getAllByText(/dbGaP/i)[0]);
   });
   await wait();
   expect(tree.container).toMatchSnapshot();
