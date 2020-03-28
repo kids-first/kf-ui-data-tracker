@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Button, Divider, Icon, Popup} from 'semantic-ui-react';
+import {Button, Divider, Icon, Popup, Responsive} from 'semantic-ui-react';
 import {downloadFile, createDateSort} from '../../utilities';
 import CopyButton from '../../../components/CopyButton/CopyButton';
 /**
@@ -46,10 +46,12 @@ const FileActionButtons = ({
           />
         }
       />
-      {deleteFile && vertical && (
+      {deleteFile && (
         <Popup
           trigger={
-            <Button
+            <Responsive
+              as={Button}
+              minWidth={Responsive.onlyTablet.minWidth}
               basic
               compact
               data-testid="delete-button"

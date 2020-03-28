@@ -94,7 +94,9 @@ const FileList = ({
                   Document Details
                 </Table.HeaderCell>
                 <Table.HeaderCell textAlign="center">Tags</Table.HeaderCell>
-                <Table.HeaderCell textAlign="center">Actions</Table.HeaderCell>
+                <Table.HeaderCell textAlign="center" width="2">
+                  Actions
+                </Table.HeaderCell>
               </Table.Row>
             </Table.Header>
             <Table.Body>

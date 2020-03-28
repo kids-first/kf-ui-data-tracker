@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import {withRouter, Link} from 'react-router-dom';
 import TimeAgo from 'react-timeago';
-import {Header, Table, Icon, Responsive, Checkbox} from 'semantic-ui-react';
+import {Header, Table, Icon, Checkbox} from 'semantic-ui-react';
 import FileActionButtons from '../FileActionButtons/FileActionButtons';
 import {fileSortedVersions, fileLatestDate, lengthLimit} from '../../utilities';
 import {fileTypeDetail} from '../../../common/enums';
@@ -77,10 +77,7 @@ const FileElement = ({
           onSelectOne(fileKfID);
         }}
       >
-        <Checkbox
-          data-testid="file-select"
-          checked={selection.includes(fileKfID)}
-        />
+        <Checkbox data-testid="file-select" checked={selected} />
       </Table.Cell>
       <Table.Cell textAlign="center">
         <Icon name={`${fileType.icon || 'question'}`} size="big" />
@@ -114,24 +111,10 @@ const FileElement = ({
         <FileTags fileNode={fileNode} updateFile={updateFile} />
       </Table.Cell>
       <Table.Cell textAlign="center">
-        <Responsive
-          as={FileActionButtons}
-          minWidth={Responsive.onlyTablet.minWidth}
+        <FileActionButtons
+          fluid
           node={fileNode}
           studyId={fileListId}
-          vertical={true}
-          fluid={false}
-          isAdmin={isAdmin}
-          deleteFile={deleteFile}
-          downloadFileMutation={downloadFileMutation}
-        />
-        <Responsive
-          as={FileActionButtons}
-          maxWidth={Responsive.onlyTablet.minWidth - 1}
-          node={fileNode}
-          studyId={fileListId}
-          vertical={false}
-          fluid={true}
           isAdmin={isAdmin}
           deleteFile={deleteFile}
           downloadFileMutation={downloadFileMutation}
