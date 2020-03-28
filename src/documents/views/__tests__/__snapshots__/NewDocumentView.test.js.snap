@@ -5669,7 +5669,7 @@ exports[`renders new document view and redirect due to lack of location.state 1`
                   Tags
                 </th>
                 <th
-                  class="center aligned"
+                  class="center aligned two wide"
                 >
                   Actions
                 </th>
@@ -5759,7 +5759,7 @@ exports[`renders new document view and redirect due to lack of location.state 1`
                   class="center aligned"
                 >
                   <div
-                    class="ui small buttons"
+                    class="ui small fluid buttons"
                   >
                     <button
                       class="ui basic compact icon button"
@@ -5932,7 +5932,7 @@ exports[`renders new document view and redirect due to lack of location.state 1`
                   class="center aligned"
                 >
                   <div
-                    class="ui small buttons"
+                    class="ui small fluid buttons"
                   >
                     <button
                       class="ui basic compact icon button"

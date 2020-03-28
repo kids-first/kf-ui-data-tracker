@@ -605,7 +605,7 @@ exports[`edits an existing file correctly 1`] = `
                   Tags
                 </th>
                 <th
-                  class="center aligned"
+                  class="center aligned two wide"
                 >
                   Actions
                 </th>
@@ -695,7 +695,7 @@ exports[`edits an existing file correctly 1`] = `
                   class="center aligned"
                 >
                   <div
-                    class="ui small buttons"
+                    class="ui small fluid buttons"
                   >
                     <button
                       class="ui basic compact icon button"
@@ -868,7 +868,7 @@ exports[`edits an existing file correctly 1`] = `
                   class="center aligned"
                 >
                   <div
-                    class="ui small buttons"
+                    class="ui small fluid buttons"
                   >
                     <button
                       class="ui basic compact icon button"

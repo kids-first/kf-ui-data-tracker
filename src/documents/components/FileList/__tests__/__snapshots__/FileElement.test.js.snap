@@ -85,7 +85,7 @@ exports[`renders correctly 1`] = `
           class="center aligned"
         >
           <div
-            class="ui small buttons"
+            class="ui small fluid buttons"
           >
             <button
               class="ui basic compact icon button"
@@ -197,7 +197,7 @@ exports[`renders latest temporary state 1`] = `
           class="center aligned"
         >
           <div
-            class="ui small buttons"
+            class="ui small fluid buttons"
           >
             <button
               class="ui basic compact icon button"
@@ -309,7 +309,7 @@ exports[`renders loading state 1`] = `
           class="center aligned"
         >
           <div
-            class="ui small buttons"
+            class="ui small fluid buttons"
           >
             <button
               class="ui basic compact icon button"

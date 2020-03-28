@@ -6,13 +6,13 @@ exports[`renders without files 1`] = `
     class="ui basic segment"
   >
     <div
-      class="ui icon center aligned header"
+      class="ui disabled icon center aligned header"
     >
       <i
         aria-hidden="true"
         class="file alternate outline icon"
       />
-      You don't have any documents yet.
+      No documents matching your filter or search term
     </div>
   </div>
 </div>
