@@ -48,7 +48,7 @@ const FileElement = ({
   updateFile,
   deleteFile,
   downloadFileMutation,
-  selection,
+  selected,
   onSelectOne,
 }) => {
   const fileKfID = fileNode.kfId || 'unknown ID';
