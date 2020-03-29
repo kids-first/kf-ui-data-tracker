@@ -5,7 +5,9 @@ import {
   Container,
   Dimmer,
   Divider,
+  Form,
   Header,
+  Input,
   Loader,
   Select,
   Segment,
@@ -17,6 +19,7 @@ import {UPDATE_USER} from '../../state/mutations';
 
 const UsersView = () => {
   const {loading: usersLoading, error, data: userData} = useQuery(ALL_USERS);
+  const [searchString, setSearchString] = useState('');
   const [selectedGroup, setSelectedGroup] = useState('');
   const allUsers = userData && userData.allUsers;
 
@@ -24,12 +27,16 @@ const UsersView = () => {
   const profile = myProfileData && myProfileData.myProfile;
 
   const [updateUser] = useMutation(UPDATE_USER);
-  const canUpdateUser =
+
+  const permissions =
     profile &&
+    profile.groups &&
+    profile.groups.edges &&
     profile.groups.edges
       .map(({node}) => node.permissions.edges.map(({node}) => node.codename))
-      .flat(2)
-      .includes('change_user');
+      .reduce((prev, curr) => prev.concat(curr));
+
+  const canUpdateUser = permissions && permissions.includes('change_user');
 
   // Compute options available for choosing groups
   const {
@@ -49,8 +56,13 @@ const UsersView = () => {
     allUsers &&
     allUsers.edges.filter(
       ({node}) =>
-        !selectedGroup ||
-        node.groups.edges.map(({node}) => node.id).includes(selectedGroup),
+        (!selectedGroup ||
+          node.groups.edges.map(({node}) => node.id).includes(selectedGroup)) &&
+        (!searchString ||
+          node.username.includes(searchString) ||
+          node.firstName.includes(searchString) ||
+          node.lastName.includes(searchString) ||
+          node.email.includes(searchString)),
     );
 
   const loading = usersLoading || myProfileLoading || groupsLoading;
@@ -65,7 +77,7 @@ const UsersView = () => {
           negative
           icon="warning circle"
           header="Error"
-          content={groupsError.message || error.message}
+          content={(groupsError && groupsError.message) || error.message}
         />
       </Container>
     );
@@ -79,14 +91,32 @@ const UsersView = () => {
         All users registered in the data tracker are available here.
       </Segment>
       <Segment basic>
-        <span className="smallLabel">Filter by:</span>
-        <Select
-          clearable
-          placeholder="User Group"
-          loading={loading}
-          options={groupOptions}
-          onChange={(e, {name, value}) => setSelectedGroup(value)}
-        />
+        <Form widths="equal">
+          <Form.Group inline>
+            <Form.Field
+              label="Filter by:"
+              aria-label="group-filter"
+              width={8}
+              control={Select}
+              clearable
+              placeholder="User Group"
+              loading={loading}
+              options={groupOptions}
+              onChange={(e, {name, value}) => setSelectedGroup(value)}
+            />
+            <Form.Field
+              width={8}
+              control={Input}
+              clearable
+              aria-label="userSearch"
+              iconPosition="left"
+              icon="search"
+              placeholder="Search by name or email"
+              onChange={(e, {value}) => setSearchString(value)}
+              value={searchString}
+            />
+          </Form.Group>
+        </Form>
         <Divider />
         {loading ? (
           <Segment basic padded="very">
