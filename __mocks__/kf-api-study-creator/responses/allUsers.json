@@ -5,27 +5,29 @@
         {
           "node": {
             "id": "VXNlck5vZGU6MQ==",
-            "username": "Roger Swanson",
-            "email": "eric48@gmail.com",
+            "dateJoined": "2020-03-29T01:36:52.792482+00:00",
+            "username": "Jennifer Thomas",
+            "firstName": "Keith",
+            "lastName": "Dixon",
+            "email": "weaverjulie@gmail.com",
             "picture": "",
             "roles": [],
-            "groups": [],
-            "lastLogin": null,
-            "dateJoined": "2020-02-07T15:59:45.651947+00:00",
+            "groups": {"edges": [], "__typename": "GroupNodeConnection"},
             "__typename": "UserNode"
           },
           "__typename": "UserNodeEdge"
         },
         {
           "node": {
-            "id": "VXNlck5vZGU6Me==",
-            "username": "Justin Heath",
-            "email": "dwilliams@yahoo.com",
+            "id": "VXNlck5vZGU6Mg==",
+            "dateJoined": "2020-03-29T01:36:52.813807+00:00",
+            "username": "Beth Gonzales",
+            "firstName": "Nicholas",
+            "lastName": "Cooper",
+            "email": "sean62@hotmail.com",
             "picture": "",
             "roles": [],
-            "groups": [],
-            "lastLogin": null,
-            "dateJoined": "2020-02-07T15:59:45.664679+00:00",
+            "groups": {"edges": [], "__typename": "GroupNodeConnection"},
             "__typename": "UserNode"
           },
           "__typename": "UserNodeEdge"
@@ -33,13 +35,14 @@
         {
           "node": {
             "id": "VXNlck5vZGU6Mw==",
-            "username": "Charles Booker",
-            "email": "hlee@tyler-hernandez.com",
+            "dateJoined": "2020-03-29T01:36:52.821823+00:00",
+            "username": "Michael Dunn",
+            "firstName": "Sarah",
+            "lastName": "Simpson",
+            "email": "robertwilliams@alvarez.com",
             "picture": "",
             "roles": [],
-            "groups": [],
-            "lastLogin": null,
-            "dateJoined": "2020-02-07T15:59:45.673827+00:00",
+            "groups": {"edges": [], "__typename": "GroupNodeConnection"},
             "__typename": "UserNode"
           },
           "__typename": "UserNodeEdge"
@@ -47,13 +50,103 @@
         {
           "node": {
             "id": "VXNlck5vZGU6NA==",
-            "username": "Steven Morgan",
-            "email": "ghutchinson@mcdaniel.net",
+            "dateJoined": "2020-03-29T01:36:52.832924+00:00",
+            "username": "Antonio Phillips",
+            "firstName": "Lori",
+            "lastName": "Taylor",
+            "email": "rebecca43@dickson-nguyen.net",
             "picture": "",
             "roles": [],
-            "groups": [],
-            "lastLogin": null,
-            "dateJoined": "2020-02-07T15:59:45.685429+00:00",
+            "groups": {
+              "edges": [
+                {
+                  "node": {
+                    "id": "R3JvdXBOb2RlOjI=",
+                    "name": "Developers",
+                    "permissions": {
+                      "edges": [
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6NjY=",
+                            "name": "Can view event",
+                            "codename": "view_event",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6Mjk=",
+                            "name": "Can add download token",
+                            "codename": "add_downloadtoken",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6MzE=",
+                            "name": "Can delete download token",
+                            "codename": "delete_downloadtoken",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6MzI=",
+                            "name": "Can view download token",
+                            "codename": "view_downloadtoken",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6MjQ=",
+                            "name": "Can view file",
+                            "codename": "view_file",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6Mzk=",
+                            "name": "Can change version",
+                            "codename": "change_version",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6NDE=",
+                            "name": "Can view version",
+                            "codename": "view_version",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6NDg=",
+                            "name": "Can view study",
+                            "codename": "view_study",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        }
+                      ],
+                      "__typename": "PermissionNodeConnection"
+                    },
+                    "__typename": "GroupNode"
+                  },
+                  "__typename": "GroupNodeEdge"
+                }
+              ],
+              "__typename": "GroupNodeConnection"
+            },
             "__typename": "UserNode"
           },
           "__typename": "UserNodeEdge"
@@ -61,13 +154,14 @@
         {
           "node": {
             "id": "VXNlck5vZGU6NQ==",
-            "username": "Elizabeth White",
-            "email": "hreid@gmail.com",
+            "dateJoined": "2020-03-29T01:36:52.841552+00:00",
+            "username": "Jorge Clark",
+            "firstName": "Monique",
+            "lastName": "Gonzalez",
+            "email": "pamela67@yahoo.com",
             "picture": "",
             "roles": [],
-            "groups": [],
-            "lastLogin": null,
-            "dateJoined": "2020-02-07T15:59:45.697433+00:00",
+            "groups": {"edges": [], "__typename": "GroupNodeConnection"},
             "__typename": "UserNode"
           },
           "__typename": "UserNodeEdge"
@@ -75,13 +169,14 @@
         {
           "node": {
             "id": "VXNlck5vZGU6Ng==",
-            "username": "Lisa Booker",
-            "email": "ethanpalmer@hotmail.com",
+            "dateJoined": "2020-03-29T01:36:52.851170+00:00",
+            "username": "David Mason",
+            "firstName": "Larry",
+            "lastName": "Chandler",
+            "email": "david57@jones-patel.org",
             "picture": "",
             "roles": [],
-            "groups": [],
-            "lastLogin": null,
-            "dateJoined": "2020-02-07T15:59:45.713146+00:00",
+            "groups": {"edges": [], "__typename": "GroupNodeConnection"},
             "__typename": "UserNode"
           },
           "__typename": "UserNodeEdge"
@@ -89,13 +184,14 @@
         {
           "node": {
             "id": "VXNlck5vZGU6Nw==",
-            "username": "Brittany Olsen",
-            "email": "mhuang@gmail.com",
+            "dateJoined": "2020-03-29T01:36:52.857833+00:00",
+            "username": "Mary Obrien",
+            "firstName": "Nicholas",
+            "lastName": "Flores",
+            "email": "katrina67@hotmail.com",
             "picture": "",
             "roles": [],
-            "groups": [],
-            "lastLogin": null,
-            "dateJoined": "2020-02-07T15:59:45.719360+00:00",
+            "groups": {"edges": [], "__typename": "GroupNodeConnection"},
             "__typename": "UserNode"
           },
           "__typename": "UserNodeEdge"
@@ -103,13 +199,14 @@
         {
           "node": {
             "id": "VXNlck5vZGU6OA==",
-            "username": "Jeff Salazar",
-            "email": "stephaniefuentes@robertson.org",
+            "dateJoined": "2020-03-29T01:36:52.866692+00:00",
+            "username": "James Williams",
+            "firstName": "Drew",
+            "lastName": "Mccarty",
+            "email": "rlin@underwood.biz",
             "picture": "",
             "roles": [],
-            "groups": [],
-            "lastLogin": null,
-            "dateJoined": "2020-02-07T15:59:45.725456+00:00",
+            "groups": {"edges": [], "__typename": "GroupNodeConnection"},
             "__typename": "UserNode"
           },
           "__typename": "UserNodeEdge"
@@ -117,13 +214,14 @@
         {
           "node": {
             "id": "VXNlck5vZGU6OQ==",
-            "username": "Jennifer Cunningham",
-            "email": "brenda21@gmail.com",
+            "dateJoined": "2020-03-29T01:36:52.877560+00:00",
+            "username": "Oscar Bright",
+            "firstName": "Anthony",
+            "lastName": "Sherman",
+            "email": "uknight@gmail.com",
             "picture": "",
             "roles": [],
-            "groups": [],
-            "lastLogin": null,
-            "dateJoined": "2020-02-07T15:59:45.732094+00:00",
+            "groups": {"edges": [], "__typename": "GroupNodeConnection"},
             "__typename": "UserNode"
           },
           "__typename": "UserNodeEdge"
@@ -131,13 +229,14 @@
         {
           "node": {
             "id": "VXNlck5vZGU6MTA=",
-            "username": "Chris Farley",
-            "email": "johnwilliams@hotmail.com",
+            "dateJoined": "2020-03-29T01:36:52.891032+00:00",
+            "username": "Ronald Thompson",
+            "firstName": "Tyler",
+            "lastName": "Taylor",
+            "email": "damon76@hotmail.com",
             "picture": "",
             "roles": [],
-            "groups": [],
-            "lastLogin": null,
-            "dateJoined": "2020-02-07T15:59:45.740264+00:00",
+            "groups": {"edges": [], "__typename": "GroupNodeConnection"},
             "__typename": "UserNode"
           },
           "__typename": "UserNodeEdge"
@@ -145,13 +244,14 @@
         {
           "node": {
             "id": "VXNlck5vZGU6MTE=",
-            "username": "Kelly Blackburn",
-            "email": "daniel41@gmail.com",
+            "dateJoined": "2020-03-29T01:36:52.903894+00:00",
+            "username": "Mckenzie White",
+            "firstName": "Matthew",
+            "lastName": "Davidson",
+            "email": "flambert@figueroa.com",
             "picture": "",
             "roles": [],
-            "groups": [],
-            "lastLogin": null,
-            "dateJoined": "2020-02-07T15:59:45.746563+00:00",
+            "groups": {"edges": [], "__typename": "GroupNodeConnection"},
             "__typename": "UserNode"
           },
           "__typename": "UserNodeEdge"
@@ -159,13 +259,14 @@
         {
           "node": {
             "id": "VXNlck5vZGU6MTI=",
-            "username": "Bridget Alvarado",
-            "email": "marissa29@hotmail.com",
+            "dateJoined": "2020-03-29T01:36:52.911545+00:00",
+            "username": "Taylor Rivera",
+            "firstName": "Beth",
+            "lastName": "Simon",
+            "email": "kkerr@castro.com",
             "picture": "",
             "roles": [],
-            "groups": [],
-            "lastLogin": null,
-            "dateJoined": "2020-02-07T15:59:45.755625+00:00",
+            "groups": {"edges": [], "__typename": "GroupNodeConnection"},
             "__typename": "UserNode"
           },
           "__typename": "UserNodeEdge"
@@ -173,13 +274,14 @@
         {
           "node": {
             "id": "VXNlck5vZGU6MTM=",
-            "username": "Kristin Bond",
-            "email": "hfreeman@morales.net",
+            "dateJoined": "2020-03-29T01:36:52.918335+00:00",
+            "username": "Travis Bates",
+            "firstName": "Karen",
+            "lastName": "Gomez",
+            "email": "xbarrera@mcdonald.com",
             "picture": "",
             "roles": [],
-            "groups": [],
-            "lastLogin": null,
-            "dateJoined": "2020-02-07T15:59:45.762115+00:00",
+            "groups": {"edges": [], "__typename": "GroupNodeConnection"},
             "__typename": "UserNode"
           },
           "__typename": "UserNodeEdge"
@@ -187,13 +289,14 @@
         {
           "node": {
             "id": "VXNlck5vZGU6MTQ=",
-            "username": "Kendra Campbell",
-            "email": "cjenkins@hotmail.com",
+            "dateJoined": "2020-03-29T01:36:52.937156+00:00",
+            "username": "Rachel Hernandez",
+            "firstName": "James",
+            "lastName": "Bennett",
+            "email": "jamesjoseph@black-sawyer.org",
             "picture": "",
             "roles": [],
-            "groups": [],
-            "lastLogin": null,
-            "dateJoined": "2020-02-07T15:59:45.768853+00:00",
+            "groups": {"edges": [], "__typename": "GroupNodeConnection"},
             "__typename": "UserNode"
           },
           "__typename": "UserNodeEdge"
@@ -201,13 +304,103 @@
         {
           "node": {
             "id": "VXNlck5vZGU6MTU=",
-            "username": "Denise Moore",
-            "email": "hayleyfranklin@yahoo.com",
+            "dateJoined": "2020-03-29T01:36:52.944348+00:00",
+            "username": "Alexis Patterson",
+            "firstName": "Janice",
+            "lastName": "Mckay",
+            "email": "lawsonmark@rodriguez.biz",
             "picture": "",
             "roles": [],
-            "groups": [],
-            "lastLogin": null,
-            "dateJoined": "2020-02-07T15:59:45.775184+00:00",
+            "groups": {
+              "edges": [
+                {
+                  "node": {
+                    "id": "R3JvdXBOb2RlOjI=",
+                    "name": "Developers",
+                    "permissions": {
+                      "edges": [
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6NjY=",
+                            "name": "Can view event",
+                            "codename": "view_event",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6Mjk=",
+                            "name": "Can add download token",
+                            "codename": "add_downloadtoken",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6MzE=",
+                            "name": "Can delete download token",
+                            "codename": "delete_downloadtoken",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6MzI=",
+                            "name": "Can view download token",
+                            "codename": "view_downloadtoken",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6MjQ=",
+                            "name": "Can view file",
+                            "codename": "view_file",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6Mzk=",
+                            "name": "Can change version",
+                            "codename": "change_version",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6NDE=",
+                            "name": "Can view version",
+                            "codename": "view_version",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6NDg=",
+                            "name": "Can view study",
+                            "codename": "view_study",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        }
+                      ],
+                      "__typename": "PermissionNodeConnection"
+                    },
+                    "__typename": "GroupNode"
+                  },
+                  "__typename": "GroupNodeEdge"
+                }
+              ],
+              "__typename": "GroupNodeConnection"
+            },
             "__typename": "UserNode"
           },
           "__typename": "UserNodeEdge"
@@ -215,69 +408,283 @@
         {
           "node": {
             "id": "VXNlck5vZGU6MTY=",
-            "username": "Lisa Steele",
-            "email": "kevin29@gomez.biz",
-            "picture": "",
-            "roles": [],
-            "groups": [],
-            "lastLogin": null,
-            "dateJoined": "2020-02-07T15:59:45.781254+00:00",
-            "__typename": "UserNode"
-          },
-          "__typename": "UserNodeEdge"
-        },
-        {
-          "node": {
-            "id": "VXNlck5vZGU6MTc=",
-            "username": "Katrina Torres",
-            "email": "yvonne90@reed.com",
-            "picture": "",
-            "roles": [],
-            "groups": [],
-            "lastLogin": null,
-            "dateJoined": "2020-02-07T15:59:45.789837+00:00",
-            "__typename": "UserNode"
-          },
-          "__typename": "UserNodeEdge"
-        },
-        {
-          "node": {
-            "id": "VXNlck5vZGU6MTg=",
-            "username": "Frank Johnson",
-            "email": "jbyrd@hotmail.com",
-            "picture": "",
-            "roles": [],
-            "groups": [],
-            "lastLogin": null,
-            "dateJoined": "2020-02-07T15:59:45.796050+00:00",
-            "__typename": "UserNode"
-          },
-          "__typename": "UserNodeEdge"
-        },
-        {
-          "node": {
-            "id": "VXNlck5vZGU6MTk=",
-            "username": "Jason Norman",
-            "email": "tuckerrebecca@hotmail.com",
-            "picture": "",
-            "roles": [],
-            "groups": [],
-            "lastLogin": null,
-            "dateJoined": "2020-02-07T15:59:45.802723+00:00",
-            "__typename": "UserNode"
-          },
-          "__typename": "UserNodeEdge"
-        },
-        {
-          "node": {
-            "id": "VXNlck5vZGU6MjA=",
+            "dateJoined": "2020-03-29T01:36:54.053128+00:00",
             "username": "devadmin",
+            "firstName": "",
+            "lastName": "",
             "email": "admin@myproject.com",
             "picture": "",
             "roles": ["ADMIN"],
-            "groups": [],
-            "lastLogin": null,
-            "dateJoined": "2020-02-07T15:59:46.466984+00:00",
+            "groups": {
+              "edges": [
+                {
+                  "node": {
+                    "id": "R3JvdXBOb2RlOjE=",
+                    "name": "Administrators",
+                    "permissions": {
+                      "edges": [
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6MTI=",
+                            "name": "Can view group",
+                            "codename": "view_group",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6OA==",
+                            "name": "Can view permission",
+                            "codename": "view_permission",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6NjE=",
+                            "name": "Can link a bucket to a study",
+                            "codename": "link_bucket",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6NjA=",
+                            "name": "Can list all buckets",
+                            "codename": "list_all_bucket",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6NjI=",
+                            "name": "Can unlink a bucket to a study",
+                            "codename": "unlink_bucket",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6NTk=",
+                            "name": "Can view bucket",
+                            "codename": "view_bucket",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6NzY=",
+                            "name": "Can view job",
+                            "codename": "view_job",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6Nzg=",
+                            "name": "Can view queues",
+                            "codename": "view_queue",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6Nzc=",
+                            "name": "Can view settings",
+                            "codename": "view_settings",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6Njk=",
+                            "name": "Can change user",
+                            "codename": "change_user",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6NzI=",
+                            "name": "Can list all users",
+                            "codename": "list_all_user",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6NjY=",
+                            "name": "Can view event",
+                            "codename": "view_event",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6Mzc=",
+                            "name": "Can list all versions",
+                            "codename": "list_all_version",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6Mjk=",
+                            "name": "Can add download token",
+                            "codename": "add_downloadtoken",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6MzE=",
+                            "name": "Can delete download token",
+                            "codename": "delete_downloadtoken",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6MzI=",
+                            "name": "Can view download token",
+                            "codename": "view_downloadtoken",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6MjE=",
+                            "name": "Can add file",
+                            "codename": "add_file",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6MjI=",
+                            "name": "Can change file",
+                            "codename": "change_file",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6MjM=",
+                            "name": "Can delete file",
+                            "codename": "delete_file",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6MjU=",
+                            "name": "Can list all files",
+                            "codename": "list_all_file",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6MjQ=",
+                            "name": "Can view file",
+                            "codename": "view_file",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6Mzg=",
+                            "name": "Can add version",
+                            "codename": "add_version",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6Mzk=",
+                            "name": "Can change version",
+                            "codename": "change_version",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6NDA=",
+                            "name": "Can delete version",
+                            "codename": "delete_version",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6NDE=",
+                            "name": "Can view version",
+                            "codename": "view_version",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6NTA=",
+                            "name": "Can add a collaborator to the study",
+                            "codename": "add_collaborator",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6NTE=",
+                            "name": "Can remove a collaborator to the study",
+                            "codename": "remove_collaborator",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        },
+                        {
+                          "node": {
+                            "id": "UGVybWlzc2lvbk5vZGU6NDg=",
+                            "name": "Can view study",
+                            "codename": "view_study",
+                            "__typename": "PermissionNode"
+                          },
+                          "__typename": "PermissionNodeEdge"
+                        }
+                      ],
+                      "__typename": "PermissionNodeConnection"
+                    },
+                    "__typename": "GroupNode"
+                  },
+                  "__typename": "GroupNodeEdge"
+                }
+              ],
+              "__typename": "GroupNodeConnection"
+            },
             "__typename": "UserNode"
           },
           "__typename": "UserNodeEdge"

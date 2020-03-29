@@ -3,6 +3,7 @@ import {
   GET_STUDY_BY_ID,
   MY_PROFILE,
   ALL_EVENTS,
+  ALL_GROUPS,
   ALL_USERS,
   GET_PROJECTS,
   STATUS,
@@ -52,6 +53,7 @@ import allEvents_refetch from './responses/allEvents_refetch.json';
 import allEvents_20 from './responses/allEvents_20.json';
 import allEvents_40 from './responses/allEvents_40.json';
 import allUsers from './responses/allUsers.json';
+import allGroups from './responses/allGroups.json';
 import allProjects from './responses/allProjects.json';
 import signedUrl from './responses/signedUrl.json';
 import syncProjects from './responses/syncProjects.json';
@@ -67,6 +69,25 @@ export const allStudiesMock = {
     query: ALL_STUDIES,
   },
   result: allStudies,
+};
+
+export const allGroupsMock = {
+  request: {
+    query: ALL_GROUPS,
+  },
+  result: allGroups,
+};
+
+export const allUsersMock = {
+  request: {
+    query: ALL_USERS,
+  },
+  result: allUsers,
+};
+
+export const allUsersErrorMock = {
+  request: allUsersMock.request,
+  error: new Error('Failed to fetch users information'),
 };
 
 export const allEventsMock = {

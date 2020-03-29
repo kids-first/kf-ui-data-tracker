@@ -39,11 +39,11 @@ exports[`renders Cavatica projects view -- empty view for regular user 1`] = `
           tabindex="0"
         >
           <img
-            alt="bendolly"
+            alt="devadmin"
             class="ui avatar image"
-            src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
+            src="test-file-stub"
           />
-          bendolly
+          devadmin
           <i
             aria-hidden="true"
             class="dropdown icon"
@@ -499,11 +499,11 @@ exports[`renders Cavatica projects view correctly -- with get error 1`] = `
           tabindex="0"
         >
           <img
-            alt="bendolly"
+            alt="devadmin"
             class="ui avatar image"
-            src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
+            src="test-file-stub"
           />
-          bendolly
+          devadmin
           <i
             aria-hidden="true"
             class="dropdown icon"
@@ -641,11 +641,11 @@ exports[`renders Cavatica projects view correctly -- with sync error 1`] = `
           tabindex="0"
         >
           <img
-            alt="bendolly"
+            alt="devadmin"
             class="ui avatar image"
-            src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
+            src="test-file-stub"
           />
-          bendolly
+          devadmin
           <i
             aria-hidden="true"
             class="dropdown icon"
@@ -1310,11 +1310,11 @@ exports[`renders Cavatica projects view correctly 2`] = `
           tabindex="0"
         >
           <img
-            alt="bendolly"
+            alt="devadmin"
             class="ui avatar image"
-            src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
+            src="test-file-stub"
           />
-          bendolly
+          devadmin
           <i
             aria-hidden="true"
             class="dropdown icon"
@@ -1929,11 +1929,11 @@ exports[`renders Cavatica projects view correctly 3`] = `
           tabindex="0"
         >
           <img
-            alt="bendolly"
+            alt="devadmin"
             class="ui avatar image"
-            src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
+            src="test-file-stub"
           />
-          bendolly
+          devadmin
           <i
             aria-hidden="true"
             class="dropdown icon"
@@ -2548,11 +2548,11 @@ exports[`renders Cavatica projects view correctly 4`] = `
           tabindex="0"
         >
           <img
-            alt="bendolly"
+            alt="devadmin"
             class="ui avatar image"
-            src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
+            src="test-file-stub"
           />
-          bendolly
+          devadmin
           <i
             aria-hidden="true"
             class="dropdown icon"
@@ -3191,11 +3191,11 @@ exports[`renders Cavatica projects view correctly 5`] = `
           tabindex="0"
         >
           <img
-            alt="bendolly"
+            alt="devadmin"
             class="ui avatar image"
-            src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
+            src="test-file-stub"
           />
-          bendolly
+          devadmin
           <i
             aria-hidden="true"
             class="dropdown icon"
@@ -3857,11 +3857,11 @@ exports[`renders Cavatica projects view correctly 6`] = `
           tabindex="0"
         >
           <img
-            alt="bendolly"
+            alt="devadmin"
             class="ui avatar image"
-            src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
+            src="test-file-stub"
           />
-          bendolly
+          devadmin
           <i
             aria-hidden="true"
             class="dropdown icon"

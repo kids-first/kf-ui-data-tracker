@@ -122,11 +122,11 @@ exports[`renders token list -- with get error 1`] = `
           tabindex="0"
         >
           <img
-            alt="bendolly"
+            alt="devadmin"
             class="ui avatar image"
-            src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
+            src="test-file-stub"
           />
-          bendolly
+          devadmin
           <i
             aria-hidden="true"
             class="dropdown icon"
@@ -574,11 +574,11 @@ exports[`renders token list correctly - displaying look & hidden look 2`] = `
           tabindex="0"
         >
           <img
-            alt="bendolly"
+            alt="devadmin"
             class="ui avatar image"
-            src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
+            src="test-file-stub"
           />
-          bendolly
+          devadmin
           <i
             aria-hidden="true"
             class="dropdown icon"
@@ -1009,11 +1009,11 @@ exports[`renders token list correctly - displaying look & hidden look 3`] = `
           tabindex="0"
         >
           <img
-            alt="bendolly"
+            alt="devadmin"
             class="ui avatar image"
-            src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
+            src="test-file-stub"
           />
-          bendolly
+          devadmin
           <i
             aria-hidden="true"
             class="dropdown icon"
@@ -1454,11 +1454,11 @@ exports[`renders token list correctly - displaying look & hidden look 4`] = `
           tabindex="0"
         >
           <img
-            alt="bendolly"
+            alt="devadmin"
             class="ui avatar image"
-            src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
+            src="test-file-stub"
           />
-          bendolly
+          devadmin
           <i
             aria-hidden="true"
             class="dropdown icon"
@@ -1933,11 +1933,11 @@ exports[`renders token list correctly - displaying look & hidden look 5`] = `
           tabindex="0"
         >
           <img
-            alt="bendolly"
+            alt="devadmin"
             class="ui avatar image"
-            src="https://lh3.googleusercontent.com/-7Agefge42sw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reWt8KI4nO_arpKCb4FzokaKnLgtg/mo/photo.jpg"
+            src="test-file-stub"
           />
-          bendolly
+          devadmin
           <i
             aria-hidden="true"
             class="dropdown icon"
