@@ -17,7 +17,7 @@ import {UPDATE_USER} from '../../state/mutations';
 
 const UsersView = () => {
   const {loading: usersLoading, error, data: userData} = useQuery(ALL_USERS);
-  const [selectedRole, setSelectedRole] = useState('');
+  const [selectedGroup, setSelectedGroup] = useState('');
   const allUsers = userData && userData.allUsers;
 
   const {data: myProfileData, loading: myProfileLoading} = useQuery(MY_PROFILE);
@@ -30,16 +30,6 @@ const UsersView = () => {
       .map(({node}) => node.permissions.edges.map(({node}) => node.codename))
       .flat(2)
       .includes('change_user');
-
-  const filterList = () => {
-    var filteredList = allUsers && allUsers.edges;
-    if (selectedRole.length > 0) {
-      filteredList =
-        allUsers &&
-        allUsers.edges.filter(({node}) => node.roles.includes(selectedRole));
-    }
-    return filteredList;
-  };
 
   // Compute options available for choosing groups
   const {
@@ -54,6 +44,14 @@ const UsersView = () => {
       text: node.name,
       value: node.id,
     }));
+
+  const filteredList =
+    allUsers &&
+    allUsers.edges.filter(
+      ({node}) =>
+        !selectedGroup ||
+        node.groups.edges.map(({node}) => node.id).includes(selectedGroup),
+    );
 
   const loading = usersLoading || myProfileLoading || groupsLoading;
 
@@ -84,10 +82,10 @@ const UsersView = () => {
         <span className="smallLabel">Filter by:</span>
         <Select
           clearable
-          placeholder="User Role"
+          placeholder="User Group"
           loading={loading}
-          options={userRoleOptions}
-          onChange={(e, {name, value}) => setSelectedRole(value.toUpperCase())}
+          options={groupOptions}
+          onChange={(e, {name, value}) => setSelectedGroup(value)}
         />
         <Divider />
         {loading ? (
@@ -98,9 +96,9 @@ const UsersView = () => {
           </Segment>
         ) : (
           <>
-            {filterList().length > 0 ? (
+            {filteredList.length > 0 ? (
               <UserList
-                users={filterList()}
+                users={filteredList}
                 groupOptions={groupOptions}
                 updateUser={canUpdateUser ? updateUser : null}
               />
