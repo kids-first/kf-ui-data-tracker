@@ -314,3 +314,16 @@ export const GET_RELEASED_STUDY = gql`
     }
   }
 `;
+
+export const ALL_GROUPS = gql`
+  query allGroups {
+    allGroups {
+      edges {
+        node {
+          id
+          name
+        }
+      }
+    }
+  }
+`;

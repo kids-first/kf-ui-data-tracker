@@ -3,6 +3,7 @@ import {
   PROJECT_FIELDS,
   STUDY_BASIC_FIELDS,
   STUDY_INFO_FIELDS,
+  USER_FIELDS,
 } from './fragments';
 
 // Mutation to create a new dev token
@@ -206,4 +207,15 @@ export const REMOVE_COLLABORATOR = gql`
     }
   }
   ${STUDY_BASIC_FIELDS}
+`;
+
+export const UPDATE_USER = gql`
+  mutation updateUser($user: ID!, $groups: [ID]) {
+    updateUser(user: $user, groups: $groups) {
+      user {
+        ...UserFields
+      }
+    }
+  }
+  ${USER_FIELDS}
 `;

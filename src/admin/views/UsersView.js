@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Helmet} from 'react-helmet';
-import {useQuery} from '@apollo/react-hooks';
+import {useQuery, useMutation} from '@apollo/react-hooks';
 import {
   Container,
   Dimmer,
@@ -10,19 +10,26 @@ import {
   Select,
   Segment,
   Message,
-  List,
-  Image,
 } from 'semantic-ui-react';
-import {userRoleOptions} from '../../common/enums';
-import {longDate} from '../../common/dateUtils';
-import TimeAgo from 'react-timeago';
-import defaultAvatar from '../../assets/defaultAvatar.png';
-import {ALL_USERS} from '../../state/queries';
+import {UserList} from '../components/UserList';
+import {ALL_USERS, ALL_GROUPS, MY_PROFILE} from '../../state/queries';
+import {UPDATE_USER} from '../../state/mutations';
 
 const UsersView = () => {
-  const {loading, error, data: userData} = useQuery(ALL_USERS);
+  const {loading: usersLoading, error, data: userData} = useQuery(ALL_USERS);
   const [selectedRole, setSelectedRole] = useState('');
   const allUsers = userData && userData.allUsers;
+
+  const {data: myProfileData, loading: myProfileLoading} = useQuery(MY_PROFILE);
+  const profile = myProfileData && myProfileData.myProfile;
+
+  const [updateUser] = useMutation(UPDATE_USER);
+  const canUpdateUser =
+    profile &&
+    profile.groups.edges
+      .map(({node}) => node.permissions.edges.map(({node}) => node.codename))
+      .flat(2)
+      .includes('change_user');
 
   const filterList = () => {
     var filteredList = allUsers && allUsers.edges;
@@ -34,7 +41,23 @@ const UsersView = () => {
     return filteredList;
   };
 
-  if (error)
+  // Compute options available for choosing groups
+  const {
+    data: groupsData,
+    loading: groupsLoading,
+    error: groupsError,
+  } = useQuery(ALL_GROUPS);
+  const groupOptions =
+    groupsData &&
+    groupsData.allGroups.edges.map(({node}) => ({
+      key: node.name,
+      text: node.name,
+      value: node.id,
+    }));
+
+  const loading = usersLoading || myProfileLoading || groupsLoading;
+
+  if (error || groupsError)
     return (
       <Container as={Segment} basic>
         <Helmet>
@@ -44,7 +67,7 @@ const UsersView = () => {
           negative
           icon="warning circle"
           header="Error"
-          content={error.message}
+          content={groupsError.message || error.message}
         />
       </Container>
     );
@@ -76,32 +99,11 @@ const UsersView = () => {
         ) : (
           <>
             {filterList().length > 0 ? (
-              <List relaxed="very">
-                {filterList().map(({node}) => (
-                  <List.Item key={node.id} data-testid="user-item">
-                    <Image avatar src={node.picture || defaultAvatar} />
-                    <List.Content>
-                      <List.Header>
-                        {node.username}
-                        {node.email && <small> - {node.email}</small>}
-                      </List.Header>
-                      <List.Description>
-                        {node.roles.length > 0
-                          ? node.roles.join(', ')
-                          : 'Unknown role'}
-                      </List.Description>
-                    </List.Content>
-                    <List.Content floated="right">
-                      Joined{' '}
-                      <TimeAgo
-                        live={false}
-                        date={node.dateJoined}
-                        title={longDate(node.dateJoined)}
-                      />
-                    </List.Content>
-                  </List.Item>
-                ))}
-              </List>
+              <UserList
+                users={filterList()}
+                groupOptions={groupOptions}
+                updateUser={canUpdateUser ? updateUser : null}
+              />
             ) : (
               <p>No users data available</p>
             )}
