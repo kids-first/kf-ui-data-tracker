@@ -69,6 +69,53 @@ export const allStudiesMock = {
   result: allStudies,
 };
 
+export const allEventsMock = {
+  request: {
+    query: ALL_EVENTS,
+    variables: {
+      orderBy: '-created_at',
+      studyId: 'SD_8WX8QQ06',
+    },
+  },
+  result: allEvents_studyCreation_ing,
+};
+
+export const createStudyMock = {
+  request: {
+    query: CREATE_STUDY,
+    variables: {
+      workflows: ['bwa_mem', 'gatk_haplotypecaller'],
+      input: {
+        externalId: 'benchmark extensible e-business',
+        name: 'benchmark extensible e-business',
+        shortName: '',
+        description: '',
+        releaseDate: null,
+        version: '',
+        attribution: '',
+        anticipatedSamples: 0,
+        awardeeOrganization: '',
+      },
+    },
+  },
+  result: createStudy,
+};
+
+export const createStudyErrorMock = {
+  request: createStudyMock.request,
+  error: new Error('Failed to create the new study'),
+};
+
+export const getStudyMock = {
+  request: {
+    query: GET_STUDY_BY_ID,
+    variables: {
+      kfId: 'SD_8WX8QQ06',
+    },
+  },
+  result: studyByKfId,
+};
+
 export const myProfileMock = {
   request: {
     query: MY_PROFILE,
