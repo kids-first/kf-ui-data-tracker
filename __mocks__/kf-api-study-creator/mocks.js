@@ -62,6 +62,34 @@ import allEvents_studyCreation_err from './responses/allEvents_studyCreation_err
 import allEvents_studyCreation_ing from './responses/allEvents_studyCreation_ing.json';
 import {GraphQLError} from 'graphql';
 
+export const allStudiesMock = {
+  request: {
+    query: ALL_STUDIES,
+  },
+  result: allStudies,
+};
+
+export const myProfileMock = {
+  request: {
+    query: MY_PROFILE,
+  },
+  result: myProfile,
+};
+
+export const myProfileErrorMock = {
+  request: {
+    query: MY_PROFILE,
+  },
+  result: new Error('User not found'),
+};
+
+export const statusMock = {
+  request: {
+    query: STATUS,
+  },
+  result: status,
+};
+
 export const mocks = [
   {
     request: {
