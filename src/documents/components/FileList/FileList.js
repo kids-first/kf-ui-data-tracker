@@ -70,52 +70,50 @@ const FileList = ({
         />
       )}
       {fileList.length ? (
-        <>
-          <Table stackable selectable compact="very" celled>
-            <Table.Header>
-              <Table.Row>
-                <Table.HeaderCell
-                  textAlign="center"
-                  width="1"
-                  onClick={e => {
-                    e.stopPropagation();
-                    onSelectAll();
-                  }}
-                >
-                  <Checkbox
-                    data-testid="file-select-all"
-                    checked={selection.length === fileList.length}
-                  />
-                </Table.HeaderCell>
-                <Table.HeaderCell textAlign="center" width="1">
-                  Type
-                </Table.HeaderCell>
-                <Table.HeaderCell className="px-20">
-                  Document Details
-                </Table.HeaderCell>
-                <Table.HeaderCell textAlign="center">Tags</Table.HeaderCell>
-                <Table.HeaderCell textAlign="center" width="2">
-                  Actions
-                </Table.HeaderCell>
-              </Table.Row>
-            </Table.Header>
-            <Table.Body>
-              {paginatedList.map(({node}) => (
-                <FileElement
-                  key={node.kfId}
-                  fileListId={studyId}
-                  fileNode={node}
-                  isAdmin={isAdmin}
-                  updateFile={updateFile}
-                  selected={selection.includes(node.kfId)}
-                  onSelectOne={onSelectOne}
-                  deleteFile={isAdmin ? deleteFile : null}
-                  downloadFileMutation={downloadFileMutation}
+        <Table stackable selectable compact="very" celled>
+          <Table.Header>
+            <Table.Row>
+              <Table.HeaderCell
+                textAlign="center"
+                width="1"
+                onClick={e => {
+                  e.stopPropagation();
+                  onSelectAll();
+                }}
+              >
+                <Checkbox
+                  data-testid="file-select-all"
+                  checked={selection.length === fileList.length}
                 />
-              ))}
-            </Table.Body>
-          </Table>
-        </>
+              </Table.HeaderCell>
+              <Table.HeaderCell textAlign="center" width="1">
+                Type
+              </Table.HeaderCell>
+              <Table.HeaderCell className="px-20">
+                Document Details
+              </Table.HeaderCell>
+              <Table.HeaderCell textAlign="center">Tags</Table.HeaderCell>
+              <Table.HeaderCell textAlign="center" width="2">
+                Actions
+              </Table.HeaderCell>
+            </Table.Row>
+          </Table.Header>
+          <Table.Body>
+            {paginatedList.map(({node}) => (
+              <FileElement
+                key={node.kfId}
+                fileListId={studyId}
+                fileNode={node}
+                isAdmin={isAdmin}
+                updateFile={updateFile}
+                selected={selection.includes(node.kfId)}
+                onSelectOne={onSelectOne}
+                deleteFile={isAdmin ? deleteFile : null}
+                downloadFileMutation={downloadFileMutation}
+              />
+            ))}
+          </Table.Body>
+        </Table>
       ) : (
         <Segment basic>
           <Header disabled icon textAlign="center">
