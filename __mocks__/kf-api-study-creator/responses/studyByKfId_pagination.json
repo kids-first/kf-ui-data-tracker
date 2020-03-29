@@ -5,7 +5,7 @@
       "name": "benchmark extensible e-business",
       "shortName": null,
       "bucket": "stay-wrong-ready",
-      "kfId": "SD_8WX8QQ06",
+      "kfId": "SD_X6E5KWM4",
       "createdAt": "2019-04-20T15:22:18.780221+00:00",
       "modifiedAt": "2019-04-25T15:22:18.780221+00:00",
       "attribution": null,
@@ -65,8 +65,8 @@
         "edges": [
           {
             "node": {
-              "id": "RmlsZU5vZGU6U0ZfNVpQRU0xNjc=",
-              "kfId": "SF_5ZPEM167",
+              "id": "RmlsZU5vZGU6U0ZfNVpQRU0xNj01",
+              "kfId": "SF_5ZPEM101",
               "name": "organization.jpeg",
               "fileType": "CLN",
               "tags": [],
@@ -76,33 +76,11 @@
                 "edges": [
                   {
                     "node": {
-                      "id": "T2JqZWN0Tm9kZTpGVl80TlpOQkVPRg==",
-                      "kfId": "FV_NVV741M1",
+                      "id": "T2JqZWN0Tm9kZTpGVl80TlpOQkVPRg01",
+                      "kfId": "FV_NVV74101",
                       "state": "PEN",
                       "size": 9893,
-                      "createdAt": "2018-08-21T03:16:11+00:00",
-                      "__typename": "VersionNode"
-                    },
-                    "__typename": "VersionNodeEdge"
-                  },
-                  {
-                    "node": {
-                      "id": "T2JqZWN0Tm9kZTpGVl83NkhONTdaNw==",
-                      "kfId": "FV_KCDKCDYR",
-                      "state": "PEN",
-                      "size": 5460,
-                      "createdAt": "2018-09-27T05:32:26+00:00",
-                      "__typename": "VersionNode"
-                    },
-                    "__typename": "VersionNodeEdge"
-                  },
-                  {
-                    "node": {
-                      "id": "T2JqZWN0Tm9kZTpGVl9IUkFHWE5XMQ==",
-                      "kfId": "FV_800JI8IP",
-                      "state": "PEN",
-                      "size": 5419,
-                      "createdAt": "2017-08-25T00:05:30+00:00",
+                      "createdAt": "2018-08-21T03:01:11+00:00",
                       "__typename": "VersionNode"
                     },
                     "__typename": "VersionNodeEdge"
@@ -116,73 +94,312 @@
           },
           {
             "node": {
-              "id": "RmlsZU5vZGU6U0ZfWTA3SU4xSE8=",
-              "kfId": "SF_Y07IN1HO",
+              "id": "RmlsZU5vZGU6U0ZfWTA3SU4xSE02",
+              "kfId": "SF_Y07IN102",
               "name": "its.mp3",
               "fileType": "SHM",
-              "tags": [
-                "dbGaP",
-                "dCC",
-                "random",
-                "random2",
-                "tag that has ten more char",
-                "hidden tag"
-              ],
+              "tags": ["dbGaP", "random", "tag that has ten more char"],
               "description": "Question meeting move recognize.",
               "downloadUrl": "http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_Y07IN1HO",
               "versions": {
                 "edges": [
                   {
                     "node": {
-                      "id": "T2JqZWN0Tm9kZTpGVl9UWjVROEhYWA==",
-                      "kfId": "FV_IJ2CN4P9",
+                      "id": "T2JqZWN0Tm9kZTpGVl9UWjVROEhYWA02",
+                      "kfId": "FV_IJ2CN402",
                       "state": "PEN",
                       "size": 7394,
-                      "createdAt": "2017-08-22T08:32:38+00:00",
+                      "createdAt": "2017-08-22T08:02:38+00:00",
                       "__typename": "VersionNode"
                     },
                     "__typename": "VersionNodeEdge"
-                  },
+                  }
+                ],
+                "__typename": "VersionNodeConnection"
+              },
+              "__typename": "FileNode"
+            },
+            "__typename": "FileNodeEdge"
+          },
+          {
+            "node": {
+              "id": "RmlsZU5vZGU6U0ZfNVpQRU0xNj03",
+              "kfId": "SF_5ZPEM103",
+              "name": "organization.jpeg",
+              "fileType": "CLN",
+              "tags": [],
+              "description": "Month necessary animal end standard case. View system operation message decade. Actually sing because deal everything woman subject.",
+              "downloadUrl": "http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167",
+              "versions": {
+                "edges": [
                   {
                     "node": {
-                      "id": "T2JqZWN0Tm9kZTpGVl9aOUM1SUUwRg==",
-                      "kfId": "FV_DNTN03CS",
+                      "id": "T2JqZWN0Tm9kZTpGVl80TlpOQkVPRg03",
+                      "kfId": "FV_NVV74103",
                       "state": "PEN",
-                      "size": 5883,
-                      "createdAt": "2017-09-02T21:02:35+00:00",
+                      "size": 9893,
+                      "createdAt": "2018-08-21T03:03:11+00:00",
                       "__typename": "VersionNode"
                     },
                     "__typename": "VersionNodeEdge"
-                  },
+                  }
+                ],
+                "__typename": "VersionNodeConnection"
+              },
+              "__typename": "FileNode"
+            },
+            "__typename": "FileNodeEdge"
+          },
+          {
+            "node": {
+              "id": "RmlsZU5vZGU6U0ZfWTA3SU4xSE04",
+              "kfId": "SF_Y07IN104",
+              "name": "its.mp3",
+              "fileType": "SHM",
+              "tags": ["dbGaP", "random", "tag that has ten more char"],
+              "description": "Question meeting move recognize.",
+              "downloadUrl": "http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_Y07IN1HO",
+              "versions": {
+                "edges": [
                   {
                     "node": {
-                      "id": "T2JqZWN0Tm9kZTpGVl9ITDg0SDhHTw==",
-                      "kfId": "FV_ZDB8JOCT",
+                      "id": "T2JqZWN0Tm9kZTpGVl9UWjVROEhYWA04",
+                      "kfId": "FV_IJ2CN404",
                       "state": "PEN",
-                      "size": 1899,
-                      "createdAt": "2019-03-14T05:46:35+00:00",
+                      "size": 7394,
+                      "createdAt": "2017-08-22T08:04:38+00:00",
                       "__typename": "VersionNode"
                     },
                     "__typename": "VersionNodeEdge"
-                  },
+                  }
+                ],
+                "__typename": "VersionNodeConnection"
+              },
+              "__typename": "FileNode"
+            },
+            "__typename": "FileNodeEdge"
+          },
+          {
+            "node": {
+              "id": "RmlsZU5vZGU6U0ZfNVpQRU0xNj05",
+              "kfId": "SF_5ZPEM105",
+              "name": "organization.jpeg",
+              "fileType": "CLN",
+              "tags": [],
+              "description": "Month necessary animal end standard case. View system operation message decade. Actually sing because deal everything woman subject.",
+              "downloadUrl": "http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167",
+              "versions": {
+                "edges": [
                   {
                     "node": {
-                      "id": "T2JqZWN0Tm9kZTpGVl9YRVg4TERHMw==",
-                      "kfId": "FV_10SBI6VA",
+                      "id": "T2JqZWN0Tm9kZTpGVl80TlpOQkVPRg05",
+                      "kfId": "FV_NVV74105",
                       "state": "PEN",
-                      "size": 7631,
-                      "createdAt": "2018-03-13T23:52:08+00:00",
+                      "size": 9893,
+                      "createdAt": "2018-08-21T03:05:11+00:00",
                       "__typename": "VersionNode"
                     },
                     "__typename": "VersionNodeEdge"
-                  },
+                  }
+                ],
+                "__typename": "VersionNodeConnection"
+              },
+              "__typename": "FileNode"
+            },
+            "__typename": "FileNodeEdge"
+          },
+          {
+            "node": {
+              "id": "RmlsZU5vZGU6U0ZfWTA3SU4xSE06",
+              "kfId": "SF_Y07IN106",
+              "name": "its.mp3",
+              "fileType": "SHM",
+              "tags": ["dbGaP", "random", "tag that has ten more char"],
+              "description": "Question meeting move recognize.",
+              "downloadUrl": "http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_Y07IN1HO",
+              "versions": {
+                "edges": [
                   {
                     "node": {
-                      "id": "T2JqZWN0Tm9kZTpGVl9HV1JLUUVDQQ==",
-                      "kfId": "FV_8KF1VMN9",
+                      "id": "T2JqZWN0Tm9kZTpGVl9UWjVROEhYWA06",
+                      "kfId": "FV_IJ2CN406",
                       "state": "PEN",
-                      "size": 6834,
-                      "createdAt": "2019-04-06T07:51:17+00:00",
+                      "size": 7394,
+                      "createdAt": "2017-08-22T08:06:38+00:00",
+                      "__typename": "VersionNode"
+                    },
+                    "__typename": "VersionNodeEdge"
+                  }
+                ],
+                "__typename": "VersionNodeConnection"
+              },
+              "__typename": "FileNode"
+            },
+            "__typename": "FileNodeEdge"
+          },
+          {
+            "node": {
+              "id": "RmlsZU5vZGU6U0ZfNVpQRU0xNj07",
+              "kfId": "SF_5ZPEM107",
+              "name": "organization.jpeg",
+              "fileType": "CLN",
+              "tags": [],
+              "description": "Month necessary animal end standard case. View system operation message decade. Actually sing because deal everything woman subject.",
+              "downloadUrl": "http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167",
+              "versions": {
+                "edges": [
+                  {
+                    "node": {
+                      "id": "T2JqZWN0Tm9kZTpGVl80TlpOQkVPRg07",
+                      "kfId": "FV_NVV74107",
+                      "state": "PEN",
+                      "size": 9893,
+                      "createdAt": "2018-08-21T03:07:11+00:00",
+                      "__typename": "VersionNode"
+                    },
+                    "__typename": "VersionNodeEdge"
+                  }
+                ],
+                "__typename": "VersionNodeConnection"
+              },
+              "__typename": "FileNode"
+            },
+            "__typename": "FileNodeEdge"
+          },
+          {
+            "node": {
+              "id": "RmlsZU5vZGU6U0ZfWTA3SU4xSE08",
+              "kfId": "SF_Y07IN108",
+              "name": "its.mp3",
+              "fileType": "SHM",
+              "tags": ["dbGaP", "random", "tag that has ten more char"],
+              "description": "Question meeting move recognize.",
+              "downloadUrl": "http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_Y07IN1HO",
+              "versions": {
+                "edges": [
+                  {
+                    "node": {
+                      "id": "T2JqZWN0Tm9kZTpGVl9UWjVROEhYWA08",
+                      "kfId": "FV_IJ2CN408",
+                      "state": "PEN",
+                      "size": 7394,
+                      "createdAt": "2017-08-22T08:08:38+00:00",
+                      "__typename": "VersionNode"
+                    },
+                    "__typename": "VersionNodeEdge"
+                  }
+                ],
+                "__typename": "VersionNodeConnection"
+              },
+              "__typename": "FileNode"
+            },
+            "__typename": "FileNodeEdge"
+          },
+          {
+            "node": {
+              "id": "RmlsZU5vZGU6U0ZfNVpQRU0xNj09",
+              "kfId": "SF_5ZPEM109",
+              "name": "organization.jpeg",
+              "fileType": "CLN",
+              "tags": [],
+              "description": "Month necessary animal end standard case. View system operation message decade. Actually sing because deal everything woman subject.",
+              "downloadUrl": "http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167",
+              "versions": {
+                "edges": [
+                  {
+                    "node": {
+                      "id": "T2JqZWN0Tm9kZTpGVl80TlpOQkVPRg09",
+                      "kfId": "FV_NVV74109",
+                      "state": "PEN",
+                      "size": 9893,
+                      "createdAt": "2018-08-21T03:09:11+00:00",
+                      "__typename": "VersionNode"
+                    },
+                    "__typename": "VersionNodeEdge"
+                  }
+                ],
+                "__typename": "VersionNodeConnection"
+              },
+              "__typename": "FileNode"
+            },
+            "__typename": "FileNodeEdge"
+          },
+          {
+            "node": {
+              "id": "RmlsZU5vZGU6U0ZfWTA3SU4xSE10",
+              "kfId": "SF_Y07IN110",
+              "name": "its.mp3",
+              "fileType": "SHM",
+              "tags": ["dbGaP", "random", "tag that has ten more char"],
+              "description": "Question meeting move recognize.",
+              "downloadUrl": "http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_Y07IN1HO",
+              "versions": {
+                "edges": [
+                  {
+                    "node": {
+                      "id": "T2JqZWN0Tm9kZTpGVl9UWjVROEhYWA10",
+                      "kfId": "FV_IJ2CN410",
+                      "state": "PEN",
+                      "size": 7394,
+                      "createdAt": "2017-08-22T08:10:38+00:00",
+                      "__typename": "VersionNode"
+                    },
+                    "__typename": "VersionNodeEdge"
+                  }
+                ],
+                "__typename": "VersionNodeConnection"
+              },
+              "__typename": "FileNode"
+            },
+            "__typename": "FileNodeEdge"
+          },
+          {
+            "node": {
+              "id": "RmlsZU5vZGU6U0ZfNVpQRU0xNj11",
+              "kfId": "SF_5ZPEM111",
+              "name": "organization.jpeg",
+              "fileType": "CLN",
+              "tags": [],
+              "description": "Month necessary animal end standard case. View system operation message decade. Actually sing because deal everything woman subject.",
+              "downloadUrl": "http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167",
+              "versions": {
+                "edges": [
+                  {
+                    "node": {
+                      "id": "T2JqZWN0Tm9kZTpGVl80TlpOQkVPRg11",
+                      "kfId": "FV_NVV74111",
+                      "state": "PEN",
+                      "size": 9893,
+                      "createdAt": "2018-08-21T03:11:11+00:00",
+                      "__typename": "VersionNode"
+                    },
+                    "__typename": "VersionNodeEdge"
+                  }
+                ],
+                "__typename": "VersionNodeConnection"
+              },
+              "__typename": "FileNode"
+            },
+            "__typename": "FileNodeEdge"
+          },
+          {
+            "node": {
+              "id": "RmlsZU5vZGU6U0ZfWTA3SU4xSE12",
+              "kfId": "SF_Y07IN112",
+              "name": "its.mp3",
+              "fileType": "SHM",
+              "tags": ["dbGaP", "random", "tag that has ten more char"],
+              "description": "Question meeting move recognize.",
+              "downloadUrl": "http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_Y07IN1HO",
+              "versions": {
+                "edges": [
+                  {
+                    "node": {
+                      "id": "T2JqZWN0Tm9kZTpGVl9UWjVROEhYWA12",
+                      "kfId": "FV_IJ2CN412",
+                      "state": "PEN",
+                      "size": 7394,
+                      "createdAt": "2017-08-22T08:12:38+00:00",
                       "__typename": "VersionNode"
                     },
                     "__typename": "VersionNodeEdge"

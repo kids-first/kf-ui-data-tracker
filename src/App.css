@@ -31,6 +31,10 @@ body {
   padding: 0px !important;
 }
 
+.mt-0 {
+  margin-top: 0px !important;
+}
+
 .mb-5 {
   margin-bottom: 5px !important;
 }
@@ -314,4 +318,13 @@ body {
   overflow: scroll;
   max-height: 500px;
   min-height: 150px;
+}
+
+.h-38 {
+  height: 38px !important;
+}
+
+.small-inline {
+  display: inline-block;
+  padding-top: 10px;
 }

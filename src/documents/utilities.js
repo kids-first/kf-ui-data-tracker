@@ -38,7 +38,7 @@ export const downloadFile = (
     },
   }).then(resp => {
     const url = `${KF_STUDY_API}${resp.data.signedUrl.url}`;
-    window.location.href = url;
+    window.open(url, '_blank');
   });
 };
 

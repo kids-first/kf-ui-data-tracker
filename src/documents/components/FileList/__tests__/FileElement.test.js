@@ -17,6 +17,7 @@ it('renders correctly', () => {
             <FileElement
               fileListId={studyByKfId.data.studyByKfId.kfId}
               fileNode={file}
+              selection={[]}
             />
           </tbody>
         </table>
@@ -37,6 +38,7 @@ it('renders loading state', () => {
               loading={true}
               fileNode={file}
               fileListId={studyByKfId.data.studyByKfId.kfId}
+              selection={[]}
             />
           </tbody>
         </table>
@@ -64,6 +66,7 @@ it('renders latest temporary state', () => {
               loading={true}
               fileNode={file}
               fileListId={studyByKfId.data.studyByKfId.kfId}
+              selection={[]}
             />
           </tbody>
         </table>

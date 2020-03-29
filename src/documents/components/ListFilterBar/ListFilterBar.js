@@ -8,17 +8,11 @@ import {
   Segment,
   Responsive,
 } from 'semantic-ui-react';
-import {createDateSort, modifiedDateSort, defaultSort} from '../../utilities';
 import {fileTypeDetail, defaultTagOptions} from '../../../common/enums';
 /**
  * Filter Bar for Study Files, returns filtered list in "filteredList" render prop
  */
-const ListFilterBar = ({fileList, filteredList}) => {
-  const [sortMethod, setSortMethod] = useState('');
-  const [sortDirection, setSortDirection] = useState('ascending');
-  const [typeFilterStatus, setTypeFilterStatus] = useState('');
-  const [tagFilterStatus, setTagFilterStatus] = useState('');
-  const [searchString, setSearchString] = useState('');
+const ListFilterBar = ({fileList, filters, setFilters}) => {
   const [showFilter, setShowFilter] = useState(false);
   const [showSort, setShowSort] = useState(false);
 
@@ -63,29 +57,6 @@ const ListFilterBar = ({fileList, filteredList}) => {
     },
   ];
 
-  const sortedFileList = () => {
-    const sortFuncs = {
-      createdDate: createDateSort,
-      modifyDate: modifiedDateSort,
-      default: defaultSort,
-    };
-    var sortedList = fileList.sort(sortFuncs[sortMethod] || sortFuncs.default);
-    sortedList =
-      sortDirection === 'ascending' ? sortedList : sortedList.reverse();
-    sortedList = sortedList.filter(obj =>
-      obj.node.fileType.includes(typeFilterStatus),
-    );
-    sortedList = sortedList.filter(obj =>
-      obj.node.tags.join(',').includes(tagFilterStatus),
-    );
-    sortedList = sortedList.filter(
-      obj =>
-        obj.node.name.toLowerCase().includes(searchString.toLowerCase()) ||
-        obj.node.description.toLowerCase().includes(searchString.toLowerCase()),
-    );
-    return sortedList;
-  };
-
   return (
     <>
       <Responsive
@@ -98,7 +69,7 @@ const ListFilterBar = ({fileList, filteredList}) => {
           data-testid="show-sort-button"
           basic={!showSort}
           floated="right"
-          primary={sortMethod !== ''}
+          primary={filters.sortMethod !== ''}
           icon="sort"
           onClick={() => setShowSort(!showSort)}
         />
@@ -106,7 +77,9 @@ const ListFilterBar = ({fileList, filteredList}) => {
           data-testid="show-filter-button"
           basic={!showFilter}
           floated="right"
-          primary={typeFilterStatus !== '' || tagFilterStatus !== ''}
+          primary={
+            filters.typeFilterStatus !== '' || filters.tagFilterStatus !== ''
+          }
           icon="filter"
           onClick={() => setShowFilter(!showFilter)}
         />
@@ -115,10 +88,10 @@ const ListFilterBar = ({fileList, filteredList}) => {
           className="mr-80"
           fluid
           icon="search"
-          onChange={(e, {value}) => {
-            setSearchString(value);
-          }}
-          value={searchString}
+          onChange={(e, {value}) =>
+            setFilters({...filters, searchString: value})
+          }
+          value={filters.searchString}
         />
         {showFilter && (
           <Segment>
@@ -132,24 +105,24 @@ const ListFilterBar = ({fileList, filteredList}) => {
               clearable
               disabled={tagOptions.length === 0}
               selectOnBlur={false}
-              value={tagFilterStatus}
+              value={filters.tagFilterStatus}
               options={tagOptions}
               placeholder="Tag"
-              onChange={(e, {value}) => {
-                setTagFilterStatus(value);
-              }}
+              onChange={(e, {value}) =>
+                setFilters({...filters, tagFilterStatus: value})
+              }
             />
             <Dropdown
               fluid
               selection
               clearable
               selectOnBlur={false}
-              value={typeFilterStatus}
+              value={filters.typeFilterStatus}
               options={typeOptions}
               placeholder="Document type"
-              onChange={(e, {value}) => {
-                setTypeFilterStatus(value);
-              }}
+              onChange={(e, {value}) =>
+                setFilters({...filters, typeFilterStatus: value})
+              }
             />
           </Segment>
         )}
@@ -165,14 +138,14 @@ const ListFilterBar = ({fileList, filteredList}) => {
               floated="right"
               data-testid="sort-direction-button"
               onClick={() => {
-                if (sortDirection === 'ascending') {
-                  setSortDirection('descending');
+                if (filters.sortDirection === 'ascending') {
+                  setFilters({...filters, sortDirection: 'descending'});
                 } else {
-                  setSortDirection('ascending');
+                  setFilters({...filters, sortDirection: 'ascending'});
                 }
               }}
             >
-              <Icon name={'sort content ' + sortDirection} />
+              <Icon name={'sort content ' + filters.sortDirection} />
             </Button>
             <div className="mr-40">
               <Dropdown
@@ -180,12 +153,12 @@ const ListFilterBar = ({fileList, filteredList}) => {
                 selection
                 clearable
                 selectOnBlur={false}
-                value={sortMethod}
+                value={filters.sortMethod}
                 options={sortOptions}
                 placeholder="Date option"
-                onChange={(e, {value}) => {
-                  setSortMethod(value);
-                }}
+                onChange={(e, {value}) =>
+                  setFilters({...filters, sortMethod: value})
+                }
               />
             </div>
           </Segment>
@@ -202,10 +175,10 @@ const ListFilterBar = ({fileList, filteredList}) => {
           fluid
           aria-label="file-search-input"
           icon="search"
-          onChange={(e, {value}) => {
-            setSearchString(value);
-          }}
-          value={searchString}
+          onChange={(e, {value}) =>
+            setFilters({...filters, searchString: value})
+          }
+          value={filters.searchString}
         />
         <Segment clearing basic className="noHorizontalPadding noMargin">
           <Segment
@@ -224,23 +197,23 @@ const ListFilterBar = ({fileList, filteredList}) => {
               clearable
               disabled={tagOptions.length === 0}
               selectOnBlur={false}
-              value={tagFilterStatus}
+              value={filters.tagFilterStatus}
               options={tagOptions}
-              onChange={(e, {value}) => {
-                setTagFilterStatus(value);
-              }}
+              onChange={(e, {value}) =>
+                setFilters({...filters, tagFilterStatus: value})
+              }
             />
             <Dropdown
               button
               selection
               clearable
               selectOnBlur={false}
-              value={typeFilterStatus}
+              value={filters.typeFilterStatus}
               options={typeOptions}
               placeholder="Document type"
-              onChange={(e, {value}) => {
-                setTypeFilterStatus(value);
-              }}
+              onChange={(e, {value}) =>
+                setFilters({...filters, typeFilterStatus: value})
+              }
             />
           </Segment>
           <Segment
@@ -258,25 +231,25 @@ const ListFilterBar = ({fileList, filteredList}) => {
               selection
               clearable
               selectOnBlur={false}
-              value={sortMethod}
+              value={filters.sortMethod}
               options={sortOptions}
-              onChange={(e, {value}) => {
-                setSortMethod(value);
-              }}
+              onChange={(e, {value}) =>
+                setFilters({...filters, sortMethod: value})
+              }
             />
             <Button
               icon
               basic
               data-testid="sort-direction-button"
               onClick={() => {
-                if (sortDirection === 'ascending') {
-                  setSortDirection('descending');
+                if (filters.sortDirection === 'ascending') {
+                  setFilters({...filters, sortDirection: 'descending'});
                 } else {
-                  setSortDirection('ascending');
+                  setFilters({...filters, sortDirection: 'ascending'});
                 }
               }}
             >
-              <Icon name={'sort content ' + sortDirection} />
+              <Icon name={'sort content ' + filters.sortDirection} />
             </Button>
           </Segment>
         </Segment>
@@ -300,23 +273,23 @@ const ListFilterBar = ({fileList, filteredList}) => {
             clearable
             disabled={tagOptions.length === 0}
             selectOnBlur={false}
-            value={tagFilterStatus}
+            value={filters.tagFilterStatus}
             options={tagOptions}
             placeholder="Tag"
-            onChange={(e, {value}) => {
-              setTagFilterStatus(value);
-            }}
+            onChange={(e, {value}) =>
+              setFilters({...filters, tagFilterStatus: value})
+            }
           />
           <Dropdown
             selection
             clearable
             selectOnBlur={false}
-            value={typeFilterStatus}
+            value={filters.typeFilterStatus}
             options={typeOptions}
             placeholder="Document type"
-            onChange={(e, {value}) => {
-              setTypeFilterStatus(value);
-            }}
+            onChange={(e, {value}) =>
+              setFilters({...filters, typeFilterStatus: value})
+            }
           />
         </Segment>
         <Segment
@@ -330,39 +303,38 @@ const ListFilterBar = ({fileList, filteredList}) => {
             selection
             clearable
             selectOnBlur={false}
-            value={sortMethod}
+            value={filters.sortMethod}
             options={sortOptions}
             placeholder="Date option"
-            onChange={(e, {value}) => {
-              setSortMethod(value);
-            }}
+            onChange={(e, {value}) =>
+              setFilters({...filters, sortMethod: value})
+            }
           />
           <Button
             icon
             basic
             data-testid="sort-direction-button"
             onClick={() => {
-              if (sortDirection === 'ascending') {
-                setSortDirection('descending');
+              if (filters.sortDirection === 'ascending') {
+                setFilters({...filters, sortDirection: 'descending'});
               } else {
-                setSortDirection('ascending');
+                setFilters({...filters, sortDirection: 'ascending'});
               }
             }}
           >
-            <Icon name={'sort content ' + sortDirection} />
+            <Icon name={'sort content ' + filters.sortDirection} />
           </Button>
         </Segment>
         <Input
           fluid
           aria-label="file-search-input"
           icon="search"
-          onChange={(e, {value}) => {
-            setSearchString(value);
-          }}
-          value={searchString}
+          onChange={(e, {value}) =>
+            setFilters({...filters, searchString: value})
+          }
+          value={filters.searchString}
         />
       </Responsive>
-      {filteredList(sortedFileList())}
     </>
   );
 };

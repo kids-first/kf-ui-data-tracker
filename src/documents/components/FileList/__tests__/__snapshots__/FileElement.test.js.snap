@@ -12,6 +12,23 @@ exports[`renders correctly 1`] = `
         <td
           class="center aligned"
         >
+          <div
+            class="ui fitted checkbox"
+            data-testid="file-select"
+          >
+            <input
+              class="hidden"
+              readonly=""
+              tabindex="0"
+              type="checkbox"
+              value=""
+            />
+            <label />
+          </div>
+        </td>
+        <td
+          class="center aligned"
+        >
           <i
             aria-hidden="true"
             class="hospital big icon"
@@ -68,7 +85,7 @@ exports[`renders correctly 1`] = `
           class="center aligned"
         >
           <div
-            class="ui small buttons"
+            class="ui small fluid buttons"
           >
             <button
               class="ui basic compact icon button"
@@ -104,6 +121,23 @@ exports[`renders latest temporary state 1`] = `
         data-testid="file-item"
         style="background-color: inherit;"
       >
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui fitted checkbox"
+            data-testid="file-select"
+          >
+            <input
+              class="hidden"
+              readonly=""
+              tabindex="0"
+              type="checkbox"
+              value=""
+            />
+            <label />
+          </div>
+        </td>
         <td
           class="center aligned"
         >
@@ -163,7 +197,7 @@ exports[`renders latest temporary state 1`] = `
           class="center aligned"
         >
           <div
-            class="ui small buttons"
+            class="ui small fluid buttons"
           >
             <button
               class="ui basic compact icon button"
@@ -199,6 +233,23 @@ exports[`renders loading state 1`] = `
         data-testid="file-item"
         style="background-color: inherit;"
       >
+        <td
+          class="center aligned"
+        >
+          <div
+            class="ui fitted checkbox"
+            data-testid="file-select"
+          >
+            <input
+              class="hidden"
+              readonly=""
+              tabindex="0"
+              type="checkbox"
+              value=""
+            />
+            <label />
+          </div>
+        </td>
         <td
           class="center aligned"
         >
@@ -258,7 +309,7 @@ exports[`renders loading state 1`] = `
           class="center aligned"
         >
           <div
-            class="ui small buttons"
+            class="ui small fluid buttons"
           >
             <button
               class="ui basic compact icon button"

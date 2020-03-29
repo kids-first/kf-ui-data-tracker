@@ -2,8 +2,8 @@ import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import {withRouter, Link} from 'react-router-dom';
 import TimeAgo from 'react-timeago';
-import {Header, Table, Icon, Responsive} from 'semantic-ui-react';
-import FileActionsContainer from '../../containers/FileActionsContainer';
+import {Header, Table, Icon, Checkbox} from 'semantic-ui-react';
+import FileActionButtons from '../FileActionButtons/FileActionButtons';
 import {fileSortedVersions, fileLatestDate, lengthLimit} from '../../utilities';
 import {fileTypeDetail} from '../../../common/enums';
 import {longDate} from '../../../common/dateUtils';
@@ -46,6 +46,10 @@ const FileElement = ({
   fileListId,
   isAdmin,
   updateFile,
+  deleteFile,
+  downloadFileMutation,
+  selected,
+  onSelectOne,
 }) => {
   const fileKfID = fileNode.kfId || 'unknown ID';
   const fileName = fileNode.name || 'unknown file name';
@@ -66,6 +70,15 @@ const FileElement = ({
         history.push(`/study/${match.params.kfId}/documents/${fileKfID}`)
       }
     >
+      <Table.Cell
+        textAlign="center"
+        onClick={e => {
+          e.stopPropagation();
+          onSelectOne(fileKfID);
+        }}
+      >
+        <Checkbox data-testid="file-select" checked={selected} />
+      </Table.Cell>
       <Table.Cell textAlign="center">
         <Icon name={`${fileType.icon || 'question'}`} size="big" />
       </Table.Cell>
@@ -98,23 +111,13 @@ const FileElement = ({
         <FileTags fileNode={fileNode} updateFile={updateFile} />
       </Table.Cell>
       <Table.Cell textAlign="center">
-        <Responsive
-          as={FileActionsContainer}
-          minWidth={Responsive.onlyTablet.minWidth}
+        <FileActionButtons
+          fluid
           node={fileNode}
           studyId={fileListId}
-          vertical={true}
-          fluid={false}
           isAdmin={isAdmin}
-        />
-        <Responsive
-          as={FileActionsContainer}
-          maxWidth={Responsive.onlyTablet.minWidth - 1}
-          node={fileNode}
-          studyId={fileListId}
-          vertical={false}
-          fluid={true}
-          isAdmin={isAdmin}
+          deleteFile={deleteFile}
+          downloadFileMutation={downloadFileMutation}
         />
       </Table.Cell>
     </Table.Row>

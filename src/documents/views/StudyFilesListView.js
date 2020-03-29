@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Helmet} from 'react-helmet';
 import {useQuery, useMutation} from '@apollo/react-hooks';
 import {GET_STUDY_BY_ID, MY_PROFILE} from '../../state/queries';
-import {UPDATE_FILE} from '../mutations';
+import {FILE_DOWNLOAD_URL, UPDATE_FILE, DELETE_FILE} from '../mutations';
 import {UploadContainer} from '../containers';
 import FileList from '../components/FileList/FileList';
 import {
@@ -13,9 +13,14 @@ import {
   Segment,
   Button,
   Responsive,
+  Header,
+  Icon,
 } from 'semantic-ui-react';
 import UploadWizard from '../modals/UploadWizard/UploadWizard';
 import NotFoundView from '../../views/NotFoundView';
+import ListFilterBar from '../components/ListFilterBar/ListFilterBar';
+import BatchActionBar from '../components/ListFilterBar/BatchActionBar';
+import {createDateSort, modifiedDateSort, defaultSort} from '../utilities';
 
 /**
  * A place holder skeleton for a list of files
@@ -42,6 +47,33 @@ const StudyListSkeleton = () => (
   </Grid>
 );
 
+const filterFiles = (fileList, filters) => {
+  const sortFuncs = {
+    createDate: createDateSort,
+    modifyDate: modifiedDateSort,
+    default: defaultSort,
+  };
+  var sortedList = fileList.sort(
+    sortFuncs[filters.sortMethod] || sortFuncs.default,
+  );
+  sortedList = sortedList.filter(obj =>
+    obj.node.fileType.includes(filters.typeFilterStatus),
+  );
+  sortedList = sortedList.filter(obj =>
+    obj.node.tags.join(',').includes(filters.tagFilterStatus),
+  );
+  sortedList = sortedList.filter(
+    obj =>
+      obj.node.name
+        .toLowerCase()
+        .includes(filters.searchString.toLowerCase()) ||
+      obj.node.description
+        .toLowerCase()
+        .includes(filters.searchString.toLowerCase()),
+  );
+  return sortedList;
+};
+
 /**
  * List and manage files in a study and allow a user to upload more
  */
@@ -51,26 +83,52 @@ const StudyFilesListView = ({
   },
   history,
 }) => {
-  const [updateFileError, setUpdateFileError] = useState(null);
-  const {loading, data, error} = useQuery(GET_STUDY_BY_ID, {
-    variables: {
-      kfId: kfId,
-    },
+  // Document mutations
+  const [downloadFile] = useMutation(FILE_DOWNLOAD_URL);
+  const [deleteFile] = useMutation(DELETE_FILE, {
+    refetchQueries: [{query: GET_STUDY_BY_ID, variables: {kfId: kfId}}],
   });
-  const studyByKfId = data && data.studyByKfId;
-  const user = useQuery(MY_PROFILE);
   const [updateFile] = useMutation(UPDATE_FILE, {
     refetchQueries: [{query: GET_STUDY_BY_ID, variables: {kfId: kfId}}],
     onError: error => {
       setUpdateFileError(error);
     },
   });
+
+  // Study query, includes documents
+  const {loading, data, error} = useQuery(GET_STUDY_BY_ID, {
+    variables: {
+      kfId: kfId,
+    },
+  });
+  const studyByKfId = data && data.studyByKfId;
+  // Query for user
+  const user = useQuery(MY_PROFILE);
   const isAdmin =
     !user.loading && user.data.myProfile
       ? user.data.myProfile.roles.includes('ADMIN')
       : false;
+
   const [dialog, setDialog] = useState(false);
+  // View state
   const [uploadedFile, setFile] = useState(false);
+  const [updateFileError, setUpdateFileError] = useState(null);
+  const [filters, setFilters] = useState({
+    sortMethod: '',
+    sortDirection: 'ascending',
+    typeFilterStatus: '',
+    tagFilterStatus: '',
+    searchString: '',
+  });
+  const [selectedFiles, setSelectedFiles] = useState([]);
+
+  // Computed state
+  const files = !loading && studyByKfId ? studyByKfId.files.edges : [];
+  const filteredFiles =
+    filters.sortDirection === 'ascending'
+      ? filterFiles(files, filters)
+      : filterFiles(files, filters).reverse();
+
   if (!loading && studyByKfId === null) {
     return (
       <NotFoundView
@@ -97,7 +155,6 @@ const StudyFilesListView = ({
         />
       </Container>
     );
-  const files = !loading ? studyByKfId.files.edges : [];
   return (
     <Grid as={Segment} basic container columns={1}>
       <Helmet>
@@ -139,16 +196,49 @@ const StudyFilesListView = ({
       </Grid.Row>
       <Grid.Row>
         <Grid.Column width={16}>
-          {loading ? (
-            <StudyListSkeleton />
+          {files.length > 0 ? (
+            <>
+              {selectedFiles.length === 0 ? (
+                <ListFilterBar
+                  fileList={files}
+                  filters={filters}
+                  setFilters={setFilters}
+                />
+              ) : (
+                <BatchActionBar
+                  fileList={files}
+                  studyId={kfId}
+                  deleteFile={deleteFile}
+                  downloadFileMutation={downloadFile}
+                  selection={selectedFiles}
+                  setSelection={setSelectedFiles}
+                />
+              )}
+              <FileList
+                fileList={filteredFiles}
+                studyId={kfId}
+                isAdmin={isAdmin}
+                updateFile={updateFile}
+                updateError={updateFileError}
+                downloadFileMutation={downloadFile}
+                deleteFile={deleteFile}
+                selection={selectedFiles}
+                setSelection={setSelectedFiles}
+              />
+            </>
           ) : (
-            <FileList
-              fileList={files}
-              studyId={kfId}
-              isAdmin={isAdmin}
-              updateFile={updateFile}
-              updateError={updateFileError}
-            />
+            <>
+              {loading ? (
+                <StudyListSkeleton />
+              ) : (
+                <Segment basic>
+                  <Header icon textAlign="center">
+                    <Icon name="file alternate outline" />
+                    You don't have any documents yet.
+                  </Header>
+                </Segment>
+              )}
+            </>
           )}
           {dialog && (
             <UploadWizard
