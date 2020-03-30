@@ -70,7 +70,7 @@ const StudyList = ({studyList, loading, activeView, roles, history}) => {
           />
         )}
         <Input
-          aria-label="studySearch"
+          aria-label="search studies"
           className="pr-5"
           size="mini"
           iconPosition="left"
