@@ -138,6 +138,15 @@ export const MY_PROFILE = gql`
       id
       slackNotify
       slackMemberId
+      studies {
+        edges {
+          node {
+            id
+            kfId
+            name
+          }
+        }
+      }
       studySubscriptions {
         edges {
           node {
