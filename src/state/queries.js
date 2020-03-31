@@ -16,6 +16,13 @@ export const ALL_STUDIES = gql`
         node {
           ...StudyBasicFields
           ...StudyInfoFields
+          collaborators {
+            edges {
+              node {
+                ...UserFields
+              }
+            }
+          }
           projects {
             edges {
               node {
@@ -45,6 +52,7 @@ export const ALL_STUDIES = gql`
   ${PROJECT_FIELDS}
   ${STUDY_BASIC_FIELDS}
   ${STUDY_INFO_FIELDS}
+  ${USER_FIELDS}
 `;
 
 // Query to get a study by its relay id
