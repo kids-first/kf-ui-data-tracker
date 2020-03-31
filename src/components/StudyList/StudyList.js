@@ -12,6 +12,7 @@ import {
   Placeholder,
   Input,
   Button,
+  Checkbox,
 } from 'semantic-ui-react';
 
 /**
@@ -30,8 +31,16 @@ const HeaderSkeleton = () => (
 /**
  * Displays unordered studies in grid view (include empty stage message)
  */
-const StudyList = ({studyList, loading, activeView, roles, history}) => {
+const StudyList = ({
+  studyList,
+  loading,
+  activeView,
+  roles,
+  history,
+  myProfile,
+}) => {
   const [searchString, setSearchString] = useState('');
+  const [myStudies, setMystudies] = useState(true);
   const isAdmin = roles && roles.includes('ADMIN');
 
   if (loading) {
@@ -42,6 +51,11 @@ const StudyList = ({studyList, loading, activeView, roles, history}) => {
       </Container>
     );
   }
+  const myStudyList =
+    myProfile && myProfile.studies.edges.length > 0
+      ? myProfile.studies.edges.map(({node}) => node.kfId)
+      : [];
+
 
   const filteredStudyList = () => {
     var filteredList = studyList.filter(obj =>
@@ -58,6 +72,11 @@ const StudyList = ({studyList, loading, activeView, roles, history}) => {
         <Header as="h1">Your Investigator Studies</Header>
       </Grid.Column>
       <Grid.Column width={8} textAlign="right">
+        <Checkbox
+          label="Show only my studies"
+          checked={myStudies}
+          onClick={() => setMystudies(!myStudies)}
+        />
         {isAdmin && (
           <Button
             basic
