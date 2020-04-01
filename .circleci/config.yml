@@ -4,7 +4,7 @@
 #
 version: 2
 jobs:
-  build:
+  unit_tests:
     docker:
       # specify the version you desire here
       - image: circleci/node:11.12.0
@@ -41,3 +41,38 @@ jobs:
           yarn run bundlesize
       - run: yarn test -w 1
       - run: yarn codecov
+  integration_tests:
+    docker:
+      - image: circleci/node:11.12.0
+      - image: postgres:11.1
+      - image: kfdrc/kf-api-study-creator:latest
+        entrypoint: /app/bin/dev_entrypoint.sh
+        environment:
+          - DJANGO_SETTINGS_MODULE: creator.settings.development
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
+
+      - run: yarn install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - run: yarn add wait-on
+      - run: yarn start & ./node_modules/wait-on/bin/wait-on http://localhost:3000
+      - run: yarn run cypress run
+workflows:
+  version: 2
+  tests:
+    jobs:
+      - unit_tests
+      - integration_tests
