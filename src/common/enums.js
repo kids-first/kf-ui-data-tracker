@@ -156,6 +156,16 @@ export const eventType = {
     iconName: 'checkmark',
     iconColor: 'blue',
   },
+  CB_ADD: {
+    title: 'Collaborator Added',
+    iconName: 'user',
+    iconColor: 'green',
+  },
+  CB_REM: {
+    title: 'Collaborator Removed',
+    iconName: 'user',
+    iconColor: 'red',
+  },
 };
 
 // Store file type title, description and icon
