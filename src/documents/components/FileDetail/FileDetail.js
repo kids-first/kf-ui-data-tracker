@@ -167,7 +167,7 @@ const FileDetail = ({
                   <AvatarTimeAgo
                     size="tiny"
                     showUsername
-                    creator={fileNode.creator}
+                    creator={sortedVersions[0].node.creator}
                     createdAt={latestDate}
                   />
                 </Segment>
