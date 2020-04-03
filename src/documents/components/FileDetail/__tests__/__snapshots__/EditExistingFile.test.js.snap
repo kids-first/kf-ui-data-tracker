@@ -475,6 +475,23 @@ exports[`edits an existing file correctly 1`] = `
                     >
                       <i
                         aria-hidden="true"
+                        class="file alternate icon"
+                      />
+                       dbGaP Submission File
+                    </small>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <small
+                      class="text"
+                    >
+                      <i
+                        aria-hidden="true"
                         class="question icon"
                       />
                        Other

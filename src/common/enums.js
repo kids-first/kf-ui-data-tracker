@@ -178,6 +178,12 @@ export const fileTypeDetail = {
     description:
       'Tabular files (e.g. CSV, TSV, Excel) containing the biospecimen identifiers and the associated genomic data files. Typically provided by the sequencing center.',
   },
+  DBG: {
+    icon: 'file alternate',
+    title: 'dbGaP Submission File',
+    description:
+      'A document formatted to the dbGaP submission specification for uploading to dbGaP during a new release.',
+  },
   OTH: {
     icon: 'question',
     title: 'Other',

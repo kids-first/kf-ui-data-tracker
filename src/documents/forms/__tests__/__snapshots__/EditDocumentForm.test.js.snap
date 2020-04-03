@@ -170,6 +170,47 @@ Object {
                 >
                   <input
                     class="hidden"
+                    id="DBG"
+                    name="file_type"
+                    readonly=""
+                    tabindex="0"
+                    type="radio"
+                    value="DBG"
+                  />
+                  <i
+                    aria-hidden="true"
+                    class="black file alternate large bordered circular inverted icon"
+                  />
+                </div>
+              </div>
+              <div>
+                <p
+                  class="mb-5"
+                >
+                  <b>
+                    dbGaP Submission File
+                  </b>
+                </p>
+                <p
+                  class="text-wrap-75 text-grey"
+                >
+                  A document formatted to the dbGaP submission specification for uploading to dbGaP during a new release.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="field"
+          >
+            <div
+              class="ui compact segment selectionRadio--card"
+            >
+              <div>
+                <div
+                  class="ui radio checkbox"
+                >
+                  <input
+                    class="hidden"
                     id="OTH"
                     name="file_type"
                     readonly=""
@@ -353,6 +394,47 @@ Object {
                 class="text-wrap-75 text-grey"
               >
                 Tabular files (e.g. CSV, TSV, Excel) containing the biospecimen identifiers and the associated genomic data files. Typically provided by the sequencing center.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="field"
+        >
+          <div
+            class="ui compact segment selectionRadio--card"
+          >
+            <div>
+              <div
+                class="ui radio checkbox"
+              >
+                <input
+                  class="hidden"
+                  id="DBG"
+                  name="file_type"
+                  readonly=""
+                  tabindex="0"
+                  type="radio"
+                  value="DBG"
+                />
+                <i
+                  aria-hidden="true"
+                  class="black file alternate large bordered circular inverted icon"
+                />
+              </div>
+            </div>
+            <div>
+              <p
+                class="mb-5"
+              >
+                <b>
+                  dbGaP Submission File
+                </b>
+              </p>
+              <p
+                class="text-wrap-75 text-grey"
+              >
+                A document formatted to the dbGaP submission specification for uploading to dbGaP during a new release.
               </p>
             </div>
           </div>
@@ -638,6 +720,47 @@ Object {
                 >
                   <input
                     class="hidden"
+                    id="DBG"
+                    name="file_type"
+                    readonly=""
+                    tabindex="0"
+                    type="radio"
+                    value="DBG"
+                  />
+                  <i
+                    aria-hidden="true"
+                    class="black file alternate large bordered circular inverted icon"
+                  />
+                </div>
+              </div>
+              <div>
+                <p
+                  class="mb-5"
+                >
+                  <b>
+                    dbGaP Submission File
+                  </b>
+                </p>
+                <p
+                  class="text-wrap-75 text-grey"
+                >
+                  A document formatted to the dbGaP submission specification for uploading to dbGaP during a new release.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="field"
+          >
+            <div
+              class="ui compact segment selectionRadio--card"
+            >
+              <div>
+                <div
+                  class="ui radio checkbox"
+                >
+                  <input
+                    class="hidden"
                     id="OTH"
                     name="file_type"
                     readonly=""
@@ -834,6 +957,47 @@ Object {
                 class="text-wrap-75 text-grey"
               >
                 Tabular files (e.g. CSV, TSV, Excel) containing the biospecimen identifiers and the associated genomic data files. Typically provided by the sequencing center.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="field"
+        >
+          <div
+            class="ui compact segment selectionRadio--card"
+          >
+            <div>
+              <div
+                class="ui radio checkbox"
+              >
+                <input
+                  class="hidden"
+                  id="DBG"
+                  name="file_type"
+                  readonly=""
+                  tabindex="0"
+                  type="radio"
+                  value="DBG"
+                />
+                <i
+                  aria-hidden="true"
+                  class="black file alternate large bordered circular inverted icon"
+                />
+              </div>
+            </div>
+            <div>
+              <p
+                class="mb-5"
+              >
+                <b>
+                  dbGaP Submission File
+                </b>
+              </p>
+              <p
+                class="text-wrap-75 text-grey"
+              >
+                A document formatted to the dbGaP submission specification for uploading to dbGaP during a new release.
               </p>
             </div>
           </div>

@@ -238,6 +238,23 @@ exports[`deletes a file correctly 1`] = `
                   >
                     <i
                       aria-hidden="true"
+                      class="file alternate icon"
+                    />
+                     dbGaP Submission File
+                  </small>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <small
+                    class="text"
+                  >
+                    <i
+                      aria-hidden="true"
                       class="question icon"
                     />
                      Other
@@ -870,6 +887,23 @@ exports[`deletes a file correctly 2`] = `
                       class="dna icon"
                     />
                      Sequencing Manifest
+                  </small>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <small
+                    class="text"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="file alternate icon"
+                    />
+                     dbGaP Submission File
                   </small>
                 </div>
                 <div
@@ -2892,6 +2926,23 @@ exports[`renders correctly 1`] = `
                   >
                     <i
                       aria-hidden="true"
+                      class="file alternate icon"
+                    />
+                     dbGaP Submission File
+                  </small>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <small
+                    class="text"
+                  >
+                    <i
+                      aria-hidden="true"
                       class="question icon"
                     />
                      Other
@@ -3787,6 +3838,23 @@ exports[`renders with files pagination 1`] = `
                         class="dna icon"
                       />
                        Sequencing Manifest
+                    </small>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <small
+                      class="text"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="file alternate icon"
+                      />
+                       dbGaP Submission File
                     </small>
                   </div>
                   <div
@@ -5861,6 +5929,23 @@ exports[`renders with files pagination 2`] = `
                     >
                       <i
                         aria-hidden="true"
+                        class="file alternate icon"
+                      />
+                       dbGaP Submission File
+                    </small>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <small
+                      class="text"
+                    >
+                      <i
+                        aria-hidden="true"
                         class="question icon"
                       />
                        Other
@@ -6807,6 +6892,23 @@ exports[`renders with files pagination 3`] = `
                         class="dna icon"
                       />
                        Sequencing Manifest
+                    </small>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <small
+                      class="text"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="file alternate icon"
+                      />
+                       dbGaP Submission File
                     </small>
                   </div>
                   <div
@@ -8171,6 +8273,23 @@ exports[`renders with files with more tag toggle 1`] = `
                   >
                     <i
                       aria-hidden="true"
+                      class="file alternate icon"
+                    />
+                     dbGaP Submission File
+                  </small>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <small
+                    class="text"
+                  >
+                    <i
+                      aria-hidden="true"
                       class="question icon"
                     />
                      Other
@@ -8882,6 +9001,23 @@ exports[`renders with files with more tag toggle 2`] = `
                   >
                     <i
                       aria-hidden="true"
+                      class="file alternate icon"
+                    />
+                     dbGaP Submission File
+                  </small>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <small
+                    class="text"
+                  >
+                    <i
+                      aria-hidden="true"
                       class="question icon"
                     />
                      Other
@@ -9579,6 +9715,23 @@ exports[`renders with files with more tag toggle 3`] = `
                       class="dna icon"
                     />
                      Sequencing Manifest
+                  </small>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <small
+                    class="text"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="file alternate icon"
+                    />
+                     dbGaP Submission File
                   </small>
                 </div>
                 <div
@@ -10315,6 +10468,23 @@ exports[`renders with files with more tag toggle 4`] = `
                   >
                     <i
                       aria-hidden="true"
+                      class="file alternate icon"
+                    />
+                     dbGaP Submission File
+                  </small>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <small
+                    class="text"
+                  >
+                    <i
+                      aria-hidden="true"
                       class="question icon"
                     />
                      Other
@@ -11012,6 +11182,23 @@ exports[`renders with files with tag filter 1`] = `
                       class="dna icon"
                     />
                      Sequencing Manifest
+                  </small>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <small
+                    class="text"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="file alternate icon"
+                    />
+                     dbGaP Submission File
                   </small>
                 </div>
                 <div
@@ -11737,6 +11924,23 @@ exports[`renders with files with tag filter 2`] = `
                   >
                     <i
                       aria-hidden="true"
+                      class="file alternate icon"
+                    />
+                     dbGaP Submission File
+                  </small>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <small
+                    class="text"
+                  >
+                    <i
+                      aria-hidden="true"
                       class="question icon"
                     />
                      Other
@@ -12448,6 +12652,23 @@ exports[`renders with files with tag filter 3`] = `
                   >
                     <i
                       aria-hidden="true"
+                      class="file alternate icon"
+                    />
+                     dbGaP Submission File
+                  </small>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <small
+                    class="text"
+                  >
+                    <i
+                      aria-hidden="true"
                       class="question icon"
                     />
                      Other
@@ -13145,6 +13366,23 @@ exports[`renders with files with tag filter 4`] = `
                       class="dna icon"
                     />
                      Sequencing Manifest
+                  </small>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <small
+                    class="text"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="file alternate icon"
+                    />
+                     dbGaP Submission File
                   </small>
                 </div>
                 <div
@@ -19151,6 +19389,23 @@ exports[`update tags with no error adding tag and error with removing tag 8`] = 
                     >
                       <i
                         aria-hidden="true"
+                        class="file alternate icon"
+                      />
+                       dbGaP Submission File
+                    </small>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <small
+                      class="text"
+                    >
+                      <i
+                        aria-hidden="true"
                         class="question icon"
                       />
                        Other
@@ -19875,6 +20130,23 @@ exports[`update tags with no error adding tag and error with removing tag 9`] = 
                         class="dna icon"
                       />
                        Sequencing Manifest
+                    </small>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <small
+                      class="text"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="file alternate icon"
+                      />
+                       dbGaP Submission File
                     </small>
                   </div>
                   <div
@@ -20627,6 +20899,23 @@ exports[`update tags with no error adding tag and error with removing tag 10`] =
                     >
                       <i
                         aria-hidden="true"
+                        class="file alternate icon"
+                      />
+                       dbGaP Submission File
+                    </small>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <small
+                      class="text"
+                    >
+                      <i
+                        aria-hidden="true"
                         class="question icon"
                       />
                        Other
@@ -21351,6 +21640,23 @@ exports[`update tags with no error adding tag and error with removing tag 11`] =
                         class="dna icon"
                       />
                        Sequencing Manifest
+                    </small>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <small
+                      class="text"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="file alternate icon"
+                      />
+                       dbGaP Submission File
                     </small>
                   </div>
                   <div
@@ -22181,6 +22487,23 @@ exports[`update tags with no error adding tag and error with removing tag 12`] =
                     >
                       <i
                         aria-hidden="true"
+                        class="file alternate icon"
+                      />
+                       dbGaP Submission File
+                    </small>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <small
+                      class="text"
+                    >
+                      <i
+                        aria-hidden="true"
                         class="question icon"
                       />
                        Other
@@ -22974,6 +23297,23 @@ exports[`update tags with no error adding tag and error with removing tag 13`] =
                         class="dna icon"
                       />
                        Sequencing Manifest
+                    </small>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <small
+                      class="text"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="file alternate icon"
+                      />
+                       dbGaP Submission File
                     </small>
                   </div>
                   <div
@@ -23797,6 +24137,23 @@ exports[`update tags with no error adding tag and error with removing tag 14`] =
                         class="dna icon"
                       />
                        Sequencing Manifest
+                    </small>
+                  </div>
+                  <div
+                    aria-checked="false"
+                    aria-selected="false"
+                    class="item"
+                    role="option"
+                    style="pointer-events: all;"
+                  >
+                    <small
+                      class="text"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="file alternate icon"
+                      />
+                       dbGaP Submission File
                     </small>
                   </div>
                   <div
