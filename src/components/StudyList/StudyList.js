@@ -56,12 +56,33 @@ const StudyList = ({
       ? myProfile.studies.edges.map(({node}) => node.kfId)
       : [];
 
+  const conactCollaborators = collaborators => {
+    return collaborators.length > 0
+      ? collaborators
+          .map(({node}) =>
+            [node.username, node.firstName, node.lastName].join(' '),
+          )
+          .join(' ')
+      : '';
+  };
 
   const filteredStudyList = () => {
-    var filteredList = studyList.filter(obj =>
-      (obj.node.name + obj.node.shortName + obj.node.kfId)
-        .toLowerCase()
-        .includes(searchString.toLowerCase()),
+    const originList = myStudies
+      ? studyList.filter(({node}) => myStudyList.includes(node.kfId))
+      : studyList;
+    const filteredList = originList.filter(
+      ({
+        node: {
+          name,
+          shortName,
+          kfId,
+          collaborators: {edges},
+        },
+      }) =>
+        [name, shortName, kfId, conactCollaborators(edges)]
+          .join(' ')
+          .toLowerCase()
+          .includes(searchString.toLowerCase()),
     );
     return filteredList;
   };
