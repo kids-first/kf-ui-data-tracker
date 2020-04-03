@@ -7,11 +7,18 @@ import {Button, Icon} from 'semantic-ui-react';
  * Dispaly text on buttons as optional
  * Customize diffrent buttons in diffrent sized
  */
-const ToggleButtons = ({buttons, onToggle, size, hideText, selected}) => {
+const ToggleButtons = ({
+  buttons,
+  onToggle,
+  size,
+  hideText,
+  selected,
+  className,
+}) => {
   const [active, setActive] = useState(selected || buttons[0].key);
 
   return (
-    <Button.Group size={size}>
+    <Button.Group size={size} className={className}>
       {buttons.map(({key, text, icon}, idx) => (
         <Button
           key={key}

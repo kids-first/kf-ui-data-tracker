@@ -89,10 +89,10 @@ const StudyList = ({
 
   return (
     <Grid as={Segment} basic container stackable>
-      <Grid.Column width={8} textAlign="left">
-        <Header as="h1">Your Investigator Studies</Header>
-      </Grid.Column>
-      <Grid.Column width={8} textAlign="right">
+      <Grid.Column width={16} textAlign="right">
+        <Header as="h1" floated="left">
+          Your Investigator Studies
+        </Header>
         <Checkbox
           label="Show only my studies"
           checked={myStudies}
@@ -102,6 +102,7 @@ const StudyList = ({
           <Button
             basic
             primary
+            className="ml-10"
             size="mini"
             icon="add"
             content="Add Study"
@@ -111,17 +112,18 @@ const StudyList = ({
         )}
         <Input
           aria-label="search studies"
-          className="pr-5"
+          className="ml-10"
           size="mini"
           iconPosition="left"
           icon="search"
-          placeholder="Search by Study Name"
+          placeholder="Search by study name or collaborator"
           onChange={(e, {value}) => {
             setSearchString(value);
           }}
           value={searchString}
         />
         <ToggleButtons
+          className="ml-10"
           size="mini"
           hideText
           onToggle={({key}) => {
@@ -162,6 +164,7 @@ const StudyList = ({
                   'releaseDate',
                   'anticipatedSamples',
                   'awardeeOrganization',
+                  'collaborators',
                 ]}
               />
             )}
