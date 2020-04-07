@@ -535,7 +535,8 @@ exports[`renders study list correctly -- default stage 1`] = `
           class="ui mini buttons"
         >
           <button
-            class="ui icon primary button"
+            aria-label="see studies in list view"
+            class="ui active icon button"
             data-testid="list"
             tabindex="0"
           >
@@ -545,6 +546,7 @@ exports[`renders study list correctly -- default stage 1`] = `
             />
           </button>
           <button
+            aria-label="see studies in grid view"
             class="ui icon button"
             data-testid="grid"
             tabindex="0"
@@ -1111,6 +1113,7 @@ exports[`renders study list correctly -- default stage 2`] = `
           class="ui mini buttons"
         >
           <button
+            aria-label="see studies in list view"
             class="ui icon button"
             data-testid="list"
             tabindex="0"
@@ -1121,7 +1124,8 @@ exports[`renders study list correctly -- default stage 2`] = `
             />
           </button>
           <button
-            class="ui icon primary button"
+            aria-label="see studies in grid view"
+            class="ui active icon button"
             data-testid="grid"
             tabindex="0"
           >
@@ -1653,6 +1657,7 @@ exports[`renders study list correctly -- default stage 3`] = `
           class="ui mini buttons"
         >
           <button
+            aria-label="see studies in list view"
             class="ui icon button"
             data-testid="list"
             tabindex="0"
@@ -1663,7 +1668,8 @@ exports[`renders study list correctly -- default stage 3`] = `
             />
           </button>
           <button
-            class="ui icon primary button"
+            aria-label="see studies in grid view"
+            class="ui active icon button"
             data-testid="grid"
             tabindex="0"
           >
@@ -1994,6 +2000,7 @@ exports[`renders study list correctly -- default stage 4`] = `
           class="ui mini buttons"
         >
           <button
+            aria-label="see studies in list view"
             class="ui icon button"
             data-testid="list"
             tabindex="0"
@@ -2004,7 +2011,8 @@ exports[`renders study list correctly -- default stage 4`] = `
             />
           </button>
           <button
-            class="ui icon primary button"
+            aria-label="see studies in grid view"
+            class="ui active icon button"
             data-testid="grid"
             tabindex="0"
           >
@@ -2276,7 +2284,8 @@ exports[`renders study list correctly -- release error 1`] = `
           class="ui mini buttons"
         >
           <button
-            class="ui icon primary button"
+            aria-label="see studies in list view"
+            class="ui active icon button"
             data-testid="list"
             tabindex="0"
           >
@@ -2286,6 +2295,7 @@ exports[`renders study list correctly -- release error 1`] = `
             />
           </button>
           <button
+            aria-label="see studies in grid view"
             class="ui icon button"
             data-testid="grid"
             tabindex="0"
