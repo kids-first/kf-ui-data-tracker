@@ -55,7 +55,9 @@
     "start": "REACT_APP_COMMITHASH=`git rev-parse --short HEAD` REACT_APP_LAST_VERSION=`git describe --always --tags` react-app-rewired start",
     "build": "REACT_APP_COMMITHASH=`git rev-parse --short HEAD` REACT_APP_LAST_VERSION=`git describe --always --tags` react-app-rewired build",
     "test": "yarn run jest",
-    "prettify": "prettier --write \"**/*.{js,json,css,md}\" \"!package.json\""
+    "prettify": "prettier --write \"**/*.{js,json,css,md}\" \"!package.json\"",
+    "cy:open": "yarn run cypress open",
+    "cy:test": "yarn run cypress run"
   },
   "eslintConfig": {
     "extends": "react-app"
