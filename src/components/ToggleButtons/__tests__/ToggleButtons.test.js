@@ -20,7 +20,7 @@ it('renders toggle button correctly', () => {
   const activeButton = tree.getByText(mockButtons[0].text);
   expect(tree.container).toMatchSnapshot();
   // only renders one active button
-  expect(activeButton.className).toContain('primary');
+  expect(activeButton.className).toContain('active');
 });
 
 it('changes active button on click', async () => {
@@ -37,7 +37,7 @@ it('changes active button on click', async () => {
   );
   expect(tree.container).toMatchSnapshot();
   // renders the list button with the active state
-  expect(activeButton.className).toContain('primary');
+  expect(activeButton.className).toContain('active');
 });
 
 it('calls onToggle prop on click', async () => {
@@ -59,7 +59,7 @@ it('calls onToggle prop on click', async () => {
   // returns an object with key value pair of {text: 'list'}
   expect(mockOnToggle.mock.calls[0][0].key).toBe('list');
   // renders the list button with the active state
-  expect(activeButton.className).toContain('primary');
+  expect(activeButton.className).toContain('active');
 });
 
 it('renders toggle button in diffrent sizes', () => {
