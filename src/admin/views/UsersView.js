@@ -1,40 +1,73 @@
 import React, {useState} from 'react';
 import {Helmet} from 'react-helmet';
-import {useQuery} from '@apollo/react-hooks';
+import {useQuery, useMutation} from '@apollo/react-hooks';
 import {
   Container,
   Dimmer,
   Divider,
+  Form,
   Header,
+  Input,
   Loader,
   Select,
   Segment,
   Message,
-  List,
-  Image,
 } from 'semantic-ui-react';
-import {userRoleOptions} from '../../common/enums';
-import {longDate} from '../../common/dateUtils';
-import TimeAgo from 'react-timeago';
-import defaultAvatar from '../../assets/defaultAvatar.png';
-import {ALL_USERS} from '../../state/queries';
+import {UserList} from '../components/UserList';
+import {ALL_USERS, ALL_GROUPS, MY_PROFILE} from '../../state/queries';
+import {UPDATE_USER} from '../../state/mutations';
 
 const UsersView = () => {
-  const {loading, error, data: userData} = useQuery(ALL_USERS);
-  const [selectedRole, setSelectedRole] = useState('');
+  const {loading: usersLoading, error, data: userData} = useQuery(ALL_USERS);
+  const [searchString, setSearchString] = useState('');
+  const [selectedGroup, setSelectedGroup] = useState('');
   const allUsers = userData && userData.allUsers;
 
-  const filterList = () => {
-    var filteredList = allUsers && allUsers.edges;
-    if (selectedRole.length > 0) {
-      filteredList =
-        allUsers &&
-        allUsers.edges.filter(({node}) => node.roles.includes(selectedRole));
-    }
-    return filteredList;
-  };
+  const {data: myProfileData, loading: myProfileLoading} = useQuery(MY_PROFILE);
+  const profile = myProfileData && myProfileData.myProfile;
 
-  if (error)
+  const [updateUser] = useMutation(UPDATE_USER);
+
+  const permissions =
+    profile &&
+    profile.groups &&
+    profile.groups.edges &&
+    profile.groups.edges
+      .map(({node}) => node.permissions.edges.map(({node}) => node.codename))
+      .reduce((prev, curr) => prev.concat(curr));
+
+  const canUpdateUser = permissions && permissions.includes('change_user');
+
+  // Compute options available for choosing groups
+  const {
+    data: groupsData,
+    loading: groupsLoading,
+    error: groupsError,
+  } = useQuery(ALL_GROUPS);
+  const groupOptions =
+    groupsData &&
+    groupsData.allGroups.edges.map(({node}) => ({
+      key: node.name,
+      text: node.name,
+      value: node.id,
+    }));
+
+  const filteredList =
+    allUsers &&
+    allUsers.edges.filter(
+      ({node}) =>
+        (!selectedGroup ||
+          node.groups.edges.map(({node}) => node.id).includes(selectedGroup)) &&
+        (!searchString ||
+          node.username.includes(searchString) ||
+          node.firstName.includes(searchString) ||
+          node.lastName.includes(searchString) ||
+          node.email.includes(searchString)),
+    );
+
+  const loading = usersLoading || myProfileLoading || groupsLoading;
+
+  if (error || groupsError)
     return (
       <Container as={Segment} basic>
         <Helmet>
@@ -44,7 +77,7 @@ const UsersView = () => {
           negative
           icon="warning circle"
           header="Error"
-          content={error.message}
+          content={(groupsError && groupsError.message) || error.message}
         />
       </Container>
     );
@@ -58,14 +91,32 @@ const UsersView = () => {
         All users registered in the data tracker are available here.
       </Segment>
       <Segment basic>
-        <span className="smallLabel">Filter by:</span>
-        <Select
-          clearable
-          placeholder="User Role"
-          loading={loading}
-          options={userRoleOptions}
-          onChange={(e, {name, value}) => setSelectedRole(value.toUpperCase())}
-        />
+        <Form widths="equal">
+          <Form.Group inline>
+            <Form.Field
+              label="Filter by:"
+              aria-label="group-filter"
+              width={8}
+              control={Select}
+              clearable
+              placeholder="User Group"
+              loading={loading}
+              options={groupOptions}
+              onChange={(e, {name, value}) => setSelectedGroup(value)}
+            />
+            <Form.Field
+              width={8}
+              control={Input}
+              clearable
+              aria-label="userSearch"
+              iconPosition="left"
+              icon="search"
+              placeholder="Search by name or email"
+              onChange={(e, {value}) => setSearchString(value)}
+              value={searchString}
+            />
+          </Form.Group>
+        </Form>
         <Divider />
         {loading ? (
           <Segment basic padded="very">
@@ -75,33 +126,12 @@ const UsersView = () => {
           </Segment>
         ) : (
           <>
-            {filterList().length > 0 ? (
-              <List relaxed="very">
-                {filterList().map(({node}) => (
-                  <List.Item key={node.id} data-testid="user-item">
-                    <Image avatar src={node.picture || defaultAvatar} />
-                    <List.Content>
-                      <List.Header>
-                        {node.username}
-                        {node.email && <small> - {node.email}</small>}
-                      </List.Header>
-                      <List.Description>
-                        {node.roles.length > 0
-                          ? node.roles.join(', ')
-                          : 'Unknown role'}
-                      </List.Description>
-                    </List.Content>
-                    <List.Content floated="right">
-                      Joined{' '}
-                      <TimeAgo
-                        live={false}
-                        date={node.dateJoined}
-                        title={longDate(node.dateJoined)}
-                      />
-                    </List.Content>
-                  </List.Item>
-                ))}
-              </List>
+            {filteredList.length > 0 ? (
+              <UserList
+                users={filteredList}
+                groupOptions={groupOptions}
+                updateUser={canUpdateUser ? updateUser : null}
+              />
             ) : (
               <p>No users data available</p>
             )}

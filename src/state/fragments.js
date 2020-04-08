@@ -64,11 +64,29 @@ export const CREATOR_FIELDS = gql`
 export const USER_FIELDS = gql`
   fragment UserFields on UserNode {
     id
+    dateJoined
     username
     firstName
     lastName
     email
     picture
     roles
+    groups {
+      edges {
+        node {
+          id
+          name
+          permissions {
+            edges {
+              node {
+                id
+                name
+                codename
+              }
+            }
+          }
+        }
+      }
+    }
   }
 `;

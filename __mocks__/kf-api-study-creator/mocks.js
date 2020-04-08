@@ -3,6 +3,7 @@ import {
   GET_STUDY_BY_ID,
   MY_PROFILE,
   ALL_EVENTS,
+  ALL_GROUPS,
   ALL_USERS,
   GET_PROJECTS,
   STATUS,
@@ -52,6 +53,7 @@ import allEvents_refetch from './responses/allEvents_refetch.json';
 import allEvents_20 from './responses/allEvents_20.json';
 import allEvents_40 from './responses/allEvents_40.json';
 import allUsers from './responses/allUsers.json';
+import allGroups from './responses/allGroups.json';
 import allProjects from './responses/allProjects.json';
 import signedUrl from './responses/signedUrl.json';
 import syncProjects from './responses/syncProjects.json';
@@ -61,6 +63,100 @@ import allEvents_studyCreation from './responses/allEvents_studyCreation.json';
 import allEvents_studyCreation_err from './responses/allEvents_studyCreation_err.json';
 import allEvents_studyCreation_ing from './responses/allEvents_studyCreation_ing.json';
 import {GraphQLError} from 'graphql';
+
+export const allStudiesMock = {
+  request: {
+    query: ALL_STUDIES,
+  },
+  result: allStudies,
+};
+
+export const allGroupsMock = {
+  request: {
+    query: ALL_GROUPS,
+  },
+  result: allGroups,
+};
+
+export const allUsersMock = {
+  request: {
+    query: ALL_USERS,
+  },
+  result: allUsers,
+};
+
+export const allUsersErrorMock = {
+  request: allUsersMock.request,
+  error: new Error('Failed to fetch users information'),
+};
+
+export const allEventsMock = {
+  request: {
+    query: ALL_EVENTS,
+    variables: {
+      orderBy: '-created_at',
+      studyId: 'SD_8WX8QQ06',
+    },
+  },
+  result: allEvents_studyCreation_ing,
+};
+
+export const createStudyMock = {
+  request: {
+    query: CREATE_STUDY,
+    variables: {
+      workflows: ['bwa_mem', 'gatk_haplotypecaller'],
+      input: {
+        externalId: 'benchmark extensible e-business',
+        name: 'benchmark extensible e-business',
+        shortName: '',
+        description: '',
+        releaseDate: null,
+        version: '',
+        attribution: '',
+        anticipatedSamples: 0,
+        awardeeOrganization: '',
+      },
+    },
+  },
+  result: createStudy,
+};
+
+export const createStudyErrorMock = {
+  request: createStudyMock.request,
+  error: new Error('Failed to create the new study'),
+};
+
+export const getStudyMock = {
+  request: {
+    query: GET_STUDY_BY_ID,
+    variables: {
+      kfId: 'SD_8WX8QQ06',
+    },
+  },
+  result: studyByKfId,
+};
+
+export const myProfileMock = {
+  request: {
+    query: MY_PROFILE,
+  },
+  result: myProfile,
+};
+
+export const myProfileErrorMock = {
+  request: {
+    query: MY_PROFILE,
+  },
+  result: new Error('User not found'),
+};
+
+export const statusMock = {
+  request: {
+    query: STATUS,
+  },
+  result: status,
+};
 
 export const mocks = [
   {

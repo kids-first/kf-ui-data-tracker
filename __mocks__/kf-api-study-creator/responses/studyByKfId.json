@@ -28,6 +28,8 @@
               "email": "ericksontracy@benitez-ruiz.com",
               "picture": "",
               "roles": [],
+              "dateJoined": "2020-03-29T01:36:52.832924+00:00",
+              "groups": {"edges": [], "__typename": "GroupNodeConnection"},
               "__typename": "UserNode"
             },
             "__typename": "UserNodeEdge"
@@ -41,19 +43,292 @@
               "email": "richard06@merritt.net",
               "picture": "",
               "roles": [],
+              "dateJoined": "2020-03-29T01:36:52.832924+00:00",
+              "groups": {"edges": [], "__typename": "GroupNodeConnection"},
               "__typename": "UserNode"
             },
             "__typename": "UserNodeEdge"
           },
           {
             "node": {
-              "id": "VXNlck5vZGU6MB3=",
+              "id": "VXNlck5vZGU6MTY=",
+              "dateJoined": "2020-03-29T01:36:54.053128+00:00",
               "username": "devadmin",
               "firstName": "",
               "lastName": "",
               "email": "admin@myproject.com",
               "picture": "",
               "roles": ["ADMIN"],
+              "groups": {
+                "edges": [
+                  {
+                    "node": {
+                      "id": "R3JvdXBOb2RlOjE=",
+                      "name": "Administrators",
+                      "permissions": {
+                        "edges": [
+                          {
+                            "node": {
+                              "id": "UGVybWlzc2lvbk5vZGU6MTI=",
+                              "name": "Can view group",
+                              "codename": "view_group",
+                              "__typename": "PermissionNode"
+                            },
+                            "__typename": "PermissionNodeEdge"
+                          },
+                          {
+                            "node": {
+                              "id": "UGVybWlzc2lvbk5vZGU6OA==",
+                              "name": "Can view permission",
+                              "codename": "view_permission",
+                              "__typename": "PermissionNode"
+                            },
+                            "__typename": "PermissionNodeEdge"
+                          },
+                          {
+                            "node": {
+                              "id": "UGVybWlzc2lvbk5vZGU6NjE=",
+                              "name": "Can link a bucket to a study",
+                              "codename": "link_bucket",
+                              "__typename": "PermissionNode"
+                            },
+                            "__typename": "PermissionNodeEdge"
+                          },
+                          {
+                            "node": {
+                              "id": "UGVybWlzc2lvbk5vZGU6NjA=",
+                              "name": "Can list all buckets",
+                              "codename": "list_all_bucket",
+                              "__typename": "PermissionNode"
+                            },
+                            "__typename": "PermissionNodeEdge"
+                          },
+                          {
+                            "node": {
+                              "id": "UGVybWlzc2lvbk5vZGU6NjI=",
+                              "name": "Can unlink a bucket to a study",
+                              "codename": "unlink_bucket",
+                              "__typename": "PermissionNode"
+                            },
+                            "__typename": "PermissionNodeEdge"
+                          },
+                          {
+                            "node": {
+                              "id": "UGVybWlzc2lvbk5vZGU6NTk=",
+                              "name": "Can view bucket",
+                              "codename": "view_bucket",
+                              "__typename": "PermissionNode"
+                            },
+                            "__typename": "PermissionNodeEdge"
+                          },
+                          {
+                            "node": {
+                              "id": "UGVybWlzc2lvbk5vZGU6NzY=",
+                              "name": "Can view job",
+                              "codename": "view_job",
+                              "__typename": "PermissionNode"
+                            },
+                            "__typename": "PermissionNodeEdge"
+                          },
+                          {
+                            "node": {
+                              "id": "UGVybWlzc2lvbk5vZGU6Nzg=",
+                              "name": "Can view queues",
+                              "codename": "view_queue",
+                              "__typename": "PermissionNode"
+                            },
+                            "__typename": "PermissionNodeEdge"
+                          },
+                          {
+                            "node": {
+                              "id": "UGVybWlzc2lvbk5vZGU6Nzc=",
+                              "name": "Can view settings",
+                              "codename": "view_settings",
+                              "__typename": "PermissionNode"
+                            },
+                            "__typename": "PermissionNodeEdge"
+                          },
+                          {
+                            "node": {
+                              "id": "UGVybWlzc2lvbk5vZGU6Njk=",
+                              "name": "Can change user",
+                              "codename": "change_user",
+                              "__typename": "PermissionNode"
+                            },
+                            "__typename": "PermissionNodeEdge"
+                          },
+                          {
+                            "node": {
+                              "id": "UGVybWlzc2lvbk5vZGU6NzI=",
+                              "name": "Can list all users",
+                              "codename": "list_all_user",
+                              "__typename": "PermissionNode"
+                            },
+                            "__typename": "PermissionNodeEdge"
+                          },
+                          {
+                            "node": {
+                              "id": "UGVybWlzc2lvbk5vZGU6NjY=",
+                              "name": "Can view event",
+                              "codename": "view_event",
+                              "__typename": "PermissionNode"
+                            },
+                            "__typename": "PermissionNodeEdge"
+                          },
+                          {
+                            "node": {
+                              "id": "UGVybWlzc2lvbk5vZGU6Mzc=",
+                              "name": "Can list all versions",
+                              "codename": "list_all_version",
+                              "__typename": "PermissionNode"
+                            },
+                            "__typename": "PermissionNodeEdge"
+                          },
+                          {
+                            "node": {
+                              "id": "UGVybWlzc2lvbk5vZGU6Mjk=",
+                              "name": "Can add download token",
+                              "codename": "add_downloadtoken",
+                              "__typename": "PermissionNode"
+                            },
+                            "__typename": "PermissionNodeEdge"
+                          },
+                          {
+                            "node": {
+                              "id": "UGVybWlzc2lvbk5vZGU6MzE=",
+                              "name": "Can delete download token",
+                              "codename": "delete_downloadtoken",
+                              "__typename": "PermissionNode"
+                            },
+                            "__typename": "PermissionNodeEdge"
+                          },
+                          {
+                            "node": {
+                              "id": "UGVybWlzc2lvbk5vZGU6MzI=",
+                              "name": "Can view download token",
+                              "codename": "view_downloadtoken",
+                              "__typename": "PermissionNode"
+                            },
+                            "__typename": "PermissionNodeEdge"
+                          },
+                          {
+                            "node": {
+                              "id": "UGVybWlzc2lvbk5vZGU6MjE=",
+                              "name": "Can add file",
+                              "codename": "add_file",
+                              "__typename": "PermissionNode"
+                            },
+                            "__typename": "PermissionNodeEdge"
+                          },
+                          {
+                            "node": {
+                              "id": "UGVybWlzc2lvbk5vZGU6MjI=",
+                              "name": "Can change file",
+                              "codename": "change_file",
+                              "__typename": "PermissionNode"
+                            },
+                            "__typename": "PermissionNodeEdge"
+                          },
+                          {
+                            "node": {
+                              "id": "UGVybWlzc2lvbk5vZGU6MjM=",
+                              "name": "Can delete file",
+                              "codename": "delete_file",
+                              "__typename": "PermissionNode"
+                            },
+                            "__typename": "PermissionNodeEdge"
+                          },
+                          {
+                            "node": {
+                              "id": "UGVybWlzc2lvbk5vZGU6MjU=",
+                              "name": "Can list all files",
+                              "codename": "list_all_file",
+                              "__typename": "PermissionNode"
+                            },
+                            "__typename": "PermissionNodeEdge"
+                          },
+                          {
+                            "node": {
+                              "id": "UGVybWlzc2lvbk5vZGU6MjQ=",
+                              "name": "Can view file",
+                              "codename": "view_file",
+                              "__typename": "PermissionNode"
+                            },
+                            "__typename": "PermissionNodeEdge"
+                          },
+                          {
+                            "node": {
+                              "id": "UGVybWlzc2lvbk5vZGU6Mzg=",
+                              "name": "Can add version",
+                              "codename": "add_version",
+                              "__typename": "PermissionNode"
+                            },
+                            "__typename": "PermissionNodeEdge"
+                          },
+                          {
+                            "node": {
+                              "id": "UGVybWlzc2lvbk5vZGU6Mzk=",
+                              "name": "Can change version",
+                              "codename": "change_version",
+                              "__typename": "PermissionNode"
+                            },
+                            "__typename": "PermissionNodeEdge"
+                          },
+                          {
+                            "node": {
+                              "id": "UGVybWlzc2lvbk5vZGU6NDA=",
+                              "name": "Can delete version",
+                              "codename": "delete_version",
+                              "__typename": "PermissionNode"
+                            },
+                            "__typename": "PermissionNodeEdge"
+                          },
+                          {
+                            "node": {
+                              "id": "UGVybWlzc2lvbk5vZGU6NDE=",
+                              "name": "Can view version",
+                              "codename": "view_version",
+                              "__typename": "PermissionNode"
+                            },
+                            "__typename": "PermissionNodeEdge"
+                          },
+                          {
+                            "node": {
+                              "id": "UGVybWlzc2lvbk5vZGU6NTA=",
+                              "name": "Can add a collaborator to the study",
+                              "codename": "add_collaborator",
+                              "__typename": "PermissionNode"
+                            },
+                            "__typename": "PermissionNodeEdge"
+                          },
+                          {
+                            "node": {
+                              "id": "UGVybWlzc2lvbk5vZGU6NTE=",
+                              "name": "Can remove a collaborator to the study",
+                              "codename": "remove_collaborator",
+                              "__typename": "PermissionNode"
+                            },
+                            "__typename": "PermissionNodeEdge"
+                          },
+                          {
+                            "node": {
+                              "id": "UGVybWlzc2lvbk5vZGU6NDg=",
+                              "name": "Can view study",
+                              "codename": "view_study",
+                              "__typename": "PermissionNode"
+                            },
+                            "__typename": "PermissionNodeEdge"
+                          }
+                        ],
+                        "__typename": "PermissionNodeConnection"
+                      },
+                      "__typename": "GroupNode"
+                    },
+                    "__typename": "GroupNodeEdge"
+                  }
+                ],
+                "__typename": "GroupNodeConnection"
+              },
               "__typename": "UserNode"
             },
             "__typename": "UserNodeEdge"

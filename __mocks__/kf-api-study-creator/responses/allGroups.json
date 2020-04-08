@@ -1,0 +1,49 @@
+{
+  "data": {
+    "allGroups": {
+      "edges": [
+        {
+          "node": {
+            "id": "R3JvdXBOb2RlOjE=",
+            "name": "Administrators",
+            "__typename": "GroupNode"
+          },
+          "__typename": "GroupNodeEdge"
+        },
+        {
+          "node": {
+            "id": "R3JvdXBOb2RlOjI=",
+            "name": "Developers",
+            "__typename": "GroupNode"
+          },
+          "__typename": "GroupNodeEdge"
+        },
+        {
+          "node": {
+            "id": "R3JvdXBOb2RlOjM=",
+            "name": "Investigators",
+            "__typename": "GroupNode"
+          },
+          "__typename": "GroupNodeEdge"
+        },
+        {
+          "node": {
+            "id": "R3JvdXBOb2RlOjQ=",
+            "name": "Bioinformatics",
+            "__typename": "GroupNode"
+          },
+          "__typename": "GroupNodeEdge"
+        },
+        {
+          "node": {
+            "id": "R3JvdXBOb2RlOjU=",
+            "name": "Services",
+            "__typename": "GroupNode"
+          },
+          "__typename": "GroupNodeEdge"
+        }
+      ],
+      "__typename": "GroupNodeConnection"
+    }
+  }
+}

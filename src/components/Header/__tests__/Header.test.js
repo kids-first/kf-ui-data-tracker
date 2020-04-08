@@ -42,7 +42,7 @@ it('renders correctly -- default stage (USER role)', async () => {
 
   // Show user dropwdown
   act(() => {
-    fireEvent.click(tree.getByText(/bendolly/));
+    fireEvent.click(tree.getByText(/devadmin/));
   });
   await wait();
 

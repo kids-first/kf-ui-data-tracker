@@ -36,9 +36,10 @@ const AddCollaboratorModal = ({
               err.networkError.result.errors.map((err, i) => (
                 <List.Item key={i}>{err.message}</List.Item>
               ))}
-            {err.GraphQLErrors && err.graphQLErrors.map((err, i) => (
-              <List.Item key={i}>{err.message}</List.Item>
-            ))}
+            {err.graphQLErrors &&
+              err.graphQLErrors.map((err, i) => (
+                <List.Item key={i}>{err.message}</List.Item>
+              ))}
           </List>
         );
 

@@ -121,11 +121,11 @@ exports[`edits an existing file description 1`] = `
           tabindex="0"
         >
           <img
-            alt="xuzhu"
+            alt="devadmin"
             class="ui avatar image"
-            src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
+            src="test-file-stub"
           />
-          xuzhu
+          devadmin
           <i
             aria-hidden="true"
             class="dropdown icon"
@@ -224,17 +224,6 @@ exports[`edits an existing file description 1`] = `
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
-          </a>
-          <a
-            class="item"
-            href="/study/SD_8WX8QQ06/releases"
-          >
-            Releases
-            <div
-              class="ui blue mini label"
-            >
-              BETA
-            </div>
           </a>
         </div>
       </div>
@@ -908,11 +897,11 @@ exports[`edits an existing file description 2`] = `
           tabindex="0"
         >
           <img
-            alt="xuzhu"
+            alt="devadmin"
             class="ui avatar image"
-            src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
+            src="test-file-stub"
           />
-          xuzhu
+          devadmin
           <i
             aria-hidden="true"
             class="dropdown icon"
@@ -1011,17 +1000,6 @@ exports[`edits an existing file description 2`] = `
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
-          </a>
-          <a
-            class="item"
-            href="/study/SD_8WX8QQ06/releases"
-          >
-            Releases
-            <div
-              class="ui blue mini label"
-            >
-              BETA
-            </div>
           </a>
         </div>
       </div>
@@ -1909,11 +1887,11 @@ exports[`edits an existing file description 3`] = `
           tabindex="0"
         >
           <img
-            alt="xuzhu"
+            alt="devadmin"
             class="ui avatar image"
-            src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
+            src="test-file-stub"
           />
-          xuzhu
+          devadmin
           <i
             aria-hidden="true"
             class="dropdown icon"
@@ -2012,17 +1990,6 @@ exports[`edits an existing file description 3`] = `
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
-          </a>
-          <a
-            class="item"
-            href="/study/SD_8WX8QQ06/releases"
-          >
-            Releases
-            <div
-              class="ui blue mini label"
-            >
-              BETA
-            </div>
           </a>
         </div>
       </div>
@@ -2911,11 +2878,11 @@ exports[`edits an existing file description 4`] = `
           tabindex="0"
         >
           <img
-            alt="xuzhu"
+            alt="devadmin"
             class="ui avatar image"
-            src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
+            src="test-file-stub"
           />
-          xuzhu
+          devadmin
           <i
             aria-hidden="true"
             class="dropdown icon"
@@ -3014,17 +2981,6 @@ exports[`edits an existing file description 4`] = `
             href="/study/SD_8WX8QQ06/logs"
           >
             Logs
-          </a>
-          <a
-            class="item"
-            href="/study/SD_8WX8QQ06/releases"
-          >
-            Releases
-            <div
-              class="ui blue mini label"
-            >
-              BETA
-            </div>
           </a>
         </div>
       </div>

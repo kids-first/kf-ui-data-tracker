@@ -127,14 +127,7 @@ export const GET_PROJECTS = gql`
 export const MY_PROFILE = gql`
   query MyProfile {
     myProfile {
-      roles
-      groups
       id
-      username
-      firstName
-      lastName
-      picture
-      email
       slackNotify
       slackMemberId
       studySubscriptions {
@@ -146,9 +139,12 @@ export const MY_PROFILE = gql`
           }
         }
       }
+      ...UserFields
     }
   }
+  ${USER_FIELDS}
 `;
+
 // Get all users
 export const ALL_USERS = gql`
   query AllUsers {
@@ -156,17 +152,12 @@ export const ALL_USERS = gql`
       edges {
         node {
           id
-          username
-          email
-          picture
-          roles
-          groups
-          lastLogin
-          dateJoined
+          ...UserFields
         }
       }
     }
   }
+  ${USER_FIELDS}
 `;
 
 // Get all events
@@ -318,6 +309,19 @@ export const GET_RELEASED_STUDY = gql`
               }
             }
           }
+        }
+      }
+    }
+  }
+`;
+
+export const ALL_GROUPS = gql`
+  query allGroups {
+    allGroups {
+      edges {
+        node {
+          id
+          name
         }
       }
     }
