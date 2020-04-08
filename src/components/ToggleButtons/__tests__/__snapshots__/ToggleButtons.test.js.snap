@@ -6,6 +6,7 @@ exports[`calls onToggle prop on click 1`] = `
     class="ui buttons"
   >
     <button
+      aria-label="see studies in grid view"
       class="ui button"
       data-testid="grid"
       tabindex="0"
@@ -17,7 +18,8 @@ exports[`calls onToggle prop on click 1`] = `
       Grid
     </button>
     <button
-      class="ui primary button"
+      aria-label="see studies in list view"
+      class="ui active button"
       data-testid="list"
       tabindex="0"
     >
@@ -37,7 +39,8 @@ exports[`changes active button on click 1`] = `
     class="ui buttons"
   >
     <button
-      class="ui primary button"
+      aria-label="see studies in grid view"
+      class="ui active button"
       tabindex="0"
     >
       <i
@@ -47,7 +50,8 @@ exports[`changes active button on click 1`] = `
       Grid
     </button>
     <button
-      class="ui primary button"
+      aria-label="see studies in list view"
+      class="ui active button"
       tabindex="0"
     >
       <i
@@ -66,7 +70,8 @@ exports[`renders toggle button correctly 1`] = `
     class="ui buttons"
   >
     <button
-      class="ui primary button"
+      aria-label="see studies in grid view"
+      class="ui active button"
       tabindex="0"
     >
       <i
@@ -76,7 +81,8 @@ exports[`renders toggle button correctly 1`] = `
       Grid
     </button>
     <button
-      class="ui primary button"
+      aria-label="see studies in list view"
+      class="ui active button"
       tabindex="0"
     >
       <i
@@ -95,7 +101,8 @@ exports[`renders toggle button hiding Text 1`] = `
     class="ui buttons"
   >
     <button
-      class="ui icon primary button"
+      aria-label="see studies in grid view"
+      class="ui active icon button"
       data-testid="grid"
       tabindex="0"
     >
@@ -105,6 +112,7 @@ exports[`renders toggle button hiding Text 1`] = `
       />
     </button>
     <button
+      aria-label="see studies in list view"
       class="ui icon button"
       data-testid="list"
       tabindex="0"
@@ -124,7 +132,8 @@ exports[`renders toggle button in diffrent sizes 1`] = `
     class="ui medium buttons"
   >
     <button
-      class="ui primary button"
+      aria-label="see studies in grid view"
+      class="ui active button"
       data-testid="grid"
       tabindex="0"
     >
@@ -135,6 +144,7 @@ exports[`renders toggle button in diffrent sizes 1`] = `
       Grid
     </button>
     <button
+      aria-label="see studies in list view"
       class="ui button"
       data-testid="list"
       tabindex="0"
@@ -150,7 +160,8 @@ exports[`renders toggle button in diffrent sizes 1`] = `
     class="ui large buttons"
   >
     <button
-      class="ui primary button"
+      aria-label="see studies in grid view"
+      class="ui active button"
       data-testid="grid"
       tabindex="0"
     >
@@ -161,6 +172,7 @@ exports[`renders toggle button in diffrent sizes 1`] = `
       Grid
     </button>
     <button
+      aria-label="see studies in list view"
       class="ui button"
       data-testid="list"
       tabindex="0"

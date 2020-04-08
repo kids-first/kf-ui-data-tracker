@@ -17,7 +17,8 @@ const ToggleButtons = ({buttons, onToggle, size, hideText, selected}) => {
           key={key}
           icon={hideText}
           data-testid={key}
-          primary={active === key}
+          aria-label={`see studies in ${text.toLowerCase()} view`}
+          active={active === key}
           onClick={() => {
             setActive(key);
             onToggle({active, key, icon});

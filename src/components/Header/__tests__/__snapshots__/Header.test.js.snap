@@ -408,7 +408,7 @@ exports[`renders correctly -- default stage (USER role) 2`] = `
           class="ui mini left icon input pr-5"
         >
           <input
-            aria-label="studySearch"
+            aria-label="search studies"
             placeholder="Search by Study Name"
             type="text"
             value=""
@@ -422,7 +422,8 @@ exports[`renders correctly -- default stage (USER role) 2`] = `
           class="ui mini buttons"
         >
           <button
-            class="ui icon primary button"
+            aria-label="see studies in list view"
+            class="ui active icon button"
             data-testid="list"
             tabindex="0"
           >
@@ -432,6 +433,7 @@ exports[`renders correctly -- default stage (USER role) 2`] = `
             />
           </button>
           <button
+            aria-label="see studies in grid view"
             class="ui icon button"
             data-testid="grid"
             tabindex="0"
@@ -1078,7 +1080,7 @@ exports[`renders correctly -- default stage (USER role) 3`] = `
           class="ui mini left icon input pr-5"
         >
           <input
-            aria-label="studySearch"
+            aria-label="search studies"
             placeholder="Search by Study Name"
             type="text"
             value=""
@@ -1092,7 +1094,8 @@ exports[`renders correctly -- default stage (USER role) 3`] = `
           class="ui mini buttons"
         >
           <button
-            class="ui icon primary button"
+            aria-label="see studies in list view"
+            class="ui active icon button"
             data-testid="list"
             tabindex="0"
           >
@@ -1102,6 +1105,7 @@ exports[`renders correctly -- default stage (USER role) 3`] = `
             />
           </button>
           <button
+            aria-label="see studies in grid view"
             class="ui icon button"
             data-testid="grid"
             tabindex="0"
@@ -1748,7 +1752,7 @@ exports[`renders correctly -- default stage (USER role) 4`] = `
           class="ui mini left icon input pr-5"
         >
           <input
-            aria-label="studySearch"
+            aria-label="search studies"
             placeholder="Search by Study Name"
             type="text"
             value=""
@@ -1762,7 +1766,8 @@ exports[`renders correctly -- default stage (USER role) 4`] = `
           class="ui mini buttons"
         >
           <button
-            class="ui icon primary button"
+            aria-label="see studies in list view"
+            class="ui active icon button"
             data-testid="list"
             tabindex="0"
           >
@@ -1772,6 +1777,7 @@ exports[`renders correctly -- default stage (USER role) 4`] = `
             />
           </button>
           <button
+            aria-label="see studies in grid view"
             class="ui icon button"
             data-testid="grid"
             tabindex="0"

@@ -2,9 +2,9 @@
 #
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
-version: 2
+version: 2.1
 jobs:
-  build:
+  unit_tests:
     docker:
       # specify the version you desire here
       - image: circleci/node:11.12.0
@@ -41,3 +41,39 @@ jobs:
           yarn run bundlesize
       - run: yarn test -w 1
       - run: yarn codecov
+  integration_tests:
+    docker:
+      - image: circleci/node:11.12.0
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - deps-{{ checksum "package.json" }}
+            - deps-
+      - run:
+          name: Install dependencies
+          command: yarn
+      - save_cache:
+          paths:
+            - node_modules
+          key: deps-{{ checksum "package.json" }}
+      - setup_remote_docker
+      - run:
+          name: Setup Docker
+          command: |
+            docker network create kf-data-stack
+            docker run -v bundle:/data --name bundler alpine:latest /bin/true
+            docker cp . bundler:/data
+            docker-compose pull -q
+      - run:
+          name: Run Cypress tests
+          command: |
+            docker-compose up -d web postgres redis scheduler worker app
+            sleep 10
+            docker-compose up cypress
+workflows:
+  version: 2
+  tests:
+    jobs:
+      - unit_tests
+      - integration_tests

@@ -1,0 +1,85 @@
+version: '3.4'
+
+services:
+  web:
+    image: kfdrc/kf-api-study-creator:latest
+    env_file: docker.env
+    environment:
+      - ALLOWED_HOSTS=web
+      - DEBUG=True
+      - DJANGO_SETTINGS_MODULE=creator.settings.development
+      - PG_HOST=postgres
+      # Options are: DATASERVICE, url of dataservice, or FAKE
+      - PRELOAD_DATA=FAKE
+    ports:
+      - '5002:8080'
+    depends_on:
+      - postgres
+      - redis
+  worker:
+    image: kfdrc/kf-api-study-creator:latest
+    env_file: docker.env
+    command: '/app/bin/dev_worker.sh'
+    environment:
+      - DJANGO_SETTINGS_MODULE=creator.settings.development
+    depends_on:
+      - postgres
+      - redis
+      - web
+  scheduler:
+    image: kfdrc/kf-api-study-creator:latest
+    env_file: docker.env
+    command: './manage.py rqscheduler -i 5'
+    environment:
+      - DJANGO_SETTINGS_MODULE=creator.settings.development
+    depends_on:
+      - postgres
+      - redis
+      - web
+  postgres:
+    image: circleci/postgres:11.1
+    env_file: docker.env
+    environment:
+      - POSTGRES_DB=study-creator
+      - POSTGRES_USER=study-creator
+      - POSTGRES_PASSWORD=password
+  redis:
+    image: circleci/redis:latest
+  app:
+    image: circleci/node:11.12.0
+    command: bash -c 'cd /app && yarn start'
+    ports:
+      - 3000:3000
+    environment:
+      - REACT_APP_STUDY_API=http://web:8080
+      - REACT_APP_COORD_API=http://localhost:5001
+      - REACT_APP_AUTH0_DOMAIN=kids-first.auth0.com
+      - REACT_APP_AUTH0_CLIENT_ID=00000000000000000000000000000000
+      - REACT_APP_AUTH0_REDIRECT_URI=http://app:3000/callback
+      - REACT_APP_AUTH0_AUD=https://kf-study-creator.kidsfirstdrc.org
+      - SKIP_PREFLIGHT_CHECK=true
+    volumes:
+      - bundle:/app
+  cypress:
+    image: cypress/browsers:node12.4.0-chrome76
+    container_name: cypress
+    environment:
+      - CYPRESS_baseUrl=http://app:3000
+    depends_on:
+      - app
+      - web
+      - worker
+      - scheduler
+      - postgres
+      - redis
+    command: /bin/bash -c 'yarn run cypress install && yarn run cypress run --browser chrome'
+    working_dir: /app
+    volumes:
+      - bundle:/app
+networks:
+  default:
+    external:
+      name: kf-data-stack
+volumes:
+  bundle:
+    external: true

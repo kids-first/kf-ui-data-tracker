@@ -1,0 +1,10 @@
+{
+  "name": "cypress",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "base64url": "^3.0.1",
+    "cypress": "^4.3.0"
+  }
+}

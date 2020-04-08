@@ -1,0 +1,8 @@
+{
+  "baseUrl": "http://localhost:3000",
+  "env": {
+    "REACT_APP_STUDY_API": "http://localhost:5002/graphql"
+  },
+  "blacklistHosts": ["*hotjar.com", "*usersnap.com"],
+  "video": false
+}

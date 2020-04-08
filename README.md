@@ -81,11 +81,33 @@ Features include:
 
 ## Testing
 
-Jest is used for functional testing and snapshot testing:
+Tests are split into two categories depending on what is being tested.
+Function and single component level tests that are free of significant API
+state are tested using unit tests and Jest.
+For more complicated interactions that are state and network request heavy,
+Cypress is run with a full-backing API to provided data.
 
+### Unit Tests
+
+Jest is used for functional testing and snapshot testing:
 ```
-# To run jest test:
-yarn run jest
+yarn test
 # To generate/update snapshot test:
 yarn run jest -u
+```
+### Integration Tests
+
+Cypress is used to perform integration tests.
+There must be a Study Creator API running with the mock data loaded and a
+local Data Tracker application must be running on port `3000`.
+This setup can be bootstrapped with the included `docker-compose.yml`:
+```
+docker-compose up -d
+```
+The tests may then be run either with the interactive test runner, or with a
+headless browser:
+```
+yarn cy:open
+# or
+yarn cy:test
 ```
