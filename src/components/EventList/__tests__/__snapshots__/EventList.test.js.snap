@@ -28,7 +28,6 @@ exports[`Event list renders correctly -- with mock data 1`] = `
             4 months from now
           </time>
         </div>
-        devadmin created version FV_9AF7CC3Z of file SF_5ZPEM167
       </div>
     </div>
     <div
@@ -53,7 +52,6 @@ exports[`Event list renders correctly -- with mock data 1`] = `
             4 months from now
           </time>
         </div>
-        devadmin updated version FV_4FCEYZ3T of file SF_5ZPEM167
       </div>
     </div>
     <div
@@ -78,7 +76,6 @@ exports[`Event list renders correctly -- with mock data 1`] = `
             4 months from now
           </time>
         </div>
-        devadmin created version FV_ABCPEQRK of file SF_Y07IN1HO
       </div>
     </div>
     <div
@@ -103,7 +100,6 @@ exports[`Event list renders correctly -- with mock data 1`] = `
             4 months from now
           </time>
         </div>
-        devadmin created version FV_BHXN2F7A of file SF_Y07IN1HO
       </div>
     </div>
     <div
@@ -128,7 +124,6 @@ exports[`Event list renders correctly -- with mock data 1`] = `
             4 months from now
           </time>
         </div>
-        devadmin updated version FV_Z0NZQZNX of file SF_Y07IN1HO
       </div>
     </div>
     <div
@@ -153,7 +148,6 @@ exports[`Event list renders correctly -- with mock data 1`] = `
             4 months from now
           </time>
         </div>
-        devadmin updated file SF_5ZPEM167
       </div>
     </div>
     <div
@@ -178,7 +172,6 @@ exports[`Event list renders correctly -- with mock data 1`] = `
             4 months from now
           </time>
         </div>
-        devadmin created version FV_4FCEYZ3T of file SF_Y07IN1HO
       </div>
     </div>
     <div
@@ -203,7 +196,6 @@ exports[`Event list renders correctly -- with mock data 1`] = `
             4 months from now
           </time>
         </div>
-        devadmin created file SF_Y07IN1HO
       </div>
     </div>
   </div>
