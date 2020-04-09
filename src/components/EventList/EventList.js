@@ -5,6 +5,50 @@ import {Link} from 'react-router-dom';
 import TimeAgo from 'react-timeago';
 import {eventType} from '../../common/enums';
 import {longDate} from '../../common/dateUtils';
+
+/**
+ * Highlights any kf_ids in the description and turns them into links
+ * If the study, file, or version does not exist, no highlighting will be
+ * applied.
+ */
+const linkDescription = node => {
+  // If no study, it must have been deleted including any files or versions
+  if (!node.study) return node.decsription;
+
+  const ids = {
+    SD: node.study && node.study.kfId,
+    SF: node.file && node.file.kfId,
+    FV: node.version && node.version.kfId,
+  };
+
+  const urls = {
+    SD: '/study/${ids.SD}/basic-info/info',
+    SF: '/study/${ids.SD}/documents/${ids.SF}',
+    FV: '/study/${ids.SD}/documents/${ids.SF} ',
+  };
+
+  const EntityLink = ({entityType}) => (
+    <Link to={urls[entityType]} key={ids[entityType]}>
+      {ids[entityType] + ' '}
+    </Link>
+  );
+
+  const entityPattern = /((SD|SF|FV)_\w{8})/g;
+  const matches = node.description.split(entityPattern);
+  var parts = [];
+  for (var i = 0; i < matches.length; i += 3) {
+    const link =
+      matches[i + 2] in ids && ids[matches[i + 2]] ? (
+        <EntityLink entityType={matches[i + 2]} />
+      ) : (
+        matches[i + 1]
+      );
+    parts = [...parts, matches[i], link];
+  }
+
+  return parts;
+};
+
 /**
  * Event list is used to display user activities
  * Consisted with three parts:
@@ -12,41 +56,6 @@ import {longDate} from '../../common/dateUtils';
  * - Text descrbing who did what
  * - Timeago text indication when the action happened
  */
-const linkDescription = node => {
-  const studyId = node.study ? node.study.kfId : 'NO_STUDY_ID';
-  const fileId = node.file ? node.file.kfId : 'NO_FILE_ID';
-  const versionId = node.version ? node.version.kfId : 'NO_VERSION_ID';
-  var entities = {};
-  entities[studyId] = () => (
-    <Link to={`/study/${studyId}/basic-info/info`} key={studyId}>
-      {studyId + ' '}
-    </Link>
-  );
-  entities[fileId] = () => (
-    <Link to={`/study/${studyId}/documents/${fileId}`} key={fileId}>
-      {fileId + ' '}
-    </Link>
-  );
-  entities[versionId] = () => (
-    <Link to={`/study/${studyId}/documents/${fileId}`} key={versionId}>
-      {versionId + ' '}
-    </Link>
-  );
-  const entityPattern = /(SD_\w{8}|FV_\w{8}|SF_\w{8})/g;
-  const matches = node.description.split(entityPattern);
-  var parts = [];
-  for (var i = 0; i < matches.length; i += 2) {
-    parts = [
-      ...parts,
-      matches[i],
-      Object.keys(entities).includes(matches[i + 1])
-        ? entities[matches[i + 1]]()
-        : matches[i + 1],
-    ];
-  }
-  return parts;
-};
-
 const EventList = ({events}) => (
   <List relaxed="very">
     {events &&
