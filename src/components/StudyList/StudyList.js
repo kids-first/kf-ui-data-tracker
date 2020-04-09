@@ -12,6 +12,7 @@ import {
   Placeholder,
   Input,
   Button,
+  Checkbox,
 } from 'semantic-ui-react';
 
 /**
@@ -30,8 +31,16 @@ const HeaderSkeleton = () => (
 /**
  * Displays unordered studies in grid view (include empty stage message)
  */
-const StudyList = ({studyList, loading, activeView, roles, history}) => {
+const StudyList = ({
+  studyList,
+  loading,
+  activeView,
+  roles,
+  history,
+  myProfile,
+}) => {
   const [searchString, setSearchString] = useState('');
+  const [myStudies, setMystudies] = useState(true);
   const isAdmin = roles && roles.includes('ADMIN');
 
   if (loading) {
@@ -42,26 +51,58 @@ const StudyList = ({studyList, loading, activeView, roles, history}) => {
       </Container>
     );
   }
+  const myStudyList =
+    myProfile && myProfile.studies.edges.length > 0
+      ? myProfile.studies.edges.map(({node}) => node.kfId)
+      : [];
+
+  const conactCollaborators = collaborators => {
+    return collaborators.length > 0
+      ? collaborators
+          .map(({node}) =>
+            [node.username, node.firstName, node.lastName].join(' '),
+          )
+          .join(' ')
+      : '';
+  };
 
   const filteredStudyList = () => {
-    var filteredList = studyList.filter(obj =>
-      (obj.node.name + obj.node.shortName + obj.node.kfId)
-        .toLowerCase()
-        .includes(searchString.toLowerCase()),
+    const originList = myStudies
+      ? studyList.filter(({node}) => myStudyList.includes(node.kfId))
+      : studyList;
+    const filteredList = originList.filter(
+      ({
+        node: {
+          name,
+          shortName,
+          kfId,
+          collaborators: {edges},
+        },
+      }) =>
+        [name, shortName, kfId, conactCollaborators(edges)]
+          .join(' ')
+          .toLowerCase()
+          .includes(searchString.toLowerCase()),
     );
     return filteredList;
   };
 
   return (
     <Grid as={Segment} basic container stackable>
-      <Grid.Column width={8} textAlign="left">
-        <Header as="h1">Your Investigator Studies</Header>
-      </Grid.Column>
-      <Grid.Column width={8} textAlign="right">
+      <Grid.Column width={16} textAlign="right">
+        <Header as="h1" floated="left">
+          Your Investigator Studies
+        </Header>
+        <Checkbox
+          label="Show only my studies"
+          checked={myStudies}
+          onClick={() => setMystudies(!myStudies)}
+        />
         {isAdmin && (
           <Button
             basic
             primary
+            className="ml-10"
             size="mini"
             icon="add"
             content="Add Study"
@@ -71,17 +112,18 @@ const StudyList = ({studyList, loading, activeView, roles, history}) => {
         )}
         <Input
           aria-label="search studies"
-          className="pr-5"
+          className="ml-10"
           size="mini"
           iconPosition="left"
           icon="search"
-          placeholder="Search by Study Name"
+          placeholder="Search by study name or collaborator"
           onChange={(e, {value}) => {
             setSearchString(value);
           }}
           value={searchString}
         />
         <ToggleButtons
+          className="ml-10"
           size="mini"
           hideText
           onToggle={({key}) => {
@@ -122,6 +164,7 @@ const StudyList = ({studyList, loading, activeView, roles, history}) => {
                   'releaseDate',
                   'anticipatedSamples',
                   'awardeeOrganization',
+                  'collaborators',
                 ]}
               />
             )}

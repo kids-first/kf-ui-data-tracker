@@ -92,6 +92,7 @@ const StudyListView = ({history}) => {
         loading={loading}
         roles={myProfile ? myProfile.roles : []}
         history={history}
+        myProfile={myProfile}
       />
       <Container as={Segment} basic vertical>
         {releasesError && (
