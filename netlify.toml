@@ -1,9 +1,9 @@
 [context.deploy-preview]
   publish = "build/"
-  command = "REACT_APP_AUTH0_REDIRECT_URI=$DEPLOY_PRIME_URL/callback yarn build"
+  command = "REACT_APP_AUTH0_REDIRECT_URI=$DEPLOY_PRIME_URL/callback REACT_APP_AUTH0_LOGOUT_REDIRECT_URI=$DEPLOY_PRIME_URL/logout yarn build"
 
 [context.master]
-  command = "REACT_APP_AUTH0_REDIRECT_URI=$URL/callback yarn build"
+  command = "REACT_APP_AUTH0_REDIRECT_URI=$DEPLOY_PRIME_URL/callback REACT_APP_AUTH0_LOGOUT_REDIRECT_URI=$DEPLOY_PRIME_URL/logout yarn build"
 
 [context.master.environment]
   REACT_APP_ENV = "qa"
