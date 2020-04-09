@@ -57,6 +57,7 @@ const FileTags = ({fileNode, updateFile}) => {
           .slice(0, more ? fileNode.tags.length : 5)
           .map((tag, index) => (
             <Label
+              as="a"
               key={index}
               className="my-2"
               title={tag}
