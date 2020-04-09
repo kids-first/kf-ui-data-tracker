@@ -3,6 +3,7 @@ import {
   auth0Domain,
   auth0ClientId,
   auth0RedirectUri,
+  auth0LogoutRedirectUri,
   auth0Aud,
 } from '../common/globals';
 import jwtDecode from 'jwt-decode';
@@ -98,6 +99,8 @@ class Auth {
     this.logEvent('AUTH__LOGOUT');
     amplitude.getInstance().setUserId(null); // not string 'null'
     amplitude.getInstance().regenerateDeviceId();
+
+    this.auth0.logout({returnTo: auth0LogoutRedirectUri});
   }
 
   isAuthenticated() {

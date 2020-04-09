@@ -3,6 +3,8 @@ export const KF_COORD_API = process.env.REACT_APP_COORD_API;
 export const auth0Domain = process.env.REACT_APP_AUTH0_DOMAIN;
 export const auth0ClientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
 export const auth0RedirectUri = process.env.REACT_APP_AUTH0_REDIRECT_URI;
+export const auth0LogoutRedirectUri =
+  process.env.REACT_APP_AUTH0_LOGOUT_REDIRECT_URI;
 export const auth0Aud = process.env.REACT_APP_AUTH0_AUD;
 export const AMPLITUDE_KEY = process.env.REACT_APP_AMPLITUDE_KEY;
 export const STUDY_DOCS_SIMILARITY_THRESHOLD = 0.9;
