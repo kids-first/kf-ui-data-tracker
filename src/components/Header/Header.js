@@ -5,8 +5,77 @@ import {MY_PROFILE} from '../../state/queries';
 import {Container, Dropdown, Icon, Image, Menu} from 'semantic-ui-react';
 import defaultAvatar from '../../assets/defaultAvatar.png';
 import logo from '../../assets/logo.svg';
+import {getPermissions} from '../../common/permissions.js';
 import {auth} from '../../state/auth';
 const Nav = props => <NavLink exact {...props} activeClassName="active" />;
+
+/**
+ * Each item will be displayed only if the user has permission to view it.
+ * Only displays the admin drop down if the user has permissions needed for
+ * one or more of the items.
+ */
+const AdminDropdown = ({profile}) => {
+  const permissions = getPermissions(profile);
+
+  const items = [
+    {
+      name: 'Configuration',
+      route: '/configuration',
+      icon: 'settings',
+      permission: 'view_settings',
+    },
+    {
+      name: 'Bucktes',
+      route: '/buckets',
+      icon: 'trash',
+      permission: 'view_bucket',
+    },
+    {
+      name: 'Tokens',
+      route: '/tokens',
+      icon: 'key',
+      permission: 'view_downloadtoken',
+    },
+    {
+      name: 'Cavatica Projects',
+      route: '/cavatica-projects',
+      icon: 'folder open',
+      permission: 'view_study',
+    },
+    {
+      name: 'Events',
+      route: '/events',
+      icon: 'history',
+      permission: 'view_event',
+    },
+    {
+      name: 'Users',
+      route: '/users',
+      icon: 'users',
+      permission: 'view_group',
+    },
+  ];
+
+  const Item = ({name, route, icon, permission}) => (
+    <Dropdown.Item as={Nav} to={route}>
+      <Icon name={icon} />
+      {name}
+    </Dropdown.Item>
+  );
+
+  // Construct menu nav components
+  const menuItems = items
+    .filter(item => permissions.includes(item.permission))
+    .map(item => <Item {...item} />);
+
+  return menuItems.length > 0 ? (
+    <Dropdown trigger={'Admin'} className="link item">
+      <Dropdown.Menu>{menuItems}</Dropdown.Menu>
+    </Dropdown>
+  ) : (
+    null
+  );
+};
 
 const Header = () => {
   const {loading, error, data} = useQuery(MY_PROFILE);
@@ -32,36 +101,7 @@ const Header = () => {
           <>
             <Menu.Item as={Nav} to="/" content="Studies" />
             <Menu.Menu position="right">
-              {profile.roles.includes('ADMIN') && (
-                <Dropdown trigger={'Admin'} className="link item">
-                  <Dropdown.Menu>
-                    <Dropdown.Item as={Nav} to="/configuration">
-                      <Icon name="settings" />
-                      Configuration
-                    </Dropdown.Item>
-                    <Dropdown.Item as={Nav} to="/buckets">
-                      <Icon name="trash" />
-                      Buckets
-                    </Dropdown.Item>
-                    <Dropdown.Item as={Nav} to="/tokens">
-                      <Icon name="key" />
-                      Developer Tokens
-                    </Dropdown.Item>
-                    <Dropdown.Item as={Nav} to="/cavatica-projects">
-                      <Icon name="folder open" />
-                      Cavatica Projects
-                    </Dropdown.Item>
-                    <Dropdown.Item as={Nav} to="/events">
-                      <Icon name="history" />
-                      Event Log
-                    </Dropdown.Item>
-                    <Dropdown.Item as={Nav} to="/users">
-                      <Icon name="users" />
-                      Users
-                    </Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-              )}
+              <AdminDropdown profile={profile} />
               <Dropdown
                 trigger={
                   <>
