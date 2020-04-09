@@ -120,7 +120,7 @@ const FileTags = ({fileNode, updateFile}) => {
                 attached="right"
                 data-testid="tag-file-add"
                 className="my-2"
-                disabled={tagSelection.length > 50}
+                disabled={tagSelection.length > 50 || tagSelection.length === 0}
                 onClick={e => {
                   e.stopPropagation();
                   addTag();
