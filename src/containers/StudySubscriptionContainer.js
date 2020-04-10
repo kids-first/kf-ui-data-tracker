@@ -98,6 +98,7 @@ const StudySubscriptionContainer = () => {
       studyList={studyList}
       clickable={false}
       exclude={[
+        'collaborators',
         'shortName',
         'createdAt',
         'modifiedAt',
