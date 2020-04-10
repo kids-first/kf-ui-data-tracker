@@ -20,7 +20,7 @@ import UploadWizard from '../modals/UploadWizard/UploadWizard';
 import NotFoundView from '../../views/NotFoundView';
 import ListFilterBar from '../components/ListFilterBar/ListFilterBar';
 import BatchActionBar from '../components/ListFilterBar/BatchActionBar';
-import {createDateSort, modifiedDateSort, defaultSort} from '../utilities';
+import {createDateSort, modifiedDateSort} from '../utilities';
 
 /**
  * A place holder skeleton for a list of files
@@ -51,7 +51,7 @@ const filterFiles = (fileList, filters) => {
   const sortFuncs = {
     createDate: createDateSort,
     modifyDate: modifiedDateSort,
-    default: defaultSort,
+    default: modifiedDateSort,
   };
   var sortedList = fileList.sort(
     sortFuncs[filters.sortMethod] || sortFuncs.default,

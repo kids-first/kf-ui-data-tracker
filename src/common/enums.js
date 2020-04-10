@@ -250,4 +250,5 @@ export const defaultTagOptions = [
   {key: 'dbGaP', value: 'dbGaP', text: 'dbGaP'},
   {key: 'dCC', value: 'dCC', text: 'DCC'},
   {key: 'email', value: 'email', text: 'Email'},
+  {key: 'dataDictionary', value: 'dataDictionary', text: 'Data Dictionary'},
 ];

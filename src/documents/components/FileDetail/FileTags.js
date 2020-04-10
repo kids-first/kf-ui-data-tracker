@@ -57,6 +57,7 @@ const FileTags = ({fileNode, updateFile}) => {
           .slice(0, more ? fileNode.tags.length : 5)
           .map((tag, index) => (
             <Label
+              as="a"
               key={index}
               className="my-2"
               title={tag}
@@ -97,6 +98,8 @@ const FileTags = ({fileNode, updateFile}) => {
         content={
           <Form onSubmit={addTag}>
             <Dropdown
+              defaultOpen
+              searchInput={{autoFocus: true}}
               data-testid="tag-dropdown"
               placeholder="Tags"
               search
@@ -120,7 +123,7 @@ const FileTags = ({fileNode, updateFile}) => {
                 attached="right"
                 data-testid="tag-file-add"
                 className="my-2"
-                disabled={tagSelection.length > 50}
+                disabled={tagSelection.length > 50 || tagSelection.length === 0}
                 onClick={e => {
                   e.stopPropagation();
                   addTag();
