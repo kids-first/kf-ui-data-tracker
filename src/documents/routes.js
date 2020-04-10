@@ -1,5 +1,5 @@
 import React from 'react';
-import PrivateRoute from '../Routes/PrivateRoute';
+import PrivateRoute from '../routes/PrivateRoute';
 import {StudyFilesListView, FileDetailView, NewDocumentView} from './views';
 
 const DocumentRoutes = () => (
