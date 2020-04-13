@@ -2,6 +2,7 @@ import React, {Fragment} from 'react';
 import {Route, Switch} from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
 import AdminRoute from './AdminRoute';
+import RestrictedRoute from './RestrictedRoute';
 import {Header} from '../components/Header';
 import {Footer} from '../components/Footer';
 import {
@@ -172,11 +173,12 @@ const Routes = () => (
           component={ReleasesView}
           scope={['study', 'releases']}
         />
-        <AdminRoute
+        <RestrictedRoute
           exact
           path="/tokens"
           component={TokensListView}
           scope={['admin', 'tokens']}
+          permissions={['view_downloadtoken']}
         />
         <AdminRoute exact path="/buckets" component={BucketsView} />
         <AdminRoute
