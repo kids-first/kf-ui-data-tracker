@@ -2,6 +2,7 @@ import React, {Fragment} from 'react';
 import {Route, Switch} from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
 import AdminRoute from './AdminRoute';
+import RestrictedRoute from './RestrictedRoute';
 import {Header} from '../components/Header';
 import {Footer} from '../components/Footer';
 import {
@@ -70,11 +71,12 @@ const Routes = () => (
           component={EventsView}
           scope={['admin', 'events']}
         />
-        <AdminRoute
+        <RestrictedRoute
           exact
           path="/users"
           component={UsersView}
-          scope={['admin', 'tokens']}
+          scope={['admin', 'users']}
+          permissions={['view_user']}
         />
         <PrivateRoute
           path="/profile"
