@@ -94,12 +94,13 @@ const StudyList = ({
         <Header as="h1" floated="left">
           Your Investigator Studies
         </Header>
-        <Checkbox
-          label="Show only my studies"
-          checked={myStudies}
-          onClick={() => setMystudies(!myStudies)}
-        />
-        {isAdmin && (
+        {myProfile && hasPermission(myProfile, 'view_study') && (
+          <Checkbox
+            label="Show only my studies"
+            checked={myStudies}
+            onClick={() => setMystudies(!myStudies)}
+          />
+        )}
         {myProfile && hasPermission(myProfile, 'add_study') && (
           <Button
             basic
