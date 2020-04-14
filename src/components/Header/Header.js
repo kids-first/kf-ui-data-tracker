@@ -25,7 +25,7 @@ const AdminDropdown = ({profile}) => {
       permission: 'view_settings',
     },
     {
-      name: 'Bucktes',
+      name: 'Buckets',
       route: '/buckets',
       icon: 'trash',
       permission: 'view_bucket',
