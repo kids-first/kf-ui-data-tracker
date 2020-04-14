@@ -14,6 +14,7 @@ import {
   Button,
   Checkbox,
 } from 'semantic-ui-react';
+import {hasPermission} from '../../common/permissions';
 
 /**
  * A skeleton placeholder for the loading state of the study list header
@@ -99,6 +100,7 @@ const StudyList = ({
           onClick={() => setMystudies(!myStudies)}
         />
         {isAdmin && (
+        {myProfile && hasPermission(myProfile, 'add_study') && (
           <Button
             basic
             primary

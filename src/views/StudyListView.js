@@ -53,7 +53,7 @@ const StudyListView = ({history}) => {
         <Helmet>
           <title>KF Data Tracker - My Studies</title>
         </Helmet>
-        {myProfile && myProfile.roles.includes('ADMIN') ? (
+        {myProfile && hasPermission(myProfile, 'add_study') ? (
           <>
             <Message
               info
