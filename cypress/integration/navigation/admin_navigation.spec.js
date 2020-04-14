@@ -42,7 +42,7 @@ context('Admin Navigation', () => {
       .should('exist')
       .click();
 
-    cy.contains('a', 'Developer Tokens')
+    cy.contains('a', 'Tokens')
       .should('exist')
       .click();
 
@@ -68,7 +68,7 @@ context('Admin Navigation', () => {
       .should('exist')
       .click();
 
-    cy.contains('a', 'Event Log')
+    cy.contains('a', 'Events')
       .should('exist')
       .click();
 
