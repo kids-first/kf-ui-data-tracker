@@ -12,6 +12,6 @@ module.exports = {
       '<rootDir>/__mocks__/fileMock.js',
   },
   modulePathIgnorePatterns: ['<rootDir>/cypress/'],
-  coverageDirectory: './coverage/',
+  coverageDirectory: './jest-coverage/',
   collectCoverage: true,
 };
