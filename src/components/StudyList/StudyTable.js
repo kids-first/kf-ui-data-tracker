@@ -13,6 +13,8 @@ import {
   trackedStudyFields,
   trackedResearchStudyFields,
 } from '../../common/notificationUtils';
+import {hasPermission} from '../../common/permissions';
+
 /**
  * Renders a single row in the table
  */
@@ -49,7 +51,11 @@ const TableValue = ({row, col, title, isResearch}) => {
               : `/study/${title}/basic-info/info`
           }
           onClick={e => e.stopPropagation()}
-          className={row[col].missingValue > 0 ? 'text-red' : null}
+          className={
+            myProfile && hasPermission(myProfile, 'change_study')
+              ? 'text-red'
+              : null
+          }
         >
           {isResearch
             ? trackedResearchStudyFields.length -

@@ -6,6 +6,8 @@ import FileCounts from '../StudyInfo/FileCounts';
 import CavaticaCounts from '../StudyInfo/CavaticaCounts';
 import {trackedStudyFields} from '../../common/notificationUtils';
 import CavaticaLogo from '../../assets/CavaticaLogo';
+import {hasPermission} from '../../common/permissions';
+
 /**
  * Displays each study with its kfId, name(shortName), and modifiedAt
  */
@@ -58,7 +60,13 @@ const StudyCard = ({
               >
                 <Icon
                   name={missingValue > 0 ? 'clipboard list' : 'clipboard check'}
-                  color={missingValue > 0 ? 'red' : 'grey'}
+                  color={
+                    missingValue > 0 &&
+                    myProfile &&
+                    hasPermission(myProfile, 'change_study')
+                      ? 'red'
+                      : 'grey'
+                  }
                 />
                 Info
               </Link>
