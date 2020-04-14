@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom';
 import {ALL_STUDIES, MY_PROFILE, GET_RELEASED_STUDY} from '../state/queries';
 import StudyList from '../components/StudyList/StudyList';
 import {Button, Message, Container, Segment, Icon} from 'semantic-ui-react';
+import {hasPermission} from '../common/permissions';
 
 const StudyListView = ({history}) => {
   const {data: profileData} = useQuery(MY_PROFILE);
@@ -46,7 +47,7 @@ const StudyListView = ({history}) => {
       </Container>
     );
 
-  if (!loading && !releasesLoading && studyList.length === 0)
+  if (!loading && !hasPermission(myProfile, 'view_study'))
     return (
       <Container as={Segment} basic>
         <Helmet>
