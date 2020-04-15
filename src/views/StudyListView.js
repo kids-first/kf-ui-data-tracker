@@ -69,7 +69,7 @@ const StudyListView = ({history}) => {
   }
   if (!loading && studyList.length === 0)
     return (
-      <Container as={Segment} basic>
+      <Container as={Segment} basic padded="very">
         <Helmet>
           <title>KF Data Tracker - My Studies</title>
         </Helmet>
