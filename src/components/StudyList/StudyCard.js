@@ -22,6 +22,7 @@ const StudyCard = ({
   missingProject,
   requiredFileChanges,
   isResearch,
+  myProfile,
 }) => {
   const projectsCounts = projects && projects.length > 0 ? projects.length : 0;
   const needsAttention =

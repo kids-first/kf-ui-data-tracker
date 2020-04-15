@@ -112,7 +112,6 @@ const StudyListView = ({history}) => {
       <StudyList
         studyList={studyList}
         loading={loading}
-        roles={myProfile ? myProfile.roles : []}
         history={history}
         myProfile={myProfile}
       />

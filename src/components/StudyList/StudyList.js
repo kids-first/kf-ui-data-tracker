@@ -32,18 +32,9 @@ const HeaderSkeleton = () => (
 /**
  * Displays unordered studies in grid view (include empty stage message)
  */
-const StudyList = ({
-  studyList,
-  loading,
-  activeView,
-  roles,
-  history,
-  myProfile,
-}) => {
+const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
   const [searchString, setSearchString] = useState('');
   const [myStudies, setMystudies] = useState(true);
-  const isAdmin = roles && roles.includes('ADMIN');
-
   if (loading) {
     return (
       <Container as={Segment} basic>
@@ -147,11 +138,11 @@ const StudyList = ({
               <StudyGrid
                 loading={loading}
                 studyList={filteredStudyList()}
-                isAdmin={isAdmin}
+                myProfile={myProfile}
               />
             ) : (
               <StudyTable
-                isAdmin={isAdmin}
+                myProfile={myProfile}
                 loading={loading}
                 studyList={filteredStudyList()}
                 exclude={[

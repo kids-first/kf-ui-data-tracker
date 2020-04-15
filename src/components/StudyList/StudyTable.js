@@ -18,7 +18,7 @@ import {hasPermission} from '../../common/permissions';
 /**
  * Renders a single row in the table
  */
-const TableValue = ({row, col, title, isResearch}) => {
+const TableValue = ({row, col, title, isResearch, myProfile}) => {
   const coordUrl = process.env.REACT_APP_COORD_UI + 'releases/';
   switch (col) {
     case 'files':
@@ -121,7 +121,7 @@ const StudyTable = ({
   exclude = [],
   clickable = true,
   history,
-  isAdmin,
+  myProfile,
   isResearch,
 }) => {
   if (loading) {
@@ -226,6 +226,7 @@ const StudyTable = ({
                   col={col}
                   title={row.kfId}
                   isResearch={isResearch}
+                  myProfile={myProfile}
                 />
               </Table.Cell>
             ))}
