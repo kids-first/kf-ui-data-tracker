@@ -77,6 +77,7 @@ const StudyCard = ({
               title={studyId}
               projects={projects}
               isResearch={isResearch}
+              showWarning={myProfile && hasPermission(myProfile, 'add_project')}
             />
           ) : (
             <>
@@ -119,9 +120,11 @@ const StudyCard = ({
                     <CavaticaLogo
                       className="mr-5 vertical-middle"
                       fill={
-                        projectsCounts > 0 && missingProject < 1
-                          ? 'rgba(0,0,0,.6)'
-                          : '#db2828'
+                        projectsCounts === 0 &&
+                        myProfile &&
+                        hasPermission(myProfile, 'add_project')
+                          ? '#db2828'
+                          : 'rgba(0,0,0,.6)'
                       }
                     />
                     {projectsCounts} projects
@@ -161,7 +164,11 @@ const StudyCard = ({
             />
           </Card.Content>
           <Card.Content extra compact="very" size="mini">
-            <CavaticaCounts title={studyId} projects={projects} />
+            <CavaticaCounts
+              title={studyId}
+              projects={projects}
+              showWarning={myProfile && hasPermission(myProfile, 'add_project')}
+            />
           </Card.Content>
         </>
       )}

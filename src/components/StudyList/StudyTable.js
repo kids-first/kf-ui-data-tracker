@@ -34,6 +34,7 @@ const TableValue = ({row, col, title, isResearch}) => {
     case 'projects':
       return (
         <CavaticaCounts
+          showWarning={myProfile && hasPermission(myProfile, 'add_project')}
           projects={row[col].edges}
           title={title}
           hideIcon
