@@ -176,11 +176,12 @@ const Routes = () => (
           component={ReleasesView}
           scope={['study', 'releases']}
         />
-        <AdminRoute
+        <RestrictedRoute
           exact
           path="/tokens"
           component={TokensListView}
           scope={['admin', 'tokens']}
+          permissions={['view_downloadtoken']}
         />
         <RestrictedRoute
           exact
