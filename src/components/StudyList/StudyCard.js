@@ -97,9 +97,11 @@ const StudyCard = ({
                     <Icon
                       name="file"
                       color={
-                        files.length > 0 && requiredFileChanges < 1
-                          ? 'grey'
-                          : 'red'
+                        files.length === 0 &&
+                        myProfile &&
+                        hasPermission(myProfile, 'add_file')
+                          ? 'red'
+                          : 'grey'
                       }
                     />
                     {files.length} documents
@@ -142,7 +144,12 @@ const StudyCard = ({
       {showDetail && (
         <>
           <Card.Content extra compact="very" size="mini">
-            <FileCounts title={studyId} files={files} history={history} />
+            <FileCounts
+              title={studyId}
+              files={files}
+              history={history}
+              showWarning={myProfile && hasPermission(myProfile, 'add_file')}
+            />
             <Button
               as={Label}
               basic

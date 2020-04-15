@@ -22,7 +22,15 @@ const TableValue = ({row, col, title, isResearch}) => {
   const coordUrl = process.env.REACT_APP_COORD_UI + 'releases/';
   switch (col) {
     case 'files':
-      return <FileCounts files={row[col].edges} title={title} hideIcon wrap />;
+      return (
+        <FileCounts
+          files={row[col].edges}
+          showWarning={myProfile && hasPermission(myProfile, 'add_file')}
+          title={title}
+          hideIcon
+          wrap
+        />
+      );
     case 'projects':
       return (
         <CavaticaCounts

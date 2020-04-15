@@ -7,7 +7,7 @@ import {versionState} from '../../common/enums';
  * Displays file counts with total number and breaking down by each status
  * When no files exist, show buttons guiding user to upload files
  */
-const FileCounts = ({files, title, history, hideIcon, wrap}) => {
+const FileCounts = ({files, title, history, hideIcon, wrap, showWarning}) => {
   const states = files.map(
     ({node: {versions}}) => versions.edges[0].node.state,
   );
@@ -21,12 +21,14 @@ const FileCounts = ({files, title, history, hideIcon, wrap}) => {
       <Link
         to={`/study/${title}/documents`}
         onClick={e => e.stopPropagation()}
-        className={hideIcon && files.length === 0 ? 'text-red' : null}
+        className={
+          hideIcon && files.length === 0 && showWarning ? 'text-red' : null
+        }
       >
         {!hideIcon && (
           <Icon
             name="file"
-            color={files && files.length > 0 ? 'grey' : 'red'}
+            color={files.length === 0 && showWarning ? 'red' : 'grey'}
           />
         )}
         {files.length > 0 ? files.length : 'No'} documents
