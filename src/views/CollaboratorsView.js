@@ -3,6 +3,7 @@ import {Helmet} from 'react-helmet';
 import {useQuery, useMutation} from '@apollo/react-hooks';
 import {MY_PROFILE, GET_STUDY_BY_ID} from '../state/queries';
 import {ADD_COLLABORATOR, REMOVE_COLLABORATOR} from '../state/mutations';
+import {hasPermission} from '../common/permissions';
 import {
   Container,
   Divider,
@@ -51,10 +52,8 @@ const CollaboratorsView = ({match, history}) => {
     ],
   });
 
-  const isAdmin =
-    !userLoading && userData.myProfile
-      ? userData.myProfile.roles.includes('ADMIN')
-      : false;
+  const user = !userLoading && userData.myProfile;
+
   if (loading)
     return (
       <Container as={Segment} basic vertical>
@@ -107,7 +106,7 @@ const CollaboratorsView = ({match, history}) => {
       <Helmet>
         <title>KF Data Tracker - Study collaborators</title>
       </Helmet>
-      {isAdmin && (
+      {user && hasPermission(user, 'add_collaborator') && (
         <Button
           primary
           icon="add"
@@ -133,7 +132,7 @@ const CollaboratorsView = ({match, history}) => {
         <Container>
           <CollaboratorsList
             users={studyByKfId.collaborators.edges}
-            showAdminActions={isAdmin}
+            showAdminActions={user && hasPermission(user, 'remove_collaborator')}
             removeCollaborator={({variables}) =>
               removeCollaborator({
                 variables: {study: studyByKfId.id, ...variables},
