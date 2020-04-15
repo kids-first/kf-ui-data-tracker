@@ -1,4 +1,4 @@
-import {getPermissions, hasPermission} from '../permissions';
+import {getPermissions, hasPermission, hasPermissions} from '../permissions';
 import myProfile from '../../../__mocks__/kf-api-study-creator/responses/myProfile.json';
 
 it('gets user permissions', () => {
@@ -9,9 +9,18 @@ it('gets user permissions', () => {
   expect(permissions).toContain('delete_version');
 });
 
-it('user has permissions', () => {
+it('user has permission', () => {
   const user = myProfile.data.myProfile;
 
   expect(hasPermission(user, 'link_bucket')).toBe(true);
   expect(hasPermission(user, 'asd_aoe')).toBe(false);
+});
+
+it('user has permissions', () => {
+  const user = myProfile.data.myProfile;
+
+  expect(hasPermissions(user, ['link_bucket'])).toBe(true);
+  expect(hasPermissions(user, ['asd_aoe'])).toBe(false);
+  expect(hasPermissions(user, ['link_bucket', 'asd_aoe'])).toBe(false);
+  expect(hasPermissions(user, ['link_bucket', 'view_study'])).toBe(true);
 });

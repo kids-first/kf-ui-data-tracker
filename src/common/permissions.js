@@ -12,3 +12,11 @@ export const hasPermission = (user, permission) => {
   const permissions = getPermissions(user);
   return permissions.includes(permission);
 };
+
+/*
+ * Checks if a given user has all the given permissions
+ */
+export const hasPermissions = (user, permissions) => {
+  const userPermissions = getPermissions(user);
+  return permissions.every(perm => userPermissions.includes(perm));
+};
