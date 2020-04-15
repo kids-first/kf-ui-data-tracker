@@ -84,11 +84,12 @@ const Routes = () => (
           component={ProfileView}
           scope={['admin', 'profile']}
         />
-        <AdminRoute
+        <RestrictedRoute
           exact
           path="/configuration"
           component={ConfigurationView}
           scope={['admin', 'configuration']}
+          permissions={['view_settings']}
         />
         <AdminRoute
           exact
