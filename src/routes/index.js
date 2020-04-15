@@ -72,11 +72,12 @@ const Routes = () => (
           scope={['admin', 'events']}
           permissions={['view_event']}
         />
-        <AdminRoute
+        <RestrictedRoute
           exact
           path="/users"
           component={UsersView}
-          scope={['admin', 'tokens']}
+          scope={['admin', 'users']}
+          permissions={['view_user']}
         />
         <PrivateRoute
           path="/profile"
