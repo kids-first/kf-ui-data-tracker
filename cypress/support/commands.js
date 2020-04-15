@@ -48,3 +48,10 @@ Cypress.Commands.add('login', () => {
   const token = encodedHeader + '.' + encodedData;
   window.localStorage.setItem('accessToken', token);
 });
+
+/**
+ * Resets the database on the API via the dev endpoint
+ */
+Cypress.Commands.add('resetdb', () => {
+  cy.request('post', Cypress.env('DEV_ENDPOINT') + '/reset-db/');
+});

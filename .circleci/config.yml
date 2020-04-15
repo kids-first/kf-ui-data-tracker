@@ -39,8 +39,13 @@ jobs:
       - run: |
           yarn add -D bundlesize
           yarn run bundlesize
-      - run: yarn test -w 1
-      - run: yarn codecov
+      - run: yarn test -w 2
+      - store_artifacts:
+          path: ./jest-coverage
+      - persist_to_workspace:
+          root: ./
+          paths:
+            - jest-coverage/
   integration_tests:
     docker:
       - image: circleci/node:11.12.0
@@ -71,9 +76,50 @@ jobs:
             docker-compose up -d web postgres redis scheduler worker app
             sleep 10
             docker-compose up cypress
+      - run:
+          name: Copy coverage
+          command: |
+            docker cp project_app_1:/app/cypress-coverage ./
+      - store_artifacts:
+          path: ./cypress-coverage
+      - store_test_results:
+          path: ./cypress-coverage
+      - persist_to_workspace:
+          root: ./
+          paths:
+            - cypress-coverage/
+  coverage:
+    docker:
+      - image: circleci/node:11.12.0
+    steps:
+      - attach_workspace:
+          at: ~/workspace
+      - checkout
+      - run:
+          name: Merge coverage
+          command: |
+            mkdir ./coverage
+            cp ~/workspace/cypress-coverage/coverage-final.json ./coverage/cypress.json
+            cp ~/workspace/jest-coverage/coverage-final.json ./coverage/jest.json
+      - run:
+          name: Install codecov
+          command: yarn add codecov
+      - run:
+          name: Upload cypress coverage
+          command: yarn codecov -f coverage/cypress.json
+      - run:
+          name: Upload jest coverage
+          command: yarn codecov -f coverage/jest.json
+
+
 workflows:
   version: 2
   tests:
     jobs:
       - unit_tests
       - integration_tests
+      - coverage:
+          requires:
+              - unit_tests
+              - integration_tests
+
