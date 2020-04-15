@@ -1,20 +1,23 @@
 /// <reference types="cypress" />
 
-context('Study List', () => {
+context('Admin Study List', () => {
+  before(() => {
+    cy.resetdb();
+    cy.as(['Administrators']);
+  });
+
   beforeEach(() => {
     cy.login();
     cy.visit('/');
   });
 
   it('filters studies by name', () => {
+    cy.contains('label', 'Show only my studies').click();
     // All studies should be displayed
-    // Need to figure out state restoration
-    /*
     cy.get('table')
       .find('tr')
       .its('length')
       .should('eq', 4);
-    */
 
     // Filter the studies by name using the search box
     cy.get('input[aria-label="search studies"]')
@@ -29,6 +32,7 @@ context('Study List', () => {
   });
 
   it('toggles grid and list views', () => {
+    cy.contains('label', 'Show only my studies').click();
     // Should default to the table view
     cy.get('button[aria-label="see studies in list view"]').should(
       'have.class',
@@ -53,5 +57,58 @@ context('Study List', () => {
       'not.have.class',
       'active',
     );
+  });
+
+  it('only shows my studies', () => {
+    cy.contains('label', 'Show only my studies').click();
+    // Select first study
+    cy.contains('SD_ODWXI1TE').click();
+
+    // Add self to that study
+    cy.contains('a', 'Collaborators').click();
+    cy.contains('button', 'ADD COLLABORATOR')
+      .click()
+      .get('input.search')
+      .click();
+    cy.contains('div[role="option"]', 'testuser').click();
+    cy.contains('button', 'Add').click();
+
+    cy.visit('/');
+    // Only the one study should be displayed by default
+    cy.get('table')
+      .find('tr')
+      .its('length')
+      .should('eq', 2);
+    // All studies should still be visible
+    cy.contains('label', 'Show only my studies').click();
+    cy.get('table')
+      .find('tr')
+      .its('length')
+      .should('eq', 4);
+  });
+});
+
+context('Unauthed Study List', () => {
+  before(() => cy.as([]));
+
+  beforeEach(() => {
+    cy.login();
+    cy.visit('/');
+  });
+
+  it('displays no studies', () => {
+    // Should test that no studies are displayed and the user is told that
+    // they are not allowed to view any studies
+  });
+});
+
+context('Investigator Study List', () => {
+  before(() => {
+    cy.resetdb();
+    cy.as(['Investigators']);
+  });
+
+  it("only shows investigator's studies", () => {
+    // Should test that only studies which the user is a member of are displayed
   });
 });
