@@ -182,7 +182,12 @@ const Routes = () => (
           component={TokensListView}
           scope={['admin', 'tokens']}
         />
-        <AdminRoute exact path="/buckets" component={BucketsView} />
+        <RestrictedRoute
+          exact
+          path="/buckets"
+          component={BucketsView}
+          permissions={['view_bucket', 'list_all_bucket']}
+        />
         <AdminRoute
           exact
           path="/cavatica-projects"
