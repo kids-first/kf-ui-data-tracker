@@ -139,9 +139,9 @@ const StudyTable = ({
     cols.reduce((row, col) => {
       if (col === 'description') {
         row[col] = {
-          missingValue: isAdmin ? countStudyNotification(node, isResearch) : 0,
-          missingProject: isAdmin ? countProjectNotification(node) : 0,
-          requiredFileChanges: isAdmin ? countFileNotification(node) : 0,
+          missingValue: countStudyNotification(node, isResearch),
+          missingProject: countProjectNotification(node),
+          requiredFileChanges: countFileNotification(node),
         };
       } else if (col === 'name') {
         row[col] =
