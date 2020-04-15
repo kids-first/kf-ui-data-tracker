@@ -2,6 +2,7 @@ import React, {Fragment} from 'react';
 import {Route, Switch} from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
 import AdminRoute from './AdminRoute';
+import RestrictedRoute from './RestrictedRoute';
 import {Header} from '../components/Header';
 import {Footer} from '../components/Footer';
 import {
@@ -64,11 +65,12 @@ const Routes = () => (
       />
       <Switch>
         <PrivateRoute exact path="/" component={StudyListView} />
-        <AdminRoute
+        <RestrictedRoute
           exact
           path="/events"
           component={EventsView}
           scope={['admin', 'events']}
+          permissions={['view_event']}
         />
         <AdminRoute
           exact
