@@ -11,17 +11,16 @@ const StudyListView = ({history}) => {
   const {data: profileData} = useQuery(MY_PROFILE);
   const myProfile = profileData && profileData.myProfile;
   const {loading, error, data} = useQuery(ALL_STUDIES);
-  const {
-    loading: releasesLoading,
-    error: releasesError,
-    data: releasesData,
-  } = useQuery(GET_RELEASED_STUDY, {
-    context: {clientName: 'coordinator'},
-  });
+  const {error: releasesError, data: releasesData} = useQuery(
+    GET_RELEASED_STUDY,
+    {
+      context: {clientName: 'coordinator'},
+    },
+  );
   const allStudies = data && data.allStudies;
   const allReleases = releasesData && releasesData.allStudies;
   var studyList = !loading && allStudies ? allStudies.edges : [];
-  const releaseList = !releasesLoading && allReleases ? allReleases.edges : [];
+  const releaseList = allReleases ? allReleases.edges : [];
   if (releaseList.length > 0 && studyList.length > 0) {
     studyList.forEach(function(study) {
       const release =
