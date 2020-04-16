@@ -108,7 +108,7 @@ const FileList = ({
                 updateFile={updateFile}
                 selected={selection.includes(node.kfId)}
                 onSelectOne={onSelectOne}
-                deleteFile={isAdmin ? deleteFile : null}
+                deleteFile={deleteFile}
                 downloadFileMutation={downloadFileMutation}
               />
             ))}

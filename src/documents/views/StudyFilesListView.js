@@ -213,7 +213,7 @@ const StudyFilesListView = ({
                 <BatchActionBar
                   fileList={files}
                   studyId={kfId}
-                  deleteFile={deleteFile}
+                  deleteFile={allowDelete ? deleteFile : null}
                   downloadFileMutation={downloadFile}
                   selection={selectedFiles}
                   setSelection={setSelectedFiles}
@@ -226,7 +226,7 @@ const StudyFilesListView = ({
                 updateFile={updateFile}
                 updateError={updateFileError}
                 downloadFileMutation={downloadFile}
-                deleteFile={deleteFile}
+                deleteFile={allowDelete ? deleteFile : null}
                 selection={selectedFiles}
                 setSelection={setSelectedFiles}
               />
