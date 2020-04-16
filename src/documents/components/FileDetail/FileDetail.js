@@ -105,6 +105,7 @@ const FileDetail = ({
   history,
   match,
   isAdmin,
+  allowViewVersion,
   updateFile,
   updateError,
 }) => {
@@ -209,19 +210,21 @@ const FileDetail = ({
       </Grid>
 
       <Grid>
-        <Grid.Row>
-          <Grid.Column mobile={16} tablet={16} computer={13}>
-            <VersionList
-              studyId={studyId}
-              fileNode={fileNode}
-              onUploadClick={() => setDialog('upload')}
-              onNameClick={(versionNode, index) => {
-                setDialog('versionInfo');
-                setOpenVersion({version: versionNode, index: index});
-              }}
-            />
-          </Grid.Column>
-        </Grid.Row>
+        {allowViewVersion && (
+          <Grid.Row>
+            <Grid.Column mobile={16} tablet={16} computer={13}>
+              <VersionList
+                studyId={studyId}
+                fileNode={fileNode}
+                onUploadClick={() => setDialog('upload')}
+                onNameClick={(versionNode, index) => {
+                  setDialog('versionInfo');
+                  setOpenVersion({version: versionNode, index: index});
+                }}
+              />
+            </Grid.Column>
+          </Grid.Row>
+        )}
         <Grid.Row>
           <Grid.Column mobile={16} tablet={16} computer={13}>
             <FilePreview file={fileNode} />

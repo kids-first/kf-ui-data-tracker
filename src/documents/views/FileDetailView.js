@@ -83,6 +83,7 @@ const FileDetailView = ({match}) => {
         fileNode={fileByKfId}
         isAdmin={isAdmin}
         updateFile={updateFile}
+        allowViewVersion={allowViewVersion}
         updateError={updateError}
       />
     </Container>
