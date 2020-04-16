@@ -35,7 +35,6 @@ const ActionButtons = ({
   setDialog,
   deleteFile,
   history,
-  isAdmin,
   updateFile,
 }) => (
   <>
@@ -112,11 +111,12 @@ const FileDetail = ({
   fileNode,
   history,
   match,
-  isAdmin,
   allowUpload,
   allowViewVersion,
   updateFile,
   updateError,
+  downloadFileMutation,
+  deleteFile,
 }) => {
   const studyId = match.params.kfId;
   const [dialog, setDialog] = useState(false);

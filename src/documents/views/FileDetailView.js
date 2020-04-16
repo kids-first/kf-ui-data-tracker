@@ -81,8 +81,10 @@ const FileDetailView = ({match}) => {
       </Helmet>
       <FileDetail
         fileNode={fileByKfId}
-        isAdmin={isAdmin}
-        updateFile={updateFile}
+        allowUpload={allowUpload}
+        deleteFile={allowDelete ? deleteFile : null}
+        updateFile={allowEdit ? updateFile : null}
+        downloadFileMutation={downloadFileMutation}
         allowViewVersion={allowViewVersion}
         updateError={updateError}
       />
