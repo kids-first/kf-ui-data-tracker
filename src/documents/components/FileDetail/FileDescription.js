@@ -41,7 +41,7 @@ const FileDescription = ({fileNode, updateFile}) => {
     >
       <Header as="h4" color="grey">
         Description
-        {!editing && (
+        {updateFile && !editing && (
           <Button
             size="mini"
             labelPosition="left"
