@@ -105,6 +105,7 @@ const FileDetail = ({
   history,
   match,
   isAdmin,
+  allowUpload,
   allowViewVersion,
   updateFile,
   updateError,
@@ -216,6 +217,7 @@ const FileDetail = ({
               <VersionList
                 studyId={studyId}
                 fileNode={fileNode}
+                allowUpload={allowUpload}
                 onUploadClick={() => setDialog('upload')}
                 onNameClick={(versionNode, index) => {
                   setDialog('versionInfo');
@@ -240,6 +242,7 @@ const FileDetail = ({
             onUploadClick={() => setDialog('upload')}
             openedVersion={versionOpened}
             downloadFileMutation={downloadFileMutation}
+            allowUpload={allowUpload}
           />
         )}
       </Grid>

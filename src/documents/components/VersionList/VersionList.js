@@ -6,7 +6,13 @@ import {Button, Table} from 'semantic-ui-react';
 /**
  * Displays ordered versions of one file. (Latest first)
  */
-const VersionList = ({studyId, fileNode, onUploadClick, onNameClick}) => {
+const VersionList = ({
+  studyId,
+  fileNode,
+  onUploadClick,
+  onNameClick,
+  allowUpload,
+}) => {
   return (
     <Table compact="very" selectable>
       <Table.Header>
@@ -18,16 +24,18 @@ const VersionList = ({studyId, fileNode, onUploadClick, onNameClick}) => {
             verticalAlign="bottom"
           >
             Document Versions ({fileNode.versions.edges.length})
-            <Button
-              compact
-              primary
-              floated="right"
-              onClick={onUploadClick}
-              labelPosition="left"
-              size="mini"
-              icon="cloud upload"
-              content="UPLOAD VERSION"
-            />
+            {allowUpload && (
+              <Button
+                compact
+                primary
+                floated="right"
+                onClick={onUploadClick}
+                labelPosition="left"
+                size="mini"
+                icon="cloud upload"
+                content="UPLOAD VERSION"
+              />
+            )}
           </Table.HeaderCell>
         </Table.Row>
       </Table.Header>
