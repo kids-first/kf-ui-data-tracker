@@ -52,7 +52,7 @@ const FileTags = ({fileNode, updateFile}) => {
 
   return (
     <Label.Group>
-      {fileNode.tags.length > 0 &&
+      {fileNode.tags.length > 0 ? (
         fileNode.tags
           .slice(0, more ? fileNode.tags.length : 5)
           .map((tag, index) => (
@@ -67,16 +67,21 @@ const FileTags = ({fileNode, updateFile}) => {
             >
               {defaultTags[tag] ? defaultTags[tag] : tag.substring(0, 10)}
               {tag.length > 10 && '...'}
-              <Icon
-                name="close"
-                data-testid="remove-tag"
-                onClick={e => {
-                  e.stopPropagation();
-                  removeTag(tag);
-                }}
-              />
+              {updateFile && (
+                <Icon
+                  name="close"
+                  data-testid="remove-tag"
+                  onClick={e => {
+                    e.stopPropagation();
+                    removeTag(tag);
+                  }}
+                />
+              )}
             </Label>
-          ))}
+          ))
+      ) : (
+        <span className="text-grey">{updateFile === null && 'No Tags'}</span>
+      )}
       {fileNode.tags.length > 5 && (
         <small
           className="mr-5"
@@ -88,64 +93,70 @@ const FileTags = ({fileNode, updateFile}) => {
           {more ? 'show less' : `+ ${fileNode.tags.length - 5} more`}
         </small>
       )}
-      <Popup
-        wide
-        position="top right"
-        on="click"
-        open={open}
-        onClose={handleClose}
-        onOpen={handleOpen}
-        content={
-          <Form onSubmit={addTag}>
-            <Dropdown
-              defaultOpen
-              searchInput={{autoFocus: true}}
-              data-testid="tag-dropdown"
-              placeholder="Tags"
-              search
-              selection
-              allowAdditions
-              onAddItem={handleAddition}
-              onChange={handleChange}
-              options={tagOptions.filter(v => !fileNode.tags.includes(v.value))}
-              error={tagSelection.length > 50 || error.length > 0}
-            />
-            {tagSelection.length > 50 || error.length > 0 ? (
-              <p className="text-red">
-                {tagSelection.length > 50 && 'Tag is too long.'}
-                {error}
-              </p>
-            ) : (
-              <Button
-                type="submit"
-                primary
-                icon="add"
-                attached="right"
-                data-testid="tag-file-add"
-                className="my-2"
-                disabled={tagSelection.length > 50 || tagSelection.length === 0}
-                onClick={e => {
-                  e.stopPropagation();
-                  addTag();
-                }}
+      {updateFile && (
+        <Popup
+          wide
+          position="top right"
+          on="click"
+          open={open}
+          onClose={handleClose}
+          onOpen={handleOpen}
+          content={
+            <Form onSubmit={addTag}>
+              <Dropdown
+                defaultOpen
+                searchInput={{autoFocus: true}}
+                data-testid="tag-dropdown"
+                placeholder="Tags"
+                search
+                selection
+                allowAdditions
+                onAddItem={handleAddition}
+                onChange={handleChange}
+                options={tagOptions.filter(
+                  v => !fileNode.tags.includes(v.value),
+                )}
+                error={tagSelection.length > 50 || error.length > 0}
               />
-            )}
-          </Form>
-        }
-        trigger={
-          <Button
-            className="square-26"
-            size="mini"
-            basic
-            compact
-            icon="add"
-            data-testid="tag-file"
-            onClick={e => {
-              e.stopPropagation();
-            }}
-          />
-        }
-      />
+              {tagSelection.length > 50 || error.length > 0 ? (
+                <p className="text-red">
+                  {tagSelection.length > 50 && 'Tag is too long.'}
+                  {error}
+                </p>
+              ) : (
+                <Button
+                  type="submit"
+                  primary
+                  icon="add"
+                  attached="right"
+                  data-testid="tag-file-add"
+                  className="my-2"
+                  disabled={
+                    tagSelection.length > 50 || tagSelection.length === 0
+                  }
+                  onClick={e => {
+                    e.stopPropagation();
+                    addTag();
+                  }}
+                />
+              )}
+            </Form>
+          }
+          trigger={
+            <Button
+              className="square-26"
+              size="mini"
+              basic
+              compact
+              icon="add"
+              data-testid="tag-file"
+              onClick={e => {
+                e.stopPropagation();
+              }}
+            />
+          }
+        />
+      )}
     </Label.Group>
   );
 };
