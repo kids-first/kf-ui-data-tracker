@@ -15,7 +15,6 @@ const DevHeader = () => {
 
   const [groupsLoading, setGroupsLoading] = useState(false);
   const [selectedGroups, setSelectedGroups] = useState(null);
-  const [groupsStatus, setGroupsStatus] = useState('');
   const [databaseLoading, setDatabaseLoading] = useState(false);
   const [databaseStatus, setDatabaseStatus] = useState('');
 
@@ -48,27 +47,28 @@ const DevHeader = () => {
     }));
   }
 
-  const updateGroups = (data) => {
+  const updateGroups = data => {
     setGroupsLoading(true);
     const q = data.value.join(',');
     fetch(`${KF_STUDY_API}/__dev/change-groups/?groups=${q}`, {
       method: 'POST',
     }).then(resp => {
-      setGroupsLoading(false);
-      resp.json().then(data => setGroupsStatus(data.status || 'error'));
-      setTimeout(() => {
-        setGroupsStatus('');
-      }, 2000);
+      resp.json().then(data => {
+        if (data.status === 'done') window.location.reload();
+      });
     });
   };
 
   const resetDatabase = () => {
     setDatabaseLoading(true);
     fetch(`${KF_STUDY_API}/__dev/reset-db/`, {method: 'POST'}).then(resp => {
-      setDatabaseLoading(false);
-      resp.json().then(data => setDatabaseStatus(data.status || 'error'));
+      resp.json().then(data => {
+        setDatabaseStatus(data.status || 'error');
+        setDatabaseLoading(false);
+      });
       setTimeout(() => {
         setDatabaseStatus('');
+        window.location.reload();
       }, 2000);
     });
   };
@@ -84,9 +84,24 @@ const DevHeader = () => {
       <Container>
         <Menu.Item header style={{color: '#00dd00'}}>
           <Popup
+            inverted
+            flowing
+            on="hover"
+            open={
+              databaseLoading || databaseStatus || groupsLoading
+                ? true
+                : undefined
+            }
             trigger={<span>H@X0r Mode</span>}
             content={
-              <Image src="https://media.giphy.com/media/Hcw7rjsIsHcmk/giphy.gif" />
+              <>
+                <p>
+                  <Image src="https://media.giphy.com/media/Hcw7rjsIsHcmk/giphy.gif" />
+                </p>
+                <p style={{color: '#00dd00'}}>
+                  Shhhhh, keyboard cat is working...
+                </p>
+              </>
             }
           />
         </Menu.Item>
@@ -105,14 +120,6 @@ const DevHeader = () => {
             />
             Reset Database
           </Menu.Item>
-          {groupsStatus !== '' && (
-            <Menu.Item>
-              <Icon
-                name={groupsStatus === 'done' ? 'check' : 'delete'}
-                loading={databaseLoading}
-              />
-            </Menu.Item>
-          )}
           <Dropdown
             item
             multiple
