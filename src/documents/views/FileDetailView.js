@@ -7,29 +7,36 @@ import {UPDATE_FILE, DELETE_FILE, FILE_DOWNLOAD_URL} from '../mutations';
 import {Container, Segment, Dimmer, Loader, Message} from 'semantic-ui-react';
 import FileDetail from '../components/FileDetail/FileDetail';
 import NotFoundView from '../../views/NotFoundView';
+import {hasPermission} from '../../common/permissions';
 
 const FileDetailView = ({match}) => {
   const {loading, data, error} = useQuery(GET_FILE_BY_ID, {
     variables: {kfId: match.params.fileId},
   });
   const fileByKfId = data && data.fileByKfId;
-  const user = useQuery(MY_PROFILE);
   const [updateFile, {error: updateError}] = useMutation(UPDATE_FILE, {
     refetchQueries: [
       {query: GET_FILE_BY_ID, variables: {kfId: match.params.fileId}},
     ],
   });
-  const isAdmin =
-    !user.loading && user.data.myProfile
-      ? user.data.myProfile.roles.includes('ADMIN')
-      : false;
-
   const [deleteFile] = useMutation(DELETE_FILE, {
     refetchQueries: [
       {query: GET_STUDY_BY_ID, variables: {kfId: match.params.kfId}},
     ],
   });
   const [downloadFileMutation] = useMutation(FILE_DOWNLOAD_URL);
+  const {data: profileData} = useQuery(MY_PROFILE);
+  const myProfile = profileData && profileData.myProfile;
+  const allowEdit = myProfile && hasPermission(myProfile, 'change_file');
+  const allowUpload =
+    myProfile &&
+    (hasPermission(myProfile, 'add_version') ||
+      hasPermission(myProfile, 'add_my_study_version'));
+  const allowDelete = myProfile && hasPermission(myProfile, 'delete_file');
+  const allowViewVersion =
+    myProfile &&
+    (hasPermission(myProfile, 'view_version') ||
+      hasPermission(myProfile, 'view_my_version'));
   if (loading)
     return (
       <Dimmer active inverted>
