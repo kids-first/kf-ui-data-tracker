@@ -36,6 +36,7 @@ const ActionButtons = ({
   deleteFile,
   history,
   isAdmin,
+  updateFile,
 }) => (
   <>
     <Header as="h5" attached="top" textAlign="center" color="blue">
@@ -53,46 +54,53 @@ const ActionButtons = ({
         }
         content="DOWNLOAD"
       />
-      <Divider />
-      <Button.Group size="mini" fluid>
-        <Button
-          icon="pencil"
-          size="small"
-          labelPosition="left"
-          color="grey"
-          onClick={() => setDialog('annotation')}
-          data-testid="edit-button"
-          content="EDIT"
-        />
-        {isAdmin && (
-          <Popup
-            trigger={
-              <Button icon="trash alternate" data-testid="delete-button" />
-            }
-            header="Are you sure?"
-            content={
-              <>
-                This file and all of its versions and history will be deleted
-                <Divider />
-                <Button
-                  data-testid="delete-confirm"
-                  negative
-                  fluid
-                  size="mini"
-                  icon="trash alternate"
-                  content="Delete"
-                  onClick={e => {
-                    deleteFile({variables: {kfId: fileNode.kfId}});
-                    history.goBack();
-                  }}
-                />
-              </>
-            }
-            on="click"
-            position="top right"
-          />
-        )}
-      </Button.Group>
+      {(updateFile !== null || deleteFile !== null) && (
+        <>
+          <Divider />
+          <Button.Group size="mini" fluid>
+            {updateFile && (
+              <Button
+                icon="pencil"
+                size="small"
+                labelPosition="left"
+                color="grey"
+                onClick={() => setDialog('annotation')}
+                data-testid="edit-button"
+                content="EDIT"
+              />
+            )}
+            {deleteFile && (
+              <Popup
+                trigger={
+                  <Button icon="trash alternate" data-testid="delete-button" />
+                }
+                header="Are you sure?"
+                content={
+                  <>
+                    This file and all of its versions and history will be
+                    deleted
+                    <Divider />
+                    <Button
+                      data-testid="delete-confirm"
+                      negative
+                      fluid
+                      size="mini"
+                      icon="trash alternate"
+                      content="Delete"
+                      onClick={e => {
+                        deleteFile({variables: {kfId: fileNode.kfId}});
+                        history.goBack();
+                      }}
+                    />
+                  </>
+                }
+                on="click"
+                position="top right"
+              />
+            )}
+          </Button.Group>
+        </>
+      )}
     </Segment>
   </>
 );
@@ -203,7 +211,7 @@ const FileDetail = ({
                 setDialog,
                 deleteFile,
                 history,
-                isAdmin,
+                updateFile,
               }}
             />
           </Grid.Column>
