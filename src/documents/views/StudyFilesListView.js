@@ -239,7 +239,9 @@ const StudyFilesListView = ({
                 <Segment basic>
                   <Header icon textAlign="center">
                     <Icon name="file alternate outline" />
-                    You don't have any documents yet.
+                    {allowView
+                      ? "You don't have any documents yet."
+                      : "You don't have access to any documents."}
                   </Header>
                 </Segment>
               )}
