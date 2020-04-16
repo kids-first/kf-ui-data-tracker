@@ -25,18 +25,6 @@ const FileDetailView = ({match}) => {
     ],
   });
   const [downloadFileMutation] = useMutation(FILE_DOWNLOAD_URL);
-  const {data: profileData} = useQuery(MY_PROFILE);
-  const myProfile = profileData && profileData.myProfile;
-  const allowEdit = myProfile && hasPermission(myProfile, 'change_file');
-  const allowUpload =
-    myProfile &&
-    (hasPermission(myProfile, 'add_version') ||
-      hasPermission(myProfile, 'add_my_study_version'));
-  const allowDelete = myProfile && hasPermission(myProfile, 'delete_file');
-  const allowViewVersion =
-    myProfile &&
-    (hasPermission(myProfile, 'view_version') ||
-      hasPermission(myProfile, 'view_my_version'));
   if (loading)
     return (
       <Dimmer active inverted>
