@@ -21,6 +21,7 @@ import NotFoundView from '../../views/NotFoundView';
 import ListFilterBar from '../components/ListFilterBar/ListFilterBar';
 import BatchActionBar from '../components/ListFilterBar/BatchActionBar';
 import {createDateSort, modifiedDateSort} from '../utilities';
+import {hasPermission} from '../../common/permissions';
 
 /**
  * A place holder skeleton for a list of files
@@ -103,11 +104,15 @@ const StudyFilesListView = ({
   });
   const studyByKfId = data && data.studyByKfId;
   // Query for user
-  const user = useQuery(MY_PROFILE);
-  const isAdmin =
-    !user.loading && user.data.myProfile
-      ? user.data.myProfile.roles.includes('ADMIN')
-      : false;
+  const {data: profileData} = useQuery(MY_PROFILE);
+  const myProfile = profileData && profileData.myProfile;
+  const allowView =
+    myProfile &&
+    (hasPermission(myProfile, 'view_my_study') ||
+      hasPermission(myProfile, 'view_study'));
+  const allowUpload = myProfile && hasPermission(myProfile, 'add_file');
+  const allowDelete = myProfile && hasPermission(myProfile, 'delete_file');
+  const allowEdit = myProfile && hasPermission(myProfile, 'change_file');
 
   const [dialog, setDialog] = useState(false);
   // View state
