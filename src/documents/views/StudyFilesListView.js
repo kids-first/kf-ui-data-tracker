@@ -173,7 +173,7 @@ const StudyFilesListView = ({
         <Grid.Column width={10}>
           <h2>Study Documents</h2>
         </Grid.Column>
-        {files.length > 0 && (
+        {files.length > 0 && allowUpload && (
           <Grid.Column width={6}>
             <Button
               compact
@@ -261,18 +261,20 @@ const StudyFilesListView = ({
           )}
         </Grid.Column>
       </Grid.Row>
-      <Grid.Row centered>
-        <Responsive
-          as={UploadContainer}
-          minWidth={Responsive.onlyTablet.minWidth}
-          handleUpload={file => {
-            setFile(file);
-            return !files.length
-              ? history.push('documents/new-document', {file})
-              : setDialog(true);
-          }}
-        />
-      </Grid.Row>
+      {allowUpload && (
+        <Grid.Row centered>
+          <Responsive
+            as={UploadContainer}
+            minWidth={Responsive.onlyTablet.minWidth}
+            handleUpload={file => {
+              setFile(file);
+              return !files.length
+                ? history.push('documents/new-document', {file})
+                : setDialog(true);
+            }}
+          />
+        </Grid.Row>
+      )}
     </Grid>
   );
 };
