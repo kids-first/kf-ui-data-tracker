@@ -72,9 +72,7 @@ const AdminDropdown = ({profile}) => {
     <Dropdown trigger={'Admin'} className="link item">
       <Dropdown.Menu>{menuItems}</Dropdown.Menu>
     </Dropdown>
-  ) : (
-    null
-  );
+  ) : null;
 };
 
 const Header = () => {
@@ -89,7 +87,7 @@ const Header = () => {
   }
 
   return (
-    <Menu attached="top" size="large">
+    <Menu attached size="large">
       <Container>
         <Menu.Item>
           <img src={logo} alt="Kids First logo" />

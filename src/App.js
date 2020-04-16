@@ -4,6 +4,7 @@ import Routes from './routes';
 import {ApolloProvider} from '@apollo/react-common';
 import {client} from './state/client';
 import {AnalyticsTrackingProvider} from './analyticsTracking';
+import DevHeader from './components/Header/DevHeader';
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <ApolloProvider client={client}>
         <Router>
           <main className="App">
+            <DevHeader />
             <Routes />
           </main>
         </Router>
