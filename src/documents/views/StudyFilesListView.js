@@ -222,7 +222,6 @@ const StudyFilesListView = ({
               <FileList
                 fileList={filteredFiles}
                 studyId={kfId}
-                isAdmin={isAdmin}
                 updateFile={allowEdit ? updateFile : null}
                 updateError={updateFileError}
                 downloadFileMutation={downloadFile}

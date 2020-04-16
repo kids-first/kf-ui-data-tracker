@@ -44,7 +44,6 @@ const FileElement = ({
   history,
   match,
   fileListId,
-  isAdmin,
   updateFile,
   deleteFile,
   downloadFileMutation,
@@ -115,7 +114,6 @@ const FileElement = ({
           fluid
           node={fileNode}
           studyId={fileListId}
-          isAdmin={isAdmin}
           deleteFile={deleteFile}
           downloadFileMutation={downloadFileMutation}
         />
