@@ -1,9 +1,6 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import {useMutation} from '@apollo/react-hooks';
 import {withRouter, Link} from 'react-router-dom';
-import {FILE_DOWNLOAD_URL, DELETE_FILE} from '../../mutations';
-import {GET_STUDY_BY_ID} from '../../../state/queries';
 import AvatarTimeAgo from '../../../components/AvatarTimeAgo/AvatarTimeAgo';
 import VersionList from '../VersionList/VersionList';
 import {
@@ -112,11 +109,6 @@ const FileDetail = ({
   updateError,
 }) => {
   const studyId = match.params.kfId;
-  const [downloadFileMutation] = useMutation(FILE_DOWNLOAD_URL);
-  const [deleteFile] = useMutation(DELETE_FILE, {
-    refetchQueries: [{query: GET_STUDY_BY_ID, variables: {kfId: studyId}}],
-  });
-
   const [dialog, setDialog] = useState(false);
   const [versionOpened, setOpenVersion] = useState({version: {}, index: null});
   const sortedVersions = fileSortedVersions(fileNode);

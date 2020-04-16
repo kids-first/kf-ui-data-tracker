@@ -1,9 +1,9 @@
 import React from 'react';
 import {Helmet} from 'react-helmet';
 import {useQuery, useMutation} from '@apollo/react-hooks';
-import {MY_PROFILE} from '../../state/queries';
+import {MY_PROFILE, GET_STUDY_BY_ID} from '../../state/queries';
 import {GET_FILE_BY_ID} from '../queries';
-import {UPDATE_FILE} from '../mutations';
+import {UPDATE_FILE, DELETE_FILE, FILE_DOWNLOAD_URL} from '../mutations';
 import {Container, Segment, Dimmer, Loader, Message} from 'semantic-ui-react';
 import FileDetail from '../components/FileDetail/FileDetail';
 import NotFoundView from '../../views/NotFoundView';
@@ -24,6 +24,12 @@ const FileDetailView = ({match}) => {
       ? user.data.myProfile.roles.includes('ADMIN')
       : false;
 
+  const [deleteFile] = useMutation(DELETE_FILE, {
+    refetchQueries: [
+      {query: GET_STUDY_BY_ID, variables: {kfId: match.params.kfId}},
+    ],
+  });
+  const [downloadFileMutation] = useMutation(FILE_DOWNLOAD_URL);
   if (loading)
     return (
       <Dimmer active inverted>
