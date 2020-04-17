@@ -17,12 +17,12 @@ context('Admin Study List', () => {
     cy.get('table')
       .find('tr')
       .its('length')
-      .should('eq', 4);
+      .should('eq', 5);
 
     // Filter the studies by name using the search box
     cy.get('input[aria-label="search studies"]')
       .focus()
-      .type('bench');
+      .type('embrace');
 
     // Only one study should be listed
     cy.get('table')
@@ -78,13 +78,13 @@ context('Admin Study List', () => {
     cy.get('table')
       .find('tr')
       .its('length')
-      .should('eq', 2);
+      .should('eq', 3);
     // All studies should still be visible
     cy.contains('label', 'Show only my studies').click();
     cy.get('table')
       .find('tr')
       .its('length')
-      .should('eq', 4);
+      .should('eq', 5);
   });
 });
 
