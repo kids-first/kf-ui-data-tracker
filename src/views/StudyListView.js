@@ -89,7 +89,7 @@ const StudyListView = ({history}) => {
                 icon="add"
                 content="Create Study"
                 as={Link}
-                to={`/study/new-study`}
+                to={`/study/new-study/info`}
               />
             </Segment>
           </>
