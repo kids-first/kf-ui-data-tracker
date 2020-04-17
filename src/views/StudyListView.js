@@ -47,7 +47,28 @@ const StudyListView = ({history}) => {
       </Container>
     );
 
-  if (!loading && !hasPermission(myProfile, 'view_study'))
+  if (
+    myProfile &&
+    !(
+      hasPermission(myProfile, 'view_study') ||
+      hasPermission(myProfile, 'view_my_study')
+    )
+  ) {
+    return (
+      <Container as={Segment} basic padded="very">
+        <Helmet>
+          <title>KF Data Tracker - My Studies</title>
+        </Helmet>
+        <Message
+          warning
+          icon="warning circle"
+          header="You don't have access to any studies yet."
+          content="Your account is being reviewed for the proper permissions."
+        />
+      </Container>
+    );
+  }
+  if (!loading && studyList.length === 0)
     return (
       <Container as={Segment} basic>
         <Helmet>
@@ -77,8 +98,8 @@ const StudyListView = ({history}) => {
           <Message
             warning
             icon="warning circle"
-            header="You don't have access to any studies yet."
-            content="Your account is being reviewed for the proper permissions."
+            header="You don't have any studies yet."
+            content="Your study will show up here once added to your account."
           />
         )}
       </Container>
