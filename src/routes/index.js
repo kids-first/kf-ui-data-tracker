@@ -189,11 +189,12 @@ const Routes = () => (
           component={BucketsView}
           permissions={['view_bucket', 'list_all_bucket']}
         />
-        <AdminRoute
+        <RestrictedRoute
           exact
           path="/cavatica-projects"
           component={CavaticaProjectsView}
           scope={['admin', 'buckets']}
+          permissions={['view_project']}
         />
         <PrivateRoute
           exact
