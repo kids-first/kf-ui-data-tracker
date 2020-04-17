@@ -1,6 +1,10 @@
 /// <reference types="cypress" />
 
 context('Admin Navigation', () => {
+  before(() => {
+    cy.resetdb();
+  });
+
   beforeEach(() => {
     cy.login();
     cy.visit('/');
@@ -12,7 +16,7 @@ context('Admin Navigation', () => {
    **/
 
   it('Admin Configuration', () => {
-    cy.contains('div', 'Admin')
+    cy.contains('div.ui.dropdown.link.item[role="listbox"]', 'Admin')
       .should('exist')
       .click();
 
@@ -25,7 +29,7 @@ context('Admin Navigation', () => {
   });
 
   it('Admin Buckets', () => {
-    cy.contains('div', 'Admin')
+    cy.contains('div.ui.dropdown.link.item[role="listbox"]', 'Admin')
       .should('exist')
       .click();
 
@@ -38,7 +42,7 @@ context('Admin Navigation', () => {
   });
 
   it('Admin Tokens', () => {
-    cy.contains('div', 'Admin')
+    cy.contains('div.ui.dropdown.link.item[role="listbox"]', 'Admin')
       .should('exist')
       .click();
 
@@ -51,11 +55,11 @@ context('Admin Navigation', () => {
   });
 
   it('Admin Cavatica Projects', () => {
-    cy.contains('div', 'Admin')
+    cy.contains('div.ui.dropdown.link.item[role="listbox"]', 'Admin')
       .should('exist')
       .click();
 
-    cy.contains('a', 'Cavatica Projects')
+    cy.contains('a.item', 'Cavatica Projects')
       .should('exist')
       .click();
 
@@ -64,7 +68,7 @@ context('Admin Navigation', () => {
   });
 
   it('Admin Events', () => {
-    cy.contains('div', 'Admin')
+    cy.contains('div.ui.dropdown.link.item[role="listbox"]', 'Admin')
       .should('exist')
       .click();
 
@@ -77,7 +81,7 @@ context('Admin Navigation', () => {
   });
 
   it('Admin Users', () => {
-    cy.contains('div', 'Admin')
+    cy.contains('div.ui.dropdown.link.item[role="listbox"]', 'Admin')
       .should('exist')
       .click();
 
