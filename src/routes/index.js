@@ -77,7 +77,7 @@ const Routes = () => (
           path="/users"
           component={UsersView}
           scope={['admin', 'users']}
-          permissions={['view_user']}
+          permissions={['list_all_user']}
         />
         <PrivateRoute
           path="/profile"
