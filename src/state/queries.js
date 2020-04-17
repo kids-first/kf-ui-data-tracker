@@ -252,6 +252,7 @@ export const STATUS = gql`
         studyBucketsCreateBuckets
       }
       settings {
+        developmentEndpoints
         dataserviceUrl
         cavaticaUrl
         cavaticaDeliveryAccount
