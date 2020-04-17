@@ -37,7 +37,7 @@ exports[`renders FileFileCounts with empty file list 1`] = `
   >
     <i
       aria-hidden="true"
-      class="red file icon"
+      class="grey file icon"
     />
     No
      documents

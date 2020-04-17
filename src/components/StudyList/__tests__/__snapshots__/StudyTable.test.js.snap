@@ -160,7 +160,7 @@ exports[`renders study table correctly 1`] = `
           <a
             href="/study/SD_8WX8QQ06/basic-info/info"
           >
-            8/8 complete
+            7/8 complete
           </a>
         </td>
         <td
@@ -202,7 +202,6 @@ exports[`renders study table correctly 1`] = `
           class=""
         >
           <a
-            class="text-red"
             href="/study/SD_8WX8QQ06/cavatica"
           >
             No
@@ -262,7 +261,7 @@ exports[`renders study table correctly 1`] = `
           <a
             href="/study/SD_I1L92W57/basic-info/info"
           >
-            8/8 complete
+            7/8 complete
           </a>
         </td>
         <td
@@ -279,7 +278,6 @@ exports[`renders study table correctly 1`] = `
           class=""
         >
           <a
-            class="text-red"
             href="/study/SD_I1L92W57/documents"
           >
             No
@@ -294,7 +292,6 @@ exports[`renders study table correctly 1`] = `
           class=""
         >
           <a
-            class="text-red"
             href="/study/SD_I1L92W57/cavatica"
           >
             No
@@ -354,7 +351,7 @@ exports[`renders study table correctly 1`] = `
           <a
             href="/study/SD_SG5N41K8/basic-info/info"
           >
-            8/8 complete
+            7/8 complete
           </a>
         </td>
         <td
@@ -371,7 +368,6 @@ exports[`renders study table correctly 1`] = `
           class=""
         >
           <a
-            class="text-red"
             href="/study/SD_SG5N41K8/documents"
           >
             No
@@ -386,7 +382,6 @@ exports[`renders study table correctly 1`] = `
           class=""
         >
           <a
-            class="text-red"
             href="/study/SD_SG5N41K8/cavatica"
           >
             No
@@ -446,7 +441,7 @@ exports[`renders study table correctly 1`] = `
           <a
             href="/study/SD_0YYP5ZEN/basic-info/info"
           >
-            8/8 complete
+            7/8 complete
           </a>
         </td>
         <td
@@ -463,7 +458,6 @@ exports[`renders study table correctly 1`] = `
           class=""
         >
           <a
-            class="text-red"
             href="/study/SD_0YYP5ZEN/documents"
           >
             No
@@ -673,7 +667,6 @@ exports[`renders study table for ADMIN role 1`] = `
           class=""
         >
           <a
-            class="text-red"
             href="/study/SD_8WX8QQ06/basic-info/info"
           >
             7/8 complete
@@ -718,7 +711,6 @@ exports[`renders study table for ADMIN role 1`] = `
           class=""
         >
           <a
-            class="text-red"
             href="/study/SD_8WX8QQ06/cavatica"
           >
             No
@@ -776,7 +768,6 @@ exports[`renders study table for ADMIN role 1`] = `
           class=""
         >
           <a
-            class="text-red"
             href="/study/SD_I1L92W57/basic-info/info"
           >
             7/8 complete
@@ -796,7 +787,6 @@ exports[`renders study table for ADMIN role 1`] = `
           class=""
         >
           <a
-            class="text-red"
             href="/study/SD_I1L92W57/documents"
           >
             No
@@ -811,7 +801,6 @@ exports[`renders study table for ADMIN role 1`] = `
           class=""
         >
           <a
-            class="text-red"
             href="/study/SD_I1L92W57/cavatica"
           >
             No
@@ -869,7 +858,6 @@ exports[`renders study table for ADMIN role 1`] = `
           class=""
         >
           <a
-            class="text-red"
             href="/study/SD_SG5N41K8/basic-info/info"
           >
             7/8 complete
@@ -889,7 +877,6 @@ exports[`renders study table for ADMIN role 1`] = `
           class=""
         >
           <a
-            class="text-red"
             href="/study/SD_SG5N41K8/documents"
           >
             No
@@ -904,7 +891,6 @@ exports[`renders study table for ADMIN role 1`] = `
           class=""
         >
           <a
-            class="text-red"
             href="/study/SD_SG5N41K8/cavatica"
           >
             No
@@ -962,7 +948,6 @@ exports[`renders study table for ADMIN role 1`] = `
           class=""
         >
           <a
-            class="text-red"
             href="/study/SD_0YYP5ZEN/basic-info/info"
           >
             7/8 complete
@@ -982,7 +967,6 @@ exports[`renders study table for ADMIN role 1`] = `
           class=""
         >
           <a
-            class="text-red"
             href="/study/SD_0YYP5ZEN/documents"
           >
             No
@@ -1232,7 +1216,7 @@ exports[`renders study table without excluded columns passed to props 1`] = `
           <a
             href="/study/SD_8WX8QQ06/basic-info/info"
           >
-            8/8 complete
+            7/8 complete
           </a>
         </td>
         <td
@@ -1274,7 +1258,6 @@ exports[`renders study table without excluded columns passed to props 1`] = `
           class=""
         >
           <a
-            class="text-red"
             href="/study/SD_8WX8QQ06/cavatica"
           >
             No
@@ -1354,7 +1337,7 @@ exports[`renders study table without excluded columns passed to props 1`] = `
           <a
             href="/study/SD_I1L92W57/basic-info/info"
           >
-            8/8 complete
+            7/8 complete
           </a>
         </td>
         <td
@@ -1371,7 +1354,6 @@ exports[`renders study table without excluded columns passed to props 1`] = `
           class=""
         >
           <a
-            class="text-red"
             href="/study/SD_I1L92W57/documents"
           >
             No
@@ -1386,7 +1368,6 @@ exports[`renders study table without excluded columns passed to props 1`] = `
           class=""
         >
           <a
-            class="text-red"
             href="/study/SD_I1L92W57/cavatica"
           >
             No
@@ -1466,7 +1447,7 @@ exports[`renders study table without excluded columns passed to props 1`] = `
           <a
             href="/study/SD_SG5N41K8/basic-info/info"
           >
-            8/8 complete
+            7/8 complete
           </a>
         </td>
         <td
@@ -1483,7 +1464,6 @@ exports[`renders study table without excluded columns passed to props 1`] = `
           class=""
         >
           <a
-            class="text-red"
             href="/study/SD_SG5N41K8/documents"
           >
             No
@@ -1498,7 +1478,6 @@ exports[`renders study table without excluded columns passed to props 1`] = `
           class=""
         >
           <a
-            class="text-red"
             href="/study/SD_SG5N41K8/cavatica"
           >
             No
@@ -1578,7 +1557,7 @@ exports[`renders study table without excluded columns passed to props 1`] = `
           <a
             href="/study/SD_0YYP5ZEN/basic-info/info"
           >
-            8/8 complete
+            7/8 complete
           </a>
         </td>
         <td
@@ -1595,7 +1574,6 @@ exports[`renders study table without excluded columns passed to props 1`] = `
           class=""
         >
           <a
-            class="text-red"
             href="/study/SD_0YYP5ZEN/documents"
           >
             No
