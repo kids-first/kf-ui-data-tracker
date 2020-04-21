@@ -1,6 +1,10 @@
 /// <reference types="cypress" />
 
 context('User Navigation', () => {
+  before(() => {
+    cy.resetdb();
+  });
+
   beforeEach(() => {
     cy.login();
     cy.visit('/');
@@ -8,7 +12,7 @@ context('User Navigation', () => {
 
   it('User Profile', () => {
     // Click on the add study button from the home screen
-    cy.contains('div', 'devadmin')
+    cy.contains('div', 'testuser')
       .should('exist')
       .click()
 
@@ -23,7 +27,7 @@ context('User Navigation', () => {
 
   it('User Logout', () => {
     // Click on the add study button from the home screen
-    cy.contains('div', 'devadmin')
+    cy.contains('div', 'testuser')
       .should('exist')
       .click()
       .url()

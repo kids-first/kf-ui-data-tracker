@@ -6,11 +6,11 @@ services:
     env_file: docker.env
     environment:
       - ALLOWED_HOSTS=web
-      - DEBUG=True
       - DJANGO_SETTINGS_MODULE=creator.settings.development
       - PG_HOST=postgres
       # Options are: DATASERVICE, url of dataservice, or FAKE
       - PRELOAD_DATA=FAKE
+      - DEVELOPMENT_ENDPOINTS=True
     ports:
       - '5002:8080'
     depends_on:
@@ -65,6 +65,7 @@ services:
     container_name: cypress
     environment:
       - CYPRESS_baseUrl=http://app:3000
+      - CYPRESS_REACT_APP_STUDY_API=http://web:8080
     depends_on:
       - app
       - web

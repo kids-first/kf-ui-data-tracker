@@ -75,7 +75,7 @@ jobs:
           command: |
             docker-compose up -d web postgres redis scheduler worker app
             sleep 10
-            docker-compose up cypress
+            docker-compose up --abort-on-container-exit --exit-code-from cypress cypress 
       - run:
           name: Copy coverage
           command: |

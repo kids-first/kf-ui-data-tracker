@@ -36,7 +36,7 @@ Cypress.Commands.add('login', () => {
 
   const data = {
     'https://kidsfirstdrc.org/groups': [],
-    'https://kidsfirstdrc.org/roles': ['ADMIN'],
+    'https://kidsfirstdrc.org/roles': [],
     iss: 'https://kids-first.auth0.com/',
     sub: 'google-oauth2|000000000000000000000',
     iat: Math.floor(Date.now() / 1000),
@@ -54,4 +54,13 @@ Cypress.Commands.add('login', () => {
  */
 Cypress.Commands.add('resetdb', () => {
   cy.request('post', Cypress.env('DEV_ENDPOINT') + '/reset-db/');
+});
+
+/**
+ * Sets user's groups on the backend
+ */
+Cypress.Commands.add('as', (groups = ['Administrators']) => {
+  // Change user groups on server if they are not the default
+  const q = groups && '?groups=' + groups.join(',');
+  cy.request('post', Cypress.env('DEV_ENDPOINT') + '/change-groups/' + q);
 });
