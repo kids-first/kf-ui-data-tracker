@@ -65,7 +65,7 @@ context('Admin Study List', () => {
     cy.contains('SD_ODWXI1TE').click();
 
     // Add self to that study
-    cy.contains('a', 'Collaborators').click();
+    cy.get('[href="/study/SD_ODWXI1TE/collaborators"]').click();
     cy.contains('button', 'ADD COLLABORATOR')
       .click()
       .get('input.search')

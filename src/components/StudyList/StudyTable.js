@@ -7,14 +7,23 @@ import {
 } from '../../common/notificationUtils';
 import CavaticaLogo from '../../assets/CavaticaLogo';
 
-const PopupButton = ({header, content, icon, label}) => (
+/**
+ * A button that displays a popup when hovered and optionally a notification
+ * label in the right corner.
+ */
+const PopupButton = ({header, content, icon, label, ...props}) => (
   <Popup
     inverted
     header={header}
     content={content}
     position="top right"
     trigger={
-      <Button icon={icon} style={{position: 'relative'}} content={label} />
+      <Button
+        icon={icon}
+        style={{position: 'relative'}}
+        content={label}
+        {...props}
+      />
     }
   />
 );
@@ -95,30 +104,41 @@ const renderRow = node => ({
   cells: [
     {
       key: 'name',
+      selectable: true,
       content: (
-        <Header size="medium">
-          <Link to={'/study/' + node.kfId + '/basic-info/info'}>
+        <Link to={'/study/' + node.kfId + '/basic-info/info'}>
+          <Header size="medium">
             {node.name}
-          </Link>
-          <Header.Subheader>
-            {(node.collaborators.edges.length &&
-              node.collaborators.edges[0].node.username) ||
-              node.shortName}
-          </Header.Subheader>
-        </Header>
+            <Header.Subheader>
+              {(node.collaborators.edges.length &&
+                node.collaborators.edges[0].node.username) ||
+                node.shortName}
+            </Header.Subheader>
+          </Header>
+        </Link>
       ),
     },
     {
       key: 'kfId',
       width: 1,
-      content: <code>{node.kfId}</code>,
       textAlign: 'center',
+      selectable: true,
+      content: (
+        <Link to={'/study/' + node.kfId + '/basic-info/info'}>
+          <code>{node.kfId}</code>
+        </Link>
+      ),
     },
     {
       key: 'version',
       textAlign: 'center',
       width: 1,
-      content: <Release study={node} />,
+      selectable: true,
+      content: (
+        <Link to={'/study/' + node.kfId + '/basic-info/info'}>
+          <Release study={node} />
+        </Link>
+      ),
     },
     {
       key: 'actions',
