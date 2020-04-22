@@ -307,8 +307,8 @@ export const GET_STUDY_RELEASES = gql`
 `;
 
 export const GET_RELEASED_STUDY = gql`
-  query allStudies {
-    allStudies {
+  query allStudyReleases {
+    allStudyReleases: allStudies {
       edges {
         node {
           id

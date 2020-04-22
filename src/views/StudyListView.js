@@ -10,15 +10,21 @@ import {hasPermission} from '../common/permissions';
 const StudyListView = ({history}) => {
   const {data: profileData} = useQuery(MY_PROFILE);
   const myProfile = profileData && profileData.myProfile;
-  const {loading, error, data} = useQuery(ALL_STUDIES);
-  const {error: releasesError, data: releasesData} = useQuery(
-    GET_RELEASED_STUDY,
-    {
-      context: {clientName: 'coordinator'},
-    },
-  );
+  // Need to fetch from network everytime or else the allStudies query to the
+  // release coordinator will overwrite the result in the cache
+  const {loading, error, data} = useQuery(ALL_STUDIES, {
+    fetchPolicy: 'network-only',
+  });
+  const {
+    loading: releasesLoading,
+    error: releasesError,
+    data: releasesData,
+  } = useQuery(GET_RELEASED_STUDY, {
+    context: {clientName: 'coordinator'},
+  });
   const allStudies = data && data.allStudies;
-  const allReleases = releasesData && releasesData.allStudies;
+
+  const allReleases = releasesData && releasesData.allStudyReleases;
   var studyList = !loading && allStudies ? allStudies.edges : [];
   const releaseList = allReleases ? allReleases.edges : [];
   if (releaseList.length > 0 && studyList.length > 0) {

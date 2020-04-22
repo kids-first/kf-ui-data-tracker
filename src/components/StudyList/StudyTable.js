@@ -1,11 +1,13 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router-dom';
 import {Button, Header, Label, Table, Icon, Popup} from 'semantic-ui-react';
+import TimeAgo from 'react-timeago';
 import {
   countStudyNotification,
   countProjectNotification,
 } from '../../common/notificationUtils';
 import CavaticaLogo from '../../assets/CavaticaLogo';
+import {KF_COORD_UI} from '../../common/globals';
 
 /**
  * A button that displays a popup when hovered and optionally a notification
@@ -31,15 +33,34 @@ const PopupButton = ({header, content, icon, label, ...props}) => (
 /**
  * Formats a link to a release
  */
-const Release = () => (
-  <Link to="/">
-    0.1.0{' '}
-    <Icon.Group>
-      <Icon name="tag" />
-      <Icon corner="top right" name="external" />
-    </Icon.Group>
-  </Link>
-);
+const Release = ({release}) => {
+  if (!release) return '-';
+
+  return (
+    <Popup
+      header={release.name}
+      position="top center"
+      trigger={
+        <a href={`${KF_COORD_UI}/releases/${release.kfId}`}>
+          {release.version + ' '}
+          <Icon.Group>
+            <Icon name="tag" />
+            <Icon corner="top right" name="external" />
+          </Icon.Group>
+        </a>
+      }
+      content={
+        <>
+          {release.version} <Icon name="tag" /> - <code>{release.kfId}</code>
+          <p>
+            Published <TimeAgo date={release.createdAt} />
+          </p>
+          <em>View in the release in the Coordinator</em>
+        </>
+      }
+    />
+  );
+};
 
 /**
  * Contains a button group for study actions

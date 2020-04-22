@@ -1,5 +1,6 @@
 export const KF_STUDY_API = process.env.REACT_APP_STUDY_API;
 export const KF_COORD_API = process.env.REACT_APP_COORD_API;
+export const KF_COORD_UI = process.env.REACT_APP_COORD_UI;
 export const auth0Domain = process.env.REACT_APP_AUTH0_DOMAIN;
 export const auth0ClientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
 export const auth0RedirectUri = process.env.REACT_APP_AUTH0_REDIRECT_URI;
