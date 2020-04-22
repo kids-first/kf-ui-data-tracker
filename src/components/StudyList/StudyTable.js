@@ -1,16 +1,10 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router-dom';
+import {Button, Header, Label, Table, Icon, Popup} from 'semantic-ui-react';
 import {
-  Button,
-  Header,
-  Label,
-  List,
-  Table,
-  Icon,
-  Popup,
-  Progress,
-  Rating,
-} from 'semantic-ui-react';
+  countStudyNotification,
+  countProjectNotification,
+} from '../../common/notificationUtils';
 import CavaticaLogo from '../../assets/CavaticaLogo';
 
 const PopupButton = ({header, content, icon, label}) => (
@@ -38,32 +32,63 @@ const Release = () => (
   </Link>
 );
 
-const ActionButtons = study => (
-  <Button.Group icon basic>
-    <PopupButton
-      header="Study Information"
-      content={
-        <>
-          <p>Missing 4 Fields:</p>
-          <List bulleted>
-            <List.Item>Attribution</List.Item>
-            <List.Item>Organization</List.Item>
-            <List.Item>Release Date</List.Item>
-          </List>
-        </>
-      }
-      icon="info"
-      label={<Label empty corner circular color="orange" />}
-    />
-    <PopupButton header="Documents" content="hello" icon="file" />
-    <PopupButton
-      header="Cavatica Projects"
-      content="hello"
-      icon={<CavaticaLogo className="mr-5 vertical-middle" />}
-    />
-    <PopupButton header="Collaborators" content="users" icon="users" />
-  </Button.Group>
-);
+/**
+ * Contains a button group for study actions
+ */
+const ActionButtons = ({study}) => {
+  const studyInfoNotif = countStudyNotification(study);
+  const projectNotif = countProjectNotification(study);
+
+  return (
+    <Button.Group icon basic>
+      <PopupButton
+        header="Study Information"
+        icon="info"
+        as={Link}
+        to={`/study/${study.kfId}/basic-info/info`}
+        content={
+          studyInfoNotif > 0 && (
+            <p>
+              <Icon name="warning sign" /> Missing {studyInfoNotif} fields
+            </p>
+          )
+        }
+        label={
+          studyInfoNotif > 0 && <Label empty corner circular color="orange" />
+        }
+      />
+      <PopupButton
+        header="Documents"
+        icon="file"
+        as={Link}
+        to={`/study/${study.kfId}/documents`}
+      />
+      <PopupButton
+        header="Cavatica Projects"
+        icon={<CavaticaLogo className="mr-5 vertical-middle" />}
+        as={Link}
+        to={`/study/${study.kfId}/cavatica`}
+        content={
+          projectNotif > 0 && (
+            <p>
+              <Icon name="warning sign" /> Missing {projectNotif} required
+              projects
+            </p>
+          )
+        }
+        label={
+          projectNotif > 0 && <Label empty corner circular color="orange" />
+        }
+      />
+      <PopupButton
+        header="Collaborators"
+        icon="users"
+        as={Link}
+        to={`/study/${study.kfId}/collaborators`}
+      />
+    </Button.Group>
+  );
+};
 
 const renderRow = node => ({
   key: node.kfId,
