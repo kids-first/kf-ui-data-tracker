@@ -1,7 +1,7 @@
 import React, {useRef} from 'react';
 import {useQuery, useMutation} from '@apollo/react-hooks';
 import {UPDATE_FILE, UPDATE_VERSION} from '../mutations';
-import {MY_PROFILE, GET_STUDY_BY_ID} from '../../state/queries';
+import {GET_STUDY_BY_ID} from '../../state/queries';
 import {EditDocumentForm} from '../forms';
 import {fileSortedVersions} from '../utilities';
 import {Button, Modal} from 'semantic-ui-react';
@@ -10,14 +10,8 @@ const EditDocumentModal = ({fileNode, onCloseDialog, studyId}) => {
   const study = useQuery(GET_STUDY_BY_ID, {
     variables: {kfId: studyId},
   });
-  const user = useQuery(MY_PROFILE);
   const [updateFile] = useMutation(UPDATE_FILE);
   const [updateVersion] = useMutation(UPDATE_VERSION);
-
-  const isAdmin =
-    !user.loading && user.data.myProfile
-      ? user.data.myProfile.roles.includes('ADMIN')
-      : false;
 
   const formEl = useRef(null);
 
@@ -58,7 +52,6 @@ const EditDocumentModal = ({fileNode, onCloseDialog, studyId}) => {
           fileType={fileNode.fileType}
           fileName={fileNode.name}
           versionStatus={latestVersion.state}
-          isAdmin={isAdmin}
           fileDescription={fileNode.description}
           handleSubmit={handleSubmit}
         />

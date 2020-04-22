@@ -110,7 +110,10 @@ const StudyFilesListView = ({
     myProfile &&
     (hasPermission(myProfile, 'view_my_study') ||
       hasPermission(myProfile, 'view_study'));
-  const allowUpload = myProfile && hasPermission(myProfile, 'add_file');
+  const allowUpload =
+    myProfile &&
+    (hasPermission(myProfile, 'add_file') ||
+      hasPermission(myProfile, 'add_my_study_file'));
   const allowDelete = myProfile && hasPermission(myProfile, 'delete_file');
   const allowEdit = myProfile && hasPermission(myProfile, 'change_file');
 
