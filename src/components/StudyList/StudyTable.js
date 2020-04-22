@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router-dom';
+import {Amplitude} from '@amplitude/react-amplitude';
 import {Button, Header, Label, Table, Icon, Popup} from 'semantic-ui-react';
 import TimeAgo from 'react-timeago';
 import {
@@ -14,20 +15,32 @@ import {KF_COORD_UI} from '../../common/globals';
  * label in the right corner.
  */
 const PopupButton = ({header, content, icon, label, ...props}) => (
-  <Popup
-    inverted
-    header={header}
-    content={content}
-    position="top right"
-    trigger={
-      <Button
-        icon={icon}
-        style={{position: 'relative'}}
-        content={label}
-        {...props}
+  <Amplitude
+    eventProperties={inheritedProps => ({
+      ...inheritedProps,
+      scope: inheritedProps.scope
+        ? [...inheritedProps.scope, 'button', header.toLowerCase()]
+        : ['button', header.toLowerCase()],
+    })}
+  >
+    {({logEvent}) => (
+      <Popup
+        inverted
+        header={header}
+        content={content}
+        position="top right"
+        trigger={
+          <Button
+            icon={icon}
+            style={{position: 'relative'}}
+            content={label}
+            onClick={() => logEvent('click')}
+            {...props}
+          />
+        }
       />
-    }
-  />
+    )}
+  </Amplitude>
 );
 
 /**
@@ -37,28 +50,43 @@ const Release = ({release}) => {
   if (!release) return '-';
 
   return (
-    <Popup
-      header={release.name}
-      position="top center"
-      trigger={
-        <a href={`${KF_COORD_UI}/releases/${release.kfId}`}>
-          {release.version + ' '}
-          <Icon.Group>
-            <Icon name="tag" />
-            <Icon corner="top right" name="external" />
-          </Icon.Group>
-        </a>
-      }
-      content={
-        <>
-          {release.version} <Icon name="tag" /> - <code>{release.kfId}</code>
-          <p>
-            Published <TimeAgo date={release.createdAt} />
-          </p>
-          <em>View in the release in the Coordinator</em>
-        </>
-      }
-    />
+    <Amplitude
+      eventProperties={inheritedProps => ({
+        ...inheritedProps,
+        scope: inheritedProps.scope
+          ? [...inheritedProps.scope, 'release version']
+          : ['release version'],
+      })}
+    >
+      {({logEvent}) => (
+        <Popup
+          header={release.name}
+          position="top center"
+          trigger={
+            <a
+              href={`${KF_COORD_UI}/releases/${release.kfId}`}
+              onClick={() => logEvent('click')}
+            >
+              {release.version + ' '}
+              <Icon.Group>
+                <Icon name="tag" />
+                <Icon corner="top right" name="external" />
+              </Icon.Group>
+            </a>
+          }
+          content={
+            <>
+              {release.version} <Icon name="tag" /> -{' '}
+              <code>{release.kfId}</code>
+              <p>
+                Published <TimeAgo date={release.createdAt} />
+              </p>
+              <em>View in the Release Coordinator</em>
+            </>
+          }
+        />
+      )}
+    </Amplitude>
   );
 };
 
@@ -70,53 +98,62 @@ const ActionButtons = ({study}) => {
   const projectNotif = countProjectNotification(study);
 
   return (
-    <Button.Group icon basic>
-      <PopupButton
-        header="Study Information"
-        icon="info"
-        as={Link}
-        to={`/study/${study.kfId}/basic-info/info`}
-        content={
-          studyInfoNotif > 0 && (
-            <p>
-              <Icon name="warning sign" /> Missing {studyInfoNotif} fields
-            </p>
-          )
-        }
-        label={
-          studyInfoNotif > 0 && <Label empty corner circular color="orange" />
-        }
-      />
-      <PopupButton
-        header="Documents"
-        icon="file"
-        as={Link}
-        to={`/study/${study.kfId}/documents`}
-      />
-      <PopupButton
-        header="Cavatica Projects"
-        icon={<CavaticaLogo className="mr-5 vertical-middle" />}
-        as={Link}
-        to={`/study/${study.kfId}/cavatica`}
-        content={
-          projectNotif > 0 && (
-            <p>
-              <Icon name="warning sign" /> Missing {projectNotif} required
-              projects
-            </p>
-          )
-        }
-        label={
-          projectNotif > 0 && <Label empty corner circular color="orange" />
-        }
-      />
-      <PopupButton
-        header="Collaborators"
-        icon="users"
-        as={Link}
-        to={`/study/${study.kfId}/collaborators`}
-      />
-    </Button.Group>
+    <Amplitude
+      eventProperties={inheritedProps => ({
+        ...inheritedProps,
+        scope: inheritedProps.scope
+          ? [...inheritedProps.scope, 'study actions']
+          : ['study actions'],
+      })}
+    >
+      <Button.Group icon basic>
+        <PopupButton
+          header="Study Information"
+          icon="info"
+          as={Link}
+          to={`/study/${study.kfId}/basic-info/info`}
+          content={
+            studyInfoNotif > 0 && (
+              <p>
+                <Icon name="warning sign" /> Missing {studyInfoNotif} fields
+              </p>
+            )
+          }
+          label={
+            studyInfoNotif > 0 && <Label empty corner circular color="orange" />
+          }
+        />
+        <PopupButton
+          header="Documents"
+          icon="file"
+          as={Link}
+          to={`/study/${study.kfId}/documents`}
+        />
+        <PopupButton
+          header="Cavatica Projects"
+          icon={<CavaticaLogo className="mr-5 vertical-middle" />}
+          as={Link}
+          to={`/study/${study.kfId}/cavatica`}
+          content={
+            projectNotif > 0 && (
+              <p>
+                <Icon name="warning sign" /> Missing {projectNotif} required
+                projects
+              </p>
+            )
+          }
+          label={
+            projectNotif > 0 && <Label empty corner circular color="orange" />
+          }
+        />
+        <PopupButton
+          header="Collaborators"
+          icon="users"
+          as={Link}
+          to={`/study/${study.kfId}/collaborators`}
+        />
+      </Button.Group>
+    </Amplitude>
   );
 };
 
@@ -127,16 +164,30 @@ const renderRow = node => ({
       key: 'name',
       selectable: true,
       content: (
-        <Link to={'/study/' + node.kfId + '/basic-info/info'}>
-          <Header size="medium">
-            {node.name}
-            <Header.Subheader>
-              {(node.collaborators.edges.length &&
-                node.collaborators.edges[0].node.username) ||
-                node.shortName}
-            </Header.Subheader>
-          </Header>
-        </Link>
+        <Amplitude
+          eventProperties={inheritedProps => ({
+            ...inheritedProps,
+            scope: inheritedProps.scope
+              ? [...inheritedProps.scope, 'study name']
+              : ['study name'],
+          })}
+        >
+          {({logEvent}) => (
+            <Link
+              to={'/study/' + node.kfId + '/basic-info/info'}
+              onClick={() => logEvent('click')}
+            >
+              <Header size="medium">
+                {node.name}
+                <Header.Subheader>
+                  {(node.collaborators.edges.length &&
+                    node.collaborators.edges[0].node.username) ||
+                    node.shortName}
+                </Header.Subheader>
+              </Header>
+            </Link>
+          )}
+        </Amplitude>
       ),
     },
     {
@@ -156,9 +207,9 @@ const renderRow = node => ({
       width: 1,
       selectable: true,
       content: (
-        <Link to={'/study/' + node.kfId + '/basic-info/info'}>
-          <Release study={node} />
-        </Link>
+        <Release
+          release={node.release && node.release.node && node.release.node}
+        />
       ),
     },
     {
@@ -192,16 +243,25 @@ const StudyTable = ({
   ];
 
   return (
-    <Table
-      singleLine
-      striped
-      selectable
-      sortable
-      celled
-      headerRow={header}
-      tableData={studies}
-      renderBodyRow={renderRow}
-    />
+    <Amplitude
+      eventProperties={inheritedProps => ({
+        ...inheritedProps,
+        scope: inheritedProps.scope
+          ? [...inheritedProps.scope, 'study table']
+          : ['study table'],
+      })}
+    >
+      <Table
+        singleLine
+        striped
+        selectable
+        sortable
+        celled
+        headerRow={header}
+        tableData={studies}
+        renderBodyRow={renderRow}
+      />
+    </Amplitude>
   );
 };
 
