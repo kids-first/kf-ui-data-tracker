@@ -3,17 +3,15 @@
 context('Add Study', () => {
   before(() => {
     cy.resetdb();
-    cy.as(['Administrators']);
   });
 
   beforeEach(() => {
     cy.login();
     cy.visit('/');
+    cy.as(['Administrators']);
   });
 
   it('navigates to new study route', () => {
-    cy.resetdb();
-
     // Should have 3 studies to start
     cy.contains('a', 'Data Tracker').click();
     cy.contains('label', 'Show only my studies').click();
@@ -21,7 +19,7 @@ context('Add Study', () => {
     cy.get('table')
       .find('tr')
       .its('length')
-      .should('eq', 4);
+      .should('eq', 5);
 
     // Click on the add study button from the home screen
     cy.contains('a', 'Add Study')
@@ -68,6 +66,24 @@ context('Add Study', () => {
     cy.get('table')
       .find('tr')
       .its('length')
-      .should('eq', 5);
+      .should('eq', 6);
+  });
+
+  it('does not allow investigators to add studies', () => {
+    cy.as(['Investigators']);
+    cy.visit('/');
+
+    // No show only my study checkbox
+    cy.contains('label', 'Show only my studies').should('not.exist');
+
+    // No add study button from the home screen
+    cy.contains('a', 'Add Study').should('not.exist');
+    // No access to add study pages
+    cy.visit('/study/new-study/info');
+    cy.contains('h2', 'Not allowed').should('exist');
+    cy.visit('/study/new-study/external');
+    cy.contains('h2', 'Not allowed').should('exist');
+    cy.visit('/study/new-study/logistics');
+    cy.contains('h2', 'Not allowed').should('exist');
   });
 });
