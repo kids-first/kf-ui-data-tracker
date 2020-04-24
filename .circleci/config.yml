@@ -75,19 +75,24 @@ jobs:
           command: |
             docker-compose up -d web postgres redis scheduler worker app dataservice dataservice-pg
             sleep 10
-            docker-compose up --abort-on-container-exit --exit-code-from cypress cypress 
+            (docker-compose up --abort-on-container-exit --exit-code-from cypress cypress)
+            echo $? > .test-result
+            echo "Docker exited with exit code `cat .test-result`"
+            exit 0
       - run:
-          name: Copy coverage
+          name: Copy artifacts
           command: |
-            docker cp project_app_1:/app/cypress-coverage ./
+            mkdir ./artifacts
+            docker cp project_app_1:/app/cypress-coverage ./artifacts/coverage
+            docker cp cypress:/app/cypress/screenshots ./artifacts/screenshots
+            echo "Returning exit code `cat .test-result`"
+            exit `cat .test-result`
       - store_artifacts:
-          path: ./cypress-coverage
-      - store_test_results:
-          path: ./cypress-coverage
+          path: ./artifacts
       - persist_to_workspace:
           root: ./
           paths:
-            - cypress-coverage/
+            - ./artifacts/
   coverage:
     docker:
       - image: circleci/node:11.12.0
