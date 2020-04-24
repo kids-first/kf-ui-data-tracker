@@ -106,8 +106,8 @@ jobs:
           name: Merge coverage
           command: |
             mkdir ./coverage
-            cp ~/workspace/cypress-coverage/coverage-final.json ./coverage/cypress.json
-            cp ~/workspace/jest-coverage/coverage-final.json ./coverage/jest.json
+            cp ~/workspace/artifacts/cypress-coverage/coverage-final.json ./coverage/cypress.json
+            cp ~/workspace/artifacts/jest-coverage/coverage-final.json ./coverage/jest.json
       - run:
           name: Install codecov
           command: yarn add codecov
