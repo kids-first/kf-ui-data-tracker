@@ -62,6 +62,8 @@ const UploadWizard = ({
   startingStep = 0,
   fileList,
   studyId,
+  allowUploadFile,
+  allowUploadVersion,
 }) => {
   const [createVersion] = useMutation(CREATE_VERSION, {
     refetchQueries: [{query: GET_STUDY_BY_ID, variables: {kfId: studyId}}],
@@ -150,6 +152,8 @@ const UploadWizard = ({
           handleCloseDialog,
           isTimerActive,
           seconds,
+          allowUploadFile,
+          allowUploadVersion,
         })}
       </Modal.Content>
 

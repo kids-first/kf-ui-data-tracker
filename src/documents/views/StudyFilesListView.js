@@ -110,10 +110,14 @@ const StudyFilesListView = ({
     myProfile &&
     (hasPermission(myProfile, 'view_my_study') ||
       hasPermission(myProfile, 'view_study'));
-  const allowUpload =
+  const allowUploadFile =
     myProfile &&
     (hasPermission(myProfile, 'add_file') ||
       hasPermission(myProfile, 'add_my_study_file'));
+  const allowUploadVersion =
+    myProfile &&
+    (hasPermission(myProfile, 'add_version') ||
+      hasPermission(myProfile, 'add_my_study_version'));
   const allowDelete = myProfile && hasPermission(myProfile, 'delete_file');
   const allowEdit = myProfile && hasPermission(myProfile, 'change_file');
 
@@ -176,7 +180,7 @@ const StudyFilesListView = ({
         <Grid.Column width={10}>
           <h2>Study Documents</h2>
         </Grid.Column>
-        {files.length > 0 && allowUpload && (
+        {files.length > 0 && (allowUploadFile || allowUploadVersion) && (
           <Grid.Column width={6}>
             <Button
               compact
@@ -259,11 +263,13 @@ const StudyFilesListView = ({
                 setFile(false);
                 setDialog(false);
               }}
+              allowUploadFile={allowUploadFile}
+              allowUploadVersion={allowUploadVersion}
             />
           )}
         </Grid.Column>
       </Grid.Row>
-      {allowUpload && (
+      {(allowUploadFile || allowUploadVersion) && (
         <Grid.Row centered>
           <Responsive
             as={UploadContainer}
