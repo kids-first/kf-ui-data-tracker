@@ -1,5 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
+import {useMutation} from '@apollo/react-hooks';
+import {ADD_COLLABORATOR} from '../../state/mutations';
+import {GET_STUDY_BY_ID} from '../../state/queries';
 import {Amplitude} from '@amplitude/react-amplitude';
 import {Button, Label, Icon, Popup} from 'semantic-ui-react';
 import {
@@ -7,12 +10,20 @@ import {
   countProjectNotification,
 } from '../../common/notificationUtils';
 import CavaticaLogo from '../../assets/CavaticaLogo';
+import AddCollaboratorModal from '../../modals/AddCollaboratorModal';
 
 /**
  * A button that displays a popup when hovered and optionally a notification
  * label in the right corner.
  */
-const PopupButton = ({header, content, icon, label, ...props}) => (
+const PopupButton = ({
+  header,
+  content,
+  icon,
+  label = null,
+  hoverable = false,
+  ...props
+}) => (
   <Amplitude
     eventProperties={inheritedProps => ({
       ...inheritedProps,
@@ -23,9 +34,9 @@ const PopupButton = ({header, content, icon, label, ...props}) => (
   >
     {({logEvent}) => (
       <Popup
-        inverted
         header={header}
         content={content}
+        hoverable={hoverable}
         position="top right"
         trigger={
           <Button
@@ -44,8 +55,21 @@ const PopupButton = ({header, content, icon, label, ...props}) => (
  * Contains a button group for study actions
  */
 const ActionButtons = ({study}) => {
+  console.log(study);
+  const [showCollaborators, setShowCollaborators] = useState(false);
   const studyInfoNotif = countStudyNotification(study);
   const projectNotif = countProjectNotification(study);
+
+  const [addCollaborator] = useMutation(ADD_COLLABORATOR, {
+    refetchQueries: [
+      {
+        query: GET_STUDY_BY_ID,
+        variables: {
+          kfId: study.kfId,
+        },
+      },
+    ],
+  });
 
   return (
     <Amplitude
@@ -97,12 +121,32 @@ const ActionButtons = ({study}) => {
           }
         />
         <PopupButton
+          hoverable
           header="Collaborators"
           icon="users"
+          content={
+            <>
+              <p>Manage collaborators in this study</p>
+              <Button
+                primary
+                fluid
+                content="Add Collaborator"
+                icon="add"
+                labelPosition="left"
+                onClick={() => setShowCollaborators(true)}
+              />
+            </>
+          }
           as={Link}
           to={`/study/${study.kfId}/collaborators`}
         />
       </Button.Group>
+      <AddCollaboratorModal
+        study={study}
+        open={showCollaborators}
+        onCloseDialog={() => setShowCollaborators(false)}
+        addCollaborator={addCollaborator}
+      />
     </Amplitude>
   );
 };

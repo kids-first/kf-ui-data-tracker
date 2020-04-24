@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Link, withRouter} from 'react-router-dom';
 import {Amplitude} from '@amplitude/react-amplitude';
-import {Header, Image, Label, Table} from 'semantic-ui-react';
+import {Header, Label, Table} from 'semantic-ui-react';
 import defaultAvatar from '../../assets/defaultAvatar.png';
 import ActionButtons from './ActionButtons';
 import Release from './Release';
@@ -111,7 +111,6 @@ const StudyTable = ({
   }
 
   const handleSort = column => () => {
-    console.log('sort', column, sorting.column, sorting.direction);
     if (sorting.column !== column) {
       setSorting({
         column,
