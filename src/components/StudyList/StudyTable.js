@@ -11,6 +11,7 @@ const renderRow = node => ({
     {
       key: 'name',
       selectable: true,
+      className: 'overflow-cell-container',
       content: (
         <Amplitude
           eventProperties={inheritedProps => ({
@@ -24,6 +25,7 @@ const renderRow = node => ({
             <Link
               to={'/study/' + node.kfId + '/basic-info/info'}
               onClick={() => logEvent('click')}
+              className="overflow-cell"
             >
               <Header size="medium">
                 {node.name}
