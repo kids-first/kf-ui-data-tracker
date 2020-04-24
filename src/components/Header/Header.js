@@ -66,13 +66,15 @@ const AdminDropdown = ({profile}) => {
   // Construct menu nav components
   const menuItems = items
     .filter(item => permissions.includes(item.permission))
-    .map(item => <Item {...item} />);
+    .map(item => <Item key={item.route} {...item} />);
 
-  return menuItems.length > 0 ? (
-    <Dropdown trigger={'Admin'} className="link item">
-      <Dropdown.Menu>{menuItems}</Dropdown.Menu>
-    </Dropdown>
-  ) : null;
+  return (
+    menuItems.length > 0 && (
+      <Dropdown trigger={'Admin'} className="link item">
+        <Dropdown.Menu>{menuItems}</Dropdown.Menu>
+      </Dropdown>
+    )
+  );
 };
 
 const Header = () => {

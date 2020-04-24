@@ -5,22 +5,22 @@ import {Link} from 'react-router-dom';
 import {ALL_STUDIES, MY_PROFILE, GET_RELEASED_STUDY} from '../state/queries';
 import StudyList from '../components/StudyList/StudyList';
 import {Button, Message, Container, Segment, Icon} from 'semantic-ui-react';
+import {hasPermission} from '../common/permissions';
 
 const StudyListView = ({history}) => {
   const {data: profileData} = useQuery(MY_PROFILE);
   const myProfile = profileData && profileData.myProfile;
   const {loading, error, data} = useQuery(ALL_STUDIES);
-  const {
-    loading: releasesLoading,
-    error: releasesError,
-    data: releasesData,
-  } = useQuery(GET_RELEASED_STUDY, {
-    context: {clientName: 'coordinator'},
-  });
+  const {error: releasesError, data: releasesData} = useQuery(
+    GET_RELEASED_STUDY,
+    {
+      context: {clientName: 'coordinator'},
+    },
+  );
   const allStudies = data && data.allStudies;
   const allReleases = releasesData && releasesData.allStudies;
   var studyList = !loading && allStudies ? allStudies.edges : [];
-  const releaseList = !releasesLoading && allReleases ? allReleases.edges : [];
+  const releaseList = allReleases ? allReleases.edges : [];
   if (releaseList.length > 0 && studyList.length > 0) {
     studyList.forEach(function(study) {
       const release =
@@ -46,13 +46,34 @@ const StudyListView = ({history}) => {
       </Container>
     );
 
-  if (!loading && !releasesLoading && studyList.length === 0)
+  if (
+    myProfile &&
+    !(
+      hasPermission(myProfile, 'view_study') ||
+      hasPermission(myProfile, 'view_my_study')
+    )
+  ) {
     return (
-      <Container as={Segment} basic>
+      <Container as={Segment} basic padded="very">
         <Helmet>
           <title>KF Data Tracker - My Studies</title>
         </Helmet>
-        {myProfile && myProfile.roles.includes('ADMIN') ? (
+        <Message
+          warning
+          icon="warning circle"
+          header="You don't have access to any studies yet."
+          content="Your account is being reviewed for the proper permissions."
+        />
+      </Container>
+    );
+  }
+  if (!loading && studyList.length === 0)
+    return (
+      <Container as={Segment} basic padded="very">
+        <Helmet>
+          <title>KF Data Tracker - My Studies</title>
+        </Helmet>
+        {myProfile && hasPermission(myProfile, 'add_study') ? (
           <>
             <Message
               info
@@ -68,7 +89,7 @@ const StudyListView = ({history}) => {
                 icon="add"
                 content="Create Study"
                 as={Link}
-                to={`/study/new-study`}
+                to={`/study/new-study/info`}
               />
             </Segment>
           </>
@@ -76,8 +97,8 @@ const StudyListView = ({history}) => {
           <Message
             warning
             icon="warning circle"
-            header="You don't have access to any studies yet."
-            content="Your account is being reviewed for the proper permissions."
+            header="You don't have any studies yet."
+            content="Your study will show up here once added to your account."
           />
         )}
       </Container>
@@ -90,7 +111,6 @@ const StudyListView = ({history}) => {
       <StudyList
         studyList={studyList}
         loading={loading}
-        roles={myProfile ? myProfile.roles : []}
         history={history}
         myProfile={myProfile}
       />

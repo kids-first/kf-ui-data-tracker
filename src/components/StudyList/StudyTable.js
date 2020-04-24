@@ -13,17 +13,28 @@ import {
   trackedStudyFields,
   trackedResearchStudyFields,
 } from '../../common/notificationUtils';
+import {hasPermission} from '../../common/permissions';
+
 /**
  * Renders a single row in the table
  */
-const TableValue = ({row, col, title, isResearch}) => {
+const TableValue = ({row, col, title, isResearch, myProfile}) => {
   const coordUrl = process.env.REACT_APP_COORD_UI + 'releases/';
   switch (col) {
     case 'files':
-      return <FileCounts files={row[col].edges} title={title} hideIcon wrap />;
+      return (
+        <FileCounts
+          files={row[col].edges}
+          showWarning={myProfile && hasPermission(myProfile, 'add_file')}
+          title={title}
+          hideIcon
+          wrap
+        />
+      );
     case 'projects':
       return (
         <CavaticaCounts
+          showWarning={myProfile && hasPermission(myProfile, 'add_project')}
           projects={row[col].edges}
           title={title}
           hideIcon
@@ -49,7 +60,11 @@ const TableValue = ({row, col, title, isResearch}) => {
               : `/study/${title}/basic-info/info`
           }
           onClick={e => e.stopPropagation()}
-          className={row[col].missingValue > 0 ? 'text-red' : null}
+          className={
+            myProfile && hasPermission(myProfile, 'change_study')
+              ? 'text-red'
+              : null
+          }
         >
           {isResearch
             ? trackedResearchStudyFields.length -
@@ -106,7 +121,7 @@ const StudyTable = ({
   exclude = [],
   clickable = true,
   history,
-  isAdmin,
+  myProfile,
   isResearch,
 }) => {
   if (loading) {
@@ -124,9 +139,9 @@ const StudyTable = ({
     cols.reduce((row, col) => {
       if (col === 'description') {
         row[col] = {
-          missingValue: isAdmin ? countStudyNotification(node, isResearch) : 0,
-          missingProject: isAdmin ? countProjectNotification(node) : 0,
-          requiredFileChanges: isAdmin ? countFileNotification(node) : 0,
+          missingValue: countStudyNotification(node, isResearch),
+          missingProject: countProjectNotification(node),
+          requiredFileChanges: countFileNotification(node),
         };
       } else if (col === 'name') {
         row[col] =
@@ -211,6 +226,7 @@ const StudyTable = ({
                   col={col}
                   title={row.kfId}
                   isResearch={isResearch}
+                  myProfile={myProfile}
                 />
               </Table.Cell>
             ))}

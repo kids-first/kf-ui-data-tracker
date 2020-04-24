@@ -6,6 +6,8 @@ import FileCounts from '../StudyInfo/FileCounts';
 import CavaticaCounts from '../StudyInfo/CavaticaCounts';
 import {trackedStudyFields} from '../../common/notificationUtils';
 import CavaticaLogo from '../../assets/CavaticaLogo';
+import {hasPermission} from '../../common/permissions';
+
 /**
  * Displays each study with its kfId, name(shortName), and modifiedAt
  */
@@ -20,6 +22,7 @@ const StudyCard = ({
   missingProject,
   requiredFileChanges,
   isResearch,
+  myProfile,
 }) => {
   const projectsCounts = projects && projects.length > 0 ? projects.length : 0;
   const needsAttention =
@@ -58,7 +61,13 @@ const StudyCard = ({
               >
                 <Icon
                   name={missingValue > 0 ? 'clipboard list' : 'clipboard check'}
-                  color={missingValue > 0 ? 'red' : 'grey'}
+                  color={
+                    missingValue > 0 &&
+                    myProfile &&
+                    hasPermission(myProfile, 'change_study')
+                      ? 'red'
+                      : 'grey'
+                  }
                 />
                 Info
               </Link>
@@ -69,6 +78,7 @@ const StudyCard = ({
               title={studyId}
               projects={projects}
               isResearch={isResearch}
+              showWarning={myProfile && hasPermission(myProfile, 'add_project')}
             />
           ) : (
             <>
@@ -89,9 +99,11 @@ const StudyCard = ({
                     <Icon
                       name="file"
                       color={
-                        files.length > 0 && requiredFileChanges < 1
-                          ? 'grey'
-                          : 'red'
+                        files.length === 0 &&
+                        myProfile &&
+                        hasPermission(myProfile, 'add_file')
+                          ? 'red'
+                          : 'grey'
                       }
                     />
                     {files.length} documents
@@ -109,9 +121,11 @@ const StudyCard = ({
                     <CavaticaLogo
                       className="mr-5 vertical-middle"
                       fill={
-                        projectsCounts > 0 && missingProject < 1
-                          ? 'rgba(0,0,0,.6)'
-                          : '#db2828'
+                        projectsCounts === 0 &&
+                        myProfile &&
+                        hasPermission(myProfile, 'add_project')
+                          ? '#db2828'
+                          : 'rgba(0,0,0,.6)'
                       }
                     />
                     {projectsCounts} projects
@@ -134,7 +148,12 @@ const StudyCard = ({
       {showDetail && (
         <>
           <Card.Content extra compact="very" size="mini">
-            <FileCounts title={studyId} files={files} history={history} />
+            <FileCounts
+              title={studyId}
+              files={files}
+              history={history}
+              showWarning={myProfile && hasPermission(myProfile, 'add_file')}
+            />
             <Button
               as={Label}
               basic
@@ -146,7 +165,11 @@ const StudyCard = ({
             />
           </Card.Content>
           <Card.Content extra compact="very" size="mini">
-            <CavaticaCounts title={studyId} projects={projects} />
+            <CavaticaCounts
+              title={studyId}
+              projects={projects}
+              showWarning={myProfile && hasPermission(myProfile, 'add_project')}
+            />
           </Card.Content>
         </>
       )}

@@ -103,23 +103,26 @@ const Routes = () => (
           component={NewResearchStudyView}
           scope={['study', 'new research study']}
         />
-        <AdminRoute
+        <RestrictedRoute
           exact
           path="/study/new-study/info"
           component={NewStudyView}
           scope={['study', 'new study', 'info']}
+          permissions={['add_study']}
         />
-        <AdminRoute
+        <RestrictedRoute
           exact
           path="/study/new-study/external"
           component={NewStudyView}
           scope={['study', 'new study', 'external']}
+          permissions={['add_study']}
         />
-        <AdminRoute
+        <RestrictedRoute
           exact
           path="/study/new-study/logistics"
           component={NewStudyView}
           scope={['study', 'new study', 'logistics']}
+          permissions={['add_study']}
         />
         <PrivateRoute
           exact

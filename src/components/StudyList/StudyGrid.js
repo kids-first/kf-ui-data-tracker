@@ -33,24 +33,23 @@ const GridSkeleton = () => (
   </Card.Group>
 );
 
-const StudyGrid = ({studyList, loading, isAdmin, isResearch}) => {
+const StudyGrid = ({studyList, loading, myProfile, isResearch}) => {
   if (loading) return <GridSkeleton />;
   return (
     <Card.Group stackable itemsPerRow={3}>
       {studyList.map((node, i) => (
         <StudyCard
           isResearch={isResearch}
+          myProfile={myProfile}
           key={i}
           studyId={node.node.kfId}
           studyName={node.node.name || node.node.shortName}
           lastUpdate={new Date(node.node.modifiedAt)}
           files={node.node.files.edges}
           projects={node.node.projects.edges}
-          missingValue={
-            isAdmin ? countStudyNotification(node.node, isResearch) : 0
-          }
-          missingProject={isAdmin ? countProjectNotification(node.node) : 0}
-          requiredFileChanges={isAdmin ? countFileNotification(node.node) : 0}
+          missingValue={countStudyNotification(node.node, isResearch)}
+          missingProject={countProjectNotification(node.node)}
+          requiredFileChanges={countFileNotification(node.node)}
         />
       ))}
     </Card.Group>

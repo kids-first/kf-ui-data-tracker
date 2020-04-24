@@ -83,17 +83,18 @@ jobs:
       - run:
           name: Copy artifacts
           command: |
+            set +e
             mkdir ./artifacts
-            docker cp project_app_1:/app/cypress-coverage ./artifacts/coverage
+            docker cp project_app_1:/app/cypress-coverage ./artifacts/cypress-coverage
             docker cp cypress:/app/cypress/screenshots ./artifacts/screenshots
             echo "Returning exit code `cat .test-result`"
             exit `cat .test-result`
       - store_artifacts:
           path: ./artifacts
       - persist_to_workspace:
-          root: ./
+          root: ./artifacts
           paths:
-            - ./artifacts/
+            - ./cypress-coverage/
   coverage:
     docker:
       - image: circleci/node:11.12.0
