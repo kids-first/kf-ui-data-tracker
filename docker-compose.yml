@@ -5,7 +5,11 @@ services:
     image: kfdrc/kf-api-study-creator:latest
     env_file: docker.env
     environment:
+      - DATASERVICE_URL=http://dataservice
+      - FEAT_DATASERVICE_CREATE_STUDIES=True
+      - FEAT_DATASERVICE_UPDATE_STUDIES=True
       - ALLOWED_HOSTS=web
+      - DJANGO_SETTINGS_MODULE=creator.settings.development
       - PG_HOST=postgres
       # Options are: DATASERVICE, url of dataservice, or FAKE
       - PRELOAD_DATA=FAKE
@@ -20,6 +24,8 @@ services:
     image: kfdrc/kf-api-study-creator:latest
     env_file: docker.env
     command: '/app/bin/dev_worker.sh'
+    environment:
+      - DJANGO_SETTINGS_MODULE=creator.settings.development
     depends_on:
       - postgres
       - redis
@@ -28,6 +34,8 @@ services:
     image: kfdrc/kf-api-study-creator:latest
     env_file: docker.env
     command: './manage.py rqscheduler -i 5'
+    environment:
+      - DJANGO_SETTINGS_MODULE=creator.settings.development
     depends_on:
       - postgres
       - redis
@@ -57,7 +65,7 @@ services:
     volumes:
       - bundle:/app
   cypress:
-    image: cypress/browsers:node12.4.0-chrome76
+    image: cypress/browsers:node13.6.0-chrome80-ff72
     container_name: cypress
     environment:
       - CYPRESS_baseUrl=http://app:3000
@@ -74,6 +82,19 @@ services:
     working_dir: /app
     volumes:
       - bundle:/app
+  dataservice:
+    image: kfdrc/kf-api-dataservice:latest
+    command: /bin/ash -c "sleep 5; ./bin/run.sh"
+    environment:
+      - FLASK_CONFIG=development
+      - PG_NAME=dataservice
+      - PG_HOST=dataservice-pg
+    depends_on:
+      - dataservice-pg
+  dataservice-pg:
+    image: circleci/postgres:11.1
+    environment:
+      - POSTGRES_DB=dataservice
 networks:
   default:
     external:
