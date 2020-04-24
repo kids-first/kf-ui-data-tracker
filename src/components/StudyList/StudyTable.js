@@ -166,7 +166,8 @@ const StudyTable = ({
   const studies = studyList
     .map(({node}) => ({
       ...node,
-      version: node.release.node ? node.release.node.version : '',
+      version:
+        node.release && node.release.node ? node.release.node.version : '',
     }))
     .sort((s1, s2) => s1[sorting.column].localeCompare(s2[sorting.column]));
 

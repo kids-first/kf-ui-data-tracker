@@ -1,5 +1,6 @@
 import React from 'react';
 import {MemoryRouter} from 'react-router-dom';
+import {MockedProvider} from '@apollo/react-testing';
 import {render, cleanup} from '@testing-library/react';
 import allStudies from '../../../../__mocks__/kf-api-study-creator/responses/allStudies.json';
 import StudyTable from '../StudyTable';
@@ -10,9 +11,11 @@ it('renders study table correctly', () => {
   const studies = allStudies.data.allStudies.edges;
   // Should contain 4 cards in loading state
   const tree = render(
-    <MemoryRouter>
-      <StudyTable studyList={studies} />
-    </MemoryRouter>,
+    <MockedProvider>
+      <MemoryRouter>
+        <StudyTable studyList={studies} />
+      </MemoryRouter>
+    </MockedProvider>,
   );
   expect(tree.container).toMatchSnapshot();
 
