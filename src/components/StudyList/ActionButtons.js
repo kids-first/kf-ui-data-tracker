@@ -55,7 +55,6 @@ const PopupButton = ({
  * Contains a button group for study actions
  */
 const ActionButtons = ({study}) => {
-  console.log(study);
   const [showCollaborators, setShowCollaborators] = useState(false);
   const studyInfoNotif = countStudyNotification(study);
   const projectNotif = countProjectNotification(study);

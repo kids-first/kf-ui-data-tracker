@@ -128,13 +128,9 @@ const StudyTable = ({
   const studies = studyList
     .map(({node}) => ({
       ...node,
-      version: node.release.node && node.release.node.version,
+      version: node.release.node ? node.release.node.version : '',
     }))
-    .sort((s1, s2) =>
-      sorting.direction === 'ascending'
-        ? 1
-        : -1 * s1[sorting.column] > s2[sorting.column],
-    );
+    .sort((s1, s2) => s1[sorting.column].localeCompare(s2[sorting.column]));
 
   const header = [
     <Table.HeaderCell
@@ -176,7 +172,9 @@ const StudyTable = ({
         sortable
         celled
         headerRow={header}
-        tableData={studies}
+        tableData={
+          sorting.direction === 'ascending' ? studies : studies.reverse()
+        }
         renderBodyRow={renderRow}
       />
     </Amplitude>

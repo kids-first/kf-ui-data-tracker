@@ -15,13 +15,12 @@ const StudyListView = ({history}) => {
   const {loading, error, data} = useQuery(ALL_STUDIES, {
     fetchPolicy: 'network-only',
   });
-  const {
-    loading: releasesLoading,
-    error: releasesError,
-    data: releasesData,
-  } = useQuery(GET_RELEASED_STUDY, {
-    context: {clientName: 'coordinator'},
-  });
+  const {error: releasesError, data: releasesData} = useQuery(
+    GET_RELEASED_STUDY,
+    {
+      context: {clientName: 'coordinator'},
+    },
+  );
   const allStudies = data && data.allStudies;
 
   const allReleases = releasesData && releasesData.allStudyReleases;
