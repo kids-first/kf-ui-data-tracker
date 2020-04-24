@@ -83,6 +83,7 @@ jobs:
       - run:
           name: Copy artifacts
           command: |
+            set +e
             mkdir ./artifacts
             docker cp project_app_1:/app/cypress-coverage ./artifacts/coverage
             docker cp cypress:/app/cypress/screenshots ./artifacts/screenshots
