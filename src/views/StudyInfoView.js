@@ -6,6 +6,7 @@ import {UPDATE_STUDY} from '../state/mutations';
 import NewStudyForm from '../forms/StudyInfoForm/NewStudyForm';
 import {Container, Segment, Message, Placeholder} from 'semantic-ui-react';
 import NotFoundView from './NotFoundView';
+import {hasPermission} from '../common/permissions';
 
 const StudyInfoView = ({match, history}) => {
   const {loading, data, error} = useQuery(GET_STUDY_BY_ID, {
@@ -16,13 +17,12 @@ const StudyInfoView = ({match, history}) => {
   });
   const studyByKfId = data && data.studyByKfId;
   const studyName = studyByKfId ? 'for ' + studyByKfId.name : '';
-  const user = useQuery(MY_PROFILE);
+
   const [updateStudy] = useMutation(UPDATE_STUDY);
 
-  const isAdmin =
-    !user.loading && user.data.myProfile
-      ? user.data.myProfile.roles.includes('ADMIN')
-      : false;
+  const {data: profileData} = useQuery(MY_PROFILE);
+  const myProfile = profileData && profileData.myProfile;
+  const allowEdit = myProfile && hasPermission(myProfile, 'change_study');
 
   const [apiErrors, setApiErrors] = useState(null);
   const submitUpdate = values => {
