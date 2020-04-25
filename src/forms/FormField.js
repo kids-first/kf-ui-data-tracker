@@ -26,7 +26,7 @@ const FormField = ({
   allowEdit,
 }) => {
   const hasError = touched && errors && errors.length > 0;
-  const tracking = noValueWarning(isAdmin, id, value);
+  const tracking = allowEdit && noValueWarning(id, value);
   return (
     <Form.Field required={required}>
       <label className="noMargin">{name}:</label>

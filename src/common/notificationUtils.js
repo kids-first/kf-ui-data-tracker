@@ -104,9 +104,8 @@ export const prevNextStep = (stepName, newStudy, history) => {
  * - Only tracking the fields listed in trackedStudyFields
  * - Only return true when field has no value
  */
-export const noValueWarning = (isAdmin, id, value) => {
+export const noValueWarning = (id, value) => {
   return (
-    isAdmin &&
     trackedStudyFields.includes(id) &&
     (value === null || value === 0 || value.length === 0)
   );
