@@ -13,7 +13,13 @@ const NavBarView = ({match, location, history}) => {
     },
   });
   const studyByKfId = data && data.studyByKfId;
-  const user = useQuery(MY_PROFILE);
+  const {data: profileData} = useQuery(MY_PROFILE);
+  const myProfile = profileData && profileData.myProfile;
+  const userRole =
+    myProfile && myProfile.groups.edges.length > 0
+      ? myProfile.groups.edges.map(({node}) => node.name)
+      : [];
+  const isBeta = userRole.includes('Administrators');
 
   const newStudy =
     sessionStorage.getItem('newStudy') &&
@@ -23,11 +29,6 @@ const NavBarView = ({match, location, history}) => {
       .filter(id => id.includes(match.params.kfId));
 
   const [showModal, setShowModal] = useState(false);
-
-  const isBeta =
-    !user.loading && user.data.myProfile
-      ? user.data.myProfile.roles.includes('BETA')
-      : false;
 
   const isResearch = match.path.includes('research');
 
