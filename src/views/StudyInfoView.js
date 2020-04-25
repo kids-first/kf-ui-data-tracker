@@ -99,12 +99,12 @@ const StudyInfoView = ({match, history}) => {
         <title>{`KF Data Tracker - Study info ${studyName}`}</title>
       </Helmet>
       <NewStudyForm
-        isAdmin={isAdmin}
+        allowEdit={allowEdit}
         history={history}
         submitValue={submitUpdate}
         apiErrors={apiErrors}
         studyNode={studyByKfId}
-        editing={isAdmin}
+        editing={allowEdit}
       />
     </Container>
   );

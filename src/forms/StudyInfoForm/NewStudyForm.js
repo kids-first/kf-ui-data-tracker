@@ -31,7 +31,7 @@ const NewStudyForm = ({
   newStudy,
   editing,
   history,
-  isAdmin,
+  allowEdit,
 }) => {
   const STUDY_STEPS = [
     {
@@ -161,7 +161,7 @@ const NewStudyForm = ({
             />
           )}
           {!newStudy &&
-            isAdmin &&
+            allowEdit &&
             missingValueMessage(formikProps.values).length > 0 && (
               <Message negative icon>
                 <Icon name="warning circle" />
@@ -240,7 +240,7 @@ const NewStudyForm = ({
                         editing,
                         foldDescription,
                         setFoldDescription,
-                        isAdmin,
+                        allowEdit,
                       })
                     }
                   />

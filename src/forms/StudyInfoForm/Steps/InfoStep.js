@@ -13,7 +13,7 @@ const InfoStep = ({
   newStudy,
   history,
   editing,
-  isAdmin,
+  allowEdit,
 }) => {
   const {values, errors, touched, handleChange, handleBlur} = formikProps;
   const mapFields = [
@@ -41,7 +41,7 @@ const InfoStep = ({
       {mapFields.map(item => (
         <FormField
           key={item.id}
-          isAdmin={isAdmin}
+          allowEdit={allowEdit}
           newStudy={newStudy}
           required={item.required}
           id={item.id}
@@ -59,7 +59,7 @@ const InfoStep = ({
       ))}
       {newStudy ? (
         <FormField
-          isAdmin={isAdmin}
+          allowEdit={allowEdit}
           newStudy={newStudy}
           id="workflowType"
           name="Cavatica Projects"
@@ -89,7 +89,7 @@ const InfoStep = ({
         </FormField>
       ) : (
         <FormField
-          isAdmin={isAdmin}
+          allowEdit={allowEdit}
           newStudy={newStudy}
           id="bucket"
           name="S3 Bucket"
