@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import {Link, withRouter} from 'react-router-dom';
 import {Amplitude} from '@amplitude/react-amplitude';
-import {Header, Label, Table} from 'semantic-ui-react';
+import {Header, Icon, Label, Popup, Table} from 'semantic-ui-react';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 import defaultAvatar from '../../assets/defaultAvatar.png';
 import ActionButtons from './ActionButtons';
 import Release from './Release';
@@ -20,6 +21,45 @@ const Investigators = ({investigators}) => {
     );
   }
   return <span>No investigators</span>;
+};
+
+const KfId = ({kfId}) => {
+  const [copied, setCopied] = useState(false);
+
+  return (
+    <Amplitude
+      eventProperties={inheritedProps => ({
+        ...inheritedProps,
+        scope: inheritedProps.scope
+          ? [...inheritedProps.scope, 'kfid']
+          : ['kfid'],
+      })}
+    >
+      {({logEvent}) => (
+        <Popup
+          inverted
+          position="top left"
+          trigger={
+            <CopyToClipboard
+              text={kfId}
+              onCopy={() => {
+                setCopied(true);
+                logEvent('copy');
+                setTimeout(() => {
+                  setCopied(false);
+                }, 700);
+              }}
+            >
+              <code>{kfId}</code>
+            </CopyToClipboard>
+          }
+          content={
+            copied ? <Icon name="check" color="green" /> : 'Copy to clipboard'
+          }
+        />
+      )}
+    </Amplitude>
+  );
 };
 
 const renderRow = node => {
@@ -66,11 +106,7 @@ const renderRow = node => {
         width: 1,
         textAlign: 'center',
         selectable: true,
-        content: (
-          <Link to={'/study/' + node.kfId + '/basic-info/info'}>
-            <code>{node.kfId}</code>
-          </Link>
-        ),
+        content: <KfId kfId={node.kfId} />,
       },
       {
         key: 'version',
