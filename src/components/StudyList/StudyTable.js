@@ -7,6 +7,39 @@ import defaultAvatar from '../../assets/defaultAvatar.png';
 import ActionButtons from './ActionButtons';
 import Release from './Release';
 
+const StudyName = ({study}) => {
+  // TODO: Filter out only users in the Investigators group
+  const investigators =
+    study.collaborators.edges.length &&
+    study.collaborators.edges.map(({node}) => node);
+
+  return (
+    <Amplitude
+      eventProperties={inheritedProps => ({
+        ...inheritedProps,
+        scope: inheritedProps.scope
+          ? [...inheritedProps.scope, 'study name']
+          : ['study name'],
+      })}
+    >
+      {({logEvent}) => (
+        <Link
+          to={'/study/' + study.kfId + '/basic-info/info'}
+          onClick={() => logEvent('click')}
+          className="overflow-cell"
+        >
+          <Header size="medium" alt={study.name}>
+            {study.name}
+            <Header.Subheader>
+              <Investigators investigators={investigators} />
+            </Header.Subheader>
+          </Header>
+        </Link>
+      )}
+    </Amplitude>
+  );
+};
+
 const Investigators = ({investigators}) => {
   if (investigators.length) {
     return (
@@ -62,72 +95,41 @@ const KfId = ({kfId}) => {
   );
 };
 
-const renderRow = node => {
-  // TODO: Filter out only users in the Investigators group
-  const investigators =
-    node.collaborators.edges.length &&
-    node.collaborators.edges.map(({node}) => node);
-
-  return {
-    key: node.kfId,
-    cells: [
-      {
-        key: 'name',
-        selectable: true,
-        className: 'overflow-cell-container',
-        content: (
-          <Amplitude
-            eventProperties={inheritedProps => ({
-              ...inheritedProps,
-              scope: inheritedProps.scope
-                ? [...inheritedProps.scope, 'study name']
-                : ['study name'],
-            })}
-          >
-            {({logEvent}) => (
-              <Link
-                to={'/study/' + node.kfId + '/basic-info/info'}
-                onClick={() => logEvent('click')}
-                className="overflow-cell"
-              >
-                <Header size="medium" alt={node.name}>
-                  {node.name}
-                  <Header.Subheader>
-                    <Investigators investigators={investigators} />
-                  </Header.Subheader>
-                </Header>
-              </Link>
-            )}
-          </Amplitude>
-        ),
-      },
-      {
-        key: 'kfId',
-        width: 1,
-        textAlign: 'center',
-        selectable: true,
-        content: <KfId kfId={node.kfId} />,
-      },
-      {
-        key: 'version',
-        textAlign: 'center',
-        width: 1,
-        selectable: true,
-        content: (
-          <Release
-            release={node.release && node.release.node && node.release.node}
-          />
-        ),
-      },
-      {
-        key: 'actions',
-        textAlign: 'right',
-        content: <ActionButtons study={node} />,
-        width: 1,
-      },
-    ],
-  };
-};
+const renderRow = node => ({
+  key: node.kfId,
+  cells: [
+    {
+      key: 'name',
+      selectable: true,
+      className: 'overflow-cell-container',
+      content: <StudyName study={node} />,
+    },
+    {
+      key: 'kfId',
+      width: 1,
+      textAlign: 'center',
+      selectable: true,
+      content: <KfId kfId={node.kfId} />,
+    },
+    {
+      key: 'version',
+      textAlign: 'center',
+      width: 1,
+      selectable: true,
+      content: (
+        <Release
+          release={node.release && node.release.node && node.release.node}
+        />
+      ),
+    },
+    {
+      key: 'actions',
+      textAlign: 'right',
+      content: <ActionButtons study={node} />,
+      width: 1,
+    },
+  ],
+});
 
 const StudyTable = ({
   studyList,
