@@ -20,6 +20,9 @@
             "description": "Sudy description in markdown, commonly the X01 abstract text. --  As test study description",
             "anticipatedSamples": 100,
             "awardeeOrganization": "CHOP",
+            "collaborators": {
+              "edges": []
+            },
             "files": {
               "edges": [
                 {
@@ -94,6 +97,9 @@
             "description": "Sudy description in markdown, commonly the X01 abstract text. --  As test study description",
             "anticipatedSamples": 100,
             "awardeeOrganization": "CHOP",
+            "collaborators": {
+              "edges": []
+            },
             "files": {"edges": [], "__typename": "FileNodeConnection"},
             "projects": {"edges": [], "__typename": "ProjectNodeConnection"},
             "__typename": "StudyNode"
@@ -118,6 +124,9 @@
             "description": "Sudy description in markdown, commonly the X01 abstract text. --  As test study description",
             "anticipatedSamples": 100,
             "awardeeOrganization": "CHOP",
+            "collaborators": {
+              "edges": []
+            },
             "files": {"edges": [], "__typename": "FileNodeConnection"},
             "projects": {"edges": [], "__typename": "ProjectNodeConnection"},
             "__typename": "StudyNode"
@@ -142,6 +151,9 @@
             "description": "Sudy description in markdown, commonly the X01 abstract text. --  As test study description",
             "anticipatedSamples": 100,
             "awardeeOrganization": "CHOP",
+            "collaborators": {
+              "edges": []
+            },
             "projects": {
               "edges": [
                 {

@@ -1,55 +1,34 @@
 import React from 'react';
 import {MemoryRouter} from 'react-router-dom';
+import {MockedProvider} from '@apollo/react-testing';
 import {render, cleanup} from '@testing-library/react';
+import wait from 'waait';
 import allStudies from '../../../../__mocks__/kf-api-study-creator/responses/allStudies.json';
+import {MY_PROFILE} from '../../../../src/state/queries';
+import myProfile from '../../../../__mocks__/kf-api-study-creator/responses/myProfile.json';
 import StudyTable from '../StudyTable';
 
 afterEach(cleanup);
 
-it('renders study table correctly', () => {
+it('renders study table correctly', async () => {
   const studies = allStudies.data.allStudies.edges;
-  const excludedColumns = ['name', 'createdAt', 'modifiedAt'];
+
+  const myProfileMock = {
+    request: {
+      query: MY_PROFILE,
+    },
+    result: myProfile,
+  };
   // Should contain 4 cards in loading state
   const tree = render(
-    <MemoryRouter>
-      <StudyTable studyList={studies} exclude={excludedColumns} />
-    </MemoryRouter>,
+    <MockedProvider mocks={[myProfileMock]}>
+      <MemoryRouter>
+        <StudyTable studyList={studies} />
+      </MemoryRouter>
+    </MockedProvider>,
   );
-  expect(tree.container).toMatchSnapshot();
+  await wait(0);
 
-  const rows = tree.container.querySelectorAll('table tbody tr');
-  expect(rows.length).toBe(4);
-});
-
-it('renders study table without excluded columns passed to props', () => {
-  const studies = allStudies.data.allStudies.edges;
-  const excludedColumn = 'name';
-
-  const tree = render(
-    <MemoryRouter>
-      <StudyTable studyList={studies} exclude={[excludedColumn]} />
-    </MemoryRouter>,
-  );
-  expect(tree.container).toMatchSnapshot();
-
-  const cols = tree.container.querySelectorAll('table thead th');
-  expect(cols.length).toBe(16);
-  expect(tree.queryByText(excludedColumn)).toBeNull();
-});
-
-it('renders study table for ADMIN role', () => {
-  const studies = allStudies.data.allStudies.edges;
-  const excludedColumns = ['name', 'createdAt', 'modifiedAt'];
-
-  const tree = render(
-    <MemoryRouter>
-      <StudyTable
-        studyList={studies}
-        isAdmin={true}
-        exclude={excludedColumns}
-      />
-    </MemoryRouter>,
-  );
   expect(tree.container).toMatchSnapshot();
 
   const rows = tree.container.querySelectorAll('table tbody tr');

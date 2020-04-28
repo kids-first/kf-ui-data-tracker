@@ -12,6 +12,7 @@
       "email": "admin@myproject.com",
       "picture": "",
       "roles": ["ADMIN"],
+      "studies": {"edges": [], "__typename": "StudyNodeConnection"},
       "groups": {
         "edges": [
           {

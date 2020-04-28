@@ -145,21 +145,6 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
                 myProfile={myProfile}
                 loading={loading}
                 studyList={filteredStudyList()}
-                exclude={[
-                  'shortName',
-                  'createdAt',
-                  'modifiedAt',
-                  'bucket',
-                  'attribution',
-                  'dataAccessAuthority',
-                  'externalId',
-                  'releaseStatus',
-                  'version',
-                  'releaseDate',
-                  'anticipatedSamples',
-                  'awardeeOrganization',
-                  'collaborators',
-                ]}
               />
             )}
           </Grid.Column>
