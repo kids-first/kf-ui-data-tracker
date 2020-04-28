@@ -1,14 +1,15 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
-import {useMutation} from '@apollo/react-hooks';
+import {useQuery, useMutation} from '@apollo/react-hooks';
 import {ADD_COLLABORATOR} from '../../state/mutations';
-import {GET_STUDY_BY_ID} from '../../state/queries';
+import {GET_STUDY_BY_ID, MY_PROFILE} from '../../state/queries';
 import {Amplitude} from '@amplitude/react-amplitude';
 import {Button, Label, Icon, Popup} from 'semantic-ui-react';
 import {
   countStudyNotification,
   countProjectNotification,
 } from '../../common/notificationUtils';
+import {hasPermission} from '../../common/permissions';
 import CavaticaLogo from '../../assets/CavaticaLogo';
 import AddCollaboratorModal from '../../modals/AddCollaboratorModal';
 
@@ -22,6 +23,7 @@ const PopupButton = ({
   icon,
   label = null,
   hoverable = false,
+  disabled = false,
   ...props
 }) => (
   <Amplitude
@@ -34,6 +36,7 @@ const PopupButton = ({
   >
     {({logEvent}) => (
       <Popup
+        disabled={disabled}
         header={header}
         content={content}
         hoverable={hoverable}
@@ -56,6 +59,11 @@ const PopupButton = ({
  */
 const ActionButtons = ({study}) => {
   const [showCollaborators, setShowCollaborators] = useState(false);
+
+  // Get current user's profile to determine permission level
+  const {data: profileData} = useQuery(MY_PROFILE);
+  const user = profileData && profileData.myProfile;
+
   const studyInfoNotif = countStudyNotification(study);
   const projectNotif = countProjectNotification(study);
 
@@ -86,6 +94,7 @@ const ActionButtons = ({study}) => {
           as={Link}
           to={`/study/${study.kfId}/basic-info/info`}
           content={
+            hasPermission(user, 'change_study') &&
             studyInfoNotif > 0 && (
               <p>
                 <Icon name="warning sign" /> Missing {studyInfoNotif} fields
@@ -93,6 +102,7 @@ const ActionButtons = ({study}) => {
             )
           }
           label={
+            hasPermission(user, 'change_study') &&
             studyInfoNotif > 0 && <Label empty corner circular color="orange" />
           }
         />
@@ -108,6 +118,7 @@ const ActionButtons = ({study}) => {
           as={Link}
           to={`/study/${study.kfId}/cavatica`}
           content={
+            hasPermission(user, 'link_project') &&
             projectNotif > 0 && (
               <p>
                 <Icon name="warning sign" /> Missing {projectNotif} required
@@ -116,6 +127,7 @@ const ActionButtons = ({study}) => {
             )
           }
           label={
+            hasPermission(user, 'link_project') &&
             projectNotif > 0 && <Label empty corner circular color="orange" />
           }
         />
@@ -124,17 +136,19 @@ const ActionButtons = ({study}) => {
           header="Collaborators"
           icon="users"
           content={
-            <>
-              <p>Manage collaborators in this study</p>
-              <Button
-                primary
-                fluid
-                content="Add Collaborator"
-                icon="add"
-                labelPosition="left"
-                onClick={() => setShowCollaborators(true)}
-              />
-            </>
+            hasPermission(user, 'add_collaborator') && (
+              <>
+                <p>Manage collaborators in this study</p>
+                <Button
+                  primary
+                  fluid
+                  content="Add Collaborator"
+                  icon="add"
+                  labelPosition="left"
+                  onClick={() => setShowCollaborators(true)}
+                />
+              </>
+            )
           }
           as={Link}
           to={`/study/${study.kfId}/collaborators`}
