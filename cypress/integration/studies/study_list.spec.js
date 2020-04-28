@@ -62,7 +62,7 @@ context('Admin Study List', () => {
   it('only shows my studies', () => {
     cy.contains('label', 'Show only my studies').click();
     // Select first study
-    cy.contains('SD_ODWXI1TE').click();
+    cy.contains('monetize').click();
 
     // Add self to that study
     cy.get('[href="/study/SD_ODWXI1TE/collaborators"]').click();
@@ -86,6 +86,9 @@ context('Admin Study List', () => {
       .its('length')
       .should('eq', 5);
   });
+  it('has notifications', () => {
+    cy.get('table').should('not.exist');
+  })
 });
 
 context('Unauthed Study List', () => {
@@ -99,6 +102,7 @@ context('Unauthed Study List', () => {
   it('displays no studies', () => {
     // Should test that no studies are displayed and the user is told that
     // they are not allowed to view any studies
+    cy.get('table').should('not.exist');
   });
 });
 
@@ -108,7 +112,17 @@ context('Investigator Study List', () => {
     cy.as(['Investigators']);
   });
 
+  beforeEach(() => {
+    cy.login();
+    cy.visit('/');
+  });
+
   it("only shows investigator's studies", () => {
-    // Should test that only studies which the user is a member of are displayed
+    cy.contains('label', 'Show only my studies').should('not.exist');
+
+    cy.get('table')
+      .find('tr')
+      .its('length')
+      .should('eq', 2);
   });
 });
