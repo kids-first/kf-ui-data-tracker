@@ -89,9 +89,6 @@ exports[`renders study table correctly 1`] = `
                 aria-hidden="true"
                 class="info icon"
               />
-              <div
-                class="ui orange circular empty corner label"
-              />
             </a>
             <a
               class="ui icon button"
@@ -126,9 +123,6 @@ exports[`renders study table correctly 1`] = `
                   fill="#000000"
                 />
               </svg>
-              <div
-                class="ui orange circular empty corner label"
-              />
             </a>
             <a
               class="ui icon button"
@@ -197,9 +191,6 @@ exports[`renders study table correctly 1`] = `
                 aria-hidden="true"
                 class="info icon"
               />
-              <div
-                class="ui orange circular empty corner label"
-              />
             </a>
             <a
               class="ui icon button"
@@ -234,9 +225,6 @@ exports[`renders study table correctly 1`] = `
                   fill="#000000"
                 />
               </svg>
-              <div
-                class="ui orange circular empty corner label"
-              />
             </a>
             <a
               class="ui icon button"
@@ -304,9 +292,6 @@ exports[`renders study table correctly 1`] = `
               <i
                 aria-hidden="true"
                 class="info icon"
-              />
-              <div
-                class="ui orange circular empty corner label"
               />
             </a>
             <a
@@ -410,9 +395,6 @@ exports[`renders study table correctly 1`] = `
                 aria-hidden="true"
                 class="info icon"
               />
-              <div
-                class="ui orange circular empty corner label"
-              />
             </a>
             <a
               class="ui icon button"
@@ -447,9 +429,6 @@ exports[`renders study table correctly 1`] = `
                   fill="#000000"
                 />
               </svg>
-              <div
-                class="ui orange circular empty corner label"
-              />
             </a>
             <a
               class="ui icon button"

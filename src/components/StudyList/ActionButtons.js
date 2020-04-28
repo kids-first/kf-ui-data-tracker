@@ -61,7 +61,7 @@ const ActionButtons = ({study}) => {
   const [showCollaborators, setShowCollaborators] = useState(false);
 
   // Get current user's profile to determine permission level
-  const {data: profileData} = useQuery(MY_PROFILE);
+  const {data: profileData, loading} = useQuery(MY_PROFILE);
   const user = profileData && profileData.myProfile;
 
   const studyInfoNotif = countStudyNotification(study);
@@ -77,6 +77,8 @@ const ActionButtons = ({study}) => {
       },
     ],
   });
+
+  if (loading) return <span>loading</span>;
 
   return (
     <Amplitude

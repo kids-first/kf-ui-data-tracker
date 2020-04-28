@@ -2,6 +2,14 @@
 
 exports[`release version correctly 1`] = `
 <div>
+  <span>
+    loading
+  </span>
+</div>
+`;
+
+exports[`release version correctly 2`] = `
+<div>
   <div
     class="ui basic icon buttons"
   >
@@ -14,9 +22,6 @@ exports[`release version correctly 1`] = `
       <i
         aria-hidden="true"
         class="info icon"
-      />
-      <div
-        class="ui orange circular empty corner label"
       />
     </a>
     <a
@@ -52,9 +57,6 @@ exports[`release version correctly 1`] = `
           fill="#000000"
         />
       </svg>
-      <div
-        class="ui orange circular empty corner label"
-      />
     </a>
     <a
       class="ui icon button"
