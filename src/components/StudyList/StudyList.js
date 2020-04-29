@@ -36,19 +36,28 @@ const HeaderSkeleton = () => (
 const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
   const [searchString, setSearchString] = useState('');
   const [myStudies, setMystudies] = useState(true);
-  const [selectedCols, setSelectedCols] = useState([
-    'kfId',
-    'version',
-    'actions',
-  ]);
-
-  const availableCols = {
-    kfId: 'Kids First ID',
-    version: 'Version',
-    actions: 'Actions',
-    externalId: 'phsid/external id',
-    anticipatedSamples: 'Expected Samples',
-  };
+  // Try to restore the column state from local storage or fall back to the
+  // defaults if non are found
+  // We track the version off the column state so that we may override it in
+  // the future if the schema ever changes
+  const existingState = JSON.parse(localStorage.getItem('studyColumns'));
+  const [columns, setColumns] = useState(
+    existingState && existingState.version === 1
+      ? existingState
+      : {
+          version: 1,
+          columns: [
+            {key: 'kfId', name: 'Kids First ID', visible: true},
+            {key: 'externalId', name: 'phsid/External ID', visible: false},
+            {
+              key: 'anticipatedSamples',
+              name: 'Expected Samples',
+              visible: false,
+            },
+            {key: 'version', name: 'Version', visible: true},
+          ],
+        },
+  );
 
   if (loading) {
     return (
@@ -148,9 +157,12 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
       <Grid.Row>
         <Grid.Column textAlign="left">
           <ColumnSelector
-            selected={selectedCols}
-            available={availableCols}
-            onChange={setSelectedCols}
+            columns={columns.columns}
+            onChange={cols => {
+              const newCols = {...columns, columns: cols};
+              localStorage.setItem('studyColumns', JSON.stringify(newCols));
+              setColumns(newCols);
+            }}
           />
         </Grid.Column>
       </Grid.Row>
@@ -169,7 +181,7 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
                 myProfile={myProfile}
                 loading={loading}
                 studyList={filteredStudyList()}
-                selectedCols={selectedCols}
+                columns={columns.columns}
               />
             )}
           </Grid.Column>

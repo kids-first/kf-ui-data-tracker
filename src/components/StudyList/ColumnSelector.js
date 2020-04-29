@@ -1,15 +1,14 @@
 import React from 'react';
 import {Checkbox, Icon, Item, Popup} from 'semantic-ui-react';
 
-const ColumnSelector = ({selected, available, onChange}) => {
+const ColumnSelector = ({columns, onChange}) => {
   const change = col => {
-    if (selected.includes(col)) {
-      selected.splice(selected.indexOf(col), 1);
-      onChange([...selected]);
-    } else {
-      onChange([...selected, col]);
-    }
+    const colIndex = columns.findIndex(c => c.key === col);
+    columns[colIndex].visible = !columns[colIndex].visible;
+    onChange(columns);
   };
+
+  const selected = columns.filter(col => col.visible).map(col => col.key);
 
   return (
     <Popup
@@ -23,12 +22,12 @@ const ColumnSelector = ({selected, available, onChange}) => {
         </span>
       }
       header="Select Columns to Display"
-      content={Object.keys(available).map(col => (
-        <Item key={col}>
+      content={columns.map(col => (
+        <Item key={col.key}>
           <Checkbox
-            label={available[col]}
-            checked={selected.includes(col)}
-            onChange={() => change(col)}
+            label={col.name}
+            checked={selected.includes(col.key)}
+            onChange={() => change(col.key)}
           >
             {col}
           </Checkbox>

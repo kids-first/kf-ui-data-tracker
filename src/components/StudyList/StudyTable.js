@@ -105,17 +105,20 @@ const cellContent = {
     <Release release={node.release && node.release.node && node.release.node} />
   ),
   actions: node => <ActionButtons study={node} />,
+  externalId: node => <code>{node.externalId}</code>,
+  anticipatedSamples: node => node.anticipatedSamples || '-',
 };
 
 const renderRow = (node, columns) => ({
   key: node.kfId,
   cells: columns.map((col, i) => ({
-    key: col,
-    width: i !== 0 && 1,
+    key: col.key,
+    width: i !== 0 ? 1 : null,
     textAlign: i > 0 ? 'center' : 'left',
-    selectable: col !== 'actions',
-    className: i === 0 && 'overflow-cell-container',
-    content: cellContent[col](node),
+    selectable: col.key !== 'actions',
+    singleLine: col.key !== 'name',
+    className: i === 0 ? 'overflow-cell-container' : null,
+    content: cellContent[col.key](node),
   })),
 });
 
@@ -126,7 +129,7 @@ const StudyTable = ({
   history,
   myProfile,
   isResearch,
-  selectedCols,
+  columns,
 }) => {
   const [sorting, setSorting] = useState({
     column: 'name',
@@ -158,17 +161,25 @@ const StudyTable = ({
       version:
         node.release && node.release.node ? node.release.node.version : '',
     }))
-    .sort((s1, s2) => s1[sorting.column].localeCompare(s2[sorting.column]));
+    .sort(
+      (s1, s2) =>
+        s1[sorting.column] &&
+        s1[sorting.column].localeCompare(s2[sorting.column]),
+    );
 
-  const columns = ['name', ...selectedCols];
-
-  const header = columns.map((col, i) => (
+  // Construct header
+  const visibleCols = [
+    {key: 'name', name: 'Name', visible: true},
+    ...columns.filter(col => col.visible),
+    {key: 'actions', name: 'Actions', visible: true},
+  ];
+  const header = visibleCols.map((col, i) => (
     <Table.HeaderCell
-      key={col}
-      content={col}
+      key={col.key}
+      content={col.name}
       textAlign={i > 0 ? 'center' : 'left'}
-      sorted={sorting.column === col ? sorting.direction : null}
-      onClick={handleSort(col)}
+      sorted={sorting.column === col.key ? sorting.direction : null}
+      onClick={handleSort(col.key)}
     />
   ));
 
@@ -182,16 +193,14 @@ const StudyTable = ({
       })}
     >
       <Table
-        singleLine
         striped
-        selectable
         sortable
         celled
         headerRow={header}
         tableData={
           sorting.direction === 'ascending' ? studies : studies.reverse()
         }
-        renderBodyRow={data => renderRow(data, columns)}
+        renderBodyRow={data => renderRow(data, visibleCols)}
       />
     </Amplitude>
   );
