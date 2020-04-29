@@ -23,7 +23,6 @@ const EditDocumentForm = React.forwardRef(
       fileName,
       fileDescription,
       versionStatus,
-      isAdmin,
       history,
       handleSubmit,
       submitButtons,
@@ -126,21 +125,17 @@ const EditDocumentForm = React.forwardRef(
                 {versionStatus && (
                   <Form.Field>
                     <label>Approval Status:</label>
-                    {isAdmin ? (
-                      <Dropdown
-                        selection
-                        fluid
-                        name="file_status"
-                        options={options}
-                        value={values.file_status}
-                        placeholder="Choose an option"
-                        onChange={(e, {value}) => {
-                          setFieldValue('file_status', value);
-                        }}
-                      />
-                    ) : (
-                      <Badge state={versionStatus} />
-                    )}
+                    <Dropdown
+                      selection
+                      fluid
+                      name="file_status"
+                      options={options}
+                      value={values.file_status}
+                      placeholder="Choose an option"
+                      onChange={(e, {value}) => {
+                        setFieldValue('file_status', value);
+                      }}
+                    />
                   </Form.Field>
                 )}
                 <Form.Field required>
@@ -213,8 +208,6 @@ EditDocumentForm.propTypes = {
   /** The file approval status */
   versionStatus: PropTypes.string,
   /** If the user has ADMIN role */
-  isAdmin: PropTypes.bool,
-  /** (New file) Function to perform on form submission  */
   handleSubmit: PropTypes.func,
   /** (New file) Any errors that occured when submitting the form */
   errors: PropTypes.object,

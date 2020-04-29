@@ -92,16 +92,18 @@ const VersionInfoModal = ({
         </Grid>
       </Modal.Content>
       <Modal.Actions>
-        <Button
-          primary
-          icon
-          labelPosition="left"
-          size="mini"
-          onClick={onUploadClick}
-        >
-          <Icon name="cloud upload" />
-          UPLOAD VERSION
-        </Button>
+        {onUploadClick && (
+          <Button
+            primary
+            icon
+            labelPosition="left"
+            size="mini"
+            onClick={onUploadClick}
+          >
+            <Icon name="cloud upload" />
+            UPLOAD VERSION
+          </Button>
+        )}
         <Button
           primary
           icon

@@ -18,7 +18,6 @@ import {
 const FileList = ({
   fileList,
   studyId,
-  isAdmin,
   updateFile,
   updateError,
   downloadFileMutation,
@@ -104,11 +103,10 @@ const FileList = ({
                 key={node.kfId}
                 fileListId={studyId}
                 fileNode={node}
-                isAdmin={isAdmin}
                 updateFile={updateFile}
                 selected={selection.includes(node.kfId)}
                 onSelectOne={onSelectOne}
-                deleteFile={isAdmin ? deleteFile : null}
+                deleteFile={deleteFile}
                 downloadFileMutation={downloadFileMutation}
               />
             ))}

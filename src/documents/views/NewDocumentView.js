@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {useQuery, useMutation} from '@apollo/react-hooks';
 import EditDocumentForm from '../forms/EditDocumentForm';
 import {CREATE_FILE} from '../mutations';
-import {GET_STUDY_BY_ID, MY_PROFILE} from '../../state/queries';
+import {GET_STUDY_BY_ID} from '../../state/queries';
 import {Message, Segment, Container, Button, Header} from 'semantic-ui-react';
 import {lengthLimit} from '../utilities';
 
@@ -18,7 +18,6 @@ const NewDocumentView = ({match, history, location}) => {
   const study = useQuery(GET_STUDY_BY_ID, {
     variables: {kfId: match.params.kfId},
   });
-  const user = useQuery(MY_PROFILE);
   const [createDocument] = useMutation(CREATE_FILE, {
     awaitRefetchQueries: true,
     refetchQueries: [
@@ -28,11 +27,6 @@ const NewDocumentView = ({match, history, location}) => {
       setErrors(error.message);
     },
   });
-
-  const isAdmin =
-    !user.loading && user.data.myProfile
-      ? user.data.myProfile.roles.includes('ADMIN')
-      : false;
 
   const studyFiles =
     study.data && study.data.studyByKfId
@@ -93,7 +87,6 @@ const NewDocumentView = ({match, history, location}) => {
         <Container as={Segment} padded="very">
           <EditDocumentForm
             studyFiles={studyFiles}
-            isAdmin={isAdmin}
             fileNode={location.state.file}
             handleSubmit={handleSubmit}
             history={history}

@@ -1,9 +1,6 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import {useMutation} from '@apollo/react-hooks';
 import {withRouter, Link} from 'react-router-dom';
-import {FILE_DOWNLOAD_URL, DELETE_FILE} from '../../mutations';
-import {GET_STUDY_BY_ID} from '../../../state/queries';
 import AvatarTimeAgo from '../../../components/AvatarTimeAgo/AvatarTimeAgo';
 import VersionList from '../VersionList/VersionList';
 import {
@@ -38,7 +35,7 @@ const ActionButtons = ({
   setDialog,
   deleteFile,
   history,
-  isAdmin,
+  updateFile,
 }) => (
   <>
     <Header as="h5" attached="top" textAlign="center" color="blue">
@@ -56,46 +53,53 @@ const ActionButtons = ({
         }
         content="DOWNLOAD"
       />
-      <Divider />
-      <Button.Group size="mini" fluid>
-        <Button
-          icon="pencil"
-          size="small"
-          labelPosition="left"
-          color="grey"
-          onClick={() => setDialog('annotation')}
-          data-testid="edit-button"
-          content="EDIT"
-        />
-        {isAdmin && (
-          <Popup
-            trigger={
-              <Button icon="trash alternate" data-testid="delete-button" />
-            }
-            header="Are you sure?"
-            content={
-              <>
-                This file and all of its versions and history will be deleted
-                <Divider />
-                <Button
-                  data-testid="delete-confirm"
-                  negative
-                  fluid
-                  size="mini"
-                  icon="trash alternate"
-                  content="Delete"
-                  onClick={e => {
-                    deleteFile({variables: {kfId: fileNode.kfId}});
-                    history.goBack();
-                  }}
-                />
-              </>
-            }
-            on="click"
-            position="top right"
-          />
-        )}
-      </Button.Group>
+      {(updateFile !== null || deleteFile !== null) && (
+        <>
+          <Divider />
+          <Button.Group size="mini" fluid>
+            {updateFile && (
+              <Button
+                icon="pencil"
+                size="small"
+                labelPosition="left"
+                color="grey"
+                onClick={() => setDialog('annotation')}
+                data-testid="edit-button"
+                content="EDIT"
+              />
+            )}
+            {deleteFile && (
+              <Popup
+                trigger={
+                  <Button icon="trash alternate" data-testid="delete-button" />
+                }
+                header="Are you sure?"
+                content={
+                  <>
+                    This file and all of its versions and history will be
+                    deleted
+                    <Divider />
+                    <Button
+                      data-testid="delete-confirm"
+                      negative
+                      fluid
+                      size="mini"
+                      icon="trash alternate"
+                      content="Delete"
+                      onClick={e => {
+                        deleteFile({variables: {kfId: fileNode.kfId}});
+                        history.goBack();
+                      }}
+                    />
+                  </>
+                }
+                on="click"
+                position="top right"
+              />
+            )}
+          </Button.Group>
+        </>
+      )}
     </Segment>
   </>
 );
@@ -107,16 +111,14 @@ const FileDetail = ({
   fileNode,
   history,
   match,
-  isAdmin,
+  allowUpload,
+  allowViewVersion,
   updateFile,
   updateError,
+  downloadFileMutation,
+  deleteFile,
 }) => {
   const studyId = match.params.kfId;
-  const [downloadFileMutation] = useMutation(FILE_DOWNLOAD_URL);
-  const [deleteFile] = useMutation(DELETE_FILE, {
-    refetchQueries: [{query: GET_STUDY_BY_ID, variables: {kfId: studyId}}],
-  });
-
   const [dialog, setDialog] = useState(false);
   const [versionOpened, setOpenVersion] = useState({version: {}, index: null});
   const sortedVersions = fileSortedVersions(fileNode);
@@ -209,7 +211,7 @@ const FileDetail = ({
                 setDialog,
                 deleteFile,
                 history,
-                isAdmin,
+                updateFile,
               }}
             />
           </Grid.Column>
@@ -217,19 +219,22 @@ const FileDetail = ({
       </Grid>
 
       <Grid>
-        <Grid.Row>
-          <Grid.Column mobile={16} tablet={16} computer={13}>
-            <VersionList
-              studyId={studyId}
-              fileNode={fileNode}
-              onUploadClick={() => setDialog('upload')}
-              onNameClick={(versionNode, index) => {
-                setDialog('versionInfo');
-                setOpenVersion({version: versionNode, index: index});
-              }}
-            />
-          </Grid.Column>
-        </Grid.Row>
+        {allowViewVersion && (
+          <Grid.Row>
+            <Grid.Column mobile={16} tablet={16} computer={13}>
+              <VersionList
+                studyId={studyId}
+                fileNode={fileNode}
+                allowUpload={allowUpload}
+                onUploadClick={() => setDialog('upload')}
+                onNameClick={(versionNode, index) => {
+                  setDialog('versionInfo');
+                  setOpenVersion({version: versionNode, index: index});
+                }}
+              />
+            </Grid.Column>
+          </Grid.Row>
+        )}
         <Grid.Row>
           <Grid.Column mobile={16} tablet={16} computer={13}>
             <FilePreview file={fileNode} />
@@ -245,6 +250,7 @@ const FileDetail = ({
             onUploadClick={() => setDialog('upload')}
             openedVersion={versionOpened}
             downloadFileMutation={downloadFileMutation}
+            allowUpload={allowUpload}
           />
         )}
       </Grid>

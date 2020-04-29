@@ -19,6 +19,7 @@ const FileActionButtons = ({
   return (
     <Button.Group fluid={fluid} size="small">
       <CopyButton
+        data-testid="copy-file-id"
         textToCopy={
           node.downloadUrl +
           `/version/${node.versions.edges.sort(createDateSort)[0].node.kfId}`

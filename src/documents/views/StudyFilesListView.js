@@ -21,6 +21,7 @@ import NotFoundView from '../../views/NotFoundView';
 import ListFilterBar from '../components/ListFilterBar/ListFilterBar';
 import BatchActionBar from '../components/ListFilterBar/BatchActionBar';
 import {createDateSort, modifiedDateSort} from '../utilities';
+import {hasPermission} from '../../common/permissions';
 
 /**
  * A place holder skeleton for a list of files
@@ -103,11 +104,22 @@ const StudyFilesListView = ({
   });
   const studyByKfId = data && data.studyByKfId;
   // Query for user
-  const user = useQuery(MY_PROFILE);
-  const isAdmin =
-    !user.loading && user.data.myProfile
-      ? user.data.myProfile.roles.includes('ADMIN')
-      : false;
+  const {data: profileData} = useQuery(MY_PROFILE);
+  const myProfile = profileData && profileData.myProfile;
+  const allowView =
+    myProfile &&
+    (hasPermission(myProfile, 'view_my_study') ||
+      hasPermission(myProfile, 'view_study'));
+  const allowUploadFile =
+    myProfile &&
+    (hasPermission(myProfile, 'add_file') ||
+      hasPermission(myProfile, 'add_my_study_file'));
+  const allowUploadVersion =
+    myProfile &&
+    (hasPermission(myProfile, 'add_version') ||
+      hasPermission(myProfile, 'add_my_study_version'));
+  const allowDelete = myProfile && hasPermission(myProfile, 'delete_file');
+  const allowEdit = myProfile && hasPermission(myProfile, 'change_file');
 
   const [dialog, setDialog] = useState(false);
   // View state
@@ -168,7 +180,7 @@ const StudyFilesListView = ({
         <Grid.Column width={10}>
           <h2>Study Documents</h2>
         </Grid.Column>
-        {files.length > 0 && (
+        {files.length > 0 && (allowUploadFile || allowUploadVersion) && (
           <Grid.Column width={6}>
             <Button
               compact
@@ -208,7 +220,7 @@ const StudyFilesListView = ({
                 <BatchActionBar
                   fileList={files}
                   studyId={kfId}
-                  deleteFile={deleteFile}
+                  deleteFile={allowDelete ? deleteFile : null}
                   downloadFileMutation={downloadFile}
                   selection={selectedFiles}
                   setSelection={setSelectedFiles}
@@ -217,11 +229,10 @@ const StudyFilesListView = ({
               <FileList
                 fileList={filteredFiles}
                 studyId={kfId}
-                isAdmin={isAdmin}
-                updateFile={updateFile}
+                updateFile={allowEdit ? updateFile : null}
                 updateError={updateFileError}
                 downloadFileMutation={downloadFile}
-                deleteFile={deleteFile}
+                deleteFile={allowDelete ? deleteFile : null}
                 selection={selectedFiles}
                 setSelection={setSelectedFiles}
               />
@@ -234,7 +245,9 @@ const StudyFilesListView = ({
                 <Segment basic>
                   <Header icon textAlign="center">
                     <Icon name="file alternate outline" />
-                    You don't have any documents yet.
+                    {allowView
+                      ? "You don't have any documents yet."
+                      : "You don't have access to any documents."}
                   </Header>
                 </Segment>
               )}
@@ -250,22 +263,26 @@ const StudyFilesListView = ({
                 setFile(false);
                 setDialog(false);
               }}
+              allowUploadFile={allowUploadFile}
+              allowUploadVersion={allowUploadVersion}
             />
           )}
         </Grid.Column>
       </Grid.Row>
-      <Grid.Row centered>
-        <Responsive
-          as={UploadContainer}
-          minWidth={Responsive.onlyTablet.minWidth}
-          handleUpload={file => {
-            setFile(file);
-            return !files.length
-              ? history.push('documents/new-document', {file})
-              : setDialog(true);
-          }}
-        />
-      </Grid.Row>
+      {(allowUploadFile || allowUploadVersion) && (
+        <Grid.Row centered>
+          <Responsive
+            as={UploadContainer}
+            minWidth={Responsive.onlyTablet.minWidth}
+            handleUpload={file => {
+              setFile(file);
+              return !files.length
+                ? history.push('documents/new-document', {file})
+                : setDialog(true);
+            }}
+          />
+        </Grid.Row>
+      )}
     </Grid>
   );
 };

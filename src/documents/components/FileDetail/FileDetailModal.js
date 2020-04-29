@@ -20,6 +20,7 @@ const FileDetailModal = ({
   onCloseModal,
   onUploadClick,
   downloadFileMutation,
+  allowUpload,
 }) => {
   return (
     <Fragment>
@@ -43,7 +44,7 @@ const FileDetailModal = ({
           fileNode={fileNode}
           openedVersion={openedVersion}
           onCloseDialog={onCloseModal}
-          onUploadClick={onUploadClick}
+          onUploadClick={allowUpload ? onUploadClick : null}
           downloadFileMutation={downloadFileMutation}
         />
       )}

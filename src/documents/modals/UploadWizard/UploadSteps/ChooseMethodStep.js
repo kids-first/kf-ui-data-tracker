@@ -7,14 +7,20 @@ import {Button, Header, Icon, Grid, Segment, Divider} from 'semantic-ui-react';
  * create a new document or a new document version
  */
 
-const ChooseMethodStep = ({file, history, setStep}) => (
+const ChooseMethodStep = ({
+  file,
+  history,
+  setStep,
+  allowUploadFile,
+  allowUploadVersion,
+}) => (
   <Segment placeholder>
     <Grid columns={2} stackable textAlign="center">
       <Divider vertical>Or</Divider>
 
       <Grid.Row verticalAlign="middle">
         <Grid.Column>
-          <Header icon>
+          <Header icon disabled={!allowUploadVersion}>
             {' '}
             <Icon name="copy" /> Update to Existing Document
             <Header.Subheader as="p">
@@ -22,6 +28,7 @@ const ChooseMethodStep = ({file, history, setStep}) => (
             </Header.Subheader>
           </Header>
           <Button
+            disabled={!allowUploadVersion}
             data-testid="update-existing-button"
             primary
             onClick={() => setStep(1)}
@@ -31,7 +38,7 @@ const ChooseMethodStep = ({file, history, setStep}) => (
         </Grid.Column>
 
         <Grid.Column>
-          <Header icon>
+          <Header icon disabled={!allowUploadFile}>
             {' '}
             <Icon name="file" /> New Study Document
             <Header.Subheader as="p">
@@ -39,6 +46,7 @@ const ChooseMethodStep = ({file, history, setStep}) => (
             </Header.Subheader>
           </Header>
           <Button
+            disabled={!allowUploadFile}
             primary
             onClick={() => history.push('documents/new-document', {file})}
           >
