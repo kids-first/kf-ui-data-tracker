@@ -23,7 +23,10 @@ it('renders study table correctly', async () => {
   const tree = render(
     <MockedProvider mocks={[myProfileMock]}>
       <MemoryRouter>
-        <StudyTable studyList={studies} />
+        <StudyTable
+          studyList={studies}
+          columns={[{key: 'kfId', name: 'Kids First ID', visible: true}]}
+        />
       </MemoryRouter>
     </MockedProvider>,
   );
