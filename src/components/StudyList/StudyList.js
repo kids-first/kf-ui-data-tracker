@@ -15,6 +15,7 @@ import {
   Checkbox,
 } from 'semantic-ui-react';
 import {hasPermission} from '../../common/permissions';
+import ColumnSelector from './ColumnSelector';
 
 /**
  * A skeleton placeholder for the loading state of the study list header
@@ -35,6 +36,20 @@ const HeaderSkeleton = () => (
 const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
   const [searchString, setSearchString] = useState('');
   const [myStudies, setMystudies] = useState(true);
+  const [selectedCols, setSelectedCols] = useState([
+    'kfId',
+    'version',
+    'actions',
+  ]);
+
+  const availableCols = {
+    kfId: 'Kids First ID',
+    version: 'Version',
+    actions: 'Actions',
+    externalId: 'phsid/external id',
+    anticipatedSamples: 'Expected Samples',
+  };
+
   if (loading) {
     return (
       <Container as={Segment} basic>
@@ -131,6 +146,15 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
         />
       </Grid.Column>
       <Grid.Row>
+        <Grid.Column textAlign="left">
+          <ColumnSelector
+            selected={selectedCols}
+            available={availableCols}
+            onChange={setSelectedCols}
+          />
+        </Grid.Column>
+      </Grid.Row>
+      <Grid.Row>
         {filteredStudyList().length > 0 ? (
           <Grid.Column>
             {(history && history.location.hash === '#grid') ||
@@ -145,6 +169,7 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
                 myProfile={myProfile}
                 loading={loading}
                 studyList={filteredStudyList()}
+                selectedCols={selectedCols}
               />
             )}
           </Grid.Column>
