@@ -105,57 +105,13 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
 
   return (
     <Grid as={Segment} basic container stackable>
-      <Grid.Column width={16} textAlign="right">
-        <Header as="h1" floated="left">
-          Your Investigator Studies
-        </Header>
-        {myProfile && hasPermission(myProfile, 'view_study') && (
-          <Checkbox
-            label="Show only my studies"
-            checked={myStudies}
-            onClick={() => setMystudies(!myStudies)}
-          />
-        )}
-        {myProfile && hasPermission(myProfile, 'add_study') && (
-          <Button
-            basic
-            primary
-            className="ml-10"
-            size="mini"
-            icon="add"
-            content="Add Study"
-            as={Link}
-            to={`/study/new-study/info`}
-          />
-        )}
-        <Input
-          aria-label="search studies"
-          className="ml-10"
-          size="mini"
-          iconPosition="left"
-          icon="search"
-          placeholder="Search by study name or collaborator"
-          onChange={(e, {value}) => {
-            setSearchString(value);
-          }}
-          value={searchString}
-        />
-        <ToggleButtons
-          className="ml-10"
-          size="mini"
-          hideText
-          onToggle={({key}) => {
-            history.push('#' + key);
-          }}
-          selected={history && history.location.hash.slice(1)}
-          buttons={[
-            {key: 'list', text: 'List', icon: 'list'},
-            {key: 'grid', text: 'Grid', icon: 'grid layout'},
-          ]}
-        />
-      </Grid.Column>
-      <Grid.Row>
-        <Grid.Column textAlign="left">
+      <Grid.Row columns={6}>
+        <Grid.Column width={4}>
+          <Header as="h1" floated="left">
+            Your Studies
+          </Header>
+        </Grid.Column>
+        <Grid.Column width={3} verticalAlign="middle" textAlign="right">
           <ColumnSelector
             columns={columns.columns}
             onChange={cols => {
@@ -163,6 +119,60 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
               localStorage.setItem('studyColumns', JSON.stringify(newCols));
               setColumns(newCols);
             }}
+          />
+        </Grid.Column>
+
+        <Grid.Column width={3} verticalAlign="middle" textAlign="right">
+          {myProfile && hasPermission(myProfile, 'view_study') && (
+            <Checkbox
+              label="Show only my studies"
+              checked={myStudies}
+              onClick={() => setMystudies(!myStudies)}
+            />
+          )}
+        </Grid.Column>
+        <Grid.Column width={2} verticalAlign="middle">
+          {myProfile && hasPermission(myProfile, 'add_study') && (
+            <Button
+              basic
+              primary
+              fluid
+              className="ml-10"
+              size="mini"
+              icon="add"
+              content="Add Study"
+              as={Link}
+              to={`/study/new-study/info`}
+            />
+          )}
+        </Grid.Column>
+        <Grid.Column width={2} verticalAlign="middle" textAlign="right">
+          <Input
+            aria-label="search studies"
+            className="ml-10"
+            size="mini"
+            iconPosition="left"
+            icon="search"
+            placeholder="Search by study name or collaborator"
+            onChange={(e, {value}) => {
+              setSearchString(value);
+            }}
+            value={searchString}
+          />
+        </Grid.Column>
+        <Grid.Column width={2} verticalAlign="middle" textAlign="right">
+          <ToggleButtons
+            className="ml-10"
+            size="mini"
+            hideText
+            onToggle={({key}) => {
+              history.push('#' + key);
+            }}
+            selected={history && history.location.hash.slice(1)}
+            buttons={[
+              {key: 'list', text: 'List', icon: 'list'},
+              {key: 'grid', text: 'Grid', icon: 'grid layout'},
+            ]}
           />
         </Grid.Column>
       </Grid.Row>
