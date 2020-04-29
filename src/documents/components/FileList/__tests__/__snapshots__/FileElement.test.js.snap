@@ -70,15 +70,9 @@ exports[`renders correctly 1`] = `
           <div
             class="ui labels"
           >
-            <button
-              class="ui mini basic compact icon button square-26"
-              data-testid="tag-file"
-            >
-              <i
-                aria-hidden="true"
-                class="add icon"
-              />
-            </button>
+            <span
+              class="text-grey"
+            />
           </div>
         </td>
         <td
@@ -89,6 +83,7 @@ exports[`renders correctly 1`] = `
           >
             <button
               class="ui basic compact icon button"
+              data-testid="copy-file-id"
             >
               <i
                 aria-hidden="true"
@@ -182,15 +177,9 @@ exports[`renders latest temporary state 1`] = `
           <div
             class="ui labels"
           >
-            <button
-              class="ui mini basic compact icon button square-26"
-              data-testid="tag-file"
-            >
-              <i
-                aria-hidden="true"
-                class="add icon"
-              />
-            </button>
+            <span
+              class="text-grey"
+            />
           </div>
         </td>
         <td
@@ -201,6 +190,7 @@ exports[`renders latest temporary state 1`] = `
           >
             <button
               class="ui basic compact icon button"
+              data-testid="copy-file-id"
             >
               <i
                 aria-hidden="true"
@@ -294,15 +284,9 @@ exports[`renders loading state 1`] = `
           <div
             class="ui labels"
           >
-            <button
-              class="ui mini basic compact icon button square-26"
-              data-testid="tag-file"
-            >
-              <i
-                aria-hidden="true"
-                class="add icon"
-              />
-            </button>
+            <span
+              class="text-grey"
+            />
           </div>
         </td>
         <td
@@ -313,6 +297,7 @@ exports[`renders loading state 1`] = `
           >
             <button
               class="ui basic compact icon button"
+              data-testid="copy-file-id"
             >
               <i
                 aria-hidden="true"

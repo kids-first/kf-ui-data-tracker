@@ -7,6 +7,7 @@ exports[`File Action Buttons renders correctly -- default look 1`] = `
   >
     <button
       class="ui basic compact icon button"
+      data-testid="copy-file-id"
     >
       <i
         aria-hidden="true"
@@ -42,6 +43,7 @@ exports[`File Action Buttons renders correctly -- default look 2`] = `
   >
     <button
       class="ui basic compact icon button"
+      data-testid="copy-file-id"
     >
       <i
         aria-hidden="true"
@@ -77,6 +79,7 @@ exports[`File Action Buttons renders correctly -- default look 3`] = `
   >
     <button
       class="ui basic compact icon button"
+      data-testid="copy-file-id"
     >
       <i
         aria-hidden="true"
@@ -112,6 +115,7 @@ exports[`File Action Buttons renders correctly -- fluid look 1`] = `
   >
     <button
       class="ui basic compact icon button"
+      data-testid="copy-file-id"
     >
       <i
         aria-hidden="true"
@@ -147,6 +151,7 @@ exports[`File Action Buttons renders correctly -- vertical look 1`] = `
   >
     <button
       class="ui basic compact icon button"
+      data-testid="copy-file-id"
     >
       <i
         aria-hidden="true"
