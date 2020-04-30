@@ -191,6 +191,7 @@ const StudyTable = ({
           ? [...inheritedProps.scope, 'study table']
           : ['study table'],
       })}
+      columns={columns.filter(col => col.visible).map(col => col.name)}
     >
       <Table
         striped
