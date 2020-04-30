@@ -16,6 +16,7 @@ import EmptyView from './EmptyView';
 import NotFoundView from './NotFoundView';
 import EventList from '../components/EventList/EventList';
 import {eventType} from '../common/enums';
+import {hasPermission} from '../common/permissions';
 
 const LogsView = ({match}) => {
   const {loading, data, error, refetch, fetchMore} = useQuery(ALL_EVENTS, {
@@ -59,13 +60,12 @@ const LogsView = ({match}) => {
   const studyByKfId = studyData && studyData.studyByKfId;
   const studyName = studyByKfId ? 'for ' + studyByKfId.name : '';
   const allEvents = data && data.allEvents;
-  const user = useQuery(MY_PROFILE);
-
-  const isAdmin =
-    !user.loading && user.data.myProfile
-      ? user.data.myProfile.roles.includes('ADMIN')
-      : false;
-
+  const {data: profileData, error: userError} = useQuery(MY_PROFILE);
+  const myProfile = profileData && profileData.myProfile;
+  const allowView =
+    myProfile &&
+    (hasPermission(myProfile, 'view_my_event') ||
+      hasPermission(myProfile, 'view_event'));
   const eventTypeOptions = Object.keys(eventType).map(type => ({
     text: eventType[type].title,
     value: type,
@@ -88,7 +88,7 @@ const LogsView = ({match}) => {
         </Placeholder>
       </Container>
     );
-  if (error || user.error)
+  if ((error || userError) && allowView)
     return (
       <Container as={Segment} basic>
         <Helmet>
@@ -101,8 +101,8 @@ const LogsView = ({match}) => {
           <Message.Content>
             <Message.Header>Error</Message.Header>
             {error && error.message && <p>Event Error: {error.message}</p>}
-            {user.error && user.error.message && (
-              <p>User Error: {user.error.message}</p>
+            {userError && userError.message && (
+              <p>User Error: {userError.message}</p>
             )}
           </Message.Content>
         </Message>
@@ -116,7 +116,7 @@ const LogsView = ({match}) => {
       />
     );
   }
-  if (isAdmin) {
+  if (allowView) {
     return (
       <Container as={Segment} basic vertical>
         <Helmet>
