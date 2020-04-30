@@ -229,19 +229,17 @@ const CavaticaBixView = ({match, history}) => {
             No linked Cavatica projects.
           </Header>
         )}
-        {hashOpenHook(history, '#add-cavatica-project') && (
-          <EditProjectModal
-            study={studyByKfId}
-            onCloseDialog={() =>
-              history.push(
-                '/study/' +
-                  history.location.pathname.split('/')[2] +
-                  '/cavatica',
-              )
-            }
           />
         )}
-
+        <EditProjectModal
+          open={hashOpenHook(history, '#add-cavatica-project') && allowAdd}
+          study={studyByKfId}
+          onCloseDialog={() =>
+            history.push(
+              '/study/' + history.location.pathname.split('/')[2] + '/cavatica',
+            )
+          }
+        />
         <LinkProjectModal
           open={hashOpenHook(history, '#link-cavatica-project') && allowLink}
           study={studyByKfId}

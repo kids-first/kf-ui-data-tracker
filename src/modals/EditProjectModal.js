@@ -76,7 +76,7 @@ export const projectFormSubmission = (
   return responses;
 };
 
-const EditProjectModal = ({study, projectNode, onCloseDialog}) => {
+const EditProjectModal = ({study, projectNode, onCloseDialog, open}) => {
   const [updateProject] = useMutation(UPDATE_PROJECT);
   const [createProject] = useMutation(CREATE_PROJECT, {
     refetchQueries: [
@@ -92,7 +92,7 @@ const EditProjectModal = ({study, projectNode, onCloseDialog}) => {
   const [error, setError] = useState(null);
 
   return (
-    <Modal open={true} onClose={onCloseDialog} size="small" closeIcon>
+    <Modal open={open} onClose={onCloseDialog} size="small" closeIcon>
       <Formik
         initialValues={{
           workflowType: projectNode ? projectNode.workflowType : '',
