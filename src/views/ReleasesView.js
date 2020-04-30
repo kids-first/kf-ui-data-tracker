@@ -94,24 +94,24 @@ const ReleasesView = props => {
         <Helmet>
           <title>{`KF Data Tracker - Study releases ${studyName}`}</title>
         </Helmet>
+        <Header as="h2" className="mt-6">
+          Past Published Releases
         </Header>
+        {study && study.releases ? (
+          <ReleaseList
+            loading={loading}
+            releases={study.releases && study.releases.edges}
+          />
+        ) : (
+          <Message
+            warning
+            icon="warning circle"
+            header="Error"
+            content="No release information found."
+          />
+        )}
       </Container>
     );
-
-  return (
-    <Container as={Segment} basic vertical>
-      <Helmet>
-        <title>{`KF Data Tracker - Study releases ${studyName}`}</title>
-      </Helmet>
-      <Header as="h2" className="mt-6">
-        Past Published Releases
-      </Header>
-      {study && study.releases ? (
-        <ReleaseList
-          loading={loading}
-          releases={study.releases && study.releases.edges}
-        />
-      ) : (
   } else {
     return (
       <Container as={Segment} basic>
