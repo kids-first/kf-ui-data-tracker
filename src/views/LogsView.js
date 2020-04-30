@@ -12,7 +12,6 @@ import {
   Select,
   Button,
 } from 'semantic-ui-react';
-import EmptyView from './EmptyView';
 import NotFoundView from './NotFoundView';
 import EventList from '../components/EventList/EventList';
 import {eventType} from '../common/enums';
@@ -149,12 +148,17 @@ const LogsView = ({match}) => {
     );
   } else {
     return (
-      <>
+      <Container as={Segment} basic>
         <Helmet>
           <title>KF Data Tracker - Study logs for {studyByKfId.name}</title>
         </Helmet>
-        <EmptyView />
-      </>
+        <Message
+          warning
+          icon="warning circle"
+          header="You don't have access to event logs."
+          content="Event logs will show up here once the permission is added to your account."
+        />
+      </Container>
     );
   }
 };
