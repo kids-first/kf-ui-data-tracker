@@ -65,6 +65,7 @@ const StudyProjects = ({
                   editable={editable}
                   disableLink={disableLink}
                   importVolumeFiles={importVolumeFiles}
+                  showLinkButton
                 />
               ))}
         </List>

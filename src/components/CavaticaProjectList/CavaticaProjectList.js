@@ -12,6 +12,7 @@ const CavaticaProjectList = ({
   importVolumeFiles,
   editable,
   disableLink,
+  showLinkButton,
 }) => (
   <List relaxed divided>
     {projects &&
@@ -44,6 +45,7 @@ const CavaticaProjectList = ({
             editable={editable}
             disableLink={disableLink}
             importVolumeFiles={importVolumeFiles}
+            showLinkButton={showLinkButton}
           />
         ))}
   </List>
