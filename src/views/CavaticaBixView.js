@@ -243,7 +243,7 @@ const CavaticaBixView = ({match, history}) => {
         )}
 
         <LinkProjectModal
-          open={hashOpenHook(history, '#link-cavatica-project')}
+          open={hashOpenHook(history, '#link-cavatica-project') && allowLink}
           study={studyByKfId}
           allProjects={projects.data && projects.data.allProjects}
           linkProject={linkProject}
