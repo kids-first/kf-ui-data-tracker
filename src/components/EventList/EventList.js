@@ -39,7 +39,7 @@ const linkDescription = node => {
   for (var i = 0; i < matches.length; i += 3) {
     const link =
       matches[i + 2] in ids && ids[matches[i + 2]] ? (
-        <EntityLink entityType={matches[i + 2]} />
+        <EntityLink key={i + matches[i + 2]} entityType={matches[i + 2]} />
       ) : (
         matches[i + 1]
       );
