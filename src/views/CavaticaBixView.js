@@ -23,6 +23,7 @@ import NotFoundView from './NotFoundView';
 import EditProjectModal from '../modals/EditProjectModal';
 import LinkProjectModal from '../modals/LinkProjectModal';
 import CavaticaProjectList from '../components/CavaticaProjectList/CavaticaProjectList';
+import {hasPermission} from '../common/permissions';
 
 const CavaticaBixView = ({match, history}) => {
   const {loading, data, error} = useQuery(GET_STUDY_BY_ID, {
@@ -38,7 +39,19 @@ const CavaticaBixView = ({match, history}) => {
       deleted: false,
     },
   });
-  const user = useQuery(MY_PROFILE);
+  const {data: profileData, error: userError} = useQuery(MY_PROFILE);
+  const myProfile = profileData && profileData.myProfile;
+  const allowView =
+    myProfile &&
+    (hasPermission(myProfile, 'view_project') ||
+      hasPermission(myProfile, 'view_my_study_project'));
+  const allowAdd = myProfile && hasPermission(myProfile, 'add_project');
+  const allowLink = myProfile && hasPermission(myProfile, 'link_project');
+  const allowUnlink = myProfile && hasPermission(myProfile, 'unlink_project');
+  const allowImport = myProfile && hasPermission(myProfile, 'import_volume');
+  const allowSync = myProfile && hasPermission(myProfile, 'sync_project');
+  const allowEdit = myProfile && hasPermission(myProfile, 'change_project');
+
   const [linkProject] = useMutation(LINK_PROJECT, {
     refetchQueries: [
       {
@@ -79,10 +92,6 @@ const CavaticaBixView = ({match, history}) => {
   });
   const [importVolumeFiles] = useMutation(IMPORT_VOLUME_FILES);
 
-  const isAdmin =
-    !user.loading && user.data.myProfile
-      ? user.data.myProfile.roles.includes('ADMIN')
-      : false;
   const hashOpenHook = (history, modalName) => {
     const modalNameHash = modalName.replace(' ', '-').toLowerCase();
     return modalNameHash === history.location.hash;
@@ -104,7 +113,7 @@ const CavaticaBixView = ({match, history}) => {
         </Placeholder>
       </Container>
     );
-  if (error || projects.error || user.error)
+  if ((error || projects.error || userError) && allowView)
     return (
       <Container as={Segment} basic>
         <Helmet>
@@ -122,8 +131,8 @@ const CavaticaBixView = ({match, history}) => {
             {projects.error && projects.error.message && (
               <p>Project Error: {projects.error.message}</p>
             )}
-            {user.error && user.error.message && (
-              <p>User Error: {user.error.message}</p>
+            {userError && userError.message && (
+              <p>User Error: {userError.message}</p>
             )}
           </Message.Content>
         </Message>
