@@ -13,7 +13,7 @@ const ColumnSelector = ({columns, onChange}) => {
   return (
     <Popup
       basic
-      position="bottom"
+      position="bottom center"
       on="click"
       trigger={
         <span className="ui dropdown">
@@ -28,9 +28,7 @@ const ColumnSelector = ({columns, onChange}) => {
             label={col.name}
             checked={selected.includes(col.key)}
             onChange={() => change(col.key)}
-          >
-            {col}
-          </Checkbox>
+          />
         </Item>
       ))}
     />
