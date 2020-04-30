@@ -97,22 +97,15 @@ const StudySubscriptionContainer = () => {
     <StudyTable
       studyList={studyList}
       clickable={false}
-      exclude={[
-        'collaborators',
-        'shortName',
-        'createdAt',
-        'modifiedAt',
-        'bucket',
-        'attribution',
-        'dataAccessAuthority',
-        'externalId',
-        'releaseStatus',
-        'version',
-        'releaseDate',
-        'anticipatedSamples',
-        'awardeeOrganization',
-        'description',
-        'projects',
+      columns={[
+        {key: 'kfId', name: 'Kids First ID', visible: true},
+        {key: 'externalId', name: 'phsid/External ID', visible: false},
+        {
+          key: 'anticipatedSamples',
+          name: 'Expected Samples',
+          visible: false,
+        },
+        {key: 'version', name: 'Version', visible: true},
       ]}
       loading={loadingProfile || loadingStudies}
     />
