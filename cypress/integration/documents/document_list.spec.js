@@ -32,7 +32,7 @@ context('Admin Document List', () => {
 
     // Filter the document by type using the type dropdown with two return
     cy.contains('div', 'Document type').click();
-    cy.contains('small', 'Biospecimen Manifest').click();
+    cy.contains('small', 'Other').click();
     cy.get('table')
       .find('tr')
       .its('length')
@@ -43,11 +43,11 @@ context('Admin Document List', () => {
     cy.contains('span', 'Create date').click();
     cy.get('td')
       .eq(2)
-      .should('contain', 'word');
+      .should('contain', 'cover');
     cy.get('[data-testid="sort-direction-button"]').click();
     cy.get('td')
       .eq(2)
-      .should('contain', 'receive');
+      .should('contain', 'wonder');
 
     // Add: Filter the document by tag using the tag dropdown with 1 return
     cy.contains('div', 'Tag').click();
