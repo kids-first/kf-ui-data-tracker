@@ -226,10 +226,11 @@ const CavaticaBixView = ({match, history}) => {
             editable={allowEdit}
           />
         ) : (
-          <Header disabled textAlign="center" as="h4">
-            No linked Cavatica projects.
-          </Header>
-        )}
+          <Message
+            warning
+            icon="warning circle"
+            header="No linked Cavatica projects."
+            content="Your projects will show up here once added to your study."
           />
         )}
         <EditProjectModal
