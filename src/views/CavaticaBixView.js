@@ -223,6 +223,7 @@ const CavaticaBixView = ({match, history}) => {
             projects={studyByKfId.projects.edges}
             importVolumeFiles={isAdmin ? importVolumeFiles : null}
             unlinkProject={allowUnlink ? unlinkProject : null}
+            editable={allowEdit}
           />
         ) : (
           <Header disabled textAlign="center" as="h4">
