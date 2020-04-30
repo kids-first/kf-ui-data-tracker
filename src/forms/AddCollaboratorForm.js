@@ -63,7 +63,7 @@ const AddCollaboratorForm = ({formikProps, availableUsers, disabled}) => {
 
 AddCollaboratorForm.propTypes = {
   /** Array of all unlinked projects */
-  availableUsers: PropTypes.object,
+  availableUsers: PropTypes.array,
 };
 
 export default AddCollaboratorForm;
