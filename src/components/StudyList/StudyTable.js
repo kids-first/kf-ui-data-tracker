@@ -95,40 +95,31 @@ const KfId = ({kfId}) => {
   );
 };
 
-const renderRow = node => ({
+/**
+ * A collection of functions to render cell contents for different columns
+ */
+const cellContent = {
+  name: node => <StudyName study={node} />,
+  kfId: node => <KfId kfId={node.kfId} />,
+  version: node => (
+    <Release release={node.release && node.release.node && node.release.node} />
+  ),
+  actions: node => <ActionButtons study={node} />,
+  externalId: node => <code>{node.externalId}</code>,
+  anticipatedSamples: node => node.anticipatedSamples || '-',
+};
+
+const renderRow = (node, columns) => ({
   key: node.kfId,
-  cells: [
-    {
-      key: 'name',
-      selectable: true,
-      className: 'overflow-cell-container',
-      content: <StudyName study={node} />,
-    },
-    {
-      key: 'kfId',
-      width: 1,
-      textAlign: 'center',
-      selectable: true,
-      content: <KfId kfId={node.kfId} />,
-    },
-    {
-      key: 'version',
-      textAlign: 'center',
-      width: 1,
-      selectable: true,
-      content: (
-        <Release
-          release={node.release && node.release.node && node.release.node}
-        />
-      ),
-    },
-    {
-      key: 'actions',
-      textAlign: 'right',
-      content: <ActionButtons study={node} />,
-      width: 1,
-    },
-  ],
+  cells: columns.map((col, i) => ({
+    key: col.key,
+    width: i !== 0 ? 1 : null,
+    textAlign: i > 0 ? 'center' : 'left',
+    selectable: col.key !== 'actions',
+    singleLine: col.key !== 'name',
+    className: i === 0 ? 'overflow-cell-container' : null,
+    content: cellContent[col.key](node),
+  })),
 });
 
 const StudyTable = ({
@@ -138,6 +129,7 @@ const StudyTable = ({
   history,
   myProfile,
   isResearch,
+  columns,
 }) => {
   const [sorting, setSorting] = useState({
     column: 'name',
@@ -169,31 +161,27 @@ const StudyTable = ({
       version:
         node.release && node.release.node ? node.release.node.version : '',
     }))
-    .sort((s1, s2) => s1[sorting.column].localeCompare(s2[sorting.column]));
+    .sort(
+      (s1, s2) =>
+        s1[sorting.column] &&
+        s1[sorting.column].localeCompare(s2[sorting.column]),
+    );
 
-  const header = [
-    <Table.HeaderCell
-      key="name"
-      content="Name"
-      sorted={sorting.column === 'name' ? sorting.direction : null}
-      onClick={handleSort('name')}
-    />,
-    <Table.HeaderCell
-      key="kfId"
-      content="Kids First ID"
-      textAlign="center"
-      sorted={sorting.column === 'kfId' ? sorting.direction : null}
-      onClick={handleSort('kfId')}
-    />,
-    <Table.HeaderCell
-      key="version"
-      content="Version"
-      textAlign="center"
-      sorted={sorting.column === 'version' ? sorting.direction : null}
-      onClick={handleSort('version')}
-    />,
-    {key: 'actions', content: 'Actions', textAlign: 'center'},
+  // Construct header
+  const visibleCols = [
+    {key: 'name', name: 'Name', visible: true},
+    ...columns.filter(col => col.visible),
+    {key: 'actions', name: 'Actions', visible: true},
   ];
+  const header = visibleCols.map((col, i) => (
+    <Table.HeaderCell
+      key={col.key}
+      content={col.name}
+      textAlign={i > 0 ? 'center' : 'left'}
+      sorted={sorting.column === col.key ? sorting.direction : null}
+      onClick={handleSort(col.key)}
+    />
+  ));
 
   return (
     <Amplitude
@@ -203,18 +191,17 @@ const StudyTable = ({
           ? [...inheritedProps.scope, 'study table']
           : ['study table'],
       })}
+      columns={columns.filter(col => col.visible).map(col => col.name)}
     >
       <Table
-        singleLine
         striped
-        selectable
         sortable
         celled
         headerRow={header}
         tableData={
           sorting.direction === 'ascending' ? studies : studies.reverse()
         }
-        renderBodyRow={renderRow}
+        renderBodyRow={data => renderRow(data, visibleCols)}
       />
     </Amplitude>
   );
