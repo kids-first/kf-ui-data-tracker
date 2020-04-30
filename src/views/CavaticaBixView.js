@@ -194,28 +194,29 @@ const CavaticaBixView = ({match, history}) => {
         ).length === 0 ||
           studyByKfId.projects.edges.filter(
             obj => obj.node.projectType === 'DEL',
-          ).length === 0) && (
-          <Message negative icon>
-            <Icon name="warning circle" />
-            <Message.Content>
-              <Message.Header>Missing projects</Message.Header>
-              <p>
-                Please link or create projects for the study. Each study
-                requires at least one of the following:
-              </p>
-              <List>
-                <List.Item
-                  icon="paper plane outline"
-                  content="Delivery Project"
-                />
-                <List.Item
-                  icon="sliders horizontal"
-                  content="Analysis Project"
-                />
-              </List>
-            </Message.Content>
-          </Message>
-        )}
+          ).length === 0) &&
+          (allowLink || allowAdd) && (
+            <Message negative icon>
+              <Icon name="warning circle" />
+              <Message.Content>
+                <Message.Header>Missing projects</Message.Header>
+                <p>
+                  Please link or create projects for the study. Each study
+                  requires at least one of the following:
+                </p>
+                <List>
+                  <List.Item
+                    icon="paper plane outline"
+                    content="Delivery Project"
+                  />
+                  <List.Item
+                    icon="sliders horizontal"
+                    content="Analysis Project"
+                  />
+                </List>
+              </Message.Content>
+            </Message>
+          )}
 
         {studyByKfId.projects.edges.length > 0 ? (
           <CavaticaProjectList
