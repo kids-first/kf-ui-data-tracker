@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Helmet} from 'react-helmet';
 import {useQuery} from '@apollo/react-hooks';
 import {GET_STUDY_BY_ID, ALL_EVENTS, MY_PROFILE} from '../state/queries';
@@ -18,6 +18,7 @@ import {eventType} from '../common/enums';
 import {hasPermission} from '../common/permissions';
 
 const LogsView = ({match}) => {
+  const [filter, setFilter] = useState(null);
   const {loading, data, error, refetch, fetchMore} = useQuery(ALL_EVENTS, {
     variables: {
       studyId: match.params.kfId,
@@ -123,10 +124,15 @@ const LogsView = ({match}) => {
         </Helmet>
         <Segment basic floated="right" className="noMargin noPadding">
           <Select
+            selection
             clearable
             placeholder="Event Type"
             options={eventTypeOptions}
-            onChange={(e, {name, value}) => refetch({eventType: value})}
+            value={filter}
+            onChange={(e, {name, value}) => {
+              setFilter(value);
+              refetch({eventType: value});
+            }}
           />
         </Segment>
         <Header as="h2" className="mt-6">
