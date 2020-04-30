@@ -247,7 +247,7 @@ const CavaticaBixView = ({match, history}) => {
           study={studyByKfId}
           allProjects={projects.data && projects.data.allProjects}
           linkProject={linkProject}
-          syncProjects={syncProjects}
+          syncProjects={allowSync ? syncProjects : null}
           onCloseDialog={() =>
             history.push(
               '/study/' + history.location.pathname.split('/')[2] + '/cavatica',

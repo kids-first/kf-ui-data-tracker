@@ -64,17 +64,19 @@ const LinkProjectModal = ({
         <Modal open={open} onClose={onCloseDialog} closeIcon>
           <Modal.Header content="Link an Existing Analysis Project" />
           <Modal.Content className="pb-0">
-            <Button
-              basic
-              primary
-              type="button"
-              size="mini"
-              icon="sync"
-              floated="right"
-              loading={syncing}
-              content="SYNC PROJECTS"
-              onClick={sync}
-            />
+            {syncProjects && (
+              <Button
+                basic
+                primary
+                type="button"
+                size="mini"
+                icon="sync"
+                floated="right"
+                loading={syncing}
+                content="SYNC PROJECTS"
+                onClick={sync}
+              />
+            )}
             <Header
               as="h3"
               className="noMargin pb-10"
@@ -88,7 +90,7 @@ const LinkProjectModal = ({
                 content="This could take a moment..."
               />
             )}
-            {visible && !syncing && (
+            {visible && !syncing && syncProjects && (
               <Message
                 warning
                 onDismiss={() => {
