@@ -18,10 +18,13 @@ import ReleaseList from '../components/ReleaseList/ReleaseList';
 import NotFoundView from './NotFoundView';
 
 const ReleasesView = props => {
-  const getUser = useQuery(MY_PROFILE);
-  const isBeta = !getUser.loading
-    ? getUser.data.myProfile.roles.includes('BETA')
-    : false;
+  const {data: profileData} = useQuery(MY_PROFILE);
+  const myProfile = profileData && profileData.myProfile;
+  const userRole =
+    myProfile && myProfile.groups.edges.length > 0
+      ? myProfile.groups.edges.map(({node}) => node.name)
+      : [];
+  const allowView = userRole.includes('Administrators');
   const relayId = Buffer.from('StudyNode:' + props.match.params.kfId).toString(
     'base64',
   );
@@ -86,7 +89,7 @@ const ReleasesView = props => {
       </Container>
     );
 
-  if (!isBeta)
+  if (allowView) {
     return (
       <Container as={Segment} basic padded="very">
         <Helmet>
