@@ -153,21 +153,6 @@ const CavaticaBixView = ({match, history}) => {
             studyByKfId ? 'for ' + studyByKfId.name : null
           }`}</title>
         </Helmet>
-        <Button
-          basic
-          primary
-          floated="right"
-          size="mini"
-          icon="add"
-          content="NEW PROJECT"
-          onClick={() =>
-            history.push(
-              '/study/' +
-                history.location.pathname.split('/')[2] +
-                '/cavatica#add-cavatica-project',
-            )
-          }
-        />
         {allowLink && (
           <Button
             primary
@@ -180,6 +165,23 @@ const CavaticaBixView = ({match, history}) => {
                 '/study/' +
                   history.location.pathname.split('/')[2] +
                   '/cavatica#link-cavatica-project',
+              )
+            }
+          />
+        )}
+        {allowAdd && (
+          <Button
+            basic
+            primary
+            floated="right"
+            size="mini"
+            icon="add"
+            content="NEW PROJECT"
+            onClick={() =>
+              history.push(
+                '/study/' +
+                  history.location.pathname.split('/')[2] +
+                  '/cavatica#add-cavatica-project',
               )
             }
           />
