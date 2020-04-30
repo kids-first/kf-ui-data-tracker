@@ -154,20 +154,6 @@ const CavaticaBixView = ({match, history}) => {
           }`}</title>
         </Helmet>
         <Button
-          primary
-          floated="right"
-          size="mini"
-          icon="linkify"
-          content="LINK PROJECT"
-          onClick={() =>
-            history.push(
-              '/study/' +
-                history.location.pathname.split('/')[2] +
-                '/cavatica#link-cavatica-project',
-            )
-          }
-        />
-        <Button
           basic
           primary
           floated="right"
@@ -182,6 +168,22 @@ const CavaticaBixView = ({match, history}) => {
             )
           }
         />
+        {allowLink && (
+          <Button
+            primary
+            floated="right"
+            size="mini"
+            icon="linkify"
+            content="LINK PROJECT"
+            onClick={() =>
+              history.push(
+                '/study/' +
+                  history.location.pathname.split('/')[2] +
+                  '/cavatica#link-cavatica-project',
+              )
+            }
+          />
+        )}
         <Header as="h2" className="noMargin">
           Cavatica Projects
         </Header>
