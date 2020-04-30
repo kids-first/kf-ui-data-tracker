@@ -12,7 +12,6 @@ import {
   Segment,
   Placeholder,
   Message,
-  Icon,
 } from 'semantic-ui-react';
 import ReleaseList from '../components/ReleaseList/ReleaseList';
 import NotFoundView from './NotFoundView';
@@ -91,13 +90,10 @@ const ReleasesView = props => {
 
   if (allowView) {
     return (
-      <Container as={Segment} basic padded="very">
+      <Container as={Segment} basic vertical>
         <Helmet>
           <title>{`KF Data Tracker - Study releases ${studyName}`}</title>
         </Helmet>
-        <Header as="h2" disabled textAlign="center">
-          <Icon name="ban" />
-          You don’t have access to this page.
         </Header>
       </Container>
     );
@@ -116,15 +112,21 @@ const ReleasesView = props => {
           releases={study.releases && study.releases.edges}
         />
       ) : (
+  } else {
+    return (
+      <Container as={Segment} basic>
+        <Helmet>
+          <title>KF Data Tracker - Study releases {studyName}</title>
+        </Helmet>
         <Message
           warning
           icon="warning circle"
-          header="Error"
-          content="No release information found."
+          header="You don't have access to release information."
+          content="Release information will show up here once the permission is added to your account."
         />
-      )}
-    </Container>
-  );
+      </Container>
+    );
+  }
 };
 
 export default ReleasesView;
