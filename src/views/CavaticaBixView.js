@@ -18,7 +18,6 @@ import {
   Icon,
   List,
 } from 'semantic-ui-react';
-import EmptyView from './EmptyView';
 import NotFoundView from './NotFoundView';
 import EditProjectModal from '../modals/EditProjectModal';
 import LinkProjectModal from '../modals/LinkProjectModal';
@@ -146,7 +145,7 @@ const CavaticaBixView = ({match, history}) => {
       />
     );
   }
-  if (isAdmin) {
+  if (allowView) {
     return (
       <Container as={Segment} basic vertical>
         <Helmet>
@@ -254,12 +253,17 @@ const CavaticaBixView = ({match, history}) => {
     );
   } else {
     return (
-      <>
+      <Container as={Segment} basic>
         <Helmet>
           <title>KF Data Tracker - Study projects for {studyByKfId.name}</title>
         </Helmet>
-        <EmptyView />
-      </>
+        <Message
+          warning
+          icon="warning circle"
+          header="You don't have access to any projects yet."
+          content="Your projects will show up here once added to your account."
+        />
+      </Container>
     );
   }
 };
