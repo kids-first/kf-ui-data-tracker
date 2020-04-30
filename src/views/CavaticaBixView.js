@@ -221,8 +221,8 @@ const CavaticaBixView = ({match, history}) => {
         {studyByKfId.projects.edges.length > 0 ? (
           <CavaticaProjectList
             projects={studyByKfId.projects.edges}
-            importVolumeFiles={isAdmin ? importVolumeFiles : null}
             unlinkProject={allowUnlink ? unlinkProject : null}
+            importVolumeFiles={allowImport ? importVolumeFiles : null}
             editable={allowEdit}
           />
         ) : (
