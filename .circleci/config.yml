@@ -74,7 +74,7 @@ jobs:
           name: Run Cypress tests
           command: |
             set +e
-            docker-compose up -d web postgres redis scheduler worker app dataservice dataservice-pg
+            docker-compose up -d web scheduler worker app dataservice coordinator
             sleep 10
             (docker-compose up --abort-on-container-exit --exit-code-from cypress cypress)
             echo $? > .test-result
