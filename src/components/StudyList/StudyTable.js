@@ -1,108 +1,12 @@
 import React, {useState} from 'react';
-import {Link, withRouter} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 import {Amplitude} from '@amplitude/react-amplitude';
-import {Header, Icon, Label, Popup, Table} from 'semantic-ui-react';
-import {CopyToClipboard} from 'react-copy-to-clipboard';
-import defaultAvatar from '../../assets/defaultAvatar.png';
+import {Table} from 'semantic-ui-react';
 import ActionButtons from './ActionButtons';
-import SequencingStatus from './SequencingStatus';
+import KfId from './KfId';
 import Release from './Release';
-
-const StudyName = ({study}) => {
-  // TODO: Filter out only users in the Investigators group
-  const investigators =
-    study.collaborators.edges.length &&
-    study.collaborators.edges.map(({node}) => node);
-
-  return (
-    <Amplitude
-      eventProperties={inheritedProps => ({
-        ...inheritedProps,
-        scope: inheritedProps.scope
-          ? [...inheritedProps.scope, 'study name']
-          : ['study name'],
-      })}
-    >
-      {({logEvent}) => (
-        <Table.Cell
-          selectable
-          className="overflow-cell-container"
-          textAlign="left"
-        >
-          <Link
-            to={'/study/' + study.kfId + '/basic-info/info'}
-            onClick={() => logEvent('click')}
-            className="overflow-cell"
-          >
-            <Header size="medium" alt={study.name}>
-              {study.name}
-              <Header.Subheader>
-                <Investigators investigators={investigators} />
-              </Header.Subheader>
-            </Header>
-          </Link>
-        </Table.Cell>
-      )}
-    </Amplitude>
-  );
-};
-
-const Investigators = ({investigators}) => {
-  if (investigators.length) {
-    return (
-      <Label.Group>
-        {investigators.map(user => (
-          <Label image key={user.id}>
-            <img alt={user.username} src={user.picture || defaultAvatar} />
-            {user.username}
-          </Label>
-        ))}
-      </Label.Group>
-    );
-  }
-  return <span>No investigators</span>;
-};
-
-const KfId = ({kfId}) => {
-  const [copied, setCopied] = useState(false);
-
-  return (
-    <Amplitude
-      eventProperties={inheritedProps => ({
-        ...inheritedProps,
-        scope: inheritedProps.scope
-          ? [...inheritedProps.scope, 'kfid']
-          : ['kfid'],
-      })}
-    >
-      {({logEvent}) => (
-        <Popup
-          inverted
-          position="top left"
-          trigger={
-            <CopyToClipboard
-              text={kfId}
-              onCopy={() => {
-                setCopied(true);
-                logEvent('copy');
-                setTimeout(() => {
-                  setCopied(false);
-                }, 700);
-              }}
-            >
-              <Table.Cell singleLine width="1">
-                <code>{kfId}</code>
-              </Table.Cell>
-            </CopyToClipboard>
-          }
-          content={
-            copied ? <Icon name="check" color="green" /> : 'Copy to clipboard'
-          }
-        />
-      )}
-    </Amplitude>
-  );
-};
+import SequencingStatus from './SequencingStatus';
+import StudyName from './Name';
 
 /**
  * A collection of functions to render cell contents for different columns
@@ -135,7 +39,6 @@ const StudyTable = ({
   studyList,
   loading,
   clickable = true,
-  history,
   myProfile,
   isResearch,
   columns,
