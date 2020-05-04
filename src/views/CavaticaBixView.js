@@ -18,11 +18,11 @@ import {
   Icon,
   List,
 } from 'semantic-ui-react';
-import EmptyView from './EmptyView';
 import NotFoundView from './NotFoundView';
 import EditProjectModal from '../modals/EditProjectModal';
 import LinkProjectModal from '../modals/LinkProjectModal';
 import CavaticaProjectList from '../components/CavaticaProjectList/CavaticaProjectList';
+import {hasPermission} from '../common/permissions';
 
 const CavaticaBixView = ({match, history}) => {
   const {loading, data, error} = useQuery(GET_STUDY_BY_ID, {
@@ -38,7 +38,19 @@ const CavaticaBixView = ({match, history}) => {
       deleted: false,
     },
   });
-  const user = useQuery(MY_PROFILE);
+  const {data: profileData, error: userError} = useQuery(MY_PROFILE);
+  const myProfile = profileData && profileData.myProfile;
+  const allowView =
+    myProfile &&
+    (hasPermission(myProfile, 'view_project') ||
+      hasPermission(myProfile, 'view_my_study_project'));
+  const allowAdd = myProfile && hasPermission(myProfile, 'add_project');
+  const allowLink = myProfile && hasPermission(myProfile, 'link_project');
+  const allowUnlink = myProfile && hasPermission(myProfile, 'unlink_project');
+  const allowImport = myProfile && hasPermission(myProfile, 'import_volume');
+  const allowSync = myProfile && hasPermission(myProfile, 'sync_project');
+  const allowEdit = myProfile && hasPermission(myProfile, 'change_project');
+
   const [linkProject] = useMutation(LINK_PROJECT, {
     refetchQueries: [
       {
@@ -79,10 +91,6 @@ const CavaticaBixView = ({match, history}) => {
   });
   const [importVolumeFiles] = useMutation(IMPORT_VOLUME_FILES);
 
-  const isAdmin =
-    !user.loading && user.data.myProfile
-      ? user.data.myProfile.roles.includes('ADMIN')
-      : false;
   const hashOpenHook = (history, modalName) => {
     const modalNameHash = modalName.replace(' ', '-').toLowerCase();
     return modalNameHash === history.location.hash;
@@ -104,7 +112,7 @@ const CavaticaBixView = ({match, history}) => {
         </Placeholder>
       </Container>
     );
-  if (error || projects.error || user.error)
+  if ((error || projects.error || userError) && allowView)
     return (
       <Container as={Segment} basic>
         <Helmet>
@@ -122,8 +130,8 @@ const CavaticaBixView = ({match, history}) => {
             {projects.error && projects.error.message && (
               <p>Project Error: {projects.error.message}</p>
             )}
-            {user.error && user.error.message && (
-              <p>User Error: {user.error.message}</p>
+            {userError && userError.message && (
+              <p>User Error: {userError.message}</p>
             )}
           </Message.Content>
         </Message>
@@ -137,7 +145,7 @@ const CavaticaBixView = ({match, history}) => {
       />
     );
   }
-  if (isAdmin) {
+  if (allowView) {
     return (
       <Container as={Segment} basic vertical>
         <Helmet>
@@ -145,35 +153,39 @@ const CavaticaBixView = ({match, history}) => {
             studyByKfId ? 'for ' + studyByKfId.name : null
           }`}</title>
         </Helmet>
-        <Button
-          primary
-          floated="right"
-          size="mini"
-          icon="linkify"
-          content="LINK PROJECT"
-          onClick={() =>
-            history.push(
-              '/study/' +
-                history.location.pathname.split('/')[2] +
-                '/cavatica#link-cavatica-project',
-            )
-          }
-        />
-        <Button
-          basic
-          primary
-          floated="right"
-          size="mini"
-          icon="add"
-          content="NEW PROJECT"
-          onClick={() =>
-            history.push(
-              '/study/' +
-                history.location.pathname.split('/')[2] +
-                '/cavatica#add-cavatica-project',
-            )
-          }
-        />
+        {allowLink && (
+          <Button
+            primary
+            floated="right"
+            size="mini"
+            icon="linkify"
+            content="LINK PROJECT"
+            onClick={() =>
+              history.push(
+                '/study/' +
+                  history.location.pathname.split('/')[2] +
+                  '/cavatica#link-cavatica-project',
+              )
+            }
+          />
+        )}
+        {allowAdd && (
+          <Button
+            basic
+            primary
+            floated="right"
+            size="mini"
+            icon="add"
+            content="NEW PROJECT"
+            onClick={() =>
+              history.push(
+                '/study/' +
+                  history.location.pathname.split('/')[2] +
+                  '/cavatica#add-cavatica-project',
+              )
+            }
+          />
+        )}
         <Header as="h2" className="noMargin">
           Cavatica Projects
         </Header>
@@ -182,59 +194,60 @@ const CavaticaBixView = ({match, history}) => {
         ).length === 0 ||
           studyByKfId.projects.edges.filter(
             obj => obj.node.projectType === 'DEL',
-          ).length === 0) && (
-          <Message negative icon>
-            <Icon name="warning circle" />
-            <Message.Content>
-              <Message.Header>Missing projects</Message.Header>
-              <p>
-                Please link or create projects for the study. Each study
-                requires at least one of the following:
-              </p>
-              <List>
-                <List.Item
-                  icon="paper plane outline"
-                  content="Delivery Project"
-                />
-                <List.Item
-                  icon="sliders horizontal"
-                  content="Analysis Project"
-                />
-              </List>
-            </Message.Content>
-          </Message>
-        )}
+          ).length === 0) &&
+          (allowLink || allowAdd) && (
+            <Message negative icon>
+              <Icon name="warning circle" />
+              <Message.Content>
+                <Message.Header>Missing projects</Message.Header>
+                <p>
+                  Please link or create projects for the study. Each study
+                  requires at least one of the following:
+                </p>
+                <List>
+                  <List.Item
+                    icon="paper plane outline"
+                    content="Delivery Project"
+                  />
+                  <List.Item
+                    icon="sliders horizontal"
+                    content="Analysis Project"
+                  />
+                </List>
+              </Message.Content>
+            </Message>
+          )}
 
         {studyByKfId.projects.edges.length > 0 ? (
           <CavaticaProjectList
             projects={studyByKfId.projects.edges}
-            unlinkProject={unlinkProject}
-            importVolumeFiles={isAdmin ? importVolumeFiles : null}
+            unlinkProject={allowUnlink ? unlinkProject : null}
+            importVolumeFiles={allowImport ? importVolumeFiles : null}
+            editable={allowEdit}
           />
         ) : (
-          <Header disabled textAlign="center" as="h4">
-            No linked Cavatica projects.
-          </Header>
-        )}
-        {hashOpenHook(history, '#add-cavatica-project') && (
-          <EditProjectModal
-            study={studyByKfId}
-            onCloseDialog={() =>
-              history.push(
-                '/study/' +
-                  history.location.pathname.split('/')[2] +
-                  '/cavatica',
-              )
-            }
+          <Message
+            warning
+            icon="warning circle"
+            header="No linked Cavatica projects."
+            content="Your projects will show up here once added to your study."
           />
         )}
-
+        <EditProjectModal
+          open={hashOpenHook(history, '#add-cavatica-project') && allowAdd}
+          study={studyByKfId}
+          onCloseDialog={() =>
+            history.push(
+              '/study/' + history.location.pathname.split('/')[2] + '/cavatica',
+            )
+          }
+        />
         <LinkProjectModal
-          open={hashOpenHook(history, '#link-cavatica-project')}
+          open={hashOpenHook(history, '#link-cavatica-project') && allowLink}
           study={studyByKfId}
           allProjects={projects.data && projects.data.allProjects}
           linkProject={linkProject}
-          syncProjects={syncProjects}
+          syncProjects={allowSync ? syncProjects : null}
           onCloseDialog={() =>
             history.push(
               '/study/' + history.location.pathname.split('/')[2] + '/cavatica',
@@ -245,12 +258,17 @@ const CavaticaBixView = ({match, history}) => {
     );
   } else {
     return (
-      <>
+      <Container as={Segment} basic>
         <Helmet>
           <title>KF Data Tracker - Study projects for {studyByKfId.name}</title>
         </Helmet>
-        <EmptyView />
-      </>
+        <Message
+          warning
+          icon="warning circle"
+          header="You don't have access to any projects yet."
+          content="Your projects will show up here once added to your account."
+        />
+      </Container>
     );
   }
 };

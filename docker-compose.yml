@@ -56,7 +56,7 @@ services:
       - 3000:3000
     environment:
       - REACT_APP_STUDY_API=http://web:8080
-      - REACT_APP_COORD_API=http://localhost:5001
+      - REACT_APP_COORD_API=http://coordinator:5000
       - REACT_APP_AUTH0_DOMAIN=kids-first.auth0.com
       - REACT_APP_AUTH0_CLIENT_ID=00000000000000000000000000000000
       - REACT_APP_AUTH0_REDIRECT_URI=http://app:3000/callback
@@ -95,6 +95,25 @@ services:
     image: circleci/postgres:11.1
     environment:
       - POSTGRES_DB=dataservice
+  coordinator:
+    image: kfdrc/kf-api-release-coordinator:latest
+    environment:
+      - PG_NAME=coordinator
+      - PG_HOST=coordinator-pg
+      - PG_USER=postgres
+      - PG_PASS=coordinator
+      - DJANGO_SETTINGS_MODULE=coordinator.settings.development
+      - PRELOAD_DATA=FAKE
+    command: /app/bin/dev_entrypoint.sh
+    depends_on:
+      - coordinator-pg
+    ports:
+      - 5001:5000
+  coordinator-pg:
+    image: postgres:11.1
+    environment:
+      - POSTGRES_DB=coordinator
+      - POSTGRES_PASSWORD=coordinator
 networks:
   default:
     external:

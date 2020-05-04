@@ -126,7 +126,7 @@ const DevHeader = () => {
             text="Change Groups"
             disabled={groupsLoading}
             loading={groupsLoading}
-            value={selectedGroups}
+            value={selectedGroups || []}
             options={groupOptions}
             onChange={(event, data) => {
               setSelectedGroups(data.value);

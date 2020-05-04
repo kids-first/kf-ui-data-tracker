@@ -236,6 +236,7 @@ const CavaticaProjectItem = ({
   importVolumeFiles,
   disableLink,
   editable = true,
+  showLinkButton,
 }) => {
   const [isEditing, setIsEditing] = useState(false);
 
@@ -306,7 +307,9 @@ const CavaticaProjectItem = ({
                 position="top right"
               />
             )}
-            {!projectNode.study && <LinkStudyPopup project={projectNode} />}
+            {!projectNode.study && showLinkButton && (
+              <LinkStudyPopup project={projectNode} />
+            )}
             {unlinkProject && projectNode.study && (
               <UnlinkButton
                 unlinkProject={unlinkProject}
@@ -329,12 +332,11 @@ const CavaticaProjectItem = ({
             <ProjectAttributes projectNode={projectNode} />
           </List.Content>
         </List.Item>
-        {editable && isEditing && (
-          <EditProjectModal
-            projectNode={projectNode}
-            onCloseDialog={() => setIsEditing(false)}
-          />
-        )}
+        <EditProjectModal
+          open={editable && isEditing}
+          projectNode={projectNode}
+          onCloseDialog={() => setIsEditing(false)}
+        />
       </>
     );
   }

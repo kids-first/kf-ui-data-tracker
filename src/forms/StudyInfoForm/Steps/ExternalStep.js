@@ -10,7 +10,7 @@ const ExternalStep = ({
   editing,
   newStudy,
   history,
-  isAdmin,
+  allowEdit,
 }) => {
   const {values, errors, touched, handleChange, handleBlur} = formikProps;
   const mapFields = [
@@ -48,7 +48,7 @@ const ExternalStep = ({
       {mapFields.map(item => (
         <FormField
           key={item.id}
-          isAdmin={isAdmin}
+          allowEdit={allowEdit}
           newStudy={newStudy}
           required={item.required}
           id={item.id}

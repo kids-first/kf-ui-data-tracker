@@ -25,7 +25,7 @@ const LogisticsStep = ({
   history,
   foldDescription,
   setFoldDescription,
-  isAdmin,
+  allowEdit,
 }) => {
   const {values, errors, touched, handleChange, handleBlur} = formikProps;
   const mapFields = [
@@ -63,7 +63,7 @@ const LogisticsStep = ({
       {mapFields.map(item => (
         <FormField
           key={item.id}
-          isAdmin={isAdmin}
+          allowEdit={allowEdit}
           newStudy={newStudy}
           required={item.required}
           id={item.id}
@@ -115,7 +115,7 @@ const LogisticsStep = ({
         </>
       ) : (
         <FormField
-          isAdmin={isAdmin}
+          allowEdit={allowEdit}
           newStudy={newStudy}
           id="description"
           name="Description"
