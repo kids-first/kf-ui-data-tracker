@@ -24,18 +24,24 @@ const StudyName = ({study}) => {
       })}
     >
       {({logEvent}) => (
-        <Link
-          to={'/study/' + study.kfId + '/basic-info/info'}
-          onClick={() => logEvent('click')}
-          className="overflow-cell"
+        <Table.Cell
+          selectable
+          className="overflow-cell-container"
+          textAlign="left"
         >
-          <Header size="medium" alt={study.name}>
-            {study.name}
-            <Header.Subheader>
-              <Investigators investigators={investigators} />
-            </Header.Subheader>
-          </Header>
-        </Link>
+          <Link
+            to={'/study/' + study.kfId + '/basic-info/info'}
+            onClick={() => logEvent('click')}
+            className="overflow-cell"
+          >
+            <Header size="medium" alt={study.name}>
+              {study.name}
+              <Header.Subheader>
+                <Investigators investigators={investigators} />
+              </Header.Subheader>
+            </Header>
+          </Link>
+        </Table.Cell>
       )}
     </Amplitude>
   );
@@ -84,7 +90,9 @@ const KfId = ({kfId}) => {
                 }, 700);
               }}
             >
-              <code>{kfId}</code>
+              <Table.Cell singleLine width="1">
+                <code>{kfId}</code>
+              </Table.Cell>
             </CopyToClipboard>
           }
           content={
@@ -106,22 +114,21 @@ const cellContent = {
     <Release release={node.release && node.release.node && node.release.node} />
   ),
   actions: node => <ActionButtons study={node} />,
-  externalId: node => <code>{node.externalId}</code>,
+  externalId: node => (
+    <Table.Cell singleLine width="1">
+      <code>{node.externalId}</code>
+    </Table.Cell>
+  ),
   sequencingStatus: node => <SequencingStatus study={node} />,
-  anticipatedSamples: node => node.anticipatedSamples || '-',
+  anticipatedSamples: node => (
+    <Table.Cell width="1">{node.anticipatedSamples || '-'}</Table.Cell>
+  ),
 };
 
 const renderRow = (node, columns) => ({
   key: node.kfId,
-  cells: columns.map((col, i) => ({
-    key: col.key,
-    width: i !== 0 ? 1 : null,
-    textAlign: i > 0 ? 'center' : 'left',
-    selectable: col.key !== 'actions',
-    singleLine: col.key !== 'name',
-    className: i === 0 ? 'overflow-cell-container' : null,
-    content: col.key in cellContent && cellContent[col.key](node),
-  })),
+  cells: columns.map((col, i) => cellContent[col.key](node)),
+  textAlign: 'center',
 });
 
 const StudyTable = ({

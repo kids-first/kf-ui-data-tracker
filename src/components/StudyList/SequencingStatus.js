@@ -1,5 +1,6 @@
 import React from 'react';
 import {useQuery, useMutation} from '@apollo/react-hooks';
+import {Table} from 'semantic-ui-react';
 import {MY_PROFILE, GET_STUDY_BY_ID} from '../../state/queries';
 import {CHANGE_SEQUENCING_STATUS} from '../../state/mutations';
 import {hasPermission} from '../../common/permissions';
@@ -29,7 +30,7 @@ const SequencingStatus = ({study}) => {
   const options = [
     {
       key: 'UNKNOWN',
-      text: 'Unkown',
+      text: 'Unknown',
       value: 'UNKNOWN',
     },
     {
@@ -51,16 +52,36 @@ const SequencingStatus = ({study}) => {
 
   if (!profileLoading && hasPermission(user, 'change_sequencing_status')) {
     return (
-      <StatusSelector
-        loading={changing}
-        value={study.sequencingStatus}
-        options={options}
-        onChange={onChange}
-      />
+      <Table.Cell
+        singleLine
+        width="1"
+        positive={['COMPLETE'].includes(study.sequencingStatus)}
+        error={['UNKNOWN'].includes(study.sequencingStatus)}
+        warning={['INPROG'].includes(study.sequencingStatus)}
+        data-cy="sequencing status cell"
+      >
+        <StatusSelector
+          loading={changing}
+          value={study.sequencingStatus}
+          options={options}
+          onChange={onChange}
+        />
+      </Table.Cell>
     );
   }
 
-  return options.find(op => op.key === study.sequencingStatus).text;
+  return (
+    <Table.Cell
+      singleLine
+      width="1"
+      positive={['COMPLETE'].includes(study.sequencingStatus)}
+      error={['UNKNOWN'].includes(study.sequencingStatus)}
+      warning={['INPROG'].includes(study.sequencingStatus)}
+      data-cy="sequencing status cell"
+    >
+      {options.find(op => op.key === study.sequencingStatus).text}
+    </Table.Cell>
+  );
 };
 
 export default SequencingStatus;
