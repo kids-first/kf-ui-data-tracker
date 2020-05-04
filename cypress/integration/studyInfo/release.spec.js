@@ -16,20 +16,10 @@ context('Admin Study Releases', () => {
     cy.contains('a', 'Releases').should('exist');
     // No missing release info warning
     cy.contains('p', 'No release information found.').should('not.exist');
-    // Show test relase
-    cy.contains('a', '3.63.0 - Test Publish ').should('exist');
-    // Show release description in markdown (strong text)
-    cy.contains('strong', 'Release Description in markdown').should('exist');
-    // Show release description in markdown (list)
-    cy.get('ol')
-      .find('li')
+    // Shows releases
+    cy.get('div.comment')
       .its('length')
-      .should('eq', 2);
-    // Show release description in markdown (table)
-    cy.get('table')
-      .find('tr')
-      .its('length')
-      .should('eq', 3);
+      .should('be.gt', 0);
   });
 });
 
