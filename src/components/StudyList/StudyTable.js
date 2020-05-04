@@ -5,6 +5,7 @@ import {Header, Icon, Label, Popup, Table} from 'semantic-ui-react';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import defaultAvatar from '../../assets/defaultAvatar.png';
 import ActionButtons from './ActionButtons';
+import SequencingStatus from './SequencingStatus';
 import Release from './Release';
 
 const StudyName = ({study}) => {
@@ -106,6 +107,7 @@ const cellContent = {
   ),
   actions: node => <ActionButtons study={node} />,
   externalId: node => <code>{node.externalId}</code>,
+  sequencingStatus: node => <SequencingStatus study={node} />,
   anticipatedSamples: node => node.anticipatedSamples || '-',
 };
 
@@ -118,7 +120,7 @@ const renderRow = (node, columns) => ({
     selectable: col.key !== 'actions',
     singleLine: col.key !== 'name',
     className: i === 0 ? 'overflow-cell-container' : null,
-    content: cellContent[col.key](node),
+    content: col.key in cellContent && cellContent[col.key](node),
   })),
 });
 
