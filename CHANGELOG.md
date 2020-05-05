@@ -1,3 +1,55 @@
+# Kids First Data Tracker Release 0.12.0
+
+## Features
+
+Overhaul user permissions and redesign the study listing page for users.
+
+### Summary
+
+Feature Emojis: 🔒x10 ✨x8 🐛x5 ✅x4 ♻️x3 📝x2 🎨x1 🙈x1 💄x1 📈x1 ✨Addx1 Bumpx1
+Feature Labels: [feature](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/feature) x20 [bug](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/bug) x7 [refactor](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/refactor) x7 [devops](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/devops) x6 [design](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/design) x2 [documentation](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/documentation) x1
+
+### New features and changes
+
+- (#680) 🔒 Check for permissions on study related tabs - @XuTheBunny
+- (#688) 🐛 Use correct address for coordinator - @dankolbman
+- (#686) 🐛 Add coordinator to compose - @dankolbman
+- (#683) ✨ Select study list columns - @dankolbman
+- (#684) ✅ Adjust document list test based on mock data - @XuTheBunny
+- (#672) 🔒 Check for permissions in document list and document detail - @XuTheBunny
+- (#678) 🎨 Restyle study table - @dankolbman
+- (#671) 🔒 Check for permissions on study list and add study feature - @XuTheBunny
+- (#679) 🐛 Fix Cypress CI - @dankolbman
+- (#670) ✅ Test different user groups - @dankolbman
+- (#673) ✨ Add developer toolbar - @dankolbman
+- (#676) 🙈 Update .gitignore with test files - @dankolbman
+- (#665) 🔒 Protect tokens - @dankolbman
+- (#664) 🔒 Protect buckets - @dankolbman
+- (#663) 🔒 Protect configuration view - @dankolbman
+- (#662) 🔒 Protect users view - @dankolbman
+- (#661) 🔒 Protect events - @dankolbman
+- (#660) 🔒 Restricted routes - @dankolbman
+- (#659) 🔒 Check for permissions on collaborator tab - @dankolbman
+- (#666) 📝 Update PR template - @dankolbman
+- (#669) ✅ Add test coverage for integration tests - @dankolbman
+- (#657) 🐛 Hide collaborators column - @dankolbman
+- (#639) ♻️ Auto focus add tag dropdown input on open - @XuTheBunny
+- (#646) ♻️ Check permissions for admin dropdown - @dankolbman
+- (#645) 🐛 Log users out of Auth0 - @dankolbman
+- (#636) ✨ Hyperlink IDs in event logs feature - @XuTheBunny
+- (#643) 📝 Update the bug template for issues - @dankolbman
+- (#632) ✨ Allow searching and filtering stuides by collaborators - @XuTheBunny
+- (#628) ♻️ Update query for groups - @dankolbman
+- (#630) ✅ Add end to end tests - @dankolbman
+- (#638) ✨ Add DBG file type for dbGaP Submission File - @XuTheBunny
+- (#637) 💄 Displaying user who made the last changes on the file - @XuTheBunny
+- (#626) ✨ Add batch download and delete document feature - @XuTheBunny
+- (#625) 📈 Add scope and events to page views - @dankolbman
+- (#621) ✨ Add document preview - @dankolbman
+- (#616) ✨Add collaborators view - @dankolbman
+- (#611) ✨ Add inline document description editing - @XuTheBunny
+- (#622) Bump acorn from 5.7.3 to 5.7.4 - @dependabot[bot]
+
 # Kids First Data Tracker Release 0.11.1
 
 ## Features
