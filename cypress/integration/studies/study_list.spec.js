@@ -31,6 +31,39 @@ context('Admin Study List', () => {
       .should('eq', 2);
   });
 
+  it('toggles full width', () => {
+    cy.clearLocalStorage('fullWidth');
+
+    // Make sure there's no saved state
+    expect(localStorage.getItem('fullWidth')).to.be.null;
+
+    // The table row should be in a container same as the heading
+    cy.get('div.page')
+      .find('.ui.container.grid')
+      .its('length')
+      .should('eq', 2);
+
+    // Toggle into full width mode and check that it's saved in localStorage
+    cy.get('[data-cy="toggle width button"]')
+      .click()
+      .should(() => {
+        expect(localStorage.getItem('fullWidth')).to.be.eq('true');
+      });
+
+    // The table row should no longer be in a container
+    cy.get('div.page')
+      .find('.ui.container.grid')
+      .its('length')
+      .should('eq', 1);
+
+    // Toggle back into compressed mode
+    cy.get('[data-cy="toggle width button"]')
+      .click()
+      .should(() => {
+        expect(localStorage.getItem('fullWidth')).to.be.eq('false');
+      });
+  });
+
   it('toggles grid and list views', () => {
     cy.contains('label', 'Show only my studies').click();
     // Should default to the table view
@@ -88,7 +121,7 @@ context('Admin Study List', () => {
   });
   it('has notifications', () => {
     cy.get('table').should('not.exist');
-  })
+  });
 });
 
 context('Unauthed Study List', () => {
