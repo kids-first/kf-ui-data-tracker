@@ -203,6 +203,7 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
                   position="top right"
                   trigger={
                     <Button
+                      data-cy="toggle width button"
                       active={fullWidth}
                       size="mini"
                       onClick={() => toggleWidth(logEvent)}
