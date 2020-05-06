@@ -36,16 +36,17 @@ const HeaderSkeleton = () => (
 const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
   const [searchString, setSearchString] = useState('');
   const [myStudies, setMystudies] = useState(true);
+  const [fullWidth, setFullWidth] = useState(false);
   // Try to restore the column state from local storage or fall back to the
   // defaults if non are found
   // We track the version off the column state so that we may override it in
   // the future if the schema ever changes
   const existingState = JSON.parse(localStorage.getItem('studyColumns'));
   const [columns, setColumns] = useState(
-    existingState && existingState.version === 1
+    existingState && existingState.version === 2
       ? existingState
       : {
-          version: 1,
+          version: 2,
           columns: [
             {key: 'kfId', name: 'Kids First ID', visible: true},
             {key: 'externalId', name: 'phsid/External ID', visible: false},
@@ -104,106 +105,119 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
   };
 
   return (
-    <Grid as={Segment} basic container stackable>
-      <Grid.Row columns={6}>
-        <Grid.Column width={4}>
-          <Header as="h1" floated="left">
-            Your Studies
-          </Header>
-        </Grid.Column>
-        <Grid.Column width={3} verticalAlign="middle" textAlign="right">
-          <ColumnSelector
-            columns={columns.columns}
-            onChange={cols => {
-              const newCols = {...columns, columns: cols};
-              localStorage.setItem('studyColumns', JSON.stringify(newCols));
-              setColumns(newCols);
-            }}
-          />
-        </Grid.Column>
+    <>
+      <Grid as={Segment} basic container stackable>
+        <Grid.Row columns={7}>
+          <Grid.Column width={3}>
+            <Header as="h1" floated="left">
+              Your Studies
+            </Header>
+          </Grid.Column>
+          <Grid.Column width={3} verticalAlign="middle" textAlign="right">
+            <ColumnSelector
+              columns={columns.columns}
+              onChange={cols => {
+                const newCols = {...columns, columns: cols};
+                localStorage.setItem('studyColumns', JSON.stringify(newCols));
+                setColumns(newCols);
+              }}
+            />
+          </Grid.Column>
 
-        <Grid.Column width={3} verticalAlign="middle" textAlign="right">
-          {myProfile && hasPermission(myProfile, 'view_study') && (
-            <Checkbox
-              label="Show only my studies"
-              checked={myStudies}
-              onClick={() => setMystudies(!myStudies)}
-            />
-          )}
-        </Grid.Column>
-        <Grid.Column width={2} verticalAlign="middle">
-          {myProfile && hasPermission(myProfile, 'add_study') && (
-            <Button
-              basic
-              primary
-              fluid
-              className="ml-10"
-              size="mini"
-              icon="add"
-              content="Add Study"
-              as={Link}
-              to={`/study/new-study/info`}
-            />
-          )}
-        </Grid.Column>
-        <Grid.Column width={2} verticalAlign="middle" textAlign="right">
-          <Input
-            aria-label="search studies"
-            className="ml-10"
-            size="mini"
-            iconPosition="left"
-            icon="search"
-            placeholder="Search by study name or collaborator"
-            onChange={(e, {value}) => {
-              setSearchString(value);
-            }}
-            value={searchString}
-          />
-        </Grid.Column>
-        <Grid.Column width={2} verticalAlign="middle" textAlign="right">
-          <ToggleButtons
-            className="ml-10"
-            size="mini"
-            hideText
-            onToggle={({key}) => {
-              history.push('#' + key);
-            }}
-            selected={history && history.location.hash.slice(1)}
-            buttons={[
-              {key: 'list', text: 'List', icon: 'list'},
-              {key: 'grid', text: 'Grid', icon: 'grid layout'},
-            ]}
-          />
-        </Grid.Column>
-      </Grid.Row>
-      <Grid.Row>
-        {filteredStudyList().length > 0 ? (
-          <Grid.Column>
-            {(history && history.location.hash === '#grid') ||
-            activeView === 'grid' ? (
-              <StudyGrid
-                loading={loading}
-                studyList={filteredStudyList()}
-                myProfile={myProfile}
-              />
-            ) : (
-              <StudyTable
-                myProfile={myProfile}
-                loading={loading}
-                studyList={filteredStudyList()}
-                columns={columns.columns}
+          <Grid.Column width={3} verticalAlign="middle" textAlign="right">
+            {myProfile && hasPermission(myProfile, 'view_study') && (
+              <Checkbox
+                label="Show only my studies"
+                checked={myStudies}
+                onClick={() => setMystudies(!myStudies)}
               />
             )}
           </Grid.Column>
-        ) : (
-          <Grid.Column>
-            <Header as="h4" disabled textAlign="center">
-              No Studies matching your search term. Try searching by Study Name
-            </Header>
+          <Grid.Column width={2} verticalAlign="middle">
+            {myProfile && hasPermission(myProfile, 'add_study') && (
+              <Button
+                basic
+                primary
+                fluid
+                className="ml-10"
+                size="mini"
+                icon="add"
+                content="Add Study"
+                as={Link}
+                to={`/study/new-study/info`}
+              />
+            )}
           </Grid.Column>
-        )}
-      </Grid.Row>
-    </Grid>
+          <Grid.Column width={2} verticalAlign="middle">
+            <Input
+              aria-label="search studies"
+              className="ml-10"
+              size="mini"
+              iconPosition="left"
+              icon="search"
+              placeholder="Search by study name or collaborator"
+              onChange={(e, {value}) => {
+                setSearchString(value);
+              }}
+              value={searchString}
+            />
+          </Grid.Column>
+          <Grid.Column width={2} verticalAlign="middle" textAlign="right">
+            <ToggleButtons
+              className="ml-10"
+              size="mini"
+              hideText
+              onToggle={({key}) => {
+                history.push('#' + key);
+              }}
+              selected={history && history.location.hash.slice(1)}
+              buttons={[
+                {key: 'list', text: 'List', icon: 'list'},
+                {key: 'grid', text: 'Grid', icon: 'grid layout'},
+              ]}
+            />
+          </Grid.Column>
+          <Grid.Column width={1} verticalAlign="middle" textAlign="right">
+            <Button
+              active={fullWidth}
+              size="mini"
+              onClick={() => setFullWidth(!fullWidth)}
+              icon={fullWidth ? 'compress' : 'expand'}
+            />
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
+      <Grid as={Segment} container={!fullWidth} basic>
+        <Grid.Row>
+          {filteredStudyList().length > 0 ? (
+            <Grid.Column>
+              {(history && history.location.hash === '#grid') ||
+              activeView === 'grid' ? (
+                <StudyGrid
+                  loading={loading}
+                  studyList={filteredStudyList()}
+                  myProfile={myProfile}
+                />
+              ) : (
+                <StudyTable
+                  myProfile={myProfile}
+                  loading={loading}
+                  studyList={filteredStudyList()}
+                  columns={columns.columns}
+                />
+              )}
+            </Grid.Column>
+          ) : (
+            <Grid.Column>
+              <Header as="h4" disabled textAlign="center">
+                No Studies matching your search term. Try searching by Study
+                Name
+              </Header>
+            </Grid.Column>
+          )}
+        </Grid.Row>
+      </Grid>
+    </>
   );
 };
 
