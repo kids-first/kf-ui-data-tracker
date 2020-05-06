@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
+import {Amplitude} from '@amplitude/react-amplitude';
 import StudyGrid from './StudyGrid';
 import StudyTable from './StudyTable';
 import {Link} from 'react-router-dom';
@@ -13,6 +14,7 @@ import {
   Input,
   Button,
   Checkbox,
+  Popup,
 } from 'semantic-ui-react';
 import {hasPermission} from '../../common/permissions';
 import ColumnSelector from './ColumnSelector';
@@ -36,7 +38,15 @@ const HeaderSkeleton = () => (
 const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
   const [searchString, setSearchString] = useState('');
   const [myStudies, setMystudies] = useState(true);
-  const [fullWidth, setFullWidth] = useState(false);
+  const [fullWidth, setFullWidth] = useState(
+    localStorage.getItem('fullWidth') || false,
+  );
+
+  const toggleWidth = logEvent => {
+    setFullWidth(!fullWidth);
+    logEvent('toggle ' + fullWidth ? 'off' : 'on');
+    localStorage.setItem('fullWidth', !fullWidth);
+  };
   // Try to restore the column state from local storage or fall back to the
   // defaults if non are found
   // We track the version off the column state so that we may override it in
@@ -178,12 +188,30 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
             />
           </Grid.Column>
           <Grid.Column width={1} verticalAlign="middle" textAlign="right">
-            <Button
-              active={fullWidth}
-              size="mini"
-              onClick={() => setFullWidth(!fullWidth)}
-              icon={fullWidth ? 'compress' : 'expand'}
-            />
+            <Amplitude
+              eventProperties={inheritedProps => ({
+                ...inheritedProps,
+                scope: inheritedProps.scope
+                  ? [...inheritedProps.scope, 'full width toggle button']
+                  : ['full width toggle button'],
+              })}
+            >
+              {({logEvent}) => (
+                <Popup
+                  inverted
+                  content="Toggle full width view"
+                  position="top right"
+                  trigger={
+                    <Button
+                      active={fullWidth}
+                      size="mini"
+                      onClick={() => toggleWidth(logEvent)}
+                      icon={fullWidth ? 'compress' : 'expand'}
+                    />
+                  }
+                />
+              )}
+            </Amplitude>
           </Grid.Column>
         </Grid.Row>
       </Grid>
