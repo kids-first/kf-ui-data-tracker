@@ -219,3 +219,18 @@ export const UPDATE_USER = gql`
   }
   ${USER_FIELDS}
 `;
+
+export const CHANGE_SEQUENCING_STATUS = gql`
+  mutation updateSequencingStatus(
+    $study: ID!
+    $data: UpdateSequencingStatusInput!
+  ) {
+    updateSequencingStatus(study: $study, data: $data) {
+      study {
+        id
+        ...StudyInfoFields
+      }
+    }
+  }
+  ${STUDY_INFO_FIELDS}
+`;

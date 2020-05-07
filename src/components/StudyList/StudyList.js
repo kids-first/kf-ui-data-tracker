@@ -65,6 +65,11 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
               name: 'Expected Samples',
               visible: false,
             },
+            {
+              key: 'sequencingStatus',
+              name: 'Sequencing Status',
+              visible: false,
+            },
             {key: 'version', name: 'Version', visible: true},
           ],
         },

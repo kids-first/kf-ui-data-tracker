@@ -2,22 +2,26 @@
 
 exports[`release version correctly 1`] = `
 <div>
-  <a
-    href="undefined/releases/RE_FXR1JBZA"
+  <td
+    class="single line one wide"
   >
-    3.64.0 
-    <i
-      class="icons"
+    <a
+      href="undefined/releases/RE_FXR1JBZA"
     >
+      3.64.0 
       <i
-        aria-hidden="true"
-        class="tag icon"
-      />
-      <i
-        aria-hidden="true"
-        class="external top right corner icon"
-      />
-    </i>
-  </a>
+        class="icons"
+      >
+        <i
+          aria-hidden="true"
+          class="tag icon"
+        />
+        <i
+          aria-hidden="true"
+          class="external top right corner icon"
+        />
+      </i>
+    </a>
+  </td>
 </div>
 `;

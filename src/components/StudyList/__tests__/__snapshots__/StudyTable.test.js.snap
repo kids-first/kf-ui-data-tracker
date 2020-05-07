@@ -32,7 +32,7 @@ exports[`renders study table correctly 1`] = `
       class=""
     >
       <tr
-        class=""
+        class="center aligned"
       >
         <td
           class="selectable left aligned overflow-cell-container"
@@ -57,14 +57,14 @@ exports[`renders study table correctly 1`] = `
           </a>
         </td>
         <td
-          class="selectable single line center aligned one wide"
+          class="single line one wide"
         >
           <code>
             SD_I1L92W57
           </code>
         </td>
         <td
-          class="single line center aligned one wide"
+          class="single line one wide"
         >
           <div
             class="ui basic icon buttons"
@@ -129,7 +129,7 @@ exports[`renders study table correctly 1`] = `
         </td>
       </tr>
       <tr
-        class=""
+        class="center aligned"
       >
         <td
           class="selectable left aligned overflow-cell-container"
@@ -154,14 +154,14 @@ exports[`renders study table correctly 1`] = `
           </a>
         </td>
         <td
-          class="selectable single line center aligned one wide"
+          class="single line one wide"
         >
           <code>
             SD_SG5N41K8
           </code>
         </td>
         <td
-          class="single line center aligned one wide"
+          class="single line one wide"
         >
           <div
             class="ui basic icon buttons"
@@ -226,7 +226,7 @@ exports[`renders study table correctly 1`] = `
         </td>
       </tr>
       <tr
-        class=""
+        class="center aligned"
       >
         <td
           class="selectable left aligned overflow-cell-container"
@@ -251,14 +251,14 @@ exports[`renders study table correctly 1`] = `
           </a>
         </td>
         <td
-          class="selectable single line center aligned one wide"
+          class="single line one wide"
         >
           <code>
             SD_0YYP5ZEN
           </code>
         </td>
         <td
-          class="single line center aligned one wide"
+          class="single line one wide"
         >
           <div
             class="ui basic icon buttons"
@@ -323,7 +323,7 @@ exports[`renders study table correctly 1`] = `
         </td>
       </tr>
       <tr
-        class=""
+        class="center aligned"
       >
         <td
           class="selectable left aligned overflow-cell-container"
@@ -348,14 +348,14 @@ exports[`renders study table correctly 1`] = `
           </a>
         </td>
         <td
-          class="selectable single line center aligned one wide"
+          class="single line one wide"
         >
           <code>
             SD_8WX8QQ06
           </code>
         </td>
         <td
-          class="single line center aligned one wide"
+          class="single line one wide"
         >
           <div
             class="ui basic icon buttons"

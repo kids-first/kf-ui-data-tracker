@@ -23,6 +23,7 @@ export const STUDY_INFO_FIELDS = gql`
     description
     anticipatedSamples
     awardeeOrganization
+    sequencingStatus
   }
 `;
 
