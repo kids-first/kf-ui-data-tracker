@@ -37,16 +37,28 @@ const HeaderSkeleton = () => (
  */
 const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
   const [searchString, setSearchString] = useState('');
-  const [myStudies, setMystudies] = useState(true);
-  const [fullWidth, setFullWidth] = useState(
-    localStorage.getItem('fullWidth') || false,
+  const [myStudies, setMyStudies] = useState(
+    localStorage.getItem('onlyMyStudies') !== null
+      ? JSON.parse(localStorage.getItem('onlyMyStudies'))
+      : true,
   );
+  const [fullWidth, setFullWidth] = useState(
+    localStorage.getItem('fullWidth') !== null
+      ? JSON.parse(localStorage.getItem('fullWidth'))
+      : false,
+  );
+
+  const toggleMyStudies = () => {
+    setMyStudies(!myStudies);
+    localStorage.setItem('onlyMyStudies', !myStudies);
+  };
 
   const toggleWidth = logEvent => {
     setFullWidth(!fullWidth);
     logEvent('toggle ' + fullWidth ? 'off' : 'on');
     localStorage.setItem('fullWidth', !fullWidth);
   };
+
   // Try to restore the column state from local storage or fall back to the
   // defaults if non are found
   // We track the version off the column state so that we may override it in
@@ -144,7 +156,7 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
               <Checkbox
                 label="Show only my studies"
                 checked={myStudies}
-                onClick={() => setMystudies(!myStudies)}
+                onClick={toggleMyStudies}
               />
             )}
           </Grid.Column>
