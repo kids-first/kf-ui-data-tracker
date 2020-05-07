@@ -48,8 +48,9 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
       : false,
   );
 
-  const toggleMyStudies = () => {
+  const toggleMyStudies = logEvent => {
     setMyStudies(!myStudies);
+    logEvent('toggle ' + myStudies ? 'off' : 'on');
     localStorage.setItem('onlyMyStudies', !myStudies);
   };
 
@@ -153,12 +154,27 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
 
           <Grid.Column width={3} verticalAlign="middle" textAlign="right">
             {myProfile && hasPermission(myProfile, 'view_study') && (
-              <Checkbox
-                label="Show only my studies"
-                checked={myStudies}
-                onClick={toggleMyStudies}
-                data-cy="toggle my studies"
-              />
+              <Amplitude
+                eventProperties={inheritedProps => ({
+                  ...inheritedProps,
+                  scope: inheritedProps.scope
+                    ? [
+                        ...inheritedProps.scope,
+                        'toggle button',
+                        'only my studies',
+                      ]
+                    : ['toggle button', 'only my studies'],
+                })}
+              >
+                {({logEvent}) => (
+                  <Checkbox
+                    label="Show only my studies"
+                    checked={myStudies}
+                    onClick={() => toggleMyStudies(logEvent)}
+                    data-cy="toggle my studies"
+                  />
+                )}
+              </Amplitude>
             )}
           </Grid.Column>
           <Grid.Column width={2} verticalAlign="middle">
@@ -210,8 +226,8 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
               eventProperties={inheritedProps => ({
                 ...inheritedProps,
                 scope: inheritedProps.scope
-                  ? [...inheritedProps.scope, 'full width toggle button']
-                  : ['full width toggle button'],
+                  ? [...inheritedProps.scope, 'toggle button', 'full width']
+                  : ['toggle button', 'full width'],
               })}
             >
               {({logEvent}) => (
