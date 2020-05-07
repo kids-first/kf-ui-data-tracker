@@ -24,6 +24,7 @@ const StudyName = ({study}) => {
           selectable
           className="overflow-cell-container"
           textAlign="left"
+          data-cy="study name"
         >
           <Link
             to={'/study/' + study.kfId + '/basic-info/info'}

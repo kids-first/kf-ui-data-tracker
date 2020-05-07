@@ -12,14 +12,15 @@ context('Add Study', () => {
   });
 
   it('navigates to new study route', () => {
-    // Should have 3 studies to start
-    cy.contains('a', 'Data Tracker').click();
-    cy.contains('label', 'Show only my studies').click();
+    cy.clearLocalStorage('onlyMyStudies');
 
-    cy.get('table')
-      .find('tr')
+    // Should have 4 studies to start
+    cy.contains('a', 'Data Tracker').click();
+    cy.get('[data-cy="toggle my studies"]').click();
+
+    cy.get('[data-cy="study name"]')
       .its('length')
-      .should('eq', 5);
+      .should('eq', 4);
 
     // Click on the add study button from the home screen
     cy.contains('a', 'Add Study')
@@ -61,12 +62,11 @@ context('Add Study', () => {
     // the cache does not refresh when new studies are created so we need
     // to reload the page
     cy.visit('/');
-    cy.contains('label', 'Show only my studies').click();
 
-    cy.get('table')
-      .find('tr')
+    // There should now be 5 studies
+    cy.get('[data-cy="study name"]')
       .its('length')
-      .should('eq', 6);
+      .should('eq', 5);
   });
 
   it('does not allow investigators to add studies', () => {

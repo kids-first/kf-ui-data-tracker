@@ -37,16 +37,29 @@ const HeaderSkeleton = () => (
  */
 const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
   const [searchString, setSearchString] = useState('');
-  const [myStudies, setMystudies] = useState(true);
-  const [fullWidth, setFullWidth] = useState(
-    localStorage.getItem('fullWidth') || false,
+  const [myStudies, setMyStudies] = useState(
+    localStorage.getItem('onlyMyStudies') !== null
+      ? JSON.parse(localStorage.getItem('onlyMyStudies'))
+      : true,
   );
+  const [fullWidth, setFullWidth] = useState(
+    localStorage.getItem('fullWidth') !== null
+      ? JSON.parse(localStorage.getItem('fullWidth'))
+      : false,
+  );
+
+  const toggleMyStudies = logEvent => {
+    setMyStudies(!myStudies);
+    logEvent('toggle ' + myStudies ? 'off' : 'on');
+    localStorage.setItem('onlyMyStudies', !myStudies);
+  };
 
   const toggleWidth = logEvent => {
     setFullWidth(!fullWidth);
     logEvent('toggle ' + fullWidth ? 'off' : 'on');
     localStorage.setItem('fullWidth', !fullWidth);
   };
+
   // Try to restore the column state from local storage or fall back to the
   // defaults if non are found
   // We track the version off the column state so that we may override it in
@@ -141,11 +154,27 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
 
           <Grid.Column width={3} verticalAlign="middle" textAlign="right">
             {myProfile && hasPermission(myProfile, 'view_study') && (
-              <Checkbox
-                label="Show only my studies"
-                checked={myStudies}
-                onClick={() => setMystudies(!myStudies)}
-              />
+              <Amplitude
+                eventProperties={inheritedProps => ({
+                  ...inheritedProps,
+                  scope: inheritedProps.scope
+                    ? [
+                        ...inheritedProps.scope,
+                        'toggle button',
+                        'only my studies',
+                      ]
+                    : ['toggle button', 'only my studies'],
+                })}
+              >
+                {({logEvent}) => (
+                  <Checkbox
+                    label="Show only my studies"
+                    checked={myStudies}
+                    onClick={() => toggleMyStudies(logEvent)}
+                    data-cy="toggle my studies"
+                  />
+                )}
+              </Amplitude>
             )}
           </Grid.Column>
           <Grid.Column width={2} verticalAlign="middle">
@@ -197,8 +226,8 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
               eventProperties={inheritedProps => ({
                 ...inheritedProps,
                 scope: inheritedProps.scope
-                  ? [...inheritedProps.scope, 'full width toggle button']
-                  : ['full width toggle button'],
+                  ? [...inheritedProps.scope, 'toggle button', 'full width']
+                  : ['toggle button', 'full width'],
               })}
             >
               {({logEvent}) => (
