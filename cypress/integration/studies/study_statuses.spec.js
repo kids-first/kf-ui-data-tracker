@@ -2,6 +2,7 @@
 
 context('Admin Study Status', () => {
   before(() => {
+    cy.clearLocalStorage('onlyMyStudies');
     cy.resetdb();
     cy.as(['Administrators']);
   });
@@ -39,6 +40,7 @@ context('Admin Study Status', () => {
 
 context('Investigator Study Status', () => {
   before(() => {
+    cy.clearLocalStorage('onlyMyStudies');
     cy.resetdb();
     cy.as(['Investigators']);
   });
@@ -51,12 +53,13 @@ context('Investigator Study Status', () => {
     cy.contains('span.ui.dropdown', 'Change Columns').click();
   });
 
-  it('changes sequencing status', () => {
+  it('cannot change sequencing status', () => {
     // Only one study should be available
     cy.get('[data-cy="sequencing status cell"]')
       .its('length')
       .should('eq', 1);
 
+    // There should be no dropdown to change status
     cy.get('[data-cy="sequencing status cell"]')
       .find('div.ui.dropdown')
       .should('not.exist');

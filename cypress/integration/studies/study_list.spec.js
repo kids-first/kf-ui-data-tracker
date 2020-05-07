@@ -64,6 +64,9 @@ context('Admin Study List', () => {
     cy.get('[data-cy="study name"]')
       .its('length')
       .should('eq', 1);
+
+    // Clear storage for other tests
+    cy.clearLocalStorage('onlyMyStudies');
   });
 
   it('toggles full width', () => {
@@ -97,6 +100,9 @@ context('Admin Study List', () => {
       .should(() => {
         expect(localStorage.getItem('fullWidth')).to.be.eq('false');
       });
+
+    // Clear storage for other tests
+    cy.clearLocalStorage('fullWidth');
   });
 
   it('toggles grid and list views', () => {
@@ -128,8 +134,8 @@ context('Admin Study List', () => {
   });
 
   it('only shows my studies', () => {
-    cy.contains('label', 'Show only my studies').click();
-    // Select first study
+    cy.get('[data-cy="toggle my studies"]').click();
+    // Select a study to be added to
     cy.contains('monetize').click();
 
     // Add self to that study
@@ -142,17 +148,18 @@ context('Admin Study List', () => {
     cy.contains('button', 'Add').click();
 
     cy.visit('/');
-    // Only the one study should be displayed by default
-    cy.get('table')
-      .find('tr')
+
+    // The user should be in two studies now
+    cy.get('[data-cy="toggle my studies"]').click();
+    cy.get('[data-cy="study name"]')
       .its('length')
-      .should('eq', 3);
+      .should('eq', 2);
+
     // All studies should still be visible
-    cy.contains('label', 'Show only my studies').click();
-    cy.get('table')
-      .find('tr')
+    cy.get('[data-cy="toggle my studies"]').click();
+    cy.get('[data-cy="study name"]')
       .its('length')
-      .should('eq', 5);
+      .should('eq', 4);
   });
   it('has notifications', () => {
     cy.get('table').should('not.exist');

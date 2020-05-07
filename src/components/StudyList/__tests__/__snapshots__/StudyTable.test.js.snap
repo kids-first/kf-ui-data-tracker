@@ -36,6 +36,7 @@ exports[`renders study table correctly 1`] = `
       >
         <td
           class="selectable left aligned overflow-cell-container"
+          data-cy="study name"
         >
           <a
             class="overflow-cell"
@@ -133,6 +134,7 @@ exports[`renders study table correctly 1`] = `
       >
         <td
           class="selectable left aligned overflow-cell-container"
+          data-cy="study name"
         >
           <a
             class="overflow-cell"
@@ -230,6 +232,7 @@ exports[`renders study table correctly 1`] = `
       >
         <td
           class="selectable left aligned overflow-cell-container"
+          data-cy="study name"
         >
           <a
             class="overflow-cell"
@@ -327,6 +330,7 @@ exports[`renders study table correctly 1`] = `
       >
         <td
           class="selectable left aligned overflow-cell-container"
+          data-cy="study name"
         >
           <a
             class="overflow-cell"
