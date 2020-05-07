@@ -157,6 +157,7 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
                 label="Show only my studies"
                 checked={myStudies}
                 onClick={toggleMyStudies}
+                data-cy="toggle my studies"
               />
             )}
           </Grid.Column>

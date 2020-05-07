@@ -31,6 +31,41 @@ context('Admin Study List', () => {
       .should('eq', 2);
   });
 
+  it('toggles my studies', () => {
+    cy.clearLocalStorage('onlyMyStudies');
+
+    // Make sure there's no saved state
+    expect(localStorage.getItem('onlyMyStudies')).to.be.null;
+    // We should only see our studies
+    cy.get('[data-cy="study name"]')
+      .its('length')
+      .should('eq', 1);
+
+    // Turn off only show my studies
+    cy.get('[data-cy="toggle my studies"]')
+      .click()
+      .should(() => {
+        expect(localStorage.getItem('onlyMyStudies')).to.be.eq('false');
+      });
+
+    // We should see all studies
+    cy.get('[data-cy="study name"]')
+      .its('length')
+      .should('eq', 4);
+
+    // Turn back on only show my studies
+    cy.get('[data-cy="toggle my studies"]')
+      .click()
+      .should(() => {
+        expect(localStorage.getItem('onlyMyStudies')).to.be.eq('true');
+      });
+
+    // We should only see our studies
+    cy.get('[data-cy="study name"]')
+      .its('length')
+      .should('eq', 1);
+  });
+
   it('toggles full width', () => {
     cy.clearLocalStorage('fullWidth');
 
