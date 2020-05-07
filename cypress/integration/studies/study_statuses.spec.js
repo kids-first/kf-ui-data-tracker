@@ -29,12 +29,15 @@ context('Admin Study Status', () => {
       .should('exist');
 
     // Change status of first Unknown study
-    cy.contains('[data-cy="sequencing status cell"]', 'Unknown').click();
-    cy.contains('span.text', 'Not Started').click();
+    cy.contains('[data-cy="sequencing status cell"]', 'Unknown')
+      .should('have.class', 'error')
+      .click()
+      .contains('span.text', 'Not Started')
+      .click();
 
-    cy.get('[data-cy="sequencing status cell"].error')
-      .its('length')
-      .should('eq', 3);
+    cy.get('[data-cy="sequencing status cell"]')
+      .filter('.error')
+      .should('have.length', 3);
   });
 });
 
