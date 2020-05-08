@@ -234,3 +234,33 @@ export const CHANGE_SEQUENCING_STATUS = gql`
   }
   ${STUDY_INFO_FIELDS}
 `;
+
+export const CHANGE_INGESTION_STATUS = gql`
+  mutation updateIngestionStatus(
+    $study: ID!
+    $data: UpdateIngestionStatusInput!
+  ) {
+    updateIngestionStatus(study: $study, data: $data) {
+      study {
+        id
+        ...StudyInfoFields
+      }
+    }
+  }
+  ${STUDY_INFO_FIELDS}
+`;
+
+export const CHANGE_PHENOTYPE_STATUS = gql`
+  mutation updatePhenotypeStatus(
+    $study: ID!
+    $data: UpdatePhenotypeStatusInput!
+  ) {
+    updatePhenotypeStatus(study: $study, data: $data) {
+      study {
+        id
+        ...StudyInfoFields
+      }
+    }
+  }
+  ${STUDY_INFO_FIELDS}
+`;

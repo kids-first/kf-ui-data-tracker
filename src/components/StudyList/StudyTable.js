@@ -6,6 +6,8 @@ import ActionButtons from './ActionButtons';
 import KfId from './KfId';
 import Release from './Release';
 import SequencingStatus from './SequencingStatus';
+import IngestionStatus from './IngestionStatus';
+import PhenotypeStatus from './PhenotypeStatus';
 import StudyName from './Name';
 import {compareSemVer} from '../../common/sortUtils';
 
@@ -25,6 +27,8 @@ const cellContent = {
     </Table.Cell>
   ),
   sequencingStatus: node => <SequencingStatus study={node} />,
+  ingestionStatus: node => <IngestionStatus study={node} />,
+  phenotypeStatus: node => <PhenotypeStatus study={node} />,
   anticipatedSamples: node => (
     <Table.Cell width="1">{node.anticipatedSamples || '-'}</Table.Cell>
   ),

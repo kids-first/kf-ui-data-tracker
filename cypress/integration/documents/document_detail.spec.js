@@ -27,7 +27,7 @@ context('Admin Document Detail', () => {
       .eq(5)
       .click();
     // Edit document approval status
-    cy.get('[data-testid="edit-button"]').click();
+    cy.get('[data-testid="edit-button"]', {timeout: 10000}).click();
     cy.get('[name="file_status"]').click();
     cy.contains('div', 'Approved').click();
     cy.contains('button', 'SAVE').click();
