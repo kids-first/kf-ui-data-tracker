@@ -24,6 +24,8 @@ export const STUDY_INFO_FIELDS = gql`
     anticipatedSamples
     awardeeOrganization
     sequencingStatus
+    ingestionStatus
+    phenotypeStatus
   }
 `;
 
