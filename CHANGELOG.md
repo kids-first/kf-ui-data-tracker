@@ -1,3 +1,22 @@
+# Kids First Data Tracker Release 0.13.0
+
+## Features
+
+Add study status columns.
+
+### Summary
+
+Feature Emojis: ✨x4 🐛x1
+Feature Labels: [feature](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/feature) x4 [design](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/design) x2 [bug](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/bug) x1 [component](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/component) x1
+
+### New features and changes
+
+- (#699) ✨ Add ingestion status and phenotype status to study table - @XuTheBunny
+- (#698) 🐛 Fix version sorting - @dankolbman
+- (#697) ✨ Persist show only my studies state - @dankolbman
+- (#685) ✨ Add sequencing status selector - @dankolbman
+- (#696) ✨ Full width study table toggle - @dankolbman
+
 # Kids First Data Tracker Release 0.12.0
 
 ## Features
