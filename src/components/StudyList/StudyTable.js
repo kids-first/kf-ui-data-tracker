@@ -7,6 +7,7 @@ import KfId from './KfId';
 import Release from './Release';
 import SequencingStatus from './SequencingStatus';
 import StudyName from './Name';
+import {compareSemVer} from '../../common/sortUtils';
 
 /**
  * A collection of functions to render cell contents for different columns
@@ -34,6 +35,18 @@ const renderRow = (node, columns) => ({
   cells: columns.map((col, i) => cellContent[col.key](node)),
   textAlign: 'center',
 });
+
+const stringSort = (a, b) => a.localeCompare(b);
+
+const columnSorts = {
+  name: stringSort,
+  kfId: stringSort,
+  version: compareSemVer,
+  externalId: stringSort,
+  actions: (a, b) => 0,
+  sequencingStatus: stringSort,
+  anticipatedSamples: stringSort,
+};
 
 const StudyTable = ({
   studyList,
@@ -75,8 +88,10 @@ const StudyTable = ({
     }))
     .sort(
       (s1, s2) =>
-        s1[sorting.column] &&
-        s1[sorting.column].localeCompare(s2[sorting.column]),
+        s1.hasOwnProperty(sorting.column) &&
+        s2.hasOwnProperty(sorting.column) &&
+        columnSorts.hasOwnProperty(sorting.column) &&
+        columnSorts[sorting.column](s1[sorting.column], s2[sorting.column]),
     );
 
   // Construct header
