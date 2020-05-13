@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import {Amplitude} from '@amplitude/react-amplitude';
-import StudyGrid from './StudyGrid';
 import StudyTable from './StudyTable';
 import {Link} from 'react-router-dom';
 import ToggleButtons from '../ToggleButtons/ToggleButtons';
@@ -128,7 +127,18 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
     return (
       <Container as={Segment} basic>
         <HeaderSkeleton />
-        <StudyGrid loading={loading} studyList={studyList} />
+        <Placeholder>
+          <Placeholder.Header image>
+            <Placeholder.Line />
+            <Placeholder.Line />
+          </Placeholder.Header>
+          <Placeholder.Paragraph>
+            <Placeholder.Line />
+            <Placeholder.Line />
+            <Placeholder.Line />
+            <Placeholder.Line />
+          </Placeholder.Paragraph>
+        </Placeholder>
       </Container>
     );
   }
@@ -290,22 +300,13 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
         <Grid.Row>
           {filteredStudyList().length > 0 ? (
             <Grid.Column>
-              {(history && history.location.hash === '#grid') ||
-              activeView === 'grid' ? (
-                <StudyGrid
-                  loading={loading}
-                  studyList={filteredStudyList()}
-                  myProfile={myProfile}
-                />
-              ) : (
-                <StudyTable
-                  myProfile={myProfile}
-                  loading={loading}
-                  studyList={filteredStudyList()}
-                  columns={columns}
-                  handleSort={handleSort}
-                />
-              )}
+              <StudyTable
+                myProfile={myProfile}
+                loading={loading}
+                studyList={filteredStudyList()}
+                columns={columns}
+                handleSort={handleSort}
+              />
             </Grid.Column>
           ) : (
             <Grid.Column>
