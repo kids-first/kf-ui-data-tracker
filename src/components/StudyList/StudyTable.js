@@ -49,6 +49,8 @@ const columnSorts = {
   externalId: stringSort,
   actions: (a, b) => 0,
   sequencingStatus: stringSort,
+  phenotypeStatus: stringSort,
+  ingestionStatus: stringSort,
   anticipatedSamples: stringSort,
 };
 
