@@ -40,7 +40,8 @@ const renderRow = (node, columns) => ({
   textAlign: 'center',
 });
 
-const stringSort = (a, b) => a.localeCompare(b);
+const stringSort = (a, b) =>
+  a !== null && b !== null ? a.localeCompare(b) : 0;
 
 const columnSorts = {
   name: stringSort,
