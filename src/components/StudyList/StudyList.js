@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import {Amplitude} from '@amplitude/react-amplitude';
 import StudyTable from './StudyTable';
 import {Link} from 'react-router-dom';
-import ToggleButtons from '../ToggleButtons/ToggleButtons';
 import {
   Container,
   Segment,
@@ -181,8 +180,8 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
   return (
     <>
       <Grid as={Segment} basic container stackable>
-        <Grid.Row columns={7}>
-          <Grid.Column width={3}>
+        <Grid.Row columns={6}>
+          <Grid.Column width={4}>
             <Header as="h1" floated="left">
               Your Studies
             </Header>
@@ -238,7 +237,7 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
               />
             )}
           </Grid.Column>
-          <Grid.Column width={2} verticalAlign="middle">
+          <Grid.Column width={3} verticalAlign="middle">
             <Input
               aria-label="search studies"
               className="ml-10"
@@ -250,21 +249,6 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
                 setSearchString(value);
               }}
               value={searchString}
-            />
-          </Grid.Column>
-          <Grid.Column width={2} verticalAlign="middle" textAlign="right">
-            <ToggleButtons
-              className="ml-10"
-              size="mini"
-              hideText
-              onToggle={({key}) => {
-                history.push('#' + key);
-              }}
-              selected={history && history.location.hash.slice(1)}
-              buttons={[
-                {key: 'list', text: 'List', icon: 'list'},
-                {key: 'grid', text: 'Grid', icon: 'grid layout'},
-              ]}
             />
           </Grid.Column>
           <Grid.Column width={1} verticalAlign="middle" textAlign="right">
