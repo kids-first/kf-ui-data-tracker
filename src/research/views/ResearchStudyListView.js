@@ -4,7 +4,6 @@ import {useQuery} from '@apollo/react-hooks';
 import {Link} from 'react-router-dom';
 import {ALL_STUDIES, MY_PROFILE, GET_RELEASED_STUDY} from '../../state/queries';
 import StudyTable from '../../components/StudyList/StudyTable';
-import ToggleButtons from '../../components/ToggleButtons/ToggleButtons';
 import {
   Button,
   Message,
@@ -152,18 +151,6 @@ const ResearchStudyListView = ({history}) => {
               setSearchString(value);
             }}
             value={searchString}
-          />
-          <ToggleButtons
-            size="mini"
-            hideText
-            onToggle={({key}) => {
-              history.push('research-studies#' + key);
-            }}
-            selected={history && history.location.hash.slice(1)}
-            buttons={[
-              {key: 'list', text: 'List', icon: 'list'},
-              {key: 'grid', text: 'Grid', icon: 'grid layout'},
-            ]}
           />
         </Grid.Column>
         <Grid.Row>
