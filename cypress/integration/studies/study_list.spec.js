@@ -31,6 +31,55 @@ context('Admin Study List', () => {
       .should('eq', 2);
   });
 
+  it('sorts studies', () => {
+    // Make sure there's no saved sorting state
+    expect(localStorage.getItem('studyColumns')).to.be.null;
+
+    // All studies should be displayed
+    cy.contains('label', 'Show only my studies').click();
+    cy.get('table')
+      .find('tr')
+      .its('length')
+      .should('eq', 5);
+
+    // By default (sorting by study name in descending order)
+    cy.get('td')
+      .eq(0)
+      .should('contain', "Mr. Meow's Memorable Meme Emporium");
+
+    // Click on kfId column title to sort by kfId
+    cy.contains('th', 'Kids First ID')
+      .click()
+      .should(() => {
+        expect(
+          JSON.parse(localStorage.getItem('studyColumns')).sorting.column,
+        ).to.be.eq('kfId');
+        expect(
+          JSON.parse(localStorage.getItem('studyColumns')).sorting.direction,
+        ).to.be.eq('ascending');
+      });
+
+    // Click on kfId column title again to change sorting direction
+    cy.contains('th', 'Kids First ID')
+      .click()
+      .should(() => {
+        expect(
+          JSON.parse(localStorage.getItem('studyColumns')).sorting.column,
+        ).to.be.eq('kfId');
+        expect(
+          JSON.parse(localStorage.getItem('studyColumns')).sorting.direction,
+        ).to.be.eq('descending');
+      });
+
+    // First study should change to "incentivize leading-edge functionalities"
+    cy.get('td')
+      .eq(0)
+      .should('contain', 'incentivize leading-edge functionalities');
+
+    // Clear storage for other tests
+    cy.clearLocalStorage('studyColumns');
+  });
+
   it('toggles my studies', () => {
     cy.clearLocalStorage('onlyMyStudies');
 

@@ -65,38 +65,64 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
   // We track the version off the column state so that we may override it in
   // the future if the schema ever changes
   const existingState = JSON.parse(localStorage.getItem('studyColumns'));
+  const defaultState = {
+    version: 3,
+    columns: [
+      {key: 'kfId', name: 'Kids First ID', visible: true},
+      {key: 'externalId', name: 'phsid/External ID', visible: false},
+      {
+        key: 'anticipatedSamples',
+        name: 'Expected Samples',
+        visible: false,
+      },
+      {
+        key: 'sequencingStatus',
+        name: 'Sequencing Status',
+        visible: false,
+      },
+      {
+        key: 'ingestionStatus',
+        name: 'Ingestion Status',
+        visible: false,
+      },
+      {
+        key: 'phenotypeStatus',
+        name: 'Phenotype Status',
+        visible: false,
+      },
+      {key: 'version', name: 'Version', visible: true},
+    ],
+    sorting: {
+      column: 'name',
+      direction: 'descending',
+    },
+  };
   const [columns, setColumns] = useState(
-    existingState && existingState.version === 2
+    existingState && existingState.version === defaultState.version
       ? existingState
-      : {
-          version: 2,
-          columns: [
-            {key: 'kfId', name: 'Kids First ID', visible: true},
-            {key: 'externalId', name: 'phsid/External ID', visible: false},
-            {
-              key: 'anticipatedSamples',
-              name: 'Expected Samples',
-              visible: false,
-            },
-            {
-              key: 'sequencingStatus',
-              name: 'Sequencing Status',
-              visible: false,
-            },
-            {
-              key: 'ingestionStatus',
-              name: 'Ingestion Status',
-              visible: false,
-            },
-            {
-              key: 'phenotypeStatus',
-              name: 'Phenotype Status',
-              visible: false,
-            },
-            {key: 'version', name: 'Version', visible: true},
-          ],
-        },
+      : defaultState,
   );
+
+  const handleSort = column => () => {
+    const direction =
+      columns.sorting.column !== column
+        ? 'ascending'
+        : columns.sorting.direction === 'ascending'
+        ? 'descending'
+        : 'ascending';
+    setColumns({
+      ...columns,
+      sorting: {column, direction},
+    });
+    localStorage.setItem(
+      'studyColumns',
+      JSON.stringify({
+        columns: existingState ? existingState.columns : defaultState.columns,
+        version: defaultState.version,
+        sorting: {column, direction},
+      }),
+    );
+  };
 
   if (loading) {
     return (
@@ -276,7 +302,8 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
                   myProfile={myProfile}
                   loading={loading}
                   studyList={filteredStudyList()}
-                  columns={columns.columns}
+                  columns={columns}
+                  handleSort={handleSort}
                 />
               )}
             </Grid.Column>

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {withRouter} from 'react-router-dom';
 import {Amplitude} from '@amplitude/react-amplitude';
 import {Table} from 'semantic-ui-react';
@@ -40,7 +40,8 @@ const renderRow = (node, columns) => ({
   textAlign: 'center',
 });
 
-const stringSort = (a, b) => a.localeCompare(b);
+const stringSort = (a, b) =>
+  a !== null && b !== null ? a.localeCompare(b) : 0;
 
 const columnSorts = {
   name: stringSort,
@@ -49,6 +50,8 @@ const columnSorts = {
   externalId: stringSort,
   actions: (a, b) => 0,
   sequencingStatus: stringSort,
+  phenotypeStatus: stringSort,
+  ingestionStatus: stringSort,
   anticipatedSamples: stringSort,
 };
 
@@ -59,30 +62,11 @@ const StudyTable = ({
   myProfile,
   isResearch,
   columns,
+  handleSort,
 }) => {
-  const [sorting, setSorting] = useState({
-    column: 'name',
-    direction: 'descending',
-  });
-
   if (loading) {
     return <h2>loading studies</h2>;
   }
-
-  const handleSort = column => () => {
-    if (sorting.column !== column) {
-      setSorting({
-        column,
-        direction: 'ascending',
-      });
-    } else {
-      setSorting({
-        column,
-        direction:
-          sorting.direction === 'ascending' ? 'descending' : 'ascending',
-      });
-    }
-  };
 
   const studies = studyList
     .map(({node}) => ({
@@ -92,16 +76,19 @@ const StudyTable = ({
     }))
     .sort(
       (s1, s2) =>
-        s1.hasOwnProperty(sorting.column) &&
-        s2.hasOwnProperty(sorting.column) &&
-        columnSorts.hasOwnProperty(sorting.column) &&
-        columnSorts[sorting.column](s1[sorting.column], s2[sorting.column]),
+        s1.hasOwnProperty(columns.sorting.column) &&
+        s2.hasOwnProperty(columns.sorting.column) &&
+        columnSorts.hasOwnProperty(columns.sorting.column) &&
+        columnSorts[columns.sorting.column](
+          s1[columns.sorting.column],
+          s2[columns.sorting.column],
+        ),
     );
 
   // Construct header
   const visibleCols = [
     {key: 'name', name: 'Name', visible: true},
-    ...columns.filter(col => col.visible),
+    ...columns.columns.filter(col => col.visible),
     {key: 'actions', name: 'Actions', visible: true},
   ];
   const header = visibleCols.map((col, i) => (
@@ -109,7 +96,9 @@ const StudyTable = ({
       key={col.key}
       content={col.name}
       textAlign={i > 0 ? 'center' : 'left'}
-      sorted={sorting.column === col.key ? sorting.direction : null}
+      sorted={
+        columns.sorting.column === col.key ? columns.sorting.direction : null
+      }
       onClick={handleSort(col.key)}
     />
   ));
@@ -122,7 +111,7 @@ const StudyTable = ({
           ? [...inheritedProps.scope, 'study table']
           : ['study table'],
       })}
-      columns={columns.filter(col => col.visible).map(col => col.name)}
+      columns={columns.columns.filter(col => col.visible).map(col => col.name)}
     >
       <Table
         striped
@@ -130,7 +119,9 @@ const StudyTable = ({
         celled
         headerRow={header}
         tableData={
-          sorting.direction === 'ascending' ? studies : studies.reverse()
+          columns.sorting.direction === 'ascending'
+            ? studies
+            : studies.reverse()
         }
         renderBodyRow={data => renderRow(data, visibleCols)}
       />

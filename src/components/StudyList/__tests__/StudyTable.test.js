@@ -25,7 +25,14 @@ it('renders study table correctly', async () => {
       <MemoryRouter>
         <StudyTable
           studyList={studies}
-          columns={[{key: 'kfId', name: 'Kids First ID', visible: true}]}
+          columns={{
+            columns: [{key: 'kfId', name: 'Kids First ID', visible: true}],
+            sorting: {
+              column: 'name',
+              direction: 'descending',
+            },
+          }}
+          handleSort={jest.fn()}
         />
       </MemoryRouter>
     </MockedProvider>,
