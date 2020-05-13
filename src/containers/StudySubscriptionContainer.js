@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {useQuery, useMutation} from '@apollo/react-hooks';
 import {Button, Message, Container, Segment, Icon} from 'semantic-ui-react';
 import StudyTable from '../components/StudyList/StudyTable';
@@ -10,6 +10,35 @@ import {SUBSCRIBE_TO, UNSUBSCRIBE_FROM} from '../state/mutations';
  * to subscribe or unsubscribe from them.
  */
 const StudySubscriptionContainer = () => {
+  const [columns, setColumns] = useState({
+    columns: [
+      {key: 'kfId', name: 'Kids First ID', visible: true},
+      {key: 'externalId', name: 'phsid/External ID', visible: false},
+      {
+        key: 'anticipatedSamples',
+        name: 'Expected Samples',
+        visible: false,
+      },
+      {key: 'version', name: 'Version', visible: true},
+    ],
+    sorting: {
+      column: 'name',
+      direction: 'descending',
+    },
+  });
+  const handleSort = column => () => {
+    const direction =
+      columns.sorting.column !== column
+        ? 'ascending'
+        : columns.sorting.direction === 'ascending'
+        ? 'descending'
+        : 'ascending';
+    setColumns({
+      ...columns,
+      sorting: {column, direction},
+    });
+  };
+
   const {
     loading: loadingProfile,
     error: errorProfile,
@@ -97,17 +126,9 @@ const StudySubscriptionContainer = () => {
     <StudyTable
       studyList={studyList}
       clickable={false}
-      columns={[
-        {key: 'kfId', name: 'Kids First ID', visible: true},
-        {key: 'externalId', name: 'phsid/External ID', visible: false},
-        {
-          key: 'anticipatedSamples',
-          name: 'Expected Samples',
-          visible: false,
-        },
-        {key: 'version', name: 'Version', visible: true},
-      ]}
+      columns={columns}
       loading={loadingProfile || loadingStudies}
+      handleSort={handleSort}
     />
   );
 };

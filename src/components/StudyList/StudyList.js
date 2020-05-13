@@ -302,7 +302,8 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
                   myProfile={myProfile}
                   loading={loading}
                   studyList={filteredStudyList()}
-                  columns={columns.columns}
+                  columns={columns}
+                  handleSort={handleSort}
                 />
               )}
             </Grid.Column>
