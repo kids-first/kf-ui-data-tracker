@@ -98,6 +98,27 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
         },
   );
 
+  const handleSort = column => () => {
+    const direction =
+      columns.sorting.column !== column
+        ? 'ascending'
+        : columns.sorting.direction === 'ascending'
+        ? 'descending'
+        : 'ascending';
+    setColumns({
+      ...columns,
+      sorting: {column, direction},
+    });
+    localStorage.setItem(
+      'studyColumns',
+      JSON.stringify({
+        columns: existingState ? existingState.columns : defaultState.columns,
+        version: defaultState.version,
+        sorting: {column, direction},
+      }),
+    );
+  };
+
   if (loading) {
     return (
       <Container as={Segment} basic>
