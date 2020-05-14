@@ -4,6 +4,7 @@ import {Button, Divider, Icon, Image, List, Popup} from 'semantic-ui-react';
 import TimeAgo from 'react-timeago';
 import {longDate} from '../../common/dateUtils';
 import defaultAvatar from '../../assets/defaultAvatar.png';
+import {showuUserName} from '../../common/notificationUtils';
 
 const Actions = ({user, removeCollaborator}) => {
   const [loading, setLoading] = useState(false);
@@ -54,10 +55,14 @@ const Actions = ({user, removeCollaborator}) => {
 const CollaboratorItem = ({user, showAdminActions, removeCollaborator}) => {
   return (
     <List.Item key={user.id} data-testid="user-item">
-      <Image avatar src={user.picture || defaultAvatar} />
+      <Image
+        avatar
+        src={user.picture || defaultAvatar}
+        alt={showuUserName(user)}
+      />
       <List.Content>
         <List.Header>
-          {user.username}
+          {showuUserName(user)}
           {user.email && <small> - {user.email}</small>}
         </List.Header>
         <List.Description>
