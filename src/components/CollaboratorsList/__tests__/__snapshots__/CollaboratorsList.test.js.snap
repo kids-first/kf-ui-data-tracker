@@ -12,6 +12,7 @@ exports[`Renders collaborators list correctly for admins 1`] = `
       role="listitem"
     >
       <img
+        alt="John Garza"
         class="ui avatar image"
         src="test-file-stub"
       />
@@ -21,7 +22,7 @@ exports[`Renders collaborators list correctly for admins 1`] = `
         <div
           class="header"
         >
-          Anthony Hamilton
+          John Garza
           <small>
              - 
             richard06@merritt.net
@@ -58,6 +59,7 @@ exports[`Renders collaborators list correctly for admins 1`] = `
       role="listitem"
     >
       <img
+        alt="devadmin"
         class="ui avatar image"
         src="test-file-stub"
       />
@@ -114,6 +116,7 @@ exports[`Renders collaborators list correctly for non-admins 1`] = `
       role="listitem"
     >
       <img
+        alt="John Garza"
         class="ui avatar image"
         src="test-file-stub"
       />
@@ -123,7 +126,7 @@ exports[`Renders collaborators list correctly for non-admins 1`] = `
         <div
           class="header"
         >
-          Anthony Hamilton
+          John Garza
           <small>
              - 
             richard06@merritt.net
@@ -142,6 +145,7 @@ exports[`Renders collaborators list correctly for non-admins 1`] = `
       role="listitem"
     >
       <img
+        alt="devadmin"
         class="ui avatar image"
         src="test-file-stub"
       />
