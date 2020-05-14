@@ -17,10 +17,10 @@ context('Admin Study Collaborators', () => {
     // Click add collaborator button to add a user
     cy.contains('button', 'ADD COLLABORATOR').click();
     cy.contains('div', 'Choose a user').click();
-    cy.contains('span', 'Andrew Aguilar').click();
+    cy.contains('span', 'Michael Newman').click();
     cy.get('[data-testid="add-button"]').click();
     // Show newly added collaborator
-    cy.contains('div', 'Andrew Aguilar').should('exist');
+    cy.contains('div', 'Michael Newman').should('exist');
     // Click remove collaborator button to remove the user
     cy.contains('button', 'Remove').click();
     cy.get('[data-testid="remove-confirm"]').click();
