@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Form, Label, Dropdown} from 'semantic-ui-react';
-import avatar from '../assets/avatarM.png';
+import defaultAvatar from '../assets/defaultAvatar.png';
+import {showuUserName} from '../common/notificationUtils';
 
 const AddCollaboratorForm = ({formikProps, availableUsers, disabled}) => {
   const {errors, touched, handleBlur, setFieldValue} = formikProps;
@@ -18,8 +19,8 @@ const AddCollaboratorForm = ({formikProps, availableUsers, disabled}) => {
           .map(({node}) => ({
             key: node.id,
             value: node.id,
-            text: node.username,
-            image: {avatar: true, src: node.picture || avatar},
+            text: showuUserName(node),
+            image: {avatar: true, src: node.picture || defaultAvatar},
           }))
       : [];
 
