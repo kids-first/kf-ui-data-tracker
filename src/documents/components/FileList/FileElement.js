@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import {withRouter, Link} from 'react-router-dom';
 import TimeAgo from 'react-timeago';
-import {Header, Table, Icon, Checkbox} from 'semantic-ui-react';
+import {Header, Table, Icon, Checkbox, Popup} from 'semantic-ui-react';
 import FileActionButtons from '../FileActionButtons/FileActionButtons';
 import {fileSortedVersions, fileLatestDate, lengthLimit} from '../../utilities';
 import {fileTypeDetail} from '../../../common/enums';
@@ -79,7 +79,12 @@ const FileElement = ({
         <Checkbox data-testid="file-select" checked={selected} />
       </Table.Cell>
       <Table.Cell textAlign="center">
-        <Icon name={`${fileType.icon || 'question'}`} size="big" />
+        <Popup
+          wide="very"
+          header={fileType.title || 'Unknown Type'}
+          content={fileType.description || 'Unknown Type'}
+          trigger={<Icon name={fileType.icon || 'question'} size="big" />}
+        />
       </Table.Cell>
       <Table.Cell className="px-20">
         <Header size="medium" as="span">
