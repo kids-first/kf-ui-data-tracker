@@ -154,34 +154,6 @@ context('Admin Study List', () => {
     cy.clearLocalStorage('fullWidth');
   });
 
-  it('toggles grid and list views', () => {
-    cy.contains('label', 'Show only my studies').click();
-    // Should default to the table view
-    cy.get('button[aria-label="see studies in list view"]').should(
-      'have.class',
-      'active',
-    );
-
-    // Click on the toggle button
-    cy.get('button[aria-label="see studies in grid view"]')
-      .should('not.have.class', 'active')
-      .click()
-      .should('have.class', 'active');
-    cy.url().should('include', '#grid');
-
-    // Toggle back to list view
-    cy.get('button[aria-label="see studies in list view"]')
-      .should('not.have.class', 'active')
-      .click()
-      .should('have.class', 'active');
-
-    cy.url().should('include', '#list');
-    cy.get('button[aria-label="see studies in grid view"]').should(
-      'not.have.class',
-      'active',
-    );
-  });
-
   it('only shows my studies', () => {
     cy.get('[data-cy="toggle my studies"]').click();
     // Select a study to be added to
