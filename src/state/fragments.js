@@ -61,6 +61,8 @@ export const CREATOR_FIELDS = gql`
     username
     email
     picture
+    firstName
+    lastName
   }
 `;
 
