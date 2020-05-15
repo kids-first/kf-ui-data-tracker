@@ -1,3 +1,21 @@
+# Kids First Data Tracker Release 0.13.1
+
+## Features
+
+Small UX improvements based on feedback.
+
+### Summary
+
+Feature Emojis: ✨x3 🔥x1
+Feature Labels: [refactor](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/refactor) x3 [feature](https://api.github.com/repos/kids-first/kf-ui-data-tracker/labels/feature) x2
+
+### New features and changes
+
+- (#707) ✨ Display collaborators full name - @XuTheBunny
+- (#704) ✨ Add hover state to component with descriptive information - @XuTheBunny
+- (#702) 🔥 Remove study grid look form study list view - @XuTheBunny
+- (#701) ✨ Persist study list column sort state - @XuTheBunny
+
 # Kids First Data Tracker Release 0.13.0
 
 ## Features
