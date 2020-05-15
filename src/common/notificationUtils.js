@@ -110,3 +110,14 @@ export const noValueWarning = (id, value) => {
     (value === null || value === 0 || value.length === 0)
   );
 };
+
+// Check and display use first name and last name or username
+export const showuUserName = user => {
+  const userName = user && user.username ? user.username : 'Unknown user';
+  const userFullName =
+    user && (user.firstName || user.lastName)
+      ? (user.firstName ? user.firstName + ' ' : '') +
+        (user.lastName ? user.lastName : '')
+      : userName;
+  return userFullName;
+};
