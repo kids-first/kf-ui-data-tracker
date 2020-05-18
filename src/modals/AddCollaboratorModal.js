@@ -1,14 +1,15 @@
 import React, {useState} from 'react';
 import {useQuery} from '@apollo/react-hooks';
-import {Button, Form, List, Message, Modal} from 'semantic-ui-react';
+import {Button, Divider, List, Message, Modal} from 'semantic-ui-react';
 import {Formik} from 'formik';
 import {ALL_USERS} from '../state/queries';
-import {AddCollaboratorForm} from '../forms';
+import {AddCollaboratorForm, InviteCollaboratorForm} from '../forms';
 
 const AddCollaboratorModal = ({
   open,
   study,
   addCollaborator,
+  inviteCollaborator,
   onCloseDialog,
   users,
 }) => {
@@ -47,60 +48,99 @@ const AddCollaboratorModal = ({
       });
   };
 
+  const onSubmitInvite = (values, {setSubmitting, setErrors}) => {
+    setSubmitting(true);
+    inviteCollaborator({variables: {study: study.id, user: values.userId}})
+      .then(resp => {
+        setSubmitting(false);
+      })
+      .catch(({networkError, graphQLErrors}) => {
+        setSubmitting(false);
+        const errors = [
+          ...graphQLErrors.map(({message}) => message),
+          networkError.message,
+        ];
+        setErrors(errors);
+      });
+  };
+
   return (
-    <Formik
-      initialValues={{
-        userId: null,
+    <Modal
+      open={true}
+      onClose={() => {
+        setErrors('');
+        onCloseDialog();
       }}
-      validate={values => {
-        let errors = {};
-        if (!values.userId) {
-          errors.userId = 'Required';
-        }
-        return errors;
-      }}
-      onSubmit={onSubmit}
+      closeIcon
+      size="tiny"
     >
-      {formikProps => (
-        <Modal
-          open={open}
-          onClose={() => {
-            setErrors('');
-            onCloseDialog();
+      <Modal.Header content="Add Collaborators" />
+      <Modal.Content>
+        <Formik
+          initialValues={{
+            userId: null,
           }}
-          closeIcon
-          size="tiny"
+          validate={values => {
+            let errors = {};
+            if (!values.userId) {
+              errors.userId = 'Required';
+            }
+            return errors;
+          }}
+          onSubmit={onSubmit}
         >
-          <Modal.Header content="Add a Collaborator" />
-          <Modal.Content as={Form} onSubmit={formikProps.handleSubmit}>
-            <AddCollaboratorForm
-              availableUsers={availableUsers || []}
-              formikProps={formikProps}
-            />
-            {usersError && (
-              <Message
-                negative
-                title="Problem loading users"
-                content={usersError}
+          {formikProps => (
+            <>
+              <AddCollaboratorForm
+                availableUsers={availableUsers || []}
+                formikProps={formikProps}
               />
-            )}
-            {errors && <Message negative title="Error" content={errors} />}
-          </Modal.Content>
-          <Modal.Actions as={Form} onSubmit={formikProps.handleSubmit}>
-            <Button onClick={onCloseDialog}>Cancel</Button>
-            <Button
-              primary
-              type="submit"
-              data-testid="add-button"
-              loading={formikProps.isSubmitting}
-              disabled={!formikProps.isValid || formikProps.isSubmitting}
-            >
-              Add
-            </Button>
-          </Modal.Actions>
-        </Modal>
-      )}
-    </Formik>
+              <Button
+                primary
+                type="submit"
+                data-testid="add-button"
+                loading={formikProps.isSubmitting}
+                disabled={!formikProps.isValid || formikProps.isSubmitting}
+                onClick={formikProps.handleSubmit}
+              >
+                Add Collaborator
+              </Button>
+              {usersError && (
+                <Message
+                  negative
+                  title="Problem loading users"
+                  content={usersError}
+                />
+              )}
+              {errors && <Message negative title="Error" content={errors} />}
+            </>
+          )}
+        </Formik>
+
+        <Divider horizontal content="OR" />
+
+        <Formik
+          initialValues={{
+            email: null,
+          }}
+          validate={values => {
+            let errors = {};
+            if (!values.email) {
+              errors.email = 'Required';
+            }
+            return errors;
+          }}
+          onSubmit={onSubmitInvite}
+        >
+          {formikProps => (
+            <InviteCollaboratorForm formikProps={formikProps} study={study} />
+          )}
+        </Formik>
+      </Modal.Content>
+      <Modal.Actions>
+        <Button onClick={onCloseDialog}>Close</Button>
+      </Modal.Actions>
+    </Modal>
   );
 };
 
