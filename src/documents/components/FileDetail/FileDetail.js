@@ -8,6 +8,7 @@ import {
   fileSortedVersions,
   fileLatestDate,
   fileLatestSize,
+  createDateSort,
 } from '../../utilities';
 import {fileTypeDetail} from '../../../common/enums';
 import FileDetailModal from './FileDetailModal';
@@ -43,14 +44,22 @@ const ActionButtons = ({
     </Header>
     <Segment raised attached secondary>
       <Button
+        as="a"
+        href={
+          fileNode.downloadUrl +
+          `/version/${
+            fileNode.versions.edges.sort(createDateSort)[0].node.kfId
+          }`
+        }
         primary
         icon="download"
         fluid
         size="mini"
         labelPosition="left"
-        onClick={e =>
-          downloadFile(studyId, fileNode.kfId, null, downloadFileMutation)
-        }
+        onClick={e => {
+          e.preventDefault();
+          downloadFile(studyId, fileNode.kfId, null, downloadFileMutation);
+        }}
         content="DOWNLOAD"
       />
       {(updateFile !== null || deleteFile !== null) && (

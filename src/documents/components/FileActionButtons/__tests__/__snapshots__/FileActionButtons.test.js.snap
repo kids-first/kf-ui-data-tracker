@@ -14,15 +14,17 @@ exports[`File Action Buttons renders correctly -- default look 1`] = `
         class="copy icon"
       />
     </button>
-    <button
+    <a
       class="ui basic compact icon button"
       data-testid="download-file"
+      href="http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167/version/FV_NVV741M1"
+      role="button"
     >
       <i
         aria-hidden="true"
         class="download icon"
       />
-    </button>
+    </a>
     <button
       class="ui basic compact icon button"
       data-testid="delete-button"
@@ -50,15 +52,17 @@ exports[`File Action Buttons renders correctly -- default look 2`] = `
         class="copy icon"
       />
     </button>
-    <button
+    <a
       class="ui basic compact icon button"
       data-testid="download-file"
+      href="http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167/version/FV_NVV741M1"
+      role="button"
     >
       <i
         aria-hidden="true"
         class="download icon"
       />
-    </button>
+    </a>
     <button
       class="ui basic compact icon button"
       data-testid="delete-button"
@@ -86,15 +90,17 @@ exports[`File Action Buttons renders correctly -- default look 3`] = `
         class="copy icon"
       />
     </button>
-    <button
+    <a
       class="ui basic compact icon button"
       data-testid="download-file"
+      href="http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167/version/FV_NVV741M1"
+      role="button"
     >
       <i
         aria-hidden="true"
         class="download icon"
       />
-    </button>
+    </a>
     <button
       class="ui basic compact icon button"
       data-testid="delete-button"
@@ -122,15 +128,17 @@ exports[`File Action Buttons renders correctly -- fluid look 1`] = `
         class="copy icon"
       />
     </button>
-    <button
+    <a
       class="ui basic compact icon button"
       data-testid="download-file"
+      href="http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167/version/FV_NVV741M1"
+      role="button"
     >
       <i
         aria-hidden="true"
         class="download icon"
       />
-    </button>
+    </a>
     <button
       class="ui basic compact icon button"
       data-testid="delete-button"
@@ -158,15 +166,17 @@ exports[`File Action Buttons renders correctly -- vertical look 1`] = `
         class="copy icon"
       />
     </button>
-    <button
+    <a
       class="ui basic compact icon button"
       data-testid="download-file"
+      href="http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167/version/FV_NVV741M1"
+      role="button"
     >
       <i
         aria-hidden="true"
         class="download icon"
       />
-    </button>
+    </a>
     <button
       class="ui basic compact icon button"
       data-testid="delete-button"

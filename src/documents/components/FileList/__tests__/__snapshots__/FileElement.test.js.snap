@@ -90,15 +90,17 @@ exports[`renders correctly 1`] = `
                 class="copy icon"
               />
             </button>
-            <button
+            <a
               class="ui basic compact icon button"
               data-testid="download-file"
+              href="http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167/version/FV_KCDKCDYR"
+              role="button"
             >
               <i
                 aria-hidden="true"
                 class="download icon"
               />
-            </button>
+            </a>
           </div>
         </td>
       </tr>
@@ -197,15 +199,17 @@ exports[`renders latest temporary state 1`] = `
                 class="copy icon"
               />
             </button>
-            <button
+            <a
               class="ui basic compact icon button"
               data-testid="download-file"
+              href="http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167/version/FV_KCDKCDYR"
+              role="button"
             >
               <i
                 aria-hidden="true"
                 class="download icon"
               />
-            </button>
+            </a>
           </div>
         </td>
       </tr>
@@ -304,15 +308,17 @@ exports[`renders loading state 1`] = `
                 class="copy icon"
               />
             </button>
-            <button
+            <a
               class="ui basic compact icon button"
               data-testid="download-file"
+              href="http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167/version/FV_KCDKCDYR"
+              role="button"
             >
               <i
                 aria-hidden="true"
                 class="download icon"
               />
-            </button>
+            </a>
           </div>
         </td>
       </tr>
