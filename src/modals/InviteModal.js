@@ -1,72 +1,124 @@
 import React from 'react';
 import {useQuery} from '@apollo/react-hooks';
-import {Button, Divider, Dropdown, Form, Grid, Modal} from 'semantic-ui-react';
+import {Button, Divider, Icon, List, Message, Modal} from 'semantic-ui-react';
 import {Formik} from 'formik';
-import {ALL_USERS, ALL_STUDIES, ALL_GROUPS} from '../state/queries';
-import {InviteCollaboratorForm, LinkStudyForm} from '../forms';
-import {StudySelector} from '../components/StudySelector';
+import {ALL_STUDIES, ALL_GROUPS} from '../state/queries';
+import {InviteForm} from '../forms';
 
 /**
+ * Modal to invite a user to the Data Tracker by email.
+ * This is the controller that handles the form submission and state.
  */
-const InviteModal = ({
-  open,
-  addCollaborator,
-  inviteCollaborator,
-  onCloseDialog,
-  users,
-}) => {
-  const {data: usersData} = useQuery(ALL_USERS);
+const InviteModal = ({open, onCloseDialog}) => {
   const {data: studiesData} = useQuery(ALL_STUDIES);
   const {data: groupsData} = useQuery(ALL_GROUPS);
   const studies = studiesData && studiesData.allStudies.edges;
+  const groups =
+    groupsData && groupsData.allGroups && groupsData.allGroups.edges;
 
-  const groupOptions =
-    groupsData &&
-    groupsData.allGroups.edges.map(({node}) => ({
-      key: node.name,
-      text: node.name,
-      value: node.id,
-    }));
+  const formatErrors = errors => {
+    return (
+      <List bulleted>
+        {errors.map(msg => (
+          <List.Item>{msg}</List.Item>
+        ))}
+      </List>
+    );
+  };
+
+  const onSubmit = (values, {setErrors, setStatus, setSubmitting}) => {
+    setSubmitting(true);
+    setStatus({
+      icon: 'warning',
+      header: 'Error',
+      content: formatErrors(['error']),
+      negative: true,
+    });
+  };
 
   return (
-    <Modal open={true} onClose={onCloseDialog} closeIcon size="small">
+    <Modal open={open} onClose={onCloseDialog} closeIcon size="small">
+      <Formik
+        initialValues={{
+          studies: [],
+          groups: [],
+          email: null,
+        }}
+        validate={values => {
+          let errors = {};
+          if (!values.email) {
+            errors.email = 'Required';
+          }
+          if (values.groups.length <= 0) {
+            errors.groups = 'Required';
+          }
+          if (values.studies.length <= 0) {
+            errors.studies = 'Required';
+          }
+          return errors;
+        }}
+        onSubmit={onSubmit}
+      >
+        {formikProps => (
+          <InviteModalContent
+            onCloseDialog={onCloseDialog}
+            studies={studies || []}
+            groups={groups || []}
+            formikProps={formikProps}
+          />
+        )}
+      </Formik>
+    </Modal>
+  );
+};
+
+/**
+ * Modal content which renders the actual modal and form
+ */
+const InviteModalContent = ({onCloseDialog, studies, groups, formikProps}) => {
+  const {isSubmitting, isValid, handleSubmit, status} = formikProps;
+
+  return (
+    <>
       <Modal.Header content="Invite Users to the Data Tracker" />
       <Modal.Content>
         <Modal.Description>
-          Send users an invitation email with a refferal code that will
-          automatically add them to the appropriate studies after they log in
-          for the first time.
+          <Message icon info>
+            <Icon name="mail" />
+            <Message.Content>
+              <Message.Header>Invite a user by email</Message.Header>
+              Send users an invitation email with a refferal code that will
+              automatically add them to the appropriate studies after they log
+              in for the first time.
+            </Message.Content>
+          </Message>
         </Modal.Description>
         <Divider />
 
-        <Form.Field>
-          <label for="groups">
-            Permission groups this user will be added to
-          </label>
-          <Dropdown
-            fluid
-            multiple
-            selection
-            clearable
-            placeholder="Groups..."
-            options={groupOptions}
-          />
-        </Form.Field>
-        <Form.Field>
-          <label for="studies">Select studies to invite user to</label>
-          <StudySelector
-            fluid
-            studies={studies}
-            id="studies"
-            placeholder="Studies..."
-          />
-        </Form.Field>
-        <InviteCollaboratorForm />
+        <InviteForm
+          formikProps={formikProps}
+          studies={studies}
+          groups={groups}
+        />
+        {status && <Message {...status} />}
       </Modal.Content>
       <Modal.Actions>
-        <Button onClick={onCloseDialog}>Close</Button>
+        <Button onClick={() => onCloseDialog()}>Cancel</Button>
+        <Button
+          icon
+          primary
+          type="submit"
+          labelPosition="right"
+          data-testid="invite-button"
+          onClick={handleSubmit}
+          disabled={!isValid || isSubmitting}
+          loading={isSubmitting}
+        >
+          Send Email Invite
+          <Icon name="send" />
+        </Button>
       </Modal.Actions>
-    </Modal>
+    </>
   );
 };
 
