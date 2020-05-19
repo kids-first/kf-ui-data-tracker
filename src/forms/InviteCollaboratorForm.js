@@ -1,4 +1,5 @@
 import React from 'react';
+import {Formik} from 'formik';
 import {Form, Icon, List, Message} from 'semantic-ui-react';
 
 const InviteCollaboratorForm = ({formikProps, disabled}) => {
@@ -66,4 +67,22 @@ const InviteCollaboratorForm = ({formikProps, disabled}) => {
   );
 };
 
-export default InviteCollaboratorForm;
+const InviteForm = ({onSubmit}) => (
+  <Formik
+    initialValues={{
+      email: null,
+    }}
+    validate={values => {
+      let errors = {};
+      if (!values.email) {
+        errors.email = 'Required';
+      }
+      return errors;
+    }}
+    onSubmit={onSubmit}
+  >
+    {formikProps => <InviteCollaboratorForm formikProps={formikProps} />}
+  </Formik>
+);
+
+export default InviteForm;

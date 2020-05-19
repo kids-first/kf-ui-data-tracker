@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Formik} from 'formik';
 import {Message, Form, List} from 'semantic-ui-react';
 import defaultAvatar from '../assets/defaultAvatar.png';
 import {showuUserName} from '../common/notificationUtils';
@@ -93,4 +94,27 @@ AddCollaboratorForm.propTypes = {
   availableUsers: PropTypes.array,
 };
 
-export default AddCollaboratorForm;
+const AddForm = ({onSubmit, availableUsers}) => (
+  <Formik
+    initialValues={{
+      userId: null,
+    }}
+    validate={values => {
+      let errors = {};
+      if (!values.userId) {
+        errors.userId = 'Required';
+      }
+      return errors;
+    }}
+    onSubmit={onSubmit}
+  >
+    {formikProps => (
+      <AddCollaboratorForm
+        availableUsers={availableUsers || []}
+        formikProps={formikProps}
+      />
+    )}
+  </Formik>
+);
+
+export default AddForm;
