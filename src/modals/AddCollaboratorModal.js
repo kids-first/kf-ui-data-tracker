@@ -1,10 +1,17 @@
 import React from 'react';
 import {useQuery} from '@apollo/react-hooks';
-import {Button, Divider, Message, Modal} from 'semantic-ui-react';
+import {Button, Divider, Modal} from 'semantic-ui-react';
 import {Formik} from 'formik';
 import {ALL_USERS} from '../state/queries';
 import {AddCollaboratorForm, InviteCollaboratorForm} from '../forms';
 
+/**
+ * Renders forms to add collaborators to studies.
+ * If no addCollaborator function is passed, the add collaborator form with a
+ * user drop down will not be rendered.
+ * If no inviteCollaborator function is passed, the invite collaborator form
+ * with a text box to invite users by email will not be rendered.
+ */
 const AddCollaboratorModal = ({
   open,
   study,
@@ -13,7 +20,7 @@ const AddCollaboratorModal = ({
   onCloseDialog,
   users,
 }) => {
-  const {data: usersData, error: usersError} = useQuery(ALL_USERS);
+  const {data: usersData} = useQuery(ALL_USERS);
 
   const addedUsers = study.collaborators.edges.map(({node}) => node.id);
   const availableUsers =
@@ -68,57 +75,20 @@ const AddCollaboratorModal = ({
 
   return (
     <Modal open={open} onClose={onCloseDialog} closeIcon size="tiny">
-      <Modal.Header content="Add Collaborators" />
+      <Modal.Header content="Add Collaborators to Study" />
       <Modal.Content>
-        <Formik
-          initialValues={{
-            userId: null,
-          }}
-          validate={values => {
-            let errors = {};
-            if (!values.userId) {
-              errors.userId = 'Required';
-            }
-            return errors;
-          }}
-          onSubmit={onSubmitAdd}
-        >
-          {formikProps => (
-            <>
-              <AddCollaboratorForm
-                availableUsers={availableUsers || []}
-                formikProps={formikProps}
-              />
-              {usersError && (
-                <Message
-                  negative
-                  title="Problem loading users"
-                  content={usersError}
-                />
-              )}
-            </>
-          )}
-        </Formik>
-
-        <Divider horizontal content="OR" />
-
-        <Formik
-          initialValues={{
-            email: null,
-          }}
-          validate={values => {
-            let errors = {};
-            if (!values.email) {
-              errors.email = 'Required';
-            }
-            return errors;
-          }}
-          onSubmit={onSubmitInvite}
-        >
-          {formikProps => (
-            <InviteCollaboratorForm formikProps={formikProps} study={study} />
-          )}
-        </Formik>
+        <Modal.Description>
+          You are adding collaborators to the <b>{study.name}</b> study.
+          Collaborators will be able to see this study and its resources once
+          they are added.
+        </Modal.Description>
+        {addCollaborator && (
+          <AddForm availableUsers={availableUsers} onSubmit={onSubmitAdd} />
+        )}
+        {addCollaborator && inviteCollaborator && (
+          <Divider horizontal content="OR" />
+        )}
+        {inviteCollaborator && <InviteForm onSubmit={onSubmitInvite} />}
       </Modal.Content>
       <Modal.Actions>
         <Button onClick={onCloseDialog}>Close</Button>
@@ -126,5 +96,46 @@ const AddCollaboratorModal = ({
     </Modal>
   );
 };
+
+const AddForm = ({onSubmit, availableUsers}) => (
+  <Formik
+    initialValues={{
+      userId: null,
+    }}
+    validate={values => {
+      let errors = {};
+      if (!values.userId) {
+        errors.userId = 'Required';
+      }
+      return errors;
+    }}
+    onSubmit={onSubmit}
+  >
+    {formikProps => (
+      <AddCollaboratorForm
+        availableUsers={availableUsers || []}
+        formikProps={formikProps}
+      />
+    )}
+  </Formik>
+);
+
+const InviteForm = ({onSubmit}) => (
+  <Formik
+    initialValues={{
+      email: null,
+    }}
+    validate={values => {
+      let errors = {};
+      if (!values.email) {
+        errors.email = 'Required';
+      }
+      return errors;
+    }}
+    onSubmit={onSubmit}
+  >
+    {formikProps => <InviteCollaboratorForm formikProps={formikProps} />}
+  </Formik>
+);
 
 export default AddCollaboratorModal;
