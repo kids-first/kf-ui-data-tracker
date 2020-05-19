@@ -1,11 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Form, Label, Dropdown} from 'semantic-ui-react';
+import {Message, Form, List} from 'semantic-ui-react';
 import defaultAvatar from '../assets/defaultAvatar.png';
 import {showuUserName} from '../common/notificationUtils';
 
 const AddCollaboratorForm = ({formikProps, availableUsers, disabled}) => {
-  const {errors, touched, handleBlur, setFieldValue} = formikProps;
+  const {
+    errors,
+    touched,
+    handleBlur,
+    setFieldTouched,
+    setFieldValue,
+    status,
+  } = formikProps;
   const options =
     availableUsers && availableUsers.length > 0
       ? availableUsers
@@ -24,22 +31,35 @@ const AddCollaboratorForm = ({formikProps, availableUsers, disabled}) => {
           }))
       : [];
 
+  const formatErrors = errors => {
+    return (
+      <List bulleted>
+        {errors.map(msg => (
+          <List.Item>{msg}</List.Item>
+        ))}
+      </List>
+    );
+  };
+
   return (
-    <>
-      <Form.Field>
-        <label>Add a Collaborator:</label>
-        <Dropdown
+    <Form>
+      <p>Select a registered user to add as a collaborator.</p>
+      <Form.Group>
+        <Form.Dropdown
           selection
           search
           id="userId"
           name="userId"
+          className="expand"
+          autoComplete="off"
           disabled={options.length === 0 || disabled}
-          onBlur={handleBlur}
+          onBlur={() => handleBlur('userId')}
           options={options}
           placeholder={
             options.length === 0 ? 'There are no users to add' : 'Choose a user'
           }
           onChange={(e, {name, value}) => {
+            setFieldTouched('userId');
             setFieldValue('userId', value);
           }}
           error={
@@ -49,16 +69,22 @@ const AddCollaboratorForm = ({formikProps, availableUsers, disabled}) => {
             !disabled
           }
         />
-        {touched.userId &&
-          errors.userId &&
-          errors.userId.length > 0 &&
-          !disabled && (
-            <Label pointing basic color="red">
-              {errors.userId}
-            </Label>
-          )}
-      </Form.Field>
-    </>
+        <Form.Button
+          primary
+          type="submit"
+          data-testid="add-button"
+          loading={formikProps.isSubmitting}
+          disabled={!formikProps.isValid || formikProps.isSubmitting}
+          onClick={formikProps.handleSubmit}
+        >
+          Add Collaborator
+        </Form.Button>
+      </Form.Group>
+      {status && !touched.userId && <Message {...status} />}
+      {errors.length && (
+        <Message negative title="Error" content={formatErrors(errors)} />
+      )}
+    </Form>
   );
 };
 

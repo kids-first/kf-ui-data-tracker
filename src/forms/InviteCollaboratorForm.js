@@ -1,7 +1,7 @@
 import React from 'react';
 import {Form, Icon, List, Message} from 'semantic-ui-react';
 
-const InviteCollaboratorForm = ({formikProps, study, disabled}) => {
+const InviteCollaboratorForm = ({formikProps, disabled}) => {
   const {errors, touched, handleBlur, setFieldValue} = formikProps;
 
   const formatErrors = errors => {

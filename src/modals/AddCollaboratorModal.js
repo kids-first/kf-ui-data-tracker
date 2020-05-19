@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {useQuery} from '@apollo/react-hooks';
-import {Button, Divider, List, Message, Modal} from 'semantic-ui-react';
+import {Button, Divider, Message, Modal} from 'semantic-ui-react';
 import {Formik} from 'formik';
 import {ALL_USERS} from '../state/queries';
 import {AddCollaboratorForm, InviteCollaboratorForm} from '../forms';
@@ -13,7 +13,6 @@ const AddCollaboratorModal = ({
   onCloseDialog,
   users,
 }) => {
-  const [errors, setErrors] = useState('');
   const {data: usersData, error: usersError} = useQuery(ALL_USERS);
 
   const addedUsers = study.collaborators.edges.map(({node}) => node.id);
@@ -21,29 +20,32 @@ const AddCollaboratorModal = ({
     usersData &&
     usersData.allUsers.edges.filter(({node}) => !addedUsers.includes(node.id));
 
-  const onSubmit = (values, {setSubmitting}) => {
+  const onSubmitAdd = (
+    values,
+    {resetForm, setErrors, setStatus, setSubmitting},
+  ) => {
     setSubmitting(true);
     addCollaborator({variables: {study: study.id, user: values.userId}})
       .then(resp => {
         setSubmitting(false);
-        setErrors('');
-        onCloseDialog();
+        // Reset the state of the form so the user may add other collaborators
+        resetForm();
+        // Status keeps short hand props for the Message component
+        setStatus({
+          positive: true,
+          header: 'User Added',
+          content:
+            'The user was successfully added to the study as a collaborator',
+          icon: 'check circle',
+          size: 'small',
+        });
       })
-      .catch(err => {
+      .catch(({networkError, graphQLErrors}) => {
         setSubmitting(false);
-        const errors = (
-          <List bulleted>
-            {err.networkError &&
-              err.networkError.result.errors.map((err, i) => (
-                <List.Item key={i}>{err.message}</List.Item>
-              ))}
-            {err.graphQLErrors &&
-              err.graphQLErrors.map((err, i) => (
-                <List.Item key={i}>{err.message}</List.Item>
-              ))}
-          </List>
-        );
-
+        const errors = [
+          ...graphQLErrors.map(({message}) => message),
+          networkError.message,
+        ];
         setErrors(errors);
       });
   };
@@ -65,15 +67,7 @@ const AddCollaboratorModal = ({
   };
 
   return (
-    <Modal
-      open={true}
-      onClose={() => {
-        setErrors('');
-        onCloseDialog();
-      }}
-      closeIcon
-      size="tiny"
-    >
+    <Modal open={open} onClose={onCloseDialog} closeIcon size="tiny">
       <Modal.Header content="Add Collaborators" />
       <Modal.Content>
         <Formik
@@ -87,7 +81,7 @@ const AddCollaboratorModal = ({
             }
             return errors;
           }}
-          onSubmit={onSubmit}
+          onSubmit={onSubmitAdd}
         >
           {formikProps => (
             <>
@@ -95,16 +89,6 @@ const AddCollaboratorModal = ({
                 availableUsers={availableUsers || []}
                 formikProps={formikProps}
               />
-              <Button
-                primary
-                type="submit"
-                data-testid="add-button"
-                loading={formikProps.isSubmitting}
-                disabled={!formikProps.isValid || formikProps.isSubmitting}
-                onClick={formikProps.handleSubmit}
-              >
-                Add Collaborator
-              </Button>
               {usersError && (
                 <Message
                   negative
@@ -112,7 +96,6 @@ const AddCollaboratorModal = ({
                   content={usersError}
                 />
               )}
-              {errors && <Message negative title="Error" content={errors} />}
             </>
           )}
         </Formik>
