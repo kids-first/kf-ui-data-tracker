@@ -92,21 +92,6 @@ const FileElement = ({
             {fileName}
           </Link>
         </Header>
-        <small className="text-grey ml-10">
-          {justUpdated ? <Icon name="refresh" /> : null}
-          {latestDate ? (
-            <>
-              Modified{' '}
-              <TimeAgo
-                date={latestDate}
-                live={false}
-                title={longDate(latestDate)}
-              />
-            </>
-          ) : (
-            'Unknown time'
-          )}
-        </small>
         <p className="noMargin">
           {fileDescription ? <>{lengthLimit(fileDescription, 100)}</> : null}
         </p>
