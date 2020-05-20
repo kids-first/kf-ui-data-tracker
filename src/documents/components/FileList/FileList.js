@@ -2,6 +2,7 @@ import React, {useState, Fragment} from 'react';
 import PropTypes from 'prop-types';
 import FileElement from './FileElement';
 import {fileLatestStatus} from '../../utilities';
+import {DOCS_PER_PAGE} from '../../../common/globals';
 import {
   Header,
   Icon,
@@ -25,7 +26,6 @@ const FileList = ({
   selection,
   setSelection,
 }) => {
-  const perPage = 10;
   const [page, setPage] = useState(1);
   const handlePageClick = (e, {activePage}) => {
     setPage(activePage);
@@ -44,10 +44,10 @@ const FileList = ({
       setSelection(fileList.map(({node}) => node.kfId));
     }
   };
-  let pageCount = Math.ceil(fileList.length / perPage);
+  let pageCount = Math.ceil(fileList.length / DOCS_PER_PAGE);
   let paginatedList = fileList.slice(
-    perPage * (page - 1),
-    perPage * (page - 1) + perPage,
+    DOCS_PER_PAGE * (page - 1),
+    DOCS_PER_PAGE * (page - 1) + DOCS_PER_PAGE,
   );
   return (
     <Fragment>
@@ -69,7 +69,7 @@ const FileList = ({
         />
       )}
       {fileList.length ? (
-        <Table stackable selectable compact="very" celled>
+        <Table stackable selectable sortable compact="very" celled>
           <Table.Header>
             <Table.Row>
               <Table.HeaderCell
@@ -122,7 +122,7 @@ const FileList = ({
       )}
       {pageCount > 1 && (
         <Segment basic textAlign="right">
-          Showing {perPage} of {fileList.length} files{' '}
+          Showing {DOCS_PER_PAGE} of {fileList.length} files{' '}
           <Pagination
             firstItem={null}
             lastItem={null}
