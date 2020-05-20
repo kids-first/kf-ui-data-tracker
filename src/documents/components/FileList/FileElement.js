@@ -2,9 +2,10 @@ import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import {withRouter, Link} from 'react-router-dom';
 import TimeAgo from 'react-timeago';
-import {Header, Table, Icon, Checkbox, Popup} from 'semantic-ui-react';
+import {Table, Icon, Checkbox, Popup} from 'semantic-ui-react';
+import Markdown from 'react-markdown';
 import FileActionButtons from '../FileActionButtons/FileActionButtons';
-import {fileSortedVersions, fileLatestDate, lengthLimit} from '../../utilities';
+import {fileSortedVersions, fileLatestDate} from '../../utilities';
 import {fileTypeDetail} from '../../../common/enums';
 import {longDate} from '../../../common/dateUtils';
 import FileTags from '../FileDetail/FileTags';
@@ -52,7 +53,12 @@ const FileElement = ({
 }) => {
   const fileKfID = fileNode.kfId || 'unknown ID';
   const fileName = fileNode.name || 'unknown file name';
-  const fileDescription = fileNode.description || null;
+  // Show at most 5 lines of the description
+  const fileDescription =
+    fileNode.description
+      .split('\n')
+      .splice(0, 5)
+      .join('\n') || null;
   const sortedVersions = fileSortedVersions(fileNode);
   const latestDate = fileLatestDate(sortedVersions);
   const fileType =
@@ -83,18 +89,30 @@ const FileElement = ({
           wide="very"
           header={fileType.title || 'Unknown Type'}
           content={fileType.description || 'Unknown Type'}
-          trigger={<Icon name={fileType.icon || 'question'} size="big" />}
+          trigger={<Icon name={fileType.icon || 'question'} />}
         />
       </Table.Cell>
-      <Table.Cell className="px-20">
-        <Header size="medium" as="span">
-          <Link to={`/study/${match.params.kfId}/documents/${fileKfID}`}>
-            {fileName}
-          </Link>
-        </Header>
-        <p className="noMargin">
-          {fileDescription ? <>{lengthLimit(fileDescription, 100)}</> : null}
-        </p>
+      <Table.Cell>
+        {fileDescription.length > 3 && (
+          <Popup
+            offset="-75%"
+            wide="very"
+            position="top left"
+            trigger={<Icon name="info circle" />}
+            content={
+              <Markdown
+                source={fileDescription}
+                renderers={{
+                  image: Image,
+                  table: props => <Table>{props.children}</Table>,
+                }}
+              />
+            }
+          />
+        )}
+        <Link to={`/study/${match.params.kfId}/documents/${fileKfID}`}>
+          {fileName}
+        </Link>
       </Table.Cell>
       <Table.Cell textAlign="center" width="4">
         <FileTags fileNode={fileNode} updateFile={updateFile} />

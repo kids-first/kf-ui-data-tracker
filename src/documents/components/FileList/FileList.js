@@ -107,7 +107,7 @@ const FileList = ({
         />
       )}
       {fileList.length ? (
-        <Table stackable selectable sortable compact="very" celled>
+        <Table singleLine stackable selectable sortable compact="very" celled>
           <Table.Header>
             <Table.Row>
               <Table.HeaderCell
