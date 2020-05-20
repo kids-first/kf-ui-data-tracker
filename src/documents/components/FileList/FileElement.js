@@ -99,6 +99,9 @@ const FileElement = ({
       <Table.Cell textAlign="center" width="4">
         <FileTags fileNode={fileNode} updateFile={updateFile} />
       </Table.Cell>
+      <Table.Cell textAlign="center" width="1">
+        <TimeAgo date={latestDate} live={false} title={longDate(latestDate)} />
+      </Table.Cell>
       <Table.Cell textAlign="center">
         <FileActionButtons
           fluid

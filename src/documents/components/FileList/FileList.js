@@ -13,6 +13,16 @@ import {
   Checkbox,
 } from 'semantic-ui-react';
 
+const dateSort = (a, b) => new Date(a) - new Date(b);
+const stringSort = (a, b) =>
+  a !== null && b !== null ? a.localeCompare(b) : 0;
+
+const columnSorts = {
+  type: (f1, f2) => stringSort(f1.node.fileType, f2.node.fileType),
+  updatedAt: (f1, f2) => dateSort(fileLatestStatus(f1), fileLatestStatus(f2)),
+  name: (f1, f2) => stringSort(f1.node.name, f2.node.name),
+};
+
 /**
  * Displays list of study files
  */
@@ -27,6 +37,24 @@ const FileList = ({
   setSelection,
 }) => {
   const [page, setPage] = useState(1);
+  const [sorting, setSorting] = useState({
+    column: 'updatedAt',
+    direction: 'descending',
+  });
+
+  const handleSort = column => () => {
+    const direction =
+      sorting.column !== column
+        ? 'ascending'
+        : sorting.direction === 'ascending'
+        ? 'descending'
+        : 'ascending';
+    setSorting({
+      column,
+      direction,
+    });
+  };
+
   const handlePageClick = (e, {activePage}) => {
     setPage(activePage);
   };
@@ -44,8 +72,18 @@ const FileList = ({
       setSelection(fileList.map(({node}) => node.kfId));
     }
   };
-  let pageCount = Math.ceil(fileList.length / DOCS_PER_PAGE);
-  let paginatedList = fileList.slice(
+
+  const sorted = fileList
+    .concat()
+    .sort(
+      (f1, f2) =>
+        columnSorts.hasOwnProperty(sorting.column) &&
+        columnSorts[sorting.column](f1, f2),
+    );
+  const ordered = sorting.direction === 'ascending' ? sorted : sorted.reverse();
+
+  let pageCount = Math.ceil(ordered.length / DOCS_PER_PAGE);
+  let paginatedList = ordered.slice(
     DOCS_PER_PAGE * (page - 1),
     DOCS_PER_PAGE * (page - 1) + DOCS_PER_PAGE,
   );
@@ -85,13 +123,32 @@ const FileList = ({
                   checked={selection.length === fileList.length}
                 />
               </Table.HeaderCell>
-              <Table.HeaderCell textAlign="center" width="1">
+              <Table.HeaderCell
+                sorted={sorting.column === 'type' ? sorting.direction : null}
+                textAlign="center"
+                width="1"
+                onClick={handleSort('type')}
+              >
                 Type
               </Table.HeaderCell>
-              <Table.HeaderCell className="px-20">
+              <Table.HeaderCell
+                sorted={sorting.column === 'name' ? sorting.direction : null}
+                onClick={handleSort('name')}
+                className="px-20"
+              >
                 Document Details
               </Table.HeaderCell>
               <Table.HeaderCell textAlign="center">Tags</Table.HeaderCell>
+              <Table.HeaderCell
+                sorted={
+                  sorting.column === 'updatedAt' ? sorting.direction : null
+                }
+                textAlign="center"
+                width="1"
+                onClick={handleSort('updatedAt')}
+              >
+                Last Updated
+              </Table.HeaderCell>
               <Table.HeaderCell textAlign="center" width="2">
                 Actions
               </Table.HeaderCell>
