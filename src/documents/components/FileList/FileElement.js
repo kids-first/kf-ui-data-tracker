@@ -84,14 +84,17 @@ const FileElement = ({
       >
         <Checkbox data-testid="file-select" checked={selected} />
       </Table.Cell>
-      <Table.Cell textAlign="center">
-        <Popup
-          wide="very"
-          header={fileType.title || 'Unknown Type'}
-          content={fileType.description || 'Unknown Type'}
-          trigger={<Icon name={fileType.icon || 'question'} />}
-        />
-      </Table.Cell>
+      <Popup
+        wide="very"
+        mouseEnterDelay={500}
+        header={fileType.title || 'Unknown Type'}
+        content={fileType.description || 'Unknown Type'}
+        trigger={
+          <Table.Cell textAlign="center">
+            <Icon name={fileType.icon || 'question'} />
+          </Table.Cell>
+        }
+      />
       <Table.Cell>
         {fileDescription.length > 3 && (
           <Popup
