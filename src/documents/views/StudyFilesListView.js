@@ -20,7 +20,6 @@ import UploadWizard from '../modals/UploadWizard/UploadWizard';
 import NotFoundView from '../../views/NotFoundView';
 import ListFilterBar from '../components/ListFilterBar/ListFilterBar';
 import BatchActionBar from '../components/ListFilterBar/BatchActionBar';
-import {createDateSort, modifiedDateSort} from '../utilities';
 import {hasPermission} from '../../common/permissions';
 
 /**
@@ -49,21 +48,16 @@ const StudyListSkeleton = () => (
 );
 
 const filterFiles = (fileList, filters) => {
-  const sortFuncs = {
-    createDate: createDateSort,
-    modifyDate: modifiedDateSort,
-    default: modifiedDateSort,
-  };
-  var sortedList = fileList.sort(
-    sortFuncs[filters.sortMethod] || sortFuncs.default,
-  );
-  sortedList = sortedList.filter(obj =>
+  // Filter by fileType
+  var filteredList = fileList.filter(obj =>
     obj.node.fileType.includes(filters.typeFilterStatus),
   );
-  sortedList = sortedList.filter(obj =>
+  // Filter by tags
+  filteredList = filteredList.filter(obj =>
     obj.node.tags.join(',').includes(filters.tagFilterStatus),
   );
-  sortedList = sortedList.filter(
+  // Filter by search string
+  filteredList = filteredList.filter(
     obj =>
       obj.node.name
         .toLowerCase()
@@ -72,7 +66,7 @@ const filterFiles = (fileList, filters) => {
         .toLowerCase()
         .includes(filters.searchString.toLowerCase()),
   );
-  return sortedList;
+  return filteredList;
 };
 
 /**
@@ -126,8 +120,6 @@ const StudyFilesListView = ({
   const [uploadedFile, setFile] = useState(false);
   const [updateFileError, setUpdateFileError] = useState(null);
   const [filters, setFilters] = useState({
-    sortMethod: '',
-    sortDirection: 'ascending',
     typeFilterStatus: '',
     tagFilterStatus: '',
     searchString: '',
@@ -136,10 +128,7 @@ const StudyFilesListView = ({
 
   // Computed state
   const files = !loading && studyByKfId ? studyByKfId.files.edges : [];
-  const filteredFiles =
-    filters.sortDirection === 'ascending'
-      ? filterFiles(files, filters)
-      : filterFiles(files, filters).reverse();
+  const filteredFiles = filterFiles(files, filters);
 
   if (!loading && studyByKfId === null) {
     return (

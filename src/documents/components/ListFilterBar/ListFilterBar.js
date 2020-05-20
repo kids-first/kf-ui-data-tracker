@@ -14,7 +14,6 @@ import {fileTypeDetail, defaultTagOptions} from '../../../common/enums';
  */
 const ListFilterBar = ({fileList, filters, setFilters}) => {
   const [showFilter, setShowFilter] = useState(false);
-  const [showSort, setShowSort] = useState(false);
 
   var defaultTags = {};
   defaultTagOptions.map(tagObj => (defaultTags[tagObj.key] = tagObj.text));
@@ -44,19 +43,6 @@ const ListFilterBar = ({fileList, filters, setFilters}) => {
     ),
   }));
 
-  const sortOptions = [
-    {
-      key: 'createDate',
-      value: 'createDate',
-      text: 'Create date',
-    },
-    {
-      key: 'modifyDate',
-      value: 'modifyDate',
-      text: 'Modified date',
-    },
-  ];
-
   return (
     <>
       <Responsive
@@ -65,14 +51,6 @@ const ListFilterBar = ({fileList, filters, setFilters}) => {
         basic
         className="noHorizontalPadding"
       >
-        <Button
-          data-testid="show-sort-button"
-          basic={!showSort}
-          floated="right"
-          primary={filters.sortMethod !== ''}
-          icon="sort"
-          onClick={() => setShowSort(!showSort)}
-        />
         <Button
           data-testid="show-filter-button"
           basic={!showFilter}
@@ -124,43 +102,6 @@ const ListFilterBar = ({fileList, filters, setFilters}) => {
                 setFilters({...filters, typeFilterStatus: value})
               }
             />
-          </Segment>
-        )}
-        {showSort && (
-          <Segment>
-            <p className="mb-5">
-              <Icon name="sort" />
-              Sort by:
-            </p>
-            <Button
-              icon
-              basic
-              floated="right"
-              data-testid="sort-direction-button"
-              onClick={() => {
-                if (filters.sortDirection === 'ascending') {
-                  setFilters({...filters, sortDirection: 'descending'});
-                } else {
-                  setFilters({...filters, sortDirection: 'ascending'});
-                }
-              }}
-            >
-              <Icon name={'sort content ' + filters.sortDirection} />
-            </Button>
-            <div className="mr-40">
-              <Dropdown
-                fluid
-                selection
-                clearable
-                selectOnBlur={false}
-                value={filters.sortMethod}
-                options={sortOptions}
-                placeholder="Date option"
-                onChange={(e, {value}) =>
-                  setFilters({...filters, sortMethod: value})
-                }
-              />
-            </div>
           </Segment>
         )}
       </Responsive>
@@ -216,42 +157,6 @@ const ListFilterBar = ({fileList, filters, setFilters}) => {
               }
             />
           </Segment>
-          <Segment
-            className="noMargin noVerticalPadding noHorizontalPadding"
-            basic
-            compact
-            floated="right"
-          >
-            <Dropdown
-              labeled
-              button
-              className="icon noMargin"
-              placeholder="Date option"
-              icon="sort"
-              selection
-              clearable
-              selectOnBlur={false}
-              value={filters.sortMethod}
-              options={sortOptions}
-              onChange={(e, {value}) =>
-                setFilters({...filters, sortMethod: value})
-              }
-            />
-            <Button
-              icon
-              basic
-              data-testid="sort-direction-button"
-              onClick={() => {
-                if (filters.sortDirection === 'ascending') {
-                  setFilters({...filters, sortDirection: 'descending'});
-                } else {
-                  setFilters({...filters, sortDirection: 'ascending'});
-                }
-              }}
-            >
-              <Icon name={'sort content ' + filters.sortDirection} />
-            </Button>
-          </Segment>
         </Segment>
       </Responsive>
       <Responsive
@@ -291,39 +196,6 @@ const ListFilterBar = ({fileList, filters, setFilters}) => {
               setFilters({...filters, typeFilterStatus: value})
             }
           />
-        </Segment>
-        <Segment
-          className="noMargin noVerticalPadding noHorizontalPadding"
-          basic
-          compact
-          floated="left"
-        >
-          <span className="smallLabel">Sort by:</span>
-          <Dropdown
-            selection
-            clearable
-            selectOnBlur={false}
-            value={filters.sortMethod}
-            options={sortOptions}
-            placeholder="Date option"
-            onChange={(e, {value}) =>
-              setFilters({...filters, sortMethod: value})
-            }
-          />
-          <Button
-            icon
-            basic
-            data-testid="sort-direction-button"
-            onClick={() => {
-              if (filters.sortDirection === 'ascending') {
-                setFilters({...filters, sortDirection: 'descending'});
-              } else {
-                setFilters({...filters, sortDirection: 'ascending'});
-              }
-            }}
-          >
-            <Icon name={'sort content ' + filters.sortDirection} />
-          </Button>
         </Segment>
         <Input
           fluid
