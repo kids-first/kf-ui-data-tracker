@@ -39,12 +39,11 @@ context('Admin Document List', () => {
       .should('eq', 3);
 
     // Add: Sort documents by create date using the date dropdown and change order
-    cy.contains('div', 'Date option').click();
-    cy.contains('span', 'Create date').click();
+    cy.contains('th', 'Last Updated').click();
     cy.get('td')
       .eq(2)
       .should('contain', 'cover');
-    cy.get('[data-testid="sort-direction-button"]').click();
+    cy.contains('th', 'Last Updated').click();
     cy.get('td')
       .eq(2)
       .should('contain', 'wonder');

@@ -23,9 +23,7 @@ context('Admin Document Detail', () => {
       'The DRC has requested that you make changes to some of your documents.',
     ).should('exist');
     // Click on the first document to go to detail page
-    cy.get('tr')
-      .eq(5)
-      .click();
+    cy.contains('a', 'white.tiff').click();
     // Edit document approval status
     cy.get('[data-testid="edit-button"]', {timeout: 10000}).click();
     cy.get('[name="file_status"]').click();
@@ -58,9 +56,7 @@ context('Admin Document Detail', () => {
       .its('length')
       .should('eq', 6);
     // Click on the first document to go to detail page
-    cy.get('tr')
-      .eq(5)
-      .click();
+    cy.contains('a', 'white.tiff').click();
     // List out all the document versions
     cy.get('table')
       .find('tr')
@@ -93,14 +89,12 @@ context('Investigator Document Detail', () => {
       .its('length')
       .should('eq', 6);
     // Click on the first document to go to detail page
-    cy.get('tr')
-      .eq(4)
-      .click();
+    cy.contains('a', 'young.jpg').click();
     // List out all the document versions
     cy.get('table')
       .find('tr')
       .its('length')
-      .should('eq', 4);
+      .should('eq', 6);
     // No delete button
     cy.get('i').should('not.have.class', 'trash');
     // No edit button
