@@ -200,6 +200,10 @@ context('Unauthed Study List', () => {
     // they are not allowed to view any studies
     cy.get('table').should('not.exist');
   });
+  it('redirects to welcome page', () => {
+    cy.url().should('contain', '/welcome');
+    cy.contains('h1', 'Welcome').should('exist');
+  });
 });
 
 context('Investigator Study List', () => {

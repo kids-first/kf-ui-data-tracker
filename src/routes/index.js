@@ -20,6 +20,7 @@ import {
   CollaboratorsView,
   NewStudySelectionView,
   NotFoundView,
+  WelcomeView,
 } from '../views';
 import {
   StudyFilesListView,
@@ -65,6 +66,11 @@ const Routes = () => (
       />
       <Switch>
         <PrivateRoute exact path="/" component={StudyListView} />
+        <TrackedRoute
+          path="/welcome"
+          component={WelcomeView}
+          scope={['welcome']}
+        />
         <RestrictedRoute
           exact
           path="/events"

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Helmet} from 'react-helmet';
 import {useQuery} from '@apollo/react-hooks';
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 import {ALL_STUDIES, MY_PROFILE, GET_RELEASED_STUDY} from '../state/queries';
 import StudyList from '../components/StudyList/StudyList';
 import {Button, Message, Container, Segment, Icon} from 'semantic-ui-react';
@@ -37,6 +37,19 @@ const StudyListView = ({history}) => {
     });
   }
 
+  if (
+    myProfile &&
+    (!hasPermission(myProfile, 'view_study') &&
+      !hasPermission(myProfile, 'view_my_study'))
+  ) {
+    return (
+      <Redirect
+        to={{
+          pathname: '/welcome',
+        }}
+      />
+    );
+  }
   if (error)
     return (
       <Container as={Segment} basic>
