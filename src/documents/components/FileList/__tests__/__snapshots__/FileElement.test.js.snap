@@ -31,38 +31,21 @@ exports[`renders correctly 1`] = `
         >
           <i
             aria-hidden="true"
-            class="hospital big icon"
+            class="hospital icon"
           />
         </td>
         <td
-          class="px-20"
+          class=""
         >
-          <span
-            class="ui medium header"
+          <i
+            aria-hidden="true"
+            class="info circle icon"
+          />
+          <a
+            href="/study/undefined/documents/SF_5ZPEM167"
           >
-            <a
-              href="/study/undefined/documents/SF_5ZPEM167"
-            >
-              organization.jpeg
-            </a>
-          </span>
-          <small
-            class="text-grey ml-10"
-          >
-            Modified
-             
-            <time
-              datetime="2018-09-27T05:32:26.000Z"
-              title="27 Sept 2018"
-            >
-              7 months ago
-            </time>
-          </small>
-          <p
-            class="noMargin"
-          >
-            Month necessary animal end standard case. View system operation message decade. Actually sing becaus...
-          </p>
+            organization.jpeg
+          </a>
         </td>
         <td
           class="center aligned four wide"
@@ -74,6 +57,16 @@ exports[`renders correctly 1`] = `
               class="text-grey"
             />
           </div>
+        </td>
+        <td
+          class="center aligned one wide"
+        >
+          <time
+            datetime="2018-09-27T05:32:26.000Z"
+            title="27 Sept 2018"
+          >
+            7 months ago
+          </time>
         </td>
         <td
           class="center aligned"
@@ -140,38 +133,21 @@ exports[`renders latest temporary state 1`] = `
         >
           <i
             aria-hidden="true"
-            class="hospital big icon"
+            class="hospital icon"
           />
         </td>
         <td
-          class="px-20"
+          class=""
         >
-          <span
-            class="ui medium header"
+          <i
+            aria-hidden="true"
+            class="info circle icon"
+          />
+          <a
+            href="/study/undefined/documents/SF_5ZPEM167"
           >
-            <a
-              href="/study/undefined/documents/SF_5ZPEM167"
-            >
-              organization.jpeg
-            </a>
-          </span>
-          <small
-            class="text-grey ml-10"
-          >
-            Modified
-             
-            <time
-              datetime="2018-09-27T05:32:27.000Z"
-              title="27 Sept 2018"
-            >
-              7 months ago
-            </time>
-          </small>
-          <p
-            class="noMargin"
-          >
-            Month necessary animal end standard case. View system operation message decade. Actually sing becaus...
-          </p>
+            organization.jpeg
+          </a>
         </td>
         <td
           class="center aligned four wide"
@@ -183,6 +159,16 @@ exports[`renders latest temporary state 1`] = `
               class="text-grey"
             />
           </div>
+        </td>
+        <td
+          class="center aligned one wide"
+        >
+          <time
+            datetime="2018-09-27T05:32:27.000Z"
+            title="27 Sept 2018"
+          >
+            7 months ago
+          </time>
         </td>
         <td
           class="center aligned"
@@ -249,38 +235,21 @@ exports[`renders loading state 1`] = `
         >
           <i
             aria-hidden="true"
-            class="hospital big icon"
+            class="hospital icon"
           />
         </td>
         <td
-          class="px-20"
+          class=""
         >
-          <span
-            class="ui medium header"
+          <i
+            aria-hidden="true"
+            class="info circle icon"
+          />
+          <a
+            href="/study/undefined/documents/SF_5ZPEM167"
           >
-            <a
-              href="/study/undefined/documents/SF_5ZPEM167"
-            >
-              organization.jpeg
-            </a>
-          </span>
-          <small
-            class="text-grey ml-10"
-          >
-            Modified
-             
-            <time
-              datetime="2018-09-27T05:32:26.000Z"
-              title="27 Sept 2018"
-            >
-              7 months ago
-            </time>
-          </small>
-          <p
-            class="noMargin"
-          >
-            Month necessary animal end standard case. View system operation message decade. Actually sing becaus...
-          </p>
+            organization.jpeg
+          </a>
         </td>
         <td
           class="center aligned four wide"
@@ -292,6 +261,16 @@ exports[`renders loading state 1`] = `
               class="text-grey"
             />
           </div>
+        </td>
+        <td
+          class="center aligned one wide"
+        >
+          <time
+            datetime="2018-09-27T05:32:26.000Z"
+            title="27 Sept 2018"
+          >
+            7 months ago
+          </time>
         </td>
         <td
           class="center aligned"

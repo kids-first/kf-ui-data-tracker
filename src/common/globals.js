@@ -12,3 +12,5 @@ export const STUDY_DOCS_SIMILARITY_THRESHOLD = 0.9;
 export const DOC_TITLE_FILENAME_SIMILARITY_THRESHOLD = 0.9;
 export const DEV_BAR = process.env.REACT_APP_DEV_BAR;
 
+// The number of documents shown on one page in a study's documents tab
+export const DOCS_PER_PAGE = 10;
