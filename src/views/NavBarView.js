@@ -50,7 +50,7 @@ const NavBarView = ({match, location, history}) => {
     <section id="study">
       <Segment secondary basic>
         <StudyHeader
-          {...studyByKfId}
+          study={studyByKfId}
           loading={loading}
           showModal={setShowModal}
           newStudy={newStudy}
