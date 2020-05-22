@@ -1,5 +1,4 @@
 import React from 'react';
-import {Label, Popup} from 'semantic-ui-react';
 import BaseHelper from './BaseHelper';
 import addDocuments from '../../../assets/add_file.svg';
 

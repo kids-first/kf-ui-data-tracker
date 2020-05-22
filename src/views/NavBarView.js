@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {useQuery} from '@apollo/react-hooks';
-import {Router, Route, Switch} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import {GET_STUDY_BY_ID, MY_PROFILE} from '../state/queries';
 import StudyHeader from '../components/StudyHeader/StudyHeader';
 import {StudyNavBar} from '../components/StudyNavBar';
