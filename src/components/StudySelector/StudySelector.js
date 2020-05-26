@@ -12,7 +12,7 @@ const StudySelector = ({studies, ...props}) => {
           .sort(({node: n1}, {node: n2}) => n1.kfId.localeCompare(n2.kfId))
           .map(({node}) => ({
             key: node.id,
-            value: node.name,
+            value: node.id,
             content: (
               <>
                 <b>{node.kfId}</b> - {node.name}
