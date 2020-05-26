@@ -3,7 +3,7 @@
 exports[`renders StudyNavBar correctly -- beta look 1`] = `
 <div>
   <div
-    class="ui pink pointing secondary menu"
+    class="ui pink compact pointing secondary menu"
   >
     <a
       class="item"
@@ -43,7 +43,7 @@ exports[`renders StudyNavBar correctly -- beta look 1`] = `
 exports[`renders StudyNavBar correctly -- default look 1`] = `
 <div>
   <div
-    class="ui pink pointing secondary menu"
+    class="ui pink compact pointing secondary menu"
   >
     <a
       class="item"

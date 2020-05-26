@@ -11,7 +11,7 @@ context('Admin Document List', () => {
     cy.visit('/study/SD_ODWXI1TE/documents');
   });
 
-  it('document filter, sort and search actions', () => {
+  it('document filter and search actions', () => {
     // All documents should be displayed
     cy.get('table')
       .find('tr')
@@ -38,16 +38,6 @@ context('Admin Document List', () => {
       .its('length')
       .should('eq', 3);
 
-    // Add: Sort documents by create date using the date dropdown and change order
-    cy.contains('th', 'Last Updated').click();
-    cy.get('td')
-      .eq(2)
-      .should('contain', 'cover');
-    cy.contains('th', 'Last Updated').click();
-    cy.get('td')
-      .eq(2)
-      .should('contain', 'wonder');
-
     // Add: Filter the document by tag using the tag dropdown with 1 return
     cy.contains('div', 'Tag').click();
     cy.contains('span', 'dbGaP').click();
@@ -55,6 +45,41 @@ context('Admin Document List', () => {
       .find('tr')
       .its('length')
       .should('eq', 2);
+  });
+
+  it('sorts documents', () => {
+    // All documents should be displayed
+    cy.get('table')
+      .find('tr')
+      .its('length')
+      .should('eq', 6);
+
+    // Sort documents by create date using the last updated column
+    cy.contains('th', 'Last Updated').click();
+    cy.get('tr')
+      .eq(1)
+      .should('contain', 'old.doc');
+    cy.get('tr')
+      .eq(5)
+      .should('contain', 'wonder.wav');
+
+    // Reverse sort
+    cy.contains('th', 'Last Updated').click();
+    cy.get('tr')
+      .eq(5)
+      .should('contain', 'old.doc');
+    cy.get('tr')
+      .eq(1)
+      .should('contain', 'wonder.wav');
+
+    // Sort by name
+    cy.contains('th', 'Document Details').click();
+    cy.get('tr')
+      .eq(1)
+      .should('contain', 'cover.key');
+    cy.get('tr')
+      .eq(5)
+      .should('contain', 'word.js');
   });
 
   it('List out document with delete buttons', () => {

@@ -343,3 +343,16 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.ui.button.text-button,
+.ui.button.text-button:hover,
+.ui.button.text-button:active,
+.ui.button.text-button:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background: none;
+  text-decoration: underline;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+}

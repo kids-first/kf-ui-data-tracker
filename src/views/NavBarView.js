@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
 import {useQuery} from '@apollo/react-hooks';
+import {Route, Switch} from 'react-router-dom';
 import {GET_STUDY_BY_ID, MY_PROFILE} from '../state/queries';
 import StudyHeader from '../components/StudyHeader/StudyHeader';
 import {StudyNavBar} from '../components/StudyNavBar';
 import {Container, Segment, Message} from 'semantic-ui-react';
 import CreatingStudyModal from '../modals/CreatingStudyModal';
+import {DocumentListHelp} from '../documents/components/helpers';
 
 const NavBarView = ({match, location, history}) => {
   const {loading, data, error} = useQuery(GET_STUDY_BY_ID, {
@@ -56,6 +58,9 @@ const NavBarView = ({match, location, history}) => {
       </Segment>
       <Container>
         <StudyNavBar isBeta={isBeta} isResearch={isResearch} />
+        <Switch>
+          <Route path="/study/:kfId/documents" component={DocumentListHelp} />
+        </Switch>
       </Container>
       {newStudy && (
         <CreatingStudyModal
