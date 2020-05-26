@@ -264,3 +264,32 @@ export const CHANGE_PHENOTYPE_STATUS = gql`
   }
   ${STUDY_INFO_FIELDS}
 `;
+
+export const CREATE_REFERRAL_TOKEN = gql`
+  mutation createReferralToken($input: ReferralTokenInput!) {
+    createReferralToken(input: $input) {
+      referralToken {
+        id
+        uuid
+        email
+        claimed
+        createdAt
+        isValid
+        groups {
+          edges {
+            node {
+              id
+            }
+          }
+        }
+        studies {
+          edges {
+            node {
+              id
+            }
+          }
+        }
+      }
+    }
+  }
+`;

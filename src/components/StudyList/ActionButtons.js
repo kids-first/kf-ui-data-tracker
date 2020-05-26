@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import {useQuery, useMutation} from '@apollo/react-hooks';
-import {ADD_COLLABORATOR} from '../../state/mutations';
+import {ADD_COLLABORATOR, CREATE_REFERRAL_TOKEN} from '../../state/mutations';
 import {GET_STUDY_BY_ID, MY_PROFILE} from '../../state/queries';
 import {Amplitude} from '@amplitude/react-amplitude';
 import {Button, Label, Icon, Popup, Table} from 'semantic-ui-react';
@@ -77,6 +77,7 @@ const ActionButtons = ({study}) => {
       },
     ],
   });
+  const [createToken] = useMutation(CREATE_REFERRAL_TOKEN);
 
   if (loading) return <span>loading</span>;
 
@@ -165,6 +166,7 @@ const ActionButtons = ({study}) => {
         open={showCollaborators}
         onCloseDialog={() => setShowCollaborators(false)}
         addCollaborator={addCollaborator}
+        inviteCollaborator={createToken}
       />
     </Amplitude>
   );

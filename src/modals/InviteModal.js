@@ -1,8 +1,9 @@
 import React from 'react';
-import {useQuery} from '@apollo/react-hooks';
+import {useQuery, useMutation} from '@apollo/react-hooks';
 import {Button, Divider, Icon, List, Message, Modal} from 'semantic-ui-react';
 import {Formik} from 'formik';
 import {ALL_STUDIES, ALL_GROUPS} from '../state/queries';
+import {CREATE_REFERRAL_TOKEN} from '../state/mutations';
 import {InviteForm} from '../forms';
 
 /**
@@ -16,24 +17,55 @@ const InviteModal = ({open, onCloseDialog}) => {
   const groups =
     groupsData && groupsData.allGroups && groupsData.allGroups.edges;
 
+  const [createToken] = useMutation(CREATE_REFERRAL_TOKEN);
+
   const formatErrors = errors => {
     return (
       <List bulleted>
-        {errors.map(msg => (
-          <List.Item>{msg}</List.Item>
-        ))}
+        {errors
+          .filter(err => !!err)
+          .map(err => (
+            <List.Item>{err.message}</List.Item>
+          ))}
       </List>
     );
   };
 
   const onSubmit = (values, {setErrors, setStatus, setSubmitting}) => {
     setSubmitting(true);
-    setStatus({
-      icon: 'warning',
-      header: 'Error',
-      content: formatErrors(['error']),
-      negative: true,
-    });
+    createToken({
+      variables: {
+        input: {
+          email: values.email,
+          studies: values.studies,
+          groups: values.groups,
+        },
+      },
+    })
+      .then(res => {
+        setStatus({
+          icon: 'mail',
+          header: 'Invite Sent',
+          content: (
+            <>
+              An email containing an invite link was sent to{' '}
+              <b>{values.email}</b> and should arrive shortly.
+            </>
+          ),
+          info: true,
+        });
+        setSubmitting(false);
+      })
+      .catch(err => {
+        const errors = [...err.graphQLErrors, err.networkError];
+        setStatus({
+          icon: 'error',
+          header: 'Error',
+          content: formatErrors(errors),
+          negative: true,
+        });
+        setSubmitting(false);
+      });
   };
 
   return (

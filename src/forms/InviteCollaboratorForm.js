@@ -3,7 +3,7 @@ import {Formik} from 'formik';
 import {Form, Icon, List, Message} from 'semantic-ui-react';
 
 const InviteCollaboratorForm = ({formikProps, disabled}) => {
-  const {errors, touched, handleBlur, setFieldValue} = formikProps;
+  const {errors, touched, handleBlur, setFieldValue, status} = formikProps;
 
   const formatErrors = errors => {
     return (
@@ -56,6 +56,7 @@ const InviteCollaboratorForm = ({formikProps, disabled}) => {
           <Icon name="send" />
         </Form.Button>
       </Form.Group>
+      {status && <Message {...status} />}
       {formikProps.errors.length && (
         <Message
           negative

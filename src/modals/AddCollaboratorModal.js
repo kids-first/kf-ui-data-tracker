@@ -1,7 +1,7 @@
 import React from 'react';
 import {useQuery} from '@apollo/react-hooks';
 import {Button, Divider, Modal} from 'semantic-ui-react';
-import {ALL_USERS} from '../state/queries';
+import {ALL_USERS, ALL_GROUPS} from '../state/queries';
 import {AddCollaboratorForm, InviteCollaboratorForm} from '../forms';
 
 /**
@@ -26,6 +26,14 @@ const AddCollaboratorModal = ({
     usersData &&
     usersData.allUsers.edges.filter(({node}) => !addedUsers.includes(node.id));
 
+  // Needed to extract the group id of the Investigators group
+  const {data: groupsData} = useQuery(ALL_GROUPS);
+  const groups =
+    groupsData && groupsData.allGroups && groupsData.allGroups.edges;
+  const defaultGroup = groups && groups.filter(
+    ({node}) => node.name === 'Investigators',
+  )[0].node;
+
   const onSubmitAdd = (
     values,
     {resetForm, setErrors, setStatus, setSubmitting},
@@ -48,25 +56,41 @@ const AddCollaboratorModal = ({
       })
       .catch(({networkError, graphQLErrors}) => {
         setSubmitting(false);
-        const errors = [
-          ...graphQLErrors.map(({message}) => message),
-          networkError.message,
-        ];
+        const errors = [...graphQLErrors.map(({message}) => message)];
         setErrors(errors);
       });
   };
 
-  const onSubmitInvite = (values, {setSubmitting, setErrors}) => {
+  const onSubmitInvite = (values, {setSubmitting, setErrors, setStatus}) => {
     setSubmitting(true);
-    inviteCollaborator({variables: {study: study.id, user: values.userId}})
+    inviteCollaborator({
+      variables: {
+        input: {
+          email: values.email,
+          studies: [study.id],
+          groups: [defaultGroup.id],
+        },
+      },
+    })
       .then(resp => {
+        setStatus({
+          icon: 'mail',
+          header: 'Invite Sent',
+          content: (
+            <>
+              An email containing an invite link was sent to{' '}
+              <b>{values.email}</b> and should arrive shortly.
+            </>
+          ),
+          info: true,
+        });
         setSubmitting(false);
       })
       .catch(({networkError, graphQLErrors}) => {
         setSubmitting(false);
         const errors = [
           ...graphQLErrors.map(({message}) => message),
-          networkError.message,
+          ...(networkError ? [networkError.message] : []),
         ];
         setErrors(errors);
       });
