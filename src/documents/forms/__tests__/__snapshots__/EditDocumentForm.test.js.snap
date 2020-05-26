@@ -578,6 +578,7 @@ Object {
             tabindex="0"
           >
             <div
+              aria-atomic="true"
               aria-live="polite"
               class="text"
               role="alert"
@@ -901,6 +902,7 @@ Object {
           tabindex="0"
         >
           <div
+            aria-atomic="true"
             aria-live="polite"
             class="text"
             role="alert"
