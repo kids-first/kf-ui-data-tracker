@@ -54,6 +54,10 @@ context('Admin Document List', () => {
       .its('length')
       .should('eq', 6);
 
+    cy.get('tr')
+      .eq(1)
+      .should('contain', 'wonder.wav');
+
     // Sort documents by create date using the last updated column
     cy.contains('th', 'Last Updated').click();
     cy.get('tr')

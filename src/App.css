@@ -333,6 +333,11 @@ body {
   position: relative;
 }
 
+.ui.form .fields > .field.expand,
+.ui.form .fields > .input.expand {
+  flex-grow: 1;
+}
+
 .overflow-cell {
   position: absolute;
   top: 0;

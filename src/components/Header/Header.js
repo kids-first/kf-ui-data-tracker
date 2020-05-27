@@ -1,12 +1,22 @@
 import React, {useState} from 'react';
-import {useQuery} from '@apollo/react-hooks';
+import {useQuery, useMutation} from '@apollo/react-hooks';
 import {NavLink} from 'react-router-dom';
 import {MY_PROFILE} from '../../state/queries';
-import {Container, Dropdown, Icon, Image, Menu} from 'semantic-ui-react';
+import {ADD_COLLABORATOR} from '../../state/mutations';
+import {
+  Button,
+  Container,
+  Dropdown,
+  Icon,
+  Image,
+  Menu,
+} from 'semantic-ui-react';
 import defaultAvatar from '../../assets/defaultAvatar.png';
 import logo from '../../assets/logo.svg';
-import {getPermissions} from '../../common/permissions.js';
+import {getPermissions, hasPermission} from '../../common/permissions.js';
 import {auth} from '../../state/auth';
+import InviteModal from '../../modals/InviteModal';
+
 const Nav = props => <NavLink exact {...props} activeClassName="active" />;
 
 /**
@@ -77,6 +87,32 @@ const AdminDropdown = ({profile}) => {
   );
 };
 
+const AddUserButton = ({profile}) => {
+  const [addCollaborator] = useMutation(ADD_COLLABORATOR);
+  const [showInviteModal, setShowInviteModal] = useState(false);
+
+  if (!profile) return null;
+
+  return (
+    <Menu.Item>
+      <Button
+        icon
+        primary
+        labelPosition="right"
+        onClick={() => setShowInviteModal(!showInviteModal)}
+      >
+        <Icon name="add user" />
+        Invite User
+      </Button>
+      <InviteModal
+        open={showInviteModal}
+        onCloseDialog={() => setShowInviteModal(false)}
+        inviteCollaborator={addCollaborator}
+      />
+    </Menu.Item>
+  );
+};
+
 const Header = () => {
   const {loading, error, data} = useQuery(MY_PROFILE);
   const profile = data && data.myProfile;
@@ -101,6 +137,9 @@ const Header = () => {
           <>
             <Menu.Item as={Nav} to="/" content="Studies" />
             <Menu.Menu position="right">
+              {hasPermission(profile, 'add_referraltoken') && (
+                <AddUserButton profile={profile} />
+              )}
               <AdminDropdown profile={profile} />
               <Dropdown
                 trigger={

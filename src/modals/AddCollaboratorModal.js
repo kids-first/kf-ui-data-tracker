@@ -1,107 +1,171 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {useQuery} from '@apollo/react-hooks';
-import {Button, Form, List, Message, Modal} from 'semantic-ui-react';
-import {Formik} from 'formik';
-import {ALL_USERS} from '../state/queries';
-import {AddCollaboratorForm} from '../forms';
+import {Amplitude, LogOnMount} from '@amplitude/react-amplitude';
+import {Button, Divider, Modal} from 'semantic-ui-react';
+import {ALL_USERS, ALL_GROUPS} from '../state/queries';
+import {AddCollaboratorForm, InviteCollaboratorForm} from '../forms';
 
+/**
+ * Renders forms to add collaborators to studies.
+ * If no addCollaborator function is passed, the add collaborator form with a
+ * user drop down will not be rendered.
+ * If no inviteCollaborator function is passed, the invite collaborator form
+ * with a text box to invite users by email will not be rendered.
+ */
 const AddCollaboratorModal = ({
   open,
   study,
   addCollaborator,
+  inviteCollaborator,
   onCloseDialog,
   users,
 }) => {
-  const [errors, setErrors] = useState('');
-  const {data: usersData, error: usersError} = useQuery(ALL_USERS);
+  const {data: usersData} = useQuery(ALL_USERS);
 
   const addedUsers = study.collaborators.edges.map(({node}) => node.id);
   const availableUsers =
     usersData &&
     usersData.allUsers.edges.filter(({node}) => !addedUsers.includes(node.id));
 
-  const onSubmit = (values, {setSubmitting}) => {
+  // Needed to extract the group id of the Investigators group
+  const {data: groupsData} = useQuery(ALL_GROUPS);
+  const groups =
+    groupsData && groupsData.allGroups && groupsData.allGroups.edges;
+  const defaultGroup =
+    groups && groups.filter(({node}) => node.name === 'Investigators')[0].node;
+
+  const onSubmitAdd = (
+    values,
+    {resetForm, setErrors, setStatus, setSubmitting},
+  ) => {
     setSubmitting(true);
     addCollaborator({variables: {study: study.id, user: values.userId}})
       .then(resp => {
         setSubmitting(false);
-        setErrors('');
-        onCloseDialog();
+        // Reset the state of the form so the user may add other collaborators
+        resetForm();
+        // Status keeps short hand props for the Message component
+        setStatus({
+          positive: true,
+          header: 'User Added',
+          content:
+            'The user was successfully added to the study as a collaborator',
+          icon: 'check circle',
+          size: 'small',
+        });
       })
-      .catch(err => {
+      .catch(({networkError, graphQLErrors}) => {
         setSubmitting(false);
-        const errors = (
-          <List bulleted>
-            {err.networkError &&
-              err.networkError.result.errors.map((err, i) => (
-                <List.Item key={i}>{err.message}</List.Item>
-              ))}
-            {err.graphQLErrors &&
-              err.graphQLErrors.map((err, i) => (
-                <List.Item key={i}>{err.message}</List.Item>
-              ))}
-          </List>
-        );
+        const errors = [...graphQLErrors.map(({message}) => message)];
+        setErrors(errors);
+      });
+  };
 
+  const onSubmitInvite = (values, {setSubmitting, setErrors, setStatus}) => {
+    setSubmitting(true);
+    inviteCollaborator({
+      variables: {
+        input: {
+          email: values.email,
+          studies: [study.id],
+          groups: [defaultGroup.id],
+        },
+      },
+    })
+      .then(resp => {
+        setStatus({
+          icon: 'mail',
+          header: 'Invite Sent',
+          content: (
+            <>
+              An email containing an invite link was sent to{' '}
+              <b>{values.email}</b> and should arrive shortly.
+            </>
+          ),
+          info: true,
+        });
+        setSubmitting(false);
+      })
+      .catch(({networkError, graphQLErrors}) => {
+        setSubmitting(false);
+        const errors = [
+          ...graphQLErrors.map(({message}) => message),
+          ...(networkError ? [networkError.message] : []),
+        ];
         setErrors(errors);
       });
   };
 
   return (
-    <Formik
-      initialValues={{
-        userId: null,
-      }}
-      validate={values => {
-        let errors = {};
-        if (!values.userId) {
-          errors.userId = 'Required';
-        }
-        return errors;
-      }}
-      onSubmit={onSubmit}
-    >
-      {formikProps => (
-        <Modal
-          open={open}
-          onClose={() => {
-            setErrors('');
-            onCloseDialog();
-          }}
-          closeIcon
-          size="tiny"
-        >
-          <Modal.Header content="Add a Collaborator" />
-          <Modal.Content as={Form} onSubmit={formikProps.handleSubmit}>
-            <AddCollaboratorForm
-              availableUsers={availableUsers || []}
-              formikProps={formikProps}
-            />
-            {usersError && (
-              <Message
-                negative
-                title="Problem loading users"
-                content={usersError}
+    <Modal open={open} onClose={onCloseDialog} closeIcon size="tiny">
+      <Modal.Header content="Add Collaborators to Study" />
+      <Modal.Content>
+        <Modal.Description>
+          You are adding collaborators to the <b>{study && study.name}</b>{' '}
+          study. Collaborators will be able to see this study and its resources
+          once they are added.
+        </Modal.Description>
+        {addCollaborator && (
+          <Amplitude
+            eventProperties={inheritedProps => ({
+              ...inheritedProps,
+              scope: inheritedProps.scope
+                ? [...inheritedProps.scope, 'add collaborator button']
+                : ['add collaborator button'],
+            })}
+          >
+            {({logEvent}) => (
+              <AddCollaboratorForm
+                availableUsers={availableUsers}
+                onSubmit={(values, formikProps) => {
+                  onSubmitAdd(values, formikProps);
+                  logEvent('click');
+                }}
               />
             )}
-            {errors && <Message negative title="Error" content={errors} />}
-          </Modal.Content>
-          <Modal.Actions as={Form} onSubmit={formikProps.handleSubmit}>
-            <Button onClick={onCloseDialog}>Cancel</Button>
-            <Button
-              primary
-              type="submit"
-              data-testid="add-button"
-              loading={formikProps.isSubmitting}
-              disabled={!formikProps.isValid || formikProps.isSubmitting}
-            >
-              Add
-            </Button>
-          </Modal.Actions>
-        </Modal>
-      )}
-    </Formik>
+          </Amplitude>
+        )}
+        {addCollaborator && inviteCollaborator && (
+          <Divider horizontal content="OR" />
+        )}
+        {inviteCollaborator && (
+          <Amplitude
+            eventProperties={inheritedProps => ({
+              ...inheritedProps,
+              scope: inheritedProps.scope
+                ? [...inheritedProps.scope, 'invite button']
+                : ['invite button'],
+            })}
+          >
+            {({logEvent}) => (
+              <InviteCollaboratorForm
+                onSubmit={(values, formikProps) => {
+                  onSubmitInvite(values, formikProps);
+                  logEvent('click');
+                }}
+              />
+            )}
+          </Amplitude>
+        )}
+      </Modal.Content>
+      <Modal.Actions>
+        <Button onClick={onCloseDialog}>Close</Button>
+      </Modal.Actions>
+    </Modal>
   );
 };
+const AnalyticsModal = props => (
+  <Amplitude
+    eventProperties={inheritedProps => ({
+      ...inheritedProps,
+      scope: inheritedProps.scope
+        ? [...inheritedProps.scope, 'add collaborator modal']
+        : ['add collaborator modal'],
+    })}
+  >
+    {props.open && <LogOnMount eventType="modal opened" />}
+    <AddCollaboratorModal {...props} />
+  </Amplitude>
+);
 
-export default AddCollaboratorModal;
+export default AnalyticsModal;
