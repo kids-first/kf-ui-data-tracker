@@ -15,6 +15,8 @@ services:
       - PRELOAD_DATA=FAKE
       - DEVELOPMENT_ENDPOINTS=True
       - DEVELOP=True
+      - EMAIL_HOST=email
+      - EMAIL_PORT=1025
     ports:
       - '5002:8080'
     depends_on:
@@ -114,6 +116,11 @@ services:
     environment:
       - POSTGRES_DB=coordinator
       - POSTGRES_PASSWORD=coordinator
+  email:
+    image: reachfive/fake-smtp-server
+    env_file: docker.env
+    ports:
+      - '1080:1080'
 networks:
   default:
     external:
