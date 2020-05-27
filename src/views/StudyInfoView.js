@@ -105,6 +105,9 @@ const StudyInfoView = ({match, history}) => {
       <Helmet>
         <title>{`KF Data Tracker - Study info ${studyName}`}</title>
       </Helmet>
+      <Header as="h2" className="mt-6" floated="left">
+        Study Basic Info
+      </Header>
       <Container textAlign="right">
         <Checkbox
           disabled={!allowEdit}

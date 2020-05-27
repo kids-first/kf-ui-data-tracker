@@ -6,7 +6,6 @@ import {
   Segment,
   Message,
   Step,
-  Header,
   Icon,
   List,
   Button,
@@ -147,11 +146,6 @@ const NewStudyForm = ({
     >
       {formikProps => (
         <Fragment>
-          {!newStudy && (
-            <Header as="h2" className="mt-6" floated="left">
-              Study Basic Info
-            </Header>
-          )}
           {apiErrors && (
             <Message
               negative
