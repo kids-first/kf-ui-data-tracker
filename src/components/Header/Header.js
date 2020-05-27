@@ -13,7 +13,7 @@ import {
 } from 'semantic-ui-react';
 import defaultAvatar from '../../assets/defaultAvatar.png';
 import logo from '../../assets/logo.svg';
-import {getPermissions} from '../../common/permissions.js';
+import {getPermissions, hasPermission} from '../../common/permissions.js';
 import {auth} from '../../state/auth';
 import InviteModal from '../../modals/InviteModal';
 
@@ -137,7 +137,9 @@ const Header = () => {
           <>
             <Menu.Item as={Nav} to="/" content="Studies" />
             <Menu.Menu position="right">
-              <AddUserButton profile={profile} />
+              {hasPermission(profile, 'add_referraltoken') && (
+                <AddUserButton profile={profile} />
+              )}
               <AdminDropdown profile={profile} />
               <Dropdown
                 trigger={
