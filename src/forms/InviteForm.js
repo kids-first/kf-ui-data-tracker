@@ -20,7 +20,9 @@ const InviteForm = ({formikProps, studies, groups}) => {
   return (
     <Form>
       <Form.Field>
-        <label htmlFor="groups">Permission groups this user will be added to</label>
+        <label htmlFor="groups">
+          Permission groups this user will be added to
+        </label>
         <Dropdown
           fluid
           multiple
@@ -28,6 +30,7 @@ const InviteForm = ({formikProps, studies, groups}) => {
           clearable
           id="groups"
           name="groups"
+          data-cy="group selector"
           placeholder="Groups..."
           options={groupOptions}
           onBlur={handleBlur}
@@ -50,6 +53,7 @@ const InviteForm = ({formikProps, studies, groups}) => {
             id="studies"
             name="studies"
             placeholder="Studies..."
+            data-cy="study selector"
             onBlur={handleBlur}
             onChange={(e, {name, value}) => {
               setFieldValue('studies', value);
@@ -71,6 +75,7 @@ const InviteForm = ({formikProps, studies, groups}) => {
           icon="mail"
           autoComplete="off"
           iconPosition="left"
+          data-cy="user email"
           onBlur={handleBlur}
           placeholder="Collaborator's email"
           onChange={(e, {name, value}) => {

@@ -21,6 +21,8 @@ context('Admin Study Collaborators', () => {
     cy.get('[data-testid="add-button"]').click();
     // Show newly added collaborator
     cy.contains('div', 'Michael Newman').should('exist');
+    // Close collaborator modal
+    cy.contains('button', 'Close').click();
     // Click remove collaborator button to remove the user
     cy.contains('button', 'Remove').click();
     cy.get('[data-testid="remove-confirm"]').click();
