@@ -1,5 +1,6 @@
 import React from 'react';
 import {useQuery, useMutation} from '@apollo/react-hooks';
+import {Amplitude, LogOnMount} from '@amplitude/react-amplitude';
 import {Button, Divider, Icon, List, Message, Modal} from 'semantic-ui-react';
 import {Formik} from 'formik';
 import {ALL_STUDIES, ALL_GROUPS} from '../state/queries';
@@ -136,22 +137,50 @@ const InviteModalContent = ({onCloseDialog, studies, groups, formikProps}) => {
       </Modal.Content>
       <Modal.Actions>
         <Button onClick={() => onCloseDialog()}>Cancel</Button>
-        <Button
-          icon
-          primary
-          type="submit"
-          labelPosition="right"
-          data-testid="invite-button"
-          onClick={handleSubmit}
-          disabled={!isValid || isSubmitting}
-          loading={isSubmitting}
+        <Amplitude
+          eventProperties={inheritedProps => ({
+            ...inheritedProps,
+            scope: inheritedProps.scope
+              ? [...inheritedProps.scope, 'invite button']
+              : ['invite button'],
+          })}
         >
-          Send Email Invite
-          <Icon name="send" />
-        </Button>
+          {({logEvent}) => (
+            <Button
+              icon
+              primary
+              type="submit"
+              labelPosition="right"
+              data-testid="invite-button"
+              onClick={() => {
+                logEvent('click');
+                handleSubmit();
+              }}
+              disabled={!isValid || isSubmitting}
+              loading={isSubmitting}
+            >
+              Send Email Invite
+              <Icon name="send" />
+            </Button>
+          )}
+        </Amplitude>
       </Modal.Actions>
     </>
   );
 };
 
-export default InviteModal;
+const AnalyticsModal = props => (
+  <Amplitude
+    eventProperties={inheritedProps => ({
+      ...inheritedProps,
+      scope: inheritedProps.scope
+        ? [...inheritedProps.scope, 'invite modal']
+        : ['invite modal'],
+    })}
+  >
+    {props.open && <LogOnMount eventType="modal opened" />}
+    <InviteModal {...props} />
+  </Amplitude>
+);
+
+export default AnalyticsModal;

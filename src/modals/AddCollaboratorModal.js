@@ -1,5 +1,6 @@
 import React from 'react';
 import {useQuery} from '@apollo/react-hooks';
+import {Amplitude, LogOnMount} from '@amplitude/react-amplitude';
 import {Button, Divider, Modal} from 'semantic-ui-react';
 import {ALL_USERS, ALL_GROUPS} from '../state/queries';
 import {AddCollaboratorForm, InviteCollaboratorForm} from '../forms';
@@ -30,9 +31,8 @@ const AddCollaboratorModal = ({
   const {data: groupsData} = useQuery(ALL_GROUPS);
   const groups =
     groupsData && groupsData.allGroups && groupsData.allGroups.edges;
-  const defaultGroup = groups && groups.filter(
-    ({node}) => node.name === 'Investigators',
-  )[0].node;
+  const defaultGroup =
+    groups && groups.filter(({node}) => node.name === 'Investigators')[0].node;
 
   const onSubmitAdd = (
     values,
@@ -106,16 +106,46 @@ const AddCollaboratorModal = ({
           once they are added.
         </Modal.Description>
         {addCollaborator && (
-          <AddCollaboratorForm
-            availableUsers={availableUsers}
-            onSubmit={onSubmitAdd}
-          />
+          <Amplitude
+            eventProperties={inheritedProps => ({
+              ...inheritedProps,
+              scope: inheritedProps.scope
+                ? [...inheritedProps.scope, 'add collaborator button']
+                : ['add collaborator button'],
+            })}
+          >
+            {({logEvent}) => (
+              <AddCollaboratorForm
+                availableUsers={availableUsers}
+                onSubmit={(values, formikProps) => {
+                  onSubmitAdd(values, formikProps);
+                  logEvent('click');
+                }}
+              />
+            )}
+          </Amplitude>
         )}
         {addCollaborator && inviteCollaborator && (
           <Divider horizontal content="OR" />
         )}
         {inviteCollaborator && (
-          <InviteCollaboratorForm onSubmit={onSubmitInvite} />
+          <Amplitude
+            eventProperties={inheritedProps => ({
+              ...inheritedProps,
+              scope: inheritedProps.scope
+                ? [...inheritedProps.scope, 'invite button']
+                : ['invite button'],
+            })}
+          >
+            {({logEvent}) => (
+              <InviteCollaboratorForm
+                onSubmit={(values, formikProps) => {
+                  onSubmitInvite(values, formikProps);
+                  logEvent('click');
+                }}
+              />
+            )}
+          </Amplitude>
         )}
       </Modal.Content>
       <Modal.Actions>
@@ -124,5 +154,18 @@ const AddCollaboratorModal = ({
     </Modal>
   );
 };
+const AnalyticsModal = props => (
+  <Amplitude
+    eventProperties={inheritedProps => ({
+      ...inheritedProps,
+      scope: inheritedProps.scope
+        ? [...inheritedProps.scope, 'add collaborator modal']
+        : ['add collaborator modal'],
+    })}
+  >
+    {props.open && <LogOnMount eventType="modal opened" />}
+    <AddCollaboratorModal {...props} />
+  </Amplitude>
+);
 
-export default AddCollaboratorModal;
+export default AnalyticsModal;
