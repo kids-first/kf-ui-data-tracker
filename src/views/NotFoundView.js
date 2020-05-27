@@ -6,7 +6,7 @@ import {Container, Segment, Header, Icon} from 'semantic-ui-react';
  * Error view handling invalid study or document id
  */
 const NotFoundView = ({title, message, location}) => {
-  const noErrorPath = ['/login', '/logout', '/callback'];
+  const noErrorPath = ['/login', '/logout', '/callback', '/join'];
   if (location && noErrorPath.includes(location.pathname)) {
     return <></>;
   }

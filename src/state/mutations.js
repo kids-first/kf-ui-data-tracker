@@ -293,3 +293,56 @@ export const CREATE_REFERRAL_TOKEN = gql`
     }
   }
 `;
+
+export const EXCHANGE_REFERRAL_TOKEN = gql`
+  mutation exchangeReferralToken($token: ID!) {
+    exchangeReferralToken(token: $token) {
+      user {
+        email
+        studies {
+          edges {
+            node {
+              id
+            }
+          }
+        }
+        groups {
+          edges {
+            node {
+              id
+            }
+          }
+        }
+      }
+
+      referralToken {
+        studies {
+          edges {
+            node {
+              ...StudyBasicFields
+              ...StudyInfoFields
+              collaborators {
+                edges {
+                  node {
+                    ...UserFields
+                  }
+                }
+              }
+              projects {
+                edges {
+                  node {
+                    ...ProjectFields
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  ${STUDY_BASIC_FIELDS}
+  ${STUDY_INFO_FIELDS}
+  ${USER_FIELDS}
+  ${PROJECT_FIELDS}
+`;

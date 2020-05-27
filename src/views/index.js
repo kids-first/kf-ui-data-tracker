@@ -14,3 +14,4 @@ export {default as CollaboratorsView} from './CollaboratorsView';
 export {default as NewStudySelectionView} from './NewStudySelectionView';
 export {default as NotFoundView} from './NotFoundView';
 export {default as WelcomeView} from './WelcomeView';
+export {default as InviteView} from './InviteView';
