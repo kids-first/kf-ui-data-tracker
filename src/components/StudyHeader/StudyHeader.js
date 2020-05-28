@@ -160,7 +160,7 @@ const StudyHeader = ({study, loading, newStudy, showModal}) => {
           </p>
         )}
         {study.slackChannel && (
-          <p>
+          <p className="noMargin">
             <Icon name="slack hash" size="small" />
             {study.slackChannel}
           </p>
