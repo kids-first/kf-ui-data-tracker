@@ -155,8 +155,14 @@ const StudyHeader = ({study, loading, newStudy, showModal}) => {
       </Grid.Column>
       <Grid.Column textAlign="right" width={6}>
         {study.kfId && (
-          <p>
+          <p className="noMargin">
             <KfId kfId={study.kfId} />
+          </p>
+        )}
+        {study.slackChannel && (
+          <p>
+            <Icon name="slack hash" size="small" />
+            {study.slackChannel}
           </p>
         )}
         {releasesLoading ? (
