@@ -4,7 +4,14 @@ import {useQuery, useMutation} from '@apollo/react-hooks';
 import {GET_STUDY_BY_ID, MY_PROFILE} from '../state/queries';
 import {UPDATE_STUDY} from '../state/mutations';
 import NewStudyForm from '../forms/StudyInfoForm/NewStudyForm';
-import {Container, Segment, Message, Placeholder} from 'semantic-ui-react';
+import {
+  Container,
+  Segment,
+  Message,
+  Placeholder,
+  Header,
+  Checkbox,
+} from 'semantic-ui-react';
 import NotFoundView from './NotFoundView';
 import {hasPermission} from '../common/permissions';
 
@@ -98,6 +105,19 @@ const StudyInfoView = ({match, history}) => {
       <Helmet>
         <title>{`KF Data Tracker - Study info ${studyName}`}</title>
       </Helmet>
+      <Header as="h2" className="mt-6" floated="left">
+        Study Basic Info
+      </Header>
+      <Container textAlign="right">
+        <Checkbox
+          disabled={!allowEdit}
+          checked={studyByKfId && studyByKfId.slackNotify}
+          label="Send Updates to Slack"
+          onClick={() => {
+            submitUpdate({slackNotify: !studyByKfId.slackNotify});
+          }}
+        />
+      </Container>
       <NewStudyForm
         allowEdit={allowEdit}
         history={history}

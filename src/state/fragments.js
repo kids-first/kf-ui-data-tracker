@@ -26,6 +26,8 @@ export const STUDY_INFO_FIELDS = gql`
     sequencingStatus
     ingestionStatus
     phenotypeStatus
+    slackNotify
+    slackChannel
   }
 `;
 
