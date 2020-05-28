@@ -70,9 +70,10 @@ class AmplitudeUser {
     });
 
     const profileProps = this.profile && this.getProfileProps(this.profile);
-    identify.set('groups', profileProps.groups);
-    identify.set('studies', profileProps.studies);
-    identify.set('dateJoined', profileProps.dateJoined);
+    profileProps.groups && identify.set('groups', profileProps.groups);
+    profileProps.studies && identify.set('studies', profileProps.studies);
+    profileProps.dateJoined &&
+      identify.set('dateJoined', profileProps.dateJoined);
 
     /**
      * @event_scehma analyticsTracking/user/user.schema.json
