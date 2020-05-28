@@ -166,6 +166,71 @@ export const eventType = {
     iconName: 'user',
     iconColor: 'red',
   },
+  BK_LIN: {
+    title: 'Bucket Linked',
+    iconName: 'linkify',
+    iconColor: 'green',
+  },
+  BK_UNL: {
+    title: 'Bucket Unlinked',
+    iconName: 'unlinkify',
+    iconColor: 'red',
+  },
+  IM_STR: {
+    title: 'File Import Start',
+    iconName: 'upload',
+    iconColor: 'yellow',
+  },
+  IM_ERR: {
+    title: 'File Import Error',
+    iconName: 'upload',
+    iconColor: 'red',
+  },
+  IM_SUC: {
+    title: 'File Import Success',
+    iconName: 'upload',
+    iconColor: 'green',
+  },
+  IN_UPD: {
+    title: 'Ingestion Status Updated',
+    iconName: 'hourglass half',
+    iconColor: 'yellow',
+  },
+  PH_UPD: {
+    title: 'Phenotype Status Updated',
+    iconName: 'hourglass half',
+    iconColor: 'yellow',
+  },
+  ST_UPD: {
+    title: 'Sequencing Status Updated',
+    iconName: 'hourglass half',
+    iconColor: 'yellow',
+  },
+  RT_CRE: {
+    title: 'Referral Token Created',
+    iconName: 'mail outline',
+    iconColor: 'yellow',
+  },
+  RT_CLA: {
+    title: 'Referral Token Claimed',
+    iconName: 'mail outline',
+    iconColor: 'green',
+  },
+  SL_STR: {
+    title: 'Slack Channel Creation Start',
+    iconName: 'slack hash',
+    iconColor: 'yellow',
+  },
+  SL_ERR: {
+    title: 'Slack Channel Creation Error',
+    iconName: 'slack hash',
+    iconColor: 'red',
+  },
+  SL_SUC: {
+    title: 'Slack Channel Creation Success',
+    iconName: 'slack hash',
+    iconColor: 'green',
+  },
 };
 
 // Store file type title, description and icon
