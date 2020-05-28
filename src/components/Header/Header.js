@@ -117,6 +117,9 @@ const Header = () => {
   const {loading, error, data} = useQuery(MY_PROFILE);
   const profile = data && data.myProfile;
 
+  // Save profile to local storage to be picked up by analytics
+  if (profile) localStorage.setItem('profile', JSON.stringify(profile));
+
   const [loggedIn, setLoggedIn] = useState(profile !== undefined);
   const picUrl = profile && profile.picture ? profile.picture : defaultAvatar;
   const picAlt = profile && profile.username ? profile.username : 'profile';

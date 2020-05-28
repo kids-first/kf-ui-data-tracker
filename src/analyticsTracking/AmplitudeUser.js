@@ -13,12 +13,11 @@ class AmplitudeUser {
   // decoded jwt values
   auth_user;
 
+  // User's profile from Study Creator
+  profile;
+
   // values to pluck from jwt in the format of [[jwt_prop_name, renmae_to], ... ]
-  user_props = [
-    ['https://kidsfirstdrc.org/roles', 'roles'],
-    ['https://kidsfirstdrc.org/groups', 'studies'],
-    ['https://kidsfirstdrc.org/permissions', 'permissions'],
-  ];
+  user_props = [['nickname', 'nickname']];
 
   constructor(idToken, api_key) {
     if (!idToken) {
@@ -30,11 +29,26 @@ class AmplitudeUser {
 
     this.auth_user = jwtDecode(idToken);
 
+    if (localStorage.getItem('profile') !== null)
+      this.profile = JSON.parse(localStorage.getItem('profile'));
+
     this.auth_sub = this.auth_user.sub;
 
     this.setId();
     this.setUserProperies();
     return this;
+  }
+
+  getProfileProps(profile) {
+    // Extract permission group names into an array
+    const groups = profile.groups.edges.map(({node}) => node.name);
+
+    // Extract study kf_ids into an array
+    const studies = profile.studies.edges.map(({node}) => node.kfId);
+
+    const dateJoined = profile.dateJoined;
+
+    return {groups, studies, dateJoined};
   }
 
   /**
@@ -54,6 +68,12 @@ class AmplitudeUser {
     this.user_props.forEach(prop => {
       identify.set(prop[1] || prop[0], this.auth_user[prop[0]]);
     });
+
+    const profileProps = this.profile && this.getProfileProps(this.profile);
+    identify.set('groups', profileProps.groups);
+    identify.set('studies', profileProps.studies);
+    identify.set('dateJoined', profileProps.dateJoined);
+
     /**
      * @event_scehma analyticsTracking/user/user.schema.json
      */
