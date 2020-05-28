@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Route} from 'react-router-dom';
-import {Amplitude, LogOnMount} from '@amplitude/react-amplitude';
+import {Amplitude} from '@amplitude/react-amplitude';
 
 /**
  * Wrap all of our routes to make them log the view and route they render
@@ -24,12 +24,16 @@ const TrackedRoute = ({
       path: rest.location.pathname,
     })}
   >
-    {render ? (
-      <Route render={render} {...rest} />
-    ) : (
-      <Route component={component} {...rest} />
+    {({logEvent}) => (
+      <>
+        {render ? (
+          <Route render={render} {...rest} />
+        ) : (
+          <Route component={component} {...rest} />
+        )}
+        {!disableViewEvent && logEvent('page view')}
+      </>
     )}
-    {!disableViewEvent && <LogOnMount eventType="page view" />}
   </Amplitude>
 );
 
