@@ -41,10 +41,12 @@ class AmplitudeUser {
 
   getProfileProps(profile) {
     // Extract permission group names into an array
-    const groups = profile.groups.edges.map(({node}) => node.name);
+    const groups =
+      profile.groups && profile.groups.edges.map(({node}) => node.name);
 
     // Extract study kf_ids into an array
-    const studies = profile.studies.edges.map(({node}) => node.kfId);
+    const studies =
+      profile.studies && profile.studies.edges.map(({node}) => node.kfId);
 
     const dateJoined = profile.dateJoined;
 
@@ -70,10 +72,12 @@ class AmplitudeUser {
     });
 
     const profileProps = this.profile && this.getProfileProps(this.profile);
-    profileProps.groups && identify.set('groups', profileProps.groups);
-    profileProps.studies && identify.set('studies', profileProps.studies);
-    profileProps.dateJoined &&
-      identify.set('dateJoined', profileProps.dateJoined);
+    if (profileProps) {
+      profileProps.groups && identify.set('groups', profileProps.groups);
+      profileProps.studies && identify.set('studies', profileProps.studies);
+      profileProps.dateJoined &&
+        identify.set('dateJoined', profileProps.dateJoined);
+    }
 
     /**
      * @event_scehma analyticsTracking/user/user.schema.json
