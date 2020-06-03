@@ -7,6 +7,7 @@ import {Header} from '../components/Header';
 import {Footer} from '../components/Footer';
 import {
   LoginView,
+  InviteView,
   StudyListView,
   CallbackView,
   NavBarView,
@@ -49,6 +50,7 @@ const Routes = () => (
       <TrackedRoute path="/logout" component={LogoutView} />
       <Route path="/callback" component={CallbackView} />
       <Route path="/auth-error" render={() => <></>} />
+      <Route path="/join" component={InviteView} />
       <Route path="/" render={() => <Header />} />
     </Switch>
     <div className="page">
