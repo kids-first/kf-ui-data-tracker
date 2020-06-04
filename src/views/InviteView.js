@@ -47,6 +47,19 @@ export const InviteView = ({history}) => {
     return <Redirect to="/" />;
   }
 
+  // If the user is not logged in or does not have an account yet, we need them
+  // to log in first before we can exchange an invite token for them.
+  if (localStorage.getItem('accessToken') === null) {
+    return (
+      <Redirect
+        to={{
+          pathname: '/login',
+          state: {from: window.location.pathname + window.location.search},
+        }}
+      />
+    );
+  }
+
   if (exchangeTokenError) {
     return (
       <NotFoundView
