@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import queryString from 'query-string';
+import jwtDecode from 'jwt-decode';
 import {Link} from 'react-router-dom';
 import {useMutation} from '@apollo/react-hooks';
 import {Redirect} from 'react-router-dom';
@@ -49,7 +50,9 @@ export const InviteView = ({history}) => {
 
   // If the user is not logged in or does not have an account yet, we need them
   // to log in first before we can exchange an invite token for them.
-  if (localStorage.getItem('accessToken') === null) {
+  const token = localStorage.getItem('accessToken');
+  const valid = token && new Date().getTime() < jwtDecode(token).exp * 1000;
+  if (!valid) {
     return (
       <Redirect
         to={{
