@@ -1,3 +1,33 @@
+# Change History
+
+## Kids First Data Tracker Release 0.14.0
+
+Exchange invite tokens for new users.
+
+### Summary
+
+- Emojis: 🐛 x5, 🖼 x1, ✨ x8, 📈 x1, ♻️ x1
+- Categories: Fixes x5, Other Changes x2, Additions x9
+
+### New features and changes
+
+- [#729](https://github.com/kids-first/kf-ui-data-tracker/pull/729) - 🐛 Check expiration time for token validation - [595b8226](https://github.com/kids-first/kf-ui-data-tracker/commit/595b8226b620bb884354595631c3a7049f9da8aa) by [dankolbman](https://github.com/dankolbman)
+- [#728](https://github.com/kids-first/kf-ui-data-tracker/pull/728) - 🐛 Include token when logging users into invite view - [ddec9732](https://github.com/kids-first/kf-ui-data-tracker/commit/ddec97325bac8389344dcd06625e0805a65d4560) by [dankolbman](https://github.com/dankolbman)
+- [#727](https://github.com/kids-first/kf-ui-data-tracker/pull/727) - 🖼 Add logo for emails - [bbc0fc0b](https://github.com/kids-first/kf-ui-data-tracker/commit/bbc0fc0b5997b564f89967438e7eaf7b89d5896b) by [dankolbman](https://github.com/dankolbman)
+- [#726](https://github.com/kids-first/kf-ui-data-tracker/pull/726) - 🐛 Defensively check for localStore attributes - [2c3096e3](https://github.com/kids-first/kf-ui-data-tracker/commit/2c3096e3a89fff3df8dd0826efacf25bfb992825) by [dankolbman](https://github.com/dankolbman)
+- [#725](https://github.com/kids-first/kf-ui-data-tracker/pull/725) - 🐛 Handle no user profile case for setting amplitude properties - [089f8921](https://github.com/kids-first/kf-ui-data-tracker/commit/089f892146fc199adac8d4de03d0f3fb4bb07d50) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#724](https://github.com/kids-first/kf-ui-data-tracker/pull/724) - ✨ Add icons for new event types - [027de411](https://github.com/kids-first/kf-ui-data-tracker/commit/027de41130a637320a17c36a0af70d4c5c247cfa) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#723](https://github.com/kids-first/kf-ui-data-tracker/pull/723) - ✨ Add token exchange view - [e2ec8a0d](https://github.com/kids-first/kf-ui-data-tracker/commit/e2ec8a0d1aa71f7cbb0a7ff57b86cbd83ca75b7c) by [dankolbman](https://github.com/dankolbman)
+- [#722](https://github.com/kids-first/kf-ui-data-tracker/pull/722) - 📈 Enrich profile properties for analytics - [646f8afe](https://github.com/kids-first/kf-ui-data-tracker/commit/646f8afe694e745ffefea4d1517ccb4a676ccac4) by [dankolbman](https://github.com/dankolbman)
+- [#721](https://github.com/kids-first/kf-ui-data-tracker/pull/721) - ✨ Add slack notify checkbox on study info page - [01d59817](https://github.com/kids-first/kf-ui-data-tracker/commit/01d59817f69a3490b521aae933b10e95f4d6241e) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#720](https://github.com/kids-first/kf-ui-data-tracker/pull/720) - 🐛 Manually log page views - [34dcbec5](https://github.com/kids-first/kf-ui-data-tracker/commit/34dcbec52c07205b6f7c785e97b40e98aae0927c) by [dankolbman](https://github.com/dankolbman)
+- [#716](https://github.com/kids-first/kf-ui-data-tracker/pull/716) - ✨ Add help message for documents - [089fffac](https://github.com/kids-first/kf-ui-data-tracker/commit/089fffacb33f4373682bd59d0826ace2dbcd8491) by [dankolbman](https://github.com/dankolbman)
+- [#715](https://github.com/kids-first/kf-ui-data-tracker/pull/715) - ✨ Restyle study header - [6c38b9cc](https://github.com/kids-first/kf-ui-data-tracker/commit/6c38b9cc44feded2d4cb78730489592105085c1e) by [dankolbman](https://github.com/dankolbman)
+- [#714](https://github.com/kids-first/kf-ui-data-tracker/pull/714) - ✨ Add welcome view - [473a4a3f](https://github.com/kids-first/kf-ui-data-tracker/commit/473a4a3f3506c0f2061605ba61cffc21baf9d5cd) by [dankolbman](https://github.com/dankolbman)
+- [#713](https://github.com/kids-first/kf-ui-data-tracker/pull/713) - ✨ Document list sorting restyle - [1ae6ae60](https://github.com/kids-first/kf-ui-data-tracker/commit/1ae6ae603d1be1f1db1b9b6493406bc90a3dc9f7) by [dankolbman](https://github.com/dankolbman)
+- [#712](https://github.com/kids-first/kf-ui-data-tracker/pull/712) - ✨ Invite collaborators - [377404c3](https://github.com/kids-first/kf-ui-data-tracker/commit/377404c3c8fb1f5aa5e2c265ee107a668189459a) by [dankolbman](https://github.com/dankolbman)
+- [#710](https://github.com/kids-first/kf-ui-data-tracker/pull/710) - ♻️ Turn download links into a tags - [56a0da71](https://github.com/kids-first/kf-ui-data-tracker/commit/56a0da710a8b0bf88f0b7a9bfc6413a508a1264e) by [XuTheBunny](https://github.com/XuTheBunny)
+
 # Kids First Data Tracker Release 0.13.1
 
 ## Features
