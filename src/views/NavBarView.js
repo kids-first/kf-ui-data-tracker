@@ -1,12 +1,14 @@
 import React, {useState} from 'react';
-import {useQuery} from '@apollo/react-hooks';
+import {useQuery, useMutation} from '@apollo/react-hooks';
 import {Route, Switch} from 'react-router-dom';
 import {GET_STUDY_BY_ID, MY_PROFILE} from '../state/queries';
+import {UPDATE_STUDY} from '../state/mutations';
 import StudyHeader from '../components/StudyHeader/StudyHeader';
 import {StudyNavBar} from '../components/StudyNavBar';
 import {Container, Segment, Message} from 'semantic-ui-react';
 import CreatingStudyModal from '../modals/CreatingStudyModal';
 import {DocumentListHelp} from '../documents/components/helpers';
+import {hasPermission} from '../common/permissions';
 
 const NavBarView = ({match, location, history}) => {
   const {loading, data, error} = useQuery(GET_STUDY_BY_ID, {
@@ -22,6 +24,9 @@ const NavBarView = ({match, location, history}) => {
       ? myProfile.groups.edges.map(({node}) => node.name)
       : [];
   const isBeta = userRole.includes('Administrators');
+  const allowEdit = myProfile && hasPermission(myProfile, 'change_study');
+
+  const [updateStudy] = useMutation(UPDATE_STUDY);
 
   const newStudy =
     sessionStorage.getItem('newStudy') &&
@@ -54,6 +59,7 @@ const NavBarView = ({match, location, history}) => {
           loading={loading}
           showModal={setShowModal}
           newStudy={newStudy}
+          updateStudy={allowEdit && updateStudy}
         />
       </Segment>
       <Container>
