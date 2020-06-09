@@ -15,22 +15,33 @@ import {compareSemVer} from '../../common/sortUtils';
  * A collection of functions to render cell contents for different columns
  */
 const cellContent = {
-  name: node => <StudyName study={node} />,
-  kfId: node => <KfId kfId={node.kfId} />,
+  name: node => <StudyName study={node} key={node.kfId + 'name'} />,
+  kfId: node => <KfId kfId={node.kfId} key={node.kfId + 'kfId'} />,
   version: node => (
-    <Release release={node.release && node.release.node && node.release.node} />
+    <Release
+      key={node.kfId + 'version'}
+      release={node.release && node.release.node && node.release.node}
+    />
   ),
-  actions: node => <ActionButtons study={node} />,
+  actions: node => <ActionButtons study={node} key={node.kfId + 'actions'} />,
   externalId: node => (
-    <Table.Cell singleLine width="1">
+    <Table.Cell singleLine width="1" key={node.kfId + 'externalId'}>
       <code>{node.externalId}</code>
     </Table.Cell>
   ),
-  sequencingStatus: node => <SequencingStatus study={node} />,
-  ingestionStatus: node => <IngestionStatus study={node} />,
-  phenotypeStatus: node => <PhenotypeStatus study={node} />,
+  sequencingStatus: node => (
+    <SequencingStatus key={node.kfId + 'sequencingStatus'} study={node} />
+  ),
+  ingestionStatus: node => (
+    <IngestionStatus key={node.kfId + 'ingestionStatus'} study={node} />
+  ),
+  phenotypeStatus: node => (
+    <PhenotypeStatus key={node.kfId + 'phenotypeStatus'} study={node} />
+  ),
   anticipatedSamples: node => (
-    <Table.Cell width="1">{node.anticipatedSamples || '-'}</Table.Cell>
+    <Table.Cell key={node.kfId + 'anticipatedSamples'} width="1">
+      {node.anticipatedSamples || '-'}
+    </Table.Cell>
   ),
 };
 
