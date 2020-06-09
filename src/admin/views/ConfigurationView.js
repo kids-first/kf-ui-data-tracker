@@ -15,11 +15,16 @@ import {STATUS} from '../../state/queries';
 const FeatureTable = ({features}) => (
   <Table
     tableData={features}
-    headerRow={['Feature', {content: 'Enabled', textAlign: 'center'}]}
+    headerRow={[
+      {content: 'Feature', key: 'features0'},
+      {content: 'Enabled', textAlign: 'center', key: 'features1'},
+    ]}
     renderBodyRow={(data, index) => ({
+      key: data.name,
       cells: [
-        {content: data.name},
+        {content: data.name, key: data.name + '0'},
         {
+          key: data.name + '1',
           content: <Icon name={data.enabled ? 'check' : 'delete'} />,
           textAlign: 'center',
         },
@@ -33,13 +38,18 @@ const FeatureTable = ({features}) => (
 const SettingsTable = ({settings}) => (
   <Table
     tableData={settings}
-    headerRow={['Setting', {content: 'Value', textAlign: 'left'}]}
+    headerRow={[
+      {content: 'Setting', key: 'settings0'},
+      {content: 'Value', textAlign: 'left', key: 'settings1'},
+    ]}
     renderBodyRow={(data, index) => ({
+      key: data.name,
       cells: [
-        {content: data.name},
+        {content: data.name, key: data.name + '0'},
         {
           content: data.value,
           textAlign: 'left',
+          key: data.name + '1',
         },
       ],
     })}
@@ -50,21 +60,22 @@ const Queues = ({queues}) => (
   <Table
     tableData={queues}
     headerRow={[
-      'Queue',
-      'Jobs',
-      'Workers',
-      {content: 'Started Jobs', textAlign: 'right'},
-      {content: 'Failed Jobs', textAlign: 'right'},
-      {content: 'Finished Jobs', textAlign: 'right'},
+      {content: 'Queue', key: 'queues0'},
+      {content: 'Jobs', key: 'queues1'},
+      {content: 'Workers', key: 'queues2'},
+      {content: 'Started Jobs', textAlign: 'right', key: 'queues3'},
+      {content: 'Failed Jobs', textAlign: 'right', key: 'queues4'},
+      {content: 'Finished Jobs', textAlign: 'right', key: 'queues5'},
     ]}
     renderBodyRow={(data, index) => ({
+      key: data.name,
       cells: [
-        {content: data.name},
-        {content: data.jobs},
-        {content: data.workers},
-        {content: data.started_jobs, textAlign: 'right'},
-        {content: data.failed_jobs, textAlign: 'right'},
-        {content: data.finished_jobs, textAlign: 'right'},
+        {content: data.name, key: data.name + '0'},
+        {content: data.jobs, key: data.name + '1'},
+        {content: data.workers, key: data.name + '2'},
+        {content: data.started_jobs, textAlign: 'right', key: data.name + '3'},
+        {content: data.failed_jobs, textAlign: 'right', key: data.name + '4'},
+        {content: data.finished_jobs, textAlign: 'right', key: data.name + '5'},
       ],
     })}
   />
@@ -74,15 +85,16 @@ const Jobs = ({jobs}) => (
   <Table
     tableData={jobs}
     headerRow={[
-      'Job',
-      {content: 'Status', textAlign: 'center'},
-      {content: 'Error Message'},
-      {content: 'Last Run', textAlign: 'right'},
-      {content: 'Next Run', textAlign: 'right'},
+      {content: 'Job', key: 'jobs0'},
+      {content: 'Status', textAlign: 'center', key: 'jobs1'},
+      {content: 'Error Message', key: 'jobs2'},
+      {content: 'Last Run', textAlign: 'right', key: 'jobs3'},
+      {content: 'Next Run', textAlign: 'right', key: 'jobs4'},
     ]}
     renderBodyRow={(data, index) => ({
+      key: data.name,
       cells: [
-        {content: data.name},
+        {content: data.name, key: data.name + '0'},
         {
           content: data.failing ? (
             <Icon name="delete" />
@@ -92,15 +104,18 @@ const Jobs = ({jobs}) => (
             <Icon name="delete" />
           ),
           textAlign: 'center',
+          key: data.name + '1',
         },
-        {content: data.lastError},
+        {content: data.lastError, key: data.name + '2'},
         {
           content: <TimeAgo date={data.lastRun} live={false} />,
           textAlign: 'right',
+          key: data.name + '3',
         },
         {
           content: <TimeAgo date={data.enqueuedAt} live={false} />,
           textAlign: 'right',
+          key: data.name + '4',
         },
       ],
       error: data.failing,
