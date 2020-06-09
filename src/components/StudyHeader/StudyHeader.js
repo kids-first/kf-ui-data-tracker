@@ -114,6 +114,7 @@ const StudyHeader = ({study, loading, newStudy, showModal, updateStudy}) => {
   );
   const [open, setOpen] = useState(false);
   const [apiErrors, setApiErrors] = useState(null);
+  const [submitting, setSubmitting] = useState(false);
   const submitUpdate = values => {
     updateStudy({
       variables: {
@@ -124,8 +125,12 @@ const StudyHeader = ({study, loading, newStudy, showModal, updateStudy}) => {
       .then(() => {
         setApiErrors(null);
         setOpen(false);
+        setSubmitting(false);
       })
-      .catch(err => setApiErrors(err.message));
+      .catch(err => {
+        setApiErrors(err.message);
+        setSubmitting(false);
+      });
   };
 
   const relayId =
@@ -236,10 +241,13 @@ const StudyHeader = ({study, loading, newStudy, showModal, updateStudy}) => {
                         value={slackInput}
                         action={
                           <Button
+                            disabled={submitting}
+                            loading={submitting}
                             color="blue"
                             content="SAVE"
                             size="mini"
                             onClick={e => {
+                              setSubmitting(true);
                               submitUpdate({slackChannel: slackInput});
                             }}
                           />
