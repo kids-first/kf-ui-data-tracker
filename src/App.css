@@ -95,6 +95,10 @@ body {
   margin-top: 6px !important;
 }
 
+.ml-5 {
+  margin-left: 5px !important;
+}
+
 .mt-30 {
   margin-top: 30px !important;
 }
@@ -125,6 +129,10 @@ body {
 
 .mr-80 {
   margin-right: 80px !important;
+}
+
+.mr-8 {
+  margin-right: 8px !important;
 }
 
 .display-block {
@@ -327,6 +335,14 @@ body {
 .small-inline {
   display: inline-block;
   padding-top: 10px;
+}
+
+.display-inline {
+  display: inline;
+}
+
+.display-block {
+  display: block;
 }
 
 .overflow-cell-container {
