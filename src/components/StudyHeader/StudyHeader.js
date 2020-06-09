@@ -148,6 +148,7 @@ const StudyHeader = ({study, loading, newStudy, showModal, updateStudy}) => {
   const latestRelease =
     releasesData &&
     releasesData.study &&
+    releasesData.study.releases &&
     releasesData.study.releases.edges[0].node;
 
   const currentStatus =
