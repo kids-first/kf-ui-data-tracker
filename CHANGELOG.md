@@ -1,4 +1,20 @@
-# Change History
+# Data Tracker Change History
+
+## Kids First Data Tracker Release 0.14.1
+
+Fix errors when data is not present.
+
+### Summary
+
+- Emojis: 🐛 x2, ✨ x1, ⬆️ x1
+- Categories: Fixes x2, Additions x1, Ops x1
+
+### New features and changes
+
+- [#735](https://github.com/kids-first/kf-ui-data-tracker/pull/735) - 🐛 Fix study header and document loading error - [859c03fa](https://github.com/kids-first/kf-ui-data-tracker/commit/859c03fab304d82b74df1038b78d8d302d44e4af) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#734](https://github.com/kids-first/kf-ui-data-tracker/pull/734) - 🐛 Fix unique key error on study and configuration tables - [55c0b239](https://github.com/kids-first/kf-ui-data-tracker/commit/55c0b23957433d26f3032552b0c54e43d5366b6b) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#733](https://github.com/kids-first/kf-ui-data-tracker/pull/733) - ✨ Allow slack channel to be updated - [dc14754a](https://github.com/kids-first/kf-ui-data-tracker/commit/dc14754aad2a6027cac66c32aeed4a3d2e781aa1) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#732](https://github.com/kids-first/kf-ui-data-tracker/pull/732) - ⬆️ Bump websocket-extensions from 0.1.3 to 0.1.4 - [0a9be721](https://github.com/kids-first/kf-ui-data-tracker/commit/0a9be72129df295e8536d8420703f9a0f2091d9a) by [dependabot[bot]](https://github.com/apps/dependabot)
 
 ## Kids First Data Tracker Release 0.14.0
 
