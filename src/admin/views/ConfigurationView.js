@@ -1,7 +1,14 @@
 import React from 'react';
 import {Helmet} from 'react-helmet';
 import {useQuery} from '@apollo/react-hooks';
-import {Container, Header, Segment, Icon, Table} from 'semantic-ui-react';
+import {
+  Container,
+  Header,
+  Segment,
+  Icon,
+  Table,
+  Dimmer,
+} from 'semantic-ui-react';
 import TimeAgo from 'react-timeago';
 import {STATUS} from '../../state/queries';
 
@@ -101,6 +108,29 @@ const Jobs = ({jobs}) => (
   />
 );
 
+/**
+ * A place holder skeleton for configuration table
+ */
+const LoadingTable = () => (
+  <Segment basic className="noPadding">
+    <Dimmer active inverted />
+    <Table celled striped>
+      <Table.Header>
+        <Table.Row>
+          <Table.HeaderCell />
+        </Table.Row>
+      </Table.Header>
+      <Table.Body>
+        {[1, 2, 3, 4].map(i => (
+          <Table.Row key={i}>
+            <Table.Cell />
+          </Table.Row>
+        ))}
+      </Table.Body>
+    </Table>
+  </Segment>
+);
+
 const ConfigurationView = () => {
   const {data} = useQuery(STATUS);
 
@@ -152,16 +182,13 @@ const ConfigurationView = () => {
         </Segment>
 
         <Header as="h4">Feature Flags</Header>
-        <FeatureTable features={features} />
-
+        {features ? <FeatureTable features={features} /> : <LoadingTable />}
         <Header as="h4">Settings</Header>
-        <SettingsTable settings={settings} />
-
+        {settings ? <SettingsTable settings={settings} /> : <LoadingTable />}
         <Header as="h4">Queues</Header>
-        <Queues queues={queues} />
-
+        {queues ? <Queues queues={queues} /> : <LoadingTable />}
         <Header as="h4">Jobs</Header>
-        <Jobs jobs={jobs} />
+        {jobs ? <Jobs jobs={jobs} /> : <LoadingTable />}
       </Container>
     </>
   );
