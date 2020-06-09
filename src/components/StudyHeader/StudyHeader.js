@@ -181,12 +181,15 @@ const StudyHeader = ({study, loading, newStudy, showModal, updateStudy}) => {
             <KfId kfId={study.kfId} />
           </p>
         )}
-        {study.slackChannel && (
-          <p className="noMargin">
-            <Icon name="slack hash" size="small" />
-            {study.slackChannel}
-          </p>
-        )}
+        <span className="noMargin display-block">
+          {study.slackChannel ? (
+            <pre className="display-inline text-blue">
+              <Icon name="slack hash" size="small" />
+              {study.slackChannel}
+            </pre>
+          ) : (
+            <span>No Slack Channel</span>
+          )}
           {updateStudy && (
             <Popup
               on="click"
@@ -248,6 +251,7 @@ const StudyHeader = ({study, loading, newStudy, showModal, updateStudy}) => {
               }
             />
           )}
+        </span>
         {releasesLoading ? (
           'Loading releases...'
         ) : (
