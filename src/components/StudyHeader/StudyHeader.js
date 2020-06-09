@@ -11,6 +11,9 @@ import {
   Placeholder,
   Popup,
   Icon,
+  Input,
+  Button,
+  Label,
 } from 'semantic-ui-react';
 import {GET_STUDY_RELEASES} from '../../state/queries';
 import {KF_COORD_UI} from '../../common/globals';
@@ -105,7 +108,26 @@ const Release = ({release}) => {
   );
 };
 
-const StudyHeader = ({study, loading, newStudy, showModal}) => {
+const StudyHeader = ({study, loading, newStudy, showModal, updateStudy}) => {
+  const [slackInput, setSlackInput] = useState(
+    study && study.slackChannel ? study.slackChannel : '',
+  );
+  const [open, setOpen] = useState(false);
+  const [apiErrors, setApiErrors] = useState(null);
+  const submitUpdate = values => {
+    updateStudy({
+      variables: {
+        id: study.id,
+        input: values,
+      },
+    })
+      .then(() => {
+        setApiErrors(null);
+        setOpen(false);
+      })
+      .catch(err => setApiErrors(err.message));
+  };
+
   const relayId =
     study && Buffer.from('StudyNode:' + study.kfId).toString('base64');
   const {data: releasesData, loading: releasesLoading} = useQuery(
@@ -165,6 +187,67 @@ const StudyHeader = ({study, loading, newStudy, showModal}) => {
             {study.slackChannel}
           </p>
         )}
+          {updateStudy && (
+            <Popup
+              on="click"
+              position="bottom right"
+              header="Edit Slack Channel"
+              open={open}
+              onOpen={() => {
+                setSlackInput(study.slackChannel || '');
+                setOpen(true);
+              }}
+              onClose={() => {
+                setApiErrors(null);
+                setOpen(false);
+              }}
+              trigger={
+                <Label
+                  as={Button}
+                  size="mini"
+                  primary
+                  basic
+                  animated="vertical"
+                  className="ml-5"
+                >
+                  <Button.Content hidden>EDIT</Button.Content>
+                  <Button.Content className="mr-8" visible>
+                    <Icon className="noMargin" name="pencil" />
+                  </Button.Content>
+                </Label>
+              }
+              content={
+                <>
+                  {apiErrors ? (
+                    <span className="text-red text-10">{apiErrors}</span>
+                  ) : (
+                    <>
+                      <Input
+                        className="mt-6"
+                        aria-label="edit slack channel"
+                        size="mini"
+                        placeholder="slack_channel_name"
+                        onChange={(e, {value}) => {
+                          setSlackInput(value);
+                        }}
+                        value={slackInput}
+                        action={
+                          <Button
+                            color="blue"
+                            content="SAVE"
+                            size="mini"
+                            onClick={e => {
+                              submitUpdate({slackChannel: slackInput});
+                            }}
+                          />
+                        }
+                      />
+                    </>
+                  )}
+                </>
+              }
+            />
+          )}
         {releasesLoading ? (
           'Loading releases...'
         ) : (
