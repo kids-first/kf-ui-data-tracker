@@ -151,7 +151,10 @@ const ConfigurationView = () => {
       .filter(key => !key.includes('__'))
       .map(key => ({
         name: key,
-        value: data.status.settings[key],
+        value:
+          data.status.settings[key] === null
+            ? 'No data'
+            : data.status.settings[key].toString(),
       }));
 
   const queues = data && data.status.queues && JSON.parse(data.status.queues);
