@@ -58,7 +58,7 @@ const FileElement = ({
     fileNode.description
       .split('\n')
       .splice(0, 5)
-      .join('\n') || null;
+      .join('\n') || '';
   const sortedVersions = fileSortedVersions(fileNode);
   const latestDate = fileLatestDate(sortedVersions);
   const fileType =
