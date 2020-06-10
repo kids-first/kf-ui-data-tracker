@@ -135,20 +135,23 @@ const StudyHeader = ({study, loading, newStudy, showModal, updateStudy}) => {
 
   const relayId =
     study && Buffer.from('StudyNode:' + study.kfId).toString('base64');
-  const {data: releasesData, loading: releasesLoading} = useQuery(
-    GET_STUDY_RELEASES,
-    {
-      variables: {
-        id: relayId,
-      },
-      context: {clientName: 'coordinator'},
+  const {
+    data: releasesData,
+    loading: releasesLoading,
+    error: releasesError,
+  } = useQuery(GET_STUDY_RELEASES, {
+    variables: {
+      id: relayId,
     },
-  );
+    context: {clientName: 'coordinator'},
+  });
 
   const latestRelease =
     releasesData &&
     releasesData.study &&
     releasesData.study.releases &&
+    releasesData.study.releases.edges &&
+    releasesData.study.releases.edges.length > 0 &&
     releasesData.study.releases.edges[0].node;
 
   const currentStatus =
@@ -261,9 +264,9 @@ const StudyHeader = ({study, loading, newStudy, showModal, updateStudy}) => {
             />
           )}
         </span>
-        {releasesLoading ? (
-          'Loading releases...'
-        ) : (
+        {releasesLoading && 'Loading releases...'}
+        {!releasesLoading && releasesError && 'Problem loading releases'}
+        {!releasesLoading && !releasesError && latestRelease && (
           <Release release={latestRelease} />
         )}
         {newStudy && newStudy.length > 0 && (
