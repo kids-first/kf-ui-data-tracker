@@ -1,5 +1,18 @@
 # Data Tracker Change History
 
+## Kids First Data Tracker Release 0.14.2
+
+Bug fix for study header breaking application.
+
+### Summary
+
+- Emojis: 🐛 x1
+- Categories: Fixes x1
+
+### New features and changes
+
+- [#739](https://github.com/kids-first/kf-ui-data-tracker/pull/739) - 🐛 Check that release exists - [a4d38489](https://github.com/kids-first/kf-ui-data-tracker/commit/a4d38489d22834fd7a98f2c73c17e59bd1d909b7) by [dankolbman](https://github.com/dankolbman)
+
 ## Kids First Data Tracker Release 0.14.1
 
 Fix errors when data is not present.
