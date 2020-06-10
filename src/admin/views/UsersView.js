@@ -116,13 +116,12 @@ const UsersView = () => {
               clearable
               placeholder="User Group"
               loading={loading}
-              options={groupOptions}
+              options={groupOptions || []}
               onChange={(e, {name, value}) => setSelectedGroup(value)}
             />
             <Form.Field
               width={8}
               control={Input}
-              clearable
               aria-label="userSearch"
               iconPosition="left"
               icon="search"
