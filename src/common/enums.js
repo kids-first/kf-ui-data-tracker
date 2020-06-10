@@ -317,3 +317,38 @@ export const defaultTagOptions = [
   {key: 'email', value: 'email', text: 'Email'},
   {key: 'dataDictionary', value: 'dataDictionary', text: 'Data Dictionary'},
 ];
+
+// Icon name for different permissions
+export const permissionIcon = {
+  bucket: 'trash',
+  collaborator: 'user',
+  downloadtoken: 'setting',
+  event: 'bars',
+  file: 'file',
+  group: 'user',
+  job: 'tasks',
+  permission: 'user',
+  project: 'file code',
+  queue: 'tasks',
+  referraltoken: 'setting',
+  settings: 'setting',
+  status: 'hourglass half',
+  study: 'lab',
+  user: 'user',
+  version: 'file alternate',
+  volume: 'file archive',
+};
+
+// Icon color for different permissions
+export const permissionColor = {
+  view: 'blue',
+  list: 'blue',
+  link: 'green',
+  unlink: 'red',
+  add: 'green',
+  remove: 'red',
+  delete: 'red',
+  change: 'yellow',
+  sync: 'yellow',
+  import: 'yellow',
+};
