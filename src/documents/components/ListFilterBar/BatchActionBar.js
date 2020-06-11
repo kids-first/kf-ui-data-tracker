@@ -11,21 +11,28 @@ const BatchActionBar = ({
   setSelection,
   downloadFileMutation,
   deleteFile,
+  disabled,
 }) => (
-  <Segment className="noHorizontalPadding mt-0" clearing basic textAlign="left">
-    <div className="small-inline">
+  <Segment
+    className="noPadding mt-0 mr-0"
+    clearing
+    basic
+    textAlign="right"
+    floated="right"
+  >
+    <div
+      className={disabled ? 'small-inline pr-5 text-gray' : 'small-inline pr-5'}
+    >
       {selection.length + '/' + fileList.length + ' selected '}
     </div>
     <Button
-      floated="right"
       className="h-38"
       compact
       basic
       primary
       size="large"
       icon="download"
-      labelPosition="left"
-      content="Download Selected Documents"
+      disabled={disabled}
       onClick={e => {
         e.stopPropagation();
         selection.map(fileId =>
@@ -37,15 +44,13 @@ const BatchActionBar = ({
       <Popup
         trigger={
           <Button
-            floated="right"
             className="h-38"
             compact
             basic
             negative
             size="large"
             icon="trash alternate"
-            labelPosition="left"
-            content="Delete Selected Documents"
+            disabled={disabled}
             onClick={e => {
               e.stopPropagation();
             }}
