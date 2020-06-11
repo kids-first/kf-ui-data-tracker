@@ -50,7 +50,6 @@ const BaseHelper = ({title, image, children}) => {
           <Button
             basic
             className="text-button"
-            icon="close"
             floated="right"
             onClick={toggleVisible}
           >
