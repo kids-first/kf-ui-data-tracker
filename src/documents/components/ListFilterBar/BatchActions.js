@@ -1,10 +1,11 @@
 import React from 'react';
 import {Icon, Button, Segment, Divider, Popup} from 'semantic-ui-react';
 import {downloadFile} from '../../utilities';
+
 /**
- * Filter Bar for Study Files, returns filtered list in "filteredList" render prop
+ * Batch action buttons (download and deleted), disabled when no file selected
  */
-const BatchActionBar = ({
+const BatchActions = ({
   fileList,
   studyId,
   selection,
@@ -32,6 +33,7 @@ const BatchActionBar = ({
       primary
       size="large"
       icon="download"
+      data-testid="batch-download"
       disabled={disabled}
       onClick={e => {
         e.stopPropagation();
@@ -50,6 +52,7 @@ const BatchActionBar = ({
             negative
             size="large"
             icon="trash alternate"
+            data-testid="batch-delete"
             disabled={disabled}
             onClick={e => {
               e.stopPropagation();
@@ -84,4 +87,4 @@ const BatchActionBar = ({
   </Segment>
 );
 
-export default BatchActionBar;
+export default BatchActions;
