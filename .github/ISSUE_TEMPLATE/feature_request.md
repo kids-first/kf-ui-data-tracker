@@ -6,21 +6,12 @@ labels: feature
 assignees: ''
 ---
 
-## Persona (link)
+## Feature Justification
 
-Who is the intended audience impacted by this change? This should be a link to a pre-defined persona and not free text
+<!-- Please write a short summary here outlining the desired feature and the problem it helps solve -->
 
-## Requirements
 
-Wireframes, mockups or detailed of the feature to the implemented.
+## Proposed Change or Addition
 
-## Motivation/Goal
+<!-- Specify, in detail, how the feature may be implemented. Use of wireframes is helpful if the feature is visual. -->
 
-What is the intention of this change? What outcome do you hope to see from this change?
-
-- Detailed feature1 description
-- Detailed feature2 description
-
-## Supporting Evidence (qual or quant)
-
-UI changes should be supported by data and not guesses. What empirical evidence from the above persona do you have to support this change? (usability testing data, interviews, analytics data, a direct quotation from user feedback)
