@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {useQuery, useMutation} from '@apollo/react-hooks';
 import {Amplitude, LogOnMount} from '@amplitude/react-amplitude';
 import {Button, Divider, Icon, List, Message, Modal} from 'semantic-ui-react';
@@ -6,6 +6,7 @@ import {Formik} from 'formik';
 import {ALL_STUDIES, ALL_GROUPS} from '../state/queries';
 import {CREATE_REFERRAL_TOKEN} from '../state/mutations';
 import {InviteForm} from '../forms';
+import {PermissionGroup} from '../admin/components/UserList';
 
 /**
  * Modal to invite a user to the Data Tracker by email.
@@ -70,7 +71,7 @@ const InviteModal = ({open, onCloseDialog}) => {
   };
 
   return (
-    <Modal open={open} onClose={onCloseDialog} closeIcon size="small">
+    <Modal open={open} onClose={onCloseDialog} closeIcon size="large">
       <Formik
         initialValues={{
           studies: [],
@@ -110,32 +111,65 @@ const InviteModal = ({open, onCloseDialog}) => {
  */
 const InviteModalContent = ({onCloseDialog, studies, groups, formikProps}) => {
   const {isSubmitting, isValid, handleSubmit, status} = formikProps;
+  const [groupDetail, showGroupDetail] = useState(false);
+  // Group permissions are sorted by the object
+  // Permission codename in action_object format, e.g. "view_event", "add_file"
+  const groupOptions =
+    groups &&
+    groups.map(({node}) => ({
+      key: node.name,
+      permissions: node.permissions.edges
+        .map(({node}) => ({
+          key: node.codename,
+          value: node.name,
+        }))
+        .sort((a, b) =>
+          a.key.split('_').slice(-1)[0] > b.key.split('_').slice(-1)[0]
+            ? 1
+            : -1,
+        ),
+    }));
 
   return (
     <>
       <Modal.Header content="Invite Users to the Data Tracker" />
-      <Modal.Content>
-        <Modal.Description>
-          <Message icon info>
-            <Icon name="mail" />
-            <Message.Content>
-              <Message.Header>Invite a user by email</Message.Header>
-              Send users an invitation email with a refferal code that will
-              automatically add them to the appropriate studies after they log
-              in for the first time.
-            </Message.Content>
-          </Message>
-        </Modal.Description>
-        <Divider />
+      {groupDetail ? (
+        <Modal.Content>
+          {groupOptions && <PermissionGroup groupOptions={groupOptions} />}
+        </Modal.Content>
+      ) : (
+        <Modal.Content>
+          <Modal.Description>
+            <Message icon info>
+              <Icon name="mail" />
+              <Message.Content>
+                <Message.Header>Invite a user by email</Message.Header>
+                Send users an invitation email with a refferal code that will
+                automatically add them to the appropriate studies after they log
+                in for the first time.
+              </Message.Content>
+            </Message>
+          </Modal.Description>
+          <Divider />
 
-        <InviteForm
-          formikProps={formikProps}
-          studies={studies}
-          groups={groups}
-        />
-        {status && <Message {...status} />}
-      </Modal.Content>
+          <InviteForm
+            formikProps={formikProps}
+            studies={studies}
+            groups={groups}
+            showGroupDetail={showGroupDetail}
+          />
+          {status && <Message {...status} />}
+        </Modal.Content>
+      )}
       <Modal.Actions>
+        {groupDetail && (
+          <Button
+            primary
+            floated="left"
+            content="Back"
+            onClick={() => showGroupDetail(false)}
+          />
+        )}
         <Button onClick={() => onCloseDialog()}>Cancel</Button>
         <Amplitude
           eventProperties={inheritedProps => ({

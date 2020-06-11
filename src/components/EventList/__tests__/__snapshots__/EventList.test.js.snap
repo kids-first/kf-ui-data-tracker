@@ -13,7 +13,7 @@ exports[`Event list renders correctly -- with mock data 1`] = `
     >
       <i
         aria-hidden="true"
-        class="green add icon"
+        class="green file alternate icon"
       />
       <div
         class="content"
@@ -37,7 +37,7 @@ exports[`Event list renders correctly -- with mock data 1`] = `
     >
       <i
         aria-hidden="true"
-        class="yellow refresh icon"
+        class="yellow file alternate icon"
       />
       <div
         class="content"
@@ -61,7 +61,7 @@ exports[`Event list renders correctly -- with mock data 1`] = `
     >
       <i
         aria-hidden="true"
-        class="green add icon"
+        class="green file alternate icon"
       />
       <div
         class="content"
@@ -85,7 +85,7 @@ exports[`Event list renders correctly -- with mock data 1`] = `
     >
       <i
         aria-hidden="true"
-        class="green add icon"
+        class="green file alternate icon"
       />
       <div
         class="content"
@@ -109,7 +109,7 @@ exports[`Event list renders correctly -- with mock data 1`] = `
     >
       <i
         aria-hidden="true"
-        class="yellow refresh icon"
+        class="yellow file alternate icon"
       />
       <div
         class="content"
@@ -133,7 +133,7 @@ exports[`Event list renders correctly -- with mock data 1`] = `
     >
       <i
         aria-hidden="true"
-        class="yellow refresh icon"
+        class="yellow file icon"
       />
       <div
         class="content"
@@ -157,7 +157,7 @@ exports[`Event list renders correctly -- with mock data 1`] = `
     >
       <i
         aria-hidden="true"
-        class="green add icon"
+        class="green file alternate icon"
       />
       <div
         class="content"
@@ -181,7 +181,7 @@ exports[`Event list renders correctly -- with mock data 1`] = `
     >
       <i
         aria-hidden="true"
-        class="green add icon"
+        class="green file icon"
       />
       <div
         class="content"

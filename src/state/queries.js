@@ -325,6 +325,15 @@ export const ALL_GROUPS = gql`
         node {
           id
           name
+          permissions {
+            edges {
+              node {
+                id
+                name
+                codename
+              }
+            }
+          }
         }
       }
     }

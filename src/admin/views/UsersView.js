@@ -13,7 +13,7 @@ import {
   Segment,
   Message,
 } from 'semantic-ui-react';
-import {UserList} from '../components/UserList';
+import {UserList, PermissionGroup} from '../components/UserList';
 import {ALL_USERS, ALL_GROUPS, MY_PROFILE} from '../../state/queries';
 import {UPDATE_USER} from '../../state/mutations';
 
@@ -44,12 +44,24 @@ const UsersView = () => {
     loading: groupsLoading,
     error: groupsError,
   } = useQuery(ALL_GROUPS);
+  // Group permissions are sorted by the object
+  // Permission codename in action_object format, e.g. "view_event", "add_file"
   const groupOptions =
     groupsData &&
     groupsData.allGroups.edges.map(({node}) => ({
       key: node.name,
       text: node.name,
       value: node.id,
+      permissions: node.permissions.edges
+        .map(({node}) => ({
+          key: node.codename,
+          value: node.name,
+        }))
+        .sort((a, b) =>
+          a.key.split('_').slice(-1)[0] > b.key.split('_').slice(-1)[0]
+            ? 1
+            : -1,
+        ),
     }));
 
   const filteredList =
@@ -91,6 +103,9 @@ const UsersView = () => {
         All users registered in the data tracker are available here.
       </Segment>
       <Segment basic>
+        <Header as="h4">User group permissions</Header>
+        {groupOptions && <PermissionGroup groupOptions={groupOptions} />}
+        <Header as="h4">User list</Header>
         <Form widths="equal">
           <Form.Group inline>
             <Form.Field
@@ -101,13 +116,12 @@ const UsersView = () => {
               clearable
               placeholder="User Group"
               loading={loading}
-              options={groupOptions}
+              options={groupOptions || []}
               onChange={(e, {name, value}) => setSelectedGroup(value)}
             />
             <Form.Field
               width={8}
               control={Input}
-              clearable
               aria-label="userSearch"
               iconPosition="left"
               icon="search"

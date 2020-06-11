@@ -16,6 +16,19 @@ context('Invite User Modal', () => {
       .should('exist')
       .click();
 
+    // Check permission group and go back
+    cy.contains('button', 'Back').should('not.exist');
+    cy.contains('button', 'See Permission Groups Detail')
+      .should('exist')
+      .click();
+    cy.get('[data-testid="user-group-header"]').should('have.length', 5);
+    cy.get('[data-testid="user-group-header"]')
+      .first()
+      .click();
+    cy.contains('button', 'Back')
+      .should('exist')
+      .click();
+
     // Fill out the form
 
     cy.get('[data-cy="group selector"]')

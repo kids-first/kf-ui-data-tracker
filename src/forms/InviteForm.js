@@ -1,12 +1,12 @@
 import React from 'react';
-import {Dropdown, Form} from 'semantic-ui-react';
+import {Dropdown, Form, Button, Icon} from 'semantic-ui-react';
 import {StudySelector} from '../components/StudySelector';
 
 /**
  * Displays a form to invite a user to the Data Tracker by email to one or more
  * studies.
  */
-const InviteForm = ({formikProps, studies, groups}) => {
+const InviteForm = ({formikProps, studies, groups, showGroupDetail}) => {
   const {errors, touched, handleBlur, setFieldValue} = formikProps;
 
   const groupOptions =
@@ -20,6 +20,16 @@ const InviteForm = ({formikProps, studies, groups}) => {
   return (
     <Form>
       <Form.Field>
+        <Button
+          floated="right"
+          size="mini"
+          labelPosition="left"
+          className="text-primary"
+          onClick={() => showGroupDetail(true)}
+        >
+          <Icon name="eye" />
+          See Permission Groups Detail
+        </Button>
         <label htmlFor="groups">
           Permission groups this user will be added to
         </label>
