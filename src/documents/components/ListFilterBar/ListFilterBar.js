@@ -1,12 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Icon, Form, Responsive} from 'semantic-ui-react';
+import {Icon, Form, Responsive, Segment} from 'semantic-ui-react';
 import {fileTypeDetail, defaultTagOptions} from '../../../common/enums';
+import BatchActions from './BatchActions';
 
 /**
  * Filter Bar for Study Files, returns filtered list in "filteredList" render prop
  */
-const ListFilterBar = ({fileList, filters, setFilters}) => {
+const ListFilterBar = ({
+  fileList,
+  filters,
+  setFilters,
+  studyId,
+  selection,
+  setSelection,
+  downloadFileMutation,
+  deleteFile,
+  disabled,
+}) => {
   var defaultTags = {};
   defaultTagOptions.map(tagObj => (defaultTags[tagObj.key] = tagObj.text));
   var tagList = [];
@@ -39,6 +50,15 @@ const ListFilterBar = ({fileList, filters, setFilters}) => {
     <>
       <Responsive maxWidth={999}>
         <Form as="div">
+          <BatchActions
+            fileList={fileList}
+            studyId={studyId}
+            deleteFile={deleteFile}
+            downloadFileMutation={downloadFileMutation}
+            selection={selection}
+            setSelection={setSelection}
+            disabled={disabled}
+          />
           <Form.Input
             fluid
             aria-label="file-search-input"
@@ -80,7 +100,13 @@ const ListFilterBar = ({fileList, filters, setFilters}) => {
       </Responsive>
       <Responsive minWidth={1000}>
         <Form as="div">
-          <Form.Group inline>
+          <Form.Group
+            as={Segment}
+            basic
+            inline
+            className="noPadding"
+            floated="left"
+          >
             <Form.Dropdown
               selection
               clearable
@@ -115,6 +141,15 @@ const ListFilterBar = ({fileList, filters, setFilters}) => {
               value={filters.searchString}
             />
           </Form.Group>
+          <BatchActions
+            fileList={fileList}
+            studyId={studyId}
+            deleteFile={deleteFile}
+            downloadFileMutation={downloadFileMutation}
+            selection={selection}
+            setSelection={setSelection}
+            disabled={disabled}
+          />
         </Form>
       </Responsive>
     </>

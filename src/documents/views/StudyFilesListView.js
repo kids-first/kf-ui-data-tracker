@@ -19,7 +19,6 @@ import {
 import UploadWizard from '../modals/UploadWizard/UploadWizard';
 import NotFoundView from '../../views/NotFoundView';
 import ListFilterBar from '../components/ListFilterBar/ListFilterBar';
-import BatchActionBar from '../components/ListFilterBar/BatchActionBar';
 import {hasPermission} from '../../common/permissions';
 
 /**
@@ -199,22 +198,17 @@ const StudyFilesListView = ({
         <Grid.Column width={16}>
           {files.length > 0 ? (
             <>
-              {selectedFiles.length === 0 ? (
-                <ListFilterBar
-                  fileList={files}
-                  filters={filters}
-                  setFilters={setFilters}
-                />
-              ) : (
-                <BatchActionBar
-                  fileList={files}
-                  studyId={kfId}
-                  deleteFile={allowDelete ? deleteFile : null}
-                  downloadFileMutation={downloadFile}
-                  selection={selectedFiles}
-                  setSelection={setSelectedFiles}
-                />
-              )}
+              <ListFilterBar
+                fileList={files}
+                filters={filters}
+                setFilters={setFilters}
+                studyId={kfId}
+                deleteFile={allowDelete ? deleteFile : null}
+                downloadFileMutation={downloadFile}
+                selection={selectedFiles}
+                setSelection={setSelectedFiles}
+                disabled={selectedFiles.length === 0}
+              />
               <FileList
                 fileList={filteredFiles}
                 studyId={kfId}
