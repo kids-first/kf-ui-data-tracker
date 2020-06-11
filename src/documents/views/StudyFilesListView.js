@@ -199,22 +199,20 @@ const StudyFilesListView = ({
         <Grid.Column width={16}>
           {files.length > 0 ? (
             <>
-              {selectedFiles.length === 0 ? (
-                <ListFilterBar
-                  fileList={files}
-                  filters={filters}
-                  setFilters={setFilters}
-                />
-              ) : (
-                <BatchActionBar
-                  fileList={files}
-                  studyId={kfId}
-                  deleteFile={allowDelete ? deleteFile : null}
-                  downloadFileMutation={downloadFile}
-                  selection={selectedFiles}
-                  setSelection={setSelectedFiles}
-                />
-              )}
+              <BatchActionBar
+                fileList={files}
+                studyId={kfId}
+                deleteFile={allowDelete ? deleteFile : null}
+                downloadFileMutation={downloadFile}
+                selection={selectedFiles}
+                setSelection={setSelectedFiles}
+                disabled={selectedFiles.length === 0}
+              />
+              <ListFilterBar
+                fileList={files}
+                filters={filters}
+                setFilters={setFilters}
+              />
               <FileList
                 fileList={filteredFiles}
                 studyId={kfId}
