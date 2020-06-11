@@ -99,8 +99,8 @@ context('Admin Document List', () => {
     // Select all the documents
     cy.get('tr th:first').click();
     // Has batch download button and batch delete button
-    cy.contains('button', 'Delete Selected Documents').should('exist');
-    cy.contains('button', 'Download Selected Documents').should('exist');
+    cy.get('[data-testid="batch-download"]').should('exist');
+    cy.get('[data-testid="batch-delete"]').should('exist');
   });
 });
 
@@ -129,7 +129,7 @@ context('Investigator Document List', () => {
     // Select all the documents
     cy.get('tr th:first').click();
     // Has batch download button but no batch delete button
-    cy.contains('button', 'Delete Selected Documents').should('not.exist');
-    cy.contains('button', 'Download Selected Documents').should('exist');
+    cy.get('[data-testid="batch-download"]').should('exist');
+    cy.get('[data-testid="batch-delete"]').should('not.exist');
   });
 });
