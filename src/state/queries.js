@@ -339,3 +339,25 @@ export const ALL_GROUPS = gql`
     }
   }
 `;
+
+export const FEATURES = gql`
+  query features {
+    __type(name: "Features") {
+      name
+      fields {
+        name
+      }
+    }
+  }
+`;
+
+export const SETTINGS = gql`
+  query settings {
+    __type(name: "Settings") {
+      name
+      fields {
+        name
+      }
+    }
+  }
+`;
