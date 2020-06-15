@@ -10,7 +10,8 @@ import {
   Dimmer,
 } from 'semantic-ui-react';
 import TimeAgo from 'react-timeago';
-import {STATUS} from '../../state/queries';
+import {FEATURES, SETTINGS} from '../../state/queries';
+import gql from 'graphql-tag';
 
 const FeatureTable = ({features}) => (
   <Table
@@ -146,7 +147,47 @@ const LoadingTable = () => (
   </Segment>
 );
 
-const ConfigurationView = () => {
+const StatusTables = ({featuresString, settingsString}) => {
+  const FEATURES_FIELDS = gql`
+    ${featuresString}
+  `;
+  const SETTINGS_FIELDS = gql`
+    ${settingsString}
+  `;
+
+  const STATUS = gql`
+    query Status {
+      status {
+        name
+        version
+        commit
+        features {
+          ...FeaturesFields
+        }
+        settings {
+          ...SettingsFields
+        }
+        queues
+        jobs {
+          edges {
+            node {
+              id
+              name
+              active
+              failing
+              lastRun
+              lastError
+              createdOn
+              enqueuedAt
+            }
+          }
+        }
+      }
+    }
+    ${FEATURES_FIELDS}
+    ${SETTINGS_FIELDS}
+  `;
+
   const {data} = useQuery(STATUS);
 
   const features =
@@ -185,6 +226,33 @@ const ConfigurationView = () => {
       lastError: node.lastError,
       enqueuedAt: node.enqueuedAt,
     }));
+  return (
+    <>
+      <Header as="h4">Feature Flags</Header>
+      {features ? <FeatureTable features={features} /> : <LoadingTable />}
+      <Header as="h4">Settings</Header>
+      {settings ? <SettingsTable settings={settings} /> : <LoadingTable />}
+      <Header as="h4">Queues</Header>
+      {queues ? <Queues queues={queues} /> : <LoadingTable />}
+      <Header as="h4">Jobs</Header>
+      {jobs ? <Jobs jobs={jobs} /> : <LoadingTable />}
+    </>
+  );
+};
+
+const ConfigurationView = () => {
+  const {data: settingsFields} = useQuery(SETTINGS, {});
+  const {data: featuresFields} = useQuery(FEATURES, {});
+
+  const featuresFragments =
+    featuresFields && featuresFields.__type.fields.map(i => i.name).join(' ');
+  const settingsFragments =
+    settingsFields && settingsFields.__type.fields.map(i => i.name).join(' ');
+
+  const featuresString =
+    'fragment FeaturesFields on Features {' + featuresFragments + '}';
+  const settingsString =
+    'fragment SettingsFields on Settings {' + settingsFragments + '}';
 
   return (
     <>
@@ -198,15 +266,10 @@ const ConfigurationView = () => {
           with. They are for debug purposes only and require deployment changes
           to be modified.
         </Segment>
-
-        <Header as="h4">Feature Flags</Header>
-        {features ? <FeatureTable features={features} /> : <LoadingTable />}
-        <Header as="h4">Settings</Header>
-        {settings ? <SettingsTable settings={settings} /> : <LoadingTable />}
-        <Header as="h4">Queues</Header>
-        {queues ? <Queues queues={queues} /> : <LoadingTable />}
-        <Header as="h4">Jobs</Header>
-        {jobs ? <Jobs jobs={jobs} /> : <LoadingTable />}
+        <StatusTables
+          featuresString={featuresString}
+          settingsString={settingsString}
+        />
       </Container>
     </>
   );
