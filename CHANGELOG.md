@@ -1,4 +1,19 @@
-# Data Tracker Change History
+#  Change History
+
+## Release 0.14.3
+
+### Summary
+
+- Emojis: ✨ x2, ♻️ x1, 📝 x1
+- Categories: Additions x2, Other Changes x1, Documentation x1
+
+### New features and changes
+
+- [#754](https://github.com/kids-first/kf-ui-data-tracker/pull/754) - ✨ Include referrals in tracked routes - [2c794ce4](https://github.com/kids-first/kf-ui-data-tracker/commit/2c794ce4914f163da50b6e7ab4f0dfc0830770ef) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#753](https://github.com/kids-first/kf-ui-data-tracker/pull/753) - ✨ Add missing fields to configuration page - [4f0c0d83](https://github.com/kids-first/kf-ui-data-tracker/commit/4f0c0d83673af3af48336849e33cb321475c73f0) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#747](https://github.com/kids-first/kf-ui-data-tracker/pull/747) - ♻️ Always display bulk document actions - [3aa703bf](https://github.com/kids-first/kf-ui-data-tracker/commit/3aa703bfab225d54c123356be2c4c8ed63bd9541) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#743](https://github.com/kids-first/kf-ui-data-tracker/pull/743) - 📝 Update issue template - [54246b82](https://github.com/kids-first/kf-ui-data-tracker/commit/54246b82af733dc40d63ec2623e99cb4747c255d) by [dankolbman](https://github.com/dankolbman)
+
 
 ## Kids First Data Tracker Release 0.14.2
 
