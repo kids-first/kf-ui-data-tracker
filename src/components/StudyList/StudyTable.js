@@ -43,6 +43,16 @@ const cellContent = {
       {node.anticipatedSamples || '-'}
     </Table.Cell>
   ),
+  slackChannel: node => (
+    <Table.Cell singleLine width="1" key={node.kfId + 'slackChannel'}>
+      <code>{node.slackChannel ? node.slackChannel : '-'}</code>
+    </Table.Cell>
+  ),
+  bucket: node => (
+    <Table.Cell singleLine width="1" key={node.kfId + 'bucket'}>
+      <code>{node.bucket ? node.bucket : '-'}</code>
+    </Table.Cell>
+  ),
 };
 
 const renderRow = (node, columns) => ({
