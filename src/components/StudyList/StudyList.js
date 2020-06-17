@@ -13,6 +13,7 @@ import {
   Button,
   Checkbox,
   Popup,
+  Responsive,
 } from 'semantic-ui-react';
 import {hasPermission} from '../../common/permissions';
 import ColumnSelector from './ColumnSelector';
@@ -34,6 +35,7 @@ const HeaderSkeleton = () => (
  * Displays unordered studies in grid view (include empty stage message)
  */
 const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
+  const [responsiveClass, setResponsiveClass] = useState('');
   const [searchString, setSearchString] = useState('');
   const [myStudies, setMyStudies] = useState(
     localStorage.getItem('onlyMyStudies') !== null
@@ -181,14 +183,21 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
 
   return (
     <>
-      <Grid as={Segment} basic container stackable>
+      <Grid as={Segment} basic container>
         <Grid.Row columns={6}>
-          <Grid.Column width={4}>
+          <Grid.Column computer={3} tablet={5} mobile={16}>
             <Header as="h1" floated="left">
               Your Studies
             </Header>
           </Grid.Column>
-          <Grid.Column width={3} verticalAlign="middle" textAlign="right">
+          <Grid.Column
+            className="pl-0"
+            computer={3}
+            tablet={3}
+            mobile={6}
+            verticalAlign="middle"
+            textAlign="right"
+          >
             <ColumnSelector
               columns={columns.columns}
               onChange={cols => {
@@ -198,8 +207,14 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
               }}
             />
           </Grid.Column>
-
-          <Grid.Column width={3} verticalAlign="middle" textAlign="right">
+          <Grid.Column
+            className="pl-0"
+            computer={3}
+            tablet={4}
+            mobile={5}
+            verticalAlign="middle"
+            textAlign="right"
+          >
             {myProfile && hasPermission(myProfile, 'view_study') && (
               <Amplitude
                 eventProperties={inheritedProps => ({
@@ -224,14 +239,17 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
               </Amplitude>
             )}
           </Grid.Column>
-          <Grid.Column width={2} verticalAlign="middle">
+          <Grid.Column
+            computer={3}
+            tablet={4}
+            mobile={5}
+            verticalAlign="middle"
+          >
             {myProfile && hasPermission(myProfile, 'add_study') && (
               <Button
                 basic
                 primary
                 fluid
-                className="ml-10"
-                size="mini"
                 icon="add"
                 content="Add Study"
                 as={Link}
@@ -239,11 +257,25 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
               />
             )}
           </Grid.Column>
-          <Grid.Column width={3} verticalAlign="middle">
-            <Input
+          <Grid.Column
+            className="pl-0"
+            tablet={15}
+            computer={3}
+            mobile={15}
+            verticalAlign="middle"
+          >
+            <Responsive
+              as={Input}
+              columns={1}
+              fireOnMount
+              onUpdate={(e, {width}) =>
+                setResponsiveClass(
+                  width >= Responsive.onlyComputer.minWidth ? '' : 'mt-15',
+                )
+              }
+              className={responsiveClass}
+              fluid
               aria-label="search studies"
-              className="ml-10"
-              size="mini"
               iconPosition="left"
               icon="search"
               placeholder="Search by study name or collaborator"
@@ -253,7 +285,14 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
               value={searchString}
             />
           </Grid.Column>
-          <Grid.Column width={1} verticalAlign="middle" textAlign="right">
+          <Grid.Column
+            className="pl-0"
+            tablet={1}
+            computer={1}
+            mobile={1}
+            verticalAlign="middle"
+            textAlign="right"
+          >
             <Amplitude
               eventProperties={inheritedProps => ({
                 ...inheritedProps,
@@ -269,9 +308,9 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
                   position="top right"
                   trigger={
                     <Button
+                      className={responsiveClass}
                       data-cy="toggle width button"
                       active={fullWidth}
-                      size="mini"
                       onClick={() => toggleWidth(logEvent)}
                       icon={fullWidth ? 'compress' : 'expand'}
                     />
