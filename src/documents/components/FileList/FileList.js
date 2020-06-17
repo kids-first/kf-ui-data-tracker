@@ -1,7 +1,11 @@
 import React, {useState, Fragment} from 'react';
 import PropTypes from 'prop-types';
 import FileElement from './FileElement';
-import {fileLatestStatus} from '../../utilities';
+import {
+  fileLatestStatus,
+  fileSortedVersions,
+  fileLatestDate,
+} from '../../utilities';
 import {DOCS_PER_PAGE} from '../../../common/globals';
 import {
   Header,
@@ -19,7 +23,11 @@ const stringSort = (a, b) =>
 
 const columnSorts = {
   type: (f1, f2) => stringSort(f1.node.fileType, f2.node.fileType),
-  updatedAt: (f1, f2) => dateSort(fileLatestStatus(f1), fileLatestStatus(f2)),
+  updatedAt: (f1, f2) =>
+    dateSort(
+      fileLatestDate(fileSortedVersions(f1.node)),
+      fileLatestDate(fileSortedVersions(f2.node)),
+    ),
   name: (f1, f2) => stringSort(f1.node.name, f2.node.name),
 };
 
