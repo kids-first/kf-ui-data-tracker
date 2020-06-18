@@ -28,11 +28,7 @@ const LinkStudyForm = ({
       ? allStudies.edges.map(({node}) => ({
           key: node.id,
           value: node.id,
-          text: (
-            <>
-              <b>{node.kfId}</b> - {node.name}
-            </>
-          ),
+          text: node.kfId + ' ' + node.name,
           content: (
             <>
               <b>{node.kfId}</b> - {node.name}
@@ -49,6 +45,7 @@ const LinkStudyForm = ({
         <label>Study</label>
         <Dropdown
           fluid
+          search
           selection
           id="studyId"
           name="studyId"
