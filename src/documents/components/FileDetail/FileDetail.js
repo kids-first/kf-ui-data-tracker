@@ -12,7 +12,6 @@ import {
 } from '../../utilities';
 import {fileTypeDetail} from '../../../common/enums';
 import FileDetailModal from './FileDetailModal';
-import Badge from '../../../components/Badge/Badge';
 import {
   Button,
   Grid,
@@ -156,12 +155,6 @@ const FileDetail = ({
           <Grid.Column mobile={16} tablet={16} computer={13}>
             <Segment.Group className="noBorders">
               <Segment.Group horizontal className="noBorders">
-                <Segment className="noBorders">
-                  <Header as="h4" color="grey">
-                    Approval Status
-                  </Header>
-                  <Badge state={sortedVersions[0].node.state} />
-                </Segment>
                 <Segment className="noBorders">
                   <Header as="h4" color="grey">
                     Document Type
