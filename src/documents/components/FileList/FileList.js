@@ -1,11 +1,7 @@
 import React, {useState, Fragment} from 'react';
 import PropTypes from 'prop-types';
 import FileElement from './FileElement';
-import {
-  fileLatestStatus,
-  fileSortedVersions,
-  fileLatestDate,
-} from '../../utilities';
+import {fileSortedVersions, fileLatestDate} from '../../utilities';
 import {DOCS_PER_PAGE} from '../../../common/globals';
 import {
   Header,
@@ -97,15 +93,6 @@ const FileList = ({
   );
   return (
     <Fragment>
-      {fileList.filter(obj => fileLatestStatus(obj.node) === 'CHN').length >
-        0 && (
-        <Message
-          negative
-          icon="warning circle"
-          header="Changes Needed"
-          content="The DRC has requested that you make changes to some of your documents."
-        />
-      )}
       {updateError && (
         <Message
           negative
