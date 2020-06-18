@@ -56,7 +56,7 @@ context('Admin Document List', () => {
 
     cy.get('tr')
       .eq(1)
-      .should('contain', 'wonder.wav');
+      .should('contain', 'word.js');
 
     // Sort documents by create date using the last updated column
     cy.contains('th', 'Last Updated').click();
@@ -65,7 +65,7 @@ context('Admin Document List', () => {
       .should('contain', 'old.doc');
     cy.get('tr')
       .eq(5)
-      .should('contain', 'wonder.wav');
+      .should('contain', 'word.js');
 
     // Reverse sort
     cy.contains('th', 'Last Updated').click();
@@ -74,7 +74,7 @@ context('Admin Document List', () => {
       .should('contain', 'old.doc');
     cy.get('tr')
       .eq(1)
-      .should('contain', 'wonder.wav');
+      .should('contain', 'word.js');
 
     // Sort by name
     cy.contains('th', 'Document Details').click();
