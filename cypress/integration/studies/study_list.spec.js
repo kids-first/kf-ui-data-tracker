@@ -11,6 +11,24 @@ context('Admin Study List', () => {
     cy.visit('/');
   });
 
+  it('toggles table columns', () => {
+    // Make sure there's no saved sorting state
+    expect(localStorage.getItem('studyColumns')).to.be.null;
+
+    // Select slack channle and bucket columns from option
+    cy.contains('span.ui.dropdown', 'Change Columns').click();
+    cy.contains('label', 'Slack Channel').click();
+    cy.contains('label', 'Bucket').click();
+    cy.contains('span.ui.dropdown', 'Change Columns').click();
+
+    // Select slack channle and bucket columns should show on table
+    cy.contains('th', 'Slack Channel').should('exist');
+    cy.contains('th', 'Bucket').should('exist');
+
+    // Clear storage for other tests
+    cy.clearLocalStorage('studyColumns');
+  });
+
   it('filters studies by name', () => {
     cy.contains('label', 'Show only my studies').click();
     // All studies should be displayed
