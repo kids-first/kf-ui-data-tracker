@@ -31,6 +31,7 @@ const NewStudyForm = ({
   editing,
   history,
   allowEdit,
+  submitting,
 }) => {
   const STUDY_STEPS = [
     {
@@ -293,8 +294,9 @@ const NewStudyForm = ({
                   primary
                   floated="right"
                   type="button"
-                  loading={formikProps.isSubmitting}
+                  loading={submitting}
                   disabled={
+                    submitting ||
                     Object.keys(formikProps.errors).length > 0 ||
                     formikProps.values.name.length === 0 ||
                     formikProps.values.externalId.length === 0

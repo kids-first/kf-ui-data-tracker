@@ -10,10 +10,11 @@ import {CREATE_STUDY} from '../state/mutations';
 
 const NewStudyView = ({match, history, location}) => {
   const [createStudy] = useMutation(CREATE_STUDY);
-
+  const [submitting, setSubmitting] = useState(false);
   const [newStudyError, setNewStudyError] = useState();
 
   const submitValue = values => {
+    setSubmitting(true);
     var sessionList = sessionStorage.getItem('newStudy')
       ? sessionStorage.getItem('newStudy').split(',')
       : [];
@@ -30,9 +31,11 @@ const NewStudyView = ({match, history, location}) => {
             newStudy: true,
           },
         });
+        setSubmitting(false);
       })
       .catch(err => {
         setNewStudyError(err.message);
+        setSubmitting(false);
       });
   };
 
@@ -54,6 +57,7 @@ const NewStudyView = ({match, history, location}) => {
         submitValue={submitValue}
         apiErrors={newStudyError}
         history={history}
+        submitting={submitting}
       />
     </Container>
   );
