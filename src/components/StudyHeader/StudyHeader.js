@@ -221,6 +221,7 @@ const StudyHeader = ({study, loading, newStudy, showModal, updateStudy}) => {
                   basic
                   animated="vertical"
                   className="ml-5"
+                  data-testid="edit-slack"
                 >
                   <Button.Content hidden>EDIT</Button.Content>
                   <Button.Content className="mr-8" visible>
@@ -254,6 +255,7 @@ const StudyHeader = ({study, loading, newStudy, showModal, updateStudy}) => {
                               setSubmitting(true);
                               submitUpdate({slackChannel: slackInput});
                             }}
+                            data-testid="submit-slack"
                           />
                         }
                       />
