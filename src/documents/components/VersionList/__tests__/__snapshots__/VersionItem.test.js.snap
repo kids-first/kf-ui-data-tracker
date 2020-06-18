@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly with 0 as index -- show ribbon label 1`] = `
+exports[`renders correctly 1`] = `
 <div>
   <table
     class="ui selectable very compact table"
@@ -11,16 +11,6 @@ exports[`renders correctly with 0 as index -- show ribbon label 1`] = `
       <tr
         class="version--item"
       >
-        <td
-          class="collapsing"
-        >
-          <div
-            class="ui orange tiny basic ribbon label"
-            title="Latest Version"
-          >
-            Pending review
-          </div>
-        </td>
         <td
           class=""
         >
@@ -85,13 +75,6 @@ exports[`renders correctly with 1 as index -- status dot 1`] = `
         class="version--item"
       >
         <td
-          class="center aligned middle aligned"
-        >
-          <div
-            class="ui orange mini circular empty label"
-          />
-        </td>
-        <td
           class=""
         >
           <p
@@ -155,16 +138,6 @@ exports[`renders correctly with not enough data 1`] = `
         class="version--item"
       >
         <td
-          class="collapsing"
-        >
-          <div
-            class="ui grey tiny basic ribbon label"
-            title="Latest Version"
-          >
-            Unknown
-          </div>
-        </td>
-        <td
           class=""
         >
           <p
@@ -215,13 +188,6 @@ exports[`renders correctly with not enough data 1`] = `
       <tr
         class="version--item"
       >
-        <td
-          class="center aligned middle aligned"
-        >
-          <div
-            class="ui grey mini circular empty label"
-          />
-        </td>
         <td
           class=""
         >

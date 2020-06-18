@@ -28,16 +28,6 @@ exports[`renders with more than one versions 1`] = `
         class="version--item"
       >
         <td
-          class="collapsing"
-        >
-          <div
-            class="ui orange tiny basic ribbon label"
-            title="Latest Version"
-          >
-            Pending review
-          </div>
-        </td>
-        <td
           class=""
         >
           <p
@@ -88,13 +78,6 @@ exports[`renders with more than one versions 1`] = `
         class="version--item"
       >
         <td
-          class="center aligned middle aligned"
-        >
-          <div
-            class="ui orange mini circular empty label"
-          />
-        </td>
-        <td
           class=""
         >
           <p
@@ -144,13 +127,6 @@ exports[`renders with more than one versions 1`] = `
       <tr
         class="version--item"
       >
-        <td
-          class="center aligned middle aligned"
-        >
-          <div
-            class="ui orange mini circular empty label"
-          />
-        </td>
         <td
           class=""
         >

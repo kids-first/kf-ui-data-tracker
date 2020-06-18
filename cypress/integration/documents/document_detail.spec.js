@@ -17,11 +17,6 @@ context('Admin Document Detail', () => {
       .find('tr')
       .its('length')
       .should('eq', 6);
-    // Has changes needed warning
-    cy.contains(
-      'p',
-      'The DRC has requested that you make changes to some of your documents.',
-    ).should('exist');
     // Click on the first document to go to detail page
     cy.contains('a', 'white.tiff').click();
     // Edit document approval status
@@ -35,11 +30,6 @@ context('Admin Document Detail', () => {
     cy.get('[data-testid="tag-file-add"]').click();
     // Go back to document list
     cy.contains('button', 'All Documents').click();
-    // No changes needed warning
-    cy.contains(
-      'p',
-      'The DRC has requested that you make changes to some of your documents.',
-    ).should('not.exist');
     // Filter the document by tag Email with 1 return
     cy.contains('div', 'Tag').click();
     cy.contains('span', 'Email').click();
