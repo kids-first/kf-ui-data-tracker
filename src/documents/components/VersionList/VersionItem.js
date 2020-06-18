@@ -4,8 +4,7 @@ import {useMutation} from '@apollo/react-hooks';
 import {FILE_DOWNLOAD_URL} from '../../mutations';
 import AvatarTimeAgo from '../../../components/AvatarTimeAgo/AvatarTimeAgo';
 import {formatFileSize, downloadFile, lengthLimit} from '../../utilities';
-import {versionState} from '../../../common/enums';
-import {Label, Icon, Table, Popup} from 'semantic-ui-react';
+import {Label, Icon, Table} from 'semantic-ui-react';
 /**
  * Displays single version item from the list
  */
@@ -18,9 +17,6 @@ const VersionItem = ({
   onNameClick,
 }) => {
   const [downloadFileMutation] = useMutation(FILE_DOWNLOAD_URL);
-  const labelColor = versionNode.state
-    ? versionState[versionNode.state].labelColor
-    : 'grey';
   const size = versionNode.size
     ? formatFileSize(versionNode.size, true)
     : 'Size Unknown';
@@ -29,37 +25,6 @@ const VersionItem = ({
       onClick={e => onNameClick(versionNode, index)}
       className="version--item"
     >
-      {index === 0 ? (
-        <Table.Cell collapsing>
-          <Label
-            color={labelColor}
-            basic
-            size="tiny"
-            ribbon
-            title="Latest Version"
-          >
-            {versionNode.state
-              ? versionState[versionNode.state].title
-              : 'Unknown'}
-          </Label>
-        </Table.Cell>
-      ) : (
-        <Table.Cell verticalAlign="middle" textAlign="center">
-          <Popup
-            inverted
-            position="left center"
-            size="small"
-            content={
-              versionNode.state
-                ? versionState[versionNode.state].title
-                : 'Unknown'
-            }
-            key={versionNode.state}
-            trigger={<Label circular size="mini" empty color={labelColor} />}
-          />
-        </Table.Cell>
-      )}
-
       <Table.Cell>
         <p title={versionNode.fileName}>
           <b>{lengthLimit(versionNode.fileName, 70)}</b>
