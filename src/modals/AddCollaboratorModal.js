@@ -39,7 +39,9 @@ const AddCollaboratorModal = ({
     {resetForm, setErrors, setStatus, setSubmitting},
   ) => {
     setSubmitting(true);
-    addCollaborator({variables: {study: study.id, user: values.userId}})
+    addCollaborator({
+      variables: {study: study.id, user: values.userId, role: 'RESEARCHER'},
+    })
       .then(resp => {
         setSubmitting(false);
         // Reset the state of the form so the user may add other collaborators
