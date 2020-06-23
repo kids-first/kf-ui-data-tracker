@@ -116,8 +116,10 @@ const CollaboratorItem = ({
                   role={role}
                   user={user}
                 />
+              ) : collaboratorRoles ? (
+                collaboratorRoles[role]
               ) : (
-                {role}
+                'Unkown Role'
               )}
             </List.Item>
             <List.Item>
