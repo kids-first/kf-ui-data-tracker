@@ -40,7 +40,7 @@ const AddCollaboratorModal = ({
   ) => {
     setSubmitting(true);
     addCollaborator({
-      variables: {study: study.id, user: values.userId, role: 'RESEARCHER'},
+      variables: {study: study.id, user: values.userId, role: values.role},
     })
       .then(resp => {
         setSubmitting(false);

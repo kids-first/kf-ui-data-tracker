@@ -19,10 +19,13 @@ const CollaboratorsList = ({users, showAdminActions, removeCollaborator}) => {
     <List relaxed divided>
       {users &&
         users.length > 0 &&
-        collaborators.map(({node}) => (
+        collaborators.map(({node, role, joinedOn, invitedBy}) => (
           <CollaboratorItem
             key={node.id}
             user={node}
+            role={role}
+            joinedOn={joinedOn}
+            invitedBy={invitedBy}
             showAdminActions={showAdminActions}
             removeCollaborator={removeCollaborator}
           />

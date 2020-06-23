@@ -48,6 +48,10 @@ export const GET_STUDY_BY_ID = gql`
       ...StudyInfoFields
       collaborators {
         edges {
+          invitedBy {
+            ...UserFields
+          }
+          joinedOn
           role
           node {
             ...UserFields
