@@ -229,8 +229,6 @@ const NewStudyForm = ({
                         formikProps,
                         setFocused,
                         focused,
-                        setSelection,
-                        workflowType,
                         history,
                         editing,
                         foldDescription,

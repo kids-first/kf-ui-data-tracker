@@ -19,7 +19,6 @@ const LogisticsStep = ({
   focused,
   setConfirmOpen,
   confirmOpen,
-  workflowType,
   editing,
   setEditing,
   history,
