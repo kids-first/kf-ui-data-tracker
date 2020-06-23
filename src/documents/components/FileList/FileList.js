@@ -39,6 +39,7 @@ const FileList = ({
   deleteFile,
   selection,
   setSelection,
+  tagOptions,
 }) => {
   const [page, setPage] = useState(1);
   const [sorting, setSorting] = useState({
@@ -160,6 +161,7 @@ const FileList = ({
                 onSelectOne={onSelectOne}
                 deleteFile={deleteFile}
                 downloadFileMutation={downloadFileMutation}
+                tagOptions={tagOptions}
               />
             ))}
           </Table.Body>

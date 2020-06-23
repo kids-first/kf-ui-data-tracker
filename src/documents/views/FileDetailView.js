@@ -10,6 +10,26 @@ import NotFoundView from '../../views/NotFoundView';
 import {hasPermission} from '../../common/permissions';
 
 const FileDetailView = ({match}) => {
+  // Study query get used tags within current study
+  const {data: studyData} = useQuery(GET_STUDY_BY_ID, {
+    variables: {
+      kfId: match.params.kfId,
+    },
+  });
+  const studyByKfId = studyData && studyData.studyByKfId;
+  const files = studyByKfId ? studyByKfId.files.edges : [];
+  var tagList = [];
+  files.map(({node}) => {
+    node.tags.map(tag => {
+      if (!tagList.includes(tag)) {
+        tagList.push(tag);
+      }
+      return true;
+    });
+    return true;
+  });
+  const tagOptions = tagList.sort().map(t => ({key: t, value: t, text: t}));
+
   const {loading, data, error} = useQuery(GET_FILE_BY_ID, {
     variables: {kfId: match.params.fileId},
   });
@@ -87,6 +107,7 @@ const FileDetailView = ({match}) => {
         downloadFileMutation={downloadFileMutation}
         allowViewVersion={allowViewVersion}
         updateError={updateError}
+        tagOptions={tagOptions}
       />
     </Container>
   );

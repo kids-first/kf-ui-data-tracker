@@ -50,6 +50,7 @@ const FileElement = ({
   downloadFileMutation,
   selected,
   onSelectOne,
+  tagOptions,
 }) => {
   const fileKfID = fileNode.kfId || 'unknown ID';
   const fileName = fileNode.name || 'unknown file name';
@@ -118,7 +119,11 @@ const FileElement = ({
         </Link>
       </Table.Cell>
       <Table.Cell textAlign="center" width="4">
-        <FileTags fileNode={fileNode} updateFile={updateFile} />
+        <FileTags
+          fileNode={fileNode}
+          updateFile={updateFile}
+          defaultOptions={tagOptions}
+        />
       </Table.Cell>
       <Table.Cell textAlign="center" width="1">
         <TimeAgo date={latestDate} live={false} title={longDate(latestDate)} />

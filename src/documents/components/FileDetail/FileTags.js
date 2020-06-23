@@ -1,15 +1,12 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import {Icon, Label, Button, Popup, Dropdown, Form} from 'semantic-ui-react';
-import {defaultTagOptions} from '../../../common/enums';
 
 /**
  * Displays study document removable tags with add button
  */
-const FileTags = ({fileNode, updateFile}) => {
-  var defaultTags = {};
-  defaultTagOptions.map(tagObj => (defaultTags[tagObj.key] = tagObj.text));
-  const [tagOptions, setTagOptions] = useState(defaultTagOptions);
+const FileTags = ({fileNode, updateFile, defaultOptions}) => {
+  const [tagOptions, setTagOptions] = useState(defaultOptions);
   const [tagSelection, setTagSelection] = useState('');
   const [more, setMore] = useState(false);
   const [open, setOpen] = useState(false);
@@ -24,6 +21,7 @@ const FileTags = ({fileNode, updateFile}) => {
   };
   const handleChange = (e, {value}) => setTagSelection(value);
   const handleOpen = () => {
+    setTagOptions(defaultOptions);
     setOpen(true);
   };
   const handleClose = () => {
@@ -65,7 +63,7 @@ const FileTags = ({fileNode, updateFile}) => {
                 e.stopPropagation();
               }}
             >
-              {defaultTags[tag] ? defaultTags[tag] : tag.substring(0, 10)}
+              {tag.substring(0, 10)}
               {tag.length > 10 && '...'}
               {updateFile && (
                 <Icon
@@ -96,7 +94,7 @@ const FileTags = ({fileNode, updateFile}) => {
       {updateFile && (
         <Popup
           wide
-          position="top right"
+          position="bottom left"
           on="click"
           open={open}
           onClose={handleClose}
@@ -166,10 +164,13 @@ FileList.propTypes = {
   fileNode: PropTypes.object,
   /** Function to update file node  */
   updateFile: PropTypes.func.isRequired,
+  /** Array of tag options used in current study */
+  defaultOptions: PropTypes.array,
 };
 
 FileList.defaultProps = {
   fileNode: null,
+  defaultOptions: [],
 };
 
 export default FileTags;

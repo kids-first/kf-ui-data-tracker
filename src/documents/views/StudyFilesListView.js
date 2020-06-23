@@ -137,6 +137,20 @@ const StudyFilesListView = ({
       />
     );
   }
+
+  // Form tag options accoring the current used tags in this study
+  var tagList = [];
+  files.map(({node}) => {
+    node.tags.map(tag => {
+      if (!tagList.includes(tag)) {
+        tagList.push(tag);
+      }
+      return true;
+    });
+    return true;
+  });
+  const tagOptions = tagList.sort().map(t => ({key: t, value: t, text: t}));
+
   if (error)
     return (
       <Container as={Segment} basic>
@@ -208,6 +222,7 @@ const StudyFilesListView = ({
                 selection={selectedFiles}
                 setSelection={setSelectedFiles}
                 disabled={selectedFiles.length === 0}
+                tagOptions={tagOptions}
               />
               <FileList
                 fileList={filteredFiles}
@@ -218,6 +233,7 @@ const StudyFilesListView = ({
                 deleteFile={allowDelete ? deleteFile : null}
                 selection={selectedFiles}
                 setSelection={setSelectedFiles}
+                tagOptions={tagOptions}
               />
             </>
           ) : (

@@ -125,6 +125,7 @@ const FileDetail = ({
   updateError,
   downloadFileMutation,
   deleteFile,
+  tagOptions,
 }) => {
   const studyId = match.params.kfId;
   const [dialog, setDialog] = useState(false);
@@ -191,7 +192,11 @@ const FileDetail = ({
                 <Header as="h4" color="grey">
                   Tags
                 </Header>
-                <FileTags fileNode={fileNode} updateFile={updateFile} />
+                <FileTags
+                  fileNode={fileNode}
+                  updateFile={updateFile}
+                  defaultOptions={tagOptions}
+                />
                 {updateError && (
                   <Message
                     negative

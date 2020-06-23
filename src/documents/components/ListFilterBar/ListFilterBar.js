@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Icon, Form, Responsive, Segment} from 'semantic-ui-react';
-import {fileTypeDetail, defaultTagOptions} from '../../../common/enums';
+import {fileTypeDetail} from '../../../common/enums';
 import BatchActions from './BatchActions';
 
 /**
@@ -17,23 +17,8 @@ const ListFilterBar = ({
   downloadFileMutation,
   deleteFile,
   disabled,
+  tagOptions,
 }) => {
-  var defaultTags = {};
-  defaultTagOptions.map(tagObj => (defaultTags[tagObj.key] = tagObj.text));
-  var tagList = [];
-  fileList.map(({node}) => {
-    node.tags.map(tag => {
-      if (!tagList.includes(tag)) {
-        tagList.push(tag);
-      }
-      return true;
-    });
-    return true;
-  });
-  const tagOptions = tagList
-    .sort()
-    .map(t => ({key: t, value: t, text: defaultTags[t] ? defaultTags[t] : t}));
-
   const typeOptions = Object.keys(fileTypeDetail).map(type => ({
     key: type,
     value: type,
@@ -99,7 +84,7 @@ const ListFilterBar = ({
         </Form>
       </Responsive>
       <Responsive minWidth={1000}>
-        <Form as="div">
+        <Form as={Segment} clearing basic className="noPadding noMargin">
           <Form.Group
             as={Segment}
             basic
