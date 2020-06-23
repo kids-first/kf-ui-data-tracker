@@ -1,6 +1,14 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import {Button, Divider, Icon, Image, List, Popup} from 'semantic-ui-react';
+import {
+  Button,
+  Divider,
+  Dropdown,
+  Icon,
+  Image,
+  List,
+  Popup,
+} from 'semantic-ui-react';
 import TimeAgo from 'react-timeago';
 import {longDate} from '../../common/dateUtils';
 import defaultAvatar from '../../assets/defaultAvatar.png';
@@ -50,6 +58,31 @@ const Actions = ({user, removeCollaborator}) => {
   );
 };
 
+const RoleDropdown = ({role, user, addCollaborator}) => {
+  const [loading, setLoading] = useState(false);
+  const onChange = (ev, {value}) => {
+    setLoading(true);
+    addCollaborator({
+      variables: {user: user.id, role: value},
+    }).then(() => setLoading(false));
+  };
+
+  const roleOptions = Object.values(collaboratorRoles).map(role => ({
+    key: role.key,
+    value: role.key,
+    text: role.name,
+  }));
+  return (
+    <Dropdown
+      value={role}
+      disabled={loading}
+      loading={loading}
+      options={roleOptions}
+      onChange={onChange}
+    />
+  );
+};
+
 /**
  * Display a list of collaborators
  */
@@ -59,6 +92,7 @@ const CollaboratorItem = ({
   joinedOn,
   invitedBy,
   showAdminActions,
+  addCollaborator,
   removeCollaborator,
 }) => {
   return (
@@ -75,9 +109,17 @@ const CollaboratorItem = ({
         </List.Header>
         <List.Description>
           <List bulleted horizontal>
-            {role in collaboratorRoles && (
-              <List.Item>{collaboratorRoles[role].name}</List.Item>
-            )}
+            <List.Item>
+              {addCollaborator ? (
+                <RoleDropdown
+                  addCollaborator={addCollaborator}
+                  role={role}
+                  user={user}
+                />
+              ) : (
+                {role}
+              )}
+            </List.Item>
             <List.Item>
               Joined{' '}
               <TimeAgo

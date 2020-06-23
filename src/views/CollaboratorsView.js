@@ -143,6 +143,14 @@ const CollaboratorsView = ({match, history}) => {
                 variables: {study: study.id, ...variables},
               })
             }
+            addCollaborator={
+              hasPermission(user, 'add_collaborator')
+                ? ({variables}) =>
+                    addCollaborator({
+                      variables: {study: study.id, ...variables},
+                    })
+                : null
+            }
           />
         </Container>
       )}
