@@ -36,7 +36,7 @@ context('Admin Document Detail', () => {
     cy.get('table')
       .find('tr')
       .its('length')
-      .should('eq', 2);
+      .should('eq', 3);
   });
 
   it('Show document detail with delete button and edit button', () => {
