@@ -383,3 +383,14 @@ export const workflowSelection = [
     sampleType: [{key: 'tumor', value: 'tumor', text: 'tumor'}],
   },
 ];
+
+// MembershipRole types for collaborator roles within studies
+export const collaboratorRoles = {
+  INVESTIGATOR: {key: 'INVESTIGATOR', name: 'Investigator'},
+  RESEARCHER: {key: 'RESEARCHER', name: 'Researcher'},
+  ADMIN: {key: 'ADMIN', name: 'Administrative Staff'},
+  ANALYST: {key: 'ANALYST', name: 'Data Analyst Staff'},
+  COORDINATOR: {key: 'COORDINATOR', name: 'Coordinating Staff'},
+  BIOINFO: {key: 'BIOINFO', name: 'Bioinformatics Staff'},
+  DEVELOPER: {key: 'DEVELOPER', name: 'Developer'},
+};
