@@ -19,7 +19,6 @@ const ListFilterBar = ({
   disabled,
   tagOptions,
 }) => {
-
   const typeOptions = Object.keys(fileTypeDetail).map(type => ({
     key: type,
     value: type,
@@ -85,7 +84,7 @@ const ListFilterBar = ({
         </Form>
       </Responsive>
       <Responsive minWidth={1000}>
-        <Form as="div">
+        <Form as={Segment} clearing basic className="noPadding noMargin">
           <Form.Group
             as={Segment}
             basic
