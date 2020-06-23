@@ -38,6 +38,10 @@ exports[`Renders collaborators list correctly for admins 1`] = `
             <div
               class="item"
               role="listitem"
+            />
+            <div
+              class="item"
+              role="listitem"
             >
               Joined
                
@@ -100,6 +104,10 @@ exports[`Renders collaborators list correctly for admins 1`] = `
             class="ui bulleted horizontal list"
             role="list"
           >
+            <div
+              class="item"
+              role="listitem"
+            />
             <div
               class="item"
               role="listitem"
@@ -178,6 +186,10 @@ exports[`Renders collaborators list correctly for non-admins 1`] = `
             <div
               class="item"
               role="listitem"
+            />
+            <div
+              class="item"
+              role="listitem"
             >
               Joined
                
@@ -222,6 +234,10 @@ exports[`Renders collaborators list correctly for non-admins 1`] = `
             class="ui bulleted horizontal list"
             role="list"
           >
+            <div
+              class="item"
+              role="listitem"
+            />
             <div
               class="item"
               role="listitem"
