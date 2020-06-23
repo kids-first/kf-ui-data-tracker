@@ -27,11 +27,11 @@ import {hasPermission} from '../common/permissions';
 const CavaticaBixView = ({match, history}) => {
   const {loading, data, error} = useQuery(GET_STUDY_BY_ID, {
     variables: {
-      kfId: match.params.kfId,
+      id: Buffer.from('StudyNode:' + match.params.kfId).toString('base64'),
     },
     fetchPolicy: 'network-only',
   });
-  const studyByKfId = data && data.studyByKfId;
+  const study = data && data.study;
   const projects = useQuery(GET_PROJECTS, {
     variables: {
       study: '',
@@ -118,7 +118,7 @@ const CavaticaBixView = ({match, history}) => {
         <Helmet>
           <title>
             {`KF Data Tracker - Study projects - Error ${
-              studyByKfId ? 'for ' + studyByKfId.kfId : null
+              study ? 'for ' + study.kfId : null
             }`}
           </title>
         </Helmet>
@@ -137,7 +137,7 @@ const CavaticaBixView = ({match, history}) => {
         </Message>
       </Container>
     );
-  if (studyByKfId === null) {
+  if (study === null) {
     return (
       <NotFoundView
         title="Study not found"
@@ -150,7 +150,7 @@ const CavaticaBixView = ({match, history}) => {
       <Container as={Segment} basic vertical>
         <Helmet>
           <title>{`KF Data Tracker - Study projects - Error ${
-            studyByKfId ? 'for ' + studyByKfId.name : null
+            study ? 'for ' + study.name : null
           }`}</title>
         </Helmet>
         {allowLink && (
@@ -189,12 +189,10 @@ const CavaticaBixView = ({match, history}) => {
         <Header as="h2" className="noMargin">
           Cavatica Projects
         </Header>
-        {(studyByKfId.projects.edges.filter(
-          obj => obj.node.projectType === 'HAR',
-        ).length === 0 ||
-          studyByKfId.projects.edges.filter(
-            obj => obj.node.projectType === 'DEL',
-          ).length === 0) &&
+        {(study.projects.edges.filter(obj => obj.node.projectType === 'HAR')
+          .length === 0 ||
+          study.projects.edges.filter(obj => obj.node.projectType === 'DEL')
+            .length === 0) &&
           (allowLink || allowAdd) && (
             <Message negative icon>
               <Icon name="warning circle" />
@@ -218,9 +216,9 @@ const CavaticaBixView = ({match, history}) => {
             </Message>
           )}
 
-        {studyByKfId.projects.edges.length > 0 ? (
+        {study.projects.edges.length > 0 ? (
           <CavaticaProjectList
-            projects={studyByKfId.projects.edges}
+            projects={study.projects.edges}
             unlinkProject={allowUnlink ? unlinkProject : null}
             importVolumeFiles={allowImport ? importVolumeFiles : null}
             editable={allowEdit}
@@ -235,7 +233,7 @@ const CavaticaBixView = ({match, history}) => {
         )}
         <EditProjectModal
           open={hashOpenHook(history, '#add-cavatica-project') && allowAdd}
-          study={studyByKfId}
+          study={study}
           onCloseDialog={() =>
             history.push(
               '/study/' + history.location.pathname.split('/')[2] + '/cavatica',
@@ -244,7 +242,7 @@ const CavaticaBixView = ({match, history}) => {
         />
         <LinkProjectModal
           open={hashOpenHook(history, '#link-cavatica-project') && allowLink}
-          study={studyByKfId}
+          study={study}
           allProjects={projects.data && projects.data.allProjects}
           linkProject={linkProject}
           syncProjects={allowSync ? syncProjects : null}
@@ -260,7 +258,7 @@ const CavaticaBixView = ({match, history}) => {
     return (
       <Container as={Segment} basic>
         <Helmet>
-          <title>KF Data Tracker - Study projects for {studyByKfId.name}</title>
+          <title>KF Data Tracker - Study projects for {study.name}</title>
         </Helmet>
         <Message
           warning

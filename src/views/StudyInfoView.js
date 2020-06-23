@@ -18,12 +18,12 @@ import {hasPermission} from '../common/permissions';
 const StudyInfoView = ({match, history}) => {
   const {loading, data, error} = useQuery(GET_STUDY_BY_ID, {
     variables: {
-      kfId: match.params.kfId,
+      id: Buffer.from('StudyNode:' + match.params.kfId).toString('base64'),
     },
     fetchPolicy: 'network-only',
   });
-  const studyByKfId = data && data.studyByKfId;
-  const studyName = studyByKfId ? 'for ' + studyByKfId.name : '';
+  const study = data && data.study;
+  const studyName = study ? 'for ' + study.name : '';
 
   const [updateStudy] = useMutation(UPDATE_STUDY);
 
@@ -35,7 +35,7 @@ const StudyInfoView = ({match, history}) => {
   const submitUpdate = values => {
     updateStudy({
       variables: {
-        id: studyByKfId.id,
+        id: study.id,
         input: values,
       },
     })
@@ -78,7 +78,7 @@ const StudyInfoView = ({match, history}) => {
         />
       </Container>
     );
-  if (studyByKfId === null) {
+  if (study === null) {
     return (
       <NotFoundView
         title="Study not found"
@@ -111,10 +111,10 @@ const StudyInfoView = ({match, history}) => {
       <Container textAlign="right">
         <Checkbox
           disabled={!allowEdit}
-          checked={studyByKfId && studyByKfId.slackNotify}
+          checked={study && study.slackNotify}
           label="Send Updates to Slack"
           onClick={() => {
-            submitUpdate({slackNotify: !studyByKfId.slackNotify});
+            submitUpdate({slackNotify: !study.slackNotify});
           }}
         />
       </Container>
@@ -123,7 +123,7 @@ const StudyInfoView = ({match, history}) => {
         history={history}
         submitValue={submitUpdate}
         apiErrors={apiErrors}
-        studyNode={studyByKfId}
+        studyNode={study}
         editing={allowEdit}
       />
     </Container>

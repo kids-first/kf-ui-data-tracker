@@ -19,13 +19,16 @@ import {CollaboratorsList} from '../components/CollaboratorsList';
 import NotFoundView from './NotFoundView';
 
 const CollaboratorsView = ({match, history}) => {
+  const relayId = Buffer.from('StudyNode:' + match.params.kfId).toString(
+    'base64',
+  );
   const {loading, data, error} = useQuery(GET_STUDY_BY_ID, {
     variables: {
-      kfId: match.params.kfId,
+      id: relayId,
     },
     fetchPolicy: 'network-only',
   });
-  const studyByKfId = data && data.studyByKfId;
+  const study = data && data.study;
   const {loading: userLoading, data: userData, error: userError} = useQuery(
     MY_PROFILE,
   );
@@ -77,7 +80,7 @@ const CollaboratorsView = ({match, history}) => {
         <Helmet>
           <title>
             {`KF Data Tracker - Study collaborators - Error ${
-              studyByKfId ? 'for ' + studyByKfId.kfId : null
+              study ? 'for ' + study.kfId : null
             }`}
           </title>
         </Helmet>
@@ -93,7 +96,7 @@ const CollaboratorsView = ({match, history}) => {
         </Message>
       </Container>
     );
-  if (studyByKfId === null) {
+  if (study === null) {
     return (
       <NotFoundView
         title="Study not found"
@@ -121,7 +124,7 @@ const CollaboratorsView = ({match, history}) => {
       </Header>
       <Divider />
 
-      {studyByKfId.collaborators.edges.length === 0 ? (
+      {study.collaborators.edges.length === 0 ? (
         <Container as={Segment} basic placeholder>
           <Header as="h2" icon>
             <Icon name="user outline" />
@@ -131,11 +134,13 @@ const CollaboratorsView = ({match, history}) => {
       ) : (
         <Container>
           <CollaboratorsList
-            users={studyByKfId.collaborators.edges}
-            showAdminActions={user && hasPermission(user, 'remove_collaborator')}
+            users={study.collaborators.edges}
+            showAdminActions={
+              user && hasPermission(user, 'remove_collaborator')
+            }
             removeCollaborator={({variables}) =>
               removeCollaborator({
-                variables: {study: studyByKfId.id, ...variables},
+                variables: {study: study.id, ...variables},
               })
             }
           />
@@ -143,10 +148,10 @@ const CollaboratorsView = ({match, history}) => {
       )}
 
       <AddCollaboratorModal
-        study={studyByKfId}
+        study={study}
         open={collaboratorModal}
         addCollaborator={addCollaborator}
-        users={studyByKfId.collaborators.edges}
+        users={study.collaborators.edges}
         onCloseDialog={() => setCollaboratorModal(false)}
       />
     </Container>

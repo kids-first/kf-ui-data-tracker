@@ -34,15 +34,15 @@ const ReleasesView = props => {
     context: {clientName: 'coordinator'},
   });
 
-  const study = data && data.study && data.study;
+  const releases = data && data.study.releases;
 
   const {loading: studyLoading, data: studyData} = useQuery(GET_STUDY_BY_ID, {
     variables: {
-      kfId: props.match.params.kfId,
+      id: relayId,
     },
   });
-  const studyByKfId = studyData && studyData.studyByKfId;
-  const studyName = studyByKfId ? 'for ' + studyByKfId.name : '';
+  const study = studyData && studyData.study;
+  const studyName = study ? 'for ' + study.name : '';
 
   if (loading || studyLoading)
     return (
@@ -61,7 +61,7 @@ const ReleasesView = props => {
         </Placeholder>
       </Container>
     );
-  if (studyByKfId === null) {
+  if (study === null) {
     return (
       <NotFoundView
         title="Study not found"
@@ -97,10 +97,10 @@ const ReleasesView = props => {
         <Header as="h2" className="mt-6">
           Past Published Releases
         </Header>
-        {study && study.releases ? (
+        {releases && releases.edges ? (
           <ReleaseList
             loading={loading}
-            releases={study.releases && study.releases.edges}
+            releases={releases && releases.edges}
           />
         ) : (
           <Message
