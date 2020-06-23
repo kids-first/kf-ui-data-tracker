@@ -102,6 +102,38 @@ context('Admin Document List', () => {
     cy.get('[data-testid="batch-download"]').should('exist');
     cy.get('[data-testid="batch-delete"]').should('exist');
   });
+
+  it('Add, remove tags and filter by tags', () => {
+    // List out all the documents
+    cy.get('table')
+      .find('tr')
+      .its('length')
+      .should('eq', 6);
+    // DCC has a used tag should show in filter and tag option
+    cy.contains('span', 'DCC').should('exist');
+    cy.contains('div', 'DCC').should('exist');
+    // Delete DCC tag (not used in this study)
+    cy.contains('a', 'DCC')
+      .children()
+      .click();
+    // Tag filter and tag option would remove DCC too
+    cy.contains('span', 'DCC').should('not.exist');
+    cy.contains('div', 'DCC').should('not.exist');
+    // Add new tag NEW
+    cy.get('[data-testid="tag-file"]')
+      .first()
+      .click();
+    cy.get('[data-testid="tag-dropdown"]')
+      .children()
+      .first()
+      .focus()
+      .type('NEW');
+    cy.contains('span', 'Add ').click();
+    cy.get('[data-testid="tag-file-add"]').click();
+    // NEW tag should appear in filter and tag option
+    cy.contains('span', 'NEW').should('exist');
+    cy.contains('div', 'NEW').should('exist');
+  });
 });
 
 context('Investigator Document List', () => {
