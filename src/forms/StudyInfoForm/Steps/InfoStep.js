@@ -1,6 +1,5 @@
 import React from 'react';
-import {Dropdown, Header} from 'semantic-ui-react';
-import {workflowOptions} from '../../../common/enums';
+import {Header} from 'semantic-ui-react';
 import FormField from '../../FormField';
 
 const InfoStep = ({
@@ -8,8 +7,6 @@ const InfoStep = ({
   setActiveStep,
   setFocused,
   focused,
-  setSelection,
-  workflowType,
   newStudy,
   history,
   editing,
@@ -57,37 +54,7 @@ const InfoStep = ({
           readOnly={!editing && !newStudy}
         />
       ))}
-      {newStudy ? (
-        <FormField
-          allowEdit={allowEdit}
-          newStudy={newStudy}
-          id="workflowType"
-          name="Cavatica Projects"
-          description="Workflow projects to be instantiated for the new study."
-          focused={focused === 'workflowType'}
-          value={values.workflowType}
-          touched={touched.workflowType}
-          errors={errors.workflowType}
-          handleChange={handleChange}
-          handleBlur={handleBlur}
-          handleFocus={id => setFocused(id)}
-        >
-          <Dropdown
-            id="workflowType"
-            name="workflowType"
-            placeholder="Workflow Type"
-            fluid
-            selection
-            clearable
-            multiple
-            options={workflowOptions}
-            onChange={(e, {value}) => {
-              setSelection(value);
-            }}
-            value={workflowType}
-          />
-        </FormField>
-      ) : (
+      {!newStudy && (
         <FormField
           allowEdit={allowEdit}
           newStudy={newStudy}
