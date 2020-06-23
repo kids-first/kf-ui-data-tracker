@@ -41,10 +41,10 @@ const BaseHelper = ({title, image, children}) => {
 
   return (
     <Grid as={Segment} color="blue" secondary divided>
-      <Grid.Column width={3}>
+      <Grid.Column computer={2} tablet={3} mobile={0}>
         <Image src={image} />
       </Grid.Column>
-      <Grid.Column width={13}>
+      <Grid.Column computer={14} tablet={13} mobile={16}>
         <Header as="h2">
           {title}
           <Button

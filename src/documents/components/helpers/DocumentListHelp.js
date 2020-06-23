@@ -10,12 +10,6 @@ const Help = () => (
       uploaded to a study here so that they may be reviewed and processed by the
       Kids First DRC.
     </p>
-    <p>
-      <b>Versions</b> allow revisions of the same document to be tracked.
-      Creation of a new document that contains revised data of another document
-      should be avoided and instead uploaded as a new version of the existing
-      document.
-    </p>
   </BaseHelper>
 );
 
