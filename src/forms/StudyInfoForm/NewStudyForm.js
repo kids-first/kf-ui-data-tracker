@@ -63,10 +63,6 @@ const NewStudyForm = ({
         history.location.pathname.split('/').length - 1
       ],
   );
-  const [workflowType, setSelection] = useState([
-    'bwa_mem',
-    'gatk_haplotypecaller',
-  ]);
   const [focused, setFocused] = useState('');
   const [foldDescription, setFoldDescription] = useState(true);
   const [currentStep, setCurrentStep] = useState(initStep);
@@ -139,7 +135,7 @@ const NewStudyForm = ({
           inputObject.releaseDate = null;
         }
         if (newStudy) {
-          submitValue({input: inputObject, workflowType: workflowType});
+          submitValue({input: inputObject});
         } else {
           submitValue(values);
         }
