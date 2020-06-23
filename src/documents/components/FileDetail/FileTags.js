@@ -94,7 +94,7 @@ const FileTags = ({fileNode, updateFile, defaultOptions}) => {
       {updateFile && (
         <Popup
           wide
-          position="top right"
+          position="bottom left"
           on="click"
           open={open}
           onClose={handleClose}
