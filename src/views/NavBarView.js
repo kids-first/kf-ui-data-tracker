@@ -10,6 +10,7 @@ import CreatingStudyModal from '../modals/CreatingStudyModal';
 import {
   DocumentListHelp,
   DocumentDetailHelp,
+  CollaboratorsHelp,
 } from '../documents/components/helpers';
 import {hasPermission} from '../common/permissions';
 
@@ -80,6 +81,10 @@ const NavBarView = ({match, location, history}) => {
             exact
             path="/study/:kfId/documents/:fileId(SF_\w{8})"
             component={DocumentDetailHelp}
+          />
+          <Route
+            path="/study/:kfId/collaborators"
+            component={CollaboratorsHelp}
           />
         </Switch>
       </Container>
