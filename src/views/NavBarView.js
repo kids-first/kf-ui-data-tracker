@@ -7,7 +7,10 @@ import StudyHeader from '../components/StudyHeader/StudyHeader';
 import {StudyNavBar} from '../components/StudyNavBar';
 import {Container, Segment, Message} from 'semantic-ui-react';
 import CreatingStudyModal from '../modals/CreatingStudyModal';
-import {DocumentListHelp} from '../documents/components/helpers';
+import {
+  CollaboratorsHelp,
+  DocumentListHelp,
+} from '../documents/components/helpers';
 import {hasPermission} from '../common/permissions';
 
 const NavBarView = ({match, location, history}) => {
@@ -69,6 +72,10 @@ const NavBarView = ({match, location, history}) => {
         <StudyNavBar isBeta={isBeta} isResearch={isResearch} />
         <Switch>
           <Route path="/study/:kfId/documents" component={DocumentListHelp} />
+          <Route
+            path="/study/:kfId/collaborators"
+            component={CollaboratorsHelp}
+          />
         </Switch>
       </Container>
       {newStudy && (
