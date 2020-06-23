@@ -8,7 +8,9 @@ import {Button, Modal} from 'semantic-ui-react';
 
 const EditDocumentModal = ({fileNode, onCloseDialog, studyId}) => {
   const study = useQuery(GET_STUDY_BY_ID, {
-    variables: {kfId: studyId},
+    variables: {
+      id: Buffer.from('StudyNode:' + studyId).toString('base64'),
+    },
   });
   const [updateFile] = useMutation(UPDATE_FILE);
   const [updateVersion] = useMutation(UPDATE_VERSION);
@@ -43,8 +45,8 @@ const EditDocumentModal = ({fileNode, onCloseDialog, studyId}) => {
           ref={formEl}
           fileNode={{name: fileNode.versions.edges[0].node.fileName}}
           studyFiles={
-            study.data.studyByKfId
-              ? study.data.studyByKfId.files.edges.filter(
+            study.data.study
+              ? study.data.study.files.edges.filter(
                   ({node}) => node.name !== fileNode.name,
                 )
               : []

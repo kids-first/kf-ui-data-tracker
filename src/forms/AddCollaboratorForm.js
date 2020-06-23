@@ -44,7 +44,7 @@ const AddCollaboratorForm = ({formikProps, availableUsers, disabled}) => {
 
   return (
     <Form>
-      <p>Select a registered user to add as a collaborator.</p>
+      <p>Select a role and a registered user to add as a collaborator.</p>
       <Form.Group>
         <Form.Dropdown
           selection

@@ -14,12 +14,15 @@ import {
 import {hasPermission} from '../common/permissions';
 
 const NavBarView = ({match, location, history}) => {
+  const relayId = Buffer.from('StudyNode:' + match.params.kfId).toString(
+    'base64',
+  );
   const {loading, data, error} = useQuery(GET_STUDY_BY_ID, {
     variables: {
-      kfId: match.params.kfId,
+      id: relayId,
     },
   });
-  const studyByKfId = data && data.studyByKfId;
+  const study = data && data.study;
   const {data: profileData} = useQuery(MY_PROFILE);
   const myProfile = profileData && profileData.myProfile;
   const userRole =
@@ -58,7 +61,7 @@ const NavBarView = ({match, location, history}) => {
     <section id="study">
       <Segment secondary basic>
         <StudyHeader
-          study={studyByKfId}
+          study={study}
           loading={loading}
           showModal={setShowModal}
           newStudy={newStudy}
@@ -83,10 +86,9 @@ const NavBarView = ({match, location, history}) => {
       {newStudy && (
         <CreatingStudyModal
           displaying={
-            (studyByKfId && location.state && location.state.newStudy) ||
-            showModal
+            (study && location.state && location.state.newStudy) || showModal
           }
-          studyKfId={studyByKfId && studyByKfId.kfId}
+          studyKfId={study && study.kfId}
           history={history}
           closeModal={setShowModal}
           isResearch={isResearch}

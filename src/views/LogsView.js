@@ -53,12 +53,12 @@ const LogsView = ({match}) => {
 
   const {loading: studyLoading, data: studyData} = useQuery(GET_STUDY_BY_ID, {
     variables: {
-      kfId: match.params.kfId,
+      id: Buffer.from('StudyNode:' + match.params.kfId).toString('base64'),
     },
     fetchPolicy: 'network-only',
   });
-  const studyByKfId = studyData && studyData.studyByKfId;
-  const studyName = studyByKfId ? 'for ' + studyByKfId.name : '';
+  const study = studyData && studyData.study;
+  const studyName = study ? 'for ' + study.name : '';
   const allEvents = data && data.allEvents;
   const {data: profileData, error: userError} = useQuery(MY_PROFILE);
   const myProfile = profileData && profileData.myProfile;
@@ -108,7 +108,7 @@ const LogsView = ({match}) => {
         </Message>
       </Container>
     );
-  if (studyByKfId === null) {
+  if (study === null) {
     return (
       <NotFoundView
         title="Study not found"
@@ -156,7 +156,7 @@ const LogsView = ({match}) => {
     return (
       <Container as={Segment} basic>
         <Helmet>
-          <title>KF Data Tracker - Study logs for {studyByKfId.name}</title>
+          <title>KF Data Tracker - Study logs for {study.name}</title>
         </Helmet>
         <Message
           warning
