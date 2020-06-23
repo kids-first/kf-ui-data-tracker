@@ -6,7 +6,12 @@ import CollaboratorItem from './CollaboratorItem';
 /**
  * Display a list of collaborators
  */
-const CollaboratorsList = ({users, showAdminActions, removeCollaborator}) => {
+const CollaboratorsList = ({
+  users,
+  showAdminActions,
+  addCollaborator,
+  removeCollaborator,
+}) => {
   const collaborators = users.sort(({node: u1}, {node: u2}) =>
     u1.username.localeCompare(u2.username, 'en-US', {
       caseFirst: 'upper',
@@ -27,6 +32,7 @@ const CollaboratorsList = ({users, showAdminActions, removeCollaborator}) => {
             joinedOn={joinedOn}
             invitedBy={invitedBy}
             showAdminActions={showAdminActions}
+            addCollaborator={addCollaborator}
             removeCollaborator={removeCollaborator}
           />
         ))}
