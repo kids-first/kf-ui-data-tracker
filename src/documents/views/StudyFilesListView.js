@@ -222,6 +222,7 @@ const StudyFilesListView = ({
                 selection={selectedFiles}
                 setSelection={setSelectedFiles}
                 disabled={selectedFiles.length === 0}
+                tagOptions={tagOptions}
               />
               <FileList
                 fileList={filteredFiles}
@@ -232,6 +233,7 @@ const StudyFilesListView = ({
                 deleteFile={allowDelete ? deleteFile : null}
                 selection={selectedFiles}
                 setSelection={setSelectedFiles}
+                tagOptions={tagOptions}
               />
             </>
           ) : (

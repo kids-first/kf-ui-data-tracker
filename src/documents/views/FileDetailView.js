@@ -107,6 +107,7 @@ const FileDetailView = ({match}) => {
         downloadFileMutation={downloadFileMutation}
         allowViewVersion={allowViewVersion}
         updateError={updateError}
+        tagOptions={tagOptions}
       />
     </Container>
   );

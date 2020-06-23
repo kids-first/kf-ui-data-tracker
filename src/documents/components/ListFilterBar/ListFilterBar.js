@@ -17,6 +17,7 @@ const ListFilterBar = ({
   downloadFileMutation,
   deleteFile,
   disabled,
+  tagOptions,
 }) => {
 
   const typeOptions = Object.keys(fileTypeDetail).map(type => ({
