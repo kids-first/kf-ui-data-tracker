@@ -1,14 +1,11 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import {Icon, Label, Button, Popup, Dropdown, Form} from 'semantic-ui-react';
-import {defaultTagOptions} from '../../../common/enums';
 
 /**
  * Displays study document removable tags with add button
  */
 const FileTags = ({fileNode, updateFile}) => {
-  var defaultTags = {};
-  defaultTagOptions.map(tagObj => (defaultTags[tagObj.key] = tagObj.text));
   const [tagOptions, setTagOptions] = useState(defaultTagOptions);
   const [tagSelection, setTagSelection] = useState('');
   const [more, setMore] = useState(false);
@@ -65,7 +62,7 @@ const FileTags = ({fileNode, updateFile}) => {
                 e.stopPropagation();
               }}
             >
-              {defaultTags[tag] ? defaultTags[tag] : tag.substring(0, 10)}
+              {tag.substring(0, 10)}
               {tag.length > 10 && '...'}
               {updateFile && (
                 <Icon
