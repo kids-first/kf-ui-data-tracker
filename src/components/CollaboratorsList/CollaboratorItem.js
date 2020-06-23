@@ -75,7 +75,9 @@ const CollaboratorItem = ({
         </List.Header>
         <List.Description>
           <List bulleted horizontal>
-            <List.Item>{collaboratorRoles[role].name}</List.Item>
+            {role in collaboratorRoles && (
+              <List.Item>{collaboratorRoles[role].name}</List.Item>
+            )}
             <List.Item>
               Joined{' '}
               <TimeAgo
