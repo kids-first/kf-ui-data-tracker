@@ -156,7 +156,9 @@ const EditProjectModal = ({study, projectNode, onCloseDialog, open}) => {
               />
             </Modal.Content>
             <Modal.Actions>
-              {error && <Message negative content={error} />}
+              {error && (
+                <Message negative className="text-left" content={error} />
+              )}
               <Button
                 primary
                 disabled={
