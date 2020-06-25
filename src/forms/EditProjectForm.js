@@ -2,10 +2,17 @@ import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import {projectOptions, workflowSelection} from '../common/enums';
 import {Form, Segment, Popup, Icon} from 'semantic-ui-react';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 /**
  * A form to edit an existing Cavatica project.
  */
-const EditProjectForm = ({formikProps, excludeWorkflows, existProject}) => {
+const EditProjectForm = ({
+  formikProps,
+  excludeWorkflows,
+  existProject,
+  studyId,
+}) => {
+  const [copied, setCopied] = useState(false);
   const [type, setType] = useState('');
   const [method, setMethod] = useState('');
   const [sample, setSample] = useState('');
@@ -84,7 +91,51 @@ const EditProjectForm = ({formikProps, excludeWorkflows, existProject}) => {
               placeholder="Workflow Sample Type"
             />
           </Form.Group>
+          <p>A new cavatica project will be created with the following ID:</p>
+          <Popup
+            inverted
+            disabled={!type || !method || !sample}
+            position="right center"
+            popperDependencies={[copied]}
+            trigger={
+              <CopyToClipboard
+                text={
+                  studyId.toLowerCase().replace('_', '-') +
+                  '-' +
+                  type +
+                  (method && '-') +
+                  method +
+                  (sample && '-') +
+                  sample
+                }
+                onCopy={() => {
+                  setCopied(true);
+                  setTimeout(() => {
+                    setCopied(false);
+                  }, 700);
+                }}
+              >
+                <pre
+                  className={
+                    type
+                      ? 'text-blue display-inline ml-10'
+                      : 'text-grey display-inline ml-10'
+                  }
+                >
+                  {type
+                    ? studyId.toLowerCase().replace('_', '-') +
+                      '-' +
+                      type +
+                      (method && '-') +
+                      method +
+                      (sample && '-') +
+                      sample
+                    : 'no_workflow_type_created'}
+                </pre>
+              </CopyToClipboard>
             }
+            content={
+              copied ? <Icon name="check" color="green" /> : 'Copy to clipboard'
             }
           />
         </Form.Field>
