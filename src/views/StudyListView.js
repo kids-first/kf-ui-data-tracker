@@ -24,8 +24,10 @@ const StudyListView = ({history}) => {
   const allStudies = data && data.allStudies;
 
   const allReleases = releasesData && releasesData.allStudyReleases;
-  var studyList = !loading && allStudies ? allStudies.edges : [];
+  var studyList =
+    !loading && allStudies ? JSON.parse(JSON.stringify(allStudies.edges)) : [];
   const releaseList = allReleases ? allReleases.edges : [];
+
   if (releaseList.length > 0 && studyList.length > 0) {
     studyList.forEach(function(study) {
       const release =
