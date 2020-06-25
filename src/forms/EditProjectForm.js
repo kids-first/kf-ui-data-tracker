@@ -12,6 +12,7 @@ const EditProjectForm = ({
   existProject,
   studyId,
 }) => {
+  const [confirmed, setConfirmed] = useState(false);
   const [copied, setCopied] = useState(false);
   const [type, setType] = useState('');
   const [method, setMethod] = useState('');
@@ -138,6 +139,21 @@ const EditProjectForm = ({
               copied ? <Icon name="check" color="green" /> : 'Copy to clipboard'
             }
           />
+          <Segment floated="right" basic className="noPadding noMargin">
+            <Form.Checkbox
+              required
+              checked={confirmed}
+              disabled={!type || !method || !sample}
+              label="Confirm"
+              onClick={() => {
+                formikProps.setFieldValue(
+                  'workflowType',
+                  confirmed ? '' : type + '-' + method + '-' + sample,
+                );
+                setConfirmed(!confirmed);
+              }}
+            />
+          </Segment>
         </Form.Field>
       )}
       {formikProps.values.projectType === 'RES' && !existProject && (
