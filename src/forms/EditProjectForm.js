@@ -1,11 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import {projectOptions, workflowOptions} from '../common/enums';
-import {Form} from 'semantic-ui-react';
+import {projectOptions, workflowSelection} from '../common/enums';
+import {Form, Segment, Popup, Icon} from 'semantic-ui-react';
 /**
  * A form to edit an existing Cavatica project.
  */
 const EditProjectForm = ({formikProps, excludeWorkflows, existProject}) => {
+  const [type, setType] = useState('');
+  const [method, setMethod] = useState('');
+  const [sample, setSample] = useState('');
+
   return (
     <Form onSubmit={formikProps.handleSubmit}>
       <Form.Field required>
@@ -30,24 +34,57 @@ const EditProjectForm = ({formikProps, excludeWorkflows, existProject}) => {
       {formikProps.values.projectType === 'HAR' && (
         <Form.Field required className="noMargin">
           <label>Workflow Type:</label>
-          <Form.Select
-            className="noMargin"
-            data-testid="workflow-input"
-            type="select"
-            name="workflowType"
-            onChange={(e, {name, value}) =>
-              formikProps.setFieldValue(name, value)
+          <Form.Group widths="equal">
+            <Form.Select
+              data-testid="workflow-type"
+              type="select"
+              name="workflowType"
+              onChange={(e, {value}) => {
+                setType(value);
+                setMethod('');
+                setSample('');
+              }}
+              value={type}
+              options={workflowSelection.map(i => ({
+                key: i.key,
+                value: i.value,
+                text: i.text,
+              }))}
+              placeholder="Workflow Type"
+            />
+            <Form.Select
+              disabled={!type}
+              data-testid="workflow-method"
+              type="select"
+              name="workflowMethod"
+              onChange={(e, {value}) => setMethod(value)}
+              value={method}
+              options={
+                workflowSelection.filter(i => i.value === type) &&
+                workflowSelection.filter(i => i.value === type)[0]
+                  ? workflowSelection.filter(i => i.value === type)[0].method
+                  : []
+              }
+              placeholder="Workflow Method"
+            />
+            <Form.Select
+              disabled={!type || !method}
+              data-testid="workflow-sample-type"
+              type="select"
+              name="workflowSampleType"
+              onChange={(e, {value}) => setSample(value)}
+              value={sample}
+              options={
+                workflowSelection.filter(i => i.value === type) &&
+                workflowSelection.filter(i => i.value === type)[0]
+                  ? workflowSelection.filter(i => i.value === type)[0]
+                      .sampleType
+                  : []
+              }
+              placeholder="Workflow Sample Type"
+            />
+          </Form.Group>
             }
-            onBlur={(e, {name, value}) => formikProps.handleBlur(name)(value)}
-            value={formikProps.values.workflowType}
-            options={workflowOptions.filter(
-              v => !excludeWorkflows.includes(v.value),
-            )}
-            placeholder="Select a workflow type"
-            error={
-              formikProps.touched.workflowType !== undefined &&
-              formikProps.errors.workflowType !== undefined &&
-              formikProps.errors.workflowType.length > 0
             }
           />
         </Form.Field>
