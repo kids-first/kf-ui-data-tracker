@@ -238,41 +238,6 @@ const CreatingStudyModal = ({
                   </List>
                 )}
               </List.Item>
-              {!isResearch && (
-                <List.Item>
-                  {statusComponent[projectStatus]}
-                  <List.Content>
-                    <List.Header
-                      className={projectStatus === 'Pending' ? 'text-grey' : ''}
-                    >
-                      {projectStatus} Cavatica analysis projects
-                    </List.Header>
-                  </List.Content>
-                  {projects &&
-                    projects.filter(({node}) => node.projectType === 'HAR')
-                      .length > 0 && (
-                      <List className="ml-15">
-                        {projects
-                          .filter(({node}) => node.projectType === 'HAR')
-                          .map(({node}) => (
-                            <List.Item key={node.id}>
-                              <Icon name="sliders horizontal" />
-                              <List.Content
-                                as="a"
-                                target="_blank"
-                                href={`https://cavatica.sbgenomics.com/u/${
-                                  node.projectId
-                                }`}
-                              >
-                                {node.name + ' '}
-                                <Icon link size="small" name="external" />
-                              </List.Content>
-                            </List.Item>
-                          ))}
-                      </List>
-                    )}
-                </List.Item>
-              )}
               <List.Item>
                 {statusComponent[projectStatus]}
                 <List.Content>
