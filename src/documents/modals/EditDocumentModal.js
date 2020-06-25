@@ -1,5 +1,5 @@
 import React, {useRef} from 'react';
-import {useQuery, useMutation} from '@apollo/react-hooks';
+import {useQuery, useMutation} from '@apollo/client';
 import {UPDATE_FILE, UPDATE_VERSION} from '../mutations';
 import {GET_STUDY_BY_ID} from '../../state/queries';
 import {EditDocumentForm} from '../forms';

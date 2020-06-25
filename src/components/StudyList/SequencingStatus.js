@@ -1,5 +1,5 @@
 import React from 'react';
-import {useQuery, useMutation} from '@apollo/react-hooks';
+import {useQuery, useMutation} from '@apollo/client';
 import {Table} from 'semantic-ui-react';
 import {MY_PROFILE, GET_STUDY_BY_ID} from '../../state/queries';
 import {CHANGE_SEQUENCING_STATUS} from '../../state/mutations';

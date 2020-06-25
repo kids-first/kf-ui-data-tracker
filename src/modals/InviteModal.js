@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {useQuery, useMutation} from '@apollo/react-hooks';
+import {useQuery, useMutation} from '@apollo/client';
 import {Amplitude, LogOnMount} from '@amplitude/react-amplitude';
 import {Button, Divider, Icon, List, Message, Modal} from 'semantic-ui-react';
 import {Formik} from 'formik';

@@ -1,6 +1,6 @@
 import React from 'react';
 import wait from 'waait';
-import {MockedProvider} from '@apollo/react-testing';
+import {MockedProvider} from '@apollo/client/testing';
 import {MemoryRouter} from 'react-router-dom';
 import {render, fireEvent, cleanup, act} from '@testing-library/react';
 import {NewVersionFlow} from '../NewVersionFlow';

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Helmet} from 'react-helmet';
-import {useQuery, useMutation} from '@apollo/react-hooks';
+import {useQuery, useMutation} from '@apollo/client';
 import {
   Accordion,
   Button,

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {useMutation} from '@apollo/react-hooks';
+import {useMutation} from '@apollo/client';
 import {FILE_DOWNLOAD_URL} from '../../mutations';
 import AvatarTimeAgo from '../../../components/AvatarTimeAgo/AvatarTimeAgo';
 import {formatFileSize, downloadFile, lengthLimit} from '../../utilities';

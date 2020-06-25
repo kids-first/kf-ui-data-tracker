@@ -1,7 +1,7 @@
 import React from 'react';
 import {render, cleanup} from '@testing-library/react';
 import {MemoryRouter} from 'react-router-dom';
-import {MockedProvider} from '@apollo/react-testing';
+import {MockedProvider} from '@apollo/client/testing';
 import FileCounts from '../FileCounts';
 import studyByKfId from '../../../../__mocks__/kf-api-study-creator/responses/studyByKfId';
 

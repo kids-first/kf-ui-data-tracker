@@ -1,7 +1,7 @@
 import React from 'react';
 import {render, cleanup, fireEvent, act} from '@testing-library/react';
 import {mocks} from '../../../../__mocks__/kf-api-study-creator/mocks';
-import {MockedProvider} from '@apollo/react-testing';
+import {MockedProvider} from '@apollo/client/testing';
 import CopyButton from '../CopyButton';
 
 /* Sets up some browser functions that are needed for react-copy-to-clipboard

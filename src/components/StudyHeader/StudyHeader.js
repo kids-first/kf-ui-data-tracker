@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {useQuery} from '@apollo/react-hooks';
+import {useQuery} from '@apollo/client';
 import {Amplitude} from '@amplitude/react-amplitude';
 import TimeAgo from 'react-timeago';
 import propTypes from 'prop-types';

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Helmet} from 'react-helmet';
-import {useQuery} from '@apollo/react-hooks';
+import {useQuery} from '@apollo/client';
 import {GET_STUDY_BY_ID, ALL_EVENTS, MY_PROFILE} from '../state/queries';
 import {
   Container,

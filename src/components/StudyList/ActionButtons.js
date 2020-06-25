@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
-import {useQuery, useMutation} from '@apollo/react-hooks';
+import {useQuery, useMutation} from '@apollo/client';
 import {ADD_COLLABORATOR, CREATE_REFERRAL_TOKEN} from '../../state/mutations';
 import {GET_STUDY_BY_ID, MY_PROFILE} from '../../state/queries';
 import {Amplitude} from '@amplitude/react-amplitude';

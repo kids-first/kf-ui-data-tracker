@@ -1,5 +1,5 @@
 import React from 'react';
-import {useQuery} from '@apollo/react-hooks';
+import {useQuery} from '@apollo/client';
 import {Amplitude, LogOnMount} from '@amplitude/react-amplitude';
 import {Button, Divider, Modal} from 'semantic-ui-react';
 import {ALL_USERS, ALL_GROUPS} from '../state/queries';

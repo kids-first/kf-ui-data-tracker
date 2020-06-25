@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Helmet} from 'react-helmet';
-import {useMutation} from '@apollo/react-hooks';
+import {useMutation} from '@apollo/client';
 import NewResearchStudyForm from '../forms/NewResearchStudyForm';
 import {Segment, Container, Header} from 'semantic-ui-react';
 import {CREATE_STUDY} from '../../state/mutations';

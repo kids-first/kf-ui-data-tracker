@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {useQuery} from '@apollo/react-hooks';
+import {useQuery} from '@apollo/client';
 import {ALL_GROUPS, MY_PROFILE, STATUS} from '../../state/queries';
 import {DEV_BAR, KF_STUDY_API} from '../../common/globals';
 import {Container, Dropdown, Icon, Image, Menu, Popup} from 'semantic-ui-react';

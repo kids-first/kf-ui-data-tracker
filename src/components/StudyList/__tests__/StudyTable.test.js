@@ -1,6 +1,6 @@
 import React from 'react';
 import {MemoryRouter} from 'react-router-dom';
-import {MockedProvider} from '@apollo/react-testing';
+import {MockedProvider} from '@apollo/client/testing';
 import {render, cleanup} from '@testing-library/react';
 import wait from 'waait';
 import allStudies from '../../../../__mocks__/kf-api-study-creator/responses/allStudies.json';
