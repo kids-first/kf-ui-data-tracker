@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router} from 'react-router-dom';
 import Routes from './routes';
-import {ApolloProvider} from '@apollo/react-common';
+import {ApolloProvider} from '@apollo/client';
 import {client} from './state/client';
 import {AnalyticsTrackingProvider} from './analyticsTracking';
 import DevHeader from './components/Header/DevHeader';
