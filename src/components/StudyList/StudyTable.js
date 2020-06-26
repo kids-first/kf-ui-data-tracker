@@ -85,7 +85,7 @@ const StudyTable = ({
   columns,
   handleSort,
 }) => {
-  if (loading) {
+  if (loading && !studyList) {
     return <h2>loading studies</h2>;
   }
 
