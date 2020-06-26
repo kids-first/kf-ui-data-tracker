@@ -63,6 +63,7 @@ const renderRow = (node, columns) => ({
 
 const stringSort = (a, b) =>
   a !== null && b !== null ? a.localeCompare(b) : 0;
+const intSort = (a, b) => (a !== null && b !== null ? a - b : 0);
 
 const columnSorts = {
   name: stringSort,
@@ -73,7 +74,7 @@ const columnSorts = {
   sequencingStatus: stringSort,
   phenotypeStatus: stringSort,
   ingestionStatus: stringSort,
-  anticipatedSamples: stringSort,
+  anticipatedSamples: intSort,
 };
 
 const StudyTable = ({
