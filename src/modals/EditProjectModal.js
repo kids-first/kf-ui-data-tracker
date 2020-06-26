@@ -152,10 +152,13 @@ const EditProjectModal = ({study, projectNode, onCloseDialog, open}) => {
                     : []
                 }
                 existProject={projectNode}
+                studyId={study.kfId}
               />
             </Modal.Content>
             <Modal.Actions>
-              {error && <Message negative content={error} />}
+              {error && (
+                <Message negative className="text-left" content={error} />
+              )}
               <Button
                 primary
                 disabled={

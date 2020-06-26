@@ -4,77 +4,6 @@ export const projectOptions = [
   {key: 'RES', value: 'RES', text: 'Research', icon: 'flask'},
 ];
 
-// Different kinds of workflows Cavatica projects
-export const workflowOptions = [
-  {key: 'bwa_mem', value: 'bwa_mem', text: 'bwa_mem'},
-  {key: 'bwa_mem_bqsr', value: 'bwa_mem_bqsr', text: 'bwa_mem_bqsr'},
-  {key: 'star_2_pass', value: 'star_2_pass', text: 'star_2_pass'},
-  {
-    key: 'gatk_haplotypecaller',
-    value: 'gatk_haplotypecaller',
-    text: 'GATK Haplotypecaller',
-  },
-  {
-    key: 'gatk_genotypgvcf',
-    value: 'gatk_genotypgvcf',
-    text: 'GATK Genotypgvcf',
-  },
-  {
-    key: 'gatk_genotypegvcf_vqsr',
-    value: 'gatk_genotypegvcf_vqsr',
-    text: 'GATK GenotypeGVCF VQSR',
-  },
-  {
-    key: 'strelka2_somatic_mode',
-    value: 'strelka2_somatic_mode',
-    text: 'Strelka2 Somatic Mode',
-  },
-  {
-    key: 'mutect2_somatic_mode',
-    value: 'mutect2_somatic_mode',
-    text: 'MuTect2 Somatic Mode',
-  },
-  {
-    key: 'mutect2_tumor_only_mode',
-    value: 'mutect2_tumor_only_mode',
-    text: 'MuTect2 Tumor Only Mode',
-  },
-  {
-    key: 'vardict_single_sample_mode',
-    value: 'vardict_single_sample_mode',
-    text: 'VarDict Single Sample Mode',
-  },
-  {
-    key: 'vardict_paired_sample_mode',
-    value: 'vardict_paired_sample_mode',
-    text: 'VarDict Paired Sample Mode',
-  },
-  {
-    key: 'control_freec_somatic_mode',
-    value: 'control_freec_somatic_mode',
-    text: 'Control FREEC Somatic Mode',
-  },
-  {
-    key: 'control_freec_germline_mode',
-    value: 'control_freec_germline_mode',
-    text: 'Control FREEC Germline Mode',
-  },
-  {
-    key: 'stringtie_expression',
-    value: 'stringtie_expression',
-    text: 'StringTie Expression',
-  },
-  {key: 'manta_somatic', value: 'manta_somatic', text: 'Manta Somatic'},
-  {key: 'manta_germline', value: 'manta_germline', text: 'Manta Germline'},
-  {key: 'lumpy_somatic', value: 'lumpy_somatic', text: 'LUMPY Somatic'},
-  {key: 'lumpy_germline', value: 'lumpy_germline', text: 'LUMPY Germline'},
-  {key: 'rsem', value: 'rsem', text: 'RSEM'},
-  {key: 'kallisto', value: 'kallisto', text: 'Kallisto'},
-  {key: 'star_fusion', value: 'star_fusion', text: 'Star Fusion'},
-  {key: 'arriba', value: 'arriba', text: 'Arriba'},
-  {key: 'peddy', value: 'peddy', text: 'peddy'},
-];
-
 // Styling for different event types
 export const eventType = {
   SF_CRE: {
@@ -368,3 +297,89 @@ export const permissionColor = {
   sync: 'yellow',
   import: 'yellow',
 };
+
+// Cavatica project workflow types 3 level dropdown options
+export const workflowSelection = [
+  {
+    key: 'alignment',
+    value: 'alignment',
+    text: 'alignment',
+    method: [
+      {key: 'wgs', value: 'wgs', text: 'wgs'},
+      {key: 'wxs', value: 'wxs', text: 'wxs'},
+    ],
+    sampleType: [
+      {key: 'tumor', value: 'tumor', text: 'tumor'},
+      {key: 'germline', value: 'germline', text: 'germline'},
+      {key: 'cellline', value: 'cellline', text: 'cellline'},
+    ],
+  },
+  {
+    key: 'gatk-hc-gvcf',
+    value: 'gatk-hc-gvcf',
+    text: 'gatk-hc-gvcf',
+    method: [
+      {key: 'wgs', value: 'wgs', text: 'wgs'},
+      {key: 'wxs', value: 'wxs', text: 'wxs'},
+    ],
+    sampleType: [{key: 'germline', value: 'germline', text: 'germline'}],
+  },
+  {
+    key: 'family-joint-genotyping',
+    value: 'family-joint-genotyping',
+    text: 'family-joint-genotyping',
+    method: [
+      {key: 'wgs', value: 'wgs', text: 'wgs'},
+      {key: 'wxs', value: 'wxs', text: 'wxs'},
+    ],
+    sampleType: [{key: 'germline', value: 'germline', text: 'germline'}],
+  },
+  {
+    key: 'cohort-joint-genotyping',
+    value: 'cohort-joint-genotyping',
+    text: 'cohort-joint-genotyping',
+    method: [
+      {key: 'wgs', value: 'wgs', text: 'wgs'},
+      {key: 'wxs', value: 'wxs', text: 'wxs'},
+    ],
+    sampleType: [{key: 'germline', value: 'germline', text: 'germline'}],
+  },
+  {
+    key: 'single-vcf-genotyping',
+    value: 'single-vcf-genotyping',
+    text: 'single-vcf-genotyping',
+    method: [
+      {key: 'wgs', value: 'wgs', text: 'wgs'},
+      {key: 'wxs', value: 'wxs', text: 'wxs'},
+    ],
+    sampleType: [{key: 'germline', value: 'germline', text: 'germline'}],
+  },
+  {
+    key: 'somatic-mutations',
+    value: 'somatic-mutations',
+    text: 'somatic-mutations',
+    method: [
+      {key: 'wgs', value: 'wgs', text: 'wgs'},
+      {key: 'wxs', value: 'wxs', text: 'wxs'},
+    ],
+    sampleType: [
+      {key: 'tumor', value: 'tumor', text: 'tumor'},
+
+      {key: 'cellline', value: 'cellline', text: 'cellline'},
+    ],
+  },
+  {
+    key: 'rnaseq-analysis',
+    value: 'rnaseq-analysis',
+    text: 'rnaseq-analysis',
+    method: [{key: 'bulkrna', value: 'bulkrna', text: 'bulkrna'}],
+    sampleType: [{key: 'tumor', value: 'tumor', text: 'tumor'}],
+  },
+  {
+    key: 'singlecell-rnaseq-anaysis',
+    value: 'singlecell-rnaseq-anaysis',
+    text: 'singlecell-rnaseq-anaysis',
+    method: [{key: 'singlecell', value: 'singlecell', text: 'singlecell'}],
+    sampleType: [{key: 'tumor', value: 'tumor', text: 'tumor'}],
+  },
+];

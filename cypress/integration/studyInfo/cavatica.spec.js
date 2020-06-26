@@ -12,8 +12,6 @@ context('Admin Study Cavatica', () => {
   });
 
   it('Show study Cavatica project in edit mode', () => {
-    // Show missing project warning
-    cy.contains('div', 'Missing projects').should('exist');
     // Show no project warning
     cy.contains('div', 'No linked Cavatica projects.').should('exist');
     // Show link project button
@@ -44,8 +42,6 @@ context('Investigator Study Cavatica', () => {
   });
 
   it('Show study Cavatica project in read-only mode', () => {
-    // No missing project warning
-    cy.contains('div', 'Missing projects').should('not.exist');
     // Show no project warning
     cy.contains('div', 'No linked Cavatica projects.').should('exist');
     // No link project button
