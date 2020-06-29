@@ -126,7 +126,7 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
     );
   };
 
-  if (loading) {
+  if (loading && !studyList.length) {
     return (
       <Container as={Segment} basic>
         <HeaderSkeleton />
