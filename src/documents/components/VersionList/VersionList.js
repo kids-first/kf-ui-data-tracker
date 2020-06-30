@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Amplitude} from '@amplitude/react-amplitude';
 import {dateCompare} from '../../utilities';
 import VersionItem from './VersionItem';
 import {Button, Table} from 'semantic-ui-react';
@@ -25,16 +26,30 @@ const VersionList = ({
           >
             Document Versions ({fileNode.versions.edges.length})
             {allowUpload && (
-              <Button
-                compact
-                primary
-                floated="right"
-                onClick={onUploadClick}
-                labelPosition="left"
-                size="mini"
-                icon="cloud upload"
-                content="UPLOAD VERSION"
-              />
+              <Amplitude
+                eventProperties={inheritedProps => ({
+                  ...inheritedProps,
+                  scope: inheritedProps.scope
+                    ? [...inheritedProps.scope, 'button', 'upload button']
+                    : ['button', 'upload button'],
+                })}
+              >
+                {({logEvent}) => (
+                  <Button
+                    compact
+                    primary
+                    floated="right"
+                    onClick={e => {
+                      logEvent('click');
+                      onUploadClick(e);
+                    }}
+                    labelPosition="left"
+                    size="mini"
+                    icon="cloud upload"
+                    content="UPLOAD VERSION"
+                  />
+                )}
+              </Amplitude>
             )}
           </Table.HeaderCell>
         </Table.Row>
@@ -80,4 +95,17 @@ VersionList.defaultProps = {
   fileNode: {},
 };
 
-export default VersionList;
+const TrackedVersionList = props => (
+  <Amplitude
+    eventProperties={inheritedProps => ({
+      ...inheritedProps,
+      scope: inheritedProps.scope
+        ? [...inheritedProps.scope, 'version list']
+        : ['version list'],
+    })}
+  >
+    <VersionList {...props} />
+  </Amplitude>
+);
+
+export default TrackedVersionList;

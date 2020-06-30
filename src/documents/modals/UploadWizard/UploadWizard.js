@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
+import {Amplitude, LogOnMount} from '@amplitude/react-amplitude';
 import {useMutation} from '@apollo/react-hooks';
 import {Button, Header, Modal, Icon, Message} from 'semantic-ui-react';
 import {
@@ -183,18 +184,32 @@ const UploadWizard = ({
           )}
         </Button>
 
-        <Button
-          primary
-          icon
-          labelPosition="left"
-          size="mini"
-          disabled={step !== 2 || !file}
-          data-testid="upload-button"
-          onClick={handleSave}
+        <Amplitude
+          eventProperties={inheritedProps => ({
+            ...inheritedProps,
+            scope: inheritedProps.scope
+              ? [...inheritedProps.scope, 'button', 'upload button']
+              : ['button', 'upload button'],
+          })}
         >
-          <Icon name="upload cloud" />
-          {onUploading ? 'UPLOADING ...' : 'UPLOAD'}
-        </Button>
+          {({logEvent}) => (
+            <Button
+              primary
+              icon
+              labelPosition="left"
+              size="mini"
+              disabled={step !== 2 || !file || onUploading}
+              data-testid="upload-button"
+              onClick={e => {
+                logEvent('click');
+                handleSave(e);
+              }}
+            >
+              <Icon name="upload cloud" />
+              {onUploading ? 'UPLOADING ...' : 'UPLOAD'}
+            </Button>
+          )}
+        </Amplitude>
       </Modal.Actions>
     </Modal>
   );
@@ -213,4 +228,18 @@ UploadWizard.propTypes = {
   createVersion: PropTypes.func,
 };
 
-export default UploadWizard;
+const TrackedWizard = props => (
+  <Amplitude
+    eventProperties={inheritedProps => ({
+      ...inheritedProps,
+      scope: inheritedProps.scope
+        ? [...inheritedProps.scope, 'upload wizard modal']
+        : ['kfid'],
+    })}
+  >
+    <LogOnMount eventType="modal opened" />
+    <UploadWizard {...props} />
+  </Amplitude>
+);
+
+export default TrackedWizard;

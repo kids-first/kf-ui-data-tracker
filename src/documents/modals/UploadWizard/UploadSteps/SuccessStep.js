@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Amplitude} from '@amplitude/react-amplitude';
 import {Button, Header, Icon, Segment} from 'semantic-ui-react';
 
 /**
@@ -14,21 +15,47 @@ const SuccessStep = ({fileToUpdate, handleCloseDialog, history, seconds}) => {
         Updated Document {fileToUpdate.name}
       </Header>
       <Segment.Inline>
-        <Button
-          primary
-          onClick={() => {
-            history.push(`${window.location.pathname}/${fileToUpdate.kfId}`);
-          }}
+        <Amplitude
+          eventProperties={inheritedProps => ({
+            ...inheritedProps,
+            scope: inheritedProps.scope
+              ? [...inheritedProps.scope, 'button', 'view document button']
+              : ['button', 'view document button'],
+          })}
         >
-          View Document
-        </Button>
-        <Button
-          onClick={() => {
-            handleCloseDialog();
-          }}
+          {({logEvent}) => (
+            <Button
+              primary
+              onClick={() => {
+                logEvent('click');
+                history.push(
+                  `${window.location.pathname}/${fileToUpdate.kfId}`,
+                );
+              }}
+            >
+              View Document
+            </Button>
+          )}
+        </Amplitude>
+        <Amplitude
+          eventProperties={inheritedProps => ({
+            ...inheritedProps,
+            scope: inheritedProps.scope
+              ? [...inheritedProps.scope, 'button', 'close modal button']
+              : ['button', 'close modal button'],
+          })}
         >
-          Exit ({3 - seconds})
-        </Button>
+          {({logEvent}) => (
+            <Button
+              onClick={() => {
+                logEvent('click');
+                handleCloseDialog();
+              }}
+            >
+              Exit ({3 - seconds})
+            </Button>
+          )}
+        </Amplitude>
       </Segment.Inline>
     </Segment>
   );
@@ -45,4 +72,17 @@ SuccessStep.propTypes = {
   seconds: PropTypes.number.isRequired,
 };
 
-export default SuccessStep;
+const TrackedSuccessStep = props => (
+  <Amplitude
+    eventProperties={inheritedProps => ({
+      ...inheritedProps,
+      scope: inheritedProps.scope
+        ? [...inheritedProps.scope, 'upload success step']
+        : ['upload success step'],
+    })}
+  >
+    <SuccessStep {...props} />
+  </Amplitude>
+);
+
+export default TrackedSuccessStep;

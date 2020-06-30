@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Amplitude} from '@amplitude/react-amplitude';
 import {Button, Header, Icon, Grid, Segment, Divider} from 'semantic-ui-react';
 
 /**
@@ -27,14 +28,32 @@ const ChooseMethodStep = ({
               This is a new version of a previously uploaded document.
             </Header.Subheader>
           </Header>
-          <Button
-            disabled={!allowUploadVersion}
-            data-testid="update-existing-button"
-            primary
-            onClick={() => setStep(1)}
+          <Amplitude
+            eventProperties={inheritedProps => ({
+              ...inheritedProps,
+              scope: inheritedProps.scope
+                ? [
+                    ...inheritedProps.scope,
+                    'button',
+                    'update existing document',
+                  ]
+                : ['button', 'update existing document'],
+            })}
           >
-            Update Existing Document
-          </Button>
+            {({logEvent}) => (
+              <Button
+                disabled={!allowUploadVersion}
+                data-testid="update-existing-button"
+                primary
+                onClick={() => {
+                  logEvent('click');
+                  setStep(1);
+                }}
+              >
+                Update Existing Document
+              </Button>
+            )}
+          </Amplitude>
         </Grid.Column>
 
         <Grid.Column>
@@ -45,13 +64,27 @@ const ChooseMethodStep = ({
               This document has not previously been provided uploaded.
             </Header.Subheader>
           </Header>
-          <Button
-            disabled={!allowUploadFile}
-            primary
-            onClick={() => history.push('documents/new-document', {file})}
+          <Amplitude
+            eventProperties={inheritedProps => ({
+              ...inheritedProps,
+              scope: inheritedProps.scope
+                ? [...inheritedProps.scope, 'button', 'create new document']
+                : ['button', 'create new document'],
+            })}
           >
-            Create New Document
-          </Button>
+            {({logEvent}) => (
+              <Button
+                disabled={!allowUploadFile}
+                primary
+                onClick={() => {
+                  logEvent('click');
+                  history.push('documents/new-document', {file});
+                }}
+              >
+                Create New Document
+              </Button>
+            )}
+          </Amplitude>
         </Grid.Column>
       </Grid.Row>
     </Grid>
@@ -67,4 +100,17 @@ ChooseMethodStep.propTypes = {
   history: PropTypes.any,
 };
 
-export default ChooseMethodStep;
+const TrackedChooseMethod = props => (
+  <Amplitude
+    eventProperties={inheritedProps => ({
+      ...inheritedProps,
+      scope: inheritedProps.scope
+        ? [...inheritedProps.scope, 'choose method step']
+        : ['choose method step'],
+    })}
+  >
+    <ChooseMethodStep {...props} />
+  </Amplitude>
+);
+
+export default TrackedChooseMethod;
