@@ -144,6 +144,7 @@ const StudyHeader = ({study, loading, newStudy, showModal, updateStudy}) => {
       id: relayId,
     },
     context: {clientName: 'coordinator'},
+    fetchPolicy: 'no-cache',
   });
 
   const latestRelease =

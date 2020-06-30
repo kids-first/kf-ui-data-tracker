@@ -64,6 +64,12 @@ const AdminDropdown = ({profile}) => {
       icon: 'users',
       permission: 'view_group',
     },
+    {
+      name: 'Pending Invites',
+      route: '/pending-invites',
+      icon: 'mail',
+      permission: 'list_all_referraltoken',
+    },
   ];
 
   const Item = ({name, route, icon, permission}) => (

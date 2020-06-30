@@ -40,6 +40,7 @@ import {
   EventsView,
   TokensListView,
   UsersView,
+  PendingInvitesView,
 } from '../admin/views';
 import TrackedRoute from './TrackedRoute';
 
@@ -72,6 +73,12 @@ const Routes = () => (
           path="/welcome"
           component={WelcomeView}
           scope={['welcome']}
+        />
+        <RestrictedRoute
+          exact
+          path="/pending-invites"
+          component={PendingInvitesView}
+          permissions={['list_all_referraltoken']}
         />
         <RestrictedRoute
           exact

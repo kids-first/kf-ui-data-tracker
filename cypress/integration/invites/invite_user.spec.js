@@ -56,6 +56,29 @@ context('Invite User Modal', () => {
       .should('exist')
       .contains('test@example.com')
       .should('exist');
+
+    // Go to Pending Invites (admin) page to view newly created invite
+    cy.contains('button', 'Cancel').click();
+    cy.contains('div.ui.dropdown.link.item[role="listbox"]', 'Admin')
+      .should('exist')
+      .click();
+    cy.contains('a', 'Pending Invites')
+      .should('exist')
+      .click();
+
+    cy.url().should('include', '/pending-invites');
+    cy.contains('h3', 'Data Tracker Pending Invites').should('exist');
+    cy.contains('div', 'test@example.com').should('exist');
+    cy.contains('div', 'Investigators').should('exist');
+    cy.contains('div', 'Invitation sent by testuser').should('exist');
+    cy.contains('div', ', waiting for response.').should('exist');
+    cy.contains('p', '1 Assigned Studies')
+      .should('exist')
+      .click();
+    cy.contains('a', "Mr. Meow's Memorable Meme Emporium")
+      .should('exist')
+      .click();
+    cy.url().should('include', '/study/SD_ME0WME0W/basic-info/info');
   });
 
   it('errors on bad email', () => {

@@ -123,6 +123,10 @@ body {
   margin-left: 15px !important;
 }
 
+.ml-28 {
+  margin-left: 28px !important;
+}
+
 .mr-5 {
   margin-right: 5px !important;
 }
@@ -180,6 +184,10 @@ body {
 
 .text-left {
   text-align: left;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .text-red {
