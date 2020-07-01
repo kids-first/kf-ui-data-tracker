@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
+import {Amplitude} from '@amplitude/react-amplitude';
 import {useMutation} from '@apollo/react-hooks';
 import {Button, Modal, Message, Icon} from 'semantic-ui-react';
 import UploadStep from './UploadStep';
@@ -95,17 +96,31 @@ export const NewVersionFlow = ({
             Back to Upload
           </Button>
         )}
-        <Button
-          primary
-          icon
-          labelPosition="left"
-          size="mini"
-          disabled={step === 0 || !description || !file || onUploading}
-          onClick={handleSave}
+        <Amplitude
+          eventProperties={inheritedProps => ({
+            ...inheritedProps,
+            scope: inheritedProps.scope
+              ? [...inheritedProps.scope, 'button', 'upload button']
+              : ['button', 'upload button'],
+          })}
         >
-          <Icon name="upload" />
-          {onUploading ? 'UPLOADING ...' : 'UPLOAD'}
-        </Button>
+          {({logEvent}) => (
+            <Button
+              primary
+              icon
+              labelPosition="left"
+              size="mini"
+              disabled={step === 0 || !description || !file || onUploading}
+              onClick={e => {
+                logEvent('click');
+                handleSave(e);
+              }}
+            >
+              <Icon name="upload" />
+              {onUploading ? 'UPLOADING ...' : 'UPLOAD'}
+            </Button>
+          )}
+        </Amplitude>
       </Modal.Actions>
     </Modal>
   );

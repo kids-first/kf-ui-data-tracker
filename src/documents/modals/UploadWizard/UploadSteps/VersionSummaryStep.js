@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Amplitude} from '@amplitude/react-amplitude';
 import {Header, Icon, Divider, Grid, Segment, Form} from 'semantic-ui-react';
 
 /**
@@ -62,4 +63,17 @@ VersionSummaryStep.propTypes = {
   fileToUpdate: PropTypes.object.isRequired,
 };
 
-export default VersionSummaryStep;
+const TrackedVersionSummary = props => (
+  <Amplitude
+    eventProperties={inheritedProps => ({
+      ...inheritedProps,
+      scope: inheritedProps.scope
+        ? [...inheritedProps.scope, 'version summary step']
+        : ['version summary step'],
+    })}
+  >
+    <VersionSummaryStep {...props} />
+  </Amplitude>
+);
+
+export default TrackedVersionSummary;

@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {useQuery, useMutation} from '@apollo/react-hooks';
+import {Amplitude} from '@amplitude/react-amplitude';
 import EditDocumentForm from '../forms/EditDocumentForm';
 import {CREATE_FILE} from '../mutations';
 import {GET_STUDY_BY_ID} from '../../state/queries';
@@ -92,15 +93,27 @@ const NewDocumentView = ({match, history, location}) => {
             history={history}
             submitButtons={(disabled, onUploading) => (
               <Segment vertical basic compact>
-                <Button
-                  data-testid="new-file-submit"
-                  floated="right"
-                  type="submit"
-                  primary={errors.length === 0}
-                  disabled={disabled}
+                <Amplitude
+                  eventProperties={inheritedProps => ({
+                    ...inheritedProps,
+                    scope: inheritedProps.scope
+                      ? [...inheritedProps.scope, 'button', 'upload button']
+                      : ['button', 'upload button'],
+                  })}
                 >
-                  {onUploading && !errors ? 'UPLOADING ...' : 'UPLOAD'}
-                </Button>
+                  {({logEvent}) => (
+                    <Button
+                      data-testid="new-file-submit"
+                      floated="right"
+                      type="submit"
+                      primary={errors.length === 0}
+                      disabled={disabled}
+                      onClick={() => logEvent('click')}
+                    >
+                      {onUploading && !errors ? 'UPLOADING ...' : 'UPLOAD'}
+                    </Button>
+                  )}
+                </Amplitude>
                 <Button
                   data-testid="new-file-cancel"
                   floated="right"

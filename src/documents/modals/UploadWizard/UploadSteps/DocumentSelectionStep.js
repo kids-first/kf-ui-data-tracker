@@ -1,23 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Amplitude} from '@amplitude/react-amplitude';
 import {Icon, Table} from 'semantic-ui-react';
 import {sortFilesBySimilarity} from '../../../utilities';
 
 const DocRow = ({document, setStep, setFileToUpdate}) => {
   const isSimilar = document.rating > 0.3;
   return (
-    <Table.Row
-      style={{background: isSimilar ? '#f8ffff' : 'inherit'}}
-      data-testid={isSimilar ? 'similar-document-item' : 'document-item'}
-      onClick={() => {
-        setFileToUpdate(document);
-        setStep(2);
-      }}
+    <Amplitude
+      eventProperties={inheritedProps => ({
+        ...inheritedProps,
+        scope: inheritedProps.scope
+          ? [...inheritedProps.scope, 'button', 'document']
+          : ['button', 'document'],
+      })}
     >
-      <Table.Cell>
-        <Icon name="file" /> {document.name}
-      </Table.Cell>
-    </Table.Row>
+      {({logEvent}) => (
+        <Table.Row
+          style={{background: isSimilar ? '#f8ffff' : 'inherit'}}
+          data-testid={isSimilar ? 'similar-document-item' : 'document-item'}
+          onClick={() => {
+            logEvent('click');
+            setFileToUpdate(document);
+            setStep(2);
+          }}
+        >
+          <Table.Cell>
+            <Icon name="file" /> {document.name}
+          </Table.Cell>
+        </Table.Row>
+      )}
+    </Amplitude>
   );
 };
 
@@ -77,4 +90,17 @@ DocumentSelectionStep.propTypes = {
   setFileToUpdate: PropTypes.func.isRequired,
 };
 
-export default DocumentSelectionStep;
+const TrackedDocumentSelection = props => (
+  <Amplitude
+    eventProperties={inheritedProps => ({
+      ...inheritedProps,
+      scope: inheritedProps.scope
+        ? [...inheritedProps.scope, 'document selection step']
+        : ['document selection step'],
+    })}
+  >
+    <DocumentSelectionStep {...props} />
+  </Amplitude>
+);
+
+export default TrackedDocumentSelection;
