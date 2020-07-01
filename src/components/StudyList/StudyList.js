@@ -50,13 +50,13 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
 
   const toggleMyStudies = logEvent => {
     setMyStudies(!myStudies);
-    logEvent('toggle ' + myStudies ? 'off' : 'on');
+    logEvent('toggle ' + (myStudies ? 'off' : 'on'));
     localStorage.setItem('onlyMyStudies', !myStudies);
   };
 
   const toggleWidth = logEvent => {
     setFullWidth(!fullWidth);
-    logEvent('toggle ' + fullWidth ? 'off' : 'on');
+    logEvent('toggle ' + (fullWidth ? 'off' : 'on'));
     localStorage.setItem('fullWidth', !fullWidth);
   };
 
