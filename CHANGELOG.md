@@ -1,4 +1,28 @@
-#  Change History
+# Kids First Data Tracker Change History
+
+## Release 0.15.0
+
+### Summary
+
+- Emojis: 📈 x1, ♻️ x2, 🐛 x2, ✨ x4, 💄 x1, 🔥 x3
+- Categories: Additions x5, Other Changes x3, Fixes x2, Removals x3
+
+### New features and changes
+
+- [#781](https://github.com/kids-first/kf-ui-data-tracker/pull/781) - 📈 Add tracking to document uploads - [98e63096](https://github.com/kids-first/kf-ui-data-tracker/commit/98e63096cad6751cd1812914f0f605add7704c1a) by [dankolbman](https://github.com/dankolbman)
+- [#779](https://github.com/kids-first/kf-ui-data-tracker/pull/779) - ♻️ Update study list to use cache-and-network policy - [09c82315](https://github.com/kids-first/kf-ui-data-tracker/commit/09c82315557da9b436a931d8522503643969f93b) by [dankolbman](https://github.com/dankolbman)
+- [#778](https://github.com/kids-first/kf-ui-data-tracker/pull/778) - 🐛 Fix study table sorting error on expected samples column - [40796578](https://github.com/kids-first/kf-ui-data-tracker/commit/4079657839f57ffce906ca8d3a78a8b10c1134a3) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#775](https://github.com/kids-first/kf-ui-data-tracker/pull/775) - ✨ Add admin screen for pending invites - [be725dd2](https://github.com/kids-first/kf-ui-data-tracker/commit/be725dd29c1d3ba35135e2e50e6f35e050bbcdda) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#774](https://github.com/kids-first/kf-ui-data-tracker/pull/774) - ✨ Set Cavatica workflow type selection with type, method and sample type - [30de01ed](https://github.com/kids-first/kf-ui-data-tracker/commit/30de01ed3daa11829a8a3d4489fcd72ba5e18037) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#772](https://github.com/kids-first/kf-ui-data-tracker/pull/772) - 💄 Render different document help message on file list and detail - [9f510790](https://github.com/kids-first/kf-ui-data-tracker/commit/9f510790acb798aebf5c6f76f9b236986debfbd2) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#771](https://github.com/kids-first/kf-ui-data-tracker/pull/771) - 🔥 Remove default Cavatica projects for new studies - [e8df5143](https://github.com/kids-first/kf-ui-data-tracker/commit/e8df51431ee473b358c48e2babd504410b12ba89) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#769](https://github.com/kids-first/kf-ui-data-tracker/pull/769) - 🔥 Remove default document tag options - [d3623d27](https://github.com/kids-first/kf-ui-data-tracker/commit/d3623d272d2b56fab4be411e8ec5c4f9a60dda86) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#767](https://github.com/kids-first/kf-ui-data-tracker/pull/767) - ♻️ Disable submit button after creating a study - [c375f14b](https://github.com/kids-first/kf-ui-data-tracker/commit/c375f14bfc01c6752010d3645af67f3334d32ccc) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#766](https://github.com/kids-first/kf-ui-data-tracker/pull/766) - 🔥 Remove approval status from documents - [8ea8c2c9](https://github.com/kids-first/kf-ui-data-tracker/commit/8ea8c2c926c9b998d334092b32071dbb97054390) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#765](https://github.com/kids-first/kf-ui-data-tracker/pull/765) - ✨ Make study link dropdown searchable - [0300086c](https://github.com/kids-first/kf-ui-data-tracker/commit/0300086caf92781978d35ea59440c90861d5c636) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#764](https://github.com/kids-first/kf-ui-data-tracker/pull/764) - ✨ Include slack channel as study column - [1211fb30](https://github.com/kids-first/kf-ui-data-tracker/commit/1211fb30fb569fc8bc49ed05bd092aaf2b188acf) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#763](https://github.com/kids-first/kf-ui-data-tracker/pull/763) - 🐛 Fix document sorting by last updated date - [10764307](https://github.com/kids-first/kf-ui-data-tracker/commit/10764307e8104dfb3ab393ce32aa3b7eebfc237d) by [XuTheBunny](https://github.com/XuTheBunny)
+
 
 ## Release 0.14.3
 
