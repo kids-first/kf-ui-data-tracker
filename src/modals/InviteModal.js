@@ -160,6 +160,8 @@ const InviteModalContent = ({
             studies={studies}
             groups={groups}
             showGroupDetail={showGroupDetail}
+            emailList={emailList}
+            setEmailList={setEmailList}
           />
           {emailList.length > 0 && (
             <Button

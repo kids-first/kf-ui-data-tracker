@@ -6,7 +6,14 @@ import {StudySelector} from '../components/StudySelector';
  * Displays a form to invite a user to the Data Tracker by email to one or more
  * studies.
  */
-const InviteForm = ({formikProps, studies, groups, showGroupDetail}) => {
+const InviteForm = ({
+  formikProps,
+  studies,
+  groups,
+  showGroupDetail,
+  emailList,
+  setEmailList,
+}) => {
   const {errors, touched, handleBlur, setFieldValue} = formikProps;
 
   const groupOptions =
@@ -96,6 +103,17 @@ const InviteForm = ({formikProps, studies, groups, showGroupDetail}) => {
             errors.email !== undefined &&
             errors.email.length > 0
           }
+          action={{
+            disabled: emailInput === '',
+            color: 'blue',
+            content: 'Add to Invite List',
+            onClick: e => {
+                setEmailList([
+                  ...emailList,
+                  {key: emailInput, status: 'Added'},
+                ]);
+            },
+          }}
         />
       </Form.Field>
     </Form>
