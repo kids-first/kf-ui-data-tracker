@@ -53,7 +53,7 @@ const InviteForm = ({
           data-cy="group selector"
           placeholder="Groups..."
           options={groupOptions}
-          onBlur={handleBlur}
+          onBlur={(e, {name, value}) => handleBlur(name)(value)}
           onChange={(e, {name, value}) => {
             setFieldValue('groups', value);
           }}
@@ -74,7 +74,7 @@ const InviteForm = ({
             name="studies"
             placeholder="Studies..."
             data-cy="study selector"
-            onBlur={handleBlur}
+            onBlur={(e, {name, value}) => handleBlur(name)(value)}
             onChange={(e, {name, value}) => {
               setFieldValue('studies', value);
             }}
