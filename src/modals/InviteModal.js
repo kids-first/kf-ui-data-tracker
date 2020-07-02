@@ -161,7 +161,19 @@ const InviteModalContent = ({
             groups={groups}
             showGroupDetail={showGroupDetail}
           />
-          {status && <Message {...status} />}
+          {emailList.length > 0 && (
+            <Button
+              size="small"
+              floated="right"
+              labelPosition="left"
+              data-testid="remove-all-email"
+              className="text-primary mt-15 mr-5"
+              onClick={() => setEmailList([])}
+            >
+              <Icon name="x" />
+              Clear All
+            </Button>
+          )}
           <Label.Group className="mt-6 ml-5">
             {emailList.length > 0 ? (
               emailList.map(email => (
