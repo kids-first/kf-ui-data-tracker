@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Dropdown, Form, Button, Icon} from 'semantic-ui-react';
 import {StudySelector} from '../components/StudySelector';
 
@@ -14,6 +14,9 @@ const InviteForm = ({
   emailList,
   setEmailList,
 }) => {
+  const [emailInput, setEmailInput] = useState('');
+  const [emailError, setEmailError] = useState('');
+
   const {errors, touched, handleBlur, setFieldValue} = formikProps;
 
   const groupOptions =
@@ -94,26 +97,30 @@ const InviteForm = ({
           iconPosition="left"
           data-cy="user email"
           onBlur={handleBlur}
-          placeholder="Collaborator's email"
-          onChange={(e, {name, value}) => {
-            setFieldValue('email', value);
+          placeholder={emailError ? emailError : "Collaborator's email"}
+          onChange={(e, {value}) => {
+            setEmailError('');
+            setEmailInput(value);
           }}
-          error={
-            touched.email !== undefined &&
-            errors.email !== undefined &&
-            errors.email.length > 0
-          }
+          value={emailInput}
           action={{
             disabled: emailInput === '',
             color: 'blue',
             content: 'Add to Invite List',
             onClick: e => {
+              if (emailList.filter(e => e.key === emailInput).length > 0) {
+                setEmailInput('');
+                setEmailError('Address added already');
+              } else {
                 setEmailList([
                   ...emailList,
                   {key: emailInput, status: 'Added'},
                 ]);
+                setEmailInput('');
+              }
             },
           }}
+          error={emailError !== ''}
         />
       </Form.Field>
     </Form>
