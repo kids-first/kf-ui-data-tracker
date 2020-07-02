@@ -13,6 +13,8 @@ import {PermissionGroup} from '../admin/components/UserList';
  * This is the controller that handles the form submission and state.
  */
 const InviteModal = ({open, onCloseDialog}) => {
+  const [emailList, setEmailList] = useState([]);
+
   const {data: studiesData} = useQuery(ALL_STUDIES);
   const {data: groupsData} = useQuery(ALL_GROUPS);
   const studies = studiesData && studiesData.allStudies.edges;
@@ -35,39 +37,27 @@ const InviteModal = ({open, onCloseDialog}) => {
 
   const onSubmit = (values, {setErrors, setStatus, setSubmitting}) => {
     setSubmitting(true);
-    createToken({
-      variables: {
-        input: {
-          email: values.email,
-          studies: values.studies,
-          groups: values.groups,
+    emailList.map((email, index) =>
+      createToken({
+        variables: {
+          input: {
+            email: email.key,
+            studies: values.studies,
+            groups: values.groups,
+          },
         },
-      },
-    })
-      .then(res => {
-        setStatus({
-          icon: 'mail',
-          header: 'Invite Sent',
-          content: (
-            <>
-              An email containing an invite link was sent to{' '}
-              <b>{values.email}</b> and should arrive shortly.
-            </>
-          ),
-          info: true,
-        });
-        setSubmitting(false);
       })
-      .catch(err => {
-        const errors = [...err.graphQLErrors, err.networkError];
-        setStatus({
-          icon: 'error',
-          header: 'Error',
-          content: formatErrors(errors),
-          negative: true,
-        });
-        setSubmitting(false);
-      });
+        .then(res => {
+          var updated = [...emailList];
+          updated[index].status = 'Sent';
+          setEmailList(updated);
+        })
+        .catch(err => {
+          var updated = [...emailList];
+          updated[index].status = `ERROR: ${err.message}`;
+          setEmailList(updated);
+        }),
+    );
   };
 
   return (
@@ -76,13 +66,9 @@ const InviteModal = ({open, onCloseDialog}) => {
         initialValues={{
           studies: [],
           groups: [],
-          email: null,
         }}
         validate={values => {
           let errors = {};
-          if (!values.email) {
-            errors.email = 'Required';
-          }
           if (values.groups.length <= 0) {
             errors.groups = 'Required';
           }
