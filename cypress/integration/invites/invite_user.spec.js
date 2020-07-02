@@ -47,9 +47,21 @@ context('Invite User Modal', () => {
     cy.get('.content .header').click();
     cy.get('[data-testid="invite-button"]').should('be.disabled');
 
+    // Add and remove individual email
+    cy.get('[data-cy="user email"]')
+      .click()
+      .type('to-be-removed');
+    cy.contains('button', 'Add to Invite List').click();
+    cy.get('[data-testid="remove-all-email"]').should('exist');
+    cy.get('[data-testid="remove-one-email"]')
+      .should('exist')
+      .click();
+
+    // Input proper email
     cy.get('[data-cy="user email"]')
       .click()
       .type('test@example.com');
+    cy.contains('button', 'Add to Invite List').click();
     cy.get('[data-testid="invite-button"]').should('be.enabled');
 
     cy.get('[data-testid="invite-button"]').click();
