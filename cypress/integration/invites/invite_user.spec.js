@@ -71,9 +71,19 @@ context('Invite User Modal', () => {
     cy.contains('button', 'Add to Invite List').click();
     cy.get('[placeholder="Address added already"]').should('exist');
 
+    // Input invalid email address (has graphql error on submit)
+    cy.get('[data-cy="user email"]')
+      .click()
+      .type('invalid_email');
+    cy.contains('button', 'Add to Invite List').click();
+
+    // Submit the invite
     cy.get('[data-testid="invite-button"]').click();
 
-    cy.contains('.message', 'Invite Sent')
+    // test@example.com is successfully sent and invalid_email gets error
+    cy.get('[data-testid="email-sent"]').should('exist');
+    cy.get('[data-testid="email-error"]').should('exist');
+
       .should('exist')
       .contains('test@example.com')
       .should('exist');
