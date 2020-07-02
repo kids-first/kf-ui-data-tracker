@@ -61,7 +61,15 @@ const InviteModal = ({open, onCloseDialog}) => {
   };
 
   return (
-    <Modal open={open} onClose={onCloseDialog} closeIcon size="large">
+    <Modal
+      open={open}
+      onClose={() => {
+        onCloseDialog();
+        setEmailList([]);
+      }}
+      closeIcon
+      size="large"
+    >
       <Formik
         initialValues={{
           studies: [],
@@ -156,7 +164,14 @@ const InviteModalContent = ({onCloseDialog, studies, groups, formikProps}) => {
             onClick={() => showGroupDetail(false)}
           />
         )}
-        <Button onClick={() => onCloseDialog()}>Cancel</Button>
+        <Button
+          onClick={() => {
+            onCloseDialog();
+            setEmailList([]);
+          }}
+        >
+          Cancel
+        </Button>
         <Amplitude
           eventProperties={inheritedProps => ({
             ...inheritedProps,
