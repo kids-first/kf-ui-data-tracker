@@ -257,7 +257,7 @@ const InviteModalContent = ({
                 logEvent('click');
                 handleSubmit();
               }}
-              disabled={!isValid || isSubmitting}
+              disabled={!isValid || isSubmitting || emailList.length === 0}
               loading={isSubmitting}
             >
               Send Email Invite
