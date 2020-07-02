@@ -1,7 +1,15 @@
 import React, {useState} from 'react';
 import {useQuery, useMutation} from '@apollo/react-hooks';
 import {Amplitude, LogOnMount} from '@amplitude/react-amplitude';
-import {Button, Divider, Icon, List, Message, Modal} from 'semantic-ui-react';
+import {
+  Button,
+  Divider,
+  Icon,
+  Message,
+  Modal,
+  Label,
+  Popup,
+} from 'semantic-ui-react';
 import {Formik} from 'formik';
 import {ALL_STUDIES, ALL_GROUPS} from '../state/queries';
 import {CREATE_REFERRAL_TOKEN} from '../state/mutations';
@@ -23,20 +31,9 @@ const InviteModal = ({open, onCloseDialog}) => {
 
   const [createToken] = useMutation(CREATE_REFERRAL_TOKEN);
 
-  const formatErrors = errors => {
-    return (
-      <List bulleted>
-        {errors
-          .filter(err => !!err)
-          .map(err => (
-            <List.Item>{err.message}</List.Item>
-          ))}
-      </List>
-    );
-  };
-
   const onSubmit = (values, {setErrors, setStatus, setSubmitting}) => {
     setSubmitting(true);
+    setEmailList(emailList.map(e => ({key: e.key, status: 'Sending'})));
     emailList.map((email, index) =>
       createToken({
         variables: {
@@ -58,6 +55,9 @@ const InviteModal = ({open, onCloseDialog}) => {
           setEmailList(updated);
         }),
     );
+    if (emailList.filter(e => e.status === 'Sending').length === 0) {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -93,6 +93,8 @@ const InviteModal = ({open, onCloseDialog}) => {
             studies={studies || []}
             groups={groups || []}
             formikProps={formikProps}
+            emailList={emailList}
+            setEmailList={setEmailList}
           />
         )}
       </Formik>
@@ -103,8 +105,15 @@ const InviteModal = ({open, onCloseDialog}) => {
 /**
  * Modal content which renders the actual modal and form
  */
-const InviteModalContent = ({onCloseDialog, studies, groups, formikProps}) => {
-  const {isSubmitting, isValid, handleSubmit, status} = formikProps;
+const InviteModalContent = ({
+  onCloseDialog,
+  studies,
+  groups,
+  formikProps,
+  emailList,
+  setEmailList,
+}) => {
+  const {isSubmitting, isValid, handleSubmit} = formikProps;
   const [groupDetail, showGroupDetail] = useState(false);
   // Group permissions are sorted by the object
   // Permission codename in action_object format, e.g. "view_event", "add_file"
@@ -153,6 +162,63 @@ const InviteModalContent = ({onCloseDialog, studies, groups, formikProps}) => {
             showGroupDetail={showGroupDetail}
           />
           {status && <Message {...status} />}
+          <Label.Group className="mt-6 ml-5">
+            {emailList.length > 0 ? (
+              emailList.map(email => (
+                <Popup
+                  inverted
+                  key={email.key}
+                  content={email.status}
+                  trigger={
+                    <Label
+                      as="a"
+                      className="my-2"
+                      onClick={e => {
+                        e.stopPropagation();
+                      }}
+                    >
+                      {email.status === 'Sending' && (
+                        <Icon
+                          data-testid="email-sending"
+                          name="arrow circle right"
+                          color="blue"
+                        />
+                      )}
+                      {email.status === 'Sent' && (
+                        <Icon
+                          data-testid="email-sent"
+                          name="check"
+                          color="green"
+                        />
+                      )}
+                      {email.status.startsWith('ERROR') && (
+                        <Icon
+                          data-testid="email-error"
+                          name="warning circle"
+                          color="red"
+                        />
+                      )}
+                      {email.key}
+                      {email.status === 'Added' && (
+                        <Icon
+                          name="close"
+                          data-testid="remove-one-email"
+                          onClick={e => {
+                            e.stopPropagation();
+                            setEmailList(
+                              emailList.filter(e => e.key !== email.key),
+                            );
+                          }}
+                        />
+                      )}
+                    </Label>
+                  }
+                />
+              ))
+            ) : (
+              <div className="text-grey pt-10">No Emails Added ...</div>
+            )}
+          </Label.Group>
         </Modal.Content>
       )}
       <Modal.Actions>
