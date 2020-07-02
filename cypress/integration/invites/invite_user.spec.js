@@ -111,6 +111,28 @@ context('Invite User Modal', () => {
       .should('exist')
       .click();
     cy.url().should('include', '/study/SD_ME0WME0W/basic-info/info');
+
+    // Sent email that has valid refferal token will get graphql error
+    cy.contains('button', 'Invite User').click();
+
+    cy.get('[data-cy="group selector"]')
+      .click()
+      .contains('Investigators')
+      .click();
+    cy.contains('div', 'Invite a user by email').click();
+    cy.get('[data-cy="study selector"]')
+      .click()
+      .contains('SD_ME0W')
+      .click();
+    cy.contains('div', 'Invite a user by email').click();
+    cy.get('[data-cy="user email"]')
+      .click()
+      .type('test@example.com');
+    cy.contains('button', 'Add to Invite List').click();
+
+    cy.get('[data-testid="invite-button"]').click();
+
+    cy.get('[data-testid="email-error"]').should('exist');
   });
 
   it('errors on bad email', () => {
