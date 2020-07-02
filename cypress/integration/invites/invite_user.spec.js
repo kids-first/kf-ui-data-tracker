@@ -64,6 +64,13 @@ context('Invite User Modal', () => {
     cy.contains('button', 'Add to Invite List').click();
     cy.get('[data-testid="invite-button"]').should('be.enabled');
 
+    // Error on repeating email input
+    cy.get('[data-cy="user email"]')
+      .click()
+      .type('test@example.com');
+    cy.contains('button', 'Add to Invite List').click();
+    cy.get('[placeholder="Address added already"]').should('exist');
+
     cy.get('[data-testid="invite-button"]').click();
 
     cy.contains('.message', 'Invite Sent')
