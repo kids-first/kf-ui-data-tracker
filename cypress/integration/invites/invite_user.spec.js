@@ -84,9 +84,10 @@ context('Invite User Modal', () => {
     cy.get('[data-testid="email-sent"]').should('exist');
     cy.get('[data-testid="email-error"]').should('exist');
 
+    // Remove all email from invite list
+    cy.get('[data-testid="remove-all-email"]')
       .should('exist')
-      .contains('test@example.com')
-      .should('exist');
+      .click();
 
     // Go to Pending Invites (admin) page to view newly created invite
     cy.contains('button', 'Cancel').click();
