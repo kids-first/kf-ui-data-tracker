@@ -9,7 +9,7 @@ exports[`renders correctly 1`] = `
       class=""
     >
       <tr
-        class="version--item"
+        class="version--item cursor-pointer"
       >
         <td
           class=""
@@ -34,21 +34,26 @@ exports[`renders correctly 1`] = `
           class="collapsing right aligned top aligned"
         >
           <div
-            class="ui mini basic image label"
+            class="ui mini image label"
           >
             <img
               alt="xuzhu"
               src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
             />
-            <time
-              datetime="2018-08-21T03:16:11.000Z"
-              title="21 Aug 2018"
+            xuzhu
+            <div
+              class="detail"
             >
-              8 months ago
-            </time>
+              <time
+                datetime="2018-08-21T03:16:11.000Z"
+                title="21 Aug 2018"
+              >
+                8 months ago
+              </time>
+            </div>
           </div>
           <button
-            class="ui mini basic label"
+            class="ui button ui mini basic label"
           >
             <i
               aria-hidden="true"
@@ -72,7 +77,7 @@ exports[`renders correctly with 1 as index -- status dot 1`] = `
       class=""
     >
       <tr
-        class="version--item"
+        class="version--item cursor-pointer"
       >
         <td
           class=""
@@ -97,21 +102,26 @@ exports[`renders correctly with 1 as index -- status dot 1`] = `
           class="collapsing right aligned top aligned"
         >
           <div
-            class="ui mini basic image label"
+            class="ui mini image label"
           >
             <img
               alt="xuzhu"
               src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
             />
-            <time
-              datetime="2018-08-21T03:16:11.000Z"
-              title="21 Aug 2018"
+            xuzhu
+            <div
+              class="detail"
             >
-              8 months ago
-            </time>
+              <time
+                datetime="2018-08-21T03:16:11.000Z"
+                title="21 Aug 2018"
+              >
+                8 months ago
+              </time>
+            </div>
           </div>
           <button
-            class="ui mini basic label"
+            class="ui button ui mini basic label"
           >
             <i
               aria-hidden="true"
@@ -135,7 +145,7 @@ exports[`renders correctly with not enough data 1`] = `
       class=""
     >
       <tr
-        class="version--item"
+        class="version--item cursor-pointer"
       >
         <td
           class=""
@@ -161,21 +171,26 @@ exports[`renders correctly with not enough data 1`] = `
           class="collapsing right aligned top aligned"
         >
           <div
-            class="ui mini basic image label"
+            class="ui mini image label"
           >
             <img
               alt="xuzhu"
               src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
             />
-            <time
-              datetime="2018-08-21T03:16:11.000Z"
-              title="21 Aug 2018"
+            xuzhu
+            <div
+              class="detail"
             >
-              8 months ago
-            </time>
+              <time
+                datetime="2018-08-21T03:16:11.000Z"
+                title="21 Aug 2018"
+              >
+                8 months ago
+              </time>
+            </div>
           </div>
           <button
-            class="ui mini basic label"
+            class="ui button ui mini basic label"
           >
             <i
               aria-hidden="true"
@@ -186,7 +201,7 @@ exports[`renders correctly with not enough data 1`] = `
         </td>
       </tr>
       <tr
-        class="version--item"
+        class="version--item cursor-pointer"
       >
         <td
           class=""
@@ -212,21 +227,26 @@ exports[`renders correctly with not enough data 1`] = `
           class="collapsing right aligned top aligned"
         >
           <div
-            class="ui mini basic image label"
+            class="ui mini image label"
           >
             <img
               alt="xuzhu"
               src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
             />
-            <time
-              datetime="2018-08-21T03:16:11.000Z"
-              title="21 Aug 2018"
+            xuzhu
+            <div
+              class="detail"
             >
-              8 months ago
-            </time>
+              <time
+                datetime="2018-08-21T03:16:11.000Z"
+                title="21 Aug 2018"
+              >
+                8 months ago
+              </time>
+            </div>
           </div>
           <button
-            class="ui mini basic label"
+            class="ui button ui mini basic label"
           >
             <i
               aria-hidden="true"
