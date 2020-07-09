@@ -23,7 +23,7 @@ const VersionItem = ({
   return (
     <Table.Row
       onClick={e => onNameClick(versionNode, index)}
-      className="version--item"
+      className="version--item cursor-pointer"
     >
       <Table.Cell>
         <p title={versionNode.fileName}>
