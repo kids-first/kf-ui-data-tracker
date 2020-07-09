@@ -40,6 +40,7 @@ const VersionItem = ({
       <Table.Cell textAlign="right" verticalAlign="top" collapsing>
         <AvatarTimeAgo
           size="mini"
+          showUsername
           creator={versionNode.creator}
           createdAt={versionNode.createdAt}
         />
