@@ -116,8 +116,8 @@ const CollaboratorItem = ({
                   role={role}
                   user={user}
                 />
-              ) : collaboratorRoles ? (
-                collaboratorRoles[role]
+              ) : role in collaboratorRoles ? (
+                collaboratorRoles[role].name
               ) : (
                 'Unkown Role'
               )}

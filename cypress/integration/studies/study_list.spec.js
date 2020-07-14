@@ -182,8 +182,10 @@ context('Admin Study List', () => {
     cy.contains('button', 'ADD COLLABORATOR')
       .click()
       .get('input.search')
+      .first()
       .click();
     cy.contains('div[role="option"]', 'testuser').click();
+    cy.contains('div', 'Choose role').click();
     cy.contains('button', 'Add').click();
 
     cy.visit('/');
