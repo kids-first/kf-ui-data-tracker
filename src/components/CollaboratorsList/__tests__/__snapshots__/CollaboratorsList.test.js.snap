@@ -31,7 +31,29 @@ exports[`Renders collaborators list correctly for admins 1`] = `
         <div
           class="description"
         >
-          Unknown role
+          <div
+            class="ui bulleted horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            />
+            <div
+              class="item"
+              role="listitem"
+            >
+              Joined
+               
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              Added by 
+              Unknown user
+            </div>
+          </div>
         </div>
       </div>
       <div
@@ -78,7 +100,29 @@ exports[`Renders collaborators list correctly for admins 1`] = `
         <div
           class="description"
         >
-          ADMIN
+          <div
+            class="ui bulleted horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            />
+            <div
+              class="item"
+              role="listitem"
+            >
+              Joined
+               
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              Added by 
+              Unknown user
+            </div>
+          </div>
         </div>
       </div>
       <div
@@ -135,7 +179,29 @@ exports[`Renders collaborators list correctly for non-admins 1`] = `
         <div
           class="description"
         >
-          Unknown role
+          <div
+            class="ui bulleted horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            />
+            <div
+              class="item"
+              role="listitem"
+            >
+              Joined
+               
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              Added by 
+              Unknown user
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -164,7 +230,29 @@ exports[`Renders collaborators list correctly for non-admins 1`] = `
         <div
           class="description"
         >
-          ADMIN
+          <div
+            class="ui bulleted horizontal list"
+            role="list"
+          >
+            <div
+              class="item"
+              role="listitem"
+            />
+            <div
+              class="item"
+              role="listitem"
+            >
+              Joined
+               
+            </div>
+            <div
+              class="item"
+              role="listitem"
+            >
+              Added by 
+              Unknown user
+            </div>
+          </div>
         </div>
       </div>
     </div>

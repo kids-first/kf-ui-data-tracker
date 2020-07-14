@@ -17,7 +17,9 @@ const NewDocumentView = ({match, history, location}) => {
   // Tracks any error state reported from the server
   const [errors, setErrors] = useState('');
   const study = useQuery(GET_STUDY_BY_ID, {
-    variables: {kfId: match.params.kfId},
+    variables: {
+      id: Buffer.from('StudyNode:' + match.params.kfId).toString('base64'),
+    },
   });
   const [createDocument] = useMutation(CREATE_FILE, {
     awaitRefetchQueries: true,
@@ -30,9 +32,7 @@ const NewDocumentView = ({match, history, location}) => {
   });
 
   const studyFiles =
-    study.data && study.data.studyByKfId
-      ? study.data.studyByKfId.files.edges
-      : [];
+    study.data && study.data.study ? study.data.study.files.edges : [];
 
   // If the user landed here without a file, they probably got here from
   // some external page. We'll send them back to the study's file list view.

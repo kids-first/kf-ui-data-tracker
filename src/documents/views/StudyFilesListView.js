@@ -80,10 +80,24 @@ const StudyFilesListView = ({
   // Document mutations
   const [downloadFile] = useMutation(FILE_DOWNLOAD_URL);
   const [deleteFile] = useMutation(DELETE_FILE, {
-    refetchQueries: [{query: GET_STUDY_BY_ID, variables: {kfId: kfId}}],
+    refetchQueries: [
+      {
+        query: GET_STUDY_BY_ID,
+        variables: {
+          id: Buffer.from('StudyNode:' + kfId).toString('base64'),
+        },
+      },
+    ],
   });
   const [updateFile] = useMutation(UPDATE_FILE, {
-    refetchQueries: [{query: GET_STUDY_BY_ID, variables: {kfId: kfId}}],
+    refetchQueries: [
+      {
+        query: GET_STUDY_BY_ID,
+        variables: {
+          id: Buffer.from('StudyNode:' + kfId).toString('base64'),
+        },
+      },
+    ],
     onError: error => {
       setUpdateFileError(error);
     },
@@ -92,10 +106,10 @@ const StudyFilesListView = ({
   // Study query, includes documents
   const {loading, data, error} = useQuery(GET_STUDY_BY_ID, {
     variables: {
-      kfId: kfId,
+      id: Buffer.from('StudyNode:' + kfId).toString('base64'),
     },
   });
-  const studyByKfId = data && data.studyByKfId;
+  const study = data && data.study;
   // Query for user
   const {data: profileData} = useQuery(MY_PROFILE);
   const myProfile = profileData && profileData.myProfile;
@@ -126,10 +140,10 @@ const StudyFilesListView = ({
   const [selectedFiles, setSelectedFiles] = useState([]);
 
   // Computed state
-  const files = !loading && studyByKfId ? studyByKfId.files.edges : [];
+  const files = !loading && study ? study.files.edges : [];
   const filteredFiles = filterFiles(files, filters);
 
-  if (!loading && studyByKfId === null) {
+  if (!loading && study === null) {
     return (
       <NotFoundView
         title="Study not found"
@@ -157,7 +171,7 @@ const StudyFilesListView = ({
         <Helmet>
           <title>
             {`KF Data Tracker - Study documents - Error ${
-              studyByKfId ? 'for ' + studyByKfId.kfId : null
+              study ? 'for ' + study.kfId : null
             }`}
           </title>
         </Helmet>
@@ -174,7 +188,7 @@ const StudyFilesListView = ({
       <Helmet>
         <title>
           {`KF Data Tracker - Study documents ${
-            studyByKfId ? 'for ' + studyByKfId.name : null
+            study ? 'for ' + study.name : null
           }`}
         </title>
       </Helmet>

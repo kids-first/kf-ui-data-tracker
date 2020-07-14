@@ -19,7 +19,8 @@ const InviteCollaboratorForm = ({formikProps, disabled}) => {
     <Form>
       <p>
         Send an email to a user with an invitation to join this study as a
-        collaborator.
+        collaborator. The collaborator's role may be set after they've signed
+        up.
       </p>
       <Form.Group>
         <Form.Input

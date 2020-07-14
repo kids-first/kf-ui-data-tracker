@@ -187,8 +187,8 @@ export const IMPORT_VOLUME_FILES = gql`
 
 // Mutation to add collaborator to a study
 export const ADD_COLLABORATOR = gql`
-  mutation addCollaborator($study: ID!, $user: ID!) {
-    addCollaborator(study: $study, user: $user) {
+  mutation addCollaborator($study: ID!, $user: ID!, $role: MembershipRole!) {
+    addCollaborator(study: $study, user: $user, role: $role) {
       study {
         ...StudyBasicFields
       }

@@ -44,7 +44,7 @@ const CreatingStudyModal = ({
     stopPolling: studyStopPulling,
   } = useQuery(GET_STUDY_BY_ID, {
     variables: {
-      kfId: studyKfId,
+      id: Buffer.from('StudyNode:' + studyKfId).toString('base64'),
     },
   });
 

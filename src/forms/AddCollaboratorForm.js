@@ -4,6 +4,7 @@ import {Formik} from 'formik';
 import {Message, Form, List} from 'semantic-ui-react';
 import defaultAvatar from '../assets/defaultAvatar.png';
 import {showuUserName} from '../common/notificationUtils';
+import {collaboratorRoles} from '../common/enums';
 
 const AddCollaboratorForm = ({formikProps, availableUsers, disabled}) => {
   const {
@@ -32,6 +33,12 @@ const AddCollaboratorForm = ({formikProps, availableUsers, disabled}) => {
           }))
       : [];
 
+  const roleOptions = Object.values(collaboratorRoles).map(role => ({
+    key: role.key,
+    value: role.key,
+    text: role.name,
+  }));
+
   const formatErrors = errors => {
     return (
       <List bulleted>
@@ -44,7 +51,7 @@ const AddCollaboratorForm = ({formikProps, availableUsers, disabled}) => {
 
   return (
     <Form>
-      <p>Select a registered user to add as a collaborator.</p>
+      <p>Select a role and a registered user to add as a collaborator.</p>
       <Form.Group>
         <Form.Dropdown
           selection
@@ -62,6 +69,30 @@ const AddCollaboratorForm = ({formikProps, availableUsers, disabled}) => {
           onChange={(e, {name, value}) => {
             setFieldTouched('userId');
             setFieldValue('userId', value);
+          }}
+          error={
+            touched.userId !== undefined &&
+            errors.userId !== undefined &&
+            errors.userId.length > 0 &&
+            !disabled
+          }
+        />
+      </Form.Group>
+      <Form.Group>
+        <Form.Dropdown
+          selection
+          search
+          id="role"
+          name="role"
+          className="expand"
+          autoComplete="off"
+          disabled={roleOptions.length === 0 || disabled}
+          onBlur={() => handleBlur('role')}
+          options={roleOptions}
+          placeholder={'Choose role'}
+          onChange={(e, {name, value}) => {
+            setFieldTouched('role');
+            setFieldValue('role', value);
           }}
           error={
             touched.userId !== undefined &&
