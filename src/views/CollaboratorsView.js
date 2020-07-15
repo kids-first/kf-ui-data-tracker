@@ -39,7 +39,7 @@ const CollaboratorsView = ({match, history}) => {
       {
         query: GET_STUDY_BY_ID,
         variables: {
-          kfId: match.params.kfId,
+          id: relayId,
         },
       },
     ],
@@ -49,7 +49,7 @@ const CollaboratorsView = ({match, history}) => {
       {
         query: GET_STUDY_BY_ID,
         variables: {
-          kfId: match.params.kfId,
+          id: relayId,
         },
       },
     ],

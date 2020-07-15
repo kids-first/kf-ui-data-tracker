@@ -38,7 +38,9 @@ exports[`Renders collaborators list correctly for admins 1`] = `
             <div
               class="item"
               role="listitem"
-            />
+            >
+              Unkown Role
+            </div>
             <div
               class="item"
               role="listitem"
@@ -107,7 +109,9 @@ exports[`Renders collaborators list correctly for admins 1`] = `
             <div
               class="item"
               role="listitem"
-            />
+            >
+              Unkown Role
+            </div>
             <div
               class="item"
               role="listitem"
@@ -186,7 +190,9 @@ exports[`Renders collaborators list correctly for non-admins 1`] = `
             <div
               class="item"
               role="listitem"
-            />
+            >
+              Unkown Role
+            </div>
             <div
               class="item"
               role="listitem"
@@ -237,7 +243,9 @@ exports[`Renders collaborators list correctly for non-admins 1`] = `
             <div
               class="item"
               role="listitem"
-            />
+            >
+              Unkown Role
+            </div>
             <div
               class="item"
               role="listitem"

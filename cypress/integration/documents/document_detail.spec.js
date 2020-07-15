@@ -24,9 +24,9 @@ context('Admin Document Detail', () => {
     cy.get('[name="file_status"]').click();
     cy.contains('div', 'Approved').click();
     cy.contains('button', 'SAVE').click();
-    // Add Email tag
+    // Add tag
     cy.get('[data-testid="tag-file"]').click();
-    cy.contains('span', 'Email').click();
+    cy.get('[data-testid="tag-dropdown"] > .search').type('abc{enter}');
     cy.get('[data-testid="tag-file-add"]').click();
     // Go back to document list
     cy.contains('button', 'All Documents').click();
@@ -36,7 +36,7 @@ context('Admin Document Detail', () => {
     cy.get('table')
       .find('tr')
       .its('length')
-      .should('eq', 3);
+      .should('eq', 2);
   });
 
   it('Show document detail with delete button and edit button', () => {
