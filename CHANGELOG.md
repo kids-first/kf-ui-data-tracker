@@ -1,5 +1,18 @@
 # Kids First Data Tracker Change History
 
+## Release 0.16.0
+
+### Summary
+
+- Emojis: 🐛 x1, ✨ x1
+- Categories: Fixes x1, Additions x1
+
+### New features and changes
+
+- [#790](https://github.com/kids-first/kf-ui-data-tracker/pull/790) - 🐛 Fix tests - [53d2f9ca](https://github.com/kids-first/kf-ui-data-tracker/commit/53d2f9cab2e56959375278ef454669fe507d7622) by [dankolbman](https://github.com/dankolbman)
+- [#773](https://github.com/kids-first/kf-ui-data-tracker/pull/773) - ✨ Add collaborator roles - [afd11d58](https://github.com/kids-first/kf-ui-data-tracker/commit/afd11d58ae0f861090a9a59e05a0592ca955da5f) by [dankolbman](https://github.com/dankolbman)
+
+
 ## Release 0.15.0
 
 ### Summary
