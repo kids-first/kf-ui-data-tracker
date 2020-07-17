@@ -27,6 +27,16 @@ const InviteForm = ({
       value: node.id,
     }));
 
+  const onAddEmail = () => {
+    if (emailList.filter(email => email.key === emailInput).length > 0) {
+      setEmailInput('');
+      setEmailError('Address added already');
+    } else {
+      setEmailList([...emailList, {key: emailInput, status: 'Added'}]);
+      setEmailInput('');
+    }
+  };
+
   return (
     <Form>
       <Form.Field>
@@ -92,7 +102,6 @@ const InviteForm = ({
           id="email"
           name="email"
           className="expand"
-          icon="mail"
           autoComplete="off"
           iconPosition="left"
           data-cy="user email"
@@ -102,26 +111,26 @@ const InviteForm = ({
             setEmailError('');
             setEmailInput(value);
           }}
-          value={emailInput}
-          action={{
-            disabled: emailInput === '',
-            color: 'blue',
-            content: 'Add to Invite List',
-            onClick: e => {
-              if (emailList.filter(e => e.key === emailInput).length > 0) {
-                setEmailInput('');
-                setEmailError('Address added already');
-              } else {
-                setEmailList([
-                  ...emailList,
-                  {key: emailInput, status: 'Added'},
-                ]);
-                setEmailInput('');
-              }
-            },
-          }}
           error={emailError !== ''}
-        />
+          value={emailInput}
+          action
+        >
+          <Icon name="mail" />
+          <input
+            onKeyDown={e => {
+              if (e.keyCode === 13) {
+                e.preventDefault();
+                onAddEmail();
+              }
+            }}
+          />
+          <Button
+            disabled={emailInput === ''}
+            primary
+            content="Add to Invite List"
+            onClick={onAddEmail}
+          />
+        </Form.Input>
       </Form.Field>
     </Form>
   );
