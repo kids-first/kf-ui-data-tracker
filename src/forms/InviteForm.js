@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Dropdown, Form, Button, Icon} from 'semantic-ui-react';
 import {StudySelector} from '../components/StudySelector';
 
@@ -6,7 +6,17 @@ import {StudySelector} from '../components/StudySelector';
  * Displays a form to invite a user to the Data Tracker by email to one or more
  * studies.
  */
-const InviteForm = ({formikProps, studies, groups, showGroupDetail}) => {
+const InviteForm = ({
+  formikProps,
+  studies,
+  groups,
+  showGroupDetail,
+  emailList,
+  setEmailList,
+}) => {
+  const [emailInput, setEmailInput] = useState('');
+  const [emailError, setEmailError] = useState('');
+
   const {errors, touched, handleBlur, setFieldValue} = formikProps;
 
   const groupOptions =
@@ -16,6 +26,16 @@ const InviteForm = ({formikProps, studies, groups, showGroupDetail}) => {
       text: node.name,
       value: node.id,
     }));
+
+  const onAddEmail = () => {
+    if (emailList.filter(email => email.key === emailInput).length > 0) {
+      setEmailInput('');
+      setEmailError('Address added already');
+    } else {
+      setEmailList([...emailList, {key: emailInput, status: 'Added'}]);
+      setEmailInput('');
+    }
+  };
 
   return (
     <Form>
@@ -43,7 +63,7 @@ const InviteForm = ({formikProps, studies, groups, showGroupDetail}) => {
           data-cy="group selector"
           placeholder="Groups..."
           options={groupOptions}
-          onBlur={handleBlur}
+          onBlur={(e, {name, value}) => handleBlur(name)(value)}
           onChange={(e, {name, value}) => {
             setFieldValue('groups', value);
           }}
@@ -64,7 +84,7 @@ const InviteForm = ({formikProps, studies, groups, showGroupDetail}) => {
             name="studies"
             placeholder="Studies..."
             data-cy="study selector"
-            onBlur={handleBlur}
+            onBlur={(e, {name, value}) => handleBlur(name)(value)}
             onChange={(e, {name, value}) => {
               setFieldValue('studies', value);
             }}
@@ -82,21 +102,35 @@ const InviteForm = ({formikProps, studies, groups, showGroupDetail}) => {
           id="email"
           name="email"
           className="expand"
-          icon="mail"
           autoComplete="off"
           iconPosition="left"
           data-cy="user email"
           onBlur={handleBlur}
-          placeholder="Collaborator's email"
-          onChange={(e, {name, value}) => {
-            setFieldValue('email', value);
+          placeholder={emailError ? emailError : "Collaborator's email"}
+          onChange={(e, {value}) => {
+            setEmailError('');
+            setEmailInput(value);
           }}
-          error={
-            touched.email !== undefined &&
-            errors.email !== undefined &&
-            errors.email.length > 0
-          }
-        />
+          error={emailError !== ''}
+          value={emailInput}
+          action
+        >
+          <Icon name="mail" />
+          <input
+            onKeyDown={e => {
+              if (e.keyCode === 13) {
+                e.preventDefault();
+                onAddEmail();
+              }
+            }}
+          />
+          <Button
+            disabled={emailInput === ''}
+            primary
+            content="Add to Invite List"
+            onClick={onAddEmail}
+          />
+        </Form.Input>
       </Form.Field>
     </Form>
   );

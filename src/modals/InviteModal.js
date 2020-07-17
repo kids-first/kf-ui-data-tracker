@@ -1,7 +1,15 @@
 import React, {useState} from 'react';
 import {useQuery, useMutation} from '@apollo/react-hooks';
 import {Amplitude, LogOnMount} from '@amplitude/react-amplitude';
-import {Button, Divider, Icon, List, Message, Modal} from 'semantic-ui-react';
+import {
+  Button,
+  Divider,
+  Icon,
+  Message,
+  Modal,
+  Label,
+  Popup,
+} from 'semantic-ui-react';
 import {Formik} from 'formik';
 import {ALL_STUDIES, ALL_GROUPS} from '../state/queries';
 import {CREATE_REFERRAL_TOKEN} from '../state/mutations';
@@ -13,6 +21,8 @@ import {PermissionGroup} from '../admin/components/UserList';
  * This is the controller that handles the form submission and state.
  */
 const InviteModal = ({open, onCloseDialog}) => {
+  const [emailList, setEmailList] = useState([]);
+
   const {data: studiesData} = useQuery(ALL_STUDIES);
   const {data: groupsData} = useQuery(ALL_GROUPS);
   const studies = studiesData && studiesData.allStudies.edges;
@@ -21,68 +31,52 @@ const InviteModal = ({open, onCloseDialog}) => {
 
   const [createToken] = useMutation(CREATE_REFERRAL_TOKEN);
 
-  const formatErrors = errors => {
-    return (
-      <List bulleted>
-        {errors
-          .filter(err => !!err)
-          .map(err => (
-            <List.Item>{err.message}</List.Item>
-          ))}
-      </List>
-    );
-  };
-
   const onSubmit = (values, {setErrors, setStatus, setSubmitting}) => {
     setSubmitting(true);
-    createToken({
-      variables: {
-        input: {
-          email: values.email,
-          studies: values.studies,
-          groups: values.groups,
+    setEmailList(emailList.map(e => ({key: e.key, status: 'Sending'})));
+    emailList.map((email, index) =>
+      createToken({
+        variables: {
+          input: {
+            email: email.key,
+            studies: values.studies,
+            groups: values.groups,
+          },
         },
-      },
-    })
-      .then(res => {
-        setStatus({
-          icon: 'mail',
-          header: 'Invite Sent',
-          content: (
-            <>
-              An email containing an invite link was sent to{' '}
-              <b>{values.email}</b> and should arrive shortly.
-            </>
-          ),
-          info: true,
-        });
-        setSubmitting(false);
       })
-      .catch(err => {
-        const errors = [...err.graphQLErrors, err.networkError];
-        setStatus({
-          icon: 'error',
-          header: 'Error',
-          content: formatErrors(errors),
-          negative: true,
-        });
-        setSubmitting(false);
-      });
+        .then(res => {
+          var updated = [...emailList];
+          updated[index].status = 'Sent';
+          setEmailList(updated);
+        })
+        .catch(err => {
+          var updated = [...emailList];
+          updated[index].status = `ERROR: ${err.message}`;
+          setEmailList(updated);
+        }),
+    );
+    if (emailList.filter(e => e.status === 'Sending').length === 0) {
+      setSubmitting(false);
+    }
   };
 
   return (
-    <Modal open={open} onClose={onCloseDialog} closeIcon size="large">
+    <Modal
+      open={open}
+      onClose={() => {
+        onCloseDialog();
+        setEmailList([]);
+      }}
+      closeIcon
+      size="large"
+    >
       <Formik
         initialValues={{
           studies: [],
           groups: [],
-          email: null,
         }}
         validate={values => {
           let errors = {};
-          if (!values.email) {
-            errors.email = 'Required';
-          }
           if (values.groups.length <= 0) {
             errors.groups = 'Required';
           }
@@ -99,6 +93,8 @@ const InviteModal = ({open, onCloseDialog}) => {
             studies={studies || []}
             groups={groups || []}
             formikProps={formikProps}
+            emailList={emailList}
+            setEmailList={setEmailList}
           />
         )}
       </Formik>
@@ -109,8 +105,15 @@ const InviteModal = ({open, onCloseDialog}) => {
 /**
  * Modal content which renders the actual modal and form
  */
-const InviteModalContent = ({onCloseDialog, studies, groups, formikProps}) => {
-  const {isSubmitting, isValid, handleSubmit, status} = formikProps;
+const InviteModalContent = ({
+  onCloseDialog,
+  studies,
+  groups,
+  formikProps,
+  emailList,
+  setEmailList,
+}) => {
+  const {isSubmitting, isValid, handleSubmit} = formikProps;
   const [groupDetail, showGroupDetail] = useState(false);
   // Group permissions are sorted by the object
   // Permission codename in action_object format, e.g. "view_event", "add_file"
@@ -157,8 +160,79 @@ const InviteModalContent = ({onCloseDialog, studies, groups, formikProps}) => {
             studies={studies}
             groups={groups}
             showGroupDetail={showGroupDetail}
+            emailList={emailList}
+            setEmailList={setEmailList}
           />
-          {status && <Message {...status} />}
+          {emailList.length > 0 && (
+            <Button
+              size="small"
+              floated="right"
+              labelPosition="left"
+              data-testid="remove-all-email"
+              className="text-primary mt-15 mr-5"
+              onClick={() => setEmailList([])}
+            >
+              <Icon name="x" />
+              Clear All
+            </Button>
+          )}
+          <Label.Group className="mt-6 ml-5">
+            {emailList.length > 0 ? (
+              emailList.map(email => (
+                <Popup
+                  inverted
+                  key={email.key}
+                  content={email.status}
+                  trigger={
+                    <Label
+                      as="a"
+                      className="my-2"
+                      onClick={e => {
+                        e.stopPropagation();
+                      }}
+                    >
+                      {email.status === 'Sending' && (
+                        <Icon
+                          data-testid="email-sending"
+                          name="arrow circle right"
+                          color="blue"
+                        />
+                      )}
+                      {email.status === 'Sent' && (
+                        <Icon
+                          data-testid="email-sent"
+                          name="check"
+                          color="green"
+                        />
+                      )}
+                      {email.status.startsWith('ERROR') && (
+                        <Icon
+                          data-testid="email-error"
+                          name="warning circle"
+                          color="red"
+                        />
+                      )}
+                      {email.key}
+                      {email.status === 'Added' && (
+                        <Icon
+                          name="close"
+                          data-testid="remove-one-email"
+                          onClick={e => {
+                            e.stopPropagation();
+                            setEmailList(
+                              emailList.filter(e => e.key !== email.key),
+                            );
+                          }}
+                        />
+                      )}
+                    </Label>
+                  }
+                />
+              ))
+            ) : (
+              <div className="text-grey pt-10">No Emails Added ...</div>
+            )}
+          </Label.Group>
         </Modal.Content>
       )}
       <Modal.Actions>
@@ -170,7 +244,14 @@ const InviteModalContent = ({onCloseDialog, studies, groups, formikProps}) => {
             onClick={() => showGroupDetail(false)}
           />
         )}
-        <Button onClick={() => onCloseDialog()}>Cancel</Button>
+        <Button
+          onClick={() => {
+            onCloseDialog();
+            setEmailList([]);
+          }}
+        >
+          Cancel
+        </Button>
         <Amplitude
           eventProperties={inheritedProps => ({
             ...inheritedProps,
@@ -190,7 +271,7 @@ const InviteModalContent = ({onCloseDialog, studies, groups, formikProps}) => {
                 logEvent('click');
                 handleSubmit();
               }}
-              disabled={!isValid || isSubmitting}
+              disabled={!isValid || isSubmitting || emailList.length === 0}
               loading={isSubmitting}
             >
               Send Email Invite

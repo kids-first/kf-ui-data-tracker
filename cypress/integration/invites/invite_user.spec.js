@@ -47,17 +47,47 @@ context('Invite User Modal', () => {
     cy.get('.content .header').click();
     cy.get('[data-testid="invite-button"]').should('be.disabled');
 
+    // Add and remove individual email
+    cy.get('[data-cy="user email"]')
+      .click()
+      .type('to-be-removed');
+    cy.contains('button', 'Add to Invite List').click();
+    cy.get('[data-testid="remove-all-email"]').should('exist');
+    cy.get('[data-testid="remove-one-email"]')
+      .should('exist')
+      .click();
+
+    // Input proper email
     cy.get('[data-cy="user email"]')
       .click()
       .type('test@example.com');
+    cy.contains('button', 'Add to Invite List').click();
     cy.get('[data-testid="invite-button"]').should('be.enabled');
 
+    // Error on repeating email input
+    cy.get('[data-cy="user email"]')
+      .click()
+      .type('test@example.com');
+    cy.contains('button', 'Add to Invite List').click();
+    cy.get('[placeholder="Address added already"]').should('exist');
+
+    // Input invalid email address (has graphql error on submit)
+    cy.get('[data-cy="user email"]')
+      .click()
+      .type('invalid_email');
+    cy.contains('button', 'Add to Invite List').click();
+
+    // Submit the invite
     cy.get('[data-testid="invite-button"]').click();
 
-    cy.contains('.message', 'Invite Sent')
+    // test@example.com is successfully sent and invalid_email gets error
+    cy.get('[data-testid="email-sent"]').should('exist');
+    cy.get('[data-testid="email-error"]').should('exist');
+
+    // Remove all email from invite list
+    cy.get('[data-testid="remove-all-email"]')
       .should('exist')
-      .contains('test@example.com')
-      .should('exist');
+      .click();
 
     // Go to Pending Invites (admin) page to view newly created invite
     cy.contains('button', 'Cancel').click();
@@ -81,37 +111,28 @@ context('Invite User Modal', () => {
       .should('exist')
       .click();
     cy.url().should('include', '/study/SD_ME0WME0W/basic-info/info');
-  });
 
-  it('errors on bad email', () => {
-    cy.contains('button', 'Invite User')
-      .should('exist')
-      .click();
-
-    // Fill out the form
+    // Sent email that has valid refferal token will get graphql error
+    cy.contains('button', 'Invite User').click();
 
     cy.get('[data-cy="group selector"]')
       .click()
       .contains('Investigators')
       .click();
-    cy.get('.content .header').click();
-
+    cy.contains('div', 'Invite a user by email').click();
     cy.get('[data-cy="study selector"]')
       .click()
       .contains('SD_ME0W')
       .click();
-    cy.get('.content .header').click();
-
+    cy.contains('div', 'Invite a user by email').click();
     cy.get('[data-cy="user email"]')
       .click()
-      .type('test@example');
+      .type('test@example.com');
+    cy.contains('button', 'Add to Invite List').click();
 
     cy.get('[data-testid="invite-button"]').click();
 
-    cy.contains('.message', 'Error')
-      .should('exist')
-      .contains('Enter a valid email')
-      .should('exist');
+    cy.get('[data-testid="email-error"]').should('exist');
   });
 
   it('does not display for non-admins', () => {
