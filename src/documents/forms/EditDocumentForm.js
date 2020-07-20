@@ -27,6 +27,7 @@ const EditDocumentForm = React.forwardRef(
       handleSubmit,
       submitButtons,
       studyFiles,
+      allowEditVersionStatus,
     },
     ref,
   ) => {
@@ -125,17 +126,21 @@ const EditDocumentForm = React.forwardRef(
                 {versionStatus && (
                   <Form.Field>
                     <label>Approval Status:</label>
-                    <Dropdown
-                      selection
-                      fluid
-                      name="file_status"
-                      options={options}
-                      value={values.file_status}
-                      placeholder="Choose an option"
-                      onChange={(e, {value}) => {
-                        setFieldValue('file_status', value);
-                      }}
-                    />
+                    {allowEditVersionStatus ? (
+                      <Dropdown
+                        selection
+                        fluid
+                        name="file_status"
+                        options={options}
+                        value={values.file_status}
+                        placeholder="Choose an option"
+                        onChange={(e, {value}) => {
+                          setFieldValue('file_status', value);
+                        }}
+                      />
+                    ) : (
+                      <Badge state={values.file_status} />
+                    )}
                   </Form.Field>
                 )}
                 <Form.Field required>
