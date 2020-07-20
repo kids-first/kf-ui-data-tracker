@@ -42,24 +42,32 @@ const ActionButtons = ({
       Actions
     </Header>
     <Segment raised attached secondary>
-      <Button
-        as="a"
-        href={
-          fileNode.downloadUrl +
-          `/version/${
-            fileNode.versions.edges.sort(createDateSort)[0].node.kfId
-          }`
-        }
-        primary
+      <Popup
+        inverted
+        position="top center"
         icon="download"
-        fluid
-        size="mini"
-        labelPosition="left"
-        onClick={e => {
-          e.preventDefault();
-          downloadFile(studyId, fileNode.kfId, null, downloadFileMutation);
-        }}
-        content="DOWNLOAD"
+        content="Download latest version"
+        trigger={
+          <Button
+            as="a"
+            href={
+              fileNode.downloadUrl +
+              `/version/${
+                fileNode.versions.edges.sort(createDateSort)[0].node.kfId
+              }`
+            }
+            primary
+            icon="download"
+            fluid
+            size="mini"
+            labelPosition="left"
+            onClick={e => {
+              e.preventDefault();
+              downloadFile(studyId, fileNode.kfId, null, downloadFileMutation);
+            }}
+            content="DOWNLOAD"
+          />
+        }
       />
       {(updateFile !== null || deleteFile !== null) && (
         <>

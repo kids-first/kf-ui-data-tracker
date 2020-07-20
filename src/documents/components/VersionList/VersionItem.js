@@ -4,7 +4,7 @@ import {useMutation} from '@apollo/react-hooks';
 import {FILE_DOWNLOAD_URL} from '../../mutations';
 import AvatarTimeAgo from '../../../components/AvatarTimeAgo/AvatarTimeAgo';
 import {formatFileSize, downloadFile, lengthLimit} from '../../utilities';
-import {Label, Icon, Table} from 'semantic-ui-react';
+import {Label, Icon, Table, Popup, Button} from 'semantic-ui-react';
 /**
  * Displays single version item from the list
  */
@@ -23,7 +23,7 @@ const VersionItem = ({
   return (
     <Table.Row
       onClick={e => onNameClick(versionNode, index)}
-      className="version--item"
+      className="version--item cursor-pointer"
     >
       <Table.Cell>
         <p title={versionNode.fileName}>
@@ -40,26 +40,35 @@ const VersionItem = ({
       <Table.Cell textAlign="right" verticalAlign="top" collapsing>
         <AvatarTimeAgo
           size="mini"
+          showUsername
           creator={versionNode.creator}
           createdAt={versionNode.createdAt}
         />
-        <Label
-          basic
-          size="mini"
-          as="button"
-          onClick={e => {
-            e.stopPropagation();
-            downloadFile(
-              studyId,
-              fileId,
-              versionNode.kfId,
-              downloadFileMutation,
-            );
-          }}
-        >
-          <Icon name="download" />
-          {size}
-        </Label>
+        <Popup
+          inverted
+          position="top center"
+          icon="download"
+          content="Download this Version"
+          trigger={
+            <Label
+              basic
+              size="mini"
+              as={Button}
+              onClick={e => {
+                e.stopPropagation();
+                downloadFile(
+                  studyId,
+                  fileId,
+                  versionNode.kfId,
+                  downloadFileMutation,
+                );
+              }}
+            >
+              <Icon name="download" />
+              {size}
+            </Label>
+          }
+        />
       </Table.Cell>
     </Table.Row>
   );

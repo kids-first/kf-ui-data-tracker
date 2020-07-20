@@ -25,7 +25,7 @@ exports[`renders with more than one versions 1`] = `
       class=""
     >
       <tr
-        class="version--item"
+        class="version--item cursor-pointer"
       >
         <td
           class=""
@@ -50,21 +50,26 @@ exports[`renders with more than one versions 1`] = `
           class="collapsing right aligned top aligned"
         >
           <div
-            class="ui mini basic image label"
+            class="ui mini image label"
           >
             <img
               alt="xuzhu"
               src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
             />
-            <time
-              datetime="2018-09-27T05:32:26.000Z"
-              title="27 Sept 2018"
+            xuzhu
+            <div
+              class="detail"
             >
-              7 months ago
-            </time>
+              <time
+                datetime="2018-09-27T05:32:26.000Z"
+                title="27 Sept 2018"
+              >
+                7 months ago
+              </time>
+            </div>
           </div>
           <button
-            class="ui mini basic label"
+            class="ui button ui mini basic label"
           >
             <i
               aria-hidden="true"
@@ -75,7 +80,7 @@ exports[`renders with more than one versions 1`] = `
         </td>
       </tr>
       <tr
-        class="version--item"
+        class="version--item cursor-pointer"
       >
         <td
           class=""
@@ -100,21 +105,26 @@ exports[`renders with more than one versions 1`] = `
           class="collapsing right aligned top aligned"
         >
           <div
-            class="ui mini basic image label"
+            class="ui mini image label"
           >
             <img
               alt="xuzhu"
               src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
             />
-            <time
-              datetime="2018-08-21T03:16:11.000Z"
-              title="21 Aug 2018"
+            xuzhu
+            <div
+              class="detail"
             >
-              8 months ago
-            </time>
+              <time
+                datetime="2018-08-21T03:16:11.000Z"
+                title="21 Aug 2018"
+              >
+                8 months ago
+              </time>
+            </div>
           </div>
           <button
-            class="ui mini basic label"
+            class="ui button ui mini basic label"
           >
             <i
               aria-hidden="true"
@@ -125,7 +135,7 @@ exports[`renders with more than one versions 1`] = `
         </td>
       </tr>
       <tr
-        class="version--item"
+        class="version--item cursor-pointer"
       >
         <td
           class=""
@@ -150,21 +160,26 @@ exports[`renders with more than one versions 1`] = `
           class="collapsing right aligned top aligned"
         >
           <div
-            class="ui mini basic image label"
+            class="ui mini image label"
           >
             <img
               alt="xuzhu"
               src="https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg"
             />
-            <time
-              datetime="2017-08-25T00:05:30.000Z"
-              title="25 Aug 2017"
+            xuzhu
+            <div
+              class="detail"
             >
-              2 years ago
-            </time>
+              <time
+                datetime="2017-08-25T00:05:30.000Z"
+                title="25 Aug 2017"
+              >
+                2 years ago
+              </time>
+            </div>
           </div>
           <button
-            class="ui mini basic label"
+            class="ui button ui mini basic label"
           >
             <i
               aria-hidden="true"
