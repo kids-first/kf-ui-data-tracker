@@ -22,6 +22,7 @@ it('renders correctly for editing existing file', () => {
       onDescriptionChange={e => e.preventDefault()}
       onFileTypeChange={e => e.preventDefault()}
       onVersionStatusChange={versionStatusValue => {}}
+      allowEditVersionStatus={true}
     />,
   );
   expect(tree).toMatchSnapshot();
