@@ -12,6 +12,7 @@ import {
   DocumentDetailHelp,
   CollaboratorsHelp,
 } from '../documents/components/helpers';
+import {NewDocumentHelp} from '../builder/components/helpers';
 import {hasPermission} from '../common/permissions';
 
 const NavBarView = ({match, location, history}) => {
@@ -81,6 +82,11 @@ const NavBarView = ({match, location, history}) => {
             exact
             path="/study/:kfId/documents/:fileId(SF_\w{8})"
             component={DocumentDetailHelp}
+          />
+          <Route
+            exact
+            path="/study/:kfId/documents/new-document"
+            component={NewDocumentHelp}
           />
           <Route
             path="/study/:kfId/collaborators"

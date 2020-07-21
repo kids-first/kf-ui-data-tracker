@@ -1,5 +1,13 @@
 import React, {useState} from 'react';
-import {Button, Dropdown, Modal, Icon, List, Table} from 'semantic-ui-react';
+import {
+  Button,
+  Dropdown,
+  Header,
+  Modal,
+  Icon,
+  List,
+  Table,
+} from 'semantic-ui-react';
 
 const concepts = [
   'PARTICIPANT.ID',
@@ -27,11 +35,8 @@ const ColumnTable = ({showEnumModal}) => (
   <Table compact="very" definition>
     <Table.Header>
       <Table.Row>
-        <Table.HeaderCell width="2">Column</Table.HeaderCell>
-        <Table.HeaderCell width="4">Concept Mapping</Table.HeaderCell>
-        <Table.HeaderCell>Type</Table.HeaderCell>
-        <Table.HeaderCell>Uniques</Table.HeaderCell>
-        <Table.HeaderCell>Nulls</Table.HeaderCell>
+        <Table.HeaderCell width="2">File Column</Table.HeaderCell>
+        <Table.HeaderCell width="4">Kids First Mapping</Table.HeaderCell>
       </Table.Row>
     </Table.Header>
 
@@ -41,39 +46,26 @@ const ColumnTable = ({showEnumModal}) => (
         <Table.Cell>
           <ConceptDropdown />
         </Table.Cell>
-        <Table.Cell>ID</Table.Cell>
-        <Table.Cell>999</Table.Cell>
-        <Table.Cell>0</Table.Cell>
       </Table.Row>
       <Table.Row>
         <Table.Cell>gender</Table.Cell>
         <Table.Cell>
           <ConceptDropdown />
-        </Table.Cell>
-        <Table.Cell>
           enum - <a href="/">2/3 values mapped</a>{' '}
           <Button onClick={() => showEnumModal()} primary icon="wrench" />
         </Table.Cell>
-        <Table.Cell>3</Table.Cell>
-        <Table.Cell>0</Table.Cell>
       </Table.Row>
       <Table.Row>
         <Table.Cell>Father</Table.Cell>
         <Table.Cell>
           <ConceptDropdown />
         </Table.Cell>
-        <Table.Cell>ID</Table.Cell>
-        <Table.Cell>1229</Table.Cell>
-        <Table.Cell>23</Table.Cell>
       </Table.Row>
       <Table.Row>
         <Table.Cell>Mother</Table.Cell>
         <Table.Cell>
           <ConceptDropdown />
         </Table.Cell>
-        <Table.Cell>ID</Table.Cell>
-        <Table.Cell>1229</Table.Cell>
-        <Table.Cell>14</Table.Cell>
       </Table.Row>
     </Table.Body>
   </Table>
@@ -128,7 +120,9 @@ const Mapper = () => {
   const [enumModalVisible, setEnumModalVisible] = useState(false);
   return (
     <>
-      <p>Concept mappings required:</p>
+      <Header size="small">Mapping for columns found in uploaded file:</Header>
+      <ColumnTable showEnumModal={() => setEnumModalVisible(true)} />
+      <Header size="small">Required mappings for Pedigree File:</Header>
       <List horizontal>
         <List.Item>
           <Icon name="check" color="green" /> PARTICIPANT.ID
@@ -140,7 +134,7 @@ const Mapper = () => {
           <Icon name="x" color="red" /> PARTICIPANT.FATHER_ID
         </List.Item>
       </List>
-      <ColumnTable showEnumModal={() => setEnumModalVisible(true)} />
+
       <EnumModal
         open={enumModalVisible}
         hideEnumModal={() => setEnumModalVisible(false)}
