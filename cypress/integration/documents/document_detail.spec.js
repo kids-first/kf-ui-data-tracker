@@ -72,7 +72,7 @@ context('Investigator Document Detail', () => {
     cy.visit('/study/SD_ME0WME0W/documents');
   });
 
-  it('Show document detail without delete button and edit button', () => {
+  it('Show document detail with edit button without delete button', () => {
     // List out all the documents
     cy.get('table')
       .find('tr')
@@ -87,11 +87,11 @@ context('Investigator Document Detail', () => {
       .should('eq', 6);
     // No delete button
     cy.get('i').should('not.have.class', 'trash');
-    // No edit button
-    cy.get('i').should('not.have.class', 'pencil');
-    // No add tag button
-    cy.get('i').should('not.have.class', 'add');
-    // No remove tag button
-    cy.get('i').should('not.have.class', 'close');
+    // Has edit button
+    cy.get('[data-testid="edit-button"]').should('exist');
+    // Has add tag button
+    cy.get('[data-testid="tag-file"]').should('exist');
+    // Has remove tag button
+    cy.get('[data-testid="remove-tag"]').should('exist');
   });
 });

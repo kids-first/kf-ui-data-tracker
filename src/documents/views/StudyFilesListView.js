@@ -126,7 +126,10 @@ const StudyFilesListView = ({
     (hasPermission(myProfile, 'add_version') ||
       hasPermission(myProfile, 'add_my_study_version'));
   const allowDelete = myProfile && hasPermission(myProfile, 'delete_file');
-  const allowEdit = myProfile && hasPermission(myProfile, 'change_file');
+  const allowEdit =
+    myProfile &&
+    (hasPermission(myProfile, 'change_file') ||
+      hasPermission(myProfile, 'change_my_study_file'));
 
   const [dialog, setDialog] = useState(false);
   // View state

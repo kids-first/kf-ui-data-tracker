@@ -47,7 +47,10 @@ const FileDetailView = ({match}) => {
   const [downloadFileMutation] = useMutation(FILE_DOWNLOAD_URL);
   const {data: profileData} = useQuery(MY_PROFILE);
   const myProfile = profileData && profileData.myProfile;
-  const allowEdit = myProfile && hasPermission(myProfile, 'change_file');
+  const allowEdit =
+    myProfile &&
+    (hasPermission(myProfile, 'change_file') ||
+      hasPermission(myProfile, 'change_my_study_file'));
   const allowUpload =
     myProfile &&
     (hasPermission(myProfile, 'add_version') ||

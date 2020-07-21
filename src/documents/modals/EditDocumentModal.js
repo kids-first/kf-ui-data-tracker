@@ -1,10 +1,11 @@
 import React, {useRef} from 'react';
 import {useQuery, useMutation} from '@apollo/react-hooks';
 import {UPDATE_FILE, UPDATE_VERSION} from '../mutations';
-import {GET_STUDY_BY_ID} from '../../state/queries';
+import {GET_STUDY_BY_ID, MY_PROFILE} from '../../state/queries';
 import {EditDocumentForm} from '../forms';
 import {fileSortedVersions} from '../utilities';
 import {Button, Modal} from 'semantic-ui-react';
+import {hasPermission} from '../../common/permissions';
 
 const EditDocumentModal = ({fileNode, onCloseDialog, studyId}) => {
   const study = useQuery(GET_STUDY_BY_ID, {
@@ -14,6 +15,13 @@ const EditDocumentModal = ({fileNode, onCloseDialog, studyId}) => {
   });
   const [updateFile] = useMutation(UPDATE_FILE);
   const [updateVersion] = useMutation(UPDATE_VERSION);
+  // Check if current user is allowed to edit approval status (version state)
+  const {data: profileData} = useQuery(MY_PROFILE);
+  const myProfile = profileData && profileData.myProfile;
+  const allowEditVersionStatus =
+    myProfile &&
+    (hasPermission(myProfile, 'change_version_status') ||
+      hasPermission(myProfile, 'change_my_version_status'));
 
   const formEl = useRef(null);
 
@@ -24,13 +32,15 @@ const EditDocumentModal = ({fileNode, onCloseDialog, studyId}) => {
       await updateFile({
         variables: {kfId: fileNode.kfId, name, description, fileType},
       });
-      await updateVersion({
-        variables: {
-          versionId: latestVersion.kfId,
-          description: latestVersion.description,
-          state: versionStatus,
-        },
-      });
+      if (allowEditVersionStatus) {
+        await updateVersion({
+          variables: {
+            versionId: latestVersion.kfId,
+            description: latestVersion.description,
+            state: versionStatus,
+          },
+        });
+      }
       onCloseDialog();
     } catch (err) {
       console.error(err);
@@ -56,6 +66,7 @@ const EditDocumentModal = ({fileNode, onCloseDialog, studyId}) => {
           versionStatus={latestVersion.state}
           fileDescription={fileNode.description}
           handleSubmit={handleSubmit}
+          allowEditVersionStatus={allowEditVersionStatus}
         />
       </Modal.Content>
       <Modal.Actions>
