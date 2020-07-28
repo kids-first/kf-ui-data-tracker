@@ -28,7 +28,7 @@ const AddCollaboratorForm = ({formikProps, availableUsers, disabled}) => {
           .map(({node}) => ({
             key: node.id,
             value: node.id,
-            text: showuUserName(node),
+            text: `${showuUserName(node)} - ${node.email}`,
             image: {avatar: true, src: node.picture || defaultAvatar},
           }))
       : [];
