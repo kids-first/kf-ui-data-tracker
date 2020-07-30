@@ -145,6 +145,13 @@ const StudyFilesListView = ({
   });
   const [selectedFiles, setSelectedFiles] = useState([]);
 
+  // Set state for show/hide Kids First ID column and sync with local storage
+  const [showId, setShowId] = useState(
+    localStorage.getItem('showFileId') !== null
+      ? JSON.parse(localStorage.getItem('showFileId'))
+      : false,
+  );
+
   // Computed state
   const files = !loading && study ? study.files.edges : [];
   const filteredFiles = filterFiles(files, filters);
@@ -243,6 +250,8 @@ const StudyFilesListView = ({
                 setSelection={setSelectedFiles}
                 disabled={selectedFiles.length === 0}
                 tagOptions={tagOptions}
+                showId={showId}
+                setShowId={setShowId}
               />
               <FileList
                 fileList={filteredFiles}
@@ -254,6 +263,7 @@ const StudyFilesListView = ({
                 selection={selectedFiles}
                 setSelection={setSelectedFiles}
                 tagOptions={tagOptions}
+                showId={showId}
               />
             </>
           ) : (
