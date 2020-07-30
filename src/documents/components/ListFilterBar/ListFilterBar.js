@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Icon, Form, Responsive, Segment} from 'semantic-ui-react';
+import {Icon, Form, Responsive, Segment, Popup} from 'semantic-ui-react';
 import {fileTypeDetail} from '../../../common/enums';
 import BatchActions from './BatchActions';
 
@@ -48,7 +48,7 @@ const ListFilterBar = ({
             fluid
             aria-label="file-search-input"
             icon="search"
-            placeholder="Search by name"
+            placeholder="Search by name, description or ID"
             onChange={(e, {value}) =>
               setFilters({...filters, searchString: value})
             }
@@ -116,14 +116,21 @@ const ListFilterBar = ({
                 setFilters({...filters, typeFilterStatus: value})
               }
             />
-            <Form.Input
-              aria-label="file-search-input"
-              icon="search"
-              placeholder="Search by name"
-              onChange={(e, {value}) =>
-                setFilters({...filters, searchString: value})
+            <Popup
+              inverted
+              position="top center"
+              content="Search by name, description or ID"
+              trigger={
+                <Form.Input
+                  aria-label="file-search-input"
+                  icon="search"
+                  placeholder="Search documents"
+                  onChange={(e, {value}) =>
+                    setFilters({...filters, searchString: value})
+                  }
+                  value={filters.searchString}
+                />
               }
-              value={filters.searchString}
             />
           </Form.Group>
           <BatchActions

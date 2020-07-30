@@ -58,6 +58,9 @@ const filterFiles = (fileList, filters) => {
   // Filter by search string
   filteredList = filteredList.filter(
     obj =>
+      obj.node.kfId
+        .toLowerCase()
+        .includes(filters.searchString.toLowerCase()) ||
       obj.node.name
         .toLowerCase()
         .includes(filters.searchString.toLowerCase()) ||
