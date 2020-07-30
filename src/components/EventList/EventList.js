@@ -13,7 +13,7 @@ import {longDate} from '../../common/dateUtils';
  */
 const linkDescription = node => {
   // If no study, it must have been deleted including any files or versions
-  if (!node.study) return node.decsription;
+  if (!node.study) return node.description;
 
   const ids = {
     SD: node.study && node.study.kfId,
