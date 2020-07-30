@@ -53,6 +53,13 @@ const CreatingStudyModal = ({
     studyByKfId && studyByKfId.projects && studyByKfId.projects.edges;
   const studyName = studyByKfId && studyByKfId.name;
 
+  // Collecting all the slack related events and sort by createdAt
+  const slackEvents =
+    allEvents &&
+    allEvents.edges
+      .filter(({node}) => node.eventType.includes('SL_'))
+      .map(({node}) => node.eventType);
+
   // Collecting all the bucket related events and sort by createdAt
   const bucketEvents =
     allEvents &&
@@ -69,6 +76,21 @@ const CreatingStudyModal = ({
           node.eventType.includes('PR_') && node.eventType !== 'PR_CRE',
       )
       .map(({node}) => node.eventType);
+
+  // Set slack channel creation status based on slack related events
+  const slackStatus = (() => {
+    if (!slackEvents || slackEvents.length <= 0) {
+      return 'Pending';
+    } else {
+      if (slackEvents[0] === 'SL_SUC') {
+        return 'Created';
+      } else if (slackEvents[0] === 'SL_ERR') {
+        return 'Failed';
+      } else if (slackEvents[0] === 'SL_STR') {
+        return 'Creating';
+      }
+    }
+  })();
 
   // Set bucket creation status based on bucket related events
   const bucketStatus = (() => {
@@ -217,7 +239,16 @@ const CreatingStudyModal = ({
                   </List.Header>
                 </List.Content>
               </List.Item>
-
+              <List.Item>
+                {statusComponent[slackStatus]}
+                <List.Content>
+                  <List.Header
+                    className={slackStatus === 'Pending' ? 'text-grey' : ''}
+                  >
+                    {slackStatus} Slack channel
+                  </List.Header>
+                </List.Content>
+              </List.Item>
               <List.Item>
                 {statusComponent[bucketStatus]}
                 <List.Content>
