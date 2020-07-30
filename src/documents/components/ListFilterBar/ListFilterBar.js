@@ -1,6 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Icon, Form, Responsive, Segment, Popup} from 'semantic-ui-react';
+import {Amplitude} from '@amplitude/react-amplitude';
+import {
+  Icon,
+  Form,
+  Responsive,
+  Segment,
+  Popup,
+  Checkbox,
+} from 'semantic-ui-react';
 import {fileTypeDetail} from '../../../common/enums';
 import BatchActions from './BatchActions';
 
@@ -18,6 +26,8 @@ const ListFilterBar = ({
   deleteFile,
   disabled,
   tagOptions,
+  showId,
+  setShowId,
 }) => {
   const typeOptions = Object.keys(fileTypeDetail).map(type => ({
     key: type,
@@ -81,6 +91,29 @@ const ListFilterBar = ({
               }
             />
           </Form.Group>
+          <Amplitude
+            eventProperties={inheritedProps => ({
+              ...inheritedProps,
+              scope: inheritedProps.scope
+                ? [...inheritedProps.scope, 'toggle button', 'show file kf_id']
+                : ['toggle button', 'show file kf_id'],
+            })}
+          >
+            {({logEvent}) => (
+              <Checkbox
+                floated="right"
+                className="font-normal"
+                label="Show Kids First ID"
+                checked={showId}
+                onClick={() => {
+                  setShowId(!showId);
+                  logEvent('toggle file kfId ' + (showId ? 'off' : 'on'));
+                  localStorage.setItem('showFileId', !showId);
+                }}
+                data-cy="toggle file kfId"
+              />
+            )}
+          </Amplitude>
         </Form>
       </Responsive>
       <Responsive minWidth={1000}>
@@ -132,6 +165,34 @@ const ListFilterBar = ({
                 />
               }
             />
+            <Amplitude
+              eventProperties={inheritedProps => ({
+                ...inheritedProps,
+                scope: inheritedProps.scope
+                  ? [
+                      ...inheritedProps.scope,
+                      'toggle button',
+                      'show file kf_id',
+                    ]
+                  : ['toggle button', 'show file kf_id'],
+              })}
+            >
+              {({logEvent}) => (
+                <Checkbox
+                  floated="right"
+                  className="font-normal"
+                  label="Show Kids First ID"
+                  checked={showId}
+                  onClick={() => {
+                    console.log(!showId);
+                    setShowId(!showId);
+                    logEvent('toggle file kfId ' + (showId ? 'off' : 'on'));
+                    localStorage.setItem('showFileId', !showId);
+                  }}
+                  data-cy="toggle file kfId"
+                />
+              )}
+            </Amplitude>
           </Form.Group>
           <BatchActions
             fileList={fileList}
