@@ -30,7 +30,14 @@ const KfId = ({kfId}) => {
                 }, 700);
               }}
             >
-              <Table.Cell singleLine width="1">
+              <Table.Cell
+                singleLine
+                width="1"
+                onClick={e => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                }}
+              >
                 <code>{kfId}</code>
               </Table.Cell>
             </CopyToClipboard>
