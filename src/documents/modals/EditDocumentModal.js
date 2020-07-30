@@ -29,10 +29,12 @@ const EditDocumentModal = ({fileNode, onCloseDialog, studyId}) => {
 
   const handleSubmit = async (name, fileType, description, versionStatus) => {
     try {
-      await updateFile({
-        variables: {kfId: fileNode.kfId, name, description, fileType},
-      });
-      if (allowEditVersionStatus) {
+      if (fileNode.name !== name || fileNode.fileType !== fileType) {
+        await updateFile({
+          variables: {kfId: fileNode.kfId, name, fileType},
+        });
+      }
+      if (allowEditVersionStatus && versionStatus !== latestVersion.state) {
         await updateVersion({
           variables: {
             versionId: latestVersion.kfId,
