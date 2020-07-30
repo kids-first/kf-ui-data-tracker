@@ -98,6 +98,25 @@ context('Admin Document List', () => {
       .should('contain', 'word.js');
   });
 
+  it('toggles file Kids First ID column', () => {
+    // Make sure there's no saved file ID column toggle state
+    expect(localStorage.getItem('showFileId')).to.be.null;
+
+    // Kids First ID column should not show
+    cy.contains('th', 'Kids First ID').should('not.exist');
+    cy.contains('code', 'SF_00000005').should('not.exist');
+
+    // Check to show file Kids First ID column
+    cy.contains('label', 'Show Kids First ID').click();
+
+    // Kids First ID column should show
+    cy.contains('th', 'Kids First ID').should('exist');
+    cy.contains('code', 'SF_00000005').should('exist');
+
+    // Clear storage for other tests
+    cy.clearLocalStorage('showFileId');
+  });
+
   it('List out document with delete buttons', () => {
     // List out all the documents
     cy.get('table')
