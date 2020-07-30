@@ -30,6 +30,18 @@ context('Admin Document List', () => {
       .focus()
       .clear();
 
+    // Search by file Kids First ID
+    cy.get('input[aria-label="file-search-input"]')
+      .focus()
+      .type('SF_00000005');
+    cy.get('table')
+      .find('tr')
+      .its('length')
+      .should('eq', 2);
+    cy.get('input[aria-label="file-search-input"]')
+      .focus()
+      .clear();
+
     // Filter the document by type using the type dropdown with two return
     cy.contains('div', 'Document type').click();
     cy.contains('small', 'Other').click();
