@@ -4,17 +4,10 @@ import {useQuery} from '@apollo/react-hooks';
 import {Link, Redirect} from 'react-router-dom';
 import {ALL_STUDIES, MY_PROFILE, GET_RELEASED_STUDY} from '../state/queries';
 import StudyList from '../components/StudyList/StudyList';
-import {
-  Button,
-  Header,
-  Message,
-  Container,
-  Segment,
-  Icon,
-  Image,
-} from 'semantic-ui-react';
+import {Button, Message, Container, Segment, Icon} from 'semantic-ui-react';
 import {hasPermission} from '../common/permissions';
 import bug from '../assets/bug.svg';
+import {ImageMessage} from '../components/ImageMessage';
 
 const StudyListView = ({history}) => {
   const {data: profileData} = useQuery(MY_PROFILE);
@@ -62,19 +55,19 @@ const StudyListView = ({history}) => {
   if (error) {
     console.log('Error loading studies:', error);
     return (
-      <Container as={Segment} basic placeholder text>
-        <Image centered src={bug} size="medium" />
-        <Header as="h2" textAlign="center">
-          There was a problem retrieving studies
-          <Header.Subheader>
+      <ImageMessage
+        image={bug}
+        title="There was a problem retrieving studies"
+        message={
+          <>
             You may not have been granted permissions for studies or there may
             be a more serious error on our side. Please contact us at{' '}
             <a href="mailto:support@kidsfirstdrc.org">
               support@kidsfirstdrc.org
             </a>
-          </Header.Subheader>
-        </Header>
-      </Container>
+          </>
+        }
+      />
     );
   }
 
