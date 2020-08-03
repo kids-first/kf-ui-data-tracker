@@ -9,6 +9,7 @@ import {fileSortedVersions, fileLatestDate} from '../../utilities';
 import {fileTypeDetail} from '../../../common/enums';
 import {longDate} from '../../../common/dateUtils';
 import FileTags from '../FileDetail/FileTags';
+import KfId from '../../../components/StudyList/KfId';
 
 const useRecentlyUpdated = (latestDate, fileId) => {
   const [justUpdated, setJustUpdated] = useState(false);
@@ -51,6 +52,7 @@ const FileElement = ({
   selected,
   onSelectOne,
   tagOptions,
+  showId,
 }) => {
   const fileKfID = fileNode.kfId || 'unknown ID';
   const fileName = fileNode.name || 'unknown file name';
@@ -118,6 +120,7 @@ const FileElement = ({
           {fileName}
         </Link>
       </Table.Cell>
+      {showId && <KfId kfId={fileNode.kfId} />}
       <Table.Cell textAlign="center" width="4">
         <FileTags
           fileNode={fileNode}

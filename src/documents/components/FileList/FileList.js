@@ -25,6 +25,7 @@ const columnSorts = {
       fileLatestDate(fileSortedVersions(f2.node)),
     ),
   name: (f1, f2) => stringSort(f1.node.name, f2.node.name),
+  kfId: (f1, f2) => stringSort(f1.node.kfId, f2.node.kfId),
 };
 
 /**
@@ -40,6 +41,7 @@ const FileList = ({
   selection,
   setSelection,
   tagOptions,
+  showId,
 }) => {
   const [page, setPage] = useState(1);
   const [sorting, setSorting] = useState({
@@ -134,6 +136,16 @@ const FileList = ({
               >
                 Document Details
               </Table.HeaderCell>
+              {showId && (
+                <Table.HeaderCell
+                  sorted={sorting.column === 'kfId' ? sorting.direction : null}
+                  textAlign="center"
+                  width="1"
+                  onClick={handleSort('kfId')}
+                >
+                  Kids First ID
+                </Table.HeaderCell>
+              )}
               <Table.HeaderCell textAlign="center">Tags</Table.HeaderCell>
               <Table.HeaderCell
                 sorted={
@@ -162,6 +174,7 @@ const FileList = ({
                 deleteFile={deleteFile}
                 downloadFileMutation={downloadFileMutation}
                 tagOptions={tagOptions}
+                showId={showId}
               />
             ))}
           </Table.Body>

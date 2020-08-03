@@ -30,6 +30,18 @@ context('Admin Document List', () => {
       .focus()
       .clear();
 
+    // Search by file Kids First ID
+    cy.get('input[aria-label="file-search-input"]')
+      .focus()
+      .type('SF_00000005');
+    cy.get('table')
+      .find('tr')
+      .its('length')
+      .should('eq', 2);
+    cy.get('input[aria-label="file-search-input"]')
+      .focus()
+      .clear();
+
     // Filter the document by type using the type dropdown with two return
     cy.contains('div', 'Document type').click();
     cy.contains('small', 'Other').click();
@@ -84,6 +96,35 @@ context('Admin Document List', () => {
     cy.get('tr')
       .eq(5)
       .should('contain', 'word.js');
+
+    // Sort by Kids First ID
+    cy.contains('label', 'Show Kids First ID').click();
+    cy.contains('th', 'Kids First ID').click();
+    cy.get('tr')
+      .eq(1)
+      .should('contain', 'SF_00000001');
+    cy.get('tr')
+      .eq(5)
+      .should('contain', 'SF_00000017');
+  });
+
+  it('toggles file Kids First ID column', () => {
+    // Make sure there's no saved file ID column toggle state
+    expect(localStorage.getItem('showFileId')).to.be.null;
+
+    // Kids First ID column should not show
+    cy.contains('th', 'Kids First ID').should('not.exist');
+    cy.contains('code', 'SF_00000005').should('not.exist');
+
+    // Check to show file Kids First ID column
+    cy.contains('label', 'Show Kids First ID').click();
+
+    // Kids First ID column should show
+    cy.contains('th', 'Kids First ID').should('exist');
+    cy.contains('code', 'SF_00000005').should('exist');
+
+    // Clear storage for other tests
+    cy.clearLocalStorage('showFileId');
   });
 
   it('List out document with delete buttons', () => {
