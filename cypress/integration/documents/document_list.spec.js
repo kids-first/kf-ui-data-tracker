@@ -96,6 +96,16 @@ context('Admin Document List', () => {
     cy.get('tr')
       .eq(5)
       .should('contain', 'word.js');
+
+    // Sort by Kids First ID
+    cy.contains('label', 'Show Kids First ID').click();
+    cy.contains('th', 'Kids First ID').click();
+    cy.get('tr')
+      .eq(1)
+      .should('contain', 'SF_00000001');
+    cy.get('tr')
+      .eq(5)
+      .should('contain', 'SF_00000017');
   });
 
   it('toggles file Kids First ID column', () => {
