@@ -53,7 +53,9 @@ const filterFiles = (fileList, filters) => {
   );
   // Filter by tags
   filteredList = filteredList.filter(obj =>
-    obj.node.tags.join(',').includes(filters.tagFilterStatus),
+    filters.tagFilterStatus === 'untagged'
+      ? obj.node.tags.length === 0
+      : obj.node.tags.join(',').includes(filters.tagFilterStatus),
   );
   // Filter by search string
   filteredList = filteredList.filter(

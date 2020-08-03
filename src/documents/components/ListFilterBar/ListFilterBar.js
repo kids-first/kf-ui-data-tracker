@@ -132,7 +132,15 @@ const ListFilterBar = ({
               disabled={tagOptions.length === 0}
               selectOnBlur={false}
               value={filters.tagFilterStatus}
-              options={tagOptions}
+              options={[
+                ...tagOptions,
+                {
+                  key: 'untagged',
+                  value: 'untagged',
+                  text: '-- Untagged --',
+                  content: <i className="text-gray">-- Untagged --</i>,
+                },
+              ]}
               placeholder="Tag"
               onChange={(e, {value}) =>
                 setFilters({...filters, tagFilterStatus: value})
