@@ -8,6 +8,7 @@ import {
   Segment,
   Popup,
   Checkbox,
+  Button,
 } from 'semantic-ui-react';
 import {fileTypeDetail} from '../../../common/enums';
 import BatchActions from './BatchActions';
@@ -66,6 +67,8 @@ const ListFilterBar = ({
           />
           <Form.Group widths="equal">
             <Form.Dropdown
+              className="pr-0"
+              multiple
               button
               placeholder="Tags"
               selection
@@ -73,9 +76,36 @@ const ListFilterBar = ({
               disabled={tagOptions.length === 0}
               selectOnBlur={false}
               value={filters.tagFilterStatus}
-              options={tagOptions}
+              options={[
+                ...tagOptions,
+                {
+                  key: 'untagged',
+                  value: 'untagged',
+                  text: '-- Untagged --',
+                  content: <i className="text-gray">-- Untagged --</i>,
+                },
+              ]}
               onChange={(e, {value}) =>
                 setFilters({...filters, tagFilterStatus: value})
+              }
+            />
+            <Popup
+              inverted
+              position="top center"
+              content="Tags intersect or union"
+              trigger={
+                <Button
+                  className="h-38 px-10 mr-14"
+                  compact
+                  basic
+                  size="large"
+                  content={filters.andJoin ? 'AND' : 'OR'}
+                  data-testid="tag-filter-and-or"
+                  onClick={e => {
+                    e.stopPropagation();
+                    setFilters({...filters, andJoin: !filters.andJoin});
+                  }}
+                />
               }
             />
             <Form.Dropdown
@@ -126,6 +156,8 @@ const ListFilterBar = ({
             floated="left"
           >
             <Form.Dropdown
+              className="pr-0"
+              multiple
               selection
               clearable
               label="Filter by:"
@@ -144,6 +176,25 @@ const ListFilterBar = ({
               placeholder="Tag"
               onChange={(e, {value}) =>
                 setFilters({...filters, tagFilterStatus: value})
+              }
+            />
+            <Popup
+              inverted
+              position="top center"
+              content="Tags intersect or union"
+              trigger={
+                <Button
+                  className="h-38 px-10 mr-14"
+                  compact
+                  basic
+                  size="large"
+                  content={filters.andJoin ? 'AND' : 'OR'}
+                  data-testid="tag-filter-and-or"
+                  onClick={e => {
+                    e.stopPropagation();
+                    setFilters({...filters, andJoin: !filters.andJoin});
+                  }}
+                />
               }
             />
             <Form.Dropdown

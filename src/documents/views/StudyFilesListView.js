@@ -52,11 +52,16 @@ const filterFiles = (fileList, filters) => {
     obj.node.fileType.includes(filters.typeFilterStatus),
   );
   // Filter by tags
-  filteredList = filteredList.filter(obj =>
-    filters.tagFilterStatus === 'untagged'
-      ? obj.node.tags.length === 0
-      : obj.node.tags.includes(filters.tagFilterStatus),
-  );
+  if (filters.tagFilterStatus.length > 0) {
+    filteredList = filteredList.filter(obj =>
+      filters.tagFilterStatus.includes('untagged')
+        ? obj.node.tags.length === 0
+        : filters.andJoin
+        ? filters.tagFilterStatus.every(t => obj.node.tags.includes(t))
+        : obj.node.tags.some(t => filters.tagFilterStatus.indexOf(t) >= 0),
+    );
+  }
+
   // Filter by search string
   filteredList = filteredList.filter(
     obj =>
@@ -142,8 +147,9 @@ const StudyFilesListView = ({
   const [updateFileError, setUpdateFileError] = useState(null);
   const [filters, setFilters] = useState({
     typeFilterStatus: '',
-    tagFilterStatus: '',
+    tagFilterStatus: [],
     searchString: '',
+    andJoin: true,
   });
   const [selectedFiles, setSelectedFiles] = useState([]);
 
