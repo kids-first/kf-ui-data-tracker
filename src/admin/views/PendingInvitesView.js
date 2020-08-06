@@ -12,7 +12,6 @@ import {
 import TimeAgo from 'react-timeago';
 import {Link} from 'react-router-dom';
 import {ALL_REFERRAL_TOEKNS} from '../queries';
-import {showuUserName} from '../../common/notificationUtils';
 
 const dateSort = (a, b) => new Date(b) - new Date(a);
 
@@ -75,12 +74,12 @@ const PendingInvitesView = () => {
                       {node.email}
                     </List.Header>
                     <List.Description className="ml-28">
-                      Invitation sent by {showuUserName(node.createdBy)}{' '}
+                      Invitation sent by {node.createdBy.displayName}{' '}
                       <TimeAgo date={node.createdAt} live={false} />
                       {node.isValid
                         ? ', waiting for response.'
                         : node.claimed
-                        ? `, claimed by ${showuUserName(node.claimedBy)}`
+                        ? `, claimed by ${node.claimedBy.displayName}`
                         : ', has expired.'}
                     </List.Description>
                   </List.Content>
