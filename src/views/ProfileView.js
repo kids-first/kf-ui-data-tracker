@@ -111,9 +111,13 @@ const ProfileView = () => {
                 }
               />
             </Grid.Column>
-            <Label attached="top left">{profile.roles.join(', ')}</Label>
+            {profile.groups.edges && (
+              <Label attached="top left">
+                {profile.groups.edges.map(({node}) => node.name).join(', ')}
+              </Label>
+            )}
             <Grid.Column mobile={16} tablet={12} computer={14}>
-              <Form size="mini">
+              <Form size="mini" className={profile.groups.edges ? 'pt-20' : ''}>
                 <Form.Group widths={2}>
                   <Form.Field
                     label={fields['username']}
