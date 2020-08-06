@@ -12,7 +12,6 @@ import {
 import TimeAgo from 'react-timeago';
 import {longDate} from '../../common/dateUtils';
 import defaultAvatar from '../../assets/defaultAvatar.png';
-import {showuUserName} from '../../common/notificationUtils';
 import {collaboratorRoles} from '../../common/enums';
 
 const Actions = ({user, removeCollaborator}) => {
@@ -100,11 +99,11 @@ const CollaboratorItem = ({
       <Image
         avatar
         src={user.picture || defaultAvatar}
-        alt={showuUserName(user)}
+        alt={user.displayName}
       />
       <List.Content>
         <List.Header>
-          {showuUserName(user)}
+          {user.displayName}
           {user.email && <small> - {user.email}</small>}
         </List.Header>
         <List.Description>
@@ -130,7 +129,9 @@ const CollaboratorItem = ({
                 title={longDate(joinedOn)}
               />
             </List.Item>
-            <List.Item>Added by {showuUserName(invitedBy)}</List.Item>
+            <List.Item>
+              Added by {invitedBy ? invitedBy.displayName : 'Unknown user'}
+            </List.Item>
           </List>
         </List.Description>
       </List.Content>

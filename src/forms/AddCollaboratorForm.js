@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import {Formik} from 'formik';
 import {Message, Form, List} from 'semantic-ui-react';
 import defaultAvatar from '../assets/defaultAvatar.png';
-import {showuUserName} from '../common/notificationUtils';
 import {collaboratorRoles} from '../common/enums';
 
 const AddCollaboratorForm = ({formikProps, availableUsers, disabled}) => {
@@ -28,7 +27,7 @@ const AddCollaboratorForm = ({formikProps, availableUsers, disabled}) => {
           .map(({node}) => ({
             key: node.id,
             value: node.id,
-            text: `${showuUserName(node)} - ${node.email}`,
+            text: `${node.displayName} - ${node.email}`,
             image: {avatar: true, src: node.picture || defaultAvatar},
           }))
       : [];
