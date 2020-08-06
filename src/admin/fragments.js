@@ -9,6 +9,7 @@ export const TOKEN_FIELDS = gql`
     creator {
       username
       picture
+      displayName
     }
   }
 `;
