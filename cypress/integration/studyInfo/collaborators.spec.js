@@ -47,7 +47,7 @@ context('Investigator Study Collaborators', () => {
 
   it('Show collaborators information without add or remove access', () => {
     // Show test collaborator
-    cy.contains('div', 'testuser').should('exist');
+    cy.contains('div', 'Bobby Tables').should('exist');
     // No add collaborators button
     cy.contains('button', 'ADD COLLABORATOR').should('not.exist');
     // No remove collaborator button

@@ -6,7 +6,7 @@ exports[`renders AvatarTimeAgo not showing username 1`] = `
     class="ui mini basic image label"
   >
     <img
-      alt="username"
+      alt="Bobby Tables"
       src="https://www.w3schools.com/w3images/avatar6.png"
     />
     <time
@@ -25,10 +25,10 @@ exports[`renders AvatarTimeAgo showing username 1`] = `
     class="ui tiny image label"
   >
     <img
-      alt="username"
+      alt="Bobby Tables"
       src="https://www.w3schools.com/w3images/avatar6.png"
     />
-    username
+    Bobby Tables
     <div
       class="detail"
     >
@@ -63,7 +63,7 @@ exports[`renders AvatarTimeAgo without createdAt data 1`] = `
     class="ui mini basic image label"
   >
     <img
-      alt="username"
+      alt="Bobby Tables"
       src="https://www.w3schools.com/w3images/avatar6.png"
     />
     Unknown

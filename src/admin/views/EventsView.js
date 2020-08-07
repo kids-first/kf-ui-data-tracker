@@ -60,7 +60,7 @@ const EventsView = () => {
     : [];
   const userOptions = allUsers
     ? allUsers.edges.map(({node}) => ({
-        text: node.username,
+        text: node.displayName,
         value: node.username,
       }))
     : [];

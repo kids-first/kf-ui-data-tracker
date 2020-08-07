@@ -35,6 +35,7 @@
                     "fileType": "CLN",
                     "downloadUrl": "http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167",
                     "creator": {
+                      "displayName": "Xu Zhu",
                       "email": "xuzhu@d3b.center",
                       "id": "VXNlck5vZGU6Mg==",
                       "picture": "https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg",
@@ -54,6 +55,7 @@
                             "description": "version description",
                             "fileName": "VersionFileName.js",
                             "creator": {
+                              "displayName": "Xu Zhu",
                               "email": "xuzhu@d3b.center",
                               "id": "VXNlck5vZGU6Mg==",
                               "picture": "https://lh5.googleusercontent.com/-zxrKRZrDo9w/AAAAAAAAAAI/AAAAAAAAABI/49brkBWBNdQ/photo.jpg",

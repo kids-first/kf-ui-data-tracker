@@ -29,7 +29,9 @@ const TokenList = ({tokens, deleteToken, newToken}) => (
           />
           <List.Content>
             <List.Header>{node.node.name}</List.Header>
-            {node.node.creator && <>Created by {node.node.creator.username} </>}
+            {node.node.creator && (
+              <>Created by {node.node.creator.displayName} </>
+            )}
             <TimeAgo
               live={false}
               date={node.node.createdAt}

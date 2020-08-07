@@ -4,7 +4,6 @@ import {Dropdown, Image, List} from 'semantic-ui-react';
 import TimeAgo from 'react-timeago';
 import {longDate} from '../../../common/dateUtils';
 import defaultAvatar from '../../../assets/defaultAvatar.png';
-import {showuUserName} from '../../../common/notificationUtils';
 
 const Actions = ({user, groupOptions, updateUser}) => {
   const [loading, setLoading] = useState(false);
@@ -40,14 +39,10 @@ const Actions = ({user, groupOptions, updateUser}) => {
  */
 const UserItem = ({user, groupOptions, updateUser}) => (
   <List.Item key={user.id} data-testid="user-item">
-    <Image
-      avatar
-      src={user.picture || defaultAvatar}
-      alt={showuUserName(user)}
-    />
+    <Image avatar src={user.picture || defaultAvatar} alt={user.displayName} />
     <List.Content>
       <List.Header>
-        {showuUserName(user)}
+        {user.displayName}
         {user.email && <small> - {user.email}</small>}
       </List.Header>
       <List.Description>

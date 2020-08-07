@@ -102,7 +102,7 @@ context('Invite User Modal', () => {
     cy.contains('h3', 'Data Tracker Pending Invites').should('exist');
     cy.contains('div', 'test@example.com').should('exist');
     cy.contains('div', 'Investigators').should('exist');
-    cy.contains('div', 'Invitation sent by testuser').should('exist');
+    cy.contains('div', 'Invitation sent by Bobby Tables').should('exist');
     cy.contains('div', ', waiting for response.').should('exist');
     cy.contains('p', '1 Assigned Studies')
       .should('exist')

@@ -70,11 +70,10 @@ const UsersView = () => {
       ({node}) =>
         (!selectedGroup ||
           node.groups.edges.map(({node}) => node.id).includes(selectedGroup)) &&
-        (!searchString ||
-          node.username.includes(searchString) ||
-          node.firstName.includes(searchString) ||
-          node.lastName.includes(searchString) ||
-          node.email.includes(searchString)),
+        [node.username, node.displayName, node.email]
+          .join(' ')
+          .toLowerCase()
+          .includes(searchString.toLowerCase()),
     );
 
   const loading = usersLoading || myProfileLoading || groupsLoading;

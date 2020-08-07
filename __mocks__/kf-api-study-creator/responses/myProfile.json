@@ -9,6 +9,7 @@
       "username": "devadmin",
       "firstName": "",
       "lastName": "",
+      "displayName": "devadmin",
       "email": "admin@myproject.com",
       "picture": "",
       "roles": ["ADMIN"],

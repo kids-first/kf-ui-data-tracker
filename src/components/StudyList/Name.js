@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom';
 import {Amplitude} from '@amplitude/react-amplitude';
 import {Header, Label, Table} from 'semantic-ui-react';
 import defaultAvatar from '../../assets/defaultAvatar.png';
-import {showuUserName} from '../../common/notificationUtils';
 
 const StudyName = ({study}) => {
   // TODO: Filter out only users in the Investigators group
@@ -51,11 +50,8 @@ const Investigators = ({investigators}) => {
       <Label.Group>
         {investigators.map(user => (
           <Label image key={user.id}>
-            <img
-              alt={showuUserName(user)}
-              src={user.picture || defaultAvatar}
-            />
-            {showuUserName(user)}
+            <img alt={user.displayName} src={user.picture || defaultAvatar} />
+            {user.displayName}
           </Label>
         ))}
       </Label.Group>

@@ -4,7 +4,6 @@ import {Label, Popup} from 'semantic-ui-react';
 import TimeAgo from 'react-timeago';
 import defaultAvatar from '../../assets/defaultAvatar.png';
 import {longDate} from '../../common/dateUtils';
-import {showuUserName} from '../../common/notificationUtils';
 
 /**
  * Displays time ago and avatar in one label
@@ -14,8 +13,11 @@ const AvatarTimeAgo = ({showUsername, creator, createdAt, size}) => {
   if (creator && showUsername) {
     return (
       <Label image size={size}>
-        <img alt={showuUserName(creator)} src={picUrl} />
-        {showuUserName(creator)}
+        <img
+          alt={(creator && creator.displayName) || 'Unknown user'}
+          src={picUrl}
+        />
+        {(creator && creator.displayName) || 'Unknown user'}
         <Label.Detail>
           {createdAt ? (
             <TimeAgo
@@ -34,10 +36,13 @@ const AvatarTimeAgo = ({showUsername, creator, createdAt, size}) => {
       <Popup
         inverted
         size={size}
-        content={showuUserName(creator)}
+        content={(creator && creator.displayName) || 'Unknown user'}
         trigger={
           <Label image basic size={size}>
-            <img alt={showuUserName(creator)} src={picUrl} />
+            <img
+              alt={(creator && creator.displayName) || 'Unknown user'}
+              src={picUrl}
+            />
             {createdAt ? (
               <TimeAgo
                 date={createdAt}
