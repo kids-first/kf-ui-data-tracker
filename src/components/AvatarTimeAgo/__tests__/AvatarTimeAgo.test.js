@@ -7,6 +7,7 @@ it('renders AvatarTimeAgo showing username', async () => {
   const creator = {
     username: 'username',
     picture: 'https://www.w3schools.com/w3images/avatar6.png',
+    displayName: 'Bobby Tables',
   };
   const createdAt = '2019-04-17T16:39:34+00:00';
   const {container} = render(
@@ -24,6 +25,7 @@ it('renders AvatarTimeAgo not showing username', async () => {
   const creator = {
     username: 'username',
     picture: 'https://www.w3schools.com/w3images/avatar6.png',
+    displayName: 'Bobby Tables',
   };
   const createdAt = '2019-04-17T16:39:34+00:00';
   const {container} = render(
@@ -44,6 +46,7 @@ it('renders AvatarTimeAgo without createdAt data', async () => {
   const creator = {
     username: 'username',
     picture: 'https://www.w3schools.com/w3images/avatar6.png',
+    displayName: 'Bobby Tables',
   };
   const {container} = render(<AvatarTimeAgo size="mini" creator={creator} />);
   expect(container).toMatchSnapshot();
