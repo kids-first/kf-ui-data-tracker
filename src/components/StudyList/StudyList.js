@@ -262,25 +262,33 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
             mobile={15}
             verticalAlign="middle"
           >
-            <Responsive
-              as={Input}
-              columns={1}
-              fireOnMount
-              onUpdate={(e, {width}) =>
-                setResponsiveClass(
-                  width >= Responsive.onlyComputer.minWidth ? '' : 'mt-15',
-                )
+            <Popup
+              wide
+              inverted
+              position="top center"
+              content="Search study by name , ID or collaborator"
+              trigger={
+                <Responsive
+                  as={Input}
+                  columns={1}
+                  fireOnMount
+                  onUpdate={(e, {width}) =>
+                    setResponsiveClass(
+                      width >= Responsive.onlyComputer.minWidth ? '' : 'mt-15',
+                    )
+                  }
+                  className={responsiveClass}
+                  fluid
+                  aria-label="search studies"
+                  iconPosition="left"
+                  icon="search"
+                  placeholder="Search studies"
+                  onChange={(e, {value}) => {
+                    setSearchString(value);
+                  }}
+                  value={searchString}
+                />
               }
-              className={responsiveClass}
-              fluid
-              aria-label="search studies"
-              iconPosition="left"
-              icon="search"
-              placeholder="Search by study name or collaborator"
-              onChange={(e, {value}) => {
-                setSearchString(value);
-              }}
-              value={searchString}
             />
           </Grid.Column>
           <Grid.Column
