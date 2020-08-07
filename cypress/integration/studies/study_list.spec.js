@@ -184,7 +184,7 @@ context('Admin Study List', () => {
       .get('input.search')
       .first()
       .click();
-    cy.contains('div[role="option"]', 'testuser').click();
+    cy.contains('div[role="option"]', 'Bobby Tables').click();
     cy.contains('div', 'Choose role').click();
     cy.contains('button', 'Add').click();
 
