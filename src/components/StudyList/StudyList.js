@@ -153,9 +153,7 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
   const conactCollaborators = collaborators => {
     return collaborators.length > 0
       ? collaborators
-          .map(({node}) =>
-            [node.username, node.firstName, node.lastName].join(' '),
-          )
+          .map(({node}) => [node.username, node.displayName].join(' '))
           .join(' ')
       : '';
   };
