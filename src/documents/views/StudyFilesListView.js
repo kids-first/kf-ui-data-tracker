@@ -55,7 +55,17 @@ const filterFiles = (fileList, filters) => {
   if (filters.tagFilterStatus.length > 0) {
     filteredList = filteredList.filter(obj =>
       filters.tagFilterStatus.includes('untagged')
-        ? obj.node.tags.length === 0
+        ? filters.andJoin
+          ? filters.tagFilterStatus
+              .filter(t => t !== 'untagged')
+              .every(t => obj.node.tags.includes(t)) ||
+            obj.node.tags.length === 0
+          : obj.node.tags.some(
+              t =>
+                filters.tagFilterStatus
+                  .filter(t => t !== 'untagged')
+                  .indexOf(t) >= 0,
+            ) || obj.node.tags.length === 0
         : filters.andJoin
         ? filters.tagFilterStatus.every(t => obj.node.tags.includes(t))
         : obj.node.tags.some(t => filters.tagFilterStatus.indexOf(t) >= 0),
