@@ -116,10 +116,13 @@ const FileTags = ({fileNode, updateFile, defaultOptions}) => {
                 )}
                 error={tagSelection.length > 50 || error.length > 0}
               />
-              {tagSelection.length > 50 || error.length > 0 ? (
+              {tagSelection.length > 50 ||
+              error.length > 0 ||
+              tagSelection === 'untagged' ? (
                 <p className="text-red">
                   {tagSelection.length > 50 && 'Tag is too long.'}
                   {error}
+                  {tagSelection === 'untagged' && 'Tag "untagged" is reserved'}
                 </p>
               ) : (
                 <Button
@@ -130,7 +133,9 @@ const FileTags = ({fileNode, updateFile, defaultOptions}) => {
                   data-testid="tag-file-add"
                   className="my-2"
                   disabled={
-                    tagSelection.length > 50 || tagSelection.length === 0
+                    tagSelection.length > 50 ||
+                    tagSelection.length === 0 ||
+                    tagSelection === 'untagged'
                   }
                   onClick={e => {
                     e.stopPropagation();
