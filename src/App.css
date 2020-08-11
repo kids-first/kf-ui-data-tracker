@@ -98,9 +98,18 @@ body {
   padding-right: 5px !important;
 }
 
+.pr-0 {
+  padding-right: 0px !important;
+}
+
 .px-20 {
   padding-right: 20px !important;
   padding-left: 20px !important;
+}
+
+.px-10 {
+  padding-right: 10px !important;
+  padding-left: 10px !important;
 }
 
 .p-20 {
@@ -157,6 +166,10 @@ body {
 
 .mr-8 {
   margin-right: 8px !important;
+}
+
+.mr-14 {
+  margin-right: 14px !important;
 }
 
 .display-block {
