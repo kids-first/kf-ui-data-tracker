@@ -19,6 +19,7 @@ export const GET_FILE_BY_ID = gql`
               nrows
               ncols
               knownFormat
+              errorMessage
             }
             ...VersionFields
             downloadUrl

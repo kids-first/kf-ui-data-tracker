@@ -1,6 +1,14 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import {Button, Icon, Message, Popup, Segment, Table} from 'semantic-ui-react';
+import {
+  Accordion,
+  Button,
+  Icon,
+  Message,
+  Popup,
+  Segment,
+  Table,
+} from 'semantic-ui-react';
 import {Amplitude} from '@amplitude/react-amplitude';
 
 /**
@@ -8,7 +16,7 @@ import {Amplitude} from '@amplitude/react-amplitude';
  */
 const AnalysisSummary = ({version}) => {
   if (!version.analysis.knownFormat) {
-    return <UnkownFormat />;
+    return <UnkownFormat message={version.analysis.errorMessage} />;
   }
 
   const columns =
@@ -166,16 +174,38 @@ const ColumnSummary = ({columns}) => {
   );
 };
 
-const UnkownFormat = () => (
-  <Message
-    icon="warning sign"
-    size="small"
-    header="Unknown File Format"
-    content="The file format for the latest version of
-      this document was not understood. Please upload a version that follows the
-      file format guidelines to see a summary of the file."
-  />
-);
+const UnkownFormat = ({message}) => {
+  const [showError, setShowError] = useState(false);
+
+  return (
+    <Message icon size="small">
+      <Icon name="warning sign" />
+      <Message.Content>
+        <Message.Header>Unknown File Format</Message.Header>
+        <p>
+          The file format for the latest version of this document was not
+          understood. Please upload a version that follows the file format
+          guidelines to see a summary of the file.
+        </p>
+        {message && (
+          <Accordion>
+            <Accordion.Title
+              active={showError}
+              onClick={() => setShowError(!showError)}
+            >
+              <Icon name="dropdown" /> See error details
+            </Accordion.Title>
+            <Accordion.Content active={showError}>
+              <Segment basic>
+                {message}
+              </Segment>
+            </Accordion.Content>
+          </Accordion>
+        )}
+      </Message.Content>
+    </Message>
+  );
+};
 
 const TrackedAnalysisSummary = props => (
   <Amplitude
