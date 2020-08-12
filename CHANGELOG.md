@@ -1,5 +1,30 @@
 # Kids First Data Tracker Change History
 
+## Release 0.16.1
+
+### Summary
+
+- Emojis: 💄 x3, ✨ x5, ♻️ x3, 🐛 x1, ? x2
+- Categories: Other Changes x8, Additions x5, Fixes x1
+
+### New features and changes
+
+- [#822](https://github.com/kids-first/kf-ui-data-tracker/pull/822) - 💄 Revise error message for studies list - [b6c38626](https://github.com/kids-first/kf-ui-data-tracker/commit/b6c3862642af4991290d00839a2dfdf4fc8e1d94) by [dankolbman](https://github.com/dankolbman)
+- [#825](https://github.com/kids-first/kf-ui-data-tracker/pull/825) - ✨ Add multi-selection for tag filter with untagged option - [19848653](https://github.com/kids-first/kf-ui-data-tracker/commit/19848653e5f64b9682be6a16a0b7375bac0541e4) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#832](https://github.com/kids-first/kf-ui-data-tracker/pull/832) - ♻️ Use display name on user list, events, and collaborators - [d71909f9](https://github.com/kids-first/kf-ui-data-tracker/commit/d71909f93874b712171972f7e396c88265b16c40) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#819](https://github.com/kids-first/kf-ui-data-tracker/pull/819) - ✨ Add checkbox in filter bar to show hide file ID column on file table - [12a7620c](https://github.com/kids-first/kf-ui-data-tracker/commit/12a7620c8b3f8544f0a8177658d2e9ef84b3d2ff) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#815](https://github.com/kids-first/kf-ui-data-tracker/pull/815) - ✨ Support search documents by KF ID - [33e1aa82](https://github.com/kids-first/kf-ui-data-tracker/commit/33e1aa823adb08c5d59b63eb3dba24a64781bd51) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#816](https://github.com/kids-first/kf-ui-data-tracker/pull/816) - ♻️ Only call updateFile mutation from edit file modal if has changes - [cdfca527](https://github.com/kids-first/kf-ui-data-tracker/commit/cdfca527b4b2fb72d6ac40d3d71502e46277bbfa) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#817](https://github.com/kids-first/kf-ui-data-tracker/pull/817) - ✨ Add status for slack channel on study creation modal - [85fabf40](https://github.com/kids-first/kf-ui-data-tracker/commit/85fabf4050d59940438ca813804dabcb3ee21d92) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#814](https://github.com/kids-first/kf-ui-data-tracker/pull/814) - 🐛 Fix misspelled event description - [360adb7e](https://github.com/kids-first/kf-ui-data-tracker/commit/360adb7ef491fb5cf3885cf51fba8c01a0231e0a) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#818](https://github.com/kids-first/kf-ui-data-tracker/pull/818) -  Bump elliptic from 6.4.1 to 6.5.3 - [db02d237](https://github.com/kids-first/kf-ui-data-tracker/commit/db02d23721bd8eff158ad17d68df5dd1de9f65ae) by [dependabot[bot]](https://github.com/apps/dependabot)
+- [#810](https://github.com/kids-first/kf-ui-data-tracker/pull/810) - 💄 Add user's email to user drop down - [9b5df80e](https://github.com/kids-first/kf-ui-data-tracker/commit/9b5df80e2446c1cd50eec97ac5e2f7a46687551b) by [dankolbman](https://github.com/dankolbman)
+- [#804](https://github.com/kids-first/kf-ui-data-tracker/pull/804) -  Bump codecov from 3.6.1 to 3.7.1 - [61f87a4f](https://github.com/kids-first/kf-ui-data-tracker/commit/61f87a4f968a79ceb53d3836ba61e05dfef03d32) by [dependabot[bot]](https://github.com/apps/dependabot)
+- [#803](https://github.com/kids-first/kf-ui-data-tracker/pull/803) - ♻️ Accept permission for investigator to edit document meta - [fe1166d1](https://github.com/kids-first/kf-ui-data-tracker/commit/fe1166d1274051e3aae095163d3290484908dcb2) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#787](https://github.com/kids-first/kf-ui-data-tracker/pull/787) - 💄 Refactor UI for document detail page - [3495d562](https://github.com/kids-first/kf-ui-data-tracker/commit/3495d5625bb61e566dce2cc67be0e604c3b61e3d) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#786](https://github.com/kids-first/kf-ui-data-tracker/pull/786) - ✨ Add ability to add multiple users at once for email invites - [e75d2d9f](https://github.com/kids-first/kf-ui-data-tracker/commit/e75d2d9f66122bfdcb7fe09f00248aaa1a901325) by [XuTheBunny](https://github.com/XuTheBunny)
+
+
 ## Release 0.16.0
 
 ### Summary
