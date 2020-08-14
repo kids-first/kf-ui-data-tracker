@@ -47,16 +47,11 @@ const ExistingDocsMessage = ({
     </>
   );
 
-  const CopiedFileContent = () => (
-    <>Looks like this may be a copy of an existing file.</>
-  );
-
   return (
     <Message info icon size="small" error={errors.file_name.exact_matches}>
       <Icon name="info circle" />
       <Message.Content>
         <Message.Header>Update Existing Document Instead?</Message.Header>
-        {errors.file_name.upload_similarity && <CopiedFileContent />}
         {errors.file_name.existing_similarity && <SimilarTitleContent />}
       </Message.Content>
       {newFile && (
