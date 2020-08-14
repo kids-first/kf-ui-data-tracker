@@ -1,12 +1,7 @@
 /* eslint-disable no-useless-escape */
-import * as stringSimilarity from 'string-similarity';
 import {sortFilesBySimilarity} from '../utilities';
-import {
-  STUDY_DOCS_SIMILARITY_THRESHOLD,
-  DOC_TITLE_FILENAME_SIMILARITY_THRESHOLD,
-} from '../../common/globals';
+import {STUDY_DOCS_SIMILARITY_THRESHOLD} from '../../common/globals';
 
-const MIN_SIMILARITY = DOC_TITLE_FILENAME_SIMILARITY_THRESHOLD;
 const DOC_NAME_REGEXS = [
   /(new)|(final)|(modified)|(saved?)|(updated?)|(edit)|(\([0-9]\))|(\[[0-9]\])/, // black listed words
   /\.[a-z]{2,}/, // file extensions
@@ -19,32 +14,23 @@ const replaceWithSpaces = str =>
     .trim()
     .toLowerCase();
 
-const removeFileExt = str => str.replace(/\.(.*)/, '');
-
 const validate = ({file_name}, fileNode, studyFiles = []) => {
   let errors = {
     file_name: {
       blacklisted: null,
       existing_similarity: null,
-      upload_similarity: null,
       file_ext: null,
       exact_matches: null,
       dates: null,
     },
   };
 
-  let cleanFileName = replaceWithSpaces(removeFileExt(fileNode.name));
   const DOC_NAME_INPUT = replaceWithSpaces(file_name);
 
   const similarDocs = sortFilesBySimilarity(
     {name: DOC_NAME_INPUT},
     studyFiles,
     STUDY_DOCS_SIMILARITY_THRESHOLD,
-  );
-
-  const uploadedFileSimilarity = stringSimilarity.compareTwoStrings(
-    DOC_NAME_INPUT,
-    cleanFileName,
   );
 
   //existing study files
@@ -57,12 +43,6 @@ const validate = ({file_name}, fileNode, studyFiles = []) => {
   // black listed words
   if (new RegExp(DOC_NAME_REGEXS[0], 'gi').test(file_name))
     errors.file_name.blacklisted = true;
-
-  if (
-    new RegExp(DOC_NAME_REGEXS[0], 'gi').test(file_name) ||
-    uploadedFileSimilarity > MIN_SIMILARITY
-  )
-    errors.file_name.upload_similarity = true;
 
   // file extensions in name
   if (new RegExp(DOC_NAME_REGEXS[1], 'gi').test(DOC_NAME_INPUT)) {
