@@ -30,7 +30,6 @@ for (let index = 0; index < BLACKLISTED_WORDS.length; index++) {
       file,
       studyByKfId.data.studyByKfId.files.edges,
     );
-    expect(validateResults.file_name.upload_similarity).toBeTruthy();
     expect(validateResults.file_name.blacklisted).toBeTruthy();
   });
 }

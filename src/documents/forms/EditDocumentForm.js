@@ -91,8 +91,7 @@ const EditDocumentForm = React.forwardRef(
             <>
               {titleError.file_name &&
                 (titleError.file_name.existing_similarity ||
-                  titleError.file_name.exact_matches ||
-                  titleError.file_name.upload_similarity) && (
+                  titleError.file_name.exact_matches) && (
                   <ExistingDocsMessage
                     setShowDialog={setShowDialog}
                     errors={titleError}
