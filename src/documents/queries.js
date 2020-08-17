@@ -13,6 +13,14 @@ export const GET_FILE_BY_ID = gql`
       versions {
         edges {
           node {
+            analysis {
+              id
+              columns
+              nrows
+              ncols
+              knownFormat
+              errorMessage
+            }
             ...VersionFields
             downloadUrl
             creator {
