@@ -266,10 +266,12 @@ const ConfigurationView = () => {
           with. They are for debug purposes only and require deployment changes
           to be modified.
         </Segment>
-        <StatusTables
-          featuresString={featuresString}
-          settingsString={settingsString}
-        />
+        {featuresFragments && settingsFragments && (
+          <StatusTables
+            featuresString={featuresString}
+            settingsString={settingsString}
+          />
+        )}
       </Container>
     </>
   );
