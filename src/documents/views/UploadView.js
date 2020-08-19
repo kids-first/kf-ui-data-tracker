@@ -1,8 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {useQuery, useMutation} from '@apollo/react-hooks';
-import {Amplitude} from '@amplitude/react-amplitude';
-import EditDocumentForm from '../forms/EditDocumentForm';
-import {CREATE_FILE, CREATE_VERSION} from '../mutations';
+import {CREATE_FILE} from '../mutations';
 import {GET_STUDY_BY_ID} from '../../state/queries';
 import {
   Message,
@@ -11,32 +9,14 @@ import {
   Icon,
   Button,
   Header,
-  Progress,
-  Transition,
-  Form,
 } from 'semantic-ui-react';
-import {Formik, Field} from 'formik';
 import AnalysisSummary from '../components/FileDetail/AnalysisSummary';
-import SelectElement from '../components/FileDetail/SelectElement';
 import NewDocumentForm from '../forms/NewDocumentForm';
 
-import {lengthLimit} from '../utilities';
-import {fileTypeDetail} from '../../common/enums';
-
 const UploadView = ({match, history, location}) => {
-  const [vis, setVis] = useState(3);
-
   const study = useQuery(GET_STUDY_BY_ID, {
     variables: {
       id: Buffer.from('StudyNode:' + match.params.kfId).toString('base64'),
-    },
-  });
-
-  // Mutation to upload the file and get back an analysis
-  const [createVersion] = useMutation(CREATE_VERSION, {
-    awaitRefetchQueries: true,
-    onError: error => {
-      // setErrors(error.message);
     },
   });
 
@@ -55,9 +35,6 @@ const UploadView = ({match, history, location}) => {
       // setErrors(error.message);
     },
   });
-
-  const studyFiles =
-    study.data && study.data.study ? study.data.study.files.edges : [];
 
   // If the user landed here without a file, they probably got here from
   // some external page. We'll send them back to the study's file list view.

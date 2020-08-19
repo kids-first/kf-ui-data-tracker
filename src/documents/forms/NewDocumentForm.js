@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {
   Button,
-  Card,
   Container,
   Divider,
   Form,
@@ -9,9 +8,7 @@ import {
   Icon,
   Input,
   Message,
-  Progress,
   Segment,
-  Transition,
 } from 'semantic-ui-react';
 import {Formik, Field} from 'formik';
 import {EditorState, convertToRaw, ContentState} from 'draft-js';
