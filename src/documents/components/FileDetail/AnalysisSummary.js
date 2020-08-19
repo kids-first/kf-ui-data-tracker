@@ -115,33 +115,35 @@ const ColumnSummary = ({columns}) => {
   );
 
   const tableFooter = () => (
-    <Table.HeaderCell colSpan={3}>
-      {allColumns ? (
-        <>
-          Showing all {columns.length} columns.{' '}
-          <Button
-            size="small"
-            labelPosition="left"
-            className="text-primary"
-            onClick={() => setAllcolumns(!allColumns)}
-          >
-            Only show first 5 columns
-          </Button>
-        </>
-      ) : (
-        <>
-          {columns.length - 5} columns hidden.{' '}
-          <Button
-            size="small"
-            labelPosition="left"
-            className="text-primary"
-            onClick={() => setAllcolumns(!allColumns)}
-          >
-            Show all columns
-          </Button>
-        </>
-      )}
-    </Table.HeaderCell>
+    <Table.Row>
+      <Table.HeaderCell colSpan={3}>
+        {allColumns ? (
+          <>
+            Showing all {columns.length} columns.{' '}
+            <Button
+              size="small"
+              labelPosition="left"
+              className="text-primary"
+              onClick={() => setAllcolumns(!allColumns)}
+            >
+              Only show first 5 columns
+            </Button>
+          </>
+        ) : (
+          <>
+            {columns.length - 5} columns hidden.{' '}
+            <Button
+              size="small"
+              labelPosition="left"
+              className="text-primary"
+              onClick={() => setAllcolumns(!allColumns)}
+            >
+              Show all columns
+            </Button>
+          </>
+        )}
+      </Table.HeaderCell>
+    </Table.Row>
   );
   const rowRenderer = (data, index) => ({
     key: data.name,
