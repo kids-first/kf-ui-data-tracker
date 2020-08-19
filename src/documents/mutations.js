@@ -66,13 +66,26 @@ export const DELETE_FILE = gql`
 export const CREATE_VERSION = gql`
   mutation CreateVersion(
     $file: Upload!
-    $fileId: String!
-    $description: String!
+    $fileId: String
+    $study: ID
+    $description: String
   ) {
-    createVersion(file: $file, fileId: $fileId, description: $description) {
+    createVersion(
+      file: $file
+      fileId: $fileId
+      study: $study
+      description: $description
+    ) {
       success
       version {
         ...VersionFields
+        analysis {
+          id
+          columns
+          nrows
+          ncols
+          knownFormat
+        }
       }
     }
   }
