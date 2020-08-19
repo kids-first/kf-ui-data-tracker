@@ -4,22 +4,21 @@ import {FILE_FIELDS, VERSION_FIELDS} from './fragments';
 // Mutation to upload a file or a version of the file to the study-creator
 export const CREATE_FILE = gql`
   mutation CreateFile(
-    $file: Upload!
-    $studyId: String!
+    $version: ID!
+    $study: ID
     $name: String!
     $fileType: FileFileType!
     $description: String!
     $tags: [String]
   ) {
     createFile(
-      file: $file
-      studyId: $studyId
+      version: $version
+      study: $study
       name: $name
       fileType: $fileType
       description: $description
       tags: $tags
     ) {
-      success
       file {
         ...FileFields
       }

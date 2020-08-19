@@ -45,20 +45,23 @@ const UploadView = ({match, history, location}) => {
 
   const version = location.state.version;
 
-  const handleSubmit = (fileName, fileType, fileDescription) => {
+  const handleSubmit = props => {
+    const {file_desc, file_name, file_type} = props;
+
     const studyId = match.params.kfId;
-    const version = location.state.version;
+
     saveDocument({
       variables: {
-        version,
-        studyId,
-        name: fileName,
-        fileType,
-        description: fileDescription,
+        version: version.id,
+        study: study.id,
+        name: file_name,
+        fileType: file_type,
+        description: file_desc,
         tags: [],
       },
     }).then(resp => {
-      history.push(`/study/${studyId}/documents`);
+      const fvId = resp.data.createFile.file.kfId;
+      history.push(`/study/${studyId}/documents/${fvId}`);
     });
   };
 
@@ -86,10 +89,7 @@ const UploadView = ({match, history, location}) => {
         </Segment>
 
         <Segment>
-          <NewDocumentForm
-            version={version}
-            handleSubmit={vals => console.log(vals)}
-          />
+          <NewDocumentForm version={version} handleSubmit={handleSubmit} />
         </Segment>
       </Segment.Group>
     </Container>
