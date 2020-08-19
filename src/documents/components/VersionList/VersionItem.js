@@ -31,8 +31,9 @@ const VersionItem = ({
         </p>
         <p title={versionNode.description} data-testid="version-item">
           <small>
-            {lengthLimit(versionNode.description, 110)}
-            {versionNode.description.length === 0 &&
+            {lengthLimit(versionNode.description || '', 110)}
+            {(!versionNode.description ||
+              versionNode.description.length === 0) &&
               'No version summary available'}
           </small>
         </p>

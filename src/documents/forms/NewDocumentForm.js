@@ -67,7 +67,7 @@ const NewDocumentForm = ({
 
       <Divider />
 
-      <Form.Field error={errors.file_name} required>
+      <Form.Field required>
         <Header>Document Name</Header>
         <Input
           data-testid="name-input"
