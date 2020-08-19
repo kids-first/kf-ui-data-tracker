@@ -64,7 +64,7 @@ const ValuesPopup = ({values, total}) => {
         </span>
       }
       content={vals.map(v => (
-        <pre>{v}</pre>
+        <pre key={v}>{v}</pre>
       ))}
       position="right center"
     />
@@ -72,7 +72,7 @@ const ValuesPopup = ({values, total}) => {
 };
 
 const CommonValues = ({commonValues, distinctValues}) => {
-  const first2 = commonValues.slice(0, 2).map(v => <code>{v}, </code>);
+  const first2 = commonValues.slice(0, 2).map(v => <code key={v}>{v}, </code>);
 
   let values = null;
   if (commonValues.length === 0) {
