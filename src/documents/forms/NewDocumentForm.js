@@ -100,7 +100,6 @@ const NewDocumentForm = ({
         <Button
           primary
           data-testid="new-file-submit"
-          floated="right"
           type="submit"
           disabled={disabled}
         >

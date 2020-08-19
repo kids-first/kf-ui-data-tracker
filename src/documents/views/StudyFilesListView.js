@@ -2,12 +2,7 @@ import React, {useState} from 'react';
 import {Helmet} from 'react-helmet';
 import {useQuery, useMutation} from '@apollo/react-hooks';
 import {GET_STUDY_BY_ID, MY_PROFILE} from '../../state/queries';
-import {
-  CREATE_VERSION,
-  FILE_DOWNLOAD_URL,
-  UPDATE_FILE,
-  DELETE_FILE,
-} from '../mutations';
+import {FILE_DOWNLOAD_URL, UPDATE_FILE, DELETE_FILE} from '../mutations';
 import {UploadContainer} from '../containers';
 import FileList from '../components/FileList/FileList';
 import {
@@ -127,9 +122,6 @@ const StudyFilesListView = ({
       setUpdateFileError(error);
     },
   });
-  const [createVersion, {loading: createVersionLoading}] = useMutation(
-    CREATE_VERSION,
-  );
 
   // Study query, includes documents
   const {loading, data, error} = useQuery(GET_STUDY_BY_ID, {
@@ -183,15 +175,7 @@ const StudyFilesListView = ({
   const filteredFiles = filterFiles(files, filters);
 
   const onUpload = file => {
-    createVersion({
-      variables: {
-        file,
-        study: study.id,
-      },
-    }).then(({data}) => {
-      console.log(data);
-      history.push('documents/upload', {version: data.createVersion.version});
-    });
+    history.push('documents/upload', {file});
   };
 
   if (!loading && study === null) {
@@ -252,7 +236,6 @@ const StudyFilesListView = ({
             <Button
               compact
               primary
-              loading={createVersionLoading}
               floated="right"
               size="large"
               icon="cloud upload"
