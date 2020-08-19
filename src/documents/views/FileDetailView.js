@@ -13,7 +13,7 @@ const FileDetailView = ({match}) => {
   // Study query get used tags within current study
   const {data: studyData} = useQuery(GET_STUDY_BY_ID, {
     variables: {
-      kfId: match.params.kfId,
+      id: Buffer.from('StudyNode:' + match.params.kfId).toString('base64'),
     },
   });
   const studyByKfId = studyData && studyData.studyByKfId;

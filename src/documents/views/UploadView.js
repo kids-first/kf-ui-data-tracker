@@ -44,7 +44,12 @@ const UploadView = ({match, history, location}) => {
   const [saveDocument] = useMutation(CREATE_FILE, {
     awaitRefetchQueries: true,
     refetchQueries: [
-      {query: GET_STUDY_BY_ID, variables: {kfId: match.params.kfId}},
+      {
+        query: GET_STUDY_BY_ID,
+        variables: {
+          id: Buffer.from('StudyNode:' + match.params.kfId).toString('base64'),
+        },
+      },
     ],
     onError: error => {
       // setErrors(error.message);
