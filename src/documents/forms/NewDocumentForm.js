@@ -17,6 +17,7 @@ import SelectElement from '../components/FileDetail/SelectElement';
 import draftToMarkdown from 'draftjs-to-markdown';
 
 import {fileTypeDetail} from '../../common/enums';
+import {urls} from '../../common/urls';
 
 const NewDocumentForm = ({
   values,
@@ -37,34 +38,41 @@ const NewDocumentForm = ({
         <Header>Document Type</Header>
         <p>Classify the new document under the most correct type.</p>
         <Header size="small">General Types</Header>
-        {Object.keys(fileTypeDetail).map(item => (
-          <Form.Field key={item}>
-            <Field
-              component={SelectElement}
-              name="file_type"
-              id={item}
-              label={item}
-            />
-          </Form.Field>
-        ))}
+        {Object.keys(fileTypeDetail)
+          .filter(item => item === 'OTH')
+          .map(item => (
+            <Form.Field key={item}>
+              <Field
+                component={SelectElement}
+                name="file_type"
+                id={item}
+                label={item}
+              />
+            </Form.Field>
+          ))}
         <Header size="small">Expedited Types</Header>
-        <Container text>
-          <Message icon>
-            <Icon name="info circle" />
-            <Message.Content>
-              <Message.Header>Does not Qualify</Message.Header>
-              This file does not meet requirements for any of the expedited
-              types. If you'd like to have this file processed faster, please
-              consider formatting the file according to one of the{' '}
-              <a href="#">file types</a>.
-            </Message.Content>
-          </Message>
-        </Container>
+        <Message icon>
+          <Icon name="info circle" />
+          <Message.Content>
+            <Message.Header>Does not Qualify</Message.Header>
+            This file does not meet requirements for any of the expedited types.
+            If you'd like to have this file processed faster, please consider
+            formatting the file according to one of the{' '}
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href={urls.expeditedFiles}
+            >
+              file types
+            </a>
+            .
+          </Message.Content>
+        </Message>
       </Form.Field>
 
       <Divider />
 
-      <Form.Field required>
+      <Form.Field error={!!errors.file_name} required>
         <Header>Document Name</Header>
         <Input
           data-testid="name-input"

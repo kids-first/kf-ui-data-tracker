@@ -10,6 +10,7 @@ import {
   Table,
 } from 'semantic-ui-react';
 import {Amplitude} from '@amplitude/react-amplitude';
+import {urls} from '../../../common/urls';
 
 /**
  * A summary of the analysis for a given version
@@ -23,9 +24,7 @@ const AnalysisSummary = ({version}) => {
     version.analysis.columns && JSON.parse(version.analysis.columns);
 
   return (
-    <Segment basic secondary>
-      <p>This is an overview of the latest version's file structure</p>
-
+    <>
       <Table definition compact>
         <Table.Body>
           <Table.Row>
@@ -40,7 +39,7 @@ const AnalysisSummary = ({version}) => {
       </Table>
 
       {columns && <ColumnSummary columns={columns} />}
-    </Segment>
+    </>
   );
 };
 
@@ -180,14 +179,18 @@ const UnkownFormat = ({message}) => {
   const [showError, setShowError] = useState(false);
 
   return (
-    <Message icon size="small">
+    <Message icon>
       <Icon name="warning sign" />
       <Message.Content>
         <Message.Header>Unknown File Format</Message.Header>
         <p>
-          The file format for the latest version of this document was not
-          understood. Please upload a version that follows the file format
-          guidelines to see a summary of the file.
+          The file contents were not able to be interpreted for analysis.
+          Utilize additional Data Tracker functionality by providing a file in
+          one of the known{' '}
+          <a target="_blank" rel="noopener noreferrer" href={urls.fileFormats}>
+            file formats
+          </a>
+          .
         </p>
         {message && (
           <Accordion>
@@ -198,9 +201,7 @@ const UnkownFormat = ({message}) => {
               <Icon name="dropdown" /> See error details
             </Accordion.Title>
             <Accordion.Content active={showError}>
-              <Segment basic>
-                {message}
-              </Segment>
+              <Segment basic>{message}</Segment>
             </Accordion.Content>
           </Accordion>
         )}
