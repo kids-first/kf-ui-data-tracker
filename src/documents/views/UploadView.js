@@ -10,6 +10,7 @@ import {
   Button,
   Header,
   Progress,
+  Transition,
 } from 'semantic-ui-react';
 import AnalysisSummary from '../components/FileDetail/AnalysisSummary';
 import NewDocumentForm from '../forms/NewDocumentForm';
@@ -46,6 +47,8 @@ const UploadView = ({match, history, location}) => {
   });
 
   useEffect(() => {
+    if (!location.state) return;
+
     createVersion({
       variables: {
         file: location.state.file,
@@ -86,59 +89,57 @@ const UploadView = ({match, history, location}) => {
   return (
     <Container as={Segment} vertical basic>
       <Header as="h1">Create a New Document</Header>
-      <Segment.Group>
-        <Segment>
-          <Message icon>
-            <Icon name="file" />
-            <Message.Content>
-              {version && !versionLoading && (
-                <>
-                  <Button
-                    icon
-                    primary
-                    floated="right"
-                    labelPosition="left"
-                    as="label"
-                    htmlFor="file"
-                  >
-                    <Icon name="upload" />
-                    Upload a Different File
-                  </Button>
-                  <input
-                    hidden
-                    id="file"
-                    type="file"
-                    onChange={e => {
-                      createVersion({
-                        variables: {
-                          file: e.target.files[0],
-                          study: Buffer.from(
-                            'StudyNode:' + match.params.kfId,
-                          ).toString('base64'),
-                        },
-                      });
-                    }}
-                  />
-                  <Message.Header>Uploaded File:</Message.Header>
-                  {version.fileName}
-                </>
-              )}
-              {versionLoading && (
-                <Progress indicating label="Uploading..." percent={100} />
-              )}
-              {versionError && (
-                <Message
-                  negative
-                  icon="warning"
-                  header="Problem uploading"
-                  content={versionError.message}
-                />
-              )}
-            </Message.Content>
-          </Message>
-        </Segment>
+      <Message icon>
+        <Icon name="file" />
+        <Message.Content>
+          {version && !versionLoading && (
+            <>
+              <Button
+                icon
+                primary
+                floated="right"
+                labelPosition="left"
+                as="label"
+                htmlFor="file"
+              >
+                <Icon name="upload" />
+                Upload a Different File
+              </Button>
+              <input
+                hidden
+                id="file"
+                type="file"
+                onChange={e => {
+                  createVersion({
+                    variables: {
+                      file: e.target.files[0],
+                      study: Buffer.from(
+                        'StudyNode:' + match.params.kfId,
+                      ).toString('base64'),
+                    },
+                  });
+                }}
+              />
+              <Message.Header>Uploaded File:</Message.Header>
+              {version.fileName}
+            </>
+          )}
+          {versionLoading && (
+            <Progress indicating label="Uploading..." percent={100} />
+          )}
+          {versionError && (
+            <Message
+              negative
+              icon="warning"
+              header="Problem uploading"
+              content={versionError.message}
+            />
+          )}
+        </Message.Content>
+      </Message>
+      <Transition.Group animiation="fade" duration={{hide: 200, show: 500}}>
         {version && (
-          <>
+          <Segment.Group basic>
             <Segment secondary>
               <Header>File Content Summary</Header>
               <AnalysisSummary version={version} />
@@ -147,9 +148,9 @@ const UploadView = ({match, history, location}) => {
             <Segment>
               <NewDocumentForm version={version} handleSubmit={handleSubmit} />
             </Segment>
-          </>
+          </Segment.Group>
         )}
-      </Segment.Group>
+      </Transition.Group>
     </Container>
   );
 };
