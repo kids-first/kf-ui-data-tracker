@@ -174,7 +174,7 @@ const StudyHeader = ({study, loading, newStudy, showModal, updateStudy}) => {
   }
 
   return (
-    <Grid container columns={2}>
+    <Grid container columns={2} className="study-header-background">
       <Grid.Column textAlign="left" width={10}>
         <Header as="h1">
           {study.shortName || study.name || 'Unknown study name'}

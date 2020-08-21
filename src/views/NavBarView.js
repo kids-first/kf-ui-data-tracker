@@ -60,7 +60,7 @@ const NavBarView = ({match, location, history}) => {
 
   return (
     <section id="study">
-      <Segment secondary basic>
+      <Segment basic className="science-bg">
         <StudyHeader
           study={study}
           loading={loading}
