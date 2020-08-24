@@ -22,6 +22,7 @@ import {urls} from '../../common/urls';
 const NewDocumentForm = ({
   values,
   errors,
+  touched,
   isSubmitting,
   isValid,
   handleBlur,
@@ -29,6 +30,7 @@ const NewDocumentForm = ({
   handleSubmit,
   version,
   setFieldValue,
+  setFieldTouched,
 }) => {
   const [editorState, setEditorState] = useState(
     EditorState.createWithContent(ContentState.createFromText('')),
@@ -74,7 +76,7 @@ const NewDocumentForm = ({
 
       <Divider />
 
-      <Form.Field error={!!errors.file_name} required>
+      <Form.Field error={touched.file_name && !!errors.file_name} required>
         <Header>Document Name</Header>
         <Input
           data-testid="name-input"
@@ -95,10 +97,11 @@ const NewDocumentForm = ({
 
       <Form.Field required>
         <Header>Description</Header>
-        <Segment color={errors.file_desc ? 'red' : null}>
+        <Segment color={touched.file_desc && errors.file_desc ? 'red' : null}>
           <MarkdownEditor
             editorState={editorState}
             onEditorStateChange={e => {
+              setFieldTouched('file_desc');
               setEditorState(e);
               const rawState = convertToRaw(e.getCurrentContent());
               const mdText = draftToMarkdown(rawState);
