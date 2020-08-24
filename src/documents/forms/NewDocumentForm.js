@@ -21,7 +21,7 @@ import {urls} from '../../common/urls';
 const NewDocumentForm = ({
   values,
   errors,
-  disabled,
+  isSubmitting,
   handleBlur,
   handleChange,
   handleSubmit,
@@ -109,7 +109,8 @@ const NewDocumentForm = ({
           primary
           data-testid="new-file-submit"
           type="submit"
-          disabled={disabled}
+          disabled={isSubmitting}
+          loading={isSubmitting}
         >
           Create
         </Button>
