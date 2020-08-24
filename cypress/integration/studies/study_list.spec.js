@@ -202,9 +202,6 @@ context('Admin Study List', () => {
       .its('length')
       .should('eq', 4);
   });
-  it('has notifications', () => {
-    cy.get('table').should('not.exist');
-  });
 });
 
 context('Unauthed Study List', () => {
