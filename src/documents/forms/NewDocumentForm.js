@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {Amplitude} from '@amplitude/react-amplitude';
 import {
   Button,
   Divider,
@@ -22,6 +23,7 @@ const NewDocumentForm = ({
   values,
   errors,
   isSubmitting,
+  isValid,
   handleBlur,
   handleChange,
   handleSubmit,
@@ -105,22 +107,41 @@ const NewDocumentForm = ({
           />
         </Segment>
 
-        <Button
-          primary
-          data-testid="new-file-submit"
-          type="submit"
-          disabled={isSubmitting}
-          loading={isSubmitting}
+        <Amplitude
+          eventProperties={inheritedProps => ({
+            ...inheritedProps,
+            scope: inheritedProps.scope
+              ? [...inheritedProps.scope, 'button', 'upload button']
+              : ['button', 'upload button'],
+          })}
         >
-          Create
-        </Button>
+          {({logEvent}) => (
+            <Button
+              primary
+              data-testid="new-file-submit"
+              type="submit"
+              disabled={isSubmitting}
+              loading={isSubmitting}
+              onClick={() => isValid && logEvent('click')}
+            >
+              Create
+            </Button>
+          )}
+        </Amplitude>
       </Form.Field>
     </>
   );
 };
 
-const FormikWrapper = ({handleSubmit}, ...props) => {
-  return (
+const FormikWrapper = ({handleSubmit}, ...props) => (
+  <Amplitude
+    eventProperties={inheritedProps => ({
+      ...inheritedProps,
+      scope: inheritedProps.scope
+        ? [...inheritedProps.scope, 'new document form']
+        : ['new document form'],
+    })}
+  >
     <Formik
       initialValues={{
         file_name: '',
@@ -142,7 +163,7 @@ const FormikWrapper = ({handleSubmit}, ...props) => {
         </Form>
       )}
     </Formik>
-  );
-};
+  </Amplitude>
+);
 
 export default FormikWrapper;
