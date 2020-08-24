@@ -260,6 +260,14 @@ body {
   text-align: center;
 }
 
+.science-bg {
+  background-image: url(./assets/background-science.jpg) !important;
+}
+
+.study-header-background {
+  background: #e8e8e899;
+}
+
 .View--Login {
   height: 100vh;
   background-image: linear-gradient(to bottom, #fff 400px, transparent 100%),
