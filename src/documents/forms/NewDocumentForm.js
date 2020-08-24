@@ -35,20 +35,21 @@ const NewDocumentForm = ({
     <>
       <Form.Field required>
         <Header>Document Type</Header>
-        <p>Classify the new document under the most correct type.</p>
+        <p>
+          Help the DRC understand the purpose of this document by classifying it
+          as the appropriate type.
+        </p>
         <Header size="small">General Types</Header>
-        {Object.keys(fileTypeDetail)
-          .filter(item => item === 'OTH')
-          .map(item => (
-            <Form.Field key={item}>
-              <Field
-                component={SelectElement}
-                name="file_type"
-                id={item}
-                label={item}
-              />
-            </Form.Field>
-          ))}
+        {Object.keys(fileTypeDetail).map(item => (
+          <Form.Field key={item}>
+            <Field
+              component={SelectElement}
+              name="file_type"
+              id={item}
+              label={item}
+            />
+          </Form.Field>
+        ))}
         <Header size="small">Expedited Types</Header>
         <Message icon>
           <Icon name="info circle" />
