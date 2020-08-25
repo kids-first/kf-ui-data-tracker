@@ -96,9 +96,15 @@ export const UPDATE_VERSION = gql`
   mutation UpdateVersion(
     $versionId: String!
     $description: String
+    $document: ID
     $state: VersionState!
   ) {
-    updateVersion(kfId: $versionId, description: $description, state: $state) {
+    updateVersion(
+      kfId: $versionId
+      description: $description
+      file: $document
+      state: $state
+    ) {
       version {
         ...VersionFields
       }

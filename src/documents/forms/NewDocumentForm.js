@@ -31,10 +31,12 @@ const NewDocumentForm = ({
   version,
   setFieldValue,
   setFieldTouched,
+  studyFiles,
 }) => {
   const [editorState, setEditorState] = useState(
     EditorState.createWithContent(ContentState.createFromText('')),
   );
+
   return (
     <>
       <Form.Field required>
@@ -123,7 +125,7 @@ const NewDocumentForm = ({
               primary
               data-testid="new-file-submit"
               type="submit"
-              disabled={isSubmitting}
+              disabled={isSubmitting || !isValid}
               loading={isSubmitting}
               onClick={() => isValid && logEvent('click')}
             >
@@ -136,7 +138,7 @@ const NewDocumentForm = ({
   );
 };
 
-const FormikWrapper = ({handleSubmit}, ...props) => (
+const FormikWrapper = ({handleSubmit, studyFiles}, ...props) => (
   <Amplitude
     eventProperties={inheritedProps => ({
       ...inheritedProps,
@@ -162,7 +164,11 @@ const FormikWrapper = ({handleSubmit}, ...props) => (
     >
       {formikProps => (
         <Form onSubmit={formikProps.handleSubmit}>
-          <NewDocumentForm {...props} {...formikProps} />
+          <NewDocumentForm
+            {...props}
+            {...formikProps}
+            studyFiles={studyFiles}
+          />
         </Form>
       )}
     </Formik>
