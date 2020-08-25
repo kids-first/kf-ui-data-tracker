@@ -217,6 +217,7 @@ const UploadView = ({match, history, location}) => {
               {type === 'document' && (
                 <NewDocumentForm
                   version={version}
+                  studyFiles={study.data.study.files.edges}
                   handleSubmit={handleSubmitNewDoc}
                 />
               )}

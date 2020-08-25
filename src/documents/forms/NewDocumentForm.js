@@ -89,6 +89,14 @@ const NewDocumentForm = ({
           onBlur={handleBlur}
           onChange={handleChange}
         />
+        {errors.file_name === 'exists' && (
+          <Message
+            negative
+            icon="warning"
+            header="Document Already Exists"
+            content="A document with this name already exists in the study. Consider updating the existing document instead of creating a new document"
+          />
+        )}
         <small>
           Please provide a descriptive title without dates or adjectives such as
           "new", "updated", "final", etc.
@@ -158,6 +166,15 @@ const FormikWrapper = ({handleSubmit, studyFiles}, ...props) => (
         let errors = {};
         if (!vals.file_name) errors.file_name = 'required';
         if (!vals.file_desc.trim()) errors.file_desc = 'required';
+        if (
+          vals.file_name &&
+          studyFiles.filter(
+            ({node}) =>
+              node.name.toLowerCase() === vals.file_name.toLowerCase(),
+          ).length > 0
+        ) {
+          errors.file_name = 'exists';
+        }
         return errors;
       }}
       onSubmit={handleSubmit}
