@@ -4,22 +4,21 @@ import {FILE_FIELDS, VERSION_FIELDS} from './fragments';
 // Mutation to upload a file or a version of the file to the study-creator
 export const CREATE_FILE = gql`
   mutation CreateFile(
-    $file: Upload!
-    $studyId: String!
+    $version: ID!
+    $study: ID
     $name: String!
     $fileType: FileFileType!
     $description: String!
     $tags: [String]
   ) {
     createFile(
-      file: $file
-      studyId: $studyId
+      version: $version
+      study: $study
       name: $name
       fileType: $fileType
       description: $description
       tags: $tags
     ) {
-      success
       file {
         ...FileFields
       }
@@ -66,13 +65,26 @@ export const DELETE_FILE = gql`
 export const CREATE_VERSION = gql`
   mutation CreateVersion(
     $file: Upload!
-    $fileId: String!
-    $description: String!
+    $fileId: String
+    $study: ID
+    $description: String
   ) {
-    createVersion(file: $file, fileId: $fileId, description: $description) {
+    createVersion(
+      file: $file
+      fileId: $fileId
+      study: $study
+      description: $description
+    ) {
       success
       version {
         ...VersionFields
+        analysis {
+          id
+          columns
+          nrows
+          ncols
+          knownFormat
+        }
       }
     }
   }
@@ -84,9 +96,15 @@ export const UPDATE_VERSION = gql`
   mutation UpdateVersion(
     $versionId: String!
     $description: String
+    $document: ID
     $state: VersionState!
   ) {
-    updateVersion(kfId: $versionId, description: $description, state: $state) {
+    updateVersion(
+      kfId: $versionId
+      description: $description
+      file: $document
+      state: $state
+    ) {
       version {
         ...VersionFields
       }

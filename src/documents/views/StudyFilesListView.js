@@ -174,6 +174,10 @@ const StudyFilesListView = ({
   const files = !loading && study ? study.files.edges : [];
   const filteredFiles = filterFiles(files, filters);
 
+  const onUpload = file => {
+    history.push('documents/upload', {file});
+  };
+
   if (!loading && study === null) {
     return (
       <NotFoundView
@@ -245,10 +249,7 @@ const StudyFilesListView = ({
               multiple
               id="file"
               type="file"
-              onChange={e => {
-                setFile(e.target.files[0]);
-                setDialog(true);
-              }}
+              onChange={e => onUpload(e.target.files[0])}
             />
           </Grid.Column>
         )}

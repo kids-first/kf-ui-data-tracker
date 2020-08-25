@@ -27,6 +27,7 @@ import {
   StudyFilesListView,
   FileDetailView,
   NewDocumentView,
+  UploadView,
 } from '../documents/views';
 import {
   ResearchStudyListView,
@@ -224,6 +225,11 @@ const Routes = () => (
           path="/study/:kfId/documents/new-document"
           component={NewDocumentView}
           scope={['study', 'documents', 'new document']}
+        />
+        <PrivateRoute
+          path="/study/:kfId/documents/upload"
+          component={UploadView}
+          scope={['study', 'documents', 'upload']}
         />
         <PrivateRoute
           exact
