@@ -28,6 +28,7 @@ import {
   FileDetailView,
   NewDocumentView,
   UploadView,
+  VersionPreviewView,
 } from '../documents/views';
 import {
   ResearchStudyListView,
@@ -53,7 +54,7 @@ const Routes = () => (
       <Route path="/callback" component={CallbackView} />
       <Route path="/auth-error" render={() => <></>} />
       <Route path="/join" component={InviteView} />
-      <Route path="/" render={() => <Header />} />
+      <Route path="/" render={({location}) => <Header location={location} />} />
     </Switch>
     <div className="page">
       <PrivateRoute
@@ -236,6 +237,12 @@ const Routes = () => (
           path="/study/:kfId/documents/:fileId(SF_\w{8})"
           component={FileDetailView}
           scope={['study', 'documents', 'document']}
+        />
+        <PrivateRoute
+          exact
+          path="/study/:kfId/documents/:fileId(SF_\w{8})/versions/:versionId(FV_\w{8})/"
+          component={VersionPreviewView}
+          scope={['study', 'documents', 'document', 'version']}
         />
         <Route component={NotFoundView} />
       </Switch>
