@@ -8,7 +8,6 @@ import {
   fileSortedVersions,
   fileLatestDate,
   fileLatestSize,
-  createDateSort,
 } from '../../utilities';
 import {fileTypeDetail} from '../../../common/enums';
 import FileDetailModal from './FileDetailModal';
@@ -26,7 +25,6 @@ import {
 import FileTags from './FileTags';
 import FileDescription from './FileDescription';
 import AnalysisSummary from './AnalysisSummary';
-import {FilePreview} from '../FilePreview';
 
 const ActionButtons = ({
   downloadFile,
@@ -165,109 +163,107 @@ const FileDetail = ({
   const latestDate = fileLatestDate(sortedVersions);
   const latestSize = fileLatestSize(sortedVersions);
   return (
-    <>
-      <Grid>
-        <Grid.Row>
-          <Grid.Column mobile={16} tablet={16} computer={13}>
-            <Link
-              to={`/study/${match.params.kfId}/documents`}
-              data-testid="back-to-filelist"
-            >
-              <Button basic size="mini" labelPosition="left" floated="left">
-                <Icon name="arrow left" />
-                All Documents
-              </Button>
-            </Link>
-            <Header as="h2">{fileNode.name}</Header>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-      <Grid>
-        <Grid.Row>
-          <Grid.Column mobile={16} tablet={16} computer={13}>
-            <Segment.Group className="noBorders">
-              <Segment.Group horizontal className="noBorders">
-                <Segment className="noBorders">
-                  <Header as="h4" color="grey">
-                    Document Type
-                  </Header>
-                  <Label basic size="small">
-                    <Icon name={`${fileTypeDetail[fileNode.fileType].icon}`} />
-                    {' ' + fileTypeDetail[fileNode.fileType].title}
-                  </Label>
-                </Segment>
-                <Segment className="noBorders">
-                  <Header as="h4" color="grey">
-                    Last Updated
-                  </Header>
-                  <AvatarTimeAgo
-                    size="tiny"
-                    showUsername
-                    creator={sortedVersions[0].node.creator}
-                    createdAt={latestDate}
-                  />
-                </Segment>
-                <Segment className="noBorders">
-                  <Header as="h4" color="grey">
-                    Size
-                  </Header>
-                  <Label basic size="small">
-                    {latestSize}
-                  </Label>
-                </Segment>
-              </Segment.Group>
+    <Grid className="mb-15">
+      <Grid.Row>
+        <Grid.Column mobile={16} tablet={16} computer={13}>
+          <Link
+            to={`/study/${match.params.kfId}/documents`}
+            data-testid="back-to-filelist"
+          >
+            <Button basic size="mini" labelPosition="left" floated="left">
+              <Icon name="arrow left" />
+              All Documents
+            </Button>
+          </Link>
+          <Header as="h2">{fileNode.name}</Header>
+        </Grid.Column>
+      </Grid.Row>
+      <Grid.Row className="noVerticalPadding">
+        <Grid.Column mobile={16} tablet={16} computer={13}>
+          <Segment.Group className="noBorders">
+            <Segment.Group horizontal className="noBorders">
               <Segment className="noBorders">
-                <FileDescription fileNode={fileNode} updateFile={updateFile} />
+                <Header as="h4" color="grey">
+                  Document Type
+                </Header>
+                <Label basic size="small">
+                  <Icon name={`${fileTypeDetail[fileNode.fileType].icon}`} />
+                  {' ' + fileTypeDetail[fileNode.fileType].title}
+                </Label>
               </Segment>
               <Segment className="noBorders">
                 <Header as="h4" color="grey">
-                  Tags
+                  Last Updated
                 </Header>
-                <FileTags
-                  fileNode={fileNode}
-                  updateFile={updateFile}
-                  defaultOptions={tagOptions}
+                <AvatarTimeAgo
+                  size="tiny"
+                  showUsername
+                  creator={sortedVersions[0].node.creator}
+                  createdAt={latestDate}
                 />
-                {updateError && (
-                  <Message
-                    negative
-                    icon="warning circle"
-                    header="Error"
-                    content={updateError.message}
-                  />
-                )}
               </Segment>
-              {sortedVersions && sortedVersions[0].node.analysis && (
-                <Segment className="noBorders">
-                  <Header as="h4" color="grey">
-                    Summary
-                  </Header>
-                  <AnalysisSummary version={sortedVersions[0].node} />
-                </Segment>
-              )}
+              <Segment className="noBorders">
+                <Header as="h4" color="grey">
+                  Size
+                </Header>
+                <Label basic size="small">
+                  {latestSize}
+                </Label>
+              </Segment>
             </Segment.Group>
-          </Grid.Column>
-          <Grid.Column mobile={8} tablet={4} computer={3}>
-            <ActionButtons
-              {...{
-                downloadFile,
-                studyId,
-                fileNode,
-                downloadFileMutation,
-                setDialog,
-                deleteFile,
-                history,
-                updateFile,
-              }}
-            />
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-
-      <Grid>
-        {allowViewVersion && (
-          <Grid.Row>
-            <Grid.Column mobile={16} tablet={16} computer={13}>
+            <Segment className="noBorders">
+              <FileDescription fileNode={fileNode} updateFile={updateFile} />
+            </Segment>
+            <Segment className="noBorders">
+              <Header as="h4" color="grey">
+                Tags
+              </Header>
+              <FileTags
+                fileNode={fileNode}
+                updateFile={updateFile}
+                defaultOptions={tagOptions}
+              />
+              {updateError && (
+                <Message
+                  negative
+                  icon="warning circle"
+                  header="Error"
+                  content={updateError.message}
+                />
+              )}
+            </Segment>
+            {sortedVersions && sortedVersions[0].node.analysis && (
+              <Segment className="noBorders">
+                <Header as="h4" color="grey">
+                  Summary
+                </Header>
+                <AnalysisSummary version={sortedVersions[0].node} />
+              </Segment>
+            )}
+          </Segment.Group>
+        </Grid.Column>
+        <Grid.Column mobile={8} tablet={4} computer={3}>
+          <ActionButtons
+            {...{
+              downloadFile,
+              studyId,
+              fileNode,
+              downloadFileMutation,
+              setDialog,
+              deleteFile,
+              history,
+              updateFile,
+            }}
+          />
+        </Grid.Column>
+      </Grid.Row>
+      {allowViewVersion && (
+        <Grid.Row className="noVerticalPadding">
+          <Grid.Column mobile={16} tablet={16} computer={13}>
+            <Segment className="noBorders">
+              <Header as="h4" color="grey">
+                Versions
+              </Header>
               <VersionList
                 studyId={studyId}
                 fileNode={fileNode}
@@ -278,29 +274,24 @@ const FileDetail = ({
                   setOpenVersion({version: versionNode, index: index});
                 }}
               />
-            </Grid.Column>
-          </Grid.Row>
-        )}
-        <Grid.Row>
-          <Grid.Column mobile={16} tablet={16} computer={13}>
-            <FilePreview file={fileNode} />
+            </Segment>
           </Grid.Column>
         </Grid.Row>
-        {dialog !== false && (
-          <FileDetailModal
-            match={match}
-            studyId={studyId}
-            fileNode={fileNode}
-            onCloseModal={() => setDialog(false)}
-            dialog={dialog}
-            onUploadClick={() => setDialog('upload')}
-            openedVersion={versionOpened}
-            downloadFileMutation={downloadFileMutation}
-            allowUpload={allowUpload}
-          />
-        )}
-      </Grid>
-    </>
+      )}
+      {dialog !== false && (
+        <FileDetailModal
+          match={match}
+          studyId={studyId}
+          fileNode={fileNode}
+          onCloseModal={() => setDialog(false)}
+          dialog={dialog}
+          onUploadClick={() => setDialog('upload')}
+          openedVersion={versionOpened}
+          downloadFileMutation={downloadFileMutation}
+          allowUpload={allowUpload}
+        />
+      )}
+    </Grid>
   );
 };
 
