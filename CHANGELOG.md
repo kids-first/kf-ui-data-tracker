@@ -1,5 +1,18 @@
 # Kids First Data Tracker Change History
 
+## Release 0.16.3
+
+### Summary
+
+- Emojis: ♻️ x1, 🐛 x1
+- Categories: Other Changes x1, Fixes x1
+
+### New features and changes
+
+- [#843](https://github.com/kids-first/kf-ui-data-tracker/pull/843) - ♻️ Redirect the upload drop zone to new flow - [04a2bdde](https://github.com/kids-first/kf-ui-data-tracker/commit/04a2bdde2409c2708a8a0f8f7ae9be363a1598ca) by [dankolbman](https://github.com/dankolbman)
+- [#844](https://github.com/kids-first/kf-ui-data-tracker/pull/844) - 🐛 Pass correct study object to upload bar - [10adcd92](https://github.com/kids-first/kf-ui-data-tracker/commit/10adcd92c8b38cfec0cebb3a0b4567dcf489fabe) by [dankolbman](https://github.com/dankolbman)
+
+
 ## Release 0.16.2
 
 ### Summary
