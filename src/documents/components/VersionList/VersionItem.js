@@ -70,6 +70,29 @@ const VersionItem = ({
             </Label>
           }
         />
+        <Popup
+          inverted
+          position="top center"
+          content="Preview this Version"
+          trigger={
+            <Label
+              basic
+              size="mini"
+              as={Button}
+              onClick={e => {
+                e.stopPropagation();
+                window.open(
+                  `/study/${studyId}/documents/${fileId}/versions/${
+                    versionNode.kfId
+                  }`,
+                );
+              }}
+            >
+              <Icon name="eye" />
+              Preview
+            </Label>
+          }
+        />
       </Table.Cell>
     </Table.Row>
   );
