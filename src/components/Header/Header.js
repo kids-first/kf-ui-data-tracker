@@ -145,6 +145,9 @@ const Header = ({location}) => {
         {loggedIn && !location.pathname.includes('/versions/') && (
           <>
             <Menu.Item as={Nav} to="/" content="Studies" />
+            {hasPermission(profile, 'view_settings') && (
+              <Menu.Item as={Nav} to="/releases" content="Releases" />
+            )}
             <Menu.Menu position="right">
               {hasPermission(profile, 'add_referraltoken') && (
                 <AddUserButton profile={profile} />
