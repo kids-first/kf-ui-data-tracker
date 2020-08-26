@@ -16,7 +16,6 @@ import {
   Header,
   Icon,
 } from 'semantic-ui-react';
-import UploadWizard from '../modals/UploadWizard/UploadWizard';
 import NotFoundView from '../../views/NotFoundView';
 import ListFilterBar from '../components/ListFilterBar/ListFilterBar';
 import {hasPermission} from '../../common/permissions';
@@ -151,9 +150,7 @@ const StudyFilesListView = ({
     (hasPermission(myProfile, 'change_file') ||
       hasPermission(myProfile, 'change_my_study_file'));
 
-  const [dialog, setDialog] = useState(false);
   // View state
-  const [uploadedFile, setFile] = useState(false);
   const [updateFileError, setUpdateFileError] = useState(null);
   const [filters, setFilters] = useState({
     typeFilterStatus: '',
@@ -301,20 +298,6 @@ const StudyFilesListView = ({
               )}
             </>
           )}
-          {dialog && (
-            <UploadWizard
-              history={history}
-              studyId={kfId}
-              file={uploadedFile}
-              fileList={files}
-              onCloseDialog={() => {
-                setFile(false);
-                setDialog(false);
-              }}
-              allowUploadFile={allowUploadFile}
-              allowUploadVersion={allowUploadVersion}
-            />
-          )}
         </Grid.Column>
       </Grid.Row>
       {(allowUploadFile || allowUploadVersion) && (
@@ -322,12 +305,7 @@ const StudyFilesListView = ({
           <Responsive
             as={UploadContainer}
             minWidth={Responsive.onlyTablet.minWidth}
-            handleUpload={file => {
-              setFile(file);
-              return !files.length
-                ? history.push('documents/new-document', {file})
-                : setDialog(true);
-            }}
+            handleUpload={file => onUpload(file)}
           />
         </Grid.Row>
       )}
