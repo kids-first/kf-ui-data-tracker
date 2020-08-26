@@ -76,7 +76,7 @@ const UploadBar = ({
                   file: e.target.files[0],
                   study: study.id,
                 },
-              });
+              }).catch(err => err);
             }}
           />
           <Message.Header>Uploaded File:</Message.Header>
@@ -129,10 +129,7 @@ const UploadView = ({match, history, location}) => {
   });
 
   // Mutation to update a document with a new version
-  const [
-    updateVersion,
-    {error: updateError},
-  ] = useMutation(UPDATE_VERSION);
+  const [updateVersion, {error: updateError}] = useMutation(UPDATE_VERSION);
 
   useEffect(() => {
     if (!location.state) return;
@@ -197,7 +194,7 @@ const UploadView = ({match, history, location}) => {
     <Container as={Segment} vertical basic>
       <Header as="h1">Create a New Document</Header>
       <UploadBar
-        study={study}
+        study={study.data.study}
         version={version}
         createVersion={createVersion}
         versionLoading={versionLoading}
