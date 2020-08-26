@@ -1,5 +1,21 @@
 # Kids First Data Tracker Change History
 
+## Release 0.16.2
+
+### Summary
+
+- Emojis: ♻️ x1, ✨ x1, 🎨 x1, 🐛 x1, 🔥 x1
+- Categories: Other Changes x2, Additions x1, Fixes x1, Removals x1
+
+### New features and changes
+
+- [#840](https://github.com/kids-first/kf-ui-data-tracker/pull/840) - ♻️ New document upload flow - [5a0e2cc2](https://github.com/kids-first/kf-ui-data-tracker/commit/5a0e2cc2ce27cf729dafa4887416032dcf3784bb) by [dankolbman](https://github.com/dankolbman)
+- [#833](https://github.com/kids-first/kf-ui-data-tracker/pull/833) - ✨ Add analysis summary to file detail - [22f9b23a](https://github.com/kids-first/kf-ui-data-tracker/commit/22f9b23ab121fdbdef95a8431f640f3ec441f347) by [dankolbman](https://github.com/dankolbman)
+- [#841](https://github.com/kids-first/kf-ui-data-tracker/pull/841) - 🎨 Add background to study header - [83a2db4e](https://github.com/kids-first/kf-ui-data-tracker/commit/83a2db4e3d9e87c7a84f17789a999098bcaa20b8) by [dankolbman](https://github.com/dankolbman)
+- [#838](https://github.com/kids-first/kf-ui-data-tracker/pull/838) - 🐛 Wait for queries before building fragments - [037ecfec](https://github.com/kids-first/kf-ui-data-tracker/commit/037ecfec8e93b491dc56856c22768d149abd90c3) by [dankolbman](https://github.com/dankolbman)
+- [#836](https://github.com/kids-first/kf-ui-data-tracker/pull/836) - 🔥 Remove new document title and file name similarity checking - [3991e8b6](https://github.com/kids-first/kf-ui-data-tracker/commit/3991e8b6b376472d7d91d6727825cd274e47a258) by [XuTheBunny](https://github.com/XuTheBunny)
+
+
 ## Release 0.16.1
 
 ### Summary
