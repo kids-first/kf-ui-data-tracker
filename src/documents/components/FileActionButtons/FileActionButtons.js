@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Button, Divider, Icon, Popup, Responsive} from 'semantic-ui-react';
-import {downloadFile, createDateSort} from '../../utilities';
+import {downloadFile, fileSortedVersions} from '../../utilities';
 import CopyButton from '../../../components/CopyButton/CopyButton';
 /**
  * Simple Icon Buttons to download and delete a file passed in as the node prop
@@ -32,6 +32,27 @@ const FileActionButtons = ({
       <Popup
         inverted
         position="top left"
+        content="Preview latest version"
+        trigger={
+          <Button
+            basic
+            compact
+            icon="eye"
+            onClick={e => {
+              e.stopPropagation();
+              e.preventDefault();
+              window.open(
+                `/study/${studyId}/documents/${node.kfId}/versions/${
+                  fileSortedVersions(node)[0].node.kfId
+                }`,
+              );
+            }}
+          />
+        }
+      />
+      <Popup
+        inverted
+        position="top left"
         icon="download"
         content="Download latest version"
         trigger={
@@ -39,9 +60,6 @@ const FileActionButtons = ({
             as="a"
             href={
               node.downloadUrl +
-              `/version/${
-                node.versions.edges.sort(createDateSort)[0].node.kfId
-              }`
             }
             basic
             compact
