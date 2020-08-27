@@ -14,6 +14,14 @@ exports[`File Action Buttons renders correctly -- default look 1`] = `
         class="copy icon"
       />
     </button>
+    <button
+      class="ui basic compact icon button"
+    >
+      <i
+        aria-hidden="true"
+        class="eye icon"
+      />
+    </button>
     <a
       class="ui basic compact icon button"
       data-testid="download-file"
@@ -50,6 +58,14 @@ exports[`File Action Buttons renders correctly -- default look 2`] = `
       <i
         aria-hidden="true"
         class="copy icon"
+      />
+    </button>
+    <button
+      class="ui basic compact icon button"
+    >
+      <i
+        aria-hidden="true"
+        class="eye icon"
       />
     </button>
     <a
@@ -90,6 +106,14 @@ exports[`File Action Buttons renders correctly -- default look 3`] = `
         class="copy icon"
       />
     </button>
+    <button
+      class="ui basic compact icon button"
+    >
+      <i
+        aria-hidden="true"
+        class="eye icon"
+      />
+    </button>
     <a
       class="ui basic compact icon button"
       data-testid="download-file"
@@ -128,6 +152,14 @@ exports[`File Action Buttons renders correctly -- fluid look 1`] = `
         class="copy icon"
       />
     </button>
+    <button
+      class="ui basic compact icon button"
+    >
+      <i
+        aria-hidden="true"
+        class="eye icon"
+      />
+    </button>
     <a
       class="ui basic compact icon button"
       data-testid="download-file"
@@ -164,6 +196,14 @@ exports[`File Action Buttons renders correctly -- vertical look 1`] = `
       <i
         aria-hidden="true"
         class="copy icon"
+      />
+    </button>
+    <button
+      class="ui basic compact icon button"
+    >
+      <i
+        aria-hidden="true"
+        class="eye icon"
       />
     </button>
     <a
