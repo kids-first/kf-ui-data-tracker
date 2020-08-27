@@ -44,6 +44,30 @@ const ActionButtons = ({
     </Header>
     <Segment raised attached secondary>
       <Popup
+        content="Preview latest version"
+        position="top center"
+        inverted
+        trigger={
+          <Button
+            fluid
+            className="mb-15"
+            icon="eye"
+            primary
+            size="mini"
+            labelPosition="left"
+            onClick={e => {
+              e.preventDefault();
+              window.open(
+                `/study/${studyId}/documents/${fileNode.kfId}/versions/${
+                  fileSortedVersions(fileNode)[0].node.kfId
+                }`,
+              );
+            }}
+            content="PREVIEW"
+          />
+        }
+      />
+      <Popup
         inverted
         position="top center"
         icon="download"
@@ -57,7 +81,7 @@ const ActionButtons = ({
                 fileNode.versions.edges.sort(createDateSort)[0].node.kfId
               }`
             }
-            primary
+            color="grey"
             icon="download"
             fluid
             size="mini"
