@@ -46,6 +46,10 @@ const NavBarView = ({match, location, history}) => {
 
   const isResearch = match.path.includes('research');
 
+  if (location.pathname.includes('/versions/')) {
+    return <></>;
+  }
+
   if (error)
     return (
       <Container as={Segment} basic>
