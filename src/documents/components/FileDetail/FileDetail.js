@@ -77,9 +77,7 @@ const ActionButtons = ({
             as="a"
             href={
               fileNode.downloadUrl +
-              `/version/${
-                fileNode.versions.edges.sort(createDateSort)[0].node.kfId
-              }`
+              `/version/${fileSortedVersions(fileNode)[0].node.kfId}`
             }
             color="grey"
             icon="download"

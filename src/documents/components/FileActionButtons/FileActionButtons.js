@@ -21,8 +21,7 @@ const FileActionButtons = ({
       <CopyButton
         data-testid="copy-file-id"
         textToCopy={
-          node.downloadUrl +
-          `/version/${node.versions.edges.sort(createDateSort)[0].node.kfId}`
+          node.downloadUrl + `/version/${fileSortedVersions(node)[0].node.kfId}`
         }
         basic
         compact
@@ -60,6 +59,7 @@ const FileActionButtons = ({
             as="a"
             href={
               node.downloadUrl +
+              `/version/${fileSortedVersions(node)[0].node.kfId}`
             }
             basic
             compact
