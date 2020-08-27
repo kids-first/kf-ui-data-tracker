@@ -25,7 +25,7 @@ exports[`File Action Buttons renders correctly -- default look 1`] = `
     <a
       class="ui basic compact icon button"
       data-testid="download-file"
-      href="http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167/version/FV_NVV741M1"
+      href="http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167/version/FV_KCDKCDYR"
       role="button"
     >
       <i
@@ -71,7 +71,7 @@ exports[`File Action Buttons renders correctly -- default look 2`] = `
     <a
       class="ui basic compact icon button"
       data-testid="download-file"
-      href="http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167/version/FV_NVV741M1"
+      href="http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167/version/FV_KCDKCDYR"
       role="button"
     >
       <i
@@ -117,7 +117,7 @@ exports[`File Action Buttons renders correctly -- default look 3`] = `
     <a
       class="ui basic compact icon button"
       data-testid="download-file"
-      href="http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167/version/FV_NVV741M1"
+      href="http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167/version/FV_KCDKCDYR"
       role="button"
     >
       <i
@@ -163,7 +163,7 @@ exports[`File Action Buttons renders correctly -- fluid look 1`] = `
     <a
       class="ui basic compact icon button"
       data-testid="download-file"
-      href="http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167/version/FV_NVV741M1"
+      href="http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167/version/FV_KCDKCDYR"
       role="button"
     >
       <i
@@ -209,7 +209,7 @@ exports[`File Action Buttons renders correctly -- vertical look 1`] = `
     <a
       class="ui basic compact icon button"
       data-testid="download-file"
-      href="http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167/version/FV_NVV741M1"
+      href="http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167/version/FV_KCDKCDYR"
       role="button"
     >
       <i
