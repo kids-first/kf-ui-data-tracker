@@ -1,15 +1,46 @@
+[context.production]
+  publish = "build/"
+  ignore = """
+  echo 'Check for tag on commit. If there is no tag, we will abort the build'         
+  git describe --exact-match --tags HEAD                                              
+  RES=$?                                                                              
+  if [ "$RES" = 0 ]; then                                                             
+      exit 1                                                                          
+  else                                                                                
+      exit 0                                                                          
+  fi  
+  """
+
+[context.master]
+  command = "yarn build"
+
+[context.master.environment]
+  REACT_APP_ENV = "qa"
+  REACT_APP_AUTH0_REDIRECT_URI = "https://data-tracker-qa.kidsfirstdrc.org"
+  REACT_APP_AUTH0_LOGOUT_REDIRECT_URI = "https://data-tracker-qa.kidsfirstdrc.org"
+  REACT_APP_STUDY_API = "https://kf-study-creator-qa.kidsfirstdrc.org"
+  REACT_APP_COORD_API = "https://kf-release-coord-qa.kidsfirstdrc.org"
+  REACT_APP_COORD_UI = "https://kf-ui-release-coordinator-qa.kidsfirstdrc.org/"
+
 [context.deploy-preview]
   publish = "build/"
   command = "REACT_APP_AUTH0_REDIRECT_URI=$DEPLOY_PRIME_URL/callback REACT_APP_AUTH0_LOGOUT_REDIRECT_URI=$DEPLOY_PRIME_URL/logout yarn build"
 
-[context.master]
+[context.deploy-preview.environment]
+  REACT_APP_ENV = "dev"
+  REACT_APP_STUDY_API = "https://kf-study-creator-dev.kidsfirstdrc.org"
+  REACT_APP_COORD_API = "https://kf-release-coord-dev.kidsfirstdrc.org"
+  REACT_APP_COORD_UI = "https://kf-ui-release-coordinator-dev.kidsfirstdrc.org/"
+
+[context.branch-deploy]
+  publish = "build/"
   command = "REACT_APP_AUTH0_REDIRECT_URI=$DEPLOY_PRIME_URL/callback REACT_APP_AUTH0_LOGOUT_REDIRECT_URI=$DEPLOY_PRIME_URL/logout yarn build"
 
-[context.master.environment]
-  REACT_APP_ENV = "qa"
-  REACT_APP_STUDY_API = "https://kf-study-creator-qa.kidsfirstdrc.org"
-  REACT_APP_COORD_API = "https://kf-release-coord-qa.kidsfirstdrc.org"
-  REACT_APP_COORD_UI = "https://kf-ui-release-coordinator-qa.kidsfirstdrc.org/"
+[context.branch-deploy.environment]
+  REACT_APP_ENV = "dev"
+  REACT_APP_STUDY_API = "https://kf-study-creator-dev.kidsfirstdrc.org"
+  REACT_APP_COORD_API = "https://kf-release-coord-dev.kidsfirstdrc.org"
+  REACT_APP_COORD_UI = "https://kf-ui-release-coordinator-dev.kidsfirstdrc.org/"
 
 [[redirects]]
   from = "/*"
