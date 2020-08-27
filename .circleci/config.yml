@@ -117,8 +117,31 @@ jobs:
       - run:
           name: Upload jest coverage
           command: yarn codecov -f coverage/jest.json
+  deploy:
+    docker:
+      - image: circleci/node:11.12.0
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
+      - run:
+          name: Install deploy dependencies
+          command: yarn add netlify-cli
+      - jq/install
+      - run:
+          name: Build bundle
+          command: yarn build
+      - run:
+          name: Deploy and publish prod on Netlify
+          command: |
+            DEPLOY_ID=$(printf 'y' | ./node_modules/.bin/netlify deploy -s=$NETLIFY_SITE --message "Release triggered from CircleCI" --prod --json | jq -r '.deploy_id')
+            echo "Deploy $DEPLOY_ID"
+            ./node_modules/.bin/netlify api lockDeploy --data '{"deploy_id": "'${DEPLOY_ID}'"}'
 
-
+orbs:
+  jq: circleci/jq@2.2.0
 workflows:
   version: 2
   tests:
@@ -127,6 +150,14 @@ workflows:
       - integration_tests
       - coverage:
           requires:
-              - unit_tests
-              - integration_tests
-
+            - unit_tests
+            - integration_tests
+      - deploy:
+          requires:
+            - unit_tests
+            - integration_tests
+          filters:
+            branches:
+              only: master
+            tags:
+              only: /^([0-9]+)\.([0-9]+)\.([0-9]+)$/
