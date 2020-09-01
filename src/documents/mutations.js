@@ -7,7 +7,7 @@ export const CREATE_FILE = gql`
     $version: ID!
     $study: ID
     $name: String!
-    $fileType: FileFileType!
+    $fileType: FileType!
     $description: String!
     $tags: [String]
   ) {
@@ -33,7 +33,7 @@ export const UPDATE_FILE = gql`
     $kfId: String!
     $name: String
     $description: String
-    $fileType: FileFileType!
+    $fileType: FileType!
     $tags: [String]
   ) {
     updateFile(
