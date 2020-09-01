@@ -19,7 +19,7 @@
 
 [context.deploy-preview.environment]
   REACT_APP_ENV = "dev"
-  REACT_APP_STUDY_API = "https://kf-study-creator-dev.kidsfirstdrc.org"
+  REACT_APP_STUDY_API = "https://kf-api-study-creator-dev.kidsfirstdrc.org"
   REACT_APP_COORD_API = "https://kf-release-coord-dev.kidsfirstdrc.org"
   REACT_APP_COORD_UI = "https://kf-ui-release-coordinator-dev.kidsfirstdrc.org/"
 
