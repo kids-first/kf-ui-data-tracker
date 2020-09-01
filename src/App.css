@@ -431,3 +431,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.ui.inverted.dimmer > .content > * {
+  color: #000;
+}

@@ -2,22 +2,96 @@ import React, {useState} from 'react';
 import {Amplitude} from '@amplitude/react-amplitude';
 import {
   Button,
+  Card,
+  Dimmer,
   Divider,
   Form,
   Header,
   Icon,
   Input,
+  Label,
   Message,
+  Placeholder,
+  Radio,
   Segment,
 } from 'semantic-ui-react';
 import {Formik, Field} from 'formik';
 import {EditorState, convertToRaw, ContentState} from 'draft-js';
 import MarkdownEditor from '../components/FileDetail/MarkdownEditor';
-import SelectElement from '../components/FileDetail/SelectElement';
 import draftToMarkdown from 'draftjs-to-markdown';
 
 import {fileTypeDetail} from '../../common/enums';
 import {urls} from '../../common/urls';
+
+const TypeCardPlaceholder = props => (
+  <Card>
+    <Card.Content>
+      <Label color="yellow" corner="right">
+        <Icon name="star" />
+      </Label>
+      <Placeholder>
+        <Placeholder.Header image>
+          <Placeholder.Line />
+          <Placeholder.Line />
+        </Placeholder.Header>
+        <Placeholder.Paragraph>
+          <Placeholder.Line length="medium" />
+          <Placeholder.Line length="short" />
+        </Placeholder.Paragraph>
+      </Placeholder>
+    </Card.Content>
+  </Card>
+);
+
+const TypeCard = ({
+  field: {name, onChange},
+  form: {values, setFieldValue},
+  id,
+  expedited,
+}) => (
+  <Card
+    color={id === values.file_type ? (expedited ? 'yellow' : 'blue') : null}
+    onClick={() => {
+      setFieldValue(name, id);
+    }}
+  >
+    <Card.Content>
+      {expedited && (
+        <Label color="yellow" corner="right">
+          <Icon color="" name="star" />
+        </Label>
+      )}
+
+      <Card.Header>
+        <Radio
+          name={name}
+          id={id}
+          value={id}
+          checked={id === values.file_type}
+          onChange={onChange}
+          label={() => (
+            <Icon
+              name={fileTypeDetail[id].icon}
+              size="large"
+              bordered
+              circular
+              inverted
+              color={
+                id === values.file_type
+                  ? expedited
+                    ? 'yellow'
+                    : 'blue'
+                  : 'black'
+              }
+            />
+          )}
+        />
+        {fileTypeDetail[id].title}
+      </Card.Header>
+      <Card.Description>{fileTypeDetail[id].description}</Card.Description>
+    </Card.Content>
+  </Card>
+);
 
 const NewDocumentForm = ({
   values,
@@ -37,6 +111,14 @@ const NewDocumentForm = ({
     EditorState.createWithContent(ContentState.createFromText('')),
   );
 
+  const generalTypes = Object.keys(fileTypeDetail).filter(
+    item => fileTypeDetail[item].requiredColumns.length === 0,
+  );
+
+  const expeditedTypes = Object.keys(fileTypeDetail).filter(
+    item => fileTypeDetail[item].requiredColumns.length > 0,
+  );
+
   return (
     <>
       <Form.Field required>
@@ -45,35 +127,59 @@ const NewDocumentForm = ({
           Help the DRC understand the purpose of this document by classifying it
           as the appropriate type.
         </p>
+        <Header size="small">
+          <Icon name="shipping fast" />
+          Expedited Types
+        </Header>
+        <Dimmer.Dimmable>
+          {expeditedTypes.length ? (
+            <Card.Group itemsPerRow={3}>
+              {expeditedTypes.map(item => (
+                <Field
+                  expedited
+                  component={TypeCard}
+                  name="file_type"
+                  id={item}
+                  label={item}
+                  key={item}
+                />
+              ))}
+            </Card.Group>
+          ) : (
+            <Card.Group itemsPerRow={3}>
+              <TypeCardPlaceholder />
+              <TypeCardPlaceholder />
+              <TypeCardPlaceholder />
+            </Card.Group>
+          )}
+          <Dimmer active={!expeditedTypes.length} inverted>
+            <Header size="small">No expedited types available</Header>
+            <p>
+              If you'd like to have this file processed faster, please consider
+              formatting the file according to one of the{' '}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={urls.expeditedFiles}
+              >
+                file types
+              </a>
+              .
+            </p>
+          </Dimmer>
+        </Dimmer.Dimmable>
         <Header size="small">General Types</Header>
-        {Object.keys(fileTypeDetail).map(item => (
-          <Form.Field key={item}>
+        <Card.Group itemsPerRow={3}>
+          {generalTypes.map(item => (
             <Field
-              component={SelectElement}
+              component={TypeCard}
               name="file_type"
               id={item}
               label={item}
+              key={item}
             />
-          </Form.Field>
-        ))}
-        <Header size="small">Expedited Types</Header>
-        <Message icon>
-          <Icon name="info circle" />
-          <Message.Content>
-            <Message.Header>Does not Qualify</Message.Header>
-            This file does not meet requirements for any of the expedited types.
-            If you'd like to have this file processed faster, please consider
-            formatting the file according to one of the{' '}
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href={urls.expeditedFiles}
-            >
-              file types
-            </a>
-            .
-          </Message.Content>
-        </Message>
+          ))}
+        </Card.Group>
       </Form.Field>
 
       <Divider />
@@ -149,7 +255,7 @@ const NewDocumentForm = ({
   );
 };
 
-const FormikWrapper = ({handleSubmit, studyFiles}, ...props) => (
+const FormikWrapper = ({handleSubmit, studyFiles, ...props}) => (
   <Amplitude
     eventProperties={inheritedProps => ({
       ...inheritedProps,
