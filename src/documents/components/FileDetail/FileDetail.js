@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
+import {Amplitude} from '@amplitude/react-amplitude';
 import {withRouter, Link} from 'react-router-dom';
 import AvatarTimeAgo from '../../../components/AvatarTimeAgo/AvatarTimeAgo';
 import VersionList from '../VersionList/VersionList';
@@ -41,30 +42,42 @@ const ActionButtons = ({
       Actions
     </Header>
     <Segment raised attached secondary>
-      <Popup
-        content="Preview latest version"
-        position="top center"
-        inverted
-        trigger={
-          <Button
-            fluid
-            className="mb-15"
-            icon="eye"
-            primary
-            size="mini"
-            labelPosition="left"
-            onClick={e => {
-              e.preventDefault();
-              window.open(
-                `/study/${studyId}/documents/${fileNode.kfId}/versions/${
-                  fileSortedVersions(fileNode)[0].node.kfId
-                }`,
-              );
-            }}
-            content="PREVIEW"
+      <Amplitude
+        eventProperties={inheritedProps => ({
+          ...inheritedProps,
+          scope: inheritedProps.scope
+            ? [...inheritedProps.scope, 'button', 'preview button']
+            : ['button', 'preview button'],
+        })}
+      >
+        {({logEvent}) => (
+          <Popup
+            content="Preview latest version"
+            position="top center"
+            inverted
+            trigger={
+              <Button
+                fluid
+                className="mb-15"
+                icon="eye"
+                primary
+                size="mini"
+                labelPosition="left"
+                onClick={e => {
+                  logEvent('click');
+                  e.preventDefault();
+                  window.open(
+                    `/study/${studyId}/documents/${fileNode.kfId}/versions/${
+                      fileSortedVersions(fileNode)[0].node.kfId
+                    }`,
+                  );
+                }}
+                content="PREVIEW"
+              />
+            }
           />
-        }
-      />
+        )}
+      </Amplitude>
       <Popup
         inverted
         position="top center"

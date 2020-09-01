@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Amplitude} from '@amplitude/react-amplitude';
 import {Button, Divider, Icon, Popup, Responsive} from 'semantic-ui-react';
 import {downloadFile, fileSortedVersions} from '../../utilities';
 import CopyButton from '../../../components/CopyButton/CopyButton';
@@ -28,27 +29,39 @@ const FileActionButtons = ({
         position="top left"
         tooltip="Copy download link"
       />
-      <Popup
-        inverted
-        position="top left"
-        content="Preview latest version"
-        trigger={
-          <Button
-            basic
-            compact
-            icon="eye"
-            onClick={e => {
-              e.stopPropagation();
-              e.preventDefault();
-              window.open(
-                `/study/${studyId}/documents/${node.kfId}/versions/${
-                  fileSortedVersions(node)[0].node.kfId
-                }`,
-              );
-            }}
+      <Amplitude
+        eventProperties={inheritedProps => ({
+          ...inheritedProps,
+          scope: inheritedProps.scope
+            ? [...inheritedProps.scope, 'button', 'preview button']
+            : ['button', 'preview button'],
+        })}
+      >
+        {({logEvent}) => (
+          <Popup
+            inverted
+            position="top left"
+            content="Preview latest version"
+            trigger={
+              <Button
+                basic
+                compact
+                icon="eye"
+                onClick={e => {
+                  logEvent('click');
+                  e.stopPropagation();
+                  e.preventDefault();
+                  window.open(
+                    `/study/${studyId}/documents/${node.kfId}/versions/${
+                      fileSortedVersions(node)[0].node.kfId
+                    }`,
+                  );
+                }}
+              />
+            }
           />
-        }
-      />
+        )}
+      </Amplitude>
       <Popup
         inverted
         position="top left"
