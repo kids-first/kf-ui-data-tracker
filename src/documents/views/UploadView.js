@@ -190,6 +190,10 @@ const UploadView = ({match, history, location}) => {
       .catch(err => err);
   };
 
+  if (!study.data) {
+    return <></>;
+  }
+
   return (
     <Container as={Segment} vertical basic>
       <Header as="h1">Create a New Document</Header>
