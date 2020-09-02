@@ -142,6 +142,9 @@ const NewDocumentForm = ({
           )}
         </Amplitude>
       </Form.Field>
+      {errors.all && (
+        <Message icon="warning" negative content={errors.all.message} />
+      )}
     </>
   );
 };
@@ -180,7 +183,7 @@ const FormikWrapper = ({handleSubmit, studyFiles}, ...props) => (
       onSubmit={handleSubmit}
     >
       {formikProps => (
-        <Form onSubmit={formikProps.handleSubmit}>
+        <Form onSubmit={props => formikProps.handleSubmit(props, formikProps)}>
           <NewDocumentForm
             {...props}
             {...formikProps}

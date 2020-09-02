@@ -151,7 +151,7 @@ const UploadView = ({match, history, location}) => {
 
   const version = versionData && versionData.createVersion.version;
 
-  const handleSubmitNewDoc = props => {
+  const handleSubmitNewDoc = (props, formikProps) => {
     const {file_desc, file_name, file_type} = props;
 
     const studyId = match.params.kfId;
@@ -165,13 +165,18 @@ const UploadView = ({match, history, location}) => {
         description: file_desc,
         tags: [],
       },
-    }).then(resp => {
-      const fvId = resp.data.createFile.file.kfId;
-      history.push(`/study/${studyId}/documents/${fvId}`);
-    });
+    })
+      .then(resp => {
+        const fvId = resp.data.createFile.file.kfId;
+        history.push(`/study/${studyId}/documents/${fvId}`);
+      })
+      .catch(err => {
+        formikProps.setSubmitting(false);
+        formikProps.setErrors({all: err});
+      });
   };
 
-  const handleSubmitNewVersion = props => {
+  const handleSubmitNewVersion = (props, formikProps) => {
     const {description, doc} = props;
 
     const studyId = study.data.study.kfId;
@@ -187,8 +192,12 @@ const UploadView = ({match, history, location}) => {
       .then(resp => {
         history.push(`/study/${studyId}/documents/${doc.kfId}`);
       })
-      .catch(err => err);
+      .catch(err => formikProps.setSubmitting(false));
   };
+
+  if (!study.data) {
+    return <></>;
+  }
 
   return (
     <Container as={Segment} vertical basic>
