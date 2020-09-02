@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Amplitude} from '@amplitude/react-amplitude';
 import {useMutation} from '@apollo/react-hooks';
 import {FILE_DOWNLOAD_URL} from '../../mutations';
 import AvatarTimeAgo from '../../../components/AvatarTimeAgo/AvatarTimeAgo';
@@ -70,6 +71,41 @@ const VersionItem = ({
             </Label>
           }
         />
+        <Amplitude
+          eventProperties={inheritedProps => ({
+            ...inheritedProps,
+            scope: inheritedProps.scope
+              ? [...inheritedProps.scope, 'button', 'preview button']
+              : ['button', 'preview button'],
+          })}
+        >
+          {({logEvent}) => (
+            <Popup
+              inverted
+              position="top center"
+              content="Preview this Version"
+              trigger={
+                <Label
+                  basic
+                  size="mini"
+                  as={Button}
+                  onClick={e => {
+                    logEvent('click');
+                    e.stopPropagation();
+                    window.open(
+                      `/study/${studyId}/documents/${fileId}/versions/${
+                        versionNode.kfId
+                      }`,
+                    );
+                  }}
+                >
+                  <Icon name="eye" />
+                  Preview
+                </Label>
+              }
+            />
+          )}
+        </Amplitude>
       </Table.Cell>
     </Table.Row>
   );

@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Amplitude} from '@amplitude/react-amplitude';
 import {Button, Divider, Icon, Popup, Responsive} from 'semantic-ui-react';
-import {downloadFile, createDateSort} from '../../utilities';
+import {downloadFile, fileSortedVersions} from '../../utilities';
 import CopyButton from '../../../components/CopyButton/CopyButton';
 /**
  * Simple Icon Buttons to download and delete a file passed in as the node prop
@@ -21,14 +22,46 @@ const FileActionButtons = ({
       <CopyButton
         data-testid="copy-file-id"
         textToCopy={
-          node.downloadUrl +
-          `/version/${node.versions.edges.sort(createDateSort)[0].node.kfId}`
+          node.downloadUrl + `/version/${fileSortedVersions(node)[0].node.kfId}`
         }
         basic
         compact
         position="top left"
         tooltip="Copy download link"
       />
+      <Amplitude
+        eventProperties={inheritedProps => ({
+          ...inheritedProps,
+          scope: inheritedProps.scope
+            ? [...inheritedProps.scope, 'button', 'preview button']
+            : ['button', 'preview button'],
+        })}
+      >
+        {({logEvent}) => (
+          <Popup
+            inverted
+            position="top left"
+            content="Preview latest version"
+            trigger={
+              <Button
+                basic
+                compact
+                icon="eye"
+                onClick={e => {
+                  logEvent('click');
+                  e.stopPropagation();
+                  e.preventDefault();
+                  window.open(
+                    `/study/${studyId}/documents/${node.kfId}/versions/${
+                      fileSortedVersions(node)[0].node.kfId
+                    }`,
+                  );
+                }}
+              />
+            }
+          />
+        )}
+      </Amplitude>
       <Popup
         inverted
         position="top left"
@@ -39,9 +72,7 @@ const FileActionButtons = ({
             as="a"
             href={
               node.downloadUrl +
-              `/version/${
-                node.versions.edges.sort(createDateSort)[0].node.kfId
-              }`
+              `/version/${fileSortedVersions(node)[0].node.kfId}`
             }
             basic
             compact

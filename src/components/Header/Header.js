@@ -119,7 +119,7 @@ const AddUserButton = ({profile}) => {
   );
 };
 
-const Header = () => {
+const Header = ({location}) => {
   const {loading, error, data} = useQuery(MY_PROFILE);
   const profile = data && data.myProfile;
 
@@ -142,7 +142,7 @@ const Header = () => {
         <Menu.Item header as={NavLink} to="/" activeClassName="">
           Data Tracker
         </Menu.Item>
-        {loggedIn && (
+        {loggedIn && !location.pathname.includes('/versions/') && (
           <>
             <Menu.Item as={Nav} to="/" content="Studies" />
             <Menu.Menu position="right">

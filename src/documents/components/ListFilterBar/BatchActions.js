@@ -1,6 +1,7 @@
 import React from 'react';
+import {Amplitude} from '@amplitude/react-amplitude';
 import {Icon, Button, Segment, Divider, Popup} from 'semantic-ui-react';
-import {downloadFile} from '../../utilities';
+import {downloadFile, fileSortedVersions} from '../../utilities';
 
 /**
  * Batch action buttons (download and deleted), disabled when no file selected
@@ -26,21 +27,68 @@ const BatchActions = ({
     >
       {selection.length + '/' + fileList.length + ' selected '}
     </div>
-    <Button
-      className="h-38"
-      compact
-      basic
-      primary
-      size="large"
-      icon="download"
-      data-testid="batch-download"
-      disabled={disabled}
-      onClick={e => {
-        e.stopPropagation();
-        selection.map(fileId =>
-          downloadFile(studyId, fileId, null, downloadFileMutation),
-        );
-      }}
+    <Amplitude
+      eventProperties={inheritedProps => ({
+        ...inheritedProps,
+        scope: inheritedProps.scope
+          ? [...inheritedProps.scope, 'button', 'preview button']
+          : ['button', 'preview button'],
+      })}
+    >
+      {({logEvent}) => (
+        <Popup
+          inverted
+          position="top left"
+          content="Preview selected documents"
+          trigger={
+            <Button
+              className="h-38"
+              compact
+              basic
+              primary
+              size="large"
+              icon="eye"
+              data-testid="batch-preview"
+              disabled={disabled}
+              onClick={e => {
+                logEvent('click');
+                e.stopPropagation();
+                selection.map(fileId => {
+                  const versionId = fileSortedVersions(
+                    fileList.find(({node}) => node.kfId === fileId).node,
+                  )[0].node.kfId;
+                  return window.open(
+                    `/study/${studyId}/documents/${fileId}/versions/${versionId}`,
+                  );
+                });
+              }}
+            />
+          }
+        />
+      )}
+    </Amplitude>
+    <Popup
+      inverted
+      position="top left"
+      content="Download selected documents"
+      trigger={
+        <Button
+          className="h-38"
+          compact
+          basic
+          primary
+          size="large"
+          icon="download"
+          data-testid="batch-download"
+          disabled={disabled}
+          onClick={e => {
+            e.stopPropagation();
+            selection.map(fileId =>
+              downloadFile(studyId, fileId, null, downloadFileMutation),
+            );
+          }}
+        />
+      }
     />
     {deleteFile && (
       <Popup

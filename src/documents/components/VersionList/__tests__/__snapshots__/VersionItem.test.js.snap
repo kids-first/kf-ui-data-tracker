@@ -61,6 +61,15 @@ exports[`renders correctly 1`] = `
             />
             9.9 kB
           </button>
+          <button
+            class="ui button ui mini basic label"
+          >
+            <i
+              aria-hidden="true"
+              class="eye icon"
+            />
+            Preview
+          </button>
         </td>
       </tr>
     </tbody>
@@ -128,6 +137,15 @@ exports[`renders correctly with 1 as index -- status dot 1`] = `
               class="download icon"
             />
             9.9 kB
+          </button>
+          <button
+            class="ui button ui mini basic label"
+          >
+            <i
+              aria-hidden="true"
+              class="eye icon"
+            />
+            Preview
           </button>
         </td>
       </tr>
@@ -198,6 +216,15 @@ exports[`renders correctly with not enough data 1`] = `
             />
             Size Unknown
           </button>
+          <button
+            class="ui button ui mini basic label"
+          >
+            <i
+              aria-hidden="true"
+              class="eye icon"
+            />
+            Preview
+          </button>
         </td>
       </tr>
       <tr
@@ -253,6 +280,15 @@ exports[`renders correctly with not enough data 1`] = `
               class="download icon"
             />
             Size Unknown
+          </button>
+          <button
+            class="ui button ui mini basic label"
+          >
+            <i
+              aria-hidden="true"
+              class="eye icon"
+            />
+            Preview
           </button>
         </td>
       </tr>

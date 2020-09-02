@@ -77,6 +77,15 @@ exports[`renders with more than one versions 1`] = `
             />
             5.5 kB
           </button>
+          <button
+            class="ui button ui mini basic label"
+          >
+            <i
+              aria-hidden="true"
+              class="eye icon"
+            />
+            Preview
+          </button>
         </td>
       </tr>
       <tr
@@ -132,6 +141,15 @@ exports[`renders with more than one versions 1`] = `
             />
             9.9 kB
           </button>
+          <button
+            class="ui button ui mini basic label"
+          >
+            <i
+              aria-hidden="true"
+              class="eye icon"
+            />
+            Preview
+          </button>
         </td>
       </tr>
       <tr
@@ -186,6 +204,15 @@ exports[`renders with more than one versions 1`] = `
               class="download icon"
             />
             5.4 kB
+          </button>
+          <button
+            class="ui button ui mini basic label"
+          >
+            <i
+              aria-hidden="true"
+              class="eye icon"
+            />
+            Preview
           </button>
         </td>
       </tr>
