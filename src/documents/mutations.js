@@ -78,6 +78,7 @@ export const CREATE_VERSION = gql`
       success
       version {
         ...VersionFields
+        validTypes
         analysis {
           id
           columns

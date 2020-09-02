@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Amplitude} from '@amplitude/react-amplitude';
 import {
   Button,
@@ -111,13 +111,27 @@ const NewDocumentForm = ({
     EditorState.createWithContent(ContentState.createFromText('')),
   );
 
-  const generalTypes = Object.keys(fileTypeDetail).filter(
+  const validTypes = Object.keys(fileTypeDetail).filter(k =>
+    version.validTypes.includes(k),
+  );
+
+  const generalTypes = validTypes.filter(
     item => fileTypeDetail[item].requiredColumns.length === 0,
   );
 
-  const expeditedTypes = Object.keys(fileTypeDetail).filter(
+  const expeditedTypes = validTypes.filter(
     item => fileTypeDetail[item].requiredColumns.length > 0,
   );
+
+  useEffect(() => {
+    // Set the default file type if it is not yet set
+    if (expeditedTypes.length) {
+      setFieldValue('file_type', expeditedTypes[0]);
+    } else if (generalTypes.length) {
+      setFieldValue('file_type', 'OTH');
+    }
+    setFieldTouched('file_type');
+  }, [version]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>
@@ -267,7 +281,7 @@ const FormikWrapper = ({handleSubmit, studyFiles, ...props}) => (
     <Formik
       initialValues={{
         file_name: '',
-        file_type: 'OTH',
+        file_type: null,
         file_desc: '',
         file_status: 'PEN',
       }}
