@@ -237,6 +237,47 @@ exports[`Show warning message when input file name is similar to an existing fil
           </div>
         </div>
       </div>
+      <div
+        class="field"
+      >
+        <div
+          class="ui compact segment selectionRadio--card"
+        >
+          <div>
+            <div
+              class="ui radio checkbox"
+            >
+              <input
+                class="hidden"
+                id="S3S"
+                name="file_type"
+                readonly=""
+                tabindex="0"
+                type="radio"
+                value="S3S"
+              />
+              <i
+                aria-hidden="true"
+                class="black aws large bordered circular inverted icon"
+              />
+            </div>
+          </div>
+          <div>
+            <p
+              class="mb-5"
+            >
+              <b>
+                S3 Bucket Inventory
+              </b>
+            </p>
+            <p
+              class="text-wrap-75 text-grey"
+            >
+              Generated S3 bucket inventories.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
     <div
       class="required field"
@@ -763,6 +804,47 @@ exports[`Show warning message when input file name is similar to an existing fil
           </div>
         </div>
       </div>
+      <div
+        class="field"
+      >
+        <div
+          class="ui compact segment selectionRadio--card"
+        >
+          <div>
+            <div
+              class="ui radio checkbox"
+            >
+              <input
+                class="hidden"
+                id="S3S"
+                name="file_type"
+                readonly=""
+                tabindex="0"
+                type="radio"
+                value="S3S"
+              />
+              <i
+                aria-hidden="true"
+                class="black aws large bordered circular inverted icon"
+              />
+            </div>
+          </div>
+          <div>
+            <p
+              class="mb-5"
+            >
+              <b>
+                S3 Bucket Inventory
+              </b>
+            </p>
+            <p
+              class="text-wrap-75 text-grey"
+            >
+              Generated S3 bucket inventories.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
     <div
       class="required field"
@@ -1285,6 +1367,47 @@ exports[`Show warning message when input file name is similar to an existing fil
               class="text-wrap-75 text-grey"
             >
               Any useful documents, such as study background information, data dictionaries, etc., that does not clearly fit in the other categories.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="field"
+      >
+        <div
+          class="ui compact segment selectionRadio--card"
+        >
+          <div>
+            <div
+              class="ui radio checkbox"
+            >
+              <input
+                class="hidden"
+                id="S3S"
+                name="file_type"
+                readonly=""
+                tabindex="0"
+                type="radio"
+                value="S3S"
+              />
+              <i
+                aria-hidden="true"
+                class="black aws large bordered circular inverted icon"
+              />
+            </div>
+          </div>
+          <div>
+            <p
+              class="mb-5"
+            >
+              <b>
+                S3 Bucket Inventory
+              </b>
+            </p>
+            <p
+              class="text-wrap-75 text-grey"
+            >
+              Generated S3 bucket inventories.
             </p>
           </div>
         </div>
