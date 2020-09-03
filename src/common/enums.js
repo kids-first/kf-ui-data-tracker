@@ -282,6 +282,8 @@ export const permissionIcon = {
   user: 'user',
   version: 'file alternate',
   volume: 'file archive',
+  analysis: 'calculator',
+  meta: 'sticky note',
 };
 
 // Icon color for different permissions
