@@ -4,7 +4,7 @@ import {UPDATE_FILE, UPDATE_VERSION} from '../mutations';
 import {GET_STUDY_BY_ID, MY_PROFILE} from '../../state/queries';
 import {EditDocumentForm} from '../forms';
 import {fileSortedVersions} from '../utilities';
-import {Button, Modal} from 'semantic-ui-react';
+import {Button, Message, Modal} from 'semantic-ui-react';
 import {hasPermission} from '../../common/permissions';
 
 const EditDocumentModal = ({fileNode, onCloseDialog, studyId}) => {
@@ -13,8 +13,13 @@ const EditDocumentModal = ({fileNode, onCloseDialog, studyId}) => {
       id: Buffer.from('StudyNode:' + studyId).toString('base64'),
     },
   });
-  const [updateFile] = useMutation(UPDATE_FILE);
-  const [updateVersion] = useMutation(UPDATE_VERSION);
+  const [updateFile, {loading: fileLoading, error: fileError}] = useMutation(
+    UPDATE_FILE,
+  );
+  const [
+    updateVersion,
+    {loading: versionLoading, error: versionError},
+  ] = useMutation(UPDATE_VERSION);
   // Check if current user is allowed to edit approval status (version state)
   const {data: profileData} = useQuery(MY_PROFILE);
   const myProfile = profileData && profileData.myProfile;
@@ -28,24 +33,23 @@ const EditDocumentModal = ({fileNode, onCloseDialog, studyId}) => {
   const latestVersion = fileSortedVersions(fileNode)[0].node;
 
   const handleSubmit = async (name, fileType, description, versionStatus) => {
-    try {
-      if (fileNode.name !== name || fileNode.fileType !== fileType) {
-        await updateFile({
-          variables: {kfId: fileNode.kfId, name, fileType},
-        });
-      }
-      if (allowEditVersionStatus && versionStatus !== latestVersion.state) {
-        await updateVersion({
-          variables: {
-            versionId: latestVersion.kfId,
-            description: latestVersion.description,
-            state: versionStatus,
-          },
-        });
-      }
-      onCloseDialog();
-    } catch (err) {
-      console.error(err);
+    if (fileNode.name !== name || fileNode.fileType !== fileType) {
+      updateFile({
+        variables: {kfId: fileNode.kfId, name, fileType},
+      })
+        .then(resp => onCloseDialog())
+        .catch(err => console.log(err));
+    }
+    if (allowEditVersionStatus && versionStatus !== latestVersion.state) {
+      updateVersion({
+        variables: {
+          versionId: latestVersion.kfId,
+          description: latestVersion.description,
+          state: versionStatus,
+        },
+      })
+        .then(resp => onCloseDialog())
+        .catch(err => console.log(err));
     }
   };
 
@@ -72,10 +76,13 @@ const EditDocumentModal = ({fileNode, onCloseDialog, studyId}) => {
         />
       </Modal.Content>
       <Modal.Actions>
+        {versionError && <Message negative content={versionError.message} />}
+        {fileError && <Message negative content={fileError.message} />}
         <Button
           primary
           size="mini"
           type="button"
+          loading={versionLoading || fileLoading}
           onClick={e => {
             e.preventDefault();
             formEl.current.handleSubmit();

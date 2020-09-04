@@ -183,32 +183,44 @@ export const fileTypeDetail = {
   SHM: {
     icon: 'shipping',
     title: 'Biospecimen Manifest',
+    requiredColumns: [],
     description:
       'Tabular files (e.g. CSV, TSV, Excel) containing biospecimen identifiers and metadata (e.g. tissue type, composition) provided to sequencing centers as well as consent type.',
   },
   CLN: {
     icon: 'hospital',
     title: 'Clinical/Phenotypic Data',
+    requiredColumns: [],
     description:
       'Structured files with data linked to the biospecimen identifiers provided in the shipping manifest(s). Exports from data management applications, such as REDCap, are the fastest to process, but we will work with you on most formats.',
   },
   SEQ: {
     icon: 'dna',
     title: 'Sequencing Manifest',
+    requiredColumns: [],
     description:
       'Tabular files (e.g. CSV, TSV, Excel) containing the biospecimen identifiers and the associated genomic data files. Typically provided by the sequencing center.',
   },
   DBG: {
     icon: 'file alternate',
     title: 'dbGaP Submission File',
+    requiredColumns: [],
     description:
       'A document formatted to the dbGaP submission specification for uploading to dbGaP during a new release.',
   },
   OTH: {
     icon: 'question',
     title: 'Other',
+    requiredColumns: [],
     description:
       'Any useful documents, such as study background information, data dictionaries, etc., that does not clearly fit in the other categories.',
+  },
+  S3S: {
+    icon: 'aws',
+    title: 'S3 Bucket Inventory',
+    requiredColumns: ['Bucket', 'Key', 'ETag', 'Size'],
+    description:
+      'Generated S3 bucket inventories.',
   },
 };
 

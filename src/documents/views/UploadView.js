@@ -7,6 +7,7 @@ import {
   Segment,
   Container,
   Icon,
+  Image,
   Button,
   Header,
   Progress,
@@ -15,6 +16,8 @@ import {
 import AnalysisSummary from '../components/FileDetail/AnalysisSummary';
 import NewDocumentForm from '../forms/NewDocumentForm';
 import NewVersionForm from '../forms/NewVersionForm';
+
+import documentChoice from '../../assets/document_choice.svg';
 
 const DocumentTypeChooser = ({type, setType}) => (
   <center>
@@ -218,7 +221,20 @@ const UploadView = ({match, history, location}) => {
             </Segment>
 
             <Segment>
-              <Header>Update or Create a Document</Header>
+              {!type ? (
+                <>
+                  <Image src={documentChoice} size="medium" centered rounded />
+                  <Header textAlign="center">
+                    Update or Create a Document
+                    <Header.Subheader>
+                      Select whether to use this file to create a new document
+                      or add it as a new version to an existing document.
+                    </Header.Subheader>
+                  </Header>
+                </>
+              ) : (
+                <Header>Update or Create a Document</Header>
+              )}
               <DocumentTypeChooser type={type} setType={setType} />
               {type === 'document' && (
                 <NewDocumentForm
