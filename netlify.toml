@@ -37,3 +37,6 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+[[plugins]]
+package = "/plugins/prod-deployment"
