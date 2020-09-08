@@ -117,7 +117,7 @@ jobs:
       - run:
           name: Upload jest coverage
           command: yarn codecov -f coverage/jest.json
-  netlify:
+  production:
     docker:
       - image: circleci/node:11.12.0
     steps:
@@ -125,23 +125,22 @@ jobs:
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
-      - run:
-          name: Install deploy dependencies
-          command: yarn add netlify-cli
-      - jq/install
-      - run:
-          name: Build bundle
-          command: yarn build
-      - run:
-          name: Deploy and publish prod on Netlify
-          command: |
-            DEPLOY_ID=$(printf 'y' | ./node_modules/.bin/netlify deploy -s=$NETLIFY_SITE --message "Release triggered from CircleCI" --prod --json | jq -r '.deploy_id')
-            echo "Deploy $DEPLOY_ID"
-            ./node_modules/.bin/netlify api lockDeploy --data '{"deploy_id": "'${DEPLOY_ID}'"}'
+
+      - run: yarn install
+      - run: yarn add netlify-cli
+      - run: ./node_modules/.bin/netlify build --context=production
+      - aws-static-site-deploy/copy-site:
+          access-key: AWS_ACCESS_KEY_ID
+          secret-key: AWS_SECRET_ACCESS_KEY
+          to: $S3_BUCKET
+          from: build
+          distribution-id: $CLOUDFRONT_DISTRIBUTION
 
 orbs:
-  jq: circleci/jq@2.2.0
+  aws-static-site-deploy: realself/aws-static-site-deploy@1.0.1
+
 workflows:
   version: 2
   tests:
@@ -152,11 +151,11 @@ workflows:
           requires:
             - unit_tests
             - integration_tests
-  deploy:
+  production:
     jobs:
-      - netlify:
+      - production:
           filters:
             tags:
               only: /^([0-9]+)\.([0-9]+)\.([0-9]+)$/
             branches:
-              only: master
+              ignore: /.*/
