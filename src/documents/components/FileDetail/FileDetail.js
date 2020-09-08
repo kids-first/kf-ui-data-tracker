@@ -245,14 +245,6 @@ const FileDetail = ({
                 />
               )}
             </Segment>
-            {sortedVersions && sortedVersions[0].node.analysis && (
-              <Segment className="noBorders">
-                <Header as="h4" color="grey">
-                  Summary
-                </Header>
-                <AnalysisSummary version={sortedVersions[0].node} />
-              </Segment>
-            )}
           </Segment.Group>
         </Grid.Column>
         <Grid.Column mobile={8} tablet={4} computer={3}>
@@ -287,6 +279,18 @@ const FileDetail = ({
                   setOpenVersion({version: versionNode, index: index});
                 }}
               />
+            </Segment>
+          </Grid.Column>
+        </Grid.Row>
+      )}
+      {sortedVersions && sortedVersions[0].node.analysis && (
+        <Grid.Row>
+          <Grid.Column mobile={16} tablet={16} computer={13}>
+            <Segment className="noBorders">
+              <Header as="h4" color="grey">
+                Summary
+              </Header>
+              <AnalysisSummary version={sortedVersions[0].node} />
             </Segment>
           </Grid.Column>
         </Grid.Row>
