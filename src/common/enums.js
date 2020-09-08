@@ -219,8 +219,7 @@ export const fileTypeDetail = {
     icon: 'aws',
     title: 'S3 Bucket Inventory',
     requiredColumns: ['Bucket', 'Key', 'ETag', 'Size'],
-    description:
-      'Generated S3 bucket inventories.',
+    description: 'Generated S3 bucket inventories.',
   },
 };
 
@@ -296,6 +295,7 @@ export const permissionIcon = {
   volume: 'file archive',
   analysis: 'calculator',
   meta: 'sticky note',
+  config: 'wrench',
 };
 
 // Icon color for different permissions
@@ -310,6 +310,7 @@ export const permissionColor = {
   change: 'yellow',
   sync: 'yellow',
   import: 'yellow',
+  extract: 'green',
 };
 
 // Cavatica project workflow types 3 level dropdown options
