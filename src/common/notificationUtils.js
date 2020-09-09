@@ -60,6 +60,9 @@ export const countStudyNotification = (study, isResearch) => {
 
 // Count the missing projects for a given study and return the notification number
 export const countProjectNotification = study => {
+  if (!study.projects || study.projects.edges.length) {
+    return 0;
+  }
   var counts = 0;
   if (
     study.projects.edges.filter(obj => obj.node.projectType === 'HAR')
