@@ -9,6 +9,7 @@ import {
   Dropdown,
   Icon,
   Image,
+  Label,
   Menu,
 } from 'semantic-ui-react';
 import defaultAvatar from '../../assets/defaultAvatar.png';
@@ -146,7 +147,10 @@ const Header = ({location}) => {
           <>
             <Menu.Item as={Nav} to="/" content="Studies" />
             {hasPermission(profile, 'view_settings') && (
-              <Menu.Item as={Nav} to="/releases" content="Releases" />
+              <Menu.Item as={Nav} to="/releases">
+                Releases
+                <Label content="beta" color="blue" attached="bottom right" />
+              </Menu.Item>
             )}
             <Menu.Menu position="right">
               {hasPermission(profile, 'add_referraltoken') && (
