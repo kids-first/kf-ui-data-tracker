@@ -92,6 +92,7 @@ const ActionButtons = ({
             }
             color="grey"
             icon="download"
+            className="mb-15"
             fluid
             size="mini"
             labelPosition="left"
@@ -103,6 +104,24 @@ const ActionButtons = ({
           />
         }
       />
+      {fileTypeDetail[fileNode.fileType].config && (
+        <Popup
+          inverted
+          position="top center"
+          content="Extract config file"
+          trigger={
+            <Button
+              color="yellow"
+              icon="wrench"
+              fluid
+              size="mini"
+              labelPosition="left"
+              onClick={() => setDialog('config')}
+              content="CONFIG"
+            />
+          }
+        />
+      )}
       {(updateFile !== null || deleteFile !== null) && (
         <>
           <Divider />

@@ -3,6 +3,7 @@ import {
   NewVersionModal,
   VersionInfoModal,
   EditDocumentModal,
+  ExtractConfigModal,
 } from '../../modals';
 /**
  * Render NewVersionModal, EditDocumentModal or VersionInfoModal
@@ -46,6 +47,13 @@ const FileDetailModal = ({
           onCloseDialog={onCloseModal}
           onUploadClick={allowUpload ? onUploadClick : null}
           downloadFileMutation={downloadFileMutation}
+        />
+      )}
+      {dialog === 'config' && (
+        <ExtractConfigModal
+          studyId={studyId}
+          fileNode={fileNode}
+          onCloseDialog={onCloseModal}
         />
       )}
     </Fragment>
