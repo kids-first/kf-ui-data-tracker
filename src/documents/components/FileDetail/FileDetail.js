@@ -36,6 +36,7 @@ const ActionButtons = ({
   deleteFile,
   history,
   updateFile,
+  allowExtractConfig,
 }) => (
   <>
     <Header as="h5" attached="top" textAlign="center" color="blue">
@@ -104,7 +105,7 @@ const ActionButtons = ({
           />
         }
       />
-      {fileTypeDetail[fileNode.fileType].config && (
+      {fileTypeDetail[fileNode.fileType].config && allowExtractConfig && (
         <Popup
           inverted
           position="top center"
@@ -187,6 +188,7 @@ const FileDetail = ({
   downloadFileMutation,
   deleteFile,
   tagOptions,
+  allowExtractConfig,
 }) => {
   const studyId = match.params.kfId;
   const [dialog, setDialog] = useState(false);
@@ -277,6 +279,7 @@ const FileDetail = ({
               deleteFile,
               history,
               updateFile,
+              allowExtractConfig,
             }}
           />
         </Grid.Column>
