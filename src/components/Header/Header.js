@@ -18,7 +18,7 @@ import {getPermissions, hasPermission} from '../../common/permissions.js';
 import {auth} from '../../state/auth';
 import InviteModal from '../../modals/InviteModal';
 
-const Nav = props => <NavLink exact {...props} activeClassName="active" />;
+const Nav = props => <NavLink {...props} activeClassName="active" />;
 
 /**
  * Each item will be displayed only if the user has permission to view it.
@@ -145,9 +145,9 @@ const Header = ({location}) => {
         </Menu.Item>
         {loggedIn && !location.pathname.includes('/versions/') && (
           <>
-            <Menu.Item as={Nav} to="/" content="Studies" />
+            <Menu.Item as={Nav} to="/study" content="Studies" />
             {hasPermission(profile, 'view_settings') && (
-              <Menu.Item as={Nav} to="/releases">
+              <Menu.Item as={Nav} to="/releases/history">
                 Releases
                 <Label content="beta" color="blue" attached="bottom right" />
               </Menu.Item>
