@@ -1,5 +1,5 @@
 import React from 'react';
-import BaseHelper from './BaseHelper';
+import BaseHelper from '../../../components/BaseHelper';
 import versioning from '../../../assets/versioning.png';
 
 const Help = () => (
