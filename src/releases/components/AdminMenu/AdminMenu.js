@@ -1,4 +1,5 @@
 import React from 'react';
+import {NavLink} from 'react-router-dom';
 import {Icon, Menu} from 'semantic-ui-react';
 
 const AdminMenu = () => (
@@ -6,7 +7,7 @@ const AdminMenu = () => (
     <Menu.Item>
       <Menu.Header>Admin Panel</Menu.Header>
       <Menu.Menu>
-        <Menu.Item>
+        <Menu.Item as={NavLink} to="/releases/new-release">
           <Icon name="tag" />
           New Release
         </Menu.Item>
