@@ -71,6 +71,7 @@ const Routes = () => (
       />
       <Switch>
         <PrivateRoute exact path="/" component={StudyListView} />
+        <PrivateRoute exact path="/study" component={StudyListView} />
         <ReleaseRoutes path="/releases" />
         <TrackedRoute
           path="/welcome"

@@ -6,7 +6,6 @@ import {GET_RELEASED_STUDY} from '../../state/queries';
 import {ALL_STUDIES} from '../../state/queries';
 import {START_RELEASE} from '../mutations';
 import NewReleaseForm from '../forms/NewReleaseForm';
-import {AdminMenu} from '../components/AdminMenu';
 
 const NewReleaseView = () => {
   const [
@@ -76,16 +75,9 @@ const NewReleaseView = () => {
         <title>{`KF Data Tracker - New Release`}</title>
       </Helmet>
       <Header as="h1">New Data Release</Header>
-      <Grid relaxed="very">
-        <Grid.Column width={3}>
-          <AdminMenu />
-        </Grid.Column>
-        <Grid.Column width={13}>
-          <Segment>
-            <NewReleaseForm handleSubmit={handleSubmit} studies={studies} />
-          </Segment>
-        </Grid.Column>
-      </Grid>
+      <Segment>
+        <NewReleaseForm handleSubmit={handleSubmit} studies={studies} />
+      </Segment>
     </Container>
   );
 };

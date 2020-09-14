@@ -18,8 +18,8 @@ const ReleaseHeader = ({release, loading}) => {
     });
 
   return (
-    <Grid as={Segment} secondary divided color="green">
-      <Label attached="top left" color="green">
+    <Grid as={Segment} secondary divided color="purple">
+      <Label attached="top left" color="purple">
         Latest Publication
       </Label>
       {loading ? (
