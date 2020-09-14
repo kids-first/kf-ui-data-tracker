@@ -25,7 +25,7 @@ const AnalysisSummary = ({version}) => {
 
   return (
     <>
-      <Table definition compact>
+      <Table definition compact="very">
         <Table.Body>
           <Table.Row>
             <Table.Cell width="2">Rows</Table.Cell>
@@ -115,7 +115,8 @@ const ColumnSummary = ({columns}) => {
 
   const tableFooter = () => (
     <Table.Row>
-      <Table.HeaderCell colSpan={3}>
+      <Table.HeaderCell colSpan={1} />
+      <Table.HeaderCell colSpan={2}>
         {allColumns ? (
           <>
             Showing all {columns.length} columns.{' '}
@@ -166,7 +167,9 @@ const ColumnSummary = ({columns}) => {
   });
   return (
     <Table
-      compact
+      celled
+      compact="very"
+      definition
       tableData={allColumns ? columns : columns.slice(0, 5)}
       headerRow={tableHeader}
       footerRow={columns.length > 5 && tableFooter}
