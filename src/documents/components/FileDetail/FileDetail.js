@@ -36,6 +36,7 @@ const ActionButtons = ({
   deleteFile,
   history,
   updateFile,
+  allowExtractConfig,
 }) => (
   <>
     <Header as="h5" attached="top" textAlign="center" color="blue">
@@ -92,6 +93,7 @@ const ActionButtons = ({
             }
             color="grey"
             icon="download"
+            className="mb-15"
             fluid
             size="mini"
             labelPosition="left"
@@ -103,6 +105,24 @@ const ActionButtons = ({
           />
         }
       />
+      {fileTypeDetail[fileNode.fileType].config && allowExtractConfig && (
+        <Popup
+          inverted
+          position="top center"
+          content="Extract config file"
+          trigger={
+            <Button
+              color="yellow"
+              icon="wrench"
+              fluid
+              size="mini"
+              labelPosition="left"
+              onClick={() => setDialog('config')}
+              content="CONFIG"
+            />
+          }
+        />
+      )}
       {(updateFile !== null || deleteFile !== null) && (
         <>
           <Divider />
@@ -168,6 +188,7 @@ const FileDetail = ({
   downloadFileMutation,
   deleteFile,
   tagOptions,
+  allowExtractConfig,
 }) => {
   const studyId = match.params.kfId;
   const [dialog, setDialog] = useState(false);
@@ -258,6 +279,7 @@ const FileDetail = ({
               deleteFile,
               history,
               updateFile,
+              allowExtractConfig,
             }}
           />
         </Grid.Column>

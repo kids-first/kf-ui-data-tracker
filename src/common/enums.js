@@ -186,6 +186,7 @@ export const fileTypeDetail = {
     requiredColumns: [],
     description:
       'Tabular files (e.g. CSV, TSV, Excel) containing biospecimen identifiers and metadata (e.g. tissue type, composition) provided to sequencing centers as well as consent type.',
+    config: false,
   },
   CLN: {
     icon: 'hospital',
@@ -193,6 +194,7 @@ export const fileTypeDetail = {
     requiredColumns: [],
     description:
       'Structured files with data linked to the biospecimen identifiers provided in the shipping manifest(s). Exports from data management applications, such as REDCap, are the fastest to process, but we will work with you on most formats.',
+    config: false,
   },
   SEQ: {
     icon: 'dna',
@@ -200,6 +202,7 @@ export const fileTypeDetail = {
     requiredColumns: [],
     description:
       'Tabular files (e.g. CSV, TSV, Excel) containing the biospecimen identifiers and the associated genomic data files. Typically provided by the sequencing center.',
+    config: false,
   },
   DBG: {
     icon: 'file alternate',
@@ -207,6 +210,7 @@ export const fileTypeDetail = {
     requiredColumns: [],
     description:
       'A document formatted to the dbGaP submission specification for uploading to dbGaP during a new release.',
+    config: false,
   },
   OTH: {
     icon: 'question',
@@ -214,13 +218,14 @@ export const fileTypeDetail = {
     requiredColumns: [],
     description:
       'Any useful documents, such as study background information, data dictionaries, etc., that does not clearly fit in the other categories.',
+    config: false,
   },
   S3S: {
     icon: 'aws',
     title: 'S3 Bucket Inventory',
     requiredColumns: ['Bucket', 'Key', 'ETag', 'Size'],
-    description:
-      'Generated S3 bucket inventories.',
+    description: 'Generated S3 bucket inventories.',
+    config: true,
   },
 };
 
@@ -296,6 +301,7 @@ export const permissionIcon = {
   volume: 'file archive',
   analysis: 'calculator',
   meta: 'sticky note',
+  config: 'wrench',
 };
 
 // Icon color for different permissions
@@ -310,6 +316,7 @@ export const permissionColor = {
   change: 'yellow',
   sync: 'yellow',
   import: 'yellow',
+  extract: 'green',
 };
 
 // Cavatica project workflow types 3 level dropdown options

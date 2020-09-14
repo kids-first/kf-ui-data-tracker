@@ -60,6 +60,10 @@ const FileDetailView = ({match}) => {
     myProfile &&
     (hasPermission(myProfile, 'view_version') ||
       hasPermission(myProfile, 'view_my_version'));
+  const allowExtractConfig =
+    myProfile &&
+    (hasPermission(myProfile, 'extract_version_config') ||
+      hasPermission(myProfile, 'extract_my_version_config'));
   if (loading)
     return (
       <Dimmer active inverted>
@@ -111,6 +115,7 @@ const FileDetailView = ({match}) => {
         allowViewVersion={allowViewVersion}
         updateError={updateError}
         tagOptions={tagOptions}
+        allowExtractConfig={allowExtractConfig}
       />
     </Container>
   );

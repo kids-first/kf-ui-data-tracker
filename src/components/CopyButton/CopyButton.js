@@ -15,7 +15,7 @@ const CopyButton = ({text, textToCopy, icon, tooltip, position, ...props}) => {
       position={position}
       trigger={
         <CopyToClipboard
-          text={text || textToCopy}
+          text={textToCopy || text}
           onCopy={() => {
             setCopied(true);
             setTimeout(() => {
