@@ -1,9 +1,11 @@
 import React from 'react';
 import {useQuery} from '@apollo/react-hooks';
+import {Route, Switch} from 'react-router-dom';
 import {Container, Grid, Menu, Segment} from 'semantic-ui-react';
 import {NavLink, useLocation} from 'react-router-dom';
 import {LATEST_RELEASE} from '../queries';
 import {ReleaseHeader} from '../components/ReleaseHeader';
+import {ReleasesHelp} from '../components/helpers';
 
 const Layout = () => {
   const location = useLocation();
@@ -56,6 +58,9 @@ const Layout = () => {
             </Menu.Item>
           ))}
         </Menu>
+        <Switch>
+          <Route exact path="/releases/history" component={ReleasesHelp} />
+        </Switch>
       </Container>
     </>
   );
