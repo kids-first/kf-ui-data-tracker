@@ -73,50 +73,60 @@ const ValuesPopup = ({values, total}) => {
 const ValueLabel = ({children}) => <code className="label">{children}</code>;
 
 const CommonValues = ({commonValues, distinctValues}) => {
-  const first2 = commonValues.slice(0, 2).map(v => (
+  const formattedValues = commonValues.map(v =>
+    v.length === 0 ? (
+      <>
+        ⛔️<em>empty</em>
+      </>
+    ) : (
+      v
+    ),
+  );
+
+  const first2 = formattedValues.slice(0, 2).map(v => (
     <>
       <ValueLabel key={v}>{v}</ValueLabel>,{' '}
     </>
   ));
 
   let values = null;
-  if (commonValues.length === 0) {
+  if (formattedValues.length === 0) {
     return '';
-  } else if (commonValues.length === 1) {
+  } else if (formattedValues.length === 1) {
     // Only show the first value if there is only one
-    values = <ValueLabel>{commonValues[0]}</ValueLabel>;
-  } else if (commonValues[0].length > 20) {
+    values = <ValueLabel>{formattedValues[0]}</ValueLabel>;
+  } else if (formattedValues[0].length > 20) {
     // Only show the first value of the length is long
     values = (
       <>
-        <ValueLabel>{commonValues[0]}</ValueLabel> and{' '}
+        <ValueLabel>{formattedValues[0]}</ValueLabel> and{' '}
         <ValuesPopup
-          values={commonValues.slice(1)}
+          values={formattedValues.slice(1)}
           total={distinctValues + 2}
         />
       </>
     );
-  } else if (commonValues.length === 2) {
+  } else if (formattedValues.length === 2) {
     // Show first and second values
     values = (
       <>
-        <ValueLabel>{commonValues[0]}</ValueLabel>,{' '}
-        <ValueLabel>{commonValues[1]}</ValueLabel>
+        <ValueLabel>{formattedValues[0]}</ValueLabel>,{' '}
+        <ValueLabel>{formattedValues[1]}</ValueLabel>
       </>
     );
-  } else if (commonValues.length === 3) {
+  } else if (formattedValues.length === 3) {
     // Show first three values
     values = (
       <>
-        {first2} <ValueLabel>{commonValues[2]}</ValueLabel>
+        {first2} <ValueLabel>{formattedValues[2]}</ValueLabel>
       </>
     );
-  } else if (commonValues.length > 3) {
+  } else if (formattedValues.length > 3) {
     // Show first three values and a popup with additional values
     values = (
       <>
-        {first2} <ValueLabel>{commonValues[2]}</ValueLabel>, and{' '}
-        <ValuesPopup values={commonValues.slice(3)} total={distinctValues} />
+        {first2} <ValueLabel>{formattedValues[2]}</ValueLabel>, and{' '}
+        <ValuesPopup values={formattedValues.slice(3)} total={distinctValues} />
       </>
     );
   }
