@@ -56,6 +56,7 @@ const ValuesPopup = ({values, total}) => {
   return (
     <Popup
       inverted
+      hoverable
       trigger={
         <span className="text-blue">
           {' '}
