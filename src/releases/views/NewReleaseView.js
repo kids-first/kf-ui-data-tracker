@@ -1,27 +1,22 @@
 import React from 'react';
 import {Helmet} from 'react-helmet';
 import {useMutation, useQuery} from '@apollo/react-hooks';
-import {Container, Grid, Header, Segment} from 'semantic-ui-react';
+import {Container, Header, Segment} from 'semantic-ui-react';
 import {GET_RELEASED_STUDY} from '../../state/queries';
 import {ALL_STUDIES} from '../../state/queries';
 import {START_RELEASE} from '../mutations';
 import NewReleaseForm from '../forms/NewReleaseForm';
 
 const NewReleaseView = () => {
-  const [
-    startRelease,
-    {loading: startReleaseLoading, error: startReleaseError},
-  ] = useMutation(START_RELEASE, {context: {clientName: 'coordinator'}});
+  const [startRelease] = useMutation(START_RELEASE, {
+    context: {clientName: 'coordinator'},
+  });
 
-  const {
-    loading: studiesLoading,
-    error: studiesError,
-    data: studiesData,
-  } = useQuery(ALL_STUDIES, {
+  const {data: studiesData} = useQuery(ALL_STUDIES, {
     fetchPolicy: 'network-only',
   });
 
-  const {error: releasesError, data: releasesData} = useQuery(
+  const {data: releasesData} = useQuery(
     GET_RELEASED_STUDY,
     {
       context: {clientName: 'coordinator'},

@@ -76,6 +76,18 @@ const NewReleaseForm = ({
         />
       </Form.Field>
 
+      <Form.Field error={touched.title && !!errors.title} required>
+        <Form.Checkbox
+          data-testid="is-major"
+          type="checkbox"
+          id="isMajor"
+          name="isMajor"
+          label="This is a major release"
+          value={values.isMajor}
+          onBlur={handleBlur}
+          onChange={handleChange}
+        />
+      </Form.Field>
       <Amplitude
         eventProperties={inheritedProps => ({
           ...inheritedProps,

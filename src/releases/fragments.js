@@ -10,5 +10,6 @@ export const RELEASE_FIELDS = gql`
     author
     version
     createdAt
+    isMajor
   }
 `;
