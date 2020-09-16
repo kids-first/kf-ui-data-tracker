@@ -137,6 +137,7 @@ context('Invite User Modal', () => {
 
   it('does not display for non-admins', () => {
     cy.as(['Investigators']);
+    cy.reload();
 
     cy.contains('button', 'Invite User').should('not.exist');
   });
