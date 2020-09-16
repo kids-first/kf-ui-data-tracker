@@ -4,9 +4,9 @@ import 'handsontable/dist/handsontable.full.css';
 
 const PreviewTable = ({data}) => {
   const settings = {
-    data: data,
+    data: data.slice(1),
     rowHeaders: true,
-    colHeaders: true,
+    colHeaders: data[0],
     licenseKey: 'non-commercial-and-evaluation',
     stretchH: 'all',
     editor: false,
@@ -17,6 +17,7 @@ const PreviewTable = ({data}) => {
       'filter_action_bar',
     ],
     height: window.innerHeight - 340,
+    columnSorting: true,
   };
 
   return (

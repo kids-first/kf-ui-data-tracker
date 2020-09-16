@@ -62,7 +62,7 @@ const VersionPreviewView = ({match}) => {
   const parseData = (contents, limiteLength) => {
     const parsed = limiteLength
       ? Papa.parse(contents, {
-          preview: 100,
+          preview: 101,
         })
       : Papa.parse(contents);
     setErrors(parsed.errors);
@@ -290,15 +290,15 @@ const VersionPreviewView = ({match}) => {
                 <PreviewTable data={data} />
               </Suspense>
             )}
-            {displayLength >= 100 && version.analysis.nrows !== 99 && (
+            {displayLength >= 101 && version.analysis.nrows !== 100 && (
               <Button
                 fluid
                 content={
-                  displayLength > 100
+                  displayLength > 101
                     ? 'Click here to display first 100 rows'
                     : 'Click here to display all the rows'
                 }
-                onClick={() => getData(displayLength > 100)}
+                onClick={() => getData(displayLength > 101)}
               />
             )}
           </Grid.Column>
