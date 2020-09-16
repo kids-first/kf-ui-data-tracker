@@ -544,7 +544,6 @@ exports[`Show warning message when input file name is similar to an existing fil
                 class="DraftEditor-editorContainer"
               >
                 <div
-                  aria-describedby="placeholder-123"
                   aria-label="rdw-editor"
                   class="notranslate public-DraftEditor-content"
                   contenteditable="true"
@@ -1193,7 +1192,6 @@ exports[`Show warning message when input file name is similar to an existing fil
                 class="DraftEditor-editorContainer"
               >
                 <div
-                  aria-describedby="placeholder-123"
                   aria-label="rdw-editor"
                   class="notranslate public-DraftEditor-content"
                   contenteditable="true"
@@ -1840,7 +1838,6 @@ exports[`Show warning message when input file name is similar to an existing fil
                 class="DraftEditor-editorContainer"
               >
                 <div
-                  aria-describedby="placeholder-123"
                   aria-label="rdw-editor"
                   class="notranslate public-DraftEditor-content"
                   contenteditable="true"
