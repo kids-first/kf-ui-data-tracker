@@ -14,7 +14,8 @@ import {
   Message,
 } from 'semantic-ui-react';
 import {UserList, PermissionGroup} from '../components/UserList';
-import {ALL_USERS, ALL_GROUPS, MY_PROFILE} from '../../state/queries';
+import {ALL_GROUPS, MY_PROFILE} from '../../state/queries';
+import {ALL_USERS} from '../queries';
 import {UPDATE_USER} from '../../state/mutations';
 
 const UsersView = () => {
