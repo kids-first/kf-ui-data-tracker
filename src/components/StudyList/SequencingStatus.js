@@ -15,7 +15,7 @@ const SequencingStatus = ({study}) => {
         {
           query: GET_STUDY_BY_ID,
           variables: {
-            kfId: study.kfId,
+            id: study.id,
           },
         },
       ],

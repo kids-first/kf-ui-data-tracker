@@ -4,6 +4,7 @@ import {
   STUDY_BASIC_FIELDS,
   STUDY_INFO_FIELDS,
   EVENT_FIELDS,
+  GROUP_FIELDS,
   USER_FIELDS,
 } from './fragments';
 import {FILE_FIELDS, VERSION_FIELDS} from '../documents/fragments';
@@ -15,7 +16,14 @@ export const ALL_STUDIES = gql`
       edges {
         node {
           ...StudyBasicFields
-          ...StudyInfoFields
+          bucket
+          externalId
+          version
+          anticipatedSamples
+          slackChannel
+          sequencingStatus
+          ingestionStatus
+          phenotypeStatus
           collaborators {
             edges {
               node {
@@ -23,20 +31,11 @@ export const ALL_STUDIES = gql`
               }
             }
           }
-          projects {
-            edges {
-              node {
-                ...ProjectFields
-              }
-            }
-          }
         }
       }
     }
   }
-  ${PROJECT_FIELDS}
   ${STUDY_BASIC_FIELDS}
-  ${STUDY_INFO_FIELDS}
   ${USER_FIELDS}
 `;
 
@@ -55,6 +54,7 @@ export const GET_STUDY_BY_ID = gql`
           role
           node {
             ...UserFields
+            ...GroupFields
           }
         }
       }
@@ -101,6 +101,7 @@ export const GET_STUDY_BY_ID = gql`
   ${EVENT_FIELDS}
   ${PROJECT_FIELDS}
   ${USER_FIELDS}
+  ${GROUP_FIELDS}
 `;
 
 // Query to get Cavatica projects registered in the study creator
@@ -149,9 +150,11 @@ export const MY_PROFILE = gql`
         }
       }
       ...UserFields
+      ...GroupFields
     }
   }
   ${USER_FIELDS}
+  ${GROUP_FIELDS}
 `;
 
 // Get all users
