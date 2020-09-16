@@ -90,6 +90,17 @@ const TypeCard = ({
       </Card.Header>
       <Card.Description>{fileTypeDetail[id].description}</Card.Description>
     </Card.Content>
+    {fileTypeDetail[id].url && (
+      <Card.Content extra>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href={fileTypeDetail[id].url}
+        >
+          More info
+        </a>
+      </Card.Content>
+    )}
   </Card>
 );
 

@@ -226,6 +226,8 @@ export const fileTypeDetail = {
     requiredColumns: ['Bucket', 'Key', 'ETag', 'Size'],
     description: 'Generated S3 bucket inventories.',
     config: true,
+    url:
+      'https://www.notion.so/d3b/Expedited-File-Types-and-Guidelines-fc5bd4390fa54de5a70b550d73779de9#82d12c1ba31847f1bf2c1bbc5c089b6a',
   },
   PDA: {
     icon: 'clipboard list',
