@@ -9,6 +9,7 @@ export const FILE_FIELDS = gql`
     fileType
     downloadUrl
     tags
+    validTypes
   }
 `;
 
