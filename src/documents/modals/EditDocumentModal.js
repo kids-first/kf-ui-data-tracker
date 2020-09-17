@@ -73,6 +73,7 @@ const EditDocumentModal = ({fileNode, onCloseDialog, studyId}) => {
           fileDescription={fileNode.description}
           handleSubmit={handleSubmit}
           allowEditVersionStatus={allowEditVersionStatus}
+          validTypes={fileNode.validTypes}
         />
       </Modal.Content>
       <Modal.Actions>
