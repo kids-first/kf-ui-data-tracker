@@ -47,6 +47,12 @@ const AdminDropdown = ({profile}) => {
       permission: 'view_downloadtoken',
     },
     {
+      name: 'Ingest Validation',
+      route: '/validations',
+      icon: 'checkmark box',
+      permission: 'view_validation',
+    },
+    {
       name: 'Cavatica Projects',
       route: '/cavatica-projects',
       icon: 'folder open',

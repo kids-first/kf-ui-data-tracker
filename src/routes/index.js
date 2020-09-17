@@ -43,6 +43,7 @@ import {
   TokensListView,
   UsersView,
   PendingInvitesView,
+  ValidationsView,
 } from '../admin/views';
 import TrackedRoute from './TrackedRoute';
 
@@ -202,6 +203,12 @@ const Routes = () => (
           component={TokensListView}
           scope={['admin', 'tokens']}
           permissions={['view_downloadtoken']}
+        />
+        <RestrictedRoute
+          exact
+          path="/validations"
+          component={ValidationsView}
+          permissions={['view_validation', 'list_all_validation']}
         />
         <RestrictedRoute
           exact

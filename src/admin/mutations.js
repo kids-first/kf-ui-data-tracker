@@ -1,5 +1,6 @@
 import gql from 'graphql-tag';
 import {TOKEN_FIELDS} from './fragments';
+import {USER_FIELDS} from '../state/fragments';
 
 // Mutation to create a new dev token
 export const CREATE_DEV_TOKEN = gql`
@@ -21,4 +22,29 @@ export const DELETE_DEV_TOKEN = gql`
       success
     }
   }
+`;
+
+export const CREATE_VALIDATION = gql`
+  mutation CreateValidation($versions: [ID]!) {
+    createValidation(versions: $versions) {
+      validation {
+        id
+        createdAt
+        result
+        creator {
+          ...UserFields
+        }
+        versions {
+          edges {
+            node {
+              id
+              kfId
+              fileName
+            }
+          }
+        }
+      }
+    }
+  }
+  ${USER_FIELDS}
 `;

@@ -98,3 +98,30 @@ export const ALL_USERS = gql`
   ${USER_FIELDS}
   ${GROUP_FIELDS}
 `;
+
+export const ALL_VALIDATIONS = gql`
+  query AllValidations {
+    allValidations(first: 10, orderBy: "-created_at") {
+      edges {
+        node {
+          id
+          result
+          createdAt
+          creator {
+            ...UserFields
+          }
+          versions {
+            edges {
+              node {
+                id
+                kfId
+                fileName
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  ${USER_FIELDS}
+`;
