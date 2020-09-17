@@ -435,3 +435,8 @@ body {
 .ui.inverted.dimmer > .content > * {
   color: #000;
 }
+
+code.label {
+  background: #eee;
+  padding: 2px;
+}

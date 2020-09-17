@@ -25,7 +25,7 @@ const AnalysisSummary = ({version}) => {
 
   return (
     <>
-      <Table definition compact>
+      <Table definition compact="very">
         <Table.Body>
           <Table.Row>
             <Table.Cell width="2">Rows</Table.Cell>
@@ -56,6 +56,7 @@ const ValuesPopup = ({values, total}) => {
   return (
     <Popup
       inverted
+      hoverable
       trigger={
         <span className="text-blue">
           {' '}
@@ -70,31 +71,63 @@ const ValuesPopup = ({values, total}) => {
   );
 };
 
+const ValueLabel = ({children}) => <code className="label">{children}</code>;
+
 const CommonValues = ({commonValues, distinctValues}) => {
-  const first2 = commonValues.slice(0, 2).map(v => <code key={v}>{v}, </code>);
+  const formattedValues = commonValues.map(v =>
+    v.length === 0 ? (
+      <>
+        ⛔️<em>empty</em>
+      </>
+    ) : (
+      v
+    ),
+  );
+
+  const first2 = formattedValues.slice(0, 2).map(v => (
+    <>
+      <ValueLabel key={v}>{v}</ValueLabel>,{' '}
+    </>
+  ));
 
   let values = null;
-  if (commonValues.length === 0) {
+  if (formattedValues.length === 0) {
     return '';
-  } else if (commonValues.length === 1) {
-    values = <code>{commonValues[0]}</code>;
-  } else if (commonValues.length === 2) {
+  } else if (formattedValues.length === 1) {
+    // Only show the first value if there is only one
+    values = <ValueLabel>{formattedValues[0]}</ValueLabel>;
+  } else if (formattedValues[0].length > 20) {
+    // Only show the first value of the length is long
     values = (
       <>
-        <code>{commonValues[0]}</code>, <code>{commonValues[1]}</code>
+        <ValueLabel>{formattedValues[0]}</ValueLabel> and{' '}
+        <ValuesPopup
+          values={formattedValues.slice(1)}
+          total={distinctValues + 2}
+        />
       </>
     );
-  } else if (commonValues.length === 3) {
+  } else if (formattedValues.length === 2) {
+    // Show first and second values
     values = (
       <>
-        {first2} <code>{commonValues[2]}</code>
+        <ValueLabel>{formattedValues[0]}</ValueLabel>,{' '}
+        <ValueLabel>{formattedValues[1]}</ValueLabel>
       </>
     );
-  } else if (commonValues.length > 3) {
+  } else if (formattedValues.length === 3) {
+    // Show first three values
     values = (
       <>
-        {first2} <code>{commonValues[2]}</code>, and{' '}
-        <ValuesPopup values={commonValues.slice(3)} total={distinctValues} />
+        {first2} <ValueLabel>{formattedValues[2]}</ValueLabel>
+      </>
+    );
+  } else if (formattedValues.length > 3) {
+    // Show first three values and a popup with additional values
+    values = (
+      <>
+        {first2} <ValueLabel>{formattedValues[2]}</ValueLabel>, and{' '}
+        <ValuesPopup values={formattedValues.slice(3)} total={distinctValues} />
       </>
     );
   }
@@ -115,7 +148,8 @@ const ColumnSummary = ({columns}) => {
 
   const tableFooter = () => (
     <Table.Row>
-      <Table.HeaderCell colSpan={3}>
+      <Table.HeaderCell colSpan={1} />
+      <Table.HeaderCell colSpan={2}>
         {allColumns ? (
           <>
             Showing all {columns.length} columns.{' '}
@@ -166,7 +200,9 @@ const ColumnSummary = ({columns}) => {
   });
   return (
     <Table
-      compact
+      celled
+      compact="very"
+      definition
       tableData={allColumns ? columns : columns.slice(0, 5)}
       headerRow={tableHeader}
       footerRow={columns.length > 5 && tableFooter}
