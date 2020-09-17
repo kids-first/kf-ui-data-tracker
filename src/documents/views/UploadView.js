@@ -6,6 +6,7 @@ import {
   Message,
   Segment,
   Container,
+  Grid,
   Icon,
   Image,
   Button,
@@ -17,6 +18,7 @@ import AnalysisSummary from '../components/FileDetail/AnalysisSummary';
 import NewDocumentForm from '../forms/NewDocumentForm';
 import NewVersionForm from '../forms/NewVersionForm';
 
+import form from '../../assets/form.svg';
 import documentChoice from '../../assets/document_choice.svg';
 
 const DocumentTypeChooser = ({type, setType}) => (
@@ -215,6 +217,26 @@ const UploadView = ({match, history, location}) => {
       <Transition.Group animiation="fade" duration={{hide: 200, show: 500}}>
         {version && (
           <Segment.Group basic>
+            <Grid as={Segment} divided>
+              <Grid.Column computer={3} tablet={8} mobile={4}>
+                <Image src={form} />
+              </Grid.Column>
+              <Grid.Column computer={13} tablet={8} mobile={16}>
+                <Header as="h2">Additional Information Required</Header>
+                <p>
+                  Please fill in additional information about the file you've
+                  uploaded to help the Data Resource Center process your file
+                  appropriately.
+                </p>
+                <p>
+                  We have tried to generate a data summary based on the contents
+                  of your file. If the summary does not match what you expect,
+                  please make changes to the file and upload it again.
+                  Otherwise, choose if you'd like to update an existing document
+                  in the Data Tracker or create a new document entirely.
+                </p>
+              </Grid.Column>
+            </Grid>
             <Segment secondary>
               <Header>File Content Summary</Header>
               <AnalysisSummary version={version} />
