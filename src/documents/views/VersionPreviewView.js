@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, Suspense} from 'react';
 import {Helmet} from 'react-helmet';
 import {useQuery} from '@apollo/react-hooks';
 import {GET_FILE_BY_ID} from '../queries';
@@ -14,13 +14,16 @@ import {
   Icon,
   Label,
   Placeholder,
+  Dimmer,
+  Loader,
 } from 'semantic-ui-react';
 import TimeAgo from 'react-timeago';
 import Papa from 'papaparse';
 import * as XLSX from 'xlsx';
 import {LogOnMount} from '@amplitude/react-amplitude';
-import {HotTable} from '@handsontable/react';
-import 'handsontable/dist/handsontable.full.css';
+const PreviewTable = React.lazy(() =>
+  import('../components/PreviewTable/PreviewTable'),
+);
 
 /**
  * A skeleton placeholder for the loading state
@@ -59,7 +62,7 @@ const VersionPreviewView = ({match}) => {
   const parseData = (contents, limiteLength) => {
     const parsed = limiteLength
       ? Papa.parse(contents, {
-          preview: 100,
+          preview: 101,
         })
       : Papa.parse(contents);
     setErrors(parsed.errors);
@@ -133,22 +136,6 @@ const VersionPreviewView = ({match}) => {
       getData(true);
     }
   });
-
-  const settings = {
-    data: data,
-    rowHeaders: true,
-    colHeaders: true,
-    licenseKey: 'non-commercial-and-evaluation',
-    stretchH: 'all',
-    editor: false,
-    filters: true,
-    dropdownMenu: [
-      'filter_by_value',
-      'filter_by_condition',
-      'filter_action_bar',
-    ],
-    height: window.innerHeight - 340,
-  };
 
   return (
     <>
@@ -293,20 +280,25 @@ const VersionPreviewView = ({match}) => {
               />
             )}
             {data.length > 0 && errors.length === 0 && (
-              <HotTable
-                settings={settings}
-                licenseKey="non-commercial-and-evaluation"
-              />
+              <Suspense
+                fallback={
+                  <Dimmer active inverted className="mt-30">
+                    <Loader inverted>Loading data table</Loader>
+                  </Dimmer>
+                }
+              >
+                <PreviewTable data={data} />
+              </Suspense>
             )}
-            {displayLength >= 100 && version.analysis.nrows !== 99 && (
+            {displayLength >= 101 && version.analysis.nrows !== 100 && (
               <Button
                 fluid
                 content={
-                  displayLength > 100
+                  displayLength > 101
                     ? 'Click here to display first 100 rows'
                     : 'Click here to display all the rows'
                 }
-                onClick={() => getData(displayLength > 100)}
+                onClick={() => getData(displayLength > 101)}
               />
             )}
           </Grid.Column>
