@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useQuery, useMutation} from '@apollo/react-hooks';
+import {Prompt} from 'react-router-dom';
 import {CREATE_FILE, CREATE_VERSION, UPDATE_VERSION} from '../mutations';
 import {GET_STUDY_BY_ID} from '../../state/queries';
 import {
@@ -206,6 +207,13 @@ const UploadView = ({match, history, location}) => {
 
   return (
     <Container as={Segment} vertical basic>
+      <Prompt
+        message={(location, action) => {
+          return location.pathname.includes('/documents/')
+            ? true
+            : 'You are about to leave this page but the file has not yet been saved. Are you sure you want to leave?';
+        }}
+      />
       <Header as="h1">Create a New Document</Header>
       <UploadBar
         study={study.data.study}
