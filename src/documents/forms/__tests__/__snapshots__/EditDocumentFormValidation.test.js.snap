@@ -278,6 +278,88 @@ exports[`Show warning message when input file name is similar to an existing fil
           </div>
         </div>
       </div>
+      <div
+        class="field"
+      >
+        <div
+          class="ui compact segment selectionRadio--card"
+        >
+          <div>
+            <div
+              class="ui radio checkbox"
+            >
+              <input
+                class="hidden"
+                id="PDA"
+                name="file_type"
+                readonly=""
+                tabindex="0"
+                type="radio"
+                value="PDA"
+              />
+              <i
+                aria-hidden="true"
+                class="black clipboard list large bordered circular inverted icon"
+              />
+            </div>
+          </div>
+          <div>
+            <p
+              class="mb-5"
+            >
+              <b>
+                Participant Demographic and Administrative File
+              </b>
+            </p>
+            <p
+              class="text-wrap-75 text-grey"
+            >
+              Attributes for high-level data about participants in a study
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="field"
+      >
+        <div
+          class="ui compact segment selectionRadio--card"
+        >
+          <div>
+            <div
+              class="ui radio checkbox"
+            >
+              <input
+                class="hidden"
+                id="FTR"
+                name="file_type"
+                readonly=""
+                tabindex="0"
+                type="radio"
+                value="FTR"
+              />
+              <i
+                aria-hidden="true"
+                class="black users large bordered circular inverted icon"
+              />
+            </div>
+          </div>
+          <div>
+            <p
+              class="mb-5"
+            >
+              <b>
+                Family Trio
+              </b>
+            </p>
+            <p
+              class="text-wrap-75 text-grey"
+            >
+              Relationships for simple, mother-father-participant families
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
     <div
       class="required field"
@@ -845,6 +927,88 @@ exports[`Show warning message when input file name is similar to an existing fil
           </div>
         </div>
       </div>
+      <div
+        class="field"
+      >
+        <div
+          class="ui compact segment selectionRadio--card"
+        >
+          <div>
+            <div
+              class="ui radio checkbox"
+            >
+              <input
+                class="hidden"
+                id="PDA"
+                name="file_type"
+                readonly=""
+                tabindex="0"
+                type="radio"
+                value="PDA"
+              />
+              <i
+                aria-hidden="true"
+                class="black clipboard list large bordered circular inverted icon"
+              />
+            </div>
+          </div>
+          <div>
+            <p
+              class="mb-5"
+            >
+              <b>
+                Participant Demographic and Administrative File
+              </b>
+            </p>
+            <p
+              class="text-wrap-75 text-grey"
+            >
+              Attributes for high-level data about participants in a study
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="field"
+      >
+        <div
+          class="ui compact segment selectionRadio--card"
+        >
+          <div>
+            <div
+              class="ui radio checkbox"
+            >
+              <input
+                class="hidden"
+                id="FTR"
+                name="file_type"
+                readonly=""
+                tabindex="0"
+                type="radio"
+                value="FTR"
+              />
+              <i
+                aria-hidden="true"
+                class="black users large bordered circular inverted icon"
+              />
+            </div>
+          </div>
+          <div>
+            <p
+              class="mb-5"
+            >
+              <b>
+                Family Trio
+              </b>
+            </p>
+            <p
+              class="text-wrap-75 text-grey"
+            >
+              Relationships for simple, mother-father-participant families
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
     <div
       class="required field"
@@ -1408,6 +1572,88 @@ exports[`Show warning message when input file name is similar to an existing fil
               class="text-wrap-75 text-grey"
             >
               Generated S3 bucket inventories.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="field"
+      >
+        <div
+          class="ui compact segment selectionRadio--card"
+        >
+          <div>
+            <div
+              class="ui radio checkbox"
+            >
+              <input
+                class="hidden"
+                id="PDA"
+                name="file_type"
+                readonly=""
+                tabindex="0"
+                type="radio"
+                value="PDA"
+              />
+              <i
+                aria-hidden="true"
+                class="black clipboard list large bordered circular inverted icon"
+              />
+            </div>
+          </div>
+          <div>
+            <p
+              class="mb-5"
+            >
+              <b>
+                Participant Demographic and Administrative File
+              </b>
+            </p>
+            <p
+              class="text-wrap-75 text-grey"
+            >
+              Attributes for high-level data about participants in a study
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="field"
+      >
+        <div
+          class="ui compact segment selectionRadio--card"
+        >
+          <div>
+            <div
+              class="ui radio checkbox"
+            >
+              <input
+                class="hidden"
+                id="FTR"
+                name="file_type"
+                readonly=""
+                tabindex="0"
+                type="radio"
+                value="FTR"
+              />
+              <i
+                aria-hidden="true"
+                class="black users large bordered circular inverted icon"
+              />
+            </div>
+          </div>
+          <div>
+            <p
+              class="mb-5"
+            >
+              <b>
+                Family Trio
+              </b>
+            </p>
+            <p
+              class="text-wrap-75 text-grey"
+            >
+              Relationships for simple, mother-father-participant families
             </p>
           </div>
         </div>

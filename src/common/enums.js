@@ -226,6 +226,40 @@ export const fileTypeDetail = {
     requiredColumns: ['Bucket', 'Key', 'ETag', 'Size'],
     description: 'Generated S3 bucket inventories.',
     config: true,
+    url:
+      'https://www.notion.so/d3b/Expedited-File-Types-and-Guidelines-fc5bd4390fa54de5a70b550d73779de9#82d12c1ba31847f1bf2c1bbc5c089b6a',
+  },
+  PDA: {
+    icon: 'clipboard list',
+    title: 'Participant Demographic and Administrative File',
+    requiredColumns: [
+      'Participant ID',
+      'Consent Short Name',
+      'Administrative Gender',
+      'Ethnicity',
+      'Age at Study Enrollment',
+      'Age at Study Enrollment Units',
+      'Deceased',
+      'Age at Last Contact',
+      'Age at Last Contact Units',
+    ],
+    description: 'Attributes for high-level data about participants in a study',
+    config: true,
+    url:
+      'https://www.notion.so/d3b/Expedited-File-Types-and-Guidelines-fc5bd4390fa54de5a70b550d73779de9#d53b14317f004b6f9f9a8357ddc94f8f',
+  },
+  FTR: {
+    icon: 'users',
+    title: 'Family Trio',
+    requiredColumns: [
+      'Participant ID',
+      'Mother Participant ID',
+      'Father Participant ID',
+    ],
+    description: 'Relationships for simple, mother-father-participant families',
+    config: true,
+    url:
+      'https://www.notion.so/d3b/Expedited-File-Types-and-Guidelines-fc5bd4390fa54de5a70b550d73779de9#c7292718da1243b29ff793a8d115a5c9',
   },
 };
 
