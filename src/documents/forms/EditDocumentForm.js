@@ -28,6 +28,7 @@ const EditDocumentForm = React.forwardRef(
       submitButtons,
       studyFiles,
       allowEditVersionStatus,
+      validTypes,
     },
     ref,
   ) => {
@@ -145,7 +146,10 @@ const EditDocumentForm = React.forwardRef(
                 <Form.Field required>
                   <label htmlFor="file_type">Document Type:</label>
                   {Object.keys(fileTypeDetail).map(item => (
-                    <Form.Field key={item}>
+                    <Form.Field
+                      key={item}
+                      disabled={validTypes && !validTypes.includes(item)}
+                    >
                       <Field
                         component={SelectElement}
                         name="file_type"

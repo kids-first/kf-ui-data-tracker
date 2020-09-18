@@ -23,6 +23,7 @@ it('renders correctly for editing existing file', () => {
       onFileTypeChange={e => e.preventDefault()}
       onVersionStatusChange={versionStatusValue => {}}
       allowEditVersionStatus={true}
+      validTypes={['OTH', 'SEQ', 'SHM', 'CLN', 'DBG', 'FAM', 'S3S']}
     />,
   );
   expect(tree).toMatchSnapshot();
