@@ -1,7 +1,7 @@
 import React from 'react';
 import {Helmet} from 'react-helmet';
 import {useQuery, useMutation} from '@apollo/react-hooks';
-import {MY_PROFILE, GET_STUDY_BY_ID} from '../../state/queries';
+import {MY_PROFILE, GET_STUDY_BY_ID, ALL_EVENTS} from '../../state/queries';
 import {GET_FILE_BY_ID} from '../queries';
 import {UPDATE_FILE, DELETE_FILE, FILE_DOWNLOAD_URL} from '../mutations';
 import {Container, Segment, Dimmer, Loader, Message} from 'semantic-ui-react';
@@ -69,6 +69,15 @@ const FileDetailView = ({match}) => {
     myProfile &&
     (hasPermission(myProfile, 'extract_version_config') ||
       hasPermission(myProfile, 'extract_my_version_config'));
+
+  const event = useQuery(ALL_EVENTS, {
+    variables: {
+      fileId: match.params.fileId,
+      orderBy: '-created_at',
+      first: 20,
+    },
+  });
+
   if (loading)
     return (
       <Dimmer active inverted>
@@ -121,6 +130,7 @@ const FileDetailView = ({match}) => {
         updateError={updateError}
         tagOptions={tagOptions}
         allowExtractConfig={allowExtractConfig}
+        event={event}
       />
     </Container>
   );
