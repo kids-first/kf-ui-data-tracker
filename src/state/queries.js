@@ -213,6 +213,9 @@ export const ALL_EVENTS = gql`
           version {
             ...VersionFields
           }
+          user {
+            ...UserFields
+          }
         }
         cursor
       }
@@ -229,6 +232,7 @@ export const ALL_EVENTS = gql`
   ${FILE_FIELDS}
   ${VERSION_FIELDS}
   ${PROJECT_FIELDS}
+  ${USER_FIELDS}
 `;
 
 // Get study-creator api version status
