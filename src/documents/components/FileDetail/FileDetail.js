@@ -27,6 +27,7 @@ import {
 import FileTags from './FileTags';
 import FileDescription from './FileDescription';
 import AnalysisSummary from './AnalysisSummary';
+import Timelines from './Timelines';
 
 const ActionButtons = ({
   downloadFile,
@@ -296,6 +297,7 @@ const FileDetail = ({
   deleteFile,
   tagOptions,
   allowExtractConfig,
+  event,
 }) => {
   const studyId = match.params.kfId;
   const [dialog, setDialog] = useState(false);
@@ -424,6 +426,27 @@ const FileDetail = ({
           </Grid.Column>
         </Grid.Row>
       )}
+      <Grid.Row>
+        <Grid.Column mobile={16} tablet={16} computer={13}>
+          <Segment className="noBorders" loading={event.loading}>
+            <Header as="h4" color="grey">
+              Timeline{' '}
+              <span className="text-10 text-normal">
+                (latest first, most recent 20 events)
+              </span>
+            </Header>
+            {event.error && (
+              <Message
+                negative
+                icon="warning circle"
+                header="Error"
+                content={event.error.message}
+              />
+            )}
+            {event.data && <Timelines eventData={event.data} />}
+          </Segment>
+        </Grid.Column>
+      </Grid.Row>
       {dialog !== false && (
         <FileDetailModal
           match={match}
