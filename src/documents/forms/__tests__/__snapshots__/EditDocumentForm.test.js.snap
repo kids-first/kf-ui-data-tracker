@@ -1149,7 +1149,7 @@ Object {
             </div>
           </div>
           <div
-            class="field"
+            class="disabled field"
           >
             <div
               class="ui compact segment selectionRadio--card"
@@ -1190,7 +1190,7 @@ Object {
             </div>
           </div>
           <div
-            class="field"
+            class="disabled field"
           >
             <div
               class="ui compact segment selectionRadio--card"
@@ -1596,7 +1596,7 @@ Object {
           </div>
         </div>
         <div
-          class="field"
+          class="disabled field"
         >
           <div
             class="ui compact segment selectionRadio--card"
@@ -1637,7 +1637,7 @@ Object {
           </div>
         </div>
         <div
-          class="field"
+          class="disabled field"
         >
           <div
             class="ui compact segment selectionRadio--card"
