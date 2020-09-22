@@ -443,7 +443,9 @@ const FileDetail = ({
                 content={event.error.message}
               />
             )}
-            {event.data && <Timelines eventData={event.data} />}
+            {event.data && (
+              <Timelines eventData={event.data} stripFileId={fileNode.kfId} />
+            )}
           </Segment>
         </Grid.Column>
       </Grid.Row>

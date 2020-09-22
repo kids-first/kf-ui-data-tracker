@@ -7,7 +7,7 @@ import {longDate} from '../../../common/dateUtils';
 /**
  * Displays study document timelines with empty message
  */
-const Timelines = ({eventData}) => {
+const Timelines = ({eventData, stripFileId}) => {
   const events =
     eventData && eventData.allEvents ? eventData.allEvents.edges : [];
 
@@ -30,7 +30,9 @@ const Timelines = ({eventData}) => {
                 )}
               </Feed.Date>
               <Feed.Summary className="text-normal">
-                {node.description}
+                {stripFileId && node.description.includes(stripFileId)
+                  ? node.description.replace(stripFileId, '')
+                  : node.description}
               </Feed.Summary>
             </Feed.Content>
           </Feed.Event>
