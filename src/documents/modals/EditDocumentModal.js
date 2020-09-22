@@ -1,7 +1,7 @@
 import React, {useRef} from 'react';
 import {useQuery, useMutation} from '@apollo/react-hooks';
 import {UPDATE_FILE, UPDATE_VERSION} from '../mutations';
-import {GET_STUDY_BY_ID, MY_PROFILE} from '../../state/queries';
+import {GET_STUDY_BY_ID, MY_PROFILE, ALL_EVENTS} from '../../state/queries';
 import {EditDocumentForm} from '../forms';
 import {fileSortedVersions} from '../utilities';
 import {Button, Message, Modal} from 'semantic-ui-react';
@@ -15,11 +15,34 @@ const EditDocumentModal = ({fileNode, onCloseDialog, studyId}) => {
   });
   const [updateFile, {loading: fileLoading, error: fileError}] = useMutation(
     UPDATE_FILE,
+    {
+      refetchQueries: [
+        {
+          query: ALL_EVENTS,
+          variables: {
+            fileId: fileNode.kfId,
+            orderBy: '-created_at',
+            first: 20,
+          },
+        },
+      ],
+    },
   );
   const [
     updateVersion,
     {loading: versionLoading, error: versionError},
-  ] = useMutation(UPDATE_VERSION);
+  ] = useMutation(UPDATE_VERSION, {
+    refetchQueries: [
+      {
+        query: ALL_EVENTS,
+        variables: {
+          fileId: fileNode.kfId,
+          orderBy: '-created_at',
+          first: 20,
+        },
+      },
+    ],
+  });
   // Check if current user is allowed to edit approval status (version state)
   const {data: profileData} = useQuery(MY_PROFILE);
   const myProfile = profileData && profileData.myProfile;

@@ -37,6 +37,14 @@ const FileDetailView = ({match}) => {
   const [updateFile, {error: updateError}] = useMutation(UPDATE_FILE, {
     refetchQueries: [
       {query: GET_FILE_BY_ID, variables: {kfId: match.params.fileId}},
+      {
+        query: ALL_EVENTS,
+        variables: {
+          fileId: match.params.fileId,
+          orderBy: '-created_at',
+          first: 20,
+        },
+      },
     ],
   });
   const [deleteFile] = useMutation(DELETE_FILE, {
