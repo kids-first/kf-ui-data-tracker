@@ -1,5 +1,35 @@
 # Kids First Data Tracker Change History
 
+## Release 0.17.0
+
+### Summary
+
+- Emojis: 🔧 x1, ✨ x6, 💄 x2, ♻️ x2, ⚡ x1, 👷 x4, 🎨 x1, ⬆️ x2
+- Categories: Other Changes x7, Additions x6, Ops x6
+
+### New features and changes
+
+- [#879](https://github.com/kids-first/kf-ui-data-tracker/pull/879) - 🔧 Update QA api url - [2bb11a59](https://github.com/kids-first/kf-ui-data-tracker/commit/2bb11a59068a3d604b7fce4680771637823407cf) by [dankolbman](https://github.com/dankolbman)
+- [#875](https://github.com/kids-first/kf-ui-data-tracker/pull/875) - ✨ New expedited types - [1312ee6b](https://github.com/kids-first/kf-ui-data-tracker/commit/1312ee6bb8e653a48b963b5121d003217ecb5fdf) by [dankolbman](https://github.com/dankolbman)
+- [#877](https://github.com/kids-first/kf-ui-data-tracker/pull/877) - ✨ Disable the file type selection option if file is not qualified - [77522c48](https://github.com/kids-first/kf-ui-data-tracker/commit/77522c48277c91b444d299b7ebf7f45f56455811) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#876](https://github.com/kids-first/kf-ui-data-tracker/pull/876) - ✨ Warn before exit - [8e1cd676](https://github.com/kids-first/kf-ui-data-tracker/commit/8e1cd676196f9b3cad0546c4c32af1e19856805a) by [dankolbman](https://github.com/dankolbman)
+- [#867](https://github.com/kids-first/kf-ui-data-tracker/pull/867) - 💄 Restyle document summary - [19fa0b11](https://github.com/kids-first/kf-ui-data-tracker/commit/19fa0b11bef001de295e6742850a400f49bb03de) by [dankolbman](https://github.com/dankolbman)
+- [#874](https://github.com/kids-first/kf-ui-data-tracker/pull/874) - ♻️ Refactor preview table for sorting and reducing bundle size - [05baf0dc](https://github.com/kids-first/kf-ui-data-tracker/commit/05baf0dc15d65cfcc9c9f364ac0a6ef6a3458254) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#862](https://github.com/kids-first/kf-ui-data-tracker/pull/862) - ⚡ Pare down fields requested for all studies - [980efcb0](https://github.com/kids-first/kf-ui-data-tracker/commit/980efcb0ad7fa9c25bfd2d0b70d4608e78329d37) by [dankolbman](https://github.com/dankolbman)
+- [#858](https://github.com/kids-first/kf-ui-data-tracker/pull/858) - 👷 Deploy production to cloudfront - [2d184212](https://github.com/kids-first/kf-ui-data-tracker/commit/2d18421292d72ae67882154455c3c25484301d46) by [dankolbman](https://github.com/dankolbman)
+- [#861](https://github.com/kids-first/kf-ui-data-tracker/pull/861) - ✨ Add document extract config modal to preview and download config file - [ef7ce6ac](https://github.com/kids-first/kf-ui-data-tracker/commit/ef7ce6ac7960b41ca9ea437e36910649c9ca830a) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#860](https://github.com/kids-first/kf-ui-data-tracker/pull/860) - 🎨 Move summary section below versions - [aaee8d3d](https://github.com/kids-first/kf-ui-data-tracker/commit/aaee8d3dc7d5e7404e80e59dd212070037fa7c89) by [dankolbman](https://github.com/dankolbman)
+- [#856](https://github.com/kids-first/kf-ui-data-tracker/pull/856) - ⬆️ Bump papaparse from 5.1.1 to 5.2.0 - [2f56fda9](https://github.com/kids-first/kf-ui-data-tracker/commit/2f56fda956440f4832bf7c2df4f07e9416fc75f4) by [dependabot[bot]](https://github.com/apps/dependabot)
+- [#857](https://github.com/kids-first/kf-ui-data-tracker/pull/857) - ⬆️ Bump http-proxy from 1.17.0 to 1.18.1 - [31df5dea](https://github.com/kids-first/kf-ui-data-tracker/commit/31df5dea80f54a88925171bf5a6717fdf4a6dc36) by [dependabot[bot]](https://github.com/apps/dependabot)
+- [#853](https://github.com/kids-first/kf-ui-data-tracker/pull/853) - ✨ Expedited types - [c847e3f3](https://github.com/kids-first/kf-ui-data-tracker/commit/c847e3f36c00cec1738e8945b592df01f66e55c2) by [dankolbman](https://github.com/dankolbman)
+- [#852](https://github.com/kids-first/kf-ui-data-tracker/pull/852) - 💄 Add icons for file analysis and version meta permissions - [06619ea6](https://github.com/kids-first/kf-ui-data-tracker/commit/06619ea68d82433681255b69521a5d31bc74b6aa) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#850](https://github.com/kids-first/kf-ui-data-tracker/pull/850) - 👷 Add individual workflow for deployment - [d36c6a6e](https://github.com/kids-first/kf-ui-data-tracker/commit/d36c6a6eceaf66d4551472962bf3c5c6ce9c4970) by [dankolbman](https://github.com/dankolbman)
+- [#839](https://github.com/kids-first/kf-ui-data-tracker/pull/839) - ✨ Add document version preview page - [f92ac45c](https://github.com/kids-first/kf-ui-data-tracker/commit/f92ac45c7a383a6128ea4cd728cc20bd7c930177) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#849](https://github.com/kids-first/kf-ui-data-tracker/pull/849) - ♻️ Update FileType enum - [c5e53455](https://github.com/kids-first/kf-ui-data-tracker/commit/c5e53455ce572b9b416a2ba552903f8d4c6efad0) by [dankolbman](https://github.com/dankolbman)
+- [#847](https://github.com/kids-first/kf-ui-data-tracker/pull/847) - 👷 Update CI - [76715872](https://github.com/kids-first/kf-ui-data-tracker/commit/767158721a08f038232e8d7228f569941c2ad580) by [dankolbman](https://github.com/dankolbman)
+- [#846](https://github.com/kids-first/kf-ui-data-tracker/pull/846) - 👷 Remove Jenkins - [e4159e6a](https://github.com/kids-first/kf-ui-data-tracker/commit/e4159e6a63ca8655f306d969e6d97469c0dc8f38) by [dankolbman](https://github.com/dankolbman)
+
+
 ## Release 0.16.3
 
 ### Summary
