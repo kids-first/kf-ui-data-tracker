@@ -464,3 +464,66 @@ code.label {
 .bg-purple {
   background-color: #9627ba !important;
 }
+
+.ansi.terminal {
+  line-height: 1.2em;
+  background: #282c34;
+  color: #eee;
+  padding: 20px;
+  margin: 0;
+}
+
+.ansi-black-fg {
+  color: #abb2bf;
+}
+.ansi-red-fg {
+  color: #e06c75;
+}
+.ansi-green-fg {
+  color: #98c379;
+}
+.ansi-yellow-fg {
+  color: #bb8a35;
+}
+.ansi-blue-fg {
+  color: #61afef;
+}
+.ansi-magenta-fg {
+}
+.ansi-cyan-fg {
+}
+.ansi-white-fg {
+  color: #9da5b4;
+}
+.ansi-bright-black-fg {
+}
+.ansi-bright-red-fg {
+}
+.ansi-bright-green-fg {
+}
+.ansi-bright-yellow-fg {
+}
+.ansi-bright-blue-fg {
+}
+.ansi-bright-magenta-fg {
+}
+.ansi-bright-cyan-fg {
+}
+.ansi-bright-white-fg {
+}
+.ansi-black-bg {
+}
+.ansi-red-bg {
+}
+.ansi-green-bg {
+}
+.ansi-yellow-bg {
+}
+.ansi-blue-bg {
+}
+.ansi-magenta-bg {
+}
+.ansi-cyan-bg {
+}
+.ansi-white-bg {
+}

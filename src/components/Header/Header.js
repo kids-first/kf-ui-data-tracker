@@ -60,6 +60,12 @@ const AdminDropdown = ({profile}) => {
       permission: 'view_event',
     },
     {
+      name: 'Logs',
+      route: '/logs',
+      icon: 'server',
+      permission: 'list_all_joblog',
+    },
+    {
       name: 'Users',
       route: '/users',
       icon: 'users',

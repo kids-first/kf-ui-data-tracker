@@ -42,6 +42,8 @@ import {
   TokensListView,
   UsersView,
   PendingInvitesView,
+  LogsView as AdminLogsView,
+  LogView,
 } from '../admin/views';
 import ReleaseRoutes from '../releases/routes';
 import TrackedRoute from './TrackedRoute';
@@ -97,6 +99,20 @@ const Routes = () => (
           component={UsersView}
           scope={['admin', 'users']}
           permissions={['list_all_user']}
+        />
+        <RestrictedRoute
+          exact
+          path="/logs"
+          component={AdminLogsView}
+          scope={['admin', 'logs']}
+          permissions={['list_all_joblog']}
+        />
+        <RestrictedRoute
+          exact
+          path="/logs/:logId"
+          component={LogView}
+          scope={['admin', 'logs']}
+          permissions={['view_joblog']}
         />
         <PrivateRoute
           path="/profile"
