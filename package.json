@@ -18,6 +18,7 @@
     "@apollo/react-hooks": "^3.1.2",
     "@handsontable/react": "^4.0.0",
     "amplitude-js": "^5.4.2",
+    "ansi-to-react": "^6.0.8",
     "apollo-cache-inmemory": "^1.5.1",
     "apollo-client": "^2.6.3",
     "apollo-link-context": "^1.0.14",
