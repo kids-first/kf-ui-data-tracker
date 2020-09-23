@@ -1,5 +1,19 @@
 # Kids First Data Tracker Change History
 
+## Release 0.17.1
+
+### Summary
+
+- Emojis: 🐛 x1, ⬆️ x1, 🔥 x1
+- Categories: Fixes x1, Ops x1, Removals x1
+
+### New features and changes
+
+- [#884](https://github.com/kids-first/kf-ui-data-tracker/pull/884) - 🐛 Fix delete file from file detail page refetch query variable - [b72d990b](https://github.com/kids-first/kf-ui-data-tracker/commit/b72d990b456060b66e648f71a2dfd58e63c8a4d6) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#885](https://github.com/kids-first/kf-ui-data-tracker/pull/885) - ⬆️  Bump node image version - [52583221](https://github.com/kids-first/kf-ui-data-tracker/commit/52583221139c1b8c6ea38fa3176c96a3e8ad8607) by [dankolbman](https://github.com/dankolbman)
+- [#882](https://github.com/kids-first/kf-ui-data-tracker/pull/882) - 🔥 Remove obsolete new document view and /new-document route - [9179a98b](https://github.com/kids-first/kf-ui-data-tracker/commit/9179a98be852f5d1cb6d939c6e598717c4d5175c) by [XuTheBunny](https://github.com/XuTheBunny)
+
+
 ## Release 0.17.0
 
 ### Summary
