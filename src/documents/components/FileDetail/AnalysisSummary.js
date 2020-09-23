@@ -85,9 +85,9 @@ const CommonValues = ({commonValues, distinctValues}) => {
   );
 
   const first2 = formattedValues.slice(0, 2).map(v => (
-    <>
+    <span key={v}>
       <ValueLabel key={v}>{v}</ValueLabel>,{' '}
-    </>
+    </span>
   ));
 
   let values = null;

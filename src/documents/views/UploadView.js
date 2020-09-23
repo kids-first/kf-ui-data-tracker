@@ -222,9 +222,13 @@ const UploadView = ({match, history, location}) => {
         versionLoading={versionLoading}
         versionError={versionError}
       />
-      <Transition.Group animiation="fade" duration={{hide: 200, show: 500}}>
+      <Transition.Group
+        as="div"
+        animiation="fade"
+        duration={{hide: 200, show: 500}}
+      >
         {version && (
-          <Segment.Group basic>
+          <Segment.Group>
             <Grid as={Segment} divided>
               <Grid.Column computer={3} tablet={8} mobile={4}>
                 <Image src={form} />

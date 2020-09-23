@@ -158,7 +158,7 @@ const ActionButtons = ({
                       content="Delete"
                       onClick={e => {
                         deleteFile({variables: {kfId: fileNode.kfId}});
-                        history.goBack();
+                        history.push(`/study/${studyId}/documents`);
                       }}
                     />
                   </>
