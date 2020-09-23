@@ -119,7 +119,7 @@ jobs:
           command: yarn codecov -f coverage/jest.json
   production:
     docker:
-      - image: circleci/node:11.12.0
+      - image: circleci/node:11
     steps:
       - checkout
       - restore_cache:
