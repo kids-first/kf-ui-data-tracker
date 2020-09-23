@@ -41,7 +41,12 @@ const FileDetailView = ({match}) => {
   });
   const [deleteFile] = useMutation(DELETE_FILE, {
     refetchQueries: [
-      {query: GET_STUDY_BY_ID, variables: {kfId: match.params.kfId}},
+      {
+        query: GET_STUDY_BY_ID,
+        variables: {
+          id: Buffer.from('StudyNode:' + match.params.kfId).toString('base64'),
+        },
+      },
     ],
   });
   const [downloadFileMutation] = useMutation(FILE_DOWNLOAD_URL);
