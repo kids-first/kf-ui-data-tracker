@@ -25,7 +25,7 @@ let file = {
 
 const historyMock = {
   push: jest.fn(),
-  location: {pathname: '/study/SD_8WX8QQ06/documents/new-documents'},
+  location: {pathname: '/study/SD_8WX8QQ06/documents/upload'},
 };
 let errors = {};
 
@@ -34,9 +34,7 @@ it('Show warning message when input file name is similar to an existing file', a
 
   const {container, getByTestId, queryAllByText} = render(
     <MockedProvider mocks={mocks}>
-      <MemoryRouter
-        initialEntries={['/study/SD_8WX8QQ06/documents/new-document']}
-      >
+      <MemoryRouter initialEntries={['/study/SD_8WX8QQ06/documents/upload']}>
         <EditDocumentForm
           studyFiles={studyByKfId.data.studyByKfId.files.edges}
           isAdmin={false}

@@ -26,7 +26,6 @@ import {
 import {
   StudyFilesListView,
   FileDetailView,
-  NewDocumentView,
   UploadView,
   VersionPreviewView,
 } from '../documents/views';
@@ -221,11 +220,6 @@ const Routes = () => (
           path="/study/:kfId/documents"
           component={StudyFilesListView}
           scope={['study', 'documents']}
-        />
-        <PrivateRoute
-          path="/study/:kfId/documents/new-document"
-          component={NewDocumentView}
-          scope={['study', 'documents', 'new document']}
         />
         <PrivateRoute
           path="/study/:kfId/documents/upload"
