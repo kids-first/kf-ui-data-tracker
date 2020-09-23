@@ -50,7 +50,7 @@ const TypeCard = ({
   expedited,
 }) => (
   <Card
-    color={id === values.file_type ? (expedited ? 'yellow' : 'blue') : null}
+    color={id === values.file_type ? (expedited ? 'yellow' : 'blue') : 'grey'}
     onClick={() => {
       setFieldValue(name, id);
     }}
@@ -58,7 +58,7 @@ const TypeCard = ({
     <Card.Content>
       {expedited && (
         <Label color="yellow" corner="right">
-          <Icon color="" name="star" />
+          <Icon name="star" />
         </Label>
       )}
 
