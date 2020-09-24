@@ -10,6 +10,8 @@
   REACT_APP_ENV = "prd"
   REACT_APP_AUTH0_REDIRECT_URI = "https://data-tracker.kidsfirstdrc.org/callback"
   REACT_APP_AUTH0_LOGOUT_URI = "https://data-tracker.kidsfirstdrc.org/logout"
+  REACT_APP_PRIMARY_HOST = "https://data-tracker.kidsfirstdrc.org"
+  REACT_APP_REDIRECT_TO_PRIMARY = "true"
 
 [context.master]
   command = "yarn build"

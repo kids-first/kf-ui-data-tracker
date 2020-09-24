@@ -5,8 +5,22 @@ import {ApolloProvider} from '@apollo/react-common';
 import {client} from './state/client';
 import {AnalyticsTrackingProvider} from './analyticsTracking';
 import DevHeader from './components/Header/DevHeader';
+import {PRIMARY_HOST, REDIRECT_TO_PRIMARY} from './common/globals';
 
 const App = () => {
+  // Check that we are on the right host else forward to the primary host
+  if (
+    PRIMARY_HOST &&
+    REDIRECT_TO_PRIMARY &&
+    window.location.origin !== PRIMARY_HOST
+  ) {
+    const redirectUrl = `${PRIMARY_HOST}${window.location.pathname}`;
+    console.log('Redirecting to', redirectUrl);
+    window.location.replace(redirectUrl);
+
+    return "Redirecting you to the latest Data Tracker..."
+  }
+
   return (
     <AnalyticsTrackingProvider>
       <ApolloProvider client={client}>
