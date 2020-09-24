@@ -20,10 +20,20 @@ const columnSorts = {
 };
 
 const cellContent = {
-  name: node => <Name name={node.name} description={node.description} />,
+  name: node => (
+    <Name
+      name={node.name}
+      key={node.kfId + 'name'}
+      description={node.description}
+    />
+  ),
   kfId: node => <KfId kfId={node.kfId} key={node.kfId + 'kfId'} />,
-  version: node => <Version version={node.version} />,
-  createdAt: node => <CreatedAt date={node.createdAt} />,
+  version: node => (
+    <Version version={node.version} key={node.kfId + 'version'} />
+  ),
+  createdAt: node => (
+    <CreatedAt date={node.createdAt} key={node.kfId + 'createdAt'} />
+  ),
   state: node => node.state,
 };
 
