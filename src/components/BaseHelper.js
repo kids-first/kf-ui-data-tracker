@@ -12,7 +12,7 @@ import {
 /**
  * Displays a help message with an image.
  */
-const BaseHelper = ({title, image, children}) => {
+const BaseHelper = ({title, image, color = "blue", children}) => {
   // Keep the hidden state stored in localstorage so it won't be displayed next
   // time if the user does not want it
   const lsKey = `helper - ${title}`;
@@ -40,7 +40,7 @@ const BaseHelper = ({title, image, children}) => {
     );
 
   return (
-    <Grid as={Segment} color="blue" secondary divided>
+    <Grid as={Segment} color={color} secondary divided>
       <Grid.Column computer={2} tablet={3} mobile={4}>
         <Image src={image} />
       </Grid.Column>

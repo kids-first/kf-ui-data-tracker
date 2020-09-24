@@ -43,6 +43,7 @@ import {
   UsersView,
   PendingInvitesView,
 } from '../admin/views';
+import ReleaseRoutes from '../releases/routes';
 import TrackedRoute from './TrackedRoute';
 
 const Routes = () => (
@@ -70,6 +71,8 @@ const Routes = () => (
       />
       <Switch>
         <PrivateRoute exact path="/" component={StudyListView} />
+        <PrivateRoute exact path="/study" component={StudyListView} />
+        <ReleaseRoutes path="/releases" />
         <TrackedRoute
           path="/welcome"
           component={WelcomeView}

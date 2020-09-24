@@ -17,6 +17,10 @@ const compareSemVer = (a, b) => {
   var a_components = a.split('.');
   var b_components = b.split('.');
 
+  if ((a_components.length === b_components.length) === 0) return 0;
+  if (a_components.length === 0) return -1;
+  if (b_components.length === 0) return 1;
+
   var len = Math.min(a_components.length, b_components.length);
 
   // loop while the components are equal

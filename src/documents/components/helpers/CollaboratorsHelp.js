@@ -1,5 +1,5 @@
 import React from 'react';
-import BaseHelper from './BaseHelper';
+import BaseHelper from '../../../components/BaseHelper';
 import collaborators from '../../../assets/collaborators.svg';
 
 const Help = () => (

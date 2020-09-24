@@ -1,5 +1,5 @@
 import React from 'react';
-import BaseHelper from './BaseHelper';
+import BaseHelper from '../../../components/BaseHelper';
 import addDocuments from '../../../assets/add_file.svg';
 
 const Help = () => (
