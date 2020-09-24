@@ -60,8 +60,8 @@ const AdminDropdown = ({profile}) => {
       permission: 'view_event',
     },
     {
-      name: 'Logs',
-      route: '/logs',
+      name: 'Jobs',
+      route: '/jobs',
       icon: 'server',
       permission: 'list_all_joblog',
     },

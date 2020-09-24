@@ -2,62 +2,50 @@ import React from 'react';
 import {Helmet} from 'react-helmet';
 import {useQuery} from '@apollo/react-hooks';
 import {Link} from 'react-router-dom';
-import {
-  Container,
-  Dimmer,
-  Header,
-  Loader,
-  List,
-  Icon,
-  Segment,
-  Button,
-} from 'semantic-ui-react';
-import {ALL_LOGS} from '../queries';
+import {Container, Grid, Header, List, Icon, Segment} from 'semantic-ui-react';
+import {ALL_LOGS, ALL_JOBS} from '../queries';
+import {JobsList} from '../components/JobsList';
 
 const LogsView = () => {
-  const {loading, data: logsData} = useQuery(ALL_LOGS);
+  const {data: logsData} = useQuery(ALL_LOGS);
+  const {data: jobsData} = useQuery(ALL_JOBS);
 
   const allLogs = logsData && logsData.allJobLogs.edges;
-  console.log(allLogs);
+  const allJobs = jobsData && jobsData.allJobs.edges;
 
   return (
     <Container as={Segment} basic>
       <Helmet>
         <title>KF Data Tracker - Logs</title>
       </Helmet>
-      <Header as="h3">Study Creator Logs</Header>
-      <Link to={`/logs`}>
-        <Button basic size="mini" labelPosition="left" floated="left">
-          <Icon name="arrow left" />
-          All Documents
-        </Button>
-      </Link>
-      <Segment basic>Logs from the most recent Job runs.</Segment>
-      <Segment basic>
-        {loading && (
-          <Segment basic padded="very">
-            <Dimmer active inverted>
-              <Loader inverted>Loading logs...</Loader>
-            </Dimmer>
-          </Segment>
-        )}
-        {!loading && allLogs && (
-          <List divided>
-            {allLogs.map(({node}) => (
-              <List.Item key={node.id}>
-                <List.Content>
-                  <List.Header as={Link} to={`/logs/${node.id}`}>
+      <Header as="h1">Job Logs</Header>
+      <Grid divided>
+        <Grid.Column width={6}>
+          <Header>Jobs</Header>
+          <JobsList jobs={allJobs} />
+        </Grid.Column>
+
+        <Grid.Column width={10}>
+          <Header>Latest Logs</Header>
+          <List celled selection size="large">
+            {allLogs &&
+              allLogs.map(({node}) => (
+                <List.Item key={node.id} as={Link} to={`/logs/${node.id}`}>
+                  {node.error ? (
+                    <Icon name="warning sign" color="red" />
+                  ) : (
+                    <Icon name="check" color="green" />
+                  )}
+
+                  <List.Content>
+                    {new Date(node.createdAt).toLocaleString()} -{' '}
                     {node.job.name}
-                  </List.Header>
-                  <List.Description>
-                    {new Date(node.createdAt).toLocaleString()}
-                  </List.Description>
-                </List.Content>
-              </List.Item>
-            ))}
+                  </List.Content>
+                </List.Item>
+              ))}
           </List>
-        )}
-      </Segment>
+        </Grid.Column>
+      </Grid>
     </Container>
   );
 };

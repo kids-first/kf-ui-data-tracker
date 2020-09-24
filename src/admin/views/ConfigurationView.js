@@ -9,7 +9,6 @@ import {
   Table,
   Dimmer,
 } from 'semantic-ui-react';
-import TimeAgo from 'react-timeago';
 import {FEATURES, SETTINGS} from '../../state/queries';
 import gql from 'graphql-tag';
 

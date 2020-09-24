@@ -102,10 +102,10 @@ const Routes = () => (
         />
         <RestrictedRoute
           exact
-          path="/logs"
+          path="/jobs"
           component={AdminLogsView}
-          scope={['admin', 'logs']}
-          permissions={['list_all_joblog']}
+          scope={['admin', 'jobs']}
+          permissions={['list_all_job', 'list_all_joblog']}
         />
         <RestrictedRoute
           exact

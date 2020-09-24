@@ -61,7 +61,7 @@ const LogView = ({match}) => {
       <Helmet>
         <title>KF Data Tracker - Log Output</title>
       </Helmet>
-      <Link to={`/logs`}>
+      <Link to={`/jobs`}>
         <Button basic labelPosition="left" floated="left">
           <Icon name="arrow left" />
           All Logs
