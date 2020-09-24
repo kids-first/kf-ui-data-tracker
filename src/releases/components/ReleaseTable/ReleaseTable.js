@@ -93,11 +93,6 @@ const ReleaseTable = ({releases}) => {
         columns.sorting.column === col.key ? columns.sorting.direction : null
       }
       onClick={handleSort(col.key)}
-      tableData={
-        columns.sorting.direction === 'ascending'
-          ? releases
-          : releases.reverse()
-      }
     />
   ));
 
