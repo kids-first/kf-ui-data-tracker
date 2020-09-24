@@ -83,7 +83,7 @@ const NewReleaseForm = ({
           id="isMajor"
           name="isMajor"
           label="This is a major release"
-          value={values.isMajor}
+          checked={values.isMajor}
           onBlur={handleBlur}
           onChange={handleChange}
         />
