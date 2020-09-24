@@ -265,20 +265,6 @@ export const STATUS = gql`
         studyBucketsLogPrefix
       }
       queues
-      jobs {
-        edges {
-          node {
-            id
-            name
-            active
-            failing
-            lastRun
-            lastError
-            createdOn
-            enqueuedAt
-          }
-        }
-      }
     }
   }
 `;
