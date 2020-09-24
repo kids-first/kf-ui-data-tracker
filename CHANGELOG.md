@@ -1,5 +1,17 @@
 # Kids First Data Tracker Change History
 
+## Release 0.17.2
+
+### Summary
+
+- Emojis: 🔧 x1
+- Categories: Other Changes x1
+
+### New features and changes
+
+- [#893](https://github.com/kids-first/kf-ui-data-tracker/pull/893) - 🔧 Redirect host - [e2dac988](https://github.com/kids-first/kf-ui-data-tracker/commit/e2dac988a453a0b8426a8440008deff50270e300) by [dankolbman](https://github.com/dankolbman)
+
+
 ## Release 0.17.1
 
 ### Summary
