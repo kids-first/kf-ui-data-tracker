@@ -27,7 +27,9 @@ const UsersView = () => {
   const {data: myProfileData, loading: myProfileLoading} = useQuery(MY_PROFILE);
   const profile = myProfileData && myProfileData.myProfile;
 
-  const [updateUser] = useMutation(UPDATE_USER);
+  const [updateUser] = useMutation(UPDATE_USER, {
+    refetchQueries: [{query: ALL_USERS}],
+  });
 
   const permissions =
     profile &&
