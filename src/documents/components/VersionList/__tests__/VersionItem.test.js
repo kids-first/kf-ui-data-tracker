@@ -36,11 +36,6 @@ it('renders correctly', async () => {
   act(() => {
     fireEvent.click(tree.getByText(/VersionFileName.js/));
   });
-
-  // Click on version download button
-  act(() => {
-    fireEvent.click(tree.getByText(/9.9 kB/));
-  });
 });
 
 it('renders correctly with 1 as index -- status dot', () => {

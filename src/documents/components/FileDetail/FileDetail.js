@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {Amplitude} from '@amplitude/react-amplitude';
 import {withRouter, Link} from 'react-router-dom';
 import AvatarTimeAgo from '../../../components/AvatarTimeAgo/AvatarTimeAgo';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 import VersionList from '../VersionList/VersionList';
 import {
   downloadFile,
@@ -37,142 +38,248 @@ const ActionButtons = ({
   history,
   updateFile,
   allowExtractConfig,
-}) => (
-  <>
-    <Header as="h5" attached="top" textAlign="center" color="blue">
-      Actions
-    </Header>
-    <Segment raised attached secondary>
-      <Amplitude
-        eventProperties={inheritedProps => ({
-          ...inheritedProps,
-          scope: inheritedProps.scope
-            ? [...inheritedProps.scope, 'button', 'preview button']
-            : ['button', 'preview button'],
-        })}
-      >
-        {({logEvent}) => (
-          <Popup
-            content="Preview latest version"
-            position="top center"
-            inverted
-            trigger={
-              <Button
-                fluid
-                className="mb-15"
-                icon="eye"
-                primary
-                size="mini"
-                labelPosition="left"
-                onClick={e => {
-                  logEvent('click');
-                  e.preventDefault();
-                  window.open(
-                    `/study/${studyId}/documents/${fileNode.kfId}/versions/${
-                      fileSortedVersions(fileNode)[0].node.kfId
-                    }`,
-                  );
-                }}
-                content="PREVIEW"
-              />
-            }
-          />
-        )}
-      </Amplitude>
-      <Popup
-        inverted
-        position="top center"
-        icon="download"
-        content="Download latest version"
-        trigger={
-          <Button
-            as="a"
-            href={
-              fileNode.downloadUrl +
-              `/version/${fileSortedVersions(fileNode)[0].node.kfId}`
-            }
-            color="grey"
-            icon="download"
-            className="mb-15"
-            fluid
-            size="mini"
-            labelPosition="left"
-            onClick={e => {
-              e.preventDefault();
-              downloadFile(studyId, fileNode.kfId, null, downloadFileMutation);
-            }}
-            content="DOWNLOAD"
-          />
-        }
-      />
-      {fileTypeDetail[fileNode.fileType].config && allowExtractConfig && (
-        <Popup
-          inverted
-          position="top center"
-          content="Extract config file"
-          trigger={
-            <Button
-              color="yellow"
-              icon="wrench"
-              fluid
-              size="mini"
-              labelPosition="left"
-              onClick={() => setDialog('config')}
-              content="CONFIG"
+}) => {
+  const [copied, setCopied] = useState(false);
+  return (
+    <>
+      <Header as="h5" attached="top" textAlign="center" color="blue">
+        Actions
+      </Header>
+      <Segment raised attached secondary>
+        <Amplitude
+          eventProperties={inheritedProps => ({
+            ...inheritedProps,
+            scope: inheritedProps.scope
+              ? [...inheritedProps.scope, 'button', 'preview button']
+              : ['button', 'preview button'],
+          })}
+        >
+          {({logEvent}) => (
+            <Popup
+              content="Preview latest version"
+              position="top center"
+              inverted
+              trigger={
+                <Button
+                  fluid
+                  className="mb-15"
+                  icon="eye"
+                  primary
+                  size="mini"
+                  labelPosition="left"
+                  onClick={e => {
+                    logEvent('click');
+                    e.preventDefault();
+                    window.open(
+                      `/study/${studyId}/documents/${fileNode.kfId}/versions/${
+                        fileSortedVersions(fileNode)[0].node.kfId
+                      }`,
+                    );
+                  }}
+                  content="PREVIEW"
+                />
+              }
             />
-          }
-        />
-      )}
-      {(updateFile !== null || deleteFile !== null) && (
-        <>
-          <Divider />
-          <Button.Group size="mini" fluid>
-            {updateFile && (
-              <Button
-                icon="pencil"
-                size="small"
-                labelPosition="left"
-                color="grey"
-                onClick={() => setDialog('annotation')}
-                data-testid="edit-button"
-                content="EDIT"
-              />
-            )}
-            {deleteFile && (
+          )}
+        </Amplitude>
+        <Button.Group size="mini" fluid>
+          <Amplitude
+            eventProperties={inheritedProps => ({
+              ...inheritedProps,
+              scope: inheritedProps.scope
+                ? [...inheritedProps.scope, 'button', 'download button']
+                : ['button', 'download button'],
+            })}
+          >
+            {({logEvent}) => (
               <Popup
+                inverted
+                position="top center"
+                icon="download"
+                content="Download latest version"
                 trigger={
-                  <Button icon="trash alternate" data-testid="delete-button" />
+                  <Button
+                    as="a"
+                    href={
+                      fileNode.downloadUrl +
+                      `/version/${fileSortedVersions(fileNode)[0].node.kfId}`
+                    }
+                    color="grey"
+                    icon="download"
+                    size="mini"
+                    labelPosition="left"
+                    onClick={e => {
+                      logEvent('click');
+                      e.preventDefault();
+                      downloadFile(
+                        studyId,
+                        fileNode.kfId,
+                        null,
+                        downloadFileMutation,
+                      );
+                    }}
+                    content="DOWNLOAD"
+                  />
                 }
-                header="Are you sure?"
-                content={
-                  <>
-                    This file and all of its versions and history will be
-                    deleted
-                    <Divider />
-                    <Button
-                      data-testid="delete-confirm"
-                      negative
-                      fluid
-                      size="mini"
-                      icon="trash alternate"
-                      content="Delete"
-                      onClick={e => {
-                        deleteFile({variables: {kfId: fileNode.kfId}});
-                        history.push(`/study/${studyId}/documents`);
-                      }}
-                    />
-                  </>
-                }
-                on="click"
-                position="top right"
               />
             )}
-          </Button.Group>
-        </>
-      )}
-    </Segment>
-  </>
-);
+          </Amplitude>
+          <Amplitude
+            eventProperties={inheritedProps => ({
+              ...inheritedProps,
+              scope: inheritedProps.scope
+                ? [
+                    ...inheritedProps.scope,
+                    'button',
+                    'copy download url button',
+                  ]
+                : ['button', 'copy download url button'],
+            })}
+          >
+            {({logEvent}) => (
+              <Popup
+                inverted
+                position="top left"
+                content={
+                  copied ? (
+                    <Icon color="green" name="check" />
+                  ) : (
+                    'Copy download link'
+                  )
+                }
+                trigger={
+                  <CopyToClipboard
+                    text={
+                      fileNode.downloadUrl +
+                      `/version/${fileSortedVersions(fileNode)[0].node.kfId}`
+                    }
+                    onCopy={() => {
+                      logEvent('click');
+                      setCopied(true);
+                      setTimeout(() => {
+                        setCopied(false);
+                      }, 700);
+                    }}
+                  >
+                    <Button icon="copy" data-testid="copy-url-button" />
+                  </CopyToClipboard>
+                }
+              />
+            )}
+          </Amplitude>
+        </Button.Group>
+        {fileTypeDetail[fileNode.fileType].config && allowExtractConfig && (
+          <Amplitude
+            eventProperties={inheritedProps => ({
+              ...inheritedProps,
+              scope: inheritedProps.scope
+                ? [...inheritedProps.scope, 'button', 'config button']
+                : ['button', 'config button'],
+            })}
+          >
+            {({logEvent}) => (
+              <Popup
+                inverted
+                position="top center"
+                content="Extract config file"
+                trigger={
+                  <Button
+                    color="yellow"
+                    icon="wrench"
+                    fluid
+                    size="mini"
+                    labelPosition="left"
+                    onClick={() => {
+                      logEvent('click');
+                      setDialog('config');
+                    }}
+                    content="CONFIG"
+                  />
+                }
+              />
+            )}
+          </Amplitude>
+        )}
+        {(updateFile !== null || deleteFile !== null) && (
+          <>
+            <Divider />
+            <Button.Group size="mini" fluid>
+              {updateFile && (
+                <Amplitude
+                  eventProperties={inheritedProps => ({
+                    ...inheritedProps,
+                    scope: inheritedProps.scope
+                      ? [...inheritedProps.scope, 'button', 'edit button']
+                      : ['button', 'edit button'],
+                  })}
+                >
+                  {({logEvent}) => (
+                    <Button
+                      icon="pencil"
+                      size="small"
+                      labelPosition="left"
+                      color="grey"
+                      onClick={() => {
+                        logEvent('click');
+                        setDialog('annotation');
+                      }}
+                      data-testid="edit-button"
+                      content="EDIT"
+                    />
+                  )}
+                </Amplitude>
+              )}
+              {deleteFile && (
+                <Amplitude
+                  eventProperties={inheritedProps => ({
+                    ...inheritedProps,
+                    scope: inheritedProps.scope
+                      ? [...inheritedProps.scope, 'button', 'delete button']
+                      : ['button', 'delete button'],
+                  })}
+                >
+                  {({logEvent}) => (
+                    <Popup
+                      trigger={
+                        <Button
+                          icon="trash alternate"
+                          data-testid="delete-button"
+                        />
+                      }
+                      header="Are you sure?"
+                      content={
+                        <>
+                          This file and all of its versions and history will be
+                          deleted
+                          <Divider />
+                          <Button
+                            data-testid="delete-confirm"
+                            negative
+                            fluid
+                            size="mini"
+                            icon="trash alternate"
+                            content="Delete"
+                            onClick={e => {
+                              logEvent('click');
+                              deleteFile({variables: {kfId: fileNode.kfId}});
+                              history.push(`/study/${studyId}/documents`);
+                            }}
+                          />
+                        </>
+                      }
+                      on="click"
+                      position="top right"
+                    />
+                  )}
+                </Amplitude>
+              )}
+            </Button.Group>
+          </>
+        )}
+      </Segment>
+    </>
+  );
+};
 
 /**
  * Form to display file details and file versions

@@ -76,15 +76,6 @@ exports[`renders correctly 1`] = `
           >
             <button
               class="ui basic compact icon button"
-              data-testid="copy-file-id"
-            >
-              <i
-                aria-hidden="true"
-                class="copy icon"
-              />
-            </button>
-            <button
-              class="ui basic compact icon button"
             >
               <i
                 aria-hidden="true"
@@ -102,6 +93,15 @@ exports[`renders correctly 1`] = `
                 class="download icon"
               />
             </a>
+            <button
+              class="ui basic compact icon button"
+              data-testid="copy-file-id"
+            >
+              <i
+                aria-hidden="true"
+                class="copy icon"
+              />
+            </button>
           </div>
         </td>
       </tr>
@@ -186,15 +186,6 @@ exports[`renders latest temporary state 1`] = `
           >
             <button
               class="ui basic compact icon button"
-              data-testid="copy-file-id"
-            >
-              <i
-                aria-hidden="true"
-                class="copy icon"
-              />
-            </button>
-            <button
-              class="ui basic compact icon button"
             >
               <i
                 aria-hidden="true"
@@ -212,6 +203,15 @@ exports[`renders latest temporary state 1`] = `
                 class="download icon"
               />
             </a>
+            <button
+              class="ui basic compact icon button"
+              data-testid="copy-file-id"
+            >
+              <i
+                aria-hidden="true"
+                class="copy icon"
+              />
+            </button>
           </div>
         </td>
       </tr>
@@ -296,15 +296,6 @@ exports[`renders loading state 1`] = `
           >
             <button
               class="ui basic compact icon button"
-              data-testid="copy-file-id"
-            >
-              <i
-                aria-hidden="true"
-                class="copy icon"
-              />
-            </button>
-            <button
-              class="ui basic compact icon button"
             >
               <i
                 aria-hidden="true"
@@ -322,6 +313,15 @@ exports[`renders loading state 1`] = `
                 class="download icon"
               />
             </a>
+            <button
+              class="ui basic compact icon button"
+              data-testid="copy-file-id"
+            >
+              <i
+                aria-hidden="true"
+                class="copy icon"
+              />
+            </button>
           </div>
         </td>
       </tr>

@@ -68,24 +68,46 @@ exports[`renders with more than one versions 1`] = `
               </time>
             </div>
           </div>
-          <button
-            class="ui button ui mini basic label"
+          <br />
+          <div
+            class="ui label ui mini basic icon button smallButton"
+            data-testid="copy-version-id"
+            role="button"
           >
             <i
               aria-hidden="true"
-              class="download icon"
+              class="copy icon"
             />
-            5.5 kB
-          </button>
-          <button
-            class="ui button ui mini basic label"
+             FV_DMTKEFQW
+          </div>
+          <div
+            class="ui mini basic buttons"
           >
-            <i
-              aria-hidden="true"
-              class="eye icon"
-            />
-            Preview
-          </button>
+            <button
+              class="ui icon button smallButton"
+            >
+              <i
+                aria-hidden="true"
+                class="eye icon"
+              />
+            </button>
+            <button
+              class="ui icon button smallButton"
+            >
+              <i
+                aria-hidden="true"
+                class="download icon"
+              />
+            </button>
+            <button
+              class="ui icon button smallButton"
+            >
+              <i
+                aria-hidden="true"
+                class="copy icon"
+              />
+            </button>
+          </div>
         </td>
       </tr>
       <tr
@@ -132,24 +154,46 @@ exports[`renders with more than one versions 1`] = `
               </time>
             </div>
           </div>
-          <button
-            class="ui button ui mini basic label"
+          <br />
+          <div
+            class="ui label ui mini basic icon button smallButton"
+            data-testid="copy-version-id"
+            role="button"
           >
             <i
               aria-hidden="true"
-              class="download icon"
+              class="copy icon"
             />
-            9.9 kB
-          </button>
-          <button
-            class="ui button ui mini basic label"
+             FV_TT8NF09R
+          </div>
+          <div
+            class="ui mini basic buttons"
           >
-            <i
-              aria-hidden="true"
-              class="eye icon"
-            />
-            Preview
-          </button>
+            <button
+              class="ui icon button smallButton"
+            >
+              <i
+                aria-hidden="true"
+                class="eye icon"
+              />
+            </button>
+            <button
+              class="ui icon button smallButton"
+            >
+              <i
+                aria-hidden="true"
+                class="download icon"
+              />
+            </button>
+            <button
+              class="ui icon button smallButton"
+            >
+              <i
+                aria-hidden="true"
+                class="copy icon"
+              />
+            </button>
+          </div>
         </td>
       </tr>
       <tr
@@ -196,24 +240,46 @@ exports[`renders with more than one versions 1`] = `
               </time>
             </div>
           </div>
-          <button
-            class="ui button ui mini basic label"
+          <br />
+          <div
+            class="ui label ui mini basic icon button smallButton"
+            data-testid="copy-version-id"
+            role="button"
           >
             <i
               aria-hidden="true"
-              class="download icon"
+              class="copy icon"
             />
-            5.4 kB
-          </button>
-          <button
-            class="ui button ui mini basic label"
+             FV_2WV3VNJN
+          </div>
+          <div
+            class="ui mini basic buttons"
           >
-            <i
-              aria-hidden="true"
-              class="eye icon"
-            />
-            Preview
-          </button>
+            <button
+              class="ui icon button smallButton"
+            >
+              <i
+                aria-hidden="true"
+                class="eye icon"
+              />
+            </button>
+            <button
+              class="ui icon button smallButton"
+            >
+              <i
+                aria-hidden="true"
+                class="download icon"
+              />
+            </button>
+            <button
+              class="ui icon button smallButton"
+            >
+              <i
+                aria-hidden="true"
+                class="copy icon"
+              />
+            </button>
+          </div>
         </td>
       </tr>
     </tbody>

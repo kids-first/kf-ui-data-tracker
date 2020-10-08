@@ -7,15 +7,6 @@ exports[`File Action Buttons renders correctly -- default look 1`] = `
   >
     <button
       class="ui basic compact icon button"
-      data-testid="copy-file-id"
-    >
-      <i
-        aria-hidden="true"
-        class="copy icon"
-      />
-    </button>
-    <button
-      class="ui basic compact icon button"
     >
       <i
         aria-hidden="true"
@@ -33,6 +24,15 @@ exports[`File Action Buttons renders correctly -- default look 1`] = `
         class="download icon"
       />
     </a>
+    <button
+      class="ui basic compact icon button"
+      data-testid="copy-file-id"
+    >
+      <i
+        aria-hidden="true"
+        class="copy icon"
+      />
+    </button>
     <button
       class="ui basic compact icon button"
       data-testid="delete-button"
@@ -53,15 +53,6 @@ exports[`File Action Buttons renders correctly -- default look 2`] = `
   >
     <button
       class="ui basic compact icon button"
-      data-testid="copy-file-id"
-    >
-      <i
-        aria-hidden="true"
-        class="copy icon"
-      />
-    </button>
-    <button
-      class="ui basic compact icon button"
     >
       <i
         aria-hidden="true"
@@ -79,6 +70,15 @@ exports[`File Action Buttons renders correctly -- default look 2`] = `
         class="download icon"
       />
     </a>
+    <button
+      class="ui basic compact icon button"
+      data-testid="copy-file-id"
+    >
+      <i
+        aria-hidden="true"
+        class="copy icon"
+      />
+    </button>
     <button
       class="ui basic compact icon button"
       data-testid="delete-button"
@@ -99,15 +99,6 @@ exports[`File Action Buttons renders correctly -- default look 3`] = `
   >
     <button
       class="ui basic compact icon button"
-      data-testid="copy-file-id"
-    >
-      <i
-        aria-hidden="true"
-        class="copy icon"
-      />
-    </button>
-    <button
-      class="ui basic compact icon button"
     >
       <i
         aria-hidden="true"
@@ -125,6 +116,15 @@ exports[`File Action Buttons renders correctly -- default look 3`] = `
         class="download icon"
       />
     </a>
+    <button
+      class="ui basic compact icon button"
+      data-testid="copy-file-id"
+    >
+      <i
+        aria-hidden="true"
+        class="copy icon"
+      />
+    </button>
     <button
       class="ui basic compact icon button"
       data-testid="delete-button"
@@ -145,15 +145,6 @@ exports[`File Action Buttons renders correctly -- fluid look 1`] = `
   >
     <button
       class="ui basic compact icon button"
-      data-testid="copy-file-id"
-    >
-      <i
-        aria-hidden="true"
-        class="copy icon"
-      />
-    </button>
-    <button
-      class="ui basic compact icon button"
     >
       <i
         aria-hidden="true"
@@ -171,6 +162,15 @@ exports[`File Action Buttons renders correctly -- fluid look 1`] = `
         class="download icon"
       />
     </a>
+    <button
+      class="ui basic compact icon button"
+      data-testid="copy-file-id"
+    >
+      <i
+        aria-hidden="true"
+        class="copy icon"
+      />
+    </button>
     <button
       class="ui basic compact icon button"
       data-testid="delete-button"
@@ -191,15 +191,6 @@ exports[`File Action Buttons renders correctly -- vertical look 1`] = `
   >
     <button
       class="ui basic compact icon button"
-      data-testid="copy-file-id"
-    >
-      <i
-        aria-hidden="true"
-        class="copy icon"
-      />
-    </button>
-    <button
-      class="ui basic compact icon button"
     >
       <i
         aria-hidden="true"
@@ -217,6 +208,15 @@ exports[`File Action Buttons renders correctly -- vertical look 1`] = `
         class="download icon"
       />
     </a>
+    <button
+      class="ui basic compact icon button"
+      data-testid="copy-file-id"
+    >
+      <i
+        aria-hidden="true"
+        class="copy icon"
+      />
+    </button>
     <button
       class="ui basic compact icon button"
       data-testid="delete-button"
