@@ -40,7 +40,7 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
   const [myStudies, setMyStudies] = useState(
     localStorage.getItem('onlyMyStudies') !== null
       ? JSON.parse(localStorage.getItem('onlyMyStudies'))
-      : true,
+      : false,
   );
   const [fullWidth, setFullWidth] = useState(
     localStorage.getItem('fullWidth') !== null

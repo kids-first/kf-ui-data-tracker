@@ -30,7 +30,6 @@ context('Admin Study List', () => {
   });
 
   it('filters studies by name', () => {
-    cy.contains('label', 'Show only my studies').click();
     // All studies should be displayed
     cy.get('table')
       .find('tr')
@@ -54,7 +53,6 @@ context('Admin Study List', () => {
     expect(localStorage.getItem('studyColumns')).to.be.null;
 
     // All studies should be displayed
-    cy.contains('label', 'Show only my studies').click();
     cy.get('table')
       .find('tr')
       .its('length')
@@ -103,7 +101,19 @@ context('Admin Study List', () => {
 
     // Make sure there's no saved state
     expect(localStorage.getItem('onlyMyStudies')).to.be.null;
-    // We should only see our studies
+    // We should see all the studies
+    cy.get('[data-cy="study name"]')
+      .its('length')
+      .should('eq', 4);
+
+    // Turn on only show my studies
+    cy.get('[data-cy="toggle my studies"]')
+      .click()
+      .should(() => {
+        expect(localStorage.getItem('onlyMyStudies')).to.be.eq('true');
+      });
+
+    // We should see onlt my studies
     cy.get('[data-cy="study name"]')
       .its('length')
       .should('eq', 1);
@@ -115,22 +125,10 @@ context('Admin Study List', () => {
         expect(localStorage.getItem('onlyMyStudies')).to.be.eq('false');
       });
 
-    // We should see all studies
-    cy.get('[data-cy="study name"]')
-      .its('length')
-      .should('eq', 4);
-
-    // Turn back on only show my studies
-    cy.get('[data-cy="toggle my studies"]')
-      .click()
-      .should(() => {
-        expect(localStorage.getItem('onlyMyStudies')).to.be.eq('true');
-      });
-
     // We should only see our studies
     cy.get('[data-cy="study name"]')
       .its('length')
-      .should('eq', 1);
+      .should('eq', 4);
 
     // Clear storage for other tests
     cy.clearLocalStorage('onlyMyStudies');
@@ -173,7 +171,6 @@ context('Admin Study List', () => {
   });
 
   it('only shows my studies', () => {
-    cy.get('[data-cy="toggle my studies"]').click();
     // Select a study to be added to
     cy.contains('monetize').click();
 
