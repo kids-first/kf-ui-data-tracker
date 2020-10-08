@@ -49,30 +49,7 @@ const VersionItem = ({
           creator={versionNode.creator}
           createdAt={versionNode.createdAt}
         />
-        <Popup
-          inverted
-          position="top center"
-          icon="download"
-          content="Download this Version"
-          trigger={
-            <Label
-              basic
-              size="mini"
-              as={Button}
-              onClick={e => {
-                e.stopPropagation();
-                downloadFile(
-                  studyId,
-                  fileId,
-                  versionNode.kfId,
-                  downloadFileMutation,
-                );
-              }}
-            >
-              <Icon name="download" />
-              {size}
-            </Label>
-          }
+        <br />
         <CopyButton
           data-testid="copy-version-id"
           text={' ' + versionNode.kfId}
@@ -84,41 +61,57 @@ const VersionItem = ({
           tooltip="Copy version ID"
           as={Label}
         />
-        <Amplitude
-          eventProperties={inheritedProps => ({
-            ...inheritedProps,
-            scope: inheritedProps.scope
-              ? [...inheritedProps.scope, 'button', 'preview button']
-              : ['button', 'preview button'],
-          })}
-        >
-          {({logEvent}) => (
-            <Popup
-              inverted
-              position="top center"
-              content="Preview this Version"
-              trigger={
-                <Label
-                  basic
-                  size="mini"
-                  as={Button}
-                  onClick={e => {
-                    logEvent('click');
-                    e.stopPropagation();
-                    window.open(
-                      `/study/${studyId}/documents/${fileId}/versions/${
-                        versionNode.kfId
-                      }`,
-                    );
-                  }}
-                >
-                  <Icon name="eye" />
-                  Preview
-                </Label>
-              }
-            />
-          )}
-        </Amplitude>
+        <Button.Group basic size="mini">
+          <Amplitude
+            eventProperties={inheritedProps => ({
+              ...inheritedProps,
+              scope: inheritedProps.scope
+                ? [...inheritedProps.scope, 'button', 'preview button']
+                : ['button', 'preview button'],
+            })}
+          >
+            {({logEvent}) => (
+              <Popup
+                inverted
+                position="top center"
+                content="Preview this Version"
+                trigger={
+                  <Button
+                    className="smallButton"
+                    icon="eye"
+                    onClick={e => {
+                      logEvent('click');
+                      e.stopPropagation();
+                      window.open(
+                        `/study/${studyId}/documents/${fileId}/versions/${versionNode.kfId}`,
+                      );
+                    }}
+                  />
+                }
+              />
+            )}
+          </Amplitude>
+          <Popup
+            inverted
+            position="top center"
+            icon="download"
+            content={'Download this version (' + size + ')'}
+            trigger={
+              <Button
+                className="smallButton"
+                icon="download"
+                onClick={e => {
+                  e.stopPropagation();
+                  downloadFile(
+                    studyId,
+                    fileId,
+                    versionNode.kfId,
+                    downloadFileMutation,
+                  );
+                }}
+              />
+            }
+          />
           <Popup
             inverted
             position="top left"
@@ -147,6 +140,7 @@ const VersionItem = ({
               </CopyToClipboard>
             }
           />
+        </Button.Group>
       </Table.Cell>
     </Table.Row>
   );
