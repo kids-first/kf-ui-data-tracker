@@ -83,127 +83,195 @@ const ActionButtons = ({
           )}
         </Amplitude>
         <Button.Group size="mini" fluid>
-          <Popup
-            inverted
-            position="top center"
-            icon="download"
-            content="Download latest version"
-            trigger={
-              <Button
-                as="a"
-                href={
-                  fileNode.downloadUrl +
-                  `/version/${fileSortedVersions(fileNode)[0].node.kfId}`
-                }
-                color="grey"
+          <Amplitude
+            eventProperties={inheritedProps => ({
+              ...inheritedProps,
+              scope: inheritedProps.scope
+                ? [...inheritedProps.scope, 'button', 'download button']
+                : ['button', 'download button'],
+            })}
+          >
+            {({logEvent}) => (
+              <Popup
+                inverted
+                position="top center"
                 icon="download"
-                size="mini"
-                labelPosition="left"
-                onClick={e => {
-                  e.preventDefault();
-                  downloadFile(
-                    studyId,
-                    fileNode.kfId,
-                    null,
-                    downloadFileMutation,
-                  );
-                }}
-                content="DOWNLOAD"
-              />
-            }
-          />
-          <Popup
-            inverted
-            position="top left"
-            content={
-              copied ? (
-                <Icon color="green" name="check" />
-              ) : (
-                'Copy download link'
-              )
-            }
-            trigger={
-              <CopyToClipboard
-                text={
-                  fileNode.downloadUrl +
-                  `/version/${fileSortedVersions(fileNode)[0].node.kfId}`
+                content="Download latest version"
+                trigger={
+                  <Button
+                    as="a"
+                    href={
+                      fileNode.downloadUrl +
+                      `/version/${fileSortedVersions(fileNode)[0].node.kfId}`
+                    }
+                    color="grey"
+                    icon="download"
+                    size="mini"
+                    labelPosition="left"
+                    onClick={e => {
+                      logEvent('click');
+                      e.preventDefault();
+                      downloadFile(
+                        studyId,
+                        fileNode.kfId,
+                        null,
+                        downloadFileMutation,
+                      );
+                    }}
+                    content="DOWNLOAD"
+                  />
                 }
-                onCopy={() => {
-                  setCopied(true);
-                  setTimeout(() => {
-                    setCopied(false);
-                  }, 700);
-                }}
-              >
-                <Button icon="copy" data-testid="copy-url-button" />
-              </CopyToClipboard>
-            }
-          />
+              />
+            )}
+          </Amplitude>
+          <Amplitude
+            eventProperties={inheritedProps => ({
+              ...inheritedProps,
+              scope: inheritedProps.scope
+                ? [
+                    ...inheritedProps.scope,
+                    'button',
+                    'copy download url button',
+                  ]
+                : ['button', 'copy download url button'],
+            })}
+          >
+            {({logEvent}) => (
+              <Popup
+                inverted
+                position="top left"
+                content={
+                  copied ? (
+                    <Icon color="green" name="check" />
+                  ) : (
+                    'Copy download link'
+                  )
+                }
+                trigger={
+                  <CopyToClipboard
+                    text={
+                      fileNode.downloadUrl +
+                      `/version/${fileSortedVersions(fileNode)[0].node.kfId}`
+                    }
+                    onCopy={() => {
+                      logEvent('click');
+                      setCopied(true);
+                      setTimeout(() => {
+                        setCopied(false);
+                      }, 700);
+                    }}
+                  >
+                    <Button icon="copy" data-testid="copy-url-button" />
+                  </CopyToClipboard>
+                }
+              />
+            )}
+          </Amplitude>
         </Button.Group>
         {fileTypeDetail[fileNode.fileType].config && allowExtractConfig && (
-          <Popup
-            inverted
-            position="top center"
-            content="Extract config file"
-            trigger={
-              <Button
-                color="yellow"
-                icon="wrench"
-                fluid
-                size="mini"
-                labelPosition="left"
-                onClick={() => setDialog('config')}
-                content="CONFIG"
+          <Amplitude
+            eventProperties={inheritedProps => ({
+              ...inheritedProps,
+              scope: inheritedProps.scope
+                ? [...inheritedProps.scope, 'button', 'config button']
+                : ['button', 'config button'],
+            })}
+          >
+            {({logEvent}) => (
+              <Popup
+                inverted
+                position="top center"
+                content="Extract config file"
+                trigger={
+                  <Button
+                    color="yellow"
+                    icon="wrench"
+                    fluid
+                    size="mini"
+                    labelPosition="left"
+                    onClick={() => {
+                      logEvent('click');
+                      setDialog('config');
+                    }}
+                    content="CONFIG"
+                  />
+                }
               />
-            }
-          />
+            )}
+          </Amplitude>
         )}
         {(updateFile !== null || deleteFile !== null) && (
           <>
             <Divider />
             <Button.Group size="mini" fluid>
               {updateFile && (
-                <Button
-                  icon="pencil"
-                  size="small"
-                  labelPosition="left"
-                  color="grey"
-                  onClick={() => setDialog('annotation')}
-                  data-testid="edit-button"
-                  content="EDIT"
-                />
+                <Amplitude
+                  eventProperties={inheritedProps => ({
+                    ...inheritedProps,
+                    scope: inheritedProps.scope
+                      ? [...inheritedProps.scope, 'button', 'edit button']
+                      : ['button', 'edit button'],
+                  })}
+                >
+                  {({logEvent}) => (
+                    <Button
+                      icon="pencil"
+                      size="small"
+                      labelPosition="left"
+                      color="grey"
+                      onClick={() => {
+                        logEvent('click');
+                        setDialog('annotation');
+                      }}
+                      data-testid="edit-button"
+                      content="EDIT"
+                    />
+                  )}
+                </Amplitude>
               )}
               {deleteFile && (
-                <Popup
-                  trigger={
-                    <Button
-                      icon="trash alternate"
-                      data-testid="delete-button"
+                <Amplitude
+                  eventProperties={inheritedProps => ({
+                    ...inheritedProps,
+                    scope: inheritedProps.scope
+                      ? [...inheritedProps.scope, 'button', 'delete button']
+                      : ['button', 'delete button'],
+                  })}
+                >
+                  {({logEvent}) => (
+                    <Popup
+                      trigger={
+                        <Button
+                          icon="trash alternate"
+                          data-testid="delete-button"
+                        />
+                      }
+                      header="Are you sure?"
+                      content={
+                        <>
+                          This file and all of its versions and history will be
+                          deleted
+                          <Divider />
+                          <Button
+                            data-testid="delete-confirm"
+                            negative
+                            fluid
+                            size="mini"
+                            icon="trash alternate"
+                            content="Delete"
+                            onClick={e => {
+                              logEvent('click');
+                              deleteFile({variables: {kfId: fileNode.kfId}});
+                              history.push(`/study/${studyId}/documents`);
+                            }}
+                          />
+                        </>
+                      }
+                      on="click"
+                      position="top right"
                     />
-                  }
-                  header="Are you sure?"
-                  content={
-                    <>
-                      This file and all of its versions and history will be
-                      deleted
-                      <Divider />
-                      <Button
-                        data-testid="delete-confirm"
-                        negative
-                        fluid
-                        size="mini"
-                        icon="trash alternate"
-                        content="Delete"
-                        onClick={e => {
-                          deleteFile({variables: {kfId: fileNode.kfId}});
-                          history.push(`/study/${studyId}/documents`);
-                        }}
-                      />
-                    </>
-                  }
-                  on="click"
-                  position="top right"
-                />
+                  )}
+                </Amplitude>
               )}
             </Button.Group>
           </>
