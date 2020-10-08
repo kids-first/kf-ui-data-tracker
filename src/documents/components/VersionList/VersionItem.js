@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import {Amplitude} from '@amplitude/react-amplitude';
 import {useMutation} from '@apollo/react-hooks';
 import {FILE_DOWNLOAD_URL} from '../../mutations';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 import AvatarTimeAgo from '../../../components/AvatarTimeAgo/AvatarTimeAgo';
 import CopyButton from '../../../components/CopyButton/CopyButton';
 import {formatFileSize, downloadFile, lengthLimit} from '../../utilities';
@@ -18,6 +19,7 @@ const VersionItem = ({
   index,
   onNameClick,
 }) => {
+  const [copied, setCopied] = useState(false);
   const [downloadFileMutation] = useMutation(FILE_DOWNLOAD_URL);
   const size = versionNode.size
     ? formatFileSize(versionNode.size, true)
@@ -117,6 +119,34 @@ const VersionItem = ({
             />
           )}
         </Amplitude>
+          <Popup
+            inverted
+            position="top left"
+            content={
+              copied ? (
+                <Icon color="green" name="check" />
+              ) : (
+                'Copy download link'
+              )
+            }
+            trigger={
+              <CopyToClipboard
+                text={versionNode.downloadUrl}
+                onCopy={() => {
+                  setCopied(true);
+                  setTimeout(() => {
+                    setCopied(false);
+                  }, 700);
+                }}
+              >
+                <Button
+                  className="smallButton"
+                  icon="copy"
+                  onClick={e => e.stopPropagation()}
+                />
+              </CopyToClipboard>
+            }
+          />
       </Table.Cell>
     </Table.Row>
   );
