@@ -10,8 +10,6 @@ context('Admin Study Status', () => {
   beforeEach(() => {
     cy.login();
     cy.visit('/');
-    // Always show all studies by default
-    cy.contains('label', 'Show only my studies').click();
     // Always enable the status columns
     cy.contains('span.ui.dropdown', 'Change Columns').click();
     cy.contains('label', 'Sequencing Status').click();

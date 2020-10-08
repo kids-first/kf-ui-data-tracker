@@ -16,7 +16,6 @@ context('Add Study', () => {
 
     // Should have 4 studies to start
     cy.contains('a', 'Data Tracker').click();
-    cy.get('[data-cy="toggle my studies"]').click();
 
     cy.get('[data-cy="study name"]')
       .its('length')
