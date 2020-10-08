@@ -19,16 +19,6 @@ const FileActionButtons = ({
 }) => {
   return (
     <Button.Group fluid={fluid} size="small">
-      <CopyButton
-        data-testid="copy-file-id"
-        textToCopy={
-          node.downloadUrl + `/version/${fileSortedVersions(node)[0].node.kfId}`
-        }
-        basic
-        compact
-        position="top left"
-        tooltip="Copy download link"
-      />
       <Amplitude
         eventProperties={inheritedProps => ({
           ...inheritedProps,
@@ -85,6 +75,16 @@ const FileActionButtons = ({
             }}
           />
         }
+      />
+      <CopyButton
+        data-testid="copy-file-id"
+        textToCopy={
+          node.downloadUrl + `/version/${fileSortedVersions(node)[0].node.kfId}`
+        }
+        basic
+        compact
+        position="top left"
+        tooltip="Copy download link"
       />
       {deleteFile && (
         <Popup
