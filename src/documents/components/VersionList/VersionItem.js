@@ -4,6 +4,7 @@ import {Amplitude} from '@amplitude/react-amplitude';
 import {useMutation} from '@apollo/react-hooks';
 import {FILE_DOWNLOAD_URL} from '../../mutations';
 import AvatarTimeAgo from '../../../components/AvatarTimeAgo/AvatarTimeAgo';
+import CopyButton from '../../../components/CopyButton/CopyButton';
 import {formatFileSize, downloadFile, lengthLimit} from '../../utilities';
 import {Label, Icon, Table, Popup, Button} from 'semantic-ui-react';
 /**
@@ -70,6 +71,16 @@ const VersionItem = ({
               {size}
             </Label>
           }
+        <CopyButton
+          data-testid="copy-version-id"
+          text={' ' + versionNode.kfId}
+          textToCopy={versionNode.kfId}
+          basic
+          className="smallButton"
+          size="mini"
+          position="top left"
+          tooltip="Copy version ID"
+          as={Label}
         />
         <Amplitude
           eventProperties={inheritedProps => ({
