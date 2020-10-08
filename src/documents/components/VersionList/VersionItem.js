@@ -50,17 +50,32 @@ const VersionItem = ({
           createdAt={versionNode.createdAt}
         />
         <br />
-        <CopyButton
-          data-testid="copy-version-id"
-          text={' ' + versionNode.kfId}
-          textToCopy={versionNode.kfId}
-          basic
-          className="smallButton"
-          size="mini"
-          position="top left"
-          tooltip="Copy version ID"
-          as={Label}
-        />
+        <Amplitude
+          eventProperties={inheritedProps => ({
+            ...inheritedProps,
+            scope: inheritedProps.scope
+              ? [...inheritedProps.scope, 'button', 'copy version ID button']
+              : ['button', 'copy version ID button'],
+          })}
+        >
+          {({logEvent}) => (
+            <CopyButton
+              data-testid="copy-version-id"
+              text={' ' + versionNode.kfId}
+              textToCopy={versionNode.kfId}
+              basic
+              className="smallButton"
+              size="mini"
+              position="top left"
+              tooltip="Copy version ID"
+              as={Label}
+              onClick={e => {
+                logEvent('click');
+                e.stopPropagation();
+              }}
+            />
+          )}
+        </Amplitude>
         <Button.Group basic size="mini">
           <Amplitude
             eventProperties={inheritedProps => ({
@@ -91,55 +106,83 @@ const VersionItem = ({
               />
             )}
           </Amplitude>
-          <Popup
-            inverted
-            position="top center"
-            icon="download"
-            content={'Download this version (' + size + ')'}
-            trigger={
-              <Button
-                className="smallButton"
+          <Amplitude
+            eventProperties={inheritedProps => ({
+              ...inheritedProps,
+              scope: inheritedProps.scope
+                ? [...inheritedProps.scope, 'button', 'download button']
+                : ['button', 'download button'],
+            })}
+          >
+            {({logEvent}) => (
+              <Popup
+                inverted
+                position="top center"
                 icon="download"
-                onClick={e => {
-                  e.stopPropagation();
-                  downloadFile(
-                    studyId,
-                    fileId,
-                    versionNode.kfId,
-                    downloadFileMutation,
-                  );
-                }}
+                content={'Download this version (' + size + ')'}
+                trigger={
+                  <Button
+                    className="smallButton"
+                    icon="download"
+                    onClick={e => {
+                      logEvent('click');
+                      e.stopPropagation();
+                      downloadFile(
+                        studyId,
+                        fileId,
+                        versionNode.kfId,
+                        downloadFileMutation,
+                      );
+                    }}
+                  />
+                }
               />
-            }
-          />
-          <Popup
-            inverted
-            position="top left"
-            content={
-              copied ? (
-                <Icon color="green" name="check" />
-              ) : (
-                'Copy download link'
-              )
-            }
-            trigger={
-              <CopyToClipboard
-                text={versionNode.downloadUrl}
-                onCopy={() => {
-                  setCopied(true);
-                  setTimeout(() => {
-                    setCopied(false);
-                  }, 700);
-                }}
-              >
-                <Button
-                  className="smallButton"
-                  icon="copy"
-                  onClick={e => e.stopPropagation()}
-                />
-              </CopyToClipboard>
-            }
-          />
+            )}
+          </Amplitude>
+          <Amplitude
+            eventProperties={inheritedProps => ({
+              ...inheritedProps,
+              scope: inheritedProps.scope
+                ? [
+                    ...inheritedProps.scope,
+                    'button',
+                    'copy download url button',
+                  ]
+                : ['button', 'copy download url button'],
+            })}
+          >
+            {({logEvent}) => (
+              <Popup
+                inverted
+                position="top left"
+                content={
+                  copied ? (
+                    <Icon color="green" name="check" />
+                  ) : (
+                    'Copy download link'
+                  )
+                }
+                trigger={
+                  <CopyToClipboard
+                    text={versionNode.downloadUrl}
+                    onCopy={() => {
+                      logEvent('click');
+                      setCopied(true);
+                      setTimeout(() => {
+                        setCopied(false);
+                      }, 700);
+                    }}
+                  >
+                    <Button
+                      className="smallButton"
+                      icon="copy"
+                      onClick={e => e.stopPropagation()}
+                    />
+                  </CopyToClipboard>
+                }
+              />
+            )}
+          </Amplitude>
         </Button.Group>
       </Table.Cell>
     </Table.Row>
