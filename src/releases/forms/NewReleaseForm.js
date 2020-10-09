@@ -20,6 +20,7 @@ const NewReleaseForm = ({
   setFieldValue,
   setFieldTouched,
   studies,
+  history,
 }) => {
   const [editorState, setEditorState] = useState(
     EditorState.createWithContent(ContentState.createFromText('')),
@@ -27,14 +28,17 @@ const NewReleaseForm = ({
 
   const toggleStudy = study => {
     if (values.studies.filter(s => s.id === study.id).length) {
-      setFieldValue('studies', values.studies.filter(s => s.id !== study.id));
+      setFieldValue(
+        'studies',
+        values.studies.filter(s => s.id !== study.id),
+      );
     } else {
       setFieldValue('studies', [...values.studies, study]);
     }
   };
 
   return (
-    <>
+    <Segment clearing>
       <Form.Field error={touched.title && !!errors.title} required>
         <Header>Title</Header>
         <Input
@@ -101,6 +105,7 @@ const NewReleaseForm = ({
             primary
             data-testid="start-release-submit"
             type="submit"
+            floated="right"
             disabled={isSubmitting || !isValid}
             loading={isSubmitting}
             onClick={() => isValid && logEvent('click')}
@@ -109,10 +114,16 @@ const NewReleaseForm = ({
           </Button>
         )}
       </Amplitude>
+      <Button
+        type="button"
+        floated="right"
+        content="Cancel"
+        onClick={() => history.push(`/releases/history`)}
+      />
       {errors.all && (
         <Message negative title="Error" content={errors.all.message} />
       )}
-    </>
+    </Segment>
   );
 };
 

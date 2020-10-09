@@ -102,9 +102,11 @@ const NewReleaseView = ({history}) => {
         <title>{`KF Data Tracker - New Release`}</title>
       </Helmet>
       <Header as="h1">New Data Release</Header>
-      <Segment>
-        <NewReleaseForm handleSubmit={handleSubmit} studies={studies} />
-      </Segment>
+      <NewReleaseForm
+        handleSubmit={handleSubmit}
+        studies={studies}
+        history={history}
+      />
       <Confirm
         open={confirmOpen}
         cancelButton="Noooooo"
