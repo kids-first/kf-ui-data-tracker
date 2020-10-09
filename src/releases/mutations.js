@@ -34,3 +34,30 @@ export const CREATE_SERVICE = gql`
   ${SERVICE_FIELDS}
 `;
 
+export const UPDATE_RELEASE = gql`
+  mutation UpdateRelease($input: UpdateReleaseInput!, $release: ID!) {
+    updateRelease(release: $release, input: $input) {
+      release {
+        ...ReleaseFields
+        studies {
+          edges {
+            node {
+              id
+              kfId
+              name
+            }
+          }
+        }
+        notes {
+          edges {
+            node {
+              id
+              description
+            }
+          }
+        }
+      }
+    }
+  }
+  ${RELEASE_FIELDS}
+`;
