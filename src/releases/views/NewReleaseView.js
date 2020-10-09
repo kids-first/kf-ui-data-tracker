@@ -1,14 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Helmet} from 'react-helmet';
 import {useMutation, useQuery} from '@apollo/react-hooks';
-import {Container, Header, Segment} from 'semantic-ui-react';
+import {Link} from 'react-router-dom';
+import {
+  Container,
+  Header,
+  Segment,
+  Confirm,
+  Button,
+  Message,
+  Modal,
+  List,
+} from 'semantic-ui-react';
 import {GET_RELEASED_STUDY} from '../../state/queries';
 import {ALL_STUDIES} from '../../state/queries';
 import {START_RELEASE} from '../mutations';
 import NewReleaseForm from '../forms/NewReleaseForm';
 
-const NewReleaseView = () => {
-  const [startRelease] = useMutation(START_RELEASE, {
+const NewReleaseView = ({history}) => {
+  const [confirmOpen, setConfirmOpen] = useState(false);
+  const [release, setRelease] = useState({});
+
+  const [
+    startRelease,
+    {loading: startReleaseLoading, error: startReleaseError},
+  ] = useMutation(START_RELEASE, {
     context: {clientName: 'coordinator'},
   });
 
@@ -16,13 +32,16 @@ const NewReleaseView = () => {
     fetchPolicy: 'network-only',
   });
 
-  const {data: releasesData} = useQuery(
-    GET_RELEASED_STUDY,
-    {
-      context: {clientName: 'coordinator'},
-      fetchPolicy: 'cache-first',
-    },
-  );
+  const studyEdges = studiesData ? studiesData.allStudies.edges : [];
+  const studyById = studyEdges.reduce((acc, {node}, i) => {
+    acc[node.id] = node;
+    return acc;
+  }, {});
+
+  const {data: releasesData} = useQuery(GET_RELEASED_STUDY, {
+    context: {clientName: 'coordinator'},
+    fetchPolicy: 'cache-first',
+  });
 
   // Merge published releases into all studies
   const allReleases = releasesData && releasesData.allStudyReleases;
@@ -45,7 +64,7 @@ const NewReleaseView = () => {
     });
   }
 
-  const handleSubmit = (values, {setSubmitting, setErrors}) => {
+  const handleSubmit = (values, {setSubmitting}) => {
     setSubmitting(true);
 
     const studyIds = values.studies.map(study => study.id);
@@ -56,12 +75,25 @@ const NewReleaseView = () => {
       studies: studyIds,
       isMajor: values.isMajor,
     };
-
-    startRelease({variables: {input: release}}).catch(err =>
-      setErrors({all: err}),
-    );
-
+    setRelease(release);
+    setConfirmOpen(true);
     setSubmitting(false);
+  };
+
+  const handleCancel = () => {
+    setConfirmOpen(false);
+  };
+
+  const handleConfirm = () => {
+    startRelease({variables: {input: release}})
+      .then(resp => {
+        history.push(
+          `/releases/history/${resp.data.startRelease.release.kfId}`,
+        );
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
 
   return (
@@ -73,6 +105,50 @@ const NewReleaseView = () => {
       <Segment>
         <NewReleaseForm handleSubmit={handleSubmit} studies={studies} />
       </Segment>
+      <Confirm
+        open={confirmOpen}
+        cancelButton="Noooooo"
+        confirmButton={
+          <Button disabled={startReleaseError} loading={startReleaseLoading}>
+            Let 'er rip
+          </Button>
+        }
+        onCancel={handleCancel}
+        onConfirm={handleConfirm}
+        header={`About to start release: '${release.name}'`}
+        content={
+          <Modal.Content>
+            <p>
+              This <b>{release.is_major ? 'will' : 'will not'}</b> be a major
+              release.
+            </p>
+            These studies will be staged for review. This will not affect any
+            public facing data until it is reviewed and published.
+            {release.studies && (
+              <List bulleted>
+                {release.studies.map(sd => (
+                  <List.Item key={sd}>
+                    <Link to={`/study/${studyById[sd].kfId}/releases`}>
+                      {studyById[sd].kfId}
+                    </Link>{' '}
+                    - {studyById[sd].name}
+                  </List.Item>
+                ))}
+              </List>
+            )}
+            {startReleaseError && (
+              <Message
+                negative
+                header="Error"
+                content={
+                  startReleaseError.networkError +
+                  startReleaseError.graphQLErrors
+                }
+              />
+            )}
+          </Modal.Content>
+        }
+      />
     </Container>
   );
 };
