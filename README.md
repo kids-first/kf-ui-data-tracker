@@ -13,34 +13,34 @@ Investigator study management and progress tracking.
 
 ## Development Quick Start
 
+If you haven't already, checkout the kf-ui-data-tracker master branch:
+
+```
+git clone https://github.com/kids-first/kf-ui-data-tracker.git
+cd kf-ui-data-tracker
+```
+
 #### Setup backend API service
 
 Study-creator served as backend provides the data APIs consumed by data-tracker frontend.
 
-If you haven't already, create the kf-data-stack network:
+If you haven't already, create the kf-data-stack network and necessary external volume:
 
 ```
 docker network create kf-data-stack
+docker volume create --name=bundle
 ```
 
-Checkout kf-api-study-creator master and bring up the study creator API:
-Checkout the [Kids First Data Stack](https://github.com/kids-first/kf-data-stack)
-and make sure the study creator services are running:
+Next bring up the study creator API in development mode:
 
 ```
-docker-compose up study-creator
+docker-compose up web
 ```
 
-For more details on configuring the backend behavior, see the [Study Creator Documentation](https://kids-first.github.io/kf-api-study-creator/index.html).
+For more details on configuring the backend behavior, see the
+[Study Creator Documentation](https://kids-first.github.io/kf-api-study-creator/index.html).
 
 #### Setup front-end server
-
-If you haven't already, checkout kf-ui-data-tracker master:
-
-```
-git clone https://github.com/kids-first/kf-api-study-creator.git
-cd kf-ui-data-tracker
-```
 
 Install all dependencies and start the server:
 
@@ -61,6 +61,12 @@ REACT_APP_AUTH0_CLIENT_ID
 REACT_APP_AUTH0_REDIRECT_URI
 REACT_APP_AUTH0_AUD
 ```
+
+You will either need to contact the maintainer of the repository to set 
+`REACT_APP_AUTH0_CLIENT_ID` with an existing client ID or you will need to 
+setup an application in Auth0 and use it to set the `REACT_APP_AUTH0_CLIENT_ID`
+variable. Make sure to configure the application to allow redirects at the 
+local server's address (typically http://localhost:3000/callback)
 
 See the provided `.env.schema` file for more details.
 
@@ -98,6 +104,7 @@ yarn run jest -u
 ### Integration Tests
 
 Cypress is used to perform integration tests.
+
 There must be a Study Creator API running with the mock data loaded and a
 local Data Tracker application must be running on port `3000`.
 This setup can be bootstrapped with the included `docker-compose.yml`:
