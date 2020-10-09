@@ -1,9 +1,12 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import {Header, Table} from 'semantic-ui-react';
 
-const Name = ({name, description}) => (
+const Name = ({name, description, kfId}) => (
   <Table.Cell>
-    <Header size="small">{name}</Header>
+    <Header as={Link} to={`/releases/history/${kfId}`} size="small">
+      {name}
+    </Header>
   </Table.Cell>
 );
 

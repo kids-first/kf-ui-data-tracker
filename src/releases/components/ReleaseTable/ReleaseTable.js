@@ -25,6 +25,7 @@ const cellContent = {
       name={node.name}
       key={node.kfId + 'name'}
       description={node.description}
+      kfId={node.kfId}
     />
   ),
   kfId: node => <KfId kfId={node.kfId} key={node.kfId + 'kfId'} />,
