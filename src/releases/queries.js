@@ -110,3 +110,30 @@ export const ALL_NOTES = gql`
     }
   }
 `;
+
+export const GET_RELEASE = gql`
+  query GetRelease($id: ID!) {
+    release(id: $id) {
+      ...ReleaseFields
+      studies {
+        edges {
+          node {
+            id
+            kfId
+            name
+            createdAt
+          }
+        }
+      }
+      notes {
+        edges {
+          node {
+            id
+            description
+          }
+        }
+      }
+    }
+  }
+  ${RELEASE_FIELDS}
+`;
