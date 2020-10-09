@@ -40,3 +40,73 @@ export const ALL_SERVICES = gql`
   ${SERVICE_FIELDS}
 `;
 
+
+export const ALL_EVENTS = gql`
+  query AllEvents($release: ID, $first: Int, $taskService: ID) {
+    allEvents(
+      release: $release
+      taskService: $taskService
+      orderBy: "-created_at"
+      first: $first
+    ) {
+      edges {
+        node {
+          id
+          createdAt
+          message
+          release {
+            id
+            kfId
+            name
+          }
+          taskService {
+            id
+            kfId
+            name
+          }
+          task {
+            id
+            kfId
+          }
+        }
+      }
+    }
+  }
+`;
+
+export const ALL_TASKS = gql`
+  query AllTasks($first: Int, $release: String) {
+    allTasks(first: $first, release: $release) {
+      edges {
+        node {
+          id
+          kfId
+          state
+          createdAt
+          taskService {
+            id
+            name
+          }
+        }
+      }
+    }
+  }
+`;
+
+export const ALL_NOTES = gql`
+  query AllNotes($release: ID) {
+    allReleaseNotes(release: $release) {
+      edges {
+        node {
+          id
+          kfId
+          description
+          createdAt
+          study {
+            id
+          }
+        }
+      }
+    }
+  }
+`;
