@@ -322,6 +322,10 @@ body {
   border-width: 1px 0px 0px 0px !important;
 }
 
+.text-normal {
+  font-weight: normal !important;
+}
+
 .text-10 {
   font-size: 10px !important;
 }
@@ -447,4 +451,8 @@ body {
 code.label {
   background: #eee;
   padding: 2px;
+}
+
+.lh-inherit {
+  line-height: inherit !important;
 }

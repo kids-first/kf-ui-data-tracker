@@ -918,4 +918,15 @@ export const mocks = [
     },
     result: studyByKfId_pagination,
   },
+  {
+    request: {
+      query: ALL_EVENTS,
+      variables: {
+        fileId: 'SF_5ZPEM167',
+        orderBy: '-created_at',
+        first: 20,
+      },
+    },
+    result: allEvents_refetch,
+  },
 ];

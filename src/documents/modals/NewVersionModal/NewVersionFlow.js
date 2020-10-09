@@ -7,6 +7,7 @@ import UploadStep from './UploadStep';
 import DescriptionStep from './DescriptionStep';
 import {GET_FILE_BY_ID} from '../../queries';
 import {CREATE_VERSION} from '../../mutations';
+import {ALL_EVENTS} from '../../../state/queries';
 
 /**
  * The NewVersionFlow handles flow for uploading a new version of a file
@@ -21,6 +22,14 @@ export const NewVersionFlow = ({
     awaitRefetchQueries: true,
     refetchQueries: [
       {query: GET_FILE_BY_ID, variables: {kfId: match.params.fileId}},
+      {
+        query: ALL_EVENTS,
+        variables: {
+          fileId: fileNode.kfId,
+          orderBy: '-created_at',
+          first: 20,
+        },
+      },
     ],
   });
 
