@@ -3,7 +3,7 @@ import {RELEASE_FIELDS, SERVICE_FIELDS} from './fragments';
 
 export const GET_RELEASES = gql`
   query AllReleases {
-    allReleases(first: 5, orderBy: "-created_at") {
+    allReleases(first: 20, orderBy: "-created_at") {
       edges {
         node {
           ...ReleaseFields
