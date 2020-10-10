@@ -102,7 +102,7 @@ const NewReleaseForm = ({
       >
         {({logEvent}) => (
           <Button
-            primary
+            color="purple"
             data-testid="start-release-submit"
             type="submit"
             floated="right"

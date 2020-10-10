@@ -456,3 +456,7 @@ code.label {
 .lh-inherit {
   line-height: inherit !important;
 }
+
+.bg-purple {
+  background-color: #9627ba !important;
+}

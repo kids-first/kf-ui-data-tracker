@@ -109,10 +109,14 @@ const NewReleaseView = ({history}) => {
       />
       <Confirm
         open={confirmOpen}
-        cancelButton="Noooooo"
+        cancelButton="Cancel"
         confirmButton={
-          <Button disabled={startReleaseError} loading={startReleaseLoading}>
-            Let 'er rip
+          <Button
+            className="bg-purple"
+            disabled={startReleaseError}
+            loading={startReleaseLoading}
+          >
+            Run Release
           </Button>
         }
         onCancel={handleCancel}
