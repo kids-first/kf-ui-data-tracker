@@ -7,6 +7,7 @@ import {
   NewReleaseView,
   NewServiceView,
   ServicesListView,
+  ReleaseDetailView,
 } from './views';
 
 const Routes = () => (
@@ -25,6 +26,11 @@ const Routes = () => (
         component={NewServiceView}
         scope={['services', 'new']}
         permissions={['view_settings']}
+      />
+      <Route
+        exact
+        path="/releases/history/:releaseId"
+        component={ReleaseDetailView}
       />
       <RestrictedRoute
         exact
