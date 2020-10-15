@@ -13,3 +13,17 @@ export const RELEASE_FIELDS = gql`
     isMajor
   }
 `;
+
+export const SERVICE_FIELDS = gql`
+  fragment ServiceFields on TaskServiceNode {
+    id
+    author
+    kfId
+    name
+    createdAt
+    description
+    healthStatus
+    enabled
+    url
+  }
+`;

@@ -5,7 +5,11 @@ import {Container, Grid, Menu, Segment} from 'semantic-ui-react';
 import {NavLink, useLocation} from 'react-router-dom';
 import {LATEST_RELEASE} from '../queries';
 import {ReleaseHeader} from '../components/ReleaseHeader';
-import {ReleasesHelp} from '../components/helpers';
+import {
+  ReleasesHelp,
+  ServicesHelp,
+  NewServiceHelp,
+} from '../components/helpers';
 
 const Layout = () => {
   const location = useLocation();
@@ -60,6 +64,12 @@ const Layout = () => {
         </Menu>
         <Switch>
           <Route exact path="/releases/history" component={ReleasesHelp} />
+          <Route exact path="/releases/services" component={ServicesHelp} />
+          <Route
+            exact
+            path="/releases/services/new-service"
+            component={NewServiceHelp}
+          />
         </Switch>
       </Container>
     </>

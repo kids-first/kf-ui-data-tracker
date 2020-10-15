@@ -1,5 +1,5 @@
 import gql from 'graphql-tag';
-import {RELEASE_FIELDS} from './fragments';
+import {RELEASE_FIELDS, SERVICE_FIELDS} from './fragments';
 
 export const GET_RELEASES = gql`
   query AllReleases {
@@ -26,3 +26,17 @@ export const LATEST_RELEASE = gql`
   }
   ${RELEASE_FIELDS}
 `;
+
+export const ALL_SERVICES = gql`
+  query AllServices {
+    allTaskServices(first: 20, orderBy: "-created_at") {
+      edges {
+        node {
+          ...ServiceFields
+        }
+      }
+    }
+  }
+  ${SERVICE_FIELDS}
+`;
+
