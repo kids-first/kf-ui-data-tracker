@@ -36,6 +36,9 @@ const HomeView = ({match}) => {
       )}
       <Header as="h1" className="noMargin">
         Latest Releases
+        <span className="text-14 text-normal">
+          {' '}(Most recent 20 releases)
+        </span>
       </Header>
       <ReleaseTable releases={releaseData && releaseData.allReleases.edges} />
     </Container>

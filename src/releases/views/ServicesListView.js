@@ -38,7 +38,10 @@ const ServicesListView = props => {
         />
       )}
       <Header as="h1" className="noMargin">
-        Kids First Release Task Services
+        Release Task Services
+        <span className="text-14 text-normal">
+          {' '}(Most recent 20 services)
+        </span>
       </Header>
       <ServiceList
         services={services && services.allTaskServices.edges}
