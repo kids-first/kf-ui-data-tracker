@@ -28,17 +28,17 @@ const Routes = () => (
         scope={['services', 'new']}
         permissions={['view_settings']}
       />
+      <RestrictedRoute
+        exact
+        path="/releases/history/new-release"
+        component={NewReleaseView}
+        scope={['releases', 'new']}
+        permissions={['view_settings']}
+      />
       <Route
         exact
         path="/releases/history/:releaseId"
         component={ReleaseDetailView}
-      />
-      <RestrictedRoute
-        exact
-        path="/releases/new-release"
-        component={NewReleaseView}
-        scope={['releases', 'new']}
-        permissions={['view_settings']}
       />
       <Route
         exact

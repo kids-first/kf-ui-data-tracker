@@ -31,7 +31,7 @@ const HomeView = ({match}) => {
           floated="right"
           icon="tag"
           content="Run Release"
-          onClick={() => history.push('new-release')}
+          onClick={() => history.push('/releases/history/new-release')}
         />
       )}
       <Header as="h1" className="noMargin">
