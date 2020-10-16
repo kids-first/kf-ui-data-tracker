@@ -63,7 +63,13 @@ const ReleaseDetailView = ({user, history, match}) => {
         <Message
           negative
           header="Error"
-          content={releaseError + eventsError + notesError}
+          content={
+            <>
+              {releaseError && <p>Release Error: {releaseError.message}</p>}
+              {eventsError && <p>Events Error: {eventsError.message}</p>}
+              {notesError && <p>Notes Error: {notesError.message}</p>}
+            </>
+          }
         />
       </Container>
     );
