@@ -40,6 +40,14 @@ export const ALL_SERVICES = gql`
   ${SERVICE_FIELDS}
 `;
 
+export const GET_SERVICE = gql`
+  query GetService($id: ID!) {
+    taskService(id: $id) {
+      ...ServiceFields
+    }
+  }
+  ${SERVICE_FIELDS}
+`;
 
 export const ALL_EVENTS = gql`
   query AllEvents($release: ID, $first: Int, $taskService: ID) {
