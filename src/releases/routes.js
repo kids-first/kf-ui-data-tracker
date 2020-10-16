@@ -8,6 +8,7 @@ import {
   NewServiceView,
   ServicesListView,
   ReleaseDetailView,
+  ServiceDetailView,
 } from './views';
 
 const Routes = () => (
@@ -38,6 +39,11 @@ const Routes = () => (
         component={NewReleaseView}
         scope={['releases', 'new']}
         permissions={['view_settings']}
+      />
+      <Route
+        exact
+        path="/releases/services/:serviceId"
+        render={() => <ServiceDetailView />}
       />
     </Switch>
   </>
