@@ -31,11 +31,14 @@ const HomeView = ({match}) => {
           floated="right"
           icon="tag"
           content="Run Release"
-          onClick={() => history.push('new-release')}
+          onClick={() => history.push('/releases/history/new-release')}
         />
       )}
       <Header as="h1" className="noMargin">
         Latest Releases
+        <span className="text-14 text-normal">
+          {' '}(Most recent 20 releases)
+        </span>
       </Header>
       <ReleaseTable releases={releaseData && releaseData.allReleases.edges} />
     </Container>
