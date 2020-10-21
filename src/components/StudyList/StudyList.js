@@ -66,7 +66,7 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
   // the future if the schema ever changes
   const existingState = JSON.parse(localStorage.getItem('studyColumns'));
   const defaultState = {
-    version: 4,
+    version: 5,
     columns: [
       {key: 'kfId', name: 'Kids First ID', visible: true},
       {key: 'externalId', name: 'phsid/External ID', visible: false},
