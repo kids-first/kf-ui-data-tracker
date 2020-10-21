@@ -1,5 +1,21 @@
 # Kids First Data Tracker Change History
 
+## Release 0.18.0
+
+### Summary
+
+- Emojis: ✨ x4, 💄 x1
+- Categories: Additions x4, Other Changes x1
+
+### New features and changes
+
+- [#898](https://github.com/kids-first/kf-ui-data-tracker/pull/898) - ✨ Add services list view and register new service view to release sub app - [8f7c7c1f](https://github.com/kids-first/kf-ui-data-tracker/commit/8f7c7c1ff0e9af5b072717eb51e40f98595c44b8) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#905](https://github.com/kids-first/kf-ui-data-tracker/pull/905) - ✨ Add service detail view to release sub app feature - [b1995ea9](https://github.com/kids-first/kf-ui-data-tracker/commit/b1995ea9be64879eabb6149ee80b4bf74f0798d0) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#907](https://github.com/kids-first/kf-ui-data-tracker/pull/907) - 💄 UI updates around releases and services page - [8ddbd800](https://github.com/kids-first/kf-ui-data-tracker/commit/8ddbd80012242c73ea188d1d709842399ca6f84a) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#904](https://github.com/kids-first/kf-ui-data-tracker/pull/904) - ✨ Add release detail view to release sub app feature - [091eb3ac](https://github.com/kids-first/kf-ui-data-tracker/commit/091eb3ac6ad01ddb7df7efc33ccef5ea8314578e) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#906](https://github.com/kids-first/kf-ui-data-tracker/pull/906) - ✨ Update run new release flow with confirm widow - [59b1435c](https://github.com/kids-first/kf-ui-data-tracker/commit/59b1435c5129ee7361a128133b625a26ff2ca699) by [XuTheBunny](https://github.com/XuTheBunny)
+
+
 ## Release 0.17.2
 
 ### Summary
