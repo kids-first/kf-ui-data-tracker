@@ -1,5 +1,9 @@
 /// <reference types="cypress" />
 
+/*
+// Disbale the test for study studay status
+// Status columns are removed from study table
+
 context('Admin Study Status', () => {
   before(() => {
     cy.clearLocalStorage('onlyMyStudies');
@@ -134,3 +138,4 @@ context('Investigator Study Status', () => {
       .should('not.exist');
   });
 });
+*/
