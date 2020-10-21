@@ -75,21 +75,6 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
         name: 'Expected Samples',
         visible: false,
       },
-      {
-        key: 'sequencingStatus',
-        name: 'Sequencing Status',
-        visible: false,
-      },
-      {
-        key: 'ingestionStatus',
-        name: 'Ingestion Status',
-        visible: false,
-      },
-      {
-        key: 'phenotypeStatus',
-        name: 'Phenotype Status',
-        visible: false,
-      },
       {key: 'version', name: 'Version', visible: true},
       {key: 'slackChannel', name: 'Slack Channel', visible: false},
       {key: 'bucket', name: 'Bucket', visible: false},
