@@ -5,9 +5,6 @@ import {Table} from 'semantic-ui-react';
 import ActionButtons from './ActionButtons';
 import KfId from './KfId';
 import Release from './Release';
-import SequencingStatus from './SequencingStatus';
-import IngestionStatus from './IngestionStatus';
-import PhenotypeStatus from './PhenotypeStatus';
 import StudyName from './Name';
 import {compareSemVer} from '../../common/sortUtils';
 
@@ -28,15 +25,6 @@ const cellContent = {
     <Table.Cell singleLine width="1" key={node.kfId + 'externalId'}>
       <code>{node.externalId}</code>
     </Table.Cell>
-  ),
-  sequencingStatus: node => (
-    <SequencingStatus key={node.kfId + 'sequencingStatus'} study={node} />
-  ),
-  ingestionStatus: node => (
-    <IngestionStatus key={node.kfId + 'ingestionStatus'} study={node} />
-  ),
-  phenotypeStatus: node => (
-    <PhenotypeStatus key={node.kfId + 'phenotypeStatus'} study={node} />
   ),
   anticipatedSamples: node => (
     <Table.Cell key={node.kfId + 'anticipatedSamples'} width="1">
@@ -71,9 +59,6 @@ const columnSorts = {
   version: compareSemVer,
   externalId: stringSort,
   actions: (a, b) => 0,
-  sequencingStatus: stringSort,
-  phenotypeStatus: stringSort,
-  ingestionStatus: stringSort,
   anticipatedSamples: intSort,
 };
 
