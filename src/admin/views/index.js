@@ -5,3 +5,5 @@ export {default as EventsView} from './EventsView';
 export {default as TokensListView} from './TokensListView';
 export {default as UsersView} from './UsersView';
 export {default as PendingInvitesView} from './PendingInvitesView';
+export {default as LogsView} from './LogsView';
+export {default as LogView} from './LogView';

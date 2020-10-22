@@ -9,7 +9,6 @@ import {
   Table,
   Dimmer,
 } from 'semantic-ui-react';
-import TimeAgo from 'react-timeago';
 import {FEATURES, SETTINGS} from '../../state/queries';
 import gql from 'graphql-tag';
 
@@ -82,48 +81,6 @@ const Queues = ({queues}) => (
   />
 );
 
-const Jobs = ({jobs}) => (
-  <Table
-    tableData={jobs}
-    headerRow={[
-      {content: 'Job', key: 'jobs0'},
-      {content: 'Status', textAlign: 'center', key: 'jobs1'},
-      {content: 'Error Message', key: 'jobs2'},
-      {content: 'Last Run', textAlign: 'right', key: 'jobs3'},
-      {content: 'Next Run', textAlign: 'right', key: 'jobs4'},
-    ]}
-    renderBodyRow={(data, index) => ({
-      key: data.name,
-      cells: [
-        {content: data.name, key: data.name + '0'},
-        {
-          content: data.failing ? (
-            <Icon name="delete" />
-          ) : data.active ? (
-            <Icon name="check" />
-          ) : (
-            <Icon name="delete" />
-          ),
-          textAlign: 'center',
-          key: data.name + '1',
-        },
-        {content: data.lastError, key: data.name + '2'},
-        {
-          content: <TimeAgo date={data.lastRun} live={false} />,
-          textAlign: 'right',
-          key: data.name + '3',
-        },
-        {
-          content: <TimeAgo date={data.enqueuedAt} live={false} />,
-          textAlign: 'right',
-          key: data.name + '4',
-        },
-      ],
-      error: data.failing,
-    })}
-  />
-);
-
 /**
  * A place holder skeleton for configuration table
  */
@@ -168,20 +125,6 @@ const StatusTables = ({featuresString, settingsString}) => {
           ...SettingsFields
         }
         queues
-        jobs {
-          edges {
-            node {
-              id
-              name
-              active
-              failing
-              lastRun
-              lastError
-              createdOn
-              enqueuedAt
-            }
-          }
-        }
       }
     }
     ${FEATURES_FIELDS}
@@ -215,17 +158,6 @@ const StatusTables = ({featuresString, settingsString}) => {
 
   const queues = data && data.status.queues && JSON.parse(data.status.queues);
 
-  const jobs =
-    data &&
-    data.status.jobs &&
-    data.status.jobs.edges.map(({node}) => ({
-      name: node.name,
-      active: node.active,
-      failing: node.failing,
-      lastRun: node.lastRun,
-      lastError: node.lastError,
-      enqueuedAt: node.enqueuedAt,
-    }));
   return (
     <>
       <Header as="h4">Feature Flags</Header>
@@ -234,8 +166,6 @@ const StatusTables = ({featuresString, settingsString}) => {
       {settings ? <SettingsTable settings={settings} /> : <LoadingTable />}
       <Header as="h4">Queues</Header>
       {queues ? <Queues queues={queues} /> : <LoadingTable />}
-      <Header as="h4">Jobs</Header>
-      {jobs ? <Jobs jobs={jobs} /> : <LoadingTable />}
     </>
   );
 };

@@ -98,3 +98,54 @@ export const ALL_USERS = gql`
   ${USER_FIELDS}
   ${GROUP_FIELDS}
 `;
+
+export const ALL_LOGS = gql`
+  query AllLogs {
+    allJobLogs(orderBy: "-created_at", first: 20) {
+      edges {
+        node {
+          id
+          createdAt
+          downloadUrl
+          error
+          job {
+            id
+            name
+          }
+        }
+      }
+    }
+  }
+`;
+
+export const GET_LOG = gql`
+  query Log($id: ID!) {
+    jobLog(id: $id) {
+      id
+      createdAt
+      downloadUrl
+      error
+      job {
+        id
+        name
+      }
+    }
+  }
+`;
+
+export const ALL_JOBS = gql`
+  query Jobs {
+    allJobs(orderBy: "name") {
+      edges {
+        node {
+          id
+          name
+          failing
+          active
+          scheduled
+          enqueuedAt
+        }
+      }
+    }
+  }
+`;
