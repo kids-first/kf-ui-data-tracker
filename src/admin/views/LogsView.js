@@ -10,8 +10,8 @@ const LogsView = () => {
   const {data: logsData} = useQuery(ALL_LOGS);
   const {data: jobsData} = useQuery(ALL_JOBS);
 
-  const allLogs = logsData && logsData.allJobLogs.edges;
-  const allJobs = jobsData && jobsData.allJobs.edges;
+  const allLogs = logsData ? logsData.allJobLogs.edges : [];
+  const allJobs = jobsData ? jobsData.allJobs.edges : [];
 
   return (
     <Container as={Segment} basic>
@@ -28,7 +28,7 @@ const LogsView = () => {
         <Grid.Column width={10}>
           <Header>Latest Logs</Header>
           <List celled selection size="large">
-            {allLogs &&
+            {allLogs.length ? (
               allLogs.map(({node}) => (
                 <List.Item key={node.id} as={Link} to={`/logs/${node.id}`}>
                   {node.error ? (
@@ -42,7 +42,10 @@ const LogsView = () => {
                     {node.job.name}
                   </List.Content>
                 </List.Item>
-              ))}
+              ))
+            ) : (
+              <span>No Logs Yet</span>
+            )}
           </List>
         </Grid.Column>
       </Grid>
