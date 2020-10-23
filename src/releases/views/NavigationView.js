@@ -16,9 +16,6 @@ const Layout = () => {
 
   const {data: latestReleaseData, loading: latestReleaseLoading} = useQuery(
     LATEST_RELEASE,
-    {
-      context: {clientName: 'coordinator'},
-    },
   );
 
   const baseHref = '/releases';
@@ -35,18 +32,22 @@ const Layout = () => {
 
   return (
     <>
-      <Segment basic className="science-bg">
-        <Grid container className="study-header-background">
-          <Grid.Column>
-            <ReleaseHeader
-              loading={latestReleaseLoading}
-              release={
-                latestReleaseData && latestReleaseData.allReleases.edges[0].node
-              }
-            />
-          </Grid.Column>
-        </Grid>
-      </Segment>
+      {latestReleaseData && latestReleaseData.allReleases.edges.length > 0 && (
+        <Segment basic className="science-bg">
+          <Grid container className="study-header-background">
+            <Grid.Column>
+              <ReleaseHeader
+                loading={latestReleaseLoading}
+                release={
+                  latestReleaseData &&
+                  latestReleaseData.allReleases.edges.length &&
+                  latestReleaseData.allReleases.edges[0].node
+                }
+              />
+            </Grid.Column>
+          </Grid>
+        </Segment>
+      )}
 
       <Container>
         <Menu color="purple" compact secondary pointing>
