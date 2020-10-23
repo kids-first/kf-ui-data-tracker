@@ -31,8 +31,8 @@ const BatchActions = ({
       eventProperties={inheritedProps => ({
         ...inheritedProps,
         scope: inheritedProps.scope
-          ? [...inheritedProps.scope, 'button', 'preview button']
-          : ['button', 'preview button'],
+          ? [...inheritedProps.scope, 'button', 'batch preview button']
+          : ['button', 'batch preview button'],
       })}
     >
       {({logEvent}) => (
@@ -67,70 +67,95 @@ const BatchActions = ({
         />
       )}
     </Amplitude>
-    <Popup
-      inverted
-      position="top left"
-      content="Download selected documents"
-      trigger={
-        <Button
-          className="h-38"
-          compact
-          basic
-          primary
-          size="large"
-          icon="download"
-          data-testid="batch-download"
-          disabled={disabled}
-          onClick={e => {
-            e.stopPropagation();
-            selection.map(fileId =>
-              downloadFile(studyId, fileId, null, downloadFileMutation),
-            );
-          }}
-        />
-      }
-    />
-    {deleteFile && (
-      <Popup
-        trigger={
-          <Button
-            className="h-38"
-            compact
-            basic
-            negative
-            size="large"
-            icon="trash alternate"
-            data-testid="batch-delete"
-            disabled={disabled}
-            onClick={e => {
-              e.stopPropagation();
-            }}
-          />
-        }
-        header="Are you sure?"
-        content={
-          <>
-            These files and all of their versions and history will be deleted
-            <Divider />
+    <Amplitude
+      eventProperties={inheritedProps => ({
+        ...inheritedProps,
+        scope: inheritedProps.scope
+          ? [...inheritedProps.scope, 'button', 'batch download button']
+          : ['button', 'batch download button'],
+      })}
+    >
+      {({logEvent}) => (
+        <Popup
+          inverted
+          position="top left"
+          content="Download selected documents"
+          trigger={
             <Button
-              data-testid="delete-confirm"
-              negative
-              fluid
-              icon={<Icon name="trash alternate" />}
-              content="Delete"
+              className="h-38"
+              compact
+              basic
+              primary
+              size="large"
+              icon="download"
+              data-testid="batch-download"
+              disabled={disabled}
               onClick={e => {
+                logEvent('click');
                 e.stopPropagation();
                 selection.map(fileId =>
-                  deleteFile({variables: {kfId: fileId}}),
+                  downloadFile(studyId, fileId, null, downloadFileMutation),
                 );
-                setSelection([]);
               }}
             />
-          </>
-        }
-        on="click"
-        position="top right"
-      />
+          }
+        />
+      )}
+    </Amplitude>
+    {deleteFile && (
+      <Amplitude
+        eventProperties={inheritedProps => ({
+          ...inheritedProps,
+          scope: inheritedProps.scope
+            ? [...inheritedProps.scope, 'button', 'batch delete button']
+            : ['button', 'batch delete button'],
+        })}
+      >
+        {({logEvent}) => (
+          <Popup
+            trigger={
+              <Button
+                className="h-38"
+                compact
+                basic
+                negative
+                size="large"
+                icon="trash alternate"
+                data-testid="batch-delete"
+                disabled={disabled}
+                onClick={e => {
+                  e.stopPropagation();
+                }}
+              />
+            }
+            header="Are you sure?"
+            content={
+              <>
+                These files and all of their versions and history will be
+                deleted
+                <Divider />
+                <Button
+                  data-testid="delete-confirm"
+                  negative
+                  fluid
+                  icon={<Icon name="trash alternate" />}
+                  content="Delete"
+                  onClick={e => {
+                    logEvent('click');
+                    e.stopPropagation();
+                    selection.map(fileId =>
+                      deleteFile({variables: {kfId: fileId}}),
+                    );
+                    setSelection([]);
+                  }}
+                />
+              </>
+            }
+            on="click"
+            position="top right"
+          />
+        )}
+      </Amplitude>
     )}
   </Segment>
 );
