@@ -83,15 +83,15 @@ export const ALL_EVENTS = gql`
 `;
 
 export const ALL_TASKS = gql`
-  query AllTasks($first: Int, $release: String) {
-    allTasks(first: $first, release: $release) {
+  query AllTasks($first: Int, $release: ID!) {
+    allReleaseTasks(first: $first, release: $release) {
       edges {
         node {
           id
           kfId
           state
           createdAt
-          taskService {
+          releaseService {
             id
             name
           }
