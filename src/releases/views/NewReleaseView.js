@@ -3,6 +3,7 @@ import {Helmet} from 'react-helmet';
 import {useMutation, useQuery} from '@apollo/react-hooks';
 import {Link} from 'react-router-dom';
 import {
+  Accordion,
   Container,
   Header,
   Segment,
@@ -10,6 +11,7 @@ import {
   Button,
   Message,
   Modal,
+  Icon,
   List,
 } from 'semantic-ui-react';
 import {GET_RELEASED_STUDY} from '../../state/queries';
@@ -25,9 +27,8 @@ const NewReleaseView = ({history}) => {
   const [
     startRelease,
     {loading: startReleaseLoading, error: startReleaseError},
-  ] = useMutation(START_RELEASE, {
-    context: {clientName: 'coordinator'},
-  });
+  ] = useMutation(START_RELEASE);
+
   const {data: services} = useQuery(ALL_SERVICES, {
     context: {clientName: 'coordinator'},
   });
@@ -77,6 +78,7 @@ const NewReleaseView = ({history}) => {
       name: values.title,
       description: values.description,
       studies: studyIds,
+      services: [],
       isMajor: values.isMajor,
     };
     setRelease(release);
@@ -112,55 +114,97 @@ const NewReleaseView = ({history}) => {
         services={services}
         history={history}
       />
-      <Confirm
+      <ConfirmModal
         open={confirmOpen}
-        cancelButton="Cancel"
-        confirmButton={
-          <Button
-            className="bg-purple"
-            disabled={startReleaseError}
-            loading={startReleaseLoading}
-          >
-            Run Release
-          </Button>
-        }
-        onCancel={handleCancel}
-        onConfirm={handleConfirm}
-        header={`About to start release: '${release.name}'`}
-        content={
-          <Modal.Content>
-            <p>
-              This <b>{release.is_major ? 'will' : 'will not'}</b> be a major
-              release.
-            </p>
-            These studies will be staged for review. This will not affect any
-            public facing data until it is reviewed and published.
-            {release.studies && (
-              <List bulleted>
-                {release.studies.map(sd => (
-                  <List.Item key={sd}>
-                    <Link to={`/study/${studyById[sd].kfId}/releases`}>
-                      {studyById[sd].kfId}
-                    </Link>{' '}
-                    - {studyById[sd].name}
-                  </List.Item>
-                ))}
-              </List>
-            )}
-            {startReleaseError && (
-              <Message
-                negative
-                header="Error"
-                content={
-                  startReleaseError.networkError +
-                  startReleaseError.graphQLErrors
-                }
-              />
-            )}
-          </Modal.Content>
-        }
+        release={release}
+        studyById={studyById}
+        handleSubmit={handleSubmit}
+        handleConfirm={handleConfirm}
+        handleCancel={handleCancel}
+        startReleaseLoading={startReleaseLoading}
+        startReleaseError={startReleaseError}
       />
     </Container>
+  );
+};
+
+const ConfirmModal = ({
+  open,
+  release,
+  studyById,
+  handleSubmit,
+  handleConfirm,
+  handleCancel,
+  startReleaseLoading,
+  startReleaseError,
+}) => {
+  const [showErrors, setShowErorrs] = useState(false);
+
+  return (
+    <Confirm
+      open={open}
+      cancelButton="Cancel"
+      confirmButton={
+        <Button
+          className="bg-purple"
+          disabled={startReleaseError}
+          loading={startReleaseLoading}
+        >
+          Run Release
+        </Button>
+      }
+      onCancel={handleCancel}
+      onConfirm={handleConfirm}
+      header={`About to start release: '${release.name}'`}
+      content={
+        <Modal.Content>
+          <p>
+            This <b>{release.is_major ? 'will' : 'will not'}</b> be a major
+            release.
+          </p>
+          These studies will be staged for review. This will not affect any
+          public facing data until it is reviewed and published.
+          {release.studies && (
+            <List bulleted>
+              {release.studies.map(sd => (
+                <List.Item key={sd}>
+                  <Link to={`/study/${studyById[sd].kfId}/releases`}>
+                    {studyById[sd].kfId}
+                  </Link>{' '}
+                  - {studyById[sd].name}
+                </List.Item>
+              ))}
+            </List>
+          )}
+          {startReleaseError && (
+            <Message
+              negative
+              header="Error"
+              content={
+                <>
+                  There was a problem trying to start the release. No action was
+                  taken.
+                  <Accordion>
+                    <Accordion.Title
+                      active={showErrors}
+                      onClick={() => setShowErorrs(!showErrors)}
+                    >
+                      <Icon name="dropdown" />
+                      Show Errors
+                    </Accordion.Title>
+                    <Accordion.Content active={showErrors}>
+                      <code>
+                        <pre>{JSON.stringify(startReleaseError, null, 2)}</pre>
+                      </code>
+                    </Accordion.Content>
+                  </Accordion>
+                </>
+              }
+            />
+          )}
+        </Modal.Content>
+      }
+    />
   );
 };
 
