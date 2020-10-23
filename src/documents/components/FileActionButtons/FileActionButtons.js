@@ -52,74 +52,114 @@ const FileActionButtons = ({
           />
         )}
       </Amplitude>
-      <Popup
-        inverted
-        position="top left"
-        icon="download"
-        content="Download latest version"
-        trigger={
-          <Button
-            as="a"
-            href={
+      <Amplitude
+        eventProperties={inheritedProps => ({
+          ...inheritedProps,
+          scope: inheritedProps.scope
+            ? [...inheritedProps.scope, 'button', 'download button']
+            : ['button', 'download button'],
+        })}
+      >
+        {({logEvent}) => (
+          <Popup
+            inverted
+            position="top left"
+            icon="download"
+            content="Download latest version"
+            trigger={
+              <Button
+                as="a"
+                href={
+                  node.downloadUrl +
+                  `/version/${fileSortedVersions(node)[0].node.kfId}`
+                }
+                basic
+                compact
+                icon="download"
+                data-testid="download-file"
+                onClick={e => {
+                  logEvent('click');
+                  e.stopPropagation();
+                  e.preventDefault();
+                  downloadFile(studyId, node.kfId, null, downloadFileMutation);
+                }}
+              />
+            }
+          />
+        )}
+      </Amplitude>
+      <Amplitude
+        eventProperties={inheritedProps => ({
+          ...inheritedProps,
+          scope: inheritedProps.scope
+            ? [...inheritedProps.scope, 'button', 'copy ID button']
+            : ['button', 'copy ID button'],
+        })}
+      >
+        {({logEvent}) => (
+          <CopyButton
+            data-testid="copy-file-id"
+            textToCopy={
               node.downloadUrl +
               `/version/${fileSortedVersions(node)[0].node.kfId}`
             }
             basic
             compact
-            icon="download"
-            data-testid="download-file"
+            position="top left"
+            tooltip="Copy download link"
             onClick={e => {
+              logEvent('click');
               e.stopPropagation();
-              e.preventDefault();
-              downloadFile(studyId, node.kfId, null, downloadFileMutation);
             }}
           />
-        }
-      />
-      <CopyButton
-        data-testid="copy-file-id"
-        textToCopy={
-          node.downloadUrl + `/version/${fileSortedVersions(node)[0].node.kfId}`
-        }
-        basic
-        compact
-        position="top left"
-        tooltip="Copy download link"
-      />
+        )}
+      </Amplitude>
       {deleteFile && (
-        <Popup
-          trigger={
-            <Responsive
-              as={Button}
-              minWidth={Responsive.onlyTablet.minWidth}
-              basic
-              compact
-              data-testid="delete-button"
-              onClick={e => e.stopPropagation()}
-              icon={<Icon name="trash alternate" />}
+        <Amplitude
+          eventProperties={inheritedProps => ({
+            ...inheritedProps,
+            scope: inheritedProps.scope
+              ? [...inheritedProps.scope, 'button', 'delete button']
+              : ['button', 'delete button'],
+          })}
+        >
+          {({logEvent}) => (
+            <Popup
+              trigger={
+                <Responsive
+                  as={Button}
+                  minWidth={Responsive.onlyTablet.minWidth}
+                  basic
+                  compact
+                  data-testid="delete-button"
+                  onClick={e => e.stopPropagation()}
+                  icon={<Icon name="trash alternate" />}
+                />
+              }
+              header="Are you sure?"
+              content={
+                <>
+                  This file and all of its versions and history will be deleted
+                  <Divider />
+                  <Button
+                    data-testid="delete-confirm"
+                    negative
+                    fluid
+                    icon={<Icon name="trash alternate" />}
+                    content="Delete"
+                    onClick={e => {
+                      logEvent('click');
+                      e.stopPropagation();
+                      deleteFile({variables: {kfId: node.kfId}});
+                    }}
+                  />
+                </>
+              }
+              on="click"
+              position="top right"
             />
-          }
-          header="Are you sure?"
-          content={
-            <>
-              This file and all of its versions and history will be deleted
-              <Divider />
-              <Button
-                data-testid="delete-confirm"
-                negative
-                fluid
-                icon={<Icon name="trash alternate" />}
-                content="Delete"
-                onClick={e => {
-                  e.stopPropagation();
-                  deleteFile({variables: {kfId: node.kfId}});
-                }}
-              />
-            </>
-          }
-          on="click"
-          position="top right"
-        />
+          )}
+        </Amplitude>
       )}
     </Button.Group>
   );

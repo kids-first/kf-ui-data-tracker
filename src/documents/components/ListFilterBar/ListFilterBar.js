@@ -243,7 +243,6 @@ const ListFilterBar = ({
                   label="Show Kids First ID"
                   checked={showId}
                   onClick={() => {
-                    console.log(!showId);
                     setShowId(!showId);
                     logEvent('toggle file kfId ' + (showId ? 'off' : 'on'));
                     localStorage.setItem('showFileId', !showId);

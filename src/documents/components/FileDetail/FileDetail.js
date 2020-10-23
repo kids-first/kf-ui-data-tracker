@@ -83,7 +83,7 @@ const ActionButtons = ({
             />
           )}
         </Amplitude>
-        <Button.Group size="mini" fluid>
+        <Button.Group size="mini" fluid className="mb-15">
           <Amplitude
             eventProperties={inheritedProps => ({
               ...inheritedProps,
