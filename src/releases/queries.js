@@ -133,14 +133,6 @@ export const GET_RELEASE = gql`
           }
         }
       }
-      notes {
-        edges {
-          node {
-            id
-            description
-          }
-        }
-      }
     }
   }
   ${RELEASE_FIELDS}

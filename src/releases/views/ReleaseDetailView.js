@@ -37,7 +37,6 @@ const ReleaseDetailView = ({user, history, match}) => {
     data: releaseData,
   } = useQuery(GET_RELEASE, {
     variables: {id: relayId},
-    context: {clientName: 'coordinator'},
     pollInterval: 5000,
   });
 

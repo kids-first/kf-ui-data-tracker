@@ -1,4 +1,5 @@
 import gql from 'graphql-tag';
+import {USER_FIELDS} from '../state/fragments';
 
 export const RELEASE_FIELDS = gql`
   fragment ReleaseFields on ReleaseNode {
@@ -7,11 +8,14 @@ export const RELEASE_FIELDS = gql`
     name
     description
     state
-    author
+    creator {
+      ...UserFields
+    }
     version
     createdAt
     isMajor
   }
+  ${USER_FIELDS}
 `;
 
 export const SERVICE_FIELDS = gql`

@@ -31,7 +31,7 @@ const ReleaseHeader = ({release, loading}) => {
               <Header.Subheader>
                 Created{' '}
                 <TimeAgo date={new Date(release.createdAt)} live={false} /> by
-                {' ' + release.author}
+                {' ' + release.creator.displayName}
               </Header.Subheader>
             </Header>
           </Grid.Column>
