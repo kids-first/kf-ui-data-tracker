@@ -18,23 +18,17 @@ const ReleaseActions = ({release, user, history, match}) => {
   const [
     startRelease,
     {loading: startReleaseLoading, error: startReleaseError},
-  ] = useMutation(START_RELEASE, {
-    context: {clientName: 'coordinator'},
-  });
+  ] = useMutation(START_RELEASE);
 
   const [
     publishRelease,
     {loading: publishReleaseLoading, error: publishReleaseError},
-  ] = useMutation(PUBLISH_RELEASE, {
-    context: {clientName: 'coordinator'},
-  });
+  ] = useMutation(PUBLISH_RELEASE);
 
   const [
     cancelRelease,
     {loading: cancelReleaseLoading, error: cancelReleaseError},
-  ] = useMutation(CANCEL_RELEASE, {
-    context: {clientName: 'coordinator'},
-  });
+  ] = useMutation(CANCEL_RELEASE);
 
   const handleConfirm = () => {
     const curRelease = release;

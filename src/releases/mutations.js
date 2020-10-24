@@ -107,14 +107,6 @@ export const PUBLISH_RELEASE = gql`
             }
           }
         }
-        notes {
-          edges {
-            node {
-              id
-              description
-            }
-          }
-        }
       }
     }
   }
@@ -132,14 +124,6 @@ export const CANCEL_RELEASE = gql`
               id
               kfId
               name
-            }
-          }
-        }
-        notes {
-          edges {
-            node {
-              id
-              description
             }
           }
         }
