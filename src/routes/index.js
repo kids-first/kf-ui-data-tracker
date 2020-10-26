@@ -46,6 +46,7 @@ import {
   LogView,
 } from '../admin/views';
 import ReleaseRoutes from '../releases/routes';
+import StorageRoutes from '../storage/routes';
 import TrackedRoute from './TrackedRoute';
 
 const Routes = () => (
@@ -75,6 +76,7 @@ const Routes = () => (
         <PrivateRoute exact path="/" component={StudyListView} />
         <PrivateRoute exact path="/study" component={StudyListView} />
         <ReleaseRoutes path="/releases" />
+        <StorageRoutes path="/storage" />
         <TrackedRoute
           path="/welcome"
           component={WelcomeView}

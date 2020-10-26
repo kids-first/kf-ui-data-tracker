@@ -158,6 +158,12 @@ const Header = ({location}) => {
                 <Label content="beta" color="blue" attached="bottom right" />
               </Menu.Item>
             )}
+            {hasPermission(profile, 'view_settings') && (
+              <Menu.Item as={Nav} to="/storage">
+                Storage
+                <Label content="beta" color="blue" attached="bottom right" />
+              </Menu.Item>
+            )}
             <Menu.Menu position="right">
               {hasPermission(profile, 'add_referraltoken') && (
                 <AddUserButton profile={profile} />
