@@ -261,6 +261,25 @@ export const fileTypeDetail = {
     url:
       'https://www.notion.so/d3b/Expedited-File-Types-and-Guidelines-fc5bd4390fa54de5a70b550d73779de9#c7292718da1243b29ff793a8d115a5c9',
   },
+  GWO: {
+    icon: 'dna',
+    title: 'Genomic Workflow Output Manifest',
+    requiredColumns: [
+      'Cavatica ID',
+      'Cavatica Task ID',
+      'KF Biospecimen ID',
+      'KF Participant ID',
+      'KF Family ID',
+      'Filepath',
+      'Data Type',
+      'Workflow Type',
+      'Source Read'
+    ],
+    description: 'Metadata about files produced from Bix genomic workflows',
+    config: true,
+    url:
+      'https://www.notion.so/d3b/Expedited-File-Types-and-Guidelines-fc5bd4390fa54de5a70b550d73779de9#d53b14317f004b6f9f9a8357ddc94f8f',
+  },
 };
 
 // Store version state title and color
