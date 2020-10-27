@@ -2,14 +2,16 @@
   REACT_APP_DEV_BAR=""
   REACT_APP_AUTH0_DOMAIN="kids-first.auth0.com"
 
-[context.production]
+[context.awsprod]
   publish = "build/"
-  ignore = "./build_check.sh"
 
-[context.production.environment]
+[context.awsprod.environment]
   REACT_APP_ENV = "prd"
   REACT_APP_AUTH0_REDIRECT_URI = "https://data-tracker.kidsfirstdrc.org/callback"
-  REACT_APP_AUTH0_LOGOUT_URI = "https://data-tracker.kidsfirstdrc.org/logout"
+  REACT_APP_AUTH0_LOGOUT_REDIRECT_URI = "https://data-tracker.kidsfirstdrc.org/logout"
+  REACT_APP_STUDY_API = "https://kf-api-study-creator.kidsfirstdrc.org"
+  REACT_APP_COORD_API = "https://kf-release-coord.kidsfirstdrc.org"
+  REACT_APP_COORD_UI = "https://kf-ui-release-coordinator.kidsfirstdrc.org/"
   REACT_APP_PRIMARY_HOST = "https://data-tracker.kidsfirstdrc.org"
   REACT_APP_REDIRECT_TO_PRIMARY = "true"
 
