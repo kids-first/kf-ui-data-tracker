@@ -15,13 +15,16 @@
   REACT_APP_PRIMARY_HOST = "https://data-tracker.kidsfirstdrc.org"
   REACT_APP_REDIRECT_TO_PRIMARY = "true"
 
-[context.master]
-  command = "yarn build"
+[context.production]
+  publish = "build/"
+  ignore = "./build_check.sh"
 
-[context.master.environment]
+[context.production.environment]
   REACT_APP_ENV = "qa"
   REACT_APP_AUTH0_REDIRECT_URI = "https://data-tracker-qa.kidsfirstdrc.org/callback"
-  REACT_APP_AUTH0_LOGOUT_REDIRECT_URI = "https://data-tracker-qa.kidsfirstdrc.org/logout"
+  REACT_APP_AUTH0_LOGOUT_URI = "https://data-tracker-qa.kidsfirstdrc.org/logout"
+  REACT_APP_PRIMARY_HOST = "https://data-tracker-qa.kidsfirstdrc.org"
+  REACT_APP_REDIRECT_TO_PRIMARY = "true"
   REACT_APP_STUDY_API = "https://kf-api-study-creator-qa.kidsfirstdrc.org"
   REACT_APP_COORD_API = "https://kf-release-coord-qa.kidsfirstdrc.org"
   REACT_APP_COORD_UI = "https://kf-ui-release-coordinator-qa.kidsfirstdrc.org/"
