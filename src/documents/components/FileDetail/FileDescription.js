@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {Icon, Button, Segment, Header, Image, Table} from 'semantic-ui-react';
 import Markdown from 'react-markdown';
 import MarkdownEditor from './MarkdownEditor';
-import draftToMarkdown from 'draftjs-to-markdown';
+import {draftToMarkdown} from 'markdown-draft-js';
 import {EditorState, convertToRaw, ContentState} from 'draft-js';
 import {Amplitude, LogOnMount} from '@amplitude/react-amplitude';
 /**

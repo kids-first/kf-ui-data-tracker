@@ -10,7 +10,7 @@ import Badge from '../../components/Badge/Badge';
 import UploadWizard from '../modals/UploadWizard/UploadWizard';
 import {fileTypeDetail, versionState} from '../../common/enums';
 import MarkdownEditor from '../components/FileDetail/MarkdownEditor';
-import draftToMarkdown from 'draftjs-to-markdown';
+import {draftToMarkdown} from 'markdown-draft-js';
 import {EditorState, convertToRaw, ContentState} from 'draft-js';
 /**
  * Form to edit document information or annotate new file for uploading

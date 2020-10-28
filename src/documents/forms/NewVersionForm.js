@@ -13,7 +13,7 @@ import {
 import {Formik} from 'formik';
 import {EditorState, convertToRaw, ContentState} from 'draft-js';
 import MarkdownEditor from '../components/FileDetail/MarkdownEditor';
-import draftToMarkdown from 'draftjs-to-markdown';
+import {draftToMarkdown} from 'markdown-draft-js';
 
 const DocRow = ({document, setStep, setDocument}) => (
   <Table.Row onClick={() => setDocument(document)}>

@@ -4,7 +4,7 @@ import {Button, Form, Header, Message, Input, Segment} from 'semantic-ui-react';
 import {Formik} from 'formik';
 import {EditorState, convertToRaw, ContentState} from 'draft-js';
 import MarkdownEditor from '../../documents/components/FileDetail/MarkdownEditor';
-import draftToMarkdown from 'draftjs-to-markdown';
+import {draftToMarkdown} from 'markdown-draft-js';
 import {StudyTable} from '../components/StudyTable';
 
 const NewReleaseForm = ({
