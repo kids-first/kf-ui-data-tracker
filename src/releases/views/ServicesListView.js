@@ -15,9 +15,7 @@ const ServicesListView = props => {
     loading: servicesLoading,
     error: servicesError,
     data: services,
-  } = useQuery(ALL_SERVICES, {
-    context: {clientName: 'coordinator'},
-  });
+  } = useQuery(ALL_SERVICES);
 
   const {data: profileData} = useQuery(MY_PROFILE);
   const myProfile = profileData && profileData.myProfile;
@@ -39,12 +37,10 @@ const ServicesListView = props => {
       )}
       <Header as="h1" className="noMargin">
         Release Task Services
-        <span className="text-14 text-normal">
-          {' '}(Most recent 20 services)
-        </span>
+        <span className="text-14 text-normal"> (Most recent 20 services)</span>
       </Header>
       <ServiceList
-        services={services && services.allTaskServices.edges}
+        services={services && services.allReleaseServices.edges}
         loading={servicesLoading}
         error={servicesError}
       />

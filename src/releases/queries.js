@@ -29,7 +29,7 @@ export const LATEST_RELEASE = gql`
 
 export const ALL_SERVICES = gql`
   query AllServices {
-    allTaskServices(first: 20, orderBy: "-created_at") {
+    allReleaseServices(first: 20, orderBy: "-created_at") {
       edges {
         node {
           ...ServiceFields

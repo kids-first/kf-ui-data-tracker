@@ -19,14 +19,16 @@ export const RELEASE_FIELDS = gql`
 `;
 
 export const SERVICE_FIELDS = gql`
-  fragment ServiceFields on TaskServiceNode {
+  fragment ServiceFields on ReleaseServiceNode {
     id
-    author
+    creator {
+      id
+      displayName
+    }
     kfId
     name
     createdAt
     description
-    healthStatus
     enabled
     url
   }
