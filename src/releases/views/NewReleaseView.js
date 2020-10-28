@@ -71,7 +71,7 @@ const NewReleaseView = ({history}) => {
 
     let release = {
       name: values.title,
-      description: '',
+      description: values.description,
       studies: studyIds,
       isMajor: values.isMajor,
     };
