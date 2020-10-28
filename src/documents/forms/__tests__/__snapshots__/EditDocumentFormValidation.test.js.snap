@@ -360,6 +360,47 @@ exports[`Show warning message when input file name is similar to an existing fil
           </div>
         </div>
       </div>
+      <div
+        class="field"
+      >
+        <div
+          class="ui compact segment selectionRadio--card"
+        >
+          <div>
+            <div
+              class="ui radio checkbox"
+            >
+              <input
+                class="hidden"
+                id="GWO"
+                name="file_type"
+                readonly=""
+                tabindex="0"
+                type="radio"
+                value="GWO"
+              />
+              <i
+                aria-hidden="true"
+                class="black dna large bordered circular inverted icon"
+              />
+            </div>
+          </div>
+          <div>
+            <p
+              class="mb-5"
+            >
+              <b>
+                Genomic Workflow Output Manifest
+              </b>
+            </p>
+            <p
+              class="text-wrap-75 text-grey"
+            >
+              Metadata about files produced from Bix genomic workflows
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
     <div
       class="required field"
@@ -1008,6 +1049,47 @@ exports[`Show warning message when input file name is similar to an existing fil
           </div>
         </div>
       </div>
+      <div
+        class="field"
+      >
+        <div
+          class="ui compact segment selectionRadio--card"
+        >
+          <div>
+            <div
+              class="ui radio checkbox"
+            >
+              <input
+                class="hidden"
+                id="GWO"
+                name="file_type"
+                readonly=""
+                tabindex="0"
+                type="radio"
+                value="GWO"
+              />
+              <i
+                aria-hidden="true"
+                class="black dna large bordered circular inverted icon"
+              />
+            </div>
+          </div>
+          <div>
+            <p
+              class="mb-5"
+            >
+              <b>
+                Genomic Workflow Output Manifest
+              </b>
+            </p>
+            <p
+              class="text-wrap-75 text-grey"
+            >
+              Metadata about files produced from Bix genomic workflows
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
     <div
       class="required field"
@@ -1652,6 +1734,47 @@ exports[`Show warning message when input file name is similar to an existing fil
               class="text-wrap-75 text-grey"
             >
               Relationships for simple, mother-father-participant families
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="field"
+      >
+        <div
+          class="ui compact segment selectionRadio--card"
+        >
+          <div>
+            <div
+              class="ui radio checkbox"
+            >
+              <input
+                class="hidden"
+                id="GWO"
+                name="file_type"
+                readonly=""
+                tabindex="0"
+                type="radio"
+                value="GWO"
+              />
+              <i
+                aria-hidden="true"
+                class="black dna large bordered circular inverted icon"
+              />
+            </div>
+          </div>
+          <div>
+            <p
+              class="mb-5"
+            >
+              <b>
+                Genomic Workflow Output Manifest
+              </b>
+            </p>
+            <p
+              class="text-wrap-75 text-grey"
+            >
+              Metadata about files produced from Bix genomic workflows
             </p>
           </div>
         </div>
