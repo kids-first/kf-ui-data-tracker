@@ -6,6 +6,7 @@ import {EditorState, convertToRaw, ContentState} from 'draft-js';
 import MarkdownEditor from '../../documents/components/FileDetail/MarkdownEditor';
 import draftToMarkdown from 'draftjs-to-markdown';
 import {StudyTable} from '../components/StudyTable';
+import {ServiceList} from '../components/ServiceList';
 
 const NewReleaseForm = ({
   values,
@@ -20,6 +21,7 @@ const NewReleaseForm = ({
   setFieldValue,
   setFieldTouched,
   studies,
+  services,
   history,
 }) => {
   const [editorState, setEditorState] = useState(
@@ -79,7 +81,7 @@ const NewReleaseForm = ({
           onChange={toggleStudy}
         />
       </Form.Field>
-
+      <ServiceList services={services && services.allTaskServices.edges} />
       <Form.Field error={touched.title && !!errors.title} required>
         <Form.Checkbox
           data-testid="is-major"
