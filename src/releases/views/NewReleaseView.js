@@ -14,7 +14,6 @@ import {
   Icon,
   List,
 } from 'semantic-ui-react';
-import {GET_RELEASED_STUDY} from '../../state/queries';
 import {ALL_STUDIES} from '../../state/queries';
 import {START_RELEASE} from '../mutations';
 import {ALL_SERVICES} from '../queries';
@@ -43,31 +42,9 @@ const NewReleaseView = ({history}) => {
     return acc;
   }, {});
 
-  const {data: releasesData} = useQuery(GET_RELEASED_STUDY, {
-    context: {clientName: 'coordinator'},
-    fetchPolicy: 'cache-first',
-  });
-
-  // Merge published releases into all studies
-  const allReleases = releasesData && releasesData.allStudyReleases;
-
-  var studies =
-    studiesData && allReleases
-      ? studiesData.allStudies.edges.map(({node}) => node)
-      : [];
-  const releaseList = allReleases ? allReleases.edges : [];
-  if (releaseList.length > 0 && studies.length > 0) {
-    studies.forEach(study => {
-      const release = releaseList.find(r => r.node.kfId === study.kfId) || {};
-      study.release =
-        release.node && release.node.releases.edges.length > 0
-          ? release.node.releases.edges[0].node
-          : {};
-      study.version = study.release && study.release.version;
-      if (!study.version) study.version = '-';
-      study.lastPublished = study.release && study.release.createdAt;
-    });
-  }
+  var studies = studiesData
+    ? studiesData.allStudies.edges.map(({node}) => node)
+    : [];
 
   const handleSubmit = (values, {setSubmitting}) => {
     setSubmitting(true);
