@@ -30,7 +30,7 @@ const ServiceDetailView = ({match}) => {
   const [editing, setEditing] = useState(false);
 
   const relayId = Buffer.from(
-    'TaskServiceNode:' + match.params.serviceId,
+    'ReleaseServiceNode:' + match.params.serviceId,
   ).toString('base64');
 
   const {
@@ -39,7 +39,6 @@ const ServiceDetailView = ({match}) => {
     data: serviceData,
   } = useQuery(GET_SERVICE, {
     variables: {id: relayId},
-    context: {clientName: 'coordinator'},
   });
 
   const {
@@ -51,7 +50,7 @@ const ServiceDetailView = ({match}) => {
     context: {clientName: 'coordinator'},
   });
 
-  const service = serviceData && serviceData.taskService;
+  const service = serviceData && serviceData.releaseService;
 
   const [
     updateService,
@@ -65,7 +64,7 @@ const ServiceDetailView = ({match}) => {
   const toggle = ev => {
     updateService({
       variables: {
-        taskService: service.id,
+        releaseService: service.id,
         input: {
           name: service.name,
           url: service.url,
@@ -78,11 +77,7 @@ const ServiceDetailView = ({match}) => {
   if (serviceError)
     return (
       <Container as={Segment} basic>
-        <Message
-          negative
-          header="Error"
-          content={serviceError.message}
-        />
+        <Message negative header="Error" content={serviceError.message} />
       </Container>
     );
 
@@ -188,11 +183,13 @@ const ServiceDetailView = ({match}) => {
                           url: values.url,
                         },
                       },
-                    }).then(resp => {
-                      setEditing(false);
-                    }).catch(err => {
-                      console.log(err);
                     })
+                      .then(resp => {
+                        setEditing(false);
+                      })
+                      .catch(err => {
+                        console.log(err);
+                      })
                   }
                 />
               </Modal.Description>

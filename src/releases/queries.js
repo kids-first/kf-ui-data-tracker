@@ -52,7 +52,7 @@ export const ALL_SERVICES = gql`
 
 export const GET_SERVICE = gql`
   query GetService($id: ID!) {
-    taskService(id: $id) {
+    releaseService(id: $id) {
       ...ServiceFields
     }
   }
