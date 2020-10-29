@@ -7,11 +7,21 @@ export const GET_RELEASES = gql`
       edges {
         node {
           ...ReleaseFields
+          tasks {
+            edges {
+              node {
+                releaseService {
+                  ...ServiceFields
+                }
+              }
+            }
+          }
         }
       }
     }
   }
   ${RELEASE_FIELDS}
+  ${SERVICE_FIELDS}
 `;
 
 export const LATEST_RELEASE = gql`

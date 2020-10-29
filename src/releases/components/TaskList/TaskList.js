@@ -59,7 +59,7 @@ const TaskList = props => {
               <Icon name="calendar check" />
               {node.kfId}
             </Label>
-            {node.taskService.name}
+            {node.releaseService.name}
           </List.Content>
         </List.Item>
       ))}
