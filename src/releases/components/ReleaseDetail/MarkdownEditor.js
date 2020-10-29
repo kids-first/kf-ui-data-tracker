@@ -19,7 +19,7 @@ import {
 import ReactMarkdown from 'react-markdown';
 import {Editor} from 'react-draft-wysiwyg';
 import {EditorState, convertToRaw, ContentState} from 'draft-js';
-import draftToMarkdown from 'draftjs-to-markdown';
+import {draftToMarkdown} from 'markdown-draft-js';
 import '../../../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 /**
  * Displays a release description or note. If there is no description or note,

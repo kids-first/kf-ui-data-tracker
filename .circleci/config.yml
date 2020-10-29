@@ -75,7 +75,7 @@ jobs:
           command: |
             set +e
             docker-compose up -d web scheduler worker app dataservice coordinator email
-            sleep 100
+            sleep 120
             (docker-compose up --abort-on-container-exit --exit-code-from cypress cypress)
             echo $? > .test-result
             echo "Docker exited with exit code `cat .test-result`"

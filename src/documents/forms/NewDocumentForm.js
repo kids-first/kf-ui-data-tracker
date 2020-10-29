@@ -18,7 +18,7 @@ import {
 import {Formik, Field} from 'formik';
 import {EditorState, convertToRaw, ContentState} from 'draft-js';
 import MarkdownEditor from '../components/FileDetail/MarkdownEditor';
-import draftToMarkdown from 'draftjs-to-markdown';
+import {draftToMarkdown} from 'markdown-draft-js';
 
 import {fileTypeDetail} from '../../common/enums';
 import {urls} from '../../common/urls';
