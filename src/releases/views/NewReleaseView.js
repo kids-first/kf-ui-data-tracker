@@ -15,6 +15,7 @@ import {
 import {GET_RELEASED_STUDY} from '../../state/queries';
 import {ALL_STUDIES} from '../../state/queries';
 import {START_RELEASE} from '../mutations';
+import {ALL_SERVICES} from '../queries';
 import NewReleaseForm from '../forms/NewReleaseForm';
 
 const NewReleaseView = ({history}) => {
@@ -25,6 +26,9 @@ const NewReleaseView = ({history}) => {
     startRelease,
     {loading: startReleaseLoading, error: startReleaseError},
   ] = useMutation(START_RELEASE, {
+    context: {clientName: 'coordinator'},
+  });
+  const {data: services} = useQuery(ALL_SERVICES, {
     context: {clientName: 'coordinator'},
   });
 
@@ -71,7 +75,7 @@ const NewReleaseView = ({history}) => {
 
     let release = {
       name: values.title,
-      description: '',
+      description: values.description,
       studies: studyIds,
       isMajor: values.isMajor,
     };
@@ -105,6 +109,7 @@ const NewReleaseView = ({history}) => {
       <NewReleaseForm
         handleSubmit={handleSubmit}
         studies={studies}
+        services={services}
         history={history}
       />
       <Confirm
