@@ -9,9 +9,7 @@ const Service = ({item}) => {
   const [
     updateService,
     {loading: updateServiceLoading, error: updateServiceError},
-  ] = useMutation(UPDATE_SERVICE, {
-    context: {clientName: 'coordinator'},
-  });
+  ] = useMutation(UPDATE_SERVICE);
   const toggle = ev => {
     updateService({
       variables: {

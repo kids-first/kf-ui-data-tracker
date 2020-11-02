@@ -13,8 +13,11 @@ export const START_RELEASE = gql`
 `;
 
 export const UPDATE_SERVICE = gql`
-  mutation UpdateService($releaseService: ID!, $input: TaskServiceInput!) {
-    updateTaskService(releaseService: $releaseService, input: $input) {
+  mutation UpdateService(
+    $releaseService: ID!
+    $input: UpdateReleaseServiceInput!
+  ) {
+    updateReleaseService(releaseService: $releaseService, input: $input) {
       releaseService {
         ...ServiceFields
       }
