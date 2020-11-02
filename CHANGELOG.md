@@ -1,5 +1,24 @@
 # Kids First Data Tracker Change History
 
+## Release 0.18.1
+
+### Summary
+
+- Emojis: 📝 x1, 🐛 x1, 👷‍♂️ x1, ♻ x1, ✨ x1, 🔥 x1, 📈 x1, 🔈 x1
+- Categories: Documentation x1, Fixes x1, Other Changes x3, Additions x2, Removals x1
+
+### New features and changes
+
+- [#903](https://github.com/kids-first/kf-ui-data-tracker/pull/903) - 📝 Update setup steps in README - [62f3ca56](https://github.com/kids-first/kf-ui-data-tracker/commit/62f3ca566aa3e19ddb1b8bb3d2d7621f398691d6) by [znatty22](https://github.com/znatty22)
+- [#914](https://github.com/kids-first/kf-ui-data-tracker/pull/914) - 🐛 Fix markdown editor codeblock indent conversion - [9e55d120](https://github.com/kids-first/kf-ui-data-tracker/commit/9e55d1201003b5e80cd2768e25dde6c0354fe935) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#913](https://github.com/kids-first/kf-ui-data-tracker/pull/913) - 👷‍♂️ Use netlify production as qa - [57c8a08e](https://github.com/kids-first/kf-ui-data-tracker/commit/57c8a08e83f0e7c49ff9cdf48b4bc63ef643e42e) by [dankolbman](https://github.com/dankolbman)
+- [#922](https://github.com/kids-first/kf-ui-data-tracker/pull/922) - ♻ New release fixes - [36fc83a1](https://github.com/kids-first/kf-ui-data-tracker/commit/36fc83a1f56718e7a980f2fd8ceb973a88b3d725) by [dankolbman](https://github.com/dankolbman)
+- [#911](https://github.com/kids-first/kf-ui-data-tracker/pull/911) - ✨ Add genomic workflow output manifest to file types - [f6857117](https://github.com/kids-first/kf-ui-data-tracker/commit/f6857117dec427b41945ffd2162f130083a2fe1d) by [znatty22](https://github.com/znatty22)
+- [#909](https://github.com/kids-first/kf-ui-data-tracker/pull/909) - 🔥  Remove status fields from study table - [a1c071b1](https://github.com/kids-first/kf-ui-data-tracker/commit/a1c071b165d21fbf6bf81cf92da7e854176fe0c8) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#910](https://github.com/kids-first/kf-ui-data-tracker/pull/910) - 📈 Add analytics to file actions and file batch actions - [0ed11688](https://github.com/kids-first/kf-ui-data-tracker/commit/0ed11688e70a5eb74e6571610fe5f34055869c2b) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#899](https://github.com/kids-first/kf-ui-data-tracker/pull/899) - 🔈 Add task logs - [e466df01](https://github.com/kids-first/kf-ui-data-tracker/commit/e466df01652a39ac0c80edde4e300785d564eb67) by [dankolbman](https://github.com/dankolbman)
+
+
 ## Release 0.18.0
 
 ### Summary
