@@ -12,7 +12,14 @@ import {compareSemVer} from '../../common/sortUtils';
  * A collection of functions to render cell contents for different columns
  */
 const cellContent = {
-  name: node => <StudyName study={node} key={node.kfId + 'name'} />,
+  name: (node, favoriteStudies, setFavoriteStudies) => (
+    <StudyName
+      study={node}
+      key={node.kfId + 'name'}
+      favoriteStudies={favoriteStudies}
+      setFavoriteStudies={setFavoriteStudies}
+    />
+  ),
   kfId: node => <KfId kfId={node.kfId} key={node.kfId + 'kfId'} />,
   version: node => (
     <Release
@@ -43,9 +50,11 @@ const cellContent = {
   ),
 };
 
-const renderRow = (node, columns) => ({
+const renderRow = (node, columns, favoriteStudies, setFavoriteStudies) => ({
   key: node.kfId,
-  cells: columns.map((col, i) => cellContent[col.key](node)),
+  cells: columns.map((col, i) =>
+    cellContent[col.key](node, favoriteStudies, setFavoriteStudies),
+  ),
   textAlign: 'center',
 });
 
@@ -70,6 +79,8 @@ const StudyTable = ({
   isResearch,
   columns,
   handleSort,
+  favoriteStudies,
+  setFavoriteStudies,
 }) => {
   if (loading && !studyList) {
     return <h2>loading studies</h2>;

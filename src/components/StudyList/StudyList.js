@@ -91,6 +91,12 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
   );
 
   const handleSort = column => () => {
+  const [favoriteStudies, setFavoriteStudies] = useState(
+    localStorage.getItem('favoriteStudies') !== null
+      ? JSON.parse(localStorage.getItem('favoriteStudies'))
+      : [],
+  );
+
     const direction =
       columns.sorting.column !== column
         ? 'ascending'
@@ -141,6 +147,13 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
           .map(({node}) => [node.username, node.displayName].join(' '))
           .join(' ')
       : '';
+  };
+
+  const favoriteStudyList = () => {
+    const favList = studyList.filter(({node}) =>
+      favoriteStudies.includes(node.kfId),
+    );
+    return favList;
   };
 
   const filteredStudyList = () => {
