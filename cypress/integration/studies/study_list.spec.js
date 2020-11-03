@@ -68,10 +68,12 @@ context('Admin Study List', () => {
       .click()
       .should(() => {
         expect(
-          JSON.parse(localStorage.getItem('studyColumns')).sorting.column,
+          JSON.parse(localStorage.getItem('studyColumns')).allStudySorting
+            .column,
         ).to.be.eq('kfId');
         expect(
-          JSON.parse(localStorage.getItem('studyColumns')).sorting.direction,
+          JSON.parse(localStorage.getItem('studyColumns')).allStudySorting
+            .direction,
         ).to.be.eq('ascending');
       });
 
@@ -80,10 +82,12 @@ context('Admin Study List', () => {
       .click()
       .should(() => {
         expect(
-          JSON.parse(localStorage.getItem('studyColumns')).sorting.column,
+          JSON.parse(localStorage.getItem('studyColumns')).allStudySorting
+            .column,
         ).to.be.eq('kfId');
         expect(
-          JSON.parse(localStorage.getItem('studyColumns')).sorting.direction,
+          JSON.parse(localStorage.getItem('studyColumns')).allStudySorting
+            .direction,
         ).to.be.eq('descending');
       });
 
