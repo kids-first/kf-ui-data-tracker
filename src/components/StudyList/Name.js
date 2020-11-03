@@ -40,6 +40,7 @@ const StudyName = ({study, favoriteStudies, setFavoriteStudies}) => {
                 : [...favoriteStudies, study.kfId];
               localStorage.setItem('favoriteStudies', JSON.stringify(newFav));
               setFavoriteStudies(newFav);
+              logEvent('favorite');
             }}
           />
           <Link
