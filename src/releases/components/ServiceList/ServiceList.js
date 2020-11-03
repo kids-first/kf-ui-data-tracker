@@ -13,7 +13,7 @@ const Service = ({item}) => {
   const toggle = ev => {
     updateService({
       variables: {
-        taskService: service.id,
+        id: service.id,
         input: {
           name: service.name,
           url: service.url,
@@ -22,7 +22,7 @@ const Service = ({item}) => {
       },
     })
       .then(resp => {
-        setService(resp.data.updateTaskService.taskService);
+        setService(resp.data.updateReleaseService.releaseService);
       })
       .catch(err => {
         console.log(err);

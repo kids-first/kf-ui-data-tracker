@@ -60,10 +60,10 @@ export const GET_SERVICE = gql`
 `;
 
 export const ALL_EVENTS = gql`
-  query AllEvents($release: ID, $first: Int, $taskService: ID) {
-    allEvents(
+  query AllEvents($release: ID, $first: Int, $releaseService: ID) {
+    allReleaseEvents(
       release: $release
-      taskService: $taskService
+      releaseService: $releaseService
       orderBy: "-created_at"
       first: $first
     ) {
@@ -77,7 +77,7 @@ export const ALL_EVENTS = gql`
             kfId
             name
           }
-          taskService {
+          releaseService {
             id
             kfId
             name

@@ -81,7 +81,7 @@ const NewReleaseForm = ({
           onChange={toggleStudy}
         />
       </Form.Field>
-      <ServiceList services={services && services.allTaskServices.edges} />
+      <ServiceList services={services && services.allReleaseServices.edges} />
       <Form.Field error={touched.title && !!errors.title} required>
         <Form.Checkbox
           data-testid="is-major"
