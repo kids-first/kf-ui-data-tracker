@@ -66,7 +66,7 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
   // the future if the schema ever changes
   const existingState = JSON.parse(localStorage.getItem('studyColumns'));
   const defaultState = {
-    version: 5,
+    version: 6,
     columns: [
       {key: 'kfId', name: 'Kids First ID', visible: true},
       {key: 'externalId', name: 'phsid/External ID', visible: false},
@@ -79,7 +79,11 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
       {key: 'slackChannel', name: 'Slack Channel', visible: false},
       {key: 'bucket', name: 'Bucket', visible: false},
     ],
-    sorting: {
+    allStudySorting: {
+      column: 'name',
+      direction: 'descending',
+    },
+    favStudySorting: {
       column: 'name',
       direction: 'descending',
     },
@@ -90,31 +94,53 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
       : defaultState,
   );
 
-  const handleSort = column => () => {
   const [favoriteStudies, setFavoriteStudies] = useState(
     localStorage.getItem('favoriteStudies') !== null
       ? JSON.parse(localStorage.getItem('favoriteStudies'))
       : [],
   );
 
+  const handleSort = (column, tableType) => () => {
+    const sorting = columns[tableType + 'Sorting'];
     const direction =
-      columns.sorting.column !== column
+      sorting.column !== column
         ? 'ascending'
-        : columns.sorting.direction === 'ascending'
+        : sorting.direction === 'ascending'
         ? 'descending'
         : 'ascending';
-    setColumns({
-      ...columns,
-      sorting: {column, direction},
-    });
-    localStorage.setItem(
-      'studyColumns',
-      JSON.stringify({
-        columns: existingState ? existingState.columns : defaultState.columns,
-        version: defaultState.version,
-        sorting: {column, direction},
-      }),
-    );
+    if (tableType === 'favStudy') {
+      setColumns({
+        ...columns,
+        favStudySorting: {column, direction},
+      });
+      localStorage.setItem(
+        'studyColumns',
+        JSON.stringify({
+          columns: existingState ? existingState.columns : defaultState.columns,
+          version: defaultState.version,
+          favStudySorting: {column, direction},
+          allStudySorting: existingState
+            ? existingState.allStudySorting
+            : defaultState.allStudySorting,
+        }),
+      );
+    } else {
+      setColumns({
+        ...columns,
+        allStudySorting: {column, direction},
+      });
+      localStorage.setItem(
+        'studyColumns',
+        JSON.stringify({
+          columns: existingState ? existingState.columns : defaultState.columns,
+          version: defaultState.version,
+          allStudySorting: {column, direction},
+          favStudySorting: existingState
+            ? existingState.favStudySorting
+            : defaultState.favStudySorting,
+        }),
+      );
+    }
   };
 
   if (loading && !studyList.length) {

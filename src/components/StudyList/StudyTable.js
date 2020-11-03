@@ -81,10 +81,13 @@ const StudyTable = ({
   handleSort,
   favoriteStudies,
   setFavoriteStudies,
+  tableType,
 }) => {
   if (loading && !studyList) {
     return <h2>loading studies</h2>;
   }
+
+  const sorting = columns[tableType + 'Sorting'];
 
   const studies = studyList
     .map(({node}) => ({
@@ -94,13 +97,10 @@ const StudyTable = ({
     }))
     .sort(
       (s1, s2) =>
-        s1.hasOwnProperty(columns.sorting.column) &&
-        s2.hasOwnProperty(columns.sorting.column) &&
-        columnSorts.hasOwnProperty(columns.sorting.column) &&
-        columnSorts[columns.sorting.column](
-          s1[columns.sorting.column],
-          s2[columns.sorting.column],
-        ),
+        s1.hasOwnProperty(sorting.column) &&
+        s2.hasOwnProperty(sorting.column) &&
+        columnSorts.hasOwnProperty(sorting.column) &&
+        columnSorts[sorting.column](s1[sorting.column], s2[sorting.column]),
     );
 
   // Construct header
@@ -114,10 +114,8 @@ const StudyTable = ({
       key={col.key}
       content={col.name}
       textAlign={i > 0 ? 'center' : 'left'}
-      sorted={
-        columns.sorting.column === col.key ? columns.sorting.direction : null
-      }
-      onClick={handleSort(col.key)}
+      sorted={sorting.column === col.key ? sorting.direction : null}
+      onClick={handleSort(col.key, tableType)}
     />
   ));
 
@@ -137,11 +135,11 @@ const StudyTable = ({
         celled
         headerRow={header}
         tableData={
-          columns.sorting.direction === 'ascending'
-            ? studies
-            : studies.reverse()
+          sorting.direction === 'ascending' ? studies : studies.reverse()
         }
-        renderBodyRow={data => renderRow(data, visibleCols)}
+        renderBodyRow={data =>
+          renderRow(data, visibleCols, favoriteStudies, setFavoriteStudies)
+        }
       />
     </Amplitude>
   );
