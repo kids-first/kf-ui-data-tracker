@@ -79,7 +79,7 @@ const StudyTable = ({
   isResearch,
   columns,
   handleSort,
-  favoriteStudies,
+  favoriteStudies = [],
   setFavoriteStudies,
   tableType,
 }) => {
