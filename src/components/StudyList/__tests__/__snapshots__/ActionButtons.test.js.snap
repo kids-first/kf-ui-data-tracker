@@ -2,9 +2,17 @@
 
 exports[`release version correctly 1`] = `
 <div>
-  <span>
-    loading
-  </span>
+  <td
+    class="single line one wide"
+  >
+    <button
+      class="ui basic loading disabled button"
+      disabled=""
+      tabindex="-1"
+    >
+      Loading
+    </button>
+  </td>
 </div>
 `;
 
