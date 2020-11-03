@@ -13,7 +13,7 @@ import {
   Button,
   Checkbox,
   Popup,
-  Responsive,
+  Divider,
 } from 'semantic-ui-react';
 import {hasPermission} from '../../common/permissions';
 import ColumnSelector from './ColumnSelector';
@@ -35,7 +35,6 @@ const HeaderSkeleton = () => (
  * Displays unordered studies in grid view (include empty stage message)
  */
 const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
-  const [responsiveClass, setResponsiveClass] = useState('');
   const [searchString, setSearchString] = useState('');
   const [myStudies, setMyStudies] = useState(
     localStorage.getItem('onlyMyStudies') !== null
@@ -206,34 +205,72 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
   return (
     <>
       <Grid as={Segment} basic container>
-        <Grid.Row columns={6}>
-          <Grid.Column computer={3} tablet={5} mobile={16}>
-            <Header as="h1" floated="left">
+        <Grid.Row>
+          <Grid.Column>
+            <Header as="h1" floated="left" className="noMargin">
               Your Studies
             </Header>
+            {myProfile && hasPermission(myProfile, 'add_study') && (
+              <Button
+                floated="right"
+                basic
+                primary
+                icon="add"
+                content="Add Study"
+                as={Link}
+                to={`/study/new-study/info`}
+              />
+            )}
           </Grid.Column>
+        </Grid.Row>
+      </Grid>
+      <Grid as={Segment} container={!fullWidth} basic>
+        <Grid.Row className="noPadding">
+          <Grid.Column>
+            <Header as="h3" className="my-2" content="Favorite Studies" />
+            <Divider className="my-2" />
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          {favoriteStudyList().length > 0 ? (
+            <Grid.Column>
+              <StudyTable
+                tableType="favStudy"
+                myProfile={myProfile}
+                loading={loading}
+                studyList={favoriteStudyList()}
+                columns={columns}
+                handleSort={handleSort}
+                favoriteStudies={favoriteStudies}
+                setFavoriteStudies={setFavoriteStudies}
+              />
+            </Grid.Column>
+          ) : (
+            <Grid.Column>
+              <Header
+                as="h4"
+                disabled
+                textAlign="center"
+                className="mt-15 mb-15"
+              >
+                You have not favorited any studies yet.
+              </Header>
+            </Grid.Column>
+          )}
+        </Grid.Row>
+        <Grid.Row className="pb-0 mt-15">
           <Grid.Column
-            className="pl-0"
             computer={3}
             tablet={3}
-            mobile={6}
-            verticalAlign="middle"
-            textAlign="right"
+            mobile={4}
+            verticalAlign="bottom"
           >
-            <ColumnSelector
-              columns={columns.columns}
-              onChange={cols => {
-                const newCols = {...columns, columns: cols};
-                localStorage.setItem('studyColumns', JSON.stringify(newCols));
-                setColumns(newCols);
-              }}
-            />
+            <Header as="h3" className="my-2" content="All Studies" />
           </Grid.Column>
           <Grid.Column
-            className="pl-0"
-            computer={3}
-            tablet={4}
-            mobile={5}
+            computer={7}
+            tablet={8}
+            mobile={12}
             verticalAlign="middle"
             textAlign="right"
           >
@@ -252,6 +289,7 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
               >
                 {({logEvent}) => (
                   <Checkbox
+                    className="mr-28"
                     label="Show only my studies"
                     checked={myStudies}
                     onClick={() => toggleMyStudies(logEvent)}
@@ -260,49 +298,25 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
                 )}
               </Amplitude>
             )}
+            <ColumnSelector
+              columns={columns.columns}
+              onChange={cols => {
+                const newCols = {...columns, columns: cols};
+                localStorage.setItem('studyColumns', JSON.stringify(newCols));
+                setColumns(newCols);
+              }}
+            />
           </Grid.Column>
-          <Grid.Column
-            computer={3}
-            tablet={4}
-            mobile={5}
-            verticalAlign="middle"
-          >
-            {myProfile && hasPermission(myProfile, 'add_study') && (
-              <Button
-                basic
-                primary
-                fluid
-                icon="add"
-                content="Add Study"
-                as={Link}
-                to={`/study/new-study/info`}
-              />
-            )}
-          </Grid.Column>
-          <Grid.Column
-            className="pl-0"
-            tablet={15}
-            computer={3}
-            mobile={15}
-            verticalAlign="middle"
-          >
+          <Grid.Column computer={5} tablet={4} mobile={15}>
             <Popup
               wide
               inverted
               position="top center"
               content="Search study by name , ID or collaborator"
               trigger={
-                <Responsive
-                  as={Input}
-                  columns={1}
-                  fireOnMount
-                  onUpdate={(e, {width}) =>
-                    setResponsiveClass(
-                      width >= Responsive.onlyComputer.minWidth ? '' : 'mt-15',
-                    )
-                  }
-                  className={responsiveClass}
+                <Input
                   fluid
+                  size="mini"
                   aria-label="search studies"
                   iconPosition="left"
                   icon="search"
@@ -338,7 +352,7 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
                   position="top right"
                   trigger={
                     <Button
-                      className={responsiveClass}
+                      size="mini"
                       data-cy="toggle width button"
                       active={fullWidth}
                       onClick={() => toggleWidth(logEvent)}
@@ -350,24 +364,35 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
             </Amplitude>
           </Grid.Column>
         </Grid.Row>
-      </Grid>
-      <Grid as={Segment} container={!fullWidth} basic>
+        <Grid.Row className="noPadding">
+          <Grid.Column>
+            <Divider className="my-2" />
+          </Grid.Column>
+        </Grid.Row>
         <Grid.Row>
           {filteredStudyList().length > 0 ? (
             <Grid.Column>
               <StudyTable
+                tableType="allStudy"
                 myProfile={myProfile}
                 loading={loading}
                 studyList={filteredStudyList()}
                 columns={columns}
                 handleSort={handleSort}
+                favoriteStudies={favoriteStudies}
+                setFavoriteStudies={setFavoriteStudies}
               />
             </Grid.Column>
           ) : (
             <Grid.Column>
-              <Header as="h4" disabled textAlign="center">
+              <Header
+                as="h4"
+                disabled
+                textAlign="center"
+                className="mt-15 mb-15"
+              >
                 No Studies matching your search term. Try searching by Study
-                Name
+                Name.
               </Header>
             </Grid.Column>
           )}
