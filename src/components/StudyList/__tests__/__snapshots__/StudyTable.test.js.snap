@@ -38,13 +38,29 @@ exports[`renders study table correctly 1`] = `
           class="selectable left aligned overflow-cell-container"
           data-cy="study name"
         >
+          <div
+            class="ui star large rating px-10 pt-10"
+            data-cy="favorite study"
+            role="radiogroup"
+            tabindex="-1"
+          >
+            <i
+              aria-checked="false"
+              aria-posinset="1"
+              aria-setsize="1"
+              class="icon"
+              role="radio"
+              tabindex="0"
+            />
+          </div>
           <a
-            class="overflow-cell"
+            class="overflow-cell ml-30"
             href="/study/SD_I1L92W57/basic-info/info"
           >
             <div
               alt="visualize dynamic users"
               class="ui medium header"
+              floating="left"
             >
               visualize dynamic users
               <div
@@ -136,13 +152,29 @@ exports[`renders study table correctly 1`] = `
           class="selectable left aligned overflow-cell-container"
           data-cy="study name"
         >
+          <div
+            class="ui star large rating px-10 pt-10"
+            data-cy="favorite study"
+            role="radiogroup"
+            tabindex="-1"
+          >
+            <i
+              aria-checked="false"
+              aria-posinset="1"
+              aria-setsize="1"
+              class="icon"
+              role="radio"
+              tabindex="0"
+            />
+          </div>
           <a
-            class="overflow-cell"
+            class="overflow-cell ml-30"
             href="/study/SD_SG5N41K8/basic-info/info"
           >
             <div
               alt="strategize cross-media markets"
               class="ui medium header"
+              floating="left"
             >
               strategize cross-media markets
               <div
@@ -234,13 +266,29 @@ exports[`renders study table correctly 1`] = `
           class="selectable left aligned overflow-cell-container"
           data-cy="study name"
         >
+          <div
+            class="ui star large rating px-10 pt-10"
+            data-cy="favorite study"
+            role="radiogroup"
+            tabindex="-1"
+          >
+            <i
+              aria-checked="false"
+              aria-posinset="1"
+              aria-setsize="1"
+              class="icon"
+              role="radio"
+              tabindex="0"
+            />
+          </div>
           <a
-            class="overflow-cell"
+            class="overflow-cell ml-30"
             href="/study/SD_0YYP5ZEN/basic-info/info"
           >
             <div
               alt="drive distributed architectures"
               class="ui medium header"
+              floating="left"
             >
               drive distributed architectures
               <div
@@ -332,13 +380,29 @@ exports[`renders study table correctly 1`] = `
           class="selectable left aligned overflow-cell-container"
           data-cy="study name"
         >
+          <div
+            class="ui star large rating px-10 pt-10"
+            data-cy="favorite study"
+            role="radiogroup"
+            tabindex="-1"
+          >
+            <i
+              aria-checked="false"
+              aria-posinset="1"
+              aria-setsize="1"
+              class="icon"
+              role="radio"
+              tabindex="0"
+            />
+          </div>
           <a
-            class="overflow-cell"
+            class="overflow-cell ml-30"
             href="/study/SD_8WX8QQ06/basic-info/info"
           >
             <div
               alt="benchmark extensible e-business"
               class="ui medium header"
+              floating="left"
             >
               benchmark extensible e-business
               <div
