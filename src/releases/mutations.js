@@ -38,8 +38,8 @@ export const CREATE_SERVICE = gql`
 `;
 
 export const UPDATE_RELEASE = gql`
-  mutation UpdateRelease($input: UpdateReleaseInput!, $release: ID!) {
-    updateRelease(release: $release, input: $input) {
+  mutation UpdateRelease($input: UpdateReleaseInput!, $id: ID!) {
+    updateRelease(id: $id, input: $input) {
       release {
         ...ReleaseFields
         studies {
@@ -48,14 +48,6 @@ export const UPDATE_RELEASE = gql`
               id
               kfId
               name
-            }
-          }
-        }
-        notes {
-          edges {
-            node {
-              id
-              description
             }
           }
         }
