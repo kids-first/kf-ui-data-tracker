@@ -156,6 +156,19 @@ const ReleaseDetailView = ({user, history, match}) => {
           </Segment>
 
           <Segment vertical>
+            <Header>Services in this Release</Header>
+            <List bulleted>
+              {release.tasks.edges.map(({node}) => (
+                <List.Item>
+                  <Link to={`/releases/services/${node.releaseService.kfId}`}>
+                    {node.releaseService.kfId}
+                  </Link>{' '}
+                  - {node.releaseService.name}
+                </List.Item>
+              ))}
+            </List>
+          </Segment>
+          <Segment vertical>
             <Header>Task Status</Header>
             <TaskList releaseId={release.kfId} />
           </Segment>

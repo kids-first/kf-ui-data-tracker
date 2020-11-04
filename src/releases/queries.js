@@ -143,7 +143,17 @@ export const GET_RELEASE = gql`
           }
         }
       }
+      tasks {
+        edges {
+          node {
+            releaseService {
+              ...ServiceFields
+            }
+          }
+        }
+      }
     }
   }
   ${RELEASE_FIELDS}
+  ${SERVICE_FIELDS}
 `;

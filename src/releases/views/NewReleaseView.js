@@ -28,9 +28,7 @@ const NewReleaseView = ({history}) => {
     {loading: startReleaseLoading, error: startReleaseError},
   ] = useMutation(START_RELEASE);
 
-  const {data: services} = useQuery(ALL_SERVICES, {
-    context: {clientName: 'coordinator'},
-  });
+  const {data: servicesData} = useQuery(ALL_SERVICES);
 
   const {data: studiesData} = useQuery(ALL_STUDIES, {
     fetchPolicy: 'network-only',
@@ -42,8 +40,11 @@ const NewReleaseView = ({history}) => {
     return acc;
   }, {});
 
-  var studies = studiesData
+  const studies = studiesData
     ? studiesData.allStudies.edges.map(({node}) => node)
+    : [];
+  const services = servicesData
+    ? servicesData.allReleaseServices.edges.map(({node}) => node)
     : [];
 
   const handleSubmit = (values, {setSubmitting}) => {
