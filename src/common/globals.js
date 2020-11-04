@@ -17,3 +17,6 @@ export const DEV_BAR = process.env.REACT_APP_DEV_BAR;
 
 // The number of documents shown on one page in a study's documents tab
 export const DOCS_PER_PAGE = 10;
+
+// The number of studies shown on one page in study table
+export const STUDIES_PER_PAGE = 10;

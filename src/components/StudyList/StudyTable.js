@@ -1,12 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {withRouter} from 'react-router-dom';
 import {Amplitude} from '@amplitude/react-amplitude';
-import {Table} from 'semantic-ui-react';
+import {Table, Pagination, Icon} from 'semantic-ui-react';
 import ActionButtons from './ActionButtons';
 import KfId from './KfId';
 import Release from './Release';
 import StudyName from './Name';
 import {compareSemVer} from '../../common/sortUtils';
+import {STUDIES_PER_PAGE} from '../../common/globals';
 
 /**
  * A collection of functions to render cell contents for different columns
@@ -83,6 +84,8 @@ const StudyTable = ({
   setFavoriteStudies,
   tableType,
 }) => {
+  const [page, setPage] = useState(1);
+
   if (loading && !studyList) {
     return <h2>loading studies</h2>;
   }
@@ -119,6 +122,46 @@ const StudyTable = ({
     />
   ));
 
+  let pageCount = Math.ceil(studies.length / STUDIES_PER_PAGE);
+  let sortedList =
+    sorting.direction === 'ascending' ? studies : studies.reverse();
+  let paginatedList = sortedList.slice(
+    STUDIES_PER_PAGE * (page - 1),
+    STUDIES_PER_PAGE * (page - 1) + STUDIES_PER_PAGE,
+  );
+
+  const pagination = logEvent => (
+    <Amplitude
+      eventProperties={inheritedProps => ({
+        ...inheritedProps,
+        scope: inheritedProps.scope
+          ? [...inheritedProps.scope, 'study table pagination']
+          : ['study table pagination'],
+      })}
+      columns={columns.columns.filter(col => col.visible).map(col => col.name)}
+    >
+      {({logEvent}) => (
+        <Table.Row textAlign="right">
+          <Table.HeaderCell colSpan={visibleCols.length + 1}>
+            <Pagination
+              size="mini"
+              firstItem={null}
+              lastItem={null}
+              prevItem={{content: <Icon name="angle left" />, icon: true}}
+              nextItem={{content: <Icon name="angle right" />, icon: true}}
+              activePage={page}
+              totalPages={pageCount}
+              onPageChange={(e, {activePage}) => {
+                setPage(activePage);
+                logEvent('click');
+              }}
+            />
+          </Table.HeaderCell>
+        </Table.Row>
+      )}
+    </Amplitude>
+  );
+
   return (
     <Amplitude
       eventProperties={inheritedProps => ({
@@ -134,12 +177,11 @@ const StudyTable = ({
         sortable
         celled
         headerRow={header}
-        tableData={
-          sorting.direction === 'ascending' ? studies : studies.reverse()
-        }
+        tableData={paginatedList}
         renderBodyRow={data =>
           renderRow(data, visibleCols, favoriteStudies, setFavoriteStudies)
         }
+        footerRow={pageCount > 1 && pagination}
       />
     </Amplitude>
   );
