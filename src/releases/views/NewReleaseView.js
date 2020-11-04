@@ -55,7 +55,7 @@ const NewReleaseView = ({history}) => {
       name: values.title,
       description: values.description,
       studies: studyIds,
-      services: [],
+      services: values.services.map(service => service.id),
       isMajor: values.isMajor,
     };
     setRelease(release);
