@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import {Amplitude} from '@amplitude/react-amplitude';
 import {useMutation} from '@apollo/react-hooks';
+import {draftToMarkdown} from 'markdown-draft-js';
+import {EditorState, convertToRaw, ContentState} from 'draft-js';
 import {Button, Modal, Message, Icon} from 'semantic-ui-react';
 import UploadStep from './UploadStep';
 import DescriptionStep from './DescriptionStep';
@@ -38,11 +40,16 @@ export const NewVersionFlow = ({
   // To keep track of the selected file
   const [file, setFile] = useState();
   // Hold the version change description
-  const [description, setDescription] = useState();
+  const [description, setDescription] = useState(
+    EditorState.createWithContent(ContentState.createFromText('')),
+  );
   // For any errors that occur during upload
   const [errors, setErrors] = useState();
   // For the uploading stage
   const [onUploading, setUploading] = useState(false);
+
+  const rawState = convertToRaw(description.getCurrentContent());
+  const mdText = draftToMarkdown(rawState);
 
   // Handle first step by saving file and progressing the step counter
   const handleFile = file => {
@@ -52,9 +59,11 @@ export const NewVersionFlow = ({
 
   // Handle the version upload mutation
   const handleSave = props => {
-    setUploading(true);
+    // setUploading(true);
+    // const rawState = convertToRaw(description.getCurrentContent());
+    // const mdText = draftToMarkdown(rawState);
     createVersion({
-      variables: {file, fileId: match.params.fileId, description},
+      variables: {file, fileId: match.params.fileId, description: mdText},
     })
       .then(resp => {
         handleClose();
@@ -66,7 +75,13 @@ export const NewVersionFlow = ({
   // The different steps and their corresponding components
   const steps = {
     0: <UploadStep handleUpload={handleFile} />,
-    1: <DescriptionStep file={file} handleDescription={setDescription} />,
+    1: (
+      <DescriptionStep
+        file={file}
+        description={description}
+        handleDescription={setDescription}
+      />
+    ),
   };
 
   return (
@@ -119,7 +134,7 @@ export const NewVersionFlow = ({
               icon
               labelPosition="left"
               size="mini"
-              disabled={step === 0 || !description || !file || onUploading}
+              disabled={step === 0 || !mdText || !file || onUploading}
               onClick={e => {
                 logEvent('click');
                 handleSave(e);
