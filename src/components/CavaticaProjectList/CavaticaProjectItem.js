@@ -13,11 +13,24 @@ import {
 } from 'semantic-ui-react';
 import TimeAgo from 'react-timeago';
 import {longDate} from '../../common/dateUtils';
+import {projectOptions} from '../../common/enums';
 import {EditProjectModal} from '../../modals';
 import {LinkStudyPopup} from './LinkStudyPopup';
 
 const ProjectAttributes = ({projectNode, disabled}) => (
   <List bulleted horizontal>
+    <List.Item
+      as={Header}
+      sub
+      disabled={disabled}
+      color={
+        projectOptions.find(i => i.key === projectNode.projectType).color ||
+        'grey'
+      }
+    >
+      {projectOptions.find(i => i.key === projectNode.projectType).text ||
+        'Unknown'}
+    </List.Item>
     <List.Item disabled={disabled}>
       Created
       {projectNode.createdBy ? ' by ' + projectNode.createdBy + ' ' : ' '}
@@ -258,14 +271,6 @@ const CavaticaProjectItem = ({
             />
           )}
         </List.Content>
-        <Icon
-          color="grey"
-          name={
-            projectNode.projectType === 'DEL'
-              ? 'paper plane outline'
-              : 'sliders horizontal'
-          }
-        />
         <List.Content>
           <Header floated="right" disabled size="tiny">
             Deleted
@@ -318,15 +323,6 @@ const CavaticaProjectItem = ({
               />
             )}
           </List.Content>
-          <Icon
-            name={
-              {
-                DEL: 'paper plane outline',
-                HAR: 'sliders horizontal',
-                RES: 'flask',
-              }[projectNode.projectType]
-            }
-          />
           <List.Content>
             <ProjectLink projectNode={projectNode} disableLink={disableLink} />
             <ProjectAttributes projectNode={projectNode} />
