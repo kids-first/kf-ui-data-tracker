@@ -24,10 +24,15 @@ it('renders study table correctly', async () => {
     <MockedProvider mocks={[myProfileMock]}>
       <MemoryRouter>
         <StudyTable
+          tableType="allStudy"
           studyList={studies}
           columns={{
             columns: [{key: 'kfId', name: 'Kids First ID', visible: true}],
-            sorting: {
+            allStudySorting: {
+              column: 'name',
+              direction: 'descending',
+            },
+            favStudySorting: {
               column: 'name',
               direction: 'descending',
             },

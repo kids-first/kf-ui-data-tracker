@@ -79,7 +79,12 @@ const ActionButtons = ({study}) => {
   });
   const [createToken] = useMutation(CREATE_REFERRAL_TOKEN);
 
-  if (loading) return <span>loading</span>;
+  if (loading)
+    return (
+      <Table.Cell singleLine width="1">
+        <Button basic loading disabled content="Loading" />
+      </Table.Cell>
+    );
 
   return (
     <Amplitude

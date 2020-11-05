@@ -1,10 +1,10 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {Amplitude} from '@amplitude/react-amplitude';
-import {Header, Label, Table} from 'semantic-ui-react';
+import {Header, Label, Table, Rating} from 'semantic-ui-react';
 import defaultAvatar from '../../assets/defaultAvatar.png';
 
-const StudyName = ({study}) => {
+const StudyName = ({study, favoriteStudies, setFavoriteStudies}) => {
   // TODO: Filter out only users in the Investigators group
   const investigators =
     study.collaborators.edges.length &&
@@ -26,12 +26,30 @@ const StudyName = ({study}) => {
           textAlign="left"
           data-cy="study name"
         >
+          <Rating
+            data-cy="favorite study"
+            className="px-10 pt-10"
+            icon="star"
+            size="large"
+            rating={favoriteStudies.includes(study.kfId) ? 1 : 0}
+            maxRating={1}
+            onRate={e => {
+              e.preventDefault();
+              e.stopPropagation();
+              const newFav = favoriteStudies.includes(study.kfId)
+                ? favoriteStudies.filter(i => i !== study.kfId)
+                : [...favoriteStudies, study.kfId];
+              localStorage.setItem('favoriteStudies', JSON.stringify(newFav));
+              setFavoriteStudies(newFav);
+              logEvent('favorite');
+            }}
+          />
           <Link
             to={'/study/' + study.kfId + '/basic-info/info'}
             onClick={() => logEvent('click')}
-            className="overflow-cell"
+            className="overflow-cell ml-30"
           >
-            <Header size="medium" alt={study.name}>
+            <Header size="medium" alt={study.name} floating="left">
               {study.name}
               <Header.Subheader>
                 <Investigators investigators={investigators} />
@@ -49,7 +67,7 @@ const Investigators = ({investigators}) => {
     return (
       <Label.Group>
         {investigators.map(user => (
-          <Label image key={user.id}>
+          <Label image key={user.id} className="ml-0">
             <img alt={user.displayName} src={user.picture || defaultAvatar} />
             {user.displayName}
           </Label>
