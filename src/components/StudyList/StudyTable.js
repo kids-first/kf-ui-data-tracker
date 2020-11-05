@@ -90,7 +90,7 @@ const StudyTable = ({
     return <h2>loading studies</h2>;
   }
 
-  const sorting = columns[tableType + 'Sorting'];
+  const sorting = tableType ? columns[tableType + 'Sorting'] : columns.sorting;
 
   const studies = studyList
     .map(({node}) => ({
