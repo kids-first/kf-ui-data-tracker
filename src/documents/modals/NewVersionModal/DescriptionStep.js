@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {formatFileSize, lengthLimit} from '../../utilities';
-import {Form, Label} from 'semantic-ui-react';
+import {Form, Label, Segment} from 'semantic-ui-react';
+import MarkdownEditor from '../../components/FileDetail/MarkdownEditor';
 /**
  * In this step, the user will describ the file that they have uploaded
  */
-const DescriptionStep = ({file, handleDescription}) => {
+const DescriptionStep = ({file, description, handleDescription}) => {
   return (
     <>
       <p>
@@ -22,12 +23,12 @@ const DescriptionStep = ({file, handleDescription}) => {
         </Form.Field>
         <Form.Field required>
           <label>Summarize document changes:</label>
-          <Form.TextArea
-            data-testid="description-input"
-            name="description"
-            type="text"
-            onChange={ev => handleDescription(ev.target.value)}
-          />
+          <Segment>
+            <MarkdownEditor
+              editorState={description}
+              onEditorStateChange={e => handleDescription(e)}
+            />
+          </Segment>
         </Form.Field>
       </Form>
     </>
