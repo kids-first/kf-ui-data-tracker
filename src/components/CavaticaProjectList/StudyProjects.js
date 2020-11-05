@@ -34,7 +34,7 @@ const StudyProjects = ({
 
   return (
     <>
-      <Accordion.Title active={active} onClick={handleClick}>
+      <Accordion.Title active={active} onClick={handleClick} className="py-14">
         <Header size="medium">
           <Icon name="dropdown" />
           {study ? (
@@ -51,7 +51,7 @@ const StudyProjects = ({
           </Header>
         </Header>
       </Accordion.Title>
-      <Accordion.Content active={active}>
+      <Accordion.Content active={active} className="pt-0">
         <List relaxed divided>
           {projects &&
             projects.length > 0 &&

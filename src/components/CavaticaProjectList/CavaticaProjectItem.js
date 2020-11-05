@@ -223,9 +223,7 @@ export const ImportVolumeButton = ({importVolumeFiles, projectNode}) => {
                         as="a"
                         target="_blank"
                         rel="noopener noreferrer"
-                        href={`https://cavatica.sbgenomics.com/u/${
-                          projectNode.projectId
-                        }/files/#q?path=${directory}`}
+                        href={`https://cavatica.sbgenomics.com/u/${projectNode.projectId}/files/#q?path=${directory}`}
                       >
                         project's file directory{' '}
                         <Icon link size="small" name="external" />
