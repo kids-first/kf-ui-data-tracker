@@ -1,7 +1,17 @@
 import React from 'react';
+import Markdown from 'react-markdown';
 import Badge from '../../components/Badge/Badge';
 import AvatarTimeAgo from '../../components/AvatarTimeAgo/AvatarTimeAgo';
-import {Button, Header, Modal, Icon, Grid, Label} from 'semantic-ui-react';
+import {
+  Button,
+  Header,
+  Modal,
+  Icon,
+  Grid,
+  Label,
+  Table,
+  Segment,
+} from 'semantic-ui-react';
 import {downloadFile, formatFileSize, lengthLimit} from '../utilities';
 import {fileTypeDetail} from '../../common/enums';
 
@@ -80,13 +90,21 @@ const VersionInfoModal = ({
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            <Grid.Column mobile={10} tablet={9} computer={9}>
+            <Grid.Column>
               <Header as="h4" sub color="grey">
                 Version Summary
               </Header>
-              <p>
-                {openedVersion.version.description || 'No summary added...'}
-              </p>
+              <Segment basic secondary>
+                <Markdown
+                  source={
+                    openedVersion.version.description || 'No summary added...'
+                  }
+                  renderers={{
+                    image: Image,
+                    table: props => <Table>{props.children}</Table>,
+                  }}
+                />
+              </Segment>
             </Grid.Column>
           </Grid.Row>
         </Grid>
