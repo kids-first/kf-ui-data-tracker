@@ -203,6 +203,36 @@ context('Admin Study List', () => {
       .its('length')
       .should('eq', 4);
   });
+
+  it('favorite studies', () => {
+    cy.clearLocalStorage('favoriteStudies');
+
+    // Make sure there's no saved state for favorite studies
+    expect(localStorage.getItem('favoriteStudies')).to.be.null;
+
+    // Favorite study table section should show empty message
+    cy.contains('h4', 'You have not favorited any studies yet.').should(
+      'exist',
+    );
+
+    // Turn on only show my studies
+    cy.get('[data-cy="favorite study"]')
+      .first()
+      .click()
+      .should(() => {
+        expect(
+          JSON.parse(localStorage.getItem('favoriteStudies')).length,
+        ).to.be.eq(1);
+      });
+
+    // Favorite study table section should show empty message
+    cy.contains('h4', 'You have not favorited any studies yet.').should(
+      'not.exist',
+    );
+
+    // Clear storage for other tests
+    cy.clearLocalStorage('favoriteStudies');
+  });
 });
 
 context('Unauthed Study List', () => {

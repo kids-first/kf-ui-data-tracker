@@ -27,6 +27,7 @@ const StudyName = ({study, favoriteStudies, setFavoriteStudies}) => {
           data-cy="study name"
         >
           <Rating
+            data-cy="favorite study"
             className="px-10 pt-10"
             icon="star"
             size="large"
