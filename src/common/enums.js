@@ -1,7 +1,19 @@
 export const projectOptions = [
-  {key: 'DEL', value: 'DEL', text: 'Delivery', icon: 'paper plane outline'},
-  {key: 'HAR', value: 'HAR', text: 'Analysis', icon: 'sliders horizontal'},
-  {key: 'RES', value: 'RES', text: 'Research', icon: 'flask'},
+  {
+    key: 'DEL',
+    value: 'DEL',
+    text: 'Delivery',
+    icon: 'paper plane outline',
+    color: 'orange',
+  },
+  {
+    key: 'HAR',
+    value: 'ANA',
+    text: 'Analysis',
+    icon: 'sliders horizontal',
+    color: 'teal',
+  },
+  {key: 'RES', value: 'RES', text: 'Research', icon: 'flask', color: 'yellow'},
 ];
 
 // Styling for different event types
@@ -273,7 +285,7 @@ export const fileTypeDetail = {
       'Filepath',
       'Data Type',
       'Workflow Type',
-      'Source Read'
+      'Source Read',
     ],
     description: 'Metadata about files produced from Bix genomic workflows',
     config: true,

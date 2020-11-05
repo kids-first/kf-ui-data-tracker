@@ -13,11 +13,24 @@ import {
 } from 'semantic-ui-react';
 import TimeAgo from 'react-timeago';
 import {longDate} from '../../common/dateUtils';
+import {projectOptions} from '../../common/enums';
 import {EditProjectModal} from '../../modals';
 import {LinkStudyPopup} from './LinkStudyPopup';
 
 const ProjectAttributes = ({projectNode, disabled}) => (
   <List bulleted horizontal>
+    <List.Item
+      as={Header}
+      sub
+      disabled={disabled}
+      color={
+        projectOptions.find(i => i.key === projectNode.projectType).color ||
+        'grey'
+      }
+    >
+      {projectOptions.find(i => i.key === projectNode.projectType).text ||
+        'Unknown'}
+    </List.Item>
     <List.Item disabled={disabled}>
       Created
       {projectNode.createdBy ? ' by ' + projectNode.createdBy + ' ' : ' '}
@@ -210,9 +223,7 @@ export const ImportVolumeButton = ({importVolumeFiles, projectNode}) => {
                         as="a"
                         target="_blank"
                         rel="noopener noreferrer"
-                        href={`https://cavatica.sbgenomics.com/u/${
-                          projectNode.projectId
-                        }/files/#q?path=${directory}`}
+                        href={`https://cavatica.sbgenomics.com/u/${projectNode.projectId}/files/#q?path=${directory}`}
                       >
                         project's file directory{' '}
                         <Icon link size="small" name="external" />
@@ -258,14 +269,6 @@ const CavaticaProjectItem = ({
             />
           )}
         </List.Content>
-        <Icon
-          color="grey"
-          name={
-            projectNode.projectType === 'DEL'
-              ? 'paper plane outline'
-              : 'sliders horizontal'
-          }
-        />
         <List.Content>
           <Header floated="right" disabled size="tiny">
             Deleted
@@ -318,15 +321,6 @@ const CavaticaProjectItem = ({
               />
             )}
           </List.Content>
-          <Icon
-            name={
-              {
-                DEL: 'paper plane outline',
-                HAR: 'sliders horizontal',
-                RES: 'flask',
-              }[projectNode.projectType]
-            }
-          />
           <List.Content>
             <ProjectLink projectNode={projectNode} disableLink={disableLink} />
             <ProjectAttributes projectNode={projectNode} />

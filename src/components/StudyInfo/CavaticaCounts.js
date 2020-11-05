@@ -49,7 +49,7 @@ const CavaticaCounts = ({
       <List horizontal className={wrap ? 'display-block' : 'ml-15'}>
         {projectOptions.map(
           type =>
-            type.value in typeCounts && (
+            type.key in typeCounts && (
               <Popup
                 inverted
                 position="top center"
