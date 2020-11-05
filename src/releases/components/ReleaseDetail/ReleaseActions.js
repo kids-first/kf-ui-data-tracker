@@ -32,12 +32,16 @@ const ReleaseActions = ({release, user, history, match}) => {
 
   const handleConfirm = () => {
     const curRelease = release;
+    const services = release.tasks.edges.map(
+      ({node}) => node.releaseService.id,
+    );
     const newRelease = {
       name: curRelease.name,
       description: curRelease.description,
       studies: curRelease.studies.edges.map(({node}) => node.id),
       tags: curRelease.tags,
       isMajor: curRelease.isMajor,
+      services,
     };
 
     startRelease({variables: {input: newRelease}})
