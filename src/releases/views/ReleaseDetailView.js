@@ -16,11 +16,11 @@ import {
 } from 'semantic-ui-react';
 import {Progress} from '../components/Progress';
 import {TaskList} from '../components/TaskList';
-import {Events} from '../components/Events';
 import {
   ReleaseHeader,
   MarkdownEditor,
   ReleaseActions,
+  LogViewer,
 } from '../components/ReleaseDetail';
 import paragraph from '../../assets/paragraph.png';
 
@@ -46,6 +46,16 @@ const ReleaseDetailView = ({user, history, match}) => {
       variables: {release: relayId},
     },
   );
+
+  const logs =
+    releaseData &&
+    releaseData.release.tasks.edges.reduce(
+      (o, edge) => ({
+        ...o,
+        [edge.node.releaseService.name]: edge.node.jobLog,
+      }),
+      {},
+    );
 
   if (releaseError || eventsError)
     return (
@@ -174,8 +184,8 @@ const ReleaseDetailView = ({user, history, match}) => {
           </Segment>
 
           <Segment vertical>
-            <Header>Event History</Header>
-            <Events events={events && events.allEvents.edges} />
+            <Header>Logs</Header>
+            <LogViewer logs={{release: release.jobLog, ...logs}} />
           </Segment>
         </>
       )}

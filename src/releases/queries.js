@@ -146,6 +146,10 @@ export const GET_RELEASE = gql`
       tasks {
         edges {
           node {
+            jobLog {
+              id
+              downloadUrl
+            }
             releaseService {
               ...ServiceFields
             }

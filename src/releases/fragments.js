@@ -11,6 +11,10 @@ export const RELEASE_FIELDS = gql`
     creator {
       ...UserFields
     }
+    jobLog {
+      id
+      downloadUrl
+    }
     version
     createdAt
     isMajor
