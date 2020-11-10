@@ -295,7 +295,9 @@ export const GET_STUDY_RELEASES = gql`
             name
             description
             state
-            author
+            creator {
+              ...UserFields
+            }
             version
             createdAt
           }
@@ -303,6 +305,7 @@ export const GET_STUDY_RELEASES = gql`
       }
     }
   }
+  ${USER_FIELDS}
 `;
 
 export const GET_RELEASED_STUDY = gql`

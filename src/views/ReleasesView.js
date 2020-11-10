@@ -31,7 +31,6 @@ const ReleasesView = props => {
     variables: {
       id: relayId,
     },
-    context: {clientName: 'coordinator'},
   });
 
   const releases = data && data.study.releases;
@@ -74,9 +73,7 @@ const ReleasesView = props => {
       <Container as={Segment} basic>
         <Helmet>
           <title>
-            {`KF Data Tracker - Study releases - Error ${
-              props.match.params.kfId
-            }`}
+            {`KF Data Tracker - Study releases - Error ${props.match.params.kfId}`}
           </title>
         </Helmet>
         <Message
