@@ -1,6 +1,4 @@
 export const KF_STUDY_API = process.env.REACT_APP_STUDY_API;
-export const KF_COORD_API = process.env.REACT_APP_COORD_API;
-export const KF_COORD_UI = process.env.REACT_APP_COORD_UI;
 export const PRIMARY_HOST = process.env.REACT_APP_PRIMARY_HOST;
 export const REDIRECT_TO_PRIMARY =
   process.env.REACT_APP_REDIRECT_TO_PRIMARY === 'true';
