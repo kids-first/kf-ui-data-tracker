@@ -31,6 +31,10 @@ export const ALL_STUDIES = gql`
                 kfId
                 name
                 version
+                createdAt
+                creator {
+                  ...UserFields
+                }
               }
             }
           }
