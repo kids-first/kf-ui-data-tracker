@@ -6,6 +6,20 @@ export const dateCompare = (version1, version2) => {
   return new Date(version2.node.createdAt) - new Date(version1.node.createdAt);
 };
 
+export const formatLargeNumber = num => {
+  var thresh = 1000;
+  if (Math.abs(num) < thresh) {
+    return num;
+  }
+  var units = ['k', 'M', 'B', 'T'];
+  var u = -1;
+  do {
+    num /= thresh;
+    ++u;
+  } while (Math.abs(num) >= thresh && u < units.length - 1);
+  return num.toFixed(1) + units[u];
+};
+
 // Reformat file size data by adding units to it and accurate to 0.1
 export const formatFileSize = (bytes, si) => {
   var thresh = si ? 1000 : 1024;
