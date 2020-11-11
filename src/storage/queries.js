@@ -44,6 +44,14 @@ export const INVENTORY_STATS = gql`
       totalBytes
       totalObjects
       totalBuckets
+      countByFileFormat {
+        fileFormat
+        value
+      }
+      sizeByFileFormat {
+        fileFormat
+        value
+      }
     }
   }
 `;
