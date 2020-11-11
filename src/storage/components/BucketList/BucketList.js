@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import {Button, Header, Icon, Table} from 'semantic-ui-react';
 import {formatFileSize, formatLargeNumber} from '../../../documents/utilities';
 
@@ -9,8 +10,10 @@ const extractSummary = node =>
 
 const Row = ({data}) => (
   <Table.Row>
-    <Table.Cell>
-      <Header size="small">{data.name}</Header>
+    <Table.Cell selectable>
+      <Link to={'/storage/bucket/' + data.name}>
+        <Header size="small">{data.name}</Header>
+      </Link>
     </Table.Cell>
     <Table.Cell textAlign="center" width={1}>
       {data.study.kfId}

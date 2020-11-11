@@ -8,7 +8,7 @@ const Routes = () => (
       <Route exact path="/storage" render={() => <HomeView />} />
       <Route
         exact
-        path="/storage/bucket/:serviceId"
+        path="/storage/bucket/:bucketName"
         render={() => <BucketDetailView />}
       />
     </Switch>

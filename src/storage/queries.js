@@ -29,6 +29,30 @@ export const ALL_BUCKETS = gql`
   ${BUCKET_FIELDS}
 `;
 
+export const GET_BUCKET = gql`
+  query Bucket($id: ID!) {
+    bucket(id: $id) {
+      ...BucketFields
+      inventories {
+        edges {
+          node {
+            id
+            totalBytes
+            createdAt
+            summary
+          }
+        }
+      }
+      study {
+        id
+        kfId
+        shortName
+      }
+    }
+  }
+  ${BUCKET_FIELDS}
+`;
+
 export const BUCKET_LINES = gql`
   query BucketSize {
     bucketSize {
