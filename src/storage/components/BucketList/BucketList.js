@@ -1,46 +1,62 @@
 import React from 'react';
-import {List, Statistic} from 'semantic-ui-react';
-import {formatFileSize} from '../../../documents/utilities';
+import {Button, Header, Icon, Table} from 'semantic-ui-react';
+import {formatFileSize, formatLargeNumber} from '../../../documents/utilities';
 
-const BucketItem = ({bucket}) => {
-  const hasInventory = bucket.inventories.edges.length > 0;
+const extractSummary = node =>
+  node.inventories.edges.length > 0
+    ? JSON.parse(node.inventories.edges[0].node.summary)
+    : null;
 
-  return (
-    <List.Item key={bucket.id}>
-      {hasInventory && (
-        <List.Content floated="right">
-          <Statistic
-            size="tiny"
-            value={formatFileSize(bucket.inventories.edges[0].node.totalBytes)}
-          />
-        </List.Content>
-      )}
-      <List.Icon name="aws" size="large" verticalAlign="middle" />
-      <List.Content>
-        <List.Header>{bucket.name}</List.Header>
-        <List.Description>
-          <List bulleted horizontal>
-            <List.Item>{bucket.createdOn}</List.Item>
-            {bucket.study && <List.Item>{bucket.study.kfId}</List.Item>}
-            {bucket.study.shortName && (
-              <List.Item>{bucket.study.shortName}</List.Item>
-            )}
-          </List>
-        </List.Description>
-      </List.Content>
-    </List.Item>
-  );
-};
+const Row = ({data}) => (
+  <Table.Row>
+    <Table.Cell>
+      <Header size="small">{data.name}</Header>
+    </Table.Cell>
+    <Table.Cell textAlign="center" width={1}>
+      {data.study.kfId}
+    </Table.Cell>
+    <Table.Cell textAlign="center" width={2}>
+      {formatLargeNumber(extractSummary(data).count.total)}
+    </Table.Cell>
+    <Table.Cell textAlign="center" width={2}>
+      {formatFileSize(extractSummary(data).size.total, true)}
+    </Table.Cell>
+    <Table.Cell textAlign="center" width={1}>
+      <Button.Group basic>
+        <Button icon>
+          <Icon name="download" />
+        </Button>
+        <Button icon>
+          <Icon name="external" />
+        </Button>
+      </Button.Group>
+    </Table.Cell>
+  </Table.Row>
+);
 
 const BucketList = ({buckets}) => {
   if (!buckets) return 'Loading';
 
+  const sortedBuckets = buckets.map(({node}) => node);
+
+  const header = (
+    <Table.Row>
+      <Table.HeaderCell>Bucket</Table.HeaderCell>
+      <Table.HeaderCell textAlign="center">Study</Table.HeaderCell>
+      <Table.HeaderCell textAlign="center">Objects</Table.HeaderCell>
+      <Table.HeaderCell textAlign="center">Data</Table.HeaderCell>
+      <Table.HeaderCell textAlign="center">Actions</Table.HeaderCell>
+    </Table.Row>
+  );
+
   return (
-    <List divided>
-      {buckets.map(({node}, i) => (
-        <BucketItem bucket={node} />
-      ))}
-    </List>
+    <Table
+      celled
+      compact
+      headerRow={header}
+      tableData={sortedBuckets}
+      renderBodyRow={(data, index) => <Row data={data} />}
+    />
   );
 };
 
