@@ -8,7 +8,7 @@ import {
   VictoryLabel,
 } from 'victory';
 
-const SizeGraph = ({data}) => {
+const SizeGraph = ({data, color = 'rgb(59, 171, 255)'}) => {
   const showDepAxis = true;
   return (
     <VictoryChart
@@ -28,16 +28,8 @@ const SizeGraph = ({data}) => {
             x2="0%"
             y2="8%"
           >
-            <stop
-              offset="70%"
-              stopColor="rgb(59, 171, 255)"
-              stopOpacity={1.0}
-            />
-            <stop
-              offset="100%"
-              stopColor="rgb(59, 171, 255)"
-              stopOpacity={0.0}
-            />
+            <stop offset="70%" stopColor={color} stopOpacity={1.0} />
+            <stop offset="100%" stopColor={color} stopOpacity={0.0} />
           </linearGradient>
         </defs>
       </svg>
@@ -58,11 +50,11 @@ const SizeGraph = ({data}) => {
           {
             x: new Date(data[data.length - 1].date),
             y: data[data.length - 1].size / 1e6,
+            label: formatFileSize(data[data.length - 1].size, true),
           },
         ]}
-        style={{data: {fill: '#1f7ec6'}}}
+        style={{data: {fill: color, stroke: 'black', strokeWidth: 0.5}}}
         size={2}
-        labels={formatFileSize(data[data.length - 1].size, true)}
         labelComponent={
           <VictoryLabel
             textAnchor="end"

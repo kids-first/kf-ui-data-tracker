@@ -45,7 +45,7 @@ const InventoryTable = ({inventories}) => {
       compact="very"
       headerRow={header}
       tableData={sortedInventories}
-      renderBodyRow={(data, index) => <Row data={data} />}
+      renderBodyRow={(data, index) => <Row data={data} key={index} />}
     />
   );
 };
