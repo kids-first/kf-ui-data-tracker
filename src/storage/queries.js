@@ -3,16 +3,16 @@ import {BUCKET_FIELDS} from './fragments';
 
 export const ALL_BUCKETS = gql`
   query AllBuckets {
-    allBuckets(first: 20) {
+    allBuckets(first: 100) {
       edges {
         node {
           ...BucketFields
-          inventories {
+          inventories(first: 1, orderBy: "-creation_date") {
             edges {
               node {
                 id
-                totalBytes
                 createdAt
+                creationDate
                 summary
               }
             }
@@ -37,8 +37,8 @@ export const GET_BUCKET = gql`
         edges {
           node {
             id
-            totalBytes
             createdAt
+            creationDate
             summary
           }
         }

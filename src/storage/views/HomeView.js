@@ -26,9 +26,9 @@ const HomeView = ({match}) => {
         Storage Overview
       </Header>
 
-      {bucketSizeData && !bucketSizeLoading && (
-        <SizeGraph data={bucketSizeData.bucketSize} />
-      )}
+      {bucketSizeData &&
+        bucketSizeData.bucketSize.length > 0 &&
+        !bucketSizeLoading && <SizeGraph data={bucketSizeData.bucketSize} />}
 
       {!inventoryStatsLoading && statsData && (
         <Statistic.Group widths={4}>

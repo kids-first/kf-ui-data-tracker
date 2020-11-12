@@ -16,13 +16,18 @@ const Row = ({data}) => (
       </Link>
     </Table.Cell>
     <Table.Cell textAlign="center" width={1}>
-      {data.study.kfId}
+      {data.study ? data.study.kfId : 'No Study'}
     </Table.Cell>
     <Table.Cell textAlign="center" width={2}>
-      {formatLargeNumber(extractSummary(data).count.total)}
+      {formatLargeNumber(
+        extractSummary(data) && extractSummary(data).total_count,
+      )}
     </Table.Cell>
     <Table.Cell textAlign="center" width={2}>
-      {formatFileSize(extractSummary(data).size.total, true)}
+      {formatFileSize(
+        extractSummary(data) && extractSummary(data).total_size,
+        true,
+      )}
     </Table.Cell>
     <Table.Cell textAlign="center" width={1}>
       <Button.Group basic>
@@ -40,7 +45,13 @@ const Row = ({data}) => (
 const BucketList = ({buckets}) => {
   if (!buckets) return 'Loading';
 
-  const sortedBuckets = buckets.map(({node}) => node);
+  const sortedBuckets = buckets
+    .map(({node}) => node)
+    .sort(
+      (a, b) =>
+        (extractSummary(a) && extractSummary(a).total_size) <
+        (extractSummary(b) && extractSummary(b).total_size),
+    );
 
   const header = (
     <Table.Row>

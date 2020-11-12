@@ -5,17 +5,17 @@ import {formatFileSize, formatLargeNumber} from '../../../documents/utilities';
 const Row = ({data}) => (
   <Table.Row>
     <Table.Cell textAlign="left">
-      {new Date(data.createdAt).toLocaleDateString('en-US', {
+      {new Date(data.creationDate).toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'long',
         day: 'numeric',
       })}
     </Table.Cell>
     <Table.Cell textAlign="center" width={2}>
-      {formatLargeNumber(JSON.parse(data.summary).count.total)}
+      {formatLargeNumber(JSON.parse(data.summary).total_count)}
     </Table.Cell>
     <Table.Cell textAlign="center" width={2}>
-      {formatFileSize(JSON.parse(data.summary).size.total, true)}
+      {formatFileSize(JSON.parse(data.summary).total_size, true)}
     </Table.Cell>
     <Table.Cell textAlign="center" width={1}>
       <Icon bordered name="download" />
@@ -28,7 +28,7 @@ const InventoryTable = ({inventories}) => {
 
   const sortedInventories = inventories
     .map(({node}) => node)
-    .sort((a, b) => b.createdAt.localeCompare(a.createdAt));
+    .sort((a, b) => b.creationDate.localeCompare(a.creationDate));
 
   const header = (
     <Table.Row>
