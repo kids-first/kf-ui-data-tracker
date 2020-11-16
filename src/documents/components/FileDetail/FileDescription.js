@@ -105,7 +105,7 @@ const FileDescription = ({fileNode, updateFile}) => {
           </Segment>
         </>
       ) : (
-        <Segment basic secondary>
+        <Segment basic secondary className="x-scroll">
           <Markdown
             source={fileNode.description}
             renderers={{
