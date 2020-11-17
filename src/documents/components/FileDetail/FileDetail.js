@@ -4,7 +4,6 @@ import {Amplitude} from '@amplitude/react-amplitude';
 import {withRouter, Link} from 'react-router-dom';
 import AvatarTimeAgo from '../../../components/AvatarTimeAgo/AvatarTimeAgo';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
-import VersionList from '../VersionList/VersionList';
 import {
   downloadFile,
   fileSortedVersions,
@@ -280,7 +279,6 @@ const FileDetail = ({
 }) => {
   const studyId = match.params.kfId;
   const [dialog, setDialog] = useState(false);
-  const [versionOpened, setOpenVersion] = useState({version: {}, index: null});
   const sortedVersions = fileSortedVersions(fileNode);
   const latestDate = fileLatestDate(sortedVersions);
   const latestSize = fileLatestSize(sortedVersions);
@@ -318,27 +316,6 @@ const FileDetail = ({
             }}
           />
         </Grid.Column>
-      {allowViewVersion && (
-        <Grid.Row className="noVerticalPadding">
-          <Grid.Column mobile={16} tablet={16} computer={13}>
-            <Segment className="noBorders">
-              <Header as="h4" color="grey">
-                Versions
-              </Header>
-              <VersionList
-                studyId={studyId}
-                fileNode={fileNode}
-                allowUpload={allowUpload}
-                onUploadClick={() => setDialog('upload')}
-                onNameClick={(versionNode, index) => {
-                  setDialog('versionInfo');
-                  setOpenVersion({version: versionNode, index: index});
-                }}
-              />
-            </Segment>
-          </Grid.Column>
-        </Grid.Row>
-      )}
         <Grid.Column mobile={16} tablet={13} computer={14} className="pl-0">
           <Grid>
             <Grid.Row>
@@ -457,7 +434,6 @@ const FileDetail = ({
           onCloseModal={() => setDialog(false)}
           dialog={dialog}
           onUploadClick={() => setDialog('upload')}
-          openedVersion={versionOpened}
           downloadFileMutation={downloadFileMutation}
           allowUpload={allowUpload}
         />
