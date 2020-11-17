@@ -1,7 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Helmet} from 'react-helmet';
 import {useQuery} from '@apollo/react-hooks';
-import {Container, Grid, Header, Segment, Statistic} from 'semantic-ui-react';
+import {
+  Container,
+  Grid,
+  Header,
+  Input,
+  Segment,
+  Statistic,
+} from 'semantic-ui-react';
 import {ALL_BUCKETS, BUCKET_LINES, INVENTORY_STATS} from '../queries';
 import {formatFileSize, formatLargeNumber} from '../../documents/utilities';
 import {BucketTable} from '../components/BucketTable';
@@ -16,6 +23,8 @@ const HomeView = ({match}) => {
   const {data: statsData, loading: inventoryStatsLoading} = useQuery(
     INVENTORY_STATS,
   );
+
+  const [searchString, setSearchString] = useState('');
 
   return (
     <Container as={Segment} basic>
@@ -94,7 +103,27 @@ const HomeView = ({match}) => {
       )}
 
       {bucketsData && !bucketsLoading && (
-        <BucketTable buckets={bucketsData.allBuckets.edges} />
+        <Segment vertical>
+          <Grid>
+            <Grid.Column width="8" verticalAlign="middle">
+              <Header>All Buckets</Header>
+            </Grid.Column>
+            <Grid.Column width="8" textAlign="right">
+              <Input
+                fluid
+                name="searchString"
+                icon="search"
+                placeholder="Filter by name"
+                value={searchString}
+                onChange={(e, {value}) => setSearchString(value)}
+              />
+            </Grid.Column>
+          </Grid>
+          <BucketTable
+            buckets={bucketsData.allBuckets.edges}
+            searchString={searchString}
+          />
+        </Segment>
       )}
     </Container>
   );

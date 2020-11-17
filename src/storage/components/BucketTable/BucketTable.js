@@ -67,7 +67,7 @@ const columnSorts = {
   actions: (a, b) => 0,
 };
 
-const BucketTable = ({buckets}) => {
+const BucketTable = ({buckets, searchString = ''}) => {
   // Setup state for table
   const existingState = JSON.parse(localStorage.getItem('bucketTableState'));
   const defaultState = {
@@ -107,13 +107,15 @@ const BucketTable = ({buckets}) => {
   };
 
   // Process buckets by sorting and filtering
-  let sortedBuckets = buckets
+  const filteredBuckets = buckets
     .map(({node}) => node)
-    .sort(
-      (r1, r2) =>
-        columnSorts.hasOwnProperty(tableState.sorting.column) &&
-        columnSorts[tableState.sorting.column](r1, r2),
-    );
+    .filter(bucket => bucket.name.includes(searchString));
+
+  let sortedBuckets = filteredBuckets.sort(
+    (r1, r2) =>
+      columnSorts.hasOwnProperty(tableState.sorting.column) &&
+      columnSorts[tableState.sorting.column](r1, r2),
+  );
 
   sortedBuckets =
     tableState.sorting.direction === 'ascending'
