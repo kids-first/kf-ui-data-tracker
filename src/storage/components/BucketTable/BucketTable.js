@@ -10,6 +10,9 @@ const extractSummary = node =>
 
 const Row = ({data}) => (
   <Table.Row>
+    <Table.Cell collapsing>
+      <Label empty circular color="green" />
+    </Table.Cell>
     <Table.Cell selectable>
       <Link to={'/storage/bucket/' + data.name}>
         <Header size="small">{data.name}</Header>
@@ -127,6 +130,7 @@ const BucketTable = ({buckets, searchString = ''}) => {
   const header = (
     <Table.Row>
       {[
+        {key: 'health', name: ''},
         {key: 'name', name: 'Bucket'},
         {key: 'study', name: 'Study'},
         {key: 'objects', name: 'Objects'},
@@ -151,7 +155,7 @@ const BucketTable = ({buckets, searchString = ''}) => {
 
   const pagination = (
     <Table.Row>
-      <Table.HeaderCell colSpan="5" textAlign="right">
+      <Table.HeaderCell colSpan="6" textAlign="right">
         <Pagination
           firstItem={null}
           lastItem={null}
