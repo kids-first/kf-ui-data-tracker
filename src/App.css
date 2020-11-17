@@ -246,6 +246,11 @@ body {
   content: '* (required)';
 }
 
+.small-avatar {
+  width: 17px !important;
+  height: 17px !important;
+}
+
 .micro-button {
   font-size: 10px !important;
   margin-left: 2px !important;

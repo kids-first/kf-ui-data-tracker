@@ -1,5 +1,6 @@
 import React from 'react';
-import {Feed, Message, Icon} from 'semantic-ui-react';
+import {Feed, Message, Icon, Image} from 'semantic-ui-react';
+import defaultAvatar from '../../../assets/defaultAvatar.png';
 import VersionCard from './VersionCard';
 
 /**
@@ -14,7 +15,7 @@ const TimelineDate = ({date}) => {
   };
   const d = date ? new Date(date) : '';
   return (
-    <Feed.Date className="text-10 lh-inherit">
+    <Feed.Date>
       {date ? d.toLocaleDateString(undefined, options) : 'Unknown'}
     </Feed.Date>
   );
@@ -54,11 +55,16 @@ const Timelines = ({eventData, stripFileId, downloadFileMutation}) => {
               />
             </Feed.Label>
             <Feed.Content className="ml-10">
-              <TimelineDate date={node.createdAt} />
               <Feed.Summary className="text-normal">
+                <Image
+                  className="small-avatar"
+                  src={node.user.picture || defaultAvatar}
+                  avatar
+                />
                 {stripFileId && node.description.includes(stripFileId)
                   ? node.description.replace(stripFileId, '')
                   : node.description}
+                <TimelineDate date={node.createdAt} />
               </Feed.Summary>
               {node.eventType.includes('FV_') && (
                 <VersionCard
