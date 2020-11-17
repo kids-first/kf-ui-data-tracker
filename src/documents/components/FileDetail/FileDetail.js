@@ -287,7 +287,7 @@ const FileDetail = ({
   return (
     <Grid className="mb-15">
       <Grid.Row>
-        <Grid.Column mobile={16} tablet={16} computer={13}>
+        <Grid.Column mobile={16} tablet={16} computer={14}>
           <Link
             to={`/study/${match.params.kfId}/documents`}
             data-testid="back-to-filelist"
@@ -301,62 +301,7 @@ const FileDetail = ({
         </Grid.Column>
       </Grid.Row>
       <Grid.Row className="noVerticalPadding">
-        <Grid.Column mobile={16} tablet={16} computer={13}>
-          <Segment.Group className="noBorders">
-            <Segment.Group horizontal className="noBorders">
-              <Segment className="noBorders">
-                <Header as="h4" color="grey">
-                  Document Type
-                </Header>
-                <Label basic size="small">
-                  <Icon name={`${fileTypeDetail[fileNode.fileType].icon}`} />
-                  {' ' + fileTypeDetail[fileNode.fileType].title}
-                </Label>
-              </Segment>
-              <Segment className="noBorders">
-                <Header as="h4" color="grey">
-                  Last Updated
-                </Header>
-                <AvatarTimeAgo
-                  size="tiny"
-                  showUsername
-                  creator={sortedVersions[0].node.creator}
-                  createdAt={latestDate}
-                />
-              </Segment>
-              <Segment className="noBorders">
-                <Header as="h4" color="grey">
-                  Size
-                </Header>
-                <Label basic size="small">
-                  {latestSize}
-                </Label>
-              </Segment>
-            </Segment.Group>
-            <Segment className="noBorders">
-              <FileDescription fileNode={fileNode} updateFile={updateFile} />
-            </Segment>
-            <Segment className="noBorders">
-              <Header as="h4" color="grey">
-                Tags
-              </Header>
-              <FileTags
-                fileNode={fileNode}
-                updateFile={updateFile}
-                defaultOptions={tagOptions}
-              />
-              {updateError && (
-                <Message
-                  negative
-                  icon="warning circle"
-                  header="Error"
-                  content={updateError.message}
-                />
-              )}
-            </Segment>
-          </Segment.Group>
-        </Grid.Column>
-        <Grid.Column mobile={8} tablet={4} computer={3}>
+        <Grid.Column mobile={16} only="mobile">
           <ActionButtons
             {...{
               downloadFile,
@@ -368,10 +313,11 @@ const FileDetail = ({
               history,
               updateFile,
               allowExtractConfig,
+              allowUpload,
+              vertical: false,
             }}
           />
         </Grid.Column>
-      </Grid.Row>
       {allowViewVersion && (
         <Grid.Row className="noVerticalPadding">
           <Grid.Column mobile={16} tablet={16} computer={13}>
@@ -393,20 +339,73 @@ const FileDetail = ({
           </Grid.Column>
         </Grid.Row>
       )}
-      {sortedVersions && sortedVersions[0].node.analysis && (
-        <Grid.Row>
-          <Grid.Column mobile={16} tablet={16} computer={13}>
+        <Grid.Column mobile={16} tablet={13} computer={14} className="pl-0">
+          <Grid>
+            <Grid.Row>
+              <Grid.Column mobile={16} tablet={16} computer={10}>
+                <Segment className="noBorders noMargin">
+                  <Header as="h4" color="grey">
+                    Basic info
+                  </Header>
+                  <Label size="small" className="ml-0 mr-5 my-2">
+                    <Icon name={`${fileTypeDetail[fileNode.fileType].icon}`} />
+                    {' ' + fileTypeDetail[fileNode.fileType].title}
+                    {updateFile && (
+                      <Button
+                        size="mini"
+                        labelPosition="left"
+                        className="ml-15 mr-0 text-primary"
+                        onClick={() => setDialog('annotation')}
+                      >
+                        <Icon name="pencil" />
+                      </Button>
+                    )}
+                  </Label>
+                  <Label size="small" className="ml-0 mr-5 my-2">
+                    {latestSize}
+                  </Label>
+                  <AvatarTimeAgo
+                    className="ml-0 mr-5 my-2"
+                    size="small"
+                    showUsername
+                    creator={sortedVersions[0].node.creator}
+                    createdAt={latestDate}
+                  />
+                </Segment>
+              </Grid.Column>
+              <Grid.Column mobile={16} tablet={16} computer={6}>
+                <Segment className="noBorders noMargin">
+                  <Header as="h4" color="grey">
+                    Tags
+                  </Header>
+                  <FileTags
+                    fileNode={fileNode}
+                    updateFile={updateFile}
+                    defaultOptions={tagOptions}
+                  />
+                  {updateError && (
+                    <Message
+                      negative
+                      icon="warning circle"
+                      header="Error"
+                      content={updateError.message}
+                    />
+                  )}
+                </Segment>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+          <Segment className="noBorders noMargin">
+            <FileDescription fileNode={fileNode} updateFile={updateFile} />
+          </Segment>
+          {sortedVersions && sortedVersions[0].node.analysis && (
             <Segment className="noBorders">
               <Header as="h4" color="grey">
                 Summary
               </Header>
               <AnalysisSummary version={sortedVersions[0].node} />
             </Segment>
-          </Grid.Column>
-        </Grid.Row>
-      )}
-      <Grid.Row>
-        <Grid.Column mobile={16} tablet={16} computer={13}>
+          )}
           <Segment className="noBorders" loading={event.loading}>
             <Header as="h4" color="grey">
               Timeline{' '}
