@@ -1,6 +1,5 @@
 import React from 'react';
-import {Feed, Message} from 'semantic-ui-react';
-import defaultAvatar from '../../../assets/defaultAvatar.png';
+import {Feed, Message, Icon} from 'semantic-ui-react';
 
 /**
  * Displays study document timelines with empty message
@@ -23,14 +22,37 @@ const TimelineDate = ({date}) => {
 const Timelines = ({eventData, stripFileId}) => {
   const events =
     eventData && eventData.allEvents ? eventData.allEvents.edges : [];
+  const actionType = {
+    CRE: {
+      iconName: 'upload',
+      iconColor: 'green',
+    },
+    UPD: {
+      iconName: 'pencil',
+      iconColor: 'yellow',
+    },
+    DEL: {
+      iconName: 'trash',
+      iconColor: 'red',
+    },
+    OTH: {iconName: 'question', iconColor: 'red'},
+  };
 
   return (
     <Feed>
       {events.length > 0 ? (
         events.map(({node}) => (
           <Feed.Event key={node.id}>
-            <Feed.Label image={node.user.picture || defaultAvatar} />
-            <Feed.Content>
+            <Feed.Label className="pt-5">
+              <Icon
+                name={
+                  node.eventType.split('_')[1] in actionType
+                    ? actionType[node.eventType.split('_')[1]].iconName
+                    : actionType.OTH.iconName
+                }
+              />
+            </Feed.Label>
+            <Feed.Content className="ml-10">
               <TimelineDate date={node.createdAt} />
               <Feed.Summary className="text-normal">
                 {stripFileId && node.description.includes(stripFileId)
