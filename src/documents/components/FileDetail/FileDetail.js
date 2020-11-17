@@ -25,6 +25,7 @@ import {
   Menu,
 } from 'semantic-ui-react';
 import FileTags from './FileTags';
+import FileName from './FileName';
 import FileDescription from './FileDescription';
 import AnalysisSummary from './AnalysisSummary';
 import Timelines from './Timelines';
@@ -295,7 +296,11 @@ const FileDetail = ({
               All Documents
             </Button>
           </Link>
-          <Header as="h2">{fileNode.name}</Header>
+          <FileName
+            fileNode={fileNode}
+            updateFile={updateFile}
+            studyFiles={studyFiles}
+          />
         </Grid.Column>
       </Grid.Row>
       <Grid.Row className="noVerticalPadding">
