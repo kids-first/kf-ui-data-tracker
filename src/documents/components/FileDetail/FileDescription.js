@@ -119,14 +119,14 @@ const FileDescription = ({fileNode, updateFile}) => {
   );
 };
 
-FileList.propTypes = {
+FileDescription.propTypes = {
   /** Array of study object*/
   fileNode: PropTypes.object,
   /** Function to update file node  */
-  updateFile: PropTypes.func.isRequired,
+  updateFile: PropTypes.func,
 };
 
-FileList.defaultProps = {
+FileDescription.defaultProps = {
   fileNode: null,
 };
 
