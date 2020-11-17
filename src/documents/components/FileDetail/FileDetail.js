@@ -205,31 +205,6 @@ const ActionButtons = ({
           <>
             <Divider />
             <Button.Group size="mini" fluid>
-              {updateFile && (
-                <Amplitude
-                  eventProperties={inheritedProps => ({
-                    ...inheritedProps,
-                    scope: inheritedProps.scope
-                      ? [...inheritedProps.scope, 'button', 'edit button']
-                      : ['button', 'edit button'],
-                  })}
-                >
-                  {({logEvent}) => (
-                    <Button
-                      icon="pencil"
-                      size="small"
-                      labelPosition="left"
-                      color="grey"
-                      onClick={() => {
-                        logEvent('click');
-                        setDialog('annotation');
-                      }}
-                      data-testid="edit-button"
-                      content="EDIT"
-                    />
-                  )}
-                </Amplitude>
-              )}
               {deleteFile && (
                 <Amplitude
                   eventProperties={inheritedProps => ({
