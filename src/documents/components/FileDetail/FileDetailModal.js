@@ -21,6 +21,8 @@ const FileDetailModal = ({
   onUploadClick,
   downloadFileMutation,
   allowUpload,
+  updateFile,
+  updateError,
 }) => {
   return (
     <Fragment>
@@ -36,6 +38,8 @@ const FileDetailModal = ({
           studyId={studyId}
           fileNode={fileNode}
           onCloseDialog={onCloseModal}
+          updateFile={updateFile}
+          updateError={updateError}
         />
       )}
       {dialog === 'config' && (

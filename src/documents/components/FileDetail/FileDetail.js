@@ -436,6 +436,8 @@ const FileDetail = ({
           onUploadClick={() => setDialog('upload')}
           downloadFileMutation={downloadFileMutation}
           allowUpload={allowUpload}
+          updateFile={updateFile}
+          updateError={updateError}
         />
       )}
     </Grid>
