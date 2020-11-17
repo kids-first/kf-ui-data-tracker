@@ -108,6 +108,7 @@ const FileName = ({fileNode, updateFile, studyFiles}) => {
               size="mini"
               labelPosition="left"
               className="ml-15 text-primary"
+              data-testid="edit-title"
               onClick={() => setEditing(true)}
             >
               <Icon name="pencil" />

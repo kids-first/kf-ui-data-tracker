@@ -204,6 +204,7 @@ const ActionButtons = ({
                     logEvent('click');
                     setDialog('config');
                   }}
+                  data-testid="config"
                 >
                   <Icon name="wrench" />
                   Config
@@ -337,6 +338,7 @@ const FileDetail = ({
                         size="mini"
                         labelPosition="left"
                         className="ml-15 mr-0 text-primary"
+                        data-testid="edit-type"
                         onClick={() => setDialog('annotation')}
                       >
                         <Icon name="pencil" />
