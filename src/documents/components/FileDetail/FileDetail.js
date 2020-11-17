@@ -426,6 +426,28 @@ const FileDetail = ({
             )}
           </Segment>
         </Grid.Column>
+        <Grid.Column
+          tablet={3}
+          computer={2}
+          only="tablet computer"
+          className="noPadding"
+        >
+          <ActionButtons
+            {...{
+              downloadFile,
+              studyId,
+              fileNode,
+              downloadFileMutation,
+              setDialog,
+              deleteFile,
+              history,
+              updateFile,
+              allowExtractConfig,
+              allowUpload,
+              vertical: true,
+            }}
+          />
+        </Grid.Column>
       </Grid.Row>
       {dialog !== false && (
         <FileDetailModal
