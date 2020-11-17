@@ -285,7 +285,7 @@ const FileDetail = ({
   const latestDate = fileLatestDate(sortedVersions);
   const latestSize = fileLatestSize(sortedVersions);
   return (
-    <Grid className="mb-15">
+    <Grid className="mb-50">
       <Grid.Row>
         <Grid.Column mobile={16} tablet={16} computer={14}>
           <Link
