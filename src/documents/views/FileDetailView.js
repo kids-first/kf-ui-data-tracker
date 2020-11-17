@@ -16,7 +16,7 @@ const FileDetailView = ({match}) => {
       id: Buffer.from('StudyNode:' + match.params.kfId).toString('base64'),
     },
   });
-  const studyByKfId = studyData && studyData.studyByKfId;
+  const studyByKfId = studyData && studyData.study;
   const files = studyByKfId ? studyByKfId.files.edges : [];
   var tagList = [];
   files.map(({node}) => {
