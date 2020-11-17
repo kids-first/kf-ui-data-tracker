@@ -298,6 +298,7 @@ const FileDetail = ({
   tagOptions,
   allowExtractConfig,
   event,
+  studyFiles,
 }) => {
   const studyId = match.params.kfId;
   const [dialog, setDialog] = useState(false);

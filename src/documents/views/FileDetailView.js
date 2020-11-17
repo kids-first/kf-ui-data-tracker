@@ -139,6 +139,9 @@ const FileDetailView = ({match}) => {
         tagOptions={tagOptions}
         allowExtractConfig={allowExtractConfig}
         event={event}
+        studyFiles={
+          files ? files.filter(({node}) => node.name !== fileByKfId.name) : []
+        }
       />
     </Container>
   );
