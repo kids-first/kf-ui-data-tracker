@@ -404,7 +404,11 @@ const FileDetail = ({
               />
             )}
             {event.data && (
-              <Timelines eventData={event.data} stripFileId={fileNode.kfId} />
+              <Timelines
+                eventData={event.data}
+                stripFileId={fileNode.kfId}
+                downloadFileMutation={downloadFileMutation}
+              />
             )}
           </Segment>
         </Grid.Column>

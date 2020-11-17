@@ -1,5 +1,6 @@
 import React from 'react';
 import {Feed, Message, Icon} from 'semantic-ui-react';
+import VersionCard from './VersionCard';
 
 /**
  * Displays study document timelines with empty message
@@ -19,7 +20,7 @@ const TimelineDate = ({date}) => {
   );
 };
 
-const Timelines = ({eventData, stripFileId}) => {
+const Timelines = ({eventData, stripFileId, downloadFileMutation}) => {
   const events =
     eventData && eventData.allEvents ? eventData.allEvents.edges : [];
   const actionType = {
@@ -59,6 +60,14 @@ const Timelines = ({eventData, stripFileId}) => {
                   ? node.description.replace(stripFileId, '')
                   : node.description}
               </Feed.Summary>
+              {node.eventType.includes('FV_') && (
+                <VersionCard
+                  version={node.version}
+                  downloadFileMutation={downloadFileMutation}
+                  studyId={node.study.kfId}
+                  fileId={node.file.kfId}
+                />
+              )}
             </Feed.Content>
           </Feed.Event>
         ))
