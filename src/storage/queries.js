@@ -3,7 +3,7 @@ import {BUCKET_FIELDS} from './fragments';
 
 export const ALL_BUCKETS = gql`
   query AllBuckets {
-    allBuckets(first: 100) {
+    allBuckets {
       edges {
         node {
           ...BucketFields

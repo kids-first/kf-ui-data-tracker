@@ -4,7 +4,7 @@ import {useQuery} from '@apollo/react-hooks';
 import {Container, Grid, Header, Segment, Statistic} from 'semantic-ui-react';
 import {ALL_BUCKETS, BUCKET_LINES, INVENTORY_STATS} from '../queries';
 import {formatFileSize, formatLargeNumber} from '../../documents/utilities';
-import {BucketList} from '../components/BucketList';
+import {BucketTable} from '../components/BucketTable';
 import {SizeGraph} from '../components/SizeGraph';
 import {StatTable} from '../components/StatTable';
 
@@ -94,7 +94,7 @@ const HomeView = ({match}) => {
       )}
 
       {bucketsData && !bucketsLoading && (
-        <BucketList buckets={bucketsData.allBuckets.edges} />
+        <BucketTable buckets={bucketsData.allBuckets.edges} />
       )}
     </Container>
   );
