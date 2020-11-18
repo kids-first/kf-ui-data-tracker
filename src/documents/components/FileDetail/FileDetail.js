@@ -326,7 +326,7 @@ const FileDetail = ({
           <Grid>
             <Grid.Row>
               <Grid.Column mobile={16} tablet={16} computer={10}>
-                <Segment className="noBorders noMargin">
+                <Segment basic>
                   <Header as="h4" color="grey">
                     Basic info
                   </Header>
@@ -363,7 +363,7 @@ const FileDetail = ({
                 </Segment>
               </Grid.Column>
               <Grid.Column mobile={16} tablet={16} computer={6}>
-                <Segment className="noBorders noMargin">
+                <Segment basic>
                   <Header as="h4" color="grey">
                     Tags
                   </Header>
@@ -388,14 +388,14 @@ const FileDetail = ({
             <FileDescription fileNode={fileNode} updateFile={updateFile} />
           </Segment>
           {sortedVersions && sortedVersions[0].node.analysis && (
-            <Segment className="noBorders">
+            <Segment basic>
               <Header as="h4" color="grey">
                 Summary
               </Header>
               <AnalysisSummary version={sortedVersions[0].node} />
             </Segment>
           )}
-          <Segment className="noBorders" loading={event.loading}>
+          <Segment basic loading={event.loading}>
             <Header as="h4" color="grey">
               Timeline{' '}
               <span className="text-10 text-normal">
