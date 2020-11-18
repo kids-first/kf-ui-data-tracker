@@ -349,6 +349,7 @@ const FileDetail = ({
                         inverted
                         trigger={
                           <Label.Detail
+                            as="a"
                             className="text-primary"
                             data-testid="edit-type"
                             onClick={() => setDialog('annotation')}
