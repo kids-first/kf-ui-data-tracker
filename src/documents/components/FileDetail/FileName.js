@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import {Icon, Button, Header, Form} from 'semantic-ui-react';
+import {Icon, Button, Header, Form, Popup} from 'semantic-ui-react';
 import {Amplitude, LogOnMount} from '@amplitude/react-amplitude';
 /**
  * Displays study document title with editing stage and validation
@@ -104,16 +104,23 @@ const FileName = ({fileNode, updateFile, studyFiles}) => {
         <Header as="h2" className="pt-10">
           {fileNode.name}
           {updateFile && (
-            <Button
-              size="mini"
-              labelPosition="left"
-              className="ml-15 text-primary"
-              data-testid="edit-title"
-              onClick={() => setEditing(true)}
-            >
-              <Icon name="pencil" />
-              Edit
-            </Button>
+            <Popup
+              content="Edit document title"
+              position="right center"
+              inverted
+              trigger={
+                <Button
+                  size="mini"
+                  labelPosition="left"
+                  className="ml-15 text-primary"
+                  data-testid="edit-title"
+                  onClick={() => setEditing(true)}
+                >
+                  <Icon name="pencil" />
+                  Edit
+                </Button>
+              }
+            />
           )}
         </Header>
       )}

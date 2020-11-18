@@ -331,30 +331,35 @@ const FileDetail = ({
                     Basic info
                   </Header>
                   <Label size="small" className="ml-0 mr-5 my-2">
-                    <Icon name={`${fileTypeDetail[fileNode.fileType].icon}`} />
-                    {' ' + fileTypeDetail[fileNode.fileType].title}
-                    {updateFile && (
-                      <Button
-                        size="mini"
-                        labelPosition="left"
-                        className="ml-15 mr-0 text-primary"
-                        data-testid="edit-type"
-                        onClick={() => setDialog('annotation')}
-                      >
-                        <Icon name="pencil" />
-                      </Button>
-                    )}
-                  </Label>
-                  <Label size="small" className="ml-0 mr-5 my-2">
                     {latestSize}
                   </Label>
                   <AvatarTimeAgo
-                    className="ml-0 mr-5 my-2"
                     size="small"
                     showUsername
                     creator={sortedVersions[0].node.creator}
                     createdAt={latestDate}
                   />
+                  <Label size="small" image className="ml-5 my-2 px-10">
+                    <Icon name={`${fileTypeDetail[fileNode.fileType].icon}`} />
+                    {fileTypeDetail[fileNode.fileType].title}
+                    {updateFile && (
+                      <Popup
+                        content="Edit document type"
+                        position="right center"
+                        inverted
+                        trigger={
+                          <Label.Detail
+                            className="text-primary"
+                            data-testid="edit-type"
+                            onClick={() => setDialog('annotation')}
+                          >
+                            <Icon name="pencil" />
+                            Edit
+                          </Label.Detail>
+                        }
+                      />
+                    )}
+                  </Label>
                 </Segment>
               </Grid.Column>
               <Grid.Column mobile={16} tablet={16} computer={6}>
