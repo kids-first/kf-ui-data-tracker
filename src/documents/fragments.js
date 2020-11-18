@@ -22,5 +22,6 @@ export const VERSION_FIELDS = gql`
     state
     description
     createdAt
+    downloadUrl
   }
 `;

@@ -1,7 +1,6 @@
 import React, {Fragment} from 'react';
 import {
   NewVersionModal,
-  VersionInfoModal,
   EditDocumentModal,
   ExtractConfigModal,
 } from '../../modals';
@@ -22,6 +21,8 @@ const FileDetailModal = ({
   onUploadClick,
   downloadFileMutation,
   allowUpload,
+  updateFile,
+  updateError,
 }) => {
   return (
     <Fragment>
@@ -37,16 +38,8 @@ const FileDetailModal = ({
           studyId={studyId}
           fileNode={fileNode}
           onCloseDialog={onCloseModal}
-        />
-      )}
-      {dialog === 'versionInfo' && (
-        <VersionInfoModal
-          studyId={studyId}
-          fileNode={fileNode}
-          openedVersion={openedVersion}
-          onCloseDialog={onCloseModal}
-          onUploadClick={allowUpload ? onUploadClick : null}
-          downloadFileMutation={downloadFileMutation}
+          updateFile={updateFile}
+          updateError={updateError}
         />
       )}
       {dialog === 'config' && (

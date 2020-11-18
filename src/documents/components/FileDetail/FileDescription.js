@@ -1,6 +1,14 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import {Icon, Button, Segment, Header, Image, Table} from 'semantic-ui-react';
+import {
+  Icon,
+  Button,
+  Segment,
+  Header,
+  Image,
+  Table,
+  Popup,
+} from 'semantic-ui-react';
 import Markdown from 'react-markdown';
 import MarkdownEditor from './MarkdownEditor';
 import {draftToMarkdown} from 'markdown-draft-js';
@@ -42,15 +50,22 @@ const FileDescription = ({fileNode, updateFile}) => {
       <Header as="h4" color="grey">
         Description
         {updateFile && !editing && (
-          <Button
-            size="mini"
-            labelPosition="left"
-            className="ml-15 text-primary"
-            onClick={() => setEditing(true)}
-          >
-            <Icon name="pencil" />
-            Edit
-          </Button>
+          <Popup
+            content="Edit document description"
+            position="right center"
+            inverted
+            trigger={
+              <Button
+                size="mini"
+                labelPosition="left"
+                className="ml-15 text-primary"
+                onClick={() => setEditing(true)}
+              >
+                <Icon name="pencil" />
+                Edit
+              </Button>
+            }
+          />
         )}
       </Header>
       {editing ? (
@@ -105,7 +120,7 @@ const FileDescription = ({fileNode, updateFile}) => {
           </Segment>
         </>
       ) : (
-        <Segment basic secondary>
+        <Segment basic secondary className="x-scroll">
           <Markdown
             source={fileNode.description}
             renderers={{
@@ -119,14 +134,14 @@ const FileDescription = ({fileNode, updateFile}) => {
   );
 };
 
-FileList.propTypes = {
+FileDescription.propTypes = {
   /** Array of study object*/
   fileNode: PropTypes.object,
   /** Function to update file node  */
-  updateFile: PropTypes.func.isRequired,
+  updateFile: PropTypes.func,
 };
 
-FileList.defaultProps = {
+FileDescription.defaultProps = {
   fileNode: null,
 };
 

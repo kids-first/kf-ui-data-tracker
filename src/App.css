@@ -47,8 +47,8 @@ body {
   margin-bottom: 5px !important;
 }
 
-.mb-15 {
-  margin-bottom: 15px !important;
+.mb-50 {
+  margin-bottom: 50px !important;
 }
 
 .pb-0 {
@@ -100,6 +100,10 @@ body {
   padding-top: 0px !important;
 }
 
+.pt-5 {
+  padding-top: 5px !important;
+}
+
 .pt-10 {
   padding-top: 10px !important;
 }
@@ -114,6 +118,10 @@ body {
 
 .pr-5 {
   padding-right: 5px !important;
+}
+
+.pr-15 {
+  padding-right: 15px !important;
 }
 
 .pr-0 {
@@ -132,6 +140,14 @@ body {
 
 .p-20 {
   padding: 20px !important;
+}
+
+.p-5 {
+  padding: 5px !important;
+}
+
+.min-h-22 {
+  min-height: 22px !important;
 }
 
 .mt-6 {
@@ -228,6 +244,11 @@ body {
 .ui.form .required.field > label::after {
   font-size: 0.8em;
   content: '* (required)';
+}
+
+.small-avatar {
+  width: 17px !important;
+  height: 17px !important;
 }
 
 .micro-button {

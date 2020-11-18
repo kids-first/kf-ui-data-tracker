@@ -19,11 +19,6 @@ context('Admin Document Detail', () => {
       .should('eq', 6);
     // Click on the first document to go to detail page
     cy.contains('a', 'white.tiff').click();
-    // Edit document approval status
-    cy.get('[data-testid="edit-button"]', {timeout: 10000}).click();
-    cy.get('[name="file_status"]').click();
-    cy.contains('div', 'Approved').click();
-    cy.contains('button', 'SAVE').click();
     // Add tag
     cy.get('[data-testid="tag-file"]').click();
     cy.get('[data-testid="tag-dropdown"] > .search').type('abc{enter}');
@@ -47,11 +42,6 @@ context('Admin Document Detail', () => {
       .should('eq', 6);
     // Click on the first document to go to detail page
     cy.contains('a', 'white.tiff').click();
-    // List out all the document versions
-    cy.get('table')
-      .find('tr')
-      .its('length')
-      .should('eq', 6);
     // No delete button
     cy.get('i').should('have.class', 'trash');
     // No edit button
@@ -80,15 +70,10 @@ context('Investigator Document Detail', () => {
       .should('eq', 6);
     // Click on the first document to go to detail page
     cy.contains('a', 'young.jpg').click();
-    // List out all the document versions
-    cy.get('table')
-      .find('tr')
-      .its('length')
-      .should('eq', 6);
     // No delete button
     cy.get('i').should('not.have.class', 'trash');
     // Has edit button
-    cy.get('[data-testid="edit-button"]').should('exist');
+    cy.get('[data-testid="edit-title"]').should('exist');
     // Has add tag button
     cy.get('[data-testid="tag-file"]').should('exist');
     // Has remove tag button

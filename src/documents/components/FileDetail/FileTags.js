@@ -63,8 +63,8 @@ const FileTags = ({fileNode, updateFile, defaultOptions}) => {
                 e.stopPropagation();
               }}
             >
-              {tag.substring(0, 10)}
-              {tag.length > 10 && '...'}
+              {tag.substring(0, 20)}
+              {tag.length > 20 && '...'}
               {updateFile && (
                 <Icon
                   name="close"

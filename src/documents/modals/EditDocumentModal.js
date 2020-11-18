@@ -1,112 +1,83 @@
 import React, {useRef} from 'react';
-import {useQuery, useMutation} from '@apollo/react-hooks';
-import {UPDATE_FILE, UPDATE_VERSION} from '../mutations';
-import {GET_STUDY_BY_ID, MY_PROFILE, ALL_EVENTS} from '../../state/queries';
-import {EditDocumentForm} from '../forms';
-import {fileSortedVersions} from '../utilities';
-import {Button, Message, Modal} from 'semantic-ui-react';
-import {hasPermission} from '../../common/permissions';
+import {Button, Message, Modal, Form} from 'semantic-ui-react';
+import SelectElement from '../components/FileDetail/SelectElement';
+import {fileTypeDetail} from '../../common/enums';
+import {Formik, Field} from 'formik';
 
-const EditDocumentModal = ({fileNode, onCloseDialog, studyId}) => {
-  const study = useQuery(GET_STUDY_BY_ID, {
-    variables: {
-      id: Buffer.from('StudyNode:' + studyId).toString('base64'),
-    },
-  });
-  const [updateFile, {loading: fileLoading, error: fileError}] = useMutation(
-    UPDATE_FILE,
-    {
-      refetchQueries: [
-        {
-          query: ALL_EVENTS,
-          variables: {
-            fileId: fileNode.kfId,
-            orderBy: '-created_at',
-            first: 20,
-          },
-        },
-      ],
-    },
-  );
-  const [
-    updateVersion,
-    {loading: versionLoading, error: versionError},
-  ] = useMutation(UPDATE_VERSION, {
-    refetchQueries: [
-      {
-        query: ALL_EVENTS,
-        variables: {
-          fileId: fileNode.kfId,
-          orderBy: '-created_at',
-          first: 20,
-        },
-      },
-    ],
-  });
-  // Check if current user is allowed to edit approval status (version state)
-  const {data: profileData} = useQuery(MY_PROFILE);
-  const myProfile = profileData && profileData.myProfile;
-  const allowEditVersionStatus =
-    myProfile &&
-    (hasPermission(myProfile, 'change_version_status') ||
-      hasPermission(myProfile, 'change_my_version_status'));
-
+const EditDocumentModal = ({
+  fileNode,
+  onCloseDialog,
+  studyId,
+  updateFile,
+  updateError,
+}) => {
   const formEl = useRef(null);
-
-  const latestVersion = fileSortedVersions(fileNode)[0].node;
-
-  const handleSubmit = async (name, fileType, description, versionStatus) => {
-    if (fileNode.name !== name || fileNode.fileType !== fileType) {
+  const handleSubmit = async fileType => {
+    if (fileNode.fileType !== fileType) {
       updateFile({
-        variables: {kfId: fileNode.kfId, name, fileType},
-      })
-        .then(resp => onCloseDialog())
-        .catch(err => console.log(err));
-    }
-    if (allowEditVersionStatus && versionStatus !== latestVersion.state) {
-      updateVersion({
-        variables: {
-          versionId: latestVersion.kfId,
-          description: latestVersion.description,
-          state: versionStatus,
-        },
+        variables: {kfId: fileNode.kfId, fileType},
       })
         .then(resp => onCloseDialog())
         .catch(err => console.log(err));
     }
   };
-
   return (
     <Modal open={true} onClose={onCloseDialog} size="small" closeIcon>
-      <Modal.Header content="Edit Document Metadata" />
+      <Modal.Header content="Edit Document Type" />
       <Modal.Content scrolling>
-        <EditDocumentForm
-          ref={formEl}
-          fileNode={{name: fileNode.versions.edges[0].node.fileName}}
-          studyFiles={
-            study.data.study
-              ? study.data.study.files.edges.filter(
-                  ({node}) => node.name !== fileNode.name,
-                )
-              : []
-          }
-          fileType={fileNode.fileType}
-          fileName={fileNode.name}
-          versionStatus={latestVersion.state}
-          fileDescription={fileNode.description}
-          handleSubmit={handleSubmit}
-          allowEditVersionStatus={allowEditVersionStatus}
-          validTypes={fileNode.validTypes}
-        />
+        <Formik
+          initialValues={{
+            file_type: fileNode.fileType,
+          }}
+          validate={vals => {
+            let errors = {};
+            if (!vals.file_type) {
+              errors.file_type = 'Required';
+            }
+            return errors;
+          }}
+          onSubmit={values => {
+            handleSubmit(...Object.values(values));
+          }}
+        >
+          {({
+            values,
+            handleChange,
+            handleBlur,
+            handleSubmit,
+            setFieldValue,
+            errors,
+            touched,
+            validateForm,
+          }) => (
+            <Form onSubmit={handleSubmit} ref={formEl} className="mb-15">
+              <Form.Field required>
+                {Object.keys(fileTypeDetail).map(item => (
+                  <Form.Field
+                    key={item}
+                    disabled={
+                      fileNode.validTypes && !fileNode.validTypes.includes(item)
+                    }
+                  >
+                    <Field
+                      component={SelectElement}
+                      name="file_type"
+                      id={item}
+                      label={item}
+                    />
+                  </Form.Field>
+                ))}
+              </Form.Field>
+            </Form>
+          )}
+        </Formik>
       </Modal.Content>
       <Modal.Actions>
-        {versionError && <Message negative content={versionError.message} />}
-        {fileError && <Message negative content={fileError.message} />}
+        {updateError && <Message negative content={updateError.message} />}
         <Button
           primary
           size="mini"
           type="button"
-          loading={versionLoading || fileLoading}
           onClick={e => {
             e.preventDefault();
             formEl.current.handleSubmit();
