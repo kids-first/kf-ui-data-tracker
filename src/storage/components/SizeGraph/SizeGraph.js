@@ -81,7 +81,7 @@ const SizeGraph = ({data, color = 'rgb(59, 171, 255)'}) => {
             axisLabel: {fontSize: 6, padding: 23},
             grid: {stroke: 'black', strokeDasharray: '5,2', opacity: 0.25},
             ticks: {stroke: 'grey', size: 5},
-            tickLabels: {fontSize: 6, padding: -30},
+            tickLabels: {fontSize: 6, padding: -35},
           }}
         />
       )}
