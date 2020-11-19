@@ -8,36 +8,37 @@ const extractSummary = node =>
     ? JSON.parse(node.inventories.edges[0].node.summary)
     : null;
 
-const Row = ({data}) => (
-  <Table.Row>
-    <Table.Cell collapsing>
-      <Label empty circular color="green" />
-    </Table.Cell>
-    <Table.Cell selectable>
-      <Link to={'/storage/bucket/' + data.name}>
-        <Header size="small">{data.name}</Header>
-      </Link>
-    </Table.Cell>
-    <Table.Cell textAlign="center" width={1}>
-      {data.study ? data.study.kfId : 'Link'}
-    </Table.Cell>
-    <Table.Cell textAlign="center" width={2}>
-      {formatLargeNumber(
-        extractSummary(data) && extractSummary(data).total_count,
-      )}
-    </Table.Cell>
-    <Table.Cell textAlign="center" width={2}>
-      {formatFileSize(
-        extractSummary(data) && extractSummary(data).total_size,
-        true,
-      )}
-    </Table.Cell>
-    <Table.Cell textAlign="center" width={2}>
-      <Icon bordered size="small" name="download" />
-      <Icon bordered size="small" name="external" />
-    </Table.Cell>
-  </Table.Row>
-);
+const Row = ({data}) => {
+  const summary = extractSummary(data);
+  const totalCount = summary && summary.total_count;
+  const totalSize = summary && summary.total_size;
+
+  return (
+    <Table.Row>
+      <Table.Cell collapsing>
+        <Label empty circular color="green" />
+      </Table.Cell>
+      <Table.Cell selectable>
+        <Link to={'/storage/bucket/' + data.name}>
+          <Header size="small">{data.name}</Header>
+        </Link>
+      </Table.Cell>
+      <Table.Cell textAlign="center" width={1}>
+        {data.study ? data.study.kfId : 'Link'}
+      </Table.Cell>
+      <Table.Cell textAlign="center" width={2}>
+        {totalCount ? formatLargeNumber(totalCount) : '-'}
+      </Table.Cell>
+      <Table.Cell textAlign="center" width={2}>
+        {totalSize ? formatFileSize(totalSize, true) : '-'}
+      </Table.Cell>
+      <Table.Cell textAlign="center" width={2}>
+        <Icon bordered size="small" name="download" />
+        <Icon bordered size="small" name="external" />
+      </Table.Cell>
+    </Table.Row>
+  );
+};
 
 const stringSort = columnName => (a, b) =>
   b[columnName].localeCompare(a[columnName]);
@@ -167,7 +168,7 @@ const BucketTable = ({buckets, searchString = ''}) => {
             'aria-label': 'Previous page',
             content: <Icon name="chevron left" />,
           }}
-          activePage={!searchString ? page : 1}
+          activePage={page}
           totalPages={Math.ceil(sortedBuckets.length / 10)}
           onPageChange={(e, {activePage}) => setPage(activePage)}
         />

@@ -2,10 +2,21 @@ import React from 'react';
 import {useParams, Link} from 'react-router-dom';
 import {Helmet} from 'react-helmet';
 import {useQuery} from '@apollo/react-hooks';
-import {Button, Container, Header, Icon, Segment} from 'semantic-ui-react';
+import {
+  Button,
+  Container,
+  Grid,
+  Header,
+  Icon,
+  Label,
+  Segment,
+  Statistic,
+} from 'semantic-ui-react';
 import {GET_BUCKET, BUCKET_LINES} from '../queries';
 import {SizeGraph} from '../components/SizeGraph';
+import {StatTable} from '../components/StatTable';
 import {InventoryTable} from '../components/InventoryTable';
+import {formatFileSize, formatLargeNumber} from '../../documents/utilities';
 
 const BucketDetailView = ({match}) => {
   const {bucketName} = useParams();

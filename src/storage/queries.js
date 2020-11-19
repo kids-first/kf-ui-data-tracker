@@ -68,12 +68,52 @@ export const INVENTORY_STATS = gql`
       totalBytes
       totalObjects
       totalBuckets
-      countByFileFormat {
-        fileFormat
+      sizeByIsLatest {
+        metric
         value
       }
-      sizeByFileFormat {
-        fileFormat
+      sizeByStorageClass {
+        metric
+        value
+      }
+      sizeByReplicationStatus {
+        metric
+        value
+      }
+      sizeByEncryptionStatus {
+        metric
+        value
+      }
+      sizeByTopFolder {
+        metric
+        value
+      }
+      sizeByExtension {
+        metric
+        value
+      }
+      countByIsLatest {
+        metric
+        value
+      }
+      countByStorageClass {
+        metric
+        value
+      }
+      countByReplicationStatus {
+        metric
+        value
+      }
+      countByEncryptionStatus {
+        metric
+        value
+      }
+      countByTopFolder {
+        metric
+        value
+      }
+      countByExtension {
+        metric
         value
       }
     }
