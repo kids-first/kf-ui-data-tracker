@@ -6,6 +6,7 @@ import {
   Divider,
   Grid,
   Header,
+  Icon,
   Input,
   Segment,
   Statistic,
@@ -135,7 +136,16 @@ const HomeView = ({match}) => {
                 </Header.Subheader>
               </Header>
               <StatTable
-                labelMap={{COMPLETED: 'Completed', FAILED: 'Failed', '': 'N/A'}}
+                labelMap={{
+                  COMPLETED: 'Completed',
+                  FAILED: (
+                    <>
+                      <Icon name="warning sign" />
+                      Failed
+                    </>
+                  ),
+                  '': 'N/A',
+                }}
                 sizeData={
                   statsData.bucketInventoryStats.sizeByReplicationStatus
                 }
@@ -155,7 +165,12 @@ const HomeView = ({match}) => {
                 labelMap={{
                   'SSE-S3': 'S3 Key',
                   'SSE-KMS': 'KMS Key',
-                  'NOT-SSE': 'None',
+                  'NOT-SSE': (
+                    <>
+                      <Icon name="warning sign" />
+                      None
+                    </>
+                  ),
                 }}
                 sizeData={statsData.bucketInventoryStats.sizeByEncryptionStatus}
                 countData={
