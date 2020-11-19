@@ -15,6 +15,7 @@ import {formatFileSize, formatLargeNumber} from '../../documents/utilities';
 import {BucketTable} from '../components/BucketTable';
 import {SizeGraph} from '../components/SizeGraph';
 import {StatTable} from '../components/StatTable';
+import {HomeHelp} from '../components/helpers';
 
 const HomeView = ({match}) => {
   const {data: bucketsData, loading: bucketsLoading} = useQuery(ALL_BUCKETS);
@@ -32,13 +33,14 @@ const HomeView = ({match}) => {
       <Helmet>
         <title>{`KF Data Tracker - Storage`}</title>
       </Helmet>
-      <Header as="h1" className="noMargin">
-        Storage Overview
-      </Header>
+      <HomeHelp />
+      <Header as="h1">Storage Overview</Header>
 
       {bucketSizeData &&
         bucketSizeData.bucketSize.length > 0 &&
-        !bucketSizeLoading && <SizeGraph data={bucketSizeData.bucketSize} />}
+        !bucketSizeLoading && (
+          <SizeGraph color="#f2711c" data={bucketSizeData.bucketSize} />
+        )}
 
       {!inventoryStatsLoading && statsData && (
         <Statistic.Group widths={3}>
