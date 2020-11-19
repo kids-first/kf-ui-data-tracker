@@ -14,7 +14,6 @@ import {
 } from 'semantic-ui-react';
 import {GET_BUCKET, BUCKET_LINES} from '../queries';
 import {SizeGraph} from '../components/SizeGraph';
-import {StatTable} from '../components/StatTable';
 import {InventoryTable} from '../components/InventoryTable';
 import {formatFileSize, formatLargeNumber} from '../../documents/utilities';
 
@@ -27,6 +26,12 @@ const BucketDetailView = ({match}) => {
   const {data: bucketData} = useQuery(GET_BUCKET, {
     variables: {id: Buffer.from('BucketNode:' + bucketName).toString('base64')},
   });
+
+  const summary =
+    bucketData &&
+    bucketData.bucket.inventories.edges.length > 0 &&
+    JSON.parse(bucketData.bucket.inventories.edges[0].node.summary);
+  console.log(summary);
 
   return (
     <Container as={Segment} basic>
@@ -44,6 +49,49 @@ const BucketDetailView = ({match}) => {
       {bucketSizeData && !bucketSizeLoading && (
         <SizeGraph color="#f2711c" data={bucketSizeData.bucketSize} />
       )}
+
+      <Header>Bucket Stats</Header>
+      {summary && (
+        <Statistic.Group widths={2}>
+          <Statistic
+            value={formatLargeNumber(summary.total_count)}
+            label="Total Objects"
+          />
+          <Statistic
+            value={formatFileSize(summary.total_size, true)}
+            label="Total Size"
+          />
+        </Statistic.Group>
+      )}
+
+      <Header>Bucket Info</Header>
+      <Grid celled as={Segment} secondary textAlign="center" columns="equal">
+        {[
+          {name: 'Bucket Name', value: bucketData && bucketData.bucket.name},
+          {name: 'AWS Account', value: 'Kids First Strides'},
+          {
+            name: 'Study',
+            value:
+              bucketData && bucketData.study
+                ? bucketData.study.name
+                : 'No study',
+          },
+        ].map(v => (
+          <Grid.Column>
+            <b>{v.name}:</b> {v.value}
+          </Grid.Column>
+        ))}
+      </Grid>
+      <Header>Bucket Health</Header>
+      <Grid celled as={Segment} secondary textAlign="center">
+        {['Encrypted', 'Readable', 'Replicating', 'Weekly Inventories'].map(
+          v => (
+            <Grid.Column width={4}>
+              <Label empty circular color="green" /> {v}
+            </Grid.Column>
+          ),
+        )}
+      </Grid>
 
       <Header>Bucket Inventory History</Header>
       {bucketData && (
