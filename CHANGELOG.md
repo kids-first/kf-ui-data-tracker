@@ -1,5 +1,20 @@
 # Kids First Data Tracker Change History
 
+## Release 0.18.2
+
+### Summary
+
+- Emojis: 💄 x1, ✨ x3
+- Categories: Other Changes x1, Additions x3
+
+### New features and changes
+
+- [#928](https://github.com/kids-first/kf-ui-data-tracker/pull/928) - 💄 Update UI design for document detail page - [f54866a4](https://github.com/kids-first/kf-ui-data-tracker/commit/f54866a4f3746f2cebb9affd12274a7159463749) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#926](https://github.com/kids-first/kf-ui-data-tracker/pull/926) - ✨ Use markdown for version summary input and display - [6685d38a](https://github.com/kids-first/kf-ui-data-tracker/commit/6685d38a8d38c6e8eac34a1be2e351f29ec1aba2) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#925](https://github.com/kids-first/kf-ui-data-tracker/pull/925) - ✨ Display colored label for Cavatica project type - [a2c2fcd1](https://github.com/kids-first/kf-ui-data-tracker/commit/a2c2fcd1a4d55dc29b4a52f0091f6d3de89bb752) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#923](https://github.com/kids-first/kf-ui-data-tracker/pull/923) - ✨ Allow users to favorite studies and display ‘favorite studies’ list - [bdab9d54](https://github.com/kids-first/kf-ui-data-tracker/commit/bdab9d54733d3f9b8a8fc7ce7e5c6b5ccc59e91b) by [XuTheBunny](https://github.com/XuTheBunny)
+
+
 ## Release 0.18.1
 
 ### Summary
