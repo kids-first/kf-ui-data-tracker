@@ -4,6 +4,7 @@ import {Prompt} from 'react-router-dom';
 import {CREATE_FILE, CREATE_VERSION, UPDATE_VERSION} from '../mutations';
 import {GET_STUDY_BY_ID} from '../../state/queries';
 import {
+  Accordion,
   Message,
   Segment,
   Container,
@@ -55,54 +56,69 @@ const UploadBar = ({
   createVersion,
   versionLoading,
   versionError,
-}) => (
-  <Message icon>
-    <Icon name="file" />
-    <Message.Content>
-      {version && !versionLoading && (
-        <>
-          <Button
-            icon
-            primary
-            floated="right"
-            labelPosition="left"
-            as="label"
-            htmlFor="file"
-          >
-            <Icon name="upload" />
-            Upload a Different File
-          </Button>
-          <input
-            hidden
-            id="file"
-            type="file"
-            onChange={e => {
-              createVersion({
-                variables: {
-                  file: e.target.files[0],
-                  study: study.id,
-                },
-              }).catch(err => err);
-            }}
+}) => {
+  const [showSummary, setShowSummary] = useState(false);
+  return (
+    <Message icon attached>
+      <Icon name="file" />
+      <Message.Content>
+        {version && !versionLoading && (
+          <>
+            <Button
+              icon
+              primary
+              floated="right"
+              labelPosition="left"
+              as="label"
+              htmlFor="file"
+            >
+              <Icon name="upload" />
+              Upload a Different File
+            </Button>
+            <input
+              hidden
+              id="file"
+              type="file"
+              onChange={e => {
+                createVersion({
+                  variables: {
+                    file: e.target.files[0],
+                    study: study.id,
+                  },
+                }).catch(err => err);
+              }}
+            />
+            <Message.Header>Uploaded File:</Message.Header>
+            {version.fileName}
+            <Accordion>
+              <Accordion.Title
+                active={showSummary}
+                onClick={() => setShowSummary(!showSummary)}
+              >
+                <Icon name="dropdown" />
+                Show Full Summary
+              </Accordion.Title>
+              <Accordion.Content active={showSummary}>
+                <AnalysisSummary version={version} />
+              </Accordion.Content>
+            </Accordion>
+          </>
+        )}
+        {versionLoading && (
+          <Progress indicating label="Uploading..." percent={100} />
+        )}
+        {versionError && (
+          <Message
+            negative
+            icon="warning"
+            header="Problem uploading"
+            content={versionError.message}
           />
-          <Message.Header>Uploaded File:</Message.Header>
-          {version.fileName}
-        </>
-      )}
-      {versionLoading && (
-        <Progress indicating label="Uploading..." percent={100} />
-      )}
-      {versionError && (
-        <Message
-          negative
-          icon="warning"
-          header="Problem uploading"
-          content={versionError.message}
-        />
-      )}
-    </Message.Content>
-  </Message>
-);
+        )}
+      </Message.Content>
+    </Message>
+  );
+};
 
 const UploadView = ({match, history, location}) => {
   const [type, setType] = useState();
