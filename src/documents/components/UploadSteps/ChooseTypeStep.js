@@ -45,6 +45,7 @@ const TypeCard = ({
 }) => (
   <Card
     as="div"
+    className="cursor-pointer"
     color={id === values.file_type ? (expedited ? 'yellow' : 'blue') : 'grey'}
     onClick={() => {
       setFieldValue(name, id);
