@@ -7,6 +7,7 @@ import {
   Container,
   Dimmer,
   Header,
+  Grid,
   Image,
   Icon,
   List,
@@ -123,35 +124,39 @@ const ReleaseDetailView = ({user, history, match}) => {
   }
 
   return (
-    <Container as={Segment} basic vertical>
+    <Grid container>
       <Helmet>
-        <title>{`KF Data Tracker - Release Detail`}</title>
+        <title>{`KF Data Tracker - Release`}</title>
       </Helmet>
-      <ReleaseHeader release={release} loading={releaseLoading} />
-      <Segment vertical>
-        <Progress release={release} />
-      </Segment>
+      <Grid.Row>
+        <Grid.Column mobile={16} className="mt-15">
+          <Link to={`/releases/history`} data-testid="back-to-releases">
+            <Button basic size="mini" labelPosition="left" floated="left">
+              <Icon name="arrow left" />
+              All Releases
+            </Button>
+          </Link>
+        </Grid.Column>
+      </Grid.Row>
+      <Grid.Row className="noVerticalPadding">
+        <Grid.Column width={16}>
+          <Progress release={release} />
+        </Grid.Column>
+      </Grid.Row>
 
       {release && (
-        <>
-          <Segment vertical textAlign="center">
-            <ReleaseActions
-              release={release}
-              user={user}
-              history={history}
-              match={match}
-            />
-          </Segment>
-
-          <Segment vertical>
+        <Grid.Row>
+          <Grid.Column mobile={16} tablet={13} computer={14}>
+            <Grid.Row>
+              <Grid.Column width={16}>
+                <ReleaseHeader release={release} loading={releaseLoading} />
+              </Grid.Column>
+            </Grid.Row>
             <Header>Release Description</Header>
             <MarkdownEditor
               releaseId={release.id ? release.id : ''}
               description={release.description ? release.description : ''}
             />
-          </Segment>
-
-          <Segment vertical>
             <Header>Studies in this Release</Header>
             <List bulleted>
               {release.studies.edges.map(({node}) => (
@@ -163,9 +168,6 @@ const ReleaseDetailView = ({user, history, match}) => {
                 </List.Item>
               ))}
             </List>
-          </Segment>
-
-          <Segment vertical>
             <Header>Services in this Release</Header>
             <List bulleted>
               {release.tasks.edges.map(({node}) => (
@@ -177,7 +179,21 @@ const ReleaseDetailView = ({user, history, match}) => {
                 </List.Item>
               ))}
             </List>
-          </Segment>
+          </Grid.Column>
+          <Grid.Column
+            tablet={3}
+            computer={2}
+            only="tablet computer"
+            className="noPadding"
+          >
+            <ReleaseActions
+              release={release}
+              user={user}
+              history={history}
+              match={match}
+            />
+          </Grid.Column>
+
           <Segment vertical>
             <Header>Task Status</Header>
             <TaskList releaseId={release.kfId} />
@@ -187,9 +203,9 @@ const ReleaseDetailView = ({user, history, match}) => {
             <Header>Logs</Header>
             <LogViewer logs={{release: release.jobLog, ...logs}} />
           </Segment>
-        </>
+        </Grid.Row>
       )}
-    </Container>
+    </Grid>
   );
 };
 
