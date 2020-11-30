@@ -26,6 +26,8 @@ import {
 import paragraph from '../../assets/paragraph.png';
 
 import {GET_RELEASE, ALL_EVENTS} from '../queries';
+import {MY_PROFILE} from '../../state/queries';
+import {hasPermission} from '../../common/permissions';
 
 const ReleaseDetailView = ({user, history, match}) => {
   const relayId = Buffer.from('ReleaseNode:' + match.params.releaseId).toString(
@@ -57,6 +59,11 @@ const ReleaseDetailView = ({user, history, match}) => {
       }),
       {},
     );
+
+  // Evaluate permissions
+  const {data: profileData} = useQuery(MY_PROFILE);
+  const myProfile = profileData && profileData.myProfile;
+  const allowEdit = myProfile && hasPermission(myProfile, 'change_release');
 
   if (releaseError || eventsError)
     return (
@@ -152,10 +159,10 @@ const ReleaseDetailView = ({user, history, match}) => {
                 <ReleaseHeader release={release} loading={releaseLoading} />
               </Grid.Column>
             </Grid.Row>
-            <Header>Release Description</Header>
             <MarkdownEditor
               releaseId={release.id ? release.id : ''}
               description={release.description ? release.description : ''}
+              allowed={allowEdit}
             />
             <Header>Studies in this Release</Header>
             <List bulleted>
