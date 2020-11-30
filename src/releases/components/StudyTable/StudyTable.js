@@ -76,7 +76,18 @@ const StudyTable = ({studies, selected, onChange}) => {
 
   const visibleCols = columns.columns.filter(col => col.visible);
 
-  const sortedStudies = studies
+  const flattenedStudies = studies.map(study => {
+    if (study.releases.edges.length) {
+      study.version = study.releases.edges[0].node.version;
+      if (!study.version) study.version = '-';
+      study.lastPublished = study.releases.edges[0].node.createdAt;
+    } else {
+      study.version = '-';
+      study.lastPublished = null;
+    }
+    return study;
+  });
+  const sortedStudies = flattenedStudies
     .sort((a, b) => b.kfId.localeCompare(a.kfId))
     .sort(
       (s1, s2) =>

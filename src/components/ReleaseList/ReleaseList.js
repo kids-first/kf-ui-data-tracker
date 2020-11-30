@@ -1,11 +1,10 @@
 import React from 'react';
 import {Header, Loader, Comment, Icon, Image, Table} from 'semantic-ui-react';
+import {Link} from 'react-router-dom';
 import Markdown from 'react-markdown';
 import {longDate} from '../../common/dateUtils';
 
 const ReleaseList = ({loading, releases}) => {
-  const coordUrl = process.env.REACT_APP_COORD_UI + 'releases/';
-
   if (loading) {
     return <Loader>Loading...</Loader>;
   }
@@ -24,15 +23,13 @@ const ReleaseList = ({loading, releases}) => {
         <Comment key={r.node.id}>
           <Comment.Avatar as={Icon} name="tag" />
           <Comment.Content>
-            <Comment.Author
-              className="text-blue"
-              as="a"
-              href={`${coordUrl + r.node.kfId}`}
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              {r.node.version + ' - ' + r.node.name + ' '}
-              <Icon link size="small" name="external" />
+            <Comment.Author>
+              <Link
+                className="text-blue"
+                to={'/releases/history/' + r.node.kfId}
+              >
+                {r.node.version + ' - ' + r.node.name + ' '}
+              </Link>
             </Comment.Author>
             <Comment.Metadata>on {longDate(r.node.createdAt)}</Comment.Metadata>
             <Comment.Text>

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {useQuery} from '@apollo/react-hooks';
 import {Amplitude} from '@amplitude/react-amplitude';
-import TimeAgo from 'react-timeago';
+import {Link} from 'react-router-dom';
 import propTypes from 'prop-types';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import {
@@ -15,8 +15,8 @@ import {
   Button,
   Label,
 } from 'semantic-ui-react';
+import AvatarTimeAgo from '../../components/AvatarTimeAgo/AvatarTimeAgo';
 import {GET_STUDY_RELEASES} from '../../state/queries';
-import {KF_COORD_UI} from '../../common/globals';
 import {statusyMessage} from '../../common/enums';
 
 const KfId = ({kfId}) => {
@@ -80,25 +80,24 @@ const Release = ({release}) => {
             header={release.name}
             position="top center"
             trigger={
-              <a
-                href={`${KF_COORD_UI}/releases/${release.kfId}`}
+              <Link
+                to={'/releases/history/' + release.kfId}
                 onClick={() => logEvent('click')}
               >
                 {release.version + ' '}
-                <Icon.Group>
-                  <Icon name="tag" />
-                  <Icon corner="top right" name="external" />
-                </Icon.Group>
-              </a>
+                <Icon name="tag" />
+              </Link>
             }
             content={
               <>
                 {release.version} <Icon name="tag" /> -{' '}
                 <code>{release.kfId}</code>
-                <p>
-                  Published <TimeAgo date={release.createdAt} />
-                </p>
-                <em>View in the Release Coordinator</em>
+                <AvatarTimeAgo
+                  size="tiny"
+                  showUsername
+                  creator={release.creator}
+                  createdAt={release.createdAt}
+                />
               </>
             }
           />
@@ -143,7 +142,6 @@ const StudyHeader = ({study, loading, newStudy, showModal, updateStudy}) => {
     variables: {
       id: relayId,
     },
-    context: {clientName: 'coordinator'},
     fetchPolicy: 'no-cache',
   });
 

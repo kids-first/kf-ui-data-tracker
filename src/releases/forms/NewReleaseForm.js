@@ -6,7 +6,7 @@ import {EditorState, convertToRaw, ContentState} from 'draft-js';
 import MarkdownEditor from '../../documents/components/FileDetail/MarkdownEditor';
 import {draftToMarkdown} from 'markdown-draft-js';
 import {StudyTable} from '../components/StudyTable';
-import {ServiceList} from '../components/ServiceList';
+import {ServiceSelect} from '../components/ServiceSelect';
 
 const NewReleaseForm = ({
   values,
@@ -36,6 +36,16 @@ const NewReleaseForm = ({
       );
     } else {
       setFieldValue('studies', [...values.studies, study]);
+    }
+  };
+  const toggleService = service => {
+    if (values.services.filter(s => s.id === service.id).length) {
+      setFieldValue(
+        'services',
+        values.services.filter(s => s.id !== service.id),
+      );
+    } else {
+      setFieldValue('services', [...values.services, service]);
     }
   };
 
@@ -81,7 +91,17 @@ const NewReleaseForm = ({
           onChange={toggleStudy}
         />
       </Form.Field>
-      <ServiceList services={services && services.allTaskServices.edges} />
+      <Form.Field>
+        <Header>Choose Tasks to Run</Header>
+        <ServiceSelect
+          name="services"
+          selected={values.services}
+          services={services}
+          value={values.services}
+          onBlur={handleBlur}
+          onChange={toggleService}
+        />
+      </Form.Field>
       <Form.Field error={touched.title && !!errors.title} required>
         <Form.Checkbox
           data-testid="is-major"
@@ -139,7 +159,13 @@ const FormikWrapper = ({handleSubmit, ...props}) => (
     })}
   >
     <Formik
-      initialValues={{title: '', description: '', isMajor: false, studies: []}}
+      initialValues={{
+        title: '',
+        description: '',
+        isMajor: false,
+        studies: [],
+        services: [],
+      }}
       validate={values => {
         const errors = {};
         if (!values.title) {

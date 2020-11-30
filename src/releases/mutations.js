@@ -2,7 +2,7 @@ import gql from 'graphql-tag';
 import {RELEASE_FIELDS, SERVICE_FIELDS} from './fragments';
 
 export const START_RELEASE = gql`
-  mutation StartRelease($input: ReleaseInput!) {
+  mutation StartRelease($input: StartReleaseInput!) {
     startRelease(input: $input) {
       release {
         ...ReleaseFields
@@ -13,9 +13,9 @@ export const START_RELEASE = gql`
 `;
 
 export const UPDATE_SERVICE = gql`
-  mutation UpdateService($taskService: ID!, $input: TaskServiceInput!) {
-    updateTaskService(taskService: $taskService, input: $input) {
-      taskService {
+  mutation UpdateService($id: ID!, $input: UpdateReleaseServiceInput!) {
+    updateReleaseService(id: $id, input: $input) {
+      releaseService {
         ...ServiceFields
       }
     }
@@ -24,9 +24,9 @@ export const UPDATE_SERVICE = gql`
 `;
 
 export const CREATE_SERVICE = gql`
-  mutation CreateService($input: TaskServiceInput!) {
-    createTaskService(input: $input) {
-      taskService {
+  mutation CreateService($input: CreateReleaseServiceInput!) {
+    createReleaseService(input: $input) {
+      releaseService {
         ...ServiceFields
       }
     }
@@ -35,8 +35,8 @@ export const CREATE_SERVICE = gql`
 `;
 
 export const UPDATE_RELEASE = gql`
-  mutation UpdateRelease($input: UpdateReleaseInput!, $release: ID!) {
-    updateRelease(release: $release, input: $input) {
+  mutation UpdateRelease($input: UpdateReleaseInput!, $id: ID!) {
+    updateRelease(id: $id, input: $input) {
       release {
         ...ReleaseFields
         studies {
@@ -45,14 +45,6 @@ export const UPDATE_RELEASE = gql`
               id
               kfId
               name
-            }
-          }
-        }
-        notes {
-          edges {
-            node {
-              id
-              description
             }
           }
         }
@@ -107,14 +99,6 @@ export const PUBLISH_RELEASE = gql`
             }
           }
         }
-        notes {
-          edges {
-            node {
-              id
-              description
-            }
-          }
-        }
       }
     }
   }
@@ -132,14 +116,6 @@ export const CANCEL_RELEASE = gql`
               id
               kfId
               name
-            }
-          }
-        }
-        notes {
-          edges {
-            node {
-              id
-              description
             }
           }
         }

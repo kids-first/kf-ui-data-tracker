@@ -7,10 +7,7 @@ import WrappedNewServiceForm from '../forms/NewServiceForm';
 
 const NewServiceView = props => {
   const [createService, {loading, error}] = useMutation(CREATE_SERVICE, {
-    context: {clientName: 'coordinator'},
-    refetchQueries: [
-      {query: ALL_SERVICES, context: {clientName: 'coordinator'}},
-    ],
+    refetchQueries: [{query: ALL_SERVICES}],
   });
 
   return (

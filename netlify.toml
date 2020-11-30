@@ -10,8 +10,6 @@
   REACT_APP_AUTH0_REDIRECT_URI = "https://data-tracker.kidsfirstdrc.org/callback"
   REACT_APP_AUTH0_LOGOUT_REDIRECT_URI = "https://data-tracker.kidsfirstdrc.org/logout"
   REACT_APP_STUDY_API = "https://kf-api-study-creator.kidsfirstdrc.org"
-  REACT_APP_COORD_API = "https://kf-release-coord.kidsfirstdrc.org"
-  REACT_APP_COORD_UI = "https://kf-ui-release-coordinator.kidsfirstdrc.org/"
   REACT_APP_PRIMARY_HOST = "https://data-tracker.kidsfirstdrc.org"
   REACT_APP_REDIRECT_TO_PRIMARY = "true"
 
@@ -26,8 +24,6 @@
   REACT_APP_PRIMARY_HOST = "https://data-tracker-qa.kidsfirstdrc.org"
   REACT_APP_REDIRECT_TO_PRIMARY = "true"
   REACT_APP_STUDY_API = "https://kf-api-study-creator-qa.kidsfirstdrc.org"
-  REACT_APP_COORD_API = "https://kf-release-coord-qa.kidsfirstdrc.org"
-  REACT_APP_COORD_UI = "https://kf-ui-release-coordinator-qa.kidsfirstdrc.org/"
   REACT_APP_AMPLITUDE_KEY = "0dd725bc46163f46b3abad77d4e9590c"
 
 [context.deploy-preview]
@@ -37,8 +33,6 @@
 [context.deploy-preview.environment]
   REACT_APP_ENV = "dev"
   REACT_APP_STUDY_API = "https://kf-api-study-creator-dev.kidsfirstdrc.org"
-  REACT_APP_COORD_API = "https://kf-release-coord-dev.kidsfirstdrc.org"
-  REACT_APP_COORD_UI = "https://kf-ui-release-coordinator-dev.kidsfirstdrc.org/"
   REACT_APP_AMPLITUDE_KEY = "0dd725bc46163f46b3abad77d4e9590c"
 
 [context.branch-deploy]
@@ -48,8 +42,6 @@
 [context.branch-deploy.environment]
   REACT_APP_ENV = "dev"
   REACT_APP_STUDY_API = "https://kf-study-creator-dev.kidsfirstdrc.org"
-  REACT_APP_COORD_API = "https://kf-release-coord-dev.kidsfirstdrc.org"
-  REACT_APP_COORD_UI = "https://kf-ui-release-coordinator-dev.kidsfirstdrc.org/"
   REACT_APP_AMPLITUDE_KEY = "0dd725bc46163f46b3abad77d4e9590c"
 
 [[redirects]]

@@ -504,6 +504,8 @@ code.label {
 }
 
 .ansi.terminal {
+  max-height: 50em;
+  overflow: scroll;
   line-height: 1.2em;
   background: #282c34;
   color: #eee;

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Helmet} from 'react-helmet';
 import {useQuery} from '@apollo/react-hooks';
-import {withRouter} from 'react-router-dom';
+import {withRouter, Link} from 'react-router-dom';
 import {
   Button,
   Container,
@@ -9,22 +9,22 @@ import {
   Header,
   Image,
   Icon,
+  List,
   Message,
   Segment,
   Loader,
 } from 'semantic-ui-react';
 import {Progress} from '../components/Progress';
 import {TaskList} from '../components/TaskList';
-import {Events} from '../components/Events';
 import {
   ReleaseHeader,
   MarkdownEditor,
   ReleaseActions,
-  ReleaseNotes,
+  LogViewer,
 } from '../components/ReleaseDetail';
 import paragraph from '../../assets/paragraph.png';
 
-import {GET_RELEASE, ALL_NOTES, ALL_EVENTS} from '../queries';
+import {GET_RELEASE, ALL_EVENTS} from '../queries';
 
 const ReleaseDetailView = ({user, history, match}) => {
   const relayId = Buffer.from('ReleaseNode:' + match.params.releaseId).toString(
@@ -37,7 +37,6 @@ const ReleaseDetailView = ({user, history, match}) => {
     data: releaseData,
   } = useQuery(GET_RELEASE, {
     variables: {id: relayId},
-    context: {clientName: 'coordinator'},
     pollInterval: 5000,
   });
 
@@ -45,19 +44,20 @@ const ReleaseDetailView = ({user, history, match}) => {
     ALL_EVENTS,
     {
       variables: {release: relayId},
-      context: {clientName: 'coordinator'},
     },
   );
 
-  const {loading: notesLoading, error: notesError, data: notes} = useQuery(
-    ALL_NOTES,
-    {
-      variables: {release: relayId},
-      context: {clientName: 'coordinator'},
-    },
-  );
+  const logs =
+    releaseData &&
+    releaseData.release.tasks.edges.reduce(
+      (o, edge) => ({
+        ...o,
+        [edge.node.releaseService.name]: edge.node.jobLog,
+      }),
+      {},
+    );
 
-  if (releaseError || eventsError || notesError)
+  if (releaseError || eventsError)
     return (
       <Container as={Segment} basic>
         <Message
@@ -67,21 +67,13 @@ const ReleaseDetailView = ({user, history, match}) => {
             <>
               {releaseError && <p>Release Error: {releaseError.message}</p>}
               {eventsError && <p>Events Error: {eventsError.message}</p>}
-              {notesError && <p>Notes Error: {notesError.message}</p>}
             </>
           }
         />
       </Container>
     );
 
-  if (
-    !releaseData ||
-    releaseLoading ||
-    !notes ||
-    notesLoading ||
-    !events ||
-    eventsLoading
-  )
+  if (!releaseData || releaseLoading || !events || eventsLoading)
     return (
       <Container as={Segment} basic>
         <Dimmer active inverted>
@@ -161,17 +153,39 @@ const ReleaseDetailView = ({user, history, match}) => {
 
           <Segment vertical>
             <Header>Studies in this Release</Header>
-            <ReleaseNotes release={release} />
+            <List bulleted>
+              {release.studies.edges.map(({node}) => (
+                <List.Item>
+                  <Link to={`/study/${node.kfId}/basic-info/info`}>
+                    {node.kfId}
+                  </Link>{' '}
+                  - {node.name}
+                </List.Item>
+              ))}
+            </List>
           </Segment>
 
+          <Segment vertical>
+            <Header>Services in this Release</Header>
+            <List bulleted>
+              {release.tasks.edges.map(({node}) => (
+                <List.Item>
+                  <Link to={`/releases/services/${node.releaseService.kfId}`}>
+                    {node.releaseService.kfId}
+                  </Link>{' '}
+                  - {node.releaseService.name}
+                </List.Item>
+              ))}
+            </List>
+          </Segment>
           <Segment vertical>
             <Header>Task Status</Header>
             <TaskList releaseId={release.kfId} />
           </Segment>
 
           <Segment vertical>
-            <Header>Event History</Header>
-            <Events events={events && events.allEvents.edges} />
+            <Header>Logs</Header>
+            <LogViewer logs={{release: release.jobLog, ...logs}} />
           </Segment>
         </>
       )}

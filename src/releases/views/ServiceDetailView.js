@@ -30,7 +30,7 @@ const ServiceDetailView = ({match}) => {
   const [editing, setEditing] = useState(false);
 
   const relayId = Buffer.from(
-    'TaskServiceNode:' + match.params.serviceId,
+    'ReleaseServiceNode:' + match.params.serviceId,
   ).toString('base64');
 
   const {
@@ -39,7 +39,6 @@ const ServiceDetailView = ({match}) => {
     data: serviceData,
   } = useQuery(GET_SERVICE, {
     variables: {id: relayId},
-    context: {clientName: 'coordinator'},
   });
 
   const {
@@ -48,24 +47,21 @@ const ServiceDetailView = ({match}) => {
     data: eventsData,
   } = useQuery(ALL_EVENTS, {
     variables: {taskService: relayId, first: 10},
-    context: {clientName: 'coordinator'},
   });
 
-  const service = serviceData && serviceData.taskService;
+  const service = serviceData && serviceData.releaseService;
 
   const [
     updateService,
     {loading: updateServiceLoading, error: updateServiceError},
-  ] = useMutation(UPDATE_SERVICE, {
-    context: {clientName: 'coordinator'},
-  });
+  ] = useMutation(UPDATE_SERVICE, {});
 
   const formRef = useRef();
 
   const toggle = ev => {
     updateService({
       variables: {
-        taskService: service.id,
+        id: service.id,
         input: {
           name: service.name,
           url: service.url,
@@ -78,11 +74,7 @@ const ServiceDetailView = ({match}) => {
   if (serviceError)
     return (
       <Container as={Segment} basic>
-        <Message
-          negative
-          header="Error"
-          content={serviceError.message}
-        />
+        <Message negative header="Error" content={serviceError.message} />
       </Container>
     );
 
@@ -120,10 +112,6 @@ const ServiceDetailView = ({match}) => {
           </Grid.Column>
           <Grid.Column width={8} textAlign="right">
             <Form.Group grouped>
-              <Form.Field inline>
-                <label>Status:</label>
-                <Label basic>{service.healthStatus}</Label>
-              </Form.Field>
               <Form.Field inline>
                 <Form.Checkbox
                   toggle
@@ -181,18 +169,20 @@ const ServiceDetailView = ({match}) => {
                   onSubmit={values =>
                     updateService({
                       variables: {
-                        taskService: values.id,
+                        id: values.id,
                         input: {
                           name: values.name,
                           description: values.description,
                           url: values.url,
                         },
                       },
-                    }).then(resp => {
-                      setEditing(false);
-                    }).catch(err => {
-                      console.log(err);
                     })
+                      .then(resp => {
+                        setEditing(false);
+                      })
+                      .catch(err => {
+                        console.log(err);
+                      })
                   }
                 />
               </Modal.Description>
@@ -225,7 +215,7 @@ const ServiceDetailView = ({match}) => {
       <h2>Recent Events</h2>
       {eventsData && (
         <Events
-          events={eventsData.allEvents.edges}
+          events={eventsData.allReleaseEvents.edges}
           loading={eventsLoading}
           error={eventsError}
         />

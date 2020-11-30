@@ -2,9 +2,9 @@ import React from 'react';
 import {Helmet} from 'react-helmet';
 import {useQuery} from '@apollo/react-hooks';
 import {Link, Redirect} from 'react-router-dom';
-import {ALL_STUDIES, MY_PROFILE, GET_RELEASED_STUDY} from '../state/queries';
+import {ALL_STUDIES, MY_PROFILE} from '../state/queries';
 import StudyList from '../components/StudyList/StudyList';
-import {Button, Message, Container, Segment, Icon} from 'semantic-ui-react';
+import {Button, Message, Container, Segment} from 'semantic-ui-react';
 import {hasPermission} from '../common/permissions';
 import bug from '../assets/bug.svg';
 import {ImageMessage} from '../components/ImageMessage';
@@ -15,34 +15,22 @@ const StudyListView = ({history}) => {
   // Need to fetch from network everytime or else the allStudies query to the
   // release coordinator will overwrite the result in the cache
   const {loading, error, data} = useQuery(ALL_STUDIES, {
-    fetchPolicy: 'cache-and-network',
+    fetchPolicy: 'cache-first',
   });
-  const {error: releasesError, data: releasesData} = useQuery(
-    GET_RELEASED_STUDY,
-    {
-      context: {clientName: 'coordinator'},
-    },
-  );
   const allStudies = data && data.allStudies;
 
-  const allReleases = releasesData && releasesData.allStudyReleases;
   var studyList = allStudies ? allStudies.edges : [];
-  const releaseList = allReleases ? allReleases.edges : [];
-  if (releaseList.length > 0 && studyList.length > 0) {
-    studyList.forEach(function(study) {
-      const release =
-        releaseList.find(r => r.node.kfId === study.node.kfId) || {};
-      study.node.release =
-        release.node && release.node.releases.edges.length > 0
-          ? release.node.releases.edges[0]
-          : {};
-    });
-  }
+
+  // Flatten the latest release into the top of the study as 'release'
+  studyList = studyList.map(({node}) => {
+    const release = node.releases.edges.length && node.releases.edges[0];
+    return {node: {...node, release}};
+  });
 
   if (
     myProfile &&
-    (!hasPermission(myProfile, 'view_study') &&
-      !hasPermission(myProfile, 'view_my_study'))
+    !hasPermission(myProfile, 'view_study') &&
+    !hasPermission(myProfile, 'view_my_study')
   ) {
     return (
       <Redirect
@@ -139,17 +127,6 @@ const StudyListView = ({history}) => {
         history={history}
         myProfile={myProfile}
       />
-      <Container as={Segment} basic vertical>
-        {releasesError && (
-          <Message negative icon>
-            <Icon name="warning circle" />
-            <Message.Content>
-              <Message.Header>Releases Info Error</Message.Header>
-              {releasesError.message}
-            </Message.Content>
-          </Message>
-        )}
-      </Container>
     </>
   );
 };

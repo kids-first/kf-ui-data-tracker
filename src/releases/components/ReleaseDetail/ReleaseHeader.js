@@ -8,6 +8,7 @@ import {
   Label,
 } from 'semantic-ui-react';
 import TimeAgo from 'react-timeago';
+import AvatarTimeAgo from '../../../components/AvatarTimeAgo/AvatarTimeAgo';
 
 const ReleaseHeader = ({release, loading}) => {
   if (loading || !release) {
@@ -29,9 +30,21 @@ const ReleaseHeader = ({release, loading}) => {
             <Header as="h1">
               <Header.Content>{release.name}</Header.Content>
               <Header.Subheader>
-                Created{' '}
-                <TimeAgo date={new Date(release.createdAt)} live={false} /> by
-                {' ' + release.author}
+                {release.creator ? (
+                  <>
+                    Created by{' '}
+                    <AvatarTimeAgo
+                      size="tiny"
+                      showUsername
+                      creator={release.creator}
+                      createdAt={release.createdAt}
+                    />
+                  </>
+                ) : (
+                  <>
+                    Created <TimeAgo date={release.createdAt} />
+                  </>
+                )}
               </Header.Subheader>
             </Header>
           </Grid.Column>

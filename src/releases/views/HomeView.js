@@ -8,12 +8,9 @@ import {GET_RELEASES} from '../queries';
 import {hasPermission} from '../../common/permissions';
 import {ReleaseTable} from '../components/ReleaseTable';
 
-
 const HomeView = ({match}) => {
   const history = useHistory();
-  const {data: releaseData} = useQuery(GET_RELEASES, {
-    context: {clientName: 'coordinator'},
-  });
+  const {data: releaseData} = useQuery(GET_RELEASES);
 
   const {data: profileData} = useQuery(MY_PROFILE);
   const myProfile = profileData && profileData.myProfile;

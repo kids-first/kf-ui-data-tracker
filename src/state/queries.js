@@ -24,6 +24,20 @@ export const ALL_STUDIES = gql`
           sequencingStatus
           ingestionStatus
           phenotypeStatus
+          releases(first: 1, orderBy: "-created_at", state: "published") {
+            edges {
+              node {
+                id
+                kfId
+                name
+                version
+                createdAt
+                creator {
+                  ...UserFields
+                }
+              }
+            }
+          }
           collaborators {
             edges {
               node {
@@ -281,7 +295,9 @@ export const GET_STUDY_RELEASES = gql`
             name
             description
             state
-            author
+            creator {
+              ...UserFields
+            }
             version
             createdAt
           }
@@ -289,6 +305,7 @@ export const GET_STUDY_RELEASES = gql`
       }
     }
   }
+  ${USER_FIELDS}
 `;
 
 export const GET_RELEASED_STUDY = gql`

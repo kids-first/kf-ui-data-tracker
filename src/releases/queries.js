@@ -7,11 +7,21 @@ export const GET_RELEASES = gql`
       edges {
         node {
           ...ReleaseFields
+          tasks {
+            edges {
+              node {
+                releaseService {
+                  ...ServiceFields
+                }
+              }
+            }
+          }
         }
       }
     }
   }
   ${RELEASE_FIELDS}
+  ${SERVICE_FIELDS}
 `;
 
 export const LATEST_RELEASE = gql`
@@ -29,7 +39,7 @@ export const LATEST_RELEASE = gql`
 
 export const ALL_SERVICES = gql`
   query AllServices {
-    allTaskServices(first: 20, orderBy: "-created_at") {
+    allReleaseServices(first: 20, orderBy: "-created_at") {
       edges {
         node {
           ...ServiceFields
@@ -42,7 +52,7 @@ export const ALL_SERVICES = gql`
 
 export const GET_SERVICE = gql`
   query GetService($id: ID!) {
-    taskService(id: $id) {
+    releaseService(id: $id) {
       ...ServiceFields
     }
   }
@@ -50,10 +60,10 @@ export const GET_SERVICE = gql`
 `;
 
 export const ALL_EVENTS = gql`
-  query AllEvents($release: ID, $first: Int, $taskService: ID) {
-    allEvents(
+  query AllEvents($release: ID, $first: Int, $releaseService: ID) {
+    allReleaseEvents(
       release: $release
-      taskService: $taskService
+      releaseService: $releaseService
       orderBy: "-created_at"
       first: $first
     ) {
@@ -67,7 +77,7 @@ export const ALL_EVENTS = gql`
             kfId
             name
           }
-          taskService {
+          releaseService {
             id
             kfId
             name
@@ -83,15 +93,15 @@ export const ALL_EVENTS = gql`
 `;
 
 export const ALL_TASKS = gql`
-  query AllTasks($first: Int, $release: String) {
-    allTasks(first: $first, release: $release) {
+  query AllTasks($first: Int, $release: ID!) {
+    allReleaseTasks(first: $first, release: $release) {
       edges {
         node {
           id
           kfId
           state
           createdAt
-          taskService {
+          releaseService {
             id
             name
           }
@@ -133,15 +143,21 @@ export const GET_RELEASE = gql`
           }
         }
       }
-      notes {
+      tasks {
         edges {
           node {
-            id
-            description
+            jobLog {
+              id
+              downloadUrl
+            }
+            releaseService {
+              ...ServiceFields
+            }
           }
         }
       }
     }
   }
   ${RELEASE_FIELDS}
+  ${SERVICE_FIELDS}
 `;
