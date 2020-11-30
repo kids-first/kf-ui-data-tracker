@@ -4,7 +4,7 @@
     "REACT_APP_STUDY_API": "http://localhost:5002/graphql",
     "DEV_ENDPOINT": "http://web:8080/__dev"
   },
-  "blacklistHosts": ["*hotjar.com", "*usersnap.com"],
+  "blockHosts": ["*hotjar.com", "*usersnap.com"],
   "video": false,
   "chromeWebSecurity": false
 }
