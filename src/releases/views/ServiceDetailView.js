@@ -113,10 +113,6 @@ const ServiceDetailView = ({match}) => {
           <Grid.Column width={8} textAlign="right">
             <Form.Group grouped>
               <Form.Field inline>
-                <label>Status:</label>
-                <Label basic>{service.healthStatus}</Label>
-              </Form.Field>
-              <Form.Field inline>
                 <Form.Checkbox
                   toggle
                   label="Enabled"
