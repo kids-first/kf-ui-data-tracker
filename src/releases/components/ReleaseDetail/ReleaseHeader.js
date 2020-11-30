@@ -23,49 +23,42 @@ const ReleaseHeader = ({release, loading}) => {
   }
 
   return (
-    <Segment basic secondary>
-      <Grid columns={2}>
-        <Grid.Row>
-          <Grid.Column floated="left">
-            <Header as="h1">
-              <Header.Content>{release.name}</Header.Content>
-              <Header.Subheader>
-                {release.creator ? (
-                  <>
-                    Created by{' '}
-                    <AvatarTimeAgo
-                      size="tiny"
-                      showUsername
-                      creator={release.creator}
-                      createdAt={release.createdAt}
-                    />
-                  </>
-                ) : (
-                  <>
-                    Created <TimeAgo date={release.createdAt} />
-                  </>
-                )}
-              </Header.Subheader>
-            </Header>
-          </Grid.Column>
-          <Grid.Column floated="right">
-            <Header as="h2" textAlign="right">
-              <Header.Content>Tags</Header.Content>
-              <Header.Subheader>
-                <Label basic>
-                  <Icon name="tag" />
-                  {release.version}
-                </Label>
-                <Label basic>
-                  <Icon name="tag" />
-                  {release.kfId}
-                </Label>
-              </Header.Subheader>
-            </Header>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-    </Segment>
+    <Grid columns={2}>
+      <Grid.Row>
+        <Grid.Column width={16}>
+          <Header as="h2" className="pt-10">
+            {release.name}
+          </Header>
+        </Grid.Column>
+      </Grid.Row>
+      <Grid.Row>
+        <Grid.Column mobile={16} tablet={16} computer={10}>
+          <Header as="h4" color="grey">
+            Basic info
+          </Header>
+          {release.creator ? (
+            <AvatarTimeAgo
+              size="tiny"
+              showUsername
+              creator={release.creator}
+              createdAt={release.createdAt}
+            />
+          ) : (
+            <>
+              Created <TimeAgo date={release.createdAt} />
+            </>
+          )}
+          <Label size="small" basic>
+            <Icon name="tag" />
+            {release.version}
+          </Label>
+          <Label basic size="small">
+            <Icon name="tag" />
+            {release.kfId}
+          </Label>
+        </Grid.Column>
+      </Grid.Row>
+    </Grid>
   );
 };
 
