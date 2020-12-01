@@ -27,7 +27,6 @@ import {
 import FileTags from './FileTags';
 import FileName from './FileName';
 import FileDescription from './FileDescription';
-import AnalysisSummary from './AnalysisSummary';
 import Timelines from './Timelines';
 
 const ActionButtons = ({
@@ -388,14 +387,6 @@ const FileDetail = ({
           <Segment className="noBorders noMargin">
             <FileDescription fileNode={fileNode} updateFile={updateFile} />
           </Segment>
-          {sortedVersions && sortedVersions[0].node.analysis && (
-            <Segment basic>
-              <Header as="h4" color="grey">
-                Summary
-              </Header>
-              <AnalysisSummary version={sortedVersions[0].node} />
-            </Segment>
-          )}
           <Segment basic loading={event.loading}>
             <Header as="h4" color="grey">
               Timeline{' '}
