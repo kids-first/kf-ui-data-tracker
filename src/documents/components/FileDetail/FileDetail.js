@@ -384,10 +384,10 @@ const FileDetail = ({
               </Grid.Column>
             </Grid.Row>
           </Grid>
-          <Segment className="noBorders noMargin">
+          <Segment basic className="noMargin">
             <FileDescription fileNode={fileNode} updateFile={updateFile} />
           </Segment>
-          <Segment basic loading={event.loading}>
+          <Segment basic loading={event.loading} className="noMargin">
             <Header as="h4" color="grey">
               Timeline{' '}
               <span className="text-10 text-normal">
