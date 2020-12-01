@@ -16,11 +16,13 @@ import {
   Placeholder,
   Dimmer,
   Loader,
+  Modal,
 } from 'semantic-ui-react';
 import TimeAgo from 'react-timeago';
 import Papa from 'papaparse';
 import * as XLSX from 'xlsx';
 import {LogOnMount} from '@amplitude/react-amplitude';
+import AnalysisSummary from '../components/FileDetail/AnalysisSummary';
 const PreviewTable = React.lazy(() =>
   import('../components/PreviewTable/PreviewTable'),
 );
@@ -39,6 +41,7 @@ const HeaderSkeleton = () => (
 );
 
 const VersionPreviewView = ({match}) => {
+  const [showSummary, setShowSummary] = useState(false);
   const [fullWidth, setFullWidth] = useState(false);
   const [displayLength, setDisplayLength] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -197,26 +200,6 @@ const VersionPreviewView = ({match}) => {
                   }
                 />
               </Header>
-              {version.analysis && (
-                <>
-                  <Header
-                    icon
-                    className="noMargin px-20"
-                    floated="left"
-                    as="div"
-                    content={version.analysis.ncols}
-                    subheader="Columns"
-                  />
-                  <Header
-                    icon
-                    className="noMargin"
-                    floated="left"
-                    as="div"
-                    content={version.analysis.nrows}
-                    subheader="Rows"
-                  />
-                </>
-              )}
               <Popup
                 inverted
                 content="This is not the latest version of the document, click to preview the latest version"
@@ -238,14 +221,52 @@ const VersionPreviewView = ({match}) => {
                       e.stopPropagation();
                       e.preventDefault();
                       window.open(
-                        `/study/${match.params.studyId}/documents/${
-                          match.params.fileId
-                        }/versions/${latestVersionId}`,
+                        `/study/${match.params.studyId}/documents/${match.params.fileId}/versions/${latestVersionId}`,
                       );
                     }}
                   />
                 }
               />
+              {version.analysis && (
+                <>
+                  <Header
+                    icon
+                    className="noMargin px-20"
+                    floated="left"
+                    as="div"
+                    content={version.analysis.ncols}
+                    subheader="Columns"
+                  />
+                  <Header
+                    icon
+                    className="noMargin"
+                    floated="left"
+                    as="div"
+                    content={version.analysis.nrows}
+                    subheader="Rows"
+                  />
+                  <Popup
+                    inverted
+                    content="More table information"
+                    position="top center"
+                    trigger={
+                      <Button
+                        size="small"
+                        labelPosition="left"
+                        className="ml-30 mt-15 text-primary"
+                        onClick={e => {
+                          e.stopPropagation();
+                          e.preventDefault();
+                          setShowSummary(true);
+                        }}
+                      >
+                        <Icon name="info circle" />
+                        Learn more
+                      </Button>
+                    }
+                  />
+                </>
+              )}
             </>
           ) : (
             <Message
@@ -304,6 +325,12 @@ const VersionPreviewView = ({match}) => {
           </Grid.Column>
         </Grid.Row>
       </Grid>
+      <Modal open={showSummary} onClose={() => setShowSummary(false)} closeIcon>
+        <Header>Version Summary</Header>
+        <Modal.Content>
+          <AnalysisSummary version={version} />
+        </Modal.Content>
+      </Modal>
     </>
   );
 };
