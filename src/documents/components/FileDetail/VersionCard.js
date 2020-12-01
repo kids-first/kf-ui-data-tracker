@@ -183,7 +183,7 @@ const VersionCard = ({version, downloadFileMutation, studyId, fileId}) => {
         <Card.Description>
           <Segment basic secondary className="x-scroll">
             <Markdown
-              source={version.description}
+              source={version.description || 'No version summary added ...'}
               renderers={{
                 image: Image,
                 table: props => <Table>{props.children}</Table>,
