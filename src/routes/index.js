@@ -45,6 +45,7 @@ import {
   LogsView as AdminLogsView,
   LogView,
   ModelExplorerView,
+  GraphiQLView,
 } from '../admin/views';
 import ReleaseRoutes from '../releases/routes';
 import TrackedRoute from './TrackedRoute';
@@ -232,6 +233,12 @@ const Routes = () => (
           exact
           path="/explorer"
           component={ModelExplorerView}
+          permissions={['view_downloadtoken']}
+        />
+        <RestrictedRoute
+          exact
+          path="/graphiql"
+          component={GraphiQLView}
           permissions={['view_downloadtoken']}
         />
         <RestrictedRoute

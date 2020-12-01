@@ -83,6 +83,12 @@ const AdminDropdown = ({profile}) => {
       icon: 'sitemap',
       permission: 'view_downloadtoken',
     },
+    {
+      name: 'GraphiQL',
+      route: '/graphiql',
+      icon: 'code',
+      permission: 'view_downloadtoken',
+    },
   ];
 
   const Item = ({name, route, icon, permission}) => (
