@@ -16,21 +16,29 @@ import {fileTypeDetail} from '../../common/enums';
 
 const Steps = ({step = 1, setStep}) => (
   <Step.Group ordered fluid attached="top">
-    <Step completed={step > 1} onClick={step > 1 ? () => setStep(1) : null}>
+    <Step
+      active={step === 1}
+      completed={step > 1}
+      onClick={step > 1 ? () => setStep(1) : null}
+    >
       <Step.Content>
         <Step.Title>New or Existing</Step.Title>
         <Step.Description>Choose the document</Step.Description>
       </Step.Content>
     </Step>
 
-    <Step completed={step > 2} onClick={step > 2 ? () => setStep(2) : null}>
+    <Step
+      active={step === 2}
+      completed={step > 2}
+      onClick={step > 2 ? () => setStep(2) : null}
+    >
       <Step.Content>
         <Step.Title>Document Type</Step.Title>
         <Step.Description>Categorize your new document</Step.Description>
       </Step.Content>
     </Step>
 
-    <Step>
+    <Step active={step === 3}>
       <Step.Content>
         <Step.Title>Details</Step.Title>
         <Step.Description>Describe the new document</Step.Description>
