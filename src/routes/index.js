@@ -44,6 +44,8 @@ import {
   PendingInvitesView,
   LogsView as AdminLogsView,
   LogView,
+  ModelExplorerView,
+  GraphiQLView,
 } from '../admin/views';
 import ReleaseRoutes from '../releases/routes';
 import TrackedRoute from './TrackedRoute';
@@ -226,6 +228,18 @@ const Routes = () => (
           path="/buckets"
           component={BucketsView}
           permissions={['view_bucket', 'list_all_bucket']}
+        />
+        <RestrictedRoute
+          exact
+          path="/explorer"
+          component={ModelExplorerView}
+          permissions={['view_downloadtoken']}
+        />
+        <RestrictedRoute
+          exact
+          path="/graphiql"
+          component={GraphiQLView}
+          permissions={['view_downloadtoken']}
         />
         <RestrictedRoute
           exact

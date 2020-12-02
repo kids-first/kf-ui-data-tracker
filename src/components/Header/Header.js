@@ -77,6 +77,18 @@ const AdminDropdown = ({profile}) => {
       icon: 'mail',
       permission: 'list_all_referraltoken',
     },
+    {
+      name: 'Model Explorer',
+      route: '/explorer',
+      icon: 'sitemap',
+      permission: 'view_downloadtoken',
+    },
+    {
+      name: 'GraphiQL',
+      route: '/graphiql',
+      icon: 'code',
+      permission: 'view_downloadtoken',
+    },
   ];
 
   const Item = ({name, route, icon, permission}) => (

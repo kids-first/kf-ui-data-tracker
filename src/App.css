@@ -490,6 +490,10 @@ body {
   color: #000;
 }
 
+.graphiql-container {
+  height: 80vh !important;
+}
+
 code.label {
   background: #eee;
   padding: 2px;
