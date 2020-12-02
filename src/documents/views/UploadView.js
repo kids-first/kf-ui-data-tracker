@@ -4,50 +4,18 @@ import {Prompt} from 'react-router-dom';
 import {CREATE_FILE, CREATE_VERSION, UPDATE_VERSION} from '../mutations';
 import {GET_STUDY_BY_ID} from '../../state/queries';
 import {
+  Accordion,
   Message,
   Segment,
   Container,
-  Grid,
   Icon,
-  Image,
   Button,
   Header,
   Progress,
   Transition,
 } from 'semantic-ui-react';
 import AnalysisSummary from '../components/FileDetail/AnalysisSummary';
-import NewDocumentForm from '../forms/NewDocumentForm';
-import NewVersionForm from '../forms/NewVersionForm';
-
-import form from '../../assets/form.svg';
-import documentChoice from '../../assets/document_choice.svg';
-
-const DocumentTypeChooser = ({type, setType}) => (
-  <center>
-    <Button.Group size="large">
-      <Button
-        icon
-        active={type === 'document'}
-        onClick={() => setType('document')}
-        labelPosition="left"
-      >
-        <Icon name="file" />
-        Create New Document
-      </Button>
-      <Button.Or />
-      <Button
-        icon
-        active={type === 'version'}
-        data-testid="update-existing-button"
-        onClick={() => setType('version')}
-        labelPosition="right"
-      >
-        Update Existing Document
-        <Icon name="copy" />
-      </Button>
-    </Button.Group>
-  </center>
-);
+import NewUploadForm from '../forms/NewUploadForm';
 
 const UploadBar = ({
   study,
@@ -55,58 +23,71 @@ const UploadBar = ({
   createVersion,
   versionLoading,
   versionError,
-}) => (
-  <Message icon>
-    <Icon name="file" />
-    <Message.Content>
-      {version && !versionLoading && (
-        <>
-          <Button
-            icon
-            primary
-            floated="right"
-            labelPosition="left"
-            as="label"
-            htmlFor="file"
-          >
-            <Icon name="upload" />
-            Upload a Different File
-          </Button>
-          <input
-            hidden
-            id="file"
-            type="file"
-            onChange={e => {
-              createVersion({
-                variables: {
-                  file: e.target.files[0],
-                  study: study.id,
-                },
-              }).catch(err => err);
-            }}
+}) => {
+  const [showSummary, setShowSummary] = useState(false);
+  return (
+    <Message icon attached>
+      <Icon name="file" />
+      <Message.Content>
+        {version && !versionLoading && (
+          <>
+            <Button
+              icon
+              primary
+              floated="right"
+              labelPosition="left"
+              as="label"
+              htmlFor="file"
+            >
+              <Icon name="upload" />
+              Upload a Different File
+            </Button>
+            <input
+              hidden
+              id="file"
+              type="file"
+              onChange={e => {
+                createVersion({
+                  variables: {
+                    file: e.target.files[0],
+                    study: study.id,
+                  },
+                }).catch(err => err);
+              }}
+            />
+            <Message.Header>Uploaded File:</Message.Header>
+            {version.fileName}
+            <Accordion>
+              <Accordion.Title
+                active={showSummary}
+                onClick={() => setShowSummary(!showSummary)}
+              >
+                <Icon name="dropdown" />
+                Show Full Summary
+              </Accordion.Title>
+              <Accordion.Content active={showSummary}>
+                <AnalysisSummary version={version} />
+              </Accordion.Content>
+            </Accordion>
+          </>
+        )}
+        {versionLoading && (
+          <Progress indicating label="Uploading..." percent={100} />
+        )}
+        {versionError && (
+          <Message
+            negative
+            icon="warning"
+            header="Problem uploading"
+            content={versionError.message}
           />
-          <Message.Header>Uploaded File:</Message.Header>
-          {version.fileName}
-        </>
-      )}
-      {versionLoading && (
-        <Progress indicating label="Uploading..." percent={100} />
-      )}
-      {versionError && (
-        <Message
-          negative
-          icon="warning"
-          header="Problem uploading"
-          content={versionError.message}
-        />
-      )}
-    </Message.Content>
-  </Message>
-);
+        )}
+      </Message.Content>
+    </Message>
+  );
+};
 
 const UploadView = ({match, history, location}) => {
-  const [type, setType] = useState();
-
   const study = useQuery(GET_STUDY_BY_ID, {
     variables: {
       id: Buffer.from('StudyNode:' + match.params.kfId).toString('base64'),
@@ -135,7 +116,7 @@ const UploadView = ({match, history, location}) => {
   });
 
   // Mutation to update a document with a new version
-  const [updateVersion, {error: updateError}] = useMutation(UPDATE_VERSION);
+  const [updateVersion] = useMutation(UPDATE_VERSION);
 
   useEffect(() => {
     if (!location.state) return;
@@ -183,7 +164,7 @@ const UploadView = ({match, history, location}) => {
   };
 
   const handleSubmitNewVersion = (props, formikProps) => {
-    const {description, doc} = props;
+    const {file_desc, doc} = props;
 
     const studyId = study.data.study.kfId;
 
@@ -191,7 +172,7 @@ const UploadView = ({match, history, location}) => {
       variables: {
         versionId: version.kfId,
         document: doc.id,
-        description: description,
+        description: file_desc,
         state: 'PEN',
       },
     })
@@ -199,6 +180,13 @@ const UploadView = ({match, history, location}) => {
         history.push(`/study/${studyId}/documents/${doc.kfId}`);
       })
       .catch(err => formikProps.setSubmitting(false));
+  };
+
+  const handleSubmit = (props, formikProps) => {
+    if (props.upload_type === 'document')
+      handleSubmitNewDoc(props, formikProps);
+    else if (props.upload_type === 'version')
+      handleSubmitNewVersion(props, formikProps);
   };
 
   if (!study.data) {
@@ -228,71 +216,13 @@ const UploadView = ({match, history, location}) => {
         duration={{hide: 200, show: 500}}
       >
         {version && (
-          <Segment.Group>
-            <Grid as={Segment} divided>
-              <Grid.Column computer={3} tablet={8} mobile={4}>
-                <Image src={form} />
-              </Grid.Column>
-              <Grid.Column computer={13} tablet={8} mobile={16}>
-                <Header as="h2">Additional Information Required</Header>
-                <p>
-                  Please fill in additional information about the file you've
-                  uploaded to help the Data Resource Center process your file
-                  appropriately.
-                </p>
-                <p>
-                  We have tried to generate a data summary based on the contents
-                  of your file. If the summary does not match what you expect,
-                  please make changes to the file and upload it again.
-                  Otherwise, choose if you'd like to update an existing document
-                  in the Data Tracker or create a new document entirely.
-                </p>
-              </Grid.Column>
-            </Grid>
-            <Segment secondary>
-              <Header>File Content Summary</Header>
-              <AnalysisSummary version={version} />
-            </Segment>
-
-            <Segment>
-              {!type ? (
-                <>
-                  <Image src={documentChoice} size="medium" centered rounded />
-                  <Header textAlign="center">
-                    Update or Create a Document
-                    <Header.Subheader>
-                      Select whether to use this file to create a new document
-                      or add it as a new version to an existing document.
-                    </Header.Subheader>
-                  </Header>
-                </>
-              ) : (
-                <Header>Update or Create a Document</Header>
-              )}
-              <DocumentTypeChooser type={type} setType={setType} />
-              {type === 'document' && (
-                <NewDocumentForm
-                  version={version}
-                  studyFiles={study.data.study.files.edges}
-                  handleSubmit={handleSubmitNewDoc}
-                />
-              )}
-              {type === 'version' && (
-                <NewVersionForm
-                  studyFiles={study.data.study.files.edges}
-                  version={version}
-                  handleSubmit={handleSubmitNewVersion}
-                />
-              )}
-              {updateError && (
-                <Message
-                  negative
-                  icon="warning"
-                  content={updateError.message}
-                />
-              )}
-            </Segment>
-          </Segment.Group>
+          <Segment>
+            <NewUploadForm
+              studyFiles={study.data.study.files.edges}
+              version={version}
+              handleSubmit={handleSubmit}
+            />
+          </Segment>
         )}
       </Transition.Group>
     </Container>

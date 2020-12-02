@@ -46,7 +46,10 @@ const NavBarView = ({match, location, history}) => {
 
   const isResearch = match.path.includes('research');
 
-  if (location.pathname.includes('/versions/')) {
+  if (
+    location.pathname.includes('/versions/') ||
+    location.pathname.includes('/upload')
+  ) {
     return <></>;
   }
 

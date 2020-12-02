@@ -84,6 +84,7 @@ const FileDetailView = ({match}) => {
       orderBy: '-created_at',
       first: 20,
     },
+    fetchPolicy: 'cache-and-network',
   });
 
   if (loading)
