@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Grid, Header, Icon, Image} from 'semantic-ui-react';
+import {Card, Grid, Header, Icon, Image} from 'semantic-ui-react';
 import documentChoice from '../../../assets/document_choice.svg';
 
 const DocumentOrVersionStep = ({setFieldValue, nextStep}) => (
@@ -13,31 +13,60 @@ const DocumentOrVersionStep = ({setFieldValue, nextStep}) => (
       </p>
     </Grid.Column>
     <Grid.Column width={6} textAlign="center" verticalAlign="middle">
-      <Header icon>
-        <Icon circular inverted color="blue" name="file outline" />
-        <Header.Content>This is a new document</Header.Content>
-        <Button
-          content="Document"
-          onClick={() => {
-            setFieldValue('document');
-            nextStep();
-          }}
-        />
-      </Header>
+      <Card
+        fluid
+        link
+        color="blue"
+        onClick={() => {
+          setFieldValue('document');
+          nextStep();
+        }}
+      >
+        <Card.Content>
+          <Icon
+            circular
+            inverted
+            size="huge"
+            color="blue"
+            name="file outline"
+          />
+          <Card.Header className="pt-10">Document</Card.Header>
+          <Card.Description>
+            Choose this if the file is an entirely new document
+          </Card.Description>
+        </Card.Content>
+      </Card>
     </Grid.Column>
     <Grid.Column width={6} textAlign="center" verticalAlign="middle">
-      <Header icon>
-        <Icon circular inverted color="blue" name="copy outline" />
-        This is a version of an existing document
-        <Button
-          content="Version"
-          onClick={() => {
-            setFieldValue('version');
-            nextStep();
-          }}
-        />
-      </Header>
+      <Card
+        fluid
+        link
+        color="blue"
+        onClick={() => {
+          setFieldValue('version');
+          nextStep();
+        }}
+      >
+        <Card.Content>
+          <Icon
+            circular
+            inverted
+            size="huge"
+            color="blue"
+            name="copy outline"
+          />
+          <Card.Header className="pt-10">Version</Card.Header>
+          <Card.Description>
+            Pick this if the file is a revision of an existing document
+          </Card.Description>
+        </Card.Content>
+      </Card>
     </Grid.Column>
+    <Grid.Row>
+      <Grid.Column textAlign="right" width={16}>
+        <em>Choose document or version to continue</em>
+      </Grid.Column>
+    </Grid.Row>
   </>
 );
 
