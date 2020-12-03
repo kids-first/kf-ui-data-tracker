@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  Grid,
-  Header,
-  Label,
-  Loader,
-  Segment,
-  Statistic,
-} from 'semantic-ui-react';
+import {Grid, Header, Label, Loader} from 'semantic-ui-react';
 
 const ReleaseHeader = ({release, loading}) => {
   const date =
@@ -18,10 +11,7 @@ const ReleaseHeader = ({release, loading}) => {
     });
 
   return (
-    <Grid as={Segment} secondary divided color="purple">
-      <Label attached="top left" color="purple">
-        Latest Publication
-      </Label>
+    <>
       {loading ? (
         <Grid.Column width={16}>
           <Loader active />
@@ -30,17 +20,18 @@ const ReleaseHeader = ({release, loading}) => {
       ) : (
         <>
           <Grid.Column width={8} verticalAlign="middle">
-            <Header>{release.name}</Header>
+            <Header size="small">
+              <Label color="purple">Latest Publication</Label> {release.name}
+            </Header>
           </Grid.Column>
-          <Grid.Column width={4} verticalAlign="middle" textAlign="center">
-            <Statistic size="small" label="version" value={release.version} />
-          </Grid.Column>
-          <Grid.Column width={4} verticalAlign="middle" textAlign="center">
-            <Statistic size="small" label="published on" value={date} />
+          <Grid.Column width={8} verticalAlign="middle" textAlign="right">
+            <Header size="small">
+              Version {release.version} Published on {date}
+            </Header>
           </Grid.Column>
         </>
       )}
-    </Grid>
+    </>
   );
 };
 
