@@ -3,7 +3,7 @@ import {Helmet} from 'react-helmet';
 import {useQuery, useMutation} from '@apollo/client';
 import {MY_PROFILE, GET_STUDY_BY_ID, ALL_EVENTS} from '../../state/queries';
 import {GET_FILE_BY_ID} from '../queries';
-import {UPDATE_FILE, DELETE_FILE, FILE_DOWNLOAD_URL} from '../mutations';
+import {UPDATE_FILE, DELETE_FILE, FILE_DOWNLOAD_URL, START_INGEST_RUN} from '../mutations';
 import {Container, Segment, Dimmer, Loader, Message} from 'semantic-ui-react';
 import FileDetail from '../components/FileDetail/FileDetail';
 import NotFoundView from '../../views/NotFoundView';
@@ -58,6 +58,7 @@ const FileDetailView = ({match}) => {
     ],
   });
   const [downloadFileMutation] = useMutation(FILE_DOWNLOAD_URL);
+  const [startIngestMutation] = useMutation(START_INGEST_RUN);
   const {data: profileData} = useQuery(MY_PROFILE);
   const myProfile = profileData && profileData.myProfile;
   const allowEdit =
@@ -77,6 +78,9 @@ const FileDetailView = ({match}) => {
     myProfile &&
     (hasPermission(myProfile, 'extract_version_config') ||
       hasPermission(myProfile, 'extract_my_version_config'));
+
+  const allowIngestFile = 
+    myProfile && hasPermission(myProfile, 'add_ingestrun');
 
   const event = useQuery(ALL_EVENTS, {
     variables: {
@@ -135,10 +139,12 @@ const FileDetailView = ({match}) => {
         deleteFile={allowDelete ? deleteFile : null}
         updateFile={allowEdit ? updateFile : null}
         downloadFileMutation={downloadFileMutation}
+        startIngestMutation={startIngestMutation}
         allowViewVersion={allowViewVersion}
         updateError={updateError}
         tagOptions={tagOptions}
         allowExtractConfig={allowExtractConfig}
+        allowIngestFile={allowIngestFile}
         event={event}
         studyFiles={
           files ? files.filter(({node}) => node.name !== fileByKfId.name) : []
