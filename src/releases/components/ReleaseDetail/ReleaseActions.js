@@ -78,6 +78,7 @@ const ReleaseActions = ({release, user, history, match}) => {
       {!(
         release.state === 'published' ||
         release.state === 'publishing' ||
+        release.state === 'canceling' ||
         release.state === 'canceled' ||
         release.state === 'failed'
       ) && (

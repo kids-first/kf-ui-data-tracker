@@ -23,7 +23,6 @@ const Log = ({log}) => {
       });
     };
 
-    console.log(log);
     if (log && log.downloadUrl) {
       getData();
     }
