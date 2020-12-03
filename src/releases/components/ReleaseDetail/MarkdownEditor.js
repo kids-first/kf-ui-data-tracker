@@ -64,7 +64,7 @@ const MarkdownEditor = ({releaseId, description, allowed}) => {
 
   return (
     <>
-      <Header as="h4" color="grey">
+      <Header color="grey">
         Description
         {allowed && !editing && (
           <Popup

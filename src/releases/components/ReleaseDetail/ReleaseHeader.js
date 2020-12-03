@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  Grid,
-  Header,
-  Icon,
-  Placeholder,
-  Segment,
-  Label,
-} from 'semantic-ui-react';
+import {Grid, Header, Icon, Placeholder, Label} from 'semantic-ui-react';
 import TimeAgo from 'react-timeago';
 import AvatarTimeAgo from '../../../components/AvatarTimeAgo/AvatarTimeAgo';
 
@@ -33,9 +26,7 @@ const ReleaseHeader = ({release, loading}) => {
       </Grid.Row>
       <Grid.Row>
         <Grid.Column mobile={16} tablet={16} computer={10}>
-          <Header as="h4" color="grey">
-            Basic info
-          </Header>
+          <Header color="grey">Basic info</Header>
           {release.creator ? (
             <AvatarTimeAgo
               size="tiny"

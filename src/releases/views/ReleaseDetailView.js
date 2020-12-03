@@ -16,7 +16,7 @@ import {
   Loader,
 } from 'semantic-ui-react';
 import {Progress} from '../components/Progress';
-import {TaskList} from '../components/TaskList';
+import {ReleaseTaskList} from '../components/ReleaseTaskList';
 import {
   ReleaseHeader,
   MarkdownEditor,
@@ -154,38 +154,51 @@ const ReleaseDetailView = ({user, history, match}) => {
       {release && (
         <Grid.Row>
           <Grid.Column mobile={16} tablet={13} computer={14}>
-            <Grid.Row>
-              <Grid.Column width={16}>
-                <ReleaseHeader release={release} loading={releaseLoading} />
-              </Grid.Column>
-            </Grid.Row>
-            <MarkdownEditor
-              releaseId={release.id ? release.id : ''}
-              description={release.description ? release.description : ''}
-              allowed={allowEdit}
-            />
-            <Header>Studies in this Release</Header>
-            <List bulleted>
-              {release.studies.edges.map(({node}) => (
-                <List.Item>
-                  <Link to={`/study/${node.kfId}/basic-info/info`}>
-                    {node.kfId}
-                  </Link>{' '}
-                  - {node.name}
-                </List.Item>
-              ))}
-            </List>
-            <Header>Services in this Release</Header>
-            <List bulleted>
-              {release.tasks.edges.map(({node}) => (
-                <List.Item>
-                  <Link to={`/releases/services/${node.releaseService.kfId}`}>
-                    {node.releaseService.kfId}
-                  </Link>{' '}
-                  - {node.releaseService.name}
-                </List.Item>
-              ))}
-            </List>
+            <Grid>
+              <Grid.Row>
+                <Grid.Column width={16}>
+                  <ReleaseHeader release={release} loading={releaseLoading} />
+                </Grid.Column>
+              </Grid.Row>
+              <Grid.Row>
+                <Grid.Column width={16}>
+                  <MarkdownEditor
+                    releaseId={release.id ? release.id : ''}
+                    description={release.description ? release.description : ''}
+                    allowed={allowEdit}
+                  />
+                </Grid.Column>
+              </Grid.Row>
+              <Grid.Row>
+                <Grid.Column width={16}>
+                  <Header color="grey">Studies in this Release</Header>
+                  <List bulleted>
+                    {release.studies.edges.map(({node}) => (
+                      <List.Item>
+                        <Link to={`/study/${node.kfId}/basic-info/info`}>
+                          {node.kfId}
+                        </Link>{' '}
+                        - {node.name}
+                      </List.Item>
+                    ))}
+                  </List>
+                </Grid.Column>
+              </Grid.Row>
+              <Grid.Row>
+                <Grid.Column width={16}>
+                  <Header color="grey">Release Task Status</Header>
+                  <ReleaseTaskList
+                    tasks={release.tasks.edges.map(({node}) => node)}
+                  />
+                </Grid.Column>
+              </Grid.Row>
+              <Grid.Row>
+                <Grid.Column width={16}>
+                  <Header color="grey">Logs</Header>
+                  <LogViewer logs={{release: release.jobLog, ...logs}} />
+                </Grid.Column>
+              </Grid.Row>
+            </Grid>
           </Grid.Column>
           <Grid.Column
             tablet={3}
@@ -200,16 +213,6 @@ const ReleaseDetailView = ({user, history, match}) => {
               match={match}
             />
           </Grid.Column>
-
-          <Segment vertical>
-            <Header>Task Status</Header>
-            <TaskList releaseId={release.kfId} />
-          </Segment>
-
-          <Segment vertical>
-            <Header>Logs</Header>
-            <LogViewer logs={{release: release.jobLog, ...logs}} />
-          </Segment>
         </Grid.Row>
       )}
     </Grid>

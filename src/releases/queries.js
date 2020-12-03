@@ -146,6 +146,9 @@ export const GET_RELEASE = gql`
       tasks {
         edges {
           node {
+            id
+            kfId
+            state
             jobLog {
               id
               downloadUrl
