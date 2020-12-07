@@ -24,6 +24,11 @@ const TimelineDate = ({date}) => {
 const Timelines = ({eventData, stripFileId, downloadFileMutation}) => {
   const events =
     eventData && eventData.allEvents ? eventData.allEvents.edges : [];
+  for (let event of events) {
+      if (event.node.eventType.startsWith("IR_")){
+        console.log(event)
+      }
+  }
   const actionType = {
     CRE: {
       iconName: 'upload',
@@ -35,6 +40,22 @@ const Timelines = ({eventData, stripFileId, downloadFileMutation}) => {
     },
     DEL: {
       iconName: 'trash',
+      iconColor: 'red',
+    },
+    STA: {
+      iconName: 'rocket',
+      iconColor: 'yellow',
+    },
+    COM: {
+      iconName: 'rocket',
+      iconColor: 'green',
+    },
+    FAI: {
+      iconName: 'rocket',
+      iconColor: 'red',
+    },
+    CAN: {
+      iconName: 'rocket',
       iconColor: 'red',
     },
     OTH: {iconName: 'question', iconColor: 'red'},

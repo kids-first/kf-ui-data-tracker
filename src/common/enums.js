@@ -18,6 +18,26 @@ export const projectOptions = [
 
 // Styling for different event types
 export const eventType = {
+  IR_STA: {
+    title: 'Ingest Run Started',
+    iconName: 'rocket',
+    iconColor: 'yellow',
+  },
+  IR_COM: {
+    title: 'Ingest Run Completed',
+    iconName: 'rocket',
+    iconColor: 'green',
+  },
+  IR_FAI: {
+    title: 'Ingest Run Failed',
+    iconName: 'rocket',
+    iconColor: 'red',
+  },
+  IR_CAN: {
+    title: 'Ingest Run Canceled',
+    iconName: 'rocket',
+    iconColor: 'red',
+  },
   SF_CRE: {
     title: 'Study File Created',
     iconName: 'file',
