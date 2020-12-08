@@ -3,9 +3,9 @@ import {useMutation} from '@apollo/react-hooks';
 import {
   Button,
   Confirm,
-  Grid,
   Icon,
   Label,
+  Menu,
   Message,
   Modal,
 } from 'semantic-ui-react';
@@ -64,7 +64,10 @@ const ReleaseActions = ({release, user, history, match}) => {
   };
 
   return (
-    <Grid.Row centered>
+    <Menu secondary vertical fluid>
+      <Menu.Item header as="h4" className="text-grey noMargin">
+        Actions
+      </Menu.Item>
       {(startReleaseError || publishReleaseError || cancelReleaseError) && (
         <Message
           negative
@@ -72,43 +75,31 @@ const ReleaseActions = ({release, user, history, match}) => {
           content={startReleaseError + publishReleaseError + cancelReleaseError}
         />
       )}
-      <Button.Group size="large">
-        <Button
-          icon
-          negative
-          labelPosition="left"
+      {!(
+        release.state === 'published' ||
+        release.state === 'publishing' ||
+        release.state === 'canceling' ||
+        release.state === 'canceled' ||
+        release.state === 'failed'
+      ) && (
+        <Menu.Item
           onClick={cancel}
-          loading={release.state === 'canceling' || cancelReleaseLoading}
-          disabled={
-            release.state === 'published' ||
-            release.state === 'publishing' ||
-            release.state === 'canceled' ||
-            release.state === 'failed'
-          }
+          disabled={release.state === 'canceling' || cancelReleaseLoading}
         >
           <Icon name="cancel" />
           Cancel
-        </Button>
-        <Button
-          icon
-          labelPosition="right"
-          onClick={() => setShowConfirm(!showConfirm)}
-        >
-          Run Again
-          <Icon name="repeat" />
-        </Button>
-        <Button
-          icon
-          positive
-          labelPosition="right"
-          onClick={publish}
-          loading={publishReleaseLoading}
-          disabled={release.state !== 'staged'}
-        >
+        </Menu.Item>
+      )}
+      {release.state === 'staged' && (
+        <Menu.Item onClick={publish} disabled={publishReleaseLoading}>
           Publish
           <Icon name="bookmark" />
-        </Button>
-      </Button.Group>
+        </Menu.Item>
+      )}
+      <Menu.Item onClick={() => setShowConfirm(!showConfirm)}>
+        Run Again
+        <Icon name="repeat" />
+      </Menu.Item>
       <Confirm
         open={showConfirm}
         cancelButton="Cancel"
@@ -138,7 +129,7 @@ const ReleaseActions = ({release, user, history, match}) => {
           </Modal.Content>
         }
       />
-    </Grid.Row>
+    </Menu>
   );
 };
 

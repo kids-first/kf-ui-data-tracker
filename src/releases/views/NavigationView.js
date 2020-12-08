@@ -35,16 +35,14 @@ const Layout = () => {
       {latestReleaseData && latestReleaseData.allReleases.edges.length > 0 && (
         <Segment basic className="science-bg">
           <Grid container className="study-header-background">
-            <Grid.Column>
-              <ReleaseHeader
-                loading={latestReleaseLoading}
-                release={
-                  latestReleaseData &&
-                  latestReleaseData.allReleases.edges.length &&
-                  latestReleaseData.allReleases.edges[0].node
-                }
-              />
-            </Grid.Column>
+            <ReleaseHeader
+              loading={latestReleaseLoading}
+              release={
+                latestReleaseData &&
+                latestReleaseData.allReleases.edges.length &&
+                latestReleaseData.allReleases.edges[0].node
+              }
+            />
           </Grid>
         </Segment>
       )}

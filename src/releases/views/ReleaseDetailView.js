@@ -7,6 +7,7 @@ import {
   Container,
   Dimmer,
   Header,
+  Grid,
   Image,
   Icon,
   List,
@@ -15,7 +16,7 @@ import {
   Loader,
 } from 'semantic-ui-react';
 import {Progress} from '../components/Progress';
-import {TaskList} from '../components/TaskList';
+import {ReleaseTaskList} from '../components/ReleaseTaskList';
 import {
   ReleaseHeader,
   MarkdownEditor,
@@ -25,6 +26,8 @@ import {
 import paragraph from '../../assets/paragraph.png';
 
 import {GET_RELEASE, ALL_EVENTS} from '../queries';
+import {MY_PROFILE} from '../../state/queries';
+import {hasPermission} from '../../common/permissions';
 
 const ReleaseDetailView = ({user, history, match}) => {
   const relayId = Buffer.from('ReleaseNode:' + match.params.releaseId).toString(
@@ -56,6 +59,11 @@ const ReleaseDetailView = ({user, history, match}) => {
       }),
       {},
     );
+
+  // Evaluate permissions
+  const {data: profileData} = useQuery(MY_PROFILE);
+  const myProfile = profileData && profileData.myProfile;
+  const allowEdit = myProfile && hasPermission(myProfile, 'change_release');
 
   if (releaseError || eventsError)
     return (
@@ -123,73 +131,91 @@ const ReleaseDetailView = ({user, history, match}) => {
   }
 
   return (
-    <Container as={Segment} basic vertical>
+    <Grid container>
       <Helmet>
-        <title>{`KF Data Tracker - Release Detail`}</title>
+        <title>{`KF Data Tracker - Release`}</title>
       </Helmet>
-      <ReleaseHeader release={release} loading={releaseLoading} />
-      <Segment vertical>
-        <Progress release={release} />
-      </Segment>
+      <Grid.Row>
+        <Grid.Column mobile={16} className="mt-15">
+          <Link to={`/releases/history`} data-testid="back-to-releases">
+            <Button basic size="mini" labelPosition="left" floated="left">
+              <Icon name="arrow left" />
+              All Releases
+            </Button>
+          </Link>
+        </Grid.Column>
+      </Grid.Row>
+      <Grid.Row className="noVerticalPadding">
+        <Grid.Column width={16}>
+          <Progress release={release} />
+        </Grid.Column>
+      </Grid.Row>
 
       {release && (
-        <>
-          <Segment vertical textAlign="center">
+        <Grid.Row reversed="tablet computer">
+          <Grid.Column
+            mobile={16}
+            tablet={3}
+            computer={2}
+            className="noPadding"
+          >
             <ReleaseActions
               release={release}
               user={user}
               history={history}
               match={match}
             />
-          </Segment>
-
-          <Segment vertical>
-            <Header>Release Description</Header>
-            <MarkdownEditor
-              releaseId={release.id ? release.id : ''}
-              description={release.description ? release.description : ''}
-            />
-          </Segment>
-
-          <Segment vertical>
-            <Header>Studies in this Release</Header>
-            <List bulleted>
-              {release.studies.edges.map(({node}) => (
-                <List.Item>
-                  <Link to={`/study/${node.kfId}/basic-info/info`}>
-                    {node.kfId}
-                  </Link>{' '}
-                  - {node.name}
-                </List.Item>
-              ))}
-            </List>
-          </Segment>
-
-          <Segment vertical>
-            <Header>Services in this Release</Header>
-            <List bulleted>
-              {release.tasks.edges.map(({node}) => (
-                <List.Item>
-                  <Link to={`/releases/services/${node.releaseService.kfId}`}>
-                    {node.releaseService.kfId}
-                  </Link>{' '}
-                  - {node.releaseService.name}
-                </List.Item>
-              ))}
-            </List>
-          </Segment>
-          <Segment vertical>
-            <Header>Task Status</Header>
-            <TaskList releaseId={release.kfId} />
-          </Segment>
-
-          <Segment vertical>
-            <Header>Logs</Header>
-            <LogViewer logs={{release: release.jobLog, ...logs}} />
-          </Segment>
-        </>
+          </Grid.Column>
+          <Grid.Column mobile={16} tablet={13} computer={14}>
+            <Grid>
+              <Grid.Row>
+                <Grid.Column width={16}>
+                  <ReleaseHeader release={release} loading={releaseLoading} />
+                </Grid.Column>
+              </Grid.Row>
+              <Grid.Row>
+                <Grid.Column width={16}>
+                  <MarkdownEditor
+                    releaseId={release.id ? release.id : ''}
+                    description={release.description ? release.description : ''}
+                    allowed={allowEdit}
+                  />
+                </Grid.Column>
+              </Grid.Row>
+              <Grid.Row>
+                <Grid.Column width={16}>
+                  <Header color="grey">Studies in this Release</Header>
+                  <List bulleted>
+                    {release.studies.edges.map(({node}) => (
+                      <List.Item key={node.kfId}>
+                        <Link to={`/study/${node.kfId}/basic-info/info`}>
+                          {node.kfId}
+                        </Link>{' '}
+                        - {node.name}
+                      </List.Item>
+                    ))}
+                  </List>
+                </Grid.Column>
+              </Grid.Row>
+              <Grid.Row>
+                <Grid.Column width={16}>
+                  <Header color="grey">Release Task Status</Header>
+                  <ReleaseTaskList
+                    tasks={release.tasks.edges.map(({node}) => node)}
+                  />
+                </Grid.Column>
+              </Grid.Row>
+              <Grid.Row>
+                <Grid.Column width={16}>
+                  <Header color="grey">Logs</Header>
+                  <LogViewer logs={{release: release.jobLog, ...logs}} />
+                </Grid.Column>
+              </Grid.Row>
+            </Grid>
+          </Grid.Column>
+        </Grid.Row>
       )}
-    </Container>
+    </Grid>
   );
 };
 

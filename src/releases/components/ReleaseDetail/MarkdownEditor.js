@@ -2,25 +2,25 @@ import React, {useState} from 'react';
 import propTypes from 'prop-types';
 import {useMutation} from '@apollo/react-hooks';
 import {UPDATE_RELEASE} from '../../mutations';
-import {Button, Icon, Segment, Message} from 'semantic-ui-react';
-import ReactMarkdown from 'react-markdown';
+import {
+  Button,
+  Header,
+  Icon,
+  Segment,
+  Table,
+  Message,
+  Popup,
+} from 'semantic-ui-react';
+import Markdown from 'react-markdown';
 import {Editor} from 'react-draft-wysiwyg';
 import {EditorState, convertToRaw, ContentState} from 'draft-js';
 import {draftToMarkdown} from 'markdown-draft-js';
 import '../../../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+
 /**
- * Displays a release description or note. If there is no description or note,
- * a button prompting for one will be dislpayed, and will show a text area
- * when clicked.
- *
- * The editor may either be type `release` or `release-note`. A release will
- * always have a kfId and a description, though it may be blank. A blank
- * description will be treated the same as an absent note.
- * A note may not yet exist, but the button to add a new one will be displayed.
- * Adding a new note will POST it to /release-notes and store the newly
- * assigned kfId. Future changes to the note will PATCH the existing kfId.
+ * Displays a release description
  **/
-const MarkdownEditor = ({releaseId, description, onSave}) => {
+const MarkdownEditor = ({releaseId, description, allowed}) => {
   const [updateRelease] = useMutation(UPDATE_RELEASE);
 
   const editorStyle = {
@@ -34,7 +34,7 @@ const MarkdownEditor = ({releaseId, description, onSave}) => {
     resize: 'vertical',
   };
 
-  const [editing, setEditing] = useState(onSave !== undefined);
+  const [editing, setEditing] = useState(false);
   const [error, setError] = useState(null);
   const [editorState, setEditorState] = useState(
     EditorState.createWithContent(
@@ -60,11 +60,31 @@ const MarkdownEditor = ({releaseId, description, onSave}) => {
         setError(err.message);
       });
     setEditing(false);
-    onSave && onSave();
   };
 
   return (
     <>
+      <Header color="grey">
+        Description
+        {allowed && !editing && (
+          <Popup
+            content="Edit document description"
+            position="right center"
+            inverted
+            trigger={
+              <Button
+                size="mini"
+                labelPosition="left"
+                className="ml-15 text-primary"
+                onClick={() => setEditing(true)}
+              >
+                <Icon name="pencil" />
+                Edit
+              </Button>
+            }
+          />
+        )}
+      </Header>
       {editing ? (
         <div>
           <Segment>
@@ -131,7 +151,7 @@ const MarkdownEditor = ({releaseId, description, onSave}) => {
             <Button
               floated="right"
               onClick={() => {
-                onSave ? onSave() : setEditing(false);
+                setEditing(false);
               }}
             >
               Cancel
@@ -144,38 +164,21 @@ const MarkdownEditor = ({releaseId, description, onSave}) => {
       ) : (
         <>
           {description ? (
-            <>
-              <Segment stacked basic>
-                <ReactMarkdown source={description} />
-              </Segment>
-              <Segment basic clearing className="noMargin noPadding">
-                {error && (
-                  <Message warning compact size="mini" content={error} />
-                )}
-                <Button
-                  primary
-                  floated="right"
-                  onClick={() => setEditing(true)}
-                >
-                  Edit
-                </Button>
-              </Segment>
-            </>
-          ) : (
-            <Segment basic textAlign="center" className="noMargin noPadding">
-              <Button
-                icon
-                primary
-                labelPosition="left"
-                onClick={() => setEditing(true)}
-              >
-                <Icon name="pencil" />
-                Add a release summary
-              </Button>
+            <Segment basic secondary className="x-scroll">
+              <Markdown
+                source={description}
+                renderers={{
+                  image: Image,
+                  table: props => <Table>{props.children}</Table>,
+                }}
+              />
             </Segment>
+          ) : (
+            <em>No release description. Please add one.</em>
           )}
         </>
       )}
+      {error && <Message warning compact size="mini" content={error} />}
     </>
   );
 };
