@@ -84,14 +84,14 @@ const ReleaseActions = ({release, user, history, match}) => {
       ) && (
         <Menu.Item
           onClick={cancel}
-          loading={release.state === 'canceling' || cancelReleaseLoading}
+          disabled={release.state === 'canceling' || cancelReleaseLoading}
         >
           <Icon name="cancel" />
           Cancel
         </Menu.Item>
       )}
       {release.state === 'staged' && (
-        <Menu.Item onClick={publish} loading={publishReleaseLoading}>
+        <Menu.Item onClick={publish} disabled={publishReleaseLoading}>
           Publish
           <Icon name="bookmark" />
         </Menu.Item>

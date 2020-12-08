@@ -187,7 +187,7 @@ const ReleaseDetailView = ({user, history, match}) => {
                   <Header color="grey">Studies in this Release</Header>
                   <List bulleted>
                     {release.studies.edges.map(({node}) => (
-                      <List.Item>
+                      <List.Item key={node.kfId}>
                         <Link to={`/study/${node.kfId}/basic-info/info`}>
                           {node.kfId}
                         </Link>{' '}

@@ -6,6 +6,7 @@ const LogMenu = ({options, onClick, activeItem}) => (
   <Menu attached="top" tabular>
     {options.map(item => (
       <Menu.Item
+        key={item}
         name={item}
         content={
           <>
