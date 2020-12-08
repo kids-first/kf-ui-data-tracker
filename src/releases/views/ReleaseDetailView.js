@@ -152,7 +152,20 @@ const ReleaseDetailView = ({user, history, match}) => {
       </Grid.Row>
 
       {release && (
-        <Grid.Row>
+        <Grid.Row reversed="tablet computer">
+          <Grid.Column
+            mobile={16}
+            tablet={3}
+            computer={2}
+            className="noPadding"
+          >
+            <ReleaseActions
+              release={release}
+              user={user}
+              history={history}
+              match={match}
+            />
+          </Grid.Column>
           <Grid.Column mobile={16} tablet={13} computer={14}>
             <Grid>
               <Grid.Row>
@@ -199,19 +212,6 @@ const ReleaseDetailView = ({user, history, match}) => {
                 </Grid.Column>
               </Grid.Row>
             </Grid>
-          </Grid.Column>
-          <Grid.Column
-            tablet={3}
-            computer={2}
-            only="tablet computer"
-            className="noPadding"
-          >
-            <ReleaseActions
-              release={release}
-              user={user}
-              history={history}
-              match={match}
-            />
           </Grid.Column>
         </Grid.Row>
       )}
