@@ -105,6 +105,7 @@ const FileElement = ({
             wide="very"
             position="top left"
             trigger={<Icon name="info circle" />}
+            mouseLeaveDelay={1000}
             content={
               <Markdown
                 source={fileDescription}
@@ -112,6 +113,7 @@ const FileElement = ({
                   image: Image,
                   table: props => <Table>{props.children}</Table>,
                 }}
+                linkTarget="_blank"
               />
             }
           />
