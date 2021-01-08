@@ -39,6 +39,7 @@ const ReleaseList = ({loading, releases}) => {
                   image: Image,
                   table: props => <Table>{props.children}</Table>,
                 }}
+                linkTarget="_blank"
               />
             </Comment.Text>
           </Comment.Content>
