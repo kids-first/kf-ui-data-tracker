@@ -127,6 +127,7 @@ const FileDescription = ({fileNode, updateFile}) => {
               image: Image,
               table: props => <Table>{props.children}</Table>,
             }}
+            linkTarget="_blank"
           />
         </Segment>
       )}
