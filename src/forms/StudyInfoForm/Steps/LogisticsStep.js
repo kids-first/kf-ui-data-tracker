@@ -95,6 +95,7 @@ const LogisticsStep = ({
                   list: List,
                   listItem: List.Item,
                 }}
+                linkTarget="_blank"
               />
             ) : (
               <Header disabled className="mt-6" as="h5">
