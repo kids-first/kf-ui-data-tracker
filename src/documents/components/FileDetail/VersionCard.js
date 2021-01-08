@@ -188,6 +188,7 @@ const VersionCard = ({version, downloadFileMutation, studyId, fileId}) => {
                 image: Image,
                 table: props => <Table>{props.children}</Table>,
               }}
+              linkTarget="_blank"
             />
           </Segment>
         </Card.Description>
