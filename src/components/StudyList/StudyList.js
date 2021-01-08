@@ -191,10 +191,11 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
           name,
           shortName,
           kfId,
+          slackChannel,
           collaborators: {edges},
         },
       }) =>
-        [name, shortName, kfId, conactCollaborators(edges)]
+        [name, shortName, kfId, slackChannel, conactCollaborators(edges)]
           .join(' ')
           .toLowerCase()
           .includes(searchString.toLowerCase()),
@@ -312,7 +313,7 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
               wide
               inverted
               position="top center"
-              content="Search study by name , ID or collaborator"
+              content="Search study by name , ID, Slack channel or collaborator"
               trigger={
                 <Input
                   fluid
