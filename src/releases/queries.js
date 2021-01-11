@@ -38,8 +38,8 @@ export const LATEST_RELEASE = gql`
 `;
 
 export const ALL_SERVICES = gql`
-  query AllServices {
-    allReleaseServices(first: 20, orderBy: "-created_at") {
+  query AllServices($enabled: Boolean) {
+    allReleaseServices(first: 20, enabled: $enabled, orderBy: "-created_at") {
       edges {
         node {
           ...ServiceFields
