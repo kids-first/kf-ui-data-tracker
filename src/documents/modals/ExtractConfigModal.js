@@ -33,9 +33,7 @@ const ExtractConfigModal = ({studyId, fileNode, onCloseDialog}) => {
   const [error, setError] = useState('');
   const [data, setData] = useState('');
   const versionId = fileSortedVersions(fileNode)[0].node.kfId;
-  const configUrl = `${KF_STUDY_API}/extract_config/study/${studyId}/file/${
-    fileNode.kfId
-  }/version/${versionId}`;
+  const configUrl = `${KF_STUDY_API}/extract_config/study/${studyId}/file/${fileNode.kfId}/version/${versionId}`;
   const getData = () => {
     setLoading(true);
     fetch(configUrl, {
@@ -98,7 +96,7 @@ const ExtractConfigModal = ({studyId, fileNode, onCloseDialog}) => {
           labelPosition="left"
           size="mini"
           position="top left"
-          tooltip="Copy download link"
+          tooltip="Copy document config code"
         />
         <Button
           disabled={data.length <= 0 && error.length > 0}
