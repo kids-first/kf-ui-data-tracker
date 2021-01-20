@@ -25,7 +25,9 @@ context('Invite User Modal', () => {
     cy.get('[data-testid="user-group-header"]')
       .first()
       .click();
-    cy.contains('[data-testid="user-group-header"]', 'Services').click();
+    cy.contains('[data-testid="user-group-header"]', 'Services')
+      .scrollIntoView()
+      .click();
     cy.contains('button', 'Back')
       .should('exist')
       .scrollIntoView()
