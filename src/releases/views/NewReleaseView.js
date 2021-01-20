@@ -28,7 +28,9 @@ const NewReleaseView = ({history}) => {
     {loading: startReleaseLoading, error: startReleaseError},
   ] = useMutation(START_RELEASE);
 
-  const {data: servicesData} = useQuery(ALL_SERVICES);
+  const {data: servicesData} = useQuery(ALL_SERVICES, {
+    variables: {enabled: true},
+  });
 
   const {data: studiesData} = useQuery(ALL_STUDIES, {
     fetchPolicy: 'network-only',

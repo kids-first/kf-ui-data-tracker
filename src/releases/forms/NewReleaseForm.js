@@ -92,7 +92,10 @@ const NewReleaseForm = ({
         />
       </Form.Field>
       <Form.Field>
-        <Header>Choose Tasks to Run</Header>
+        <Header>
+          Choose Services to Run
+          <Header.Subheader>Only enabled services are shown</Header.Subheader>
+        </Header>
         <ServiceSelect
           name="services"
           selected={values.services}
