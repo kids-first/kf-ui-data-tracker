@@ -98,28 +98,29 @@ const FileElement = ({
           </Table.Cell>
         }
       />
-      <Table.Cell>
-        {fileDescription.length > 3 && (
-          <Popup
-            offset="-75%"
-            wide="very"
-            position="top left"
-            trigger={<Icon name="info circle" />}
-            content={
-              <Markdown
-                source={fileDescription}
-                renderers={{
-                  image: Image,
-                  table: props => <Table>{props.children}</Table>,
-                }}
-              />
-            }
+      <Popup
+        wide="very"
+        position="top left"
+        trigger={
+          <Table.Cell>
+            {fileDescription.length > 3 && <Icon name="info circle" />}
+            <Link to={`/study/${match.params.kfId}/documents/${fileKfID}`}>
+              {fileName}
+            </Link>
+          </Table.Cell>
+        }
+        mouseLeaveDelay={500}
+        content={
+          <Markdown
+            source={fileDescription}
+            renderers={{
+              image: Image,
+              table: props => <Table>{props.children}</Table>,
+            }}
+            linkTarget="_blank"
           />
-        )}
-        <Link to={`/study/${match.params.kfId}/documents/${fileKfID}`}>
-          {fileName}
-        </Link>
-      </Table.Cell>
+        }
+      />
       {showId && <KfId kfId={fileNode.kfId} />}
       <Table.Cell textAlign="center" width="4">
         <FileTags

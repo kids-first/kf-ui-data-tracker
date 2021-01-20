@@ -171,6 +171,7 @@ const MarkdownEditor = ({releaseId, description, allowed}) => {
                   image: Image,
                   table: props => <Table>{props.children}</Table>,
                 }}
+                linkTarget="_blank"
               />
             </Segment>
           ) : (

@@ -5,7 +5,7 @@ import {
   ExtractConfigModal,
 } from '../../modals';
 /**
- * Render NewVersionModal, EditDocumentModal or VersionInfoModal
+ * Render NewVersionModal, EditDocumentModal
  * Handling conditional rendering in a separate file to keep FileDetail clean
  */
 const FileDetailModal = ({
