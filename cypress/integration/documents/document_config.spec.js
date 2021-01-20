@@ -22,7 +22,7 @@ context('Admin Document Extract Config', () => {
     cy.contains('button', 'SAVE').click();
     // Refresh the page
     cy.contains('button', 'All Documents').click();
-    cy.contains('a', 'building.csv').click();
+    cy.contains('a', 'spend.docx').click();
     // Config button is now showing
     cy.get('[data-testid="config"]').should('exist');
     // Click on Config button to open config file modal
@@ -56,7 +56,7 @@ context('Investigator Document Detail', () => {
     cy.contains('button', 'SAVE').click();
     // Refresh the page
     cy.contains('button', 'All Documents').click();
-    cy.contains('a', 'building.csv').click();
+    cy.contains('a', 'spend.docx').click();
     // Config button is still not showing
     cy.get('[data-testid="config"]').should('not.exist');
   });

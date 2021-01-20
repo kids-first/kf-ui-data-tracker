@@ -17,11 +17,11 @@ context('Admin Study Collaborators', () => {
     // Click add collaborator button to add a user
     cy.contains('button', 'ADD COLLABORATOR').click();
     cy.contains('div', 'Choose a user').click();
-    cy.contains('span', 'Michael Newman').click();
+    cy.contains('span', 'Alexis').click();
     cy.contains('div', 'Choose role').click();
     cy.get('[data-testid="add-button"]').click();
     // Show newly added collaborator
-    cy.contains('div', 'Michael Newman').should('exist');
+    cy.contains('div', 'Alexis').should('exist');
     // Close collaborator modal
     cy.get('div.actions')
       .contains('button', 'Close')

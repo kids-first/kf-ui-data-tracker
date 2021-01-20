@@ -21,7 +21,7 @@ context('Admin Document List', () => {
     // Filter the document by name using the search box with one return
     cy.get('input[aria-label="file-search-input"]')
       .focus()
-      .type('wonder');
+      .type('room.bmp');
     cy.get('table')
       .find('tr')
       .its('length')
@@ -68,34 +68,34 @@ context('Admin Document List', () => {
 
     cy.get('tr')
       .eq(1)
-      .should('contain', 'word.js');
+      .should('contain', 'room.bmp');
 
     // Sort documents by create date using the last updated column
     cy.contains('th', 'Last Updated').click();
     cy.get('tr')
       .eq(1)
-      .should('contain', 'old.doc');
+      .should('contain', 'above.jpeg');
     cy.get('tr')
       .eq(5)
-      .should('contain', 'word.js');
+      .should('contain', 'room.bmp');
 
     // Reverse sort
     cy.contains('th', 'Last Updated').click();
     cy.get('tr')
       .eq(5)
-      .should('contain', 'old.doc');
+      .should('contain', 'above.jpeg');
     cy.get('tr')
       .eq(1)
-      .should('contain', 'word.js');
+      .should('contain', 'room.bmp');
 
     // Sort by name
     cy.contains('th', 'Document Details').click();
     cy.get('tr')
       .eq(1)
-      .should('contain', 'cover.key');
+      .should('contain', 'above.jpeg');
     cy.get('tr')
       .eq(5)
-      .should('contain', 'word.js');
+      .should('contain', 'unit.docx');
 
     // Sort by Kids First ID
     cy.contains('label', 'Show Kids First ID').click();
