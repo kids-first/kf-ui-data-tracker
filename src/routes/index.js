@@ -173,6 +173,12 @@ const Routes = () => (
           scope={['study', 'basic info']}
         />
         <PrivateRoute
+          exact
+          path="/study/:kfId"
+          component={StudyFilesListView}
+          scope={['study', 'documents']}
+        />
+        <PrivateRoute
           path="/research-study/:kfId/basic-info"
           component={ResearchStudyInfoView}
           scope={['study', 'basic info']}
