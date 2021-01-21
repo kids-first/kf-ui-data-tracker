@@ -74,7 +74,7 @@ jobs:
           name: Run Cypress tests
           command: |
             set +e
-            docker-compose up -d web scheduler worker app dataservice coordinator email
+            docker-compose up -d web scheduler worker app dataservice email
             sleep 120
             (docker-compose up --abort-on-container-exit --exit-code-from cypress cypress)
             echo $? > .test-result
@@ -87,6 +87,8 @@ jobs:
             mkdir ./artifacts
             docker cp project_app_1:/app/cypress-coverage ./artifacts/cypress-coverage
             docker cp cypress:/app/cypress/screenshots ./artifacts/screenshots
+            echo "Returning exit code `cat .test-result`"
+            exit `cat .test-result`
       - store_artifacts:
           path: ./artifacts
       - persist_to_workspace:

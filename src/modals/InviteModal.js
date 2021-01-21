@@ -89,6 +89,7 @@ const InviteModal = ({open, onCloseDialog}) => {
       >
         {formikProps => (
           <InviteModalContent
+            scrolling
             onCloseDialog={onCloseDialog}
             studies={studies || []}
             groups={groups || []}

@@ -18,9 +18,11 @@ context('Admin Document Detail', () => {
       .its('length')
       .should('eq', 6);
     // Click on the first document to go to detail page
-    cy.contains('a', 'white.tiff').click();
+    cy.contains('a', 'security.doc').click();
     // Add tag
-    cy.get('[data-testid="tag-file"]').click();
+    cy.get('[data-testid="tag-file"]')
+      .first()
+      .click();
     cy.get('[data-testid="tag-dropdown"] > .search').type('abc{enter}');
     cy.get('[data-testid="tag-file-add"]').click();
     // Go back to document list
@@ -41,7 +43,7 @@ context('Admin Document Detail', () => {
       .its('length')
       .should('eq', 6);
     // Click on the first document to go to detail page
-    cy.contains('a', 'white.tiff').click();
+    cy.contains('a', 'security.doc').click();
     // No delete button
     cy.get('i').should('have.class', 'trash');
     // No edit button
@@ -69,7 +71,7 @@ context('Investigator Document Detail', () => {
       .its('length')
       .should('eq', 6);
     // Click on the first document to go to detail page
-    cy.contains('a', 'young.jpg').click();
+    cy.contains('a', 'song.mp3').click();
     // No delete button
     cy.get('i').should('not.have.class', 'trash');
     // Has edit button
