@@ -1,6 +1,6 @@
 import React from 'react';
 import {Helmet} from 'react-helmet';
-import {useQuery} from '@apollo/react-hooks';
+import {useQuery} from '@apollo/client';
 import {Link} from 'react-router-dom';
 import {Container, Grid, Header, List, Icon, Segment} from 'semantic-ui-react';
 import {ALL_LOGS, ALL_JOBS} from '../queries';

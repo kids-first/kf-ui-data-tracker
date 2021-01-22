@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import {Amplitude, LogOnMount} from '@amplitude/react-amplitude';
-import {useMutation} from '@apollo/react-hooks';
+import {useMutation} from '@apollo/client';
 import {Button, Header, Modal, Icon, Message} from 'semantic-ui-react';
 import {
   ChooseMethodStep,

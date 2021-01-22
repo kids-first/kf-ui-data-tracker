@@ -1,6 +1,6 @@
 import React, {useState, useRef} from 'react';
 import {Helmet} from 'react-helmet';
-import {useQuery, useMutation} from '@apollo/react-hooks';
+import {useQuery, useMutation} from '@apollo/client';
 import {withRouter} from 'react-router-dom';
 import {TaskList} from '../components/TaskList';
 import {Events} from '../components/Events';

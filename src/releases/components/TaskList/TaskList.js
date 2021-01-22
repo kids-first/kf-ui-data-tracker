@@ -1,5 +1,5 @@
 import React from 'react';
-import {useQuery} from '@apollo/react-hooks';
+import {useQuery} from '@apollo/client';
 import {Icon, Label, List, Loader, Message} from 'semantic-ui-react';
 
 import {ALL_TASKS} from '../../queries';

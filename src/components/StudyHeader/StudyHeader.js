@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {useQuery} from '@apollo/react-hooks';
+import {useQuery} from '@apollo/client';
 import {Amplitude} from '@amplitude/react-amplitude';
 import {Link} from 'react-router-dom';
 import propTypes from 'prop-types';

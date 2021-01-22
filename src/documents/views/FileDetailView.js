@@ -1,6 +1,6 @@
 import React from 'react';
 import {Helmet} from 'react-helmet';
-import {useQuery, useMutation} from '@apollo/react-hooks';
+import {useQuery, useMutation} from '@apollo/client';
 import {MY_PROFILE, GET_STUDY_BY_ID, ALL_EVENTS} from '../../state/queries';
 import {GET_FILE_BY_ID} from '../queries';
 import {UPDATE_FILE, DELETE_FILE, FILE_DOWNLOAD_URL} from '../mutations';

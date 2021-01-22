@@ -1,6 +1,6 @@
 import React from 'react';
 import {Helmet} from 'react-helmet';
-import {useQuery} from '@apollo/react-hooks';
+import {useQuery} from '@apollo/client';
 import {Link, Redirect} from 'react-router-dom';
 import {ALL_STUDIES, MY_PROFILE} from '../state/queries';
 import StudyList from '../components/StudyList/StudyList';

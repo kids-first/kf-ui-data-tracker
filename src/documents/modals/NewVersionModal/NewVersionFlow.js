@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import {Amplitude} from '@amplitude/react-amplitude';
-import {useMutation} from '@apollo/react-hooks';
+import {useMutation} from '@apollo/client';
 import {draftToMarkdown} from 'markdown-draft-js';
 import {EditorState, convertToRaw, ContentState} from 'draft-js';
 import {Button, Modal, Message, Icon} from 'semantic-ui-react';

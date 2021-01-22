@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {useQuery, useMutation} from '@apollo/react-hooks';
+import {useQuery, useMutation} from '@apollo/client';
 import {Button, Message, Container, Segment, Icon} from 'semantic-ui-react';
 import StudyTable from '../components/StudyList/StudyTable';
 import {ALL_STUDIES, MY_PROFILE} from '../state/queries';
