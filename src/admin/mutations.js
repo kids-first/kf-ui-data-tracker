@@ -22,3 +22,49 @@ export const DELETE_DEV_TOKEN = gql`
     }
   }
 `;
+
+// Mutation to create banner
+export const CREATE_BANNER = gql`
+  mutation($input: BannerInput!) {
+    createBanner(input: $input) {
+      banner {
+        id
+        message
+        severity
+        enabled
+        startDate
+        endDate
+        url
+        urlLabel
+      }
+    }
+  }
+`;
+
+// Mutation to update banner
+export const UPDATE_BANNER = gql`
+  mutation($id: ID!, $input: BannerInput!) {
+    updateBanner(id: $id, input: $input) {
+      banner {
+        id
+        message
+        severity
+        enabled
+        startDate
+        endDate
+        url
+        urlLabel
+      }
+    }
+  }
+`;
+
+// Mutation to delete a banner
+export const DELETE_BANNER = gql`
+  mutation DeleteBanner($id: ID!) {
+    deleteBanner(id: $id) {
+      id
+      success
+    }
+  }
+`;
