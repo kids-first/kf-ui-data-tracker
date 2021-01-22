@@ -35,6 +35,9 @@ import {
   ResearchStudyInfoView,
 } from '../research/views';
 import {
+  EditBannerView,
+  NewBannerView,
+  BannersView,
   BucketsView,
   CavaticaProjectsView,
   ConfigurationView,
@@ -127,6 +130,27 @@ const Routes = () => (
           component={ConfigurationView}
           scope={['admin', 'configuration']}
           permissions={['view_settings']}
+        />
+        <RestrictedRoute
+          exact
+          path="/banners/new-banner"
+          component={NewBannerView}
+          scope={['admin', 'banners']}
+          permissions={['add_banner']}
+        />
+        <RestrictedRoute
+          exact
+          path="/banners/edit/:bannerId"
+          component={EditBannerView}
+          scope={['admin', 'banners']}
+          permissions={['change_banner']}
+        />
+        <RestrictedRoute
+          exact
+          path="/banners"
+          component={BannersView}
+          scope={['admin', 'banners']}
+          permissions={['list_all_banner']}
         />
         <AdminRoute
           exact
