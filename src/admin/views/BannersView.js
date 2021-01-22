@@ -15,14 +15,18 @@ const BannersView = () => {
   const {loading, error, data} = useQuery(ALL_BANNERS);
   const {data: profileData} = useQuery(MY_PROFILE);
   const [deleteBanner] = useMutation(DELETE_BANNER, {
-    refetchQueries: [{query: ALL_BANNERS}],
+    refetchQueries: [
+      {query: ALL_BANNERS},
+      {query: ALL_BANNERS, variables: {enabled: true}},
+    ],
   });
   const myProfile = profileData && profileData.myProfile;
 
   const handleDelete = (banner) => {
-    if (myProfile && hasPermission(myProfile, 'change_banner')) {
+    if (myProfile && hasPermission(myProfile, 'delete_banner')) {
       deleteBanner({variables: {id: banner}});
     } else {
+      return null;
     }
   };
 
@@ -30,6 +34,7 @@ const BannersView = () => {
     if (myProfile && hasPermission(myProfile, 'change_banner')) {
       history.push(`/banners/edit/${banner}`);
     } else {
+      return null;
     }
   };
 
@@ -39,10 +44,15 @@ const BannersView = () => {
         <title>KF Data Tracker - Banners </title>
       </Helmet>
       <Header as="h2">Manage App Banners</Header>
-      <Segment basic>
+      <Segment basic vertical>
         Administrators can add message banners that will be persistently
         displayed on Data Tracker, informing users of anything important (e.g.
         scheduled downtime, new feature announcement).
+        <br />
+        <br />A banner will begin being displayed on the start date at midnight,
+        and stop being displayed on midnight of the end date. Only the latest
+        two (sorted by start date) enabled banners will be displayed at any
+        given time.
         {error && (
           <Message
             negative

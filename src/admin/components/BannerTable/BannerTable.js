@@ -51,7 +51,13 @@ const BannerTable = ({loading, error, banners, handleDelete, handleEdit}) => {
       <Table.Header>
         <Table.Row>
           {headerCells}
-          <Table.HeaderCell key="actions">Actions</Table.HeaderCell>
+          {/* 
+            Handlers are null if user didn't have perms. Only show action 
+            column if handlers exist/user has permissions to perform actions 
+            */}
+          {handleDelete && handleEdit && (
+            <Table.HeaderCell key="actions">Actions</Table.HeaderCell>
+          )}
         </Table.Row>
       </Table.Header>
       <Table.Body>
@@ -73,11 +79,17 @@ const BannerTable = ({loading, error, banners, handleDelete, handleEdit}) => {
                 size="large"
               />
             </Table.Cell>
-            <ActionButtons
-              key={node.id + 'actions'}
-              handleDelete={() => handleDelete(node.id)}
-              handleEdit={() => handleEdit(node.id)}
-            />
+            {/* 
+              Handlers are null if user didn't have perms. Only show action 
+              buttons if handlers exist/user has permissions to perform actions 
+              */}
+            {handleDelete && handleEdit && (
+              <ActionButtons
+                key={node.id + 'actions'}
+                handleDelete={() => handleDelete(node.id)}
+                handleEdit={() => handleEdit(node.id)}
+              />
+            )}
           </Table.Row>
         ))}
       </Table.Body>
