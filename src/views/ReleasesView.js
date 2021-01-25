@@ -1,5 +1,5 @@
 import React from 'react';
-import {useQuery} from '@apollo/react-hooks';
+import {useQuery} from '@apollo/client';
 import {Helmet} from 'react-helmet';
 import {
   GET_STUDY_RELEASES,

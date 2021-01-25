@@ -1,6 +1,6 @@
 import React from 'react';
 import {Helmet} from 'react-helmet';
-import {useQuery} from '@apollo/react-hooks';
+import {useQuery} from '@apollo/client';
 import {useHistory} from 'react-router-dom';
 import {Segment, Container, Button, Header} from 'semantic-ui-react';
 import {ServiceList} from '../components/ServiceList';

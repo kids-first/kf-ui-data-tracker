@@ -1,5 +1,5 @@
 import React from 'react';
-import {useQuery} from '@apollo/react-hooks';
+import {useQuery} from '@apollo/client';
 import TrackedRoute from './TrackedRoute';
 import NotFoundView from '../views/NotFoundView';
 import {hasPermissions} from '../common/permissions';

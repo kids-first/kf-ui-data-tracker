@@ -4,7 +4,7 @@ import {render, cleanup} from '@testing-library/react';
 import FileElement from '../FileElement';
 import {mocks} from '../../../../../__mocks__/kf-api-study-creator/mocks';
 import studyByKfId from '../../../../../__mocks__/kf-api-study-creator/responses/studyByKfId';
-import {MockedProvider} from '@apollo/react-testing';
+import {MockedProvider} from '@apollo/client/testing';
 
 afterEach(cleanup);
 it('renders correctly', () => {

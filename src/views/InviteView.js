@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import queryString from 'query-string';
 import jwtDecode from 'jwt-decode';
 import {Link} from 'react-router-dom';
-import {useMutation} from '@apollo/react-hooks';
+import {useMutation} from '@apollo/client';
 import {Redirect} from 'react-router-dom';
 import {
   Container,

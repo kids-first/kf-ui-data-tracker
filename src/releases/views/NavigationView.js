@@ -1,5 +1,5 @@
 import React from 'react';
-import {useQuery} from '@apollo/react-hooks';
+import {useQuery} from '@apollo/client';
 import {Route, Switch} from 'react-router-dom';
 import {Container, Grid, Menu, Segment} from 'semantic-ui-react';
 import {NavLink, useLocation} from 'react-router-dom';

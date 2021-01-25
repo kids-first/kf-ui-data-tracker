@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Helmet} from 'react-helmet';
-import {useQuery, useMutation} from '@apollo/react-hooks';
+import {useQuery, useMutation} from '@apollo/client';
 import {GET_STUDY_BY_ID, MY_PROFILE} from '../../state/queries';
 import {UPDATE_STUDY} from '../../state/mutations';
 import NewResearchStudyForm from '../forms/NewResearchStudyForm';

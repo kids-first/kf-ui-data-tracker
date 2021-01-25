@@ -45,7 +45,7 @@ export const downloadFile = (
 // Sort file versions based on the version createdAt date (Latest first)
 export const fileSortedVersions = fileNode => {
   if (fileNode && fileNode.versions && fileNode.versions.edges.length > 0) {
-    return fileNode.versions.edges.sort(dateCompare);
+    return [...fileNode.versions.edges].sort(dateCompare);
   } else return [];
 };
 

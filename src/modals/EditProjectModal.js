@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {useMutation} from '@apollo/react-hooks';
+import {useMutation} from '@apollo/client';
 import TimeAgo from 'react-timeago';
 import {Formik} from 'formik';
 import {Button, Header, Message, Modal} from 'semantic-ui-react';

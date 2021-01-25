@@ -1,5 +1,5 @@
 import React from 'react';
-import {useQuery} from '@apollo/react-hooks';
+import {useQuery} from '@apollo/client';
 import {STATUS} from '../../state/queries';
 import {Container, Segment, Label, List} from 'semantic-ui-react';
 import {systemEnvColors} from '../../common/enums';

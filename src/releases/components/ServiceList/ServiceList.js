@@ -1,5 +1,5 @@
 import React, {Fragment, useState} from 'react';
-import {useMutation} from '@apollo/react-hooks';
+import {useMutation} from '@apollo/client';
 import {Link, withRouter} from 'react-router-dom';
 import {Button, Loader, List, Message, Icon, Radio} from 'semantic-ui-react';
 import {UPDATE_SERVICE} from '../../mutations';

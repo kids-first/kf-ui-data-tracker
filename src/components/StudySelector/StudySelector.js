@@ -8,7 +8,7 @@ import {Dropdown} from 'semantic-ui-react';
 const StudySelector = ({studies, ...props}) => {
   const options =
     studies && studies.length > 0
-      ? studies
+      ? [...studies]
           .sort(({node: n1}, {node: n2}) => n1.kfId.localeCompare(n2.kfId))
           .map(({node}) => ({
             key: node.id,

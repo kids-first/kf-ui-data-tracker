@@ -1,5 +1,5 @@
 import React from 'react';
-import {useMutation} from '@apollo/react-hooks';
+import {useMutation} from '@apollo/client';
 import {Container, Segment} from 'semantic-ui-react';
 import {CREATE_SERVICE} from '../mutations';
 import {ALL_SERVICES} from '../queries';

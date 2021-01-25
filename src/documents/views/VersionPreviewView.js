@@ -1,6 +1,6 @@
 import React, {useState, useEffect, Suspense} from 'react';
 import {Helmet} from 'react-helmet';
-import {useQuery} from '@apollo/react-hooks';
+import {useQuery} from '@apollo/client';
 import {GET_FILE_BY_ID} from '../queries';
 import {fileSortedVersions} from '../utilities';
 import {

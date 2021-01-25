@@ -1,7 +1,7 @@
 import React from 'react';
 import {Table} from 'semantic-ui-react';
 import {MemoryRouter} from 'react-router-dom';
-import {MockedProvider} from '@apollo/react-testing';
+import {MockedProvider} from '@apollo/client/testing';
 import {render, cleanup, fireEvent, act} from '@testing-library/react';
 import {mocks} from '../../../../../__mocks__/kf-api-study-creator/mocks';
 import fileByKfId from '../../../../../__mocks__/kf-api-study-creator/responses/fileByKfId';

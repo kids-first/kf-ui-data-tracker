@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Helmet} from 'react-helmet';
-import {useQuery, useMutation} from '@apollo/react-hooks';
+import {useQuery, useMutation} from '@apollo/client';
 import {MY_PROFILE, GET_STUDY_BY_ID} from '../state/queries';
 import {ADD_COLLABORATOR, REMOVE_COLLABORATOR} from '../state/mutations';
 import {hasPermission} from '../common/permissions';

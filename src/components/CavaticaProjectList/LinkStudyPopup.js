@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Button, Popup} from 'semantic-ui-react';
-import {useQuery, useMutation} from '@apollo/react-hooks';
+import {useQuery, useMutation} from '@apollo/client';
 import {Formik} from 'formik';
 import {ALL_STUDIES, GET_PROJECTS} from '../../state/queries';
 import {LINK_PROJECT} from '../../state/mutations';
