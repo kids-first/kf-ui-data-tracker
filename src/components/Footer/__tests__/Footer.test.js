@@ -1,7 +1,7 @@
 import React from 'react';
 import wait from 'waait';
 import {render, cleanup} from '@testing-library/react';
-import {MockedProvider} from '@apollo/react-testing';
+import {MockedProvider} from '@apollo/client/testing';
 import {mocks} from '../../../../__mocks__/kf-api-study-creator/mocks';
 import Footer from '../Footer';
 

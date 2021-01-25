@@ -1,6 +1,6 @@
 import React from 'react';
 import {MemoryRouter} from 'react-router-dom';
-import {MockedProvider} from '@apollo/react-testing';
+import {MockedProvider} from '@apollo/client/testing';
 import {render} from '@testing-library/react';
 import wait from 'waait';
 import {MY_PROFILE} from '../../../../src/state/queries';
