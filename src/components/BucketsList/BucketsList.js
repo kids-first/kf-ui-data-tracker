@@ -4,7 +4,7 @@ import {Header, Icon, List} from 'semantic-ui-react';
 
 const BucketsList = ({buckets}) => (
   <List divided>
-    {buckets
+    {[...buckets]
       .sort((n1, n2) => {
         if (n1.node.deleted && !n2.node.deleted) {
           return 1;

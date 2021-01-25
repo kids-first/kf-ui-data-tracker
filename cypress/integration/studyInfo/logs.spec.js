@@ -19,8 +19,9 @@ context('Admin Study Logs', () => {
     // Use event type filter dropdown select "Study File Created"
     cy.contains('div', 'Event Type').click();
     cy.contains('span', 'Study File Created').click();
-    // Show 5 marching logs
-    cy.get('[data-testid="event-item"]')
+    // Show 5 matching logs
+    cy.wait(800)
+      .get('[data-testid="event-item"]')
       .its('length')
       .should('eq', 5);
   });

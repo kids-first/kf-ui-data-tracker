@@ -195,7 +195,7 @@ exports[`renders latest temporary state 1`] = `
             <a
               class="ui basic compact icon button"
               data-testid="download-file"
-              href="http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167/version/FV_KCDKCDYR"
+              href="http://localhost:8080/download/study/SD_8WX8QQ06/file/SF_5ZPEM167/version/FV_NVV741M1"
               role="button"
             >
               <i
