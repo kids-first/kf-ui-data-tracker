@@ -38,7 +38,7 @@ const cellContent = {
   state: node => node.state,
 };
 
-const ReleaseTable = ({releases}) => {
+const ReleaseTable = ({releases, footer}) => {
   const defaultState = {
     columns: [
       {key: 'name', name: 'Name', visible: true},
@@ -110,6 +110,7 @@ const ReleaseTable = ({releases}) => {
       sortable
       celled
       headerRow={header}
+      footerRow={footer}
       tableData={
         columns.sorting.direction === 'ascending'
           ? sortedReleases
