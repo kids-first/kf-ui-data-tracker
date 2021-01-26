@@ -156,7 +156,7 @@ const StudyTable = ({studies, selected, onChange}) => {
               .slice((columns.page - 1) * PAGESIZE, columns.page * PAGESIZE)
       }
       renderBodyRow={(data, i) => renderRow(data, i, visibleCols)}
-      footerRow={pagination}
+      footerRow={studies.length / PAGESIZE > 1 && pagination}
     />
   );
 };
