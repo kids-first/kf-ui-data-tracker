@@ -35,7 +35,7 @@ const cellContent = {
   createdAt: node => (
     <CreatedAt date={node.createdAt} key={node.kfId + 'createdAt'} />
   ),
-  state: node => node.state,
+  state: node => <Table.Cell width="1">{node.state}</Table.Cell>,
 };
 
 const ReleaseTable = ({releases, footer}) => {
