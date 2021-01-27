@@ -100,8 +100,8 @@ export const ALL_USERS = gql`
 `;
 
 export const ALL_LOGS = gql`
-  query AllLogs {
-    allJobLogs(orderBy: "-created_at", first: 20) {
+  query AllLogs($job: ID) {
+    allJobLogs(orderBy: "-created_at", job: $job, first: 20) {
       edges {
         node {
           id
