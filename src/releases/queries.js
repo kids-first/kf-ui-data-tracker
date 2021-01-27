@@ -2,8 +2,20 @@ import gql from 'graphql-tag';
 import {RELEASE_FIELDS, SERVICE_FIELDS} from './fragments';
 
 export const GET_RELEASES = gql`
-  query AllReleases {
-    allReleases(first: 20, orderBy: "-created_at") {
+  query AllReleases($first: Int, $last: Int, $after: String, $before: String) {
+    allReleases(
+      first: $first
+      last: $last
+      after: $after
+      before: $before
+      orderBy: "-created_at"
+    ) {
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+        startCursor
+        endCursor
+      }
       edges {
         node {
           ...ReleaseFields

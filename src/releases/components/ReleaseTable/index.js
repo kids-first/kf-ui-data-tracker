@@ -1,1 +1,1 @@
-export {default as ReleaseTable} from './ReleaseTable';
+export {default as ReleaseTable} from './ReleaseController';

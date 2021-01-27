@@ -35,10 +35,10 @@ const cellContent = {
   createdAt: node => (
     <CreatedAt date={node.createdAt} key={node.kfId + 'createdAt'} />
   ),
-  state: node => node.state,
+  state: node => <Table.Cell width="1">{node.state}</Table.Cell>,
 };
 
-const ReleaseTable = ({releases}) => {
+const ReleaseTable = ({releases, footer}) => {
   const defaultState = {
     columns: [
       {key: 'name', name: 'Name', visible: true},
@@ -110,6 +110,7 @@ const ReleaseTable = ({releases}) => {
       sortable
       celled
       headerRow={header}
+      footerRow={footer}
       tableData={
         columns.sorting.direction === 'ascending'
           ? sortedReleases
