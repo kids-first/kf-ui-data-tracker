@@ -1,6 +1,14 @@
 import React, {useState} from 'react';
 import {Amplitude} from '@amplitude/react-amplitude';
-import {Button, Form, Header, Message, Input, Segment} from 'semantic-ui-react';
+import {
+  Button,
+  Form,
+  Grid,
+  Header,
+  Message,
+  Input,
+  Segment,
+} from 'semantic-ui-react';
 import {Formik} from 'formik';
 import {EditorState, convertToRaw, ContentState} from 'draft-js';
 import MarkdownEditor from '../../documents/components/FileDetail/MarkdownEditor';
@@ -27,6 +35,8 @@ const NewReleaseForm = ({
   const [editorState, setEditorState] = useState(
     EditorState.createWithContent(ContentState.createFromText('')),
   );
+  // Filter to narrow study selection
+  const [filter, setFilter] = useState('');
 
   const toggleStudy = study => {
     if (values.studies.filter(s => s.id === study.id).length) {
@@ -81,11 +91,26 @@ const NewReleaseForm = ({
       </Form.Field>
 
       <Form.Field>
-        <Header>Choose Studies</Header>
+        <Grid>
+          <Grid.Column width={8}>
+            <Header>Choose Studies</Header>
+          </Grid.Column>
+          <Grid.Column textAlign="right" width={8}>
+            <Input
+              icon="search"
+              placeholder="Filter by name, kf_id"
+              onChange={e => setFilter(e.target.value)}
+            />
+          </Grid.Column>
+        </Grid>
         <StudyTable
           name="studies"
           selected={values.studies}
-          studies={studies}
+          studies={studies.filter(
+            study =>
+              study.name.toLowerCase().includes(filter.toLowerCase()) ||
+              study.kfId.toLowerCase().includes(filter.toLowerCase()),
+          )}
           value={values.studies}
           onBlur={handleBlur}
           onChange={toggleStudy}

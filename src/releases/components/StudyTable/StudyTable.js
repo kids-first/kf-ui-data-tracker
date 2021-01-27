@@ -76,16 +76,17 @@ const StudyTable = ({studies, selected, onChange}) => {
 
   const visibleCols = columns.columns.filter(col => col.visible);
 
-  const flattenedStudies = studies.map(study => {
+  const flattenedStudies = [...studies].map(study => {
+    const augmentedStudy = {...study};
     if (study.releases.edges.length) {
-      study.version = study.releases.edges[0].node.version;
-      if (!study.version) study.version = '-';
-      study.lastPublished = study.releases.edges[0].node.createdAt;
+      augmentedStudy.version = study.releases.edges[0].node.version;
+      if (!study.version) augmentedStudy.version = '-';
+      augmentedStudy.lastPublished = study.releases.edges[0].node.createdAt;
     } else {
-      study.version = '-';
-      study.lastPublished = null;
+      augmentedStudy.version = '-';
+      augmentedStudy.lastPublished = null;
     }
-    return study;
+    return augmentedStudy;
   });
   const sortedStudies = flattenedStudies
     .sort((a, b) => b.kfId.localeCompare(a.kfId))
@@ -155,7 +156,7 @@ const StudyTable = ({studies, selected, onChange}) => {
               .slice((columns.page - 1) * PAGESIZE, columns.page * PAGESIZE)
       }
       renderBodyRow={(data, i) => renderRow(data, i, visibleCols)}
-      footerRow={pagination}
+      footerRow={studies.length / PAGESIZE > 1 && pagination}
     />
   );
 };
