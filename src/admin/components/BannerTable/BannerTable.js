@@ -32,7 +32,7 @@ const BannerTable = ({
   bannersLoading,
   bannersError,
   banners,
-  handleDelete,
+  deleteBanner,
   handleEdit,
 }) => {
   // Error loading banners
@@ -69,7 +69,7 @@ const BannerTable = ({
   }
 
   // Table header
-  const headerCells = COLUMNS.map((item) => (
+  const headerCells = COLUMNS.map(item => (
     <Table.HeaderCell key={item.key}>{item.name}</Table.HeaderCell>
   ));
 
@@ -83,7 +83,7 @@ const BannerTable = ({
             Handlers are null if user didn't have perms. Only show action 
             column if handlers exist/user has permissions to perform actions 
             */}
-          {handleDelete && handleEdit && (
+          {deleteBanner && handleEdit && (
             <Table.HeaderCell key="actions">Actions</Table.HeaderCell>
           )}
         </Table.Row>
@@ -104,18 +104,18 @@ const BannerTable = ({
               Only show action buttons/toggle if handlers exist.
               */}
             <BannerDate key={node.id + 'endDate'} date={node.endDate} />
-            {updateBanner && (
+            {
               <BannerToggle
                 key={node.id + 'enabled'}
                 bannerId={node.id}
                 isActive={node.enabled}
-                updateBanner={updateBanner}
+                updateBanner={deleteBanner && handleEdit && updateBanner}
               />
-            )}
-            {handleDelete && handleEdit && (
+            }
+            {deleteBanner && handleEdit && (
               <ActionButtons
                 key={node.id + 'actions'}
-                handleDelete={() => handleDelete(node.id)}
+                handleDelete={() => deleteBanner({variables: {id: node.id}})}
                 handleEdit={() => handleEdit(node.id)}
               />
             )}

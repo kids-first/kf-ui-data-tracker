@@ -31,22 +31,6 @@ const BannersView = () => {
   });
   const myProfile = profileData && profileData.myProfile;
 
-  const handleDelete = (banner) => {
-    if (myProfile && hasPermission(myProfile, 'delete_banner')) {
-      deleteBanner({variables: {id: banner}});
-    } else {
-      return null;
-    }
-  };
-
-  const handleEdit = (banner) => {
-    if (myProfile && hasPermission(myProfile, 'change_banner')) {
-      history.push(`/banners/edit/${banner}`);
-    } else {
-      return null;
-    }
-  };
-
   return (
     <Container as={Segment} basic>
       <Helmet>
@@ -98,8 +82,16 @@ const BannersView = () => {
           bannersError={error}
           bannersLoading={loading}
           banners={data && data.allBanners.edges}
-          handleDelete={handleDelete}
-          handleEdit={handleEdit}
+          deleteBanner={
+            myProfile && hasPermission(myProfile, 'delete_banner')
+              ? deleteBanner
+              : null
+          }
+          handleEdit={
+            myProfile && hasPermission(myProfile, 'change_banner')
+              ? banner => history.push(`/banners/edit/${banner}`)
+              : null
+          }
         />
       )}
     </Container>

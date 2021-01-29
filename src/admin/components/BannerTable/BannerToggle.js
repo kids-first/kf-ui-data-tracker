@@ -5,7 +5,7 @@ import {useHistory} from 'react-router-dom';
 const BannerToggle = ({isActive, bannerId, updateBanner}) => {
   const history = useHistory();
   const [enabled, setEnabled] = useState(isActive);
-  const toggle = (e) => {
+  const toggle = e => {
     setEnabled(!enabled);
 
     let data = {
@@ -15,10 +15,10 @@ const BannerToggle = ({isActive, bannerId, updateBanner}) => {
       },
     };
     updateBanner(data)
-      .then((resp) => {
+      .then(resp => {
         history.push(`/banners`);
       })
-      .catch((err) => {
+      .catch(err => {
         console.log(err);
       });
   };
@@ -29,6 +29,7 @@ const BannerToggle = ({isActive, bannerId, updateBanner}) => {
         label={enabled ? 'Active' : 'Inactive'}
         checked={enabled}
         onChange={toggle}
+        disabled={!updateBanner}
       />
     </Table.Cell>
   );
