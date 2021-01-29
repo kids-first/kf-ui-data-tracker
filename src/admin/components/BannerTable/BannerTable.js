@@ -1,8 +1,17 @@
 import React from 'react';
-import {Dimmer, Loader, Icon, Table, Segment, Header} from 'semantic-ui-react';
+import {
+  Message,
+  Dimmer,
+  Loader,
+  Icon,
+  Table,
+  Segment,
+  Header,
+} from 'semantic-ui-react';
 
 import ActionButtons from './ActionButtons';
 import BannerDate from './BannerDate';
+import BannerToggle from './BannerToggle';
 import Creator from './Creator';
 import BannerMessage from './BannerMessage';
 import Severity from './Severity';
@@ -16,9 +25,28 @@ const COLUMNS = [
   {key: 'enabled', name: 'Enabled'},
 ];
 
-const BannerTable = ({loading, error, banners, handleDelete, handleEdit}) => {
+const BannerTable = ({
+  updateBannerLoading,
+  updateBannerError,
+  updateBanner,
+  bannersLoading,
+  bannersError,
+  banners,
+  handleDelete,
+  handleEdit,
+}) => {
+  // Error loading banners
+  if (bannersError || updateBannerError) {
+    return (
+      <Message
+        negative
+        header="Error"
+        content={[bannersError.message, updateBannerError.message].join('\n')}
+      />
+    );
+  }
   // Banners still loading
-  if (loading) {
+  if (bannersLoading || updateBannerLoading) {
     return (
       <Segment padded="very">
         <Dimmer active inverted>
@@ -71,18 +99,19 @@ const BannerTable = ({loading, error, banners, handleDelete, handleEdit}) => {
             />
             <Severity key={node.id + 'severity'} severity={node.severity} />
             <BannerDate key={node.id + 'startDate'} date={node.startDate} />
-            <BannerDate key={node.id + 'endDate'} date={node.endDate} />
-            <Table.Cell singleLine>
-              <Icon
-                name="check"
-                color={node.enabled === true ? 'green' : 'grey'}
-                size="large"
-              />
-            </Table.Cell>
             {/* 
-              Handlers are null if user didn't have perms. Only show action 
-              buttons if handlers exist/user has permissions to perform actions 
+              Handlers are null if user didn't have adequate permissions. 
+              Only show action buttons/toggle if handlers exist.
               */}
+            <BannerDate key={node.id + 'endDate'} date={node.endDate} />
+            {updateBanner && (
+              <BannerToggle
+                key={node.id + 'enabled'}
+                bannerId={node.id}
+                isActive={node.enabled}
+                updateBanner={updateBanner}
+              />
+            )}
             {handleDelete && handleEdit && (
               <ActionButtons
                 key={node.id + 'actions'}

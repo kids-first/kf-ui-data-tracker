@@ -1,20 +1,29 @@
 import React from 'react';
 import {Helmet} from 'react-helmet';
 import {useHistory} from 'react-router-dom';
-import {useQuery, useMutation} from '@apollo/react-hooks';
+import {useQuery, useMutation} from '@apollo/client';
 import {Message, Button, Container, Header, Segment} from 'semantic-ui-react';
 
+import {BannerTable} from '../components/BannerTable';
 import {hasPermission} from '../../common/permissions';
 import {MY_PROFILE} from '../../state/queries';
 import {ALL_BANNERS} from '../queries';
-import {DELETE_BANNER} from '../mutations';
-import {BannerTable} from '../components/BannerTable';
+import {DELETE_BANNER, UPDATE_BANNER} from '../mutations';
 
 const BannersView = () => {
   const history = useHistory();
   const {loading, error, data} = useQuery(ALL_BANNERS);
   const {data: profileData} = useQuery(MY_PROFILE);
   const [deleteBanner] = useMutation(DELETE_BANNER, {
+    refetchQueries: [
+      {query: ALL_BANNERS},
+      {query: ALL_BANNERS, variables: {enabled: true}},
+    ],
+  });
+  const [
+    updateBanner,
+    {loading: updateBannerLoading, error: updateBannerError},
+  ] = useMutation(UPDATE_BANNER, {
     refetchQueries: [
       {query: ALL_BANNERS},
       {query: ALL_BANNERS, variables: {enabled: true}},
@@ -79,8 +88,15 @@ const BannersView = () => {
       {/* Banners Table */}
       {!error && (
         <BannerTable
-          error={error}
-          loading={loading}
+          updateBannerLoading={updateBannerLoading}
+          updateBannerError={updateBannerError}
+          updateBanner={
+            myProfile &&
+            hasPermission(myProfile, 'change_banner') &&
+            updateBanner
+          }
+          bannersError={error}
+          bannersLoading={loading}
           banners={data && data.allBanners.edges}
           handleDelete={handleDelete}
           handleEdit={handleEdit}
