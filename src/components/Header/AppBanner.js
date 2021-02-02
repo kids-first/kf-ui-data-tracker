@@ -2,6 +2,7 @@ import React from 'react';
 import {Icon, Segment} from 'semantic-ui-react';
 import {useQuery} from '@apollo/client';
 import {ALL_BANNERS} from '../../admin/queries';
+import activeDisplayBanners from '../../admin/common/bannerUtils';
 
 const AppBanner = () => {
   const {loading, error, data} = useQuery(ALL_BANNERS, {
@@ -13,33 +14,8 @@ const AppBanner = () => {
     ERROR: 'times circle',
   };
 
-  const isActive = banner => {
-    /* 
-    Banner is active if it is enabled && 
-    start date <= today && end date is after today 
-    or end date is null
-    */
-    // Set today to localtime midnight
-    const today = new Date().setHours(0, 0, 0, 0);
-    if (banner.startDate && banner.endDate) {
-      return (
-        Date.parse(banner.startDate) <= today &&
-        Date.parse(banner.endDate) > today
-      );
-    } else if (banner.startDate) {
-      return Date.parse(banner.startDate) <= today;
-    } else {
-      return false;
-    }
-  };
-
   if ((!loading || !error) && data && data.allBanners.edges.length > 0) {
-    const banners = data.allBanners.edges
-      .map(banner => banner.node)
-      .filter(banner => isActive(banner));
-    const displayBanners = banners
-      .slice(0, 2)
-      .sort((a, b) => a.startDate - b.startDate);
+    const displayBanners = activeDisplayBanners(data.allBanners.edges);
 
     return (
       displayBanners.length > 0 && (

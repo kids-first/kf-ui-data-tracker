@@ -9,6 +9,7 @@ import {
   Header,
 } from 'semantic-ui-react';
 
+import activeDisplayBanners from '../../common/bannerUtils';
 import ActionButtons from './ActionButtons';
 import BannerDate from './BannerDate';
 import BannerToggle from './BannerToggle';
@@ -73,6 +74,11 @@ const BannerTable = ({
     <Table.HeaderCell key={item.key}>{item.name}</Table.HeaderCell>
   ));
 
+  // Displayed banners
+  const displayedBanners = new Set(
+    activeDisplayBanners(banners).map(banner => banner.id),
+  );
+
   // Banner table
   return (
     <Table celled selectable>
@@ -90,7 +96,10 @@ const BannerTable = ({
       </Table.Header>
       <Table.Body>
         {banners.map(({node}) => (
-          <Table.Row key={node.id}>
+          <Table.Row
+            key={node.id}
+            className={displayedBanners.has(node.id) ? 'positive' : null}
+          >
             <BannerMessage key={node.id + 'message'} message={node.message} />
             <Creator
               key={node.id + 'creator'}
@@ -108,6 +117,7 @@ const BannerTable = ({
               <BannerToggle
                 key={node.id + 'enabled'}
                 bannerId={node.id}
+                displayed={displayedBanners.has(node.id)}
                 isActive={node.enabled}
                 updateBanner={deleteBanner && handleEdit && updateBanner}
               />

@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Table, Radio} from 'semantic-ui-react';
 import {useHistory} from 'react-router-dom';
 
-const BannerToggle = ({isActive, bannerId, updateBanner}) => {
+const BannerToggle = ({displayed, isActive, bannerId, updateBanner}) => {
   const history = useHistory();
   const [enabled, setEnabled] = useState(isActive);
   const toggle = e => {
@@ -26,7 +26,7 @@ const BannerToggle = ({isActive, bannerId, updateBanner}) => {
     <Table.Cell>
       <Radio
         toggle
-        label={enabled ? 'Active' : 'Inactive'}
+        label={displayed ? 'Displayed' : ''}
         checked={enabled}
         onChange={toggle}
         disabled={!updateBanner}
