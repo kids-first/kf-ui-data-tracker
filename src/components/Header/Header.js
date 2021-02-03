@@ -17,8 +17,9 @@ import logo from '../../assets/logo.svg';
 import {getPermissions, hasPermission} from '../../common/permissions.js';
 import {auth} from '../../state/auth';
 import InviteModal from '../../modals/InviteModal';
+import AppBanner from './AppBanner';
 
-const Nav = props => <NavLink {...props} activeClassName="active" />;
+const Nav = (props) => <NavLink {...props} activeClassName="active" />;
 
 /**
  * Each item will be displayed only if the user has permission to view it.
@@ -34,6 +35,12 @@ const AdminDropdown = ({profile}) => {
       route: '/configuration',
       icon: 'settings',
       permission: 'view_settings',
+    },
+    {
+      name: 'Banners',
+      route: '/banners',
+      icon: 'announcement',
+      permission: 'list_all_banner',
     },
     {
       name: 'Buckets',
@@ -100,8 +107,8 @@ const AdminDropdown = ({profile}) => {
 
   // Construct menu nav components
   const menuItems = items
-    .filter(item => permissions.includes(item.permission))
-    .map(item => <Item key={item.route} {...item} />);
+    .filter((item) => permissions.includes(item.permission))
+    .map((item) => <Item key={item.route} {...item} />);
 
   return (
     menuItems.length > 0 && (
@@ -153,60 +160,63 @@ const Header = ({location}) => {
   }
 
   return (
-    <Menu attached size="large">
-      <Container>
-        <Menu.Item>
-          <img src={logo} alt="Kids First logo" />
-        </Menu.Item>
-        <Menu.Item header as={NavLink} to="/" activeClassName="">
-          Data Tracker
-        </Menu.Item>
-        {loggedIn && !location.pathname.includes('/versions/') && (
-          <>
-            <Menu.Item as={Nav} to="/study" content="Studies" />
-            {hasPermission(profile, 'view_settings') && (
-              <Menu.Item as={Nav} to="/releases/history">
-                Releases
-                <Label content="beta" color="blue" attached="bottom right" />
-              </Menu.Item>
-            )}
-            <Menu.Menu position="right">
-              {hasPermission(profile, 'add_referraltoken') && (
-                <AddUserButton profile={profile} />
+    <Container fluid>
+      <Menu attached size="large">
+        <Container>
+          <Menu.Item>
+            <img src={logo} alt="Kids First logo" />
+          </Menu.Item>
+          <Menu.Item header as={NavLink} to="/" activeClassName="">
+            Data Tracker
+          </Menu.Item>
+          {loggedIn && !location.pathname.includes('/versions/') && (
+            <>
+              <Menu.Item as={Nav} to="/study" content="Studies" />
+              {hasPermission(profile, 'view_settings') && (
+                <Menu.Item as={Nav} to="/releases/history">
+                  Releases
+                  <Label content="beta" color="blue" attached="bottom right" />
+                </Menu.Item>
               )}
-              <AdminDropdown profile={profile} />
-              <Dropdown
-                trigger={
-                  <>
-                    <Image avatar src={picUrl} alt={picAlt} />
-                    {profile.username}
-                  </>
-                }
-                className="link item"
-              >
-                <Dropdown.Menu>
-                  <Dropdown.Item as={Nav} to="/profile">
-                    <Icon name="user" />
-                    Profile
-                  </Dropdown.Item>
-                  <Dropdown.Item
-                    as={Nav}
-                    to="/logout"
-                    onClick={() => {
-                      setLoggedIn(false);
-                      auth.logout();
-                    }}
-                  >
-                    <Icon name="log out" />
-                    Logout
-                  </Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-            </Menu.Menu>
-          </>
-        )}
-      </Container>
-    </Menu>
+              <Menu.Menu position="right">
+                {hasPermission(profile, 'add_referraltoken') && (
+                  <AddUserButton profile={profile} />
+                )}
+                <AdminDropdown profile={profile} />
+                <Dropdown
+                  trigger={
+                    <>
+                      <Image avatar src={picUrl} alt={picAlt} />
+                      {profile.username}
+                    </>
+                  }
+                  className="link item"
+                >
+                  <Dropdown.Menu>
+                    <Dropdown.Item as={Nav} to="/profile">
+                      <Icon name="user" />
+                      Profile
+                    </Dropdown.Item>
+                    <Dropdown.Item
+                      as={Nav}
+                      to="/logout"
+                      onClick={() => {
+                        setLoggedIn(false);
+                        auth.logout();
+                      }}
+                    >
+                      <Icon name="log out" />
+                      Logout
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </Menu.Menu>
+            </>
+          )}
+        </Container>
+      </Menu>
+      <AppBanner />
+    </Container>
   );
 };
 

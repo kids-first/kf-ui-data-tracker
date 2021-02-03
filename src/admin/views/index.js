@@ -1,3 +1,6 @@
+export {default as EditBannerView} from './EditBannerView';
+export {default as NewBannerView} from './NewBannerView';
+export {default as BannersView} from './BannersView';
 export {default as BucketsView} from './BucketsView';
 export {default as CavaticaProjectsView} from './CavaticaProjectsView';
 export {default as ConfigurationView} from './ConfigurationView';

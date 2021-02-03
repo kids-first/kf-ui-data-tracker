@@ -149,3 +149,47 @@ export const ALL_JOBS = gql`
     }
   }
 `;
+
+// Get all banners
+export const ALL_BANNERS = gql`
+  query Banners($enabled: Boolean) {
+    allBanners(enabled: $enabled) {
+      edges {
+        node {
+          id
+          message
+          enabled
+          severity
+          startDate
+          endDate
+          url
+          urlLabel
+          creator {
+            ...CreatorFields
+          }
+        }
+      }
+    }
+  }
+  ${CREATOR_FIELDS}
+`;
+
+// Get a banner
+export const GET_BANNER = gql`
+  query($id: ID!) {
+    banner(id: $id) {
+      id
+      message
+      enabled
+      severity
+      startDate
+      endDate
+      url
+      urlLabel
+      creator {
+        ...CreatorFields
+      }
+    }
+  }
+  ${CREATOR_FIELDS}
+`;
