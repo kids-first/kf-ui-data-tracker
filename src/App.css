@@ -13,6 +13,10 @@
 body {
 }
 
+.chart {
+    height: 300px;
+}
+
 /* Utilities CSS classes supporting Semantic UI */
 .version--item {
     td {
