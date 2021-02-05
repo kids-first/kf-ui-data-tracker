@@ -13,6 +13,10 @@
 body {
 }
 
+.calendar {
+    height: 200px;
+}
+
 .chart {
     height: 300px;
 }

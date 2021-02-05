@@ -1,12 +1,16 @@
 import React from 'react';
 import {Helmet} from 'react-helmet';
 import {useQuery} from '@apollo/client';
-import {GET_RELEASES} from '../queries';
+import {BASIC_RELEASES} from '../queries';
 import {Container, Header, Loader, Segment} from 'semantic-ui-react';
 import {ReleaseBarChart} from '../components/ReleaseBarChart';
+import {ReleaseActivity} from '../components/ReleaseActivity';
 
 const StatsView = ({match}) => {
-  const {data: releasesData, loading: releasesLoading} = useQuery(GET_RELEASES);
+  const {
+    data: releasesData,
+    loading: releasesLoading,
+  } = useQuery(BASIC_RELEASES, {fetchPolicy: 'network-only'});
 
   const releases =
     releasesData && releasesData.allReleases.edges.map(({node}) => node);
@@ -20,6 +24,13 @@ const StatsView = ({match}) => {
       <Header as="h1" className="noMargin">
         Release Statistics
       </Header>
+      <Header as="h2" className="noMargin">
+        Releases this year
+      </Header>
+      <Segment basic className="calendar">
+        <Loader active={releasesLoading}>Loading release activity...</Loader>
+        {!releasesLoading && <ReleaseActivity data={releases} />}
+      </Segment>
       <Header as="h2" className="noMargin">
         Release Activity
       </Header>
