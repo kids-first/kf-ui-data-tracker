@@ -170,7 +170,11 @@ const ReleaseDetailView = ({user, history, match}) => {
             <Grid>
               <Grid.Row>
                 <Grid.Column width={16}>
-                  <ReleaseHeader release={release} loading={releaseLoading} />
+                  <ReleaseHeader
+                    allowEdit={allowEdit}
+                    release={release}
+                    loading={releaseLoading}
+                  />
                 </Grid.Column>
               </Grid.Row>
               <Grid.Row>
