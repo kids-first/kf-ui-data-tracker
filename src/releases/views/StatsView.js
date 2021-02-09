@@ -21,19 +21,14 @@ const StatsView = ({match}) => {
         <title>{`KF Data Tracker - Releases`}</title>
       </Helmet>
 
-      <Header as="h1" className="noMargin">
-        Release Statistics
-      </Header>
-      <Header as="h2" className="noMargin">
-        Releases this year
-      </Header>
+      <Header as="h1">Release Statistics</Header>
+      <p>Here's a snapshot of recent release activity in the Data Tracker.</p>
+      <Header as="h2">Releases this year</Header>
       <Segment basic className="calendar">
         <Loader active={releasesLoading}>Loading release activity...</Loader>
         {!releasesLoading && <ReleaseActivity data={releases} />}
       </Segment>
-      <Header as="h2" className="noMargin">
-        Release Activity
-      </Header>
+      <Header as="h2">Release Activity</Header>
       <Segment basic className="chart">
         <Loader active={releasesLoading}>Loading release activity...</Loader>
         {!releasesLoading && <ReleaseBarChart data={releases} />}
