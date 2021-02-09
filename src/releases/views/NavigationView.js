@@ -28,6 +28,10 @@ const Layout = () => {
       tab: 'Services',
       endString: '/services',
     },
+    {
+      tab: 'Statistics',
+      endString: '/stats',
+    },
   ];
 
   return (

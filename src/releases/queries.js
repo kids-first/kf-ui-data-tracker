@@ -36,6 +36,20 @@ export const GET_RELEASES = gql`
   ${SERVICE_FIELDS}
 `;
 
+// A pared down releases query to fetch only minimal information
+export const BASIC_RELEASES = gql`
+  query BasicReleases {
+    allReleases(orderBy: "-created_at") {
+      edges {
+        node {
+          ...ReleaseFields
+        }
+      }
+    }
+  }
+  ${RELEASE_FIELDS}
+`;
+
 export const LATEST_RELEASE = gql`
   query LatestRelease {
     allReleases(first: 1, orderBy: "-created_at", state: "published") {

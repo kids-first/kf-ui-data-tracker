@@ -9,6 +9,7 @@ import {
   ServicesListView,
   ReleaseDetailView,
   ServiceDetailView,
+  StatsView,
 } from './views';
 
 const Routes = () => (
@@ -45,6 +46,7 @@ const Routes = () => (
         path="/releases/services/:serviceId"
         render={() => <ServiceDetailView />}
       />
+      <Route exact path="/releases/stats" render={() => <StatsView />} />
     </Switch>
   </>
 );

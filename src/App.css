@@ -13,6 +13,14 @@
 body {
 }
 
+.calendar {
+    height: 200px;
+}
+
+.chart {
+    height: 300px;
+}
+
 /* Utilities CSS classes supporting Semantic UI */
 .version--item {
     td {
