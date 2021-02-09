@@ -1,9 +1,14 @@
 import React from 'react';
+import {useMutation} from '@apollo/client';
 import {Grid, Header, Icon, Placeholder, Label} from 'semantic-ui-react';
 import TimeAgo from 'react-timeago';
 import AvatarTimeAgo from '../../../components/AvatarTimeAgo/AvatarTimeAgo';
+import {UPDATE_RELEASE} from '../../mutations';
+import ReleaseName from './ReleaseName';
 
-const ReleaseHeader = ({release, loading}) => {
+const ReleaseHeader = ({allowEdit, release, loading}) => {
+  const [updateRelease] = useMutation(UPDATE_RELEASE);
+
   if (loading || !release) {
     return (
       <Placeholder>
@@ -20,7 +25,10 @@ const ReleaseHeader = ({release, loading}) => {
       <Grid.Row>
         <Grid.Column width={16}>
           <Header as="h2" className="pt-10">
-            {release.name}
+            <ReleaseName
+              release={release}
+              updateRelease={allowEdit && updateRelease}
+            />
           </Header>
         </Grid.Column>
       </Grid.Row>
