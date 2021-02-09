@@ -2,7 +2,15 @@ import React, {useState} from 'react';
 import {Helmet} from 'react-helmet';
 import {useQuery} from '@apollo/client';
 import {Link} from 'react-router-dom';
-import {Container, Grid, Header, List, Icon, Segment} from 'semantic-ui-react';
+import {
+  Button,
+  Container,
+  Grid,
+  Header,
+  List,
+  Icon,
+  Segment,
+} from 'semantic-ui-react';
 import {ALL_LOGS, ALL_JOBS} from '../queries';
 import {JobsList} from '../components/JobsList';
 
@@ -22,10 +30,19 @@ const LogsView = () => {
         <title>KF Data Tracker - Logs</title>
       </Helmet>
       <Header as="h1">Job Logs</Header>
-      <Grid>
-        <Grid.Column width={6}>
+      <Grid divided>
+        <Grid.Column width={10}>
           <Header>
             Jobs
+            {jobFilter && (
+              <Button
+                className="micro-button"
+                floated="right"
+                onClick={() => setJobFilter('')}
+              >
+                Reset Filter
+              </Button>
+            )}
             <Header.Subheader>Select to filter by Job</Header.Subheader>
           </Header>
           <JobsList
@@ -35,7 +52,7 @@ const LogsView = () => {
           />
         </Grid.Column>
 
-        <Grid.Column width={10}>
+        <Grid.Column width={6}>
           <Header>Latest Logs</Header>
           <Segment placeholder basic secondary>
             <List celled selection size="large">
