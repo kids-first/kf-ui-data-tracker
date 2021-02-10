@@ -12,6 +12,9 @@ context('Admin Document Detail', () => {
   });
 
   it('Edit document approval status and add tags', () => {
+    // Set to file list mode
+    cy.get('[data-testid="file-list-mode"]').click();
+
     // List out all the documents
     cy.get('table')
       .find('tr')
@@ -28,6 +31,7 @@ context('Admin Document Detail', () => {
     // Go back to document list
     cy.contains('button', 'All Documents').click();
     // Filter the document by tag Email with 1 return
+    cy.get('[data-testid="file-list-mode"]').click();
     cy.contains('div', 'Tag').click();
     cy.contains('span', 'Email').click();
     cy.get('table')
@@ -37,6 +41,9 @@ context('Admin Document Detail', () => {
   });
 
   it('Show document detail with delete button and edit button', () => {
+    // Set to file list mode
+    cy.get('[data-testid="file-list-mode"]').click();
+
     // List out all the documents
     cy.get('table')
       .find('tr')
@@ -65,6 +72,9 @@ context('Investigator Document Detail', () => {
   });
 
   it('Show document detail with edit button without delete button', () => {
+    // Set to file list mode
+    cy.get('[data-testid="file-list-mode"]').click();
+
     // List out all the documents
     cy.get('table')
       .find('tr')

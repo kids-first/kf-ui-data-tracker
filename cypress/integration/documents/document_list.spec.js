@@ -12,6 +12,9 @@ context('Admin Document List', () => {
   });
 
   it('document filter and search actions', () => {
+    // Set to file list mode
+    cy.get('[data-testid="file-list-mode"]').click();
+
     // All documents should be displayed
     cy.get('table')
       .find('tr')
@@ -60,6 +63,9 @@ context('Admin Document List', () => {
   });
 
   it('sorts documents', () => {
+    // Set to file list mode
+    cy.get('[data-testid="file-list-mode"]').click();
+
     // All documents should be displayed
     cy.get('table')
       .find('tr')
@@ -109,6 +115,9 @@ context('Admin Document List', () => {
   });
 
   it('toggles file Kids First ID column', () => {
+    // Set to file list mode
+    cy.get('[data-testid="file-list-mode"]').click();
+
     // Make sure there's no saved file ID column toggle state
     expect(localStorage.getItem('showFileId')).to.be.null;
 
@@ -128,6 +137,9 @@ context('Admin Document List', () => {
   });
 
   it('List out document with delete buttons', () => {
+    // Set to file list mode
+    cy.get('[data-testid="file-list-mode"]').click();
+
     // List out all the documents
     cy.get('table')
       .find('tr')
@@ -145,6 +157,9 @@ context('Admin Document List', () => {
   });
 
   it('Add, remove tags and filter by tags', () => {
+    // Set to file list mode
+    cy.get('[data-testid="file-list-mode"]').click();
+
     // List out all the documents
     cy.get('table')
       .find('tr')
@@ -189,6 +204,9 @@ context('Investigator Document List', () => {
   });
 
   it('List out document without delete buttons', () => {
+    // Set to file list mode
+    cy.get('[data-testid="file-list-mode"]').click();
+
     // List out all the documents
     cy.get('table')
       .find('tr')
