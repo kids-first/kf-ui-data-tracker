@@ -5,6 +5,7 @@ import {GET_STUDY_BY_ID, MY_PROFILE} from '../../state/queries';
 import {FILE_DOWNLOAD_URL, UPDATE_FILE, DELETE_FILE} from '../mutations';
 import {UploadContainer} from '../containers';
 import FileList from '../components/FileList/FileList';
+import FileFolder from '../components/FileList/FileFolder';
 import {
   Grid,
   Message,
@@ -175,6 +176,8 @@ const StudyFilesListView = ({
     history.push('documents/upload', {file});
   };
 
+  const [folderMode, setFolderMode] = useState(true);
+
   if (!loading && study === null) {
     return (
       <NotFoundView
@@ -224,63 +227,103 @@ const StudyFilesListView = ({
           }`}
         </title>
       </Helmet>
-      <Grid.Row>
-        <Grid.Column width={10}>
-          <h2>Study Documents</h2>
-        </Grid.Column>
-        {files.length > 0 && (allowUploadFile || allowUploadVersion) && (
-          <Grid.Column width={6}>
-            <Button
-              compact
-              primary
-              floated="right"
-              size="large"
-              icon="cloud upload"
-              labelPosition="left"
-              content="Upload Document"
-              as="label"
-              htmlFor="file"
-            />
-            <input
-              hidden
-              multiple
-              id="file"
-              type="file"
-              onChange={e => onUpload(e.target.files[0])}
-            />
+      {!folderMode && (
+        <Grid.Row>
+          <Grid.Column width={4}>
+            <h2>Study Documents</h2>
           </Grid.Column>
-        )}
-      </Grid.Row>
+          {files.length > 0 && (allowUploadFile || allowUploadVersion) && (
+            <Grid.Column width={12} textAlign="right">
+              <Button.Group floated="right" className="ml-15">
+                <Button
+                  icon="folder"
+                  active={folderMode}
+                  data-testid="file-folder-mode"
+                  onClick={e => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    setFolderMode(!folderMode);
+                  }}
+                />
+                <Button
+                  icon="list"
+                  active={!folderMode}
+                  data-testid="file-list-mode"
+                  onClick={e => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    setFolderMode(!folderMode);
+                  }}
+                />
+              </Button.Group>
+              <Button
+                className="ml-15"
+                compact
+                primary
+                floated="right"
+                size="large"
+                icon="cloud upload"
+                labelPosition="left"
+                content="Upload Document"
+                as="label"
+                htmlFor="file"
+              />
+              <input
+                hidden
+                multiple
+                id="file"
+                type="file"
+                onChange={e => onUpload(e.target.files[0])}
+              />
+            </Grid.Column>
+          )}
+        </Grid.Row>
+      )}
       <Grid.Row>
         <Grid.Column width={16}>
           {files.length > 0 ? (
             <>
-              <ListFilterBar
-                fileList={files}
-                filters={filters}
-                setFilters={setFilters}
-                studyId={kfId}
-                deleteFile={allowDelete ? deleteFile : null}
-                downloadFileMutation={downloadFile}
-                selection={selectedFiles}
-                setSelection={setSelectedFiles}
-                disabled={selectedFiles.length === 0}
-                tagOptions={tagOptions}
-                showId={showId}
-                setShowId={setShowId}
-              />
-              <FileList
-                fileList={filteredFiles}
-                studyId={kfId}
-                updateFile={allowEdit ? updateFile : null}
-                updateError={updateFileError}
-                downloadFileMutation={downloadFile}
-                deleteFile={allowDelete ? deleteFile : null}
-                selection={selectedFiles}
-                setSelection={setSelectedFiles}
-                tagOptions={tagOptions}
-                showId={showId}
-              />
+              {folderMode ? (
+                <FileFolder
+                  fileList={files}
+                  onUpload={onUpload}
+                  updateFile={allowEdit ? updateFile : null}
+                  deleteFile={allowDelete ? deleteFile : null}
+                  allowUploadFile={allowUploadFile}
+                  allowUploadVersion={allowUploadVersion}
+                  folderMode={folderMode}
+                  setFolderMode={setFolderMode}
+                />
+              ) : (
+                <>
+                  <ListFilterBar
+                    fileList={files}
+                    filters={filters}
+                    setFilters={setFilters}
+                    studyId={kfId}
+                    deleteFile={allowDelete ? deleteFile : null}
+                    downloadFileMutation={downloadFile}
+                    selection={selectedFiles}
+                    setSelection={setSelectedFiles}
+                    disabled={selectedFiles.length === 0}
+                    tagOptions={tagOptions}
+                    showId={showId}
+                    setShowId={setShowId}
+                  />
+                  <FileList
+                    fileList={filteredFiles}
+                    studyId={kfId}
+                    updateFile={allowEdit ? updateFile : null}
+                    updateError={updateFileError}
+                    downloadFileMutation={downloadFile}
+                    deleteFile={allowDelete ? deleteFile : null}
+                    selection={selectedFiles}
+                    setSelection={setSelectedFiles}
+                    tagOptions={tagOptions}
+                    showId={showId}
+                  />
+                </>
+              )}
             </>
           ) : (
             <>
