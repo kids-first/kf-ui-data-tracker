@@ -1,5 +1,6 @@
 @import '../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 @import '../node_modules/react-datasheet/lib/react-datasheet.css';
+@import '../node_modules/react-sortable-tree/style.css';
 
 :root {
     /* define global css vars here  */
