@@ -1,22 +1,76 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Helmet} from 'react-helmet';
-import {useQuery} from '@apollo/client';
+import {useQuery, useMutation} from '@apollo/client';
 import {
   Container,
   Header,
   Segment,
   Message,
+  Icon,
   List,
   Popup,
 } from 'semantic-ui-react';
 import TimeAgo from 'react-timeago';
 import {Link} from 'react-router-dom';
 import {ALL_REFERRAL_TOEKNS} from '../queries';
+import {CREATE_REFERRAL_TOKEN} from '../../state/mutations';
 
 const dateSort = (a, b) => new Date(b) - new Date(a);
 
+const Resend = ({node, createToken}) => {
+  const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState();
+
+  if (sent) {
+    return (
+      <>
+        <Icon name="check" color="green" /> Invite resent
+      </>
+    );
+  }
+  if (sending) {
+    return <Icon loading name="spinner" />;
+  }
+  if (error) {
+    return (
+      <>
+        <Icon name="x" color="red" /> {error}
+      </>
+    );
+  }
+  return (
+    <span
+      onClick={() => {
+        setSending(true);
+        createToken({
+          variables: {
+            input: {
+              email: node.email,
+              groups: node.groups.edges.map(({node}) => node.id),
+              studies: node.studies.edges.map(({node}) => node.id),
+            },
+          },
+        })
+          .then(() => {
+            setSending(false);
+            setSent(true);
+          })
+          .catch(err => {
+            setSending(false);
+            setError(JSON.stringify(err));
+          });
+      }}
+      className="text-blue cursor-pointer"
+    >
+      Resend?
+    </span>
+  );
+};
+
 const PendingInvitesView = () => {
   const {loading, error, data} = useQuery(ALL_REFERRAL_TOEKNS);
+  const [createToken] = useMutation(CREATE_REFERRAL_TOKEN);
 
   return (
     <>
@@ -40,7 +94,7 @@ const PendingInvitesView = () => {
         )}
         {!loading && data.allReferralTokens.edges.length > 0 ? (
           <List divided relaxed="very">
-            {data.allReferralTokens.edges
+            {[...data.allReferralTokens.edges]
               .sort((f1, f2) => dateSort(f1.node.createdAt, f2.node.createdAt))
               .map(({node}) => (
                 <List.Item key={node.id}>
@@ -75,12 +129,14 @@ const PendingInvitesView = () => {
                     </List.Header>
                     <List.Description className="ml-28">
                       Invitation sent by {node.createdBy.displayName}{' '}
-                      <TimeAgo date={node.createdAt} live={false} />
-                      {node.isValid
-                        ? ', waiting for response.'
-                        : node.claimed
-                        ? `, claimed by ${node.claimedBy.displayName}`
-                        : ', has expired.'}
+                      <TimeAgo date={node.createdAt} live={false} /> -{' '}
+                      {node.isValid ? (
+                        'waiting for response.'
+                      ) : node.claimed ? (
+                        `claimed by ${node.claimedBy.displayName}`
+                      ) : (
+                        <Resend node={node} createToken={createToken} />
+                      )}
                     </List.Description>
                   </List.Content>
                   <List.Content floated="right">
