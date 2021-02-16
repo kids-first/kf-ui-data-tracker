@@ -6,7 +6,7 @@ import {client} from './state/client';
 import {AnalyticsTrackingProvider} from './analyticsTracking';
 import DevHeader from './components/Header/DevHeader';
 import {PRIMARY_HOST, REDIRECT_TO_PRIMARY} from './common/globals';
-
+// test
 const App = () => {
   // Check that we are on the right host else forward to the primary host
   if (
