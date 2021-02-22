@@ -18,7 +18,7 @@ const FileName = ({fileNode, updateFile, studyFiles}) => {
     if (value.length === 0) {
       setTitleError('Document name is required');
     } else if (existNames.includes(value)) {
-      setTitleError('This is name is used.');
+      setTitleError('This name is used.');
     }
   };
   return (

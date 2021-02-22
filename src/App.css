@@ -1,5 +1,6 @@
 @import '../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 @import '../node_modules/react-datasheet/lib/react-datasheet.css';
+@import '../node_modules/react-sortable-tree/style.css';
 
 :root {
     /* define global css vars here  */
@@ -150,6 +151,24 @@ body {
     padding-left: 10px !important;
 }
 
+.px-9 {
+  padding-right: 9px !important;
+  padding-left: 9px !important;
+}
+
+.py-9 {
+  padding-top: 9px !important;
+  padding-bottom: 9px !important;
+}
+
+.pl-16 {
+  padding-left: 16px !important;
+}
+
+.pt-3 {
+  padding-top: 3px !important;
+}
+
 .p-20 {
     padding: 20px !important;
 }
@@ -212,6 +231,10 @@ body {
 
 .mr-80 {
     margin-right: 80px !important;
+}
+
+.mr-120 {
+  margin-right: 120px !important;
 }
 
 .mr-8 {
@@ -457,6 +480,11 @@ body {
     min-height: 150px;
 }
 
+.h-500-container {
+  overflow-y: scroll;
+  height: 800px;
+}
+
 .h-38 {
     height: 38px !important;
 }
@@ -591,4 +619,28 @@ code.label {
 .ansi-cyan-bg {
 }
 .ansi-white-bg {
+}
+
+.rst__moveHandle,
+.rst__rowContents {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding-left: 0px !important;
+}
+
+.rst__node {
+  width: 50%;
+  white-space: nowrap;
+  position: relative;
+  text-align: left;
+  min-width: 100%;
+  overflow: hidden;
+}
+
+.rst__nodeContent {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80%;
 }

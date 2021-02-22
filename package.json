@@ -48,10 +48,12 @@
     "react-modal": "^3.8.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.0.0",
+    "react-sortable-tree": "^2.8.0",
     "react-syntax-highlighter": "^13.5.3",
     "react-timeago": "^4.4.0",
     "semantic-ui-react": "^0.88.2",
     "string-similarity": "^3.0.0",
+    "uuid": "^8.3.2",
     "xlsx": "^0.16.6"
   },
   "resolutions": {
