@@ -31,7 +31,7 @@ const cellContent = {
   ),
   actions: node => <ActionButtons study={node} key={node.kfId + 'actions'} />,
   investigatorName: node => (
-    <InvestigatorName investigatorName={node.investigatorName} />
+    <InvestigatorName study={node} investigatorName={node.investigatorName} />
   ),
   externalId: node => (
     <Table.Cell singleLine width="1" key={node.kfId + 'externalId'}>
