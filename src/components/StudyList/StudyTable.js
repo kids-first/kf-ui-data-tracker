@@ -29,6 +29,11 @@ const cellContent = {
     />
   ),
   actions: node => <ActionButtons study={node} key={node.kfId + 'actions'} />,
+  investigatorName: node => (
+    <Table.Cell singleLine width="1" key={node.kfId + 'investigatorName'}>
+      {node.investigatorName}
+    </Table.Cell>
+  ),
   externalId: node => (
     <Table.Cell singleLine width="1" key={node.kfId + 'externalId'}>
       <code>{node.externalId}</code>
@@ -67,6 +72,7 @@ const columnSorts = {
   name: stringSort,
   kfId: stringSort,
   version: compareSemVer,
+  investigatorName: stringSort,
   externalId: stringSort,
   actions: (a, b) => 0,
   anticipatedSamples: intSort,
