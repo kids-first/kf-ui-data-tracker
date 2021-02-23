@@ -6,6 +6,7 @@ export const STUDY_BASIC_FIELDS = gql`
     name
     shortName
     kfId
+    investigatorName
     createdAt
     modifiedAt
   }

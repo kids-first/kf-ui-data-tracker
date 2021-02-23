@@ -16,6 +16,7 @@ export const ALL_STUDIES = gql`
       edges {
         node {
           ...StudyBasicFields
+          investigatorName
           bucket
           externalId
           version

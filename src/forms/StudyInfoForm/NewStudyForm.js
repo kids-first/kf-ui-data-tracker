@@ -88,6 +88,7 @@ const NewStudyForm = ({
         externalId: studyNode.externalId || '',
         name: studyNode.name || '',
         shortName: studyNode.shortName || '',
+        investigatorName: studyNode.investigatorName || '',
         description: studyNode.description || '',
         releaseDate: studyNode.releaseDate || '',
         anticipatedSamples: studyNode.anticipatedSamples || 0,
