@@ -1,5 +1,40 @@
 # Kids First Data Tracker Change History
 
+## Release 0.19.0
+
+### Summary
+
+- Emojis: ✨ x12, 📈 x1, ⬆️ x1, ✅ x1, 💄 x2, 🐛 x3, 🎨 x2, 🔥 x1, 🔧 x1
+- Categories: Additions x13, Ops x1, Other Changes x6, Fixes x3, Removals x1
+
+### New features and changes
+
+- [#988](https://github.com/kids-first/kf-ui-data-tracker/pull/988) - ✨ Add investigator to study - [e7614bd3](https://github.com/kids-first/kf-ui-data-tracker/commit/e7614bd3610f683e5dfc7839f9efc39894b118fc) by [dankolbman](https://github.com/dankolbman)
+- [#943](https://github.com/kids-first/kf-ui-data-tracker/pull/943) - ✨ Add file folder feature for study documents - [eec4fa13](https://github.com/kids-first/kf-ui-data-tracker/commit/eec4fa13c5f5a6e3e2ddc1fe24a401a9668b2eaa) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#981](https://github.com/kids-first/kf-ui-data-tracker/pull/981) - ✨ Allow expired invites to be resent - [ffd7ee3f](https://github.com/kids-first/kf-ui-data-tracker/commit/ffd7ee3f9f34a1263a453f75204eebb7e75cdb12) by [dankolbman](https://github.com/dankolbman)
+- [#980](https://github.com/kids-first/kf-ui-data-tracker/pull/980) - ✨ Filter logs by job - [d9e55a49](https://github.com/kids-first/kf-ui-data-tracker/commit/d9e55a490a8cd3772a1eb261bcbeeaf9df2099bc) by [dankolbman](https://github.com/dankolbman)
+- [#985](https://github.com/kids-first/kf-ui-data-tracker/pull/985) - 📈 Release charts - [3d9dae8d](https://github.com/kids-first/kf-ui-data-tracker/commit/3d9dae8d61d5bb9e2ec1483ef48f4396f8732d61) by [dankolbman](https://github.com/dankolbman)
+- [#986](https://github.com/kids-first/kf-ui-data-tracker/pull/986) - ✨ Allow releases to be renamed - [0d6f4074](https://github.com/kids-first/kf-ui-data-tracker/commit/0d6f4074d346e1fc1c52f8d8ed539c19a4924cd4) by [dankolbman](https://github.com/dankolbman)
+- [#957](https://github.com/kids-first/kf-ui-data-tracker/pull/957) - ✨ App banners - [deaac253](https://github.com/kids-first/kf-ui-data-tracker/commit/deaac2534c203d49b0ee3e3e1561603f4b067f0d) by [znatty22](https://github.com/znatty22)
+- [#978](https://github.com/kids-first/kf-ui-data-tracker/pull/978) - ✨ Release pagination - [bb5766b0](https://github.com/kids-first/kf-ui-data-tracker/commit/bb5766b03d5c5d7a7e2f24e7456c447b575fb10d) by [dankolbman](https://github.com/dankolbman)
+- [#979](https://github.com/kids-first/kf-ui-data-tracker/pull/979) - ✨ Search studies within new release form - [cecc5392](https://github.com/kids-first/kf-ui-data-tracker/commit/cecc539208054bb35f04173a5e52df81838c399e) by [dankolbman](https://github.com/dankolbman)
+- [#975](https://github.com/kids-first/kf-ui-data-tracker/pull/975) - ⬆️ Upgrade apollo - [ff969668](https://github.com/kids-first/kf-ui-data-tracker/commit/ff969668888d0a11cef7dca1deb62ff9a5314a61) by [dankolbman](https://github.com/dankolbman)
+- [#974](https://github.com/kids-first/kf-ui-data-tracker/pull/974) - ✅ Fix tests - [9c391f47](https://github.com/kids-first/kf-ui-data-tracker/commit/9c391f47bd159244a79469f091eeeb1dbcda16dc) by [dankolbman](https://github.com/dankolbman)
+- [#963](https://github.com/kids-first/kf-ui-data-tracker/pull/963) - 💄 Only show enabled services in new release form - [0fed836a](https://github.com/kids-first/kf-ui-data-tracker/commit/0fed836afa1a279d0cd7757c6f1bb38ef1425049) by [dankolbman](https://github.com/dankolbman)
+- [#959](https://github.com/kids-first/kf-ui-data-tracker/pull/959) - ✨ Allow search study by slack channel name - [8a9fa18d](https://github.com/kids-first/kf-ui-data-tracker/commit/8a9fa18d750227812487144a5849e0588568412e) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#960](https://github.com/kids-first/kf-ui-data-tracker/pull/960) - ✨ Open description links in new tab - [91e8df4e](https://github.com/kids-first/kf-ui-data-tracker/commit/91e8df4e121b6a2c1c3ea957b82c59ed2d0af228) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#964](https://github.com/kids-first/kf-ui-data-tracker/pull/964) - 🐛 Default path /study/kfId/ to documents tab - [91ff94c6](https://github.com/kids-first/kf-ui-data-tracker/commit/91ff94c65df81e68dc4b5322f0350f01d70be444) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#965](https://github.com/kids-first/kf-ui-data-tracker/pull/965) - 🐛 Fix typo in extract config download code button popup - [9ddd4d18](https://github.com/kids-first/kf-ui-data-tracker/commit/9ddd4d1844aa4ca72b2c31d2baeca469fa154e2b) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#948](https://github.com/kids-first/kf-ui-data-tracker/pull/948) - 💄 Increase hit area for releases - [1a850678](https://github.com/kids-first/kf-ui-data-tracker/commit/1a8506786708b438ee611d54027d247fbb89429a) by [dankolbman](https://github.com/dankolbman)
+- [#968](https://github.com/kids-first/kf-ui-data-tracker/pull/968) - 🐛 Don't return exit code for copying artifacts - [31a747a0](https://github.com/kids-first/kf-ui-data-tracker/commit/31a747a0b6b37df061cfc1c628f3a19680f63648) by [dankolbman](https://github.com/dankolbman)
+- [#941](https://github.com/kids-first/kf-ui-data-tracker/pull/941) - 🎨 Release detail restyle - [17c0d03d](https://github.com/kids-first/kf-ui-data-tracker/commit/17c0d03df82690110128e6ac0bbecae1b6ba0138) by [dankolbman](https://github.com/dankolbman)
+- [#942](https://github.com/kids-first/kf-ui-data-tracker/pull/942) - 🔥 Remove unused components - [41543845](https://github.com/kids-first/kf-ui-data-tracker/commit/4154384596dae0b05199e80e6216172aee62e3e4) by [dankolbman](https://github.com/dankolbman)
+- [#931](https://github.com/kids-first/kf-ui-data-tracker/pull/931) - 🎨 Revise upload flow - [37e96e45](https://github.com/kids-first/kf-ui-data-tracker/commit/37e96e45f62d23edd94291ba67700342042d0f58) by [dankolbman](https://github.com/dankolbman)
+- [#933](https://github.com/kids-first/kf-ui-data-tracker/pull/933) - 🔧 Add developer views - [1ce237bd](https://github.com/kids-first/kf-ui-data-tracker/commit/1ce237bd7dc0ecc5356df4c7574181cb017c22a5) by [dankolbman](https://github.com/dankolbman)
+- [#934](https://github.com/kids-first/kf-ui-data-tracker/pull/934) - ✨ Add file summary modal to file preview page with learn more button - [3d305e59](https://github.com/kids-first/kf-ui-data-tracker/commit/3d305e59f21f4e6a7d0fa25de4a7aa1b432b9825) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#912](https://github.com/kids-first/kf-ui-data-tracker/pull/912) - ✨ Change releases to study creator backend - [5b2b2ecf](https://github.com/kids-first/kf-ui-data-tracker/commit/5b2b2ecfd7de848fba8773f6ff75e2b33153930f) by [dankolbman](https://github.com/dankolbman)
+
+
 ## Release 0.18.2
 
 ### Summary
