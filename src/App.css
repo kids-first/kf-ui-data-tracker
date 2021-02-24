@@ -317,6 +317,10 @@ body {
     color: #1678c2 !important;
 }
 
+.hard-wrap {
+    word-wrap: anywhere;
+}
+
 .vertical-middle {
     vertical-align: middle !important;
 }

@@ -65,9 +65,10 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
   // the future if the schema ever changes
   const existingState = JSON.parse(localStorage.getItem('studyColumns'));
   const defaultState = {
-    version: 6,
+    version: 7,
     columns: [
       {key: 'kfId', name: 'Kids First ID', visible: true},
+      {key: 'investigatorName', name: 'Investigator', visible: false},
       {key: 'externalId', name: 'phsid/External ID', visible: false},
       {
         key: 'anticipatedSamples',
@@ -191,11 +192,19 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
           name,
           shortName,
           kfId,
+          investigatorName,
           slackChannel,
           collaborators: {edges},
         },
       }) =>
-        [name, shortName, kfId, slackChannel, conactCollaborators(edges)]
+        [
+          name,
+          shortName,
+          kfId,
+          investigatorName,
+          slackChannel,
+          conactCollaborators(edges),
+        ]
           .join(' ')
           .toLowerCase()
           .includes(searchString.toLowerCase()),
@@ -313,7 +322,7 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
               wide
               inverted
               position="top center"
-              content="Search study by name , ID, Slack channel or collaborator"
+              content="Search study by name , ID, investigator, Slack channel, or collaborator"
               trigger={
                 <Input
                   fluid

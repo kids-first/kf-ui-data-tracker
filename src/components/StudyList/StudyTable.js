@@ -4,6 +4,7 @@ import {Amplitude} from '@amplitude/react-amplitude';
 import {Table, Pagination, Icon} from 'semantic-ui-react';
 import ActionButtons from './ActionButtons';
 import KfId from './KfId';
+import InvestigatorName from './InvestigatorName';
 import Release from './Release';
 import StudyName from './Name';
 import {compareSemVer} from '../../common/sortUtils';
@@ -29,6 +30,9 @@ const cellContent = {
     />
   ),
   actions: node => <ActionButtons study={node} key={node.kfId + 'actions'} />,
+  investigatorName: node => (
+    <InvestigatorName study={node} investigatorName={node.investigatorName} />
+  ),
   externalId: node => (
     <Table.Cell singleLine width="1" key={node.kfId + 'externalId'}>
       <code>{node.externalId}</code>
@@ -67,6 +71,7 @@ const columnSorts = {
   name: stringSort,
   kfId: stringSort,
   version: compareSemVer,
+  investigatorName: stringSort,
   externalId: stringSort,
   actions: (a, b) => 0,
   anticipatedSamples: intSort,

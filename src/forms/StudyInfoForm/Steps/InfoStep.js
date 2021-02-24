@@ -27,6 +27,13 @@ const InfoStep = ({
       name: 'Study Short Name',
       description: 'The name that will appear under portal facets.',
     },
+    {
+      required: false,
+      id: 'investigatorName',
+      name: 'Principle Investigator',
+      description:
+        'The name of the principle investigator, used to categorize this study',
+    },
   ];
   return (
     <>
