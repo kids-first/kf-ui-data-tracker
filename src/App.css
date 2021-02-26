@@ -181,6 +181,14 @@ body {
     min-height: 22px !important;
 }
 
+.w-200 {
+  width: 200px !important;
+}
+
+.w-600 {
+  width: 600px !important;
+}
+
 .mt-6 {
     margin-top: 6px !important;
 }
