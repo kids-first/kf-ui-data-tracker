@@ -293,6 +293,11 @@ const StudyFilesListView = ({
                   allowUploadVersion={allowUploadVersion}
                   folderMode={folderMode}
                   setFolderMode={setFolderMode}
+                  selection={selectedFiles}
+                  setSelection={setSelectedFiles}
+                  tagOptions={tagOptions}
+                  updateError={updateFileError}
+                  downloadFileMutation={downloadFile}
                 />
               ) : (
                 <>
