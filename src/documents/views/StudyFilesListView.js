@@ -5,7 +5,6 @@ import {GET_STUDY_BY_ID, MY_PROFILE} from '../../state/queries';
 import {FILE_DOWNLOAD_URL, UPDATE_FILE, DELETE_FILE} from '../mutations';
 import {UploadContainer} from '../containers';
 import FileList from '../components/FileList/FileList';
-import FileFolder from '../components/FileList/FileFolder';
 import {
   Grid,
   Message,
@@ -18,6 +17,7 @@ import {
   Icon,
 } from 'semantic-ui-react';
 import NotFoundView from '../../views/NotFoundView';
+import FileFolder from '../components/FileFolder/FileFolder';
 import ListFilterBar from '../components/ListFilterBar/ListFilterBar';
 import {hasPermission} from '../../common/permissions';
 
