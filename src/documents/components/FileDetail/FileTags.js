@@ -122,11 +122,15 @@ const FileTags = ({fileNode, updateFile, defaultOptions}) => {
               />
               {tagSelection.length > 50 ||
               error.length > 0 ||
-              tagSelection === 'untagged' ? (
+              tagSelection === 'untagged' ||
+              (pathTag && tagSelection.includes('PATH')) ? (
                 <p className="text-red">
                   {tagSelection.length > 50 && 'Tag is too long.'}
                   {error}
                   {tagSelection === 'untagged' && 'Tag "untagged" is reserved'}
+                  {pathTag &&
+                    tagSelection.includes('PATH_') &&
+                    'Path tag already exist'}
                 </p>
               ) : (
                 <Button
