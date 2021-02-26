@@ -70,7 +70,8 @@ export const treeToList = (node, result = []) => {
 export const keyedFiles = fileList => {
   var filesFlat = [];
   fileList.forEach(({node}) => {
-    const path = node.tags.find(t => t.includes('/')) || '';
+    const pathTag = node.tags.find(t => t.includes('PATH'));
+    const path = pathTag ? pathTag.slice(5) : '';
     const sortedVersions = fileSortedVersions(node);
     const latestSize = sortedVersions[0].node.size;
     const latestDate = fileLatestDate(sortedVersions);
