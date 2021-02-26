@@ -1,6 +1,5 @@
 import {fileLatestDate, fileSortedVersions} from '../documents/utilities';
 
-import {fileTypeDetail} from './enums';
 import {v4 as uuidv4} from 'uuid';
 
 export const listToTree = list => {
@@ -75,9 +74,6 @@ export const keyedFiles = fileList => {
     const sortedVersions = fileSortedVersions(node);
     const latestSize = sortedVersions[0].node.size;
     const latestDate = fileLatestDate(sortedVersions);
-    const fileType = fileTypeDetail[node.fileType]
-      ? fileTypeDetail[node.fileType].title
-      : 'Unknown';
     const folders = path.split('/').filter(f => f !== '');
     filesFlat.push({
       key: node.kfId,
@@ -86,9 +82,12 @@ export const keyedFiles = fileList => {
       size: latestSize,
       kfId: node.kfId,
       isDirectory: false,
-      fileType: fileType,
+      fileType: node.fileType,
       parentId: folders.length > 0 ? folders[folders.length - 1] : '',
       path: path,
+      description: node.description,
+      tags: node.tags,
+      versions: node.versions,
     });
     if (folders.length > 0) {
       folders.forEach((folder, index) => {
