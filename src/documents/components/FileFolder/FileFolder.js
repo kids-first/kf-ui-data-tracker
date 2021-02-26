@@ -7,6 +7,7 @@ import {
   Input,
   List,
   Modal,
+  Segment,
 } from 'semantic-ui-react';
 import React, {useState} from 'react';
 import SortableTree, {insertNode} from 'react-sortable-tree';
@@ -17,7 +18,9 @@ import {
   treeToList,
 } from '../../../common/treeDataUtils';
 
-import FolderItem from './FolderItem';
+import BatchActions from '../ListFilterBar/BatchActions';
+import FileExplorerTheme from 'react-sortable-tree-theme-file-explorer';
+import FileSimpleList from './FileSimpleList';
 import {searchTree} from '../../../common/treeDataUtils';
 import {v4 as uuidv4} from 'uuid';
 import {withRouter} from 'react-router-dom';
@@ -36,6 +39,11 @@ const FileFolder = ({
   folderMode,
   setFolderMode,
   onUpload,
+  updateError,
+  downloadFileMutation,
+  selection,
+  setSelection,
+  tagOptions,
 }) => {
   const filesFlat = keyedFiles(fileList, match);
   const filesTree = listToTree(filesFlat);
@@ -46,6 +54,7 @@ const FileFolder = ({
   const [renameOpen, setRenameOpen] = useState(null);
   const [renameInput, setRenameInput] = useState('');
   const [deleteOpen, setDeleteOpen] = useState(null);
+  const [openedNode, setOpenedNode] = useState({});
 
   const existNames =
     fileList.length > 0 ? fileList.map(({node}) => node.name) : [];
@@ -60,10 +69,11 @@ const FileFolder = ({
     const file = fileList.find(({node}) => node.kfId === kfId);
     if (!file) return;
     const fileNode = file.node;
-    const oldPath = fileNode.tags.find(t => t.includes('/')) || null;
+    const oldPath = fileNode.tags.find(t => t.includes('PATH_')) || null;
+    const pathTag = 'PATH_' + newPath;
     const tags =
       oldPath !== newPath
-        ? fileNode.tags.concat(newPath).filter(t => t !== oldPath && t !== '')
+        ? fileNode.tags.concat(pathTag).filter(t => t !== oldPath && t !== '')
         : fileNode.tags;
     updateFile({
       variables: {
@@ -144,6 +154,9 @@ const FileFolder = ({
       setTreeData(tree);
     }
     setNameInput('');
+    if (selectedNode) {
+      setOpenedNode(selectedNode);
+    }
   };
 
   const handleUpdateFolder = () => {
@@ -170,8 +183,7 @@ const FileFolder = ({
   };
 
   const handleDeleteNode = () => {
-    const parentNode = deleteOpen.parentNode;
-    const selectedNode = deleteOpen.node;
+    const selectedNode = deleteOpen;
     const allChildren = treeToList(selectedNode);
     if (selectedNode.isDirectory) {
       if (selectedNode.children.length > 0 && allChildren.length > 0) {
@@ -182,20 +194,24 @@ const FileFolder = ({
     } else {
       deleteFile({variables: {kfId: selectedNode.kfId}});
     }
-    var tree = treeData.concat(allChildren);
-    if (parentNode !== null) {
+    var tree = treeData;
+    if (selectedNode.children.length > 0) {
+      tree.concat(allChildren);
+    }
+    if (deleteOpen.parentId) {
       const nodeIndex = searchTree(
         {title: 'root', children: tree},
-        parentNode.title,
+        deleteOpen.parentId,
       ).children.indexOf(selectedNode);
       searchTree(
         {title: 'root', children: tree},
-        parentNode.title,
+        deleteOpen.parentId,
       ).children.splice(nodeIndex, 1);
       setTreeData(tree);
     } else {
       setTreeData(tree.filter(f => f.title !== selectedNode.title));
     }
+    setOpenedNode({});
   };
 
   const handleViewToggle = e => {
@@ -212,13 +228,6 @@ const FileFolder = ({
         </Grid.Column>
         {fileList.length > 0 && (allowUploadFile || allowUploadVersion) && (
           <Grid.Column width={12} textAlign="right">
-            <Input
-              icon="search"
-              placeholder="Search..."
-              onChange={(e, {value}) => {
-                setSearchString(value);
-              }}
-            />
             <Button.Group floated="right" className="ml-15">
               <Button
                 icon="folder"
@@ -268,31 +277,97 @@ const FileFolder = ({
         )}
       </Grid.Row>
       <Grid.Row>
-        <Grid.Column width={16} className="h-500-container">
-          <SortableTree
-            style={{width: '100%'}}
-            rowHeight={60}
-            searchQuery={searchString}
-            treeData={treeData}
-            onChange={treeData => setTreeData(treeData)}
-            nodeContentRenderer={props => {
-              return (
-                <FolderItem
-                  nodeProps={props}
-                  searchString={searchString}
-                  setSearchString={setSearchString}
-                  updateFile={updateFile}
-                  deleteFile={deleteFile}
-                  studyId={match.params.kfId}
-                  setInputOpen={setInputOpen}
-                  setRenameOpen={setRenameOpen}
-                  setDeleteOpen={setDeleteOpen}
-                />
-              );
+        <Grid.Column width={3}>
+          <Input
+            className="w-200"
+            icon="search"
+            placeholder="Search..."
+            onChange={(e, {value}) => {
+              setSearchString(value);
             }}
-            onMoveNode={handleMoveNode}
-            canDrag={({node}) => !node.dragDisabled && updateFile}
-            canDrop={({nextParent}) => !nextParent || nextParent.isDirectory}
+          />
+          <Segment basic className="h-500-container noPadding">
+            <SortableTree
+              style={{width: '100%'}}
+              searchQuery={searchString}
+              treeData={treeData}
+              onChange={treeData => setTreeData(treeData)}
+              theme={FileExplorerTheme}
+              onMoveNode={handleMoveNode}
+              canDrag={({node}) => !node.dragDisabled && updateFile !== null}
+              canDrop={({nextParent}) => !nextParent || nextParent.isDirectory}
+              generateNodeProps={rowInfo =>
+                rowInfo.node.isDirectory
+                  ? {
+                      icons: rowInfo.node.expanded
+                        ? [<Icon name="folder open outline" />]
+                        : [<Icon name="folder outline" />],
+                      buttons: [
+                        <Icon
+                          className="cursor-pointer"
+                          name="caret square right"
+                          onClick={() => setOpenedNode(rowInfo.node)}
+                        />,
+                      ],
+                    }
+                  : {
+                      icons: [<Icon name="file outline" />],
+                    }
+              }
+            />
+          </Segment>
+        </Grid.Column>
+        <Grid.Column width={13}>
+          <Button
+            disabled={!openedNode.title}
+            attached="left"
+            icon="arrow left"
+            onClick={() => {
+              if (openedNode.parentId) {
+                const parentNode = searchTree(
+                  {title: 'root', children: treeData},
+                  openedNode.parentId,
+                );
+                setOpenedNode(parentNode);
+              } else {
+                setOpenedNode({});
+              }
+            }}
+          />
+          <Button attached="right" basic className="w-600">
+            {openedNode.title
+              ? generatePath(
+                  {nextParentNode: {title: openedNode.parentId}},
+                  treeData,
+                  filesFlat,
+                ) +
+                openedNode.title +
+                '/'
+              : '/'}
+          </Button>
+          <BatchActions
+            fileList={fileList}
+            studyId={match.params.kfId}
+            deleteFile={deleteFile}
+            downloadFileMutation={downloadFileMutation}
+            selection={selection}
+            setSelection={setSelection}
+            disabled={selection.length === 0}
+          />
+          <FileSimpleList
+            fileList={openedNode.children ? openedNode.children : treeData}
+            studyId={match.params.kfId}
+            updateFile={updateFile}
+            updateError={updateError}
+            downloadFileMutation={downloadFileMutation}
+            deleteFile={deleteFile}
+            selection={selection}
+            setSelection={setSelection}
+            tagOptions={tagOptions}
+            setOpenedNode={setOpenedNode}
+            setInputOpen={setInputOpen}
+            setRenameOpen={setRenameOpen}
+            setDeleteOpen={setDeleteOpen}
           />
         </Grid.Column>
       </Grid.Row>
@@ -394,23 +469,23 @@ const FileFolder = ({
         </Modal.Header>
         {deleteOpen && (
           <Modal.Content>
-            {deleteOpen.node.isDirectory ? (
+            {deleteOpen.isDirectory ? (
               <>
                 <Header as="h4">Folder Selected:</Header>
                 <List className="pl-16" size="large">
                   <List.Item>
                     <List.Icon className="mr-5" name="folder" />
-                    {deleteOpen.node.title}
+                    {deleteOpen.title}
                   </List.Item>
                 </List>
-                {deleteOpen.node.children.length > 0 &&
-                  treeToList(deleteOpen.node).length > 0 && (
+                {deleteOpen.children.length > 0 &&
+                  treeToList(deleteOpen).length > 0 && (
                     <>
                       <Header as="h4">
                         Files will be reset back to root directory:
                       </Header>
                       <List className="pl-16" size="large">
-                        {treeToList(deleteOpen.node).map(f => (
+                        {treeToList(deleteOpen).map(f => (
                           <List.Item key={f.kfId}>
                             <List.Icon className="mr-5" name="file alternate" />
                             {f.title}
@@ -426,7 +501,7 @@ const FileFolder = ({
                 <List className="pl-16" size="large">
                   <List.Item>
                     <List.Icon className="mr-5" name="file alternate" />
-                    {deleteOpen.node.title}
+                    {deleteOpen.title}
                   </List.Item>
                 </List>
               </>

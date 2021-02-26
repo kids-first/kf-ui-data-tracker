@@ -283,6 +283,8 @@ const FileDetail = ({
   const sortedVersions = fileSortedVersions(fileNode);
   const latestDate = fileLatestDate(sortedVersions);
   const latestSize = fileLatestSize(sortedVersions);
+  const pathTag = fileNode.tags.find(t => t.includes('PATH_'));
+
   return (
     <Grid className="mb-50">
       <Grid.Row>
@@ -384,6 +386,55 @@ const FileDetail = ({
               </Grid.Column>
             </Grid.Row>
           </Grid>
+          {pathTag && (
+            <Segment basic className="noMargin">
+              <Header as="h4" color="grey">
+                Folder Path
+              </Header>
+              <Label
+                as="a"
+                className="my-2"
+                title={pathTag.slice(5)}
+                onClick={e => {
+                  e.stopPropagation();
+                }}
+              >
+                {pathTag.slice(5)}
+                {updateFile && (
+                  <Popup
+                    trigger={<Icon name="close" data-testid="remove-tag" />}
+                    header="Are you sure?"
+                    content={
+                      <>
+                        By removing the folder path, this file will be sent to
+                        root diretory.
+                        <Divider />
+                        <Button
+                          negative
+                          fluid
+                          size="mini"
+                          icon="trash alternate"
+                          content="Remove"
+                          onClick={e => {
+                            e.stopPropagation();
+                            updateFile({
+                              variables: {
+                                kfId: fileNode.kfId,
+                                fileType: fileNode.fileType,
+                                tags: fileNode.tags.filter(t => t !== pathTag),
+                              },
+                            });
+                          }}
+                        />
+                      </>
+                    }
+                    on="click"
+                    position="left center"
+                  />
+                )}
+              </Label>
+            </Segment>
+          )}
           <Segment basic className="noMargin">
             <FileDescription fileNode={fileNode} updateFile={updateFile} />
           </Segment>

@@ -16,6 +16,7 @@ const FileActionButtons = ({
   deleteFile,
   vertical = true,
   fluid = false,
+  hideCopy = false,
 }) => {
   return (
     <Button.Group fluid={fluid} size="small">
@@ -88,32 +89,34 @@ const FileActionButtons = ({
           />
         )}
       </Amplitude>
-      <Amplitude
-        eventProperties={inheritedProps => ({
-          ...inheritedProps,
-          scope: inheritedProps.scope
-            ? [...inheritedProps.scope, 'button', 'copy ID button']
-            : ['button', 'copy ID button'],
-        })}
-      >
-        {({logEvent}) => (
-          <CopyButton
-            data-testid="copy-file-id"
-            textToCopy={
-              node.downloadUrl +
-              `/version/${fileSortedVersions(node)[0].node.kfId}`
-            }
-            basic
-            compact
-            position="top left"
-            tooltip="Copy download link"
-            onClick={e => {
-              logEvent('click');
-              e.stopPropagation();
-            }}
-          />
-        )}
-      </Amplitude>
+      {!hideCopy && (
+        <Amplitude
+          eventProperties={inheritedProps => ({
+            ...inheritedProps,
+            scope: inheritedProps.scope
+              ? [...inheritedProps.scope, 'button', 'copy ID button']
+              : ['button', 'copy ID button'],
+          })}
+        >
+          {({logEvent}) => (
+            <CopyButton
+              data-testid="copy-file-id"
+              textToCopy={
+                node.downloadUrl +
+                `/version/${fileSortedVersions(node)[0].node.kfId}`
+              }
+              basic
+              compact
+              position="top left"
+              tooltip="Copy download link"
+              onClick={e => {
+                logEvent('click');
+                e.stopPropagation();
+              }}
+            />
+          )}
+        </Amplitude>
+      )}
       {deleteFile && (
         <Amplitude
           eventProperties={inheritedProps => ({
