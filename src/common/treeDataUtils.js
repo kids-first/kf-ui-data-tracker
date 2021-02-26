@@ -57,7 +57,11 @@ export const generatePath = (props, treeData, filesFlat) => {
       parents.push(parent.title);
     }
   }
-  return parents.reverse().join('/') + '/';
+  const path =
+    parents.filter(p => p !== '').length > 0
+      ? parents.reverse().join('/') + '/'
+      : '';
+  return path;
 };
 
 export const treeToList = (node, result = []) => {
