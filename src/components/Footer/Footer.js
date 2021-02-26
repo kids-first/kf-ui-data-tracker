@@ -52,11 +52,13 @@ const Footer = () => {
               Study Creator API{' '}
               {status.version.split('-').length === 1 ? (
                 <a
-                  href={`https://github.com/kids-first/kf-api-study-creator/releases/tag/${
-                    status.version
-                  }`}
+                  href={
+                    status.version === 'LOCAL'
+                      ? '#'
+                      : `https://github.com/kids-first/kf-api-study-creator/releases/tag/${status.version}`
+                  }
                   rel="noopener noreferrer"
-                  target="_blank"
+                  target={status.version === 'LOCAL' ? null : '_blank'}
                 >
                   {status.version}
                 </a>
