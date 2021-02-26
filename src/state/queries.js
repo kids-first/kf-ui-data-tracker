@@ -257,29 +257,6 @@ export const STATUS = gql`
       name
       version
       commit
-      features {
-        studyCreation
-        studyUpdates
-        cavaticaCreateProjects
-        cavaticaCopyUsers
-        cavaticaMountVolumes
-        studyBucketsCreateBuckets
-      }
-      settings {
-        developmentEndpoints
-        dataserviceUrl
-        cavaticaUrl
-        cavaticaDeliveryAccount
-        cavaticaHarmonizationAccount
-        cavaticaUserAccessProject
-        studyBucketsRegion
-        studyBucketsLoggingBucket
-        studyBucketsDrRegion
-        studyBucketsDrLoggingBucket
-        studyBucketsInventoryLocation
-        studyBucketsLogPrefix
-      }
-      queues
     }
   }
 `;

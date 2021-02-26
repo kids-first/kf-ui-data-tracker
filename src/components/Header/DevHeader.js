@@ -73,11 +73,7 @@ const DevHeader = () => {
     });
   };
 
-  if (
-    !DEV_BAR &&
-    (!status || !myProfile || !status.settings.developmentEndpoints)
-  )
-    return <></>;
+  if (!DEV_BAR && (!status || !myProfile)) return <></>;
 
   return (
     <Menu inverted attached size="tiny">
