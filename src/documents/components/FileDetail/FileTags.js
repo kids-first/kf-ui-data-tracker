@@ -11,6 +11,9 @@ const FileTags = ({fileNode, updateFile, defaultOptions}) => {
   const [more, setMore] = useState(false);
   const [open, setOpen] = useState(false);
   const [error, setError] = useState('');
+
+  const pathTag = fileNode.tags.find(t => t.includes('PATH_'));
+
   const handleAddition = (e, {value}) => {
     if (fileNode.tags.includes(value)) {
       setError('Tag already exist');
@@ -52,6 +55,7 @@ const FileTags = ({fileNode, updateFile, defaultOptions}) => {
     <Label.Group>
       {fileNode.tags.length > 0 ? (
         fileNode.tags
+          .filter(t => !t.includes('PATH'))
           .slice(0, more ? fileNode.tags.length : 5)
           .map((tag, index) => (
             <Label
