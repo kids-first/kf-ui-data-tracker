@@ -36,6 +36,20 @@ exports[`renders footer correctly -- development 1`] = `
             0.8.2
           </a>
         </div>
+        <div
+          class="item"
+          role="listitem"
+        >
+          Study Creator API
+           
+          <a
+            href="https://github.com/kids-first/kf-api-study-creator/commit/283efc9"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            1.7.2-25-g283efc9
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -78,6 +92,20 @@ exports[`renders footer correctly -- local 1`] = `
             0.8.1-80-gb110ca36
           </a>
         </div>
+        <div
+          class="item"
+          role="listitem"
+        >
+          Study Creator API
+           
+          <a
+            href="https://github.com/kids-first/kf-api-study-creator/commit/283efc9"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            1.7.2-25-g283efc9
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -108,6 +136,20 @@ exports[`renders footer correctly -- production 1`] = `
             target="_blank"
           >
             0.8.1-80-gb110ca36
+          </a>
+        </div>
+        <div
+          class="item"
+          role="listitem"
+        >
+          Study Creator API
+           
+          <a
+            href="https://github.com/kids-first/kf-api-study-creator/commit/283efc9"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            1.7.2-25-g283efc9
           </a>
         </div>
       </div>
@@ -150,6 +192,20 @@ exports[`renders footer correctly -- qa 1`] = `
             target="_blank"
           >
             0.8.2
+          </a>
+        </div>
+        <div
+          class="item"
+          role="listitem"
+        >
+          Study Creator API
+           
+          <a
+            href="https://github.com/kids-first/kf-api-study-creator/commit/283efc9"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            1.7.2-25-g283efc9
           </a>
         </div>
       </div>
