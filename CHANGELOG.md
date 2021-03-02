@@ -1,5 +1,19 @@
 # Kids First Data Tracker Change History
 
+## Release 0.19.1
+
+### Summary
+
+- Emojis: 🔥 x1, ✨ x1, 🐛 x1
+- Categories: Removals x1, Additions x1, Fixes x1
+
+### New features and changes
+
+- [#995](https://github.com/kids-first/kf-ui-data-tracker/pull/995) - 🔥 Remove unused status fields - [352b8866](https://github.com/kids-first/kf-ui-data-tracker/commit/352b886654c9a9bacfcf52e10e4087efdea1386a) by [dankolbman](https://github.com/dankolbman)
+- [#989](https://github.com/kids-first/kf-ui-data-tracker/pull/989) - ✨ Add file folder detail view with folder tree view on the side - [369e990f](https://github.com/kids-first/kf-ui-data-tracker/commit/369e990f37fced4cb2076783ca8c8b4019a1624c) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#961](https://github.com/kids-first/kf-ui-data-tracker/pull/961) - 🐛 Fix footer backend version link - [d74a2515](https://github.com/kids-first/kf-ui-data-tracker/commit/d74a251593200096c72948d9ad9f953ff1956624) by [XuTheBunny](https://github.com/XuTheBunny)
+
+
 ## Release 0.19.0
 
 ### Summary
