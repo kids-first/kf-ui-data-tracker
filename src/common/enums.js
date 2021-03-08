@@ -367,6 +367,12 @@ export const permissionIcon = {
   analysis: 'calculator',
   meta: 'sticky note',
   config: 'wrench',
+  banner: 'bell',
+  datareview: 'check',
+  joblog: 'tasks',
+  release: 'paper plane',
+  releaseevent: 'calendar',
+  releaseservice: 'paper plane',
 };
 
 // Icon color for different permissions
