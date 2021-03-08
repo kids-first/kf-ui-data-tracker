@@ -1,5 +1,17 @@
 # Kids First Data Tracker Change History
 
+## Release 0.19.2
+
+### Summary
+
+- Emojis: 🐛 x1
+- Categories: Fixes x1
+
+### New features and changes
+
+- [#997](https://github.com/kids-first/kf-ui-data-tracker/pull/997) - 🐛 Hide devbar if variable not set - [2de7b2f9](https://github.com/kids-first/kf-ui-data-tracker/commit/2de7b2f90c47985fe3a5359da1f3c17dad51cd47) by [dankolbman](https://github.com/dankolbman)
+
+
 ## Release 0.19.1
 
 ### Summary
