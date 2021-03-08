@@ -404,3 +404,31 @@ export const UPDATE_DATA_REVIEW = gql`
   ${VERSION_FIELDS}
 `;
 
+export const AWAIT_DATA_REVIEW = gql`
+  mutation awaitDataReview($id: ID!) {
+    awaitDataReview(id: $id) {
+      dataReview {
+        id
+        uuid
+        kfId
+        name
+        description
+        state
+        createdAt
+        study {
+          ...StudyBasicFields
+        }
+        versions {
+          edges {
+            node {
+              ...VersionFields
+            }
+          }
+        }
+      }
+    }
+  }
+  ${STUDY_BASIC_FIELDS}
+  ${VERSION_FIELDS}
+`;
+
