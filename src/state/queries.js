@@ -1,5 +1,6 @@
 import gql from 'graphql-tag';
 import {
+  CREATOR_FIELDS,
   PROJECT_FIELDS,
   STUDY_BASIC_FIELDS,
   STUDY_INFO_FIELDS,
@@ -356,3 +357,38 @@ export const SETTINGS = gql`
     }
   }
 `;
+
+export const ALL_DATA_REVIEWS = gql`
+  query allDataReviews($studyKfId: String) {
+    allDataReviews(studyKfId: $studyKfId) {
+      edges {
+        node {
+          id
+          uuid
+          kfId
+          name
+          description
+          state
+          createdAt
+          creator {
+            ...CreatorFields
+          }
+          study {
+            ...StudyBasicFields
+          }
+          versions {
+            edges {
+              node {
+                ...VersionFields
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  ${STUDY_BASIC_FIELDS}
+  ${VERSION_FIELDS}
+  ${CREATOR_FIELDS}
+`;
+
