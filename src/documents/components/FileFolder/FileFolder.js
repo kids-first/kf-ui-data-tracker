@@ -47,6 +47,7 @@ const FileFolder = ({
   selection,
   setSelection,
   tagOptions,
+  allowAddReview,
 }) => {
   const filesFlat = keyedFiles(fileList, match);
   const filesTree = listToTree(filesFlat);
@@ -274,6 +275,22 @@ const FileFolder = ({
                 onClick={handleViewToggle}
               />
             </Button.Group>
+            {allowAddReview && (
+              <Button
+                className="ml-15"
+                compact
+                color="teal"
+                floated="right"
+                size="large"
+                icon="check"
+                labelPosition="left"
+                content="Start Review"
+                as="label"
+                onClick={() =>
+                  history.push(`/study/${match.params.kfId}/start-review`)
+                }
+              />
+            )}
             <Button
               className="ml-15"
               compact
