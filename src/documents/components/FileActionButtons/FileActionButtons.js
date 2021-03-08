@@ -18,6 +18,9 @@ const FileActionButtons = ({
   fluid = false,
   hideCopy = false,
   version = null,
+  updateReview,
+  reviewNode,
+  updateError,
 }) => {
   return (
     <Button.Group fluid={fluid} size="small">
@@ -178,6 +181,73 @@ const FileActionButtons = ({
           )}
         </Amplitude>
       )}
+      {version &&
+        updateReview &&
+        reviewNode &&
+        reviewNode.state !== 'completed' &&
+        reviewNode.state !== 'closed' && (
+          <Amplitude
+            eventProperties={inheritedProps => ({
+              ...inheritedProps,
+              scope: inheritedProps.scope
+                ? [...inheritedProps.scope, 'button', 'remove version button']
+                : ['button', 'remove version button'],
+            })}
+          >
+            {({logEvent}) => (
+              <Popup
+                trigger={
+                  <Responsive
+                    as={Button}
+                    minWidth={Responsive.onlyTablet.minWidth}
+                    basic
+                    compact
+                    onClick={e => e.stopPropagation()}
+                    icon={<Icon name="minus square" color="red" />}
+                  />
+                }
+                header="Are you sure?"
+                content={
+                  <>
+                    This version will be removed from current data review
+                    <Divider />
+                    {updateError ? (
+                      <span className="text-red">{updateError.message}</span>
+                    ) : (
+                      <Button
+                        negative
+                        fluid
+                        icon={<Icon name="minus square" />}
+                        content="Remove"
+                        onClick={e => {
+                          logEvent('click');
+                          e.stopPropagation();
+                          const versionsList = reviewNode.versions.edges.map(
+                            ({node}) => node.id,
+                          );
+                          updateReview({
+                            variables: {
+                              id: reviewNode.id,
+                              input: {
+                                name: reviewNode.name,
+                                description: reviewNode.descrition,
+                                versions: versionsList.filter(
+                                  id => id !== version.id,
+                                ),
+                              },
+                            },
+                          }).catch(err => console.log(err));
+                        }}
+                      />
+                    )}
+                  </>
+                }
+                on="click"
+                position="top right"
+              />
+            )}
+          </Amplitude>
+        )}
     </Button.Group>
   );
 };
