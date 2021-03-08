@@ -6,6 +6,7 @@ import {
   USER_FIELDS,
 } from './fragments';
 
+import {VERSION_FIELDS} from '../documents/fragments';
 // Mutation to create a new dev token
 export const SYNC_PROJECTS = gql`
   mutation SyncProjects {
@@ -346,3 +347,32 @@ export const EXCHANGE_REFERRAL_TOKEN = gql`
   ${USER_FIELDS}
   ${PROJECT_FIELDS}
 `;
+
+export const CREATE_DATA_REVIEW = gql`
+  mutation createDataReview($input: CreateDataReviewInput!) {
+    createDataReview(input: $input) {
+      dataReview {
+        id
+        uuid
+        kfId
+        name
+        description
+        state
+        createdAt
+        study {
+          ...StudyBasicFields
+        }
+        versions {
+          edges {
+            node {
+              ...VersionFields
+            }
+          }
+        }
+      }
+    }
+  }
+  ${STUDY_BASIC_FIELDS}
+  ${VERSION_FIELDS}
+`;
+
