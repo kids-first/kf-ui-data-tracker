@@ -124,29 +124,35 @@ const ListFilterBar = ({
               }
             />
           </Form.Group>
-          <Amplitude
-            eventProperties={inheritedProps => ({
-              ...inheritedProps,
-              scope: inheritedProps.scope
-                ? [...inheritedProps.scope, 'toggle button', 'show file kf_id']
-                : ['toggle button', 'show file kf_id'],
-            })}
-          >
-            {({logEvent}) => (
-              <Checkbox
-                floated="right"
-                className="font-normal"
-                label="Show Kids First ID"
-                checked={showId}
-                onClick={() => {
-                  setShowId(!showId);
-                  logEvent('toggle file kfId ' + (showId ? 'off' : 'on'));
-                  localStorage.setItem('showFileId', !showId);
-                }}
-                data-cy="toggle file kfId"
-              />
-            )}
-          </Amplitude>
+          {setShowId && (
+            <Amplitude
+              eventProperties={inheritedProps => ({
+                ...inheritedProps,
+                scope: inheritedProps.scope
+                  ? [
+                      ...inheritedProps.scope,
+                      'toggle button',
+                      'show file kf_id',
+                    ]
+                  : ['toggle button', 'show file kf_id'],
+              })}
+            >
+              {({logEvent}) => (
+                <Checkbox
+                  floated="right"
+                  className="font-normal"
+                  label="Show Kids First ID"
+                  checked={showId}
+                  onClick={() => {
+                    setShowId(!showId);
+                    logEvent('toggle file kfId ' + (showId ? 'off' : 'on'));
+                    localStorage.setItem('showFileId', !showId);
+                  }}
+                  data-cy="toggle file kfId"
+                />
+              )}
+            </Amplitude>
+          )}
         </Form>
       </Responsive>
       <Responsive minWidth={1000}>
@@ -227,33 +233,35 @@ const ListFilterBar = ({
                 />
               }
             />
-            <Amplitude
-              eventProperties={inheritedProps => ({
-                ...inheritedProps,
-                scope: inheritedProps.scope
-                  ? [
-                      ...inheritedProps.scope,
-                      'toggle button',
-                      'show file kf_id',
-                    ]
-                  : ['toggle button', 'show file kf_id'],
-              })}
-            >
-              {({logEvent}) => (
-                <Checkbox
-                  floated="right"
-                  className="font-normal"
-                  label="Show Kids First ID"
-                  checked={showId}
-                  onClick={() => {
-                    setShowId(!showId);
-                    logEvent('toggle file kfId ' + (showId ? 'off' : 'on'));
-                    localStorage.setItem('showFileId', !showId);
-                  }}
-                  data-cy="toggle file kfId"
-                />
-              )}
-            </Amplitude>
+            {setShowId && (
+              <Amplitude
+                eventProperties={inheritedProps => ({
+                  ...inheritedProps,
+                  scope: inheritedProps.scope
+                    ? [
+                        ...inheritedProps.scope,
+                        'toggle button',
+                        'show file kf_id',
+                      ]
+                    : ['toggle button', 'show file kf_id'],
+                })}
+              >
+                {({logEvent}) => (
+                  <Checkbox
+                    floated="right"
+                    className="font-normal"
+                    label="Show Kids First ID"
+                    checked={showId}
+                    onClick={() => {
+                      setShowId(!showId);
+                      logEvent('toggle file kfId ' + (showId ? 'off' : 'on'));
+                      localStorage.setItem('showFileId', !showId);
+                    }}
+                    data-cy="toggle file kfId"
+                  />
+                )}
+              </Amplitude>
+            )}
           </Form.Group>
           {!hideBatchAction && (
             <BatchActions
