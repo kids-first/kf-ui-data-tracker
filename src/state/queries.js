@@ -392,3 +392,57 @@ export const ALL_DATA_REVIEWS = gql`
   ${CREATOR_FIELDS}
 `;
 
+export const DATA_REVIEW = gql`
+  query dataReview($id: ID!) {
+    dataReview(id: $id) {
+      id
+      uuid
+      kfId
+      name
+      description
+      state
+      createdAt
+      creator {
+        ...CreatorFields
+      }
+      study {
+        ...StudyBasicFields
+      }
+      versions {
+        edges {
+          node {
+            ...VersionFields
+            rootFile {
+              ...FileFields
+              versions {
+                edges {
+                  node {
+                    id
+                    kfId
+                    createdAt
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      events {
+        edges {
+          node {
+            ...EventFields
+            user {
+              ...UserFields
+            }
+          }
+        }
+      }
+    }
+  }
+  ${STUDY_BASIC_FIELDS}
+  ${FILE_FIELDS}
+  ${VERSION_FIELDS}
+  ${CREATOR_FIELDS}
+  ${EVENT_FIELDS}
+  ${USER_FIELDS}
+`;
