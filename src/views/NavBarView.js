@@ -79,7 +79,9 @@ const NavBarView = ({match, location, history}) => {
         />
       </Segment>
       <Container>
-        <StudyNavBar isBeta={isBeta} isResearch={isResearch} />
+        {!location.pathname.includes('/start-review') && (
+          <StudyNavBar isBeta={isBeta} isResearch={isResearch} />
+        )}
         <Switch>
           <Route
             exact
