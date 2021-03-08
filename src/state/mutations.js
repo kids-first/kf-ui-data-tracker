@@ -460,3 +460,31 @@ export const APPROVE_DATA_REVIEW = gql`
   ${VERSION_FIELDS}
 `;
 
+export const CLOSE_DATA_REVIEW = gql`
+  mutation closeDataReview($id: ID!) {
+    closeDataReview(id: $id) {
+      dataReview {
+        id
+        uuid
+        kfId
+        name
+        description
+        state
+        createdAt
+        study {
+          ...StudyBasicFields
+        }
+        versions {
+          edges {
+            node {
+              ...VersionFields
+            }
+          }
+        }
+      }
+    }
+  }
+  ${STUDY_BASIC_FIELDS}
+  ${VERSION_FIELDS}
+`;
+
