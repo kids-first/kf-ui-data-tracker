@@ -1,13 +1,10 @@
 import React, {useState} from 'react';
 import {useQuery} from '@apollo/client';
-import {ALL_GROUPS, MY_PROFILE, STATUS} from '../../state/queries';
+import {ALL_GROUPS, MY_PROFILE} from '../../state/queries';
 import {DEV_BAR, KF_STUDY_API} from '../../common/globals';
 import {Container, Dropdown, Icon, Image, Menu, Popup} from 'semantic-ui-react';
 
 const DevHeader = () => {
-  const {data: statusData} = useQuery(STATUS);
-  const status = statusData && statusData.status;
-
   const {data: profileData} = useQuery(MY_PROFILE);
   const myProfile = profileData && profileData.myProfile;
 
@@ -73,7 +70,7 @@ const DevHeader = () => {
     });
   };
 
-  if (!DEV_BAR && (!status || !myProfile)) return <></>;
+  if (!DEV_BAR) return <></>;
 
   return (
     <Menu inverted attached size="tiny">
