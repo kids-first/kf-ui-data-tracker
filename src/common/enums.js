@@ -480,3 +480,37 @@ export const collaboratorRoles = {
   BIOINFO: {key: 'BIOINFO', name: 'Bioinformatics Staff'},
   DEVELOPER: {key: 'DEVELOPER', name: 'Developer'},
 };
+
+// File review status
+export const reviewStatus = {
+  not_started: {
+    color: 'grey',
+    icon: 'dot circle',
+    text: 'Not Started',
+    actions: ['close'],
+  },
+  in_review: {
+    color: 'yellow',
+    icon: 'play circle',
+    text: 'In Review',
+    actions: ['await', 'approve', 'close'],
+  },
+  awaiting_updates: {
+    color: 'orange',
+    icon: 'pause circle',
+    text: 'Awaiting Updates',
+    actions: ['close'],
+  },
+  completed: {
+    color: 'green',
+    icon: 'check circle',
+    text: 'Completed',
+    actions: [],
+  },
+  closed: {
+    color: 'black',
+    icon: 'stop circle',
+    text: 'Closed',
+    actions: ['reopen'],
+  },
+};
