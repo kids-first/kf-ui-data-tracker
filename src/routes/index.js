@@ -26,6 +26,7 @@ import {
 import {
   StudyFilesListView,
   FileDetailView,
+  ReviewDetailView,
   ReviewListView,
   StartReviewView,
   UploadView,
@@ -253,6 +254,12 @@ const Routes = () => (
           path="/study/:kfId/reviews"
           component={ReviewListView}
           scope={['study', 'reviews']}
+        />
+        <PrivateRoute
+          exact
+          path="/study/:kfId/reviews/:reviewId(DR_\w{8})"
+          component={ReviewDetailView}
+          scope={['study', 'reviews', 'review']}
         />
         <RestrictedRoute
           exact
