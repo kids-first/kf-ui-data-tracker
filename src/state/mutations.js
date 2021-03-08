@@ -376,3 +376,31 @@ export const CREATE_DATA_REVIEW = gql`
   ${VERSION_FIELDS}
 `;
 
+export const UPDATE_DATA_REVIEW = gql`
+  mutation updateDataReview($id: ID!, $input: UpdateDataReviewInput!) {
+    updateDataReview(id: $id, input: $input) {
+      dataReview {
+        id
+        uuid
+        kfId
+        name
+        description
+        state
+        createdAt
+        study {
+          ...StudyBasicFields
+        }
+        versions {
+          edges {
+            node {
+              ...VersionFields
+            }
+          }
+        }
+      }
+    }
+  }
+  ${STUDY_BASIC_FIELDS}
+  ${VERSION_FIELDS}
+`;
+
