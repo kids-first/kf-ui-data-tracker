@@ -17,6 +17,7 @@ const FileActionButtons = ({
   vertical = true,
   fluid = false,
   hideCopy = false,
+  version = null,
 }) => {
   return (
     <Button.Group fluid={fluid} size="small">
@@ -32,7 +33,7 @@ const FileActionButtons = ({
           <Popup
             inverted
             position="top left"
-            content="Preview latest version"
+            content={version ? 'Preview version' : 'Preview latest version'}
             trigger={
               <Button
                 basic
@@ -44,7 +45,9 @@ const FileActionButtons = ({
                   e.preventDefault();
                   window.open(
                     `/study/${studyId}/documents/${node.kfId}/versions/${
-                      fileSortedVersions(node)[0].node.kfId
+                      version
+                        ? version.kfId
+                        : fileSortedVersions(node)[0].node.kfId
                     }`,
                   );
                 }}
@@ -66,13 +69,17 @@ const FileActionButtons = ({
             inverted
             position="top left"
             icon="download"
-            content="Download latest version"
+            content={version ? 'Download version' : 'Download latest version'}
             trigger={
               <Button
                 as="a"
                 href={
                   node.downloadUrl +
-                  `/version/${fileSortedVersions(node)[0].node.kfId}`
+                  `/version/${
+                    version
+                      ? version.kfId
+                      : fileSortedVersions(node)[0].node.kfId
+                  }`
                 }
                 basic
                 compact
@@ -82,7 +89,12 @@ const FileActionButtons = ({
                   logEvent('click');
                   e.stopPropagation();
                   e.preventDefault();
-                  downloadFile(studyId, node.kfId, null, downloadFileMutation);
+                  downloadFile(
+                    studyId,
+                    node.kfId,
+                    version && version.kfId,
+                    downloadFileMutation,
+                  );
                 }}
               />
             }
@@ -103,7 +115,9 @@ const FileActionButtons = ({
               data-testid="copy-file-id"
               textToCopy={
                 node.downloadUrl +
-                `/version/${fileSortedVersions(node)[0].node.kfId}`
+                `/version/${
+                  version ? version.kfId : fileSortedVersions(node)[0].node.kfId
+                }`
               }
               basic
               compact
