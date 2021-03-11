@@ -92,6 +92,7 @@ export const keyedFiles = fileList => {
       description: node.description,
       tags: node.tags,
       versions: node.versions,
+      downloadUrl: node.downloadUrl,
     });
     if (folders.length > 0) {
       folders.forEach((folder, index) => {
