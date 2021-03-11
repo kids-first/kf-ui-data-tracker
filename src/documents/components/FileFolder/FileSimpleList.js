@@ -96,12 +96,16 @@ const FileSimpleList = ({
         columnSorts[sorting.column](f1, f2),
     );
   const ordered = sorting.direction === 'ascending' ? sorted : sorted.reverse();
+  const foldersFirst = ordered
+    .filter(obj => obj.isDirectory)
+    .concat(ordered.filter(obj => !obj.isDirectory));
 
-  let pageCount = Math.ceil(ordered.length / DOCS_PER_PAGE);
-  let paginatedList = ordered.slice(
+  let pageCount = Math.ceil(foldersFirst.length / DOCS_PER_PAGE);
+  let paginatedList = foldersFirst.slice(
     DOCS_PER_PAGE * (page - 1),
     DOCS_PER_PAGE * (page - 1) + DOCS_PER_PAGE,
   );
+
   return (
     <Fragment>
       {updateError && (

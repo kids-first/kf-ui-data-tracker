@@ -102,6 +102,9 @@ export const keyedFiles = fileList => {
           isDirectory: true,
           parentId: index === 0 ? '' : folders[index - 1],
           expanded: false,
+          kfId: '',
+          tags: [],
+          fileType: '',
         });
       });
     }
