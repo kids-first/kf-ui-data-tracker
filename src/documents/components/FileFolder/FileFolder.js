@@ -1,4 +1,5 @@
 import {
+  Breadcrumb,
   Button,
   Divider,
   Grid,
@@ -9,13 +10,15 @@ import {
   Modal,
   Segment,
 } from 'semantic-ui-react';
-import React, {useState} from 'react';
+import React, {Fragment, useState} from 'react';
 import SortableTree, {insertNode} from 'react-sortable-tree';
 import {
+  generateBreadcrumb,
   generatePath,
   keyedFiles,
   listToTree,
-  treeToList,
+  searchMethod,
+  treeToList
 } from '../../../common/treeDataUtils';
 
 import BatchActions from '../ListFilterBar/BatchActions';
@@ -54,7 +57,6 @@ const FileFolder = ({
   const [renameOpen, setRenameOpen] = useState(null);
   const [renameInput, setRenameInput] = useState('');
   const [deleteOpen, setDeleteOpen] = useState(null);
-  const [openedNode, setOpenedNode] = useState({});
 
   const existNames =
     fileList.length > 0 ? fileList.map(({node}) => node.name) : [];
@@ -64,6 +66,20 @@ const FileFolder = ({
           .map(f => (f.isDirectory ? f.title : null))
           .filter(t => t !== null)
       : [];
+
+  const hashFolderName =
+    history.location.hash && history.location.hash.includes('PATH_')
+      ? history.location.hash
+          .slice(6)
+          .split('/')
+          .filter(f => f !== '')
+          .reverse()[0]
+      : '';
+  const hashOpendFolder =
+    hashFolderName && existFolders.includes(hashFolderName)
+      ? searchTree({title: 'root', children: treeData}, hashFolderName)
+      : {};
+  const [openedNode, setOpenedNode] = useState(hashOpendFolder);
 
   const updateTags = (kfId, newPath) => {
     const file = fileList.find(({node}) => node.kfId === kfId);
@@ -95,6 +111,24 @@ const FileFolder = ({
         name: newName,
       },
     });
+  };
+
+  const updateHash = fileNode => {
+    const path = fileNode
+      ? '#PATH_' +
+        generatePath(
+          {
+            nextParentNode: {
+              title: fileNode.parentId,
+            },
+          },
+          treeData,
+          filesFlat,
+        ) +
+        fileNode.title +
+        '/'
+      : '';
+    window.history.pushState({}, '', history.location.pathname + path);
   };
 
   const handleMoveNode = props => {
@@ -154,9 +188,6 @@ const FileFolder = ({
       setTreeData(tree);
     }
     setNameInput('');
-    if (selectedNode) {
-      setOpenedNode(selectedNode);
-    }
   };
 
   const handleUpdateFolder = () => {
@@ -211,6 +242,7 @@ const FileFolder = ({
     } else {
       setTreeData(tree.filter(f => f.title !== selectedNode.title));
     }
+    updateHash();
     setOpenedNode({});
   };
 
@@ -246,7 +278,6 @@ const FileFolder = ({
               className="ml-15"
               compact
               primary
-              floated="right"
               size="large"
               icon="cloud upload"
               labelPosition="left"
@@ -289,7 +320,7 @@ const FileFolder = ({
           <Segment basic className="h-500-container noPadding">
             <SortableTree
               style={{width: '100%'}}
-              searchQuery={searchString}
+              searchQuery={searchString.length > 0 ? searchString : null}
               treeData={treeData}
               onChange={treeData => setTreeData(treeData)}
               theme={FileExplorerTheme}
@@ -306,7 +337,10 @@ const FileFolder = ({
                         <Icon
                           className="cursor-pointer"
                           name="caret square right"
-                          onClick={() => setOpenedNode(rowInfo.node)}
+                          onClick={() => {
+                            updateHash(rowInfo.node);
+                            setOpenedNode(rowInfo.node);
+                          }}
                         />,
                       ],
                     }
@@ -314,46 +348,67 @@ const FileFolder = ({
                       icons: [<Icon name="file outline" />],
                     }
               }
+              searchMethod={searchMethod}
             />
           </Segment>
         </Grid.Column>
         <Grid.Column width={13}>
-          <Button
-            disabled={!openedNode.title}
-            attached="left"
-            icon="arrow left"
-            onClick={() => {
-              if (openedNode.parentId) {
-                const parentNode = searchTree(
-                  {title: 'root', children: treeData},
-                  openedNode.parentId,
-                );
-                setOpenedNode(parentNode);
-              } else {
-                setOpenedNode({});
-              }
-            }}
-          />
-          <Button attached="right" basic className="w-600">
-            {openedNode.title
-              ? generatePath(
-                  {nextParentNode: {title: openedNode.parentId}},
-                  treeData,
-                  filesFlat,
-                ) +
-                openedNode.title +
-                '/'
-              : '/'}
-          </Button>
-          <BatchActions
-            fileList={fileList}
-            studyId={match.params.kfId}
-            deleteFile={deleteFile}
-            downloadFileMutation={downloadFileMutation}
-            selection={selection}
-            setSelection={setSelection}
-            disabled={selection.length === 0}
-          />
+          <Grid stackable>
+            <Grid.Column width={11} verticalAlign="middle">
+              <Breadcrumb size="large">
+                <Breadcrumb.Section
+                  link
+                  onClick={() => {
+                    updateHash();
+                    setOpenedNode({});
+                  }}
+                >
+                  ROOT
+                </Breadcrumb.Section>
+                <Breadcrumb.Divider icon="right angle" />
+                {openedNode.title && (
+                  <Fragment>
+                    {generateBreadcrumb(
+                      {nextParentNode: {title: openedNode.parentId}},
+                      treeData,
+                      filesFlat,
+                    ).map(folder => (
+                      <Fragment key={folder.key}>
+                        <Breadcrumb.Section
+                          link
+                          onClick={() => {
+                            const backNode = searchTree(
+                              {title: 'root', children: treeData},
+                              folder.title,
+                            );
+                            updateHash(backNode);
+                            setOpenedNode(backNode);
+                          }}
+                        >
+                          {folder.title}
+                        </Breadcrumb.Section>
+                        <Breadcrumb.Divider />
+                      </Fragment>
+                    ))}
+                    <Breadcrumb.Section active>
+                      {openedNode.title}
+                    </Breadcrumb.Section>
+                  </Fragment>
+                )}
+              </Breadcrumb>
+            </Grid.Column>
+            <Grid.Column width={5}>
+              <BatchActions
+                fileList={fileList}
+                studyId={match.params.kfId}
+                deleteFile={deleteFile}
+                downloadFileMutation={downloadFileMutation}
+                selection={selection}
+                setSelection={setSelection}
+                disabled={selection.length === 0}
+              />
+            </Grid.Column>
+          </Grid>
           <FileSimpleList
             fileList={openedNode.children ? openedNode.children : treeData}
             studyId={match.params.kfId}
@@ -368,6 +423,7 @@ const FileFolder = ({
             setInputOpen={setInputOpen}
             setRenameOpen={setRenameOpen}
             setDeleteOpen={setDeleteOpen}
+            updateHash={updateHash}
           />
         </Grid.Column>
       </Grid.Row>

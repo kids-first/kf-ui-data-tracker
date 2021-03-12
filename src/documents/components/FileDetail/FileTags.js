@@ -116,7 +116,9 @@ const FileTags = ({fileNode, updateFile, defaultOptions}) => {
                 onAddItem={handleAddition}
                 onChange={handleChange}
                 options={tagOptions.filter(
-                  v => !fileNode.tags.includes(v.value),
+                  v =>
+                    !fileNode.tags.includes(v.value) &&
+                    !v.value.includes('PATH_'),
                 )}
                 error={tagSelection.length > 50 || error.length > 0}
               />

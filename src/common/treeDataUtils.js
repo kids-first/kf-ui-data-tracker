@@ -40,11 +40,10 @@ export const searchTree = (element, matchingTitle) => {
 
 export const generatePath = (props, treeData, filesFlat) => {
   var parents = [];
-  parents.push(props.nextParentNode.title);
   var i = 0;
   var parent = searchTree(
     {title: 'root', children: treeData},
-    props.nextParentNode.parentId,
+    props.nextParentNode.title,
   );
   if (parent) {
     parents.push(parent.title);
@@ -62,6 +61,27 @@ export const generatePath = (props, treeData, filesFlat) => {
       ? parents.reverse().join('/') + '/'
       : '';
   return path;
+};
+
+export const generateBreadcrumb = (props, treeData, filesFlat) => {
+  var parents = [];
+  var i = 0;
+  var parent = searchTree(
+    {title: 'root', children: treeData},
+    props.nextParentNode.title,
+  );
+  if (parent) {
+    parents.push(parent);
+  }
+  for (i = 0; i < filesFlat.length + 1; i += 1) {
+    if (parent === null || parent.parentId === '') {
+      break;
+    } else {
+      parent = searchTree({title: 'root', children: treeData}, parent.parentId);
+      parents.push(parent);
+    }
+  }
+  return parents.reverse();
 };
 
 export const treeToList = (node, result = []) => {
@@ -92,6 +112,8 @@ export const keyedFiles = fileList => {
       description: node.description,
       tags: node.tags,
       versions: node.versions,
+      downloadUrl: node.downloadUrl,
+      searchableTags: node.tags.join('**'),
     });
     if (folders.length > 0) {
       folders.forEach((folder, index) => {
@@ -101,6 +123,10 @@ export const keyedFiles = fileList => {
           isDirectory: true,
           parentId: index === 0 ? '' : folders[index - 1],
           expanded: false,
+          kfId: '',
+          tags: [],
+          fileType: '',
+          searchableTags: '',
         });
       });
     }
@@ -114,4 +140,47 @@ export const keyedFiles = fileList => {
         ),
     )
     .sort((a, b) => a.modified - b.modified);
+};
+
+// Internal function to support customized file folder search
+const getReactElementText = parent => {
+  if (typeof parent === 'string') {
+    return parent;
+  }
+  if (
+    parent === null ||
+    typeof parent !== 'object' ||
+    !parent.props ||
+    !parent.props.children ||
+    (typeof parent.props.children !== 'string' &&
+      typeof parent.props.children !== 'object')
+  ) {
+    return '';
+  }
+  if (typeof parent.props.children === 'string') {
+    return parent.props.children;
+  }
+  return parent.props.children
+    .map(child => getReactElementText(child))
+    .join('');
+};
+
+// Internal function to support customized file folder search
+const stringSearch = (key, searchQuery, node, path, treeIndex) => {
+  if (typeof node[key] === 'function') {
+    return String(node[key]({node, path, treeIndex})).indexOf(searchQuery) > -1;
+  }
+  if (typeof node[key] === 'object') {
+    return getReactElementText(node[key]).indexOf(searchQuery) > -1;
+  }
+  return node[key] && String(node[key]).indexOf(searchQuery) > -1;
+};
+
+// Customized file folder search function
+export const searchMethod = ({node, path, treeIndex, searchQuery}) => {
+  return (
+    stringSearch('title', searchQuery, node, path, treeIndex) ||
+    stringSearch('subtitle', searchQuery, node, path, treeIndex) ||
+    stringSearch('searchableTags', searchQuery, node, path, treeIndex)
+  );
 };
