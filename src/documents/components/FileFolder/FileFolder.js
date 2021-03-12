@@ -56,7 +56,6 @@ const FileFolder = ({
   const [renameOpen, setRenameOpen] = useState(null);
   const [renameInput, setRenameInput] = useState('');
   const [deleteOpen, setDeleteOpen] = useState(null);
-  const [openedNode, setOpenedNode] = useState({});
 
   const existNames =
     fileList.length > 0 ? fileList.map(({node}) => node.name) : [];
@@ -66,6 +65,20 @@ const FileFolder = ({
           .map(f => (f.isDirectory ? f.title : null))
           .filter(t => t !== null)
       : [];
+
+  const hashFolderName =
+    history.location.hash && history.location.hash.includes('PATH_')
+      ? history.location.hash
+          .slice(6)
+          .split('/')
+          .filter(f => f !== '')
+          .reverse()[0]
+      : '';
+  const hashOpendFolder =
+    hashFolderName && existFolders.includes(hashFolderName)
+      ? searchTree({title: 'root', children: treeData}, hashFolderName)
+      : {};
+  const [openedNode, setOpenedNode] = useState(hashOpendFolder);
 
   const updateTags = (kfId, newPath) => {
     const file = fileList.find(({node}) => node.kfId === kfId);
@@ -97,6 +110,24 @@ const FileFolder = ({
         name: newName,
       },
     });
+  };
+
+  const updateHash = fileNode => {
+    const path = fileNode
+      ? '#PATH_' +
+        generatePath(
+          {
+            nextParentNode: {
+              title: fileNode.parentId,
+            },
+          },
+          treeData,
+          filesFlat,
+        ) +
+        fileNode.title +
+        '/'
+      : '';
+    window.history.pushState({}, '', history.location.pathname + path);
   };
 
   const handleMoveNode = props => {
@@ -156,9 +187,6 @@ const FileFolder = ({
       setTreeData(tree);
     }
     setNameInput('');
-    if (selectedNode) {
-      setOpenedNode(selectedNode);
-    }
   };
 
   const handleUpdateFolder = () => {
@@ -213,6 +241,7 @@ const FileFolder = ({
     } else {
       setTreeData(tree.filter(f => f.title !== selectedNode.title));
     }
+    updateHash();
     setOpenedNode({});
   };
 
@@ -308,7 +337,10 @@ const FileFolder = ({
                         <Icon
                           className="cursor-pointer"
                           name="caret square right"
-                          onClick={() => setOpenedNode(rowInfo.node)}
+                          onClick={() => {
+                            updateHash(rowInfo.node);
+                            setOpenedNode(rowInfo.node);
+                          }}
                         />,
                       ],
                     }
@@ -391,6 +423,7 @@ const FileFolder = ({
             setInputOpen={setInputOpen}
             setRenameOpen={setRenameOpen}
             setDeleteOpen={setDeleteOpen}
+            updateHash={updateHash}
           />
         </Grid.Column>
       </Grid.Row>

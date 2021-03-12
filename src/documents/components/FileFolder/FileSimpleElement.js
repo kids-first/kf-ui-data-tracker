@@ -57,6 +57,7 @@ const FileSimpleElement = ({
   setInputOpen,
   setRenameOpen,
   setDeleteOpen,
+  updateHash,
 }) => {
   const fileKfID = fileNode.kfId || 'unknown ID';
   const fileName = fileNode.title || 'unknown file name';
@@ -75,6 +76,7 @@ const FileSimpleElement = ({
         data-testid="file-item"
         className="cursor-pointer"
         onClick={() => {
+          updateHash(fileNode);
           setOpenedNode(fileNode);
         }}
       >
