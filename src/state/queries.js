@@ -427,7 +427,7 @@ export const DATA_REVIEW = gql`
           }
         }
       }
-      events {
+      events(first: 20, orderBy: "-created_at") {
         edges {
           node {
             ...EventFields
