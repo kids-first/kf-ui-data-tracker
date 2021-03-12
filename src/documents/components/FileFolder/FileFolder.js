@@ -13,11 +13,12 @@ import {
 import React, {Fragment, useState} from 'react';
 import SortableTree, {insertNode} from 'react-sortable-tree';
 import {
+  generateBreadcrumb,
   generatePath,
   keyedFiles,
   listToTree,
   searchMethod,
-  treeToList,
+  treeToList
 } from '../../../common/treeDataUtils';
 
 import BatchActions from '../ListFilterBar/BatchActions';

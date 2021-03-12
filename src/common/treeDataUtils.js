@@ -40,11 +40,10 @@ export const searchTree = (element, matchingTitle) => {
 
 export const generatePath = (props, treeData, filesFlat) => {
   var parents = [];
-  parents.push(props.nextParentNode.title);
   var i = 0;
   var parent = searchTree(
     {title: 'root', children: treeData},
-    props.nextParentNode.parentId,
+    props.nextParentNode.title,
   );
   if (parent) {
     parents.push(parent.title);
