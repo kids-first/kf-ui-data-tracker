@@ -64,6 +64,27 @@ export const generatePath = (props, treeData, filesFlat) => {
   return path;
 };
 
+export const generateBreadcrumb = (props, treeData, filesFlat) => {
+  var parents = [];
+  var i = 0;
+  var parent = searchTree(
+    {title: 'root', children: treeData},
+    props.nextParentNode.title,
+  );
+  if (parent) {
+    parents.push(parent);
+  }
+  for (i = 0; i < filesFlat.length + 1; i += 1) {
+    if (parent === null || parent.parentId === '') {
+      break;
+    } else {
+      parent = searchTree({title: 'root', children: treeData}, parent.parentId);
+      parents.push(parent);
+    }
+  }
+  return parents.reverse();
+};
+
 export const treeToList = (node, result = []) => {
   if (!node.children.length) result.push(node);
   for (const child of node.children) treeToList(child, result);

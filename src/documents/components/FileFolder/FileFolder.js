@@ -1,4 +1,5 @@
 import {
+  Breadcrumb,
   Button,
   Divider,
   Grid,
@@ -9,7 +10,7 @@ import {
   Modal,
   Segment,
 } from 'semantic-ui-react';
-import React, {useState} from 'react';
+import React, {Fragment, useState} from 'react';
 import SortableTree, {insertNode} from 'react-sortable-tree';
 import {
   generatePath,
@@ -318,42 +319,62 @@ const FileFolder = ({
           </Segment>
         </Grid.Column>
         <Grid.Column width={13}>
-          <Button
-            disabled={!openedNode.title}
-            attached="left"
-            icon="arrow left"
-            onClick={() => {
-              if (openedNode.parentId) {
-                const parentNode = searchTree(
-                  {title: 'root', children: treeData},
-                  openedNode.parentId,
-                );
-                setOpenedNode(parentNode);
-              } else {
-                setOpenedNode({});
-              }
-            }}
-          />
-          <Button attached="right" basic className="w-600">
-            {openedNode.title
-              ? generatePath(
-                  {nextParentNode: {title: openedNode.parentId}},
-                  treeData,
-                  filesFlat,
-                ) +
-                openedNode.title +
-                '/'
-              : '/'}
-          </Button>
-          <BatchActions
-            fileList={fileList}
-            studyId={match.params.kfId}
-            deleteFile={deleteFile}
-            downloadFileMutation={downloadFileMutation}
-            selection={selection}
-            setSelection={setSelection}
-            disabled={selection.length === 0}
-          />
+          <Grid stackable>
+            <Grid.Column width={11} verticalAlign="middle">
+              <Breadcrumb size="large">
+                <Breadcrumb.Section
+                  link
+                  onClick={() => {
+                    updateHash();
+                    setOpenedNode({});
+                  }}
+                >
+                  ROOT
+                </Breadcrumb.Section>
+                <Breadcrumb.Divider icon="right angle" />
+                {openedNode.title && (
+                  <Fragment>
+                    {generateBreadcrumb(
+                      {nextParentNode: {title: openedNode.parentId}},
+                      treeData,
+                      filesFlat,
+                    ).map(folder => (
+                      <Fragment key={folder.key}>
+                        <Breadcrumb.Section
+                          link
+                          onClick={() => {
+                            const backNode = searchTree(
+                              {title: 'root', children: treeData},
+                              folder.title,
+                            );
+                            updateHash(backNode);
+                            setOpenedNode(backNode);
+                          }}
+                        >
+                          {folder.title}
+                        </Breadcrumb.Section>
+                        <Breadcrumb.Divider />
+                      </Fragment>
+                    ))}
+                    <Breadcrumb.Section active>
+                      {openedNode.title}
+                    </Breadcrumb.Section>
+                  </Fragment>
+                )}
+              </Breadcrumb>
+            </Grid.Column>
+            <Grid.Column width={5}>
+              <BatchActions
+                fileList={fileList}
+                studyId={match.params.kfId}
+                deleteFile={deleteFile}
+                downloadFileMutation={downloadFileMutation}
+                selection={selection}
+                setSelection={setSelection}
+                disabled={selection.length === 0}
+              />
+            </Grid.Column>
+          </Grid>
           <FileSimpleList
             fileList={openedNode.children ? openedNode.children : treeData}
             studyId={match.params.kfId}
