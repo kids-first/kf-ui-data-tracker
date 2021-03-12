@@ -16,6 +16,7 @@ import {
   generatePath,
   keyedFiles,
   listToTree,
+  searchMethod,
   treeToList,
 } from '../../../common/treeDataUtils';
 
@@ -290,7 +291,7 @@ const FileFolder = ({
           <Segment basic className="h-500-container noPadding">
             <SortableTree
               style={{width: '100%'}}
-              searchQuery={searchString}
+              searchQuery={searchString.length > 0 ? searchString : null}
               treeData={treeData}
               onChange={treeData => setTreeData(treeData)}
               theme={FileExplorerTheme}
@@ -315,6 +316,7 @@ const FileFolder = ({
                       icons: [<Icon name="file outline" />],
                     }
               }
+              searchMethod={searchMethod}
             />
           </Segment>
         </Grid.Column>

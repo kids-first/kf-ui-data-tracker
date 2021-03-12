@@ -114,6 +114,7 @@ export const keyedFiles = fileList => {
       tags: node.tags,
       versions: node.versions,
       downloadUrl: node.downloadUrl,
+      searchableTags: node.tags.join('**'),
     });
     if (folders.length > 0) {
       folders.forEach((folder, index) => {
@@ -126,6 +127,7 @@ export const keyedFiles = fileList => {
           kfId: '',
           tags: [],
           fileType: '',
+          searchableTags: '',
         });
       });
     }
@@ -139,4 +141,47 @@ export const keyedFiles = fileList => {
         ),
     )
     .sort((a, b) => a.modified - b.modified);
+};
+
+// Internal function to support customized file folder search
+const getReactElementText = parent => {
+  if (typeof parent === 'string') {
+    return parent;
+  }
+  if (
+    parent === null ||
+    typeof parent !== 'object' ||
+    !parent.props ||
+    !parent.props.children ||
+    (typeof parent.props.children !== 'string' &&
+      typeof parent.props.children !== 'object')
+  ) {
+    return '';
+  }
+  if (typeof parent.props.children === 'string') {
+    return parent.props.children;
+  }
+  return parent.props.children
+    .map(child => getReactElementText(child))
+    .join('');
+};
+
+// Internal function to support customized file folder search
+const stringSearch = (key, searchQuery, node, path, treeIndex) => {
+  if (typeof node[key] === 'function') {
+    return String(node[key]({node, path, treeIndex})).indexOf(searchQuery) > -1;
+  }
+  if (typeof node[key] === 'object') {
+    return getReactElementText(node[key]).indexOf(searchQuery) > -1;
+  }
+  return node[key] && String(node[key]).indexOf(searchQuery) > -1;
+};
+
+// Customized file folder search function
+export const searchMethod = ({node, path, treeIndex, searchQuery}) => {
+  return (
+    stringSearch('title', searchQuery, node, path, treeIndex) ||
+    stringSearch('subtitle', searchQuery, node, path, treeIndex) ||
+    stringSearch('searchableTags', searchQuery, node, path, treeIndex)
+  );
 };
