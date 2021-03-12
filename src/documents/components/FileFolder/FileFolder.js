@@ -277,7 +277,6 @@ const FileFolder = ({
               className="ml-15"
               compact
               primary
-              floated="right"
               size="large"
               icon="cloud upload"
               labelPosition="left"
