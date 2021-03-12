@@ -89,12 +89,49 @@ const ReviewDetailView = ({
       },
     ],
   });
-  const [awaitReview, {error: awaitError}] = useMutation(AWAIT_DATA_REVIEW);
+  const [awaitReview, {error: awaitError}] = useMutation(AWAIT_DATA_REVIEW, {
+    refetchQueries: [
+      {
+        query: DATA_REVIEW,
+        variables: {
+          id: Buffer.from('DataReviewNode:' + reviewId).toString('base64'),
+        },
+      },
+    ],
+  });
   const [approveReview, {error: approveError}] = useMutation(
     APPROVE_DATA_REVIEW,
+    {
+      refetchQueries: [
+        {
+          query: DATA_REVIEW,
+          variables: {
+            id: Buffer.from('DataReviewNode:' + reviewId).toString('base64'),
+          },
+        },
+      ],
+    },
   );
-  const [closeReview, {error: closeError}] = useMutation(CLOSE_DATA_REVIEW);
-  const [reopenReview, {error: reopenError}] = useMutation(REOPEN_DATA_REVIEW);
+  const [closeReview, {error: closeError}] = useMutation(CLOSE_DATA_REVIEW, {
+    refetchQueries: [
+      {
+        query: DATA_REVIEW,
+        variables: {
+          id: Buffer.from('DataReviewNode:' + reviewId).toString('base64'),
+        },
+      },
+    ],
+  });
+  const [reopenReview, {error: reopenError}] = useMutation(REOPEN_DATA_REVIEW, {
+    refetchQueries: [
+      {
+        query: DATA_REVIEW,
+        variables: {
+          id: Buffer.from('DataReviewNode:' + reviewId).toString('base64'),
+        },
+      },
+    ],
+  });
 
   if (!loading && review === null) {
     return (
