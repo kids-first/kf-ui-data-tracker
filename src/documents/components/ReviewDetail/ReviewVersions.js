@@ -82,22 +82,23 @@ const ReviewVersions = ({
             <Table.Row>
               <Table.HeaderCell colSpan="4">
                 <Icon name={fileTypeDetail[type].icon} />
-                {fileTypeDetail[type].title}
                 <Popup
                   content={fileTypeDetail[type].description}
-                  position="right center"
+                  position="top center"
                   inverted
-                  trigger={
-                    <Button
-                      size="mini"
-                      labelPosition="left"
-                      className="ml-15 text-primary"
-                    >
-                      <Icon name="info circle" />
-                      More Info
-                    </Button>
-                  }
+                  trigger={<span>{fileTypeDetail[type].title}</span>}
                 />
+                {fileTypeDetail[type].url && (
+                  <Button
+                    size="mini"
+                    labelPosition="left"
+                    className="ml-15 text-primary"
+                    onClick={() => window.open(fileTypeDetail[type].url)}
+                  >
+                    <Icon name="info circle" />
+                    Read Documentation
+                  </Button>
+                )}
               </Table.HeaderCell>
             </Table.Row>
           </Table.Header>
