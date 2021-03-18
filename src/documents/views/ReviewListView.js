@@ -8,14 +8,17 @@ import {
   Container,
   Dimmer,
   Grid,
+  Icon,
   List,
   Loader,
   Message,
   Popup,
   Segment,
+  Table,
 } from 'semantic-ui-react';
 
 import {Helmet} from 'react-helmet';
+import Markdown from 'react-markdown';
 import NotFoundView from '../../views/NotFoundView';
 import React from 'react';
 import TimeAgo from 'react-timeago';
@@ -160,10 +163,34 @@ const ReviewListView = ({
                           title={longDate(node.createdAt)}
                         />
                       </small>
+                      {node.description.length > 0 && (
+                        <Popup
+                          wide="very"
+                          position="top left"
+                          trigger={
+                            <Icon
+                              className="ml-10"
+                              color="grey"
+                              size="small"
+                              name="info circle"
+                            />
+                          }
+                          content={
+                            <Markdown
+                              source={node.description}
+                              renderers={{
+                                image: Image,
+                                table: props => <Table>{props.children}</Table>,
+                              }}
+                              linkTarget="_blank"
+                            />
+                          }
+                        />
+                      )}
                     </List.Header>
                     <List.Description as="a">
-                      {node.description.substring(0, 130)}
-                      {node.description.length > 130 && '...'}
+                      {node.versions.edges ? node.versions.edges.length : '0'}{' '}
+                      document(s) in review
                     </List.Description>
                   </List.Content>
                 </List.Item>
