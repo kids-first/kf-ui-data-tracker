@@ -27,6 +27,7 @@ const ReviewDescription = ({reviewNode, updateReview}) => {
     ),
   );
   const [editError, setEditError] = useState('');
+  const [editLoading, setEditLoading] = useState(false);
 
   const saveDescription = () => {
     const rawState = convertToRaw(editorState.getCurrentContent());
@@ -40,8 +41,14 @@ const ReviewDescription = ({reviewNode, updateReview}) => {
         },
       },
     })
-      .then(() => setEditing(false))
-      .catch(err => setEditError(err.message));
+      .then(() => {
+        setEditing(false);
+        setEditLoading(false);
+      })
+      .catch(err => {
+        setEditError(err.message);
+        setEditLoading(false);
+      });
   };
 
   return (
@@ -115,11 +122,13 @@ const ReviewDescription = ({reviewNode, updateReview}) => {
               {({instrument}) => (
                 <Button
                   primary
+                  loading={editLoading}
                   disabled={editError.length > 0}
                   floated="right"
-                  onClick={() =>
-                    instrument('update description', saveDescription())
-                  }
+                  onClick={() => {
+                    instrument('update description', saveDescription());
+                    setEditLoading(true);
+                  }}
                 >
                   Save
                 </Button>
