@@ -45,7 +45,10 @@ const StartReviewView = ({
       ? allReviews.map(({node}) => node.name)
       : [];
 
-  const [createDataReview] = useMutation(CREATE_DATA_REVIEW, {
+  const [
+    createDataReview,
+    {loading: creationLoading, error: creationError},
+  ] = useMutation(CREATE_DATA_REVIEW, {
     refetchQueries: [
       {
         query: ALL_DATA_REVIEWS,
@@ -179,8 +182,10 @@ const StartReviewView = ({
                       !values.review_title ||
                       !draftToMarkdown(
                         convertToRaw(editorState.getCurrentContent()),
-                      )
+                      ) ||
+                      creationError
                     }
+                    loading={creationLoading}
                     compact
                     color="teal"
                     floated="right"
@@ -250,6 +255,14 @@ const StartReviewView = ({
                     </Segment>
                   </Form.Field>
                 </Form>
+                {creationError && (
+                  <Message
+                    negative
+                    icon="warning circle"
+                    header="Error in creating data review"
+                    content={creationError.message}
+                  />
+                )}
               </Grid.Column>
             </Grid.Row>
           </>
