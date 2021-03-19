@@ -150,6 +150,8 @@ const StudyFilesListView = ({
     myProfile &&
     (hasPermission(myProfile, 'change_file') ||
       hasPermission(myProfile, 'change_my_study_file'));
+  const allowAddReview =
+    myProfile && hasPermission(myProfile, 'add_datareview');
 
   // View state
   const [updateFileError, setUpdateFileError] = useState(null);
@@ -256,6 +258,22 @@ const StudyFilesListView = ({
                   }}
                 />
               </Button.Group>
+              {allowAddReview && (
+                <Button
+                  className="ml-15"
+                  compact
+                  color="teal"
+                  floated="right"
+                  size="large"
+                  icon="check"
+                  labelPosition="left"
+                  content="Start Review"
+                  as="label"
+                  onClick={() =>
+                    history.push(`/study/${study.kfId}/start-review`)
+                  }
+                />
+              )}
               <Button
                 className="ml-15"
                 compact
@@ -298,6 +316,7 @@ const StudyFilesListView = ({
                   tagOptions={tagOptions}
                   updateError={updateFileError}
                   downloadFileMutation={downloadFile}
+                  allowAddReview={allowAddReview}
                 />
               ) : (
                 <>

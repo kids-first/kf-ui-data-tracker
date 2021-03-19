@@ -6,6 +6,7 @@ import {
   USER_FIELDS,
 } from './fragments';
 
+import {VERSION_FIELDS} from '../documents/fragments';
 // Mutation to create a new dev token
 export const SYNC_PROJECTS = gql`
   mutation SyncProjects {
@@ -345,4 +346,172 @@ export const EXCHANGE_REFERRAL_TOKEN = gql`
   ${STUDY_INFO_FIELDS}
   ${USER_FIELDS}
   ${PROJECT_FIELDS}
+`;
+
+export const CREATE_DATA_REVIEW = gql`
+  mutation createDataReview($input: CreateDataReviewInput!) {
+    createDataReview(input: $input) {
+      dataReview {
+        id
+        uuid
+        kfId
+        name
+        description
+        state
+        createdAt
+        study {
+          ...StudyBasicFields
+        }
+        versions {
+          edges {
+            node {
+              ...VersionFields
+            }
+          }
+        }
+      }
+    }
+  }
+  ${STUDY_BASIC_FIELDS}
+  ${VERSION_FIELDS}
+`;
+
+export const UPDATE_DATA_REVIEW = gql`
+  mutation updateDataReview($id: ID!, $input: UpdateDataReviewInput!) {
+    updateDataReview(id: $id, input: $input) {
+      dataReview {
+        id
+        uuid
+        kfId
+        name
+        description
+        state
+        createdAt
+        study {
+          ...StudyBasicFields
+        }
+        versions {
+          edges {
+            node {
+              ...VersionFields
+            }
+          }
+        }
+      }
+    }
+  }
+  ${STUDY_BASIC_FIELDS}
+  ${VERSION_FIELDS}
+`;
+
+export const AWAIT_DATA_REVIEW = gql`
+  mutation awaitDataReview($id: ID!) {
+    awaitDataReview(id: $id) {
+      dataReview {
+        id
+        uuid
+        kfId
+        name
+        description
+        state
+        createdAt
+        study {
+          ...StudyBasicFields
+        }
+        versions {
+          edges {
+            node {
+              ...VersionFields
+            }
+          }
+        }
+      }
+    }
+  }
+  ${STUDY_BASIC_FIELDS}
+  ${VERSION_FIELDS}
+`;
+
+export const APPROVE_DATA_REVIEW = gql`
+  mutation approveDataReview($id: ID!) {
+    approveDataReview(id: $id) {
+      dataReview {
+        id
+        uuid
+        kfId
+        name
+        description
+        state
+        createdAt
+        study {
+          ...StudyBasicFields
+        }
+        versions {
+          edges {
+            node {
+              ...VersionFields
+            }
+          }
+        }
+      }
+    }
+  }
+  ${STUDY_BASIC_FIELDS}
+  ${VERSION_FIELDS}
+`;
+
+export const CLOSE_DATA_REVIEW = gql`
+  mutation closeDataReview($id: ID!) {
+    closeDataReview(id: $id) {
+      dataReview {
+        id
+        uuid
+        kfId
+        name
+        description
+        state
+        createdAt
+        study {
+          ...StudyBasicFields
+        }
+        versions {
+          edges {
+            node {
+              ...VersionFields
+            }
+          }
+        }
+      }
+    }
+  }
+  ${STUDY_BASIC_FIELDS}
+  ${VERSION_FIELDS}
+`;
+
+export const REOPEN_DATA_REVIEW = gql`
+  mutation reopenDataReview($id: ID!) {
+    reopenDataReview(id: $id) {
+      dataReview {
+        id
+        uuid
+        kfId
+        name
+        description
+        state
+        createdAt
+        study {
+          ...StudyBasicFields
+        }
+        versions {
+          edges {
+            node {
+              ...VersionFields
+            }
+          }
+        }
+      }
+    }
+  }
+  ${STUDY_BASIC_FIELDS}
+  ${VERSION_FIELDS}
 `;

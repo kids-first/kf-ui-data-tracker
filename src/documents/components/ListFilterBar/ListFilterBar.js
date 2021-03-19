@@ -29,6 +29,7 @@ const ListFilterBar = ({
   tagOptions,
   showId,
   setShowId,
+  hideBatchAction,
 }) => {
   const typeOptions = Object.keys(fileTypeDetail).map(type => ({
     key: type,
@@ -46,15 +47,17 @@ const ListFilterBar = ({
     <>
       <Responsive maxWidth={999}>
         <Form as="div">
-          <BatchActions
-            fileList={fileList}
-            studyId={studyId}
-            deleteFile={deleteFile}
-            downloadFileMutation={downloadFileMutation}
-            selection={selection}
-            setSelection={setSelection}
-            disabled={disabled}
-          />
+          {!hideBatchAction && (
+            <BatchActions
+              fileList={fileList}
+              studyId={studyId}
+              deleteFile={deleteFile}
+              downloadFileMutation={downloadFileMutation}
+              selection={selection}
+              setSelection={setSelection}
+              disabled={disabled}
+            />
+          )}
           <Form.Input
             fluid
             aria-label="file-search-input"
@@ -121,29 +124,35 @@ const ListFilterBar = ({
               }
             />
           </Form.Group>
-          <Amplitude
-            eventProperties={inheritedProps => ({
-              ...inheritedProps,
-              scope: inheritedProps.scope
-                ? [...inheritedProps.scope, 'toggle button', 'show file kf_id']
-                : ['toggle button', 'show file kf_id'],
-            })}
-          >
-            {({logEvent}) => (
-              <Checkbox
-                floated="right"
-                className="font-normal"
-                label="Show Kids First ID"
-                checked={showId}
-                onClick={() => {
-                  setShowId(!showId);
-                  logEvent('toggle file kfId ' + (showId ? 'off' : 'on'));
-                  localStorage.setItem('showFileId', !showId);
-                }}
-                data-cy="toggle file kfId"
-              />
-            )}
-          </Amplitude>
+          {setShowId && (
+            <Amplitude
+              eventProperties={inheritedProps => ({
+                ...inheritedProps,
+                scope: inheritedProps.scope
+                  ? [
+                      ...inheritedProps.scope,
+                      'toggle button',
+                      'show file kf_id',
+                    ]
+                  : ['toggle button', 'show file kf_id'],
+              })}
+            >
+              {({logEvent}) => (
+                <Checkbox
+                  floated="right"
+                  className="font-normal"
+                  label="Show Kids First ID"
+                  checked={showId}
+                  onClick={() => {
+                    setShowId(!showId);
+                    logEvent('toggle file kfId ' + (showId ? 'off' : 'on'));
+                    localStorage.setItem('showFileId', !showId);
+                  }}
+                  data-cy="toggle file kfId"
+                />
+              )}
+            </Amplitude>
+          )}
         </Form>
       </Responsive>
       <Responsive minWidth={1000}>
@@ -224,43 +233,47 @@ const ListFilterBar = ({
                 />
               }
             />
-            <Amplitude
-              eventProperties={inheritedProps => ({
-                ...inheritedProps,
-                scope: inheritedProps.scope
-                  ? [
-                      ...inheritedProps.scope,
-                      'toggle button',
-                      'show file kf_id',
-                    ]
-                  : ['toggle button', 'show file kf_id'],
-              })}
-            >
-              {({logEvent}) => (
-                <Checkbox
-                  floated="right"
-                  className="font-normal"
-                  label="Show Kids First ID"
-                  checked={showId}
-                  onClick={() => {
-                    setShowId(!showId);
-                    logEvent('toggle file kfId ' + (showId ? 'off' : 'on'));
-                    localStorage.setItem('showFileId', !showId);
-                  }}
-                  data-cy="toggle file kfId"
-                />
-              )}
-            </Amplitude>
+            {setShowId && (
+              <Amplitude
+                eventProperties={inheritedProps => ({
+                  ...inheritedProps,
+                  scope: inheritedProps.scope
+                    ? [
+                        ...inheritedProps.scope,
+                        'toggle button',
+                        'show file kf_id',
+                      ]
+                    : ['toggle button', 'show file kf_id'],
+                })}
+              >
+                {({logEvent}) => (
+                  <Checkbox
+                    floated="right"
+                    className="font-normal"
+                    label="Show Kids First ID"
+                    checked={showId}
+                    onClick={() => {
+                      setShowId(!showId);
+                      logEvent('toggle file kfId ' + (showId ? 'off' : 'on'));
+                      localStorage.setItem('showFileId', !showId);
+                    }}
+                    data-cy="toggle file kfId"
+                  />
+                )}
+              </Amplitude>
+            )}
           </Form.Group>
-          <BatchActions
-            fileList={fileList}
-            studyId={studyId}
-            deleteFile={deleteFile}
-            downloadFileMutation={downloadFileMutation}
-            selection={selection}
-            setSelection={setSelection}
-            disabled={disabled}
-          />
+          {!hideBatchAction && (
+            <BatchActions
+              fileList={fileList}
+              studyId={studyId}
+              deleteFile={deleteFile}
+              downloadFileMutation={downloadFileMutation}
+              selection={selection}
+              setSelection={setSelection}
+              disabled={disabled}
+            />
+          )}
         </Form>
       </Responsive>
     </>

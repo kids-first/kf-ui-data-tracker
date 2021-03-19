@@ -1,5 +1,6 @@
 import gql from 'graphql-tag';
 import {
+  CREATOR_FIELDS,
   PROJECT_FIELDS,
   STUDY_BASIC_FIELDS,
   STUDY_INFO_FIELDS,
@@ -355,4 +356,93 @@ export const SETTINGS = gql`
       }
     }
   }
+`;
+
+export const ALL_DATA_REVIEWS = gql`
+  query allDataReviews($studyKfId: String) {
+    allDataReviews(studyKfId: $studyKfId) {
+      edges {
+        node {
+          id
+          uuid
+          kfId
+          name
+          description
+          state
+          createdAt
+          creator {
+            ...CreatorFields
+          }
+          study {
+            ...StudyBasicFields
+          }
+          versions {
+            edges {
+              node {
+                ...VersionFields
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  ${STUDY_BASIC_FIELDS}
+  ${VERSION_FIELDS}
+  ${CREATOR_FIELDS}
+`;
+
+export const DATA_REVIEW = gql`
+  query dataReview($id: ID!) {
+    dataReview(id: $id) {
+      id
+      uuid
+      kfId
+      name
+      description
+      state
+      createdAt
+      creator {
+        ...CreatorFields
+      }
+      study {
+        ...StudyBasicFields
+      }
+      versions {
+        edges {
+          node {
+            ...VersionFields
+            rootFile {
+              ...FileFields
+              versions {
+                edges {
+                  node {
+                    id
+                    kfId
+                    createdAt
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      events(first: 20, orderBy: "-created_at") {
+        edges {
+          node {
+            ...EventFields
+            user {
+              ...UserFields
+            }
+          }
+        }
+      }
+    }
+  }
+  ${STUDY_BASIC_FIELDS}
+  ${FILE_FIELDS}
+  ${VERSION_FIELDS}
+  ${CREATOR_FIELDS}
+  ${EVENT_FIELDS}
+  ${USER_FIELDS}
 `;

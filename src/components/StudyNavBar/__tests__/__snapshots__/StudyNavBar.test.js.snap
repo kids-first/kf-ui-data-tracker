@@ -20,6 +20,12 @@ exports[`renders StudyNavBar correctly -- beta look 1`] = `
     </a>
     <a
       class="item"
+      href="/study/SD_8WX8QQ06/reviews"
+    >
+      Reviews
+    </a>
+    <a
+      class="item"
       href="/study/SD_8WX8QQ06/cavatica"
     >
       Cavatica
@@ -29,12 +35,6 @@ exports[`renders StudyNavBar correctly -- beta look 1`] = `
       href="/study/SD_8WX8QQ06/collaborators"
     >
       Collaborators
-    </a>
-    <a
-      class="item"
-      href="/study/SD_8WX8QQ06/logs"
-    >
-      Logs
     </a>
   </div>
 </div>
@@ -60,6 +60,12 @@ exports[`renders StudyNavBar correctly -- default look 1`] = `
     </a>
     <a
       class="item"
+      href="/study/SD_8WX8QQ06/reviews"
+    >
+      Reviews
+    </a>
+    <a
+      class="item"
       href="/study/SD_8WX8QQ06/cavatica"
     >
       Cavatica
@@ -69,12 +75,6 @@ exports[`renders StudyNavBar correctly -- default look 1`] = `
       href="/study/SD_8WX8QQ06/collaborators"
     >
       Collaborators
-    </a>
-    <a
-      class="item"
-      href="/study/SD_8WX8QQ06/logs"
-    >
-      Logs
     </a>
   </div>
 </div>

@@ -17,6 +17,10 @@ const FileActionButtons = ({
   vertical = true,
   fluid = false,
   hideCopy = false,
+  version = null,
+  updateReview,
+  reviewNode,
+  updateError,
 }) => {
   return (
     <Button.Group fluid={fluid} size="small">
@@ -32,7 +36,7 @@ const FileActionButtons = ({
           <Popup
             inverted
             position="top left"
-            content="Preview latest version"
+            content={version ? 'Preview version' : 'Preview latest version'}
             trigger={
               <Button
                 basic
@@ -44,7 +48,9 @@ const FileActionButtons = ({
                   e.preventDefault();
                   window.open(
                     `/study/${studyId}/documents/${node.kfId}/versions/${
-                      fileSortedVersions(node)[0].node.kfId
+                      version
+                        ? version.kfId
+                        : fileSortedVersions(node)[0].node.kfId
                     }`,
                   );
                 }}
@@ -66,13 +72,17 @@ const FileActionButtons = ({
             inverted
             position="top left"
             icon="download"
-            content="Download latest version"
+            content={version ? 'Download version' : 'Download latest version'}
             trigger={
               <Button
                 as="a"
                 href={
                   node.downloadUrl +
-                  `/version/${fileSortedVersions(node)[0].node.kfId}`
+                  `/version/${
+                    version
+                      ? version.kfId
+                      : fileSortedVersions(node)[0].node.kfId
+                  }`
                 }
                 basic
                 compact
@@ -82,7 +92,12 @@ const FileActionButtons = ({
                   logEvent('click');
                   e.stopPropagation();
                   e.preventDefault();
-                  downloadFile(studyId, node.kfId, null, downloadFileMutation);
+                  downloadFile(
+                    studyId,
+                    node.kfId,
+                    version && version.kfId,
+                    downloadFileMutation,
+                  );
                 }}
               />
             }
@@ -103,7 +118,9 @@ const FileActionButtons = ({
               data-testid="copy-file-id"
               textToCopy={
                 node.downloadUrl +
-                `/version/${fileSortedVersions(node)[0].node.kfId}`
+                `/version/${
+                  version ? version.kfId : fileSortedVersions(node)[0].node.kfId
+                }`
               }
               basic
               compact
@@ -164,6 +181,73 @@ const FileActionButtons = ({
           )}
         </Amplitude>
       )}
+      {version &&
+        updateReview &&
+        reviewNode &&
+        reviewNode.state !== 'completed' &&
+        reviewNode.state !== 'closed' && (
+          <Amplitude
+            eventProperties={inheritedProps => ({
+              ...inheritedProps,
+              scope: inheritedProps.scope
+                ? [...inheritedProps.scope, 'button', 'remove version button']
+                : ['button', 'remove version button'],
+            })}
+          >
+            {({logEvent}) => (
+              <Popup
+                trigger={
+                  <Responsive
+                    as={Button}
+                    minWidth={Responsive.onlyTablet.minWidth}
+                    basic
+                    compact
+                    onClick={e => e.stopPropagation()}
+                    icon={<Icon name="minus square" color="red" />}
+                  />
+                }
+                header="Are you sure?"
+                content={
+                  <>
+                    This version will be removed from current data review
+                    <Divider />
+                    {updateError ? (
+                      <span className="text-red">{updateError.message}</span>
+                    ) : (
+                      <Button
+                        negative
+                        fluid
+                        icon={<Icon name="minus square" />}
+                        content="Remove"
+                        onClick={e => {
+                          logEvent('click');
+                          e.stopPropagation();
+                          const versionsList = reviewNode.versions.edges.map(
+                            ({node}) => node.id,
+                          );
+                          updateReview({
+                            variables: {
+                              id: reviewNode.id,
+                              input: {
+                                name: reviewNode.name,
+                                description: reviewNode.descrition,
+                                versions: versionsList.filter(
+                                  id => id !== version.id,
+                                ),
+                              },
+                            },
+                          }).catch(err => console.log(err));
+                        }}
+                      />
+                    )}
+                  </>
+                }
+                on="click"
+                position="top right"
+              />
+            )}
+          </Amplitude>
+        )}
     </Button.Group>
   );
 };

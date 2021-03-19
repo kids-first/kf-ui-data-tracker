@@ -367,6 +367,12 @@ export const permissionIcon = {
   analysis: 'calculator',
   meta: 'sticky note',
   config: 'wrench',
+  banner: 'bell',
+  datareview: 'check',
+  joblog: 'tasks',
+  release: 'paper plane',
+  releaseevent: 'calendar',
+  releaseservice: 'paper plane',
 };
 
 // Icon color for different permissions
@@ -479,4 +485,38 @@ export const collaboratorRoles = {
   COORDINATOR: {key: 'COORDINATOR', name: 'Coordinating Staff'},
   BIOINFO: {key: 'BIOINFO', name: 'Bioinformatics Staff'},
   DEVELOPER: {key: 'DEVELOPER', name: 'Developer'},
+};
+
+// File review status
+export const reviewStatus = {
+  not_started: {
+    color: 'grey',
+    icon: 'dot circle',
+    text: 'Not Started',
+    actions: ['close'],
+  },
+  in_review: {
+    color: 'yellow',
+    icon: 'play circle',
+    text: 'In Review',
+    actions: ['await', 'approve', 'close'],
+  },
+  awaiting_updates: {
+    color: 'orange',
+    icon: 'pause circle',
+    text: 'Awaiting Updates',
+    actions: ['close'],
+  },
+  completed: {
+    color: 'green',
+    icon: 'check circle',
+    text: 'Completed',
+    actions: [],
+  },
+  closed: {
+    color: 'black',
+    icon: 'stop circle',
+    text: 'Closed',
+    actions: ['reopen'],
+  },
 };

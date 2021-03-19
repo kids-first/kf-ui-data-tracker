@@ -1,3 +1,10 @@
+import {
+  CollaboratorsHelp,
+  DocumentDetailHelp,
+  DocumentListHelp,
+  ReviewDetailHelp,
+  ReviewListHelp,
+} from '../documents/components/helpers';
 import React, {useState} from 'react';
 import {useQuery, useMutation} from '@apollo/client';
 import {Route, Switch} from 'react-router-dom';
@@ -7,11 +14,6 @@ import StudyHeader from '../components/StudyHeader/StudyHeader';
 import {StudyNavBar} from '../components/StudyNavBar';
 import {Container, Segment, Message} from 'semantic-ui-react';
 import CreatingStudyModal from '../modals/CreatingStudyModal';
-import {
-  DocumentListHelp,
-  DocumentDetailHelp,
-  CollaboratorsHelp,
-} from '../documents/components/helpers';
 import {hasPermission} from '../common/permissions';
 
 const NavBarView = ({match, location, history}) => {
@@ -77,7 +79,9 @@ const NavBarView = ({match, location, history}) => {
         />
       </Segment>
       <Container>
-        <StudyNavBar isBeta={isBeta} isResearch={isResearch} />
+        {!location.pathname.includes('/start-review') && (
+          <StudyNavBar isBeta={isBeta} isResearch={isResearch} />
+        )}
         <Switch>
           <Route
             exact
@@ -92,6 +96,12 @@ const NavBarView = ({match, location, history}) => {
           <Route
             path="/study/:kfId/collaborators"
             component={CollaboratorsHelp}
+          />
+          <Route exact path="/study/:kfId/reviews" component={ReviewListHelp} />
+          <Route
+            exact
+            path="/study/:kfId/reviews/:reviewId(DR_\w{8})"
+            component={ReviewDetailHelp}
           />
         </Switch>
       </Container>

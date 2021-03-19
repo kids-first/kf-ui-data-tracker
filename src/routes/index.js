@@ -26,6 +26,9 @@ import {
 import {
   StudyFilesListView,
   FileDetailView,
+  ReviewDetailView,
+  ReviewListView,
+  StartReviewView,
   UploadView,
   VersionPreviewView,
 } from '../documents/views';
@@ -246,6 +249,18 @@ const Routes = () => (
           component={ReleasesView}
           scope={['study', 'releases']}
         />
+        <PrivateRoute
+          exact
+          path="/study/:kfId/reviews"
+          component={ReviewListView}
+          scope={['study', 'reviews']}
+        />
+        <PrivateRoute
+          exact
+          path="/study/:kfId/reviews/:reviewId(DR_\w{8})"
+          component={ReviewDetailView}
+          scope={['study', 'reviews', 'review']}
+        />
         <RestrictedRoute
           exact
           path="/tokens"
@@ -283,6 +298,12 @@ const Routes = () => (
           path="/study/:kfId/documents"
           component={StudyFilesListView}
           scope={['study', 'documents']}
+        />
+        <PrivateRoute
+          exact
+          path="/study/:kfId/start-review"
+          component={StartReviewView}
+          scope={['study', 'documents', 'review']}
         />
         <PrivateRoute
           path="/study/:kfId/documents/upload"
