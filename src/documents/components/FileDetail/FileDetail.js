@@ -34,11 +34,13 @@ const ActionButtons = ({
   studyId,
   fileNode,
   downloadFileMutation,
+  startIngestMutation,
   setDialog,
   deleteFile,
   history,
   updateFile,
   allowExtractConfig,
+  allowIngestFile,
   vertical,
   allowUpload,
 }) => {
@@ -213,6 +215,39 @@ const ActionButtons = ({
           )}
         </Amplitude>
       )}
+      {(fileNode.fileType === "GWO") && allowIngestFile && (
+        <Amplitude
+          eventProperties={inheritedProps => ({
+            ...inheritedProps,
+            scope: inheritedProps.scope
+              ? [...inheritedProps.scope, 'button', 'config button']
+              : ['button', 'config button'],
+          })}
+        >
+          {({logEvent}) => (
+            <Popup
+              inverted
+              position="left center"
+              content="Ingest file"
+              trigger={
+                <Menu.Item
+                  onClick={() => {
+                    logEvent('click');
+                    console.log(`Starting ingest run for ${fileSortedVersions(fileNode)[0].kfId}`)
+                    startIngestMutation(
+                        {variables: {input: {versions: [fileSortedVersions(fileNode)[0].node.id]} }}
+                    );
+                  }}
+                  data-testid="ingest"
+                >
+                  <Icon name="rocket" />
+                  Ingest
+                </Menu.Item>
+              }
+            />
+          )}
+        </Amplitude>
+      )}
       {deleteFile && (
         <Amplitude
           eventProperties={inheritedProps => ({
@@ -272,9 +307,11 @@ const FileDetail = ({
   updateFile,
   updateError,
   downloadFileMutation,
+  startIngestMutation,
   deleteFile,
   tagOptions,
   allowExtractConfig,
+  allowIngestFile,
   event,
   studyFiles,
 }) => {
@@ -313,11 +350,13 @@ const FileDetail = ({
               studyId,
               fileNode,
               downloadFileMutation,
+              startIngestMutation,
               setDialog,
               deleteFile,
               history,
               updateFile,
               allowExtractConfig,
+              allowIngestFile,
               allowUpload,
               vertical: false,
             }}
@@ -474,11 +513,13 @@ const FileDetail = ({
               studyId,
               fileNode,
               downloadFileMutation,
+              startIngestMutation,
               setDialog,
               deleteFile,
               history,
               updateFile,
               allowExtractConfig,
+              allowIngestFile,
               allowUpload,
               vertical: true,
             }}
@@ -494,6 +535,7 @@ const FileDetail = ({
           dialog={dialog}
           onUploadClick={() => setDialog('upload')}
           downloadFileMutation={downloadFileMutation}
+          startIngestMutation={startIngestMutation}
           allowUpload={allowUpload}
           updateFile={updateFile}
           updateError={updateError}

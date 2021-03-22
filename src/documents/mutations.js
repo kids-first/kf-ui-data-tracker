@@ -1,6 +1,17 @@
 import gql from 'graphql-tag';
-import {FILE_FIELDS, VERSION_FIELDS} from './fragments';
+import {FILE_FIELDS, VERSION_FIELDS, INGEST_RUN_FIELDS} from './fragments';
 
+// Mutation to start an ingest run
+export const START_INGEST_RUN = gql`
+  mutation StartIngestRun($input: StartIngestRunInput!) {
+    startIngestRun(input: $input) {
+      ingestRun {
+        ...IngestRunFields
+      }
+    }
+  }
+  ${INGEST_RUN_FIELDS}
+`;
 // Mutation to upload a file or a version of the file to the study-creator
 export const CREATE_FILE = gql`
   mutation CreateFile(
