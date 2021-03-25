@@ -11,9 +11,11 @@ import {
 } from 'semantic-ui-react';
 
 import {START_RELEASE, PUBLISH_RELEASE, CANCEL_RELEASE} from '../../mutations';
+import Confetti from 'react-dom-confetti';
 
 const ReleaseActions = ({release, user, history, match}) => {
   const [showConfirm, setShowConfirm] = useState(false);
+  const [confetti, setConfetti] = useState(false);
 
   const [
     startRelease,
@@ -56,11 +58,30 @@ const ReleaseActions = ({release, user, history, match}) => {
   };
 
   const publish = () => {
-    publishRelease({variables: {release: release.id}});
+    publishRelease({variables: {release: release.id}}).then(() => {
+      setConfetti(true);
+      setTimeout(function() {
+        setConfetti(false);
+      }, 3000);
+    });
   };
 
   const cancel = () => {
     cancelRelease({variables: {release: release.id}});
+  };
+
+  const config = {
+    angle: '274',
+    spread: 360,
+    startVelocity: '36',
+    elementCount: '192',
+    dragFriction: '0.07',
+    duration: '3000',
+    stagger: '2',
+    width: '27px',
+    height: '27px',
+    perspective: '714px',
+    colors: ['#a864fd', '#29cdff', '#78ff44', '#ff718d', '#fdff6a'],
   };
 
   return (
@@ -96,6 +117,7 @@ const ReleaseActions = ({release, user, history, match}) => {
           <Icon name="bookmark" />
         </Menu.Item>
       )}
+      <Confetti active={confetti} config={config} />
       <Menu.Item onClick={() => setShowConfirm(!showConfirm)}>
         Run Again
         <Icon name="repeat" />
