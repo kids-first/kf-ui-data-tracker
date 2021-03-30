@@ -236,8 +236,46 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
       </Grid>
       <Grid as={Segment} container={!fullWidth} basic>
         <Grid.Row className="noPadding">
-          <Grid.Column>
+          <Grid.Column computer={15} tablet={15} mobile={15}>
             <Header as="h3" className="my-2" content="Favorite Studies" />
+          </Grid.Column>
+          <Grid.Column
+            className="pl-0"
+            tablet={1}
+            computer={1}
+            mobile={1}
+            verticalAlign="middle"
+            textAlign="right"
+          >
+            <Amplitude
+              eventProperties={inheritedProps => ({
+                ...inheritedProps,
+                scope: inheritedProps.scope
+                  ? [...inheritedProps.scope, 'toggle button', 'full width']
+                  : ['toggle button', 'full width'],
+              })}
+            >
+              {({logEvent}) => (
+                <Popup
+                  inverted
+                  content="Toggle full width view"
+                  position="top right"
+                  trigger={
+                    <Button
+                      size="mini"
+                      data-cy="toggle width button"
+                      active={fullWidth}
+                      onClick={() => toggleWidth(logEvent)}
+                      icon={fullWidth ? 'compress' : 'expand'}
+                    />
+                  }
+                />
+              )}
+            </Amplitude>
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row className="noPadding">
+          <Grid.Column>
             <Divider className="my-2" />
           </Grid.Column>
         </Grid.Row>
