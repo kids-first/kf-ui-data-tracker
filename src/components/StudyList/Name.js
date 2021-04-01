@@ -1,10 +1,10 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {Button, Header, Icon, Label, Table} from 'semantic-ui-react';
 import {Amplitude} from '@amplitude/react-amplitude';
-import {Header, Label, Table, Rating} from 'semantic-ui-react';
 import defaultAvatar from '../../assets/defaultAvatar.png';
 
-const StudyName = ({study, favoriteStudies, setFavoriteStudies}) => {
+const StudyName = ({study}) => {
   // TODO: Filter out only users in the Investigators group
   const investigators =
     study.collaborators.edges.length &&
@@ -26,24 +26,6 @@ const StudyName = ({study, favoriteStudies, setFavoriteStudies}) => {
           textAlign="left"
           data-cy="study name"
         >
-          <Rating
-            data-cy="favorite study"
-            className="px-10 pt-10"
-            icon="star"
-            size="large"
-            rating={favoriteStudies.includes(study.kfId) ? 1 : 0}
-            maxRating={1}
-            onRate={e => {
-              e.preventDefault();
-              e.stopPropagation();
-              const newFav = favoriteStudies.includes(study.kfId)
-                ? favoriteStudies.filter(i => i !== study.kfId)
-                : [...favoriteStudies, study.kfId];
-              localStorage.setItem('favoriteStudies', JSON.stringify(newFav));
-              setFavoriteStudies(newFav);
-              logEvent('favorite');
-            }}
-          />
           <Link
             to={'/study/' + study.kfId + '/basic-info/info'}
             onClick={() => logEvent('click')}

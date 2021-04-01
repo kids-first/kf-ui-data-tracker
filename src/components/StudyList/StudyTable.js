@@ -1,7 +1,7 @@
+import {Icon, Pagination, Rating, Table} from 'semantic-ui-react';
 import React, {useState} from 'react';
 import {withRouter} from 'react-router-dom';
 import {Amplitude} from '@amplitude/react-amplitude';
-import {Table, Pagination, Icon} from 'semantic-ui-react';
 import ActionButtons from './ActionButtons';
 import KfId from './KfId';
 import InvestigatorName from './InvestigatorName';
@@ -14,14 +14,39 @@ import {STUDIES_PER_PAGE} from '../../common/globals';
  * A collection of functions to render cell contents for different columns
  */
 const cellContent = {
-  name: (node, favoriteStudies, setFavoriteStudies) => (
-    <StudyName
-      study={node}
-      key={node.kfId + 'name'}
-      favoriteStudies={favoriteStudies}
-      setFavoriteStudies={setFavoriteStudies}
-    />
+  fav: (node, favoriteStudies, setFavoriteStudies) => (
+    <Table.Cell collapsing key={node.kfId + 'fav'}>
+      <Amplitude
+        eventProperties={inheritedProps => ({
+          ...inheritedProps,
+          scope: inheritedProps.scope
+            ? [...inheritedProps.scope, 'fav study']
+            : ['fav study'],
+        })}
+      >
+        {({logEvent}) => (
+          <Rating
+            data-cy="favorite study"
+            icon="star"
+            size="large"
+            rating={favoriteStudies.includes(node.kfId) ? 1 : 0}
+            maxRating={1}
+            onRate={e => {
+              e.preventDefault();
+              e.stopPropagation();
+              const newFav = favoriteStudies.includes(node.kfId)
+                ? favoriteStudies.filter(i => i !== node.kfId)
+                : [...favoriteStudies, node.kfId];
+              localStorage.setItem('favoriteStudies', JSON.stringify(newFav));
+              setFavoriteStudies(newFav);
+              logEvent('fav study');
+            }}
+          />
+        )}
+      </Amplitude>
+    </Table.Cell>
   ),
+  name: node => <StudyName study={node} key={node.kfId + 'name'} />,
   kfId: node => <KfId kfId={node.kfId} key={node.kfId + 'kfId'} />,
   version: node => (
     <Release
@@ -61,9 +86,12 @@ const cellContent = {
 
 const renderRow = (node, columns, favoriteStudies, setFavoriteStudies) => ({
   key: node.kfId,
-  cells: columns.map((col, i) =>
-    cellContent[col.key](node, favoriteStudies, setFavoriteStudies),
-  ),
+  cells: [
+    cellContent.fav(node, favoriteStudies, setFavoriteStudies),
+    ...columns.map((col, i) =>
+      cellContent[col.key](node, favoriteStudies, setFavoriteStudies),
+    ),
+  ],
   textAlign: 'center',
 });
 
@@ -117,7 +145,7 @@ const StudyTable = ({
 
   // Construct header
   const visibleCols = [
-    {key: 'name', name: 'Name', visible: true},
+    {key: 'name', name: 'Name', visible: true, colSpan: '2'},
     ...columns.columns.filter(col => col.visible),
     {key: 'actions', name: 'Actions', visible: true},
   ];
@@ -125,6 +153,7 @@ const StudyTable = ({
     <Table.HeaderCell
       key={col.key}
       content={col.name}
+      colSpan={col.colSpan ? col.colSpan : '1'}
       textAlign={i > 0 ? 'center' : 'left'}
       sorted={sorting.column === col.key ? sorting.direction : null}
       onClick={handleSort(col.key, tableType)}
