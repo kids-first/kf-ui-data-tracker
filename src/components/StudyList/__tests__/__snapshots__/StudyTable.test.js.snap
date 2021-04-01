@@ -13,16 +13,19 @@ exports[`renders study table correctly 1`] = `
       >
         <th
           class="left aligned descending sorted"
+          colspan="2"
         >
           Name
         </th>
         <th
           class="center aligned"
+          colspan="1"
         >
           Kids First ID
         </th>
         <th
           class="center aligned"
+          colspan="1"
         >
           Actions
         </th>
@@ -35,11 +38,10 @@ exports[`renders study table correctly 1`] = `
         class="center aligned"
       >
         <td
-          class="selectable left aligned overflow-cell-container"
-          data-cy="study name"
+          class="collapsing"
         >
           <div
-            class="ui star large rating px-10 pt-10"
+            class="ui star large rating"
             data-cy="favorite study"
             role="radiogroup"
             tabindex="-1"
@@ -53,8 +55,12 @@ exports[`renders study table correctly 1`] = `
               tabindex="0"
             />
           </div>
+        </td>
+        <td
+          class="selectable left aligned"
+          data-cy="study name"
+        >
           <a
-            class="overflow-cell ml-30"
             href="/study/SD_I1L92W57/basic-info/info"
           >
             <div
@@ -149,11 +155,10 @@ exports[`renders study table correctly 1`] = `
         class="center aligned"
       >
         <td
-          class="selectable left aligned overflow-cell-container"
-          data-cy="study name"
+          class="collapsing"
         >
           <div
-            class="ui star large rating px-10 pt-10"
+            class="ui star large rating"
             data-cy="favorite study"
             role="radiogroup"
             tabindex="-1"
@@ -167,8 +172,12 @@ exports[`renders study table correctly 1`] = `
               tabindex="0"
             />
           </div>
+        </td>
+        <td
+          class="selectable left aligned"
+          data-cy="study name"
+        >
           <a
-            class="overflow-cell ml-30"
             href="/study/SD_SG5N41K8/basic-info/info"
           >
             <div
@@ -263,11 +272,10 @@ exports[`renders study table correctly 1`] = `
         class="center aligned"
       >
         <td
-          class="selectable left aligned overflow-cell-container"
-          data-cy="study name"
+          class="collapsing"
         >
           <div
-            class="ui star large rating px-10 pt-10"
+            class="ui star large rating"
             data-cy="favorite study"
             role="radiogroup"
             tabindex="-1"
@@ -281,8 +289,12 @@ exports[`renders study table correctly 1`] = `
               tabindex="0"
             />
           </div>
+        </td>
+        <td
+          class="selectable left aligned"
+          data-cy="study name"
+        >
           <a
-            class="overflow-cell ml-30"
             href="/study/SD_0YYP5ZEN/basic-info/info"
           >
             <div
@@ -377,11 +389,10 @@ exports[`renders study table correctly 1`] = `
         class="center aligned"
       >
         <td
-          class="selectable left aligned overflow-cell-container"
-          data-cy="study name"
+          class="collapsing"
         >
           <div
-            class="ui star large rating px-10 pt-10"
+            class="ui star large rating"
             data-cy="favorite study"
             role="radiogroup"
             tabindex="-1"
@@ -395,8 +406,12 @@ exports[`renders study table correctly 1`] = `
               tabindex="0"
             />
           </div>
+        </td>
+        <td
+          class="selectable left aligned"
+          data-cy="study name"
+        >
           <a
-            class="overflow-cell ml-30"
             href="/study/SD_8WX8QQ06/basic-info/info"
           >
             <div
