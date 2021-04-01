@@ -1,7 +1,8 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
 import {Button, Header, Icon, Label, Table} from 'semantic-ui-react';
+import React, {useState} from 'react';
+
 import {Amplitude} from '@amplitude/react-amplitude';
+import {Link} from 'react-router-dom';
 import defaultAvatar from '../../assets/defaultAvatar.png';
 
 const StudyName = ({study}) => {
@@ -39,15 +40,55 @@ const StudyName = ({study}) => {
 };
 
 const Investigators = ({investigators}) => {
-  if (investigators.length) {
+  const [expand, setExpand] = useState(false);
+  if (investigators.length > 0 && investigators.length <= 4) {
     return (
-      <Label.Group>
+      <Label.Group className="mt-6">
         {investigators.map(user => (
-          <Label image key={user.id} className="ml-0">
+          <Label image key={user.id} className="ml-0 my-2">
             <img alt={user.displayName} src={user.picture || defaultAvatar} />
             {user.displayName}
           </Label>
         ))}
+      </Label.Group>
+    );
+  }
+  if (investigators.length > 4) {
+    return (
+      <Label.Group className="mt-6">
+        <Button
+          basic
+          labelPosition="left"
+          floated="right"
+          className="mt-6"
+          onClick={e => {
+            e.preventDefault();
+            e.stopPropagation();
+            setExpand(!expand);
+          }}
+        >
+          <Icon name={expand ? 'caret up' : 'caret down'} />
+          {expand ? 'Show Less' : 'Show All'}
+        </Button>
+        {investigators.slice(0, 4).map(user => (
+          <Label image key={user.id} className="ml-0 my-2">
+            <img alt={user.displayName} src={user.picture || defaultAvatar} />
+            {user.displayName}
+          </Label>
+        ))}
+        {expand && (
+          <>
+            {investigators.slice(4).map(user => (
+              <Label image key={user.id} className="ml-0 my-2">
+                <img
+                  alt={user.displayName}
+                  src={user.picture || defaultAvatar}
+                />
+                {user.displayName}
+              </Label>
+            ))}
+          </>
+        )}
       </Label.Group>
     );
   }
