@@ -20,16 +20,10 @@ const StudyName = ({study}) => {
       })}
     >
       {({logEvent}) => (
-        <Table.Cell
-          selectable
-          className="overflow-cell-container"
-          textAlign="left"
-          data-cy="study name"
-        >
+        <Table.Cell selectable textAlign="left" data-cy="study name">
           <Link
             to={'/study/' + study.kfId + '/basic-info/info'}
             onClick={() => logEvent('click')}
-            className="overflow-cell ml-30"
           >
             <Header size="medium" alt={study.name} floating="left">
               {study.name}
