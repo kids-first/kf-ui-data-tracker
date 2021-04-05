@@ -32,7 +32,10 @@ const StudyInfoView = ({match, history}) => {
   const allowEdit = myProfile && hasPermission(myProfile, 'change_study');
 
   const [apiErrors, setApiErrors] = useState(null);
+  const [submitting, setSubmitting] = useState(false);
+
   const submitUpdate = values => {
+    setSubmitting(true);
     updateStudy({
       variables: {
         id: study.id,
@@ -40,9 +43,13 @@ const StudyInfoView = ({match, history}) => {
       },
     })
       .then(() => {
+        setSubmitting(false);
         setApiErrors(null);
       })
-      .catch(err => setApiErrors(err.message));
+      .catch(err => {
+        setApiErrors(err.message);
+        setSubmitting(false);
+      });
   };
 
   if (loading)
@@ -125,6 +132,7 @@ const StudyInfoView = ({match, history}) => {
         apiErrors={apiErrors}
         studyNode={study}
         editing={allowEdit}
+        submitting={submitting}
       />
     </Container>
   );
