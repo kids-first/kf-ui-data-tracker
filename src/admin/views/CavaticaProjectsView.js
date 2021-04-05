@@ -45,10 +45,18 @@ const CavaticaProjectsView = () => {
 
   const [importVolumeFiles] = useMutation(IMPORT_VOLUME_FILES);
 
-  const isAdmin =
-    !user.loading && user.data.myProfile
-      ? user.data.myProfile.roles.includes('ADMIN')
-      : false;
+  const profile = user && user.data && user.data.myProfile;
+  const permissions =
+    profile &&
+    profile.groups &&
+    profile.groups.edges &&
+    profile.groups.edges
+      .map(({node}) => node.permissions.edges.map(({node}) => node.codename))
+      .reduce((prev, curr) => prev.concat(curr));
+
+  const canUnlink = permissions && permissions.includes('unlink_project');
+  const canImport = permissions && permissions.includes('import_volume');
+  const canEdit = permissions && permissions.includes('change_project');
 
   const [syncing, setSyncing] = useState(false);
   const [syncResult, setSyncResult] = useState();
@@ -169,9 +177,9 @@ const CavaticaProjectsView = () => {
                   key={study.kfId}
                   study={byStudy[study][0].node.study}
                   projects={byStudy[study]}
-                  unlinkProject={isAdmin ? unlinkProject : null}
-                  importVolumeFiles={isAdmin ? importVolumeFiles : null}
-                  editable={isAdmin}
+                  unlinkProject={canUnlink ? unlinkProject : null}
+                  importVolumeFiles={canImport ? importVolumeFiles : null}
+                  editable={canEdit}
                 />
               ))}
           </Accordion>
