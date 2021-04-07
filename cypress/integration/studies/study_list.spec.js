@@ -60,7 +60,7 @@ context('Admin Study List', () => {
 
     // By default (sorting by study name in descending order)
     cy.get('td')
-      .eq(0)
+      .eq(1)
       .should('contain', 'utilize');
 
     // Click on kfId column title to sort by kfId
@@ -93,7 +93,7 @@ context('Admin Study List', () => {
 
     // First study should change to "incentivize leading-edge functionalities"
     cy.get('td')
-      .eq(0)
+      .eq(1)
       .should('contain', 'utilize strategic');
 
     // Clear storage for other tests
@@ -152,6 +152,7 @@ context('Admin Study List', () => {
 
     // Toggle into full width mode and check that it's saved in localStorage
     cy.get('[data-cy="toggle width button"]')
+      .first()
       .click()
       .should(() => {
         expect(localStorage.getItem('fullWidth')).to.be.eq('true');
@@ -165,6 +166,7 @@ context('Admin Study List', () => {
 
     // Toggle back into compressed mode
     cy.get('[data-cy="toggle width button"]')
+      .first()
       .click()
       .should(() => {
         expect(localStorage.getItem('fullWidth')).to.be.eq('false');
