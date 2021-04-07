@@ -6,59 +6,38 @@ import {Menu, Label} from 'semantic-ui-react';
 /**
  * Menu for navigating within a study
  */
-const StudyNavBar = ({match, history, isBeta, isResearch}) => {
-  const baseHref = isResearch
-    ? `/research-study/${match.params.kfId}/`
-    : `/study/${match.params.kfId}/`;
-  const navList = isResearch
-    ? [
-        {
-          tab: 'Basic Info',
-          endString: 'basic-info',
-        },
-        {
-          tab: 'Cavatica',
-          endString: 'cavatica',
-        },
-        {
-          tab: 'Logs',
-          endString: 'logs',
-        },
-        {
-          tab: 'Releases',
-          endString: 'releases',
-        },
-      ]
-    : [
-        {
-          tab: 'Basic Info',
-          endString: 'basic-info/info',
-        },
-        {
-          tab: 'Documents',
-          endString: 'documents',
-        },
-        {
-          tab: 'Reviews',
-          endString: 'reviews',
-        },
-        {
-          tab: 'Cavatica',
-          endString: 'cavatica',
-        },
-        {
-          tab: 'Collaborators',
-          endString: 'collaborators',
-        },
-        {
-          tab: 'Logs',
-          endString: 'logs',
-        },
-        {
-          tab: 'Releases',
-          endString: 'releases',
-        },
-      ];
+const StudyNavBar = ({match, history, isBeta}) => {
+  const baseHref = `/study/${match.params.kfId}/`;
+  const navList = [
+    {
+      tab: 'Basic Info',
+      endString: 'basic-info/info',
+    },
+    {
+      tab: 'Documents',
+      endString: 'documents',
+    },
+    {
+      tab: 'Reviews',
+      endString: 'reviews',
+    },
+    {
+      tab: 'Cavatica',
+      endString: 'cavatica',
+    },
+    {
+      tab: 'Collaborators',
+      endString: 'collaborators',
+    },
+    {
+      tab: 'Logs',
+      endString: 'logs',
+    },
+    {
+      tab: 'Releases',
+      endString: 'releases',
+    },
+  ];
   const currentTab = history.location.pathname
     .split('/')
     .filter(e => e !== '')

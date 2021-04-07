@@ -114,7 +114,6 @@ const StudyTable = ({
   loading,
   clickable = true,
   myProfile,
-  isResearch,
   columns,
   handleSort,
   favoriteStudies = [],

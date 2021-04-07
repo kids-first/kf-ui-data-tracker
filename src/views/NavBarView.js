@@ -46,8 +46,6 @@ const NavBarView = ({match, location, history}) => {
 
   const [showModal, setShowModal] = useState(false);
 
-  const isResearch = match.path.includes('research');
-
   if (
     location.pathname.includes('/versions/') ||
     location.pathname.includes('/upload')
@@ -80,7 +78,7 @@ const NavBarView = ({match, location, history}) => {
       </Segment>
       <Container>
         {!location.pathname.includes('/start-review') && (
-          <StudyNavBar isBeta={isBeta} isResearch={isResearch} />
+          <StudyNavBar isBeta={isBeta} />
         )}
         <Switch>
           <Route
@@ -113,7 +111,6 @@ const NavBarView = ({match, location, history}) => {
           studyKfId={study && study.kfId}
           history={history}
           closeModal={setShowModal}
-          isResearch={isResearch}
         />
       )}
     </section>
