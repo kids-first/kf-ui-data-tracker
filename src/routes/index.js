@@ -1,7 +1,6 @@
 import React, {Fragment} from 'react';
 import {Route, Switch} from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
-import AdminRoute from './AdminRoute';
 import RestrictedRoute from './RestrictedRoute';
 import {Header} from '../components/Header';
 import {Footer} from '../components/Footer';
@@ -19,7 +18,6 @@ import {
   LogoutView,
   ReleasesView,
   CollaboratorsView,
-  NewStudySelectionView,
   NotFoundView,
   WelcomeView,
 } from '../views';
@@ -32,11 +30,6 @@ import {
   UploadView,
   VersionPreviewView,
 } from '../documents/views';
-import {
-  ResearchStudyListView,
-  NewResearchStudyView,
-  ResearchStudyInfoView,
-} from '../research/views';
 import {
   EditBannerView,
   NewBannerView,
@@ -69,12 +62,6 @@ const Routes = () => (
     <div className="page">
       <PrivateRoute
         path="/study/:kfId(SD_\w{8})/"
-        component={NavBarView}
-        disableViewEvent
-        scope={['study']}
-      />
-      <PrivateRoute
-        path="/research-study/:kfId(SD_\w{8})/"
         component={NavBarView}
         disableViewEvent
         scope={['study']}
@@ -155,18 +142,6 @@ const Routes = () => (
           scope={['admin', 'banners']}
           permissions={['list_all_banner']}
         />
-        <AdminRoute
-          exact
-          path="/study/new-study-selection"
-          component={NewStudySelectionView}
-          scope={['study', 'new study selection']}
-        />
-        <AdminRoute
-          exact
-          path="/study/new-research-study"
-          component={NewResearchStudyView}
-          scope={['study', 'new research study']}
-        />
         <RestrictedRoute
           exact
           path="/study/new-study/info"
@@ -189,12 +164,6 @@ const Routes = () => (
           permissions={['add_study']}
         />
         <PrivateRoute
-          exact
-          path="/research-studies"
-          component={ResearchStudyListView}
-          scope={['research studies']}
-        />
-        <PrivateRoute
           path="/study/:kfId/basic-info"
           component={StudyInfoView}
           scope={['study', 'basic info']}
@@ -204,28 +173,6 @@ const Routes = () => (
           path="/study/:kfId"
           component={StudyFilesListView}
           scope={['study', 'documents']}
-        />
-        <PrivateRoute
-          path="/research-study/:kfId/basic-info"
-          component={ResearchStudyInfoView}
-          scope={['study', 'basic info']}
-        />
-        <PrivateRoute
-          path="/research-study/:kfId/cavatica"
-          component={CavaticaBixView}
-          scope={['study', 'cavatica']}
-        />
-        <PrivateRoute
-          exact
-          path="/research-study/:kfId/logs"
-          component={LogsView}
-          scope={['study', 'logs']}
-        />
-        <PrivateRoute
-          exact
-          path="/research-study/:kfId/releases"
-          component={ReleasesView}
-          scope={['study', 'releases']}
         />
         <PrivateRoute
           exact
