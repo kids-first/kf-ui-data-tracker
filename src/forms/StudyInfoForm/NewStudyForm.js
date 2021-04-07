@@ -275,7 +275,9 @@ const NewStudyForm = ({
                   primary
                   floated="right"
                   type="submit"
+                  loading={submitting}
                   disabled={
+                    submitting ||
                     Object.keys(formikProps.errors).length > 0 ||
                     formikProps.values.name.length === 0 ||
                     formikProps.values.externalId.length === 0

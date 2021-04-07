@@ -1,22 +1,23 @@
-import React, {useState} from 'react';
-import PropTypes from 'prop-types';
-import {Amplitude} from '@amplitude/react-amplitude';
-import StudyTable from './StudyTable';
-import {Link} from 'react-router-dom';
 import {
-  Container,
-  Segment,
-  Grid,
-  Header,
-  Placeholder,
-  Input,
   Button,
   Checkbox,
-  Popup,
+  Container,
   Divider,
+  Grid,
+  Header,
+  Input,
+  Placeholder,
+  Popup,
+  Segment,
 } from 'semantic-ui-react';
-import {hasPermission} from '../../common/permissions';
+import React, {useState} from 'react';
+
+import {Amplitude} from '@amplitude/react-amplitude';
 import ColumnSelector from './ColumnSelector';
+import {Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
+import StudyTable from './StudyTable';
+import {hasPermission} from '../../common/permissions';
 
 /**
  * A skeleton placeholder for the loading state of the study list header
@@ -216,12 +217,15 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
     <>
       <Grid as={Segment} basic container>
         <Grid.Row>
-          <Grid.Column>
+          <Grid.Column tablet={5} computer={10} mobile={16}>
             <Header as="h1" floated="left" className="noMargin">
               Your Studies
             </Header>
+          </Grid.Column>
+          <Grid.Column tablet={11} computer={6} mobile={16}>
             {myProfile && hasPermission(myProfile, 'add_study') && (
               <Button
+                className="ml-10"
                 floated="right"
                 basic
                 primary
@@ -231,43 +235,104 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
                 to={`/study/new-study/info`}
               />
             )}
+            <Popup
+              wide
+              inverted
+              position="top center"
+              content="Search study by name , ID, investigator, Slack channel, or collaborator"
+              trigger={
+                <Input
+                  fluid
+                  aria-label="search studies"
+                  iconPosition="left"
+                  icon="search"
+                  placeholder="Search studies"
+                  onChange={(e, {value}) => {
+                    setSearchString(value);
+                  }}
+                  value={searchString}
+                />
+              }
+            />
           </Grid.Column>
         </Grid.Row>
       </Grid>
       <Grid as={Segment} container={!fullWidth} basic>
-        <Grid.Row className="noPadding">
-          <Grid.Column>
-            <Header as="h3" className="my-2" content="Favorite Studies" />
-            <Divider className="my-2" />
-          </Grid.Column>
-        </Grid.Row>
-        <Grid.Row>
-          {favoriteStudyList().length > 0 ? (
-            <Grid.Column>
-              <StudyTable
-                tableType="favStudy"
-                myProfile={myProfile}
-                loading={loading}
-                studyList={favoriteStudyList()}
-                columns={columns}
-                handleSort={handleSort}
-                favoriteStudies={favoriteStudies}
-                setFavoriteStudies={setFavoriteStudies}
-              />
-            </Grid.Column>
-          ) : (
-            <Grid.Column>
-              <Header
-                as="h4"
-                disabled
-                textAlign="center"
-                className="mt-15 mb-15"
+        {searchString.length === 0 && (
+          <>
+            <Grid.Row className="noPadding">
+              <Grid.Column computer={15} tablet={15} mobile={15}>
+                <Header as="h3" className="my-2" content="Favorite Studies" />
+              </Grid.Column>
+              <Grid.Column
+                className="pl-0"
+                tablet={1}
+                computer={1}
+                mobile={1}
+                verticalAlign="middle"
+                textAlign="right"
               >
-                You have not favorited any studies yet.
-              </Header>
-            </Grid.Column>
-          )}
-        </Grid.Row>
+                <Amplitude
+                  eventProperties={inheritedProps => ({
+                    ...inheritedProps,
+                    scope: inheritedProps.scope
+                      ? [...inheritedProps.scope, 'toggle button', 'full width']
+                      : ['toggle button', 'full width'],
+                  })}
+                >
+                  {({logEvent}) => (
+                    <Popup
+                      inverted
+                      content="Toggle full width view"
+                      position="top right"
+                      trigger={
+                        <Button
+                          size="mini"
+                          data-cy="toggle width button"
+                          active={fullWidth}
+                          onClick={() => toggleWidth(logEvent)}
+                          icon={fullWidth ? 'compress' : 'expand'}
+                        />
+                      }
+                    />
+                  )}
+                </Amplitude>
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row className="noPadding">
+              <Grid.Column>
+                <Divider className="my-2" />
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row>
+              {favoriteStudyList().length > 0 ? (
+                <Grid.Column>
+                  <StudyTable
+                    tableType="favStudy"
+                    myProfile={myProfile}
+                    loading={loading}
+                    studyList={favoriteStudyList()}
+                    columns={columns}
+                    handleSort={handleSort}
+                    favoriteStudies={favoriteStudies}
+                    setFavoriteStudies={setFavoriteStudies}
+                  />
+                </Grid.Column>
+              ) : (
+                <Grid.Column>
+                  <Header
+                    as="h4"
+                    disabled
+                    textAlign="center"
+                    className="mt-15 mb-15"
+                  >
+                    You have not favorited any studies yet.
+                  </Header>
+                </Grid.Column>
+              )}
+            </Grid.Row>
+          </>
+        )}
         <Grid.Row className="pb-0 mt-15">
           <Grid.Column
             computer={3}
@@ -278,9 +343,9 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
             <Header as="h3" className="my-2" content="All Studies" />
           </Grid.Column>
           <Grid.Column
-            computer={7}
-            tablet={8}
-            mobile={12}
+            computer={12}
+            tablet={12}
+            mobile={11}
             verticalAlign="middle"
             textAlign="right"
           >
@@ -315,28 +380,6 @@ const StudyList = ({studyList, loading, activeView, history, myProfile}) => {
                 localStorage.setItem('studyColumns', JSON.stringify(newCols));
                 setColumns(newCols);
               }}
-            />
-          </Grid.Column>
-          <Grid.Column computer={5} tablet={4} mobile={15}>
-            <Popup
-              wide
-              inverted
-              position="top center"
-              content="Search study by name , ID, investigator, Slack channel, or collaborator"
-              trigger={
-                <Input
-                  fluid
-                  size="mini"
-                  aria-label="search studies"
-                  iconPosition="left"
-                  icon="search"
-                  placeholder="Search studies"
-                  onChange={(e, {value}) => {
-                    setSearchString(value);
-                  }}
-                  value={searchString}
-                />
-              }
             />
           </Grid.Column>
           <Grid.Column
