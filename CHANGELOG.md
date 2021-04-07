@@ -1,5 +1,21 @@
 # Kids First Data Tracker Change History
 
+## Release 0.20.0
+
+### Summary
+
+- Emojis: 💄 x1, 🔥 x1, ✨ x2, ⬆️ x1
+- Categories: Other Changes x1, Removals x1, Additions x2, Ops x1
+
+### New features and changes
+
+- [#1010](https://github.com/kids-first/kf-ui-data-tracker/pull/1010) - 💄 Refactor study list sizing and add favorite studies search - [14e17488](https://github.com/kids-first/kf-ui-data-tracker/commit/14e17488d1e4ee819ac8e7c1dea3f85af26659fe) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#1011](https://github.com/kids-first/kf-ui-data-tracker/pull/1011) - 🔥 Remove roles from user fragment - [46f210be](https://github.com/kids-first/kf-ui-data-tracker/commit/46f210bec7a001a43a869ff2d8ad68979f235cbb) by [dankolbman](https://github.com/dankolbman)
+- [#1005](https://github.com/kids-first/kf-ui-data-tracker/pull/1005) - ✨ Show confetti when successfully publish the release - [343cab94](https://github.com/kids-first/kf-ui-data-tracker/commit/343cab94deba7df503566506bb9a94f827661cb5) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#976](https://github.com/kids-first/kf-ui-data-tracker/pull/976) - ✨ Add front-end views for create data review form - [91296e55](https://github.com/kids-first/kf-ui-data-tracker/commit/91296e556facb0e72e1dcb27f54bd23602375765) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#1000](https://github.com/kids-first/kf-ui-data-tracker/pull/1000) - ⬆️ Bump elliptic from 6.5.3 to 6.5.4 - [63080739](https://github.com/kids-first/kf-ui-data-tracker/commit/630807391403fa11ae93fcd00716a332fd2162c6) by [dependabot[bot]](https://github.com/apps/dependabot)
+
+
 ## Release 0.19.2
 
 ### Summary
