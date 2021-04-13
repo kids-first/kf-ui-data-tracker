@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./src",
+        "paths": {
+            "@ui/*": ["./src/@next/components/*"],
+            "@ui/atoms": ["./src/@next/components/atoms/index.ts"],
+            "@ui/molecules": ["./src/@next/components/molecules/index.ts"],
+            "@ui/organisms": ["./src/@next/components/organisms/index.ts"],
+            "@ui/templates": ["./src/@next/components/templates/index.ts"],
+            "@ui/containers": ["./src/@next/components/containers/index.ts"]
+        }
+    }
+}
