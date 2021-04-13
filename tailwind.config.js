@@ -7,11 +7,12 @@ module.exports = {
     extend: {
       colors: {
         blue: colors.lightBlue,
+        primary: colors.amber,
       },
     },
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
 };
