@@ -3,8 +3,16 @@ import {useSelect} from 'react-cosmos/fixture';
 import {Button, ButtonSize} from '.';
 
 const ButtonFixture = () => {
+    const options: ButtonSize[] = [
+        'xsmall',
+        'small',
+        'medium',
+        'large',
+        'xlarge',
+    ];
     const [color] = useSelect('color', {
         options: [
+            'primary',
             'gray',
             'red',
             'yellow',
@@ -15,15 +23,14 @@ const ButtonFixture = () => {
             'pink',
         ],
     });
-    const [size] = useSelect('size', {
-        options: ['xsmall', 'small', 'medium', 'large', 'xlarge'],
-    });
 
     return (
-        <div className="p-8">
-            <Button color={color} size={size}>
-                Save
-            </Button>
+        <div className="p-8 space-x-4">
+            {options.map(size => (
+                <Button color={color} size={size}>
+                    Save
+                </Button>
+            ))}
         </div>
     );
 };

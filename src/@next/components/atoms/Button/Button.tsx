@@ -1,9 +1,11 @@
 import React from 'react';
 import classnames from 'classnames';
 
+export type ButtonSize = 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
 export interface IButtonProps {
-    size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
+    size?: ButtonSize;
     color?:
+        | 'primary'
         | 'gray'
         | 'red'
         | 'yellow'
@@ -29,7 +31,7 @@ const base = classnames(
     'focus:ring-offset-2',
 );
 
-const sizes = {
+const sizes: {[key in ButtonSize]: string} = {
     xsmall: classnames('px-2.5', 'py-1.5', 'text-xs'),
     small: classnames('px-3', 'py-2', 'text-sm', 'leading-4'),
     medium: classnames('px-4', 'py-2', 'text-sm'),
