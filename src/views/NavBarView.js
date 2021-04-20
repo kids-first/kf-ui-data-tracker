@@ -1,5 +1,6 @@
 import {
   CollaboratorsHelp,
+  DataValidationHelp,
   DocumentDetailHelp,
   DocumentListHelp,
   ReviewDetailHelp,
@@ -100,6 +101,11 @@ const NavBarView = ({match, location, history}) => {
             exact
             path="/study/:kfId/reviews/:reviewId(DR_\w{8})"
             component={ReviewDetailHelp}
+          />
+          <Route
+            exact
+            path="/study/:kfId/reviews/:reviewId(DR_\w{8})/validation"
+            component={DataValidationHelp}
           />
         </Switch>
       </Container>
