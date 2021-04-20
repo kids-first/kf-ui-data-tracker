@@ -273,6 +273,8 @@ const ReviewDetail = ({
   reopenError,
   downloadFileMutation,
   canAddFile,
+  canStartValidation,
+  validationRunState,
 }) => {
   const studyId = match.params.kfId;
 
@@ -314,7 +316,7 @@ const ReviewDetail = ({
         <Grid.Column mobile={16} tablet={13} computer={14} className="pl-0">
           <Grid>
             <Grid.Row>
-              <Grid.Column mobile={16} tablet={16} computer={10}>
+              <Grid.Column mobile={16} tablet={16} computer={5}>
                 <Segment basic>
                   <Header as="h4" color="grey">
                     Basic info
@@ -327,7 +329,7 @@ const ReviewDetail = ({
                   />
                 </Segment>
               </Grid.Column>
-              <Grid.Column mobile={16} tablet={16} computer={6}>
+              <Grid.Column mobile={16} tablet={16} computer={4}>
                 <Segment basic>
                   <Header as="h4" color="grey">
                     State
@@ -336,6 +338,88 @@ const ReviewDetail = ({
                     <Icon name={reviewStatus[reviewNode.state].icon} />
                     {reviewStatus[reviewNode.state].text}
                   </Label>
+                </Segment>
+              </Grid.Column>
+              <Grid.Column mobile={16} tablet={16} computer={7}>
+                <Segment basic>
+                  <Header as="h4" color="grey">
+                    Validation Summary
+                  </Header>
+                  {reviewNode.validationResultset ? (
+                    <Label.Group>
+                      <Label
+                        as="a"
+                        onClick={() => {
+                          history.push(
+                            `/study/${match.params.kfId}/reviews/${reviewNode.kfId}/validation`,
+                          );
+                        }}
+                      >
+                        <Icon name="check circle" color="green" />
+                        {reviewNode.validationResultset.passed} Passed
+                      </Label>
+                      <Label
+                        as="a"
+                        onClick={() => {
+                          history.push(
+                            `/study/${match.params.kfId}/reviews/${reviewNode.kfId}/validation`,
+                          );
+                        }}
+                      >
+                        <Icon name="times circle" color="red" />
+                        {reviewNode.validationResultset.failed} Failed
+                      </Label>
+                      <Label
+                        as="a"
+                        onClick={() => {
+                          history.push(
+                            `/study/${match.params.kfId}/reviews/${reviewNode.kfId}/validation`,
+                          );
+                        }}
+                      >
+                        <Icon name="warning circle" color="yellow" />
+                        {reviewNode.validationResultset.didNotRun} Did Not Run
+                      </Label>
+                    </Label.Group>
+                  ) : (
+                    <>
+                      {['in_review', 'awaiting_updates'].includes(
+                        reviewNode.state,
+                      ) && canStartValidation ? (
+                        <>
+                          {validationRunState === 'running' ? (
+                            <Label
+                              as="a"
+                              color="blue"
+                              onClick={() => {
+                                history.push(
+                                  `/study/${match.params.kfId}/reviews/${reviewNode.kfId}/validation`,
+                                );
+                              }}
+                            >
+                              <Icon loading name="spinner" />
+                              Running Validation
+                            </Label>
+                          ) : (
+                            <Label
+                              as="a"
+                              color="blue"
+                              onClick={() => {
+                                history.push(
+                                  `/study/${match.params.kfId}/reviews/${reviewNode.kfId}/validation`,
+                                );
+                              }}
+                            >
+                              <Icon name="clipboard check" />
+                              Click to Start Validation
+                            </Label>
+                          )}
+                        </>
+                      ) : (
+                        <Label>No data validation report created</Label>
+                      )}
+                    </>
+                  )}
                 </Segment>
               </Grid.Column>
             </Grid.Row>

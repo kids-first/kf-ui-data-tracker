@@ -59,6 +59,8 @@ const ReviewDetailView = ({
     myProfile && hasPermission(myProfile, 'change_datareview');
   const allowViewReview =
     myProfile && hasPermission(myProfile, 'view_datareview');
+  const allowStartValidation =
+    myProfile && hasPermission(myProfile, 'add_validationrun');
 
   const [downloadFileMutation] = useMutation(FILE_DOWNLOAD_URL);
 
@@ -71,6 +73,11 @@ const ReviewDetailView = ({
   const addedFiles = review
     ? review.versions.edges.map(({node}) => node.rootFile.kfId)
     : [];
+  const validationRun =
+    review &&
+    review.validationRuns.edges.length > 0 &&
+    review.validationRuns.edges[review.validationRuns.edges.length - 1].node;
+  const validationRunState = validationRun && validationRun.state;
 
   const {data: reviewsData} = useQuery(ALL_DATA_REVIEWS, {
     variables: {
@@ -218,6 +225,8 @@ const ReviewDetailView = ({
             review.state !== 'closed' &&
             allowChangeReview
           }
+          canStartValidation={allowStartValidation}
+          validationRunState={validationRunState}
         />
       )}
       <Modal
