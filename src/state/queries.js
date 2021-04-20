@@ -1,14 +1,17 @@
-import gql from 'graphql-tag';
 import {
   CREATOR_FIELDS,
+  EVENT_FIELDS,
+  GROUP_FIELDS,
   PROJECT_FIELDS,
   STUDY_BASIC_FIELDS,
   STUDY_INFO_FIELDS,
-  EVENT_FIELDS,
-  GROUP_FIELDS,
   USER_FIELDS,
+  VALIDATION_RESULT_FIELDS,
+  VALIDATION_RUN_FIELDS,
 } from './fragments';
 import {FILE_FIELDS, VERSION_FIELDS} from '../documents/fragments';
+
+import gql from 'graphql-tag';
 
 // Query to get all studies in the study-creator
 export const ALL_STUDIES = gql`
@@ -383,6 +386,9 @@ export const ALL_DATA_REVIEWS = gql`
               }
             }
           }
+          validationResultset {
+            ...ValidationResultsetFields
+          }
         }
       }
     }
@@ -390,6 +396,7 @@ export const ALL_DATA_REVIEWS = gql`
   ${STUDY_BASIC_FIELDS}
   ${VERSION_FIELDS}
   ${CREATOR_FIELDS}
+  ${VALIDATION_RESULT_FIELDS}
 `;
 
 export const DATA_REVIEW = gql`
@@ -427,6 +434,16 @@ export const DATA_REVIEW = gql`
           }
         }
       }
+      validationResultset {
+        ...ValidationResultsetFields
+      }
+      validationRuns {
+        edges {
+          node {
+            ...ValidationRunFields
+          }
+        }
+      }
       events(first: 20, orderBy: "-created_at") {
         edges {
           node {
@@ -445,4 +462,6 @@ export const DATA_REVIEW = gql`
   ${CREATOR_FIELDS}
   ${EVENT_FIELDS}
   ${USER_FIELDS}
+  ${VALIDATION_RESULT_FIELDS}
+  ${VALIDATION_RUN_FIELDS}
 `;

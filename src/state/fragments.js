@@ -101,3 +101,30 @@ export const USER_FIELDS = gql`
     picture
   }
 `;
+
+export const VALIDATION_RESULT_FIELDS = gql`
+  fragment ValidationResultsetFields on ValidationResultsetNode {
+    id
+    createdAt
+    reportFile
+    resultsFile
+    passed
+    failed
+    didNotRun
+    downloadReportUrl
+    downloadResultsUrl
+  }
+`;
+
+export const VALIDATION_RUN_FIELDS = gql`
+  fragment ValidationRunFields on ValidationRunNode {
+    id
+    createdAt
+    startedAt
+    stoppedAt
+    inputHash
+    state
+    success
+    progress
+  }
+`;
