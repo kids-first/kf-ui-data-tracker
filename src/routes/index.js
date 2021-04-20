@@ -23,6 +23,7 @@ import {
 } from '../views';
 import {
   StudyFilesListView,
+  DataValidationView,
   FileDetailView,
   ReviewDetailView,
   ReviewListView,
@@ -206,6 +207,12 @@ const Routes = () => (
           exact
           path="/study/:kfId/reviews/:reviewId(DR_\w{8})"
           component={ReviewDetailView}
+          scope={['study', 'reviews', 'review']}
+        />
+        <PrivateRoute
+          exact
+          path="/study/:kfId/reviews/:reviewId(DR_\w{8})/validation"
+          component={DataValidationView}
           scope={['study', 'reviews', 'review']}
         />
         <RestrictedRoute
