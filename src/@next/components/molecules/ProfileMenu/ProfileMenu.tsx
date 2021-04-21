@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import Avatar from '../../atoms/Avatar';
 
 export interface IProfileMenuProps {
@@ -6,9 +7,9 @@ export interface IProfileMenuProps {
     avatarSrc: string;
 }
 
-const ProfileMenu = ({name, avatarSrc}: IProfileMenuProps) => (
+export const ProfileMenu = ({name, avatarSrc}: IProfileMenuProps) => (
     <div className="flex-shrink-0 flex bg-gray-700 p-4">
-        <a href="#" className="flex-shrink-0 w-full group block">
+        <Link to="/" className="flex-shrink-0 w-full group block">
             <div className="flex items-center">
                 <div>
                     <Avatar size="medium" src={avatarSrc} alt="User avatar" />
@@ -20,8 +21,6 @@ const ProfileMenu = ({name, avatarSrc}: IProfileMenuProps) => (
                     </p>
                 </div>
             </div>
-        </a>
+        </Link>
     </div>
 );
-
-export default ProfileMenu;

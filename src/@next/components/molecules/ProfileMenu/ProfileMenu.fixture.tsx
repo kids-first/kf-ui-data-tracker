@@ -1,5 +1,5 @@
 import React from 'react';
-import ProfileMenu from './ProfileMenu';
+import {ProfileMenu} from '.';
 
 export default (
     <div className="p-4 max-w-sm">
