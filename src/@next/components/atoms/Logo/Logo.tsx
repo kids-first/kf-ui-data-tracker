@@ -2,8 +2,6 @@ import React from 'react';
 
 import logo from '../../../../assets/logo.svg';
 
-const Logo = () => {
-    return <img className="w-14 h-14" src={logo} />;
+export const Logo = () => {
+    return <img className="w-full h-full" src={logo} alt="logo" />;
 };
-
-export default Logo;
