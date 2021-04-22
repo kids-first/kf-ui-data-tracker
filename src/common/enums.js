@@ -373,6 +373,10 @@ export const permissionIcon = {
   release: 'paper plane',
   releaseevent: 'calendar',
   releaseservice: 'paper plane',
+  releasetask: 'clipboard check',
+  ingestrun: 'search',
+  validationrun: 'code',
+  validationresultset: 'code'
 };
 
 // Icon color for different permissions
