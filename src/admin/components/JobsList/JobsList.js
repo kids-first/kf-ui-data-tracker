@@ -15,38 +15,42 @@ const JobsList = ({jobs, onClick, active}) => (
         </Table.HeaderCell>
       </Table.Row>
     </Table.Header>
-    {jobs.length ? (
-      jobs.map(({node}) => (
-        <Table.Row
-          key={node.id}
-          active={active === node.id}
-          onClick={() => onClick(node.id)}
-          className="cursor-pointer"
-        >
-          <Table.Cell>{node.name}</Table.Cell>
-          <Table.Cell textAlign="center">
-            {node.scheduled ? 'Scheduled' : 'Triggered'}
-          </Table.Cell>
-          <Table.Cell textAlign="center">
-            {node.failing ? (
-              <>
-                <Icon color="red" name="warning sign" /> Failing
-              </>
-            ) : (
-              'Ok'
-            )}
-          </Table.Cell>
-          <Table.Cell textAlign="center">
-            {node.active ? 'Active' : 'Disabled'}
-          </Table.Cell>
-          <Table.Cell textAlign="center">
-            {<TimeAgo date={node.enqueuedAt} live={false} />}
-          </Table.Cell>
+    <Table.Body>
+      {jobs.length ? (
+        jobs.map(({node}) => (
+          <Table.Row
+            key={node.id}
+            active={active === node.id}
+            onClick={() => onClick(node.id)}
+            className="cursor-pointer"
+          >
+            <Table.Cell>{node.name}</Table.Cell>
+            <Table.Cell textAlign="center">
+              {node.scheduled ? 'Scheduled' : 'Triggered'}
+            </Table.Cell>
+            <Table.Cell textAlign="center">
+              {node.failing ? (
+                <>
+                  <Icon color="red" name="warning sign" /> Failing
+                </>
+              ) : (
+                'Ok'
+              )}
+            </Table.Cell>
+            <Table.Cell textAlign="center">
+              {node.active ? 'Active' : 'Disabled'}
+            </Table.Cell>
+            <Table.Cell textAlign="center">
+              {<TimeAgo date={node.enqueuedAt} live={false} />}
+            </Table.Cell>
+          </Table.Row>
+        ))
+      ) : (
+        <Table.Row>
+          <Table.Cell colSpan="5">No Jobs are scheduled or have run</Table.Cell>
         </Table.Row>
-      ))
-    ) : (
-      <span>No Jobs are scheduled or have run</span>
-    )}
+      )}
+    </Table.Body>
   </Table>
 );
 
