@@ -44,7 +44,7 @@ const StudyNavBar = ({match, history, isBeta}) => {
     .slice(-1)[0];
   return (
     <Menu color="pink" compact secondary pointing>
-      {navList.slice(0, isBeta ? 6 : 5).map((item, i) => (
+      {navList.slice(0, isBeta ? 7 : 6).map((item, i) => (
         <Menu.Item
           key={i}
           name={item.tab}
