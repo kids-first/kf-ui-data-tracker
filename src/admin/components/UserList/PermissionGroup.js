@@ -37,6 +37,7 @@ const PermissionGroup = ({groupOptions}) => {
                         .map(permission => (
                           <List.Item key={permission.key}>
                             <Icon
+                              className="mr-5"
                               name={
                                 permissionIcon[
                                   permission.key.split('_').slice(-1)[0]
@@ -47,7 +48,9 @@ const PermissionGroup = ({groupOptions}) => {
                                 'grey'
                               }
                             />
-                            {permission.value}
+                            {permission.value.includes('_')
+                              ? permission.value.replace('_', ' ')
+                              : permission.value}
                           </List.Item>
                         ))}
                     </List>
