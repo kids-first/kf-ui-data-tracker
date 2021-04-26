@@ -51,6 +51,8 @@ context('Add Study', () => {
       .should('not.have.class', 'disabled')
       .click();
 
+    cy.wait(500)
+
     cy.get('.modal').should('have.class', 'visible');
     cy.contains('div', 'Registered in Data Service');
 
