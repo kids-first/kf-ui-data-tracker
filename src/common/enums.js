@@ -218,6 +218,26 @@ export const eventType = {
     iconName: 'clipboard check',
     iconColor: 'yellow',
   },
+  VR_STA: {
+    title: 'Validation Run Started',
+    iconName: 'code',
+    iconColor: 'yellow',
+  },
+  VR_CAN: {
+    title: 'Validation Run Canceled',
+    iconName: 'code',
+    iconColor: 'black',
+  },
+  VR_COM: {
+    title: 'Validation Run Completed',
+    iconName: 'code',
+    iconColor: 'green',
+  },
+  VR_FAI: {
+    title: 'Validation Run Failed',
+    iconName: 'code',
+    iconColor: 'red',
+  },
 };
 
 // Store file type title, description and icon
