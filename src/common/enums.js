@@ -188,6 +188,56 @@ export const eventType = {
     iconName: 'slack hash',
     iconColor: 'green',
   },
+  DR_STA: {
+    title: 'Data Review Started',
+    iconName: 'clipboard check',
+    iconColor: 'yellow',
+  },
+  DR_WAI: {
+    title: 'Data Review Waiting for Updates',
+    iconName: 'clipboard check',
+    iconColor: 'orange',
+  },
+  DR_UPD: {
+    title: 'Data Review Updated',
+    iconName: 'clipboard check',
+    iconColor: 'yellow',
+  },
+  DR_APP: {
+    title: 'Data Review Approved',
+    iconName: 'clipboard check',
+    iconColor: 'green',
+  },
+  DR_CLO: {
+    title: 'Data Review Closed',
+    iconName: 'clipboard check',
+    iconColor: 'black',
+  },
+  DR_REO: {
+    title: 'Data Review Re-opened',
+    iconName: 'clipboard check',
+    iconColor: 'yellow',
+  },
+  VR_STA: {
+    title: 'Validation Run Started',
+    iconName: 'code',
+    iconColor: 'yellow',
+  },
+  VR_CAN: {
+    title: 'Validation Run Canceled',
+    iconName: 'code',
+    iconColor: 'black',
+  },
+  VR_COM: {
+    title: 'Validation Run Completed',
+    iconName: 'code',
+    iconColor: 'green',
+  },
+  VR_FAI: {
+    title: 'Validation Run Failed',
+    iconName: 'code',
+    iconColor: 'red',
+  },
 };
 
 // Store file type title, description and icon
