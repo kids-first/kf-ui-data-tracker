@@ -5,3 +5,4 @@ export * from "./Input";
 export * from "./Logo";
 export * from "./SidebarButton";
 export * from "./OrganizationButton";
+export * from "./PageHeader";
