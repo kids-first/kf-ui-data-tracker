@@ -14,6 +14,7 @@ export interface IButtonProps {
         | 'indigo'
         | 'purple'
         | 'pink';
+    onClick?: () => any;
     children: React.ReactNode;
 }
 
@@ -39,7 +40,12 @@ const sizes: {[key in ButtonSize]: string} = {
     xlarge: classnames('px-6', 'py-3', 'text-base'),
 };
 
-export const Button = ({color, size = 'medium', children}: IButtonProps) => {
+export const Button = ({
+    color = 'primary',
+    size = 'medium',
+    onClick,
+    children,
+}: IButtonProps) => {
     return (
         <button
             type="button"
@@ -51,8 +57,9 @@ export const Button = ({color, size = 'medium', children}: IButtonProps) => {
                 `hover:bg-${color}-700`,
                 `focus:ring-${color}-500`,
             )}
+            onClick={onClick}
         >
-            Button text
+            {children}
         </button>
     );
 };
