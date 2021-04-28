@@ -1,10 +1,10 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom';
-import AdminRoutes from './admin/routes';
+import {Users} from './views';
 
 const Routes = () => (
     <Switch>
-        <Route path="/next/admin" component={AdminRoutes} />;
+        <Route path="/next/admin/users" component={Users} />;
     </Switch>
 );
 
