@@ -14,6 +14,10 @@ import {
 } from '../../organisms/MainNavigation';
 import {INavigationItem} from '../../../types';
 
+export interface ISingleColumnProps {
+    children: React.ReactNode;
+}
+
 const navigation: INavigationItem[] = [
     {name: 'Dashboard', href: '#', icon: HomeIcon, current: true},
     {name: 'Calendar', href: '#', icon: CalendarIcon, current: false},
@@ -23,7 +27,7 @@ const navigation: INavigationItem[] = [
     {name: 'Office Map', href: '#', icon: MapIcon, current: false},
 ];
 
-export const SingleColumn = () => {
+export const SingleColumn = ({children}: ISingleColumnProps) => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
     return (
         <div className="h-screen flex overflow-hidden bg-white">
@@ -47,13 +51,9 @@ export const SingleColumn = () => {
                 </div>
                 <div className="flex-1 relative z-0 flex flex-col overflow-hidden">
                     <main className="flex-1 relative z-0 overflow-y-auto focus:outline-none">
-                        {/* Start main area*/}
                         <div className="absolute inset-0 py-6 px-4 sm:px-6 lg:px-8">
-                            <div className="h-full border-2 border-gray-200 border-dashed rounded-lg">
-                                This is the main content.
-                            </div>
+                            {children}
                         </div>
-                        {/* End main area */}
                     </main>
                 </div>
             </div>
