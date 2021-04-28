@@ -6,29 +6,30 @@ import {relayStylePagination} from '@apollo/client/utilities';
 import {KF_STUDY_API} from '../common/globals';
 
 const authLink = setContext((_, {headers}) => {
-  const token = localStorage.getItem('accessToken');
-  return {
-    headers: {
-      ...headers,
-      authorization: token ? `Bearer ${token}` : '',
-    },
-  };
+    const token = localStorage.getItem('accessToken');
+    return {
+        headers: {
+            ...headers,
+            authorization: token ? `Bearer ${token}` : '',
+        },
+    };
 });
 
 const studyLink = ApolloLink.from([
-  authLink,
-  createUploadLink({uri: `${KF_STUDY_API}/graphql`}),
+    authLink,
+    createUploadLink({uri: `${KF_STUDY_API}/graphql`}),
 ]);
 
 export const client = new ApolloClient({
-  cache: new InMemoryCache({
-    typePolicies: {
-      Query: {
-        fields: {
-          allReleases: relayStylePagination(),
+    cache: new InMemoryCache({
+        typePolicies: {
+            Query: {
+                fields: {
+                    allReleases: relayStylePagination(),
+                    allUsers: relayStylePagination(),
+                },
+            },
         },
-      },
-    },
-  }),
-  link: studyLink,
+    }),
+    link: studyLink,
 });
