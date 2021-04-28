@@ -87,6 +87,7 @@ jobs:
           command: |
             set +e
             mkdir ./artifacts
+            touch ./artifacts/.keepartifacts
             docker cp project_app_1:/app/cypress-coverage ./artifacts/cypress-coverage
             docker cp cypress:/app/cypress/screenshots ./artifacts/screenshots
             echo "Returning exit code `cat .test-result`"
