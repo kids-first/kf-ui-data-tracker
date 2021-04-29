@@ -72,12 +72,9 @@ export const UserList = ({users}: IUserListProps) => (
                                         {user.displayName}
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                        <a
-                                            href="#"
-                                            className="text-primary-600 hover:text-primary-900"
-                                        >
+                                        <span className="text-primary-600 hover:text-primary-900">
                                             Edit
-                                        </a>
+                                        </span>
                                     </td>
                                 </tr>
                             ))}
