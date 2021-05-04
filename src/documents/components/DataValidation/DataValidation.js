@@ -6,12 +6,14 @@ import {
   Image,
   Menu,
   Message,
+  Popup,
   Segment,
   Table,
 } from 'semantic-ui-react';
 import {Link, withRouter} from 'react-router-dom';
 import React, {useEffect, useState} from 'react';
 
+import {Amplitude} from '@amplitude/react-amplitude';
 import Markdown from 'react-markdown';
 import defaultAvatar from '../../../assets/defaultAvatar.png';
 import {longDate} from '../../../common/dateUtils';
@@ -135,6 +137,58 @@ const DataValidation = ({
                     Timestamp
                   </Menu.Item>
                   <Menu.Item>{longDate(result.createdAt)}</Menu.Item>
+                </>
+              )}
+              {allowStartValidation && (
+                <>
+                  <Menu.Item header as="h4" className="text-grey noMargin">
+                    Actions
+                  </Menu.Item>
+                  <Amplitude
+                    eventProperties={inheritedProps => ({
+                      ...inheritedProps,
+                      scope: inheritedProps.scope
+                        ? [
+                            ...inheritedProps.scope,
+                            'button',
+                            'rerun validation button',
+                          ]
+                        : ['button', 'rerun validation button'],
+                    })}
+                  >
+                    {({logEvent}) => (
+                      <Popup
+                        content="Re-run data validation"
+                        position="left center"
+                        inverted
+                        trigger={
+                          <Menu.Item
+                            onClick={() => {
+                              logEvent('click');
+                              setHasReport('running');
+                              startValidationRun({
+                                variables: {
+                                  input: {
+                                    dataReview: reviewNode.id,
+                                  },
+                                },
+                              })
+                                .then(resp => {
+                                  startPolling(1000);
+                                })
+                                .catch(err => {
+                                  setHasReport('not_started');
+                                  setValidationError(err.message);
+                                });
+                            }}
+                          >
+                            <Icon name="repeat" />
+                            Re-Run
+                          </Menu.Item>
+                        }
+                      />
+                    )}
+                  </Amplitude>
                 </>
               )}
             </Menu>
