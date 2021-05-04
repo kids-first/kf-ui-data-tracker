@@ -53,6 +53,9 @@ const DataValidation = ({
   const studyId = match.params.kfId;
 
   useEffect(() => {
+    if (validationRunState === 'running') {
+      startPolling(1000);
+    }
     if (validationRunState === 'failed') {
       stopPolling();
       setHasReport('failed');
@@ -208,7 +211,7 @@ const DataValidation = ({
                         },
                       })
                         .then(resp => {
-                          startPolling(10000);
+                          startPolling(1000);
                         })
                         .catch(err => {
                           setHasReport('not_started');
