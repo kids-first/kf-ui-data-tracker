@@ -27,6 +27,7 @@ const DataValidation = ({
   allowViewReview,
   allowStartValidation,
   startValidationRun,
+  cancelValidationRun,
   startPolling,
   stopPolling,
 }) => {
@@ -223,7 +224,26 @@ const DataValidation = ({
                   <Icon loading name="spinner" />
                   Running data validation, this may take several minutes
                 </Header>
-                <Button disabled>Running ...</Button>
+                <Button
+                  negative
+                  onClick={() => {
+                    // setHasReport('canceled');
+                    cancelValidationRun({
+                      variables: {
+                        id: validationRun.id,
+                      },
+                    })
+                      .then(resp => {
+                        startPolling(1000);
+                      })
+                      .catch(err => {
+                        setHasReport('failed');
+                        setValidationError(err.message);
+                      });
+                  }}
+                >
+                  Cancel Validation
+                </Button>
               </Segment>
             )}
             {hasReport === 'invalid' && (
@@ -232,6 +252,38 @@ const DataValidation = ({
                   <Icon name="dont" />
                   No data validation report available for this data review
                 </Header>
+              </Segment>
+            )}
+            {hasReport === 'canceled' && (
+              <Segment placeholder>
+                <Header icon>
+                  <Icon name="dont" />
+                  Canceled
+                </Header>
+                {allowStartValidation && (
+                  <Button
+                    primary
+                    onClick={() => {
+                      setHasReport('running');
+                      startValidationRun({
+                        variables: {
+                          input: {
+                            dataReview: reviewNode.id,
+                          },
+                        },
+                      })
+                        .then(resp => {
+                          startPolling(1000);
+                        })
+                        .catch(err => {
+                          setHasReport('not_started');
+                          setValidationError(err.message);
+                        });
+                    }}
+                  >
+                    Run Again
+                  </Button>
+                )}
               </Segment>
             )}
           </Grid.Column>

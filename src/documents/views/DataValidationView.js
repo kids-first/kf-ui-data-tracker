@@ -1,4 +1,8 @@
 import {
+  CANCEL_VALIDATION_RUN,
+  START_VALIDATION_RUN,
+} from '../../state/mutations';
+import {
   Container,
   Dimmer,
   Grid,
@@ -14,7 +18,6 @@ import {FILE_DOWNLOAD_URL} from '../mutations';
 import {Helmet} from 'react-helmet';
 import NotFoundView from '../../views/NotFoundView';
 import React from 'react';
-import {START_VALIDATION_RUN} from '../../state/mutations';
 import {hasPermission} from '../../common/permissions';
 
 /**
@@ -51,11 +54,23 @@ const DataValidationView = ({
       variables: {
         id: Buffer.from('DataReviewNode:' + reviewId).toString('base64'),
       },
+      fetchPolicy: 'cache-first',
     },
   );
   const review = data && data.dataReview;
 
   const [startValidationRun] = useMutation(START_VALIDATION_RUN, {
+    refetchQueries: [
+      {
+        query: DATA_REVIEW,
+        variables: {
+          id: Buffer.from('DataReviewNode:' + reviewId).toString('base64'),
+        },
+      },
+    ],
+  });
+
+  const [cancelValidationRun] = useMutation(CANCEL_VALIDATION_RUN, {
     refetchQueries: [
       {
         query: DATA_REVIEW,
@@ -133,6 +148,7 @@ const DataValidationView = ({
           reviewNode={review}
           downloadFileMutation={downloadFileMutation}
           startValidationRun={startValidationRun}
+          cancelValidationRun={cancelValidationRun}
           allowViewReview={allowViewReview}
           allowStartValidation={allowStartValidation}
           startPolling={startPolling}
