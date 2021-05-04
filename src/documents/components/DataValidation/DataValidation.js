@@ -53,6 +53,10 @@ const DataValidation = ({
   const studyId = match.params.kfId;
 
   useEffect(() => {
+    if (validationRunState === 'failed') {
+      stopPolling();
+      setHasReport('failed');
+    }
     if (result) {
       stopPolling();
       setHasReport('completed');
@@ -71,9 +75,8 @@ const DataValidation = ({
           setReport(res);
         });
     }
-  }, [result, stopPolling]);
+  }, [result, hasReport, validationRunState, startPolling, stopPolling]);
 
-  console.log();
   return (
     <Grid className="mb-50 pr-0" style={{width: '100%'}}>
       <Grid.Row>
@@ -244,6 +247,38 @@ const DataValidation = ({
                 >
                   Cancel Validation
                 </Button>
+              </Segment>
+            )}
+            {hasReport === 'failed' && (
+              <Segment placeholder>
+                <Header icon>
+                  <Icon name="x" />
+                  Failed to run validation report.
+                </Header>
+                {allowStartValidation && (
+                  <Button
+                    primary
+                    onClick={() => {
+                      setHasReport('running');
+                      startValidationRun({
+                        variables: {
+                          input: {
+                            dataReview: reviewNode.id,
+                          },
+                        },
+                      })
+                        .then(resp => {
+                          startPolling(1000);
+                        })
+                        .catch(err => {
+                          setHasReport('not_started');
+                          setValidationError(err.message);
+                        });
+                    }}
+                  >
+                    Run Again
+                  </Button>
+                )}
               </Segment>
             )}
             {hasReport === 'invalid' && (
