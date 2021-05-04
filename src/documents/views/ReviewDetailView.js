@@ -21,7 +21,7 @@ import {
   Modal,
   Segment,
 } from 'semantic-ui-react';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useMutation, useQuery} from '@apollo/client';
 
 import {FILE_DOWNLOAD_URL} from '../mutations';
@@ -64,11 +64,15 @@ const ReviewDetailView = ({
 
   const [downloadFileMutation] = useMutation(FILE_DOWNLOAD_URL);
 
-  const {loading, data, error} = useQuery(DATA_REVIEW, {
-    variables: {
-      id: Buffer.from('DataReviewNode:' + reviewId).toString('base64'),
+  const {loading, data, error, startPolling, stopPolling} = useQuery(
+    DATA_REVIEW,
+    {
+      variables: {
+        id: Buffer.from('DataReviewNode:' + reviewId).toString('base64'),
+      },
+      fetchPolicy: 'network-only',
     },
-  });
+  );
   const review = data && data.dataReview;
   const addedFiles = review
     ? review.versions.edges.map(({node}) => node.rootFile.kfId)
@@ -78,6 +82,14 @@ const ReviewDetailView = ({
     review.validationRuns.edges.length > 0 &&
     review.validationRuns.edges[review.validationRuns.edges.length - 1].node;
   const validationRunState = validationRun && validationRun.state;
+  const result = review && review.validationResultset;
+  const validationState = !allowViewReview
+    ? 'invalid'
+    : result
+    ? 'completed'
+    : validationRunState
+    ? validationRunState
+    : 'not_started';
 
   const {data: reviewsData} = useQuery(ALL_DATA_REVIEWS, {
     variables: {
@@ -139,6 +151,15 @@ const ReviewDetailView = ({
       },
     ],
   });
+
+  useEffect(() => {
+    if (validationState === 'running') {
+      startPolling(1000);
+    }
+    if (result) {
+      stopPolling();
+    }
+  }, [result, validationState, startPolling, stopPolling]);
 
   if (!loading && review === null) {
     return (
