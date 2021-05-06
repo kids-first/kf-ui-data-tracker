@@ -412,9 +412,6 @@ export const DATA_REVIEW = gql`
       creator {
         ...CreatorFields
       }
-      study {
-        ...StudyBasicFields
-      }
       versions {
         edges {
           node {
@@ -456,7 +453,6 @@ export const DATA_REVIEW = gql`
       }
     }
   }
-  ${STUDY_BASIC_FIELDS}
   ${FILE_FIELDS}
   ${VERSION_FIELDS}
   ${CREATOR_FIELDS}
