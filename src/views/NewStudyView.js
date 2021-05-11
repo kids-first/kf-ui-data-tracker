@@ -1,17 +1,25 @@
 import React, {useState} from 'react';
 import {Helmet} from 'react-helmet';
-import {useMutation} from '@apollo/client';
+import {useMutation, useQuery} from '@apollo/client';
 import NewStudyForm from '../forms/StudyInfoForm/NewStudyForm';
 import {Segment, Container, Header} from 'semantic-ui-react';
 import {CREATE_STUDY} from '../state/mutations';
+import {MY_PROFILE} from '../state/queries';
 /**
  * The NewStudyView displays a form to collect details about a new study.
  */
 
 const NewStudyView = ({match, history, location}) => {
+  const {data: myProfile} = useQuery(MY_PROFILE);
   const [createStudy] = useMutation(CREATE_STUDY);
   const [submitting, setSubmitting] = useState(false);
   const [newStudyError, setNewStudyError] = useState();
+
+  // Use the first organization that the user is a memeber of.
+  // This is a temporary solution until we allow switching between multiple
+  // organizations.
+  const organization =
+    myProfile.myProfile && myProfile.myProfile.organizations.edges[0].node;
 
   const submitValue = values => {
     setSubmitting(true);
@@ -19,7 +27,10 @@ const NewStudyView = ({match, history, location}) => {
       ? sessionStorage.getItem('newStudy').split(',')
       : [];
     createStudy({
-      variables: {input: values.input, workflows: values.workflowType},
+      variables: {
+        input: {...values.input, organization: organization.id},
+        workflows: values.workflowType,
+      },
     })
       .then(resp => {
         const studyId = resp.data.createStudy.study.kfId;
