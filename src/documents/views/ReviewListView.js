@@ -8,13 +8,14 @@ import {
   Container,
   Dimmer,
   Grid,
+  Header,
   Icon,
   List,
   Loader,
   Message,
   Popup,
   Segment,
-  Table,
+  Table
 } from 'semantic-ui-react';
 
 import {Helmet} from 'react-helmet';
@@ -105,7 +106,9 @@ const ReviewListView = ({
       </Helmet>
       <Grid.Row>
         <Grid.Column width={4}>
-          <h2>Study Reviews</h2>
+          <Header as="h2" className="noMargin">
+            Study Reviews
+          </Header>
         </Grid.Column>
         <Grid.Column width={12} textAlign="right">
           {allowAddReview && (

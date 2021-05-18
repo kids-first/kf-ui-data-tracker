@@ -4,9 +4,10 @@ import {
   Container,
   Form,
   Grid,
+  Header,
   Icon,
   Message,
-  Segment,
+  Segment
 } from 'semantic-ui-react';
 import {ContentState, EditorState, convertToRaw} from 'draft-js';
 import React, {useState} from 'react';
@@ -172,7 +173,9 @@ const StartReviewView = ({
           <>
             <Grid.Row>
               <Grid.Column width={6}>
-                <h2 className="noMargin">Start a New Data Review</h2>
+                <Header as="h2" className="noMargin">
+                  Start a New Data Review
+                </Header>
                 <p>Tell us any additional details about this review</p>
               </Grid.Column>
               {files.length > 0 && (
