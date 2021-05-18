@@ -10,12 +10,22 @@ import bug from '../assets/bug.svg';
 import {ImageMessage} from '../components/ImageMessage';
 
 const StudyListView = ({history}) => {
+  var currentOrg;
+  try {
+    currentOrg = JSON.parse(localStorage.getItem('currentOrganization'));
+  } catch (e) {
+    currentOrg = null;
+  }
+
   const {data: profileData} = useQuery(MY_PROFILE);
   const myProfile = profileData && profileData.myProfile;
   // Need to fetch from network everytime or else the allStudies query to the
   // release coordinator will overwrite the result in the cache
   const {loading, error, data} = useQuery(ALL_STUDIES, {
     fetchPolicy: 'cache-first',
+    variables: {
+      organization: currentOrg && currentOrg.id,
+    },
   });
   const allStudies = data && data.allStudies;
 

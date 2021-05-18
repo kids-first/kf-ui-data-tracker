@@ -15,8 +15,8 @@ import gql from 'graphql-tag';
 
 // Query to get all studies in the study-creator
 export const ALL_STUDIES = gql`
-  query AllStudies {
-    allStudies {
+  query AllStudies($organization: ID) {
+    allStudies(organization: $organization) {
       edges {
         node {
           ...StudyBasicFields
