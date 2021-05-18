@@ -509,8 +509,10 @@ exports[`renders study table correctly 1`] = `
 
 exports[`renders study table loading state 1`] = `
 <div>
-  <h2>
-    loading studies
-  </h2>
+  <h4
+    class="ui disabled center aligned header mt-15 mb-15"
+  >
+    Loading Studies ...
+  </h4>
 </div>
 `;
