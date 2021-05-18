@@ -48,12 +48,10 @@ import {
 } from '../admin/views';
 import ReleaseRoutes from '../releases/routes';
 import TrackedRoute from './TrackedRoute';
-import NextRoutes from '../@next/routes';
 
 const Routes = () => (
   <Fragment>
     <Switch>
-      <Route path="/next" component={NextRoutes} />
       <TrackedRoute path="/login" component={LoginView} />
       <TrackedRoute path="/logout" component={LogoutView} />
       <Route path="/callback" component={CallbackView} />

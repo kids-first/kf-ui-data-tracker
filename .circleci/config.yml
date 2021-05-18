@@ -87,12 +87,16 @@ jobs:
           command: |
             set +e
             mkdir ./artifacts
-            touch ./artifacts/.keepartifacts
+            docker cp project_app_1:/app/cypress-coverage ./artifacts/cypress-coverage
             docker cp cypress:/app/cypress/screenshots ./artifacts/screenshots
             echo "Returning exit code `cat .test-result`"
             exit `cat .test-result`
       - store_artifacts:
           path: ./artifacts
+      - persist_to_workspace:
+          root: ./artifacts
+          paths:
+            - ./cypress-coverage/
   coverage:
     docker:
       - image: circleci/node:12
@@ -104,10 +108,14 @@ jobs:
           name: Merge coverage
           command: |
             mkdir ./coverage
+            cp ~/workspace/cypress-coverage/coverage-final.json ./coverage/cypress.json
             cp ~/workspace/jest-coverage/coverage-final.json ./coverage/jest.json
       - run:
           name: Install codecov
           command: yarn add codecov
+      - run:
+          name: Upload cypress coverage
+          command: yarn codecov -f coverage/cypress.json
       - run:
           name: Upload jest coverage
           command: yarn codecov -f coverage/jest.json
