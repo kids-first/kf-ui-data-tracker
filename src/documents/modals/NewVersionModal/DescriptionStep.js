@@ -9,7 +9,7 @@ import MarkdownEditor from '../../components/FileDetail/MarkdownEditor';
 const DescriptionStep = ({file, description, handleDescription}) => {
   return (
     <>
-      <p>
+      <p className="mb-15">
         Help keep track of your document history by telling us what may have
         changed in this version
       </p>

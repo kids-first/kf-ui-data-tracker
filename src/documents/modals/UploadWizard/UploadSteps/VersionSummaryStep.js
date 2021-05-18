@@ -34,11 +34,11 @@ const VersionSummaryStep = ({fileToUpdate, file, setDescription}) => {
       </Segment>
 
       <Segment color="blue" raised>
-        <h5>
+        <Header as="h5">
           <Icon name="pencil" />
-          Help keep track of your document history by telling us what may have
-          changed in this version
-        </h5>
+          Help keep track of your document history by telling us what
+          may have changed in this version
+        </Header>
         <Form>
           <Form.Field required>
             <label>Summarize Document Changes:</label>
