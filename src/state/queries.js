@@ -168,6 +168,15 @@ export const MY_PROFILE = gql`
           }
         }
       }
+      organizations {
+        edges {
+          node {
+            id
+            name
+            image
+          }
+        }
+      }
       ...UserFields
       ...GroupFields
     }
