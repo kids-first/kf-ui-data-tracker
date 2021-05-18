@@ -208,11 +208,11 @@ const ServiceDetailView = ({match}) => {
       </Grid>
 
       <Divider />
-      <h2>Recent Tasks</h2>
+      <Header as="h2">Recent Tasks</Header>
       <TaskList serviceId={service.kfId} />
 
       <Divider />
-      <h2>Recent Events</h2>
+      <Header as="h2">Recent Events</Header>
       {eventsData && (
         <Events
           events={eventsData.allReleaseEvents.edges}
