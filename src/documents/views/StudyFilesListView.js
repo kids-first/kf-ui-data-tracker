@@ -232,7 +232,9 @@ const StudyFilesListView = ({
       {!folderMode && (
         <Grid.Row>
           <Grid.Column width={4}>
-            <h2>Study Documents</h2>
+            <Header as="h2" className="noMargin">
+              Study Documents
+            </Header>
           </Grid.Column>
           {files.length > 0 && (allowUploadFile || allowUploadVersion) && (
             <Grid.Column width={12} textAlign="right">
