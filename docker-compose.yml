@@ -52,12 +52,11 @@ services:
   redis:
     image: circleci/redis:latest
   app:
-    image: circleci/node:12
+    image: circleci/node:11.12.0
     command: bash -c 'cd /app && yarn start'
     ports:
       - 3000:3000
     environment:
-      - CI=true
       - REACT_APP_STUDY_API=http://web:8080
       - REACT_APP_AUTH0_DOMAIN=kids-first.auth0.com
       - REACT_APP_AUTH0_CLIENT_ID=00000000000000000000000000000000

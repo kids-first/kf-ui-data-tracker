@@ -1,7 +1,0 @@
-{
-    "port": 8080,
-    "webpack": {
-        "configPath": "./webpack.config.js"
-    },
-    "globalImports": ["src/index.css"]
-}
