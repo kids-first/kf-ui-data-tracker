@@ -1,4 +1,4 @@
-import {Icon, Pagination, Rating, Table} from 'semantic-ui-react';
+import {Header, Icon, Pagination, Rating, Table} from 'semantic-ui-react';
 import React, {useState} from 'react';
 import {withRouter} from 'react-router-dom';
 import {Amplitude} from '@amplitude/react-amplitude';
@@ -123,7 +123,11 @@ const StudyTable = ({
   const [page, setPage] = useState(1);
 
   if (loading && !studyList) {
-    return <h2>loading studies</h2>;
+    return (
+      <Header as="h4" textAlign='center' className="mt-15 mb-15" disabled>
+        Loading Studies ...
+      </Header>
+    );
   }
 
   const sorting = tableType ? columns[tableType + 'Sorting'] : columns.sorting;
