@@ -7,7 +7,7 @@ jobs:
   unit_tests:
     docker:
       # specify the version you desire here
-      - image: circleci/node:11.12.0
+      - image: cimg/node:16.0
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -48,7 +48,7 @@ jobs:
             - jest-coverage/
   integration_tests:
     docker:
-      - image: circleci/node:11.12.0
+      - image: cimg/node:16.0
     steps:
       - checkout
       - restore_cache:
@@ -97,7 +97,7 @@ jobs:
             - ./cypress-coverage/
   coverage:
     docker:
-      - image: circleci/node:11.12.0
+      - image: cimg/node:16.0
     steps:
       - attach_workspace:
           at: ~/workspace
@@ -119,7 +119,7 @@ jobs:
           command: yarn codecov -f coverage/jest.json
   production:
     docker:
-      - image: circleci/node:11
+      - image: cimg/node:16.0
     steps:
       - checkout
       - restore_cache:
