@@ -15,6 +15,9 @@
   "dependencies": {
     "@amplitude/react-amplitude": "^1.0.0",
     "@apollo/client": "^3.3.7",
+    "@editorjs/editorjs": "^2.21.0",
+    "@editorjs/header": "^2.6.1",
+    "@editorjs/paragraph": "^2.8.0",
     "@handsontable/react": "^4.0.0",
     "@nivo/bar": "^0.67.0",
     "@nivo/calendar": "^0.67.0",
@@ -43,6 +46,7 @@
     "react-dom": "^16.8.3",
     "react-dom-confetti": "^0.2.0",
     "react-draft-wysiwyg": "^1.14.4",
+    "react-editor-js": "^1.9.0",
     "react-helmet": "^5.2.1",
     "react-hot-loader": "^4.3.12",
     "react-markdown": "^4.2.2",
