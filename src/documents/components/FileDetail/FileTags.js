@@ -13,6 +13,7 @@ const FileTags = ({fileNode, updateFile, defaultOptions, limit, reload}) => {
   const [error, setError] = useState('');
 
   const pathTag = fileNode.tags.find(t => t.includes('PATH_'));
+  const normalTags = fileNode.tags.filter(t => !t.includes('PATH'));
 
   const handleAddition = (e, {value}) => {
     if (fileNode.tags.includes(value)) {
@@ -60,44 +61,80 @@ const FileTags = ({fileNode, updateFile, defaultOptions, limit, reload}) => {
   return (
     <Label.Group>
       {fileNode.tags.length > 0 ? (
-          .slice(0, more ? fileNode.tags.length : 5)
-          .map((tag, index) => (
-            <Label
-              as="a"
-              key={index}
-              className="my-2"
-              title={tag}
-              onClick={e => {
-                e.stopPropagation();
-              }}
-            >
-              {tag.substring(0, 20)}
-              {tag.length > 20 && '...'}
-              {updateFile && (
-                <Icon
-                  name="close"
-                  data-testid="remove-tag"
-                  onClick={e => {
-                    e.stopPropagation();
-                    removeTag(tag);
-                  }}
-                />
-              )}
-            </Label>
-          ))
+        normalTags.slice(0, limit).map((tag, index) => (
+          <Label
+            as="a"
+            key={index}
+            className="my-2"
+            title={tag}
+            onClick={e => {
+              e.stopPropagation();
+            }}
+          >
+            {tag.substring(0, 15)}
+            {tag.length > 15 && '...'}
+            {updateFile && (
+              <Icon
+                name="close"
+                data-testid="remove-tag"
+                onClick={e => {
+                  e.stopPropagation();
+                  removeTag(tag);
+                }}
+              />
+            )}
+          </Label>
+        ))
       ) : (
         <span className="text-grey">{updateFile === null && 'No Tags'}</span>
       )}
-      {fileNode.tags.length > 5 && (
-        <small
-          className="mr-5"
-          onClick={e => {
-            e.stopPropagation();
-            setMore(!more);
-          }}
-        >
-          {more ? 'show less' : `+ ${fileNode.tags.length - 5} more`}
-        </small>
+      {normalTags.length > limit && (
+        <Popup
+          onClose={() => setMore(false)}
+          trigger={
+            <small
+              className="mr-5"
+              onClick={e => {
+                e.stopPropagation();
+                setMore(!more);
+              }}
+            >
+              {more ? 'show less' : `+ ${normalTags.length - limit} more`}
+            </small>
+          }
+          content={
+            <>
+              {normalTags
+                .slice(limit, fileNode.tags.length + 1)
+                .map((tag, index) => (
+                  <Label
+                    as="a"
+                    key={index}
+                    className="my-2"
+                    title={tag}
+                    onClick={e => {
+                      e.stopPropagation();
+                    }}
+                  >
+                    {tag.substring(0, 15)}
+                    {tag.length > 15 && '...'}
+                    {updateFile && (
+                      <Icon
+                        name="close"
+                        data-testid="remove-tag"
+                        onClick={e => {
+                          e.stopPropagation();
+                          removeTag(tag);
+                        }}
+                      />
+                    )}
+                  </Label>
+                ))}
+            </>
+          }
+          on="click"
+          position="top center"
+        />
       )}
       {updateFile && (
         <Popup
@@ -185,6 +222,8 @@ FileList.propTypes = {
   updateFile: PropTypes.func.isRequired,
   /** Array of tag options used in current study */
   defaultOptions: PropTypes.array,
+  /** How many tags to display at default */
+  limit: PropTypes.number,
   /** If force reload the page on updating tags */
   reload: PropTypes.bool,
 };
@@ -192,6 +231,7 @@ FileList.propTypes = {
 FileList.defaultProps = {
   fileNode: null,
   defaultOptions: [],
+  limit: 4,
   reload: false,
 };
 
