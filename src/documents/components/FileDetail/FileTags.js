@@ -5,7 +5,7 @@ import {Icon, Label, Button, Popup, Dropdown, Form} from 'semantic-ui-react';
 /**
  * Displays study document removable tags with add button
  */
-const FileTags = ({fileNode, updateFile, defaultOptions}) => {
+const FileTags = ({fileNode, updateFile, defaultOptions, limit, reload}) => {
   const [tagOptions, setTagOptions] = useState(defaultOptions);
   const [tagSelection, setTagSelection] = useState('');
   const [more, setMore] = useState(false);
@@ -40,6 +40,9 @@ const FileTags = ({fileNode, updateFile, defaultOptions}) => {
     });
     setTagSelection('');
     setOpen(false);
+    if (reload) {
+      window.location.reload();
+    }
   };
   const removeTag = tag => {
     updateFile({
@@ -49,13 +52,14 @@ const FileTags = ({fileNode, updateFile, defaultOptions}) => {
         tags: fileNode.tags.filter(t => t !== tag),
       },
     });
+    if (reload) {
+      window.location.reload();
+    }
   };
 
   return (
     <Label.Group>
       {fileNode.tags.length > 0 ? (
-        fileNode.tags
-          .filter(t => !t.includes('PATH'))
           .slice(0, more ? fileNode.tags.length : 5)
           .map((tag, index) => (
             <Label
@@ -181,11 +185,14 @@ FileList.propTypes = {
   updateFile: PropTypes.func.isRequired,
   /** Array of tag options used in current study */
   defaultOptions: PropTypes.array,
+  /** If force reload the page on updating tags */
+  reload: PropTypes.bool,
 };
 
 FileList.defaultProps = {
   fileNode: null,
   defaultOptions: [],
+  reload: false,
 };
 
 export default FileTags;
