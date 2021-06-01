@@ -4,7 +4,6 @@ import {fileLatestDate, fileSortedVersions} from '../../utilities';
 
 import FileTags from '../FileDetail/FileTags';
 import KfId from '../../../components/StudyList/KfId';
-import Markdown from 'react-markdown';
 import TimeAgo from 'react-timeago';
 import {fileTypeDetail} from '../../../common/enums';
 import {longDate} from '../../../common/dateUtils';
@@ -52,12 +51,7 @@ const ReviewFileElement = ({
 }) => {
   const fileKfID = fileNode.kfId || 'unknown ID';
   const fileName = fileNode.name || 'unknown file name';
-  // Show at most 5 lines of the description
-  const fileDescription =
-    fileNode.description
-      .split('\n')
-      .splice(0, 5)
-      .join('\n') || '';
+
   const sortedVersions = fileSortedVersions(fileNode);
   const latestDate = fileLatestDate(sortedVersions);
   const fileType =
@@ -96,11 +90,12 @@ const ReviewFileElement = ({
         }
       />
       <Popup
+        disabled={fileName.length <= 35}
         wide="very"
         position="top left"
         trigger={
           <Table.Cell>
-            <strong
+            <span
               onClick={e => {
                 e.stopPropagation();
                 e.preventDefault();
@@ -109,21 +104,12 @@ const ReviewFileElement = ({
                 );
               }}
             >
-              {fileName}
-            </strong>
+              {fileName.substring(0, 35)}
+              {fileName.length > 35 && '...'}
+            </span>
           </Table.Cell>
         }
-        mouseLeaveDelay={500}
-        content={
-          <Markdown
-            source={fileDescription}
-            renderers={{
-              image: Image,
-              table: props => <Table>{props.children}</Table>,
-            }}
-            linkTarget="_blank"
-          />
-        }
+        content={fileName}
       />
       <KfId kfId={fileNode.kfId} />
       <Table.Cell textAlign="center" width="1">

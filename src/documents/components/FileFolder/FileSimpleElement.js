@@ -1,4 +1,4 @@
-import {Checkbox, Icon, Popup, Table} from 'semantic-ui-react';
+import {Checkbox, Header, Icon, Popup, Table} from 'semantic-ui-react';
 import {Link, withRouter} from 'react-router-dom';
 import React, {useEffect, useState} from 'react';
 import {fileLatestDate, fileSortedVersions} from '../../utilities';
@@ -90,7 +90,18 @@ const FileSimpleElement = ({
             </Table.Cell>
           }
         />
-        <Table.Cell>{fileName}</Table.Cell>
+        <Popup
+          disabled={fileName.length <= 35}
+          wide="very"
+          position="top left"
+          trigger={
+            <Table.Cell>
+              {fileName.substring(0, 35)}
+              {fileName.length > 35 && '...'}
+            </Table.Cell>
+          }
+          content={fileName}
+        />
         <Table.Cell textAlign="center">-</Table.Cell>
         <Table.Cell textAlign="center">-</Table.Cell>
         <Table.Cell textAlign="center">-</Table.Cell>
@@ -149,20 +160,24 @@ const FileSimpleElement = ({
           trigger={
             <Table.Cell>
               <Link to={`/study/${match.params.kfId}/documents/${fileKfID}`}>
-                {fileName}
+                {fileName.substring(0, 35)}
+                {fileName.length > 35 && '...'}
               </Link>
             </Table.Cell>
           }
           mouseLeaveDelay={500}
           content={
-            <Markdown
-              source={fileDescription}
-              renderers={{
-                image: Image,
-                table: props => <Table>{props.children}</Table>,
-              }}
-              linkTarget="_blank"
-            />
+            <>
+              {fileName.length > 35 && <Header as="h6">{fileName}</Header>}
+              <Markdown
+                source={fileDescription}
+                renderers={{
+                  image: Image,
+                  table: props => <Table>{props.children}</Table>,
+                }}
+                linkTarget="_blank"
+              />
+            </>
           }
         />
         <KfId kfId={fileNode.kfId} />
