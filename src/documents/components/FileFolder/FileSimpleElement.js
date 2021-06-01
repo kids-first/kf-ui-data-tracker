@@ -172,6 +172,7 @@ const FileSimpleElement = ({
             updateFile={updateFile}
             defaultOptions={tagOptions}
             limit={1}
+            reload={true}
           />
         </Table.Cell>
         <Table.Cell textAlign="center" width="1">
