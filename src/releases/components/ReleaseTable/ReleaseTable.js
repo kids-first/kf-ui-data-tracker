@@ -43,7 +43,7 @@ const ReleaseTable = ({releases, footer}) => {
     columns: [
       {key: 'name', name: 'Name', visible: true},
       {key: 'version', name: 'Version', visible: true},
-      {key: 'createdAt', name: 'Created At', visible: true},
+      {key: 'createdAt', name: 'Started At', visible: true},
       {key: 'kfId', name: 'Kids First ID', visible: true},
       {key: 'state', name: 'State', visible: true},
     ],
