@@ -373,6 +373,7 @@ const FileDetail = ({
                     fileNode={fileNode}
                     updateFile={updateFile}
                     defaultOptions={tagOptions}
+                    limit={2}
                   />
                   {updateError && (
                     <Message

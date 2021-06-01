@@ -171,6 +171,7 @@ const FileSimpleElement = ({
             fileNode={fileNode}
             updateFile={updateFile}
             defaultOptions={tagOptions}
+            limit={1}
           />
         </Table.Cell>
         <Table.Cell textAlign="center" width="1">

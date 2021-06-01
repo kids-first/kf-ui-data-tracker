@@ -130,7 +130,7 @@ const ReviewFileElement = ({
         <TimeAgo date={latestDate} live={false} title={longDate(latestDate)} />
       </Table.Cell>
       <Table.Cell textAlign="center" width="4">
-        <FileTags fileNode={fileNode} defaultOptions={tagOptions} />
+        <FileTags fileNode={fileNode} defaultOptions={tagOptions} limit={2} />
       </Table.Cell>
     </Table.Row>
   );
