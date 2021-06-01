@@ -35,7 +35,11 @@ const cellContent = {
   createdAt: node => (
     <CreatedAt date={node.createdAt} key={node.kfId + 'createdAt'} />
   ),
-  state: node => <Table.Cell width="1">{node.state}</Table.Cell>,
+  state: node => (
+    <Table.Cell width="1" key={node.kfId + 'state'}>
+      {node.state}
+    </Table.Cell>
+  ),
 };
 
 const ReleaseTable = ({releases, footer}) => {
@@ -43,7 +47,7 @@ const ReleaseTable = ({releases, footer}) => {
     columns: [
       {key: 'name', name: 'Name', visible: true},
       {key: 'version', name: 'Version', visible: true},
-      {key: 'createdAt', name: 'Created At', visible: true},
+      {key: 'createdAt', name: 'Started At', visible: true},
       {key: 'kfId', name: 'Kids First ID', visible: true},
       {key: 'state', name: 'State', visible: true},
     ],
