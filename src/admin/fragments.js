@@ -13,3 +13,15 @@ export const TOKEN_FIELDS = gql`
     }
   }
 `;
+
+export const ORGANIZATION_FIELDS = gql`
+  fragment OrganizationFields on OrganizationNode {
+    id
+    name
+    description
+    website
+    email
+    image
+    createdOn
+  }
+`;

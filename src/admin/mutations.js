@@ -1,5 +1,5 @@
 import gql from 'graphql-tag';
-import {TOKEN_FIELDS} from './fragments';
+import {TOKEN_FIELDS, ORGANIZATION_FIELDS} from './fragments';
 
 // Mutation to create a new dev token
 export const CREATE_DEV_TOKEN = gql`
@@ -67,4 +67,17 @@ export const DELETE_BANNER = gql`
       success
     }
   }
+`;
+
+// Mutation to update an organization
+export const UPDATE_ORGANIZATION = gql`
+  mutation UpdateOrganization($id: ID!, $input: UpdateOrganizationInput!) {
+    updateOrganization(id: $id, input: $input) {
+      organization {
+        id
+        ...OrganizationFields
+      }
+    }
+  }
+  ${ORGANIZATION_FIELDS}
 `;

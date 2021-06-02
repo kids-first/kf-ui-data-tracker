@@ -85,6 +85,12 @@ const AdminDropdown = ({profile}) => {
       permission: 'list_all_referraltoken',
     },
     {
+      name: 'Organizations',
+      route: '/organizations',
+      icon: 'hospital',
+      permission: 'list_all_organization',
+    },
+    {
       name: 'Model Explorer',
       route: '/explorer',
       icon: 'sitemap',
