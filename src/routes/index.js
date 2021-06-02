@@ -45,6 +45,7 @@ import {
   LogView,
   ModelExplorerView,
   GraphiQLView,
+  OrganizationsView,
 } from '../admin/views';
 import ReleaseRoutes from '../releases/routes';
 import TrackedRoute from './TrackedRoute';
@@ -141,6 +142,13 @@ const Routes = () => (
           component={BannersView}
           scope={['admin', 'banners']}
           permissions={['list_all_banner']}
+        />
+        <RestrictedRoute
+          exact
+          path="/organizations"
+          component={OrganizationsView}
+          scope={['admin', 'organizations']}
+          permissions={['list_all_organization']}
         />
         <RestrictedRoute
           exact

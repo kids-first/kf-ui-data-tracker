@@ -1,5 +1,5 @@
 import gql from 'graphql-tag';
-import {TOKEN_FIELDS} from './fragments';
+import {TOKEN_FIELDS, ORGANIZATION_FIELDS} from './fragments';
 import {
   STUDY_BASIC_FIELDS,
   CREATOR_FIELDS,
@@ -192,4 +192,18 @@ export const GET_BANNER = gql`
     }
   }
   ${CREATOR_FIELDS}
+`;
+
+// Get all organizatinos
+export const ALL_ORGANIZATIONS = gql`
+  query Organizations {
+    allOrganizations {
+      edges {
+        node {
+          ...OrganizationFields
+        }
+      }
+    }
+  }
+  ${ORGANIZATION_FIELDS}
 `;
