@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import {withRouter, Link} from 'react-router-dom';
 import TimeAgo from 'react-timeago';
-import {Table, Icon, Checkbox, Popup} from 'semantic-ui-react';
+import {Table, Icon, Checkbox, Popup, Header} from 'semantic-ui-react';
 import Markdown from 'react-markdown';
 import FileActionButtons from '../FileActionButtons/FileActionButtons';
 import {fileSortedVersions, fileLatestDate} from '../../utilities';
@@ -105,20 +105,24 @@ const FileElement = ({
           <Table.Cell>
             {fileDescription.length > 3 && <Icon name="info circle" />}
             <Link to={`/study/${match.params.kfId}/documents/${fileKfID}`}>
-              {fileName}
+              {fileName.substring(0, 65)}
+              {fileName.length > 65 && '...'}
             </Link>
           </Table.Cell>
         }
         mouseLeaveDelay={500}
         content={
-          <Markdown
-            source={fileDescription}
-            renderers={{
-              image: Image,
-              table: props => <Table>{props.children}</Table>,
-            }}
-            linkTarget="_blank"
-          />
+          <>
+            {fileName.length > 65 && <Header as="h6">{fileName}</Header>}
+            <Markdown
+              source={fileDescription}
+              renderers={{
+                image: Image,
+                table: props => <Table>{props.children}</Table>,
+              }}
+              linkTarget="_blank"
+            />
+          </>
         }
       />
       {showId && <KfId kfId={fileNode.kfId} />}
@@ -127,6 +131,7 @@ const FileElement = ({
           fileNode={fileNode}
           updateFile={updateFile}
           defaultOptions={tagOptions}
+          limit={2}
         />
       </Table.Cell>
       <Table.Cell textAlign="center" width="1">

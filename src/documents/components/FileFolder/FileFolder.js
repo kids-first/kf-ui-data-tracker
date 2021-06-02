@@ -500,7 +500,7 @@ const FileFolder = ({
             onChange={(e, {value}) => {
               setRenameInput(value);
             }}
-            error={existNames.includes(renameInput)}
+            error={existNames.includes(renameInput) || renameInput.length > 45}
           />
           {existNames.includes(renameInput) && (
             <small className="text-red">
@@ -511,6 +511,9 @@ const FileFolder = ({
             <small className="text-red">
               This name is used by another folder.
             </small>
+          )}
+          {renameInput.length > 45 && (
+            <small className="text-red">Folder name is too long.</small>
           )}
         </Modal.Content>
         <Modal.Actions>
@@ -527,7 +530,8 @@ const FileFolder = ({
             disabled={
               renameInput.length === 0 ||
               existNames.includes(renameInput) ||
-              existFolders.includes(renameInput)
+              existFolders.includes(renameInput) ||
+              renameInput.length > 45
             }
             onClick={() => {
               setRenameOpen(null);
