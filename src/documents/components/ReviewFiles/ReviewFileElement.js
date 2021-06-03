@@ -48,6 +48,8 @@ const ReviewFileElement = ({
   selected,
   onSelectOne,
   tagOptions,
+  filters,
+  setFilters,
 }) => {
   const fileKfID = fileNode.kfId || 'unknown ID';
   const fileName = fileNode.name || 'unknown file name';
@@ -116,7 +118,13 @@ const ReviewFileElement = ({
         <TimeAgo date={latestDate} live={false} title={longDate(latestDate)} />
       </Table.Cell>
       <Table.Cell textAlign="center" width="4">
-        <FileTags fileNode={fileNode} defaultOptions={tagOptions} limit={2} />
+        <FileTags
+          fileNode={fileNode}
+          defaultOptions={tagOptions}
+          limit={2}
+          filters={filters}
+          setFilters={setFilters}
+        />
       </Table.Cell>
     </Table.Row>
   );

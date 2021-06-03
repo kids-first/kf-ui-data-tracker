@@ -38,6 +38,8 @@ const ReviewFileList = ({
   selection,
   setSelection,
   tagOptions,
+  filters,
+  setFilters,
 }) => {
   const [page, setPage] = useState(1);
   const [sorting, setSorting] = useState({
@@ -161,6 +163,8 @@ const ReviewFileList = ({
                 onSelectOne={onSelectOne}
                 downloadFileMutation={downloadFileMutation}
                 tagOptions={tagOptions}
+                filters={filters}
+                setFilters={setFilters}
               />
             ))}
           </Table.Body>

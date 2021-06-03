@@ -106,6 +106,8 @@ const ReviewFileSection = ({
         selection={selectedFiles}
         setSelection={setSelectedFiles}
         tagOptions={tagOptions}
+        filters={filters}
+        setFilters={setFilters}
       />
     </>
   );
