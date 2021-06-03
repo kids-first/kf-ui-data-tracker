@@ -53,6 +53,8 @@ const FileElement = ({
   onSelectOne,
   tagOptions,
   showId,
+  filters,
+  setFilters,
 }) => {
   const fileKfID = fileNode.kfId || 'unknown ID';
   const fileName = fileNode.name || 'unknown file name';
@@ -132,6 +134,8 @@ const FileElement = ({
           updateFile={updateFile}
           defaultOptions={tagOptions}
           limit={2}
+          filters={filters}
+          setFilters={setFilters}
         />
       </Table.Cell>
       <Table.Cell textAlign="center" width="1">

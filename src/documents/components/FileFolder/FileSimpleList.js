@@ -47,6 +47,7 @@ const FileSimpleList = ({
   setRenameOpen,
   setDeleteOpen,
   updateHash,
+  setSearchString,
 }) => {
   const [page, setPage] = useState(1);
   const [sorting, setSorting] = useState({
@@ -197,6 +198,7 @@ const FileSimpleList = ({
                 setRenameOpen={setRenameOpen}
                 setDeleteOpen={setDeleteOpen}
                 updateHash={updateHash}
+                setSearchString={setSearchString}
               />
             ))}
           </Table.Body>
