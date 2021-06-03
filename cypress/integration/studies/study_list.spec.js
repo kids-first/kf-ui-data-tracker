@@ -39,7 +39,7 @@ context('Admin Study List', () => {
     // Filter the studies by name using the search box
     cy.get('input[aria-label="search studies"]')
       .focus()
-      .type('utilize');
+      .type('integrate');
 
     // Only one study should be listed
     cy.get('table')
@@ -61,7 +61,7 @@ context('Admin Study List', () => {
     // By default (sorting by study name in descending order)
     cy.get('td')
       .eq(1)
-      .should('contain', 'utilize');
+      .should('contain', 'revolutionize');
 
     // Click on kfId column title to sort by kfId
     cy.contains('th', 'Kids First ID')
@@ -91,10 +91,10 @@ context('Admin Study List', () => {
         ).to.be.eq('descending');
       });
 
-    // First study should change to "incentivize leading-edge functionalities"
+    // First study should change
     cy.get('td')
       .eq(1)
-      .should('contain', 'utilize strategic');
+      .should('contain', 'enhance');
 
     // Clear storage for other tests
     cy.clearLocalStorage('studyColumns');
@@ -178,10 +178,10 @@ context('Admin Study List', () => {
 
   it('only shows my studies', () => {
     // Select a study to be added to
-    cy.contains('utilize strategic').click();
+    cy.contains('revolutionize').click();
 
     // Add self to that study
-    cy.get('[href="/study/SD_W2PQV9FJ/collaborators"]').click();
+    cy.get('[href="/study/SD_QQXC6C3V/collaborators"]').click();
     cy.contains('button', 'ADD COLLABORATOR')
       .click()
       .get('input.search')
