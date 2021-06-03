@@ -332,6 +332,7 @@ const FileFolder = ({
             className="w-200"
             icon="search"
             placeholder="Search..."
+            value={searchString}
             onChange={(e, {value}) => {
               setSearchString(value);
             }}
@@ -443,6 +444,7 @@ const FileFolder = ({
             setRenameOpen={setRenameOpen}
             setDeleteOpen={setDeleteOpen}
             updateHash={updateHash}
+            setSearchString={setSearchString}
           />
         </Grid.Column>
       </Grid.Row>

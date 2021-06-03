@@ -58,6 +58,7 @@ const FileSimpleElement = ({
   setRenameOpen,
   setDeleteOpen,
   updateHash,
+  setSearchString,
 }) => {
   const fileKfID = fileNode.kfId || 'unknown ID';
   const fileName = fileNode.title || 'unknown file name';
@@ -188,6 +189,7 @@ const FileSimpleElement = ({
             defaultOptions={tagOptions}
             limit={1}
             reload={true}
+            setSearchString={setSearchString}
           />
         </Table.Cell>
         <Table.Cell textAlign="center" width="1">
