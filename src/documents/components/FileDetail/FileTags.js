@@ -129,6 +129,13 @@ const FileTags = ({
                     title={tag}
                     onClick={e => {
                       e.stopPropagation();
+                      e.preventDefault();
+                      if (filters && setFilters) {
+                        setFilters({...filters, tagFilterStatus: [tag]});
+                      }
+                      if (setSearchString) {
+                        setSearchString(tag);
+                      }
                     }}
                   >
                     {tag.substring(0, 15)}
