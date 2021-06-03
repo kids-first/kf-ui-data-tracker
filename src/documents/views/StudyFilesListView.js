@@ -347,6 +347,8 @@ const StudyFilesListView = ({
                     setSelection={setSelectedFiles}
                     tagOptions={tagOptions}
                     showId={showId}
+                    filters={filters}
+                    setFilters={setFilters}
                   />
                 </>
               )}

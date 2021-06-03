@@ -42,6 +42,8 @@ const FileList = ({
   setSelection,
   tagOptions,
   showId,
+  filters,
+  setFilters,
 }) => {
   const [page, setPage] = useState(1);
   const [sorting, setSorting] = useState({
@@ -175,6 +177,8 @@ const FileList = ({
                 downloadFileMutation={downloadFileMutation}
                 tagOptions={tagOptions}
                 showId={showId}
+                filters={filters}
+                setFilters={setFilters}
               />
             ))}
           </Table.Body>
