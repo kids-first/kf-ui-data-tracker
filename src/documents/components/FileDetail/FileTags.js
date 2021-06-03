@@ -5,7 +5,16 @@ import {Icon, Label, Button, Popup, Dropdown, Form} from 'semantic-ui-react';
 /**
  * Displays study document removable tags with add button
  */
-const FileTags = ({fileNode, updateFile, defaultOptions, limit, reload}) => {
+const FileTags = ({
+  fileNode,
+  updateFile,
+  defaultOptions,
+  limit,
+  reload,
+  filters,
+  setFilters,
+  setSearchString,
+}) => {
   const [tagOptions, setTagOptions] = useState(defaultOptions);
   const [tagSelection, setTagSelection] = useState('');
   const [more, setMore] = useState(false);
@@ -69,6 +78,12 @@ const FileTags = ({fileNode, updateFile, defaultOptions, limit, reload}) => {
             title={tag}
             onClick={e => {
               e.stopPropagation();
+              if (filters && setFilters) {
+                setFilters({...filters, tagFilterStatus: [tag]});
+              }
+              if (setSearchString) {
+                setSearchString(tag);
+              }
             }}
           >
             {tag.substring(0, 15)}
