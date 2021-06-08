@@ -152,7 +152,7 @@ const EditProjectModal = ({study, projectNode, onCloseDialog, open}) => {
                     : []
                 }
                 existProject={projectNode}
-                studyId={study.kfId}
+                studyId={study ? study.kfId : ''}
               />
             </Modal.Content>
             <Modal.Actions>
