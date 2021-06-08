@@ -8,7 +8,7 @@ export const projectOptions = [
   },
   {
     key: 'HAR',
-    value: 'ANA',
+    value: 'HAR',
     text: 'Analysis',
     icon: 'sliders horizontal',
     color: 'teal',
