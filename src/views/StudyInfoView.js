@@ -94,7 +94,7 @@ const StudyInfoView = ({match, history}) => {
     );
   }
   if (
-    !['info', 'external', 'logistics'].includes(
+    !['info', 'external', 'logistics', 'additional'].includes(
       history.location.pathname.split('/').slice(-1)[0],
     )
   ) {

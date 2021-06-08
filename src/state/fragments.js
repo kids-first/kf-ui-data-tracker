@@ -29,6 +29,7 @@ export const STUDY_INFO_FIELDS = gql`
     phenotypeStatus
     slackNotify
     slackChannel
+    additionalFields
   }
 `;
 

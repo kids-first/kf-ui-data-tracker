@@ -40,8 +40,7 @@ const StudyNavBar = ({match, history, isBeta}) => {
   ];
   const currentTab = history.location.pathname
     .split('/')
-    .filter(e => e !== '')
-    .slice(-1)[0];
+    .filter(e => e !== '')[2];
   return (
     <Menu color="pink" compact secondary pointing>
       {navList.slice(0, isBeta ? 7 : 6).map((item, i) => (
@@ -51,7 +50,7 @@ const StudyNavBar = ({match, history, isBeta}) => {
           active={
             currentTab === match.params.kfId
               ? item.endString === 'documents'
-              : currentTab === item.endString
+              : item.endString.includes(currentTab)
           }
           to={baseHref + item.endString}
           as={NavLink}

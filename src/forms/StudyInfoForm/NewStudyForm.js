@@ -1,6 +1,7 @@
 import React, {useState, Fragment} from 'react';
 import {Switch, Route, Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
+import {AdditionalFields, ExternalStep, InfoStep, LogisticsStep} from './Steps';
 import {
   Form,
   Segment,
@@ -11,7 +12,6 @@ import {
   Button,
 } from 'semantic-ui-react';
 import {Formik} from 'formik';
-import {InfoStep, ExternalStep, LogisticsStep} from './Steps';
 import ProgressBar from '../../components/StudyInfo/ProgressBar';
 import {
   fieldLabel,
@@ -33,29 +33,60 @@ const NewStudyForm = ({
   allowEdit,
   submitting,
 }) => {
-  const STUDY_STEPS = [
-    {
-      title: 'Info',
-      desc: 'General Study Details',
-      icon: 'info',
-      comp: InfoStep,
-      href: 'info',
-    },
-    {
-      title: 'External',
-      desc: 'For dbGaP project',
-      icon: 'disk',
-      comp: ExternalStep,
-      href: 'external',
-    },
-    {
-      title: 'Logistics',
-      desc: 'Scheduling & Collection',
-      icon: 'calendar check',
-      comp: LogisticsStep,
-      href: 'logistics',
-    },
-  ];
+  const STUDY_STEPS = newStudy
+    ? [
+        {
+          title: 'Info',
+          desc: 'General Study Details',
+          icon: 'info',
+          comp: InfoStep,
+          href: 'info',
+        },
+        {
+          title: 'External',
+          desc: 'For dbGaP project',
+          icon: 'disk',
+          comp: ExternalStep,
+          href: 'external',
+        },
+        {
+          title: 'Logistics',
+          desc: 'Scheduling & Collection',
+          icon: 'calendar check',
+          comp: LogisticsStep,
+          href: 'logistics',
+        },
+      ]
+    : [
+        {
+          title: 'Info',
+          desc: 'General Study Details',
+          icon: 'info',
+          comp: InfoStep,
+          href: 'info',
+        },
+        {
+          title: 'External',
+          desc: 'For dbGaP project',
+          icon: 'disk',
+          comp: ExternalStep,
+          href: 'external',
+        },
+        {
+          title: 'Logistics',
+          desc: 'Scheduling & Collection',
+          icon: 'calendar check',
+          comp: LogisticsStep,
+          href: 'logistics',
+        },
+        {
+          title: 'Additional',
+          desc: 'Customized Information',
+          icon: 'address card outline',
+          comp: AdditionalFields,
+          href: 'additional',
+        },
+      ];
   const initStep = STUDY_STEPS.findIndex(
     ({href}) =>
       href ===
@@ -96,6 +127,7 @@ const NewStudyForm = ({
         attribution: studyNode.attribution || '',
         version: studyNode.version || '',
         bucket: studyNode.bucket || '',
+        additionalFields: studyNode.additionalFields || '',
       }
     : {
         externalId: '',
@@ -175,7 +207,7 @@ const NewStudyForm = ({
                 </Message.Content>
               </Message>
             )}
-          <Step.Group attached="top" fluid widths={3}>
+          <Step.Group attached="top" fluid widths={4}>
             {STUDY_STEPS.map((step, stepNum) => (
               <Step
                 link
@@ -199,7 +231,7 @@ const NewStudyForm = ({
                 <Step.Content>
                   <Step.Title>{step.title}</Step.Title>
                   <Step.Description>{step.desc}</Step.Description>
-                  {editing && (
+                  {editing && stepNum !== 3 && (
                     <ProgressBar values={formikProps.values} step={stepNum} />
                   )}
                 </Step.Content>
