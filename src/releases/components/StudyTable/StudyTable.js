@@ -50,7 +50,14 @@ const StudyTable = ({studies, selected, onChange}) => {
     name: node => node.name,
     kfId: node => <KfId kfId={node.kfId} key={node.kfId + 'kfId'} />,
     version: node => (
-      <Version key={node.kfId + 'version'} version={node.version} />
+      <Version
+        key={node.kfId + 'version'}
+        version={
+          node.releases && node.releases.edges.length > 0
+            ? node.releases.edges[0].node.version
+            : '-'
+        }
+      />
     ),
     lastPublished: node => (
       <CreatedAt key={'lastPublished'} date={node.lastPublished} />
