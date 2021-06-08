@@ -83,7 +83,9 @@ const EditProjectModal = ({study, projectNode, onCloseDialog, open}) => {
       {
         query: GET_STUDY_BY_ID,
         variables: {
-          kfId: study ? study.kfId : '',
+          id: study
+            ? Buffer.from('StudyNode:' + study.kfId).toString('base64')
+            : '',
         },
       },
     ],

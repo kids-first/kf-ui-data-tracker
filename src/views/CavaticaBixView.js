@@ -55,7 +55,7 @@ const CavaticaBixView = ({match, history}) => {
       {
         query: GET_STUDY_BY_ID,
         variables: {
-          kfId: match.params.kfId,
+          id: Buffer.from('StudyNode:' + match.params.kfId).toString('base64'),
         },
       },
     ],
@@ -65,7 +65,7 @@ const CavaticaBixView = ({match, history}) => {
       {
         query: GET_STUDY_BY_ID,
         variables: {
-          kfId: match.params.kfId,
+          id: Buffer.from('StudyNode:' + match.params.kfId).toString('base64'),
         },
       },
       {

@@ -67,7 +67,12 @@ const UploadWizard = ({
   allowUploadVersion,
 }) => {
   const [createVersion] = useMutation(CREATE_VERSION, {
-    refetchQueries: [{query: GET_STUDY_BY_ID, variables: {kfId: studyId}}],
+    refetchQueries: [
+      {
+        query: GET_STUDY_BY_ID,
+        variables: {id: Buffer.from('StudyNode:' + studyId).toString('base64')},
+      },
+    ],
   });
 
   // The current step that the flow is on
