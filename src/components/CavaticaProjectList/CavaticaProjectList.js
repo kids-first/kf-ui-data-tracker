@@ -17,7 +17,7 @@ const CavaticaProjectList = ({
   <List relaxed divided>
     {projects &&
       projects.length > 0 &&
-      projects
+      [...projects]
         .sort(({node: p1}, {node: p2}) => {
           if (p1.deleted !== p2.deleted) {
             // Sort deleted projects to the bottom
