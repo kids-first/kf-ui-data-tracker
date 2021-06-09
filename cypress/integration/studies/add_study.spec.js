@@ -14,12 +14,9 @@ context('Add Study', () => {
   it('navigates to new study route', () => {
     cy.clearLocalStorage('onlyMyStudies');
 
-    // Should have 4 studies to start
-    cy.contains('a', 'Data Tracker').click();
-
     cy.get('[data-cy="study name"]')
       .its('length')
-      .should('eq', 4);
+      .should('eq', 1);
 
     // Click on the add study button from the home screen
     cy.contains('a', 'Add Study')
@@ -62,10 +59,10 @@ context('Add Study', () => {
     // to reload the page
     cy.visit('/');
 
-    // There should now be 5 studies
+    // There should now be 2 studies
     cy.get('[data-cy="study name"]')
       .its('length')
-      .should('eq', 5);
+      .should('eq', 2);
   });
 
   it('does not allow investigators to add studies', () => {
