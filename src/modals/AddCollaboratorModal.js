@@ -20,6 +20,13 @@ const AddCollaboratorModal = ({
   onCloseDialog,
   users,
 }) => {
+  var currentOrg;
+  try {
+    currentOrg = JSON.parse(localStorage.getItem('currentOrganization'));
+  } catch (e) {
+    currentOrg = null;
+  }
+
   const {data: usersData} = useQuery(ALL_USERS);
 
   const addedUsers = study.collaborators.edges.map(({node}) => node.id);
@@ -71,6 +78,7 @@ const AddCollaboratorModal = ({
           email: values.email,
           studies: [study.id],
           groups: [defaultGroup.id],
+          organization: currentOrg && currentOrg.id,
         },
       },
     })
