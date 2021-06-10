@@ -15,6 +15,7 @@ import React, {useEffect, useState} from 'react';
 
 import {Amplitude} from '@amplitude/react-amplitude';
 import Markdown from 'react-markdown';
+import {dateCompare} from '../../utilities';
 import defaultAvatar from '../../../assets/defaultAvatar.png';
 import {longDate} from '../../../common/dateUtils';
 
@@ -33,54 +34,51 @@ const DataValidation = ({
   startPolling,
   stopPolling,
 }) => {
-  const validationRun =
-    reviewNode &&
-    reviewNode.validationRuns.edges.length > 0 &&
-    reviewNode.validationRuns.edges[reviewNode.validationRuns.edges.length - 1]
-      .node;
-  const validationRunState = validationRun && validationRun.state;
-  const result = reviewNode.validationResultset;
-  const validationState = !allowViewReview
-    ? 'invalid'
-    : result
-    ? 'completed'
-    : validationRunState
-    ? validationRunState
-    : 'not_started';
-
-  const [hasReport, setHasReport] = useState(validationState);
   const [report, setReport] = useState('');
   const [validationError, setValidationError] = useState('');
 
   const studyId = match.params.kfId;
+  const validationRun =
+    reviewNode &&
+    reviewNode.validationRuns.edges.length > 0 &&
+    [...reviewNode.validationRuns.edges].sort(dateCompare)[0].node;
+  const validationRunState = validationRun && validationRun.state;
+  const result = reviewNode.validationResultset;
+  const validationState = !allowViewReview
+    ? 'invalid'
+    : validationRunState
+    ? validationRunState
+    : 'not_started';
 
   useEffect(() => {
-    if (validationRunState === 'running') {
+    if (
+      validationRunState === 'running' ||
+      validationRunState === 'canceling'
+    ) {
       startPolling(1000);
     }
-    if (validationRunState === 'failed') {
+    if (validationRunState === 'failed' || validationRunState === 'canceled') {
       stopPolling();
-      setHasReport('failed');
     }
-    if (result) {
+    if (result && validationRunState === 'completed') {
       stopPolling();
-      setHasReport('completed');
       const downloadURL = result.downloadReportUrl;
-
-      fetch(downloadURL, {
-        headers: new Headers({
-          Authorization: 'Bearer ' + localStorage.getItem('accessToken'),
-        }),
-      })
-        .then(function(res) {
-          if (!res.ok) throw new Error('Failed to fetch the document');
-          return res.text();
+      if (downloadURL) {
+        fetch(downloadURL, {
+          headers: new Headers({
+            Authorization: 'Bearer ' + localStorage.getItem('accessToken'),
+          }),
         })
-        .then(function(res) {
-          setReport(res);
-        });
+          .then(function(res) {
+            if (!res.ok) throw new Error('Failed to fetch the document');
+            return res.text();
+          })
+          .then(function(res) {
+            setReport(res);
+          });
+      }
     }
-  }, [result, hasReport, validationRunState, startPolling, stopPolling]);
+  }, [result, validationRunState, startPolling, stopPolling]);
 
   return (
     <Grid className="mb-50 pr-0" style={{width: '100%'}}>
@@ -106,7 +104,7 @@ const DataValidation = ({
           content={validationError}
         />
       )}
-      {hasReport === 'completed' ? (
+      {validationState === 'completed' && result ? (
         <Grid.Row className="noVerticalPadding" reversed="computer">
           <Grid.Column
             tablet={3}
@@ -165,7 +163,6 @@ const DataValidation = ({
                           <Menu.Item
                             onClick={() => {
                               logEvent('click');
-                              setHasReport('running');
                               startValidationRun({
                                 variables: {
                                   input: {
@@ -177,7 +174,6 @@ const DataValidation = ({
                                   startPolling(1000);
                                 })
                                 .catch(err => {
-                                  setHasReport('not_started');
                                   setValidationError(err.message);
                                 });
                             }}
@@ -222,7 +218,7 @@ const DataValidation = ({
             <Header as="h4" color="grey" className="pb-5">
               Validation Report
             </Header>
-            {hasReport ? (
+            {report ? (
               <Segment basic secondary className="x-scroll h-500-container">
                 <Markdown
                   source={report}
@@ -246,7 +242,7 @@ const DataValidation = ({
       ) : (
         <Grid.Row className="noVerticalPadding">
           <Grid.Column className="pr-0 pt-20">
-            {hasReport === 'not_started' && (
+            {validationState === 'not_started' && (
               <Segment placeholder>
                 <Header icon>
                   <Icon name="clipboard check" />
@@ -256,7 +252,6 @@ const DataValidation = ({
                   <Button
                     primary
                     onClick={() => {
-                      setHasReport('running');
                       startValidationRun({
                         variables: {
                           input: {
@@ -268,7 +263,6 @@ const DataValidation = ({
                           startPolling(1000);
                         })
                         .catch(err => {
-                          setHasReport('not_started');
                           setValidationError(err.message);
                         });
                     }}
@@ -278,16 +272,19 @@ const DataValidation = ({
                 )}
               </Segment>
             )}
-            {hasReport === 'running' && (
+            {['initializing', 'running', 'canceling'].includes(
+              validationState,
+            ) && (
               <Segment placeholder>
                 <Header icon>
                   <Icon loading name="spinner" />
-                  Running data validation, this may take several minutes
+                  {validationState === 'canceling' ? 'Canceling ' : 'Running '}
+                  data validation, this may take several minutes
                 </Header>
                 <Button
                   negative
+                  disabled={validationState === 'canceling'}
                   onClick={() => {
-                    // setHasReport('canceled');
                     cancelValidationRun({
                       variables: {
                         id: validationRun.id,
@@ -297,7 +294,6 @@ const DataValidation = ({
                         startPolling(1000);
                       })
                       .catch(err => {
-                        setHasReport('failed');
                         setValidationError(err.message);
                       });
                   }}
@@ -306,17 +302,16 @@ const DataValidation = ({
                 </Button>
               </Segment>
             )}
-            {hasReport === 'failed' && (
+            {['failed', 'canceled'].includes(validationState) && (
               <Segment placeholder>
                 <Header icon>
                   <Icon name="x" />
-                  Failed to run validation report.
+                  Data validation run {validationState}
                 </Header>
                 {allowStartValidation && (
                   <Button
                     primary
                     onClick={() => {
-                      setHasReport('running');
                       startValidationRun({
                         variables: {
                           input: {
@@ -328,7 +323,6 @@ const DataValidation = ({
                           startPolling(1000);
                         })
                         .catch(err => {
-                          setHasReport('not_started');
                           setValidationError(err.message);
                         });
                     }}
@@ -338,44 +332,12 @@ const DataValidation = ({
                 )}
               </Segment>
             )}
-            {hasReport === 'invalid' && (
+            {validationState === 'invalid' && (
               <Segment placeholder>
                 <Header icon>
                   <Icon name="dont" />
                   No data validation report available for this data review
                 </Header>
-              </Segment>
-            )}
-            {hasReport === 'canceled' && (
-              <Segment placeholder>
-                <Header icon>
-                  <Icon name="dont" />
-                  Canceled
-                </Header>
-                {allowStartValidation && (
-                  <Button
-                    primary
-                    onClick={() => {
-                      setHasReport('running');
-                      startValidationRun({
-                        variables: {
-                          input: {
-                            dataReview: reviewNode.id,
-                          },
-                        },
-                      })
-                        .then(resp => {
-                          startPolling(1000);
-                        })
-                        .catch(err => {
-                          setHasReport('not_started');
-                          setValidationError(err.message);
-                        });
-                    }}
-                  >
-                    Run Again
-                  </Button>
-                )}
               </Segment>
             )}
           </Grid.Column>
