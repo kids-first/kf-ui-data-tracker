@@ -126,5 +126,6 @@ export const VALIDATION_RUN_FIELDS = gql`
     state
     success
     progress
+    errorMsg
   }
 `;

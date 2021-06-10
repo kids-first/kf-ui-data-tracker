@@ -307,6 +307,11 @@ const DataValidation = ({
                 <Header icon>
                   <Icon name="x" />
                   Data validation run {validationState}
+                  {validationRun.errorMsg && (
+                    <Header.Subheader>
+                      {validationRun.errorMsg}
+                    </Header.Subheader>
+                  )}
                 </Header>
                 {allowStartValidation && (
                   <Button
