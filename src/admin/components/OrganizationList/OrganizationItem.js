@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Button, Image, List, Modal} from 'semantic-ui-react';
+import {Button, Image, List, Message, Modal} from 'semantic-ui-react';
 import TimeAgo from 'react-timeago';
 import {useMutation} from '@apollo/client';
 import {Formik} from 'formik';
@@ -24,10 +24,12 @@ const EditModal = ({open, onClose, organization}) => {
         onSubmit={(values, formikProps) => {
           updateOrganization({
             variables: {id: organization.id, input: values},
-          }).then(data => {
-            formikProps.setSubmitting(false);
-            formikProps.resetForm();
-          });
+          })
+            .then(data => {
+              formikProps.setSubmitting(false);
+              formikProps.resetForm();
+            })
+            .catch(err => formikProps.setErrors({form: err}));
         }}
       >
         {formikProps => (
@@ -37,6 +39,11 @@ const EditModal = ({open, onClose, organization}) => {
               <p>Modify details about this organization</p>
 
               <EditOrganizationForm formikProps={formikProps} />
+              {formikProps.errors.form && (
+                <Message inline error>
+                  {JSON.stringify(formikProps.errors.form)}
+                </Message>
+              )}
             </Modal.Content>
             <Modal.Actions>
               <Button
