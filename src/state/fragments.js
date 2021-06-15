@@ -122,6 +122,7 @@ export const VALIDATION_RUN_FIELDS = gql`
     createdAt
     startedAt
     stoppedAt
+    modifiedAt
     inputHash
     state
     success

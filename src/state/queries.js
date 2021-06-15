@@ -461,3 +461,29 @@ export const DATA_REVIEW = gql`
   ${VALIDATION_RESULT_FIELDS}
   ${VALIDATION_RUN_FIELDS}
 `;
+
+export const ALL_VALIDATION_RUNS = gql`
+  query($data_review: ID!) {
+    allValidationRuns(
+      first: 1
+      dataReview: $data_review
+      orderBy: "-modified_at"
+      stateIn: [
+        "not_started"
+        "initializing"
+        "running"
+        "canceling"
+        "completed"
+        "canceled"
+        "failed"
+      ]
+    ) {
+      edges {
+        node {
+          ...ValidationRunFields
+        }
+      }
+    }
+  }
+  ${VALIDATION_RUN_FIELDS}
+`;
