@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {useQuery, useMutation} from '@apollo/client';
-import {NavLink} from 'react-router-dom';
+import {NavLink, useHistory} from 'react-router-dom';
 import {MY_PROFILE} from '../../state/queries';
 import {ADD_COLLABORATOR} from '../../state/mutations';
 import {
@@ -146,6 +146,7 @@ const AddUserButton = ({profile}) => {
 };
 
 const Header = ({location}) => {
+  const history = useHistory();
   const {loading, error, data} = useQuery(MY_PROFILE);
   const profile = data && data.myProfile;
 
@@ -203,7 +204,7 @@ const Header = ({location}) => {
                             'currentOrganization',
                             JSON.stringify(node),
                           );
-                          window.location.reload();
+                          history.push('/');
                         }}
                         key={node.id}
                         image={{
