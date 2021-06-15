@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {useQuery, useMutation} from '@apollo/client';
-import {NavLink} from 'react-router-dom';
+import {NavLink, useHistory} from 'react-router-dom';
 import {MY_PROFILE} from '../../state/queries';
 import {ADD_COLLABORATOR} from '../../state/mutations';
 import {
@@ -146,6 +146,7 @@ const AddUserButton = ({profile}) => {
 };
 
 const Header = ({location}) => {
+  const history = useHistory();
   const {loading, error, data} = useQuery(MY_PROFILE);
   const profile = data && data.myProfile;
 
@@ -159,16 +160,70 @@ const Header = ({location}) => {
     setLoggedIn(true);
   }
 
+  const organizations = profile && profile.organizations;
+  var currentOrg;
+  try {
+    currentOrg = JSON.parse(localStorage.getItem('currentOrganization'));
+  } catch (e) {
+    currentOrg = null;
+  }
+  if (!currentOrg && loggedIn) {
+    currentOrg = organizations && organizations.edges[0].node;
+    localStorage.setItem('currentOrganization', JSON.stringify(currentOrg));
+  }
+  const defaultLogo =
+    'https://raw.githubusercontent.com/kids-first/kf-ui-data-tracker/master/src/assets/logo.svg';
+
   return (
     <Container fluid>
       <Menu attached size="large">
         <Container>
-          <Menu.Item>
-            <img src={logo} alt="Kids First logo" />
-          </Menu.Item>
-          <Menu.Item header as={NavLink} to="/" activeClassName="">
-            Data Tracker
-          </Menu.Item>
+          {currentOrg ? (
+            <Dropdown
+              trigger={
+                <>
+                  <Image
+                    avatar
+                    src={currentOrg.image || defaultLogo}
+                    alt={currentOrg.name}
+                  />
+                  {currentOrg.name}
+                </>
+              }
+              className="link item"
+            >
+              <Dropdown.Menu>
+                <Dropdown.Header content="Switch Current Organization" />
+                {profile &&
+                  organizations.edges
+                    .filter(({node}) => node.id !== currentOrg.id)
+                    .map(({node}) => (
+                      <Dropdown.Item
+                        onClick={() => {
+                          localStorage.setItem(
+                            'currentOrganization',
+                            JSON.stringify(node),
+                          );
+                          history.push('/');
+                        }}
+                        key={node.id}
+                        image={{
+                          avatar: true,
+                          circular: true,
+                          src: node.image || defaultLogo,
+                          alt: node.name,
+                        }}
+                        text={node.name}
+                      />
+                    ))}
+              </Dropdown.Menu>
+            </Dropdown>
+          ) : (
+            <Menu.Item header as={NavLink} to="/" activeClassName="">
+              <img src={logo} alt="Kids First logo" />
+              Data Tracker
+            </Menu.Item>
+          )}
           {loggedIn && !location.pathname.includes('/versions/') && (
             <>
               <Menu.Item as={Nav} to="/study" content="Studies" />

@@ -12,6 +12,7 @@ context('Admin Document List', () => {
   });
 
   it('document filter and search actions', () => {
+    cy.wait(500)
     // Set to file list mode
     cy.get('[data-testid="file-list-mode"]').click();
 
@@ -24,7 +25,7 @@ context('Admin Document List', () => {
     // Filter the document by name using the search box with one return
     cy.get('input[aria-label="file-search-input"]')
       .focus()
-      .type('room.bmp');
+      .type('air.jpeg');
     cy.get('table')
       .find('tr')
       .its('length')
@@ -36,7 +37,7 @@ context('Admin Document List', () => {
     // Search by file Kids First ID
     cy.get('input[aria-label="file-search-input"]')
       .focus()
-      .type('SF_00000005');
+      .type('SF_00000015');
     cy.get('table')
       .find('tr')
       .its('length')
@@ -51,11 +52,11 @@ context('Admin Document List', () => {
     cy.get('table')
       .find('tr')
       .its('length')
-      .should('eq', 3);
+      .should('eq', 2);
 
     // Add: Filter the document by tag using the tag dropdown with 1 return
     cy.contains('div', 'Tag').click();
-    cy.contains('span', 'dbGaP').click();
+    cy.contains('span', 'Batch 1').click();
     cy.get('table')
       .find('tr')
       .its('length')
@@ -63,6 +64,7 @@ context('Admin Document List', () => {
   });
 
   it('sorts documents', () => {
+    cy.wait(500)
     // Set to file list mode
     cy.get('[data-testid="file-list-mode"]').click();
 
@@ -74,44 +76,44 @@ context('Admin Document List', () => {
 
     cy.get('tr')
       .eq(1)
-      .should('contain', 'room.bmp');
+      .should('contain', 'air.jpeg');
 
     // Sort documents by create date using the last updated column
     cy.contains('th', 'Last Updated').click();
     cy.get('tr')
       .eq(1)
-      .should('contain', 'above.jpeg');
+      .should('contain', 'economic.bmp');
     cy.get('tr')
       .eq(5)
-      .should('contain', 'room.bmp');
+      .should('contain', 'air.jpeg');
 
     // Reverse sort
     cy.contains('th', 'Last Updated').click();
     cy.get('tr')
       .eq(5)
-      .should('contain', 'above.jpeg');
+      .should('contain', 'economic.bmp');
     cy.get('tr')
       .eq(1)
-      .should('contain', 'room.bmp');
+      .should('contain', 'air.jpeg');
 
     // Sort by name
     cy.contains('th', 'Document Details').click();
     cy.get('tr')
       .eq(1)
-      .should('contain', 'above.jpeg');
+      .should('contain', 'air.jpeg');
     cy.get('tr')
       .eq(5)
-      .should('contain', 'unit.docx');
+      .should('contain', 'water.tiff');
 
     // Sort by Kids First ID
     cy.contains('label', 'Show Kids First ID').click();
     cy.contains('th', 'Kids First ID').click();
     cy.get('tr')
       .eq(1)
-      .should('contain', 'SF_00000001');
+      .should('contain', 'SF_00000000');
     cy.get('tr')
       .eq(5)
-      .should('contain', 'SF_00000017');
+      .should('contain', 'SF_00000019');
   });
 
   it('toggles file Kids First ID column', () => {
@@ -123,14 +125,14 @@ context('Admin Document List', () => {
 
     // Kids First ID column should not show
     cy.contains('th', 'Kids First ID').should('not.exist');
-    cy.contains('code', 'SF_00000005').should('not.exist');
+    cy.contains('code', 'SF_00000015').should('not.exist');
 
     // Check to show file Kids First ID column
     cy.contains('label', 'Show Kids First ID').click();
 
     // Kids First ID column should show
     cy.contains('th', 'Kids First ID').should('exist');
-    cy.contains('code', 'SF_00000005').should('exist');
+    cy.contains('code', 'SF_00000015').should('exist');
 
     // Clear storage for other tests
     cy.clearLocalStorage('showFileId');
