@@ -15,7 +15,7 @@ import React, {useEffect, useState} from 'react';
 
 import {Amplitude} from '@amplitude/react-amplitude';
 import Markdown from 'react-markdown';
-import {dateCompare} from '../../utilities';
+// import {dateCompare} from '../../utilities';
 import defaultAvatar from '../../../assets/defaultAvatar.png';
 import {longDate} from '../../../common/dateUtils';
 
@@ -31,17 +31,16 @@ const DataValidation = ({
   allowStartValidation,
   startValidationRun,
   cancelValidationRun,
-  startPolling,
-  stopPolling,
+  validationRunStartPolling,
+  validationRunStopPolling,
+  validationResultStartPolling,
+  validationResultStopPolling,
+  validationRun,
 }) => {
   const [report, setReport] = useState('');
   const [validationError, setValidationError] = useState('');
 
   const studyId = match.params.kfId;
-  const validationRun =
-    reviewNode &&
-    reviewNode.validationRuns.edges.length > 0 &&
-    [...reviewNode.validationRuns.edges].sort(dateCompare)[0].node;
   const validationRunState = validationRun && validationRun.state;
   const result = reviewNode.validationResultset;
   const validationState = !allowViewReview
@@ -55,13 +54,16 @@ const DataValidation = ({
       validationRunState === 'running' ||
       validationRunState === 'canceling'
     ) {
-      startPolling(1000);
+      validationRunStartPolling(1000);
+      validationResultStartPolling(1000);
     }
     if (validationRunState === 'failed' || validationRunState === 'canceled') {
-      stopPolling();
+      validationRunStopPolling();
+      validationResultStopPolling();
     }
     if (result && validationRunState === 'completed') {
-      stopPolling();
+      validationRunStopPolling();
+      validationResultStopPolling();
       const downloadURL = result.downloadReportUrl;
       if (downloadURL) {
         fetch(downloadURL, {
@@ -78,7 +80,14 @@ const DataValidation = ({
           });
       }
     }
-  }, [result, validationRunState, startPolling, stopPolling]);
+  }, [
+    result,
+    validationResultStartPolling,
+    validationResultStopPolling,
+    validationRunStartPolling,
+    validationRunState,
+    validationRunStopPolling,
+  ]);
 
   return (
     <Grid className="mb-50 pr-0" style={{width: '100%'}}>
@@ -163,6 +172,7 @@ const DataValidation = ({
                           <Menu.Item
                             onClick={() => {
                               logEvent('click');
+                              setValidationError('');
                               startValidationRun({
                                 variables: {
                                   input: {
@@ -171,7 +181,8 @@ const DataValidation = ({
                                 },
                               })
                                 .then(resp => {
-                                  startPolling(1000);
+                                  validationRunStartPolling(1000);
+                                  validationResultStartPolling(1000);
                                 })
                                 .catch(err => {
                                   setValidationError(err.message);
@@ -252,6 +263,7 @@ const DataValidation = ({
                   <Button
                     primary
                     onClick={() => {
+                      setValidationError('');
                       startValidationRun({
                         variables: {
                           input: {
@@ -260,7 +272,8 @@ const DataValidation = ({
                         },
                       })
                         .then(resp => {
-                          startPolling(1000);
+                          validationRunStartPolling(1000);
+                          validationResultStartPolling(1000);
                         })
                         .catch(err => {
                           setValidationError(err.message);
@@ -291,7 +304,8 @@ const DataValidation = ({
                       },
                     })
                       .then(resp => {
-                        startPolling(1000);
+                        validationRunStartPolling(1000);
+                        validationResultStartPolling(1000);
                       })
                       .catch(err => {
                         setValidationError(err.message);
@@ -317,6 +331,7 @@ const DataValidation = ({
                   <Button
                     primary
                     onClick={() => {
+                      setValidationError('');
                       startValidationRun({
                         variables: {
                           input: {
@@ -325,7 +340,8 @@ const DataValidation = ({
                         },
                       })
                         .then(resp => {
-                          startPolling(1000);
+                          validationRunStartPolling(1000);
+                          validationResultStartPolling(1000);
                         })
                         .catch(err => {
                           setValidationError(err.message);

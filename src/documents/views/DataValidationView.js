@@ -1,4 +1,10 @@
 import {
+  ALL_VALIDATION_RUNS,
+  DATA_REVIEW,
+  GET_STUDY_BY_ID,
+  MY_PROFILE,
+} from '../../state/queries';
+import {
   CANCEL_VALIDATION_RUN,
   START_VALIDATION_RUN,
 } from '../../state/mutations';
@@ -10,7 +16,6 @@ import {
   Message,
   Segment,
 } from 'semantic-ui-react';
-import {DATA_REVIEW, GET_STUDY_BY_ID, MY_PROFILE} from '../../state/queries';
 import {useMutation, useQuery} from '@apollo/client';
 
 import DataValidation from '../components/DataValidation/DataValidation';
@@ -37,6 +42,24 @@ const DataValidationView = ({
   });
   const study = studyData && studyData.study;
 
+  const {
+    data: validationRuns,
+    startPolling: validationRunStartPolling,
+    stopPolling: validationRunStopPolling,
+  } = useQuery(ALL_VALIDATION_RUNS, {
+    variables: {
+      data_review: Buffer.from('DataReviewNode:' + reviewId).toString('base64'),
+    },
+  });
+
+  const validationRun =
+    validationRuns &&
+    validationRuns.allValidationRuns.edges.length > 0 &&
+    validationRuns.allValidationRuns.edges[0].node;
+
+  // console.log(validationRuns);
+  // console.log(validationRun);
+
   // Query for user
   const {data: profileData} = useQuery(MY_PROFILE);
   const myProfile = profileData && profileData.myProfile;
@@ -48,15 +71,18 @@ const DataValidationView = ({
 
   const [downloadFileMutation] = useMutation(FILE_DOWNLOAD_URL);
 
-  const {loading, data, error, startPolling, stopPolling} = useQuery(
-    DATA_REVIEW,
-    {
-      variables: {
-        id: Buffer.from('DataReviewNode:' + reviewId).toString('base64'),
-      },
-      fetchPolicy: 'cache-first',
+  const {
+    loading,
+    data,
+    error,
+    startPolling: validationResultStartPolling,
+    stopPolling: validationResultStopPolling,
+  } = useQuery(DATA_REVIEW, {
+    variables: {
+      id: Buffer.from('DataReviewNode:' + reviewId).toString('base64'),
     },
-  );
+    fetchPolicy: 'cache-first',
+  });
   const review = data && data.dataReview;
 
   const [startValidationRun] = useMutation(START_VALIDATION_RUN, {
@@ -151,8 +177,11 @@ const DataValidationView = ({
           cancelValidationRun={cancelValidationRun}
           allowViewReview={allowViewReview}
           allowStartValidation={allowStartValidation}
-          startPolling={startPolling}
-          stopPolling={stopPolling}
+          validationRun={validationRun}
+          validationRunStartPolling={validationRunStartPolling}
+          validationRunStopPolling={validationRunStopPolling}
+          validationResultStartPolling={validationResultStartPolling}
+          validationResultStopPolling={validationResultStopPolling}
         />
       )}
     </Grid>
