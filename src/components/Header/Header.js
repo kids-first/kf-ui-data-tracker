@@ -85,6 +85,12 @@ const AdminDropdown = ({profile}) => {
       permission: 'list_all_referraltoken',
     },
     {
+      name: 'Organizations',
+      route: '/organizations',
+      icon: 'hospital',
+      permission: 'list_all_organization',
+    },
+    {
       name: 'Model Explorer',
       route: '/explorer',
       icon: 'sitemap',
@@ -171,6 +177,23 @@ const Header = ({location}) => {
     currentOrg = organizations && organizations.edges[0].node;
     localStorage.setItem('currentOrganization', JSON.stringify(currentOrg));
   }
+
+  // Check if the org has changed on the backend and update localstorage
+  if (
+    organizations &&
+    currentOrg &&
+    JSON.stringify(
+      organizations.edges.find(({node}) => node.id === currentOrg.id).node,
+    ) !== JSON.stringify(currentOrg)
+  ) {
+    localStorage.setItem(
+      'currentOrganization',
+      JSON.stringify(
+        organizations.edges.find(({node}) => node.id === currentOrg.id).node,
+      ),
+    );
+  }
+
   const defaultLogo =
     'https://raw.githubusercontent.com/kids-first/kf-ui-data-tracker/master/src/assets/logo.svg';
 
