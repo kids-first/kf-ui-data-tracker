@@ -206,7 +206,7 @@ export const ALL_EVENTS = gql`
     $createdAfter: DateTime
     $createdBefore: DateTime
     $username: String
-    $eventType: String
+    $eventType: EventEventType
     $orderBy: String
     $first: Int
     $cursor: String
