@@ -12,7 +12,7 @@ const CollaboratorsList = ({
   addCollaborator,
   removeCollaborator,
 }) => {
-  const collaborators = users.sort(({node: u1}, {node: u2}) =>
+  const collaborators = [...users].sort(({node: u1}, {node: u2}) =>
     u1.username.localeCompare(u2.username, 'en-US', {
       caseFirst: 'upper',
       sensitivity: 'case',
