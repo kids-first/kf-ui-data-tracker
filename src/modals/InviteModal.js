@@ -50,6 +50,7 @@ const InviteModal = ({open, onCloseDialog}) => {
             email: email.key,
             studies: values.studies,
             groups: values.groups,
+            organization: currentOrg && currentOrg.id,
           },
         },
       })
