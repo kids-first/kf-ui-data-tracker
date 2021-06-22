@@ -34,12 +34,12 @@ context('Admin Study List', () => {
     cy.get('table')
       .find('tr')
       .its('length')
-      .should('eq', 4);
+      .should('eq', 2);
 
     // Filter the studies by name using the search box
     cy.get('input[aria-label="search studies"]')
       .focus()
-      .type('revol');
+      .type('Meow');
 
     // Only one study should be listed
     cy.get('table')
@@ -49,6 +49,9 @@ context('Admin Study List', () => {
   });
 
   it('sorts studies', () => {
+    cy.contains('div', 'Magical Memes').click();
+    cy.contains('span', 'Default Organization').click();
+
     // Make sure there's no saved sorting state
     expect(localStorage.getItem('studyColumns')).to.be.null;
 
