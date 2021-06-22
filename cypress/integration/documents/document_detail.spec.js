@@ -22,7 +22,7 @@ context('Admin Document Detail', () => {
       .its('length')
       .should('eq', 7);
     // Click on the first document to go to detail page
-    cy.contains('a', 'including.css').click();
+    cy.contains('a', 'international.webm').click();
     // Add tag
     cy.get('[data-testid="tag-file"]')
       .first()
@@ -51,7 +51,7 @@ context('Admin Document Detail', () => {
       .its('length')
       .should('eq', 7);
     // Click on the first document to go to detail page
-    cy.contains('a', 'including.css').click();
+    cy.contains('a', 'international.webm').click();
     // No delete button
     cy.get('i').should('have.class', 'trash');
     // No edit button

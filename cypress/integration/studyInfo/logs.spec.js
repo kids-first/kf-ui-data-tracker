@@ -12,10 +12,9 @@ context('Admin Study Logs', () => {
   });
 
   it('Show study logs with event type filter', () => {
-    // Show 20 logs
     cy.get('[data-testid="event-item"]')
       .its('length')
-      .should('eq', 20);
+      .should('eq', 16);
     // Use event type filter dropdown select "Study File Created"
     cy.contains('div', 'Event Type').click();
     cy.contains('span', 'Study File Created').click();
