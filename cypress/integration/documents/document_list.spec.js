@@ -25,7 +25,7 @@ context('Admin Document List', () => {
     // Filter the document by name using the search box with one return
     cy.get('input[aria-label="file-search-input"]')
       .focus()
-      .type('air.jpeg');
+      .type('visit.js');
     cy.get('table')
       .find('tr')
       .its('length')
@@ -52,7 +52,7 @@ context('Admin Document List', () => {
     cy.get('table')
       .find('tr')
       .its('length')
-      .should('eq', 2);
+      .should('eq', 3);
 
     // Add: Filter the document by tag using the tag dropdown with 1 return
     cy.contains('div', 'Tag').click();
@@ -76,31 +76,31 @@ context('Admin Document List', () => {
 
     cy.get('tr')
       .eq(1)
-      .should('contain', 'air.jpeg');
+      .should('contain', 'visit.js');
 
     // Sort documents by create date using the last updated column
     cy.contains('th', 'Last Updated').click();
     cy.get('tr')
       .eq(1)
-      .should('contain', 'economic.bmp');
+      .should('contain', 'water.tiff');
     cy.get('tr')
       .eq(5)
-      .should('contain', 'air.jpeg');
+      .should('contain', 'visit.js');
 
     // Reverse sort
     cy.contains('th', 'Last Updated').click();
     cy.get('tr')
       .eq(5)
-      .should('contain', 'economic.bmp');
+      .should('contain', 'water.tiff');
     cy.get('tr')
       .eq(1)
-      .should('contain', 'air.jpeg');
+      .should('contain', 'visit.js');
 
     // Sort by name
     cy.contains('th', 'Document Details').click();
     cy.get('tr')
       .eq(1)
-      .should('contain', 'air.jpeg');
+      .should('contain', 'economic.bmp');
     cy.get('tr')
       .eq(5)
       .should('contain', 'water.tiff');
@@ -167,16 +167,13 @@ context('Admin Document List', () => {
       .find('tr')
       .its('length')
       .should('eq', 6);
-    // DCC has a used tag should show in filter and tag option
-    cy.contains('span', 'DCC').should('exist');
-    cy.contains('div', 'DCC').should('exist');
-    // Delete DCC tag (not used in this study)
-    cy.contains('a', 'DCC')
+    // dbGaP has a used tag should show in filter and tag option
+    cy.contains('span', 'dbGaP').should('exist');
+    cy.contains('div', 'dbGaP').should('exist');
+    // Try to delete Email tag
+    cy.contains('a', 'Email')
       .children()
       .click();
-    // Tag filter and tag option would remove DCC too
-    cy.contains('span', 'DCC').should('not.exist');
-    cy.contains('div', 'DCC').should('not.exist');
     // Add new tag NEW
     cy.get('[data-testid="tag-file"]')
       .first()
