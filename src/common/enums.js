@@ -242,30 +242,6 @@ export const eventType = {
 
 // Store file type title, description and icon
 export const fileTypeDetail = {
-  SHM: {
-    icon: 'shipping',
-    title: 'Biospecimen Manifest',
-    requiredColumns: [],
-    description:
-      'Tabular files (e.g. CSV, TSV, Excel) containing biospecimen identifiers and metadata (e.g. tissue type, composition) provided to sequencing centers as well as consent type.',
-    config: false,
-  },
-  CLN: {
-    icon: 'hospital',
-    title: 'Clinical/Phenotypic Data',
-    requiredColumns: [],
-    description:
-      'Structured files with data linked to the biospecimen identifiers provided in the shipping manifest(s). Exports from data management applications, such as REDCap, are the fastest to process, but we will work with you on most formats.',
-    config: false,
-  },
-  SEQ: {
-    icon: 'dna',
-    title: 'Sequencing Manifest',
-    requiredColumns: [],
-    description:
-      'Tabular files (e.g. CSV, TSV, Excel) containing the biospecimen identifiers and the associated genomic data files. Typically provided by the sequencing center.',
-    config: false,
-  },
   DBG: {
     icon: 'file alternate',
     title: 'dbGaP Submission File',
@@ -273,6 +249,7 @@ export const fileTypeDetail = {
     description:
       'A document formatted to the dbGaP submission specification for uploading to dbGaP during a new release.',
     config: false,
+    url: '',
   },
   OTH: {
     icon: 'question',
@@ -281,11 +258,44 @@ export const fileTypeDetail = {
     description:
       'Any useful documents, such as study background information, data dictionaries, etc., that does not clearly fit in the other categories.',
     config: false,
+    url: '',
+  },
+  SEQ: {
+    icon: 'dna',
+    title: 'Sequencing File Manifest',
+    requiredColumns: [
+      'Aliquot ID',
+      'Sequencing Output Filepath',
+      'Sequencing Output File Hash',
+      'File Hash Algorithm',
+      'Reference Genome',
+      'Experiment Strategy',
+      'Experiment Date',
+      'Sequencing Library Name',
+      'Instrument Model',
+      'Sequencing Platform',
+      'Library Strand',
+      'Library Selection',
+      'Library Prep Kit',
+      'Library BED File Download Link',
+      'Is Paired End',
+      'Expected Mean Insert Size',
+      'Expected Mean Depth',
+      'Expected Mean Read Length',
+      'Expected Total Reads',
+      'Quality Score System',
+      'Quality Score Value',
+    ],
+    config: true,
+    description:
+      'Tabular file (e.g. CSV, TSV, Excel) containing the aliquot identifiers, associated sequencing experiment parameters, and the associated sequencing files. Typically provided by the sequencing center.',
+    url:
+      'https://www.notion.so/d3b/Expedited-File-Types-and-Guidelines-fc5bd4390fa54de5a70b550d73779de9#d53b14317f004b6f9f9a8357ddc94f8f',
   },
   S3S: {
     icon: 'aws',
-    title: 'S3 Bucket Inventory',
-    requiredColumns: ['Bucket', 'Key', 'ETag', 'Size'],
+    title: 'S3 Scrapes',
+    requiredColumns: ['Bucket', 'Key', 'Size', 'ETag'],
     description: 'Generated S3 bucket inventories.',
     config: true,
     url:
@@ -293,22 +303,86 @@ export const fileTypeDetail = {
   },
   PDA: {
     icon: 'clipboard list',
-    title: 'Participant Demographic and Administrative File',
+    title: 'Participant Details',
     requiredColumns: [
+      'Family ID',
       'Participant ID',
-      'Consent Short Name',
-      'Administrative Gender',
+      'dbGaP Consent Code',
+      'Clinical Sex',
+      'Gender Identity',
+      'Race',
       'Ethnicity',
-      'Age at Study Enrollment',
+      'Age at Study Enrollment Value',
       'Age at Study Enrollment Units',
-      'Deceased',
-      'Age at Last Contact',
-      'Age at Last Contact Units',
+      'Affected Status',
+      'Proband',
+      'Species',
+      'Last Known Vital Status',
+      'Age at Status Value',
+      'Age at Status Units',
     ],
-    description: 'Attributes for high-level data about participants in a study',
+    description:
+      'Tabular files (e.g. CSV, TSV, Excel) containing demographic and administrative attributes for participants in the study',
     config: true,
     url:
       'https://www.notion.so/d3b/Expedited-File-Types-and-Guidelines-fc5bd4390fa54de5a70b550d73779de9#d53b14317f004b6f9f9a8357ddc94f8f',
+  },
+  PTD: {
+    icon: 'ambulance',
+    title: 'Participant Diseases',
+    requiredColumns: [
+      'Participant ID',
+      'Age at Onset Value',
+      'Age at Onset Units',
+      'Age at Abatement Value',
+      'Age at Abatement Units',
+      'Condition Name',
+      'Condition MONDO Code',
+      'Verification Status',
+      'Body Site Name',
+      'Body Site UBERON Code',
+      'Category',
+    ],
+    description:
+      'Tabular files (e.g. CSV, TSV, Excel) containing attributes pertaining to the diagnosed diseases of participants in the study',
+    config: true,
+    url:
+      'https://www.notion.so/d3b/Expedited-File-Types-and-Guidelines-fc5bd4390fa54de5a70b550d73779de9#d53b14317f004b6f9f9a8357ddc94f8f',
+  },
+  PTP: {
+    icon: 'eye',
+    title: 'Participant Phenotypes',
+    requiredColumns: [
+      'Participant ID',
+      'Age at Onset Value',
+      'Age at Onset Units',
+      'Age at Abatement Value',
+      'Age at Abatement Units',
+      'Condition Name',
+      'Condition HPO Code',
+      'Verification Status',
+      'Body Site Name',
+      'Body Site UBERON Code',
+    ],
+    description:
+      'Tabular files (e.g. CSV, TSV, Excel) containing attributes pertaining to the observed phenotypes of participants in the study.',
+    config: true,
+    url:
+      'https://www.notion.so/d3b/Expedited-File-Types-and-Guidelines-fc5bd4390fa54de5a70b550d73779de9#d53b14317f004b6f9f9a8357ddc94f8f',
+  },
+  FCM: {
+    icon: 'hubspot',
+    title: 'Complex Family',
+    requiredColumns: [
+      'First Participant ID',
+      'Second Participant ID',
+      'Relationship from First to Second',
+    ],
+    description:
+      'Tabular files (e.g. CSV, TSV, Excel) containing arbitrary family relationships captured as source <- relationship label -> target records',
+    config: true,
+    url:
+      'https://www.notion.so/d3b/Expedited-File-Types-and-Guidelines-fc5bd4390fa54de5a70b550d73779de9#c7292718da1243b29ff793a8d115a5c9',
   },
   FTR: {
     icon: 'users',
@@ -318,7 +392,8 @@ export const fileTypeDetail = {
       'Mother Participant ID',
       'Father Participant ID',
     ],
-    description: 'Relationships for simple, mother-father-participant families',
+    description:
+      'Tabular files (e.g. CSV, TSV, Excel) containing relationships for simple, mother-father-participant families',
     config: true,
     url:
       'https://www.notion.so/d3b/Expedited-File-Types-and-Guidelines-fc5bd4390fa54de5a70b550d73779de9#c7292718da1243b29ff793a8d115a5c9',
@@ -337,10 +412,92 @@ export const fileTypeDetail = {
       'Workflow Type',
       'Source Read',
     ],
-    description: 'Metadata about files produced from Bix genomic workflows',
+    description:
+      'Metadata about harmonized files produced from Bix genomic workflows',
     config: true,
     url:
       'https://www.notion.so/d3b/Expedited-File-Types-and-Guidelines-fc5bd4390fa54de5a70b550d73779de9#d53b14317f004b6f9f9a8357ddc94f8f',
+  },
+  GOB: {
+    title: 'General Observations',
+    icon: 'file',
+    description:
+      'This file is a catch-all for any attributes about a participant that cannot adequately be captured in any of the other file types. The fields here are based on the FHIR Observation resource which is defined as "simple name/value pair assertions with some metadata, but some observations group other observations together logically, or even are multi-component observations". Observations can include vital signs, laboratory data, environment exposure, survey data and/or other clinical assessments. The DRC team can help advise on how best to represent your data as observations when needed.',
+    config: true,
+    url: '',
+    requiredColumns: [
+      'Participant ID',
+      'Age at Observation Value',
+      'Age at Observation Units',
+      'Observation Name',
+      'Observation Ontology Ontobee URI',
+      'Observation Code',
+      'Category',
+      'Interpretation',
+      'Status',
+      'Body Site Name',
+      'Body Site UBERON Code',
+    ],
+  },
+  ALM: {
+    title: 'Aliquot Manifest',
+    icon: 'file',
+    description:
+      'The fields in this file may seem like they could/should be part of one of the other specimen templates. The reason why this information is in its own template is because sometimes it is produced by the research PI and other times it is produced by the sequencing center. In the former case, the research PI (or an associated lab) has taken ownership over portioning the specimens into aliquots and creating the inventory of specimens, aliquots, and analyte types before they are sent for sequencing. In the latter case, the sequencing center may spin out the analyte types to create the aliquots, in which case it becomes the single source of truth for specimens and aliquots.',
+    config: true,
+    url: '',
+    requiredColumns: [
+      'Specimen ID',
+      'Aliquot ID',
+      'Analyte Type',
+      'Sequencing Center',
+    ],
+  },
+  BBM: {
+    title: 'Biobank Manifest',
+    icon: 'file',
+    description:
+      'This file is expected to be supplied by a Biobank and contains information about the storage state of the specimen and/or its aliquots (if they exist) in the Biobank. The information in this file will be useful when it is indexed and used in searching for available specimens for sequencing.',
+    config: true,
+    url: '',
+    requiredColumns: [
+      'Specimen ID',
+      'Aliquot ID',
+      'Analyte Type',
+      'Quantity Value',
+      'Quantity Units',
+      'Concentration Value',
+      'Concentration Units',
+      'Preservation Method',
+      'Availability Status',
+    ],
+  },
+  BCM: {
+    title: 'Biospecimen Collection Manifest',
+    icon: 'file',
+    description:
+      'This file is expected to be supplied by the research PI and contains the most common and critical information about the collection of the specimen such as its basic biological characteristics (e.g. composition, anatomical site), consenting information, and (if applicable) specimen grouping information (not to be confused with aliquots). ',
+    config: true,
+    url: '',
+    requiredColumns: [
+      'Participant ID',
+      'Specimen ID',
+      'Consent Short Name',
+      'Consent Group',
+      'Tissue Type Name',
+      'Tissue Type NCIt Code',
+      'Composition Name',
+      'Composition SNOMED CT Code',
+      'Body Site Name',
+      'Body Site UBERON Code',
+      'Age at Collection Value',
+      'Age at Collection Units',
+      'Method of Sample Procurement',
+      'Ischemic Time',
+      'Ischemic Units',
+      'Origin Specimen ID',
+      'Specimen Group ID',
+    ],
   },
 };
 
@@ -426,7 +583,7 @@ export const permissionIcon = {
   releasetask: 'clipboard check',
   ingestrun: 'search',
   validationrun: 'code',
-  validationresultset: 'code'
+  validationresultset: 'code',
 };
 
 // Icon color for different permissions
