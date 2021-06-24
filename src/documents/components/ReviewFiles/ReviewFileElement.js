@@ -59,7 +59,7 @@ const ReviewFileElement = ({
   const fileType =
     fileNode && fileTypeDetail[fileNode.fileType]
       ? fileTypeDetail[fileNode.fileType]
-      : {title: 'unknown', icon: 'question'};
+      : fileTypeDetail.OTH;
   const justUpdated = useRecentlyUpdated(latestDate, fileKfID);
   return (
     <Table.Row
