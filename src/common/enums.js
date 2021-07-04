@@ -290,7 +290,7 @@ export const fileTypeDetail = {
     description:
       'Tabular file (e.g. CSV, TSV, Excel) containing the aliquot identifiers, associated sequencing experiment parameters, and the associated sequencing files. Typically provided by the sequencing center.',
     url:
-      'https://www.notion.so/d3b/Expedited-File-Types-and-Guidelines-fc5bd4390fa54de5a70b550d73779de9#d53b14317f004b6f9f9a8357ddc94f8f',
+      'https://www.notion.so/d3b/File-Types-and-Guidelines-fc5bd4390fa54de5a70b550d73779de9#3bafab3b51cc4388957a1825eadc3edf',
   },
   S3S: {
     icon: 'aws',
@@ -298,8 +298,7 @@ export const fileTypeDetail = {
     requiredColumns: ['Bucket', 'Key', 'Size', 'ETag'],
     description: 'Generated S3 bucket inventories.',
     config: true,
-    url:
-      'https://www.notion.so/d3b/Expedited-File-Types-and-Guidelines-fc5bd4390fa54de5a70b550d73779de9#82d12c1ba31847f1bf2c1bbc5c089b6a',
+    url: '',
   },
   PDA: {
     icon: 'clipboard list',
@@ -325,7 +324,7 @@ export const fileTypeDetail = {
       'Tabular files (e.g. CSV, TSV, Excel) containing demographic and administrative attributes for participants in the study',
     config: true,
     url:
-      'https://www.notion.so/d3b/Expedited-File-Types-and-Guidelines-fc5bd4390fa54de5a70b550d73779de9#d53b14317f004b6f9f9a8357ddc94f8f',
+      'https://www.notion.so/d3b/File-Types-and-Guidelines-fc5bd4390fa54de5a70b550d73779de9#92aa778d272b498aac8b8d7181a93961',
   },
   PTD: {
     icon: 'ambulance',
@@ -347,11 +346,11 @@ export const fileTypeDetail = {
       'Tabular files (e.g. CSV, TSV, Excel) containing attributes pertaining to the diagnosed diseases of participants in the study',
     config: true,
     url:
-      'https://www.notion.so/d3b/Expedited-File-Types-and-Guidelines-fc5bd4390fa54de5a70b550d73779de9#d53b14317f004b6f9f9a8357ddc94f8f',
+      'https://www.notion.so/d3b/File-Types-and-Guidelines-fc5bd4390fa54de5a70b550d73779de9#e138e33e73b04acd8f07a06c7ac6c915',
   },
   PTP: {
     icon: 'eye',
-    title: 'Participant Phenotypes',
+    title: 'ParticGeneral Observationsipant Phenotypes',
     requiredColumns: [
       'Participant ID',
       'Age at Onset Value',
@@ -368,7 +367,7 @@ export const fileTypeDetail = {
       'Tabular files (e.g. CSV, TSV, Excel) containing attributes pertaining to the observed phenotypes of participants in the study.',
     config: true,
     url:
-      'https://www.notion.so/d3b/Expedited-File-Types-and-Guidelines-fc5bd4390fa54de5a70b550d73779de9#d53b14317f004b6f9f9a8357ddc94f8f',
+      'https://www.notion.so/d3b/File-Types-and-Guidelines-fc5bd4390fa54de5a70b550d73779de9#67c654afe550494ebdf963a610fe42be',
   },
   FCM: {
     icon: 'hubspot',
@@ -382,7 +381,7 @@ export const fileTypeDetail = {
       'Tabular files (e.g. CSV, TSV, Excel) containing arbitrary family relationships captured as source <- relationship label -> target records',
     config: true,
     url:
-      'https://www.notion.so/d3b/Expedited-File-Types-and-Guidelines-fc5bd4390fa54de5a70b550d73779de9#c7292718da1243b29ff793a8d115a5c9',
+      'https://www.notion.so/d3b/File-Types-and-Guidelines-fc5bd4390fa54de5a70b550d73779de9#dfbd3ee6d4a242429eca5169baf829eb',
   },
   FTR: {
     icon: 'users',
@@ -396,7 +395,7 @@ export const fileTypeDetail = {
       'Tabular files (e.g. CSV, TSV, Excel) containing relationships for simple, mother-father-participant families',
     config: true,
     url:
-      'https://www.notion.so/d3b/Expedited-File-Types-and-Guidelines-fc5bd4390fa54de5a70b550d73779de9#c7292718da1243b29ff793a8d115a5c9',
+      'https://www.notion.so/d3b/File-Types-and-Guidelines-fc5bd4390fa54de5a70b550d73779de9#9279cf39600244aa97ee9580e4ba6703',
   },
   GWO: {
     icon: 'dna',
@@ -415,8 +414,7 @@ export const fileTypeDetail = {
     description:
       'Metadata about harmonized files produced from Bix genomic workflows',
     config: true,
-    url:
-      'https://www.notion.so/d3b/Expedited-File-Types-and-Guidelines-fc5bd4390fa54de5a70b550d73779de9#d53b14317f004b6f9f9a8357ddc94f8f',
+    url: '',
   },
   GOB: {
     title: 'General Observations',
@@ -424,7 +422,8 @@ export const fileTypeDetail = {
     description:
       'This file is a catch-all for any attributes about a participant that cannot adequately be captured in any of the other file types. The fields here are based on the FHIR Observation resource which is defined as "simple name/value pair assertions with some metadata, but some observations group other observations together logically, or even are multi-component observations". Observations can include vital signs, laboratory data, environment exposure, survey data and/or other clinical assessments. The DRC team can help advise on how best to represent your data as observations when needed.',
     config: true,
-    url: '',
+    url:
+      'https://www.notion.so/d3b/File-Types-and-Guidelines-fc5bd4390fa54de5a70b550d73779de9#d8c74679eb9d4a768a6bcb6f8da8508b',
     requiredColumns: [
       'Participant ID',
       'Age at Observation Value',
@@ -445,7 +444,8 @@ export const fileTypeDetail = {
     description:
       'The fields in this file may seem like they could/should be part of one of the other specimen templates. The reason why this information is in its own template is because sometimes it is produced by the research PI and other times it is produced by the sequencing center. In the former case, the research PI (or an associated lab) has taken ownership over portioning the specimens into aliquots and creating the inventory of specimens, aliquots, and analyte types before they are sent for sequencing. In the latter case, the sequencing center may spin out the analyte types to create the aliquots, in which case it becomes the single source of truth for specimens and aliquots.',
     config: true,
-    url: '',
+    url:
+      'https://www.notion.so/d3b/File-Types-and-Guidelines-fc5bd4390fa54de5a70b550d73779de9#5e475db644224dd2a60ddf1fdd1bbc8e',
     requiredColumns: [
       'Specimen ID',
       'Aliquot ID',
@@ -459,7 +459,8 @@ export const fileTypeDetail = {
     description:
       'This file is expected to be supplied by a Biobank and contains information about the storage state of the specimen and/or its aliquots (if they exist) in the Biobank. The information in this file will be useful when it is indexed and used in searching for available specimens for sequencing.',
     config: true,
-    url: '',
+    url:
+      'https://www.notion.so/d3b/File-Types-and-Guidelines-fc5bd4390fa54de5a70b550d73779de9#bb75197ca7494e99b552b725094ceb45',
     requiredColumns: [
       'Specimen ID',
       'Aliquot ID',
@@ -478,7 +479,8 @@ export const fileTypeDetail = {
     description:
       'This file is expected to be supplied by the research PI and contains the most common and critical information about the collection of the specimen such as its basic biological characteristics (e.g. composition, anatomical site), consenting information, and (if applicable) specimen grouping information (not to be confused with aliquots). ',
     config: true,
-    url: '',
+    url:
+      'https://www.notion.so/d3b/File-Types-and-Guidelines-fc5bd4390fa54de5a70b550d73779de9#85139587c7f44a1badf520ecc10d0445',
     requiredColumns: [
       'Participant ID',
       'Specimen ID',
