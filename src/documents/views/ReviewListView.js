@@ -191,9 +191,27 @@ const ReviewListView = ({
                         />
                       )}
                     </List.Header>
-                    <List.Description as="a">
-                      {node.versions.edges ? node.versions.edges.length : '0'}{' '}
-                      document(s) in review
+                    <List.Description as={List} bulleted horizontal>
+                      <List.Item>
+                        {node.versions.edges ? node.versions.edges.length : '0'}{' '}
+                        document(s) in review
+                      </List.Item>
+                      {node.validationResultset ? (
+                        <>
+                          <List.Item className="text-green">
+                            {node.validationResultset.passed} Tests Passed
+                          </List.Item>
+                          <List.Item className="text-red">
+                            {node.validationResultset.failed} Tests Failed
+                          </List.Item>
+                          <List.Item className="text-yellow">
+                            {node.validationResultset.didNotRun} Tests Did Not
+                            Run
+                          </List.Item>
+                        </>
+                      ) : (
+                        <List.Item>No data validation report created</List.Item>
+                      )}
                     </List.Description>
                   </List.Content>
                 </List.Item>

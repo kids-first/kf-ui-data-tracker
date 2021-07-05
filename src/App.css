@@ -317,10 +317,6 @@ body {
     color: #db2828 !important;
 }
 
-.text-blue {
-    color: #4183c4 !important;
-}
-
 .text-gray {
     color: #676767 !important;
 }
@@ -460,11 +456,15 @@ body {
 }
 
 .text-blue {
-    color: cornflowerblue;
+    color: #4183c4 !important;
 }
 
 .text-green {
-    color: green;
+    color: #21ba45 !important;
+}
+
+.text-yellow {
+    color: #fbbd08 !important;
 }
 
 .text-underline {

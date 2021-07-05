@@ -1,12 +1,15 @@
-import gql from 'graphql-tag';
 import {
+  CREATOR_FIELDS,
   PROJECT_FIELDS,
   STUDY_BASIC_FIELDS,
   STUDY_INFO_FIELDS,
   USER_FIELDS,
+  VALIDATION_RUN_FIELDS,
 } from './fragments';
 
 import {VERSION_FIELDS} from '../documents/fragments';
+import gql from 'graphql-tag';
+
 // Mutation to create a new dev token
 export const SYNC_PROJECTS = gql`
   mutation SyncProjects {
@@ -514,4 +517,29 @@ export const REOPEN_DATA_REVIEW = gql`
   }
   ${STUDY_BASIC_FIELDS}
   ${VERSION_FIELDS}
+`;
+
+export const START_VALIDATION_RUN = gql`
+  mutation startValidationRun($input: StartValidationRunInput!) {
+    startValidationRun(input: $input) {
+      validationRun {
+        ...ValidationRunFields
+        creator {
+          ...CreatorFields
+        }
+      }
+    }
+  }
+  ${CREATOR_FIELDS}
+  ${VALIDATION_RUN_FIELDS}
+`;
+
+export const CANCEL_VALIDATION_RUN = gql`
+  mutation cancelValidationRun($id: ID!) {
+    cancelValidationRun(id: $id) {
+      validationRun {
+        id
+      }
+    }
+  }
 `;
