@@ -15,6 +15,8 @@ const SelectElement = ({
   ...props
 }) => {
   const selected = id === values.file_type;
+  const fileType = fileTypeDetail[id] ? fileTypeDetail[id] : fileTypeDetail.OTH;
+
   return (
     <Segment
       compact
@@ -33,7 +35,7 @@ const SelectElement = ({
           onChange={onChange}
           label={() => (
             <Icon
-              name={fileTypeDetail[id].icon}
+              name={fileType.icon}
               size="large"
               bordered
               circular
@@ -45,11 +47,9 @@ const SelectElement = ({
       </div>
       <div>
         <p className="mb-5">
-          <b>{fileTypeDetail[id].title}</b>
+          <b>{fileType.title}</b>
         </p>
-        <p className="text-wrap-75 text-grey">
-          {fileTypeDetail[id].description}
-        </p>
+        <p className="text-wrap-75 text-grey">{fileType.description}</p>
       </div>
     </Segment>
   );

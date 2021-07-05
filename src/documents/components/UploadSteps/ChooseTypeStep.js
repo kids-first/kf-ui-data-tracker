@@ -10,6 +10,7 @@ import {
   Image,
   Label,
   Placeholder,
+  Popup,
   Radio,
 } from 'semantic-ui-react';
 import {Field} from 'formik';
@@ -68,7 +69,6 @@ const TypeCard = ({
           label={() => (
             <Icon
               name={fileTypeDetail[id].icon}
-              size="large"
               bordered
               circular
               inverted
@@ -84,7 +84,19 @@ const TypeCard = ({
         />
         {fileTypeDetail[id].title}
       </Card.Header>
-      <Card.Description>{fileTypeDetail[id].description}</Card.Description>
+      <Popup
+        wide
+        on="hover"
+        mouseEnterDelay={500}
+        disabled={fileTypeDetail[id].description.length <= 150}
+        content={fileTypeDetail[id].description}
+        trigger={
+          <Card.Description>
+            {fileTypeDetail[id].description.substring(0, 150)}
+            {fileTypeDetail[id].description.length > 150 && '...'}
+          </Card.Description>
+        }
+      />
     </Card.Content>
     {fileTypeDetail[id].url && (
       <Card.Content extra>

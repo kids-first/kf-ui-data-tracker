@@ -1,15 +1,16 @@
-import React, {useState, useEffect} from 'react';
-import PropTypes from 'prop-types';
-import {withRouter, Link} from 'react-router-dom';
-import TimeAgo from 'react-timeago';
-import {Table, Icon, Checkbox, Popup, Header} from 'semantic-ui-react';
-import Markdown from 'react-markdown';
+import {Checkbox, Header, Icon, Popup, Table} from 'semantic-ui-react';
+import {Link, withRouter} from 'react-router-dom';
+import React, {useEffect, useState} from 'react';
+import {fileLatestDate, fileSortedVersions} from '../../utilities';
+
 import FileActionButtons from '../FileActionButtons/FileActionButtons';
-import {fileSortedVersions, fileLatestDate} from '../../utilities';
-import {fileTypeDetail} from '../../../common/enums';
-import {longDate} from '../../../common/dateUtils';
 import FileTags from '../FileDetail/FileTags';
 import KfId from '../../../components/StudyList/KfId';
+import Markdown from 'react-markdown';
+import PropTypes from 'prop-types';
+import TimeAgo from 'react-timeago';
+import {fileTypeDetail} from '../../../common/enums';
+import {longDate} from '../../../common/dateUtils';
 
 const useRecentlyUpdated = (latestDate, fileId) => {
   const [justUpdated, setJustUpdated] = useState(false);
@@ -69,7 +70,7 @@ const FileElement = ({
   const fileType =
     fileNode && fileTypeDetail[fileNode.fileType]
       ? fileTypeDetail[fileNode.fileType]
-      : {title: 'unknown', icon: 'question'};
+      : fileTypeDetail.OTH;
   const justUpdated = useRecentlyUpdated(latestDate, fileKfID);
   return (
     <Table.Row

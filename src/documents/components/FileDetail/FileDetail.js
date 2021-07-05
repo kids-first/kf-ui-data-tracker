@@ -43,6 +43,10 @@ const ActionButtons = ({
   allowUpload,
 }) => {
   const [copied, setCopied] = useState(false);
+  const fileType = fileTypeDetail[fileNode.fileType]
+    ? fileTypeDetail[fileNode.fileType]
+    : fileTypeDetail.OTH;
+
   return (
     <Menu vertical={vertical} secondary fluid>
       <Menu.Item header as="h4" className="text-grey noMargin">
@@ -183,7 +187,7 @@ const ActionButtons = ({
           />
         )}
       </Amplitude>
-      {fileTypeDetail[fileNode.fileType].config && allowExtractConfig && (
+      {fileType.config && allowExtractConfig && (
         <Amplitude
           eventProperties={inheritedProps => ({
             ...inheritedProps,
@@ -284,6 +288,9 @@ const FileDetail = ({
   const latestDate = fileLatestDate(sortedVersions);
   const latestSize = fileLatestSize(sortedVersions);
   const pathTag = fileNode.tags.find(t => t.includes('PATH_'));
+  const fileType = fileTypeDetail[fileNode.fileType]
+    ? fileTypeDetail[fileNode.fileType]
+    : fileTypeDetail.OTH;
 
   return (
     <Grid className="mb-50">
@@ -341,8 +348,8 @@ const FileDetail = ({
                     createdAt={latestDate}
                   />
                   <Label size="small" image className="ml-5 my-2 px-10">
-                    <Icon name={`${fileTypeDetail[fileNode.fileType].icon}`} />
-                    {fileTypeDetail[fileNode.fileType].title}
+                    <Icon name={`${fileType.icon}`} />
+                    {fileType.title}
                     {updateFile && (
                       <Popup
                         content="Edit document type"

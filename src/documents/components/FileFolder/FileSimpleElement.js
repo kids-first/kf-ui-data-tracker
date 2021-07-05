@@ -67,7 +67,7 @@ const FileSimpleElement = ({
   const fileType =
     fileNode && fileTypeDetail[fileNode.fileType]
       ? fileTypeDetail[fileNode.fileType]
-      : {title: 'unknown', icon: 'question'};
+      : fileTypeDetail.OTH;
   const justUpdated = useRecentlyUpdated(latestDate, fileKfID);
 
   if (fileNode.isDirectory) {
