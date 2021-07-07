@@ -12,6 +12,7 @@ context('Admin Document Detail', () => {
   });
 
   it('Edit document approval status and add tags', () => {
+    cy.wait(500)
     // Set to file list mode
     cy.get('[data-testid="file-list-mode"]').click();
 
@@ -19,9 +20,9 @@ context('Admin Document Detail', () => {
     cy.get('table')
       .find('tr')
       .its('length')
-      .should('eq', 6);
+      .should('eq', 7);
     // Click on the first document to go to detail page
-    cy.contains('a', 'security.doc').click();
+    cy.contains('a', 'international.webm').click();
     // Add tag
     cy.get('[data-testid="tag-file"]')
       .first()
@@ -37,7 +38,7 @@ context('Admin Document Detail', () => {
     cy.get('table')
       .find('tr')
       .its('length')
-      .should('eq', 2);
+      .should('eq', 3);
   });
 
   it('Show document detail with delete button and edit button', () => {
@@ -48,9 +49,9 @@ context('Admin Document Detail', () => {
     cy.get('table')
       .find('tr')
       .its('length')
-      .should('eq', 6);
+      .should('eq', 7);
     // Click on the first document to go to detail page
-    cy.contains('a', 'security.doc').click();
+    cy.contains('a', 'international.webm').click();
     // No delete button
     cy.get('i').should('have.class', 'trash');
     // No edit button
@@ -81,7 +82,7 @@ context('Investigator Document Detail', () => {
       .its('length')
       .should('eq', 6);
     // Click on the first document to go to detail page
-    cy.contains('a', 'song.mp3').click();
+    cy.contains('a', 'energy.gif').click();
     // No delete button
     cy.get('i').should('not.have.class', 'trash');
     // Has edit button

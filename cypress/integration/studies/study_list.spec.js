@@ -34,12 +34,12 @@ context('Admin Study List', () => {
     cy.get('table')
       .find('tr')
       .its('length')
-      .should('eq', 5);
+      .should('eq', 2);
 
     // Filter the studies by name using the search box
     cy.get('input[aria-label="search studies"]')
       .focus()
-      .type('utilize');
+      .type('Meow');
 
     // Only one study should be listed
     cy.get('table')
@@ -49,6 +49,9 @@ context('Admin Study List', () => {
   });
 
   it('sorts studies', () => {
+    cy.contains('div', 'Magical Memes').click();
+    cy.contains('span', 'Default Organization').click();
+
     // Make sure there's no saved sorting state
     expect(localStorage.getItem('studyColumns')).to.be.null;
 
@@ -56,12 +59,12 @@ context('Admin Study List', () => {
     cy.get('table')
       .find('tr')
       .its('length')
-      .should('eq', 5);
+      .should('eq', 4);
 
     // By default (sorting by study name in descending order)
     cy.get('td')
       .eq(1)
-      .should('contain', 'utilize');
+      .should('contain', 'revolutionize');
 
     // Click on kfId column title to sort by kfId
     cy.contains('th', 'Kids First ID')
@@ -91,16 +94,18 @@ context('Admin Study List', () => {
         ).to.be.eq('descending');
       });
 
-    // First study should change to "incentivize leading-edge functionalities"
     cy.get('td')
       .eq(1)
-      .should('contain', 'utilize strategic');
+      .should('contain', 'enhance');
 
     // Clear storage for other tests
     cy.clearLocalStorage('studyColumns');
   });
 
   it('toggles my studies', () => {
+    cy.contains('div', 'Magical Memes').click();
+    cy.contains('div', 'Default Organization').click();
+
     cy.clearLocalStorage('onlyMyStudies');
 
     // Make sure there's no saved state
@@ -108,7 +113,7 @@ context('Admin Study List', () => {
     // We should see all the studies
     cy.get('[data-cy="study name"]')
       .its('length')
-      .should('eq', 4);
+      .should('eq', 3);
 
     // Turn on only show my studies
     cy.get('[data-cy="toggle my studies"]')
@@ -118,9 +123,7 @@ context('Admin Study List', () => {
       });
 
     // We should see onlt my studies
-    cy.get('[data-cy="study name"]')
-      .its('length')
-      .should('eq', 1);
+    cy.get('[data-cy="study name"]').should('not.exist');
 
     // Turn off only show my studies
     cy.get('[data-cy="toggle my studies"]')
@@ -132,13 +135,16 @@ context('Admin Study List', () => {
     // We should only see our studies
     cy.get('[data-cy="study name"]')
       .its('length')
-      .should('eq', 4);
+      .should('eq', 3);
 
     // Clear storage for other tests
     cy.clearLocalStorage('onlyMyStudies');
   });
 
   it('toggles full width', () => {
+    cy.contains('div', 'Magical Memes').click();
+    cy.contains('div', 'Default Organization').click();
+
     cy.clearLocalStorage('fullWidth');
 
     // Make sure there's no saved state
@@ -177,11 +183,14 @@ context('Admin Study List', () => {
   });
 
   it('only shows my studies', () => {
+    cy.contains('div', 'Magical Memes').click();
+    cy.contains('div', 'Default Organization').click();
+
     // Select a study to be added to
-    cy.contains('utilize strategic').click();
+    cy.contains('revolutionize').click();
 
     // Add self to that study
-    cy.get('[href="/study/SD_W2PQV9FJ/collaborators"]').click();
+    cy.get('[href="/study/SD_QQXC6C3V/collaborators"]').click();
     cy.contains('button', 'ADD COLLABORATOR')
       .click()
       .get('input.search')
@@ -197,13 +206,13 @@ context('Admin Study List', () => {
     cy.get('[data-cy="toggle my studies"]').click();
     cy.get('[data-cy="study name"]')
       .its('length')
-      .should('eq', 2);
+      .should('eq', 1);
 
     // All studies should still be visible
     cy.get('[data-cy="toggle my studies"]').click();
     cy.get('[data-cy="study name"]')
       .its('length')
-      .should('eq', 4);
+      .should('eq', 3);
   });
 
   it('favorite studies', () => {

@@ -9,6 +9,13 @@ import {CREATE_STUDY} from '../state/mutations';
  */
 
 const NewStudyView = ({match, history, location}) => {
+  var currentOrg;
+  try {
+    currentOrg = JSON.parse(localStorage.getItem('currentOrganization'));
+  } catch (e) {
+    currentOrg = null;
+  }
+
   const [createStudy] = useMutation(CREATE_STUDY);
   const [submitting, setSubmitting] = useState(false);
   const [newStudyError, setNewStudyError] = useState();
@@ -19,7 +26,10 @@ const NewStudyView = ({match, history, location}) => {
       ? sessionStorage.getItem('newStudy').split(',')
       : [];
     createStudy({
-      variables: {input: values.input, workflows: values.workflowType},
+      variables: {
+        input: {...values.input, organization: currentOrg && currentOrg.id},
+        workflows: values.workflowType,
+      },
     })
       .then(resp => {
         const studyId = resp.data.createStudy.study.kfId;

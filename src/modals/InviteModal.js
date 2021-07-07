@@ -21,9 +21,18 @@ import {PermissionGroup} from '../admin/components/UserList';
  * This is the controller that handles the form submission and state.
  */
 const InviteModal = ({open, onCloseDialog}) => {
+  var currentOrg;
+  try {
+    currentOrg = JSON.parse(localStorage.getItem('currentOrganization'));
+  } catch (e) {
+    currentOrg = null;
+  }
+
   const [emailList, setEmailList] = useState([]);
 
-  const {data: studiesData} = useQuery(ALL_STUDIES);
+  const {data: studiesData} = useQuery(ALL_STUDIES, {
+    variables: {organization: currentOrg.id},
+  });
   const {data: groupsData} = useQuery(ALL_GROUPS);
   const studies = studiesData && studiesData.allStudies.edges;
   const groups =
@@ -41,6 +50,7 @@ const InviteModal = ({open, onCloseDialog}) => {
             email: email.key,
             studies: values.studies,
             groups: values.groups,
+            organization: currentOrg && currentOrg.id,
           },
         },
       })

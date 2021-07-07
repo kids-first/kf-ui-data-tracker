@@ -15,8 +15,8 @@ import gql from 'graphql-tag';
 
 // Query to get all studies in the study-creator
 export const ALL_STUDIES = gql`
-  query AllStudies {
-    allStudies {
+  query AllStudies($organization: ID) {
+    allStudies(organization: $organization) {
       edges {
         node {
           ...StudyBasicFields
@@ -168,6 +168,15 @@ export const MY_PROFILE = gql`
           }
         }
       }
+      organizations {
+        edges {
+          node {
+            id
+            name
+            image
+          }
+        }
+      }
       ...UserFields
       ...GroupFields
     }
@@ -200,7 +209,7 @@ export const ALL_EVENTS = gql`
     $createdAfter: DateTime
     $createdBefore: DateTime
     $username: String
-    $eventType: String
+    $eventType: EventEventType
     $orderBy: String
     $first: Int
     $cursor: String
