@@ -29,6 +29,10 @@ export const ALL_STUDIES = gql`
           sequencingStatus
           ingestionStatus
           phenotypeStatus
+          organization {
+            id
+            name
+          }
           releases(first: 1, orderBy: "-created_at", state: "published") {
             edges {
               node {
