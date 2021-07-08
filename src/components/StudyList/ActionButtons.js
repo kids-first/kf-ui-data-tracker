@@ -1,8 +1,12 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import {useQuery, useMutation} from '@apollo/client';
-import {ADD_COLLABORATOR, CREATE_REFERRAL_TOKEN} from '../../state/mutations';
-import {GET_STUDY_BY_ID, MY_PROFILE} from '../../state/queries';
+import {
+  ADD_COLLABORATOR,
+  CREATE_REFERRAL_TOKEN,
+  TRANSFER_STUDY,
+} from '../../state/mutations';
+import {GET_STUDY_BY_ID, MY_PROFILE, ALL_STUDIES} from '../../state/queries';
 import {Amplitude} from '@amplitude/react-amplitude';
 import {Button, Label, Icon, Popup, Table} from 'semantic-ui-react';
 import {
@@ -12,6 +16,7 @@ import {
 import {hasPermission} from '../../common/permissions';
 import CavaticaLogo from '../../assets/CavaticaLogo';
 import AddCollaboratorModal from '../../modals/AddCollaboratorModal';
+import TransferStudyModal from '../../modals/TransferStudyModal';
 
 /**
  * A button that displays a popup when hovered and optionally a notification
@@ -59,13 +64,22 @@ const PopupButton = ({
  */
 const ActionButtons = ({study}) => {
   const [showCollaborators, setShowCollaborators] = useState(false);
+  const [showTransfer, setShowTransfer] = useState(false);
 
   // Get current user's profile to determine permission level
   const {data: profileData, loading} = useQuery(MY_PROFILE);
   const user = profileData && profileData.myProfile;
+  const organizations = user && user.organizations;
 
   const studyInfoNotif = countStudyNotification(study);
   const projectNotif = countProjectNotification(study);
+
+  var currentOrg;
+  try {
+    currentOrg = JSON.parse(localStorage.getItem('currentOrganization'));
+  } catch (e) {
+    currentOrg = null;
+  }
 
   const [addCollaborator] = useMutation(ADD_COLLABORATOR, {
     refetchQueries: [
@@ -78,6 +92,16 @@ const ActionButtons = ({study}) => {
     ],
   });
   const [createToken] = useMutation(CREATE_REFERRAL_TOKEN);
+  const [transferStudy] = useMutation(TRANSFER_STUDY, {
+    refetchQueries: [
+      {
+        query: ALL_STUDIES,
+        variables: {
+          organization: currentOrg && currentOrg.id,
+        },
+      },
+    ],
+  });
 
   if (!user || loading)
     return (
@@ -164,6 +188,25 @@ const ActionButtons = ({study}) => {
             as={Link}
             to={`/study/${study.kfId}/collaborators`}
           />
+          {hasPermission(user, 'change_organization') && (
+            <PopupButton
+              hoverable
+              header="Transfer"
+              icon="exchange"
+              content={
+                <>
+                  <p>Transfer study to an organization</p>
+                  <Button
+                    primary
+                    content="Transfer Organization"
+                    icon="exchange"
+                    labelPosition="left"
+                    onClick={() => setShowTransfer(true)}
+                  />
+                </>
+              }
+            />
+          )}
         </Button.Group>
       </Table.Cell>
       <AddCollaboratorModal
@@ -172,6 +215,13 @@ const ActionButtons = ({study}) => {
         onCloseDialog={() => setShowCollaborators(false)}
         addCollaborator={addCollaborator}
         inviteCollaborator={createToken}
+      />
+      <TransferStudyModal
+        study={study}
+        open={showTransfer}
+        onCloseDialog={() => setShowTransfer(false)}
+        transferStudy={transferStudy}
+        organizations={organizations}
       />
     </Amplitude>
   );
