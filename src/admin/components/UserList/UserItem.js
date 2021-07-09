@@ -22,23 +22,61 @@ const Actions = ({
     });
   };
 
-  if (updateUser instanceof Function) {
-    return (
-      <Dropdown
-        multiple
-        selection
-        clearable
-        disabled={!updateUser instanceof Function || loading}
-        loading={loading}
-        value={user.groups.edges.map(({node}) => node.id)}
-        placeholder="Groups"
-        options={groupOptions}
-        onChange={onChange}
-      />
-    );
-  }
+  const userOrg = user.organizations.edges.map(({node}) => node.id);
 
-  return null;
+  const onOrgSelect = (ev, data) => {
+    setLoading(true);
+    if (data.value.length > userOrg.length) {
+      const add = data.value.filter(x => !userOrg.includes(x))[0];
+      addMember({variables: {user: user.id, organization: add}}).then(resp => {
+        setLoading(false);
+      });
+    } else if (data.value.length < userOrg.length) {
+      const remove = userOrg.filter(x => !data.value.includes(x))[0];
+      removeMember({variables: {user: user.id, organization: remove}}).then(
+        resp => {
+          setLoading(false);
+        },
+      );
+    }
+  };
+
+  return (
+    <>
+      {updateUser instanceof Function && (
+        <Dropdown
+          className="text-12"
+          multiple
+          selection
+          clearable
+          fluid
+          disabled={!updateUser instanceof Function || loading}
+          loading={loading}
+          value={user.groups.edges.map(({node}) => node.id)}
+          placeholder="Groups"
+          options={groupOptions}
+          onChange={onChange}
+        />
+      )}
+      {addMember instanceof Function && removeMember instanceof Function && (
+        <Dropdown
+          className="mt-6 text-12"
+          multiple
+          selection
+          clearable
+          fluid
+          disabled={
+            !addMember instanceof Function || !removeMember instanceof Function
+          }
+          loading={loading}
+          value={userOrg}
+          placeholder="Organizations"
+          options={orgOptions}
+          onChange={onOrgSelect}
+        />
+      )}
+    </>
+  );
 };
 
 /**
