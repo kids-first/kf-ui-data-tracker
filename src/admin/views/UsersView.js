@@ -22,6 +22,8 @@ const UsersView = () => {
   const {loading: usersLoading, error, data: userData} = useQuery(ALL_USERS);
   const [searchString, setSearchString] = useState('');
   const [selectedGroup, setSelectedGroup] = useState('');
+  const [selectedOrg, setSelectedOrg] = useState('');
+
   const allUsers = userData && userData.allUsers;
 
   const {data: myProfileData, loading: myProfileLoading} = useQuery(MY_PROFILE);
@@ -73,6 +75,10 @@ const UsersView = () => {
       ({node}) =>
         (!selectedGroup ||
           node.groups.edges.map(({node}) => node.id).includes(selectedGroup)) &&
+        (!selectedOrg ||
+          node.organizations.edges
+            .map(({node}) => node.id)
+            .includes(selectedOrg)) &&
         [node.username, node.displayName, node.email]
           .join(' ')
           .toLowerCase()
@@ -110,19 +116,30 @@ const UsersView = () => {
         <Header as="h4">User list</Header>
         <Form widths="equal">
           <Form.Group inline>
+            <span className="pr-5">Filter by:</span>
+            <Form.Group inline width={10} className="mb-0">
+              <Form.Field
+                aria-label="group-filter"
+                control={Select}
+                clearable
+                placeholder="User Group"
+                loading={loading}
+                options={groupOptions || []}
+                onChange={(e, {name, value}) => setSelectedGroup(value)}
+              />
+              <Form.Field
+                aria-label="organization-filter"
+                control={Select}
+                clearable
+                placeholder="Organization"
+                loading={orgsLoading}
+                options={orgOptions || []}
+                onChange={(e, {value}) => setSelectedOrg(value)}
+              />
+            </Form.Group>
             <Form.Field
-              label="Filter by:"
-              aria-label="group-filter"
-              width={8}
-              control={Select}
-              clearable
-              placeholder="User Group"
-              loading={loading}
-              options={groupOptions || []}
-              onChange={(e, {name, value}) => setSelectedGroup(value)}
-            />
-            <Form.Field
-              width={8}
+              className="pr-0"
+              width={6}
               control={Input}
               aria-label="userSearch"
               iconPosition="left"
