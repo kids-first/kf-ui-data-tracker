@@ -543,3 +543,18 @@ export const CANCEL_VALIDATION_RUN = gql`
     }
   }
 `;
+
+export const TRANSFER_STUDY = gql`
+  mutation TransferStudy($study: ID!, $organization: ID!) {
+    transferStudy(study: $study, organization: $organization) {
+      study {
+        id
+        name
+        organization {
+          id
+          name
+        }
+      }
+    }
+  }
+`;

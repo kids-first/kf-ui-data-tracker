@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {useQuery, useMutation} from '@apollo/client';
 import {NavLink, useHistory} from 'react-router-dom';
-import {MY_PROFILE} from '../../state/queries';
+import {MY_PROFILE, ALL_STUDIES} from '../../state/queries';
 import {ADD_COLLABORATOR} from '../../state/mutations';
 import {
   Button,
@@ -178,6 +178,13 @@ const Header = ({location}) => {
     localStorage.setItem('currentOrganization', JSON.stringify(currentOrg));
   }
 
+  const {refetch} = useQuery(ALL_STUDIES, {
+    fetchPolicy: 'network-only',
+    variables: {
+      organization: currentOrg && currentOrg.id,
+    },
+  });
+
   // Check if the org has changed on the backend and update localstorage
   if (
     organizations &&
@@ -227,6 +234,7 @@ const Header = ({location}) => {
                             'currentOrganization',
                             JSON.stringify(node),
                           );
+                          refetch();
                           history.push('/');
                         }}
                         key={node.id}
