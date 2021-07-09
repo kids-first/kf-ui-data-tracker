@@ -91,6 +91,14 @@ export const ALL_USERS = gql`
           id
           ...UserFields
           ...GroupFields
+          organizations {
+            edges {
+              node {
+                id
+                name
+              }
+            }
+          }
         }
       }
     }
