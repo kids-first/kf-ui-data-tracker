@@ -15,8 +15,8 @@ import {
 } from 'semantic-ui-react';
 import {UserList, PermissionGroup} from '../components/UserList';
 import {ALL_GROUPS, MY_PROFILE} from '../../state/queries';
-import {ALL_USERS} from '../queries';
-import {UPDATE_USER} from '../../state/mutations';
+import {ALL_USERS, ALL_ORGANIZATIONS} from '../queries';
+import {UPDATE_USER, ADD_MEMBER, REMOVE_MEMBER} from '../../state/mutations';
 
 const UsersView = () => {
   const {loading: usersLoading, error, data: userData} = useQuery(ALL_USERS);
@@ -29,7 +29,33 @@ const UsersView = () => {
   const {data: myProfileData, loading: myProfileLoading} = useQuery(MY_PROFILE);
   const profile = myProfileData && myProfileData.myProfile;
 
+  const {loading: orgsLoading, data: orgsData} = useQuery(ALL_ORGANIZATIONS);
+  const defaultLogo =
+    'https://raw.githubusercontent.com/kids-first/kf-ui-data-tracker/master/src/assets/logo.svg';
+  const orgOptions =
+    orgsData && orgsData.allOrganizations.edges.length > 0
+      ? orgsData.allOrganizations.edges.map(({node}) => ({
+          key: node.id,
+          text: node.name,
+          value: node.id,
+          image: {
+            avatar: true,
+            circular: true,
+            src: node.image || defaultLogo,
+            alt: node.name,
+          },
+        }))
+      : [];
+
   const [updateUser] = useMutation(UPDATE_USER, {
+    refetchQueries: [{query: ALL_USERS}],
+  });
+
+  const [addMember] = useMutation(ADD_MEMBER, {
+    refetchQueries: [{query: ALL_USERS}],
+  });
+
+  const [removeMember] = useMutation(REMOVE_MEMBER, {
     refetchQueries: [{query: ALL_USERS}],
   });
 
@@ -42,6 +68,7 @@ const UsersView = () => {
       .reduce((prev, curr) => prev.concat(curr));
 
   const canUpdateUser = permissions && permissions.includes('change_user');
+  const canSignOrg = permissions && permissions.includes('change_organization');
 
   // Compute options available for choosing groups
   const {
@@ -163,7 +190,10 @@ const UsersView = () => {
               <UserList
                 users={filteredList}
                 groupOptions={groupOptions}
+                orgOptions={orgOptions}
                 updateUser={canUpdateUser ? updateUser : null}
+                addMember={canSignOrg ? addMember : null}
+                removeMember={canSignOrg ? removeMember : null}
               />
             ) : (
               <p>No users data available</p>

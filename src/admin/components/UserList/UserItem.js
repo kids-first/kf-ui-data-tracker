@@ -5,7 +5,14 @@ import TimeAgo from 'react-timeago';
 import {longDate} from '../../../common/dateUtils';
 import defaultAvatar from '../../../assets/defaultAvatar.png';
 
-const Actions = ({user, groupOptions, updateUser}) => {
+const Actions = ({
+  user,
+  groupOptions,
+  updateUser,
+  orgOptions,
+  addMember,
+  removeMember,
+}) => {
   const [loading, setLoading] = useState(false);
 
   const onChange = (ev, data) => {
@@ -37,7 +44,14 @@ const Actions = ({user, groupOptions, updateUser}) => {
 /**
  * Display a list of collaborators
  */
-const UserItem = ({user, groupOptions, updateUser}) => (
+const UserItem = ({
+  user,
+  groupOptions,
+  updateUser,
+  orgOptions,
+  addMember,
+  removeMember,
+}) => (
   <List.Item key={user.id} data-testid="user-item">
     <Image avatar src={user.picture || defaultAvatar} alt={user.displayName} />
     <List.Content>
@@ -59,6 +73,9 @@ const UserItem = ({user, groupOptions, updateUser}) => (
         user={user}
         groupOptions={groupOptions}
         updateUser={updateUser}
+        orgOptions={orgOptions}
+        addMember={addMember}
+        removeMember={removeMember}
       />
     </List.Content>
     {user.dateJoined && <List.Content floated="right" />}
