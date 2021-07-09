@@ -177,7 +177,7 @@ const UsersView = () => {
             />
           </Form.Group>
         </Form>
-        <Divider />
+        <Divider className="mb-0" />
         {loading ? (
           <Segment basic padded="very">
             <Dimmer active inverted>

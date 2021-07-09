@@ -93,11 +93,10 @@ const UserItem = ({
   <List.Item key={user.id} data-testid="user-item">
     <Image avatar src={user.picture || defaultAvatar} alt={user.displayName} />
     <List.Content>
-      <List.Header>
-        {user.displayName}
-        {user.email && <small> - {user.email}</small>}
-      </List.Header>
-      <List.Description>
+      <List.Header>{user.displayName}</List.Header>
+      <List.Description className="text-12">
+        {user.email}
+        <br />
         Joined{' '}
         <TimeAgo
           live={false}

@@ -52,6 +52,11 @@ body {
     padding-left: 0px !important;
 }
 
+.mb-0 {
+    margin-bottom: 0px !important;
+}
+
+
 .mb-5 {
     margin-bottom: 5px !important;
 }
@@ -422,6 +427,10 @@ body {
 
 .text-10 {
     font-size: 10px !important;
+}
+
+.text-12 {
+    font-size: 12px !important;
 }
 
 .text-14 {

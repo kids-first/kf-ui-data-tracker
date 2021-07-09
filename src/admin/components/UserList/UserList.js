@@ -23,7 +23,7 @@ const UsersList = ({
   );
 
   return (
-    <List relaxed divided>
+    <List relaxed divided className="mt-6">
       {users &&
         sortedUsers.length > 0 &&
         sortedUsers.map(({node}) => (
