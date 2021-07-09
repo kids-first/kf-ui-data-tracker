@@ -558,3 +558,41 @@ export const TRANSFER_STUDY = gql`
     }
   }
 `;
+
+export const ADD_MEMBER = gql`
+  mutation addMember($user: ID!, $organization: ID!) {
+    addMember(user: $user, organization: $organization) {
+      organization {
+        id
+        name
+        members {
+          edges {
+            node {
+              id
+              displayName
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+export const REMOVE_MEMBER = gql`
+  mutation removeMember($user: ID!, $organization: ID!) {
+    removeMember(user: $user, organization: $organization) {
+      organization {
+        id
+        name
+        members {
+          edges {
+            node {
+              id
+              displayName
+            }
+          }
+        }
+      }
+    }
+  }
+`;
