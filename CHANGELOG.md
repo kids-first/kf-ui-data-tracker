@@ -1,5 +1,39 @@
 # Kids First Data Tracker Change History
 
+## Release 0.21.0
+
+### Summary
+
+- Emojis: ✨ x8, 🐛 x4, 💄 x5, ⚙️ x1, ⏪ x2, 🎨 x1, ? x1, 🔥 x1
+- Categories: Additions x8, Removals x3, Fixes x4, Other Changes x8
+
+### New features and changes
+
+- [#1066](https://github.com/kids-first/kf-ui-data-tracker/pull/1066) - ✨ Add feature allows user to add or remove member of an organization - [6cb80572](https://github.com/kids-first/kf-ui-data-tracker/commit/6cb805721a27f7fa1f6661bb805c9918bb9ed3af) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#1065](https://github.com/kids-first/kf-ui-data-tracker/pull/1065) - ✨ Add feature allows user to transfer study to another organization - [b356aa77](https://github.com/kids-first/kf-ui-data-tracker/commit/b356aa776eb435c8d3b93bbd040eb97a3fe123f3) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#1064](https://github.com/kids-first/kf-ui-data-tracker/pull/1064) - ✨ Add organizations features - [da17bbd2](https://github.com/kids-first/kf-ui-data-tracker/commit/da17bbd23e8f4460601c17d9822f2a35862c90e0) by [dankolbman](https://github.com/dankolbman)
+- [#1030](https://github.com/kids-first/kf-ui-data-tracker/pull/1030) - ✨ Update document types to match templates - [210f4168](https://github.com/kids-first/kf-ui-data-tracker/commit/210f41681b1f989c60c2382068fb998ceccbb5cd) by [znatty22](https://github.com/znatty22)
+- [#1004](https://github.com/kids-first/kf-ui-data-tracker/pull/1004) - ✨ Add data validation page for internal data review with validation report - [6eeca6b0](https://github.com/kids-first/kf-ui-data-tracker/commit/6eeca6b0923aedae3a2c65fa5ac113d421ea45da) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#1062](https://github.com/kids-first/kf-ui-data-tracker/pull/1062) - 🐛 Fix study collaborator list display error - [5ccfe933](https://github.com/kids-first/kf-ui-data-tracker/commit/5ccfe933cc2e0a2a0bc7cba55028a08d3957fceb) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#1058](https://github.com/kids-first/kf-ui-data-tracker/pull/1058) - 🐛 Fix study release version display bug - [7bd62df1](https://github.com/kids-first/kf-ui-data-tracker/commit/7bd62df14b242869f6702ef78f3dff0567f39df6) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#1057](https://github.com/kids-first/kf-ui-data-tracker/pull/1057) - 🐛 Fix editing/linking/unlinking Cavatica projects error - [bb2860f5](https://github.com/kids-first/kf-ui-data-tracker/commit/bb2860f508bdb34ac034101beaf0e14e407d0068) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#1043](https://github.com/kids-first/kf-ui-data-tracker/pull/1043) - ✨ Add additional customized information field for study and save as json string - [b68bf1eb](https://github.com/kids-first/kf-ui-data-tracker/commit/b68bf1eb306ec58e417b4f520363647556fc0884) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#1054](https://github.com/kids-first/kf-ui-data-tracker/pull/1054) - ✨ Click on tag to filter files from document list and review add document table - [47638bc6](https://github.com/kids-first/kf-ui-data-tracker/commit/47638bc6609b5189634f6904d44702659a13bff4) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#1052](https://github.com/kids-first/kf-ui-data-tracker/pull/1052) - 💄 Adjust document table file name and tags display - [7ef38f2c](https://github.com/kids-first/kf-ui-data-tracker/commit/7ef38f2c28843975b6123a91097a62edebea03ae) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#1047](https://github.com/kids-first/kf-ui-data-tracker/pull/1047) - 💄 Update release table started at time format - [2e07f31f](https://github.com/kids-first/kf-ui-data-tracker/commit/2e07f31fa8cd09cba21608056e489f812393f42b) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#1045](https://github.com/kids-first/kf-ui-data-tracker/pull/1045) - ⚙️ Bump Node version to 16 in tests config - [d04c48fd](https://github.com/kids-first/kf-ui-data-tracker/commit/d04c48fd64705c61d1c5492e013ae84df7e3ba22) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#1040](https://github.com/kids-first/kf-ui-data-tracker/pull/1040) - 💄 Use Semantic header component replacing the default HTML header - [771b72ff](https://github.com/kids-first/kf-ui-data-tracker/commit/771b72ff87fd4072d24bcf05949f78875f73682c) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#1042](https://github.com/kids-first/kf-ui-data-tracker/pull/1042) - ⏪ Revert Skeleton for next app iteration - [8d7bf0ff](https://github.com/kids-first/kf-ui-data-tracker/commit/8d7bf0ffdccc8b0de1a0ab4e76f5ebe5efb0e7c7) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#1041](https://github.com/kids-first/kf-ui-data-tracker/pull/1041) - ⏪ Revert next routes - [628b162b](https://github.com/kids-first/kf-ui-data-tracker/commit/628b162b63b6fddb6f8d66a1f2603612672af408) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#1024](https://github.com/kids-first/kf-ui-data-tracker/pull/1024) - ✨ Add next routes - [405842a8](https://github.com/kids-first/kf-ui-data-tracker/commit/405842a845f9af042554235344ce366d5b4278e6) by [dankolbman](https://github.com/dankolbman)
+- [#1014](https://github.com/kids-first/kf-ui-data-tracker/pull/1014) - 🎨 Skeleton for next app iteration - [f6209692](https://github.com/kids-first/kf-ui-data-tracker/commit/f62096923c78024fb649945df9ff30f25ad5ebd4) by [dankolbman](https://github.com/dankolbman)
+- [#1022](https://github.com/kids-first/kf-ui-data-tracker/pull/1022) - 💄 Add icons for data review events and data validation events - [3a4c17e8](https://github.com/kids-first/kf-ui-data-tracker/commit/3a4c17e8bbb5b034c2d65c130ec72e35161b2fae) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#1017](https://github.com/kids-first/kf-ui-data-tracker/pull/1017) - 💄 Add icons for new release related permission types - [3208fd56](https://github.com/kids-first/kf-ui-data-tracker/commit/3208fd565cf2c54b3609f7d887c83940254d1990) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#1018](https://github.com/kids-first/kf-ui-data-tracker/pull/1018) - 🐛 Fix study nav bar with newly added reviews tab - [6dabe582](https://github.com/kids-first/kf-ui-data-tracker/commit/6dabe5829abe6cd6f571a0cf660adb001b4f930b) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#1015](https://github.com/kids-first/kf-ui-data-tracker/pull/1015) -  Bump ssri from 6.0.1 to 6.0.2 - [0f4cf1ef](https://github.com/kids-first/kf-ui-data-tracker/commit/0f4cf1efe09cb8389708d81991af05d93250ca9a) by [dependabot[bot]](https://github.com/apps/dependabot)
+- [#1013](https://github.com/kids-first/kf-ui-data-tracker/pull/1013) - 🔥 Remove obsolete research study related views and components - [947c94e6](https://github.com/kids-first/kf-ui-data-tracker/commit/947c94e61fb430505ff7773d20e8f4d1e857e87d) by [XuTheBunny](https://github.com/XuTheBunny)
+
+
 ## Release 0.20.0
 
 ### Summary
