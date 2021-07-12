@@ -15,19 +15,47 @@ import {
 } from 'semantic-ui-react';
 import {UserList, PermissionGroup} from '../components/UserList';
 import {ALL_GROUPS, MY_PROFILE} from '../../state/queries';
-import {ALL_USERS} from '../queries';
-import {UPDATE_USER} from '../../state/mutations';
+import {ALL_USERS, ALL_ORGANIZATIONS} from '../queries';
+import {UPDATE_USER, ADD_MEMBER, REMOVE_MEMBER} from '../../state/mutations';
 
 const UsersView = () => {
   const {loading: usersLoading, error, data: userData} = useQuery(ALL_USERS);
   const [searchString, setSearchString] = useState('');
   const [selectedGroup, setSelectedGroup] = useState('');
+  const [selectedOrg, setSelectedOrg] = useState('');
+
   const allUsers = userData && userData.allUsers;
 
   const {data: myProfileData, loading: myProfileLoading} = useQuery(MY_PROFILE);
   const profile = myProfileData && myProfileData.myProfile;
 
+  const {loading: orgsLoading, data: orgsData} = useQuery(ALL_ORGANIZATIONS);
+  const defaultLogo =
+    'https://raw.githubusercontent.com/kids-first/kf-ui-data-tracker/master/src/assets/logo.svg';
+  const orgOptions =
+    orgsData && orgsData.allOrganizations.edges.length > 0
+      ? orgsData.allOrganizations.edges.map(({node}) => ({
+          key: node.id,
+          text: node.name,
+          value: node.id,
+          image: {
+            avatar: true,
+            circular: true,
+            src: node.image || defaultLogo,
+            alt: node.name,
+          },
+        }))
+      : [];
+
   const [updateUser] = useMutation(UPDATE_USER, {
+    refetchQueries: [{query: ALL_USERS}],
+  });
+
+  const [addMember] = useMutation(ADD_MEMBER, {
+    refetchQueries: [{query: ALL_USERS}],
+  });
+
+  const [removeMember] = useMutation(REMOVE_MEMBER, {
     refetchQueries: [{query: ALL_USERS}],
   });
 
@@ -40,6 +68,7 @@ const UsersView = () => {
       .reduce((prev, curr) => prev.concat(curr));
 
   const canUpdateUser = permissions && permissions.includes('change_user');
+  const canSignOrg = permissions && permissions.includes('change_organization');
 
   // Compute options available for choosing groups
   const {
@@ -73,6 +102,10 @@ const UsersView = () => {
       ({node}) =>
         (!selectedGroup ||
           node.groups.edges.map(({node}) => node.id).includes(selectedGroup)) &&
+        (!selectedOrg ||
+          node.organizations.edges
+            .map(({node}) => node.id)
+            .includes(selectedOrg)) &&
         [node.username, node.displayName, node.email]
           .join(' ')
           .toLowerCase()
@@ -110,19 +143,30 @@ const UsersView = () => {
         <Header as="h4">User list</Header>
         <Form widths="equal">
           <Form.Group inline>
+            <span className="pr-5">Filter by:</span>
+            <Form.Group inline width={10} className="mb-0">
+              <Form.Field
+                aria-label="group-filter"
+                control={Select}
+                clearable
+                placeholder="User Group"
+                loading={loading}
+                options={groupOptions || []}
+                onChange={(e, {name, value}) => setSelectedGroup(value)}
+              />
+              <Form.Field
+                aria-label="organization-filter"
+                control={Select}
+                clearable
+                placeholder="Organization"
+                loading={orgsLoading}
+                options={orgOptions || []}
+                onChange={(e, {value}) => setSelectedOrg(value)}
+              />
+            </Form.Group>
             <Form.Field
-              label="Filter by:"
-              aria-label="group-filter"
-              width={8}
-              control={Select}
-              clearable
-              placeholder="User Group"
-              loading={loading}
-              options={groupOptions || []}
-              onChange={(e, {name, value}) => setSelectedGroup(value)}
-            />
-            <Form.Field
-              width={8}
+              className="pr-0"
+              width={6}
               control={Input}
               aria-label="userSearch"
               iconPosition="left"
@@ -133,7 +177,7 @@ const UsersView = () => {
             />
           </Form.Group>
         </Form>
-        <Divider />
+        <Divider className="mb-0" />
         {loading ? (
           <Segment basic padded="very">
             <Dimmer active inverted>
@@ -146,7 +190,10 @@ const UsersView = () => {
               <UserList
                 users={filteredList}
                 groupOptions={groupOptions}
+                orgOptions={orgOptions}
                 updateUser={canUpdateUser ? updateUser : null}
+                addMember={canSignOrg ? addMember : null}
+                removeMember={canSignOrg ? removeMember : null}
               />
             ) : (
               <p>No users data available</p>

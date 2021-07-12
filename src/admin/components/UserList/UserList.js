@@ -6,7 +6,14 @@ import UserItem from './UserItem';
 /**
  * Display a list of users
  */
-const UsersList = ({users, groupOptions, updateUser}) => {
+const UsersList = ({
+  users,
+  groupOptions,
+  updateUser,
+  orgOptions,
+  addMember,
+  removeMember,
+}) => {
   const sortedUsers = users.sort(({node: u1}, {node: u2}) =>
     u1.username.localeCompare(u2.username, 'en-US', {
       caseFirst: 'upper',
@@ -16,7 +23,7 @@ const UsersList = ({users, groupOptions, updateUser}) => {
   );
 
   return (
-    <List relaxed divided>
+    <List relaxed divided className="mt-6">
       {users &&
         sortedUsers.length > 0 &&
         sortedUsers.map(({node}) => (
@@ -25,6 +32,9 @@ const UsersList = ({users, groupOptions, updateUser}) => {
             user={node}
             groupOptions={groupOptions}
             updateUser={updateUser}
+            orgOptions={orgOptions}
+            addMember={addMember}
+            removeMember={removeMember}
           />
         ))}
     </List>
