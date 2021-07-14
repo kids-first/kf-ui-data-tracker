@@ -131,15 +131,20 @@ jobs:
       - run: yarn install
       - run: yarn add netlify-cli
       - run: ./node_modules/.bin/netlify build --context=awsprod
-      - aws-static-site-deploy/copy-site:
-          access-key: AWS_ACCESS_KEY_ID
-          secret-key: AWS_SECRET_ACCESS_KEY
-          to: $S3_BUCKET
+      - aws-s3/sync:
           from: build
-          distribution-id: $CLOUDFRONT_DISTRIBUTION
+          to: $S3_BUCKET
+          aws-access-key-id: AWS_ACCESS_KEY_ID
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+          arguments: |
+            --delete
+      - run:
+          name: "Invalidate CloudFront Cache"
+          command: |
+            aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION --paths "/*"
 
 orbs:
-  aws-static-site-deploy: realself/aws-static-site-deploy@1.0.1
+    aws-s3: circleci/aws-s3@2.0.0
 
 workflows:
   version: 2
