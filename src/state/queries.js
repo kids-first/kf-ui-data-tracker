@@ -500,3 +500,25 @@ export const ALL_VALIDATION_RUNS = gql`
   }
   ${VALIDATION_RUN_FIELDS}
 `;
+
+export const ALL_TEMPLATE_VERSIONS = gql`
+  query allTemplateVersions($studies: [ID]) {
+    allTemplateVersions(studies: $studies) {
+      edges {
+        node {
+          id
+          createdAt
+          modifiedAt
+          dataTemplate {
+            id
+            name
+            description
+            icon
+            createdAt
+            modifiedAt
+          }
+        }
+      }
+    }
+  }
+`;

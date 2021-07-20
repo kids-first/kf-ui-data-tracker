@@ -13,3 +13,4 @@ export {default as LogView} from './LogView';
 export {default as ModelExplorerView} from './ModelExplorerView';
 export {default as GraphiQLView} from './GraphiQLView';
 export {default as OrganizationsView} from './OrganizationsView';
+export {default as TemplatesView} from './TemplatesView';
