@@ -20,6 +20,7 @@ import {
   CollaboratorsView,
   NotFoundView,
   WelcomeView,
+  DataTemplatesView,
 } from '../views';
 import {
   StudyFilesListView,
@@ -47,6 +48,7 @@ import {
   ModelExplorerView,
   GraphiQLView,
   OrganizationsView,
+  TemplatesView,
 } from '../admin/views';
 import ReleaseRoutes from '../releases/routes';
 import TrackedRoute from './TrackedRoute';
@@ -125,6 +127,13 @@ const Routes = () => (
         />
         <RestrictedRoute
           exact
+          path="/templates"
+          component={TemplatesView}
+          scope={['admin', 'templates']}
+          permissions={['view_settings']}
+        />
+        <RestrictedRoute
+          exact
           path="/banners/new-banner"
           component={NewBannerView}
           scope={['admin', 'banners']}
@@ -182,6 +191,11 @@ const Routes = () => (
           path="/study/:kfId"
           component={StudyFilesListView}
           scope={['study', 'documents']}
+        />
+        <PrivateRoute
+          exact
+          path="/study/:kfId/templates"
+          component={DataTemplatesView}
         />
         <PrivateRoute
           exact

@@ -48,7 +48,7 @@ const PermissionGroup = ({groupOptions}) => {
                                 'grey'
                               }
                             />
-                            {permission.value.includes('_')
+                            {permission.key + permission.value.includes('_')
                               ? permission.value.replace('_', ' ')
                               : permission.value}
                           </List.Item>

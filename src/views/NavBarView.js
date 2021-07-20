@@ -5,6 +5,7 @@ import {
   DocumentListHelp,
   ReviewDetailHelp,
   ReviewListHelp,
+  DataTemplatesHelp,
 } from '../documents/components/helpers';
 import React, {useState} from 'react';
 import {useQuery, useMutation} from '@apollo/client';
@@ -106,6 +107,11 @@ const NavBarView = ({match, location, history}) => {
             exact
             path="/study/:kfId/reviews/:reviewId(DR_\w{8})/validation"
             component={DataValidationHelp}
+          />
+          <Route
+            exact
+            path="/study/:kfId/templates"
+            component={DataTemplatesHelp}
           />
         </Switch>
       </Container>
