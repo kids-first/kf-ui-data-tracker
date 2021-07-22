@@ -28,20 +28,24 @@ const ReviewVersions = ({
   downloadFileMutation,
   canAddFile,
 }) => {
-  const groupType = ['PDA', 'GWO', 'SEQ', 'S3S'];
+  const groupType = Object.keys(fileTypeDetail)
+    .map(type =>
+      fileTypeDetail[type].requiredColumns.length > 0 ? type : null,
+    )
+    .filter(type => type !== null);
   const groupVersions = () => {
     const versions = reviewNode ? reviewNode.versions.edges : [];
     var versionGroups = {
-      PDA: [],
-      GWO: [],
-      SEQ: [],
-      S3S: [],
       OTHER: [],
     };
     if (versions.length > 0) {
       versions.forEach(({node}) => {
         if (groupType.includes(node.rootFile.fileType)) {
-          versionGroups[node.rootFile.fileType].push(node);
+          if (versionGroups[node.rootFile.fileType]) {
+            versionGroups[node.rootFile.fileType].push(node);
+          } else {
+            versionGroups[node.rootFile.fileType] = [node];
+          }
         } else {
           versionGroups.OTHER.push(node);
         }
@@ -102,7 +106,7 @@ const ReviewVersions = ({
               </Table.HeaderCell>
             </Table.Row>
           </Table.Header>
-          {groupedVersions[type].length > 0 ? (
+          {groupedVersions[type] && groupedVersions[type].length > 0 ? (
             <Table.Body>
               {groupedVersions[type].map(node => (
                 <Table.Row key={node.id}>
