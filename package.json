@@ -60,7 +60,7 @@
     "semantic-ui-react": "^0.88.2",
     "string-similarity": "^3.0.0",
     "uuid": "^8.3.2",
-    "xlsx": "^0.16.6"
+    "xlsx": "^0.17.0"
   },
   "resolutions": {
     "babel-core": "7.0.0-bridge.0"
