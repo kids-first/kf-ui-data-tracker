@@ -1,5 +1,19 @@
 # Kids First Data Tracker Change History
 
+## Release 0.21.1
+
+### Summary
+
+- Emojis: ✨ x1, ♻️ x2
+- Categories: Additions x1, Other Changes x2
+
+### New features and changes
+
+- [#1081](https://github.com/kids-first/kf-ui-data-tracker/pull/1081) - ✨ Set document type groups for review - [46b0fc69](https://github.com/kids-first/kf-ui-data-tracker/commit/46b0fc69536c7aa1bb20d14fee7d5b89e3fbfe36) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#1079](https://github.com/kids-first/kf-ui-data-tracker/pull/1079) - ♻️ Reduce required cols in file types to match backend - [ab9c39f5](https://github.com/kids-first/kf-ui-data-tracker/commit/ab9c39f560fb8ff97df60974af5430b5aa31ffbc) by [znatty22](https://github.com/znatty22)
+- [#1077](https://github.com/kids-first/kf-ui-data-tracker/pull/1077) - ♻️ Replace static site orb with s3 orb - [f52168a7](https://github.com/kids-first/kf-ui-data-tracker/commit/f52168a799199d18053c6124428e612f9a8d468c) by [dankolbman](https://github.com/dankolbman)
+
+
 ## Release 0.21.0
 
 ### Summary
