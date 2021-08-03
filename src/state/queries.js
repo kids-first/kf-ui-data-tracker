@@ -507,7 +507,6 @@ export const ALL_TEMPLATE_VERSIONS = gql`
       edges {
         node {
           id
-          shortId
           createdAt
           modifiedAt
           fieldDefinitions
@@ -522,7 +521,6 @@ export const ALL_TEMPLATE_VERSIONS = gql`
           }
           dataTemplate {
             id
-            shortId
             name
             description
             icon

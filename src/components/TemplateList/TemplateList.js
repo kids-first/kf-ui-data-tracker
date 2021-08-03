@@ -111,7 +111,14 @@ const TemplateList = ({
     if (selection.length === filtered.length) {
       setSelection([]);
     } else {
-      setSelection(filtered.map(({node}) => node.shortId));
+      setSelection(
+        filtered.map(
+          ({node}) =>
+            Buffer.from(node.id, 'base64')
+              .toString('utf8')
+              .split(':')[1],
+        ),
+      );
     }
   };
 
@@ -256,7 +263,11 @@ const TemplateList = ({
                 onClick={e => {
                   e.stopPropagation();
                   if (setSelection) {
-                    onSelectOne(node.shortId);
+                    onSelectOne(
+                      Buffer.from(node.id, 'base64')
+                        .toString('utf8')
+                        .split(':')[1],
+                    );
                   }
                 }}
               >
@@ -264,7 +275,11 @@ const TemplateList = ({
                   <Table.Cell textAlign="center">
                     <Checkbox
                       data-testid="file-select"
-                      checked={selection.includes(node.shortId)}
+                      checked={selection.includes(
+                        Buffer.from(node.id, 'base64')
+                          .toString('utf8')
+                          .split(':')[1],
+                      )}
                     />
                   </Table.Cell>
                 ) : (
