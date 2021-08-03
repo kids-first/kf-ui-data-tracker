@@ -513,6 +513,8 @@ export const permissionIcon = {
   ingestrun: 'search',
   validationrun: 'code',
   validationresultset: 'code',
+  datatemplate: 'file excel',
+  organization: 'group',
 };
 
 // Icon color for different permissions
