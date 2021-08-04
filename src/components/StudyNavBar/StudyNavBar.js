@@ -14,6 +14,10 @@ const StudyNavBar = ({match, history, isBeta}) => {
       endString: 'basic-info/info',
     },
     {
+      tab: 'Data Templates',
+      endString: 'templates',
+    },
+    {
       tab: 'Documents',
       endString: 'documents',
     },
@@ -43,7 +47,7 @@ const StudyNavBar = ({match, history, isBeta}) => {
     .filter(e => e !== '')[2];
   return (
     <Menu color="pink" compact secondary pointing>
-      {navList.slice(0, isBeta ? 7 : 6).map((item, i) => (
+      {navList.slice(0, isBeta ? 8 : 7).map((item, i) => (
         <Menu.Item
           key={i}
           name={item.tab}

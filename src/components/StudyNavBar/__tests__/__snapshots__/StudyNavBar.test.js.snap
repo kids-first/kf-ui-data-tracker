@@ -12,6 +12,12 @@ exports[`renders StudyNavBar correctly -- beta look 1`] = `
       Basic Info
     </a>
     <a
+      class="item"
+      href="/study/SD_8WX8QQ06/templates"
+    >
+      Data Templates
+    </a>
+    <a
       aria-current="page"
       class="active item active"
       href="/study/SD_8WX8QQ06/documents"
@@ -56,6 +62,12 @@ exports[`renders StudyNavBar correctly -- default look 1`] = `
       href="/study/SD_8WX8QQ06/basic-info/info"
     >
       Basic Info
+    </a>
+    <a
+      class="item"
+      href="/study/SD_8WX8QQ06/templates"
+    >
+      Data Templates
     </a>
     <a
       aria-current="page"

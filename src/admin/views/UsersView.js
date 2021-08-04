@@ -40,7 +40,6 @@ const UsersView = () => {
           value: node.id,
           image: {
             avatar: true,
-            circular: true,
             src: node.image || defaultLogo,
             alt: node.name,
           },

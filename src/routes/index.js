@@ -20,6 +20,7 @@ import {
   CollaboratorsView,
   NotFoundView,
   WelcomeView,
+  DataTemplatesView,
 } from '../views';
 import {
   StudyFilesListView,
@@ -182,6 +183,11 @@ const Routes = () => (
           path="/study/:kfId"
           component={StudyFilesListView}
           scope={['study', 'documents']}
+        />
+        <PrivateRoute
+          exact
+          path="/study/:kfId/templates"
+          component={DataTemplatesView}
         />
         <PrivateRoute
           exact

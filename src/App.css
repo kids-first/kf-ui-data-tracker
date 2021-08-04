@@ -170,6 +170,10 @@ body {
   padding-left: 16px !important;
 }
 
+.pl-45 {
+  padding-left: 45px !important;
+}
+
 .pt-3 {
   padding-top: 3px !important;
 }
@@ -186,12 +190,20 @@ body {
     min-height: 22px !important;
 }
 
+.min-h-605 {
+    min-height: 605px !important;
+}
+
 .w-200 {
   width: 200px !important;
 }
 
 .w-600 {
   width: 600px !important;
+}
+
+.min-w-200 {
+  min-width: 200px;
 }
 
 .mt-6 {
@@ -311,7 +323,7 @@ body {
 }
 
 .text-left {
-    text-align: left;
+    text-align: left !important;
 }
 
 .text-right {
@@ -326,6 +338,10 @@ body {
     color: #676767 !important;
 }
 
+.text-black {
+    color: #000000 !important;
+}
+
 .text-primary {
     color: #1678c2 !important;
 }
@@ -336,6 +352,10 @@ body {
 
 .vertical-middle {
     vertical-align: middle !important;
+}
+
+.align-center  {
+  align-items: center;
 }
 
 .selectionRadio--card {
@@ -531,6 +551,12 @@ body {
     position: relative;
 }
 
+.no-border {
+  input {
+    border: none !important;
+  }
+}
+
 .ui.form .fields > .field.expand,
 .ui.form .fields > .input.expand {
     flex-grow: 1;
@@ -668,4 +694,16 @@ code.label {
   top: 0;
   bottom: 0;
   width: 80%;
+}
+
+.image-input {
+  div {
+    i::before {
+      content: "" !important;;
+    }
+    i {
+      margin-left: 5px !important;
+      margin-top: 5px !important;
+    }
+  }
 }

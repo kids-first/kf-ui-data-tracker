@@ -61,6 +61,12 @@ const AdminDropdown = ({profile}) => {
       permission: 'view_study',
     },
     {
+      name: 'Templates',
+      route: '/templates',
+      icon: 'file excel',
+      permission: 'view_settings',
+    },
+    {
       name: 'Events',
       route: '/events',
       icon: 'history',

@@ -105,7 +105,7 @@ const UserItem = ({
         />
       </List.Description>
     </List.Content>
-    <List.Content floated="right">
+    <List.Content floated="right" className="min-w-200">
       <Actions
         user={user}
         groupOptions={groupOptions}
