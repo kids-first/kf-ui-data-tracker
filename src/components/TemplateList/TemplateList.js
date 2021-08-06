@@ -10,10 +10,13 @@ import {
   Button,
   Input,
   Divider,
+  Segment,
+  Header,
 } from 'semantic-ui-react';
 import TimeAgo from 'react-timeago';
 import {longDate} from '../../common/dateUtils';
 import {dataTemplateIcons} from '../../common/enums';
+import {dateSort, stringSort, booleanSort} from '../../common/sortUtils';
 
 /**
  * Data template list displays admin created templates for file process
@@ -35,10 +38,8 @@ const TemplateList = ({
   const [filter, setFilter] = useState('');
   const [search, setSearch] = useState('');
 
-  const dateSort = (a, b) => new Date(a) - new Date(b);
-  const stringSort = (a, b) =>
-    a !== null && b !== null ? a.localeCompare(b) : 0;
-  const booleanSort = (a, b) => (a === b ? 0 : a ? -1 : 1);
+  const defaultLogo =
+    'https://raw.githubusercontent.com/kids-first/kf-ui-data-tracker/master/src/assets/logo.svg';
 
   const columnSorts = {
     name: (f1, f2) =>
@@ -150,6 +151,7 @@ const TemplateList = ({
             icon="search"
             iconPosition="left"
             placeholder="Search templates..."
+            disabled={templates.length === 0}
             onChange={(e, {value}) => {
               setSearch(value);
             }}
@@ -160,6 +162,7 @@ const TemplateList = ({
             selection
             clearable
             placeholder="Organizations"
+            disabled={templates.length === 0}
             value={filter}
             options={orgOptions}
             onChange={(ev, data) => {
@@ -185,293 +188,303 @@ const TemplateList = ({
           )}
         </>
       )}
-      <Table singleLine stackable selectable sortable compact celled>
-        <Table.Header>
-          <Table.Row>
-            {setSelection ? (
-              <Table.HeaderCell
-                textAlign="center"
-                width="1"
-                onClick={e => {
-                  e.stopPropagation();
-                  onSelectAll();
-                }}
-              >
-                <Checkbox checked={selection.length === filtered.length} />
-              </Table.HeaderCell>
-            ) : (
-              <Table.HeaderCell
-                textAlign="center"
-                width="1"
-                sorted={
-                  sorting.column === 'organization' ? sorting.direction : null
-                }
-                onClick={handleSort('organization')}
-              >
-                Org
-              </Table.HeaderCell>
-            )}
-            <Table.HeaderCell textAlign="center" width="1">
-              Icon
-            </Table.HeaderCell>
-            <Table.HeaderCell
-              sorted={sorting.column === 'name' ? sorting.direction : null}
-              onClick={handleSort('name')}
-            >
-              Name
-            </Table.HeaderCell>
-            {!setSelection && (
-              <Table.HeaderCell
-                width="1"
-                sorted={sorting.column === 'studies' ? sorting.direction : null}
-                onClick={handleSort('studies')}
-              >
-                Used in Studies
-              </Table.HeaderCell>
-            )}
-            <Table.HeaderCell
-              sorted={
-                sorting.column === 'description' ? sorting.direction : null
-              }
-              onClick={handleSort('description')}
-            >
-              Description
-            </Table.HeaderCell>
-            <Table.HeaderCell
-              sorted={
-                sorting.column === 'modifiedAt' ? sorting.direction : null
-              }
-              textAlign="center"
-              width="1"
-              onClick={handleSort('modifiedAt')}
-            >
-              Last Modified
-            </Table.HeaderCell>
-            {!setSelection && (
-              <Table.HeaderCell textAlign="center" width="1">
-                Actions
-              </Table.HeaderCell>
-            )}
-          </Table.Row>
-        </Table.Header>
-        <Table.Body>
-          {filtered.length > 0 ? (
-            filtered.map(({node}) => (
-              <Table.Row
-                key={node.id}
-                className="cursor-pointer"
-                onClick={e => {
-                  e.stopPropagation();
-                  if (setSelection) {
-                    onSelectOne(
-                      Buffer.from(node.id, 'base64')
-                        .toString('utf8')
-                        .split(':')[1],
-                    );
+      {templates.length > 0 ? (
+        <Table singleLine stackable selectable sortable compact celled>
+          <Table.Header>
+            <Table.Row>
+              {setSelection ? (
+                <Table.HeaderCell
+                  textAlign="center"
+                  width="1"
+                  onClick={e => {
+                    e.stopPropagation();
+                    onSelectAll();
+                  }}
+                >
+                  <Checkbox checked={selection.length === filtered.length} />
+                </Table.HeaderCell>
+              ) : (
+                <Table.HeaderCell
+                  textAlign="center"
+                  width="1"
+                  sorted={
+                    sorting.column === 'organization' ? sorting.direction : null
                   }
-                }}
+                  onClick={handleSort('organization')}
+                >
+                  Org
+                </Table.HeaderCell>
+              )}
+              <Table.HeaderCell textAlign="center" width="1">
+                Icon
+              </Table.HeaderCell>
+              <Table.HeaderCell
+                sorted={sorting.column === 'name' ? sorting.direction : null}
+                onClick={handleSort('name')}
               >
-                {setSelection ? (
-                  <Table.Cell textAlign="center">
-                    <Checkbox
-                      data-testid="file-select"
-                      checked={selection.includes(
+                Name
+              </Table.HeaderCell>
+              {!setSelection && (
+                <Table.HeaderCell
+                  width="1"
+                  sorted={
+                    sorting.column === 'studies' ? sorting.direction : null
+                  }
+                  onClick={handleSort('studies')}
+                >
+                  Used in Studies
+                </Table.HeaderCell>
+              )}
+              <Table.HeaderCell
+                sorted={
+                  sorting.column === 'description' ? sorting.direction : null
+                }
+                onClick={handleSort('description')}
+              >
+                Description
+              </Table.HeaderCell>
+              <Table.HeaderCell
+                sorted={
+                  sorting.column === 'modifiedAt' ? sorting.direction : null
+                }
+                textAlign="center"
+                width="1"
+                onClick={handleSort('modifiedAt')}
+              >
+                Last Modified
+              </Table.HeaderCell>
+              {!setSelection && (
+                <Table.HeaderCell textAlign="center" width="1">
+                  Actions
+                </Table.HeaderCell>
+              )}
+            </Table.Row>
+          </Table.Header>
+          <Table.Body>
+            {filtered.length > 0 ? (
+              filtered.map(({node}) => (
+                <Table.Row
+                  key={node.id}
+                  className="cursor-pointer"
+                  onClick={e => {
+                    e.stopPropagation();
+                    if (setSelection) {
+                      onSelectOne(
                         Buffer.from(node.id, 'base64')
                           .toString('utf8')
                           .split(':')[1],
-                      )}
+                      );
+                    }
+                  }}
+                >
+                  {setSelection ? (
+                    <Table.Cell textAlign="center">
+                      <Checkbox
+                        data-testid="file-select"
+                        checked={selection.includes(
+                          Buffer.from(node.id, 'base64')
+                            .toString('utf8')
+                            .split(':')[1],
+                        )}
+                      />
+                    </Table.Cell>
+                  ) : (
+                    <Popup
+                      position="top center"
+                      content={node.dataTemplate.organization.name}
+                      trigger={
+                        <Table.Cell textAlign="center">
+                          <Image
+                            avatar
+                            src={
+                              node.dataTemplate.organization.image ||
+                              defaultLogo
+                            }
+                          />
+                        </Table.Cell>
+                      }
+                    />
+                  )}
+                  <Table.Cell textAlign="center">
+                    <Icon
+                      name={
+                        node.dataTemplate.icon &&
+                        dataTemplateIcons.includes(node.dataTemplate.icon)
+                          ? node.dataTemplate.icon
+                          : 'file outline'
+                      }
                     />
                   </Table.Cell>
-                ) : (
                   <Popup
                     position="top center"
-                    content={node.dataTemplate.organization.name}
+                    disabled={node.dataTemplate.name.length <= 50}
+                    content={node.dataTemplate.name}
                     trigger={
-                      <Table.Cell textAlign="center">
-                        <Image
-                          avatar
-                          src={node.dataTemplate.organization.image}
-                        />
+                      <Table.Cell>
+                        {node.dataTemplate.name.substring(0, 50)}
+                        {node.dataTemplate.name.length > 50 && '...'}
                       </Table.Cell>
                     }
                   />
-                )}
-                <Table.Cell textAlign="center">
-                  <Icon
-                    name={
-                      node.dataTemplate.icon &&
-                      dataTemplateIcons.includes(node.dataTemplate.icon)
-                        ? node.dataTemplate.icon
-                        : 'file outline'
+                  {!setSelection && (
+                    <Table.Cell
+                      textAlign="center"
+                      sorted={
+                        sorting.column === 'studies' ? sorting.direction : null
+                      }
+                      onClick={handleSort('studies')}
+                    >
+                      {node.studies && node.studies.edges.length > 0 ? (
+                        <Icon name="check" />
+                      ) : (
+                        <Icon name="window minimize outline" />
+                      )}
+                    </Table.Cell>
+                  )}
+                  <Popup
+                    wide
+                    position="top center"
+                    disabled={node.dataTemplate.description.length <= 75}
+                    content={node.dataTemplate.description}
+                    trigger={
+                      <Table.Cell>
+                        {node.dataTemplate.description.substring(0, 75)}
+                        {node.dataTemplate.description.length > 75 && '...'}
+                      </Table.Cell>
                     }
                   />
-                </Table.Cell>
-                <Popup
-                  position="top center"
-                  disabled={node.dataTemplate.name.length <= 50}
-                  content={node.dataTemplate.name}
-                  trigger={
-                    <Table.Cell>
-                      {node.dataTemplate.name.substring(0, 50)}
-                      {node.dataTemplate.name.length > 50 && '...'}
-                    </Table.Cell>
-                  }
-                />
-                {!setSelection && (
-                  <Table.Cell
-                    textAlign="center"
-                    sorted={
-                      sorting.column === 'studies' ? sorting.direction : null
-                    }
-                    onClick={handleSort('studies')}
-                  >
-                    {node.studies && node.studies.edges.length > 0 ? (
-                      <Icon name="check" />
-                    ) : (
-                      <Icon name="window minimize outline" />
-                    )}
-                  </Table.Cell>
-                )}
-                <Popup
-                  wide
-                  position="top center"
-                  disabled={node.dataTemplate.description.length <= 75}
-                  content={node.dataTemplate.description}
-                  trigger={
-                    <Table.Cell>
-                      {node.dataTemplate.description.substring(0, 75)}
-                      {node.dataTemplate.description.length > 75 && '...'}
-                    </Table.Cell>
-                  }
-                />
-                <Table.Cell textAlign="center">
-                  <TimeAgo
-                    date={node.dataTemplate.modifiedAt}
-                    live={false}
-                    title={longDate(node.dataTemplate.modifiedAt)}
-                  />
-                </Table.Cell>
-                {!setSelection && (
                   <Table.Cell textAlign="center">
-                    <Button.Group fluid size="small">
-                      <Popup
-                        inverted
-                        position="top center"
-                        content="Edit"
-                        trigger={
-                          <Button
-                            basic
-                            compact
-                            icon="pencil"
-                            onClick={e => {
-                              e.stopPropagation();
-                              e.preventDefault();
-                              setFieldValue('id', node.dataTemplate.id);
-                              setFieldValue('versionId', node.id);
-                              setFieldValue('name', node.dataTemplate.name);
-                              setFieldValue(
-                                'description',
-                                node.dataTemplate.description,
-                              );
-                              setFieldValue(
-                                'icon',
-                                node.dataTemplate.icon || '',
-                              );
-                              setFieldValue(
-                                'organization',
-                                node.dataTemplate.organization.id,
-                              );
-                              setFieldValue('origin', {
-                                name: node.dataTemplate.name,
-                                description: node.dataTemplate.description,
-                                icon: node.dataTemplate.icon || '',
-                                organization: node.dataTemplate.organization.id,
-                              });
-                              setFieldValue(
-                                'fieldDefinitions',
-                                node.fieldDefinitions,
-                              );
-                              const fieldDefinitions = JSON.parse(
-                                node.fieldDefinitions,
-                              ).fields.map((f, index) => ({
-                                ...f,
-                                tempId: String(index),
-                              }));
-                              setFieldData(fieldDefinitions);
-                              const studyList =
-                                node.studies && node.studies.edges.length > 0
-                                  ? node.studies.edges.map(({node}) => node.id)
-                                  : [];
-                              setFieldValue('studies', studyList);
-                              setStudySelect(studyList);
-                              setOpen('Save');
-                            }}
-                          />
-                        }
-                      />
-                      <Popup
-                        inverted
-                        position="top center"
-                        content="Download"
-                        trigger={
-                          <Button
-                            basic
-                            compact
-                            icon="download"
-                            onClick={e => {
-                              e.stopPropagation();
-                              e.preventDefault();
-                            }}
-                          />
-                        }
-                      />
-                      <Popup
-                        position="top center"
-                        header="Are you sure?"
-                        content={
-                          <>
-                            This template will be deleted and removed from all
-                            related studies.
-                            <Divider />
-                            <Button
-                              negative
-                              fluid
-                              icon={<Icon name="trash alternate" />}
-                              content="Delete"
-                              onClick={e => {
-                                e.stopPropagation();
-                              }}
-                            />
-                          </>
-                        }
-                        on="click"
-                        trigger={
-                          <Button
-                            basic
-                            compact
-                            icon="trash alternate"
-                            onClick={e => {
-                              e.stopPropagation();
-                              e.preventDefault();
-                            }}
-                          />
-                        }
-                      />
-                    </Button.Group>
+                    <TimeAgo
+                      date={node.dataTemplate.modifiedAt}
+                      live={false}
+                      title={longDate(node.dataTemplate.modifiedAt)}
+                    />
                   </Table.Cell>
-                )}
+                  {!setSelection && (
+                    <Table.Cell textAlign="center">
+                      {organization === node.dataTemplate.organization.id ? (
+                        <Button.Group fluid size="small">
+                          <Popup
+                            inverted
+                            position="top center"
+                            content="Edit"
+                            trigger={
+                              <Button
+                                basic
+                                compact
+                                icon="pencil"
+                                onClick={e => {
+                                  e.stopPropagation();
+                                  e.preventDefault();
+                                  setFieldValue('id', node.dataTemplate.id);
+                                  setFieldValue('versionId', node.id);
+                                  setFieldValue('name', node.dataTemplate.name);
+                                  setFieldValue(
+                                    'description',
+                                    node.dataTemplate.description,
+                                  );
+                                  setFieldValue(
+                                    'icon',
+                                    node.dataTemplate.icon || '',
+                                  );
+                                  setFieldValue(
+                                    'organization',
+                                    node.dataTemplate.organization.id,
+                                  );
+                                  setFieldValue('origin', {
+                                    name: node.dataTemplate.name,
+                                    description: node.dataTemplate.description,
+                                    icon: node.dataTemplate.icon || '',
+                                    organization:
+                                      node.dataTemplate.organization.id,
+                                  });
+                                  setFieldValue(
+                                    'fieldDefinitions',
+                                    node.fieldDefinitions,
+                                  );
+                                  const fieldDefinitions = JSON.parse(
+                                    node.fieldDefinitions,
+                                  ).fields.map((f, index) => ({
+                                    ...f,
+                                    tempId: String(index),
+                                  }));
+                                  setFieldValue(
+                                    'existFields',
+                                    fieldDefinitions,
+                                  );
+                                  setFieldData(fieldDefinitions);
+                                  const studyList =
+                                    node.studies &&
+                                    node.studies.edges.length > 0
+                                      ? node.studies.edges.map(
+                                          ({node}) => node.id,
+                                        )
+                                      : [];
+                                  setFieldValue('studies', studyList);
+                                  setStudySelect(studyList);
+                                  setOpen('Save');
+                                }}
+                              />
+                            }
+                          />
+                          <Popup
+                            position="top center"
+                            header="Are you sure?"
+                            content={
+                              <>
+                                This template will be deleted and removed from
+                                all related studies.
+                                <Divider />
+                                <Button
+                                  negative
+                                  fluid
+                                  icon={<Icon name="trash alternate" />}
+                                  content="Delete"
+                                  onClick={e => {
+                                    e.stopPropagation();
+                                  }}
+                                />
+                              </>
+                            }
+                            on="click"
+                            trigger={
+                              <Button
+                                basic
+                                compact
+                                icon="trash alternate"
+                                onClick={e => {
+                                  e.stopPropagation();
+                                  e.preventDefault();
+                                }}
+                              />
+                            }
+                          />
+                        </Button.Group>
+                      ) : (
+                        <span className="text-grey">--</span>
+                      )}
+                    </Table.Cell>
+                  )}
+                </Table.Row>
+              ))
+            ) : (
+              <Table.Row disabled>
+                <Table.Cell colSpan="6" textAlign="center" className="py-14">
+                  No data templates matching your search term. Try searching by
+                  template name or description.
+                </Table.Cell>
               </Table.Row>
-            ))
-          ) : (
-            <Table.Row disabled>
-              <Table.Cell colSpan="6" textAlign="center" className="py-14">
-                No data templates matching your search term. Try searching by
-                template name or description.
-              </Table.Cell>
-            </Table.Row>
-          )}
-        </Table.Body>
-      </Table>
+            )}
+          </Table.Body>
+        </Table>
+      ) : (
+        <Segment placeholder>
+          <Header icon disabled>
+            <Icon name="file outline" />
+            No data templates created
+          </Header>
+        </Segment>
+      )}
     </>
   );
 };
