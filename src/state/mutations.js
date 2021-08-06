@@ -630,3 +630,25 @@ export const UPDATE_DATA_TEMPLATE = gql`
   }
 `;
 
+export const CREATE_TEMPLATE_VERSION = gql`
+  mutation createTemplateVersion($input: CreateTemplateVersionInput!) {
+    createTemplateVersion(input: $input) {
+      templateVersion {
+        id
+      }
+    }
+  }
+`;
+
+export const UPDATE_TEMPLATE_VERSION = gql`
+  mutation updateTemplateVersion(
+    $id: ID!
+    $input: UpdateTemplateVersionInput!
+  ) {
+    updateTemplateVersion(id: $id, input: $input) {
+      templateVersion {
+        id
+      }
+    }
+  }
+`;
