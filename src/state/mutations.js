@@ -596,3 +596,15 @@ export const REMOVE_MEMBER = gql`
     }
   }
 `;
+
+export const UPLOAD_FIEID_DEFINITIONS = gql`
+  mutation uploadFieldDefinitions($file: Upload!) {
+    uploadFieldDefinitions(file: $file) {
+      success
+      fileName
+      fileSize
+      fieldDefinitions
+    }
+  }
+`;
+
