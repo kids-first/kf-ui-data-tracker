@@ -608,3 +608,25 @@ export const UPLOAD_FIEID_DEFINITIONS = gql`
   }
 `;
 
+export const CREATE_DATA_TEMPLATE = gql`
+  mutation createDataTemplate($input: CreateDataTemplateInput!) {
+    createDataTemplate(input: $input) {
+      dataTemplate {
+        id
+        name
+      }
+    }
+  }
+`;
+
+export const UPDATE_DATA_TEMPLATE = gql`
+  mutation updateDataTemplate($id: ID!, $input: UpdateDataTemplateInput!) {
+    updateDataTemplate(id: $id, input: $input) {
+      dataTemplate {
+        id
+        name
+      }
+    }
+  }
+`;
+
