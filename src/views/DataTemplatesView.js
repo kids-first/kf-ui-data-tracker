@@ -45,6 +45,17 @@ const DataTemplatesView = ({match}) => {
   const allTemplates = data && data.allTemplateVersions;
   const {data: profileData, error: userError} = useQuery(MY_PROFILE);
   const myProfile = profileData && profileData.myProfile;
+  const organizations = myProfile && myProfile.organizations;
+  var currentOrg;
+  try {
+    currentOrg = JSON.parse(localStorage.getItem('currentOrganization'));
+  } catch (e) {
+    currentOrg = null;
+  }
+  if (!currentOrg) {
+    currentOrg = organizations && organizations.edges[0].node;
+    localStorage.setItem('currentOrganization', JSON.stringify(currentOrg));
+  }
 
   const allowView =
     myProfile &&
@@ -145,6 +156,7 @@ const DataTemplatesView = ({match}) => {
             templates={allTemplates.edges}
             selection={selection}
             setSelection={setSelection}
+            organization={currentOrg}
           />
         ) : (
           <Segment placeholder>

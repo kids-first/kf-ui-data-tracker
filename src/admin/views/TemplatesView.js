@@ -75,9 +75,6 @@ const TemplatesView = () => {
 
   const {error: studyError, data: studyData} = useQuery(ALL_STUDIES, {
     fetchPolicy: 'cache-first',
-    variables: {
-      organization: currentOrg && currentOrg.id,
-    },
   });
   const allStudies = studyData && studyData.allStudies;
   const studyList = allStudies ? allStudies.edges : [];
@@ -210,7 +207,7 @@ const TemplatesView = () => {
           name: '',
           description: '',
           icon: 'file excel',
-          organization: currentOrg.id,
+          organization: {},
           fieldDefinitions: '',
           studies: [],
           origin: {},
@@ -244,7 +241,7 @@ const TemplatesView = () => {
                 <TemplateList
                   templates={allTemplates.edges}
                   setOpen={setOpen}
-                  organization={currentOrg.id}
+                  organization={currentOrg}
                   setFieldValue={formikProps.setFieldValue}
                   setFieldData={setFieldData}
                   setStudySelect={setStudySelect}
@@ -373,7 +370,11 @@ const TemplatesView = () => {
                     />
                   )}
                   <Button
-                    content="Cancel"
+                    content={
+                      currentOrg.id === formikProps.values.organization.id
+                        ? 'Close'
+                        : 'Cancel'
+                    }
                     onClick={() => {
                       setOpen('');
                       setCurrentStep(0);
@@ -383,76 +384,78 @@ const TemplatesView = () => {
                       setEditConfirm(false);
                     }}
                   />
-                  <Button
-                    primary
-                    content={open}
-                    icon={open === 'Create' ? 'add' : 'save'}
-                    labelPosition="right"
-                    disabled={
-                      Object.keys(formikProps.errors).length > 0 ||
-                      fieldData.length === 0 ||
-                      editing.length > 0
-                    }
-                    onClick={() => {
-                      setCreationError('');
-                      const templateInput = {
-                        name: formikProps.values.name,
-                        description: formikProps.values.description,
-                        icon: formikProps.values.icon,
-                        organization: formikProps.values.organization,
-                      };
-                      const fieldDefInput = {
-                        fields: fieldData.map(f => ({
-                          accepted_values: f.accepted_values,
-                          data_type: f.data_type,
-                          description: f.description,
-                          instructions: f.instructions,
-                          key: f.key,
-                          label: f.label,
-                          missing_values: f.missing_values,
-                          required: f.required,
-                        })),
-                      };
-                      if (open === 'Create') {
-                        setCreating('Creating data template');
-                        createDataTemplate({
-                          variables: {input: templateInput},
-                        })
-                          .then(resp => {
-                            createTemplateVersion({
-                              variables: {
-                                input: {
-                                  dataTemplate:
-                                    resp.data.createDataTemplate.dataTemplate
-                                      .id,
-                                  description: 'init template fields',
-                                  fieldDefinitions: JSON.stringify(
-                                    fieldDefInput,
-                                  ),
-                                  studies: studySelect,
-                                },
-                              },
-                            })
-                              .then(resp => {
-                                setCreating('');
-                                setOpen('');
-                              })
-                              .catch(err => {
-                                console.log(err);
-                                setCreationError(err.message);
-                                setCreating('');
-                              });
-                          })
-                          .catch(err => {
-                            console.log(err);
-                            setCreationError(err.message);
-                            setCreating('');
-                          });
-                      } else if (open === 'Save') {
-                        setEditConfirm(true);
+                  {currentOrg.id === formikProps.values.organization.id && (
+                    <Button
+                      primary
+                      content={open}
+                      icon={open === 'Create' ? 'add' : 'save'}
+                      labelPosition="right"
+                      disabled={
+                        Object.keys(formikProps.errors).length > 0 ||
+                        fieldData.length === 0 ||
+                        editing.length > 0
                       }
-                    }}
-                  />
+                      onClick={() => {
+                        setCreationError('');
+                        const templateInput = {
+                          name: formikProps.values.name,
+                          description: formikProps.values.description,
+                          icon: formikProps.values.icon,
+                          organization: currentOrg.id,
+                        };
+                        const fieldDefInput = {
+                          fields: fieldData.map(f => ({
+                            accepted_values: f.accepted_values,
+                            data_type: f.data_type,
+                            description: f.description,
+                            instructions: f.instructions,
+                            key: f.key,
+                            label: f.label,
+                            missing_values: f.missing_values,
+                            required: f.required,
+                          })),
+                        };
+                        if (open === 'Create') {
+                          setCreating('Creating data template');
+                          createDataTemplate({
+                            variables: {input: templateInput},
+                          })
+                            .then(resp => {
+                              createTemplateVersion({
+                                variables: {
+                                  input: {
+                                    dataTemplate:
+                                      resp.data.createDataTemplate.dataTemplate
+                                        .id,
+                                    description: 'init template fields',
+                                    fieldDefinitions: JSON.stringify(
+                                      fieldDefInput,
+                                    ),
+                                    studies: studySelect,
+                                  },
+                                },
+                              })
+                                .then(resp => {
+                                  setCreating('');
+                                  setOpen('');
+                                })
+                                .catch(err => {
+                                  console.log(err);
+                                  setCreationError(err.message);
+                                  setCreating('');
+                                });
+                            })
+                            .catch(err => {
+                              console.log(err);
+                              setCreationError(err.message);
+                              setCreating('');
+                            });
+                        } else if (open === 'Save') {
+                          setEditConfirm(true);
+                        }
+                      }}
+                    />
+                  )}
                 </Modal.Actions>
               </Modal>
             )}

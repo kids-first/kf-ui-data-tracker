@@ -44,6 +44,7 @@ export const EditRow = ({
   setEditing,
   fieldData,
   setFieldData,
+  editable,
 }) => {
   const [fieldInput, setFieldInput] = useState(field);
   return (
@@ -156,91 +157,93 @@ export const EditRow = ({
           }}
         />
       </Table.Cell>
-      <Table.Cell textAlign="center">
-        <Button.Group fluid size="small">
-          <Popup
-            inverted
-            position="top center"
-            content="Save"
-            trigger={
-              <Button
-                basic
-                compact
-                icon="save"
-                onClick={e => {
-                  e.stopPropagation();
-                  e.preventDefault();
-                  setEditing([...editing].filter(i => i !== field.tempId));
-                  const editedField = {
-                    accepted_values: fieldInput.accepted_values
-                      ? fieldInput.accepted_values.filter(v => v !== '')
-                      : null,
-                    data_type: fieldInput.data_type,
-                    description: fieldInput.description,
-                    instructions: fieldInput.instructions,
-                    key: fieldInput.key,
-                    label: fieldInput.label,
-                    missing_values: fieldInput.missing_values
-                      ? fieldInput.missing_values.filter(v => v !== '')
-                      : null,
-                    required: fieldInput.required,
-                    tempId: fieldInput.tempId,
-                  };
-                  if (
-                    fieldData.length > 0 &&
-                    fieldData.filter(obj => obj.tempId === fieldInput.tempId)
-                      .length > 0
-                  ) {
-                    setFieldData([
-                      ...fieldData.filter(
-                        obj => obj.tempId !== fieldInput.tempId,
-                      ),
-                      editedField,
-                    ]);
-                  } else {
-                    setFieldData([...fieldData, editedField]);
-                  }
-                }}
-              />
-            }
-          />
-          <Popup
-            position="top center"
-            header="Are you sure?"
-            content={
-              <>
-                This field will be removed from current template
-                <Divider />
+      {editable && (
+        <Table.Cell textAlign="center">
+          <Button.Group fluid size="small">
+            <Popup
+              inverted
+              position="top center"
+              content="Save"
+              trigger={
                 <Button
-                  negative
-                  fluid
-                  icon={<Icon name="trash alternate" />}
-                  content="Delete"
+                  basic
+                  compact
+                  icon="save"
                   onClick={e => {
                     e.stopPropagation();
+                    e.preventDefault();
                     setEditing([...editing].filter(i => i !== field.tempId));
-                    setFieldData(
-                      [...fieldData].filter(f => f.tempId !== field.tempId),
-                    );
+                    const editedField = {
+                      accepted_values: fieldInput.accepted_values
+                        ? fieldInput.accepted_values.filter(v => v !== '')
+                        : null,
+                      data_type: fieldInput.data_type,
+                      description: fieldInput.description,
+                      instructions: fieldInput.instructions,
+                      key: fieldInput.key,
+                      label: fieldInput.label,
+                      missing_values: fieldInput.missing_values
+                        ? fieldInput.missing_values.filter(v => v !== '')
+                        : null,
+                      required: fieldInput.required,
+                      tempId: fieldInput.tempId,
+                    };
+                    if (
+                      fieldData.length > 0 &&
+                      fieldData.filter(obj => obj.tempId === fieldInput.tempId)
+                        .length > 0
+                    ) {
+                      setFieldData([
+                        ...fieldData.filter(
+                          obj => obj.tempId !== fieldInput.tempId,
+                        ),
+                        editedField,
+                      ]);
+                    } else {
+                      setFieldData([...fieldData, editedField]);
+                    }
                   }}
                 />
-              </>
-            }
-            on="click"
-            trigger={
-              <Button
-                basic
-                compact
-                icon="trash alternate"
-                onClick={e => {
-                  e.stopPropagation();
-                  e.preventDefault();
-                }}
-              />
-            }
-          />
-        </Button.Group>
-      </Table.Cell>
+              }
+            />
+            <Popup
+              position="top center"
+              header="Are you sure?"
+              content={
+                <>
+                  This field will be removed from current template
+                  <Divider />
+                  <Button
+                    negative
+                    fluid
+                    icon={<Icon name="trash alternate" />}
+                    content="Delete"
+                    onClick={e => {
+                      e.stopPropagation();
+                      setEditing([...editing].filter(i => i !== field.tempId));
+                      setFieldData(
+                        [...fieldData].filter(f => f.tempId !== field.tempId),
+                      );
+                    }}
+                  />
+                </>
+              }
+              on="click"
+              trigger={
+                <Button
+                  basic
+                  compact
+                  icon="trash alternate"
+                  onClick={e => {
+                    e.stopPropagation();
+                    e.preventDefault();
+                  }}
+                />
+              }
+            />
+          </Button.Group>
+        </Table.Cell>
+      )}
     </Table.Row>
   );
 };
@@ -252,6 +255,7 @@ export const DisplayRow = ({
   fieldData,
   setFieldData,
   status,
+  editable,
 }) => (
   <Table.Row
     positive={status === 'ADDED'}
@@ -334,69 +338,73 @@ export const DisplayRow = ({
       }
       content={field.description}
     />
-    {status ? (
-      <Table.Cell textAlign="center">{status}</Table.Cell>
-    ) : (
-      <Table.Cell textAlign="center">
-        <Button.Group fluid size="small">
-          <Popup
-            inverted
-            position="top center"
-            content="Edit"
-            trigger={
-              <Button
-                basic
-                compact
-                icon="pencil"
-                onClick={e => {
-                  e.stopPropagation();
-                  e.preventDefault();
-                  setEditing([...editing, field.tempId]);
-                }}
+    {editable && (
+      <>
+        {status ? (
+          <Table.Cell textAlign="center">{status}</Table.Cell>
+        ) : (
+          <Table.Cell textAlign="center">
+            <Button.Group fluid size="small">
+              <Popup
+                inverted
+                position="top center"
+                content="Edit"
+                trigger={
+                  <Button
+                    basic
+                    compact
+                    icon="pencil"
+                    onClick={e => {
+                      e.stopPropagation();
+                      e.preventDefault();
+                      setEditing([...editing, field.tempId]);
+                    }}
+                  />
+                }
               />
-            }
-          />
-          <Popup
-            position="top center"
-            header="Are you sure?"
-            content={
-              <>
-                This field will be removed from current template
-                <Divider />
-                <Button
-                  negative
-                  fluid
-                  icon={<Icon name="trash alternate" />}
-                  content="Delete"
-                  onClick={e => {
-                    e.stopPropagation();
-                    setFieldData(
-                      [...fieldData].filter(f => f.tempId !== field.tempId),
-                    );
-                  }}
-                />
-              </>
-            }
-            on="click"
-            trigger={
-              <Button
-                basic
-                compact
-                icon="trash alternate"
-                onClick={e => {
-                  e.stopPropagation();
-                  e.preventDefault();
-                }}
+              <Popup
+                position="top center"
+                header="Are you sure?"
+                content={
+                  <>
+                    This field will be removed from current template
+                    <Divider />
+                    <Button
+                      negative
+                      fluid
+                      icon={<Icon name="trash alternate" />}
+                      content="Delete"
+                      onClick={e => {
+                        e.stopPropagation();
+                        setFieldData(
+                          [...fieldData].filter(f => f.tempId !== field.tempId),
+                        );
+                      }}
+                    />
+                  </>
+                }
+                on="click"
+                trigger={
+                  <Button
+                    basic
+                    compact
+                    icon="trash alternate"
+                    onClick={e => {
+                      e.stopPropagation();
+                      e.preventDefault();
+                    }}
+                  />
+                }
               />
-            }
-          />
-        </Button.Group>
-      </Table.Cell>
+            </Button.Group>
+          </Table.Cell>
+        )}
+      </>
     )}
   </Table.Row>
 );
 
-export const HeaderRow = ({status}) => (
+export const HeaderRow = ({status, editable}) => (
   <Table.Row>
     <Popup
       inverted
@@ -446,6 +454,10 @@ export const HeaderRow = ({status}) => (
       content="Instructions or best practices for the data submitter on how to populate this field"
       trigger={<Table.HeaderCell>Instructions</Table.HeaderCell>}
     />
-    <Table.HeaderCell width="1">{status ? status : 'Actions'}</Table.HeaderCell>
+    {editable && (
+      <Table.HeaderCell width="1">
+        {status ? status : 'Actions'}
+      </Table.HeaderCell>
+    )}
   </Table.Row>
 );

@@ -57,7 +57,7 @@ const DataTemplateConfirmModal = ({
     name: formikProps.values.name,
     description: formikProps.values.description,
     icon: formikProps.values.icon,
-    organization: formikProps.values.organization,
+    organization: formikProps.values.organization.id,
   };
   const fieldDefInput = {
     fields: fieldData.map(f => ({

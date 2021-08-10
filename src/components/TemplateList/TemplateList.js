@@ -35,7 +35,7 @@ const TemplateList = ({
     column: 'modifiedAt',
     direction: 'descending',
   });
-  const [filter, setFilter] = useState('');
+  const [filter, setFilter] = useState(organization.id);
   const [search, setSearch] = useState('');
 
   const defaultLogo =
@@ -131,7 +131,10 @@ const TemplateList = ({
         key: node.dataTemplate.organization.id,
         text: node.dataTemplate.organization.name,
         value: node.dataTemplate.organization.id,
-        image: {avatar: true, src: node.dataTemplate.organization.image},
+        image: {
+          avatar: true,
+          src: node.dataTemplate.organization.image || defaultLogo,
+        },
       };
       if (!orgCheck.includes(org.key)) {
         orgCheck.push(org.key);
@@ -189,7 +192,15 @@ const TemplateList = ({
         </>
       )}
       {templates.length > 0 ? (
-        <Table singleLine stackable selectable sortable compact celled>
+        <Table
+          singleLine
+          stackable
+          selectable
+          sortable
+          compact
+          celled
+          className="mb-50"
+        >
           <Table.Header>
             <Table.Row>
               {setSelection ? (
@@ -362,7 +373,7 @@ const TemplateList = ({
                   </Table.Cell>
                   {!setSelection && (
                     <Table.Cell textAlign="center">
-                      {organization === node.dataTemplate.organization.id ? (
+                      {organization.id === node.dataTemplate.organization.id ? (
                         <Button.Group fluid size="small">
                           <Popup
                             inverted
@@ -397,6 +408,11 @@ const TemplateList = ({
                                     icon: node.dataTemplate.icon || '',
                                     organization:
                                       node.dataTemplate.organization.id,
+                                  });
+                                  setFieldValue('organization', {
+                                    id: node.dataTemplate.organization.id,
+                                    name: node.dataTemplate.organization.name,
+                                    image: node.dataTemplate.organization.image,
                                   });
                                   setFieldValue(
                                     'fieldDefinitions',
@@ -461,7 +477,76 @@ const TemplateList = ({
                           />
                         </Button.Group>
                       ) : (
-                        <span className="text-grey">--</span>
+                        <Button.Group>
+                          <Popup
+                            inverted
+                            position="top center"
+                            content="View"
+                            trigger={
+                              <Button
+                                basic
+                                compact
+                                icon="eye"
+                                onClick={e => {
+                                  e.stopPropagation();
+                                  e.preventDefault();
+                                  setFieldValue('id', node.dataTemplate.id);
+                                  setFieldValue('versionId', node.id);
+                                  setFieldValue('name', node.dataTemplate.name);
+                                  setFieldValue(
+                                    'description',
+                                    node.dataTemplate.description,
+                                  );
+                                  setFieldValue(
+                                    'icon',
+                                    node.dataTemplate.icon || '',
+                                  );
+                                  setFieldValue(
+                                    'organization',
+                                    node.dataTemplate.organization.id,
+                                  );
+                                  setFieldValue('origin', {
+                                    name: node.dataTemplate.name,
+                                    description: node.dataTemplate.description,
+                                    icon: node.dataTemplate.icon || '',
+                                    organization:
+                                      node.dataTemplate.organization.id,
+                                  });
+                                  setFieldValue('organization', {
+                                    id: node.dataTemplate.organization.id,
+                                    name: node.dataTemplate.organization.name,
+                                    image: node.dataTemplate.organization.image,
+                                  });
+                                  setFieldValue(
+                                    'fieldDefinitions',
+                                    node.fieldDefinitions,
+                                  );
+                                  const fieldDefinitions = JSON.parse(
+                                    node.fieldDefinitions,
+                                  ).fields.map((f, index) => ({
+                                    ...f,
+                                    tempId: String(index),
+                                  }));
+                                  setFieldValue(
+                                    'existFields',
+                                    fieldDefinitions,
+                                  );
+                                  setFieldData(fieldDefinitions);
+                                  const studyList =
+                                    node.studies &&
+                                    node.studies.edges.length > 0
+                                      ? node.studies.edges.map(
+                                          ({node}) => node.id,
+                                        )
+                                      : [];
+                                  setFieldValue('studies', studyList);
+                                  setStudySelect(studyList);
+                                  setOpen('Save');
+                                }}
+                              />
+                            }
+                          />
+                        </Button.Group>
                       )}
                     </Table.Cell>
                   )}
