@@ -32,6 +32,7 @@ const DataTemplatesView = ({match}) => {
     variables: {
       studies: [studyId],
     },
+    fetchPolicy: 'network-only',
   });
 
   const {loading: studyLoading, data: studyData} = useQuery(GET_STUDY_BY_ID, {
