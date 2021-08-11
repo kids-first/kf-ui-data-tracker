@@ -47,6 +47,9 @@ export const EditRow = ({
   editable,
 }) => {
   const [fieldInput, setFieldInput] = useState(field);
+  const [requireLabel, setRequireLabel] = useState(false);
+  const [requireDescription, setRequireDescription] = useState(false);
+
   return (
     <Table.Row>
       <Table.Cell>
@@ -60,13 +63,14 @@ export const EditRow = ({
           }}
         />
       </Table.Cell>
-      <Table.Cell>
+      <Table.Cell negative={requireLabel}>
         <Input
           fluid
           className="no-border"
           placeholder="Label..."
           value={fieldInput.label}
           onChange={(e, {value}) => {
+            setRequireLabel(false);
             setFieldInput({...fieldInput, label: value});
           }}
         />
@@ -135,13 +139,14 @@ export const EditRow = ({
           }}
         />
       </Table.Cell>
-      <Table.Cell>
+      <Table.Cell negative={requireDescription}>
         <Input
           fluid
           className="no-border"
           placeholder="Description..."
           value={fieldInput.description}
           onChange={(e, {value}) => {
+            setRequireDescription(false);
             setFieldInput({...fieldInput, description: value});
           }}
         />
@@ -172,35 +177,46 @@ export const EditRow = ({
                   onClick={e => {
                     e.stopPropagation();
                     e.preventDefault();
-                    setEditing([...editing].filter(i => i !== field.tempId));
-                    const editedField = {
-                      accepted_values: fieldInput.accepted_values
-                        ? fieldInput.accepted_values.filter(v => v !== '')
-                        : null,
-                      data_type: fieldInput.data_type,
-                      description: fieldInput.description,
-                      instructions: fieldInput.instructions,
-                      key: fieldInput.key,
-                      label: fieldInput.label,
-                      missing_values: fieldInput.missing_values
-                        ? fieldInput.missing_values.filter(v => v !== '')
-                        : null,
-                      required: fieldInput.required,
-                      tempId: fieldInput.tempId,
-                    };
                     if (
-                      fieldData.length > 0 &&
-                      fieldData.filter(obj => obj.tempId === fieldInput.tempId)
-                        .length > 0
+                      fieldInput.description.length === 0 ||
+                      fieldInput.label.length === 0
                     ) {
-                      setFieldData([
-                        ...fieldData.filter(
-                          obj => obj.tempId !== fieldInput.tempId,
-                        ),
-                        editedField,
-                      ]);
+                      setRequireLabel(fieldInput.label.length === 0);
+                      setRequireDescription(
+                        fieldInput.description.length === 0,
+                      );
                     } else {
-                      setFieldData([...fieldData, editedField]);
+                      setEditing([...editing].filter(i => i !== field.tempId));
+                      const editedField = {
+                        accepted_values: fieldInput.accepted_values
+                          ? fieldInput.accepted_values.filter(v => v !== '')
+                          : null,
+                        data_type: fieldInput.data_type,
+                        description: fieldInput.description,
+                        instructions: fieldInput.instructions,
+                        key: fieldInput.key,
+                        label: fieldInput.label,
+                        missing_values: fieldInput.missing_values
+                          ? fieldInput.missing_values.filter(v => v !== '')
+                          : null,
+                        required: fieldInput.required,
+                        tempId: fieldInput.tempId,
+                      };
+                      if (
+                        fieldData.length > 0 &&
+                        fieldData.filter(
+                          obj => obj.tempId === fieldInput.tempId,
+                        ).length > 0
+                      ) {
+                        setFieldData([
+                          ...fieldData.filter(
+                            obj => obj.tempId !== fieldInput.tempId,
+                          ),
+                          editedField,
+                        ]);
+                      } else {
+                        setFieldData([...fieldData, editedField]);
+                      }
                     }
                   }}
                 />
