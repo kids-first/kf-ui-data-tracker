@@ -596,3 +596,67 @@ export const REMOVE_MEMBER = gql`
     }
   }
 `;
+
+export const UPLOAD_FIEID_DEFINITIONS = gql`
+  mutation uploadFieldDefinitions($file: Upload!) {
+    uploadFieldDefinitions(file: $file) {
+      success
+      fileName
+      fileSize
+      fieldDefinitions
+    }
+  }
+`;
+
+export const CREATE_DATA_TEMPLATE = gql`
+  mutation createDataTemplate($input: CreateDataTemplateInput!) {
+    createDataTemplate(input: $input) {
+      dataTemplate {
+        id
+        name
+      }
+    }
+  }
+`;
+
+export const UPDATE_DATA_TEMPLATE = gql`
+  mutation updateDataTemplate($id: ID!, $input: UpdateDataTemplateInput!) {
+    updateDataTemplate(id: $id, input: $input) {
+      dataTemplate {
+        id
+        name
+      }
+    }
+  }
+`;
+
+export const DELETE_DATA_TEMPLATE = gql`
+  mutation deleteDataTemplate($id: ID!) {
+    deleteDataTemplate(id: $id) {
+      success
+    }
+  }
+`;
+
+export const CREATE_TEMPLATE_VERSION = gql`
+  mutation createTemplateVersion($input: CreateTemplateVersionInput!) {
+    createTemplateVersion(input: $input) {
+      templateVersion {
+        id
+      }
+    }
+  }
+`;
+
+export const UPDATE_TEMPLATE_VERSION = gql`
+  mutation updateTemplateVersion(
+    $id: ID!
+    $input: UpdateTemplateVersionInput!
+  ) {
+    updateTemplateVersion(id: $id, input: $input) {
+      templateVersion {
+        id
+      }
+    }
+  }
+`;

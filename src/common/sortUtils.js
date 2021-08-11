@@ -50,3 +50,34 @@ const compareSemVer = (a, b) => {
 };
 
 export {compareSemVer};
+
+export const dateSort = (a, b) => new Date(a) - new Date(b);
+
+export const stringSort = (a, b) =>
+  a !== null && b !== null ? a.localeCompare(b) : 0;
+
+export const booleanSort = (a, b) => (a === b ? 0 : a ? -1 : 1);
+
+export const shallowEqual = (object1, object2) => {
+  const keys1 = Object.keys(object1);
+  const keys2 = Object.keys(object2);
+  if (keys1.length !== keys2.length) {
+    return false;
+  }
+  for (let key of keys1) {
+    if (object1[key] !== object2[key]) {
+      return false;
+    }
+  }
+  return true;
+};
+
+export const comparerFlatArray = otherArray => {
+  return function(current) {
+    return (
+      otherArray.filter(function(other) {
+        return other === current;
+      }).length === 0
+    );
+  };
+};

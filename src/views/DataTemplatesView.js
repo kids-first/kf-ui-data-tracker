@@ -32,6 +32,7 @@ const DataTemplatesView = ({match}) => {
     variables: {
       studies: [studyId],
     },
+    fetchPolicy: 'network-only',
   });
 
   const {loading: studyLoading, data: studyData} = useQuery(GET_STUDY_BY_ID, {
@@ -45,6 +46,17 @@ const DataTemplatesView = ({match}) => {
   const allTemplates = data && data.allTemplateVersions;
   const {data: profileData, error: userError} = useQuery(MY_PROFILE);
   const myProfile = profileData && profileData.myProfile;
+  const organizations = myProfile && myProfile.organizations;
+  var currentOrg;
+  try {
+    currentOrg = JSON.parse(localStorage.getItem('currentOrganization'));
+  } catch (e) {
+    currentOrg = null;
+  }
+  if (!currentOrg) {
+    currentOrg = organizations && organizations.edges[0].node;
+    localStorage.setItem('currentOrganization', JSON.stringify(currentOrg));
+  }
 
   const allowView =
     myProfile &&
@@ -136,8 +148,25 @@ const DataTemplatesView = ({match}) => {
           icon={format === 'zip' ? 'file archive' : 'file excel'}
           onClick={() => {
             const tempList = selection.join(',');
+            const bearerToken = 'Bearer ' + localStorage.getItem('accessToken');
             const url = `${KF_STUDY_API}/download/templates/${match.params.kfId}?file_format=${format}&template_versions=${tempList}`;
-            window.open(url, '_blank');
+            let anchor = document.createElement('a');
+            document.body.appendChild(anchor);
+            let file = url;
+            let headers = new Headers();
+            headers.append('Authorization', bearerToken);
+            const fileName = `${study.kfId}_templates${
+              format === 'zip' ? '.zip' : '.xlsx'
+            }`;
+            fetch(file, {headers})
+              .then(response => response.blob())
+              .then(blobby => {
+                let objectUrl = window.URL.createObjectURL(blobby);
+                anchor.href = objectUrl;
+                anchor.download = fileName;
+                anchor.click();
+                window.URL.revokeObjectURL(objectUrl);
+              });
           }}
         />
         {allTemplates && allTemplates.edges.length > 0 ? (
@@ -145,6 +174,7 @@ const DataTemplatesView = ({match}) => {
             templates={allTemplates.edges}
             selection={selection}
             setSelection={setSelection}
+            organization={currentOrg}
           />
         ) : (
           <Segment placeholder>

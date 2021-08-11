@@ -48,6 +48,7 @@ import {
   ModelExplorerView,
   GraphiQLView,
   OrganizationsView,
+  TemplatesView,
 } from '../admin/views';
 import ReleaseRoutes from '../releases/routes';
 import TrackedRoute from './TrackedRoute';
@@ -122,6 +123,13 @@ const Routes = () => (
           path="/configuration"
           component={ConfigurationView}
           scope={['admin', 'configuration']}
+          permissions={['view_settings']}
+        />
+        <RestrictedRoute
+          exact
+          path="/templates"
+          component={TemplatesView}
+          scope={['admin', 'templates']}
           permissions={['view_settings']}
         />
         <RestrictedRoute
