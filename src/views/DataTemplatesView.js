@@ -147,8 +147,25 @@ const DataTemplatesView = ({match}) => {
           icon={format === 'zip' ? 'file archive' : 'file excel'}
           onClick={() => {
             const tempList = selection.join(',');
+            const bearerToken = 'Bearer ' + localStorage.getItem('accessToken');
             const url = `${KF_STUDY_API}/download/templates/${match.params.kfId}?file_format=${format}&template_versions=${tempList}`;
-            window.open(url, '_blank');
+            let anchor = document.createElement('a');
+            document.body.appendChild(anchor);
+            let file = url;
+            let headers = new Headers();
+            headers.append('Authorization', bearerToken);
+            const fileName = `${study.kfId}_templates${
+              format === 'zip' ? '.zip' : '.xlsx'
+            }`;
+            fetch(file, {headers})
+              .then(response => response.blob())
+              .then(blobby => {
+                let objectUrl = window.URL.createObjectURL(blobby);
+                anchor.href = objectUrl;
+                anchor.download = fileName;
+                anchor.click();
+                window.URL.revokeObjectURL(objectUrl);
+              });
           }}
         />
         {allTemplates && allTemplates.edges.length > 0 ? (
