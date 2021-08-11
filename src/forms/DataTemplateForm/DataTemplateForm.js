@@ -333,7 +333,16 @@ const DataTemplateForm = ({
                 {withinOrg && (
                   <Checkbox
                     label="Select All"
-                    checked={studySelect.length === studyList.length}
+                    checked={
+                      studySelect.length ===
+                      studyList.filter(
+                        ({node}) =>
+                          node.organization.id ===
+                          (formikProps.values.organization.id
+                            ? formikProps.values.organization.id
+                            : currentOrg.id),
+                      ).length
+                    }
                     onChange={() => onSelectAll()}
                   />
                 )}

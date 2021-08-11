@@ -78,7 +78,10 @@ const TemplatesView = () => {
   });
   const allStudies = studyData && studyData.allStudies;
   const studyList = allStudies ? allStudies.edges : [];
-  const studyIds = studyList.map(({node}) => node.id);
+  const currentOrgStudies = studyList
+    ? studyList.filter(({node}) => node.organization.id === currentOrg.id)
+    : [];
+  const studyIds = currentOrgStudies.map(({node}) => node.id);
   const [studySelect, setStudySelect] = useState(studyIds);
   const onSelectOne = id => {
     if (studySelect.includes(id)) {
@@ -88,10 +91,10 @@ const TemplatesView = () => {
     }
   };
   const onSelectAll = () => {
-    if (studySelect.length === studyList.length) {
-      setStudySelect([]);
-    } else {
+    if (studySelect.length === 0) {
       setStudySelect(studyIds);
+    } else {
+      setStudySelect([]);
     }
   };
 
@@ -253,7 +256,7 @@ const TemplatesView = () => {
                 open={open}
                 formikProps={formikProps}
                 fieldData={fieldData}
-                studyList={studyList}
+                studyList={currentOrgStudies}
                 studyError={studyError}
                 studySelect={studySelect}
                 setEditConfirm={setEditConfirm}

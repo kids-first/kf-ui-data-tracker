@@ -536,7 +536,7 @@ const TemplateList = ({
                                     node.studies &&
                                     node.studies.edges.length > 0
                                       ? node.studies.edges.map(
-                                          ({node}) => node.id,
+                                          study => study.node.id,
                                         )
                                       : [];
                                   setFieldValue('studies', studyList);
