@@ -11,6 +11,7 @@ import {
   UPLOAD_FIEID_DEFINITIONS,
   CREATE_DATA_TEMPLATE,
   UPDATE_DATA_TEMPLATE,
+  DELETE_DATA_TEMPLATE,
   CREATE_TEMPLATE_VERSION,
   UPDATE_TEMPLATE_VERSION,
 } from '../../state/mutations';
@@ -45,6 +46,13 @@ const TemplatesView = () => {
   const [uploadFieldDefinitions] = useMutation(UPLOAD_FIEID_DEFINITIONS);
   const [createDataTemplate] = useMutation(CREATE_DATA_TEMPLATE);
   const [updateDataTemplate] = useMutation(UPDATE_DATA_TEMPLATE);
+  const [deleteDataTemplate] = useMutation(DELETE_DATA_TEMPLATE, {
+    refetchQueries: [
+      {
+        query: ALL_TEMPLATE_VERSIONS,
+      },
+    ],
+  });
   const [createTemplateVersion] = useMutation(CREATE_TEMPLATE_VERSION, {
     refetchQueries: [
       {
@@ -248,6 +256,7 @@ const TemplatesView = () => {
                   setFieldValue={formikProps.setFieldValue}
                   setFieldData={setFieldData}
                   setStudySelect={setStudySelect}
+                  deleteDataTemplate={deleteDataTemplate}
                 />
               )}
             </Segment>

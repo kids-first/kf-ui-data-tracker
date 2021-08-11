@@ -630,6 +630,14 @@ export const UPDATE_DATA_TEMPLATE = gql`
   }
 `;
 
+export const DELETE_DATA_TEMPLATE = gql`
+  mutation deleteDataTemplate($id: ID!) {
+    deleteDataTemplate(id: $id) {
+      success
+    }
+  }
+`;
+
 export const CREATE_TEMPLATE_VERSION = gql`
   mutation createTemplateVersion($input: CreateTemplateVersionInput!) {
     createTemplateVersion(input: $input) {

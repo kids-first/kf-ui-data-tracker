@@ -30,6 +30,7 @@ const TemplateList = ({
   setFieldValue,
   setFieldData,
   setStudySelect,
+  deleteDataTemplate,
 }) => {
   const [sorting, setSorting] = useState({
     column: 'modifiedAt',
@@ -448,15 +449,19 @@ const TemplateList = ({
                             header="Are you sure?"
                             content={
                               <>
-                                This template will be deleted and removed from
-                                all related studies.
+                                You can only delete templates that are not being
+                                used by any studies
                                 <Divider />
                                 <Button
                                   negative
                                   fluid
+                                  disabled={node.studies.edges.length > 0}
                                   icon={<Icon name="trash alternate" />}
                                   content="Delete"
                                   onClick={e => {
+                                    deleteDataTemplate({
+                                      variables: {id: node.dataTemplate.id},
+                                    });
                                     e.stopPropagation();
                                   }}
                                 />
