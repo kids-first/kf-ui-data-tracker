@@ -257,6 +257,7 @@ const TemplatesView = () => {
                   setFieldData={setFieldData}
                   setStudySelect={setStudySelect}
                   deleteDataTemplate={deleteDataTemplate}
+                  organizationsList={organizations.edges}
                 />
               )}
             </Segment>
