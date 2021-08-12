@@ -31,6 +31,7 @@ const TemplateList = ({
   setFieldData,
   setStudySelect,
   deleteDataTemplate,
+  organizationsList,
 }) => {
   const [sorting, setSorting] = useState({
     column: 'modifiedAt',
@@ -124,27 +125,16 @@ const TemplateList = ({
     }
   };
 
-  var orgList = [];
-  var orgCheck = [];
-  templates.map(({node}) => {
-    if (node.dataTemplate.organization) {
-      const org = {
-        key: node.dataTemplate.organization.id,
-        text: node.dataTemplate.organization.name,
-        value: node.dataTemplate.organization.id,
-        image: {
-          avatar: true,
-          src: node.dataTemplate.organization.image || defaultLogo,
-        },
-      };
-      if (!orgCheck.includes(org.key)) {
-        orgCheck.push(org.key);
-        orgList.push(org);
-      }
-    }
-    return true;
-  });
-  const orgOptions = orgList.sort((o1, o2) => stringSort(o1.text, o2.text));
+  const orgOpt = organizationsList.map(({node}) => ({
+    key: node.id,
+    text: node.name,
+    value: node.id,
+    image: {
+      avatar: true,
+      src: node.image || defaultLogo,
+    },
+  }));
+  const orgOptions = orgOpt.sort((o1, o2) => stringSort(o1.text, o2.text));
 
   return (
     <>
