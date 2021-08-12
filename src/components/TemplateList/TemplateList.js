@@ -125,15 +125,17 @@ const TemplateList = ({
     }
   };
 
-  const orgOpt = organizationsList.map(({node}) => ({
-    key: node.id,
-    text: node.name,
-    value: node.id,
-    image: {
-      avatar: true,
-      src: node.image || defaultLogo,
-    },
-  }));
+  const orgOpt = organizationsList
+    ? organizationsList.map(({node}) => ({
+        key: node.id,
+        text: node.name,
+        value: node.id,
+        image: {
+          avatar: true,
+          src: node.image || defaultLogo,
+        },
+      }))
+    : [];
   const orgOptions = orgOpt.sort((o1, o2) => stringSort(o1.text, o2.text));
 
   return (
