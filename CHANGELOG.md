@@ -1,5 +1,20 @@
 # Kids First Data Tracker Change History
 
+## Release 0.22.0
+
+### Summary
+
+- Emojis: 🐛 x2, ✨ x2
+- Categories: Additions x2, Fixes x2
+
+### New features and changes
+
+- [#1090](https://github.com/kids-first/kf-ui-data-tracker/pull/1090) - 🐛 Fix study data template tab displaying error - [36a0f1c2](https://github.com/kids-first/kf-ui-data-tracker/commit/36a0f1c2842a58649ff9a155855849efcd7b67ec) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#1088](https://github.com/kids-first/kf-ui-data-tracker/pull/1088) - 🐛 Fix admin templates organization options - [85980486](https://github.com/kids-first/kf-ui-data-tracker/commit/859804868a235f50e9f2574cdaf23e11bbe5de0b) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#1085](https://github.com/kids-first/kf-ui-data-tracker/pull/1085) - ✨ Add template admin view with create/edit/delete template function - [daf6e309](https://github.com/kids-first/kf-ui-data-tracker/commit/daf6e3099e36313e18d3058093ac5774440a11a5) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#1076](https://github.com/kids-first/kf-ui-data-tracker/pull/1076) - ✨ Add data templates tab under study for downloading templates - [5f13dca3](https://github.com/kids-first/kf-ui-data-tracker/commit/5f13dca34f2bb74398e4b629dbd314c37e6e5e47) by [XuTheBunny](https://github.com/XuTheBunny)
+
+
 ## Release 0.21.1
 
 ### Summary
