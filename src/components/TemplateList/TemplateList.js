@@ -310,17 +310,26 @@ const TemplateList = ({
                   className="cursor-pointer"
                   onClick={e => {
                     e.stopPropagation();
+                    e.preventDefault();
                     if (setSelection) {
-                      onSelectOne(
-                        Buffer.from(node.id, 'base64')
-                          .toString('utf8')
-                          .split(':')[1],
-                      );
+                      presetData(node, setFieldValue, setStudySelect, setOpen);
                     }
                   }}
                 >
                   {setSelection ? (
-                    <Table.Cell textAlign="center">
+                    <Table.Cell
+                      textAlign="center"
+                      onClick={e => {
+                        e.stopPropagation();
+                        if (setSelection) {
+                          onSelectOne(
+                            Buffer.from(node.id, 'base64')
+                              .toString('utf8')
+                              .split(':')[1],
+                          );
+                        }
+                      }}
+                    >
                       <Checkbox
                         data-testid="file-select"
                         checked={selection.includes(
