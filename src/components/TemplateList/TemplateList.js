@@ -138,6 +138,44 @@ const TemplateList = ({
     : [];
   const orgOptions = orgOpt.sort((o1, o2) => stringSort(o1.text, o2.text));
 
+  const presetData = (node, setFieldValue) => {
+    setFieldValue('id', node.dataTemplate.id);
+    setFieldValue('versionId', node.id);
+    setFieldValue('name', node.dataTemplate.name);
+    setFieldValue('description', node.dataTemplate.description);
+    setFieldValue('icon', node.dataTemplate.icon || '');
+    setFieldValue('organization', node.dataTemplate.organization.id);
+    setFieldValue('origin', {
+      name: node.dataTemplate.name,
+      description: node.dataTemplate.description,
+      icon: node.dataTemplate.icon || '',
+      organization: node.dataTemplate.organization.id,
+    });
+    setFieldValue('organization', {
+      id: node.dataTemplate.organization.id,
+      name: node.dataTemplate.organization.name,
+      image: node.dataTemplate.organization.image,
+    });
+    setFieldValue('fieldDefinitions', node.fieldDefinitions);
+    const fieldDefinitions = JSON.parse(node.fieldDefinitions).fields.map(
+      (f, index) => ({
+        ...f,
+        tempId: String(index),
+      }),
+    );
+    setFieldValue('existFields', fieldDefinitions);
+    setFieldData(fieldDefinitions);
+    const studyList =
+      node.studies && node.studies.edges.length > 0
+        ? node.studies.edges.map(study => study.node.id)
+        : [];
+    setFieldValue('studies', studyList);
+    if (setStudySelect) {
+      setStudySelect(studyList);
+    }
+    setOpen('Save');
+  };
+
   return (
     <>
       {!setSelection && (
@@ -380,58 +418,12 @@ const TemplateList = ({
                                 onClick={e => {
                                   e.stopPropagation();
                                   e.preventDefault();
-                                  setFieldValue('id', node.dataTemplate.id);
-                                  setFieldValue('versionId', node.id);
-                                  setFieldValue('name', node.dataTemplate.name);
-                                  setFieldValue(
-                                    'description',
-                                    node.dataTemplate.description,
+                                  presetData(
+                                    node,
+                                    setFieldValue,
+                                    setStudySelect,
+                                    setOpen,
                                   );
-                                  setFieldValue(
-                                    'icon',
-                                    node.dataTemplate.icon || '',
-                                  );
-                                  setFieldValue(
-                                    'organization',
-                                    node.dataTemplate.organization.id,
-                                  );
-                                  setFieldValue('origin', {
-                                    name: node.dataTemplate.name,
-                                    description: node.dataTemplate.description,
-                                    icon: node.dataTemplate.icon || '',
-                                    organization:
-                                      node.dataTemplate.organization.id,
-                                  });
-                                  setFieldValue('organization', {
-                                    id: node.dataTemplate.organization.id,
-                                    name: node.dataTemplate.organization.name,
-                                    image: node.dataTemplate.organization.image,
-                                  });
-                                  setFieldValue(
-                                    'fieldDefinitions',
-                                    node.fieldDefinitions,
-                                  );
-                                  const fieldDefinitions = JSON.parse(
-                                    node.fieldDefinitions,
-                                  ).fields.map((f, index) => ({
-                                    ...f,
-                                    tempId: String(index),
-                                  }));
-                                  setFieldValue(
-                                    'existFields',
-                                    fieldDefinitions,
-                                  );
-                                  setFieldData(fieldDefinitions);
-                                  const studyList =
-                                    node.studies &&
-                                    node.studies.edges.length > 0
-                                      ? node.studies.edges.map(
-                                          ({node}) => node.id,
-                                        )
-                                      : [];
-                                  setFieldValue('studies', studyList);
-                                  setStudySelect(studyList);
-                                  setOpen('Save');
                                 }}
                               />
                             }
@@ -487,58 +479,12 @@ const TemplateList = ({
                                 onClick={e => {
                                   e.stopPropagation();
                                   e.preventDefault();
-                                  setFieldValue('id', node.dataTemplate.id);
-                                  setFieldValue('versionId', node.id);
-                                  setFieldValue('name', node.dataTemplate.name);
-                                  setFieldValue(
-                                    'description',
-                                    node.dataTemplate.description,
+                                  presetData(
+                                    node,
+                                    setFieldValue,
+                                    setStudySelect,
+                                    setOpen,
                                   );
-                                  setFieldValue(
-                                    'icon',
-                                    node.dataTemplate.icon || '',
-                                  );
-                                  setFieldValue(
-                                    'organization',
-                                    node.dataTemplate.organization.id,
-                                  );
-                                  setFieldValue('origin', {
-                                    name: node.dataTemplate.name,
-                                    description: node.dataTemplate.description,
-                                    icon: node.dataTemplate.icon || '',
-                                    organization:
-                                      node.dataTemplate.organization.id,
-                                  });
-                                  setFieldValue('organization', {
-                                    id: node.dataTemplate.organization.id,
-                                    name: node.dataTemplate.organization.name,
-                                    image: node.dataTemplate.organization.image,
-                                  });
-                                  setFieldValue(
-                                    'fieldDefinitions',
-                                    node.fieldDefinitions,
-                                  );
-                                  const fieldDefinitions = JSON.parse(
-                                    node.fieldDefinitions,
-                                  ).fields.map((f, index) => ({
-                                    ...f,
-                                    tempId: String(index),
-                                  }));
-                                  setFieldValue(
-                                    'existFields',
-                                    fieldDefinitions,
-                                  );
-                                  setFieldData(fieldDefinitions);
-                                  const studyList =
-                                    node.studies &&
-                                    node.studies.edges.length > 0
-                                      ? node.studies.edges.map(
-                                          study => study.node.id,
-                                        )
-                                      : [];
-                                  setFieldValue('studies', studyList);
-                                  setStudySelect(studyList);
-                                  setOpen('Save');
                                 }}
                               />
                             }
