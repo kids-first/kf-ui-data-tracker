@@ -1,10 +1,12 @@
-import React, {useState} from 'react';
+import React, {Fragment, useState} from 'react';
 import {Helmet} from 'react-helmet';
+import {Formik} from 'formik';
 import {useQuery} from '@apollo/client';
 import {
   GET_STUDY_BY_ID,
   ALL_TEMPLATE_VERSIONS,
   MY_PROFILE,
+  ALL_STUDIES,
 } from '../state/queries';
 import {
   Container,
@@ -18,12 +20,18 @@ import {
 } from 'semantic-ui-react';
 import NotFoundView from './NotFoundView';
 import TemplateList from '../components/TemplateList/TemplateList';
+import DataTemplateEditModal from '../modals/DataTemplateEditModal';
+import {dataTemplateIcons} from '../common/enums';
 import {hasPermission} from '../common/permissions';
 import {KF_STUDY_API} from '../common/globals';
 
 const DataTemplatesView = ({match}) => {
+  const [open, setOpen] = useState('');
+  const [currentStep, setCurrentStep] = useState(0);
   const [selection, setSelection] = useState([]);
+  const [fieldData, setFieldData] = useState([]);
   const [format, setFormat] = useState('excel');
+
   const studyId = Buffer.from('StudyNode:' + match.params.kfId).toString(
     'base64',
   );
@@ -44,6 +52,7 @@ const DataTemplatesView = ({match}) => {
   const study = studyData && studyData.study;
   const studyName = study ? 'for ' + study.name : '';
   const allTemplates = data && data.allTemplateVersions;
+
   const {data: profileData, error: userError} = useQuery(MY_PROFILE);
   const myProfile = profileData && profileData.myProfile;
   const organizations = myProfile && myProfile.organizations;
@@ -57,6 +66,16 @@ const DataTemplatesView = ({match}) => {
     currentOrg = organizations && organizations.edges[0].node;
     localStorage.setItem('currentOrganization', JSON.stringify(currentOrg));
   }
+
+  const {error: studyError, data: studyListData} = useQuery(ALL_STUDIES, {
+    fetchPolicy: 'cache-first',
+  });
+  const allStudies = studyListData && studyListData.allStudies;
+  const studyList = allStudies ? allStudies.edges : [];
+  const currentOrgStudies = studyList
+    ? studyList.filter(({node}) => node.organization.id === currentOrg.id)
+    : [];
+  const studyIds = currentOrgStudies.map(({node}) => node.id);
 
   const allowView =
     myProfile &&
@@ -169,25 +188,75 @@ const DataTemplatesView = ({match}) => {
               });
           }}
         />
-        {allTemplates && allTemplates.edges.length > 0 ? (
-          <TemplateList
-            templates={allTemplates.edges}
-            selection={selection}
-            setSelection={setSelection}
-            organization={currentOrg}
-          />
-        ) : (
-          <Segment placeholder>
-            <Header icon disabled>
-              <Icon name="file outline" />
-              No Templates Available
-              <Header.Subheader>
-                Your organization has not assigned any data templates to this
-                study.
-              </Header.Subheader>
-            </Header>
-          </Segment>
-        )}
+
+        <Formik
+          initialValues={{
+            id: null,
+            versionId: null,
+            name: '',
+            description: '',
+            icon: 'file excel',
+            organization: {},
+            fieldDefinitions: '',
+            studies: [],
+            origin: {},
+            existFields: [],
+          }}
+          validate={vals => {
+            let errors = {};
+            ['name', 'description'].forEach(function(field) {
+              if (!vals[field]) {
+                errors[field] = 'Required';
+              }
+            });
+            if (!dataTemplateIcons.includes(vals.icon)) {
+              errors.icon = 'Invalid icon';
+            }
+            return errors;
+          }}
+        >
+          {formikProps => (
+            <Fragment>
+              {allTemplates && allTemplates.edges.length > 0 ? (
+                <TemplateList
+                  templates={allTemplates.edges}
+                  selection={selection}
+                  setSelection={setSelection}
+                  organization={currentOrg}
+                  setFieldValue={formikProps.setFieldValue}
+                  setFieldData={setFieldData}
+                  setOpen={setOpen}
+                />
+              ) : (
+                <Segment placeholder>
+                  <Header icon disabled>
+                    <Icon name="file outline" />
+                    No Templates Available
+                    <Header.Subheader>
+                      Your organization has not assigned any data templates to
+                      this study.
+                    </Header.Subheader>
+                  </Header>
+                </Segment>
+              )}
+              <DataTemplateEditModal
+                formikProps={formikProps}
+                open={open}
+                setOpen={setOpen}
+                currentStep={currentStep}
+                setCurrentStep={setCurrentStep}
+                fieldData={fieldData}
+                setFieldData={setFieldData}
+                studySelect={studyIds}
+                studyIds={studyIds}
+                currentOrg={currentOrg}
+                studyList={currentOrgStudies}
+                studyError={studyError}
+                editing={[]}
+              />
+            </Fragment>
+          )}
+        </Formik>
       </Container>
     );
   } else {

@@ -35,6 +35,7 @@ const DataTemplateForm = ({
   setFieldData,
   editing,
   setEditing,
+  editable,
 }) => {
   const [iconOpen, setIconOpen] = useState(false);
   const [filter, setFilter] = useState('');
@@ -55,7 +56,8 @@ const DataTemplateForm = ({
   const filtered =
     filter.length > 0 ? searched.filter(f => f.data_type === filter) : searched;
 
-  const withinOrg = currentOrg.id === formikProps.values.organization.id;
+  const withinOrg =
+    currentOrg.id === formikProps.values.organization.id && editable;
 
   return (
     <Form>
