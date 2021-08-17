@@ -107,7 +107,7 @@ const DataTemplateEditModal = ({
       )}
       <Modal.Header>
         {formikProps.values.id
-          ? 'Edit Data Template'
+          ? `${editable ? 'Edit' : 'View'} Data Template`
           : 'Create New Data Template'}
       </Modal.Header>
       <Modal.Content scrolling>
