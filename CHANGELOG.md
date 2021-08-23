@@ -1,5 +1,17 @@
 # Kids First Data Tracker Change History
 
+## Release 0.22.1
+
+### Summary
+
+- Emojis: ✨ x1
+- Categories: Additions x1
+
+### New features and changes
+
+- [#1091](https://github.com/kids-first/kf-ui-data-tracker/pull/1091) - ✨ Add read-only template modal to the list in study data template tab - [2879ac26](https://github.com/kids-first/kf-ui-data-tracker/commit/2879ac2682070b3bffacbbefc22f4788aed05f78) by [XuTheBunny](https://github.com/XuTheBunny)
+
+
 ## Release 0.22.0
 
 ### Summary
