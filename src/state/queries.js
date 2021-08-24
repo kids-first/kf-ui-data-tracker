@@ -102,6 +102,17 @@ export const GET_STUDY_BY_ID = gql`
         edges {
           node {
             ...FileFields
+            templateVersion {
+              id
+              createdAt
+              modifiedAt
+              dataTemplate {
+                id
+                name
+                description
+                icon
+              }
+            }
             versions {
               edges {
                 node {
