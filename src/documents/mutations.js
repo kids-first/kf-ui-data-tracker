@@ -10,6 +10,7 @@ export const CREATE_FILE = gql`
     $fileType: FileType!
     $description: String!
     $tags: [String]
+    $templateVersion: ID
   ) {
     createFile(
       version: $version
@@ -18,9 +19,21 @@ export const CREATE_FILE = gql`
       fileType: $fileType
       description: $description
       tags: $tags
+      templateVersion: $templateVersion
     ) {
       file {
         ...FileFields
+        templateVersion {
+          id
+          createdAt
+          modifiedAt
+          dataTemplate {
+            id
+            name
+            description
+            icon
+          }
+        }
       }
     }
   }
