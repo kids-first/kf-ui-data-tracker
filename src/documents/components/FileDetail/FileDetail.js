@@ -281,6 +281,7 @@ const FileDetail = ({
   allowExtractConfig,
   event,
   studyFiles,
+  evaluateTemplateMatch,
 }) => {
   const studyId = match.params.kfId;
   const [dialog, setDialog] = useState(false);
@@ -369,7 +370,27 @@ const FileDetail = ({
                             as="a"
                             className="text-primary"
                             data-testid="edit-type"
-                            onClick={() => setDialog('annotation')}
+                            onClick={() => {
+                              setDialog('annotation');
+                              evaluateTemplateMatch({
+                                variables: {
+                                  input: {
+                                    fileVersion: sortedVersions[0].node.id,
+                                    study: Buffer.from(
+                                      'StudyNode:' + studyId,
+                                    ).toString('base64'),
+                                  },
+                                },
+                              })
+                                .then(resp => {
+                                  setEvaluateResult(
+                                    resp.data.evaluateTemplateMatch,
+                                  );
+                                })
+                                .catch(err => {
+                                  setEvaluateResult(err);
+                                });
+                            }}
                           >
                             <Icon name="pencil" />
                             Edit
