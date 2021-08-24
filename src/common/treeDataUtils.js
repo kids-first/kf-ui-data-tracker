@@ -114,6 +114,7 @@ export const keyedFiles = fileList => {
       versions: node.versions,
       downloadUrl: node.downloadUrl,
       searchableTags: node.tags.join('**'),
+      templateVersion: node.templateVersion,
     });
     if (folders.length > 0) {
       folders.forEach((folder, index) => {
