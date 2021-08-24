@@ -8,7 +8,6 @@ import {
   Table,
 } from 'semantic-ui-react';
 import {Link, withRouter} from 'react-router-dom';
-
 import FileActionButtons from '../FileActionButtons/FileActionButtons';
 import KfId from '../../../components/StudyList/KfId';
 import PropTypes from 'prop-types';
@@ -27,182 +26,128 @@ const ReviewVersions = ({
   setAddFileOpen,
   downloadFileMutation,
   canAddFile,
-}) => {
-  const groupType = Object.keys(fileTypeDetail)
-    .map(type =>
-      fileTypeDetail[type].requiredColumns.length > 0 ? type : null,
-    )
-    .filter(type => type !== null);
-  const groupVersions = () => {
-    const versions = reviewNode ? reviewNode.versions.edges : [];
-    var versionGroups = {
-      OTHER: [],
-    };
-    if (versions.length > 0) {
-      versions.forEach(({node}) => {
-        if (groupType.includes(node.rootFile.fileType)) {
-          if (versionGroups[node.rootFile.fileType]) {
-            versionGroups[node.rootFile.fileType].push(node);
-          } else {
-            versionGroups[node.rootFile.fileType] = [node];
+}) => (
+  <Segment basic className="noMargin">
+    <Header as="h4" color="grey">
+      Documents in Review{' '}
+      {updateReview && canAddFile && (
+        <Popup
+          content="Add documents to current data review"
+          position="right center"
+          inverted
+          trigger={
+            <Button
+              size="mini"
+              labelPosition="left"
+              className="ml-15 text-primary"
+              onClick={() => {
+                setAddFileOpen(true);
+              }}
+            >
+              <Icon name="add" />
+              Add Documents to Review
+            </Button>
           }
-        } else {
-          versionGroups.OTHER.push(node);
-        }
-      });
-    }
-    return versionGroups;
-  };
-  const groupedVersions = groupVersions();
-
-  return (
-    <Segment basic className="noMargin">
-      <Header as="h4" color="grey">
-        Documents in Review{' '}
-        {updateReview && canAddFile && (
-          <Popup
-            content="Add documents to current data review"
-            position="right center"
-            inverted
-            trigger={
-              <Button
-                size="mini"
-                labelPosition="left"
-                className="ml-15 text-primary"
-                onClick={() => {
-                  setAddFileOpen(true);
-                }}
-              >
-                <Icon name="add" />
-                Add Documents to Review
-              </Button>
-            }
-          />
-        )}
-      </Header>
-      {groupType.map(type => (
-        <Table key={type}>
-          <Table.Header>
-            <Table.Row>
-              <Table.HeaderCell colSpan="4">
-                <Icon name={fileTypeDetail[type].icon} />
-                <Popup
-                  content={fileTypeDetail[type].description}
-                  position="top center"
-                  inverted
-                  trigger={<span>{fileTypeDetail[type].title}</span>}
-                />
-                {fileTypeDetail[type].url && (
-                  <Button
-                    size="mini"
-                    labelPosition="left"
-                    className="ml-15 text-primary"
-                    onClick={() => window.open(fileTypeDetail[type].url)}
-                  >
-                    <Icon name="info circle" />
-                    Read Documentation
-                  </Button>
-                )}
-              </Table.HeaderCell>
-            </Table.Row>
-          </Table.Header>
-          {groupedVersions[type] && groupedVersions[type].length > 0 ? (
-            <Table.Body>
-              {groupedVersions[type].map(node => (
-                <Table.Row key={node.id}>
-                  <Table.Cell>
-                    <Link
-                      to={`/study/${studyId}/documents/${node.rootFile.kfId}`}
-                    >
-                      {node.rootFile.name}
-                    </Link>
-                  </Table.Cell>
-                  <Table.Cell textAlign="right">
-                    {fileSortedVersions(node.rootFile)[0].node.kfId ===
-                    node.kfId ? (
-                      <Label basic size="mini">
-                        LATEST VERSION
-                      </Label>
-                    ) : (
-                      <small className="text-red">NOT latest version</small>
-                    )}
-                  </Table.Cell>
-                  <KfId kfId={node.kfId} />
-                  <Table.Cell textAlign="right" width="2">
-                    <FileActionButtons
-                      node={node.rootFile}
-                      studyId={studyId}
-                      downloadFileMutation={downloadFileMutation}
-                      version={node}
-                      updateReview={updateReview}
-                      reviewNode={reviewNode}
-                      updateError={updateError}
-                    />
-                  </Table.Cell>
-                </Table.Row>
-              ))}
-            </Table.Body>
-          ) : (
-            <Table.Body>
-              <Table.Row>
-                <Table.Cell colSpan="4" disabled>
-                  No documents of this type are added
-                </Table.Cell>
-              </Table.Row>
-            </Table.Body>
-          )}
-        </Table>
-      ))}
-      {groupedVersions.OTHER.length > 0 && (
-        <Table>
-          <Table.Header>
-            <Table.Row>
-              <Table.HeaderCell colSpan="4">
-                <Icon name="question" />
-                Other
-              </Table.HeaderCell>
-            </Table.Row>
-          </Table.Header>
-          <Table.Body>
-            {groupedVersions.OTHER.map(node => (
-              <Table.Row key={node.id}>
-                <Table.Cell>
-                  <Link
-                    to={`/study/${studyId}/documents/${node.rootFile.kfId}`}
-                  >
-                    {node.rootFile.name}
-                  </Link>
-                </Table.Cell>
-                <Table.Cell textAlign="right">
-                  {fileSortedVersions(node.rootFile)[0].node.kfId ===
-                  node.kfId ? (
-                    <Label basic size="mini">
-                      LATEST VERSION
-                    </Label>
-                  ) : (
-                    <small className="text-red">NOT latest version</small>
-                  )}
-                </Table.Cell>
-                <KfId kfId={node.kfId} />
-                <Table.Cell textAlign="right" width="2">
-                  <FileActionButtons
-                    node={node.rootFile}
-                    studyId={studyId}
-                    downloadFileMutation={downloadFileMutation}
-                    version={node}
-                    updateReview={updateReview}
-                    reviewNode={reviewNode}
-                    updateError={updateError}
-                  />
-                </Table.Cell>
-              </Table.Row>
-            ))}
-          </Table.Body>
-        </Table>
+        />
       )}
-    </Segment>
-  );
-};
+    </Header>
+    <Table>
+      <Table.Header>
+        <Table.Row>
+          <Table.HeaderCell colSpan="2">Name</Table.HeaderCell>
+          <Table.HeaderCell>Type</Table.HeaderCell>
+          <Table.HeaderCell textAlign="center">Kids First ID</Table.HeaderCell>
+          <Table.HeaderCell textAlign="center">Actions</Table.HeaderCell>
+        </Table.Row>
+      </Table.Header>
+      {reviewNode && reviewNode.versions.edges.length > 0 ? (
+        <Table.Body>
+          {reviewNode.versions.edges.map(({node}) => (
+            <Table.Row key={node.id}>
+              <Table.Cell>
+                <Link to={`/study/${studyId}/documents/${node.rootFile.kfId}`}>
+                  {node.rootFile.name}
+                </Link>
+              </Table.Cell>
+              <Table.Cell textAlign="right">
+                {fileSortedVersions(node.rootFile)[0].node.kfId ===
+                node.kfId ? (
+                  <Label basic size="mini">
+                    LATEST VERSION
+                  </Label>
+                ) : (
+                  <small className="text-red">NOT latest version</small>
+                )}
+              </Table.Cell>
+              {node.rootFile.templateVersion ? (
+                <Popup
+                  content={
+                    node.rootFile.templateVersion.dataTemplate.description ||
+                    '--'
+                  }
+                  trigger={
+                    <Table.Cell>
+                      <Icon
+                        name={
+                          node.rootFile.templateVersion.dataTemplate.icon ||
+                          'file outlie'
+                        }
+                      />
+                      {node.rootFile.templateVersion.dataTemplate.name ||
+                        'Unknown Data Template'}
+                    </Table.Cell>
+                  }
+                />
+              ) : (
+                <Popup
+                  content={
+                    fileTypeDetail[node.rootFile.fileType]
+                      ? fileTypeDetail[node.rootFile.fileType].description
+                      : '--'
+                  }
+                  trigger={
+                    <Table.Cell>
+                      <Icon
+                        name={
+                          fileTypeDetail[node.rootFile.fileType]
+                            ? fileTypeDetail[node.rootFile.fileType].icon
+                            : 'question'
+                        }
+                      />
+                      {fileTypeDetail[node.rootFile.fileType]
+                        ? fileTypeDetail[node.rootFile.fileType].title
+                        : 'Other'}
+                    </Table.Cell>
+                  }
+                />
+              )}
+              <KfId kfId={node.kfId} />
+              <Table.Cell textAlign="right" width="2">
+                <FileActionButtons
+                  node={node.rootFile}
+                  studyId={studyId}
+                  downloadFileMutation={downloadFileMutation}
+                  version={node}
+                  updateReview={updateReview}
+                  reviewNode={reviewNode}
+                  updateError={updateError}
+                />
+              </Table.Cell>
+            </Table.Row>
+          ))}
+        </Table.Body>
+      ) : (
+        <Table.Body>
+          <Table.Row>
+            <Table.Cell colSpan="4" disabled>
+              No documents are added
+            </Table.Cell>
+          </Table.Row>
+        </Table.Body>
+      )}
+    </Table>
+  </Segment>
+);
 
 ReviewVersions.propTypes = {
   /** Array of study object*/
