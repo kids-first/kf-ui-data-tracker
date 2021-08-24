@@ -48,6 +48,7 @@ export const UPDATE_FILE = gql`
     $description: String
     $fileType: FileType!
     $tags: [String]
+    $templateVersion: ID
   ) {
     updateFile(
       kfId: $kfId
@@ -55,9 +56,21 @@ export const UPDATE_FILE = gql`
       description: $description
       fileType: $fileType
       tags: $tags
+      templateVersion: $templateVersion
     ) {
       file {
         ...FileFields
+        templateVersion {
+          id
+          createdAt
+          modifiedAt
+          dataTemplate {
+            id
+            name
+            description
+            icon
+          }
+        }
       }
     }
   }
