@@ -348,8 +348,17 @@ const FileDetail = ({
                     createdAt={latestDate}
                   />
                   <Label size="small" image className="ml-5 my-2 px-10">
-                    <Icon name={`${fileType.icon}`} />
-                    {fileType.title}
+                    <Icon
+                      name={
+                        fileNode.templateVersion
+                          ? fileNode.templateVersion.dataTemplate.icon ||
+                            'file outline'
+                          : fileType.icon
+                      }
+                    />
+                    {fileNode.templateVersion
+                      ? fileNode.templateVersion.dataTemplate.name
+                      : fileType.title}
                     {updateFile && (
                       <Popup
                         content="Edit document type"
