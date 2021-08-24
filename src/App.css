@@ -496,6 +496,10 @@ body {
     color: #fbbd08 !important;
 }
 
+.text-teal {
+    color: #00b5ad!important;
+}
+
 .text-underline {
     text-decoration: underline;
 }

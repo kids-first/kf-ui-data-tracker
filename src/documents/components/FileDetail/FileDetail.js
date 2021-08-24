@@ -281,10 +281,12 @@ const FileDetail = ({
   allowExtractConfig,
   event,
   studyFiles,
+  templates,
   evaluateTemplateMatch,
 }) => {
   const studyId = match.params.kfId;
   const [dialog, setDialog] = useState(false);
+  const [evaluateResult, setEvaluateResult] = useState({});
   const sortedVersions = fileSortedVersions(fileNode);
   const latestDate = fileLatestDate(sortedVersions);
   const latestSize = fileLatestSize(sortedVersions);
@@ -535,6 +537,8 @@ const FileDetail = ({
           allowUpload={allowUpload}
           updateFile={updateFile}
           updateError={updateError}
+          templates={templates}
+          evaluateResult={evaluateResult}
         />
       )}
     </Grid>
