@@ -148,3 +148,25 @@ export const FILE_DOWNLOAD_URL = gql`
     }
   }
 `;
+
+export const EVALUATE_TEMPLATE_MATCH = gql`
+  mutation evaluateTemplateMatch($input: EvaluateTemplateMatchInput!) {
+    evaluateTemplateMatch(input: $input) {
+      results {
+        matchesTemplate
+        matchedRequiredCols
+        matchedOptionalCols
+        missingRequiredCols
+        matchedOptionalCols
+        missingOptionalCols
+        templateVersion {
+          id
+          dataTemplate {
+            id
+            name
+          }
+        }
+      }
+    }
+  }
+`;
