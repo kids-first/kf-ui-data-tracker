@@ -90,7 +90,7 @@ const ReviewVersions = ({
                       <Icon
                         name={
                           node.rootFile.templateVersion.dataTemplate.icon ||
-                          'file outlie'
+                          'file outline'
                         }
                       />
                       {node.rootFile.templateVersion.dataTemplate.name ||
