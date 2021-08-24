@@ -1,8 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import {useQuery, useMutation} from '@apollo/client';
 import {Prompt} from 'react-router-dom';
-import {CREATE_FILE, CREATE_VERSION, UPDATE_VERSION} from '../mutations';
 import {GET_STUDY_BY_ID} from '../../state/queries';
+import {
+  CREATE_FILE,
+  CREATE_VERSION,
+  UPDATE_VERSION,
+  EVALUATE_TEMPLATE_MATCH,
+} from '../mutations';
 import {
   Accordion,
   Message,
@@ -118,6 +123,8 @@ const UploadView = ({match, history, location}) => {
   // Mutation to update a document with a new version
   const [updateVersion] = useMutation(UPDATE_VERSION);
 
+  const [evaluateTemplateMatch] = useMutation(EVALUATE_TEMPLATE_MATCH);
+
   useEffect(() => {
     if (!location.state) return;
 
@@ -221,6 +228,7 @@ const UploadView = ({match, history, location}) => {
               studyFiles={study.data.study.files.edges}
               version={version}
               handleSubmit={handleSubmit}
+              evaluateTemplateMatch={evaluateTemplateMatch}
             />
           </Segment>
         )}

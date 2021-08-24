@@ -60,6 +60,7 @@ const NewDocumentForm = ({
   setFieldValue,
   setFieldTouched,
   studyFiles,
+  evaluateTemplateMatch,
 }) => {
   const [step, setStep] = useState(1);
 
@@ -97,6 +98,20 @@ const NewDocumentForm = ({
           <DocumentOrVersionStep
             setFieldValue={v => {
               setFieldValue('upload_type', v);
+              evaluateTemplateMatch({
+                variables: {
+                  input: {
+                    fileVersion: version.id,
+                    study: study.id,
+                  },
+                },
+              })
+                .then(resp => {
+                  setEvaluateResult(resp.data.evaluateTemplateMatch);
+                })
+                .catch(err => {
+                  setEvaluateResult(err);
+                });
             }}
             nextStep={() => setStep(2)}
           />
