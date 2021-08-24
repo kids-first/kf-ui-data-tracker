@@ -442,6 +442,17 @@ export const DATA_REVIEW = gql`
             ...VersionFields
             rootFile {
               ...FileFields
+              templateVersion {
+                id
+                createdAt
+                modifiedAt
+                dataTemplate {
+                  id
+                  name
+                  description
+                  icon
+                }
+              }
               versions {
                 edges {
                   node {
