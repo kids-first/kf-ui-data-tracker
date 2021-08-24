@@ -60,9 +60,14 @@ const NewDocumentForm = ({
   setFieldValue,
   setFieldTouched,
   studyFiles,
+  templates,
   evaluateTemplateMatch,
+  study,
+  selectedTemplate,
+  setSelectedTemplate,
 }) => {
   const [step, setStep] = useState(1);
+  const [evaluateResult, setEvaluateResult] = useState({});
 
   const [editorState, setEditorState] = useState(
     EditorState.createWithContent(ContentState.createFromText('')),
@@ -118,10 +123,19 @@ const NewDocumentForm = ({
         )}
         {step === 2 && values.upload_type === 'document' && (
           <ChooseTypeStep
+            version={version}
+            studyId={study.kfId}
+            templates={
+              templates.data ? templates.data.allTemplateVersions.edges : []
+            }
             expeditedTypes={expeditedTypes}
             generalTypes={generalTypes}
             previousStep={() => setStep(1)}
             nextStep={() => setStep(3)}
+            selectedTemplate={selectedTemplate}
+            setSelectedTemplate={setSelectedTemplate}
+            evaluateResult={evaluateResult}
+            setFieldValue={setFieldValue}
           />
         )}
         {step === 2 && values.upload_type === 'version' && (
@@ -202,7 +216,6 @@ const FormikWrapper = ({handleSubmit, studyFiles, ...props}) => (
         if (vals.upload_type === 'document') {
           if (!vals.file_name) errors.file_name = 'required';
           if (!vals.file_desc.trim()) errors.file_desc = 'required';
-          if (!vals.file_type.trim()) errors.file_type = 'required';
           if (
             vals.file_name &&
             studyFiles.filter(
