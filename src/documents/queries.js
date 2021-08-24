@@ -10,6 +10,17 @@ export const GET_FILE_BY_ID = gql`
       creator {
         ...CreatorFields
       }
+      templateVersion {
+        id
+        createdAt
+        modifiedAt
+        dataTemplate {
+          id
+          name
+          description
+          icon
+        }
+      }
       versions {
         edges {
           node {
