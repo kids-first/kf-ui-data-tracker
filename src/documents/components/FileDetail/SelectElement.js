@@ -12,6 +12,7 @@ const SelectElement = ({
   id,
   label,
   className,
+  setSelectedTemplate,
   ...props
 }) => {
   const selected = id === values.file_type;
@@ -24,6 +25,7 @@ const SelectElement = ({
       className="selectionRadio--card"
       onClick={() => {
         setFieldValue(name, id);
+        setSelectedTemplate('');
       }}
     >
       <div>

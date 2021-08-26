@@ -80,17 +80,36 @@ const ReviewFileElement = ({
       >
         <Checkbox data-testid="file-select" checked={selected} />
       </Table.Cell>
-      <Popup
-        wide="very"
-        mouseEnterDelay={500}
-        header={fileType.title || 'Unknown Type'}
-        content={fileType.description || 'Unknown Type'}
-        trigger={
-          <Table.Cell textAlign="center">
-            <Icon name={fileType.icon || 'question'} />
-          </Table.Cell>
-        }
-      />
+      {fileNode.templateVersion ? (
+        <Popup
+          wide="very"
+          header={
+            fileNode.templateVersion.dataTemplate.name ||
+            'Unknown Data Template'
+          }
+          content={fileNode.templateVersion.dataTemplate.description || '--'}
+          trigger={
+            <Table.Cell textAlign="center">
+              <Icon
+                name={
+                  fileNode.templateVersion.dataTemplate.icon || 'file outline'
+                }
+              />
+            </Table.Cell>
+          }
+        />
+      ) : (
+        <Popup
+          wide="very"
+          header={fileType.title || 'Unknown Type'}
+          content={fileType.description || 'Unknown Type'}
+          trigger={
+            <Table.Cell textAlign="center">
+              <Icon name={fileType.icon || 'question'} />
+            </Table.Cell>
+          }
+        />
+      )}
       <Popup
         disabled={fileName.length <= 35}
         wide="very"

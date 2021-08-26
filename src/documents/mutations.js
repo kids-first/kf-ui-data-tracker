@@ -10,6 +10,7 @@ export const CREATE_FILE = gql`
     $fileType: FileType!
     $description: String!
     $tags: [String]
+    $templateVersion: ID
   ) {
     createFile(
       version: $version
@@ -18,9 +19,21 @@ export const CREATE_FILE = gql`
       fileType: $fileType
       description: $description
       tags: $tags
+      templateVersion: $templateVersion
     ) {
       file {
         ...FileFields
+        templateVersion {
+          id
+          createdAt
+          modifiedAt
+          dataTemplate {
+            id
+            name
+            description
+            icon
+          }
+        }
       }
     }
   }
@@ -35,6 +48,7 @@ export const UPDATE_FILE = gql`
     $description: String
     $fileType: FileType!
     $tags: [String]
+    $templateVersion: ID
   ) {
     updateFile(
       kfId: $kfId
@@ -42,9 +56,21 @@ export const UPDATE_FILE = gql`
       description: $description
       fileType: $fileType
       tags: $tags
+      templateVersion: $templateVersion
     ) {
       file {
         ...FileFields
+        templateVersion {
+          id
+          createdAt
+          modifiedAt
+          dataTemplate {
+            id
+            name
+            description
+            icon
+          }
+        }
       }
     }
   }
@@ -119,6 +145,28 @@ export const FILE_DOWNLOAD_URL = gql`
   mutation SignedUrl($studyId: String!, $fileId: String!, $versionId: String) {
     signedUrl(studyId: $studyId, fileId: $fileId, versionId: $versionId) {
       url
+    }
+  }
+`;
+
+export const EVALUATE_TEMPLATE_MATCH = gql`
+  mutation evaluateTemplateMatch($input: EvaluateTemplateMatchInput!) {
+    evaluateTemplateMatch(input: $input) {
+      results {
+        matchesTemplate
+        matchedRequiredCols
+        matchedOptionalCols
+        missingRequiredCols
+        matchedOptionalCols
+        missingOptionalCols
+        templateVersion {
+          id
+          dataTemplate {
+            id
+            name
+          }
+        }
+      }
     }
   }
 `;

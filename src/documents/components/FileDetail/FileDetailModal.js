@@ -23,6 +23,8 @@ const FileDetailModal = ({
   allowUpload,
   updateFile,
   updateError,
+  templates,
+  evaluateResult,
 }) => {
   return (
     <Fragment>
@@ -40,6 +42,8 @@ const FileDetailModal = ({
           onCloseDialog={onCloseModal}
           updateFile={updateFile}
           updateError={updateError}
+          templates={templates}
+          evaluateResult={evaluateResult}
         />
       )}
       {dialog === 'config' && (

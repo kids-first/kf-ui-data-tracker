@@ -281,9 +281,12 @@ const FileDetail = ({
   allowExtractConfig,
   event,
   studyFiles,
+  templates,
+  evaluateTemplateMatch,
 }) => {
   const studyId = match.params.kfId;
   const [dialog, setDialog] = useState(false);
+  const [evaluateResult, setEvaluateResult] = useState({});
   const sortedVersions = fileSortedVersions(fileNode);
   const latestDate = fileLatestDate(sortedVersions);
   const latestSize = fileLatestSize(sortedVersions);
@@ -348,8 +351,17 @@ const FileDetail = ({
                     createdAt={latestDate}
                   />
                   <Label size="small" image className="ml-5 my-2 px-10">
-                    <Icon name={`${fileType.icon}`} />
-                    {fileType.title}
+                    <Icon
+                      name={
+                        fileNode.templateVersion
+                          ? fileNode.templateVersion.dataTemplate.icon ||
+                            'file outline'
+                          : fileType.icon
+                      }
+                    />
+                    {fileNode.templateVersion
+                      ? fileNode.templateVersion.dataTemplate.name
+                      : fileType.title}
                     {updateFile && (
                       <Popup
                         content="Edit document type"
@@ -360,7 +372,27 @@ const FileDetail = ({
                             as="a"
                             className="text-primary"
                             data-testid="edit-type"
-                            onClick={() => setDialog('annotation')}
+                            onClick={() => {
+                              setDialog('annotation');
+                              evaluateTemplateMatch({
+                                variables: {
+                                  input: {
+                                    fileVersion: sortedVersions[0].node.id,
+                                    study: Buffer.from(
+                                      'StudyNode:' + studyId,
+                                    ).toString('base64'),
+                                  },
+                                },
+                              })
+                                .then(resp => {
+                                  setEvaluateResult(
+                                    resp.data.evaluateTemplateMatch,
+                                  );
+                                })
+                                .catch(err => {
+                                  setEvaluateResult(err);
+                                });
+                            }}
                           >
                             <Icon name="pencil" />
                             Edit
@@ -505,6 +537,8 @@ const FileDetail = ({
           allowUpload={allowUpload}
           updateFile={updateFile}
           updateError={updateError}
+          templates={templates}
+          evaluateResult={evaluateResult}
         />
       )}
     </Grid>

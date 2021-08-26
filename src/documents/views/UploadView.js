@@ -1,8 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import {useQuery, useMutation} from '@apollo/client';
 import {Prompt} from 'react-router-dom';
-import {CREATE_FILE, CREATE_VERSION, UPDATE_VERSION} from '../mutations';
-import {GET_STUDY_BY_ID} from '../../state/queries';
+import {
+  CREATE_FILE,
+  CREATE_VERSION,
+  UPDATE_VERSION,
+  EVALUATE_TEMPLATE_MATCH,
+} from '../mutations';
+import {GET_STUDY_BY_ID, ALL_TEMPLATE_VERSIONS} from '../../state/queries';
 import {
   Accordion,
   Message,
@@ -88,9 +93,19 @@ const UploadBar = ({
 };
 
 const UploadView = ({match, history, location}) => {
+  const [selectedTemplate, setSelectedTemplate] = useState('');
+
   const study = useQuery(GET_STUDY_BY_ID, {
     variables: {
       id: Buffer.from('StudyNode:' + match.params.kfId).toString('base64'),
+    },
+  });
+
+  const templates = useQuery(ALL_TEMPLATE_VERSIONS, {
+    variables: {
+      studies: [
+        Buffer.from('StudyNode:' + match.params.kfId).toString('base64'),
+      ],
     },
   });
 
@@ -117,6 +132,8 @@ const UploadView = ({match, history, location}) => {
 
   // Mutation to update a document with a new version
   const [updateVersion] = useMutation(UPDATE_VERSION);
+
+  const [evaluateTemplateMatch] = useMutation(EVALUATE_TEMPLATE_MATCH);
 
   useEffect(() => {
     if (!location.state) return;
@@ -148,9 +165,10 @@ const UploadView = ({match, history, location}) => {
         version: version.id,
         study: study.id,
         name: file_name,
-        fileType: file_type,
+        fileType: selectedTemplate ? 'OTH' : file_type,
         description: file_desc,
         tags: [],
+        templateVersion: selectedTemplate.length > 0 ? selectedTemplate : null,
       },
     })
       .then(resp => {
@@ -220,7 +238,12 @@ const UploadView = ({match, history, location}) => {
             <NewUploadForm
               studyFiles={study.data.study.files.edges}
               version={version}
+              templates={templates}
               handleSubmit={handleSubmit}
+              evaluateTemplateMatch={evaluateTemplateMatch}
+              study={study.data.study}
+              selectedTemplate={selectedTemplate}
+              setSelectedTemplate={setSelectedTemplate}
             />
           </Segment>
         )}

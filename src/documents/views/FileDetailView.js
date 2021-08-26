@@ -1,9 +1,19 @@
 import React from 'react';
 import {Helmet} from 'react-helmet';
 import {useQuery, useMutation} from '@apollo/client';
-import {MY_PROFILE, GET_STUDY_BY_ID, ALL_EVENTS} from '../../state/queries';
+import {
+  MY_PROFILE,
+  GET_STUDY_BY_ID,
+  ALL_EVENTS,
+  ALL_TEMPLATE_VERSIONS,
+} from '../../state/queries';
 import {GET_FILE_BY_ID} from '../queries';
-import {UPDATE_FILE, DELETE_FILE, FILE_DOWNLOAD_URL} from '../mutations';
+import {
+  UPDATE_FILE,
+  DELETE_FILE,
+  FILE_DOWNLOAD_URL,
+  EVALUATE_TEMPLATE_MATCH,
+} from '../mutations';
 import {Container, Segment, Dimmer, Loader, Message} from 'semantic-ui-react';
 import FileDetail from '../components/FileDetail/FileDetail';
 import NotFoundView from '../../views/NotFoundView';
@@ -47,6 +57,17 @@ const FileDetailView = ({match}) => {
       },
     ],
   });
+
+  const templates = useQuery(ALL_TEMPLATE_VERSIONS, {
+    variables: {
+      studies: [
+        Buffer.from('StudyNode:' + match.params.kfId).toString('base64'),
+      ],
+    },
+  });
+
+  const [evaluateTemplateMatch] = useMutation(EVALUATE_TEMPLATE_MATCH);
+
   const [deleteFile] = useMutation(DELETE_FILE, {
     refetchQueries: [
       {
@@ -143,6 +164,10 @@ const FileDetailView = ({match}) => {
         studyFiles={
           files ? files.filter(({node}) => node.name !== fileByKfId.name) : []
         }
+        templates={
+          templates.data ? templates.data.allTemplateVersions.edges : []
+        }
+        evaluateTemplateMatch={evaluateTemplateMatch}
       />
     </Container>
   );
