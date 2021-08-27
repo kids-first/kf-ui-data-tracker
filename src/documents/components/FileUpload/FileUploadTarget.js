@@ -22,7 +22,7 @@ const FileUploadTarget = props => {
     >
       <Segment piled placeholder>
         {instructions ? (
-          <Header icon>
+          <Header icon className="mb-0">
             <Icon name="file outline" />
             {instructions}
             <br />
