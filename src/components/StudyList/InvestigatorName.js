@@ -55,7 +55,7 @@ const EditModal = ({study, open, setOpen}) => {
             <Form.Input
               fluid
               onChange={e => setName(e.target.value)}
-              value={name}
+              value={name || ''}
               label="Investigator Name"
               type="text"
               placeholder="Bobby Tables"
