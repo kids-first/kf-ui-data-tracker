@@ -1,5 +1,21 @@
 # Kids First Data Tracker Change History
 
+## Release 0.23.0
+
+### Summary
+
+- Emojis: ✨ x3, ♻️ x2
+- Categories: Additions x3, Other Changes x2
+
+### New features and changes
+
+- [#1104](https://github.com/kids-first/kf-ui-data-tracker/pull/1104) - ✨ Make folder path clickable on document detail page - [e891e8de](https://github.com/kids-first/kf-ui-data-tracker/commit/e891e8de31531a3dbe18aa616f1ebb58261e48b0) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#1103](https://github.com/kids-first/kf-ui-data-tracker/pull/1103) - ♻️ In add collaborator modal only show users from current organization - [1e221b02](https://github.com/kids-first/kf-ui-data-tracker/commit/1e221b023e27681ce5382f55bda8dbd9cdf80bd2) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#1102](https://github.com/kids-first/kf-ui-data-tracker/pull/1102) - ✨ Display data template matching result on document detail page - [9b427ccd](https://github.com/kids-first/kf-ui-data-tracker/commit/9b427ccde8a19c4d069ea5dc818667deba65b6c1) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#1100](https://github.com/kids-first/kf-ui-data-tracker/pull/1100) - ♻️  Sort matched templates to the front in document uploading - [78d14e88](https://github.com/kids-first/kf-ui-data-tracker/commit/78d14e8813ccce402081d5f4560da1a5fbfa4443) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#1086](https://github.com/kids-first/kf-ui-data-tracker/pull/1086) - ✨ Add field check with template for document upload - [ad093883](https://github.com/kids-first/kf-ui-data-tracker/commit/ad09388387e5281d4f1937ae97ac7a4b41d23740) by [XuTheBunny](https://github.com/XuTheBunny)
+
+
 ## Release 0.22.1
 
 ### Summary
