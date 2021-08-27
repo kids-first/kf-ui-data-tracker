@@ -9,6 +9,7 @@ import {
   Placeholder,
   Popup,
   Radio,
+  Segment,
 } from 'semantic-ui-react';
 import React, {Fragment} from 'react';
 
@@ -247,6 +248,110 @@ export const TemplateCard = ({
           </Card.Content>
         )}
       </Card>
+    }
+  >
+    {result.length > 0 && (
+      <Popup.Content className="pt-5">
+        {result[0].matchedRequiredCols
+          .concat(result[0].missingRequiredCols)
+          .concat(result[0].matchedOptionalCols)
+          .concat(result[0].missingOptionalCols).length > 0 ? (
+          <Label
+            attached="top"
+            color={result[0].matchesTemplate ? 'green' : 'red'}
+          >
+            {result[0].matchesTemplate ? 'MATCHED' : 'UNMATCHED'}
+          </Label>
+        ) : (
+          <Label attached="top" color="grey">
+            NO RESULTS
+          </Label>
+        )}
+        <FieldsList
+          fields={result[0].missingRequiredCols}
+          title=" Missing Required Fields"
+          color="red"
+        />
+        <FieldsList
+          fields={result[0].matchedRequiredCols}
+          title=" Matched Required Fields"
+          color="green"
+        />
+        <FieldsList
+          fields={result[0].missingOptionalCols}
+          title=" Missing Optional Fields"
+          color="yellow"
+        />
+        <FieldsList
+          fields={result[0].matchedOptionalCols}
+          title=" Matched Optional Fields"
+          color="teal"
+        />
+      </Popup.Content>
+    )}
+  </Popup>
+);
+
+export const ResultDisplay = ({result}) => (
+  <Popup
+    wide="very"
+    position="bottom center"
+    disabled={result.length === 0}
+    trigger={
+      <Segment basic className="noMargin">
+        <Header as="h4" color="grey">
+          Template{' '}
+          {result.length > 0 &&
+            result[0].matchedRequiredCols
+              .concat(result[0].missingRequiredCols)
+              .concat(result[0].matchedOptionalCols)
+              .concat(result[0].missingOptionalCols).length > 0 && (
+              <Label
+                content={result[0].matchesTemplate ? 'MATCHED' : 'UNMATCHED'}
+                color={result[0].matchesTemplate ? 'green' : 'red'}
+                size="mini"
+              />
+            )}
+        </Header>
+        {result.length > 0 ? (
+          <>
+            <List className="noMargin" bulleted horizontal size="tiny">
+              <List.Item className="text-red">
+                {result[0].missingRequiredCols.length +
+                  '/' +
+                  (result[0].matchedRequiredCols.length +
+                    result[0].missingRequiredCols.length) +
+                  ' required fields missing'}
+              </List.Item>
+              <List.Item className="text-green">
+                {result[0].matchedRequiredCols.length +
+                  '/' +
+                  (result[0].matchedRequiredCols.length +
+                    result[0].missingRequiredCols.length) +
+                  ' required fields matched'}
+              </List.Item>
+            </List>
+            <List className="noMargin" bulleted horizontal size="tiny">
+              <List.Item className="text-yellow">
+                {result[0].missingOptionalCols.length +
+                  '/' +
+                  (result[0].matchedOptionalCols.length +
+                    result[0].missingOptionalCols.length) +
+                  ' optional fields missing'}
+              </List.Item>
+              <List.Item className="text-teal">
+                {result[0].matchedOptionalCols.length +
+                  '/' +
+                  (result[0].matchedOptionalCols.length +
+                    result[0].missingOptionalCols.length) +
+                  ' optional fields matched'}
+              </List.Item>
+            </List>
+          </>
+        ) : (
+          <span className="text-grey">No field evaluation results</span>
+        )}
+      </Segment>
     }
   >
     {result.length > 0 && (
