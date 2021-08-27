@@ -54,12 +54,14 @@ const EventsView = () => {
 
   const studyOptions = allStudies
     ? allStudies.edges.map(({node}) => ({
+        key: node.id,
         text: `${node.kfId} - ${node.name || node.shortName}`,
         value: node.kfId,
       }))
     : [];
   const userOptions = allUsers
     ? allUsers.edges.map(({node}) => ({
+        key: node.id,
         text: node.displayName,
         value: node.username,
       }))
