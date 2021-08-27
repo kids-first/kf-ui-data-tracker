@@ -246,7 +246,7 @@ const TemplatesView = () => {
                 createDataTemplate={createDataTemplate}
                 createTemplateVersion={createTemplateVersion}
                 setEditConfirm={setEditConfirm}
-                studyList={currentOrgStudies}
+                studyList={studyList}
                 studyError={studyError}
                 editable={currentOrg.id === formikProps.values.organization.id}
               />
