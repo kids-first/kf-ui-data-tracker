@@ -253,7 +253,8 @@ export const TemplateCard = ({
       <Popup.Content className="pt-5">
         {result[0].matchedRequiredCols
           .concat(result[0].missingRequiredCols)
-          .concat(result[0].matchedOptionalCols).length > 0 ? (
+          .concat(result[0].matchedOptionalCols)
+          .concat(result[0].missingOptionalCols).length > 0 ? (
           <Label
             attached="top"
             color={result[0].matchesTemplate ? 'green' : 'red'}
