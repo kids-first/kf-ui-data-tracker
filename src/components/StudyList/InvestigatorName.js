@@ -48,7 +48,7 @@ const EditModal = ({study, open, setOpen}) => {
       closeIcon
       closeOnDocumentClick
     >
-      <Modal.Header>Enter Principle Investigator's Name</Modal.Header>
+      <Modal.Header>Enter Principal Investigator's Name</Modal.Header>
       <Modal.Content>
         <Modal.Description>
           <Form>
