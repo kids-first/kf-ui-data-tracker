@@ -27,7 +27,9 @@ const AddCollaboratorModal = ({
     currentOrg = null;
   }
 
-  const {data: usersData} = useQuery(ALL_USERS);
+  const {data: usersData} = useQuery(ALL_USERS, {
+    variables: {organization: currentOrg.id},
+  });
 
   const addedUsers = study.collaborators.edges.map(({node}) => node.id);
   const availableUsers =

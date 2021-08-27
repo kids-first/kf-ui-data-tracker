@@ -202,8 +202,8 @@ export const MY_PROFILE = gql`
 
 // Get all users
 export const ALL_USERS = gql`
-  query AllUsers {
-    allUsers {
+  query AllUsers($organization: ID) {
+    allUsers(organization: $organization) {
       edges {
         node {
           id
