@@ -435,7 +435,13 @@ const FileDetail = ({
                         e.stopPropagation();
                       }}
                     >
-                      {pathTag.slice(5)}
+                      <Link
+                        to={`/study/${studyId}/documents#${pathTag}`}
+                        target="_blank"
+                        className="text-blue"
+                      >
+                        {pathTag.slice(5)}
+                      </Link>
                       {updateFile && (
                         <Popup
                           trigger={
