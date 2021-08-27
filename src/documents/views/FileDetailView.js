@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Helmet} from 'react-helmet';
 import {useQuery, useMutation} from '@apollo/client';
 import {
@@ -18,6 +18,7 @@ import {Container, Segment, Dimmer, Loader, Message} from 'semantic-ui-react';
 import FileDetail from '../components/FileDetail/FileDetail';
 import NotFoundView from '../../views/NotFoundView';
 import {hasPermission} from '../../common/permissions';
+import {fileSortedVersions} from '../utilities';
 
 const FileDetailView = ({match}) => {
   // Study query get used tags within current study
@@ -108,6 +109,33 @@ const FileDetailView = ({match}) => {
     fetchPolicy: 'cache-and-network',
   });
 
+  const [evaluateResult, setEvaluateResult] = useState({});
+
+  useEffect(() => {
+    const sortedVersions = fileSortedVersions(fileByKfId);
+    const getMatchingData = () => {
+      evaluateTemplateMatch({
+        variables: {
+          input: {
+            fileVersion: sortedVersions[0].node.id,
+            study: Buffer.from('StudyNode:' + match.params.kfId).toString(
+              'base64',
+            ),
+          },
+        },
+      })
+        .then(resp => {
+          setEvaluateResult(resp.data.evaluateTemplateMatch);
+        })
+        .catch(err => {
+          setEvaluateResult(err);
+        });
+    };
+    if (sortedVersions.length > 0) {
+      getMatchingData();
+    }
+  }, [evaluateTemplateMatch, fileByKfId, match.params.kfId]);
+
   if (loading)
     return (
       <Dimmer active inverted>
@@ -167,7 +195,8 @@ const FileDetailView = ({match}) => {
         templates={
           templates.data ? templates.data.allTemplateVersions.edges : []
         }
-        evaluateTemplateMatch={evaluateTemplateMatch}
+        evaluateResult={evaluateResult}
+        setEvaluateResult={setEvaluateResult}
       />
     </Container>
   );

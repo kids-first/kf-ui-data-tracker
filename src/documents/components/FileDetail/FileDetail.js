@@ -28,6 +28,7 @@ import FileTags from './FileTags';
 import FileName from './FileName';
 import FileDescription from './FileDescription';
 import Timelines from './Timelines';
+import {ResultDisplay} from '../UploadSteps/TypeCard';
 
 const ActionButtons = ({
   downloadFile,
@@ -282,11 +283,11 @@ const FileDetail = ({
   event,
   studyFiles,
   templates,
-  evaluateTemplateMatch,
+  evaluateResult,
+  setEvaluateResult,
 }) => {
   const studyId = match.params.kfId;
   const [dialog, setDialog] = useState(false);
-  const [evaluateResult, setEvaluateResult] = useState({});
   const sortedVersions = fileSortedVersions(fileNode);
   const latestDate = fileLatestDate(sortedVersions);
   const latestSize = fileLatestSize(sortedVersions);
@@ -335,7 +336,7 @@ const FileDetail = ({
         </Grid.Column>
         <Grid.Column mobile={16} tablet={13} computer={14} className="pl-0">
           <Grid>
-            <Grid.Row>
+            <Grid.Row className="pb-0">
               <Grid.Column mobile={16} tablet={16} computer={10}>
                 <Segment basic>
                   <Header as="h4" color="grey">
@@ -374,24 +375,6 @@ const FileDetail = ({
                             data-testid="edit-type"
                             onClick={() => {
                               setDialog('annotation');
-                              evaluateTemplateMatch({
-                                variables: {
-                                  input: {
-                                    fileVersion: sortedVersions[0].node.id,
-                                    study: Buffer.from(
-                                      'StudyNode:' + studyId,
-                                    ).toString('base64'),
-                                  },
-                                },
-                              })
-                                .then(resp => {
-                                  setEvaluateResult(
-                                    resp.data.evaluateTemplateMatch,
-                                  );
-                                })
-                                .catch(err => {
-                                  setEvaluateResult(err);
-                                });
                             }}
                           >
                             <Icon name="pencil" />
@@ -425,56 +408,76 @@ const FileDetail = ({
                 </Segment>
               </Grid.Column>
             </Grid.Row>
-          </Grid>
-          {pathTag && (
-            <Segment basic className="noMargin">
-              <Header as="h4" color="grey">
-                Folder Path
-              </Header>
-              <Label
-                as="a"
-                className="my-2"
-                title={pathTag.slice(5)}
-                onClick={e => {
-                  e.stopPropagation();
-                }}
-              >
-                {pathTag.slice(5)}
-                {updateFile && (
-                  <Popup
-                    trigger={<Icon name="close" data-testid="remove-tag" />}
-                    header="Are you sure?"
-                    content={
-                      <>
-                        By removing the folder path, this file will be sent to
-                        root diretory.
-                        <Divider />
-                        <Button
-                          negative
-                          fluid
-                          size="mini"
-                          icon="trash alternate"
-                          content="Remove"
-                          onClick={e => {
-                            e.stopPropagation();
-                            updateFile({
-                              variables: {
-                                kfId: fileNode.kfId,
-                                fileType: fileNode.fileType,
-                                tags: fileNode.tags.filter(t => t !== pathTag),
-                              },
-                            });
-                          }}
-                        />
-                      </>
-                    }
-                    on="click"
-                    position="left center"
-                  />
+            <Grid.Row className="pt-0">
+              {evaluateResult &&
+                evaluateResult.results &&
+                fileNode.templateVersion && (
+                  <Grid.Column mobile={16} tablet={16} computer={10}>
+                    <ResultDisplay
+                      result={evaluateResult.results.filter(
+                        r =>
+                          r.templateVersion.id === fileNode.templateVersion.id,
+                      )}
+                    />
+                  </Grid.Column>
                 )}
-              </Label>
-            </Segment>
-          )}
+              {pathTag && (
+                <Grid.Column mobile={16} tablet={16} computer={6}>
+                  <Segment basic className="noMargin">
+                    <Header as="h4" color="grey">
+                      Folder Path
+                    </Header>
+                    <Label
+                      as="a"
+                      className="my-2"
+                      title={pathTag.slice(5)}
+                      onClick={e => {
+                        e.stopPropagation();
+                      }}
+                    >
+                      {pathTag.slice(5)}
+                      {updateFile && (
+                        <Popup
+                          trigger={
+                            <Icon name="close" data-testid="remove-tag" />
+                          }
+                          header="Are you sure?"
+                          content={
+                            <>
+                              By removing the folder path, this file will be
+                              sent to root diretory.
+                              <Divider />
+                              <Button
+                                negative
+                                fluid
+                                size="mini"
+                                icon="trash alternate"
+                                content="Remove"
+                                onClick={e => {
+                                  e.stopPropagation();
+                                  updateFile({
+                                    variables: {
+                                      kfId: fileNode.kfId,
+                                      fileType: fileNode.fileType,
+                                      tags: fileNode.tags.filter(
+                                        t => t !== pathTag,
+                                      ),
+                                    },
+                                  });
+                                }}
+                              />
+                            </>
+                          }
+                          on="click"
+                          position="left center"
+                        />
+                      )}
+                    </Label>
+                  </Segment>
+                </Grid.Column>
+              )}
+            </Grid.Row>
+          </Grid>
           <Segment basic className="noMargin">
             <FileDescription fileNode={fileNode} updateFile={updateFile} />
           </Segment>
