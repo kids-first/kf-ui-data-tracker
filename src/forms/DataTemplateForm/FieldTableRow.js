@@ -52,7 +52,7 @@ export const EditRow = ({
 
   return (
     <Table.Row>
-      <Table.Cell>
+      <Table.Cell className="noHorizontalPadding">
         <Input
           fluid
           className="no-border"
@@ -63,7 +63,7 @@ export const EditRow = ({
           }}
         />
       </Table.Cell>
-      <Table.Cell negative={requireLabel}>
+      <Table.Cell negative={requireLabel} className="noHorizontalPadding">
         <Input
           fluid
           className="no-border"
@@ -75,7 +75,7 @@ export const EditRow = ({
           }}
         />
       </Table.Cell>
-      <Table.Cell>
+      <Table.Cell className="noHorizontalPadding">
         <Dropdown
           fluid
           selection
@@ -89,6 +89,7 @@ export const EditRow = ({
         />
       </Table.Cell>
       <Table.Cell
+        className="noHorizontalPadding"
         textAlign="center"
         onClick={e => {
           e.stopPropagation();
@@ -105,7 +106,7 @@ export const EditRow = ({
           }}
         />
       </Table.Cell>
-      <Table.Cell>
+      <Table.Cell className="noHorizontalPadding">
         <Input
           fluid
           className="no-border"
@@ -123,7 +124,7 @@ export const EditRow = ({
           }}
         />
       </Table.Cell>
-      <Table.Cell>
+      <Table.Cell className="noHorizontalPadding">
         <Input
           fluid
           className="no-border"
@@ -139,7 +140,7 @@ export const EditRow = ({
           }}
         />
       </Table.Cell>
-      <Table.Cell negative={requireDescription}>
+      <Table.Cell negative={requireDescription} className="noHorizontalPadding">
         <Input
           fluid
           className="no-border"
@@ -151,7 +152,7 @@ export const EditRow = ({
           }}
         />
       </Table.Cell>
-      <Table.Cell>
+      <Table.Cell className="noHorizontalPadding">
         <Input
           fluid
           className="no-border"
