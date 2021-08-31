@@ -48,14 +48,14 @@ const EditModal = ({study, open, setOpen}) => {
       closeIcon
       closeOnDocumentClick
     >
-      <Modal.Header>Enter Principle Investigator's Name</Modal.Header>
+      <Modal.Header>Enter Principal Investigator's Name</Modal.Header>
       <Modal.Content>
         <Modal.Description>
           <Form>
             <Form.Input
               fluid
               onChange={e => setName(e.target.value)}
-              value={name}
+              value={name || ''}
               label="Investigator Name"
               type="text"
               placeholder="Bobby Tables"

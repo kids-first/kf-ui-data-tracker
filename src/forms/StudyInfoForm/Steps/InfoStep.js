@@ -30,7 +30,7 @@ const InfoStep = ({
     {
       required: false,
       id: 'investigatorName',
-      name: 'Principle Investigator',
+      name: 'Principal Investigator',
       description:
         'The name of the principle investigator, used to categorize this study',
     },

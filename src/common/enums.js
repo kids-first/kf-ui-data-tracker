@@ -238,6 +238,96 @@ export const eventType = {
     iconName: 'code',
     iconColor: 'red',
   },
+  MB_ADD: {
+    title: 'Organization Member Added',
+    iconName: 'user',
+    iconColor: 'green',
+  },
+  MB_REM: {
+    title: 'Organization Member Removed',
+    iconName: 'user',
+    iconColor: 'red',
+  },
+  TV_CRE: {
+    title: 'Template Version Created',
+    iconName: 'file excel outline',
+    iconColor: 'green',
+  },
+  TV_UPD: {
+    title: 'Template Version Updated',
+    iconName: 'file excel outline',
+    iconColor: 'yellow',
+  },
+  TV_DEL: {
+    title: 'Template Version Deleted',
+    iconName: 'file excel outline',
+    iconColor: 'red',
+  },
+  DT_CRE: {
+    title: 'Data Template Created',
+    iconName: 'file excel outline',
+    iconColor: 'green',
+  },
+  DT_UPD: {
+    title: 'Data Template Updated',
+    iconName: 'file excel outline',
+    iconColor: 'yellow',
+  },
+  DT_DEL: {
+    title: 'Data Template Deleted',
+    iconName: 'file excel outline',
+    iconColor: 'red',
+  },
+  CB_UPD: {
+    title: 'Collaborator Updated',
+    iconName: 'user',
+    iconColor: 'yellow',
+  },
+  IR_INI: {
+    title: 'Ingest Run Initializing',
+    iconName: 'computer',
+    iconColor: 'yellow',
+  },
+  IR_STA: {
+    title: 'Ingest Run Started',
+    iconName: 'computer',
+    iconColor: 'blue',
+  },
+  IR_CAN: {
+    title: 'Ingest Run Canceled',
+    iconName: 'computer',
+    iconColor: 'grey',
+  },
+  IR_CLG: {
+    title: 'Ingest Run Canceling',
+    iconName: 'computer',
+    iconColor: 'grey',
+  },
+  IR_COM: {
+    title: 'Ingest Run Completed',
+    iconName: 'computer',
+    iconColor: 'green',
+  },
+  IR_FAI: {
+    title: 'Ingest Run Failed',
+    iconName: 'computer',
+    iconColor: 'red',
+  },
+  OR_UPD: {
+    title: 'Study Organization Updated',
+    iconName: 'hospital outline',
+    iconColor: 'yellow',
+  },
+  VR_CLG: {
+    title: 'Validation Run Canceling',
+    iconName: 'code',
+    iconColor: 'black',
+  },
+  VR_INI: {
+    title: 'Validation Run Initializing',
+    iconName: 'code',
+    iconColor: 'yellow',
+  },
 };
 
 // Store file type title, description and icon
