@@ -171,6 +171,7 @@ const FileActionButtons = ({
                       logEvent('click');
                       e.stopPropagation();
                       deleteFile({variables: {kfId: node.kfId}});
+                      window.location.reload(false);
                     }}
                   />
                 </>

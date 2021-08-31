@@ -147,6 +147,7 @@ const BatchActions = ({
                       deleteFile({variables: {kfId: fileId}}),
                     );
                     setSelection([]);
+                    window.location.reload(false);
                   }}
                 />
               </>
