@@ -49,10 +49,15 @@ export const EditRow = ({
   const [fieldInput, setFieldInput] = useState(field);
   const [requireLabel, setRequireLabel] = useState(false);
   const [requireDescription, setRequireDescription] = useState(false);
+  const [touchedCol, setTouchedCol] = useState('');
 
   return (
-    <Table.Row>
-      <Table.Cell>
+    <Table.Row warning>
+      <Table.Cell
+        className="noHorizontalPadding"
+        width={touchedCol === 'key' ? '6' : '1'}
+        onClick={() => setTouchedCol('key')}
+      >
         <Input
           fluid
           className="no-border"
@@ -63,7 +68,12 @@ export const EditRow = ({
           }}
         />
       </Table.Cell>
-      <Table.Cell negative={requireLabel}>
+      <Table.Cell
+        negative={requireLabel}
+        className="noHorizontalPadding"
+        width={touchedCol === 'label' ? '6' : '1'}
+        onClick={() => setTouchedCol('label')}
+      >
         <Input
           fluid
           className="no-border"
@@ -75,7 +85,7 @@ export const EditRow = ({
           }}
         />
       </Table.Cell>
-      <Table.Cell>
+      <Table.Cell className="noHorizontalPadding" width="1">
         <Dropdown
           fluid
           selection
@@ -89,6 +99,7 @@ export const EditRow = ({
         />
       </Table.Cell>
       <Table.Cell
+        className="noHorizontalPadding"
         textAlign="center"
         onClick={e => {
           e.stopPropagation();
@@ -105,7 +116,11 @@ export const EditRow = ({
           }}
         />
       </Table.Cell>
-      <Table.Cell>
+      <Table.Cell
+        className="noHorizontalPadding"
+        width={touchedCol === 'acceptedValue' ? '6' : '1'}
+        onClick={() => setTouchedCol('acceptedValue')}
+      >
         <Input
           fluid
           className="no-border"
@@ -123,7 +138,11 @@ export const EditRow = ({
           }}
         />
       </Table.Cell>
-      <Table.Cell>
+      <Table.Cell
+        className="noHorizontalPadding"
+        width={touchedCol === 'missingValues' ? '6' : '1'}
+        onClick={() => setTouchedCol('missingValues')}
+      >
         <Input
           fluid
           className="no-border"
@@ -139,7 +158,12 @@ export const EditRow = ({
           }}
         />
       </Table.Cell>
-      <Table.Cell negative={requireDescription}>
+      <Table.Cell
+        negative={requireDescription}
+        className="noHorizontalPadding"
+        width={touchedCol === 'description' ? '6' : '1'}
+        onClick={() => setTouchedCol('description')}
+      >
         <Input
           fluid
           className="no-border"
@@ -151,7 +175,11 @@ export const EditRow = ({
           }}
         />
       </Table.Cell>
-      <Table.Cell>
+      <Table.Cell
+        className="noHorizontalPadding"
+        width={touchedCol === 'instructions' ? '6' : '1'}
+        onClick={() => setTouchedCol('instructions')}
+      >
         <Input
           fluid
           className="no-border"

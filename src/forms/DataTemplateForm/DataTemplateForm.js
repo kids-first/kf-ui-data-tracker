@@ -253,7 +253,7 @@ const DataTemplateForm = ({
               />
             </>
           )}
-          <Table celled>
+          <Table celled className="text-12">
             <Table.Header>
               <HeaderRow editable={withinOrg} />
             </Table.Header>

@@ -91,6 +91,7 @@ const DataTemplateEditModal = ({
         setOpen('');
         setCurrentStep(0);
         setFieldData([]);
+        setEditing([]);
         if (setStudySelect) {
           setCreationError('');
           setStudySelect(studyIds);
@@ -202,6 +203,7 @@ const DataTemplateEditModal = ({
             setCurrentStep(0);
             setCreationError('');
             setFieldData([]);
+            setEditing([]);
             setStudySelect(studyIds);
             setEditConfirm(false);
           }}
@@ -219,6 +221,7 @@ const DataTemplateEditModal = ({
             }
             onClick={() => {
               setCreationError('');
+              setEditing([]);
               const templateInput = {
                 name: formikProps.values.name,
                 description: formikProps.values.description,
