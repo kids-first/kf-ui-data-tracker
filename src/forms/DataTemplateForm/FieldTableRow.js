@@ -52,7 +52,7 @@ export const EditRow = ({
   const [touchedCol, setTouchedCol] = useState('');
 
   return (
-    <Table.Row>
+    <Table.Row warning>
       <Table.Cell
         className="noHorizontalPadding"
         width={touchedCol === 'key' ? '6' : '1'}
