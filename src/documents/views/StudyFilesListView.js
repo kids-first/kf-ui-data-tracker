@@ -12,7 +12,6 @@ import {
   Container,
   Segment,
   Button,
-  Responsive,
   Header,
   Icon,
 } from 'semantic-ui-react';
@@ -358,28 +357,27 @@ const StudyFilesListView = ({
               {loading ? (
                 <StudyListSkeleton />
               ) : (
-                <Segment basic>
-                  <Header icon textAlign="center">
-                    <Icon name="file alternate outline" />
-                    {allowView
-                      ? "You don't have any documents yet."
-                      : "You don't have access to any documents."}
-                  </Header>
-                </Segment>
+                <>
+                  {allowUploadFile || allowUploadVersion ? (
+                    <Grid.Row centered>
+                      <UploadContainer handleUpload={file => onUpload(file)} />
+                    </Grid.Row>
+                  ) : (
+                    <Segment placeholder>
+                      <Header icon textAlign="center" disabled>
+                        <Icon name="file outline" />
+                        {allowView
+                          ? "You don't have any documents yet."
+                          : "You don't have access to view any documents."}
+                      </Header>
+                    </Segment>
+                  )}
+                </>
               )}
             </>
           )}
         </Grid.Column>
       </Grid.Row>
-      {(allowUploadFile || allowUploadVersion) && (
-        <Grid.Row centered>
-          <Responsive
-            as={UploadContainer}
-            minWidth={Responsive.onlyTablet.minWidth}
-            handleUpload={file => onUpload(file)}
-          />
-        </Grid.Row>
-      )}
     </Grid>
   );
 };
