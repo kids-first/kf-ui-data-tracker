@@ -1,5 +1,19 @@
 # Kids First Data Tracker Change History
 
+## Release 0.23.1
+
+### Summary
+
+- Emojis: ♻️ x2, 🐛 x1
+- Categories: Fixes x1, Other Changes x2
+
+### New features and changes
+
+- [#1114](https://github.com/kids-first/kf-ui-data-tracker/pull/1114) - ♻️ Adjust template field input table experience - [3a135145](https://github.com/kids-first/kf-ui-data-tracker/commit/3a135145d80fb7c8d1b80f7a51c6e0d269e624e2) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#1113](https://github.com/kids-first/kf-ui-data-tracker/pull/1113) - ♻️ Refactor study document tab layout and refetch - [861622ed](https://github.com/kids-first/kf-ui-data-tracker/commit/861622ed1dcbff18400e8494bed3f1afc9d0d960) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#1112](https://github.com/kids-first/kf-ui-data-tracker/pull/1112) - 🐛 Minor bug fix around study info and event list - [671b33fb](https://github.com/kids-first/kf-ui-data-tracker/commit/671b33fbbcae2c8628a1b561406ca01148df4481) by [XuTheBunny](https://github.com/XuTheBunny)
+
+
 ## Release 0.23.0
 
 ### Summary
