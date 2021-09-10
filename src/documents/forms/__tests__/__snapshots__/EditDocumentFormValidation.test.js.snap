@@ -44,6 +44,170 @@ exports[`Show warning message when input file name is similar to an existing fil
             >
               <input
                 class="hidden"
+                id="CLN"
+                name="file_type"
+                readonly=""
+                tabindex="0"
+                type="radio"
+                value="CLN"
+              />
+              <i
+                aria-hidden="true"
+                class="black ambulance large bordered circular inverted icon"
+              />
+            </div>
+          </div>
+          <div>
+            <p
+              class="mb-5"
+            >
+              <b>
+                Clinical/Phenotypic Data
+              </b>
+            </p>
+            <p
+              class="text-wrap-75 text-grey"
+            >
+              Structured files with data linked to the biospecimen identifiers provided in the shipping manifest(s). Exports from data management applications, such as REDCap, are the fastest to process, but we will work with you on most formats.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="field"
+      >
+        <div
+          class="ui compact segment selectionRadio--card"
+        >
+          <div>
+            <div
+              class="ui radio checkbox"
+            >
+              <input
+                class="hidden"
+                id="BSM"
+                name="file_type"
+                readonly=""
+                tabindex="0"
+                type="radio"
+                value="BSM"
+              />
+              <i
+                aria-hidden="true"
+                class="black syringe large bordered circular inverted icon"
+              />
+            </div>
+          </div>
+          <div>
+            <p
+              class="mb-5"
+            >
+              <b>
+                Biospecimen Data
+              </b>
+            </p>
+            <p
+              class="text-wrap-75 text-grey"
+            >
+              Structured files containing biospecimen identifiers and metadata (e.g. tissue type, composition) provided to sequencing centers as well as consent type.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="field"
+      >
+        <div
+          class="ui compact segment selectionRadio--card"
+        >
+          <div>
+            <div
+              class="ui radio checkbox"
+            >
+              <input
+                class="hidden"
+                id="FAM"
+                name="file_type"
+                readonly=""
+                tabindex="0"
+                type="radio"
+                value="FAM"
+              />
+              <i
+                aria-hidden="true"
+                class="black users large bordered circular inverted icon"
+              />
+            </div>
+          </div>
+          <div>
+            <p
+              class="mb-5"
+            >
+              <b>
+                Family Relationships
+              </b>
+            </p>
+            <p
+              class="text-wrap-75 text-grey"
+            >
+              Structured files containing familial relationships
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="field"
+      >
+        <div
+          class="ui compact segment selectionRadio--card"
+        >
+          <div>
+            <div
+              class="ui radio checkbox"
+            >
+              <input
+                class="hidden"
+                id="SEQ"
+                name="file_type"
+                readonly=""
+                tabindex="0"
+                type="radio"
+                value="SEQ"
+              />
+              <i
+                aria-hidden="true"
+                class="black dna large bordered circular inverted icon"
+              />
+            </div>
+          </div>
+          <div>
+            <p
+              class="mb-5"
+            >
+              <b>
+                Genomic File Data
+              </b>
+            </p>
+            <p
+              class="text-wrap-75 text-grey"
+            >
+              Structured files containing metadata about genomic files such as raw sequencing files or files output from genomic post-processes (alignment, variant calling, etc).
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="field"
+      >
+        <div
+          class="ui compact segment selectionRadio--card"
+        >
+          <div>
+            <div
+              class="ui radio checkbox"
+            >
+              <input
+                class="hidden"
                 id="DBG"
                 name="file_type"
                 readonly=""
@@ -446,6 +610,170 @@ exports[`Show warning message when input file name is similar to an existing fil
             >
               <input
                 class="hidden"
+                id="CLN"
+                name="file_type"
+                readonly=""
+                tabindex="0"
+                type="radio"
+                value="CLN"
+              />
+              <i
+                aria-hidden="true"
+                class="black ambulance large bordered circular inverted icon"
+              />
+            </div>
+          </div>
+          <div>
+            <p
+              class="mb-5"
+            >
+              <b>
+                Clinical/Phenotypic Data
+              </b>
+            </p>
+            <p
+              class="text-wrap-75 text-grey"
+            >
+              Structured files with data linked to the biospecimen identifiers provided in the shipping manifest(s). Exports from data management applications, such as REDCap, are the fastest to process, but we will work with you on most formats.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="field"
+      >
+        <div
+          class="ui compact segment selectionRadio--card"
+        >
+          <div>
+            <div
+              class="ui radio checkbox"
+            >
+              <input
+                class="hidden"
+                id="BSM"
+                name="file_type"
+                readonly=""
+                tabindex="0"
+                type="radio"
+                value="BSM"
+              />
+              <i
+                aria-hidden="true"
+                class="black syringe large bordered circular inverted icon"
+              />
+            </div>
+          </div>
+          <div>
+            <p
+              class="mb-5"
+            >
+              <b>
+                Biospecimen Data
+              </b>
+            </p>
+            <p
+              class="text-wrap-75 text-grey"
+            >
+              Structured files containing biospecimen identifiers and metadata (e.g. tissue type, composition) provided to sequencing centers as well as consent type.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="field"
+      >
+        <div
+          class="ui compact segment selectionRadio--card"
+        >
+          <div>
+            <div
+              class="ui radio checkbox"
+            >
+              <input
+                class="hidden"
+                id="FAM"
+                name="file_type"
+                readonly=""
+                tabindex="0"
+                type="radio"
+                value="FAM"
+              />
+              <i
+                aria-hidden="true"
+                class="black users large bordered circular inverted icon"
+              />
+            </div>
+          </div>
+          <div>
+            <p
+              class="mb-5"
+            >
+              <b>
+                Family Relationships
+              </b>
+            </p>
+            <p
+              class="text-wrap-75 text-grey"
+            >
+              Structured files containing familial relationships
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="field"
+      >
+        <div
+          class="ui compact segment selectionRadio--card"
+        >
+          <div>
+            <div
+              class="ui radio checkbox"
+            >
+              <input
+                class="hidden"
+                id="SEQ"
+                name="file_type"
+                readonly=""
+                tabindex="0"
+                type="radio"
+                value="SEQ"
+              />
+              <i
+                aria-hidden="true"
+                class="black dna large bordered circular inverted icon"
+              />
+            </div>
+          </div>
+          <div>
+            <p
+              class="mb-5"
+            >
+              <b>
+                Genomic File Data
+              </b>
+            </p>
+            <p
+              class="text-wrap-75 text-grey"
+            >
+              Structured files containing metadata about genomic files such as raw sequencing files or files output from genomic post-processes (alignment, variant calling, etc).
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="field"
+      >
+        <div
+          class="ui compact segment selectionRadio--card"
+        >
+          <div>
+            <div
+              class="ui radio checkbox"
+            >
+              <input
+                class="hidden"
                 id="DBG"
                 name="file_type"
                 readonly=""
@@ -836,6 +1164,170 @@ exports[`Show warning message when input file name is similar to an existing fil
       >
         Document Type:
       </label>
+      <div
+        class="field"
+      >
+        <div
+          class="ui compact segment selectionRadio--card"
+        >
+          <div>
+            <div
+              class="ui radio checkbox"
+            >
+              <input
+                class="hidden"
+                id="CLN"
+                name="file_type"
+                readonly=""
+                tabindex="0"
+                type="radio"
+                value="CLN"
+              />
+              <i
+                aria-hidden="true"
+                class="black ambulance large bordered circular inverted icon"
+              />
+            </div>
+          </div>
+          <div>
+            <p
+              class="mb-5"
+            >
+              <b>
+                Clinical/Phenotypic Data
+              </b>
+            </p>
+            <p
+              class="text-wrap-75 text-grey"
+            >
+              Structured files with data linked to the biospecimen identifiers provided in the shipping manifest(s). Exports from data management applications, such as REDCap, are the fastest to process, but we will work with you on most formats.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="field"
+      >
+        <div
+          class="ui compact segment selectionRadio--card"
+        >
+          <div>
+            <div
+              class="ui radio checkbox"
+            >
+              <input
+                class="hidden"
+                id="BSM"
+                name="file_type"
+                readonly=""
+                tabindex="0"
+                type="radio"
+                value="BSM"
+              />
+              <i
+                aria-hidden="true"
+                class="black syringe large bordered circular inverted icon"
+              />
+            </div>
+          </div>
+          <div>
+            <p
+              class="mb-5"
+            >
+              <b>
+                Biospecimen Data
+              </b>
+            </p>
+            <p
+              class="text-wrap-75 text-grey"
+            >
+              Structured files containing biospecimen identifiers and metadata (e.g. tissue type, composition) provided to sequencing centers as well as consent type.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="field"
+      >
+        <div
+          class="ui compact segment selectionRadio--card"
+        >
+          <div>
+            <div
+              class="ui radio checkbox"
+            >
+              <input
+                class="hidden"
+                id="FAM"
+                name="file_type"
+                readonly=""
+                tabindex="0"
+                type="radio"
+                value="FAM"
+              />
+              <i
+                aria-hidden="true"
+                class="black users large bordered circular inverted icon"
+              />
+            </div>
+          </div>
+          <div>
+            <p
+              class="mb-5"
+            >
+              <b>
+                Family Relationships
+              </b>
+            </p>
+            <p
+              class="text-wrap-75 text-grey"
+            >
+              Structured files containing familial relationships
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="field"
+      >
+        <div
+          class="ui compact segment selectionRadio--card"
+        >
+          <div>
+            <div
+              class="ui radio checkbox"
+            >
+              <input
+                class="hidden"
+                id="SEQ"
+                name="file_type"
+                readonly=""
+                tabindex="0"
+                type="radio"
+                value="SEQ"
+              />
+              <i
+                aria-hidden="true"
+                class="black dna large bordered circular inverted icon"
+              />
+            </div>
+          </div>
+          <div>
+            <p
+              class="mb-5"
+            >
+              <b>
+                Genomic File Data
+              </b>
+            </p>
+            <p
+              class="text-wrap-75 text-grey"
+            >
+              Structured files containing metadata about genomic files such as raw sequencing files or files output from genomic post-processes (alignment, variant calling, etc).
+            </p>
+          </div>
+        </div>
+      </div>
       <div
         class="field"
       >

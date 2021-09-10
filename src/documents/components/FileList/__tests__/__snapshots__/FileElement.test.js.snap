@@ -31,7 +31,7 @@ exports[`renders correctly 1`] = `
         >
           <i
             aria-hidden="true"
-            class="question icon"
+            class="ambulance icon"
           />
         </td>
         <td
@@ -141,7 +141,7 @@ exports[`renders latest temporary state 1`] = `
         >
           <i
             aria-hidden="true"
-            class="question icon"
+            class="ambulance icon"
           />
         </td>
         <td
@@ -251,7 +251,7 @@ exports[`renders loading state 1`] = `
         >
           <i
             aria-hidden="true"
-            class="question icon"
+            class="ambulance icon"
           />
         </td>
         <td
