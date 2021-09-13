@@ -31,7 +31,6 @@ const ChooseTypeStep = ({
         .filter(r => r.matchesTemplate)
         .map(r => r.templateVersion.id)
     : [];
-  console.log(templates.filter(({node}) => matchedTemplates.includes(node.id)));
 
   return (
     <>

@@ -91,8 +91,8 @@ const DataTemplateEditModal = ({
         setOpen('');
         setCurrentStep(0);
         setFieldData([]);
-        setEditing([]);
         if (setStudySelect) {
+          setEditing([]);
           setCreationError('');
           setStudySelect(studyIds);
           setEditConfirm(false);
@@ -201,11 +201,13 @@ const DataTemplateEditModal = ({
           onClick={() => {
             setOpen('');
             setCurrentStep(0);
-            setCreationError('');
+            if (setCreationError) {
+              setCreationError('');
+              setEditing([]);
+              setStudySelect(studyIds);
+              setEditConfirm(false);
+            }
             setFieldData([]);
-            setEditing([]);
-            setStudySelect(studyIds);
-            setEditConfirm(false);
           }}
         />
         {editable && (
@@ -220,7 +222,9 @@ const DataTemplateEditModal = ({
               editing.length > 0
             }
             onClick={() => {
-              setCreationError('');
+              if (setCreationError) {
+                setCreationError('');
+              }
               setEditing([]);
               const templateInput = {
                 name: formikProps.values.name,
@@ -263,13 +267,17 @@ const DataTemplateEditModal = ({
                       })
                       .catch(err => {
                         console.log(err);
-                        setCreationError(err.message);
+                        if (setCreationError) {
+                          setCreationError('');
+                        }
                         setCreating('');
                       });
                   })
                   .catch(err => {
                     console.log(err);
-                    setCreationError(err.message);
+                    if (setCreationError) {
+                      setCreationError('');
+                    }
                     setCreating('');
                   });
               } else if (open === 'Save') {
