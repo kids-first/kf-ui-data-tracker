@@ -34,8 +34,8 @@ const StudyNavBar = ({match, history, isBeta}) => {
       endString: 'collaborators',
     },
     {
-      tab: 'Logs',
-      endString: 'logs',
+      tab: 'Events',
+      endString: 'events',
     },
     {
       tab: 'Releases',
