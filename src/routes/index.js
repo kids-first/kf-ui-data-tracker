@@ -209,9 +209,9 @@ const Routes = () => (
         />
         <PrivateRoute
           exact
-          path="/study/:kfId/logs"
+          path="/study/:kfId/events"
           component={LogsView}
-          scope={['study', 'logs']}
+          scope={['study', 'events']}
         />
         <PrivateRoute
           exact
