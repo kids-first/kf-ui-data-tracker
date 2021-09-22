@@ -1,5 +1,19 @@
 # Kids First Data Tracker Change History
 
+## Release 0.23.2
+
+### Summary
+
+- Emojis: ✨ x1, 💄 x1, 🐛 x1
+- Categories: Additions x1, Fixes x1, Other Changes x1
+
+### New features and changes
+
+- [#1117](https://github.com/kids-first/kf-ui-data-tracker/pull/1117) - ✨ Better general file types - [0fa6faf9](https://github.com/kids-first/kf-ui-data-tracker/commit/0fa6faf9a2fe7cdaced0676441e3ad1d4ee7119b) by [znatty22](https://github.com/znatty22)
+- [#1120](https://github.com/kids-first/kf-ui-data-tracker/pull/1120) - 💄 Change StudyNavBar Logs button to Events - [fec8e724](https://github.com/kids-first/kf-ui-data-tracker/commit/fec8e724b23ae34409c24bbdd7293586ebbe2797) by [gsantia](https://github.com/gsantia)
+- [#1118](https://github.com/kids-first/kf-ui-data-tracker/pull/1118) - 🐛 Fix view only template missing function error on close - [93e76033](https://github.com/kids-first/kf-ui-data-tracker/commit/93e76033ccd9439be47db36409feece035a86ae5) by [XuTheBunny](https://github.com/XuTheBunny)
+
+
 ## Release 0.23.1
 
 ### Summary
