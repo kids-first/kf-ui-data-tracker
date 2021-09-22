@@ -47,9 +47,10 @@ const ChooseTypeStep = ({
           </p>
           <Header size="small">General Types</Header>
           <p>
-            Use a General type if none of the Templated types provide the
+            Use a General type if your file does not conform to any of the
+            Templated types or if the Templated types do not provide the
             appropriate categorization for your file. General types are still
-            used by the DRC to help organize and find files.
+            important to help the DRC organize and find files.
           </p>
         </Grid.Column>
         <Grid.Column width={12}>

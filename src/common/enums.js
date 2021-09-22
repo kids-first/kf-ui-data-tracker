@@ -522,6 +522,41 @@ export const eventType = {
 
 // General file type with no required columns
 export const fileTypeDetail = {
+  CLN: {
+    icon: 'ambulance',
+    title: 'Clinical/Phenotypic Data',
+    requiredColumns: [],
+    description:
+      'Structured files with data linked to the biospecimen identifiers provided in the shipping manifest(s). Exports from data management applications, such as REDCap, are the fastest to process, but we will work with you on most formats.',
+    config: false,
+    url: '',
+  },
+  BSM: {
+    icon: 'syringe',
+    title: 'Biospecimen Data',
+    requiredColumns: [],
+    description:
+      'Structured files containing biospecimen identifiers and metadata (e.g. tissue type, composition) provided to sequencing centers as well as consent type.',
+    config: false,
+    url: '',
+  },
+  FAM: {
+    icon: 'users',
+    title: 'Family Relationships',
+    requiredColumns: [],
+    description: 'Structured files containing familial relationships',
+    config: false,
+    url: '',
+  },
+  SEQ: {
+    icon: 'dna',
+    title: 'Genomic File Data',
+    requiredColumns: [],
+    config: false,
+    url: '',
+    description:
+      'Structured files containing metadata about genomic files such as raw sequencing files or files output from genomic post-processes (alignment, variant calling, etc).',
+  },
   DBG: {
     icon: 'file alternate',
     title: 'dbGaP Submission File',
