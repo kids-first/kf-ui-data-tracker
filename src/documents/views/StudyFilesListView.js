@@ -18,6 +18,7 @@ import {
 import NotFoundView from '../../views/NotFoundView';
 import FileFolder from '../components/FileFolder/FileFolder';
 import ListFilterBar from '../components/ListFilterBar/ListFilterBar';
+import FlatFile from '../components/FlatFile/FlatFile';
 import {hasPermission} from '../../common/permissions';
 
 /**
@@ -95,6 +96,7 @@ const StudyFilesListView = ({
     params: {kfId},
   },
   history,
+  location,
 }) => {
   const studyId = Buffer.from('StudyNode:' + kfId).toString('base64');
 
@@ -277,25 +279,31 @@ const StudyFilesListView = ({
                   }
                 />
               )}
-              <Button
-                className="ml-15"
-                compact
-                primary
-                floated="right"
-                size="large"
-                icon="cloud upload"
-                labelPosition="left"
-                content="Upload Document"
-                as="label"
-                htmlFor="file"
-              />
-              <input
-                hidden
-                multiple
-                id="file"
-                type="file"
-                onChange={e => onUpload(e.target.files[0])}
-              />
+              <Button.Group>
+                <Button
+                  className="ml-15"
+                  compact
+                  primary
+                  floated="right"
+                  icon="cloud upload"
+                  labelPosition="left"
+                  content="Upload Document"
+                  as="label"
+                  htmlFor="file"
+                />
+                <input
+                  hidden
+                  multiple
+                  id="file"
+                  type="file"
+                  onChange={e => onUpload(e.target.files[0])}
+                />
+                <Button.Or />
+                <FlatFile
+                  flatfileSettings={flatfileSettings}
+                  history={history}
+                />
+              </Button.Group>
             </Grid.Column>
           )}
         </Grid.Row>
@@ -320,6 +328,7 @@ const StudyFilesListView = ({
                   updateError={updateFileError}
                   downloadFileMutation={downloadFile}
                   allowAddReview={allowAddReview}
+                  flatfileSettings={flatfileSettings}
                 />
               ) : (
                 <>

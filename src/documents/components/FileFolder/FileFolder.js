@@ -18,9 +18,9 @@ import {
   keyedFiles,
   listToTree,
   searchMethod,
-  treeToList
+  treeToList,
 } from '../../../common/treeDataUtils';
-
+import FlatFile from '../FlatFile/FlatFile';
 import BatchActions from '../ListFilterBar/BatchActions';
 import FileExplorerTheme from 'react-sortable-tree-theme-file-explorer';
 import FileSimpleList from './FileSimpleList';
@@ -48,6 +48,7 @@ const FileFolder = ({
   setSelection,
   tagOptions,
   allowAddReview,
+  flatfileSettings,
 }) => {
   const filesFlat = keyedFiles(fileList, match);
   const filesTree = listToTree(filesFlat);
@@ -293,24 +294,28 @@ const FileFolder = ({
                 }
               />
             )}
-            <Button
-              className="ml-15"
-              compact
-              primary
-              size="large"
-              icon="cloud upload"
-              labelPosition="left"
-              content="Upload Document"
-              as="label"
-              htmlFor="file"
-            />
-            <input
-              hidden
-              multiple
-              id="file"
-              type="file"
-              onChange={e => onUpload(e.target.files[0])}
-            />
+
+            <Button.Group>
+              <Button
+                className="ml-15"
+                compact
+                primary
+                icon="cloud upload"
+                labelPosition="left"
+                content="Upload Document"
+                as="label"
+                htmlFor="file"
+              />
+              <input
+                hidden
+                multiple
+                id="file"
+                type="file"
+                onChange={e => onUpload(e.target.files[0])}
+              />
+              <Button.Or />
+              <FlatFile flatfileSettings={flatfileSettings} history={history} />
+            </Button.Group>
             <Button
               className="ml-15"
               onClick={() => {
