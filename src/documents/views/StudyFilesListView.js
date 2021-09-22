@@ -96,6 +96,8 @@ const StudyFilesListView = ({
   },
   history,
 }) => {
+  const studyId = Buffer.from('StudyNode:' + kfId).toString('base64');
+
   // Document mutations
   const [downloadFile] = useMutation(FILE_DOWNLOAD_URL);
   const [deleteFile] = useMutation(DELETE_FILE, {
@@ -103,7 +105,7 @@ const StudyFilesListView = ({
       {
         query: GET_STUDY_BY_ID,
         variables: {
-          id: Buffer.from('StudyNode:' + kfId).toString('base64'),
+          id: studyId,
         },
       },
     ],
@@ -113,7 +115,7 @@ const StudyFilesListView = ({
       {
         query: GET_STUDY_BY_ID,
         variables: {
-          id: Buffer.from('StudyNode:' + kfId).toString('base64'),
+          id: studyId,
         },
       },
     ],
@@ -125,7 +127,7 @@ const StudyFilesListView = ({
   // Study query, includes documents
   const {loading, data, error} = useQuery(GET_STUDY_BY_ID, {
     variables: {
-      id: Buffer.from('StudyNode:' + kfId).toString('base64'),
+      id: studyId,
     },
   });
   const study = data && data.study;
