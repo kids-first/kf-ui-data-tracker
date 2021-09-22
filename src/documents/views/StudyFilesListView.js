@@ -1,8 +1,17 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Helmet} from 'react-helmet';
 import {useQuery, useMutation} from '@apollo/client';
-import {GET_STUDY_BY_ID, MY_PROFILE} from '../../state/queries';
-import {FILE_DOWNLOAD_URL, UPDATE_FILE, DELETE_FILE} from '../mutations';
+import {
+  GET_STUDY_BY_ID,
+  ALL_TEMPLATE_VERSIONS,
+  MY_PROFILE,
+} from '../../state/queries';
+import {
+  FILE_DOWNLOAD_URL,
+  UPDATE_FILE,
+  DELETE_FILE,
+  CREATE_FLATFILE_SETTINGS,
+} from '../mutations';
 import {UploadContainer} from '../containers';
 import FileList from '../components/FileList/FileList';
 import {
@@ -125,6 +134,54 @@ const StudyFilesListView = ({
       setUpdateFileError(error);
     },
   });
+
+  // Get flatfile settings
+  const {data: templateData, loading: templateLoading} = useQuery(
+    ALL_TEMPLATE_VERSIONS,
+    {
+      variables: {
+        studies: [studyId],
+      },
+      fetchPolicy: 'network-only',
+    },
+  );
+  const [createFlatfileSettings] = useMutation(CREATE_FLATFILE_SETTINGS);
+  const [flatfileSettings, setFlatfileSettings] = useState('');
+  const templateList =
+    templateData &&
+    templateData.allTemplateVersions &&
+    templateData.allTemplateVersions.edges.length > 0
+      ? templateData.allTemplateVersions.edges.map(({node}) => node.id)
+      : [];
+  useEffect(() => {
+    if (flatfileSettings.length === 0 && !templateLoading) {
+      createFlatfileSettings({
+        variables: {
+          templateVersions: templateList,
+        },
+      })
+        .then(resp => {
+          if (resp.data.createFlatfileSettings.flatfileSettings) {
+            setFlatfileSettings(
+              resp.data.createFlatfileSettings.flatfileSettings,
+            );
+          }
+        })
+        .catch(err => {
+          console.log(err);
+          const errorMessage = err.message
+            ? err.message
+            : 'Problem creating flatfile settings';
+          setFlatfileSettings('ERROR: ' + errorMessage);
+        });
+    }
+  }, [
+    createFlatfileSettings,
+    setFlatfileSettings,
+    templateList,
+    flatfileSettings.length,
+    templateLoading,
+  ]);
 
   // Study query, includes documents
   const {loading, data, error} = useQuery(GET_STUDY_BY_ID, {
