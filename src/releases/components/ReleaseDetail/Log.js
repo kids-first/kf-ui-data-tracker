@@ -12,15 +12,12 @@ const Log = ({log}) => {
         headers: new Headers({
           Authorization: 'Bearer ' + localStorage.getItem('accessToken'),
         }),
-      }).then(res => {
-        const reader = res.body.getReader();
-        const decoder = new TextDecoder('utf-8');
-        reader.read().then(result => {
-          const contents = decoder.decode(result.value);
-          setLogContents(contents);
+      })
+        .then(res => res.text())
+        .then(content => {
+          setLogContents(content);
           setLoading(false);
         });
-      });
     };
 
     if (log && log.downloadUrl) {
