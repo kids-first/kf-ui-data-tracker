@@ -1,5 +1,17 @@
 # Kids First Data Tracker Change History
 
+## Release 0.23.3
+
+### Summary
+
+- Emojis: 🐛 x1
+- Categories: Fixes x1
+
+### New features and changes
+
+- [#1127](https://github.com/kids-first/kf-ui-data-tracker/pull/1127) - 🐛 Fix release log content cut off error - [462d1349](https://github.com/kids-first/kf-ui-data-tracker/commit/462d1349ec10724a255d53ec1ddb5d178a1c9f04) by [XuTheBunny](https://github.com/XuTheBunny)
+
+
 ## Release 0.23.2
 
 ### Summary
