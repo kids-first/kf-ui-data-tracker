@@ -34,7 +34,7 @@ const LogViewer = ({logs}) => {
         onClick={setActiveItem}
       />
 
-      <Segment attached="bottom">
+      <Segment attached="bottom" className="mb-50">
         <Log log={logs[activeItem]} />
       </Segment>
     </>
