@@ -101,7 +101,10 @@ class Auth {
     amplitude.getInstance().setUserId(null); // not string 'null'
     amplitude.getInstance().regenerateDeviceId();
 
-    this.auth0.logout({returnTo: auth0LogoutRedirectUri});
+    this.auth0.logout({
+      clientId: auth0ClientId,
+      returnTo: auth0LogoutRedirectUri,
+    });
   }
 
   isAuthenticated() {
