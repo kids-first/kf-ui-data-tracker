@@ -293,6 +293,9 @@ export const CREATE_REFERRAL_TOKEN = gql`
             }
           }
         }
+        organization {
+          id
+        }
       }
     }
   }
@@ -339,8 +342,16 @@ export const EXCHANGE_REFERRAL_TOKEN = gql`
                   }
                 }
               }
+              organization {
+                id
+                name
+              }
             }
           }
+        }
+        organization {
+          id
+          name
         }
       }
     }
