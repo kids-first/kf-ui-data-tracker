@@ -172,15 +172,21 @@ const Header = ({location}) => {
     setLoggedIn(true);
   }
 
-  const organizations = profile && profile.organizations;
+  // Check if an org is cached
   var currentOrg;
   try {
     currentOrg = JSON.parse(localStorage.getItem('currentOrganization'));
   } catch (e) {
     currentOrg = null;
   }
-  if (!currentOrg && loggedIn) {
-    currentOrg = organizations && organizations.edges[0].node;
+  // Check if stored current organization belongs to user profile
+  const organizations = profile && profile.organizations;
+  const hasOrgs = organizations && organizations.edges.length > 0;
+  const allowedOrgs = hasOrgs
+    ? organizations.edges.map(({node}) => node.id)
+    : [];
+  if (loggedIn && (!currentOrg || !allowedOrgs.includes(currentOrg.id))) {
+    currentOrg = hasOrgs && organizations.edges[0].node;
     localStorage.setItem('currentOrganization', JSON.stringify(currentOrg));
   }
 
@@ -193,7 +199,7 @@ const Header = ({location}) => {
 
   // Check if the org has changed on the backend and update localstorage
   if (
-    organizations &&
+    hasOrgs &&
     currentOrg &&
     JSON.stringify(
       organizations.edges.find(({node}) => node.id === currentOrg.id).node,
