@@ -21,7 +21,12 @@ const Resend = ({node, createToken}) => {
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState();
-
+  var currentOrg;
+  try {
+    currentOrg = JSON.parse(localStorage.getItem('currentOrganization'));
+  } catch (e) {
+    currentOrg = null;
+  }
   if (sent) {
     return (
       <>
@@ -49,6 +54,7 @@ const Resend = ({node, createToken}) => {
               email: node.email,
               groups: node.groups.edges.map(({node}) => node.id),
               studies: node.studies.edges.map(({node}) => node.id),
+              organization: currentOrg && currentOrg.id,
             },
           },
         })
