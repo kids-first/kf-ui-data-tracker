@@ -60,6 +60,7 @@
     "react-timeago": "^4.4.0",
     "semantic-ui-react": "^0.88.2",
     "string-similarity": "^3.0.0",
+    "tsv": "^0.2.0",
     "uuid": "^8.3.2",
     "xlsx": "^0.16.6"
   },
