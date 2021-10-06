@@ -94,6 +94,7 @@ class Auth {
 
     localStorage.removeItem('accessToken');
     localStorage.removeItem('idToken');
+    localStorage.removeItem('currentOrganization');
 
     // fire analytics events
     this.logEvent('AUTH__LOGOUT');

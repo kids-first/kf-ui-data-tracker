@@ -17,7 +17,7 @@ const StudyListView = ({history}) => {
     currentOrg = null;
   }
 
-  const {data: profileData} = useQuery(MY_PROFILE);
+  const {data: profileData, loading: myProfileLoading} = useQuery(MY_PROFILE);
   const myProfile = profileData && profileData.myProfile;
   // Need to fetch from network everytime or else the allStudies query to the
   // release coordinator will overwrite the result in the cache
@@ -37,11 +37,7 @@ const StudyListView = ({history}) => {
     return {node: {...node, release}};
   });
 
-  if (
-    myProfile &&
-    !hasPermission(myProfile, 'view_study') &&
-    !hasPermission(myProfile, 'view_my_study')
-  ) {
+  if (!myProfileLoading && myProfile && !currentOrg) {
     return (
       <Redirect
         to={{
@@ -50,7 +46,31 @@ const StudyListView = ({history}) => {
       />
     );
   }
-  if (error) {
+  if (
+    !myProfileLoading &&
+    myProfile &&
+    !(
+      hasPermission(myProfile, 'view_study') ||
+      hasPermission(myProfile, 'view_my_study')
+    )
+  ) {
+    return (
+      <ImageMessage
+        image={bug}
+        title="Permissions Not Granted Yet"
+        message={
+          <>
+            Welcome to Data Tracker! You have not been granted permissions for
+            any studies. Please contact us at{' '}
+            <a href="mailto:support@kidsfirstdrc.org">
+              support@kidsfirstdrc.org
+            </a>
+          </>
+        }
+      />
+    );
+  }
+  if (!myProfileLoading && myProfile && error) {
     console.log('Error loading studies:', error);
     return (
       <ImageMessage
@@ -68,29 +88,7 @@ const StudyListView = ({history}) => {
       />
     );
   }
-
-  if (
-    myProfile &&
-    !(
-      hasPermission(myProfile, 'view_study') ||
-      hasPermission(myProfile, 'view_my_study')
-    )
-  ) {
-    return (
-      <Container as={Segment} basic padded="very">
-        <Helmet>
-          <title>KF Data Tracker - My Studies</title>
-        </Helmet>
-        <Message
-          warning
-          icon="warning circle"
-          header="You don't have access to any studies yet."
-          content="Your account is being reviewed for the proper permissions."
-        />
-      </Container>
-    );
-  }
-  if (!loading && studyList.length === 0)
+  if (!loading && !error && studyList.length === 0)
     return (
       <Container as={Segment} basic padded="very">
         <Helmet>

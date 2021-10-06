@@ -19,7 +19,7 @@ import {auth} from '../../state/auth';
 import InviteModal from '../../modals/InviteModal';
 import AppBanner from './AppBanner';
 
-const Nav = (props) => <NavLink {...props} activeClassName="active" />;
+const Nav = props => <NavLink {...props} activeClassName="active" />;
 
 /**
  * Each item will be displayed only if the user has permission to view it.
@@ -119,8 +119,8 @@ const AdminDropdown = ({profile}) => {
 
   // Construct menu nav components
   const menuItems = items
-    .filter((item) => permissions.includes(item.permission))
-    .map((item) => <Item key={item.route} {...item} />);
+    .filter(item => permissions.includes(item.permission))
+    .map(item => <Item key={item.route} {...item} />);
 
   return (
     menuItems.length > 0 && (
@@ -186,7 +186,7 @@ const Header = ({location}) => {
     ? organizations.edges.map(({node}) => node.id)
     : [];
   if (loggedIn && (!currentOrg || !allowedOrgs.includes(currentOrg.id))) {
-    currentOrg = hasOrgs && organizations.edges[0].node;
+    currentOrg = hasOrgs ? organizations.edges[0].node : null;
     localStorage.setItem('currentOrganization', JSON.stringify(currentOrg));
   }
 
