@@ -31,7 +31,7 @@ const InviteModal = ({open, onCloseDialog}) => {
   const [emailList, setEmailList] = useState([]);
 
   const {data: studiesData} = useQuery(ALL_STUDIES, {
-    variables: {organization: currentOrg.id},
+    variables: {organization: currentOrg && currentOrg.id},
   });
   const {data: groupsData} = useQuery(ALL_GROUPS);
   const studies = studiesData && studiesData.allStudies.edges;
