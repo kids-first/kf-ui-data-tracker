@@ -1,5 +1,17 @@
 # Kids First Data Tracker Change History
 
+## Release 0.23.4
+
+### Summary
+
+- Emojis: ♻️ x1
+- Categories: Other Changes x1
+
+### New features and changes
+
+- [#1134](https://github.com/kids-first/kf-ui-data-tracker/pull/1134) - ♻️ Check if local stored organization belongs to user profile - [15e26260](https://github.com/kids-first/kf-ui-data-tracker/commit/15e2626079af69177c3dd8fabe3f094cd49311a5) by [XuTheBunny](https://github.com/XuTheBunny)
+
+
 ## Release 0.23.3
 
 ### Summary
