@@ -87,7 +87,7 @@ class Auth {
     return this.idToken;
   }
 
-  logout() {
+  logout(redirectToUri = null) {
     this.accessToken = null;
     this.idToken = null;
     this.expiresAt = 0;
@@ -103,7 +103,7 @@ class Auth {
 
     this.auth0.logout({
       clientId: auth0ClientId,
-      returnTo: auth0LogoutRedirectUri,
+      returnTo: redirectToUri ? redirectToUri : auth0LogoutRedirectUri,
     });
   }
 
