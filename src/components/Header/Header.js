@@ -159,7 +159,7 @@ const AddUserButton = ({profile}) => {
 
 const Header = ({location}) => {
   const history = useHistory();
-  const {loading, error, data} = useQuery(MY_PROFILE);
+  const {loading, error, data, refetch: refetchProfile} = useQuery(MY_PROFILE);
   const profile = data && data.myProfile;
 
   // Save profile to local storage to be picked up by analytics
@@ -179,6 +179,11 @@ const Header = ({location}) => {
   } catch (e) {
     currentOrg = null;
   }
+
+  if (!currentOrg) {
+    refetchProfile();
+  }
+
   // Check if stored current organization belongs to user profile
   const organizations = profile && profile.organizations;
   const hasOrgs = organizations && organizations.edges.length > 0;
@@ -198,19 +203,15 @@ const Header = ({location}) => {
   });
 
   // Check if the org has changed on the backend and update localstorage
-  if (
+  const orgMatch =
     hasOrgs &&
     currentOrg &&
-    JSON.stringify(
-      organizations.edges.find(({node}) => node.id === currentOrg.id).node,
-    ) !== JSON.stringify(currentOrg)
+    organizations.edges.find(obj => obj.node.id === currentOrg.id);
+  if (
+    orgMatch &&
+    JSON.stringify(orgMatch.node) !== JSON.stringify(currentOrg)
   ) {
-    localStorage.setItem(
-      'currentOrganization',
-      JSON.stringify(
-        organizations.edges.find(({node}) => node.id === currentOrg.id).node,
-      ),
-    );
+    localStorage.setItem('currentOrganization', JSON.stringify(orgMatch.node));
   }
 
   const defaultLogo =
