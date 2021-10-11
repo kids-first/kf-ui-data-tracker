@@ -87,7 +87,7 @@ class Auth {
     return this.idToken;
   }
 
-  logout() {
+  logout(redirectToUri = null) {
     this.accessToken = null;
     this.idToken = null;
     this.expiresAt = 0;
@@ -101,7 +101,10 @@ class Auth {
     amplitude.getInstance().setUserId(null); // not string 'null'
     amplitude.getInstance().regenerateDeviceId();
 
-    this.auth0.logout({returnTo: auth0LogoutRedirectUri});
+    this.auth0.logout({
+      clientId: auth0ClientId,
+      returnTo: redirectToUri ? redirectToUri : auth0LogoutRedirectUri,
+    });
   }
 
   isAuthenticated() {

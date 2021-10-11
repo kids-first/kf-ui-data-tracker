@@ -28,7 +28,8 @@ const NotFoundView = ({title, message, location}) => {
                 <span>{message}</span>
               ) : (
                 <span>
-                  No match found for <code>{location.pathname}</code>
+                  No match found for{' '}
+                  <code>{location && location.pathname}</code>
                 </span>
               )}
             </p>

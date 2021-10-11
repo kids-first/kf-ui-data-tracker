@@ -11,9 +11,10 @@ const WelcomeView = () => (
     title="Welcome to the Data Tracker!"
     message={
       <>
-        You haven't been added to any organizations or studies yet. Please wait
-        until an administrator adds you and grants you permissions or get in
-        touch at{' '}
+        You haven't been added to any organizations or studies yet. If you have
+        not used the referral link you were emailed, try visiting it in your
+        browser. Otherwise, please wait until an administrator adds you and
+        grants you permissions or get in touch at{' '}
         <a href="mailto:support@kidsfirstdrc.org">support@kidsfirstdrc.org</a>
       </>
     }
