@@ -1,5 +1,18 @@
 # Kids First Data Tracker Change History
 
+## Release 0.23.5
+
+### Summary
+
+- Emojis: 🐛 x1, ♻️ x1
+- Categories: Fixes x1, Other Changes x1
+
+### New features and changes
+
+- [#1133](https://github.com/kids-first/kf-ui-data-tracker/pull/1133) - 🐛 Fix new user invitations - [bd4fe270](https://github.com/kids-first/kf-ui-data-tracker/commit/bd4fe27019bd8cda85f7eb802b7974076521370e) by [znatty22](https://github.com/znatty22)
+- [#1137](https://github.com/kids-first/kf-ui-data-tracker/pull/1137) - ♻️ Only display study list if user has org, perms, and no error - [307d150a](https://github.com/kids-first/kf-ui-data-tracker/commit/307d150a91e6812474b1a95adcd6f8c61e6a577e) by [znatty22](https://github.com/znatty22)
+
+
 ## Release 0.23.4
 
 ### Summary
