@@ -1,8 +1,8 @@
 import React from 'react';
 import {Table} from 'semantic-ui-react';
 
-const CreatedAt = ({date}) => (
-  <Table.Cell width="4">
+const ReleaseDate = ({date}) => (
+  <Table.Cell width="4" textAlign="center">
     {date
       ? new Date(date).toLocaleString('en-US', {
           hour: '2-digit',
@@ -16,4 +16,4 @@ const CreatedAt = ({date}) => (
   </Table.Cell>
 );
 
-export default CreatedAt;
+export default ReleaseDate;
