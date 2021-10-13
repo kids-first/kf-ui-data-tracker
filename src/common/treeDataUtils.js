@@ -1,5 +1,6 @@
 import {fileLatestDate, fileSortedVersions} from '../documents/utilities';
 
+import XLSX from 'xlsx';
 import {v4 as uuidv4} from 'uuid';
 
 export const listToTree = list => {
@@ -184,4 +185,12 @@ export const searchMethod = ({node, path, treeIndex, searchQuery}) => {
     stringSearch('subtitle', searchQuery, node, path, treeIndex) ||
     stringSearch('searchableTags', searchQuery, node, path, treeIndex)
   );
+};
+
+// Parse excel file and get the content in csv format
+export const processExcel = data => {
+  const workbook = XLSX.read(data, {type: 'binary'});
+  const firstSheet = workbook.SheetNames[0];
+  const excelToCsv = XLSX.utils.sheet_to_csv(workbook.Sheets[firstSheet]);
+  return excelToCsv;
 };
