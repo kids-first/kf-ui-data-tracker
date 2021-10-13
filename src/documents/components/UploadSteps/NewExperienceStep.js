@@ -24,7 +24,6 @@ const NewExperienceStep = ({
   createFlatfileSettings,
   selectedTemplate,
   version,
-  location,
   history,
   match,
   values,
@@ -32,16 +31,18 @@ const NewExperienceStep = ({
   isValid,
   setSubmitting,
   setErrors,
+  uploadedFile,
+  mappedData,
+  setMappedData,
 }) => {
   const [flatfileSettings, setFlatfileSettings] = useState('');
   const [source, setSource] = useState(null);
-  const [mappedData, setMappedData] = useState(null);
   const [overwriteOld, setOverwriteOld] = useState(false);
 
   const studyKfid = match.params.kfId;
 
-  if (location.state.file) {
-    const file = location.state.file;
+  if (uploadedFile) {
+    const file = uploadedFile;
     var read = new FileReader();
     read.readAsBinaryString(file);
     read.onloadend = function() {
@@ -316,7 +317,7 @@ const NewExperienceStep = ({
                   flatfileSettings={flatfileSettings}
                   dataSource={source}
                   setMappedData={setMappedData}
-                  fileName={location.state.file.name}
+                  fileName={uploadedFile.name}
                 />
               )}
             </Grid.Column>

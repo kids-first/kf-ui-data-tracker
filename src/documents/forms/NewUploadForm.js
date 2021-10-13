@@ -1,18 +1,17 @@
-import React, {useEffect, useState} from 'react';
-import {Amplitude} from '@amplitude/react-amplitude';
-import {Formik} from 'formik';
-import {EditorState, ContentState} from 'draft-js';
-
 import {
+  ChooseDocumentStep,
   ChooseTypeStep,
   DocumentOrVersionStep,
   EnterDetailsStep,
-  ChooseDocumentStep,
   NewExperienceStep,
   VersionDescriptionStep,
 } from '../components/UploadSteps';
+import {ContentState, EditorState} from 'draft-js';
 import {Form, Grid, Icon, Message, Step} from 'semantic-ui-react';
+import React, {useEffect, useState} from 'react';
 
+import {Amplitude} from '@amplitude/react-amplitude';
+import {Formik} from 'formik';
 import {fileTypeDetail} from '../../common/enums';
 
 const Steps = ({step = 1, setStep, type}) => (
@@ -94,12 +93,14 @@ const NewDocumentForm = ({
   selectedTemplate,
   setSelectedTemplate,
   createFlatfileSettings,
-  location,
   history,
   match,
   createVersion,
   updateVersion,
   saveDocument,
+  uploadedFile,
+  mappedData,
+  setMappedData,
 }) => {
   const [step, setStep] = useState(1);
   const [evaluateResult, setEvaluateResult] = useState({});
@@ -233,12 +234,14 @@ const NewDocumentForm = ({
                 : selectedTemplate
             }
             version={version}
-            location={location}
             history={history}
             match={match}
             createVersion={createVersion}
             updateVersion={updateVersion}
             saveDocument={saveDocument}
+            uploadedFile={uploadedFile}
+            mappedData={mappedData}
+            setMappedData={setMappedData}
             {...{
               values,
               isSubmitting,
