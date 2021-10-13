@@ -1,4 +1,3 @@
-import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import {Amplitude} from '@amplitude/react-amplitude';
 import {useMutation} from '@apollo/client';
@@ -6,10 +5,13 @@ import {draftToMarkdown} from 'markdown-draft-js';
 import {EditorState, convertToRaw, ContentState} from 'draft-js';
 import {Button, Modal, Message, Icon} from 'semantic-ui-react';
 import UploadStep from './UploadStep';
+import {CREATE_FLATFILE_SETTINGS, CREATE_VERSION} from '../../mutations';
+import React, {useEffect, useState} from 'react';
+import {formFile, processExcel} from '../../../common/treeDataUtils';
 import DescriptionStep from './DescriptionStep';
 import {GET_FILE_BY_ID} from '../../queries';
-import {CREATE_VERSION} from '../../mutations';
 import {ALL_EVENTS} from '../../../state/queries';
+import NewExperienceStep from './NewExperienceStep';
 
 /**
  * The NewVersionFlow handles flow for uploading a new version of a file
@@ -20,6 +22,38 @@ export const NewVersionFlow = ({
   additionalContent,
   handleClose,
 }) => {
+  const [flatfileSettings, setFlatfileSettings] = useState('');
+  const [source, setSource] = useState(null);
+
+  const [createFlatfileSettings] = useMutation(CREATE_FLATFILE_SETTINGS);
+  const selectedTemplate = fileNode.templateVersion
+    ? [fileNode.templateVersion.id]
+    : [];
+
+  useEffect(() => {
+    if (flatfileSettings.length === 0) {
+      createFlatfileSettings({
+        variables: {
+          templateVersions: selectedTemplate,
+        },
+      })
+        .then(resp => {
+          if (resp.data.createFlatfileSettings.flatfileSettings) {
+            setFlatfileSettings(
+              resp.data.createFlatfileSettings.flatfileSettings,
+            );
+          }
+        })
+        .catch(err => {
+          console.log(err);
+          const errorMessage = err.message
+            ? err.message
+            : 'Problem creating flatfile settings';
+          setFlatfileSettings('ERROR: ' + errorMessage);
+        });
+    }
+  }, [createFlatfileSettings, flatfileSettings.length, selectedTemplate]);
+
   const [createVersion] = useMutation(CREATE_VERSION, {
     awaitRefetchQueries: true,
     refetchQueries: [
@@ -55,21 +89,77 @@ export const NewVersionFlow = ({
   const handleFile = file => {
     setFile(file);
     setStep(1);
+    var read = new FileReader();
+    read.readAsBinaryString(file);
+    read.onloadend = function() {
+      if (file.name.endsWith('.xlsx') || file.name.endsWith('.xls')) {
+        setSource(processExcel(read.result));
+      } else if (file.name.endsWith('.tsv') || file.name.endsWith('.csv')) {
+        setSource(read.result);
+      }
+    };
   };
 
   // Handle the version upload mutation
-  const handleSave = props => {
-    // setUploading(true);
-    // const rawState = convertToRaw(description.getCurrentContent());
-    // const mdText = draftToMarkdown(rawState);
-    createVersion({
-      variables: {file, fileId: match.params.fileId, description: mdText},
-    })
-      .then(resp => {
-        handleClose();
-        setUploading(false);
+  const handleSave = (overwriteOld, mappedData) => {
+    setUploading(true);
+    const rawState = convertToRaw(description.getCurrentContent());
+    const mdText = draftToMarkdown(rawState);
+    if (mappedData === 'directSubmit') {
+      createVersion({
+        variables: {file, fileId: match.params.fileId, description: mdText},
       })
-      .catch(err => setErrors(err));
+        .then(resp => {
+          handleClose();
+          setUploading(false);
+          window.location.reload(false);
+        })
+        .catch(err => setErrors(err));
+    } else {
+      if (!overwriteOld) {
+        createVersion({
+          variables: {
+            file,
+            fileId: match.params.fileId,
+            description: 'Original Version:  ' + mdText,
+          },
+        })
+          .then(resp => {
+            const fileName = file.name || 'data.csv';
+            const fileObj = formFile(fileName, mappedData);
+            createVersion({
+              variables: {
+                file: fileObj,
+                fileId: match.params.fileId,
+                description: 'Mapped Version:  ' + mdText,
+              },
+            })
+              .then(resp => {
+                handleClose();
+                setUploading(false);
+                window.location.reload(false);
+              })
+              .catch(err => setErrors(err));
+          })
+          .catch(err => setErrors(err));
+      } else {
+        const fileName = file.name || 'data.csv';
+        const fileObj = formFile(fileName, mappedData);
+        createVersion({
+          variables: {
+            file: fileObj,
+            fileId: match.params.fileId,
+            description: 'Mapped Version:  ' + mdText,
+          },
+        })
+          .then(resp => {
+            handleClose();
+            setUploading(false);
+            window.location.reload(false);
+          })
+          .catch(err => setErrors(err));
+      }
+    }
   };
 
   // The different steps and their corresponding components
@@ -80,6 +170,16 @@ export const NewVersionFlow = ({
         file={file}
         description={description}
         handleDescription={setDescription}
+      />
+    ),
+    2: (
+      <NewExperienceStep
+        flatfileSettings={flatfileSettings}
+        createVersion={createVersion}
+        handleSave={handleSave}
+        source={source}
+        onUploading={onUploading}
+        fileName={file ? file.name : ''}
       />
     ),
   };
