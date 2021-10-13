@@ -204,7 +204,7 @@ export const NewVersionFlow = ({
           />
         )}
       </Modal.Content>
-      <Modal.Actions>
+      <Modal.Actions className="h-57">
         {step > 0 && (
           <Button
             icon

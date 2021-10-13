@@ -538,6 +538,10 @@ body {
     height: 38px !important;
 }
 
+.h-57 {
+    height: 57px !important;
+}
+
 .small-inline {
     display: inline-block;
     padding-top: 10px;
