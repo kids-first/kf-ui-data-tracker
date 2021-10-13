@@ -9,6 +9,7 @@ import {
   DocumentOrVersionStep,
   EnterDetailsStep,
   ChooseDocumentStep,
+  NewExperienceStep,
   VersionDescriptionStep,
 } from '../components/UploadSteps';
 
@@ -44,6 +45,14 @@ const Steps = ({step = 1, setStep}) => (
         <Step.Description>Describe the new document</Step.Description>
       </Step.Content>
     </Step>
+
+    <Step active={step === 4}>
+      <Icon name="sitemap" />
+      <Step.Content>
+        <Step.Title>New Experience</Step.Title>
+        <Step.Description>Try file mapping with Flatfile</Step.Description>
+      </Step.Content>
+    </Step>
   </Step.Group>
 );
 
@@ -53,6 +62,8 @@ const NewDocumentForm = ({
   touched,
   isSubmitting,
   isValid,
+  setSubmitting,
+  setErrors,
   handleBlur,
   handleChange,
   handleSubmit,
@@ -65,6 +76,13 @@ const NewDocumentForm = ({
   study,
   selectedTemplate,
   setSelectedTemplate,
+  createFlatfileSettings,
+  location,
+  history,
+  match,
+  createVersion,
+  updateVersion,
+  saveDocument,
 }) => {
   const [step, setStep] = useState(1);
   const [evaluateResult, setEvaluateResult] = useState({});
@@ -149,7 +167,7 @@ const NewDocumentForm = ({
         )}
         {step === 3 && values.upload_type === 'document' && (
           <EnterDetailsStep
-            nextStep={() => setStep(3)}
+            nextStep={() => setStep(4)}
             previousStep={() => setStep(2)}
             {...{
               editorState,
@@ -168,7 +186,7 @@ const NewDocumentForm = ({
         )}
         {step === 3 && values.upload_type === 'version' && (
           <VersionDescriptionStep
-            nextStep={() => setStep(3)}
+            nextStep={() => setStep(4)}
             previousStep={() => setStep(2)}
             {...{
               editorState,
@@ -182,6 +200,34 @@ const NewDocumentForm = ({
               setEditorState,
               setFieldValue,
               setFieldTouched,
+            }}
+          />
+        )}
+        {step === 4 && (
+          <NewExperienceStep
+            nextStep={() => setStep(4)}
+            previousStep={() => setStep(3)}
+            createFlatfileSettings={createFlatfileSettings}
+            selectedTemplate={
+              values.upload_type === 'version'
+                ? values.doc.templateVersion
+                  ? values.doc.templateVersion.id
+                  : ''
+                : selectedTemplate
+            }
+            version={version}
+            location={location}
+            history={history}
+            match={match}
+            createVersion={createVersion}
+            updateVersion={updateVersion}
+            saveDocument={saveDocument}
+            {...{
+              values,
+              isSubmitting,
+              isValid,
+              setSubmitting,
+              setErrors,
             }}
           />
         )}
