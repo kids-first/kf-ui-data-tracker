@@ -66,6 +66,7 @@ const VersionPreviewView = ({match}) => {
     const parsed = limiteLength
       ? Papa.parse(contents, {
           preview: 101,
+          delimiter: ',',
         })
       : Papa.parse(contents);
     setErrors(parsed.errors);
@@ -297,7 +298,13 @@ const VersionPreviewView = ({match}) => {
                 warning
                 icon="warning sign"
                 header="Error previewing file"
-                content={errors}
+                content={
+                  <>
+                    {errors.map(e => (
+                      <p>{e.message}</p>
+                    ))}
+                  </>
+                }
               />
             )}
             {data.length > 0 && errors.length === 0 && (
