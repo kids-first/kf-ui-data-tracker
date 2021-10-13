@@ -1,12 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useQuery, useMutation} from '@apollo/client';
 import {Prompt} from 'react-router-dom';
-import {
-  CREATE_FILE,
-  CREATE_VERSION,
-  UPDATE_VERSION,
-  EVALUATE_TEMPLATE_MATCH,
-} from '../mutations';
 import {GET_STUDY_BY_ID, ALL_TEMPLATE_VERSIONS} from '../../state/queries';
 import {
   Accordion,
@@ -19,6 +13,13 @@ import {
   Progress,
   Transition,
 } from 'semantic-ui-react';
+import {
+  CREATE_FILE,
+  CREATE_FLATFILE_SETTINGS,
+  CREATE_VERSION,
+  EVALUATE_TEMPLATE_MATCH,
+  UPDATE_VERSION,
+} from '../mutations';
 import AnalysisSummary from '../components/FileDetail/AnalysisSummary';
 import NewUploadForm from '../forms/NewUploadForm';
 
@@ -135,6 +136,9 @@ const UploadView = ({match, history, location}) => {
 
   const [evaluateTemplateMatch] = useMutation(EVALUATE_TEMPLATE_MATCH);
 
+  // Get flatfile settings
+  const [createFlatfileSettings] = useMutation(CREATE_FLATFILE_SETTINGS);
+
   useEffect(() => {
     if (!location.state) return;
 
@@ -244,6 +248,13 @@ const UploadView = ({match, history, location}) => {
               study={study.data.study}
               selectedTemplate={selectedTemplate}
               setSelectedTemplate={setSelectedTemplate}
+              createFlatfileSettings={createFlatfileSettings}
+              location={location}
+              history={history}
+              match={match}
+              createVersion={createVersion}
+              updateVersion={updateVersion}
+              saveDocument={saveDocument}
             />
           </Segment>
         )}
