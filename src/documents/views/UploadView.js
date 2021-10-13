@@ -146,6 +146,7 @@ const UploadView = ({match, history, location}) => {
       variables: {
         file: location.state.file,
         study: Buffer.from('StudyNode:' + match.params.kfId).toString('base64'),
+        description: 'Original Version',
       },
     });
   }, [location.state, match.params.kfId, createVersion]);
