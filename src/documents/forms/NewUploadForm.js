@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import {Amplitude} from '@amplitude/react-amplitude';
-import {Form, Grid, Message, Step} from 'semantic-ui-react';
 import {Formik} from 'formik';
 import {EditorState, ContentState} from 'draft-js';
 
@@ -12,16 +11,18 @@ import {
   NewExperienceStep,
   VersionDescriptionStep,
 } from '../components/UploadSteps';
+import {Form, Grid, Icon, Message, Step} from 'semantic-ui-react';
 
 import {fileTypeDetail} from '../../common/enums';
 
-const Steps = ({step = 1, setStep}) => (
-  <Step.Group ordered fluid attached="top">
+const Steps = ({step = 1, setStep, type}) => (
+  <Step.Group fluid attached="top">
     <Step
       active={step === 1}
       completed={step > 1}
       onClick={step > 1 ? () => setStep(1) : null}
     >
+      <Icon name="add" />
       <Step.Content>
         <Step.Title>New or Existing</Step.Title>
         <Step.Description>Choose the document</Step.Description>
@@ -33,16 +34,32 @@ const Steps = ({step = 1, setStep}) => (
       completed={step > 2}
       onClick={step > 2 ? () => setStep(2) : null}
     >
+      <Icon name={type === 'document' ? 'th large' : 'clone'} />
       <Step.Content>
-        <Step.Title>Document Type</Step.Title>
-        <Step.Description>Categorize your new document</Step.Description>
+        <Step.Title>
+          {type === 'document' ? 'Document Type' : 'Select Document'}
+        </Step.Title>
+        <Step.Description>
+          {type === 'document'
+            ? 'Categorize your new document'
+            : 'Choose the document this revision is for'}
+        </Step.Description>
       </Step.Content>
     </Step>
 
-    <Step active={step === 3}>
+    <Step
+      active={step === 3}
+      completed={step > 3}
+      onClick={step > 3 ? () => setStep(3) : null}
+    >
+      <Icon name="sticky note" />
       <Step.Content>
         <Step.Title>Details</Step.Title>
-        <Step.Description>Describe the new document</Step.Description>
+        <Step.Description>
+          {type === 'document'
+            ? 'Describe the new document'
+            : 'Describe the new version'}
+        </Step.Description>
       </Step.Content>
     </Step>
 
@@ -115,7 +132,7 @@ const NewDocumentForm = ({
 
   return (
     <>
-      <Steps step={step} setStep={setStep} />
+      <Steps step={step} setStep={setStep} type={values.upload_type} />
       <Grid divided padded>
         {step === 1 && (
           <DocumentOrVersionStep
