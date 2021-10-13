@@ -12,6 +12,7 @@ export const AMPLITUDE_KEY = process.env.REACT_APP_AMPLITUDE_KEY;
 export const STUDY_DOCS_SIMILARITY_THRESHOLD = 0.9;
 export const DOC_TITLE_FILENAME_SIMILARITY_THRESHOLD = 0.9;
 export const DEV_BAR = process.env.REACT_APP_DEV_BAR;
+export const FLATFILE_LICENSE_KEY = process.env.REACT_APP_FLATFILE_LICENSE_KEY;
 
 // The number of documents shown on one page in a study's documents tab
 export const DOCS_PER_PAGE = 10;
