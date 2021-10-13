@@ -194,3 +194,29 @@ export const processExcel = data => {
   const excelToCsv = XLSX.utils.sheet_to_csv(workbook.Sheets[firstSheet]);
   return excelToCsv;
 };
+
+// Form file from data array, support csv, tsv, xlsx, xls format
+export const formFile = (fileName, mappedData) => {
+  var file = null;
+  if (fileName.endsWith('.xlsx') || fileName.endsWith('.xls')) {
+    let ws = XLSX.utils.json_to_sheet(mappedData);
+    let wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+    var wbout = XLSX.write(wb, {bookType: 'xlsx', type: 'binary'});
+    const s2ab = s => {
+      var buf = new ArrayBuffer(s.length); //convert s to arrayBuffer
+      var view = new Uint8Array(buf); //create uint8array as viewer
+      for (var i = 0; i < s.length; i++) view[i] = s.charCodeAt(i) & 0xff; //convert to octet
+      return buf;
+    };
+    const blob = new Blob([s2ab(wbout)], {type: 'application/octet-stream'});
+    file = new File([blob], fileName, {
+      type: blob.type,
+    });
+  } else {
+    file = new File([mappedData], fileName, {
+      type: 'text/plain',
+    });
+  }
+  return file;
+};
