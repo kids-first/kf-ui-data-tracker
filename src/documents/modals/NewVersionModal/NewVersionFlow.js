@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import {Amplitude} from '@amplitude/react-amplitude';
 import {useMutation} from '@apollo/client';
 import {draftToMarkdown} from 'markdown-draft-js';
 import {EditorState, convertToRaw, ContentState} from 'draft-js';
@@ -206,45 +205,35 @@ export const NewVersionFlow = ({
         )}
       </Modal.Content>
       <Modal.Actions>
-        {step === 1 && (
+        {step > 0 && (
           <Button
             icon
             labelPosition="left"
             floated="left"
             size="mini"
             onClick={() => {
-              setStep(0);
+              setStep(step - 1);
             }}
           >
             <Icon name="arrow left" />
-            Back to Upload
+            Back
           </Button>
         )}
-        <Amplitude
-          eventProperties={inheritedProps => ({
-            ...inheritedProps,
-            scope: inheritedProps.scope
-              ? [...inheritedProps.scope, 'button', 'upload button']
-              : ['button', 'upload button'],
-          })}
-        >
-          {({logEvent}) => (
-            <Button
-              primary
-              icon
-              labelPosition="left"
-              size="mini"
-              disabled={step === 0 || !mdText || !file || onUploading}
-              onClick={e => {
-                logEvent('click');
-                handleSave(e);
-              }}
-            >
-              <Icon name="upload" />
-              {onUploading ? 'UPLOADING ...' : 'UPLOAD'}
-            </Button>
-          )}
-        </Amplitude>
+        {step < 2 && (
+          <Button
+            icon
+            primary
+            disabled={step === 0 || !mdText || !file || onUploading}
+            labelPosition="right"
+            size="mini"
+            onClick={() => {
+              setStep(2);
+            }}
+          >
+            <Icon name="arrow right" />
+            Next
+          </Button>
+        )}
       </Modal.Actions>
     </Modal>
   );
