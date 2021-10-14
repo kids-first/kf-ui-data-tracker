@@ -153,3 +153,15 @@ export const sortFilesBySimilarity = (file, fileList, threshold = 0.9) => {
     ranked_files: sortByRating(updateDocumentsList),
   };
 };
+
+// Download content as markdown
+export const downloadMdFile = (content, filename) => {
+  const element = document.createElement('a');
+  const file = new Blob([content], {
+    type: 'text/plain',
+  });
+  element.href = URL.createObjectURL(file);
+  element.download = `${filename || 'validation_report'}.md`;
+  document.body.appendChild(element); // Required for this to work in FireFox
+  element.click();
+};
