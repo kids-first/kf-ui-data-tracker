@@ -17,14 +17,13 @@ import TimeAgo from 'react-timeago';
 import {longDate} from '../../common/dateUtils';
 import {dataTemplateIcons} from '../../common/enums';
 import {dateSort, stringSort, booleanSort} from '../../common/sortUtils';
+import {KF_STUDY_API} from '../../common/globals';
 
 /**
  * Data template list displays admin created templates for file process
  */
 const TemplateList = ({
   templates,
-  selection,
-  setSelection,
   setOpen,
   organization,
   setFieldValue,
@@ -32,6 +31,8 @@ const TemplateList = ({
   setStudySelect,
   deleteDataTemplate,
   organizationsList,
+  studyKfid,
+  match,
 }) => {
   const [sorting, setSorting] = useState({
     column: 'modifiedAt',
@@ -39,6 +40,9 @@ const TemplateList = ({
   });
   const [filter, setFilter] = useState(organization.id);
   const [search, setSearch] = useState('');
+  const [selection, setSelection] = useState([]);
+
+  const [format, setFormat] = useState('excel');
 
   const defaultLogo =
     'https://raw.githubusercontent.com/kids-first/kf-ui-data-tracker/master/src/assets/logo.svg';
@@ -178,7 +182,11 @@ const TemplateList = ({
 
   return (
     <>
-      {!setSelection && (
+      {studyKfid ? (
+        <Header as="h2" className="mt-6" floated="left">
+          Data Templates
+        </Header>
+      ) : (
         <>
           <Input
             floated="left"
@@ -203,24 +211,84 @@ const TemplateList = ({
               setFilter(data.value);
             }}
           />
-          {setOpen && (
-            <Button
-              primary
-              floated="right"
-              content="Create"
-              icon="add"
-              labelPosition="right"
-              onClick={() => {
-                setFieldValue('id', null);
-                setFieldValue('name', '');
-                setFieldValue('description', '');
-                setFieldValue('icon', 'file excel');
-                setFieldValue('organization', organization);
-                setOpen('Create');
-              }}
-            />
-          )}
         </>
+      )}
+      <span className="pl-16 pr-5">Download as</span>
+      <Dropdown
+        floating
+        selection
+        placeholder="Organizations"
+        disabled={!(templates && templates.length > 0)}
+        value={format}
+        options={[
+          {
+            key: 'excel',
+            text: 'Excel Workbook',
+            value: 'excel',
+            icon: 'file excel',
+          },
+          {
+            key: 'zip',
+            text: 'Zip File',
+            value: 'zip',
+            icon: 'file archive',
+          },
+        ]}
+        onChange={(ev, data) => {
+          setFormat(data.value);
+        }}
+      />
+      <Button
+        compact
+        primary
+        className="ml-10"
+        size="large"
+        labelPosition="right"
+        content="Download"
+        as="label"
+        disabled={selection.length === 0}
+        icon={format === 'zip' ? 'file archive' : 'file excel'}
+        onClick={() => {
+          const tempList = selection.join(',');
+          const bearerToken = 'Bearer ' + localStorage.getItem('accessToken');
+          const url = studyKfid
+            ? `${KF_STUDY_API}/download/templates/${match.params.kfId}?file_format=${format}&template_versions=${tempList}`
+            : `${KF_STUDY_API}/download/templates?file_format=${format}&template_versions=${tempList}`;
+          let anchor = document.createElement('a');
+          document.body.appendChild(anchor);
+          let file = url;
+          let headers = new Headers();
+          headers.append('Authorization', bearerToken);
+          const fileName = `${studyKfid ? studyKfid : 'data'}_templates${
+            format === 'zip' ? '.zip' : '.xlsx'
+          }`;
+          fetch(file, {headers})
+            .then(response => response.blob())
+            .then(blobby => {
+              let objectUrl = window.URL.createObjectURL(blobby);
+              anchor.href = objectUrl;
+              anchor.download = fileName;
+              anchor.click();
+              window.URL.revokeObjectURL(objectUrl);
+            });
+        }}
+      />
+      {!studyKfid && (
+        <Button
+          primary
+          floated="right"
+          content="Create"
+          icon="add"
+          labelPosition="right"
+          onClick={() => {
+            setFieldValue('id', null);
+            setFieldValue('name', '');
+            setFieldValue('description', '');
+            setFieldValue('icon', 'file excel');
+            setFieldValue('organization', organization);
+            setOpen('Create');
+          }}
+        />
       )}
       {templates.length > 0 ? (
         <Table
@@ -234,18 +302,17 @@ const TemplateList = ({
         >
           <Table.Header>
             <Table.Row>
-              {setSelection ? (
-                <Table.HeaderCell
-                  textAlign="center"
-                  width="1"
-                  onClick={e => {
-                    e.stopPropagation();
-                    onSelectAll();
-                  }}
-                >
-                  <Checkbox checked={selection.length === filtered.length} />
-                </Table.HeaderCell>
-              ) : (
+              <Table.HeaderCell
+                textAlign="center"
+                width="1"
+                onClick={e => {
+                  e.stopPropagation();
+                  onSelectAll();
+                }}
+              >
+                <Checkbox checked={selection.length === filtered.length} />
+              </Table.HeaderCell>
+              {!studyKfid && (
                 <Table.HeaderCell
                   textAlign="center"
                   width="1"
@@ -316,30 +383,29 @@ const TemplateList = ({
                     }
                   }}
                 >
-                  {setSelection ? (
-                    <Table.Cell
-                      textAlign="center"
-                      onClick={e => {
-                        e.stopPropagation();
-                        if (setSelection) {
-                          onSelectOne(
-                            Buffer.from(node.id, 'base64')
-                              .toString('utf8')
-                              .split(':')[1],
-                          );
-                        }
-                      }}
-                    >
-                      <Checkbox
-                        data-testid="file-select"
-                        checked={selection.includes(
+                  <Table.Cell
+                    textAlign="center"
+                    onClick={e => {
+                      e.stopPropagation();
+                      if (setSelection) {
+                        onSelectOne(
                           Buffer.from(node.id, 'base64')
                             .toString('utf8')
                             .split(':')[1],
-                        )}
-                      />
-                    </Table.Cell>
-                  ) : (
+                        );
+                      }
+                    }}
+                  >
+                    <Checkbox
+                      data-testid="file-select"
+                      checked={selection.includes(
+                        Buffer.from(node.id, 'base64')
+                          .toString('utf8')
+                          .split(':')[1],
+                      )}
+                    />
+                  </Table.Cell>
+                  {!studyKfid && (
                     <Popup
                       position="top center"
                       content={node.dataTemplate.organization.name}
