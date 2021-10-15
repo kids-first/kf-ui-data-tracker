@@ -15,7 +15,7 @@ import React, {useEffect, useState} from 'react';
 
 import {Amplitude} from '@amplitude/react-amplitude';
 import Markdown from 'react-markdown';
-// import {dateCompare} from '../../utilities';
+import {downloadMdFile, snakeCase} from '../../utilities';
 import defaultAvatar from '../../../assets/defaultAvatar.png';
 import {longDate} from '../../../common/dateUtils';
 
@@ -151,6 +151,41 @@ const DataValidation = ({
                   <Menu.Item header as="h4" className="text-grey noMargin">
                     Actions
                   </Menu.Item>
+                  <Amplitude
+                    eventProperties={inheritedProps => ({
+                      ...inheritedProps,
+                      scope: inheritedProps.scope
+                        ? [
+                            ...inheritedProps.scope,
+                            'button',
+                            'download validation button',
+                          ]
+                        : ['button', 'download validation button'],
+                    })}
+                  >
+                    {({logEvent}) => (
+                      <Popup
+                        content="Download validation report"
+                        position="left center"
+                        disabled={!report}
+                        inverted
+                        trigger={
+                          <Menu.Item
+                            onClick={() => {
+                              logEvent('click');
+                              downloadMdFile(
+                                report,
+                                studyId + '_' + snakeCase(reviewNode.name),
+                              );
+                            }}
+                          >
+                            <Icon name="download" />
+                            Download
+                          </Menu.Item>
+                        }
+                      />
+                    )}
+                  </Amplitude>
                   <Amplitude
                     eventProperties={inheritedProps => ({
                       ...inheritedProps,
