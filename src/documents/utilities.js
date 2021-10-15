@@ -165,3 +165,12 @@ export const downloadMdFile = (content, filename) => {
   document.body.appendChild(element); // Required for this to work in FireFox
   element.click();
 };
+
+// Form string to snake_case
+export const snakeCase = string => {
+  return string
+    .replace(/\W+/g, ' ')
+    .split(/ |\B(?=[A-Z])/)
+    .map(word => word.toLowerCase())
+    .join('_');
+};
