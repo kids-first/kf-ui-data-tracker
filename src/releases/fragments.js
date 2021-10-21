@@ -17,6 +17,7 @@ export const RELEASE_FIELDS = gql`
     }
     version
     createdAt
+    endedAt
     isMajor
   }
   ${USER_FIELDS}

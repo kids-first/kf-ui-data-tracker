@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Loader, Table} from 'semantic-ui-react';
 import KfId from '../../../components/StudyList/KfId';
 import Version from './Version';
-import CreatedAt from './CreatedAt';
+import ReleaseDate from './ReleaseDate';
 import Name from './Name';
 import {compareSemVer} from '../../../common/sortUtils';
 
@@ -16,6 +16,7 @@ const columnSorts = {
   kfId: stringSort,
   version: compareSemVer,
   createdAt: dateSort,
+  endedAt: dateSort,
   state: stringSort,
 };
 
@@ -33,7 +34,10 @@ const cellContent = {
     <Version version={node.version} key={node.kfId + 'version'} />
   ),
   createdAt: node => (
-    <CreatedAt date={node.createdAt} key={node.kfId + 'createdAt'} />
+    <ReleaseDate date={node.createdAt} key={node.kfId + 'createdAt'} />
+  ),
+  endedAt: node => (
+    <ReleaseDate date={node.endedAt} key={node.kfId + 'endedAt'} />
   ),
   state: node => (
     <Table.Cell width="1" key={node.kfId + 'state'}>
@@ -48,6 +52,7 @@ const ReleaseTable = ({releases, footer}) => {
       {key: 'name', name: 'Name', visible: true},
       {key: 'version', name: 'Version', visible: true},
       {key: 'createdAt', name: 'Started At', visible: true},
+      {key: 'endedAt', name: 'Ended At', visible: true},
       {key: 'kfId', name: 'Kids First ID', visible: true},
       {key: 'state', name: 'State', visible: true},
     ],
@@ -94,6 +99,7 @@ const ReleaseTable = ({releases, footer}) => {
     <Table.HeaderCell
       key={col.key}
       content={col.name}
+      textAlign="center"
       sorted={
         columns.sorting.column === col.key ? columns.sorting.direction : null
       }

@@ -33,7 +33,7 @@ const ReleaseHeader = ({allowEdit, release, loading}) => {
         </Grid.Column>
       </Grid.Row>
       <Grid.Row>
-        <Grid.Column mobile={16} tablet={16} computer={10}>
+        <Grid.Column mobile={16} tablet={16} computer={7}>
           <Header color="grey">Basic info</Header>
           {release.creator ? (
             <AvatarTimeAgo
@@ -55,6 +55,44 @@ const ReleaseHeader = ({allowEdit, release, loading}) => {
             <Icon name="tag" />
             {release.kfId}
           </Label>
+        </Grid.Column>
+        <Grid.Column>
+          <Grid textAlign="center" columns={2}>
+            <Grid.Column>
+              <Grid.Row>
+               <Header color="grey" className="mb-15">Started At</Header>
+              </Grid.Row>
+              <Grid.Row>
+              {release.createdAt
+                ? new Date(release.createdAt).toLocaleString('en-US', {
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric',
+                  })
+                : '-'}
+              </Grid.Row>
+            </Grid.Column>
+            <Grid.Column>
+              <Grid.Row>
+                <Header color="grey" className="mb-15">Ended at</Header>
+              </Grid.Row>
+              <Grid.Row>
+              {release.endedAt
+                ? new Date(release.endedAt).toLocaleString('en-US', {
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric',
+                  })
+                : '-'}
+              </Grid.Row>
+            </Grid.Column>
+          </Grid>
         </Grid.Column>
       </Grid.Row>
     </Grid>

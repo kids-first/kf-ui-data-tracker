@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Checkbox, Loader, Pagination, Table} from 'semantic-ui-react';
 import KfId from '../../../components/StudyList/KfId';
-import CreatedAt from '../../components/ReleaseTable/CreatedAt';
+import ReleaseDate from '../../components/ReleaseTable/ReleaseDate';
 import Version from '../../components/ReleaseTable/Version';
 import {compareSemVer} from '../../../common/sortUtils';
 
@@ -60,7 +60,7 @@ const StudyTable = ({studies, selected, onChange}) => {
       />
     ),
     lastPublished: node => (
-      <CreatedAt key={'lastPublished'} date={node.lastPublished} />
+      <ReleaseDate key={'lastPublished'} date={node.lastPublished} />
     ),
   };
 
