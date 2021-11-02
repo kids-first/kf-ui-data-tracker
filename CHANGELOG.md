@@ -1,5 +1,19 @@
 # Kids First Data Tracker Change History
 
+## Release 0.24.0
+
+### Summary
+
+- Emojis: ✨ x3
+- Categories: Additions x3
+
+### New features and changes
+
+- [#1139](https://github.com/kids-first/kf-ui-data-tracker/pull/1139) - ✨ Display when releases ended - [04138ca7](https://github.com/kids-first/kf-ui-data-tracker/commit/04138ca7fce6bf04dba698168608621ff2dded5f) by [gsantia](https://github.com/gsantia)
+- [#1142](https://github.com/kids-first/kf-ui-data-tracker/pull/1142) - ✨ Download validation report from data review - [ac7f5e2b](https://github.com/kids-first/kf-ui-data-tracker/commit/ac7f5e2b8b7180b3c5b56ce54ae3279e2150c2a4) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#1141](https://github.com/kids-first/kf-ui-data-tracker/pull/1141) - ✨ Add download button for admin template list - [f615a556](https://github.com/kids-first/kf-ui-data-tracker/commit/f615a55670f1c88097f34ce3206772c5f1dbd479) by [XuTheBunny](https://github.com/XuTheBunny)
+
+
 ## Release 0.23.5
 
 ### Summary
