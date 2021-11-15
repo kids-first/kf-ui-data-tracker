@@ -9,6 +9,9 @@ export const STUDY_BASIC_FIELDS = gql`
     investigatorName
     createdAt
     modifiedAt
+    shortCode
+    program
+    domain
   }
 `;
 
