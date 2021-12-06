@@ -13,6 +13,9 @@ export const fieldLabel = {
   version: 'dbGaP Version',
   bucket: 'S3 Bucket',
   workflowType: 'Cavatica Projects',
+  shortCode: 'Study Short Code',
+  program: 'Study Program',
+  domain: 'Disease Domain',
 };
 
 // A list of study field that are tracked for completemess for ADMIN
@@ -25,11 +28,14 @@ export const trackedStudyFields = [
   'anticipatedSamples',
   'awardeeOrganization',
   'description',
+  'shortCode',
+  'program',
+  'domain',
 ];
 
 // A list of study fields for each step to display as study basic info
 export const steppingFields = [
-  ['name', 'shortName', 'bucket'],
+  ['name', 'shortName', 'bucket', 'shortCode', 'program', 'domain'],
   ['externalId', 'version', 'attribution'],
   ['releaseDate', 'anticipatedSamples', 'awardeeOrganization', 'description'],
 ];

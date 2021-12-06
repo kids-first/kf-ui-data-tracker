@@ -51,7 +51,7 @@ exports[`renders progress bar with 0/3 completed 1`] = `
     <div
       class="label"
     >
-      0/3 fields complete
+      0/6 fields complete
     </div>
   </div>
 </div>
@@ -61,16 +61,16 @@ exports[`renders progress bar with 2/3 completed 1`] = `
 <div>
   <div
     class="ui tiny warning progress progress-bar--custom"
-    data-percent="66"
+    data-percent="33"
   >
     <div
       class="bar"
-      style="width: 66.66666666666666%;"
+      style="width: 33.33333333333333%;"
     />
     <div
       class="label"
     >
-      2/3 fields complete
+      2/6 fields complete
     </div>
   </div>
 </div>
@@ -79,17 +79,17 @@ exports[`renders progress bar with 2/3 completed 1`] = `
 exports[`renders progress bar with 3/3 completed 1`] = `
 <div>
   <div
-    class="ui tiny success progress progress-bar--custom"
-    data-percent="100"
+    class="ui tiny warning progress progress-bar--custom"
+    data-percent="50"
   >
     <div
       class="bar"
-      style="width: 100%;"
+      style="width: 50%;"
     />
     <div
       class="label"
     >
-      3/3 fields complete
+      3/6 fields complete
     </div>
   </div>
 </div>

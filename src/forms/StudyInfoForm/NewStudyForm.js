@@ -128,6 +128,9 @@ const NewStudyForm = ({
         version: studyNode.version || '',
         bucket: studyNode.bucket || '',
         additionalFields: studyNode.additionalFields || '',
+        shortCode: studyNode.shortCode || '',
+        domain: studyNode.domain || 'UNKNOWN',
+        program: studyNode.program || '',
       }
     : {
         externalId: '',
@@ -139,6 +142,9 @@ const NewStudyForm = ({
         attribution: '',
         anticipatedSamples: 0,
         awardeeOrganization: '',
+        shortCode: '',
+        domain: 'UNKNOWN',
+        program: '',
       };
   return (
     <Formik
@@ -158,6 +164,15 @@ const NewStudyForm = ({
         if (values.version.length > 10) {
           errors.version =
             'Max. 10 characters, typically in the format v[0-9].p[0-9]';
+        }
+        if (!values.shortCode) {
+          errors.name = 'Required';
+        }
+        if (!values.program) {
+          errors.name = 'Required';
+        }
+        if (!values.domain) {
+          errors.name = 'Required';
         }
         return errors;
       }}
@@ -328,7 +343,10 @@ const NewStudyForm = ({
                     submitting ||
                     Object.keys(formikProps.errors).length > 0 ||
                     formikProps.values.name.length === 0 ||
-                    formikProps.values.externalId.length === 0
+                    formikProps.values.externalId.length === 0 ||
+                    formikProps.values.shortCode.length === 0 ||
+                    formikProps.values.domain.length === 0 ||
+                    formikProps.values.program.length === 0
                   }
                   onClick={() => {
                     formikProps.validateForm().then(errors => {
