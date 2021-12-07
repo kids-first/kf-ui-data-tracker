@@ -38,7 +38,7 @@ const ReleaseController = () => {
 
   const footer = () => (
     <Table.Row>
-      <Table.HeaderCell textAlign="right" colSpan="5">
+      <Table.HeaderCell textAlign="right" colSpan="6">
         {loadingPage && <Icon loading size="big" name="spinner" />}
         <Menu pagination floated="right">
           <Menu.Item
