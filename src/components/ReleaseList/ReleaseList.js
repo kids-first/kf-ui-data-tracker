@@ -23,7 +23,7 @@ const ReleaseList = ({loading, releases}) => {
         <Comment key={r.node.id}>
           <Comment.Avatar as={Icon} name="tag" />
           <Comment.Content>
-            <Comment.Author>
+            <Comment.Author className="display-inline">
               <Link
                 className="text-blue"
                 to={'/releases/history/' + r.node.kfId}
@@ -31,7 +31,9 @@ const ReleaseList = ({loading, releases}) => {
                 {r.node.version + ' - ' + r.node.name + ' '}
               </Link>
             </Comment.Author>
-            <Comment.Metadata>on {longDate(r.node.createdAt)}</Comment.Metadata>
+            <Comment.Metadata className="text-12">
+              on {longDate(r.node.createdAt)}
+            </Comment.Metadata>
             <Comment.Text>
               <Markdown
                 source={r.node.description}
