@@ -97,6 +97,7 @@ const EventsView = () => {
       <Segment basic>
         <span className="smallLabel">Filter by:</span>
         <Select
+          className="ml-10"
           clearable
           placeholder="User"
           loading={loadingUsers}
@@ -104,6 +105,7 @@ const EventsView = () => {
           onChange={(e, {name, value}) => refetch({username: value})}
         />
         <Select
+          className="ml-10"
           clearable
           placeholder="Study"
           loading={loadingStudies}
@@ -111,6 +113,7 @@ const EventsView = () => {
           onChange={(e, {name, value}) => refetch({studyId: value})}
         />
         <Select
+          className="ml-10"
           clearable
           placeholder="Event Type"
           options={eventTypeOptions}
