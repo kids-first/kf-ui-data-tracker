@@ -194,6 +194,10 @@ body {
     min-height: 350px !important;
 }
 
+.w-70 {
+  width: 70px !important;
+}
+
 .w-200 {
   width: 200px !important;
 }

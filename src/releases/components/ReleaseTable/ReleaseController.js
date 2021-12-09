@@ -1,17 +1,37 @@
+import {Form, Icon, Menu, Select, Table} from 'semantic-ui-react';
 import React, {useState} from 'react';
-import {useQuery} from '@apollo/client';
+
 import {GET_RELEASES} from '../../queries';
-import {Icon, Table, Menu} from 'semantic-ui-react';
 import ReleaseTable from './ReleaseTable';
+import {useQuery} from '@apollo/client';
 
 const ReleaseController = () => {
+  const [selectedState, setSelectedState] = useState('');
+
+  const stateOptions = [
+    'waiting',
+    'initializing',
+    'running',
+    'staged',
+    'publishing',
+    'published',
+    'canceling',
+    'canceled',
+    'failed',
+  ].map(s => ({
+    key: s,
+    text: s.charAt(0).toUpperCase() + s.slice(1),
+    value: s,
+  }));
+
   const pageSize = 10;
   const [currPage, setCurrPage] = useState(0);
   const [pages, setPages] = useState([{first: 10}]);
   const {data: releasesData, loading: releasesLoading, fetchMore} = useQuery(
     GET_RELEASES,
     {
-      variables: pages[0],
+      variables: {...pages[0], state: selectedState},
+      fetchPolicy: 'network-only',
     },
   );
 
@@ -21,7 +41,7 @@ const ReleaseController = () => {
     releasesData && releasesData.allReleases.edges.length / pageSize;
   // Determine if the current page has been loaded or not by looking at how
   // many items are needed to fill the requested page vs how many are fetched
-  const loadingPage = releasesData && pagesLoaded < currPage + 1;
+  const loadingPage = releasesData && pagesLoaded < currPage;
   // Display the requested page if all the necessary items have been loaded
   // for the page, else display the page prior
   const releases =
@@ -75,7 +95,36 @@ const ReleaseController = () => {
     </Table.Row>
   );
 
-  return <ReleaseTable releases={releases} footer={footer} />;
+  return (
+    <>
+      <Form widths="equal" className="mt-15">
+        <Form.Group inline>
+          <span className="pr-5 w-70">Filter by:</span>
+          <Form.Field
+            width={6}
+            aria-label="group-filter"
+            control={Select}
+            clearable
+            placeholder="Release State"
+            loading={releasesLoading}
+            options={stateOptions || []}
+            onChange={(e, {name, value}) => {
+              setSelectedState(value);
+              setCurrPage(0);
+              setPages([{first: 10}]);
+              const variables = {
+                state: value,
+              };
+              fetchMore({
+                variables,
+              });
+            }}
+          />
+        </Form.Group>
+      </Form>
+      <ReleaseTable releases={releases} footer={footer} />
+    </>
+  );
 };
 
 export default ReleaseController;
