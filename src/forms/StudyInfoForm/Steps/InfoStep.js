@@ -123,7 +123,7 @@ const InfoStep = ({
         }
         else {
           return (
-            <Form.Field required={true}>
+            <Form.Field key={item.id} required={true}>
               <label className="noMargin">Domain:</label>
               <p className="noMargin">
                 <small>{item.description}</small>
