@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Helmet} from 'react-helmet';
 import {useQuery, useMutation} from '@apollo/client';
 import {
+  Checkbox,
   Container,
   Dimmer,
   Divider,
@@ -12,6 +13,7 @@ import {
   Select,
   Segment,
   Message,
+  Popup,
 } from 'semantic-ui-react';
 import {UserList, PermissionGroup} from '../components/UserList';
 import {ALL_GROUPS, MY_PROFILE} from '../../state/queries';
@@ -23,6 +25,7 @@ const UsersView = () => {
   const [searchString, setSearchString] = useState('');
   const [selectedGroup, setSelectedGroup] = useState('');
   const [selectedOrg, setSelectedOrg] = useState('');
+  const [not, setNot] = useState(false);
 
   const allUsers = userData && userData.allUsers;
 
@@ -100,11 +103,21 @@ const UsersView = () => {
     allUsers.edges.filter(
       ({node}) =>
         (!selectedGroup ||
-          node.groups.edges.map(({node}) => node.id).includes(selectedGroup)) &&
+          (not
+            ? !node.groups.edges
+                .map(({node}) => node.id)
+                .includes(selectedGroup)
+            : node.groups.edges
+                .map(({node}) => node.id)
+                .includes(selectedGroup))) &&
         (!selectedOrg ||
-          node.organizations.edges
-            .map(({node}) => node.id)
-            .includes(selectedOrg)) &&
+          (not
+            ? !node.organizations.edges
+                .map(({node}) => node.id)
+                .includes(selectedOrg)
+            : node.organizations.edges
+                .map(({node}) => node.id)
+                .includes(selectedOrg))) &&
         [node.username, node.displayName, node.email]
           .join(' ')
           .toLowerCase()
@@ -143,6 +156,20 @@ const UsersView = () => {
         <Form widths="equal">
           <Form.Group inline>
             <span className="pr-5">Filter by:</span>
+            <Popup
+              inverted
+              on="hover"
+              position="top center"
+              content="When checked, show users that do not belong to selected user group or selected organization"
+              trigger={
+                <Checkbox
+                  className="ml-10 mr-14"
+                  label="NOT"
+                  onChange={() => setNot(!not)}
+                  checked={not}
+                />
+              }
+            />
             <Form.Group inline width={10} className="mb-0">
               <Form.Field
                 aria-label="group-filter"
