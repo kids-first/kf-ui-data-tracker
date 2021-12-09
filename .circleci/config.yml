@@ -117,6 +117,19 @@ jobs:
       - run:
           name: Upload jest coverage
           command: yarn codecov -f coverage/jest.json
+  production_debug:
+    docker:
+      - image: cimg/node:16.0
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+      - run: yarn install
+      - run: yarn add netlify-cli
   production:
     docker:
       - image: cimg/node:16.0
@@ -148,6 +161,9 @@ orbs:
 
 workflows:
   version: 2
+  production_debug:
+    jobs:
+      - production_debug
   tests:
     jobs:
       - unit_tests
