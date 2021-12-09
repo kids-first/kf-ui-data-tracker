@@ -120,6 +120,7 @@ jobs:
   production_debug:
     docker:
       - image: cimg/node:16.0
+    resource_class: large
     steps:
       - checkout
       - restore_cache:
