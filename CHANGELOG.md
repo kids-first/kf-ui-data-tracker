@@ -1,5 +1,18 @@
 # Kids First Data Tracker Change History
 
+## Release 0.25.0
+
+### Summary
+
+- Emojis: 💄 x1, ✨ x1
+- Categories: Additions x1, Other Changes x1
+
+### New features and changes
+
+- [#1152](https://github.com/kids-first/kf-ui-data-tracker/pull/1152) - 💄 Refactor UI margins and filter condition - [4756385c](https://github.com/kids-first/kf-ui-data-tracker/commit/4756385c5475f3bc7e145347947f9d3051255251) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#1148](https://github.com/kids-first/kf-ui-data-tracker/pull/1148) - ✨ Add new Study fields - [cba3bbad](https://github.com/kids-first/kf-ui-data-tracker/commit/cba3bbad27e380b96ce4912548b397b0f1dd95c6) by [gsantia](https://github.com/gsantia)
+
+
 ## Release 0.24.0
 
 ### Summary
