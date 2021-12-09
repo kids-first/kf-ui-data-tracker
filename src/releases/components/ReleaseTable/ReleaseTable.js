@@ -41,7 +41,9 @@ const cellContent = {
   ),
   state: node => (
     <Table.Cell width="1" key={node.kfId + 'state'}>
-      {node.state}
+      {node.state
+        ? node.state.charAt(0).toUpperCase() + node.state.slice(1)
+        : '-'}
     </Table.Cell>
   ),
 };
