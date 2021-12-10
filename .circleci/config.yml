@@ -130,7 +130,7 @@ jobs:
             - v1-dependencies-
 
       - run: yarn install
-      - run: yarn add netlify-cli
+      - run: yarn add netlify-cli@6.14.10
   production:
     docker:
       - image: cimg/node:16.0
