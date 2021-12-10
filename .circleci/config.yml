@@ -129,8 +129,8 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
-      # - run: yarn install
-      - run: yarn add netlify-cli@6.14.10
+      - run: yarn install
+      # - run: yarn add netlify-cli@6.14.10
   production:
     docker:
       - image: cimg/node:16.0
