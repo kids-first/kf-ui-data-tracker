@@ -1,14 +1,22 @@
-import gql from 'graphql-tag';
 import {RELEASE_FIELDS, SERVICE_FIELDS} from './fragments';
 
+import gql from 'graphql-tag';
+
 export const GET_RELEASES = gql`
-  query AllReleases($first: Int, $last: Int, $after: String, $before: String) {
+  query AllReleases(
+    $first: Int
+    $last: Int
+    $after: String
+    $before: String
+    $state: String
+  ) {
     allReleases(
       first: $first
       last: $last
       after: $after
       before: $before
       orderBy: "-created_at"
+      state: $state
     ) {
       pageInfo {
         hasNextPage
