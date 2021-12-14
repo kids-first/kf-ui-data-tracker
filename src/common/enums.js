@@ -263,6 +263,11 @@ export const eventType = {
     iconName: 'file excel outline',
     iconColor: 'red',
   },
+  TV_DOW: {
+    title: 'Template Version Downloaded',
+    iconName: 'download',
+    iconColor: 'green',
+  },
   DT_CRE: {
     title: 'Data Template Created',
     iconName: 'file excel outline',

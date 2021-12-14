@@ -259,11 +259,17 @@ const TemplateList = ({
           let file = url;
           let headers = new Headers();
           headers.append('Authorization', bearerToken);
-          const fileName = `${studyKfid ? studyKfid : 'data'}_templates${
+          var fileName = `${studyKfid ? studyKfid : 'data'}_templates${
             format === 'zip' ? '.zip' : '.xlsx'
           }`;
           fetch(file, {headers})
-            .then(response => response.blob())
+            .then(response => {
+              fileName = response.headers
+                .get('Content-Disposition')
+                .split('filename*=UTF-8')[1]
+                .substring(2);
+              return response.blob();
+            })
             .then(blobby => {
               let objectUrl = window.URL.createObjectURL(blobby);
               anchor.href = objectUrl;
