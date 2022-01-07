@@ -117,7 +117,9 @@ const EventsView = () => {
           clearable
           placeholder="Event Type"
           options={eventTypeOptions}
-          onChange={(e, {name, value}) => refetch({eventType: value})}
+          onChange={(e, {name, value}) =>
+            refetch({eventType: value.length > 0 ? value : null})
+          }
         />
         <Divider />
         {loading && (
