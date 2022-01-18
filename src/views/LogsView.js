@@ -16,6 +16,7 @@ import NotFoundView from './NotFoundView';
 import EventList from '../components/EventList/EventList';
 import {eventType} from '../common/enums';
 import {hasPermission} from '../common/permissions';
+import {stringSort} from '../common/sortUtils';
 
 const LogsView = ({match}) => {
   const [filter, setFilter] = useState(null);
@@ -66,10 +67,12 @@ const LogsView = ({match}) => {
     myProfile &&
     (hasPermission(myProfile, 'view_my_event') ||
       hasPermission(myProfile, 'view_event'));
-  const eventTypeOptions = Object.keys(eventType).map(type => ({
-    text: eventType[type].title,
-    value: type,
-  }));
+  const eventTypeOptions = Object.keys(eventType)
+    .map(type => ({
+      text: eventType[type].title,
+      value: type,
+    }))
+    .sort((o1, o2) => stringSort(o1.text, o2.text));
 
   if (loading || studyLoading)
     return (

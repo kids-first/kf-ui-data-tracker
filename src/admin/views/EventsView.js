@@ -15,6 +15,7 @@ import {
 import {eventType} from '../../common/enums';
 import {EventList} from '../../components/EventList';
 import {ALL_EVENTS, ALL_STUDIES, ALL_USERS} from '../../state/queries';
+import {stringSort} from '../../common/sortUtils';
 
 const EventsView = () => {
   const {loading, data: eventData, error, refetch, fetchMore} = useQuery(
@@ -66,10 +67,12 @@ const EventsView = () => {
         value: node.username,
       }))
     : [];
-  const eventTypeOptions = Object.keys(eventType).map(type => ({
-    text: eventType[type].title,
-    value: type,
-  }));
+  const eventTypeOptions = Object.keys(eventType)
+    .map(type => ({
+      text: eventType[type].title,
+      value: type,
+    }))
+    .sort((o1, o2) => stringSort(o1.text, o2.text));
 
   if (error)
     return (
