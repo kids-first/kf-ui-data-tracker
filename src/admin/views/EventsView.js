@@ -54,11 +54,13 @@ const EventsView = () => {
   const allUsers = userData && userData.allUsers;
 
   const studyOptions = allStudies
-    ? allStudies.edges.map(({node}) => ({
-        key: node.id,
-        text: `${node.kfId} - ${node.name || node.shortName}`,
-        value: node.kfId,
-      }))
+    ? allStudies.edges
+        .map(({node}) => ({
+          key: node.id,
+          text: `${node.kfId} - ${node.name || node.shortName}`,
+          value: node.kfId,
+        }))
+        .sort((o1, o2) => stringSort(o1.text, o2.text))
     : [];
   const userOptions = allUsers
     ? allUsers.edges.map(({node}) => ({
