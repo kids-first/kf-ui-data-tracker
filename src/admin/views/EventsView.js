@@ -13,17 +13,24 @@ import {
   Button,
 } from 'semantic-ui-react';
 import {eventType} from '../../common/enums';
+import {ALL_REFERRAL_TOEKNS} from '../queries';
 import {EventList} from '../../components/EventList';
 import {ALL_EVENTS, ALL_STUDIES, ALL_USERS} from '../../state/queries';
 import {stringSort} from '../../common/sortUtils';
 
 const EventsView = () => {
+  const {data: referralData} = useQuery(ALL_REFERRAL_TOEKNS);
   const {loading, data: eventData, error, refetch, fetchMore} = useQuery(
     ALL_EVENTS,
     {
       variables: {orderBy: '-created_at', first: 20},
     },
   );
+
+  const referralTokenData =
+    referralData && referralData.allReferralTokens
+      ? referralData.allReferralTokens.edges
+      : [];
 
   const loadMore = () =>
     fetchMore({
@@ -136,8 +143,12 @@ const EventsView = () => {
             </Dimmer>
           </Segment>
         )}
-        {!loading && allEvents && <EventList events={allEvents.edges} />}
-
+        {!loading && allEvents && (
+          <EventList
+            events={allEvents.edges}
+            referralTokenData={referralTokenData}
+          />
+        )}
         {allEvents && allEvents.pageInfo.hasNextPage && (
           <Button attached="bottom" onClick={loadMore}>
             More
