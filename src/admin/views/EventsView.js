@@ -113,7 +113,7 @@ const EventsView = () => {
           onChange={(e, {name, value}) => refetch({studyId: value})}
         />
         <Select
-          className="ml-10"
+          className="ml-10 min-w-250"
           clearable
           placeholder="Event Type"
           options={eventTypeOptions}

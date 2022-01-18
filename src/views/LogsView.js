@@ -124,6 +124,7 @@ const LogsView = ({match}) => {
         </Helmet>
         <Segment basic floated="right" className="noMargin noPadding">
           <Select
+            className="min-w-250"
             selection
             clearable
             placeholder="Event Type"
