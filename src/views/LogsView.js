@@ -132,7 +132,7 @@ const LogsView = ({match}) => {
             value={filter}
             onChange={(e, {name, value}) => {
               setFilter(value);
-              refetch({eventType: value});
+              refetch({eventType: value.length > 0 ? value : null});
             }}
           />
         </Segment>
