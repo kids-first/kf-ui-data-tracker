@@ -259,6 +259,17 @@ export const ALL_EVENTS = gql`
           user {
             ...UserFields
           }
+          referralToken {
+            id
+            studies {
+              edges {
+                node {
+                  id
+                  kfId
+                }
+              }
+            }
+          }
         }
         cursor
       }

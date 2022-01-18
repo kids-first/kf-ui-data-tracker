@@ -60,28 +60,34 @@ const linkDescription = node => {
 const EventList = ({events, referralTokenData}) => {
   const StudyPopup = ({event}) => {
     var token = [];
-    if (event.eventType === 'RT_CRE') {
-      token =
-        referralTokenData.length > 0 &&
-        referralTokenData.filter(
-          ({node}) =>
-            node.createdBy &&
-            event.user &&
-            node.createdBy.id === event.user.id &&
-            node.email ===
-              event.description.match(
-                /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi,
-              )[0] &&
-            node.createdAt.split('T')[0] === event.createdAt.split('T')[0],
-        );
-    }
-    if (event.eventType === 'RT_CLA') {
-      token =
-        referralTokenData.length > 0 &&
-        referralTokenData.filter(
-          ({node}) =>
-            node.claimedBy && event.user && node.claimedBy.id === event.user.id,
-        );
+    if (event.referralToken) {
+      token = [{node: event.referralToken}];
+    } else {
+      if (event.eventType === 'RT_CRE') {
+        token =
+          referralTokenData.length > 0 &&
+          referralTokenData.filter(
+            ({node}) =>
+              node.createdBy &&
+              event.user &&
+              node.createdBy.id === event.user.id &&
+              node.email ===
+                event.description.match(
+                  /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi,
+                )[0] &&
+              node.createdAt.split('T')[0] === event.createdAt.split('T')[0],
+          );
+      }
+      if (event.eventType === 'RT_CLA') {
+        token =
+          referralTokenData.length > 0 &&
+          referralTokenData.filter(
+            ({node}) =>
+              node.claimedBy &&
+              event.user &&
+              node.claimedBy.id === event.user.id,
+          );
+      }
     }
     var splitList = [[], [], []];
     if (token.length > 0 && token[0].node.studies.edges.length > 0) {
