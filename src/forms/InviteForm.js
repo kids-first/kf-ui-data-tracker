@@ -28,11 +28,11 @@ const InviteForm = ({
     }));
 
   const onAddEmail = () => {
-    if (emailList.filter(email => email.key === emailInput).length > 0) {
+    if (emailList.filter(email => email.key === emailInput.toLowerCase()).length > 0) {
       setEmailInput('');
       setEmailError('Address added already');
     } else {
-      setEmailList([...emailList, {key: emailInput, status: 'Added'}]);
+      setEmailList([...emailList, {key: emailInput.toLowerCase(), status: 'Added'}]);
       setEmailInput('');
     }
   };
