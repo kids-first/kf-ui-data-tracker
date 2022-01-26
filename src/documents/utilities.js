@@ -1,5 +1,6 @@
-import {KF_STUDY_API} from '../common/globals';
 import * as stringSimilarity from 'string-similarity';
+
+import {KF_STUDY_API} from '../common/globals';
 
 // Compare date of file versions based on their createdAt time. (Latest first)
 export const dateCompare = (version1, version2) => {

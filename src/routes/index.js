@@ -51,6 +51,7 @@ import {
   TemplatesView,
 } from '../admin/views';
 import ReleaseRoutes from '../releases/routes';
+import S3AccountingRoutes from '../s3Accounting/routes';
 import TrackedRoute from './TrackedRoute';
 
 const Routes = () => (
@@ -74,6 +75,7 @@ const Routes = () => (
         <PrivateRoute exact path="/" component={StudyListView} />
         <PrivateRoute exact path="/study" component={StudyListView} />
         <ReleaseRoutes path="/releases" />
+        <S3AccountingRoutes path="/s3-accounting" />
         <TrackedRoute
           path="/welcome"
           component={WelcomeView}
