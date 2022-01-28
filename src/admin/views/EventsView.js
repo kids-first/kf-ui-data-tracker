@@ -13,16 +13,24 @@ import {
   Button,
 } from 'semantic-ui-react';
 import {eventType} from '../../common/enums';
+import {ALL_REFERRAL_TOEKNS} from '../queries';
 import {EventList} from '../../components/EventList';
 import {ALL_EVENTS, ALL_STUDIES, ALL_USERS} from '../../state/queries';
+import {stringSort} from '../../common/sortUtils';
 
 const EventsView = () => {
+  const {data: referralData} = useQuery(ALL_REFERRAL_TOEKNS);
   const {loading, data: eventData, error, refetch, fetchMore} = useQuery(
     ALL_EVENTS,
     {
       variables: {orderBy: '-created_at', first: 20},
     },
   );
+
+  const referralTokenData =
+    referralData && referralData.allReferralTokens
+      ? referralData.allReferralTokens.edges
+      : [];
 
   const loadMore = () =>
     fetchMore({
@@ -53,23 +61,29 @@ const EventsView = () => {
   const allUsers = userData && userData.allUsers;
 
   const studyOptions = allStudies
-    ? allStudies.edges.map(({node}) => ({
-        key: node.id,
-        text: `${node.kfId} - ${node.name || node.shortName}`,
-        value: node.kfId,
-      }))
+    ? allStudies.edges
+        .map(({node}) => ({
+          key: node.id,
+          text: `${node.kfId} - ${node.name || node.shortName}`,
+          value: node.kfId,
+        }))
+        .sort((o1, o2) => stringSort(o1.text, o2.text))
     : [];
   const userOptions = allUsers
-    ? allUsers.edges.map(({node}) => ({
-        key: node.id,
-        text: node.displayName,
-        value: node.username,
-      }))
+    ? allUsers.edges
+        .map(({node}) => ({
+          key: node.id,
+          text: node.displayName,
+          value: node.username,
+        }))
+        .sort((o1, o2) => stringSort(o1.text, o2.text))
     : [];
-  const eventTypeOptions = Object.keys(eventType).map(type => ({
-    text: eventType[type].title,
-    value: type,
-  }));
+  const eventTypeOptions = Object.keys(eventType)
+    .map(type => ({
+      text: eventType[type].title,
+      value: type,
+    }))
+    .sort((o1, o2) => stringSort(o1.text, o2.text));
 
   if (error)
     return (
@@ -113,7 +127,7 @@ const EventsView = () => {
           onChange={(e, {name, value}) => refetch({studyId: value})}
         />
         <Select
-          className="ml-10"
+          className="ml-10 min-w-250"
           clearable
           placeholder="Event Type"
           options={eventTypeOptions}
@@ -129,8 +143,12 @@ const EventsView = () => {
             </Dimmer>
           </Segment>
         )}
-        {!loading && allEvents && <EventList events={allEvents.edges} />}
-
+        {!loading && allEvents && (
+          <EventList
+            events={allEvents.edges}
+            referralTokenData={referralTokenData}
+          />
+        )}
         {allEvents && allEvents.pageInfo.hasNextPage && (
           <Button attached="bottom" onClick={loadMore}>
             More

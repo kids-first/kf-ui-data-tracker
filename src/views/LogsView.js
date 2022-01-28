@@ -16,6 +16,7 @@ import NotFoundView from './NotFoundView';
 import EventList from '../components/EventList/EventList';
 import {eventType} from '../common/enums';
 import {hasPermission} from '../common/permissions';
+import {stringSort} from '../common/sortUtils';
 
 const LogsView = ({match}) => {
   const [filter, setFilter] = useState(null);
@@ -66,10 +67,12 @@ const LogsView = ({match}) => {
     myProfile &&
     (hasPermission(myProfile, 'view_my_event') ||
       hasPermission(myProfile, 'view_event'));
-  const eventTypeOptions = Object.keys(eventType).map(type => ({
-    text: eventType[type].title,
-    value: type,
-  }));
+  const eventTypeOptions = Object.keys(eventType)
+    .map(type => ({
+      text: eventType[type].title,
+      value: type,
+    }))
+    .sort((o1, o2) => stringSort(o1.text, o2.text));
 
   if (loading || studyLoading)
     return (
@@ -124,6 +127,7 @@ const LogsView = ({match}) => {
         </Helmet>
         <Segment basic floated="right" className="noMargin noPadding">
           <Select
+            className="min-w-250"
             selection
             clearable
             placeholder="Event Type"
@@ -131,7 +135,7 @@ const LogsView = ({match}) => {
             value={filter}
             onChange={(e, {name, value}) => {
               setFilter(value);
-              refetch({eventType: value});
+              refetch({eventType: value.length > 0 ? value : null});
             }}
           />
         </Segment>

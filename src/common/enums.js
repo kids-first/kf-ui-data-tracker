@@ -164,12 +164,12 @@ export const eventType = {
     iconColor: 'yellow',
   },
   RT_CRE: {
-    title: 'Referral Token Created',
+    title: 'Invited New User',
     iconName: 'mail outline',
     iconColor: 'yellow',
   },
   RT_CLA: {
-    title: 'Referral Token Claimed',
+    title: 'Invited User Joined',
     iconName: 'mail outline',
     iconColor: 'green',
   },
