@@ -1,5 +1,21 @@
 # Kids First Data Tracker Change History
 
+## Release 0.26.0
+
+### Summary
+
+- Emojis: ✨ x2, ♻️ x2, 🐛 x1
+- Categories: Additions x2, Fixes x1, Other Changes x2
+
+### New features and changes
+
+- [#1161](https://github.com/kids-first/kf-ui-data-tracker/pull/1161) - ✨ Show study id in the collaborator added logs - [b4d75a00](https://github.com/kids-first/kf-ui-data-tracker/commit/b4d75a007e0a0657e3407d1dc3bffadbbfc9d835) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#1162](https://github.com/kids-first/kf-ui-data-tracker/pull/1162) - ♻️ Automatically format user invite email address to lower case - [9558c476](https://github.com/kids-first/kf-ui-data-tracker/commit/9558c4762be16354c3bdbf050d5aad8d06dcc882) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#1159](https://github.com/kids-first/kf-ui-data-tracker/pull/1159) - 🐛 Fix event type filter from admin events page - [da8c60ad](https://github.com/kids-first/kf-ui-data-tracker/commit/da8c60ad8ac31fa3c7fd3827f2ab00191611ba7e) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#1153](https://github.com/kids-first/kf-ui-data-tracker/pull/1153) - ♻️ Use API provided file name for template downloads - [ec8f62c3](https://github.com/kids-first/kf-ui-data-tracker/commit/ec8f62c32df4a06518fc79e57e7afa1b508ed61c) by [XuTheBunny](https://github.com/XuTheBunny)
+- [#1155](https://github.com/kids-first/kf-ui-data-tracker/pull/1155) - ✨ Add filters for latest releases list - [2e2526ac](https://github.com/kids-first/kf-ui-data-tracker/commit/2e2526acc0b2b45009875594230d03fe39708178) by [XuTheBunny](https://github.com/XuTheBunny)
+
+
 ## Release 0.25.0
 
 ### Summary
