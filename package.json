@@ -30,7 +30,7 @@
     "codecov": "^3.7.1",
     "draft-js": "^0.11.4",
     "formik": "^1.5.8",
-    "graphiql": "^1.1.0",
+    "graphiql": "^1.4.7",
     "graphql": "^15.4.0",
     "graphql-tag": "^2.10.1",
     "graphql-voyager": "^1.0.0-rc.31",
