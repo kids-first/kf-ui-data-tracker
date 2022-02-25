@@ -1,26 +1,28 @@
-import React, {useEffect, useState} from 'react';
-import {useQuery, useMutation} from '@apollo/client';
-import {Prompt} from 'react-router-dom';
-import {
-  CREATE_FILE,
-  CREATE_VERSION,
-  UPDATE_VERSION,
-  EVALUATE_TEMPLATE_MATCH,
-} from '../mutations';
-import {GET_STUDY_BY_ID, ALL_TEMPLATE_VERSIONS} from '../../state/queries';
+import {ALL_TEMPLATE_VERSIONS, GET_STUDY_BY_ID} from '../../state/queries';
 import {
   Accordion,
-  Message,
-  Segment,
-  Container,
-  Icon,
   Button,
+  Container,
   Header,
+  Icon,
+  Message,
   Progress,
+  Segment,
   Transition,
 } from 'semantic-ui-react';
+import {
+  CREATE_FILE,
+  CREATE_FLATFILE_SETTINGS,
+  CREATE_VERSION,
+  EVALUATE_TEMPLATE_MATCH,
+  UPDATE_VERSION,
+} from '../mutations';
+import React, {useEffect, useState} from 'react';
+import {useMutation, useQuery} from '@apollo/client';
+
 import AnalysisSummary from '../components/FileDetail/AnalysisSummary';
 import NewUploadForm from '../forms/NewUploadForm';
+import {Prompt} from 'react-router-dom';
 
 const UploadBar = ({
   study,
@@ -28,6 +30,8 @@ const UploadBar = ({
   createVersion,
   versionLoading,
   versionError,
+  setUploadedFile,
+  setMappedData,
 }) => {
   const [showSummary, setShowSummary] = useState(false);
   return (
@@ -52,6 +56,8 @@ const UploadBar = ({
               id="file"
               type="file"
               onChange={e => {
+                setUploadedFile(e.target.files[0]);
+                setMappedData(null);
                 createVersion({
                   variables: {
                     file: e.target.files[0],
@@ -94,6 +100,8 @@ const UploadBar = ({
 
 const UploadView = ({match, history, location}) => {
   const [selectedTemplate, setSelectedTemplate] = useState('');
+  const [uploadedFile, setUploadedFile] = useState(null);
+  const [mappedData, setMappedData] = useState(null);
 
   const study = useQuery(GET_STUDY_BY_ID, {
     variables: {
@@ -135,13 +143,17 @@ const UploadView = ({match, history, location}) => {
 
   const [evaluateTemplateMatch] = useMutation(EVALUATE_TEMPLATE_MATCH);
 
+  // Get flatfile settings
+  const [createFlatfileSettings] = useMutation(CREATE_FLATFILE_SETTINGS);
+
   useEffect(() => {
     if (!location.state) return;
-
+    setUploadedFile(location.state.file);
     createVersion({
       variables: {
         file: location.state.file,
         study: Buffer.from('StudyNode:' + match.params.kfId).toString('base64'),
+        description: 'Original Version',
       },
     });
   }, [location.state, match.params.kfId, createVersion]);
@@ -227,6 +239,8 @@ const UploadView = ({match, history, location}) => {
         createVersion={createVersion}
         versionLoading={versionLoading}
         versionError={versionError}
+        setUploadedFile={setUploadedFile}
+        setMappedData={setMappedData}
       />
       <Transition.Group
         as="div"
@@ -244,6 +258,15 @@ const UploadView = ({match, history, location}) => {
               study={study.data.study}
               selectedTemplate={selectedTemplate}
               setSelectedTemplate={setSelectedTemplate}
+              createFlatfileSettings={createFlatfileSettings}
+              history={history}
+              match={match}
+              createVersion={createVersion}
+              updateVersion={updateVersion}
+              saveDocument={saveDocument}
+              uploadedFile={uploadedFile}
+              mappedData={mappedData}
+              setMappedData={setMappedData}
             />
           </Segment>
         )}

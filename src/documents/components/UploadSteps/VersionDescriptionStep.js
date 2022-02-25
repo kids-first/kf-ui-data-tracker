@@ -1,5 +1,4 @@
 import React from 'react';
-import {Amplitude} from '@amplitude/react-amplitude';
 import {Button, Form, Grid, Header, Image, Segment} from 'semantic-ui-react';
 import {draftToMarkdown} from 'markdown-draft-js';
 import MarkdownEditor from '../FileDetail/MarkdownEditor';
@@ -52,27 +51,7 @@ const VersionDescriptionStep = ({
     <Grid.Row>
       <Grid.Column width={16} textAlign="right">
         <Button content="Back" onClick={previousStep} />
-        <Amplitude
-          eventProperties={inheritedProps => ({
-            ...inheritedProps,
-            scope: inheritedProps.scope
-              ? [...inheritedProps.scope, 'button', 'upload button']
-              : ['button', 'upload button'],
-          })}
-        >
-          {({logEvent}) => (
-            <Button
-              primary
-              data-testid="new-file-submit"
-              type="submit"
-              disabled={isSubmitting || !isValid}
-              loading={isSubmitting}
-              onClick={() => isValid && logEvent('click')}
-            >
-              Create
-            </Button>
-          )}
-        </Amplitude>
+        <Button primary content="Next" onClick={nextStep} />
       </Grid.Column>
     </Grid.Row>
   </>

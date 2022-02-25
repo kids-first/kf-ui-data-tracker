@@ -170,3 +170,11 @@ export const EVALUATE_TEMPLATE_MATCH = gql`
     }
   }
 `;
+
+export const CREATE_FLATFILE_SETTINGS = gql`
+  mutation createFlatfileSettings($templateVersions: [ID]) {
+    createFlatfileSettings(templateVersions: $templateVersions) {
+      flatfileSettings
+    }
+  }
+`;

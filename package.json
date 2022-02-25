@@ -18,6 +18,7 @@
     "@editorjs/editorjs": "^2.21.0",
     "@editorjs/header": "^2.6.1",
     "@editorjs/paragraph": "^2.8.0",
+    "@flatfile/react": "^0.5.0",
     "@handsontable/react": "^4.0.0",
     "@nivo/bar": "^0.67.0",
     "@nivo/calendar": "^0.67.0",
@@ -59,6 +60,7 @@
     "react-timeago": "^4.4.0",
     "semantic-ui-react": "^0.88.2",
     "string-similarity": "^3.0.0",
+    "tsv": "^0.2.0",
     "uuid": "^8.3.2",
     "xlsx": "^0.16.6"
   },
