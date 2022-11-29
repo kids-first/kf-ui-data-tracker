@@ -44,6 +44,10 @@ body {
     margin-top: 0px !important;
 }
 
+.mt--10 {
+    margin-top: -10px !important;
+}
+
 .mr-0 {
     margin-right: 0px !important;
 }
@@ -346,6 +350,10 @@ body {
     color: #676767 !important;
 }
 
+.text-dark-grey {
+    color: #5e5e5e !important;
+}
+
 .text-black {
     color: #000000 !important;
 }
@@ -544,6 +552,14 @@ body {
 
 .h-38 {
     height: 38px !important;
+}
+
+.h-24 {
+    height: 24px !important;
+}
+
+.h-220 {
+    height: 220px !important;
 }
 
 .small-inline {

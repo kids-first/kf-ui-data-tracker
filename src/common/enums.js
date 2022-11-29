@@ -667,6 +667,7 @@ export const permissionIcon = {
   validationresultset: 'code',
   datatemplate: 'file excel',
   organization: 'group',
+  storageanalysis: 'box',
 };
 
 // Icon color for different permissions
